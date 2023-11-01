@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BackgroundImage } from '../BackgroundImage';
 import styles from '@patternfly/react-styles/css/components/BackgroundImage/background-image';
-import cssBackgroundImage from '@patternfly/react-tokens/dist/esm/c_background_image_BackgroundImage';
 
 test(`renders with default className ${styles.backgroundImage}`, () => {
   render(<BackgroundImage src="/image/url.png" data-testid="test-id" />);
@@ -16,7 +15,11 @@ test('spreads additional props', () => {
 
 test('has src URL applied to style', () => {
   render(<BackgroundImage src="/image/url.png" data-testid="test-id" />);
-  expect(screen.getByTestId('test-id')).toHaveAttribute('style', `${cssBackgroundImage.name}: url(/image/url.png);`);
+
+  expect(screen.getByTestId('test-id')).toHaveAttribute(
+    'style',
+    '--pf-v5-c-background-image--BackgroundImage: url(/image/url.png);'
+  );
 });
 
 test('renders with custom className when one is provided', () => {

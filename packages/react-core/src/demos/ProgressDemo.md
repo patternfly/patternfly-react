@@ -14,7 +14,7 @@ import { Progress, Button, Stack, StackItem } from '@patternfly/react-core';
 ProgressStepperDemo = () => {
   const [currentValue, setCurrentValue] = React.useState(0);
 
-  const onProgressUpdate = (nextValue) => {
+  const onProgressUpdate = nextValue => {
     setCurrentValue(nextValue);
   };
 
@@ -52,7 +52,7 @@ import { Progress, Button, Stack, StackItem } from '@patternfly/react-core';
 ProgressStepperDemo = () => {
   const [currentValue, setCurrentValue] = React.useState(0);
 
-  const onProgressUpdate = (nextValue) => {
+  const onProgressUpdate = nextValue => {
     if (nextValue > currentValue) {
       setCurrentValue(nextValue);
     }

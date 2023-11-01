@@ -6,7 +6,6 @@ propComponents: ['AboutModal']
 ---
 import brandImg from '../../assets/brandImg.svg';
 import bgImg from '../../assets/patternfly-orb.svg';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 ## Examples
 ### Basic

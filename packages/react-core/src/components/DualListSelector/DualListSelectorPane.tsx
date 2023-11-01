@@ -7,7 +7,6 @@ import { DualListSelectorListWrapper } from './DualListSelectorListWrapper';
 import { DualListSelectorContext, DualListSelectorPaneContext } from './DualListSelectorContext';
 import { DualListSelectorList } from './DualListSelectorList';
 import { SearchInput } from '../SearchInput';
-import cssMenuMinHeight from '@patternfly/react-tokens/dist/esm/c_dual_list_selector__menu_MinHeight';
 
 /** Acts as the container for a list of options that are either available or chosen,
  * depending on the pane type (available or chosen). A search input and other actions,
@@ -152,7 +151,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
     >
       {title && (
         <div className={css(styles.dualListSelectorHeader)}>
-          <div className={`${styles.dualListSelector}__title`}>
+          <div className="pf-v5-c-dual-list-selector__title">
             <div className={css(styles.dualListSelectorTitleText)}>{title}</div>
           </div>
         </div>
@@ -202,7 +201,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
             id={`${id}-list`}
             isDisabled={isDisabled}
             {...(listMinHeight && {
-              style: { [cssMenuMinHeight.name]: listMinHeight } as React.CSSProperties
+              style: { '--pf-v5-c-dual-list-selector__menu--MinHeight': listMinHeight } as React.CSSProperties
             })}
           >
             {children}
@@ -213,7 +212,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
             aria-labelledby={`${id}-status`}
             id={`${id}-list`}
             {...(listMinHeight && {
-              style: { [cssMenuMinHeight.name]: listMinHeight } as React.CSSProperties
+              style: { '--pf-v5-c-dual-list-selector__menu--MinHeight': listMinHeight } as React.CSSProperties
             })}
           >
             {options.length > 0 ? (

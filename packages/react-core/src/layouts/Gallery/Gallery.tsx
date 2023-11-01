@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/layouts/Gallery/gallery';
-import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
-import cssGridTemplateColumnsMax from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_max';
 
 export interface GalleryProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the Gallery layout */
@@ -47,16 +45,18 @@ export const Gallery: React.FunctionComponent<GalleryProps> = ({
   if (minWidths) {
     Object.entries(minWidths || {}).map(
       ([breakpoint, value]) =>
-        (minWidthStyles[`${cssGridTemplateColumnsMin.name}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`] =
-          value)
+        (minWidthStyles[
+          `--pf-v5-l-gallery--GridTemplateColumns--min${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`
+        ] = value)
     );
   }
   const maxWidthStyles: any = {};
   if (maxWidths) {
     Object.entries(maxWidths || {}).map(
       ([breakpoint, value]) =>
-        (maxWidthStyles[`${cssGridTemplateColumnsMax.name}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`] =
-          value)
+        (maxWidthStyles[
+          `--pf-v5-l-gallery--GridTemplateColumns--max${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`
+        ] = value)
     );
   }
   const widthStyles = { ...minWidthStyles, ...maxWidthStyles };

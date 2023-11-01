@@ -75,7 +75,7 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
             isExpanded={isOpen}
             onToggle={toggleExpandableSection}
           >
-            <ul className={`${styles.multipleFileUploadStatus}-list`} role="list" aria-label={ariaLabel}>
+            <ul className="pf-v5-c-multiple-file-upload__status-list" role="list" aria-label={ariaLabel}>
               {children}
             </ul>
           </ExpandableSection>

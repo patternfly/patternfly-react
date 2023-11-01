@@ -12,7 +12,6 @@ import {
   WizardStep
 } from '@patternfly/react-core';
 import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
-import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 
 interface ValidationProgressProps {
   onClose(): void;
@@ -36,7 +35,7 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
   }, [tick]);
 
   return (
-    <div className={layout.bullseye}>
+    <div className="pf-v5-l-bullseye">
       <EmptyState variant="lg">
         <EmptyStateHeader
           headingLevel="h4"

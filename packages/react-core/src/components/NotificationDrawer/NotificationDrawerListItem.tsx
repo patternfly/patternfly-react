@@ -31,7 +31,9 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
   ...props
 }: NotificationDrawerListItemProps) => {
   const onKeyDown = (event: React.KeyboardEvent) => {
-    if (!(event.target as HTMLElement).parentElement.classList.contains(styles.notificationDrawerListItemAction)) {
+    if (
+      !(event.target as HTMLElement).parentElement.classList.contains('pf-v5-c-notification-drawer__list-item-action')
+    ) {
       // Accessibility function. Click on the list item when pressing Enter or Space on it.
       if (event.key === 'Enter' || event.key === ' ') {
         (event.target as HTMLElement).click();

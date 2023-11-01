@@ -2,7 +2,6 @@ import React from 'react';
 import { headerCol } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { Checkbox } from '@patternfly/react-core';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 interface Repository {
   name: string;
@@ -97,7 +96,7 @@ export const LegacyTableSelectable: React.FunctionComponent = () => {
     <div>
       <Checkbox
         label="Can select all"
-        className={spacing.mbLg}
+        className="pf-v5-u-mb-lg"
         isChecked={canSelectAll}
         onChange={(_event, checked) => setCanSelectAll(checked)}
         aria-label="toggle select all checkbox"

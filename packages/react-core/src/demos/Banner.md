@@ -3,8 +3,7 @@ id: Banner
 section: components
 ---
 
-import { css } from '@patternfly/react-styles';
-import display from '@patternfly/react-styles/css/utilities/Display/display';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ## Demos
 
@@ -24,10 +23,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-import { css } from '@patternfly/react-styles';
-import display from '@patternfly/react-styles/css/utilities/Display/display';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class BannerDemo extends React.Component {
   render() {
@@ -39,12 +35,12 @@ class BannerDemo extends React.Component {
               justifyContent={{ default: 'justifyContentCenter', lg: 'justifyContentSpaceBetween' }}
               flexWrap={{ default: 'nowrap' }}
             >
-              <div className={css(display.displayNone, display.displayBlockOnLg)}>Localhost</div>
-              <div className={css(display.displayNone, display.displayBlockOnLg)}>
+              <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Localhost</div>
+              <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">
                 This message is sticky to the top of the page.
               </div>
-              <div className={css(display.displayNoneOnLg)}>Drop some text on mobile, truncate if needed.</div>
-              <div className={css(display.displayNone, display.displayBlockOnLg)}>Ned Username</div>
+              <div className="pf-v5-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
+              <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Ned Username</div>
             </Flex>
           </Banner>
           <PageSection variant={PageSectionVariants.light}>
@@ -91,9 +87,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-import { css } from '@patternfly/react-styles';
-import display from '@patternfly/react-styles/css/utilities/Display/display';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class BannerDemo extends React.Component {
   render() {
@@ -111,12 +105,12 @@ class BannerDemo extends React.Component {
                 justifyContent={{ default: 'justifyContentCenter', lg: 'justifyContentSpaceBetween' }}
                 flexWrap={{ default: 'nowrap' }}
               >
-                <div className={css(display.displayNone, display.displayBlockOnLg)}>Localhost</div>
-                <div className={css(display.displayNone, display.displayBlockOnLg)}>
+                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Localhost</div>
+                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">
                   This message is sticky to the top of the page.
                 </div>
-                <div className={css(display.displayNoneOnLg)}>Drop some text on mobile, truncate if needed.</div>
-                <div className={css(display.displayNone, display.displayBlockOnLg)}>Ned Username</div>
+                <div className="pf-v5-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
+                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Ned Username</div>
               </Flex>
             </Banner>
           </FlexItem>
@@ -150,12 +144,12 @@ class BannerDemo extends React.Component {
                 justifyContent={{ default: 'justifyContentCenter', lg: 'justifyContentSpaceBetween' }}
                 flexWrap={{ default: 'nowrap' }}
               >
-                <div className={css(display.displayNone, display.displayBlockOnLg)}>Localhost</div>
-                <div className={css(display.displayNone, display.displayBlockOnLg)}>
+                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Localhost</div>
+                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">
                   This message is sticky to the bottom of the page.
                 </div>
-                <div className={css(display.displayNoneOnLg)}>Drop some text on mobile, truncate if needed.</div>
-                <div className={css(display.displayNone, display.displayBlockOnLg)}>Ned Username</div>
+                <div className="pf-v5-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
+                <div className="pf-v5-u-display-none pf-v5-u-display-block-on-lg">Ned Username</div>
               </Flex>
             </Banner>
           </FlexItem>

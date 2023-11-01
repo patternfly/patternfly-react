@@ -6,13 +6,11 @@ import {
   ApplicationLauncherContent
 } from '@patternfly/react-core/deprecated';
 import pfLogoSm from '@patternfly/react-core/src/demos/assets/pf-logo-small.svg';
-/* eslint-disable camelcase */
-import c_app_launcher__menu_item_Color from '@patternfly/react-tokens/dist/esm/c_app_launcher__menu_item_Color';
 
 const icon: JSX.Element = <img src={pfLogoSm} />;
 
 const linkStyle: React.CSSProperties = {
-  color: c_app_launcher__menu_item_Color.var,
+  color: 'var(--pf-v5-c-app-launcher__menu-item--Color)',
   textDecoration: 'none'
 };
 

@@ -143,7 +143,7 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
   componentDidUpdate(prevProps: ExpandableSectionProps) {
     if (
       this.props.variant === ExpandableSectionVariant.truncate &&
-      (prevProps.truncateMaxLines !== this.props.truncateMaxLines || prevProps.children !== this.props.children)
+      prevProps.truncateMaxLines !== this.props.truncateMaxLines
     ) {
       const expandableContent = this.expandableContentRef.current;
       setLineClamp(this.props.truncateMaxLines, expandableContent);

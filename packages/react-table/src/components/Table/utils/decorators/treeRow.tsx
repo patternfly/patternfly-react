@@ -31,7 +31,7 @@ export const treeRow =
             {icon}
           </span>
         )}
-        <span className={styles.tableText} key="table-text">
+        <span className="pf-v5-c-table__text" key="table-text">
           {content as React.ReactNode}
         </span>
       </div>
@@ -41,7 +41,7 @@ export const treeRow =
     };
     return {
       component: 'th',
-      className: stylesTreeView.tableTreeViewTitleCell,
+      className: 'pf-v5-c-table__tree-view-title-cell',
       children:
         level !== undefined ? (
           <div className={css(stylesTreeView.tableTreeViewMain)}>
@@ -83,7 +83,7 @@ export const treeRow =
                     onToggleRowDetails && onToggleRowDetails(event, rowIndex, content as React.ReactNode, rowData)
                   }
                 >
-                  <span className={`${styles.table}__details-toggle-icon`}>
+                  <span className="pf-v5-c-table__details-toggle-icon">
                     <EllipsisHIcon aria-hidden />
                   </span>
                 </Button>

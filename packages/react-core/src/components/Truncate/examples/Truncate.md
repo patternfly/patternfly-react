@@ -12,8 +12,7 @@ import './TruncateExamples.css';
 ```js
 import React from 'react';
 import { Truncate } from '@patternfly/react-core';
-
-<div className="truncate-example-resize">
+<div className="pf-v5-c-truncate--example">
   <Truncate
     content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
   />
@@ -21,11 +20,11 @@ import { Truncate } from '@patternfly/react-core';
 ```
 
 ### Middle
+
 ```js
 import React from 'react';
 import { Truncate } from '@patternfly/react-core';
-
-<div className="truncate-example-resize">
+<div className="pf-v5-c-truncate--example">
   <Truncate
     content={'redhat_logo_black_and_white_reversed_simple_with_fedora_container.zip'}
     trailingNumChars={10}
@@ -38,8 +37,7 @@ import { Truncate } from '@patternfly/react-core';
 ```js
 import React from 'react';
 import { Truncate } from '@patternfly/react-core';
-
-<div className="truncate-example-resize">
+<div className="pf-v5-c-truncate--example">
   <Truncate
     content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
     position={'start'}
@@ -51,8 +49,7 @@ import { Truncate } from '@patternfly/react-core';
 ```js
 import React from 'react';
 import { Truncate } from '@patternfly/react-core';
-
-<div className="truncate-example-resize">
+<div className="pf-v5-c-truncate--example">
   <Truncate
     content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
     tooltipPosition={'bottom'}

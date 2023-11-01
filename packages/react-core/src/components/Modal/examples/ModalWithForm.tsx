@@ -1,7 +1,6 @@
 import React from 'react';
 import { Modal, ModalVariant, Button, Form, FormGroup, Popover, TextInput } from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
 export const ModalWithForm: React.FunctionComponent = () => {
   const [isModalOpen, setModalOpen] = React.useState(false);
@@ -80,7 +79,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   aria-label="More info for name field"
                   onClick={(e) => e.preventDefault()}
                   aria-describedby="modal-with-form-form-name"
-                  className={formStyles.formGroupLabelHelp}
+                  className="pf-v5-c-form__group-label-help"
                 >
                   <HelpIcon />
                 </button>
@@ -129,7 +128,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   aria-label="More info for e-mail field"
                   onClick={(e) => e.preventDefault()}
                   aria-describedby="modal-with-form-form-email"
-                  className={formStyles.formGroupLabelHelp}
+                  className="pf-v5-c-form__group-label-help"
                 >
                   <HelpIcon />
                 </button>
@@ -177,7 +176,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   aria-label="More info for address field"
                   onClick={(e) => e.preventDefault()}
                   aria-describedby="modal-with-form-form-address"
-                  className={formStyles.formGroupLabelHelp}
+                  className="pf-v5-c-form__group-label-help"
                 >
                   <HelpIcon />
                 </button>

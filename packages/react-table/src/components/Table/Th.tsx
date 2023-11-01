@@ -9,9 +9,6 @@ import { IVisibility } from './utils/decorators/classNames';
 import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
 import { BaseCellProps } from './Table';
 import { IFormatterValueType, IColumn } from './TableTypes';
-import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
-import cssStickyCellLeft from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_Left';
-import cssStickyCellRight from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_Right';
 
 export interface ThProps
   extends BaseCellProps,
@@ -196,9 +193,9 @@ const ThBase: React.FunctionComponent<ThProps> = ({
       {...props}
       {...(isStickyColumn && {
         style: {
-          [cssStickyCellMinWidth.name]: stickyMinWidth ? stickyMinWidth : undefined,
-          [cssStickyCellLeft.name]: stickyLeftOffset ? stickyLeftOffset : 0,
-          [cssStickyCellRight.name]: stickyRightOffset ? stickyRightOffset : 0,
+          '--pf-v5-c-table__sticky-cell--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
+          '--pf-v5-c-table__sticky-cell--Left': stickyLeftOffset ? stickyLeftOffset : 0,
+          '--pf-v5-c-table__sticky-cell--Right': stickyRightOffset ? stickyRightOffset : 0,
           ...props.style
         } as React.CSSProperties
       })}

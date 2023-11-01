@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Backdrop } from '../Backdrop';
-import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 
 test('Renders without children', () => {
   render(
@@ -17,14 +16,14 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test(`Renders with the ${styles.backdrop}`, () => {
+test('Renders with the pf-v5-c-backdrop', () => {
   render(<Backdrop>Test</Backdrop>);
-  expect(screen.getByText('Test')).toHaveClass(styles.backdrop);
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-backdrop');
 });
 
-test(`Renders with only the class ${styles.backdrop} by default`, () => {
+test('Renders with only the class pf-v5-c-backdrop by default', () => {
   render(<Backdrop>Test</Backdrop>);
-  expect(screen.getByText('Test')).toHaveClass(styles.backdrop, { exact: true });
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-backdrop', { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {

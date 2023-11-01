@@ -11,10 +11,7 @@
       "./deprecated": ["./src/deprecated"]
     }
   },
-  "include": [
-    "./src/*",
-    "./src/**/*",
-  ],
+  "include": ["./src/*", "./src/**/*"],
   "references": [
     {
       "path": "../react-styles"

@@ -2,9 +2,6 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 import { formatBreakpointMods } from '../../helpers';
-import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/c_description_list_GridTemplateColumns_min';
-import cssTermWidth from '@patternfly/react-tokens/dist/esm/c_description_list__term_width';
-import cssHorizontalTermWidth from '@patternfly/react-tokens/dist/esm/c_description_list_m_horizontal__term_width';
 
 export interface BreakpointModifiers {
   default?: string;
@@ -105,19 +102,19 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   if (isAutoFit && autoFitMinModifier) {
     style = {
       ...style,
-      ...setBreakpointModifiers(cssGridTemplateColumnsMin.name, autoFitMinModifier)
+      ...setBreakpointModifiers('--pf-v5-c-description-list--GridTemplateColumns--min', autoFitMinModifier)
     };
   }
   if (termWidth) {
     style = {
       ...style,
-      ...{ [cssTermWidth.name]: termWidth }
+      ...{ '--pf-v5-c-description-list__term--width': termWidth }
     };
   }
   if (isHorizontal && horizontalTermWidthModifier) {
     style = {
       ...style,
-      ...setBreakpointModifiers(cssHorizontalTermWidth.name, horizontalTermWidthModifier)
+      ...setBreakpointModifiers('--pf-v5-c-description-list--m-horizontal__term--width', horizontalTermWidthModifier)
     };
   }
 

@@ -9,13 +9,12 @@ import {
   InputGroupItem,
   useInterval
 } from '@patternfly/react-core';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 export const AlertGroupAsync: React.FunctionComponent = () => {
   const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
   const [isRunning, setIsRunning] = React.useState(false);
 
-  const btnClasses = [buttonStyles.button, buttonStyles.modifiers.secondary].join(' ');
+  const btnClasses = ['pf-v5-c-button', 'pf-m-secondary'].join(' ');
 
   const getUniqueId = () => new Date().getTime();
 

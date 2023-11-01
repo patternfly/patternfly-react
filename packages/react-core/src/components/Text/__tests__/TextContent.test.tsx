@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { TextContent } from '../TextContent';
-import styles from '@patternfly/react-styles/css/components/Content/content';
 
 test('Renders without children', () => {
   render(
@@ -17,9 +16,9 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test(`Renders with class name ${styles.content}`, () => {
+test('Renders with class name pf-v5-c-content', () => {
   render(<TextContent>Test</TextContent>);
-  expect(screen.getByText('Test')).toHaveClass(styles.content, { exact: true });
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-content', { exact: true });
 });
 
 test('Renders with custom class name when className prop is provided', () => {

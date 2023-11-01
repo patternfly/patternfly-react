@@ -54,7 +54,7 @@
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "5.2.0-prerelease.3",
+    "@patternfly/patternfly": "5.1.0-prerelease.32",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-replace": "^5.0.2",
@@ -64,7 +64,6 @@
     "rimraf": "^3.0.2",
     "rollup": "^3.21.5",
     "rollup-plugin-scss": "^4.0.0",
-    "rollup-plugin-svg": "2.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.7.4"
   },

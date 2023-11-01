@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import styles from '@patternfly/react-styles/css/components/Hint/hint';
 
 import { HintFooter } from '../HintFooter';
 
@@ -17,12 +16,12 @@ test('renders children', () => {
   expect(screen.getByRole('button', { name: 'Test Me' })).toBeVisible();
 });
 
-test(`renders with class ${styles.hintFooter}`, () => {
+test('renders with class pf-v5-c-hint__footer', () => {
   render(<HintFooter>Hint Body Test</HintFooter>);
 
   const body = screen.getByText('Hint Body Test');
 
-  expect(body).toHaveClass(styles.hintFooter);
+  expect(body).toHaveClass('pf-v5-c-hint__footer');
 });
 
 test('renders with custom class names provided via prop', () => {

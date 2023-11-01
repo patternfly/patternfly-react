@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
-import cssMaxWidth from '@patternfly/react-tokens/dist/esm/c_form_m_limit_width_MaxWidth';
 
 export interface FormProps extends Omit<React.HTMLProps<HTMLFormElement>, 'ref'> {
   /** Anything that can be rendered as Form content. */
@@ -31,7 +30,7 @@ const FormBase: React.FunctionComponent<FormProps> = ({
     noValidate
     {...(maxWidth && {
       style: {
-        [cssMaxWidth.name]: maxWidth,
+        '--pf-v5-c-form--m-limit-width--MaxWidth': maxWidth,
         ...props.style
       } as React.CSSProperties
     })}

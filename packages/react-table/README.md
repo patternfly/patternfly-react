@@ -107,4 +107,4 @@ yarn test packages/react-table
 ```
 
 [patternfly]: https://github.com/patternfly/patternfly
-[docs]: https://react-staging.patternfly.org/
+[docs]: https://patternfly-react-main.surge.sh

@@ -3,7 +3,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { AccordionExpandableContentBody } from '../AccordionExpandableContentBody';
-import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 
 test('Renders without children', () => {
   const { asFragment } = render(<AccordionExpandableContentBody />);
@@ -20,10 +19,10 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test(`Renders with class name ${styles.accordionExpandableContentBody}`, () => {
+test('Renders with class name pf-v5-c-accordion__expandable-content-body', () => {
   render(<AccordionExpandableContentBody>Test</AccordionExpandableContentBody>);
 
-  expect(screen.getByText('Test')).toHaveClass(styles.accordionExpandableContentBody);
+  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-accordion__expandable-content-body');
 });
 
 test('Matches the snapshot', () => {

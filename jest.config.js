@@ -10,8 +10,7 @@ module.exports = {
   ],
   roots: ['<rootDir>/packages'],
   transform: {
-    '^.+\\.[jt]sx?$': 'babel-jest',
-    '^.+\\.svg$': 'jest-transform-stub'
+    '^.+\\.[jt]sx?$': 'babel-jest'
   },
   setupFilesAfterEnv: ['<rootDir>/packages/testSetup.ts'],
   transformIgnorePatterns: ['node_modules/(?!@patternfly|@novnc|@popperjs|lodash|monaco-editor|react-monaco-editor)'],

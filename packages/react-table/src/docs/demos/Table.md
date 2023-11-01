@@ -47,6 +47,7 @@ import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-ico
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
@@ -1467,7 +1468,7 @@ import {
   PageSection
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const TableEmptyState: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
@@ -1528,7 +1529,7 @@ import {
   PageSection,
   Spinner
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const LoadingStateDemo: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
@@ -1579,7 +1580,7 @@ import {
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const ErrorStateDemo: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>

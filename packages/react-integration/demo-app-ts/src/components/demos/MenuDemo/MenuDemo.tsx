@@ -25,7 +25,6 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
 
 export class MenuDemo extends Component {
   state = {
@@ -368,7 +367,7 @@ export class MenuDemo extends Component {
             id="group-3"
             label={
               <div>
-                <h1 className={styles.menuGroupTitle}>Group 3</h1>
+                <h1 className="pf-v5-c-menu__group-title">Group 3</h1>
               </div>
             }
           >

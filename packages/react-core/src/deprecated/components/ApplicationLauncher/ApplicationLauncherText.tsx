@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 
 export interface ApplicationLauncherTextProps extends React.HTMLProps<HTMLSpanElement> {
   /** content rendered inside the text container */
@@ -14,7 +13,7 @@ export const ApplicationLauncherText: React.FunctionComponent<ApplicationLaunche
   children,
   ...props
 }: ApplicationLauncherTextProps) => (
-  <span className={css(`${styles.appLauncherMenuItem}-text`, className)} {...props}>
+  <span className={css('pf-v5-c-app-launcher__menu-item-text', className)} {...props}>
     {children}
   </span>
 );

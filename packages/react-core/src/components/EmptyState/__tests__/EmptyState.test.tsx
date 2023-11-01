@@ -11,7 +11,6 @@ import { Button } from '../../Button';
 import { EmptyStateHeader } from '../EmptyStateHeader';
 import { EmptyStateFooter } from '../EmptyStateFooter';
 import { EmptyStateIcon } from '../../../../dist/esm';
-import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
 describe('EmptyState', () => {
   test('Main', () => {
@@ -65,12 +64,12 @@ describe('EmptyState', () => {
 
   test('Body', () => {
     render(<EmptyStateBody className="custom-empty-state-body" data-testid="body-test-id" />);
-    expect(screen.getByTestId('body-test-id')).toHaveClass(`${styles.emptyStateBody} custom-empty-state-body`);
+    expect(screen.getByTestId('body-test-id')).toHaveClass('pf-v5-c-empty-state__body custom-empty-state-body');
   });
 
   test('Actions', () => {
     render(<EmptyStateActions className="custom-empty-state-secondary" data-testid="actions-test-id" />);
-    expect(screen.getByTestId('actions-test-id')).toHaveClass(styles.emptyStateActions);
+    expect(screen.getByTestId('actions-test-id')).toHaveClass('pf-v5-c-empty-state__actions');
   });
 
   test('Full height', () => {
@@ -89,7 +88,9 @@ describe('EmptyState', () => {
 
   test('Header with title text renders heading level 1 by default', () => {
     render(<EmptyStateHeader titleText="Empty state" />);
-    expect(screen.getByRole('heading', { level: 1, name: 'Empty state' })).toHaveClass(styles.emptyStateTitleText);
+    expect(screen.getByRole('heading', { level: 1, name: 'Empty state' })).toHaveClass(
+      'pf-v5-c-empty-state__title-text'
+    );
   });
 
   test('Header renders custom class passed via titleClassName', () => {
@@ -99,7 +100,9 @@ describe('EmptyState', () => {
 
   test('Header renders the title as other heading levels when one is passed using headingLevel', () => {
     render(<EmptyStateHeader titleText="Empty state" headingLevel="h3" />);
-    expect(screen.getByRole('heading', { level: 3, name: 'Empty state' })).toHaveClass(styles.emptyStateTitleText);
+    expect(screen.getByRole('heading', { level: 3, name: 'Empty state' })).toHaveClass(
+      'pf-v5-c-empty-state__title-text'
+    );
   });
 
   test('Headers render children', () => {

@@ -5,7 +5,7 @@ import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inl
 import { css } from '@patternfly/react-styles';
 import { TableContext } from './Table';
 
-export interface TrProps extends Omit<React.HTMLProps<HTMLTableRowElement>, 'onResize'>, OUIAProps {
+export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps {
   /** Content rendered inside the <tr> row */
   children?: React.ReactNode;
   /** Additional classes added to the <tr> row  */

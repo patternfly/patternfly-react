@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Panel/panel';
 import { css } from '@patternfly/react-styles';
-import cssMaxHeight from '@patternfly/react-tokens/dist/esm/c_panel__main_MaxHeight';
 
 export interface PanelMainProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the panel main div */
@@ -20,7 +19,7 @@ export const PanelMain: React.FunctionComponent<PanelMainProps> = ({
 }: PanelMainProps) => (
   <div
     className={css(styles.panelMain, className)}
-    style={{ [cssMaxHeight.name]: maxHeight } as React.CSSProperties}
+    style={{ '--pf-v5-c-panel__main--MaxHeight': maxHeight } as React.CSSProperties}
     {...props}
   >
     {children}

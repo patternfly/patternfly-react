@@ -12,7 +12,8 @@ import {
   Menu,
   PageSection
 } from '@patternfly/react-core';
-import { DashboardHeader } from '@patternfly/react-core/src/demos/DashboardHeader';
+
+import DashboardHeader from '@patternfly/react-core/src/demos/examples/DashboardHeader';
 
 interface MenuHeights {
   [menuId: string]: number;
@@ -27,7 +28,6 @@ function getNavLayer(menuId: string): number {
     case 'subMenu-2':
       return 3;
   }
-  return 1;
 }
 
 const subMenuTwo: JSX.Element = (

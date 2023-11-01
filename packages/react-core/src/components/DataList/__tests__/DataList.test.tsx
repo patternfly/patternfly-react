@@ -14,7 +14,6 @@ import { DataListContent } from '../DataListContent';
 import { Button } from '../../Button';
 import { Dropdown, DropdownList, DropdownItem } from '../../Dropdown';
 import { MenuToggle } from '../../MenuToggle';
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 
 describe('DataList', () => {
   test('List default', () => {
@@ -177,7 +176,7 @@ describe('DataList', () => {
         test
       </DataListItem>
     );
-    expect(screen.getByRole('listitem')).toHaveClass(`${styles.dataListItem} ${styles.modifiers.expanded}`);
+    expect(screen.getByRole('listitem')).toHaveClass('pf-v5-c-data-list__item pf-m-expanded');
   });
 
   test('Item', () => {
@@ -234,8 +233,8 @@ describe('DataList', () => {
       const dataListCell = screen.getByTestId(testId);
 
       testCase.class === ''
-        ? expect(dataListCell).toHaveClass(styles.dataListCell)
-        : expect(dataListCell).toHaveClass(`${styles.dataListCell} ${testCase.class}`);
+        ? expect(dataListCell).toHaveClass('pf-v5-c-data-list__cell')
+        : expect(dataListCell).toHaveClass(`pf-v5-c-data-list__cell ${testCase.class}`);
     });
   });
 
@@ -257,8 +256,8 @@ describe('DataList', () => {
       const dataListCell = screen.getByTestId(testId);
 
       testCase.class === ''
-        ? expect(dataListCell).toHaveClass(styles.dataListCell)
-        : expect(dataListCell).toHaveClass(`${styles.dataListCell} ${testCase.class}`);
+        ? expect(dataListCell).toHaveClass('pf-v5-c-data-list__cell')
+        : expect(dataListCell).toHaveClass(`pf-v5-c-data-list__cell ${testCase.class}`);
     });
   });
 

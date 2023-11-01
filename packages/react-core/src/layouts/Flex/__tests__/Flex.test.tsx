@@ -4,7 +4,6 @@ import { render, screen } from '@testing-library/react';
 
 import { Flex } from '../Flex';
 import { FlexItem } from '../FlexItem';
-import layout from '@patternfly/react-styles/css/layouts/Flex/flex';
 
 describe('Flex', () => {
   test('Simple flex with single item', () => {
@@ -135,7 +134,7 @@ describe('Flex', () => {
             </Flex>
           );
 
-          const className = screen.getByTestId('test-id').className.replace(layout.flex, '').trim();
+          const className = screen.getByTestId('test-id').className.replace('pf-v5-l-flex', '').trim();
           expect(className).not.toBe("''");
           expect(className).not.toBe('');
         })

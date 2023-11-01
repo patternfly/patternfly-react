@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Hint } from '../Hint';
-import styles from '@patternfly/react-styles/css/components/Hint/hint';
 
 test('renders without children', () => {
   render(<Hint data-testid="Hint" />);
@@ -15,12 +14,12 @@ test('renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test(`renders with class ${styles.hint}`, () => {
+test('renders with class pf-v5-c-hint', () => {
   render(<Hint>Test</Hint>);
 
   const hint = screen.getByText('Test');
 
-  expect(hint).toHaveClass(styles.hint);
+  expect(hint).toHaveClass('pf-v5-c-hint');
 });
 
 test('renders with custom class names provided via prop', () => {
@@ -47,12 +46,12 @@ test('renders actions options', () => {
   expect(actions).toBeVisible();
 });
 
-test(`renders with class ${styles.hintActions} if there is an action prop`, () => {
+test('renders with class pf-v5-c-hint__actions if there is an action prop', () => {
   render(<Hint actions="actions">Test</Hint>);
 
   const hint = screen.getByText('actions');
 
-  expect(hint).toHaveClass(styles.hintActions);
+  expect(hint).toHaveClass('pf-v5-c-hint__actions');
 });
 
 test('renders with inherited element props spread to the component', () => {

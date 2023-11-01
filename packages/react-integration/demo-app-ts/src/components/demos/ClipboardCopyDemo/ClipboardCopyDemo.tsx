@@ -2,7 +2,6 @@ import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant, ClipboardCopyAction, Button } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
-// eslint-disable-next-line patternfly-react/no-anonymous-functions
 export class ClipboardCopyDemo extends React.Component {
   static displayName = 'ClipboardCopyDemo';
   render() {
@@ -33,28 +32,6 @@ export class ClipboardCopyDemo extends React.Component {
           </ClipboardCopy>
           is inline in a sentence.
         </div>
-        <br />
-        <br />
-        <ClipboardCopy
-          onCopy={() => {}}
-          id="tooltip-test"
-          hoverTip="Copy button not clicked"
-          clickTip="Copy button clicked"
-        >
-          Some random text.
-        </ClipboardCopy>
-        <br />
-        <br />
-        <ClipboardCopy
-          exitDelay={0}
-          entryDelay={0}
-          onCopy={() => {}}
-          id="onTooltipHidden-test"
-          hoverTip="onTooltipHidden not clicked"
-          clickTip="onTooltipHidden clicked"
-        >
-          Some random text.
-        </ClipboardCopy>
       </React.Fragment>
     );
   }

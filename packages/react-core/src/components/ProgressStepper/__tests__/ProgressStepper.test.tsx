@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ProgressStepper } from '../ProgressStepper';
-import styles from '@patternfly/react-styles/css/components/ProgressStepper/progress-stepper';
 
 test('Renders without children', () => {
   render(
@@ -17,14 +16,14 @@ test('Renders children', () => {
   expect(screen.getByRole('list')).toBeVisible();
 });
 
-test(`Renders with only class name ${styles.progressStepper} by default`, () => {
+test('Renders with only class name pf-v5-c-progress-stepper by default', () => {
   render(<ProgressStepper>Test</ProgressStepper>);
-  expect(screen.getByRole('list')).toHaveClass(styles.progressStepper, { exact: true });
+  expect(screen.getByRole('list')).toHaveClass('pf-v5-c-progress-stepper', { exact: true });
 });
 
-test(`Renders with class name ${styles.progressStepper}`, () => {
+test('Renders with class name pf-v5-c-progress-stepper', () => {
   render(<ProgressStepper>Test</ProgressStepper>);
-  expect(screen.getByRole('list')).toHaveClass(styles.progressStepper);
+  expect(screen.getByRole('list')).toHaveClass('pf-v5-c-progress-stepper');
 });
 
 test('Renders with custom class name when className prop is provided', () => {

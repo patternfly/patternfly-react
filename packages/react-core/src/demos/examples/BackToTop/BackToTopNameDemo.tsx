@@ -12,7 +12,7 @@ import {
   Page,
   Switch
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 export const Name = () => {
   const [isAlwaysVisible, setIsAlwaysVisible] = React.useState(false);

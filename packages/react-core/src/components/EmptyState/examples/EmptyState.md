@@ -7,7 +7,6 @@ propComponents: ['EmptyState', 'EmptyStateHeader', 'EmptyStateIcon', 'EmptyState
 import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import global_success_color_100 from '@patternfly/react-tokens/dist/esm/global_success_color_100';
 
 ## Examples
 ### Basic
