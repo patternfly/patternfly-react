@@ -49,6 +49,8 @@ WizardHeader
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
+import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 
 ## Examples
 
@@ -149,7 +151,7 @@ import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
 Used to access any property of [WizardContext](#wizardcontextprops):
 
 ```noLive
-import { useWizardContext } from '@patternfly/react-core/next';
+import { useWizardContext } from '@patternfly/react-core';
 
 const StepContent = () => {
   const { activeStep } = useWizardContext();
@@ -162,7 +164,7 @@ const StepContent = () => {
 Used to set a unique footer for the wizard on any given step.
 
 ```noLive
-import { useWizardFooter } from '@patternfly/react-core/next';
+import { useWizardFooter } from '@patternfly/react-core';
 
 const StepContent = () => {
   useWizardFooter(<>Some footer</>);

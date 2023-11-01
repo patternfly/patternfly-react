@@ -45,6 +45,134 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @patternfly/react-code-editor
 
+# [5.2.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.18...@patternfly/react-code-editor@5.2.0-prerelease.19) (2023-10-30)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.17...@patternfly/react-code-editor@5.2.0-prerelease.18) (2023-10-27)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.16...@patternfly/react-code-editor@5.2.0-prerelease.17) (2023-10-27)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.15...@patternfly/react-code-editor@5.2.0-prerelease.16) (2023-10-27)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.14...@patternfly/react-code-editor@5.2.0-prerelease.15) (2023-10-26)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.13...@patternfly/react-code-editor@5.2.0-prerelease.14) (2023-10-23)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.12...@patternfly/react-code-editor@5.2.0-prerelease.13) (2023-10-20)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.11...@patternfly/react-code-editor@5.2.0-prerelease.12) (2023-10-18)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.10...@patternfly/react-code-editor@5.2.0-prerelease.11) (2023-10-17)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.9...@patternfly/react-code-editor@5.2.0-prerelease.10) (2023-10-16)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.8...@patternfly/react-code-editor@5.2.0-prerelease.9) (2023-10-16)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.7...@patternfly/react-code-editor@5.2.0-prerelease.8) (2023-10-16)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.6...@patternfly/react-code-editor@5.2.0-prerelease.7) (2023-10-16)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.5...@patternfly/react-code-editor@5.2.0-prerelease.6) (2023-10-12)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.4...@patternfly/react-code-editor@5.2.0-prerelease.5) (2023-10-10)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.3...@patternfly/react-code-editor@5.2.0-prerelease.4) (2023-10-10)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.2...@patternfly/react-code-editor@5.2.0-prerelease.3) (2023-10-10)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# 5.2.0-prerelease.2 (2023-10-09)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [5.2.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.0...@patternfly/react-code-editor@5.2.0-prerelease.1) (2023-10-09)
+
+### Bug Fixes
+
+- **CodeEditor:** hide button and link when read-only ([#9668](https://github.com/patternfly/patternfly-react/issues/9668)) ([0346933](https://github.com/patternfly/patternfly-react/commit/0346933cb61a3b11a2591acbde4760f58abffbcb))
+
+# [5.2.0-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1...@patternfly/react-code-editor@5.2.0-prerelease.0) (2023-10-05)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [5.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.23...@patternfly/react-code-editor@5.1.1) (2023-10-05)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## 5.1.1-prerelease.23 (2023-10-03)
+
+### Bug Fixes
+
+- whitespace changes to trigger prereleases ([#9702](https://github.com/patternfly/patternfly-react/issues/9702)) ([741c248](https://github.com/patternfly/patternfly-react/commit/741c24825b503e116c77cf304aa3e4e3a9ff7841))
+
+## [5.1.1-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.21...@patternfly/react-code-editor@5.1.1-prerelease.22) (2023-09-25)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [5.1.1-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.20...@patternfly/react-code-editor@5.1.1-prerelease.21) (2023-09-25)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [5.1.1-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.19...@patternfly/react-code-editor@5.1.1-prerelease.20) (2023-09-22)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [5.1.1-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.18...@patternfly/react-code-editor@5.1.1-prerelease.19) (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [5.1.1-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.17...@patternfly/react-code-editor@5.1.1-prerelease.18) (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [5.1.1-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.16...@patternfly/react-code-editor@5.1.1-prerelease.17) (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [5.1.1-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.15...@patternfly/react-code-editor@5.1.1-prerelease.16) (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [5.1.1-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.14...@patternfly/react-code-editor@5.1.1-prerelease.15) (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [5.1.1-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.13...@patternfly/react-code-editor@5.1.1-prerelease.14) (2023-09-20)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
 ## [5.1.1-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.1.1-prerelease.12...@patternfly/react-code-editor@5.1.1-prerelease.13) (2023-09-19)
 
 ### Bug Fixes

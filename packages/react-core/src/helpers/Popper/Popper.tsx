@@ -5,6 +5,7 @@ import { Placement, Modifier } from './thirdparty/popper-core';
 import { clearTimeouts } from '../util';
 import { css } from '@patternfly/react-styles';
 import '@patternfly/react-styles/css/components/Popper/Popper.css';
+import { getLanguageDirection } from '../util';
 
 const hash = {
   left: 'right',
@@ -44,21 +45,6 @@ const getOppositePlacement = (placement: Placement): any =>
 
 export const getOpacityTransition = (animationDuration: number) =>
   `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`;
-
-export const getLanguageDirection = (targetElement: HTMLElement) => {
-  const defaultDirection = 'ltr';
-  let direction = defaultDirection;
-
-  if (targetElement) {
-    direction = getComputedStyle(targetElement).getPropertyValue('direction');
-  }
-
-  if (['ltr', 'rtl'].includes(direction)) {
-    return direction as 'ltr' | 'rtl';
-  }
-
-  return defaultDirection;
-};
 
 export interface PopperProps {
   /**
@@ -186,6 +172,8 @@ export interface PopperProps {
    * Lifecycle function invoked when the popper has fully transitioned in.
    */
   onShown?: () => void;
+  /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
+  preventOverflow?: boolean;
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
@@ -224,7 +212,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   onHide = () => {},
   onMount = () => {},
   onShow = () => {},
-  onShown = () => {}
+  onShown = () => {},
+  preventOverflow = false
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [refElement, setRefElement] = React.useState<HTMLElement>(null);
@@ -289,7 +278,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         setRefElement(triggerRef());
       }
     }
-  }, [triggerRef]);
+  }, [triggerRef, trigger]);
   React.useEffect(() => {
     // When the popperRef is defined or the popper visibility changes, ensure the popper element is up to date
     if (popperRef) {
@@ -436,7 +425,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       },
       {
         name: 'preventOverflow',
-        enabled: false
+        enabled: preventOverflow
       },
       {
         // adds attribute [data-popper-reference-hidden] to the popper element which can be used to hide it using CSS
@@ -458,7 +447,9 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
    * TODO: Investigate into 3rd party libraries for a less limited/specific solution
    */
   React.useEffect(() => {
-    const currentPopperContent = popper?.props?.children[1]?.props?.children;
+    // currentPopperContent = {tooltip children} || {dropdown children}
+    const currentPopperContent =
+      popper?.props?.children[1]?.props?.children || popper?.props?.children?.props?.children;
     setPopperContent(currentPopperContent);
 
     if (currentPopperContent && popperContent && currentPopperContent !== popperContent) {

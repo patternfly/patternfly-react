@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 
 import { TextInputGroupUtilities } from '../TextInputGroupUtilities';
 
@@ -18,12 +18,12 @@ describe('TextInputGroupUtilities', () => {
     expect(screen.getByRole('button', { name: 'Test' })).toBeVisible();
   });
 
-  it('renders with class pf-v5-c-text-input-group__utilities', () => {
+  it(`renders with class ${styles.textInputGroupUtilities}`, () => {
     render(<TextInputGroupUtilities>Test</TextInputGroupUtilities>);
 
     const utilities = screen.getByText('Test');
 
-    expect(utilities).toHaveClass('pf-v5-c-text-input-group__utilities');
+    expect(utilities).toHaveClass(styles.textInputGroupUtilities);
   });
 
   it('matches the snapshot', () => {

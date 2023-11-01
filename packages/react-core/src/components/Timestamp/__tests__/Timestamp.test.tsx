@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, screen, getDefaultNormalizer } from '@testing-library/react';
 import { Timestamp, TimestampFormat, TimestampTooltipVariant } from '../Timestamp';
+import styles from '@patternfly/react-styles/css/components/Timestamp/timestamp';
 
 jest.mock('../../Tooltip', () => ({
   Tooltip: ({ content, children, ...props }) => (
@@ -147,16 +148,16 @@ test('Renders with 12 hour time for a 24 hour locale when is12Hour is passed', (
   expect(screen.getByText('01/02/2022, 1:00:00 pm')).toBeInTheDocument();
 });
 
-test('Renders with pf-v5-c-timestamp by default', () => {
+test(`Renders with ${styles.timestamp} by default`, () => {
   render(<Timestamp date={new Date(2022, 0, 1)} />);
 
-  expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass('pf-v5-c-timestamp');
+  expect(screen.getByText('1/1/2022, 12:00:00 AM').parentElement).toHaveClass(styles.timestamp);
 });
 
-test('Renders with pf-v5-c-timestamp__text by default', () => {
+test(`Renders with ${styles.timestamp}__text by default`, () => {
   render(<Timestamp date={new Date(2022, 0, 1)} />);
 
-  expect(screen.getByText('1/1/2022, 12:00:00 AM')).toHaveClass('pf-v5-c-timestamp__text');
+  expect(screen.getByText('1/1/2022, 12:00:00 AM')).toHaveClass(`${styles.timestamp}__text`);
 });
 
 test('Renders with custom class names', () => {

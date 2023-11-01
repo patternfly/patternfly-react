@@ -38,6 +38,8 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** @beta Adds a wrapper around the nav link text. Improves the layout when the text is a react node. */
+  hasNavLinkWrapper?: boolean;
 }
 
 export const NavItem: React.FunctionComponent<NavItemProps> = ({
@@ -56,6 +58,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   ouiaId,
   ouiaSafe,
   zIndex = 9999,
+  hasNavLinkWrapper,
   ...props
 }: NavItemProps) => {
   const { flyoutRef, setFlyoutRef, navRef } = React.useContext(NavContext);
@@ -188,7 +191,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
         {...(hasFlyout && { ...ariaFlyoutProps })}
         {...props}
       >
-        {children}
+        {hasNavLinkWrapper ? <span className={css(`${styles.nav}__link-text`)}>{children}</span> : children}
         {flyout && flyoutButton}
       </Component>
     );

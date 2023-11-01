@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v5-c-clipboard-copy__actions-item"
+  >
+    Action text
+  </span>
+</DocumentFragment>
+`;

@@ -627,7 +627,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   // Callback to compliment legendAllowWrap
   const computedLegend = getLegend();
   useEffect(() => {
-    if (typeof legendAllowWrap === 'function') {
+    if (computedLegend?.props && typeof legendAllowWrap === 'function') {
       const extraHeight = getLegendItemsExtraHeight({
         legendData: computedLegend.props.data,
         legendOrientation: computedLegend.props.orientation,

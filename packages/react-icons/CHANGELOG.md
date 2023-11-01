@@ -13,6 +13,46 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @patternfly/react-icons
 
+# [5.2.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@5.2.0-prerelease.4...@patternfly/react-icons@5.2.0-prerelease.5) (2023-10-27)
+
+### Bug Fixes
+
+- **react-icons:** rename custom icons ([#9759](https://github.com/patternfly/patternfly-react/issues/9759)) ([a7a36e9](https://github.com/patternfly/patternfly-react/commit/a7a36e9df0898d9e5ef663d322bbed24a761027d))
+
+# 5.2.0-prerelease.4 (2023-10-26)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+# 5.2.0-prerelease.3 (2023-10-10)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+# [5.2.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@5.2.0-prerelease.1...@patternfly/react-icons@5.2.0-prerelease.2) (2023-10-10)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+# 5.2.0-prerelease.1 (2023-10-09)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+# [5.2.0-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@5.1.1...@patternfly/react-icons@5.2.0-prerelease.0) (2023-10-05)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+## [5.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@5.1.1-prerelease.8...@patternfly/react-icons@5.1.1) (2023-10-05)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+## 5.1.1-prerelease.8 (2023-10-03)
+
+### Bug Fixes
+
+- whitespace changes to trigger prereleases ([#9702](https://github.com/patternfly/patternfly-react/issues/9702)) ([741c248](https://github.com/patternfly/patternfly-react/commit/741c24825b503e116c77cf304aa3e4e3a9ff7841))
+
+## 5.1.1-prerelease.7 (2023-09-21)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
 ## 5.1.1-prerelease.6 (2023-09-18)
 
 **Note:** Version bump only for package @patternfly/react-icons

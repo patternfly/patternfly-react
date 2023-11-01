@@ -2,9 +2,12 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerColorVariant, DrawerContext } from './Drawer';
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods, getLanguageDirection } from '../../helpers/util';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { FocusTrap } from '../../helpers/FocusTrap/FocusTrap';
+import cssPanelMdFlexBasis from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis';
+import cssPanelMdFlexBasisMin from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis_min';
+import cssPanelMdFlexBasisMax from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis_max';
 
 export interface DrawerPanelFocusTrapObject {
   /** Enables a focus trap on the drawer panel content. This will also automatically
@@ -21,7 +24,7 @@ export interface DrawerPanelFocusTrapObject {
   'aria-labelledby'?: string;
 }
 
-export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onResize'> {
   /** Additional classes added to the drawer. */
   className?: string;
   /** ID of the drawer panel */
@@ -108,7 +111,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const calcValueNow = () => {
     let splitterPos;
     let drawerSize;
-    const isRTL = window.getComputedStyle(panel.current).getPropertyValue('direction') === 'rtl';
+    const isRTL = getLanguageDirection(panel.current) === 'rtl';
 
     if (isInline && (position === 'end' || position === 'right')) {
       if (isRTL) {
@@ -195,7 +198,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   };
 
   const handleControlMove = (e: MouseEvent | TouchEvent, controlPosition: number) => {
-    const isRTL = window.getComputedStyle(panel.current).getPropertyValue('direction') === 'rtl';
+    const isRTL = getLanguageDirection(panel.current) === 'rtl';
 
     e.stopPropagation();
     if (!isResizing) {
@@ -227,7 +230,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     if (position === 'bottom') {
       panel.current.style.overflowAnchor = 'none';
     }
-    panel.current.style.setProperty('--pf-v5-c-drawer__panel--md--FlexBasis', newSize + 'px');
+    panel.current.style.setProperty(cssPanelMdFlexBasis.name, newSize + 'px');
     currWidth = newSize;
     setSeparatorValue(calcValueNow());
   };
@@ -261,7 +264,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const callbackMouseUp = React.useCallback(handleMouseup, []);
 
   const handleKeys = (e: React.KeyboardEvent) => {
-    const isRTL = window.getComputedStyle(panel.current).getPropertyValue('direction') === 'rtl';
+    const isRTL = getLanguageDirection(panel.current) === 'rtl';
 
     const key = e.key;
     if (
@@ -306,19 +309,19 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     if (position === 'bottom') {
       panel.current.style.overflowAnchor = 'none';
     }
-    panel.current.style.setProperty('--pf-v5-c-drawer__panel--md--FlexBasis', newSize + 'px');
+    panel.current.style.setProperty(cssPanelMdFlexBasis.name, newSize + 'px');
     currWidth = newSize;
     setSeparatorValue(calcValueNow());
   };
   const boundaryCssVars: any = {};
   if (defaultSize) {
-    boundaryCssVars['--pf-v5-c-drawer__panel--md--FlexBasis'] = defaultSize;
+    boundaryCssVars[cssPanelMdFlexBasis.name] = defaultSize;
   }
   if (minSize) {
-    boundaryCssVars['--pf-v5-c-drawer__panel--md--FlexBasis--min'] = minSize;
+    boundaryCssVars[cssPanelMdFlexBasisMin.name] = minSize;
   }
   if (maxSize) {
-    boundaryCssVars['--pf-v5-c-drawer__panel--md--FlexBasis--max'] = maxSize;
+    boundaryCssVars[cssPanelMdFlexBasisMax.name] = maxSize;
   }
 
   const isValidFocusTrap = focusTrap?.enabled && !isStatic;

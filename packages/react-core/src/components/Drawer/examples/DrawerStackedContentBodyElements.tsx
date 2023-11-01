@@ -8,7 +8,8 @@ import {
   DrawerActions,
   DrawerCloseButton,
   DrawerPanelBody,
-  Button
+  Button,
+  Title
 } from '@patternfly/react-core';
 
 export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
@@ -30,9 +31,9 @@ export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
   const panelContent = (
     <DrawerPanelContent>
       <DrawerHead>
-        <h3 className="pf-v5-c-title pf-m-2xl" tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
+        <Title headingLevel="h3" size="2xl" tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
           drawer title{' '}
-        </h3>
+        </Title>
         <DrawerActions>
           <DrawerCloseButton onClick={onCloseClick} />
         </DrawerActions>

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v5-c-clipboard-copy"
+    data-ouia-component-id="snapshot"
+    data-ouia-component-type="PF5/ClipboardCopy"
+    data-ouia-safe="true"
+    id="snapshot"
+  >
+    <div
+      class="pf-v5-c-clipboard-copy__group"
+    >
+      <span
+        class="pf-v5-c-form-control"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="Copyable input"
+          data-ouia-component-id="OUIA-Generated-TextInputBase-26"
+          data-ouia-component-type="PF5/TextInput"
+          data-ouia-safe="true"
+          id="text-input-34"
+          type="text"
+          value="Copyable text"
+        />
+      </span>
+      <div
+        data-testid="clipboardCopyButton-mock"
+      >
+        <p>
+          exitDelay: 1500
+        </p>
+        <p>
+          entryDelay: 300
+        </p>
+        <p>
+          maxWidth: 150px
+        </p>
+        <p>
+          position: top
+        </p>
+        <p>
+          button-ariaLabel: Copy to clipboard
+        </p>
+        <div>
+          children: Copy to clipboard
+        </div>
+        <button>
+          Test CCB clicker
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

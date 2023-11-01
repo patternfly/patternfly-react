@@ -29,6 +29,9 @@ import {
   IRowData,
   ISeparator
 } from '../TableTypes';
+import { css } from '@patternfly/react-styles';
+import tableStyles from '@patternfly/react-styles/css/components/Table/table';
+import dropdownStyles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 
 const testCellActions = async ({
   actions,
@@ -65,7 +68,7 @@ const testCellActions = async ({
     actions = actionResolver(rowData, extraData);
   }
 
-  expect(returnedData).toMatchObject({ className: 'pf-v5-c-table__action' });
+  expect(returnedData).toMatchObject({ className: tableStyles.tableAction });
 
   if (!actions || actions.length === 0) {
     expect(returnedData.children).toBeUndefined();
@@ -73,7 +76,9 @@ const testCellActions = async ({
     const { container } = render(returnedData.children as React.ReactElement<any>);
     await user.click(screen.getAllByRole('button')[0]);
     await waitFor(() =>
-      expect(container.querySelectorAll('.pf-v5-c-dropdown__menu li button')).toHaveLength(expectDisabled ? 0 : 1)
+      expect(container.querySelectorAll(`.${dropdownStyles.dropdownMenu} li button`)).toHaveLength(
+        expectDisabled ? 0 : 1
+      )
     );
   }
 };
@@ -86,7 +91,7 @@ describe('Transformer functions', () => {
         extraParams: { onSelect }
       };
       const returnedData = selectable('', { column, rowData: {} } as IExtra);
-      expect(returnedData).toMatchObject({ className: 'pf-v5-c-table__check' });
+      expect(returnedData).toMatchObject({ className: tableStyles.tableCheck });
 
       const user = userEvent.setup();
 
@@ -103,7 +108,7 @@ describe('Transformer functions', () => {
         extraParams: { onSelect }
       };
       const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: true } } as IExtra);
-      expect(returnedData).toMatchObject({ className: 'pf-v5-c-table__check' });
+      expect(returnedData).toMatchObject({ className: tableStyles.tableCheck });
       const user = userEvent.setup();
 
       render(returnedData.children as React.ReactElement<any>);
@@ -128,7 +133,7 @@ describe('Transformer functions', () => {
       const onSort = jest.fn();
       const column = { extraParams: { sortBy: {}, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 });
-      expect(returnedData).toMatchObject({ className: 'pf-v5-c-table__sort' });
+      expect(returnedData).toMatchObject({ className: tableStyles.tableSort });
 
       const user = userEvent.setup();
 
@@ -154,7 +159,7 @@ describe('Transformer functions', () => {
       const onSort = jest.fn();
       const column = { extraParams: { sortBy: { index: 0, direction: 'desc' }, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 } as IExtra);
-      expect(returnedData).toMatchObject({ className: 'pf-v5-c-table__sort pf-m-selected' });
+      expect(returnedData).toMatchObject({ className: css(tableStyles.tableSort, tableStyles.modifiers.selected) });
 
       const user = userEvent.setup();
 
@@ -226,7 +231,7 @@ describe('Transformer functions', () => {
       extraParams: { onCollapse }
     };
     const returnedData = collapsible('', { rowIndex: 0, rowData, column });
-    expect(returnedData).toMatchObject({ className: 'pf-v5-c-table__toggle' });
+    expect(returnedData).toMatchObject({ className: tableStyles.tableToggle });
 
     const user = userEvent.setup();
 
@@ -332,7 +337,7 @@ describe('Transformer functions', () => {
       extraParams: { onRowEdit }
     };
     const returned = editable('test', { rowIndex: 0, column });
-    expect(returned).toMatchObject({ className: 'pf-v5-c-table__inline-edit-action' });
+    expect(returned).toMatchObject({ className: tableStyles.tableInlineEditAction });
   });
 
   describe('visibility classNames', () => {

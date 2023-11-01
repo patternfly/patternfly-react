@@ -9,6 +9,7 @@ import {
   FormHelperText
 } from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import styles from '@patternfly/react-styles/css/components/Form/form';
 
 export const FormGroupLabelInfo: React.FunctionComponent = () => {
   const [name, setName] = React.useState('');
@@ -55,7 +56,7 @@ export const FormGroupLabelInfo: React.FunctionComponent = () => {
               aria-label="More info for name field"
               onClick={(e) => e.preventDefault()}
               aria-describedby="form-group-label-info"
-              className="pf-v5-c-form__group-label-help"
+              className={styles.formGroupLabelHelp}
             >
               <HelpIcon />
             </button>

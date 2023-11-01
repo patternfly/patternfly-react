@@ -19,8 +19,9 @@ import {
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 export const CompoundExpandable = () => {
   // In real usage, this data would come from some external source like an API via props.
@@ -248,7 +249,7 @@ export const CompoundExpandable = () => {
                           <NestedItemsTable />
                         ) : (
                           <ExpandableRowContent>
-                            <div className="pf-v5-u-m-md">
+                            <div className={spacing.mMd}>
                               Expanded content for {repo.name}: {expandedCellKey} goes here!
                             </div>
                           </ExpandableRowContent>

@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 
 import { AccordionContent } from '../AccordionContent';
 import { AccordionContext } from '../AccordionContext';
+import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 
 jest.mock('../AccordionExpandableContentBody', () => ({
   AccordionExpandableContentBody: ({ children }) => <div aria-label="Expanded content body mock">{children}</div>
@@ -85,14 +86,14 @@ test('Renders with inherited element props spread to the component', () => {
   expect(screen.getByRole('heading')).toHaveAccessibleName('Label');
 });
 
-test('Renders with class name pf-v5-c-accordion__expandable-content', () => {
+test(`Renders with class name ${styles.accordionExpandableContent}`, () => {
   render(
     <AccordionContext.Provider value={{ ContentContainer: 'h3' }}>
       <AccordionContent>Test</AccordionContent>
     </AccordionContext.Provider>
   );
 
-  expect(screen.getByRole('heading')).toHaveClass('pf-v5-c-accordion__expandable-content');
+  expect(screen.getByRole('heading')).toHaveClass(styles.accordionExpandableContent);
 });
 
 test('Renders with custom class names provided via prop', () => {

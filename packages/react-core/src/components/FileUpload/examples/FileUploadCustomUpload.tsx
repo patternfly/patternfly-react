@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileUploadField, Checkbox } from '@patternfly/react-core';
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 export const CustomPreviewFileUpload: React.FunctionComponent = () => {
   const properties = [
@@ -110,7 +111,7 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
         textAreaPlaceholder={hasPlaceholderText ? 'File preview' : ''}
       >
         {children && (
-          <div className="pf-v5-u-m-md">(A custom preview of the uploaded file can be passed as children)</div>
+          <div className={spacing.mMd}>(A custom preview of the uploaded file can be passed as children)</div>
         )}
       </FileUploadField>
     </div>

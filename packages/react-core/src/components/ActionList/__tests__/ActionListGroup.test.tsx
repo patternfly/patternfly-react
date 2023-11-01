@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ActionListGroup } from '../ActionListGroup';
+import styles from '@patternfly/react-styles/css/components/ActionList/action-list';
 
 test('Renders without children', () => {
   render(<ActionListGroup data-testid="action-list-group" />);
@@ -13,10 +14,10 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class pf-v5-c-action-list__group', () => {
+test(`Renders with class ${styles.actionListGroup}`, () => {
   render(<ActionListGroup>Test</ActionListGroup>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-action-list__group');
+  expect(screen.getByText('Test')).toHaveClass(styles.actionListGroup);
 });
 
 test('Renders with custom class names provided via prop', () => {

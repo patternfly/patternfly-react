@@ -1,48 +1,92 @@
 import React from 'react';
-
-import { render, screen } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
+import { ClipboardCopyToggle } from '../ClipboardCopyToggle';
+import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import userEvent from '@testing-library/user-event';
 
-import { ClipboardCopyToggle, ClipboardCopyToggleProps } from '../ClipboardCopyToggle';
-
-const props: ClipboardCopyToggleProps = {
-  id: 'my-id',
-  textId: 'my-text-id',
-  contentId: 'my-content-id',
-  isExpanded: false,
-  className: 'myclassName',
-  onClick: jest.fn()
+const onClickMock = jest.fn();
+const requiredProps = {
+  id: 'main-id',
+  textId: 'text-id',
+  contentId: 'content-id',
+  onClick: onClickMock
 };
 
-describe('ClipboardCopyToggle', () => {
-  test('toggle button render', () => {
-    const desc = 'toggle content';
-    const { asFragment } = render(<ClipboardCopyToggle {...props} aria-label={desc} />);
+// Must be kept as first test to avoid Button's ouiaId updating in snapshots
+test('Matches snapshot', () => {
+  const { asFragment } = render(<ClipboardCopyToggle {...requiredProps} />);
 
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(asFragment()).toMatchSnapshot();
+});
 
-  test('toggle button onClick', async () => {
-    const onclick = jest.fn();
-    const user = userEvent.setup();
+test('Renders without children', () => {
+  render(
+    <div data-testid="container">
+      <ClipboardCopyToggle {...requiredProps} />
+    </div>
+  );
 
-    render(<ClipboardCopyToggle {...props} onClick={onclick} />);
+  expect(screen.getByTestId('container').firstChild).toBeVisible();
+});
 
-    await user.click(screen.getByRole('button'));
-    expect(onclick).toHaveBeenCalled();
-  });
+test('Renders with id prop', () => {
+  render(<ClipboardCopyToggle {...requiredProps} />);
 
-  test('has aria-expanded set to true when isExpanded is true', () => {
-    render(<ClipboardCopyToggle {...props} isExpanded />);
+  expect(screen.getByRole('button')).toHaveAttribute('id', requiredProps.id);
+});
 
-    const toggleButton = screen.getByRole('button');
-    expect(toggleButton).toHaveAttribute('aria-expanded', 'true');
-  });
+test('Renders with aria-labelledby concatenated from id and textId props', () => {
+  render(
+    <>
+      <ClipboardCopyToggle aria-label="Toggle content" {...requiredProps} />
+      <span id={requiredProps.textId}>Test content</span>
+    </>
+  );
 
-  test('has aria-expanded set to false when isExpanded is false', () => {
-    render(<ClipboardCopyToggle {...props} />);
+  expect(screen.getByRole('button')).toHaveAccessibleName('Toggle content Test content');
+});
 
-    const toggleButton = screen.getByRole('button');
-    expect(toggleButton).toHaveAttribute('aria-expanded', 'false');
-  });
+test('Renders with aria-controls with passed in contentId prop', () => {
+  render(<ClipboardCopyToggle {...requiredProps} />);
+
+  expect(screen.getByRole('button')).toHaveAttribute('aria-controls', requiredProps.contentId);
+});
+
+test('Renders with aria-expanded of false by default', () => {
+  render(<ClipboardCopyToggle {...requiredProps} />);
+
+  expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'false');
+});
+
+test('Renders with aria-expanded based on isExpanded prop', () => {
+  render(<ClipboardCopyToggle isExpanded={true} {...requiredProps} />);
+
+  expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'true');
+});
+
+test('Calls onClick when clipboard toggle is clicked', async () => {
+  const user = userEvent.setup();
+  render(<ClipboardCopyToggle {...requiredProps} />);
+
+  await user.click(screen.getByRole('button'));
+  expect(onClickMock).toHaveBeenCalledTimes(1);
+});
+
+test('Does not call onClick when clipboard toggle is not clicked', async () => {
+  const user = userEvent.setup();
+  render(
+    <>
+      <ClipboardCopyToggle {...requiredProps} />
+      <button>Test clicker</button>
+    </>
+  );
+
+  await user.click(screen.getByRole('button', { name: 'Test clicker' }));
+  expect(onClickMock).not.toHaveBeenCalled();
+});
+
+test('Spreads additional props to container', () => {
+  render(<ClipboardCopyToggle data-prop="test" {...requiredProps} />);
+
+  expect(screen.getByRole('button')).toHaveAttribute('data-prop', 'test');
 });

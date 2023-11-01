@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 
 import { TextInputGroupMain } from '../TextInputGroupMain';
 import { TextInputGroupContext } from '../TextInputGroup';
@@ -20,12 +21,12 @@ describe('TextInputGroupMain', () => {
     expect(screen.getByText('Test')).toBeVisible();
   });
 
-  it('renders with class pf-v5-c-text-input-group__main', () => {
+  it(`renders with class ${styles.textInputGroupMain}`, () => {
     render(<TextInputGroupMain>Test</TextInputGroupMain>);
 
     const inputGroupMain = screen.getByText('Test');
 
-    expect(inputGroupMain).toHaveClass('pf-v5-c-text-input-group__main');
+    expect(inputGroupMain).toHaveClass(styles.textInputGroupMain);
   });
 
   it('does not render with class pf-m-icon when an icon prop is not passed', () => {
@@ -52,20 +53,20 @@ describe('TextInputGroupMain', () => {
     expect(inputGroupMain).toHaveClass('custom-class');
   });
 
-  it('renders with class pf-v5-c-text-input-group__text on the inputs parent', () => {
+  it(`renders with class ${styles.textInputGroupText} on the inputs parent`, () => {
     render(<TextInputGroupMain>Test</TextInputGroupMain>);
 
     const inputGroupText = screen.getByRole('textbox').parentNode;
 
-    expect(inputGroupText).toHaveClass('pf-v5-c-text-input-group__text');
+    expect(inputGroupText).toHaveClass(styles.textInputGroupText);
   });
 
-  it('renders the input with class pf-v5-c-text-input-group__text-input', () => {
+  it(`renders the input with class ${styles.textInputGroupTextInput}`, () => {
     render(<TextInputGroupMain>Test</TextInputGroupMain>);
 
     const input = screen.getByRole('textbox');
 
-    expect(input).toHaveClass('pf-v5-c-text-input-group__text-input');
+    expect(input).toHaveClass(styles.textInputGroupTextInput);
   });
 
   it('does not render the icon when it is not passed', () => {
@@ -180,7 +181,7 @@ describe('TextInputGroupMain', () => {
     expect(hintInput).toBeInTheDocument();
   });
 
-  it('renders the hint input with classes pf-v5-c-text-input-group__text-input and pf-m-hint', () => {
+  it(`renders the hint input with classes ${styles.textInputGroupTextInput} and ${styles.modifiers.hint}`, () => {
     // we set the type of the main input to search here so that we can accurately target the hint input
     render(
       <TextInputGroupMain hint="Test" type="search">
@@ -190,8 +191,8 @@ describe('TextInputGroupMain', () => {
 
     const hintInput = screen.getByRole('textbox', { hidden: true });
 
-    expect(hintInput).toHaveClass('pf-m-hint');
-    expect(hintInput).toHaveClass('pf-v5-c-text-input-group__text-input');
+    expect(hintInput).toHaveClass(styles.modifiers.hint);
+    expect(hintInput).toHaveClass(styles.textInputGroupTextInput);
   });
 
   it('renders the hint input as disabled', () => {
