@@ -50,9 +50,9 @@ Additionally, menu components may be connected to each other manually through ou
 
 ```
 
-### With search input filtering
+### With inline search filter
 
-```ts file="./examples/FilterMenuDemo.tsx"
+```ts file="./examples/InlineSearchFilterMenuDemo.tsx"
 
 ```
 

@@ -12,7 +12,7 @@ import {
   MenuContainer
 } from '@patternfly/react-core';
 
-export const FilterMenuDemo: React.FunctionComponent = () => {
+export const InlineSearchFilterMenuDemo: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState(0);
   const [input, setInput] = React.useState('');
   const [isOpen, setIsOpen] = React.useState(false);
