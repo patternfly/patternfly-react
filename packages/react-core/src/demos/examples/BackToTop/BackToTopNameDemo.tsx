@@ -6,7 +6,6 @@ import {
   Gallery,
   GalleryItem,
   PageSection,
-  PageSectionVariants,
   TextContent,
   Text,
   Page,
@@ -24,7 +23,7 @@ export const Name = () => {
   return (
     <DashboardWrapper breadcrumb={null}>
       <Page>
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">

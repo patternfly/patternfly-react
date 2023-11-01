@@ -31,7 +31,6 @@ import {
   NotificationDrawerListItemHeader,
   Page,
   PageSection,
-  PageSectionVariants,
   PageSidebar,
   PageSidebarBody,
   SkipToContent,
@@ -541,7 +540,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
         breadcrumb={PageBreadcrumb}
         mainContainerId={pageId}
       >
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">
@@ -550,7 +549,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
             </Text>
           </TextContent>
         </PageSection>
-        <PageSection variant={PageSectionVariants.light}>Panel section content</PageSection>
+        <PageSection>Panel section content</PageSection>
       </Page>
     </React.Fragment>
   );

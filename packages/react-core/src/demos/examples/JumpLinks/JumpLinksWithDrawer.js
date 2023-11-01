@@ -12,7 +12,6 @@ import {
   JumpLinksItem,
   JumpLinksList,
   PageSection,
-  PageSectionVariants,
   Sidebar,
   SidebarContent,
   SidebarPanel,
@@ -70,7 +69,7 @@ export const JumpLinksWithDrawer = () => {
           <DrawerContentBody>
             <Sidebar>
               <SidebarPanel variant="sticky">
-                <PageSection variant={PageSectionVariants.light}>
+                <PageSection>
                   <JumpLinks
                     isVertical={true}
                     label="Jump to section"
@@ -88,10 +87,10 @@ export const JumpLinksWithDrawer = () => {
                 </PageSection>
               </SidebarPanel>
               <SidebarContent>
-                <PageSection id="drawer-toggle" stickyOnBreakpoint={{ default: 'top' }} variant="light">
+                <PageSection id="drawer-toggle" stickyOnBreakpoint={{ default: 'top' }}>
                   <Button onClick={onToggleClick}>Toggle drawer</Button>
                 </PageSection>
-                <PageSection variant={PageSectionVariants.light}>
+                <PageSection>
                   <TextContent>
                     {headings.map((heading) => (
                       <div key={heading} style={{ maxWidth: '800px', marginBottom: '32px' }}>

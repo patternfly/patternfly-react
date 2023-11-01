@@ -20,7 +20,6 @@ import {
   Gallery,
   GalleryItem,
   PageSection,
-  PageSectionVariants,
   TextContent,
   Text
 } from '@patternfly/react-core';
@@ -47,7 +46,7 @@ class BannerDemo extends React.Component {
               <div className={css(display.displayNone, display.displayBlockOnLg)}>Ned Username</div>
             </Flex>
           </Banner>
-          <PageSection variant={PageSectionVariants.light}>
+          <PageSection>
             <TextContent>
               <Text component="h1">Main title</Text>
               <Text component="p">
@@ -87,7 +86,6 @@ import {
   Gallery,
   GalleryItem,
   PageSection,
-  PageSectionVariants,
   TextContent,
   Text
 } from '@patternfly/react-core';
@@ -122,7 +120,7 @@ class BannerDemo extends React.Component {
           </FlexItem>
           <FlexItem grow={{ default: 'grow' }} style={{ minHeight: 0 }}>
             <DashboardWrapper breadcrumb={null}>
-              <PageSection variant={PageSectionVariants.light}>
+              <PageSection>
                 <TextContent>
                   <Text component="h1">Main title</Text>
                   <Text component="p">

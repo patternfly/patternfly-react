@@ -32,9 +32,6 @@ describe('Page', () => {
     const { asFragment } = render(
       <Page {...props} header={Header} sidebar={Sidebar}>
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 
@@ -52,9 +49,6 @@ describe('Page', () => {
     const { asFragment } = render(
       <Page {...props} header={Header} sidebar={Sidebar}>
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 
@@ -68,9 +62,6 @@ describe('Page', () => {
     const { asFragment } = render(
       <Page {...props} header={Header} sidebar={Sidebar}>
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 
@@ -94,9 +85,6 @@ describe('Page', () => {
     const { asFragment } = render(
       <Page {...props} header={Header} sidebar={Sidebar} breadcrumb={<PageBreadcrumb />}>
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 
@@ -127,9 +115,6 @@ describe('Page', () => {
         breadcrumbProps={{ stickyOnBreakpoint: { sm: 'top', md: 'top', lg: 'top', xl: 'top', '2xl': 'top' } }}
       >
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 
@@ -162,9 +147,6 @@ describe('Page', () => {
         }}
       >
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 
@@ -189,9 +171,6 @@ describe('Page', () => {
           </Breadcrumb>
         </PageBreadcrumb>
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 
@@ -216,9 +195,6 @@ describe('Page', () => {
           </Breadcrumb>
         </PageBreadcrumb>
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 
@@ -245,9 +221,6 @@ describe('Page', () => {
           </Breadcrumb>
         </PageBreadcrumb>
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 
@@ -275,9 +248,6 @@ describe('Page', () => {
           </Nav>
         </PageNavigation>
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 
@@ -317,9 +287,6 @@ describe('Page', () => {
           </PageNavigation>
         </PageGroup>
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 
@@ -373,9 +340,6 @@ describe('Page', () => {
         }}
       >
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 
@@ -411,9 +375,6 @@ describe('Page', () => {
         data-testid="page-test-id"
       >
         <PageSection variant="default">Section with default background</PageSection>
-        <PageSection variant="light">Section with light background</PageSection>
-        <PageSection variant="dark">Section with dark background</PageSection>
-        <PageSection variant="darker">Section with darker background</PageSection>
       </Page>
     );
 

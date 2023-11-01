@@ -27,7 +27,6 @@ import {
   InputGroup,
   InputGroupItem,
   PageSection,
-  PageSectionVariants,
   Progress,
   Stack,
   StackItem,
@@ -421,7 +420,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper mainContainerId="main-content-page-layout-default-nav">
-      <PageSection variant={PageSectionVariants.light}>
+      <PageSection>
         <TextContent>
           <Text component="h1">Main title</Text>
           <Text component="p">
@@ -431,7 +430,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
         </TextContent>
       </PageSection>
       <Divider component="div" />
-      <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
+      <PageSection padding={{ default: 'noPadding' }}>
         <Drawer isExpanded={isDrawerExpanded}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>

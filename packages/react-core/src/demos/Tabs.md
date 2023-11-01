@@ -21,7 +21,6 @@ import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import React from 'react';
 import {
   PageSection,
-  PageSectionVariants,
   PageBreadcrumb,
   Breadcrumb,
   BreadcrumbItem,
@@ -157,7 +156,7 @@ TabsOpenDemo = () => {
   return (
     <DashboardWrapper hasNoBreadcrumb>
       {tabsBreadcrumb}
-      <PageSection isWidthLimited variant={PageSectionVariants.light}>
+      <PageSection isWidthLimited>
         <Flex
           spaceItems={{ default: 'spaceItemsMd' }}
           alignItems={{ default: 'alignItemsFlexStart' }}
@@ -176,7 +175,7 @@ TabsOpenDemo = () => {
           </FlexItem>
         </Flex>
       </PageSection>
-      <PageSection type="tabs" variant={PageSectionVariants.light} isWidthLimited>
+      <PageSection type="tabs" isWidthLimited>
         <Tabs activeKey={activeTabKey} onSelect={handleTabClick} usePageInsets id="open-tabs-example-tabs-list">
           <Tab eventKey={0} title={<TabTitleText>Details</TabTitleText>} tabContentId={`tabContent${0}`} />
           <Tab eventKey={1} title={<TabTitleText>YAML</TabTitleText>} tabContentId={`tabContent${1}`} />
@@ -185,7 +184,7 @@ TabsOpenDemo = () => {
           <Tab eventKey={4} title={<TabTitleText>Terminal</TabTitleText>} tabContentId={`tabContent${4}`} />
         </Tabs>
       </PageSection>
-      <PageSection isWidthLimited variant={PageSectionVariants.light}>
+      <PageSection isWidthLimited>
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <TabContentBody>{tabContent}</TabContentBody>
         </TabContent>
@@ -213,7 +212,6 @@ TabsOpenDemo = () => {
 import React from 'react';
 import {
   PageSection,
-  PageSectionVariants,
   PageBreadcrumb,
   Breadcrumb,
   BreadcrumbItem,
@@ -354,7 +352,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
   return (
     <DashboardWrapper hasNoBreadcrumb>
       {tabsBreadcrumb}
-      <PageSection isWidthLimited variant={PageSectionVariants.light}>
+      <PageSection isWidthLimited>
         <Flex
           spaceItems={{ default: 'spaceItemsMd' }}
           alignItems={{ default: 'alignItemsFlexStart' }}
@@ -373,7 +371,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
           </FlexItem>
         </Flex>
       </PageSection>
-      <PageSection type="tabs" variant={PageSectionVariants.light} isWidthLimited>
+      <PageSection type="tabs" isWidthLimited>
         <Tabs activeKey={activeTabKey} onSelect={handleTabClick} usePageInsets id="open-tabs-example-tabs-list">
           <Tab eventKey={0} title={<TabTitleText>Details</TabTitleText>} tabContentId={`tabContent${0}`} />
           <Tab eventKey={1} title={<TabTitleText>YAML</TabTitleText>} tabContentId={`tabContent${1}`} />
@@ -382,7 +380,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
           <Tab eventKey={4} title={<TabTitleText>Terminal</TabTitleText>} tabContentId={`tabContent${4}`} />
         </Tabs>
       </PageSection>
-      <PageSection isWidthLimited variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
+      <PageSection isWidthLimited padding={{ default: 'noPadding' }}>
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <TabContentBody>
             <Tabs

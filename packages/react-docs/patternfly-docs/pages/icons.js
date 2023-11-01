@@ -35,7 +35,7 @@ const iconsPage = () => {
   };
 
   return (
-    <PageSection variant="light">
+    <PageSection>
       <Text>
         These are all of the icons available for use in PatternFly React. For recommended icon usage, see our{' '}
         <a href="https://www.patternfly.org/v4/guidelines/icons">icon usage guidelines</a>.

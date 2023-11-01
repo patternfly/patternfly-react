@@ -25,7 +25,6 @@ import {
   OverflowMenuDropdownItem,
   OverflowMenuItem,
   PageSection,
-  PageSectionVariants,
   Pagination,
   TextContent,
   Text,
@@ -472,7 +471,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Projects</Text>
             <Text component="p">This is a demo that showcases PatternFly cards.</Text>
@@ -554,12 +553,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
             ))}
           </Gallery>
         </PageSection>
-        <PageSection
-          isFilled={false}
-          stickyOnBreakpoint={{ default: 'bottom' }}
-          padding={{ default: 'noPadding' }}
-          variant="light"
-        >
+        <PageSection isFilled={false} stickyOnBreakpoint={{ default: 'bottom' }} padding={{ default: 'noPadding' }}>
           <Pagination
             itemCount={totalItemCount}
             page={page}

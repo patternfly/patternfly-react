@@ -14,7 +14,6 @@ describe('Page Managed Sidebar Closed Demo Test', () => {
       });
       cy.get('div[class="pf-v5-c-masthead__brand"]').invoke('text').should('eq', "Logo that's a div");
       cy.get('.pf-v5-c-masthead__content').invoke('text').should('contain', 'header-tools | Avatar');
-      cy.get('.pf-v5-c-page__main-section.pf-m-light').should('exist');
     });
   });
 });

@@ -8,7 +8,6 @@ import {
   Card,
   CardBody,
   CardTitle,
-  PageSectionVariants,
   Modal,
   ModalVariant,
   Tab,
@@ -82,7 +81,7 @@ export const ModalTabs: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <DashboardWrapper mainContainerId="main-content-card-view-default-nav">
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Projects</Text>
             <Text component="p">Click any project card to view Tabs within Modals.</Text>
