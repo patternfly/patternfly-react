@@ -7,6 +7,7 @@ import { Tooltip, TooltipPosition } from '../Tooltip';
 import { css } from '@patternfly/react-styles';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { useIsomorphicLayoutEffect } from '../../helpers';
+import cssTextMaxWidth from '@patternfly/react-tokens/dist/esm/c_label__text_MaxWidth';
 
 export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Content rendered inside the label. */
@@ -230,7 +231,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         className={css(styles.labelText)}
         {...(textMaxWidth && {
           style: {
-            '--pf-v5-c-label__text--MaxWidth': textMaxWidth
+            [cssTextMaxWidth.name]: textMaxWidth
           } as React.CSSProperties
         })}
       >

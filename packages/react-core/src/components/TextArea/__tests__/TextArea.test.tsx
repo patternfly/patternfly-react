@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 
 import { TextArea } from '../TextArea';
 import { ValidatedOptions } from '../../../helpers/constants';
+import formControlStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 
 const props = {
   onChange: jest.fn(),
@@ -69,7 +70,7 @@ test('Text area is not read only by default', () => {
 
 test('Renders text area with default class name only', () => {
   render(<TextArea aria-label="validated textarea" />);
-  expect(screen.getByRole('textbox').parentElement).toHaveClass('pf-v5-c-form-control');
+  expect(screen.getByRole('textbox').parentElement).toHaveClass(formControlStyles.formControl);
 });
 
 test('Renders validated text area with success className', () => {

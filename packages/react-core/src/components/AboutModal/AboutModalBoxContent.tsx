@@ -19,7 +19,7 @@ export const AboutModalBoxContent: React.FunctionComponent<AboutModalBoxContentP
   ...props
 }: AboutModalBoxContentProps) => (
   <div className={css(styles.aboutModalBoxContent)} {...props}>
-    <div className={css('pf-v5-c-about-modal-box__body')}>
+    <div className={css(`${styles.aboutModalBox}__body`)}>
       {hasNoContentContainer ? children : <div className={css(contentStyles.content)}>{children}</div>}
     </div>
     <p className={css(styles.aboutModalBoxStrapline)}>{trademark}</p>

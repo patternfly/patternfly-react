@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { PanelMain } from '../PanelMain';
+import cssPanelMainMaxHeight from '@patternfly/react-tokens/dist/esm/c_panel__main_MaxHeight';
+import styles from '@patternfly/react-styles/css/components/Panel/panel';
 
 test('Renders without children', () => {
   render(
@@ -16,14 +18,14 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with the class pf-v5-c-panel__main', () => {
+test(`Renders with the class ${styles.panelMain}`, () => {
   render(<PanelMain>Test</PanelMain>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__main');
+  expect(screen.getByText('Test')).toHaveClass(styles.panelMain);
 });
 
-test('Renders with only the class pf-v5-c-panel__main by default', () => {
+test(`Renders with only the class ${styles.panelMain} by default`, () => {
   render(<PanelMain>Test</PanelMain>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-panel__main', { exact: true });
+  expect(screen.getByText('Test')).toHaveClass(styles.panelMain, { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {
@@ -34,7 +36,7 @@ test('Renders with custom class name when className prop is passed', () => {
 test('Renders with custom max height name when maxHeight prop is passed', () => {
   render(<PanelMain maxHeight="100px">Test</PanelMain>);
   const styles = getComputedStyle(screen.getByText('Test'));
-  expect(styles.getPropertyValue('--pf-v5-c-panel__main--MaxHeight')).toBe('100px');
+  expect(styles.getPropertyValue(cssPanelMainMaxHeight.name)).toBe('100px');
 });
 
 test('Renders with the inherited element props spread to the component', () => {

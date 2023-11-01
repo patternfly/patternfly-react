@@ -2,6 +2,7 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { AlertIcon } from '../AlertIcon';
+import styles from '@patternfly/react-styles/css/components/Alert/alert';
 
 jest.mock('@patternfly/react-icons/dist/esm/icons/check-circle-icon', () => () => 'Check circle icon mock');
 jest.mock('@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon', () => () => 'Exclamation circle icon mock');
@@ -65,10 +66,10 @@ test('Renders with the passed custom icon when one is passed rather than the ico
   expect(screen.getByText('Custom icon')).toBeVisible();
 });
 
-test('Renders the icon inside class pf-v5-c-alert__icon', () => {
+test(`Renders the icon inside class ${styles.alertIcon}`, () => {
   render(<AlertIcon variant="custom" />);
 
-  expect(screen.getByText('Bell icon mock')).toHaveClass('pf-v5-c-alert__icon');
+  expect(screen.getByText('Bell icon mock')).toHaveClass(styles.alertIcon);
 });
 
 test('Renders with inherited element props spread to the component', () => {

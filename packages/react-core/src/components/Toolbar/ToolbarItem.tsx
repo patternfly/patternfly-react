@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
+import cssWidth from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
 
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
 import { Divider } from '../Divider';
@@ -101,7 +102,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   if (widths) {
     Object.entries(widths || {}).map(
       ([breakpoint, value]) =>
-        (widthStyles[`--pf-v5-c-toolbar__item--Width${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`] = value)
+        (widthStyles[`${cssWidth.name}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`] = value)
     );
   }
 

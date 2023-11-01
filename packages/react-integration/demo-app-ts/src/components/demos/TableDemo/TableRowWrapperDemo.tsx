@@ -1,16 +1,18 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import { RowWrapperProps, ICell, IRow } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
+/* eslint-disable camelcase */
+import global_primary_color_100 from '@patternfly/react-tokens/dist/esm/global_primary_color_100';
 
 interface ITableRowWrapperDemoState {
   rows: IRow[];
   columns: (ICell | string)[];
 }
 
-export class TableRowWrapperDemo extends React.Component<TableProps, ITableRowWrapperDemoState> {
+export class TableRowWrapperDemo extends Component<TableProps, ITableRowWrapperDemoState> {
   static displayName = 'TableRowWrapperDemo';
   customRowWrapper: (props: RowWrapperProps) => JSX.Element;
   constructor(props: TableProps) {
@@ -33,7 +35,7 @@ export class TableRowWrapperDemo extends React.Component<TableProps, ITableRowWr
       const isExpanded = rest.row ? rest.row.isExpanded : false;
       const isOddRow = (rowProps.rowIndex + 1) % 2;
       const customStyle = {
-        borderLeft: '3px solid var(--pf-v5-global--primary-color--100)'
+        borderLeft: `3px solid ${global_primary_color_100.var}`
       };
       return (
         <tr

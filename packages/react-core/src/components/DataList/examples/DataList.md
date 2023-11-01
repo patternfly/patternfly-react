@@ -23,6 +23,10 @@ import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-ico
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { css } from '@patternfly/react-styles';
+import global_Color_100 from '@patternfly/react-tokens/dist/esm/global_Color_100';
+import global_BackgroundColor_200 from '@patternfly/react-tokens/dist/esm/global_BackgroundColor_200';
+import global_BorderColor_100 from '@patternfly/react-tokens/dist/esm/global_BorderColor_100';
+import global_BorderWidth_sm from '@patternfly/react-tokens/dist/esm/global_BorderWidth_sm';
 
 ## Examples
 

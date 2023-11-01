@@ -14,6 +14,7 @@ import {
   Wizard,
   WizardStep
 } from '@patternfly/react-core';
+import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 const StepContentWithDrawer: React.FunctionComponent = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
@@ -39,7 +40,7 @@ const StepContentWithDrawer: React.FunctionComponent = () => {
         }
       >
         <Flex
-          className="pf-v5-c-wizard__main-body"
+          className={styles.wizardMainBody}
           direction={{ default: 'column' }}
           spaceItems={{ default: 'spaceItemsLg' }}
           height="100%"

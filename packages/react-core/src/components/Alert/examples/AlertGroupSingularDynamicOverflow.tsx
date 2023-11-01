@@ -8,6 +8,7 @@ import {
   InputGroup,
   InputGroupItem
 } from '@patternfly/react-core';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 export const AlertGroupSingularDynamicOverflow: React.FunctionComponent = () => {
   const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
@@ -34,7 +35,7 @@ export const AlertGroupSingularDynamicOverflow: React.FunctionComponent = () => 
     setOverflowMessage(getOverflowMessage(newAlerts.length));
   };
 
-  const btnClasses = ['pf-v5-c-button', 'pf-m-secondary'].join(' ');
+  const btnClasses = [buttonStyles.button, buttonStyles.modifiers.secondary].join(' ');
 
   const getUniqueId = () => new Date().getTime();
 
