@@ -15,6 +15,9 @@ module.exports = {
     { section: 'patterns' },
     { section: 'layouts' }
   ],
-  topNavItems: [{ text: 'Icons', path: '/icons' }],
+  topNavItems: [
+    { text: 'Icons', path: '/icons' },
+    { text: 'Tokens', path: '/tokens' }
+  ],
   port: 8002
 };

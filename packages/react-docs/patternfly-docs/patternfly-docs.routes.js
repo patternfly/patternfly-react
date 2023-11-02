@@ -12,5 +12,9 @@ module.exports = {
   '/404': {
     SyncComponent: isClient && require('@patternfly/documentation-framework/pages/404').default,
     title: '404 Error'
+  },
+  '/tokens': {
+    Component: () => import(/* webpackChunkName: "tokens/index" */ './pages/tokens'),
+    title: 'Tokens'
   }
 };
