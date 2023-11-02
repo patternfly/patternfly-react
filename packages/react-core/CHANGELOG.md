@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.19...@patternfly/react-core@5.2.0-prerelease.20) (2023-11-02)
+
+### Bug Fixes
+
+- **RTL:** added right-to-left page demo ([#9694](https://github.com/patternfly/patternfly-react/issues/9694)) ([d7308ae](https://github.com/patternfly/patternfly-react/commit/d7308aebec1e3ff22df548b5613f058c9ba35262))
+
 # [5.2.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.18...@patternfly/react-core@5.2.0-prerelease.19) (2023-10-30)
 
 **Note:** Version bump only for package @patternfly/react-core
