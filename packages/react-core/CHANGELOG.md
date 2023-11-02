@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.21...@patternfly/react-core@5.2.0-prerelease.22) (2023-11-02)
+
+### Bug Fixes
+
+- **TreeView:** define button type ([#9770](https://github.com/patternfly/patternfly-react/issues/9770)) ([a772c6d](https://github.com/patternfly/patternfly-react/commit/a772c6d67bfa4154979ee14a34ec954406503109))
+
 # [5.2.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.20...@patternfly/react-core@5.2.0-prerelease.21) (2023-11-02)
 
 ### Bug Fixes
