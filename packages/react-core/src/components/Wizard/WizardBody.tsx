@@ -12,7 +12,7 @@ import { getResizeObserver } from '../../helpers/resizeObserver';
 
 export interface WizardBodyProps {
   /** Anything that can be rendered in the Wizard body */
-  children: React.ReactNode | React.ReactNode[];
+  children: React.ReactNode;
   /** Flag to remove the default body padding */
   hasNoPadding?: boolean;
   /** Adds an accessible name to the wrapper element when the content overflows and renders
@@ -67,7 +67,7 @@ export const WizardBody = ({
     return () => {
       observer();
     };
-  }, []);
+  }, [previousWidth]);
 
   return (
     <WrapperComponent

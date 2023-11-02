@@ -3,7 +3,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Wizard, WizardFooterProps, WizardStep, WizardNavProps } from '../';
+import { Wizard, WizardFooterProps, WizardStep, WizardNavProps, WizardStepChangeScope } from '../';
 
 test('renders step when child is of type WizardStep', () => {
   render(
@@ -100,7 +100,6 @@ test('renders default nav with custom props', () => {
 });
 
 test('renders nav aria label', () => {
-
   render(
     <Wizard navAriaLabel="custom nav aria-label">
       <WizardStep id="test-step" name="Test step" />
@@ -174,28 +173,33 @@ test(`can customize the wizard's height and width`, () => {
   expect(wizard).toHaveStyle('width: 500px');
 });
 
-test('calls onNavByIndex on nav item click', async () => {
+test('calls onStepChange on nav item click', async () => {
   const user = userEvent.setup();
-  const onNavByIndex = jest.fn();
+  const onStepChange = jest.fn();
 
   render(
-    <Wizard onStepChange={onNavByIndex}>
+    <Wizard onStepChange={onStepChange}>
       <WizardStep id="step-1" name="Test step 1" />
       <WizardStep id="step-2" name="Test step 2" />
     </Wizard>
   );
 
   await user.click(screen.getByRole('button', { name: 'Test step 2' }));
-  expect(onNavByIndex).toHaveBeenCalled();
+  expect(onStepChange).toHaveBeenCalledWith(
+    null,
+    expect.objectContaining({ id: 'step-2' }),
+    expect.objectContaining({ id: 'step-1' }),
+    WizardStepChangeScope.Nav
+  );
 });
 
-test('calls onNext and not onSave on next button click when not on the last step', async () => {
+test('calls onStepChange and not onSave on next button click when not on the last step', async () => {
   const user = userEvent.setup();
-  const onNext = jest.fn();
+  const onStepChange = jest.fn();
   const onSave = jest.fn();
 
   render(
-    <Wizard onStepChange={onNext} onSave={onSave}>
+    <Wizard onStepChange={onStepChange} onSave={onSave}>
       <WizardStep id="step-1" name="Test step 1" />
       <WizardStep id="step-2" name="Test step 2" />
     </Wizard>
@@ -203,16 +207,21 @@ test('calls onNext and not onSave on next button click when not on the last step
 
   await user.click(screen.getByRole('button', { name: 'Next' }));
 
-  expect(onNext).toHaveBeenCalled();
+  expect(onStepChange).toHaveBeenCalledWith(
+    null,
+    expect.objectContaining({ id: 'step-2' }),
+    expect.objectContaining({ id: 'step-1' }),
+    WizardStepChangeScope.Next
+  );
   expect(onSave).not.toHaveBeenCalled();
 });
 
-test('calls onBack on back button click', async () => {
+test('calls onStepChange on back button click', async () => {
   const user = userEvent.setup();
-  const onBack = jest.fn();
+  const onStepChange = jest.fn();
 
   render(
-    <Wizard onStepChange={onBack}>
+    <Wizard onStepChange={onStepChange}>
       <WizardStep id="step-1" name="Test step 1" />
       <WizardStep id="step-2" name="Test step 2" />
     </Wizard>
@@ -221,7 +230,12 @@ test('calls onBack on back button click', async () => {
   await user.click(screen.getByRole('button', { name: 'Test step 2' }));
   await user.click(screen.getByRole('button', { name: 'Back' }));
 
-  expect(onBack).toHaveBeenCalled();
+  expect(onStepChange).toHaveBeenCalledWith(
+    null,
+    expect.objectContaining({ id: 'step-1' }),
+    expect.objectContaining({ id: 'step-2' }),
+    WizardStepChangeScope.Back
+  );
 });
 
 test('calls onSave and not onClose on next button click when on the last step', async () => {
@@ -445,17 +459,153 @@ test('incrementally shows/hides steps based on the activeStep when isProgressive
   ).toBeNull();
 });
 
-test('parent step can be non-collapsible by setting isCollapsible to false', () => {
+test('parent step can be expandable by setting isExpandable to true', () => {
   render(
     <Wizard>
       <WizardStep
         id="step-1"
         name="Test step 1"
-        isCollapsible={false}
+        isExpandable
         steps={[<WizardStep id="sub-step-1" name="Sub step 1" />]}
       />
     </Wizard>
   );
 
-  expect(screen.queryByLabelText('step icon', { exact: false })).toBeNull();
+  expect(screen.getByLabelText('step icon', { exact: false })).toBeVisible();
+});
+
+test('child steps are disabled when parent is disabled', () => {
+  render(
+    <Wizard>
+      <WizardStep
+        id="step-1"
+        name="Test step 1"
+        isDisabled
+        steps={[<WizardStep id="sub-step-1" name="Sub step 1" />]}
+      />
+    </Wizard>
+  );
+
+  expect(
+    screen.getByRole('button', {
+      name: 'Test step 1'
+    })
+  ).toBeDisabled();
+  expect(
+    screen.getByRole('button', {
+      name: 'Sub step 1'
+    })
+  ).toBeDisabled();
+});
+
+test('child steps are hidden when parent is hidden', () => {
+  render(
+    <Wizard>
+      <WizardStep id="step-1" name="Test step 1" isHidden steps={[<WizardStep id="sub-step-1" name="Sub step 1" />]} />
+    </Wizard>
+  );
+
+  expect(
+    screen.queryByRole('button', {
+      name: 'Test step 1'
+    })
+  ).toBeNull();
+  expect(
+    screen.queryByRole('button', {
+      name: 'Sub step 1'
+    })
+  ).toBeNull();
+});
+
+test('onStepChange skips over disabled or hidden steps and substeps', async () => {
+  const user = userEvent.setup();
+  const onStepChange = jest.fn();
+
+  render(
+    <Wizard onStepChange={onStepChange}>
+      <WizardStep id="step-1" name="Test step 1" />
+      <WizardStep id="step-2" name="Test step 2" steps={[<WizardStep id="step2-sub1" name="Test Substep 1" />]} />
+      <WizardStep id="step-3" name="Test step 3" isDisabled />
+      <WizardStep
+        id="step-4"
+        name="Test step 4"
+        isDisabled
+        steps={[<WizardStep id="step4-sub1" name="Test Substep 1" />]}
+      />
+      <WizardStep
+        id="step-5"
+        name="Test step 4"
+        steps={[
+          <WizardStep id="step5-sub1" name="Test Substep 1" isDisabled />,
+          <WizardStep id="step5-sub2" name="Test Substep 2" />
+        ]}
+      />
+      <WizardStep id="step-6" name="Test step 6" isHidden />
+      <WizardStep
+        id="step-7"
+        name="Test step 7"
+        isHidden
+        steps={[<WizardStep id="step7-sub1" name="Test Substep 1" />]}
+      />
+      <WizardStep
+        id="step-8"
+        name="Test step 8"
+        steps={[
+          <WizardStep id="step8-sub1" name="Test Substep 1" isHidden />,
+          <WizardStep id="step8-sub2" name="Test Substep 2" />
+        ]}
+      />
+    </Wizard>
+  );
+
+  const nextButton = screen.getByRole('button', { name: 'Next' });
+  const backButton = screen.getByRole('button', { name: 'Back' });
+
+  await user.click(nextButton);
+  expect(onStepChange).toHaveBeenCalledWith(
+    null,
+    expect.objectContaining({ id: 'step2-sub1' }),
+    expect.objectContaining({ id: 'step-1' }),
+    WizardStepChangeScope.Next
+  );
+
+  await user.click(nextButton);
+  expect(onStepChange).toHaveBeenCalledWith(
+    null,
+    expect.objectContaining({ id: 'step5-sub2' }),
+    expect.objectContaining({ id: 'step2-sub1' }),
+    WizardStepChangeScope.Next
+  );
+
+  await user.click(nextButton);
+  expect(onStepChange).toHaveBeenCalledWith(
+    null,
+    expect.objectContaining({ id: 'step8-sub2' }),
+    expect.objectContaining({ id: 'step5-sub2' }),
+    WizardStepChangeScope.Next
+  );
+
+  await user.click(backButton);
+  expect(onStepChange).toHaveBeenCalledWith(
+    null,
+    expect.objectContaining({ id: 'step5-sub2' }),
+    expect.objectContaining({ id: 'step8-sub2' }),
+    WizardStepChangeScope.Back
+  );
+
+  await user.click(backButton);
+  expect(onStepChange).toHaveBeenCalledWith(
+    null,
+    expect.objectContaining({ id: 'step2-sub1' }),
+    expect.objectContaining({ id: 'step5-sub2' }),
+    WizardStepChangeScope.Back
+  );
+
+  await user.click(backButton);
+  expect(onStepChange).toHaveBeenCalledWith(
+    null,
+    expect.objectContaining({ id: 'step-1' }),
+    expect.objectContaining({ id: 'step2-sub1' }),
+    WizardStepChangeScope.Back
+  );
 });
