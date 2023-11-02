@@ -3,7 +3,7 @@ id: Text input
 section: components
 subsection: forms
 cssPrefix: pf-v5-c-form-control
-propComponents: ['TextInput']
+propComponents: ['TextInput', 'TextInputExpandedObj']
 ---
 
 import CalendarIcon from '@patternfly/react-icons/dist/esm/icons/calendar-icon';
