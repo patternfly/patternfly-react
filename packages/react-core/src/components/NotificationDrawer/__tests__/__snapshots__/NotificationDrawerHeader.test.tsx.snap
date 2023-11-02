@@ -15,6 +15,7 @@ exports[`NotificationDrawerHeader drawer header with count applied 1`] = `
       Notifications
     </h1>
     <span
+      aria-live="polite"
       class="pf-v5-c-notification-drawer__header-status"
     >
       2 unread
@@ -38,6 +39,7 @@ exports[`NotificationDrawerHeader drawer header with custom unread text applied 
       Notifications
     </h1>
     <span
+      aria-live="polite"
       class="pf-v5-c-notification-drawer__header-status"
     >
       2 unread alerts
