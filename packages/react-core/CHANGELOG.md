@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.20...@patternfly/react-core@5.2.0-prerelease.21) (2023-11-02)
+
+### Bug Fixes
+
+- **Notification Drawer:** Added screen reader text for notification drawer item read state ([#9569](https://github.com/patternfly/patternfly-react/issues/9569)) ([bc19f91](https://github.com/patternfly/patternfly-react/commit/bc19f9148e872fb62d8cd2bf644a771d9c5650d7))
+- **Text input:** Added aria-expanded ([#9705](https://github.com/patternfly/patternfly-react/issues/9705)) ([7f6a62c](https://github.com/patternfly/patternfly-react/commit/7f6a62c1a3f860a8759c63cde17da6b763dd7b48))
+- **Wizard:** onStepChange - skip isDisabled & isHidden ([#9748](https://github.com/patternfly/patternfly-react/issues/9748)) ([4d4d623](https://github.com/patternfly/patternfly-react/commit/4d4d623d294bbc7821c6dc9156980f2b8c609c96))
+
+### Features
+
+- **Wizard:** ability to add props to WizardFooter buttons ([#9709](https://github.com/patternfly/patternfly-react/issues/9709)) ([9f21cee](https://github.com/patternfly/patternfly-react/commit/9f21cee5438c8ec4d0e2c5c938f9fffda013757b))
+
 # [5.2.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.19...@patternfly/react-core@5.2.0-prerelease.20) (2023-11-02)
 
 ### Bug Fixes
