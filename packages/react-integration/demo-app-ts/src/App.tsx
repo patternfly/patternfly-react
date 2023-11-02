@@ -42,8 +42,8 @@ class App extends React.Component<{}, AppState> {
   };
 
   private onNavToggle = (_event: React.MouseEvent) => {
-    this.setState({ isNavOpen: !this.state.isNavOpen })
-  }
+    this.setState({ isNavOpen: !this.state.isNavOpen });
+  };
 
   private onThemeSelect = (isDarkTheme: boolean) => {
     this.setState({ isDarkTheme });
@@ -65,9 +65,7 @@ class App extends React.Component<{}, AppState> {
           <Route
             path={`/${demo.id}-nav-link`}
             render={() => (
-              <PageSection style={{ zIndex: 2 }} id={`/${demo.id}-page-section`}>
-                {React.createElement(demo.componentType)}
-              </PageSection>
+              <PageSection id={`/${demo.id}-page-section`}>{React.createElement(demo.componentType)}</PageSection>
             )}
             key={demo.id}
           />
@@ -76,7 +74,7 @@ class App extends React.Component<{}, AppState> {
           <Route
             path="/"
             render={() => (
-              <PageSection style={{ zIndex: 2 }} id={`/${defaultDemo.id}-page-section`}>
+              <PageSection id={`/${defaultDemo.id}-page-section`}>
                 {React.createElement(defaultDemo.componentType)}
               </PageSection>
             )}
