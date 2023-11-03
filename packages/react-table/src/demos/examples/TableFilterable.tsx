@@ -62,8 +62,8 @@ export const TableFilterable: React.FunctionComponent = () => {
     setIsCategoryDropdownOpen(!isCategoryDropdownOpen);
   };
 
-  const onCategorySelect = (event) => {
-    setCurrentCategory(event.target.innerText);
+  const onCategorySelect = (event: React.MouseEvent<Element, MouseEvent>, value: string) => {
+    setCurrentCategory(value);
     setIsCategoryDropdownOpen(false);
   };
 
