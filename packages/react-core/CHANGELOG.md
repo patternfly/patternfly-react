@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.23...@patternfly/react-core@5.2.0-prerelease.24) (2023-11-03)
+
+### Bug Fixes
+
+- **ClipboardCopy:** kepp caret position ([#9772](https://github.com/patternfly/patternfly-react/issues/9772)) ([981361e](https://github.com/patternfly/patternfly-react/commit/981361e0de354bbe06c4a799b6e7c92228dab51f))
+
+### Features
+
+- **Datalist:** implement full page Basic demo to match HTML [#9048](https://github.com/patternfly/patternfly-react/issues/9048) ([#9087](https://github.com/patternfly/patternfly-react/issues/9087)) ([ab18059](https://github.com/patternfly/patternfly-react/commit/ab1805993ed5e2b5ed3d2f1be4131e035152b468))
+
 # [5.2.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.22...@patternfly/react-core@5.2.0-prerelease.23) (2023-11-03)
 
 **Note:** Version bump only for package @patternfly/react-core
