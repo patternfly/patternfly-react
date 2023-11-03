@@ -3,6 +3,8 @@ import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer } from '@patternf
 import { Card, PageSection } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 
+type Direction = 'asc' | 'desc' | undefined;
+
 interface Fact {
   name: string;
   state: string;
@@ -64,8 +66,9 @@ export const TableStickyFirstColumn = () => {
     header15: 'Header 15',
     header16: 'Header 16'
   };
+
   const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
-  const [activeSortDirection, setActiveSortDirection] = React.useState();
+  const [activeSortDirection, setActiveSortDirection] = React.useState<Direction>('asc');
   const getSortableRowValues = (fact: Fact) => {
     const {
       name,
@@ -105,7 +108,7 @@ export const TableStickyFirstColumn = () => {
     ];
   };
   let sortedFacts = facts;
-  if (activeSortIndex !== null) {
+  if (activeSortIndex > -1) {
     sortedFacts = facts.sort((a, b) => {
       const aValue = getSortableRowValues(a)[activeSortIndex];
       const bValue = getSortableRowValues(b)[activeSortIndex];
@@ -124,7 +127,7 @@ export const TableStickyFirstColumn = () => {
       index: activeSortIndex,
       direction: activeSortDirection
     },
-    onSort: (_event, index, direction) => {
+    onSort: (_event: React.MouseEvent, index: number, direction: Direction) => {
       setActiveSortIndex(index);
       setActiveSortDirection(direction);
     },

@@ -75,12 +75,12 @@ export const TableFilterable: React.FunctionComponent = () => {
     setIsFilterDropdownOpen(!isFilterDropdownOpen);
   };
 
-  const onInputChange = (newValue) => {
+  const onInputChange = (newValue: string) => {
     setInputValue(newValue);
   };
 
-  const onStatusSelect = (event, selection) => {
-    const checked = event.target.checked;
+  const onStatusSelect = (event: React.MouseEvent<Element, MouseEvent>, selection: string) => {
+    const checked = (event.target as HTMLInputElement).checked;
     setFilters({
       ...filters,
       status: checked ? [...filters.status, selection] : filters.status.filter((value) => value !== selection)
@@ -88,7 +88,7 @@ export const TableFilterable: React.FunctionComponent = () => {
     setIsFilterDropdownOpen(false);
   };
 
-  const onNameInput = (event) => {
+  const onNameInput = (event: React.KeyboardEvent) => {
     if (event.key && event.key !== 'Enter') {
       return;
     }
@@ -97,7 +97,7 @@ export const TableFilterable: React.FunctionComponent = () => {
     setFilters({ ...filters, name: prevFilters.includes(inputValue) ? prevFilters : [...prevFilters, inputValue] });
   };
 
-  const onLocationSelect = (event, selection) => {
+  const onLocationSelect = (event: React.MouseEvent<Element, MouseEvent>, selection: string) => {
     setFilters({ ...filters, location: [selection] });
 
     setIsFilterDropdownOpen(false);

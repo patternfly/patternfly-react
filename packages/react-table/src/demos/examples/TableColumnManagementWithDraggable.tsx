@@ -323,7 +323,7 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
   const [check5, setCheck5] = React.useState(true);
   const canSelectAll = true;
 
-  const matchCheckboxNameToColumn = (name) => {
+  const matchCheckboxNameToColumn = (name: string) => {
     switch (name) {
       case 'check1':
         return 'Repositories';
@@ -335,10 +335,12 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
         return 'Workspaces';
       case 'check5':
         return 'Last commit';
+      default:
+        return '';
     }
   };
 
-  const filterData = (checked, name) => {
+  const filterData = (checked: boolean, name: string) => {
     if (checked) {
       const updatedFilters = filters.filter((item) => item !== name);
       const updatedFilteredColumns = defaultColumns.filter((column) => !updatedFilters.includes(column));
@@ -356,11 +358,13 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
     setFilters([]);
     setFilteredColumns(defaultColumns);
   };
-  const handleChange = (event, checked) => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+  const handleChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
+    const target = event.currentTarget;
+    const name = target.name;
+
+    const value = target.type === 'checkbox' ? checked : !!target.value;
     filterData(checked, matchCheckboxNameToColumn(target.name));
-    switch (target.name) {
+    switch (name) {
       case 'check1':
         setCheck1(value);
         break;
@@ -382,7 +386,6 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
     setIsModalOpen(!isModalOpen);
   };
   const onSave = () => {
-    // const orderedColumns: string[] = itemOrder.map((item) => matchDataListNameToColumn(item));
     // concat empty string at the end for actions column
     const filteredOrderedColumns: string[] = columns
       .filter((col) => filteredColumns.length === 0 || filteredColumns.indexOf(col as string) > -1)
@@ -421,7 +424,7 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
     setCheck5(true);
   };
 
-  const onSelect = (event, isSelected, rowId) => {
+  const onSelect = (event: React.FormEvent<HTMLInputElement>, isSelected: boolean, rowId: number) => {
     let rows;
     if (rowId === -1) {
       rows = rows.map((oneRow) => {

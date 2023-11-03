@@ -91,11 +91,11 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
     setSortedRows(sortedData.slice((page - 1) * perPage, page * perPage - 1));
   }, [sortedData, page, perPage]);
 
-  const handleSetPage = (_evt: any, newPage: number) => {
+  const handleSetPage = (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPage: number) => {
     setPage(newPage);
   };
 
-  const handlePerPageSelect = (_evt: any, newPerPage: number) => {
+  const handlePerPageSelect = (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPerPage: number) => {
     setPerPage(newPerPage);
   };
 
@@ -141,7 +141,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
             isOpen={isSortDropdownOpen}
             selected={[activeSortDirection, activeSortIndex]}
             onOpenChange={(isOpen: boolean) => setIsSortDropdownOpen(isOpen)}
-            onSelect={(event, value) => {
+            onSelect={(event: React.MouseEvent<Element, MouseEvent>, value: string | number) => {
               if (value === 'asc' || value === 'desc') {
                 onSort(event, activeSortIndex, value);
               } else {

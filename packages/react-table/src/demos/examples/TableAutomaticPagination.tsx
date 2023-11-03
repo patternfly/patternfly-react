@@ -29,12 +29,24 @@ export const TableAutomaticPagination: React.FunctionComponent = () => {
   const [page, setPage] = React.useState(1);
   const [rows, setRows] = React.useState(defaultRows.slice(0, defaultPerPage));
 
-  const handleSetPage = (_evt, newPage, _perPage, startIdx, endIdx) => {
+  const handleSetPage = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPage: number,
+    _perPage: number,
+    startIdx: number,
+    endIdx: number
+  ) => {
     setPage(newPage);
     setRows(defaultRows.slice(startIdx, endIdx));
   };
 
-  const handlePerPageSelect = (_evt, newPerPage, newPage, startIdx, endIdx) => {
+  const handlePerPageSelect = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPerPage: number,
+    newPage: number,
+    startIdx: number,
+    endIdx: number
+  ) => {
     setPerPage(newPerPage);
     setPage(newPage);
     setRows(defaultRows.slice(startIdx, endIdx));

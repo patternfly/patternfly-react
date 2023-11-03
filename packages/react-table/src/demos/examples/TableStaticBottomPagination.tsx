@@ -26,11 +26,23 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(10);
   const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
-  const handleSetPage = (_evt, newPage, _perPage, startIdx, endIdx) => {
+  const handleSetPage = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPage: number,
+    _perPage: number,
+    startIdx: number,
+    endIdx: number
+  ) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));
     setPage(newPage);
   };
-  const handlePerPageSelect = (_evt, newPerPage, newPage, startIdx, endIdx) => {
+  const handlePerPageSelect = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPerPage: number,
+    newPage: number,
+    startIdx: number,
+    endIdx: number
+  ) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));
     setPage(newPage);
     setPerPage(newPerPage);

@@ -41,10 +41,10 @@ export const TableColumnManagement: React.FunctionComponent = () => {
   const [filteredRows, setFilteredRows] = React.useState<SampleDataRow[]>([]);
   const [managedColumns, setManagedColumns] = React.useState<string[]>(defaultColumns);
   const [managedRows, setManagedRows] = React.useState<SampleDataRow[]>(defaultRows);
-  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [checkedState, setCheckedState] = React.useState<boolean[]>(Array(columns.length).fill(true));
-  const [page, setPage] = React.useState<number>(1);
-  const [perPage, setPerPage] = React.useState<number>(10);
+  const [page, setPage] = React.useState(1);
+  const [perPage, setPerPage] = React.useState(10);
   const [paginatedRows, setPaginatedRows] = React.useState<any[]>(rows);
 
   const matchCheckboxNameToColumn = (name: string): string => {
@@ -108,7 +108,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
     setPerPage(newPerPage);
   };
 
-  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant, isCompact?: boolean) => (
+  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant, isCompact: boolean) => (
     <Pagination
       isCompact={isCompact}
       itemCount={rows.length}
@@ -385,7 +385,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
         return <Label color="green">{labelText}</Label>;
       case 'Stopped':
         return <Label color="orange">{labelText}</Label>;
-      case 'Needs Maintenance':
+      case 'Needs maintenance':
         return <Label color="blue">{labelText}</Label>;
       case 'Down':
         return <Label color="red">{labelText}</Label>;
@@ -425,7 +425,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
               </OverflowMenuGroup>
             </OverflowMenu>
           </ToolbarItem>
-          <ToolbarItem variant="pagination">{renderPagination('top')}</ToolbarItem>
+          <ToolbarItem variant="pagination">{renderPagination('top', false)}</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
     </React.Fragment>
@@ -476,7 +476,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
                 ))}
               </Tbody>
             </Table>
-            {renderPagination('bottom')}
+            {renderPagination('bottom', false)}
             {renderModal()}
           </Card>
         </PageSection>
