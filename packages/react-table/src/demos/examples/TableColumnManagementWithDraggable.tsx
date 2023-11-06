@@ -16,8 +16,6 @@ import {
   OverflowMenu,
   OverflowMenuGroup,
   OverflowMenuItem,
-  Pagination,
-  PaginationVariant,
   Text,
   TextContent,
   TextVariants,
@@ -321,7 +319,6 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
   const [check3, setCheck3] = React.useState(true);
   const [check4, setCheck4] = React.useState(true);
   const [check5, setCheck5] = React.useState(true);
-  const canSelectAll = true;
 
   const matchCheckboxNameToColumn = (name: string) => {
     switch (name) {
@@ -422,19 +419,6 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
     setCheck3(true);
     setCheck4(true);
     setCheck5(true);
-  };
-
-  const onSelect = (event: React.FormEvent<HTMLInputElement>, isSelected: boolean, rowId: number) => {
-    let rows;
-    if (rowId === -1) {
-      rows = rows.map((oneRow) => {
-        oneRow.selected = isSelected;
-        return oneRow;
-      });
-    } else {
-      rows = [...rows];
-      rows[rowId] = { ...rows[rowId], selected: isSelected };
-    }
   };
 
   const renderModal = () => (
@@ -630,18 +614,6 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
             </OverflowMenuGroup>
           </OverflowMenu>
         </ToolbarItem>
-        <ToolbarItem variant="pagination">
-          <Pagination
-            itemCount={37}
-            widgetId="pagination-options-menu"
-            page={1}
-            variant={PaginationVariant.top}
-            isCompact
-            titles={{
-              paginationAriaLabel: `Draggable column management top pagination`
-            }}
-          />
-        </ToolbarItem>
       </ToolbarContent>
     </React.Fragment>
   );
@@ -655,27 +627,14 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
             <Toolbar id="page-layout-table-draggable-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
           </React.Fragment>
         }
-        aria-label="This is a table with checkboxes"
-        onSelect={onSelect}
+        aria-label="Column Management with Draggable Table"
         cells={columns}
         rows={rows}
         actions={actions}
-        canSelectAll={canSelectAll}
       >
         <TableHeader />
         <TableBody />
       </TableDeprecated>
-      <Pagination
-        isCompact
-        id="page-layout-table-draggable-column-management-action-toolbar-bottom"
-        itemCount={37}
-        widgetId="pagination-options-menu-bottom"
-        page={1}
-        variant={PaginationVariant.bottom}
-        titles={{
-          paginationAriaLabel: `Draggable column management bottom pagination`
-        }}
-      />
       {renderModal()}
     </React.Fragment>
   );

@@ -137,14 +137,14 @@ export const TableColumnManagement: React.FunctionComponent = () => {
 
   // Filters columns out of table that are not selected in the column management modal
   const filterData = (checked: boolean, name: string) => {
-    const selectedColumn: string = matchSelectedColumnNameToAttr(name);
+    const selectedColumn = matchSelectedColumnNameToAttr(name);
 
-    const filteredRows: any[] = [];
+    const filteredRows: SampleDataRow[] = [];
     if (checked) {
-      const updatedFilters: string[] = filters.filter((item) => item !== selectedColumn);
+      const updatedFilters = filters.filter((item) => item !== selectedColumn);
 
       // Only show the names of columns that were selected in the modal
-      const filteredColumns: string[] = defaultColumns.filter(
+      const filteredColumns = defaultColumns.filter(
         (column) => !updatedFilters.includes(matchSelectedColumnNameToAttr(column))
       );
 
@@ -155,11 +155,11 @@ export const TableColumnManagement: React.FunctionComponent = () => {
       setFilteredColumns(filteredColumns);
       setFilteredRows(filteredRows);
     } else {
-      const updatedFilters: string[] = [...filters];
+      const updatedFilters = filters;
       updatedFilters.push(selectedColumn);
 
       // Only show the names of columns that were selected in the modal
-      const filteredColumns: string[] = managedColumns.filter(
+      const filteredColumns = managedColumns.filter(
         (column) => !filters.includes(matchSelectedColumnNameToAttr(column))
       );
 
