@@ -83,3 +83,12 @@ test('Renders dynamic helper text', () => {
   expect(screen.getByText('help test text').parentElement).toHaveClass(styles.modifiers.dynamic);
   expect(screen.getByText('help test text').querySelector('span')).toHaveClass('pf-v5-screen-reader');
 });
+
+test('Renders custom screenreader text when isDynamic = true and screenReaderText is passed', () => {
+  render(
+    <HelperTextItem isDynamic screenReaderText="sr test">
+      help test text
+    </HelperTextItem>
+  );
+  expect(screen.getByText('help test text').querySelector('span')).toHaveTextContent('sr test');
+});

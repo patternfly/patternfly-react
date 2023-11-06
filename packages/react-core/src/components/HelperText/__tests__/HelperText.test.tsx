@@ -26,17 +26,22 @@ test('Renders default classes', () => {
 
 test('Renders id when id is passed', () => {
   render(<HelperText id="helper-id">text </HelperText>);
-  expect(screen.getByText('text')).toHaveAttribute('id');
+  expect(screen.getByText('text')).toHaveAttribute('id', 'helper-id');
 });
 
 test('Renders aria-live when isLiveRegion is passed', () => {
   render(<HelperText isLiveRegion>text </HelperText>);
-  expect(screen.getByText('text')).toHaveAttribute('aria-live');
+  expect(screen.getByText('text')).toHaveAttribute('aria-live', 'polite');
+});
+
+test('Does not render aria-live by default', () => {
+  render(<HelperText>text </HelperText>);
+  expect(screen.getByText('text')).not.toHaveAttribute('aria-live');
 });
 
 test('Spreads additional props when passed', () => {
-  render(<HelperText>text </HelperText>);
-  expect(screen.getByText('text')).toBeInTheDocument();
+  render(<HelperText dir="rtl">text </HelperText>);
+  expect(screen.getByText('text')).toHaveAttribute('dir', 'rtl');
 });
 
 test('Renders custom className', () => {
@@ -47,6 +52,11 @@ test('Renders custom className', () => {
 test('Renders with element passed to component prop', () => {
   render(<HelperText component="ul">text</HelperText>);
   expect(screen.getByText('text').tagName).toBe('UL');
+});
+
+test('Renders with div by default when no component prop is passed', () => {
+  render(<HelperText>text</HelperText>);
+  expect(screen.getByText('text').tagName).toBe('DIV');
 });
 
 test('Renders aria-label and role when component = ul', () => {
