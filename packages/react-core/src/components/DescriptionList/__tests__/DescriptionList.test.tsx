@@ -11,7 +11,7 @@ test('Renders to match snapshot', () => {
 
 test(`Renders default class ${styles.descriptionList}`, () => {
   render(<DescriptionList aria-label="list" />);
-  expect(screen.getByLabelText('list')).toHaveClass(styles.descriptionList);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.descriptionList, { exact: true });
 });
 
 test('Renders custom className', () => {
@@ -107,4 +107,36 @@ test(`Renders ${styles.modifiers.displayLg} when displaySize = lg`, () => {
 test(`Renders ${styles.modifiers.display_2xl} when displaySize = 2xl`, () => {
   render(<DescriptionList aria-label="list" displaySize="2xl" />);
   expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.display_2xl);
+});
+
+test(`Renders style when isHorizontal and horizontalTermWidthModifier is set`, () => {
+  render(
+    <DescriptionList
+      aria-label="list"
+      isHorizontal
+      horizontalTermWidthModifier={{
+        default: '12ch',
+        sm: '15ch',
+        md: '20ch',
+        lg: '28ch',
+        xl: '30ch',
+        '2xl': '35ch'
+      }}
+    />
+  );
+  expect(screen.getByLabelText('list')).toHaveStyle({
+    '--pf-v5-c-description-list--m-horizontal__term--width': '12ch',
+    '--pf-v5-c-description-list--m-horizontal__term--width-on-sm': '15ch',
+    '--pf-v5-c-description-list--m-horizontal__term--width-on-md': '20ch',
+    '--pf-v5-c-description-list--m-horizontal__term--width-on-lg': '28ch',
+    '--pf-v5-c-description-list--m-horizontal__term--width-on-xl': '30ch',
+    '--pf-v5-c-description-list--m-horizontal__term--width-on-2xl': '35ch'
+  });
+});
+
+test(`Renders style when termWidth is set`, () => {
+  render(<DescriptionList aria-label="list" isHorizontal termWidth="30px" />);
+  expect(screen.getByLabelText('list')).toHaveStyle({
+    '--pf-v5-c-description-list__term--width': '30px'
+  });
 });

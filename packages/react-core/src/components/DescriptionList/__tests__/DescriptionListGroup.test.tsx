@@ -11,10 +11,15 @@ test('Renders to match snapshot', () => {
 
 test(`Renders default class ${styles.descriptionListGroup}`, () => {
   render(<DescriptionListGroup>test</DescriptionListGroup>);
-  expect(screen.getByText('test')).toHaveClass(styles.descriptionListGroup);
+  expect(screen.getByText('test')).toHaveClass(styles.descriptionListGroup, { exact: true });
 });
 
 test('Renders custom className', () => {
   render(<DescriptionListGroup className="custom">test</DescriptionListGroup>);
   expect(screen.getByText('test')).toHaveClass('custom');
+});
+
+test('Renders spread props', () => {
+  render(<DescriptionListGroup id="id">test</DescriptionListGroup>);
+  expect(screen.getByText('test')).toHaveAttribute('id', 'id');
 });

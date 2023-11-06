@@ -11,12 +11,12 @@ test('Renders to match snapshot', () => {
 
 test(`Renders default class ${styles.descriptionListTerm}`, () => {
   render(<DescriptionListTerm>test</DescriptionListTerm>);
-  expect(screen.getByText('test').parentElement).toHaveClass(styles.descriptionListTerm);
+  expect(screen.getByText('test').parentElement).toHaveClass(styles.descriptionListTerm, { exact: true });
 });
 
 test(`Renders default class ${styles.descriptionListText}`, () => {
   render(<DescriptionListTerm>test</DescriptionListTerm>);
-  expect(screen.getByText('test')).toHaveClass(styles.descriptionListText);
+  expect(screen.getByText('test')).toHaveClass(styles.descriptionListText, { exact: true });
 });
 
 test('Renders custom className', () => {
@@ -27,4 +27,9 @@ test('Renders custom className', () => {
 test('Renders icon', () => {
   render(<DescriptionListTerm icon={<div>icon</div>}>test</DescriptionListTerm>);
   expect(screen.getByText('icon').parentElement).toHaveClass(styles.descriptionListTermIcon);
+});
+
+test('Renders spread props', () => {
+  render(<DescriptionListTerm id="id">test</DescriptionListTerm>);
+  expect(screen.getByText('test').parentElement).toHaveAttribute('id', 'id');
 });
