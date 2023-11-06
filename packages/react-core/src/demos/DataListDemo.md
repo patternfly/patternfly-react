@@ -9,7 +9,19 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { css } from '@patternfly/react-styles';
 
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+
 ## Demos
+
+### Basic
+
+```js file="./DataList/examples/DataListBasic.tsx" isFullscreen
+
+```
 
 ### Expandable control in toolbar
 

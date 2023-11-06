@@ -10,7 +10,7 @@ module.exports = {
   ],
   roots: ['<rootDir>/packages'],
   transform: {
-    '^.+\\.[jt]sx?$': 'babel-jest',
+    '^.+\\.m?[jt]sx?$': 'babel-jest',
     '^.+\\.svg$': 'jest-transform-stub'
   },
   setupFilesAfterEnv: ['<rootDir>/packages/testSetup.ts'],

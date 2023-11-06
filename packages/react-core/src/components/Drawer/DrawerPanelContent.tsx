@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerColorVariant, DrawerContext } from './Drawer';
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods, getLanguageDirection } from '../../helpers/util';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { FocusTrap } from '../../helpers/FocusTrap/FocusTrap';
 import cssPanelMdFlexBasis from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis';
@@ -111,7 +111,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const calcValueNow = () => {
     let splitterPos;
     let drawerSize;
-    const isRTL = window.getComputedStyle(panel.current).getPropertyValue('direction') === 'rtl';
+    const isRTL = getLanguageDirection(panel.current) === 'rtl';
 
     if (isInline && (position === 'end' || position === 'right')) {
       if (isRTL) {
@@ -198,7 +198,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   };
 
   const handleControlMove = (e: MouseEvent | TouchEvent, controlPosition: number) => {
-    const isRTL = window.getComputedStyle(panel.current).getPropertyValue('direction') === 'rtl';
+    const isRTL = getLanguageDirection(panel.current) === 'rtl';
 
     e.stopPropagation();
     if (!isResizing) {
@@ -264,7 +264,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const callbackMouseUp = React.useCallback(handleMouseup, []);
 
   const handleKeys = (e: React.KeyboardEvent) => {
-    const isRTL = window.getComputedStyle(panel.current).getPropertyValue('direction') === 'rtl';
+    const isRTL = getLanguageDirection(panel.current) === 'rtl';
 
     const key = e.key;
     if (

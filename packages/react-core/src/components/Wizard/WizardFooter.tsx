@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 import { Button, ButtonVariant } from '../Button';
-import { isCustomWizardFooter, WizardStepType } from './types';
+import { isCustomWizardFooter, WizardFooterButtonProps, WizardStepType } from './types';
 
 /**
  * Hosts the standard structure of a footer with ties to the active step so that text for buttons can vary from step to step.
@@ -33,6 +33,12 @@ export interface WizardFooterProps {
   isBackHidden?: boolean;
   /** Flag to hide the cancel button */
   isCancelHidden?: boolean;
+  /** Additional props for the Next button. */
+  nextButtonProps?: Omit<WizardFooterButtonProps, 'isDisabled' | 'type'>;
+  /** Additional props for the Back button. */
+  backButtonProps?: Omit<WizardFooterButtonProps, 'isDisabled'>;
+  /** Additional props for the Cancel button. */
+  cancelButtonProps?: WizardFooterButtonProps;
 }
 
 /**
@@ -62,22 +68,31 @@ const InternalWizardFooter = ({
   isCancelHidden,
   nextButtonText = 'Next',
   backButtonText = 'Back',
-  cancelButtonText = 'Cancel'
+  cancelButtonText = 'Cancel',
+  nextButtonProps,
+  backButtonProps,
+  cancelButtonProps
 }: Omit<WizardFooterProps, 'activeStep'>) => (
   <WizardFooterWrapper>
     {!isBackHidden && (
-      <Button variant={ButtonVariant.secondary} onClick={onBack} isDisabled={isBackDisabled}>
+      <Button variant={ButtonVariant.secondary} onClick={onBack} isDisabled={isBackDisabled} {...backButtonProps}>
         {backButtonText}
       </Button>
     )}
 
-    <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={isNextDisabled}>
+    <Button
+      variant={ButtonVariant.primary}
+      type="submit"
+      onClick={onNext}
+      isDisabled={isNextDisabled}
+      {...nextButtonProps}
+    >
       {nextButtonText}
     </Button>
 
     {!isCancelHidden && (
       <div className={styles.wizardFooterCancel}>
-        <Button variant={ButtonVariant.link} onClick={onClose}>
+        <Button variant={ButtonVariant.link} onClick={onClose} {...cancelButtonProps}>
           {cancelButtonText}
         </Button>
       </div>

@@ -10,7 +10,7 @@ test('renders children without additional props', () => {
   expect(container).not.toHaveAttribute('aria-labelledby');
 });
 
-test('has no padding className when hasNoBodyPadding is not specified', () => {
+test('has no padding className when hasNoPadding is not specified', () => {
   render(<WizardBody>content</WizardBody>);
   expect(screen.getByText('content')).not.toHaveClass('pf-m-no-padding');
 });

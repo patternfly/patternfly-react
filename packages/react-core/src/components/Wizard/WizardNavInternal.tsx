@@ -85,7 +85,7 @@ export const WizardNavInternal = ({
                     id={subStep.id}
                     content={subStep.name}
                     isCurrent={activeStep?.id === subStep.id}
-                    isDisabled={isSubStepDisabled}
+                    isDisabled={isSubStepDisabled || isStepDisabled}
                     isVisited={subStep.isVisited}
                     stepIndex={subStep.index}
                     onClick={() => goToStepByIndex(subStep.index)}
@@ -109,7 +109,7 @@ export const WizardNavInternal = ({
                   content={step.name}
                   isExpandable={step.isExpandable}
                   isCurrent={hasActiveChild}
-                  isDisabled={!hasEnabledChildren}
+                  isDisabled={!hasEnabledChildren || isStepDisabled}
                   isVisited={step.isVisited}
                   stepIndex={firstSubStepIndex}
                   onClick={() => goToStepByIndex(firstSubStepIndex)}

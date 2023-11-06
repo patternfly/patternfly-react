@@ -1,5 +1,6 @@
 import React from 'react';
 import { WizardNavProps, WizardNavItemProps, WizardFooterProps } from '.';
+import { ButtonProps } from '../Button';
 
 /** Type used to define 'basic' steps, or in other words, steps that are neither parents or children of parents. */
 export interface WizardBasicStep {
@@ -29,6 +30,9 @@ export enum WizardNavItemStatus {
   Default = 'default',
   Error = 'error'
 }
+
+/** Type for customizing a button (next, back or cancel) in a Wizard footer. It omits some props which either have a default value or are passed directly via WizardFooterProps. */
+export type WizardFooterButtonProps = Omit<ButtonProps, 'children' | 'variant' | 'onClick'>;
 
 /** Type used to define parent steps. */
 export interface WizardParentStep extends WizardBasicStep {

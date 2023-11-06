@@ -5,6 +5,12 @@ exports[`NotificationDrawerListItem renders with PatternFly Core styles 1`] = `
   <li
     class="pf-v5-c-notification-drawer__list-item pf-m-hoverable pf-m-custom"
     tabindex="0"
-  />
+  >
+    <span
+      class="pf-v5-screen-reader"
+    >
+      unread
+    </span>
+  </li>
 </DocumentFragment>
 `;

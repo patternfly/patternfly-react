@@ -3,6 +3,81 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.23...@patternfly/react-core@5.2.0-prerelease.24) (2023-11-03)
+
+### Bug Fixes
+
+- **ClipboardCopy:** kepp caret position ([#9772](https://github.com/patternfly/patternfly-react/issues/9772)) ([981361e](https://github.com/patternfly/patternfly-react/commit/981361e0de354bbe06c4a799b6e7c92228dab51f))
+
+### Features
+
+- **Datalist:** implement full page Basic demo to match HTML [#9048](https://github.com/patternfly/patternfly-react/issues/9048) ([#9087](https://github.com/patternfly/patternfly-react/issues/9087)) ([ab18059](https://github.com/patternfly/patternfly-react/commit/ab1805993ed5e2b5ed3d2f1be4131e035152b468))
+
+# [5.2.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.22...@patternfly/react-core@5.2.0-prerelease.23) (2023-11-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.2.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.21...@patternfly/react-core@5.2.0-prerelease.22) (2023-11-02)
+
+### Bug Fixes
+
+- **TreeView:** define button type ([#9770](https://github.com/patternfly/patternfly-react/issues/9770)) ([a772c6d](https://github.com/patternfly/patternfly-react/commit/a772c6d67bfa4154979ee14a34ec954406503109))
+
+# [5.2.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.20...@patternfly/react-core@5.2.0-prerelease.21) (2023-11-02)
+
+### Bug Fixes
+
+- **Notification Drawer:** Added screen reader text for notification drawer item read state ([#9569](https://github.com/patternfly/patternfly-react/issues/9569)) ([bc19f91](https://github.com/patternfly/patternfly-react/commit/bc19f9148e872fb62d8cd2bf644a771d9c5650d7))
+- **Text input:** Added aria-expanded ([#9705](https://github.com/patternfly/patternfly-react/issues/9705)) ([7f6a62c](https://github.com/patternfly/patternfly-react/commit/7f6a62c1a3f860a8759c63cde17da6b763dd7b48))
+- **Wizard:** onStepChange - skip isDisabled & isHidden ([#9748](https://github.com/patternfly/patternfly-react/issues/9748)) ([4d4d623](https://github.com/patternfly/patternfly-react/commit/4d4d623d294bbc7821c6dc9156980f2b8c609c96))
+
+### Features
+
+- **Wizard:** ability to add props to WizardFooter buttons ([#9709](https://github.com/patternfly/patternfly-react/issues/9709)) ([9f21cee](https://github.com/patternfly/patternfly-react/commit/9f21cee5438c8ec4d0e2c5c938f9fffda013757b))
+
+# [5.2.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.19...@patternfly/react-core@5.2.0-prerelease.20) (2023-11-02)
+
+### Bug Fixes
+
+- **RTL:** added right-to-left page demo ([#9694](https://github.com/patternfly/patternfly-react/issues/9694)) ([d7308ae](https://github.com/patternfly/patternfly-react/commit/d7308aebec1e3ff22df548b5613f058c9ba35262))
+
+# [5.2.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.18...@patternfly/react-core@5.2.0-prerelease.19) (2023-10-30)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.2.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.17...@patternfly/react-core@5.2.0-prerelease.18) (2023-10-27)
+
+### Bug Fixes
+
+- **ExpandableSection:** truncate variant shows toggle button if content length changes ([#9758](https://github.com/patternfly/patternfly-react/issues/9758)) ([e7b5818](https://github.com/patternfly/patternfly-react/commit/e7b581803265fef52d0d57b06eb64cbb342ffcb2))
+
+# [5.2.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.16...@patternfly/react-core@5.2.0-prerelease.17) (2023-10-27)
+
+### Bug Fixes
+
+- **Menu:** allow caret to move in input under Menu on left/right arrow press ([#9751](https://github.com/patternfly/patternfly-react/issues/9751)) ([9ac5ff9](https://github.com/patternfly/patternfly-react/commit/9ac5ff917e62c0c3d0dfd065b01f77b274ef9546))
+- **popper:** improve flip behavior in RTL ([#9640](https://github.com/patternfly/patternfly-react/issues/9640)) ([22bd847](https://github.com/patternfly/patternfly-react/commit/22bd847eb7b7a87704479839ea883ad211cd80bf))
+
+# [5.2.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.15...@patternfly/react-core@5.2.0-prerelease.16) (2023-10-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.2.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.14...@patternfly/react-core@5.2.0-prerelease.15) (2023-10-26)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.2.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.13...@patternfly/react-core@5.2.0-prerelease.14) (2023-10-23)
+
+### Features
+
+- **Nav:** Updated to add wrapper for nav link text ([#9740](https://github.com/patternfly/patternfly-react/issues/9740)) ([32655ae](https://github.com/patternfly/patternfly-react/commit/32655aec8635e6704c0f93ab5ef2ea16ddddacd0))
+
+# [5.2.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.12...@patternfly/react-core@5.2.0-prerelease.13) (2023-10-20)
+
+### Bug Fixes
+
+- **InputGroup:** don't add aria-describedby automatically ([#9670](https://github.com/patternfly/patternfly-react/issues/9670)) ([a0e4655](https://github.com/patternfly/patternfly-react/commit/a0e465553641e86e08408387dec172160c67b2f8))
+
 # [5.2.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.11...@patternfly/react-core@5.2.0-prerelease.12) (2023-10-18)
 
 ### Bug Fixes
