@@ -3,7 +3,10 @@
 exports[`Renders to match snapshot 1`] = `
 <DocumentFragment>
   <div
+    aria-label="Actions"
+    aria-labelledby="ex-action"
     class="pf-v5-c-data-list__item-action"
+    id="ex-action"
   >
     test
   </div>

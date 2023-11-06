@@ -15,7 +15,7 @@ test('Renders to match snapshot', () => {
 
 test(`Renders with default class ${styles.dataListItem}`, () => {
   render(<DataListItem aria-labelledby="item-1">test</DataListItem>);
-  expect(screen.getByRole('listitem')).toHaveClass(styles.dataListItem);
+  expect(screen.getByRole('listitem')).toHaveClass(styles.dataListItem, { exact: true });
 });
 
 test('Renders with custom class name', () => {
@@ -25,6 +25,15 @@ test('Renders with custom class name', () => {
     </DataListItem>
   );
   expect(screen.getByRole('listitem')).toHaveClass('data-list-item-custom');
+});
+
+test('Renders with spread props', () => {
+  render(
+    <DataListItem dir="rtl" aria-labelledby="item-1">
+      test
+    </DataListItem>
+  );
+  expect(screen.getByRole('listitem')).toHaveAttribute('dir', 'rtl');
 });
 
 test(`Renders class ${styles.modifiers.expanded} when isExpanded is passed`, () => {

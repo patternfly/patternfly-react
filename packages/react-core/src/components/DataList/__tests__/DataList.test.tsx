@@ -11,13 +11,39 @@ import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 
 test('Renders to match snapshot', () => {
   const { asFragment } = render(<DataList aria-label="list" />);
-  expect(screen.getByLabelText('list')).toBeInTheDocument();
   expect(asFragment()).toMatchSnapshot();
+});
+
+test(`Renders with default class ${styles.dataList}`, () => {
+  render(<DataList aria-label="list" />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.dataList);
+});
+
+test(`Renders with custom class when className is passed`, () => {
+  render(<DataList aria-label="list" className="custom" />);
+  expect(screen.getByLabelText('list')).toHaveClass('custom');
+});
+
+test(`Renders with spread props`, () => {
+  render(<DataList aria-label="list" id="test" />);
+  expect(screen.getByLabelText('list')).toHaveAttribute('id', 'test');
+});
+
+test(`Renders with aria-label when aria-label is passed`, () => {
+  render(<DataList aria-label="list">test</DataList>);
+  expect(screen.getByText('test')).toHaveAttribute('aria-label', 'list');
 });
 
 test(`Renders ${styles.modifiers.compact} when isCompact = true`, () => {
   render(<DataList aria-label="list" isCompact />);
   expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.compact);
+});
+
+['nowrap', 'truncate', 'breakWord'].forEach((wrap) => {
+  test(`Renders with class ${styles.modifiers[wrap]} when wrapModifier = ${wrap} is pased`, () => {
+    render(<DataList aria-label="list" wrapModifier={wrap as 'nowrap' | 'truncate' | 'breakWord'} />);
+    expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers[wrap]);
+  });
 });
 
 const gridBreakpointClasses = {
@@ -79,7 +105,7 @@ test('Does not render with a hidden input to improve a11y when onSelectableRowCh
   expect(selectableInput).not.toBeInTheDocument();
 });
 
-test('Calls onSelectableRowChange.onChange when the selectable input changes', async () => {
+test('Calls onSelectableRowChange when the selectable input changes', async () => {
   const mock = jest.fn();
   const user = userEvent.setup();
 
@@ -99,7 +125,7 @@ test('Calls onSelectableRowChange.onChange when the selectable input changes', a
   expect(mock).toHaveBeenCalled();
 });
 
-test('Does not call onSelectableRowChange.onChange when the selectable input is not changed', () => {
+test('Does not call onSelectableRowChange when the selectable input is not changed', () => {
   const mock = jest.fn();
 
   render(

@@ -15,7 +15,7 @@ test(`Renders default class ${styles.dataListCell}`, () => {
       Primary Id
     </DataListCell>
   );
-  expect(screen.getByTestId('test')).toHaveClass(styles.dataListCell);
+  expect(screen.getByTestId('test')).toHaveClass(styles.dataListCell, { exact: true });
 });
 
 test(`Renders custom class when className is passed`, () => {
@@ -27,13 +27,22 @@ test(`Renders custom class when className is passed`, () => {
   expect(screen.getByTestId('test')).toHaveClass('test-class');
 });
 
+test(`Renders with spread props`, () => {
+  render(
+    <DataListCell key={0} id="test">
+      Primary Id
+    </DataListCell>
+  );
+  expect(screen.getByText('Primary Id')).toHaveAttribute('id', 'test');
+});
+
 test('Renders width modifier when width is passed', () => {
   [
     { width: 1, class: '' },
-    { width: 2, class: 'pf-m-flex-2' },
-    { width: 3, class: 'pf-m-flex-3' },
-    { width: 4, class: 'pf-m-flex-4' },
-    { width: 5, class: 'pf-m-flex-5' }
+    { width: 2, class: styles.modifiers.flex_2 },
+    { width: 3, class: styles.modifiers.flex_3 },
+    { width: 4, class: styles.modifiers.flex_4 },
+    { width: 5, class: styles.modifiers.flex_5 }
   ].forEach((testCase, index) => {
     const testId = `cell-test-id-${index}`;
 
@@ -46,7 +55,12 @@ test('Renders width modifier when width is passed', () => {
     const dataListCell = screen.getByTestId(testId);
 
     testCase.class === ''
-      ? expect(dataListCell).toHaveClass('pf-v5-c-data-list__cell', { exact: true })
+      ? expect(dataListCell).not.toHaveClass(
+          styles.modifiers.flex_2,
+          styles.modifiers.flex_3,
+          styles.modifiers.flex_4,
+          styles.modifiers.flex_5
+        )
       : expect(dataListCell).toHaveClass(`pf-v5-c-data-list__cell ${testCase.class}`, { exact: true });
   });
 });
@@ -54,9 +68,9 @@ test('Renders width modifier when width is passed', () => {
 test('Has text wrap modifiers when wrapModifier is passed', () => {
   [
     { wrapModifier: null as any, class: '' },
-    { wrapModifier: 'breakWord', class: 'pf-m-break-word' },
-    { wrapModifier: 'nowrap', class: 'pf-m-nowrap' },
-    { wrapModifier: 'truncate', class: 'pf-m-truncate' }
+    { wrapModifier: 'breakWord', class: styles.modifiers.breakWord },
+    { wrapModifier: 'nowrap', class: styles.modifiers.nowrap },
+    { wrapModifier: 'truncate', class: styles.modifiers.truncate }
   ].forEach((testCase, index) => {
     const testId = `cell-test-id-${index}`;
 
@@ -69,8 +83,12 @@ test('Has text wrap modifiers when wrapModifier is passed', () => {
     const dataListCell = screen.getByTestId(testId);
 
     testCase.class === ''
-      ? expect(dataListCell).toHaveClass('pf-v5-c-data-list__cell')
-      : expect(dataListCell).toHaveClass(`pf-v5-c-data-list__cell ${testCase.class}`);
+      ? expect(dataListCell).not.toHaveClass(
+          styles.modifiers.breakWord,
+          styles.modifiers.nowrap,
+          styles.modifiers.truncate
+        )
+      : expect(dataListCell).toHaveClass(`${testCase.class}`);
   });
 });
 

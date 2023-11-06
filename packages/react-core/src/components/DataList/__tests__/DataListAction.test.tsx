@@ -15,11 +15,11 @@ test('Renders to match snapshot', () => {
 
 test(`Renders with default class ${styles.dataListItemAction}`, () => {
   render(
-    <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action" className="test-class">
+    <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
       test
     </DataListAction>
   );
-  expect(screen.getByText('test')).toHaveClass(styles.dataListItemAction);
+  expect(screen.getByText('test')).toHaveClass(styles.dataListItemAction, { exact: true });
 });
 
 test(`Renders with custom class when className is passed`, () => {
@@ -31,33 +31,63 @@ test(`Renders with custom class when className is passed`, () => {
   expect(screen.getByText('test')).toHaveClass('test-class');
 });
 
-test('Renders button with visibliity breakpoint set', () => {
+test(`Renders with spread props`, () => {
   render(
-    <DataListAction
-      visibility={{ default: 'hidden', lg: 'visible' }}
-      aria-labelledby="check-action-item2 check-action-action2"
-      id="check-action-action2"
-      aria-label="Actions"
-    >
+    <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
       test
     </DataListAction>
   );
-
-  expect(screen.getByText('test')).toHaveClass('pf-m-hidden');
-  expect(screen.getByText('test')).toHaveClass('pf-m-visible-on-lg');
+  expect(screen.getByText('test')).toHaveAttribute('id', 'ex-action');
 });
 
-test('Does not render button with hidden breakpoint set', () => {
+test(`Renders with class ${styles.dataListAction} when isPlainButtonAction = true`, () => {
   render(
-    <DataListAction
-      visibility={{ '2xl': 'hidden' }}
-      aria-labelledby="check-action-item2 check-action-action2"
-      id="check-action-action2"
-      aria-label="Actions"
-    >
+    <DataListAction id="id" aria-label="Actions" aria-labelledby="ex-action" isPlainButtonAction>
       test
     </DataListAction>
   );
+  expect(screen.getByText('test')).toHaveClass(styles.dataListAction);
+});
 
-  expect(screen.getByText('test')).toHaveClass('pf-m-hidden-on-2xl');
+['hidden', 'visible'].forEach((vis) => {
+  const visMod = vis as 'hidden' | 'visible';
+  test(`Has visibility - ${vis} for every breakpoint`, () => {
+    render(
+      <DataListAction
+        visibility={{ default: visMod, sm: visMod, md: visMod, lg: visMod, xl: visMod, '2xl': visMod }}
+        aria-labelledby="check-action-item2 check-action-action2"
+        id="check-action-action2"
+        aria-label="Actions"
+      >
+        test
+      </DataListAction>
+    );
+
+    if (visMod === 'hidden') {
+      expect(screen.getByText('test')).toHaveClass(styles.modifiers[`${visMod}`]);
+    }
+    expect(screen.getByText('test')).toHaveClass(styles.modifiers[`${visMod}OnSm`]);
+    expect(screen.getByText('test')).toHaveClass(styles.modifiers[`${visMod}OnMd`]);
+    expect(screen.getByText('test')).toHaveClass(styles.modifiers[`${visMod}OnLg`]);
+    expect(screen.getByText('test')).toHaveClass(styles.modifiers[`${visMod}OnXl`]);
+    expect(screen.getByText('test')).toHaveClass(styles.modifiers[`${visMod}On_2xl`]);
+  });
+});
+
+test(`Renders with aria-label when aria-label is passed`, () => {
+  render(
+    <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
+      test
+    </DataListAction>
+  );
+  expect(screen.getByText('test')).toHaveAccessibleName('Actions');
+});
+
+test(`Renders with aria-labelledby when aria-label is passed`, () => {
+  render(
+    <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
+      test
+    </DataListAction>
+  );
+  expect(screen.getByText('test')).toHaveAttribute('aria-labelledby', 'ex-action');
 });
