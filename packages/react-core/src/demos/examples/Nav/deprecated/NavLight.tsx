@@ -81,7 +81,7 @@ export const NavLight: React.FunctionComponent = () => {
         </PageSection>
         <PageSection>
           <Gallery hasGutter>
-            {Array.from({ length: 10 }, (_value: any, index: React.Key) => (
+            {Array.from({ length: 10 }).map((_value, index) => (
               <GalleryItem key={index}>
                 <Card>
                   <CardBody>This is a card</CardBody>

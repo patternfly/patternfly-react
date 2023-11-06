@@ -25,9 +25,9 @@ export const BackToTopDemo = () => (
     </PageSection>
     <PageSection hasOverflowScroll name="scrolling-section">
       <Gallery hasGutter>
-        {Array.apply(0, Array(60)).map((_x: any, i: number) => (
-          <GalleryItem key={i}>
-            <Card key={i}>
+        {Array.from({ length: 60 }).map((_value, index) => (
+          <GalleryItem key={index}>
+            <Card key={index}>
               <CardBody>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum et urna eget semper. Sed
                 tincidunt purus diam, id sollicitudin est pellentesque eget. Ut eget massa dignissim dolor pretium

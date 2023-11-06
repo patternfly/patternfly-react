@@ -18,8 +18,8 @@ export const WizardInModalDemo: React.FunctionComponent = () => (
     <DashboardWrapper hasPageTemplateTitle>
       <PageSection isWidthLimited>
         <Gallery hasGutter>
-          {Array.from({ length: 10 }).map((_, i) => (
-            <GalleryItem key={i}>
+          {Array.from({ length: 10 }).map((_value, index) => (
+            <GalleryItem key={index}>
               <Card>
                 <CardBody>This is a card</CardBody>
               </Card>

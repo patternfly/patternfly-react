@@ -22,7 +22,7 @@ export const NavFlyout: React.FunctionComponent = () => {
           <MenuItem onClick={onMenuItemClick} flyoutMenu={children} itemId={`nav-flyout-next-menu-${depth}`}>
             Next menu
           </MenuItem>
-          {Array.apply(0, Array(numFlyouts - depth)).map((_item, index: number) => (
+          {Array.from({ length: numFlyouts - depth }).map((_item, index) => (
             <MenuItem
               onClick={onMenuItemClick}
               key={`${depth}-${index}`}
