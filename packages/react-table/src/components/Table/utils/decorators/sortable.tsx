@@ -15,12 +15,15 @@ export const sortableFavorites = (sort: any) => () =>
         sortBy: sort.sortBy,
         onSort: sort?.onSort
       }
-    }
+    },
+    tooltip: sort.tooltip,
+    tooltipProps: sort.tooltipProps,
+    tooltipHasDefaultBehavior: true
   });
 
 export const sortable: ITransform = (
   label: IFormatterValueType,
-  { columnIndex, column, property, className, ariaLabel }: IExtra
+  { columnIndex, column, property, className, ariaLabel, tooltip, tooltipProps, tooltipHasDefaultBehavior }: IExtra
 ) => {
   const {
     extraParams: { sortBy, onSort }
@@ -56,6 +59,9 @@ export const sortable: ITransform = (
         sortDirection={isSortedBy ? sortBy.direction : ''}
         onSort={sortClicked}
         aria-label={ariaLabel}
+        tooltip={tooltip}
+        tooltipProps={tooltipProps}
+        tooltipHasDefaultBehavior={tooltipHasDefaultBehavior}
       >
         {label as React.ReactNode}
       </SortColumn>

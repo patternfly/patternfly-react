@@ -132,6 +132,9 @@ export interface IExtra extends IExtraData {
   rowData?: IRowData;
   className?: string;
   ariaLabel?: string;
+  tooltip?: string;
+  tooltipProps?: Omit<TooltipProps, 'content'>;
+  tooltipHasDefaultBehavior?: boolean;
 }
 
 export type IFormatterValueType = formatterValueType & {

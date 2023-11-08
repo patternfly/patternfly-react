@@ -33,6 +33,8 @@ export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
   onMouseEnter?: (event: any) => void;
   /** Determines if the TableText is focused by parent component */
   focused?: boolean;
+  /** Determines if tooltip should have normal visbility behavior. If false, the tooltip will only be shown when children is not entirely visible */
+  tooltipHasDefaultBehavior?: boolean;
 }
 
 export const TableText: React.FunctionComponent<TableTextProps> = ({
@@ -44,12 +46,13 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   tooltipProps = {},
   onMouseEnter: onMouseEnterProp = () => {},
   focused = false,
+  tooltipHasDefaultBehavior = false,
   ...props
 }: TableTextProps) => {
   const Component: TableTextVariant | 'span' | 'div' = variant;
   const textRef = React.createRef<HTMLElement>();
 
-  const [tooltip, setTooltip] = React.useState('');
+  const [tooltip, setTooltip] = React.useState(tooltipProp);
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       setTooltip(tooltipProp || event.target.innerText);
@@ -70,7 +73,7 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   const text = (
     <Component
       ref={textRef as React.Ref<HTMLDivElement>}
-      onMouseEnter={onMouseEnter}
+      onMouseEnter={!tooltipHasDefaultBehavior ? onMouseEnter : undefined}
       className={css(className, wrapModifier && styles.modifiers[wrapModifier], styles.tableText)}
       {...props}
     >
@@ -79,15 +82,17 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   );
 
   React.useEffect(() => {
-    if (focused) {
-      onFocus(textRef.current);
-    } else {
-      setTooltip('');
+    if (!tooltipHasDefaultBehavior) {
+      if (focused) {
+        onFocus(textRef.current);
+      } else {
+        setTooltip('');
+      }
     }
   }, [focused]);
 
   return tooltip !== '' ? (
-    <Tooltip triggerRef={textRef} content={tooltip} isVisible {...tooltipProps}>
+    <Tooltip triggerRef={textRef} content={tooltip} {...tooltipProps}>
       {text}
     </Tooltip>
   ) : (

@@ -6,7 +6,7 @@ import { info, sortable, sortableFavorites, selectable, collapsible, cellWidth, 
 import { ThInfoType, ThSelectType, ThExpandType, ThSortType, formatterValueType } from './base/types';
 import { mergeProps } from './base/merge-props';
 import { IVisibility } from './utils/decorators/classNames';
-import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
+import { Tooltip, TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { BaseCellProps } from './Table';
 import { IFormatterValueType, IColumn } from './TableTypes';
 import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
@@ -34,6 +34,8 @@ export interface ThProps
    * To disable it completely you can set it to null.
    */
   tooltip?: React.ReactNode;
+  /** other props to pass to the tooltip */
+  tooltipProps?: Omit<TooltipProps, 'content'>;
   /** Callback on mouse enter */
   onMouseEnter?: (event: any) => void;
   /** Adds tooltip/popover info button */
@@ -68,6 +70,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   select = null,
   expand: collapse = null,
   tooltip = '',
+  tooltipProps,
   onMouseEnter: onMouseEnterProp = () => {},
   width,
   visibility,
@@ -99,7 +102,9 @@ const ThBase: React.FunctionComponent<ThProps> = ({
       sortParams = sortableFavorites({
         onSort: sort?.onSort,
         columnIndex: sort.columnIndex,
-        sortBy: sort.sortBy
+        sortBy: sort.sortBy,
+        tooltip: tooltip as string,
+        tooltipProps
       })();
     } else {
       sortParams = sortable(children as IFormatterValueType, {
@@ -109,7 +114,9 @@ const ThBase: React.FunctionComponent<ThProps> = ({
             sortBy: sort.sortBy,
             onSort: sort?.onSort
           }
-        } as IColumn
+        } as IColumn,
+        tooltip: tooltip as string,
+        tooltipProps
       });
     }
   }
@@ -127,7 +134,9 @@ const ThBase: React.FunctionComponent<ThProps> = ({
             allRowsSelected: select.isSelected,
             isHeaderSelectDisabled: !!select.isHeaderSelectDisabled
           }
-        }
+        },
+        tooltip: tooltip as string,
+        tooltipProps
       })
     : null;
   const collapseParams = collapse
@@ -208,7 +217,8 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   );
 
   const canMakeDefaultTooltip = tooltip === '' ? typeof transformedChildren === 'string' : true;
-  return tooltip !== null && canMakeDefaultTooltip && showTooltip ? (
+  const childControlsTooltip = sortParams || selectParams;
+  return tooltip !== null && canMakeDefaultTooltip && !childControlsTooltip && showTooltip ? (
     <>
       {cell}
       <Tooltip
