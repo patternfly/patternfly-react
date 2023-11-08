@@ -26,7 +26,7 @@ export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
   /** Determines which wrapping modifier to apply to the table text */
   wrapModifier?: WrapModifier | 'wrap' | 'nowrap' | 'truncate' | 'breakWord' | 'fitContent';
   /** text to display on the tooltip */
-  tooltip?: string;
+  tooltip?: React.ReactNode;
   /** other props to pass to the tooltip */
   tooltipProps?: Omit<TooltipProps, 'content'>;
   /** callback used to create the tooltip if text is truncated */

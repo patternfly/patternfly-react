@@ -18,7 +18,7 @@ export interface SortColumnProps extends React.ButtonHTMLAttributes<HTMLButtonEl
   isSortedBy?: boolean;
   onSort?: Function;
   sortDirection?: string;
-  tooltip?: string;
+  tooltip?: React.ReactNode;
   tooltipProps?: Omit<TooltipProps, 'content'>;
   tooltipHasDefaultBehavior?: boolean;
 }

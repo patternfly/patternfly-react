@@ -13,7 +13,7 @@ export interface SelectColumnProps {
   onSelect?: (event: React.FormEvent<HTMLInputElement>) => void;
   selectVariant?: RowSelectVariant;
   /** text to display on the tooltip */
-  tooltip?: string;
+  tooltip?: React.ReactNode;
   /** other props to pass to the tooltip */
   tooltipProps?: Omit<TooltipProps, 'content'>;
 }

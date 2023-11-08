@@ -225,6 +225,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         triggerRef={cellRef as React.RefObject<any>}
         content={tooltip || (tooltip === '' && children)}
         isVisible
+        {...tooltipProps}
       />
     </>
   ) : (
