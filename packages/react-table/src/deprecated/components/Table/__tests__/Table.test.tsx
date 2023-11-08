@@ -24,11 +24,7 @@ import {
   fitContent,
   ICell
 } from '../../../../components';
-import {
-  Table,
-  TableHeader,
-  TableBody
-} from '../index';
+import { Table, TableHeader, TableBody } from '../index';
 import { rows, columns, editableRows, editableColumns, actions } from '../../../../test-helpers/data-sets';
 import { ColumnsType } from '../../../../components/Table/base/types';
 
@@ -52,8 +48,7 @@ describe('Table', () => {
         </Table>
       );
       const table = screen.getByLabelText('Table with ouiaSafe');
-      expect(table.getAttribute('data-ouia-safe')).toEqual("false");
-
+      expect(table.getAttribute('data-ouia-safe')).toEqual('false');
     });
 
     test('header', () => {
@@ -116,7 +111,7 @@ describe('Table', () => {
   });
 
   describe('Table variants', () => {
-    Object.values(TableGridBreakpoint).forEach(oneBreakpoint => {
+    Object.values(TableGridBreakpoint).forEach((oneBreakpoint) => {
       test(`Breakpoint - ${oneBreakpoint}`, () => {
         const { asFragment } = render(
           <Table aria-label="Aria labeled" gridBreakPoint={oneBreakpoint} cells={columns} rows={rows}>
@@ -128,7 +123,7 @@ describe('Table', () => {
       });
     });
 
-    Object.values(TableVariant).forEach(onevariant => {
+    Object.values(TableVariant).forEach((onevariant) => {
       test(`Size - ${onevariant}`, () => {
         const { asFragment } = render(
           <Table aria-label="Aria labeled" variant={onevariant} cells={columns} rows={rows}>

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import { HelperText } from '../HelperText';
 import { HelperTextItem } from '../HelperTextItem';
-import { CheckIcon } from '@patternfly/react-icons';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 
 describe('HelperText', () => {
   test('simple helper text renders successfully', () => {
@@ -14,7 +14,7 @@ describe('HelperText', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  Object.values(['default', 'indeterminate', 'warning', 'success', 'invalid']).forEach(variant => {
+  Object.values(['default', 'indeterminate', 'warning', 'success', 'invalid']).forEach((variant) => {
     test(`${variant} helper text variant applies successfully`, () => {
       const { asFragment } = render(
         <HelperTextItem variant={variant as 'default' | 'indeterminate' | 'warning' | 'success' | 'error'}>

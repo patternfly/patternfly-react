@@ -76,6 +76,7 @@ const testCellActions = async ({
     const { container } = render(returnedData.children as React.ReactElement<any>);
     await user.click(screen.getAllByRole('button')[0]);
     await waitFor(() =>
+      // eslint-disable-next-line testing-library/no-container
       expect(container.querySelectorAll(`.${dropdownStyles.dropdownMenu} li button`)).toHaveLength(
         expectDisabled ? 0 : 1
       )

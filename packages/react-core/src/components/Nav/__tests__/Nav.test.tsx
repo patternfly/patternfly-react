@@ -30,7 +30,7 @@ describe('Nav', () => {
     const { asFragment } = renderNav(
       <Nav className="test-nav-class">
         <NavList className="test-nav-list-class">
-          {props.items.map(item => (
+          {props.items.map((item) => (
             <NavItem to={item.to} key={item.to} className="test-nav-item-class">
               {item.label}
             </NavItem>
@@ -47,7 +47,7 @@ describe('Nav', () => {
       <React.StrictMode>
         <Nav className="test-nav-class">
           <NavList className="test-nav-list-class">
-            {props.items.map(item => (
+            {props.items.map((item) => (
               <NavItem to={item.to} key={item.to} className="test-nav-item-class">
                 {item.label}
               </NavItem>
@@ -64,7 +64,7 @@ describe('Nav', () => {
     const { asFragment } = renderNav(
       <Nav className="test=nav-class" theme="dark">
         <NavList className="test-nav-list-class">
-          {props.items.map(item => (
+          {props.items.map((item) => (
             <NavItem to={item.to} key={item.to} className="test-nav-item-class">
               {item.label}
             </NavItem>
@@ -81,7 +81,7 @@ describe('Nav', () => {
     const { asFragment } = renderNav(
       <Nav>
         <NavList>
-          {props.items.map(item => (
+          {props.items.map((item) => (
             <NavItem to={item.to} key={item.to}>
               {item.label}
             </NavItem>
@@ -99,7 +99,7 @@ describe('Nav', () => {
       <Nav>
         <NavList>
           <NavExpandable id="grp-1" title="Section 1">
-            {props.items.map(item => (
+            {props.items.map((item) => (
               <NavItem to={item.to} key={item.to}>
                 {item.label}
               </NavItem>
@@ -119,7 +119,7 @@ describe('Nav', () => {
       <Nav>
         <NavList>
           <NavExpandable id="grp-1" title="Section 1" onExpand={onExpand}>
-            {props.items.map(item => (
+            {props.items.map((item) => (
               <NavItem to={item.to} key={item.to}>
                 {item.label}
               </NavItem>
@@ -141,7 +141,7 @@ describe('Nav', () => {
       <Nav>
         <NavList>
           <NavExpandable id="grp-1" title="Section 1" className="expandable-group" isExpanded>
-            {props.items.map(item => (
+            {props.items.map((item) => (
               <NavItem to={item.to} key={item.to}>
                 {item.label}
               </NavItem>
@@ -160,7 +160,7 @@ describe('Nav', () => {
       <Nav aria-label="Test">
         <NavList>
           <NavExpandable id="grp-1" title="Section 1" srText="Section 1 - Example sub-navigation">
-            {props.items.map(item => (
+            {props.items.map((item) => (
               <NavItem to={item.to} key={item.to}>
                 {item.label}
               </NavItem>
@@ -177,7 +177,7 @@ describe('Nav', () => {
       <Nav>
         <NavGroup id="grp-1" title="Section 1">
           <NavList>
-            {props.items.map(item => (
+            {props.items.map((item) => (
               <NavItem to={item.to} key={`section1_${item.to}`}>
                 {item.label}
               </NavItem>
@@ -186,7 +186,7 @@ describe('Nav', () => {
         </NavGroup>
         <NavGroup id="grp-2" title="Section 2">
           <NavList>
-            {props.items.map(item => (
+            {props.items.map((item) => (
               <NavItem to={item.to} key={`section2_${item.to}`}>
                 {item.label}
               </NavItem>
@@ -202,7 +202,7 @@ describe('Nav', () => {
     const { asFragment } = renderNav(
       <Nav variant="horizontal">
         <NavList>
-          {props.items.map(item => (
+          {props.items.map((item) => (
             <NavItem to={item.to} key={item.to}>
               {item.label}
             </NavItem>
@@ -217,7 +217,7 @@ describe('Nav', () => {
     const { asFragment } = renderNav(
       <Nav variant="horizontal-subnav">
         <NavList>
-          {props.items.map(item => (
+          {props.items.map((item) => (
             <NavItem to={item.to} key={item.to}>
               {item.label}
             </NavItem>
@@ -232,7 +232,7 @@ describe('Nav', () => {
     const { asFragment } = renderNav(
       <Nav variant="tertiary">
         <NavList>
-          {props.items.map(item => (
+          {props.items.map((item) => (
             <NavItem to={item.to} key={item.to}>
               {item.label}
             </NavItem>
@@ -269,7 +269,7 @@ describe('Nav', () => {
       </Nav>
     );
 
-    await user.hover(screen.getByText('My custom node'))
+    await user.hover(screen.getByText('My custom node'));
     expect(asFragment()).toMatchSnapshot();
   });
 });

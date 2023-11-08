@@ -16,13 +16,9 @@ test('disabled date picker', () => {
 test('Date picker with multiple validators does not show invalid icon on valid input', async () => {
   const user = userEvent.setup();
 
-  const rangeValidator = (date: Date) => {
-    return '';
-  };
+  const rangeValidator = (_date: Date) => '';
 
-  const rangeValidatorB = (date: Date) => {
-    return '';
-  };
+  const rangeValidatorB = (_date: Date) => '';
 
   render(<DatePicker value="2020-03-17" validators={[rangeValidator, rangeValidatorB]} />);
 
@@ -119,7 +115,7 @@ test('Does not render emptyDateText when requiredDateOptions.isRequired is false
   await user.click(screen.getByRole('textbox'));
   await user.click(document.body);
 
-  expect(screen.queryByText('Date cannot be blank')).not.toBeInTheDocument;
+  expect(screen.queryByText('Date cannot be blank')).not.toBeInTheDocument();
 });
 
 test('Renders text input as invalid on blur when requiredDateOptions.isRequired is true', async () => {

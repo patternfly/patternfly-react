@@ -127,6 +127,15 @@
             "rules": {
                 "patternfly-react/no-anonymous-functions": "off"
             }
+        },
+        {
+            "files": ["**/*.test.[jt]s?(x)"],
+            "extends": ["plugin:testing-library/react"],
+            "rules": {
+                "testing-library/no-node-access": "off",
+                "react/jsx-key": "off",
+                "no-console": "off"
+            }
         }
     ]
 }

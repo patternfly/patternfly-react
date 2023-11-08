@@ -21,11 +21,7 @@ test('sets correct viewBox', () => {
 
 test('sets correct svgPath', () => {
   render(<SVGIcon />);
-  expect(
-    screen
-      .getByRole('img', { hidden: true })
-      .querySelector('path')
-  ).toHaveAttribute('d', iconDef.svgPath);
+  expect(screen.getByRole('img', { hidden: true }).querySelector('path')).toHaveAttribute('d', iconDef.svgPath);
 });
 
 test('aria-hidden is true if no title is specified', () => {
@@ -35,7 +31,7 @@ test('aria-hidden is true if no title is specified', () => {
 
 test('title is not renderd if a title is not passed', () => {
   render(<SVGIcon />);
-  expect(screen.getByRole('img', { hidden: true }).querySelector('title')).toBeNull();
+  expect(screen.queryByRole('img', { hidden: true })?.querySelector('title')).toBeNull();
 });
 
 test('aria-labelledby is null if a title is not passed', () => {

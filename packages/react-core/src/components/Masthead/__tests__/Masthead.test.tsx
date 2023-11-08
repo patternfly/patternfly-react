@@ -62,7 +62,7 @@ describe('Masthead', () => {
     'insetXl',
     'inset2xl',
     'inset3xl'
-  ]).forEach(inset => {
+  ]).forEach((inset) => {
     test(`verify ${inset} inset breakpoints`, () => {
       const { asFragment } = render(
         <Masthead inset={{ default: inset, sm: inset, md: inset, lg: inset, xl: inset, '2xl': inset }}>test</Masthead>

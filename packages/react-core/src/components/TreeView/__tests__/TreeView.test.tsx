@@ -2,7 +2,8 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { TreeView } from '../TreeView';
 import { Button } from '@patternfly/react-core';
-import { FolderIcon, FolderOpenIcon } from '@patternfly/react-icons';
+import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 import { TreeViewSearch } from '../TreeViewSearch';
 
 const options = [
@@ -151,9 +152,7 @@ describe('tree view', () => {
   test('calls onExpand and onCollapse appropriately', () => {
     const onExpand = jest.fn();
     const onCollapse = jest.fn();
-    const { asFragment } = render(
-      <TreeView data={options} onSelect={jest.fn()} onExpand={onExpand} onCollapse={onCollapse} />
-    );
+    render(<TreeView data={options} onSelect={jest.fn()} onExpand={onExpand} onCollapse={onCollapse} />);
     expect(onExpand).not.toHaveBeenCalled();
     expect(onCollapse).not.toHaveBeenCalled();
     expect(screen.queryByText('Application 3')).toBeNull();

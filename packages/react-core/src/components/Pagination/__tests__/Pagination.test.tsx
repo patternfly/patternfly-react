@@ -340,10 +340,12 @@ describe('Pagination', () => {
       'insetLg',
       'insetXl',
       'inset2xl'
-    ]).forEach(inset => {
+    ]).forEach((inset) => {
       test(`verify ${inset} inset breakpoints`, () => {
         const { asFragment } = render(
-          <Pagination inset={{ default: inset, sm: inset, md: inset, lg: inset, xl: inset, '2xl': inset }}>test</Pagination>
+          <Pagination inset={{ default: inset, sm: inset, md: inset, lg: inset, xl: inset, '2xl': inset }}>
+            test
+          </Pagination>
         );
         expect(asFragment()).toMatchSnapshot();
       });

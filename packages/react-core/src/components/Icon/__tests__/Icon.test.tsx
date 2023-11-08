@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Icon } from '../Icon';
-import { CheckIcon } from '@patternfly/react-icons';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import styles from '@patternfly/react-styles/css/components/Icon/icon';
 
 test('renders basic icon successfully', () => {
@@ -14,7 +14,7 @@ test('renders basic icon successfully', () => {
 });
 
 test('checks basic icon structure', () => {
-  const { asFragment } = render(
+  render(
     <Icon title="icon">
       <CheckIcon />
     </Icon>

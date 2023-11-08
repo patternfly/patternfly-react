@@ -64,8 +64,8 @@ describe('Toolbar', () => {
           <ToolbarGroup variant="filter-group">
             <ToolbarFilter
               chips={['New', 'Pending']}
-              deleteChip={(category, chip) => {}}
-              deleteChipGroup={(category) => {}}
+              deleteChip={(_category, _chip) => {}}
+              deleteChipGroup={(_category) => {}}
               categoryName="Status"
             >
               test content

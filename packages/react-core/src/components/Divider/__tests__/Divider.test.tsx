@@ -64,19 +64,8 @@ test(`Test all insets`, () => {
     'inset2xl',
     'inset3xl'
   ] as ['insetNone', 'insetXs', 'insetSm', 'insetMd', 'insetLg', 'insetXl', 'inset2xl', 'inset3xl']);
-  
+
   insetValues.forEach((insetValue) => {
-
-    const modifiers = ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'];
-
-    const classValue = modifiers.forEach((modifier, index) => {
-      const smClass = `pf-m-inset-${modifier}-on-sm`;
-      const mdClass = `pf-m-inset-${modifier}-on-md`;
-      const lgClass = `pf-m-inset-${modifier}-on-lg`;
-      const xlClass = `pf-m-inset-${modifier}-on-xl`;
-      const xl2Class = `pf-m-inset-${modifier}-on-2xl`;
-    });
-
     render(
       <Divider
         inset={{
@@ -92,7 +81,7 @@ test(`Test all insets`, () => {
   });
   const modifiers = ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'];
 
-  const classValue = modifiers.forEach((modifier, index) => {
+  modifiers.forEach((modifier, index) => {
     const smClass = `pf-m-inset-${modifier}-on-sm`;
     const mdClass = `pf-m-inset-${modifier}-on-md`;
     const lgClass = `pf-m-inset-${modifier}-on-lg`;

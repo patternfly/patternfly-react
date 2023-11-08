@@ -58,7 +58,7 @@ test('renders only the active step content by default', async () => {
   render(<WizardToggle {...defaultProps} />);
 
   expect(screen.getByText('First step content')).toBeInTheDocument();
-  expect(screen.queryByText('Second step content')).toBeNull;
+  expect(screen.queryByText('Second step content')).toBeNull();
 });
 
 test('has expanded properties when the toggle dropdown button is clicked', async () => {
@@ -95,7 +95,7 @@ test('unsets expanded properties when using the Escape key', async () => {
   expect(toggleButton).not.toHaveClass('pf-m-expanded');
 });
 
-const WizardToggleExpand = props => {
+const WizardToggleExpand = (props) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   return (

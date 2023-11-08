@@ -18,7 +18,11 @@ describe('ToolbarItem', () => {
   });
 
   it('should render with pf-m-overflow-container when isOverflowContainer is set', () => {
-    render(<ToolbarItem data-testid="toolbaritem" isOverflowContainer>Test</ToolbarItem>);
+    render(
+      <ToolbarItem data-testid="toolbaritem" isOverflowContainer>
+        Test
+      </ToolbarItem>
+    );
     expect(screen.getByTestId('toolbaritem')).toHaveClass('pf-m-overflow-container');
   });
 });

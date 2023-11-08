@@ -19,7 +19,7 @@ test('Alert Group renders without children', () => {
 });
 
 test('Alert Group works with n children', () => {
-  const { asFragment } = render(
+  render(
     <AlertGroup data-testid="container">
       <Alert variant="success" title="alert title" />
       <Alert variant="warning" title="another alert title" />

@@ -25,7 +25,6 @@ describe('NotificationDrawerListItem', () => {
     render(<NotificationDrawerListItem isRead />);
     expect(screen.getByRole('listitem')).toHaveClass('pf-m-read');
     expect(screen.getByRole('listitem')).toContainHTML('<span class="pf-v5-screen-reader">read</span>');
-
   });
 
   test('drawer list item has screen reader text set to unread by default', () => {
@@ -34,8 +33,7 @@ describe('NotificationDrawerListItem', () => {
   });
 
   test('drawer list item screen reader textcan be customized', () => {
-    render(<NotificationDrawerListItem readStateScreenReaderText="was read"/>);
+    render(<NotificationDrawerListItem readStateScreenReaderText="was read" />);
     expect(screen.getByRole('listitem')).toContainHTML('<span class="pf-v5-screen-reader">was read</span>');
   });
 });
- 

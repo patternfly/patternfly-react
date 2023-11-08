@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dropdown } from '../../Dropdown';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 jest.mock('../../Menu');
@@ -176,7 +176,7 @@ test('onOpenChange is called when passed and user presses tab key', async () => 
     </Dropdown>
   );
 
-  //focus dropdown
+  // focus dropdown
   const dropdown = screen.getByRole('button', { name: 'Dropdown' });
   await user.click(dropdown);
   await user.keyboard('{Tab}');
@@ -194,7 +194,7 @@ test('onOpenChange is called when passed and user presses esc key', async () => 
     </Dropdown>
   );
 
-  //focus dropdown
+  // focus dropdown
   const dropdown = screen.getByRole('button', { name: 'Dropdown' });
   await user.click(dropdown);
   await user.keyboard('{Escape}');

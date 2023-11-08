@@ -6,9 +6,11 @@ import userEvent from '@testing-library/user-event';
 import { SearchInput } from '../SearchInput';
 import { FormGroup } from '../../Form';
 import { Button } from '../../Button';
-import { ExternalLinkSquareAltIcon } from '@patternfly/react-icons';
+import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
 import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
 import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
+
+jest.mock('../../../helpers/OUIA/ouia');
 
 const props = {
   onChange: jest.fn(),
@@ -80,9 +82,9 @@ describe('SearchInput', () => {
   });
 
   test('hide clear button', () => {
-    const { onClear, ...testProps } = props;
-
-    render(<SearchInput {...testProps} resultsCount="3" aria-label="simple text input without on clear" />);
+    render(
+      <SearchInput {...props} onClear={undefined} resultsCount="3" aria-label="simple text input without on clear" />
+    );
     expect(screen.queryByRole('button', { name: 'Reset' })).not.toBeInTheDocument();
   });
 
@@ -146,9 +148,7 @@ describe('SearchInput', () => {
   test('advanced search with custom attributes and appendTo="inline', async () => {
     const user = userEvent.setup();
 
-    const { container } = render(
-      <SearchInput data-testid="test-id" attributes={[{ attr: 'test', display: 'test' }]} appendTo="inline" />
-    );
+    render(<SearchInput data-testid="test-id" attributes={[{ attr: 'test', display: 'test' }]} appendTo="inline" />);
 
     await user.click(screen.getByRole('button', { name: 'Open advanced search' }));
 
@@ -158,7 +158,7 @@ describe('SearchInput', () => {
   test('advanced search with custom attributes and appendTo external DOM element', async () => {
     const user = userEvent.setup();
 
-    const { container } = render(
+    render(
       <SearchInput data-testid="test-id" attributes={[{ attr: 'test', display: 'test' }]} appendTo={document.body} />
     );
 
@@ -252,9 +252,6 @@ test('toggleAriaLabel is applied to the expandable toggle', () => {
 });
 
 test('Utilities are rendered when areUtilitiesDisplayed is set', () => {
-  render(
-    <SearchInput {...props} areUtilitiesDisplayed resetButtonLabel='test-util-display'/>
-  );
+  render(<SearchInput {...props} areUtilitiesDisplayed resetButtonLabel="test-util-display" />);
   expect(screen.getByLabelText('test-util-display')).toBeVisible();
 });
-

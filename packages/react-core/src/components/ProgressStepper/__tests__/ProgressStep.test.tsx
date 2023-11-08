@@ -150,7 +150,7 @@ test('Does not renders with aria-labelledBy by default on Component element', ()
 
 test('Renders with an accessible name that matches children', () => {
   render(
-    <ProgressStep popoverRender={(stepRef) => <div>Popover content</div>} id="test-id" titleId="title-id">
+    <ProgressStep popoverRender={(_stepRef) => <div>Popover content</div>} id="test-id" titleId="title-id">
       Test
     </ProgressStep>
   );

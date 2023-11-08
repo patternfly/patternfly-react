@@ -13,7 +13,7 @@ describe('NotificationDrawerListItemHeader', () => {
   });
 
   test('renders with correct heading level', () => {
-    const { asFragment } = render(<NotificationDrawerListItemHeader title="Pod quit unexpectedly" headingLevel="h3"/>);
+    const { asFragment } = render(<NotificationDrawerListItemHeader title="Pod quit unexpectedly" headingLevel="h3" />);
     expect(asFragment()).toMatchSnapshot();
   });
 

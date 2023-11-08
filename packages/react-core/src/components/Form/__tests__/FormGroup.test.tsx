@@ -3,7 +3,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { ValidatedOptions } from '../../../helpers/constants';
 import { FormGroup } from '../FormGroup';
 import { Form } from '../Form';
 

@@ -212,13 +212,13 @@ describe('numberInput', () => {
     expect(input).toHaveDisplayValue('');
   });
 
-  test('does not throw an error if onChange is passed via inputProps as well as the onChange prop', () => {
+  test('does not throw an error if onChange is passed via inputProps as well as the onChange prop', async () => {
     const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
     const NumberInputWrapper = () => {
       const [value, setValue] = React.useState(0);
-      const onChange = event => setValue(event.currentTarget.value);
-      const inputProps = { onChange: onChange };
+      const onChange = (event) => setValue(event.currentTarget.value);
+      const inputProps = { onChange };
 
       return <NumberInput value={value} onChange={onChange} inputProps={{ ...inputProps }} />;
     };
@@ -226,20 +226,20 @@ describe('numberInput', () => {
     render(<NumberInputWrapper />);
 
     const input = screen.getByRole('spinbutton');
-    userEvent.type(input, '0');
+    await userEvent.type(input, '0');
 
     expect(consoleSpy).not.toHaveBeenCalled();
   });
 
   test('input is read only if onChange not passed ', () => {
-    render(<NumberInput inputAriaLabel="readonly input" value={5}/>);
+    render(<NumberInput inputAriaLabel="readonly input" value={5} />);
     const input = screen.getByLabelText('readonly input');
     expect(input).toHaveAttribute('readOnly');
   });
 
   test('input is not read only if onChange passed ', () => {
     const onChangeMock = jest.fn();
-    render(<NumberInput inputAriaLabel="not readonly input" value={5} onChange={onChangeMock}/>);
+    render(<NumberInput inputAriaLabel="not readonly input" value={5} onChange={onChangeMock} />);
     const input = screen.getByLabelText('not readonly input');
     expect(input).not.toHaveAttribute('readOnly');
   });
