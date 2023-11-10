@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.2.0-prerelease.5 (2023-11-10)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
 # 5.2.0-prerelease.4 (2023-11-03)
 
 **Note:** Version bump only for package @patternfly/react-styles
