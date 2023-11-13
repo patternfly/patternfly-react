@@ -31,19 +31,15 @@ export const DataListAction: React.FunctionComponent<DataListActionProps> = ({
   children,
   className,
   visibility,
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   id,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   isPlainButtonAction,
   ...props
 }: DataListActionProps) => (
-  <div
-    className={css(styles.dataListItemAction, formatBreakpointMods(visibility, styles), className)}
-    id={id}
-    aria-label={ariaLabel}
-    aria-labelledby={ariaLabelledBy}
-    {...props}
-  >
+  <div className={css(styles.dataListItemAction, formatBreakpointMods(visibility, styles), className)} {...props}>
     {isPlainButtonAction ? <div className={css(styles.dataListAction)}>{children}</div> : children}
   </div>
 );

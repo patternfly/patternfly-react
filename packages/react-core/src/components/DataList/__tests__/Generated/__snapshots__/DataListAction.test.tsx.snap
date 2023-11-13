@@ -3,10 +3,7 @@
 exports[`DataListAction should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    aria-label="string"
-    aria-labelledby="string"
     class="pf-v5-c-data-list__item-action ''"
-    id="string"
   >
     <div>
       ReactNode

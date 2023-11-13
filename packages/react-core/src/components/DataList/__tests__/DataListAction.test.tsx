@@ -73,21 +73,3 @@ test(`Renders with class ${styles.dataListAction} when isPlainButtonAction = tru
     expect(screen.getByText('test')).toHaveClass(styles.modifiers[`${visMod}On_2xl`]);
   });
 });
-
-test(`Renders with aria-label when aria-label is passed`, () => {
-  render(
-    <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
-      test
-    </DataListAction>
-  );
-  expect(screen.getByText('test')).toHaveAccessibleName('Actions');
-});
-
-test(`Renders with aria-labelledby when aria-label is passed`, () => {
-  render(
-    <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
-      test
-    </DataListAction>
-  );
-  expect(screen.getByText('test')).toHaveAttribute('aria-labelledby', 'ex-action');
-});
