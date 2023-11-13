@@ -28,7 +28,7 @@ export const ComposableDualListSelector: React.FunctionComponent = () => {
     { text: 'Strawberry', selected: false, isVisible: true }
   ]);
 
-  const moveSelected = fromAvailable => {
+  const moveSelected = (fromAvailable) => {
     const sourceOptions = fromAvailable ? availableOptions : chosenOptions;
     const destinationOptions = fromAvailable ? chosenOptions : availableOptions;
     for (let i = 0; i < sourceOptions.length; i++) {
@@ -49,13 +49,13 @@ export const ComposableDualListSelector: React.FunctionComponent = () => {
     }
   };
 
-  const moveAll = fromAvailable => {
+  const moveAll = (fromAvailable) => {
     if (fromAvailable) {
-      setChosenOptions([...availableOptions.filter(x => x.isVisible), ...chosenOptions]);
-      setAvailableOptions([...availableOptions.filter(x => !x.isVisible)]);
+      setChosenOptions([...availableOptions.filter((x) => x.isVisible), ...chosenOptions]);
+      setAvailableOptions([...availableOptions.filter((x) => !x.isVisible)]);
     } else {
-      setAvailableOptions([...chosenOptions.filter(x => x.isVisible), ...availableOptions]);
-      setChosenOptions([...chosenOptions.filter(x => !x.isVisible)]);
+      setAvailableOptions([...chosenOptions.filter((x) => x.isVisible), ...availableOptions]);
+      setChosenOptions([...chosenOptions.filter((x) => !x.isVisible)]);
     }
   };
 
@@ -90,7 +90,7 @@ export const ComposableDualListSelector: React.FunctionComponent = () => {
           props: {
             key: index,
             isSelected: option.selected,
-            onOptionSelect: e => onOptionSelect(e, index, true)
+            onOptionSelect: (e) => onOptionSelect(e, index, true)
           }
         }
       : null
@@ -100,8 +100,8 @@ export const ComposableDualListSelector: React.FunctionComponent = () => {
     <DualListSelector>
       <DualListSelectorPane
         title="Available"
-        status={`${availableOptions.filter(x => x.selected && x.isVisible).length} of ${
-          availableOptions.filter(x => x.isVisible).length
+        status={`${availableOptions.filter((x) => x.selected && x.isVisible).length} of ${
+          availableOptions.filter((x) => x.isVisible).length
         } options selected`}
       >
         <DualListSelectorList>
@@ -111,7 +111,7 @@ export const ComposableDualListSelector: React.FunctionComponent = () => {
                 key={index}
                 isSelected={option.selected}
                 id={`composable-available-option-${option.text}`}
-                onOptionSelect={e => onOptionSelect(e, index, false)}
+                onOptionSelect={(e) => onOptionSelect(e, index, false)}
               >
                 {option.text}
               </DualListSelectorListItem>
@@ -121,7 +121,7 @@ export const ComposableDualListSelector: React.FunctionComponent = () => {
       </DualListSelectorPane>
       <DualListSelectorControlsWrapper aria-label="Selector controls">
         <DualListSelectorControl
-          isDisabled={!availableOptions.some(option => option.selected)}
+          isDisabled={!availableOptions.some((option) => option.selected)}
           onClick={() => moveSelected(true)}
           aria-label="Add selected"
         >
@@ -143,7 +143,7 @@ export const ComposableDualListSelector: React.FunctionComponent = () => {
         </DualListSelectorControl>
         <DualListSelectorControl
           onClick={() => moveSelected(false)}
-          isDisabled={!chosenOptions.some(option => option.selected)}
+          isDisabled={!chosenOptions.some((option) => option.selected)}
           aria-label="Remove selected"
         >
           <AngleLeftIcon />
@@ -151,16 +151,12 @@ export const ComposableDualListSelector: React.FunctionComponent = () => {
       </DualListSelectorControlsWrapper>
       <DualListSelectorPane
         title="Chosen"
-        status={`${chosenOptions.filter(x => x.selected && x.isVisible).length} of ${
-          chosenOptions.filter(x => x.isVisible).length
+        status={`${chosenOptions.filter((x) => x.selected && x.isVisible).length} of ${
+          chosenOptions.filter((x) => x.isVisible).length
         } options selected`}
         isChosen
       >
-        <DragDropSort
-          items={sortableChosenOptions}
-          onDrop={onDrop}
-          variant="DualListSelectorList"
-        >
+        <DragDropSort items={sortableChosenOptions} onDrop={onDrop} variant="DualListSelectorList">
           <DualListSelectorList />
         </DragDropSort>
       </DualListSelectorPane>

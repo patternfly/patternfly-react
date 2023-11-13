@@ -3,7 +3,7 @@ import { DataList, DataListCell, DataListCheck, DataListControl, DataListItemCel
 import { DragDropSort, DraggableObject } from '@patternfly/react-drag-drop';
 
 const getItems = (count: number): DraggableObject[] =>
-  Array.from({ length: count }, (_, idx) => idx).map(idx => ({
+  Array.from({ length: count }, (_, idx) => idx).map((idx) => ({
     id: `data-list-item-${idx}`,
     content: (
       <>
@@ -21,7 +21,7 @@ const getItems = (count: number): DraggableObject[] =>
     )
   }));
 
-export const DataListDraggable: React.FunctionComponent = props => {
+export const DataListDraggable: React.FunctionComponent = (props) => {
   const [items, setItems] = React.useState<DraggableObject[]>(getItems(10));
 
   return (
@@ -32,11 +32,7 @@ export const DataListDraggable: React.FunctionComponent = props => {
       }}
       variant="DataList"
     >
-      <DataList
-        aria-label="draggable data list example"
-        isCompact
-        {...props}
-      />
+      <DataList aria-label="draggable data list example" isCompact {...props} />
     </DragDropSort>
   );
 };
