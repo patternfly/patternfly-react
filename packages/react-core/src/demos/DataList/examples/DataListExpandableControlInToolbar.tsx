@@ -34,7 +34,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const ExpandableDataList: React.FunctionComponent = () => {
+export const DataListExpandableControlInToolbar: React.FunctionComponent = () => {
   const [expanded, setExpanded] = React.useState(['ex-toggle1', 'ex-toggle3']);
   const [isOpen1, setIsOpen1] = React.useState(false);
   const [isOpen2, setIsOpen2] = React.useState(false);
