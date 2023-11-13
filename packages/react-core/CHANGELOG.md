@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.25...@patternfly/react-core@5.2.0-prerelease.26) (2023-11-13)
+
+### Bug Fixes
+
+- **DatePicker:** updated logic for parsing and focus management ([#9794](https://github.com/patternfly/patternfly-react/issues/9794)) ([a12cf31](https://github.com/patternfly/patternfly-react/commit/a12cf313f0924a61a8cf20ee78b4b27290b9c05f))
+
 # [5.2.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.24...@patternfly/react-core@5.2.0-prerelease.25) (2023-11-10)
 
 **Note:** Version bump only for package @patternfly/react-core
