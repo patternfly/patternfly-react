@@ -33,11 +33,11 @@ test(`Renders with custom class when className is passed`, () => {
 
 test(`Renders with spread props`, () => {
   render(
-    <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
+    <DataListAction dir="rtl" aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
       test
     </DataListAction>
   );
-  expect(screen.getByText('test')).toHaveAttribute('id', 'ex-action');
+  expect(screen.getByText('test')).toHaveAttribute('dir', 'rtl');
 });
 
 test(`Renders with class ${styles.dataListAction} when isPlainButtonAction = true`, () => {

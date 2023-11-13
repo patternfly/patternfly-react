@@ -31,7 +31,7 @@ test(`Renders with spread props`, () => {
 
 test(`Renders with aria-label when aria-label is passed`, () => {
   render(<DataList aria-label="list">test</DataList>);
-  expect(screen.getByText('test')).toHaveAttribute('aria-label', 'list');
+  expect(screen.getByText('test')).toHaveAccessibleName('list');
 });
 
 test(`Renders ${styles.modifiers.compact} when isCompact = true`, () => {
