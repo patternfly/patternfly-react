@@ -11,7 +11,7 @@ export const NavLegacyTertiary: React.FunctionComponent = () => {
   return (
     <Nav onSelect={onSelect} variant="tertiary" aria-label="Tertiary local">
       <NavList>
-        {Array.apply(0, Array(10)).map(function (_item, index: number) {
+        {Array.from({ length: 10 }).map(function (_value, index) {
           const num = index + 1;
           return (
             <NavItem

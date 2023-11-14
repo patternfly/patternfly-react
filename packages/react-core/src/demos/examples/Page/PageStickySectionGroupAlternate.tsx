@@ -275,8 +275,8 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
       </PageGroup>
       <PageSection>
         <Gallery hasGutter>
-          {Array.apply(0, Array(50)).map((x, i) => (
-            <GalleryItem key={i}>
+          {Array.from({ length: 50 }).map((_value, index) => (
+            <GalleryItem key={index}>
               <Card>
                 <CardBody>This is a card</CardBody>
               </Card>
