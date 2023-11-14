@@ -2,7 +2,6 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import userEvent from '@testing-library/user-event';
 
 import { Menu } from '../Menu';
 import { MenuItem } from '../MenuItem';
@@ -54,7 +53,7 @@ describe('Menu', () => {
 
   describe('with hasCheckbox', () => {
     test('should render Menu with checkbox items', () => {
-      const { asFragment } = render(
+      render(
         <Menu>
           <MenuContent>
             <MenuList>
@@ -67,7 +66,7 @@ describe('Menu', () => {
       );
       const checkbox1 = screen.getAllByRole('checkbox')[0];
       expect(checkbox1).not.toBeChecked();
-      expect(screen.getByText("Checkbox 1")).toBeInTheDocument();
+      expect(screen.getByText('Checkbox 1')).toBeInTheDocument();
     });
   });
 });

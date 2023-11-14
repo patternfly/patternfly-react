@@ -10,7 +10,7 @@ import {
   DrawerPanelContent
 } from '../';
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { KeyTypes } from '../../../helpers';
 
@@ -134,13 +134,9 @@ test('Resizeable DrawerPanelContent can be wrapped in a context without causing 
 
   const panelContent = (
     <TestContext.Provider value={{}}>
-      <DrawerPanelContent
-        isResizable
-      >
+      <DrawerPanelContent isResizable>
         <DrawerHead>
-          <span>
-            drawer-panel
-          </span>
+          <span>drawer-panel</span>
           <DrawerActions>
             <DrawerCloseButton />
           </DrawerActions>
@@ -163,4 +159,4 @@ test('Resizeable DrawerPanelContent can be wrapped in a context without causing 
   await user.keyboard(`{${KeyTypes.ArrowLeft}}`);
 
   expect(consoleError).not.toHaveBeenCalled();
-})
+});

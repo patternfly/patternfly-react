@@ -48,7 +48,7 @@ describe('MultipleFileUploadStatusItem', () => {
         fileName="testCustomFileName.txt"
         fileSize={42}
         progressId="test-progress-id"
-        progressAriaLiveMessage={loadPercentage => `test message ${loadPercentage}`}
+        progressAriaLiveMessage={(loadPercentage) => `test message ${loadPercentage}`}
       />
     );
 

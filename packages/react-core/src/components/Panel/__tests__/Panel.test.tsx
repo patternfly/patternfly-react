@@ -85,9 +85,9 @@ test('Renders with ref', async () => {
   render(<BasicPanel />);
 
   await user.click(document.body);
-  expect(screen.getByText('Last click was in panel: false')).toBeVisible;
+  expect(screen.getByText('Last click was in panel: false')).toBeVisible();
   await user.click(screen.getByText('Main content'));
-  expect(screen.getByText('Last click was in panel: true')).toBeVisible;
+  expect(screen.getByText('Last click was in panel: true')).toBeVisible();
 });
 
 test('Renders with the inherited element props spread to the component', () => {

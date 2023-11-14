@@ -2,7 +2,6 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 
-import { ExclamationCircleIcon } from '@patternfly/react-icons';
 import { FormHelperText } from '../FormHelperText';
 
 describe('FormHelperText', () => {

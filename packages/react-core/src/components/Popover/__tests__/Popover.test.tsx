@@ -70,7 +70,7 @@ test('popover can close from content (uncontrolled)', () => {
       aria-label="Popover with button in the body that can close it"
       isVisible
       headerContent={<div>Popover header</div>}
-      bodyContent={hide => (
+      bodyContent={(hide) => (
         <div>
           <div>
             All the content props (headerContent, bodyContent, footerContent) can take a function which the Popover

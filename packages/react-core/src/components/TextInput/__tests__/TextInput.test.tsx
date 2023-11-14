@@ -33,7 +33,9 @@ describe('TextInput', () => {
   });
 
   test('read only text input using isReadOnly', () => {
-    const { asFragment } = render(<TextInput readOnlyVariant="default" value="read only" aria-label="read only text input" />);
+    const { asFragment } = render(
+      <TextInput readOnlyVariant="default" value="read only" aria-label="read only text input" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -113,20 +115,20 @@ describe('TextInput', () => {
 
   test('trimLeft is called when isStartTruncated is true', async () => {
     const trimLeftFn = jest.spyOn(ReactCoreUtils, 'trimLeft').mockImplementation();
-  
+
     render(<TextInput isStartTruncated aria-label="start truncated text input" />);
     expect(trimLeftFn).toHaveBeenCalled();
   });
 
   test('trimLeft is called when isLeftTruncated is true', async () => {
     const trimLeftFn = jest.spyOn(ReactCoreUtils, 'trimLeft').mockImplementation();
-  
+
     render(<TextInput isLeftTruncated aria-label="start truncated text input" />);
     expect(trimLeftFn).toHaveBeenCalled();
   });
 
   test('has aria-expanded set to true when ariaProps.isExpanded is true', () => {
-    render(<TextInput expandedProps={{isExpanded: true, ariaControls: 'test'}}  aria-label="isExpanded"/>);
+    render(<TextInput expandedProps={{ isExpanded: true, ariaControls: 'test' }} aria-label="isExpanded" />);
 
     const input = screen.getByLabelText('isExpanded');
     expect(input).toHaveAttribute('aria-expanded', 'true');

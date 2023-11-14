@@ -23,7 +23,7 @@ describe('InputGroup', () => {
       </InputGroup>
     );
 
-    const formControl = screen.getByLabelText("User password");
-    expect(formControl).not.toHaveAttribute("aria-describedby");
+    const formControl = screen.getByLabelText('User password');
+    expect(formControl).not.toHaveAttribute('aria-describedby');
   });
 });

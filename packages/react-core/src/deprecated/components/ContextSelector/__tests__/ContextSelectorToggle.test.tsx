@@ -24,7 +24,7 @@ describe('ContextSelectorToggle', () => {
 
   test('Verify ESC press', async () => {
     const user = userEvent.setup();
-    
+
     const { asFragment } = render(<ContextSelectorToggle isOpen id="toggle-id" />);
 
     await user.type(screen.getByRole('button'), `{${KeyTypes.Escape}}`);
@@ -33,7 +33,7 @@ describe('ContextSelectorToggle', () => {
 
   test('Verify ESC press with not isOpen', async () => {
     const user = userEvent.setup();
-    
+
     const { asFragment } = render(<ContextSelectorToggle onToggle={jest.fn()} id="toggle-id" />);
 
     await user.type(screen.getByRole('button'), `{${KeyTypes.Escape}}`);
@@ -42,7 +42,7 @@ describe('ContextSelectorToggle', () => {
 
   test('Verify keydown tab ', async () => {
     const user = userEvent.setup();
-    
+
     const { asFragment } = render(<ContextSelectorToggle isOpen id="toggle-id" />);
 
     await user.type(screen.getByRole('button'), `{${KeyTypes.Tab}}`);
@@ -51,7 +51,7 @@ describe('ContextSelectorToggle', () => {
 
   test('Verify keydown enter ', async () => {
     const user = userEvent.setup();
-    
+
     const { asFragment } = render(<ContextSelectorToggle onToggle={jest.fn()} onEnter={jest.fn()} id="toggle-id" />);
 
     await user.type(screen.getByRole('button'), `{${KeyTypes.Enter}}`);

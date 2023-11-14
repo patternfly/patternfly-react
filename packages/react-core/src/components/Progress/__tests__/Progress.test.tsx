@@ -49,7 +49,7 @@ test('value scaled between minValue and maxValue', () => {
 });
 
 describe('Progress size', () => {
-  Object.keys(ProgressSize).forEach(oneSize => {
+  Object.keys(ProgressSize).forEach((oneSize) => {
     test(oneSize, () => {
       const { asFragment } = render(<Progress id={`${oneSize}-progress`} value={33} size={oneSize as ProgressSize} />);
       expect(asFragment()).toMatchSnapshot();
@@ -58,7 +58,7 @@ describe('Progress size', () => {
 });
 
 describe('Progress variant', () => {
-  Object.keys(ProgressVariant).forEach(oneVariant => {
+  Object.keys(ProgressVariant).forEach((oneVariant) => {
     test(oneVariant, () => {
       const { asFragment } = render(
         <Progress id={`${oneVariant}-progress`} value={33} variant={oneVariant as ProgressVariant} />
@@ -69,7 +69,7 @@ describe('Progress variant', () => {
 });
 
 describe('Progress measure location', () => {
-  Object.keys(ProgressMeasureLocation).forEach(oneLocation => {
+  Object.keys(ProgressMeasureLocation).forEach((oneLocation) => {
     test(oneLocation, () => {
       const { asFragment } = render(
         <Progress id={`${oneLocation}-progress`} value={33} measureLocation={oneLocation as ProgressMeasureLocation} />
@@ -99,10 +99,10 @@ test('progress component generates console warning when no accessible name is pr
 });
 
 test('Does not render helper text by default', () => {
-  render(<Progress/>);
+  render(<Progress />);
 
   expect(screen.queryByText('Test helper text')).not.toBeInTheDocument();
-})
+});
 
 test('Renders passed helper text', () => {
   render(<Progress helperText="Test helper text" />);

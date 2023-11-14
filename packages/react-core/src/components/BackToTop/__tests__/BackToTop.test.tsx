@@ -115,10 +115,11 @@ test('Clicking backToTop scrolls back to top of the element passed via scrollabl
   const user = userEvent.setup();
   const wrapper = document.getElementById('backToTopWrapper');
   fireEvent.scroll(wrapper as HTMLElement, { target: { scrollY: 401 } });
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   wrapper!.scrollTo = jest.fn();
   await user.click(screen.getByRole(`button`).parentElement as Element);
 
-  expect(wrapper?.scrollTo).toBeCalledTimes(1);
+  expect(wrapper?.scrollTo).toHaveBeenCalledTimes(1);
 });
 
 test('Passes correct text content to button child component', () => {
