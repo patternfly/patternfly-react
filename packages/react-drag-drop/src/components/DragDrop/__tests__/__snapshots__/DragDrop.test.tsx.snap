@@ -5,14 +5,12 @@ exports[`renders some divs 1`] = `
   <div
     class="pf-c-droppable pf-m-dragging"
   >
-    <div
-      class="pf-c-droppable "
-    >
+    <div>
       <div
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="pf-c-draggable"
+        class=""
         role="button"
         tabindex="0"
       >
@@ -22,7 +20,7 @@ exports[`renders some divs 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="pf-c-draggable"
+        class=""
         role="button"
         tabindex="0"
       >
@@ -32,7 +30,7 @@ exports[`renders some divs 1`] = `
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="pf-c-draggable"
+        class=""
         role="button"
         tabindex="0"
       >
