@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import { HelperText } from '../HelperText';
 import { HelperTextItem } from '../HelperTextItem';
 
 import styles from '@patternfly/react-styles/css/components/HelperText/helper-text';
