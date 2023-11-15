@@ -140,50 +140,6 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 </Masthead>;
 ```
 
-### Light variant
-
-```ts
-import React from 'react';
-import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-
-<Masthead id="light-masthead" backgroundColor="light">
-  <MastheadToggle>
-    <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
-      <BarsIcon />
-    </Button>
-  </MastheadToggle>
-  <MastheadMain>
-    <MastheadBrand>Logo</MastheadBrand>
-  </MastheadMain>
-  <MastheadContent>
-    <span>Content</span>
-  </MastheadContent>
-</Masthead>;
-```
-
-### Light 200 variant
-
-```ts
-import React from 'react';
-import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-
-<Masthead id="light200-masthead" backgroundColor="light200">
-  <MastheadToggle>
-    <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
-      <BarsIcon />
-    </Button>
-  </MastheadToggle>
-  <MastheadMain>
-    <MastheadBrand>Logo</MastheadBrand>
-  </MastheadMain>
-  <MastheadContent>
-    <span>Content</span>
-  </MastheadContent>
-</Masthead>;
-```
-
 ### Inset
 
 ```ts

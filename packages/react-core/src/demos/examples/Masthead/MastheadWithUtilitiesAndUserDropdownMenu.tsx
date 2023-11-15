@@ -31,7 +31,6 @@ import {
   NavList,
   Page,
   PageSection,
-  PageSectionVariants,
   PageSidebar,
   PageSidebarBody,
   PageToggleButton,
@@ -533,7 +532,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       isTertiaryNavGrouped
       isBreadcrumbGrouped
       additionalGroupedContent={
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">This is a full page demo.</Text>

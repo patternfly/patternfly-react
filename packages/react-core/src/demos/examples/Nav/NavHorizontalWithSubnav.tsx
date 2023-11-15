@@ -24,7 +24,6 @@ import {
   NavList,
   Page,
   PageSection,
-  PageSectionVariants,
   PageSectionTypes,
   PageToggleButton,
   SkipToContent,
@@ -271,7 +270,7 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
         <PageSection type={PageSectionTypes.breadcrumb} isWidthLimited>
           {DashboardBreadcrumb}
         </PageSection>
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">

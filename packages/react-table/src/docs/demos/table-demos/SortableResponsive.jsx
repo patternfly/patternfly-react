@@ -17,7 +17,6 @@ import {
   OverflowMenuGroup,
   OverflowMenuItem,
   PageSection,
-  PageSectionVariants,
   Pagination,
   Select,
   SelectOption,
@@ -231,7 +230,7 @@ export const ComposableTableSortable = () => {
   return (
     <React.Fragment>
       <DashboardWrapper>
-        <PageSection isWidthLimited variant={PageSectionVariants.light}>
+        <PageSection isWidthLimited>
           <TextContent>
             <Text component="h1">Table demos</Text>
             <Text component="p">

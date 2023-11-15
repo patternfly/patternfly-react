@@ -20,8 +20,6 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** True to make an icon button appear selected */
-  isSelected?: boolean;
 }
 
 export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemProps> = ({
@@ -29,7 +27,6 @@ export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemPro
   id,
   className,
   visibility,
-  isSelected,
   ...props
 }: PageHeaderToolsItemProps) => {
   const { width, getBreakpoint } = React.useContext(PageContext);
@@ -37,7 +34,6 @@ export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemPro
     <div
       className={css(
         styles.pageHeaderToolsItem,
-        isSelected && styles.modifiers.selected,
         formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
         className
       )}

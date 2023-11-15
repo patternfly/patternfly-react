@@ -8,7 +8,6 @@ import {
   SelectList,
   SelectOption,
   PageSection,
-  PageSectionVariants,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -483,7 +482,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
 
   return (
     <DashboardWrapper sidebarNavOpen={!mobileView} onPageResize={onPageResize}>
-      <PageSection variant={PageSectionVariants.light}>
+      <PageSection>
         <Toolbar id="log-viewer-toolbar" inset={{ default: 'insetNone' }}>
           <ToolbarContent>{items}</ToolbarContent>
         </Toolbar>

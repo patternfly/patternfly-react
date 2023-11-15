@@ -66,7 +66,6 @@ import {
   MenuToggle,
   MenuToggleCheckbox,
   PageSection,
-  PageSectionVariants,
   Pagination,
   Progress,
   TextContent,
@@ -597,7 +596,7 @@ class PrimaryDetailCardView extends React.Component {
 
     return (
       <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Projects</Text>
             <Text component="p">This is a demo that showcases Patternfly Cards.</Text>
@@ -616,7 +615,7 @@ class PrimaryDetailCardView extends React.Component {
             </DrawerContent>
           </Drawer>
         </PageSection>
-        <PageSection isFilled={false} sticky="bottom" padding={{ default: 'noPadding' }} variant="light">
+        <PageSection isFilled={false} sticky="bottom" padding={{ default: 'noPadding' }}>
           <Pagination
             itemCount={filtered.length}
             page={this.state.page}
@@ -651,7 +650,6 @@ import {
   Flex,
   FlexItem,
   PageSection,
-  PageSectionVariants,
   Progress,
   SimpleList,
   SimpleListGroup,
@@ -762,7 +760,7 @@ class PrimaryDetailSimpleListInCard extends React.Component {
 
     return (
       <DashboardWrapper>
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">
@@ -817,7 +815,6 @@ import {
   FlexItem,
   MenuToggle,
   PageSection,
-  PageSectionVariants,
   Progress,
   Text,
   TextContent,
@@ -1000,7 +997,7 @@ class PrimaryDetailDataListInCard extends React.Component {
 
     return (
       <DashboardWrapper>
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">

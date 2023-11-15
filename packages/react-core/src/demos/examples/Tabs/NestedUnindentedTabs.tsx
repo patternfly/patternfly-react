@@ -127,7 +127,7 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper hasPageTemplateTitle>
-      <PageSection type="tabs" isWidthLimited variant="light">
+      <PageSection type="tabs" isWidthLimited>
         <Tabs
           activeKey={activeTabKey}
           onSelect={(_event, tabIndex) => handleTabClick(Number(tabIndex))}
@@ -140,7 +140,7 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
           <Tab eventKey={3} title={<TabTitleText>Support</TabTitleText>} tabContentId={`tabContent${3}`} />
         </Tabs>
       </PageSection>
-      <PageSection isWidthLimited variant="light">
+      <PageSection isWidthLimited>
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <TabContentBody>What's new panel</TabContentBody>
         </TabContent>

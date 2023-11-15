@@ -5,7 +5,6 @@ import {
   NavItem,
   Page,
   PageSection,
-  PageSectionVariants,
   PageSidebar,
   PageSidebarBody,
   SkipToContent,
@@ -80,7 +79,7 @@ export const NavGrouped: React.FunctionComponent = () => {
         skipToContent={PageSkipToContent}
         mainContainerId={pageId}
       >
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">
@@ -89,9 +88,9 @@ export const NavGrouped: React.FunctionComponent = () => {
             </Text>
           </TextContent>
         </PageSection>
-        <PageSection variant={PageSectionVariants.light}>Light</PageSection>
-        <PageSection variant={PageSectionVariants.dark}>Dark</PageSection>
-        <PageSection variant={PageSectionVariants.darker}>Darker</PageSection>
+        <PageSection>Section 1</PageSection>
+        <PageSection>Section 2</PageSection>
+        <PageSection>Section 3</PageSection>
         <PageSection>Content</PageSection>
       </Page>
     </>

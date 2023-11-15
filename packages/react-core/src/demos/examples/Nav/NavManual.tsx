@@ -24,7 +24,6 @@ import {
   NavList,
   Page,
   PageSection,
-  PageSectionVariants,
   PageSidebar,
   PageSidebarBody,
   PageToggleButton,
@@ -247,7 +246,7 @@ export const NavManual: React.FunctionComponent = () => {
         skipToContent={PageSkipToContent}
         mainContainerId={pageId}
       >
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">

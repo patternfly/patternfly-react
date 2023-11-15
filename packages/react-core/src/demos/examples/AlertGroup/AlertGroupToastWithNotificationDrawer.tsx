@@ -15,7 +15,6 @@ import {
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
   PageSection,
-  PageSectionVariants,
   TextContent,
   Text,
   EmptyStateVariant,
@@ -318,7 +317,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
       notificationDrawer={notificationDrawer}
       isNotificationDrawerExpanded={isDrawerExpanded}
     >
-      <PageSection variant={PageSectionVariants.light}>
+      <PageSection>
         <TextContent>
           <Text component="h1">Alert Group with Notification Drawer demo</Text>
           <Text component="p">
@@ -330,7 +329,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
         </TextContent>
       </PageSection>
 
-      <PageSection variant={PageSectionVariants.light}>
+      <PageSection>
         <Button variant="secondary" onClick={() => addNewNotification('success')} style={alertButtonStyle}>
           Add toast success alert
         </Button>
@@ -350,7 +349,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
         </Button>
       </PageSection>
 
-      <PageSection variant={PageSectionVariants.light}>
+      <PageSection>
         <TextContent>
           <br />
           <Text component="h2">Max displayed alerts</Text>
@@ -370,7 +369,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
           style={{ margin: '12px 0' }}
         />
       </PageSection>
-      <PageSection variant={PageSectionVariants.light}>
+      <PageSection>
         <AlertGroup isToast isLiveRegion onOverflowClick={onAlertGroupOverflowClick} overflowMessage={overflowMessage}>
           {alerts.slice(0, maxDisplayed)}
         </AlertGroup>

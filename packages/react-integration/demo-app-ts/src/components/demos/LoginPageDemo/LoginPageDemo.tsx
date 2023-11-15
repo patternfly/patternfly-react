@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 /* eslint-disable camelcase */
 const brandImg = require('../../../assets/images/brandImgColor.svg') as string;
 const pfbg_icon = require('../../../assets/images/pfbg-icon.svg') as string;
@@ -23,7 +23,7 @@ export interface LoginPageDemoState {
   isRememberMeChecked: boolean;
 }
 
-export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElement>, LoginPageDemoState> {
+export class LoginPageDemo extends Component<React.HTMLProps<HTMLDivElement>, LoginPageDemoState> {
   static displayName = 'LoginPageDemo';
   state = {
     showHelperText: false,
@@ -143,22 +143,24 @@ export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElemen
     );
 
     return (
-      <LoginPage
-        footerListVariants={ListVariant.inline}
-        brandImgSrc={brandImg}
-        brandImgAlt="PatternFly logo"
-        backgroundImgSrc={pfbg_icon}
-        footerListItems={listItems}
-        textContent="This is placeholder text only. Use this area to place any information or introductory message about your
-        application that may be relevant to users."
-        loginTitle="Log in to your account"
-        loginSubtitle="Please use your single sign-on LDAP credentials"
-        socialMediaLoginContent={socialMediaLoginContent}
-        signUpForAccountMessage={signUpForAccountMessage}
-        forgotCredentials={forgotCredentials}
-      >
-        {loginForm}
-      </LoginPage>
+      <div style={{ isolation: 'isolate' }}>
+        <LoginPage
+          footerListVariants={ListVariant.inline}
+          brandImgSrc={brandImg}
+          brandImgAlt="PatternFly logo"
+          backgroundImgSrc={pfbg_icon}
+          footerListItems={listItems}
+          textContent="This is placeholder text only. Use this area to place any information or introductory message about your
+          application that may be relevant to users."
+          loginTitle="Log in to your account"
+          loginSubtitle="Please use your single sign-on LDAP credentials"
+          socialMediaLoginContent={socialMediaLoginContent}
+          signUpForAccountMessage={signUpForAccountMessage}
+          forgotCredentials={forgotCredentials}
+        >
+          {loginForm}
+        </LoginPage>
+      </div>
     );
   }
 }

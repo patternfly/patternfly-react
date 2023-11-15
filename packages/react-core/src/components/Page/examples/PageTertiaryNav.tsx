@@ -6,7 +6,6 @@ import {
   MastheadBrand,
   MastheadContent,
   PageSection,
-  PageSectionVariants,
   Toolbar,
   ToolbarContent,
   ToolbarItem
@@ -34,9 +33,9 @@ export const PageTertiaryNav: React.FunctionComponent = () => {
 
   return (
     <Page header={header} tertiaryNav="Navigation">
-      <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
-      <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
-      <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
+      <PageSection>Section 1</PageSection>
+      <PageSection>Section 2</PageSection>
+      <PageSection>Section 3</PageSection>
     </Page>
   );
 };

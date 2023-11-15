@@ -9,7 +9,6 @@ import {
   PageSidebar,
   PageSidebarBody,
   PageSection,
-  PageSectionVariants,
   PageToggleButton,
   Toolbar,
   ToolbarContent,
@@ -63,13 +62,9 @@ export const PageMainSectionPadding: React.FunctionComponent = () => {
   return (
     <Page header={header} sidebar={sidebar}>
       <PageSection>Section with default padding</PageSection>
-      <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
-        Section with no padding
-      </PageSection>
+      <PageSection padding={{ default: 'noPadding' }}>Section with no padding</PageSection>
       <PageSection padding={{ default: 'noPadding', md: 'padding' }}>Section with padding on medium</PageSection>
-      <PageSection variant={PageSectionVariants.light} padding={{ md: 'noPadding' }}>
-        Section with no padding on medium
-      </PageSection>
+      <PageSection padding={{ md: 'noPadding' }}>Section with no padding on medium</PageSection>
     </Page>
   );
 };

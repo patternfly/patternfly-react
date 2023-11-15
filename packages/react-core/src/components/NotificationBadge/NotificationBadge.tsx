@@ -54,7 +54,7 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
         className={css(styles.notificationBadge, styles.modifiers[variant], isExpanded && styles.modifiers.expanded)}
       >
         {notificationChild}
-        {count > 0 && <span className={css(styles.notificationBadgeCount)}>{count}</span>}
+        {count > 0 && <span className={css(`${styles.notificationBadge}__count`)}>{count}</span>}
       </span>
     </Button>
   );

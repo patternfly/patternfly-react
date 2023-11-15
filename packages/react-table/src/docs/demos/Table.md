@@ -20,7 +20,6 @@ SkipToContent,
 Breadcrumb,
 BreadcrumbItem,
 Page,
-PageSectionVariants,
 TextContent,
 Text,
 Divider } from '@patternfly/react-core';

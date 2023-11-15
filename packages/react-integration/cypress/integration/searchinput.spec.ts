@@ -62,13 +62,13 @@ describe('Search Input Demo Test', () => {
     cy.get('#enabled-search .pf-v5-c-form-control > input').eq(1).should('have.value', 'hi');
     cy.get('#enabled-search .pf-v5-c-form-control > input').eq(2).should('have.value', 'another test');
 
-    cy.get('#enabled-search .pf-v5-c-form__actions button').eq(1).click();
+    cy.get('#enabled-search .pf-v5-c-form__actions button').eq(1).click({ force: true });
     cy.get('#enabled-search .pf-v5-c-text-input-group__text-input').should('have.value', '');
     cy.get('#enabled-search .pf-v5-c-form-control > input').eq(1).should('have.value', '');
     cy.get('#enabled-search .pf-v5-c-form-control > input').eq(2).should('have.value', '');
 
     cy.get('#enabled-search .pf-v5-c-form-control > input').eq(0).type('test');
-    cy.get('#enabled-search .pf-v5-c-form__actions button').eq(0).click();
+    cy.get('#enabled-search .pf-v5-c-form__actions button').eq(0).click({ force: true });
     cy.get('#enabled-search .pf-v5-c-form input').should('not.exist');
     cy.get('#enabled-search .pf-v5-c-text-input-group__text-input').should('have.value', 'username:test');
   });

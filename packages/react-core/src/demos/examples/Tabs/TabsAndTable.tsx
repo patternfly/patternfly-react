@@ -24,7 +24,6 @@ import {
   OverflowMenuGroup,
   OverflowMenuItem,
   PageSection,
-  PageSectionVariants,
   Progress,
   ProgressSize,
   Tabs,
@@ -391,12 +390,12 @@ export const TablesAndTabs = () => {
   return (
     <DashboardWrapper>
       <React.Fragment>
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection>
           <Title headingLevel="h1" size="2xl">
             Nodes
           </Title>
         </PageSection>
-        <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
+        <PageSection padding={{ default: 'noPadding' }}>
           {toolbar}
           <Divider />
           {tabContent}

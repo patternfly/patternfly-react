@@ -6,7 +6,7 @@ const { readFileSync } = require('fs');
 const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
 
 // Helpers
-const formatCustomPropertyName = (key) => key.replace('--pf-v5-', '').replace(/-+/g, '_');
+const formatCustomPropertyName = (key) => key.replace('--pf-v5-', '').replace('--pf-t--', '').replace(/-+/g, '_');
 
 const getRegexMatches = (string, regex) => {
   const res = {};
@@ -47,6 +47,11 @@ const getLocalVarsMap = (cssFiles) => {
 
     getDeclarations(cssAst).forEach(({ property, value, parent }) => {
       if (property.startsWith('--pf-v5')) {
+        res[property] = {
+          ...res[property],
+          [parent.selectors[0]]: value
+        };
+      } else if (property.startsWith('--pf-t')) {
         res[property] = {
           ...res[property],
           [parent.selectors[0]]: value

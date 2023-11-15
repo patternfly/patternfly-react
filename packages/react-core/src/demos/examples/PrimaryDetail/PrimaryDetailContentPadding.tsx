@@ -27,7 +27,6 @@ import {
   InputGroup,
   InputGroupItem,
   PageSection,
-  PageSectionVariants,
   Progress,
   Stack,
   StackItem,
@@ -421,7 +420,7 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper>
-      <PageSection variant={PageSectionVariants.light}>
+      <PageSection>
         <TextContent>
           <Text component="h1">Main title</Text>
           <Text component="p">
