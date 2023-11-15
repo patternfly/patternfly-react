@@ -5,346 +5,182 @@ import userEvent from '@testing-library/user-event';
 
 import { DataList } from '../DataList';
 import { DataListItem } from '../DataListItem';
-import { DataListAction } from '../DataListAction';
-import { DataListCell } from '../DataListCell';
-import { DataListToggle } from '../DataListToggle';
-import { DataListItemCells } from '../DataListItemCells';
 import { DataListItemRow } from '../DataListItemRow';
-import { DataListContent } from '../DataListContent';
-import { Button } from '../../Button';
-import { Dropdown, DropdownList, DropdownItem } from '../../Dropdown';
-import { MenuToggle } from '../../MenuToggle';
+
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 
-describe('DataList', () => {
-  test('List default', () => {
-    const { asFragment } = render(<DataList aria-label="this is a simple list" />);
-    expect(asFragment()).toMatchSnapshot();
+test('Renders to match snapshot', () => {
+  const { asFragment } = render(<DataList aria-label="list" />);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test(`Renders with default class ${styles.dataList}`, () => {
+  render(<DataList aria-label="list" />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.dataList);
+});
+
+test(`Renders with custom class when className is passed`, () => {
+  render(<DataList aria-label="list" className="custom" />);
+  expect(screen.getByLabelText('list')).toHaveClass('custom');
+});
+
+test(`Renders with spread props`, () => {
+  render(<DataList aria-label="list" id="test" />);
+  expect(screen.getByLabelText('list')).toHaveAttribute('id', 'test');
+});
+
+test(`Renders with aria-label when aria-label is passed`, () => {
+  render(<DataList aria-label="list">test</DataList>);
+  expect(screen.getByText('test')).toHaveAccessibleName('list');
+});
+
+test(`Renders ${styles.modifiers.compact} when isCompact = true`, () => {
+  render(<DataList aria-label="list" isCompact />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.compact);
+});
+
+['nowrap', 'truncate', 'breakWord'].forEach((wrap) => {
+  test(`Renders with class ${styles.modifiers[wrap]} when wrapModifier = ${wrap} is pased`, () => {
+    render(<DataList aria-label="list" wrapModifier={wrap as 'nowrap' | 'truncate' | 'breakWord'} />);
+    expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers[wrap]);
   });
+});
 
-  test('List compact', () => {
-    const { asFragment } = render(<DataList aria-label="this is a simple list" isCompact />);
-    expect(asFragment()).toMatchSnapshot();
+const gridBreakpointClasses = {
+  none: styles.modifiers.gridNone,
+  always: 'pf-m-grid',
+  sm: styles.modifiers.gridSm,
+  md: styles.modifiers.gridMd,
+  lg: styles.modifiers.gridLg,
+  xl: styles.modifiers.gridXl,
+  '2xl': styles.modifiers.grid_2xl
+};
+
+['none', 'always', 'sm', 'md', 'lg', 'xl', '2xl'].forEach((oneBreakpoint) => {
+  test(`Has breakpoint - ${oneBreakpoint} when gridBreakpoint is pased`, () => {
+    render(<DataList aria-label="list" gridBreakpoint={oneBreakpoint as any} />);
+    expect(screen.getByLabelText('list')).toHaveClass(gridBreakpointClasses[oneBreakpoint]);
   });
+});
 
-  describe('DataList variants', () => {
-    ['none', 'always', 'sm', 'md', 'lg', 'xl', '2xl'].forEach((oneBreakpoint) => {
-      test(`Breakpoint - ${oneBreakpoint}`, () => {
-        const { asFragment } = render(
-          <DataList aria-label="this is a simple list" gridBreakpoint={oneBreakpoint as any} />
-        );
-        expect(asFragment()).toMatchSnapshot();
-      });
-    });
-  });
+test(`Renders default class ${styles.dataList}`, () => {
+  render(<DataList key="list-id-1" aria-label="list" />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.dataList);
+});
 
-  test('List draggable', () => {
-    const { asFragment } = render(<DataList aria-label="this is a simple list" isCompact onDragFinish={jest.fn()} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders custom class when passed', () => {
+  render(<DataList key="list-id-1" className="data-list-custom" aria-label="list" />);
+  expect(screen.getByLabelText('list')).toHaveClass('data-list-custom');
+});
 
-  test('List', () => {
-    const { asFragment } = render(
-      <DataList key="list-id-1" className="data-list-custom" aria-label="this is a simple list" />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('List renders with a hidden input to improve a11y when selectableRow is passed', () => {
-    render(
-      <DataList aria-label="this is a simple list" onSelectableRowChange={() => {}}>
-        <DataListItem>
-          <DataListItemRow aria-labelledby="test-id">
-            <p id="test-id">Test</p>
-          </DataListItemRow>
-        </DataListItem>
-      </DataList>
-    );
-
-    const selectableInput = screen.getByRole('radio', { hidden: true });
-
-    expect(selectableInput).toBeInTheDocument();
-  });
-
-  test('List does not render with a hidden input to improve a11y when selectableRow is not passed', () => {
-    render(
-      <DataList aria-label="this is a simple list">
-        <DataListItem>
-          <DataListItemRow aria-labelledby="test-id">
-            <p id="test-id">Test</p>
-          </DataListItemRow>
-        </DataListItem>
-      </DataList>
-    );
-
-    const selectableInput = screen.queryByRole('radio', { hidden: true });
-
-    expect(selectableInput).not.toBeInTheDocument();
-  });
-
-  test('List calls selectableRow.onChange when the selectable input changes', async () => {
-    const mock = jest.fn();
-    const user = userEvent.setup();
-
-    render(
-      <DataList aria-label="this is a simple list" onSelectableRowChange={mock} selectedDataListItemId="">
-        <DataListItem id="item-test-id">
-          <DataListItemRow aria-labelledby="test-id">
-            <p id="test-id">Test</p>
-          </DataListItemRow>
-        </DataListItem>
-      </DataList>
-    );
-
-    const selectableInput = screen.getByRole('radio', { hidden: true });
-    await user.click(selectableInput);
-
-    expect(mock).toHaveBeenCalled();
-  });
-
-  test('List does not call selectableRow.onChange when the selectable input is not changed', () => {
-    const mock = jest.fn();
-
-    render(
-      <DataList aria-label="this is a simple list" onSelectableRowChange={mock} selectedDataListItemId="">
-        <DataListItem id="item-test-id">
-          <DataListItemRow aria-labelledby="test-id">
-            <p id="test-id">Test</p>
-          </DataListItemRow>
-        </DataListItem>
-      </DataList>
-    );
-
-    expect(mock).not.toHaveBeenCalled();
-  });
-
-  test('Item applies selectableInputAriaLabel to the hidden input', () => {
-    render(
-      <DataList aria-label="this is a simple list" onSelectableRowChange={() => {}}>
-        <DataListItem selectableInputAriaLabel="Data list item label test">
-          <DataListItemRow aria-labelledby="test-id">
-            <p id="test-id">Test</p>
-          </DataListItemRow>
-        </DataListItem>
-      </DataList>
-    );
-
-    const selectableInput = screen.getByRole('radio', { hidden: true });
-
-    expect(selectableInput).toHaveAccessibleName('Data list item label test');
-  });
-
-  test('Item defaults to labelling its input using its aria-labelledby prop', () => {
-    render(
-      <DataList aria-label="this is a simple list" onSelectableRowChange={() => {}}>
-        <DataListItem aria-labelledby="test-id">
-          <p id="test-id">Test cell content</p>
-        </DataListItem>
-      </DataList>
-    );
-
-    const selectableInput = screen.getByRole('radio', { hidden: true });
-
-    expect(selectableInput).toHaveAccessibleName('Test cell content');
-  });
-
-  test('Item prioritizes selectableInputAriaLabel over aria-labelledby prop', () => {
-    render(
-      <DataList aria-label="this is a simple list" onSelectableRowChange={() => {}}>
-        <DataListItem aria-labelledby="test-id" selectableInputAriaLabel="Data list item label test">
-          <p id="test-id">Test cell content</p>
-        </DataListItem>
-      </DataList>
-    );
-
-    const selectableInput = screen.getByRole('radio', { hidden: true });
-
-    expect(selectableInput).toHaveAccessibleName('Data list item label test');
-  });
-
-  test('Item default', () => {
-    const { asFragment } = render(
-      <DataListItem key="item-id-1" aria-labelledby="item-1">
-        test
+test('Renders with a hidden input to improve a11y when onSelectableRowChange is passed', () => {
+  render(
+    <DataList aria-label="this is a simple list" onSelectableRowChange={() => {}}>
+      <DataListItem>
+        <DataListItemRow aria-labelledby="test-id">
+          <p id="test-id">Test</p>
+        </DataListItemRow>
       </DataListItem>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+    </DataList>
+  );
 
-  test('Item expanded', () => {
-    render(
-      <DataListItem aria-labelledby="item-1" isExpanded>
-        test
+  const selectableInput = screen.getByRole('radio', { hidden: true });
+
+  expect(selectableInput).toBeInTheDocument();
+});
+
+test('Does not render with a hidden input to improve a11y when onSelectableRowChange is not passed', () => {
+  render(
+    <DataList aria-label="this is a simple list">
+      <DataListItem>
+        <DataListItemRow aria-labelledby="test-id">
+          <p id="test-id">Test</p>
+        </DataListItemRow>
       </DataListItem>
-    );
-    expect(screen.getByRole('listitem')).toHaveClass(`${styles.dataListItem} ${styles.modifiers.expanded}`);
-  });
+    </DataList>
+  );
 
-  test('Item', () => {
-    const { asFragment } = render(
-      <DataListItem className="data-list-item-custom" aria-labelledby="item-1">
-        test
+  const selectableInput = screen.queryByRole('radio', { hidden: true });
+
+  expect(selectableInput).not.toBeInTheDocument();
+});
+
+test('Calls onSelectableRowChange when the selectable input changes', async () => {
+  const mock = jest.fn();
+  const user = userEvent.setup();
+
+  render(
+    <DataList aria-label="this is a simple list" onSelectableRowChange={mock} selectedDataListItemId="">
+      <DataListItem id="item-test-id">
+        <DataListItemRow aria-labelledby="test-id">
+          <p id="test-id">Test</p>
+        </DataListItemRow>
       </DataListItem>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+    </DataList>
+  );
 
-  test('item row default', () => {
-    const { asFragment } = render(<DataListItemRow>test</DataListItemRow>);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  const selectableInput = screen.getByRole('radio', { hidden: true });
+  await user.click(selectableInput);
 
-  test('Cell default', () => {
-    const { asFragment } = render(<DataListCell>Secondary</DataListCell>);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(mock).toHaveBeenCalled();
+});
 
-  test('Cells', () => {
-    const { asFragment } = render(
-      <DataListItemCells
-        dataListCells={[
-          <DataListCell key="list-id-1" id="primary-item" className="data-list-custom">
-            Primary Id
-          </DataListCell>,
-          <DataListCell key="list-id-2" id="primary-item" className="data-list-custom">
-            Primary Id 2
-          </DataListCell>
-        ]}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Does not call onSelectableRowChange when the selectable input is not changed', () => {
+  const mock = jest.fn();
 
-  test('Cell with width modifier', () => {
-    [
-      { width: 1, class: '' },
-      { width: 2, class: 'pf-m-flex-2' },
-      { width: 3, class: 'pf-m-flex-3' },
-      { width: 4, class: 'pf-m-flex-4' },
-      { width: 5, class: 'pf-m-flex-5' }
-    ].forEach((testCase, index) => {
-      const testId = `cell-test-id-${index}`;
+  render(
+    <DataList aria-label="this is a simple list" onSelectableRowChange={mock} selectedDataListItemId="">
+      <DataListItem id="item-test-id">
+        <DataListItemRow aria-labelledby="test-id">
+          <p id="test-id">Test</p>
+        </DataListItemRow>
+      </DataListItem>
+    </DataList>
+  );
 
-      render(
-        <DataListCell data-testid={testId} width={testCase.width as any} key={index}>
-          Primary Id
-        </DataListCell>
-      );
+  expect(mock).not.toHaveBeenCalled();
+});
 
-      const dataListCell = screen.getByTestId(testId);
+test('Applies selectableInputAriaLabel to the hidden input', () => {
+  render(
+    <DataList aria-label="this is a simple list" onSelectableRowChange={() => {}}>
+      <DataListItem selectableInputAriaLabel="Data list item label test">
+        <DataListItemRow aria-labelledby="test-id">
+          <p id="test-id">Test</p>
+        </DataListItemRow>
+      </DataListItem>
+    </DataList>
+  );
 
-      testCase.class === ''
-        ? expect(dataListCell).toHaveClass(styles.dataListCell)
-        : expect(dataListCell).toHaveClass(`${styles.dataListCell} ${testCase.class}`);
-    });
-  });
+  const selectableInput = screen.getByRole('radio', { hidden: true });
 
-  test('Cell with text modifiers', () => {
-    [
-      { wrapModifier: null as any, class: '' },
-      { wrapModifier: 'breakWord', class: 'pf-m-break-word' },
-      { wrapModifier: 'nowrap', class: 'pf-m-nowrap' },
-      { wrapModifier: 'truncate', class: 'pf-m-truncate' }
-    ].forEach((testCase, index) => {
-      const testId = `cell-test-id-${index}`;
+  expect(selectableInput).toHaveAccessibleName('Data list item label test');
+});
 
-      render(
-        <DataListCell data-testid={testId} wrapModifier={testCase.wrapModifier} key={index}>
-          Primary Id
-        </DataListCell>
-      );
+test('Defaults to labelling its input using its aria-labelledby prop', () => {
+  render(
+    <DataList aria-label="this is a simple list" onSelectableRowChange={() => {}}>
+      <DataListItem aria-labelledby="test-id">
+        <p id="test-id">Test cell content</p>
+      </DataListItem>
+    </DataList>
+  );
 
-      const dataListCell = screen.getByTestId(testId);
+  const selectableInput = screen.getByRole('radio', { hidden: true });
 
-      testCase.class === ''
-        ? expect(dataListCell).toHaveClass(styles.dataListCell)
-        : expect(dataListCell).toHaveClass(`${styles.dataListCell} ${testCase.class}`);
-    });
-  });
+  expect(selectableInput).toHaveAccessibleName('Test cell content');
+});
 
-  test('Toggle default with aria label', () => {
-    render(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" />);
+test('Prioritizes selectableInputAriaLabel over aria-labelledby prop', () => {
+  render(
+    <DataList aria-label="this is a simple list" onSelectableRowChange={() => {}}>
+      <DataListItem aria-labelledby="test-id" selectableInputAriaLabel="Data list item label test">
+        <p id="test-id">Test cell content</p>
+      </DataListItem>
+    </DataList>
+  );
 
-    expect(screen.getByRole('button')).not.toHaveAttribute('aria-labelledby');
-    expect(screen.getByRole('button')).toHaveAttribute('aria-label', 'Toggle details for');
-    expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'false');
-  });
+  const selectableInput = screen.getByRole('radio', { hidden: true });
 
-  test('Toggle expanded', () => {
-    render(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" isExpanded />);
-    expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'true');
-  });
-
-  test('DataListAction dropdown', () => {
-    const { asFragment } = render(
-      <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action" isPlainButtonAction>
-        <Dropdown toggle={(toggleRef) => <MenuToggle ref={toggleRef} />}>
-          <DropdownList>
-            <DropdownItem onClick={jest.fn()} key="action-1">
-              action-1
-            </DropdownItem>
-            ,
-            <DropdownItem onClick={jest.fn()} key="action-2">
-              action-2
-            </DropdownItem>
-          </DropdownList>
-        </Dropdown>
-      </DataListAction>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('DataListAction button', () => {
-    const { asFragment } = render(
-      <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
-        <Button id="delete-item-1">Delete</Button>
-      </DataListAction>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('DataListAction visibility - show button when lg', () => {
-    render(
-      <DataListAction
-        visibility={{ default: 'hidden', lg: 'visible' }}
-        aria-labelledby="check-action-item2 check-action-action2"
-        id="check-action-action2"
-        aria-label="Actions"
-      >
-        <Button variant="primary">Primary</Button>
-      </DataListAction>
-    );
-
-    expect(screen.getByRole('button').parentElement).toHaveClass('pf-m-hidden');
-    expect(screen.getByRole('button').parentElement).toHaveClass('pf-m-visible-on-lg');
-  });
-
-  test('DataListAction visibility - hide button on 2xl', () => {
-    render(
-      <DataListAction
-        visibility={{ '2xl': 'hidden' }}
-        aria-labelledby="check-action-item2 check-action-action2"
-        id="check-action-action2"
-        aria-label="Actions"
-      >
-        <Button variant="primary">Primary</Button>
-      </DataListAction>
-    );
-
-    expect(screen.getByRole('button').parentElement).toHaveClass('pf-m-hidden-on-2xl');
-  });
-
-  test('DataListContent', () => {
-    const { asFragment } = render(<DataListContent aria-label="Primary Content Details"> test</DataListContent>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('DataListContent hasNoPadding', () => {
-    const { asFragment } = render(
-      <DataListContent aria-label="Primary Content Details" hidden hasNoPadding>
-        test
-      </DataListContent>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(selectableInput).toHaveAccessibleName('Data list item label test');
 });

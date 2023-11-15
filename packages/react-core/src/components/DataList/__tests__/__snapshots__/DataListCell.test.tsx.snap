@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell renders to match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v5-c-data-list__cell"
+  >
+    Secondary
+  </div>
+</DocumentFragment>
+`;

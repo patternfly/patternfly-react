@@ -73,6 +73,7 @@ class DataList extends React.Component<DataListProps> {
     const {
       className,
       children,
+      'aria-label': ariaLabel,
       onSelectDataListItem,
       selectedDataListItemId,
       isCompact,
@@ -106,6 +107,7 @@ class DataList extends React.Component<DataListProps> {
           )}
           style={props.style}
           role="list"
+          aria-label={ariaLabel}
           {...props}
           ref={this.ref}
         >
