@@ -1,66 +1,76 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { HelperText } from '../HelperText';
-import { HelperTextItem } from '../HelperTextItem';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 
-describe('HelperText', () => {
-  test('simple helper text renders successfully', () => {
-    const { asFragment } = render(
-      <HelperText>
-        <HelperTextItem>help test text</HelperTextItem>
-      </HelperText>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+import styles from '@patternfly/react-styles/css/components/HelperText/helper-text';
 
-  Object.values(['default', 'indeterminate', 'warning', 'success', 'invalid']).forEach((variant) => {
-    test(`${variant} helper text variant applies successfully`, () => {
-      const { asFragment } = render(
-        <HelperTextItem variant={variant as 'default' | 'indeterminate' | 'warning' | 'success' | 'error'}>
-          {variant} help test text
-        </HelperTextItem>
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
+test('Renders to match snapshot', () => {
+  const { asFragment } = render(<HelperText />);
+  expect(asFragment()).toMatchSnapshot();
+});
 
-  test('variant comonent helper text renders properly', () => {
-    const { asFragment } = render(
-      <HelperText component="ul">
-        <HelperTextItem component="li">help test text 1</HelperTextItem>
-        <HelperTextItem component="li">help test text 2</HelperTextItem>
-      </HelperText>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders without children', () => {
+  render(
+    <div data-testid="container">
+      <HelperText />
+    </div>
+  );
 
-  test('icon helper text renders properly', () => {
-    const { asFragment } = render(
-      <HelperText>
-        <HelperTextItem icon={<CheckIcon />}>help test text</HelperTextItem>
-      </HelperText>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByTestId('container').firstChild).toBeVisible();
+});
 
-  test('dynamic helper text renders successfully', () => {
-    const { asFragment } = render(
-      <HelperText>
-        <HelperTextItem isDynamic>help test text</HelperTextItem>
-      </HelperText>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders default classes', () => {
+  render(<HelperText>text</HelperText>);
+  expect(screen.getByText('text')).toHaveClass(styles.helperText);
+});
 
-  test('helper text block renders successfully', () => {
-    const { asFragment } = render(
-      <HelperText>
-        <HelperTextItem>help test text 1</HelperTextItem>
-        <HelperTextItem>help test text 2</HelperTextItem>
-        <HelperTextItem>help test text 3</HelperTextItem>
-      </HelperText>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders id when id is passed', () => {
+  render(<HelperText id="helper-id">text </HelperText>);
+  expect(screen.getByText('text')).toHaveAttribute('id', 'helper-id');
+});
+
+test('Renders aria-live when isLiveRegion is passed', () => {
+  render(<HelperText isLiveRegion>text </HelperText>);
+  expect(screen.getByText('text')).toHaveAttribute('aria-live', 'polite');
+});
+
+test('Does not render aria-live by default', () => {
+  render(<HelperText>text </HelperText>);
+  expect(screen.getByText('text')).not.toHaveAttribute('aria-live');
+});
+
+test('Spreads additional props when passed', () => {
+  render(<HelperText dir="rtl">text </HelperText>);
+  expect(screen.getByText('text')).toHaveAttribute('dir', 'rtl');
+});
+
+test('Renders custom className', () => {
+  render(<HelperText className="custom">text </HelperText>);
+  expect(screen.getByText('text')).toHaveClass('custom');
+});
+
+test('Renders with element passed to component prop', () => {
+  render(<HelperText component="ul">text</HelperText>);
+  expect(screen.getByText('text').tagName).toBe('UL');
+});
+
+test('Renders with div by default when no component prop is passed', () => {
+  render(<HelperText>text</HelperText>);
+  expect(screen.getByText('text').tagName).toBe('DIV');
+});
+
+test('Renders aria-label and role when component = ul', () => {
+  render(
+    <HelperText component="ul" aria-label="helper">
+      text
+    </HelperText>
+  );
+  expect(screen.getByText('text')).toHaveAttribute('aria-label', 'helper');
+  expect(screen.getByText('text')).toHaveAttribute('role', 'list');
+});
+
+test('Does not render aria-label and role when component != ul', () => {
+  render(<HelperText aria-label="helper">text</HelperText>);
+  expect(screen.getByText('text')).not.toHaveAttribute('aria-label', 'helper');
+  expect(screen.getByText('text')).not.toHaveAttribute('role', 'list');
 });
