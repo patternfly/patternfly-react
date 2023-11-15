@@ -4,7 +4,7 @@ import { DragDropSort } from '../';
 
 test('renders some divs', () => {
   const { asFragment } = render(
-    <div className='pf-c-droppable pf-m-dragging'>
+    <div className="pf-c-droppable pf-m-dragging">
       <DragDropSort
         items={[
           { id: '1', content: 'one' },
