@@ -20,7 +20,7 @@ To let users select a single item from a list, use a single select menu.
 
 You can add multiple `<SelectOption>` components to build out a list of menu items. For each select option, pass a relevant option label to the `value` property.
 
-To prevent a toggle click from opening a select list, use the `isDisabled` property. In the following example, select the checkbox to observe this behavior.
+To disable the select menu toggle, use the `isDisabled` property. In the following example, select the checkbox to observe this behavior.
 
 ```ts file="./SelectBasic.tsx"
 
@@ -53,7 +53,7 @@ To group related select options together, use 1 or more `<SelectGroup>` componen
 ### Checkbox select
 To let users select multiple list options via checkbox input, use a checkbox select. 
 
-To create a checkbox select, pass `hasCheckbox` into each `<SelectOption>` component. To indicate that an option is selected, use the `isSelected` property.
+To create a checkbox select, pass `role="menu"` to the `<Select>`, and `hasCheckbox` into each `<SelectOption>` component. To indicate that an option is selected, use the `isSelected` property.
 
 By default, the menu toggle will display a badge to indicate the number of items that a user has selected.
 
@@ -62,7 +62,7 @@ By default, the menu toggle will display a badge to indicate the number of items
 ```
 
 ### Typeahead
-Typeahead is a select variant that replaces the typical button toggle for opening the select menu with a text input and button toggle combo. As a user enters characters into the text input, the select menu will provide suggestions by filtering the select options.
+Typeahead is a select variant that replaces the typical button toggle for opening the select menu with a text input and button toggle combo. As a user enters characters into the text input, the menu options will be filtered to match.
 
 To make a typeahead, pass `variant=typeahead` into the `<MenuToggle>` component and link an `onClick` function to the `<TextInputGroupMain>` component.
 
@@ -73,7 +73,7 @@ To make a typeahead, pass `variant=typeahead` into the `<MenuToggle>` component 
 ### Typeahead with create option
 If a user enters a value into a typeahead select menu that does not exist, you can allow them to create an option of that value. 
 
-To enable the creation ability, pass `value='create'` into a `<SelectOption>` component. Additionally, you should pass a button with an `onClick` event into the `<TextInputGroupUtilities>` component to display the creation prompt after a user enters a new value. You can use the `placeholder` property to change the default text shown in the text input.
+To enable the creation ability, pass a predetermined `value` into a `<SelectOption>` component. You can use the `placeholder` property to change the default text shown in the text input.
 
 The following example outlines the code implementation required to create a working typeahead menu that allows for creation.
 
@@ -82,7 +82,7 @@ The following example outlines the code implementation required to create a work
 ```
 
 ### Multiple typeahead with chips
-A multiple typeahead can be used to allow users to select multiple options from a list. Selected items appear as chips in the select toggle.
+A multiple typeahead can be used to allow users to select multiple options from a list. Additionally, you can render a chip group to be placed in the select toggle.
 
 When more items than the allowed limit are selected, overflowing items will be hidden under a "more" button. The following example hides items after more than 3 are selected. To show hidden items, select the “more” button. Select "show less" to hide extra items again.
 
@@ -91,14 +91,14 @@ When more items than the allowed limit are selected, overflowing items will be h
 ```
 
 ### Multiple typeahead with create option
-If the text that is entered into a typeahead doesn't match a menu item, users can choose to create a new option that matches the text input. Selecting the "create" option will also select the new item, which will appear as a chip in the toggle. 
+If the text that is entered into a typeahead doesn't match a menu item, users can choose to create a new option that matches the text input. You can also combine this create functionality with a chip group to display created items as chips."
 
 ```ts file="./SelectMultiTypeaheadCreatable.tsx"
 
 ```
 
 ### Multiple typeahead with checkboxes
-By default, a multiple typeahead select allows you to select multiple menu items, placing a checkmark beside selected items. Like basic checkbox select menus, you can add checkboxes to your menu items. This approach may be more accurate and comprehensive for menu scenarios, like filtering.
+By default, a multiple typeahead select allows you to select multiple menu items, placing a checkmark beside selected items. Like basic checkbox select menus, you can add checkboxes to your menu items. This approach may be more accurate and comprehensive for more complex menu scenarios like filtering.
 
 ```ts file="./SelectMultiTypeaheadCheckbox.tsx"
 
@@ -106,9 +106,9 @@ By default, a multiple typeahead select allows you to select multiple menu items
 
 ### With view more 
 
-To reduce the processing load for long select lists, replace overflow items with a "View more" link at the bottom of the select menu.
+To reduce the processing load for long select lists, you can add a "View more" action to load additional items.
 
-You can adjust the number of items shown above the "View more" link as needed. The following example passes 3 items into this property.
+The following example shows 3 items before the "View more" link, but you can adjust the number of visible items for your use case.
 
 ```ts file="./SelectViewMore.tsx"
 
