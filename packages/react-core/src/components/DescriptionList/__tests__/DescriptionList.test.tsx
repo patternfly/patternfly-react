@@ -140,3 +140,17 @@ test(`Renders style when termWidth is set`, () => {
     '--pf-v5-c-description-list__term--width': '30px'
   });
 });
+
+test(`Renders style when isAutoFit and horizontalTermWidthModifier is set`, () => {
+  render(
+    <DescriptionList
+      aria-label="list"
+      isAutoFit
+      autoFitMinModifier={{ default: '50px', sm: '50px', md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}
+    />
+  );
+  expect(screen.getByLabelText('list')).toHaveAttribute(
+    'style',
+    '--pf-v5-c-description-list--GridTemplateColumns--min: 50px; --pf-v5-c-description-list--GridTemplateColumns--min-on-sm: 50px; --pf-v5-c-description-list--GridTemplateColumns--min-on-md: 100px; --pf-v5-c-description-list--GridTemplateColumns--min-on-lg: 150px; --pf-v5-c-description-list--GridTemplateColumns--min-on-xl: 200px; --pf-v5-c-description-list--GridTemplateColumns--min-on-2xl: 300px;'
+  );
+});
