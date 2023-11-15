@@ -285,7 +285,7 @@ const DatePickerBase = (
       >
         <div className={styles.datePickerInput} ref={triggerRef}>
           <InputGroup>
-            <InputGroupItem isFill>
+            <InputGroupItem>
               <TextInput
                 isDisabled={isDisabled}
                 isRequired={requiredDateOptions?.isRequired}

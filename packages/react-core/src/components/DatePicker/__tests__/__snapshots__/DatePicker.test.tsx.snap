@@ -13,7 +13,7 @@ exports[`With popover opened 1`] = `
         class="pf-v5-c-input-group"
       >
         <div
-          class="pf-v5-c-input-group__item pf-m-fill"
+          class="pf-v5-c-input-group__item"
         >
           <span
             class="pf-v5-c-form-control"
@@ -787,7 +787,7 @@ exports[`disabled date picker 1`] = `
         class="pf-v5-c-input-group"
       >
         <div
-          class="pf-v5-c-input-group__item pf-m-fill"
+          class="pf-v5-c-input-group__item"
         >
           <span
             class="pf-v5-c-form-control pf-m-disabled"
