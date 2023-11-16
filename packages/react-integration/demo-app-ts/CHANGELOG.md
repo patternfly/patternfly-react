@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.42...demo-app-ts@5.1.1-alpha.1) (2023-11-16)
+
+### Bug Fixes
+
+- demo-app update package.json version number ([8e14e1c](https://github.com/patternfly/patternfly-react/commit/8e14e1cc3dfbb9758210e9ebb914457bf9e34a29))
+
+### Reverts
+
+- Revert "Merge remote-tracking branch 'upstream/main' into v6" (#9791) ([b7e8065](https://github.com/patternfly/patternfly-react/commit/b7e80650d3e4cad7a657f6e5a3177485ca4f8c26)), closes [#9791](https://github.com/patternfly/patternfly-react/issues/9791)
+
 ## [5.1.1-alpha.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.12...demo-app-ts@5.1.1-alpha.0) (2023-09-29)
 
 ### Bug Fixes

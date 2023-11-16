@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-alpha.0](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@6.0.0-alpha.1...eslint-plugin-patternfly-react@5.2.0-alpha.0) (2023-11-16)
+
+### Reverts
+
+- Revert "Merge remote-tracking branch 'upstream/main' into v6" (#9791) ([b7e8065](https://github.com/patternfly/patternfly-react/commit/b7e80650d3e4cad7a657f6e5a3177485ca4f8c26)), closes [#9791](https://github.com/patternfly/patternfly-react/issues/9791)
+
 # 6.0.0-alpha.1 (2023-09-29)
 
 ### Bug Fixes
