@@ -13,6 +13,7 @@ exports[`Matches snapshot with children 1`] = `
     >
       <button
         class="pf-v5-c-tree-view__node"
+        type="button"
       >
         <span
           class="pf-v5-c-tree-view__node-container"
@@ -64,6 +65,7 @@ exports[`Matches snapshot without children 1`] = `
     >
       <button
         class="pf-v5-c-tree-view__node"
+        type="button"
       >
         <span
           class="pf-v5-c-tree-view__node-container"

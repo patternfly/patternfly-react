@@ -85,7 +85,7 @@ test('Renders with id when passed', () => {
 test('Does not render expandable toggle if children are not passed', () => {
   render(<TreeViewListItem {...requiredProps} />);
 
-  expect(screen.getByText(requiredProps.name).previousSibling).not.toBeInTheDocument();
+  expect(screen.queryByText(requiredProps.name)?.previousSibling).not.toBeInTheDocument();
 });
 
 test(`Renders expandable toggle with class ${styles.treeViewNodeToggle} if children are passed`, () => {
@@ -237,13 +237,13 @@ test('Renders expandedIcon instead of icon if list item is expanded', () => {
 test('Does not render badge by default', () => {
   render(<TreeViewListItem {...requiredProps} />);
 
-  expect(screen.getByText(requiredProps.name).nextElementSibling).not.toBeInTheDocument();
+  expect(screen.queryByText(requiredProps.name)?.nextElementSibling).not.toBeInTheDocument();
 });
 
 test('Does not render badge if hasBadge is passed but children and customBadgeContent are not passed', () => {
   render(<TreeViewListItem hasBadge {...requiredProps} />);
 
-  expect(screen.getByText(requiredProps.name).nextElementSibling).not.toBeInTheDocument();
+  expect(screen.queryByText(requiredProps.name)?.nextElementSibling).not.toBeInTheDocument();
 });
 
 test('Renders badge with count by default when hasBadge and children are passed', () => {
@@ -686,7 +686,7 @@ test(`Calls onCollapse when ${styles.treeViewNodeToggle} is clicked and hasCheck
 test(`Does not render ${styles.treeViewAction} element by default`, () => {
   render(<TreeViewListItem {...requiredProps} />);
 
-  expect(screen.getByRole('treeitem').querySelector(`.${styles.treeViewAction}`)).not.toBeInTheDocument();
+  expect(screen.queryByRole('treeitem')?.querySelector(`.${styles.treeViewAction}`)).not.toBeInTheDocument();
 });
 
 test(`Renders action with ${styles.treeViewAction} class when action is passed`, () => {
