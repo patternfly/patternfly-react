@@ -1,130 +1,156 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { DescriptionList } from '../DescriptionList';
-import { DescriptionListGroup } from '../DescriptionListGroup';
-import { DescriptionListTerm } from '../DescriptionListTerm';
-import { DescriptionListDescription } from '../DescriptionListDescription';
-import { DescriptionListTermHelpText } from '../DescriptionListTermHelpText';
-import { DescriptionListTermHelpTextButton } from '../DescriptionListTermHelpTextButton';
 
-describe('Description List', () => {
-  test('default', () => {
-    const { asFragment } = render(<DescriptionList />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 
-  test('1 col on all breakpoints', () => {
-    const { asFragment } = render(
-      <DescriptionList columnModifier={{ default: '1Col', md: '1Col', lg: '1Col', xl: '1Col', '2xl': '1Col' }} />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders to match snapshot', () => {
+  const { asFragment } = render(<DescriptionList />);
+  expect(asFragment()).toMatchSnapshot();
+});
 
-  test('2 col on all breakpoints', () => {
-    const { asFragment } = render(
-      <DescriptionList columnModifier={{ default: '2Col', md: '2Col', lg: '2Col', xl: '2Col', '2xl': '2Col' }} />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test(`Renders default class ${styles.descriptionList}`, () => {
+  render(<DescriptionList aria-label="list" />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.descriptionList, { exact: true });
+});
 
-  test('3 col on all breakpoints', () => {
-    const { asFragment } = render(
-      <DescriptionList columnModifier={{ default: '3Col', md: '3Col', lg: '3Col', xl: '3Col', '2xl': '3Col' }} />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders custom className', () => {
+  render(<DescriptionList aria-label="list" className="custom" />);
+  expect(screen.getByLabelText('list')).toHaveClass('custom');
+});
 
-  test('Horizontal Description List', () => {
-    const { asFragment } = render(<DescriptionList isHorizontal />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('Compact Description List', () => {
-    const { asFragment } = render(<DescriptionList isCompact />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('Compact Horizontal Description List', () => {
-    const { asFragment } = render(<DescriptionList isCompact isHorizontal />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('Fluid Horizontal Description List', () => {
-    const { asFragment } = render(<DescriptionList isFluid isHorizontal />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('alignment breakpoints', () => {
-    const { asFragment } = render(
+Object.values(['1Col', '2Col', '3Col']).forEach((_col) => {
+  const col = _col as '1Col' | '2Col' | '3Col';
+  test(`Renders ${col} on all breakpoints`, () => {
+    render(
       <DescriptionList
-        isHorizontal
+        aria-label="list"
+        columnModifier={{ default: col, sm: col, md: col, lg: col, xl: col, '2xl': col }}
+      />
+    );
+    expect(screen.getByLabelText('list')).toHaveClass(
+      styles.modifiers[col],
+      styles.modifiers[`${col}OnSm`],
+      styles.modifiers[`${col}OnMd`],
+      styles.modifiers[`${col}OnLg`],
+      styles.modifiers[`${col}OnXl`],
+      styles.modifiers[`${col}On_2xl`]
+    );
+  });
+});
+
+test(`Renders ${styles.modifiers.horizontal} when isHorizontal = true`, () => {
+  render(<DescriptionList aria-label="list" isHorizontal />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.horizontal);
+});
+
+test(`Renders ${styles.modifiers.compact} when isCompact = true`, () => {
+  render(<DescriptionList aria-label="list" isCompact />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.compact);
+});
+
+test(`Renders ${styles.modifiers.horizontal} and ${styles.modifiers.fluid} when isFluid = true`, () => {
+  render(<DescriptionList aria-label="list" isFluid />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.fluid, styles.modifiers.horizontal);
+});
+
+Object.values(['horizontal', 'vertical']).forEach((_align) => {
+  const align = _align as 'horizontal' | 'vertical';
+  test(`Renders ${align} on all breakpoints`, () => {
+    render(
+      <DescriptionList
+        aria-label="list"
         orientation={{
-          sm: 'horizontal',
-          md: 'vertical',
-          lg: 'horizontal',
-          xl: 'vertical',
-          '2xl': 'horizontal'
+          sm: align,
+          md: align,
+          lg: align,
+          xl: align,
+          '2xl': align
         }}
       />
     );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('Auto Column Widths Description List', () => {
-    const { asFragment } = render(<DescriptionList isAutoColumnWidths />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('Inline Grid Description List', () => {
-    const { asFragment } = render(<DescriptionList isInlineGrid />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('Auto fit Description List', () => {
-    const { asFragment } = render(<DescriptionList isAutoFit />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('Auto fit with responsive grid Description List', () => {
-    const { asFragment } = render(
-      <DescriptionList isAutoFit autoFitMinModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }} />
+    expect(screen.getByLabelText('list')).toHaveClass(
+      styles.modifiers[`${align}OnSm`],
+      styles.modifiers[`${align}OnMd`],
+      styles.modifiers[`${align}OnLg`],
+      styles.modifiers[`${align}OnXl`],
+      styles.modifiers[`${align}On_2xl`]
     );
-    expect(asFragment()).toMatchSnapshot();
   });
+});
 
-  test('Term default', () => {
-    const { asFragment } = render(
-      <DescriptionListTerm key="term-id-1" aria-labelledby="term-1">
-        test
-      </DescriptionListTerm>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test(`Renders ${styles.modifiers.autoColumnWidths} when isAutoColumnWidths = true`, () => {
+  render(<DescriptionList aria-label="list" isAutoColumnWidths />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.autoColumnWidths);
+});
 
-  test('Term helper text', () => {
-    const { asFragment } = render(
-      <DescriptionListTermHelpText key="term-id-1" aria-labelledby="term-1">
-        <DescriptionListTermHelpTextButton>test</DescriptionListTermHelpTextButton>
-      </DescriptionListTermHelpText>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test(`Renders ${styles.modifiers.inlineGrid} when isInlineGrid = true`, () => {
+  render(<DescriptionList aria-label="list" isInlineGrid />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.inlineGrid);
+});
 
-  test('Group', () => {
-    const { asFragment } = render(
-      <DescriptionListGroup className="custom-description-list-group" aria-labelledby="group-1">
-        test
-      </DescriptionListGroup>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test(`Renders ${styles.modifiers.autoFit} when isAutoFit = true`, () => {
+  render(<DescriptionList aria-label="list" isAutoFit />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.autoFit);
+});
 
-  test('Description', () => {
-    const { asFragment } = render(
-      <DescriptionListDescription className="custom-description-list-description" aria-labelledby="description-1">
-        test
-      </DescriptionListDescription>
-    );
-    expect(asFragment()).toMatchSnapshot();
+test(`Renders ${styles.modifiers.fillColumns} when isFillColumns = true`, () => {
+  render(<DescriptionList aria-label="list" isFillColumns />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.fillColumns);
+});
+
+test(`Renders ${styles.modifiers.displayLg} when displaySize = lg`, () => {
+  render(<DescriptionList aria-label="list" displaySize="lg" />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.displayLg);
+});
+
+test(`Renders ${styles.modifiers.display_2xl} when displaySize = 2xl`, () => {
+  render(<DescriptionList aria-label="list" displaySize="2xl" />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.display_2xl);
+});
+
+test(`Renders style when isHorizontal and horizontalTermWidthModifier is set`, () => {
+  render(
+    <DescriptionList
+      aria-label="list"
+      isHorizontal
+      horizontalTermWidthModifier={{
+        default: '12ch',
+        sm: '15ch',
+        md: '20ch',
+        lg: '28ch',
+        xl: '30ch',
+        '2xl': '35ch'
+      }}
+    />
+  );
+  expect(screen.getByLabelText('list')).toHaveStyle({
+    '--pf-v5-c-description-list--m-horizontal__term--width': '12ch',
+    '--pf-v5-c-description-list--m-horizontal__term--width-on-sm': '15ch',
+    '--pf-v5-c-description-list--m-horizontal__term--width-on-md': '20ch',
+    '--pf-v5-c-description-list--m-horizontal__term--width-on-lg': '28ch',
+    '--pf-v5-c-description-list--m-horizontal__term--width-on-xl': '30ch',
+    '--pf-v5-c-description-list--m-horizontal__term--width-on-2xl': '35ch'
   });
+});
+
+test(`Renders style when termWidth is set`, () => {
+  render(<DescriptionList aria-label="list" isHorizontal termWidth="30px" />);
+  expect(screen.getByLabelText('list')).toHaveStyle({
+    '--pf-v5-c-description-list__term--width': '30px'
+  });
+});
+
+test(`Renders style when isAutoFit and horizontalTermWidthModifier is set`, () => {
+  render(
+    <DescriptionList
+      aria-label="list"
+      isAutoFit
+      autoFitMinModifier={{ default: '50px', sm: '50px', md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}
+    />
+  );
+  expect(screen.getByLabelText('list')).toHaveAttribute(
+    'style',
+    '--pf-v5-c-description-list--GridTemplateColumns--min: 50px; --pf-v5-c-description-list--GridTemplateColumns--min-on-sm: 50px; --pf-v5-c-description-list--GridTemplateColumns--min-on-md: 100px; --pf-v5-c-description-list--GridTemplateColumns--min-on-lg: 150px; --pf-v5-c-description-list--GridTemplateColumns--min-on-xl: 200px; --pf-v5-c-description-list--GridTemplateColumns--min-on-2xl: 300px;'
+  );
 });
