@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.29...@patternfly/react-core@5.2.0-prerelease.30) (2023-11-16)
+
+### Bug Fixes
+
+- **Chip:** update tooltip vis when chip updates ([#9819](https://github.com/patternfly/patternfly-react/issues/9819)) ([18c140a](https://github.com/patternfly/patternfly-react/commit/18c140a2adcc1833e4b095755aa7495d1d88a177))
+
 # [5.2.0-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.28...@patternfly/react-core@5.2.0-prerelease.29) (2023-11-14)
 
 **Note:** Version bump only for package @patternfly/react-core
