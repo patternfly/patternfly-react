@@ -69,7 +69,6 @@ exports[`Toolbar should render with custom chip content 1`] = `
             class="pf-v5-c-toolbar__toggle"
           >
             <button
-              aria-controls="toolbar-with-filter-expandable-content-3"
               aria-disabled="false"
               aria-haspopup="false"
               aria-label="Show Filters"
