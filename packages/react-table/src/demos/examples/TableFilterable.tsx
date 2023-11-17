@@ -330,7 +330,7 @@ export const TableFilterable: React.FunctionComponent = () => {
     </EmptyState>
   );
 
-  const renderLabel = (labelText) => {
+  const renderLabel = (labelText: string) => {
     switch (labelText) {
       case 'Running':
         return <Label color="green">{labelText}</Label>;
