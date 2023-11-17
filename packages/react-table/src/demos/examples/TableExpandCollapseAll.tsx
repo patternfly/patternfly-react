@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Card, Label, PageSection, TextVariants, Text, TextContent } from '@patternfly/react-core';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 
 const expandableColumns = ['Servers', 'Threads', 'Applications', 'Workspaces', 'Status'];
 
-const serverData = [
+interface Server {
+  name: string;
+  threads: number;
+  applications: number;
+  workspaces: number;
+  status: { title: ReactNode };
+  details: ReactNode;
+}
+
+const serverData: Server[] = [
   {
     name: 'US-Node 1',
     threads: 18,
@@ -110,7 +119,7 @@ const serverData = [
 
 const initialExpandedServerNames = ['US-Node 2']; // Default to expanded
 
-const ExpandCollapseAllTableDemo = () => {
+export const TableExpandCollapseAll: React.FunctionComponent = () => {
   const [areAllExpanded, setAreAllExpanded] = React.useState(false);
   const [collapseAllAriaLabel, setCollapseAllAriaLabel] = React.useState('Expand all');
   const [expandedServerNames, setExpandedServerNames] = React.useState(initialExpandedServerNames);
@@ -121,20 +130,18 @@ const ExpandCollapseAllTableDemo = () => {
     setCollapseAllAriaLabel(allExpanded ? 'Collapse all' : 'Expand all');
   }, [expandedServerNames]);
 
-  const setServerExpanded = (server, isExpanding) => {
+  const setServerExpanded = (server: Server, isExpanding: boolean) => {
     const otherExpandedServerNames = expandedServerNames.filter((r) => r !== server.name);
     setExpandedServerNames(isExpanding ? [...otherExpandedServerNames, server.name] : otherExpandedServerNames);
   };
 
-  const isServerExpanded = (server) => {
-    return expandedServerNames.includes(server.name);
-  };
+  const isServerExpanded = (server: Server) => expandedServerNames.includes(server.name);
 
   // We want to be able to reference the original data object based on row index. But because an expanded
   // row takes up two row indexes, servers[rowIndex] will not be accurate like it would in a normal table.
   // One solution to this is to create an array of data objects indexed by the displayed row index.
 
-  const onCollapseAll = (_event, _rowIndex, isOpen) => {
+  const onCollapseAll = (_event: any, _rowIndex: number, isOpen: boolean) => {
     setExpandedServerNames(isOpen ? [...serverData.map((server) => server.name)] : []);
   };
 
@@ -154,7 +161,7 @@ const ExpandCollapseAllTableDemo = () => {
                   <Th
                     expand={{
                       areAllExpanded: !areAllExpanded,
-                      collapseAllAriaLabel: collapseAllAriaLabel,
+                      collapseAllAriaLabel,
                       onToggle: onCollapseAll
                     }}
                   ></Th>

@@ -1,9 +1,7 @@
 import React from 'react';
-
 import {
   Button,
   Card,
-  Label,
   MenuToggle,
   MenuToggleElement,
   Pagination,
@@ -13,29 +11,45 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
-  ToolbarItem
+  ToolbarItem,
+  Label,
+  PaginationVariant
 } from '@patternfly/react-core';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
+import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
+import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 
-export const CompactTable = () => {
-  const [isSelectOpen, setIsSelectOpen] = React.useState(false);
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
+export const TableCompact: React.FunctionComponent = () => {
+  const [isSelectOpen, setIsSelectOpen] = React.useState<boolean>(false);
+  const [page, setPage] = React.useState<number>(1);
+  const [perPage, setPerPage] = React.useState<number>(10);
   const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
-  const handleSetPage = (_evt, newPage, perPage, startIdx, endIdx) => {
+
+  const handleSetPage = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPage: number,
+    _perPage: number,
+    startIdx: number,
+    endIdx: number
+  ) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));
     setPage(newPage);
   };
-  handlePerPageSelect = (_evt, newPerPage, newPage, startIdx, endIdx) => {
+
+  const handlePerPageSelect = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPerPage: number,
+    newPage: number,
+    startIdx: number,
+    endIdx: number
+  ) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));
     setPage(newPage);
     setPerPage(newPerPage);
   };
 
-  const renderPagination = (variant, isCompact) => (
+  const renderPagination = (variant: string, isCompact: boolean) => (
     <Pagination
       isCompact={isCompact}
       itemCount={rows.length}
@@ -43,7 +57,7 @@ export const CompactTable = () => {
       perPage={perPage}
       onSetPage={handleSetPage}
       onPerPageSelect={handlePerPageSelect}
-      variant={variant}
+      variant={variant as PaginationVariant}
       titles={{
         paginationAriaLabel: `${variant} pagination`
       }}
@@ -63,7 +77,7 @@ export const CompactTable = () => {
               </MenuToggle>
             )}
             isOpen={isSelectOpen}
-            onOpenChange={(isOpen) => setIsSelectOpen(isOpen)}
+            onOpenChange={(isOpen: boolean) => setIsSelectOpen(isOpen)}
             onSelect={() => setIsSelectOpen(!isSelectOpen)}
           >
             {[
@@ -92,7 +106,7 @@ export const CompactTable = () => {
     </Toolbar>
   );
 
-  const renderLabel = (labelText) => {
+  const renderLabel = (labelText: string) => {
     switch (labelText) {
       case 'Running':
         return <Label color="green">{labelText}</Label>;
@@ -102,8 +116,11 @@ export const CompactTable = () => {
         return <Label color="blue">{labelText}</Label>;
       case 'Down':
         return <Label color="red">{labelText}</Label>;
+      default:
+        return <></>;
     }
   };
+
   return (
     <React.Fragment>
       <DashboardWrapper hasPageTemplateTitle>
@@ -146,7 +163,6 @@ export const CompactTable = () => {
                 ))}
               </Tbody>
             </Table>
-            {renderPagination('bottom', false)}
           </Card>
         </PageSection>
       </DashboardWrapper>

@@ -13,29 +13,42 @@ import {
   MenuToggleElement,
   Label,
   Select,
-  SelectOption
+  SelectOption,
+  PaginationVariant
 } from '@patternfly/react-core';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-import { rows, columns } from '@patternfly/react-table/src/docs/demos/table-demos/sampleData';
+import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
+import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
-export const StaticBottomPagination = () => {
+export const TableStaticBottomPagination: React.FunctionComponent = () => {
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(10);
   const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
-  const handleSetPage = (_evt, newPage, perPage, startIdx, endIdx) => {
+  const handleSetPage = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPage: number,
+    _perPage: number,
+    startIdx: number,
+    endIdx: number
+  ) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));
     setPage(newPage);
   };
-  handlePerPageSelect = (_evt, newPerPage, newPage, startIdx, endIdx) => {
+  const handlePerPageSelect = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPerPage: number,
+    newPage: number,
+    startIdx: number,
+    endIdx: number
+  ) => {
     setPaginatedRows(rows.slice(startIdx, endIdx));
     setPage(newPage);
     setPerPage(newPerPage);
   };
 
-  const renderPagination = (variant, isCompact) => (
+  const renderPagination = (variant: PaginationVariant | 'bottom' | 'top', isCompact: boolean) => (
     <Pagination
       isCompact={isCompact}
       itemCount={rows.length}
@@ -51,7 +64,7 @@ export const StaticBottomPagination = () => {
     />
   );
 
-  const renderLabel = (labelText) => {
+  const renderLabel = (labelText: string) => {
     switch (labelText) {
       case 'Running':
         return (
@@ -93,7 +106,7 @@ export const StaticBottomPagination = () => {
               </MenuToggle>
             )}
             isOpen={isSelectOpen}
-            onOpenChange={(isOpen) => setIsSelectOpen(isOpen)}
+            onOpenChange={(isOpen: boolean) => setIsSelectOpen(isOpen)}
             onSelect={() => setIsSelectOpen(!isSelectOpen)}
           >
             {[

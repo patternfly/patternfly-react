@@ -14,16 +14,17 @@ import {
   Pagination,
   PageSection,
   Select,
-  SelectOption
+  SelectOption,
+  PaginationVariant
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
-export const CompoundExpandable = () => {
+export const TableCompoundExpansion: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
 
@@ -55,7 +56,7 @@ export const CompoundExpandable = () => {
         </Thead>
         <Tbody>
           {items.map((item) => (
-            <Tr key={item.name}>
+            <Tr key={item.description}>
               <Td dataLabel={columnNames.description}>{item.description}</Td>
               <Td dataLabel={columnNames.date}>{item.date}</Td>
               <Td dataLabel={columnNames.status}>{item.status}</Td>
@@ -69,7 +70,7 @@ export const CompoundExpandable = () => {
     );
   };
 
-  const renderPagination = (variant, isCompact) => (
+  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant, isCompact: boolean) => (
     <Pagination
       isCompact={isCompact}
       itemCount={36}
@@ -95,7 +96,7 @@ export const CompoundExpandable = () => {
               </MenuToggle>
             )}
             isOpen={isSelectOpen}
-            onOpenChange={(isOpen) => setIsSelectOpen(isOpen)}
+            onOpenChange={(isOpen: boolean) => setIsSelectOpen(isOpen)}
             onSelect={() => setIsSelectOpen(!isSelectOpen)}
           >
             {[
@@ -137,7 +138,19 @@ export const CompoundExpandable = () => {
     }
   ];
 
-  const repositories = [
+  interface Repo {
+    name: string;
+    branches: number;
+    prs: number;
+    workspaces: number;
+    lastCommit: string;
+  }
+
+  interface IDictionary<T> {
+    [Key: string]: T;
+  }
+
+  const repositories: Repo[] = [
     {
       name: 'siemur/test-space',
       branches: 10,
@@ -148,7 +161,7 @@ export const CompoundExpandable = () => {
     { name: 'siemur/test-space-2', branches: 3, prs: 4, workspaces: 4, lastCommit: '20 minutes' }
   ];
 
-  const columnNames = {
+  const columnNames: IDictionary<string> = {
     name: 'Repositories',
     branches: 'Branches',
     prs: 'Pull requests',
@@ -159,11 +172,11 @@ export const CompoundExpandable = () => {
   // In this example, expanded cells are tracked by the repo and property names from each row. This could be any pair of unique identifiers.
   // This is to prevent state from being based on row and column order index in case we later add sorting and rearranging columns.
   // Note that this behavior is very similar to selection state.
-  const [expandedCells, setExpandedCells] = React.useState({
+  const [expandedCells, setExpandedCells] = React.useState<IDictionary<string>>({
     'siemur/test-space': 'branches' // Default to the first cell of the first row being expanded
   });
-  const setCellExpanded = (repo, columnKey, isExpanding = true) => {
-    const newExpandedCells = { ...expandedCells };
+  const setCellExpanded = (repo: Repo, columnKey: string, isExpanding = true) => {
+    const newExpandedCells: IDictionary<string> = { ...expandedCells };
     if (isExpanding) {
       newExpandedCells[repo.name] = columnKey;
     } else {
@@ -171,7 +184,7 @@ export const CompoundExpandable = () => {
     }
     setExpandedCells(newExpandedCells);
   };
-  const compoundExpandParams = (repo, columnKey, rowIndex, columnIndex) => ({
+  const compoundExpandParams = (repo: Repo, columnKey: string, rowIndex: number, columnIndex: number) => ({
     isExpanded: expandedCells[repo.name] === columnKey,
     onToggle: () => setCellExpanded(repo, columnKey, expandedCells[repo.name] !== columnKey),
     expandId: 'compound-expandable-demo',

@@ -1,9 +1,30 @@
 import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer } from '@patternfly/react-table';
 import { Card, PageSection } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
 
-export const StickyFirstColumn = () => {
+type Direction = 'asc' | 'desc' | undefined;
+
+interface Fact {
+  name: string;
+  state: string;
+  detail1: string;
+  detail2: string;
+  detail3: string;
+  detail4: string;
+  detail5: string;
+  detail6: string;
+  detail7: string;
+  detail8: string;
+  detail9: string;
+  detail10: string;
+  detail11: string;
+  detail12: string;
+  detail13: string;
+  detail14: string;
+}
+
+export const TableStickyFirstColumn = () => {
   const facts = Array.from(
     {
       length: 9
@@ -45,9 +66,10 @@ export const StickyFirstColumn = () => {
     header15: 'Header 15',
     header16: 'Header 16'
   };
-  const [activeSortIndex, setActiveSortIndex] = React.useState(null);
-  const [activeSortDirection, setActiveSortDirection] = React.useState(null);
-  const getSortableRowValues = fact => {
+
+  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  const [activeSortDirection, setActiveSortDirection] = React.useState<Direction>('asc');
+  const getSortableRowValues = (fact: Fact) => {
     const {
       name,
       state,
@@ -86,7 +108,7 @@ export const StickyFirstColumn = () => {
     ];
   };
   let sortedFacts = facts;
-  if (activeSortIndex !== null) {
+  if (activeSortIndex > -1) {
     sortedFacts = facts.sort((a, b) => {
       const aValue = getSortableRowValues(a)[activeSortIndex];
       const bValue = getSortableRowValues(b)[activeSortIndex];
@@ -100,12 +122,12 @@ export const StickyFirstColumn = () => {
       }
     });
   }
-  const getSortParams = columnIndex => ({
+  const getSortParams = (columnIndex: number) => ({
     sortBy: {
       index: activeSortIndex,
       direction: activeSortDirection
     },
-    onSort: (_event, index, direction) => {
+    onSort: (_event: React.MouseEvent, index: number, direction: Direction) => {
       setActiveSortIndex(index);
       setActiveSortDirection(direction);
     },
@@ -148,7 +170,7 @@ export const StickyFirstColumn = () => {
                 </Tr>
               </Thead>
               <Tbody>
-                {sortedFacts.map(fact => (
+                {sortedFacts.map((fact) => (
                   <Tr key={fact.name}>
                     <Th isStickyColumn stickyMinWidth="100px" hasRightBorder modifier="truncate">
                       {fact.name}
