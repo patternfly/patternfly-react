@@ -39,7 +39,7 @@ jest.mock('../../Menu', () => {
 });
 
 const tabsContextDefaultProps = {
-  variant: 'default' as 'default',
+  variant: 'default' as const,
   mountOnEnter: false,
   unmountOnExit: false,
   localActiveKey: '',

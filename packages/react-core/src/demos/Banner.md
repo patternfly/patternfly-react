@@ -57,9 +57,9 @@ class BannerDemo extends React.Component {
           </PageSection>
           <PageSection>
             <Gallery hasGutter>
-              {Array.apply(0, Array(30)).map((x, i) => (
-                <GalleryItem key={i}>
-                  <Card key={i}>
+              {Array.from({ length: 30 }).map((_value, index) => (
+                <GalleryItem key={index}>
+                  <Card key={index}>
                     <CardBody>This is a card</CardBody>
                   </Card>
                 </GalleryItem>
@@ -131,7 +131,7 @@ class BannerDemo extends React.Component {
               </PageSection>
               <PageSection>
                 <Gallery hasGutter>
-                  {Array.apply(0, Array(30)).map((x, i) => (
+                  {Array.from({ length: 30 }).map((_value, index) => (
                     <GalleryItem key={i}>
                       <Card key={i}>
                         <CardBody>This is a card</CardBody>

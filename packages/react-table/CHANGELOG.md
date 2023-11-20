@@ -55,6 +55,54 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @patternfly/react-table
 
+# [5.2.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.30...@patternfly/react-table@5.2.0-prerelease.31) (2023-11-17)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [5.2.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.29...@patternfly/react-table@5.2.0-prerelease.30) (2023-11-16)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [5.2.0-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.28...@patternfly/react-table@5.2.0-prerelease.29) (2023-11-14)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [5.2.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.27...@patternfly/react-table@5.2.0-prerelease.28) (2023-11-14)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [5.2.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.26...@patternfly/react-table@5.2.0-prerelease.27) (2023-11-14)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [5.2.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.25...@patternfly/react-table@5.2.0-prerelease.26) (2023-11-13)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [5.2.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.24...@patternfly/react-table@5.2.0-prerelease.25) (2023-11-10)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [5.2.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.23...@patternfly/react-table@5.2.0-prerelease.24) (2023-11-03)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [5.2.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.22...@patternfly/react-table@5.2.0-prerelease.23) (2023-11-03)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [5.2.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.21...@patternfly/react-table@5.2.0-prerelease.22) (2023-11-02)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [5.2.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.20...@patternfly/react-table@5.2.0-prerelease.21) (2023-11-02)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [5.2.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.19...@patternfly/react-table@5.2.0-prerelease.20) (2023-11-02)
+
+**Note:** Version bump only for package @patternfly/react-table
+
 # [5.2.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.18...@patternfly/react-table@5.2.0-prerelease.19) (2023-10-30)
 
 **Note:** Version bump only for package @patternfly/react-table

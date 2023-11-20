@@ -18,7 +18,7 @@ test('adds row class', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-Object.keys(DeviceSizes).forEach(size => {
+Object.keys(DeviceSizes).forEach((size) => {
   test(`adds ${size} span class`, () => {
     const props = { [size]: 4 };
     const { asFragment } = render(<GridItem {...props} />);

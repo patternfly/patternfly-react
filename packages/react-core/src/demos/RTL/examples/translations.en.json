@@ -1,0 +1,67 @@
+{
+  "title": "Main title",
+  "username": "John Doe",
+  "body": "This is a full page demo.",
+  "mastheadToggleAriaLabel": "Global navigation",
+  "kebabDropdown": {
+    "settings": "Settings",
+    "help": "Help",
+    "settingsAndHelp": "Settings and help"
+  },
+  "userDropdown": {
+    "myProfile": "My profile",
+    "userManagement": "User management",
+    "logout": "Log out"
+  },
+  "kebabAndUserDropdown": {
+    "toolbarMenuAriaLabel": "Toolbar menu",
+    "groupAriaLabel": "User actions"
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "category": "Category",
+    "subCategory": "Sub category"
+  },
+  "nav": {
+    "systemPanel": "System panel",
+    "policy": "Policy",
+    "authentication": "Authentication",
+    "networkServices": "Network services",
+    "server": "Server"
+  },
+  "switchBtn": "Switch to Hebrew",
+  "table": {
+    "ariaLabel": "Right to left demo table",
+    "columns": {
+      "servers": "Servers",
+      "status": "Status",
+      "location": "Location",
+      "modified": "Last modified",
+      "url": "URL"
+    },
+    "rows": {
+      "node": "Node",
+      "status": {
+        "stopped": "Stopped",
+        "running": "Running",
+        "down": "Down",
+        "needsMaintenance": "Needs maintenance"
+      },
+      "locations": {
+        "raleigh": "Raleigh",
+        "boston": "Boston",
+        "atlanta": "Atlanta",
+        "sanFrancisco": "San Francisco"
+      },
+      "lastModified": {
+        "oneHr": "1 hour ago",
+        "threeHrs": "3 hours ago",
+        "fiveHrs": "5 hours ago",
+        "sevenMins": "7 minutes ago",
+        "fortyTwoMins": "42 minutes ago",
+        "twoDays": "2 days ago",
+        "oneMonth": "1 month ago"
+      }
+    }
+  }
+}

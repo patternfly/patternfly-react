@@ -11,8 +11,6 @@ test('Renders children', () => {
 });
 
 test('Matches the snapshot', () => {
-  const { asFragment } = render(
-    <AccordionItem>Test</AccordionItem>
-  );
+  const { asFragment } = render(<AccordionItem>Test</AccordionItem>);
   expect(asFragment()).toMatchSnapshot();
 });

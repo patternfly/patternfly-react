@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v5-c-tree-view"
+  >
+    <div
+      class="pf-v5-c-tree-view__node"
+      tabindex="0"
+    >
+      Content
+    </div>
+  </div>
+</DocumentFragment>
+`;

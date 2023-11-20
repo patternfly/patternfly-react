@@ -29,7 +29,7 @@ describe('Wizard', () => {
       { name: 'C', id: 'step-C', component: <p>Step 4</p> },
       { name: 'D', id: 'step-D', component: <p>Step 5</p> }
     ];
-    const onBack: WizardStepFunctionType = step => {
+    const onBack: WizardStepFunctionType = (step) => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const name = { step };
     };
@@ -62,7 +62,7 @@ describe('Wizard', () => {
       { name: 'C', component: <p>Step 4</p> },
       { name: 'D', component: <p>Step 5</p> }
     ];
-    const onBack: WizardStepFunctionType = step => {
+    const onBack: WizardStepFunctionType = (step) => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const name = { step };
     };
@@ -289,7 +289,7 @@ test('startAtStep can be used to externally control the current step of the wiza
     const [step, setStep] = React.useState(1);
 
     const incrementStep = () => {
-      setStep(prevStep => prevStep + 1);
+      setStep((prevStep) => prevStep + 1);
     };
 
     const steps: WizardStep[] = [

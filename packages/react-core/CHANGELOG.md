@@ -76,6 +76,76 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 - **Drawer:** Added start and end to position props, updated resizing to work with RTL ([#9627](https://github.com/patternfly/patternfly-react/issues/9627)) ([e12b872](https://github.com/patternfly/patternfly-react/commit/e12b8726b9ebc2fec921b7316a270a9c09decf96))
 
+# [5.2.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.30...@patternfly/react-core@5.2.0-prerelease.31) (2023-11-17)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.2.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.29...@patternfly/react-core@5.2.0-prerelease.30) (2023-11-16)
+
+### Bug Fixes
+
+- **Chip:** update tooltip vis when chip updates ([#9819](https://github.com/patternfly/patternfly-react/issues/9819)) ([18c140a](https://github.com/patternfly/patternfly-react/commit/18c140a2adcc1833e4b095755aa7495d1d88a177))
+
+# [5.2.0-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.28...@patternfly/react-core@5.2.0-prerelease.29) (2023-11-14)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.2.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.27...@patternfly/react-core@5.2.0-prerelease.28) (2023-11-14)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.2.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.26...@patternfly/react-core@5.2.0-prerelease.27) (2023-11-14)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.2.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.25...@patternfly/react-core@5.2.0-prerelease.26) (2023-11-13)
+
+### Bug Fixes
+
+- **DatePicker:** updated logic for parsing and focus management ([#9794](https://github.com/patternfly/patternfly-react/issues/9794)) ([a12cf31](https://github.com/patternfly/patternfly-react/commit/a12cf313f0924a61a8cf20ee78b4b27290b9c05f))
+
+# [5.2.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.24...@patternfly/react-core@5.2.0-prerelease.25) (2023-11-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.2.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.23...@patternfly/react-core@5.2.0-prerelease.24) (2023-11-03)
+
+### Bug Fixes
+
+- **ClipboardCopy:** kepp caret position ([#9772](https://github.com/patternfly/patternfly-react/issues/9772)) ([981361e](https://github.com/patternfly/patternfly-react/commit/981361e0de354bbe06c4a799b6e7c92228dab51f))
+
+### Features
+
+- **Datalist:** implement full page Basic demo to match HTML [#9048](https://github.com/patternfly/patternfly-react/issues/9048) ([#9087](https://github.com/patternfly/patternfly-react/issues/9087)) ([ab18059](https://github.com/patternfly/patternfly-react/commit/ab1805993ed5e2b5ed3d2f1be4131e035152b468))
+
+# [5.2.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.22...@patternfly/react-core@5.2.0-prerelease.23) (2023-11-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.2.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.21...@patternfly/react-core@5.2.0-prerelease.22) (2023-11-02)
+
+### Bug Fixes
+
+- **TreeView:** define button type ([#9770](https://github.com/patternfly/patternfly-react/issues/9770)) ([a772c6d](https://github.com/patternfly/patternfly-react/commit/a772c6d67bfa4154979ee14a34ec954406503109))
+
+# [5.2.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.20...@patternfly/react-core@5.2.0-prerelease.21) (2023-11-02)
+
+### Bug Fixes
+
+- **Notification Drawer:** Added screen reader text for notification drawer item read state ([#9569](https://github.com/patternfly/patternfly-react/issues/9569)) ([bc19f91](https://github.com/patternfly/patternfly-react/commit/bc19f9148e872fb62d8cd2bf644a771d9c5650d7))
+- **Text input:** Added aria-expanded ([#9705](https://github.com/patternfly/patternfly-react/issues/9705)) ([7f6a62c](https://github.com/patternfly/patternfly-react/commit/7f6a62c1a3f860a8759c63cde17da6b763dd7b48))
+- **Wizard:** onStepChange - skip isDisabled & isHidden ([#9748](https://github.com/patternfly/patternfly-react/issues/9748)) ([4d4d623](https://github.com/patternfly/patternfly-react/commit/4d4d623d294bbc7821c6dc9156980f2b8c609c96))
+
+### Features
+
+- **Wizard:** ability to add props to WizardFooter buttons ([#9709](https://github.com/patternfly/patternfly-react/issues/9709)) ([9f21cee](https://github.com/patternfly/patternfly-react/commit/9f21cee5438c8ec4d0e2c5c938f9fffda013757b))
+
+# [5.2.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.19...@patternfly/react-core@5.2.0-prerelease.20) (2023-11-02)
+
+### Bug Fixes
+
+- **RTL:** added right-to-left page demo ([#9694](https://github.com/patternfly/patternfly-react/issues/9694)) ([d7308ae](https://github.com/patternfly/patternfly-react/commit/d7308aebec1e3ff22df548b5613f058c9ba35262))
+
 # [5.2.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.18...@patternfly/react-core@5.2.0-prerelease.19) (2023-10-30)
 
 **Note:** Version bump only for package @patternfly/react-core

@@ -50,6 +50,12 @@ Additionally, menu components may be connected to each other manually through ou
 
 ```
 
+### With inline search filter
+
+```ts file="./examples/InlineSearchFilterMenuDemo.tsx"
+
+```
+
 ### Tree view menu
 
 When rendering a menu-like element that does not contain `<MenuItem>` components, [panel](/components/panel) allows more flexible control and customization.

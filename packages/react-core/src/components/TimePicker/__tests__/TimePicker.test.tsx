@@ -7,12 +7,10 @@ import { TimePicker, TimePickerProps } from '../TimePicker';
 
 describe('TimePicker', () => {
   test('Renders in strict mode', () => {
-    const validateTime = (_time: string) => {
-      return true;
-    };
+    const validateTime = (_time: string) => true;
 
     const consoleError = jest.spyOn(console, 'error');
-    const { asFragment } = render(
+    render(
       <React.StrictMode>
         <TimePicker value={'00:00'} validateTime={validateTime} aria-label="time picker" />
       </React.StrictMode>
@@ -112,9 +110,7 @@ describe('TimePicker', () => {
 
   describe('test isInvalid', () => {
     test('should be valid by default', () => {
-      const validateTime = (_time: string) => {
-        return true;
-      };
+      const validateTime = (_time: string) => true;
 
       render(<TimePicker value={'00:00'} validateTime={validateTime} aria-label="time picker" />);
 
@@ -122,9 +118,7 @@ describe('TimePicker', () => {
     });
 
     test('should stay valid after onChange', async () => {
-      const validateTime = (_time: string) => {
-        return true;
-      };
+      const validateTime = (_time: string) => true;
       const user = userEvent.setup();
 
       render(<TimePicker value="00:00" validateTime={validateTime} aria-label="time picker" />);

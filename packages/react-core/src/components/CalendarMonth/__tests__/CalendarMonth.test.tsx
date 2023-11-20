@@ -57,7 +57,9 @@ test('Next year dates have correct year in aria label', () => {
 });
 
 test('InlineProps render correct wrapper component and attributes', () => {
-  render(<CalendarMonth inlineProps={{component: 'article', title: <div id="hi">Title</div>, ariaLabelledby: "hi"}} />);
+  render(
+    <CalendarMonth inlineProps={{ component: 'article', title: <div id="hi">Title</div>, ariaLabelledby: 'hi' }} />
+  );
 
   const article = screen.getByRole('article');
   expect(article).toHaveAttribute('aria-labelledby', 'hi');

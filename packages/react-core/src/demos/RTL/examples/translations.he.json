@@ -1,0 +1,82 @@
+{
+  "title": "כותרת ראשית",
+  "username": "פלוני אלמוני",
+  "brandLanguage": "עִברִית",
+  "body": "זוהי הדגמה של עמוד שלם.",
+  "mastheadToggleAriaLabel": "ניווט גלובלי",
+  "kebabDropdown": {
+    "settings": "הגדרות",
+    "help": "עֶזרָה",
+    "settingsAndHelp": "הגדרות ועזרה"
+  },
+  "userDropdown": {
+    "myProfile": "הפרופיל שלי",
+    "userManagement": "ניהול משתמשים",
+    "logout": "להתנתק"
+  },
+  "kebabAndUserDropdown": {
+    "toolbarMenuAriaLabel": "תפריט סרגל הכלים",
+    "groupAriaLabel": "פעולות משתמש"
+  },
+  "breadcrumbs": {
+    "home": "בית",
+    "category": "קטגוריה",
+    "subCategory": "קטגוריית משנה",
+    "ariaLabel": "פירורי לחם"
+  },
+  "pagination": {
+    "ofWord": "שֶׁל",
+    "items": "פריטים",
+    "perPageSuffix": "לכל עמוד",
+    "toNextPageAriaLabel": "עבור לדף הבא",
+    "toPreviousPageAriaLabel": "תחזור לדף הקודם",
+    "toFirstPageAriaLabel": "עבור לעמוד הראשון",
+    "toLastPageAriaLabel": "עבור לדף האחרון",
+    "currPageAriaLabel": "העמוד הנוכחי",
+    "topVariantAriaLabel": "עימוד עליון",
+    "bottomVariantAriaLabel": "עימוד תחתון"
+  },
+  "nav": {
+    "systemPanel": "פאנל מערכת",
+    "policy": "מְדִינִיוּת",
+    "authentication": "אימות",
+    "networkServices": "שירותי רשת",
+    "server": "שרת",
+    "ariaLabel": "גלוֹבָּלִי"
+  },
+  "switchBtn": "Switch to English",
+  "table": {
+    "ariaLabel": "טבלת הדגמה מימין לשמאל",
+    "columns": {
+      "servers": "שרתים",
+      "status": "סטָטוּס",
+      "location": "מקום",
+      "modified": "עודכן לאחרונה",
+      "url": "כתובת אתר"
+    },
+    "rows": {
+      "node": "נקודת קצה",
+      "status": {
+        "stopped": "עצר",
+        "running": "רץ",
+        "down": "מטה",
+        "needsMaintenance": "זקוק לתחזוקה"
+      },
+      "locations": {
+        "raleigh": "Raleigh",
+        "boston": "Boston",
+        "atlanta": "Atlanta",
+        "sanFrancisco": "San Francisco"
+      },
+      "lastModified": {
+        "oneHr": "לפני שעה",
+        "threeHrs": "לפני 3 שעות",
+        "fiveHrs": "לפני 5 שעות",
+        "sevenMins": "לפני 7 דקות",
+        "fortyTwoMins": "לפני 42 דקות",
+        "twoDays": "לפני יומיים",
+        "oneMonth": "לפני חודש"
+      }
+    }
+  }
+}

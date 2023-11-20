@@ -2,7 +2,7 @@ import { NotificationBadge } from '../NotificationBadge';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-Object.values([true, false]).forEach(attentionVariant => {
+Object.values([true, false]).forEach((attentionVariant) => {
   test(`${attentionVariant} NotificationBadge needs attention`, () => {
     const { asFragment } = render(
       <NotificationBadge variant="attention">

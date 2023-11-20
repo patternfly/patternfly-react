@@ -166,8 +166,8 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
           </DataListAction>
           <DataListAction
             visibility={{ default: 'hidden', lg: 'visible' }}
-            aria-labelledby="check-action-item2 check-action-action2"
-            id="check-action-action2"
+            aria-labelledby="check-action-item2 check-action-action2a"
+            id="check-action-action2a"
             aria-label="Actions"
           >
             <Button variant="primary">Primary</Button>
@@ -192,7 +192,7 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
           <DataListAction
             visibility={{ xl: 'hidden' }}
             aria-labelledby="check-action-item3 check-action-action3"
-            id="check-actiokn-action3"
+            id="check-action-action3"
             aria-label="Actions"
             isPlainButtonAction
           >
@@ -231,8 +231,8 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
           </DataListAction>
           <DataListAction
             visibility={{ default: 'hidden', xl: 'visible' }}
-            aria-labelledby="check-action-item3 check-action-action3"
-            id="check-action-action3"
+            aria-labelledby="check-action-item3 check-action-action3a"
+            id="check-action-action3a"
             aria-label="Actions"
           >
             <Button variant="primary">Primary</Button>
