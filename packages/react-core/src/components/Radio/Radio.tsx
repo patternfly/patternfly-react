@@ -7,15 +7,15 @@ import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 export interface RadioProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'>,
     OUIAProps {
-  /** Additional classes added to the radio wrapper.  This will be a div element if
-   * isLabelWrapped is true, otherwise this will be a label element.
+  /** Additional classes added to the radio wrapper. This will be a label element if
+   * isLabelWrapped is true, otherwise this will be a div element.
    */
   className?: string;
-  /** Additional classed added to the radio input */
+  /** Additional classed added to the radio input. */
   inputClassName?: string;
   /** Id of the radio. */
   id: string;
-  /** Flag to show if the radio label is wrapped on small screen. */
+  /** Flag to show if the radio label is wrapped on small screen. Will only apply if component prop is not specified. */
   isLabelWrapped?: boolean;
   /** Flag to show if the radio label is shown before the radio button. */
   isLabelBeforeButton?: boolean;
@@ -39,6 +39,8 @@ export interface RadioProps
   description?: React.ReactNode;
   /** Body of the radio. */
   body?: React.ReactNode;
+  /** Sets the input wrapper component to render. Defaults to <div> */
+  component?: React.ElementType;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -88,6 +90,7 @@ class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
       body,
       ouiaId,
       ouiaSafe = true,
+      component,
       ...props
     } = this.props;
     if (!props.id) {
@@ -110,41 +113,30 @@ class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
       />
     );
 
-    let labelRendered: React.ReactNode = null;
-    if (label && isLabelWrapped) {
-      labelRendered = <span className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)}>{label}</span>;
-    } else if (label) {
-      labelRendered = (
-        <label className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
-          {label}
-        </label>
-      );
-    }
+    const wrapWithLabel = isLabelWrapped && !component;
 
-    const descRender = description ? <span className={css(styles.radioDescription)}>{description}</span> : null;
-    const bodyRender = body ? <span className={css(styles.radioBody)}>{body}</span> : null;
-    const childrenRendered = isLabelBeforeButton ? (
-      <>
-        {labelRendered}
-        {inputRendered}
-        {descRender}
-        {bodyRender}
-      </>
-    ) : (
-      <>
-        {inputRendered}
-        {labelRendered}
-        {descRender}
-        {bodyRender}
-      </>
-    );
+    const Label = wrapWithLabel ? 'span' : 'label';
+    const labelRendered = label ? (
+      <Label
+        className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)}
+        htmlFor={!wrapWithLabel && props.id}
+      >
+        {label}
+      </Label>
+    ) : null;
 
-    return isLabelWrapped ? (
-      <label className={css(styles.radio, className)} htmlFor={props.id}>
-        {childrenRendered}
-      </label>
-    ) : (
-      <div className={css(styles.radio, !label && styles.modifiers.standalone, className)}>{childrenRendered}</div>
+    const Component = component ?? (wrapWithLabel ? 'label' : 'div');
+
+    return (
+      <Component
+        className={css(styles.radio, !label && styles.modifiers.standalone, className)}
+        htmlFor={wrapWithLabel && props.id}
+      >
+        {isLabelBeforeButton ? labelRendered : inputRendered}
+        {isLabelBeforeButton ? inputRendered : labelRendered}
+        {description && <span className={css(styles.radioDescription)}>{description}</span>}
+        {body && <span className={css(styles.radioBody)}>{body}</span>}
+      </Component>
     );
   }
 }
