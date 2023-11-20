@@ -21,19 +21,11 @@ import {
 import { Draggable } from './Draggable';
 import { DraggableDataListItem } from './DraggableDataListItem';
 import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
+import { DraggableObject } from './DragDropUtil';
 import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 
 export type DragDropSortDragEndEvent = DragEndEvent;
 export type DragDropSortDragStartEvent = DragStartEvent;
-
-export interface DraggableObject {
-  /** Unique id of the draggable object */
-  id: string;
-  /** Content rendered in the draggable object */
-  content: React.ReactNode;
-  /** Props spread to the rendered wrapper of the draggable object */
-  props?: any;
-}
 
 export interface DragDropSortProps extends DndContextProps {
   /** Custom defined content wrapper for draggable items. By default, draggable items are wrapped in a styled div.
@@ -63,8 +55,6 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
   ...props
 }: DragDropSortProps) => {
   const [activeId, setActiveId] = React.useState<string>(null);
-  // const [dragging, setDragging] = React.useState(false);
-
   const itemIds = React.useMemo(() => (items ? Array.from(items, (item) => item.id as string) : []), [items]);
 
   const getItemById = (id: string): DraggableObject => items.find((item) => item.id === id);
@@ -81,14 +71,12 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
     const oldIndex = itemIds.indexOf(active.id as string);
     const newIndex = itemIds.indexOf(over.id as string);
     const newItems = arrayMove(items, oldIndex, newIndex);
-    // setDragging(false);
     onDrop(event, newItems, oldIndex, newIndex);
-    return newItems;
+    setActiveId(null);
   };
 
   const handleDragStart = (event: DragStartEvent) => {
     setActiveId(event.active.id as string);
-    // setDragging(true);
     onDrag(event, itemIds.indexOf(event.active.id as string));
   };
 
