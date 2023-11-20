@@ -10,8 +10,12 @@ export interface CheckboxProps
     OUIAProps {
   /** Additional classes added to the checkbox. */
   className?: string;
-  /** Additional classed added to the radio input */
+  /** Additional classed added to the checkbox input. */
   inputClassName?: string;
+  /** Flag to show if the checkbox label is wrapped on small screen. Will only apply if component prop is not specified. */
+  isLabelWrapped?: boolean;
+  /** Flag to show if the checkbox label is shown before the checkbox button. */
+  isLabelBeforeButton?: boolean;
   /** Flag to show if the checkbox selection is valid or invalid. */
   isValid?: boolean;
   /** Flag to show if the checkbox is disabled. */
@@ -52,13 +56,13 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
   static displayName = 'Checkbox';
   static defaultProps: PickOptional<CheckboxProps> = {
     className: '',
+    isLabelWrapped: false,
     isValid: true,
     isDisabled: false,
     isRequired: false,
     isChecked: false,
     onChange: defaultOnChange,
-    ouiaSafe: true,
-    component: 'div'
+    ouiaSafe: true
   };
 
   constructor(props: any) {
@@ -78,6 +82,8 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
       className,
       inputClassName,
       onChange,
+      isLabelWrapped,
+      isLabelBeforeButton,
       isValid,
       isDisabled,
       isRequired,
@@ -89,7 +95,7 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
       body,
       ouiaId,
       ouiaSafe,
-      component: Component,
+      component,
       ...props
     } = this.props;
     if (!props.id) {
@@ -107,32 +113,49 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
       checkedProps.defaultChecked = defaultChecked;
     }
 
+    const inputRendered = (
+      <input
+        {...props}
+        className={css(styles.checkInput, inputClassName)}
+        type="checkbox"
+        onChange={this.handleChange}
+        aria-invalid={!isValid}
+        aria-label={ariaLabel}
+        disabled={isDisabled}
+        required={isRequired}
+        ref={(elem) => elem && (elem.indeterminate = isChecked === null)}
+        {...checkedProps}
+        {...getOUIAProps(Checkbox.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
+      />
+    );
+
+    const wrapWithLabel = isLabelWrapped && !component;
+
+    const Label = wrapWithLabel ? 'span' : 'label';
+    const labelRendered = label ? (
+      <Label
+        className={css(styles.checkLabel, isDisabled && styles.modifiers.disabled)}
+        htmlFor={!wrapWithLabel && props.id}
+      >
+        {label}
+        {isRequired && (
+          <span className={css(styles.checkLabelRequired)} aria-hidden="true">
+            {ASTERISK}
+          </span>
+        )}
+      </Label>
+    ) : null;
+
+    const Component = component ?? (wrapWithLabel ? 'label' : 'div');
+
     checkedProps.checked = checkedProps.checked === null ? false : checkedProps.checked;
     return (
-      <Component className={css(styles.check, !label && styles.modifiers.standalone, className)}>
-        <input
-          {...props}
-          className={css(styles.checkInput, inputClassName)}
-          type="checkbox"
-          onChange={this.handleChange}
-          aria-invalid={!isValid}
-          aria-label={ariaLabel}
-          disabled={isDisabled}
-          required={isRequired}
-          ref={(elem) => elem && (elem.indeterminate = isChecked === null)}
-          {...checkedProps}
-          {...getOUIAProps(Checkbox.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
-        />
-        {label && (
-          <label className={css(styles.checkLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
-            {label}
-            {isRequired && (
-              <span className={css(styles.checkLabelRequired)} aria-hidden="true">
-                {ASTERISK}
-              </span>
-            )}
-          </label>
-        )}
+      <Component
+        className={css(styles.check, !label && styles.modifiers.standalone, className)}
+        htmlFor={wrapWithLabel && props.id}
+      >
+        {isLabelBeforeButton ? labelRendered : inputRendered}
+        {isLabelBeforeButton ? inputRendered : labelRendered}
         {description && <span className={css(styles.checkDescription)}>{description}</span>}
         {body && <span className={css(styles.checkBody)}>{body}</span>}
       </Component>
