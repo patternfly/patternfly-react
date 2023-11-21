@@ -187,7 +187,7 @@ describe('DropdownToggle', () => {
     });
 
     test('action split button - renders secondary variant', () => {
-      const { asFragment } = render(
+      render(
         <DropdownToggle
           id="Dropdown Toggle"
           toggleVariant="secondary"

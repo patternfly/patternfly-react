@@ -39,7 +39,7 @@ test('should render simple tabs', () => {
 });
 
 test('should render closeable tabs', () => {
-  const view = render(
+  render(
     <Tabs onClose={jest.fn()}>
       <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>} closeButtonAriaLabel="close-label">
         Tab 1 section
@@ -50,7 +50,7 @@ test('should render closeable tabs', () => {
 });
 
 test('should render add button', () => {
-  const view = render(
+  render(
     <Tabs onAdd={jest.fn()} addButtonAriaLabel="add-label">
       <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>} closeButtonAriaLabel="close-label">
         Tab 1 section
@@ -156,7 +156,7 @@ test('should render expandable vertical tabs', () => {
 test('should log error when there is no aria-label or toggleText for expandable vertical tabs', () => {
   const consoleErrorMock = jest.fn();
   global.console = { error: consoleErrorMock } as any;
-  const { asFragment } = render(
+  render(
     <Tabs id="verticalTabs" isVertical expandable={{ default: 'expandable' }}>
       <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
         Tab 1 section
@@ -429,7 +429,7 @@ test('should not render scroll buttons by default', () => {
 
   expect(screen.queryByLabelText('Scroll left')).not.toBeInTheDocument();
   expect(screen.queryByLabelText('Scroll right')).not.toBeInTheDocument();
-})
+});
 
 test('should not render scroll buttons when isVertical is true', () => {
   render(
@@ -448,4 +448,4 @@ test('should not render scroll buttons when isVertical is true', () => {
 
   expect(screen.queryByLabelText('Scroll left')).not.toBeInTheDocument();
   expect(screen.queryByLabelText('Scroll right')).not.toBeInTheDocument();
-})
+});

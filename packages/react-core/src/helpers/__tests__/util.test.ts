@@ -14,7 +14,7 @@ import styles from '@patternfly/react-styles/css/layouts/Flex/flex';
 const createMockHtmlElement = (bounds: Partial<DOMRect>) =>
   ({
     getBoundingClientRect: () => bounds
-  } as HTMLElement);
+  }) as HTMLElement;
 
 test('capitalize', () => {
   expect(capitalize('foo')).toBe('Foo');

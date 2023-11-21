@@ -123,7 +123,7 @@ describe('Select', () => {
 
   describe('custom select filter', () => {
     test('filters properly', async () => {
-      const customFilter = (e: React.ChangeEvent<HTMLInputElement>, value: string) => {
+      const customFilter = (e: React.ChangeEvent<HTMLInputElement>, _value: string) => {
         let input: RegExp;
         try {
           input = new RegExp(e.target.value, 'i');

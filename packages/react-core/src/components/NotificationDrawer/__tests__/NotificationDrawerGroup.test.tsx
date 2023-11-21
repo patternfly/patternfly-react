@@ -12,7 +12,9 @@ describe('NotificationDrawerGroup', () => {
   });
 
   test('renders correct heading level', () => {
-    const { asFragment } = render(<NotificationDrawerGroup count={2} isExpanded={false} title="Critical Alerts" headingLevel="h2" />);
+    const { asFragment } = render(
+      <NotificationDrawerGroup count={2} isExpanded={false} title="Critical Alerts" headingLevel="h2" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 

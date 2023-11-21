@@ -162,7 +162,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
               ]}
             />
             <DataListAction
-              aria-labelledby="m-ex-item2 mex-action2"
+              aria-labelledby="m-ex-item2 m-ex-action2"
               id="m-ex-action2"
               aria-label="Actions"
               isPlainButtonAction

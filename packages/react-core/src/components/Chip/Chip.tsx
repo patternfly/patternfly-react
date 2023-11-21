@@ -81,6 +81,17 @@ class Chip extends React.Component<ChipProps, ChipState> {
     });
   }
 
+  componentDidUpdate(_prevProps: ChipProps, prevState: ChipState) {
+    const nextIsTooltipVisible = Boolean(
+      this.span.current && this.span.current.offsetWidth < this.span.current.scrollWidth
+    );
+    if (prevState.isTooltipVisible !== nextIsTooltipVisible) {
+      this.setState({
+        isTooltipVisible: nextIsTooltipVisible
+      });
+    }
+  }
+
   setChipStyle = () => ({
     [cssChipTextMaxWidth.name]: this.props.textMaxWidth
   });

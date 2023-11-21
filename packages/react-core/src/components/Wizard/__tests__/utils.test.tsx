@@ -31,7 +31,7 @@ describe('buildSteps', () => {
   });
 
   test('returns flattened array of steps and sub-steps when sub-steps exist', () => {
-    const CustomSubStep = props => <div {...props} />;
+    const CustomSubStep = (props) => <div {...props} />;
 
     const component = (
       <WizardStep

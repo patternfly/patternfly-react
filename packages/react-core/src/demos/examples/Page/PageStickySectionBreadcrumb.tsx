@@ -277,8 +277,8 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
       </PageSection>
       <PageSection isWidthLimited>
         <Gallery hasGutter>
-          {Array.apply(0, Array(50)).map((_x, i) => (
-            <GalleryItem key={i}>
+          {Array.from({ length: 50 }).map((_value, index) => (
+            <GalleryItem key={index}>
               <Card>
                 <CardBody>This is a card</CardBody>
               </Card>

@@ -8,7 +8,8 @@ import {
   Td,
   InnerScrollContainer,
   OuterScrollContainer,
-  ThProps
+  ThProps,
+  ISortBy
 } from '@patternfly/react-table';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 
@@ -53,10 +54,10 @@ export const TableStickyColumnsAndHeader: React.FunctionComponent = () => {
   // Index of the currently sorted column
   // Note: if you intend to make columns reorderable, you may instead want to use a non-numeric key
   // as the identifier of the sorted column. See the "Compound expandable" example.
-  const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
+  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
 
   // Sort direction of the currently sorted column
-  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
+  const [activeSortDirection, setActiveSortDirection] = React.useState<ISortBy['direction']>();
 
   // Since OnSort specifies sorted columns by index, we need sortable values for our object by column index.
   // This example is trivial since our data objects just contain strings, but if the data was more complex
@@ -69,7 +70,7 @@ export const TableStickyColumnsAndHeader: React.FunctionComponent = () => {
   // Note that we perform the sort as part of the component's render logic and not in onSort.
   // We shouldn't store the list of data in state because we don't want to have to sync that with props.
   let sortedFacts = facts;
-  if (activeSortIndex !== null) {
+  if (activeSortIndex > -1) {
     sortedFacts = facts.sort((a, b) => {
       const aValue = getSortableRowValues(a)[activeSortIndex];
       const bValue = getSortableRowValues(b)[activeSortIndex];

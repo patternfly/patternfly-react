@@ -9,4 +9,3 @@ test('Verify Skip To Content', () => {
   // Add a useful assertion here.
   expect(asFragment()).toMatchSnapshot();
 });
-

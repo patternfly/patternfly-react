@@ -542,8 +542,8 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
     >
       <PageSection>
         <Gallery hasGutter>
-          {Array.apply(0, Array(10)).map((x, i) => (
-            <GalleryItem key={i}>
+          {Array.from({ length: 10 }).map((_value, index) => (
+            <GalleryItem key={index}>
               <Card>
                 <CardBody>This is a card</CardBody>
               </Card>

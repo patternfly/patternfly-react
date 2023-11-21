@@ -98,7 +98,7 @@ const DatePickerBase = (
     className,
     locale = undefined,
     dateFormat = yyyyMMddFormat,
-    dateParse = (val: string) => val.split('-').length === 3 && new Date(`${val}T00:00:00`),
+    dateParse = (val: string) => (val.split('-').length === 3 ? new Date(`${val}T00:00:00`) : new Date(undefined)),
     isDisabled = false,
     placeholder = 'YYYY-MM-DD',
     value: valueProp = '',
@@ -230,7 +230,7 @@ const DatePickerBase = (
   return (
     <div className={css(styles.datePicker, className)} ref={datePickerWrapperRef} style={style} {...props}>
       <Popover
-        elementToFocus={valueDate ? focusSelectorForSelectedDate : focusSelectorForUnselectedDate}
+        elementToFocus={isValidDate(valueDate) ? focusSelectorForSelectedDate : focusSelectorForUnselectedDate}
         position="bottom"
         bodyContent={
           <CalendarMonth
@@ -285,7 +285,7 @@ const DatePickerBase = (
       >
         <div className={styles.datePickerInput} ref={triggerRef}>
           <InputGroup>
-            <InputGroupItem isFill>
+            <InputGroupItem>
               <TextInput
                 isDisabled={isDisabled}
                 isRequired={requiredDateOptions?.isRequired}

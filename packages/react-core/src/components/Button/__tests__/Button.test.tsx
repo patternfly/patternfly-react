@@ -2,7 +2,6 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 
-import CartArrowDownIcon from '@patternfly/react-icons/dist/esm/icons/cart-arrow-down-icon';
 import { Button, ButtonVariant } from '../Button';
 
 Object.values(ButtonVariant).forEach((variant) => {

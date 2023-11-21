@@ -50,7 +50,7 @@ test('Verify console error logged when there is no aria-label or title', () => {
       header={<FormFieldGroupHeader titleDescription="Field group 4 description text." actions={<Button />} />}
     />
   );
-  const { asFragment } = render(FieldGroup);
+  render(FieldGroup);
   expect(consoleErrorMock).toHaveBeenCalled();
 });
 

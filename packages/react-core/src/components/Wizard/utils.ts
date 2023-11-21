@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { WizardStepType } from './types';
+import { isWizardParentStep, isWizardSubStep, WizardStepType } from './types';
 import { WizardStep, WizardStepProps } from './WizardStep';
 
 /**
@@ -8,7 +8,7 @@ import { WizardStep, WizardStepProps } from './WizardStep';
  * @param children
  * @returns WizardStepType[]
  */
-export const buildSteps = (children: React.ReactNode | React.ReactNode[]) =>
+export const buildSteps = (children: React.ReactNode) =>
   React.Children.toArray(children).reduce((acc: WizardStepType[], child: React.ReactNode, index: number) => {
     if (isWizardStep(child)) {
       const { props: childProps } = child;
@@ -57,3 +57,26 @@ export const normalizeStepProps = ({
   steps: _steps,
   ...controlStep
 }: WizardStepProps): Omit<WizardStepType, 'index'> => controlStep;
+
+/**
+ * Determines whether a step is navigable based on disabled/hidden properties
+ * @param steps All steps
+ * @param step
+ * @returns boolean
+ */
+export const isStepEnabled = (steps: WizardStepType[], step: WizardStepType): boolean => {
+  // Skip over parent steps since they are merely containers of sub-steps
+  if (!isWizardParentStep(step) && !step.isHidden && !step.isDisabled) {
+    if (isWizardSubStep(step)) {
+      const parentStep = steps.find((otherStep) => otherStep.id === step.parentId);
+
+      if (!parentStep.isHidden && !parentStep.isDisabled) {
+        return true;
+      }
+    } else {
+      return true;
+    }
+  }
+
+  return false;
+};

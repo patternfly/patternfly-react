@@ -1,243 +1,316 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { TreeView } from '../TreeView';
-import { Button } from '@patternfly/react-core';
-import { FolderIcon, FolderOpenIcon } from '@patternfly/react-icons';
-import { TreeViewSearch } from '../TreeViewSearch';
 
-const options = [
-  {
-    name: 'ApplicationLauncher',
-    id: 'AppLaunch',
-    children: [
-      {
-        name: 'Application 1',
-        id: 'App1',
-        children: [
-          { name: 'Settings', id: 'App1Settings' },
-          { name: 'Current', id: 'App1Current' }
-        ]
-      },
-      {
-        name: 'Application 2',
-        id: 'App2',
-        children: [
-          { name: 'Settings', id: 'App2Settings' },
-          {
-            name: 'Loader',
-            id: 'App2Loader',
-            children: [
-              { name: 'Loading App 1', id: 'LoadApp1' },
-              { name: 'Loading App 2', id: 'LoadApp2' },
-              { name: 'Loading App 3', id: 'LoadApp3' }
-            ]
-          }
-        ]
-      }
-    ],
-    defaultExpanded: true
-  },
-  {
-    name: 'Cost Management',
-    id: 'Cost',
-    children: [
-      {
-        name: 'Application 3',
-        id: 'App3',
-        children: [
-          { name: 'Settings', id: 'App3Settings' },
-          { name: 'Current', id: 'App3Current' }
-        ]
-      }
-    ]
-  },
-  {
-    name: 'Sources',
-    id: 'Sources',
-    children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
-  },
-  {
-    name: 'Really really really long folder name that overflows the container it is in',
-    id: 'Long',
-    children: [{ name: 'Application 5', id: 'App5' }]
-  }
-];
+jest.mock('../TreeViewList', () => ({
+  TreeViewList: ({ children, isNested, toolbar }) => (
+    <div data-testid="TreeViewList-mock">
+      <p>{`TreeViewList isNested: ${isNested}`}</p>
+      <p>{`TreeViewList toolbar: ${toolbar}`}</p>
+      <div data-testid="TreeViewList-children">{children}</div>
+    </div>
+  )
+}));
+jest.mock('../TreeViewListItem', () => ({
+  TreeViewListItem: ({
+    action,
+    activeItems,
+    badgeProps,
+    checkProps,
+    children,
+    compareItems,
+    customBadgeContent,
+    defaultExpanded,
+    expandedIcon,
+    hasBadge,
+    hasCheckbox,
+    icon,
+    id,
+    isCompact,
+    isExpanded,
+    isSelectable,
+    itemData,
+    name,
+    onCheck,
+    onSelect,
+    onExpand,
+    onCollapse,
+    parentItem,
+    title,
+    useMemo
+  }) => (
+    <div data-testid="TreeViewListItem-mock">
+      <p>{`TreeViewListItem action: ${action}`}</p>
+      <div data-testid="TreeViewListItem-activeItems">{activeItems && activeItems[0].name}</div>
+      <p>{`TreeViewListItem badgeProps: ${badgeProps?.id}`}</p>
+      <p>{`TreeViewListItem checkProps: ${checkProps?.checked}`}</p>
+      <p>{`TreeViewListItem customBadgeContent: ${customBadgeContent}`}</p>
+      <p>{`TreeViewListItem defaultExpanded: ${defaultExpanded}`}</p>
+      <p>{`TreeViewListItem expandedIcon: ${expandedIcon}`}</p>
+      <p>{`TreeViewListItem hasBadge: ${hasBadge}`}</p>
+      <p>{`TreeViewListItem hasCheckbox: ${hasCheckbox}`}</p>
+      <p>{`TreeViewListItem icon: ${icon}`}</p>
+      <p>{`TreeViewListItem id: ${id}`}</p>
+      <p>{`TreeViewListItem isCompact: ${isCompact}`}</p>
+      <p>{`TreeViewListItem isExpanded: ${isExpanded}`}</p>
+      <p>{`TreeViewListItem isSelectable: ${isSelectable}`}</p>
+      <p>{`TreeViewListItem itemData: ${itemData.name}`}</p>
+      <p>{`TreeViewListItem name: ${name}`}</p>
+      <p>{`TreeViewListItem parentItem: ${parentItem?.name}`}</p>
+      <p>{`TreeViewListItem title: ${title}`}</p>
+      <p>{`TreeViewListItem useMemo: ${useMemo}`}</p>
+      <button onClick={compareItems}>compareItems clicker</button>
+      <button onClick={onCheck}>onCheck clicker</button>
+      <button onClick={onSelect}>onSelect clicker</button>
+      <button onClick={onExpand}>onExpand clicker</button>
+      <button onClick={onCollapse}>onCollapse clicker</button>
+      <div data-testid="TreeViewListItem-children">{children}</div>
+    </div>
+  )
+}));
+jest.mock('../TreeViewRoot', () => ({
+  TreeViewRoot: ({ children, hasCheckboxes, hasGuides, hasSelectableNodes, variant, className }) => (
+    <div data-testid="TreeViewRoot-mock">
+      <p>{`TreeViewRoot hasCheckboxes: ${hasCheckboxes}`}</p>
+      <p>{`TreeViewRoot hasGuides: ${hasGuides}`}</p>
+      <p>{`TreeViewRoot hasSelectableNodes: ${hasSelectableNodes}`}</p>
+      <p>{`TreeViewRoot variant: ${variant}`}</p>
+      <p>{`TreeViewRoot className: ${className}`}</p>
+      <div data-testid="TreeViewRoot-children">{children}</div>
+    </div>
+  )
+}));
 
-const flagOptions = [
-  {
-    name: 'ApplicationLauncher',
-    id: 'AppLaunch',
-    hasCheckbox: true,
-    icon: <FolderIcon />,
-    expandedIcon: <FolderOpenIcon />,
-    children: [
-      {
-        name: 'Application 1',
-        id: 'App1',
-        children: [
-          { name: 'Settings', id: 'App1Settings' },
-          { name: 'Current', id: 'App1Current' }
-        ]
-      },
-      {
-        name: 'Application 2',
-        id: 'App2',
-        hasBadge: true,
-        children: [
-          { name: 'Settings', id: 'App2Settings', hasCheckbox: true },
-          {
-            name: 'Loader',
-            id: 'App2Loader',
-            children: [
-              { name: 'Loading App 1', id: 'LoadApp1' },
-              { name: 'Loading App 2', id: 'LoadApp2' },
-              { name: 'Loading App 3', id: 'LoadApp3' }
-            ]
-          }
-        ]
-      }
-    ],
-    defaultExpanded: true
-  },
-  {
-    name: 'Cost Management',
-    id: 'Cost',
-    hasBadge: true,
-    action: (
-      <Button variant="plain" aria-label="Folder action">
-        <FolderIcon />
-      </Button>
-    ),
-    children: [
-      {
-        name: 'Application 3',
-        id: 'App3',
-        children: [
-          { name: 'Settings', id: 'App3Settings' },
-          { name: 'Current', id: 'App3Current' }
-        ]
-      }
-    ]
-  },
-  {
-    name: 'Sources',
-    id: 'Sources',
-    children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
-  },
-  {
-    name: 'Really really really long folder name that overflows the container it is in',
-    id: 'Long',
-    children: [{ name: 'Application 5', id: 'App5' }]
-  }
-];
+const basicData = {
+  name: 'Basic data name'
+};
 
-const active = [
-  {
-    name: 'Application 1',
-    id: 'App1',
-    children: [
-      { name: 'Settings', id: 'App1Settings' },
-      { name: 'Current', id: 'App1Current' }
-    ]
-  }
-];
+test('Passes hasSelectableNodes to TreeViewRoot', () => {
+  render(<TreeView hasSelectableNodes data={[basicData]} />);
 
-describe('tree view', () => {
-  test('renders basic successfully', () => {
-    const { asFragment } = render(<TreeView data={options} onSelect={jest.fn()} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByText('TreeViewRoot hasSelectableNodes: true')).toBeVisible();
+});
+test('Passes hasCheckboxes to TreeViewRoot', () => {
+  render(<TreeView hasCheckboxes data={[basicData]} />);
 
-  test('calls onExpand and onCollapse appropriately', () => {
-    const onExpand = jest.fn();
-    const onCollapse = jest.fn();
-    const { asFragment } = render(
-      <TreeView data={options} onSelect={jest.fn()} onExpand={onExpand} onCollapse={onCollapse} />
-    );
-    expect(onExpand).not.toHaveBeenCalled();
-    expect(onCollapse).not.toHaveBeenCalled();
-    expect(screen.queryByText('Application 3')).toBeNull();
-    expect(screen.getByText('Cost Management')).toBeInTheDocument();
-    fireEvent(
-      screen.getByText('Cost Management'),
-      new MouseEvent('click', {
-        bubbles: true,
-        cancelable: true
-      })
-    );
-    expect(onExpand).toHaveBeenCalled();
-    expect(onCollapse).not.toHaveBeenCalled();
-    expect(screen.getByText('Application 3')).toBeInTheDocument();
-    fireEvent(
-      screen.getByText('Cost Management'),
-      new MouseEvent('click', {
-        bubbles: true,
-        cancelable: true
-      })
-    );
-    expect(onCollapse).toHaveBeenCalled();
-    expect(screen.queryByText('Application 3')).toBeNull();
-  });
+  expect(screen.getByText('TreeViewRoot hasCheckboxes: true')).toBeVisible();
+});
+test('Passes hasGuides to TreeViewRoot', () => {
+  render(<TreeView hasGuides data={[basicData]} />);
 
-  test('renders active successfully', () => {
-    const { asFragment } = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByText('TreeViewRoot hasGuides: true')).toBeVisible();
+});
+test('Passes variant to TreeViewRoot', () => {
+  render(<TreeView variant="compact" data={[basicData]} />);
 
-  test('renders search successfully', () => {
-    const { asFragment } = render(
-      <TreeViewSearch onSearch={jest.fn()} id="input-search" name="search-input" aria-label="Search input example" />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByText('TreeViewRoot variant: compact')).toBeVisible();
+});
+test('Passes className to TreeViewRoot', () => {
+  render(<TreeView className="test-class" data={[basicData]} />);
 
-  test('renders toolbar successfully', () => {
-    const { asFragment } = render(
-      <TreeView data={options} activeItems={active} onSelect={jest.fn()} toolbar={<div>test</div>} />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByText('TreeViewRoot className: test-class')).toBeVisible();
+});
+test('Passes data as children TreeViewRoot', () => {
+  render(<TreeView data={[basicData]} />);
 
-  test('renders checkboxes successfully', () => {
-    const { asFragment } = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasCheckboxes />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByTestId('TreeViewRoot-children')).toContainHTML('TreeViewListItem name: Basic data name');
+});
+test('Does not render TreeViewRoot when parentItem is passed', () => {
+  render(<TreeView data={[basicData]} parentItem={{ name: 'Parent name' }} />);
 
-  test('renders icons successfully', () => {
-    const { asFragment } = render(
-      <TreeView
-        data={options}
-        activeItems={active}
-        onSelect={jest.fn()}
-        icon={<FolderIcon />}
-        expandedIcon={<FolderOpenIcon />}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.queryByTestId('TreeViewRoot-mock')).not.toBeInTheDocument();
+});
 
-  test('renders badges successfully', () => {
-    const { asFragment } = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasBadges />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Passes isNested to TreeViewList', () => {
+  render(<TreeView isNested data={[basicData]} />);
 
-  test('renders individual flag options successfully', () => {
-    const { asFragment } = render(<TreeView data={flagOptions} activeItems={active} onSelect={jest.fn()} />);
-    expect(asFragment()).toMatchSnapshot();
+  expect(screen.getByText('TreeViewList isNested: true')).toBeVisible();
+});
+test('Passes toolbar to TreeViewList', () => {
+  render(<TreeView toolbar="Toolbar content" data={[basicData]} />);
+
+  expect(screen.getByText('TreeViewList toolbar: Toolbar content')).toBeVisible();
+});
+test('Passes data as children TreeViewList', () => {
+  render(<TreeView data={[basicData]} />);
+
+  expect(screen.getByTestId('TreeViewList-children')).toContainHTML('TreeViewListItem name: Basic data name');
+});
+
+test('Passes data action to TreeViewListItem', () => {
+  render(<TreeView data={[{ ...basicData, action: 'Item action' }]} />);
+
+  expect(screen.getByText('TreeViewListItem action: Item action')).toBeVisible();
+});
+test('Passes activeItems to TreeViewListItem', () => {
+  render(<TreeView data={[basicData]} activeItems={[{ name: 'Active item name' }]} />);
+
+  expect(screen.getByTestId('TreeViewListItem-activeItems')).toHaveTextContent('Active item name');
+});
+test('Passes data badgeProps to TreeViewListItem', () => {
+  render(<TreeView data={[{ ...basicData, badgeProps: { id: 'test-id' } }]} />);
+
+  expect(screen.getByText('TreeViewListItem badgeProps: test-id')).toBeVisible();
+});
+test('Passes data checkProps to TreeViewListItem', () => {
+  render(<TreeView data={[{ ...basicData, checkProps: { checked: true } }]} />);
+
+  expect(screen.getByText('TreeViewListItem checkProps: true')).toBeVisible();
+});
+test('Passes data customBadgeContent to TreeViewListItem', () => {
+  render(<TreeView data={[{ ...basicData, customBadgeContent: 'Custom badge' }]} />);
+
+  expect(screen.getByText('TreeViewListItem customBadgeContent: Custom badge')).toBeVisible();
+});
+test('Passes data defaultExpanded to TreeViewListItem', () => {
+  render(<TreeView data={[{ ...basicData, defaultExpanded: true }]} />);
+
+  expect(screen.getByText('TreeViewListItem defaultExpanded: true')).toBeVisible();
+});
+test('Passes defaultAllExpanded to TreeViewListItem', () => {
+  render(<TreeView data={[basicData]} defaultAllExpanded />);
+
+  expect(screen.getByText('TreeViewListItem defaultExpanded: true')).toBeVisible();
+});
+test('Passes data expandedIcon to TreeViewListItem', () => {
+  render(<TreeView data={[{ ...basicData, expandedIcon: 'Expanded icon' }]} />);
+
+  expect(screen.getByText('TreeViewListItem expandedIcon: Expanded icon')).toBeVisible();
+});
+test('Passes expandedIcon to TreeViewListItem', () => {
+  render(<TreeView data={[basicData]} expandedIcon="Expanded icon" />);
+
+  expect(screen.getByText('TreeViewListItem expandedIcon: Expanded icon')).toBeVisible();
+});
+test('Passes data hasBadge to TreeViewListItem', () => {
+  render(<TreeView data={[{ ...basicData, hasBadge: true }]} />);
+
+  expect(screen.getByText('TreeViewListItem hasBadge: true')).toBeVisible();
+});
+test('Passes hasBadges to TreeViewListItem', () => {
+  render(<TreeView data={[basicData]} hasBadges={true} />);
+
+  expect(screen.getByText('TreeViewListItem hasBadge: true')).toBeVisible();
+});
+test('Passes data hasCheckbox to TreeViewListItem', () => {
+  render(<TreeView data={[{ ...basicData, hasCheckbox: true }]} />);
+
+  expect(screen.getByText('TreeViewListItem hasCheckbox: true')).toBeVisible();
+});
+test('Passes hasCheckboxes to TreeViewListItem', () => {
+  render(<TreeView data={[basicData]} hasCheckboxes={true} />);
+
+  expect(screen.getByText('TreeViewListItem hasCheckbox: true')).toBeVisible();
+});
+test('Passes data icon to TreeViewListItem', () => {
+  render(<TreeView data={[{ ...basicData, icon: 'Icon content' }]} />);
+
+  expect(screen.getByText('TreeViewListItem icon: Icon content')).toBeVisible();
+});
+test('Passes icon to TreeViewListItem', () => {
+  render(<TreeView data={[basicData]} icon="Icon content" />);
+
+  expect(screen.getByText('TreeViewListItem icon: Icon content')).toBeVisible();
+});
+test('Passes data id to TreeViewListItem', () => {
+  render(<TreeView data={[{ ...basicData, id: 'test-id' }]} />);
+
+  expect(screen.getByText('TreeViewListItem id: test-id')).toBeVisible();
+});
+
+['default', 'compact', 'compactNoBackground'].forEach((variant) => {
+  test(`Passes isCompact to TreeViewListItem when variant=${variant}`, () => {
+    render(<TreeView data={[basicData]} variant={variant as 'default' | 'compact' | 'compactNoBackground'} />);
+
+    expect(screen.getByText(`TreeViewListItem isCompact: ${variant === 'default' ? 'false' : 'true'}`)).toBeVisible();
   });
 });
 
-test('renders guides successfully', () => {
-  const { asFragment } = render(<TreeView data={options} onSelect={jest.fn()} hasGuides={true} />);
-  expect(asFragment()).toMatchSnapshot();
+test('Passes allExpanded to TreeViewListItem isExpanded prop', () => {
+  render(<TreeView data={[basicData]} allExpanded />);
+
+  expect(screen.getByText('TreeViewListItem isExpanded: true')).toBeVisible();
+});
+test('Passes hasSelectableNodes to TreeViewListItem isSelectable prop', () => {
+  render(<TreeView data={[basicData]} hasSelectableNodes />);
+
+  expect(screen.getByText('TreeViewListItem isSelectable: true')).toBeVisible();
+});
+test('Passes data to TreeViewListItem itemData prop', () => {
+  render(<TreeView data={[{ name: 'itemData name' }]} />);
+
+  expect(screen.getByText('TreeViewListItem itemData: itemData name')).toBeVisible();
+});
+test('Passes data.name to TreeViewListItem name prop', () => {
+  render(<TreeView data={[basicData]} />);
+
+  expect(screen.getByText('TreeViewListItem name: Basic data name')).toBeVisible();
+});
+test('Passes parentItem to TreeViewListItem', () => {
+  render(<TreeView data={[basicData]} parentItem={{ name: 'Parent name' }} />);
+
+  expect(screen.getByText('TreeViewListItem parentItem: Parent name')).toBeVisible();
+});
+test('Passes data.title to TreeViewListItem', () => {
+  render(<TreeView data={[{ ...basicData, title: 'Basic data title' }]} />);
+
+  expect(screen.getByText('TreeViewListItem title: Basic data title')).toBeVisible();
+});
+test('Passes useMemo to TreeViewListItem', () => {
+  render(<TreeView data={[basicData]} useMemo={true} />);
+
+  expect(screen.getByText('TreeViewListItem useMemo: true')).toBeVisible();
+});
+test('Passes data.children to TreeViewListItem', () => {
+  render(<TreeView data={[{ ...basicData, children: [{ name: 'Child 1' }] }]} />);
+
+  expect(screen.getByText('TreeViewListItem name: Child 1')).toBeVisible();
 });
 
-test('renders compact successfully', () => {
-  const { asFragment } = render(<TreeView data={options} onSelect={jest.fn()} variant="compact" />);
-  expect(asFragment()).toMatchSnapshot();
+describe('Passes callback props to TreeViewListItem', () => {
+  const user = userEvent.setup();
+  const callbackMock = jest.fn();
+
+  test('Passes compareItems', async () => {
+    render(<TreeView data={[basicData]} compareItems={callbackMock} />);
+
+    await user.click(screen.getByRole('button', { name: 'compareItems clicker' }));
+
+    expect(callbackMock).toHaveBeenCalledTimes(1);
+  });
+  test('Passes onCheck', async () => {
+    render(<TreeView data={[basicData]} onCheck={callbackMock} />);
+
+    await user.click(screen.getByRole('button', { name: 'onCheck clicker' }));
+
+    expect(callbackMock).toHaveBeenCalledTimes(1);
+  });
+  test('Passes onSelect', async () => {
+    render(<TreeView data={[basicData]} onSelect={callbackMock} />);
+
+    await user.click(screen.getByRole('button', { name: 'onSelect clicker' }));
+
+    expect(callbackMock).toHaveBeenCalledTimes(1);
+  });
+  test('Passes onExpand', async () => {
+    render(<TreeView data={[basicData]} onExpand={callbackMock} />);
+
+    await user.click(screen.getByRole('button', { name: 'onExpand clicker' }));
+
+    expect(callbackMock).toHaveBeenCalledTimes(1);
+  });
+  test('Passes onCollapse', async () => {
+    render(<TreeView data={[basicData]} onCollapse={callbackMock} />);
+
+    await user.click(screen.getByRole('button', { name: 'onCollapse clicker' }));
+
+    expect(callbackMock).toHaveBeenCalledTimes(1);
+  });
 });
 
-test('renders compact no background successfully', () => {
-  const { asFragment } = render(<TreeView data={options} onSelect={jest.fn()} variant="compactNoBackground" />);
+test('Matches snapshot', () => {
+  const { asFragment } = render(<TreeView data={[basicData]} />);
+
   expect(asFragment()).toMatchSnapshot();
 });

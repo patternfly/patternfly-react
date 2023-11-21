@@ -42,7 +42,9 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
       {title}
     </Text>
     {(customText !== undefined || count !== undefined) && (
-      <span className={css(styles.notificationDrawerHeaderStatus)}>{customText || `${count} ${unreadText}`}</span>
+      <span className={css(styles.notificationDrawerHeaderStatus)} aria-live="polite">
+        {customText || `${count} ${unreadText}`}
+      </span>
     )}
     {(children || onClose) && (
       <div className={css(styles.notificationDrawerHeaderAction)}>

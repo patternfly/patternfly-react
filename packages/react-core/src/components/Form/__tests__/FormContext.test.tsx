@@ -3,9 +3,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { FormContextConsumer, FormContextProvider } from '../FormContext';
 
-const customRender = (ui, initialValues?: Record<string, any>) => {
-  return render(<FormContextProvider initialValues={initialValues}>{ui}</FormContextProvider>);
-};
+const customRender = (ui, initialValues?: Record<string, any>) =>
+  render(<FormContextProvider initialValues={initialValues}>{ui}</FormContextProvider>);
 
 test('consumers can show all values from "values" provided by "initialValues"', () => {
   const initialValues = { fieldOneId: 'some value', fieldTwoId: 'some other value' };
@@ -63,9 +62,9 @@ test('sets a new value for a single field using setValue', async () => {
 
   customRender(
     <FormContextConsumer>
-      {({ getValue, setValue }) => {
-        return <input onChange={(event) => setValue('someId', event.target.value)} value={getValue('someId')} />;
-      }}
+      {({ getValue, setValue }) => (
+        <input onChange={(event) => setValue('someId', event.target.value)} value={getValue('someId')} />
+      )}
     </FormContextConsumer>,
     {
       someId: 'some value'
@@ -86,16 +85,14 @@ test('using setValues, consumers can set multiple values at once', async () => {
 
   customRender(
     <FormContextConsumer>
-      {({ values, setValues }) => {
-        return (
-          <>
-            <input type="checkbox" onClick={() => setValues(newValues)} />
-            {Object.entries(values).map(([fieldId, value]) => (
-              <span key={fieldId}>{`${fieldId}: ${value}`}</span>
-            ))}
-          </>
-        );
-      }}
+      {({ values, setValues }) => (
+        <>
+          <input type="checkbox" onClick={() => setValues(newValues)} />
+          {Object.entries(values).map(([fieldId, value]) => (
+            <span key={fieldId}>{`${fieldId}: ${value}`}</span>
+          ))}
+        </>
+      )}
     </FormContextConsumer>,
     {
       someId: 'some value'
@@ -129,14 +126,12 @@ test('sets a new error for a single field using setError', async () => {
 
   customRender(
     <FormContextConsumer>
-      {({ errors, setError }) => {
-        return (
-          <>
-            <input type="checkbox" onClick={() => setError('someId', 'some error!')} />
-            {`Error: ${errors.someId}`}
-          </>
-        );
-      }}
+      {({ errors, setError }) => (
+        <>
+          <input type="checkbox" onClick={() => setError('someId', 'some error!')} />
+          {`Error: ${errors.someId}`}
+        </>
+      )}
     </FormContextConsumer>
   );
 
@@ -150,16 +145,14 @@ test('using setErrors, consumers can set multiple errors at once', async () => {
 
   customRender(
     <FormContextConsumer>
-      {({ errors, setErrors }) => {
-        return (
-          <>
-            <input type="checkbox" onClick={() => setErrors(newErrors)} />
-            {Object.entries(errors).map(([fieldId, error]) => (
-              <span key={fieldId}>{`${fieldId}: ${error}`}</span>
-            ))}
-          </>
-        );
-      }}
+      {({ errors, setErrors }) => (
+        <>
+          <input type="checkbox" onClick={() => setErrors(newErrors)} />
+          {Object.entries(errors).map(([fieldId, error]) => (
+            <span key={fieldId}>{`${fieldId}: ${error}`}</span>
+          ))}
+        </>
+      )}
     </FormContextConsumer>,
     {
       someId: 'some value'
@@ -175,14 +168,12 @@ test('sets a new touched state for a single field using setTouched', async () =>
 
   customRender(
     <FormContextConsumer>
-      {({ touched, setTouched }) => {
-        return (
-          <>
-            <input type="checkbox" onClick={() => setTouched('someId', true)} />
-            {`isTouched: ${touched.someId}`}
-          </>
-        );
-      }}
+      {({ touched, setTouched }) => (
+        <>
+          <input type="checkbox" onClick={() => setTouched('someId', true)} />
+          {`isTouched: ${touched.someId}`}
+        </>
+      )}
     </FormContextConsumer>
   );
 
@@ -195,14 +186,12 @@ test("can get a single field's touched state by using isTouched", async () => {
 
   customRender(
     <FormContextConsumer>
-      {({ touched, setTouched, isTouched }) => {
-        return (
-          <>
-            <input type="checkbox" onClick={() => setTouched('someId', !touched.someId)} />
-            {`isTouched: ${isTouched('someId')}`}
-          </>
-        );
-      }}
+      {({ touched, setTouched, isTouched }) => (
+        <>
+          <input type="checkbox" onClick={() => setTouched('someId', !touched.someId)} />
+          {`isTouched: ${isTouched('someId')}`}
+        </>
+      )}
     </FormContextConsumer>
   );
 

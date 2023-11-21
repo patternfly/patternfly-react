@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot by default 1`] = `
+<DocumentFragment>
+  <ul
+    class="pf-v5-c-tree-view__list"
+    role="tree"
+  >
+    Content
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`Matches snapshot when toolbar is passed 1`] = `
+<DocumentFragment>
+  <div>
+    Toolbar content
+  </div>
+  <hr
+    class="pf-v5-c-divider"
+  />
+  <ul
+    class="pf-v5-c-tree-view__list"
+    role="tree"
+  >
+    Content
+  </ul>
+</DocumentFragment>
+`;

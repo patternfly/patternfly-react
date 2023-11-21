@@ -27,8 +27,8 @@ export const PaginationSticky: React.FunctionComponent = () => {
   const buildCards = () => {
     const numberOfCards = (page - 1) * perPage + perPage - 1 >= itemCount ? itemCount - (page - 1) * perPage : perPage;
 
-    return Array.apply(0, Array(numberOfCards)).map((x, i) => (
-      <GalleryItem key={i}>
+    return Array.from({ length: numberOfCards }).map((_value, index) => (
+      <GalleryItem key={index}>
         <Card>
           <CardBody>This is a card</CardBody>
         </Card>

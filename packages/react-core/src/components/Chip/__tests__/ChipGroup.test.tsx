@@ -115,7 +115,7 @@ test('chip group with closeBtnAriaLabel', () => {
     </ChipGroup>
   );
   expect(screen.getByLabelText('close button aria label')).toBeInTheDocument();
-  expect(screen.getByLabelText('close button aria label')).toHaveAccessibleName("close button aria label category");
+  expect(screen.getByLabelText('close button aria label')).toHaveAccessibleName('close button aria label category');
 });
 
 test('chip group onClick', async () => {
@@ -169,8 +169,6 @@ test('chip group expanded', async () => {
 });
 
 test('overflow chip does not render by default when < 4 children are passed', async () => {
-  const user = userEvent.setup();
-
   render(
     <ChipGroup>
       <Chip>1</Chip>
@@ -183,8 +181,6 @@ test('overflow chip does not render by default when < 4 children are passed', as
 });
 
 test('overflow chip collapsed by default', async () => {
-  const user = userEvent.setup();
-
   render(
     <ChipGroup>
       <Chip>1</Chip>

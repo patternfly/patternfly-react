@@ -149,7 +149,7 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
                           aria-label="Show Filters"
                           {...(_isExpanded && { 'aria-expanded': true })}
                           aria-haspopup={_isExpanded && this.isContentPopup()}
-                          aria-controls={expandableContentId}
+                          aria-controls={_isExpanded ? expandableContentId : undefined}
                           ref={this.toggleRef}
                         >
                           {toggleIcon}

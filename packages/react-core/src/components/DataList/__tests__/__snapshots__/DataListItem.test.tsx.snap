@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders to match snapshot 1`] = `
+<DocumentFragment>
+  <li
+    aria-labelledby="item-1"
+    class="pf-v5-c-data-list__item"
+    id=""
+  />
+</DocumentFragment>
+`;

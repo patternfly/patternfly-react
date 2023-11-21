@@ -27,7 +27,7 @@ describe('CardFooter', () => {
 
   test('allows passing in a React Component as the component', () => {
     const Component = () => <div>im a div</div>;
-    render(<CardFooter component={(Component as unknown) as keyof JSX.IntrinsicElements} />);
+    render(<CardFooter component={Component as unknown as keyof JSX.IntrinsicElements} />);
     expect(screen.getByText('im a div')).toBeInTheDocument();
   });
 });
