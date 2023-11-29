@@ -634,17 +634,6 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
 
           const editor = (
             <div className={css(styles.codeEditorCode)} ref={this.wrapperRef} tabIndex={0} dir="ltr">
-              {/* <MonacoEditor
-                height={height}
-                width={width}
-                language={language}
-                value={value}
-                options={options}
-                overrideServices={overrideServices}
-                onChange={this.onChange}
-                editorDidMount={this.editorDidMount}
-                theme={isDarkTheme ? 'vs-dark' : 'vs-light'}
-              /> */}
               <Editor
                 height={height}
                 width={width}
