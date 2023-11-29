@@ -38,10 +38,11 @@
   "peerDependencies": {
     "react": "^17 || ^18",
     "react-dom": "^17 || ^18",
-    "react-monaco-editor": "^0.51.0"
+    "@monaco-editor/react": "^4.6.0"
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "@monaco-editor/react": "^4.6.0"
   }
 }
