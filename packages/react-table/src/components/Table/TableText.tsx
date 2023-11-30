@@ -89,7 +89,7 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
         setTooltip('');
       }
     }
-  }, [focused]);
+  }, [focused, tooltipHasDefaultBehavior]);
 
   return tooltip !== '' ? (
     <Tooltip triggerRef={textRef} content={tooltip} {...tooltipProps}>
