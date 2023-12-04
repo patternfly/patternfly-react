@@ -41,8 +41,8 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   return (
     <div
       role="dialog"
-      aria-label={ariaLabel}
-      aria-labelledby={ariaLabelledby}
+      aria-label={ariaLabel || null}
+      aria-labelledby={ariaLabelledby || null}
       aria-describedby={ariaDescribedby}
       aria-modal="true"
       className={css(

@@ -81,7 +81,11 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     if (ariaLabelledby) {
       idRefList.push(ariaLabelledby);
     }
-    return idRefList.join(' ');
+    if (idRefList.length === 0) {
+      return undefined;
+    } else {
+      return idRefList.join(' ');
+    }
   };
 
   const modalBox = (
