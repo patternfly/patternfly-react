@@ -44,6 +44,7 @@ export * from './MastheadDemo/MastheadDemo';
 export * from './MenuDemo/MenuDemo';
 export * from './MenuDemo/MenuDrilldownDemo';
 export * from './ModalDemo/ModalDemo';
+export * from './ModalNextDemo/ModalNextDemo';
 export * from './NavDemo/NavDemo';
 export * from './NotificationBadgeDemo/NotificationBadgeDemo';
 export * from './NotificationDrawerDemo/NotificationDrawerBasicDemo';
