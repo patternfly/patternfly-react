@@ -19,7 +19,8 @@ describe('Expandable Demo Test', () => {
     cy.get('.pf-v5-c-expandable-section__toggle').find('span').should('contain', 'Show Less');
   });
 
-  it('Verify detached expandable', () => {
+  // disabled this test because pf-m-detached was removed from core.
+  xit('Verify detached expandable', () => {
     cy.get('#detached').should('have.class', 'pf-m-detached');
     cy.get('#detached-section').should('have.class', 'pf-m-detached');
     cy.get('#detached button').click();

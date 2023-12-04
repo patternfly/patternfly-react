@@ -3,7 +3,7 @@
 exports[`Detached ExpandableSection renders successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-expandable-section pf-m-expanded pf-m-detached"
+    class="pf-v5-c-expandable-section pf-m-expanded"
   >
     <div
       aria-labelledby="toggle-id"
@@ -15,7 +15,7 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
     </div>
   </div>
   <div
-    class="pf-v5-c-expandable-section pf-m-expanded pf-m-detached"
+    class="pf-v5-c-expandable-section pf-m-expanded"
   >
     <button
       aria-controls="content-id"

@@ -45,7 +45,6 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
     className={css(
       styles.expandableSection,
       isExpanded && styles.modifiers.expanded,
-      styles.modifiers.detached,
       hasTruncatedContent && styles.modifiers.truncate,
       className
     )}
@@ -69,7 +68,7 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
           <AngleRightIcon aria-hidden />
         </span>
       )}
-      <span className={css(styles.expandableSectionToggleText)}>{children}</span>
+      <span className={css(`${styles.expandableSection}__toggle-text`)}>{children}</span>
     </button>
   </div>
 );
