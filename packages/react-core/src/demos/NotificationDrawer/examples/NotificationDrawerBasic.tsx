@@ -55,7 +55,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.PF-HorizontalLogo-Color.svg';
 
 export const NotificationDrawerBasic: React.FunctionComponent = () => {
   const drawerRef = React.useRef<HTMLElement | null>(null);

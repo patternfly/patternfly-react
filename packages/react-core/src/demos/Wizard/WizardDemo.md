@@ -4,7 +4,7 @@ section: components
 source: react-demos
 ---
 
-import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 ## Demos
