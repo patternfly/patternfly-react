@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.1.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.2.0-prerelease.0...@patternfly/react-charts@7.1.2) (2023-12-06)
+
+### Bug Fixes
+
+- **release:** set up patch fix branch with dryrun ([#9728](https://github.com/patternfly/patternfly-react/issues/9728)) ([5bf08bd](https://github.com/patternfly/patternfly-react/commit/5bf08bdafbbdb9c75eb1dbf9a1c87586f293abf3))
+
 # [7.2.0-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.1.1...@patternfly/react-charts@7.2.0-prerelease.0) (2023-10-05)
 
 **Note:** Version bump only for package @patternfly/react-charts
