@@ -5,6 +5,7 @@ import ArrowsAltVIcon from '@patternfly/react-icons/dist/esm/icons/arrows-alt-v-
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { TableText } from './TableText';
+import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
 
 export enum SortByDirection {
   asc = 'asc',
@@ -17,6 +18,9 @@ export interface SortColumnProps extends React.ButtonHTMLAttributes<HTMLButtonEl
   isSortedBy?: boolean;
   onSort?: Function;
   sortDirection?: string;
+  tooltip?: React.ReactNode;
+  tooltipProps?: Omit<TooltipProps, 'content'>;
+  tooltipHasDefaultBehavior?: boolean;
 }
 
 export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
@@ -26,6 +30,9 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
   onSort = null,
   sortDirection = '',
   type = 'button',
+  tooltip,
+  tooltipProps,
+  tooltipHasDefaultBehavior,
   ...props
 }: SortColumnProps) => {
   let SortedByIcon;
@@ -45,7 +52,14 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
       onBlur={() => setFocused(false)}
     >
       <div className={css(className, styles.tableButtonContent)}>
-        <TableText focused={focused}>{children}</TableText>
+        <TableText
+          tooltip={tooltip}
+          tooltipProps={tooltipProps}
+          tooltipHasDefaultBehavior={tooltipHasDefaultBehavior}
+          focused={focused}
+        >
+          {children}
+        </TableText>
         <span className={css(styles.tableSortIndicator)}>
           <SortedByIcon />
         </span>
