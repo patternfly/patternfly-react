@@ -415,7 +415,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       ref={popoverRef}
       active={focusTrapActive}
       focusTrapOptions={{
-        returnFocusOnDeactivate: true,
+        returnFocusOnDeactivate: propWithFocusTrap !== false,
         clickOutsideDeactivates: true,
         // FocusTrap's initialFocus can accept false as a value to prevent initial focus.
         // We want to prevent this in case false is ever passed in.
