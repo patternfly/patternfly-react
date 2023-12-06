@@ -5,7 +5,8 @@ import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from './PageContext';
 
 export enum PageSectionVariants {
-  default = 'default'
+  default = 'default',
+  secondary = 'secondary'
 }
 
 export enum PageSectionTypes {
@@ -22,8 +23,8 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the section */
   className?: string;
-  /** Section background color variant */
-  variant?: 'default';
+  /** Section background color variant. This will only apply when the type prop has the "default" value. */
+  variant?: 'default' | 'secondary';
   /** Section type variant */
   type?: 'default' | 'nav' | 'subnav' | 'breadcrumb' | 'tabs' | 'wizard';
   /** Enables the page section to fill the available vertical space */
@@ -74,7 +75,8 @@ const variantType = {
 };
 
 const variantStyle = {
-  [PageSectionVariants.default]: ''
+  [PageSectionVariants.default]: '',
+  [PageSectionVariants.secondary]: styles.modifiers.secondary
 };
 
 export const PageSection: React.FunctionComponent<PageSectionProps> = ({
@@ -112,7 +114,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
         variantType[type],
         formatBreakpointMods(padding, styles),
         formatBreakpointMods(stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true),
-        variantStyle[variant],
+        type === PageSectionTypes.default && variantStyle[variant],
         isFilled === false && styles.modifiers.noFill,
         isFilled === true && styles.modifiers.fill,
         isWidthLimited && styles.modifiers.limitWidth,

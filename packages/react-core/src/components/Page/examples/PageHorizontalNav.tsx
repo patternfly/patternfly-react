@@ -35,7 +35,7 @@ export const PageHorizontalNav: React.FunctionComponent = () => {
   return (
     <Page header={header}>
       <PageSection>Section 1</PageSection>
-      <PageSection>Section 2</PageSection>
+      <PageSection variant="secondary">Section 2 with secondary variant styling</PageSection>
       <PageSection>Section 3</PageSection>
     </Page>
   );
