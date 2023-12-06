@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.32...@patternfly/react-core@5.2.0-prerelease.33) (2023-12-06)
+
+### Bug Fixes
+
+- **AlertGroupDemo:** crashed when adding default alerts ([#9826](https://github.com/patternfly/patternfly-react/issues/9826)) ([9244cf0](https://github.com/patternfly/patternfly-react/commit/9244cf07bd599f295d623a6e37e8d15b3c7c3d40))
+
 # [5.2.0-prerelease.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.31...@patternfly/react-core@5.2.0-prerelease.32) (2023-11-21)
 
 **Note:** Version bump only for package @patternfly/react-core
