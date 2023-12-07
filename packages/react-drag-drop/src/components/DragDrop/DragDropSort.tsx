@@ -27,6 +27,9 @@ import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 export type DragDropSortDragEndEvent = DragEndEvent;
 export type DragDropSortDragStartEvent = DragStartEvent;
 
+/**
+ * DragDropSortProps extends dnd-kit's props which may be viewed at https://docs.dndkit.com/api-documentation/context-provider#props.
+ */
 export interface DragDropSortProps extends DndContextProps {
   /** Custom defined content wrapper for draggable items. By default, draggable items are wrapped in a styled div.
    * Intended to be a 'DataList' or 'DualListSelectorList' without children. */

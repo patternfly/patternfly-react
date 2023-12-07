@@ -12,9 +12,9 @@ export interface DraggableProps extends React.HTMLProps<HTMLDivElement> {
   hasNoWrapper?: boolean;
   /** Class to add to outer div */
   className?: string;
-  /** */
+  /** @hide Id of the sortable context. */
   id?: string;
-  /** */
+  /** Flag indicating the draggable element should include a drag button. */
   useDragButton?: boolean;
 }
 

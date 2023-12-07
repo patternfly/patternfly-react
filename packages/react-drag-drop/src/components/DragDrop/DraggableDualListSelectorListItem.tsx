@@ -14,7 +14,7 @@ export interface DraggableDualListSelectorListItemProps extends React.HTMLProps<
   hasNoWrapper?: boolean;
   /** Class to add to outer div */
   className?: string;
-  /** */
+  /** @hide Id of the sortable context */
   id?: string;
   /** Flag indicating the list item is currently selected. */
   isSelected?: boolean;

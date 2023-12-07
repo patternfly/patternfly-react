@@ -19,7 +19,7 @@ export interface DraggableDataListItemProps extends React.HTMLProps<HTMLLIElemen
   hasNoWrapper?: boolean;
   /** Class to add to outer div */
   className?: string;
-  /** */
+  /** @hide Id of the sortable context. */
   id?: string;
 }
 
