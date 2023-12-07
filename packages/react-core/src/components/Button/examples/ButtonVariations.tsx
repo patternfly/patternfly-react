@@ -10,6 +10,9 @@ export const ButtonVariations: React.FunctionComponent = () => (
     <Button variant="primary" ouiaId="Primary">
       Primary
     </Button>{' '}
+    <Button variant="primary" icon={<ExternalLinkSquareAltIcon />} ouiaId="PrimaryWithIcon">
+      Primary with icon
+    </Button>{' '}
     <Button variant="secondary" ouiaId="Secondary">
       Secondary
     </Button>{' '}
