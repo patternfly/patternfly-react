@@ -34,8 +34,6 @@ export interface ModalContentProps extends OUIAProps {
   position?: 'default' | 'top';
   /** Offset from alternate position. Can be any valid CSS length/percentage. */
   positionOffset?: string;
-  /** Flag to show the close button in the header area of the modal. */
-  showClose?: boolean;
   /** Variant of the modal. */
   variant?: 'small' | 'medium' | 'large' | 'default';
   /** Default width of the modal. */
@@ -55,8 +53,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   'aria-label': ariaLabel,
   'aria-describedby': ariaDescribedby,
   'aria-labelledby': ariaLabelledby,
-  showClose = true,
-  onClose = () => undefined as any,
+  onClose,
   variant = 'default',
   position,
   positionOffset,
@@ -109,7 +106,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       {...props}
       id={boxId}
     >
-      {showClose && <ModalBoxCloseButton onClose={(event) => onClose(event)} ouiaId={ouiaId} />}
+      {onClose && <ModalBoxCloseButton onClose={(event) => onClose(event)} ouiaId={ouiaId} />}
       {children}
     </ModalBox>
   );

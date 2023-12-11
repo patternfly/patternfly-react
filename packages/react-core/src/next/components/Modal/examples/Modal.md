@@ -48,29 +48,13 @@ To override a modal's default center alignment, use the `position` property. In 
 
 ```
 
-### Small modal
+### Modal sizes
 
 To adjust the size of a modal, use the `variant` property. Modal variants include "small", "medium", "large", and "default".
 
-The following example displays a "small" modal by passing in `variant={ModalVariant.small}`.
+The following example displays a saml. medium or large modal based on selected radio button. E.g. if you selcet the "Small variant" option, a small  modal will be rendered by passing in `variant={ModalVariant.small}`.
 
-```ts file="./ModalSmall.tsx"
-
-```
-
-### Medium modal
-
-The following example displays a "medium" modal by passing in `variant={ModalVariant.medium}`.
-
-```ts file="./ModalMedium.tsx"
-
-```
-
-### Large modal
-
-The following example displays a "large" modal by passing in `variant={ModalVariant.large}`.
-
-```ts file="./ModalLarge.tsx"
+```ts file="./ModalSize.tsx"
 
 ```
 
@@ -82,17 +66,17 @@ To choose a specific width for a modal, use the `width` property. The following 
 
 ```
 
-### Custom header and footer
+### Custom header
 
-To add a custom header and footer to a modal, set the `header` and `footer` properties to a custom implementation. The following example passes title components into both the header and the footer and also passes an icon to the footer.
+To add a custom header to a modal, do not pass the `title` property to the `ModalBoxHeader`. Custom heade content should be passed as a child of the `ModalBoxHeader` instead.
 
-```ts file="./ModalCustomHeaderFooter.tsx"
+```ts file="./ModalCustomHeader.tsx"
 
 ```
 
 ### No header or footer
 
-To exclusively present information in a modal, remove the `header` and/or `footer`.
+When no header or footer is added to the model, make sure to add the `aria-label` prop since there is no title.
 
 ```ts file="./ModalNoHeaderFooter.tsx"
 

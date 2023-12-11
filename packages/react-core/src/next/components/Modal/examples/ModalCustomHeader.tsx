@@ -28,7 +28,9 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
           <Title id="modal-custom-header-label" headingLevel="h1" size={TitleSizes['2xl']}>
             Custom header/footer modal
           </Title>
-          <p className={spacing.ptSm}>Allows for custom content in the header and/or footer by passing components.</p>
+          <p className={spacing.ptSm}>
+            Add custom content to the header by not passing the titles prop the modal box header component.
+          </p>
         </ModalBoxHeader>
         <ModalBoxBody>
           <span id="modal-custom-header-description">

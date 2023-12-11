@@ -28,7 +28,7 @@ describe('ModalBoxBody tests', () => {
     expect(modalBoxBody).toHaveAccessibleName('modal box body aria label');
   });
 
-  test('The modalBoxBody has the expected aria role when bodyAriaLabel is passed and bodyAriaRole is not', () => {
+  test('The modalBoxBody has the expected aria role when aria-label is passed and role is not', () => {
     const props = {
       isOpen: true
     };
@@ -49,7 +49,7 @@ describe('ModalBoxBody tests', () => {
     };
 
     render(
-      <ModalBoxBody aria-label="modal box body aria label" aria-role="article" {...props}>
+      <ModalBoxBody aria-label="modal box body aria label" role="article" {...props}>
         This is a ModalBox
       </ModalBoxBody>
     );

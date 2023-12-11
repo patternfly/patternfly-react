@@ -6,7 +6,8 @@ import { ModalContent } from '../ModalContent';
 const modalContentProps = {
   boxId: 'boxId',
   labelId: 'labelId',
-  descriptorId: 'descriptorId'
+  descriptorId: 'descriptorId',
+  disableFocusTrap: true
 };
 test('Modal Content Test only body', () => {
   const { asFragment } = render(

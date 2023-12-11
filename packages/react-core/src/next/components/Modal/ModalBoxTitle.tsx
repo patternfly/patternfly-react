@@ -24,7 +24,7 @@ export interface ModalBoxTitleProps {
    * are used the default styling will be automatically applied. */
   titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | React.ComponentType<any>;
   /** Optional title label text for screen readers. */
-  titleLabel?: string;
+  titleScreenReaderText?: string;
 }
 
 export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
@@ -32,12 +32,14 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
   id,
   title,
   titleIconVariant,
-  titleLabel,
+  titleScreenReaderText,
   ...props
 }: ModalBoxTitleProps) => {
   const [hasTooltip, setHasTooltip] = React.useState(false);
   const h1 = React.useRef<HTMLHeadingElement>(null);
-  const label = titleLabel || (isVariantIcon(titleIconVariant) ? `${capitalize(titleIconVariant)} alert:` : titleLabel);
+  const label =
+    titleScreenReaderText ||
+    (isVariantIcon(titleIconVariant) ? `${capitalize(titleIconVariant)} alert:` : titleScreenReaderText);
   const variantIcons = {
     success: <CheckCircleIcon />,
     danger: <ExclamationCircleIcon />,

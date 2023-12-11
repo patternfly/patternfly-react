@@ -18,33 +18,6 @@ exports[`Modal Content Test description 1`] = `
         labelid="labelId"
         role="dialog"
       >
-        <div
-          class="pf-v5-c-modal-box__close"
-        >
-          <button
-            aria-disabled="false"
-            aria-label="Close"
-            class="pf-v5-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-3"
-            data-ouia-component-type="PF5/Button"
-            data-ouia-safe="true"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 352 512"
-              width="1em"
-            >
-              <path
-                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-              />
-            </svg>
-          </button>
-        </div>
         This is a ModalBox header
       </div>
     </div>
@@ -70,33 +43,6 @@ exports[`Modal Content Test isOpen 1`] = `
         labelid="labelId"
         role="dialog"
       >
-        <div
-          class="pf-v5-c-modal-box__close"
-        >
-          <button
-            aria-disabled="false"
-            aria-label="Close"
-            class="pf-v5-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-2"
-            data-ouia-component-type="PF5/Button"
-            data-ouia-safe="true"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 352 512"
-              width="1em"
-            >
-              <path
-                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-              />
-            </svg>
-          </button>
-        </div>
         This is a ModalBox header
       </div>
     </div>
@@ -122,33 +68,6 @@ exports[`Modal Content Test only body 1`] = `
         labelid="labelId"
         role="dialog"
       >
-        <div
-          class="pf-v5-c-modal-box__close"
-        >
-          <button
-            aria-disabled="false"
-            aria-label="Close"
-            class="pf-v5-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-1"
-            data-ouia-component-type="PF5/Button"
-            data-ouia-safe="true"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 352 512"
-              width="1em"
-            >
-              <path
-                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-              />
-            </svg>
-          </button>
-        </div>
         This is a ModalBox header
       </div>
     </div>
@@ -181,7 +100,7 @@ exports[`Modal Content Test with onclose 1`] = `
             aria-disabled="false"
             aria-label="Close"
             class="pf-v5-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-4"
+            data-ouia-component-id="OUIA-Generated-Button-plain-1"
             data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             type="button"

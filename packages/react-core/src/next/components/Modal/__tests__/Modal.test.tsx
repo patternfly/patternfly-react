@@ -69,13 +69,13 @@ describe('Modal', () => {
     expect(document.body).not.toHaveClass(css(styles.backdropOpen));
   });
 
-  test('modal shows the close button when showClose is true (true by default)', () => {
+  test('modal shows the close button when onClose prop is passed (true by default)', () => {
     render(<Modal {...props} isOpen />);
     expect(screen.getByRole('button', { name: 'Close' })).toBeInTheDocument();
   });
 
-  test('modal does not show the close button when showClose is false', () => {
-    render(<Modal {...props} isOpen showClose={false} tabIndex={0} />);
+  test('modal does not show the close button when onClose not passed', () => {
+    render(<Modal isOpen disableFocusTrap>No close button </Modal>);
     expect(screen.queryByRole('button', { name: 'Close' })).toBeNull();
   });
 

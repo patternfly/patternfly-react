@@ -26,7 +26,6 @@ export const ModalWithWizard: React.FunctionComponent = () => {
       </Button>
       <Modal
         variant={ModalVariant.large}
-        showClose={false}
         isOpen={isModalOpen}
         aria-labelledby="modal-wizard-label"
         aria-describedby="modal-wizard-description"

@@ -1,9 +1,26 @@
 import React from 'react';
-import { Button } from '@patternfly/react-core';
+import { Button, Radio } from '@patternfly/react-core';
 import { Modal, ModalBoxBody, ModalBoxFooter, ModalBoxHeader, ModalVariant } from '@patternfly/react-core/next';
 
-export const ModalLarge: React.FunctionComponent = () => {
+export const ModalSize: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [selectedVariant, setSelectedVariant] = React.useState(ModalVariant.small);
+
+  const capitalize = (input: string) => input[0].toUpperCase() + input.substring(1);
+  const formatSizeVariantName = (variant: string) => capitalize(variant);
+
+  const variantOptions = [ModalVariant.small, ModalVariant.medium, ModalVariant.large];
+
+  const renderSizeOptions = variantOptions.map((variant) => (
+    <Radio
+      id={`modal-size-${variant}-selector`}
+      label={`${formatSizeVariantName(variant)} variant`}
+      isChecked={variant === selectedVariant}
+      onChange={() => setSelectedVariant(variant)}
+      key={formatSizeVariantName(variant)}
+      name="Variant options"
+    />
+  ));
 
   const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setIsModalOpen(!isModalOpen);
@@ -11,18 +28,21 @@ export const ModalLarge: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
+      {renderSizeOptions}
+      <br />
       <Button variant="primary" onClick={handleModalToggle}>
-        Show large modal
+        Show modal
       </Button>
       <Modal
-        variant={ModalVariant.large}
+        variant={selectedVariant}
+        title="Variant modal"
         isOpen={isModalOpen}
         onClose={handleModalToggle}
-        aria-labelledby="large-modal-title"
-        aria-describedby="modal-box-body-large"
+        aria-labelledby="variant-modal-title"
+        aria-describedby="modal-box-body-variant"
       >
-        <ModalBoxHeader title="Large modal" labelId="large-modal-title" />
-        <ModalBoxBody id="modal-box-body-large">
+        <ModalBoxHeader title="Small modal" labelId="variant-modal-title" />
+        <ModalBoxBody id="modal-box-body-variant">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla

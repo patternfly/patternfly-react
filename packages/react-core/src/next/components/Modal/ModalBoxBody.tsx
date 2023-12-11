@@ -8,34 +8,29 @@ export interface ModalBoxBodyProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the modal box body. */
   className?: string;
   /** Accessible label applied to the modal box body. This should be used to communicate
-   * important information about the modal box body div element if needed, such as that it
-   * is scrollable.
+   * important information about the modal box body div element if needed, such as when it is scrollable.
    */
   'aria-label'?: string;
   /** Accessible role applied to the modal box body. This will default to "region" if the
-   * bodyAriaLabel property is passed in. Set to a more appropriate role as applicable
+   * aria-label property is passed in. Set to a more appropriate role as applicable
    * based on the modal content and context.
    */
-  'aria-role'?: string;
-  /** Id of the modal box body. This should mathc hte modal box header descriptorId????? */
-  id?: string;
+  role?: string;
 }
 
 export const ModalBoxBody: React.FunctionComponent<ModalBoxBodyProps> = ({
   children,
   className,
   'aria-label': ariaLabel,
-  'aria-role': ariaRole,
-  id,
+  role,
   ...props
 }: ModalBoxBodyProps) => {
-  const defaultModalBodyAriaRole = ariaLabel ? 'region' : undefined;
+  const defaultModalBodyRole = ariaLabel ? 'region' : undefined;
   return (
     <div
       aria-label={ariaLabel}
-      role={ariaRole || defaultModalBodyAriaRole}
+      role={role || defaultModalBodyRole}
       className={css(styles.modalBoxBody, className)}
-      id={id}
       {...props}
     >
       {children}

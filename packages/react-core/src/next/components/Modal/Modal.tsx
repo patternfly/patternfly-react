@@ -11,7 +11,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   appendTo?: HTMLElement | (() => HTMLElement);
   /** Id to use for the modal box description. This should match the ModalBoxHeader labelId or descriptorId. */
   'aria-describedby'?: string;
-  /** Accessible descriptor of the modal. */
+  /**   Adds an accessible name to the modal when there is no title in the ModalBoxHeader. */
   'aria-label'?: string;
   /** Id to use for the modal box label. This should include the ModalBoxHeader labelId. */
   'aria-labelledby'?: string;
@@ -29,7 +29,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   id?: string;
   /** Flag to show the modal. */
   isOpen?: boolean;
-  /** A callback for when the close button is clicked. */
+  /** Add callback for when the close button is clicked. This prop needs to be passed to render the close button */
   onClose?: (event: KeyboardEvent | React.MouseEvent) => void;
   /** Modal handles pressing of the escape key and closes the modal. If you want to handle
    * this yourself you can use this callback function. */
@@ -38,8 +38,6 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   position?: 'default' | 'top';
   /** Offset from alternate position. Can be any valid CSS length/percentage. */
   positionOffset?: string;
-  /** Flag to show the close button in the header area of the modal. */
-  showClose?: boolean;
   /** Variant of the modal. */
   variant?: 'small' | 'medium' | 'large' | 'default';
   /** Default width of the modal. */
@@ -71,8 +69,6 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   static defaultProps: PickOptional<ModalProps> = {
     isOpen: false,
-    showClose: true,
-    onClose: () => undefined as any,
     variant: 'default',
     appendTo: () => document.body,
     ouiaSafe: true,

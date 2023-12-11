@@ -6,7 +6,7 @@ import topSpacer from '@patternfly/react-tokens/dist/esm/c_modal_box_m_align_top
 export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   /** Id to use for the modal box description. This should match the ModalBoxHeader labelId or descriptorId */
   'aria-describedby'?: string;
-  /** Accessible descriptor of the modal. */
+  /** Adds an accessible name to the modal when there is no title in the ModalBoxHeader. */
   'aria-label'?: string;
   /** Id to use for the modal box label. */
   'aria-labelledby'?: string;

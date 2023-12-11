@@ -5,7 +5,7 @@ import { ModalBoxDescription } from './ModalBoxDescription';
 import { ModalBoxTitle } from './ModalBoxTitle';
 
 export interface ModalBoxHeaderProps {
-  /** Custom content rendered inside the modal box header. If children are supplied then the tile, tileIconVariant and titleLabel props are ignored. */
+  /** Custom content rendered inside the modal box header. If children are supplied then the tile, tileIconVariant and titleScreenReaderText props are ignored. */
   children?: React.ReactNode;
   /** Additional classes added to the modal box header. */
   className?: string;
@@ -23,7 +23,7 @@ export interface ModalBoxHeaderProps {
    * are used the default styling will be automatically applied. */
   titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | React.ComponentType<any>;
   /** Optional title label text for screen readers. */
-  titleLabel?: string;
+  titleScreenReaderText?: string;
 }
 
 export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
@@ -34,7 +34,7 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
   labelId,
   title,
   titleIconVariant,
-  titleLabel,
+  titleScreenReaderText,
   help,
   ...props
 }: ModalBoxHeaderProps) => {
@@ -42,7 +42,12 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
     children
   ) : (
     <>
-      <ModalBoxTitle title={title} titleIconVariant={titleIconVariant} titleLabel={titleLabel} id={labelId} />
+      <ModalBoxTitle
+        title={title}
+        titleIconVariant={titleIconVariant}
+        titleScreenReaderText={titleScreenReaderText}
+        id={labelId}
+      />
       {description && <ModalBoxDescription id={descriptorId}>{description}</ModalBoxDescription>}
     </>
   );
