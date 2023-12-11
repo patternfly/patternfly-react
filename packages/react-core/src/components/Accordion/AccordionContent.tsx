@@ -56,12 +56,7 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
           <Container
             ref={containerRef}
             id={id}
-            className={css(
-              styles.accordionExpandableContent,
-              isFixed && styles.modifiers.fixed,
-              isExpanded && styles.modifiers.expanded,
-              className
-            )}
+            className={css(styles.accordionExpandableContent, isFixed && styles.modifiers.fixed, className)}
             hidden={!isExpanded}
             {...(ariaLabel && { 'aria-label': ariaLabel })}
             {...(ariaLabelledby && { 'aria-labelledby': ariaLabelledby })}

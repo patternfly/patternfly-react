@@ -3,7 +3,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { AccordionToggle } from '../AccordionToggle';
-import { AccordionContext } from '../AccordionContext';
+import { AccordionContext, AccordionItemContext } from '../AccordionContext';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 
 jest.mock('@patternfly/react-icons/dist/esm/icons/angle-right-icon', () => () => 'Icon mock');
@@ -127,38 +127,40 @@ test('Renders the container as the element provided via the component prop when 
   expect(screen.getByRole('heading', { level: 1 })).toBeVisible();
 });
 
-test('Renders the toggle without pf-m-expanded and aria-expanded=false by default', () => {
+test('Renders the toggle with aria-expanded=false when isExpanded from context is false', () => {
   render(
     <AccordionContext.Provider value={{ ToggleContainer: 'h3' }}>
-      <AccordionToggle id="accordion-toggle">Test</AccordionToggle>
+      <AccordionItemContext.Provider value={{ isExpanded: false }}>
+        <AccordionToggle id="accordion-toggle">Test</AccordionToggle>
+      </AccordionItemContext.Provider>
     </AccordionContext.Provider>
   );
 
   const toggle = screen.getByRole('button');
 
-  expect(toggle).not.toHaveClass('pf-m-expanded');
   expect(toggle).toHaveAttribute('aria-expanded', 'false');
 });
 
-test('Renders the toggle with pf-m-expanded and aria-expanded=true when isExpanded=true', () => {
+test('Renders the toggle with aria-expanded=true when isExpanded from context is true', () => {
   render(
     <AccordionContext.Provider value={{ ToggleContainer: 'h3' }}>
-      <AccordionToggle id="accordion-toggle" isExpanded>
-        Test
-      </AccordionToggle>
+      <AccordionItemContext.Provider value={{ isExpanded: true }}>
+        <AccordionToggle id="accordion-toggle">Test</AccordionToggle>
+      </AccordionItemContext.Provider>
     </AccordionContext.Provider>
   );
 
   const toggle = screen.getByRole('button');
 
-  expect(toggle).toHaveClass('pf-m-expanded');
   expect(toggle).toHaveAttribute('aria-expanded', 'true');
 });
 
 test('Matches the snapshot', () => {
   const { asFragment } = render(
     <AccordionContext.Provider value={{ ToggleContainer: 'h3' }}>
-      <AccordionToggle id="accordion-toggle">Test</AccordionToggle>
+      <AccordionItemContext.Provider value={{ isExpanded: false }}>
+        <AccordionToggle id="accordion-toggle">Test</AccordionToggle>
+      </AccordionItemContext.Provider>
     </AccordionContext.Provider>
   );
   expect(asFragment()).toMatchSnapshot();
