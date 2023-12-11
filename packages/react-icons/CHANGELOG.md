@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.2.0-prerelease.9 (2023-12-11)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
 # 5.2.0-prerelease.8 (2023-11-14)
 
 **Note:** Version bump only for package @patternfly/react-icons
