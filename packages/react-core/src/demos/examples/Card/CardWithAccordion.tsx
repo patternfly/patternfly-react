@@ -33,7 +33,7 @@ export const CardWithAccordion: React.FunctionComponent = () => {
       </CardHeader>
       <CardBody>
         <Accordion>
-          <AccordionItem>
+          <AccordionItem isExpanded={openCPU === 'cpu1'}>
             <AccordionToggle
               id="cpu1-toggle"
               onClick={() => {
@@ -43,11 +43,10 @@ export const CardWithAccordion: React.FunctionComponent = () => {
                   setOpenCPU('cpu1');
                 }
               }}
-              isExpanded={openCPU === 'cpu1'}
             >
               CPU 1
             </AccordionToggle>
-            <AccordionContent isHidden={openCPU !== 'cpu1'}>
+            <AccordionContent>
               <Grid hasGutter>
                 <Grid hasGutter>
                   <GridItem md={4}>
@@ -191,7 +190,7 @@ export const CardWithAccordion: React.FunctionComponent = () => {
               </Grid>
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem>
+          <AccordionItem isExpanded={openCPU === 'cpu2'}>
             <AccordionToggle
               id="cpu2-toggle"
               onClick={() => {
@@ -201,11 +200,10 @@ export const CardWithAccordion: React.FunctionComponent = () => {
                   setOpenCPU('cpu2');
                 }
               }}
-              isExpanded={openCPU === 'cpu2'}
             >
               CPU 2
             </AccordionToggle>
-            <AccordionContent isHidden={openCPU !== 'cpu2'}>
+            <AccordionContent>
               <Grid hasGutter>
                 <Grid hasGutter>
                   <GridItem md={4}>
@@ -349,7 +347,7 @@ export const CardWithAccordion: React.FunctionComponent = () => {
               </Grid>
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem>
+          <AccordionItem isExpanded={openCPU === 'cpu3'}>
             <AccordionToggle
               id="cpu3-toggle"
               onClick={() => {
@@ -359,11 +357,10 @@ export const CardWithAccordion: React.FunctionComponent = () => {
                   setOpenCPU('cpu3');
                 }
               }}
-              isExpanded={openCPU === 'cpu3'}
             >
               CPU 3
             </AccordionToggle>
-            <AccordionContent isHidden={openCPU !== 'cpu3'}>
+            <AccordionContent>
               <Grid hasGutter>
                 <Grid hasGutter>
                   <GridItem md={4}>
