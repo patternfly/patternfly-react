@@ -13,7 +13,7 @@ export const AccordionToggleIconAtStart: React.FunctionComponent = () => {
   };
 
   return (
-    <Accordion toggleAlignment="start">
+    <Accordion togglePosition="start">
       <AccordionItem>
         <AccordionToggle
           onClick={() => {

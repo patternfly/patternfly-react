@@ -34,9 +34,9 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
 
   return (
     <AccordionContext.Consumer>
-      {({ ToggleContainer, toggleAlignment }) => {
+      {({ ToggleContainer, togglePosition }) => {
         const Container = component || ToggleContainer;
-        const isToggleStartAligned = toggleAlignment === 'start';
+        const isToggleStartPositioned = togglePosition === 'start';
 
         return (
           <Container>
@@ -47,9 +47,9 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
               type="button"
               {...props}
             >
-              {isToggleStartAligned && renderToggleIcon()}
+              {isToggleStartPositioned && renderToggleIcon()}
               <span className={css(styles.accordionToggleText)}>{children}</span>
-              {!isToggleStartAligned && renderToggleIcon()}
+              {!isToggleStartPositioned && renderToggleIcon()}
             </button>
           </Container>
         );

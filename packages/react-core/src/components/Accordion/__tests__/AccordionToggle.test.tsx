@@ -169,9 +169,9 @@ test('Renders toggle text before toggle icon by default', () => {
   expect(toggle.firstChild).toHaveClass(styles.accordionToggleText);
 });
 
-test('Renders toggle icon before toggle text when toggleAlignment from context = "start"', () => {
+test('Renders toggle icon before toggle text when togglePosition from context = "start"', () => {
   render(
-    <AccordionContext.Provider value={{ ToggleContainer: 'h3', toggleAlignment: 'start' }}>
+    <AccordionContext.Provider value={{ ToggleContainer: 'h3', togglePosition: 'start' }}>
       <AccordionToggle id="accordion-toggle" isExpanded>
         Test
       </AccordionToggle>

@@ -141,8 +141,8 @@ test(`Renders without class ${styles.modifiers.toggleStart} by default`, () => {
   expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.toggleStart);
 });
 
-test(`Renders with class ${styles.modifiers.toggleStart} when toggleAlignment='start'`, () => {
-  render(<Accordion toggleAlignment="start">Test</Accordion>);
+test(`Renders with class ${styles.modifiers.toggleStart} when togglePosition='start'`, () => {
+  render(<Accordion togglePosition="start">Test</Accordion>);
 
   expect(screen.getByText('Test')).toHaveClass(styles.modifiers.toggleStart);
 });
