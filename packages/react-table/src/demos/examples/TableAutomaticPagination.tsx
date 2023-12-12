@@ -52,7 +52,7 @@ export const TableAutomaticPagination: React.FunctionComponent = () => {
     setRows(defaultRows.slice(startIdx, endIdx));
   };
 
-  // TODO: As part of issue #9880, determine if anything needs to be done here instead of the isCompact prop that was removed.
+  // TODO: As part of issue #9878, determine if anything needs to be done here instead of the isCompact prop that was removed.
   const renderPagination = (variant = 'top') => (
     <Pagination
       // isCompact

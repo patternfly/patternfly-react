@@ -62,7 +62,7 @@ export const TableBulkSelect: React.FunctionComponent = () => {
 
   const isRowSelected = (row: any) => selectedRows.includes(row.name);
 
-  // TODO: As part of issue #9880, determine if anything needs to be done here instead of the isCompact prop that was removed.
+  // TODO: As part of issue #9878, determine if anything needs to be done here instead of the isCompact prop that was removed.
 
   const buildPagination = (variant: 'bottom' | 'top' | PaginationVariant) => (
     <Pagination
