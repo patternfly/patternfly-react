@@ -18,7 +18,11 @@ import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
 ### Basic modals
 
-Basic modals give users the option to either confirm or cancel an action. To flag an open modal, use the `isOpen` property. To execute a callback when a modal is closed, use the `onClose` property.
+Basic modals give users the option to either confirm or cancel an action. 
+
+To flag an open modal, use the `isOpen` property. To execute a callback when a modal is closed, use the `onClose` property.
+
+A modal must have a `<ModalBoxBody>`, containing the main content of the modal. The `<ModalBoxHeader>` and `<ModalBoxFooter>` components are not required, but are typically used to display the modal title and any button actions, respectively. 
 
 ```ts file="./ModalBasic.tsx"
 
@@ -52,7 +56,7 @@ To override a modal's default center alignment, use the `position` property. In 
 
 To adjust the size of a modal, use the `variant` property. Modal variants include "small", "medium", "large", and "default".
 
-The following example displays a saml. medium or large modal based on selected radio button. E.g. if you selcet the "Small variant" option, a small  modal will be rendered by passing in `variant={ModalVariant.small}`.
+In the following example, you can display each modal size option. To launch a modal with a specific size, first select the respective radio button, followed by the "Show modal" button.
 
 ```ts file="./ModalSize.tsx"
 
@@ -68,7 +72,7 @@ To choose a specific width for a modal, use the `width` property. The following 
 
 ### Custom header
 
-To add a custom header to a modal, do not pass the `title` property to the `ModalBoxHeader`. Custom heade content should be passed as a child of the `ModalBoxHeader` instead.
+To add a custom header to a modal, your custom content must be passed as a child of the `<ModalBoxHeader>` component. Do not pass the `title` property to `<ModalBoxHeader>` when using a custom header. 
 
 ```ts file="./ModalCustomHeader.tsx"
 
@@ -76,7 +80,9 @@ To add a custom header to a modal, do not pass the `title` property to the `Moda
 
 ### No header or footer
 
-When no header or footer is added to the model, make sure to add the `aria-label` prop since there is no title.
+To exclusively present information in a modal, remove the header and/or footer.
+
+When a modal has no header or footer, make sure to add an `aria-label` explicitly stating this, so that those using assistive technologies can understand this context.
 
 ```ts file="./ModalNoHeaderFooter.tsx"
 
@@ -84,7 +90,7 @@ When no header or footer is added to the model, make sure to add the `aria-label
 
 ### Title icon
 
-To add an icon before a modal’s title, use the `titleIconVariant`, which can be set to one of the predefined variants -- "success", "danger", "warning", "info", and "custom" -- or to an imported custom icon. The following example uses a "warning" variant.
+To add an icon before a modal’s title, use the `titleIconVariant` property, which can be set to a "success", "danger", "warning", or "info" variant. The following example uses a "warning" variant.
 
 ```ts file="./ModalTitleIcon.tsx"
 
@@ -108,7 +114,9 @@ To guide users through a series of steps in a modal, you can add a [wizard](/com
 
 ### With dropdown
 
-To present a menu of actions or links to a user, you can add a [dropdown](/components/dropdown) to a modal. To allow the dropdown to visually break out of the modal container, set the `menuAppendTo` property to “parent”. Handle the modal’s closing behavior by listening to the `onEscapePress` callback on the `<Modal>` component. This allows the "escape" key to collapse the dropdown without closing the entire modal.
+To present a menu of actions or links to a user, you can add a [dropdown](/components/menus/dropdown) to a modal. 
+
+To allow the dropdown to visually break out of the modal container, set the `menuAppendTo` property to “parent”. Handle the modal’s closing behavior by listening to the `onEscapePress` callback on the `<Modal>` component. This allows the "escape" key to collapse the dropdown without closing the entire modal.
 
 ```ts file="./ModalWithDropdown.tsx"
 
@@ -124,9 +132,9 @@ To help simplify and explain complex models, add a help [popover](/components/po
 
 ### With form
 
-To collect user input within a modal, you can add a [form](/components/form).
+To collect user input within a modal, you can add a [form](/components/forms/form).
 
-To submit the form from a button in the modal's footer (outside of the `<Form>`), set the button's `form` property equal to the form's id.
+To enable form submission from a button in the modal's footer (outside of the `<Form>`), set the button's `form` property equal to the form's id.
 
 ```ts file="ModalWithForm.tsx"
 
@@ -134,7 +142,7 @@ To submit the form from a button in the modal's footer (outside of the `<Form>`)
 
 ### Custom focus
 
-Use the `elementToFocus` property to customize which element inside the Modal receives focus when initially opened.
+To customize which element inside the modal receives focus when initially opened, use the `elementToFocus` property`. 
 
 ```ts file="./ModalCustomFocus.tsx"
 
