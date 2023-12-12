@@ -70,9 +70,10 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
     );
   };
 
-  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant, isCompact: boolean) => (
+  // TODO: As part of issue #9880, determine if anything needs to be done here instead of the isCompact prop that was removed.
+  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant) => (
     <Pagination
-      isCompact={isCompact}
+      // isCompact={isCompact}
       itemCount={36}
       page={1}
       perPage={10}
@@ -120,7 +121,7 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
             <Button variant="primary">Action</Button>
           </ToolbarItem>
         </ToolbarGroup>
-        <ToolbarItem variant="pagination">{renderPagination('top', true)}</ToolbarItem>
+        <ToolbarItem variant="pagination">{renderPagination('top')}</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
@@ -274,7 +275,7 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
               );
             })}
           </Table>
-          {renderPagination('bottom', false)}
+          {renderPagination('bottom')}
         </Card>
       </PageSection>
     </DashboardWrapper>

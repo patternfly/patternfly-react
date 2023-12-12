@@ -119,8 +119,6 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
     xl?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
     '2xl'?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
   };
-  /** Flag indicating if pagination is compact. */
-  isCompact?: boolean;
   /** Flag indicating if pagination is disabled. */
   isDisabled?: boolean;
   /** Flag indicating if pagination should not be sticky on mobile. */
@@ -188,7 +186,6 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   className = '',
   variant = PaginationVariant.top,
   isDisabled = false,
-  isCompact = false,
   isSticky = false,
   isStatic = false,
   dropDirection: dropDirectionProp,
@@ -285,7 +282,6 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         variant === PaginationVariant.bottom && styles.modifiers.bottom,
         usePageInsets && styles.modifiers.pageInsets,
         formatBreakpointMods(inset, styles),
-        isCompact && styles.modifiers.compact,
         isStatic && styles.modifiers.static,
         isSticky && styles.modifiers.sticky,
         className
@@ -319,7 +315,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         <PaginationOptionsMenu
           itemsPerPageTitle={titles.itemsPerPage}
           perPageSuffix={titles.perPageSuffix}
-          itemsTitle={isCompact ? '' : titles.items}
+          itemsTitle={titles.items}
           optionsToggleAriaLabel={titles.optionsToggleAriaLabel}
           perPageOptions={perPageOptions}
           firstIndex={itemsStart !== null ? itemsStart : firstIndex}
@@ -359,7 +355,6 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         onLastClick={onLastClick}
         onPageInput={onPageInput}
         isDisabled={isDisabled}
-        isCompact={isCompact}
       />
       {children}
     </div>

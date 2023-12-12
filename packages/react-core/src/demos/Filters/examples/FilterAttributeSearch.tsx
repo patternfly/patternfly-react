@@ -572,7 +572,8 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
       perPage={10}
       page={1}
       widgetId="attribute-search-mock-pagination"
-      isCompact
+      // TODO: As part of issue #9880, determine if anything needs to be done here instead of the isCompact prop that was removed.
+      // isCompact
     />
   );
 

@@ -49,9 +49,10 @@ export const TableCompact: React.FunctionComponent = () => {
     setPerPage(newPerPage);
   };
 
-  const renderPagination = (variant: string, isCompact: boolean) => (
+  // TODO: As part of issue #9880, determine if anything needs to be done here instead of the isCompact prop that was removed.
+  const renderPagination = (variant: string) => (
     <Pagination
-      isCompact={isCompact}
+      // isCompact={isCompact}
       itemCount={rows.length}
       page={page}
       perPage={perPage}
@@ -101,7 +102,7 @@ export const TableCompact: React.FunctionComponent = () => {
             <Button variant="primary">Action</Button>
           </ToolbarItem>
         </ToolbarGroup>
-        <ToolbarItem variant="pagination">{renderPagination('top', true)}</ToolbarItem>
+        <ToolbarItem variant="pagination">{renderPagination('top')}</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );

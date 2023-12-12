@@ -48,9 +48,10 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
     setPerPage(newPerPage);
   };
 
-  const renderPagination = (variant: PaginationVariant | 'bottom' | 'top', isCompact: boolean) => (
+  // TODO: As part of issue #9880, determine if anything needs to be done here instead of the isCompact prop that was removed.
+  const renderPagination = (variant: PaginationVariant | 'bottom' | 'top') => (
     <Pagination
-      isCompact={isCompact}
+      // isCompact={isCompact}
       itemCount={rows.length}
       page={page}
       perPage={perPage}
@@ -130,7 +131,7 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
             <Button variant="primary">Action</Button>
           </ToolbarItem>
         </ToolbarGroup>
-        <ToolbarItem variant="pagination">{renderPagination('top', true)}</ToolbarItem>
+        <ToolbarItem variant="pagination">{renderPagination('top')}</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
@@ -168,7 +169,7 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
                 ))}
               </Tbody>
             </Table>
-            {renderPagination('bottom', false)}
+            {renderPagination('bottom')}
           </Card>
         </PageSection>
       </DashboardWrapper>

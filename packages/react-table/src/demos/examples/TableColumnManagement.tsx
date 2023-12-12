@@ -108,9 +108,11 @@ export const TableColumnManagement: React.FunctionComponent = () => {
     setPerPage(newPerPage);
   };
 
-  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant, isCompact: boolean) => (
+  // TODO: As part of issue #9880, determine if anything needs to be done here instead of the isCompact prop that was removed.
+
+  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant) => (
     <Pagination
-      isCompact={isCompact}
+      // isCompact={isCompact}
       itemCount={rows.length}
       page={page}
       perPage={perPage}
@@ -425,7 +427,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
               </OverflowMenuGroup>
             </OverflowMenu>
           </ToolbarItem>
-          <ToolbarItem variant="pagination">{renderPagination('top', false)}</ToolbarItem>
+          <ToolbarItem variant="pagination">{renderPagination('top')}</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
     </React.Fragment>
@@ -476,7 +478,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
                 ))}
               </Tbody>
             </Table>
-            {renderPagination('bottom', false)}
+            {renderPagination('bottom')}
             {renderModal()}
           </Card>
         </PageSection>
