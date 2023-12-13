@@ -28,6 +28,9 @@ const dropDownItems = (
     <DropdownItem value={5} key="separated action">
       Separated action
     </DropdownItem>
+    <DropdownItem value={6} key="download" to="#default-link7" download="download.txt">
+      Download
+    </DropdownItem>
   </DropdownList>
 );
 
