@@ -10,8 +10,6 @@ export interface AvatarProps
   src?: string;
   /** Attribute that specifies the alternate text of the image for the Avatar. */
   alt: string;
-  /** Border to add */
-  border?: 'light' | 'dark';
   /** Size variant of avatar. */
   size?: 'sm' | 'md' | 'lg' | 'xl';
 }
@@ -20,21 +18,9 @@ export const Avatar: React.FunctionComponent<AvatarProps> = ({
   className = '',
   src = '',
   alt,
-  border,
   size,
   ...props
 }: AvatarProps) => (
-  <img
-    src={src}
-    alt={alt}
-    className={css(
-      styles.avatar,
-      styles.modifiers[size],
-      border === 'light' && styles.modifiers.light,
-      border === 'dark' && styles.modifiers.dark,
-      className
-    )}
-    {...props}
-  />
+  <img src={src} alt={alt} className={css(styles.avatar, styles.modifiers[size], className)} {...props} />
 );
 Avatar.displayName = 'Avatar';

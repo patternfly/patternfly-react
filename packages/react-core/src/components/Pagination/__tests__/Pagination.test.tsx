@@ -19,7 +19,7 @@ describe('Pagination', () => {
     });
 
     test('should render correctly compact', () => {
-      const { asFragment } = render(<Pagination itemCount={20} isCompact />);
+      const { asFragment } = render(<Pagination itemCount={20} />);
       expect(asFragment()).toMatchSnapshot();
     });
 

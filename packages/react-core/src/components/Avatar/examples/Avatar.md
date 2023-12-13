@@ -54,7 +54,8 @@ import React from 'react';
 import { Avatar } from '@patternfly/react-core';
 import avatarImg from '../../assets/avatarImg.svg';
 
-<Avatar src={avatarImg} alt="avatar" border="light" />;
+// TODO: Need to be updated/removed as part of issue #9880
+<Avatar src={avatarImg} alt="avatar" />;
 ```
 
 ### Bordered - dark
@@ -64,5 +65,6 @@ import React from 'react';
 import { Avatar } from '@patternfly/react-core';
 import avatarImgDark from '../../assets/avatarImgDark.svg';
 
-<Avatar src={avatarImgDark} alt="avatar" border="dark" />;
+// TODO: Need to be updated/removed as part of issue #9880
+<Avatar src={avatarImgDark} alt="avatar" />;
 ```

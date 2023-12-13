@@ -31,8 +31,6 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   toggleId?: string;
   /** Display size variant. Set to "lg" for disclosure styling. */
   displaySize?: 'default' | 'lg';
-  /** Forces active state. */
-  isActive?: boolean;
   /** Indicates the expandable section has a detached toggle. */
   isDetached?: boolean;
   /** Flag to indicate if the content is expanded. */
@@ -103,7 +101,6 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
     toggleTextCollapsed: '',
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onToggle: (event, isExpanded): void => undefined,
-    isActive: false,
     isDetached: false,
     displaySize: 'default',
     isWidthLimited: false,
@@ -182,8 +179,6 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
   render() {
     const {
       onToggle: onToggleProp,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      isActive,
       className,
       toggleText,
       toggleTextExpanded,
@@ -253,7 +248,6 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
         className={css(
           styles.expandableSection,
           propOrStateIsExpanded && styles.modifiers.expanded,
-          isActive && styles.modifiers.active,
           displaySize === 'lg' && styles.modifiers.displayLg,
           isWidthLimited && styles.modifiers.limitWidth,
           isIndented && styles.modifiers.indented,
