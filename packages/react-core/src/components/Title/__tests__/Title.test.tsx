@@ -22,9 +22,9 @@ test(`Renders with the ${styles.title}`, () => {
   expect(screen.getByRole('heading')).toHaveClass(styles.title);
 });
 
-test(`Renders with only the class ${styles.title} and the heading level modifier class ${styles.modifiers['2xl']} by default`, () => {
+test(`Renders with only the class ${styles.title} and the heading level modifier class ${styles.modifiers.h1} by default`, () => {
   render(<Title headingLevel="h1">Test</Title>);
-  expect(screen.getByRole('heading')).toHaveClass(`${styles.title} ${styles.modifiers['2xl']}`, { exact: true });
+  expect(screen.getByRole('heading')).toHaveClass(`${styles.title} ${styles.modifiers.h1}`, { exact: true });
 });
 
 test('Renders with custom class name when className prop is passed', () => {
@@ -36,34 +36,34 @@ test('Renders with custom class name when className prop is passed', () => {
   expect(screen.getByRole('heading')).toHaveClass('test-class');
 });
 
-test('Renders with class name pf-m-2xl by default when "h1" is passed as heading level', () => {
+test('Renders with class name pf-m-h1 by default when "h1" is passed as heading level', () => {
   render(<Title headingLevel="h1">Test</Title>);
-  expect(screen.getByRole('heading')).toHaveClass('pf-m-2xl');
+  expect(screen.getByRole('heading')).toHaveClass('pf-m-h1');
 });
 
-test('Renders with class name pf-m-xl by default when "h2" is passed as heading level', () => {
+test('Renders with class name pf-m-h2 by default when "h2" is passed as heading level', () => {
   render(<Title headingLevel="h2">Test</Title>);
-  expect(screen.getByRole('heading')).toHaveClass('pf-m-xl');
+  expect(screen.getByRole('heading')).toHaveClass('pf-m-h2');
 });
 
-test('Renders with class name pf-m-lg by default when "h3" is passed as heading level', () => {
+test('Renders with class name pf-m-h3 by default when "h3" is passed as heading level', () => {
   render(<Title headingLevel="h3">Test</Title>);
-  expect(screen.getByRole('heading')).toHaveClass('pf-m-lg');
+  expect(screen.getByRole('heading')).toHaveClass('pf-m-h3');
 });
 
-test('Renders with class name pf-m-md by default when "h4" is passed as heading level', () => {
+test('Renders with class name pf-m-h4 by default when "h4" is passed as heading level', () => {
   render(<Title headingLevel="h4">Test</Title>);
-  expect(screen.getByRole('heading')).toHaveClass('pf-m-md');
+  expect(screen.getByRole('heading')).toHaveClass('pf-m-h4');
 });
 
-test('Renders with class name pf-m-md by default when "h5" is passed as heading level', () => {
+test('Renders with class name pf-m-h5 by default when "h5" is passed as heading level', () => {
   render(<Title headingLevel="h5">Test</Title>);
-  expect(screen.getByRole('heading')).toHaveClass('pf-m-md');
+  expect(screen.getByRole('heading')).toHaveClass('pf-m-h5');
 });
 
-test('Renders with class name pf-m-md by default when "h6" is passed as heading level', () => {
+test('Renders with class name pf-m-h6 by default when "h6" is passed as heading level', () => {
   render(<Title headingLevel="h6">Test</Title>);
-  expect(screen.getByRole('heading')).toHaveClass('pf-m-md');
+  expect(screen.getByRole('heading')).toHaveClass('pf-m-h6');
 });
 
 test('Renders with class name pf-m-md when "md" is passed as title size', () => {
