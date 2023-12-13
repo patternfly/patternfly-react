@@ -12,15 +12,6 @@ export enum TitleSizes {
   '4xl' = '4xl'
 }
 
-enum headingLevelSizeMap {
-  h1 = '2xl',
-  h2 = 'xl',
-  h3 = 'lg',
-  h4 = 'md',
-  h5 = 'md',
-  h6 = 'md'
-}
-
 type Size = 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
 
 export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 'size' | 'className'>, OUIAProps {
@@ -42,7 +33,7 @@ export const Title: React.FunctionComponent<TitleProps> = ({
   className = '',
   children = '',
   headingLevel: HeadingLevel,
-  size = headingLevelSizeMap[HeadingLevel],
+  size,
   ouiaId,
   ouiaSafe = true,
   ...props
@@ -52,7 +43,7 @@ export const Title: React.FunctionComponent<TitleProps> = ({
     <HeadingLevel
       {...ouiaProps}
       {...props}
-      className={css(styles.title, size && styles.modifiers[size as Size], className)}
+      className={css(styles.title, size ? styles.modifiers[size as Size] : styles.modifiers[HeadingLevel], className)}
     >
       {children}
     </HeadingLevel>
