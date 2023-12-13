@@ -358,6 +358,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         onLastClick={onLastClick}
         onPageInput={onPageInput}
         isDisabled={isDisabled}
+        isCompact={isCompact}
       />
       {children}
     </div>
