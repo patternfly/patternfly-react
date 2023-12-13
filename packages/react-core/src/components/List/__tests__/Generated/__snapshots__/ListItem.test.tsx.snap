@@ -5,7 +5,11 @@ exports[`ListItem should match snapshot (auto-generated) 1`] = `
   <li
     class=""
   >
-    ReactNode
+    <span
+      class="pf-v5-c-list__item"
+    >
+      ReactNode
+    </span>
   </li>
 </DocumentFragment>
 `;

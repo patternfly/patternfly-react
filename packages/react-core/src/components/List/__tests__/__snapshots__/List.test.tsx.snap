@@ -25,7 +25,11 @@ exports[`List icon large list 1`] = `
           />
         </svg>
       </span>
-      Apple
+      <span
+        class="pf-v5-c-list__item"
+      >
+        Apple
+      </span>
     </li>
     <li
       class="pf-v5-c-list__item"
@@ -47,7 +51,11 @@ exports[`List icon large list 1`] = `
           />
         </svg>
       </span>
-      Banana
+      <span
+        class="pf-v5-c-list__item"
+      >
+        Banana
+      </span>
     </li>
     <li
       class="pf-v5-c-list__item"
@@ -69,7 +77,11 @@ exports[`List icon large list 1`] = `
           />
         </svg>
       </span>
-      Orange
+      <span
+        class="pf-v5-c-list__item"
+      >
+        Orange
+      </span>
     </li>
   </ul>
 </DocumentFragment>
@@ -101,7 +113,11 @@ exports[`List icon list 1`] = `
           />
         </svg>
       </span>
-      Apple
+      <span
+        class="pf-v5-c-list__item"
+      >
+        Apple
+      </span>
     </li>
     <li
       class="pf-v5-c-list__item"
@@ -123,7 +139,11 @@ exports[`List icon list 1`] = `
           />
         </svg>
       </span>
-      Banana
+      <span
+        class="pf-v5-c-list__item"
+      >
+        Banana
+      </span>
     </li>
     <li
       class="pf-v5-c-list__item"
@@ -145,7 +165,11 @@ exports[`List icon list 1`] = `
           />
         </svg>
       </span>
-      Orange
+      <span
+        class="pf-v5-c-list__item"
+      >
+        Orange
+      </span>
     </li>
   </ul>
 </DocumentFragment>
@@ -162,17 +186,29 @@ exports[`List inline list 1`] = `
       <li
         class=""
       >
-        First
+        <span
+          class="pf-v5-c-list__item"
+        >
+          First
+        </span>
       </li>
       <li
         class=""
       >
-        Second
+        <span
+          class="pf-v5-c-list__item"
+        >
+          Second
+        </span>
       </li>
       <li
         class=""
       >
-        Third
+        <span
+          class="pf-v5-c-list__item"
+        >
+          Third
+        </span>
       </li>
     </ul>
   </ul>
@@ -188,17 +224,29 @@ exports[`List ordered list 1`] = `
     <li
       class=""
     >
-      Apple
+      <span
+        class="pf-v5-c-list__item"
+      >
+        Apple
+      </span>
     </li>
     <li
       class=""
     >
-      Banana
+      <span
+        class="pf-v5-c-list__item"
+      >
+        Banana
+      </span>
     </li>
     <li
       class=""
     >
-      Orange
+      <span
+        class="pf-v5-c-list__item"
+      >
+        Orange
+      </span>
     </li>
   </ol>
 </DocumentFragment>
@@ -215,17 +263,29 @@ exports[`List simple list 1`] = `
       <li
         class=""
       >
-        First
+        <span
+          class="pf-v5-c-list__item"
+        >
+          First
+        </span>
       </li>
       <li
         class=""
       >
-        Second
+        <span
+          class="pf-v5-c-list__item"
+        >
+          Second
+        </span>
       </li>
       <li
         class=""
       >
-        Third
+        <span
+          class="pf-v5-c-list__item"
+        >
+          Third
+        </span>
       </li>
     </ul>
   </ul>
