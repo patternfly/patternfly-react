@@ -121,6 +121,8 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   };
   /** Flag indicating if pagination is disabled. */
   isDisabled?: boolean;
+  /** Flag indicating if pagination is compact. */
+  isCompact?: boolean;
   /** Flag indicating if pagination should not be sticky on mobile. */
   isStatic?: boolean;
   /** Flag indicating if pagination should stick to its position (based on variant). */
@@ -186,6 +188,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   className = '',
   variant = PaginationVariant.top,
   isDisabled = false,
+  isCompact = false,
   isSticky = false,
   isStatic = false,
   dropDirection: dropDirectionProp,
@@ -315,7 +318,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         <PaginationOptionsMenu
           itemsPerPageTitle={titles.itemsPerPage}
           perPageSuffix={titles.perPageSuffix}
-          itemsTitle={titles.items}
+          itemsTitle={isCompact ? '' : titles.items}
           optionsToggleAriaLabel={titles.optionsToggleAriaLabel}
           perPageOptions={perPageOptions}
           firstIndex={itemsStart !== null ? itemsStart : firstIndex}

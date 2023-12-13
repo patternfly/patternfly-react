@@ -98,10 +98,9 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
     setPerPage(newPerPage);
   };
 
-  // TODO: As part of issue #9878, determine if anything needs to be done here instead of the isCompact prop that was removed.
-  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant) => (
+  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant, isCompact: boolean) => (
     <Pagination
-      // isCompact={isCompact}
+      isCompact={isCompact}
       itemCount={rows.length}
       page={page}
       perPage={perPage}
@@ -225,7 +224,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
             <Button aria-label="Sync" variant="plain" icon={<SyncIcon />} />
           </ToolbarItem>
         </ToolbarGroup>
-        <ToolbarItem variant="pagination">{renderPagination('top')}</ToolbarItem>
+        <ToolbarItem variant="pagination">{renderPagination('top', true)}</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
@@ -326,7 +325,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
                 ))}
               </Tbody>
             </Table>
-            {renderPagination('bottom')}
+            {renderPagination('bottom', false)}
           </Card>
         </PageSection>
       </DashboardWrapper>
