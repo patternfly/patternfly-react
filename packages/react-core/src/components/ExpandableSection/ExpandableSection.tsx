@@ -239,7 +239,7 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
             <AngleRightIcon aria-hidden />
           </span>
         )}
-        <span className={css(`${styles.expandableSection}__toggle-text`)}>{toggleContent || computedToggleText}</span>
+        <span className={css(styles.expandableSectionToggleText)}>{toggleContent || computedToggleText}</span>
       </button>
     );
 
