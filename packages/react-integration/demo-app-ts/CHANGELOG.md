@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.59](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.58...demo-app-ts@5.1.1-prerelease.59) (2023-12-14)
+
+### Bug Fixes
+
+- **MenuItem:** Add download to MenuItem ([#9892](https://github.com/patternfly/patternfly-react/issues/9892)) ([2afb5fd](https://github.com/patternfly/patternfly-react/commit/2afb5fdeb8ade43aee6dadaccf9067a0939212c7))
+
 ## [5.1.1-prerelease.58](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.57...demo-app-ts@5.1.1-prerelease.58) (2023-12-11)
 
 **Note:** Version bump only for package demo-app-ts

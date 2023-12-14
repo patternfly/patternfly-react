@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.35...@patternfly/react-core@5.2.0-prerelease.36) (2023-12-14)
+
+### Bug Fixes
+
+- **MenuItem:** Add download to MenuItem ([#9892](https://github.com/patternfly/patternfly-react/issues/9892)) ([2afb5fd](https://github.com/patternfly/patternfly-react/commit/2afb5fdeb8ade43aee6dadaccf9067a0939212c7))
+
 # [5.2.0-prerelease.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.34...@patternfly/react-core@5.2.0-prerelease.35) (2023-12-11)
 
 **Note:** Version bump only for package @patternfly/react-core
