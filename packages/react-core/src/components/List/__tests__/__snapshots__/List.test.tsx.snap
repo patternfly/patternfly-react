@@ -26,7 +26,7 @@ exports[`List icon large list 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-list__item"
+        class="pf-v5-c-list__item-text"
       >
         Apple
       </span>
@@ -52,7 +52,7 @@ exports[`List icon large list 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-list__item"
+        class="pf-v5-c-list__item-text"
       >
         Banana
       </span>
@@ -78,7 +78,7 @@ exports[`List icon large list 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-list__item"
+        class="pf-v5-c-list__item-text"
       >
         Orange
       </span>
@@ -114,7 +114,7 @@ exports[`List icon list 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-list__item"
+        class="pf-v5-c-list__item-text"
       >
         Apple
       </span>
@@ -140,7 +140,7 @@ exports[`List icon list 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-list__item"
+        class="pf-v5-c-list__item-text"
       >
         Banana
       </span>
@@ -166,7 +166,7 @@ exports[`List icon list 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-list__item"
+        class="pf-v5-c-list__item-text"
       >
         Orange
       </span>
@@ -186,27 +186,21 @@ exports[`List inline list 1`] = `
       <li
         class=""
       >
-        <span
-          class="pf-v5-c-list__item"
-        >
+        <span>
           First
         </span>
       </li>
       <li
         class=""
       >
-        <span
-          class="pf-v5-c-list__item"
-        >
+        <span>
           Second
         </span>
       </li>
       <li
         class=""
       >
-        <span
-          class="pf-v5-c-list__item"
-        >
+        <span>
           Third
         </span>
       </li>
@@ -224,27 +218,21 @@ exports[`List ordered list 1`] = `
     <li
       class=""
     >
-      <span
-        class="pf-v5-c-list__item"
-      >
+      <span>
         Apple
       </span>
     </li>
     <li
       class=""
     >
-      <span
-        class="pf-v5-c-list__item"
-      >
+      <span>
         Banana
       </span>
     </li>
     <li
       class=""
     >
-      <span
-        class="pf-v5-c-list__item"
-      >
+      <span>
         Orange
       </span>
     </li>
@@ -263,27 +251,21 @@ exports[`List simple list 1`] = `
       <li
         class=""
       >
-        <span
-          class="pf-v5-c-list__item"
-        >
+        <span>
           First
         </span>
       </li>
       <li
         class=""
       >
-        <span
-          class="pf-v5-c-list__item"
-        >
+        <span>
           Second
         </span>
       </li>
       <li
         class=""
       >
-        <span
-          class="pf-v5-c-list__item"
-        >
+        <span>
           Third
         </span>
       </li>
