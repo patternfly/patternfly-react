@@ -25,39 +25,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 
 ## Examples
 
-### Basic
-
-```ts file="./DualListSelectorBasic.tsx"
-
-```
-
-### Basic with tooltips
-
-```ts file="./DualListSelectorBasicTooltips.tsx"
-
-```
-
-### Basic with search
-
-```ts file="./DualListSelectorBasicSearch.tsx"
-
-```
-
-### Using more complex options with actions
-
-```ts file="./DualListSelectorComplexOptionsActions.tsx"
-
-```
-
-### With tree
-
-```ts file="./DualListSelectorTreeExample.tsx"
-
-```
-
-## Composable structure
-
-The dual list selector can also be built in a composable manner to make customization easier. The standard sub-component relationships are arranged as follows:
+The dual list selector is built in a composable manner to make customization easier. The standard sub-component relationships are arranged as follows:
 
 ```noLive
 <DualListSelector>
@@ -79,13 +47,37 @@ The dual list selector can also be built in a composable manner to make customiz
 </DualListSelector>
 ```
 
-### Composable dual list selector
+### Basic
 
-```ts file="./DualListSelectorComposable.tsx"
+```ts file="./DualListSelectorBasicNext.tsx"
 
 ```
 
-### Composable with drag and drop
+### Basic with tooltips
+
+```ts file="./DualListSelectorBasicTooltipsNext.tsx"
+
+```
+
+### Basic with search
+
+```ts file="./DualListSelectorBasicSearchNext.tsx"
+
+```
+
+### Using more complex options with actions
+
+```ts file="./DualListSelectorComplexOptionsActionsNext.tsx"
+
+```
+
+### With tree
+
+```ts file="DualListSelectorComposableTree.tsx"
+
+```
+
+### Drag and drop
 
 This example only allows reordering the contents of the "chosen" pane with drag and drop. To make a pane able to be reordered:
 
@@ -102,11 +94,5 @@ This example only allows reordering the contents of the "chosen" pane with drag 
 Note: Keyboard accessibility and screen reader accessibility for the `DragDrop` component are still in development.
 
 ```ts file="DualListSelectorComposableDragDrop.tsx"
-
-```
-
-### Composable with tree
-
-```ts file="DualListSelectorComposableTree.tsx"
 
 ```
