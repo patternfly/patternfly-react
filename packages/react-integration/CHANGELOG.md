@@ -33,6 +33,16 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @patternfly/react-integration
 
+## 5.1.1-prerelease.16 (2023-12-14)
+
+### Bug Fixes
+
+- **MenuItem:** Add download to MenuItem ([#9892](https://github.com/patternfly/patternfly-react/issues/9892)) ([2afb5fd](https://github.com/patternfly/patternfly-react/commit/2afb5fdeb8ade43aee6dadaccf9067a0939212c7))
+
+## 5.1.1-prerelease.15 (2023-11-14)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
 ## 5.1.1-prerelease.14 (2023-10-30)
 
 **Note:** Version bump only for package @patternfly/react-integration

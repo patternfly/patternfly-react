@@ -81,7 +81,7 @@ If you want to start with your existing project, skip to [Install and configure 
     Once the library is installed, use the specific setup instructions for that library to access the components it contains.  These can be found in the readme for each [library](#patternfly-react-packages). 
 
 ### Contribution guidelines
-All React contributors must first be [PatternFly community contributors](https://www.patternfly.org/contribute/about). If you're already a PatternFly community contributor, check out the [React contribution guidelines](https://github.com/patternfly/patternfly-react/tree/main/CONTRIBUTING.md) to make React contributions.
+All React contributors must first be [PatternFly community contributors](https://www.patternfly.org/get-started/contribute/contributing-to-patternfly). If you're already a PatternFly community contributor, check out the [React contribution guidelines](https://github.com/patternfly/patternfly-react/tree/main/CONTRIBUTING.md) to make React contributions.
 
 
 ### License

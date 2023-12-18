@@ -28,7 +28,8 @@ import {
   OverflowMenuContent,
   OverflowMenuControl,
   OverflowMenuGroup,
-  OverflowMenuItem
+  OverflowMenuItem,
+  PageSectionVariants
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
@@ -232,7 +233,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <DashboardWrapper>
-        <PageSection isWidthLimited>
+        <PageSection isWidthLimited variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Table demos</Text>
             <Text component="p">
