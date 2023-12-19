@@ -49,31 +49,31 @@ The dual list selector is built in a composable manner to make customization eas
 
 ### Basic
 
-```ts file="./DualListSelectorBasicNext.tsx"
+```ts file="./DualListSelectorBasic.tsx"
 
 ```
 
 ### Basic with tooltips
 
-```ts file="./DualListSelectorBasicTooltipsNext.tsx"
+```ts file="./DualListSelectorBasicTooltips.tsx"
 
 ```
 
 ### Basic with search
 
-```ts file="./DualListSelectorBasicSearchNext.tsx"
+```ts file="./DualListSelectorBasicSearch.tsx"
 
 ```
 
 ### Using more complex options with actions
 
-```ts file="./DualListSelectorComplexOptionsActionsNext.tsx"
+```ts file="./DualListSelectorComplexOptionsActions.tsx"
 
 ```
 
 ### With tree
 
-```ts file="DualListSelectorComposableTree.tsx"
+```ts file="DualListSelectorTree.tsx"
 
 ```
 
@@ -93,6 +93,6 @@ This example only allows reordering the contents of the "chosen" pane with drag 
 
 Note: Keyboard accessibility and screen reader accessibility for the `DragDrop` component are still in development.
 
-```ts file="DualListSelectorComposableDragDrop.tsx"
+```ts file="DualListSelectorDragDrop.tsx"
 
 ```
