@@ -106,7 +106,7 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
           onClick={() => moveSelected(true)}
           aria-label="Add selected"
           tooltipContent="Add selected"
-          tooltipProps={{ position: 'top' }}
+          tooltipProps={{ position: 'top', 'aria-live': 'off' }}
         >
           <AngleRightIcon />
         </DualListSelectorControl>
@@ -115,7 +115,7 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
           onClick={() => moveAll(true)}
           aria-label="Add all"
           tooltipContent="Add all"
-          tooltipProps={{ position: 'right' }}
+          tooltipProps={{ position: 'right', 'aria-live': 'off' }}
         >
           <AngleDoubleRightIcon />
         </DualListSelectorControl>
@@ -124,7 +124,7 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
           onClick={() => moveAll(false)}
           aria-label="Remove all"
           tooltipContent="Remove all"
-          tooltipProps={{ position: 'left' }}
+          tooltipProps={{ position: 'left', 'aria-live': 'off' }}
         >
           <AngleDoubleLeftIcon />
         </DualListSelectorControl>
@@ -133,7 +133,7 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
           isDisabled={!chosenOptions.some((option) => option.selected)}
           aria-label="Remove selected"
           tooltipContent="Remove selected"
-          tooltipProps={{ position: 'bottom' }}
+          tooltipProps={{ position: 'bottom', 'aria-live': 'off' }}
         >
           <AngleLeftIcon />
         </DualListSelectorControl>
