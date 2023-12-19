@@ -29,6 +29,8 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   target?: string;
   /** Navigation link relationship. Only set when the to property is present. */
   rel?: string;
+  /** Navigation link download. Only set when the to property is present. */
+  download?: string;
   /** Flag indicating the item has a checkbox */
   hasCheckbox?: boolean;
   /** Flag indicating whether the item is active */
@@ -119,6 +121,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   tooltipProps,
   rel,
   target,
+  download,
   ...props
 }: MenuItemProps) => {
   const {
@@ -271,7 +274,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       // prevent invalid 'disabled' attribute on <a> tags
       disabled: null,
       target: isExternalLink ? '_blank' : target,
-      rel
+      rel,
+      download
     };
   } else if (Component === 'button') {
     additionalProps = {

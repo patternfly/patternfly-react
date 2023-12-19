@@ -38,7 +38,7 @@ import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrap
 interface NotificationProps {
   title: string;
   srTitle: string;
-  variant: 'default' | 'success' | 'danger' | 'warning' | 'info';
+  variant: 'custom' | 'success' | 'danger' | 'warning' | 'info';
   key: React.Key;
   timestamp: string;
   description: string;
@@ -344,8 +344,8 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
         <Button variant="secondary" onClick={() => addNewNotification('warning')} style={alertButtonStyle}>
           Add toast warning alert
         </Button>
-        <Button variant="secondary" onClick={() => addNewNotification('default')} style={alertButtonStyle}>
-          Add toast default alert
+        <Button variant="secondary" onClick={() => addNewNotification('custom')} style={alertButtonStyle}>
+          Add toast custom alert
         </Button>
       </PageSection>
 
