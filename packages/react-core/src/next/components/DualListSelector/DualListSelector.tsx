@@ -59,7 +59,7 @@ export interface DualListSelectorProps {
   addSelectedAriaLabel?: string;
   /** Tooltip content for the dynamically built add selected button */
   addSelectedTooltip?: React.ReactNode;
-  /** Additonal tooltip properties for the dynamically built add selected tooltip */
+  /** Additional tooltip properties for the dynamically built add selected tooltip */
   addSelectedTooltipProps?: any;
   /** Callback fired every time dynamically built options are chosen or removed */
   onListChange?: (
@@ -73,7 +73,7 @@ export interface DualListSelectorProps {
   addAllAriaLabel?: string;
   /** Tooltip content for the dynamically built add all button */
   addAllTooltip?: React.ReactNode;
-  /** Additonal tooltip properties for the dynamically built add all tooltip */
+  /** Additional tooltip properties for the dynamically built add all tooltip */
   addAllTooltipProps?: any;
   /** Optional callback for the dynamically built remove selected button */
   removeSelected?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
@@ -81,7 +81,7 @@ export interface DualListSelectorProps {
   removeSelectedAriaLabel?: string;
   /** Tooltip content for the dynamically built remove selected button */
   removeSelectedTooltip?: React.ReactNode;
-  /** Additonal tooltip properties for the dynamically built remove selected tooltip  */
+  /** Additional tooltip properties for the dynamically built remove selected tooltip  */
   removeSelectedTooltipProps?: any;
   /** Optional callback for the dynamically built remove all button */
   removeAll?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
@@ -89,7 +89,7 @@ export interface DualListSelectorProps {
   removeAllAriaLabel?: string;
   /** Tooltip content for the dynamically built remove all button */
   removeAllTooltip?: React.ReactNode;
-  /** Additonal tooltip properties for the dynamically built remove all tooltip */
+  /** Additional tooltip properties for the dynamically built remove all tooltip */
   removeAllTooltipProps?: any;
   /** Optional callback fired when a dynamically built option is selected */
   onOptionSelect?: (
@@ -234,7 +234,7 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
       if (isTree) {
         this.setState({
           availableTreeFilteredOptions: flattenTreeWithFolders(
-            newFilteredOptions as unknown as DualListSelectorTreeItemData[]
+            newFilteredOptions as React.ReactNode[] & DualListSelectorTreeItemData[]
           )
         });
       } else {
@@ -253,7 +253,7 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
       if (isTree) {
         this.setState({
           chosenTreeFilteredOptions: flattenTreeWithFolders(
-            newFilteredOptions as unknown as DualListSelectorTreeItemData[]
+            newFilteredOptions as React.ReactNode[] & DualListSelectorTreeItemData[]
           )
         });
       } else {
@@ -296,14 +296,14 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
     this.setState((prevState) => {
       const movedOptions =
         prevState.availableTreeFilteredOptions ||
-        flattenTreeWithFolders(prevState.availableOptions as unknown as DualListSelectorTreeItemData[]);
+        flattenTreeWithFolders(prevState.availableOptions as React.ReactNode[] & DualListSelectorTreeItemData[]);
       const newAvailable = prevState.availableOptions
         .map((opt) => Object.assign({}, opt))
         .filter((item) =>
-          filterRestTreeItems(item as unknown as DualListSelectorTreeItemData, movedOptions)
+          filterRestTreeItems(item as React.ReactNode[] & DualListSelectorTreeItemData, movedOptions)
         ) as React.ReactNode[];
 
-      const currChosen = flattenTree(prevState.chosenOptions as unknown as DualListSelectorTreeItemData[]);
+      const currChosen = flattenTree(prevState.chosenOptions as React.ReactNode[] & DualListSelectorTreeItemData[]);
       const nextChosenOptions = currChosen.concat(movedOptions);
       const newChosen = this.createMergedCopy()
         .map((opt) => Object.assign({}, opt))
@@ -358,11 +358,14 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
       const newAvailable = prevState.availableOptions
         .map((opt) => Object.assign({}, opt))
         .filter((item) =>
-          filterRestTreeItems(item as unknown as DualListSelectorTreeItemData, prevState.availableTreeOptionsChecked)
+          filterRestTreeItems(
+            item as React.ReactNode[] & DualListSelectorTreeItemData,
+            prevState.availableTreeOptionsChecked
+          )
         );
 
       // Get next chosen options from current + new nodes and remap from base
-      const currChosen = flattenTree(prevState.chosenOptions as unknown as DualListSelectorTreeItemData[]);
+      const currChosen = flattenTree(prevState.chosenOptions as React.ReactNode[] & DualListSelectorTreeItemData[]);
       const nextChosenOptions = currChosen.concat(prevState.availableTreeOptionsChecked);
       const newChosen = this.createMergedCopy()
         .map((opt) => Object.assign({}, opt))
@@ -414,12 +417,14 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
     this.setState((prevState) => {
       const movedOptions =
         prevState.chosenTreeFilteredOptions ||
-        flattenTreeWithFolders(prevState.chosenOptions as unknown as DualListSelectorTreeItemData[]);
+        flattenTreeWithFolders(prevState.chosenOptions as React.ReactNode[] & DualListSelectorTreeItemData[]);
 
       const newChosen = prevState.chosenOptions
         .map((opt) => Object.assign({}, opt))
-        .filter((item) => filterRestTreeItems(item as unknown as DualListSelectorTreeItemData, movedOptions));
-      const currAvailable = flattenTree(prevState.availableOptions as unknown as DualListSelectorTreeItemData[]);
+        .filter((item) => filterRestTreeItems(item as React.ReactNode[] & DualListSelectorTreeItemData, movedOptions));
+      const currAvailable = flattenTree(
+        prevState.availableOptions as React.ReactNode[] & DualListSelectorTreeItemData[]
+      );
       const nextAvailableOptions = currAvailable.concat(movedOptions);
       const newAvailable = this.createMergedCopy()
         .map((opt) => Object.assign({}, opt))
@@ -472,11 +477,16 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
       const newChosen = prevState.chosenOptions
         .map((opt) => Object.assign({}, opt))
         .filter((item) =>
-          filterRestTreeItems(item as unknown as DualListSelectorTreeItemData, prevState.chosenTreeOptionsChecked)
+          filterRestTreeItems(
+            item as React.ReactNode[] & DualListSelectorTreeItemData,
+            prevState.chosenTreeOptionsChecked
+          )
         );
 
       // Get next chosen options from current and remap from base
-      const currAvailable = flattenTree(prevState.availableOptions as unknown as DualListSelectorTreeItemData[]);
+      const currAvailable = flattenTree(
+        prevState.availableOptions as React.ReactNode[] & DualListSelectorTreeItemData[]
+      );
       const nextAvailableOptions = currAvailable.concat(prevState.chosenTreeOptionsChecked);
       const newAvailable = this.createMergedCopy()
         .map((opt) => Object.assign({}, opt))
@@ -573,7 +583,10 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
         panelOptions = chosenOptions
           .map((opt) => Object.assign({}, opt))
           .filter((item) =>
-            filterTreeItemsWithoutFolders(item as unknown as DualListSelectorTreeItemData, chosenTreeFilteredOptions)
+            filterTreeItemsWithoutFolders(
+              item as React.ReactNode[] & DualListSelectorTreeItemData,
+              chosenTreeFilteredOptions
+            )
           );
       } else {
         panelOptions = chosenOptions;
@@ -583,7 +596,10 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
         panelOptions = availableOptions
           .map((opt) => Object.assign({}, opt))
           .filter((item) =>
-            filterTreeItemsWithoutFolders(item as unknown as DualListSelectorTreeItemData, availableTreeFilteredOptions)
+            filterTreeItemsWithoutFolders(
+              item as React.ReactNode[] & DualListSelectorTreeItemData,
+              availableTreeFilteredOptions
+            )
           );
       } else {
         panelOptions = availableOptions;
@@ -591,8 +607,8 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
     }
     const checkedOptionTree = panelOptions
       .map((opt) => Object.assign({}, opt))
-      .filter((item) => filterTreeItems(item as unknown as DualListSelectorTreeItemData, [itemData.id]));
-    const flatTree = flattenTreeWithFolders(checkedOptionTree as unknown as DualListSelectorTreeItemData[]);
+      .filter((item) => filterTreeItems(item as React.ReactNode[] & DualListSelectorTreeItemData, [itemData.id]));
+    const flatTree = flattenTreeWithFolders(checkedOptionTree as React.ReactNode[] & DualListSelectorTreeItemData[]);
 
     const prevChecked = isChosen ? this.state.chosenTreeOptionsChecked : this.state.availableTreeOptionsChecked;
     let updatedChecked = [] as string[];
@@ -669,26 +685,35 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
       availableOptionsStatus ||
       (isTree
         ? `${
-            filterFolders(availableOptions as unknown as DualListSelectorTreeItemData[], availableTreeOptionsChecked)
-              .length
-          } of ${flattenTree(availableOptions as unknown as DualListSelectorTreeItemData[]).length} items selected`
+            filterFolders(
+              availableOptions as React.ReactNode[] & DualListSelectorTreeItemData[],
+              availableTreeOptionsChecked
+            ).length
+          } of ${
+            flattenTree(availableOptions as React.ReactNode[] & DualListSelectorTreeItemData[]).length
+          } items selected`
         : `${availableOptionsSelected.length} of ${availableOptions.length} items selected`);
     const chosenOptionsStatusToDisplay =
       chosenOptionsStatus ||
       (isTree
         ? `${
-            filterFolders(chosenOptions as unknown as DualListSelectorTreeItemData[], chosenTreeOptionsChecked).length
-          } of ${flattenTree(chosenOptions as unknown as DualListSelectorTreeItemData[]).length} items selected`
+            filterFolders(chosenOptions as React.ReactNode[] & DualListSelectorTreeItemData[], chosenTreeOptionsChecked)
+              .length
+          } of ${
+            flattenTree(chosenOptions as React.ReactNode[] & DualListSelectorTreeItemData[]).length
+          } items selected`
         : `${chosenOptionsSelected.length} of ${chosenOptions.length} items selected`);
 
     const available = (
       isTree
-        ? availableOptions.map((item) => this.mapChecked(item as unknown as DualListSelectorTreeItemData, false))
+        ? availableOptions.map((item) =>
+            this.mapChecked(item as React.ReactNode[] & DualListSelectorTreeItemData, false)
+          )
         : availableOptions
     ) as React.ReactNode[];
     const chosen = (
       isTree
-        ? chosenOptions.map((item) => this.mapChecked(item as unknown as DualListSelectorTreeItemData, true))
+        ? chosenOptions.map((item) => this.mapChecked(item as React.ReactNode[] & DualListSelectorTreeItemData, true))
         : chosenOptions
     ) as React.ReactNode[];
 

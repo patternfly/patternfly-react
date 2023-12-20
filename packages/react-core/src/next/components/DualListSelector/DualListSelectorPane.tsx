@@ -102,7 +102,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
     if (isTree) {
       filtered = options
         .map((opt) => Object.assign({}, opt))
-        .filter((item) => filterInput(item as unknown as DualListSelectorTreeItemData, newValue));
+        .filter((item) => filterInput(item as React.ReactNode[] & DualListSelectorTreeItemData, newValue));
     } else {
       filtered = options.filter((option) => {
         if (displayOption(option)) {
@@ -121,7 +121,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   // only called when options are passed via options prop and isTree === true
   const filterInput = (item: DualListSelectorTreeItemData, input: string): boolean => {
     if (filterOption) {
-      return filterOption(item as unknown as React.ReactNode, input);
+      return filterOption(item as DualListSelectorTreeItemData & React.ReactNode, input);
     } else {
       if (item.text.toLowerCase().includes(input.toLowerCase()) || input === '') {
         return true;
@@ -224,9 +224,9 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
                       ? (options
                           .map((opt) => Object.assign({}, opt))
                           .filter((item) =>
-                            filterInput(item as unknown as DualListSelectorTreeItemData, input)
-                          ) as unknown as DualListSelectorTreeItemData[])
-                      : (options as unknown as DualListSelectorTreeItemData[])
+                            filterInput(item as React.ReactNode[] & DualListSelectorTreeItemData, input)
+                          ) as React.ReactNode[] & DualListSelectorTreeItemData[])
+                      : (options as React.ReactNode[] & DualListSelectorTreeItemData[])
                   }
                   onOptionCheck={onOptionCheck}
                   id={`${id}-tree`}
