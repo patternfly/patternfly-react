@@ -155,6 +155,34 @@ test('Renders the toggle with pf-m-expanded and aria-expanded=true when isExpand
   expect(toggle).toHaveAttribute('aria-expanded', 'true');
 });
 
+test('Renders toggle text before toggle icon by default', () => {
+  render(
+    <AccordionContext.Provider value={{ ToggleContainer: 'h3' }}>
+      <AccordionToggle id="accordion-toggle" isExpanded>
+        Test
+      </AccordionToggle>
+    </AccordionContext.Provider>
+  );
+
+  const toggle = screen.getByRole('button');
+
+  expect(toggle.firstChild).toHaveClass(styles.accordionToggleText);
+});
+
+test('Renders toggle icon before toggle text when togglePosition from context = "start"', () => {
+  render(
+    <AccordionContext.Provider value={{ ToggleContainer: 'h3', togglePosition: 'start' }}>
+      <AccordionToggle id="accordion-toggle" isExpanded>
+        Test
+      </AccordionToggle>
+    </AccordionContext.Provider>
+  );
+
+  const toggle = screen.getByRole('button');
+
+  expect(toggle.firstChild).toHaveClass(styles.accordionToggleIcon);
+});
+
 test('Matches the snapshot', () => {
   const { asFragment } = render(
     <AccordionContext.Provider value={{ ToggleContainer: 'h3' }}>

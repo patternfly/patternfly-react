@@ -25,27 +25,36 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
   children = null,
   component,
   ...props
-}: AccordionToggleProps) => (
-  <AccordionContext.Consumer>
-    {({ ToggleContainer }) => {
-      const Container = component || ToggleContainer;
-      return (
-        <Container>
-          <button
-            id={id}
-            className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
-            aria-expanded={isExpanded}
-            type="button"
-            {...props}
-          >
-            <span className={css(styles.accordionToggleText)}>{children}</span>
-            <span className={css(styles.accordionToggleIcon)}>
-              <AngleRightIcon />
-            </span>
-          </button>
-        </Container>
-      );
-    }}
-  </AccordionContext.Consumer>
-);
+}: AccordionToggleProps) => {
+  const renderToggleIcon = () => (
+    <span className={css(styles.accordionToggleIcon)}>
+      <AngleRightIcon />
+    </span>
+  );
+
+  return (
+    <AccordionContext.Consumer>
+      {({ ToggleContainer, togglePosition }) => {
+        const Container = component || ToggleContainer;
+        const isToggleStartPositioned = togglePosition === 'start';
+
+        return (
+          <Container>
+            <button
+              id={id}
+              className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
+              aria-expanded={isExpanded}
+              type="button"
+              {...props}
+            >
+              {isToggleStartPositioned && renderToggleIcon()}
+              <span className={css(styles.accordionToggleText)}>{children}</span>
+              {!isToggleStartPositioned && renderToggleIcon()}
+            </button>
+          </Container>
+        );
+      }}
+    </AccordionContext.Consumer>
+  );
+};
 AccordionToggle.displayName = 'AccordionToggle';

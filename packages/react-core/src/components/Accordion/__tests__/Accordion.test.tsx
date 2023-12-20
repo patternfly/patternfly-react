@@ -135,6 +135,18 @@ test('Renders with pf-m-display-lg when displaySize="lg"', () => {
   expect(screen.getByText('Test')).toHaveClass('pf-m-display-lg');
 });
 
+test(`Renders without class ${styles.modifiers.toggleStart} by default`, () => {
+  render(<Accordion>Test</Accordion>);
+
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.toggleStart);
+});
+
+test(`Renders with class ${styles.modifiers.toggleStart} when togglePosition='start'`, () => {
+  render(<Accordion togglePosition="start">Test</Accordion>);
+
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.toggleStart);
+});
+
 test('Matches the snapshot', () => {
   const { asFragment } = render(<Accordion aria-label="this is a simple accordion" />);
   expect(asFragment()).toMatchSnapshot();
