@@ -47,7 +47,7 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 
 interface NavOnSelectProps {
   groupId: number | string;

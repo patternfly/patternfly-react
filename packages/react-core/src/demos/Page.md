@@ -12,7 +12,7 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import LightbulbIcon from '@patternfly/react-icons/dist/esm/icons/lightbulb-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 
 
 - All examples set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:

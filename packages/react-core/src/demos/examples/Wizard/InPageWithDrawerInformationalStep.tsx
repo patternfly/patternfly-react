@@ -31,7 +31,7 @@ import {
   Wizard,
   WizardStep
 } from '@patternfly/react-core';
-import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () => {

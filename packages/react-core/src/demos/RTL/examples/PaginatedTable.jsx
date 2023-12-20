@@ -49,7 +49,7 @@ import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-i
 import ToolsIcon from '@patternfly/react-icons/dist/esm/icons/tools-icon';
 import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
 import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
-import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
