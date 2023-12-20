@@ -5,7 +5,9 @@ exports[`ListItem should match snapshot (auto-generated) 1`] = `
   <li
     class=""
   >
-    ReactNode
+    <span>
+      ReactNode
+    </span>
   </li>
 </DocumentFragment>
 `;

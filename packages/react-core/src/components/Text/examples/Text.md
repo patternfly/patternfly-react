@@ -51,7 +51,7 @@ Text components such as Text, TextList, TextListItem need to be placed within a 
 
 ```
 
-### Visited
+### Link and visited link
 
 ```ts file="./TextVisited.tsx"
 
