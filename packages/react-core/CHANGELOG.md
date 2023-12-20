@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.36...@patternfly/react-core@5.2.0-prerelease.37) (2023-12-20)
+
+### Features
+
+- **Accordion:** added toggle alignment functionality ([#9877](https://github.com/patternfly/patternfly-react/issues/9877)) ([58e0071](https://github.com/patternfly/patternfly-react/commit/58e0071d2ef57de7ded5f633024a868decb8e833))
+
 # [5.2.0-prerelease.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.35...@patternfly/react-core@5.2.0-prerelease.36) (2023-12-14)
 
 ### Bug Fixes
