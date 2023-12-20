@@ -2,6 +2,10 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Banner/banner';
 import { css } from '@patternfly/react-styles';
 
+export type BannerColor = 'red' | 'orangered' | 'orange' | 'gold' | 'green' | 'cyan' | 'blue' | 'purple';
+
+export type BannerStatus = 'success' | 'warning' | 'danger' | 'info' | 'custom';
+
 export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the banner. */
   children?: React.ReactNode;
@@ -13,29 +17,48 @@ export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
    * be passed in when the banner conveys status/severity.
    */
   screenReaderText?: string;
-  /** Variant styles for the banner. */
-  variant?: 'default' | 'blue' | 'red' | 'green' | 'gold';
+  /** Color options for the banner, will be overwritten by any applied using the status prop. */
+  color?: BannerColor;
+  /** Status style options for the banner, will overwrite any color applied using the color prop. */
+  status?: BannerStatus;
+}
+interface StatusBanner extends BannerProps {
+  color?: never;
+  status?: BannerStatus;
 }
 
-export const Banner: React.FunctionComponent<BannerProps> = ({
+interface NonStatusBanner extends BannerProps {
+  color?: BannerColor;
+  status?: never;
+}
+
+export const Banner: React.FunctionComponent<StatusBanner | NonStatusBanner> = ({
   children,
   className,
-  variant = 'default',
   screenReaderText,
   isSticky = false,
+  color,
+  status,
   ...props
-}: BannerProps) => (
-  <div
-    className={css(
-      styles.banner,
-      styles.modifiers[variant as 'green' | 'red' | 'gold' | 'blue'],
-      isSticky && styles.modifiers.sticky,
-      className
-    )}
-    {...props}
-  >
-    {screenReaderText && <span className="pf-v5-screen-reader">{screenReaderText}</span>}
-    {children}
-  </div>
-);
+}: BannerProps) => {
+  const getStatusOrColorModifier = () => {
+    if (status) {
+      return styles.modifiers[status];
+    }
+
+    if (color) {
+      return styles.modifiers[color];
+    }
+  };
+
+  return (
+    <div
+      className={css(styles.banner, getStatusOrColorModifier(), isSticky && styles.modifiers.sticky, className)}
+      {...props}
+    >
+      {screenReaderText && <span className="pf-v5-screen-reader">{screenReaderText}</span>}
+      {children}
+    </div>
+  );
+};
 Banner.displayName = 'Banner';

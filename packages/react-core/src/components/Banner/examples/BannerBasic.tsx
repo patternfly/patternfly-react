@@ -5,12 +5,20 @@ export const BannerBasic: React.FunctionComponent = () => (
   <>
     <Banner>Default banner</Banner>
     <br />
-    <Banner variant="blue">Blue banner</Banner>
+    <Banner color="red">Red banner</Banner>
     <br />
-    <Banner variant="red">Red banner</Banner>
+    <Banner color="orangered">Orangered banner</Banner>
     <br />
-    <Banner variant="green">Green banner</Banner>
+    <Banner color="orange">Orange banner</Banner>
     <br />
-    <Banner variant="gold">Gold banner</Banner>
+    <Banner color="gold">Gold banner</Banner>
+    <br />
+    <Banner color="green">Green banner</Banner>
+    <br />
+    <Banner color="cyan">Cyan banner</Banner>
+    <br />
+    <Banner color="blue">Blue banner</Banner>
+    <br />
+    <Banner color="purple">Purple banner</Banner>
   </>
 );

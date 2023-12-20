@@ -15,7 +15,7 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ### Basic
 
-Banners can be styled with one of 5 different colors. A basic banner should only be used when the banner color does not represent status or severity.
+Banners can be styled with one of 9 different colors using the `color` prop. A basic banner should only be used when the banner color does not represent status or severity.
 
 ```ts file="./BannerBasic.tsx"
 
@@ -23,7 +23,9 @@ Banners can be styled with one of 5 different colors. A basic banner should only
 
 ### Status
 
-When a banner is used to convey status, it is advised to pass in an icon inside the banner to convey the status in a way besides just color. The `screenReaderText` prop should also be passed in to convey the status/severity of the banner to users of certain assistive technologies such as screen readers.
+When a banner is used to convey status it should be styled using the `status` prop. Additionally, it is advised to pass an icon inside the banner to convey the status in a way besides just color.
+
+The `screenReaderText` prop should also be passed in to convey the status/severity of the banner to users of certain assistive technologies such as screen readers.
 
 In the following example, a flex layout is used inside the banner content to show one possible way to create spacing between the icons and banner text.
 
