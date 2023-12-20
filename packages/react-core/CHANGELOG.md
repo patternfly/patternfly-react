@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.5...@patternfly/react-core@6.0.0-alpha.6) (2023-12-20)
+
+### Features
+
+- **banner:** add support for new styles in penta ([#9891](https://github.com/patternfly/patternfly-react/issues/9891)) ([4313e3c](https://github.com/patternfly/patternfly-react/commit/4313e3c97d14e504833d20bda9a101aac8ae1152))
+
 # [6.0.0-alpha.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.4...@patternfly/react-core@6.0.0-alpha.5) (2023-12-13)
 
 **Note:** Version bump only for package @patternfly/react-core
