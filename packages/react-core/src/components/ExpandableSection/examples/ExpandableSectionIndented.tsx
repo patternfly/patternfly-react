@@ -2,7 +2,7 @@ import React, { FormEvent } from 'react';
 import { ExpandableSection, Checkbox } from '@patternfly/react-core';
 
 export const ExpandableSectionIndented: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(true);
   const [isDisplayLgChecked, setIsDisplayLgChecked] = React.useState(false);
 
   const onToggle = (_event: React.MouseEvent, isExpanded: boolean) => {
