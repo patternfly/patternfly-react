@@ -73,8 +73,8 @@ export const TableFavoritable: React.FunctionComponent = () => {
   const getSortParams = (columnIndex: number): ThProps['sort'] => ({
     isFavorites: columnIndex === 0, // Not just statically true in case we add sorting on other columns later
     sortBy: {
-      index: activeSortIndex,
-      direction: activeSortDirection
+      index: activeSortIndex ?? undefined,
+      direction: activeSortDirection ?? undefined
     },
     onSort: (_event, index, direction) => {
       setActiveSortIndex(index);

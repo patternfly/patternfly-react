@@ -94,8 +94,8 @@ export const LegacyTableSortable: React.FunctionComponent = () => {
     <Table
       aria-label="Sortable Table"
       sortBy={{
-        index: activeSortIndex,
-        direction: activeSortDirection,
+        index: activeSortIndex ?? undefined,
+        direction: activeSortDirection ?? undefined,
         defaultDirection: 'asc' // starting sort direction when first sorting a column. Defaults to 'asc'
       }}
       onSort={(_event, index, direction) => {
