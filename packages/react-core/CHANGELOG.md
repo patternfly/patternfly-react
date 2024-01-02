@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.37...@patternfly/react-core@5.2.0-prerelease.38) (2024-01-02)
+
+**Note:** Version bump only for package @patternfly/react-core
+
 # [5.2.0-prerelease.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.36...@patternfly/react-core@5.2.0-prerelease.37) (2023-12-20)
 
 ### Features
