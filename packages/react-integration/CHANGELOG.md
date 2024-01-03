@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.1-prerelease.17 (2024-01-03)
+
+### Bug Fixes
+
+- **Chip:** prevented duplicate ID being applied ([#9886](https://github.com/patternfly/patternfly-react/issues/9886)) ([91b7d62](https://github.com/patternfly/patternfly-react/commit/91b7d62cb3503f65371ab27478ffff091262b04b))
+
 ## 5.1.1-prerelease.16 (2023-12-14)
 
 ### Bug Fixes
