@@ -13,8 +13,6 @@ import {
   EmptyState,
   EmptyStateActions,
   EmptyStateBody,
-  EmptyStateIcon,
-  EmptyStateHeader,
   EmptyStateFooter,
   EmptyStateVariant,
   MenuToggle,
@@ -723,12 +721,12 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
               onExpand={toggleThirdDrawer}
             >
               <NotificationDrawerList isHidden={!thirdDrawerGroupExpanded}>
-                <EmptyState variant={EmptyStateVariant.full}>
-                  <EmptyStateHeader
-                    headingLevel="h2"
-                    titleText="No alerts found"
-                    icon={<EmptyStateIcon icon={SearchIcon} />}
-                  />
+                <EmptyState
+                  headingLevel="h2"
+                  titleText="No alerts found"
+                  icon={SearchIcon}
+                  variant={EmptyStateVariant.full}
+                >
                   <EmptyStateBody>
                     There are currently no critical alerts firing. There may be firing alerts of other severities or
                     silenced critical alerts however.
@@ -744,12 +742,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
           </NotificationDrawerGroupList>
         )}
         {!shouldShowNotifications && (
-          <EmptyState variant={EmptyStateVariant.full}>
-            <EmptyStateHeader
-              headingLevel="h2"
-              titleText="No alerts found"
-              icon={<EmptyStateIcon icon={SearchIcon} />}
-            />
+          <EmptyState headingLevel="h2" titleText="No alerts found" icon={SearchIcon} variant={EmptyStateVariant.full}>
             <EmptyStateBody>
               There are currently no alerts. There may be silenced critical alerts however.
             </EmptyStateBody>

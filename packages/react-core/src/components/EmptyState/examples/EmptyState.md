@@ -2,12 +2,11 @@
 id: Empty state
 section: components
 cssPrefix: pf-v5-c-empty-state
-propComponents: ['EmptyState', 'EmptyStateHeader', 'EmptyStateIcon', 'EmptyStateBody', 'EmptyStateFooter', 'EmptyStateActions']
+propComponents: ['EmptyState', 'EmptyStateBody', 'EmptyStateFooter', 'EmptyStateActions']
 ---
 import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import global_success_color_100 from '@patternfly/react-tokens/dist/esm/global_success_color_100';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 
 ## Examples
 ### Basic
@@ -35,6 +34,10 @@ import global_success_color_100 from '@patternfly/react-tokens/dist/esm/global_s
 ```ts file="EmptyStateExtraLarge.tsx"
 ```
 
+### With status
+```ts file="EmptyStateWithStatus.tsx"
+```
+
 ### Spinner
 
 ```ts file="EmptyStateSpinner.tsx"
@@ -43,9 +46,4 @@ import global_success_color_100 from '@patternfly/react-tokens/dist/esm/global_s
 ### No match found
 
 ```ts file="EmptyStateNoMatchFound.tsx"
-```
-
-### Custom icon color
-
-```ts file="EmptyStateCustomIconColor.tsx"
 ```

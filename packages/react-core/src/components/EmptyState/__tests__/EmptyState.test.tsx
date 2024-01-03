@@ -10,14 +10,12 @@ import { EmptyStateActions } from '../EmptyStateActions';
 import { Button } from '../../Button';
 import { EmptyStateHeader } from '../EmptyStateHeader';
 import { EmptyStateFooter } from '../EmptyStateFooter';
-import { EmptyStateIcon } from '../../../../dist/esm';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
 describe('EmptyState', () => {
   test('Main', () => {
     const { asFragment } = render(
-      <EmptyState>
-        <EmptyStateHeader titleText="HTTP Proxies" />
+      <EmptyState titleText="HTTP Proxies">
         <EmptyStateBody>
           Defining HTTP Proxies that exist on your network allows you to perform various actions through those proxies.
         </EmptyStateBody>
@@ -38,27 +36,21 @@ describe('EmptyState', () => {
 
   test('Main variant large', () => {
     const { asFragment } = render(
-      <EmptyState variant={EmptyStateVariant.lg}>
-        <EmptyStateHeader titleText="EmptyState large" />
-      </EmptyState>
+      <EmptyState titleText="EmptyState large" variant={EmptyStateVariant.lg}></EmptyState>
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('Main variant small', () => {
     const { asFragment } = render(
-      <EmptyState variant={EmptyStateVariant.sm}>
-        <EmptyStateHeader titleText="EmptyState small" />
-      </EmptyState>
+      <EmptyState titleText="EmptyState small" variant={EmptyStateVariant.sm}></EmptyState>
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('Main variant xs', () => {
     const { asFragment } = render(
-      <EmptyState variant={EmptyStateVariant.xs}>
-        <EmptyStateHeader titleText="EmptyState extra small" />
-      </EmptyState>
+      <EmptyState titleText="EmptyState extra small" variant={EmptyStateVariant.xs}></EmptyState>
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -75,15 +67,13 @@ describe('EmptyState', () => {
 
   test('Full height', () => {
     const { asFragment } = render(
-      <EmptyState isFullHeight variant={EmptyStateVariant.lg}>
-        <EmptyStateHeader titleText="EmptyState large" />
-      </EmptyState>
+      <EmptyState titleText="EmptyState large" isFullHeight variant={EmptyStateVariant.lg}></EmptyState>
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('Header with icon', () => {
-    const { asFragment } = render(<EmptyStateHeader icon={<EmptyStateIcon icon={AddressBookIcon} />} />);
+    const { asFragment } = render(<EmptyStateHeader titleText="Empty state" icon={AddressBookIcon} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -100,11 +90,6 @@ describe('EmptyState', () => {
   test('Header renders the title as other heading levels when one is passed using headingLevel', () => {
     render(<EmptyStateHeader titleText="Empty state" headingLevel="h3" />);
     expect(screen.getByRole('heading', { level: 3, name: 'Empty state' })).toHaveClass(styles.emptyStateTitleText);
-  });
-
-  test('Headers render children', () => {
-    render(<EmptyStateHeader>Title text</EmptyStateHeader>);
-    expect(screen.getByText('Title text')).toBeVisible();
   });
 
   test('Footer', () => {

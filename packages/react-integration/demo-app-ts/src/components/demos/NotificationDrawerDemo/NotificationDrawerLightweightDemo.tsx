@@ -3,7 +3,6 @@ import {
   Button,
   EmptyState,
   EmptyStateBody,
-  EmptyStateIcon,
   EmptyStateVariant,
   NotificationDrawer,
   NotificationDrawerProps,
@@ -15,8 +14,6 @@ import {
   NotificationDrawerListItem,
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
-  Title,
-  EmptyStateHeader,
   EmptyStateActions,
   EmptyStateFooter
 } from '@patternfly/react-core';
@@ -28,7 +25,7 @@ interface GroupsNotificationDrawerDemoState {
   thirdGroupIsOpen: boolean;
 }
 
-export class LightweightNotificationDrawerDemo extends React.Component<
+class LightweightNotificationDrawerDemo extends React.Component<
   NotificationDrawerProps,
   GroupsNotificationDrawerDemoState
 > {
@@ -191,12 +188,12 @@ export class LightweightNotificationDrawerDemo extends React.Component<
               onExpand={this.toggleThirdDrawer}
             >
               <NotificationDrawerList isHidden={!thirdGroupExpanded}>
-                <EmptyState variant={EmptyStateVariant.full}>
-                  <EmptyStateHeader
-                    titleText="No alerts found"
-                    headingLevel="h2"
-                    icon={<EmptyStateIcon icon={SearchIcon} />}
-                  />
+                <EmptyState
+                  headingLevel="h2"
+                  titleText="No alerts found"
+                  icon={SearchIcon}
+                  variant={EmptyStateVariant.full}
+                >
                   <EmptyStateBody>
                     There are currently no critical alerts firing. There may be firing alerts of other severities or
                     silenced critical alerts however.
@@ -215,3 +212,7 @@ export class LightweightNotificationDrawerDemo extends React.Component<
     );
   }
 }
+
+LightweightNotificationDrawerDemo.displayName = 'LightweightNotificationDrawerDemo';
+
+export { LightweightNotificationDrawerDemo };

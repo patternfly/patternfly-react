@@ -4,11 +4,9 @@ import {
   Button,
   Alert,
   EmptyState,
-  EmptyStateHeader,
   EmptyStateFooter,
   EmptyStateBody,
   EmptyStateActions,
-  EmptyStateIcon,
   Progress,
   Form,
   FormGroup,
@@ -47,12 +45,12 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
 
   return (
     <div className={layout.bullseye}>
-      <EmptyState variant="lg">
-        <EmptyStateHeader
-          headingLevel="h4"
-          titleText={percentValidated === 100 ? 'Validation complete' : 'Validating credentials'}
-          icon={<EmptyStateIcon icon={CogsIcon} />}
-        />
+      <EmptyState
+        headingLevel="h4"
+        titleText={percentValidated === 100 ? 'Validation complete' : 'Validating credentials'}
+        icon={CogsIcon}
+        variant="lg"
+      >
         <EmptyStateBody>
           <Progress value={percentValidated} measureLocation="outside" aria-label="Wizard validation progress" />
         </EmptyStateBody>

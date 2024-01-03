@@ -1,8 +1,6 @@
 import React from 'react';
-import { EmptyState, EmptyStateHeader, EmptyStateIcon, Spinner } from '@patternfly/react-core';
+import { EmptyState, Spinner } from '@patternfly/react-core';
 
 export const EmptyStateSpinner: React.FunctionComponent = () => (
-  <EmptyState>
-    <EmptyStateHeader titleText="Loading" headingLevel="h4" icon={<EmptyStateIcon icon={Spinner} />} />
-  </EmptyState>
+  <EmptyState titleText="Loading" headingLevel="h4" icon={Spinner} />
 );

@@ -4,10 +4,8 @@ import {
   Bullseye,
   EmptyState,
   EmptyStateVariant,
-  EmptyStateIcon,
   EmptyStateBody,
   Button,
-  EmptyStateHeader,
   EmptyStateFooter,
   EmptyStateActions
 } from '@patternfly/react-core';
@@ -26,12 +24,12 @@ export const LegacyTableEmptyState: React.FunctionComponent = () => {
           props: { colSpan: 8 },
           title: (
             <Bullseye>
-              <EmptyState variant={EmptyStateVariant.sm}>
-                <EmptyStateHeader
-                  titleText="No results found"
-                  icon={<EmptyStateIcon icon={SearchIcon} />}
-                  headingLevel="h2"
-                />
+              <EmptyState
+                headingLevel="h2"
+                titleText="No results found"
+                icon={SearchIcon}
+                variant={EmptyStateVariant.sm}
+              >
                 <EmptyStateBody>Clear all filters and try again.</EmptyStateBody>
                 <EmptyStateFooter>
                   <EmptyStateActions>
