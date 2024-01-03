@@ -6,7 +6,7 @@ section: components
 ## Demos
 
 
-### Expandable text with truncation
+### Expandable text with character truncation
 
 You can truncate long sections of text and add a "Show more" link that allows users to expand and view the full text content.
 
