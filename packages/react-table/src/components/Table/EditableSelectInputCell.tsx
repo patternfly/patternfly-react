@@ -76,7 +76,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
       <div className={inlineStyles.inlineEditValue}>{Array.isArray(value) ? value.join(', ') : value}</div>
       <div className={inlineStyles.inlineEditInput}>
         {select}
-        <div className={css(formStyles.formHelperText, formStyles.modifiers.error)} aria-live="polite">
+        <div className={css(formStyles.formHelperText)} aria-live="polite">
           {props.errorText}
         </div>
       </div>

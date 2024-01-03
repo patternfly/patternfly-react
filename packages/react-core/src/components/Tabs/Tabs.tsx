@@ -38,7 +38,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** Additional classes added to the tabs */
   className?: string;
   /** Tabs background color variant */
-  variant?: 'default' | 'light300';
+  variant?: 'default';
   /** The index of the active tab */
   activeKey?: number | string;
   /** The index of the default active tab. Set this for uncontrolled Tabs */

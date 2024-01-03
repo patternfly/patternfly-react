@@ -24,7 +24,8 @@ export const TabsBoxLight: React.FunctionComponent = () => {
       <Tabs
         activeKey={activeTabKey}
         onSelect={handleTabClick}
-        variant={isTabsLightScheme ? 'light300' : 'default'}
+        // TODO: Update variant value when "isTabsLightScheme" with issue #9909
+        variant={isTabsLightScheme ? 'default' : 'default'}
         isBox
         aria-label="Tabs in the box light variation example"
         role="region"

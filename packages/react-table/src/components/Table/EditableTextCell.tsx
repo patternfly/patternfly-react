@@ -49,7 +49,7 @@ export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
         }}
         aria-label={inputAriaLabel}
       />
-      <div className={css(formStyles.formHelperText, formStyles.modifiers.error)} aria-live="polite">
+      <div className={css(formStyles.formHelperText)} aria-live="polite">
         {props.errorText}
       </div>
     </div>

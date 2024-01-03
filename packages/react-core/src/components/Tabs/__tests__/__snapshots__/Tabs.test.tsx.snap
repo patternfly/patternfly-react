@@ -81,7 +81,7 @@ exports[`should render accessible tabs 1`] = `
   </nav>
   <section
     aria-labelledby="pf-tab-0-tab1"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     id="pf-tab-section-0-tab1"
@@ -92,7 +92,7 @@ exports[`should render accessible tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-1-tab2"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -104,7 +104,7 @@ exports[`should render accessible tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-2-tab3"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -227,7 +227,7 @@ exports[`should render box tabs 1`] = `
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     id="pf-tab-section-0-tab1"
@@ -238,7 +238,7 @@ exports[`should render box tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-1-tab2"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -250,7 +250,7 @@ exports[`should render box tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-2-tab3"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -262,7 +262,7 @@ exports[`should render box tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-3-tab4"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -355,7 +355,7 @@ exports[`should render box tabs of light variant 1`] = `
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
-    class="pf-v5-c-tab-content pf-m-light-300"
+    class="pf-v5-c-tab-content light300"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     id="pf-tab-section-0-tab1"
@@ -366,7 +366,7 @@ exports[`should render box tabs of light variant 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-1-tab2"
-    class="pf-v5-c-tab-content pf-m-light-300"
+    class="pf-v5-c-tab-content light300"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -378,7 +378,7 @@ exports[`should render box tabs of light variant 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-2-tab3"
-    class="pf-v5-c-tab-content pf-m-light-300"
+    class="pf-v5-c-tab-content light300"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -544,7 +544,7 @@ exports[`should render expandable vertical tabs 1`] = `
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     id="pf-tab-section-0-tab1"
@@ -555,7 +555,7 @@ exports[`should render expandable vertical tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-1-tab2"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -567,7 +567,7 @@ exports[`should render expandable vertical tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-2-tab3"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -579,7 +579,7 @@ exports[`should render expandable vertical tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-3-tab4"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -672,7 +672,7 @@ exports[`should render filled tabs 1`] = `
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     id="pf-tab-section-0-tab1"
@@ -683,7 +683,7 @@ exports[`should render filled tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-1-tab2"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -695,7 +695,7 @@ exports[`should render filled tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-2-tab3"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -788,7 +788,7 @@ exports[`should render secondary tabs 1`] = `
   </div>
   <section
     aria-labelledby="pf-tab-0-primarieTabs"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     id="pf-tab-section-0-primarieTabs"
@@ -873,7 +873,7 @@ exports[`should render secondary tabs 1`] = `
     </div>
     <section
       aria-labelledby="pf-tab-10-secondary tab1"
-      class="pf-v5-c-tab-content"
+      class="pf-v5-c-tab-content default"
       data-ouia-component-type="PF5/TabContent"
       data-ouia-safe="true"
       hidden=""
@@ -885,7 +885,7 @@ exports[`should render secondary tabs 1`] = `
     </section>
     <section
       aria-labelledby="pf-tab-11-secondary tab2"
-      class="pf-v5-c-tab-content"
+      class="pf-v5-c-tab-content default"
       data-ouia-component-type="PF5/TabContent"
       data-ouia-safe="true"
       hidden=""
@@ -897,7 +897,7 @@ exports[`should render secondary tabs 1`] = `
     </section>
     <section
       aria-labelledby="pf-tab-12-secondary tab3"
-      class="pf-v5-c-tab-content"
+      class="pf-v5-c-tab-content default"
       data-ouia-component-type="PF5/TabContent"
       data-ouia-safe="true"
       hidden=""
@@ -910,7 +910,7 @@ exports[`should render secondary tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-1-tab2"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -922,7 +922,7 @@ exports[`should render secondary tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-2-tab3"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1045,7 +1045,7 @@ exports[`should render simple tabs 1`] = `
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     id="pf-tab-section-0-tab1"
@@ -1056,7 +1056,7 @@ exports[`should render simple tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-1-tab2"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1068,7 +1068,7 @@ exports[`should render simple tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-2-tab3"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1080,7 +1080,7 @@ exports[`should render simple tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-3-tab4"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1173,7 +1173,7 @@ exports[`should render tabs with eventKey Strings 1`] = `
   </div>
   <section
     aria-labelledby="pf-tab-one-tab1"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1185,7 +1185,7 @@ exports[`should render tabs with eventKey Strings 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-two-tab2"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1197,7 +1197,7 @@ exports[`should render tabs with eventKey Strings 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-three-tab3"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1290,7 +1290,7 @@ exports[`should render tabs with no bottom border 1`] = `
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     id="pf-tab-section-0-tab1"
@@ -1301,7 +1301,7 @@ exports[`should render tabs with no bottom border 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-1-tab2"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1313,7 +1313,7 @@ exports[`should render tabs with no bottom border 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-2-tab3"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1407,7 +1407,7 @@ exports[`should render tabs with separate content 1`] = `
   <div>
     <section
       aria-label="Tab item 1"
-      class="pf-v5-c-tab-content"
+      class="pf-v5-c-tab-content default"
       data-ouia-component-type="PF5/TabContent"
       data-ouia-safe="true"
       id="refTab1Section"
@@ -1418,7 +1418,7 @@ exports[`should render tabs with separate content 1`] = `
     </section>
     <section
       aria-label="Tab item 2"
-      class="pf-v5-c-tab-content"
+      class="pf-v5-c-tab-content default"
       data-ouia-component-type="PF5/TabContent"
       data-ouia-safe="true"
       hidden=""
@@ -1434,7 +1434,7 @@ exports[`should render tabs with separate content 1`] = `
     </section>
     <section
       aria-label="Tab item 3"
-      class="pf-v5-c-tab-content"
+      class="pf-v5-c-tab-content default"
       data-ouia-component-type="PF5/TabContent"
       data-ouia-safe="true"
       hidden=""
@@ -1561,7 +1561,7 @@ exports[`should render uncontrolled tabs 1`] = `
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     id="pf-tab-section-0-tab1"
@@ -1572,7 +1572,7 @@ exports[`should render uncontrolled tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-1-tab2"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1584,7 +1584,7 @@ exports[`should render uncontrolled tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-2-tab3"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1596,7 +1596,7 @@ exports[`should render uncontrolled tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-3-tab4"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1719,7 +1719,7 @@ exports[`should render vertical tabs 1`] = `
   </div>
   <section
     aria-labelledby="pf-tab-0-tab1"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     id="pf-tab-section-0-tab1"
@@ -1730,7 +1730,7 @@ exports[`should render vertical tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-1-tab2"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1742,7 +1742,7 @@ exports[`should render vertical tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-2-tab3"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""
@@ -1754,7 +1754,7 @@ exports[`should render vertical tabs 1`] = `
   </section>
   <section
     aria-labelledby="pf-tab-3-tab4"
-    class="pf-v5-c-tab-content"
+    class="pf-v5-c-tab-content default"
     data-ouia-component-type="PF5/TabContent"
     data-ouia-safe="true"
     hidden=""

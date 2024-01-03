@@ -63,7 +63,7 @@ exports[`Masthead verify inline display breakpoints 1`] = `
 exports[`Masthead verify inset2xl inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-2xl pf-m-inset-2xl-on-sm pf-m-inset-2xl-on-md pf-m-inset-2xl-on-lg pf-m-inset-2xl-on-xl pf-m-inset-2xl-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-2xl"
   >
     test
   </header>
@@ -83,7 +83,7 @@ exports[`Masthead verify inset3xl inset breakpoints 1`] = `
 exports[`Masthead verify insetLg inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-lg pf-m-inset-lg-on-sm pf-m-inset-lg-on-md pf-m-inset-lg-on-lg pf-m-inset-lg-on-xl pf-m-inset-lg-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-lg"
   >
     test
   </header>
@@ -93,7 +93,7 @@ exports[`Masthead verify insetLg inset breakpoints 1`] = `
 exports[`Masthead verify insetMd inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-md pf-m-inset-md-on-sm pf-m-inset-md-on-md pf-m-inset-md-on-lg pf-m-inset-md-on-xl pf-m-inset-md-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-md"
   >
     test
   </header>
@@ -103,7 +103,7 @@ exports[`Masthead verify insetMd inset breakpoints 1`] = `
 exports[`Masthead verify insetNone inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-none pf-m-inset-none-on-sm pf-m-inset-none-on-md pf-m-inset-none-on-lg pf-m-inset-none-on-xl pf-m-inset-none-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-none"
   >
     test
   </header>
@@ -113,7 +113,7 @@ exports[`Masthead verify insetNone inset breakpoints 1`] = `
 exports[`Masthead verify insetSm inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-sm pf-m-inset-sm-on-sm pf-m-inset-sm-on-md pf-m-inset-sm-on-lg pf-m-inset-sm-on-xl pf-m-inset-sm-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-sm"
   >
     test
   </header>
@@ -123,7 +123,7 @@ exports[`Masthead verify insetSm inset breakpoints 1`] = `
 exports[`Masthead verify insetXl inset breakpoints 1`] = `
 <DocumentFragment>
   <header
-    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-xl pf-m-inset-xl-on-sm pf-m-inset-xl-on-md pf-m-inset-xl-on-lg pf-m-inset-xl-on-xl pf-m-inset-xl-on-2xl"
+    class="pf-v5-c-masthead pf-m-display-inline-on-md pf-m-inset-xl"
   >
     test
   </header>
