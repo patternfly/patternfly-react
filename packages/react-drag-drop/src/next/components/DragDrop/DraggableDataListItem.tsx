@@ -15,8 +15,6 @@ export interface DraggableDataListItemObject {
 export interface DraggableDataListItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside DragDrop */
   children?: React.ReactNode;
-  /** Don't wrap the component in a div. Requires passing a single child. */
-  hasNoWrapper?: boolean;
   /** Class to add to outer div */
   className?: string;
   /** @hide Id of the sortable context. */

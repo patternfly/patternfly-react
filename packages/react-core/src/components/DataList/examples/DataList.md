@@ -14,7 +14,7 @@ propComponents:
     'DataListToggle',
     'DataListContent',
     'DataListDragButton',
-    'DataListControl',
+    'DataListControl'
   ]
 ---
 
@@ -86,14 +86,15 @@ import global_BorderWidth_sm from '@patternfly/react-tokens/dist/esm/global_Bord
 
 ### Draggable
 
-Note: There is a new recommended drag and drop implementation that has full keyboard functionality. Examples and details may be located [here](/components/drag-and-drop/react-next).
+Note: There is a new recommended drag and drop implementation with full keyboard functionality, which replaces this implementation. To adhere to our new recommendations, refer to these related [drag and drop examples](/components/drag-and-drop/react-next).
 
-Draggable data lists used to have their own HTML5-based API for drag and drop, which wasn't able to fulfill requirements such as custom styling on items being dragged. So we wrote generic `DragDrop`, `Draggable`, and `Droppable` components for this purpose. Use those new components instead of the deprecated (and buggy!) HTML5-based API. Keyboard accessibility and screen reader accessibility for the `DragDrop` component are still in development.
+Previously, draggable data lists had their own API for the [drag and drop component](/components/drag-and-drop), which wasn't flexible enough to allow custom styling for items as they are dragged. To address this disparity, `<DragDrop>`, `<Draggable>`, and `<Droppable>` components were added to replace our now deprecated HTML5-based API.
+
+Note that keyboard and screen reader accessibility functionality for the `<DragDrop>` component are still in development.
 
 ```ts isBeta file="./DataListDraggable.tsx"
 
 ```
-
 
 ### Small grid breakpoint
 
