@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { Modal, ModalBoxBody, ModalBoxFooter, ModalBoxHeader } from '@patternfly/react-core/next';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from '@patternfly/react-core/next';
 
 export const ModalTitleIcon: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -20,8 +20,8 @@ export const ModalTitleIcon: React.FunctionComponent = () => {
         aria-labelledby="title-icon-modal-title"
         onClose={handleModalToggle}
       >
-        <ModalBoxHeader title="Title icon modal" titleIconVariant="warning" labelId="title-icon-modal-title" />
-        <ModalBoxBody>
+        <ModalHeader title="Title icon modal" titleIconVariant="warning" labelId="title-icon-modal-title" />
+        <ModalBody>
           <span id="modal-title-icon-description">
             When static text describing the modal is available outside of the modal header, it can be given an ID that
             is then passed in as the modal's aria-describedby value.
@@ -33,15 +33,15 @@ export const ModalTitleIcon: React.FunctionComponent = () => {
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={handleModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={handleModalToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     </React.Fragment>
   );

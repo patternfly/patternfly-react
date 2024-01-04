@@ -9,11 +9,11 @@ import { OUIAProps, getDefaultOUIAId } from '../../../helpers';
 export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** The parent container to append the modal to. Defaults to "document.body". */
   appendTo?: HTMLElement | (() => HTMLElement);
-  /** Id to use for the modal box description. This should match the ModalBoxHeader labelId or descriptorId. */
+  /** Id to use for the modal box description. This should match the ModalHeader labelId or descriptorId. */
   'aria-describedby'?: string;
-  /**   Adds an accessible name to the modal when there is no title in the ModalBoxHeader. */
+  /**   Adds an accessible name to the modal when there is no title in the ModalHeader. */
   'aria-label'?: string;
-  /** Id to use for the modal box label. This should include the ModalBoxHeader labelId. */
+  /** Id to use for the modal box label. This should include the ModalHeader labelId. */
   'aria-labelledby'?: string;
   /** Content rendered inside the modal. */
   children: React.ReactNode;

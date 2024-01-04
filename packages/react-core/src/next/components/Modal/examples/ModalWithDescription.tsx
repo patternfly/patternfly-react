@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { Modal, ModalBoxBody, ModalBoxHeader, ModalBoxFooter, ModalVariant } from '@patternfly/react-core/next';
+import { Modal, ModalBody, ModalHeader, ModalFooter, ModalVariant } from '@patternfly/react-core/next';
 
 export const ModalWithDescription: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -21,13 +21,13 @@ export const ModalWithDescription: React.FunctionComponent = () => {
         aria-labelledby="modal-with-description-title"
         aria-describedby="modal-box-body-with-description"
       >
-        <ModalBoxHeader
+        <ModalHeader
           title="Modal with description"
           labelId="modal-with-description-title"
           description="A description is used when you want to provide more info about the modal than the title is able to describe. The content in the description is static and will not scroll with the rest of the modal body."
         />
 
-        <ModalBoxBody tabIndex={0} id="modal-box-body-with-description">
+        <ModalBody tabIndex={0} id="modal-box-body-with-description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Semper auctor neque vitae
           tempus. Diam donec adipiscing tristique risus. Augue eget arcu dictum varius duis. Ut enim blandit volutpat
@@ -65,15 +65,15 @@ export const ModalWithDescription: React.FunctionComponent = () => {
           varius vel pharetra vel turpis. Morbi tristique senectus et netus et. Eget aliquet nibh praesent tristique
           magna sit amet purus gravida. Nisl purus in mollis nunc sed id semper risus. Id neque aliquam vestibulum
           morbi. Mauris a diam maecenas sed enim ut sem. Egestas tellus rutrum tellus pellentesque.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={handleModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={handleModalToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     </React.Fragment>
   );

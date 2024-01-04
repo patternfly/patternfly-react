@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form, FormGroup, Popover, TextInput } from '@patternfly/react-core';
-import { Modal, ModalBoxBody, ModalBoxFooter, ModalBoxHeader, ModalVariant } from '@patternfly/react-core/next';
+import { Modal, ModalBody, ModalFooter, ModalHeader, ModalVariant } from '@patternfly/react-core/next';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
@@ -37,13 +37,13 @@ export const ModalWithForm: React.FunctionComponent = () => {
         aria-labelledby="form-modal-title"
         aria-describedby="modal-box-description-form"
       >
-        <ModalBoxHeader
+        <ModalHeader
           title="Create account"
           description="Enter your personal information below to create an account."
           descriptorId="modal-box-description-form"
           labelId="form-modal-title"
         />
-        <ModalBoxBody>
+        <ModalBody>
           <Form id="modal-with-form-form">
             <FormGroup
               label="Name"
@@ -196,15 +196,15 @@ export const ModalWithForm: React.FunctionComponent = () => {
               />
             </FormGroup>
           </Form>
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="create" variant="primary" form="modal-with-form-form" onClick={handleModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={handleModalToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     </React.Fragment>
   );

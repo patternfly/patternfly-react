@@ -2,7 +2,7 @@
 id: Modal
 section: components
 cssPrefix: pf-v5-c-modal-box
-propComponents: ['Modal', 'ModalBoxBody', 'ModalBoxHeader', 'ModalBoxFooter']
+propComponents: ['Modal', 'ModalBody', 'ModalHeader', 'ModalFooter']
 ouia: true
 beta: true
 ---
@@ -11,7 +11,6 @@ import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
 ## Examples
@@ -22,7 +21,7 @@ Basic modals give users the option to either confirm or cancel an action.
 
 To flag an open modal, use the `isOpen` property. To execute a callback when a modal is closed, use the `onClose` property.
 
-A modal must have a `<ModalBoxBody>`, containing the main content of the modal. The `<ModalBoxHeader>` and `<ModalBoxFooter>` components are not required, but are typically used to display the modal title and any button actions, respectively. 
+A modal must have a `<ModalBody>`, containing the main content of the modal. The `<ModalHeader>` and `<ModalFooter>` components are not required, but are typically used to display the modal title and any button actions, respectively. 
 
 ```ts file="./ModalBasic.tsx"
 
@@ -30,7 +29,7 @@ A modal must have a `<ModalBoxBody>`, containing the main content of the modal. 
 
 ### Scrollable modals
 
-To enable keyboard-accessible scrolling of a modal’s content, pass `tabIndex={0}` to the `<ModalBoxBody>`.
+To enable keyboard-accessible scrolling of a modal’s content, pass `tabIndex={0}` to the `<ModalBody>`.
 
 ```ts file="ModalWithOverflowingContent.tsx"
 
@@ -72,7 +71,7 @@ To choose a specific width for a modal, use the `width` property. The following 
 
 ### Custom header
 
-To add a custom header to a modal, your custom content must be passed as a child of the `<ModalBoxHeader>` component. Do not pass the `title` property to `<ModalBoxHeader>` when using a custom header. 
+To add a custom header to a modal, your custom content must be passed as a child of the `<ModalHeader>` component. Do not pass the `title` property to `<ModalHeader>` when using a custom header. 
 
 ```ts file="./ModalCustomHeader.tsx"
 

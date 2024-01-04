@@ -4,20 +4,22 @@ import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import { ModalBoxDescription } from './ModalBoxDescription';
 import { ModalBoxTitle } from './ModalBoxTitle';
 
-export interface ModalBoxHeaderProps {
-  /** Custom content rendered inside the modal box header. If children are supplied then the tile, tileIconVariant and titleScreenReaderText props are ignored. */
+/** Renders content in the header of the modal */
+
+export interface ModalHeaderProps {
+  /** Custom content rendered inside the modal header. If children are supplied then the tile, tileIconVariant and titleScreenReaderText props are ignored. */
   children?: React.ReactNode;
-  /** Additional classes added to the modal box header. */
+  /** Additional classes added to the modal header. */
   className?: string;
   /** Description of the modal. */
   description?: React.ReactNode;
-  /** Id of the modal box description. */
+  /** Id of the modal description. */
   descriptorId?: string;
-  /** Optional help section for the modal box header. */
+  /** Optional help section for the modal header. */
   help?: React.ReactNode;
-  /** Id of the modal box title. */
+  /** Id of the modal title. */
   labelId?: string;
-  /** Content rendered inside the modal box title. */
+  /** Content rendered inside the modal title. */
   title?: React.ReactNode;
   /** Optional alert icon (or other) to show before the title. When the predefined alert types
    * are used the default styling will be automatically applied. */
@@ -26,7 +28,7 @@ export interface ModalBoxHeaderProps {
   titleScreenReaderText?: string;
 }
 
-export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
+export const ModalHeader: React.FunctionComponent<ModalHeaderProps> = ({
   children,
   className,
   descriptorId,
@@ -37,7 +39,7 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
   titleScreenReaderText,
   help,
   ...props
-}: ModalBoxHeaderProps) => {
+}: ModalHeaderProps) => {
   const headerContent = children ? (
     children
   ) : (
@@ -66,4 +68,4 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
     </header>
   );
 };
-ModalBoxHeader.displayName = 'ModalBoxHeader';
+ModalHeader.displayName = 'ModalHeader';

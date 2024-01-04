@@ -8,11 +8,11 @@ import { ModalBoxCloseButton } from './ModalBoxCloseButton';
 import { ModalBox } from './ModalBox';
 
 export interface ModalContentProps extends OUIAProps {
-  /** Id to use for the modal box description. This should match the ModalBoxHeader labelId or descriptorId. */
+  /** Id to use for the modal box description. This should match the ModalHeader labelId or descriptorId. */
   'aria-describedby'?: string;
   /** Accessible descriptor of the modal. */
   'aria-label'?: string;
-  /** Id to use for the modal box label. This should include the ModalBoxHeader labelId. */
+  /** Id to use for the modal box label. This should include the ModalHeader labelId. */
   'aria-labelledby'?: string;
   /** Id of the modal box container. */
   boxId: string;

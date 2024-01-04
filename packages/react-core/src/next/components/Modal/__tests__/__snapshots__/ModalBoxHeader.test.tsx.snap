@@ -14,7 +14,7 @@ exports[`Modal Test with custom header 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ModalBoxHeader Test 1`] = `
+exports[`ModalHeader Test 1`] = `
 <DocumentFragment>
   <header
     class="pf-v5-c-modal-box__header"
@@ -24,7 +24,7 @@ exports[`ModalBoxHeader Test 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ModalBoxHeader help renders 1`] = `
+exports[`ModalHeader help renders 1`] = `
 <DocumentFragment>
   <header
     class="pf-v5-c-modal-box__header pf-m-help"

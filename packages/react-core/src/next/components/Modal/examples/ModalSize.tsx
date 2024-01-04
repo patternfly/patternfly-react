@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Radio } from '@patternfly/react-core';
-import { Modal, ModalBoxBody, ModalBoxFooter, ModalBoxHeader, ModalVariant } from '@patternfly/react-core/next';
+import { Modal, ModalBody, ModalFooter, ModalHeader, ModalVariant } from '@patternfly/react-core/next';
 
 export const ModalSize: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -41,22 +41,22 @@ export const ModalSize: React.FunctionComponent = () => {
         aria-labelledby="variant-modal-title"
         aria-describedby="modal-box-body-variant"
       >
-        <ModalBoxHeader title="Small modal" labelId="variant-modal-title" />
-        <ModalBoxBody id="modal-box-body-variant">
+        <ModalHeader title="Small modal" labelId="variant-modal-title" />
+        <ModalBody id="modal-box-body-variant">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={handleModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={handleModalToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     </React.Fragment>
   );

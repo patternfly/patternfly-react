@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Dropdown, DropdownList, DropdownItem, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
 
-import { Modal, ModalBoxBody, ModalBoxHeader, ModalBoxFooter, ModalVariant } from '@patternfly/react-core/next';
+import { Modal, ModalBody, ModalHeader, ModalFooter, ModalVariant } from '@patternfly/react-core/next';
 
 export const ModalWithDropdown: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -48,8 +48,8 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
         aria-labelledby="modal-with-dropdown"
         aria-describedby="modal-box-body-with-dropdown"
       >
-        <ModalBoxHeader title="Dropdown modal" labelId="modal-with-dropdown" />
-        <ModalBoxBody id="modal-box-body-with-dropdown">
+        <ModalHeader title="Dropdown modal" labelId="modal-with-dropdown" />
+        <ModalBody id="modal-box-body-with-dropdown">
           <div>
             Set the dropdown <strong>menuAppendTo</strong> prop to <em>parent</em> in order to allow the dropdown menu
             break out of the modal container. You'll also want to handle closing of the modal yourself, by listening to
@@ -90,15 +90,15 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
               </DropdownList>
             </Dropdown>
           </div>
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={handleModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={handleModalToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     </React.Fragment>
   );

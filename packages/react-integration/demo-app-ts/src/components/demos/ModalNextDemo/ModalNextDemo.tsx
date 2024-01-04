@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Title, TitleSizes } from '@patternfly/react-core';
-import { Modal, ModalBoxHeader, ModalBoxBody, ModalBoxFooter, ModalVariant } from '@patternfly/react-core/next';
+import { Modal, ModalHeader, ModalBody, ModalFooter, ModalVariant } from '@patternfly/react-core/next';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
@@ -128,22 +128,22 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         aria-labelledby="basic-modal-title"
         aria-describedby="modal-box-body-basic"
       >
-        <ModalBoxHeader title="Modal Header" labelId="basic-modal-title" />
-        <ModalBoxBody id="modal-box-body-basic">
+        <ModalHeader title="Modal Header" labelId="basic-modal-title" />
+        <ModalBody id="modal-box-body-basic">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" data-id="modal-01-confirm-btn" variant="primary" onClick={this.handleModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" data-id="modal-01-cancel-btn" variant="link" onClick={this.handleModalToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -159,28 +159,28 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         aria-labelledby="with-description-modal-title"
         aria-describedby="modal-box-with-description-descriptor"
       >
-        <ModalBoxHeader
+        <ModalHeader
           title="Modal Header"
           labelId="with-description-modal-title"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua."
           descriptorId="modal-box-with-description-descriptor"
         />
-        <ModalBoxBody id="modal-box-body-with-description">
+        <ModalBody id="modal-box-body-with-description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleModalDescriptionToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={this.handleModalDescriptionToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -197,22 +197,22 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         aria-labelledby="small-modal-title"
         aria-describedby="modal-box-body-small"
       >
-        <ModalBoxHeader title="Modal Header" labelId="small-modal-title" />
-        <ModalBoxBody id="modal-box-body-small">
+        <ModalHeader title="Modal Header" labelId="small-modal-title" />
+        <ModalBody id="modal-box-body-small">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleSmallModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={this.handleSmallModalToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -228,22 +228,22 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         aria-labelledby="medium-modal-title"
         aria-describedby="modal-box-body-medium"
       >
-        <ModalBoxHeader title="Modal Header" labelId="medium-modal-title" />
-        <ModalBoxBody id="modal-box-body-medium">
+        <ModalHeader title="Modal Header" labelId="medium-modal-title" />
+        <ModalBody id="modal-box-body-medium">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleMediumModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={this.handleMediumModalToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -259,22 +259,22 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         aria-labelledby="large-modal-title"
         aria-describedby="modal-box-body-large"
       >
-        <ModalBoxHeader title="Modal Header" labelId="large-modal-title" />
-        <ModalBoxBody id="modal-box-body-large">
+        <ModalHeader title="Modal Header" labelId="large-modal-title" />
+        <ModalBody id="modal-box-body-large">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleLargeModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={this.handleLargeModalToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -290,22 +290,22 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         aria-labelledby="half-width-modal-title"
         aria-describedby="modal-box-body-half-width"
       >
-        <ModalBoxHeader title="Modal Header" labelId="half-width-modal-title" />
-        <ModalBoxBody id="modal-box-body-half-width">
+        <ModalHeader title="Modal Header" labelId="half-width-modal-title" />
+        <ModalBody id="modal-box-body-half-width">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleHalfWidthModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={this.handleHalfWidthModalToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -320,15 +320,15 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         aria-labelledby="customHeaderTitle"
         aria-describedby="custom-header-example"
       >
-        <ModalBoxHeader>
+        <ModalHeader>
           <Title id="customHeaderTitle" headingLevel="h1" size={TitleSizes['2xl']}>
             Custom Modal Header/Footer
           </Title>
           <p id="customHeaderDescription" className={spacing.ptSm}>
             Allows for custom content in the header and/or footer by passing components.
           </p>
-        </ModalBoxHeader>
-        <ModalBoxBody>
+        </ModalHeader>
+        <ModalBody>
           <span id="custom-header-example">
             When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
             aria-describedby value.
@@ -338,13 +338,13 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Title id="customFooterTitle" headingLevel="h4" size={TitleSizes.md}>
             <WarningTriangleIcon />
             <span className={spacing.plSm}>Custom modal footer.</span>
           </Title>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -360,7 +360,7 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         aria-describedby="no-header-example"
         onClose={this.handleNoHeaderModalToggle}
       >
-        <ModalBoxBody>
+        <ModalBody>
           <span id="no-header-example">
             When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
             aria-describedby value.
@@ -368,12 +368,12 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleNoHeaderModalToggle}>
             Close
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -389,22 +389,22 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         onEscapePress={(event: any) => this.handleModalCustomEscapeToggle(event, true)}
         aria-labelledby="custom-escape-modal-title"
       >
-        <ModalBoxHeader title="Modal Header" labelId="custom-escape-modal-title" />
-        <ModalBoxBody id="custom-escape-example">
+        <ModalHeader title="Modal Header" labelId="custom-escape-modal-title" />
+        <ModalBody id="custom-escape-example">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleModalCustomEscapeToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={this.handleModalCustomEscapeToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -419,22 +419,22 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         aria-describedby="modal-box-body-alert"
         aria-labelledby="alert-modal-title"
       >
-        <ModalBoxHeader title="Modal Header" labelId="alert-modal-title" titleIconVariant="warning" />
-        <ModalBoxBody id="modal-box-body-alert">
+        <ModalHeader title="Modal Header" labelId="alert-modal-title" titleIconVariant="warning" />
+        <ModalBody id="modal-box-body-alert">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleModalAlertVariantToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={this.handleModalAlertVariantToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -451,22 +451,22 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         aria-describedby="modal-box-body-help"
         aria-labelledby="help-modal-title"
       >
-        <ModalBoxHeader title="Modal Header" labelId="help-modal-title" help={<Button variant="plain">Help</Button>} />
-        <ModalBoxBody id="modal-box-body-help">
+        <ModalHeader title="Modal Header" labelId="help-modal-title" help={<Button variant="plain">Help</Button>} />
+        <ModalBody id="modal-box-body-help">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleHelpModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={this.handleHelpModalToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -482,19 +482,19 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         aria-describedby="modal-box-body-focus"
         aria-labelledby="focus-modal-title"
       >
-        <ModalBoxHeader
+        <ModalHeader
           title="Modal with custom focus"
           labelId="focus-modal-title"
           help={<Button variant="plain">Help</Button>}
         />
-        <ModalBoxBody id="modal-box-body-focus">
+        <ModalBody id="modal-box-body-focus">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button
             id="modal-custom-focus-confirm-button"
             key="confirm"
@@ -511,7 +511,7 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
           >
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     );
   }

@@ -1,4 +1,4 @@
 export * from './Modal';
-export * from './ModalBoxBody';
-export * from './ModalBoxHeader';
-export * from './ModalBoxFooter';
+export * from './ModalBody';
+export * from './ModalHeader';
+export * from './ModalFooter';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { Modal, ModalBoxBody, ModalBoxFooter, ModalBoxHeader } from '@patternfly/react-core/next';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from '@patternfly/react-core/next';
 
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
@@ -22,12 +22,12 @@ export const ModalCustomTitleIcon: React.FunctionComponent = () => {
         aria-describedby="modal-custom-icon-description"
         aria-labelledby="custom-title-icon-modal-title"
       >
-        <ModalBoxHeader
+        <ModalHeader
           title="Custom title icon modal"
           titleIconVariant={BullhornIcon}
           labelId="custom-title-icon-modal-title"
         />
-        <ModalBoxBody>
+        <ModalBody>
           <span id="modal-custom-icon-description">
             When static text describing the modal is available outside of the modal header, it can be given an ID that
             is then passed in as the modal's aria-describedby value.
@@ -39,15 +39,15 @@ export const ModalCustomTitleIcon: React.FunctionComponent = () => {
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={handleModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={handleModalToggle}>
             Cancel
           </Button>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     </React.Fragment>
   );

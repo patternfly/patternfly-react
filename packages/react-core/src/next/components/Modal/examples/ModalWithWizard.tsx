@@ -29,7 +29,6 @@ export const ModalWithWizard: React.FunctionComponent = () => {
         isOpen={isModalOpen}
         aria-labelledby="modal-wizard-label"
         aria-describedby="modal-wizard-description"
-        onClose={handleModalToggle}
       >
         <Wizard
           height={400}

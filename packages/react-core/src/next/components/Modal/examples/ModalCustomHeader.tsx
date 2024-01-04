@@ -1,9 +1,8 @@
 import React from 'react';
-import { Button, Title, TitleSizes } from '@patternfly/react-core';
-import { Modal, ModalBoxBody, ModalBoxFooter, ModalBoxHeader, ModalVariant } from '@patternfly/react-core/next';
+import { Button, Title, TitleSizes, TextContent, Flex } from '@patternfly/react-core';
+import { Modal, ModalBody, ModalFooter, ModalHeader, ModalVariant } from '@patternfly/react-core/next';
 
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -24,15 +23,15 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
         aria-labelledby="modal-custom-header-label"
         aria-describedby="modal-custom-header-description"
       >
-        <ModalBoxHeader>
-          <Title id="modal-custom-header-label" headingLevel="h1" size={TitleSizes['2xl']}>
-            Custom header modal
-          </Title>
-          <p className={spacing.ptSm}>
-            Add custom content to the header by not passing the titles prop the modal box header component.
-          </p>
-        </ModalBoxHeader>
-        <ModalBoxBody>
+        <ModalHeader>
+          <TextContent>
+            <Title id="modal-custom-header-label" headingLevel="h1" size={TitleSizes['2xl']}>
+              Custom header modal
+            </Title>
+            <p>Add custom content to the header by not passing the titles prop the modal box header component.</p>
+          </TextContent>
+        </ModalHeader>
+        <ModalBody>
           <span id="modal-custom-header-description">
             When static text describing the modal is available outside of the modal header, it can be given an ID that
             is then passed in as the modal's aria-describedby value.
@@ -44,13 +43,15 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
-        <ModalBoxFooter>
+        </ModalBody>
+        <ModalFooter>
           <Title headingLevel="h4" size={TitleSizes.md}>
-            <WarningTriangleIcon />
-            <span className={spacing.plSm}>Custom modal footer.</span>
+            <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+              <WarningTriangleIcon />
+              <span>Custom modal footer.</span>
+            </Flex>
           </Title>
-        </ModalBoxFooter>
+        </ModalFooter>
       </Modal>
     </React.Fragment>
   );

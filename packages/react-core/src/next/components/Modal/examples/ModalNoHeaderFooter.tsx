@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { Modal, ModalBoxBody, ModalVariant } from '@patternfly/react-core/next';
+import { Modal, ModalBody, ModalVariant } from '@patternfly/react-core/next';
 
 export const ModalNoHeaderFooter: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -21,7 +21,7 @@ export const ModalNoHeaderFooter: React.FunctionComponent = () => {
         aria-describedby="modal-no-header-description"
         onClose={handleModalToggle}
       >
-        <ModalBoxBody>
+        <ModalBody>
           <span id="modal-no-header-description">
             When static text describing the modal is available outside of the modal header, it can be given an ID that
             is then passed in as the modal's aria-describedby value.
@@ -33,7 +33,7 @@ export const ModalNoHeaderFooter: React.FunctionComponent = () => {
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
-        </ModalBoxBody>
+        </ModalBody>
       </Modal>
     </React.Fragment>
   );
