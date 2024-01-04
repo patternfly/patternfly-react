@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
-import { AccordionContext } from './AccordionContext';
+import { AccordionContext, AccordionItemContext } from './AccordionContext';
 import { AccordionExpandableContentBody } from './AccordionExpandableContentBody';
 
 export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
@@ -11,8 +11,6 @@ export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Identify the AccordionContent item  */
   id?: string;
-  /** Flag to show if the expanded content of the Accordion item is visible  */
-  isHidden?: boolean;
   /** Flag to indicate Accordion content is fixed  */
   isFixed?: boolean;
   /** Adds accessible text to the Accordion content */
@@ -29,7 +27,6 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
   className = '',
   children = null,
   id = '',
-  isHidden = false,
   isFixed = false,
   isCustomContent = false,
   'aria-label': ariaLabel = '',
@@ -39,16 +36,17 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
 }: AccordionContentProps) => {
   const [hasScrollbar, setHasScrollbar] = React.useState(false);
   const containerRef = React.useRef(null);
+  const { isExpanded } = React.useContext(AccordionItemContext);
 
   React.useEffect(() => {
-    if (containerRef?.current && isFixed && !isHidden) {
+    if (containerRef?.current && isFixed && isExpanded) {
       const { offsetHeight, scrollHeight } = containerRef.current;
 
       setHasScrollbar(offsetHeight < scrollHeight);
     } else if (!isFixed) {
       setHasScrollbar(false);
     }
-  }, [containerRef, isFixed, isHidden]);
+  }, [containerRef, isFixed, isExpanded]);
 
   return (
     <AccordionContext.Consumer>
@@ -58,13 +56,8 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
           <Container
             ref={containerRef}
             id={id}
-            className={css(
-              styles.accordionExpandableContent,
-              isFixed && styles.modifiers.fixed,
-              !isHidden && styles.modifiers.expanded,
-              className
-            )}
-            hidden={isHidden}
+            className={css(styles.accordionExpandableContent, isFixed && styles.modifiers.fixed, className)}
+            hidden={!isExpanded}
             {...(ariaLabel && { 'aria-label': ariaLabel })}
             {...(ariaLabelledby && { 'aria-labelledby': ariaLabelledby })}
             {...(hasScrollbar && { tabIndex: 0 })}

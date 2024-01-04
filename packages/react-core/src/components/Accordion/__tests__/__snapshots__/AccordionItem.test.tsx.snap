@@ -2,6 +2,10 @@
 
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
-  Test
+  <div
+    class="pf-v5-c-accordion__item"
+  >
+    Test
+  </div>
 </DocumentFragment>
 `;

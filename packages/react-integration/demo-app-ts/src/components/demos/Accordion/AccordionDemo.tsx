@@ -15,15 +15,11 @@ export const AccordionDemo = () => {
   return (
     <>
       <Accordion asDefinitionList={false}>
-        <AccordionItem>
-          <AccordionToggle
-            id={`divAccordion-item1-toggle`}
-            onClick={() => onToggle('divAccordion-item1-toggle')}
-            isExpanded={expanded === 'divAccordion-item1-toggle'}
-          >
+        <AccordionItem isExpanded={expanded === 'divAccordion-item1-toggle'}>
+          <AccordionToggle id={`divAccordion-item1-toggle`} onClick={() => onToggle('divAccordion-item1-toggle')}>
             Div item one
           </AccordionToggle>
-          <AccordionContent id={`divAccordion-item1-content`} isHidden={expanded !== 'divAccordion-item1-toggle'}>
+          <AccordionContent id={`divAccordion-item1-content`}>
             <p>
               Donec vel posuere orci. Phasellus quis tortor a ex hendrerit efficitur. Aliquam lacinia ligula pharetra,
               sagittis ex ut, pellentesque diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
@@ -44,38 +40,22 @@ export const AccordionDemo = () => {
             </p>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem>
-          <AccordionToggle
-            id={`divAccordion-item2-toggle`}
-            onClick={() => onToggle('divAccordion-item2-toggle')}
-            isExpanded={expanded === 'divAccordion-item2-toggle'}
-          >
+        <AccordionItem isExpanded={expanded === 'divAccordion-item2-toggle'}>
+          <AccordionToggle id={`divAccordion-item2-toggle`} onClick={() => onToggle('divAccordion-item2-toggle')}>
             Div item two
           </AccordionToggle>
-          <AccordionContent
-            id={`divAccordion-item2-content`}
-            isFixed
-            isHidden={expanded !== 'divAccordion-item2-toggle'}
-          >
+          <AccordionContent id={`divAccordion-item2-content`} isFixed>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </p>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem>
-          <AccordionToggle
-            id={`divAccordion-item3-toggle`}
-            onClick={() => onToggle('divAccordion-item3-toggle')}
-            isExpanded={expanded === 'divAccordion-item3-toggle'}
-          >
+        <AccordionItem isExpanded={expanded === 'divAccordion-item3-toggle'}>
+          <AccordionToggle id={`divAccordion-item3-toggle`} onClick={() => onToggle('divAccordion-item3-toggle')}>
             Div item three
           </AccordionToggle>
-          <AccordionContent
-            id={`divAccordion-item3-content`}
-            isFixed
-            isHidden={expanded !== 'divAccordion-item3-toggle'}
-          >
+          <AccordionContent id={`divAccordion-item3-content`} isFixed>
             <p>
               Donec vel posuere orci. Phasellus quis tortor a ex hendrerit efficitur. Aliquam lacinia ligula pharetra,
               sagittis ex ut, pellentesque diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
@@ -99,11 +79,9 @@ export const AccordionDemo = () => {
       </Accordion>
       <br />
       <Accordion>
-        <AccordionItem>
-          <AccordionToggle id={`definitionListAccordion-item1-toggle`} isExpanded={true}>
-            Definition list item one
-          </AccordionToggle>
-          <AccordionContent id={`definitionListAccordion-item1-content`} isFixed isHidden={false}>
+        <AccordionItem isExpanded={true}>
+          <AccordionToggle id={`definitionListAccordion-item1-toggle`}>Definition list item one</AccordionToggle>
+          <AccordionContent id={`definitionListAccordion-item1-content`} isFixed>
             <p>
               Donec vel posuere orci. Phasellus quis tortor a ex hendrerit efficitur. Aliquam lacinia ligula pharetra,
               sagittis ex ut, pellentesque diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
