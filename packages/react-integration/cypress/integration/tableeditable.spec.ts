@@ -73,7 +73,7 @@ describe('Table Simple Test', () => {
       '.pf-m-inline-editable:nth-of-type(1) > .pf-v5-c-table__inline-edit-action > .pf-v5-c-inline-edit__group > :nth-child(1) > .pf-v5-c-button'
     ).click();
     cy.get(
-      '.pf-v5-c-inline-edit tbody tr:nth-of-type(1) > [data-label="Text input col 4"] .pf-v5-c-inline-edit__input .pf-m-error'
+      '.pf-v5-c-inline-edit tbody tr:nth-of-type(1) > [data-label="Text input col 4"] .pf-v5-c-inline-edit__input'
     ).should('have.text', 'Value cannot be "foo", Value must be at least 7 characters');
     cy.get(
       '.pf-m-inline-editable:nth-of-type(1) > .pf-v5-c-table__inline-edit-action > .pf-v5-c-inline-edit__group > :nth-child(2) > .pf-v5-c-button'
@@ -121,13 +121,13 @@ describe('Table Simple Test', () => {
       '.pf-m-inline-editable:nth-of-type(1) > .pf-v5-c-table__inline-edit-action > .pf-v5-c-inline-edit__group > :nth-child(1) > .pf-v5-c-button'
     ).click(); // attempt to submit invalid entries
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-m-error'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input'
     ).should('have.text', 'Value cannot be "foo", Value must be at least 7 characters'); // ensure first field receives relevant error texts
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 3"] > .pf-v5-c-inline-edit__input > .pf-m-error'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 3"] > .pf-v5-c-inline-edit__input'
     ).should('have.text', 'This field is required, Value must be at least 7 characters'); // ensure second field receives relevant error texts
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 4"] > .pf-v5-c-inline-edit__input > .pf-m-error'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 4"] > .pf-v5-c-inline-edit__input'
     ).should('have.text', 'Value must be at least 7 characters, Value cannot be xyz'); // ensure last field receives relevant error texts
     cy.get(
       '.pf-m-inline-editable:nth-of-type(1) > .pf-v5-c-table__inline-edit-action > .pf-v5-c-inline-edit__group > :nth-child(2) > .pf-v5-c-button'
@@ -150,10 +150,10 @@ describe('Table Simple Test', () => {
       '.pf-m-inline-editable:nth-of-type(1) > .pf-v5-c-table__inline-edit-action > .pf-v5-c-inline-edit__group > :nth-child(1) > .pf-v5-c-button'
     ).click(); // attempt to submit invalid entries
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-m-error'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input'
     ).should('have.text', 'Value cannot be "foo", Value must be at least 7 characters'); // ensure first field receives relevant error texts
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 3"] > .pf-v5-c-inline-edit__input > .pf-m-error'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 3"] > .pf-v5-c-inline-edit__input'
     ).should('have.text', 'This field is required, Value must be at least 7 characters'); // ensure second field receives relevant error texts
     cy.get(
       '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
@@ -167,7 +167,7 @@ describe('Table Simple Test', () => {
       '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 1"] > .pf-v5-c-inline-edit__input > .pf-v5-c-form-control > input'
     ).should('have.attr', 'aria-invalid', 'false'); // ensure first field releases error text
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 3"] > .pf-v5-c-inline-edit__input > .pf-m-error'
+      '.pf-m-inline-editable:nth-of-type(1) > [data-label="Text input col 3"] > .pf-v5-c-inline-edit__input'
     ).should('have.text', 'This field is required, Value must be at least 7 characters'); // ensure third field STILL has relevant error texts
     cy.get(
       '.pf-m-inline-editable:nth-of-type(1) > .pf-v5-c-table__inline-edit-action > .pf-v5-c-inline-edit__group > :nth-child(2) > .pf-v5-c-button'

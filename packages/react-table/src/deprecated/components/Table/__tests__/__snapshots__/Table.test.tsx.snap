@@ -10272,7 +10272,7 @@ exports[`Table simple Editable table 1`] = `
               </span>
               <div
                 aria-live="polite"
-                class="pf-v5-c-form__helper-text pf-m-error"
+                class="pf-v5-c-form__helper-text"
               />
             </div>
           </td>
@@ -10306,7 +10306,7 @@ exports[`Table simple Editable table 1`] = `
               </span>
               <div
                 aria-live="polite"
-                class="pf-v5-c-form__helper-text pf-m-error"
+                class="pf-v5-c-form__helper-text"
               />
             </div>
           </td>
@@ -10339,7 +10339,7 @@ exports[`Table simple Editable table 1`] = `
               </span>
               <div
                 aria-live="polite"
-                class="pf-v5-c-form__helper-text pf-m-error"
+                class="pf-v5-c-form__helper-text"
               />
             </div>
           </td>
@@ -10372,7 +10372,7 @@ exports[`Table simple Editable table 1`] = `
               </span>
               <div
                 aria-live="polite"
-                class="pf-v5-c-form__helper-text pf-m-error"
+                class="pf-v5-c-form__helper-text"
               />
             </div>
           </td>
@@ -10503,7 +10503,7 @@ exports[`Table simple Editable table 1`] = `
               </span>
               <div
                 aria-live="polite"
-                class="pf-v5-c-form__helper-text pf-m-error"
+                class="pf-v5-c-form__helper-text"
               />
             </div>
           </td>
@@ -10537,7 +10537,7 @@ exports[`Table simple Editable table 1`] = `
               </span>
               <div
                 aria-live="polite"
-                class="pf-v5-c-form__helper-text pf-m-error"
+                class="pf-v5-c-form__helper-text"
               />
             </div>
           </td>
@@ -10570,7 +10570,7 @@ exports[`Table simple Editable table 1`] = `
               </span>
               <div
                 aria-live="polite"
-                class="pf-v5-c-form__helper-text pf-m-error"
+                class="pf-v5-c-form__helper-text"
               />
             </div>
           </td>
@@ -10603,7 +10603,7 @@ exports[`Table simple Editable table 1`] = `
               </span>
               <div
                 aria-live="polite"
-                class="pf-v5-c-form__helper-text pf-m-error"
+                class="pf-v5-c-form__helper-text"
               />
             </div>
           </td>

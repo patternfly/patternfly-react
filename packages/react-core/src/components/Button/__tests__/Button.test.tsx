@@ -55,7 +55,8 @@ test('Renders with class pf-m-block when isBlock = true', () => {
   expect(screen.getByRole('button')).toHaveClass('pf-m-block');
 });
 
-test('Renders with class pf-m-active when isActive = true', () => {
+// TODO:  Reenable or remove with issue #9907
+xtest('Renders with class pf-m-active when isActive = true', () => {
   render(<Button isActive>Active Button</Button>);
   expect(screen.getByRole('button')).toHaveClass('pf-m-active');
 });

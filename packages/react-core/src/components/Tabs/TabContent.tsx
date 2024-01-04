@@ -27,10 +27,10 @@ export interface TabContentProps extends Omit<React.HTMLProps<HTMLElement>, 'ref
   ouiaSafe?: boolean;
 }
 
-const variantStyle = {
-  default: '',
-  light300: styles.modifiers.light_300
-};
+// TODO: Update with issue #9909
+// const variantStyle = {
+//   default: ''
+// };
 
 const TabContentBase: React.FunctionComponent<TabContentProps> = ({
   id,
@@ -60,10 +60,11 @@ const TabContentBase: React.FunctionComponent<TabContentProps> = ({
           <section
             ref={innerRef}
             hidden={children ? null : child.props.eventKey !== activeKey}
+            // TODO: Update "variant" with issue #9909
             className={
               children
-                ? css(styles.tabContent, className, variantStyle[variant])
-                : css(styles.tabContent, child.props.className, variantStyle[variant])
+                ? css(styles.tabContent, className, variant)
+                : css(styles.tabContent, child.props.className, variant)
             }
             id={children ? id : `pf-tab-section-${child.props.eventKey}-${id}`}
             aria-label={ariaLabel}

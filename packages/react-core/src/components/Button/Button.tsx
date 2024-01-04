@@ -94,6 +94,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   children = null,
   className = '',
   component = 'button',
+  // TODO: Update  eslint ignore when issue #9907 is resolved
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isActive = false,
   isBlock = false,
   isDisabled = false,
@@ -155,7 +157,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         isBlock && styles.modifiers.block,
         isDisabled && styles.modifiers.disabled,
         isAriaDisabled && styles.modifiers.ariaDisabled,
-        isActive && styles.modifiers.active,
+        // TODO: Update when issue #9907 is resolved
+        // isActive && styles.modifiers.active,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
         isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
         isLoading !== null && variant !== ButtonVariant.plain && styles.modifiers.progress,
