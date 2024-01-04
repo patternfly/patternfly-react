@@ -13,7 +13,8 @@ export enum ButtonVariant {
   warning = 'warning',
   link = 'link',
   plain = 'plain',
-  control = 'control'
+  control = 'control',
+  stateful = 'stateful'
 }
 
 export enum ButtonType {
@@ -26,6 +27,12 @@ export enum ButtonSize {
   default = 'default',
   sm = 'sm',
   lg = 'lg'
+}
+
+export enum ButtonState {
+  read = 'read',
+  unread = 'unread',
+  attention = 'attention'
 }
 
 export interface BadgeCountObject {
@@ -44,8 +51,8 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   className?: string;
   /** Sets the base component to render. defaults to button */
   component?: React.ElementType<any> | React.ComponentType<any>;
-  /** Adds active styling to button. */
-  isActive?: boolean;
+  /** Adds clicked styling to button. */
+  isClicked?: boolean;
   /** Adds block styling to button */
   isBlock?: boolean;
   /** Adds disabled styling and disables the button using the disabled html attribute */
@@ -69,7 +76,11 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   /** Sets button type */
   type?: 'button' | 'submit' | 'reset';
   /** Adds button variant styles */
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'warning' | 'link' | 'plain' | 'control';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'warning' | 'link' | 'plain' | 'control' | 'stateful';
+  /** Sets state of the stateful button variant. Default is "unread" */
+  state?: 'read' | 'unread' | 'attention';
+  /** Applies no padding on a plain button variant. Use when plain button is placed inline with text */
+  noPadding?: boolean;
   /** Sets position of the icon. Note: "left" and "right" are deprecated. Use "start" and "end" instead */
   iconPosition?: 'start' | 'end' | 'left' | 'right';
   /** Adds accessible text to the button. */
@@ -94,9 +105,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   children = null,
   className = '',
   component = 'button',
-  // TODO: Update  eslint ignore when issue #9907 is resolved
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  isActive = false,
+  isClicked = false,
   isBlock = false,
   isDisabled = false,
   isAriaDisabled = false,
@@ -110,6 +119,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   isInline = false,
   type = ButtonType.button,
   variant = ButtonVariant.primary,
+  state = ButtonState.unread,
+  noPadding = false,
   iconPosition = 'start',
   'aria-label': ariaLabel = null,
   icon = null,
@@ -157,12 +168,13 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         isBlock && styles.modifiers.block,
         isDisabled && styles.modifiers.disabled,
         isAriaDisabled && styles.modifiers.ariaDisabled,
-        // TODO: Update when issue #9907 is resolved
-        // isActive && styles.modifiers.active,
+        isClicked && styles.modifiers.clicked,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
         isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
         isLoading !== null && variant !== ButtonVariant.plain && styles.modifiers.progress,
         isLoading && styles.modifiers.inProgress,
+        noPadding && variant === ButtonVariant.plain && styles.modifiers.noPadding,
+        variant === ButtonVariant.stateful && styles.modifiers[state],
         size === ButtonSize.sm && styles.modifiers.small,
         size === ButtonSize.lg && styles.modifiers.displayLg,
         className

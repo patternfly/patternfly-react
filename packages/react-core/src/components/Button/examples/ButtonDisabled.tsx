@@ -1,39 +1,52 @@
 import React from 'react';
-import { Button } from '@patternfly/react-core';
+import { Button, Flex } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 
 export const ButtonDisabled: React.FunctionComponent = () => (
   <React.Fragment>
-    <Button isDisabled>Primary disabled</Button> <Button isDisabled>Secondary disabled</Button>{' '}
-    <Button variant="secondary" isDanger isDisabled>
-      Danger secondary disabled
-    </Button>{' '}
-    <Button isDisabled variant="tertiary">
-      Tertiary disabled
-    </Button>{' '}
-    <Button isDisabled variant="danger">
-      Danger disabled
-    </Button>{' '}
-    <Button isDisabled variant="warning">
-      Warning disabled
-    </Button>
+    <Flex columnGap={{ default: 'columnGapSm' }}>
+      <Button isDisabled>Primary</Button>
+      <Button variant="secondary" isDisabled>
+        Secondary
+      </Button>
+      <Button variant="secondary" isDanger isDisabled>
+        Danger secondary
+      </Button>
+      <Button isDisabled variant="tertiary">
+        Tertiary
+      </Button>
+      <Button isDisabled variant="danger">
+        Danger
+      </Button>
+      <Button isDisabled variant="warning">
+        Warning
+      </Button>
+    </Flex>
     <br />
+    <Flex columnGap={{ default: 'columnGapSm' }}>
+      <Button isDisabled variant="link" icon={<PlusCircleIcon />}>
+        Link
+      </Button>
+      <Button isDisabled variant="link" isInline>
+        Inline link
+      </Button>
+      <Button variant="link" isDanger isDisabled>
+        Danger link
+      </Button>
+      <Button isDisabled variant="plain" aria-label="Action">
+        <TimesIcon />
+      </Button>
+    </Flex>
     <br />
-    <Button isDisabled variant="link" icon={<PlusCircleIcon />}>
-      Link disabled
-    </Button>{' '}
-    <Button isDisabled variant="link" isInline>
-      Inline link disabled
-    </Button>{' '}
-    <Button variant="link" isDanger isDisabled>
-      Danger link disabled
-    </Button>{' '}
-    <Button isDisabled variant="plain" aria-label="Action">
-      <TimesIcon />
-    </Button>{' '}
-    <Button isDisabled variant="control">
-      Control disabled
-    </Button>
+    <Flex columnGap={{ default: 'columnGapSm' }}>
+      <Button isDisabled variant="control">
+        Control
+      </Button>
+      <Button isDisabled variant="control" aria-label="Copy">
+        <CopyIcon />
+      </Button>
+    </Flex>
   </React.Fragment>
 );
