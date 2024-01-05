@@ -47,9 +47,9 @@ describe('Modal', () => {
   test('modal closes with escape', async () => {
     const user = userEvent.setup();
 
-    render(<Modal {...props} isOpen appendTo={document.body} aria-label="modal-div"/>);
+    render(<Modal {...props} isOpen appendTo={document.body} aria-label="modal-div" />);
 
-    await user.type(screen.getByLabelText("modal-div"), `{${KeyTypes.Escape}}`);
+    await user.type(screen.getByLabelText('modal-div'), `{${KeyTypes.Escape}}`);
     expect(props.onClose).toHaveBeenCalled();
   });
 
@@ -75,7 +75,11 @@ describe('Modal', () => {
   });
 
   test('modal does not show the close button when onClose not passed', () => {
-    render(<Modal isOpen disableFocusTrap>No close button </Modal>);
+    render(
+      <Modal isOpen disableFocusTrap>
+        No close button{' '}
+      </Modal>
+    );
     expect(screen.queryByRole('button', { name: 'Close' })).toBeNull();
   });
 
