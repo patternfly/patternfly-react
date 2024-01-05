@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.40...@patternfly/react-code-editor@5.2.0-prerelease.41) (2024-01-05)
+
+### Features
+
+- **CodeEditor:** use new monaco package ([#9842](https://github.com/patternfly/patternfly-react/issues/9842)) ([54dd134](https://github.com/patternfly/patternfly-react/commit/54dd134d6c67c4fc1d7630fd1e7c718f66061342))
+
 # [5.2.0-prerelease.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.2.0-prerelease.39...@patternfly/react-code-editor@5.2.0-prerelease.40) (2024-01-04)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

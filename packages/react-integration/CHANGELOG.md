@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.1-prerelease.18 (2024-01-05)
+
+### Features
+
+- **CodeEditor:** use new monaco package ([#9842](https://github.com/patternfly/patternfly-react/issues/9842)) ([54dd134](https://github.com/patternfly/patternfly-react/commit/54dd134d6c67c4fc1d7630fd1e7c718f66061342))
+
 ## 5.1.1-prerelease.17 (2024-01-03)
 
 ### Bug Fixes
