@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.18...@patternfly/react-integration@5.1.1-prerelease.19) (2024-01-05)
+
+### Features
+
+- **Modal next:** Introduce a next composable Modal ([#9852](https://github.com/patternfly/patternfly-react/issues/9852)) ([7ec2aff](https://github.com/patternfly/patternfly-react/commit/7ec2aff1d8dd1c6762c9d912c1d2e60a6b604ddd))
+
 ## 5.1.1-prerelease.18 (2024-01-05)
 
 ### Features
