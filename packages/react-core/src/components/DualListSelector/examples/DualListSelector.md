@@ -87,7 +87,7 @@ The dual list selector can also be built in a composable manner to make customiz
 
 ### Composable with drag and drop
 
-Note: There is a new recommended drag and drop implementation that has full keyboard functionality. Examples and details may be located [here](/components/drag-and-drop/react-next).
+Note: There is a new recommended drag and drop implementation with full keyboard functionality, which replaces this implementation. To adhere to our new recommendations, refer to the [drag and drop demos](components/drag-and-drop/react-next-demos).
 
 This example only allows reordering the contents of the "chosen" pane with drag and drop. To make a pane able to be reordered:
 
