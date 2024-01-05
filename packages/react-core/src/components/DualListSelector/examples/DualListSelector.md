@@ -101,7 +101,7 @@ This example only allows reordering the contents of the "chosen" pane with drag 
   - define an `onDrag` callback which ensures that the drag event will not cross hairs with the `onOptionSelect` click
     event set on the option. Note: the `ignoreNextOptionSelect` state value is used to prevent selection while dragging.
 
-Keyboard accessibility and screen reader accessibility for the `DragDrop` component are still in development.
+Keyboard and screen reader accessibility for the `<DragDrop>` component is still in development.
 
 ```ts file="DualListSelectorComposableDragDrop.tsx"
 
