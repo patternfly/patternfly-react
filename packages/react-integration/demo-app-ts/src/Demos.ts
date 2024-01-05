@@ -248,6 +248,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ModalDemo
   },
   {
+    id: 'modal-next-demo',
+    name: 'Modal Next Demo',
+    componentType: Examples.ModalNextDemo
+  },
+  {
     id: 'nav-demo',
     name: 'Nav Demo',
     componentType: Examples.NavDemo
