@@ -21,12 +21,12 @@ import { DragDropSort, DraggableObject } from '@patternfly/react-drag-drop';
 
 ### Basic drag and drop sorting
 
-```ts isBeta file="./BasicSorting.tsx"
+```ts file="./BasicSorting.tsx"
 
 ```
 
 ### Basic drag and drop sorting with drag button
 
-```ts isBeta file="./BasicSortingWithDragButton.tsx"
+```ts file="./BasicSortingWithDragButton.tsx"
 
 ```

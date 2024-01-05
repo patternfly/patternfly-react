@@ -24,7 +24,7 @@ To enable drag and drop for compatible components, wrap the component with `<Dra
 
 To enable reordering in a `<DataList>`, wrap the `<DataList>` component with `<DragDropSort>` and define the `variant` as "DataList".
 
-```ts isBeta file="./DataListDraggable.tsx"
+```ts file="./DataListDraggable.tsx"
 
 ```
 
