@@ -18,12 +18,11 @@ import { DragDropSort, DraggableObject } from '@patternfly/react-drag-drop';
 
 ## Sorting demos
 
-To enable drag and drop for compatible components, wrap the component with `DragDropSort`, define the `variant` property, and pass both the sortable `items` and `onDrop` callback to `DragDropSort`.
-`DragDropSort` will create the component's usual `children` internally based on the `items` property, so `children` should not be passed to the wrapped component.
+To enable drag and drop for compatible components, wrap the component with `<DragDropSort>`, define the `variant` property, and pass both the sortable `items` and `onDrop` callback to `<DragDropSort>`. `<DragDropSort>` will create the component's usual `children` internally based on the `items` property, so `children` should not be passed to the wrapped component.
 
 ### Drag and drop sortable data list
 
-To make a `DataList` able to be reordered, wrap the `DataList` with `DragDropSort` and define the `variant` as `DataList`.
+To enable reordering in a `<DataList>`, wrap the `<DataList>` component with `<DragDropSort>` and define the `variant` as "DataList".
 
 ```ts isBeta file="./DataListDraggable.tsx"
 
@@ -31,7 +30,7 @@ To make a `DataList` able to be reordered, wrap the `DataList` with `DragDropSor
 
 ### Drag and drop sortable dual list selector
 
-To make a `DualListSelector` pane able to be reordered, wrap the `DualListSelectorList` of a pane with `DragDropSort` and define the `variant` as `DualListSelectorList`.
+To enable reordering in a `<DualListSelector>` pane wrap the `<DualListSelectorList>` component with `<DragDropSort>` and define the `variant` as "DualListSelectorList".
 
 ```ts file="./DualListSelectorDraggable.tsx"
 
