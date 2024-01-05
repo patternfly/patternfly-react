@@ -29,10 +29,7 @@ test('Modal Content Test isOpen', () => {
 
 test('Modal Content Test description', () => {
   const { asFragment } = render(
-    <ModalContent
-      isOpen
-      {...modalContentProps}
-    >
+    <ModalContent isOpen {...modalContentProps}>
       This is a ModalBox header
     </ModalContent>
   );
@@ -41,12 +38,7 @@ test('Modal Content Test description', () => {
 
 test('Modal Content Test with onclose', () => {
   const { asFragment } = render(
-    <ModalContent
-      variant="large"
-      onClose={() => undefined}
-      isOpen
-      {...modalContentProps}
-    >
+    <ModalContent variant="large" onClose={() => undefined} isOpen {...modalContentProps}>
       This is a ModalBox header
     </ModalContent>
   );

@@ -16,10 +16,6 @@ test('ModalHeader help renders', () => {
 test('Modal Test with custom header', () => {
   const header = <span id="test-custom-header">TEST</span>;
 
-  const { asFragment } = render(
-    <ModalHeader>
-      {header}
-    </ModalHeader>
-  );
+  const { asFragment } = render(<ModalHeader>{header}</ModalHeader>);
   expect(asFragment()).toMatchSnapshot();
 });

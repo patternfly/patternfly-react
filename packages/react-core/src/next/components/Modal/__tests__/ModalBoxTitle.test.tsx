@@ -5,37 +5,27 @@ import { ModalBoxTitle } from '../ModalBoxTitle';
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
 test('ModalBoxTitle alert variant', () => {
-  const { asFragment } = render(
-    <ModalBoxTitle title="Test Modal Box warning" id="boxId" titleIconVariant="warning"/>
-  );
+  const { asFragment } = render(<ModalBoxTitle title="Test Modal Box warning" id="boxId" titleIconVariant="warning" />);
   expect(asFragment()).toMatchSnapshot();
 });
 
 test('ModalBoxTitle info variant', () => {
-  const { asFragment } = render(
-    <ModalBoxTitle title="Test Modal Box info" id="boxId" titleIconVariant="info" />
-  );
+  const { asFragment } = render(<ModalBoxTitle title="Test Modal Box info" id="boxId" titleIconVariant="info" />);
   expect(asFragment()).toMatchSnapshot();
 });
 
 test('ModalBoxTitle danger variant', () => {
-  const { asFragment } = render(
-    <ModalBoxTitle title="Test Modal Box danger" id="boxId" titleIconVariant="danger" />
-  );
+  const { asFragment } = render(<ModalBoxTitle title="Test Modal Box danger" id="boxId" titleIconVariant="danger" />);
   expect(asFragment()).toMatchSnapshot();
 });
 
 test('ModalBoxTitle custom variant', () => {
-  const { asFragment } = render(
-    <ModalBoxTitle title="Test Modal Box warning" id="boxId" titleIconVariant="custom" />
-  );
+  const { asFragment } = render(<ModalBoxTitle title="Test Modal Box warning" id="boxId" titleIconVariant="custom" />);
   expect(asFragment()).toMatchSnapshot();
 });
 
 test('ModalBoxTitle success variant', () => {
-  const { asFragment } = render(
-    <ModalBoxTitle title="Test Modal Box success" id="boxId" titleIconVariant="success"/>
-  );
+  const { asFragment } = render(<ModalBoxTitle title="Test Modal Box success" id="boxId" titleIconVariant="success" />);
   expect(asFragment()).toMatchSnapshot();
 });
 
