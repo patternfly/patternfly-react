@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.41...@patternfly/react-core@5.2.0-prerelease.42) (2024-01-08)
+
+### Features
+
+- **DragDrop:** new drag drop styling fixes ([#9784](https://github.com/patternfly/patternfly-react/issues/9784)) ([19ddee7](https://github.com/patternfly/patternfly-react/commit/19ddee701efb222b931b83c531987405860d604f))
+
 # 5.2.0-prerelease.41 (2024-01-05)
 
 ### Features

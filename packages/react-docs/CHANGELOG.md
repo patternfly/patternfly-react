@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.2.0-prerelease.42...@patternfly/react-docs@6.2.0-prerelease.43) (2024-01-08)
+
+### Features
+
+- **DragDrop:** new drag drop styling fixes ([#9784](https://github.com/patternfly/patternfly-react/issues/9784)) ([19ddee7](https://github.com/patternfly/patternfly-react/commit/19ddee701efb222b931b83c531987405860d604f))
+
 # [6.2.0-prerelease.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.2.0-prerelease.41...@patternfly/react-docs@6.2.0-prerelease.42) (2024-01-05)
 
 **Note:** Version bump only for package @patternfly/react-docs
