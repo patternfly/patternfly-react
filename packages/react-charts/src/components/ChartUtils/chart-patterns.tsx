@@ -1,5 +1,5 @@
 import * as React from 'react';
-import uniqueId from 'lodash/uniqueId';
+import { getUniqueId } from '@patternfly/react-core';
 
 interface PatternPropsInterface {
   children?: any;
@@ -217,7 +217,7 @@ const patterns: any = [
  * Helper function to return a pattern ID
  * @private
  */
-const getPatternId = () => uniqueId('pf-pattern');
+const getPatternId = () => getUniqueId('pf-pattern');
 
 /**
  * Helper function to return pattern defs ID

@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
+    "@patternfly/react-core": "^5.2.0-prerelease.41",
     "@patternfly/react-styles": "^5.2.0-prerelease.6",
     "@patternfly/react-tokens": "^5.2.0-prerelease.7",
     "hoist-non-react-statics": "^3.3.0",
