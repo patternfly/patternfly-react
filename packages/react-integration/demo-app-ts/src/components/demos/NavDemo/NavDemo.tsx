@@ -28,7 +28,6 @@ export class NavDemo extends Component {
     expandableActiveGroup: 'grp-1',
     expandableActiveItem: 'itm-1-1',
     horizontalActiveItem: 0,
-    tertiaryActiveItem: 0,
     expandableClickedGroup: '',
     expandableClickedItem: '',
     flyoutActiveItem: 0
@@ -300,43 +299,6 @@ export class NavDemo extends Component {
       </StackItem>
     );
   }
-  onTertiarySelect = (_event: React.FormEvent<HTMLInputElement>, result: SelectedItem) => {
-    this.setState({ tertiaryActiveItem: result.itemId });
-  };
-
-  renderTertiaryNav() {
-    const { tertiaryActiveItem } = this.state;
-
-    return (
-      <StackItem>
-        <Title headingLevel="h2" size="2xl">
-          Tertiary Nav
-        </Title>
-        <div
-          style={{
-            borderStyle: 'solid',
-            borderWidth: '0.2px',
-            borderColor: '#292e34',
-            padding: '1rem'
-          }}
-        >
-          <Nav onSelect={this.onTertiarySelect} id="nav-primary-tertiary" variant="tertiary">
-            <NavList>
-              <NavItem id="tertiary-link1" preventDefault itemId={0} isActive={tertiaryActiveItem === 0}>
-                Item 1
-              </NavItem>
-              <NavItem id="tertiary-link2" preventDefault itemId={1} isActive={tertiaryActiveItem === 1}>
-                Item 2
-              </NavItem>
-              <NavItem id="tertiary-link3" preventDefault itemId={2} isActive={tertiaryActiveItem === 2}>
-                Item 3
-              </NavItem>
-            </NavList>
-          </Nav>
-        </div>
-      </StackItem>
-    );
-  }
 
   renderFlyoutNav() {
     const { flyoutActiveItem } = this.state;
@@ -364,7 +326,7 @@ export class NavDemo extends Component {
     return (
       <StackItem>
         <Title headingLevel="h2" size="2xl">
-          Tertiary Nav
+          Flyout Nav
         </Title>
         <div
           id="flyout-nav"
@@ -404,7 +366,6 @@ export class NavDemo extends Component {
         {this.renderDefaultNav()}
         {this.renderExpandableNav()}
         {this.renderHorizontalNav()}
-        {this.renderTertiaryNav()}
         {this.renderHorizontalSubNav()}
         {this.renderFlyoutNav()}
       </Stack>

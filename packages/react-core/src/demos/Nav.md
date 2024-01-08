@@ -44,16 +44,6 @@ import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Co
 ```js file='./examples/Nav/NavHorizontalWithSubnav.tsx' isFullscreen
 ```
 
-### Tertiary nav (deprecated)
-
-```js file='./examples/Nav/deprecated/NavTertiary.tsx' isFullscreen
-```
-
-### Light nav (deprecated)
-
-```js file='./examples/Nav/deprecated/NavLight.tsx' isFullscreen
-```
-
 ### Manual nav
 
 ```js file='./examples/Nav/NavManual.tsx' isFullscreen

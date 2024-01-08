@@ -1,5 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
+import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
+import dividerStyles from '@patternfly/react-styles/css/components/Divider/divider';
 import { css } from '@patternfly/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
@@ -125,7 +127,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     // Otherwise, MenuItem should handle closing its flyouts
     if (
       (key === 'Escape' || key === 'ArrowLeft') &&
-      popperRef?.current?.querySelectorAll(`.${styles.menu}`).length === 1
+      popperRef?.current?.querySelectorAll(`.${menuStyles.menu}`).length === 1
     ) {
       if (flyoutVisible) {
         event.stopPropagation();
@@ -151,7 +153,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       if (flyoutVisible) {
         const flyoutItems = Array.from(
           (popperRef.current as HTMLElement).getElementsByTagName('UL')[0].children
-        ).filter((el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(styles.divider)));
+        ).filter((el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(dividerStyles.divider)));
         (flyoutItems[0].firstChild as HTMLElement).focus();
       } else {
         flyoutTarget.focus();

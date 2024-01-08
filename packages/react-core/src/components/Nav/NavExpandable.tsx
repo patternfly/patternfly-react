@@ -115,7 +115,6 @@ class NavExpandable extends React.Component<NavExpandableProps, NavExpandableSta
           <li
             className={css(
               styles.navItem,
-              styles.modifiers.expandable,
               expandedState && styles.modifiers.expanded,
               isActive && styles.modifiers.current,
               className

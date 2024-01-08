@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
+import { Button } from '../Button';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { getLanguageDirection, isElementInView } from '../../helpers/util';
@@ -143,15 +144,19 @@ class NavList extends React.Component<NavListProps> {
             {({ isSidebarOpen }) => (
               <React.Fragment>
                 {isHorizontal && (
-                  <button
-                    className={css(styles.navScrollButton)}
-                    aria-label={backScrollAriaLabel || ariaLeftScroll}
-                    onClick={this.scrollBack}
-                    disabled={scrollViewAtStart}
-                    tabIndex={isSidebarOpen ? null : -1}
-                  >
-                    <AngleLeftIcon />
-                  </button>
+                  <div className={css(styles.navScrollButton)}>
+                    <Button
+                      variant="plain"
+                      aria-label={backScrollAriaLabel || ariaLeftScroll}
+                      onClick={this.scrollBack}
+                      disabled={scrollViewAtStart}
+                      tabIndex={isSidebarOpen ? null : -1}
+                    >
+                      <span className={css(styles.buttonIcon)}>
+                        <AngleLeftIcon />
+                      </span>
+                    </Button>
+                  </div>
                 )}
                 <ul
                   ref={this.navList}
@@ -163,15 +168,19 @@ class NavList extends React.Component<NavListProps> {
                   {children}
                 </ul>
                 {isHorizontal && (
-                  <button
-                    className={css(styles.navScrollButton)}
-                    aria-label={forwardScrollAriaLabel || ariaRightScroll}
-                    onClick={this.scrollForward}
-                    disabled={scrollViewAtEnd}
-                    tabIndex={isSidebarOpen ? null : -1}
-                  >
-                    <AngleRightIcon />
-                  </button>
+                  <div className={css(styles.navScrollButton)}>
+                    <Button
+                      variant="plain"
+                      aria-label={forwardScrollAriaLabel || ariaRightScroll}
+                      onClick={this.scrollForward}
+                      disabled={scrollViewAtEnd}
+                      tabIndex={isSidebarOpen ? null : -1}
+                    >
+                      <span className={css(styles.buttonIcon)}>
+                        <AngleRightIcon />
+                      </span>
+                    </Button>
+                  </div>
                 )}
               </React.Fragment>
             )}
