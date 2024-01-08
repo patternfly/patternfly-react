@@ -2,10 +2,10 @@
 id: Drag and drop
 section: components
 propComponents: [DragDrop, Draggable, Droppable, DraggableItemPosition]
-beta: true
+title: Drag and drop
 ---
 
-You can use the `DragDrop` component to move items in or between lists. The `DragDrop` component should contain `Droppable` components which contain `Draggable` components.
+You can use the `<DragDrop>` component to move items in or between lists. The `<DragDrop>` component should contain `<Droppable>` components which contain `<Draggable>` components.
 
 ```ts noLive
 import React from 'react';
@@ -35,9 +35,11 @@ Note: Keyboard accessibility and screen reader accessibility are still in develo
 ### Basic
 
 ```ts file="./DragDropBasic.tsx"
+
 ```
 
 ### Multiple lists
 
 ```ts file="./DragDropMultipleLists.tsx"
+
 ```
