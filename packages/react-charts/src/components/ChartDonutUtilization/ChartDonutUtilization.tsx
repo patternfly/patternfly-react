@@ -1,6 +1,5 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import orderBy from 'lodash/orderBy';
 import {
   AnimatePropTypeInterface,
   CategoryPropType,
@@ -627,7 +626,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
     const result = [];
     if (thresholds) {
       // Ensure thresholds are in sorted order
-      const sThresholds = orderBy(thresholds, 'value', invert ? 'desc' : 'asc');
+      const sThresholds = Array.from(thresholds).sort((a, b) => (invert ? b.value - a.value : a.value - b.value));
       const numColors = ChartDonutUtilizationStyles.thresholds.colorScale.length;
       for (let i = 0; i < sThresholds.length; i++) {
         result.push({
