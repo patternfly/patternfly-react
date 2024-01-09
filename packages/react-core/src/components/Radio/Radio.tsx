@@ -7,17 +7,17 @@ import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 export interface RadioProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'>,
     OUIAProps {
-  /** Additional classes added to the radio wrapper. This will be a label element if
-   * isLabelWrapped is true, otherwise this will be a div element.
+  /** Additional classes added to the radio wrapper. This wrapper will be div element by default. It will be a label element if
+   * isLabelWrapped is true, or it can be overridden by any element specified in the component prop.
    */
   className?: string;
-  /** Additional classed added to the radio input. */
+  /** Additional classes added to the radio input. */
   inputClassName?: string;
   /** Id of the radio. */
   id: string;
-  /** Flag to indicate whether the radio wrapper element is a <label> element for the radio input. Will not apply if a component prop (with a value other than a "label") is specified. */
+  /** Flag to indicate whether the radio wrapper element is a native label element for the radio input. Will not apply if a component prop (with a value other than a "label") is specified. */
   isLabelWrapped?: boolean;
-  /** Flag to show if the radio label is shown before the radio button. */
+  /** Flag to show if the radio label is shown before the radio input. */
   isLabelBeforeButton?: boolean;
   /** Flag to show if the radio is checked. */
   checked?: boolean;

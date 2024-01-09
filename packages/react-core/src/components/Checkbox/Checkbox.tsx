@@ -8,13 +8,15 @@ import { ASTERISK } from '../../helpers/htmlConstants';
 export interface CheckboxProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>,
     OUIAProps {
-  /** Additional classes added to the checkbox. */
+  /** Additional classes added to the checkbox wrapper. This wrapper will be div element by default. It will be a label element if
+   * isLabelWrapped is true, or it can be overridden by any element specified in the component prop.
+   */
   className?: string;
-  /** Additional classed added to the checkbox input. */
+  /** Additional classes added to the checkbox input. */
   inputClassName?: string;
   /** Flag to indicate whether the checkbox wrapper element is a <label> element for the checkbox input. Will not apply if a component prop (with a value other than a "label") is specified. */
   isLabelWrapped?: boolean;
-  /** Flag to show if the checkbox label is shown before the checkbox button. */
+  /** Flag to show if the checkbox label is shown before the checkbox input. */
   isLabelBeforeButton?: boolean;
   /** Flag to show if the checkbox selection is valid or invalid. */
   isValid?: boolean;
