@@ -12,7 +12,7 @@ export interface CheckboxProps
   className?: string;
   /** Additional classed added to the checkbox input. */
   inputClassName?: string;
-  /** Flag to show if the checkbox label is wrapped on small screen. Will only apply if component prop is not specified. */
+  /** Flag to indicate whether the checkbox wrapper element is a <label> element for the checkbox input. Will not apply if a component prop (with a value other than a "label") is specified. */
   isLabelWrapped?: boolean;
   /** Flag to show if the checkbox label is shown before the checkbox button. */
   isLabelBeforeButton?: boolean;
@@ -37,7 +37,7 @@ export interface CheckboxProps
   description?: React.ReactNode;
   /** Body text of the checkbox */
   body?: React.ReactNode;
-  /** Sets the input wrapper component to render. Defaults to <div> */
+  /** Sets the checkbox wrapper component to render. Defaults to "div". If set to "label", behaves the same as if isLabelWrapped prop was specified. */
   component?: React.ElementType;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
@@ -129,7 +129,7 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
       />
     );
 
-    const wrapWithLabel = isLabelWrapped && !component;
+    const wrapWithLabel = (isLabelWrapped && !component) || component === 'label';
 
     const Label = wrapWithLabel ? 'span' : 'label';
     const labelRendered = label ? (

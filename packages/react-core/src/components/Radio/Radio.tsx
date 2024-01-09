@@ -15,7 +15,7 @@ export interface RadioProps
   inputClassName?: string;
   /** Id of the radio. */
   id: string;
-  /** Flag to show if the radio label is wrapped on small screen. Will only apply if component prop is not specified. */
+  /** Flag to indicate whether the radio wrapper element is a <label> element for the radio input. Will not apply if a component prop (with a value other than a "label") is specified. */
   isLabelWrapped?: boolean;
   /** Flag to show if the radio label is shown before the radio button. */
   isLabelBeforeButton?: boolean;
@@ -39,7 +39,7 @@ export interface RadioProps
   description?: React.ReactNode;
   /** Body of the radio. */
   body?: React.ReactNode;
-  /** Sets the input wrapper component to render. Defaults to <div> */
+  /** Sets the radio wrapper component to render. Defaults to "div". If set to "label", behaves the same as if isLabelWrapped prop was specified. */
   component?: React.ElementType;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
@@ -113,7 +113,7 @@ class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
       />
     );
 
-    const wrapWithLabel = isLabelWrapped && !component;
+    const wrapWithLabel = (isLabelWrapped && !component) || component === 'label';
 
     const Label = wrapWithLabel ? 'span' : 'label';
     const labelRendered = label ? (
