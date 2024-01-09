@@ -12,22 +12,14 @@ test('Renders simple avatar', () => {
   expect(screen.getByTestId('avatar').firstChild).toBeVisible();
 });
 
-// TODO: Need to be updated as part of issue #9880
-test('Renders without any modifier class when border and size props are not passed', () => {
+test('Renders without any modifier class when isBordered and size props are not passed', () => {
   render(<Avatar alt="avatar" />);
   expect(screen.getByRole('img')).toHaveClass(styles.avatar, { exact: true });
 });
 
-// TODO: Need to be updated/removed as part of issue #9880
-xtest('Renders with class name pf-m-light when "light" is passed as border prop', () => {
-  render(<Avatar alt="avatar" />);
-  expect(screen.getByRole('img')).toHaveClass('pf-m-light');
-});
-
-// TODO: Need to be updated/removed as part of issue #9880
-xtest('Renders with class name pf-m-dark when "dark" is passed as border prop', () => {
-  render(<Avatar alt="avatar" />);
-  expect(screen.getByRole('img')).toHaveClass('pf-m-dark');
+test('Renders with class name pf-m-bordered when isBordered is passed', () => {
+  render(<Avatar alt="avatar" isBordered />);
+  expect(screen.getByRole('img')).toHaveClass('pf-m-bordered');
 });
 
 test('Renders with class name pf-m-xl when "xl" is passed as size prop', () => {
