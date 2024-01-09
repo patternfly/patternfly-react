@@ -238,7 +238,7 @@ test('Renders with the label wrapper if isLabelWrapped is provided', () => {
 });
 
 test('Renders with span element around the inner label text if isLabelWrapped is provided', () => {
-  const labelText = "test checkbox label";
+  const labelText = 'test checkbox label';
   render(<Checkbox id="test-id" isLabelWrapped label={labelText} />);
 
   expect(screen.getByText(labelText).tagName).toBe('SPAN');
@@ -257,14 +257,14 @@ test('Renders with the label wrapper if component is set to label', () => {
 });
 
 test('Renders with span element around the inner label text if component is set to label', () => {
-  const labelText = "test checkbox label";
+  const labelText = 'test checkbox label';
   render(<Checkbox id="test-id" component="label" label={labelText} />);
 
   expect(screen.getByText(labelText).tagName).toBe('SPAN');
 });
 
 test('Renders label before checkbox input if isLabelBeforeButton is provided', () => {
-  render(<Checkbox id="test-id" isLabelBeforeButton label={"test checkbox label"} />);
+  render(<Checkbox id="test-id" isLabelBeforeButton label={'test checkbox label'} />);
 
   const wrapper = screen.getByRole('checkbox').parentElement!;
 
