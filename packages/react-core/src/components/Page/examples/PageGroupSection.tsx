@@ -71,7 +71,7 @@ export const PageGroupSection: React.FunctionComponent = () => {
     <Page header={header} sidebar={sidebar}>
       <PageGroup>
         <PageNavigation>
-          <Nav aria-label="Group section navigation" variant="tertiary">
+          <Nav aria-label="Group section navigation" variant="horizontal-subnav">
             <NavList>
               <NavItem href="#" itemId={0} isActive>
                 System panel

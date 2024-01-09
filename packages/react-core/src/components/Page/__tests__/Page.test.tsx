@@ -235,7 +235,7 @@ describe('Page', () => {
     const { asFragment } = render(
       <Page {...props} header={Header} sidebar={Sidebar}>
         <PageNavigation>
-          <Nav aria-label="Nav" variant="tertiary">
+          <Nav aria-label="Nav" variant="horizontal-subnav">
             <NavList>
               <NavItem itemId={0} isActive>
                 System Panel
@@ -273,7 +273,7 @@ describe('Page', () => {
             </Breadcrumb>
           </PageBreadcrumb>
           <PageNavigation>
-            <Nav aria-label="Nav" variant="tertiary">
+            <Nav aria-label="Nav" variant="horizontal-subnav">
               <NavList>
                 <NavItem itemId={0} isActive>
                   System Panel
@@ -310,7 +310,7 @@ describe('Page', () => {
       </PageBreadcrumb>
     );
     const nav = (
-      <Nav aria-label="Nav" variant="tertiary">
+      <Nav aria-label="Nav" variant="horizontal-subnav">
         <NavList>
           <NavItem itemId={0} isActive>
             System Panel
@@ -329,9 +329,9 @@ describe('Page', () => {
         header={Header}
         sidebar={Sidebar}
         breadcrumb={crumb}
-        tertiaryNav={nav}
+        horizontalSubnav={nav}
         isBreadcrumbGrouped
-        isTertiaryNavGrouped
+        isHorizontalSubnavGrouped
         groupProps={{
           stickyOnBreakpoint: { default: 'bottom' },
           hasShadowTop: true,

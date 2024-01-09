@@ -44,8 +44,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * the sidebar component or add a callback onSidebarToggle function into the Masthead component
    */
   isManagedSidebar?: boolean;
-  /** Flag indicating if tertiary nav width should be limited */
-  isTertiaryNavWidthLimited?: boolean;
+  /** Flag indicating if horizontal sub navigation width should be limited */
+  isHorizontalSubnavWidthLimited?: boolean;
   /**
    * If true, the managed sidebar is initially open for desktop view
    */
@@ -71,12 +71,12 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   getVerticalBreakpoint?: (height: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
-  /** Tertiary nav component for the page */
-  tertiaryNav?: React.ReactNode;
+  /** Horizontal sub navigation component for the page */
+  horizontalSubnav?: React.ReactNode;
   /** Accessible label, can be used to name main section */
   mainAriaLabel?: string;
-  /** Flag indicating if the tertiaryNav should be in a group */
-  isTertiaryNavGrouped?: boolean;
+  /** Flag indicating if the horizontal sub navigation should be in a group */
+  isHorizontalSubnavGrouped?: boolean;
   /** Flag indicating if the breadcrumb should be in a group */
   isBreadcrumbGrouped?: boolean;
   /** Additional content of the group */
@@ -219,7 +219,7 @@ class Page extends React.Component<PageProps, PageState> {
       notificationDrawer,
       isNotificationDrawerExpanded,
       onNotificationDrawerExpand,
-      isTertiaryNavWidthLimited,
+      isHorizontalSubnavWidthLimited,
       skipToContent,
       role,
       mainContainerId,
@@ -233,8 +233,8 @@ class Page extends React.Component<PageProps, PageState> {
       mainAriaLabel,
       mainTabIndex,
       mainComponent,
-      tertiaryNav,
-      isTertiaryNavGrouped,
+      horizontalSubnav,
+      isHorizontalSubnavGrouped,
       isBreadcrumbGrouped,
       additionalGroupedContent,
       groupProps,
@@ -254,14 +254,14 @@ class Page extends React.Component<PageProps, PageState> {
     };
 
     let nav = null;
-    if (tertiaryNav && isTertiaryNavWidthLimited) {
+    if (horizontalSubnav && isHorizontalSubnavWidthLimited) {
       nav = (
         <div className={css(styles.pageMainNav, styles.modifiers.limitWidth)}>
-          <div className={css(styles.pageMainBody)}>{tertiaryNav}</div>
+          <div className={css(styles.pageMainBody)}>{horizontalSubnav}</div>
         </div>
       );
-    } else if (tertiaryNav) {
-      nav = <div className={css(styles.pageMainNav)}>{tertiaryNav}</div>;
+    } else if (horizontalSubnav) {
+      nav = <div className={css(styles.pageMainNav)}>{horizontalSubnav}</div>;
     }
 
     const crumb = breadcrumb ? (
@@ -282,11 +282,11 @@ class Page extends React.Component<PageProps, PageState> {
       </section>
     ) : null;
 
-    const isGrouped = isTertiaryNavGrouped || isBreadcrumbGrouped || additionalGroupedContent;
+    const isGrouped = isHorizontalSubnavGrouped || isBreadcrumbGrouped || additionalGroupedContent;
 
     const group = isGrouped ? (
       <PageGroup {...groupProps}>
-        {isTertiaryNavGrouped && nav}
+        {isHorizontalSubnavGrouped && nav}
         {isBreadcrumbGrouped && crumb}
         {additionalGroupedContent}
       </PageGroup>
@@ -304,7 +304,7 @@ class Page extends React.Component<PageProps, PageState> {
         aria-label={mainAriaLabel}
       >
         {group}
-        {!isTertiaryNavGrouped && nav}
+        {!isHorizontalSubnavGrouped && nav}
         {!isBreadcrumbGrouped && crumb}
         {children}
       </Component>

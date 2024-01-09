@@ -527,9 +527,8 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       skipToContent={pageSkipToContent}
       breadcrumb={dashboardBreadcrumb}
       mainContainerId={mainContainerId}
-      isTertiaryNavWidthLimited
+      isHorizontalSubnavWidthLimited
       isBreadcrumbWidthLimited
-      isTertiaryNavGrouped
       isBreadcrumbGrouped
       additionalGroupedContent={
         <PageSection>
