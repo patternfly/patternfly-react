@@ -134,10 +134,10 @@ describe('Radio', () => {
   });
 
   test('Renders label before radio input if isLabelBeforeButton is provided', () => {
-    render(<Radio id="test-id" name="check" isLabelBeforeButton label={"test radio label"} />);
-  
+    render(<Radio id="test-id" name="check" isLabelBeforeButton label={'test radio label'} />);
+
     const wrapper = screen.getByRole('radio').parentElement!;
-  
+
     expect(wrapper.children[0].tagName).toBe('LABEL');
     expect(wrapper.children[1].tagName).toBe('INPUT');
   });
