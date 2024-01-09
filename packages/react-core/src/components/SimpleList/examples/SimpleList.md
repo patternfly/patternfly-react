@@ -10,15 +10,23 @@ propComponents: ['SimpleList', 'SimpleListGroup', 'SimpleListItem']
 ### Simple list
 
 ```ts file="SimpleListBasic.tsx"
+
+```
+
+### Simple list with links
+
+```ts file="SimpleListLinks.tsx"
+
 ```
 
 ### Grouped list
 
 ```ts file="SimpleListGrouped.tsx"
+
 ```
 
 ### Uncontrolled simple list
 
 ```ts file="SimpleListUncontrolled.tsx"
-```
 
+```
