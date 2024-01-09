@@ -231,6 +231,38 @@ test('Renders with the provided component', () => {
   expect(screen.getByRole('checkbox').parentElement?.tagName).toBe('SPAN');
 });
 
+test('Renders with the label wrapper if isLabelWrapped is provided', () => {
+  render(<Checkbox id="test-id" isLabelWrapped />);
+
+  expect(screen.getByRole('checkbox').parentElement?.tagName).toBe('LABEL');
+});
+
+test('Renders with span element around the inner label text if isLabelWrapped is provided', () => {
+  const labelText = "test checkbox label";
+  render(<Checkbox id="test-id" isLabelWrapped label={labelText} />);
+
+  expect(screen.getByText(labelText).tagName).toBe('SPAN');
+});
+
+test('Renders with the provided component although isLabelWrapped is provided', () => {
+  render(<Checkbox id="test-id" isLabelWrapped component="h3" />);
+
+  expect(screen.getByRole('checkbox').parentElement?.tagName).toBe('H3');
+});
+
+test('Renders with the label wrapper if component is set to label', () => {
+  render(<Checkbox id="test-id" component="label" />);
+
+  expect(screen.getByRole('checkbox').parentElement?.tagName).toBe('LABEL');
+});
+
+test('Renders with span element around the inner label text if component is set to label', () => {
+  const labelText = "test checkbox label";
+  render(<Checkbox id="test-id" component="label" label={labelText} />);
+
+  expect(screen.getByText(labelText).tagName).toBe('SPAN');
+});
+
 test(`Spreads additional props`, () => {
   render(<Checkbox id="test-id" data-testid="test-id" />);
 
