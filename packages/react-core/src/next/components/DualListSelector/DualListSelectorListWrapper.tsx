@@ -94,6 +94,7 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
     return () => {
       window.removeEventListener('keydown', handleKeys);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [menuRef.current]);
 
   return (
