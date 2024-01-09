@@ -263,6 +263,15 @@ test('Renders with span element around the inner label text if component is set 
   expect(screen.getByText(labelText).tagName).toBe('SPAN');
 });
 
+test('Renders label before checkbox input if isLabelBeforeButton is provided', () => {
+  render(<Checkbox id="test-id" isLabelBeforeButton label={"test checkbox label"} />);
+
+  const wrapper = screen.getByRole('checkbox').parentElement!;
+
+  expect(wrapper.children[0].tagName).toBe('LABEL');
+  expect(wrapper.children[1].tagName).toBe('INPUT');
+});
+
 test(`Spreads additional props`, () => {
   render(<Checkbox id="test-id" data-testid="test-id" />);
 
