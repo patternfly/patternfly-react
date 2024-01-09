@@ -334,10 +334,10 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   };
   const onDocumentClick = (event: MouseEvent, triggerElement: HTMLElement, popperElement: HTMLElement) => {
     if (hideOnOutsideClick && visible) {
-      // check if we clicked within the popper, if so don't do anything
-      const isChild = popperElement && popperElement.contains(event.target as Node);
-      if (isChild) {
-        // clicked within the popper
+      const isFromChild = popperElement && popperElement.contains(event.target as Node);
+      const isFromTrigger = triggerElement && triggerElement.contains(event.target as Node);
+      if (isFromChild || isFromTrigger) {
+        // if clicked within the popper or on the trigger, ignore this event
         return;
       }
       if (triggerManually) {
