@@ -132,8 +132,17 @@ class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
         className={css(styles.radio, !label && styles.modifiers.standalone, className)}
         htmlFor={wrapWithLabel && props.id}
       >
-        {isLabelBeforeButton ? labelRendered : inputRendered}
-        {isLabelBeforeButton ? inputRendered : labelRendered}
+        {isLabelBeforeButton ? (
+          <>
+            {labelRendered}
+            {inputRendered}
+          </>
+        ) : (
+          <>
+            {inputRendered}
+            {labelRendered}
+          </>
+        )}
         {description && <span className={css(styles.radioDescription)}>{description}</span>}
         {body && <span className={css(styles.radioBody)}>{body}</span>}
       </Component>

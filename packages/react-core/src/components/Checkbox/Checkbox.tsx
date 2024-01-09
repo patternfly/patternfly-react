@@ -154,8 +154,17 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
         className={css(styles.check, !label && styles.modifiers.standalone, className)}
         htmlFor={wrapWithLabel && props.id}
       >
-        {isLabelBeforeButton ? labelRendered : inputRendered}
-        {isLabelBeforeButton ? inputRendered : labelRendered}
+        {isLabelBeforeButton ? (
+          <>
+            {labelRendered}
+            {inputRendered}
+          </>
+        ) : (
+          <>
+            {inputRendered}
+            {labelRendered}
+          </>
+        )}
         {description && <span className={css(styles.checkDescription)}>{description}</span>}
         {body && <span className={css(styles.checkBody)}>{body}</span>}
       </Component>
