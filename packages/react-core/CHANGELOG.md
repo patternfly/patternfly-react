@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.43...@patternfly/react-core@5.2.0-prerelease.44) (2024-01-10)
+
+### Bug Fixes
+
+- **Popover:** doc click event ([#9952](https://github.com/patternfly/patternfly-react/issues/9952)) ([74c30e8](https://github.com/patternfly/patternfly-react/commit/74c30e8313ea889598c55f7e1dd04b568e31847c))
+
 # [5.2.0-prerelease.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.42...@patternfly/react-core@5.2.0-prerelease.43) (2024-01-09)
 
 **Note:** Version bump only for package @patternfly/react-core
