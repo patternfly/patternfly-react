@@ -3,6 +3,19 @@ import styles from '@patternfly/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
 import { css } from '@patternfly/react-styles';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import { Button, ButtonProps } from '../Button';
+import { Popover, PopoverProps } from '../Popover';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+
+export interface HelpIconProps {
+  /** Props applied to the help icon button */
+  buttonProps?: ButtonProps;
+  /** When used, the help icon button triggers a popover */
+  popoverProps?: PopoverProps;
+
+  // Possibly add Tooltip instead of Popover?
+  // tooltipProps?: TooltipProps;
+}
 
 export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Anything that can be rendered as FormGroup content. */
@@ -15,6 +28,8 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   labelInfo?: React.ReactNode;
   /** Sets an icon for the label. For providing additional context. Host element for Popover  */
   labelIcon?: React.ReactElement;
+  /** Object for adding and customizing a label help icon */
+  labelHelpIcon?: HelpIconProps;
   /** Sets the FormGroup required. */
   isRequired?: boolean;
   /** Sets the FormGroup isInline. */
@@ -39,6 +54,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   label,
   labelInfo,
   labelIcon,
+  labelHelpIcon,
   isRequired = false,
   isInline = false,
   hasNoPaddingTop = false,
@@ -50,6 +66,19 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   const isGroupOrRadioGroup = role === 'group' || role === 'radiogroup';
   const LabelComponent = isGroupOrRadioGroup ? 'span' : 'label';
 
+  const helpButton = labelHelpIcon ? (
+    <Button
+      component="span"
+      isInline
+      variant="plain"
+      noPadding
+      aria-describedby={fieldId}
+      {...labelHelpIcon.buttonProps}
+    >
+      <QuestionCircleIcon />
+    </Button>
+  ) : null;
+
   const labelContent = (
     <React.Fragment>
       <LabelComponent className={css(styles.formLabel)} {...(!isGroupOrRadioGroup && { htmlFor: fieldId })}>
@@ -60,8 +89,14 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
             {ASTERISK}
           </span>
         )}
-      </LabelComponent>{' '}
-      {React.isValidElement(labelIcon) && labelIcon}
+      </LabelComponent>
+      <>&nbsp;&nbsp;</>
+      {React.isValidElement(labelIcon) && <span className={styles.formGroupLabelHelp}>{labelIcon}</span>}
+      {!labelIcon && labelHelpIcon && (
+        <span className={styles.formGroupLabelHelp}>
+          {labelHelpIcon.popoverProps ? <Popover {...labelHelpIcon.popoverProps}>{helpButton}</Popover> : helpButton}
+        </span>
+      )}
     </React.Fragment>
   );
 

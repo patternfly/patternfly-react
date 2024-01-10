@@ -4,7 +4,6 @@ import {
   FormGroup,
   TextInput,
   Checkbox,
-  Popover,
   ActionGroup,
   Button,
   Radio,
@@ -12,8 +11,6 @@ import {
   HelperTextItem,
   FormHelperText
 } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import styles from '@patternfly/react-styles/css/components/Form/form';
 
 export const FormBasic: React.FunctionComponent = () => {
   const [name, setName] = React.useState('');
@@ -36,9 +33,12 @@ export const FormBasic: React.FunctionComponent = () => {
     <Form>
       <FormGroup
         label="Full name"
-        labelIcon={
-          <Popover
-            headerContent={
+        labelHelpIcon={{
+          buttonProps: {
+            'aria-label': 'More info for name field'
+          },
+          popoverProps: {
+            headerContent: (
               <div>
                 The{' '}
                 <a href="https://schema.org/name" target="_blank" rel="noreferrer">
@@ -49,8 +49,8 @@ export const FormBasic: React.FunctionComponent = () => {
                   Person
                 </a>
               </div>
-            }
-            bodyContent={
+            ),
+            bodyContent: (
               <div>
                 Often composed of{' '}
                 <a href="https://schema.org/givenName" target="_blank" rel="noreferrer">
@@ -62,19 +62,9 @@ export const FormBasic: React.FunctionComponent = () => {
                 </a>
                 .
               </div>
-            }
-          >
-            <button
-              type="button"
-              aria-label="More info for name field"
-              onClick={(e) => e.preventDefault()}
-              aria-describedby="simple-form-name-01"
-              className={styles.formGroupLabelHelp}
-            >
-              <HelpIcon />
-            </button>
-          </Popover>
-        }
+            )
+          }
+        }}
         isRequired
         fieldId="simple-form-name-01"
       >
