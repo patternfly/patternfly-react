@@ -1,7 +1,4 @@
 {
-    "packageName": "@patternfly/react-charts",
-    "exclude": [
-        "dist/esm/deprecated/index.js",
-        "dist/esm/next/index.js"
-    ]
+  "packageName": "@patternfly/react-charts",
+  "exclude": ["dist/esm/deprecated/index.js", "dist/esm/next/index.js"]
 }
