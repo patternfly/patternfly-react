@@ -5,7 +5,7 @@ import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-
 export const ButtonStateful: React.FunctionComponent = () => (
   <p>
     This is an example of a button
-    <Button variant="plain" noPadding>
+    <Button variant="plain" noPadding aria-label="More info">
       <QuestionCircleIcon />
     </Button>
     which is placed inline with text
