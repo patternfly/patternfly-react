@@ -25,7 +25,6 @@ exports[`simple fileuploadfield 1`] = `
               data-ouia-component-type="PF5/TextInput"
               data-ouia-safe="true"
               id="custom-file-upload-filename"
-              name="custom-file-upload-filename"
               placeholder="Do something custom with this!"
               readonly=""
               type="text"
@@ -74,7 +73,6 @@ exports[`simple fileuploadfield 1`] = `
           aria-invalid="false"
           aria-label="File upload"
           id="custom-file-upload"
-          name="custom-file-upload"
           placeholder=""
         />
       </span>

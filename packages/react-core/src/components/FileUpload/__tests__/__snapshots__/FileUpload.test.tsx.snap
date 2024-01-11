@@ -26,7 +26,6 @@ exports[`simple fileupload 1`] = `
               data-ouia-component-type="PF5/TextInput"
               data-ouia-safe="true"
               id="simple-text-file-filename"
-              name="simple-text-file-filename"
               placeholder="Drag a file here or browse to upload"
               readonly=""
               type="text"
@@ -76,7 +75,6 @@ exports[`simple fileupload 1`] = `
           aria-invalid="false"
           aria-label="File upload"
           id="simple-text-file"
-          name="simple-text-file"
           placeholder=""
         />
       </span>
