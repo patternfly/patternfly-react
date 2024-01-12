@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.9...@patternfly/react-core@6.0.0-alpha.10) (2024-01-12)
+
+### Features
+
+- **BackgroundImage:** update background image for penta ([#9964](https://github.com/patternfly/patternfly-react/issues/9964)) ([a2a0630](https://github.com/patternfly/patternfly-react/commit/a2a06301257d79bb6df178eeb5304c3c627fa429))
+
 # [6.0.0-alpha.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.8...@patternfly/react-core@6.0.0-alpha.9) (2024-01-04)
 
 ### Features
