@@ -25,6 +25,7 @@ exports[`simple fileuploadfield 1`] = `
               data-ouia-component-type="PF5/TextInput"
               data-ouia-safe="true"
               id="custom-file-upload-filename"
+              name="custom-file-upload-filename"
               placeholder="Do something custom with this!"
               readonly=""
               type="text"
