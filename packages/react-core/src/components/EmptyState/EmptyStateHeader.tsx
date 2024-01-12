@@ -3,7 +3,14 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 import { EmptyStateIcon, EmptyStateIconProps } from './EmptyStateIcon';
 
-export type EmptyStateHeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export enum EmptyStateHeadingLevel {
+  h1 = 'h1',
+  h2 = 'h2',
+  h3 = 'h3',
+  h4 = 'h4',
+  h5 = 'h5',
+  h6 = 'h6'
+}
 
 export interface EmptyStateHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the empty state header */
@@ -17,14 +24,14 @@ export interface EmptyStateHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional props passed to the icon element */
   iconProps?: EmptyStateIconProps;
   /** The heading level to use, default is h1 */
-  headingLevel?: EmptyStateHeadingLevel;
+  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export const EmptyStateHeader: React.FunctionComponent<EmptyStateHeaderProps> = ({
   className,
   titleClassName,
   titleText,
-  headingLevel: HeadingLevel = 'h1',
+  headingLevel: HeadingLevel = EmptyStateHeadingLevel.h1,
   icon: Icon,
   iconProps,
   ...props
