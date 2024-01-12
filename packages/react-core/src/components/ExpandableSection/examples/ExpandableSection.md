@@ -37,6 +37,8 @@ When passing the `isDetached` property into `<ExpandableSection>`, you must also
 
 ### Disclosure variation
 
+You can pass in the `displaySize="lg"` property for a disclosure variation styling.
+
 ```ts file="ExpandableSectionDisclosure.tsx"
 
 ```
