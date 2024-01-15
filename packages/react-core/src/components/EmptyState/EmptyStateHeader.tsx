@@ -31,11 +31,10 @@ export const EmptyStateHeader: React.FunctionComponent<EmptyStateHeaderProps> = 
   titleText,
   headingLevel: HeadingLevel = EmptyStateHeadingLevel.h1,
   icon: Icon,
-  iconProps,
   ...props
 }: EmptyStateHeaderProps) => (
   <div className={css(`${styles.emptyState}__header`, className)} {...props}>
-    {Icon && <EmptyStateIcon icon={Icon} {...iconProps} />}
+    {Icon && <EmptyStateIcon icon={Icon} />}
     <div className={css(`${styles.emptyState}__title`)}>
       <HeadingLevel className={css(styles.emptyStateTitleText, titleClassName)}>{titleText}</HeadingLevel>
     </div>
