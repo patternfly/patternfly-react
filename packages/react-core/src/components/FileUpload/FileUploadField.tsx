@@ -37,6 +37,8 @@ export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElemen
   hideDefaultPreview?: boolean;
   /** Unique id for the text area. Also used to generate ids for accessible labels. */
   id: string;
+  /** Name property for the text input. */
+  name?: string;
   /** Flag to disable the clear button. */
   isClearButtonDisabled?: boolean;
   /** Flag to show if the field is disabled. */
@@ -84,6 +86,7 @@ export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElemen
 
 export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
   id,
+  name,
   type,
   value = '',
   filename = '',
@@ -135,7 +138,7 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
               readOnlyVariant="default" // Always read-only regardless of isReadOnly prop (which is just for the TextArea)
               isDisabled={isDisabled}
               id={`${id}-filename`}
-              name={`${id}-filename`}
+              name={name || `${id}-filename`}
               aria-label={filenameAriaLabel}
               placeholder={filenamePlaceholder}
               aria-describedby={`${id}-browse-button`}
@@ -172,7 +175,6 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
             resizeOrientation={TextAreResizeOrientation.vertical}
             validated={validated}
             id={id}
-            name={id}
             aria-label={ariaLabel}
             value={value as string}
             onChange={onTextAreaChange}
