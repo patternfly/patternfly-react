@@ -9,7 +9,7 @@ import {
 } from '@patternfly/react-core';
 
 export const EmptyStateWithStatus: React.FunctionComponent = () => {
-  const [status, setStatus] = React.useState<EmptyStateStatus>('success');
+  const [status, setStatus] = React.useState<EmptyStateStatus>(EmptyStateStatus.success);
 
   const toggleStatus = () => {
     interface StatusToggleMap {
@@ -17,11 +17,11 @@ export const EmptyStateWithStatus: React.FunctionComponent = () => {
     }
 
     const statusToggleMap: StatusToggleMap = {
-      success: 'danger',
-      danger: 'warning',
-      warning: 'info',
-      info: 'custom',
-      custom: 'success'
+      success: EmptyStateStatus.danger,
+      danger: EmptyStateStatus.warning,
+      warning: EmptyStateStatus.info,
+      info: EmptyStateStatus.custom,
+      custom: EmptyStateStatus.success
     };
 
     setStatus((prevStatus: EmptyStateStatus) => statusToggleMap[prevStatus]);
