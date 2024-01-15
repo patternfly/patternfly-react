@@ -108,8 +108,6 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   dropDirection?: 'up' | 'down';
   /** Page to start at. */
   firstPage?: number;
-  /** @beta Flag indicating that pagination should use page insets. */
-  usePageInsets?: boolean;
   /** @beta Insets at various breakpoints. */
   inset?: {
     default?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
@@ -227,7 +225,6 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   onLastClick = () => undefined,
   ouiaId,
   ouiaSafe = true,
-  usePageInsets,
   inset,
   ...props
 }: PaginationProps) => {
@@ -283,7 +280,6 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
       className={css(
         styles.pagination,
         variant === PaginationVariant.bottom && styles.modifiers.bottom,
-        usePageInsets && styles.modifiers.pageInsets,
         formatBreakpointMods(inset, styles),
         isStatic && styles.modifiers.static,
         isSticky && styles.modifiers.sticky,

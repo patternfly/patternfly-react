@@ -114,16 +114,6 @@ describe('Pagination', () => {
       rerender(<Pagination titles={{ optionsToggleAriaLabel: 'test label' }} itemCount={20} />);
       expect(screen.getByLabelText('test label')).toHaveAttribute('id', id);
     });
-
-    test('page insets', () => {
-      render(<Pagination data-testid="pagination-insets" usePageInsets />);
-      expect(screen.getByTestId('pagination-insets')).toHaveClass('pf-m-page-insets');
-    });
-
-    test('page insets', () => {
-      render(<Pagination data-testid="pagination-insets" usePageInsets />);
-      expect(screen.getByTestId('pagination-insets')).toHaveClass('pf-m-page-insets');
-    });
   });
 
   describe('API', () => {
