@@ -75,7 +75,7 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   hasWordsAttrLabel?: React.ReactNode;
   /** A suggestion for autocompleting. */
   hint?: string;
-  /** Id for the Select Input */
+  /** Id for the search input */
   searchInputId?: string;
   /** @hide A reference object to attach to the input box. */
   innerRef?: React.RefObject<any>;
