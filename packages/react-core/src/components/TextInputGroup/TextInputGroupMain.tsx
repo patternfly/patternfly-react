@@ -53,6 +53,8 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
   isExpanded?: boolean;
   /** @beta The id of the element(s) controlled by the input. Required if role has a value of "combobox". */
   'aria-controls'?: string;
+  /** The id of the input element */
+  id?: string;
 }
 
 const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> = ({
@@ -73,6 +75,7 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
   role,
   isExpanded,
   'aria-controls': ariaControls,
+  id,
   ...props
 }: TextInputGroupMainProps) => {
   const { isDisabled } = React.useContext(TextInputGroupContext);
@@ -94,6 +97,7 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
             disabled
             aria-hidden="true"
             value={hint}
+            id={id}
           />
         )}
         {icon && <span className={css(styles.textInputGroupIcon)}>{icon}</span>}
@@ -110,6 +114,7 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
           placeholder={inputPlaceHolder}
           name={name}
           aria-activedescendant={ariaActivedescendant}
+          id={id}
           {...(role && { role })}
           {...(isExpanded !== undefined && { 'aria-expanded': isExpanded })}
           {...(ariaControls && { 'aria-controls': ariaControls })}
