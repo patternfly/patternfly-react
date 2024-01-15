@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
-import { EmptyStateHeader, EmptyStateHeadingLevel } from './EmptyStateHeader';
+import { EmptyStateHeader } from './EmptyStateHeader';
 import { statusIcons } from '../../helpers';
 
 export enum EmptyStateVariant {
@@ -40,7 +40,7 @@ export interface EmptyStateProps extends React.HTMLProps<HTMLDivElement> {
   /** Empty state icon element to be rendered. Can also be a spinner component */
   icon?: React.ComponentType<any>;
   /** The heading level to use, default is h1 */
-  headingLevel?: EmptyStateHeadingLevel;
+  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
