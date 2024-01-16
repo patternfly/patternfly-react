@@ -252,7 +252,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                   <TextInput
                     readOnlyVariant={isReadOnly || this.state.expanded ? 'default' : undefined}
                     onChange={this.updateText}
-                    value={this.state.expanded ? this.state.textWhenExpanded : this.state.text}
+                    value={this.state.text}
                     id={`text-input-${id}`}
                     aria-label={textAriaLabel}
                     {...(isCode && { dir: 'ltr' })}
@@ -266,7 +266,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                     textId={`text-input-${id}`}
                     aria-label={hoverTip}
                     onClick={(event: any) => {
-                      onCopy(event, this.state.expanded ? this.state.textWhenExpanded : this.state.text);
+                      onCopy(event, this.state.text);
                       this.setState({ copied: true });
                     }}
                     onTooltipHidden={() => this.setState({ copied: false })}
