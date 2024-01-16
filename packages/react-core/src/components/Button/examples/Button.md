@@ -115,7 +115,7 @@ Buttons can display a `count` in the form of a badge to indicate some value or n
 
 To display a plain/icon button inline with text, use `noPadding` prop in addition to `variant="plain"`.
 
-```ts file="./ButtonPlainNoPadding.tsx"
+```ts file="./ButtonPlainHasNoPadding.tsx"
 ```
 
 ### Stateful

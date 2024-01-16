@@ -80,7 +80,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   /** Sets state of the stateful button variant. Default is "unread" */
   state?: 'read' | 'unread' | 'attention';
   /** Applies no padding on a plain button variant. Use when plain button is placed inline with text */
-  noPadding?: boolean;
+  hasNoPadding?: boolean;
   /** Sets position of the icon. Note: "left" and "right" are deprecated. Use "start" and "end" instead */
   iconPosition?: 'start' | 'end' | 'left' | 'right';
   /** Adds accessible text to the button. */
@@ -120,7 +120,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   type = ButtonType.button,
   variant = ButtonVariant.primary,
   state = ButtonState.unread,
-  noPadding = false,
+  hasNoPadding = false,
   iconPosition = 'start',
   'aria-label': ariaLabel = null,
   icon = null,
@@ -173,7 +173,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
         isLoading !== null && variant !== ButtonVariant.plain && styles.modifiers.progress,
         isLoading && styles.modifiers.inProgress,
-        noPadding && variant === ButtonVariant.plain && styles.modifiers.noPadding,
+        hasNoPadding && variant === ButtonVariant.plain && styles.modifiers.noPadding,
         variant === ButtonVariant.stateful && styles.modifiers[state],
         size === ButtonSize.sm && styles.modifiers.small,
         size === ButtonSize.lg && styles.modifiers.displayLg,

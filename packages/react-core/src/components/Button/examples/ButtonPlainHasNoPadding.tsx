@@ -2,10 +2,10 @@ import React from 'react';
 import { Button } from '@patternfly/react-core';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 
-export const ButtonStateful: React.FunctionComponent = () => (
+export const ButtonPlainHasNoPadding: React.FunctionComponent = () => (
   <p>
     This is an example of a button
-    <Button variant="plain" noPadding aria-label="More info">
+    <Button variant="plain" hasNoPadding aria-label="More info">
       <QuestionCircleIcon />
     </Button>
     which is placed inline with text
