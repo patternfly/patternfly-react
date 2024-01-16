@@ -98,6 +98,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
       memoizedAllLeaves: allLeaves,
       memoizedNodeText: nodeTexts
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const moveChecked = (toChosen: boolean) => {
