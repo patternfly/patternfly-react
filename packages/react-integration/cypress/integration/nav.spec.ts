@@ -109,24 +109,6 @@ describe('Nav Test', () => {
     });
   });
 
-  it('Verify Tertiary Nav', () => {
-    cy.get('#nav-primary-tertiary .pf-v5-c-nav__link').each(
-      (tertiaryLink: JQuery<HTMLAnchorElement>, index: number) => {
-        const isCurrent = tertiaryLink.hasClass('pf-m-current');
-        expect(isCurrent).to.be.equal(index === 0);
-      }
-    );
-    cy.get('#nav-primary-tertiary #tertiary-link2').then((tertiaryLink2: JQuery<HTMLAnchorElement>) => {
-      cy.wrap(tertiaryLink2).click();
-      cy.get('#nav-primary-tertiary .pf-v5-c-nav__link').each(
-        (tertiaryNavLink: JQuery<HTMLAnchorElement>, index: number) => {
-          const isCurrent = tertiaryNavLink.hasClass('pf-m-current');
-          expect(isCurrent).to.be.equal(index === 1);
-        }
-      );
-    });
-  });
-
   it('Verify Flyout Nav', () => {
     cy.get('#3-child').should('not.exist');
     cy.get('#flyout-link3').trigger('mouseover');

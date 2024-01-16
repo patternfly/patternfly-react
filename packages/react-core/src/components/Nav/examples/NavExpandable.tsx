@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList } from '@patternfly/react-core';
+import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
 
 export const NavExpandableExample: React.FunctionComponent = () => {
   const [activeGroup, setActiveGroup] = React.useState('nav-expandable-group-1');
@@ -49,7 +49,6 @@ export const NavExpandableExample: React.FunctionComponent = () => {
           >
             Subnav 1 Link 1
           </NavItem>
-          <NavItemSeparator />
           <NavItem
             preventDefault
             id="expandable-2"

@@ -61,16 +61,6 @@ To add horizontal navigation to the top of a `<Page>`, add the navigation inside
 
 ```
 
-### Tertiary navigation (deprecated)
-
-[Horizontal sub-navigation](/components/navigation#horizontal-subnav) is now recommended instead of tertiary-level navigation.
-
-Tertiary navigation allows you to add an additional navigation menu alongside vertical or horizontal navigation. To create tertiary navigation, use the `tertiaryNav` property. The following example passes `tertiaryNav="Navigation"` into a `<Page>` component.
-
-```ts file="./PageTertiaryNav.tsx" isDeprecated
-
-```
-
 ### Uncontrolled navigation
 
 When the `isManagedSidebar` property is true, it manages the sidebar open/close state, removing the need to pass both `isSidebarOpen` into the `<PageSidebar>` and `onSidebarToggle` into the `<PageToggleButton>`.
@@ -114,7 +104,7 @@ The following example adds a group containing `<PageNavigation>`, `<PageBreadcru
 To add additional components and information to a group, you may use the following properties:
 
 - To indicate that a breadcrumb should be in a group, use `isBreadcrumbGrouped`.
-- To indicate that tertiary navigation should be in a group, use `isTertiaryNavGrouped`.
+- To indicate that horizontal sub navigation should be in a group, use `isHorizontalSubnavGrouped`.
 - To specify additional group content, use `additionalGroupedContent`.
 
 ```ts file="./PageGroupSection.tsx"

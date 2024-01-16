@@ -60,21 +60,6 @@ describe('Nav', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Dark Nav List', () => {
-    const { asFragment } = renderNav(
-      <Nav className="test=nav-class" theme="dark">
-        <NavList className="test-nav-list-class">
-          {props.items.map((item) => (
-            <NavItem to={item.to} key={item.to} className="test-nav-item-class">
-              {item.label}
-            </NavItem>
-          ))}
-        </NavList>
-      </Nav>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   test('Default Nav List - Trigger item active update', async () => {
     const user = userEvent.setup();
 
@@ -228,24 +213,9 @@ describe('Nav', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Tertiary Nav List', () => {
-    const { asFragment } = renderNav(
-      <Nav variant="tertiary">
-        <NavList>
-          {props.items.map((item) => (
-            <NavItem to={item.to} key={item.to}>
-              {item.label}
-            </NavItem>
-          ))}
-        </NavList>
-      </Nav>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   test('Nav List with custom item nodes', () => {
     const { asFragment } = renderNav(
-      <Nav variant="tertiary">
+      <Nav>
         <NavList>
           <NavItem to="/components/nav#link1" className="test-nav-item-class">
             <div className="my-custom-node">My custom node</div>
@@ -260,7 +230,7 @@ describe('Nav', () => {
     const user = userEvent.setup();
 
     const { asFragment } = renderNav(
-      <Nav variant="tertiary">
+      <Nav>
         <NavList>
           <NavItem className="test-nav-item-class" flyout={<div>Flyout test</div>}>
             <div className="my-custom-node">My custom node</div>

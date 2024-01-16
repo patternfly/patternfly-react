@@ -35,10 +35,8 @@ export interface NavProps
   ) => void;
   /** Accessible label for the nav when there are multiple navs on the page */
   'aria-label'?: string;
-  /** Indicates which theme color to use */
-  theme?: 'dark' | 'light';
   /** For horizontal navs */
-  variant?: 'default' | 'horizontal' | 'tertiary' | 'horizontal-subnav';
+  variant?: 'default' | 'horizontal' | 'horizontal-subnav';
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -72,7 +70,6 @@ class Nav extends React.Component<
   static defaultProps: NavProps = {
     onSelect: () => undefined,
     onToggle: () => undefined,
-    theme: 'dark',
     ouiaSafe: true
   };
 
@@ -121,13 +118,12 @@ class Nav extends React.Component<
       onSelect,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onToggle,
-      theme,
       ouiaId,
       ouiaSafe,
       variant,
       ...props
     } = this.props;
-    const isHorizontal = ['horizontal', 'tertiary'].includes(variant);
+    const isHorizontal = ['horizontal', 'horizontal-subnav'].includes(variant);
 
     return (
       <NavContext.Provider
@@ -148,7 +144,7 @@ class Nav extends React.Component<
           onToggle: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
           updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
-          isHorizontal: ['horizontal', 'tertiary', 'horizontal-subnav'].includes(variant),
+          isHorizontal: ['horizontal', 'horizontal-subnav'].includes(variant),
           flyoutRef: this.state.flyoutRef,
           setFlyoutRef: (flyoutRef) => this.setState({ flyoutRef }),
           navRef: this.navRef
@@ -157,14 +153,12 @@ class Nav extends React.Component<
         <nav
           className={css(
             styles.nav,
-            theme === 'light' && styles.modifiers.light,
             isHorizontal && styles.modifiers.horizontal,
-            variant === 'tertiary' && styles.modifiers.tertiary,
-            variant === 'horizontal-subnav' && styles.modifiers.horizontalSubnav,
+            variant === 'horizontal-subnav' && styles.modifiers.subnav,
             this.state.isScrollable && styles.modifiers.scrollable,
             className
           )}
-          aria-label={ariaLabel || (['tertiary', 'horizontal-subnav'].includes(variant) ? 'Local' : 'Global')}
+          aria-label={ariaLabel || (variant === 'horizontal-subnav' ? 'Local' : 'Global')}
           ref={this.navRef}
           {...getOUIAProps(Nav.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
