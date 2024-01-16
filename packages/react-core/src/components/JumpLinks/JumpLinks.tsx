@@ -106,12 +106,12 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
 
   const getScrollableElement = () => {
     if (scrollableRef) {
-      if ((scrollableRef as React.RefObject<HTMLElement>).current) {
-        return (scrollableRef as React.RefObject<HTMLElement>).current;
+      if (scrollableRef instanceof HTMLElement) {
+        return scrollableRef;
       } else if (typeof scrollableRef === 'function') {
         return scrollableRef();
       }
-      return scrollableRef as HTMLElement;
+      return (scrollableRef as React.RefObject<HTMLElement>).current;
     } else if (scrollableSelector) {
       return document.querySelector(scrollableSelector) as HTMLElement;
     }
