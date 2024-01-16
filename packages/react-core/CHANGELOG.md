@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.10...@patternfly/react-core@6.0.0-alpha.11) (2024-01-16)
+
+### Features
+
+- **Button:** consume Penta tokens and update examples ([#9934](https://github.com/patternfly/patternfly-react/issues/9934)) ([d7a3b29](https://github.com/patternfly/patternfly-react/commit/d7a3b29e7ca01e12adee19b9513abb0c645af9bb))
+- **Navigation:** Penta updates for nav ([#9948](https://github.com/patternfly/patternfly-react/issues/9948)) ([dba392d](https://github.com/patternfly/patternfly-react/commit/dba392d62011b1adc38ab0d22a2ad91e0e7d2a2e))
+
 # [6.0.0-alpha.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.9...@patternfly/react-core@6.0.0-alpha.10) (2024-01-12)
 
 ### Features

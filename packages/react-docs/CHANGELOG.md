@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.10...@patternfly/react-docs@7.0.0-alpha.11) (2024-01-16)
+
+### Features
+
+- **Navigation:** Penta updates for nav ([#9948](https://github.com/patternfly/patternfly-react/issues/9948)) ([dba392d](https://github.com/patternfly/patternfly-react/commit/dba392d62011b1adc38ab0d22a2ad91e0e7d2a2e))
+
 # [7.0.0-alpha.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.9...@patternfly/react-docs@7.0.0-alpha.10) (2024-01-12)
 
 **Note:** Version bump only for package @patternfly/react-docs
