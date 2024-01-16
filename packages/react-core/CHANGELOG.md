@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.2.0-prerelease.47 (2024-01-16)
+
+### Bug Fixes
+
+- **Clipboard copy:** Fixed regression with updating main content when expanded ([#9975](https://github.com/patternfly/patternfly-react/issues/9975)) ([a189781](https://github.com/patternfly/patternfly-react/commit/a18978182e9bf533503d93961150232f74c173f7))
+
 # [5.2.0-prerelease.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.45...@patternfly/react-core@5.2.0-prerelease.46) (2024-01-15)
 
 **Note:** Version bump only for package @patternfly/react-core
