@@ -5,7 +5,7 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-i
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 
 export const ButtonDisabled: React.FunctionComponent = () => (
-  <React.Fragment>
+  <>
     <Flex columnGap={{ default: 'columnGapSm' }}>
       <Button isDisabled>Primary</Button>
       <Button variant="secondary" isDisabled>
@@ -48,5 +48,5 @@ export const ButtonDisabled: React.FunctionComponent = () => (
         <CopyIcon />
       </Button>
     </Flex>
-  </React.Fragment>
+  </>
 );
