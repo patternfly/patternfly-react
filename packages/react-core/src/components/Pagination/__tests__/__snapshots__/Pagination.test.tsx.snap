@@ -23,7 +23,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -233,7 +233,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -443,7 +443,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -653,7 +653,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -863,7 +863,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -1073,7 +1073,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -1276,7 +1276,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
       1 - 10 - 40 - 
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -1483,7 +1483,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -1697,7 +1697,7 @@ exports[`Pagination component render custom start end 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -2078,7 +2078,7 @@ exports[`Pagination component render last page 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -2292,7 +2292,7 @@ exports[`Pagination component render limited number of pages 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -2497,7 +2497,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
     style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -2699,7 +2699,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
     style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -2913,7 +2913,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -3127,7 +3127,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -3345,7 +3345,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -3559,7 +3559,7 @@ exports[`Pagination component render should render correctly top 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -3773,7 +3773,7 @@ exports[`Pagination component render titles 1`] = `
        values
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -3987,7 +3987,7 @@ exports[`Pagination component render up drop direction 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
@@ -4201,7 +4201,7 @@ exports[`Pagination component render zero results 1`] = `
        
     </div>
     <div
-      class=""
+      class="pf-v5-c-pagination__page-menu"
     >
       <button
         aria-expanded="false"
