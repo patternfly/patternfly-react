@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 
-import { Button, ButtonVariant } from '../Button';
+import { Button, ButtonState, ButtonVariant } from '../Button';
 
 Object.values(ButtonVariant).forEach((variant) => {
   if (variant !== 'primary') {
@@ -55,10 +55,9 @@ test('Renders with class pf-m-block when isBlock = true', () => {
   expect(screen.getByRole('button')).toHaveClass('pf-m-block');
 });
 
-// TODO:  Reenable or remove with issue #9907
-xtest('Renders with class pf-m-active when isActive = true', () => {
-  render(<Button isActive>Active Button</Button>);
-  expect(screen.getByRole('button')).toHaveClass('pf-m-active');
+xtest('Renders with class pf-m-clicked when isClicked = true', () => {
+  render(<Button isClicked>Clicked Button</Button>);
+  expect(screen.getByRole('button')).toHaveClass('pf-m-clicked');
 });
 
 test('Renders with class pf-m-disabled when isDisabled = true', () => {
@@ -78,6 +77,22 @@ test('Does not disable button when isDisabled = true and component = a', () => {
     </Button>
   );
   expect(screen.getByText('Disabled yet focusable button')).not.toHaveProperty('disabled');
+});
+
+test('Renders with class pf-m-unread by default when variant = stateful', () => {
+  render(<Button variant="stateful">Stateful Button</Button>);
+  expect(screen.getByRole('button')).toHaveClass('pf-m-stateful', 'pf-m-unread');
+});
+
+Object.values(ButtonState).forEach((state) => {
+  test(`Renders with class pf-m-${state} when state = ${state} and variant = stateful`, () => {
+    render(
+      <Button variant="stateful" state={state}>
+        Stateful Button - {state}
+      </Button>
+    );
+    expect(screen.getByRole('button')).toHaveClass('pf-m-stateful', `pf-m-${state}`);
+  });
 });
 
 test('Renders with class pf-m-danger when isDanger = true and variant = secondary', () => {

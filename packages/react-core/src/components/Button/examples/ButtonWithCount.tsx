@@ -1,5 +1,5 @@
 import React from 'react';
-import { BadgeCountObject, Button } from '@patternfly/react-core';
+import { BadgeCountObject, Button, Flex } from '@patternfly/react-core';
 
 export const ButtonWithCount: React.FunctionComponent = () => {
   const badgeCountObjectNotRead: BadgeCountObject = {
@@ -15,75 +15,82 @@ export const ButtonWithCount: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
-      <p>Unread:</p>
-      <Button variant="primary" countOptions={badgeCountObjectNotRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="secondary" countOptions={badgeCountObjectNotRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="tertiary" countOptions={badgeCountObjectNotRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="control" countOptions={badgeCountObjectNotRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="link" countOptions={badgeCountObjectNotRead}>
-        View issues
-      </Button>{' '}
+    <>
+      <div>Unread:</div>
+      <Flex columnGap={{ default: 'columnGapSm' }}>
+        <Button variant="primary" countOptions={badgeCountObjectNotRead}>
+          Issues
+        </Button>
+        <Button variant="secondary" countOptions={badgeCountObjectNotRead}>
+          Issues
+        </Button>
+        <Button variant="tertiary" countOptions={badgeCountObjectNotRead}>
+          Issues
+        </Button>
+        <Button variant="control" countOptions={badgeCountObjectNotRead}>
+          Issues
+        </Button>
+        <Button variant="link" countOptions={badgeCountObjectNotRead}>
+          Issues
+        </Button>
+      </Flex>
       <br />
-      <p>Unread disabled:</p>
-      <Button variant="primary" isDisabled countOptions={badgeCountObjectNotRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="secondary" isDisabled countOptions={badgeCountObjectNotRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="tertiary" isDisabled countOptions={badgeCountObjectNotRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="control" isDisabled countOptions={badgeCountObjectNotRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="link" isDisabled countOptions={badgeCountObjectNotRead}>
-        View issues
-      </Button>{' '}
+      <div>Unread disabled:</div>
+      <Flex columnGap={{ default: 'columnGapSm' }}>
+        <Button variant="primary" isDisabled countOptions={badgeCountObjectNotRead}>
+          Issues
+        </Button>
+        <Button variant="secondary" isDisabled countOptions={badgeCountObjectNotRead}>
+          Issues
+        </Button>
+        <Button variant="tertiary" isDisabled countOptions={badgeCountObjectNotRead}>
+          Issues
+        </Button>
+        <Button variant="control" isDisabled countOptions={badgeCountObjectNotRead}>
+          Issues
+        </Button>
+        <Button variant="link" isDisabled countOptions={badgeCountObjectNotRead}>
+          Issues
+        </Button>
+      </Flex>
       <br />
-      <p>Read:</p>
-      <Button variant="primary" countOptions={badgeCountObjectRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="secondary" countOptions={badgeCountObjectRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="tertiary" countOptions={badgeCountObjectRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="control" countOptions={badgeCountObjectRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="link" countOptions={badgeCountObjectRead}>
-        View issues
-      </Button>{' '}
+      <div>Read:</div>
+      <Flex columnGap={{ default: 'columnGapSm' }}>
+        <Button variant="primary" countOptions={badgeCountObjectRead}>
+          Issues
+        </Button>
+        <Button variant="secondary" countOptions={badgeCountObjectRead}>
+          Issues
+        </Button>
+        <Button variant="tertiary" countOptions={badgeCountObjectRead}>
+          Issues
+        </Button>
+        <Button variant="control" countOptions={badgeCountObjectRead}>
+          Issues
+        </Button>
+        <Button variant="link" countOptions={badgeCountObjectRead}>
+          Issues
+        </Button>
+      </Flex>
       <br />
-      <p>Read disabled:</p>
-      <Button variant="primary" isDisabled countOptions={badgeCountObjectRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="secondary" isDisabled countOptions={badgeCountObjectRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="tertiary" isDisabled countOptions={badgeCountObjectRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="control" isDisabled countOptions={badgeCountObjectRead}>
-        View issues
-      </Button>{' '}
-      <Button variant="link" isDisabled countOptions={badgeCountObjectRead}>
-        View issues
-      </Button>{' '}
-      <br />
-    </React.Fragment>
+      <div>Read disabled:</div>
+      <Flex columnGap={{ default: 'columnGapSm' }}>
+        <Button variant="primary" isDisabled countOptions={badgeCountObjectRead}>
+          Issues
+        </Button>
+        <Button variant="secondary" isDisabled countOptions={badgeCountObjectRead}>
+          Issues
+        </Button>
+        <Button variant="tertiary" isDisabled countOptions={badgeCountObjectRead}>
+          Issues
+        </Button>
+        <Button variant="control" isDisabled countOptions={badgeCountObjectRead}>
+          Issues
+        </Button>
+        <Button variant="link" isDisabled countOptions={badgeCountObjectRead}>
+          Issues
+        </Button>
+      </Flex>
+    </>
   );
 };

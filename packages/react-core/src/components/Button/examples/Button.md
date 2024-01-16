@@ -12,6 +12,8 @@ import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/ex
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import { Link } from '@reach/router';
 
 ## Examples
@@ -33,6 +35,7 @@ PatternFly supports several button styling variants to be used in different scen
 | Link | Links are labeled, but have no background or border. Use for actions that require less emphasis, actions that navigate users to another page within the same window, and/or actions that navigate to external pages in a new window. Links may be placed inline with text using the `isInline` property.|
 | Plain | Plain buttons have no styling and are intended to be labeled with icons. |
 | Control | Control buttons can be labeled with text or icons. Primarily intended to be paired with other controls in an [input group](/components/input-group). |
+| Stateful | Stateful buttons are ideal for displaying the state of notifications. They have 3 states: `read`, `unread` and `attention`.
 
 ### Disabled buttons
 
@@ -106,4 +109,18 @@ Unlike normal disabled buttons, aria-disabled buttons can support tooltips. Furt
 Buttons can display a `count` in the form of a badge to indicate some value or number by passing in the `countOptions` prop as a `BadgeCountObject` object. The `BadgeCountObject` object will handle `count`, `isRead`, and `className` props for the badge count.
 
 ```ts file="./ButtonWithCount.tsx" isBeta
+```
+
+### Plain with no padding
+
+To display a plain/icon button inline with text, use `noPadding` prop in addition to `variant="plain"`.
+
+```ts file="./ButtonPlainHasNoPadding.tsx"
+```
+
+### Stateful
+
+Stateful buttons are ideal for displaying the state of notifications. Use `variant="stateful"` alongside with the `state` property, which can have these 3 values: `read`, `unread` (used as default) and `attention` (which means unread and requires attention).
+
+```ts file="./ButtonStateful.tsx"
 ```
