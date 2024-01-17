@@ -25,6 +25,7 @@ import {
 Button,
 Form,
 FormGroup,
+FormGroupLabelHelp,
 Popover,
 TextInput,
 TextArea,

@@ -10,10 +10,9 @@ import {
   Radio,
   HelperText,
   HelperTextItem,
-  FormHelperText
+  FormHelperText,
+  FormGroupLabelHelp
 } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import styles from '@patternfly/react-styles/css/components/Form/form';
 
 export const FormBasic: React.FunctionComponent = () => {
   const [name, setName] = React.useState('');
@@ -64,15 +63,7 @@ export const FormBasic: React.FunctionComponent = () => {
               </div>
             }
           >
-            <button
-              type="button"
-              aria-label="More info for name field"
-              onClick={(e) => e.preventDefault()}
-              aria-describedby="simple-form-name-01"
-              className={styles.formGroupLabelHelp}
-            >
-              <HelpIcon />
-            </button>
+            <FormGroupLabelHelp aria-label="More info for name field" aria-describedby="simple-form-name-01" />
           </Popover>
         }
         isRequired
