@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.48](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.47...@patternfly/react-core@5.2.0-prerelease.48) (2024-01-17)
+
+### Bug Fixes
+
+- **ClipboardCopy:** update main content on children change when expanded ([#10015](https://github.com/patternfly/patternfly-react/issues/10015)) ([9395dd5](https://github.com/patternfly/patternfly-react/commit/9395dd560fe50572aefb4b8ea84ba40121f23c63))
+
 # 5.2.0-prerelease.47 (2024-01-16)
 
 ### Bug Fixes

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.48](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.47...@patternfly/react-table@5.2.0-prerelease.48) (2024-01-17)
+
+**Note:** Version bump only for package @patternfly/react-table
+
 # 5.2.0-prerelease.47 (2024-01-16)
 
 **Note:** Version bump only for package @patternfly/react-table
