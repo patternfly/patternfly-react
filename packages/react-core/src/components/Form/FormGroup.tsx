@@ -13,7 +13,7 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   label?: React.ReactNode;
   /** Additional label information displayed after the label. */
   labelInfo?: React.ReactNode;
-  /** Sets an icon for the label. For providing additional context. Host element for Popover  */
+  /** Sets an icon for the label. We recommend using FormGroupLabelHelp element as a help icon button. For providing additional context, host element for Popover  */
   labelIcon?: React.ReactElement;
   /** Sets the FormGroup required. */
   isRequired?: boolean;
