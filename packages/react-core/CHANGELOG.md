@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.12...@patternfly/react-core@6.0.0-alpha.13) (2024-01-17)
+
+### Features
+
+- **Panel:** consumed Penta updates ([#9946](https://github.com/patternfly/patternfly-react/issues/9946)) ([6fdf5fe](https://github.com/patternfly/patternfly-react/commit/6fdf5fe78a4854f30937e6af553a7ed744dcb9d0))
+
 # [6.0.0-alpha.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.11...@patternfly/react-core@6.0.0-alpha.12) (2024-01-17)
 
 **Note:** Version bump only for package @patternfly/react-core
