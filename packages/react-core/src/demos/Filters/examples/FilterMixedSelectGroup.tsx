@@ -12,7 +12,6 @@ import {
   Popper,
   Pagination,
   EmptyState,
-  EmptyStateHeader,
   EmptyStateFooter,
   EmptyStateBody,
   Button,
@@ -20,7 +19,6 @@ import {
   Badge,
   ToolbarFilter,
   ToolbarToggleGroup,
-  EmptyStateIcon,
   EmptyStateActions
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
@@ -492,8 +490,7 @@ export const FilterMixedSelectGroup: React.FunctionComponent = () => {
   );
 
   const emptyState = (
-    <EmptyState>
-      <EmptyStateHeader headingLevel="h4" titleText="No results found" icon={<EmptyStateIcon icon={SearchIcon} />} />
+    <EmptyState headingLevel="h4" titleText="No results found" icon={SearchIcon}>
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
       <EmptyStateFooter>
         <EmptyStateActions>

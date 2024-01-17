@@ -2,9 +2,7 @@ import React from 'react';
 import {
   Button,
   EmptyState,
-  EmptyStateHeader,
   EmptyStateBody,
-  EmptyStateIcon,
   EmptyStateVariant,
   NotificationDrawer,
   NotificationDrawerProps,
@@ -35,10 +33,7 @@ interface GroupsNotificationDrawerDemoState {
   thirdGroupExpanded: boolean;
 }
 
-export class GroupsNotificationDrawerDemo extends React.Component<
-  NotificationDrawerProps,
-  GroupsNotificationDrawerDemoState
-> {
+class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerProps, GroupsNotificationDrawerDemoState> {
   static displayName = 'GroupsNotificationDrawerDemo';
   constructor(props: NotificationDrawerProps) {
     super(props);
@@ -400,12 +395,12 @@ export class GroupsNotificationDrawerDemo extends React.Component<
               onExpand={this.toggleThirdDrawer}
             >
               <NotificationDrawerList isHidden={!thirdGroupExpanded}>
-                <EmptyState variant={EmptyStateVariant.full}>
-                  <EmptyStateHeader
-                    titleText="No alerts found"
-                    headingLevel="h2"
-                    icon={<EmptyStateIcon icon={SearchIcon} />}
-                  />
+                <EmptyState
+                  headingLevel="h2"
+                  titleText="No alerts found"
+                  icon={SearchIcon}
+                  variant={EmptyStateVariant.full}
+                >
                   <EmptyStateBody>
                     There are currently no critical alerts firing. There may be firing alerts of other severities or
                     silenced critical alerts however.
@@ -424,3 +419,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
     );
   }
 }
+
+GroupsNotificationDrawerDemo.displayName = 'GroupsNotificationDrawerDemo';
+
+export { GroupsNotificationDrawerDemo };

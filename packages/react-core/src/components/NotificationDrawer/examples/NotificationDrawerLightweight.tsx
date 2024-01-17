@@ -4,7 +4,6 @@ import {
   EmptyState,
   EmptyStateBody,
   EmptyStateFooter,
-  EmptyStateHeader,
   EmptyStateVariant,
   NotificationDrawer,
   NotificationDrawerBody,
@@ -15,8 +14,7 @@ import {
   NotificationDrawerListItem,
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
-  EmptyStateActions,
-  EmptyStateIcon
+  EmptyStateActions
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
@@ -173,12 +171,12 @@ export const NotificationDrawerLightweight: React.FunctionComponent = () => {
               isHidden={!thirdGroupExpanded}
               aria-label="Notifications in the third lightweight group"
             >
-              <EmptyState variant={EmptyStateVariant.full}>
-                <EmptyStateHeader
-                  headingLevel="h2"
-                  titleText="No alerts found"
-                  icon={<EmptyStateIcon icon={SearchIcon} />}
-                />
+              <EmptyState
+                headingLevel="h2"
+                titleText="No alerts found"
+                icon={SearchIcon}
+                variant={EmptyStateVariant.full}
+              >
                 <EmptyStateBody>
                   There are currently no critical alerts firing. There may be firing alerts of other severities or
                   silenced critical alerts however.

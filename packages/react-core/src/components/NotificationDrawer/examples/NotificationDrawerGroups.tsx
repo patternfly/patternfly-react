@@ -3,7 +3,6 @@ import {
   Button,
   EmptyState,
   EmptyStateBody,
-  EmptyStateHeader,
   EmptyStateFooter,
   NotificationDrawer,
   NotificationDrawerBody,
@@ -16,7 +15,6 @@ import {
   NotificationDrawerListItemHeader,
   EmptyStateVariant,
   EmptyStateActions,
-  EmptyStateIcon,
   Dropdown,
   DropdownList,
   DropdownItem,
@@ -377,12 +375,12 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
             truncateTitle={1}
           >
             <NotificationDrawerList isHidden={!thirdGroupExpanded} aria-label="Notifications in the third group">
-              <EmptyState variant={EmptyStateVariant.full}>
-                <EmptyStateHeader
-                  headingLevel="h2"
-                  titleText="No alerts found"
-                  icon={<EmptyStateIcon icon={SearchIcon} />}
-                />
+              <EmptyState
+                headingLevel="h2"
+                titleText="No alerts found"
+                icon={SearchIcon}
+                variant={EmptyStateVariant.full}
+              >
                 <EmptyStateBody>
                   There are currently no critical alerts firing. There may be firing alerts of other severities or
                   silenced critical alerts however.

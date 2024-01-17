@@ -7,15 +7,13 @@ import {
   ButtonVariant,
   EmptyState,
   EmptyStateBody,
-  EmptyStateIcon,
   EmptyStateActions,
   EmptyStateVariant,
   EmptyStateFooter,
   getResizeObserver,
   Popover,
   PopoverProps,
-  TooltipPosition,
-  EmptyStateHeader
+  TooltipPosition
 } from '@patternfly/react-core';
 import MonacoEditor, { ChangeHandler, EditorDidMount } from 'react-monaco-editor';
 import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
@@ -520,12 +518,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
           const emptyState =
             providedEmptyState ||
             (isUploadEnabled ? (
-              <EmptyState variant={EmptyStateVariant.sm}>
-                <EmptyStateHeader
-                  titleText={emptyStateTitle}
-                  icon={<EmptyStateIcon icon={CodeIcon} />}
-                  headingLevel="h4"
-                />
+              <EmptyState variant={EmptyStateVariant.sm} titleText={emptyStateTitle} icon={CodeIcon} headingLevel="h4">
                 <EmptyStateBody>{emptyStateBody}</EmptyStateBody>
                 {!isReadOnly && (
                   <EmptyStateFooter>
@@ -543,12 +536,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                 )}
               </EmptyState>
             ) : (
-              <EmptyState variant={EmptyStateVariant.sm}>
-                <EmptyStateHeader
-                  titleText={emptyStateTitle}
-                  icon={<EmptyStateIcon icon={CodeIcon} />}
-                  headingLevel="h4"
-                />
+              <EmptyState variant={EmptyStateVariant.sm} titleText={emptyStateTitle} icon={CodeIcon} headingLevel="h4">
                 {!isReadOnly && (
                   <EmptyStateFooter>
                     <EmptyStateActions>

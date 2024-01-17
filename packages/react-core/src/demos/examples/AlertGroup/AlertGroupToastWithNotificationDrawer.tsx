@@ -3,8 +3,6 @@ import {
   Button,
   EmptyState,
   EmptyStateBody,
-  EmptyStateHeader,
-  EmptyStateIcon,
   NotificationBadge,
   NotificationBadgeVariant,
   NotificationDrawer,
@@ -297,12 +295,12 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
           </NotificationDrawerList>
         )}
         {notifications.length === 0 && (
-          <EmptyState variant={EmptyStateVariant.full}>
-            <EmptyStateHeader
-              headingLevel="h2"
-              titleText="No notifications found"
-              icon={<EmptyStateIcon icon={SearchIcon} />}
-            />
+          <EmptyState
+            headingLevel="h2"
+            titleText="No notifications found"
+            icon={SearchIcon}
+            variant={EmptyStateVariant.full}
+          >
             <EmptyStateBody>There are currently no notifications.</EmptyStateBody>
           </EmptyState>
         )}

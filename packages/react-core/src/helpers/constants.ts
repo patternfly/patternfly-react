@@ -10,6 +10,12 @@ import globalHeightBreakpointLg from '@patternfly/react-tokens/dist/esm/global_h
 import globalHeightBreakpointXl from '@patternfly/react-tokens/dist/esm/global_height_breakpoint_xl';
 import globalHeightBreakpoint2xl from '@patternfly/react-tokens/dist/esm/global_height_breakpoint_2xl';
 
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+
 export const SIDE = { RIGHT: 'right', LEFT: 'left', BOTH: 'both', NONE: 'none' };
 
 export const KEYHANDLER_DIRECTION = { UP: 'up', DOWN: 'down', RIGHT: 'right', LEFT: 'left' };
@@ -46,4 +52,12 @@ export const globalHeightBreakpoints = {
   lg: parseInt(globalHeightBreakpointLg.value),
   xl: parseInt(globalHeightBreakpointXl.value),
   '2xl': parseInt(globalHeightBreakpoint2xl.value)
+};
+
+export const statusIcons = {
+  success: CheckCircleIcon,
+  danger: ExclamationCircleIcon,
+  warning: ExclamationTriangleIcon,
+  info: InfoCircleIcon,
+  custom: BellIcon
 };

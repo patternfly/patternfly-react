@@ -48,6 +48,15 @@ exports[`EmptyState Header with icon 1`] = `
         />
       </svg>
     </div>
+    <div
+      class="pf-v5-c-empty-state__title"
+    >
+      <h1
+        class="pf-v5-c-empty-state__title-text"
+      >
+        Empty state
+      </h1>
+    </div>
   </div>
 </DocumentFragment>
 `;

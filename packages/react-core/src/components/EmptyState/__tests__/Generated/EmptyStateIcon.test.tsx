@@ -11,8 +11,6 @@ import { Spinner } from '../../../Spinner/Spinner';
 it('EmptyStateIcon should match snapshot (auto-generated)', () => {
   const { asFragment } = render(
     <EmptyStateIcon
-      color={'string'}
-      title={'string'}
       className={"''"}
       icon={UserIcon}
     />
@@ -23,8 +21,6 @@ it('EmptyStateIcon should match snapshot (auto-generated)', () => {
 it('EmptyStateIcon should match snapshot for variant container', () => {
   const { asFragment } = render(
     <EmptyStateIcon
-      color={'string'}
-      title={'string'}
       className={"''"}
       icon={Spinner}
     />

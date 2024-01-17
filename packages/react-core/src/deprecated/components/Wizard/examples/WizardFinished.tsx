@@ -1,11 +1,9 @@
 import React from 'react';
 import {
   EmptyState,
-  EmptyStateHeader,
   EmptyStateFooter,
   EmptyStateBody,
   EmptyStateActions,
-  EmptyStateIcon,
   Progress,
   Button
 } from '@patternfly/react-core';
@@ -43,12 +41,12 @@ const FinishedStep: React.FunctionComponent<finishedProps> = (props: finishedPro
 
   return (
     <div className={layout.bullseye}>
-      <EmptyState variant="lg">
-        <EmptyStateHeader
-          headingLevel="h4"
-          titleText={percent === 100 ? 'Validation complete' : 'Validating credentials'}
-          icon={<EmptyStateIcon icon={CogsIcon} />}
-        />
+      <EmptyState
+        headingLevel="h4"
+        titleText={percent === 100 ? 'Validation complete' : 'Validating credentials'}
+        icon={CogsIcon}
+        variant="lg"
+      >
         <EmptyStateBody>
           <Progress value={percent} measureLocation="outside" aria-label="validation-progress" />
         </EmptyStateBody>

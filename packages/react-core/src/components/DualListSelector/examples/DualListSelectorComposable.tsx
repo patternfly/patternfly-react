@@ -11,10 +11,8 @@ import {
   SearchInput,
   EmptyState,
   EmptyStateVariant,
-  EmptyStateHeader,
   EmptyStateFooter,
   EmptyStateBody,
-  EmptyStateIcon,
   EmptyStateActions
 } from '@patternfly/react-core';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
@@ -139,8 +137,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
   };
 
   const buildEmptyState = (isAvailable: boolean) => (
-    <EmptyState variant={EmptyStateVariant.sm}>
-      <EmptyStateHeader headingLevel="h4" titleText="No results found" icon={<EmptyStateIcon icon={SearchIcon} />} />
+    <EmptyState headingLevel="h4" titleText="No results found" icon={SearchIcon} variant={EmptyStateVariant.sm}>
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
       <EmptyStateFooter>
         <EmptyStateActions>

@@ -12,8 +12,6 @@ import {
   DropdownItem,
   DropdownList,
   EmptyState,
-  EmptyStateHeader,
-  EmptyStateIcon,
   EmptyStateFooter,
   EmptyStateVariant,
   EmptyStateActions,
@@ -484,12 +482,12 @@ export const CardViewBasic: React.FunctionComponent = () => {
           <Gallery hasGutter aria-label="Selectable card container">
             <Card isCompact>
               <Bullseye>
-                <EmptyState variant={EmptyStateVariant.xs}>
-                  <EmptyStateHeader
-                    headingLevel="h2"
-                    titleText="Add a new card to your page"
-                    icon={<EmptyStateIcon icon={PlusCircleIcon} />}
-                  />
+                <EmptyState
+                  headingLevel="h2"
+                  titleText="Add a new card to your page"
+                  icon={PlusCircleIcon}
+                  variant={EmptyStateVariant.xs}
+                >
                   <EmptyStateFooter>
                     <EmptyStateActions>
                       <Button variant="link">Add card</Button>
