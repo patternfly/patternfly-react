@@ -120,7 +120,8 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   componentDidUpdate = (prevProps: ClipboardCopyProps, prevState: ClipboardCopyState) => {
     if (prevProps.children !== this.props.children) {
-      this.setState({ text: this.props.children as string });
+      const newText = this.props.children as string;
+      this.setState({ text: newText, textWhenExpanded: newText });
     }
   };
 
@@ -252,7 +253,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                   <TextInput
                     readOnlyVariant={isReadOnly || this.state.expanded ? 'default' : undefined}
                     onChange={this.updateText}
-                    value={this.state.text}
+                    value={this.state.expanded ? this.state.textWhenExpanded : this.state.text}
                     id={`text-input-${id}`}
                     aria-label={textAriaLabel}
                     {...(isCode && { dir: 'ltr' })}
@@ -266,7 +267,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                     textId={`text-input-${id}`}
                     aria-label={hoverTip}
                     onClick={(event: any) => {
-                      onCopy(event, this.state.text);
+                      onCopy(event, this.state.expanded ? this.state.textWhenExpanded : this.state.text);
                       this.setState({ copied: true });
                     }}
                     onTooltipHidden={() => this.setState({ copied: false })}
