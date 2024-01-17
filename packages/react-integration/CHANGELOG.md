@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.0.0-alpha.9 (2024-01-17)
+
+### Features
+
+- **EmptyState:** update EmptyState with updates for penta ([#9947](https://github.com/patternfly/patternfly-react/issues/9947)) ([07cbb82](https://github.com/patternfly/patternfly-react/commit/07cbb8270627f9ade299b90eaf5dd4fd5fa6fe95))
+
 # [6.0.0-alpha.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.7...@patternfly/react-integration@6.0.0-alpha.8) (2024-01-16)
 
 ### Features

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.13...@patternfly/react-core@6.0.0-alpha.14) (2024-01-17)
+
+### Features
+
+- **Avatar:** Penta updates ([#9954](https://github.com/patternfly/patternfly-react/issues/9954)) ([c9e3b72](https://github.com/patternfly/patternfly-react/commit/c9e3b720d560f15dab98c3d3040f30c734949e4b))
+- **EmptyState:** update EmptyState with updates for penta ([#9947](https://github.com/patternfly/patternfly-react/issues/9947)) ([07cbb82](https://github.com/patternfly/patternfly-react/commit/07cbb8270627f9ade299b90eaf5dd4fd5fa6fe95))
+
 # [6.0.0-alpha.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.12...@patternfly/react-core@6.0.0-alpha.13) (2024-01-17)
 
 ### Features
