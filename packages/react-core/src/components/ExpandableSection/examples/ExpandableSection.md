@@ -37,11 +37,15 @@ When passing the `isDetached` property into `<ExpandableSection>`, you must also
 
 ### Disclosure variation
 
+You can pass in the `displaySize="lg"` property for a disclosure variation styling.
+
 ```ts file="ExpandableSectionDisclosure.tsx"
 
 ```
 
-### Indented
+### Indented expandable content
+
+You can indent the expandable content by passing in the `isIndented` property. This will not affect the expandable toggle.
 
 ```ts file="ExpandableSectionIndented.tsx"
 
