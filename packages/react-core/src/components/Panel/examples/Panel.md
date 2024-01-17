@@ -116,6 +116,21 @@ const BorderedPanel = () => (
 );
 ```
 
+### Secondary variant
+
+```js
+import React from 'react';
+import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
+
+const PanelSecondaryVariant = () => (
+  <Panel variant="secondary">
+    <PanelMain>
+      <PanelMainBody>Main content</PanelMainBody>
+    </PanelMain>
+  </Panel>
+);
+```
+
 ### Scrollable
 
 ```js

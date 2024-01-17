@@ -8,7 +8,7 @@ export interface PanelProps extends React.HTMLProps<HTMLDivElement> {
   /** Class to add to outer div */
   className?: string;
   /** Adds panel variant styles */
-  variant?: 'raised' | 'bordered';
+  variant?: 'raised' | 'bordered' | 'secondary';
   /** Flag to add scrollable styling to the panel */
   isScrollable?: boolean;
   /** @hide Forwarded ref */
@@ -26,8 +26,7 @@ const PanelBase: React.FunctionComponent<PanelProps> = ({
   <div
     className={css(
       styles.panel,
-      variant === 'raised' && styles.modifiers.raised,
-      variant === 'bordered' && styles.modifiers.bordered,
+      variant && styles.modifiers[variant],
       isScrollable && styles.modifiers.scrollable,
       className
     )}

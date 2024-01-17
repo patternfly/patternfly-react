@@ -46,6 +46,11 @@ test(`Renders with class name ${styles.modifiers.bordered} when variant is borde
   expect(screen.getByText('Test')).toHaveClass(styles.modifiers.bordered);
 });
 
+test(`Renders with class name ${styles.modifiers.secondary} when variant is secondary`, () => {
+  render(<Panel variant="secondary">Test</Panel>);
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.secondary);
+});
+
 test(`Renders with class name ${styles.modifiers.scrollable} when isScrollable is true`, () => {
   render(<Panel isScrollable>Test</Panel>);
   expect(screen.getByText('Test')).toHaveClass(styles.modifiers.scrollable);
