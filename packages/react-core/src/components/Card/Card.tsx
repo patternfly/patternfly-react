@@ -87,9 +87,11 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isSelectableRaised = false,
   isSelected = false,
   isDisabledRaised = false,
-  isFlat = false,
+  // TODO: Update with issue #9991
+  // isFlat = false,
   isExpanded = false,
-  isRounded = false,
+  // TODO: Update with issue #9991
+  // isRounded = false,
   isLarge = false,
   isFullHeight = false,
   isPlain = false,
@@ -112,12 +114,13 @@ export const Card: React.FunctionComponent<CardProps> = ({
   }
 
   const getSelectableModifiers = () => {
-    if (isDisabledRaised) {
-      return css(styles.modifiers.nonSelectableRaised);
-    }
-    if (isSelectableRaised) {
-      return css(styles.modifiers.selectableRaised, isSelected && styles.modifiers.selectedRaised);
-    }
+    // TODO: Update with issue #9991
+    // if (isDisabledRaised) {
+    //   return css(styles.modifiers.nonSelectableRaised);
+    // }
+    // if (isSelectableRaised) {
+    //   return css(styles.modifiers.selectableRaised, isSelected && styles.modifiers.selectedRaised);
+    // }
     if (isSelectable && isClickable) {
       return css(styles.modifiers.selectable, styles.modifiers.clickable, isSelected && styles.modifiers.current);
     }
@@ -185,8 +188,9 @@ export const Card: React.FunctionComponent<CardProps> = ({
           styles.card,
           isCompact && styles.modifiers.compact,
           isExpanded && styles.modifiers.expanded,
-          isFlat && styles.modifiers.flat,
-          isRounded && styles.modifiers.rounded,
+          // TODO: Update with issue #9991
+          // isFlat && styles.modifiers.flat,
+          // isRounded && styles.modifiers.rounded,
           isLarge && styles.modifiers.displayLg,
           isFullHeight && styles.modifiers.fullHeight,
           isPlain && styles.modifiers.plain,

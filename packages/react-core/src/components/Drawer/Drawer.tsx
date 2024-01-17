@@ -4,7 +4,6 @@ import { css } from '@patternfly/react-styles';
 
 export enum DrawerColorVariant {
   default = 'default',
-  light200 = 'light-200',
   noBackground = 'no-background'
 }
 

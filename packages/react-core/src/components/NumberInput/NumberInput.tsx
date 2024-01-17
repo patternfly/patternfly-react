@@ -106,7 +106,8 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
 
   return (
     <div
-      className={css(styles.numberInput, validated !== 'default' && styles.modifiers.status, className)}
+      // TODO: Update with issue #9978. Removed "validated !== 'default' && styles.modifiers.status" from classname to get build to work
+      className={css(styles.numberInput, className)}
       {...(widthChars && {
         style: {
           [cssFormControlWidthChars.name]: widthChars,
