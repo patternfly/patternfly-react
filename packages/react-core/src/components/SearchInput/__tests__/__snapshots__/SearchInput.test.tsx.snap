@@ -306,7 +306,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                       Username
                     </span>
                   </label>
-                   
+                    
                 </div>
                 <div
                   class="pf-v6-c-form__group-control"
@@ -339,7 +339,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                       First name
                     </span>
                   </label>
-                   
+                    
                 </div>
                 <div
                   class="pf-v6-c-form__group-control"
@@ -372,7 +372,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                       Has words
                     </span>
                   </label>
-                   
+                    
                 </div>
                 <div
                   class="pf-v6-c-form__group-control"
