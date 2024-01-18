@@ -10,7 +10,7 @@ export interface FileUploadHelperTextProps extends React.HTMLProps<HTMLDivElemen
   /** Content to render inside the file upload helper text container. Typically this will be
    * the helper text component.
    */
-  children?: React.ReactNode;
+  children: React.ReactNode;
   /** Additional classes added to the file upload helper text container element. */
   className?: string;
 }
