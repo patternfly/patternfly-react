@@ -6,8 +6,10 @@ import {
   FormGroup,
   HelperText,
   HelperTextItem,
-  DropEvent
+  DropEvent,
+  Icon
 } from '@patternfly/react-core';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
@@ -72,7 +74,16 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
           <FileUploadHelperText>
             <HelperText>
               <HelperTextItem variant={isRejected ? 'error' : 'default'}>
-                {isRejected ? 'Must be a CSV file no larger than 1 KB' : 'Upload a CSV file'}
+                {isRejected ? (
+                  <>
+                    <Icon status="danger">
+                      <ExclamationCircleIcon />
+                    </Icon>
+                    Must be a CSV file no larger than 1 KB
+                  </>
+                ) : (
+                  'Upload a CSV file'
+                )}
               </HelperTextItem>
             </HelperText>
           </FileUploadHelperText>

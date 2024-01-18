@@ -7,6 +7,7 @@ subsection: file-upload
 ---
 
 import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 ## Examples
 
@@ -22,10 +23,17 @@ Pressing _Clear_ button triggers `onClearClick` event.
 ```ts file="./FileUploadSimpleText.tsx"
 ```
 
-A user can always type instead of selecting a file, but by default, once a user selects a text file from their disk they are not allowed to edit it (to prevent unintended changes to a format-sensitive file). This behavior can be changed with the `allowEditingUploadedText` prop.
-Typing/pasting text in the box will call `onTextChange` with a string, and a string value is expected for the `value` prop. :
+### With helper text
+
+You can pass in the `<FileUploadHelperText` sub-component via the `children` property to `<FileUpload>`.
+
+```ts file="./FileUploadWithHelperText.tsx"
+```
 
 ### Text file with edits allowed
+
+A user can always type instead of selecting a file, but by default, once a user selects a text file from their disk they are not allowed to edit it (to prevent unintended changes to a format-sensitive file). This behavior can be changed with the `allowEditingUploadedText` prop.
+Typing/pasting text in the box will call `onTextChange` with a string, and a string value is expected for the `value` prop. :
 
 ```ts file="./FileUploadTextWithEdits.tsx"
 ```
