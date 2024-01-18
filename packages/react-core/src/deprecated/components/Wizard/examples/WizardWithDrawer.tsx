@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Button,
-  DrawerActions,
-  DrawerCloseButton,
-  DrawerColorVariant,
-  DrawerHead,
-  DrawerPanelContent
-} from '@patternfly/react-core';
+import { Button, DrawerActions, DrawerCloseButton, DrawerHead, DrawerPanelContent } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
 export const WizardWithDrawer: React.FunctionComponent = () => {
@@ -27,7 +20,8 @@ export const WizardWithDrawer: React.FunctionComponent = () => {
   };
 
   const panel1Content = (
-    <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
+    // TODO: MAy need to update with issue #9979. Removed light color variant.
+    <DrawerPanelContent widths={{ default: 'width_33' }}>
       <DrawerHead>
         <span tabIndex={isDrawerExpanded ? 0 : -1} ref={drawerRef}>
           drawer-panel-1 content
@@ -40,7 +34,8 @@ export const WizardWithDrawer: React.FunctionComponent = () => {
   );
 
   const panel2Content = (
-    <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
+    // TODO: MAy need to update with issue #9979. Removed light color variant.
+    <DrawerPanelContent widths={{ default: 'width_33' }}>
       <DrawerHead>
         <span tabIndex={0} ref={drawerRef}>
           drawer-panel-2 content
@@ -53,7 +48,8 @@ export const WizardWithDrawer: React.FunctionComponent = () => {
   );
 
   const panel3Content = (
-    <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
+    // TODO: MAy need to update with issue #9979. Removed light color variant.
+    <DrawerPanelContent widths={{ default: 'width_33' }}>
       <DrawerHead>
         <span tabIndex={0} ref={drawerRef}>
           drawer-panel-3 content

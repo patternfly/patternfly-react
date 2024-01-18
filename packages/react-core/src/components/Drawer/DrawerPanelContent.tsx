@@ -55,7 +55,7 @@ export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivEle
     '2xl'?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
   };
   /** Color variant of the background of the drawer panel */
-  colorVariant?: DrawerColorVariant | 'light-200' | 'no-background' | 'default';
+  colorVariant?: DrawerColorVariant | 'no-background' | 'default';
   /** Adds and customizes a focus trap on the drawer panel content. */
   focusTrap?: DrawerPanelFocusTrapObject;
 }
@@ -366,7 +366,6 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
               isResizable && styles.modifiers.resizable,
               hasNoBorder && styles.modifiers.noBorder,
               formatBreakpointMods(widths, styles),
-              colorVariant === DrawerColorVariant.light200 && styles.modifiers.light_200,
               colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,
               className
             )}

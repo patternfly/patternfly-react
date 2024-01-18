@@ -7,7 +7,6 @@ import {
   Drawer,
   DrawerActions,
   DrawerCloseButton,
-  DrawerColorVariant,
   DrawerContent,
   DrawerHead,
   DrawerPanelContent,
@@ -120,7 +119,8 @@ export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () 
     <Drawer isInline isExpanded={isDrawerExpanded} onExpand={onExpand}>
       <DrawerContent
         panelContent={
-          <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
+          // TODO: MAy need to update with issue #9979. Removed light color variant.
+          <DrawerPanelContent widths={{ default: 'width_33' }}>
             <DrawerHead>
               <span tabIndex={isDrawerExpanded ? 0 : -1} ref={drawerRef}>
                 Drawer content: {stepName}

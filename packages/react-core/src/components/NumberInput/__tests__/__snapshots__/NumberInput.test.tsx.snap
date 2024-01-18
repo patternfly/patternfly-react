@@ -663,7 +663,7 @@ exports[`numberInput renders disabled 1`] = `
 exports[`numberInput renders error validated 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-number-input pf-m-status"
+    class="pf-v5-c-number-input"
   >
     <div
       class="pf-v5-c-input-group"
@@ -777,7 +777,7 @@ exports[`numberInput renders error validated 1`] = `
 exports[`numberInput renders success validated 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-number-input pf-m-status"
+    class="pf-v5-c-number-input"
   >
     <div
       class="pf-v5-c-input-group"
@@ -1180,7 +1180,7 @@ exports[`numberInput renders value 1`] = `
 exports[`numberInput renders warning validated 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-number-input pf-m-status"
+    class="pf-v5-c-number-input"
   >
     <div
       class="pf-v5-c-input-group"

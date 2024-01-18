@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Wizard, WizardStepFunctionType, WizardStep } from '../Wizard';
-import { DrawerPanelContent, DrawerColorVariant, DrawerHead } from '../../../../../src/components/Drawer';
+import { DrawerPanelContent, DrawerHead } from '../../../../../src/components/Drawer';
 import userEvent from '@testing-library/user-event';
 
 describe('Wizard', () => {
@@ -104,7 +104,8 @@ describe('Wizard', () => {
 
   test('wiz with drawer', () => {
     const wizDrawerPanelContent = (
-      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+      // TODO: MAy need to update with issue #9979. Removed light color variant.
+      <DrawerPanelContent>
         <DrawerHead>
           <span>This wizard has a drawer with drawer panel content</span>
         </DrawerHead>

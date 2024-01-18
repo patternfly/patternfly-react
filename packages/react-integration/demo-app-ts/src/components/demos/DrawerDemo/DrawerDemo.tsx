@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Button,
   Drawer,
@@ -19,7 +19,7 @@ export interface DrawerDemoState {
   isCustomFocusExpanded: boolean;
 }
 
-export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
+export class DrawerDemo extends Component<DrawerProps, DrawerDemoState> {
   static displayName = 'DrawerDemo';
   state = {
     isExpanded: false,
@@ -65,6 +65,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
   render() {
     const { isExpanded, isFocusTrapExpanded, isCustomFocusExpanded } = this.state;
     const panelContent = (
+      // TODO: MAy need to update with issue #9979. Removed light color variant.
       <DrawerPanelContent
         widths={{
           default: 'width_100',
@@ -72,7 +73,6 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
           xl: 'width_33',
           '2xl': 'width_25'
         }}
-        colorVariant={DrawerColorVariant.light200}
       >
         <DrawerHead>
           <span ref={this.drawerRef} tabIndex={isExpanded ? 0 : -1}>
@@ -85,12 +85,9 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
       </DrawerPanelContent>
     );
 
+    // TODO: MAy need to update with issue #9979. Removed light color variant.
     const focusTrapPanelContent = (
-      <DrawerPanelContent
-        focusTrap={{ enabled: true }}
-        id="focusTrap-panelContent"
-        colorVariant={DrawerColorVariant.light200}
-      >
+      <DrawerPanelContent focusTrap={{ enabled: true }} id="focusTrap-panelContent">
         <DrawerHead>
           <span>drawer-panel</span>
           <DrawerActions>
@@ -101,10 +98,10 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
     );
 
     const customFocusPanelContent = (
+      // TODO: MAy need to update with issue #9979. Removed light color variant.
       <DrawerPanelContent
         focusTrap={{ enabled: true, elementToFocusOnExpand: '#customFocus-panelContent' }}
         id="customFocus-panelContent"
-        colorVariant={DrawerColorVariant.light200}
       >
         <DrawerHead>
           <span>drawer-panel</span>
