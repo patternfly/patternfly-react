@@ -1,9 +1,9 @@
 import React from 'react';
 import {
   FileUpload,
+  FileUploadHelperText,
   Form,
   FormGroup,
-  FormHelperText,
   HelperText,
   HelperTextItem,
   DropEvent
@@ -68,14 +68,15 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
           }}
           validated={isRejected ? 'error' : 'default'}
           browseButtonText="Upload"
-        />
-        <FormHelperText>
-          <HelperText>
-            <HelperTextItem variant={isRejected ? 'error' : 'default'}>
-              {isRejected ? 'Must be a CSV file no larger than 1 KB' : 'Upload a CSV file'}
-            </HelperTextItem>
-          </HelperText>
-        </FormHelperText>
+        >
+          <FileUploadHelperText>
+            <HelperText>
+              <HelperTextItem variant={isRejected ? 'error' : 'default'}>
+                {isRejected ? 'Must be a CSV file no larger than 1 KB' : 'Upload a CSV file'}
+              </HelperTextItem>
+            </HelperText>
+          </FileUploadHelperText>
+        </FileUpload>
       </FormGroup>
     </Form>
   );
