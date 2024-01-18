@@ -2,6 +2,11 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
 
+export enum SidebarVariant {
+  default = 'default',
+  secondary = 'secondary'
+}
+
 export interface SidebarProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Indicates the direction of the layout. Default orientation is stack on small screens, and split on medium screens and above. */
