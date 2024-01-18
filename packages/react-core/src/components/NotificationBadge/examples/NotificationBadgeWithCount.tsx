@@ -19,7 +19,7 @@ export const NotificationBadgeWithCount: React.FunctionComponent = () => {
   };
 
   return (
-    <div className="pf-t-dark">
+    <>
       <NotificationBadge
         variant={NotificationBadgeVariant.read}
         onClick={onReadClick}
@@ -41,6 +41,6 @@ export const NotificationBadgeWithCount: React.FunctionComponent = () => {
         isExpanded={attentionExpanded}
         count={10}
       />
-    </div>
+    </>
   );
 };

@@ -19,7 +19,7 @@ export const NotificationBadgeBasic: React.FunctionComponent = () => {
   };
 
   return (
-    <div className="pf-t-dark">
+    <>
       <NotificationBadge
         variant={NotificationBadgeVariant.read}
         onClick={onReadClick}
@@ -38,6 +38,6 @@ export const NotificationBadgeBasic: React.FunctionComponent = () => {
         aria-label="Basic notification badge with attention variant"
         isExpanded={attentionExpanded}
       />
-    </div>
+    </>
   );
 };

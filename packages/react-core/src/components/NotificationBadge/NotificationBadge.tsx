@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/NotificationBadge/notification-badge';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
@@ -49,13 +47,16 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
     notificationChild = attentionIcon;
   }
   return (
-    <Button variant={ButtonVariant.plain} className={className} aria-expanded={isExpanded} {...props}>
-      <span
-        className={css(styles.notificationBadge, styles.modifiers[variant], isExpanded && styles.modifiers.expanded)}
-      >
-        {notificationChild}
-        {count > 0 && <span className={css(`${styles.notificationBadge}__count`)}>{count}</span>}
-      </span>
+    <Button
+      variant={ButtonVariant.stateful}
+      className={className}
+      aria-expanded={isExpanded}
+      state={variant}
+      isClicked={isExpanded}
+      icon={notificationChild}
+      {...props}
+    >
+      {count > 0 && count}
     </Button>
   );
 };
