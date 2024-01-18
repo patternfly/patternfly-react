@@ -28,9 +28,9 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
   className,
   isDisabled = false,
   isSelected = false,
-  'aria-label': ariaLabel = '',
+  'aria-label': ariaLabel,
   onChange = () => {},
-  buttonId = '',
+  buttonId,
   ...props
 }: ToggleGroupItemProps) => {
   const handleChange = (event: any): void => {
@@ -49,12 +49,12 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
         className={css(styles.toggleGroupButton, isSelected && styles.modifiers.selected)}
         aria-pressed={isSelected}
         onClick={handleChange}
-        {...(ariaLabel && { 'aria-label': ariaLabel })}
-        {...(isDisabled && { disabled: true })}
-        {...(buttonId && { id: buttonId })}
+        aria-label={ariaLabel}
+        disabled={isDisabled}
+        id={buttonId}
       >
-        {icon ? <ToggleGroupItemElement variant={ToggleGroupItemVariant.icon}>{icon}</ToggleGroupItemElement> : null}
-        {text ? <ToggleGroupItemElement variant={ToggleGroupItemVariant.text}>{text}</ToggleGroupItemElement> : null}
+        {icon && <ToggleGroupItemElement variant={ToggleGroupItemVariant.icon}>{icon}</ToggleGroupItemElement>}
+        {text && <ToggleGroupItemElement variant={ToggleGroupItemVariant.text}>{text}</ToggleGroupItemElement>}
       </button>
     </div>
   );
