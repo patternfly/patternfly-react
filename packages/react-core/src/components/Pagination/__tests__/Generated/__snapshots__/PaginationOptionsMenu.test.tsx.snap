@@ -2,7 +2,9 @@
 
 exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="pf-v5-c-pagination__page-menu"
+  >
     <button
       aria-expanded="false"
       aria-haspopup="listbox"

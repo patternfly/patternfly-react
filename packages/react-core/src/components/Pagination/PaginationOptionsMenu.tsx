@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { MenuToggle } from '../MenuToggle';
@@ -210,7 +211,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
   );
 
   return (
-    <div ref={containerRef}>
+    <div className={css(styles.paginationPageMenu)} ref={containerRef}>
       <Popper
         trigger={toggle}
         triggerRef={toggleRef}

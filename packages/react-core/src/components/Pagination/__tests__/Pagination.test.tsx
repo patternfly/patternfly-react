@@ -119,11 +119,6 @@ describe('Pagination', () => {
       render(<Pagination data-testid="pagination-insets" usePageInsets />);
       expect(screen.getByTestId('pagination-insets')).toHaveClass('pf-m-page-insets');
     });
-
-    test('page insets', () => {
-      render(<Pagination data-testid="pagination-insets" usePageInsets />);
-      expect(screen.getByTestId('pagination-insets')).toHaveClass('pf-m-page-insets');
-    });
   });
 
   describe('API', () => {
