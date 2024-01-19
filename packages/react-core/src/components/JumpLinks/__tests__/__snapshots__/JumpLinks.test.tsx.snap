@@ -62,28 +62,38 @@ exports[`expandable vertical with subsection 1`] = `
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Section with active subsection
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Section with active subsection
+              </span>
+            </a>
+          </span>
           <ul
             class="pf-v5-c-jump-links__list"
             role="list"
@@ -92,69 +102,94 @@ exports[`expandable vertical with subsection 1`] = `
               aria-current="location"
               class="pf-v5-c-jump-links__item pf-m-current"
             >
-              <a
+              <span
                 class="pf-v5-c-jump-links__link"
               >
-                <span
-                  class="pf-v5-c-jump-links__link-text"
+                <a
+                  class="pf-v5-c-button pf-m-link"
+                  href="#"
                 >
-                  Active subsection
-                </span>
-              </a>
+                  <span
+                    class="pf-v5-c-jump-links__link-text"
+                  >
+                    Active subsection
+                  </span>
+                </a>
+              </span>
             </li>
             <li
               class="pf-v5-c-jump-links__item"
             >
-              <a
+              <span
                 class="pf-v5-c-jump-links__link"
               >
-                <span
-                  class="pf-v5-c-jump-links__link-text"
+                <a
+                  class="pf-v5-c-button pf-m-link"
+                  href="#"
                 >
-                  Inactive subsection
-                </span>
-              </a>
+                  <span
+                    class="pf-v5-c-jump-links__link-text"
+                  >
+                    Inactive subsection
+                  </span>
+                </a>
+              </span>
             </li>
             <li
               class="pf-v5-c-jump-links__item"
             >
-              <a
+              <span
                 class="pf-v5-c-jump-links__link"
               >
-                <span
-                  class="pf-v5-c-jump-links__link-text"
+                <a
+                  class="pf-v5-c-button pf-m-link"
+                  href="#"
                 >
-                  Inactive subsection
-                </span>
-              </a>
+                  <span
+                    class="pf-v5-c-jump-links__link-text"
+                  >
+                    Inactive subsection
+                  </span>
+                </a>
+              </span>
             </li>
           </ul>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
       </ul>
     </div>
@@ -180,42 +215,57 @@ exports[`jumplinks centered 1`] = `
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           aria-current="location"
           class="pf-v5-c-jump-links__item pf-m-current"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Active section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Active section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
       </ul>
     </div>
@@ -248,42 +298,57 @@ exports[`jumplinks with label 1`] = `
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           aria-current="location"
           class="pf-v5-c-jump-links__item pf-m-current"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Active section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Active section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
       </ul>
     </div>
@@ -309,42 +374,57 @@ exports[`simple jumplinks 1`] = `
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           aria-current="location"
           class="pf-v5-c-jump-links__item pf-m-current"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Active section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Active section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
       </ul>
     </div>
@@ -377,42 +457,57 @@ exports[`vertical with label 1`] = `
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           aria-current="location"
           class="pf-v5-c-jump-links__item pf-m-current"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Active section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Active section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              class="pf-v5-c-button pf-m-link"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
       </ul>
     </div>

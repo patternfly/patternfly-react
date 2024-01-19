@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { JumpLinksList } from './JumpLinksList';
 
 export interface JumpLinksItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Whether this item is active. Parent JumpLinks component sets this when passed a `scrollableSelector`. */
   isActive?: boolean;
   /** Href for this link */
-  href?: string;
+  href: string;
   /** Selector or HTMLElement to spy on */
   node?: string | HTMLElement;
   /** Text to be rendered inside span */
@@ -38,9 +39,11 @@ export const JumpLinksItem: React.FunctionComponent<JumpLinksItemProps> = ({
       {...(isActive && { 'aria-current': 'location' })}
       {...props}
     >
-      <a className={styles.jumpLinksLink} href={href} onClick={onClick}>
-        <span className={styles.jumpLinksLinkText}>{children}</span>
-      </a>
+      <span className={styles.jumpLinksLink}>
+        <a className={css(buttonStyles.button, buttonStyles.modifiers.link)} href={href} onClick={onClick}>
+          <span className={styles.jumpLinksLinkText}>{children}</span>
+        </a>
+      </span>
       {sublists}
     </li>
   );
