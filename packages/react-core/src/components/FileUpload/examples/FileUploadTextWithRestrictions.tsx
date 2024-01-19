@@ -70,10 +70,11 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
           }}
           validated={isRejected ? 'error' : 'default'}
           browseButtonText="Upload"
+          browseButtonAriaDescribedby="restricted-file-example-helpText"
         >
           <FileUploadHelperText>
-            <HelperText>
-              <HelperTextItem variant={isRejected ? 'error' : 'default'}>
+            <HelperText isLiveRegion>
+              <HelperTextItem id="restricted-file-example-helpText" variant={isRejected ? 'error' : 'default'}>
                 {isRejected ? (
                   <>
                     <Icon status="danger">

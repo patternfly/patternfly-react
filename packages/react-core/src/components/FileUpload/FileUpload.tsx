@@ -16,6 +16,10 @@ export interface FileUploadProps
   'aria-label'?: string;
   /** Text for the browse button. */
   browseButtonText?: string;
+  /** ID or ID's of elements that describe the browse button. Typically this should refer
+   * to elements such as helper text when there are file restrictions.
+   */
+  browseButtonAriaDescribedby?: string;
   /** Additional children to render after (or instead of) the file preview. */
   children?: React.ReactNode;
   /** Additional classes added to the file upload container element. */

@@ -47,10 +47,11 @@ export const FileUploadWithHelperText: React.FunctionComponent = () => {
       isLoading={isLoading}
       allowEditingUploadedText={false}
       browseButtonText="Upload"
+      browseButtonAriaDescribedby="helper-text-example-helpText"
     >
       <FileUploadHelperText>
         <HelperText>
-          <HelperTextItem>Upload a CSV file</HelperTextItem>
+          <HelperTextItem id="helper-text-example-helpText">Upload a CSV file</HelperTextItem>
         </HelperText>
       </FileUploadHelperText>
     </FileUpload>

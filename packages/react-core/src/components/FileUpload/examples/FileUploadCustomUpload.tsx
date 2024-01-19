@@ -114,13 +114,14 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
         isDragActive={isDragActive}
         hideDefaultPreview={hideDefaultPreview}
         browseButtonText="Upload"
+        browseButtonAriaDescribedby={hasHelperText ? 'custom-upload-helpText' : undefined}
         textAreaPlaceholder={hasPlaceholderText ? 'File preview' : ''}
       >
         {hasCustomFilePreview && <div>(A custom preview of the uploaded file can be passed as children)</div>}
         {hasHelperText && (
           <FileUploadHelperText>
             <HelperText>
-              <HelperTextItem>Upload a CSV file</HelperTextItem>
+              <HelperTextItem id="custom-upload-helpText">Upload a CSV file</HelperTextItem>
             </HelperText>
           </FileUploadHelperText>
         )}

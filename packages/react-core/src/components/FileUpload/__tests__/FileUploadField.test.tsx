@@ -1,6 +1,6 @@
 import { FileUploadField } from '../FileUploadField';
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 test('simple fileuploadfield', () => {
   const browserBtnClickHandler = jest.fn();
@@ -24,4 +24,20 @@ test('simple fileuploadfield', () => {
     </FileUploadField>
   );
   expect(asFragment()).toMatchSnapshot();
+});
+
+test('Renders without aria-describedby on browse button by default', () => {
+  render(<FileUploadField id="file-upload-field" browseButtonText="Upload" />);
+
+  expect(screen.getByRole('button', { name: 'Upload' })).not.toHaveAccessibleDescription();
+});
+
+test('Renders without aria-describedby on browse button by default', () => {
+  render(
+    <FileUploadField id="file-upload-field" browseButtonText="Upload" browseButtonAriaDescribedby="helper-text">
+      <div id="helper-text">Helper text</div>
+    </FileUploadField>
+  );
+
+  expect(screen.getByRole('button', { name: 'Upload' })).toHaveAccessibleDescription('Helper text');
 });
