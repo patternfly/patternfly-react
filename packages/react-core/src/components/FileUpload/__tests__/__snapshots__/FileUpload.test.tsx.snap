@@ -19,7 +19,6 @@ exports[`simple fileupload 1`] = `
             class="pf-v5-c-form-control pf-m-readonly"
           >
             <input
-              aria-describedby="simple-text-file-browse-button"
               aria-invalid="false"
               aria-label="Drag a file here or browse to upload"
               data-ouia-component-id="OUIA-Generated-TextInputBase-1"
@@ -43,7 +42,6 @@ exports[`simple fileupload 1`] = `
             data-ouia-component-id="OUIA-Generated-Button-control-1"
             data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
-            id="simple-text-file-browse-button"
             type="button"
           >
             Browse...
