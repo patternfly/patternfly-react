@@ -1,6 +1,6 @@
 import React from 'react';
 import { AboutModal, Alert, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
-import brandImg from '../../assets/brandImg.svg';
+import brandImg from '../../assets/PF-IconLogo.svg';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 export const AboutModalComplexUserPositionedContent: React.FunctionComponent = () => {
@@ -21,9 +21,9 @@ export const AboutModalComplexUserPositionedContent: React.FunctionComponent = (
         trademark="Trademark and copyright information here"
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"
-        backgroundImageSrc="/assets/images/pfbg-icon.svg"
+        backgroundImageSrc="/assets/images/pf-background.svg"
         hasNoContentContainer={true}
-        productName="Product Name"
+        productName="Product name"
       >
         <TextContent id="test1" className={spacing.pyXl}>
           <h4>About</h4>
@@ -32,17 +32,17 @@ export const AboutModalComplexUserPositionedContent: React.FunctionComponent = (
         <Alert variant="info" title="Updates available" />
         <TextContent id="test2" className={spacing.pyXl}>
           <TextList component="dl">
-            <TextListItem component="dt">CFME Version</TextListItem>
+            <TextListItem component="dt">CFME version</TextListItem>
             <TextListItem component="dd">5.5.3.4.20102789036450</TextListItem>
-            <TextListItem component="dt">Cloudforms Version</TextListItem>
+            <TextListItem component="dt">Cloudforms version</TextListItem>
             <TextListItem component="dd">4.1</TextListItem>
-            <TextListItem component="dt">Server Name</TextListItem>
+            <TextListItem component="dt">Server name</TextListItem>
             <TextListItem component="dd">40DemoMaster</TextListItem>
-            <TextListItem component="dt">User Name</TextListItem>
+            <TextListItem component="dt">User name</TextListItem>
             <TextListItem component="dd">Administrator</TextListItem>
-            <TextListItem component="dt">User Role</TextListItem>
+            <TextListItem component="dt">User role</TextListItem>
             <TextListItem component="dd">EvmRole-super_administrator</TextListItem>
-            <TextListItem component="dt">Browser Version</TextListItem>
+            <TextListItem component="dt">Browser version</TextListItem>
             <TextListItem component="dd">601.2</TextListItem>
             <TextListItem component="dt">Browser OS</TextListItem>
             <TextListItem component="dd">Mac</TextListItem>
