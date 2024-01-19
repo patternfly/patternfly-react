@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-table",
-  "version": "6.0.0-alpha.16",
+  "version": "6.0.0-alpha.17",
   "description": "This library provides a set of React table components for use with the PatternFly 4",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -40,7 +40,7 @@
     "subpaths": "node ../../scripts/exportSubpaths.js --config subpaths.config.json"
   },
   "dependencies": {
-    "@patternfly/react-core": "^6.0.0-alpha.16",
+    "@patternfly/react-core": "^6.0.0-alpha.17",
     "@patternfly/react-icons": "^6.0.0-alpha.8",
     "@patternfly/react-styles": "^6.0.0-alpha.8",
     "@patternfly/react-tokens": "^6.0.0-alpha.8",
