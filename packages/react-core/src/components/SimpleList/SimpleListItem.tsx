@@ -77,6 +77,7 @@ class SimpleListItem extends React.Component<SimpleListItemProps> {
                 className={css(
                   styles.simpleListItemLink,
                   isCurrentItem && styles.modifiers.current,
+                  !isButton && styles.modifiers.link,
                   componentClassName
                 )}
                 onClick={(evt: React.MouseEvent) => {
