@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@5.2.0-prerelease.6...@patternfly/react-drag-drop@5.2.0-prerelease.7) (2024-01-22)
+
+### Features
+
+- **DragDrop:** fix import warning ([#10023](https://github.com/patternfly/patternfly-react/issues/10023)) ([e3fe70f](https://github.com/patternfly/patternfly-react/commit/e3fe70fb9d1fca377f820296b7252b9e9efdf69e))
+
 # [5.2.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@5.2.0-prerelease.5...@patternfly/react-drag-drop@5.2.0-prerelease.6) (2024-01-17)
 
 **Note:** Version bump only for package @patternfly/react-drag-drop
