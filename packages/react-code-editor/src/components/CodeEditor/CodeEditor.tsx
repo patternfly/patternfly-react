@@ -15,7 +15,7 @@ import {
   PopoverProps,
   TooltipPosition
 } from '@patternfly/react-core';
-import MonacoEditor, { ChangeHandler, EditorDidMount } from 'react-monaco-editor';
+import Editor, { Monaco } from '@monaco-editor/react';
 import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
@@ -25,6 +25,9 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import Dropzone, { FileRejection } from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
 import { CodeEditorControl } from './CodeEditorControl';
+
+export type ChangeHandler = (value: string, event: editor.IModelContentChangedEvent) => void;
+export type EditorDidMount = (editor: editor.IStandaloneCodeEditor, monaco: Monaco) => void;
 
 export interface Shortcut {
   description: string;
@@ -619,7 +622,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
 
           const editor = (
             <div className={css(styles.codeEditorCode)} ref={this.wrapperRef} tabIndex={0} dir="ltr">
-              <MonacoEditor
+              <Editor
                 height={height}
                 width={width}
                 language={language}
@@ -627,7 +630,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                 options={options}
                 overrideServices={overrideServices}
                 onChange={this.onChange}
-                editorDidMount={this.editorDidMount}
+                onMount={this.editorDidMount}
                 theme={isDarkTheme ? 'vs-dark' : 'vs-light'}
               />
             </div>

@@ -18,6 +18,8 @@ export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
   isBordered?: boolean;
   /** Display size variant. */
   displaySize?: 'default' | 'lg';
+  /** Sets the toggle icon position for all accordion toggles. */
+  togglePosition?: 'start' | 'end';
 }
 
 export const Accordion: React.FunctionComponent<AccordionProps> = ({
@@ -28,6 +30,7 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
   asDefinitionList = true,
   isBordered = false,
   displaySize = 'default',
+  togglePosition = 'end',
   ...props
 }: AccordionProps) => {
   const AccordionList: any = asDefinitionList ? 'dl' : 'div';
@@ -36,6 +39,7 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
       className={css(
         styles.accordion,
         isBordered && styles.modifiers.bordered,
+        togglePosition === 'start' && styles.modifiers.toggleStart,
         displaySize === 'lg' && styles.modifiers.displayLg,
         className
       )}
@@ -46,7 +50,8 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
       <AccordionContext.Provider
         value={{
           ContentContainer: asDefinitionList ? 'dd' : 'div',
-          ToggleContainer: asDefinitionList ? 'dt' : headingLevel
+          ToggleContainer: asDefinitionList ? 'dt' : headingLevel,
+          togglePosition
         }}
       >
         {children}

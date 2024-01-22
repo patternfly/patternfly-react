@@ -149,6 +149,8 @@ class Chip extends React.Component<ChipProps, ChipState> {
       isOverflowChip,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       tooltipPosition,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      id: idProp,
       component,
       ouiaId,
       textMaxWidth,

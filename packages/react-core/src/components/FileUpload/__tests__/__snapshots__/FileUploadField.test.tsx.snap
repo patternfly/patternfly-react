@@ -74,7 +74,6 @@ exports[`simple fileuploadfield 1`] = `
           aria-invalid="false"
           aria-label="File upload"
           id="custom-file-upload"
-          name="custom-file-upload"
           placeholder=""
         />
       </span>

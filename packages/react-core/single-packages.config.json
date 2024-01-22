@@ -1,5 +1,5 @@
 {
-    "packageName": "@patternfly/react-core",
-    "moduleGlob": ["/dist/esm/helpers/**/*.js", "/dist/esm/*/*/**/index.js"],
-    "exclude": ["/dist/esm/helpers/Popper/thirdparty"]
+  "packageName": "@patternfly/react-core",
+  "moduleGlob": ["/dist/esm/helpers/**/*.js", "/dist/esm/styles/**/index.js", "/dist/esm/*/*/**/index.js"],
+  "exclude": ["/dist/esm/helpers/Popper/thirdparty"]
 }

@@ -4,6 +4,7 @@ packages=(
   @patternfly/react-charts
   @patternfly/react-code-editor
   @patternfly/react-core
+  @patternfly/react-drag-drop
   @patternfly/react-icons
   @patternfly/react-styles
   @patternfly/react-table

@@ -87,6 +87,8 @@ The dual list selector can also be built in a composable manner to make customiz
 
 ### Composable with drag and drop
 
+Note: There is a new recommended drag and drop implementation with full keyboard functionality, which replaces this implementation. To adhere to our new recommendations, refer to the [drag and drop demos](/components/drag-and-drop/react-next-demos).
+
 This example only allows reordering the contents of the "chosen" pane with drag and drop. To make a pane able to be reordered:
 
 - wrap the `DualListSelectorPane` in a `DragDrop` component
@@ -99,7 +101,7 @@ This example only allows reordering the contents of the "chosen" pane with drag 
   - define an `onDrag` callback which ensures that the drag event will not cross hairs with the `onOptionSelect` click
     event set on the option. Note: the `ignoreNextOptionSelect` state value is used to prevent selection while dragging.
 
-Note: Keyboard accessibility and screen reader accessibility for the `DragDrop` component are still in development.
+Keyboard and screen reader accessibility for the `<DragDrop>` component is still in development.
 
 ```ts file="DualListSelectorComposableDragDrop.tsx"
 
