@@ -6,28 +6,28 @@ import ExclamationIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const HelperTextStaticWithCustomIcon: React.FunctionComponent = () => (
+export const HelperTextWithCustomIcon: React.FunctionComponent = () => (
   <React.Fragment>
     <HelperText>
       <HelperTextItem icon={<InfoIcon />}>This is default helper text</HelperTextItem>
     </HelperText>
     <HelperText>
-      <HelperTextItem variant="indeterminate" icon={<QuestionIcon />}>
+      <HelperTextItem status="indeterminate" icon={<QuestionIcon />}>
         This is indeterminate helper text
       </HelperTextItem>
     </HelperText>
     <HelperText>
-      <HelperTextItem variant="warning" icon={<ExclamationIcon />}>
+      <HelperTextItem status="warning" icon={<ExclamationIcon />}>
         This is warning helper text
       </HelperTextItem>
     </HelperText>
     <HelperText>
-      <HelperTextItem variant="success" icon={<CheckIcon />}>
+      <HelperTextItem status="success" icon={<CheckIcon />}>
         This is success helper text
       </HelperTextItem>
     </HelperText>
     <HelperText>
-      <HelperTextItem variant="error" icon={<TimesIcon />}>
+      <HelperTextItem status="error" icon={<TimesIcon />}>
         This is error helper text
       </HelperTextItem>
     </HelperText>

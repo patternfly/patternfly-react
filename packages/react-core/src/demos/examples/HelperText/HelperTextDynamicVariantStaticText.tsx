@@ -57,10 +57,10 @@ export const HelperTextDynamicVariantDynamicText: React.FunctionComponent = () =
         />
         <FormHelperText>
           <HelperText component="ul">
-            <HelperTextItem component="li" id="ruleLength" isDynamic variant={ruleLength as any}>
+            <HelperTextItem component="li" id="ruleLength" status={ruleLength as any}>
               Must be at least 5 characters in length
             </HelperTextItem>
-            <HelperTextItem component="li" id="ruleCharacterTypes" isDynamic variant={ruleCharacterTypes as any}>
+            <HelperTextItem component="li" id="ruleCharacterTypes" status={ruleCharacterTypes as any}>
               Must include at least 1 number
             </HelperTextItem>
           </HelperText>
