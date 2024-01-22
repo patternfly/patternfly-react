@@ -55,8 +55,8 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
 
   const toggle = (
     <div className={styles.multipleFileUploadStatusProgress}>
-      <div className={styles.multipleFileUploadStatusProgressIcon}>{icon}</div>
-      <div className={styles.multipleFileUploadStatusItemProgressText}>{statusToggleText}</div>
+      <div className="pf-v5-c-multiple-file-upload__status-progress-icon">{icon}</div>
+      <div className="pf-v5-c-multiple-file-upload__status-progress-text">{statusToggleText}</div>
     </div>
   );
 

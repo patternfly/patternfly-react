@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { Progress } from '../Progress';
 import { Button } from '../Button';
 import FileIcon from '@patternfly/react-icons/dist/esm/icons/file-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 /** Automatically reads an uploaded file to render a visual representation of it, including
  * its name, size, and read status. This sub-component also allows custom reading of files
@@ -166,9 +166,9 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
         />
       </div>
       {/* TODO: Update with issue #9997.  Removed class "styles.multipleFileUploadStatusItemClose" that no longer exists */}
-      <div>
+      <div className="pf-v5-c-multiple-file-upload__status-item-close">
         <Button variant="plain" aria-label={buttonAriaLabel} onClick={onClearClick}>
-          <TimesCircleIcon />
+          <TimesIcon />
         </Button>
       </div>
     </li>
