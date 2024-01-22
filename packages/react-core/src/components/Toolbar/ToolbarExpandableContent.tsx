@@ -61,7 +61,8 @@ class ToolbarExpandableContent extends React.Component<ToolbarExpandableContentP
       >
         <ToolbarGroup>{children}</ToolbarGroup>
         {numberOfFilters > 0 && (
-          <ToolbarGroup className={styles.modifiers.chipContainer}>
+          // TODO: Update with issue issue #9677. Removed 'chipContainer' modifier
+          <ToolbarGroup>
             <ToolbarGroup ref={chipContainerRef} />
             {showClearFiltersButton && !customChipGroupContent && (
               <ToolbarItem>

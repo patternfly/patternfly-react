@@ -85,9 +85,7 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
-    >
+    <div>
       <button
         aria-disabled="false"
         aria-label="buttonAriaLabel"
@@ -198,9 +196,7 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
-    >
+    <div>
       <button
         aria-disabled="false"
         aria-label="Remove from list"
@@ -313,9 +309,7 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
         </div>
       </div>
     </div>
-    <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
-    >
+    <div>
       <button
         aria-disabled="false"
         aria-label="Remove from list"
@@ -428,9 +422,7 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
         </div>
       </div>
     </div>
-    <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
-    >
+    <div>
       <button
         aria-disabled="false"
         aria-label="Remove from list"
@@ -560,9 +552,7 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
         </div>
       </div>
     </div>
-    <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
-    >
+    <div>
       <button
         aria-disabled="false"
         aria-label="Remove from list"
@@ -675,9 +665,7 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
         </div>
       </div>
     </div>
-    <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
-    >
+    <div>
       <button
         aria-disabled="false"
         aria-label="Remove from list"
@@ -788,9 +776,7 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
-    >
+    <div>
       <button
         aria-disabled="false"
         aria-label="Remove from list"
@@ -903,9 +889,7 @@ exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage whe
         </div>
       </div>
     </div>
-    <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
-    >
+    <div>
       <button
         aria-disabled="false"
         aria-label="Remove from list"

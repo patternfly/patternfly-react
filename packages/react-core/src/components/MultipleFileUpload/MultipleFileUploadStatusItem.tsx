@@ -165,7 +165,8 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
           helperText={progressHelperText}
         />
       </div>
-      <div className={styles.multipleFileUploadStatusItemClose}>
+      {/* TODO: Update with issue #9997.  Removed class "styles.multipleFileUploadStatusItemClose" that no longer exists */}
+      <div>
         <Button variant="plain" aria-label={buttonAriaLabel} onClick={onClearClick}>
           <TimesCircleIcon />
         </Button>

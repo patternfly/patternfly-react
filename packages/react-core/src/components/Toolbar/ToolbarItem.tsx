@@ -1,7 +1,8 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
-import cssWidth from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
+// TODO: Update with issue #9677
+// import cssWidth from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
 
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
 import { Divider } from '../Divider';
@@ -84,7 +85,8 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   variant,
   visibility,
   spacer,
-  widths,
+  // TODO: Update with issue #9677
+  // widths,
   align,
   alignSelf,
   alignItems,
@@ -95,16 +97,17 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   ...props
 }: ToolbarItemProps) => {
   if (variant === ToolbarItemVariant.separator) {
-    return <Divider className={css(styles.modifiers.vertical, className)} {...props} />;
+    return <Divider className={css(className)} orientation={{ default: 'vertical' }} {...props} />;
   }
 
-  const widthStyles: any = {};
-  if (widths) {
-    Object.entries(widths || {}).map(
-      ([breakpoint, value]) =>
-        (widthStyles[`${cssWidth.name}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`] = value)
-    );
-  }
+  // TODO: Update with issue #9677
+  // const widthStyles: any = {};
+  // if (widths) {
+  //   Object.entries(widths || {}).map(
+  //     ([breakpoint, value]) =>
+  //       (widthStyles[`${cssWidth.name}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`] = value)
+  //   );
+  // }
 
   return (
     <PageContext.Consumer>
@@ -113,15 +116,8 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
           className={css(
             styles.toolbarItem,
             variant &&
-              styles.modifiers[
-                toCamel(variant) as
-                  | 'bulkSelect'
-                  | 'overflowMenu'
-                  | 'pagination'
-                  | 'searchFilter'
-                  | 'label'
-                  | 'chipGroup'
-              ],
+              // TODO: Update with issue #9677.  Removed "bulkSleect", "overflowMenu" and "searchFilter" modifiers
+              styles.modifiers[toCamel(variant) as 'pagination' | 'label' | 'chipGroup'],
             isAllExpanded && styles.modifiers.expanded,
             isOverflowContainer && styles.modifiers.overflowContainer,
             formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
@@ -138,7 +134,8 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
           {...(variant === 'label' && { 'aria-hidden': true })}
           id={id}
           {...props}
-          {...(widths && { style: { ...widthStyles, ...props.style } as React.CSSProperties })}
+          // TODO: Update with issue #9677
+          // {...(widths && { style: { ...widthStyles, ...props.style } as React.CSSProperties })}
         >
           {children}
         </div>

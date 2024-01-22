@@ -74,7 +74,8 @@ class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupContentPro
       <div
         className={css(
           styles.toolbarContent,
-          !isHidden && !collapseListedFilters && styles.modifiers.chipContainer,
+          // TODO: Update with issue issue #9677
+          // !isHidden && !collapseListedFilters && styles.modifiers.chipContainer,
           isHidden && styles.modifiers.hidden,
           className
         )}

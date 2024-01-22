@@ -82,7 +82,8 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
           <div
             className={css(
               styles.toolbarGroup,
-              variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
+              // TODO: Update with issue #9677.  Removed "buttonGroup" modifier
+              variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup'],
               formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
               formatBreakpointMods(align, styles, '', getBreakpoint(width)),
               formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
