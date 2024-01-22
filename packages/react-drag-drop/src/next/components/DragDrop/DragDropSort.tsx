@@ -21,11 +21,19 @@ import {
 import { Draggable } from './Draggable';
 import { DraggableDataListItem } from './DraggableDataListItem';
 import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
-import { DraggableObject } from './DragDropUtil';
 import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 
 export type DragDropSortDragEndEvent = DragEndEvent;
 export type DragDropSortDragStartEvent = DragStartEvent;
+
+export interface DraggableObject {
+  /** Unique id of the draggable object */
+  id: string;
+  /** Content rendered in the draggable object */
+  content: React.ReactNode;
+  /** Props spread to the rendered wrapper of the draggable object */
+  props?: any;
+}
 
 /**
  * DragDropSortProps extends dnd-kit's props which may be viewed at https://docs.dndkit.com/api-documentation/context-provider#props.
