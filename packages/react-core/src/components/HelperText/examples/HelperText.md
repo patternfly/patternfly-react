@@ -15,13 +15,13 @@ import ExclamationIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-
 
 ### Basic
 
-```ts file="HelperTextStatic.tsx"
+```ts file="HelperTextBasic.tsx"
 
 ```
 
 ### With custom icons
 
-```ts file="HelperTextStaticWithCustomIcon.tsx"
+```ts file="HelperTextWithCustomIcon.tsx"
 
 ```
 
@@ -29,6 +29,6 @@ import ExclamationIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-
 
 You can pass multiple `<HelperTextItem>` components inside a single `<Helpertext>` container.
 
-```ts file="HelperTextMultipleStatic.tsx"
+```ts file="HelperTextMultipleItems.tsx"
 
 ```

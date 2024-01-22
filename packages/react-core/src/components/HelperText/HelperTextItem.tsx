@@ -38,7 +38,6 @@ export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HT
 }
 
 const defaultVariantIcons = {
-  default: <></>,
   indeterminate: <MinusIcon />,
   warning: <ExclamationTriangleIcon />,
   success: <CheckCircleIcon />,
@@ -57,15 +56,16 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
 }: HelperTextItemProps) => {
   const Component = component as any;
   const isNotDefaultVariant = variant !== 'default';
+  const defaultIcon = isNotDefaultVariant && defaultVariantIcons[variant];
   return (
     <Component
       className={css(styles.helperTextItem, isNotDefaultVariant && styles.modifiers[variant], className)}
       id={id}
       {...props}
     >
-      {(isNotDefaultVariant || icon) && (
+      {(defaultIcon || icon) && (
         <span className={css(styles.helperTextItemIcon)} aria-hidden>
-          {icon || defaultVariantIcons[variant]}
+          {icon || defaultIcon}
         </span>
       )}
 
