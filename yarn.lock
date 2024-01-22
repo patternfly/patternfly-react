@@ -3988,42 +3988,10 @@
     puppeteer-cluster "^0.23.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@5.2.0-prerelease.7":
-  version "5.2.0-prerelease.7"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.2.0-prerelease.7.tgz#057af48657e6ebdd03a228e2e1fdfc049e54bcbb"
-  integrity sha512-yLmhVA1A2l+xzIQ3MRs/gCgGCi2m3RcLu57d9sB1wsdWs5tQksBKvvBCygjZig/7L8GBX118RSAJBeavSWvTog==
-
 "@patternfly/patternfly@6.0.0-alpha.66":
   version "6.0.0-alpha.66"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-6.0.0-alpha.66.tgz#e06e003a128050eb9b27e1d37ec9ebf61f663f24"
   integrity sha512-pUKNGcKKyKwc9xb/ZQS27juxxRCewdji/Mvd6UQuLJxtiEIY/pRavNW7lDa3k4qqbD90tlWnsfSct4WRSwpRsg==
-
-"@patternfly/react-core@^5.2.0-prerelease.48":
-  version "5.2.0-prerelease.48"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-5.2.0-prerelease.48.tgz#7847a6290b67f614e4e26427ba7004a159307321"
-  integrity sha512-I3Rs2BKnp55VinWn2fiizBycbrX4+zcUO7YDKOlqeJwhKUZBW1LothXvRBgybAwxE9OSx43NmeZrmEQ54xYs8g==
-  dependencies:
-    "@patternfly/react-icons" "^5.2.0-prerelease.10"
-    "@patternfly/react-styles" "^5.2.0-prerelease.6"
-    "@patternfly/react-tokens" "^5.2.0-prerelease.7"
-    focus-trap "7.5.2"
-    react-dropzone "^14.2.3"
-    tslib "^2.5.0"
-
-"@patternfly/react-icons@^5.2.0-prerelease.10":
-  version "5.2.0-prerelease.10"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-icons/-/react-icons-5.2.0-prerelease.10.tgz#4850d06d1d6850b5d52d1366e7d08eb3b52300c2"
-  integrity sha512-r86MhgOkyP5KNgNTwClyNqAx4+r702DtVbbFJaKEyJs07ubpF+uMnjZQErGfKtsdxY2dBFPK3oXqCnv4bRLr1Q==
-
-"@patternfly/react-styles@^5.2.0-prerelease.6":
-  version "5.2.0-prerelease.6"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-styles/-/react-styles-5.2.0-prerelease.6.tgz#7014796bc4113f9733cd4c37256592cb99af2bc8"
-  integrity sha512-Q8ei2WFoXxVoGGAJUP+nkQ+V0EKvUopcM4kvRgz1akZKrmfPOCwExtErgig75XDp9jEJU8pifLjK7o7t6YnaGA==
-
-"@patternfly/react-tokens@^5.2.0-prerelease.7":
-  version "5.2.0-prerelease.7"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-tokens/-/react-tokens-5.2.0-prerelease.7.tgz#e443b97c3ec96ace00e0aa37e1b06786824a9668"
-  integrity sha512-pMTth24Z1Wltcy64QAQjSL3pJMkze6R1XqwdaJD9frM+F//zvcdAHCBFBcFGLPNQnqgoYRvocptP0utmkB90KQ==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
