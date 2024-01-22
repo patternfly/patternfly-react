@@ -7,16 +7,16 @@ export const HelperTextBasic: React.FunctionComponent = () => (
       <HelperTextItem>This is default helper text</HelperTextItem>
     </HelperText>
     <HelperText>
-      <HelperTextItem status="indeterminate">This is indeterminate helper text</HelperTextItem>
+      <HelperTextItem variant="indeterminate">This is indeterminate helper text</HelperTextItem>
     </HelperText>
     <HelperText>
-      <HelperTextItem status="warning">This is warning helper text</HelperTextItem>
+      <HelperTextItem variant="warning">This is warning helper text</HelperTextItem>
     </HelperText>
     <HelperText>
-      <HelperTextItem status="success">This is success helper text</HelperTextItem>
+      <HelperTextItem variant="success">This is success helper text</HelperTextItem>
     </HelperText>
     <HelperText>
-      <HelperTextItem status="error">This is error helper text</HelperTextItem>
+      <HelperTextItem variant="error">This is error helper text</HelperTextItem>
     </HelperText>
   </React.Fragment>
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, FormGroup, FormHelperText, TextInput, HelperText, HelperTextItem } from '@patternfly/react-core';
 
-export const HelperTextDynamicVariantDynamicText: React.FunctionComponent = () => {
+export const HelperTextStaticTextDynamicVariant: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
   const [inputValidation, setInputValidation] = React.useState({
     ruleLength: 'indeterminate',
@@ -10,8 +10,8 @@ export const HelperTextDynamicVariantDynamicText: React.FunctionComponent = () =
   const { ruleLength, ruleCharacterTypes } = inputValidation;
 
   React.useEffect(() => {
-    let lengthStatus = ruleLength;
-    let typeStatus = ruleCharacterTypes;
+    let lengthVariant = ruleLength;
+    let typeVariant = ruleCharacterTypes;
 
     if (value === '') {
       setInputValidation({
@@ -22,18 +22,18 @@ export const HelperTextDynamicVariantDynamicText: React.FunctionComponent = () =
     }
 
     if (!/\d/g.test(value)) {
-      typeStatus = 'error';
+      typeVariant = 'error';
     } else {
-      typeStatus = 'success';
+      typeVariant = 'success';
     }
 
     if (value.length < 5) {
-      lengthStatus = 'error';
+      lengthVariant = 'error';
     } else {
-      lengthStatus = 'success';
+      lengthVariant = 'success';
     }
 
-    setInputValidation({ ruleLength: lengthStatus, ruleCharacterTypes: typeStatus });
+    setInputValidation({ ruleLength: lengthVariant, ruleCharacterTypes: typeVariant });
   }, [value, ruleLength, ruleCharacterTypes]);
 
   const handleInputChange = (_event, inputValue: string) => {
@@ -57,10 +57,10 @@ export const HelperTextDynamicVariantDynamicText: React.FunctionComponent = () =
         />
         <FormHelperText>
           <HelperText component="ul">
-            <HelperTextItem component="li" id="ruleLength" status={ruleLength as any}>
+            <HelperTextItem component="li" id="ruleLength" variant={ruleLength as any}>
               Must be at least 5 characters in length
             </HelperTextItem>
-            <HelperTextItem component="li" id="ruleCharacterTypes" status={ruleCharacterTypes as any}>
+            <HelperTextItem component="li" id="ruleCharacterTypes" variant={ruleCharacterTypes as any}>
               Must include at least 1 number
             </HelperTextItem>
           </HelperText>

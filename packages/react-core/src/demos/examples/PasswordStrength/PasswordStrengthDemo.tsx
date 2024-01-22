@@ -136,13 +136,13 @@ export const PasswordStrengthDemo: React.FunctionComponent = () => {
         />
         <FormHelperText>
           <HelperText component="ul" aria-live="polite" id="password-field-helper">
-            <HelperTextItem isDynamic variant={ruleLength} component="li">
+            <HelperTextItem variant={ruleLength} component="li">
               Must be at least 14 characters
             </HelperTextItem>
-            <HelperTextItem isDynamic variant={ruleContent} component="li">
+            <HelperTextItem variant={ruleContent} component="li">
               Cannot contain the word "redhat"
             </HelperTextItem>
-            <HelperTextItem isDynamic variant={ruleCharacters} component="li">
+            <HelperTextItem variant={ruleCharacters} component="li">
               Must include at least 3 of the following: lowercase letter, uppercase letters, numbers, symbols
             </HelperTextItem>
           </HelperText>

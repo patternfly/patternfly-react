@@ -12,22 +12,22 @@ export const HelperTextWithCustomIcon: React.FunctionComponent = () => (
       <HelperTextItem icon={<InfoIcon />}>This is default helper text</HelperTextItem>
     </HelperText>
     <HelperText>
-      <HelperTextItem status="indeterminate" icon={<QuestionIcon />}>
+      <HelperTextItem variant="indeterminate" icon={<QuestionIcon />}>
         This is indeterminate helper text
       </HelperTextItem>
     </HelperText>
     <HelperText>
-      <HelperTextItem status="warning" icon={<ExclamationIcon />}>
+      <HelperTextItem variant="warning" icon={<ExclamationIcon />}>
         This is warning helper text
       </HelperTextItem>
     </HelperText>
     <HelperText>
-      <HelperTextItem status="success" icon={<CheckIcon />}>
+      <HelperTextItem variant="success" icon={<CheckIcon />}>
         This is success helper text
       </HelperTextItem>
     </HelperText>
     <HelperText>
-      <HelperTextItem status="error" icon={<TimesIcon />}>
+      <HelperTextItem variant="error" icon={<TimesIcon />}>
         This is error helper text
       </HelperTextItem>
     </HelperText>
