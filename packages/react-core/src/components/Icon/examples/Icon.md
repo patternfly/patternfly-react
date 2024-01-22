@@ -23,9 +23,25 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 ```ts file="IconBasic.tsx"
 ```
 
-### Sizes
+### Standalone icon sizes
 
-```ts file="IconSizes.tsx"
+These are the standard options for sizing icons.
+
+```ts file="StandaloneIconSizes.tsx"
+```
+
+### Body sizes
+
+These size options are meant to make icons match the size of body text.
+
+```ts file="BodyIconSizes.tsx"
+```
+
+### Heading sizes
+
+These size options are meant to make icons match the size of heading text.
+
+```ts file="HeadingIconSizes.tsx"
 ```
 
 ### Status colors
