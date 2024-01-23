@@ -205,6 +205,7 @@ class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState> {
         <div className={css(styles.labelGroupClose)}>
           <Button
             variant="plain"
+            hasNoPadding
             aria-label={closeBtnAriaLabel}
             onClick={onClick}
             id={`remove_group_${id}`}

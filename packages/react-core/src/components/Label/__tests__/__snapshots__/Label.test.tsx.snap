@@ -21,7 +21,7 @@ exports[`Label editable label 1`] = `
       <button
         aria-disabled="false"
         aria-label="Close Something"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain pf-m-no-padding"
         data-ouia-component-id="OUIA-Generated-Button-plain-3"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -155,7 +155,7 @@ exports[`Label label with close button 1`] = `
       <button
         aria-disabled="false"
         aria-label="Close Something"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain pf-m-no-padding"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -200,7 +200,7 @@ exports[`Label label with close button and outline variant 1`] = `
       <button
         aria-disabled="false"
         aria-label="Close Something"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v5-c-button pf-m-plain pf-m-no-padding"
         data-ouia-component-id="OUIA-Generated-Button-plain-2"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -336,10 +336,10 @@ exports[`Label label with grey color with outline variant 1`] = `
 exports[`Label label with href 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-label"
+    class="pf-v5-c-label pf-m-clickable"
   >
     <a
-      class="pf-v5-c-label__content"
+      class="pf-v5-c-label__content pf-m-clickable"
       href="#"
     >
       <span
@@ -355,10 +355,10 @@ exports[`Label label with href 1`] = `
 exports[`Label label with href with outline variant 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-label pf-m-outline"
+    class="pf-v5-c-label pf-m-outline pf-m-clickable"
   >
     <a
-      class="pf-v5-c-label__content"
+      class="pf-v5-c-label__content pf-m-clickable"
       href="#"
     >
       <span
