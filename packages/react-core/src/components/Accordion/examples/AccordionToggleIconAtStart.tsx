@@ -40,7 +40,7 @@ export const AccordionToggleIconAtStart: React.FunctionComponent = () => {
         >
           Item two
         </AccordionToggle>
-        <AccordionContent id="start-toggle-expand2" isHidden={expanded !== 'start-toggle-toggle2'}>
+        <AccordionContent id="start-toggle-expand2">
           <p>
             Vivamus et tortor sed arcu congue vehicula eget et diam. Praesent nec dictum lorem. Aliquam id diam
             ultrices, faucibus erat id, maximus nunc.
@@ -57,7 +57,7 @@ export const AccordionToggleIconAtStart: React.FunctionComponent = () => {
         >
           Item three
         </AccordionToggle>
-        <AccordionContent id="start-toggle-expand3" isHidden={expanded !== 'start-toggle-toggle3'}>
+        <AccordionContent id="start-toggle-expand3">
           <p>Morbi vitae urna quis nunc convallis hendrerit. Aliquam congue orci quis ultricies tempus.</p>
         </AccordionContent>
       </AccordionItem>
@@ -71,7 +71,7 @@ export const AccordionToggleIconAtStart: React.FunctionComponent = () => {
         >
           Item four
         </AccordionToggle>
-        <AccordionContent id="start-toggle-expand4" isHidden={expanded !== 'start-toggle-toggle4'}>
+        <AccordionContent id="start-toggle-expand4">
           <p>
             Donec vel posuere orci. Phasellus quis tortor a ex hendrerit efficitur. Aliquam lacinia ligula pharetra,
             sagittis ex ut, pellentesque diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
@@ -93,7 +93,7 @@ export const AccordionToggleIconAtStart: React.FunctionComponent = () => {
         >
           Item five
         </AccordionToggle>
-        <AccordionContent id="start-toggle-expand5" isHidden={expanded !== 'start-toggle-toggle5'}>
+        <AccordionContent id="start-toggle-expand5">
           <p>Vivamus finibus dictum ex id ultrices. Mauris dictum neque a iaculis blandit.</p>
         </AccordionContent>
       </AccordionItem>
