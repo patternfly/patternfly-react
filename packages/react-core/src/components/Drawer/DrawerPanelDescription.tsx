@@ -8,7 +8,7 @@ export interface DrawerPanelDescriptionProps extends React.HTMLProps<HTMLDivElem
   /** Additional classes added to the drawer description. */
   className?: string;
   /** Content to be rendered in the drawer description */
-  children?: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export const DrawerPanelDescription: React.FunctionComponent<DrawerPanelDescriptionProps> = ({
