@@ -32,7 +32,7 @@ export const DrawerFocusTrap: React.FunctionComponent = () => {
   const panelContent = (
     <DrawerPanelContent focusTrap={{ enabled: true }}>
       <DrawerHead>
-        <span>drawer-panel</span>
+        <span>Drawer panel header</span>
         <DrawerActions>
           <DrawerCloseButton onClick={onCloseClick} />
         </DrawerActions>

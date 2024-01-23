@@ -7,6 +7,8 @@ import {
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
+  DrawerPanelBody,
+  DrawerPanelDescription,
   Button
 } from '@patternfly/react-core';
 
@@ -30,12 +32,14 @@ export const DrawerBasic: React.FunctionComponent = () => {
     <DrawerPanelContent>
       <DrawerHead>
         <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
-          drawer-panel
+          Drawer panel header
         </span>
         <DrawerActions>
           <DrawerCloseButton onClick={onCloseClick} />
         </DrawerActions>
       </DrawerHead>
+      <DrawerPanelDescription>Drawer panel description</DrawerPanelDescription>
+      <DrawerPanelBody>Drawer panel body</DrawerPanelBody>
     </DrawerPanelContent>
   );
 

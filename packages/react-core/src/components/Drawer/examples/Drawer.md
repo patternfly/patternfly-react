@@ -13,7 +13,6 @@ propComponents:
     DrawerCloseButton,
     DrawerPanelDescription,
     DrawerPanelBody,
-    DrawerColorVariant,
     DrawerPanelFocusTrapObject
   ]
 section: components
