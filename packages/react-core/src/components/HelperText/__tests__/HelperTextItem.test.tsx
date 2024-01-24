@@ -33,7 +33,7 @@ test('Renders custom className', () => {
 test('Does not render screen reader text by default', () => {
   render(<HelperTextItem>help test text 1</HelperTextItem>);
 
-  expect(screen.queryByText('help test text 1')?.querySelector('.pf-v5-screen-reader')).not.toBeInTheDocument();
+  expect(screen.queryByText('status')).not.toBeInTheDocument();
 });
 
 Object.values(['indeterminate', 'warning', 'success', 'error']).forEach((variant) => {
@@ -52,8 +52,19 @@ Object.values(['indeterminate', 'warning', 'success', 'error']).forEach((variant
         text
       </HelperTextItem>
     );
-    expect(screen.getByText('text').querySelector('span')).toHaveTextContent(`: ${variant} status;`);
+    expect(screen.getByText(`: ${variant} status;`)).toBeInTheDocument();
   });
+});
+
+test('Renders custom screen reader text', () => {
+  render(
+    <HelperTextItem variant="error" screenReaderText="danger">
+      help test text 1
+    </HelperTextItem>
+  );
+
+  expect(screen.queryByText(': error status;')).not.toBeInTheDocument();
+  expect(screen.getByText(': danger;')).toBeInTheDocument();
 });
 
 test('Renders id when id is passed', () => {
