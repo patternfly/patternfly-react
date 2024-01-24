@@ -23,24 +23,24 @@ export const ActionListWithIcons: React.FunctionComponent = () => (
     <ActionList>
       <ActionListGroup isIconGroup>
         <ActionListItem>
-          <Button variant="plain" id="with-icons-times-button" aria-label="times icon button">
+          <Button variant="plain" id="with-icons-list-times-button" aria-label="times icon button">
             <TimesIcon />
           </Button>
         </ActionListItem>
         <ActionListItem>
-          <Button variant="plain" id="with-icons-check-button" aria-label="check icon button">
+          <Button variant="plain" id="with-icons-list-check-button" aria-label="check icon button">
             <CheckIcon />
           </Button>
         </ActionListItem>
       </ActionListGroup>
       <ActionListGroup isIconGroup>
         <ActionListItem>
-          <Button variant="plain" id="with-icons-times-button" aria-label="times icon button">
+          <Button variant="plain" id="with-icons-group-times-button" aria-label="times icon button">
             <TimesIcon />
           </Button>
         </ActionListItem>
         <ActionListItem>
-          <Button variant="plain" id="with-icons-check-button" aria-label="check icon button">
+          <Button variant="plain" id="with-icons-group-check-button" aria-label="check icon button">
             <CheckIcon />
           </Button>
         </ActionListItem>
