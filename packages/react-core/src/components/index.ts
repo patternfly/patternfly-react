@@ -34,6 +34,7 @@ export * from './FormSelect';
 export * from './HelperText';
 export * from './Hint';
 export * from './Icon';
+export * from './InlineEdit';
 export * from './InputGroup';
 export * from './JumpLinks';
 export * from './Label';
