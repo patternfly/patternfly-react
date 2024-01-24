@@ -5,16 +5,18 @@ export const ActionListWithCancelButton: React.FunctionComponent = () => (
   <React.Fragment>
     In modals, forms, data lists
     <ActionList>
-      <ActionListItem>
-        <Button variant="primary" id="with-cancel-save-button">
-          Save
-        </Button>
-      </ActionListItem>
-      <ActionListItem>
-        <Button variant="link" id="with-cancel-cancel-button">
-          Cancel
-        </Button>
-      </ActionListItem>
+      <ActionListGroup>
+        <ActionListItem>
+          <Button variant="primary" id="with-cancel-save-button">
+            Save
+          </Button>
+        </ActionListItem>
+        <ActionListItem>
+          <Button variant="link" id="with-cancel-cancel-button">
+            Cancel
+          </Button>
+        </ActionListItem>
+      </ActionListGroup>
     </ActionList>
     <br />
     In wizards

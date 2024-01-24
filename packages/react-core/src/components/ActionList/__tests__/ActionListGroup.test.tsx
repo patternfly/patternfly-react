@@ -14,10 +14,16 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test(`Renders with class ${styles.actionListGroup}`, () => {
+test(`Renders with only class ${styles.actionListGroup} by default`, () => {
   render(<ActionListGroup>Test</ActionListGroup>);
 
-  expect(screen.getByText('Test')).toHaveClass(styles.actionListGroup);
+  expect(screen.getByText('Test')).toHaveClass(styles.actionListGroup, { exact: true });
+});
+
+test(`Renders with class ${styles.modifiers.icons} when isIconGroup is true`, () => {
+  render(<ActionListGroup isIconGroup>Test</ActionListGroup>);
+
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.icons);
 });
 
 test('Renders with custom class names provided via prop', () => {

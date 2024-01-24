@@ -1,19 +1,50 @@
 import React from 'react';
-import { ActionList, ActionListItem, Button } from '@patternfly/react-core';
+import { ActionList, ActionListGroup, ActionListItem, Button } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 
 export const ActionListWithIcons: React.FunctionComponent = () => (
-  <ActionList isIconList>
-    <ActionListItem>
-      <Button variant="plain" id="with-icons-times-button" aria-label="times icon button">
-        <TimesIcon />
-      </Button>
-    </ActionListItem>
-    <ActionListItem>
-      <Button variant="plain" id="with-icons-check-button" aria-label="check icon button">
-        <CheckIcon />
-      </Button>
-    </ActionListItem>
-  </ActionList>
+  <>
+    <h4>With list icons wrapper</h4>
+    <ActionList isIconList>
+      <ActionListItem>
+        <Button variant="plain" id="with-icons-times-button" aria-label="times icon button">
+          <TimesIcon />
+        </Button>
+      </ActionListItem>
+      <ActionListItem>
+        <Button variant="plain" id="with-icons-check-button" aria-label="check icon button">
+          <CheckIcon />
+        </Button>
+      </ActionListItem>
+    </ActionList>
+    <br />
+    <h4>With group icons wrapper</h4>
+    <ActionList>
+      <ActionListGroup isIconGroup>
+        <ActionListItem>
+          <Button variant="plain" id="with-icons-times-button" aria-label="times icon button">
+            <TimesIcon />
+          </Button>
+        </ActionListItem>
+        <ActionListItem>
+          <Button variant="plain" id="with-icons-check-button" aria-label="check icon button">
+            <CheckIcon />
+          </Button>
+        </ActionListItem>
+      </ActionListGroup>
+      <ActionListGroup isIconGroup>
+        <ActionListItem>
+          <Button variant="plain" id="with-icons-times-button" aria-label="times icon button">
+            <TimesIcon />
+          </Button>
+        </ActionListItem>
+        <ActionListItem>
+          <Button variant="plain" id="with-icons-check-button" aria-label="check icon button">
+            <CheckIcon />
+          </Button>
+        </ActionListItem>
+      </ActionListGroup>
+    </ActionList>
+  </>
 );
