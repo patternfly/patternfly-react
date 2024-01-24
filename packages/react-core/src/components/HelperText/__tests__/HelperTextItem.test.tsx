@@ -33,7 +33,7 @@ test('Renders custom className', () => {
 test('Does not render screen reader text by default', () => {
   render(<HelperTextItem>help test text 1</HelperTextItem>);
 
-  expect(screen.queryByText('status')).not.toBeInTheDocument();
+  expect(screen.queryByText('status', { exact: false })).not.toBeInTheDocument();
 });
 
 Object.values(['indeterminate', 'warning', 'success', 'error']).forEach((variant) => {
