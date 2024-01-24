@@ -1,0 +1,9 @@
+#ws-react-c-tile-basic-tile .pf-v5-c-tile,
+#ws-react-c-tile-with-subtext .pf-v5-c-tile,
+#ws-react-c-tile-with-icon .pf-v5-c-tile,
+#ws-react-c-tile-with-stacked-icon .pf-v5-c-tile,
+#ws-react-c-tile-with-large-icons .pf-v5-c-tile,
+#ws-react-demos-c-tile-tiles-with-single-selection .pf-v5-c-tile,
+#ws-react-demos-c-tile-tiles-with-multiple-selection .pf-v5-c-tile {
+  margin-inline-end: 8px;
+}
