@@ -55,8 +55,8 @@ describe('Tab Uncontrolled Demo Test', () => {
     cy.get('#filledTabs.pf-m-fill').should('exist');
   });
 
-  it('Verify light variant box tabs', () => {
-    cy.get('#boxLightVariantTabs.pf-m-box.pf-m-color-scheme--light-300').should('exist');
+  it('Verify secondary variant box tabs', () => {
+    cy.get('#boxSecondaryVariantTabs.pf-m-box.pf-m-secondary').should('exist');
   });
 
   it('Verify className in tabs', () => {
