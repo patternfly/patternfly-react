@@ -412,4 +412,4 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
 }
 
 ToolbarDemo.displayName = 'ToolbarDemo';
-export default ToolbarDemo;
+export { ToolbarDemo };
