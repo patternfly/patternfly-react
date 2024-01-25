@@ -27,13 +27,14 @@
     "@patternfly/react-charts": "^8.0.0-alpha.9",
     "@patternfly/react-code-editor": "^6.0.0-alpha.19",
     "@patternfly/react-core": "^6.0.0-alpha.19",
+    "@patternfly/react-drag-drop": "^6.0.0-alpha.0",
     "@patternfly/react-icons": "^6.0.0-alpha.9",
     "@patternfly/react-styles": "^6.0.0-alpha.9",
     "@patternfly/react-table": "^6.0.0-alpha.19",
     "@patternfly/react-tokens": "^6.0.0-alpha.9"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^6.0.0-alpha.8",
+    "@patternfly/documentation-framework": "^6.0.0-alpha.9",
     "@patternfly/patternfly-a11y": "4.3.1",
     "rimraf": "^2.6.3",
     "shx": "^0.3.4"

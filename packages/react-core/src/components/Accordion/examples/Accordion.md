@@ -28,3 +28,8 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-i
 
 ```ts file="./AccordionBordered.tsx"
 ```
+
+### Toggle icon at start
+
+```ts file="./AccordionToggleIconAtStart.tsx"
+```

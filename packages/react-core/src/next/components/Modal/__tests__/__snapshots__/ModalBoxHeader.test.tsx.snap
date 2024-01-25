@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Test with custom header 1`] = `
+<DocumentFragment>
+  <header
+    class="pf-v5-c-modal-box__header"
+  >
+    <span
+      id="test-custom-header"
+    >
+      TEST
+    </span>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`ModalHeader Test 1`] = `
+<DocumentFragment>
+  <header
+    class="pf-v5-c-modal-box__header"
+  >
+    This is a ModalBox header
+  </header>
+</DocumentFragment>
+`;
+
+exports[`ModalHeader help renders 1`] = `
+<DocumentFragment>
+  <header
+    class="pf-v5-c-modal-box__header pf-m-help"
+  >
+    <div
+      class="pf-v5-c-modal-box__header-main"
+    >
+      This is a ModalBox header
+    </div>
+    <div
+      class="pf-v5-c-modal-box__header-help"
+    >
+      <div>
+        test
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;

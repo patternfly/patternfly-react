@@ -11,6 +11,11 @@ interface SourceType {
   index: number;
 }
 
+interface MultipleListState {
+  items1: ItemType[];
+  items2: ItemType[];
+}
+
 interface DestinationType extends SourceType {}
 
 const getItems = (count: number, startIndex: number) =>
@@ -35,7 +40,7 @@ const move = (source: ItemType[], destination: ItemType[], sourceIndex: number, 
 };
 
 export const DragDropMultipleLists: React.FunctionComponent = () => {
-  const [items, setItems] = React.useState({
+  const [items, setItems] = React.useState<MultipleListState>({
     items1: getItems(10, 0),
     items2: getItems(5, 10)
   });
@@ -84,7 +89,7 @@ export const DragDropMultipleLists: React.FunctionComponent = () => {
         {Object.entries(items).map(([key, subitems]) => (
           <SplitItem key={key} style={{ flex: 1 }}>
             <Droppable zone="multizone" droppableId={key}>
-              {subitems.map(({ id, content }) => (
+              {(subitems as ItemType[]).map(({ id, content }) => (
                 <Draggable key={id} style={{ padding: '8px' }}>
                   {content}
                 </Draggable>

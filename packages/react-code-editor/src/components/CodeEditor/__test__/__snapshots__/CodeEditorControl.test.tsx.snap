@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    style="display: contents;"
+  >
+    <button
+      aria-disabled="false"
+      class="pf-v5-c-button pf-m-control"
+      data-ouia-component-id="OUIA-Generated-Button-control-1"
+      data-ouia-component-type="PF5/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      <div>
+        icon
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;

@@ -100,4 +100,45 @@ describe('Radio', () => {
 
     expect(myMock).toHaveBeenCalled();
   });
+
+  test('Renders with the label wrapper if isLabelWrapped is provided', () => {
+    render(<Radio id="test-id" name="check" isLabelWrapped />);
+
+    expect(screen.getByRole('radio').parentElement?.tagName).toBe('LABEL');
+  });
+
+  test('Renders with span element around the inner label text if isLabelWrapped is provided', () => {
+    const labelText = 'test radio label';
+    render(<Radio id="test-id" name="check" isLabelWrapped label={labelText} />);
+
+    expect(screen.getByText(labelText).tagName).toBe('SPAN');
+  });
+
+  test('Renders with the provided component although isLabelWrapped is provided', () => {
+    render(<Radio id="test-id" name="check" isLabelWrapped component="h3" />);
+
+    expect(screen.getByRole('radio').parentElement?.tagName).toBe('H3');
+  });
+
+  test('Renders with the label wrapper if component is set to label', () => {
+    render(<Radio id="test-id" name="check" component="label" />);
+
+    expect(screen.getByRole('radio').parentElement?.tagName).toBe('LABEL');
+  });
+
+  test('Renders with span element around the inner label text if component is set to label', () => {
+    const labelText = 'test radio label';
+    render(<Radio id="test-id" name="check" component="label" label={labelText} />);
+
+    expect(screen.getByText(labelText).tagName).toBe('SPAN');
+  });
+
+  test('Renders label before radio input if isLabelBeforeButton is provided', () => {
+    render(<Radio id="test-id" name="check" isLabelBeforeButton label={'test radio label'} />);
+
+    const wrapper = screen.getByRole('radio').parentElement!;
+
+    expect(wrapper.children[0].tagName).toBe('LABEL');
+    expect(wrapper.children[1].tagName).toBe('INPUT');
+  });
 });

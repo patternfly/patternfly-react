@@ -69,6 +69,18 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @patternfly/react-styles
 
+# 5.2.0-prerelease.6 (2023-12-11)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+# 5.2.0-prerelease.5 (2023-11-10)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+# 5.2.0-prerelease.4 (2023-11-03)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
 # 5.2.0-prerelease.3 (2023-10-26)
 
 **Note:** Version bump only for package @patternfly/react-styles
