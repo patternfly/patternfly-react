@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="158px" height="158px" viewBox="0 0 158 158" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>PF-IconLogo-color </title>
+    <defs>
+        <linearGradient x1="68%" y1="2.25860997e-13%" x2="32%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#2B9AF3" offset="0%"></stop>
+            <stop stop-color="#73BCF7" stop-opacity="0.502212631" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="PF-IconLogo-color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo">
+            <path d="M61.826087,0 L158,0 L158,96.173913 L147.695652,96.173913 C100.271201,96.173913 61.826087,57.7287992 61.826087,10.3043478 L61.826087,0 L61.826087,0 Z" id="Rectangle-Copy-17" fill="#0066CC"></path>
+            <path d="M158,3.43478261 L65.2608696,158 L138,158 C149.045695,158 158,149.045695 158,138 L158,3.43478261 L158,3.43478261 Z" id="Path-2" fill="url(#linearGradient-1)"></path>
+            <path d="M123.652174,-30.9130435 L30.9130435,123.652174 L103.652174,123.652174 C114.697869,123.652174 123.652174,114.697869 123.652174,103.652174 L123.652174,-30.9130435 L123.652174,-30.9130435 Z" id="Path-2" fill="url(#linearGradient-1)" transform="translate(77.282609, 46.369565) scale(1, -1) rotate(90.000000) translate(-77.282609, -46.369565) "></path>
+        </g>
+    </g>
+</svg>

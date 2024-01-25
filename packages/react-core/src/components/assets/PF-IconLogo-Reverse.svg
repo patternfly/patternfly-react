@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="158px" height="158px" viewBox="0 0 158 158" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>PF-IconLogo-Reverse </title>
+    <defs>
+        <linearGradient x1="100%" y1="1.31838984e-13%" x2="40.4021492%" y2="59.4473677%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.498497596" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="PF-IconLogo-Reverse" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <path d="M61.7658863,0 L157.846154,0 L157.846154,96.0802676 C104.782487,96.0802676 61.7658863,53.0636665 61.7658863,0 L61.7658863,0 L61.7658863,0 Z" id="Rectangle-Copy-15" fill="#FFFFFF" opacity="0.4"></path>
+            <path d="M158,1.84777167 L158,138 C158,149.045695 149.045695,158 138,158 L66.3656919,158 L158,1.84777167 Z M156.152228,3.55271368e-13 L-9.37916411e-13,91.6343081 L-9.37916411e-13,20 C-9.09494702e-13,8.954305 8.954305,3.55271368e-13 20,3.41060513e-13 L156.152228,3.55271368e-13 Z" id="Combined-Shape-Copy-4" fill="url(#linearGradient-1)"></path>
+        </g>
+    </g>
+</svg>

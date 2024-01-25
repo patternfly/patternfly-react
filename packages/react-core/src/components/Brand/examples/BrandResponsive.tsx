@@ -1,19 +1,36 @@
 import React from 'react';
 import { Brand } from '@patternfly/react-core';
-import logoXl from '../../assets/pf-c-brand--logo-on-xl.svg';
 
-import logoLg from '../../assets/pf-c-brand--logo-on-lg.svg';
-import logoMd from '../../assets/pf-c-brand--logo-on-md.svg';
-import logoSm from '../../assets/pf-c-brand--logo-on-sm.svg';
-import logo from '../../assets/pf-c-brand--logo.svg';
-import logoBase from '../../assets/pf-c-brand--logo-base.jpg';
+import pfLogo from '../../assets/PF-HorizontalLogo-Color.svg';
+import pfLogoDark from '../../assets/PF-HorizontalLogo-Reverse.svg';
+import pfLogoSm from '../../assets/PF-IconLogo-color.svg';
+import pfLogoSmDark from '../../assets/PF-IconLogo-Reverse.svg';
 
 export const BrandBasic: React.FunctionComponent = () => (
-  <Brand src={logoBase} alt="Fallback patternfly default logo" widths={{ default: '40px', sm: '60px', md: '220px' }}>
-    <source media="(min-width: 1200px)" srcSet={logoXl} />
-    <source media="(min-width: 992px)" srcSet={logoLg} />
-    <source media="(min-width: 768px)" srcSet={logoMd} />
-    <source media="(min-width: 576px)" srcSet={logoSm} />
-    <source srcSet={logo} />
-  </Brand>
+  <>
+    <div className="show-light">
+      <Brand src={pfLogo} alt="Fallback patternfly default logo" widths={{ default: '40px', sm: '60px', md: '220px' }}>
+        <source media="(min-width: 1200px)" srcSet={pfLogo} />
+        <source media="(min-width: 992px)" srcSet={pfLogo} />
+        <source media="(min-width: 768px)" srcSet={pfLogo} />
+        <source media="(min-width: 576px)" srcSet={pfLogoSm} />
+        <source media="(min-width: 320px)" srcSet={pfLogoSm} />
+        <source srcSet={pfLogo} />
+      </Brand>
+    </div>
+    <div className="show-dark">
+      <Brand
+        src={pfLogoDark}
+        alt="Fallback patternfly default logo"
+        widths={{ default: '40px', sm: '60px', md: '220px' }}
+      >
+        <source media="(min-width: 1200px)" srcSet={pfLogoDark} />
+        <source media="(min-width: 992px)" srcSet={pfLogoDark} />
+        <source media="(min-width: 768px)" srcSet={pfLogoDark} />
+        <source media="(min-width: 576px)" srcSet={pfLogoSmDark} />
+        <source media="(min-width: 320px)" srcSet={pfLogoSmDark} />
+        <source srcSet={pfLogoDark} />
+      </Brand>
+    </div>
+  </>
 );

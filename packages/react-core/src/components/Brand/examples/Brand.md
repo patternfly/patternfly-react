@@ -5,13 +5,11 @@ cssPrefix: null
 propComponents: ['Brand']
 ---
 
-import pfLogo from '../../assets/pfLogo.svg';
-import logoXl from '../../assets/pf-c-brand--logo-on-xl.svg';
-import logoLg from '../../assets/pf-c-brand--logo-on-lg.svg';
-import logoMd from '../../assets/pf-c-brand--logo-on-md.svg';
-import logoSm from '../../assets/pf-c-brand--logo-on-sm.svg';
-import logo from '../../assets/pf-c-brand--logo.svg';
-import logoBase from '../../assets/pf-c-brand--logo-base.jpg';
+import './Brand.css';
+import pfLogo from '../../assets/PF-HorizontalLogo-Color.svg';
+import pfLogoDark from '../../assets/PF-HorizontalLogo-Reverse.svg';
+import pfLogoSm from '../../assets/PF-IconLogo-color.svg';
+import pfLogoSmDark from '../../assets/PF-IconLogo-Reverse.svg';
 
 ## Examples
 
