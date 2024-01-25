@@ -109,7 +109,7 @@ export const TreeViewWithSearch: React.FunctionComponent = () => {
   const toolbar = (
     <Toolbar style={{ padding: 0 }}>
       <ToolbarContent style={{ padding: 0 }}>
-        <ToolbarItem widths={{ default: '100%' }}>
+        <ToolbarItem>
           <TreeViewSearch onSearch={onSearch} id="input-search" name="search-input" aria-label="Search input example" />
         </ToolbarItem>
       </ToolbarContent>

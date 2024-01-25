@@ -206,7 +206,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
           <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="lg">
             {toggleGroupItems}
           </ToolbarToggleGroup>
-          <ToolbarItem variant="overflow-menu">
+          <ToolbarItem>
             <OverflowMenu breakpoint="2xl">
               <OverflowMenuContent>
                 <OverflowMenuGroup groupType="button">
@@ -249,7 +249,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
     <React.Fragment>
       <Toolbar>
         <ToolbarContent>
-          <ToolbarItem variant="bulk-select">
+          <ToolbarItem>
             <Dropdown
               onSelect={onSplitButtonSelect}
               isOpen={isSplitButtonDropdownOpen}

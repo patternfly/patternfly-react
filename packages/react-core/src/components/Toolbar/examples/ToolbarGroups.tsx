@@ -189,7 +189,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
     <React.Fragment>
       <ToolbarGroup variant="filter-group">{filterGroupItems}</ToolbarGroup>
       <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
-      <ToolbarGroup variant="button-group">{buttonGroupItems}</ToolbarGroup>
+      <ToolbarGroup>{buttonGroupItems}</ToolbarGroup>
     </React.Fragment>
   );
 

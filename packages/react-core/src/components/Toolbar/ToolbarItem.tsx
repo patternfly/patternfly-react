@@ -1,19 +1,13 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
-// TODO: Update with issue #9677
-// import cssWidth from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
-
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
 import { Divider } from '../Divider';
 import { PageContext } from '../Page/PageContext';
 
 export enum ToolbarItemVariant {
   separator = 'separator',
-  'bulk-select' = 'bulk-select',
-  'overflow-menu' = 'overflow-menu',
   pagination = 'pagination',
-  'search-filter' = 'search-filter',
   label = 'label',
   'chip-group' = 'chip-group',
   'expand-all' = 'expand-all'
@@ -23,16 +17,7 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar item */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of item */
-  variant?:
-    | ToolbarItemVariant
-    | 'bulk-select'
-    | 'overflow-menu'
-    | 'pagination'
-    | 'search-filter'
-    | 'label'
-    | 'chip-group'
-    | 'separator'
-    | 'expand-all';
+  variant?: ToolbarItemVariant | 'pagination' | 'label' | 'chip-group' | 'separator' | 'expand-all';
   /** Visibility at various breakpoints. */
   visibility?: {
     default?: 'hidden' | 'visible';
@@ -61,15 +46,6 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
     '2xl'?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
   };
-  /** Widths at various breakpoints. */
-  widths?: {
-    default?: string;
-    sm?: string;
-    md?: string;
-    lg?: string;
-    xl?: string;
-    '2xl'?: string;
-  };
   /** id for this data toolbar item */
   id?: string;
   /** Flag indicating if the expand-all variant is expanded or not */
@@ -85,8 +61,6 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   variant,
   visibility,
   spacer,
-  // TODO: Update with issue #9677
-  // widths,
   align,
   alignSelf,
   alignItems,
@@ -100,24 +74,13 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
     return <Divider className={css(className)} orientation={{ default: 'vertical' }} {...props} />;
   }
 
-  // TODO: Update with issue #9677
-  // const widthStyles: any = {};
-  // if (widths) {
-  //   Object.entries(widths || {}).map(
-  //     ([breakpoint, value]) =>
-  //       (widthStyles[`${cssWidth.name}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`] = value)
-  //   );
-  // }
-
   return (
     <PageContext.Consumer>
       {({ width, getBreakpoint }) => (
         <div
           className={css(
             styles.toolbarItem,
-            variant &&
-              // TODO: Update with issue #9677.  Removed "bulkSleect", "overflowMenu" and "searchFilter" modifiers
-              styles.modifiers[toCamel(variant) as 'pagination' | 'label' | 'chipGroup'],
+            variant && styles.modifiers[toCamel(variant) as 'pagination' | 'label' | 'chipGroup'],
             isAllExpanded && styles.modifiers.expanded,
             isOverflowContainer && styles.modifiers.overflowContainer,
             formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
@@ -134,8 +97,6 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
           {...(variant === 'label' && { 'aria-hidden': true })}
           id={id}
           {...props}
-          // TODO: Update with issue #9677
-          // {...(widths && { style: { ...widthStyles, ...props.style } as React.CSSProperties })}
         >
           {children}
         </div>

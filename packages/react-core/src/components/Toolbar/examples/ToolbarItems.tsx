@@ -5,7 +5,7 @@ import { Button, SearchInput } from '@patternfly/react-core';
 export const ToolbarItems: React.FunctionComponent = () => {
   const items = (
     <React.Fragment>
-      <ToolbarItem variant="search-filter">
+      <ToolbarItem>
         <SearchInput aria-label="Items example search input" />
       </ToolbarItem>
       <ToolbarItem>

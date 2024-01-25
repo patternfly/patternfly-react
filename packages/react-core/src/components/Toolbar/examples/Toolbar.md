@@ -34,16 +34,6 @@ Items are spaced “16px” apart by default. To adjust the size of the space be
 
 ```
 
-### Toolbar items with adjusted widths
-
-You can adjust the width of toolbar items so that they better fit the size of their container.
-
-The default width of a toolbar item is “100px”. To adjust an item’s width, use the `widths` property of the `<ToolbarItem>`. You can set the “px” value at multiple breakpoints, including "default", "sm", "md", "lg, "xl", and "2xl".
-
-```ts file="./ToolbarWidths.tsx"
-
-```
-
 ### With adjusted inset
 
 To adjust a toolbar’s inset, use the `inset` property. You can set the inset value at multiple breakpoints, including "default", "md", "lg, "xl", and "2xl". Inset values include “insetNone”, “insetSm”, “insetMd”, “insetLg”, “insetXl”, and “inset2xl”.

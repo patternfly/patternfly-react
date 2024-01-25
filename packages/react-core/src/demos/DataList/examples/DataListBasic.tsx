@@ -38,7 +38,7 @@ export const DataListBasic: React.FunctionComponent = () => {
 
   const toolbarItems = (
     <React.Fragment>
-      <ToolbarItem variant="bulk-select">
+      <ToolbarItem>
         <MenuToggle
           aria-label="Select cards"
           splitButtonOptions={{
@@ -55,7 +55,7 @@ export const DataListBasic: React.FunctionComponent = () => {
       <ToolbarItem>
         <MenuToggle>Filter by creator name</MenuToggle>
       </ToolbarItem>
-      <ToolbarItem variant="overflow-menu">
+      <ToolbarItem>
         <OverflowMenu breakpoint="md">
           <OverflowMenuItem>
             <Button variant="primary">Create instance</Button>
