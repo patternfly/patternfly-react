@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface TabsContextProps {
-  variant: 'default' | 'light300';
+  variant: 'default' | 'secondary';
   mountOnEnter: boolean;
   unmountOnExit: boolean;
   localActiveKey: string | number;

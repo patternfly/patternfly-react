@@ -1,9 +1,9 @@
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-core';
 
-export const TabsBoxLight: React.FunctionComponent = () => {
+export const TabsBoxSecondary: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
-  const [isTabsLightScheme, setIsTabsLightScheme] = React.useState<boolean>(true);
+  const [isTabsBoxSecondary, setIsTabsBoxSecondary] = React.useState<boolean>(true);
   // Toggle currently active tab
   const handleTabClick = (
     event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
@@ -13,7 +13,7 @@ export const TabsBoxLight: React.FunctionComponent = () => {
   };
 
   const toggleScheme = (checked: boolean) => {
-    setIsTabsLightScheme(checked);
+    setIsTabsBoxSecondary(checked);
   };
 
   const tooltip = (
@@ -24,8 +24,7 @@ export const TabsBoxLight: React.FunctionComponent = () => {
       <Tabs
         activeKey={activeTabKey}
         onSelect={handleTabClick}
-        // TODO: Update variant value when "isTabsLightScheme" with issue #9909
-        variant={isTabsLightScheme ? 'default' : 'default'}
+        variant={isTabsBoxSecondary ? 'secondary' : 'default'}
         isBox
         aria-label="Tabs in the box light variation example"
         role="region"
@@ -51,12 +50,11 @@ export const TabsBoxLight: React.FunctionComponent = () => {
       </Tabs>
       <div style={{ marginTop: '20px' }}>
         <Checkbox
-          label="Tabs light variation"
-          isChecked={isTabsLightScheme}
+          label="Tabs secondary variant"
+          isChecked={isTabsBoxSecondary}
           onChange={(_event, checked) => toggleScheme(checked)}
-          aria-label="show light scheme variation checkbox"
-          id="toggle-scheme"
-          name="toggle-scheme"
+          id="toggle-tabs-variant"
+          name="toggle-tabs-variant"
         />
       </div>
     </div>

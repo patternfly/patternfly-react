@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
@@ -38,7 +37,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** Additional classes added to the tabs */
   className?: string;
   /** Tabs background color variant */
-  variant?: 'default';
+  variant?: 'default' | 'secondary';
   /** The index of the active tab */
   activeKey?: number | string;
   /** The index of the default active tab. Set this for uncontrolled Tabs */
@@ -55,8 +54,8 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   id?: string;
   /** Enables the filled tab list layout */
   isFilled?: boolean;
-  /** Enables secondary tab styling */
-  isSecondary?: boolean;
+  /** Enables subtab tab styling */
+  isSubtab?: boolean;
   /** Enables box styling to the tab component */
   isBox?: boolean;
   /** Enables vertical tab styling */
@@ -119,7 +118,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
 
 const variantStyle = {
   default: '',
-  light300: styles.modifiers.colorSchemeLight_300
+  secondary: styles.modifiers.secondary
 };
 
 interface TabsState {
@@ -177,7 +176,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     activeKey: 0,
     onSelect: () => undefined as any,
     isFilled: false,
-    isSecondary: false,
+    isSubtab: false,
     isVertical: false,
     isBox: false,
     hasNoBorderBottom: false,
@@ -247,7 +246,6 @@ class Tabs extends React.Component<TabsProps, TabsState> {
       if (container && !this.props.isVertical && !isOverflowHorizontal) {
         // get first element and check if it is in view
         const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
-
         // get last element and check if it is in view
         const overflowOnRight = !isElementInView(container, container.lastChild as HTMLElement, false);
 
@@ -392,7 +390,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
       defaultActiveKey,
       id,
       isFilled,
-      isSecondary,
+      isSubtab,
       isVertical,
       isBox,
       hasNoBorderBottom,
@@ -473,7 +471,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
           className={css(
             styles.tabs,
             isFilled && styles.modifiers.fill,
-            isSecondary && styles.modifiers.secondary,
+            isSubtab && styles.modifiers.subtab,
             isVertical && styles.modifiers.vertical,
             isVertical && expandable && formatBreakpointMods(expandable, styles),
             isVertical && expandable && isExpandedLocal && styles.modifiers.expanded,
@@ -518,33 +516,35 @@ class Tabs extends React.Component<TabsProps, TabsState> {
             </GenerateId>
           )}
           {renderScrollButtons && (
-            <button
-              type="button"
-              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
-              aria-label={backScrollAriaLabel || leftScrollAriaLabel}
-              onClick={this.scrollBack}
-              disabled={disableBackScrollButton}
-              aria-hidden={disableBackScrollButton}
-              ref={this.leftScrollButtonRef}
-            >
-              <AngleLeftIcon />
-            </button>
+            <div className={css(styles.tabsScrollButton)}>
+              <Button
+                aria-label={backScrollAriaLabel || leftScrollAriaLabel}
+                onClick={this.scrollBack}
+                isDisabled={disableBackScrollButton}
+                aria-hidden={disableBackScrollButton}
+                ref={this.leftScrollButtonRef}
+                variant="plain"
+              >
+                <AngleLeftIcon />
+              </Button>
+            </div>
           )}
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons} role="tablist">
             {isOverflowHorizontal ? filteredChildrenWithoutOverflow : filteredChildren}
             {hasOverflowTab && <OverflowTab overflowingTabs={overflowingTabProps} {...overflowObjectProps} />}
           </ul>
           {renderScrollButtons && (
-            <button
-              type="button"
-              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
-              aria-label={forwardScrollAriaLabel || rightScrollAriaLabel}
-              onClick={this.scrollForward}
-              disabled={disableForwardScrollButton}
-              aria-hidden={disableForwardScrollButton}
-            >
-              <AngleRightIcon />
-            </button>
+            <div className={css(styles.tabsScrollButton)}>
+              <Button
+                aria-label={forwardScrollAriaLabel || rightScrollAriaLabel}
+                onClick={this.scrollForward}
+                isDisabled={disableForwardScrollButton}
+                aria-hidden={disableForwardScrollButton}
+                variant="plain"
+              >
+                <AngleRightIcon />
+              </Button>
+            </div>
           )}
           {onAdd !== undefined && (
             <span className={css(styles.tabsAdd)}>

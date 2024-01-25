@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
 
-export const TabsNavSecondary: React.FunctionComponent = () => {
+export const TabsNavSubtab: React.FunctionComponent = () => {
   const [activeTabKey1, setActiveTabKey1] = React.useState<string | number>(0);
   const [activeTabKey2, setActiveTabKey2] = React.useState<string | number>(0);
 
@@ -31,7 +31,7 @@ export const TabsNavSecondary: React.FunctionComponent = () => {
       <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#" aria-label="Subtabs with nav content users">
         <Tabs
           activeKey={activeTabKey2}
-          isSecondary
+          isSubtab
           onSelect={handleTabClickSecond}
           aria-label="Local secondary"
           component={TabsComponent.nav}

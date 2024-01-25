@@ -27,10 +27,10 @@ export interface TabContentProps extends Omit<React.HTMLProps<HTMLElement>, 'ref
   ouiaSafe?: boolean;
 }
 
-// TODO: Update with issue #9909
-// const variantStyle = {
-//   default: ''
-// };
+const variantStyle = {
+  default: '',
+  secondary: styles.modifiers.secondary
+};
 
 const TabContentBase: React.FunctionComponent<TabContentProps> = ({
   id,
@@ -56,27 +56,30 @@ const TabContentBase: React.FunctionComponent<TabContentProps> = ({
 
     return (
       <TabsContextConsumer>
-        {({ variant }: TabsContextProps) => (
-          <section
-            ref={innerRef}
-            hidden={children ? null : child.props.eventKey !== activeKey}
-            // TODO: Update "variant" with issue #9909
-            className={
-              children
-                ? css(styles.tabContent, className, variant)
-                : css(styles.tabContent, child.props.className, variant)
-            }
-            id={children ? id : `pf-tab-section-${child.props.eventKey}-${id}`}
-            aria-label={ariaLabel}
-            aria-labelledby={labelledBy}
-            role="tabpanel"
-            tabIndex={0}
-            {...getOUIAProps('TabContent', ouiaId, ouiaSafe)}
-            {...props}
-          >
-            {children || child.props.children}
-          </section>
-        )}
+        {({ variant }: TabsContextProps) => {
+          const variantClass = variantStyle[variant];
+
+          return (
+            <section
+              ref={innerRef}
+              hidden={children ? null : child.props.eventKey !== activeKey}
+              className={
+                children
+                  ? css(styles.tabContent, className, variantClass)
+                  : css(styles.tabContent, child.props.className, variantClass)
+              }
+              id={children ? id : `pf-tab-section-${child.props.eventKey}-${id}`}
+              aria-label={ariaLabel}
+              aria-labelledby={labelledBy}
+              role="tabpanel"
+              tabIndex={0}
+              {...getOUIAProps('TabContent', ouiaId, ouiaSafe)}
+              {...props}
+            >
+              {children || child.props.children}
+            </section>
+          );
+        }}
       </TabsContextConsumer>
     );
   }
