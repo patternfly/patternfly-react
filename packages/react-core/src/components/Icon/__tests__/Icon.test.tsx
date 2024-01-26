@@ -71,35 +71,7 @@ Object.values([
 
     expect(iconContainer).toHaveClass(`pf-m-${formattedSize}`);
   });
-});
 
-test('check icon without iconSize', () => {
-  render(
-    <Icon title="no-icon-size">
-      <CheckIcon />
-    </Icon>
-  );
-  const iconContainer = screen.getByTitle('no-icon-size').querySelector(`.${styles.iconContent}`);
-  expect(Array.from(iconContainer?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
-});
-
-Object.values([
-  'sm',
-  'md',
-  'lg',
-  'xl',
-  '2xl',
-  '3xl',
-  'headingSm',
-  'headingMd',
-  'headingLg',
-  'headingXl',
-  'heading_2xl',
-  'heading_3xl',
-  'bodySm',
-  'bodyDefault',
-  'bodyLg'
-]).forEach((size) => {
   test(`sets progress icon size modifier successfully - ${size}`, () => {
     render(
       <Icon isInProgress progressIconSize={size as IconSize} title={`progress-content-${size}-icon`}>
@@ -112,35 +84,7 @@ Object.values([
 
     expect(iconContainer).toHaveClass(`pf-m-${formattedSize}`);
   });
-});
 
-test('check icon without progress icon size', () => {
-  render(
-    <Icon title="no-progress-icon-size">
-      <CheckIcon />
-    </Icon>
-  );
-  const iconContainer = screen.getByTitle('no-progress-icon-size').querySelector(`.${styles.iconProgress}`);
-  expect(Array.from(iconContainer?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
-});
-
-Object.values([
-  'sm',
-  'md',
-  'lg',
-  'xl',
-  '2xl',
-  '3xl',
-  'headingSm',
-  'headingMd',
-  'headingLg',
-  'headingXl',
-  'heading_2xl',
-  'heading_3xl',
-  'bodySm',
-  'bodyDefault',
-  'bodyLg'
-]).forEach((size) => {
   test(`sets size modifier successfully - ${size}`, () => {
     render(
       <Icon size={size as IconSize} title={`${size}-icon`}>
@@ -153,6 +97,26 @@ Object.values([
 
     expect(iconContainer).toHaveClass(`pf-m-${formattedSize}`);
   });
+});
+
+test('check icon without iconSize', () => {
+  render(
+    <Icon title="no-icon-size">
+      <CheckIcon />
+    </Icon>
+  );
+  const iconContainer = screen.getByTitle('no-icon-size').querySelector(`.${styles.iconContent}`);
+  expect(Array.from(iconContainer?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
+});
+
+test('check icon without progress icon size', () => {
+  render(
+    <Icon title="no-progress-icon-size">
+      <CheckIcon />
+    </Icon>
+  );
+  const iconContainer = screen.getByTitle('no-progress-icon-size').querySelector(`.${styles.iconProgress}`);
+  expect(Array.from(iconContainer?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
 });
 
 test('check icon without size', () => {
