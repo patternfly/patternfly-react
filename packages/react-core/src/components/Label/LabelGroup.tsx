@@ -183,7 +183,7 @@ class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState> {
             {numChildren > numLabels && (
               <li className={css(styles.labelGroupListItem)}>
                 <Label
-                  isOverflowLabel
+                  variant="overflow"
                   onClick={this.toggleCollapse}
                   className={css(isCompact && labelStyles.modifiers.compact)}
                 >

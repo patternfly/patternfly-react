@@ -56,7 +56,7 @@ export const LabelGroupEditableAdd: React.FunctionComponent = () => {
       numLabels={5}
       isEditable
       addLabelControl={
-        <Label isAddLabel onClick={onAdd}>
+        <Label variant="add" onClick={onAdd}>
           Add label
         </Label>
       }

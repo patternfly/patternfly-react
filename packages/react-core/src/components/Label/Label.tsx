@@ -17,7 +17,7 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Color of the label. */
   color?: 'blue' | 'cyan' | 'green' | 'orange' | 'purple' | 'red' | 'orangered' | 'grey' | 'gold';
   /** Variant of the label. */
-  variant?: 'outline' | 'filled';
+  variant?: 'outline' | 'filled' | 'overflow' | 'add';
   /** Flag indicating the label is compact. */
   isCompact?: boolean;
   /** @beta Flag indicating the label is editable. */
@@ -58,10 +58,6 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   closeBtnProps?: any;
   /** Href for a label that is a link. If present, the label will change to an anchor element. This should not be passed in if the onClick prop is also passed in. */
   href?: string;
-  /** Flag indicating if the label is an overflow label. */
-  isOverflowLabel?: boolean;
-  /** Flag indicating if the label is an add label. */
-  isAddLabel?: boolean;
   /** Callback for when the label is clicked. This should not be passed in if the href or isEditable props are also passed in. */
   onClick?: (event: React.MouseEvent) => void;
   /** Forwards the label content and className to rendered function.  Use this prop for react router support.*/
@@ -107,8 +103,6 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   closeBtnAriaLabel,
   closeBtnProps,
   href,
-  isOverflowLabel,
-  isAddLabel,
   render,
   ...props
 }: LabelProps) => {
@@ -117,6 +111,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const editableButtonRef = React.useRef<HTMLButtonElement>();
   const editableInputRef = React.useRef<HTMLInputElement>();
 
+  const isOverflowLabel = variant === 'overflow';
+  const isAddLabel = variant === 'add';
   const isClickable = (onLabelClick && !isOverflowLabel && !isAddLabel) || href;
 
   React.useEffect(() => {

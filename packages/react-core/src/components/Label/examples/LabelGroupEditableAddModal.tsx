@@ -236,7 +236,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
         numLabels={5}
         isEditable
         addLabelControl={
-          <Label color="blue" variant="outline" isOverflowLabel onClick={handleModalToggle}>
+          <Label variant="overflow" onClick={handleModalToggle}>
             Add label
           </Label>
         }
