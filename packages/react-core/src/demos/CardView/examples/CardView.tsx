@@ -413,9 +413,9 @@ export const CardViewBasic: React.FunctionComponent = () => {
 
   const toolbarItems = (
     <React.Fragment>
-      <ToolbarItem variant="bulk-select">{buildSelectDropdown()}</ToolbarItem>
+      <ToolbarItem>{buildSelectDropdown()}</ToolbarItem>
       <ToolbarItem>{buildFilterDropdown()}</ToolbarItem>
-      <ToolbarItem variant="overflow-menu">
+      <ToolbarItem>
         <OverflowMenu breakpoint="md">
           <OverflowMenuItem>
             <Button variant="primary">Create a project</Button>

@@ -140,7 +140,7 @@ export const TableBulkSelect: React.FunctionComponent = () => {
     <Toolbar>
       <ToolbarContent>
         <ToolbarGroup>
-          <ToolbarItem variant="bulk-select">{buildBulkSelectDropdown()}</ToolbarItem>
+          <ToolbarItem>{buildBulkSelectDropdown()}</ToolbarItem>
         </ToolbarGroup>
         <ToolbarItem variant="pagination">{buildPagination('top', false)}</ToolbarItem>
       </ToolbarContent>

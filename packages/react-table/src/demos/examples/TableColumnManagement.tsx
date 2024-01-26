@@ -401,7 +401,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
           Choose one
         </span>
         <ToolbarContent>
-          <ToolbarItem variant="overflow-menu">
+          <ToolbarItem>
             <OverflowMenu breakpoint="md">
               <OverflowMenuItem>
                 <MenuToggle>

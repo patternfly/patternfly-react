@@ -265,7 +265,7 @@ export const FilterSearchInput: React.FunctionComponent = () => {
     <Toolbar id="search-input-filter-toolbar">
       <ToolbarContent>
         <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
-        <ToolbarItem variant="search-filter">{searchInput}</ToolbarItem>
+        <ToolbarItem>{searchInput}</ToolbarItem>
         <ToolbarItem variant="pagination">{toolbarPagination}</ToolbarItem>
       </ToolbarContent>
     </Toolbar>

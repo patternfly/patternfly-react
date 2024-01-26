@@ -48,7 +48,7 @@ export const ToolbarComponentManagedToggleGroup: React.FunctionComponent = () =>
 
   const toggleGroupItems = (
     <React.Fragment>
-      <ToolbarItem variant="search-filter">
+      <ToolbarItem>
         <SearchInput
           aria-label="Component toggle groups example search input"
           onChange={(_event, value) => onInputChange(value)}

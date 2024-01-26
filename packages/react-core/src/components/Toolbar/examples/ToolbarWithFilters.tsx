@@ -125,7 +125,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
 
   const toggleGroupItems = (
     <React.Fragment>
-      <ToolbarItem variant="search-filter">
+      <ToolbarItem>
         <SearchInput
           aria-label="With filters example search input"
           onChange={(_event, value) => onInputChange(value)}

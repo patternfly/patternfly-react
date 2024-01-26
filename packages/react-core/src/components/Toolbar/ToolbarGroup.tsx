@@ -6,15 +6,14 @@ import { PageContext } from '../Page/PageContext';
 
 export enum ToolbarGroupVariant {
   'filter-group' = 'filter-group',
-  'icon-button-group' = 'icon-button-group',
-  'button-group' = 'button-group'
+  'icon-button-group' = 'icon-button-group'
 }
 
 export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'ref'> {
   /** Classes applied to root element of the data toolbar group */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of group */
-  variant?: ToolbarGroupVariant | 'filter-group' | 'icon-button-group' | 'button-group';
+  variant?: ToolbarGroupVariant | 'filter-group' | 'icon-button-group';
   /** Visibility at various breakpoints. */
   visibility?: {
     default?: 'hidden' | 'visible';
@@ -82,7 +81,6 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
           <div
             className={css(
               styles.toolbarGroup,
-              // TODO: Update with issue #9677.  Removed "buttonGroup" modifier
               variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup'],
               formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
               formatBreakpointMods(align, styles, '', getBreakpoint(width)),
