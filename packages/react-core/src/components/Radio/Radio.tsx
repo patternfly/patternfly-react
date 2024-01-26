@@ -119,7 +119,7 @@ class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
     const labelRendered = label ? (
       <Label
         className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)}
-        htmlFor={!wrapWithLabel && props.id}
+        htmlFor={!wrapWithLabel ? props.id : undefined}
       >
         {label}
       </Label>
@@ -130,7 +130,7 @@ class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
     return (
       <Component
         className={css(styles.radio, !label && styles.modifiers.standalone, className)}
-        htmlFor={wrapWithLabel && props.id}
+        htmlFor={wrapWithLabel ? props.id : undefined}
       >
         {isLabelBeforeButton ? (
           <>
