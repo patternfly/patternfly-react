@@ -71,7 +71,7 @@ test(`Drawer expands from bottom`, () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-xtest(`Drawer has resizable css and color variants`, () => {
+test(`Drawer has resizable css and color variants`, () => {
   const panelContent = (
     <DrawerPanelContent
       isResizable

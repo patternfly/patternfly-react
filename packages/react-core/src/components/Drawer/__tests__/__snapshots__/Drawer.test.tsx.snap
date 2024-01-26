@@ -126,7 +126,7 @@ exports[`Drawer has resizable callback and id 1`] = `
                   aria-disabled="false"
                   aria-label="Close drawer panel"
                   class="pf-v5-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-5"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-6"
                   data-ouia-component-type="PF5/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -178,7 +178,7 @@ exports[`Drawer has resizable css and color variants 1`] = `
         </div>
       </div>
       <div
-        class="pf-v5-c-drawer__panel pf-m-resizable pf-m-light-200"
+        class="pf-v5-c-drawer__panel pf-m-resizable pf-m-secondary"
         id="pf-drawer-panel-6"
         style="--pf-v5-c-drawer__panel--md--FlexBasis: 300px; --pf-v5-c-drawer__panel--md--FlexBasis--min: 200px; --pf-v5-c-drawer__panel--md--FlexBasis--max: 400px;"
       >
@@ -202,44 +202,40 @@ exports[`Drawer has resizable css and color variants 1`] = `
           class="pf-v5-c-drawer__panel-main"
         >
           <div
-            class="pf-v5-c-drawer__body"
+            class="pf-v5-c-drawer__head"
           >
+            <span>
+              drawer-panel
+            </span>
             <div
-              class="pf-v5-c-drawer__head"
+              class="pf-v5-c-drawer__actions"
             >
-              <span>
-                drawer-panel
-              </span>
               <div
-                class="pf-v5-c-drawer__actions"
+                class="pf-v5-c-drawer__close"
               >
-                <div
-                  class="pf-v5-c-drawer__close"
+                <button
+                  aria-disabled="false"
+                  aria-label="Close drawer panel"
+                  class="pf-v5-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-5"
+                  data-ouia-component-type="PF5/Button"
+                  data-ouia-safe="true"
+                  type="button"
                 >
-                  <button
-                    aria-disabled="false"
-                    aria-label="Close drawer panel"
-                    class="pf-v5-c-button pf-m-plain"
-                    data-ouia-component-id="OUIA-Generated-Button-plain-5"
-                    data-ouia-component-type="PF5/Button"
-                    data-ouia-safe="true"
-                    type="button"
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v5-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 352 512"
+                    width="1em"
                   >
-                    <svg
-                      aria-hidden="true"
-                      class="pf-v5-svg"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 352 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                    <path
+                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
