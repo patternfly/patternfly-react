@@ -19,11 +19,7 @@ export const BrandBasic: React.FunctionComponent = () => (
       </Brand>
     </div>
     <div className="show-dark">
-      <Brand
-        src={pfLogoDark}
-        alt="Fallback patternfly default logo"
-        widths={{ default: '40px', sm: '60px', md: '220px' }}
-      >
+      <Brand src={pfLogoDark} alt="Patternfly" widths={{ default: '40px', sm: '60px', md: '220px' }}>
         <source media="(min-width: 1200px)" srcSet={pfLogoDark} />
         <source media="(min-width: 992px)" srcSet={pfLogoDark} />
         <source media="(min-width: 768px)" srcSet={pfLogoDark} />
