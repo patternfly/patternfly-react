@@ -141,7 +141,7 @@ export const DualListSelectorSearch: React.FunctionComponent = () => {
               <DualListSelectorListItem
                 key={index}
                 isSelected={option.selected}
-                id={`available-option-${index}`}
+                id={`search-available-option-${index}`}
                 onOptionSelect={(e) => onOptionSelect(e, index, false)}
               >
                 {option.text}
@@ -199,7 +199,7 @@ export const DualListSelectorSearch: React.FunctionComponent = () => {
                 <DualListSelectorListItem
                   key={index}
                   isSelected={option.selected}
-                  id={`composable-chosen-option-${index}`}
+                  id={`composable-search-chosen-option-${index}`}
                   onOptionSelect={(e) => onOptionSelect(e, index, true)}
                 >
                   {option.text}

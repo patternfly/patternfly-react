@@ -91,7 +91,7 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
               <DualListSelectorListItem
                 key={index}
                 isSelected={option.selected}
-                id={`available-option-${index}`}
+                id={`basic-available-option-${index}`}
                 onOptionSelect={(e) => onOptionSelect(e, index, false)}
               >
                 {option.text}
@@ -143,7 +143,7 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
               <DualListSelectorListItem
                 key={index}
                 isSelected={option.selected}
-                id={`composable-chosen-option-${index}`}
+                id={`composable-basic-chosen-option-${index}`}
                 onOptionSelect={(e) => onOptionSelect(e, index, true)}
               >
                 {option.text}

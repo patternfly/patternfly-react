@@ -262,7 +262,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
                 <DualListSelectorListItem
                   key={index}
                   isSelected={option.selected}
-                  id={`available-option-${index}`}
+                  id={`complex-available-option-${index}`}
                   onOptionSelect={(e) => onOptionSelect(e, index, false)}
                   isDisabled={isDisabled}
                 >
@@ -322,7 +322,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
                   <DualListSelectorListItem
                     key={index}
                     isSelected={option.selected}
-                    id={`composable-chosen-option-${index}`}
+                    id={`composable-complex-chosen-option-${index}`}
                     onOptionSelect={(e) => onOptionSelect(e, index, true)}
                     isDisabled={isDisabled}
                   >
