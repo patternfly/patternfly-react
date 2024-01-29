@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.2.0-prerelease.49 (2024-01-29)
+
+### Bug Fixes
+
+- prevent console warning in checkbox & radio ([#10048](https://github.com/patternfly/patternfly-react/issues/10048)) ([8709f20](https://github.com/patternfly/patternfly-react/commit/8709f206d23926d1fe20bd326667801a3dee303c))
+
 # [5.2.0-prerelease.48](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.2.0-prerelease.47...@patternfly/react-core@5.2.0-prerelease.48) (2024-01-17)
 
 ### Bug Fixes
