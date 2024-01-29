@@ -40,12 +40,15 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
   isExpanded = false,
   ...props
 }: NotificationBadgeProps) => {
-  let notificationChild = icon;
-  if (children !== undefined) {
-    notificationChild = children;
-  } else if (variant === NotificationBadgeVariant.attention) {
-    notificationChild = attentionIcon;
-  }
+  const hasCount = count > 0;
+  const hasChildren = children !== undefined;
+  const isAttention = variant === NotificationBadgeVariant.attention;
+
+  const notificationIcon = isAttention ? attentionIcon : icon;
+  const notificationContent = hasChildren ? children : notificationIcon;
+
+  const [iconProp, notificationChild] = hasCount ? [notificationContent, count] : [undefined, notificationContent];
+
   return (
     <Button
       variant={ButtonVariant.stateful}
@@ -53,10 +56,10 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
       aria-expanded={isExpanded}
       state={variant}
       isClicked={isExpanded}
-      icon={notificationChild}
+      icon={iconProp}
       {...props}
     >
-      {count > 0 && count}
+      {notificationChild}
     </Button>
   );
 };

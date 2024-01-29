@@ -44,11 +44,7 @@ exports[`false NotificationBadge needs attention 1`] = `
     data-ouia-safe="true"
     type="button"
   >
-    <span
-      class="pf-v5-c-button__icon pf-m-start"
-    >
-      does not need attention Badge
-    </span>
+    does not need attention Badge
   </button>
 </DocumentFragment>
 `;
@@ -64,11 +60,7 @@ exports[`true NotificationBadge needs attention 1`] = `
     data-ouia-safe="true"
     type="button"
   >
-    <span
-      class="pf-v5-c-button__icon pf-m-start"
-    >
-      needs attention Badge
-    </span>
+    needs attention Badge
   </button>
 </DocumentFragment>
 `;
