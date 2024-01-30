@@ -2,34 +2,32 @@
 
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="pf-v5-c-chip"
+  <span
+    class="pf-v5-c-label pf-m-outline"
     data-ouia-component-id="snapshot-test"
     data-ouia-component-type="PF5/Chip"
     data-ouia-safe="true"
   >
     <span
-      class="pf-v5-c-chip__content"
+      class="pf-v5-c-label__content"
     >
       <span
-        class="pf-v5-c-chip__text"
-        id="snapshot-test"
+        class="pf-v5-c-label__text"
+        style="--pf-v5-c-label__text--MaxWidth: 16ch;"
       >
         Chip text
       </span>
     </span>
     <span
-      class="pf-v5-c-chip__actions"
+      class="pf-v5-c-label__actions"
     >
       <button
         aria-disabled="false"
         aria-label="close"
-        aria-labelledby="remove_snapshot-test snapshot-test"
         class="pf-v5-c-button pf-m-plain"
-        data-ouia-component-id="snapshot-test"
+        data-ouia-component-id="OUIA-Generated-Button-plain-19"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
-        id="remove_snapshot-test"
         type="button"
       >
         <svg
@@ -47,6 +45,6 @@ exports[`Matches snapshot 1`] = `
         </svg>
       </button>
     </span>
-  </div>
+  </span>
 </DocumentFragment>
 `;

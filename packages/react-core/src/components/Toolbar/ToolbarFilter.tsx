@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ToolbarItem, ToolbarItemProps } from './ToolbarItem';
-import { ChipGroup } from '../Chip';
-import { Chip } from '../Chip';
+import { ChipGroup } from '../../deprecated/components/Chip';
+import { Chip } from '../../deprecated/components/Chip';
 import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
 import { PickOptional } from '../../helpers/typeUtils';
 

@@ -1,4 +1,5 @@
 export * from './ApplicationLauncher';
+export * from './Chip';
 export * from './ContextSelector';
 export * from './Dropdown';
 export * from './OptionsMenu';

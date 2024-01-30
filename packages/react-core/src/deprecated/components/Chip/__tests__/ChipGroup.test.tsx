@@ -4,8 +4,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ChipGroup } from '../index';
-import { Chip } from '../../Chip';
-import styles from '@patternfly/react-styles/css/components/Chip/chip-group';
+import { Chip } from '..';
+import styles from '@patternfly/react-styles/css/components/Label/label-group';
 
 test('chip group default', () => {
   render(
@@ -14,7 +14,7 @@ test('chip group default', () => {
     </ChipGroup>
   );
 
-  expect(screen.getByRole('group')).toHaveClass(styles.chipGroup);
+  expect(screen.getByRole('list').parentElement?.parentElement).toHaveClass(styles.labelGroup);
 });
 
 test('chip group with custom className', () => {
@@ -24,7 +24,7 @@ test('chip group with custom className', () => {
     </ChipGroup>
   );
 
-  expect(screen.getByRole('group')).toHaveClass(`${styles.chipGroup} test`);
+  expect(screen.getByRole('list').parentElement?.parentElement).toHaveClass(`${styles.labelGroup} test`);
 });
 
 test('chip group has aria-label by default when categoryName is not passed', () => {
@@ -34,7 +34,7 @@ test('chip group has aria-label by default when categoryName is not passed', () 
     </ChipGroup>
   );
 
-  expect(screen.getByRole('group')).toHaveAccessibleName('Chip group category');
+  expect(screen.getByRole('list')).toHaveAccessibleName('Chip group category');
 });
 
 test('chip group with custom aria-label', () => {
@@ -44,7 +44,7 @@ test('chip group with custom aria-label', () => {
     </ChipGroup>
   );
 
-  expect(screen.getByRole('group')).toHaveAccessibleName('test chip group');
+  expect(screen.getByRole('list')).toHaveAccessibleName('test chip group');
 });
 
 test('chip group with category', () => {
@@ -62,7 +62,7 @@ test('chip group with category renders with class pf-m-category', () => {
       <Chip>1.1</Chip>
     </ChipGroup>
   );
-  expect(screen.getByRole('group')).toHaveClass(`${styles.modifiers.category}`);
+  expect(screen.getByRole('list').parentElement?.parentElement).toHaveClass(`${styles.modifiers.category}`);
 });
 
 test('chip group has aria-labelledby attribute', () => {
@@ -71,7 +71,7 @@ test('chip group has aria-labelledby attribute', () => {
       <Chip>1.1</Chip>
     </ChipGroup>
   );
-  expect(screen.getByRole('group')).toHaveAttribute('aria-labelledby', expect.stringContaining(`pf-random-id`));
+  expect(screen.getByRole('list')).toHaveAttribute('aria-labelledby', expect.stringContaining(`pf-random-id`));
 });
 
 test('chip group has aria-labelledby attribute set to ID value', () => {
@@ -80,7 +80,7 @@ test('chip group has aria-labelledby attribute set to ID value', () => {
       <Chip>1.1</Chip>
     </ChipGroup>
   );
-  expect(screen.getByRole('group')).toHaveAttribute('aria-labelledby', 'chip-group-id');
+  expect(screen.getByRole('list')).toHaveAttribute('aria-labelledby', 'chip-group-id');
 });
 
 test('chip group expands', async () => {
@@ -105,7 +105,7 @@ test('chip group with closable category', () => {
       <Chip>1.1</Chip>
     </ChipGroup>
   );
-  expect(screen.getByRole('group').lastChild).toHaveClass(styles.chipGroupClose);
+  expect(screen.getByRole('list').parentElement?.parentElement?.lastChild).toHaveClass(styles.labelGroupClose);
 });
 
 test('chip group with closeBtnAriaLabel', () => {
@@ -130,23 +130,6 @@ test('chip group onClick', async () => {
 
   await user.click(screen.getByLabelText('Close chip group'));
   expect(onClose).toHaveBeenCalledTimes(1);
-});
-
-test('chip group onOverflowChipClick', async () => {
-  const onOverflowChipClick = jest.fn();
-  const user = userEvent.setup();
-
-  render(
-    <ChipGroup categoryName="category" onOverflowChipClick={onOverflowChipClick}>
-      <Chip>1</Chip>
-      <Chip>2</Chip>
-      <Chip>3</Chip>
-      <Chip>4</Chip>
-    </ChipGroup>
-  );
-
-  await user.click(screen.getByText('1 more'));
-  expect(onOverflowChipClick).toHaveBeenCalledTimes(1);
 });
 
 test('chip group expanded', async () => {
@@ -288,6 +271,6 @@ test('chip group will not render if no children passed', () => {
 
 test('chip group renders to match snapshot', () => {
   const { asFragment } = render(<ChipGroup>chips</ChipGroup>);
-  expect(screen.getByRole('group')).toBeInTheDocument();
+  expect(screen.getByRole('list')).toBeInTheDocument();
   expect(asFragment()).toMatchSnapshot();
 });
