@@ -64,7 +64,7 @@ export class ChipGroupWithOverflowChipEventHandler extends Component<{}, ChipGro
       <>
         <ChipGroup onClick={() => this.handleOverflowChipClick()}>
           {chipArray.map((chip) => (
-            <Chip key={chip.name} onClick={() => this.deleteItem(chip.name)}>
+            <Chip key={chip.name} id={chip.name} onClick={() => this.deleteItem(chip.name)}>
               {chip.name}
             </Chip>
           ))}

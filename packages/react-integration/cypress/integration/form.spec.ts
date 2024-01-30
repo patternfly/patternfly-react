@@ -73,10 +73,7 @@ describe('Form Demo Test', () => {
     cy.get('[id*="pf-select-toggle-id"][id*="select-multi-typeahead-typeahead"]').type('{downarrow}{downarrow}{enter}');
     cy.get('.pf-v5-c-label__text').should('exist').and('have.text', 'Florida');
 
-    cy.get('.pf-v5-c-label__text').then(($chipText) => {
-      const idAttrValue = $chipText.attr('id');
-      cy.get(`#remove_${idAttrValue}`).click();
-    });
+    cy.get('.pf-v5-c-label button').click();
 
     cy.get('[id*="pf-select-toggle-id"][id*="select-multi-typeahead-typeahead"]').type('New J');
 

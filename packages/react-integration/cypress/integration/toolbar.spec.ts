@@ -41,7 +41,7 @@ describe('Data Toolbar Demo Test', () => {
       });
 
       it('displays filter chips', () => {
-        cy.get('.pf-m-label-group').should('be.visible');
+        cy.get('.pf-v5-c-label-group').should('be.visible');
         cy.get('.pf-m-filters-applied-message').should('not.exist');
         cy.get('.pf-v5-c-toolbar__item .pf-v5-c-button').should('be.visible');
         cy.get('.pf-v5-c-toolbar__item .pf-v5-c-label-group__close').should('be.visible');
@@ -66,7 +66,7 @@ describe('Data Toolbar Demo Test', () => {
         cy.get('.pf-v5-c-toolbar__item').should('contain.text', 'filters applied');
         cy.get('.pf-v5-c-toolbar__item').should('contain.text', 'Applied filters: ');
         cy.get('.pf-v5-c-toolbar__item .pf-v5-c-button').should('be.visible');
-        cy.get('.pf-v5-c-toolbar__item .pf-v5-c-chip-group__close').should('not.be.visible');
+        cy.get('.pf-v5-c-toolbar__item .pf-v5-c-label-group__close').should('not.be.visible');
         cy.get('.pf-v5-c-toolbar__item .pf-v5-c-button').contains('Clear filters');
       });
     });
