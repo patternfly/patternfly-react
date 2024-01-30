@@ -1,0 +1,6 @@
+#ws-react-c-label-filled-labels .pf-v5-c-label,
+#ws-react-c-label-outlined-labels .pf-v5-c-label,
+#ws-react-c-label-compact-labels .pf-v5-c-label {
+  margin-inline-end: var(--pf-t--global--spacer--sm); 
+  margin-block-end: var(--pf-t--global--spacer--sm); 
+}
