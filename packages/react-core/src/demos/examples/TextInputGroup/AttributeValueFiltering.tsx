@@ -9,9 +9,10 @@ import {
   MenuList,
   MenuItem,
   Popper,
-  Divider
+  Divider,
+  Label,
+  LabelGroup
 } from '@patternfly/react-core';
-import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
@@ -223,13 +224,13 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
           onFocus={() => setMenuIsOpen(true)}
           onKeyDown={handleTextInputKeyDown}
         >
-          <ChipGroup>
+          <LabelGroup>
             {currentChips.map((currentChip) => (
-              <Chip key={currentChip} onClick={() => deleteChip(currentChip)}>
+              <Label key={currentChip} variant="outline" onClose={() => deleteChip(currentChip)}>
                 {currentChip}
-              </Chip>
+              </Label>
             ))}
-          </ChipGroup>
+          </LabelGroup>
         </TextInputGroupMain>
         {showUtilities && (
           <TextInputGroupUtilities>

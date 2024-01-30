@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { Chip } from '../Chip';
 import styles from '@patternfly/react-styles/css/components/Label/label';
 
-jest.mock('../../Tooltip', () => ({
+jest.mock('../../../../components/Tooltip', () => ({
   Tooltip: ({ content, position }) => (
     <div data-testid="tooltip-mock">
       <p>{`content: ${content}`}</p>

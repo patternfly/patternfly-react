@@ -58,9 +58,9 @@ describe('Select Test', () => {
     cy.get('#typeahead-multi-select-select-multi-typeahead-typeahead').should('have.value', '');
     // Verify selections work
     cy.get('#grapes-option').click();
-    cy.get('.pf-v5-c-chip').contains('grapes').should('exist');
+    cy.get('.pf-v5-c-label').contains('grapes').should('exist');
     cy.get('#pears-option').click();
-    cy.get('.pf-v5-c-chip').contains('pears').should('exist');
+    cy.get('.pf-v5-c-label').contains('pears').should('exist');
     // click on apples so it is added to favorites
     cy.get('#apples-option > .pf-m-action').click();
     cy.get('.pf-v5-c-select__menu-group-title').should('exist');

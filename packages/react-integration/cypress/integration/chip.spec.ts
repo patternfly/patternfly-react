@@ -4,7 +4,7 @@ describe('Chip Group Demo Test', () => {
   });
 
   it('Verify tooltipPosition is passed to Tooltip', () => {
-    cy.get('.pf-v5-c-chip').focus();
+    cy.get('.pf-v5-c-label').focus();
     cy.get('.pf-v5-c-tooltip').should('have.class', 'pf-m-bottom');
   });
 });

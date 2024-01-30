@@ -9,9 +9,10 @@ import {
   TextInputGroup,
   TextInputGroupMain,
   TextInputGroupUtilities,
+  Label,
+  LabelGroup,
   Button
 } from '@patternfly/react-core';
-import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 let initialSelectOptions: SelectOptionProps[] = [
@@ -162,19 +163,20 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
           isExpanded={isOpen}
           aria-controls="select-multi-create-typeahead-listbox"
         >
-          <ChipGroup aria-label="Current selections">
+          <LabelGroup aria-label="Current selections">
             {selected.map((selection, index) => (
-              <Chip
+              <Label
                 key={index}
-                onClick={(ev) => {
+                variant="outline"
+                onClose={(ev) => {
                   ev.stopPropagation();
                   onSelect(selection);
                 }}
               >
                 {selection}
-              </Chip>
+              </Label>
             ))}
-          </ChipGroup>
+          </LabelGroup>
         </TextInputGroupMain>
         <TextInputGroupUtilities>
           {selected.length > 0 && (

@@ -71,9 +71,9 @@ describe('Form Demo Test', () => {
 
   it('Verify keypress can control the multi-select-typeahead', () => {
     cy.get('[id*="pf-select-toggle-id"][id*="select-multi-typeahead-typeahead"]').type('{downarrow}{downarrow}{enter}');
-    cy.get('.pf-v5-c-chip__text').should('exist').and('have.text', 'Florida');
+    cy.get('.pf-v5-c-label__text').should('exist').and('have.text', 'Florida');
 
-    cy.get('.pf-v5-c-chip__text').then(($chipText) => {
+    cy.get('.pf-v5-c-label__text').then(($chipText) => {
       const idAttrValue = $chipText.attr('id');
       cy.get(`#remove_${idAttrValue}`).click();
     });

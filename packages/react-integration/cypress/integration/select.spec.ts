@@ -130,23 +130,23 @@ describe('Select Test', () => {
   xit('Verify Typeahead Multi Select', () => {
     cy.get('#typeahead-multi-select').click();
     cy.get('#Florida-2').click();
-    cy.get('.pf-v5-c-chip').contains('Florida').should('exist');
+    cy.get('.pf-v5-c-label').contains('Florida').should('exist');
     cy.get('#Alabama-0').click();
     cy.get('#Boston-1').click();
     cy.get('#Texas-4').click();
     cy.get('.pf-m-overflow > .pf-v5-c-button').should('exist');
     cy.get('#Florida-2').click();
-    cy.get('.pf-v5-c-chip').contains('Alabama').should('exist');
+    cy.get('.pf-v5-c-label').contains('Alabama').should('exist');
     cy.get('.pf-m-overflow > .pf-v5-c-button').should('not.exist');
     cy.get('#Florida-2').click();
     cy.get('.pf-m-overflow > .pf-v5-c-button').should('exist');
     cy.get('.pf-m-overflow > .pf-v5-c-button').click();
-    cy.get('.pf-v5-c-chip').contains('Florida').should('exist');
-    cy.get('.pf-v5-c-chip').contains('Alabama').should('exist');
-    cy.get('.pf-v5-c-chip').contains('.pf-v5-c-chip', 'Florida').children('button').click();
-    cy.get('.pf-v5-c-chip').contains('Florida').should('not.exist');
+    cy.get('.pf-v5-c-label').contains('Florida').should('exist');
+    cy.get('.pf-v5-c-label').contains('Alabama').should('exist');
+    cy.get('.pf-v5-c-label').contains('.pf-v5-c-label', 'Florida').children('button').click();
+    cy.get('.pf-v5-c-label').contains('Florida').should('not.exist');
     cy.get('button.pf-v5-c-select__toggle-clear').click();
-    cy.get('.pf-v5-c-chip').should('not.exist');
+    cy.get('.pf-v5-c-label').should('not.exist');
   });
 
   it('Verify false value of shouldResetOnSelect will not clear typeahead input after selection', () => {
@@ -154,20 +154,20 @@ describe('Select Test', () => {
     cy.get('#typeahead-multi-select-select-multi-typeahead-typeahead').should('contain.value', '');
     cy.get('#typeahead-multi-select-select-multi-typeahead-typeahead').type('Florida');
     cy.get('#Florida').click();
-    cy.get('.pf-v5-c-chip').contains('Florida').should('exist');
+    cy.get('.pf-v5-c-label').contains('Florida').should('exist');
     cy.get('#typeahead-multi-select-select-multi-typeahead-typeahead').should('contain.value', 'Florida');
   });
 
   xit('Verify Custom Typeahead Multi Select', () => {
     cy.get('#custom-typeahead-multi-select').click();
     cy.get('#Florida-2').click();
-    cy.get('.pf-v5-c-chip').contains('div-Florida-test_span').should('exist');
+    cy.get('.pf-v5-c-label').contains('div-Florida-test_span').should('exist');
     cy.get('#Alabama-0').click();
     cy.get('#Boston-1').click();
     cy.get('#Texas-4').click();
     cy.get('button.pf-v5-c-select__toggle-clear').should('exist');
     cy.get('#Florida-2').click();
-    cy.get('.pf-v5-c-chip').contains('div-Alabama-test_span').should('exist');
+    cy.get('.pf-v5-c-label').contains('div-Alabama-test_span').should('exist');
     cy.get('.pf-m-overflow > .pf-v5-c-button').should('not.exist');
     cy.get('button.pf-v5-c-select__toggle-clear').click();
   });
@@ -175,13 +175,13 @@ describe('Select Test', () => {
   xit('Verify Custom Typeahead Plain Multi Select', () => {
     cy.get('#custom-typeahead-plain-multi-select').click();
     cy.get('#Florida-2').click();
-    cy.get('.pf-v5-c-chip').contains('div-Florida-test_span').should('exist');
+    cy.get('.pf-v5-c-label').contains('div-Florida-test_span').should('exist');
     cy.get('#Alabama-0').click();
     cy.get('#Boston-1').click();
     cy.get('#Texas-4').click();
     cy.get('button.pf-v5-c-select__toggle-clear').should('exist');
     cy.get('#Florida-2').click();
-    cy.get('.pf-v5-c-chip').contains('div-Alabama-test_span').should('exist');
+    cy.get('.pf-v5-c-label').contains('div-Alabama-test_span').should('exist');
     cy.get('.pf-m-overflow > .pf-v5-c-button').should('not.exist');
   });
 
