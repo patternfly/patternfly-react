@@ -16,3 +16,8 @@ propComponents: ['Badge']
 
 ```ts file="./BadgeUnread.tsx"
 ```
+
+### Badge as toggle
+
+```ts file="./BadgeToggle.tsx"
+```

@@ -7,6 +7,8 @@ export interface BadgeProps extends React.HTMLProps<HTMLSpanElement> {
   screenReaderText?: string;
   /**  Adds styling to the badge to indicate it has been read */
   isRead?: boolean;
+  /**  Adds styling to the badge to indicate it has a toggle */
+  isToggle?: boolean;
   /** content rendered inside the Badge */
   children?: React.ReactNode;
   /** additional classes added to the Badge */
@@ -15,6 +17,7 @@ export interface BadgeProps extends React.HTMLProps<HTMLSpanElement> {
 
 export const Badge: React.FunctionComponent<BadgeProps> = ({
   isRead = false,
+  isToggle = false,
   className = '',
   children = '',
   screenReaderText,
@@ -26,6 +29,11 @@ export const Badge: React.FunctionComponent<BadgeProps> = ({
   >
     {children}
     {screenReaderText && <span className="pf-v5-screen-reader">{screenReaderText}</span>}
+    {isToggle && (
+      <span className="pf-v5-c-badge__toggle-icon">
+        <i className="fas fa-caret-down"></i>
+      </span>
+    )}
   </span>
 );
 Badge.displayName = 'Badge';
