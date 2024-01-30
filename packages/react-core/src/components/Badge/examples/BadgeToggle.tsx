@@ -5,7 +5,7 @@ export const BadgeToggle: React.FunctionComponent = () => (
   <React.Fragment>
     <Badge key={1} screenReaderText="Unread Messages" isToggle>
       7
-    </Badge>{' '}
+    </Badge>
     <Badge key={2} screenReaderText="Read Messages" isRead isToggle>
       7
     </Badge>

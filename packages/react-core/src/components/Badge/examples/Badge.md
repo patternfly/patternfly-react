@@ -5,6 +5,8 @@ cssPrefix: pf-v5-c-badge
 propComponents: ['Badge']
 ---
 
+import './Badge.css';
+
 ## Examples
 
 ### Read
