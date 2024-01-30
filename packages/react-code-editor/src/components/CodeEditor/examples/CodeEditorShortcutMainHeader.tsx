@@ -1,6 +1,7 @@
 import React from 'react';
 import { CodeEditor, Language } from '@patternfly/react-code-editor';
-import { Grid, GridItem, Chip } from '@patternfly/react-core';
+import { Grid, GridItem } from '@patternfly/react-core';
+import { Chip } from '@patternfly/react-core/deprecated';
 
 export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
   const onEditorDidMount = (editor, monaco) => {

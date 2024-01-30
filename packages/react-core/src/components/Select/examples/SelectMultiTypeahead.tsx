@@ -9,10 +9,9 @@ import {
   TextInputGroup,
   TextInputGroupMain,
   TextInputGroupUtilities,
-  ChipGroup,
-  Chip,
   Button
 } from '@patternfly/react-core';
+import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 const initialSelectOptions: SelectOptionProps[] = [

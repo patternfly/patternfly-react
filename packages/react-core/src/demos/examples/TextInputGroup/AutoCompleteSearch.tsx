@@ -9,10 +9,9 @@ import {
   MenuList,
   MenuItem,
   Popper,
-  Chip,
-  ChipGroup,
   Divider
 } from '@patternfly/react-core';
+import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 

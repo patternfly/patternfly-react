@@ -2443,7 +2443,7 @@ To customize chips even more, render a [`<ChipGroup>`](/components/chip-group) c
 
 ```js
 import React from 'react';
-import { ChipGroup, Chip } from '@patternfly/react-core';
+import { ChipGroup, Chip } from '@patternfly/react-core/deprecated';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
 class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {

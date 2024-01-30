@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Chip, ChipGroup } from '@patternfly/react-core';
+import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
 import { css } from '@patternfly/react-styles';
 import titleStyles from '@patternfly/react-styles/css/components/Title/title';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
