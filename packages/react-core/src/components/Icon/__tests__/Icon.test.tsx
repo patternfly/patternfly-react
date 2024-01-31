@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Icon } from '../Icon';
+import { kebabCase } from 'case-anything';
+import { Icon, IconSize } from '../Icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import styles from '@patternfly/react-styles/css/components/Icon/icon';
 
@@ -41,16 +42,60 @@ test('sets additional custom class successfully', () => {
   expect(iconContainer).toHaveClass('test');
 });
 
-Object.values(['sm', 'md', 'lg', 'xl']).forEach((size) => {
+Object.values([
+  'sm',
+  'md',
+  'lg',
+  'xl',
+  '2xl',
+  '3xl',
+  'headingSm',
+  'headingMd',
+  'headingLg',
+  'headingXl',
+  'heading_2xl',
+  'heading_3xl',
+  'bodySm',
+  'bodyDefault',
+  'bodyLg'
+]).forEach((size) => {
   test(`sets icon size modifier successfully - ${size}`, () => {
     render(
-      <Icon iconSize={size as 'sm' | 'md' | 'lg' | 'xl'} title={`content-${size}-icon`}>
+      <Icon iconSize={size as IconSize} title={`content-${size}-icon`}>
         <CheckIcon />
       </Icon>
     );
     const iconContainer = screen.getByTitle(`content-${size}-icon`).querySelector(`.${styles.iconContent}`);
 
-    expect(iconContainer).toHaveClass(`pf-m-${size}`);
+    const formattedSize = kebabCase(size).replace(/(\d)(-)/, '$1');
+
+    expect(iconContainer).toHaveClass(`pf-m-${formattedSize}`);
+  });
+
+  test(`sets progress icon size modifier successfully - ${size}`, () => {
+    render(
+      <Icon isInProgress progressIconSize={size as IconSize} title={`progress-content-${size}-icon`}>
+        <CheckIcon />
+      </Icon>
+    );
+    const iconContainer = screen.getByTitle(`progress-content-${size}-icon`).querySelector(`.${styles.iconProgress}`);
+
+    const formattedSize = kebabCase(size).replace(/(\d)(-)/, '$1');
+
+    expect(iconContainer).toHaveClass(`pf-m-${formattedSize}`);
+  });
+
+  test(`sets size modifier successfully - ${size}`, () => {
+    render(
+      <Icon size={size as IconSize} title={`${size}-icon`}>
+        <CheckIcon />
+      </Icon>
+    );
+    const iconContainer = screen.getByTitle(`${size}-icon`);
+
+    const formattedSize = kebabCase(size).replace(/(\d)(-)/, '$1');
+
+    expect(iconContainer).toHaveClass(`pf-m-${formattedSize}`);
   });
 });
 
@@ -64,19 +109,6 @@ test('check icon without iconSize', () => {
   expect(Array.from(iconContainer?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
 });
 
-Object.values(['sm', 'md', 'lg', 'xl']).forEach((size) => {
-  test(`sets progress icon size modifier successfully - ${size}`, () => {
-    render(
-      <Icon isInProgress progressIconSize={size as 'sm' | 'md' | 'lg' | 'xl'} title={`progress-content-${size}-icon`}>
-        <CheckIcon />
-      </Icon>
-    );
-    const iconContainer = screen.getByTitle(`progress-content-${size}-icon`).querySelector(`.${styles.iconProgress}`);
-
-    expect(iconContainer).toHaveClass(`pf-m-${size}`);
-  });
-});
-
 test('check icon without progress icon size', () => {
   render(
     <Icon title="no-progress-icon-size">
@@ -85,19 +117,6 @@ test('check icon without progress icon size', () => {
   );
   const iconContainer = screen.getByTitle('no-progress-icon-size').querySelector(`.${styles.iconProgress}`);
   expect(Array.from(iconContainer?.classList || []).some((c) => /pf-m-*/.test(c))); // Check no modifier classes have been added
-});
-
-Object.values(['sm', 'md', 'lg', 'xl']).forEach((size) => {
-  test(`sets size modifier successfully - ${size}`, () => {
-    render(
-      <Icon size={size as 'sm' | 'md' | 'lg' | 'xl'} title={`${size}-icon`}>
-        <CheckIcon />
-      </Icon>
-    );
-    const iconContainer = screen.getByTitle(`${size}-icon`);
-
-    expect(iconContainer).toHaveClass(`pf-m-${size}`);
-  });
 });
 
 test('check icon without size', () => {
