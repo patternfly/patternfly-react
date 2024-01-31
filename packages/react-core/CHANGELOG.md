@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.20...@patternfly/react-core@6.0.0-alpha.21) (2024-01-31)
+
+### Features
+
+- **Icon:** add new icon sizes for penta ([#10030](https://github.com/patternfly/patternfly-react/issues/10030)) ([bc37bcc](https://github.com/patternfly/patternfly-react/commit/bc37bcc3b13bfa445012c683e4daee5d4da3d3ae))
+- **MultipleFileUpload:** update for penta ([#10031](https://github.com/patternfly/patternfly-react/issues/10031)) ([8b89c3e](https://github.com/patternfly/patternfly-react/commit/8b89c3e66a9d1dc043724b957098204fecbd69ae))
+- **NotificationBadge:** refactor to use status buttons for penta ([#10020](https://github.com/patternfly/patternfly-react/issues/10020)) ([719f078](https://github.com/patternfly/patternfly-react/commit/719f07879b14a4c1b9c2712a6ea1f834a58b4b63))
+- **Sidebar:** consumed Penta updates ([#10021](https://github.com/patternfly/patternfly-react/issues/10021)) ([fe3214a](https://github.com/patternfly/patternfly-react/commit/fe3214a867148838cbba28a24fa37b82bf7733c7))
+
 # [6.0.0-alpha.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.19...@patternfly/react-core@6.0.0-alpha.20) (2024-01-26)
 
 ### Features

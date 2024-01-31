@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.11...@patternfly/react-integration@6.0.0-alpha.12) (2024-01-31)
+
+### Features
+
+- **NotificationBadge:** refactor to use status buttons for penta ([#10020](https://github.com/patternfly/patternfly-react/issues/10020)) ([719f078](https://github.com/patternfly/patternfly-react/commit/719f07879b14a4c1b9c2712a6ea1f834a58b4b63))
+
 # 6.0.0-alpha.11 (2024-01-26)
 
 ### Features
