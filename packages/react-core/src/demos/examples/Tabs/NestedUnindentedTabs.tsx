@@ -70,20 +70,20 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
                 </TextContent>
               </GridItem>
               <Grid md={6} xl2={3} hasGutter>
-                <Card isFlat component="div">
+                <Card component="div">
                   <CardTitle>Check system requirements</CardTitle>
                   <CardBody>
                     Your physical or virtual machine should meet the <a href="#">system requirement</a>.
                   </CardBody>
                 </Card>
-                <Card isFlat component="div">
+                <Card component="div">
                   <CardTitle>Download an installation ISO image</CardTitle>
                   <CardBody>
                     {' '}
                     <a href="#">Download</a> the binary DVD ISO.
                   </CardBody>
                 </Card>
-                <Card isFlat component="div">
+                <Card component="div">
                   <CardTitle>Create a bootable installation media</CardTitle>
                   <CardBody>
                     {' '}

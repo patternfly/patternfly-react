@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Brand,
   Button,
@@ -32,7 +32,7 @@ interface CardDemoState {
   selectaleClickableDrawerIsExpanded: boolean;
 }
 
-export class CardDemo extends React.Component {
+export class CardDemo extends Component {
   static displayName = 'CardDemo';
 
   state: CardDemoState = {
@@ -161,17 +161,6 @@ export class CardDemo extends React.Component {
           isSelectable
           isSelected={this.state.selected === 'selectableCardDeprecated'}
           tabIndex={0}
-          onKeyDown={this.onKeyDown}
-        >
-          <CardTitle>Header</CardTitle>
-          <CardBody>Body</CardBody>
-          <CardFooter>Footer</CardFooter>
-        </Card>
-        <br></br>
-        <Card
-          id="selectableCardRaised"
-          isSelectableRaised
-          isSelected={this.state.selected === 'selectableCardRaised'}
           onKeyDown={this.onKeyDown}
         >
           <CardTitle>Header</CardTitle>

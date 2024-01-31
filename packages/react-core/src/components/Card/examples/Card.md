@@ -16,8 +16,8 @@ propComponents:
 ouia: true
 ---
 
-import pfLogo from '../../assets/pfLogo.svg';
-import pfLogoSmall from '../../assets/pf-c-brand--logo-on-sm.svg';
+import pfLogo from '../../assets/PF-HorizontalLogo-Color.svg';
+import pfLogoSmall from '../../assets/PF-IconLogo.svg';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Examples
@@ -27,6 +27,14 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 Basic cards typically have a `<CardTitle>`, `<CardBody>` and `<CardFooter>`. You may omit these components as needed, but it is recommended to at least include a `<CardBody>` to provide details about the card item.
 
 ```ts file='./CardBasic.tsx'
+
+```
+
+### Secondary cards
+
+You can apply secondary background color styling to a card by setting the `variant` property to `secondary`.
+
+```ts file='./CardSecondary.tsx'
 
 ```
 
@@ -43,8 +51,6 @@ Most modifiers can be used in combination with each other, except for `isCompact
 | Modifier     | Description                                                                          |
 | ------------ | ------------------------------------------------------------------------------------ |
 | isCompact    | Modifies the card to include compact styling. Should not be used with isLarge.       |
-| isFlat       | Modifies the card to include flat styling.                                           |
-| isRounded    | Modifies the card to include rounded border styling.                                 |
 | isLarge      | Modifies the card to be large. Should not be used with isCompact.                    |
 | isFullHeight | Modifies the card so that it fills the total available height of its container.      |
 | isPlain      | Modifies the card to include plain styling, which removes the border and background. |
@@ -145,36 +151,6 @@ When passing interactive content to a clickable and selectable card that is disa
 
 ```
 
-### Selectable cards (deprecated)
-
-The following example shows a deprecated implementation of selectable cards. This example uses the `isSelectable` property instead of `isSelectableRaised`, which is the current recommendation for implementation. `isSelectable` applies selectable styling, but does not apply raised styling on hover and selection as `isSelectableRaised` does.
-
-A `tabIndex={0}` is also manually passed to allow the card to be focused and clicked via keyboard.
-
-```ts file='./CardDeprecatedSelectable.tsx' isDeprecated
-
-```
-
-### Selectable card accessibility features (deprecated)
-
-Note: the following example uses deprecated properties. We recommend using the new `selectableActions` property for the `CardHeader` instead.
-
-The following cards demonstrate how the `hasSelectableInput` and `onSelectableInputChange` properties improve accessibility for selectable cards.
-
-The first card sets `hasSelectableInput` to true, which renders a checkbox input that is only visible to, and navigable by, screen readers. This input communicates to assistive technology users that a card is selectable, and if so, also communicates the current selection state.
-
-By default, this input will have an aria-label that corresponds to the `<CardTitle>`. If this isn't defined, then you must pass a custom aria-label using the `selectableInputAriaLabel` property.
-
-The first card passes an onChange callback to `onSelectableInputChange` to enable the selection/deselection of the associated card via checkbox input.
-
-The second card does not set `hasSelectableInput` to true, so neither the input nor the selection state is communicated to users of assistive technologies.
-
-We recommend navigating this example using a screen reader to best understand both cards.
-
-```ts file='./CardDeprecatedSelectableA11yHighlight.tsx' isDeprecated
-
-```
-
 ### Expandable cards
 
 A card can be made expandable using the `isExpanded` property. In the collapsed state, only the card header is shown, and the user can click the caret to view the rest of the card content.
@@ -190,5 +166,12 @@ Place any content that you want to be hidden within the `<CardExpandableContent>
 An image can be placed in the card header to show users an icon beside the expansion caret.
 
 ```ts file='./CardExpandableWithIcon.tsx'
+
+```
+
+### Card with dividers
+Dividers can be placed between sections of the card.
+
+```ts file='./CardWithDividers.tsx'
 
 ```

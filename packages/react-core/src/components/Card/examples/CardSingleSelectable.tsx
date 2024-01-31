@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardBody } from '@patternfly/react-core';
+import { Card, CardHeader, CardTitle, CardBody, Gallery } from '@patternfly/react-core';
 
 export const SingleSelectableCard: React.FunctionComponent = () => {
   const id1 = 'single-selectable-card-input-1';
@@ -7,7 +7,7 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
   const id3 = 'single-selectable-card-input-3';
 
   return (
-    <React.Fragment>
+    <Gallery hasGutter>
       <Card id="single-selectable-card-example-1" isSelectable>
         <CardHeader
           selectableActions={{
@@ -47,6 +47,6 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
         </CardHeader>
         <CardBody>This card is single selectable but disabled.</CardBody>
       </Card>
-    </React.Fragment>
+    </Gallery>
   );
 };
