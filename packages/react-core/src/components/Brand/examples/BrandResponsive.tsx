@@ -9,7 +9,7 @@ import pfLogoSmDark from '../../assets/PF-IconLogo-Reverse.svg';
 export const BrandBasic: React.FunctionComponent = () => (
   <>
     <div className="show-light">
-      <Brand src={pfLogo} alt="Fallback patternfly default logo" widths={{ default: '40px', sm: '60px', md: '220px' }}>
+      <Brand src={pfLogo} alt="Patternfly" widths={{ default: '40px', sm: '60px', md: '220px' }}>
         <source media="(min-width: 1200px)" srcSet={pfLogo} />
         <source media="(min-width: 992px)" srcSet={pfLogo} />
         <source media="(min-width: 768px)" srcSet={pfLogo} />

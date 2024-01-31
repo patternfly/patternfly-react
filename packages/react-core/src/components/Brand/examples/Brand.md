@@ -13,6 +13,10 @@ import pfLogoSmDark from '../../assets/PF-IconLogo-Reverse.svg';
 
 ## Examples
 
+The brand component does not have any built-in theme support. If a brand should be dynamically styled, you must manually set up the necessary logic on your own.
+
+These examples adjust styling when the PatternFly website is toggled between the light and dark theme.
+
 ### Basic
 
 ```ts file="./BrandBasic.tsx"
