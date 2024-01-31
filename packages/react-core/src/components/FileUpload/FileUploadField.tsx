@@ -19,6 +19,10 @@ export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElemen
   'aria-label'?: string;
   /** Text for the browse button. */
   browseButtonText?: string;
+  /** ID or ID's of elements that describe the browse button. Typically this should refer
+   * to elements such as helper text when there are file restrictions.
+   */
+  browseButtonAriaDescribedby?: string;
   /** Additional children to render after (or instead of) the file preview. */
   children?: React.ReactNode;
   /** Additional classes added to the file upload field container element. */
@@ -108,6 +112,7 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
   filenamePlaceholder = 'Drag a file here or browse to upload',
   filenameAriaLabel = filename ? 'Read only filename' : filenamePlaceholder,
   browseButtonText = 'Browse...',
+  browseButtonAriaDescribedby,
   clearButtonText = 'Clear',
   isClearButtonDisabled = !filename && !value,
   containerRef = null as React.Ref<HTMLDivElement>,
@@ -141,16 +146,15 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
               name={name || `${id}-filename`}
               aria-label={filenameAriaLabel}
               placeholder={filenamePlaceholder}
-              aria-describedby={`${id}-browse-button`}
               value={filename}
             />
           </InputGroupItem>
           <InputGroupItem>
             <Button
-              id={`${id}-browse-button`}
               variant={ButtonVariant.control}
               onClick={onBrowseButtonClick}
               isDisabled={isDisabled}
+              aria-describedby={browseButtonAriaDescribedby}
             >
               {browseButtonText}
             </Button>
