@@ -15,9 +15,9 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Additional classes added to the label. */
   className?: string;
   /** Color of the label. */
-  color?: 'blue' | 'cyan' | 'green' | 'orange' | 'purple' | 'red' | 'grey' | 'gold';
+  color?: 'blue' | 'cyan' | 'green' | 'orange' | 'purple' | 'red' | 'orangered' | 'grey' | 'gold';
   /** Variant of the label. */
-  variant?: 'outline' | 'filled';
+  variant?: 'outline' | 'filled' | 'overflow' | 'add';
   /** Flag indicating the label is compact. */
   isCompact?: boolean;
   /** @beta Flag indicating the label is editable. */
@@ -58,8 +58,6 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   closeBtnProps?: any;
   /** Href for a label that is a link. If present, the label will change to an anchor element. This should not be passed in if the onClick prop is also passed in. */
   href?: string;
-  /** Flag indicating if the label is an overflow label. */
-  isOverflowLabel?: boolean;
   /** Callback for when the label is clicked. This should not be passed in if the href or isEditable props are also passed in. */
   onClick?: (event: React.MouseEvent) => void;
   /** Forwards the label content and className to rendered function.  Use this prop for react router support.*/
@@ -81,6 +79,7 @@ const colorStyles = {
   orange: styles.modifiers.orange,
   purple: styles.modifiers.purple,
   red: styles.modifiers.red,
+  orangered: styles.modifiers.orangered,
   gold: styles.modifiers.gold,
   grey: ''
 };
@@ -104,7 +103,6 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   closeBtnAriaLabel,
   closeBtnProps,
   href,
-  isOverflowLabel,
   render,
   ...props
 }: LabelProps) => {
@@ -112,6 +110,10 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const [currValue, setCurrValue] = useState(children);
   const editableButtonRef = React.useRef<HTMLButtonElement>();
   const editableInputRef = React.useRef<HTMLInputElement>();
+
+  const isOverflowLabel = variant === 'overflow';
+  const isAddLabel = variant === 'add';
+  const isClickable = (onLabelClick && !isOverflowLabel && !isAddLabel) || href;
 
   React.useEffect(() => {
     document.addEventListener('mousedown', onDocMouseDown);
@@ -198,12 +200,13 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     }
   };
 
-  const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
+  const LabelComponent = (isOverflowLabel || isAddLabel ? 'button' : 'span') as any;
 
   const defaultButton = (
     <Button
       type="button"
       variant="plain"
+      hasNoPadding
       onClick={onClose}
       aria-label={closeBtnAriaLabel || `Close ${children}`}
       {...closeBtnProps}
@@ -253,7 +256,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   let LabelComponentChildElement = 'span';
   if (href) {
     LabelComponentChildElement = 'a';
-  } else if (isEditable || (onLabelClick && !isOverflowLabel)) {
+  } else if (isEditable || (onLabelClick && !isOverflowLabel && !isAddLabel)) {
     LabelComponentChildElement = 'button';
   }
 
@@ -265,7 +268,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const isButton = LabelComponentChildElement === 'button';
 
   const labelComponentChildProps = {
-    className: css(styles.labelContent),
+    className: css(styles.labelContent, isClickable && styles.modifiers.clickable),
     ...(isTooltipVisible && { tabIndex: 0 }),
     ...(href && { href }),
     ...(isButton && clickableLabelProps),
@@ -313,9 +316,11 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         isCompact && styles.modifiers.compact,
         isEditable && labelGrpStyles.modifiers.editable,
         isEditableActive && styles.modifiers.editableActive,
+        isClickable && styles.modifiers.clickable,
+        isAddLabel && styles.modifiers.add,
         className
       )}
-      onClick={isOverflowLabel ? onLabelClick : undefined}
+      onClick={isOverflowLabel || isAddLabel ? onLabelClick : undefined}
     >
       {!isEditableActive && labelComponentChild}
       {!isEditableActive && onClose && button}

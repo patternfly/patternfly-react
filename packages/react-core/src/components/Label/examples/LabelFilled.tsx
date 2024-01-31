@@ -9,16 +9,17 @@ export const LabelFilled: React.FunctionComponent = () => {
   };
   return (
     <React.Fragment>
-      <Label>Grey</Label> <Label icon={<InfoCircleIcon />}>Grey icon</Label>{' '}
-      <Label onClose={() => Function.prototype}>Grey removable</Label>{' '}
+      <Label>Grey</Label>
+      <Label icon={<InfoCircleIcon />}>Grey icon</Label>
+      <Label onClose={() => Function.prototype}>Grey removable</Label>
       <Label icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
         Grey icon removable
-      </Label>{' '}
-      <Label href="#filled">Grey link</Label>{' '}
+      </Label>
+      <Label href="#filled">Grey link</Label>
       <Label href="#filled" onClose={() => Function.prototype}>
         Grey link removable
       </Label>
-      <Label onClick={() => logColor('grey')}>Grey clickable</Label>{' '}
+      <Label onClick={() => logColor('grey')}>Grey clickable</Label>
       <Label onClick={() => logColor('grey')} onClose={() => Function.prototype}>
         Grey clickable removable
       </Label>
@@ -27,25 +28,25 @@ export const LabelFilled: React.FunctionComponent = () => {
       </Label>
       <br />
       <br />
-      <Label color="blue">Blue</Label>{' '}
+      <Label color="blue">Blue</Label>
       <Label color="blue" icon={<InfoCircleIcon />}>
         Blue icon
-      </Label>{' '}
+      </Label>
       <Label color="blue" onClose={() => Function.prototype}>
         Blue removable
-      </Label>{' '}
+      </Label>
       <Label color="blue" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
         Blue icon removable
-      </Label>{' '}
+      </Label>
       <Label color="blue" href="#filled">
         Blue link
-      </Label>{' '}
+      </Label>
       <Label color="blue" href="#filled" onClose={() => Function.prototype}>
         Blue link removable
       </Label>
       <Label color="blue" onClick={() => logColor('blue')}>
         Blue clickable
-      </Label>{' '}
+      </Label>
       <Label color="blue" onClick={() => logColor('blue')} onClose={() => Function.prototype}>
         Blue clickable removable
       </Label>
@@ -54,25 +55,25 @@ export const LabelFilled: React.FunctionComponent = () => {
       </Label>
       <br />
       <br />
-      <Label color="green">Green</Label>{' '}
+      <Label color="green">Green</Label>
       <Label color="green" icon={<InfoCircleIcon />}>
         Green icon
-      </Label>{' '}
+      </Label>
       <Label color="green" onClose={() => Function.prototype}>
         Green removable
-      </Label>{' '}
+      </Label>
       <Label color="green" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
         Green icon removable
-      </Label>{' '}
+      </Label>
       <Label color="green" href="#filled">
         Green link
-      </Label>{' '}
+      </Label>
       <Label color="green" href="#filled" onClose={() => Function.prototype}>
         Green link removable
       </Label>
       <Label color="green" onClick={() => logColor('green')}>
         Green clickable
-      </Label>{' '}
+      </Label>
       <Label color="green" onClick={() => logColor('green')} onClose={() => Function.prototype}>
         Green clickable removable
       </Label>
@@ -81,25 +82,25 @@ export const LabelFilled: React.FunctionComponent = () => {
       </Label>
       <br />
       <br />
-      <Label color="orange">Orange</Label>{' '}
+      <Label color="orange">Orange</Label>
       <Label color="orange" icon={<InfoCircleIcon />}>
         Orange icon
-      </Label>{' '}
+      </Label>
       <Label color="orange" onClose={() => Function.prototype}>
         Orange removable
-      </Label>{' '}
+      </Label>
       <Label color="orange" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
         Orange icon removable
-      </Label>{' '}
+      </Label>
       <Label color="orange" href="#filled">
         Orange link
-      </Label>{' '}
+      </Label>
       <Label color="orange" href="#filled" onClose={() => Function.prototype}>
         Orange link removable
       </Label>
       <Label color="orange" onClick={() => logColor('orange')}>
         Orange clickable
-      </Label>{' '}
+      </Label>
       <Label color="orange" onClick={() => logColor('orange')} onClose={() => Function.prototype}>
         Orange clickable removable
       </Label>
@@ -108,25 +109,25 @@ export const LabelFilled: React.FunctionComponent = () => {
       </Label>
       <br />
       <br />
-      <Label color="red">Red</Label>{' '}
+      <Label color="red">Red</Label>
       <Label color="red" icon={<InfoCircleIcon />}>
         Red icon
-      </Label>{' '}
+      </Label>
       <Label color="red" onClose={() => Function.prototype}>
         Red removable
-      </Label>{' '}
+      </Label>
       <Label color="red" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
         Red icon removable
-      </Label>{' '}
+      </Label>
       <Label color="red" href="#filled">
         Red link
-      </Label>{' '}
+      </Label>
       <Label color="red" href="#filled" onClose={() => Function.prototype}>
         Red link removable
       </Label>
       <Label color="red" onClick={() => logColor('red')}>
         Red clickable
-      </Label>{' '}
+      </Label>
       <Label color="red" onClick={() => logColor('red')} onClose={() => Function.prototype}>
         Red clickable removable
       </Label>
@@ -135,25 +136,52 @@ export const LabelFilled: React.FunctionComponent = () => {
       </Label>
       <br />
       <br />
-      <Label color="purple">Purple</Label>{' '}
+      <Label color="orangered">Orange red</Label>
+      <Label color="orangered" icon={<InfoCircleIcon />}>
+        Orange red icon
+      </Label>
+      <Label color="orangered" onClose={() => Function.prototype}>
+        Orange red removable
+      </Label>
+      <Label color="orangered" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+        Orange red icon removable
+      </Label>
+      <Label color="orangered" href="#filled">
+        Orange red link
+      </Label>
+      <Label color="orangered" href="#filled" onClose={() => Function.prototype}>
+        Orange red link removable
+      </Label>
+      <Label color="orangered" onClick={() => logColor('orangered')}>
+        Orange red clickable
+      </Label>
+      <Label color="orangered" onClick={() => logColor('orangered')} onClose={() => Function.prototype}>
+        Orange red clickable removable
+      </Label>
+      <Label color="orangered" icon={<InfoCircleIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
+        Orange red label with icon that overflows
+      </Label>
+      <br />
+      <br />
+      <Label color="purple">Purple</Label>
       <Label color="purple" icon={<InfoCircleIcon />}>
         Purple icon
-      </Label>{' '}
+      </Label>
       <Label color="purple" onClose={() => Function.prototype}>
         Purple removable
-      </Label>{' '}
+      </Label>
       <Label color="purple" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
         Purple icon removable
-      </Label>{' '}
+      </Label>
       <Label color="purple" href="#filled">
         Purple link
-      </Label>{' '}
+      </Label>
       <Label color="purple" href="#filled" onClose={() => Function.prototype}>
         Purple link removable
       </Label>
       <Label color="purple" onClick={() => logColor('purple')}>
         Purple clickable
-      </Label>{' '}
+      </Label>
       <Label color="purple" onClick={() => logColor('purple')} onClose={() => Function.prototype}>
         Purple clickable removable
       </Label>
@@ -162,25 +190,25 @@ export const LabelFilled: React.FunctionComponent = () => {
       </Label>
       <br />
       <br />
-      <Label color="cyan">Cyan</Label>{' '}
+      <Label color="cyan">Cyan</Label>
       <Label color="cyan" icon={<InfoCircleIcon />}>
         Cyan icon
-      </Label>{' '}
+      </Label>
       <Label color="cyan" onClose={() => Function.prototype}>
         Cyan removable
-      </Label>{' '}
+      </Label>
       <Label color="cyan" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
         Cyan icon removable
-      </Label>{' '}
+      </Label>
       <Label color="cyan" href="#filled">
         Cyan link
-      </Label>{' '}
+      </Label>
       <Label color="cyan" href="#filled" onClose={() => Function.prototype}>
         Cyan link removable
       </Label>
       <Label color="cyan" onClick={() => logColor('cyan')}>
         Cyan clickable
-      </Label>{' '}
+      </Label>
       <Label color="cyan" onClick={() => logColor('cyan')} onClose={() => Function.prototype}>
         Cyan clickable removable
       </Label>
@@ -189,25 +217,25 @@ export const LabelFilled: React.FunctionComponent = () => {
       </Label>
       <br />
       <br />
-      <Label color="gold">Gold</Label>{' '}
+      <Label color="gold">Gold</Label>
       <Label color="gold" icon={<InfoCircleIcon />}>
         Gold icon
-      </Label>{' '}
+      </Label>
       <Label color="gold" onClose={() => Function.prototype}>
         Gold removable
-      </Label>{' '}
+      </Label>
       <Label color="gold" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
         Gold icon removable
-      </Label>{' '}
+      </Label>
       <Label color="gold" href="#filled">
         Gold link
-      </Label>{' '}
+      </Label>
       <Label color="gold" href="#filled" onClose={() => Function.prototype}>
         Gold link removable
       </Label>
       <Label color="gold" onClick={() => logColor('gold')}>
         Gold clickable
-      </Label>{' '}
+      </Label>
       <Label color="gold" onClick={() => logColor('gold')} onClose={() => Function.prototype}>
         Gold clickable removable
       </Label>

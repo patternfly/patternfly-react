@@ -102,7 +102,7 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
 
   const toggle = (
     <div ref={toggleRef}>
-      <Label color="blue" variant="outline" isOverflowLabel onClick={onToggleClick}>
+      <Label variant="overflow" onClick={onToggleClick}>
         Add label
       </Label>
     </div>

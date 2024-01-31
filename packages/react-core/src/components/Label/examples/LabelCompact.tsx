@@ -4,23 +4,53 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-i
 
 export const LabelCompact: React.FunctionComponent = () => (
   <React.Fragment>
-    <Label isCompact>Grey</Label>{' '}
+    <Label isCompact>Compact</Label>
     <Label isCompact icon={<InfoCircleIcon />}>
       Compact icon
-    </Label>{' '}
+    </Label>
     <Label isCompact onClose={() => Function.prototype}>
       Compact removable
-    </Label>{' '}
+    </Label>
     <Label isCompact icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
       Compact icon removable
-    </Label>{' '}
+    </Label>
     <Label isCompact href="#compact">
       Compact link
-    </Label>{' '}
+    </Label>
     <Label isCompact href="#compact" onClose={() => Function.prototype}>
       Compact link removable
     </Label>
     <Label isCompact icon={<InfoCircleIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
+      Compact label with icon that overflows
+    </Label>
+    <br />
+    <br />
+    <Label variant="outline" color="blue" isCompact>
+      Compact
+    </Label>
+    <Label variant="outline" color="blue" isCompact icon={<InfoCircleIcon />}>
+      Compact icon
+    </Label>
+    <Label variant="outline" color="blue" isCompact onClose={() => Function.prototype}>
+      Compact removable
+    </Label>
+    <Label variant="outline" color="blue" isCompact icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+      Compact icon removable
+    </Label>
+    <Label variant="outline" color="blue" isCompact href="#compact">
+      Compact link
+    </Label>
+    <Label variant="outline" color="blue" isCompact href="#compact" onClose={() => Function.prototype}>
+      Compact link removable
+    </Label>
+    <Label
+      variant="outline"
+      color="blue"
+      isCompact
+      icon={<InfoCircleIcon />}
+      onClose={() => Function.prototype}
+      textMaxWidth="16ch"
+    >
       Compact label with icon that overflows
     </Label>
   </React.Fragment>
