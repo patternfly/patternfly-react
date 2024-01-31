@@ -42,7 +42,7 @@ exports[`MultipleFileUploadStatus renders custom class names 1`] = `
               class="pf-v5-c-multiple-file-upload__status-progress-icon"
             />
             <div
-              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v5-c-multiple-file-upload__status-progress-text"
             />
           </div>
         </span>
@@ -121,7 +121,7 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
               </svg>
             </div>
             <div
-              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v5-c-multiple-file-upload__status-progress-text"
             />
           </div>
         </span>
@@ -186,7 +186,7 @@ exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
               class="pf-v5-c-multiple-file-upload__status-progress-icon"
             />
             <div
-              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v5-c-multiple-file-upload__status-progress-text"
             >
               test
             </div>
@@ -253,7 +253,7 @@ exports[`MultipleFileUploadStatus renders with expected class names 1`] = `
               class="pf-v5-c-multiple-file-upload__status-progress-icon"
             />
             <div
-              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v5-c-multiple-file-upload__status-progress-text"
             />
           </div>
         </span>
