@@ -30,14 +30,14 @@ test('Renders with aria-expanded="true" when isExpanded is passed in.', () => {
   expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'true');
 });
 
-test('Does not render with .pf-m-expanded when isExpanded is not passed in.', () => {
+test('Does not render with .pf-m-clicked when isExpanded is not passed in.', () => {
   render(<NotificationBadge />);
 
-  expect(screen.getByRole('button').firstChild).not.toHaveClass('pf-m-expanded');
+  expect(screen.getByRole('button')).not.toHaveClass('pf-m-clicked');
 });
 
-test('Renders with .pf-m-expanded when isExpanded is passed in.', () => {
+test('Renders with .pf-m-clicked when isExpanded is passed in.', () => {
   render(<NotificationBadge isExpanded />);
 
-  expect(screen.getByRole('button').firstChild).toHaveClass('pf-m-expanded');
+  expect(screen.getByRole('button')).toHaveClass('pf-m-clicked');
 });

@@ -6,7 +6,6 @@ propComponents: ['NotificationBadge']
 ---
 
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
-import './notificationBadge.css';
 
 ## Examples
 

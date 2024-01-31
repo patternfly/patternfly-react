@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/NotificationBadge/notification-badge';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
@@ -42,20 +40,26 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
   isExpanded = false,
   ...props
 }: NotificationBadgeProps) => {
-  let notificationChild = icon;
-  if (children !== undefined) {
-    notificationChild = children;
-  } else if (variant === NotificationBadgeVariant.attention) {
-    notificationChild = attentionIcon;
-  }
+  const hasCount = count > 0;
+  const hasChildren = children !== undefined;
+  const isAttention = variant === NotificationBadgeVariant.attention;
+
+  const notificationIcon = isAttention ? attentionIcon : icon;
+  const notificationContent = hasChildren ? children : notificationIcon;
+
+  const [iconProp, notificationChild] = hasCount ? [notificationContent, count] : [undefined, notificationContent];
+
   return (
-    <Button variant={ButtonVariant.plain} className={className} aria-expanded={isExpanded} {...props}>
-      <span
-        className={css(styles.notificationBadge, styles.modifiers[variant], isExpanded && styles.modifiers.expanded)}
-      >
-        {notificationChild}
-        {count > 0 && <span className={css(`${styles.notificationBadge}__count`)}>{count}</span>}
-      </span>
+    <Button
+      variant={ButtonVariant.stateful}
+      className={className}
+      aria-expanded={isExpanded}
+      state={variant}
+      isClicked={isExpanded}
+      icon={iconProp}
+      {...props}
+    >
+      {notificationChild}
     </Button>
   );
 };
