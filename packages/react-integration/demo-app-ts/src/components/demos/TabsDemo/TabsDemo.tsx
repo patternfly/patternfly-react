@@ -102,7 +102,7 @@ export class TabDemo extends Component {
             ref={this.contentRef1}
             aria-label="Tab item 1"
             // eslint-disable-next-line no-console
-            onAuxClick={event => console.log(event)}
+            onAuxClick={(event) => console.log(event)}
           >
             Tab 1 section
           </TabContent>
@@ -169,11 +169,11 @@ export class TabDemo extends Component {
           </Tab>
         </Tabs>
         <Tabs
-          id="boxLightVariantTabs"
+          id="boxSecondaryVariantTabs"
           activeKey={this.state.activeTabKey4}
           onSelect={this.handleTabClick4}
           isBox
-          variant="light300"
+          variant="secondary"
         >
           <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
             Tab 1 section

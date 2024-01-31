@@ -14,7 +14,7 @@ export const TabTitleIcon: React.FunctionComponent<TabTitleIconProps> = ({
   className = '',
   ...props
 }: TabTitleIconProps) => (
-  <span className={css(styles.tabsItemIcon, className)} {...props}>
+  <span className={css(`${styles.tabs}__item-icon`, className)} {...props}>
     {children}
   </span>
 );

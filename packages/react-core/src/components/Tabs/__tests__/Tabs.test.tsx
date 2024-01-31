@@ -251,19 +251,19 @@ test('should render filled tabs', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('should render secondary tabs', () => {
+test('should render subtabs', () => {
   const { asFragment } = render(
     <Tabs id="primarieTabs">
       <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
-        <Tabs isSecondary id="secondaryTabs">
-          <Tab id="secondary tab1" eventKey={10} title={<TabTitleText>"Secondary Tab item 1"</TabTitleText>}>
-            Secondary Tab 1 section
+        <Tabs isSubtab id="subtabs">
+          <Tab id="subtab1" eventKey={10} title={<TabTitleText>"Subtab item 1"</TabTitleText>}>
+            Subtab 1 section
           </Tab>
-          <Tab id="secondary tab2" eventKey={11} title={<TabTitleText>"Secondary Tab item 2"</TabTitleText>}>
-            Secondary Tab 2 section
+          <Tab id="subtab2" eventKey={11} title={<TabTitleText>"Subtab item 2"</TabTitleText>}>
+            Subtab 2 section
           </Tab>
-          <Tab id="secondary tab3" eventKey={12} title={<TabTitleText>"Secondary Tab item 3"</TabTitleText>}>
-            Secondary Tab 3 section
+          <Tab id="subtab3" eventKey={12} title={<TabTitleText>"Subtab item 3"</TabTitleText>}>
+            Subtab 3 section
           </Tab>
         </Tabs>
       </Tab>
@@ -338,9 +338,9 @@ test('should render tabs with separate content', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('should render box tabs of light variant', () => {
+test('should render box tabs of secondary variant', () => {
   const { asFragment } = render(
-    <Tabs id="boxLightVariantTabs" isBox variant="light300">
+    <Tabs id="boxSecondaryVariantTabs" isBox variant="secondary">
       <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
         Tab 1 section
       </Tab>
@@ -372,9 +372,9 @@ test('should render tabs with no bottom border', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('should render secondary tabs with no bottom border when passed hasNoBorderBottom', () => {
+test('should render subtabs with no bottom border when passed hasNoBorderBottom', () => {
   render(
-    <Tabs isSecondary hasNoBorderBottom id="noBottomBorderTabs" aria-label="Secondary bottom border">
+    <Tabs isSubtab hasNoBorderBottom id="noBottomBorderTabs" aria-label="Subtab bottom border">
       <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
         Tab 1 section
       </Tab>
@@ -387,14 +387,14 @@ test('should render secondary tabs with no bottom border when passed hasNoBorder
     </Tabs>
   );
 
-  const tabsContainer = screen.queryByLabelText('Secondary bottom border');
+  const tabsContainer = screen.queryByLabelText('Subtab bottom border');
 
   expect(tabsContainer).toHaveClass('pf-m-no-border-bottom');
 });
 
-test('should render secondary tabs with border bottom', () => {
+test('should render subtabs with border bottom', () => {
   render(
-    <Tabs isSecondary id="bottomBorderTabs" aria-label="Secondary bottom border">
+    <Tabs isSubtab id="bottomBorderTabs" aria-label="Subtab bottom border">
       <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
         Tab 1 section
       </Tab>
@@ -407,7 +407,7 @@ test('should render secondary tabs with border bottom', () => {
     </Tabs>
   );
 
-  const tabsContainer = screen.queryByLabelText('Secondary bottom border');
+  const tabsContainer = screen.queryByLabelText('Subtab bottom border');
 
   expect(tabsContainer).not.toHaveClass('pf-m-no-border-bottom');
 });

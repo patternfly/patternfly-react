@@ -36,15 +36,13 @@ Tabs can be styled as 'default' or 'boxed':
 ```ts file="./TabsDefault.tsx"
 ```
 
-### Boxed light tabs
+### Boxed secondary tabs
 
-To change the background color of boxed tabs, use the `variant` property. 
+To change the background color of boxed tabs or the tab content, use the `variant` property. 
 
-The following example passes `variant={isTabsLightScheme ? 'light300' : 'default'}` into the `<Tabs>` component to style the tabs with a lighter color.
+Toggle the tab color by selecting the 'Tabs secondary variant' checkbox in the following example.
 
-Toggle the tab color by selecting the 'Tabs light variation' checkbox in the following example.
-
-```ts file="./TabsBoxLight.tsx"
+```ts file="./TabsBoxSecondary.tsx"
 ```
 
 ### Vertical tabs
@@ -132,11 +130,11 @@ To add an icon to a tab, pass a `<TabTitleIcon>` component that contains the ico
 ```ts file="./TabsIconAndText.tsx"
 ```
 
-### Secondary tabs
+### Subtabs
 
-Use secondary tabs as "sub tabs" or within other components, like modals. Secondary tabs have less visually prominent styling. 
+Use subtabs within other components, like modals. Subtabs have less visually prominent styling. 
 
-To apply secondary styling to tabs, use the `isSecondary` property. 
+To apply subtab styling to tabs, use the `isSubtab` property. 
 
 ```ts file="./TabsSubtabs.tsx"
 ```
@@ -157,11 +155,11 @@ Nav tabs should use the `href` property to link the tab to the URL of another pa
 ```ts file="./TabsNav.tsx"
 ```
 
-### Secondary tabs linked to nav elements
+### Subtabs linked to nav elements
 
-Secondary tabs can also link to nav elements. 
+Subtabs can also link to nav elements. 
 
-```ts file="./TabsNavSecondary.tsx"
+```ts file="./TabsNavSubtab.tsx"
 ```
 
 ### With separate content

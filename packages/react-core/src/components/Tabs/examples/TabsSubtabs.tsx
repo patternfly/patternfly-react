@@ -14,7 +14,7 @@ export const TabsSubtabs: React.FunctionComponent = () => {
     setActiveTabKey1(tabIndex);
   };
 
-  // Toggle currently active secondary tab
+  // Toggle currently active subtab
   const handleTabClickSecond = (
     event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
     tabIndex: string | number
@@ -37,35 +37,35 @@ export const TabsSubtabs: React.FunctionComponent = () => {
       >
         <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Tabs with subtabs content users">
           <Tabs
-            aria-label="secondary tabs for users"
+            aria-label="subtabs for users"
             role="region"
             activeKey={activeTabKey2}
-            isSecondary
+            isSubtab
             onSelect={handleTabClickSecond}
           >
-            <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>}>
-              Secondary tab item 1 item section
+            <Tab eventKey={20} title={<TabTitleText>Subtab item 1</TabTitleText>}>
+              Subtab item 1 item section
             </Tab>
-            <Tab eventKey={21} title={<TabTitleText>Secondary tab item 2</TabTitleText>}>
-              Secondary tab item 2 section
+            <Tab eventKey={21} title={<TabTitleText>Subtab item 2</TabTitleText>}>
+              Subtab item 2 section
             </Tab>
-            <Tab eventKey={22} title={<TabTitleText>Secondary tab item 3</TabTitleText>}>
-              Secondary tab item 3 section
+            <Tab eventKey={22} title={<TabTitleText>Subtab item 3</TabTitleText>}>
+              Subtab item 3 section
             </Tab>
-            <Tab eventKey={23} title={<TabTitleText>Secondary tab item 4</TabTitleText>}>
-              Secondary tab item 4 section
+            <Tab eventKey={23} title={<TabTitleText>Subtab item 4</TabTitleText>}>
+              Subtab item 4 section
             </Tab>
-            <Tab eventKey={24} title={<TabTitleText>Secondary tab item 5</TabTitleText>}>
-              Secondary tab item 5 section
+            <Tab eventKey={24} title={<TabTitleText>Subtab item 5</TabTitleText>}>
+              Subtab item 5 section
             </Tab>
-            <Tab eventKey={25} title={<TabTitleText>Secondary tab item 6</TabTitleText>}>
-              Secondary tab item 6 section
+            <Tab eventKey={25} title={<TabTitleText>Subtab item 6</TabTitleText>}>
+              Subtab item 6 section
             </Tab>
-            <Tab eventKey={26} title={<TabTitleText>Secondary tab item 7</TabTitleText>}>
-              Secondary tab item 7 section
+            <Tab eventKey={26} title={<TabTitleText>Subtab item 7</TabTitleText>}>
+              Subtab item 7 section
             </Tab>
-            <Tab eventKey={27} title={<TabTitleText>Secondary tab item 8</TabTitleText>}>
-              Secondary tab item 8 section
+            <Tab eventKey={27} title={<TabTitleText>Subtab item 8</TabTitleText>}>
+              Subtab item 8 section
             </Tab>
           </Tabs>
         </Tab>
@@ -106,8 +106,8 @@ export const TabsSubtabs: React.FunctionComponent = () => {
           isChecked={isBox}
           onChange={(_event, checked) => toggleBox(checked)}
           aria-label="show box variation checkbox with sub tabs"
-          id="toggle-box-secondary"
-          name="toggle-box-secondary"
+          id="toggle-box-subtab"
+          name="toggle-box-subtab"
         />
       </div>
     </div>
