@@ -18,6 +18,11 @@ test(`Renders with class name ${styles.sidebarContent}`, () => {
   expect(screen.getByText('Test')).toHaveClass(styles.sidebarContent);
 });
 
+test(`Renders with class name ${styles.modifiers.secondary} when backgroundVariant="secondary" is passed`, () => {
+  render(<SidebarContent backgroundVariant="secondary">Test</SidebarContent>);
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.secondary);
+});
+
 test('Renders with custom class name when className prop is provided', () => {
   render(<SidebarContent className="custom-class">Test</SidebarContent>);
   expect(screen.getByText('Test')).toHaveClass('custom-class');

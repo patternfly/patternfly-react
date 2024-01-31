@@ -30,6 +30,8 @@ export interface SidebarPanelProps extends Omit<React.HTMLProps<HTMLDivElement>,
     xl?: 'default' | 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
     '2xl'?: 'default' | 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
   };
+  /** Variant of the sidebar panel background. */
+  backgroundVariant?: 'default' | 'secondary';
 }
 
 export const SidebarPanel: React.FunctionComponent<SidebarPanelProps> = ({
@@ -39,6 +41,7 @@ export const SidebarPanel: React.FunctionComponent<SidebarPanelProps> = ({
   hasNoBackground,
   hasPadding,
   width,
+  backgroundVariant = 'default',
   ...props
 }: SidebarPanelProps) => (
   <div
@@ -48,6 +51,7 @@ export const SidebarPanel: React.FunctionComponent<SidebarPanelProps> = ({
       hasNoBackground && styles.modifiers.noBackground,
       hasPadding && styles.modifiers.padding,
       formatBreakpointMods(width, styles),
+      backgroundVariant !== 'default' && styles.modifiers[backgroundVariant],
       className
     )}
     {...props}

@@ -8,6 +8,8 @@ export interface SidebarContentProps extends React.HTMLProps<HTMLDivElement> {
   hasNoBackground?: boolean;
   /** Adds padding to the content. */
   hasPadding?: boolean;
+  /** Variant of the sidebar content background. */
+  backgroundVariant?: 'default' | 'secondary';
 }
 
 export const SidebarContent: React.FunctionComponent<SidebarContentProps> = ({
@@ -15,6 +17,7 @@ export const SidebarContent: React.FunctionComponent<SidebarContentProps> = ({
   children,
   hasNoBackground,
   hasPadding,
+  backgroundVariant = 'default',
   ...props
 }: SidebarContentProps) => (
   <div
@@ -22,6 +25,7 @@ export const SidebarContent: React.FunctionComponent<SidebarContentProps> = ({
       styles.sidebarContent,
       hasNoBackground && styles.modifiers.noBackground,
       hasPadding && styles.modifiers.padding,
+      backgroundVariant !== 'default' && styles.modifiers[backgroundVariant],
       className
     )}
     {...props}
