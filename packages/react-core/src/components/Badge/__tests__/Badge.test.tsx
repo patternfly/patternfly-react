@@ -38,9 +38,7 @@ test('Renders with toggle styles and icon when isToggle prop is true', () => {
       Test
     </Badge>
   );
-  expect(screen.getByText('Test').lastChild).toContainHTML(
-    '<span class="pf-v5-c-badge__toggle-icon"><i class="fas fa-caret-down" /></span>'
-  );
+  expect(screen.getByText('Test').lastChild).toHaveClass(styles.badgeToggleIcon);
 });
 
 test('Does not render pf-v5-screen-reader class by default', () => {
