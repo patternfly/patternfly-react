@@ -4,6 +4,7 @@ import {
   Drawer,
   DrawerContent,
   DrawerPanelContent,
+  DrawerColorVariant,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -26,8 +27,7 @@ const StepContentWithDrawer: React.FunctionComponent = () => {
     <Drawer isInline isExpanded={isDrawerExpanded} onExpand={onWizardExpand}>
       <DrawerContent
         panelContent={
-          // TODO: need to update with issue #9979. Removed light color variant for secondary panel.
-          <DrawerPanelContent widths={{ default: 'width_50' }}>
+          <DrawerPanelContent widths={{ default: 'width_50' }} colorVariant={DrawerColorVariant.secondary}>
             <DrawerHead>
               <span tabIndex={isDrawerExpanded ? 0 : -1} ref={drawerRef}>
                 Drawer content: <strong>{activeStep?.name}</strong>

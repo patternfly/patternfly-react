@@ -9,7 +9,7 @@ export interface DrawerSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Content to be rendered in the drawer section. */
   children?: React.ReactNode;
   /** Color variant of the background of the drawer Section */
-  colorVariant?: DrawerColorVariant | 'no-background' | 'default';
+  colorVariant?: DrawerColorVariant | 'no-background' | 'default' | 'secondary';
 }
 
 export const DrawerSection: React.FunctionComponent<DrawerSectionProps> = ({
@@ -23,6 +23,7 @@ export const DrawerSection: React.FunctionComponent<DrawerSectionProps> = ({
     className={css(
       styles.drawerSection,
       colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,
+      colorVariant === DrawerColorVariant.secondary && styles.modifiers.secondary,
       className
     )}
     {...props}

@@ -30,7 +30,7 @@ export const DrawerBreakpoint: React.FunctionComponent = () => {
     <DrawerPanelContent widths={{ default: 'width_33' }}>
       <DrawerHead>
         <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
-          drawer-panel
+          Drawer panel header
         </span>
         <DrawerActions>
           <DrawerCloseButton onClick={onCloseClick} />

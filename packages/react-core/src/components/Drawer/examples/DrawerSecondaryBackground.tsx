@@ -46,11 +46,10 @@ export const DrawerSecondaryBackground: React.FunctionComponent = () => {
   };
 
   const panelContent = (
-    // TODO:  need to update with issue #9979. Removed light color variant for secondary panel.
-    <DrawerPanelContent colorVariant={DrawerColorVariant.default}>
+    <DrawerPanelContent colorVariant={panelSecondary ? DrawerColorVariant.secondary : DrawerColorVariant.default}>
       <DrawerHead>
         <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
-          drawer-panel
+          Drawer panel header
         </span>
         <DrawerActions>
           <DrawerCloseButton onClick={onCloseClick} />
@@ -93,11 +92,11 @@ export const DrawerSecondaryBackground: React.FunctionComponent = () => {
         Toggle drawer
       </Button>
       <Drawer isExpanded={isExpanded} onExpand={onExpand}>
-        {/* TODO: MAy need to update with issue #9979. Removed light color variant for secondary panel. */}
-        <DrawerSection colorVariant={DrawerColorVariant.default}>drawer-section</DrawerSection>
+        <DrawerSection colorVariant={sectionSecondary ? DrawerColorVariant.secondary : DrawerColorVariant.default}>
+          drawer-section
+        </DrawerSection>
         <DrawerContent
-          // TODO:  need to update with issue #9979. Removed light color variant for secondary section.
-          colorVariant={DrawerColorVariant.default}
+          colorVariant={contentSecondary ? DrawerColorVariant.secondary : DrawerColorVariant.default}
           panelContent={panelContent}
         >
           <DrawerContentBody>{drawerContent}</DrawerContentBody>

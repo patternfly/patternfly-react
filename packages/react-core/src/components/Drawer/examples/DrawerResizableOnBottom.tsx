@@ -29,7 +29,7 @@ export const DrawerResizableOnBottom: React.FunctionComponent = () => {
     <DrawerPanelContent isResizable defaultSize={'200px'} minSize={'100px'}>
       <DrawerHead>
         <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
-          drawer-panel
+          Drawer panel header
         </span>
         <DrawerActions>
           <DrawerCloseButton onClick={onCloseClick} />

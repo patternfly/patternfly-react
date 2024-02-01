@@ -104,7 +104,6 @@ describe('Wizard', () => {
 
   test('wiz with drawer', () => {
     const wizDrawerPanelContent = (
-      // TODO: MAy need to update with issue #9979. Removed light color variant.
       <DrawerPanelContent>
         <DrawerHead>
           <span>This wizard has a drawer with drawer panel content</span>

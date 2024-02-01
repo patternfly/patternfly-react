@@ -2,6 +2,37 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { DrawerPanelContent } from '../DrawerPanelContent';
 import { Drawer } from '../Drawer';
+import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
+
+test(`Renders with only class ${styles.drawerPanel} by default`, () => {
+  render(
+    <Drawer isExpanded>
+      <DrawerPanelContent>Drawer panel content</DrawerPanelContent>
+    </Drawer>
+  );
+
+  expect(screen.getByText('Drawer panel content')).toHaveClass(styles.drawerPanel, { exact: true });
+});
+
+test(`Renders with class ${styles.modifiers.noBackground} when colorVariant="no-background"`, () => {
+  render(
+    <Drawer isExpanded>
+      <DrawerPanelContent colorVariant="no-background">Drawer panel content</DrawerPanelContent>
+    </Drawer>
+  );
+
+  expect(screen.getByText('Drawer panel content')).toHaveClass(styles.modifiers.noBackground);
+});
+
+test(`Renders with class ${styles.modifiers.secondary} when colorVariant="secondary"`, () => {
+  render(
+    <Drawer isExpanded>
+      <DrawerPanelContent colorVariant="secondary">Drawer panel content</DrawerPanelContent>
+    </Drawer>
+  );
+
+  expect(screen.getByText('Drawer panel content')).toHaveClass(styles.modifiers.secondary);
+});
 
 test('Does not render with aria-labelledby by default', () => {
   render(

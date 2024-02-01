@@ -55,7 +55,7 @@ export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivEle
     '2xl'?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
   };
   /** Color variant of the background of the drawer panel */
-  colorVariant?: DrawerColorVariant | 'no-background' | 'default';
+  colorVariant?: DrawerColorVariant | 'no-background' | 'default' | 'secondary';
   /** Adds and customizes a focus trap on the drawer panel content. */
   focusTrap?: DrawerPanelFocusTrapObject;
 }
@@ -63,7 +63,7 @@ let isResizing: boolean = null;
 let newSize: number = 0;
 
 export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps> = ({
-  className = '',
+  className,
   id,
   children,
   hasNoBorder = false,
@@ -367,6 +367,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
               hasNoBorder && styles.modifiers.noBorder,
               formatBreakpointMods(widths, styles),
               colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,
+              colorVariant === DrawerColorVariant.secondary && styles.modifiers.secondary,
               className
             )}
             onTransitionEnd={(ev) => {

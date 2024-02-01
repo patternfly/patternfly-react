@@ -4,15 +4,15 @@ cssPrefix: pf-v5-c-drawer
 propComponents:
   [
     Drawer,
-    DrawerContent,
-    DrawerPanelContent,
-    DrawerContentBody,
-    DrawerPanelBody,
     DrawerSection,
+    DrawerContent,
+    DrawerContentBody,
+    DrawerPanelContent,
     DrawerHead,
     DrawerActions,
     DrawerCloseButton,
-    DrawerColorVariant,
+    DrawerPanelDescription,
+    DrawerPanelBody,
     DrawerPanelFocusTrapObject
   ]
 section: components

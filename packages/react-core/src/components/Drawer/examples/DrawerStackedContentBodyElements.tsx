@@ -32,15 +32,14 @@ export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
     <DrawerPanelContent>
       <DrawerHead>
         <Title headingLevel="h3" size="2xl" tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
-          drawer title{' '}
+          Drawer panel header in a Title
         </Title>
         <DrawerActions>
           <DrawerCloseButton onClick={onCloseClick} />
         </DrawerActions>
-        drawer-panel
       </DrawerHead>
-      <DrawerPanelBody hasNoPadding>drawer-panel with no padding</DrawerPanelBody>
-      <DrawerPanelBody>drawer-panel</DrawerPanelBody>
+      <DrawerPanelBody hasNoPadding>Drawer panel body with no padding</DrawerPanelBody>
+      <DrawerPanelBody>Drawer panel body</DrawerPanelBody>
     </DrawerPanelContent>
   );
 

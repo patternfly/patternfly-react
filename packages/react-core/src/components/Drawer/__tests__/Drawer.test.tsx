@@ -6,7 +6,8 @@ import {
   DrawerContentBody,
   DrawerHead,
   DrawerPanelBody,
-  DrawerPanelContent
+  DrawerPanelContent,
+  DrawerColorVariant
 } from '../';
 import React from 'react';
 import { render } from '@testing-library/react';
@@ -70,15 +71,14 @@ test(`Drawer expands from bottom`, () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-// TODO: Update/renable with issue #9979
-xtest(`Drawer has resizable css and color variants`, () => {
+test(`Drawer has resizable css and color variants`, () => {
   const panelContent = (
     <DrawerPanelContent
       isResizable
       minSize={'200px'}
       defaultSize={'300px'}
       maxSize={'400px'}
-      // colorVariant={DrawerColorVariant.light200}
+      colorVariant={DrawerColorVariant.secondary}
     >
       <DrawerHead>
         <span>drawer-panel</span>
