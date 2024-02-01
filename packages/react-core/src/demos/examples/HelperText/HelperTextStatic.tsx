@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, FormGroup, FormHelperText, TextInput, HelperText, HelperTextItem } from '@patternfly/react-core';
 
-export const HelperTextStaticVariantStaticText: React.FunctionComponent = () => {
+export const HelperTextStaticText: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
 
   const handleInputChange = (_event, inputValue: string) => {
@@ -21,7 +21,7 @@ export const HelperTextStaticVariantStaticText: React.FunctionComponent = () => 
         />
         <FormHelperText>
           <HelperText id="helper-text1">
-            <HelperTextItem variant={'default'}>Enter your middle name or your middle initial</HelperTextItem>
+            <HelperTextItem>Enter your middle name or your middle initial</HelperTextItem>
           </HelperText>
         </FormHelperText>
       </FormGroup>

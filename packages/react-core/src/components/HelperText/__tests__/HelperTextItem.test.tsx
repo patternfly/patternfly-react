@@ -30,6 +30,12 @@ test('Renders custom className', () => {
   expect(screen.getByText('help test text 1').parentElement).toHaveClass('custom');
 });
 
+test('Does not render screen reader text by default', () => {
+  render(<HelperTextItem>help test text 1</HelperTextItem>);
+
+  expect(screen.queryByText('status', { exact: false })).not.toBeInTheDocument();
+});
+
 Object.values(['indeterminate', 'warning', 'success', 'error']).forEach((variant) => {
   test(`Renders with class ${styles.modifiers[variant]} when variant = ${variant}`, () => {
     render(
@@ -39,6 +45,26 @@ Object.values(['indeterminate', 'warning', 'success', 'error']).forEach((variant
     );
     expect(screen.getByText('text').parentElement).toHaveClass(styles.modifiers[variant]);
   });
+
+  test(`Renders default screenreader text when variant = ${variant}`, () => {
+    render(
+      <HelperTextItem variant={variant as 'default' | 'indeterminate' | 'warning' | 'success' | 'error'}>
+        text
+      </HelperTextItem>
+    );
+    expect(screen.getByText(`: ${variant} status;`)).toBeInTheDocument();
+  });
+});
+
+test('Renders custom screen reader text', () => {
+  render(
+    <HelperTextItem variant="error" screenReaderText="danger">
+      help test text 1
+    </HelperTextItem>
+  );
+
+  expect(screen.queryByText(': error status;')).not.toBeInTheDocument();
+  expect(screen.getByText(': danger;')).toBeInTheDocument();
 });
 
 test('Renders id when id is passed', () => {
@@ -56,38 +82,26 @@ test('Renders with element passed to component prop', () => {
   expect(screen.getByText('help test text 1').parentElement?.tagName).toBe('LI');
 });
 
-test('Renders custom icon', () => {
-  render(<HelperTextItem icon={<div>test</div>}>help test text</HelperTextItem>);
-  expect(screen.getByText('test').parentElement).toHaveClass(styles.helperTextItemIcon);
+test('Does not render an icon by default', () => {
+  render(<HelperTextItem>help test text</HelperTextItem>);
+  expect(screen.queryByText('help test text')?.previousSibling).not.toBeInTheDocument();
 });
 
-test('Renders default icon when hasIcon = true and icon is not passed', () => {
-  render(<HelperTextItem hasIcon>help test text</HelperTextItem>);
-  expect(screen.getByText('help test text').parentElement?.querySelector('span')).toHaveClass(
-    styles.helperTextItemIcon
-  );
+test('Renders a default icon when variant is passed and icon is not passed', () => {
+  render(<HelperTextItem variant="success">help test text</HelperTextItem>);
+  expect(screen.getByText('help test text').previousSibling).toHaveClass(styles.helperTextItemIcon);
 });
 
-test('Renders custom icon when icon is passed and hasIcon = true', () => {
+test('Renders custom icon when icon prop is passed', () => {
+  render(<HelperTextItem icon={<div>icon content</div>}>help test text</HelperTextItem>);
+  expect(screen.getByText('icon content').parentElement).toHaveClass(styles.helperTextItemIcon);
+});
+
+test('Renders custom icon instead of variant icon when icon and variant are passed', () => {
   render(
-    <HelperTextItem hasIcon icon={<div>test</div>}>
+    <HelperTextItem icon={<div>icon content</div>} variant="success">
       help test text
     </HelperTextItem>
   );
-  expect(screen.getByText('test').parentElement).toHaveClass(styles.helperTextItemIcon);
-});
-
-test('Renders dynamic helper text', () => {
-  render(<HelperTextItem isDynamic>help test text</HelperTextItem>);
-  expect(screen.getByText('help test text').parentElement).toHaveClass(styles.modifiers.dynamic);
-  expect(screen.getByText('help test text').querySelector('span')).toHaveClass('pf-v5-screen-reader');
-});
-
-test('Renders custom screenreader text when isDynamic = true and screenReaderText is passed', () => {
-  render(
-    <HelperTextItem isDynamic screenReaderText="sr test">
-      help test text
-    </HelperTextItem>
-  );
-  expect(screen.getByText('help test text').querySelector('span')).toHaveTextContent('sr test');
+  expect(screen.getByText('icon content').parentElement).toHaveClass(styles.helperTextItemIcon);
 });

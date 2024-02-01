@@ -63,7 +63,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     if (fileUploadShouldFail) {
       const corruptedFiles = files.map((file) => ({ ...file, lastModified: 'foo' as unknown as number }));
       // eslint-disable-next-line
-      setCurrentFiles((prevFiles) => [...prevFiles, ...corruptedFiles as any]);
+      setCurrentFiles((prevFiles) => [...prevFiles, ...(corruptedFiles as any)]);
     } else {
       setCurrentFiles((prevFiles) => [...prevFiles, ...files]);
     }
@@ -101,7 +101,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     if (fileResult?.loadError) {
       return (
         <HelperText isLiveRegion>
-          <HelperTextItem variant={'error'}>{fileResult.loadError.toString()}</HelperTextItem>
+          <HelperTextItem variant="error">{fileResult.loadError.toString()}</HelperTextItem>
         </HelperText>
       );
     }
