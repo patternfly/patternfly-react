@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.0.0-alpha.14 (2024-02-01)
+
+### Features
+
+- **Drawer:** consumed Penta updates ([#10036](https://github.com/patternfly/patternfly-react/issues/10036)) ([4dba57a](https://github.com/patternfly/patternfly-react/commit/4dba57a2b2a0c9e19747ba80dbe8e593bb2a7721))
+
 # 6.0.0-alpha.13 (2024-01-31)
 
 ### Features

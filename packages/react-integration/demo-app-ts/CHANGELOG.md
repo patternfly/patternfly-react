@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.25](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.24...demo-app-ts@5.1.1-alpha.25) (2024-02-01)
+
+### Features
+
+- **Drawer:** consumed Penta updates ([#10036](https://github.com/patternfly/patternfly-react/issues/10036)) ([4dba57a](https://github.com/patternfly/patternfly-react/commit/4dba57a2b2a0c9e19747ba80dbe8e593bb2a7721))
+
 ## [5.1.1-alpha.24](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.23...demo-app-ts@5.1.1-alpha.24) (2024-02-01)
 
 **Note:** Version bump only for package demo-app-ts
