@@ -55,7 +55,7 @@ test('Renders with class pf-m-block when isBlock = true', () => {
   expect(screen.getByRole('button')).toHaveClass('pf-m-block');
 });
 
-xtest('Renders with class pf-m-clicked when isClicked = true', () => {
+test('Renders with class pf-m-clicked when isClicked = true', () => {
   render(<Button isClicked>Clicked Button</Button>);
   expect(screen.getByRole('button')).toHaveClass('pf-m-clicked');
 });
