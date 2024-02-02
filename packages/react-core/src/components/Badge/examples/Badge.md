@@ -5,6 +5,8 @@ cssPrefix: pf-v5-c-badge
 propComponents: ['Badge']
 ---
 
+import './Badge.css';
+
 ## Examples
 
 ### Read
@@ -15,4 +17,9 @@ propComponents: ['Badge']
 ### Unread
 
 ```ts file="./BadgeUnread.tsx"
+```
+
+### Badge as toggle
+
+```ts file="./BadgeToggle.tsx"
 ```

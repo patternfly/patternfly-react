@@ -1,0 +1,6 @@
+#ws-react-c-badge-read .pf-v5-c-badge,
+#ws-react-c-badge-unread .pf-v5-c-badge,
+#ws-react-c-badge-badge-as-toggle .pf-v5-c-badge {
+    margin-inline-end: var(--pf-t--global--spacer--xs); 
+    margin-block-end: var(--pf-t--global--spacer--xs); 
+}
