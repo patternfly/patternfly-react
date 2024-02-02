@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-drag-drop",
-  "version": "5.2.0",
+  "version": "5.2.0-prerelease.8",
   "description": "PatternFly drag and drop solution",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -32,9 +32,9 @@
     "@dnd-kit/core": "^6.0.8",
     "@dnd-kit/modifiers": "^6.0.1",
     "@dnd-kit/sortable": "^7.0.2",
-    "@patternfly/react-core": "^5.2.0",
-    "@patternfly/react-icons": "^5.2.0",
-    "@patternfly/react-styles": "^5.2.0",
+    "@patternfly/react-core": "^5.2.0-prerelease.49",
+    "@patternfly/react-icons": "^5.2.0-prerelease.10",
+    "@patternfly/react-styles": "^5.2.0-prerelease.6",
     "memoize-one": "^5.1.0",
     "resize-observer-polyfill": "^1.5.1"
   },
