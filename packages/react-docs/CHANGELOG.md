@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.2.0 (2024-02-02)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 # 6.2.0-prerelease.53 (2024-02-02)
 
 **Note:** Version bump only for package @patternfly/react-docs
