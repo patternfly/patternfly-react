@@ -17,9 +17,6 @@ export const ToggleGroupDefaultMultiple: React.FunctionComponent = () => {
   return (
     <Stack hasGutter>
       <StackItem>
-        <Button onClick={disableAllClick}>{disableAll ? 'Enable back' : 'Disable all'}</Button>
-      </StackItem>
-      <StackItem>
         <ToggleGroup areAllGroupsDisabled={disableAll} aria-label="Default with multiple selectable">
           <ToggleGroupItem
             text="Option 1"
@@ -37,6 +34,9 @@ export const ToggleGroupDefaultMultiple: React.FunctionComponent = () => {
           />
           <ToggleGroupItem text="Option 3" key={2} isDisabled />
         </ToggleGroup>
+      </StackItem>
+      <StackItem>
+        <Button onClick={disableAllClick}>{disableAll ? 'Enable back' : 'Disable all'}</Button>
       </StackItem>
     </Stack>
   );
