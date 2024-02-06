@@ -50,7 +50,6 @@ class Chip extends React.Component<ChipProps> {
   }
 
   static defaultProps: ChipProps = {
-    closeBtnAriaLabel: 'close',
     className: '',
     isOverflowChip: false,
     isReadOnly: false,
