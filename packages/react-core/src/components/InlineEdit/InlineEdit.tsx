@@ -1,38 +1,88 @@
 import React from 'react';
 import styles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
-import { InlineEditActionGroupProps } from './InlineEditActionGroup';
-import { InlineEditToggle } from './InlineEditToggle';
+import { InlineEditActionGroup, InlineEditActionGroupProps } from './InlineEditActionGroup';
+import { InlineEditToggle, InlineEditToggleProps } from './InlineEditToggle';
+
+/** The basic inline edit component. For more customization, you can utilize a composable approach
+ * by using the customActionGroup and customEditToggle properties.
+ */
 
 export interface InlineEditProps {
   /** Determines whether inline edit is in edit mode. */
-  isEditMode?: boolean;
-  /** Element rendered when inline edit is not in edit mode. */
-  staticElement?: React.ReactNode;
-  /** Element rendered when inline edit is in edit mode. */
-  editModeElement?: React.ReactNode;
-  /** Action to perform on the edit icon click. It should set isEditMode prop to true. */
+  isEditModeEnabled?: boolean;
+  /** Content rendered when isEditModeEnabled is false. */
+  staticContent?: React.ReactNode;
+  /** Content rendered when isEditModeEnabled is true. */
+  editModeContent?: React.ReactNode;
+  /** Adds an accessible name to the edit button. */
+  editButtonAriaLabel?: string;
+  /** Action to perform when the edit button is clicked. It should set isEditModeEnabled prop to true. */
   onEditToggle?: (event: React.MouseEvent) => void;
-  /** Element consisting of "save" and "cancel" buttons. InlineEditActionGroup component should be used. */
-  actionGroup?: React.ReactElement<InlineEditActionGroupProps>;
+  /** Determines whether to display the "save" and "cancel" buttons as icons instead of text. */
+  isIconActionGroup?: boolean;
+  /** Text label for the "save" button. If isIconActionGroup is true, this will set the aria-label for the icon button. */
+  saveButtonLabel?: string;
+  /** Text label for the "cancel" button. If isIconActionGroup is true, this will set the aria-label for the icon button. */
+  cancelButtonLabel?: string;
+  /** Action to perform when the "save" button is clicked. */
+  onSave?: (event: React.MouseEvent) => void;
+  /** Action to perform when the "cancel" button is clicked. */
+  onCancel?: (event: React.MouseEvent) => void;
+  /** A custom edit button that is displayed when isEditModeEnabled is false. This will override the default edit button
+   * as well as the editButtonAriaLabel and onEditToggle properties. Our inline edit toggle component should be used.
+   */
+  customEditToggle?: React.ReactElement<InlineEditToggleProps>;
+  /** A custom group of actions that are displayed when isEditModeEnabled is true. This will override the default actions as well
+   * as the isIconActionGroup, saveButtonLabel, cancelButtonLabel, onSave, and onCancel properties.
+   * Our inline edit action group component should be used.
+   */
+  customActionGroup?: React.ReactElement<InlineEditActionGroupProps>;
+  /** Component that will be used as the wrapper for the inline edit. */
+  component?: keyof JSX.IntrinsicElements;
 }
 
 export const InlineEdit: React.FunctionComponent<InlineEditProps> = ({
-  isEditMode,
-  staticElement,
-  editModeElement,
+  isEditModeEnabled,
+  staticContent,
+  editModeContent,
+  editButtonAriaLabel = 'Enable edit mode',
   onEditToggle,
-  actionGroup
-}: InlineEditProps) => (
-  <form className={css(styles.inlineEdit, isEditMode && styles.modifiers.inlineEditable)}>
-    <div className={styles.inlineEditGroup}>
-      <div className={styles.inlineEditValue}>{staticElement}</div>
-      <InlineEditToggle onToggle={onEditToggle} />
-    </div>
-    <div className={styles.inlineEditGroup}>
-      <div className={styles.inlineEditInput}>{editModeElement}</div>
-      {actionGroup}
-    </div>
-  </form>
-);
+  isIconActionGroup,
+  saveButtonLabel = 'Save',
+  cancelButtonLabel = 'Cancel',
+  onSave,
+  onCancel,
+  customEditToggle,
+  customActionGroup,
+  component = 'form'
+}: InlineEditProps) => {
+  const Component = component as any;
+
+  return (
+    <Component className={css(styles.inlineEdit, isEditModeEnabled && styles.modifiers.inlineEditable)}>
+      <div className={styles.inlineEditGroup}>
+        {!isEditModeEnabled ? (
+          <>
+            <div className={styles.inlineEditValue}>{staticContent}</div>
+            {customEditToggle || <InlineEditToggle aria-label={editButtonAriaLabel} onToggle={onEditToggle} />}
+          </>
+        ) : (
+          <>
+            <div className={styles.inlineEditInput}>{editModeContent}</div>
+            {customActionGroup || (
+              <InlineEditActionGroup
+                saveButtonLabel={saveButtonLabel}
+                cancelButtonLabel={cancelButtonLabel}
+                isIconVariant={isIconActionGroup}
+                onSave={onSave}
+                onCancel={onCancel}
+              />
+            )}
+          </>
+        )}
+      </div>
+    </Component>
+  );
+};
 InlineEdit.displayName = 'InlineEdit';

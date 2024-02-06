@@ -1,7 +1,7 @@
 ---
 id: Inline edit
 section: components
-propComponents: ['InlineEdit']
+propComponents: ['InlineEdit', 'InlineEditToggle', 'InlineEditActionGroup']
 ---
 
 ## Examples

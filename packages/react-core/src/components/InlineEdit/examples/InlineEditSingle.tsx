@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { InlineEdit, InlineEditActionGroup, TextInput } from '@patternfly/react-core';
+import { InlineEdit, TextInput } from '@patternfly/react-core';
 
 export const InlineEditSingle: React.FunctionComponent = () => {
   const initialValue = 'This text is editable';
@@ -8,35 +8,31 @@ export const InlineEditSingle: React.FunctionComponent = () => {
   const [text, setText] = React.useState(initialValue);
   const [editableText, setEditableText] = React.useState(initialValue);
 
-  const [isEditMode, setIsEditMode] = React.useState(false);
+  const [isEditModeEnabled, setIsEditModeEnabled] = React.useState(false);
 
-  const makeStatic = () => setIsEditMode(false);
+  const makeStatic = () => setIsEditModeEnabled(false);
 
   return (
     <InlineEdit
-      isEditMode={isEditMode}
-      staticElement={text}
-      editModeElement={
+      isEditModeEnabled={isEditModeEnabled}
+      staticContent={text}
+      editModeContent={
         <TextInput
           value={editableText}
           onChange={(_event, value) => setEditableText(value)}
           aria-label="Editable text input"
         />
       }
-      onEditToggle={() => setIsEditMode((value) => !value)}
-      actionGroup={
-        <InlineEditActionGroup
-          isIconVariant
-          onSave={() => {
-            setText(editableText);
-            makeStatic();
-          }}
-          onCancel={() => {
-            setEditableText(text);
-            makeStatic();
-          }}
-        />
-      }
+      onEditToggle={() => setIsEditModeEnabled((value) => !value)}
+      onSave={() => {
+        setText(editableText);
+        makeStatic();
+      }}
+      onCancel={() => {
+        setEditableText(text);
+        makeStatic();
+      }}
+      isIconActionGroup
     />
   );
 };
