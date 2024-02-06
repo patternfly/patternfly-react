@@ -4,8 +4,8 @@ import { css } from '@patternfly/react-styles';
 import { InlineEditActionGroup, InlineEditActionGroupProps } from './InlineEditActionGroup';
 import { InlineEditToggle, InlineEditToggleProps } from './InlineEditToggle';
 
-/** The basic inline edit component. For more customization, you can utilize a composable approach
- * by using the customActionGroup and customEditToggle properties.
+/** The basic inline edit component. For more customization, you can pass in the customActionGroup
+ * and customEditToggle properties.
  */
 
 export interface InlineEditProps {
@@ -15,6 +15,8 @@ export interface InlineEditProps {
   staticContent?: React.ReactNode;
   /** Content rendered when isEditModeEnabled is true. */
   editModeContent?: React.ReactNode;
+  /** Text label for the "edit" button. This will be displayed in addition to the edit icon. */
+  editButtonLabel?: string;
   /** Adds an accessible name to the edit button. */
   editButtonAriaLabel?: string;
   /** Action to perform when the edit button is clicked. It should set isEditModeEnabled prop to true. */
@@ -46,6 +48,7 @@ export const InlineEdit: React.FunctionComponent<InlineEditProps> = ({
   isEditModeEnabled,
   staticContent,
   editModeContent,
+  editButtonLabel,
   editButtonAriaLabel = 'Enable edit mode',
   onEditToggle,
   isIconActionGroup,
@@ -55,19 +58,15 @@ export const InlineEdit: React.FunctionComponent<InlineEditProps> = ({
   onCancel,
   customEditToggle,
   customActionGroup,
-  component = 'form'
+  component = 'form',
+  ...props
 }: InlineEditProps) => {
   const Component = component as any;
 
   return (
-    <Component className={css(styles.inlineEdit, isEditModeEnabled && styles.modifiers.inlineEditable)}>
+    <Component className={css(styles.inlineEdit, isEditModeEnabled && styles.modifiers.inlineEditable)} {...props}>
       <div className={styles.inlineEditGroup}>
-        {!isEditModeEnabled ? (
-          <>
-            <div className={styles.inlineEditValue}>{staticContent}</div>
-            {customEditToggle || <InlineEditToggle aria-label={editButtonAriaLabel} onToggle={onEditToggle} />}
-          </>
-        ) : (
+        {isEditModeEnabled ? (
           <>
             <div className={styles.inlineEditInput}>{editModeContent}</div>
             {customActionGroup || (
@@ -78,6 +77,15 @@ export const InlineEdit: React.FunctionComponent<InlineEditProps> = ({
                 onSave={onSave}
                 onCancel={onCancel}
               />
+            )}
+          </>
+        ) : (
+          <>
+            <div className={styles.inlineEditValue}>{staticContent}</div>
+            {customEditToggle || (
+              <InlineEditToggle aria-label={editButtonAriaLabel} onToggle={onEditToggle}>
+                {editButtonLabel}
+              </InlineEditToggle>
             )}
           </>
         )}

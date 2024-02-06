@@ -6,7 +6,7 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 
 /** A group of actions that must be displayed when the inline edit's edit mode is enabled. This should be
- * passed to the inline edit component's customActionGroup property when a more composable approach is desired.
+ * passed to the inline edit component's customActionGroup property when more customization is desired.
  */
 export interface InlineEditActionGroupProps {
   /** Determines whether to display the "save" and "cancel" buttons as icons instead of text. */

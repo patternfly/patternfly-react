@@ -1,13 +1,15 @@
 ---
 id: Inline edit
 section: components
+cssPrefix: pf-v5-c-inline-edit
 propComponents: ['InlineEdit', 'InlineEditToggle', 'InlineEditActionGroup']
+beta: true
 ---
 
 ## Examples
 
-### Single inline edit
+### Basic
 
-```ts file='./InlineEditSingle.tsx'
+```ts file='./InlineEditBasic.tsx'
 
 ```
