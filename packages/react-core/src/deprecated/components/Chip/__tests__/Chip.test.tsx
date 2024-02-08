@@ -125,7 +125,7 @@ test(`Renders actions container with class ${styles.labelActions} when isReadOnl
 test(`Renders concatenated aria-label on action close button by default`, () => {
   render(<Chip>Chip text</Chip>);
 
-  expect(screen.getByRole('button')).toHaveAccessibleName('Close Chip text,');
+  expect(screen.getByRole('button')).toHaveAccessibleName('Close Chip text');
 });
 
 test(`Renders custom aria-label on action close button when closeBtnAriaLabel is passed`, () => {
@@ -138,7 +138,7 @@ test(`Does not render close button action when isOverflowChip is true`, () => {
   render(<Chip isOverflowChip>Chip text</Chip>);
 
   // Because overflow chip renders as a button, we need to add the accessible name to the query
-  expect(screen.queryByRole('button', { name: 'Close Chip text,' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('button', { name: 'Close Chip text' })).not.toBeInTheDocument();
 });
 
 test(`Does not render close button action when isReadOnly is true`, () => {
@@ -169,7 +169,7 @@ test(`Calls onClick when close button action is clicked for default chip`, async
 
   render(<Chip onClick={onClickMock}>Chip text</Chip>);
 
-  await user.click(screen.getByRole('button', { name: 'Close Chip text,' }));
+  await user.click(screen.getByRole('button', { name: 'Close Chip text' }));
 
   expect(onClickMock).toHaveBeenCalledTimes(1);
 });

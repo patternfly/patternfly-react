@@ -1886,7 +1886,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     <button
                       aria-disabled="false"
                       aria-label="Remove"
-                      class="pf-v5-c-button pf-m-plain"
+                      class="pf-v5-c-button pf-m-plain pf-m-no-padding"
                       data-ouia-component-id="OUIA-Generated-Button-plain-1"
                       data-ouia-component-type="PF5/Button"
                       data-ouia-safe="true"
@@ -1934,7 +1934,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     <button
                       aria-disabled="false"
                       aria-label="Remove"
-                      class="pf-v5-c-button pf-m-plain"
+                      class="pf-v5-c-button pf-m-plain pf-m-no-padding"
                       data-ouia-component-id="OUIA-Generated-Button-plain-2"
                       data-ouia-component-type="PF5/Button"
                       data-ouia-safe="true"

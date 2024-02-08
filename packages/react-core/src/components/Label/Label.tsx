@@ -202,13 +202,20 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 
   const LabelComponent = (isOverflowLabel || isAddLabel ? 'button' : 'span') as any;
 
+  let _closeBtnAriaLabel = 'Close label';
+  if (closeBtnAriaLabel) {
+    _closeBtnAriaLabel = closeBtnAriaLabel;
+  } else if (typeof children === 'string') {
+    _closeBtnAriaLabel = `Close ${children}`;
+  }
+
   const defaultButton = (
     <Button
       type="button"
       variant="plain"
       hasNoPadding
       onClick={onClose}
-      aria-label={closeBtnAriaLabel || `Close ${children}`}
+      aria-label={_closeBtnAriaLabel}
       {...closeBtnProps}
     >
       <TimesIcon />

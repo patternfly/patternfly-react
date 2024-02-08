@@ -82,8 +82,12 @@ class Chip extends React.Component<ChipProps> {
         className={className}
         textMaxWidth={textMaxWidth}
         tooltipPosition={tooltipPosition}
-        {...(!isReadOnly && !isOverflowChip && { onClose: onClick, closeBtnAriaLabel })}
-        {...(isOverflowChip && { onClick, isOverflowLabel: true })}
+        {...(!isReadOnly &&
+          !isOverflowChip && {
+            onClose: onClick,
+            closeBtnAriaLabel: closeBtnAriaLabel ? closeBtnAriaLabel : `Close ${children}`
+          })}
+        {...(isOverflowChip && { onClick, variant: 'overflow' })}
         {...getOUIAProps(
           isOverflowChip ? 'OverflowChip' : Chip.displayName,
           ouiaId !== undefined ? ouiaId : getDefaultOUIAId(Chip.displayName)
