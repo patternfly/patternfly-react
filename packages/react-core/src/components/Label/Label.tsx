@@ -5,9 +5,14 @@ import labelGrpStyles from '@patternfly/react-styles/css/components/Label/label-
 import { Button } from '../Button';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import { css } from '@patternfly/react-styles';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { useIsomorphicLayoutEffect } from '../../helpers';
 import cssTextMaxWidth from '@patternfly/react-tokens/dist/esm/c_label__text_MaxWidth';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Content rendered inside the label. */
@@ -18,6 +23,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   color?: 'blue' | 'cyan' | 'green' | 'orange' | 'purple' | 'red' | 'orangered' | 'grey' | 'gold';
   /** Variant of the label. */
   variant?: 'outline' | 'filled' | 'overflow' | 'add';
+  /** Status of the label with a respective icon and color. */
+  status?: 'success' | 'warning' | 'danger' | 'info' | 'custom';
   /** Flag indicating the label is compact. */
   isCompact?: boolean;
   /** @beta Flag indicating the label is editable. */
@@ -84,11 +91,20 @@ const colorStyles = {
   grey: ''
 };
 
+const statusIcons = {
+  success: <CheckCircleIcon />,
+  warning: <ExclamationTriangleIcon />,
+  danger: <ExclamationCircleIcon />,
+  info: <InfoCircleIcon />,
+  custom: <BellIcon />
+};
+
 export const Label: React.FunctionComponent<LabelProps> = ({
   children,
   className = '',
   color = 'grey',
   variant = 'filled',
+  status,
   isCompact = false,
   isEditable = false,
   editableProps,
@@ -114,6 +130,14 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const isOverflowLabel = variant === 'overflow';
   const isAddLabel = variant === 'add';
   const isClickable = (onLabelClick && !isOverflowLabel && !isAddLabel) || href;
+
+  let _icon;
+  if (status) {
+    _icon = statusIcons[status];
+  }
+  if (icon) {
+    _icon = icon;
+  }
 
   React.useEffect(() => {
     document.addEventListener('mousedown', onDocMouseDown);
@@ -235,7 +259,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   }, [isEditableActive]);
   const content = (
     <React.Fragment>
-      {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
+      {_icon && <span className={css(styles.labelIcon)}>{_icon}</span>}
       <span
         ref={textRef}
         className={css(styles.labelText)}
@@ -318,7 +342,9 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       className={css(
         styles.label,
         colorStyles[color],
+        variant === 'filled' && styles.modifiers.filled,
         variant === 'outline' && styles.modifiers.outline,
+        status && styles.modifiers[status],
         isOverflowLabel && styles.modifiers.overflow,
         isCompact && styles.modifiers.compact,
         isEditable && labelGrpStyles.modifiers.editable,

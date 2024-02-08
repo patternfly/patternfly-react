@@ -5,6 +5,7 @@ cssPrefix: ['pf-v5-c-label', 'pf-v5-c-label-group']
 propComponents: ['Label', 'LabelGroup']
 ---
 
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import { Link } from '@reach/router';
 import './Label.css';

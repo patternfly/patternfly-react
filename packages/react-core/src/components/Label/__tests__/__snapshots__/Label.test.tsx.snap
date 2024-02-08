@@ -3,7 +3,7 @@
 exports[`Label editable label 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label pf-m-editable"
+    class="pf-v6-c-label pf-m-filled pf-m-editable"
   >
     <button
       class="pf-v6-c-label__content"
@@ -49,7 +49,7 @@ exports[`Label editable label 1`] = `
 exports[`Label editable label 2`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label pf-m-editable pf-m-editable-active"
+    class="pf-v6-c-label pf-m-filled pf-m-editable pf-m-editable-active"
   >
     <input
       class="pf-v6-c-label__content"
@@ -64,7 +64,7 @@ exports[`Label editable label 2`] = `
 exports[`Label label with additional class name 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label klass1"
+    class="pf-v6-c-label pf-m-filled klass1"
   >
     <span
       class="pf-v6-c-label__content"
@@ -82,7 +82,7 @@ exports[`Label label with additional class name 1`] = `
 exports[`Label label with additional class name and props 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label class-1"
+    class="pf-v6-c-label pf-m-filled class-1"
     data-label-name="something"
     id="label-1"
   >
@@ -102,7 +102,7 @@ exports[`Label label with additional class name and props 1`] = `
 exports[`Label label with blue color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label pf-m-blue"
+    class="pf-v6-c-label pf-m-blue pf-m-filled"
   >
     <span
       class="pf-v6-c-label__content"
@@ -138,7 +138,7 @@ exports[`Label label with blue color with outline variant 1`] = `
 exports[`Label label with close button 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label"
+    class="pf-v6-c-label pf-m-filled"
   >
     <span
       class="pf-v6-c-label__content"
@@ -228,7 +228,7 @@ exports[`Label label with close button and outline variant 1`] = `
 exports[`Label label with cyan color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label pf-m-cyan"
+    class="pf-v6-c-label pf-m-cyan pf-m-filled"
   >
     <span
       class="pf-v6-c-label__content"
@@ -264,7 +264,7 @@ exports[`Label label with cyan color with outline variant 1`] = `
 exports[`Label label with green color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label pf-m-green"
+    class="pf-v6-c-label pf-m-green pf-m-filled"
   >
     <span
       class="pf-v6-c-label__content"
@@ -300,7 +300,7 @@ exports[`Label label with green color with outline variant 1`] = `
 exports[`Label label with grey color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label"
+    class="pf-v6-c-label pf-m-filled"
   >
     <span
       class="pf-v6-c-label__content"
@@ -336,7 +336,7 @@ exports[`Label label with grey color with outline variant 1`] = `
 exports[`Label label with href 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label pf-m-clickable"
+    class="pf-v6-c-label pf-m-filled pf-m-clickable"
   >
     <a
       class="pf-v6-c-label__content pf-m-clickable"
@@ -374,7 +374,7 @@ exports[`Label label with href with outline variant 1`] = `
 exports[`Label label with orange color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label pf-m-orange"
+    class="pf-v6-c-label pf-m-orange pf-m-filled"
   >
     <span
       class="pf-v6-c-label__content"
@@ -410,7 +410,7 @@ exports[`Label label with orange color with outline variant 1`] = `
 exports[`Label label with purple color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label pf-m-purple"
+    class="pf-v6-c-label pf-m-purple pf-m-filled"
   >
     <span
       class="pf-v6-c-label__content"
@@ -446,7 +446,7 @@ exports[`Label label with purple color with outline variant 1`] = `
 exports[`Label label with red color 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label pf-m-red"
+    class="pf-v6-c-label pf-m-red pf-m-filled"
   >
     <span
       class="pf-v6-c-label__content"
@@ -482,7 +482,7 @@ exports[`Label label with red color with outline variant 1`] = `
 exports[`Label label with truncation 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label"
+    class="pf-v6-c-label pf-m-filled"
   >
     <span
       class="pf-v6-c-label__content"
@@ -501,7 +501,7 @@ exports[`Label label with truncation 1`] = `
 exports[`Label renders 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label"
+    class="pf-v6-c-label pf-m-filled"
   >
     <span
       class="pf-v6-c-label__content"
@@ -519,7 +519,7 @@ exports[`Label renders 1`] = `
 exports[`Label renders with isCompact 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v6-c-label pf-m-compact"
+    class="pf-v6-c-label pf-m-filled pf-m-compact"
   >
     <span
       class="pf-v6-c-label__content"

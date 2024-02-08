@@ -17,7 +17,7 @@ exports[`LabelGroup label group compact 1`] = `
           class="pf-v6-c-label-group__list-item"
         >
           <span
-            class="pf-v6-c-label pf-m-compact"
+            class="pf-v6-c-label pf-m-filled pf-m-compact"
           >
             <span
               class="pf-v6-c-label__content"
@@ -34,7 +34,7 @@ exports[`LabelGroup label group compact 1`] = `
           class="pf-v6-c-label-group__list-item"
         >
           <span
-            class="pf-v6-c-label pf-m-compact"
+            class="pf-v6-c-label pf-m-filled pf-m-compact"
           >
             <span
               class="pf-v6-c-label__content"
@@ -51,7 +51,7 @@ exports[`LabelGroup label group compact 1`] = `
           class="pf-v6-c-label-group__list-item"
         >
           <span
-            class="pf-v6-c-label pf-m-compact"
+            class="pf-v6-c-label pf-m-filled pf-m-compact"
           >
             <span
               class="pf-v6-c-label__content"
@@ -104,7 +104,7 @@ exports[`LabelGroup label group default 1`] = `
           class="pf-v6-c-label-group__list-item"
         >
           <span
-            class="pf-v6-c-label"
+            class="pf-v6-c-label pf-m-filled"
           >
             <span
               class="pf-v6-c-label__content"
@@ -147,7 +147,7 @@ exports[`LabelGroup label group with category 1`] = `
           class="pf-v6-c-label-group__list-item"
         >
           <span
-            class="pf-v6-c-label"
+            class="pf-v6-c-label pf-m-filled"
           >
             <span
               class="pf-v6-c-label__content"
@@ -190,7 +190,7 @@ exports[`LabelGroup label group with category and tooltip 1`] = `
           class="pf-v6-c-label-group__list-item"
         >
           <span
-            class="pf-v6-c-label"
+            class="pf-v6-c-label pf-m-filled"
           >
             <span
               class="pf-v6-c-label__content"
@@ -233,7 +233,7 @@ exports[`LabelGroup label group with closable category 1`] = `
           class="pf-v6-c-label-group__list-item"
         >
           <span
-            class="pf-v6-c-label"
+            class="pf-v6-c-label pf-m-filled"
           >
             <span
               class="pf-v6-c-label__content"

@@ -1,17 +1,17 @@
 import React from 'react';
 import { Label } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 export const LabelCompact: React.FunctionComponent = () => (
   <React.Fragment>
     <Label isCompact>Compact</Label>
-    <Label isCompact icon={<InfoCircleIcon />}>
+    <Label isCompact icon={<CubeIcon />}>
       Compact icon
     </Label>
     <Label isCompact onClose={() => Function.prototype}>
       Compact removable
     </Label>
-    <Label isCompact icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+    <Label isCompact icon={<CubeIcon />} onClose={() => Function.prototype}>
       Compact icon removable
     </Label>
     <Label isCompact href="#compact">
@@ -20,7 +20,7 @@ export const LabelCompact: React.FunctionComponent = () => (
     <Label isCompact href="#compact" onClose={() => Function.prototype}>
       Compact link removable
     </Label>
-    <Label isCompact icon={<InfoCircleIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
+    <Label isCompact icon={<CubeIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
       Compact label with icon that overflows
     </Label>
     <br />
@@ -28,13 +28,13 @@ export const LabelCompact: React.FunctionComponent = () => (
     <Label variant="outline" color="blue" isCompact>
       Compact
     </Label>
-    <Label variant="outline" color="blue" isCompact icon={<InfoCircleIcon />}>
+    <Label variant="outline" color="blue" isCompact icon={<CubeIcon />}>
       Compact icon
     </Label>
     <Label variant="outline" color="blue" isCompact onClose={() => Function.prototype}>
       Compact removable
     </Label>
-    <Label variant="outline" color="blue" isCompact icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+    <Label variant="outline" color="blue" isCompact icon={<CubeIcon />} onClose={() => Function.prototype}>
       Compact icon removable
     </Label>
     <Label variant="outline" color="blue" isCompact href="#compact">
@@ -47,7 +47,7 @@ export const LabelCompact: React.FunctionComponent = () => (
       variant="outline"
       color="blue"
       isCompact
-      icon={<InfoCircleIcon />}
+      icon={<CubeIcon />}
       onClose={() => Function.prototype}
       textMaxWidth="16ch"
     >
