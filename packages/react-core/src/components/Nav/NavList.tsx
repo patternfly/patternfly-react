@@ -143,7 +143,7 @@ class NavList extends React.Component<NavListProps> {
           <PageSidebarContext.Consumer>
             {({ isSidebarOpen }) => (
               <React.Fragment>
-                {isHorizontal && (
+                {isHorizontal && !scrollViewAtStart && (
                   <div className={css(styles.navScrollButton)}>
                     <Button
                       variant="plain"
@@ -167,7 +167,7 @@ class NavList extends React.Component<NavListProps> {
                 >
                   {children}
                 </ul>
-                {isHorizontal && (
+                {isHorizontal && !scrollViewAtEnd && (
                   <div className={css(styles.navScrollButton)}>
                     <Button
                       variant="plain"
