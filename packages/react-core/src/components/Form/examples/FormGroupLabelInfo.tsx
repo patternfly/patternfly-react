@@ -22,7 +22,7 @@ export const FormGroupLabelInfo: React.FunctionComponent = () => {
       <FormGroup
         label="Full name"
         labelInfo="Additional label info"
-        labelIcon={
+        labelHelp={
           <Popover
             headerContent={
               <div>
