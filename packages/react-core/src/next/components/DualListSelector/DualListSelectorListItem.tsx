@@ -25,11 +25,11 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   orderIndex?: number;
   /** @hide Forwarded ref */
   innerRef?: React.RefObject<HTMLLIElement>;
-  /** Flag indicating this item is draggable for reordering */
+  /** Flag indicating this item is draggable for reordering. */
   isDraggable?: boolean;
-  /** Accessible label for the draggable button on draggable list items */
+  /** Accessible label for the draggable button on draggable list items. */
   draggableButtonAriaLabel?: string;
-  /** Flag indicating if the dual list selector is in a disabled state */
+  /** Flag indicating if the dual list selector is in a disabled state. */
   isDisabled?: boolean;
 }
 

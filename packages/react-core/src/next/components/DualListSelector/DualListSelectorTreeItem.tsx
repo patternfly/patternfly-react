@@ -14,25 +14,25 @@ export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIEle
   className?: string;
   /** Flag indicating this option is expanded by default. */
   defaultExpanded?: boolean;
-  /** Flag indicating this option has a badge */
+  /** Flag indicating this option has a badge. */
   hasBadge?: boolean;
-  /** Callback fired when an option is checked */
+  /** Callback fired when an option is checked. */
   onOptionCheck?: (
     event: React.MouseEvent | React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent,
     isChecked: boolean,
     itemData: DualListSelectorTreeItemData
   ) => void;
-  /** ID of the option */
+  /** ID of the option. */
   id: string;
-  /** Text of the option */
+  /** Text of the option. */
   text: string;
   /** Flag indicating if this open is checked. */
   isChecked?: boolean;
-  /** Additional properties to pass to the option checkbox */
+  /** Additional properties to pass to the option checkbox. */
   checkProps?: any;
-  /** Additional properties to pass to the option badge */
+  /** Additional properties to pass to the option badge. */
   badgeProps?: any;
-  /** Raw data of the option */
+  /** Raw data of the option. */
   itemData?: DualListSelectorTreeItemData;
   /** Flag indicating whether the component is disabled. */
   isDisabled?: boolean;

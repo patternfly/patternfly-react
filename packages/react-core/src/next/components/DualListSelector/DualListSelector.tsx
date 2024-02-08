@@ -11,11 +11,11 @@ import { DualListSelectorContext } from './DualListSelectorContext';
 export interface DualListSelectorProps {
   /** Additional classes applied to the dual list selector. */
   className?: string;
-  /** Id of the dual list selector. */
+  /** ID of the dual list selector. */
   id?: string;
-  /** Flag indicating if the dual list selector uses trees instead of simple lists */
+  /** Flag indicating if the dual list selector uses trees instead of simple lists. */
   isTree?: boolean;
-  /** Content to be rendered in the dual list selector. Panes & controls will not be built dynamically when children are provided. */
+  /** Content to be rendered in the dual list selector. */
   children?: React.ReactNode;
 }
 

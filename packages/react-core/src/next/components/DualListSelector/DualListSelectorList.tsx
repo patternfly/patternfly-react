@@ -7,7 +7,7 @@ import { DualListSelectorListContext } from './DualListSelectorContext';
 /** Acts as the container for DualListSelectorListItem sub-components. */
 
 export interface DualListSelectorListProps extends React.HTMLProps<HTMLUListElement> {
-  /** Content rendered inside the dual list selector list */
+  /** Content rendered inside the dual list selector list. */
   children?: React.ReactNode;
 }
 

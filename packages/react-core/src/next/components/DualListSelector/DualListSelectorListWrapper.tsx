@@ -10,7 +10,7 @@ export interface DualListSelectorListWrapperProps extends React.HTMLProps<HTMLDi
   className?: string;
   /** Anything that can be rendered inside of the list */
   children?: React.ReactNode;
-  /** Id of the dual list selector list */
+  /** ID of the dual list selector list */
   id?: string;
   /** Accessibly label for the list */
   'aria-labelledby': string;

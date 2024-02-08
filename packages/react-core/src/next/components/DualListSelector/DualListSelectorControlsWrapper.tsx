@@ -6,7 +6,7 @@ import { handleArrows } from '../../../helpers';
 /** Acts as the container for the DualListSelectorControl sub-components. */
 
 export interface DualListSelectorControlsWrapperProps extends React.HTMLProps<HTMLDivElement> {
-  /** Anything that can be rendered inside of the wrapper. */
+  /** Content to be rendered inside of the controls wrapper. */
   children?: React.ReactNode;
   /** Additional classes added to the wrapper. */
   className?: string;
