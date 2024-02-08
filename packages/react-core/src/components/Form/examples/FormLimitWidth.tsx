@@ -35,7 +35,7 @@ export const FormLimitWidth: React.FunctionComponent = () => {
     <Form isWidthLimited>
       <FormGroup
         label="Full name"
-        labelIcon={
+        labelHelp={
           <Popover
             headerContent={
               <div>
@@ -63,7 +63,7 @@ export const FormLimitWidth: React.FunctionComponent = () => {
               </div>
             }
           >
-            <FormGroupLabelHelp aria-label="More info for name field" aria-describedby="simple-form-name-02" />
+            <FormGroupLabelHelp aria-label="More info for name field" />
           </Popover>
         }
         isRequired

@@ -8,6 +8,7 @@ propComponents:
     'ActionGroup',
     'Form',
     'FormGroup',
+    'FormGroupLabelHelp',
     'FormSection',
     'FormHelperText',
     'FormFieldGroup',
@@ -21,23 +22,6 @@ propComponents:
   ]
 ---
 
-import {
-Button,
-Form,
-FormGroup,
-FormGroupLabelHelp,
-Popover,
-TextInput,
-TextArea,
-FormSelect,
-FormHelperText,
-FormFieldGroup,
-FormFieldGroupHeader,
-FormFieldGroupExpandable,
-Checkbox,
-ActionGroup,
-Radio
-} from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';

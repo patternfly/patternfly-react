@@ -50,7 +50,7 @@ export const FormGroupLabelInfo: React.FunctionComponent = () => {
               </div>
             }
           >
-            <FormGroupLabelHelp aria-label="More info for name field" aria-describedby="form-group-label-info" />
+            <FormGroupLabelHelp aria-label="More info for name field" />
           </Popover>
         }
         isRequired

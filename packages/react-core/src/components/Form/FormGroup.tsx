@@ -13,8 +13,8 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   label?: React.ReactNode;
   /** Additional label information displayed after the label. */
   labelInfo?: React.ReactNode;
-  /** Sets an icon for the label. We recommend using FormGroupLabelHelp element as a help icon button. For providing additional context, host element for Popover  */
-  labelIcon?: React.ReactElement;
+  /** A help button for the label. We recommend using FormGroupLabelHelp element as a help icon button. The help button should be wrapped or linked to our popover component. */
+  labelHelp?: React.ReactElement;
   /** Sets the FormGroup required. */
   isRequired?: boolean;
   /** Sets the FormGroup isInline. */
@@ -38,7 +38,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   className = '',
   label,
   labelInfo,
-  labelIcon,
+  labelHelp,
   isRequired = false,
   isInline = false,
   hasNoPaddingTop = false,
@@ -62,7 +62,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
         )}
       </LabelComponent>
       <>&nbsp;&nbsp;</>
-      {React.isValidElement(labelIcon) && <span className={styles.formGroupLabelHelp}>{labelIcon}</span>}
+      {React.isValidElement(labelHelp) && <span className={styles.formGroupLabelHelp}>{labelHelp}</span>}
     </>
   );
 
