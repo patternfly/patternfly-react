@@ -20,9 +20,11 @@ describe('Label Group Editable Demo Test', () => {
     cy.get('#editable-label-3').focus().type('{enter}testclick');
     cy.get('#editable-label-3')
       .closest('.pf-v6-c-label')
-      .should('have.class', 'pf-v6-c-label pf-m-blue pf-m-editable pf-m-editable-active');
+      .should('have.class', 'pf-v6-c-label pf-m-blue pf-m-filled pf-m-editable pf-m-editable-active');
     cy.get('.pf-v6-c-page__header').click();
-    cy.get('#editable-label-3').closest('.pf-v6-c-label').should('have.class', 'pf-v6-c-label pf-m-blue pf-m-editable');
+    cy.get('#editable-label-3')
+      .closest('.pf-v6-c-label')
+      .should('have.class', 'pf-v6-c-label pf-m-blue pf-m-filled pf-m-editable');
     cy.get('#editable-label-3').contains('Editable label 3testclick');
   });
 });
