@@ -7,6 +7,7 @@ propComponents: ['Tile']
 
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import './Tile.css';
 
 ## Examples
 

@@ -1,0 +1,6 @@
+:is(.ws-react-c-tile, .ws-react-demos-c-tile) > [role="listbox"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: var(--pf-t--global--spacer--sm);
+}
