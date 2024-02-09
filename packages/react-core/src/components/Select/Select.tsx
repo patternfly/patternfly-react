@@ -70,6 +70,10 @@ export interface SelectProps extends MenuProps, OUIAProps {
   role?: string;
   /** Additional properties to pass to the popper */
   popperProps?: SelectPopperProps;
+  /** Height of the menu */
+  menuHeight?: string;
+  /** Maximum height of menu */
+  maxMenuHeight?: string;
 }
 
 const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
@@ -87,6 +91,8 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   zIndex = 9999,
   role = 'listbox',
   popperProps,
+  menuHeight,
+  maxMenuHeight,
   ...props
 }: SelectProps & OUIAProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -158,7 +164,9 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       )}
       {...props}
     >
-      <MenuContent>{children}</MenuContent>
+      <MenuContent menuHeight={menuHeight} maxMenuHeight={maxMenuHeight}>
+        {children}
+      </MenuContent>
     </Menu>
   );
   return (
