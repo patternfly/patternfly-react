@@ -143,18 +143,16 @@ class NavList extends React.Component<NavListProps> {
           <PageSidebarContext.Consumer>
             {({ isSidebarOpen }) => (
               <React.Fragment>
-                {isHorizontal && !scrollViewAtStart && (
+                {isHorizontal && (!scrollViewAtStart || !scrollViewAtEnd) && (
                   <div className={css(styles.navScrollButton)}>
                     <Button
                       variant="plain"
                       aria-label={backScrollAriaLabel || ariaLeftScroll}
                       onClick={this.scrollBack}
-                      disabled={scrollViewAtStart}
+                      isDisabled={scrollViewAtStart}
                       tabIndex={isSidebarOpen ? null : -1}
                     >
-                      <span className={css(styles.buttonIcon)}>
-                        <AngleLeftIcon />
-                      </span>
+                      <AngleLeftIcon />
                     </Button>
                   </div>
                 )}
@@ -167,18 +165,16 @@ class NavList extends React.Component<NavListProps> {
                 >
                   {children}
                 </ul>
-                {isHorizontal && !scrollViewAtEnd && (
+                {isHorizontal && (!scrollViewAtStart || !scrollViewAtEnd) && (
                   <div className={css(styles.navScrollButton)}>
                     <Button
                       variant="plain"
                       aria-label={forwardScrollAriaLabel || ariaRightScroll}
                       onClick={this.scrollForward}
-                      disabled={scrollViewAtEnd}
+                      isDisabled={scrollViewAtEnd}
                       tabIndex={isSidebarOpen ? null : -1}
                     >
-                      <span className={css(styles.buttonIcon)}>
-                        <AngleRightIcon />
-                      </span>
+                      <AngleRightIcon />
                     </Button>
                   </div>
                 )}
