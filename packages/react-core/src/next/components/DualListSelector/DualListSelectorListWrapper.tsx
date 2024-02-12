@@ -8,11 +8,11 @@ import { DualListSelectorContext, DualListSelectorListContext } from './DualList
 export interface DualListSelectorListWrapperProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes applied to the dual list selector. */
   className?: string;
-  /** Anything that can be rendered inside of the list */
+  /** Anything that can be rendered inside of the list. */
   children?: React.ReactNode;
-  /** ID of the dual list selector list */
+  /** ID of the dual list selector list. */
   id?: string;
-  /** Accessibly label for the list */
+  /** Accessibly label for the list. */
   'aria-labelledby': string;
   /** @hide forwarded ref */
   innerRef?: React.RefObject<HTMLDivElement>;
@@ -20,9 +20,7 @@ export interface DualListSelectorListWrapperProps extends React.HTMLProps<HTMLDi
   options?: React.ReactNode[];
   /** @hide Options currently selected in the pane. */
   selectedOptions?: string[] | number[];
-  /** @hide Callback for when an option is selected. Optionally used only when options prop is provided. */
-  onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent, index: number, id: string) => void;
-  /** @hide Function to determine if an option should be displayed depending on a dynamically built filter value */
+  /** @hide Function to determine if an option should be displayed depending on a custom filter value. */
   displayOption?: (option: React.ReactNode) => boolean;
   /** Flag indicating whether the component is disabled. */
   isDisabled?: boolean;
@@ -35,7 +33,6 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
   innerRef,
   options = [],
   selectedOptions = [],
-  onOptionSelect,
   displayOption,
   id = getUniqueId('dual-list-selector-list'),
   isDisabled = false,
@@ -46,8 +43,7 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
   const menuRef = innerRef || ref;
   const { isTree } = React.useContext(DualListSelectorContext);
 
-  // sets up keyboard focus handling for the dual list selector menu child of the pane. This keyboard
-  // handling is applied whether the pane is dynamically built or passed via the children prop.
+  // Sets up keyboard focus handling for the dual list selector menu child of the pane.
   const handleKeys = (event: KeyboardEvent) => {
     if (
       !menuRef.current ||
@@ -109,7 +105,6 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
           selectedOptions,
           id,
           options,
-          onOptionSelect,
           isDisabled
         }}
       >

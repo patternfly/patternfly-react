@@ -15,24 +15,8 @@ export const DualListSelectorList: React.FunctionComponent<DualListSelectorListP
   children,
   ...props
 }: DualListSelectorListProps) => {
-  const {
-    setFocusedOption,
-    isTree,
-    ariaLabelledBy,
-    focusedOption,
-    displayOption,
-    selectedOptions,
-    id,
-    onOptionSelect,
-    options,
-    isDisabled
-  } = React.useContext(DualListSelectorListContext);
-
-  // only called when options are passed via options prop
-  const onOptionClick = (e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent, index: number, id: string) => {
-    setFocusedOption(id);
-    onOptionSelect(e, index, id);
-  };
+  const { isTree, ariaLabelledBy, focusedOption, displayOption, selectedOptions, id, options, isDisabled } =
+    React.useContext(DualListSelectorListContext);
 
   const hasOptions = () =>
     options.length !== 0 || (children !== undefined && (children as React.ReactNode[]).length !== 0);
@@ -58,7 +42,6 @@ export const DualListSelectorList: React.FunctionComponent<DualListSelectorListP
                   key={index}
                   isSelected={(selectedOptions as number[]).indexOf(index) !== -1}
                   id={`${id}-option-${index}`}
-                  onOptionSelect={(e, id) => onOptionClick(e, index, id)}
                   orderIndex={index}
                   isDisabled={isDisabled}
                 >

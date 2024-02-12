@@ -12,7 +12,6 @@ export const DualListSelectorListContext = React.createContext<{
   displayOption?: (option: React.ReactNode) => boolean;
   selectedOptions?: string[] | number[];
   id?: string;
-  onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent, index: number, id: string) => void;
   options?: React.ReactNode[];
   isDisabled?: boolean;
 }>({});

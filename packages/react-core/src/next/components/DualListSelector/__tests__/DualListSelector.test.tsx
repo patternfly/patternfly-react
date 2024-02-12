@@ -1,31 +1,26 @@
 import { render } from '@testing-library/react';
 import { DualListSelectorPane } from '../../DualListSelector';
+import { SearchInput } from '../../../../components/SearchInput';
 import React from 'react';
 
 describe('DualListSelector', () => {
   test('basic', () => {
-    const { asFragment } = render(<DualListSelectorPane options={['Option 1', 'Option 2']} id="firstTest" />);
+    const { asFragment } = render(<DualListSelectorPane id="basicTest" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('with search inputs', () => {
-    const { asFragment } = render(
-      <DualListSelectorPane options={['Option 1', 'Option 2']} id="secondTest" isSearchable />
-    );
+    const { asFragment } = render(<DualListSelectorPane id="searchTest" searchInput={<SearchInput />} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('with custom status', () => {
-    const { asFragment } = render(
-      <DualListSelectorPane options={['Option 1', 'Option 2']} status="Test status1" id="thirdTest" />
-    );
+    const { asFragment } = render(<DualListSelectorPane id="statusTest" status="Test status1" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('basic with disabled controls', () => {
-    const { asFragment } = render(
-      <DualListSelectorPane options={['Option 1', 'Option 2']} id="disabledTest" isDisabled />
-    );
+    const { asFragment } = render(<DualListSelectorPane id="disabledTest" isDisabled />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
