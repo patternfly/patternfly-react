@@ -18,15 +18,9 @@ export const CardTitle: React.FunctionComponent<CardTitleProps> = ({
   component = 'div',
   ...props
 }: CardTitleProps) => {
-  const { cardId, registerTitleId } = React.useContext(CardContext);
+  const { cardId } = React.useContext(CardContext);
   const Component = component as any;
   const titleId = cardId ? `${cardId}-title` : '';
-
-  React.useEffect(() => {
-    registerTitleId(titleId);
-
-    return () => registerTitleId('');
-  }, [registerTitleId, titleId]);
 
   return (
     <div className={css(styles.cardTitle)}>

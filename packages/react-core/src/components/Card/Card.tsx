@@ -40,7 +40,6 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
 
 interface CardContextProps {
   cardId: string;
-  registerTitleId: (id: string) => void;
   isExpanded: boolean;
   isClickable: boolean;
   isSelectable: boolean;
@@ -49,7 +48,6 @@ interface CardContextProps {
 
 export const CardContext = React.createContext<Partial<CardContextProps>>({
   cardId: '',
-  registerTitleId: () => {},
   isExpanded: false,
   isClickable: false,
   isSelectable: false,
@@ -101,17 +99,10 @@ export const Card: React.FunctionComponent<CardProps> = ({
     return '';
   };
 
-  const containsCardTitleChildRef = React.useRef(false);
-
-  const registerTitleId = (id: string) => {
-    containsCardTitleChildRef.current = !!id;
-  };
-
   return (
     <CardContext.Provider
       value={{
         cardId: id,
-        registerTitleId,
         isExpanded,
         isClickable,
         isSelectable,
