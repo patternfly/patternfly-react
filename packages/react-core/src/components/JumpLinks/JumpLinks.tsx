@@ -162,7 +162,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
             const itemIndex = jumpLinkIndex++;
             const scrollItem = scrollItems[itemIndex];
             return React.cloneElement(child as React.ReactElement<JumpLinksItemProps>, {
-              onClick(ev: React.MouseEvent<HTMLAnchorElement>) {
+              onClick(ev: React.MouseEvent) {
                 isLinkClicked.current = true;
                 // Items might have rendered after this component. Do a quick refresh.
                 let newScrollItems;
@@ -193,7 +193,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                     scrollableElement.scrollTo(0, newScrollItem.offsetTop - offset);
                   }
                   newScrollItem.focus();
-                  window.history.pushState('', '', ev.currentTarget.href);
+                  window.history.pushState('', '', (ev.currentTarget as HTMLAnchorElement).href);
                   ev.preventDefault();
                   setActiveIndex(itemIndex);
                 }

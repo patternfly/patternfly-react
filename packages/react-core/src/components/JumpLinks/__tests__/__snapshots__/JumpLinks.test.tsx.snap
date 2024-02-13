@@ -62,28 +62,46 @@ exports[`expandable vertical with subsection 1`] = `
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-13"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-14"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Section with active subsection
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Section with active subsection
+              </span>
+            </a>
+          </span>
           <ul
             class="pf-v5-c-jump-links__list"
             role="list"
@@ -92,69 +110,114 @@ exports[`expandable vertical with subsection 1`] = `
               aria-current="location"
               class="pf-v5-c-jump-links__item pf-m-current"
             >
-              <a
+              <span
                 class="pf-v5-c-jump-links__link"
               >
-                <span
-                  class="pf-v5-c-jump-links__link-text"
+                <a
+                  aria-disabled="false"
+                  class="pf-v5-c-button pf-m-link"
+                  data-ouia-component-id="OUIA-Generated-Button-link-15"
+                  data-ouia-component-type="PF5/Button"
+                  data-ouia-safe="true"
+                  href="#"
                 >
-                  Active subsection
-                </span>
-              </a>
+                  <span
+                    class="pf-v5-c-jump-links__link-text"
+                  >
+                    Active subsection
+                  </span>
+                </a>
+              </span>
             </li>
             <li
               class="pf-v5-c-jump-links__item"
             >
-              <a
+              <span
                 class="pf-v5-c-jump-links__link"
               >
-                <span
-                  class="pf-v5-c-jump-links__link-text"
+                <a
+                  aria-disabled="false"
+                  class="pf-v5-c-button pf-m-link"
+                  data-ouia-component-id="OUIA-Generated-Button-link-16"
+                  data-ouia-component-type="PF5/Button"
+                  data-ouia-safe="true"
+                  href="#"
                 >
-                  Inactive subsection
-                </span>
-              </a>
+                  <span
+                    class="pf-v5-c-jump-links__link-text"
+                  >
+                    Inactive subsection
+                  </span>
+                </a>
+              </span>
             </li>
             <li
               class="pf-v5-c-jump-links__item"
             >
-              <a
+              <span
                 class="pf-v5-c-jump-links__link"
               >
-                <span
-                  class="pf-v5-c-jump-links__link-text"
+                <a
+                  aria-disabled="false"
+                  class="pf-v5-c-button pf-m-link"
+                  data-ouia-component-id="OUIA-Generated-Button-link-17"
+                  data-ouia-component-type="PF5/Button"
+                  data-ouia-safe="true"
+                  href="#"
                 >
-                  Inactive subsection
-                </span>
-              </a>
+                  <span
+                    class="pf-v5-c-jump-links__link-text"
+                  >
+                    Inactive subsection
+                  </span>
+                </a>
+              </span>
             </li>
           </ul>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-18"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-19"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
       </ul>
     </div>
@@ -180,42 +243,69 @@ exports[`jumplinks centered 1`] = `
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-4"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           aria-current="location"
           class="pf-v5-c-jump-links__item pf-m-current"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-5"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Active section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Active section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-6"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
       </ul>
     </div>
@@ -248,42 +338,69 @@ exports[`jumplinks with label 1`] = `
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-7"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           aria-current="location"
           class="pf-v5-c-jump-links__item pf-m-current"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-8"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Active section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Active section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-9"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
       </ul>
     </div>
@@ -309,42 +426,69 @@ exports[`simple jumplinks 1`] = `
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-1"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           aria-current="location"
           class="pf-v5-c-jump-links__item pf-m-current"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-2"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Active section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Active section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-3"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
       </ul>
     </div>
@@ -377,42 +521,69 @@ exports[`vertical with label 1`] = `
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-10"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           aria-current="location"
           class="pf-v5-c-jump-links__item pf-m-current"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-11"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Active section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Active section
+              </span>
+            </a>
+          </span>
         </li>
         <li
           class="pf-v5-c-jump-links__item"
         >
-          <a
+          <span
             class="pf-v5-c-jump-links__link"
           >
-            <span
-              class="pf-v5-c-jump-links__link-text"
+            <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link"
+              data-ouia-component-id="OUIA-Generated-Button-link-12"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              href="#"
             >
-              Inactive section
-            </span>
-          </a>
+              <span
+                class="pf-v5-c-jump-links__link-text"
+              >
+                Inactive section
+              </span>
+            </a>
+          </span>
         </li>
       </ul>
     </div>

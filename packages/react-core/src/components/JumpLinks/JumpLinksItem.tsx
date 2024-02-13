@@ -2,18 +2,19 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
 import { JumpLinksList } from './JumpLinksList';
+import { Button, ButtonVariant } from '../Button';
 
 export interface JumpLinksItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Whether this item is active. Parent JumpLinks component sets this when passed a `scrollableSelector`. */
   isActive?: boolean;
   /** Href for this link */
-  href?: string;
+  href: string;
   /** Selector or HTMLElement to spy on */
   node?: string | HTMLElement;
   /** Text to be rendered inside span */
   children?: React.ReactNode;
   /** Click handler for anchor tag. Parent JumpLinks components tap into this. */
-  onClick?: (ev: React.MouseEvent<HTMLAnchorElement>) => void;
+  onClick?: (ev: React.MouseEvent) => void;
   /** Class to add to li */
   className?: string;
 }
@@ -38,9 +39,11 @@ export const JumpLinksItem: React.FunctionComponent<JumpLinksItemProps> = ({
       {...(isActive && { 'aria-current': 'location' })}
       {...props}
     >
-      <a className={styles.jumpLinksLink} href={href} onClick={onClick}>
-        <span className={styles.jumpLinksLinkText}>{children}</span>
-      </a>
+      <span className={styles.jumpLinksLink}>
+        <Button variant={ButtonVariant.link} component="a" href={href} onClick={onClick}>
+          <span className={styles.jumpLinksLinkText}>{children}</span>
+        </Button>
+      </span>
       {sublists}
     </li>
   );
