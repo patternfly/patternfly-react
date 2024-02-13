@@ -74,7 +74,7 @@ export interface SelectProps extends MenuProps, OUIAProps {
   menuHeight?: string;
   /** Maximum height of select menu */
   maxMenuHeight?: string;
-  /** Indicates if the select menu should be srollable */
+  /** Indicates if the select menu should be scrollable */
   isScrollable?: boolean;
 }
 
