@@ -208,7 +208,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
             <Component
               className={css(
                 styles.treeViewNode,
-                children && (isSelectable || hasCheckbox) && styles.modifiers.selectable,
+                children && (isSelectable || hasCheckbox) && 'pf-m-selectable',
                 (!children || isSelectable) &&
                   activeItems &&
                   activeItems.length > 0 &&
