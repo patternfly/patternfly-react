@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.30...@patternfly/react-core@6.0.0-alpha.31) (2024-02-13)
+
+### Features
+
+- **Card:** Consume penta tokens ([#10056](https://github.com/patternfly/patternfly-react/issues/10056)) ([0ccdef5](https://github.com/patternfly/patternfly-react/commit/0ccdef528c694e628606b0d6a18ad71dab30297c))
+
 # [6.0.0-alpha.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.29...@patternfly/react-core@6.0.0-alpha.30) (2024-02-13)
 
 ### Features
