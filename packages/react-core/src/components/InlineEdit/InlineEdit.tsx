@@ -8,7 +8,7 @@ import { InlineEditToggle, InlineEditToggleProps } from './InlineEditToggle';
  * and customEditToggle properties.
  */
 
-export interface InlineEditProps {
+export interface InlineEditProps extends React.HTMLProps<HTMLFormElement | HTMLDivElement> {
   /** Determines whether inline edit is in edit mode. */
   isEditModeEnabled?: boolean;
   /** Content rendered when isEditModeEnabled is false. */

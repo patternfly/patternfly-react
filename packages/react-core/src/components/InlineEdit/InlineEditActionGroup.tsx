@@ -8,7 +8,7 @@ import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 /** A group of actions that must be displayed when the inline edit's edit mode is enabled. This should be
  * passed to the inline edit component's customActionGroup property when more customization is desired.
  */
-export interface InlineEditActionGroupProps {
+export interface InlineEditActionGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Determines whether to display the "save" and "cancel" buttons as icons instead of text. */
   isIconVariant?: boolean;
   /** Text label for the "save" button. If isIconVariant is true, this will set the aria-label for the icon button. */

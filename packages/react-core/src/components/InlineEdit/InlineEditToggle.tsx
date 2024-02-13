@@ -8,7 +8,7 @@ import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-ico
  * passed to the inline edit component's customEditToggle property when more customization is desired.
  */
 
-export interface InlineEditToggleProps {
+export interface InlineEditToggleProps extends React.HTMLProps<HTMLDivElement> {
   /** Text content rendered inside the "edit" button, in addition to the edit icon. */
   children?: string;
   /** Adds an accessible name to the "edit" button. This must be passed in when the edit button does not
@@ -28,12 +28,13 @@ export const InlineEditToggle: React.FunctionComponent<InlineEditToggleProps> = 
   'aria-label': ariaLabel = 'Enable edit mode',
   customIcon,
   onToggle,
-  editButtonProps
+  editButtonProps,
+  ...props
 }: InlineEditToggleProps) => {
   const editIcon = customIcon || <PencilAltIcon />;
 
   return (
-    <div className={css(styles.inlineEditAction, styles.modifiers.enableEditable)}>
+    <div className={css(styles.inlineEditAction, styles.modifiers.enableEditable)} {...props}>
       <Button
         variant={children ? ButtonVariant.link : ButtonVariant.plain}
         icon={children ? editIcon : undefined}
