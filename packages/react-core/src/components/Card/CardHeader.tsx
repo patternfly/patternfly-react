@@ -79,8 +79,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   ...props
 }: CardHeaderProps) => (
   <CardContext.Consumer>
-    {/* TODO: Remove hasSelectableInput when deprecated props are removed */}
-    {({ cardId, isClickable, isSelectable, isDisabled: isCardDisabled, hasSelectableInput }) => {
+    {({ cardId, isClickable, isSelectable, isDisabled: isCardDisabled }) => {
       const cardHeaderToggle = (
         <div className={css(styles.cardHeaderToggle)}>
           <Button
@@ -99,10 +98,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
       );
 
       const isClickableOrSelectableOnly = (isClickable && !isSelectable) || (isSelectable && !isClickable);
-      // TODO: Remove following variable and update if block when deprecated prop is removed
-      // We don't want to throw a warning for the deprecated card
-      const isDeprecatedSelectableCard = hasSelectableInput;
-      if (actions?.actions && isClickableOrSelectableOnly && !isDeprecatedSelectableCard) {
+      if (actions?.actions && isClickableOrSelectableOnly) {
         // eslint-disable-next-line no-console
         console.warn(
           `${

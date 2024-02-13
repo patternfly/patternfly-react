@@ -16,20 +16,12 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isCompact?: boolean;
   /** Modifies the card to include selectable styling */
   isSelectable?: boolean;
-  /** @deprecated Specifies the card is selectable, and applies raised styling on hover and select */
-  isSelectableRaised?: boolean;
   /** Modifies the card to include selected styling */
   isSelected?: boolean;
   /** Modifies the card to include clickable styling */
   isClickable?: boolean;
   /** Modifies a clickable or selectable card to have disabled styling. */
   isDisabled?: boolean;
-  /** @deprecated Modifies a raised selectable card to have disabled styling */
-  isDisabledRaised?: boolean;
-  /** Modifies the card to include flat styling */
-  isFlat?: boolean;
-  /** Modifies the card to include rounded styling */
-  isRounded?: boolean;
   /** Modifies the card to be large. Should not be used with isCompact. */
   isLarge?: boolean;
   /** Cause component to consume the available height of its container */
@@ -38,12 +30,8 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isPlain?: boolean;
   /** Flag indicating if a card is expanded. Modifies the card to be expandable. */
   isExpanded?: boolean;
-  /** @deprecated Flag indicating that the card should render a hidden input to make it selectable */
-  hasSelectableInput?: boolean;
-  /** @deprecated Aria label to apply to the selectable input if one is rendered */
-  selectableInputAriaLabel?: string;
-  /** @deprecated Callback that executes when the selectable input is changed */
-  onSelectableInputChange?: (event: React.FormEvent<HTMLInputElement>, labelledBy: string) => void;
+  /** Card background color variant */
+  variant?: 'default' | 'secondary';
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -52,23 +40,14 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
 
 interface CardContextProps {
   cardId: string;
-  registerTitleId: (id: string) => void;
   isExpanded: boolean;
   isClickable: boolean;
   isSelectable: boolean;
   isDisabled: boolean;
-  // TODO: Remove hasSelectableInput when deprecated prop is removed
-  hasSelectableInput: boolean;
-}
-
-interface AriaProps {
-  'aria-label'?: string;
-  'aria-labelledby'?: string;
 }
 
 export const CardContext = React.createContext<Partial<CardContextProps>>({
   cardId: '',
-  registerTitleId: () => {},
   isExpanded: false,
   isClickable: false,
   isSelectable: false,
@@ -84,28 +63,19 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isSelectable = false,
   isClickable = false,
   isDisabled = false,
-  isSelectableRaised = false,
   isSelected = false,
-  isDisabledRaised = false,
-  // TODO: Update with issue #9991
-  // isFlat = false,
   isExpanded = false,
-  // TODO: Update with issue #9991
-  // isRounded = false,
   isLarge = false,
   isFullHeight = false,
   isPlain = false,
+  variant = 'default',
   ouiaId,
   ouiaSafe = true,
-  hasSelectableInput = false,
-  selectableInputAriaLabel,
-  onSelectableInputChange = () => {},
+
   ...props
 }: CardProps) => {
   const Component = component as any;
   const ouiaProps = useOUIAProps(Card.displayName, ouiaId, ouiaSafe);
-  const [titleId, setTitleId] = React.useState('');
-  const [ariaProps, setAriaProps] = React.useState<AriaProps>();
 
   if (isCompact && isLarge) {
     // eslint-disable-next-line no-console
@@ -114,13 +84,6 @@ export const Card: React.FunctionComponent<CardProps> = ({
   }
 
   const getSelectableModifiers = () => {
-    // TODO: Update with issue #9991
-    // if (isDisabledRaised) {
-    //   return css(styles.modifiers.nonSelectableRaised);
-    // }
-    // if (isSelectableRaised) {
-    //   return css(styles.modifiers.selectableRaised, isSelected && styles.modifiers.selectedRaised);
-    // }
     if (isSelectable && isClickable) {
       return css(styles.modifiers.selectable, styles.modifiers.clickable, isSelected && styles.modifiers.current);
     }
@@ -136,69 +99,30 @@ export const Card: React.FunctionComponent<CardProps> = ({
     return '';
   };
 
-  const containsCardTitleChildRef = React.useRef(false);
-
-  const registerTitleId = (id: string) => {
-    setTitleId(id);
-    containsCardTitleChildRef.current = !!id;
-  };
-
-  React.useEffect(() => {
-    if (selectableInputAriaLabel) {
-      setAriaProps({ 'aria-label': selectableInputAriaLabel });
-    } else if (titleId) {
-      setAriaProps({ 'aria-labelledby': titleId });
-    } else if (hasSelectableInput && !containsCardTitleChildRef.current) {
-      setAriaProps({});
-      // eslint-disable-next-line no-console
-      console.warn(
-        'If no CardTitle component is passed as a child of Card the selectableInputAriaLabel prop must be passed'
-      );
-    }
-  }, [hasSelectableInput, selectableInputAriaLabel, titleId]);
-
   return (
     <CardContext.Provider
       value={{
         cardId: id,
-        registerTitleId,
         isExpanded,
         isClickable,
         isSelectable,
-        isDisabled,
-        // TODO: Remove hasSelectableInput when deprecated prop is removed
-        hasSelectableInput
+        isDisabled
       }}
     >
-      {hasSelectableInput && (
-        <input
-          className="pf-v5-screen-reader"
-          id={`${id}-input`}
-          {...ariaProps}
-          type="checkbox"
-          checked={isSelected}
-          onChange={(event) => onSelectableInputChange(event, id)}
-          disabled={isDisabledRaised}
-          tabIndex={-1}
-        />
-      )}
       <Component
         id={id}
         className={css(
           styles.card,
           isCompact && styles.modifiers.compact,
           isExpanded && styles.modifiers.expanded,
-          // TODO: Update with issue #9991
-          // isFlat && styles.modifiers.flat,
-          // isRounded && styles.modifiers.rounded,
           isLarge && styles.modifiers.displayLg,
           isFullHeight && styles.modifiers.fullHeight,
           isPlain && styles.modifiers.plain,
+          variant === 'secondary' && styles.modifiers.secondary,
           getSelectableModifiers(),
           isDisabled && styles.modifiers.disabled,
           className
         )}
-        tabIndex={isSelectableRaised ? '0' : undefined}
         {...props}
         {...ouiaProps}
       >

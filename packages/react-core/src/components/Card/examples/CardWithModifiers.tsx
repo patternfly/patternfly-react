@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter, Checkbox } from '@patternfly/react-core';
 
 export const CardWithModifiers: React.FunctionComponent = () => {
-  // TODO: Update with issue #9991 removed isFlat and isRounded
   const mods = ['isCompact', 'isLarge', 'isFullHeight', 'isPlain'];
   const [modifiers, setModifiers] = React.useState({});
 

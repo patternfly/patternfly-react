@@ -15,7 +15,7 @@ import {
   Divider
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import pfLogo from '../../assets/pfLogo.svg';
+import pfLogo from '../../assets/PF-HorizontalLogo-Color.svg';
 
 export const CardWithImageAndActions: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
@@ -85,23 +85,23 @@ export const CardWithImageAndActions: React.FunctionComponent = () => {
 
   return (
     <>
-      <Card>
-        <CardHeader actions={{ actions: headerActions, hasNoOffset }}>
-          <Brand src={pfLogo} alt="PatternFly logo" style={{ width: '300px' }} />
-        </CardHeader>
-        <CardTitle>Title</CardTitle>
-        <CardBody>Body</CardBody>
-        <CardFooter>Footer</CardFooter>
-      </Card>
-      <div style={{ marginTop: '20px' }}>
-        <Checkbox
-          label="actions hasNoOffset"
-          isChecked={hasNoOffset}
-          onChange={(_event, checked) => toggleOffset(checked)}
-          aria-label="remove actions offset"
-          id="toggle-actions-offset"
-          name="toggle-actions-offset"
-        />
+      <Checkbox
+        label="actions hasNoOffset"
+        isChecked={hasNoOffset}
+        onChange={(_event, checked) => toggleOffset(checked)}
+        aria-label="remove actions offset"
+        id="toggle-actions-offset"
+        name="toggle-actions-offset"
+      />
+      <div style={{ marginTop: '15px' }}>
+        <Card>
+          <CardHeader actions={{ actions: headerActions, hasNoOffset }}>
+            <Brand src={pfLogo} alt="PatternFly logo" style={{ width: '300px' }} />
+          </CardHeader>
+          <CardTitle>Title</CardTitle>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
       </div>
     </>
   );
