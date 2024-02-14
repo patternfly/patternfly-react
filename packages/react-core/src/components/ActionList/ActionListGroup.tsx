@@ -7,14 +7,17 @@ export interface ActionListGroupProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the action list group */
   className?: string;
+  /** Flag indicating the action list group contains multiple icons and item padding should be removed */
+  isIconGroup?: boolean;
 }
 
 export const ActionListGroup: React.FunctionComponent<ActionListGroupProps> = ({
   children,
-  className = '',
+  className,
+  isIconGroup,
   ...props
 }: ActionListGroupProps) => (
-  <div className={css(styles.actionListGroup, className)} {...props}>
+  <div className={css(styles.actionListGroup, isIconGroup && styles.modifiers.icons, className)} {...props}>
     {children}
   </div>
 );

@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   ActionList,
+  ActionListGroup,
   ActionListItem,
   Button,
   Dropdown,
@@ -46,50 +47,54 @@ export const ActionListSingleGroup: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <ActionList>
-        <ActionListItem>
-          <Button variant="primary" id="single-group-next-button">
-            Next
-          </Button>
-        </ActionListItem>
-        <ActionListItem>
-          <Button variant="secondary" id="single-group-back-button">
-            Back
-          </Button>
-        </ActionListItem>
+        <ActionListGroup>
+          <ActionListItem>
+            <Button variant="primary" id="single-group-next-button">
+              Next
+            </Button>
+          </ActionListItem>
+          <ActionListItem>
+            <Button variant="secondary" id="single-group-back-button">
+              Back
+            </Button>
+          </ActionListItem>
+        </ActionListGroup>
       </ActionList>
       <br />
       With kebab
       <ActionList>
-        <ActionListItem>
-          <Button variant="primary" id="single-group-next-button2">
-            Next
-          </Button>
-        </ActionListItem>
-        <ActionListItem>
-          <Button variant="secondary" id="single-group-back-button2">
-            Back
-          </Button>
-        </ActionListItem>
-        <ActionListItem>
-          <Dropdown
-            onSelect={onSelect}
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-              <MenuToggle
-                ref={toggleRef}
-                onClick={onToggle}
-                variant="plain"
-                isExpanded={isOpen}
-                aria-label="Action list single group kebab"
-              >
-                <EllipsisVIcon />
-              </MenuToggle>
-            )}
-            isOpen={isOpen}
-            onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
-          >
-            <DropdownList>{dropdownItems}</DropdownList>
-          </Dropdown>
-        </ActionListItem>
+        <ActionListGroup>
+          <ActionListItem>
+            <Button variant="primary" id="single-group-next-button2">
+              Next
+            </Button>
+          </ActionListItem>
+          <ActionListItem>
+            <Button variant="secondary" id="single-group-back-button2">
+              Back
+            </Button>
+          </ActionListItem>
+          <ActionListItem>
+            <Dropdown
+              onSelect={onSelect}
+              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  onClick={onToggle}
+                  variant="plain"
+                  isExpanded={isOpen}
+                  aria-label="Action list single group kebab"
+                >
+                  <EllipsisVIcon />
+                </MenuToggle>
+              )}
+              isOpen={isOpen}
+              onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
+            >
+              <DropdownList>{dropdownItems}</DropdownList>
+            </Dropdown>
+          </ActionListItem>
+        </ActionListGroup>
       </ActionList>
     </React.Fragment>
   );
