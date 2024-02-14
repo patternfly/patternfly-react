@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 7.3.0-prerelease.1 (2024-02-14)
+
+### Bug Fixes
+
+- **charts:** adjust for Victory types changes ([#10082](https://github.com/patternfly/patternfly-react/issues/10082)) ([714eaca](https://github.com/patternfly/patternfly-react/commit/714eaca02f99f709a6aadc1d9dd58d25940f7403))
+
 # 7.3.0-prerelease.0 (2024-02-02)
 
 # 5.2.0 (2024-02-02)
