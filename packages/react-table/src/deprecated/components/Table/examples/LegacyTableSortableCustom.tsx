@@ -168,8 +168,8 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
       <Table
         aria-label="Sortable Table with Custom Toolbar"
         sortBy={{
-          index: activeSortIndex,
-          direction: activeSortDirection
+          index: activeSortIndex ?? undefined,
+          direction: activeSortDirection ?? undefined
         }}
         onSort={(_event, index, direction) => {
           setActiveSortIndex(index);

@@ -75,8 +75,8 @@ export const ComposableTableRightStickyColumn: React.FunctionComponent = () => {
 
   const getSortParams = (columnIndex: number): ThProps['sort'] => ({
     sortBy: {
-      index: activeSortIndex,
-      direction: activeSortDirection
+      index: activeSortIndex ?? undefined,
+      direction: activeSortDirection ?? undefined
     },
     onSort: (_event, index, direction) => {
       setActiveSortIndex(index);

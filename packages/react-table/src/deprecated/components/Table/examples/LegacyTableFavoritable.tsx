@@ -143,8 +143,8 @@ export const LegacyTableFavoritable: React.FunctionComponent = () => {
           setActiveSortDirection(direction);
         }}
         sortBy={{
-          index: activeSortIndex,
-          direction: activeSortDirection
+          index: activeSortIndex ?? undefined,
+          direction: activeSortDirection ?? undefined
         }}
         aria-label="Favoritable Table"
         cells={columns}
