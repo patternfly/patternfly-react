@@ -314,7 +314,7 @@ exports[`menu toggle shows plain text 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+    class="pf-v5-c-menu-toggle pf-m-plain"
     type="button"
   >
     <span

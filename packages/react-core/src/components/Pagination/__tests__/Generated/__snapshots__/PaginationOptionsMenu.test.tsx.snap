@@ -8,7 +8,7 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      class="pf-v5-c-menu-toggle pf-m-plain"
       id="''-toggle"
       type="button"
     >

@@ -46,12 +46,7 @@ const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
           };
           return (
             <button
-              className={css(
-                styles.menuItemAction,
-                isFavorited !== null && styles.modifiers.favorite,
-                isFavorited && styles.modifiers.favorited,
-                className
-              )}
+              className={css(styles.menuItemAction, isFavorited && styles.modifiers.favorited, className)}
               aria-label={ariaLabel}
               onClick={onClickButton}
               {...((isDisabled === true || isDisabledContext === true) && { disabled: true })}

@@ -83,7 +83,7 @@ exports[`With popover opened 1`] = `
               class="pf-v5-c-calendar-month__header"
             >
               <div
-                class="pf-v5-c-calendar-month__header-nav-control pf-m-prev-month"
+                class="pf-v5-c-calendar-month__header-nav-control"
               >
                 <button
                   aria-disabled="false"
@@ -182,7 +182,7 @@ exports[`With popover opened 1`] = `
                 </div>
               </div>
               <div
-                class="pf-v5-c-calendar-month__header-nav-control pf-m-next-month"
+                class="pf-v5-c-calendar-month__header-nav-control"
               >
                 <button
                   aria-disabled="false"
