@@ -565,8 +565,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
           };
 
           const hasEditorHeaderContent =
-            isCopyEnabled ||
-            (isDownloadEnabled && (!showEmptyState || !!value)) ||
+            ((isCopyEnabled || isDownloadEnabled) && (!showEmptyState || !!value)) ||
             isUploadEnabled ||
             customControls ||
             headerMainContent ||
@@ -627,7 +626,6 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
               {hasEditorHeaderContent && (
                 <div className={css(styles.codeEditorHeaderContent)}>{editorHeaderContent}</div>
               )}
-              {!hasEditorHeaderContent && editorHeaderContent}
               {isLanguageLabelVisible && (
                 <div className={css(styles.codeEditorTab)}>
                   <span className={css(styles.codeEditorTabIcon)}>
@@ -662,7 +660,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                   {...getRootProps({
                     onClick: (event) => event.stopPropagation() // Prevents clicking TextArea from opening file dialog
                   })}
-                  className={`${isLoading && fileUploadStyles.modifiers.loading}`}
+                  className={css(isLoading && fileUploadStyles.modifiers.loading)}
                 >
                   {editorHeader}
                   <div className={css(styles.codeEditorMain, isDragActive && styles.modifiers.dragHover)}>
