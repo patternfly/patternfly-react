@@ -17,7 +17,7 @@ import {
   TooltipPosition,
   EmptyStateHeader
 } from '@patternfly/react-core';
-import Editor, { Monaco } from '@monaco-editor/react';
+import Editor, { EditorProps, Monaco } from '@monaco-editor/react';
 import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
@@ -137,6 +137,8 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   downloadButtonToolTipText?: string;
   /** Name of the file if user downloads code to local file. */
   downloadFileName?: string;
+  /** Additional props to pass to the monaco editor. */
+  editorProps?: EditorProps;
   /** Content to display in space of the code editor when there is no code to display. */
   emptyState?: React.ReactNode;
   /** Override default empty state body text. */
@@ -499,7 +501,8 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
       shortcutsPopoverProps: shortcutsPopoverPropsProp,
       showEditor,
       options: optionsProp,
-      overrideServices
+      overrideServices,
+      editorProps
     } = this.props;
     const shortcutsPopoverProps: PopoverProps = {
       ...CodeEditor.defaultProps.shortcutsPopoverProps,
@@ -644,6 +647,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                 onChange={this.onChange}
                 onMount={this.editorDidMount}
                 theme={isDarkTheme ? 'vs-dark' : 'vs-light'}
+                {...editorProps}
               />
             </div>
           );
