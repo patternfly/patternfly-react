@@ -6,7 +6,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
     class="pf-v5-c-code-editor"
   >
     <div
-      class="false"
+      class=""
       role="presentation"
       tabindex="0"
     >
@@ -140,14 +140,7 @@ exports[`Matches snapshot without props 1`] = `
   >
     <div
       class="pf-v5-c-code-editor__header"
-    >
-      <div
-        class="pf-v5-c-code-editor__controls"
-      />
-      <div
-        class="pf-v5-c-code-editor__header-main"
-      />
-    </div>
+    />
     <div
       class="pf-v5-c-code-editor__main"
     >
