@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.3.0-prerelease.1 (2024-02-15)
+
+### Features
+
+- **CodeEditor:** pass additional props to monaco-editor, update readme ([#10080](https://github.com/patternfly/patternfly-react/issues/10080)) ([8c43ef7](https://github.com/patternfly/patternfly-react/commit/8c43ef7bfc044396a0bf31985b2ba3e4b4de91ef))
+
 # 5.3.0-prerelease.0 (2024-02-02)
 
 # 5.2.0 (2024-02-02)
