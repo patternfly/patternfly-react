@@ -259,7 +259,7 @@ export const CalendarMonth = ({
   const calendarToRender = (
     <div className={css(styles.calendarMonth, className)} {...props}>
       <div className={styles.calendarMonthHeader}>
-        <div className={css(styles.calendarMonthHeaderNavControl)}>
+        <div className={css(styles.calendarMonthHeaderNavControl, 'pf-m-prev-month')}>
           <Button
             variant="plain"
             aria-label={prevMonthAriaLabel}
@@ -334,7 +334,7 @@ export const CalendarMonth = ({
             </div>
           </InputGroupItem>
         </InputGroup>
-        <div className={css(styles.calendarMonthHeaderNavControl)}>
+        <div className={css(styles.calendarMonthHeaderNavControl, 'pf-m-next-month')}>
           <Button
             variant="plain"
             aria-label={nextMonthAriaLabel}

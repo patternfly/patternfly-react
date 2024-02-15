@@ -325,6 +325,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             isPlain && styles.modifiers.plain,
             isScrollable && styles.modifiers.scrollable,
             containsFlyout && styles.modifiers.flyout,
+            isNavFlyout && 'pf-m-nav',
             containsDrilldown && styles.modifiers.drilldown,
             _isMenuDrilledIn && styles.modifiers.drilledIn,
             className

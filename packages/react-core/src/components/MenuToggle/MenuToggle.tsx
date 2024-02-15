@@ -112,6 +112,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
       variant === 'primary' && styles.modifiers.primary,
       variant === 'secondary' && styles.modifiers.secondary,
       (isPlain || isPlainText) && styles.modifiers.plain,
+      isPlainText && 'pf-m-text',
       isFullHeight && styles.modifiers.fullHeight,
       isFullWidth && styles.modifiers.fullWidth,
       isDisabled && styles.modifiers.disabled,
