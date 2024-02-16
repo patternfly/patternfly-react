@@ -3,8 +3,8 @@ import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 import { MenuContext, MenuItemContext } from './MenuContext';
-
-export interface MenuItemActionProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'type' | 'ref'> {
+import { Button } from '../Button';
+export interface MenuItemActionProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the action button */
   className?: string;
   /** The action icon to use */
@@ -24,7 +24,7 @@ export interface MenuItemActionProps extends Omit<React.HTMLProps<HTMLButtonElem
 }
 
 const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
-  className = '',
+  className,
   icon,
   onClick,
   'aria-label': ariaLabel,
@@ -45,24 +45,29 @@ const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
             onActionClick && onActionClick(event, itemId, actionId);
           };
           return (
-            <button
+            <div
               className={css(
                 styles.menuItemAction,
                 isFavorited !== null && 'pf-m-favorite',
                 isFavorited && styles.modifiers.favorited,
                 className
               )}
-              aria-label={ariaLabel}
-              onClick={onClickButton}
-              {...((isDisabled === true || isDisabledContext === true) && { disabled: true })}
-              ref={innerRef}
-              tabIndex={-1}
               {...props}
             >
-              <span className={css(styles.menuItemActionIcon)}>
-                {icon === 'favorites' || isFavorited !== null ? <StarIcon aria-hidden /> : icon}
-              </span>
-            </button>
+              <Button
+                aria-label={ariaLabel}
+                onClick={onClickButton}
+                ref={innerRef}
+                role="menuitem"
+                variant="plain"
+                tabIndex={-1}
+                isDisabled={isDisabled || isDisabledContext}
+              >
+                <span className={css(styles.menuItemActionIcon)}>
+                  {icon === 'favorites' || isFavorited !== null ? <StarIcon aria-hidden /> : icon}
+                </span>
+              </Button>
+            </div>
           );
         }}
       </MenuItemContext.Consumer>
