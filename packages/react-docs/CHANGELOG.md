@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.33...@patternfly/react-docs@7.0.0-alpha.34) (2024-02-16)
+
+### Features
+
+- **CodeEditor,Divider:** consume penta & update core version ([#10081](https://github.com/patternfly/patternfly-react/issues/10081)) ([addda04](https://github.com/patternfly/patternfly-react/commit/addda044d7f6d91f3511c7a769b2707140df86d4))
+
 # [7.0.0-alpha.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.32...@patternfly/react-docs@7.0.0-alpha.33) (2024-02-14)
 
 **Note:** Version bump only for package @patternfly/react-docs

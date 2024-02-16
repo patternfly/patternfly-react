@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.0.0-alpha.32...@patternfly/react-code-editor@6.0.0-alpha.33) (2024-02-16)
+
+### Features
+
+- **CodeEditor,Divider:** consume penta & update core version ([#10081](https://github.com/patternfly/patternfly-react/issues/10081)) ([addda04](https://github.com/patternfly/patternfly-react/commit/addda044d7f6d91f3511c7a769b2707140df86d4))
+
 # [6.0.0-alpha.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.0.0-alpha.31...@patternfly/react-code-editor@6.0.0-alpha.32) (2024-02-14)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
