@@ -155,6 +155,8 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isCopyEnabled?: boolean;
   /** Flag indicating the editor is styled using monaco's dark theme. */
   isDarkTheme?: boolean;
+  /** Flag indicating the editor has a plain header. */
+  isHeaderPlain?: boolean;
   /** Flag to add download button to code editor actions. */
   isDownloadEnabled?: boolean;
   /** Flag to include a label indicating the currently configured editor language. */
@@ -261,6 +263,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
     isUploadEnabled: false,
     isDownloadEnabled: false,
     isCopyEnabled: false,
+    isHeaderPlain: false,
     copyButtonAriaLabel: 'Copy code to clipboard',
     uploadButtonAriaLabel: 'Upload code',
     downloadButtonAriaLabel: 'Download code',
@@ -492,6 +495,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
       emptyStateLink,
       customControls,
       isMinimapVisible,
+      isHeaderPlain,
       headerMainContent,
       shortcutsPopoverButtonText,
       shortcutsPopoverProps: shortcutsPopoverPropsProp,
@@ -560,45 +564,50 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
             trigger: 'mouseenter focus'
           };
 
-          const editorHeader = (
-            <div className={css(styles.codeEditorHeader)}>
-              {
-                <div className={css(styles.codeEditorControls)}>
-                  <CodeEditorContext.Provider value={{ code: value }}>
-                    {isCopyEnabled && (!showEmptyState || !!value) && (
-                      <CodeEditorControl
-                        icon={<CopyIcon />}
-                        aria-label={copyButtonAriaLabel}
-                        tooltipProps={{
-                          ...tooltipProps,
-                          'aria-live': 'polite',
-                          content: <div>{copied ? copyButtonSuccessTooltipText : copyButtonToolTipText}</div>,
-                          exitDelay: copied ? toolTipCopyExitDelay : toolTipDelay,
-                          onTooltipHidden: () => this.setState({ copied: false })
-                        }}
-                        onClick={this.copyCode}
-                      />
-                    )}
-                    {isUploadEnabled && (
-                      <CodeEditorControl
-                        icon={<UploadIcon />}
-                        aria-label={uploadButtonAriaLabel}
-                        tooltipProps={{ content: <div>{uploadButtonToolTipText}</div>, ...tooltipProps }}
-                        onClick={open}
-                      />
-                    )}
-                    {isDownloadEnabled && (!showEmptyState || !!value) && (
-                      <CodeEditorControl
-                        icon={<DownloadIcon />}
-                        aria-label={downloadButtonAriaLabel}
-                        tooltipProps={{ content: <div>{downloadButtonToolTipText}</div>, ...tooltipProps }}
-                        onClick={this.download}
-                      />
-                    )}
-                    {customControls && customControls}
-                  </CodeEditorContext.Provider>
-                </div>
-              }
+          const hasEditorHeaderContent =
+            ((isCopyEnabled || isDownloadEnabled) && (!showEmptyState || !!value)) ||
+            isUploadEnabled ||
+            customControls ||
+            headerMainContent ||
+            !!shortcutsPopoverProps.bodyContent;
+
+          const editorHeaderContent = (
+            <React.Fragment>
+              <div className={css(styles.codeEditorControls)}>
+                <CodeEditorContext.Provider value={{ code: value }}>
+                  {isCopyEnabled && (!showEmptyState || !!value) && (
+                    <CodeEditorControl
+                      icon={<CopyIcon />}
+                      aria-label={copyButtonAriaLabel}
+                      tooltipProps={{
+                        ...tooltipProps,
+                        'aria-live': 'polite',
+                        content: <div>{copied ? copyButtonSuccessTooltipText : copyButtonToolTipText}</div>,
+                        exitDelay: copied ? toolTipCopyExitDelay : toolTipDelay,
+                        onTooltipHidden: () => this.setState({ copied: false })
+                      }}
+                      onClick={this.copyCode}
+                    />
+                  )}
+                  {isUploadEnabled && (
+                    <CodeEditorControl
+                      icon={<UploadIcon />}
+                      aria-label={uploadButtonAriaLabel}
+                      tooltipProps={{ content: <div>{uploadButtonToolTipText}</div>, ...tooltipProps }}
+                      onClick={open}
+                    />
+                  )}
+                  {isDownloadEnabled && (!showEmptyState || !!value) && (
+                    <CodeEditorControl
+                      icon={<DownloadIcon />}
+                      aria-label={downloadButtonAriaLabel}
+                      tooltipProps={{ content: <div>{downloadButtonToolTipText}</div>, ...tooltipProps }}
+                      onClick={this.download}
+                    />
+                  )}
+                  {customControls && customControls}
+                </CodeEditorContext.Provider>
+              </div>
               {<div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}
               {!!shortcutsPopoverProps.bodyContent && (
                 <div className={`${styles.codeEditor}__keyboard-shortcuts`}>
@@ -608,6 +617,14 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                     </Button>
                   </Popover>
                 </div>
+              )}
+            </React.Fragment>
+          );
+
+          const editorHeader = (
+            <div className={css(styles.codeEditorHeader, isHeaderPlain && styles.modifiers.plain)}>
+              {hasEditorHeaderContent && (
+                <div className={css(styles.codeEditorHeaderContent)}>{editorHeaderContent}</div>
               )}
               {isLanguageLabelVisible && (
                 <div className={css(styles.codeEditorTab)}>
@@ -643,14 +660,14 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                   {...getRootProps({
                     onClick: (event) => event.stopPropagation() // Prevents clicking TextArea from opening file dialog
                   })}
-                  className={`${fileUploadStyles.fileUpload} ${isDragActive && fileUploadStyles.modifiers.dragHover} ${
-                    isLoading && fileUploadStyles.modifiers.loading
-                  }`}
+                  className={css(isLoading && fileUploadStyles.modifiers.loading)}
                 >
                   {editorHeader}
-                  <div className={css(styles.codeEditorMain)}>
-                    <input {...getInputProps()} /* hidden, necessary for react-dropzone */ />
-                    {(showEmptyState || providedEmptyState) && !value ? emptyState : editor}
+                  <div className={css(styles.codeEditorMain, isDragActive && styles.modifiers.dragHover)}>
+                    <div className={css(styles.codeEditorUpload)}>
+                      <input {...getInputProps()} /* hidden, necessary for react-dropzone */ />
+                      {(showEmptyState || providedEmptyState) && !value ? emptyState : editor}
+                    </div>
                   </div>
                 </div>
               ) : (

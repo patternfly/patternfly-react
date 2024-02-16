@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen, act } from '@testing-library/react';
 import { CodeEditor, Language } from '../CodeEditor';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
-import fileUploadStyles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
 
 jest.mock('@monaco-editor/react', () => jest.fn(() => <div data-testid="mock-editor"></div>));
 
@@ -35,11 +34,9 @@ test(`Renders with ${styles.modifiers.readOnly} when isReadOnly = true`, () => {
   );
 });
 
-test(`Renders with ${fileUploadStyles.fileUpload} when isUploadEnabled = true`, () => {
+test(`Renders with ${styles.codeEditorUpload} when isUploadEnabled = true`, () => {
   render(<CodeEditor isUploadEnabled code="test" />);
-  expect(screen.getByTestId('mock-editor').parentElement?.parentElement?.parentElement).toHaveClass(
-    fileUploadStyles.fileUpload
-  );
+  expect(screen.getByTestId('mock-editor').parentElement?.parentElement).toHaveClass(styles.codeEditorUpload);
 });
 
 test(`Renders with empty state when code = undefined`, () => {

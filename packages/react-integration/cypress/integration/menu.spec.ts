@@ -61,7 +61,7 @@ describe('Menu Test', () => {
   });
 
   it('Verify Menu with Favorites', () => {
-    cy.get('.pf-v5-c-menu__item-action.pf-m-favorite').first().click();
+    cy.get('#favorites-menu .pf-v5-c-menu__item-action[aria-label="not starred"]').first().click();
 
     cy.get('#favorites-menu.pf-v5-c-menu > section').first().should('contain', 'Favorites');
   });

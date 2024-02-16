@@ -3,7 +3,7 @@ import { CodeEditor, CodeEditorControl } from '@patternfly/react-code-editor';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 export const CodeEditorCustomControl: React.FunctionComponent = () => {
-  const [code, setCode] = React.useState('');
+  const [code, setCode] = React.useState('Some example content');
 
   const onChange = (code) => {
     setCode(code);
@@ -32,6 +32,7 @@ export const CodeEditorCustomControl: React.FunctionComponent = () => {
       customControls={customControl}
       code={code}
       onChange={onChange}
+      isHeaderPlain={code === ''}
     />
   );
 };

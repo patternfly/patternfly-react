@@ -48,7 +48,7 @@ const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
             <button
               className={css(
                 styles.menuItemAction,
-                isFavorited !== null && styles.modifiers.favorite,
+                isFavorited !== null && 'pf-m-favorite',
                 isFavorited && styles.modifiers.favorited,
                 className
               )}

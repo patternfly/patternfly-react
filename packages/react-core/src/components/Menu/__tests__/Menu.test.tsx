@@ -40,17 +40,6 @@ describe('Menu', () => {
     });
   });
 
-  describe('with isNavFlyout', () => {
-    test('should render Menu with nav flyout styles applied', () => {
-      render(
-        <Menu activeItemId={0} onSelect={jest.fn()} isNavFlyout>
-          content
-        </Menu>
-      );
-      expect(screen.getByText('content')).toHaveClass('pf-m-nav');
-    });
-  });
-
   describe('with hasCheckbox', () => {
     test('should render Menu with checkbox items', () => {
       render(

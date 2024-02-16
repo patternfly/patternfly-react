@@ -248,7 +248,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       ouiaId,
       ouiaSafe,
       containsFlyout,
-      isNavFlyout,
       containsDrilldown,
       isMenuDrilledIn,
       isPlain,
@@ -265,6 +264,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       isRootMenu,
       activeMenu,
       role,
+      isNavFlyout,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
@@ -325,7 +325,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             isPlain && styles.modifiers.plain,
             isScrollable && styles.modifiers.scrollable,
             containsFlyout && styles.modifiers.flyout,
-            isNavFlyout && styles.modifiers.nav,
+            isNavFlyout && 'pf-m-nav',
             containsDrilldown && styles.modifiers.drilldown,
             _isMenuDrilledIn && styles.modifiers.drilledIn,
             className

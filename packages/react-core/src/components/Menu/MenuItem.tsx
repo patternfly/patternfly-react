@@ -441,7 +441,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         _isOnPath && styles.modifiers.currentPath,
         isLoadButton && styles.modifiers.load,
         isLoading && styles.modifiers.loading,
-        isFocused && styles.modifiers.focus,
+        isFocused && 'pf-m-focus',
         isDanger && styles.modifiers.danger,
         className
       )}
