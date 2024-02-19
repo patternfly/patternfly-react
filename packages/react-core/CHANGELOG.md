@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.3.0-prerelease.1 (2024-02-19)
+
+### Features
+
+- **JumpLinks:** support passing a reference to scroll element ([#9961](https://github.com/patternfly/patternfly-react/issues/9961)) ([a5a180c](https://github.com/patternfly/patternfly-react/commit/a5a180c816284d40aeeeda457afaf5934219ce1d))
+
 # 5.3.0-prerelease.0 (2024-02-02)
 
 # 5.2.0 (2024-02-02)
