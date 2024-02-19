@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.1...@patternfly/react-core@5.3.0-prerelease.2) (2024-02-19)
+
+### Bug Fixes
+
+- **Menu toggle:** Passed aria label prop value to typeahead variant ([#10084](https://github.com/patternfly/patternfly-react/issues/10084)) ([871abd8](https://github.com/patternfly/patternfly-react/commit/871abd8f0afba15a9f44f61e6f76f612501537e2))
+
 # 5.3.0-prerelease.1 (2024-02-19)
 
 ### Features
