@@ -118,8 +118,6 @@ exports[`Toolbar should render with custom chip content 1`] = `
               <ul
                 aria-labelledby="pf-random-id-0"
                 class="pf-v5-c-label-group__list"
-                data-ouia-component-type="PF5/ChipGroup"
-                data-ouia-safe="true"
                 role="list"
               >
                 <li
@@ -127,16 +125,12 @@ exports[`Toolbar should render with custom chip content 1`] = `
                 >
                   <span
                     class="pf-v5-c-label pf-m-outline"
-                    data-ouia-component-id="OUIA-Generated-Chip-1"
-                    data-ouia-component-type="PF5/Chip"
-                    data-ouia-safe="true"
                   >
                     <span
                       class="pf-v5-c-label__content"
                     >
                       <span
                         class="pf-v5-c-label__text"
-                        style="--pf-v5-c-label__text--MaxWidth: 16ch;"
                       >
                         New
                       </span>
@@ -175,16 +169,12 @@ exports[`Toolbar should render with custom chip content 1`] = `
                 >
                   <span
                     class="pf-v5-c-label pf-m-outline"
-                    data-ouia-component-id="OUIA-Generated-Chip-2"
-                    data-ouia-component-type="PF5/Chip"
-                    data-ouia-safe="true"
                   >
                     <span
                       class="pf-v5-c-label__content"
                     >
                       <span
                         class="pf-v5-c-label__text"
-                        style="--pf-v5-c-label__text--MaxWidth: 16ch;"
                       >
                         Pending
                       </span>
@@ -225,7 +215,7 @@ exports[`Toolbar should render with custom chip content 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="Close chip group"
+                aria-label="Close label group"
                 aria-labelledby="remove_group_pf-random-id-0 pf-random-id-0"
                 class="pf-v5-c-button pf-m-plain pf-m-no-padding"
                 data-ouia-component-id="OUIA-Generated-Button-plain-4"

@@ -1,10 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ToolbarItem, ToolbarItemProps } from './ToolbarItem';
-import { ChipGroup } from '../../deprecated/components/Chip';
-import { Chip } from '../../deprecated/components/Chip';
 import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
 import { PickOptional } from '../../helpers/typeUtils';
+import { Label, LabelGroup } from '../Label';
 
 export interface ToolbarChipGroup {
   /** A unique key to identify this chip group category */
@@ -107,7 +106,7 @@ class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterSta
 
     const chipGroup = chips.length ? (
       <ToolbarItem variant="chip-group">
-        <ChipGroup
+        <LabelGroup
           key={categoryKey}
           categoryName={typeof categoryName === 'string' ? categoryName : categoryName.name}
           isClosable={deleteChipGroup !== undefined}
@@ -117,16 +116,16 @@ class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterSta
         >
           {chips.map((chip) =>
             typeof chip === 'string' ? (
-              <Chip key={chip} onClick={() => deleteChip(categoryKey, chip)}>
+              <Label variant="outline" key={chip} onClose={() => deleteChip(categoryKey, chip)}>
                 {chip}
-              </Chip>
+              </Label>
             ) : (
-              <Chip key={chip.key} onClick={() => deleteChip(categoryKey, chip)}>
+              <Label key={chip.key} onClose={() => deleteChip(categoryKey, chip)}>
                 {chip.node}
-              </Chip>
+              </Label>
             )
           )}
-        </ChipGroup>
+        </LabelGroup>
       </ToolbarItem>
     ) : null;
 
