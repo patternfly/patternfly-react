@@ -109,6 +109,14 @@ describe('TextInputGroupMain', () => {
     expect(inputValue).toBeVisible();
   });
 
+  it('passes the inputId prop to the input', () => {
+    render(<TextInputGroupMain inputId="input-id">Test</TextInputGroupMain>);
+
+    const input = screen.getByRole('textbox');
+
+    expect(input).toHaveAttribute('id', 'input-id');
+  });
+
   it('passes the placeholder prop to the input', () => {
     render(<TextInputGroupMain placeholder="placeholder text">Test</TextInputGroupMain>);
 

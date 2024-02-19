@@ -301,7 +301,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         onKeyDown={onEnter}
         onChange={onChangeHandler}
         name={name}
-        id={searchInputId}
+        inputId={searchInputId}
       />
       {(renderUtilities || areUtilitiesDisplayed) && (
         <TextInputGroupUtilities>
