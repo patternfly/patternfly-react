@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.16...@patternfly/react-integration@6.0.0-alpha.17) (2024-02-19)
+
+### Features
+
+- **Chip:** use Label internally, deprecate Chip ([#10049](https://github.com/patternfly/patternfly-react/issues/10049)) ([5cdb725](https://github.com/patternfly/patternfly-react/commit/5cdb72536f8dd291e42be09bc6454ac591adc606))
+
 # 6.0.0-alpha.16 (2024-02-16)
 
 ### Features

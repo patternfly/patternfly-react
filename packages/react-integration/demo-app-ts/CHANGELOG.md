@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.33](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.32...demo-app-ts@5.1.1-alpha.33) (2024-02-19)
+
+### Features
+
+- **Chip:** use Label internally, deprecate Chip ([#10049](https://github.com/patternfly/patternfly-react/issues/10049)) ([5cdb725](https://github.com/patternfly/patternfly-react/commit/5cdb72536f8dd291e42be09bc6454ac591adc606))
+
 ## [5.1.1-alpha.32](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.31...demo-app-ts@5.1.1-alpha.32) (2024-02-16)
 
 **Note:** Version bump only for package demo-app-ts
