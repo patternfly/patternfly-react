@@ -2,9 +2,9 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Chip } from '../Chip';
-import styles from '@patternfly/react-styles/css/components/Chip/chip';
+import styles from '@patternfly/react-styles/css/components/Label/label';
 
-jest.mock('../../Tooltip', () => ({
+jest.mock('../../../../components/Tooltip', () => ({
   Tooltip: ({ content, position }) => (
     <div data-testid="tooltip-mock">
       <p>{`content: ${content}`}</p>
@@ -26,7 +26,7 @@ jest.mock('../../Tooltip', () => ({
     expect(screen.getByTestId('container').firstChild).toBeVisible();
   });
 
-  test(`Renders with class ${styles.chip} on the ${chipType} container element`, () => {
+  test(`Renders with class ${styles.label} on the ${chipType} container element`, () => {
     render(
       <Chip isOverflowChip={isOverflowChip} data-testid="container">
         Chip text
@@ -35,23 +35,28 @@ jest.mock('../../Tooltip', () => ({
 
     // Only a non-overflow chip will have exactly the class "pf-v5-c-chip", we test for
     // additional classes on overflow chips elsewhere in the suite
-    expect(screen.getByTestId('container')).toHaveClass(styles.chip, { exact: !isOverflowChip });
+    expect(screen.getByTestId('container')).toHaveClass(
+      isOverflowChip ? `${styles.label} ${styles.modifiers.overflow}` : `${styles.label} ${styles.modifiers.outline}`,
+      {
+        exact: !isOverflowChip
+      }
+    );
   });
 
-  test(`Renders with class ${styles.chipContent} around the ${chipType} content`, () => {
+  test(`Renders with class ${styles.labelContent} around the ${chipType} content`, () => {
     render(
       <Chip isOverflowChip={isOverflowChip} data-testid="container">
         Chip text
       </Chip>
     );
 
-    expect(screen.getByTestId('container').firstChild).toHaveClass(styles.chipContent, { exact: true });
+    expect(screen.getByTestId('container').firstChild).toHaveClass(styles.labelContent, { exact: true });
   });
 
-  test(`Renders ${chipType} children with class ${styles.chipText}`, () => {
+  test(`Renders ${chipType} children with class ${styles.labelText}`, () => {
     render(<Chip isOverflowChip={isOverflowChip}>Chip text</Chip>);
 
-    expect(screen.getByText('Chip text')).toHaveClass(styles.chipText, { exact: true });
+    expect(screen.getByText('Chip text')).toHaveClass(styles.labelText, { exact: true });
   });
 
   test(`Renders with custom class on the ${chipType} container element`, () => {
@@ -74,34 +79,14 @@ jest.mock('../../Tooltip', () => ({
     expect(screen.getByText('Badge content')).toBeVisible();
   });
 
-  test(`Renders with div container on ${chipType} by default`, () => {
-    render(
-      <Chip isOverflowChip={isOverflowChip} data-testid="container">
-        Chip text
-      </Chip>
-    );
-
-    expect(screen.getByTestId('container').tagName).toBe('DIV');
-  });
-
-  test(`Renders with custom container on ${chipType} when component prop is passed`, () => {
-    render(
-      <Chip component="li" isOverflowChip={isOverflowChip}>
-        Chip text
-      </Chip>
-    );
-
-    expect(screen.getByRole('listitem')).toBeVisible();
-  });
-
   test(`Renders maxWidth css var in style attribute when textMaxWidth is passed for ${chipType}`, () => {
     render(
-      <Chip isOverflowChip={isOverflowChip} data-testid="container" textMaxWidth="10px">
+      <Chip isOverflowChip={isOverflowChip} textMaxWidth="10px">
         Chip text
       </Chip>
     );
 
-    expect(screen.getByTestId('container')).toHaveAttribute('style', '--pf-v5-c-chip__text--MaxWidth: 10px;');
+    expect(screen.getByText('Chip text')).toHaveAttribute('style', '--pf-v5-c-label__text--MaxWidth: 10px;');
   });
 
   test(`Spreads additional props to container for ${chipType}`, () => {
@@ -115,13 +100,13 @@ jest.mock('../../Tooltip', () => ({
   });
 });
 
-test(`Renders id prop on ${styles.chipText} container for default chip`, () => {
+test(`Renders id prop on ${styles.labelText} container for default chip`, () => {
   render(<Chip id="custom-id">Chip text</Chip>);
 
-  expect(screen.getByText('Chip text')).toHaveAttribute('id', 'custom-id');
+  expect(screen.getByText('Chip text').parentElement?.parentElement).toHaveAttribute('id', 'custom-id');
 });
 
-test(`Does not render id prop on ${styles.chipText} container for overflow chip`, () => {
+test(`Does not render id prop on ${styles.labelText} container for overflow chip`, () => {
   render(
     <Chip isOverflowChip id="custom-id">
       Chip text
@@ -131,41 +116,29 @@ test(`Does not render id prop on ${styles.chipText} container for overflow chip`
   expect(screen.getByText('Chip text')).not.toHaveAttribute('id');
 });
 
-test(`Renders actions container with class ${styles.chipActions} when isReadOnly is false`, () => {
+test(`Renders actions container with class ${styles.labelActions} when isReadOnly is false`, () => {
   render(<Chip>Chip text</Chip>);
 
-  expect(screen.getByRole('button').parentElement).toHaveClass(styles.chipActions);
-});
-
-test(`Renders aria-labelledby on action close button by default`, () => {
-  render(<Chip>Chip text</Chip>);
-
-  expect(screen.getByRole('button')).toHaveAccessibleName('close Chip text');
-});
-
-test(`Renders aria-labelledby on action close button with custom id passed`, () => {
-  render(<Chip id="custom-id">Chip text</Chip>);
-
-  expect(screen.getByRole('button')).toHaveAccessibleName('close Chip text');
+  expect(screen.getByRole('button').parentElement).toHaveClass(styles.labelActions);
 });
 
 test(`Renders concatenated aria-label on action close button by default`, () => {
   render(<Chip>Chip text</Chip>);
 
-  expect(screen.getByRole('button')).toHaveAccessibleName('close Chip text');
+  expect(screen.getByRole('button')).toHaveAccessibleName('Close Chip text');
 });
 
 test(`Renders custom aria-label on action close button when closeBtnAriaLabel is passed`, () => {
   render(<Chip closeBtnAriaLabel="custom label">Chip text</Chip>);
 
-  expect(screen.getByRole('button')).toHaveAccessibleName('custom label Chip text');
+  expect(screen.getByRole('button')).toHaveAccessibleName('custom label');
 });
 
 test(`Does not render close button action when isOverflowChip is true`, () => {
   render(<Chip isOverflowChip>Chip text</Chip>);
 
   // Because overflow chip renders as a button, we need to add the accessible name to the query
-  expect(screen.queryByRole('button', { name: 'close Chip text' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('button', { name: 'Close Chip text' })).not.toBeInTheDocument();
 });
 
 test(`Does not render close button action when isReadOnly is true`, () => {
@@ -196,7 +169,7 @@ test(`Calls onClick when close button action is clicked for default chip`, async
 
   render(<Chip onClick={onClickMock}>Chip text</Chip>);
 
-  await user.click(screen.getByRole('button', { name: 'close Chip text' }));
+  await user.click(screen.getByRole('button', { name: 'Close Chip text' }));
 
   expect(onClickMock).toHaveBeenCalledTimes(1);
 });
@@ -227,7 +200,7 @@ test(`Calls onClick when chip is clicked for overflow chip`, async () => {
     </Chip>
   );
 
-  await user.click(screen.getByRole('button', { name: 'Chip text' }));
+  await user.click(screen.getByRole('button'));
 
   expect(onClickMock).toHaveBeenCalledTimes(1);
 });
@@ -255,14 +228,6 @@ test('Passes position to Tooltip', () => {
   render(<Chip tooltipPosition="bottom">Test chip text</Chip>);
 
   expect(screen.getByText('position: bottom')).toBeVisible();
-  Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 0 });
-});
-
-test('Passes content to Tooltip', () => {
-  Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 500 });
-  render(<Chip>Test chip text</Chip>);
-
-  expect(screen.getByText(`content: Test chip text`)).toBeVisible();
   Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 0 });
 });
 

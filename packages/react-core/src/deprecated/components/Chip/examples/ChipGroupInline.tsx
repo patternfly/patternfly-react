@@ -1,7 +1,7 @@
 import React from 'react';
-import { Chip, ChipGroup } from '@patternfly/react-core';
+import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
 
-export const ChipGroupWithCategories: React.FunctionComponent = () => {
+export const ChipGroupInline: React.FunctionComponent = () => {
   const [chips, setChips] = React.useState([
     'Chip one',
     'Really long chip that goes on and on',
@@ -17,7 +17,7 @@ export const ChipGroupWithCategories: React.FunctionComponent = () => {
   };
 
   return (
-    <ChipGroup categoryName="Category one">
+    <ChipGroup>
       {chips.map((currentChip) => (
         <Chip key={currentChip} onClick={() => deleteItem(currentChip)}>
           {currentChip}

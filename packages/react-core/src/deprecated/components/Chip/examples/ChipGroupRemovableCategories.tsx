@@ -1,5 +1,5 @@
 import React from 'react';
-import { Chip, ChipGroup } from '@patternfly/react-core';
+import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
 
 export const ChipGroupRemovableCategories: React.FunctionComponent = () => {
   const [chipGroup1, setChipGroup1] = React.useState(['Chip one', 'Chip two', 'Chip three']);

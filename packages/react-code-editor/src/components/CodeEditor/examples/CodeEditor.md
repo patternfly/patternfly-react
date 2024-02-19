@@ -15,11 +15,13 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 ### Basic
 
 ```ts file="./CodeEditorBasic.tsx"
+
 ```
 
 ### With sizeToFit height, height will grow/shrink with content
 
 ```ts file="./CodeEditorSizeToFit.tsx"
+
 ```
 
 ### With shortcut menu and main header content
@@ -27,14 +29,17 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 These examples below are the shortcuts that we recommend describing in the popover since they are monaco features.
 
 ```ts file="./CodeEditorShortcutMainHeader.tsx"
+
 ```
 
 ### With actions
 
 ```ts file="./CodeEditorWithActions.tsx"
+
 ```
 
 ### With custom control
 
 ```ts file="CodeEditorCustomControl.tsx"
+
 ```

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CodeEditor, Language } from '@patternfly/react-code-editor';
-import { Grid, GridItem, Chip } from '@patternfly/react-core';
+import { Grid, GridItem, Label } from '@patternfly/react-core';
 
 export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
   const onEditorDidMount = (editor, monaco) => {
@@ -40,9 +40,9 @@ export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
             <GridItem style={{ textAlign: 'right', marginRight: '1em' }}>
               {shortcut.keys
                 .map((key) => (
-                  <Chip key={key} isReadOnly>
+                  <Label variant="outline" key={key}>
                     {key}
-                  </Chip>
+                  </Label>
                 ))
                 .reduce((prev, curr) => (
                   <>{[prev, ' + ', curr]}</>

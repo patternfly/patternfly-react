@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Chip, ChipGroup } from '@patternfly/react-core';
+import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
 
 interface ChipWithCategoryGroupState {
   chipGroups: {
@@ -65,7 +65,7 @@ export class ChipWithCategoryGroupDemo extends Component<{}, ChipWithCategoryGro
   render() {
     const { chipGroups } = this.state;
 
-    return chipGroups.map(currentGroup => (
+    return chipGroups.map((currentGroup) => (
       <ChipGroup
         id={currentGroup.id}
         key={currentGroup.category}
@@ -75,7 +75,7 @@ export class ChipWithCategoryGroupDemo extends Component<{}, ChipWithCategoryGro
         closeBtnAriaLabel="Close category demo"
         tooltipPosition="bottom"
       >
-        {currentGroup.chips.map(chip => (
+        {currentGroup.chips.map((chip) => (
           <Chip id={`chip-${currentGroup.category}-${chip}`} key={chip} onClick={() => this.deleteItem(chip)}>
             {chip}
           </Chip>

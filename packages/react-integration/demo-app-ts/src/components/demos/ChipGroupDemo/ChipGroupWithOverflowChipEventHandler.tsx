@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Chip, ChipGroup } from '@patternfly/react-core';
+import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
 import { css } from '@patternfly/react-styles';
 import titleStyles from '@patternfly/react-styles/css/components/Title/title';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
@@ -62,9 +62,9 @@ export class ChipGroupWithOverflowChipEventHandler extends Component<{}, ChipGro
     const { chipArray } = this.state;
     return (
       <>
-        <ChipGroup onOverflowChipClick={() => this.handleOverflowChipClick()}>
+        <ChipGroup onClick={() => this.handleOverflowChipClick()}>
           {chipArray.map((chip) => (
-            <Chip key={chip.name} onClick={() => this.deleteItem(chip.name)}>
+            <Chip key={chip.name} id={chip.name} onClick={() => this.deleteItem(chip.name)}>
               {chip.name}
             </Chip>
           ))}

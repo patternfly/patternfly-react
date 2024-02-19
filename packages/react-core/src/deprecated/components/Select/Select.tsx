@@ -19,8 +19,8 @@ import {
   SelectDirection,
   SelectFooterTabbableItems
 } from './selectConstants';
-import { ChipGroup, ChipGroupProps } from '../../../components/Chip';
-import { Chip } from '../../../components/Chip';
+import { ChipGroup, ChipGroupProps } from '../Chip';
+import { Chip } from '../Chip';
 import { Spinner } from '../../../components/Spinner';
 import {
   keyHandler,

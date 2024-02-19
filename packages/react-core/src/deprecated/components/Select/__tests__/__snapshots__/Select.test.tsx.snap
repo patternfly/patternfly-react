@@ -1849,51 +1849,47 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         class="pf-v5-c-select__toggle-wrapper"
       >
         <div
-          aria-label="Chip group category"
-          class="pf-v5-c-chip-group"
-          data-ouia-component-type="PF5/ChipGroup"
-          data-ouia-safe="true"
-          role="group"
+          class="pf-v5-c-label-group"
         >
           <div
-            class="pf-v5-c-chip-group__main"
+            class="pf-v5-c-label-group__main"
           >
             <ul
               aria-label="Chip group category"
-              class="pf-v5-c-chip-group__list"
+              class="pf-v5-c-label-group__list"
+              data-ouia-component-type="PF5/ChipGroup"
+              data-ouia-safe="true"
               role="list"
             >
               <li
-                class="pf-v5-c-chip-group__list-item"
+                class="pf-v5-c-label-group__list-item"
               >
-                <div
-                  class="pf-v5-c-chip"
+                <span
+                  class="pf-v5-c-label pf-m-outline"
                   data-ouia-component-id="OUIA-Generated-Chip-1"
                   data-ouia-component-type="PF5/Chip"
                   data-ouia-safe="true"
                 >
                   <span
-                    class="pf-v5-c-chip__content"
+                    class="pf-v5-c-label__content"
                   >
                     <span
-                      class="pf-v5-c-chip__text"
-                      id="pf-random-id-25"
+                      class="pf-v5-c-label__text"
+                      style="--pf-v5-c-label__text--MaxWidth: 16ch;"
                     >
                       Mr
                     </span>
                   </span>
                   <span
-                    class="pf-v5-c-chip__actions"
+                    class="pf-v5-c-label__actions"
                   >
                     <button
                       aria-disabled="false"
                       aria-label="Remove"
-                      aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
-                      class="pf-v5-c-button pf-m-plain"
-                      data-ouia-component-id="Remove"
+                      class="pf-v5-c-button pf-m-plain pf-m-no-padding"
+                      data-ouia-component-id="OUIA-Generated-Button-plain-1"
                       data-ouia-component-type="PF5/Button"
                       data-ouia-safe="true"
-                      id="remove_pf-random-id-25"
                       type="button"
                     >
                       <svg
@@ -1911,39 +1907,37 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       </svg>
                     </button>
                   </span>
-                </div>
+                </span>
               </li>
               <li
-                class="pf-v5-c-chip-group__list-item"
+                class="pf-v5-c-label-group__list-item"
               >
-                <div
-                  class="pf-v5-c-chip"
+                <span
+                  class="pf-v5-c-label pf-m-outline"
                   data-ouia-component-id="OUIA-Generated-Chip-2"
                   data-ouia-component-type="PF5/Chip"
                   data-ouia-safe="true"
                 >
                   <span
-                    class="pf-v5-c-chip__content"
+                    class="pf-v5-c-label__content"
                   >
                     <span
-                      class="pf-v5-c-chip__text"
-                      id="pf-random-id-26"
+                      class="pf-v5-c-label__text"
+                      style="--pf-v5-c-label__text--MaxWidth: 16ch;"
                     >
                       Mrs
                     </span>
                   </span>
                   <span
-                    class="pf-v5-c-chip__actions"
+                    class="pf-v5-c-label__actions"
                   >
                     <button
                       aria-disabled="false"
                       aria-label="Remove"
-                      aria-labelledby="remove_pf-random-id-26 pf-random-id-26"
-                      class="pf-v5-c-button pf-m-plain"
-                      data-ouia-component-id="Remove"
+                      class="pf-v5-c-button pf-m-plain pf-m-no-padding"
+                      data-ouia-component-id="OUIA-Generated-Button-plain-2"
                       data-ouia-component-type="PF5/Button"
                       data-ouia-safe="true"
-                      id="remove_pf-random-id-26"
                       type="button"
                     >
                       <svg
@@ -1961,7 +1955,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       </svg>
                     </button>
                   </span>
-                </div>
+                </span>
               </li>
             </ul>
           </div>
