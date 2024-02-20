@@ -296,7 +296,7 @@ This demonstrates how to embed HTML within a tooltip. Combining cursor and voron
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartCursorFlyout, ChartCursorTooltip, ChartGroup, ChartPoint, ChartThemeColor, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartCursorTooltip, ChartGroup, ChartPoint, ChartThemeColor, createContainer } from '@patternfly/react-charts';
 
 class EmbeddedHtml extends React.Component {
   constructor(props) {
@@ -327,12 +327,25 @@ class EmbeddedHtml extends React.Component {
               {text.map((val, index) => (
                 <tr key={`tbody-tr-${index}`} style={this.baseStyles}>
                   <th width="20px">
-                    <svg height="9.74" width="9.74" role="img">
-                      {<ChartPoint x={0} y={0}
-                         style={{ fill: theme.legend.colorScale[index] }}
-                         symbol={legendData[index].symbol ? legendData[index].symbol.type : 'square'}
-                         size={10}
-                      />}
+                    <svg height="9.74" width="9.74">
+                      <g>
+                        <rect
+                          role="presentation"
+                          shapeRendering="auto"
+                          width="9.74"
+                          height="9.74"
+                          style={{ fill: theme.legend.colorScale[index] }}
+                        >
+                          {
+                            <ChartPoint 
+                              x={0}
+                              y={0}
+                              symbol={legendData[index].symbol ? legendData[index].symbol.type : 'square'}
+                              size={5.6}
+                            />
+                          }
+                        </rect>
+                      </g>
                     </svg>
                   </th>
                   <td width="55px">{legendData[index].name}</td>
@@ -356,8 +369,9 @@ class EmbeddedHtml extends React.Component {
               labels={({ datum }) => `${datum.y !== null ? datum.y : 'no data'}`}
               labelComponent={
                 <ChartCursorTooltip
-                  centerOffset={{x: ({ center, flyoutWidth, width, offset = flyoutWidth / 2 + 10 }) => width > center.x + flyoutWidth + 10 ? offset : -offset}}
-                  flyout={<ChartCursorFlyout />}
+                  // The offset and flyout component are not necessary here, but included for completeness
+                  // centerOffset={{x: ({ center, flyoutWidth, width, offset = flyoutWidth / 2 + 10 }) => width > center.x + flyoutWidth + 10 ? offset : -offset}}
+                  // flyoutComponent={<ChartCursorFlyout />}
                   flyoutHeight={110}
                   flyoutWidth={({ datum }) => datum.y === null ? 160 : 125 }
                   labelComponent={<HtmlLegendContent legendData={legendData} title={(datum) => datum.x} />}
