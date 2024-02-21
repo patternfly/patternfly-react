@@ -3,10 +3,10 @@
 exports[`Renders to match snapshot 1`] = `
 <DocumentFragment>
   <dd
-    class="pf-v5-c-description-list__description"
+    class="pf-v6-c-description-list__description"
   >
     <div
-      class="pf-v5-c-description-list__text"
+      class="pf-v6-c-description-list__text"
     >
       test
     </div>

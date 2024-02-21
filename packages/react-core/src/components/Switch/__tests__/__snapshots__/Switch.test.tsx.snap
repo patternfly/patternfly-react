@@ -3,7 +3,7 @@
 exports[`Switch no label switch is checked 1`] = `
 <DocumentFragment>
   <label
-    class="pf-v5-c-switch"
+    class="pf-v6-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-7"
     data-ouia-component-type="PF5/Switch"
     data-ouia-safe="true"
@@ -12,20 +12,20 @@ exports[`Switch no label switch is checked 1`] = `
     <input
       aria-label="Switch label"
       checked=""
-      class="pf-v5-c-switch__input"
+      class="pf-v6-c-switch__input"
       id="no-label-switch-is-checked"
       type="checkbox"
     />
     <span
-      class="pf-v5-c-switch__toggle"
+      class="pf-v6-c-switch__toggle"
     >
       <div
         aria-hidden="true"
-        class="pf-v5-c-switch__toggle-icon"
+        class="pf-v6-c-switch__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -45,7 +45,7 @@ exports[`Switch no label switch is checked 1`] = `
 exports[`Switch no label switch is not checked 1`] = `
 <DocumentFragment>
   <label
-    class="pf-v5-c-switch"
+    class="pf-v6-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-8"
     data-ouia-component-type="PF5/Switch"
     data-ouia-safe="true"
@@ -53,20 +53,20 @@ exports[`Switch no label switch is not checked 1`] = `
   >
     <input
       aria-label="Switch label"
-      class="pf-v5-c-switch__input"
+      class="pf-v6-c-switch__input"
       id="no-label-switch-is-not-checked"
       type="checkbox"
     />
     <span
-      class="pf-v5-c-switch__toggle"
+      class="pf-v6-c-switch__toggle"
     >
       <div
         aria-hidden="true"
-        class="pf-v5-c-switch__toggle-icon"
+        class="pf-v6-c-switch__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -86,7 +86,7 @@ exports[`Switch no label switch is not checked 1`] = `
 exports[`Switch switch is checked 1`] = `
 <DocumentFragment>
   <label
-    class="pf-v5-c-switch"
+    class="pf-v6-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-3"
     data-ouia-component-type="PF5/Switch"
     data-ouia-safe="true"
@@ -95,22 +95,22 @@ exports[`Switch switch is checked 1`] = `
     <input
       aria-label="Switch label"
       checked=""
-      class="pf-v5-c-switch__input"
+      class="pf-v6-c-switch__input"
       id="switch-is-checked"
       type="checkbox"
     />
     <span
-      class="pf-v5-c-switch__toggle"
+      class="pf-v6-c-switch__toggle"
     />
     <span
       aria-hidden="true"
-      class="pf-v5-c-switch__label pf-m-on"
+      class="pf-v6-c-switch__label pf-m-on"
     >
       On
     </span>
     <span
       aria-hidden="true"
-      class="pf-v5-c-switch__label pf-m-off"
+      class="pf-v6-c-switch__label pf-m-off"
     >
       Off
     </span>
@@ -121,7 +121,7 @@ exports[`Switch switch is checked 1`] = `
 exports[`Switch switch is checked and disabled 1`] = `
 <DocumentFragment>
   <label
-    class="pf-v5-c-switch"
+    class="pf-v6-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-9"
     data-ouia-component-type="PF5/Switch"
     data-ouia-safe="true"
@@ -130,21 +130,21 @@ exports[`Switch switch is checked and disabled 1`] = `
     <input
       aria-label="Switch label"
       checked=""
-      class="pf-v5-c-switch__input"
+      class="pf-v6-c-switch__input"
       disabled=""
       id="switch-is-checked-and-disabled"
       type="checkbox"
     />
     <span
-      class="pf-v5-c-switch__toggle"
+      class="pf-v6-c-switch__toggle"
     >
       <div
         aria-hidden="true"
-        class="pf-v5-c-switch__toggle-icon"
+        class="pf-v6-c-switch__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -164,7 +164,7 @@ exports[`Switch switch is checked and disabled 1`] = `
 exports[`Switch switch is not checked 1`] = `
 <DocumentFragment>
   <label
-    class="pf-v5-c-switch"
+    class="pf-v6-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-4"
     data-ouia-component-type="PF5/Switch"
     data-ouia-safe="true"
@@ -172,22 +172,22 @@ exports[`Switch switch is not checked 1`] = `
   >
     <input
       aria-label="Switch label"
-      class="pf-v5-c-switch__input"
+      class="pf-v6-c-switch__input"
       id="switch-is-not-checked"
       type="checkbox"
     />
     <span
-      class="pf-v5-c-switch__toggle"
+      class="pf-v6-c-switch__toggle"
     />
     <span
       aria-hidden="true"
-      class="pf-v5-c-switch__label pf-m-on"
+      class="pf-v6-c-switch__label pf-m-on"
     >
       On
     </span>
     <span
       aria-hidden="true"
-      class="pf-v5-c-switch__label pf-m-off"
+      class="pf-v6-c-switch__label pf-m-off"
     >
       Off
     </span>
@@ -198,7 +198,7 @@ exports[`Switch switch is not checked 1`] = `
 exports[`Switch switch is not checked and disabled 1`] = `
 <DocumentFragment>
   <label
-    class="pf-v5-c-switch"
+    class="pf-v6-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-10"
     data-ouia-component-type="PF5/Switch"
     data-ouia-safe="true"
@@ -206,21 +206,21 @@ exports[`Switch switch is not checked and disabled 1`] = `
   >
     <input
       aria-label="Switch label"
-      class="pf-v5-c-switch__input"
+      class="pf-v6-c-switch__input"
       disabled=""
       id="switch-is-not-checked-and-disabled"
       type="checkbox"
     />
     <span
-      class="pf-v5-c-switch__toggle"
+      class="pf-v6-c-switch__toggle"
     >
       <div
         aria-hidden="true"
-        class="pf-v5-c-switch__toggle-icon"
+        class="pf-v6-c-switch__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -240,7 +240,7 @@ exports[`Switch switch is not checked and disabled 1`] = `
 exports[`Switch switch with only label is checked 1`] = `
 <DocumentFragment>
   <label
-    class="pf-v5-c-switch"
+    class="pf-v6-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-5"
     data-ouia-component-type="PF5/Switch"
     data-ouia-safe="true"
@@ -250,23 +250,23 @@ exports[`Switch switch with only label is checked 1`] = `
       aria-label=""
       aria-labelledby="switch-is-checked-on"
       checked=""
-      class="pf-v5-c-switch__input"
+      class="pf-v6-c-switch__input"
       id="switch-is-checked"
       type="checkbox"
     />
     <span
-      class="pf-v5-c-switch__toggle"
+      class="pf-v6-c-switch__toggle"
     />
     <span
       aria-hidden="true"
-      class="pf-v5-c-switch__label pf-m-on"
+      class="pf-v6-c-switch__label pf-m-on"
       id="switch-is-checked-on"
     >
       On
     </span>
     <span
       aria-hidden="true"
-      class="pf-v5-c-switch__label pf-m-off"
+      class="pf-v6-c-switch__label pf-m-off"
       id="switch-is-checked-off"
     >
       On
@@ -278,7 +278,7 @@ exports[`Switch switch with only label is checked 1`] = `
 exports[`Switch switch with only label is not checked 1`] = `
 <DocumentFragment>
   <label
-    class="pf-v5-c-switch"
+    class="pf-v6-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-6"
     data-ouia-component-type="PF5/Switch"
     data-ouia-safe="true"
@@ -287,23 +287,23 @@ exports[`Switch switch with only label is not checked 1`] = `
     <input
       aria-label=""
       aria-labelledby="switch-is-not-checked-off"
-      class="pf-v5-c-switch__input"
+      class="pf-v6-c-switch__input"
       id="switch-is-not-checked"
       type="checkbox"
     />
     <span
-      class="pf-v5-c-switch__toggle"
+      class="pf-v6-c-switch__toggle"
     />
     <span
       aria-hidden="true"
-      class="pf-v5-c-switch__label pf-m-on"
+      class="pf-v6-c-switch__label pf-m-on"
       id="switch-is-not-checked-on"
     >
       Off
     </span>
     <span
       aria-hidden="true"
-      class="pf-v5-c-switch__label pf-m-off"
+      class="pf-v6-c-switch__label pf-m-off"
       id="switch-is-not-checked-off"
     >
       Off

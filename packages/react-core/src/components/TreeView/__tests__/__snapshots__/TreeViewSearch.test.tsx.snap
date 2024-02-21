@@ -3,23 +3,23 @@
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-tree-view__search"
+    class="pf-v6-c-tree-view__search"
   >
     <div
-      class="pf-v5-c-form-control pf-m-icon"
+      class="pf-v6-c-form-control pf-m-icon"
     >
       <input
         type="search"
       />
       <div
-        class="pf-v5-c-form-control__utilities"
+        class="pf-v6-c-form-control__utilities"
       >
         <div
-          class="pf-v5-c-form-control__icon"
+          class="pf-v6-c-form-control__icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v6-svg"
             fill="currentColor"
             height="1em"
             role="img"

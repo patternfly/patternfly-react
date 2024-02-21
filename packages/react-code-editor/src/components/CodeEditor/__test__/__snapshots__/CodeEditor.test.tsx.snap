@@ -3,7 +3,7 @@
 exports[`Matches snapshot with control buttons enabled 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-code-editor"
+    class="pf-v6-c-code-editor"
   >
     <div
       class=""
@@ -11,13 +11,13 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
       tabindex="0"
     >
       <div
-        class="pf-v5-c-code-editor__header"
+        class="pf-v6-c-code-editor__header"
       >
         <div
-          class="pf-v5-c-code-editor__header-content"
+          class="pf-v6-c-code-editor__header-content"
         >
           <div
-            class="pf-v5-c-code-editor__controls"
+            class="pf-v6-c-code-editor__controls"
           >
             <div
               style="display: contents;"
@@ -25,7 +25,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="Copy code to clipboard"
-                class="pf-v5-c-button pf-m-plain"
+                class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-1"
                 data-ouia-component-type="PF5/Button"
                 data-ouia-safe="true"
@@ -33,7 +33,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v5-svg"
+                  class="pf-v6-svg"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -52,7 +52,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="Upload code"
-                class="pf-v5-c-button pf-m-plain"
+                class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-2"
                 data-ouia-component-type="PF5/Button"
                 data-ouia-safe="true"
@@ -60,7 +60,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v5-svg"
+                  class="pf-v6-svg"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -79,7 +79,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="Download code"
-                class="pf-v5-c-button pf-m-plain"
+                class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-3"
                 data-ouia-component-type="PF5/Button"
                 data-ouia-safe="true"
@@ -87,7 +87,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v5-svg"
+                  class="pf-v6-svg"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -102,15 +102,15 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
             </div>
           </div>
           <div
-            class="pf-v5-c-code-editor__header-main"
+            class="pf-v6-c-code-editor__header-main"
           />
         </div>
       </div>
       <div
-        class="pf-v5-c-code-editor__main"
+        class="pf-v6-c-code-editor__main"
       >
         <div
-          class="pf-v5-c-code-editor__upload"
+          class="pf-v6-c-code-editor__upload"
         >
           <input
             style="display: none;"
@@ -118,7 +118,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
             type="file"
           />
           <div
-            class="pf-v5-c-code-editor__code"
+            class="pf-v6-c-code-editor__code"
             dir="ltr"
             tabindex="0"
           >
@@ -136,16 +136,16 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
 exports[`Matches snapshot without props 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-code-editor"
+    class="pf-v6-c-code-editor"
   >
     <div
-      class="pf-v5-c-code-editor__header"
+      class="pf-v6-c-code-editor__header"
     />
     <div
-      class="pf-v5-c-code-editor__main"
+      class="pf-v6-c-code-editor__main"
     >
       <div
-        class="pf-v5-c-code-editor__code"
+        class="pf-v6-c-code-editor__code"
         dir="ltr"
         tabindex="0"
       >

@@ -3,17 +3,17 @@
 exports[`List icon large list 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-v5-c-list pf-m-icon-lg"
+    class="pf-v6-c-list pf-m-icon-lg"
   >
     <li
-      class="pf-v5-c-list__item"
+      class="pf-v6-c-list__item"
     >
       <span
-        class="pf-v5-c-list__item-icon"
+        class="pf-v6-c-list__item-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -26,20 +26,20 @@ exports[`List icon large list 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-list__item-text"
+        class="pf-v6-c-list__item-text"
       >
         Apple
       </span>
     </li>
     <li
-      class="pf-v5-c-list__item"
+      class="pf-v6-c-list__item"
     >
       <span
-        class="pf-v5-c-list__item-icon"
+        class="pf-v6-c-list__item-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -52,20 +52,20 @@ exports[`List icon large list 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-list__item-text"
+        class="pf-v6-c-list__item-text"
       >
         Banana
       </span>
     </li>
     <li
-      class="pf-v5-c-list__item"
+      class="pf-v6-c-list__item"
     >
       <span
-        class="pf-v5-c-list__item-icon"
+        class="pf-v6-c-list__item-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -78,7 +78,7 @@ exports[`List icon large list 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-list__item-text"
+        class="pf-v6-c-list__item-text"
       >
         Orange
       </span>
@@ -90,18 +90,18 @@ exports[`List icon large list 1`] = `
 exports[`List icon list 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-v5-c-list pf-m-plain"
+    class="pf-v6-c-list pf-m-plain"
     role="list"
   >
     <li
-      class="pf-v5-c-list__item"
+      class="pf-v6-c-list__item"
     >
       <span
-        class="pf-v5-c-list__item-icon"
+        class="pf-v6-c-list__item-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -114,20 +114,20 @@ exports[`List icon list 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-list__item-text"
+        class="pf-v6-c-list__item-text"
       >
         Apple
       </span>
     </li>
     <li
-      class="pf-v5-c-list__item"
+      class="pf-v6-c-list__item"
     >
       <span
-        class="pf-v5-c-list__item-icon"
+        class="pf-v6-c-list__item-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -140,20 +140,20 @@ exports[`List icon list 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-list__item-text"
+        class="pf-v6-c-list__item-text"
       >
         Banana
       </span>
     </li>
     <li
-      class="pf-v5-c-list__item"
+      class="pf-v6-c-list__item"
     >
       <span
-        class="pf-v5-c-list__item-icon"
+        class="pf-v6-c-list__item-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -166,7 +166,7 @@ exports[`List icon list 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-list__item-text"
+        class="pf-v6-c-list__item-text"
       >
         Orange
       </span>
@@ -178,10 +178,10 @@ exports[`List icon list 1`] = `
 exports[`List inline list 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-v5-c-list pf-m-inline"
+    class="pf-v6-c-list pf-m-inline"
   >
     <ul
-      class="pf-v5-c-list"
+      class="pf-v6-c-list"
     >
       <li
         class=""
@@ -212,7 +212,7 @@ exports[`List inline list 1`] = `
 exports[`List ordered list 1`] = `
 <DocumentFragment>
   <ol
-    class="pf-v5-c-list"
+    class="pf-v6-c-list"
     type="1"
   >
     <li
@@ -243,10 +243,10 @@ exports[`List ordered list 1`] = `
 exports[`List simple list 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-v5-c-list"
+    class="pf-v6-c-list"
   >
     <ul
-      class="pf-v5-c-list"
+      class="pf-v6-c-list"
     >
       <li
         class=""

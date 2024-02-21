@@ -3,7 +3,7 @@
 exports[`DropdownToggle state action split button - renders primary variant 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-dropdown__toggle pf-m-split-button pf-m-action pf-m-primary"
+    class="pf-v6-c-dropdown__toggle pf-m-split-button pf-m-action pf-m-primary"
   >
     <div>
       test
@@ -11,7 +11,7 @@ exports[`DropdownToggle state action split button - renders primary variant 1`] 
     <button
       aria-expanded="false"
       aria-label="Select"
-      class="pf-v5-c-dropdown__toggle-button pf-m-primary"
+      class="pf-v6-c-dropdown__toggle-button pf-m-primary"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-11"
       data-ouia-component-type="PF5/DropdownToggle"
       data-ouia-safe="true"
@@ -28,7 +28,7 @@ exports[`DropdownToggle state action split button - renders primary variant 1`] 
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -49,7 +49,7 @@ exports[`DropdownToggle state active 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-v5-c-dropdown__toggle pf-m-active"
+    class="pf-v6-c-dropdown__toggle pf-m-active"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
     data-ouia-component-type="PF5/DropdownToggle"
     data-ouia-safe="true"
@@ -66,7 +66,7 @@ exports[`DropdownToggle state active 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -86,7 +86,7 @@ exports[`DropdownToggle state button variant - plain with text 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-v5-c-dropdown__toggle pf-m-plain pf-m-text"
+    class="pf-v6-c-dropdown__toggle pf-m-plain pf-m-text"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-10"
     data-ouia-component-type="PF5/DropdownToggle"
     data-ouia-safe="true"
@@ -103,7 +103,7 @@ exports[`DropdownToggle state button variant - plain with text 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -123,7 +123,7 @@ exports[`DropdownToggle state button variant - primary 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-v5-c-dropdown__toggle pf-m-primary"
+    class="pf-v6-c-dropdown__toggle pf-m-primary"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
     data-ouia-component-type="PF5/DropdownToggle"
     data-ouia-safe="true"
@@ -140,7 +140,7 @@ exports[`DropdownToggle state button variant - primary 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -160,7 +160,7 @@ exports[`DropdownToggle state button variant - secondary 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-v5-c-dropdown__toggle pf-m-secondary"
+    class="pf-v6-c-dropdown__toggle pf-m-secondary"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-9"
     data-ouia-component-type="PF5/DropdownToggle"
     data-ouia-safe="true"
@@ -177,7 +177,7 @@ exports[`DropdownToggle state button variant - secondary 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -197,7 +197,7 @@ exports[`DropdownToggle state class changes 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-v5-c-dropdown__toggle"
+    class="pf-v6-c-dropdown__toggle"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-14"
     data-ouia-component-type="PF5/DropdownToggle"
     data-ouia-safe="true"
@@ -214,7 +214,7 @@ exports[`DropdownToggle state class changes 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -234,7 +234,7 @@ exports[`DropdownToggle state focus 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-v5-c-dropdown__toggle"
+    class="pf-v6-c-dropdown__toggle"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
     data-ouia-component-type="PF5/DropdownToggle"
     data-ouia-safe="true"
@@ -251,7 +251,7 @@ exports[`DropdownToggle state focus 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -271,7 +271,7 @@ exports[`DropdownToggle state hover 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-v5-c-dropdown__toggle"
+    class="pf-v6-c-dropdown__toggle"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
     data-ouia-component-type="PF5/DropdownToggle"
     data-ouia-safe="true"
@@ -288,7 +288,7 @@ exports[`DropdownToggle state hover 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -307,7 +307,7 @@ exports[`DropdownToggle state hover 1`] = `
 exports[`DropdownToggle state split button - does not render primary variant 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-dropdown__toggle pf-m-split-button"
+    class="pf-v6-c-dropdown__toggle pf-m-split-button"
   >
     <div>
       test
@@ -315,7 +315,7 @@ exports[`DropdownToggle state split button - does not render primary variant 1`]
     <button
       aria-expanded="false"
       aria-label="Select"
-      class="pf-v5-c-dropdown__toggle-button pf-m-primary"
+      class="pf-v6-c-dropdown__toggle-button pf-m-primary"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-12"
       data-ouia-component-type="PF5/DropdownToggle"
       data-ouia-safe="true"
@@ -332,7 +332,7 @@ exports[`DropdownToggle state split button - does not render primary variant 1`]
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"

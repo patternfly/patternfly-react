@@ -3,11 +3,11 @@
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-check pf-m-standalone"
+    class="pf-v6-c-check pf-m-standalone"
   >
     <input
       aria-invalid="false"
-      class="pf-v5-c-check__input"
+      class="pf-v6-c-check__input"
       data-ouia-component-id="ouia-id"
       data-ouia-component-type="PF5/Checkbox"
       data-ouia-safe="true"
