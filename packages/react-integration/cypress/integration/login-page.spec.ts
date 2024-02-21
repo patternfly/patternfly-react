@@ -7,16 +7,16 @@ describe('Login Page Demo Test', () => {
     cy.get('input[name="pf-login-username-id"]').then((userNameInput) => expect(userNameInput.text()).to.equal(''));
     cy.get('input[name="pf-login-password-id"]').then((passwordInput) => expect(passwordInput.text()).to.equal(''));
     cy.get('#pf-login-remember-me-id').then((rememberMeBox) => expect(rememberMeBox.is(':checked')).to.be.false);
-    cy.get('.pf-v5-c-form__helper-text .pf-m-error').should('not.exist');
-    cy.get('.pf-v5-c-login__main-footer-links')
-      .find('.pf-v5-c-login__main-footer-links-item')
+    cy.get('.pf-v6-c-form__helper-text .pf-m-error').should('not.exist');
+    cy.get('.pf-v6-c-login__main-footer-links')
+      .find('.pf-v6-c-login__main-footer-links-item')
       .then((links) => expect(links.length).to.equal(5));
   });
 
   it('Verify error is shown on invalid credentials', () => {
-    cy.get('.pf-v5-c-login__main-body .pf-v5-c-button.pf-m-primary').then((loginButton: JQuery<HTMLButtonElement>) => {
+    cy.get('.pf-v6-c-login__main-body .pf-v6-c-button.pf-m-primary').then((loginButton: JQuery<HTMLButtonElement>) => {
       cy.wrap(loginButton).click();
-      cy.get('.pf-v5-c-form__helper-text .pf-m-error').then((errorMessage) => {
+      cy.get('.pf-v6-c-form__helper-text .pf-m-error').then((errorMessage) => {
         expect(errorMessage.length).to.equal(1);
       });
       cy.get('input[name="pf-login-username-id"][aria-invalid="true"]').then((userNameInput) => {

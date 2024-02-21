@@ -3,14 +3,14 @@
 exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
 <DocumentFragment>
   <li
-    class="pf-v5-c-multiple-file-upload__status-item"
+    class="pf-v6-c-multiple-file-upload__status-item"
   >
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-icon"
+      class="pf-v6-c-multiple-file-upload__status-item-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -23,33 +23,33 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
       </svg>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-main"
+      class="pf-v6-c-multiple-file-upload__status-item-main"
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-v6-screen-reader"
       >
         Progress value is 0%.
       </div>
       <div
-        class="pf-v5-c-progress"
+        class="pf-v6-c-progress"
         id="test-progress-id"
       >
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__description"
+          class="pf-v6-c-progress__description"
           id="test-progress-id-description"
         >
           <span
-            class="pf-v5-c-multiple-file-upload__status-item-progress"
+            class="pf-v6-c-multiple-file-upload__status-item-progress"
           >
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-text"
             >
               testFile.txt
             </span>
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-size"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-size"
             >
               3B
             </span>
@@ -57,10 +57,10 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
         </div>
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__status"
+          class="pf-v6-c-progress__status"
         >
           <span
-            class="pf-v5-c-progress__measure"
+            class="pf-v6-c-progress__measure"
           >
             0%
           </span>
@@ -71,27 +71,27 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="0"
-          class="pf-v5-c-progress__bar"
+          class="pf-v6-c-progress__bar"
           role="progressbar"
         >
           <div
-            class="pf-v5-c-progress__indicator"
+            class="pf-v6-c-progress__indicator"
             style="width: 0%;"
           >
             <span
-              class="pf-v5-c-progress__measure"
+              class="pf-v6-c-progress__measure"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
+      class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
         aria-disabled="false"
         aria-label="buttonAriaLabel"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-8"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -99,7 +99,7 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -119,14 +119,14 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
 exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
 <DocumentFragment>
   <li
-    class="pf-v5-c-multiple-file-upload__status-item test"
+    class="pf-v6-c-multiple-file-upload__status-item test"
   >
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-icon"
+      class="pf-v6-c-multiple-file-upload__status-item-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -139,31 +139,31 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
       </svg>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-main"
+      class="pf-v6-c-multiple-file-upload__status-item-main"
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-v6-screen-reader"
       >
         Progress value is 0%.
       </div>
       <div
-        class="pf-v5-c-progress"
+        class="pf-v6-c-progress"
         id="test-progress-id"
       >
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__description"
+          class="pf-v6-c-progress__description"
           id="test-progress-id-description"
         >
           <span
-            class="pf-v5-c-multiple-file-upload__status-item-progress"
+            class="pf-v6-c-multiple-file-upload__status-item-progress"
           >
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-text"
             />
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-size"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-size"
             >
               0B
             </span>
@@ -171,10 +171,10 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
         </div>
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__status"
+          class="pf-v6-c-progress__status"
         >
           <span
-            class="pf-v5-c-progress__measure"
+            class="pf-v6-c-progress__measure"
           >
             0%
           </span>
@@ -184,27 +184,27 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="0"
-          class="pf-v5-c-progress__bar"
+          class="pf-v6-c-progress__bar"
           role="progressbar"
         >
           <div
-            class="pf-v5-c-progress__indicator"
+            class="pf-v6-c-progress__indicator"
             style="width: 0%;"
           >
             <span
-              class="pf-v5-c-progress__measure"
+              class="pf-v6-c-progress__measure"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
+      class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
         aria-disabled="false"
         aria-label="Remove from list"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-2"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -212,7 +212,7 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -232,14 +232,14 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
 exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progressAriaLiveMessage when passed 1`] = `
 <DocumentFragment>
   <li
-    class="pf-v5-c-multiple-file-upload__status-item"
+    class="pf-v6-c-multiple-file-upload__status-item"
   >
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-icon"
+      class="pf-v6-c-multiple-file-upload__status-item-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -252,33 +252,33 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
       </svg>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-main"
+      class="pf-v6-c-multiple-file-upload__status-item-main"
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-v6-screen-reader"
       >
         test message
       </div>
       <div
-        class="pf-v5-c-progress"
+        class="pf-v6-c-progress"
         id="test-progress-id"
       >
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__description"
+          class="pf-v6-c-progress__description"
           id="test-progress-id-description"
         >
           <span
-            class="pf-v5-c-multiple-file-upload__status-item-progress"
+            class="pf-v6-c-multiple-file-upload__status-item-progress"
           >
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-text"
             >
               testCustomFileName.txt
             </span>
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-size"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-size"
             >
               42
             </span>
@@ -286,10 +286,10 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
         </div>
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__status"
+          class="pf-v6-c-progress__status"
         >
           <span
-            class="pf-v5-c-progress__measure"
+            class="pf-v6-c-progress__measure"
           >
             0%
           </span>
@@ -299,27 +299,27 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="0"
-          class="pf-v5-c-progress__bar"
+          class="pf-v6-c-progress__bar"
           role="progressbar"
         >
           <div
-            class="pf-v5-c-progress__indicator"
+            class="pf-v6-c-progress__indicator"
             style="width: 0%;"
           >
             <span
-              class="pf-v5-c-progress__measure"
+              class="pf-v6-c-progress__measure"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
+      class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
         aria-disabled="false"
         aria-label="Remove from list"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-4"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -327,7 +327,7 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -347,14 +347,14 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
 exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMessage when passed 1`] = `
 <DocumentFragment>
   <li
-    class="pf-v5-c-multiple-file-upload__status-item"
+    class="pf-v6-c-multiple-file-upload__status-item"
   >
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-icon"
+      class="pf-v6-c-multiple-file-upload__status-item-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -367,33 +367,33 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
       </svg>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-main"
+      class="pf-v6-c-multiple-file-upload__status-item-main"
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-v6-screen-reader"
       >
         test message 0
       </div>
       <div
-        class="pf-v5-c-progress"
+        class="pf-v6-c-progress"
         id="test-progress-id"
       >
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__description"
+          class="pf-v6-c-progress__description"
           id="test-progress-id-description"
         >
           <span
-            class="pf-v5-c-multiple-file-upload__status-item-progress"
+            class="pf-v6-c-multiple-file-upload__status-item-progress"
           >
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-text"
             >
               testCustomFileName.txt
             </span>
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-size"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-size"
             >
               42
             </span>
@@ -401,10 +401,10 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
         </div>
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__status"
+          class="pf-v6-c-progress__status"
         >
           <span
-            class="pf-v5-c-progress__measure"
+            class="pf-v6-c-progress__measure"
           >
             0%
           </span>
@@ -414,27 +414,27 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="0"
-          class="pf-v5-c-progress__bar"
+          class="pf-v6-c-progress__bar"
           role="progressbar"
         >
           <div
-            class="pf-v5-c-progress__indicator"
+            class="pf-v6-c-progress__indicator"
             style="width: 0%;"
           >
             <span
-              class="pf-v5-c-progress__measure"
+              class="pf-v6-c-progress__measure"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
+      class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
         aria-disabled="false"
         aria-label="Remove from list"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-5"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -442,7 +442,7 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -462,14 +462,14 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
 exports[`MultipleFileUploadStatusItem renders custom progress value/variant when passed 1`] = `
 <DocumentFragment>
   <li
-    class="pf-v5-c-multiple-file-upload__status-item"
+    class="pf-v6-c-multiple-file-upload__status-item"
   >
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-icon"
+      class="pf-v6-c-multiple-file-upload__status-item-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -482,33 +482,33 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
       </svg>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-main"
+      class="pf-v6-c-multiple-file-upload__status-item-main"
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-v6-screen-reader"
       >
         Progress value is 42%.
       </div>
       <div
-        class="pf-v5-c-progress pf-m-warning"
+        class="pf-v6-c-progress pf-m-warning"
         id="test-progress-id"
       >
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__description"
+          class="pf-v6-c-progress__description"
           id="test-progress-id-description"
         >
           <span
-            class="pf-v5-c-multiple-file-upload__status-item-progress"
+            class="pf-v6-c-multiple-file-upload__status-item-progress"
           >
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-text"
             >
               testFile.txt
             </span>
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-size"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-size"
             >
               3B
             </span>
@@ -516,19 +516,19 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
         </div>
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__status"
+          class="pf-v6-c-progress__status"
         >
           <span
-            class="pf-v5-c-progress__measure"
+            class="pf-v6-c-progress__measure"
           >
             42%
           </span>
           <span
-            class="pf-v5-c-progress__status-icon"
+            class="pf-v6-c-progress__status-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"
@@ -546,27 +546,27 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="42"
-          class="pf-v5-c-progress__bar"
+          class="pf-v6-c-progress__bar"
           role="progressbar"
         >
           <div
-            class="pf-v5-c-progress__indicator"
+            class="pf-v6-c-progress__indicator"
             style="width: 42%;"
           >
             <span
-              class="pf-v5-c-progress__measure"
+              class="pf-v6-c-progress__measure"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
+      class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
         aria-disabled="false"
         aria-label="Remove from list"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-7"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -574,7 +574,7 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -594,14 +594,14 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
 exports[`MultipleFileUploadStatusItem renders expected values from a passed file object 1`] = `
 <DocumentFragment>
   <li
-    class="pf-v5-c-multiple-file-upload__status-item"
+    class="pf-v6-c-multiple-file-upload__status-item"
   >
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-icon"
+      class="pf-v6-c-multiple-file-upload__status-item-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -614,33 +614,33 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
       </svg>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-main"
+      class="pf-v6-c-multiple-file-upload__status-item-main"
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-v6-screen-reader"
       >
         Progress value is 0%.
       </div>
       <div
-        class="pf-v5-c-progress"
+        class="pf-v6-c-progress"
         id="test-progress-id"
       >
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__description"
+          class="pf-v6-c-progress__description"
           id="test-progress-id-description"
         >
           <span
-            class="pf-v5-c-multiple-file-upload__status-item-progress"
+            class="pf-v6-c-multiple-file-upload__status-item-progress"
           >
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-text"
             >
               testFile.txt
             </span>
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-size"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-size"
             >
               3B
             </span>
@@ -648,10 +648,10 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
         </div>
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__status"
+          class="pf-v6-c-progress__status"
         >
           <span
-            class="pf-v5-c-progress__measure"
+            class="pf-v6-c-progress__measure"
           >
             0%
           </span>
@@ -661,27 +661,27 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="0"
-          class="pf-v5-c-progress__bar"
+          class="pf-v6-c-progress__bar"
           role="progressbar"
         >
           <div
-            class="pf-v5-c-progress__indicator"
+            class="pf-v6-c-progress__indicator"
             style="width: 0%;"
           >
             <span
-              class="pf-v5-c-progress__measure"
+              class="pf-v6-c-progress__measure"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
+      class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
         aria-disabled="false"
         aria-label="Remove from list"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-3"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -689,7 +689,7 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -709,14 +709,14 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
 exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
 <DocumentFragment>
   <li
-    class="pf-v5-c-multiple-file-upload__status-item"
+    class="pf-v6-c-multiple-file-upload__status-item"
   >
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-icon"
+      class="pf-v6-c-multiple-file-upload__status-item-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -729,31 +729,31 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
       </svg>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-main"
+      class="pf-v6-c-multiple-file-upload__status-item-main"
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-v6-screen-reader"
       >
         Progress value is 0%.
       </div>
       <div
-        class="pf-v5-c-progress"
+        class="pf-v6-c-progress"
         id="test-progress-id"
       >
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__description"
+          class="pf-v6-c-progress__description"
           id="test-progress-id-description"
         >
           <span
-            class="pf-v5-c-multiple-file-upload__status-item-progress"
+            class="pf-v6-c-multiple-file-upload__status-item-progress"
           >
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-text"
             />
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-size"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-size"
             >
               0B
             </span>
@@ -761,10 +761,10 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
         </div>
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__status"
+          class="pf-v6-c-progress__status"
         >
           <span
-            class="pf-v5-c-progress__measure"
+            class="pf-v6-c-progress__measure"
           >
             0%
           </span>
@@ -774,27 +774,27 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="0"
-          class="pf-v5-c-progress__bar"
+          class="pf-v6-c-progress__bar"
           role="progressbar"
         >
           <div
-            class="pf-v5-c-progress__indicator"
+            class="pf-v6-c-progress__indicator"
             style="width: 0%;"
           >
             <span
-              class="pf-v5-c-progress__measure"
+              class="pf-v6-c-progress__measure"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
+      class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
         aria-disabled="false"
         aria-label="Remove from list"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -802,7 +802,7 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -822,14 +822,14 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
 exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage when nothing is passed 1`] = `
 <DocumentFragment>
   <li
-    class="pf-v5-c-multiple-file-upload__status-item"
+    class="pf-v6-c-multiple-file-upload__status-item"
   >
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-icon"
+      class="pf-v6-c-multiple-file-upload__status-item-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -842,33 +842,33 @@ exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage whe
       </svg>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-main"
+      class="pf-v6-c-multiple-file-upload__status-item-main"
     >
       <div
         aria-live="polite"
-        class="pf-v5-screen-reader"
+        class="pf-v6-screen-reader"
       >
         Progress value is 0%.
       </div>
       <div
-        class="pf-v5-c-progress"
+        class="pf-v6-c-progress"
         id="test-progress-id"
       >
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__description"
+          class="pf-v6-c-progress__description"
           id="test-progress-id-description"
         >
           <span
-            class="pf-v5-c-multiple-file-upload__status-item-progress"
+            class="pf-v6-c-multiple-file-upload__status-item-progress"
           >
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-text"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-text"
             >
               testCustomFileName.txt
             </span>
             <span
-              class="pf-v5-c-multiple-file-upload__status-item-progress-size"
+              class="pf-v6-c-multiple-file-upload__status-item-progress-size"
             >
               42
             </span>
@@ -876,10 +876,10 @@ exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage whe
         </div>
         <div
           aria-hidden="true"
-          class="pf-v5-c-progress__status"
+          class="pf-v6-c-progress__status"
         >
           <span
-            class="pf-v5-c-progress__measure"
+            class="pf-v6-c-progress__measure"
           >
             0%
           </span>
@@ -889,27 +889,27 @@ exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage whe
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="0"
-          class="pf-v5-c-progress__bar"
+          class="pf-v6-c-progress__bar"
           role="progressbar"
         >
           <div
-            class="pf-v5-c-progress__indicator"
+            class="pf-v6-c-progress__indicator"
             style="width: 0%;"
           >
             <span
-              class="pf-v5-c-progress__measure"
+              class="pf-v6-c-progress__measure"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="pf-v5-c-multiple-file-upload__status-item-close"
+      class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
         aria-disabled="false"
         aria-label="Remove from list"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-6"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -917,7 +917,7 @@ exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage whe
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"

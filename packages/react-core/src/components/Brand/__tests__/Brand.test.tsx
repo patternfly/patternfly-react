@@ -106,6 +106,6 @@ test('width styles are present when passed', () => {
   );
   expect(screen.getByAltText('brand with widths')).toHaveAttribute(
     'style',
-    '--pf-v5-c-brand--Width: 100px; --pf-v5-c-brand--Width-on-sm: 25px; --pf-v5-c-brand--Width-on-md: 50px; --pf-v5-c-brand--Width-on-lg: 100px; --pf-v5-c-brand--Width-on-xl: 125px; --pf-v5-c-brand--Width-on-2xl: 150px;'
+    '--pf-v6-c-brand--Width: 100px; --pf-v6-c-brand--Width-on-sm: 25px; --pf-v6-c-brand--Width-on-md: 50px; --pf-v6-c-brand--Width-on-lg: 100px; --pf-v6-c-brand--Width-on-xl: 125px; --pf-v6-c-brand--Width-on-2xl: 150px;'
   );
 });

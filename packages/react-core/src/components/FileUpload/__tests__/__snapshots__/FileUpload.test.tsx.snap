@@ -3,20 +3,20 @@
 exports[`simple fileupload 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-file-upload"
+    class="pf-v6-c-file-upload"
     role="presentation"
   >
     <div
-      class="pf-v5-c-file-upload__file-select"
+      class="pf-v6-c-file-upload__file-select"
     >
       <div
-        class="pf-v5-c-input-group"
+        class="pf-v6-c-input-group"
       >
         <div
-          class="pf-v5-c-input-group__item pf-m-fill"
+          class="pf-v6-c-input-group__item pf-m-fill"
         >
           <span
-            class="pf-v5-c-form-control pf-m-readonly"
+            class="pf-v6-c-form-control pf-m-readonly"
           >
             <input
               aria-invalid="false"
@@ -34,11 +34,11 @@ exports[`simple fileupload 1`] = `
           </span>
         </div>
         <div
-          class="pf-v5-c-input-group__item"
+          class="pf-v6-c-input-group__item"
         >
           <button
             aria-disabled="false"
-            class="pf-v5-c-button pf-m-control"
+            class="pf-v6-c-button pf-m-control"
             data-ouia-component-id="OUIA-Generated-Button-control-1"
             data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
@@ -48,11 +48,11 @@ exports[`simple fileupload 1`] = `
           </button>
         </div>
         <div
-          class="pf-v5-c-input-group__item"
+          class="pf-v6-c-input-group__item"
         >
           <button
             aria-disabled="true"
-            class="pf-v5-c-button pf-m-control pf-m-disabled"
+            class="pf-v6-c-button pf-m-control pf-m-disabled"
             data-ouia-component-id="OUIA-Generated-Button-control-2"
             data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
@@ -65,10 +65,10 @@ exports[`simple fileupload 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-file-upload__file-details"
+      class="pf-v6-c-file-upload__file-details"
     >
       <span
-        class="pf-v5-c-form-control pf-m-resize-vertical"
+        class="pf-v6-c-form-control pf-m-resize-vertical"
       >
         <textarea
           aria-invalid="false"

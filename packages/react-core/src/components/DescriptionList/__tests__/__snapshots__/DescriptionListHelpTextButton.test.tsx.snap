@@ -3,7 +3,7 @@
 exports[`Renders to match snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-description-list__text pf-m-help-text"
+    class="pf-v6-c-description-list__text pf-m-help-text"
     role="button"
     tabindex="0"
     type="button"

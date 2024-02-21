@@ -3,7 +3,7 @@
 exports[`Cells renders to match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-data-list__item-content"
+    class="pf-v6-c-data-list__item-content"
   />
 </DocumentFragment>
 `;

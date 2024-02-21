@@ -3,7 +3,7 @@
 exports[`NotificationDrawerList drawer list with hidden applied  1`] = `
 <DocumentFragment>
   <ul
-    class="pf-v5-c-notification-drawer__list"
+    class="pf-v6-c-notification-drawer__list"
     hidden=""
     role="list"
   />
@@ -13,7 +13,7 @@ exports[`NotificationDrawerList drawer list with hidden applied  1`] = `
 exports[`NotificationDrawerList renders with PatternFly Core styles 1`] = `
 <DocumentFragment>
   <ul
-    class="pf-v5-c-notification-drawer__list"
+    class="pf-v6-c-notification-drawer__list"
     role="list"
   />
 </DocumentFragment>

@@ -14,7 +14,7 @@ function getCSSClasses(cssString) {
  * @param {string} className - Class name
  */
 function formatClassName(className) {
-  return camelcase(className.replace(/pf-(v5-)?((c|l|m|u|is|has)-)?/g, ''));
+  return camelcase(className.replace(/pf-(v6-)?((c|l|m|u|is|has)-)?/g, ''));
 }
 
 /**

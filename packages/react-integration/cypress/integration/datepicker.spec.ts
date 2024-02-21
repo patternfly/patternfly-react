@@ -4,7 +4,7 @@ it('Navigate to demo section', () => {
 
 // TODO: Reenable with issue  #8457
 xit('Verify validation error can be cleared from outside', () => {
-  cy.get('#date-picker-validator > .pf-v5-c-date-picker')
+  cy.get('#date-picker-validator > .pf-v6-c-date-picker')
     .children()
     .within(() => {
       cy.get('input');
@@ -19,7 +19,7 @@ xit('Verify validation error can be cleared from outside', () => {
 });
 
 it('Verify error can be cleared when resetting the date from outside', () => {
-  cy.get('#date-picker-clear .pf-v5-c-form-control input').click();
+  cy.get('#date-picker-clear .pf-v6-c-form-control input').click();
   cy.focused().clear().type('something invalid');
   cy.focused().blur();
   cy.get('div.pf-m-error').should('exist');
@@ -28,9 +28,9 @@ it('Verify error can be cleared when resetting the date from outside', () => {
 });
 
 it('Verify calendar state can be controlled', () => {
-  cy.get('#date-picker-controlled .pf-v5-c-popover').should('not.exist');
+  cy.get('#date-picker-controlled .pf-v6-c-popover').should('not.exist');
   cy.get('button').contains('Toggle').click();
-  cy.get('#date-picker-controlled .pf-v5-c-popover').should('exist');
+  cy.get('#date-picker-controlled .pf-v6-c-popover').should('exist');
   cy.get('button').contains('Toggle').click();
-  cy.get('#date-picker-controlled .pf-v5-c-popover').should('not.exist');
+  cy.get('#date-picker-controlled .pf-v6-c-popover').should('not.exist');
 });

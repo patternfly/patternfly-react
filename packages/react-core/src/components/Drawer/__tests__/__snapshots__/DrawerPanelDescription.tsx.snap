@@ -3,7 +3,7 @@
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-drawer__description"
+    class="pf-v6-c-drawer__description"
   >
     description content
   </div>

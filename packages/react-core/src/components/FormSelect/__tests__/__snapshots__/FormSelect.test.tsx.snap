@@ -3,7 +3,7 @@
 exports[`FormSelect Disabled FormSelect input  1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-form-control pf-m-disabled"
+    class="pf-v6-c-form-control pf-m-disabled"
   >
     <select
       aria-invalid="false"
@@ -21,14 +21,14 @@ exports[`FormSelect Disabled FormSelect input  1`] = `
       </option>
     </select>
     <span
-      class="pf-v5-c-form-control__utilities"
+      class="pf-v6-c-form-control__utilities"
     >
       <span
-        class="pf-v5-c-form-control__toggle-icon"
+        class="pf-v6-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -48,7 +48,7 @@ exports[`FormSelect Disabled FormSelect input  1`] = `
 exports[`FormSelect FormSelect input with aria-label does not generate console error 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-form-control"
+    class="pf-v6-c-form-control"
   >
     <select
       aria-invalid="false"
@@ -65,14 +65,14 @@ exports[`FormSelect FormSelect input with aria-label does not generate console e
       </option>
     </select>
     <span
-      class="pf-v5-c-form-control__utilities"
+      class="pf-v6-c-form-control__utilities"
     >
       <span
-        class="pf-v5-c-form-control__toggle-icon"
+        class="pf-v6-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -92,7 +92,7 @@ exports[`FormSelect FormSelect input with aria-label does not generate console e
 exports[`FormSelect FormSelect input with id does not generate console error 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-form-control"
+    class="pf-v6-c-form-control"
   >
     <select
       aria-invalid="false"
@@ -110,14 +110,14 @@ exports[`FormSelect FormSelect input with id does not generate console error 1`]
       </option>
     </select>
     <span
-      class="pf-v5-c-form-control__utilities"
+      class="pf-v6-c-form-control__utilities"
     >
       <span
-        class="pf-v5-c-form-control__toggle-icon"
+        class="pf-v6-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -137,7 +137,7 @@ exports[`FormSelect FormSelect input with id does not generate console error 1`]
 exports[`FormSelect FormSelect input with no aria-label or id generates console error 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-form-control"
+    class="pf-v6-c-form-control"
   >
     <select
       aria-invalid="false"
@@ -153,14 +153,14 @@ exports[`FormSelect FormSelect input with no aria-label or id generates console 
       </option>
     </select>
     <span
-      class="pf-v5-c-form-control__utilities"
+      class="pf-v6-c-form-control__utilities"
     >
       <span
-        class="pf-v5-c-form-control__toggle-icon"
+        class="pf-v6-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -180,7 +180,7 @@ exports[`FormSelect FormSelect input with no aria-label or id generates console 
 exports[`FormSelect Grouped FormSelect input 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-form-control"
+    class="pf-v6-c-form-control"
   >
     <select
       aria-invalid="false"
@@ -243,14 +243,14 @@ exports[`FormSelect Grouped FormSelect input 1`] = `
       </optgroup>
     </select>
     <span
-      class="pf-v5-c-form-control__utilities"
+      class="pf-v6-c-form-control__utilities"
     >
       <span
-        class="pf-v5-c-form-control__toggle-icon"
+        class="pf-v6-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -270,7 +270,7 @@ exports[`FormSelect Grouped FormSelect input 1`] = `
 exports[`FormSelect Simple FormSelect input 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-form-control"
+    class="pf-v6-c-form-control"
   >
     <select
       aria-invalid="false"
@@ -325,14 +325,14 @@ exports[`FormSelect Simple FormSelect input 1`] = `
       </option>
     </select>
     <span
-      class="pf-v5-c-form-control__utilities"
+      class="pf-v6-c-form-control__utilities"
     >
       <span
-        class="pf-v5-c-form-control__toggle-icon"
+        class="pf-v6-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -352,7 +352,7 @@ exports[`FormSelect Simple FormSelect input 1`] = `
 exports[`FormSelect invalid FormSelect input 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-form-control pf-m-error"
+    class="pf-v6-c-form-control pf-m-error"
   >
     <select
       aria-invalid="true"
@@ -369,14 +369,14 @@ exports[`FormSelect invalid FormSelect input 1`] = `
       </option>
     </select>
     <span
-      class="pf-v5-c-form-control__utilities"
+      class="pf-v6-c-form-control__utilities"
     >
       <span
-        class="pf-v5-c-form-control__icon pf-m-status"
+        class="pf-v6-c-form-control__icon pf-m-status"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -389,11 +389,11 @@ exports[`FormSelect invalid FormSelect input 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-form-control__toggle-icon"
+        class="pf-v6-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -413,7 +413,7 @@ exports[`FormSelect invalid FormSelect input 1`] = `
 exports[`FormSelect validated success FormSelect input 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-form-control pf-m-success"
+    class="pf-v6-c-form-control pf-m-success"
   >
     <select
       aria-invalid="false"
@@ -430,14 +430,14 @@ exports[`FormSelect validated success FormSelect input 1`] = `
       </option>
     </select>
     <span
-      class="pf-v5-c-form-control__utilities"
+      class="pf-v6-c-form-control__utilities"
     >
       <span
-        class="pf-v5-c-form-control__icon pf-m-status"
+        class="pf-v6-c-form-control__icon pf-m-status"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -450,11 +450,11 @@ exports[`FormSelect validated success FormSelect input 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-form-control__toggle-icon"
+        class="pf-v6-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -474,7 +474,7 @@ exports[`FormSelect validated success FormSelect input 1`] = `
 exports[`FormSelect validated warning FormSelect input 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-form-control pf-m-warning"
+    class="pf-v6-c-form-control pf-m-warning"
   >
     <select
       aria-invalid="false"
@@ -491,14 +491,14 @@ exports[`FormSelect validated warning FormSelect input 1`] = `
       </option>
     </select>
     <span
-      class="pf-v5-c-form-control__utilities"
+      class="pf-v6-c-form-control__utilities"
     >
       <span
-        class="pf-v5-c-form-control__icon pf-m-status"
+        class="pf-v6-c-form-control__icon pf-m-status"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -511,11 +511,11 @@ exports[`FormSelect validated warning FormSelect input 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-form-control__toggle-icon"
+        class="pf-v6-c-form-control__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"

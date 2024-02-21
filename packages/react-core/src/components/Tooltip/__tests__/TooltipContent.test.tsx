@@ -9,7 +9,7 @@ test('Renders with children', () => {
   expect(screen.getByText('Test content')).toBeVisible();
 });
 
-test('Renders with class name pf-v5-c-tooltip__content by default', () => {
+test('Renders with class name pf-v6-c-tooltip__content by default', () => {
   render(<TooltipContent>Test content</TooltipContent>);
 
   expect(screen.getByText('Test content')).toHaveClass(styles.tooltipContent);

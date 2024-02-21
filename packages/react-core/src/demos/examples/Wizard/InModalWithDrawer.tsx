@@ -51,7 +51,7 @@ export const WizardModalWithDrawerDemo: React.FunctionComponent = () => {
         }
       >
         <Flex
-          className="pf-v5-c-wizard__main-body"
+          className="pf-v6-c-wizard__main-body"
           direction={{ default: 'column' }}
           spaceItems={{ default: 'spaceItemsLg' }}
           height="100%"

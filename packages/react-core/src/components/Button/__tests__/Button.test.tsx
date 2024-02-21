@@ -28,9 +28,9 @@ test('Renders without children', () => {
   expect(screen.getByTestId('container').firstChild).toBeVisible();
 });
 
-test('Renders with class pf-v5-c-button by default', () => {
+test('Renders with class pf-v6-c-button by default', () => {
   render(<Button>Button</Button>);
-  expect(screen.getByRole('button')).toHaveClass('pf-v5-c-button');
+  expect(screen.getByRole('button')).toHaveClass('pf-v6-c-button');
 });
 
 test('Renders with class pf-m-primary by default', () => {

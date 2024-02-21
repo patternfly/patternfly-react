@@ -3,11 +3,11 @@
 exports[`Detached ExpandableSection renders successfully 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-expandable-section pf-m-expanded"
+    class="pf-v6-c-expandable-section pf-m-expanded"
   >
     <div
       aria-labelledby="toggle-id"
-      class="pf-v5-c-expandable-section__content"
+      class="pf-v6-c-expandable-section__content"
       id="content-id"
       role="region"
     >
@@ -15,21 +15,21 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
     </div>
   </div>
   <div
-    class="pf-v5-c-expandable-section pf-m-expanded"
+    class="pf-v6-c-expandable-section pf-m-expanded"
   >
     <button
       aria-controls="content-id"
       aria-expanded="true"
-      class="pf-v5-c-expandable-section__toggle"
+      class="pf-v6-c-expandable-section__toggle"
       id="toggle-id"
       type="button"
     >
       <span
-        class="pf-v5-c-expandable-section__toggle-icon pf-m-expand-top"
+        class="pf-v6-c-expandable-section__toggle-icon pf-m-expand-top"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -42,7 +42,7 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-expandable-section__toggle-text"
+        class="pf-v6-c-expandable-section__toggle-text"
       >
         Toggle text
       </span>
@@ -54,20 +54,20 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
 exports[`Disclosure ExpandableSection 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-expandable-section pf-m-display-lg pf-m-limit-width"
+    class="pf-v6-c-expandable-section pf-m-display-lg pf-m-limit-width"
   >
     <button
       aria-controls="content-id"
-      class="pf-v5-c-expandable-section__toggle"
+      class="pf-v6-c-expandable-section__toggle"
       id="toggle-id"
       type="button"
     >
       <span
-        class="pf-v5-c-expandable-section__toggle-icon"
+        class="pf-v6-c-expandable-section__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -80,12 +80,12 @@ exports[`Disclosure ExpandableSection 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-expandable-section__toggle-text"
+        class="pf-v6-c-expandable-section__toggle-text"
       />
     </button>
     <div
       aria-labelledby="toggle-id"
-      class="pf-v5-c-expandable-section__content"
+      class="pf-v6-c-expandable-section__content"
       hidden=""
       id="content-id"
       role="region"
@@ -99,20 +99,20 @@ exports[`Disclosure ExpandableSection 1`] = `
 exports[`ExpandableSection 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-expandable-section"
+    class="pf-v6-c-expandable-section"
   >
     <button
       aria-controls="content-id"
-      class="pf-v5-c-expandable-section__toggle"
+      class="pf-v6-c-expandable-section__toggle"
       id="toggle-id"
       type="button"
     >
       <span
-        class="pf-v5-c-expandable-section__toggle-icon"
+        class="pf-v6-c-expandable-section__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -125,12 +125,12 @@ exports[`ExpandableSection 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-expandable-section__toggle-text"
+        class="pf-v6-c-expandable-section__toggle-text"
       />
     </button>
     <div
       aria-labelledby="toggle-id"
-      class="pf-v5-c-expandable-section__content"
+      class="pf-v6-c-expandable-section__content"
       hidden=""
       id="content-id"
       role="region"
@@ -144,21 +144,21 @@ exports[`ExpandableSection 1`] = `
 exports[`Renders ExpandableSection expanded 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-expandable-section pf-m-expanded"
+    class="pf-v6-c-expandable-section pf-m-expanded"
   >
     <button
       aria-controls="content-id"
       aria-expanded="true"
-      class="pf-v5-c-expandable-section__toggle"
+      class="pf-v6-c-expandable-section__toggle"
       id="toggle-id"
       type="button"
     >
       <span
-        class="pf-v5-c-expandable-section__toggle-icon"
+        class="pf-v6-c-expandable-section__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -171,12 +171,12 @@ exports[`Renders ExpandableSection expanded 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-expandable-section__toggle-text"
+        class="pf-v6-c-expandable-section__toggle-text"
       />
     </button>
     <div
       aria-labelledby="toggle-id"
-      class="pf-v5-c-expandable-section__content"
+      class="pf-v6-c-expandable-section__content"
       id="content-id"
       role="region"
     >
@@ -189,21 +189,21 @@ exports[`Renders ExpandableSection expanded 1`] = `
 exports[`Renders ExpandableSection indented 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-expandable-section pf-m-expanded pf-m-indented"
+    class="pf-v6-c-expandable-section pf-m-expanded pf-m-indented"
   >
     <button
       aria-controls="content-id"
       aria-expanded="true"
-      class="pf-v5-c-expandable-section__toggle"
+      class="pf-v6-c-expandable-section__toggle"
       id="toggle-id"
       type="button"
     >
       <span
-        class="pf-v5-c-expandable-section__toggle-icon"
+        class="pf-v6-c-expandable-section__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -216,12 +216,12 @@ exports[`Renders ExpandableSection indented 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-expandable-section__toggle-text"
+        class="pf-v6-c-expandable-section__toggle-text"
       />
     </button>
     <div
       aria-labelledby="toggle-id"
-      class="pf-v5-c-expandable-section__content"
+      class="pf-v6-c-expandable-section__content"
       id="content-id"
       role="region"
     >
@@ -234,20 +234,20 @@ exports[`Renders ExpandableSection indented 1`] = `
 exports[`Renders Uncontrolled ExpandableSection 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-expandable-section"
+    class="pf-v6-c-expandable-section"
   >
     <button
       aria-controls="content-id"
-      class="pf-v5-c-expandable-section__toggle"
+      class="pf-v6-c-expandable-section__toggle"
       id="toggle-id"
       type="button"
     >
       <span
-        class="pf-v5-c-expandable-section__toggle-icon"
+        class="pf-v6-c-expandable-section__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -260,14 +260,14 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
         </svg>
       </span>
       <span
-        class="pf-v5-c-expandable-section__toggle-text"
+        class="pf-v6-c-expandable-section__toggle-text"
       >
         Show More
       </span>
     </button>
     <div
       aria-labelledby="toggle-id"
-      class="pf-v5-c-expandable-section__content"
+      class="pf-v6-c-expandable-section__content"
       hidden=""
       id="content-id"
       role="region"

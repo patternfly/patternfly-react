@@ -33,7 +33,7 @@ jest.mock('../../../../components/Tooltip', () => ({
       </Chip>
     );
 
-    // Only a non-overflow chip will have exactly the class "pf-v5-c-chip", we test for
+    // Only a non-overflow chip will have exactly the class "pf-v6-c-chip", we test for
     // additional classes on overflow chips elsewhere in the suite
     expect(screen.getByTestId('container')).toHaveClass(
       isOverflowChip ? `${styles.label} ${styles.modifiers.overflow}` : `${styles.label} ${styles.modifiers.outline}`,
@@ -86,7 +86,7 @@ jest.mock('../../../../components/Tooltip', () => ({
       </Chip>
     );
 
-    expect(screen.getByText('Chip text')).toHaveAttribute('style', '--pf-v5-c-label__text--MaxWidth: 10px;');
+    expect(screen.getByText('Chip text')).toHaveAttribute('style', '--pf-v6-c-label__text--MaxWidth: 10px;');
   });
 
   test(`Spreads additional props to container for ${chipType}`, () => {

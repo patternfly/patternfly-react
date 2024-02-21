@@ -6,26 +6,26 @@ exports[`SearchInput advanced search 1`] = `
     class=""
   >
     <div
-      class="pf-v5-c-input-group"
+      class="pf-v6-c-input-group"
     >
       <div
-        class="pf-v5-c-input-group__item pf-m-fill"
+        class="pf-v6-c-input-group__item pf-m-fill"
       >
         <div
-          class="pf-v5-c-text-input-group"
+          class="pf-v6-c-text-input-group"
         >
           <div
-            class="pf-v5-c-text-input-group__main pf-m-icon"
+            class="pf-v6-c-text-input-group__main pf-m-icon"
           >
             <span
-              class="pf-v5-c-text-input-group__text"
+              class="pf-v6-c-text-input-group__text"
             >
               <span
-                class="pf-v5-c-text-input-group__icon"
+                class="pf-v6-c-text-input-group__icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v5-svg"
+                  class="pf-v6-svg"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -39,24 +39,24 @@ exports[`SearchInput advanced search 1`] = `
               </span>
               <input
                 aria-label="Search input"
-                class="pf-v5-c-text-input-group__text-input"
+                class="pf-v6-c-text-input-group__text-input"
                 type="text"
                 value="username:player firstname:john"
               />
             </span>
           </div>
           <div
-            class="pf-v5-c-text-input-group__utilities"
+            class="pf-v6-c-text-input-group__utilities"
           >
             <button
               aria-disabled="false"
               aria-label="Reset"
-              class="pf-v5-c-button pf-m-plain"
+              class="pf-v6-c-button pf-m-plain"
               type="button"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -72,18 +72,18 @@ exports[`SearchInput advanced search 1`] = `
         </div>
       </div>
       <div
-        class="pf-v5-c-input-group__item pf-m-plain"
+        class="pf-v6-c-input-group__item pf-m-plain"
       >
         <button
           aria-disabled="false"
           aria-expanded="false"
           aria-label="Open advanced search"
-          class="pf-v5-c-button pf-m-control"
+          class="pf-v6-c-button pf-m-control"
           type="button"
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v6-svg"
             fill="currentColor"
             height="1em"
             role="img"
@@ -97,23 +97,23 @@ exports[`SearchInput advanced search 1`] = `
         </button>
       </div>
       <div
-        class="pf-v5-c-input-group__item"
+        class="pf-v6-c-input-group__item"
       >
         <button
           aria-disabled="false"
           aria-label="Search"
-          class="pf-v5-c-button pf-m-control"
+          class="pf-v6-c-button pf-m-control"
           type="submit"
         >
           <span
-            class="pf-v5-c-icon"
+            class="pf-v6-c-icon"
           >
             <span
-              class="pf-v5-c-icon__content pf-v5-m-mirror-inline-rtl"
+              class="pf-v6-c-icon__content pf-v6-m-mirror-inline-rtl"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -147,26 +147,26 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
     data-testid="test-id"
   >
     <div
-      class="pf-v5-c-input-group"
+      class="pf-v6-c-input-group"
     >
       <div
-        class="pf-v5-c-input-group__item pf-m-fill"
+        class="pf-v6-c-input-group__item pf-m-fill"
       >
         <div
-          class="pf-v5-c-text-input-group"
+          class="pf-v6-c-text-input-group"
         >
           <div
-            class="pf-v5-c-text-input-group__main pf-m-icon"
+            class="pf-v6-c-text-input-group__main pf-m-icon"
           >
             <span
-              class="pf-v5-c-text-input-group__text"
+              class="pf-v6-c-text-input-group__text"
             >
               <span
-                class="pf-v5-c-text-input-group__icon"
+                class="pf-v6-c-text-input-group__icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v5-svg"
+                  class="pf-v6-svg"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -180,24 +180,24 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
               </span>
               <input
                 aria-label="Search input"
-                class="pf-v5-c-text-input-group__text-input"
+                class="pf-v6-c-text-input-group__text-input"
                 type="text"
                 value="username:player firstname:john"
               />
             </span>
           </div>
           <div
-            class="pf-v5-c-text-input-group__utilities"
+            class="pf-v6-c-text-input-group__utilities"
           >
             <button
               aria-disabled="false"
               aria-label="Reset"
-              class="pf-v5-c-button pf-m-plain"
+              class="pf-v6-c-button pf-m-plain"
               type="button"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -213,18 +213,18 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
         </div>
       </div>
       <div
-        class="pf-v5-c-input-group__item pf-m-plain"
+        class="pf-v6-c-input-group__item pf-m-plain"
       >
         <button
           aria-disabled="false"
           aria-expanded="true"
           aria-label="Open advanced search"
-          class="pf-v5-c-button pf-m-control pf-m-expanded"
+          class="pf-v6-c-button pf-m-control pf-m-expanded"
           type="button"
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v6-svg"
             fill="currentColor"
             height="1em"
             role="img"
@@ -238,23 +238,23 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
         </button>
       </div>
       <div
-        class="pf-v5-c-input-group__item"
+        class="pf-v6-c-input-group__item"
       >
         <button
           aria-disabled="false"
           aria-label="Search"
-          class="pf-v5-c-button pf-m-control"
+          class="pf-v6-c-button pf-m-control"
           type="submit"
         >
           <span
-            class="pf-v5-c-icon"
+            class="pf-v6-c-icon"
           >
             <span
-              class="pf-v5-c-icon__content pf-v5-m-mirror-inline-rtl"
+              class="pf-v6-c-icon__content pf-v6-m-mirror-inline-rtl"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -278,30 +278,30 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
       style="position: absolute; top: 0px; left: 0px; transform: translate(0px, 0px); min-width: 0px; z-index: 9999; opacity: 1; transition: opacity 0ms cubic-bezier(.54, 1.5, .38, 1.11);"
     >
       <div
-        class="pf-v5-c-panel pf-m-raised"
+        class="pf-v6-c-panel pf-m-raised"
       >
         <div
-          class="pf-v5-c-panel__main"
+          class="pf-v6-c-panel__main"
         >
           <div
-            class="pf-v5-c-panel__main-body"
+            class="pf-v6-c-panel__main-body"
           >
             <form
-              class="pf-v5-c-form"
+              class="pf-v6-c-form"
               novalidate=""
             >
               <div
-                class="pf-v5-c-form__group"
+                class="pf-v6-c-form__group"
               >
                 <div
-                  class="pf-v5-c-form__group-label"
+                  class="pf-v6-c-form__group-label"
                 >
                   <label
-                    class="pf-v5-c-form__label"
+                    class="pf-v6-c-form__label"
                     for="username_0"
                   >
                     <span
-                      class="pf-v5-c-form__label-text"
+                      class="pf-v6-c-form__label-text"
                     >
                       Username
                     </span>
@@ -309,10 +309,10 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                    
                 </div>
                 <div
-                  class="pf-v5-c-form__group-control"
+                  class="pf-v6-c-form__group-control"
                 >
                   <span
-                    class="pf-v5-c-form-control"
+                    class="pf-v6-c-form-control"
                   >
                     <input
                       aria-invalid="false"
@@ -324,17 +324,17 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 </div>
               </div>
               <div
-                class="pf-v5-c-form__group"
+                class="pf-v6-c-form__group"
               >
                 <div
-                  class="pf-v5-c-form__group-label"
+                  class="pf-v6-c-form__group-label"
                 >
                   <label
-                    class="pf-v5-c-form__label"
+                    class="pf-v6-c-form__label"
                     for="firstname_1"
                   >
                     <span
-                      class="pf-v5-c-form__label-text"
+                      class="pf-v6-c-form__label-text"
                     >
                       First name
                     </span>
@@ -342,10 +342,10 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                    
                 </div>
                 <div
-                  class="pf-v5-c-form__group-control"
+                  class="pf-v6-c-form__group-control"
                 >
                   <span
-                    class="pf-v5-c-form-control"
+                    class="pf-v6-c-form-control"
                   >
                     <input
                       aria-invalid="false"
@@ -357,17 +357,17 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 </div>
               </div>
               <div
-                class="pf-v5-c-form__group"
+                class="pf-v6-c-form__group"
               >
                 <div
-                  class="pf-v5-c-form__group-label"
+                  class="pf-v6-c-form__group-label"
                 >
                   <label
-                    class="pf-v5-c-form__label"
+                    class="pf-v6-c-form__label"
                     for="pf-random-id-2"
                   >
                     <span
-                      class="pf-v5-c-form__label-text"
+                      class="pf-v6-c-form__label-text"
                     >
                       Has words
                     </span>
@@ -375,10 +375,10 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                    
                 </div>
                 <div
-                  class="pf-v5-c-form__group-control"
+                  class="pf-v6-c-form__group-control"
                 >
                   <span
-                    class="pf-v5-c-form-control"
+                    class="pf-v6-c-form-control"
                   >
                     <input
                       aria-invalid="false"
@@ -390,23 +390,23 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 </div>
               </div>
               <div
-                class="pf-v5-c-form__group"
+                class="pf-v6-c-form__group"
               >
                 <div
-                  class="pf-v5-c-form__group-control"
+                  class="pf-v6-c-form__group-control"
                 >
                   <button
                     aria-disabled="false"
-                    class="pf-v5-c-button pf-m-link pf-m-inline"
+                    class="pf-v6-c-button pf-m-link pf-m-inline"
                     type="button"
                   >
                     Link
                     <span
-                      class="pf-v5-c-button__icon pf-m-end"
+                      class="pf-v6-c-button__icon pf-m-end"
                     >
                       <svg
                         aria-hidden="true"
-                        class="pf-v5-svg"
+                        class="pf-v6-svg"
                         fill="currentColor"
                         height="1em"
                         role="img"
@@ -422,24 +422,24 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 </div>
               </div>
               <div
-                class="pf-v5-c-form__group pf-m-action"
+                class="pf-v6-c-form__group pf-m-action"
               >
                 <div
-                  class="pf-v5-c-form__group-control"
+                  class="pf-v6-c-form__group-control"
                 >
                   <div
-                    class="pf-v5-c-form__actions"
+                    class="pf-v6-c-form__actions"
                   >
                     <button
                       aria-disabled="false"
-                      class="pf-v5-c-button pf-m-primary"
+                      class="pf-v6-c-button pf-m-primary"
                       type="submit"
                     >
                       Search
                     </button>
                     <button
                       aria-disabled="false"
-                      class="pf-v5-c-button pf-m-link"
+                      class="pf-v6-c-button pf-m-link"
                       type="reset"
                     >
                       Reset
@@ -462,26 +462,26 @@ exports[`SearchInput renders search input in strict mode 1`] = `
     class=""
   >
     <div
-      class="pf-v5-c-input-group"
+      class="pf-v6-c-input-group"
     >
       <div
-        class="pf-v5-c-input-group__item pf-m-fill"
+        class="pf-v6-c-input-group__item pf-m-fill"
       >
         <div
-          class="pf-v5-c-text-input-group"
+          class="pf-v6-c-text-input-group"
         >
           <div
-            class="pf-v5-c-text-input-group__main pf-m-icon"
+            class="pf-v6-c-text-input-group__main pf-m-icon"
           >
             <span
-              class="pf-v5-c-text-input-group__text"
+              class="pf-v6-c-text-input-group__text"
             >
               <span
-                class="pf-v5-c-text-input-group__icon"
+                class="pf-v6-c-text-input-group__icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v5-svg"
+                  class="pf-v6-svg"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -495,24 +495,24 @@ exports[`SearchInput renders search input in strict mode 1`] = `
               </span>
               <input
                 aria-label="Search input"
-                class="pf-v5-c-text-input-group__text-input"
+                class="pf-v6-c-text-input-group__text-input"
                 type="text"
                 value="username:player firstname:john"
               />
             </span>
           </div>
           <div
-            class="pf-v5-c-text-input-group__utilities"
+            class="pf-v6-c-text-input-group__utilities"
           >
             <button
               aria-disabled="false"
               aria-label="Reset"
-              class="pf-v5-c-button pf-m-plain"
+              class="pf-v6-c-button pf-m-plain"
               type="button"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -528,18 +528,18 @@ exports[`SearchInput renders search input in strict mode 1`] = `
         </div>
       </div>
       <div
-        class="pf-v5-c-input-group__item pf-m-plain"
+        class="pf-v6-c-input-group__item pf-m-plain"
       >
         <button
           aria-disabled="false"
           aria-expanded="false"
           aria-label="Open advanced search"
-          class="pf-v5-c-button pf-m-control"
+          class="pf-v6-c-button pf-m-control"
           type="button"
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v6-svg"
             fill="currentColor"
             height="1em"
             role="img"
@@ -553,23 +553,23 @@ exports[`SearchInput renders search input in strict mode 1`] = `
         </button>
       </div>
       <div
-        class="pf-v5-c-input-group__item"
+        class="pf-v6-c-input-group__item"
       >
         <button
           aria-disabled="false"
           aria-label="Search"
-          class="pf-v5-c-button pf-m-control"
+          class="pf-v6-c-button pf-m-control"
           type="submit"
         >
           <span
-            class="pf-v5-c-icon"
+            class="pf-v6-c-icon"
           >
             <span
-              class="pf-v5-c-icon__content pf-v5-m-mirror-inline-rtl"
+              class="pf-v6-c-icon__content pf-v6-m-mirror-inline-rtl"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -599,33 +599,33 @@ exports[`SearchInput renders search input in strict mode 1`] = `
 exports[`SearchInput search input with hint 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-input-group"
+    class="pf-v6-c-input-group"
   >
     <div
-      class="pf-v5-c-input-group__item pf-m-fill"
+      class="pf-v6-c-input-group__item pf-m-fill"
     >
       <div
-        class="pf-v5-c-text-input-group"
+        class="pf-v6-c-text-input-group"
       >
         <div
-          class="pf-v5-c-text-input-group__main pf-m-icon"
+          class="pf-v6-c-text-input-group__main pf-m-icon"
         >
           <span
-            class="pf-v5-c-text-input-group__text"
+            class="pf-v6-c-text-input-group__text"
           >
             <input
               aria-hidden="true"
-              class="pf-v5-c-text-input-group__text-input pf-m-hint"
+              class="pf-v6-c-text-input-group__text-input pf-m-hint"
               disabled=""
               type="text"
               value="test hint"
             />
             <span
-              class="pf-v5-c-text-input-group__icon"
+              class="pf-v6-c-text-input-group__icon"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -639,27 +639,27 @@ exports[`SearchInput search input with hint 1`] = `
             </span>
             <input
               aria-label="simple text input"
-              class="pf-v5-c-text-input-group__text-input"
+              class="pf-v6-c-text-input-group__text-input"
               type="text"
               value="test input"
             />
           </span>
         </div>
         <div
-          class="pf-v5-c-text-input-group__utilities"
+          class="pf-v6-c-text-input-group__utilities"
         >
           <div
-            class="pf-v5-c-text-input-group__group"
+            class="pf-v6-c-text-input-group__group"
           >
             <button
               aria-disabled="false"
               aria-label="Previous"
-              class="pf-v5-c-button pf-m-plain"
+              class="pf-v6-c-button pf-m-plain"
               type="button"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -674,12 +674,12 @@ exports[`SearchInput search input with hint 1`] = `
             <button
               aria-disabled="false"
               aria-label="Next"
-              class="pf-v5-c-button pf-m-plain"
+              class="pf-v6-c-button pf-m-plain"
               type="button"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -695,12 +695,12 @@ exports[`SearchInput search input with hint 1`] = `
           <button
             aria-disabled="false"
             aria-label="Reset"
-            class="pf-v5-c-button pf-m-plain"
+            class="pf-v6-c-button pf-m-plain"
             type="button"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"
@@ -716,23 +716,23 @@ exports[`SearchInput search input with hint 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-input-group__item"
+      class="pf-v6-c-input-group__item"
     >
       <button
         aria-disabled="false"
         aria-label="Search"
-        class="pf-v5-c-button pf-m-control"
+        class="pf-v6-c-button pf-m-control"
         type="submit"
       >
         <span
-          class="pf-v5-c-icon"
+          class="pf-v6-c-icon"
         >
           <span
-            class="pf-v5-c-icon__content pf-v5-m-mirror-inline-rtl"
+            class="pf-v6-c-icon__content pf-v6-m-mirror-inline-rtl"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"
@@ -754,26 +754,26 @@ exports[`SearchInput search input with hint 1`] = `
 exports[`SearchInput simple search input 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-input-group"
+    class="pf-v6-c-input-group"
   >
     <div
-      class="pf-v5-c-input-group__item pf-m-fill"
+      class="pf-v6-c-input-group__item pf-m-fill"
     >
       <div
-        class="pf-v5-c-text-input-group"
+        class="pf-v6-c-text-input-group"
       >
         <div
-          class="pf-v5-c-text-input-group__main pf-m-icon"
+          class="pf-v6-c-text-input-group__main pf-m-icon"
         >
           <span
-            class="pf-v5-c-text-input-group__text"
+            class="pf-v6-c-text-input-group__text"
           >
             <span
-              class="pf-v5-c-text-input-group__icon"
+              class="pf-v6-c-text-input-group__icon"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -787,27 +787,27 @@ exports[`SearchInput simple search input 1`] = `
             </span>
             <input
               aria-label="simple text input"
-              class="pf-v5-c-text-input-group__text-input"
+              class="pf-v6-c-text-input-group__text-input"
               type="text"
               value="test input"
             />
           </span>
         </div>
         <div
-          class="pf-v5-c-text-input-group__utilities"
+          class="pf-v6-c-text-input-group__utilities"
         >
           <div
-            class="pf-v5-c-text-input-group__group"
+            class="pf-v6-c-text-input-group__group"
           >
             <button
               aria-disabled="false"
               aria-label="Previous"
-              class="pf-v5-c-button pf-m-plain"
+              class="pf-v6-c-button pf-m-plain"
               type="button"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -822,12 +822,12 @@ exports[`SearchInput simple search input 1`] = `
             <button
               aria-disabled="false"
               aria-label="Next"
-              class="pf-v5-c-button pf-m-plain"
+              class="pf-v6-c-button pf-m-plain"
               type="button"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -843,12 +843,12 @@ exports[`SearchInput simple search input 1`] = `
           <button
             aria-disabled="false"
             aria-label="Reset"
-            class="pf-v5-c-button pf-m-plain"
+            class="pf-v6-c-button pf-m-plain"
             type="button"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"
@@ -864,23 +864,23 @@ exports[`SearchInput simple search input 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-input-group__item"
+      class="pf-v6-c-input-group__item"
     >
       <button
         aria-disabled="false"
         aria-label="Search"
-        class="pf-v5-c-button pf-m-control"
+        class="pf-v6-c-button pf-m-control"
         type="submit"
       >
         <span
-          class="pf-v5-c-icon"
+          class="pf-v6-c-icon"
         >
           <span
-            class="pf-v5-c-icon__content pf-v5-m-mirror-inline-rtl"
+            class="pf-v6-c-icon__content pf-v6-m-mirror-inline-rtl"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"

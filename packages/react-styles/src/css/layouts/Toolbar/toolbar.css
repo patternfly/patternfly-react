@@ -1,9 +1,9 @@
 .pf-l-toolbar {
-  --pf-v5-l-toolbar__section--MarginTop: var(--pf-v5-global--spacer--md);
-  --pf-v5-l-toolbar__group--MarginRight: var(--pf-v5-global--spacer--xl);
-  --pf-v5-l-toolbar__group--MarginLeft: var(--pf-v5-global--spacer--xl);
-  --pf-v5-l-toolbar__item--MarginRight: var(--pf-v5-global--spacer--md);
-  --pf-v5-l-toolbar__item--MarginLeft: var(--pf-v5-global--spacer--md);
+  --pf-v6-l-toolbar__section--MarginTop: var(--pf-v6-global--spacer--md);
+  --pf-v6-l-toolbar__group--MarginRight: var(--pf-v6-global--spacer--xl);
+  --pf-v6-l-toolbar__group--MarginLeft: var(--pf-v6-global--spacer--xl);
+  --pf-v6-l-toolbar__item--MarginRight: var(--pf-v6-global--spacer--md);
+  --pf-v6-l-toolbar__item--MarginLeft: var(--pf-v6-global--spacer--md);
 }
 
 .pf-l-toolbar,
@@ -18,13 +18,13 @@
   flex-basis: 100%;
 }
 .pf-l-toolbar__section:not(:first-child) {
-  margin-top: var(--pf-v5-l-toolbar__section--MarginTop);
+  margin-top: var(--pf-v6-l-toolbar__section--MarginTop);
 }
 
 .pf-l-toolbar__group:not(:last-child) {
-  margin-right: var(--pf-v5-l-toolbar__group--MarginRight);
+  margin-right: var(--pf-v6-l-toolbar__group--MarginRight);
 }
 
 .pf-l-toolbar__item .pf-l-toolbar:not(:last-child) {
-  margin-right: var(--pf-v5-l-toolbar__item--MarginRight);
+  margin-right: var(--pf-v6-l-toolbar__item--MarginRight);
 }

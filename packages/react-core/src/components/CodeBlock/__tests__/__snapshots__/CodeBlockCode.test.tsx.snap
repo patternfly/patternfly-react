@@ -3,10 +3,10 @@
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <pre
-    class="pf-v5-c-code-block__pre"
+    class="pf-v6-c-code-block__pre"
   >
     <code
-      class="pf-v5-c-code-block__code"
+      class="pf-v6-c-code-block__code"
     >
       children
     </code>

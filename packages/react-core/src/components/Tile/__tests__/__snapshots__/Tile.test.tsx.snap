@@ -3,15 +3,15 @@
 exports[`Tile basic 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-tile"
+    class="pf-v6-c-tile"
     role="option"
     tabindex="0"
   >
     <div
-      class="pf-v5-c-tile__header"
+      class="pf-v6-c-tile__header"
     >
       <div
-        class="pf-v5-c-tile__title"
+        class="pf-v6-c-tile__title"
       >
         test
       </div>
@@ -24,15 +24,15 @@ exports[`Tile renders disabled 1`] = `
 <DocumentFragment>
   <div
     aria-disabled="true"
-    class="pf-v5-c-tile pf-m-disabled"
+    class="pf-v6-c-tile pf-m-disabled"
     role="option"
     tabindex="0"
   >
     <div
-      class="pf-v5-c-tile__header"
+      class="pf-v6-c-tile__header"
     >
       <div
-        class="pf-v5-c-tile__title"
+        class="pf-v6-c-tile__title"
       >
         test
       </div>
@@ -45,15 +45,15 @@ exports[`Tile renders selected 1`] = `
 <DocumentFragment>
   <div
     aria-selected="true"
-    class="pf-v5-c-tile pf-m-selected"
+    class="pf-v6-c-tile pf-m-selected"
     role="option"
     tabindex="0"
   >
     <div
-      class="pf-v5-c-tile__header"
+      class="pf-v6-c-tile__header"
     >
       <div
-        class="pf-v5-c-tile__title"
+        class="pf-v6-c-tile__title"
       >
         test
       </div>
@@ -65,19 +65,19 @@ exports[`Tile renders selected 1`] = `
 exports[`Tile renders with icon 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-tile"
+    class="pf-v6-c-tile"
     role="option"
     tabindex="0"
   >
     <div
-      class="pf-v5-c-tile__header"
+      class="pf-v6-c-tile__header"
     >
       <div
-        class="pf-v5-c-tile__icon"
+        class="pf-v6-c-tile__icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -90,7 +90,7 @@ exports[`Tile renders with icon 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-tile__title"
+        class="pf-v6-c-tile__title"
       >
         test
       </div>
@@ -102,19 +102,19 @@ exports[`Tile renders with icon 1`] = `
 exports[`Tile renders with stacked icon 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-tile"
+    class="pf-v6-c-tile"
     role="option"
     tabindex="0"
   >
     <div
-      class="pf-v5-c-tile__header pf-m-stacked"
+      class="pf-v6-c-tile__header pf-m-stacked"
     >
       <div
-        class="pf-v5-c-tile__icon"
+        class="pf-v6-c-tile__icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -127,7 +127,7 @@ exports[`Tile renders with stacked icon 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-tile__title"
+        class="pf-v6-c-tile__title"
       >
         test
       </div>
@@ -139,19 +139,19 @@ exports[`Tile renders with stacked icon 1`] = `
 exports[`Tile renders with stacked large icon 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-tile pf-m-display-lg"
+    class="pf-v6-c-tile pf-m-display-lg"
     role="option"
     tabindex="0"
   >
     <div
-      class="pf-v5-c-tile__header pf-m-stacked"
+      class="pf-v6-c-tile__header pf-m-stacked"
     >
       <div
-        class="pf-v5-c-tile__icon"
+        class="pf-v6-c-tile__icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -164,7 +164,7 @@ exports[`Tile renders with stacked large icon 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-tile__title"
+        class="pf-v6-c-tile__title"
       >
         test
       </div>
@@ -176,21 +176,21 @@ exports[`Tile renders with stacked large icon 1`] = `
 exports[`Tile renders with subtext 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-tile"
+    class="pf-v6-c-tile"
     role="option"
     tabindex="0"
   >
     <div
-      class="pf-v5-c-tile__header"
+      class="pf-v6-c-tile__header"
     >
       <div
-        class="pf-v5-c-tile__title"
+        class="pf-v6-c-tile__title"
       >
         test
       </div>
     </div>
     <div
-      class="pf-v5-c-tile__body"
+      class="pf-v6-c-tile__body"
     >
       test subtext
     </div>

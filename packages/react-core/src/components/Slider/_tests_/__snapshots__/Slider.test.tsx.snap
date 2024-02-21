@@ -3,39 +3,39 @@
 exports[`slider renders continuous slider 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-slider"
-    style="--pf-v5-c-slider--value: 50%; --pf-v5-c-slider__value--c-form-control--width-chars: 2;"
+    class="pf-v6-c-slider"
+    style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-v5-c-slider__main"
+      class="pf-v6-c-slider__main"
     >
       <div
-        class="pf-v5-c-slider__rail"
+        class="pf-v6-c-slider__rail"
       >
         <div
-          class="pf-v5-c-slider__rail-track"
+          class="pf-v6-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        class="pf-v5-c-slider__steps"
+        class="pf-v6-c-slider__steps"
       >
         <div
-          class="pf-v5-c-slider__step pf-m-active"
-          style="--pf-v5-c-slider__step--Left: 0%;"
+          class="pf-v6-c-slider__step pf-m-active"
+          style="--pf-v6-c-slider__step--Left: 0%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             0
           </div>
         </div>
         <div
-          class="pf-v5-c-slider__step"
-          style="--pf-v5-c-slider__step--Left: 100%;"
+          class="pf-v6-c-slider__step"
+          style="--pf-v6-c-slider__step--Left: 100%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             100
           </div>
@@ -48,16 +48,16 @@ exports[`slider renders continuous slider 1`] = `
         aria-valuemin="0"
         aria-valuenow="50"
         aria-valuetext="50"
-        class="pf-v5-c-slider__thumb"
+        class="pf-v6-c-slider__thumb"
         role="slider"
         tabindex="0"
       />
     </div>
     <div
-      class="pf-v5-c-slider__value"
+      class="pf-v6-c-slider__value"
     >
       <span
-        class="pf-v5-c-form-control"
+        class="pf-v6-c-form-control"
       >
         <input
           aria-invalid="false"
@@ -77,45 +77,45 @@ exports[`slider renders continuous slider 1`] = `
 exports[`slider renders continuous slider with custom steps 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-slider"
-    style="--pf-v5-c-slider--value: 50%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;"
+    class="pf-v6-c-slider"
+    style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
-      class="pf-v5-c-slider__main"
+      class="pf-v6-c-slider__main"
     >
       <div
-        class="pf-v5-c-slider__rail"
+        class="pf-v6-c-slider__rail"
       >
         <div
-          class="pf-v5-c-slider__rail-track"
+          class="pf-v6-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        class="pf-v5-c-slider__steps"
+        class="pf-v6-c-slider__steps"
       >
         <div
-          class="pf-v5-c-slider__step pf-m-active"
-          style="--pf-v5-c-slider__step--Left: 0%;"
+          class="pf-v6-c-slider__step pf-m-active"
+          style="--pf-v6-c-slider__step--Left: 0%;"
         >
           <div
-            class="pf-v5-c-slider__step-tick"
+            class="pf-v6-c-slider__step-tick"
           />
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             0%
           </div>
         </div>
         <div
-          class="pf-v5-c-slider__step"
-          style="--pf-v5-c-slider__step--Left: 100%;"
+          class="pf-v6-c-slider__step"
+          style="--pf-v6-c-slider__step--Left: 100%;"
         >
           <div
-            class="pf-v5-c-slider__step-tick"
+            class="pf-v6-c-slider__step-tick"
           />
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             100%
           </div>
@@ -128,7 +128,7 @@ exports[`slider renders continuous slider with custom steps 1`] = `
         aria-valuemin="0"
         aria-valuenow="50"
         aria-valuetext="50"
-        class="pf-v5-c-slider__thumb"
+        class="pf-v6-c-slider__thumb"
         role="slider"
         tabindex="0"
       />
@@ -140,39 +140,39 @@ exports[`slider renders continuous slider with custom steps 1`] = `
 exports[`slider renders disabled slider 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-slider pf-m-disabled"
-    style="--pf-v5-c-slider--value: 50%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;"
+    class="pf-v6-c-slider pf-m-disabled"
+    style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
-      class="pf-v5-c-slider__main"
+      class="pf-v6-c-slider__main"
     >
       <div
-        class="pf-v5-c-slider__rail"
+        class="pf-v6-c-slider__rail"
       >
         <div
-          class="pf-v5-c-slider__rail-track"
+          class="pf-v6-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        class="pf-v5-c-slider__steps"
+        class="pf-v6-c-slider__steps"
       >
         <div
-          class="pf-v5-c-slider__step pf-m-active"
-          style="--pf-v5-c-slider__step--Left: 0%;"
+          class="pf-v6-c-slider__step pf-m-active"
+          style="--pf-v6-c-slider__step--Left: 0%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             0
           </div>
         </div>
         <div
-          class="pf-v5-c-slider__step"
-          style="--pf-v5-c-slider__step--Left: 100%;"
+          class="pf-v6-c-slider__step"
+          style="--pf-v6-c-slider__step--Left: 100%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             100
           </div>
@@ -185,7 +185,7 @@ exports[`slider renders disabled slider 1`] = `
         aria-valuemin="0"
         aria-valuenow="50"
         aria-valuetext="50"
-        class="pf-v5-c-slider__thumb"
+        class="pf-v6-c-slider__thumb"
         role="slider"
         tabindex="-1"
       />
@@ -197,39 +197,39 @@ exports[`slider renders disabled slider 1`] = `
 exports[`slider renders discrete slider 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-slider"
-    style="--pf-v5-c-slider--value: 40%; --pf-v5-c-slider__value--c-form-control--width-chars: 2;"
+    class="pf-v6-c-slider"
+    style="--pf-v6-c-slider--value: 40%; --pf-v6-c-slider__value--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-v5-c-slider__main"
+      class="pf-v6-c-slider__main"
     >
       <div
-        class="pf-v5-c-slider__rail"
+        class="pf-v6-c-slider__rail"
       >
         <div
-          class="pf-v5-c-slider__rail-track"
+          class="pf-v6-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        class="pf-v5-c-slider__steps"
+        class="pf-v6-c-slider__steps"
       >
         <div
-          class="pf-v5-c-slider__step pf-m-active"
-          style="--pf-v5-c-slider__step--Left: 0%;"
+          class="pf-v6-c-slider__step pf-m-active"
+          style="--pf-v6-c-slider__step--Left: 0%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             10
           </div>
         </div>
         <div
-          class="pf-v5-c-slider__step"
-          style="--pf-v5-c-slider__step--Left: 100%;"
+          class="pf-v6-c-slider__step"
+          style="--pf-v6-c-slider__step--Left: 100%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             110
           </div>
@@ -242,16 +242,16 @@ exports[`slider renders discrete slider 1`] = `
         aria-valuemin="10"
         aria-valuenow="50"
         aria-valuetext="50"
-        class="pf-v5-c-slider__thumb"
+        class="pf-v6-c-slider__thumb"
         role="slider"
         tabindex="0"
       />
     </div>
     <div
-      class="pf-v5-c-slider__value"
+      class="pf-v6-c-slider__value"
     >
       <span
-        class="pf-v5-c-form-control"
+        class="pf-v6-c-form-control"
       >
         <input
           aria-invalid="false"
@@ -271,74 +271,74 @@ exports[`slider renders discrete slider 1`] = `
 exports[`slider renders discrete slider with custom steps 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-slider"
-    style="--pf-v5-c-slider--value: 50%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;"
+    class="pf-v6-c-slider"
+    style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
-      class="pf-v5-c-slider__main"
+      class="pf-v6-c-slider__main"
     >
       <div
-        class="pf-v5-c-slider__rail"
+        class="pf-v6-c-slider__rail"
       >
         <div
-          class="pf-v5-c-slider__rail-track"
+          class="pf-v6-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        class="pf-v5-c-slider__steps"
+        class="pf-v6-c-slider__steps"
       >
         <div
-          class="pf-v5-c-slider__step pf-m-active"
-          style="--pf-v5-c-slider__step--Left: 0%;"
+          class="pf-v6-c-slider__step pf-m-active"
+          style="--pf-v6-c-slider__step--Left: 0%;"
         >
           <div
-            class="pf-v5-c-slider__step-tick"
+            class="pf-v6-c-slider__step-tick"
           />
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             0%
           </div>
         </div>
         <div
-          class="pf-v5-c-slider__step pf-m-active"
-          style="--pf-v5-c-slider__step--Left: 25%;"
+          class="pf-v6-c-slider__step pf-m-active"
+          style="--pf-v6-c-slider__step--Left: 25%;"
         >
           <div
-            class="pf-v5-c-slider__step-tick"
+            class="pf-v6-c-slider__step-tick"
           />
         </div>
         <div
-          class="pf-v5-c-slider__step pf-m-active"
-          style="--pf-v5-c-slider__step--Left: 50%;"
+          class="pf-v6-c-slider__step pf-m-active"
+          style="--pf-v6-c-slider__step--Left: 50%;"
         >
           <div
-            class="pf-v5-c-slider__step-tick"
+            class="pf-v6-c-slider__step-tick"
           />
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             50%
           </div>
         </div>
         <div
-          class="pf-v5-c-slider__step"
-          style="--pf-v5-c-slider__step--Left: 75%;"
+          class="pf-v6-c-slider__step"
+          style="--pf-v6-c-slider__step--Left: 75%;"
         >
           <div
-            class="pf-v5-c-slider__step-tick"
+            class="pf-v6-c-slider__step-tick"
           />
         </div>
         <div
-          class="pf-v5-c-slider__step"
-          style="--pf-v5-c-slider__step--Left: 100%;"
+          class="pf-v6-c-slider__step"
+          style="--pf-v6-c-slider__step--Left: 100%;"
         >
           <div
-            class="pf-v5-c-slider__step-tick"
+            class="pf-v6-c-slider__step-tick"
           />
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             100%
           </div>
@@ -351,7 +351,7 @@ exports[`slider renders discrete slider with custom steps 1`] = `
         aria-valuemin="0"
         aria-valuenow="50"
         aria-valuetext="50%"
-        class="pf-v5-c-slider__thumb"
+        class="pf-v6-c-slider__thumb"
         role="slider"
         tabindex="0"
       />
@@ -363,39 +363,39 @@ exports[`slider renders discrete slider with custom steps 1`] = `
 exports[`slider renders slider with input 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-slider"
-    style="--pf-v5-c-slider--value: 50%; --pf-v5-c-slider__value--c-form-control--width-chars: 2;"
+    class="pf-v6-c-slider"
+    style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-v5-c-slider__main"
+      class="pf-v6-c-slider__main"
     >
       <div
-        class="pf-v5-c-slider__rail"
+        class="pf-v6-c-slider__rail"
       >
         <div
-          class="pf-v5-c-slider__rail-track"
+          class="pf-v6-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        class="pf-v5-c-slider__steps"
+        class="pf-v6-c-slider__steps"
       >
         <div
-          class="pf-v5-c-slider__step pf-m-active"
-          style="--pf-v5-c-slider__step--Left: 0%;"
+          class="pf-v6-c-slider__step pf-m-active"
+          style="--pf-v6-c-slider__step--Left: 0%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             0
           </div>
         </div>
         <div
-          class="pf-v5-c-slider__step"
-          style="--pf-v5-c-slider__step--Left: 100%;"
+          class="pf-v6-c-slider__step"
+          style="--pf-v6-c-slider__step--Left: 100%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             100
           </div>
@@ -408,22 +408,22 @@ exports[`slider renders slider with input 1`] = `
         aria-valuemin="0"
         aria-valuenow="50"
         aria-valuetext="50"
-        class="pf-v5-c-slider__thumb"
+        class="pf-v6-c-slider__thumb"
         role="slider"
         tabindex="0"
       />
     </div>
     <div
-      class="pf-v5-c-slider__value"
+      class="pf-v6-c-slider__value"
     >
       <div
-        class="pf-v5-c-input-group"
+        class="pf-v6-c-input-group"
       >
         <div
-          class="pf-v5-c-input-group__item pf-m-fill"
+          class="pf-v6-c-input-group__item pf-m-fill"
         >
           <span
-            class="pf-v5-c-form-control"
+            class="pf-v6-c-form-control"
           >
             <input
               aria-invalid="false"
@@ -437,10 +437,10 @@ exports[`slider renders slider with input 1`] = `
           </span>
         </div>
         <div
-          class="pf-v5-c-input-group__item pf-m-box"
+          class="pf-v6-c-input-group__item pf-m-box"
         >
           <span
-            class="pf-v5-c-input-group__text"
+            class="pf-v6-c-input-group__text"
           >
             %
           </span>
@@ -454,39 +454,39 @@ exports[`slider renders slider with input 1`] = `
 exports[`slider renders slider with input above thumb 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-slider"
-    style="--pf-v5-c-slider--value: 50%; --pf-v5-c-slider__value--c-form-control--width-chars: 2;"
+    class="pf-v6-c-slider"
+    style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 2;"
   >
     <div
-      class="pf-v5-c-slider__main"
+      class="pf-v6-c-slider__main"
     >
       <div
-        class="pf-v5-c-slider__rail"
+        class="pf-v6-c-slider__rail"
       >
         <div
-          class="pf-v5-c-slider__rail-track"
+          class="pf-v6-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        class="pf-v5-c-slider__steps"
+        class="pf-v6-c-slider__steps"
       >
         <div
-          class="pf-v5-c-slider__step pf-m-active"
-          style="--pf-v5-c-slider__step--Left: 0%;"
+          class="pf-v6-c-slider__step pf-m-active"
+          style="--pf-v6-c-slider__step--Left: 0%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             0
           </div>
         </div>
         <div
-          class="pf-v5-c-slider__step"
-          style="--pf-v5-c-slider__step--Left: 100%;"
+          class="pf-v6-c-slider__step"
+          style="--pf-v6-c-slider__step--Left: 100%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             100
           </div>
@@ -499,21 +499,21 @@ exports[`slider renders slider with input above thumb 1`] = `
         aria-valuemin="0"
         aria-valuenow="50"
         aria-valuetext="50"
-        class="pf-v5-c-slider__thumb"
+        class="pf-v6-c-slider__thumb"
         role="slider"
         tabindex="0"
       />
       <div
-        class="pf-v5-c-slider__value pf-m-floating"
+        class="pf-v6-c-slider__value pf-m-floating"
       >
         <div
-          class="pf-v5-c-input-group"
+          class="pf-v6-c-input-group"
         >
           <div
-            class="pf-v5-c-input-group__item pf-m-fill"
+            class="pf-v6-c-input-group__item pf-m-fill"
           >
             <span
-              class="pf-v5-c-form-control"
+              class="pf-v6-c-form-control"
             >
               <input
                 aria-invalid="false"
@@ -527,10 +527,10 @@ exports[`slider renders slider with input above thumb 1`] = `
             </span>
           </div>
           <div
-            class="pf-v5-c-input-group__item pf-m-box"
+            class="pf-v6-c-input-group__item pf-m-box"
           >
             <span
-              class="pf-v5-c-input-group__text"
+              class="pf-v6-c-input-group__text"
             >
               %
             </span>
@@ -545,16 +545,16 @@ exports[`slider renders slider with input above thumb 1`] = `
 exports[`slider renders slider with input actions 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-slider"
-    style="--pf-v5-c-slider--value: 50%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;"
+    class="pf-v6-c-slider"
+    style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
-      class="pf-v5-c-slider__actions"
+      class="pf-v6-c-slider__actions"
     >
       <button
         aria-disabled="false"
         aria-label="Minus"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -562,35 +562,35 @@ exports[`slider renders slider with input actions 1`] = `
       />
     </div>
     <div
-      class="pf-v5-c-slider__main"
+      class="pf-v6-c-slider__main"
     >
       <div
-        class="pf-v5-c-slider__rail"
+        class="pf-v6-c-slider__rail"
       >
         <div
-          class="pf-v5-c-slider__rail-track"
+          class="pf-v6-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        class="pf-v5-c-slider__steps"
+        class="pf-v6-c-slider__steps"
       >
         <div
-          class="pf-v5-c-slider__step pf-m-active"
-          style="--pf-v5-c-slider__step--Left: 0%;"
+          class="pf-v6-c-slider__step pf-m-active"
+          style="--pf-v6-c-slider__step--Left: 0%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             0
           </div>
         </div>
         <div
-          class="pf-v5-c-slider__step"
-          style="--pf-v5-c-slider__step--Left: 100%;"
+          class="pf-v6-c-slider__step"
+          style="--pf-v6-c-slider__step--Left: 100%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             100
           </div>
@@ -603,18 +603,18 @@ exports[`slider renders slider with input actions 1`] = `
         aria-valuemin="0"
         aria-valuenow="50"
         aria-valuetext="50"
-        class="pf-v5-c-slider__thumb"
+        class="pf-v6-c-slider__thumb"
         role="slider"
         tabindex="0"
       />
     </div>
     <div
-      class="pf-v5-c-slider__actions"
+      class="pf-v6-c-slider__actions"
     >
       <button
         aria-disabled="false"
         aria-label="Plus"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-2"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
@@ -628,39 +628,39 @@ exports[`slider renders slider with input actions 1`] = `
 exports[`slider renders slider with tooltip on thumb 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-slider"
-    style="--pf-v5-c-slider--value: 50%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;"
+    class="pf-v6-c-slider"
+    style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
-      class="pf-v5-c-slider__main"
+      class="pf-v6-c-slider__main"
     >
       <div
-        class="pf-v5-c-slider__rail"
+        class="pf-v6-c-slider__rail"
       >
         <div
-          class="pf-v5-c-slider__rail-track"
+          class="pf-v6-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        class="pf-v5-c-slider__steps"
+        class="pf-v6-c-slider__steps"
       >
         <div
-          class="pf-v5-c-slider__step pf-m-active"
-          style="--pf-v5-c-slider__step--Left: 0%;"
+          class="pf-v6-c-slider__step pf-m-active"
+          style="--pf-v6-c-slider__step--Left: 0%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             0
           </div>
         </div>
         <div
-          class="pf-v5-c-slider__step"
-          style="--pf-v5-c-slider__step--Left: 100%;"
+          class="pf-v6-c-slider__step"
+          style="--pf-v6-c-slider__step--Left: 100%;"
         >
           <div
-            class="pf-v5-c-slider__step-label"
+            class="pf-v6-c-slider__step-label"
           >
             100
           </div>
@@ -673,7 +673,7 @@ exports[`slider renders slider with tooltip on thumb 1`] = `
         aria-valuemin="0"
         aria-valuenow="50"
         aria-valuetext="50"
-        class="pf-v5-c-slider__thumb"
+        class="pf-v6-c-slider__thumb"
         role="slider"
         tabindex="0"
       />

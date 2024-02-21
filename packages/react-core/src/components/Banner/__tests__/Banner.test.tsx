@@ -97,9 +97,9 @@ test('Renders with class name pf-m-custom when "custom" is passed to status prop
   expect(screen.getByText('Test')).toHaveClass('pf-m-custom');
 });
 
-test('Does not render pf-v5-screen-reader class by default', () => {
+test('Does not render pf-v6-screen-reader class by default', () => {
   render(<Banner>Test</Banner>);
-  expect(screen.getByText('Test')).not.toContainHTML('<span class="pf-v5-screen-reader"></span>');
+  expect(screen.getByText('Test')).not.toContainHTML('<span class="pf-v6-screen-reader"></span>');
 });
 
 test('Renders screenReaderText passed via prop', () => {

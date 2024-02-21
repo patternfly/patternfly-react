@@ -3,27 +3,27 @@
 exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
 <DocumentFragment>
   <form
-    class="pf-v5-c-form"
+    class="pf-v6-c-form"
     novalidate=""
   >
     <div
-      class="pf-v5-c-form__group"
+      class="pf-v6-c-form__group"
     >
       <div
-        class="pf-v5-c-form__group-label"
+        class="pf-v6-c-form__group-label"
       >
         <label
-          class="pf-v5-c-form__label"
+          class="pf-v6-c-form__label"
           for="pf-login-username-id"
         >
           <span
-            class="pf-v5-c-form__label-text"
+            class="pf-v6-c-form__label-text"
           >
             Username
           </span>
           <span
             aria-hidden="true"
-            class="pf-v5-c-form__label-required"
+            class="pf-v6-c-form__label-required"
           >
              *
           </span>
@@ -31,10 +31,10 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
          
       </div>
       <div
-        class="pf-v5-c-form__group-control"
+        class="pf-v6-c-form__group-control"
       >
         <span
-          class="pf-v5-c-form-control"
+          class="pf-v6-c-form-control"
         >
           <input
             aria-invalid="false"
@@ -51,23 +51,23 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-form__group"
+      class="pf-v6-c-form__group"
     >
       <div
-        class="pf-v5-c-form__group-label"
+        class="pf-v6-c-form__group-label"
       >
         <label
-          class="pf-v5-c-form__label"
+          class="pf-v6-c-form__label"
           for="pf-login-password-id"
         >
           <span
-            class="pf-v5-c-form__label-text"
+            class="pf-v6-c-form__label-text"
           >
             Password
           </span>
           <span
             aria-hidden="true"
-            class="pf-v5-c-form__label-required"
+            class="pf-v6-c-form__label-required"
           >
              *
           </span>
@@ -75,10 +75,10 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
          
       </div>
       <div
-        class="pf-v5-c-form__group-control"
+        class="pf-v6-c-form__group-control"
       >
         <span
-          class="pf-v5-c-form-control"
+          class="pf-v6-c-form-control"
         >
           <input
             aria-invalid="false"
@@ -95,17 +95,17 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-form__group"
+      class="pf-v6-c-form__group"
     >
       <div
-        class="pf-v5-c-form__group-control"
+        class="pf-v6-c-form__group-control"
       >
         <div
-          class="pf-v5-c-check"
+          class="pf-v6-c-check"
         >
           <input
             aria-invalid="false"
-            class="pf-v5-c-check__input"
+            class="pf-v6-c-check__input"
             data-ouia-component-id="OUIA-Generated-Checkbox-4"
             data-ouia-component-type="PF5/Checkbox"
             data-ouia-safe="true"
@@ -113,7 +113,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
             type="checkbox"
           />
           <label
-            class="pf-v5-c-check__label"
+            class="pf-v6-c-check__label"
             for="pf-login-remember-me-id"
           >
             Remember me
@@ -122,17 +122,17 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-form__group pf-m-action"
+      class="pf-v6-c-form__group pf-m-action"
     >
       <div
-        class="pf-v5-c-form__group-control"
+        class="pf-v6-c-form__group-control"
       >
         <div
-          class="pf-v5-c-form__actions"
+          class="pf-v6-c-form__actions"
         >
           <button
             aria-disabled="false"
-            class="pf-v5-c-button pf-m-primary pf-m-block"
+            class="pf-v6-c-button pf-m-primary pf-m-block"
             data-ouia-component-id="OUIA-Generated-Button-primary-5"
             data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
@@ -150,27 +150,27 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
 exports[`LoginForm LoginForm with show password 1`] = `
 <DocumentFragment>
   <form
-    class="pf-v5-c-form"
+    class="pf-v6-c-form"
     novalidate=""
   >
     <div
-      class="pf-v5-c-form__group"
+      class="pf-v6-c-form__group"
     >
       <div
-        class="pf-v5-c-form__group-label"
+        class="pf-v6-c-form__group-label"
       >
         <label
-          class="pf-v5-c-form__label"
+          class="pf-v6-c-form__label"
           for="pf-login-username-id"
         >
           <span
-            class="pf-v5-c-form__label-text"
+            class="pf-v6-c-form__label-text"
           >
             Username
           </span>
           <span
             aria-hidden="true"
-            class="pf-v5-c-form__label-required"
+            class="pf-v6-c-form__label-required"
           >
              *
           </span>
@@ -178,10 +178,10 @@ exports[`LoginForm LoginForm with show password 1`] = `
          
       </div>
       <div
-        class="pf-v5-c-form__group-control"
+        class="pf-v6-c-form__group-control"
       >
         <span
-          class="pf-v5-c-form-control"
+          class="pf-v6-c-form-control"
         >
           <input
             aria-invalid="false"
@@ -198,23 +198,23 @@ exports[`LoginForm LoginForm with show password 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-form__group"
+      class="pf-v6-c-form__group"
     >
       <div
-        class="pf-v5-c-form__group-label"
+        class="pf-v6-c-form__group-label"
       >
         <label
-          class="pf-v5-c-form__label"
+          class="pf-v6-c-form__label"
           for="pf-login-password-id"
         >
           <span
-            class="pf-v5-c-form__label-text"
+            class="pf-v6-c-form__label-text"
           >
             Password
           </span>
           <span
             aria-hidden="true"
-            class="pf-v5-c-form__label-required"
+            class="pf-v6-c-form__label-required"
           >
              *
           </span>
@@ -222,16 +222,16 @@ exports[`LoginForm LoginForm with show password 1`] = `
          
       </div>
       <div
-        class="pf-v5-c-form__group-control"
+        class="pf-v6-c-form__group-control"
       >
         <div
-          class="pf-v5-c-input-group"
+          class="pf-v6-c-input-group"
         >
           <div
-            class="pf-v5-c-input-group__item pf-m-fill"
+            class="pf-v6-c-input-group__item pf-m-fill"
           >
             <span
-              class="pf-v5-c-form-control"
+              class="pf-v6-c-form-control"
             >
               <input
                 aria-invalid="false"
@@ -247,12 +247,12 @@ exports[`LoginForm LoginForm with show password 1`] = `
             </span>
           </div>
           <div
-            class="pf-v5-c-input-group__item"
+            class="pf-v6-c-input-group__item"
           >
             <button
               aria-disabled="false"
               aria-label="Show password"
-              class="pf-v5-c-button pf-m-control"
+              class="pf-v6-c-button pf-m-control"
               data-ouia-component-id="OUIA-Generated-Button-control-1"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
@@ -260,7 +260,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -277,17 +277,17 @@ exports[`LoginForm LoginForm with show password 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-form__group pf-m-action"
+      class="pf-v6-c-form__group pf-m-action"
     >
       <div
-        class="pf-v5-c-form__group-control"
+        class="pf-v6-c-form__group-control"
       >
         <div
-          class="pf-v5-c-form__actions"
+          class="pf-v6-c-form__actions"
         >
           <button
             aria-disabled="false"
-            class="pf-v5-c-button pf-m-primary pf-m-block"
+            class="pf-v6-c-button pf-m-primary pf-m-block"
             data-ouia-component-id="OUIA-Generated-Button-primary-6"
             data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
@@ -305,27 +305,27 @@ exports[`LoginForm LoginForm with show password 1`] = `
 exports[`LoginForm should render Login form 1`] = `
 <DocumentFragment>
   <form
-    class="pf-v5-c-form"
+    class="pf-v6-c-form"
     novalidate=""
   >
     <div
-      class="pf-v5-c-form__group"
+      class="pf-v6-c-form__group"
     >
       <div
-        class="pf-v5-c-form__group-label"
+        class="pf-v6-c-form__group-label"
       >
         <label
-          class="pf-v5-c-form__label"
+          class="pf-v6-c-form__label"
           for="pf-login-username-id"
         >
           <span
-            class="pf-v5-c-form__label-text"
+            class="pf-v6-c-form__label-text"
           >
             Username
           </span>
           <span
             aria-hidden="true"
-            class="pf-v5-c-form__label-required"
+            class="pf-v6-c-form__label-required"
           >
              *
           </span>
@@ -333,10 +333,10 @@ exports[`LoginForm should render Login form 1`] = `
          
       </div>
       <div
-        class="pf-v5-c-form__group-control"
+        class="pf-v6-c-form__group-control"
       >
         <span
-          class="pf-v5-c-form-control"
+          class="pf-v6-c-form-control"
         >
           <input
             aria-invalid="false"
@@ -353,23 +353,23 @@ exports[`LoginForm should render Login form 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-form__group"
+      class="pf-v6-c-form__group"
     >
       <div
-        class="pf-v5-c-form__group-label"
+        class="pf-v6-c-form__group-label"
       >
         <label
-          class="pf-v5-c-form__label"
+          class="pf-v6-c-form__label"
           for="pf-login-password-id"
         >
           <span
-            class="pf-v5-c-form__label-text"
+            class="pf-v6-c-form__label-text"
           >
             Password
           </span>
           <span
             aria-hidden="true"
-            class="pf-v5-c-form__label-required"
+            class="pf-v6-c-form__label-required"
           >
              *
           </span>
@@ -377,10 +377,10 @@ exports[`LoginForm should render Login form 1`] = `
          
       </div>
       <div
-        class="pf-v5-c-form__group-control"
+        class="pf-v6-c-form__group-control"
       >
         <span
-          class="pf-v5-c-form-control"
+          class="pf-v6-c-form-control"
         >
           <input
             aria-invalid="false"
@@ -397,17 +397,17 @@ exports[`LoginForm should render Login form 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-form__group pf-m-action"
+      class="pf-v6-c-form__group pf-m-action"
     >
       <div
-        class="pf-v5-c-form__group-control"
+        class="pf-v6-c-form__group-control"
       >
         <div
-          class="pf-v5-c-form__actions"
+          class="pf-v6-c-form__actions"
         >
           <button
             aria-disabled="false"
-            class="pf-v5-c-button pf-m-primary pf-m-block"
+            class="pf-v6-c-button pf-m-primary pf-m-block"
             data-ouia-component-id="OUIA-Generated-Button-primary-1"
             data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"

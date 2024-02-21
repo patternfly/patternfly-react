@@ -8,7 +8,7 @@ describe('Table Collapsible Test', () => {
   });
 
   it('Check number of rows', () => {
-    cy.get('.pf-v5-c-table').find('tbody').should('have.length', 4);
+    cy.get('.pf-v6-c-table').find('tbody').should('have.length', 4);
   });
 
   it('Check number of columns', () => {

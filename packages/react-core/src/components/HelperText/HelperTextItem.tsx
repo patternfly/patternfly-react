@@ -71,7 +71,7 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
 
       <span className={css(styles.helperTextItemText)}>
         {children}
-        {isNotDefaultVariant && <span className="pf-v5-screen-reader">: {screenReaderText};</span>}
+        {isNotDefaultVariant && <span className="pf-v6-screen-reader">: {screenReaderText};</span>}
       </span>
     </Component>
   );

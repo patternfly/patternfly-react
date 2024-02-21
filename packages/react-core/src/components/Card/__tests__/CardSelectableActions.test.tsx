@@ -19,10 +19,10 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders with class name pf-v5-c-card__selectable-actions', () => {
+test('Renders with class name pf-v6-c-card__selectable-actions', () => {
   render(<CardSelectableActions>Test</CardSelectableActions>);
 
-  expect(screen.getByText('Test')).toHaveClass('pf-v5-c-card__selectable-actions');
+  expect(screen.getByText('Test')).toHaveClass('pf-v6-c-card__selectable-actions');
 });
 
 test('Renders with custom class names provided via prop', () => {

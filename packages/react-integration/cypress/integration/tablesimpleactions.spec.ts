@@ -8,7 +8,7 @@ describe('Table Simple Actions Test', () => {
   });
 
   it('Check number of rows', () => {
-    cy.get('.pf-v5-c-table').find('tr').should('have.length', 4);
+    cy.get('.pf-v6-c-table').find('tr').should('have.length', 4);
   });
 
   it('Check number of columns', () => {
@@ -16,9 +16,9 @@ describe('Table Simple Actions Test', () => {
   });
 
   it('Verify dropdown toggle', () => {
-    cy.get('td .pf-v5-c-menu-toggle').first().should('exist');
-    cy.get('td .pf-v5-c-menu-toggle').first().click();
-    cy.get('.pf-v5-c-menu').should('exist');
-    cy.get('.pf-v5-c-menu__item').first().click();
+    cy.get('td .pf-v6-c-menu-toggle').first().should('exist');
+    cy.get('td .pf-v6-c-menu-toggle').first().click();
+    cy.get('.pf-v6-c-menu').should('exist');
+    cy.get('.pf-v6-c-menu__item').first().click();
   });
 });

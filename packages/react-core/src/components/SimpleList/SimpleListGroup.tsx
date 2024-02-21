@@ -27,7 +27,7 @@ export const SimpleListGroup: React.FunctionComponent<SimpleListGroupProps> = ({
     <h2 id={id} className={css(styles.simpleListTitle, titleClassName)} aria-hidden="true">
       {title}
     </h2>
-    <ul className={css('pf-v5-c-simple-list__list', className)} role="list" aria-labelledby={id}>
+    <ul className={css('pf-v6-c-simple-list__list', className)} role="list" aria-labelledby={id}>
       {children}
     </ul>
   </section>

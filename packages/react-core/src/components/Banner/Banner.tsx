@@ -56,7 +56,7 @@ export const Banner: React.FunctionComponent<StatusBanner | NonStatusBanner> = (
       className={css(styles.banner, getStatusOrColorModifier(), isSticky && styles.modifiers.sticky, className)}
       {...props}
     >
-      {screenReaderText && <span className="pf-v5-screen-reader">{screenReaderText}</span>}
+      {screenReaderText && <span className="pf-v6-screen-reader">{screenReaderText}</span>}
       {children}
     </div>
   );

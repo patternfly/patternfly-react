@@ -2,12 +2,12 @@
   padding: 9px;
 }
 
-.ws-react-l-level .pf-v5-l-level {
+.ws-react-l-level .pf-v6-l-level {
   min-height: 160px;
 }
 
-.ws-react-l-level .pf-v5-l-level,
-.ws-react-l-level .pf-v5-l-level > div {
+.ws-react-l-level .pf-v6-l-level,
+.ws-react-l-level .pf-v6-l-level > div {
   padding: 9px;
   border-width: 2px;
   border-style: dashed;

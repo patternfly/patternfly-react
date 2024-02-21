@@ -4,7 +4,7 @@ exports[`Renders to match snapshot 1`] = `
 <DocumentFragment>
   <ul
     aria-label="list"
-    class="pf-v5-c-data-list pf-m-grid-md"
+    class="pf-v6-c-data-list pf-m-grid-md"
     role="list"
   />
 </DocumentFragment>

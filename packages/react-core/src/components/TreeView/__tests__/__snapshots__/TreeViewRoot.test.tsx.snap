@@ -3,10 +3,10 @@
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-tree-view"
+    class="pf-v6-c-tree-view"
   >
     <div
-      class="pf-v5-c-tree-view__node"
+      class="pf-v6-c-tree-view__node"
       tabindex="0"
     >
       Content

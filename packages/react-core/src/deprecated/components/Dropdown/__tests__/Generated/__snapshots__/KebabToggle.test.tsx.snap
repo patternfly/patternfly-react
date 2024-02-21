@@ -5,13 +5,13 @@ exports[`KebabToggle should match snapshot (auto-generated) 1`] = `
   <button
     aria-expanded="false"
     aria-label="'Actions'"
-    class="pf-v5-c-dropdown__toggle ''"
+    class="pf-v6-c-dropdown__toggle ''"
     id="''"
     type="button"
   >
     <svg
       aria-hidden="true"
-      class="pf-v5-svg"
+      class="pf-v6-svg"
       fill="currentColor"
       height="1em"
       role="img"

@@ -119,14 +119,14 @@ export const ContextSelectorDemo: React.FunctionComponent = () => {
                 placeholder="Search"
                 onChange={(_event, value) => onSearchInputChange(value)}
                 onKeyPress={onEnterPressed}
-                aria-labelledby="pf-v5-context-selector-search-button-id-1"
+                aria-labelledby="pf-v6-context-selector-search-button-id-1"
               />
             </InputGroupItem>
             <InputGroupItem>
               <Button
                 variant={ButtonVariant.control}
                 aria-label="Search menu items"
-                id="pf-v5-context-selector-search-button-id-1"
+                id="pf-v6-context-selector-search-button-id-1"
                 onClick={onSearchButtonClick}
               >
                 <SearchIcon aria-hidden="true" />

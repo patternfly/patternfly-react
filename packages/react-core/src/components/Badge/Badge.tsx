@@ -29,7 +29,7 @@ export const Badge: React.FunctionComponent<BadgeProps> = ({
     className={css(styles.badge, (isRead ? styles.modifiers.read : styles.modifiers.unread) as any, className)}
   >
     {children}
-    {screenReaderText && <span className="pf-v5-screen-reader">{screenReaderText}</span>}
+    {screenReaderText && <span className="pf-v6-screen-reader">{screenReaderText}</span>}
     {isToggle && (
       <span className={css(styles.badgeToggleIcon)}>
         <CaretDownIcon />

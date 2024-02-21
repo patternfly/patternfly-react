@@ -4,9 +4,11 @@ const { parse, stringify } = require('css');
 const { readFileSync } = require('fs');
 
 const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
+const version = 'v6';
 
 // Helpers
-const formatCustomPropertyName = (key) => key.replace('--pf-v5-', '').replace('--pf-t--', '').replace(/-+/g, '_');
+const formatCustomPropertyName = (key) =>
+  key.replace(`--pf-${version}-`, '').replace('--pf-t--', '').replace(/-+/g, '_');
 
 const getRegexMatches = (string, regex) => {
   const res = {};
@@ -22,8 +24,8 @@ const getDeclarations = (cssAst) =>
     .filter(
       (node) =>
         node.type === 'rule' &&
-        !node.selectors.includes('.pf-v5-t-dark') &&
-        (!node.selectors || !node.selectors.some((item) => item.includes('.pf-v5-theme-dark'))) // exclude dark theme blocks since dark theme variable values override default token values
+        !node.selectors.includes(`.pf-${version}-t-dark`) &&
+        (!node.selectors || !node.selectors.some((item) => item.includes(`.pf-${version}-theme-dark`))) // exclude dark theme blocks since dark theme variable values override default token values
     )
     .map((node) => node.declarations.filter((decl) => decl.type === 'declaration'))
     .reduce((acc, val) => acc.concat(val), []); // flatten
@@ -46,7 +48,7 @@ const getLocalVarsMap = (cssFiles) => {
     const cssAst = parse(readFileSync(filePath, 'utf8'));
 
     getDeclarations(cssAst).forEach(({ property, value, parent }) => {
-      if (property.startsWith('--pf-v5')) {
+      if (property.startsWith(`--pf-${version}`)) {
         res[property] = {
           ...res[property],
           [parent.selectors[0]]: value
@@ -70,10 +72,10 @@ const getLocalVarsMap = (cssFiles) => {
  *   c_about_modal_box: {
  *     ".pf-c-about-modal-box" : {
  *       "global_Color_100": {
- *         "name": "--pf-v5-global--Color--100",
+ *         "name": "--pf-${version}-global--Color--100",
  *         "value": "#fff",
  *         "values": [
- *           "--pf-v5-global--Color--light-100",
+ *           "--pf-${version}-global--Color--light-100",
  *           "$pf-global--Color--light-100",
  *           "$pf-color-white",
  *           "#fff"
@@ -96,7 +98,7 @@ function generateTokens() {
 
   // various lookup tables to resolve variables
   let variables = readFileSync(require.resolve('@patternfly/patternfly/base/_variables.scss'), 'utf8');
-  variables = variables.replaceAll('#{$pf-global}', 'pf-v5-global');
+  variables = variables.replaceAll('#{$pf-global}', `pf-${version}-global`);
   const cssGlobalsToScssVarsMap = getRegexMatches(variables, /(--pf-.*):\s*(?:#{)?(\$?pf-[\w- _]+)}?;/g);
 
   // contains default values and mappings to colors.scss for color values
@@ -116,7 +118,7 @@ function generateTokens() {
   );
 
   cssGlobalVariablesAst.stylesheet.rules = cssGlobalVariablesAst.stylesheet.rules.filter(
-    (node) => !node.selectors || !node.selectors.some((item) => item.includes('.pf-v5-theme-dark'))
+    (node) => !node.selectors || !node.selectors.some((item) => item.includes(`.pf-${version}-theme-dark`))
   );
 
   const cssGlobalVariablesMap = getRegexMatches(stringify(cssGlobalVariablesAst), /(--pf-[\w-]*):\s*([\w -_]+);/g);
@@ -128,7 +130,7 @@ function generateTokens() {
 
   const getComputedCSSVarValue = (value, selector, varMap) =>
     value.replace(/var\(([\w-]*)(,.*)?\)/g, (full, m1, m2) => {
-      if (m1.startsWith('--pf-v5-global')) {
+      if (m1.startsWith(`--pf-${version}-global`)) {
         if (varMap[m1]) {
           return varMap[m1] + (m2 || '');
         } else {
@@ -185,9 +187,9 @@ function generateTokens() {
   };
 
   // pre-populate the localVarsMap so we can lookup local variables within or across files, e.g. if we have the declaration:
-  // --pf-v5-c-chip-group--MarginBottom: calc(var(--pf-v5-c-chip-group--c-chip--MarginBottom) * -1);
+  // --pf-${version}-c-chip-group--MarginBottom: calc(var(--pf-${version}-c-chip-group--c-chip--MarginBottom) * -1);
   // then we need to find:
-  // --pf-v5-c-chip-group--c-chip--MarginBottom: var(--pf-v5-global--spacer--xs);
+  // --pf-${version}-c-chip-group--c-chip--MarginBottom: var(--pf-${version}-global--spacer--xs);
   const localVarsMap = getLocalVarsMap(cssFiles);
 
   const getFromLocalVarsMap = (match, selector) => {

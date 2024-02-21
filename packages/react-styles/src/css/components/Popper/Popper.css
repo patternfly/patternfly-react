@@ -1,4 +1,4 @@
-.pf-v5-c-popover[data-popper-reference-hidden="true"] {
+.pf-v6-c-popover[data-popper-reference-hidden="true"] {
     visibility: hidden;
     pointer-events: none;
 }

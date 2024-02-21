@@ -3,13 +3,13 @@
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-code-block"
+    class="pf-v6-c-code-block"
   >
     <div
-      class="pf-v5-c-code-block__header"
+      class="pf-v6-c-code-block__header"
     >
       <div
-        class="pf-v5-c-code-block__actions"
+        class="pf-v6-c-code-block__actions"
       >
         <div>
           actions
@@ -17,7 +17,7 @@ exports[`Matches the snapshot 1`] = `
       </div>
     </div>
     <div
-      class="pf-v5-c-code-block__content"
+      class="pf-v6-c-code-block__content"
     >
       children
     </div>

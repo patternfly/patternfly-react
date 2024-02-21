@@ -3,15 +3,15 @@
 exports[`ModalBoxTitle alert variant 1`] = `
 <DocumentFragment>
   <h1
-    class="pf-v5-c-modal-box__title pf-m-icon"
+    class="pf-v6-c-modal-box__title pf-m-icon"
     id="boxId"
   >
     <span
-      class="pf-v5-c-modal-box__title-icon"
+      class="pf-v6-c-modal-box__title-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -24,12 +24,12 @@ exports[`ModalBoxTitle alert variant 1`] = `
       </svg>
     </span>
     <span
-      class="pf-v5-screen-reader"
+      class="pf-v6-screen-reader"
     >
       Warning alert:
     </span>
     <span
-      class="pf-v5-c-modal-box__title-text"
+      class="pf-v6-c-modal-box__title-text"
     >
       Test Modal Box warning
     </span>
@@ -40,15 +40,15 @@ exports[`ModalBoxTitle alert variant 1`] = `
 exports[`ModalBoxTitle custom icon variant 1`] = `
 <DocumentFragment>
   <h1
-    class="pf-v5-c-modal-box__title pf-m-icon"
+    class="pf-v6-c-modal-box__title pf-m-icon"
     id="boxId"
   >
     <span
-      class="pf-v5-c-modal-box__title-icon"
+      class="pf-v6-c-modal-box__title-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -61,7 +61,7 @@ exports[`ModalBoxTitle custom icon variant 1`] = `
       </svg>
     </span>
     <span
-      class="pf-v5-c-modal-box__title-text"
+      class="pf-v6-c-modal-box__title-text"
     >
       Test Modal Box custom
     </span>
@@ -72,15 +72,15 @@ exports[`ModalBoxTitle custom icon variant 1`] = `
 exports[`ModalBoxTitle custom variant 1`] = `
 <DocumentFragment>
   <h1
-    class="pf-v5-c-modal-box__title pf-m-icon"
+    class="pf-v6-c-modal-box__title pf-m-icon"
     id="boxId"
   >
     <span
-      class="pf-v5-c-modal-box__title-icon"
+      class="pf-v6-c-modal-box__title-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -93,12 +93,12 @@ exports[`ModalBoxTitle custom variant 1`] = `
       </svg>
     </span>
     <span
-      class="pf-v5-screen-reader"
+      class="pf-v6-screen-reader"
     >
       Custom alert:
     </span>
     <span
-      class="pf-v5-c-modal-box__title-text"
+      class="pf-v6-c-modal-box__title-text"
     >
       Test Modal Box warning
     </span>
@@ -109,15 +109,15 @@ exports[`ModalBoxTitle custom variant 1`] = `
 exports[`ModalBoxTitle danger variant 1`] = `
 <DocumentFragment>
   <h1
-    class="pf-v5-c-modal-box__title pf-m-icon"
+    class="pf-v6-c-modal-box__title pf-m-icon"
     id="boxId"
   >
     <span
-      class="pf-v5-c-modal-box__title-icon"
+      class="pf-v6-c-modal-box__title-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -130,12 +130,12 @@ exports[`ModalBoxTitle danger variant 1`] = `
       </svg>
     </span>
     <span
-      class="pf-v5-screen-reader"
+      class="pf-v6-screen-reader"
     >
       Danger alert:
     </span>
     <span
-      class="pf-v5-c-modal-box__title-text"
+      class="pf-v6-c-modal-box__title-text"
     >
       Test Modal Box danger
     </span>
@@ -146,15 +146,15 @@ exports[`ModalBoxTitle danger variant 1`] = `
 exports[`ModalBoxTitle info variant 1`] = `
 <DocumentFragment>
   <h1
-    class="pf-v5-c-modal-box__title pf-m-icon"
+    class="pf-v6-c-modal-box__title pf-m-icon"
     id="boxId"
   >
     <span
-      class="pf-v5-c-modal-box__title-icon"
+      class="pf-v6-c-modal-box__title-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -167,12 +167,12 @@ exports[`ModalBoxTitle info variant 1`] = `
       </svg>
     </span>
     <span
-      class="pf-v5-screen-reader"
+      class="pf-v6-screen-reader"
     >
       Info alert:
     </span>
     <span
-      class="pf-v5-c-modal-box__title-text"
+      class="pf-v6-c-modal-box__title-text"
     >
       Test Modal Box info
     </span>
@@ -183,15 +183,15 @@ exports[`ModalBoxTitle info variant 1`] = `
 exports[`ModalBoxTitle success variant 1`] = `
 <DocumentFragment>
   <h1
-    class="pf-v5-c-modal-box__title pf-m-icon"
+    class="pf-v6-c-modal-box__title pf-m-icon"
     id="boxId"
   >
     <span
-      class="pf-v5-c-modal-box__title-icon"
+      class="pf-v6-c-modal-box__title-icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -204,12 +204,12 @@ exports[`ModalBoxTitle success variant 1`] = `
       </svg>
     </span>
     <span
-      class="pf-v5-screen-reader"
+      class="pf-v6-screen-reader"
     >
       Success alert:
     </span>
     <span
-      class="pf-v5-c-modal-box__title-text"
+      class="pf-v6-c-modal-box__title-text"
     >
       Test Modal Box success
     </span>

@@ -3,7 +3,7 @@
 exports[`Modal Test with custom header 1`] = `
 <DocumentFragment>
   <header
-    class="pf-v5-c-modal-box__header"
+    class="pf-v6-c-modal-box__header"
   >
     <span
       id="test-custom-header"
@@ -17,7 +17,7 @@ exports[`Modal Test with custom header 1`] = `
 exports[`ModalHeader Test 1`] = `
 <DocumentFragment>
   <header
-    class="pf-v5-c-modal-box__header"
+    class="pf-v6-c-modal-box__header"
   >
     This is a ModalBox header
   </header>
@@ -27,15 +27,15 @@ exports[`ModalHeader Test 1`] = `
 exports[`ModalHeader help renders 1`] = `
 <DocumentFragment>
   <header
-    class="pf-v5-c-modal-box__header pf-m-help"
+    class="pf-v6-c-modal-box__header pf-m-help"
   >
     <div
-      class="pf-v5-c-modal-box__header-main"
+      class="pf-v6-c-modal-box__header-main"
     >
       This is a ModalBox header
     </div>
     <div
-      class="pf-v5-c-modal-box__header-help"
+      class="pf-v6-c-modal-box__header-help"
     >
       <div>
         test

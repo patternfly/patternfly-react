@@ -3,15 +3,15 @@
 exports[`Matches snapshot 1`] = `
 <div
   aria-live="off"
-  class="pf-v5-c-tooltip"
+  class="pf-v6-c-tooltip"
   id="custom-id"
   role="tooltip"
 >
   <div
-    class="pf-v5-c-tooltip__arrow"
+    class="pf-v6-c-tooltip__arrow"
   />
   <div
-    class="pf-v5-c-tooltip__content pf-m-text-align-left"
+    class="pf-v6-c-tooltip__content pf-m-text-align-left"
   >
     Test content
   </div>

@@ -6,7 +6,7 @@ import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 
 jest.mock('../../../helpers/Popper/Popper');
 
-test('Renders with class name pf-v5-c-tooltip by default', async () => {
+test('Renders with class name pf-v6-c-tooltip by default', async () => {
   render(<Tooltip isVisible content="Test content" />);
 
   const tooltip = await screen.findByRole('tooltip');

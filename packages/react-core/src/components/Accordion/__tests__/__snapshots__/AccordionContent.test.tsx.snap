@@ -4,7 +4,7 @@ exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <h3
     aria-label="this is a simple accordion"
-    class="pf-v5-c-accordion__expandable-content"
+    class="pf-v6-c-accordion__expandable-content"
     id=""
   >
     <div

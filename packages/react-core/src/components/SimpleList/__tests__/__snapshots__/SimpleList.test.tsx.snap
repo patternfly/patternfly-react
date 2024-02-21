@@ -3,38 +3,38 @@
 exports[`SimpleList renders aria-labelled content 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-simple-list"
+    class="pf-v6-c-simple-list"
   >
     <ul
       aria-label="This is a simple list"
-      class="pf-v5-c-simple-list__list"
+      class="pf-v6-c-simple-list__list"
       role="list"
     >
       <li
-        class="pf-v5-c-simple-list__item"
+        class="pf-v6-c-simple-list__item"
       >
         <button
-          class="pf-v5-c-simple-list__item-link"
+          class="pf-v6-c-simple-list__item-link"
           type="button"
         >
           Item 1
         </button>
       </li>
       <li
-        class="pf-v5-c-simple-list__item"
+        class="pf-v6-c-simple-list__item"
       >
         <button
-          class="pf-v5-c-simple-list__item-link"
+          class="pf-v6-c-simple-list__item-link"
           type="button"
         >
           Item 2
         </button>
       </li>
       <li
-        class="pf-v5-c-simple-list__item"
+        class="pf-v6-c-simple-list__item"
       >
         <button
-          class="pf-v5-c-simple-list__item-link"
+          class="pf-v6-c-simple-list__item-link"
           type="button"
         >
           Item 3
@@ -48,37 +48,37 @@ exports[`SimpleList renders aria-labelled content 1`] = `
 exports[`SimpleList renders content 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-simple-list"
+    class="pf-v6-c-simple-list"
   >
     <ul
-      class="pf-v5-c-simple-list__list"
+      class="pf-v6-c-simple-list__list"
       role="list"
     >
       <li
-        class="pf-v5-c-simple-list__item"
+        class="pf-v6-c-simple-list__item"
       >
         <button
-          class="pf-v5-c-simple-list__item-link"
+          class="pf-v6-c-simple-list__item-link"
           type="button"
         >
           Item 1
         </button>
       </li>
       <li
-        class="pf-v5-c-simple-list__item"
+        class="pf-v6-c-simple-list__item"
       >
         <button
-          class="pf-v5-c-simple-list__item-link"
+          class="pf-v6-c-simple-list__item-link"
           type="button"
         >
           Item 2
         </button>
       </li>
       <li
-        class="pf-v5-c-simple-list__item"
+        class="pf-v6-c-simple-list__item"
       >
         <button
-          class="pf-v5-c-simple-list__item-link"
+          class="pf-v6-c-simple-list__item-link"
           type="button"
         >
           Item 3
@@ -92,48 +92,48 @@ exports[`SimpleList renders content 1`] = `
 exports[`SimpleList renders grouped content 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-simple-list"
+    class="pf-v6-c-simple-list"
   >
     <section
-      class="pf-v5-c-simple-list__section"
+      class="pf-v6-c-simple-list__section"
     >
       <h2
         aria-hidden="true"
-        class="pf-v5-c-simple-list__title"
+        class="pf-v6-c-simple-list__title"
         id=""
       >
         Group 1
       </h2>
       <ul
         aria-labelledby=""
-        class="pf-v5-c-simple-list__list"
+        class="pf-v6-c-simple-list__list"
         role="list"
       >
         <li
-          class="pf-v5-c-simple-list__item"
+          class="pf-v6-c-simple-list__item"
         >
           <button
-            class="pf-v5-c-simple-list__item-link"
+            class="pf-v6-c-simple-list__item-link"
             type="button"
           >
             Item 1
           </button>
         </li>
         <li
-          class="pf-v5-c-simple-list__item"
+          class="pf-v6-c-simple-list__item"
         >
           <button
-            class="pf-v5-c-simple-list__item-link"
+            class="pf-v6-c-simple-list__item-link"
             type="button"
           >
             Item 2
           </button>
         </li>
         <li
-          class="pf-v5-c-simple-list__item"
+          class="pf-v6-c-simple-list__item"
         >
           <button
-            class="pf-v5-c-simple-list__item-link"
+            class="pf-v6-c-simple-list__item-link"
             type="button"
           >
             Item 3
