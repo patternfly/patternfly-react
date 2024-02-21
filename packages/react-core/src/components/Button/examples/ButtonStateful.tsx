@@ -9,7 +9,7 @@ export const ButtonStateful: React.FunctionComponent = () => (
         <strong>Read</strong>
       </div>
       <Button variant="stateful" state="read" icon={<BellIcon />}>
-        10 <span className="pf-v5-screen-reader">items</span>
+        10 <span className="pf-v6-screen-reader">items</span>
       </Button>
     </div>
     <div>
@@ -17,7 +17,7 @@ export const ButtonStateful: React.FunctionComponent = () => (
         <strong>Unread</strong>
       </div>
       <Button variant="stateful" state="unread" icon={<BellIcon />}>
-        10 <span className="pf-v5-screen-reader">unread items</span>
+        10 <span className="pf-v6-screen-reader">unread items</span>
       </Button>
     </div>
     <div>
@@ -25,7 +25,7 @@ export const ButtonStateful: React.FunctionComponent = () => (
         <strong>Attention</strong>
       </div>
       <Button variant="stateful" state="attention" icon={<BellIcon />}>
-        10 <span className="pf-v5-screen-reader">unread items, needs attention</span>
+        10 <span className="pf-v6-screen-reader">unread items, needs attention</span>
       </Button>
     </div>
   </Flex>

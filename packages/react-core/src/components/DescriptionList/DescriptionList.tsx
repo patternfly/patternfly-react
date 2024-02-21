@@ -3,8 +3,12 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 import { formatBreakpointMods } from '../../helpers';
 import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/c_description_list_GridTemplateColumns_min';
-import cssTermWidth from '@patternfly/react-tokens/dist/esm/c_description_list__term_width';
+// import cssTermWidth from '@patternfly/react-tokens/dist/esm/c_description_list__term_width';
 import cssHorizontalTermWidth from '@patternfly/react-tokens/dist/esm/c_description_list_m_horizontal__term_width';
+
+const cssTermWidth = {
+  name: '--pf-v5-c-description-list__term-width'
+};
 
 export interface BreakpointModifiers {
   default?: string;

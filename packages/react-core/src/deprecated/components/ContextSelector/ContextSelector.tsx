@@ -135,8 +135,8 @@ class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateI
     } = this.props;
 
     const uniqueId = id || getUniqueId();
-    const toggleId = `pf-v5-context-selector-toggle-id-${uniqueId}`;
-    const screenReaderLabelId = `pf-v5-context-selector-label-id-${uniqueId}`;
+    const toggleId = `pf-v6-context-selector-toggle-id-${uniqueId}`;
+    const screenReaderLabelId = `pf-v6-context-selector-label-id-${uniqueId}`;
     const isStatic = isFlipEnabled && menuAppendTo !== 'inline';
 
     const menuContainer = (

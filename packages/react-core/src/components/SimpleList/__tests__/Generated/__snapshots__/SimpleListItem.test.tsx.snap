@@ -3,10 +3,10 @@
 exports[`SimpleListItem should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <li
-    class="pf-v5-c-simple-list__item ''"
+    class="pf-v6-c-simple-list__item ''"
   >
     <button
-      class="pf-v5-c-simple-list__item-link ''"
+      class="pf-v6-c-simple-list__item-link ''"
       type="button"
     >
       ReactNode

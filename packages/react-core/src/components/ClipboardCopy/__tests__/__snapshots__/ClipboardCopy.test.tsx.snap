@@ -3,17 +3,17 @@
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-clipboard-copy"
+    class="pf-v6-c-clipboard-copy"
     data-ouia-component-id="snapshot"
     data-ouia-component-type="PF5/ClipboardCopy"
     data-ouia-safe="true"
     id="snapshot"
   >
     <div
-      class="pf-v5-c-clipboard-copy__group"
+      class="pf-v6-c-clipboard-copy__group"
     >
       <span
-        class="pf-v5-c-form-control"
+        class="pf-v6-c-form-control"
       >
         <input
           aria-invalid="false"

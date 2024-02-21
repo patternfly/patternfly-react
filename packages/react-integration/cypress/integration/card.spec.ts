@@ -4,13 +4,13 @@ describe('Card Demo Test', () => {
   });
 
   it('Verify card with actions', () => {
-    cy.get('#cardWithActions .pf-v5-c-menu-toggle').then(($menuToggle) => {
+    cy.get('#cardWithActions .pf-v6-c-menu-toggle').then(($menuToggle) => {
       cy.wrap($menuToggle).should('not.have.class', 'pf-m-expanded');
       cy.wrap($menuToggle).click();
       cy.wrap($menuToggle).should('have.class', 'pf-m-expanded');
     });
-    cy.get('#cardWithActions .pf-v5-c-menu .pf-v5-c-menu__item').first().click();
-    cy.get('#cardWithActions .pf-v5-c-menu-toggle').should('not.have.class', 'pf-m-expanded');
+    cy.get('#cardWithActions .pf-v6-c-menu .pf-v6-c-menu__item').first().click();
+    cy.get('#cardWithActions .pf-v6-c-menu-toggle').should('not.have.class', 'pf-m-expanded');
   });
 
   it('Verify that deprecated selectable card can be selected and unselected with keyboard input', () => {
@@ -25,8 +25,8 @@ describe('Card Demo Test', () => {
 
   it('Verify card is expandable', () => {
     cy.get('#expand-card').should('not.have.class', 'pf-m-expanded');
-    cy.get('#expand-card .pf-v5-c-card__header').should('have.class', 'pf-m-toggle-right');
-    cy.get('.pf-v5-c-card__header-toggle .pf-v5-c-button').click();
+    cy.get('#expand-card .pf-v6-c-card__header').should('have.class', 'pf-m-toggle-right');
+    cy.get('.pf-v6-c-card__header-toggle .pf-v6-c-button').click();
     cy.get('#expand-card').should('have.class', 'pf-m-expanded');
   });
 
@@ -88,7 +88,7 @@ describe('Card Demo Test', () => {
     cy.get('#clickable-selectable-card-example-1 #clickable-selectable-card-input-1').should('be.checked');
     cy.get('#clickable-selectable-card-drawer').should('not.have.class', 'pf-m-expanded');
 
-    cy.get('#clickable-selectable-card-example-1 .pf-v5-c-button').click();
+    cy.get('#clickable-selectable-card-example-1 .pf-v6-c-button').click();
     cy.get('#clickable-selectable-card-drawer').should('have.class', 'pf-m-expanded');
   });
 });

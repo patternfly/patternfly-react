@@ -3,20 +3,20 @@
 exports[`chip group renders to match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-label-group"
+    class="pf-v6-c-label-group"
   >
     <div
-      class="pf-v5-c-label-group__main"
+      class="pf-v6-c-label-group__main"
     >
       <ul
         aria-label="Chip group category"
-        class="pf-v5-c-label-group__list"
+        class="pf-v6-c-label-group__list"
         data-ouia-component-type="PF5/ChipGroup"
         data-ouia-safe="true"
         role="list"
       >
         <li
-          class="pf-v5-c-label-group__list-item"
+          class="pf-v6-c-label-group__list-item"
         >
           chips
         </li>

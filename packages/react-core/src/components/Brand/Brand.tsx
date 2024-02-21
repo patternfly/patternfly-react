@@ -60,7 +60,7 @@ export const Brand: React.FunctionComponent<BrandProps> = ({
   }
 
   return (
-    /** the brand component currently contains no styling the 'pf-v5-c-brand' string will be used for the className */
+    /** the brand component currently contains no styling the 'pf-v6-c-brand' string will be used for the className */
     children !== undefined ? (
       <picture
         className={css(styles.brand, styles.modifiers.picture, className)}

@@ -8,7 +8,7 @@ describe('Table Sortable Test', () => {
   });
 
   it('Check number of rows', () => {
-    cy.get('.pf-v5-c-table').find('tr').should('have.length', 4);
+    cy.get('.pf-v6-c-table').find('tr').should('have.length', 4);
   });
 
   it('Check number of columns', () => {
@@ -16,11 +16,11 @@ describe('Table Sortable Test', () => {
   });
 
   it('Test sortable transformer', () => {
-    cy.get('.pf-v5-c-table__sort').should('exist');
-    cy.get('.pf-v5-c-table__sort').first().click();
+    cy.get('.pf-v6-c-table__sort').should('exist');
+    cy.get('.pf-v6-c-table__sort').first().click();
     cy.get('td').first().contains('a');
-    cy.get('.pf-v5-c-table__sort').first().click();
-    cy.get('.pf-v5-c-table__sort').last().click();
+    cy.get('.pf-v6-c-table__sort').first().click();
+    cy.get('.pf-v6-c-table__sort').last().click();
     cy.get('td').eq(2).contains('a');
   });
 });

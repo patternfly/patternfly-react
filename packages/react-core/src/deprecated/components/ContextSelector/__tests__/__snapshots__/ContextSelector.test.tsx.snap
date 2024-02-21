@@ -3,27 +3,27 @@
 exports[`ContextSelector Renders ContextSelector 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-context-selector"
+    class="pf-v6-c-context-selector"
     data-ouia-component-id="OUIA-Generated-ContextSelector-1"
     data-ouia-component-type="PF5/ContextSelector"
     data-ouia-safe="true"
   >
     <button
       aria-expanded="false"
-      aria-labelledby="pf-v5-context-selector-label-id-render pf-v5-context-selector-toggle-id-render"
-      class="pf-v5-c-context-selector__toggle"
-      id="pf-v5-context-selector-toggle-id-render"
+      aria-labelledby="pf-v6-context-selector-label-id-render pf-v6-context-selector-toggle-id-render"
+      class="pf-v6-c-context-selector__toggle"
+      id="pf-v6-context-selector-toggle-id-render"
       type="button"
     >
       <span
-        class="pf-v5-c-context-selector__toggle-text"
+        class="pf-v6-c-context-selector__toggle-text"
       />
       <span
-        class="pf-v5-c-context-selector__toggle-icon"
+        class="pf-v6-c-context-selector__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -43,27 +43,27 @@ exports[`ContextSelector Renders ContextSelector 1`] = `
 exports[`ContextSelector Renders ContextSelector open 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-context-selector pf-m-expanded"
+    class="pf-v6-c-context-selector pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-ContextSelector-2"
     data-ouia-component-type="PF5/ContextSelector"
     data-ouia-safe="true"
   >
     <button
       aria-expanded="true"
-      aria-labelledby="pf-v5-context-selector-label-id-render-open pf-v5-context-selector-toggle-id-render-open"
-      class="pf-v5-c-context-selector__toggle"
-      id="pf-v5-context-selector-toggle-id-render-open"
+      aria-labelledby="pf-v6-context-selector-label-id-render-open pf-v6-context-selector-toggle-id-render-open"
+      class="pf-v6-c-context-selector__toggle"
+      id="pf-v6-context-selector-toggle-id-render-open"
       type="button"
     >
       <span
-        class="pf-v5-c-context-selector__toggle-text"
+        class="pf-v6-c-context-selector__toggle-text"
       />
       <span
-        class="pf-v5-c-context-selector__toggle-icon"
+        class="pf-v6-c-context-selector__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -77,34 +77,34 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
       </span>
     </button>
     <div
-      class="pf-v5-c-context-selector__menu"
+      class="pf-v6-c-context-selector__menu"
       id="render-open"
     >
       <div>
         <div
-          class="pf-v5-c-context-selector__menu-search"
+          class="pf-v6-c-context-selector__menu-search"
         >
           <div
-            class="pf-v5-c-input-group"
+            class="pf-v6-c-input-group"
           >
             <div
-              class="pf-v5-c-input-group__item pf-m-fill"
+              class="pf-v6-c-input-group__item pf-m-fill"
             >
               <div
-                class="pf-v5-c-text-input-group"
+                class="pf-v6-c-text-input-group"
               >
                 <div
-                  class="pf-v5-c-text-input-group__main pf-m-icon"
+                  class="pf-v6-c-text-input-group__main pf-m-icon"
                 >
                   <span
-                    class="pf-v5-c-text-input-group__text"
+                    class="pf-v6-c-text-input-group__text"
                   >
                     <span
-                      class="pf-v5-c-text-input-group__icon"
+                      class="pf-v6-c-text-input-group__icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="pf-v5-svg"
+                        class="pf-v6-svg"
                         fill="currentColor"
                         height="1em"
                         role="img"
@@ -118,7 +118,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
                     </span>
                     <input
                       aria-label="Search input"
-                      class="pf-v5-c-text-input-group__text-input"
+                      class="pf-v6-c-text-input-group__text-input"
                       placeholder="Search"
                       type="text"
                       value=""
@@ -128,26 +128,26 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
               </div>
             </div>
             <div
-              class="pf-v5-c-input-group__item"
+              class="pf-v6-c-input-group__item"
             >
               <button
                 aria-disabled="false"
                 aria-label="Search menu items"
-                class="pf-v5-c-button pf-m-control"
+                class="pf-v6-c-button pf-m-control"
                 data-ouia-component-id="OUIA-Generated-Button-control-1"
                 data-ouia-component-type="PF5/Button"
                 data-ouia-safe="true"
                 type="submit"
               >
                 <span
-                  class="pf-v5-c-icon"
+                  class="pf-v6-c-icon"
                 >
                   <span
-                    class="pf-v5-c-icon__content pf-v5-m-mirror-inline-rtl"
+                    class="pf-v6-c-icon__content pf-v6-m-mirror-inline-rtl"
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-v5-svg"
+                      class="pf-v6-svg"
                       fill="currentColor"
                       height="1em"
                       role="img"
@@ -165,14 +165,14 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
           </div>
         </div>
         <ul
-          class="pf-v5-c-context-selector__menu-list"
+          class="pf-v6-c-context-selector__menu-list"
           role="menu"
         >
           <li
             role="none"
           >
             <button
-              class="pf-v5-c-context-selector__menu-list-item"
+              class="pf-v6-c-context-selector__menu-list-item"
               role="menuitem"
             >
               My Project
@@ -182,7 +182,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
             role="none"
           >
             <button
-              class="pf-v5-c-context-selector__menu-list-item"
+              class="pf-v6-c-context-selector__menu-list-item"
               role="menuitem"
             >
               OpenShift Cluster
@@ -192,7 +192,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
             role="none"
           >
             <button
-              class="pf-v5-c-context-selector__menu-list-item"
+              class="pf-v6-c-context-selector__menu-list-item"
               role="menuitem"
             >
               Production Ansible
@@ -202,7 +202,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
             role="none"
           >
             <button
-              class="pf-v5-c-context-selector__menu-list-item"
+              class="pf-v6-c-context-selector__menu-list-item"
               role="menuitem"
             >
               AWS
@@ -212,7 +212,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
             role="none"
           >
             <button
-              class="pf-v5-c-context-selector__menu-list-item"
+              class="pf-v6-c-context-selector__menu-list-item"
               role="menuitem"
             >
               Azure
@@ -228,27 +228,27 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
 exports[`ContextSelector Renders in strict mode 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-context-selector pf-m-expanded"
+    class="pf-v6-c-context-selector pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-ContextSelector-4"
     data-ouia-component-type="PF5/ContextSelector"
     data-ouia-safe="true"
   >
     <button
       aria-expanded="true"
-      aria-labelledby="pf-v5-context-selector-label-id-render pf-v5-context-selector-toggle-id-render"
-      class="pf-v5-c-context-selector__toggle"
-      id="pf-v5-context-selector-toggle-id-render"
+      aria-labelledby="pf-v6-context-selector-label-id-render pf-v6-context-selector-toggle-id-render"
+      class="pf-v6-c-context-selector__toggle"
+      id="pf-v6-context-selector-toggle-id-render"
       type="button"
     >
       <span
-        class="pf-v5-c-context-selector__toggle-text"
+        class="pf-v6-c-context-selector__toggle-text"
       />
       <span
-        class="pf-v5-c-context-selector__toggle-icon"
+        class="pf-v6-c-context-selector__toggle-icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -262,34 +262,34 @@ exports[`ContextSelector Renders in strict mode 1`] = `
       </span>
     </button>
     <div
-      class="pf-v5-c-context-selector__menu"
+      class="pf-v6-c-context-selector__menu"
       id="render"
     >
       <div>
         <div
-          class="pf-v5-c-context-selector__menu-search"
+          class="pf-v6-c-context-selector__menu-search"
         >
           <div
-            class="pf-v5-c-input-group"
+            class="pf-v6-c-input-group"
           >
             <div
-              class="pf-v5-c-input-group__item pf-m-fill"
+              class="pf-v6-c-input-group__item pf-m-fill"
             >
               <div
-                class="pf-v5-c-text-input-group"
+                class="pf-v6-c-text-input-group"
               >
                 <div
-                  class="pf-v5-c-text-input-group__main pf-m-icon"
+                  class="pf-v6-c-text-input-group__main pf-m-icon"
                 >
                   <span
-                    class="pf-v5-c-text-input-group__text"
+                    class="pf-v6-c-text-input-group__text"
                   >
                     <span
-                      class="pf-v5-c-text-input-group__icon"
+                      class="pf-v6-c-text-input-group__icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="pf-v5-svg"
+                        class="pf-v6-svg"
                         fill="currentColor"
                         height="1em"
                         role="img"
@@ -303,7 +303,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
                     </span>
                     <input
                       aria-label="Search input"
-                      class="pf-v5-c-text-input-group__text-input"
+                      class="pf-v6-c-text-input-group__text-input"
                       placeholder="Search"
                       type="text"
                       value=""
@@ -313,26 +313,26 @@ exports[`ContextSelector Renders in strict mode 1`] = `
               </div>
             </div>
             <div
-              class="pf-v5-c-input-group__item"
+              class="pf-v6-c-input-group__item"
             >
               <button
                 aria-disabled="false"
                 aria-label="Search menu items"
-                class="pf-v5-c-button pf-m-control"
+                class="pf-v6-c-button pf-m-control"
                 data-ouia-component-id="OUIA-Generated-Button-control-3"
                 data-ouia-component-type="PF5/Button"
                 data-ouia-safe="true"
                 type="submit"
               >
                 <span
-                  class="pf-v5-c-icon"
+                  class="pf-v6-c-icon"
                 >
                   <span
-                    class="pf-v5-c-icon__content pf-v5-m-mirror-inline-rtl"
+                    class="pf-v6-c-icon__content pf-v6-m-mirror-inline-rtl"
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-v5-svg"
+                      class="pf-v6-svg"
                       fill="currentColor"
                       height="1em"
                       role="img"
@@ -350,14 +350,14 @@ exports[`ContextSelector Renders in strict mode 1`] = `
           </div>
         </div>
         <ul
-          class="pf-v5-c-context-selector__menu-list"
+          class="pf-v6-c-context-selector__menu-list"
           role="menu"
         >
           <li
             role="none"
           >
             <button
-              class="pf-v5-c-context-selector__menu-list-item"
+              class="pf-v6-c-context-selector__menu-list-item"
               role="menuitem"
             >
               My Project
@@ -367,7 +367,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
             role="none"
           >
             <button
-              class="pf-v5-c-context-selector__menu-list-item"
+              class="pf-v6-c-context-selector__menu-list-item"
               role="menuitem"
             >
               OpenShift Cluster
@@ -377,7 +377,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
             role="none"
           >
             <button
-              class="pf-v5-c-context-selector__menu-list-item"
+              class="pf-v6-c-context-selector__menu-list-item"
               role="menuitem"
             >
               Production Ansible
@@ -387,7 +387,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
             role="none"
           >
             <button
-              class="pf-v5-c-context-selector__menu-list-item"
+              class="pf-v6-c-context-selector__menu-list-item"
               role="menuitem"
             >
               AWS
@@ -397,7 +397,7 @@ exports[`ContextSelector Renders in strict mode 1`] = `
             role="none"
           >
             <button
-              class="pf-v5-c-context-selector__menu-list-item"
+              class="pf-v6-c-context-selector__menu-list-item"
               role="menuitem"
             >
               Azure

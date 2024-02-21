@@ -3,7 +3,7 @@
 exports[`ChartBulletGroupTitle 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-chart"
+    class="pf-v6-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -30,7 +30,7 @@ exports[`ChartBulletGroupTitle 1`] = `
 exports[`ChartBulletGroupTitle 2`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-chart"
+    class="pf-v6-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -57,7 +57,7 @@ exports[`ChartBulletGroupTitle 2`] = `
 exports[`renders component data 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-chart"
+    class="pf-v6-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -77,7 +77,7 @@ exports[`renders component data 1`] = `
         <tspan
           dx="0"
           dy="0"
-          style="fill: var(--pf-v5-chart-bullet--label--grouptitle--Fill, #151515); font-size: 24px; text-anchor: middle; font-family: var(--pf-v5-chart-global--FontFamily, \\"RedHatText\\", helvetica, arial, sans-serif); letter-spacing: var(--pf-v5-chart-global--letter-spacing, normal); stroke: transparent;"
+          style="fill: var(--pf-v6-chart-bullet--label--grouptitle--Fill, #151515); font-size: 24px; text-anchor: middle; font-family: var(--pf-v6-chart-global--FontFamily, \\"RedHatText\\", helvetica, arial, sans-serif); letter-spacing: var(--pf-v6-chart-global--letter-spacing, normal); stroke: transparent;"
           text-anchor="middle"
           x="225"
         >
@@ -86,7 +86,7 @@ exports[`renders component data 1`] = `
         <tspan
           dx="0"
           dy="13.5"
-          style="fill: var(--pf-v5-chart-bullet--label--subtitle--Fill, #b8bbbe); font-size: 14px; text-anchor: middle; font-family: var(--pf-v5-chart-global--FontFamily, \\"RedHatText\\", helvetica, arial, sans-serif); letter-spacing: var(--pf-v5-chart-global--letter-spacing, normal); stroke: transparent;"
+          style="fill: var(--pf-v6-chart-bullet--label--subtitle--Fill, #b8bbbe); font-size: 14px; text-anchor: middle; font-family: var(--pf-v6-chart-global--FontFamily, \\"RedHatText\\", helvetica, arial, sans-serif); letter-spacing: var(--pf-v6-chart-global--letter-spacing, normal); stroke: transparent;"
           text-anchor="middle"
           x="225"
         >
@@ -94,7 +94,7 @@ exports[`renders component data 1`] = `
         </tspan>
       </text>
       <line
-        style="fill: var(--pf-v5-chart-bullet--group-title--divider--Fill--Color, #f0f0f0); opacity: 1; stroke: var(--pf-v5-chart-bullet--group-title--divider--stroke--Color, #f0f0f0); stroke-width: 2;"
+        style="fill: var(--pf-v6-chart-bullet--group-title--divider--Fill--Color, #f0f0f0); opacity: 1; stroke: var(--pf-v6-chart-bullet--group-title--divider--stroke--Color, #f0f0f0); stroke-width: 2;"
         vector-effect="non-scaling-stroke"
         x1="0"
         x2="450"

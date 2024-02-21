@@ -4,19 +4,19 @@ describe('Expandable Demo Test', () => {
   });
 
   it('Verify controlled expandable', () => {
-    cy.get('.pf-v5-c-expandable-section__toggle').first().click();
-    cy.get('.pf-v5-c-expandable-section').first().should('have.class', 'pf-m-expanded');
+    cy.get('.pf-v6-c-expandable-section__toggle').first().click();
+    cy.get('.pf-v6-c-expandable-section').first().should('have.class', 'pf-m-expanded');
   });
 
   it('Verify uncontrolled expandable', () => {
-    cy.get('.pf-v5-c-expandable-section__toggle').last().click();
-    cy.get('.pf-v5-c-expandable-section').last().should('have.class', 'pf-m-expanded');
+    cy.get('.pf-v6-c-expandable-section__toggle').last().click();
+    cy.get('.pf-v6-c-expandable-section').last().should('have.class', 'pf-m-expanded');
   });
 
   it('Verify dynamic uncontrolled expandable', () => {
-    cy.get('.pf-v5-c-expandable-section__toggle').find('span').should('contain', 'Show More');
-    cy.get('.pf-v5-c-expandable-section__toggle').last().click();
-    cy.get('.pf-v5-c-expandable-section__toggle').find('span').should('contain', 'Show Less');
+    cy.get('.pf-v6-c-expandable-section__toggle').find('span').should('contain', 'Show More');
+    cy.get('.pf-v6-c-expandable-section__toggle').last().click();
+    cy.get('.pf-v6-c-expandable-section__toggle').find('span').should('contain', 'Show Less');
   });
 
   // disabled this test because pf-m-detached was removed from core.
@@ -28,7 +28,7 @@ describe('Expandable Demo Test', () => {
   });
 
   it('Verify disclosure expandable', () => {
-    cy.get('#disclosure-expandable-section > .pf-v5-c-expandable-section__toggle').click();
+    cy.get('#disclosure-expandable-section > .pf-v6-c-expandable-section__toggle').click();
     cy.get('#disclosure-expandable-section').should('have.class', 'pf-m-expanded');
     cy.get('#disclosure-expandable-section').should('have.class', 'pf-m-display-lg');
     cy.get('#disclosure-expandable-section').should('have.class', 'pf-m-limit-width');

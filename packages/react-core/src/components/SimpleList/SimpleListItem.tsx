@@ -72,7 +72,7 @@ class SimpleListItem extends React.Component<SimpleListItemProps> {
               };
 
           return (
-            <li className={css('pf-v5-c-simple-list__item', className)} {...props}>
+            <li className={css('pf-v6-c-simple-list__item', className)} {...props}>
               <Component
                 className={css(
                   styles.simpleListItemLink,

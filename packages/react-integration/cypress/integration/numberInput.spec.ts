@@ -40,10 +40,10 @@ describe('NumberInput Demo Test', () => {
   });
 
   it('can have different unit positions', () => {
-    cy.get('#numberInput1').children().first().should('have.class', 'pf-v5-c-input-group');
-    cy.get('#numberInput1').children().last().should('have.class', 'pf-v5-c-number-input__unit');
-    cy.get('#numberInput2').children().first().should('have.class', 'pf-v5-c-number-input__unit');
-    cy.get('#numberInput2').children().last().should('have.class', 'pf-v5-c-input-group');
+    cy.get('#numberInput1').children().first().should('have.class', 'pf-v6-c-input-group');
+    cy.get('#numberInput1').children().last().should('have.class', 'pf-v6-c-number-input__unit');
+    cy.get('#numberInput2').children().first().should('have.class', 'pf-v6-c-number-input__unit');
+    cy.get('#numberInput2').children().last().should('have.class', 'pf-v6-c-input-group');
   });
 
   it('initial undefined value can be increment with the plus button', () => {

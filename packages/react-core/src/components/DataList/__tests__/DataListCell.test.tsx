@@ -61,7 +61,7 @@ test('Renders width modifier when width is passed', () => {
           styles.modifiers.flex_4,
           styles.modifiers.flex_5
         )
-      : expect(dataListCell).toHaveClass(`pf-v5-c-data-list__cell ${testCase.class}`, { exact: true });
+      : expect(dataListCell).toHaveClass(`pf-v6-c-data-list__cell ${testCase.class}`, { exact: true });
   });
 });
 

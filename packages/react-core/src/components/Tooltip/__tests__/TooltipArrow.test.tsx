@@ -9,7 +9,7 @@ test('Renders without children', () => {
   expect(screen.getByTestId('tooltipArrow')).toBeVisible();
 });
 
-test('Renders with class name pf-v5-c-tooltip__arrow by default', () => {
+test('Renders with class name pf-v6-c-tooltip__arrow by default', () => {
   render(<TooltipArrow data-testid="tooltipArrow" />);
 
   expect(screen.getByTestId('tooltipArrow')).toHaveClass(styles.tooltipArrow);

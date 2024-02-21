@@ -4,12 +4,12 @@
   flex-direction: column;
 }
 
-.ws-react-l-stack > .pf-v5-l-stack {
+.ws-react-l-stack > .pf-v6-l-stack {
   flex-grow: 1;
 }
 
-.ws-react-l-stack .pf-v5-l-stack,
-.ws-react-l-stack .pf-v5-l-stack > .pf-v5-l-stack__item {
+.ws-react-l-stack .pf-v6-l-stack,
+.ws-react-l-stack .pf-v6-l-stack > .pf-v6-l-stack__item {
   padding: 1rem;
   border-width: 2px;
   border-style: dashed;

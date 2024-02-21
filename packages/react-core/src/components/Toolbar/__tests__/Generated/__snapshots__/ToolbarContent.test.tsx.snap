@@ -3,10 +3,10 @@
 exports[`ToolbarContent should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-toolbar__content string"
+    class="pf-v6-c-toolbar__content string"
   >
     <div
-      class="pf-v5-c-toolbar__content-section"
+      class="pf-v6-c-toolbar__content-section"
     >
       <div>
         ReactNode

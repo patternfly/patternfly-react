@@ -19,7 +19,7 @@ describe('Dropdown demo test', () => {
 
   it('closes dropdown when dropdown item clicked', () => {
     cy.get('[data-cy="toggle"]').click();
-    cy.get('[data-cy=dropdown-item] > .pf-v5-c-menu__item').click({ force: true });
+    cy.get('[data-cy=dropdown-item] > .pf-v6-c-menu__item').click({ force: true });
     cy.get('[data-cy="toggle"]').should('not.have.class', 'pf-m-expanded');
   });
 

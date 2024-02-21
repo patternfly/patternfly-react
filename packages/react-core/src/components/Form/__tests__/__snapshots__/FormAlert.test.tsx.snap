@@ -3,7 +3,7 @@
 exports[`Form Alert component should render form group required variant 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-form__alert"
+    class="pf-v6-c-form__alert"
   />
 </DocumentFragment>
 `;

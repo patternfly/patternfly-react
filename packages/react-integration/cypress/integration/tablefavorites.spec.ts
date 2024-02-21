@@ -4,7 +4,7 @@ describe('Table Favorites Test', () => {
   });
 
   it('Check number of rows', () => {
-    cy.get('.pf-v5-c-table > tbody').find('tr').should('have.length', 3);
+    cy.get('.pf-v6-c-table > tbody').find('tr').should('have.length', 3);
   });
 
   it('Check number of columns', () => {

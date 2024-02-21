@@ -120,7 +120,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
       const getClickableSelectableProps = () => {
         const baseProps = {
           className: 'pf-m-standalone',
-          inputClassName: isClickable && !isSelectable && 'pf-v5-screen-reader',
+          inputClassName: isClickable && !isSelectable && 'pf-v6-screen-reader',
           label: <></>,
           'aria-label': selectableActions.selectableActionAriaLabel,
           'aria-labelledby': selectableActions.selectableActionAriaLabelledby,

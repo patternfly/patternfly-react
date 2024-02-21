@@ -86,7 +86,7 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
       ref={titleRef}
       className={css(styles.notificationDrawerListItemHeaderTitle, truncateTitle && styles.modifiers.truncate)}
     >
-      {srTitle && <span className="pf-v5-screen-reader">{srTitle}</span>}
+      {srTitle && <span className="pf-v6-screen-reader">{srTitle}</span>}
       {title}
     </HeadingLevel>
   );

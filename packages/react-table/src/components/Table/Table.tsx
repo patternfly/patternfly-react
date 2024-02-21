@@ -124,7 +124,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
       setTableCaption(
         <caption>
           {selectableRowCaptionText}
-          <div className="pf-v5-screen-reader">
+          <div className="pf-v6-screen-reader">
             This table has selectable rows. It can be navigated by row using tab, and each row can be selected using
             space or enter.
           </div>
@@ -132,7 +132,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
       );
     } else {
       setTableCaption(
-        <caption className="pf-v5-screen-reader">
+        <caption className="pf-v6-screen-reader">
           This table has selectable rows. It can be navigated by row using tab, and each row can be selected using space
           or enter.
         </caption>

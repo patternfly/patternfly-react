@@ -55,7 +55,7 @@ export const CardNested: React.FunctionComponent = () => {
             }}
           >
             <CardTitle id="nested-cards-toggle-group-1-title">
-              <span className="pf-v5-u-font-weight-light">CPU 1</span>
+              <span className="pf-v6-u-font-weight-light">CPU 1</span>
             </CardTitle>
           </CardHeader>
           <CardExpandableContent>
@@ -216,7 +216,7 @@ export const CardNested: React.FunctionComponent = () => {
             }}
           >
             <CardTitle id="nested-cards-toggle-group-2-title">
-              <span className="pf-v5-u-font-weight-light">CPU 2</span>
+              <span className="pf-v6-u-font-weight-light">CPU 2</span>
             </CardTitle>
           </CardHeader>
           <CardExpandableContent>
@@ -377,7 +377,7 @@ export const CardNested: React.FunctionComponent = () => {
             }}
           >
             <CardTitle id="nested-cards-toggle-group-3-title">
-              <span className="pf-v5-u-font-weight-light">CPU 3</span>
+              <span className="pf-v6-u-font-weight-light">CPU 3</span>
             </CardTitle>
           </CardHeader>
           <CardExpandableContent>

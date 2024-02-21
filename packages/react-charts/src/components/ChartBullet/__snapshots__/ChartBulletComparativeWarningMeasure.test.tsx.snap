@@ -3,7 +3,7 @@
 exports[`ChartBulletComparativeZeroMeasure 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-chart"
+    class="pf-v6-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -30,7 +30,7 @@ exports[`ChartBulletComparativeZeroMeasure 1`] = `
 exports[`ChartBulletComparativeZeroMeasure 2`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-chart"
+    class="pf-v6-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -57,7 +57,7 @@ exports[`ChartBulletComparativeZeroMeasure 2`] = `
 exports[`renders component data 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-chart"
+    class="pf-v6-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -83,7 +83,7 @@ A 0 0 0 0 1, 225, 104.8
           index="0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v5-chart-bullet--comparative-measure--warning--Fill--Color, #ec7a08); stroke: var(--pf-v5-chart-bullet--comparative-measure--warning--stroke--Color, #ec7a08); padding: 8px; stroke-width: 2;"
+          style="fill: var(--pf-v6-chart-bullet--comparative-measure--warning--Fill--Color, #ec7a08); stroke: var(--pf-v6-chart-bullet--comparative-measure--warning--stroke--Color, #ec7a08); padding: 8px; stroke-width: 2;"
         />
       </g>
     </svg>

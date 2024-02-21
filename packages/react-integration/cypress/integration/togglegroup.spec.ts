@@ -28,6 +28,6 @@ describe('Toggle Group Demo Test', () => {
   });
 
   it('Verify toggle group is compact', () => {
-    cy.get('.pf-v5-c-toggle-group').eq(2).should('have.class', 'pf-m-compact');
+    cy.get('.pf-v6-c-toggle-group').eq(2).should('have.class', 'pf-m-compact');
   });
 });

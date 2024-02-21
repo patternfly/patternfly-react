@@ -5,18 +5,18 @@ exports[`NotificationBadge count 1`] = `
   <button
     aria-disabled="false"
     aria-expanded="false"
-    class="pf-v5-c-button pf-m-stateful pf-m-read"
+    class="pf-v6-c-button pf-m-stateful pf-m-read"
     data-ouia-component-id="OUIA-Generated-Button-stateful-3"
     data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
     type="button"
   >
     <span
-      class="pf-v5-c-button__icon pf-m-start"
+      class="pf-v6-c-button__icon pf-m-start"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -38,7 +38,7 @@ exports[`false NotificationBadge needs attention 1`] = `
   <button
     aria-disabled="false"
     aria-expanded="false"
-    class="pf-v5-c-button pf-m-stateful pf-m-attention"
+    class="pf-v6-c-button pf-m-stateful pf-m-attention"
     data-ouia-component-id="OUIA-Generated-Button-stateful-2"
     data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"
@@ -54,7 +54,7 @@ exports[`true NotificationBadge needs attention 1`] = `
   <button
     aria-disabled="false"
     aria-expanded="false"
-    class="pf-v5-c-button pf-m-stateful pf-m-attention"
+    class="pf-v6-c-button pf-m-stateful pf-m-attention"
     data-ouia-component-id="OUIA-Generated-Button-stateful-1"
     data-ouia-component-type="PF5/Button"
     data-ouia-safe="true"

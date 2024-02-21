@@ -4,33 +4,33 @@ exports[`expandable vertical with subsection 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Jump to section"
-    class="pf-v5-c-jump-links pf-m-vertical pf-m-expandable"
+    class="pf-v6-c-jump-links pf-m-vertical pf-m-expandable"
   >
     <div
-      class="pf-v5-c-jump-links__main"
+      class="pf-v6-c-jump-links__main"
     >
       <div
-        class="pf-v5-c-jump-links__header"
+        class="pf-v6-c-jump-links__header"
       >
         <div
-          class="pf-v5-c-jump-links__toggle"
+          class="pf-v6-c-jump-links__toggle"
         >
           <button
             aria-disabled="false"
             aria-expanded="false"
             aria-label="Toggle jump links"
-            class="pf-v5-c-button pf-m-plain"
+            class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-1"
             data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             type="button"
           >
             <span
-              class="pf-v5-c-jump-links__toggle-icon"
+              class="pf-v6-c-jump-links__toggle-icon"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -43,38 +43,38 @@ exports[`expandable vertical with subsection 1`] = `
               </svg>
             </span>
             <span
-              class="pf-v5-c-jump-links__toggle-text"
+              class="pf-v6-c-jump-links__toggle-text"
             >
                Jump to section 
             </span>
           </button>
         </div>
         <div
-          class="pf-v5-c-jump-links__label"
+          class="pf-v6-c-jump-links__label"
         >
           Jump to section
         </div>
       </div>
       <ul
-        class="pf-v5-c-jump-links__list"
+        class="pf-v6-c-jump-links__list"
         role="list"
       >
         <li
-          class="pf-v5-c-jump-links__item"
+          class="pf-v6-c-jump-links__item"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-13"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Inactive section
               </span>
@@ -82,47 +82,47 @@ exports[`expandable vertical with subsection 1`] = `
           </span>
         </li>
         <li
-          class="pf-v5-c-jump-links__item"
+          class="pf-v6-c-jump-links__item"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-14"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Section with active subsection
               </span>
             </a>
           </span>
           <ul
-            class="pf-v5-c-jump-links__list"
+            class="pf-v6-c-jump-links__list"
             role="list"
           >
             <li
               aria-current="location"
-              class="pf-v5-c-jump-links__item pf-m-current"
+              class="pf-v6-c-jump-links__item pf-m-current"
             >
               <span
-                class="pf-v5-c-jump-links__link"
+                class="pf-v6-c-jump-links__link"
               >
                 <a
                   aria-disabled="false"
-                  class="pf-v5-c-button pf-m-link"
+                  class="pf-v6-c-button pf-m-link"
                   data-ouia-component-id="OUIA-Generated-Button-link-15"
                   data-ouia-component-type="PF5/Button"
                   data-ouia-safe="true"
                   href="#"
                 >
                   <span
-                    class="pf-v5-c-jump-links__link-text"
+                    class="pf-v6-c-jump-links__link-text"
                   >
                     Active subsection
                   </span>
@@ -130,21 +130,21 @@ exports[`expandable vertical with subsection 1`] = `
               </span>
             </li>
             <li
-              class="pf-v5-c-jump-links__item"
+              class="pf-v6-c-jump-links__item"
             >
               <span
-                class="pf-v5-c-jump-links__link"
+                class="pf-v6-c-jump-links__link"
               >
                 <a
                   aria-disabled="false"
-                  class="pf-v5-c-button pf-m-link"
+                  class="pf-v6-c-button pf-m-link"
                   data-ouia-component-id="OUIA-Generated-Button-link-16"
                   data-ouia-component-type="PF5/Button"
                   data-ouia-safe="true"
                   href="#"
                 >
                   <span
-                    class="pf-v5-c-jump-links__link-text"
+                    class="pf-v6-c-jump-links__link-text"
                   >
                     Inactive subsection
                   </span>
@@ -152,21 +152,21 @@ exports[`expandable vertical with subsection 1`] = `
               </span>
             </li>
             <li
-              class="pf-v5-c-jump-links__item"
+              class="pf-v6-c-jump-links__item"
             >
               <span
-                class="pf-v5-c-jump-links__link"
+                class="pf-v6-c-jump-links__link"
               >
                 <a
                   aria-disabled="false"
-                  class="pf-v5-c-button pf-m-link"
+                  class="pf-v6-c-button pf-m-link"
                   data-ouia-component-id="OUIA-Generated-Button-link-17"
                   data-ouia-component-type="PF5/Button"
                   data-ouia-safe="true"
                   href="#"
                 >
                   <span
-                    class="pf-v5-c-jump-links__link-text"
+                    class="pf-v6-c-jump-links__link-text"
                   >
                     Inactive subsection
                   </span>
@@ -176,21 +176,21 @@ exports[`expandable vertical with subsection 1`] = `
           </ul>
         </li>
         <li
-          class="pf-v5-c-jump-links__item"
+          class="pf-v6-c-jump-links__item"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-18"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Inactive section
               </span>
@@ -198,21 +198,21 @@ exports[`expandable vertical with subsection 1`] = `
           </span>
         </li>
         <li
-          class="pf-v5-c-jump-links__item"
+          class="pf-v6-c-jump-links__item"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-19"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Inactive section
               </span>
@@ -228,34 +228,34 @@ exports[`expandable vertical with subsection 1`] = `
 exports[`jumplinks centered 1`] = `
 <DocumentFragment>
   <nav
-    class="pf-v5-c-jump-links pf-m-center"
+    class="pf-v6-c-jump-links pf-m-center"
   >
     <div
-      class="pf-v5-c-jump-links__main"
+      class="pf-v6-c-jump-links__main"
     >
       <div
-        class="pf-v5-c-jump-links__header"
+        class="pf-v6-c-jump-links__header"
       />
       <ul
-        class="pf-v5-c-jump-links__list"
+        class="pf-v6-c-jump-links__list"
         role="list"
       >
         <li
-          class="pf-v5-c-jump-links__item"
+          class="pf-v6-c-jump-links__item"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-4"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Inactive section
               </span>
@@ -264,21 +264,21 @@ exports[`jumplinks centered 1`] = `
         </li>
         <li
           aria-current="location"
-          class="pf-v5-c-jump-links__item pf-m-current"
+          class="pf-v6-c-jump-links__item pf-m-current"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-5"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Active section
               </span>
@@ -286,21 +286,21 @@ exports[`jumplinks centered 1`] = `
           </span>
         </li>
         <li
-          class="pf-v5-c-jump-links__item"
+          class="pf-v6-c-jump-links__item"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-6"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Inactive section
               </span>
@@ -317,40 +317,40 @@ exports[`jumplinks with label 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Jump to section"
-    class="pf-v5-c-jump-links pf-m-center"
+    class="pf-v6-c-jump-links pf-m-center"
   >
     <div
-      class="pf-v5-c-jump-links__main"
+      class="pf-v6-c-jump-links__main"
     >
       <div
-        class="pf-v5-c-jump-links__header"
+        class="pf-v6-c-jump-links__header"
       >
         <div
-          class="pf-v5-c-jump-links__label"
+          class="pf-v6-c-jump-links__label"
         >
           Jump to section
         </div>
       </div>
       <ul
-        class="pf-v5-c-jump-links__list"
+        class="pf-v6-c-jump-links__list"
         role="list"
       >
         <li
-          class="pf-v5-c-jump-links__item"
+          class="pf-v6-c-jump-links__item"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-7"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Inactive section
               </span>
@@ -359,21 +359,21 @@ exports[`jumplinks with label 1`] = `
         </li>
         <li
           aria-current="location"
-          class="pf-v5-c-jump-links__item pf-m-current"
+          class="pf-v6-c-jump-links__item pf-m-current"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-8"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Active section
               </span>
@@ -381,21 +381,21 @@ exports[`jumplinks with label 1`] = `
           </span>
         </li>
         <li
-          class="pf-v5-c-jump-links__item"
+          class="pf-v6-c-jump-links__item"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-9"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Inactive section
               </span>
@@ -411,34 +411,34 @@ exports[`jumplinks with label 1`] = `
 exports[`simple jumplinks 1`] = `
 <DocumentFragment>
   <nav
-    class="pf-v5-c-jump-links"
+    class="pf-v6-c-jump-links"
   >
     <div
-      class="pf-v5-c-jump-links__main"
+      class="pf-v6-c-jump-links__main"
     >
       <div
-        class="pf-v5-c-jump-links__header"
+        class="pf-v6-c-jump-links__header"
       />
       <ul
-        class="pf-v5-c-jump-links__list"
+        class="pf-v6-c-jump-links__list"
         role="list"
       >
         <li
-          class="pf-v5-c-jump-links__item"
+          class="pf-v6-c-jump-links__item"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-1"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Inactive section
               </span>
@@ -447,21 +447,21 @@ exports[`simple jumplinks 1`] = `
         </li>
         <li
           aria-current="location"
-          class="pf-v5-c-jump-links__item pf-m-current"
+          class="pf-v6-c-jump-links__item pf-m-current"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-2"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Active section
               </span>
@@ -469,21 +469,21 @@ exports[`simple jumplinks 1`] = `
           </span>
         </li>
         <li
-          class="pf-v5-c-jump-links__item"
+          class="pf-v6-c-jump-links__item"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-3"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Inactive section
               </span>
@@ -500,40 +500,40 @@ exports[`vertical with label 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Jump to section"
-    class="pf-v5-c-jump-links pf-m-vertical"
+    class="pf-v6-c-jump-links pf-m-vertical"
   >
     <div
-      class="pf-v5-c-jump-links__main"
+      class="pf-v6-c-jump-links__main"
     >
       <div
-        class="pf-v5-c-jump-links__header"
+        class="pf-v6-c-jump-links__header"
       >
         <div
-          class="pf-v5-c-jump-links__label"
+          class="pf-v6-c-jump-links__label"
         >
           Jump to section
         </div>
       </div>
       <ul
-        class="pf-v5-c-jump-links__list"
+        class="pf-v6-c-jump-links__list"
         role="list"
       >
         <li
-          class="pf-v5-c-jump-links__item"
+          class="pf-v6-c-jump-links__item"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-10"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Inactive section
               </span>
@@ -542,21 +542,21 @@ exports[`vertical with label 1`] = `
         </li>
         <li
           aria-current="location"
-          class="pf-v5-c-jump-links__item pf-m-current"
+          class="pf-v6-c-jump-links__item pf-m-current"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-11"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Active section
               </span>
@@ -564,21 +564,21 @@ exports[`vertical with label 1`] = `
           </span>
         </li>
         <li
-          class="pf-v5-c-jump-links__item"
+          class="pf-v6-c-jump-links__item"
         >
           <span
-            class="pf-v5-c-jump-links__link"
+            class="pf-v6-c-jump-links__link"
           >
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link"
+              class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="OUIA-Generated-Button-link-12"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="#"
             >
               <span
-                class="pf-v5-c-jump-links__link-text"
+                class="pf-v6-c-jump-links__link-text"
               >
                 Inactive section
               </span>

@@ -3,7 +3,7 @@
 exports[`ApplicationLauncherText should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <span
-    class="pf-v5-c-app-launcher__menu-item-text ''"
+    class="pf-v6-c-app-launcher__menu-item-text ''"
   >
     <div>
       ReactNode

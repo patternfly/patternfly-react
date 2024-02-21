@@ -3,10 +3,10 @@
 exports[`NotificationDrawerHeader drawer header with count applied 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-notification-drawer__header"
+    class="pf-v6-c-notification-drawer__header"
   >
     <h1
-      class="pf-v5-c-notification-drawer__header-title"
+      class="pf-v6-c-notification-drawer__header-title"
       data-ouia-component-id="OUIA-Generated-Text-3"
       data-ouia-component-type="PF5/Text"
       data-ouia-safe="true"
@@ -16,7 +16,7 @@ exports[`NotificationDrawerHeader drawer header with count applied 1`] = `
     </h1>
     <span
       aria-live="polite"
-      class="pf-v5-c-notification-drawer__header-status"
+      class="pf-v6-c-notification-drawer__header-status"
     >
       2 unread
     </span>
@@ -27,10 +27,10 @@ exports[`NotificationDrawerHeader drawer header with count applied 1`] = `
 exports[`NotificationDrawerHeader drawer header with custom unread text applied 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-notification-drawer__header"
+    class="pf-v6-c-notification-drawer__header"
   >
     <h1
-      class="pf-v5-c-notification-drawer__header-title"
+      class="pf-v6-c-notification-drawer__header-title"
       data-ouia-component-id="OUIA-Generated-Text-5"
       data-ouia-component-type="PF5/Text"
       data-ouia-safe="true"
@@ -40,7 +40,7 @@ exports[`NotificationDrawerHeader drawer header with custom unread text applied 
     </h1>
     <span
       aria-live="polite"
-      class="pf-v5-c-notification-drawer__header-status"
+      class="pf-v6-c-notification-drawer__header-status"
     >
       2 unread alerts
     </span>
@@ -51,10 +51,10 @@ exports[`NotificationDrawerHeader drawer header with custom unread text applied 
 exports[`NotificationDrawerHeader drawer header with title applied 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-notification-drawer__header"
+    class="pf-v6-c-notification-drawer__header"
   >
     <h1
-      class="pf-v5-c-notification-drawer__header-title"
+      class="pf-v6-c-notification-drawer__header-title"
       data-ouia-component-id="OUIA-Generated-Text-4"
       data-ouia-component-type="PF5/Text"
       data-ouia-safe="true"
@@ -69,10 +69,10 @@ exports[`NotificationDrawerHeader drawer header with title applied 1`] = `
 exports[`NotificationDrawerHeader renders with PatternFly Core styles 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-notification-drawer__header"
+    class="pf-v6-c-notification-drawer__header"
   >
     <h1
-      class="pf-v5-c-notification-drawer__header-title"
+      class="pf-v6-c-notification-drawer__header-title"
       data-ouia-component-id="OUIA-Generated-Text-1"
       data-ouia-component-type="PF5/Text"
       data-ouia-safe="true"

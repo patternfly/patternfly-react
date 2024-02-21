@@ -79,7 +79,7 @@ export const Icon: React.FunctionComponent<IconComponentProps> = ({
           styles.iconContent,
           styles.modifiers[iconSize],
           styles.modifiers[status],
-          shouldMirrorRTL && 'pf-v5-m-mirror-inline-rtl'
+          shouldMirrorRTL && 'pf-v6-m-mirror-inline-rtl'
         )}
       >
         {children}

@@ -3,12 +3,12 @@
 exports[`AboutModalBoxCloseButton Test 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-about-modal-box__close"
+    class="pf-v6-c-about-modal-box__close"
   >
     <button
       aria-disabled="false"
       aria-label="Close Dialog"
-      class="pf-v5-c-button pf-m-plain"
+      class="pf-v6-c-button pf-m-plain"
       data-ouia-component-id="OUIA-Generated-Button-plain-1"
       data-ouia-component-type="PF5/Button"
       data-ouia-safe="true"
@@ -16,7 +16,7 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -35,12 +35,12 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
 exports[`AboutModalBoxCloseButton Test close button aria label 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-about-modal-box__close"
+    class="pf-v6-c-about-modal-box__close"
   >
     <button
       aria-disabled="false"
       aria-label="Klose Daylok"
-      class="pf-v5-c-button pf-m-plain"
+      class="pf-v6-c-button pf-m-plain"
       data-ouia-component-id="OUIA-Generated-Button-plain-3"
       data-ouia-component-type="PF5/Button"
       data-ouia-safe="true"
@@ -48,7 +48,7 @@ exports[`AboutModalBoxCloseButton Test close button aria label 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
@@ -67,12 +67,12 @@ exports[`AboutModalBoxCloseButton Test close button aria label 1`] = `
 exports[`AboutModalBoxCloseButton Test onclose 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-about-modal-box__close"
+    class="pf-v6-c-about-modal-box__close"
   >
     <button
       aria-disabled="false"
       aria-label="Close Dialog"
-      class="pf-v5-c-button pf-m-plain"
+      class="pf-v6-c-button pf-m-plain"
       data-ouia-component-id="OUIA-Generated-Button-plain-2"
       data-ouia-component-type="PF5/Button"
       data-ouia-safe="true"
@@ -80,7 +80,7 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"

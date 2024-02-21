@@ -3,7 +3,7 @@
 exports[`ChartBulletPrimaryDotMeasure 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-chart"
+    class="pf-v6-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -30,7 +30,7 @@ exports[`ChartBulletPrimaryDotMeasure 1`] = `
 exports[`ChartBulletPrimaryDotMeasure 2`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-chart"
+    class="pf-v6-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -57,7 +57,7 @@ exports[`ChartBulletPrimaryDotMeasure 2`] = `
 exports[`renders component data 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-chart"
+    class="pf-v6-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
   >
     <svg
@@ -75,7 +75,7 @@ exports[`renders component data 1`] = `
       a 6, 6 0 1,0 -12,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--100, #06c); opacity: 1; stroke: var(--pf-v5-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
+          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #06c); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
       </g>
       <g>
@@ -86,7 +86,7 @@ exports[`renders component data 1`] = `
       a 6, 6 0 1,0 -12,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--100, #06c); opacity: 1; stroke: var(--pf-v5-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
+          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #06c); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
       </g>
       <g>
@@ -97,7 +97,7 @@ exports[`renders component data 1`] = `
       a 6, 6 0 1,0 -12,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v5-chart-theme--blue--ColorScale--100, #06c); opacity: 1; stroke: var(--pf-v5-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
+          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #06c); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
       </g>
     </svg>

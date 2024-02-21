@@ -18,7 +18,7 @@ interface ItemType {
 }
 
 const getItems = (count: number) =>
-  Array.from({ length: count }, (_, idx) => idx).map(idx => ({
+  Array.from({ length: count }, (_, idx) => idx).map((idx) => ({
     id: `draggable-item-${idx}`,
     content: `item ${idx} `
   }));
@@ -30,7 +30,7 @@ const reorder = (list: ItemType[], startIndex: number, endIndex: number) => {
   return result;
 };
 
-export class DataListDraggableDemo extends React.Component {
+class DataListDraggableDemo extends React.Component {
   static displayName = 'DataListDraggableDemo';
   state = {
     liveText: '',
@@ -101,10 +101,12 @@ export class DataListDraggableDemo extends React.Component {
             ))}
           </DataList>
         </Droppable>
-        <div className="pf-v5-screen-reader" aria-live="assertive">
+        <div className="pf-v6-screen-reader" aria-live="assertive">
           {liveText}
         </div>
       </DragDrop>
     );
   }
 }
+
+DataListDraggableDemo.displayName = 'DataListDraggableDemo';

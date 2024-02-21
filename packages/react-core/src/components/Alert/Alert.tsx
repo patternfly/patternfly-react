@@ -116,7 +116,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const ouiaProps = useOUIAProps(Alert.displayName, ouiaId, ouiaSafe, variant);
   const getHeadingContent = (
     <React.Fragment>
-      <span className="pf-v5-screen-reader">{variantLabel}</span>
+      <span className="pf-v6-screen-reader">{variantLabel}</span>
       {title}
     </React.Fragment>
   );
