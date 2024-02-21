@@ -17,8 +17,6 @@ export interface RadioProps
   id: string;
   /** Flag to indicate whether the radio wrapper element is a native label element for the radio input. Will not apply if a component prop (with a value other than a "label") is specified. */
   isLabelWrapped?: boolean;
-  /** Flag to show if the radio label is shown before the radio input. */
-  isLabelBeforeButton?: boolean;
   /** Flag to show if the radio is checked. */
   checked?: boolean;
   /** Flag to show if the radio is checked. */
@@ -29,6 +27,8 @@ export interface RadioProps
   isValid?: boolean;
   /** Label text of the radio. */
   label?: React.ReactNode;
+  /** Sets the position of the label. Defaults to 'end' (after the radio input). */
+  labelPosition?: 'start' | 'end';
   /** Name for group of radios */
   name: string;
   /** A callback for when the radio selection changes. */
@@ -79,7 +79,7 @@ class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
       inputClassName,
       defaultChecked,
       isLabelWrapped,
-      isLabelBeforeButton,
+      labelPosition = 'end',
       isChecked,
       isDisabled,
       isValid,
@@ -132,7 +132,7 @@ class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
         className={css(styles.radio, !label && styles.modifiers.standalone, className)}
         htmlFor={wrapWithLabel ? props.id : undefined}
       >
-        {isLabelBeforeButton ? (
+        {labelPosition === 'start' ? (
           <>
             {labelRendered}
             {inputRendered}
