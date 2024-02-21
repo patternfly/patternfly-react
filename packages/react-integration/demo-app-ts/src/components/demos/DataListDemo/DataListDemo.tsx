@@ -20,7 +20,7 @@ interface DataListState {
   isOpen: boolean;
 }
 
-export class DataListDemo extends React.Component<DataListProps, DataListState> {
+class DataListDemo extends React.Component<DataListProps, DataListState> {
   static displayName = 'DataListDemo';
   constructor(props: DataListProps) {
     super(props);
@@ -77,9 +77,13 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
                 onSelect={this.onSelect}
                 onOpenChange={(isOpen) => this.setState({ isOpen })}
                 toggle={(toggleRef) => (
-                  <MenuToggle variant="plain" ref={toggleRef} isExpanded={this.state.isOpen} onClick={this.onToggle}>
-                    <EllipsisVIcon />
-                  </MenuToggle>
+                  <MenuToggle
+                    variant="plain"
+                    ref={toggleRef}
+                    isExpanded={this.state.isOpen}
+                    onClick={this.onToggle}
+                    icon={<EllipsisVIcon />}
+                  />
                 )}
               >
                 <DropdownList>
@@ -131,3 +135,6 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
     );
   }
 }
+DataListDemo.displayName = 'DataListDemo';
+
+export { DataListDemo };

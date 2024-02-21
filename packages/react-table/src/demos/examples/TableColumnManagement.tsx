@@ -409,9 +409,11 @@ export const TableColumnManagement: React.FunctionComponent = () => {
                 </MenuToggle>
               </OverflowMenuItem>
               <OverflowMenuItem>
-                <MenuToggle variant="plain" aria-label="Sort columns">
-                  <SortAmountDownIcon aria-hidden="true" />
-                </MenuToggle>
+                <MenuToggle
+                  variant="plain"
+                  aria-label="Sort columns"
+                  icon={<SortAmountDownIcon aria-hidden="true" />}
+                />
               </OverflowMenuItem>
               <OverflowMenuGroup groupType="button" isPersistent>
                 <OverflowMenuItem>

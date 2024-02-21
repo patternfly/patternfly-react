@@ -55,7 +55,6 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import { KeyTypes } from '../../../helpers';
-import display from '@patternfly/react-styles/css/utilities/Display/display';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
 interface Repository {
@@ -186,12 +185,10 @@ export const TablesAndTabs = () => {
           </ToolbarItem>
         </ToolbarToggleGroup>
         <ToolbarItem>
-          <MenuToggle variant="plain" aria-label="Sort columns">
-            <SortAmountDownIcon aria-hidden="true" />
-          </MenuToggle>
+          <MenuToggle variant="plain" aria-label="Sort columns" icon={<SortAmountDownIcon aria-hidden="true" />} />
         </ToolbarItem>
         <OverflowMenu breakpoint="md">
-          <OverflowMenuContent className={`${display.displayNone} ${display.displayBlockOnLg}`}>
+          <OverflowMenuContent>
             <OverflowMenuGroup groupType="button" isPersistent>
               <OverflowMenuItem isPersistent>
                 <Button variant="primary">Generate</Button>
@@ -211,9 +208,8 @@ export const TablesAndTabs = () => {
                   variant="plain"
                   onClick={() => {}}
                   isExpanded={false}
-                >
-                  <EllipsisVIcon />
-                </MenuToggle>
+                  icon={<EllipsisVIcon />}
+                />
               )}
               isOpen={false}
             >

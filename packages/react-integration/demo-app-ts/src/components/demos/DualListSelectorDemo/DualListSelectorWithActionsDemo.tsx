@@ -22,7 +22,7 @@ interface DualListSelectorState {
   chosenDescending: boolean;
 }
 
-export class DualListSelectorWithActionsDemo extends React.Component<DualListSelectorProps, DualListSelectorState> {
+class DualListSelectorWithActionsDemo extends React.Component<DualListSelectorProps, DualListSelectorState> {
   static displayName = 'DualListSelectorDemo';
   onSort: (panel: string) => void;
   onListChange: (
@@ -145,9 +145,8 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
             ref={toggleRef}
             isExpanded={this.state.isAvailableKebabOpen}
             onClick={() => this.onToggle('available')}
-          >
-            <EllipsisVIcon />
-          </MenuToggle>
+            icon={<EllipsisVIcon />}
+          />
         )}
       >
         <DropdownList>{dropdownItems}</DropdownList>
@@ -174,9 +173,8 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
             ref={toggleRef}
             isExpanded={this.state.isChosenKebabOpen}
             onClick={() => this.onToggle('chosen')}
-          >
-            <EllipsisVIcon />
-          </MenuToggle>
+            icon={<EllipsisVIcon />}
+          />
         )}
       >
         <DropdownList>{dropdownItems}</DropdownList>
@@ -222,3 +220,6 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
     );
   }
 }
+DualListSelectorWithActionsDemo.displayName = 'DualListSelectorDemo';
+
+export { DualListSelectorWithActionsDemo };
