@@ -6,7 +6,6 @@ exports[`LoginMainFooterLinksItem className is added to the root element 1`] = `
     class="pf-v5-c-login__main-footer-links-item extra-class"
   >
     <a
-      class="pf-v5-c-login__main-footer-links-item-link"
       href=""
     />
   </li>
@@ -19,7 +18,6 @@ exports[`LoginMainFooterLinksItem renders with PatternFly Core styles 1`] = `
     class="pf-v5-c-login__main-footer-links-item"
   >
     <a
-      class="pf-v5-c-login__main-footer-links-item-link"
       href="#"
       target=""
     />
@@ -33,7 +31,6 @@ exports[`LoginMainFooterLinksItem with custom node 1`] = `
     class="pf-v5-c-login__main-footer-links-item"
   >
     <a
-      class="pf-v5-c-login__main-footer-links-item-link"
       href=""
     >
       <div>
