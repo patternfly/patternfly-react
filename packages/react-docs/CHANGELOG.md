@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.37...@patternfly/react-docs@7.0.0-alpha.38) (2024-02-22)
+
+### Features
+
+- **workspace:** bump docs framework to support v6 classnames ([#10103](https://github.com/patternfly/patternfly-react/issues/10103)) ([da1a707](https://github.com/patternfly/patternfly-react/commit/da1a707a9d12516d902ffa8a69a951cf9ad3c371))
+
 # [7.0.0-alpha.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.36...@patternfly/react-docs@7.0.0-alpha.37) (2024-02-21)
 
 **Note:** Version bump only for package @patternfly/react-docs
