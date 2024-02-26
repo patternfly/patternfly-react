@@ -10,7 +10,7 @@ import { ClipboardCopyToggle } from './ClipboardCopyToggle';
 import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, text?: string) => {
+export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {
   navigator.clipboard.writeText(text.toString());
 };
 
@@ -27,7 +27,7 @@ export interface ClipboardCopyState {
   textWhenExpanded: string;
 }
 
-export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'children'>, OUIAProps {
+export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'>, OUIAProps {
   /** Additional classes added to the clipboard copy container. */
   className?: string;
   /** Tooltip message to display when hover the copy button */
@@ -71,12 +71,12 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** Delay in ms before the tooltip appears. */
   entryDelay?: number;
   /** A function that is triggered on clicking the copy button. */
-  onCopy?: (event: React.ClipboardEvent<HTMLDivElement>, text?: string) => void;
+  onCopy?: (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => void;
   /** A function that is triggered on changing the text. */
   onChange?: (event: React.FormEvent, text?: string) => void;
   /** The text which is copied. */
-  children: string;
-  /** Additional actions for inline clipboard copy. Should be wrapped with ClipboardCopyAction. */
+  children: React.ReactNode;
+  /** Additional actions for inline-compact clipboard copy. Should be wrapped with ClipboardCopyAction. */
   additionalActions?: React.ReactNode;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
