@@ -117,9 +117,8 @@ export const TableSortableCustom: React.FunctionComponent = () => {
                   isExpanded={isSortDropdownOpen}
                   variant="plain"
                   aria-label="Sort columns"
-                >
-                  <SortAmountDownIcon />
-                </MenuToggle>
+                  icon={<SortAmountDownIcon />}
+                />
               )}
             >
               <SelectGroup label="Sort column">

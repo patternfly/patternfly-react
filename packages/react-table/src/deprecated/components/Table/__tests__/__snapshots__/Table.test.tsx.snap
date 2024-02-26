@@ -166,7 +166,7 @@ exports[`Table Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -244,7 +244,7 @@ exports[`Table Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -322,7 +322,7 @@ exports[`Table Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -400,7 +400,7 @@ exports[`Table Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -478,7 +478,7 @@ exports[`Table Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -556,7 +556,7 @@ exports[`Table Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -634,7 +634,7 @@ exports[`Table Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -712,7 +712,7 @@ exports[`Table Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -790,7 +790,7 @@ exports[`Table Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -5811,7 +5811,7 @@ exports[`Table Simple Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -5889,7 +5889,7 @@ exports[`Table Simple Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -5967,7 +5967,7 @@ exports[`Table Simple Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -6045,7 +6045,7 @@ exports[`Table Simple Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -6123,7 +6123,7 @@ exports[`Table Simple Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -6201,7 +6201,7 @@ exports[`Table Simple Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -6279,7 +6279,7 @@ exports[`Table Simple Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -6357,7 +6357,7 @@ exports[`Table Simple Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -6435,7 +6435,7 @@ exports[`Table Simple Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"
@@ -6514,7 +6514,7 @@ exports[`Table Simple Actions table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-menu-toggle__text"
+              class="pf-v6-c-menu-toggle__icon"
             >
               <svg
                 aria-hidden="true"

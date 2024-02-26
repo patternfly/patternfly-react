@@ -404,9 +404,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
           <ToolbarItem>
             <OverflowMenu breakpoint="md">
               <OverflowMenuItem>
-                <MenuToggle>
-                  <FilterIcon /> Name
-                </MenuToggle>
+                <MenuToggle icon={<FilterIcon />}>Name</MenuToggle>
               </OverflowMenuItem>
               <OverflowMenuItem>
                 <MenuToggle

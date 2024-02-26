@@ -154,9 +154,8 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
                 onClick={() => setIsSortDropdownOpen(!isSortDropdownOpen)}
                 isExpanded={isSortDropdownOpen}
                 variant="plain"
-              >
-                <SortAmountDownIcon />
-              </MenuToggle>
+                icon={<SortAmountDownIcon />}
+              />
             )}
           >
             <SelectGroup label="Sort column">
@@ -203,9 +202,8 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
                     variant="plain"
                     onClick={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)}
                     isExpanded={false}
-                  >
-                    <EllipsisVIcon />
-                  </MenuToggle>
+                    icon={<EllipsisVIcon />}
+                  />
                 )}
                 isOpen={isKebabDropdownOpen}
               >

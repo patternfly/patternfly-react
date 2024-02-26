@@ -106,9 +106,8 @@ export const TableActions: React.FunctionComponent = () => {
                             setRepos(repos.map((r) => (r.name !== repo.name ? r : { ...r, isMenuOpen: !r.isMenuOpen })))
                           }
                           isExpanded={repo.isMenuOpen}
-                        >
-                          <EllipsisVIcon />
-                        </MenuToggle>
+                          icon={<EllipsisVIcon />}
+                        />
                       )}
                       isOpen={repo.isMenuOpen}
                       onOpenChange={(isOpen) =>

@@ -103,9 +103,8 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
               isExpanded={isOpen}
               isDisabled={isDisabled}
               variant="plain"
-            >
-              <EllipsisVIcon />
-            </MenuToggle>
+              icon={<EllipsisVIcon />}
+            />
           )
         }
         {...(rowData && rowData.actionProps)}

@@ -593,9 +593,7 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
         <ToolbarItem>
           <OverflowMenu breakpoint="md">
             <OverflowMenuItem isPersistent>
-              <MenuToggle>
-                <FilterIcon /> Name
-              </MenuToggle>
+              <MenuToggle icon={<FilterIcon />}>Name</MenuToggle>
             </OverflowMenuItem>
             <OverflowMenuItem>
               <MenuToggle variant="plain" aria-label="Sort columns" icon={<SortAmountDownIcon aria-hidden="true" />} />

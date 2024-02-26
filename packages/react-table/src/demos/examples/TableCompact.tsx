@@ -72,8 +72,13 @@ export const TableCompact: React.FunctionComponent = () => {
             id="select-example"
             aria-label="Select Input"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-              <MenuToggle ref={toggleRef} onClick={() => setIsSelectOpen(!isSelectOpen)} isExpanded={isSelectOpen}>
-                <FilterIcon /> Status
+              <MenuToggle
+                icon={<FilterIcon />}
+                ref={toggleRef}
+                onClick={() => setIsSelectOpen(!isSelectOpen)}
+                isExpanded={isSelectOpen}
+              >
+                Status
               </MenuToggle>
             )}
             isOpen={isSelectOpen}
