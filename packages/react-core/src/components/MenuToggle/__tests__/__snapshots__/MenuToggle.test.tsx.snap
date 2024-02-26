@@ -257,11 +257,11 @@ exports[`menu toggle shows isPlain 1`] = `
     type="button"
   >
     <span
-      class="pf-v5-c-menu-toggle__icon"
+      class="pf-v6-c-menu-toggle__icon"
     >
       <svg
         aria-hidden="true"
-        class="pf-v5-svg"
+        class="pf-v6-svg"
         fill="currentColor"
         height="1em"
         role="img"
