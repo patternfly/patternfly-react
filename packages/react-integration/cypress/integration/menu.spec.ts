@@ -57,11 +57,11 @@ describe('Menu Test', () => {
   });
 
   it('Verify Menu with Actions', () => {
-    cy.get('#actions-list.pf-v5-c-menu__list > li > div').last().should('have.class', 'pf-v5-c-menu__item-action');
+    cy.get('#actions-list.pf-v6-c-menu__list > li > div').last().should('have.class', 'pf-v6-c-menu__item-action');
   });
 
   it('Verify Menu with Favorites', () => {
-    cy.get('#favorites-menu .pf-v5-c-menu__item-action > button[aria-label="not starred"]').first().click();
+    cy.get('#favorites-menu .pf-v6-c-menu__item-action > button[aria-label="not starred"]').first().click();
 
     cy.get('#favorites-menu.pf-v6-c-menu > section').first().should('contain', 'Favorites');
   });
