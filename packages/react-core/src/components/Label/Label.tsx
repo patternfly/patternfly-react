@@ -53,7 +53,7 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
     | 'left-end'
     | 'right-start'
     | 'right-end';
-  /** Icon added to the left of the label text. */
+  /** Icon added to the left of the label text. Overrides the icon set by the status property. */
   icon?: React.ReactNode;
   /** Close click callback for removable labels. If present, label will have a close button. */
   onClose?: (event: React.MouseEvent) => void;
