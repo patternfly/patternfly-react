@@ -95,8 +95,6 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   innerRef?: React.Ref<any>;
   /** Adds count number to button */
   countOptions?: BadgeCountObject;
-  /** @hide Sets the role of the button. Should only be used when the button is a descendant of a menu or tablist. */
-  role?: string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
