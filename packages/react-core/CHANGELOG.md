@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.2...@patternfly/react-core@5.3.0-prerelease.3) (2024-02-26)
+
+### Reverts
+
+- Revert "bug(ClipboardCopy): change children type to string (#9743)" (#9895) ([fbe5c81](https://github.com/patternfly/patternfly-react/commit/fbe5c810d1ee8c6fa41236c26e3204861d143624)), closes [#9743](https://github.com/patternfly/patternfly-react/issues/9743) [#9895](https://github.com/patternfly/patternfly-react/issues/9895)
+
 # [5.3.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.1...@patternfly/react-core@5.3.0-prerelease.2) (2024-02-19)
 
 ### Bug Fixes
