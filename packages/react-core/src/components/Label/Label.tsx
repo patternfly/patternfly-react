@@ -23,7 +23,7 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   color?: 'blue' | 'cyan' | 'green' | 'orange' | 'purple' | 'red' | 'orangered' | 'grey' | 'gold';
   /** Variant of the label. */
   variant?: 'outline' | 'filled' | 'overflow' | 'add';
-  /** Status of the label with a respective icon and color. */
+  /** Status of the label with a respective icon and color. Overrides the color set by the color property. */
   status?: 'success' | 'warning' | 'danger' | 'info' | 'custom';
   /** Flag indicating the label is compact. */
   isCompact?: boolean;
