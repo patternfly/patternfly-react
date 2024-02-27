@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.3...@patternfly/react-core@5.3.0-prerelease.4) (2024-02-27)
+
+### Features
+
+- **DualListSelector next:** Add next composable Dual List Selector ([#9901](https://github.com/patternfly/patternfly-react/issues/9901)) ([18c1ab3](https://github.com/patternfly/patternfly-react/commit/18c1ab31c38706963b7ebd42e6461dcdda04dc8b))
+
 # [5.3.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.2...@patternfly/react-core@5.3.0-prerelease.3) (2024-02-26)
 
 ### Reverts
