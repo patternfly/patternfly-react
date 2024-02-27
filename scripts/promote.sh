@@ -8,6 +8,7 @@ packages=(
   @patternfly/react-icons
   @patternfly/react-styles
   @patternfly/react-table
+  @patternfly/react-templates
   @patternfly/react-tokens
 )
 prereleaseTag=prerelease

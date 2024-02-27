@@ -21,6 +21,9 @@
     },
     {
       "path": "./react-table"
+    },
+    {
+      "path": "./react-templates"
     }
   ]
 }

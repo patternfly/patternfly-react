@@ -31,7 +31,7 @@ export const LoginMainFooterLinksItem: React.FunctionComponent<LoginMainFooterLi
   return (
     <li className={css(styles.loginMainFooterLinksItem, className)} {...props}>
       <LinkComponent
-        className={css(styles.loginMainFooterLinksItemLink)}
+        // className={css(styles.loginMainFooterLinksItemLink)}
         href={href}
         target={target}
         {...linkComponentProps}
