@@ -1,7 +1,8 @@
 ---
-id: Templates
+id: Select
 section: components
 subsection: menus
+template: true
 propComponents: ['SimpleSelect']
 ---
 

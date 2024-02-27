@@ -49,7 +49,7 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceMD(path.join(reactDragDropPath, '/**/examples/*.md'), 'react-next');
 
   // Templates MD
-  sourceMD(path.join(reactTemplatesPath, '/**/examples/*.md'), 'react');
+  sourceMD(path.join(reactTemplatesPath, '/**/examples/*.md'), 'react-templates');
 
   // OUIA MD
   sourceMD(path.join(reactCorePath, 'helpers/OUIA/OUIA.md'), 'react');
