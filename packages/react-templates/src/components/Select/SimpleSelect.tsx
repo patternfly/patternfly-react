@@ -5,10 +5,15 @@ import { MenuToggle, MenuToggleElement } from '@patternfly/react-core/dist/esm/c
 export interface SimpleSelectProps {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** Initial options of the select. */
   initialOptions?: React.ReactElement[];
+  /** Callback triggered on selection. */
   onSelect?: (_event: React.MouseEvent<Element, MouseEvent>, selection: string | number) => void;
+  /** Callback triggered when the select opens or closes. */
   onToggle?: (nextIsOpen: boolean) => void;
+  /** Flag indicating the select should be disabled. */
   isDisabled?: boolean;
+  /** Content of the toggle. Defaults to the selected option. */
   toggleContent?: React.ReactNode;
 }
 
