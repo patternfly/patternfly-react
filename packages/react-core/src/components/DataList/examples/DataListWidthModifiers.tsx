@@ -19,11 +19,6 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-/* eslint-disable camelcase */
-import global_Color_100 from '@patternfly/react-tokens/dist/esm/global_Color_100';
-import global_BackgroundColor_200 from '@patternfly/react-tokens/dist/esm/global_BackgroundColor_200';
-import global_BorderColor_100 from '@patternfly/react-tokens/dist/esm/global_BorderColor_100';
-import global_BorderWidth_sm from '@patternfly/react-tokens/dist/esm/global_BorderWidth_sm';
 
 export const DataListWidthModifiers: React.FunctionComponent = () => {
   const [show, setShow] = React.useState(true);
@@ -46,15 +41,6 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
     setIsOpen2(!isOpen2);
   };
 
-  const previewPlaceholder = {
-    display: 'block',
-    width: '100%',
-    padding: '.25rem .5rem',
-    color: global_Color_100.var,
-    backgroundColor: global_BackgroundColor_200.var,
-    border: `${global_BorderWidth_sm.var} ${global_BorderColor_100.var} solid`
-  };
-
   return (
     <>
       <div key="example-1">
@@ -68,19 +54,15 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="default">
-                    <div style={previewPlaceholder}>
-                      <b id="width-ex1-item1">default</b>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
+                    <b id="width-ex1-item1">default</b>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                   </DataListCell>,
                   <DataListCell key="default2">
-                    <div style={previewPlaceholder}>
-                      <b>default</b>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.
-                      </p>
-                    </div>
+                    <b>default</b>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua.
+                    </p>
                   </DataListCell>
                 ]}
               />
@@ -99,16 +81,12 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell width={2} key="width 2">
-                    <div style={previewPlaceholder}>
-                      <b id="width-ex2-item1">width 2</b>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                    </div>
+                    <b id="width-ex2-item1">width 2</b>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                   </DataListCell>,
                   <DataListCell width={4} key="width 4">
-                    <div style={previewPlaceholder}>
-                      <b>width 4</b>
-                      <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
+                    <b>width 4</b>
+                    <p>Lorem ipsum dolor sit amet.</p>
                   </DataListCell>
                 ]}
               />
@@ -177,20 +155,14 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell width={5} key="width 5">
-                    <div style={previewPlaceholder}>
-                      <b id="width-ex3-item1">width 5</b>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
+                    <b id="width-ex3-item1">width 5</b>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                   </DataListCell>,
                   <DataListCell width={2} key="width 2">
-                    <div style={previewPlaceholder}>
-                      <b>width 2</b>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
+                    <b>width 2</b>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                   </DataListCell>,
-                  <DataListCell key="default">
-                    <div style={previewPlaceholder}>default</div>
-                  </DataListCell>
+                  <DataListCell key="default">default</DataListCell>
                 ]}
               />
               <DataListAction
