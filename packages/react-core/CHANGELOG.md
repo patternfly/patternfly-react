@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.0.0-alpha.37 (2024-02-28)
+
+### Features
+
+- **TreeView:** removed selectable modifier for penta ([#10101](https://github.com/patternfly/patternfly-react/issues/10101)) ([0b0b73d](https://github.com/patternfly/patternfly-react/commit/0b0b73d53527d62836ac2043c7a28997ce39f9a6))
+
 # [6.0.0-alpha.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.35...@patternfly/react-core@6.0.0-alpha.36) (2024-02-21)
 
 **Note:** Version bump only for package @patternfly/react-core
