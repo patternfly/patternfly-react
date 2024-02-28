@@ -1,6 +1,6 @@
 import React from 'react';
 import { Label } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 export const LabelOutline: React.FunctionComponent = () => {
   const logColor = (color: string) => {
@@ -9,14 +9,17 @@ export const LabelOutline: React.FunctionComponent = () => {
   };
   return (
     <React.Fragment>
+      <strong>Non-status:</strong>
+      <br />
+      <br />
       <Label variant="outline">Grey</Label>
-      <Label variant="outline" icon={<InfoCircleIcon />}>
+      <Label variant="outline" icon={<CubeIcon />}>
         Grey icon
       </Label>
       <Label variant="outline" onClose={() => Function.prototype}>
         Grey removable
       </Label>
-      <Label variant="outline" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+      <Label variant="outline" icon={<CubeIcon />} onClose={() => Function.prototype}>
         Grey icon removable
       </Label>
       <Label variant="outline" href="#outline">
@@ -31,7 +34,7 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" onClick={() => logColor('grey')} onClose={() => Function.prototype}>
         Grey clickable removable
       </Label>
-      <Label variant="outline" icon={<InfoCircleIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
+      <Label variant="outline" icon={<CubeIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
         Grey label with icon that overflows
       </Label>
       <br />
@@ -39,13 +42,13 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="blue">
         Blue
       </Label>
-      <Label variant="outline" color="blue" icon={<InfoCircleIcon />}>
+      <Label variant="outline" color="blue" icon={<CubeIcon />}>
         Blue icon
       </Label>
       <Label variant="outline" color="blue" onClose={() => Function.prototype}>
         Blue removable
       </Label>
-      <Label variant="outline" color="blue" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+      <Label variant="outline" color="blue" icon={<CubeIcon />} onClose={() => Function.prototype}>
         Blue icon removable
       </Label>
       <Label variant="outline" color="blue" href="#outline">
@@ -60,13 +63,7 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="blue" onClick={() => logColor('blue')} onClose={() => Function.prototype}>
         Blue clickable removable
       </Label>
-      <Label
-        variant="outline"
-        color="blue"
-        icon={<InfoCircleIcon />}
-        onClose={() => Function.prototype}
-        textMaxWidth="16ch"
-      >
+      <Label variant="outline" color="blue" icon={<CubeIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
         Blue label with icon that overflows
       </Label>
       <br />
@@ -74,13 +71,13 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="green">
         Green
       </Label>
-      <Label variant="outline" color="green" icon={<InfoCircleIcon />}>
+      <Label variant="outline" color="green" icon={<CubeIcon />}>
         Green icon
       </Label>
       <Label variant="outline" color="green" onClose={() => Function.prototype}>
         Green removable
       </Label>
-      <Label variant="outline" color="green" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+      <Label variant="outline" color="green" icon={<CubeIcon />} onClose={() => Function.prototype}>
         Green icon removable
       </Label>
       <Label variant="outline" color="green" href="#outline">
@@ -95,13 +92,7 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="green" onClick={() => logColor('green')} onClose={() => Function.prototype}>
         Green clickable removable
       </Label>
-      <Label
-        variant="outline"
-        color="green"
-        icon={<InfoCircleIcon />}
-        onClose={() => Function.prototype}
-        textMaxWidth="16ch"
-      >
+      <Label variant="outline" color="green" icon={<CubeIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
         Green label with icon that overflows
       </Label>
       <br />
@@ -109,13 +100,13 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="orange">
         Orange
       </Label>
-      <Label variant="outline" color="orange" icon={<InfoCircleIcon />}>
+      <Label variant="outline" color="orange" icon={<CubeIcon />}>
         Orange icon
       </Label>
       <Label variant="outline" color="orange" onClose={() => Function.prototype}>
         Orange removable
       </Label>
-      <Label variant="outline" color="orange" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+      <Label variant="outline" color="orange" icon={<CubeIcon />} onClose={() => Function.prototype}>
         Orange icon removable
       </Label>
       <Label variant="outline" color="orange" href="#outline">
@@ -133,7 +124,7 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label
         variant="outline"
         color="orange"
-        icon={<InfoCircleIcon />}
+        icon={<CubeIcon />}
         onClose={() => Function.prototype}
         textMaxWidth="16ch"
       >
@@ -144,13 +135,13 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="red">
         Red
       </Label>
-      <Label variant="outline" color="red" icon={<InfoCircleIcon />}>
+      <Label variant="outline" color="red" icon={<CubeIcon />}>
         Red icon
       </Label>
       <Label variant="outline" color="red" onClose={() => Function.prototype}>
         Red removable
       </Label>
-      <Label variant="outline" color="red" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+      <Label variant="outline" color="red" icon={<CubeIcon />} onClose={() => Function.prototype}>
         Red icon removable
       </Label>
       <Label variant="outline" color="red" href="#outline">
@@ -165,13 +156,7 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="red" onClick={() => logColor('red')} onClose={() => Function.prototype}>
         Red clickable removable
       </Label>
-      <Label
-        variant="outline"
-        color="red"
-        icon={<InfoCircleIcon />}
-        onClose={() => Function.prototype}
-        textMaxWidth="16ch"
-      >
+      <Label variant="outline" color="red" icon={<CubeIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
         Red label with icon that overflows
       </Label>
       <br />
@@ -179,13 +164,13 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="orangered">
         Orange red
       </Label>
-      <Label variant="outline" color="orangered" icon={<InfoCircleIcon />}>
+      <Label variant="outline" color="orangered" icon={<CubeIcon />}>
         Orange red icon
       </Label>
       <Label variant="outline" color="orangered" onClose={() => Function.prototype}>
         Orange red removable
       </Label>
-      <Label variant="outline" color="orangered" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+      <Label variant="outline" color="orangered" icon={<CubeIcon />} onClose={() => Function.prototype}>
         Orange red icon removable
       </Label>
       <Label variant="outline" color="orangered" href="#outline">
@@ -208,7 +193,7 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label
         variant="outline"
         color="orangered"
-        icon={<InfoCircleIcon />}
+        icon={<CubeIcon />}
         onClose={() => Function.prototype}
         textMaxWidth="16ch"
       >
@@ -219,13 +204,13 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="purple">
         Purple
       </Label>
-      <Label variant="outline" color="purple" icon={<InfoCircleIcon />}>
+      <Label variant="outline" color="purple" icon={<CubeIcon />}>
         Purple icon
       </Label>
       <Label variant="outline" color="purple" onClose={() => Function.prototype}>
         Purple removable
       </Label>
-      <Label variant="outline" color="purple" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+      <Label variant="outline" color="purple" icon={<CubeIcon />} onClose={() => Function.prototype}>
         Purple icon removable
       </Label>
       <Label variant="outline" color="purple" href="#outline">
@@ -243,7 +228,7 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label
         variant="outline"
         color="purple"
-        icon={<InfoCircleIcon />}
+        icon={<CubeIcon />}
         onClose={() => Function.prototype}
         textMaxWidth="16ch"
       >
@@ -254,13 +239,13 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="cyan">
         Cyan
       </Label>
-      <Label variant="outline" color="cyan" icon={<InfoCircleIcon />}>
+      <Label variant="outline" color="cyan" icon={<CubeIcon />}>
         Cyan icon
       </Label>
       <Label variant="outline" color="cyan" onClose={() => Function.prototype}>
         Cyan removable
       </Label>
-      <Label variant="outline" color="cyan" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+      <Label variant="outline" color="cyan" icon={<CubeIcon />} onClose={() => Function.prototype}>
         Cyan icon removable
       </Label>
       <Label variant="outline" color="cyan" href="#outline">
@@ -275,13 +260,7 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="cyan" onClick={() => logColor('cyan')} onClose={() => Function.prototype}>
         Cyan clickable removable
       </Label>
-      <Label
-        variant="outline"
-        color="cyan"
-        icon={<InfoCircleIcon />}
-        onClose={() => Function.prototype}
-        textMaxWidth="16ch"
-      >
+      <Label variant="outline" color="cyan" icon={<CubeIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
         Cyan label with icon that overflows
       </Label>
       <br />
@@ -289,13 +268,13 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="gold">
         Gold
       </Label>
-      <Label variant="outline" color="gold" icon={<InfoCircleIcon />}>
+      <Label variant="outline" color="gold" icon={<CubeIcon />}>
         Gold icon
       </Label>
       <Label variant="outline" color="gold" onClose={() => Function.prototype}>
         Gold removable
       </Label>
-      <Label variant="outline" color="gold" icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
+      <Label variant="outline" color="gold" icon={<CubeIcon />} onClose={() => Function.prototype}>
         Gold icon removable
       </Label>
       <Label variant="outline" color="gold" href="#outline">
@@ -310,14 +289,126 @@ export const LabelOutline: React.FunctionComponent = () => {
       <Label variant="outline" color="gold" onClick={() => logColor('gold')} onClose={() => Function.prototype}>
         Gold clickable removable
       </Label>
-      <Label
-        variant="outline"
-        color="gold"
-        icon={<InfoCircleIcon />}
-        onClose={() => Function.prototype}
-        textMaxWidth="16ch"
-      >
+      <Label variant="outline" color="gold" icon={<CubeIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
         Gold label with icon that overflows
+      </Label>
+      <br />
+      <br />
+      <strong>Status:</strong>
+      <br />
+      <br />
+      <Label status="success" variant="outline">
+        Success
+      </Label>
+      <Label status="success" variant="outline" onClose={() => Function.prototype}>
+        Success removable
+      </Label>
+      <Label status="success" variant="outline" href="#filled">
+        Success link
+      </Label>
+      <Label status="success" variant="outline" href="#filled" onClose={() => Function.prototype}>
+        Success link removable
+      </Label>
+      <Label status="success" variant="outline" onClick={() => logColor('success')}>
+        Success clickable
+      </Label>
+      <Label status="success" variant="outline" onClick={() => logColor('success')} onClose={() => Function.prototype}>
+        Success clickable removable
+      </Label>
+      <Label status="success" variant="outline" onClose={() => Function.prototype} textMaxWidth="16ch">
+        Success label with text that overflows
+      </Label>
+      <br />
+      <br />
+      <Label status="warning" variant="outline">
+        Warning
+      </Label>
+      <Label status="warning" variant="outline" onClose={() => Function.prototype}>
+        Warning removable
+      </Label>
+      <Label status="warning" variant="outline" href="#filled">
+        Warning link
+      </Label>
+      <Label status="warning" variant="outline" href="#filled" onClose={() => Function.prototype}>
+        Warning link removable
+      </Label>
+      <Label status="warning" variant="outline" onClick={() => logColor('warning')}>
+        Warning clickable
+      </Label>
+      <Label status="warning" variant="outline" onClick={() => logColor('warning')} onClose={() => Function.prototype}>
+        Warning clickable removable
+      </Label>
+      <Label status="warning" variant="outline" onClose={() => Function.prototype} textMaxWidth="16ch">
+        Warning label with text that overflows
+      </Label>
+      <br />
+      <br />
+      <Label status="danger" variant="outline">
+        Danger
+      </Label>
+      <Label status="danger" variant="outline" onClose={() => Function.prototype}>
+        Danger removable
+      </Label>
+      <Label status="danger" variant="outline" href="#filled">
+        Danger link
+      </Label>
+      <Label status="danger" variant="outline" href="#filled" onClose={() => Function.prototype}>
+        Danger link removable
+      </Label>
+      <Label status="danger" variant="outline" onClick={() => logColor('danger')}>
+        Danger clickable
+      </Label>
+      <Label status="danger" variant="outline" onClick={() => logColor('danger')} onClose={() => Function.prototype}>
+        Danger clickable removable
+      </Label>
+      <Label status="danger" variant="outline" onClose={() => Function.prototype} textMaxWidth="16ch">
+        Danger label with text that overflows
+      </Label>
+      <br />
+      <br />
+      <Label status="info" variant="outline">
+        Info
+      </Label>
+      <Label status="info" variant="outline" onClose={() => Function.prototype}>
+        Info removable
+      </Label>
+      <Label status="info" variant="outline" href="#filled">
+        Info link
+      </Label>
+      <Label status="info" variant="outline" href="#filled" onClose={() => Function.prototype}>
+        Info link removable
+      </Label>
+      <Label status="info" variant="outline" onClick={() => logColor('info')}>
+        Info clickable
+      </Label>
+      <Label status="info" variant="outline" onClick={() => logColor('info')} onClose={() => Function.prototype}>
+        Info clickable removable
+      </Label>
+      <Label status="info" variant="outline" onClose={() => Function.prototype} textMaxWidth="16ch">
+        Info label with text that overflows
+      </Label>
+      <br />
+      <br />
+      <Label status="custom" variant="outline">
+        Custom
+      </Label>
+      <Label status="custom" variant="outline" onClose={() => Function.prototype}>
+        Custom removable
+      </Label>
+      <Label status="custom" variant="outline" href="#filled">
+        Custom link
+      </Label>
+      <Label status="custom" variant="outline" href="#filled" onClose={() => Function.prototype}>
+        Custom link removable
+      </Label>
+      <Label status="custom" variant="outline" onClick={() => logColor('custom')}>
+        Custom clickable
+      </Label>
+      <Label status="custom" variant="outline" onClick={() => logColor('custom')} onClose={() => Function.prototype}>
+        Custom clickable removable
+      </Label>
+      <Label status="custom" variant="outline" onClose={() => Function.prototype} textMaxWidth="16ch">
+        Custom label with text that overflows
       </Label>
     </React.Fragment>
   );
