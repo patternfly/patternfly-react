@@ -371,38 +371,6 @@ test(`Does not render ${styles.treeViewNode} element with additional classes by 
   expect(treeViewNode).toHaveClass(styles.treeViewNode, { exact: true });
 });
 
-test(`Renders ${styles.treeViewNode} element with pf-m-selectable class when hasCheckbox and children are passed`, () => {
-  render(
-    <TreeViewListItem hasCheckbox {...requiredProps}>
-      Content
-    </TreeViewListItem>
-  );
-
-  const treeViewNode = screen.getByRole('treeitem').querySelector(`.${styles.treeViewNode}`);
-
-  expect(treeViewNode).toHaveClass('pf-m-selectable');
-});
-
-test(`Renders ${styles.treeViewNode} element with pf-m-selectable class when isSelectable and children are passed`, () => {
-  render(
-    <TreeViewListItem isSelectable {...requiredProps}>
-      Content
-    </TreeViewListItem>
-  );
-
-  const treeViewNode = screen.getByRole('treeitem').querySelector(`.${styles.treeViewNode}`);
-
-  expect(treeViewNode).toHaveClass('pf-m-selectable');
-});
-
-test(`Does not render ${styles.treeViewNode} element with pf-m-selectable if children are not passed`, () => {
-  render(<TreeViewListItem hasCheckbox isSelectable {...requiredProps} />);
-
-  const treeViewNode = screen.getByRole('treeitem').querySelector(`.${styles.treeViewNode}`);
-
-  expect(treeViewNode).not.toHaveClass('pf-m-selectable');
-});
-
 test(`Renders ${styles.treeViewNode} element with ${styles.modifiers.current} class when isSelectable and activeItems are passed`, () => {
   render(
     <TreeViewListItem compareItems={() => true} isSelectable activeItems={[{ name: 'Active item' }]} {...requiredProps}>
