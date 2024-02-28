@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.4...@patternfly/react-core@5.3.0-prerelease.5) (2024-02-28)
+
+### Bug Fixes
+
+- **Popper:** check for undefined before accessing ([#10086](https://github.com/patternfly/patternfly-react/issues/10086)) ([c5869ec](https://github.com/patternfly/patternfly-react/commit/c5869ec57b9970785360216d7f07d1f387b13fa6))
+
+### Features
+
+- **SearchInput:** Add ability to add id to input in SearchInput component ([#9974](https://github.com/patternfly/patternfly-react/issues/9974)) ([2d7171e](https://github.com/patternfly/patternfly-react/commit/2d7171e41495cb074ed517f34179510ed7479b8b))
+
 # [5.3.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.3...@patternfly/react-core@5.3.0-prerelease.4) (2024-02-27)
 
 ### Features
