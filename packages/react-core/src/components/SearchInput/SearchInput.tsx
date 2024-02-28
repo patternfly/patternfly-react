@@ -75,6 +75,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   hasWordsAttrLabel?: React.ReactNode;
   /** A suggestion for autocompleting. */
   hint?: string;
+  /** Id for the search input */
+  searchInputId?: string;
   /** @hide A reference object to attach to the input box. */
   innerRef?: React.RefObject<any>;
   /** A flag for controlling the open state of a custom advanced search implementation. */
@@ -126,6 +128,7 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
 
 const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   className,
+  searchInputId,
   value = '',
   attributes = [] as string[],
   formAdditionalItems,
@@ -298,6 +301,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         onKeyDown={onEnter}
         onChange={onChangeHandler}
         name={name}
+        inputId={searchInputId}
       />
       {(renderUtilities || areUtilitiesDisplayed) && (
         <TextInputGroupUtilities>
