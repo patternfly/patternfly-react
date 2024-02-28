@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer } from '@patternfly/react-table';
 import { Card, PageSection } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
 type Direction = 'asc' | 'desc' | undefined;
 

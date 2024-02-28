@@ -23,7 +23,25 @@ Page,
 PageSectionVariants,
 TextContent,
 Text,
-Divider } from '@patternfly/react-core';
+Divider,
+Avatar,
+Brand,
+Button,
+ButtonVariant,
+Dropdown,
+DropdownGroup,
+DropdownItem,
+DropdownList,
+MastheadBrand,
+MenuToggle,
+ToolbarGroup,
+PageToggleButton,
+Nav,
+NavItem,
+NavList,
+PageSidebar,
+PageSidebarBody,
+} from '@patternfly/react-core';
 import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
@@ -40,23 +58,23 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
-import imgBrand from '@patternfly/react-core/src/components/assets/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ## Demos
 
 ### Bulk select
 
 ```js isFullscreen file="./examples/TableBulkSelect.tsx"
+
 ```
 
 ### Expand/collapse all
@@ -86,11 +104,13 @@ import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 ### Column management with draggable
 
 ```js isFullscreen file="./examples/TableColumnManagementWithDraggable.tsx"
+
 ```
 
 ### Filterable
 
 ```js isFullscreen file="./examples/TableFilterable.tsx"
+
 ```
 
 ### Sortable - responsive
@@ -111,6 +131,7 @@ To demonstrate this, navigate to the last page of data below using the `>>` navi
 - The `isLastFullPageShown` prop navigates you back to the previous page which does contain a full page of 5 rows (rows 6 - 10).
 
 ```js isFullscreen file="./examples/TableAutomaticPagination.tsx"
+
 ```
 
 ### Static bottom pagination on mobile
@@ -146,14 +167,17 @@ These examples demonstrate the use of an [Empty State component](/components/emp
 ### Empty
 
 ```js isFullscreen file="./examples/TableEmptyStateDefault.tsx"
+
 ```
 
 ### Loading
 
 ```js isFullscreen file="./examples/TableEmptyStateLoading.tsx"
+
 ```
 
 ### Error
 
 ```js isFullscreen file="./examples/TableEmptyStateError.tsx"
+
 ```

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Card, Label, PageSection, TextVariants, Text, TextContent } from '@patternfly/react-core';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
-import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
 const expandableColumns = ['Servers', 'Threads', 'Applications', 'Workspaces', 'Status'];
 
