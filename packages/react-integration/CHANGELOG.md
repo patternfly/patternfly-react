@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.1 (2024-02-29)
+
+### Bug Fixes
+
+- demo-app version number ([c7ab798](https://github.com/patternfly/patternfly-react/commit/c7ab7988722f46b8e34cde32914e96adf681f650))
+- linting error [skip-a11y] ([2944883](https://github.com/patternfly/patternfly-react/commit/2944883557dafd0eb76707c324780cc769d00c98))
+
 ## [5.1.1-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.18...@patternfly/react-integration@5.1.1-prerelease.19) (2024-01-05)
 
 ### Features

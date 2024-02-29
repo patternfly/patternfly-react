@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.2.0...@patternfly/react-docs@6.2.1) (2024-02-29)
+
+### Bug Fixes
+
+- **various:** Cherry bug fixes for patch release ([#10122](https://github.com/patternfly/patternfly-react/issues/10122)) ([b471264](https://github.com/patternfly/patternfly-react/commit/b4712649112b916cabc51c5c1a73b84d851559d5)), closes [#10114](https://github.com/patternfly/patternfly-react/issues/10114) [#10082](https://github.com/patternfly/patternfly-react/issues/10082) [#9743](https://github.com/patternfly/patternfly-react/issues/9743) [#9895](https://github.com/patternfly/patternfly-react/issues/9895) [#10080](https://github.com/patternfly/patternfly-react/issues/10080)
+
 # 6.2.0 (2024-02-02)
 
 **Note:** Version bump only for package @patternfly/react-docs

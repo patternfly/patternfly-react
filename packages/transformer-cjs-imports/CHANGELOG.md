@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.79.5 (2024-02-29)
+
+### Bug Fixes
+
+- correct version in transformer-cjs-imports ([49140f2](https://github.com/patternfly/patternfly-react/commit/49140f2a71ab367276d62fbd55e8db426573a459))
+
 ## 4.79.4-alpha.3 (2023-07-14)
 
 ### Reverts
