@@ -23,6 +23,6 @@ jobs:
       - name: Install deps
         run: yarn install --frozen-lockfile
       - name: Build dist
-        run: yarn build && yarn build:umd && yarn clean:exports
+        run: yarn build && yarn build:umd
       - name: Deploy to NPM and Github
         run: .github/promote.sh
