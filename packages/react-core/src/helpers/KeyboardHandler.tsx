@@ -106,23 +106,30 @@ export const handleArrows = (
 
           if (!activeRow.length || onlyTraverseSiblings) {
             let nextSibling = activeElement;
-            // While a sibling exists, check each sibling to determine if it should be focussed
+
             while (nextSibling) {
-              // Set the next checked sibling, determined by the horizontal arrow key direction
-              nextSibling = key === 'ArrowLeft' ? nextSibling.previousElementSibling : nextSibling.nextElementSibling;
+              const isDirectChildOfNavigableElement = nextSibling.parentElement === element;
+              const nextSiblingMainElement = isDirectChildOfNavigableElement ? nextSibling : nextSibling.parentElement;
+              nextSibling =
+                key === 'ArrowLeft'
+                  ? nextSiblingMainElement.previousElementSibling
+                  : nextSiblingMainElement.nextElementSibling;
+
               if (nextSibling) {
                 if (validSiblingTags.includes(nextSibling.tagName)) {
-                  // If the sibling's tag is included in validSiblingTags, set the next target element and break the loop
                   moveTarget = nextSibling;
                   break;
                 }
-                // If the sibling's tag is not valid, skip to the next sibling if possible
+                // For cases where the validSiblingTag is inside a div wrapper
+                if (validSiblingTags.includes(nextSibling.children[0].tagName)) {
+                  moveTarget = nextSibling.children[0];
+                  break;
+                }
               }
             }
           } else {
             activeRow.forEach((focusableElement, index) => {
               if (event.target === focusableElement) {
-                // Once found, move up or down the array by 1. Determined by the vertical arrow key direction
                 const increment = key === 'ArrowLeft' ? -1 : 1;
                 currentIndex = index + increment;
                 if (currentIndex >= activeRow.length) {
@@ -132,7 +139,6 @@ export const handleArrows = (
                   currentIndex = activeRow.length - 1;
                 }
 
-                // Set the next target element
                 moveTarget = activeRow[currentIndex];
               }
             });

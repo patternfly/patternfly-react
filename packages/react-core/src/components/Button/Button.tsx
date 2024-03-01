@@ -124,6 +124,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   iconPosition = 'start',
   'aria-label': ariaLabel = null,
   icon = null,
+  role,
   ouiaId,
   ouiaSafe = true,
   tabIndex = null,
@@ -182,7 +183,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       disabled={isButtonElement ? isDisabled : null}
       tabIndex={tabIndex !== null ? tabIndex : getDefaultTabIdx()}
       type={isButtonElement || isInlineSpan ? type : null}
-      role={isInlineSpan ? 'button' : null}
+      role={isInlineSpan ? 'button' : role}
       ref={innerRef}
       {...ouiaProps}
     >
