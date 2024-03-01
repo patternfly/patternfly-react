@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.19...@patternfly/react-integration@6.0.0-alpha.20) (2024-03-01)
+
+### Features
+
+- **Menu:** consumed Penta updates ([#10089](https://github.com/patternfly/patternfly-react/issues/10089)) ([fdbac3d](https://github.com/patternfly/patternfly-react/commit/fdbac3d9c83c043b996fac484a5afca1d56bc48f))
+
 # 6.0.0-alpha.19 (2024-02-28)
 
 ### Features
