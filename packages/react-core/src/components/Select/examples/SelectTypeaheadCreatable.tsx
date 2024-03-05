@@ -154,7 +154,14 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
   };
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
-    <MenuToggle ref={toggleRef} variant="typeahead" onClick={onToggleClick} isExpanded={isOpen} isFullWidth>
+    <MenuToggle
+      ref={toggleRef}
+      variant="typeahead"
+      aria-label="Typeahead creatable menu toggle"
+      onClick={onToggleClick}
+      isExpanded={isOpen}
+      isFullWidth
+    >
       <TextInputGroup isPlain>
         <TextInputGroupMain
           value={inputValue}

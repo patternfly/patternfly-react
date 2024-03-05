@@ -21,7 +21,9 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   alwaysShowLabel?: boolean;
   /** Adds an accessible label to the internal nav element. Defaults to the value of the label prop. */
   'aria-label'?: string;
-  /** Selector for the scrollable element to spy on. Not passing a selector disables spying. */
+  /** Reference to the scrollable element to spy on. Takes precedence over scrollableSelector. Not passing a scrollableRef or scrollableSelector disables spying. */
+  scrollableRef?: HTMLElement | (() => HTMLElement) | React.RefObject<HTMLElement>;
+  /** Selector for the scrollable element to spy on. Not passing a scrollableSelector or scrollableRef disables spying. */
   scrollableSelector?: string;
   /** The index of the child Jump link to make active. */
   activeIndex?: number;
@@ -81,6 +83,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   children,
   label,
   'aria-label': ariaLabel = typeof label === 'string' ? label : null,
+  scrollableRef,
   scrollableSelector,
   activeIndex: activeIndexProp = 0,
   offset = 0,
@@ -91,17 +94,28 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   className,
   ...props
 }: JumpLinksProps) => {
-  const hasScrollSpy = Boolean(scrollableSelector);
+  const hasScrollSpy = Boolean(scrollableRef || scrollableSelector);
   const [scrollItems, setScrollItems] = React.useState(hasScrollSpy ? getScrollItems(children, []) : []);
   const [activeIndex, setActiveIndex] = React.useState(activeIndexProp);
   const [isExpanded, setIsExpanded] = React.useState(isExpandedProp);
   // Boolean to disable scroll listener from overriding active state of clicked jumplink
   const isLinkClicked = React.useRef(false);
-  // Allow expanding to be controlled for a niche use case
-  React.useEffect(() => setIsExpanded(isExpandedProp), [isExpandedProp]);
   const navRef = React.useRef<HTMLElement>();
 
   let scrollableElement: HTMLElement;
+
+  const getScrollableElement = () => {
+    if (scrollableRef) {
+      if (scrollableRef instanceof HTMLElement) {
+        return scrollableRef;
+      } else if (typeof scrollableRef === 'function') {
+        return scrollableRef();
+      }
+      return (scrollableRef as React.RefObject<HTMLElement>).current;
+    } else if (scrollableSelector) {
+      return document.querySelector(scrollableSelector) as HTMLElement;
+    }
+  };
 
   const scrollSpy = React.useCallback(() => {
     if (!canUseDOM || !hasScrollSpy || !(scrollableElement instanceof HTMLElement)) {
@@ -139,14 +153,14 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   }, [scrollItems, hasScrollSpy, scrollableElement, offset]);
 
   React.useEffect(() => {
-    scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;
+    scrollableElement = getScrollableElement();
     if (!(scrollableElement instanceof HTMLElement)) {
       return;
     }
     scrollableElement.addEventListener('scroll', scrollSpy);
 
     return () => scrollableElement.removeEventListener('scroll', scrollSpy);
-  }, [scrollableSelector, scrollSpy]);
+  }, [scrollableElement, scrollSpy, getScrollableElement]);
 
   React.useEffect(() => {
     scrollSpy();
@@ -174,7 +188,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
 
                 if (newScrollItem) {
                   // we have to support scrolling to an offset due to sticky sidebar
-                  const scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;
+                  const scrollableElement = getScrollableElement() as HTMLElement;
                   if (scrollableElement instanceof HTMLElement) {
                     if (isResponsive(navRef.current)) {
                       // Remove class immediately so we can get collapsed height

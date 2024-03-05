@@ -121,6 +121,42 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @patternfly/react-icons
 
+# 5.3.0-prerelease.1 (2024-02-28)
+
+### Bug Fixes
+
+- **deps:** bump to latest core ([#10116](https://github.com/patternfly/patternfly-react/issues/10116)) ([dc1aceb](https://github.com/patternfly/patternfly-react/commit/dc1aceb0ee880631320b85bfb068be13d7852a37))
+
+# 5.3.0-prerelease.0 (2024-02-02)
+
+# 5.2.0 (2024-02-02)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+# 5.2.0 (2024-02-02)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+# 5.2.0-prerelease.10 (2024-01-11)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+# 5.2.0-prerelease.9 (2023-12-11)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+# 5.2.0-prerelease.8 (2023-11-14)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+# 5.2.0-prerelease.7 (2023-11-10)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+# 5.2.0-prerelease.6 (2023-11-03)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
 # [5.2.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@5.2.0-prerelease.4...@patternfly/react-icons@5.2.0-prerelease.5) (2023-10-27)
 
 ### Bug Fixes

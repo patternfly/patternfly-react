@@ -96,7 +96,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
             className={css(styles.menuToggleButton)}
             aria-expanded={isExpanded}
             onClick={onClick}
-            aria-label="Menu toggle"
+            aria-label={ariaLabel || 'Menu toggle'}
           >
             {toggleControls}
           </button>

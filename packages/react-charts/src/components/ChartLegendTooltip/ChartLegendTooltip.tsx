@@ -49,7 +49,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
   /**
    * The angle prop specifies the angle to rotate the tooltip around its origin point.
    */
-  angle?: string | number;
+  angle?: number;
   /**
    * The center prop determines the position of the center of the tooltip flyout. This prop should be given as an object
    * that describes the desired x and y svg coordinates of the center of the tooltip. This prop is useful for
@@ -275,7 +275,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    *
    * @propType number | string | Function | string[] | number[]
    */
-  text?: StringOrNumberOrCallback | string[] | number[];
+  text?: string[] | StringOrNumberOrCallback;
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
@@ -295,11 +295,8 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
   themeColor?: string;
   /**
    * The title prop specifies a title to render with the legend.
-   * This prop should be given as a string, or an array of strings for multi-line titles.
-   *
-   * Example: title={(datum) => datum.x}
    */
-  title?: string | string[] | Function;
+  title?: string;
   /**
    * This prop refers to the width of the svg that ChartLegendTooltip is rendered within. This prop is passed from
    * parents of ChartLegendTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the

@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DualListSelector basic 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-dual-list-selector__pane pf-m-available"
+  >
+    <div
+      class="pf-v6-c-dual-list-selector__menu"
+      tabindex="0"
+    >
+      <ul
+        class="pf-v6-c-dual-list-selector__list"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DualListSelector basic with disabled controls 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-dual-list-selector__pane pf-m-available"
+  >
+    <div
+      class="pf-v6-c-dual-list-selector__menu"
+      tabindex="0"
+    >
+      <ul
+        class="pf-v6-c-dual-list-selector__list"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DualListSelector with custom status 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-dual-list-selector__pane pf-m-available"
+  >
+    <div
+      class="pf-v6-c-dual-list-selector__status"
+    >
+      <div
+        class="pf-v6-c-dual-list-selector__status-text"
+        id="statusTest-status"
+      >
+        Test status1
+      </div>
+    </div>
+    <div
+      class="pf-v6-c-dual-list-selector__menu"
+      tabindex="0"
+    >
+      <ul
+        class="pf-v6-c-dual-list-selector__list"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DualListSelector with search inputs 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-dual-list-selector__pane pf-m-available"
+  >
+    <div
+      class="pf-v6-c-dual-list-selector__tools"
+    >
+      <div
+        class="pf-v6-c-dual-list-selector__tools-filter"
+      >
+        <div
+          class="pf-v6-c-text-input-group"
+        >
+          <div
+            class="pf-v6-c-text-input-group__main pf-m-icon"
+          >
+            <span
+              class="pf-v6-c-text-input-group__text"
+            >
+              <span
+                class="pf-v6-c-text-input-group__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="pf-v6-svg"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                >
+                  <path
+                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                  />
+                </svg>
+              </span>
+              <input
+                aria-label="Search input"
+                class="pf-v6-c-text-input-group__text-input"
+                type="text"
+                value=""
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="pf-v6-c-dual-list-selector__menu"
+      tabindex="0"
+    >
+      <ul
+        class="pf-v6-c-dual-list-selector__list"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

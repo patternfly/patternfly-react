@@ -137,7 +137,7 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
     const labelRendered = label ? (
       <Label
         className={css(styles.checkLabel, isDisabled && styles.modifiers.disabled)}
-        htmlFor={!wrapWithLabel && props.id}
+        htmlFor={!wrapWithLabel ? props.id : undefined}
       >
         {label}
         {isRequired && (
@@ -154,7 +154,7 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
     return (
       <Component
         className={css(styles.check, !label && styles.modifiers.standalone, className)}
-        htmlFor={wrapWithLabel && props.id}
+        htmlFor={wrapWithLabel ? props.id : undefined}
       >
         {isLabelBeforeButton ? (
           <>

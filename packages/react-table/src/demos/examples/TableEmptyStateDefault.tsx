@@ -6,13 +6,15 @@ import {
   Card,
   EmptyState,
   EmptyStateVariant,
+  EmptyStateIcon,
   EmptyStateBody,
+  EmptyStateHeader,
   EmptyStateFooter,
   EmptyStateActions,
   PageSection
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import { DashboardWrapper } from '@patternfly/react-core/dist/esm/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
 export const TableEmptyStateDefault: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
@@ -32,12 +34,12 @@ export const TableEmptyStateDefault: React.FunctionComponent = () => (
             <Tr>
               <Td colSpan={8}>
                 <Bullseye>
-                  <EmptyState
-                    headingLevel="h2"
-                    titleText="No results found"
-                    icon={SearchIcon}
-                    variant={EmptyStateVariant.sm}
-                  >
+                  <EmptyState variant={EmptyStateVariant.sm}>
+                    <EmptyStateHeader
+                      icon={<EmptyStateIcon icon={SearchIcon} />}
+                      titleText="No results found"
+                      headingLevel="h2"
+                    />
                     <EmptyStateBody>
                       No results match this filter criteria. Clear all filters and try again.
                     </EmptyStateBody>
