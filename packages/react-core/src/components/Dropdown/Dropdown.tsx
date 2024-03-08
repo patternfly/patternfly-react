@@ -65,6 +65,10 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   zIndex?: number;
   /** Additional properties to pass to the Popper */
   popperProps?: DropdownPopperProps;
+  /** Height of the dropdown menu */
+  menuHeight?: string;
+  /** Maximum height of dropdown menu */
+  maxMenuHeight?: string;
 }
 
 const DropdownBase: React.FunctionComponent<DropdownProps> = ({
@@ -83,6 +87,8 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   zIndex = 9999,
   popperProps,
   onOpenChangeKeys = ['Escape', 'Tab'],
+  menuHeight,
+  maxMenuHeight,
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -151,7 +157,9 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
       {...props}
       {...ouiaProps}
     >
-      <MenuContent>{children}</MenuContent>
+      <MenuContent menuHeight={menuHeight} maxMenuHeight={maxMenuHeight}>
+        {children}
+      </MenuContent>
     </Menu>
   );
   return (
