@@ -124,19 +124,31 @@ class EmbeddedLegend extends React.Component {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("voronoi", "cursor");
     const legendData = [
-      { childName: 'cats', name: 'Cats' },
       {
         childName: 'limit',
         name: 'Limit',
         symbol: { fill: chart_color_orange_300.var, type: 'threshold' }
       },
+      { childName: 'cats', name: 'Cats' },
+      // Force extra space below for line wrapping
+      {
+        childName: 'cats',
+        name: '',
+        symbol: { fill: 'none' }
+      },
+      {
+        childName: 'cats',
+        name: '',
+        symbol: { fill: 'none' }
+      },
     ];
     const labelFormatter = (datum) => {
       // With box plot data, datum.y will also be an array
       if (datum && (datum._min || datum._median || datum._max || datum._q1 || datum._q3)) {
-        return `q1: ${datum._q1}, q3: ${datum._q3}`;
+        return `Min: ${datum._min}, Max: ${datum._max}\nMedian: ${datum._median}\nQ1: ${datum._q1}, Q3: ${datum._q3}`;
       }
-      return `${datum.y !== null ? datum.y : 'no data'}`;
+      const yVal = Array.isArray(datum.y) ? datum.y[0] : datum.y;
+      return yVal !== null ? yVal : 'no data';
     }
     return (
       <div style={{ height: '350px', width: '600px' }}>
@@ -147,19 +159,7 @@ class EmbeddedLegend extends React.Component {
             <CursorVoronoiContainer
               cursorDimension="x"
               labels={({ datum }) => labelFormatter(datum)}
-              labelComponent={
-                <ChartLegendTooltip
-                  boxPlotData={{
-                    max: { label: 'max' },
-                    median: { label: 'mdn' },
-                    min: { label: 'min' },
-                    q1: { label: 'q1', isVisible: false },
-                    q3: { label: 'q3', isVisible: false }
-                  }}
-                  legendData={legendData}
-                  title={(datum) => datum.x}
-                />
-              }
+              labelComponent={<ChartLegendTooltip legendData={legendData} title={(datum) => datum.x} />}
               mouseFollowTooltips
               voronoiDimension="x"
               voronoiPadding={50}
@@ -182,15 +182,6 @@ class EmbeddedLegend extends React.Component {
         >
           <ChartAxis />
           <ChartAxis dependentAxis showGrid />
-          <ChartBoxPlot
-            data={[
-              { name: 'Cats', x: '2015', y: [1, 2, 3, 5] },
-              { name: 'Cats', x: '2016', y: [3, 2, 8, 10] },
-              { name: 'Cats', x: '2017', y: [2, 8, 6, 5] },
-              { name: 'Cats', x: '2018', y: [1, 3, 2, 9] }
-            ]}
-            name="cats"
-          />
           <ChartThreshold
             data={[
               { name: 'Limit', x: '2015', y: 12 },
@@ -205,6 +196,15 @@ class EmbeddedLegend extends React.Component {
               }
             }}
           />
+          <ChartBoxPlot
+            data={[
+              { name: 'Cats', x: '2015', y: [null] },
+              { name: 'Cats', x: '2016', y: [3, 2, 8, 10] },
+              { name: 'Cats', x: '2017', y: [2, 8, 6, 5] },
+              { name: 'Cats', x: '2018', y: [1, 3, 2, 9] }
+            ]}
+            name="cats"
+          />
         </Chart>
       </div>
     );
@@ -218,7 +218,7 @@ This demonstrates how to embed HTML within a tooltip. Combining cursor and voron
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBoxPlot, ChartCursorFlyout, ChartCursorTooltip, ChartThemeColor, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBoxPlot, ChartCursorTooltip, ChartThemeColor, createContainer } from '@patternfly/react-charts';
 
 class EmbeddedHtml extends React.Component {
   constructor(props) {
@@ -292,8 +292,6 @@ class EmbeddedHtml extends React.Component {
               labels={({ datum }) => `${datum.y}`}
               labelComponent={
                 <ChartCursorTooltip
-                  centerOffset={{x: ({ center, flyoutWidth, width, offset = flyoutWidth / 2 + 10 }) => width > center.x + flyoutWidth + 10 ? offset : -offset}}
-                  flyout={<ChartCursorFlyout />}
                   flyoutHeight={145}
                   flyoutWidth={110}
                   labelComponent={<HtmlLegendContent title={(datum) => datum.x} />}

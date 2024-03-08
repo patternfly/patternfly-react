@@ -114,7 +114,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 126.99999999999999, 206
+          d="M 127, 206
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -177,7 +177,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 176.00000000000003, 177.99999999999997
+          d="M 176, 178
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -186,7 +186,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 183.00000000000003, 173.99999999999997
+          d="M 183, 174
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -195,7 +195,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 190.00000000000003, 169.99999999999997
+          d="M 190, 170
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -204,7 +204,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 197.00000000000003, 165.99999999999997
+          d="M 197, 166.00000000000003
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -213,7 +213,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 204.00000000000006, 161.99999999999997
+          d="M 204, 162
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -222,7 +222,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 211.00000000000006, 157.99999999999994
+          d="M 211, 158
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -231,7 +231,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 218.00000000000006, 153.99999999999994
+          d="M 218, 154
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -240,7 +240,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 225.00000000000006, 149.99999999999997
+          d="M 225, 150
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -249,7 +249,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 232.00000000000006, 145.99999999999997
+          d="M 232, 146
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -258,7 +258,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 239.00000000000006, 141.99999999999997
+          d="M 239, 142
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -267,7 +267,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 246.00000000000006, 137.99999999999997
+          d="M 246.00000000000003, 138
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -276,7 +276,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 253.00000000000009, 133.99999999999997
+          d="M 252.99999999999997, 134
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -285,7 +285,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 260.00000000000006, 129.99999999999994
+          d="M 260, 130
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -294,7 +294,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 267.00000000000006, 125.99999999999996
+          d="M 267, 126
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -303,7 +303,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 274.0000000000001, 121.99999999999996
+          d="M 274, 122
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -312,7 +312,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 281.0000000000001, 117.99999999999996
+          d="M 281, 117.99999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -321,7 +321,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 288.0000000000001, 113.99999999999994
+          d="M 288, 113.99999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -330,7 +330,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 295.0000000000001, 109.99999999999994
+          d="M 295, 109.99999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -339,7 +339,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 302.0000000000001, 105.99999999999994
+          d="M 302, 106
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -348,7 +348,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 309.0000000000001, 101.99999999999993
+          d="M 309, 102
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -357,7 +357,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 316.0000000000001, 97.99999999999993
+          d="M 316, 98
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -366,7 +366,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 323.00000000000017, 93.99999999999993
+          d="M 323, 94
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -375,7 +375,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 330.00000000000017, 89.99999999999993
+          d="M 330, 89.99999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -384,7 +384,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 337.00000000000017, 85.99999999999991
+          d="M 337, 85.99999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -393,7 +393,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 344.00000000000017, 81.99999999999991
+          d="M 344, 82
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -402,7 +402,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 351.00000000000017, 77.99999999999991
+          d="M 351, 78
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -411,7 +411,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 358.00000000000017, 73.99999999999991
+          d="M 358, 74
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -420,7 +420,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 365.00000000000017, 69.9999999999999
+          d="M 365, 70
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -429,7 +429,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 372.00000000000017, 65.9999999999999
+          d="M 372, 65.99999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -438,7 +438,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 379.0000000000002, 61.9999999999999
+          d="M 379, 61.999999999999986
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -447,7 +447,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 386.0000000000002, 57.9999999999999
+          d="M 386, 58.00000000000001
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -456,7 +456,7 @@ exports[`ChartScatter 1`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 393.0000000000002, 53.99999999999989
+          d="M 393, 54.00000000000001
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -603,7 +603,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 126.99999999999999, 206
+          d="M 127, 206
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -666,7 +666,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 176.00000000000003, 177.99999999999997
+          d="M 176, 178
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -675,7 +675,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 183.00000000000003, 173.99999999999997
+          d="M 183, 174
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -684,7 +684,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 190.00000000000003, 169.99999999999997
+          d="M 190, 170
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -693,7 +693,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 197.00000000000003, 165.99999999999997
+          d="M 197, 166.00000000000003
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -702,7 +702,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 204.00000000000006, 161.99999999999997
+          d="M 204, 162
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -711,7 +711,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 211.00000000000006, 157.99999999999994
+          d="M 211, 158
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -720,7 +720,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 218.00000000000006, 153.99999999999994
+          d="M 218, 154
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -729,7 +729,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 225.00000000000006, 149.99999999999997
+          d="M 225, 150
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -738,7 +738,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 232.00000000000006, 145.99999999999997
+          d="M 232, 146
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -747,7 +747,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 239.00000000000006, 141.99999999999997
+          d="M 239, 142
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -756,7 +756,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 246.00000000000006, 137.99999999999997
+          d="M 246.00000000000003, 138
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -765,7 +765,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 253.00000000000009, 133.99999999999997
+          d="M 252.99999999999997, 134
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -774,7 +774,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 260.00000000000006, 129.99999999999994
+          d="M 260, 130
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -783,7 +783,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 267.00000000000006, 125.99999999999996
+          d="M 267, 126
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -792,7 +792,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 274.0000000000001, 121.99999999999996
+          d="M 274, 122
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -801,7 +801,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 281.0000000000001, 117.99999999999996
+          d="M 281, 117.99999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -810,7 +810,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 288.0000000000001, 113.99999999999994
+          d="M 288, 113.99999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -819,7 +819,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 295.0000000000001, 109.99999999999994
+          d="M 295, 109.99999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -828,7 +828,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 302.0000000000001, 105.99999999999994
+          d="M 302, 106
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -837,7 +837,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 309.0000000000001, 101.99999999999993
+          d="M 309, 102
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -846,7 +846,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 316.0000000000001, 97.99999999999993
+          d="M 316, 98
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -855,7 +855,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 323.00000000000017, 93.99999999999993
+          d="M 323, 94
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -864,7 +864,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 330.00000000000017, 89.99999999999993
+          d="M 330, 89.99999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -873,7 +873,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 337.00000000000017, 85.99999999999991
+          d="M 337, 85.99999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -882,7 +882,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 344.00000000000017, 81.99999999999991
+          d="M 344, 82
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -891,7 +891,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 351.00000000000017, 77.99999999999991
+          d="M 351, 78
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -900,7 +900,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 358.00000000000017, 73.99999999999991
+          d="M 358, 74
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -909,7 +909,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 365.00000000000017, 69.9999999999999
+          d="M 365, 70
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -918,7 +918,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 372.00000000000017, 65.9999999999999
+          d="M 372, 65.99999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -927,7 +927,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 379.0000000000002, 61.9999999999999
+          d="M 379, 61.999999999999986
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -936,7 +936,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 386.0000000000002, 57.9999999999999
+          d="M 386, 58.00000000000001
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"
@@ -945,7 +945,7 @@ exports[`ChartScatter 2`] = `
           style="fill: var(--pf-v6-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-v6-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
-          d="M 393.0000000000002, 53.99999999999989
+          d="M 393, 54.00000000000001
       m -3, 0
       a 3, 3 0 1,0 6,0
       a 3, 3 0 1,0 -6,0"

@@ -590,7 +590,7 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
         Choose one
       </span>
       <ToolbarContent>
-        <ToolbarItem>
+        <ToolbarItem variant="overflow-menu">
           <OverflowMenu breakpoint="md">
             <OverflowMenuItem isPersistent>
               <MenuToggle>

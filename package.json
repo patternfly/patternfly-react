@@ -80,6 +80,7 @@
     "build:single:packages": "lerna run build:single:packages",
     "clean": "yarn clean:build && lerna run clean --parallel",
     "clean:build": "rimraf .cache .eslintcache coverage",
+    "clean:exports": "lerna run clean:exports --parallel --stream",
     "generate": "yarn plop",
     "lint": "node --max-old-space-size=4096 node_modules/.bin/eslint --ext js,jsx,ts,tsx --cache",
     "lint:all": "yarn lint:md && yarn lint:versions && yarn lint:ts",

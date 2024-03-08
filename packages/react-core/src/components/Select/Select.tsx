@@ -70,6 +70,12 @@ export interface SelectProps extends MenuProps, OUIAProps {
   role?: string;
   /** Additional properties to pass to the popper */
   popperProps?: SelectPopperProps;
+  /** Height of the select menu */
+  menuHeight?: string;
+  /** Maximum height of select menu */
+  maxMenuHeight?: string;
+  /** Indicates if the select menu should be scrollable */
+  isScrollable?: boolean;
 }
 
 const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
@@ -87,6 +93,9 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   zIndex = 9999,
   role = 'listbox',
   popperProps,
+  menuHeight,
+  maxMenuHeight,
+  isScrollable,
   ...props
 }: SelectProps & OUIAProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -151,6 +160,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       }}
       isPlain={isPlain}
       selected={selected}
+      isScrollable={isScrollable}
       {...getOUIAProps(
         Select.displayName,
         props.ouiaId !== undefined ? props.ouiaId : getDefaultOUIAId(Select.displayName),
@@ -158,7 +168,9 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       )}
       {...props}
     >
-      <MenuContent>{children}</MenuContent>
+      <MenuContent menuHeight={menuHeight} maxMenuHeight={maxMenuHeight}>
+        {children}
+      </MenuContent>
     </Menu>
   );
   return (
