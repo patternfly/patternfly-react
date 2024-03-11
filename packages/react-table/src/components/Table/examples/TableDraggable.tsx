@@ -140,10 +140,10 @@ export const TableDraggable: React.FunctionComponent = () => {
   ];
 
   return (
-    <Table aria-label="Draggable table" className={isDragging && styles.modifiers.dragOver}>
+    <Table aria-label="Draggable table" className={isDragging ? styles.modifiers.dragOver : ''}>
       <Thead>
         <Tr>
-          <Th />
+          <Th screenReaderText="Drag and drop" />
           {columns.map((column, columnIndex) => (
             <Th key={columnIndex}>{column}</Th>
           ))}

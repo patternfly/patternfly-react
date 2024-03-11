@@ -66,7 +66,7 @@ export const TableActions: React.FunctionComponent = () => {
             <Th>{columnNames.prs}</Th>
             <Th>{columnNames.workspaces}</Th>
             <Th>{columnNames.lastCommit}</Th>
-            <Th />
+            <Th screenReaderText="Actions" />
           </Tr>
         </Thead>
         <Tbody>

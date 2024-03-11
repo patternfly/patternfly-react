@@ -60,7 +60,7 @@ export interface ThProps
    * th is intended to be visually empty, and must be conveyed as a column header text.
    */
   screenReaderText?: string;
-  /** Prpvides an accessible name to the th. This should only be passed in when the th contains only non-text
+  /** Provides an accessible name to the th. This should only be passed in when the th contains only non-text
    * content, such as a "select all" checkbox or "expand all" toggle.
    */
   'aria-label'?: string;

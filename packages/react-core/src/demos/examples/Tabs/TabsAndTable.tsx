@@ -230,7 +230,7 @@ export const TablesAndTabs = () => {
     <Table aria-label="`Composable` table">
       <Thead noWrap>
         <Tr>
-          <Th />
+          <Th screenReaderText="Row select" />
           <Th>{columnNames.name}</Th>
           <Th>{columnNames.branches}</Th>
           <Th>{columnNames.prs}</Th>
