@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.3.0-prerelease.8 (2024-03-11)
+
+### Bug Fixes
+
+- **Select:** focus first item when opened by click ([#10125](https://github.com/patternfly/patternfly-react/issues/10125)) ([7ed228a](https://github.com/patternfly/patternfly-react/commit/7ed228af0bac0da1a575a9773022e106ae3972f9))
+
 # [5.3.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.6...@patternfly/react-core@5.3.0-prerelease.7) (2024-02-28)
 
 ### Bug Fixes
