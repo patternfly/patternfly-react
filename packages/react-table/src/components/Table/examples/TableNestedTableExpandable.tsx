@@ -131,7 +131,7 @@ export const TableExpandable: React.FunctionComponent = () => {
     <Table aria-label="Simple table">
       <Thead>
         <Tr>
-          <Td />
+          <Th />
           <Th width={20}>{columnNames.name}</Th>
           <Th>{columnNames.branches}</Th>
           <Th>{columnNames.prs}</Th>
