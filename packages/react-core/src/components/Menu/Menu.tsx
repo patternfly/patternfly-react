@@ -157,7 +157,9 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     } else {
       const nextMenu = current.querySelector('#' + this.props.activeMenu) || current || null;
       const nextMenuLists = nextMenu.getElementsByTagName('UL');
-      if (nextMenuLists.length == 0) return;
+      if (nextMenuLists.length === 0) {
+        return;
+      }
       const nextMenuChildren = Array.from(nextMenuLists[0].children);
       if (!this.state.currentDrilldownMenuId || nextMenu.id !== this.state.currentDrilldownMenuId) {
         this.setState({ currentDrilldownMenuId: nextMenu.id });
