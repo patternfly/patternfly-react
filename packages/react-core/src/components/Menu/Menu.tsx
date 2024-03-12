@@ -156,20 +156,22 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       this.setState({ transitionMoveTarget: null });
     } else {
       const nextMenu = current.querySelector('#' + this.props.activeMenu) || current || null;
-      const nextMenuChildren = Array.from(nextMenu.getElementsByTagName('UL')[0].children);
+      const nextMenuLists = nextMenu.getElementsByTagName('UL');
+      if (nextMenuLists.length > 0) {
+        const nextMenuChildren = Array.from(nextMenuLists[0].children);
 
-      if (!this.state.currentDrilldownMenuId || nextMenu.id !== this.state.currentDrilldownMenuId) {
-        this.setState({ currentDrilldownMenuId: nextMenu.id });
-      } else {
-        // if the drilldown transition ends on the same menu, do not focus the first item
-        return;
+        if (!this.state.currentDrilldownMenuId || nextMenu.id !== this.state.currentDrilldownMenuId) {
+          this.setState({ currentDrilldownMenuId: nextMenu.id });
+        } else {
+          // if the drilldown transition ends on the same menu, do not focus the first item
+          return;
+        }
+        const nextTarget = nextMenuChildren.filter(
+          (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(styles.divider))
+        )[0].firstChild;
+        (nextTarget as HTMLElement).focus();
+        (nextTarget as HTMLElement).tabIndex = 0;
       }
-      const nextTarget = nextMenuChildren.filter(
-        (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(styles.divider))
-      )[0].firstChild;
-
-      (nextTarget as HTMLElement).focus();
-      (nextTarget as HTMLElement).tabIndex = 0;
     }
   };
 
