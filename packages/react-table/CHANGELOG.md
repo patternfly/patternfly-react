@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.40...@patternfly/react-table@6.0.0-alpha.41) (2024-03-12)
+
+### Features
+
+- **MenuToggle:** consumed Penta updates ([#10097](https://github.com/patternfly/patternfly-react/issues/10097)) ([4a8f446](https://github.com/patternfly/patternfly-react/commit/4a8f4464e715ac93bc72a8c10f38eb2fc13caa95))
+
 # [6.0.0-alpha.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.39...@patternfly/react-table@6.0.0-alpha.40) (2024-03-08)
 
 **Note:** Version bump only for package @patternfly/react-table

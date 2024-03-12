@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.21...@patternfly/react-integration@6.0.0-alpha.22) (2024-03-12)
+
+### Features
+
+- **MenuToggle:** consumed Penta updates ([#10097](https://github.com/patternfly/patternfly-react/issues/10097)) ([4a8f446](https://github.com/patternfly/patternfly-react/commit/4a8f4464e715ac93bc72a8c10f38eb2fc13caa95))
+
 # [6.0.0-alpha.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.20...@patternfly/react-integration@6.0.0-alpha.21) (2024-03-08)
 
 **Note:** Version bump only for package @patternfly/react-integration
