@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.8...@patternfly/react-core@5.3.0-prerelease.9) (2024-03-12)
+
+### Bug Fixes
+
+- **Menu:** Fix crash in menu referencing invalid array index ([#10153](https://github.com/patternfly/patternfly-react/issues/10153)) ([d3b53f5](https://github.com/patternfly/patternfly-react/commit/d3b53f515d71321a127f0bf8c4660a8bbac791c1))
+
 # 5.3.0-prerelease.8 (2024-03-11)
 
 ### Bug Fixes
