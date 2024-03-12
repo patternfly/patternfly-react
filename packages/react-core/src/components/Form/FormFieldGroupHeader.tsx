@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 export interface FormFieldGroupHeaderTitleTextObject {
   /** Title text. */
   text: React.ReactNode;
-  /** The applied to the title div for accessibility */
+  /** The id applied to the title div for accessibility */
   id: string;
 }
 
