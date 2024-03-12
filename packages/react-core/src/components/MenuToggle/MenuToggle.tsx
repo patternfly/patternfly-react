@@ -37,8 +37,9 @@ export interface MenuToggleProps
   splitButtonOptions?: SplitButtonOptions;
   /** Variant styles of the menu toggle */
   variant?: 'default' | 'plain' | 'primary' | 'plainText' | 'secondary' | 'typeahead';
-  /** Optional icon or image rendered inside the toggle, before the children content. It is
-   * recommended to wrap most basic icons in our icon component.
+  /** Icon or image rendered inside the toggle, before the children content. It is
+   * recommended to wrap icons in our icon component. For menu toggles that contain only an icon, we
+   * recommend passing the icon to this prop instead of passing it as children.
    */
   icon?: React.ReactNode;
   /** Optional badge rendered inside the toggle, after the children content */
@@ -88,7 +89,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
     const content = (
       <>
         {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
-        {isTypeahead ? children : <span className={css(styles.menuToggleText)}>{children}</span>}
+        {isTypeahead ? children : children && <span className={css(styles.menuToggleText)}>{children}</span>}
         {React.isValidElement(badge) && <span className={css(styles.menuToggleCount)}>{badge}</span>}
         {isTypeahead ? (
           <button
@@ -101,7 +102,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
             {toggleControls}
           </button>
         ) : (
-          toggleControls
+          !isPlain && toggleControls
         )}
       </>
     );
@@ -120,7 +121,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
     );
 
     const componentProps = {
-      children: isPlain ? children : content,
+      children: content,
       ...(isDisabled && { disabled: true }),
       ...otherProps
     };

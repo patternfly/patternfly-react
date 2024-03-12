@@ -137,9 +137,8 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
                   isExpanded={isSortDropdownOpen}
                   variant="plain"
                   aria-label="Sort columns"
-                >
-                  <SortAmountDownIcon />
-                </MenuToggle>
+                  icon={<SortAmountDownIcon />}
+                />
               )}
             >
               <NewSelectGroup label="Sort column">

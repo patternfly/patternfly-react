@@ -132,9 +132,8 @@ export class PageDemo extends Component {
                   ref={toggleRef}
                   onClick={this.onKebabDropdownToggle}
                   isExpanded={isKebabDropdownOpen}
-                >
-                  <EllipsisVIcon />
-                </MenuToggle>
+                  icon={<EllipsisVIcon />}
+                />
               )}
             >
               <DropdownList>{kebabDropdownItems}</DropdownList>

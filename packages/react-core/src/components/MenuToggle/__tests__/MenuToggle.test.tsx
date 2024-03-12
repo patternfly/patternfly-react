@@ -34,11 +34,7 @@ describe('menu toggle', () => {
   });
 
   test('shows isPlain', () => {
-    const { asFragment } = render(
-      <MenuToggle variant="plain">
-        <EllipsisVIcon />
-      </MenuToggle>
-    );
+    const { asFragment } = render(<MenuToggle variant="plain" icon={<EllipsisVIcon />} />);
     expect(asFragment()).toMatchSnapshot();
   });
 

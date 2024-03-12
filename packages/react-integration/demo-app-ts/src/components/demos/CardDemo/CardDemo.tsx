@@ -135,9 +135,13 @@ export class CardDemo extends Component {
           onOpenChange={(isOpen) => this.setState({ isOpen })}
           popperProps={{ position: 'right' }}
           toggle={(toggleRef) => (
-            <MenuToggle variant="plain" ref={toggleRef} isExpanded={this.state.isOpen} onClick={this.onToggle}>
-              <EllipsisVIcon />
-            </MenuToggle>
+            <MenuToggle
+              variant="plain"
+              ref={toggleRef}
+              isExpanded={this.state.isOpen}
+              onClick={this.onToggle}
+              icon={<EllipsisVIcon />}
+            />
           )}
         >
           <DropdownList>{dropdownItems}</DropdownList>
