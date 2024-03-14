@@ -1,8 +1,8 @@
 import React from 'react';
 import { SelectOption, Checkbox } from '@patternfly/react-core';
-import { SimpleSelect } from '@patternfly/react-templates';
+import { SelectSimple } from '@patternfly/react-templates';
 
-export const SelectBasic: React.FunctionComponent = () => {
+export const SelectSimpleDemo: React.FunctionComponent = () => {
   const [isDisabled, setIsDisabled] = React.useState<boolean>(false);
 
   const initialOptions = [
@@ -26,7 +26,7 @@ export const SelectBasic: React.FunctionComponent = () => {
         onChange={(_event, checked) => setIsDisabled(checked)}
         style={{ marginBottom: 20 }}
       />
-      <SimpleSelect initialOptions={initialOptions} isDisabled={isDisabled} />
+      <SelectSimple initialOptions={initialOptions} isDisabled={isDisabled} />
     </React.Fragment>
   );
 };

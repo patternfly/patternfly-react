@@ -2,7 +2,7 @@ import React from 'react';
 import { Select, SelectList } from '@patternfly/react-core/dist/esm/components/Select';
 import { MenuToggle, MenuToggleElement } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 
-export interface SimpleSelectProps {
+export interface SelectSimpleProps {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */
@@ -17,7 +17,7 @@ export interface SimpleSelectProps {
   toggleContent?: React.ReactNode;
 }
 
-const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
+const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
   innerRef,
   initialOptions,
   isDisabled,
@@ -25,7 +25,7 @@ const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
   onToggle,
   toggleContent,
   ...props
-}: SimpleSelectProps) => {
+}: SelectSimpleProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('Select a value');
 
@@ -57,26 +57,24 @@ const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
   );
 
   return (
-    <React.Fragment>
-      <Select
-        id="single-select"
-        isOpen={isOpen}
-        selected={selected}
-        onSelect={_onSelect}
-        onOpenChange={(isOpen) => setIsOpen(isOpen)}
-        toggle={toggle}
-        shouldFocusToggleOnSelect
-        ref={innerRef}
-        {...props}
-      >
-        <SelectList>{initialOptions}</SelectList>
-      </Select>
-    </React.Fragment>
+    <Select
+      id="single-select"
+      isOpen={isOpen}
+      selected={selected}
+      onSelect={_onSelect}
+      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      toggle={toggle}
+      shouldFocusToggleOnSelect
+      ref={innerRef}
+      {...props}
+    >
+      <SelectList>{initialOptions}</SelectList>
+    </Select>
   );
 };
 
-export const SimpleSelect = React.forwardRef((props: SimpleSelectProps, ref: React.Ref<any>) => (
-  <SimpleSelectBase {...props} innerRef={ref} />
+export const SelectSimple = React.forwardRef((props: SelectSimpleProps, ref: React.Ref<any>) => (
+  <SelectSimpleBase {...props} innerRef={ref} />
 ));
 
-SimpleSelect.displayName = 'SelectOption';
+SelectSimple.displayName = 'SelectSimple';
