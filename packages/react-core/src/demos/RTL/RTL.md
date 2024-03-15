@@ -26,6 +26,6 @@ This demonstrates how the UI adapts to the writing mode of the page.
 
 ### Paginated table
 
-```ts file="./examples/PaginatedTable.tsx" isFullscreen
+```js file="./examples/PaginatedTable.tsx" isFullscreen
 
 ```
