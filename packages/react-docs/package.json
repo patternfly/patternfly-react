@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "6.2.3",
+  "version": "6.2.4",
   "publishConfig": {
     "access": "public"
   },
@@ -24,12 +24,12 @@
   "dependencies": {
     "@patternfly/patternfly": "5.2.1",
     "@patternfly/react-charts": "^7.2.2",
-    "@patternfly/react-code-editor": "^5.2.2",
-    "@patternfly/react-core": "^5.2.2",
-    "@patternfly/react-drag-drop": "^5.2.2",
+    "@patternfly/react-code-editor": "^5.2.3",
+    "@patternfly/react-core": "^5.2.3",
+    "@patternfly/react-drag-drop": "^5.2.3",
     "@patternfly/react-icons": "^5.2.1",
     "@patternfly/react-styles": "^5.2.1",
-    "@patternfly/react-table": "^5.2.2",
+    "@patternfly/react-table": "^5.2.3",
     "@patternfly/react-tokens": "^5.2.1"
   },
   "devDependencies": {
