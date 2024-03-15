@@ -83,9 +83,6 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
   validators?: ((date: Date) => boolean)[];
 }
 
-// Must be numeric given current header design
-const yearFormat = (date: Date) => date.getFullYear();
-
 const buildCalendar = (year: number, month: number, weekStart: number, validators: ((date: Date) => boolean)[]) => {
   const defaultDate = new Date(year, month);
 
@@ -164,6 +161,13 @@ export const CalendarMonth = ({
   };
   const initialDate = getInitialDate();
   const [focusedDate, setFocusedDate] = React.useState(initialDate);
+
+  // Must be numeric given current header design
+  const yearFormat = (date: Date) => date.getFullYear();
+  //
+  const yearFormatted = yearFormat(focusedDate);
+  const [yearInput, setYearInput] = React.useState(yearFormatted.toString());
+
   const [hoveredDate, setHoveredDate] = React.useState(new Date(focusedDate));
   const focusRef = React.useRef<HTMLButtonElement>();
   const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
@@ -191,6 +195,7 @@ export const CalendarMonth = ({
     setHoveredDate(newDate);
     setShouldFocus(false);
     onMonthChange(ev, newDate);
+    setYearInput(yearFormat(newDate).toString());
   };
 
   const onKeyDown = (ev: React.KeyboardEvent<HTMLTableSectionElement>) => {
@@ -216,6 +221,34 @@ export const CalendarMonth = ({
 
   const changeMonth = (newMonth: number, newYear?: number) =>
     new Date(newYear ?? focusedDate.getFullYear(), newMonth, 1);
+
+  const MIN_YEAR = 1900;
+  const MAX_YEAR = 2100;
+
+  const handleYearInputChange = (event: React.FormEvent<HTMLInputElement>, yearStr: string) => {
+    if (!/^\d{0,4}$/.test(yearStr)) {
+      return;
+    }
+
+    setYearInput(yearStr);
+
+    if (yearStr.length === 4) {
+      const yearNum = Number(yearStr);
+
+      if (yearNum >= MIN_YEAR && yearNum <= MAX_YEAR) {
+        const newDate = changeYear(yearNum);
+        setFocusedDate(newDate);
+        setHoveredDate(newDate);
+        setShouldFocus(false);
+
+        // We need to manually focus the year input in FireFox when the scroll buttons are clicked, as FireFox doesn't place focus automatically
+        (event.target as HTMLElement).focus();
+        onMonthChange(event, newDate);
+      } else {
+        setYearInput(yearFormatted.toString());
+      }
+    }
+  };
 
   const addMonth = (toAdd: -1 | 1) => {
     let newMonth = focusedDate.getMonth() + toAdd;
@@ -254,7 +287,6 @@ export const CalendarMonth = ({
   }
   const isHoveredDateValid = isValidated(hoveredDate);
   const monthFormatted = monthFormat(focusedDate);
-  const yearFormatted = yearFormat(focusedDate);
 
   const calendarToRender = (
     <div className={css(styles.calendarMonth, className)} {...props}>
@@ -321,15 +353,8 @@ export const CalendarMonth = ({
               <TextInput
                 aria-label={yearInputAriaLabel}
                 type="number"
-                value={yearFormatted}
-                onChange={(ev: React.FormEvent<HTMLInputElement>, year: string) => {
-                  const newDate = changeYear(Number(year));
-                  setFocusedDate(newDate);
-                  setHoveredDate(newDate);
-                  setShouldFocus(false);
-                  focusRef.current?.blur(); // will unfocus a date when changing year via up/down arrows
-                  onMonthChange(ev, newDate);
-                }}
+                value={yearInput}
+                onChange={handleYearInputChange}
               />
             </div>
           </InputGroupItem>
