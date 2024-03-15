@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.3.0-prerelease.10...@patternfly/react-table@5.3.0-prerelease.11) (2024-03-15)
+
+### Bug Fixes
+
+- **Table:** remove demos from package exports ([#10165](https://github.com/patternfly/patternfly-react/issues/10165)) ([65365b1](https://github.com/patternfly/patternfly-react/commit/65365b1c052fe8beaedec94eb625d47af089d834))
+
 # [5.3.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.3.0-prerelease.9...@patternfly/react-table@5.3.0-prerelease.10) (2024-03-15)
 
 **Note:** Version bump only for package @patternfly/react-table
