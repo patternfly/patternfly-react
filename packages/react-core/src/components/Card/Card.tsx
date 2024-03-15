@@ -14,13 +14,21 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   component?: keyof JSX.IntrinsicElements;
   /** Modifies the card to include compact styling. Should not be used with isLarge. */
   isCompact?: boolean;
-  /** Modifies the card to include selectable styling */
+  /** Flag indicating that the card is selectable. */
   isSelectable?: boolean;
-  /** Modifies the card to include selected styling */
-  isSelected?: boolean;
-  /** Modifies the card to include clickable styling */
+  /** Flag indicating whether the input of a selectable card should be visually hidden. */
+  isSelectableInputHidden?: boolean;
+  /** Flag indicating that the card is clickable and contains some action that triggers on click. */
   isClickable?: boolean;
-  /** Modifies a clickable or selectable card to have disabled styling. */
+  /** Flag indicating whether a card that is both clickable and selectable is currently selected and has selected styling.
+   * This will not determine the card's actual selected state.
+   */
+  isSelected?: boolean;
+  /** Flag indicating whether a card that is either only clickable or that is both clickable and selectable
+   * is currently clicked and has clicked styling.
+   */
+  isClicked?: boolean;
+  /** Flag indicating that a clickable or selectable card is disabled. */
   isDisabled?: boolean;
   /** Modifies the card to be large. Should not be used with isCompact. */
   isLarge?: boolean;
@@ -43,6 +51,8 @@ interface CardContextProps {
   isExpanded: boolean;
   isClickable: boolean;
   isSelectable: boolean;
+  isSelectableInputHidden: boolean;
+  isClicked: boolean;
   isDisabled: boolean;
 }
 
@@ -51,6 +61,8 @@ export const CardContext = React.createContext<Partial<CardContextProps>>({
   isExpanded: false,
   isClickable: false,
   isSelectable: false,
+  isSelectableInputHidden: false,
+  isClicked: false,
   isDisabled: false
 });
 
@@ -61,9 +73,11 @@ export const Card: React.FunctionComponent<CardProps> = ({
   component = 'div',
   isCompact = false,
   isSelectable = false,
+  isSelectableInputHidden = false,
   isClickable = false,
   isDisabled = false,
   isSelected = false,
+  isClicked = false,
   isExpanded = false,
   isLarge = false,
   isFullHeight = false,
@@ -82,10 +96,20 @@ export const Card: React.FunctionComponent<CardProps> = ({
     console.warn('Card: Cannot use isCompact with isLarge. Defaulting to isCompact');
     isLarge = false;
   }
+  if (isSelectableInputHidden && isClickable && isSelectable) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'Card: Cannot set isSelectableInputHidden to true if the card is both selectable and clickable. Doing so would prevent selection.'
+    );
+  }
 
   const getSelectableModifiers = () => {
     if (isSelectable && isClickable) {
-      return css(styles.modifiers.selectable, styles.modifiers.clickable, isSelected && styles.modifiers.current);
+      return css(
+        styles.modifiers.selectable,
+        styles.modifiers.clickable,
+        (isSelected || isClicked) && styles.modifiers.current
+      );
     }
 
     if (isSelectable) {
@@ -93,7 +117,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
     }
 
     if (isClickable) {
-      return css(styles.modifiers.clickable, isSelected && styles.modifiers.selected);
+      return css(styles.modifiers.clickable, isClicked && styles.modifiers.current);
     }
 
     return '';
@@ -106,6 +130,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
         isExpanded,
         isClickable,
         isSelectable,
+        isSelectableInputHidden,
+        isClicked,
         isDisabled
       }}
     >

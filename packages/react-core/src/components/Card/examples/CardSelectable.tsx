@@ -6,6 +6,7 @@ export const SelectableCard: React.FunctionComponent = () => {
   const [isChecked2, setIsChecked2] = React.useState(false);
   const [isChecked3, setIsChecked3] = React.useState(false);
   const [isSecondary, setIsSecondary] = React.useState<boolean>(false);
+  const [isInputHidden, setIsInputHidden] = React.useState<boolean>(false);
 
   const id1 = 'selectable-card-input-1';
   const id2 = 'selectable-card-input-2';
@@ -30,20 +31,34 @@ export const SelectableCard: React.FunctionComponent = () => {
   const toggleVariant = (checked: boolean) => {
     setIsSecondary(checked);
   };
+  const toggleInputHidden = (checked: boolean) => {
+    setIsInputHidden(checked);
+  };
 
   return (
     <>
       <Checkbox
-        label="secondary styling"
+        label="Secondary card styling"
         isChecked={isSecondary}
         onChange={(_event, checked) => toggleVariant(checked)}
-        aria-label="add secondary styling"
         id="toggle-variant-selectable"
         name="toggle-variant"
       />
+      <Checkbox
+        label="Card inputs hidden"
+        isChecked={isInputHidden}
+        onChange={(_event, checked) => toggleInputHidden(checked)}
+        id="toggle-input-hidden-selectable"
+        name="toggle-input-hidden"
+      />
       <div style={{ marginTop: '15px' }}>
         <Gallery hasGutter>
-          <Card id="selectable-card-example-1" isSelectable variant={isSecondary ? 'secondary' : 'default'}>
+          <Card
+            id="selectable-card-example-1"
+            isSelectable
+            variant={isSecondary ? 'secondary' : 'default'}
+            isSelectableInputHidden={isInputHidden}
+          >
             <CardHeader
               selectableActions={{
                 selectableActionId: id1,
@@ -57,7 +72,12 @@ export const SelectableCard: React.FunctionComponent = () => {
             </CardHeader>
             <CardBody>This card is selectable.</CardBody>
           </Card>
-          <Card id="selectable-card-example-2" isSelectable variant={isSecondary ? 'secondary' : 'default'}>
+          <Card
+            id="selectable-card-example-2"
+            isSelectable
+            variant={isSecondary ? 'secondary' : 'default'}
+            isSelectableInputHidden={isInputHidden}
+          >
             <CardHeader
               selectableActions={{
                 selectableActionId: id2,
@@ -71,7 +91,13 @@ export const SelectableCard: React.FunctionComponent = () => {
             </CardHeader>
             <CardBody>This card is selectable.</CardBody>
           </Card>
-          <Card id="selectable-card-example-3" isSelectable isDisabled variant={isSecondary ? 'secondary' : 'default'}>
+          <Card
+            id="selectable-card-example-3"
+            isSelectable
+            isDisabled
+            variant={isSecondary ? 'secondary' : 'default'}
+            isSelectableInputHidden={isInputHidden}
+          >
             <CardHeader
               selectableActions={{
                 selectableActionId: id3,
