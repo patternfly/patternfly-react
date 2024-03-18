@@ -4,7 +4,7 @@ import { LoginMainFooterLinksItem } from '../LoginMainFooterLinksItem';
 
 describe('LoginMainFooterLinksItem', () => {
   test('renders with PatternFly Core styles', () => {
-    const { asFragment } = render(<LoginMainFooterLinksItem href="#" target="" />);
+    const { asFragment } = render(<LoginMainFooterLinksItem />);
     expect(asFragment()).toMatchSnapshot();
   });
 
