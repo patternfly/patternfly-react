@@ -17,12 +17,12 @@ exports[`Check expandable form field group example against snapshot 1`] = `
           aria-disabled="false"
           aria-expanded="true"
           aria-label="toggle"
-          aria-labelledby="title-text-id2 form-field-group-toggle0"
+          aria-labelledby="title-text-id2 generated-id"
           class="pf-v5-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-1"
           data-ouia-component-type="PF5/Button"
           data-ouia-safe="true"
-          id="form-field-group-toggle0"
+          id="generated-id"
           type="button"
         >
           <span
