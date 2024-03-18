@@ -44,6 +44,12 @@ The following example shows two navigation groups, each with a `title` prop pass
 
 ```
 
+### Horizontal navigation
+
+```ts file="./NavHorizontalNav.tsx"
+
+```
+
 ### Horizontal subnav
 
 ```ts file="./NavHorizontalSubNav.tsx"
