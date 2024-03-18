@@ -18,8 +18,3 @@ import './Badge.css';
 
 ```ts file="./BadgeUnread.tsx"
 ```
-
-### Badge as toggle
-
-```ts file="./BadgeToggle.tsx"
-```

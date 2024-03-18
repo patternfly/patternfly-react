@@ -32,15 +32,6 @@ test('Renders with class name pf-m-read when isRead prop is true', () => {
   expect(screen.getByText('Test')).toHaveClass('pf-m-read');
 });
 
-test('Renders with toggle styles and icon when isToggle prop is true', () => {
-  render(
-    <Badge isRead={true} isToggle={true}>
-      Test
-    </Badge>
-  );
-  expect(screen.getByText('Test').lastChild).toHaveClass(styles.badgeToggleIcon);
-});
-
 test('Does not render pf-v6-screen-reader class by default', () => {
   render(<Badge>Test</Badge>);
   expect(screen.getByText('Test')).not.toContainHTML('<span class="pf-v6-screen-reader"></span>');
