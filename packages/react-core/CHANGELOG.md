@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.42...@patternfly/react-core@6.0.0-alpha.43) (2024-03-18)
+
+### Features
+
+- **Login:** use children for loginmainfooterlinksitem ([#10107](https://github.com/patternfly/patternfly-react/issues/10107)) ([922fd90](https://github.com/patternfly/patternfly-react/commit/922fd90b5b131f807f1f6a5521ad082651639b47))
+
 # [6.0.0-alpha.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.41...@patternfly/react-core@6.0.0-alpha.42) (2024-03-13)
 
 **Note:** Version bump only for package @patternfly/react-core
