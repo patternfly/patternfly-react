@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "6.2.4",
+  "version": "6.2.5",
   "publishConfig": {
     "access": "public"
   },
@@ -29,7 +29,7 @@
     "@patternfly/react-drag-drop": "^5.2.3",
     "@patternfly/react-icons": "^5.2.1",
     "@patternfly/react-styles": "^5.2.1",
-    "@patternfly/react-table": "^5.2.3",
+    "@patternfly/react-table": "^5.2.4",
     "@patternfly/react-tokens": "^5.2.1"
   },
   "devDependencies": {
