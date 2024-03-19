@@ -21,7 +21,6 @@ export * from './DataList';
 export * from './DatePicker';
 export * from './DescriptionList';
 export * from './Divider';
-export * from './DragDrop';
 export * from './Drawer';
 export * from './Dropdown';
 export * from './DualListSelector';

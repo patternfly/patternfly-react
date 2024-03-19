@@ -3,13 +3,14 @@ id: Drag and drop
 section: components
 propComponents: [DragDrop, Draggable, Droppable, DraggableItemPosition]
 title: Drag and drop
+deprecated: true
 ---
 
 You can use the `<DragDrop>` component to move items in or between lists. The `<DragDrop>` component should contain `<Droppable>` components which contain `<Draggable>` components.
 
 ```ts noLive
 import React from 'react';
-import { DragDrop, Draggable, Droppable } from '@patternfly/react-core';
+import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
 
 const DragDropCodeSample: React.FunctionComponent = () => (
   <DragDrop>

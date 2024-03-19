@@ -23,6 +23,7 @@ import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-ico
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { css } from '@patternfly/react-styles';
+import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
 
 ## Examples
 

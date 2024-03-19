@@ -8,11 +8,9 @@ import {
   DataListControl,
   DataListDragButton,
   DataListItemCells,
-  DragDrop,
-  Draggable,
-  Droppable,
   getUniqueId
 } from '@patternfly/react-core';
+import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
 
 interface ItemType {
   id: string;
