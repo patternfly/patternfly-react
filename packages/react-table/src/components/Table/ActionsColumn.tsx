@@ -116,35 +116,37 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
         <DropdownList>
           {items
             .filter((item) => !item.isOutsideDropdown)
-            .map(({ title, itemKey, onClick, tooltipProps, isSeparator, ...props }, index) => {
-              if (isSeparator) {
-                return <Divider key={itemKey || index} data-key={itemKey || index} />;
-              }
-              const item = (
-                <DropdownItem
-                  onClick={(event: any) => {
-                    onActionClick(event, onClick);
-                    onToggle();
-                  }}
-                  {...props}
-                  key={itemKey || index}
-                  data-key={itemKey || index}
-                  ref={index === 0 ? firstActionItemRef : undefined}
-                >
-                  {title}
-                </DropdownItem>
-              );
-
-              if (tooltipProps?.content) {
-                return (
-                  <Tooltip key={itemKey || index} {...tooltipProps}>
-                    {item}
-                  </Tooltip>
+            .map(
+              ({ title, itemKey, onClick, tooltipProps, isSeparator, shouldCloseOnClick = true, ...props }, index) => {
+                if (isSeparator) {
+                  return <Divider key={itemKey || index} data-key={itemKey || index} />;
+                }
+                const item = (
+                  <DropdownItem
+                    onClick={(event: any) => {
+                      onActionClick(event, onClick);
+                      shouldCloseOnClick && onToggle();
+                    }}
+                    {...props}
+                    key={itemKey || index}
+                    data-key={itemKey || index}
+                    ref={index === 0 ? firstActionItemRef : undefined}
+                  >
+                    {title}
+                  </DropdownItem>
                 );
-              } else {
-                return item;
+
+                if (tooltipProps?.content) {
+                  return (
+                    <Tooltip key={itemKey || index} {...tooltipProps}>
+                      {item}
+                    </Tooltip>
+                  );
+                } else {
+                  return item;
+                }
               }
-            })}
+            )}
         </DropdownList>
       </Dropdown>
     </React.Fragment>
