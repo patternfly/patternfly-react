@@ -30,6 +30,8 @@ export interface ActionsColumnProps extends Omit<React.HTMLProps<HTMLElement>, '
   innerRef?: React.Ref<any>;
   /** Ref to forward to the first item in the popup menu */
   firstActionItemRef?: React.Ref<HTMLButtonElement>;
+  /** Flag indicating that the dropdown's onOpenChange callback should not be called. */
+  isOnOpenChangeDisabled?: boolean;
 }
 
 const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
@@ -44,6 +46,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
   },
   innerRef,
   firstActionItemRef,
+  isOnOpenChangeDisabled = false,
   ...props
 }: ActionsColumnProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -91,7 +94,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
 
       <Dropdown
         isOpen={isOpen}
-        onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
+        onOpenChange={!isOnOpenChangeDisabled ? (isOpen: boolean) => setIsOpen(isOpen) : undefined}
         toggle={(toggleRef: any) =>
           actionsToggle ? (
             actionsToggle({ onToggle, isOpen, isDisabled, toggleRef })
