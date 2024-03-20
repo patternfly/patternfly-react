@@ -44,7 +44,7 @@ export const SelectBasic: React.FunctionComponent = () => {
       // When no options are found after filtering, display 'No results found'
       if (!newSelectOptions.length) {
         newSelectOptions = [
-          { isDisabled: false, children: `No results found for "${filterValue}"`, value: 'no results' }
+          { isAriaDisabled: true, children: `No results found for "${filterValue}"`, value: 'no results' }
         ];
       }
 
