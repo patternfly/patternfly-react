@@ -59,6 +59,14 @@ export const SelectBasic: React.FunctionComponent = () => {
     setFocusedItemIndex(null);
   }, [filterValue]);
 
+  const onInputClick = () => {
+    if (inputValue) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(!isOpen);
+    }
+  };
+
   const onToggleClick = () => {
     setIsOpen(!isOpen);
   };
@@ -147,7 +155,7 @@ export const SelectBasic: React.FunctionComponent = () => {
       <TextInputGroup isPlain>
         <TextInputGroupMain
           value={inputValue}
-          onClick={onToggleClick}
+          onClick={onInputClick}
           onChange={onTextInputChange}
           onKeyDown={onInputKeyDown}
           id="typeahead-select-input"
