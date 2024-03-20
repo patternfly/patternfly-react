@@ -140,6 +140,7 @@ export const SelectBasic: React.FunctionComponent = () => {
       case 'Tab':
       case 'Escape':
         setIsOpen(false);
+        setFocusedItemIndex(null);
         setActiveItem(null);
         break;
       case 'ArrowUp':
@@ -203,6 +204,8 @@ export const SelectBasic: React.FunctionComponent = () => {
       onSelect={onSelect}
       onOpenChange={() => {
         setIsOpen(false);
+        setFocusedItemIndex(null);
+        setActiveItem(null);
       }}
       toggle={toggle}
     >
