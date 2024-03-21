@@ -1,14 +1,19 @@
-import React from 'react';
+import {
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  useState,
+  type FunctionComponent
+} from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
-export const TabsSubtabs: React.FunctionComponent = () => {
-  const [activeTabKey1, setActiveTabKey1] = React.useState<string | number>(0);
-  const [activeTabKey2, setActiveTabKey2] = React.useState<string | number>(0);
-  const [isBox, setIsBox] = React.useState<boolean>(false);
+export const TabsSubtabs: FunctionComponent = () => {
+  const [activeTabKey1, setActiveTabKey1] = useState<string | number>(0);
+  const [activeTabKey2, setActiveTabKey2] = useState<string | number>(0);
+  const [isBox, setIsBox] = useState<boolean>(false);
 
   // Toggle currently active primary tab
   const handleTabClickFirst = (
-    event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
+    event: ReactMouseEvent<any> | ReactKeyboardEvent | MouseEvent,
     tabIndex: string | number
   ) => {
     setActiveTabKey1(tabIndex);
@@ -16,7 +21,7 @@ export const TabsSubtabs: React.FunctionComponent = () => {
 
   // Toggle currently active secondary tab
   const handleTabClickSecond = (
-    event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
+    event: ReactMouseEvent<any> | ReactKeyboardEvent | MouseEvent,
     tabIndex: string | number
   ) => {
     setActiveTabKey2(tabIndex);

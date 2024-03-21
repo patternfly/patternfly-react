@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { FunctionComponent, useState, useEffect, Fragment, ReactNode } from 'react';
 import { Card, Label, PageSection, TextVariants, Text, TextContent } from '@patternfly/react-core';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
@@ -119,12 +119,12 @@ const serverData: Server[] = [
 
 const initialExpandedServerNames = ['US-Node 2']; // Default to expanded
 
-export const TableExpandCollapseAll: React.FunctionComponent = () => {
-  const [areAllExpanded, setAreAllExpanded] = React.useState(false);
-  const [collapseAllAriaLabel, setCollapseAllAriaLabel] = React.useState('Expand all');
-  const [expandedServerNames, setExpandedServerNames] = React.useState(initialExpandedServerNames);
+export const TableExpandCollapseAll: FunctionComponent = () => {
+  const [areAllExpanded, setAreAllExpanded] = useState(false);
+  const [collapseAllAriaLabel, setCollapseAllAriaLabel] = useState('Expand all');
+  const [expandedServerNames, setExpandedServerNames] = useState(initialExpandedServerNames);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const allExpanded = expandedServerNames.length === serverData.length;
     setAreAllExpanded(allExpanded);
     setCollapseAllAriaLabel(allExpanded ? 'Collapse all' : 'Expand all');
@@ -146,7 +146,7 @@ export const TableExpandCollapseAll: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection
           padding={{
@@ -205,6 +205,6 @@ export const TableExpandCollapseAll: React.FunctionComponent = () => {
           </Card>
         </PageSection>
       </DashboardWrapper>
-    </React.Fragment>
+    </Fragment>
   );
 };

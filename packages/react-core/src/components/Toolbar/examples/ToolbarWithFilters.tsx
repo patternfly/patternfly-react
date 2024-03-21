@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, ChangeEvent, Ref, CSSProperties, useState, Fragment } from 'react';
 import {
   Button,
   Dropdown,
@@ -24,21 +24,21 @@ import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const ToolbarWithFilters: React.FunctionComponent = () => {
-  const [inputValue, setInputValue] = React.useState('');
-  const [isStatusExpanded, setIsStatusExpanded] = React.useState(false);
-  const [isRiskExpanded, setIsRiskExpanded] = React.useState(false);
-  const [filters, setFilters] = React.useState({
+export const ToolbarWithFilters: FunctionComponent = () => {
+  const [inputValue, setInputValue] = useState('');
+  const [isStatusExpanded, setIsStatusExpanded] = useState(false);
+  const [isRiskExpanded, setIsRiskExpanded] = useState(false);
+  const [filters, setFilters] = useState({
     risk: ['Low'],
     status: ['New', 'Pending']
   });
-  const [isKebabOpen, setIsKebabOpen] = React.useState(false);
+  const [isKebabOpen, setIsKebabOpen] = useState(false);
 
   const onInputChange = (newValue: string) => {
     setInputValue(newValue);
   };
 
-  const onSelect = (type: string, event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  const onSelect = (type: string, event: MouseEvent | ChangeEvent, selection: string) => {
     const checked = (event.target as HTMLInputElement).checked;
     setFilters((prev) => {
       const prevSelections = prev[type];
@@ -49,11 +49,11 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
     });
   };
 
-  const onStatusSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  const onStatusSelect = (event: MouseEvent | ChangeEvent, selection: string) => {
     onSelect('status', event, selection);
   };
 
-  const onRiskSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  const onRiskSelect = (event: MouseEvent | ChangeEvent, selection: string) => {
     onSelect('risk', event, selection);
   };
 
@@ -124,7 +124,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
   );
 
   const toggleGroupItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem variant="search-filter">
         <SearchInput
           aria-label="With filters example search input"
@@ -145,7 +145,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
           <Select
             aria-label="Status"
             role="menu"
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
                 onClick={onStatusToggle}
@@ -153,7 +153,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
                 style={
                   {
                     width: '140px'
-                  } as React.CSSProperties
+                  } as CSSProperties
                 }
               >
                 Status
@@ -176,7 +176,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
           <Select
             aria-label="Risk"
             role="menu"
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
                 onClick={onRiskToggle}
@@ -184,7 +184,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
                 style={
                   {
                     width: '140px'
-                  } as React.CSSProperties
+                  } as CSSProperties
                 }
               >
                 Risk
@@ -200,11 +200,11 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
           </Select>
         </ToolbarFilter>
       </ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   const toolbarItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
         {toggleGroupItems}
       </ToolbarToggleGroup>
@@ -230,7 +230,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
           popperProps={{ position: 'right' }}
           isOpen={isKebabOpen}
           onOpenChange={(isOpen: boolean) => setIsKebabOpen(isOpen)}
-          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          toggle={(toggleRef: Ref<MenuToggleElement>) => (
             <MenuToggle
               ref={toggleRef}
               isExpanded={isKebabOpen}
@@ -258,7 +258,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
           </DropdownList>
         </Dropdown>
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

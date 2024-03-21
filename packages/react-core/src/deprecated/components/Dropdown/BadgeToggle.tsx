@@ -1,4 +1,9 @@
-import * as React from 'react';
+import {
+  type ReactNode,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type MouseEvent as ReactMouseEvent,
+  type FunctionComponent
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownToggleProps } from './DropdownToggle';
@@ -10,7 +15,7 @@ export interface BadgeToggleProps extends DropdownToggleProps {
   /** HTML ID of dropdown toggle */
   id?: string;
   /** Anything which can be rendered as dropdown toggle */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Badge specific properties */
   badgeProps?: BadgeProps;
   /** Classess applied to root element of dropdown toggle */
@@ -21,7 +26,7 @@ export interface BadgeToggleProps extends DropdownToggleProps {
   'aria-label'?: string;
   /** Callback called when toggle is clicked */
   onToggle?: (
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent | TouchEvent | KeyboardEvent | ReactKeyboardEvent<any> | ReactMouseEvent<HTMLButtonElement>,
     isOpen: boolean
   ) => void;
   /** Element which wraps toggle */
@@ -40,7 +45,7 @@ export interface BadgeToggleProps extends DropdownToggleProps {
   bubbleEvent?: boolean;
 }
 
-export const BadgeToggle: React.FunctionComponent<BadgeToggleProps> = ({
+export const BadgeToggle: FunctionComponent<BadgeToggleProps> = ({
   id = '',
   children = null,
   badgeProps = { isRead: true },
@@ -55,7 +60,7 @@ export const BadgeToggle: React.FunctionComponent<BadgeToggleProps> = ({
   bubbleEvent = false,
   onToggle = () => undefined as void,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ref, // Types of Ref are different for React.FunctionComponent vs React.Component
+  ref, // Types of Ref are different for FunctionComponent vs Component
   ...props
 }: BadgeToggleProps) => (
   <Toggle

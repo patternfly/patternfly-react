@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 
-export interface MenuFooterProps extends React.HTMLProps<HTMLDivElement> {
+export interface MenuFooterProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the footer */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the footer */
   className?: string;
 }
 
-export const MenuFooter: React.FunctionComponent<MenuFooterProps> = ({
+export const MenuFooter: FunctionComponent<MenuFooterProps> = ({
   children,
   className = '',
   ...props

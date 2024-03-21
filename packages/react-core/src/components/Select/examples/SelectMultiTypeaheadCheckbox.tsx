@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, KeyboardEvent, FormEvent, Ref, useState, useRef, useEffect } from 'react';
 import {
   Select,
   SelectOption,
@@ -22,17 +22,17 @@ const initialSelectOptions: SelectOptionProps[] = [
   { value: 'North Carolina', children: 'North Carolina' }
 ];
 
-export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [inputValue, setInputValue] = React.useState<string>('');
-  const [selected, setSelected] = React.useState<string[]>([]);
-  const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
-  const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
-  const [activeItem, setActiveItem] = React.useState<string | null>(null);
-  const [placeholder, setPlaceholder] = React.useState('0 items selected');
-  const textInputRef = React.useRef<HTMLInputElement>();
+export const SelectMultiTypeaheadCheckbox: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [inputValue, setInputValue] = useState<string>('');
+  const [selected, setSelected] = useState<string[]>([]);
+  const [selectOptions, setSelectOptions] = useState<SelectOptionProps[]>(initialSelectOptions);
+  const [focusedItemIndex, setFocusedItemIndex] = useState<number | null>(null);
+  const [activeItem, setActiveItem] = useState<string | null>(null);
+  const [placeholder, setPlaceholder] = useState('0 items selected');
+  const textInputRef = useRef<HTMLInputElement>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     let newSelectOptions: SelectOptionProps[] = initialSelectOptions;
 
     // Filter menu items based on the text input value when one exists
@@ -92,7 +92,7 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
     }
   };
 
-  const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const onInputKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     const enabledMenuItems = selectOptions.filter((menuItem) => !menuItem.isDisabled);
     const [firstMenuItem] = enabledMenuItems;
     const focusedItem = focusedItemIndex ? enabledMenuItems[focusedItemIndex] : firstMenuItem;
@@ -123,7 +123,7 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  const onTextInputChange = (_event: FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
   };
 
@@ -140,11 +140,11 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
     textInputRef.current?.focus();
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     setPlaceholder(`${selected.length} items selected`);
   }, [selected]);
 
-  const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
+  const toggle = (toggleRef: Ref<MenuToggleElement>) => (
     <MenuToggle
       variant="typeahead"
       aria-label="Multi typeahead checkbox menu toggle"

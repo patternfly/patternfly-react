@@ -1,16 +1,16 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState, Fragment } from 'react';
 import { Card, CardHeader, CardTitle, CardBody } from '@patternfly/react-core';
 
-export const SelectableCard: React.FunctionComponent = () => {
-  const [isChecked1, setIsChecked1] = React.useState(false);
-  const [isChecked2, setIsChecked2] = React.useState(false);
-  const [isChecked3, setIsChecked3] = React.useState(false);
+export const SelectableCard: FunctionComponent = () => {
+  const [isChecked1, setIsChecked1] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(false);
+  const [isChecked3, setIsChecked3] = useState(false);
 
   const id1 = 'selectable-card-input-1';
   const id2 = 'selectable-card-input-2';
   const id3 = 'selectable-card-input-3';
 
-  const onChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
+  const onChange = (event: FormEvent<HTMLInputElement>, checked: boolean) => {
     const name = event.currentTarget.name;
 
     switch (name) {
@@ -27,7 +27,7 @@ export const SelectableCard: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Card id="selectable-card-example-1" isSelectable>
         <CardHeader
           selectableActions={{
@@ -70,6 +70,6 @@ export const SelectableCard: React.FunctionComponent = () => {
         </CardHeader>
         <CardBody>This card is selectable but disabled.</CardBody>
       </Card>
-    </React.Fragment>
+    </Fragment>
   );
 };

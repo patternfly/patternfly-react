@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import { render } from '@testing-library/react';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import { ApplicationLauncher } from '../ApplicationLauncher';
@@ -62,9 +62,9 @@ describe('ApplicationLauncher', () => {
   test('Renders in strict mode', () => {
     const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = render(
-      <React.StrictMode>
+      <StrictMode>
         <ApplicationLauncher isOpen items={dropdownItems} />{' '}
-      </React.StrictMode>
+      </StrictMode>
     );
     expect(consoleError).not.toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();

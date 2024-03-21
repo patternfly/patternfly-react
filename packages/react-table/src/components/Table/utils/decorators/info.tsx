@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { ThInfoType } from '../../base/types';
 import { HeaderCellInfoWrapper } from '../../HeaderCellInfoWrapper';
 import { IFormatterValueType, ITransform } from '../../TableTypes';
@@ -15,7 +15,7 @@ export const info = ({ tooltip, tooltipProps, popover, popoverProps, className, 
         ariaLabel={ariaLabel}
         className={className}
       >
-        {value as React.ReactNode}
+        {value as ReactNode}
       </HeaderCellInfoWrapper>
     ) : (
       <HeaderCellInfoWrapper
@@ -25,7 +25,7 @@ export const info = ({ tooltip, tooltipProps, popover, popoverProps, className, 
         ariaLabel={ariaLabel}
         className={className}
       >
-        {value as React.ReactNode}
+        {value as ReactNode}
       </HeaderCellInfoWrapper>
     )
   });

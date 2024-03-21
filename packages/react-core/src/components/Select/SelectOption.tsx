@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode, Ref, FunctionComponent, forwardRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { MenuItemProps, MenuItem } from '../Menu';
 
@@ -8,11 +8,11 @@ import { MenuItemProps, MenuItem } from '../Menu';
 
 export interface SelectOptionProps extends Omit<MenuItemProps, 'ref'> {
   /** Anything which can be rendered in a select option */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classes applied to root element of select option */
   className?: string;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<HTMLAnchorElement | HTMLButtonElement>;
+  innerRef?: Ref<HTMLAnchorElement | HTMLButtonElement>;
   /** Identifies the component in the Select onSelect callback */
   value?: any;
   /** Indicates the option has a checkbox */
@@ -28,12 +28,12 @@ export interface SelectOptionProps extends Omit<MenuItemProps, 'ref'> {
    */
   isExternalLink?: boolean;
   /** Render option with icon */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** Description of the option */
-  description?: React.ReactNode;
+  description?: ReactNode;
 }
 
-const SelectOptionBase: React.FunctionComponent<MenuItemProps> = ({
+const SelectOptionBase: FunctionComponent<MenuItemProps> = ({
   children,
   className,
   innerRef,
@@ -45,7 +45,7 @@ const SelectOptionBase: React.FunctionComponent<MenuItemProps> = ({
   </MenuItem>
 );
 
-export const SelectOption = React.forwardRef((props: SelectOptionProps, ref: React.Ref<any>) => (
+export const SelectOption = forwardRef((props: SelectOptionProps, ref: Ref<any>) => (
   <SelectOptionBase {...props} innerRef={ref} />
 ));
 

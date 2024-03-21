@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Dropdown,
   DropdownToggle,
@@ -7,15 +7,15 @@ import {
   DropdownSeparator
 } from '@patternfly/react-core/deprecated';
 
-export const DropdownSplitButtonProgressCheckbox: React.FunctionComponent = () => {
-  const [isOpen1, setIsOpen1] = React.useState(false);
-  const [isOpen2, setIsOpen2] = React.useState(false);
+export const DropdownSplitButtonProgressCheckbox: FunctionComponent = () => {
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
 
-  const [isChecked1, setIsChecked1] = React.useState(false);
-  const [isChecked2, setIsChecked2] = React.useState(false);
+  const [isChecked1, setIsChecked1] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(false);
 
-  const [isTimedOut1, setIsTimedOut1] = React.useState(true);
-  const [isTimedOut2, setIsTimedOut2] = React.useState(true);
+  const [isTimedOut1, setIsTimedOut1] = useState(true);
+  const [isTimedOut2, setIsTimedOut2] = useState(true);
 
   const onToggle1 = (_event: any, isOpen: boolean) => {
     setIsOpen1(isOpen);

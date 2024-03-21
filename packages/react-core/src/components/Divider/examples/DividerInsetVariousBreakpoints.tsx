@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Divider } from '@patternfly/react-core';
 
-export const DividerInsetVariousBreakpoints: React.FunctionComponent = () => (
+export const DividerInsetVariousBreakpoints: FunctionComponent = () => (
   <Divider
     inset={{
       default: 'insetMd',

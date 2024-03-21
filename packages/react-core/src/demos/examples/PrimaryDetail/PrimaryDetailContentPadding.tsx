@@ -1,4 +1,10 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type FormEvent as ReactFormEvent
+} from 'react';
 import {
   Button,
   ButtonVariant,
@@ -67,28 +73,28 @@ const riskOptions: SelectOptionType[] = [
   { value: 'High', label: 'High' }
 ];
 
-export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
-  const [drawerPanelBodyContent, setDrawerPanelBodyContent] = React.useState('');
-  const [inputValue, setInputValue] = React.useState('');
-  const [statusIsOpen, setStatusIsOpen] = React.useState(false);
-  const [statusSelected, setStatusSelected] = React.useState<string | number | undefined>('Status');
-  const [riskIsOpen, setRiskIsOpen] = React.useState(false);
-  const [riskSelected, setRiskSelected] = React.useState<string | number | undefined>('Risk');
-  const [selectedDataListItemId, setSelectedDataListItemId] = React.useState('');
+export const PrimaryDetailContentPadding: FunctionComponent = () => {
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
+  const [drawerPanelBodyContent, setDrawerPanelBodyContent] = useState('');
+  const [inputValue, setInputValue] = useState('');
+  const [statusIsOpen, setStatusIsOpen] = useState(false);
+  const [statusSelected, setStatusSelected] = useState<string | number | undefined>('Status');
+  const [riskIsOpen, setRiskIsOpen] = useState(false);
+  const [riskSelected, setRiskSelected] = useState<string | number | undefined>('Risk');
+  const [selectedDataListItemId, setSelectedDataListItemId] = useState('');
 
-  const onStatusSelect = (_event: React.MouseEvent<Element> | undefined, value: string | number | undefined) => {
+  const onStatusSelect = (_event: ReactMouseEvent<Element> | undefined, value: string | number | undefined) => {
     setStatusSelected(value);
     setStatusIsOpen(false);
   };
 
-  const onRiskSelect = (_event: React.MouseEvent<Element> | undefined, value: string | number | undefined) => {
+  const onRiskSelect = (_event: ReactMouseEvent<Element> | undefined, value: string | number | undefined) => {
     setRiskSelected(value);
     setRiskIsOpen(false);
   };
 
   const onSelectDataListItem = (
-    _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>,
+    _event: ReactMouseEvent<Element, MouseEvent> | ReactKeyboardEvent<Element>,
     id: string
   ) => {
     setSelectedDataListItemId(id);
@@ -96,7 +102,7 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
     setDrawerPanelBodyContent(id.charAt(id.length - 1));
   };
 
-  const onCloseDrawerClick = (_event: React.MouseEvent<HTMLDivElement>) => {
+  const onCloseDrawerClick = (_event: ReactMouseEvent<HTMLDivElement>) => {
     setIsDrawerExpanded(false);
     setSelectedDataListItemId('');
   };
@@ -111,7 +117,7 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
               id="content-padding-data-toolbar-input1"
               type="search"
               aria-label="search input example"
-              onChange={(_event: React.FormEvent<HTMLInputElement>, value: string) => setInputValue(value)}
+              onChange={(_event: ReactFormEvent<HTMLInputElement>, value: string) => setInputValue(value)}
               value={inputValue}
             />
           </InputGroupItem>
@@ -212,7 +218,7 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
   );
 
   const drawerContent = (
-    <React.Fragment>
+    <>
       <Toolbar id="content-padding-data-toolbar" usePageInsets>
         <ToolbarContent>{ToolbarItems}</ToolbarContent>
       </Toolbar>
@@ -416,7 +422,7 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
           </DataListItemRow>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </>
   );
 
   return (

@@ -1,4 +1,10 @@
-import React from 'react';
+import {
+  type MouseEvent as ReactMouseEvent,
+  useState,
+  type FunctionComponent,
+  type Ref,
+  type CSSProperties
+} from 'react';
 import {
   Button,
   MenuToggle,
@@ -15,17 +21,17 @@ import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 
-export const ToolbarGroups: React.FunctionComponent = () => {
+export const ToolbarGroups: FunctionComponent = () => {
   const firstOptions = ['A', 'B', 'C'];
   const secondOptions = ['1', '2', '3'];
   const thirdOptions = ['I', 'II', 'III'];
 
-  const [firstIsExpanded, setFirstIsExpanded] = React.useState(false);
-  const [firstSelected, setFirstSelected] = React.useState('');
-  const [secondIsExpanded, setSecondIsExpanded] = React.useState(false);
-  const [secondSelected, setSecondSelected] = React.useState('');
-  const [thirdIsExpanded, setThirdIsExpanded] = React.useState(false);
-  const [thirdSelected, setThirdSelected] = React.useState('');
+  const [firstIsExpanded, setFirstIsExpanded] = useState(false);
+  const [firstSelected, setFirstSelected] = useState('');
+  const [secondIsExpanded, setSecondIsExpanded] = useState(false);
+  const [secondSelected, setSecondSelected] = useState('');
+  const [thirdIsExpanded, setThirdIsExpanded] = useState(false);
+  const [thirdSelected, setThirdSelected] = useState('');
 
   const onToggle = (filterName: string) => {
     switch (filterName) {
@@ -41,26 +47,26 @@ export const ToolbarGroups: React.FunctionComponent = () => {
     }
   };
 
-  const onFirstSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, selection: string) => {
+  const onFirstSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined, selection: string) => {
     setFirstSelected(selection);
     setFirstIsExpanded(false);
   };
 
-  const onSecondSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, selection: string) => {
+  const onSecondSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined, selection: string) => {
     setSecondSelected(selection);
     setSecondIsExpanded(false);
   };
 
-  const onThirdSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, selection: string) => {
+  const onThirdSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined, selection: string) => {
     setThirdSelected(selection);
     setThirdIsExpanded(false);
   };
 
   const filterGroupItems = (
-    <React.Fragment>
+    <>
       <ToolbarItem>
         <Select
-          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          toggle={(toggleRef: Ref<MenuToggleElement>) => (
             <MenuToggle
               ref={toggleRef}
               onClick={() => onToggle('first')}
@@ -68,7 +74,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
               style={
                 {
                   width: '88px'
-                } as React.CSSProperties
+                } as CSSProperties
               }
             >
               {firstSelected || 'First'}
@@ -90,7 +96,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
       </ToolbarItem>
       <ToolbarItem>
         <Select
-          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          toggle={(toggleRef: Ref<MenuToggleElement>) => (
             <MenuToggle
               ref={toggleRef}
               onClick={() => onToggle('second')}
@@ -98,7 +104,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
               style={
                 {
                   width: '120px'
-                } as React.CSSProperties
+                } as CSSProperties
               }
             >
               {secondSelected || 'Second'}
@@ -120,7 +126,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
       </ToolbarItem>
       <ToolbarItem>
         <Select
-          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          toggle={(toggleRef: Ref<MenuToggleElement>) => (
             <MenuToggle
               ref={toggleRef}
               onClick={() => onToggle('third')}
@@ -128,7 +134,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
               style={
                 {
                   width: '96px'
-                } as React.CSSProperties
+                } as CSSProperties
               }
             >
               {thirdSelected || 'Third'}
@@ -148,11 +154,11 @@ export const ToolbarGroups: React.FunctionComponent = () => {
           </SelectList>
         </Select>
       </ToolbarItem>
-    </React.Fragment>
+    </>
   );
 
   const iconButtonGroupItems = (
-    <React.Fragment>
+    <>
       <ToolbarItem>
         <Button variant="plain" aria-label="edit">
           <EditIcon />
@@ -168,11 +174,11 @@ export const ToolbarGroups: React.FunctionComponent = () => {
           <SyncIcon />
         </Button>
       </ToolbarItem>
-    </React.Fragment>
+    </>
   );
 
   const buttonGroupItems = (
-    <React.Fragment>
+    <>
       <ToolbarItem>
         <Button variant="primary">Action</Button>
       </ToolbarItem>
@@ -182,15 +188,15 @@ export const ToolbarGroups: React.FunctionComponent = () => {
       <ToolbarItem>
         <Button variant="tertiary">Tertiary</Button>
       </ToolbarItem>
-    </React.Fragment>
+    </>
   );
 
   const items = (
-    <React.Fragment>
+    <>
       <ToolbarGroup variant="filter-group">{filterGroupItems}</ToolbarGroup>
       <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
       <ToolbarGroup variant="button-group">{buttonGroupItems}</ToolbarGroup>
-    </React.Fragment>
+    </>
   );
 
   return (

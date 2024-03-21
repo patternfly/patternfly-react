@@ -1,23 +1,23 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Login/login';
 
-export interface LoginMainFooterProps extends React.HTMLProps<HTMLDivElement> {
+export interface LoginMainFooterProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the login main footer */
   className?: string;
   /** Content rendered inside the login main footer */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Content rendered inside the login main footer as social media links */
-  socialMediaLoginContent?: React.ReactNode;
+  socialMediaLoginContent?: ReactNode;
   /** Adds an accessible name to the social media login list. */
   socialMediaLoginAriaLabel?: string;
   /** Content rendered inside of login main footer band to display a sign up for account message */
-  signUpForAccountMessage?: React.ReactNode;
+  signUpForAccountMessage?: ReactNode;
   /** Content rendered inside of login main footer band do display a forgot credentials link* */
-  forgotCredentials?: React.ReactNode;
+  forgotCredentials?: ReactNode;
 }
 
-export const LoginMainFooter: React.FunctionComponent<LoginMainFooterProps> = ({
+export const LoginMainFooter: FunctionComponent<LoginMainFooterProps> = ({
   children = null,
   socialMediaLoginContent = null,
   signUpForAccountMessage = null,

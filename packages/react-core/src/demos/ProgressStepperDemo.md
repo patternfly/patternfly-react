@@ -8,11 +8,11 @@ section: components
 ### Basic
 
 ```js
-import React from 'react';
+import { useState } from 'react';
 import { ProgressStepper, ProgressStep, Button, Stack, StackItem } from '@patternfly/react-core';
 
 ProgressStepperDemo = () => {
-  const [currentStep, setCurrentStep] = React.useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
 
   const steps = [
     { title: 'First step', id: 'step1' },

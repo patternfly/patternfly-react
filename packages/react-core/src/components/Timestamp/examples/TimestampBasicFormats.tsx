@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Timestamp, TimestampFormat } from '@patternfly/react-core';
 
-export const TimestampBasicFormats: React.FunctionComponent = () => {
+export const TimestampBasicFormats: FunctionComponent = () => {
   const currentDate = new Date();
 
   return (

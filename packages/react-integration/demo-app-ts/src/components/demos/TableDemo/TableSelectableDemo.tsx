@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FormEvent, Component } from 'react';
 import { headerCol, ICell, IRow, RowSelectVariant } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
@@ -13,7 +13,7 @@ interface TableState {
   selectVariant: 'checkbox' | 'radio';
 }
 
-export class TableSelectableDemo extends React.Component<TableProps, TableState> {
+export class TableSelectableDemo extends Component<TableProps, TableState> {
   static displayName = 'TableSelectableDemo';
   constructor(props: TableProps) {
     super(props);
@@ -46,7 +46,7 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
     this.toggleSelect = this.toggleSelect.bind(this);
   }
 
-  onSelect(event: React.FormEvent, isSelected: boolean, rowId: number) {
+  onSelect(event: FormEvent, isSelected: boolean, rowId: number) {
     let rows: IRow[];
     if (rowId === -1 && this.state.selectVariant) {
       rows = this.state.rows.map((oneRow) => {

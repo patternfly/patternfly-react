@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Key, useState, Fragment } from 'react';
 import {
   Alert,
   AlertProps,
@@ -10,14 +10,14 @@ import {
 } from '@patternfly/react-core';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
-export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
+export const AlertGroupMultipleDynamic: FunctionComponent = () => {
+  const [alerts, setAlerts] = useState<Partial<AlertProps>[]>([]);
 
   const addAlerts = (incomingAlerts: Partial<AlertProps>[]) => {
     setAlerts((prevAlerts) => [...prevAlerts, ...incomingAlerts]);
   };
 
-  const removeAlert = (key: React.Key) => {
+  const removeAlert = (key: Key) => {
     setAlerts((prevAlerts) => [...prevAlerts.filter((alert) => alert.key !== key)]);
   };
 
@@ -34,7 +34,7 @@ export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <InputGroup style={{ marginBottom: '16px' }}>
         <InputGroupItem>
           <button onClick={addAlertCollection} type="button" className={btnClasses}>
@@ -58,6 +58,6 @@ export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
           />
         ))}
       </AlertGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

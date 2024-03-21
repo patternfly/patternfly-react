@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Dropdown, DropdownToggle } from '@patternfly/react-core/deprecated';
 
-export const DropdownBasicPanel: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const DropdownBasicPanel: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);

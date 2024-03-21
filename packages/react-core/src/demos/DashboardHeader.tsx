@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { ReactNode, FC, RefObject, useState } from 'react';
 import {
   Avatar,
   Brand,
@@ -32,10 +32,10 @@ import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
 interface DashboardHeaderProps {
   /** Render custom notification badge */
-  notificationBadge?: React.ReactNode;
+  notificationBadge?: ReactNode;
 }
 
-export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBadge }) => {
+export const DashboardHeader: FC<DashboardHeaderProps> = ({ notificationBadge }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
   const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = useState(false);
@@ -127,7 +127,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                   onSelect={onKebabDropdownSelect}
                   onOpenChange={setIsKebabDropdownOpen}
                   popperProps={{ position: 'right' }}
-                  toggle={(toggleRef: React.RefObject<any>) => (
+                  toggle={(toggleRef: RefObject<any>) => (
                     <MenuToggle
                       ref={toggleRef}
                       isExpanded={isKebabDropdownOpen}
@@ -148,7 +148,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                   onSelect={onFullKebabSelect}
                   onOpenChange={setIsFullKebabDropdownOpen}
                   popperProps={{ position: 'right' }}
-                  toggle={(toggleRef: React.RefObject<any>) => (
+                  toggle={(toggleRef: RefObject<any>) => (
                     <MenuToggle
                       ref={toggleRef}
                       isExpanded={isFullKebabDropdownOpen}
@@ -174,7 +174,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                 onSelect={onDropdownSelect}
                 onOpenChange={setIsDropdownOpen}
                 popperProps={{ position: 'right' }}
-                toggle={(toggleRef: React.RefObject<any>) => (
+                toggle={(toggleRef: RefObject<any>) => (
                   <MenuToggle
                     ref={toggleRef}
                     isExpanded={isDropdownOpen}

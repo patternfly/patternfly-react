@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   Page,
   Masthead,
@@ -17,7 +17,7 @@ import {
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
-export const PageUncontrolledNav: React.FunctionComponent = () => {
+export const PageUncontrolledNav: FunctionComponent = () => {
   const headerToolbar = (
     <Toolbar id="uncontrolled-toolbar">
       <ToolbarContent>

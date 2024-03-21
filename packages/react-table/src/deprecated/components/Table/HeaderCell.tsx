@@ -1,20 +1,20 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { Th } from '../../../components';
 
 export interface HeaderCellProps {
   'data-label'?: string;
   className?: string;
-  component?: React.ReactNode;
+  component?: ReactNode;
   isVisible?: boolean;
   scope?: string;
   textCenter?: boolean;
   dataLabel?: string;
   tooltip?: string;
   onMouseEnter?: (event: any) => void;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
+export const HeaderCell: FunctionComponent<HeaderCellProps> = ({
   className = '',
   component = 'th',
   scope = '',

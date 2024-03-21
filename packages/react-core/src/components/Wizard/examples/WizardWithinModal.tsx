@@ -1,8 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
 import { Button, Modal, ModalVariant, Wizard, WizardStep, WizardHeader } from '@patternfly/react-core';
 
 export const WizardWithinModal = () => {
-  const [isModelOpen, setIsModalOpen] = React.useState(false);
+  const [isModelOpen, setIsModalOpen] = useState(false);
 
   return (
     <>

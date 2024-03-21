@@ -1,17 +1,17 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent, Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 
 export interface ModalBoxHeaderProps {
   /** Content rendered inside the modal box header. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the modal box header. */
   className?: string;
   /** Optional help section for the modal box header. */
-  help?: React.ReactNode;
+  help?: ReactNode;
 }
 
-export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
+export const ModalBoxHeader: FunctionComponent<ModalBoxHeaderProps> = ({
   children = null,
   className = '',
   help = null,
@@ -19,10 +19,10 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
 }: ModalBoxHeaderProps) => (
   <header className={css(styles.modalBoxHeader, help && styles.modifiers.help, className)} {...props}>
     {help && (
-      <React.Fragment>
+      <Fragment>
         <div className={css(styles.modalBoxHeaderMain)}>{children}</div>
         <div className={`${styles.modalBoxHeader}-help`}>{help}</div>
-      </React.Fragment>
+      </Fragment>
     )}
     {!help && children}
   </header>

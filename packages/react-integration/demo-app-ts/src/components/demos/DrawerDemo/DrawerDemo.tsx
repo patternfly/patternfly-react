@@ -1,4 +1,4 @@
-import React from 'react';
+import { createRef, Component, Fragment } from 'react';
 import {
   Button,
   Drawer,
@@ -19,7 +19,7 @@ export interface DrawerDemoState {
   isCustomFocusExpanded: boolean;
 }
 
-export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
+export class DrawerDemo extends Component<DrawerProps, DrawerDemoState> {
   static displayName = 'DrawerDemo';
   state = {
     isExpanded: false,
@@ -27,7 +27,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
     isCustomFocusExpanded: false
   };
 
-  drawerRef = React.createRef<HTMLButtonElement>();
+  drawerRef = createRef<HTMLButtonElement>();
 
   onExpand = () => {
     this.drawerRef.current && this.drawerRef.current.focus();
@@ -119,7 +119,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.';
 
     return (
-      <React.Fragment>
+      <Fragment>
         <Button id="toggleButton" onClick={this.onClick}>
           Toggle Drawer
         </Button>
@@ -149,7 +149,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

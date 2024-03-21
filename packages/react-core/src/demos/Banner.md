@@ -12,7 +12,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 ### Basic sticky banner
 
 ```js isFullscreen
-import React from 'react';
+import { Component } from 'react';
 import {
   Banner,
   Card,
@@ -30,10 +30,10 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 import { css } from '@patternfly/react-styles';
 import display from '@patternfly/react-styles/css/utilities/Display/display';
 
-class BannerDemo extends React.Component {
+class BannerDemo extends Component {
   render() {
     return (
-      <React.Fragment>
+      <>
         <DashboardWrapper breadcrumb={null}>
           <Banner isSticky>
             <Flex
@@ -69,7 +69,7 @@ class BannerDemo extends React.Component {
             </Gallery>
           </PageSection>
         </DashboardWrapper>
-      </React.Fragment>
+      </>
     );
   }
 }
@@ -78,7 +78,7 @@ class BannerDemo extends React.Component {
 ### Top and bottom banner
 
 ```js isFullscreen
-import React from 'react';
+import { Component } from 'react';
 import {
   Banner,
   Card,
@@ -96,10 +96,10 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 import { css } from '@patternfly/react-styles';
 import display from '@patternfly/react-styles/css/utilities/Display/display';
 
-class BannerDemo extends React.Component {
+class BannerDemo extends Component {
   render() {
     return (
-      <React.Fragment>
+      <>
         <Flex
           direction={{ default: 'column' }}
           flexWrap={{ default: 'nowrap' }}
@@ -161,7 +161,7 @@ class BannerDemo extends React.Component {
             </Banner>
           </FlexItem>
         </Flex>
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, MouseEvent, FunctionComponent, Children } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
 import { JumpLinksList } from './JumpLinksList';
 
-export interface JumpLinksItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
+export interface JumpLinksItemProps extends Omit<HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Whether this item is active. Parent JumpLinks component sets this when passed a `scrollableSelector`. */
   isActive?: boolean;
   /** Href for this link */
@@ -11,14 +11,14 @@ export interface JumpLinksItemProps extends Omit<React.HTMLProps<HTMLLIElement>,
   /** Selector or HTMLElement to spy on */
   node?: string | HTMLElement;
   /** Text to be rendered inside span */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Click handler for anchor tag. Parent JumpLinks components tap into this. */
-  onClick?: (ev: React.MouseEvent<HTMLAnchorElement>) => void;
+  onClick?: (ev: MouseEvent<HTMLAnchorElement>) => void;
   /** Class to add to li */
   className?: string;
 }
 
-export const JumpLinksItem: React.FunctionComponent<JumpLinksItemProps> = ({
+export const JumpLinksItem: FunctionComponent<JumpLinksItemProps> = ({
   isActive,
   href,
   // eslint-disable-next-line
@@ -28,7 +28,7 @@ export const JumpLinksItem: React.FunctionComponent<JumpLinksItemProps> = ({
   className,
   ...props
 }: JumpLinksItemProps) => {
-  const childrenArr = React.Children.toArray(children) as any[];
+  const childrenArr = Children.toArray(children) as any[];
   const sublists = childrenArr.filter((child) => child.type === JumpLinksList);
   children = childrenArr.filter((child) => child.type !== JumpLinksList);
 

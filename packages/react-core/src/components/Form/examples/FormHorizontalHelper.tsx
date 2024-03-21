@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Form, FormGroup, Checkbox, HelperText, HelperTextItem, FormHelperText } from '@patternfly/react-core';
 
-export const FormHorizontalFormHelperText: React.FunctionComponent = () => (
+export const FormHorizontalFormHelperText: FunctionComponent = () => (
   <Form isHorizontal>
     <FormGroup label="Label" hasNoPaddingTop isStack fieldId="horizontal-form-helper-options" role="group">
       <FormHelperText>

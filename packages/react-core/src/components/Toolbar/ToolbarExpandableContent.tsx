@@ -1,15 +1,14 @@
-import * as React from 'react';
+import { HTMLProps, ContextType, Component, RefObject } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 
-import { RefObject } from 'react';
 import { ToolbarGroup } from './ToolbarGroup';
 import { ToolbarItem } from './ToolbarItem';
 import { Button } from '../Button';
 import { ToolbarContext } from './ToolbarUtils';
 import { PickOptional } from '../../helpers/typeUtils';
 
-export interface ToolbarExpandableContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface ToolbarExpandableContentProps extends HTMLProps<HTMLDivElement> {
   /** Classes added to the root element of the data toolbar expandable content */
   className?: string;
   /** Flag indicating the expandable content is expanded */
@@ -26,10 +25,10 @@ export interface ToolbarExpandableContentProps extends React.HTMLProps<HTMLDivEl
   showClearFiltersButton: boolean;
 }
 
-class ToolbarExpandableContent extends React.Component<ToolbarExpandableContentProps> {
+class ToolbarExpandableContent extends Component<ToolbarExpandableContentProps> {
   static displayName = 'ToolbarExpandableContent';
   static contextType = ToolbarContext;
-  context!: React.ContextType<typeof ToolbarContext>;
+  context!: ContextType<typeof ToolbarContext>;
   static defaultProps: PickOptional<ToolbarExpandableContentProps> = {
     isExpanded: false,
     clearFiltersButtonText: 'Clear all filters'

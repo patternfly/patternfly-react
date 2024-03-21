@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
 import { InputGroup, InputGroupText, InputGroupItem, TextInput, ValidatedOptions } from '@patternfly/react-core';
 
-export const InputGroupBasic: React.FunctionComponent = () => (
-  <React.Fragment>
+export const InputGroupBasic: FunctionComponent = () => (
+  <Fragment>
     <InputGroup>
       <InputGroupItem isFill>
         <TextInput id="textInput-basic-1" type="email" aria-label="email input field" />
@@ -33,5 +33,5 @@ export const InputGroupBasic: React.FunctionComponent = () => (
         %
       </InputGroupText>
     </InputGroup>
-  </React.Fragment>
+  </Fragment>
 );

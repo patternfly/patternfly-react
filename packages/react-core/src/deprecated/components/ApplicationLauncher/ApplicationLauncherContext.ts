@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { createContext, type MouseEvent as ReactMouseEvent } from 'react';
 
-export const ApplicationLauncherContext = React.createContext({
+export const ApplicationLauncherContext = createContext({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onFavorite: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, itemId: string, isFavorite: boolean) => {}
+  onFavorite: (event: ReactMouseEvent<HTMLButtonElement, MouseEvent>, itemId: string, isFavorite: boolean) => {}
 });

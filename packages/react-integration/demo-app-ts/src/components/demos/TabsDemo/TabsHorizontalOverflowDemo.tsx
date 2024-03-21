@@ -1,13 +1,13 @@
-import React from 'react';
+import { type FunctionComponent, useState, type MouseEvent as ReactMouseEvent } from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
-export const TabsHorizontalOverflowDemo: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
-  const [showTabCount, setShowTabCount] = React.useState(false);
-  const [defaultTitleText, setDefaultTitleText] = React.useState(undefined);
-  const [toggleAriaLabel, setToggleAriaLabel] = React.useState(undefined);
+export const TabsHorizontalOverflowDemo: FunctionComponent = () => {
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
+  const [showTabCount, setShowTabCount] = useState(false);
+  const [defaultTitleText, setDefaultTitleText] = useState(undefined);
+  const [toggleAriaLabel, setToggleAriaLabel] = useState(undefined);
 
-  const handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => {
+  const handleTabClick = (_event: ReactMouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => {
     setActiveTabKey(tabIndex);
   };
 

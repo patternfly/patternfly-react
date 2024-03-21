@@ -1,4 +1,11 @@
-import * as React from 'react';
+import {
+  type HTMLProps,
+  type ReactNode,
+  type Ref,
+  type MouseEvent as ReactMouseEvent,
+  type ChangeEvent as ReactChangeEvent,
+  type FunctionComponent
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
 import { css } from '@patternfly/react-styles';
 import { InputGroup, InputGroupItem } from '../InputGroup';
@@ -12,7 +19,7 @@ import { fileReaderType } from '../../helpers/fileUtils';
  * functionality is not built in by default.
  */
 
-export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElement>, 'value'> {
+export interface FileUploadFieldProps extends Omit<HTMLProps<HTMLDivElement>, 'value'> {
   /** Flag to allow editing of a text file's contents after it is selected from disk. */
   allowEditingUploadedText?: boolean;
   /** Aria-label for the text area. */
@@ -20,7 +27,7 @@ export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElemen
   /** Text for the browse button. */
   browseButtonText?: string;
   /** Additional children to render after (or instead of) the file preview. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the file upload field container element. */
   className?: string;
   /** Text for the clear button. */
@@ -66,25 +73,25 @@ export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElemen
   // Props available in FileUploadField but not FileUpload:
 
   /** A reference object to attach to the file upload field container element. */
-  containerRef?: React.Ref<HTMLDivElement>;
+  containerRef?: Ref<HTMLDivElement>;
   /** Flag to show if a file is being dragged over the file upload field. */
   isDragActive?: boolean;
   /** A callback for when the browse button is clicked. */
-  onBrowseButtonClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onBrowseButtonClick?: (event: ReactMouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /** A callback for when the clear button is clicked. */
-  onClearButtonClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClearButtonClick?: (event: ReactMouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /** Callback for when focus is lost on the text area field. */
   onTextAreaBlur?: (event?: any) => void;
   /** A callback for when the text area is clicked. Can also be set via the onClick property
    * of the file upload component. */
-  onTextAreaClick?: (event: React.MouseEvent<HTMLTextAreaElement, MouseEvent>) => void;
+  onTextAreaClick?: (event: ReactMouseEvent<HTMLTextAreaElement, MouseEvent>) => void;
   /** Text area text changed. */
-  onTextChange?: (event: React.ChangeEvent<HTMLTextAreaElement>, text: string) => void;
+  onTextChange?: (event: ReactChangeEvent<HTMLTextAreaElement>, text: string) => void;
   /** Placeholder string to display in the empty text area field. */
   textAreaPlaceholder?: string;
 }
 
-export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
+export const FileUploadField: FunctionComponent<FileUploadFieldProps> = ({
   id,
   name,
   type,
@@ -110,14 +117,14 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
   browseButtonText = 'Browse...',
   clearButtonText = 'Clear',
   isClearButtonDisabled = !filename && !value,
-  containerRef = null as React.Ref<HTMLDivElement>,
+  containerRef = null as Ref<HTMLDivElement>,
   allowEditingUploadedText = false,
   hideDefaultPreview = false,
   children = null,
 
   ...props
 }: FileUploadFieldProps) => {
-  const onTextAreaChange = (event: React.ChangeEvent<HTMLTextAreaElement>, newValue: string) => {
+  const onTextAreaChange = (event: ReactChangeEvent<HTMLTextAreaElement>, newValue: string) => {
     onTextChange?.(event, newValue);
   };
   return (

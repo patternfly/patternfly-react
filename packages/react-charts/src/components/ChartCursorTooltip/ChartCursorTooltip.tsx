@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { SyntheticEvent, ReactElement, CSSProperties, FunctionComponent, cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   Helpers,
@@ -96,7 +96,7 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
    * @propType object
    * @example events={{onClick: (evt) => alert("x: " + evt.clientX)}}
    */
-  events?: { [key: string]: (event: React.SyntheticEvent<any>) => void };
+  events?: { [key: string]: (event: SyntheticEvent<any>) => void };
   /**
    * The flyoutComponent prop takes a component instance which will be used to create the flyout path for each tooltip.
    * The new element created from the passed flyoutComponent will be supplied with the following properties: x, y, dx, dy,
@@ -107,7 +107,7 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
    *
    * @example flyoutComponent={<Flyout x={50} y={50}/>}, flyoutComponent={<MyCustomFlyout/>}
    */
-  flyoutComponent?: React.ReactElement<any>;
+  flyoutComponent?: ReactElement<any>;
   /**
    * The flyoutHeight prop defines the height of the tooltip flyout. This prop may be given as a positive number or a function
    * of datum. If this prop is not set, height will be determined based on an approximate text size calculated from the
@@ -135,7 +135,7 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
    * The groupComponent prop takes a component instance which will be used to create group elements for use within
    * container elements. This prop defaults to a <g> tag.}
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * This prop refers to the height of the svg that ChartCursorTooltip is rendered within. This prop is passed from
    * parents of ChartCursorTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to
@@ -166,7 +166,7 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
    *
    * @example labelComponent={<ChartLabel dy={20}/>}, labelComponent={<MyCustomLabel/>}
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * Defines how the labelComponent text is horizontally positioned relative to its `x` and `y` coordinates. Valid
    * values are 'start' (default), 'middle', 'end', and 'inherit'. Note that this overrides the style prop.
@@ -218,7 +218,7 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
   /**
    * The style prop applies CSS properties to the rendered `<text>` element.
    */
-  style?: React.CSSProperties | React.CSSProperties[];
+  style?: CSSProperties | CSSProperties[];
   /**
    * The text prop defines the text ChartTooltip will render. The text prop may be given as a string, number, or
    * function of datum. When ChartLabel is used as the labelComponent, strings may include newline characters, which
@@ -263,7 +263,7 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
   y?: number;
 }
 
-export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps> = ({
+export const ChartCursorTooltip: FunctionComponent<ChartCursorTooltipProps> = ({
   constrainToVisibleArea = true,
   flyoutComponent = <ChartCursorFlyout />,
   labelTextAnchor = 'start',
@@ -280,7 +280,7 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
   ...rest
 }: ChartCursorTooltipProps) => {
   // Apply text anchor style
-  const applyDefaultStyle = (customStyle: React.CSSProperties) => ({
+  const applyDefaultStyle = (customStyle: CSSProperties) => ({
     ...customStyle,
     textAnchor: labelTextAnchor // Workaround for VictoryTooltip.getLabelProps referencing the theme style only
   });
@@ -291,7 +291,7 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
     if (showPointer && _pointerLength === 0) {
       _pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
     }
-    return React.cloneElement(flyoutComponent, {
+    return cloneElement(flyoutComponent, {
       pointerLength: _pointerLength,
       pointerWidth,
       ...flyoutComponent.props

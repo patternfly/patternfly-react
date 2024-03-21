@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { HelperText, HelperTextItem } from '@patternfly/react-core';
 
-export const HelperTextMultipleStatic: React.FunctionComponent = () => (
+export const HelperTextMultipleStatic: FunctionComponent = () => (
   <HelperText>
     <HelperTextItem>This is default helper text</HelperTextItem>
     <HelperTextItem>This is another default helper text in the same block</HelperTextItem>

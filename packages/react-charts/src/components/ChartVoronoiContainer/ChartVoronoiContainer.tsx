@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, DOMAttributes, CSSProperties, FunctionComponent, cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { OriginType } from 'victory-core';
 import { VictoryVoronoiContainer, VictoryVoronoiContainerProps } from 'victory-voronoi-container';
@@ -41,7 +41,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * @private
    * @hide
    */
-  children?: React.ReactElement | React.ReactElement[];
+  children?: ReactElement | ReactElement[];
   /**
    * The className prop specifies a className that will be applied to the outer-most div rendered by the container
    */
@@ -80,7 +80,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    *
    * @example {onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}
    */
-  events?: React.DOMAttributes<any>;
+  events?: DOMAttributes<any>;
   /**
    * The height props specifies the height the svg viewBox of the container.
    * This value should be given as a number of pixels. If no height prop
@@ -100,7 +100,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * The labelComponent prop specified the component that will be rendered when labels are defined
    * on ChartVoronoiContainer. If the labels prop is omitted, no label component will be rendered.
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * When the mouseFollowTooltip prop is set on ChartVoronoiContainer, The position of the center of the tooltip
    * follows the position of the mouse.
@@ -150,7 +150,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * render in the portal container. This prop defaults to Portal, and should only be overridden when changing rendered
    * elements from SVG to another type of element e.g., react-native-svg elements.
    */
-  portalComponent?: React.ReactElement;
+  portalComponent?: ReactElement;
   /**
    * The portalZIndex prop determines the z-index of the div enclosing the portal component. If a portalZIndex prop is
    * not set, the z-index of the enclosing div will be set to 99.
@@ -177,7 +177,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    *
    * @example {border: 1px solid red}
    */
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   /**
    * The tabIndex prop specifies the description of the chart/SVG to assist with accessibility.
    */
@@ -225,7 +225,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
   width?: number;
 }
 
-export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContainerProps> = ({
+export const ChartVoronoiContainer: FunctionComponent<ChartVoronoiContainerProps> = ({
   className,
   constrainToVisibleArea = false,
   themeColor,
@@ -236,7 +236,7 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
   ...rest
 }: ChartVoronoiContainerProps) => {
   const chartClassName = getClassName({ className });
-  const chartLabelComponent = React.cloneElement(labelComponent, {
+  const chartLabelComponent = cloneElement(labelComponent, {
     constrainToVisibleArea,
     theme,
     ...labelComponent.props

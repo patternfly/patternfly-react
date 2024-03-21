@@ -1,25 +1,24 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { DualListSelectorListItem } from './DualListSelectorListItem';
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, useContext } from 'react';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 
 /** Acts as the container for DualListSelectorListItem sub-components. */
 
-export interface DualListSelectorListProps extends React.HTMLProps<HTMLUListElement> {
+export interface DualListSelectorListProps extends HTMLProps<HTMLUListElement> {
   /** Content rendered inside the dual list selector list. */
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
-export const DualListSelectorList: React.FunctionComponent<DualListSelectorListProps> = ({
+export const DualListSelectorList: FunctionComponent<DualListSelectorListProps> = ({
   children,
   ...props
 }: DualListSelectorListProps) => {
   const { isTree, ariaLabelledBy, focusedOption, displayOption, selectedOptions, id, options, isDisabled } =
-    React.useContext(DualListSelectorListContext);
+    useContext(DualListSelectorListContext);
 
-  const hasOptions = () =>
-    options.length !== 0 || (children !== undefined && (children as React.ReactNode[]).length !== 0);
+  const hasOptions = () => options.length !== 0 || (children !== undefined && (children as ReactNode[]).length !== 0);
 
   return (
     <ul

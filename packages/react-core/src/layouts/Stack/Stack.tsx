@@ -1,19 +1,19 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Stack/stack';
 import { css } from '@patternfly/react-styles';
 
-export interface StackProps extends React.HTMLProps<HTMLDivElement> {
+export interface StackProps extends HTMLProps<HTMLDivElement> {
   /** Adds space between children. */
   hasGutter?: boolean;
   /** content rendered inside the Stack layout */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** additional classes added to the Stack layout */
   className?: string;
   /** Sets the base component to render. defaults to div */
-  component?: React.ReactNode;
+  component?: ReactNode;
 }
 
-export const Stack: React.FunctionComponent<StackProps> = ({
+export const Stack: FunctionComponent<StackProps> = ({
   hasGutter = false,
   className = '',
   children = null,

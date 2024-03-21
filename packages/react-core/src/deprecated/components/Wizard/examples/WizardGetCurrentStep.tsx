@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Wizard as WizardDeprecated, WizardStep } from '@patternfly/react-core/deprecated';
 
-export const WizardGetCurrentStep: React.FunctionComponent = () => {
+export const WizardGetCurrentStep: FunctionComponent = () => {
   const onCurrentStepChanged = ({ id }: WizardStep) => {
     // eslint-disable-next-line no-console
     console.log(id);

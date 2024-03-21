@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 
 import {
   Form,
@@ -18,7 +18,7 @@ interface SampleFormProps {
   setIsValid: (isValid: boolean) => void;
 }
 
-const SampleForm: React.FunctionComponent<SampleFormProps> = ({ value, isValid, setValue, setIsValid }) => {
+const SampleForm: FunctionComponent<SampleFormProps> = ({ value, isValid, setValue, setIsValid }) => {
   const validated = isValid ? 'default' : 'error';
 
   const handleTextInputChange = (_event, value: string) => {
@@ -50,9 +50,9 @@ const SampleForm: React.FunctionComponent<SampleFormProps> = ({ value, isValid, 
   );
 };
 
-export const WizardEnabledOnFormValidation: React.FunctionComponent = () => {
-  const [ageValue, setAgeValue] = React.useState('Thirty');
-  const [isSubAFormValid, setIsSubAFormValid] = React.useState(false);
+export const WizardEnabledOnFormValidation: FunctionComponent = () => {
+  const [ageValue, setAgeValue] = useState('Thirty');
+  const [isSubAFormValid, setIsSubAFormValid] = useState(false);
 
   const onSave = () => alert(`Wow, you look a lot younger than ${ageValue}.`);
 

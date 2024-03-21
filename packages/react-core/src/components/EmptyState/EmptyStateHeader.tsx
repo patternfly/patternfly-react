@@ -1,24 +1,24 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, ReactElement, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 import { EmptyStateIconProps } from './EmptyStateIcon';
 
-export interface EmptyStateHeaderProps extends React.HTMLProps<HTMLDivElement> {
+export interface EmptyStateHeaderProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the empty state header, either in addition to or instead of the titleText prop */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the empty state header */
   className?: string;
   /** Additional classes added to the title inside empty state header */
   titleClassName?: string;
   /** Text of the title inside empty state header, will be wrapped in headingLevel */
-  titleText?: React.ReactNode;
+  titleText?: ReactNode;
   /** Empty state icon element to be rendered */
-  icon?: React.ReactElement<EmptyStateIconProps>;
+  icon?: ReactElement<EmptyStateIconProps>;
   /** The heading level to use, default is h1 */
   headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-export const EmptyStateHeader: React.FunctionComponent<EmptyStateHeaderProps> = ({
+export const EmptyStateHeader: FunctionComponent<EmptyStateHeaderProps> = ({
   children,
   className,
   titleClassName,

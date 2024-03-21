@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { DataList, DataListItem, DataListItemRow, DataListItemCells, DataListCell } from '@patternfly/react-core';
 
-export const DataListSmGridBreakpoint: React.FunctionComponent = () => (
+export const DataListSmGridBreakpoint: FunctionComponent = () => (
   <DataList aria-label="Small grid breakpoint list example" gridBreakpoint="sm">
     <DataListItem aria-labelledby="sm-grid-item1">
       <DataListItemRow>

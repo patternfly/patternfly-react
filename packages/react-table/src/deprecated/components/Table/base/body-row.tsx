@@ -5,7 +5,7 @@
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
 import isEqual from 'lodash/isEqual';
-import * as React from 'react';
+import { Component, createElement } from 'react';
 import {
   createElementType,
   formatterValueType,
@@ -28,7 +28,7 @@ export interface BodyRowProps {
   rowKey: string;
 }
 
-class BodyRow extends React.Component<BodyRowProps, {}> {
+class BodyRow extends Component<BodyRowProps, {}> {
   static displayName = 'BodyRow';
   static defaultProps = {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -41,9 +41,9 @@ class BodyRow extends React.Component<BodyRowProps, {}> {
     // Check for row based override.
     const { renderers } = nextProps;
 
-    if (renderers && renderers.row && (renderers.row as React.Component).shouldComponentUpdate) {
-      if (typeof (renderers.row as React.Component).shouldComponentUpdate === 'function') {
-        return (renderers.row as React.Component).shouldComponentUpdate.call(this, nextProps, {}, {});
+    if (renderers && renderers.row && (renderers.row as Component).shouldComponentUpdate) {
+      if (typeof (renderers.row as Component).shouldComponentUpdate === 'function') {
+        return (renderers.row as Component).shouldComponentUpdate.call(this, nextProps, {}, {});
       }
 
       return true;
@@ -54,7 +54,7 @@ class BodyRow extends React.Component<BodyRowProps, {}> {
   render() {
     const { columns, renderers, onRow, rowKey, rowIndex, rowData } = this.props;
 
-    return React.createElement(
+    return createElement(
       renderers.row as createElementType,
       onRow(rowData, { rowIndex, rowKey }),
       (columns as []).map((column: ColumnType, columnIndex: number) => {
@@ -81,7 +81,7 @@ class BodyRow extends React.Component<BodyRowProps, {}> {
           additionalFormaters = rowData[evaluatedProperty].formatters;
         }
 
-        return React.createElement(
+        return createElement(
           renderers.cell as createElementType,
           {
             key: `col-${columnIndex}-row-${rowIndex}`,

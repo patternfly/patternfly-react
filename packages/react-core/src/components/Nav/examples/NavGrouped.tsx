@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import { Nav, NavItem, NavGroup } from '@patternfly/react-core';
 
-export const NavGrouped: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState('group-1_item-1');
+export const NavGrouped: FunctionComponent = () => {
+  const [activeItem, setActiveItem] = useState('group-1_item-1');
 
-  const onSelect = (_event: React.FormEvent<HTMLInputElement>, result: { itemId: number | string }) => {
+  const onSelect = (_event: FormEvent<HTMLInputElement>, result: { itemId: number | string }) => {
     setActiveItem(result.itemId as string);
   };
 

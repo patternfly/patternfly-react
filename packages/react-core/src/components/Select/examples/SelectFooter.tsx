@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, CSSProperties, MouseEvent, useState } from 'react';
 import { MenuToggle, MenuFooter, Select, SelectList, SelectOption, Button } from '@patternfly/react-core';
 
-export const SelectFooter: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [selected, setSelected] = React.useState<string>('Select a value');
+export const SelectFooter: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selected, setSelected] = useState<string>('Select a value');
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -17,14 +17,14 @@ export const SelectFooter: React.FunctionComponent = () => {
       style={
         {
           width: '200px'
-        } as React.CSSProperties
+        } as CSSProperties
       }
     >
       {selected}
     </MenuToggle>
   );
 
-  function onSelect(event: React.MouseEvent | undefined, value: string | number | undefined) {
+  function onSelect(event: MouseEvent | undefined, value: string | number | undefined) {
     if (typeof value === 'undefined') {
       return;
     }

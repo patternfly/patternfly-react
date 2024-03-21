@@ -1,24 +1,24 @@
-import * as React from 'react';
+import { HTMLProps, DetailedHTMLProps, Ref, FunctionComponent, useState, useEffect, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/BackToTop/back-to-top';
 import { css } from '@patternfly/react-styles';
 import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
 import { canUseDOM } from '../../helpers/util';
 import { Button } from '../Button';
 
-interface BackToTopProps extends React.DetailedHTMLProps<React.HTMLProps<HTMLDivElement>, HTMLDivElement> {
+interface BackToTopProps extends DetailedHTMLProps<HTMLProps<HTMLDivElement>, HTMLDivElement> {
   /** Additional classes added to the back to top. */
   className?: string;
   /** Title to appear in back to top button. */
   title?: string;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
   /** Selector for the scrollable element to spy on. Not passing a selector defaults to spying on window scroll events. */
   scrollableSelector?: string;
   /** Flag to always show back to top button, defaults to false. */
   isAlwaysVisible?: boolean;
 }
 
-const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
+const BackToTopBase: FunctionComponent<BackToTopProps> = ({
   className,
   title = 'Back to top',
   innerRef,
@@ -26,12 +26,12 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
   isAlwaysVisible = false,
   ...props
 }: BackToTopProps) => {
-  const [visible, setVisible] = React.useState(isAlwaysVisible);
-  React.useEffect(() => {
+  const [visible, setVisible] = useState(isAlwaysVisible);
+  useEffect(() => {
     setVisible(isAlwaysVisible);
   }, [isAlwaysVisible]);
 
-  const [scrollElement, setScrollElement] = React.useState(null);
+  const [scrollElement, setScrollElement] = useState(null);
 
   const toggleVisible = () => {
     if (scrollElement) {
@@ -46,7 +46,7 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const hasScrollSpy = Boolean(scrollableSelector);
     if (hasScrollSpy) {
       const scrollEl = document.querySelector(scrollableSelector) as HTMLElement;
@@ -91,7 +91,7 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
   );
 };
 
-export const BackToTop = React.forwardRef((props: BackToTopProps, ref: React.Ref<any>) => (
+export const BackToTop = forwardRef((props: BackToTopProps, ref: Ref<any>) => (
   <BackToTopBase innerRef={ref} {...props} />
 ));
 BackToTop.displayName = 'BackToTop';

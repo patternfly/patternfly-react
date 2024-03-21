@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Popover, Button } from '@patternfly/react-core';
 
-export const PopoverWidthAuto: React.FunctionComponent = () => (
+export const PopoverWidthAuto: FunctionComponent = () => (
   <div style={{ margin: '50px' }}>
     <Popover
       aria-label="Popover with auto-width"

@@ -1,21 +1,20 @@
-import * as React from 'react';
-import { useState } from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, useState } from 'react';
 import { InternalFormFieldGroup } from './InternalFormFieldGroup';
 
-export interface FormFieldGroupExpandableProps extends React.HTMLProps<HTMLDivElement> {
+export interface FormFieldGroupExpandableProps extends HTMLProps<HTMLDivElement> {
   /** Anything that can be rendered as form field group content. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the form field group. */
   className?: string;
   /** Form field group header */
-  header?: React.ReactNode;
+  header?: ReactNode;
   /** Flag indicating if the form field group is initially expanded */
   isExpanded?: boolean;
   /** Aria-label to use on the form field group toggle button */
   toggleAriaLabel?: string;
 }
 
-export const FormFieldGroupExpandable: React.FunctionComponent<FormFieldGroupExpandableProps> = ({
+export const FormFieldGroupExpandable: FunctionComponent<FormFieldGroupExpandableProps> = ({
   children,
   className,
   header,

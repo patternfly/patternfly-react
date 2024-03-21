@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { ReactNode, RefObject, ContextType, Component, Fragment } from 'react';
+import ReactDOM from 'react-dom';
 import { ToolbarItem, ToolbarItemProps } from './ToolbarItem';
 import { ChipGroup } from '../Chip';
 import { Chip } from '../Chip';
@@ -17,7 +17,7 @@ export interface ToolbarChip {
   /** A unique key to identify this chip */
   key: string;
   /** The ReactNode to display in the chip */
-  node: React.ReactNode;
+  node: ReactNode;
 }
 
 export interface ToolbarFilterProps extends ToolbarItemProps {
@@ -34,23 +34,23 @@ export interface ToolbarFilterProps extends ToolbarItemProps {
   /** Customizeable template string for the chip group. Use variable "${remaining}" for the overflow chip count. */
   chipGroupCollapsedText?: string;
   /** Content to be rendered inside the data toolbar item associated with the chip group */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Unique category name to be used as a label for the chip group */
   categoryName: string | ToolbarChipGroup;
   /** Flag to show the toolbar item */
   showToolbarItem?: boolean;
   /** Reference to a chip container created with a custom expandable content group, for non-managed multiple toolbar toggle groups. */
-  expandableChipContainerRef?: React.RefObject<HTMLDivElement>;
+  expandableChipContainerRef?: RefObject<HTMLDivElement>;
 }
 
 interface ToolbarFilterState {
   isMounted: boolean;
 }
 
-class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterState> {
+class ToolbarFilter extends Component<ToolbarFilterProps, ToolbarFilterState> {
   static displayName = 'ToolbarFilter';
   static contextType = ToolbarContext;
-  context!: React.ContextType<typeof ToolbarContext>;
+  context!: ContextType<typeof ToolbarContext>;
   static defaultProps: PickOptional<ToolbarFilterProps> = {
     chips: [] as (string | ToolbarChip)[],
     showToolbarItem: true
@@ -132,23 +132,23 @@ class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterSta
 
     if (!_isExpanded && this.state.isMounted) {
       return (
-        <React.Fragment>
+        <Fragment>
           {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
           {ReactDOM.createPortal(chipGroup, chipGroupContentRef.current.firstElementChild)}
-        </React.Fragment>
+        </Fragment>
       );
     }
 
     return (
       <ToolbarContentContext.Consumer>
         {({ chipContainerRef }) => (
-          <React.Fragment>
+          <Fragment>
             {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
             {chipContainerRef.current && ReactDOM.createPortal(chipGroup, chipContainerRef.current)}
             {expandableChipContainerRef &&
               expandableChipContainerRef.current &&
               ReactDOM.createPortal(chipGroup, expandableChipContainerRef.current)}
-          </React.Fragment>
+          </Fragment>
         )}
       </ToolbarContentContext.Consumer>
     );

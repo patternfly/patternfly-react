@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Content/content';
 import { useOUIAProps, OUIAProps } from '../../helpers';
@@ -17,11 +17,11 @@ export enum TextVariants {
   pre = 'pre'
 }
 
-export interface TextProps extends React.HTMLProps<HTMLElement>, OUIAProps {
+export interface TextProps extends HTMLProps<HTMLElement>, OUIAProps {
   /** The text component */
   component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'a' | 'small' | 'blockquote' | 'pre';
   /** Content rendered within the Text */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the Text */
   className?: string;
   /** Flag to indicate the link has visited styles applied if the browser determines the link has been visited */
@@ -32,7 +32,7 @@ export interface TextProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   ouiaSafe?: boolean;
 }
 
-export const Text: React.FunctionComponent<TextProps> = ({
+export const Text: FunctionComponent<TextProps> = ({
   children = null,
   className = '',
   component = TextVariants.p,

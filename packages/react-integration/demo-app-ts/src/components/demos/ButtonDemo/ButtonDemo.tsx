@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, ButtonProps, ButtonSize, Tooltip } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
@@ -11,7 +11,7 @@ const href = 'https://www.google.com';
 interface ButtonDemoState {
   counter: number;
 }
-export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
+export class ButtonDemo extends Component<ButtonProps, ButtonDemoState> {
   static displayName = 'ButtonDemo';
   constructor(props: ButtonProps) {
     super(props);

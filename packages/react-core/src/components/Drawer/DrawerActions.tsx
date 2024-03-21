@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 
-export interface DrawerActionsProps extends React.HTMLProps<HTMLDivElement> {
+export interface DrawerActionsProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer actions button. */
   className?: string;
   /** Actions to be rendered in the panel head. */
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
-export const DrawerActions: React.FunctionComponent<DrawerActionsProps> = ({
+export const DrawerActions: FunctionComponent<DrawerActionsProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,

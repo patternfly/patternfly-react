@@ -1,4 +1,13 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  MouseEvent,
+  TransitionEvent,
+  RefObject,
+  FunctionComponent,
+  createContext,
+  useRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 
@@ -8,11 +17,11 @@ export enum DrawerColorVariant {
   noBackground = 'no-background'
 }
 
-export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
+export interface DrawerProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Drawer. */
   className?: string;
   /** Content rendered in the drawer panel */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Indicates if the drawer is expanded */
   isExpanded?: boolean;
   /** Indicates if the content element and panel element are displayed side by side. */
@@ -22,20 +31,20 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   /** Position of the drawer panel. left and right are deprecated, use start and end instead. */
   position?: 'start' | 'end' | 'bottom' | 'left' | 'right';
   /** Callback when drawer panel is expanded after waiting 250ms for animation to complete. */
-  onExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
+  onExpand?: (event: KeyboardEvent | MouseEvent | TransitionEvent) => void;
 }
 
 export interface DrawerContextProps {
   isExpanded: boolean;
   isStatic: boolean;
-  onExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
+  onExpand?: (event: KeyboardEvent | MouseEvent | TransitionEvent) => void;
   position?: string;
-  drawerRef?: React.RefObject<HTMLDivElement>;
-  drawerContentRef?: React.RefObject<HTMLDivElement>;
+  drawerRef?: RefObject<HTMLDivElement>;
+  drawerContentRef?: RefObject<HTMLDivElement>;
   isInline: boolean;
 }
 
-export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
+export const DrawerContext = createContext<Partial<DrawerContextProps>>({
   isExpanded: false,
   isStatic: false,
   onExpand: () => {},
@@ -45,7 +54,7 @@ export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
   isInline: false
 });
 
-export const Drawer: React.FunctionComponent<DrawerProps> = ({
+export const Drawer: FunctionComponent<DrawerProps> = ({
   className = '',
   children,
   isExpanded = false,
@@ -55,8 +64,8 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
   onExpand = () => {},
   ...props
 }: DrawerProps) => {
-  const drawerRef = React.useRef<HTMLDivElement>();
-  const drawerContentRef = React.useRef<HTMLDivElement>();
+  const drawerRef = useRef<HTMLDivElement>();
+  const drawerContentRef = useRef<HTMLDivElement>();
 
   return (
     <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand, position, drawerRef, drawerContentRef, isInline }}>

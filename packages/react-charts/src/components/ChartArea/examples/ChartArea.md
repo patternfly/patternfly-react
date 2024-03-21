@@ -23,7 +23,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic with right aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
@@ -88,11 +87,11 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
 This demonstrates how to combine cursor and voronoi containers to display tooltips along with a cursor.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartLegendTooltip, createContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
-class BottomAlignedLegend extends React.Component {
+class BottomAlignedLegend extends Component {
   render() {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("voronoi", "cursor");
@@ -172,15 +171,15 @@ class BottomAlignedLegend extends React.Component {
 
 ### Multi-color (unordered) bottom-left aligned legend and responsive container
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 import { getResizeObserver } from '@patternfly/react-core';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
-class MultiColorChart extends React.Component {
+class MultiColorChart extends Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       width: 0

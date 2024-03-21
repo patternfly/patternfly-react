@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -68,7 +68,7 @@ export interface ChartLineProps extends VictoryLineProps {
    *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows..." />
    */
-  containerComponent?: React.ReactElement<any>;
+  containerComponent?: ReactElement<any>;
   /**
    * The data prop specifies the data to be plotted. Data should be in the form of an array
    * of data points, or an array of arrays of data points for multiple datasets.
@@ -88,7 +88,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartLine will use its default Line component.
    */
-  dataComponent?: React.ReactElement<any>;
+  dataComponent?: ReactElement<any>;
   /**
    * The domain prop describes the range of values your chart will cover. This prop can be
    * given as a array of the minimum and maximum expected values for your bar chart,
@@ -172,7 +172,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * The height props specifies the height the svg viewBox of the chart container.
    * This value should be given as a number of pixels
@@ -204,7 +204,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * provide a series label for ChartLine. If individual labels are required for each
    * data point, they should be created by composing ChartLine with VictoryScatter
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * The labels prop defines labels that will appear above each bar in your chart.
    * This prop should be given as an array of values or as a function of data.
@@ -425,7 +425,7 @@ export interface ChartLineProps extends VictoryLineProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
+export const ChartLine: FunctionComponent<ChartLineProps> = ({
   containerComponent = <ChartContainer />,
   themeColor,
 
@@ -434,7 +434,7 @@ export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
   ...rest
 }: ChartLineProps) => {
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     theme,
     ...containerComponent.props
   });

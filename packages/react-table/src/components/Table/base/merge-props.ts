@@ -4,7 +4,7 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
-import * as React from 'react';
+import { cloneElement } from 'react';
 import mergeWith from 'lodash/mergeWith';
 import { css } from '@patternfly/react-styles';
 
@@ -24,7 +24,7 @@ export function mergeProps(...props: any) {
     if (key === 'children') {
       if (a && b) {
         // compose the two
-        return React.cloneElement(a, {
+        return cloneElement(a, {
           children: b
         });
       }

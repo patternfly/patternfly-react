@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 
-export interface FormHelperTextProps extends React.HTMLProps<HTMLDivElement> {
+export interface FormHelperTextProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the helper text wrapper */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the helper text wrapper  */
   className?: string;
 }
 
-export const FormHelperText: React.FunctionComponent<FormHelperTextProps> = ({
+export const FormHelperText: FunctionComponent<FormHelperTextProps> = ({
   children = null,
   className = '',
   ...props

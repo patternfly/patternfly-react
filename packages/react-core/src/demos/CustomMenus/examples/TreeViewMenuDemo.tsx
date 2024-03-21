@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, ChangeEvent, useState, useRef } from 'react';
 import {
   MenuToggle,
   Panel,
@@ -10,11 +10,11 @@ import {
   TreeViewDataItem
 } from '@patternfly/react-core';
 
-export const TreeViewMenuDemo: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [checkedItems, setCheckedItems] = React.useState<TreeViewDataItem[]>([]);
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
-  const menuRef = React.useRef<HTMLDivElement>();
+export const TreeViewMenuDemo: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [checkedItems, setCheckedItems] = useState<TreeViewDataItem[]>([]);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>();
 
   const statusOptions: TreeViewDataItem[] = [
     {
@@ -140,7 +140,7 @@ export const TreeViewMenuDemo: React.FunctionComponent = () => {
     }
   };
 
-  const onCheck = (evt: React.ChangeEvent, treeViewItem: TreeViewDataItem, treeType: string) => {
+  const onCheck = (evt: ChangeEvent, treeViewItem: TreeViewDataItem, treeType: string) => {
     const checked = (evt.target as HTMLInputElement).checked;
 
     let options: TreeViewDataItem[] = [];

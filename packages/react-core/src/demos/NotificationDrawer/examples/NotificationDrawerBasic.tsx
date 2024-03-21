@@ -1,4 +1,12 @@
-import React from 'react';
+import {
+  useRef,
+  type FunctionComponent,
+  useState,
+  type FormEvent as ReactFormEvent,
+  type RefObject,
+  type MouseEvent as ReactMouseEvent,
+  type TransitionEvent as ReactTransitionEvent
+} from 'react';
 import {
   Avatar,
   Brand,
@@ -58,35 +66,35 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
-export const NotificationDrawerBasic: React.FunctionComponent = () => {
-  const drawerRef = React.useRef<HTMLElement | null>(null);
+export const NotificationDrawerBasic: FunctionComponent = () => {
+  const drawerRef = useRef<HTMLElement | null>(null);
 
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
 
   interface UnreadMap {
     [notificationId: string]: boolean;
   }
 
-  const [activeItem, setActiveItem] = React.useState<number | string>(0);
-  const [isUnreadMap, setIsUnreadMap] = React.useState<UnreadMap | null>({
+  const [activeItem, setActiveItem] = useState<number | string>(0);
+  const [isUnreadMap, setIsUnreadMap] = useState<UnreadMap | null>({
     'notification-1': true,
     'notification-2': true,
     'notification-3': false,
     'notification-4': false
   });
 
-  const [shouldShowNotifications, setShouldShowNotifications] = React.useState(true);
+  const [shouldShowNotifications, setShouldShowNotifications] = useState(true);
 
   interface ActionsMenu {
     [toggleId: string]: boolean;
   }
 
-  const [isActionsMenuOpen, setIsActionsMenuOpen] = React.useState<ActionsMenu | {}>({});
+  const [isActionsMenuOpen, setIsActionsMenuOpen] = useState<ActionsMenu | {}>({});
 
   const onNavSelect = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: ReactFormEvent<HTMLInputElement>,
     selectedItem: {
       groupId: number | string;
       itemId: number | string;
@@ -221,7 +229,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                 onSelect={onKebabDropdownSelect}
                 onOpenChange={setIsKebabDropdownOpen}
                 popperProps={{ position: 'right' }}
-                toggle={(toggleRef: React.RefObject<any>) => (
+                toggle={(toggleRef: RefObject<any>) => (
                   <MenuToggle
                     ref={toggleRef}
                     isExpanded={isKebabDropdownOpen}
@@ -244,7 +252,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                 onSelect={onDropdownSelect}
                 onOpenChange={setIsDropdownOpen}
                 popperProps={{ position: 'right' }}
-                toggle={(toggleRef: React.RefObject<any>) => (
+                toggle={(toggleRef: RefObject<any>) => (
                   <MenuToggle
                     ref={toggleRef}
                     isExpanded={isDropdownOpen}
@@ -339,7 +347,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
           id="notification-0"
           onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
           popperProps={{ position: 'right' }}
-          toggle={(toggleRef: React.RefObject<any>) => (
+          toggle={(toggleRef: RefObject<any>) => (
             <MenuToggle
               ref={toggleRef}
               id="toggle-id-0"
@@ -374,7 +382,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                   id="notification-1"
                   onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                   popperProps={{ position: 'right' }}
-                  toggle={(toggleRef: React.RefObject<any>) => (
+                  toggle={(toggleRef: RefObject<any>) => (
                     <MenuToggle
                       ref={toggleRef}
                       id="toggle-id-1"
@@ -410,7 +418,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                   id="notification-2"
                   onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                   popperProps={{ position: 'right' }}
-                  toggle={(toggleRef: React.RefObject<any>) => (
+                  toggle={(toggleRef: RefObject<any>) => (
                     <MenuToggle
                       ref={toggleRef}
                       id="toggle-id-2"
@@ -447,7 +455,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                   id="notification-3"
                   onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                   popperProps={{ position: 'right' }}
-                  toggle={(toggleRef: React.RefObject<any>) => (
+                  toggle={(toggleRef: RefObject<any>) => (
                     <MenuToggle
                       ref={toggleRef}
                       id="toggle-id-3"
@@ -483,7 +491,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                   id="notification-4"
                   onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                   popperProps={{ position: 'right' }}
-                  toggle={(toggleRef: React.RefObject<any>) => (
+                  toggle={(toggleRef: RefObject<any>) => (
                     <MenuToggle
                       ref={toggleRef}
                       id="toggle-id-4"
@@ -527,14 +535,14 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <>
       <Page
         header={Header}
         sidebar={Sidebar}
         isManagedSidebar
         notificationDrawer={notificationDrawer}
         onNotificationDrawerExpand={(
-          event: React.MouseEvent<Element, MouseEvent> | KeyboardEvent | React.TransitionEvent<Element>
+          event: ReactMouseEvent<Element, MouseEvent> | KeyboardEvent | ReactTransitionEvent<Element>
         ) => focusDrawer(event)}
         isNotificationDrawerExpanded={isDrawerExpanded}
         skipToContent={PageSkipToContent}
@@ -552,6 +560,6 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
         </PageSection>
         <PageSection variant={PageSectionVariants.light}>Panel section content</PageSection>
       </Page>
-    </React.Fragment>
+    </>
   );
 };

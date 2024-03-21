@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, ReactElement, FunctionComponent, CSSProperties, useState, useMemo, cloneElement } from 'react';
 import { css } from '@patternfly/react-styles';
 import {
   DndContext,
@@ -30,7 +30,7 @@ export interface DraggableObject {
   /** Unique id of the draggable object */
   id: string;
   /** Content rendered in the draggable object */
-  content: React.ReactNode;
+  content: ReactNode;
   /** Props spread to the rendered wrapper of the draggable object */
   props?: any;
 }
@@ -41,7 +41,7 @@ export interface DraggableObject {
 export interface DragDropSortProps extends DndContextProps {
   /** Custom defined content wrapper for draggable items. By default, draggable items are wrapped in a styled div.
    * Intended to be a 'DataList' or 'DualListSelectorList' without children. */
-  children?: React.ReactElement;
+  children?: ReactElement;
   /** Sorted array of draggable objects */
   items: DraggableObject[];
   /** Callback when user drops a draggable object */
@@ -57,7 +57,7 @@ export interface DragDropSortProps extends DndContextProps {
   variant?: 'default' | 'defaultWithHandle' | 'DataList' | 'DualListSelectorList' | 'TableComposable';
 }
 
-export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
+export const DragDropSort: FunctionComponent<DragDropSortProps> = ({
   items,
   onDrop = () => {},
   onDrag = () => {},
@@ -65,8 +65,8 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
   children,
   ...props
 }: DragDropSortProps) => {
-  const [activeId, setActiveId] = React.useState<string>(null);
-  const itemIds = React.useMemo(() => (items ? Array.from(items, (item) => item.id as string) : []), [items]);
+  const [activeId, setActiveId] = useState<string>(null);
+  const itemIds = useMemo(() => (items ? Array.from(items, (item) => item.id as string) : []), [items]);
 
   const getItemById = (id: string): DraggableObject => items.find((item) => item.id === id);
 
@@ -127,7 +127,7 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
         style={
           {
             '--pf-v5-c-draggable--m-dragging--BackgroundColor': 'var(--pf-v5-global--BackgroundColor--100)'
-          } as React.CSSProperties
+          } as CSSProperties
         }
       >
         {content}
@@ -172,7 +172,7 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
       {...props}
     >
       {children &&
-        React.cloneElement(children, {
+        cloneElement(children, {
           children: renderedChildren
         })}
       {!children && <div>{renderedChildren}</div>}

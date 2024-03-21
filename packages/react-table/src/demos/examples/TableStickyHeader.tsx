@@ -1,11 +1,11 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 
 import { Card, Label, PageSection } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td, TableText } from '@patternfly/react-table';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
-export const TableStickyHeader: React.FunctionComponent = () => {
+export const TableStickyHeader: FunctionComponent = () => {
   const renderLabel = (labelText: string) => {
     switch (labelText) {
       case 'Running':

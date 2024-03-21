@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, Ref, createRef, useState, useEffect } from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
@@ -16,9 +16,9 @@ export enum WrapModifier {
   fitContent = 'fitContent'
 }
 
-export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
+export interface TableTextProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered within the table text */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the table text */
   className?: string;
   /** Determines which element to render as a table text */
@@ -26,7 +26,7 @@ export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
   /** Determines which wrapping modifier to apply to the table text */
   wrapModifier?: WrapModifier | 'wrap' | 'nowrap' | 'truncate' | 'breakWord' | 'fitContent';
   /** text to display on the tooltip */
-  tooltip?: React.ReactNode;
+  tooltip?: ReactNode;
   /** other props to pass to the tooltip */
   tooltipProps?: Omit<TooltipProps, 'content'>;
   /** callback used to create the tooltip if text is truncated */
@@ -37,7 +37,7 @@ export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
   tooltipHasDefaultBehavior?: boolean;
 }
 
-export const TableText: React.FunctionComponent<TableTextProps> = ({
+export const TableText: FunctionComponent<TableTextProps> = ({
   children = null,
   className = '',
   variant = 'span',
@@ -50,9 +50,9 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   ...props
 }: TableTextProps) => {
   const Component: TableTextVariant | 'span' | 'div' = variant;
-  const textRef = React.createRef<HTMLElement>();
+  const textRef = createRef<HTMLElement>();
 
-  const [tooltip, setTooltip] = React.useState(tooltipProp);
+  const [tooltip, setTooltip] = useState(tooltipProp);
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       setTooltip(tooltipProp || event.target.innerText);
@@ -72,7 +72,7 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
 
   const text = (
     <Component
-      ref={textRef as React.Ref<HTMLDivElement>}
+      ref={textRef as Ref<HTMLDivElement>}
       onMouseEnter={!tooltipHasDefaultBehavior ? onMouseEnter : undefined}
       className={css(className, wrapModifier && styles.modifiers[wrapModifier], styles.tableText)}
       {...props}
@@ -81,7 +81,7 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
     </Component>
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!tooltipHasDefaultBehavior) {
       if (focused) {
         onFocus(textRef.current);

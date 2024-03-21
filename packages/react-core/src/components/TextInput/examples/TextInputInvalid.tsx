@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { TextInput, ValidatedOptions } from '@patternfly/react-core';
 
-export const TextInputInvalid: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
+export const TextInputInvalid: FunctionComponent = () => {
+  const [value, setValue] = useState('');
   return (
     <TextInput
       value={value}

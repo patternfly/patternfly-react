@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, ChangeEvent, KeyboardEvent, useState } from 'react';
 import {
   DualListSelector,
   DualListSelectorPane,
@@ -18,14 +18,14 @@ interface Option {
   isVisible: boolean;
 }
 
-export const DualListSelectorBasic: React.FunctionComponent = () => {
-  const [availableOptions, setAvailableOptions] = React.useState<Option[]>([
+export const DualListSelectorBasic: FunctionComponent = () => {
+  const [availableOptions, setAvailableOptions] = useState<Option[]>([
     { text: 'Option 1', selected: false, isVisible: true },
     { text: 'Option 2', selected: false, isVisible: true },
     { text: 'Option 3', selected: false, isVisible: true },
     { text: 'Option 4', selected: false, isVisible: true }
   ]);
-  const [chosenOptions, setChosenOptions] = React.useState<Option[]>([]);
+  const [chosenOptions, setChosenOptions] = useState<Option[]>([]);
 
   // callback for moving selected options between lists
   const moveSelected = (fromAvailable: boolean) => {
@@ -61,11 +61,7 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
   };
 
   // callback when option is selected
-  const onOptionSelect = (
-    event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent,
-    index: number,
-    isChosen: boolean
-  ) => {
+  const onOptionSelect = (event: MouseEvent | ChangeEvent | KeyboardEvent, index: number, isChosen: boolean) => {
     if (isChosen) {
       const newChosen = [...chosenOptions];
       newChosen[index].selected = !chosenOptions[index].selected;

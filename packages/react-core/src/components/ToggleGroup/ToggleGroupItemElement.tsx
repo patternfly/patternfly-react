@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ToggleGroup/toggle-group';
 
@@ -9,12 +9,12 @@ export enum ToggleGroupItemVariant {
 
 export interface ToggleGroupItemElementProps {
   /** Content rendered inside the toggle group item */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Adds toggle group item variant styles */
   variant?: ToggleGroupItemVariant | 'icon' | 'text';
 }
 
-export const ToggleGroupItemElement: React.FunctionComponent<ToggleGroupItemElementProps> = ({ variant, children }) => (
+export const ToggleGroupItemElement: FunctionComponent<ToggleGroupItemElementProps> = ({ variant, children }) => (
   <span className={css(variant === 'icon' && styles.toggleGroupIcon, variant === 'text' && styles.toggleGroupText)}>
     {children}
   </span>

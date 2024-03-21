@@ -1,4 +1,18 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  RefObject,
+  FunctionComponent,
+  ReactElement,
+  MouseEvent,
+  Children,
+  Fragment,
+  useState,
+  useRef,
+  useCallback,
+  useEffect,
+  cloneElement
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
 import sidebarStyles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
@@ -10,25 +24,25 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import cssToggleDisplayVar from '@patternfly/react-tokens/dist/esm/c_jump_links__toggle_Display';
 import { canUseDOM } from '../../helpers/util';
 
-export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
+export interface JumpLinksProps extends Omit<HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
   isCentered?: boolean;
   /** Whether the layout of children is vertical or horizontal. */
   isVertical?: boolean;
   /** Label to add to nav element. */
-  label?: React.ReactNode;
+  label?: ReactNode;
   /** Flag to always show the label when using `expandable` */
   alwaysShowLabel?: boolean;
   /** Adds an accessible label to the internal nav element. Defaults to the value of the label prop. */
   'aria-label'?: string;
   /** Reference to the scrollable element to spy on. Takes precedence over scrollableSelector. Not passing a scrollableRef or scrollableSelector disables spying. */
-  scrollableRef?: HTMLElement | (() => HTMLElement) | React.RefObject<HTMLElement>;
+  scrollableRef?: HTMLElement | (() => HTMLElement) | RefObject<HTMLElement>;
   /** Selector for the scrollable element to spy on. Not passing a scrollableSelector or scrollableRef disables spying. */
   scrollableSelector?: string;
   /** The index of the child Jump link to make active. */
   activeIndex?: number;
   /** Children nodes */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Offset to add to `scrollPosition`, potentially for a masthead which content scrolls under. */
   offset?: number;
   /** When to collapse/expand at different breakpoints */
@@ -49,8 +63,8 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
 }
 
 // Recursively find JumpLinkItems and return an array of all their scrollNodes
-const getScrollItems = (children: React.ReactNode, res: HTMLElement[]) => {
-  React.Children.forEach(children, (child: any) => {
+const getScrollItems = (children: ReactNode, res: HTMLElement[]) => {
+  Children.forEach(children, (child: any) => {
     if (canUseDOM && document.getElementById && document.querySelector && child.type === JumpLinksItem) {
       const scrollNode = child.props.node || child.props.href;
       if (typeof scrollNode === 'string') {
@@ -65,7 +79,7 @@ const getScrollItems = (children: React.ReactNode, res: HTMLElement[]) => {
         res.push(scrollNode);
       }
     }
-    if ([React.Fragment, JumpLinksList, JumpLinksItem].includes(child.type)) {
+    if ([Fragment, JumpLinksList, JumpLinksItem].includes(child.type)) {
       getScrollItems(child.props.children, res);
     }
   });
@@ -77,7 +91,7 @@ function isResponsive(jumpLinks: HTMLElement) {
   return jumpLinks && getComputedStyle(jumpLinks).getPropertyValue(cssToggleDisplayVar.name).includes('block');
 }
 
-export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
+export const JumpLinks: FunctionComponent<JumpLinksProps> = ({
   isCentered,
   isVertical,
   children,
@@ -95,12 +109,12 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   ...props
 }: JumpLinksProps) => {
   const hasScrollSpy = Boolean(scrollableRef || scrollableSelector);
-  const [scrollItems, setScrollItems] = React.useState(hasScrollSpy ? getScrollItems(children, []) : []);
-  const [activeIndex, setActiveIndex] = React.useState(activeIndexProp);
-  const [isExpanded, setIsExpanded] = React.useState(isExpandedProp);
+  const [scrollItems, setScrollItems] = useState(hasScrollSpy ? getScrollItems(children, []) : []);
+  const [activeIndex, setActiveIndex] = useState(activeIndexProp);
+  const [isExpanded, setIsExpanded] = useState(isExpandedProp);
   // Boolean to disable scroll listener from overriding active state of clicked jumplink
-  const isLinkClicked = React.useRef(false);
-  const navRef = React.useRef<HTMLElement>();
+  const isLinkClicked = useRef(false);
+  const navRef = useRef<HTMLElement>();
 
   let scrollableElement: HTMLElement;
 
@@ -111,13 +125,13 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
       } else if (typeof scrollableRef === 'function') {
         return scrollableRef();
       }
-      return (scrollableRef as React.RefObject<HTMLElement>).current;
+      return (scrollableRef as RefObject<HTMLElement>).current;
     } else if (scrollableSelector) {
       return document.querySelector(scrollableSelector) as HTMLElement;
     }
   };
 
-  const scrollSpy = React.useCallback(() => {
+  const scrollSpy = useCallback(() => {
     if (!canUseDOM || !hasScrollSpy || !(scrollableElement instanceof HTMLElement)) {
       return;
     }
@@ -152,7 +166,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
     });
   }, [scrollItems, hasScrollSpy, scrollableElement, offset]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     scrollableElement = getScrollableElement();
     if (!(scrollableElement instanceof HTMLElement)) {
       return;
@@ -162,21 +176,21 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
     return () => scrollableElement.removeEventListener('scroll', scrollSpy);
   }, [scrollableElement, scrollSpy, getScrollableElement]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     scrollSpy();
   }, []);
 
   let jumpLinkIndex = 0;
-  const cloneChildren = (children: React.ReactNode): React.ReactNode =>
+  const cloneChildren = (children: ReactNode): ReactNode =>
     !hasScrollSpy
       ? children
-      : React.Children.map(children, (child: any) => {
+      : Children.map(children, (child: any) => {
           if (child.type === JumpLinksItem) {
             const { onClick: onClickProp, isActive: isActiveProp } = child.props;
             const itemIndex = jumpLinkIndex++;
             const scrollItem = scrollItems[itemIndex];
-            return React.cloneElement(child as React.ReactElement<JumpLinksItemProps>, {
-              onClick(ev: React.MouseEvent<HTMLAnchorElement>) {
+            return cloneElement(child as ReactElement<JumpLinksItemProps>, {
+              onClick(ev: MouseEvent<HTMLAnchorElement>) {
                 isLinkClicked.current = true;
                 // Items might have rendered after this component. Do a quick refresh.
                 let newScrollItems;
@@ -218,10 +232,10 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
               isActive: isActiveProp || activeIndex === itemIndex,
               children: cloneChildren(child.props.children)
             });
-          } else if (child.type === React.Fragment) {
+          } else if (child.type === Fragment) {
             return cloneChildren(child.props.children);
           } else if (child.type === JumpLinksList) {
-            return React.cloneElement(child, { children: cloneChildren(child.props.children) });
+            return cloneElement(child, { children: cloneChildren(child.props.children) });
           }
           return child;
         });

@@ -1,7 +1,7 @@
 /**
  * This test was generated
  */
-import * as React from 'react';
+import { Fragment } from 'react';
 import { render } from '@testing-library/react';
 import { PaginationOptionsMenu } from '../../PaginationOptionsMenu';
 // any missing imports can usually be resolved by adding them here
@@ -26,12 +26,12 @@ it('PaginationOptionsMenu should match snapshot (auto-generated)', () => {
       perPage={0}
       lastPage={42}
       toggleTemplate={({ firstIndex, lastIndex, itemCount, itemsTitle }: PaginationToggleTemplateProps) => (
-        <React.Fragment>
+        <Fragment>
           <b>
             {firstIndex} - {lastIndex}
           </b>Custom toggle template
           of<b>{itemCount}</b> {itemsTitle}
-        </React.Fragment>
+        </Fragment>
       )}
       onPerPageSelect={() => null as any}
     />

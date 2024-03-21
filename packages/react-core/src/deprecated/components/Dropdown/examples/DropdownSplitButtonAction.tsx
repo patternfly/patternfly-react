@@ -1,12 +1,12 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { Dropdown, DropdownToggle, DropdownToggleAction, DropdownItem } from '@patternfly/react-core/deprecated';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
-export const DropdownSplitButtonAction: React.FunctionComponent = () => {
-  const [isActionOpen, setIsActionOpen] = React.useState(false);
-  const [isCogOpen, setIsCogOpen] = React.useState(false);
+export const DropdownSplitButtonAction: FunctionComponent = () => {
+  const [isActionOpen, setIsActionOpen] = useState(false);
+  const [isCogOpen, setIsCogOpen] = useState(false);
 
   const onActionToggle = (_event: any, isActionOpen: boolean) => {
     setIsActionOpen(isActionOpen);
@@ -65,7 +65,7 @@ export const DropdownSplitButtonAction: React.FunctionComponent = () => {
   ];
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Dropdown
         onSelect={onActionSelect}
         toggle={
@@ -100,6 +100,6 @@ export const DropdownSplitButtonAction: React.FunctionComponent = () => {
         isOpen={isCogOpen}
         dropdownItems={dropdownIconItems}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

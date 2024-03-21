@@ -1,6 +1,5 @@
 import { DropdownGroup } from '../../Dropdown';
 import { render, screen } from '@testing-library/react';
-import React from 'react';
 
 jest.mock('../../Menu');
 

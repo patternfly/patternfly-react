@@ -1,4 +1,13 @@
-import React from 'react';
+import {
+  type ReactNode,
+  type RefObject,
+  type MouseEvent as ReactMouseEvent,
+  type Ref,
+  type FunctionComponent,
+  useRef,
+  useEffect,
+  forwardRef
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
 import { Popper } from '../../helpers/Popper/Popper';
@@ -25,9 +34,9 @@ export interface DropdownPopperProps {
 
 export interface DropdownToggleProps {
   /**  Dropdown toggle node. */
-  toggleNode: React.ReactNode;
+  toggleNode: ReactNode;
   /** Reference to the toggle. */
-  toggleRef?: React.RefObject<HTMLButtonElement>;
+  toggleRef?: RefObject<HTMLButtonElement>;
 }
 
 /**
@@ -35,17 +44,17 @@ export interface DropdownToggleProps {
  */
 export interface DropdownProps extends MenuProps, OUIAProps {
   /** Anything which can be rendered in a dropdown. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classes applied to root element of dropdown. */
   className?: string;
   /** Dropdown toggle. The toggle should either be a renderer function which forwards the given toggle ref, or a direct ReactNode that should be passed along with the toggleRef property. */
-  toggle: DropdownToggleProps | ((toggleRef: React.RefObject<any>) => React.ReactNode);
+  toggle: DropdownToggleProps | ((toggleRef: RefObject<any>) => ReactNode);
   /** Flag to indicate if menu is opened.*/
   isOpen?: boolean;
   /** Flag indicating the toggle should be focused after a selection. If this use case is too restrictive, the optional toggleRef property with a node toggle may be used to control focus. */
   shouldFocusToggleOnSelect?: boolean;
   /** Function callback called when user selects item. */
-  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: string | number) => void;
+  onSelect?: (event?: ReactMouseEvent<Element, MouseEvent>, value?: string | number) => void;
   /** Callback to allow the dropdown component to change the open state of the menu.
    * Triggered by clicking outside of the menu, or by pressing any keys specificed in onOpenChangeKeys. */
   onOpenChange?: (isOpen: boolean) => void;
@@ -56,7 +65,7 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   /** Indicates if the menu should be scrollable. */
   isScrollable?: boolean;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -71,7 +80,7 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   maxMenuHeight?: string;
 }
 
-const DropdownBase: React.FunctionComponent<DropdownProps> = ({
+const DropdownBase: FunctionComponent<DropdownProps> = ({
   children,
   className,
   onSelect,
@@ -91,17 +100,17 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   maxMenuHeight,
   ...props
 }: DropdownProps) => {
-  const localMenuRef = React.useRef<HTMLDivElement>();
-  const localToggleRef = React.useRef<HTMLButtonElement>();
+  const localMenuRef = useRef<HTMLDivElement>();
+  const localToggleRef = useRef<HTMLButtonElement>();
   const ouiaProps = useOUIAProps(Dropdown.displayName, ouiaId, ouiaSafe);
 
-  const menuRef = (innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
+  const menuRef = (innerRef as RefObject<HTMLDivElement>) || localMenuRef;
   const toggleRef =
     typeof toggle === 'function' || (typeof toggle !== 'function' && !toggle.toggleRef)
       ? localToggleRef
-      : (toggle?.toggleRef as React.RefObject<HTMLButtonElement>);
+      : (toggle?.toggleRef as RefObject<HTMLButtonElement>);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
       if (
@@ -177,7 +186,5 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   );
 };
 
-export const Dropdown = React.forwardRef((props: DropdownProps, ref: React.Ref<any>) => (
-  <DropdownBase innerRef={ref} {...props} />
-));
+export const Dropdown = forwardRef((props: DropdownProps, ref: Ref<any>) => <DropdownBase innerRef={ref} {...props} />);
 Dropdown.displayName = 'Dropdown';

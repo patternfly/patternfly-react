@@ -1,6 +1,6 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Spinner } from '@patternfly/react-core';
 
-export const SpinnerCustomSize: React.FunctionComponent = () => (
+export const SpinnerCustomSize: FunctionComponent = () => (
   <Spinner diameter="80px" aria-label="Contents of the custom size example" />
 );

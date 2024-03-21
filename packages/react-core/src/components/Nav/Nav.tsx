@@ -1,24 +1,35 @@
-import * as React from 'react';
+import {
+  FormEvent,
+  HTMLAttributes,
+  DetailedHTMLProps,
+  ReactNode,
+  MouseEvent,
+  Ref,
+  RefObject,
+  createContext,
+  createRef,
+  Component
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export type NavSelectClickHandler = (
-  event: React.FormEvent<HTMLInputElement>,
+  event: FormEvent<HTMLInputElement>,
   itemId: number | string,
   groupId: number | string,
   to: string
 ) => void;
 export interface NavProps
-  extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'onSelect'>,
+  extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'onSelect'>,
     OUIAProps {
   /** Anything that can be rendered inside of the nav */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the container */
   className?: string;
   /** Callback for updating when item selection changes */
   onSelect?: (
-    event: React.FormEvent<HTMLInputElement>,
+    event: FormEvent<HTMLInputElement>,
     selectedItem: {
       groupId: number | string;
       itemId: number | string;
@@ -27,7 +38,7 @@ export interface NavProps
   ) => void;
   /** Callback for when a list is expanded or collapsed */
   onToggle?: (
-    event: React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent<HTMLButtonElement>,
     toggledItem: {
       groupId: number | string;
       isExpanded: boolean;
@@ -47,26 +58,26 @@ export interface NavProps
 
 export interface NavContextProps {
   onSelect?: (
-    event: React.FormEvent<HTMLInputElement>,
+    event: FormEvent<HTMLInputElement>,
     groupId: number | string,
     itemId: number | string,
     to: string,
     preventDefault: boolean,
     onClick: NavSelectClickHandler
   ) => void;
-  onToggle?: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) => void;
+  onToggle?: (event: MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) => void;
   updateIsScrollable?: (isScrollable: boolean) => void;
   isHorizontal?: boolean;
-  flyoutRef?: React.Ref<HTMLLIElement>;
-  setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
-  navRef?: React.RefObject<HTMLElement>;
+  flyoutRef?: Ref<HTMLLIElement>;
+  setFlyoutRef?: (ref: Ref<HTMLLIElement>) => void;
+  navRef?: RefObject<HTMLElement>;
 }
 export const navContextDefaults = {};
-export const NavContext = React.createContext<NavContextProps>(navContextDefaults);
+export const NavContext = createContext<NavContextProps>(navContextDefaults);
 
-class Nav extends React.Component<
+class Nav extends Component<
   NavProps,
-  { isScrollable: boolean; ouiaStateId: string; flyoutRef: React.Ref<HTMLLIElement> | null }
+  { isScrollable: boolean; ouiaStateId: string; flyoutRef: Ref<HTMLLIElement> | null }
 > {
   static displayName = 'Nav';
   static defaultProps: NavProps = {
@@ -79,14 +90,14 @@ class Nav extends React.Component<
   state = {
     isScrollable: false,
     ouiaStateId: getDefaultOUIAId(Nav.displayName, this.props.variant),
-    flyoutRef: null as React.Ref<HTMLLIElement>
+    flyoutRef: null as Ref<HTMLLIElement>
   };
 
-  navRef = React.createRef<HTMLElement>();
+  navRef = createRef<HTMLElement>();
 
   // Callback from NavItem
   onSelect(
-    event: React.FormEvent<HTMLInputElement>,
+    event: FormEvent<HTMLInputElement>,
     groupId: number | string,
     itemId: number | string,
     to: string,
@@ -105,7 +116,7 @@ class Nav extends React.Component<
   }
 
   // Callback from NavExpandable
-  onToggle(event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, toggleValue: boolean) {
+  onToggle(event: MouseEvent<HTMLButtonElement>, groupId: number | string, toggleValue: boolean) {
     this.props.onToggle(event, {
       groupId,
       isExpanded: toggleValue
@@ -133,19 +144,19 @@ class Nav extends React.Component<
       <NavContext.Provider
         value={{
           onSelect: (
-            event: React.FormEvent<HTMLInputElement>,
+            event: FormEvent<HTMLInputElement>,
             groupId: number | string,
             itemId: number | string,
             to: string,
             preventDefault: boolean,
             onClick: (
-              e: React.FormEvent<HTMLInputElement>,
+              e: FormEvent<HTMLInputElement>,
               itemId: number | string,
               groupId: number | string,
               to: string
             ) => void
           ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
-          onToggle: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) =>
+          onToggle: (event: MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
           updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
           isHorizontal: ['horizontal', 'tertiary', 'horizontal-subnav'].includes(variant),

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, type FunctionComponent, useRef, useEffect, type MouseEvent as ReactMouseEvent } from 'react';
 import {
   Badge,
   MenuToggle,
@@ -19,11 +19,11 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import avatarImg from 'avatarImg.svg';
 
-export const ComposableDropdwnVariants: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [toggleSelected, setToggleSelected] = React.useState<string>('basic');
-  const menuRef = React.useRef<HTMLDivElement>();
-  const toggleRef = React.useRef<HTMLButtonElement>();
+export const ComposableDropdwnVariants: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [toggleSelected, setToggleSelected] = useState<string>('basic');
+  const menuRef = useRef<HTMLDivElement>();
+  const toggleRef = useRef<HTMLButtonElement>();
 
   const handleToggleSwitch = (e, _selected: boolean) => {
     setToggleSelected(e.currentTarget.id);
@@ -44,7 +44,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleMenuKeys);
     window.addEventListener('click', handleClickOutside);
 
@@ -54,7 +54,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
     };
   }, [isOpen, menuRef]);
 
-  const onToggleClick = (ev: React.MouseEvent) => {
+  const onToggleClick = (ev: ReactMouseEvent) => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (menuRef.current) {
@@ -67,7 +67,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (ev: React.MouseEvent<Element, MouseEvent>, itemId: string) => {
+  const onSelect = (ev: ReactMouseEvent<Element, MouseEvent>, itemId: string) => {
     // eslint-disable-next-line no-console
     console.log(`Menu item ${itemId} selected`);
     setIsOpen(false);
@@ -201,7 +201,7 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
       </Menu>
     );
   return (
-    <React.Fragment>
+    <>
       <ToggleGroup aria-label="Default with single selectable">
         <ToggleGroupItem
           text="Basic toggle"
@@ -230,6 +230,6 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
       </ToggleGroup>
       <br />
       <Popper trigger={buildToggle()} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />
-    </React.Fragment>
+    </>
   );
 };

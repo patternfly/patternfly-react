@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, Ref, useState } from 'react';
 import {
   Avatar,
   Brand,
@@ -56,13 +56,13 @@ interface NavOnSelectProps {
   to: string;
 }
 
-export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
-  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState(1);
+export const PageStickySectionGroupAlternate: FunctionComponent = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState(1);
 
-  const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
+  const onNavSelect = (_event: FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
   };
 
@@ -133,7 +133,7 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
               onSelect={onKebabDropdownSelect}
               onOpenChange={(isOpen: boolean) => setIsKebabDropdownOpen(isOpen)}
               popperProps={{ position: 'right' }}
-              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              toggle={(toggleRef: Ref<MenuToggleElement>) => (
                 <MenuToggle
                   ref={toggleRef}
                   onClick={onKebabDropdownToggle}
@@ -154,7 +154,7 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
               onSelect={onFullKebabDropdownSelect}
               onOpenChange={(isOpen: boolean) => setIsFullKebabDropdownOpen(isOpen)}
               popperProps={{ position: 'right' }}
-              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              toggle={(toggleRef: Ref<MenuToggleElement>) => (
                 <MenuToggle
                   ref={toggleRef}
                   onClick={onFullKebabDropdownToggle}
@@ -180,7 +180,7 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
             onSelect={onDropdownSelect}
             onOpenChange={(isOpen: boolean) => setIsDropdownOpen(isOpen)}
             popperProps={{ position: 'right' }}
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
                 onClick={onDropdownToggle}

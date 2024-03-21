@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Form,
   FormGroup,
@@ -13,7 +13,7 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclam
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 
-export const PasswordStrengthDemo: React.FunctionComponent = () => {
+export const PasswordStrengthDemo: FunctionComponent = () => {
   type HelperTextItemVariant = 'default' | 'indeterminate' | 'warning' | 'success' | 'error';
   interface PassStrength {
     variant: HelperTextItemVariant;
@@ -21,11 +21,11 @@ export const PasswordStrengthDemo: React.FunctionComponent = () => {
     text: string;
   }
 
-  const [password, setPassword] = React.useState('');
-  const [ruleLength, setRuleLength] = React.useState<HelperTextItemVariant>('indeterminate');
-  const [ruleContent, setRuleContent] = React.useState<HelperTextItemVariant>('indeterminate');
-  const [ruleCharacters, setRuleCharacters] = React.useState<HelperTextItemVariant>('indeterminate');
-  const [passStrength, setPassStrength] = React.useState<PassStrength>({
+  const [password, setPassword] = useState('');
+  const [ruleLength, setRuleLength] = useState<HelperTextItemVariant>('indeterminate');
+  const [ruleContent, setRuleContent] = useState<HelperTextItemVariant>('indeterminate');
+  const [ruleCharacters, setRuleCharacters] = useState<HelperTextItemVariant>('indeterminate');
+  const [passStrength, setPassStrength] = useState<PassStrength>({
     variant: 'error',
     icon: <ExclamationCircleIcon />,
     text: 'Weak'

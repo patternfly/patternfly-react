@@ -1,17 +1,17 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/layouts/Level/level';
 
-export interface LevelProps extends React.HTMLProps<HTMLDivElement> {
+export interface LevelProps extends HTMLProps<HTMLDivElement> {
   /** Adds space between children. */
   hasGutter?: boolean;
   /** additional classes added to the Level layout */
   className?: string;
   /** content rendered inside the Level layout */
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
-export const Level: React.FunctionComponent<LevelProps> = ({
+export const Level: FunctionComponent<LevelProps> = ({
   hasGutter,
   className = '',
   children = null,

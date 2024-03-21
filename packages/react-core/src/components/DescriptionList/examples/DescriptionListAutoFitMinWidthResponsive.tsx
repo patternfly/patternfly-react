@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   Button,
   DescriptionList,
@@ -8,7 +8,7 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListAutoFitMinWidthResponsive: React.FunctionComponent = () => (
+export const DescriptionListAutoFitMinWidthResponsive: FunctionComponent = () => (
   <DescriptionList isAutoFit autoFitMinModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}>
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, ReactNode, FunctionComponent, Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -8,13 +8,13 @@ import { WizardBody } from './WizardBody';
 
 export interface WizardToggleProps {
   /** Function that returns the WizardNav component */
-  nav: (isWizardNavOpen: boolean) => React.ReactElement;
+  nav: (isWizardNavOpen: boolean) => ReactElement;
   /** The wizard steps */
   steps: WizardStep[];
   /** The currently active WizardStep */
   activeStep: WizardStep;
   /** The WizardFooter */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Set to true to remove body padding */
   hasNoBodyPadding: boolean;
   /** If the nav is open */
@@ -41,7 +41,7 @@ export interface WizardToggleProps {
   onExpandDrawer?: () => void;
 }
 
-export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
+export const WizardToggle: FunctionComponent<WizardToggleProps> = ({
   isNavOpen,
   onNavToggle,
   nav,
@@ -78,7 +78,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   }
 
   return (
-    <React.Fragment>
+    <Fragment>
       <button
         onClick={() => onNavToggle(!isNavOpen)}
         className={css(styles.wizardToggle, isNavOpen && 'pf-m-expanded')}
@@ -115,7 +115,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
         </div>
         {children}
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 WizardToggle.displayName = 'WizardToggle';

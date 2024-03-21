@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Slider, SliderOnChangeEvent, Text, TextVariants } from '@patternfly/react-core';
 
-export const SliderDiscrete: React.FunctionComponent = () => {
+export const SliderDiscrete: FunctionComponent = () => {
   const initialValues = {
     value1: 50,
     value2: 50,
@@ -12,7 +12,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
     value7: 25
   };
 
-  const [numValue, setNumValue] = React.useState(initialValues);
+  const [numValue, setNumValue] = useState(initialValues);
 
   const handleChange = (value: number, name: string) => {
     setNumValue({ ...numValue, [name]: value });

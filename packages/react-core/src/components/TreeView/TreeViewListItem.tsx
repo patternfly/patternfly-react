@@ -1,4 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import {
+  InputHTMLAttributes,
+  ReactNode,
+  ChangeEvent,
+  MouseEvent,
+  FunctionComponent,
+  ReactElement,
+  memo,
+  useState,
+  useEffect
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -6,13 +16,13 @@ import { TreeViewDataItem } from './TreeView';
 import { Badge } from '../Badge';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
-export interface TreeViewCheckProps extends Omit<Partial<React.InputHTMLAttributes<HTMLInputElement>>, 'checked'> {
+export interface TreeViewCheckProps extends Omit<Partial<InputHTMLAttributes<HTMLInputElement>>, 'checked'> {
   checked?: boolean | null;
 }
 
 export interface TreeViewListItemProps {
   /** Action of a tree view item, which can be either a button or dropdown component. */
-  action?: React.ReactNode;
+  action?: ReactNode;
   /** Active items of tree view. */
   activeItems?: TreeViewDataItem[];
   /** Additional properties of the tree view item badge. */
@@ -20,21 +30,21 @@ export interface TreeViewListItemProps {
   /** Additional properties of the tree view item checkbox. */
   checkProps?: TreeViewCheckProps;
   /** Child nodes of a tree view item. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Callback for item comparison function. */
   compareItems?: (item: TreeViewDataItem, itemToCheck: TreeViewDataItem) => boolean;
   /** Optional prop for a custom badge. */
-  customBadgeContent?: React.ReactNode;
+  customBadgeContent?: ReactNode;
   /** Flag indicating if node is expanded by default. */
   defaultExpanded?: boolean;
   /** Expanded icon of a tree view item. */
-  expandedIcon?: React.ReactNode;
+  expandedIcon?: ReactNode;
   /** Flag indicating if a tree view item has a badge. */
   hasBadge?: boolean;
   /** Flag indicating if a tree view item has a checkbox. */
   hasCheckbox?: boolean;
   /** Default icon of a tree view item. */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** ID of a tree view item. */
   id?: string;
   /** Flag indicating if the tree view is using a compact variation. */
@@ -48,21 +58,21 @@ export interface TreeViewListItemProps {
   /** Data structure of tree view item. */
   itemData?: TreeViewDataItem;
   /** Internal content of a tree view item. */
-  name: React.ReactNode;
+  name: ReactNode;
   /** Callback for item checkbox selection. */
-  onCheck?: (event: React.ChangeEvent<HTMLInputElement>, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
+  onCheck?: (event: ChangeEvent<HTMLInputElement>, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
   /** Callback for item selection. Note: calling event.preventDefault() will prevent the node
    * from toggling.
    */
-  onSelect?: (event: React.MouseEvent, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
+  onSelect?: (event: MouseEvent, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
   /** Callback for expanding a node with children. */
-  onExpand?: (event: React.MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
+  onExpand?: (event: MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Callback for collapsing a node with children. */
-  onCollapse?: (event: React.MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
+  onCollapse?: (event: MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Parent item of tree view item. */
   parentItem?: TreeViewDataItem;
   /** Title of a tree view item. */
-  title: React.ReactNode;
+  title: ReactNode;
   /** Flag indicating the tree view should utilize memoization to help render large data sets.
    * Setting this property requires that the activeItems property is passed an array containing
    * every node in the selected item's path.
@@ -70,7 +80,7 @@ export interface TreeViewListItemProps {
   useMemo?: boolean;
 }
 
-const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
+const TreeViewListItemBase: FunctionComponent<TreeViewListItemProps> = ({
   name,
   title,
   id,
@@ -121,7 +131,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   const renderToggle = (randomId: string) => (
     <ToggleComponent
       className={css(styles.treeViewNodeToggle)}
-      onClick={(evt: React.MouseEvent) => {
+      onClick={(evt: MouseEvent) => {
         if (isSelectable || hasCheckbox) {
           if (internalIsExpanded) {
             onCollapse && onCollapse(evt, itemData, parentItem);
@@ -183,7 +193,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       {hasBadge && children && (
         <span className={css(styles.treeViewNodeCount)}>
           <Badge {...badgeProps}>
-            {customBadgeContent ? customBadgeContent : (children as React.ReactElement).props.data.length}
+            {customBadgeContent ? customBadgeContent : (children as ReactElement).props.data.length}
           </Badge>
         </span>
       )}
@@ -216,7 +226,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
                   ? styles.modifiers.current
                   : ''
               )}
-              onClick={(evt: React.MouseEvent) => {
+              onClick={(evt: MouseEvent) => {
                 if (!hasCheckbox) {
                   onSelect && onSelect(evt, itemData, parentItem);
                   if (!isSelectable && children && evt.isDefaultPrevented() !== true) {
@@ -250,7 +260,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   );
 };
 
-export const TreeViewListItem = React.memo(TreeViewListItemBase, (prevProps, nextProps) => {
+export const TreeViewListItem = memo(TreeViewListItemBase, (prevProps, nextProps) => {
   if (!nextProps.useMemo) {
     return false;
   }

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, TableText } from '@patternfly/react-table';
 
 // This example has been simplified to focus on the text modifier props. In real usage,
@@ -9,8 +9,8 @@ const columnNames = {
   wrap: 'Wrapping table header text. This th text will wrap instead of truncate.'
 };
 
-export const TableTextModifiers: React.FunctionComponent = () => {
-  const [focused, setFocused] = React.useState(false);
+export const TableTextModifiers: FunctionComponent = () => {
+  const [focused, setFocused] = useState(false);
 
   return (
     <Table aria-label="Table text">

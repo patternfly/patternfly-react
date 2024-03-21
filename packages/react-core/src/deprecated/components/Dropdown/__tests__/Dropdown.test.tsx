@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -127,13 +127,13 @@ describe('Dropdown', () => {
   test('Renders in strict mode', () => {
     const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = render(
-      <React.StrictMode>
+      <StrictMode>
         <Dropdown
           isOpen
           dropdownItems={dropdownItems}
           toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
         />
-      </React.StrictMode>
+      </StrictMode>
     );
     expect(consoleError).not.toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();

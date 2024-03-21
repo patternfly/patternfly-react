@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuContext } from './OverflowMenuContext';
 
-export interface OverflowMenuControlProps extends React.HTMLProps<HTMLDivElement> {
+export interface OverflowMenuControlProps extends HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
   children?: any;
   /** Additional classes added to the OverflowMenuControl */
@@ -12,7 +12,7 @@ export interface OverflowMenuControlProps extends React.HTMLProps<HTMLDivElement
   hasAdditionalOptions?: boolean;
 }
 
-export const OverflowMenuControl: React.FunctionComponent<OverflowMenuControlProps> = ({
+export const OverflowMenuControl: FunctionComponent<OverflowMenuControlProps> = ({
   className,
   children,
   hasAdditionalOptions,

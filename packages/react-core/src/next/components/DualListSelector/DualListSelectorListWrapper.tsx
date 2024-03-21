@@ -1,32 +1,44 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  RefObject,
+  FunctionComponent,
+  Ref,
+  MutableRefObject,
+  useState,
+  useRef,
+  useContext,
+  useEffect,
+  forwardRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { getUniqueId, handleArrows } from '../../../helpers';
 import { DualListSelectorList } from './DualListSelectorList';
 import { DualListSelectorContext, DualListSelectorListContext } from './DualListSelectorContext';
 
-export interface DualListSelectorListWrapperProps extends React.HTMLProps<HTMLDivElement> {
+export interface DualListSelectorListWrapperProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes applied to the dual list selector. */
   className?: string;
   /** Anything that can be rendered inside of the list. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** ID of the dual list selector list. */
   id?: string;
   /** Accessibly label for the list. */
   'aria-labelledby': string;
   /** @hide forwarded ref */
-  innerRef?: React.RefObject<HTMLDivElement>;
+  innerRef?: RefObject<HTMLDivElement>;
   /** @hide Options to list in the pane. */
-  options?: React.ReactNode[];
+  options?: ReactNode[];
   /** @hide Options currently selected in the pane. */
   selectedOptions?: string[] | number[];
   /** @hide Function to determine if an option should be displayed depending on a custom filter value. */
-  displayOption?: (option: React.ReactNode) => boolean;
+  displayOption?: (option: ReactNode) => boolean;
   /** Flag indicating whether the component is disabled. */
   isDisabled?: boolean;
 }
 
-export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSelectorListWrapperProps> = ({
+export const DualListSelectorListWrapperBase: FunctionComponent<DualListSelectorListWrapperProps> = ({
   className,
   children,
   'aria-labelledby': ariaLabelledBy,
@@ -38,10 +50,10 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
   isDisabled = false,
   ...props
 }: DualListSelectorListWrapperProps) => {
-  const [focusedOption, setFocusedOption] = React.useState('');
-  const ref = React.useRef(null);
+  const [focusedOption, setFocusedOption] = useState('');
+  const ref = useRef(null);
   const menuRef = innerRef || ref;
-  const { isTree } = React.useContext(DualListSelectorContext);
+  const { isTree } = useContext(DualListSelectorContext);
 
   // Sets up keyboard focus handling for the dual list selector menu child of the pane.
   const handleKeys = (event: KeyboardEvent) => {
@@ -85,7 +97,7 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
     );
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleKeys);
     return () => {
       window.removeEventListener('keydown', handleKeys);
@@ -115,9 +127,9 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
 };
 DualListSelectorListWrapperBase.displayName = 'DualListSelectorListWrapperBase';
 
-export const DualListSelectorListWrapper = React.forwardRef(
-  (props: DualListSelectorListWrapperProps, ref: React.Ref<HTMLDivElement>) => (
-    <DualListSelectorListWrapperBase innerRef={ref as React.MutableRefObject<any>} {...props} />
+export const DualListSelectorListWrapper = forwardRef(
+  (props: DualListSelectorListWrapperProps, ref: Ref<HTMLDivElement>) => (
+    <DualListSelectorListWrapperBase innerRef={ref as MutableRefObject<any>} {...props} />
   )
 );
 

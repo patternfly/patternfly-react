@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, createContext } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { PageContextConsumer } from './PageContext';
 
-export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
+export interface PageSidebarProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the page sidebar */
   className?: string;
   /** Content rendered inside the page sidebar (e.g. <PageSidebarBody /> */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**
    * If true, manages the sidebar open/close state and there is no need to pass the isSidebarOpen boolean into
    * the sidebar component or add a callback onSidebarToggle function into the PageHeader component
@@ -27,9 +27,9 @@ export interface PageSidebarContextProps {
 export const pageSidebarContextDefaults: PageSidebarContextProps = {
   isSidebarOpen: true
 };
-export const PageSidebarContext = React.createContext<Partial<PageSidebarContextProps>>(pageSidebarContextDefaults);
+export const PageSidebarContext = createContext<Partial<PageSidebarContextProps>>(pageSidebarContextDefaults);
 
-export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
+export const PageSidebar: FunctionComponent<PageSidebarProps> = ({
   className = '',
   children,
   isSidebarOpen = true,

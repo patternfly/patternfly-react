@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, CSSProperties, FunctionComponent, cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -44,7 +44,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * or modified or ignored within the custom component itself. If an axisComponent
    * is not supplied, ChartAxis will render its default AxisLine component.
    */
-  axisComponent?: React.ReactElement<any>;
+  axisComponent?: ReactElement<any>;
   /**
    * The axisLabelComponent prop takes in an entire component which will be used
    * to create the axis label. The new element created from the passed axisLabelComponent
@@ -54,7 +54,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * the custom component itself. If an axisLabelComponent is not supplied, a new
    * ChartLabel will be created with props described above
    */
-  axisLabelComponent?: React.ReactElement<any>;
+  axisLabelComponent?: ReactElement<any>;
   /**
    * The axisValue prop may be used instead of axisAngle to position the dependent axis. Ths prop is useful when
    * dependent axes should line up with values on the independent axis.
@@ -75,7 +75,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
-  containerComponent?: React.ReactElement<any>;
+  containerComponent?: ReactElement<any>;
   /**
    * This prop specifies whether a given axis is intended to cross another axis.
    */
@@ -171,13 +171,13 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * or modified or ignored within the custom component itself. If a gridComponent
    * is not supplied, ChartAxis will render its default GridLine component.
    */
-  gridComponent?: React.ReactElement<any>;
+  gridComponent?: ReactElement<any>;
   /**
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * Specifies the height the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
@@ -350,19 +350,19 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   style?: {
     parent?: {
-      [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
+      [K in keyof CSSProperties]: string | number | ((tick?: any) => string | number);
     };
     axis?: {
-      [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
+      [K in keyof CSSProperties]: string | number | ((tick?: any) => string | number);
     };
     axisLabel?: {
-      [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
+      [K in keyof CSSProperties]: string | number | ((tick?: any) => string | number);
     };
     grid?: {
-      [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
+      [K in keyof CSSProperties]: string | number | ((tick?: any) => string | number);
     };
     ticks?: {
-      [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
+      [K in keyof CSSProperties]: string | number | ((tick?: any) => string | number);
     };
     tickLabels?: {
       [K in keyof LabelProps]: string | number | ((tick?: any) => string | number);
@@ -394,7 +394,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * or modified or ignored within the custom component itself. If a tickComponent
    * is not supplied, ChartAxis will render its default Tick component.
    */
-  tickComponent?: React.ReactElement<any>;
+  tickComponent?: ReactElement<any>;
   /**
    * The tickCount prop specifies approximately how many ticks should be drawn on the axis if
    * tickValues are not explicitly provided. This value is calculated by d3 scale and
@@ -420,7 +420,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * the custom component itself. If an tickLabelComponent is not supplied, a new
    * ChartLabel will be created with props described above
    */
-  tickLabelComponent?: React.ReactElement<any>;
+  tickLabelComponent?: ReactElement<any>;
   /**
    * The tickValues prop explicitly specifies which tick values to draw on the axis.
    *
@@ -440,7 +440,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
   width?: number;
 }
 
-export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
+export const ChartAxis: FunctionComponent<ChartAxisProps> = ({
   axisLabelComponent = <ChartLabel />,
   containerComponent = <ChartContainer />,
   name,
@@ -452,13 +452,13 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   ...rest
 }: ChartAxisProps) => {
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     theme,
     ...containerComponent.props
   });
 
   const getAxisLabelComponent = () =>
-    React.cloneElement(axisLabelComponent, {
+    cloneElement(axisLabelComponent, {
       ...(name && {
         id: () => `${name}-${(axisLabelComponent as any).type.displayName}`
       }),
@@ -466,7 +466,7 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
     });
 
   const getTickLabelComponent = () =>
-    React.cloneElement(tickLabelComponent, {
+    cloneElement(tickLabelComponent, {
       ...(name && {
         id: (props: any) => `${name}-${(tickLabelComponent as any).type.displayName}-${props.index}`
       }),

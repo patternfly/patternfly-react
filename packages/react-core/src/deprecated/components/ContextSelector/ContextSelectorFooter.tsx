@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 
-export interface ContextSelectorFooterProps extends React.HTMLProps<HTMLDivElement> {
+export interface ContextSelectorFooterProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the ContextSelectorFooter */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the ContextSelectorFooter */
   className?: string;
 }
 
-export const ContextSelectorFooter: React.FunctionComponent<ContextSelectorFooterProps> = ({
+export const ContextSelectorFooter: FunctionComponent<ContextSelectorFooterProps> = ({
   children = null,
   className = '',
   ...props

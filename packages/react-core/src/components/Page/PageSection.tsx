@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, useContext, useEffect } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
@@ -20,9 +20,9 @@ export enum PageSectionTypes {
   wizard = 'wizard'
 }
 
-export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
+export interface PageSectionProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the section */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the section */
   className?: string;
   /** Section background color variant */
@@ -83,7 +83,7 @@ const variantStyle = {
   [PageSectionVariants.darker]: styles.modifiers.dark_100
 };
 
-export const PageSection: React.FunctionComponent<PageSectionProps> = ({
+export const PageSection: FunctionComponent<PageSectionProps> = ({
   className = '',
   children,
   variant = 'default',
@@ -100,9 +100,9 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   component = 'section',
   ...props
 }: PageSectionProps) => {
-  const { height, getVerticalBreakpoint } = React.useContext(PageContext);
+  const { height, getVerticalBreakpoint } = useContext(PageContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (hasOverflowScroll && !ariaLabel) {
       /* eslint-disable no-console */
       console.warn('PageSection: An accessible aria-label is required when hasOverflowScroll is set to true.');

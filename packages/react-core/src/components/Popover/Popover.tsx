@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import * as React from 'react';
+import { ReactNode, RefObject, FunctionComponent, useState, useRef, useEffect, ReactElement } from 'react';
+
 import { KeyTypes } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css } from '@patternfly/react-styles';
@@ -12,7 +13,6 @@ import { PopoverCloseButton } from './PopoverCloseButton';
 import { PopoverArrow } from './PopoverArrow';
 import popoverMaxWidth from '@patternfly/react-tokens/dist/esm/c_popover_MaxWidth';
 import popoverMinWidth from '@patternfly/react-tokens/dist/esm/c_popover_MinWidth';
-import { ReactElement } from 'react';
 import { FocusTrap } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import { getUniqueId } from '../../helpers/util';
@@ -58,7 +58,7 @@ export interface PopoverProps {
    * function which will receive a callback as an argument to hide the popover, i.e.
    * bodyContent={hide => <Button onClick={() => hide()}>Close</Button>}
    */
-  bodyContent: React.ReactNode | ((hide: () => void) => React.ReactNode);
+  bodyContent: ReactNode | ((hide: () => void) => ReactNode);
   /**
    * The trigger reference element to which the popover is relatively placed to. If you cannot wrap
    * the element with the Popover, you can use the triggerRef prop instead.
@@ -71,7 +71,7 @@ export interface PopoverProps {
    * When passed along with the trigger prop, the div element that wraps the trigger will be removed.
    * Usage: <Popover triggerRef={() => document.getElementById('reference-element')} />
    */
-  triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
+  triggerRef?: HTMLElement | (() => HTMLElement) | RefObject<any>;
   /** Additional classes added to the popover. */
   className?: string;
   /** Accessible label for the close button. */
@@ -120,7 +120,7 @@ export interface PopoverProps {
    * function which will receive a callback as an argument to hide the popover, i.e.
    * footerContent={hide => <Button onClick={() => hide()}>Close</Button>}
    */
-  footerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
+  footerContent?: ReactNode | ((hide: () => void) => ReactNode);
   /** Removes fixed-width and allows width to be defined by contents. */
   hasAutoWidth?: boolean;
   /** Allows content to touch edges of popover container. */
@@ -133,9 +133,9 @@ export interface PopoverProps {
    * or you can provide a function which will receive a callback as an argument to hide the
    * popover, i.e. headerContent={hide => <Button onClick={() => hide()}>Close</Button>}
    */
-  headerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
+  headerContent?: ReactNode | ((hide: () => void) => ReactNode);
   /** Icon to be displayed in the popover header. **/
-  headerIcon?: React.ReactNode;
+  headerIcon?: ReactNode;
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled
    * by the user).
    */
@@ -223,7 +223,7 @@ const alertStyle = {
   danger: styles.modifiers.danger
 };
 
-export const Popover: React.FunctionComponent<PopoverProps> = ({
+export const Popover: FunctionComponent<PopoverProps> = ({
   children,
   position = 'top',
   enableFlip = true,
@@ -280,14 +280,14 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   // const hideOnClick = true;
   const uniqueId = id || getUniqueId();
   const triggerManually = isVisible !== null;
-  const [visible, setVisible] = React.useState(false);
-  const [focusTrapActive, setFocusTrapActive] = React.useState(Boolean(propWithFocusTrap));
-  const popoverRef = React.useRef(null);
+  const [visible, setVisible] = useState(false);
+  const [focusTrapActive, setFocusTrapActive] = useState(Boolean(propWithFocusTrap));
+  const popoverRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     onMount();
   }, []);
-  React.useEffect(() => {
+  useEffect(() => {
     if (triggerManually) {
       if (isVisible) {
         show(undefined, true);

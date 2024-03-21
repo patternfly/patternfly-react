@@ -1,21 +1,21 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Split/split';
 import { css } from '@patternfly/react-styles';
 
-export interface SplitProps extends React.HTMLProps<HTMLDivElement> {
+export interface SplitProps extends HTMLProps<HTMLDivElement> {
   /** Adds space between children. */
   hasGutter?: boolean;
   /** Allows children to wrap */
   isWrappable?: boolean;
   /** content rendered inside the Split layout */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** additional classes added to the Split layout */
   className?: string;
   /** Sets the base component to render. defaults to div */
-  component?: React.ReactNode;
+  component?: ReactNode;
 }
 
-export const Split: React.FunctionComponent<SplitProps> = ({
+export const Split: FunctionComponent<SplitProps> = ({
   hasGutter = false,
   isWrappable = false,
   className = '',

@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, DetailedHTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Masthead/masthead';
 import { css } from '@patternfly/react-styles';
 
-export interface MastheadToggleProps extends React.DetailedHTMLProps<React.HTMLProps<HTMLDivElement>, HTMLDivElement> {
+export interface MastheadToggleProps extends DetailedHTMLProps<HTMLProps<HTMLDivElement>, HTMLDivElement> {
   /** Content rendered inside of the masthead toggle. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the masthead toggle. */
   className?: string;
 }
 
-export const MastheadToggle: React.FunctionComponent<MastheadToggleProps> = ({
+export const MastheadToggle: FunctionComponent<MastheadToggleProps> = ({
   children,
   className,
   ...props

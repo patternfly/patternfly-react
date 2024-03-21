@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 import { ProgressContainer, ProgressMeasureLocation } from './ProgressContainer';
@@ -11,7 +11,7 @@ export enum ProgressSize {
   lg = 'lg'
 }
 
-export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'size' | 'label' | 'title'> {
+export interface ProgressProps extends Omit<HTMLProps<HTMLDivElement>, 'size' | 'label' | 'title'> {
   /** Classname for progress component. */
   className?: string;
   /** Size variant of progress. */
@@ -21,9 +21,9 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   /** Status variant of progress. */
   variant?: 'danger' | 'success' | 'warning';
   /** Title above progress. The isTitleTruncated property will only affect string titles. Node title truncation must be handled manually. */
-  title?: React.ReactNode;
+  title?: ReactNode;
   /** Text description of current progress value to display instead of percentage. */
-  label?: React.ReactNode;
+  label?: ReactNode;
   /** Actual value of progress. */
   value?: number;
   /** DOM id for progress component. */
@@ -45,10 +45,10 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   /** Content which can be used to convey additional information about the progress component.
    * We recommend the helper text component as it was designed for this purpose.
    */
-  helperText?: React.ReactNode;
+  helperText?: ReactNode;
 }
 
-class Progress extends React.Component<ProgressProps> {
+class Progress extends Component<ProgressProps> {
   static displayName = 'Progress';
   static defaultProps: ProgressProps = {
     className: '',
@@ -59,7 +59,7 @@ class Progress extends React.Component<ProgressProps> {
     min: 0,
     max: 100,
     size: null as ProgressSize,
-    label: null as React.ReactNode,
+    label: null as ReactNode,
     value: 0,
     valueText: null as string,
     isTitleTruncated: false,

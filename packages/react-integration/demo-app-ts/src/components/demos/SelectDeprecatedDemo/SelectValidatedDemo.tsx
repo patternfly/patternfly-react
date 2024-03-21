@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { MouseEvent, ChangeEvent, Component } from 'react';
 import {  StackItem, Title, ValidatedOptions } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
@@ -32,7 +32,7 @@ export class SelectValidatedDemo extends Component<SelectValidatedDemoState> {
     });
   };
 
-  onSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string, isPlaceholder: boolean) => {
+  onSelect = (event: MouseEvent | ChangeEvent, selection: string, isPlaceholder: boolean) => {
     let validatedState = 'success';
     if (isPlaceholder) {
       this.clearSelection();

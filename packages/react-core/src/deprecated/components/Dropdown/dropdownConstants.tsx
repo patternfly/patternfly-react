@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext } from 'react';
 import { OUIAProps } from '../../../helpers';
 
 export enum DropdownPosition {
@@ -11,7 +11,7 @@ export enum DropdownDirection {
   down = 'down'
 }
 
-export const DropdownContext = React.createContext<
+export const DropdownContext = createContext<
   {
     onSelect?: (event?: any) => void;
     id?: string;
@@ -58,7 +58,7 @@ export const DropdownContext = React.createContext<
   menuComponent: 'ul'
 });
 
-export const DropdownArrowContext = React.createContext({
+export const DropdownArrowContext = createContext({
   keyHandler: null,
   sendRef: null
 });

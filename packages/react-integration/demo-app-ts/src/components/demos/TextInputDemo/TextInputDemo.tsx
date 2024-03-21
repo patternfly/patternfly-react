@@ -1,5 +1,5 @@
 import { Text, TextInput, TextInputProps, ValidatedOptions } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { FormEvent, createRef, Fragment, Component } from 'react';
 
 export class TextInputDemo extends Component {
   state = {
@@ -11,13 +11,13 @@ export class TextInputDemo extends Component {
     validated: ValidatedOptions.default
   };
 
-  ref = React.createRef<HTMLInputElement>();
+  ref = createRef<HTMLInputElement>();
 
-  handleTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  handleTextInputChange = (_event: FormEvent<HTMLInputElement>, value: string) => {
     this.setState({ value });
   };
 
-  handleValidatedTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  handleValidatedTextInputChange = (_event: FormEvent<HTMLInputElement>, value: string) => {
     // If the text input contains less than 5 characters, set validated to error. If empty set to warning.
     let validated = ValidatedOptions.default;
     if (value.length === 0) {
@@ -29,13 +29,13 @@ export class TextInputDemo extends Component {
   };
 
   handleLeftTruncatedTextInputChange = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: FormEvent<HTMLInputElement>,
     leftTruncatedTextInputValue: string
   ) => {
     this.setState({ leftTruncatedTextInputValue });
   };
 
-  handleTextUsingRefInputChange = (_event: React.FormEvent<HTMLInputElement>, selectTextUsingRefValue: string) => {
+  handleTextUsingRefInputChange = (_event: FormEvent<HTMLInputElement>, selectTextUsingRefValue: string) => {
     this.setState({ selectTextUsingRefValue });
   };
 
@@ -59,7 +59,7 @@ export class TextInputDemo extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <Text>Simple Text Input Example</Text>
         <TextInput id="text" onChange={this.myTextInputProps.onChange} />
         <TextInput
@@ -97,7 +97,7 @@ export class TextInputDemo extends Component {
           onChange={this.handleTextUsingRefInputChange}
           aria-label="select-all"
         />
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

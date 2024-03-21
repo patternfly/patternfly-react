@@ -1,18 +1,20 @@
-import React from 'react';
+import {
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  useState,
+  type FunctionComponent
+} from 'react';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
-export const TabsVerticalExpandable: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
-  const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
+export const TabsVerticalExpandable: FunctionComponent = () => {
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
   // Toggle currently active tab
-  const handleTabClick = (
-    event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
-    tabIndex: string | number
-  ) => {
+  const handleTabClick = (event: ReactMouseEvent<any> | ReactKeyboardEvent | MouseEvent, tabIndex: string | number) => {
     setActiveTabKey(tabIndex);
   };
 
-  const onToggle = (_event: React.MouseEvent, isExpanded: boolean) => {
+  const onToggle = (_event: ReactMouseEvent, isExpanded: boolean) => {
     setIsExpanded(isExpanded);
   };
 

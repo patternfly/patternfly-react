@@ -1,12 +1,12 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { ProgressStepper, ProgressStep, Checkbox } from '@patternfly/react-core';
 
-export const ProgressStepperBasicWithAlignment: React.FunctionComponent = () => {
-  const [isVertical, setIsVertical] = React.useState(false);
-  const [isCenterAligned, setIsCenterAligned] = React.useState(false);
+export const ProgressStepperBasicWithAlignment: FunctionComponent = () => {
+  const [isVertical, setIsVertical] = useState(false);
+  const [isCenterAligned, setIsCenterAligned] = useState(false);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Checkbox
         label="Vertical alignment"
         isChecked={isVertical}
@@ -58,6 +58,6 @@ export const ProgressStepperBasicWithAlignment: React.FunctionComponent = () => 
           Third step
         </ProgressStep>
       </ProgressStepper>
-    </React.Fragment>
+    </Fragment>
   );
 };

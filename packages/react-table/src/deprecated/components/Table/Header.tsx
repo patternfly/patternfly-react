@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 import { Header } from './base';
 import { IHeaderRow } from '../../../components';
 import { TableContext } from './TableContext';
@@ -9,18 +9,18 @@ interface ContextHeaderProps {
   headerRows?: IHeaderRow[];
 }
 
-const ContextHeader: React.FunctionComponent<ContextHeaderProps> = ({
+const ContextHeader: FunctionComponent<ContextHeaderProps> = ({
   className = '',
   headerRows = undefined as IHeaderRow[],
   ...props
 }: ContextHeaderProps) => <Header {...props} headerRows={headerRows as ColumnsType} className={className} />;
 
-export interface HeaderProps extends React.HTMLProps<HTMLTableRowElement> {
+export interface HeaderProps extends HTMLProps<HTMLTableRowElement> {
   /** Additional classes added to the TableHeader  */
   className?: string;
 }
 
-export const TableHeader: React.FunctionComponent<HeaderProps> = ({ ...props }: HeaderProps) => (
+export const TableHeader: FunctionComponent<HeaderProps> = ({ ...props }: HeaderProps) => (
   <TableContext.Consumer>
     {({ headerRows }) => <ContextHeader {...props} headerRows={headerRows} />}
   </TableContext.Consumer>

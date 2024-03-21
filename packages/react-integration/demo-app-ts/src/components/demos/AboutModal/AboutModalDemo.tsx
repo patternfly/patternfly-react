@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent, Component, Fragment } from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 const brandImg = '../../../assets/images/brandImg.svg';
 
@@ -6,7 +6,7 @@ interface AboutModalState {
   isModalOpen: boolean;
 }
 
-export class AboutModalDemo extends React.Component<{}, AboutModalState> {
+export class AboutModalDemo extends Component<{}, AboutModalState> {
   static displayName = 'AboutModalDemo';
   constructor(props: {}) {
     super(props);
@@ -15,7 +15,7 @@ export class AboutModalDemo extends React.Component<{}, AboutModalState> {
     };
   }
 
-  handleModalToggle = (_event: React.MouseEvent) => {
+  handleModalToggle = (_event: MouseEvent) => {
     this.setState(({ isModalOpen }) => ({
       isModalOpen: !isModalOpen
     }));
@@ -25,7 +25,7 @@ export class AboutModalDemo extends React.Component<{}, AboutModalState> {
     const { isModalOpen } = this.state;
 
     return (
-      <React.Fragment>
+      <Fragment>
         <Button id="modal-button" variant="primary" onClick={this.handleModalToggle}>
           Show About Modal
         </Button>
@@ -56,7 +56,7 @@ export class AboutModalDemo extends React.Component<{}, AboutModalState> {
             </TextList>
           </TextContent>
         </AboutModal>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

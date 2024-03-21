@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent, Component } from 'react';
 import {
   IRow,
   IExtraRowData,
@@ -12,9 +12,9 @@ interface ITableRowClickDemoState {
   columns: (ICell | string)[];
 }
 
-export class TableRowClickDemo extends React.Component<TableProps, ITableRowClickDemoState> {
+export class TableRowClickDemo extends Component<TableProps, ITableRowClickDemoState> {
   static displayName = 'TableRowClickDemo';
-  rowClickHandler: (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) => void;
+  rowClickHandler: (event: MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) => void;
   constructor(props: TableProps) {
     super(props);
     this.state = {
@@ -37,7 +37,7 @@ export class TableRowClickDemo extends React.Component<TableProps, ITableRowClic
         }
       ]
     };
-    this.rowClickHandler = (event: React.MouseEvent, row: IRow) => {
+    this.rowClickHandler = (event: MouseEvent, row: IRow) => {
       // eslint-disable-next-line no-console
       console.log('handle row click', row);
     };

@@ -1,15 +1,15 @@
-import React from 'react';
+import { ReactNode, SyntheticEvent, Component } from 'react';
 import { Button } from '@patternfly/react-core';
 import { ContextSelector, ContextSelectorItem, ContextSelectorFooter } from '@patternfly/react-core/deprecated';
 
 interface ContextSelectorState {
   isOpen: boolean;
-  selected: React.ReactNode;
+  selected: ReactNode;
   searchValue: string;
   filteredItems: string[];
 }
 
-export class ContextSelectorDemo extends React.Component<{}, ContextSelectorState> {
+export class ContextSelectorDemo extends Component<{}, ContextSelectorState> {
   static displayName = 'ContextSelectorDemo';
   items = [
     'My Project',
@@ -31,13 +31,13 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
     filteredItems: this.items
   };
 
-  onToggle = (event: React.SyntheticEvent, isOpen: boolean) => {
+  onToggle = (event: SyntheticEvent, isOpen: boolean) => {
     this.setState({
       isOpen
     });
   };
 
-  onSelect = (event: React.SyntheticEvent, value: React.ReactNode) => {
+  onSelect = (event: SyntheticEvent, value: ReactNode) => {
     this.setState({
       selected: value,
       isOpen: !this.state.isOpen
@@ -49,7 +49,7 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onSearchButtonClick = (event?: React.SyntheticEvent<HTMLButtonElement, Event>) => {
+  onSearchButtonClick = (event?: SyntheticEvent<HTMLButtonElement, Event>) => {
     const filtered =
       this.state.searchValue === ''
         ? this.items

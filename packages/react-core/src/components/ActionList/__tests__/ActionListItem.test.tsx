@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ActionListItem } from '../ActionListItem';
 import styles from '@patternfly/react-styles/css/components/ActionList/action-list';

@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, MouseEvent, KeyboardEvent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 
-export interface NotificationDrawerListItemProps extends React.HTMLProps<HTMLLIElement> {
+export interface NotificationDrawerListItemProps extends HTMLProps<HTMLLIElement> {
   /**  Content rendered inside the list item */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**  Additional classes added to the list item */
   className?: string;
   /**  Modifies the list item to include hover styles on :hover */
@@ -21,19 +21,19 @@ export interface NotificationDrawerListItemProps extends React.HTMLProps<HTMLLIE
   variant?: 'custom' | 'success' | 'danger' | 'warning' | 'info';
 }
 
-export const NotificationDrawerListItem: React.FunctionComponent<NotificationDrawerListItemProps> = ({
+export const NotificationDrawerListItem: FunctionComponent<NotificationDrawerListItemProps> = ({
   children = null,
   className = '',
   isHoverable = true,
   isRead = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onClick = (event: React.MouseEvent) => undefined as any,
+  onClick = (event: MouseEvent) => undefined as any,
   readStateScreenReaderText,
   tabIndex = 0,
   variant = 'custom',
   ...props
 }: NotificationDrawerListItemProps) => {
-  const onKeyDown = (event: React.KeyboardEvent) => {
+  const onKeyDown = (event: KeyboardEvent) => {
     if (!(event.target as HTMLElement).parentElement.classList.contains(styles.notificationDrawerListItemAction)) {
       // Accessibility function. Click on the list item when pressing Enter or Space on it.
       if (event.key === 'Enter' || event.key === ' ') {

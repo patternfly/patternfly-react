@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, ReactElement, FunctionComponent, cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -73,7 +73,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
   /**
    * The children to render with the chart
    */
-  children?: React.ReactNode | React.ReactNode[];
+  children?: ReactNode | ReactNode[];
   /**
    * The color prop is an optional prop that defines a single color to be applied to the
    * children of ChartGroup. The color prop will override colors specified via colorScale.
@@ -102,7 +102,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows..." />
    */
-  containerComponent?: React.ReactElement<any>;
+  containerComponent?: ReactElement<any>;
   /**
    * The data prop specifies the data to be plotted. Data should be in the form of an array
    * of data points, or an array of arrays of data points for multiple datasets.
@@ -196,7 +196,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart.
    * SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected
@@ -232,7 +232,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * provide a series label for ChartGroup. If individual labels are required for each
    * data point, they should be created by composing ChartGroup with VictoryScatter
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * The labels prop defines labels that will appear above each bar in your chart.
    * This prop should be given as an array of values or as a function of data.
@@ -464,7 +464,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
+export const ChartGroup: FunctionComponent<ChartGroupProps> = ({
   ariaDesc,
   ariaTitle,
   children,
@@ -479,7 +479,7 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
   ...rest
 }: ChartGroupProps) => {
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     desc: ariaDesc,
     title: ariaTitle,
     theme,

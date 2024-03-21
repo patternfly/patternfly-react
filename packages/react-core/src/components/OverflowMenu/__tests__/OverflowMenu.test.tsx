@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createRef } from 'react';
 
 import { render, screen } from '@testing-library/react';
 
@@ -70,7 +70,7 @@ describe('OverflowMenu', () => {
 
   test('should call resizeObserver on React ref containerRefElement', () => {
     const resizeObserver = jest.spyOn(getResizeObserver, 'getResizeObserver');
-    const containerRef = React.createRef<HTMLDivElement>();
+    const containerRef = createRef<HTMLDivElement>();
 
     render(
       <div ref={containerRef}>

@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Card, CardTitle, CardBody, CardFooter, Title, Gallery, GalleryItem } from '@patternfly/react-core';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
-export const CardUtilizationDemo4: React.FunctionComponent = () => (
+export const CardUtilizationDemo4: FunctionComponent = () => (
   <Gallery hasGutter minWidths={{ default: '360px' }}>
     <GalleryItem>
       <Card id="utilization-card-4-card" component="div">

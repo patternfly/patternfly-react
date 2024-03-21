@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, ReactElement, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
@@ -14,15 +14,15 @@ export enum OptionsMenuDirection {
   down = 'down'
 }
 
-export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
+export interface OptionsMenuProps extends HTMLProps<HTMLDivElement>, OUIAProps {
   /** Classes applied to root element of the options menu */
   className?: string;
   /** Id of the root element of the options menu */
   id: string;
   /** Array of OptionsMenuItem and/or OptionMenuGroup nodes that will be rendered in the options menu list */
-  menuItems: React.ReactNode[];
+  menuItems: ReactNode[];
   /** Either an OptionsMenuToggle or an OptionsMenuToggleWithText to use to toggle the options menu */
-  toggle: React.ReactElement;
+  toggle: ReactElement;
   /** Flag to indicate the toggle has no border or background */
   isPlain?: boolean;
   /** Flag to indicate if menu is open */
@@ -51,7 +51,7 @@ export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement>, OUIAP
   ouiaSafe?: boolean;
 }
 
-export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
+export const OptionsMenu: FunctionComponent<OptionsMenuProps> = ({
   className = '',
   menuItems,
   toggle,

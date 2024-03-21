@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import {
   Card,
   DataList,
@@ -33,11 +33,11 @@ import {
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
-export const PrimaryDetailDataListInCard: React.FunctionComponent = () => {
-  const [drawerPanelBodyContent, setDrawerPanelBodyContent] = React.useState(1);
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [selectedDataListItemId, setSelectedDataListItemId] = React.useState('dataListItem1');
-  const [isExpanded, setIsExpanded] = React.useState(false);
+export const PrimaryDetailDataListInCard: FunctionComponent = () => {
+  const [drawerPanelBodyContent, setDrawerPanelBodyContent] = useState(1);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedDataListItemId, setSelectedDataListItemId] = useState('dataListItem1');
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const onDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -90,7 +90,7 @@ export const PrimaryDetailDataListInCard: React.FunctionComponent = () => {
   );
 
   const drawerContent = (
-    <React.Fragment>
+    <Fragment>
       <Toolbar id="data-list-data-toolbar" usePageInsets>
         <ToolbarContent>
           <ToolbarItem>
@@ -178,7 +178,7 @@ export const PrimaryDetailDataListInCard: React.FunctionComponent = () => {
           </DataListItemRow>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

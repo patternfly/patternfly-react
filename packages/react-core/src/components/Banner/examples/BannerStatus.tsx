@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Banner, Flex, FlexItem } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
@@ -6,7 +6,7 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
-export const BannerStatus: React.FunctionComponent = () => (
+export const BannerStatus: FunctionComponent = () => (
   <>
     <Banner screenReaderText="Default banner">
       <Flex spaceItems={{ default: 'spaceItemsSm' }}>

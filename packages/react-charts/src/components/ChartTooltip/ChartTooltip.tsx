@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { SyntheticEvent, ReactElement, CSSProperties, FunctionComponent, cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   NumberOrCallback,
@@ -100,7 +100,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * @propType object
    * @example events={{onClick: (evt) => alert("x: " + evt.clientX)}}
    */
-  events?: { [key: string]: (event: React.SyntheticEvent<any>) => void };
+  events?: { [key: string]: (event: SyntheticEvent<any>) => void };
   /**
    * The flyoutComponent prop takes a component instance which will be used to create the flyout path for each tooltip.
    * The new element created from the passed flyoutComponent will be supplied with the following properties: x, y, dx, dy,
@@ -111,7 +111,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    *
    * @example flyoutComponent={<Flyout x={50} y={50}/>}, flyoutComponent={<MyCustomFlyout/>}
    */
-  flyoutComponent?: React.ReactElement<any>;
+  flyoutComponent?: ReactElement<any>;
   /**
    * The flyoutHeight prop defines the height of the tooltip flyout. This prop may be given as a positive number or a function
    * of datum. If this prop is not set, height will be determined based on an approximate text size calculated from the
@@ -139,7 +139,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * The groupComponent prop takes a component instance which will be used to create group elements for use within
    * container elements. This prop defaults to a <g> tag.}
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * This prop refers to the height of the svg that ChartTooltip is rendered within. This prop is passed from parents
    * of ChartTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the height of the
@@ -170,7 +170,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    *
    * @example labelComponent={<ChartLabel dy={20}/>}, labelComponent={<MyCustomLabel/>}
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * Defines how the labelComponent text is horizontally positioned relative to its `x` and `y` coordinates. Valid
    * values are 'start', 'middle', 'end', and 'inherit'.
@@ -217,7 +217,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   /**
    * The style prop applies CSS properties to the rendered `<text>` element.
    */
-  style?: React.CSSProperties | React.CSSProperties[];
+  style?: CSSProperties | CSSProperties[];
   /**
    * The text prop defines the text ChartTooltip will render. The text prop may be given as a string, number, or
    * function of datum. When ChartLabel is used as the labelComponent, strings may include newline characters, which
@@ -262,7 +262,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   y?: number;
 }
 
-export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
+export const ChartTooltip: FunctionComponent<ChartTooltipProps> = ({
   constrainToVisibleArea = false,
   labelComponent = <ChartLabel />, // Note that Victory provides its own label component here
   labelTextAnchor,
@@ -272,7 +272,7 @@ export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
   theme = getTheme(themeColor),
   ...rest
 }: ChartTooltipProps) => {
-  const chartLabelComponent = React.cloneElement(labelComponent, {
+  const chartLabelComponent = cloneElement(labelComponent, {
     textAnchor: labelTextAnchor,
     theme,
     ...labelComponent.props

@@ -1,13 +1,13 @@
-import React from 'react';
+import { useState, type FunctionComponent, type MouseEvent as ReactMouseEvent } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
-export const MenuWithIcons: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState(0);
+export const MenuWithIcons: FunctionComponent = () => {
+  const [activeItem, setActiveItem] = useState(0);
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
+  const onSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
     const item = itemId as number; // eslint-disable-next-line no-console
     console.log(`clicked ${item}`);
     setActiveItem(item);

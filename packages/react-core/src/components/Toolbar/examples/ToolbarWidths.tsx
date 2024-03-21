@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
 
-export const ToolbarWidths: React.FunctionComponent = () => {
+export const ToolbarWidths: FunctionComponent = () => {
   const widths = {
     default: '100px',
     sm: '80px',
@@ -13,13 +13,13 @@ export const ToolbarWidths: React.FunctionComponent = () => {
   };
 
   const items = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem widths={widths}>
         <Button variant="secondary" style={{ width: '100%' }}>
           Action
         </Button>
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

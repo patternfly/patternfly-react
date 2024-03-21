@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Table, Caption, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 interface Repository {
@@ -10,7 +10,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const TableStripedMultipleTbody: React.FunctionComponent = () => {
+export const TableStripedMultipleTbody: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories1: Repository[] = [
     {
@@ -78,11 +78,11 @@ export const TableStripedMultipleTbody: React.FunctionComponent = () => {
           <Tr key={repo.name}>
             <Td dataLabel={columnNames.name}>
               {repo.description ? (
-                <React.Fragment>
+                <Fragment>
                   {repo.name}
                   <br />
                   <small>{repo.description}</small>
-                </React.Fragment>
+                </Fragment>
               ) : (
                 repo.name
               )}
@@ -99,11 +99,11 @@ export const TableStripedMultipleTbody: React.FunctionComponent = () => {
           <Tr key={repo.name}>
             <Td dataLabel={columnNames.name}>
               {repo.description ? (
-                <React.Fragment>
+                <Fragment>
                   {repo.name}
                   <br />
                   <small>{repo.description}</small>
-                </React.Fragment>
+                </Fragment>
               ) : (
                 repo.name
               )}

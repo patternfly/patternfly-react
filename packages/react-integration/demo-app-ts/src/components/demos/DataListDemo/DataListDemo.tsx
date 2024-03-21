@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent, KeyboardEvent, Component } from 'react';
 import {
   DataList,
   DataListProps,
@@ -20,7 +20,7 @@ interface DataListState {
   isOpen: boolean;
 }
 
-export class DataListDemo extends React.Component<DataListProps, DataListState> {
+export class DataListDemo extends Component<DataListProps, DataListState> {
   static displayName = 'DataListDemo';
   constructor(props: DataListProps) {
     super(props);
@@ -30,7 +30,7 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
     };
   }
 
-  onSelectDataListItem = (_event: React.MouseEvent | React.KeyboardEvent, id: string) => {
+  onSelectDataListItem = (_event: MouseEvent | KeyboardEvent, id: string) => {
     this.setState({ selectedDataListItemId: id });
   };
 

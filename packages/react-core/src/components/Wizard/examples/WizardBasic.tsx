@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Wizard, WizardStep } from '@patternfly/react-core';
 
-export const WizardBasic: React.FunctionComponent = () => (
+export const WizardBasic: FunctionComponent = () => (
   <Wizard height={400} title="Basic wizard">
     <WizardStep name="Step 1" id="basic-first-step">
       <p>

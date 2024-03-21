@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { FC, FormEvent, KeyboardEvent, useState } from 'react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -45,7 +45,7 @@ const PageTemplateTitle = (
   </PageSection>
 );
 
-export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
+export const DashboardWrapper: FC<DashboardWrapperProps> = ({
   children,
   mainContainerId,
   breadcrumb,
@@ -61,7 +61,7 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
 }: DashboardWrapperProps) => {
   const [activeItem, setActiveItem] = useState(1);
 
-  const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, result: any) => {
+  const onNavSelect = (_event: FormEvent<HTMLInputElement>, result: any) => {
     setActiveItem(result.itemId);
   };
 
@@ -115,7 +115,7 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
       notificationDrawer={notificationDrawer}
       isNotificationDrawerExpanded={isNotificationDrawerExpanded}
       {...(typeof onPageResize === 'function' && {
-        onPageResize: (event: MouseEvent | TouchEvent | React.KeyboardEvent<Element>, resizeObject: any) =>
+        onPageResize: (event: MouseEvent | TouchEvent | KeyboardEvent<Element>, resizeObject: any) =>
           onPageResize(event, resizeObject)
       })}
       {...pageProps}

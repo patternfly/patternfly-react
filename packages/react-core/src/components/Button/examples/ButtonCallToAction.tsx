@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Button } from '@patternfly/react-core';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 
-export const ButtonCallToAction: React.FunctionComponent = () => (
-  <React.Fragment>
+export const ButtonCallToAction: FunctionComponent = () => (
+  <Fragment>
     <Button variant="primary" size="lg">
       Call to action
     </Button>{' '}
@@ -18,5 +18,5 @@ export const ButtonCallToAction: React.FunctionComponent = () => (
     </Button>
     <br />
     <br />
-  </React.Fragment>
+  </Fragment>
 );

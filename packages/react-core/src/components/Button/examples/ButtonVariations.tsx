@@ -1,12 +1,12 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Button } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 
-export const ButtonVariations: React.FunctionComponent = () => (
-  <React.Fragment>
+export const ButtonVariations: FunctionComponent = () => (
+  <Fragment>
     <Button variant="primary" ouiaId="Primary">
       Primary
     </Button>{' '}
@@ -53,5 +53,5 @@ export const ButtonVariations: React.FunctionComponent = () => (
     <Button variant="control" aria-label="Copy">
       <CopyIcon />
     </Button>
-  </React.Fragment>
+  </Fragment>
 );

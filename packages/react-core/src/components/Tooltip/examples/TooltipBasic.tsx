@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Button, Tooltip } from '@patternfly/react-core';
 
-export const TooltipBasic: React.FunctionComponent = () => (
+export const TooltipBasic: FunctionComponent = () => (
   <div style={{ margin: '100px' }}>
     <Tooltip
       content={

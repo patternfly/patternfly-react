@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { List, ListItem } from '@patternfly/react-core';
 
-export const ListPlain: React.FunctionComponent = () => (
+export const ListPlain: FunctionComponent = () => (
   <List isPlain>
     <ListItem>First</ListItem>
     <ListItem>Second</ListItem>

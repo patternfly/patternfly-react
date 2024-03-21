@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode, ElementType, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { AccordionContext } from './AccordionContext';
 
 export interface AccordionToggleProps
-  extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+  extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   /** Content rendered inside the Accordion toggle  */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the Accordion Toggle  */
   className?: string;
   /** Flag to show if the expanded content of the Accordion item is visible  */
@@ -15,10 +15,10 @@ export interface AccordionToggleProps
   /** Identify the Accordion toggle number  */
   id: string;
   /** Container to override the default for toggle */
-  component?: React.ElementType;
+  component?: ElementType;
 }
 
-export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
+export const AccordionToggle: FunctionComponent<AccordionToggleProps> = ({
   className = '',
   id,
   isExpanded = false,

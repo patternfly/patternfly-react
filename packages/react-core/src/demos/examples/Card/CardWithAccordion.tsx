@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Card,
   CardTitle,
@@ -19,8 +19,8 @@ import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-
 import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
 import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
-export const CardWithAccordion: React.FunctionComponent = () => {
-  const [openCPU, setOpenCPU] = React.useState('cpu1');
+export const CardWithAccordion: FunctionComponent = () => {
+  const [openCPU, setOpenCPU] = useState('cpu1');
 
   return (
     <Card>

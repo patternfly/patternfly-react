@@ -1,13 +1,13 @@
-import React from 'react';
+import { FunctionComponent, RefObject, useState, createRef } from 'react';
 import { Tabs, Tab, TabTitleText, TabAction, Popover } from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
-export const TabsHelp: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<number>(0);
+export const TabsHelp: FunctionComponent = () => {
+  const [activeTabKey, setActiveTabKey] = useState<number>(0);
 
   const tabs = ['Users', 'Containers', 'Database', 'Disabled', 'ARIA disabled', 'Help disabled'];
 
-  const helpPopover = (header: string, popoverRef: React.RefObject<any>) => (
+  const helpPopover = (header: string, popoverRef: RefObject<any>) => (
     <Popover
       headerContent={<div>{header}</div>}
       bodyContent={
@@ -28,7 +28,7 @@ export const TabsHelp: React.FunctionComponent = () => {
       role="region"
     >
       {tabs.map((tab, index) => {
-        const ref = React.createRef<HTMLElement>();
+        const ref = createRef<HTMLElement>();
 
         return (
           <Tab

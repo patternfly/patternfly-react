@@ -1,4 +1,11 @@
-import * as React from 'react';
+import {
+  type ReactNode,
+  type ClipboardEvent as ReactClipboardEvent,
+  type HTMLProps,
+  type FormEvent as ReactFormEvent,
+  type MouseEvent as ReactMouseEvent,
+  Component
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -10,7 +17,7 @@ import { ClipboardCopyToggle } from './ClipboardCopyToggle';
 import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export const clipboardCopyFunc = (_event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {
+export const clipboardCopyFunc = (_event: ReactClipboardEvent<HTMLDivElement>, text?: ReactNode) => {
   try {
     navigator.clipboard.writeText(text.toString());
   } catch (error) {
@@ -41,7 +48,7 @@ export interface ClipboardCopyState {
   textWhenExpanded: string;
 }
 
-export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'>, OUIAProps {
+export interface ClipboardCopyProps extends Omit<HTMLProps<HTMLDivElement>, 'onChange'>, OUIAProps {
   /** Additional classes added to the clipboard copy container. */
   className?: string;
   /** Tooltip message to display when hover the copy button */
@@ -85,20 +92,20 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** Delay in ms before the tooltip appears. */
   entryDelay?: number;
   /** A function that is triggered on clicking the copy button. This will replace the existing clipboard copy functionality entirely. */
-  onCopy?: (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => void;
+  onCopy?: (event: ReactClipboardEvent<HTMLDivElement>, text?: ReactNode) => void;
   /** A function that is triggered on changing the text. */
-  onChange?: (event: React.FormEvent, text?: string) => void;
+  onChange?: (event: ReactFormEvent, text?: string) => void;
   /** The text which is copied. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Additional actions for inline-compact clipboard copy. Should be wrapped with ClipboardCopyAction. */
-  additionalActions?: React.ReactNode;
+  additionalActions?: ReactNode;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
 }
 
-class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopyState> {
+class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
   static displayName = 'ClipboardCopy';
   timer = null as number;
   constructor(props: ClipboardCopyProps) {
@@ -146,18 +153,18 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  expandContent = (_event: React.MouseEvent<Element, MouseEvent>) => {
+  expandContent = (_event: ReactMouseEvent<Element, MouseEvent>) => {
     this.setState((prevState) => ({
       expanded: !prevState.expanded
     }));
   };
 
-  updateText = (event: React.FormEvent, text: string) => {
+  updateText = (event: ReactFormEvent, text: string) => {
     this.setState({ text });
     this.props.onChange(event, text);
   };
 
-  updateTextWhenExpanded = (event: React.FormEvent, text: string) => {
+  updateTextWhenExpanded = (event: ReactFormEvent, text: string) => {
     this.setState({ textWhenExpanded: text });
     this.props.onChange(event, text);
   };
@@ -205,7 +212,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
         {variant === 'inline-compact' && (
           <GenerateId prefix="">
             {(id) => (
-              <React.Fragment>
+              <>
                 {!isCode && (
                   <span className={css(styles.clipboardCopyText)} id={`${textIdPrefix}${id}`}>
                     {this.state.text}
@@ -238,14 +245,14 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                   </span>
                   {additionalActions && additionalActions}
                 </span>
-              </React.Fragment>
+              </>
             )}
           </GenerateId>
         )}
         {variant !== 'inline-compact' && (
           <GenerateId prefix="">
             {(id) => (
-              <React.Fragment>
+              <>
                 <div className={css(styles.clipboardCopyGroup)}>
                   {variant === 'expansion' && (
                     <ClipboardCopyToggle
@@ -299,7 +306,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                     {this.state.text}
                   </ClipboardCopyExpanded>
                 )}
-              </React.Fragment>
+              </>
             )}
           </GenerateId>
         )}

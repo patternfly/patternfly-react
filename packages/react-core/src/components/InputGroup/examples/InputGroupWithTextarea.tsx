@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Button, TextArea, InputGroup, InputGroupItem } from '@patternfly/react-core';
 
-export const InputGroupWithTextarea: React.FunctionComponent = () => (
-  <React.Fragment>
+export const InputGroupWithTextarea: FunctionComponent = () => (
+  <Fragment>
     <InputGroup>
       <InputGroupItem isFill>
         <TextArea name="inputGroup-with-textarea" id="inputGroup-with-textarea" aria-label="textarea with button" />
@@ -13,5 +13,5 @@ export const InputGroupWithTextarea: React.FunctionComponent = () => (
         </Button>
       </InputGroupItem>
     </InputGroup>
-  </React.Fragment>
+  </Fragment>
 );

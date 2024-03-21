@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement, Fragment } from 'react';
 import { PaddingProps, StringOrNumberOrCallback } from 'victory-core';
 import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
@@ -83,7 +83,7 @@ export interface ChartBulletTitleProps {
    *
    * Note: Default label properties may be applied
    */
-  subTitleComponent?: React.ReactElement<any>;
+  subTitleComponent?: ReactElement<any>;
   /**
    * The theme prop takes a style object with nested data, labels, and parent objects.
    * You can create this object yourself, or you can use a theme provided by
@@ -111,7 +111,7 @@ export interface ChartBulletTitleProps {
    *
    * Note: Default label properties may be applied
    */
-  titleComponent?: React.ReactElement<any>;
+  titleComponent?: ReactElement<any>;
   /**
    * The title position relation to the chart. Valid values are 'left', and 'top-left'
    *
@@ -125,7 +125,7 @@ export interface ChartBulletTitleProps {
   width?: number;
 }
 
-export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = ({
+export const ChartBulletTitle: FunctionComponent<ChartBulletTitleProps> = ({
   ariaDesc,
   ariaTitle,
   capHeight = 1.1,
@@ -188,7 +188,7 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
 
     // The x and y calculations below are used to adjust the position of the title, based on padding and scale.
     // This ensures that when padding is adjusted, the title moves along with the chart's position.
-    return React.cloneElement(titleComponent, {
+    return cloneElement(titleComponent, {
       ...(showBoth && { capHeight }),
       ...(name && { id: () => `${name}-${(titleComponent as any).type.displayName}` }),
       style: [ChartBulletStyles.label.title, ChartBulletStyles.label.subTitle],
@@ -224,7 +224,7 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
       {getTitle()}
     </ChartContainer>
   ) : (
-    <React.Fragment>{getTitle()}</React.Fragment>
+    <Fragment>{getTitle()}</Fragment>
   );
 };
 ChartBulletTitle.displayName = 'ChartBulletTitle';

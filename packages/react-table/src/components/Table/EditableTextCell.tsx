@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, FormEvent, FunctionComponent, Fragment } from 'react';
 import { TextInput } from '@patternfly/react-core/dist/esm/components/TextInput';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import { EditableTextCellProps } from './base/types';
 
-export interface IEditableTextCell extends React.HTMLProps<HTMLDivElement> {
+export interface IEditableTextCell extends HTMLProps<HTMLDivElement> {
   /** The current value of the text input */
   value: string;
   /** Row index of this text cell */
@@ -17,7 +17,7 @@ export interface IEditableTextCell extends React.HTMLProps<HTMLDivElement> {
   /** Event handler which fires when user changes the text in this cell */
   handleTextInputChange: (
     newValue: string,
-    event: React.FormEvent<HTMLInputElement>,
+    event: FormEvent<HTMLInputElement>,
     rowIndex: number,
     cellIndex: number
   ) => void;
@@ -27,7 +27,7 @@ export interface IEditableTextCell extends React.HTMLProps<HTMLDivElement> {
   isDisabled?: boolean;
 }
 
-export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
+export const EditableTextCell: FunctionComponent<IEditableTextCell> = ({
   value,
   rowIndex,
   cellIndex,
@@ -36,7 +36,7 @@ export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
   inputAriaLabel,
   isDisabled = false
 }: IEditableTextCell) => (
-  <React.Fragment>
+  <Fragment>
     <div className={inlineStyles.inlineEditValue}>{value}</div>
     <div className={inlineStyles.inlineEditInput}>
       <TextInput
@@ -53,6 +53,6 @@ export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
         {props.errorText}
       </div>
     </div>
-  </React.Fragment>
+  </Fragment>
 );
 EditableTextCell.displayName = 'EditableTextCell';

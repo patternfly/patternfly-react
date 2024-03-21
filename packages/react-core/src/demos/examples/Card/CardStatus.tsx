@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import * as React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Alert,
   Card,
@@ -30,13 +30,13 @@ import global_success_color_100 from '@patternfly/react-tokens/dist/esm/global_s
 import global_danger_color_100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
 import global_Color_200 from '@patternfly/react-tokens/dist/esm/global_Color_200';
 
-export const CardStatus: React.FunctionComponent = () => {
-  const [drawerExpanded, setDrawerExpanded] = React.useState(false);
+export const CardStatus: FunctionComponent = () => {
+  const [drawerExpanded, setDrawerExpanded] = useState(false);
   const handleDrawerToggleClick = () => {
     setDrawerExpanded(!drawerExpanded);
   };
 
-  const [rowsExpanded, setRowsExpanded] = React.useState([false, false, false]);
+  const [rowsExpanded, setRowsExpanded] = useState([false, false, false]);
   const handleToggleExpand = (_: any, rowIndex: number) => {
     const newRowsExpanded = [...rowsExpanded];
     newRowsExpanded[rowIndex] = !rowsExpanded[rowIndex];

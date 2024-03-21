@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, useRef, useState, useEffect } from 'react';
 
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { css } from '@patternfly/react-styles';
@@ -8,9 +8,9 @@ import maxLines from '@patternfly/react-tokens/dist/esm/c_notification_drawer__g
 import { Badge } from '../Badge';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 
-export interface NotificationDrawerGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
+export interface NotificationDrawerGroupProps extends Omit<HTMLProps<HTMLDivElement>, 'title'> {
   /**  Content rendered inside the group */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**  Additional classes added to the group */
   className?: string;
   /**  Notification drawer group count */
@@ -22,7 +22,7 @@ export interface NotificationDrawerGroupProps extends Omit<React.HTMLProps<HTMLD
   /**  Callback for when group button is clicked to expand */
   onExpand?: (event: any, value: boolean) => void;
   /**  Notification drawer group title */
-  title: string | React.ReactNode;
+  title: string | ReactNode;
   /** Truncate title to number of lines */
   truncateTitle?: number;
   /** Position of the tooltip which is displayed if text is truncated */
@@ -45,7 +45,7 @@ export interface NotificationDrawerGroupProps extends Omit<React.HTMLProps<HTMLD
   headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawerGroupProps> = ({
+export const NotificationDrawerGroup: FunctionComponent<NotificationDrawerGroupProps> = ({
   children,
   className = '',
   count,
@@ -59,9 +59,9 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
   headingLevel: HeadingLevel = 'h1',
   ...props
 }: NotificationDrawerGroupProps) => {
-  const titleRef = React.useRef(null);
-  const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
-  React.useEffect(() => {
+  const titleRef = useRef(null);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+  useEffect(() => {
     // Title will always truncate on overflow regardless of truncateTitle prop
     const showTooltip = titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight;
     if (isTooltipVisible !== showTooltip) {

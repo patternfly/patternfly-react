@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
 import { formatBreakpointMods } from '../../helpers/util';
@@ -13,8 +13,8 @@ export enum SidebarPanelWidthType {
   width100 = 'width_100'
 }
 
-export interface SidebarPanelProps extends Omit<React.HTMLProps<HTMLDivElement>, 'width'> {
-  children: React.ReactNode;
+export interface SidebarPanelProps extends Omit<HTMLProps<HTMLDivElement>, 'width'> {
+  children: ReactNode;
   /** Indicates whether the panel is positioned statically or sticky to the top. Default is sticky on small screens when the orientation is stack, and static on medium and above screens when the orientation is split. */
   variant?: 'default' | 'sticky' | 'static';
   /** Removes the background color. */
@@ -32,7 +32,7 @@ export interface SidebarPanelProps extends Omit<React.HTMLProps<HTMLDivElement>,
   };
 }
 
-export const SidebarPanel: React.FunctionComponent<SidebarPanelProps> = ({
+export const SidebarPanel: FunctionComponent<SidebarPanelProps> = ({
   className,
   children,
   variant = 'default',

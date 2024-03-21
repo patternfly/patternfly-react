@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent, ReactNode, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
 import { css } from '@patternfly/react-styles';
 
@@ -8,14 +8,14 @@ export interface MenuToggleActionProps {
   /** Flag to show if the action button is disabled */
   isDisabled?: boolean;
   /** A callback for when the action button is clicked */
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   /** Element to be rendered inside the <button> */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Id of the action button */
   id?: string;
 }
 
-class MenuToggleAction extends React.Component<MenuToggleActionProps> {
+class MenuToggleAction extends Component<MenuToggleActionProps> {
   static displayName = 'MenuToggleAction';
   static defaultProps: MenuToggleActionProps = {
     className: '',

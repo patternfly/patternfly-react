@@ -1,14 +1,14 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, SearchInput, Checkbox } from '@patternfly/react-core';
 
-export const ToolbarSticky: React.FunctionComponent = () => {
-  const [isSticky, setIsSticky] = React.useState(true);
-  const [showEvenOnly, setShowEvenOnly] = React.useState(true);
+export const ToolbarSticky: FunctionComponent = () => {
+  const [isSticky, setIsSticky] = useState(true);
+  const [showEvenOnly, setShowEvenOnly] = useState(true);
   const array = Array.from(Array(30), (_, x) => x); // create array of numbers from 1-30 for demo purposes
   const numbers = showEvenOnly ? array.filter((number) => number % 2 === 0) : array;
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div style={{ overflowY: 'scroll', height: '200px' }}>
         <Toolbar id="toolbar-sticky" inset={{ default: 'insetNone' }} isSticky={isSticky}>
           <ToolbarContent>
@@ -37,6 +37,6 @@ export const ToolbarSticky: React.FunctionComponent = () => {
         onChange={(_event, checked) => setIsSticky(checked)}
         id="isStickyCheckbox"
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

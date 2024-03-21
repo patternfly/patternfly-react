@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState, Fragment } from 'react';
 import {
   Card,
   CardBody,
@@ -20,12 +20,12 @@ import {
 import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import { DashboardHeader } from '@patternfly/react-core/src/demos/DashboardHeader';
 
-export const NavWithSubnav: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState<string | number>(0);
-  const [activeSubNavItem, setActiveSubNavItem] = React.useState<string | number>(7);
+export const NavWithSubnav: FunctionComponent = () => {
+  const [activeItem, setActiveItem] = useState<string | number>(0);
+  const [activeSubNavItem, setActiveSubNavItem] = useState<string | number>(7);
 
   const onNavSelect = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: FormEvent<HTMLInputElement>,
     selectedItem: {
       groupId: number | string;
       itemId: number | string;
@@ -34,7 +34,7 @@ export const NavWithSubnav: React.FunctionComponent = () => {
   ) => setActiveItem(selectedItem.itemId);
 
   const onSubNavSelect = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: FormEvent<HTMLInputElement>,
     selectedItem: {
       groupId: number | string;
       itemId: number | string;
@@ -102,7 +102,7 @@ export const NavWithSubnav: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page
         header={<DashboardHeader />}
         sidebar={Sidebar}
@@ -137,6 +137,6 @@ export const NavWithSubnav: React.FunctionComponent = () => {
           </Gallery>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

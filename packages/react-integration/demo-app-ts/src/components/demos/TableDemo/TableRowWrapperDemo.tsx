@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Ref, Component } from 'react';
 import { RowWrapperProps, ICell, IRow } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
@@ -12,7 +12,7 @@ interface ITableRowWrapperDemoState {
   columns: (ICell | string)[];
 }
 
-export class TableRowWrapperDemo extends React.Component<TableProps, ITableRowWrapperDemoState> {
+export class TableRowWrapperDemo extends Component<TableProps, ITableRowWrapperDemoState> {
   static displayName = 'TableRowWrapperDemo';
   customRowWrapper: (props: RowWrapperProps) => JSX.Element;
   constructor(props: TableProps) {
@@ -40,7 +40,7 @@ export class TableRowWrapperDemo extends React.Component<TableProps, ITableRowWr
       return (
         <tr
           {...rest}
-          ref={trRef as React.Ref<any>}
+          ref={trRef as Ref<any>}
           className={css(
             className,
             isOddRow ? 'odd-row-class' : 'even-row-class',

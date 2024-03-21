@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { type HTMLProps, type ReactNode, type FunctionComponent, useState, useEffect } from 'react';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 import { ExpandableSection } from '../ExpandableSection';
@@ -13,20 +13,20 @@ import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle
  * attempted to be uploaded.
  */
 
-export interface MultipleFileUploadStatusProps extends React.HTMLProps<HTMLDivElement> {
+export interface MultipleFileUploadStatusProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside multi file upload status list */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Class to add to outer div */
   className?: string;
   /** String to show in the status toggle */
   statusToggleText?: string;
   /** Icon to show in the status toggle */
-  statusToggleIcon?: 'danger' | 'success' | 'inProgress' | React.ReactNode;
+  statusToggleIcon?: 'danger' | 'success' | 'inProgress' | ReactNode;
   /** Adds an accessible label to the list of status items. */
   'aria-label'?: string;
 }
 
-export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploadStatusProps> = ({
+export const MultipleFileUploadStatus: FunctionComponent<MultipleFileUploadStatusProps> = ({
   children,
   className,
   statusToggleText,
@@ -34,10 +34,10 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
   'aria-label': ariaLabel,
   ...props
 }: MultipleFileUploadStatusProps) => {
-  const [icon, setIcon] = React.useState<React.ReactNode>();
-  const [isOpen, setIsOpen] = React.useState(true);
+  const [icon, setIcon] = useState<ReactNode>();
+  const [isOpen, setIsOpen] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     switch (statusToggleIcon) {
       case 'danger':
         setIcon(<TimesCircleIcon />);

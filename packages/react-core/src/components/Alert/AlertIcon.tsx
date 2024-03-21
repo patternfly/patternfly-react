@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
@@ -15,11 +15,11 @@ export const variantIcons = {
   custom: BellIcon
 };
 
-export interface AlertIconProps extends React.HTMLProps<HTMLDivElement> {
+export interface AlertIconProps extends HTMLProps<HTMLDivElement> {
   /** Additional class names added to the alert icon. */
   className?: string;
   /** A custom icon. If not set the icon is set according to the variant. */
-  customIcon?: React.ReactNode;
+  customIcon?: ReactNode;
   /** Variant of the alert icon. */
   variant: 'success' | 'danger' | 'warning' | 'info' | 'custom';
 }

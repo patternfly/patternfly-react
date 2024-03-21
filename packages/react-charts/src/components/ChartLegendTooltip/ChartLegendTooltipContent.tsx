@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { Helpers, NumberOrCallback, StringOrNumberOrCallback } from 'victory-core';
 import { VictoryLegend } from 'victory-legend';
@@ -89,14 +89,14 @@ export interface ChartLegendTooltipContentProps {
    * custom component itself. If labelComponent is omitted, a new
    * ChartLabel will be created with the props described above.
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * The legend component to render with chart.
    *
    * Note: Use legendData so the legend width can be calculated and positioned properly.
    * Default legend properties may be applied
    */
-  legendComponent?: React.ReactElement<any>;
+  legendComponent?: ReactElement<any>;
   /**
    * Specify data via the data prop. ChartLegend expects data as an array of objects with name (required), symbol, and
    * labels properties. The childName is used to sync the data series associated with the given chart child name.
@@ -173,7 +173,7 @@ export interface ChartLegendTooltipContentProps {
    * or ignored within the custom component itself. If labelComponent is omitted,
    * a new ChartLabel will be created with the props described above.
    */
-  titleComponent?: React.ReactElement<any>;
+  titleComponent?: ReactElement<any>;
   /**
    * Specifies the width of the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
@@ -185,7 +185,7 @@ export interface ChartLegendTooltipContentProps {
   width?: number;
 }
 
-export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendTooltipContentProps> = ({
+export const ChartLegendTooltipContent: FunctionComponent<ChartLegendTooltipContentProps> = ({
   activePoints,
   center,
   datum,
@@ -272,7 +272,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
 
   // Returns the label component
   const getLabelComponent = () =>
-    React.cloneElement(labelComponent, {
+    cloneElement(labelComponent, {
       datum,
       dx: maxLegendDimensions.width - minLegendDimensions.width,
       legendData: visibleLegendData,
@@ -283,7 +283,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
   const getTitleComponent = () => {
     const _title = title instanceof Function ? title(datum) : title;
 
-    return React.cloneElement(titleComponent, {
+    return cloneElement(titleComponent, {
       style: {
         fill: ChartLegendTooltipStyles.label.fill,
         fontWeight: ChartLegendTooltipStyles.label.fontWeight
@@ -298,7 +298,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
 
   // Returns the legend component
   const getLegendComponent = () =>
-    React.cloneElement(legendComponent, {
+    cloneElement(legendComponent, {
       data: getLegendTooltipVisibleData({
         activePoints,
         colorScale: legendProps.colorScale,
@@ -318,10 +318,10 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
     });
 
   return (
-    <React.Fragment>
+    <Fragment>
       {getTitleComponent()}
       {getLegendComponent()}
-    </React.Fragment>
+    </Fragment>
   );
 };
 ChartLegendTooltipContent.displayName = 'ChartLegendTooltipContent';

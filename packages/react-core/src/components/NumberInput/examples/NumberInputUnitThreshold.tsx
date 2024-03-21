@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, FocusEvent, useState, Fragment } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
-export const NumberInputUnitThreshold: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState<number | ''>(0);
+export const NumberInputUnitThreshold: FunctionComponent = () => {
+  const [value, setValue] = useState<number | ''>(0);
   const minValue = 0;
   const maxValue = 10;
 
@@ -22,12 +22,12 @@ export const NumberInputUnitThreshold: React.FunctionComponent = () => {
     setValue(newValue);
   };
 
-  const onChange = (event: React.FormEvent<HTMLInputElement>) => {
+  const onChange = (event: FormEvent<HTMLInputElement>) => {
     const value = (event.target as HTMLInputElement).value;
     setValue(value === '' ? value : +value);
   };
 
-  const onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+  const onBlur = (event: FocusEvent<HTMLInputElement>) => {
     const blurVal = +event.target.value;
 
     if (blurVal < minValue) {
@@ -43,7 +43,7 @@ export const NumberInputUnitThreshold: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       With a minimum value of 0 and maximum value of 10
       <br />
       <NumberInput
@@ -60,6 +60,6 @@ export const NumberInputUnitThreshold: React.FunctionComponent = () => {
         plusBtnAriaLabel="plus"
         unit="%"
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

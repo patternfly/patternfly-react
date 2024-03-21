@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Ref, useState } from 'react';
 import {
   Button,
   DataList,
@@ -16,10 +16,10 @@ import {
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const DataListCheckboxes: React.FunctionComponent = () => {
-  const [isOpen1, setIsOpen1] = React.useState(false);
-  const [isOpen2, setIsOpen2] = React.useState(false);
-  const [isOpen3, setIsOpen3] = React.useState(false);
+export const DataListCheckboxes: FunctionComponent = () => {
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [isOpen3, setIsOpen3] = useState(false);
 
   const onToggle1 = () => {
     setIsOpen1(!isOpen1);
@@ -78,7 +78,7 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
             <Dropdown
               popperProps={{ position: 'right' }}
               onSelect={onSelect1}
-              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              toggle={(toggleRef: Ref<MenuToggleElement>) => (
                 <MenuToggle
                   ref={toggleRef}
                   isExpanded={isOpen1}
@@ -134,7 +134,7 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
             <Dropdown
               popperProps={{ position: 'right' }}
               onSelect={onSelect2}
-              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              toggle={(toggleRef: Ref<MenuToggleElement>) => (
                 <MenuToggle
                   ref={toggleRef}
                   isExpanded={isOpen2}
@@ -199,7 +199,7 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
             <Dropdown
               popperProps={{ position: 'right' }}
               onSelect={onSelect3}
-              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              toggle={(toggleRef: Ref<MenuToggleElement>) => (
                 <MenuToggle
                   ref={toggleRef}
                   isExpanded={isOpen3}

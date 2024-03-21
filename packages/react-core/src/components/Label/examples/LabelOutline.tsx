@@ -1,14 +1,14 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Label } from '@patternfly/react-core';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
-export const LabelOutline: React.FunctionComponent = () => {
+export const LabelOutline: FunctionComponent = () => {
   const logColor = (color: string) => {
     // eslint-disable-next-line no-console
     console.log(color, 'label clicked');
   };
   return (
-    <React.Fragment>
+    <Fragment>
       <Label variant="outline">Grey</Label>{' '}
       <Label variant="outline" icon={<InfoCircleIcon />}>
         Grey icon
@@ -279,6 +279,6 @@ export const LabelOutline: React.FunctionComponent = () => {
       >
         Gold label with icon that overflows
       </Label>
-    </React.Fragment>
+    </Fragment>
   );
 };

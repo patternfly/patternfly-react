@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { SyntheticEvent, Component } from 'react';
 import { Stack, StackItem, Title } from '@patternfly/react-core';
 import {
   Dropdown as DropdownDeprecated,
@@ -24,22 +24,22 @@ interface DropdownState {
   counter: number;
 }
 
-export class DropdownDeprecatedDemo extends React.Component<{}, DropdownState> {
+export class DropdownDeprecatedDemo extends Component<{}, DropdownState> {
   static displayName = 'DropdownDeprecatedDemo';
   onToggle: (event: any, isOpen: boolean) => void;
   onBadgeToggle: (event: any, isBadgeOpen: boolean) => void;
-  onSelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
+  onSelect: (event?: SyntheticEvent<HTMLDivElement>) => void;
   onFocus: () => void;
   onActionToggle: (event: any, isOpen: boolean) => void;
-  onActionSelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
-  onActionClick: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  onActionSelect: (event?: SyntheticEvent<HTMLDivElement>) => void;
+  onActionClick: (event: SyntheticEvent<HTMLButtonElement>) => void;
   onActionFocus: () => void;
   onCogToggle: (event: any, isOpen: boolean) => void;
-  onCogSelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
-  onCogClick: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  onCogSelect: (event?: SyntheticEvent<HTMLDivElement>) => void;
+  onCogClick: (event: SyntheticEvent<HTMLButtonElement>) => void;
   onCogFocus: () => void;
   onMenuDocumentBodyToggle: (event: any, isOpen: boolean) => void;
-  onMenuDocumentBodySelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
+  onMenuDocumentBodySelect: (event?: SyntheticEvent<HTMLDivElement>) => void;
   onMenuDocumentBodyFocus: () => void;
   incrementCounter: () => void;
 

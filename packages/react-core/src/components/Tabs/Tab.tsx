@@ -1,4 +1,14 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  RefObject,
+  Ref,
+  ReactElement,
+  FunctionComponent,
+  SyntheticEvent,
+  useContext,
+  forwardRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { OUIAProps } from '../../helpers';
 import { TabButton } from './TabButton';
@@ -9,22 +19,22 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { TabAction } from './TabAction';
 
 export interface TabProps
-  extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title' | 'action'>,
+  extends Omit<HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title' | 'action'>,
     OUIAProps {
   /** content rendered inside the Tab content area. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** additional classes added to the Tab */
   className?: string;
   /** URL associated with the Tab. A Tab with an href will render as an <a> instead of a <button>. A Tab inside a <Tabs component="nav"> should have an href. */
   href?: string;
   /** Content rendered in the tab title. Should be <TabTitleText> and/or <TabTitleIcon> for proper styling. */
-  title: React.ReactNode;
+  title: ReactNode;
   /** uniquely identifies the tab */
   eventKey: number | string;
   /** child id for case in which a TabContent section is defined outside of a Tabs component */
   tabContentId?: string | number;
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
-  tabContentRef?: React.RefObject<any>;
+  tabContentRef?: RefObject<any>;
   /** whether to render the tab or not */
   isHidden?: boolean;
   /** Adds disabled styling and disables the button using the disabled html attribute */
@@ -34,20 +44,20 @@ export interface TabProps
   /** Events to prevent when the button is in an aria-disabled state */
   inoperableEvents?: string[];
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
   /** Optional Tooltip rendered to a Tab. Should be <Tooltip> with appropriate props for proper rendering. */
-  tooltip?: React.ReactElement<any>;
+  tooltip?: ReactElement<any>;
   /** Aria-label for the close button added by passing the onClose property to Tabs. */
   closeButtonAriaLabel?: string;
   /** Flag indicating the close button should be disabled */
   isCloseDisabled?: boolean;
   /** Actions rendered beside the tab content */
-  actions?: React.ReactNode;
+  actions?: ReactNode;
   /** Value to set the data-ouia-component-id for the tab button.*/
   ouiaId?: number | string;
 }
 
-const TabBase: React.FunctionComponent<TabProps> = ({
+const TabBase: FunctionComponent<TabProps> = ({
   title,
   eventKey,
   tabContentRef,
@@ -69,14 +79,14 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   const preventedEvents = inoperableEvents.reduce(
     (handlers, eventToPrevent) => ({
       ...handlers,
-      [eventToPrevent]: (event: React.SyntheticEvent<HTMLButtonElement>) => {
+      [eventToPrevent]: (event: SyntheticEvent<HTMLButtonElement>) => {
         event.preventDefault();
       }
     }),
     {}
   );
   const { mountOnEnter, localActiveKey, unmountOnExit, uniqueId, handleTabClick, handleTabClose } =
-    React.useContext(TabsContext);
+    useContext(TabsContext);
   let ariaControls = tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`;
   if ((mountOnEnter || unmountOnExit) && eventKey !== localActiveKey) {
     ariaControls = undefined;
@@ -142,5 +152,5 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   );
 };
 
-export const Tab = React.forwardRef((props: TabProps, ref: React.Ref<any>) => <TabBase innerRef={ref} {...props} />);
+export const Tab = forwardRef((props: TabProps, ref: Ref<any>) => <TabBase innerRef={ref} {...props} />);
 Tab.displayName = 'Tab';

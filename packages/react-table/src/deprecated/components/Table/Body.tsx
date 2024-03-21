@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { KeyboardEvent, MouseEvent, ReactNode, Component, Fragment } from 'react';
 import { Body as BaseBody } from './base';
 import { RowType, RowKeyType } from '../../../components/Table/base/types';
 import { IRow, IRowCell, IExtraRowData, isRowExpanded } from '../../../components';
@@ -10,7 +10,7 @@ export interface IComputedData {
 }
 
 export type OnRowClick = (
-  event: React.KeyboardEvent | React.MouseEvent,
+  event: KeyboardEvent | MouseEvent,
   row: IRow,
   rowProps: IExtraRowData,
   computedData: IComputedData
@@ -20,7 +20,7 @@ export interface TableBodyProps {
   /** Additional classes added to the TableBody  */
   className?: string;
   /** @hide This prop should not be set manually  */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** @hide This prop should not be set manually  */
   headerData?: IRow[];
   /** @hide This prop should not be set manually  */
@@ -49,7 +49,7 @@ interface IMappedCell {
   [name: string]: IRowCell;
 }
 
-class ContextBody extends React.Component<TableBodyProps, {}> {
+class ContextBody extends Component<TableBodyProps, {}> {
   onRow = (row: IRow, rowProps: any) => {
     const { onRowClick, onRow } = this.props;
     const extendedRowProps = {
@@ -59,7 +59,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
     return {
       row,
       rowProps: extendedRowProps,
-      onClick: (event: React.MouseEvent) => {
+      onClick: (event: MouseEvent) => {
         const tagName = (event.target as HTMLElement).tagName;
         const computedData = {
           isInput: tagName === 'INPUT',
@@ -68,7 +68,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
 
         onRowClick(event, row, rowProps, computedData);
       },
-      onKeyDown: (event: React.KeyboardEvent) => {
+      onKeyDown: (event: KeyboardEvent) => {
         const targetElement = event.target as HTMLElement;
         const tagName = targetElement.tagName;
         const computedData = {
@@ -120,7 +120,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
             }
             const mappedCell: IMappedCell = {
               [headerData[cellIndex + additionalColsIndexShift].property]: {
-                title: mappedCellTitle as React.ReactNode,
+                title: mappedCellTitle as ReactNode,
                 formatters,
                 props: {
                   isVisible: true,
@@ -163,7 +163,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
     }
 
     return (
-      <React.Fragment>
+      <Fragment>
         {mappedRows && (
           <BaseBody
             {...props}
@@ -174,23 +174,18 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
             className={className}
           />
         )}
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
 
 export const TableBody = ({
   className = '' as string,
-  children = null as React.ReactNode,
+  children = null as ReactNode,
   rowKey = 'secretTableRowKeyId' as string,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   onRow = (...args: any) => ({}),
-  onRowClick = (
-    event: React.MouseEvent | React.KeyboardEvent,
-    row: IRow,
-    rowProps: IExtraRowData,
-    computedData: IComputedData
-  ) =>
+  onRowClick = (event: MouseEvent | KeyboardEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) =>
     /* eslint-enable @typescript-eslint/no-unused-vars */
     undefined as OnRowClick,
   ...props

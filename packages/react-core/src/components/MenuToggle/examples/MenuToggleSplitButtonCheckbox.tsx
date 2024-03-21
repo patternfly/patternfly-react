@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { MenuToggleCheckbox, MenuToggle } from '@patternfly/react-core';
 
-export const MenuToggleSplitButtonCheckbox: React.FunctionComponent = () => (
-  <React.Fragment>
+export const MenuToggleSplitButtonCheckbox: FunctionComponent = () => (
+  <Fragment>
     <MenuToggle
       splitButtonOptions={{
         items: [<MenuToggleCheckbox id="split-button-checkbox-example" key="split-checkbox" aria-label="Select all" />]
@@ -23,5 +23,5 @@ export const MenuToggleSplitButtonCheckbox: React.FunctionComponent = () => (
       }}
       aria-label="Menu toggle with checkbox split button"
     />
-  </React.Fragment>
+  </Fragment>
 );

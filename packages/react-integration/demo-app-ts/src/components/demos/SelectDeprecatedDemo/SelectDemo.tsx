@@ -15,7 +15,7 @@ import {
   SelectDirection,
   SelectGroup
 } from '@patternfly/react-core/deprecated';
-import React, { Component } from 'react';
+import { MouseEvent, ChangeEvent, RefObject, createRef, Component } from 'react';
 import CartArrowDownIcon from '@patternfly/react-icons/dist/esm/icons/cart-arrow-down-icon';
 import { State } from '../../../common/State';
 
@@ -322,7 +322,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   singleOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -338,7 +338,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   singleRefOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -354,7 +354,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   singleAppendOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -370,7 +370,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   singleDescOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -386,7 +386,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   dividerOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -402,7 +402,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   disabledSingleOnSelect = (
-    _event: React.MouseEvent | React.ChangeEvent,
+    _event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -418,7 +418,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   customSingleOnSelect = (
-    _event: React.MouseEvent | React.ChangeEvent,
+    _event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject | (string | SelectOptionObject)[],
     isPlaceholder?: boolean
   ) => {
@@ -433,7 +433,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  checkOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  checkOnSelect = (_event: MouseEvent | ChangeEvent, selection: string | SelectOptionObject) => {
     const { checkSelected } = this.state;
     if (checkSelected.includes(selection.toString())) {
       this.setState(
@@ -448,7 +448,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  documentBodyOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  documentBodyOnSelect = (_event: MouseEvent | ChangeEvent, selection: string | SelectOptionObject) => {
     const { menuDocumentBodySelected } = this.state;
     if (menuDocumentBodySelected.includes(selection.toString())) {
       this.setState(
@@ -467,7 +467,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  noBadgeCheckOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  noBadgeCheckOnSelect = (_event: MouseEvent | ChangeEvent, selection: string | SelectOptionObject) => {
     const { noBadgeCheckSelected } = this.state;
     if (noBadgeCheckSelected.includes(selection.toString())) {
       this.setState(
@@ -485,7 +485,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   typeaheadOnSelect = (
-    _event: React.MouseEvent | React.ChangeEvent,
+    _event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject | (string | SelectOptionObject)[],
     isPlaceholder?: boolean
   ) => {
@@ -500,7 +500,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  typeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  typeaheadMultiOnSelect = (_event: MouseEvent | ChangeEvent, selection: string | SelectOptionObject) => {
     const { typeaheadMultiSelected } = this.state;
     if (typeaheadMultiSelected.includes(selection.toString())) {
       this.setState(
@@ -519,7 +519,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  cdtypeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  cdtypeaheadMultiOnSelect = (_event: MouseEvent | ChangeEvent, selection: string | SelectOptionObject) => {
     const { cdtypeaheadMultiSelected } = this.state;
     if (cdtypeaheadMultiSelected.includes(selection.toString())) {
       this.setState(
@@ -539,7 +539,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   lbltypeaheadSelect = (
-    _event: React.MouseEvent | React.ChangeEvent,
+    _event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -557,7 +557,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   plainTypeaheadMultiOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject
   ) => {
     const { plainTypeaheadMultiSelected } = this.state;
@@ -579,7 +579,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   customTypeaheadMultiOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject
   ) => {
     const { customTypeaheadMultiSelected } = this.state;
@@ -601,7 +601,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   disabledFirstItemOnSelect = (
-    _event: React.MouseEvent | React.ChangeEvent,
+    _event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -712,7 +712,7 @@ export class SelectDemo extends Component<SelectDemoState> {
           <Select
             id="single-ref-select-component"
             toggleId="single-ref-select"
-            toggleRef={React.createRef() as React.RefObject<HTMLButtonElement>}
+            toggleRef={createRef() as RefObject<HTMLButtonElement>}
             variant={SelectVariant.single}
             aria-label="Select Input"
             onToggle={this.singleRefOnToggle}

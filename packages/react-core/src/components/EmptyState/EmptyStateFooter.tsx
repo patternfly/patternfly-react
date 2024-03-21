@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
-export interface EmptyStateFooterProps extends React.HTMLProps<HTMLDivElement> {
+export interface EmptyStateFooterProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the empty state footer */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the empty state footer */
   className?: string;
 }
 
-export const EmptyStateFooter: React.FunctionComponent<EmptyStateFooterProps> = ({
+export const EmptyStateFooter: FunctionComponent<EmptyStateFooterProps> = ({
   children,
   className,
   ...props

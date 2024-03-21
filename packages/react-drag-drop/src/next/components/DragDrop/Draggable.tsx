@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DragButton } from './DragButton';
 
-export interface DraggableProps extends React.HTMLProps<HTMLDivElement> {
+export interface DraggableProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside DragDrop */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Class to add to outer div */
   className?: string;
   /** @hide Id of the sortable context. */
@@ -16,7 +16,7 @@ export interface DraggableProps extends React.HTMLProps<HTMLDivElement> {
   useDragButton?: boolean;
 }
 
-export const Draggable: React.FunctionComponent<DraggableProps> = ({
+export const Draggable: FunctionComponent<DraggableProps> = ({
   children,
   id,
   className,

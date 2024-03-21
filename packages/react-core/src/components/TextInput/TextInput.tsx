@@ -1,4 +1,14 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  FormEvent,
+  RefObject,
+  ReactNode,
+  Ref,
+  MutableRefObject,
+  createRef,
+  Component,
+  forwardRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
@@ -34,7 +44,7 @@ export interface TextInputExpandedObj {
 }
 
 export interface TextInputProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'>,
+  extends Omit<HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'>,
     OUIAProps {
   /** Additional classes added to the text input. */
   className?: string;
@@ -54,7 +64,7 @@ export interface TextInputProps
    */
   validated?: 'success' | 'warning' | 'error' | 'default';
   /** A callback for when the text input value changes. */
-  onChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
+  onChange?: (event: FormEvent<HTMLInputElement>, value: string) => void;
   /** Type that the text input accepts. */
   type?:
     | 'text'
@@ -75,7 +85,7 @@ export interface TextInputProps
   /** Aria-label. The text input requires an associated id or aria-label. */
   'aria-label'?: string;
   /** @hide A reference object to attach to the text input box. */
-  innerRef?: React.RefObject<any>;
+  innerRef?: RefObject<any>;
   /** @deprecated Use isStartTruncated instead. Trim text at start */
   isLeftTruncated?: boolean;
   /** Trim text at start */
@@ -85,7 +95,7 @@ export interface TextInputProps
   /** Callback function when text input is blurred (focus leaves) */
   onBlur?: (event?: any) => void;
   /** Custom icon to render. If the validated prop is also passed, this will render an icon in addition to a validated icon. */
-  customIcon?: React.ReactNode;
+  customIcon?: ReactNode;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -97,7 +107,7 @@ interface TextInputState {
 }
 
 // eslint-disable-next-line patternfly-react/no-anonymous-functions
-export class TextInputBase extends React.Component<TextInputProps, TextInputState> {
+export class TextInputBase extends Component<TextInputProps, TextInputState> {
   static displayName = 'TextInputBase';
   static defaultProps: TextInputProps = {
     'aria-label': null,
@@ -111,7 +121,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
     onChange: (): any => undefined,
     ouiaSafe: true
   };
-  inputRef = React.createRef<HTMLInputElement>();
+  inputRef = createRef<HTMLInputElement>();
   observer: any = () => {};
 
   constructor(props: TextInputProps) {
@@ -125,7 +135,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
     };
   }
 
-  handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+  handleChange = (event: FormEvent<HTMLInputElement>) => {
     if (this.props.onChange) {
       this.props.onChange(event, event.currentTarget.value);
     }
@@ -250,7 +260,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
     typeof value === 'string' ? value.replace(/\n/g, ' ') : value;
 }
 
-export const TextInput = React.forwardRef((props: TextInputProps, ref: React.Ref<HTMLInputElement>) => (
-  <TextInputBase {...props} innerRef={ref as React.MutableRefObject<any>} />
+export const TextInput = forwardRef((props: TextInputProps, ref: Ref<HTMLInputElement>) => (
+  <TextInputBase {...props} innerRef={ref as MutableRefObject<any>} />
 ));
 TextInput.displayName = 'TextInput';

@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent, useContext } from 'react';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 import { MultipleFileUploadContext } from './MultipleFileUpload';
 import { Button } from '../Button';
 
-export interface MultipleFileUploadButtonProps extends React.HTMLProps<HTMLDivElement> {
+export interface MultipleFileUploadButtonProps extends HTMLProps<HTMLDivElement> {
   /** Class to add to outer div */
   className?: string;
   /** Aria-label for the button */
@@ -13,7 +13,7 @@ export interface MultipleFileUploadButtonProps extends React.HTMLProps<HTMLDivEl
   browseButtonText?: string;
 }
 
-export const MultipleFileUploadButton: React.FunctionComponent<MultipleFileUploadButtonProps> = ({
+export const MultipleFileUploadButton: FunctionComponent<MultipleFileUploadButtonProps> = ({
   className,
   'aria-label': ariaLabel,
   browseButtonText = 'Upload',
@@ -25,7 +25,7 @@ export const MultipleFileUploadButton: React.FunctionComponent<MultipleFileUploa
       "For accessibility reasons an aria-label should be specified on MultipleFileUploadButton if a browseButtonText isn't"
     );
   }
-  const { open } = React.useContext(MultipleFileUploadContext);
+  const { open } = useContext(MultipleFileUploadContext);
 
   return (
     <div className={css(styles.multipleFileUploadUpload, className)} {...props}>

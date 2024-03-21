@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Tile } from '@patternfly/react-core';
 
-export const TileBasic: React.FunctionComponent = () => (
+export const TileBasic: FunctionComponent = () => (
   <div role="listbox" aria-label="Basic tiles">
     <Tile title="Default" isSelected={false} />
     <Tile title="Selected" isSelected />

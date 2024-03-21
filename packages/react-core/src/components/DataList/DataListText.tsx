@@ -1,16 +1,16 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Tooltip } from '../Tooltip';
 import { DataListWrapModifier } from './DataList';
 
-export interface DataListTextProps extends React.HTMLProps<HTMLDivElement> {
+export interface DataListTextProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered within the data list text */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the data list text */
   className?: string;
   /** Determines which element to render as a data list text. Usually div or span */
-  component?: React.ReactNode;
+  component?: ReactNode;
   /** Determines which wrapping modifier to apply to the data list text */
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
   /** text to display on the tooltip */
@@ -19,7 +19,7 @@ export interface DataListTextProps extends React.HTMLProps<HTMLDivElement> {
   onMouseEnter?: (event: any) => void;
 }
 
-export const DataListText: React.FunctionComponent<DataListTextProps> = ({
+export const DataListText: FunctionComponent<DataListTextProps> = ({
   children = null,
   className = '',
   component = 'span',
@@ -30,7 +30,7 @@ export const DataListText: React.FunctionComponent<DataListTextProps> = ({
 }: DataListTextProps) => {
   const Component = component as any;
 
-  const [tooltip, setTooltip] = React.useState('');
+  const [tooltip, setTooltip] = useState('');
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       setTooltip(tooltipProp || event.target.innerHTML);

@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 
-export const SidebarStaticPanel: React.FunctionComponent = () => (
+export const SidebarStaticPanel: FunctionComponent = () => (
   <Sidebar style={{ height: '200px', overflow: 'auto' }} tabIndex={0}>
     <SidebarPanel variant="static">Static sidebar panel</SidebarPanel>
     <SidebarContent>

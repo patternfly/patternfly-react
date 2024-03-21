@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Ref, useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -15,9 +15,9 @@ import {
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const CardTitleInHeader: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
+export const CardTitleInHeader: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
 
   const onSelect = () => {
     setIsOpen(!isOpen);
@@ -51,7 +51,7 @@ export const CardTitleInHeader: React.FunctionComponent = () => {
     <>
       <Dropdown
         onSelect={onSelect}
-        toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+        toggle={(toggleRef: Ref<MenuToggleElement>) => (
           <MenuToggle
             ref={toggleRef}
             isExpanded={isOpen}

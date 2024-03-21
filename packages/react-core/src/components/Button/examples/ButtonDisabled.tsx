@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Button } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const ButtonDisabled: React.FunctionComponent = () => (
-  <React.Fragment>
+export const ButtonDisabled: FunctionComponent = () => (
+  <Fragment>
     <Button isDisabled>Primary disabled</Button> <Button isDisabled>Secondary disabled</Button>{' '}
     <Button variant="secondary" isDanger isDisabled>
       Danger secondary disabled
@@ -35,5 +35,5 @@ export const ButtonDisabled: React.FunctionComponent = () => (
     <Button isDisabled variant="control">
       Control disabled
     </Button>
-  </React.Fragment>
+  </Fragment>
 );

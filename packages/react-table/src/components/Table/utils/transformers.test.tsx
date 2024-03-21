@@ -1,3 +1,4 @@
+import { type ReactElement } from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -73,7 +74,7 @@ const testCellActions = async ({
   if (!actions || actions.length === 0) {
     expect(returnedData.children).toBeUndefined();
   } else {
-    const { container } = render(returnedData.children as React.ReactElement<any>);
+    const { container } = render(returnedData.children as ReactElement<any>);
     await user.click(screen.getAllByRole('button')[0]);
     await waitFor(() =>
       // eslint-disable-next-line testing-library/no-container
@@ -96,7 +97,7 @@ describe('Transformer functions', () => {
 
       const user = userEvent.setup();
 
-      render(returnedData.children as React.ReactElement<any>);
+      render(returnedData.children as ReactElement<any>);
 
       await user.type(screen.getByRole('textbox'), 'a');
       expect(onSelect).toHaveBeenCalledTimes(1);
@@ -112,7 +113,7 @@ describe('Transformer functions', () => {
       expect(returnedData).toMatchObject({ className: tableStyles.tableCheck });
       const user = userEvent.setup();
 
-      render(returnedData.children as React.ReactElement<any>);
+      render(returnedData.children as ReactElement<any>);
 
       await user.type(screen.getByRole('textbox'), 'a');
       expect(onSelect).toHaveBeenCalledTimes(1);
@@ -138,7 +139,7 @@ describe('Transformer functions', () => {
 
       const user = userEvent.setup();
 
-      render(returnedData.children as React.ReactElement<any>);
+      render(returnedData.children as ReactElement<any>);
       await user.click(screen.getByRole('button'));
       expect(onSort.mock.calls).toHaveLength(1);
     });
@@ -151,7 +152,7 @@ describe('Transformer functions', () => {
 
       const user = userEvent.setup();
 
-      render(returnedData.children as React.ReactElement<any>);
+      render(returnedData.children as ReactElement<any>);
       await user.click(screen.getByRole('button'));
       expect(onSort.mock.calls).toHaveLength(1);
     });
@@ -164,7 +165,7 @@ describe('Transformer functions', () => {
 
       const user = userEvent.setup();
 
-      render(returnedData.children as React.ReactElement<any>);
+      render(returnedData.children as ReactElement<any>);
       await user.click(screen.getByRole('button'));
       expect(onSort.mock.calls).toHaveLength(1);
     });
@@ -236,7 +237,7 @@ describe('Transformer functions', () => {
 
     const user = userEvent.setup();
 
-    render(returnedData.children as React.ReactElement<any>);
+    render(returnedData.children as ReactElement<any>);
     await user.click(screen.getByRole('button'));
     expect(onCollapse.mock.calls).toHaveLength(1);
   });
@@ -260,7 +261,7 @@ describe('Transformer functions', () => {
         rowData: { parent: 1 },
         column: { extraParams: {} }
       } as IExtra);
-      render(returned as React.ReactElement<any>);
+      render(returned as ReactElement<any>);
       expect(screen.getByText('test').parentElement).toBeInTheDocument();
     });
 
@@ -307,7 +308,7 @@ describe('Transformer functions', () => {
     const returned = headerCol('some-id')('value', { rowIndex: 0 });
     expect(returned).toMatchObject({ component: 'th' });
 
-    render(returned.children as React.ReactElement<any>);
+    render(returned.children as ReactElement<any>);
     expect(screen.getByText('value')).toBeInTheDocument();
   });
 

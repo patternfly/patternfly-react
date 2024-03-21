@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement, Fragment } from 'react';
 import { PaddingProps, Line, StringOrNumberOrCallback } from 'victory-core';
 import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
@@ -38,7 +38,7 @@ export interface ChartBulletGroupTitleProps {
   /**
    * The divider component to render with the chart
    */
-  dividerComponent?: React.ReactElement<any>;
+  dividerComponent?: ReactElement<any>;
   /**
    * The height props specifies the height the svg viewBox of the chart container.
    * This value should be given as a number of pixels
@@ -76,7 +76,7 @@ export interface ChartBulletGroupTitleProps {
    *
    * Note: Default label properties may be applied
    */
-  subTitleComponent?: React.ReactElement<any>;
+  subTitleComponent?: ReactElement<any>;
   /**
    * The theme prop takes a style object with nested data, labels, and parent objects.
    * You can create this object yourself, or you can use a theme provided by
@@ -104,7 +104,7 @@ export interface ChartBulletGroupTitleProps {
    *
    * Note: Default label properties may be applied
    */
-  titleComponent?: React.ReactElement<any>;
+  titleComponent?: ReactElement<any>;
   /**
    * The width props specifies the width of the svg viewBox of the chart container
    * This value should be given as a number of pixels
@@ -112,7 +112,7 @@ export interface ChartBulletGroupTitleProps {
   width?: number;
 }
 
-export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitleProps> = ({
+export const ChartBulletGroupTitle: FunctionComponent<ChartBulletGroupTitleProps> = ({
   ariaDesc,
   ariaTitle,
   capHeight = 1.1,
@@ -153,7 +153,7 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
         ? titleSize.height + subTitleSize.height + labelPadding.top + labelPadding.bottom
         : titleSize.height + labelPadding.top + labelPadding.bottom;
 
-    return React.cloneElement(dividerComponent, {
+    return cloneElement(dividerComponent, {
       x1: defaultPadding.left,
       x2: width - defaultPadding.right,
       y1: defaultPadding.top + dy,
@@ -167,7 +167,7 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   const getTitle = () => {
     const titleProps = titleComponent ? titleComponent.props : {};
     const showBoth = title && subTitle;
-    return React.cloneElement(titleComponent, {
+    return cloneElement(titleComponent, {
       ...(showBoth && { capHeight }),
       ...(name && { id: () => `${name}-${(titleComponent as any).type.displayName}` }),
       style: [ChartBulletStyles.label.groupTitle, ChartBulletStyles.label.subTitle],
@@ -188,10 +188,10 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   };
 
   const groupTitle = Boolean(title) && (
-    <React.Fragment>
+    <Fragment>
       {getTitle()}
       {getDivider()}
-    </React.Fragment>
+    </Fragment>
   );
 
   return standalone ? (
@@ -199,7 +199,7 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
       {groupTitle}
     </ChartContainer>
   ) : (
-    <React.Fragment>{groupTitle}</React.Fragment>
+    <Fragment>{groupTitle}</Fragment>
   );
 };
 ChartBulletGroupTitle.displayName = 'ChartBulletGroupTitle';

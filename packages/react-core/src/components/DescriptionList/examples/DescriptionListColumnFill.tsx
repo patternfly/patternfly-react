@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   Button,
   DescriptionList,
@@ -8,7 +8,7 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListColumnFill: React.FunctionComponent = () => (
+export const DescriptionListColumnFill: FunctionComponent = () => (
   <DescriptionList isFillColumns columnModifier={{ default: '2Col', lg: '3Col' }}>
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>

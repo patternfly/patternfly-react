@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, type ElementType, type HTMLProps, type FormEvent as ReactFormEvent, type ReactNode } from 'react';
 import styles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -6,7 +6,7 @@ import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
 import { ASTERISK } from '../../helpers/htmlConstants';
 
 export interface CheckboxProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>,
+  extends Omit<HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>,
     OUIAProps {
   /** Additional classes added to the checkbox wrapper. This wrapper will be div element by default. It will be a label element if
    * isLabelWrapped is true, or it can be overridden by any element specified in the component prop.
@@ -28,19 +28,19 @@ export interface CheckboxProps
   isChecked?: boolean | null;
   checked?: boolean;
   /** A callback for when the checkbox selection changes. */
-  onChange?: (event: React.FormEvent<HTMLInputElement>, checked: boolean) => void;
+  onChange?: (event: ReactFormEvent<HTMLInputElement>, checked: boolean) => void;
   /** Label text of the checkbox. */
-  label?: React.ReactNode;
+  label?: ReactNode;
   /** Id of the checkbox. */
   id: string;
   /** Aria-label of the checkbox. */
   'aria-label'?: string;
   /** Description text of the checkbox. */
-  description?: React.ReactNode;
+  description?: ReactNode;
   /** Body text of the checkbox */
-  body?: React.ReactNode;
+  body?: ReactNode;
   /** Sets the checkbox wrapper component to render. Defaults to "div". If set to "label", behaves the same as if isLabelWrapped prop was specified. */
-  component?: React.ElementType;
+  component?: ElementType;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -54,7 +54,7 @@ interface CheckboxState {
   ouiaStateId: string;
 }
 
-class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
+class Checkbox extends Component<CheckboxProps, CheckboxState> {
   static displayName = 'Checkbox';
   static defaultProps: PickOptional<CheckboxProps> = {
     className: '',
@@ -74,7 +74,7 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
     };
   }
 
-  private handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
+  private handleChange = (event: ReactFormEvent<HTMLInputElement>): void => {
     this.props.onChange(event, event.currentTarget.checked);
   };
 

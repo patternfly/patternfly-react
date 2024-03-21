@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/InputGroup/input-group';
 import { css } from '@patternfly/react-styles';
 
-export interface InputGroupItemProps extends React.HTMLProps<HTMLDivElement> {
+export interface InputGroupItemProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the input group item. */
   className?: string;
   /** Content rendered inside the input group item. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Enables box styling to the input group item */
   isBox?: boolean;
   /** Flag to indicate if the input group item is plain. */
@@ -17,7 +17,7 @@ export interface InputGroupItemProps extends React.HTMLProps<HTMLDivElement> {
   isDisabled?: boolean;
 }
 
-export const InputGroupItem: React.FunctionComponent<InputGroupItemProps> = ({
+export const InputGroupItem: FunctionComponent<InputGroupItemProps> = ({
   className,
   children,
   isFill = false,

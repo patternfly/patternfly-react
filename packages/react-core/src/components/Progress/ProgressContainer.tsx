@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, useState, Fragment } from 'react';
 import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipPosition } from '../Tooltip';
@@ -21,15 +21,15 @@ export enum ProgressVariant {
   warning = 'warning'
 }
 
-export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label' | 'title'> {
+export interface ProgressContainerProps extends Omit<HTMLProps<HTMLDivElement>, 'label' | 'title'> {
   /** Properties needed for aria support */
   progressBarAriaProps?: AriaProps;
   /** Progress component DOM ID. */
   parentId: string;
   /** Progress title. The isTitleTruncated property will only affect string titles. Node title truncation must be handled manually. */
-  title?: React.ReactNode;
+  title?: ReactNode;
   /** Label to indicate what progress is showing. */
-  label?: React.ReactNode;
+  label?: ReactNode;
   /** Type of progress status. */
   variant?: 'danger' | 'success' | 'warning';
   /** Location of progress value. */
@@ -57,7 +57,7 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
   /** Content which can be used to convey additional information about the progress component.
    * We recommend the helper text component as it was designed for this purpose.
    */
-  helperText?: React.ReactNode;
+  helperText?: ReactNode;
 }
 
 const variantToIcon = {
@@ -66,7 +66,7 @@ const variantToIcon = {
   warning: ExclamationTriangleIcon
 };
 
-export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> = ({
+export const ProgressContainer: FunctionComponent<ProgressContainerProps> = ({
   progressBarAriaProps,
   value,
   title = '',
@@ -79,7 +79,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   helperText
 }: ProgressContainerProps) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
-  const [tooltip, setTooltip] = React.useState('');
+  const [tooltip, setTooltip] = useState('');
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       setTooltip(title || event.target.innerHTML);
@@ -102,7 +102,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       {title &&
         (tooltip ? (
           <Tooltip position={tooltipPosition} content={tooltip} isVisible>
@@ -127,7 +127,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
         {measureLocation === ProgressMeasureLocation.inside && `${value}%`}
       </ProgressBar>
       {helperText && <ProgressHelperText>{helperText}</ProgressHelperText>}
-    </React.Fragment>
+    </Fragment>
   );
 };
 ProgressContainer.displayName = 'ProgressContainer';

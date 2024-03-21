@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Login/login';
 
-export interface LoginMainBodyProps extends React.HTMLProps<HTMLDivElement> {
+export interface LoginMainBodyProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the login main body */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the login main body */
   className?: string;
 }
 
-export const LoginMainBody: React.FunctionComponent<LoginMainBodyProps> = ({
+export const LoginMainBody: FunctionComponent<LoginMainBodyProps> = ({
   children = null,
   className = '',
   ...props

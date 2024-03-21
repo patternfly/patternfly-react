@@ -1,4 +1,4 @@
-import React from 'react';
+import { useContext, useEffect } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
@@ -162,10 +162,10 @@ describe('Card', () => {
   test('card applies the supplied card title as the aria label of the hidden input', () => {
     // this component is used to mock the CardTitle's title registry behavior to keep this a pure unit test
     const MockCardTitle = ({ children }) => {
-      const { registerTitleId } = React.useContext(CardContext);
+      const { registerTitleId } = useContext(CardContext);
       const id = 'card-title-id';
 
-      React.useEffect(() => {
+      useEffect(() => {
         registerTitleId(id);
       });
 
@@ -186,10 +186,10 @@ describe('Card', () => {
   test('card prioritizes selectableInputAriaLabel over card title labelling via card title', () => {
     // this component is used to mock the CardTitle's title registry behavior to keep this a pure unit test
     const MockCardTitle = ({ children }) => {
-      const { registerTitleId } = React.useContext(CardContext);
+      const { registerTitleId } = useContext(CardContext);
       const id = 'card-title-id';
 
-      React.useEffect(() => {
+      useEffect(() => {
         registerTitleId(id);
       });
 

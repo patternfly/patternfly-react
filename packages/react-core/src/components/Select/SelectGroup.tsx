@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import { MenuGroupProps, MenuGroup } from '../Menu';
 
@@ -7,14 +7,14 @@ import { MenuGroupProps, MenuGroup } from '../Menu';
  */
 export interface SelectGroupProps extends Omit<MenuGroupProps, 'ref'> {
   /** Anything which can be rendered in a select group */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Classes applied to root element of select group */
   className?: string;
   /** Label of the select group */
   label?: string;
 }
 
-export const SelectGroup: React.FunctionComponent<SelectGroupProps> = ({
+export const SelectGroup: FunctionComponent<SelectGroupProps> = ({
   children,
   className,
   label,

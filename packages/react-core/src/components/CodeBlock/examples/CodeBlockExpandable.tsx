@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import {
   CodeBlock,
   CodeBlockAction,
@@ -10,9 +10,9 @@ import {
 } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
-export const ExpandableCodeBlock: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
-  const [copied, setCopied] = React.useState(false);
+export const ExpandableCodeBlock: FunctionComponent = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const onToggle = (isExpanded) => {
     setIsExpanded(isExpanded);
@@ -44,7 +44,7 @@ connectionConfig:
 url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
 
   const actions = (
-    <React.Fragment>
+    <Fragment>
       <CodeBlockAction>
         <ClipboardCopyButton
           id="expandable-copy-button"
@@ -64,7 +64,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
           <PlayIcon />
         </Button>
       </CodeBlockAction>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

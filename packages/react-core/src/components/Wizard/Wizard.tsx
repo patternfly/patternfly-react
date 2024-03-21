@@ -1,4 +1,4 @@
-import React from 'react';
+import { HTMLProps, ReactNode, MouseEvent, useState, useRef, useEffect, useMemo } from 'react';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
@@ -21,11 +21,11 @@ import { WizardNavInternal } from './WizardNavInternal';
  * The WizardContext provided by default gives any child of wizard access to those resources.
  */
 
-export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
+export interface WizardProps extends HTMLProps<HTMLDivElement> {
   /** Step components */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Wizard header */
-  header?: React.ReactNode;
+  header?: ReactNode;
   /** Wizard footer */
   footer?: WizardFooterType;
   /** Wizard navigation */
@@ -46,15 +46,15 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   isProgressive?: boolean;
   /** Callback function when navigating between steps */
   onStepChange?: (
-    event: React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent<HTMLButtonElement>,
     currentStep: WizardStepType,
     prevStep: WizardStepType,
     scope: WizardStepChangeScope
   ) => void | Promise<void>;
   /** Callback function to save at the end of the wizard, if not specified uses onClose */
-  onSave?: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
+  onSave?: (event: MouseEvent<HTMLButtonElement>) => void | Promise<void>;
   /** Callback function to close the wizard */
-  onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClose?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const Wizard = ({
@@ -74,18 +74,18 @@ export const Wizard = ({
   onClose,
   ...wrapperProps
 }: WizardProps) => {
-  const [activeStepIndex, setActiveStepIndex] = React.useState(startIndex);
+  const [activeStepIndex, setActiveStepIndex] = useState(startIndex);
   const initialSteps = buildSteps(children);
-  const firstStepRef = React.useRef(initialSteps[startIndex - 1]);
+  const firstStepRef = useRef(initialSteps[startIndex - 1]);
 
   // When the startIndex maps to a parent step, focus on the first sub-step
-  React.useEffect(() => {
+  useEffect(() => {
     if (isWizardParentStep(firstStepRef.current)) {
       setActiveStepIndex(startIndex + 1);
     }
   }, [startIndex]);
 
-  const goToNextStep = (event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[] = initialSteps) => {
+  const goToNextStep = (event: MouseEvent<HTMLButtonElement>, steps: WizardStepType[] = initialSteps) => {
     const newStep = steps.find((step) => step.index > activeStepIndex && isStepEnabled(steps, step));
 
     if (activeStepIndex >= steps.length || !newStep?.index) {
@@ -96,7 +96,7 @@ export const Wizard = ({
     onStepChange?.(event, newStep, steps[activeStepIndex - 1], WizardStepChangeScope.Next);
   };
 
-  const goToPrevStep = (event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[] = initialSteps) => {
+  const goToPrevStep = (event: MouseEvent<HTMLButtonElement>, steps: WizardStepType[] = initialSteps) => {
     const newStep = [...steps]
       .reverse()
       .find((step: WizardStepType) => step.index < activeStepIndex && isStepEnabled(steps, step));
@@ -106,7 +106,7 @@ export const Wizard = ({
   };
 
   const goToStepByIndex = (
-    event: React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent<HTMLButtonElement>,
     steps: WizardStepType[] = initialSteps,
     index: number
   ) => {
@@ -185,9 +185,9 @@ const WizardInternal = ({
   isProgressive
 }: Pick<WizardProps, 'nav' | 'navAriaLabel' | 'isVisitRequired' | 'isProgressive'>) => {
   const { activeStep, steps, footer, goToStepByIndex } = useWizardContext();
-  const [isNavExpanded, setIsNavExpanded] = React.useState(false);
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
 
-  const wizardNav = React.useMemo(() => {
+  const wizardNav = useMemo(() => {
     if (isCustomWizardNav(nav)) {
       return typeof nav === 'function' ? nav(isNavExpanded, steps, activeStep, goToStepByIndex) : nav;
     }

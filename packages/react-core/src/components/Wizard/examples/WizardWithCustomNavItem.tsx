@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Wizard, WizardStep } from '@patternfly/react-core';
 
-export const WizardWithCustomNavItem: React.FunctionComponent = () => (
+export const WizardWithCustomNavItem: FunctionComponent = () => (
   <Wizard height={400} title="Custom navigation item wizard">
     <WizardStep name="Step 1" id="custom-nav-item-first-step">
       Step 1 content

@@ -1,4 +1,13 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  MouseEvent,
+  ChangeEvent,
+  KeyboardEvent,
+  RefObject,
+  FunctionComponent,
+  useContext
+} from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { css } from '@patternfly/react-styles';
@@ -7,9 +16,9 @@ import dragStyles from '@patternfly/react-styles/css/components/DragDrop/drag-dr
 import { DragButton } from './DragButton';
 import { DualListSelectorListContext } from '@patternfly/react-core/dist/esm/components/DualListSelector';
 
-export interface DraggableDualListSelectorListItemProps extends React.HTMLProps<HTMLLIElement> {
+export interface DraggableDualListSelectorListItemProps extends HTMLProps<HTMLLIElement> {
   /** Content rendered inside DragDrop */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Don't wrap the component in a div. Requires passing a single child. */
   hasNoWrapper?: boolean;
   /** Class to add to outer div */
@@ -19,16 +28,16 @@ export interface DraggableDualListSelectorListItemProps extends React.HTMLProps<
   /** Flag indicating the list item is currently selected. */
   isSelected?: boolean;
   /** Callback fired when an option is selected.  */
-  onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent, id?: string) => void;
+  onOptionSelect?: (e: MouseEvent | ChangeEvent | KeyboardEvent, id?: string) => void;
   /** @hide Internal field used to keep track of order of unfiltered options. */
   orderIndex?: number;
   /** @hide Forwarded ref */
-  innerRef?: React.RefObject<HTMLLIElement>;
+  innerRef?: RefObject<HTMLLIElement>;
   /** Flag indicating if the dual list selector is in a disabled state */
   isDisabled?: boolean;
 }
 
-export const DraggableDualListSelectorListItem: React.FunctionComponent<DraggableDualListSelectorListItemProps> = ({
+export const DraggableDualListSelectorListItem: FunctionComponent<DraggableDualListSelectorListItemProps> = ({
   children,
   id,
   className,
@@ -42,7 +51,7 @@ export const DraggableDualListSelectorListItem: React.FunctionComponent<Draggabl
     animateLayoutChanges: () => false
   });
 
-  const { setFocusedOption } = React.useContext(DualListSelectorListContext);
+  const { setFocusedOption } = useContext(DualListSelectorListContext);
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -68,14 +77,14 @@ export const DraggableDualListSelectorListItem: React.FunctionComponent<Draggabl
         <DragButton className={css(styles.dualListSelectorDraggable)} {...attributes} {...listeners} />
         <span
           className={css(styles.dualListSelectorItem)}
-          onKeyDown={(e: React.KeyboardEvent) => {
+          onKeyDown={(e: KeyboardEvent) => {
             if (e.key === ' ' || e.key === 'Enter') {
               (document.activeElement as HTMLElement).click();
               e.preventDefault();
             }
           }}
           aria-selected={isSelected}
-          onClick={(e: React.MouseEvent) => {
+          onClick={(e: MouseEvent) => {
             setFocusedOption(id);
             onOptionSelect(e, id);
           }}

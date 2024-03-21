@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { IRow, ICell } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
@@ -14,7 +14,7 @@ import {
 } from '@patternfly/react-core';
 import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
-export class EmptyStateTable extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
+export class EmptyStateTable extends Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
   static displayName = 'EmptyStateTable';
   constructor(props: TableProps) {
     super(props);

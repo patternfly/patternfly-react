@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../../../components/Button';
@@ -10,7 +10,7 @@ export interface WizardHeaderProps {
   /** Title of the wizard */
   title: string;
   /** Description of the wizard */
-  description?: React.ReactNode;
+  description?: ReactNode;
   /** Component type of the description */
   descriptionComponent?: 'div' | 'p';
   /** Flag indicating whether the close button should be in the header */
@@ -23,7 +23,7 @@ export interface WizardHeaderProps {
   descriptionId?: string;
 }
 
-export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
+export const WizardHeader: FunctionComponent<WizardHeaderProps> = ({
   onClose = () => undefined,
   title,
   description,

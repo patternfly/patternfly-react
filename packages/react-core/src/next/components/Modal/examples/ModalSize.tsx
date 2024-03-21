@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, useState, Fragment } from 'react';
 import { Button, Radio } from '@patternfly/react-core';
 import { Modal, ModalBody, ModalFooter, ModalHeader, ModalVariant } from '@patternfly/react-core/next';
 
-export const ModalSize: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [selectedVariant, setSelectedVariant] = React.useState(ModalVariant.small);
+export const ModalSize: FunctionComponent = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedVariant, setSelectedVariant] = useState(ModalVariant.small);
 
   const capitalize = (input: string) => input[0].toUpperCase() + input.substring(1);
   const formatSizeVariantName = (variant: string) => capitalize(variant);
@@ -22,12 +22,12 @@ export const ModalSize: React.FunctionComponent = () => {
     />
   ));
 
-  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
+  const handleModalToggle = (_event: KeyboardEvent | MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       {renderSizeOptions}
       <br />
       <Button variant="primary" onClick={handleModalToggle}>
@@ -58,6 +58,6 @@ export const ModalSize: React.FunctionComponent = () => {
           </Button>
         </ModalFooter>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

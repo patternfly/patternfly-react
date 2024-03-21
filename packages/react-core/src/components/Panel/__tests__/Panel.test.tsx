@@ -1,10 +1,9 @@
-import * as React from 'react';
+import { RefObject, createRef, useState, useEffect } from 'react';
 import { render, screen } from '@testing-library/react';
 import { Panel } from '../Panel';
 import { PanelMain } from '../PanelMain';
 import { PanelMainBody } from '../PanelMainBody';
 import userEvent from '@testing-library/user-event';
-import { useEffect } from 'react';
 import styles from '@patternfly/react-styles/css/components/Panel/panel';
 
 test('Renders without children', () => {
@@ -53,10 +52,10 @@ test(`Renders with class name ${styles.modifiers.scrollable} when isScrollable i
 
 test('Renders with ref', async () => {
   const user = userEvent.setup();
-  const panelRef: React.RefObject<HTMLDivElement> = React.createRef();
+  const panelRef: RefObject<HTMLDivElement> = createRef();
 
   const BasicPanel = () => {
-    const [lastClickWasInPanel, setLastClickWasInPanel] = React.useState(false);
+    const [lastClickWasInPanel, setLastClickWasInPanel] = useState(false);
 
     const handleClick = (event) => {
       if (panelRef.current && panelRef.current.contains(event.target)) {

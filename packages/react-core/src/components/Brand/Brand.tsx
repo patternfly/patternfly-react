@@ -1,14 +1,13 @@
-import * as React from 'react';
+import { ImgHTMLAttributes, DetailedHTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Brand/brand';
 import { setBreakpointCssVars } from '../../helpers';
 import cssBrandHeight from '@patternfly/react-tokens/dist/esm/c_brand_Height';
 import cssBrandWidth from '@patternfly/react-tokens/dist/esm/c_brand_Width';
 
-export interface BrandProps
-  extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
+export interface BrandProps extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
   /** Transforms the Brand into a <picture> element from an <img> element. Container for <source> child elements. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the either type of Brand. */
   className?: string;
   /** Attribute that specifies the URL of a <img> Brand. For a <picture> Brand this specifies the fallback <img> URL. */
@@ -35,7 +34,7 @@ export interface BrandProps
   };
 }
 
-export const Brand: React.FunctionComponent<BrandProps> = ({
+export const Brand: FunctionComponent<BrandProps> = ({
   className = '',
   src = '',
   alt,

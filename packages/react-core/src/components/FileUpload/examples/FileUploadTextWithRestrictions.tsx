@@ -1,4 +1,9 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type ChangeEvent as ReactChangeEvent,
+  MouseEvent as ReactMouseEvent
+} from 'react';
 import {
   FileUpload,
   Form,
@@ -9,17 +14,17 @@ import {
   DropEvent
 } from '@patternfly/react-core';
 
-export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
-  const [filename, setFilename] = React.useState('');
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [isRejected, setIsRejected] = React.useState(false);
+export const TextFileUploadWithRestrictions: FunctionComponent = () => {
+  const [value, setValue] = useState('');
+  const [filename, setFilename] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isRejected, setIsRejected] = useState(false);
 
   const handleFileInputChange = (_, file: File) => {
     setFilename(file.name);
   };
 
-  const handleTextChange = (_event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => {
+  const handleTextChange = (_event: ReactChangeEvent<HTMLTextAreaElement>, value: string) => {
     setValue(value);
   };
 
@@ -27,7 +32,7 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
     setValue(value);
   };
 
-  const handleClear = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleClear = (_event: ReactMouseEvent<HTMLButtonElement, MouseEvent>) => {
     setFilename('');
     setValue('');
     setIsRejected(false);

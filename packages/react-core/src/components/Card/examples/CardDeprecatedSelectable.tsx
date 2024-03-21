@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, KeyboardEvent, MouseEvent, FormEvent, Ref, useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -13,11 +13,11 @@ import {
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const CardLegacySelectable: React.FunctionComponent = () => {
-  const [selected, setSelected] = React.useState<string>('');
-  const [isKebabOpen, setIsKebabOpen] = React.useState<boolean>(false);
+export const CardLegacySelectable: FunctionComponent = () => {
+  const [selected, setSelected] = useState<string>('');
+  const [isKebabOpen, setIsKebabOpen] = useState<boolean>(false);
 
-  const onKeyDown = (event: React.KeyboardEvent) => {
+  const onKeyDown = (event: KeyboardEvent) => {
     if (event.target !== event.currentTarget) {
       return;
     }
@@ -28,22 +28,22 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
     }
   };
 
-  const onClick = (event: React.MouseEvent) => {
+  const onClick = (event: MouseEvent) => {
     const newSelected = event.currentTarget.id === selected ? '' : event.currentTarget.id;
     setSelected(newSelected);
   };
 
-  const onChange = (_event: React.FormEvent<HTMLInputElement>, labelledById: string) => {
+  const onChange = (_event: FormEvent<HTMLInputElement>, labelledById: string) => {
     const newSelected = labelledById === selected ? '' : labelledById;
     setSelected(newSelected);
   };
 
-  const onToggle = (event: React.MouseEvent) => {
+  const onToggle = (event: MouseEvent) => {
     event?.stopPropagation();
     setIsKebabOpen(!isKebabOpen);
   };
 
-  const onSelect = (event: React.MouseEvent | undefined) => {
+  const onSelect = (event: MouseEvent | undefined) => {
     event?.stopPropagation();
     setIsKebabOpen(!isKebabOpen);
   };
@@ -73,7 +73,7 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
     <>
       <Dropdown
         onSelect={onSelect}
-        toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+        toggle={(toggleRef: Ref<MenuToggleElement>) => (
           <MenuToggle
             ref={toggleRef}
             isExpanded={isKebabOpen}

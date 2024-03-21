@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, RefObject, Component, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
@@ -10,7 +10,7 @@ export enum ToolbarGroupVariant {
   'button-group' = 'button-group'
 }
 
-export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'ref'> {
+export interface ToolbarGroupProps extends Omit<HTMLProps<HTMLDivElement>, 'ref'> {
   /** Classes applied to root element of the data toolbar group */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of group */
@@ -52,14 +52,14 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
     '2xl'?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
   };
   /** Content to be rendered inside the data toolbar group */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Flag that modifies the toolbar group to hide overflow and respond to available space. Used for horizontal navigation. */
   isOverflowContainer?: boolean;
   /** @hide Reference to pass to this group if it has .pf-m-chip-container modifier */
-  innerRef?: React.RefObject<any>;
+  innerRef?: RefObject<any>;
 }
 
-class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
+class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
   render() {
     const {
       visibility,
@@ -107,6 +107,6 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
   }
 }
 
-export const ToolbarGroup = React.forwardRef((props: ToolbarGroupProps, ref: any) => (
+export const ToolbarGroup = forwardRef((props: ToolbarGroupProps, ref: any) => (
   <ToolbarGroupWithRef {...props} innerRef={ref} />
 ));

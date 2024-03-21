@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, ChangeEvent, useState } from 'react';
 import {
   Toolbar,
   ToolbarContent,
@@ -7,7 +7,7 @@ import {
   TreeViewDataItem,
   TreeViewSearch
 } from '@patternfly/react-core';
-export const TreeViewWithSearch: React.FunctionComponent = () => {
+export const TreeViewWithSearch: FunctionComponent = () => {
   const options = [
     {
       name: 'Application launcher',
@@ -72,18 +72,18 @@ export const TreeViewWithSearch: React.FunctionComponent = () => {
     }
   ];
 
-  const [activeItems, setActiveItems] = React.useState<TreeViewDataItem[]>();
-  const [filteredItems, setFilteredItems] = React.useState(options);
-  const [isFiltered, setIsFiltered] = React.useState(false);
+  const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();
+  const [filteredItems, setFilteredItems] = useState(options);
+  const [isFiltered, setIsFiltered] = useState(false);
 
-  const onSelect = (_event: React.MouseEvent, treeViewItem: TreeViewDataItem) => {
+  const onSelect = (_event: MouseEvent, treeViewItem: TreeViewDataItem) => {
     // Ignore folders for selection
     if (treeViewItem && !treeViewItem.children) {
       setActiveItems([treeViewItem]);
     }
   };
 
-  const onSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onSearch = (event: ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value;
     if (input === '') {
       setFilteredItems(options);

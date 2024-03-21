@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, MouseEvent, createRef, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
 import { css } from '@patternfly/react-styles';
 import lineClamp from '@patternfly/react-tokens/dist/esm/c_expandable_section_m_truncate__content_LineClamp';
@@ -14,9 +14,9 @@ export enum ExpandableSectionVariant {
 
 /** The main expandable section component. */
 
-export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> {
+export interface ExpandableSectionProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the expandable section. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the expandable section. */
   className?: string;
   /** Id of the content of the expandable section. When passing in the isDetached property, this
@@ -44,9 +44,9 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   /** Callback function to toggle the expandable section. Detached expandable sections should
    * use the onToggle property of the expandable section toggle sub-component.
    */
-  onToggle?: (event: React.MouseEvent, isExpanded: boolean) => void;
+  onToggle?: (event: MouseEvent, isExpanded: boolean) => void;
   /** React node that appears in the attached toggle in place of the toggleText property. */
-  toggleContent?: React.ReactNode;
+  toggleContent?: ReactNode;
   /** Text that appears in the attached toggle. */
   toggleText?: string;
   /** Text that appears in the attached toggle when collapsed (will override toggleText if
@@ -81,7 +81,7 @@ const setLineClamp = (lines: number, element: HTMLDivElement) => {
   element.style.setProperty(lineClamp.name, lines.toString());
 };
 
-class ExpandableSection extends React.Component<ExpandableSectionProps, ExpandableSectionState> {
+class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSectionState> {
   static displayName = 'ExpandableSection';
   constructor(props: ExpandableSectionProps) {
     super(props);
@@ -93,7 +93,7 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
     };
   }
 
-  expandableContentRef = React.createRef<HTMLDivElement>();
+  expandableContentRef = createRef<HTMLDivElement>();
   observer: any = () => {};
 
   static defaultProps: PickOptional<ExpandableSectionProps> = {

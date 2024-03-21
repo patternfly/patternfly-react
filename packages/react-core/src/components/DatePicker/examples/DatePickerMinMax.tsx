@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
-export const DatePickerMinMax: React.FunctionComponent = () => {
+export const DatePickerMinMax: FunctionComponent = () => {
   const minDate = new Date(2020, 2, 16);
   const maxDate = new Date(2020, 2, 20);
   const rangeValidator = (date: Date) => {

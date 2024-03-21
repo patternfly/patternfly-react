@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
-export const WizardExpandableSteps: React.FunctionComponent = () => {
+export const WizardExpandableSteps: FunctionComponent = () => {
   const steps = [
     {
       name: 'First step',

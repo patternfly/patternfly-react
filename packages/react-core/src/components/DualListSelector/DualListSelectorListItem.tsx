@@ -1,4 +1,17 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  MouseEvent,
+  ChangeEvent,
+  KeyboardEvent,
+  RefObject,
+  FunctionComponent,
+  Ref,
+  MutableRefObject,
+  useRef,
+  useContext,
+  forwardRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { getUniqueId } from '../../helpers';
@@ -10,21 +23,21 @@ import { DualListSelectorListContext } from './DualListSelectorContext';
  * dual list selector panes. This is contained within the DualListSelectorList sub-component.
  */
 
-export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIElement> {
+export interface DualListSelectorListItemProps extends HTMLProps<HTMLLIElement> {
   /** Content rendered inside the dual list selector. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes applied to the dual list selector. */
   className?: string;
   /** Flag indicating the list item is currently selected. */
   isSelected?: boolean;
   /** Callback fired when an option is selected.  */
-  onOptionSelect?: (event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent, id?: string) => void;
+  onOptionSelect?: (event: MouseEvent | ChangeEvent | KeyboardEvent, id?: string) => void;
   /** ID of the option. */
   id?: string;
   /** @hide Internal field used to keep track of order of unfiltered options. */
   orderIndex?: number;
   /** @hide Forwarded ref */
-  innerRef?: React.RefObject<HTMLLIElement>;
+  innerRef?: RefObject<HTMLLIElement>;
   /** Flag indicating this item is draggable for reordring */
   isDraggable?: boolean;
   /** Accessible label for the draggable button on draggable list items */
@@ -33,7 +46,7 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   isDisabled?: boolean;
 }
 
-export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelectorListItemProps> = ({
+export const DualListSelectorListItemBase: FunctionComponent<DualListSelectorListItemProps> = ({
   onOptionSelect,
   orderIndex,
   children,
@@ -47,9 +60,9 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
   draggableButtonAriaLabel = 'Reorder option',
   ...props
 }: DualListSelectorListItemProps) => {
-  const privateRef = React.useRef<HTMLLIElement>(null);
+  const privateRef = useRef<HTMLLIElement>(null);
   const ref = innerRef || privateRef;
-  const { setFocusedOption } = React.useContext(DualListSelectorListContext);
+  const { setFocusedOption } = useContext(DualListSelectorListContext);
 
   return (
     <li
@@ -58,12 +71,12 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
       onClick={
         isDisabled
           ? undefined
-          : (e: React.MouseEvent) => {
+          : (e: MouseEvent) => {
               setFocusedOption(id);
               onOptionSelect(e, id);
             }
       }
-      onKeyDown={(e: React.KeyboardEvent) => {
+      onKeyDown={(e: KeyboardEvent) => {
         if (e.key === ' ' || e.key === 'Enter') {
           (document.activeElement as HTMLElement).click();
           e.preventDefault();
@@ -97,9 +110,7 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
 };
 DualListSelectorListItemBase.displayName = 'DualListSelectorListItemBase';
 
-export const DualListSelectorListItem = React.forwardRef(
-  (props: DualListSelectorListItemProps, ref: React.Ref<HTMLLIElement>) => (
-    <DualListSelectorListItemBase innerRef={ref as React.MutableRefObject<any>} {...props} />
-  )
-);
+export const DualListSelectorListItem = forwardRef((props: DualListSelectorListItemProps, ref: Ref<HTMLLIElement>) => (
+  <DualListSelectorListItemBase innerRef={ref as MutableRefObject<any>} {...props} />
+));
 DualListSelectorListItem.displayName = 'DualListSelectorListItem';

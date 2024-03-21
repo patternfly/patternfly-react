@@ -1,4 +1,13 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  MouseEvent,
+  FormEvent,
+  ReactNode,
+  KeyboardEvent,
+  FunctionComponent,
+  FocusEvent,
+  CSSProperties
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/NumberInput/number-input';
 import { css } from '@patternfly/react-styles';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
@@ -9,7 +18,7 @@ import { KeyTypes, ValidatedOptions } from '../../helpers';
 import { TextInput } from '../TextInput';
 import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_number_input_c_form_control_width_chars';
 
-export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
+export interface NumberInputProps extends HTMLProps<HTMLDivElement> {
   /** Value of the number input */
   value?: number | '';
   /** Additional classes added to the number input */
@@ -23,15 +32,15 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
    */
   validated?: 'default' | 'error' | 'warning' | 'success' | ValidatedOptions;
   /** Callback for the minus button */
-  onMinus?: (event: React.MouseEvent, name?: string) => void;
+  onMinus?: (event: MouseEvent, name?: string) => void;
   /** Callback for the text input changing */
-  onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: FormEvent<HTMLInputElement>) => void;
   /** Callback function when text input is blurred (focus leaves) */
   onBlur?: (event?: any) => void;
   /** Callback for the plus button */
-  onPlus?: (event: React.MouseEvent, name?: string) => void;
+  onPlus?: (event: MouseEvent, name?: string) => void;
   /** Adds the given unit to the number input */
-  unit?: React.ReactNode;
+  unit?: ReactNode;
   /** Position of the number input unit in relation to the number input */
   unitPosition?: 'before' | 'after';
   /** Minimum value of the number input, disabling the minus button when reached */
@@ -56,7 +65,7 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
 
 type DefaultKeyDownHandlerArgs = Pick<NumberInputProps, 'inputName' | 'onMinus' | 'onPlus'>;
 
-const defaultKeyDownHandler = (args: DefaultKeyDownHandlerArgs) => (event: React.KeyboardEvent<HTMLInputElement>) => {
+const defaultKeyDownHandler = (args: DefaultKeyDownHandlerArgs) => (event: KeyboardEvent<HTMLInputElement>) => {
   if (KeyTypes.ArrowUp === event.key && args.onPlus) {
     event.preventDefault();
     args.onPlus(null, args.inputName);
@@ -67,7 +76,7 @@ const defaultKeyDownHandler = (args: DefaultKeyDownHandlerArgs) => (event: React
   }
 };
 
-export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
+export const NumberInput: FunctionComponent<NumberInputProps> = ({
   value = 0,
   className,
   widthChars,
@@ -94,7 +103,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   const keyDownHandler =
     inputProps && inputProps.onKeyDown ? inputProps.onKeyDown : defaultKeyDownHandler({ inputName, onMinus, onPlus });
 
-  const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+  const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
     event.target.value = Number(event.target.value).toString();
     if (onChange) {
       onChange(event);
@@ -111,7 +120,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
         style: {
           [cssFormControlWidthChars.name]: widthChars,
           ...props.style
-        } as React.CSSProperties
+        } as CSSProperties
       })}
       {...props}
     >

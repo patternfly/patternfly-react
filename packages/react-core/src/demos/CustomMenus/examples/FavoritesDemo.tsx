@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, useState, useRef, useEffect, Fragment } from 'react';
 import { MenuToggle, Divider, Dropdown, DropdownGroup, DropdownList, DropdownItem } from '@patternfly/react-core';
 
-export const FavoritesDemo: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [favorites, setFavorites] = React.useState<string[]>([]);
-  const menuRef = React.useRef<HTMLDivElement>(null);
+export const FavoritesDemo: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -72,7 +72,7 @@ export const FavoritesDemo: React.FunctionComponent = () => {
     return favorites;
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (favorites.length === 0) {
       const firstElement = menuRef?.current?.querySelector('li > button:not(:disabled)');
       firstElement && (firstElement as HTMLElement).focus();
@@ -107,12 +107,12 @@ export const FavoritesDemo: React.FunctionComponent = () => {
       onSelect={(_ev, value) => console.log('selected', value)}
     >
       {favorites.length > 0 && (
-        <React.Fragment>
+        <Fragment>
           <DropdownGroup key="favorites-group" label="Favorites">
             <DropdownList>{createFavorites(favorites)}</DropdownList>
           </DropdownGroup>
           <Divider key="favorites-divider" />
-        </React.Fragment>
+        </Fragment>
       )}
       {menuItems}
     </Dropdown>

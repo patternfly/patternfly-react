@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Popover, Button } from '@patternfly/react-core';
 
-export const PopoverCloseUncontrolled: React.FunctionComponent = () => (
+export const PopoverCloseUncontrolled: FunctionComponent = () => (
   <div style={{ margin: '50px' }}>
     <Popover
       aria-label="Uncontrolled popover with button in the body that can close it"

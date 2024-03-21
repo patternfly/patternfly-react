@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent, Component, Fragment } from 'react';
 import { ExpandableSection, ExpandableSectionToggle, Stack, StackItem } from '@patternfly/react-core';
 
 interface ExpandableSectionState {
@@ -7,7 +7,7 @@ interface ExpandableSectionState {
   isDisclosureExpanded: boolean;
 }
 
-export class ExpandableSectionDemo extends React.Component<null, ExpandableSectionState> {
+export class ExpandableSectionDemo extends Component<null, ExpandableSectionState> {
   static displayName = 'ExpandableSectionDemo';
   state = {
     isExpanded: false,
@@ -19,14 +19,14 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
     window.scrollTo(0, 0);
   }
 
-  onToggle = (_event: React.MouseEvent, isOpen: boolean) => this.setState({ isExpanded: isOpen });
+  onToggle = (_event: MouseEvent, isOpen: boolean) => this.setState({ isExpanded: isOpen });
   onToggleDetached = (isOpen: boolean) => this.setState({ isDetachedExpanded: isOpen });
-  onToggleDisclosure = (_event: React.MouseEvent, isOpen: boolean) => this.setState({ isDisclosureExpanded: isOpen });
+  onToggleDisclosure = (_event: MouseEvent, isOpen: boolean) => this.setState({ isDisclosureExpanded: isOpen });
 
   render() {
     const { isExpanded, isDetachedExpanded, isDisclosureExpanded } = this.state;
     return (
-      <React.Fragment>
+      <Fragment>
         <h1> Simple Expandable Example: </h1>
         <ExpandableSection
           toggleText={isExpanded ? 'Show Less' : 'Show More'}
@@ -81,7 +81,7 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
         >
           This content is visible only when the component is expanded.
         </ExpandableSection>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

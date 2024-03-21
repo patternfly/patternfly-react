@@ -1,4 +1,4 @@
-import React from 'react';
+import { FormEvent, Component, Fragment } from 'react';
 import {
   Brand,
   Button,
@@ -32,7 +32,7 @@ interface CardDemoState {
   selectaleClickableDrawerIsExpanded: boolean;
 }
 
-export class CardDemo extends React.Component {
+export class CardDemo extends Component {
   static displayName = 'CardDemo';
 
   state: CardDemoState = {
@@ -81,7 +81,7 @@ export class CardDemo extends React.Component {
     });
   };
 
-  onSelectableChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
+  onSelectableChange = (event: FormEvent<HTMLInputElement>, checked: boolean) => {
     const name = event.currentTarget.name;
 
     switch (name) {
@@ -94,7 +94,7 @@ export class CardDemo extends React.Component {
     }
   };
 
-  onSelectableClickableChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
+  onSelectableClickableChange = (_event: FormEvent<HTMLInputElement>, checked: boolean) => {
     this.setState({ selectableClickableChecked: checked });
   };
 
@@ -146,7 +146,7 @@ export class CardDemo extends React.Component {
     );
 
     return (
-      <React.Fragment>
+      <Fragment>
         <Card id="cardWithActions">
           <CardHeader actions={{ actions, hasNoOffset: true }}>
             <Brand src={pfLogo} alt="PatternFly" style={{ height: '50px' }} />
@@ -328,7 +328,7 @@ export class CardDemo extends React.Component {
             </DrawerContent>
           </Drawer>
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

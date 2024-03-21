@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, createRef, Component } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import { canUseDOM } from '../../helpers/util';
@@ -7,7 +7,7 @@ import { KeyTypes } from '../../helpers/constants';
 
 export interface TreeViewRootProps {
   /** Child nodes of the tree view */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Flag indicating if the tree view has checkboxes. */
   hasCheckboxes?: boolean;
   /** Flag indicating if tree view has guide lines. */
@@ -20,9 +20,9 @@ export interface TreeViewRootProps {
   hasSelectableNodes?: boolean;
 }
 
-class TreeViewRoot extends React.Component<TreeViewRootProps> {
+class TreeViewRoot extends Component<TreeViewRootProps> {
   displayName = 'TreeViewRoot';
-  private treeRef = React.createRef<HTMLDivElement>();
+  private treeRef = createRef<HTMLDivElement>();
 
   componentDidMount() {
     if (canUseDOM) {

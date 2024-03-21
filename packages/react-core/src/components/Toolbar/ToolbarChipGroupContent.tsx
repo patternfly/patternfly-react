@@ -1,16 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, Component, RefObject } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { canUseDOM } from '../../helpers/util';
 
-import { RefObject } from 'react';
 import { ToolbarItem } from './ToolbarItem';
 import { Button } from '../Button';
 import { ToolbarGroup } from './ToolbarGroup';
 import { globalBreakpoints } from './ToolbarUtils';
 import { PickOptional } from '../../helpers/typeUtils';
 
-export interface ToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface ToolbarChipGroupContentProps extends HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
   className?: string;
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
@@ -30,10 +29,10 @@ export interface ToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivEle
   /** The breakpoint at which the listed filters in chip groups are collapsed down to a summary */
   collapseListedFiltersBreakpoint?: 'all' | 'md' | 'lg' | 'xl' | '2xl';
   /** Custom additional content appended to the generated chips. To maintain spacing and styling, each node should be a ToolbarItem or ToolbarGroup. This property will remove the built in "Clear all filters" button. */
-  customChipGroupContent?: React.ReactNode;
+  customChipGroupContent?: ReactNode;
 }
 
-class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupContentProps> {
+class ToolbarChipGroupContent extends Component<ToolbarChipGroupContentProps> {
   static displayName = 'ToolbarChipGroupContent';
   static defaultProps: PickOptional<ToolbarChipGroupContentProps> = {
     clearFiltersButtonText: 'Clear all filters',

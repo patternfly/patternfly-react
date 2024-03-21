@@ -1,4 +1,13 @@
-import * as React from 'react';
+import {
+  type HTMLProps,
+  type ReactNode,
+  type MouseEvent as ReactMouseEvent,
+  type FunctionComponent,
+  useRef,
+  useEffect,
+  createRef,
+  type CSSProperties
+} from 'react';
 import { useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Label/label';
 import labelGrpStyles from '@patternfly/react-styles/css/components/Label/label-group';
@@ -9,9 +18,9 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { useIsomorphicLayoutEffect } from '../../helpers';
 import cssTextMaxWidth from '@patternfly/react-tokens/dist/esm/c_label__text_MaxWidth';
 
-export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
+export interface LabelProps extends HTMLProps<HTMLSpanElement> {
   /** Content rendered inside the label. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the label. */
   className?: string;
   /** Color of the label. */
@@ -47,11 +56,11 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
     | 'right-start'
     | 'right-end';
   /** Icon added to the left of the label text. */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** Close click callback for removable labels. If present, label will have a close button. */
-  onClose?: (event: React.MouseEvent) => void;
+  onClose?: (event: ReactMouseEvent) => void;
   /** Node for custom close button. */
-  closeBtn?: React.ReactNode;
+  closeBtn?: ReactNode;
   /** Aria label for close button */
   closeBtnAriaLabel?: string;
   /** Additional properties for the default close button. */
@@ -61,7 +70,7 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Flag indicating if the label is an overflow label. */
   isOverflowLabel?: boolean;
   /** Callback for when the label is clicked. This should not be passed in if the href or isEditable props are also passed in. */
-  onClick?: (event: React.MouseEvent) => void;
+  onClick?: (event: ReactMouseEvent) => void;
   /** Forwards the label content and className to rendered function.  Use this prop for react router support.*/
   render?: ({
     className,
@@ -69,9 +78,9 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
     componentRef
   }: {
     className: string;
-    content: React.ReactNode;
+    content: ReactNode;
     componentRef: any;
-  }) => React.ReactNode;
+  }) => ReactNode;
 }
 
 const colorStyles = {
@@ -85,7 +94,7 @@ const colorStyles = {
   grey: ''
 };
 
-export const Label: React.FunctionComponent<LabelProps> = ({
+export const Label: FunctionComponent<LabelProps> = ({
   children,
   className = '',
   color = 'grey',
@@ -110,10 +119,10 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 }: LabelProps) => {
   const [isEditableActive, setIsEditableActive] = useState<boolean>(false);
   const [currValue, setCurrValue] = useState(children);
-  const editableButtonRef = React.useRef<HTMLButtonElement>();
-  const editableInputRef = React.useRef<HTMLInputElement>();
+  const editableButtonRef = useRef<HTMLButtonElement>();
+  const editableInputRef = useRef<HTMLInputElement>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener('mousedown', onDocMouseDown);
     document.addEventListener('keydown', onKeyDown);
     return () => {
@@ -122,7 +131,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     };
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (onLabelClick && href) {
       // eslint-disable-next-line no-console
       console.warn(
@@ -213,10 +222,10 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   );
 
   const button = <span className={css(styles.labelActions)}>{closeBtn || defaultButton}</span>;
-  const textRef = React.createRef<any>();
+  const textRef = createRef<any>();
   // ref to apply tooltip when rendered is used
-  const componentRef = React.useRef();
-  const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
+  const componentRef = useRef();
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   useIsomorphicLayoutEffect(() => {
     const currTextRef = isEditable ? editableButtonRef : textRef;
     if (!isEditableActive) {
@@ -224,7 +233,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     }
   }, [isEditableActive]);
   const content = (
-    <React.Fragment>
+    <>
       {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
       <span
         ref={textRef}
@@ -232,15 +241,15 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         {...(textMaxWidth && {
           style: {
             [cssTextMaxWidth.name]: textMaxWidth
-          } as React.CSSProperties
+          } as CSSProperties
         })}
       >
         {children}
       </span>
-    </React.Fragment>
+    </>
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isEditableActive && editableInputRef) {
       editableInputRef.current && editableInputRef.current.focus();
     }
@@ -271,7 +280,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     ...(isButton && clickableLabelProps),
     ...(isEditable && {
       ref: editableButtonRef,
-      onClick: (e: React.MouseEvent) => {
+      onClick: (e: ReactMouseEvent) => {
         setIsEditableActive(true);
         e.stopPropagation();
       },
@@ -285,14 +294,14 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 
   if (render) {
     labelComponentChild = (
-      <React.Fragment>
+      <>
         {isTooltipVisible && <Tooltip triggerRef={componentRef} content={children} position={tooltipPosition} />}
         {render({
           className: styles.labelContent,
           content,
           componentRef
         })}
-      </React.Fragment>
+      </>
     );
   } else if (isTooltipVisible) {
     labelComponentChild = (

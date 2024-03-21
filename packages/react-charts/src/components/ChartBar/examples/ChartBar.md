@@ -22,7 +22,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic with right aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '250px', width: '600px' }}>
@@ -62,10 +61,10 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@
 This demonstrates an alternate way of applying tooltips using data labels.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
-class EmbeddedLegend extends React.Component {
+class EmbeddedLegend extends Component {
   render() {
     const label = ({ datum }) => `${datum.name}: ${datum.y}`;
 
@@ -140,7 +139,6 @@ class EmbeddedLegend extends React.Component {
 This demonstrates zoom for both the x and y axis.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
@@ -177,7 +175,6 @@ import { VictoryZoomContainer } from 'victory-zoom-container';
 
 ### Single with right aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartBar, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '250px', width: '600px' }}>

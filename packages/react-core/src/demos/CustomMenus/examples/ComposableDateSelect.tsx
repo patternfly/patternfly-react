@@ -1,12 +1,12 @@
-import React from 'react';
+import { useState, type FunctionComponent, useRef, useEffect, type MouseEvent as ReactMouseEvent } from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
 import text from '@patternfly/react-styles/css/utilities/Text/text';
 
-export const ComposableSimpleDropdown: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<number>(0);
-  const toggleRef = React.useRef<HTMLButtonElement>();
-  const menuRef = React.useRef<HTMLDivElement>();
+export const ComposableSimpleDropdown: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<number>(0);
+  const toggleRef = useRef<HTMLButtonElement>();
+  const menuRef = useRef<HTMLDivElement>();
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
@@ -26,7 +26,7 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleMenuKeys);
     window.addEventListener('click', handleClickOutside);
     return () => {
@@ -35,7 +35,7 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
     };
   }, [isOpen, menuRef]);
 
-  const onToggleClick = (ev: React.MouseEvent) => {
+  const onToggleClick = (ev: ReactMouseEvent) => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (menuRef.current) {

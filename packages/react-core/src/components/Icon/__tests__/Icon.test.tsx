@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Icon } from '../Icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';

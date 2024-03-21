@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { TextContent, TextList, TextListVariants, TextListItem } from '@patternfly/react-core';
 
-export const TextOrderedList: React.FunctionComponent = () => (
+export const TextOrderedList: FunctionComponent = () => (
   <TextContent>
     <TextList component={TextListVariants.ol}>
       <TextListItem>Donec blandit a lorem id convallis.</TextListItem>

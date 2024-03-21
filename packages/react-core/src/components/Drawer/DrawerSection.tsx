@@ -1,18 +1,18 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerColorVariant } from './Drawer';
 
-export interface DrawerSectionProps extends React.HTMLProps<HTMLDivElement> {
+export interface DrawerSectionProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer section. */
   className?: string;
   /** Content to be rendered in the drawer section. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Color variant of the background of the drawer Section */
   colorVariant?: DrawerColorVariant | 'light-200' | 'no-background' | 'default';
 }
 
-export const DrawerSection: React.FunctionComponent<DrawerSectionProps> = ({
+export const DrawerSection: FunctionComponent<DrawerSectionProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,

@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-export const CardWithHeadingElement: React.FunctionComponent = () => (
+export const CardWithHeadingElement: FunctionComponent = () => (
   <Card>
     <CardTitle component="h4">Title within an {'<h4>'} element</CardTitle>
     <CardBody>Body</CardBody>

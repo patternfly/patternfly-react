@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, Ref, useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -16,10 +16,10 @@ import {
 import pfLogoSmall from '../../assets/pf-c-brand--logo-on-sm.svg';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const CardExpandableWithIcon: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
-  const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
+export const CardExpandableWithIcon: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const onSelect = () => {
     setIsOpen(!isOpen);
@@ -29,7 +29,7 @@ export const CardExpandableWithIcon: React.FunctionComponent = () => {
     setIsChecked(checked);
   };
 
-  const onExpand = (event: React.MouseEvent, id: string) => {
+  const onExpand = (event: MouseEvent, id: string) => {
     // eslint-disable-next-line no-console
     console.log(id);
     setIsExpanded(!isExpanded);
@@ -60,7 +60,7 @@ export const CardExpandableWithIcon: React.FunctionComponent = () => {
     <>
       <Dropdown
         onSelect={onSelect}
-        toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+        toggle={(toggleRef: Ref<MenuToggleElement>) => (
           <MenuToggle
             ref={toggleRef}
             isExpanded={isOpen}

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
 import { VictoryBar } from 'victory-bar';
@@ -95,7 +95,7 @@ export interface ChartBulletComparativeWarningMeasureProps {
    * provide a series label for ChartBar. If individual labels are required for each
    * data point, they should be created by composing ChartBar with VictoryScatter
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * The labels prop defines labels that will appear above each bar in your chart.
    * This prop should be given as an array of values or as a function of data.
@@ -109,7 +109,7 @@ export interface ChartBulletComparativeWarningMeasureProps {
   /**
    * The measureComponent prop takes an entire component which will be used to create the chart
    */
-  measureComponent?: React.ReactElement<any>;
+  measureComponent?: ReactElement<any>;
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -163,9 +163,7 @@ export interface ChartBulletComparativeWarningMeasureProps {
   y?: DataGetterPropType;
 }
 
-export const ChartBulletComparativeWarningMeasure: React.FunctionComponent<
-  ChartBulletComparativeWarningMeasureProps
-> = ({
+export const ChartBulletComparativeWarningMeasure: FunctionComponent<ChartBulletComparativeWarningMeasureProps> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -188,7 +186,7 @@ export const ChartBulletComparativeWarningMeasure: React.FunctionComponent<
   width = theme.bar.width
 }: ChartBulletComparativeWarningMeasureProps) => {
   // Comparative measure component
-  const measure = React.cloneElement(measureComponent, {
+  const measure = cloneElement(measureComponent, {
     allowTooltip,
     ariaDesc,
     ariaTitle,
@@ -213,7 +211,7 @@ export const ChartBulletComparativeWarningMeasure: React.FunctionComponent<
       {measure}
     </ChartContainer>
   ) : (
-    <React.Fragment>{measure}</React.Fragment>
+    <Fragment>{measure}</Fragment>
   );
 };
 ChartBulletComparativeWarningMeasure.displayName = 'ChartBulletComparativeWarningMeasure';

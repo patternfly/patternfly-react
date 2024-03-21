@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, MouseEvent, createRef, Children, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Chip/chip-group';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
@@ -9,9 +9,9 @@ import { fillTemplate } from '../../helpers';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export interface ChipGroupProps extends React.HTMLProps<HTMLUListElement>, OUIAProps {
+export interface ChipGroupProps extends HTMLProps<HTMLUListElement>, OUIAProps {
   /** Content rendered inside the chip group. Should be <Chip> elements. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the chip item */
   className?: string;
   /** Flag for having the chip group default to expanded */
@@ -31,9 +31,9 @@ export interface ChipGroupProps extends React.HTMLProps<HTMLUListElement>, OUIAP
   /** Aria label for close button */
   closeBtnAriaLabel?: string;
   /** Function that is called when clicking on the chip group close button */
-  onClick?: (event: React.MouseEvent) => void;
+  onClick?: (event: MouseEvent) => void;
   /** Function that is called when clicking on the overflow (expand/collapse) chip button */
-  onOverflowChipClick?: (event: React.MouseEvent) => void;
+  onOverflowChipClick?: (event: MouseEvent) => void;
   /** Position of the tooltip which is displayed if the category name text is longer */
   tooltipPosition?:
     | TooltipPosition
@@ -59,7 +59,7 @@ interface ChipGroupState {
   isTooltipVisible: boolean;
 }
 
-class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
+class ChipGroup extends Component<ChipGroupProps, ChipGroupState> {
   static displayName = 'ChipGroup';
   constructor(props: ChipGroupProps) {
     super(props);
@@ -68,7 +68,7 @@ class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
       isTooltipVisible: false
     };
   }
-  private headingRef = React.createRef<HTMLSpanElement>();
+  private headingRef = createRef<HTMLSpanElement>();
 
   static defaultProps: ChipGroupProps = {
     expandedText: 'Show Less',
@@ -78,8 +78,8 @@ class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     numChips: 3,
     isClosable: false,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    onClick: (_e: React.MouseEvent) => undefined as any,
-    onOverflowChipClick: (_e: React.MouseEvent) => undefined as any,
+    onClick: (_e: MouseEvent) => undefined as any,
+    onOverflowChipClick: (_e: MouseEvent) => undefined as any,
     closeBtnAriaLabel: 'Close chip group',
     tooltipPosition: 'top',
     'aria-label': 'Chip group category'
@@ -139,15 +139,13 @@ class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
       ...rest
     } = this.props;
     const { isOpen } = this.state;
-    const numChildren = React.Children.count(children);
+    const numChildren = Children.count(children);
     const collapsedTextResult = fillTemplate(collapsedText as string, {
-      remaining: React.Children.count(children) - numChips
+      remaining: Children.count(children) - numChips
     });
 
     const renderChipGroup = (id: string) => {
-      const chipArray = !isOpen
-        ? React.Children.toArray(children).slice(0, numChips)
-        : React.Children.toArray(children);
+      const chipArray = !isOpen ? Children.toArray(children).slice(0, numChips) : Children.toArray(children);
 
       return (
         <div

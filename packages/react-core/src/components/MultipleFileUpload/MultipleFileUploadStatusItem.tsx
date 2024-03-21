@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, MouseEventHandler, ReactNode, FunctionComponent, useState, useEffect } from 'react';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 import { Progress } from '../Progress';
@@ -11,7 +11,7 @@ import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle
  * via various callbacks which will override the automatic reading behavior.
  */
 
-export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLLIElement> {
+export interface MultipleFileUploadStatusItemProps extends HTMLProps<HTMLLIElement> {
   /** Class to add to outer div */
   className?: string;
   /** Adds accessibility text to the status item deletion button */
@@ -27,14 +27,14 @@ export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLL
   /** A callback for when the FileReader API fails */
   onReadFail?: (error: DOMException, onReadFail: File) => void;
   /** Clear button was clicked */
-  onClearClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClearClick?: MouseEventHandler<HTMLButtonElement>;
 
   // Props to bypass built in behavior
 
   /** A callback to process file reading in a custom way */
   customFileHandler?: (file: File) => void;
   /** A custom icon to show in place of the generic file icon */
-  fileIcon?: React.ReactNode;
+  fileIcon?: ReactNode;
   /** A custom name to display for the file rather than using built in functionality to auto-fill it */
   fileName?: string;
   /** A custom file size to display for the file rather than using built in functionality to auto-fill it */
@@ -55,10 +55,10 @@ export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLL
   /** Unique identifier for progress. Generated if not specified. */
   progressId?: string;
   /** Additional content related to the status item. */
-  progressHelperText?: React.ReactNode;
+  progressHelperText?: ReactNode;
 }
 
-export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileUploadStatusItemProps> = ({
+export const MultipleFileUploadStatusItem: FunctionComponent<MultipleFileUploadStatusItemProps> = ({
   className,
   file,
   fileIcon,
@@ -80,8 +80,8 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   progressHelperText,
   ...props
 }: MultipleFileUploadStatusItemProps) => {
-  const [loadPercentage, setLoadPercentage] = React.useState(0);
-  const [loadResult, setLoadResult] = React.useState<undefined | 'danger' | 'success'>();
+  const [loadPercentage, setLoadPercentage] = useState(0);
+  const [loadResult, setLoadResult] = useState<undefined | 'danger' | 'success'>();
 
   function readFile(file: File) {
     return new Promise((resolve, reject) => {
@@ -97,7 +97,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     });
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (customFileHandler) {
       customFileHandler(file);
     } else {

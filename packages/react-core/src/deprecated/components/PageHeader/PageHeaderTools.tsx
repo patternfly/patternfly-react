@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 
-export interface PageHeaderToolsProps extends React.HTMLProps<HTMLDivElement> {
+export interface PageHeaderToolsProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered in page header tools */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Additional classes added to the page header tools. */
   className?: string;
 }
 
-export const PageHeaderTools: React.FunctionComponent<PageHeaderToolsProps> = ({
+export const PageHeaderTools: FunctionComponent<PageHeaderToolsProps> = ({
   children,
   className,
   ...props

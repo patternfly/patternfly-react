@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import {
   Button,
   OverflowMenu,
@@ -24,7 +24,7 @@ interface Repository {
   isMenuOpen: boolean;
 }
 
-export const TableActions: React.FunctionComponent = () => {
+export const TableActions: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five', isMenuOpen: false },
@@ -34,7 +34,7 @@ export const TableActions: React.FunctionComponent = () => {
     { name: '5', branches: '2', prs: 'b', workspaces: 'four', lastCommit: 'five', isMenuOpen: false }
   ];
 
-  const [repos, setRepos] = React.useState(repositories);
+  const [repos, setRepos] = useState(repositories);
 
   const columnNames = {
     name: 'Repositories',
@@ -57,7 +57,7 @@ export const TableActions: React.FunctionComponent = () => {
   ];
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Table aria-label="Actions table">
         <Thead>
           <Tr>
@@ -124,6 +124,6 @@ export const TableActions: React.FunctionComponent = () => {
           ))}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

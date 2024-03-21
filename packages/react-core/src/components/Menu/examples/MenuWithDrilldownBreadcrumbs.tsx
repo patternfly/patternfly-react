@@ -1,4 +1,10 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type MouseEvent as ReactMouseEvent,
+  type Ref
+} from 'react';
 import {
   Badge,
   Breadcrumb,
@@ -26,13 +32,13 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
-export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
-  const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
-  const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
-  const [menuHeights, setMenuHeights] = React.useState<any>({});
-  const [activeMenu, setActiveMenu] = React.useState<string>('breadcrumbs-rootMenu');
-  const [breadcrumb, setBreadcrumb] = React.useState<JSX.Element | null>();
-  const [withMaxMenuHeight, setWithMaxMenuHeight] = React.useState(false);
+export const MenuWithDrilldownBreadcrumbs: FunctionComponent = () => {
+  const [menuDrilledIn, setMenuDrilledIn] = useState<string[]>([]);
+  const [drilldownPath, setDrilldownPath] = useState<string[]>([]);
+  const [menuHeights, setMenuHeights] = useState<any>({});
+  const [activeMenu, setActiveMenu] = useState<string>('breadcrumbs-rootMenu');
+  const [breadcrumb, setBreadcrumb] = useState<JSX.Element | null>();
+  const [withMaxMenuHeight, setWithMaxMenuHeight] = useState(false);
 
   const onToggle = (isOpen: boolean, key: string) => {
     switch (key) {
@@ -58,7 +64,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
   };
 
   const drillOut = (
-    _event: React.KeyboardEvent<Element> | MouseEvent | React.MouseEvent<any, MouseEvent>,
+    _event: ReactKeyboardEvent<Element> | MouseEvent | ReactMouseEvent<any, MouseEvent>,
     toMenuId: string,
     fromPathId: string,
     breadcrumb: JSX.Element | null
@@ -82,7 +88,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
   };
 
   const drillIn = (
-    _event: React.KeyboardEvent | React.MouseEvent,
+    _event: ReactKeyboardEvent | ReactMouseEvent,
     fromMenuId: string,
     toMenuId: string,
     pathId: string
@@ -116,7 +122,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
         <Dropdown
           isOpen={isOpen}
           onOpenChange={(isOpen: boolean) => onToggle(isOpen, 'app')}
-          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          toggle={(toggleRef: Ref<MenuToggleElement>) => (
             <MenuToggle ref={toggleRef} onClick={() => onToggle(true, 'app')} isExpanded={isOpen} variant="plain">
               <Badge isRead screenReaderText="additional item">
                 1{' '}
@@ -160,7 +166,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
         <Dropdown
           isOpen={isOpen}
           onOpenChange={(isOpen: boolean) => onToggle(isOpen, 'label')}
-          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          toggle={(toggleRef: Ref<MenuToggleElement>) => (
             <MenuToggle ref={toggleRef} onClick={() => onToggle(true, 'label')} isExpanded={isOpen} variant="plain">
               <Badge isRead screenReaderText="additional item">
                 1{' '}
@@ -216,7 +222,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
         <Dropdown
           isOpen={isOpen}
           onOpenChange={(isOpen: boolean) => onToggle(isOpen, 'pause-app')}
-          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          toggle={(toggleRef: Ref<MenuToggleElement>) => (
             <MenuToggle ref={toggleRef} onClick={() => onToggle(true, 'pause-app')} isExpanded={isOpen} variant="plain">
               <Badge isRead screenReaderText="additional item">
                 1{' '}
@@ -260,7 +266,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
         <Dropdown
           isOpen={isOpen}
           onOpenChange={(isOpen: boolean) => onToggle(isOpen, 'pause-label')}
-          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          toggle={(toggleRef: Ref<MenuToggleElement>) => (
             <MenuToggle
               ref={toggleRef}
               onClick={() => onToggle(true, 'pause-label')}

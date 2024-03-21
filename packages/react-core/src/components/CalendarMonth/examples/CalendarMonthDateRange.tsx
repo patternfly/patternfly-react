@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { CalendarMonth, Title, CalendarMonthInlineProps } from '@patternfly/react-core';
 
-export const CalendarMonthDateRange: React.FunctionComponent = () => {
+export const CalendarMonthDateRange: FunctionComponent = () => {
   const startDate = new Date(2020, 10, 11);
   const endDate = new Date(2020, 10, 24);
   const disablePreStartDates = (date: Date) => date >= startDate;

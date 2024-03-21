@@ -1,16 +1,16 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Tile/tile';
 import { css } from '@patternfly/react-styles';
 
-export interface TileProps extends React.HTMLProps<HTMLDivElement> {
+export interface TileProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the banner */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the banner */
   className?: string;
   /** Title of the tile */
   title: string;
   /** Icon in the tile title */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** Flag indicating if the tile is selected */
   isSelected?: boolean;
   /** Flag indicating if the tile is disabled */
@@ -21,7 +21,7 @@ export interface TileProps extends React.HTMLProps<HTMLDivElement> {
   isDisplayLarge?: boolean;
 }
 
-export const Tile: React.FunctionComponent<TileProps> = ({
+export const Tile: FunctionComponent<TileProps> = ({
   children,
   title,
   icon,

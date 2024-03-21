@@ -1,23 +1,23 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, Ref, FunctionComponent, useRef, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/InputGroup/input-group';
 import { css } from '@patternfly/react-styles';
 
-export interface InputGroupProps extends React.HTMLProps<HTMLDivElement> {
+export interface InputGroupProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the input group. */
   className?: string;
   /** Content rendered inside the input group. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** @hide A reference object to attach to the input box */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
 }
 
-export const InputGroupBase: React.FunctionComponent<InputGroupProps> = ({
+export const InputGroupBase: FunctionComponent<InputGroupProps> = ({
   className,
   children,
   innerRef,
   ...props
 }: InputGroupProps) => {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const inputGroupRef = innerRef || ref;
 
   return (
@@ -28,7 +28,7 @@ export const InputGroupBase: React.FunctionComponent<InputGroupProps> = ({
 };
 InputGroupBase.displayName = 'InputGroupBase';
 
-export const InputGroup = React.forwardRef((props: InputGroupProps, ref: React.Ref<HTMLDivElement>) => (
+export const InputGroup = forwardRef((props: InputGroupProps, ref: Ref<HTMLDivElement>) => (
   <InputGroupBase innerRef={ref} {...props} />
 ));
 InputGroup.displayName = 'InputGroup';

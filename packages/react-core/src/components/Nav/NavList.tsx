@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLAttributes, DetailedHTMLProps, ReactNode, ContextType, createRef, Component, Fragment } from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
@@ -8,10 +8,9 @@ import { NavContext } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { getResizeObserver } from '../../helpers/resizeObserver';
 
-export interface NavListProps
-  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
+export interface NavListProps extends DetailedHTMLProps<HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
   /** Children nodes */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the list */
   className?: string;
   /** @deprecated Please use backScrollAriaLabel. Aria-label for the left scroll button */
@@ -24,10 +23,10 @@ export interface NavListProps
   forwardScrollAriaLabel?: string;
 }
 
-class NavList extends React.Component<NavListProps> {
+class NavList extends Component<NavListProps> {
   static displayName = 'NavList';
   static contextType = NavContext;
-  context!: React.ContextType<typeof NavContext>;
+  context!: ContextType<typeof NavContext>;
   static defaultProps: NavListProps = {
     ariaLeftScroll: 'Scroll left',
     backScrollAriaLabel: 'Scroll back',
@@ -41,7 +40,7 @@ class NavList extends React.Component<NavListProps> {
     scrollViewAtEnd: false
   };
 
-  navList = React.createRef<HTMLUListElement>();
+  navList = createRef<HTMLUListElement>();
   observer: any = () => {};
 
   handleScrollButtons = () => {
@@ -141,7 +140,7 @@ class NavList extends React.Component<NavListProps> {
         {({ isHorizontal }) => (
           <PageSidebarContext.Consumer>
             {({ isSidebarOpen }) => (
-              <React.Fragment>
+              <Fragment>
                 {isHorizontal && (
                   <button
                     className={css(styles.navScrollButton)}
@@ -173,7 +172,7 @@ class NavList extends React.Component<NavListProps> {
                     <AngleRightIcon />
                   </button>
                 )}
-              </React.Fragment>
+              </Fragment>
             )}
           </PageSidebarContext.Consumer>
         )}

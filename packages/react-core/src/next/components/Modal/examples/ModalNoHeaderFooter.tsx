@@ -1,16 +1,16 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, useState, Fragment } from 'react';
 import { Button } from '@patternfly/react-core';
 import { Modal, ModalBody, ModalVariant } from '@patternfly/react-core/next';
 
-export const ModalNoHeaderFooter: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
+export const ModalNoHeaderFooter: FunctionComponent = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
+  const handleModalToggle = (_event: KeyboardEvent | MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show no header/footer modal
       </Button>
@@ -35,6 +35,6 @@ export const ModalNoHeaderFooter: React.FunctionComponent = () => {
           est laborum.
         </ModalBody>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

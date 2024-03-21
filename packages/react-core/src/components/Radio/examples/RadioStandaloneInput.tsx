@@ -1,6 +1,6 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Radio } from '@patternfly/react-core';
 
-export const RadioStandaloneInput: React.FunctionComponent = () => (
+export const RadioStandaloneInput: FunctionComponent = () => (
   <Radio id="radio-standalone" aria-label="Standalone input" name="exampleRadioStandalone" />
 );

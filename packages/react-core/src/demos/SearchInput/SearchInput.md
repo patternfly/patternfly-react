@@ -32,20 +32,20 @@ This demo handles building the advanced search form using the composable Menu, a
 It also demonstrates wiring up the appropriate keyboard interactions, focus management, and general event handling.
 
 ```js
-import React from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Menu, MenuContent, MenuItem, MenuList, Popper, SearchInput } from '@patternfly/react-core';
 
 import { words } from './words.js';
 
 SearchAutocomplete = () => {
-  const [value, setValue] = React.useState('');
-  const [hint, setHint] = React.useState('');
-  const [autocompleteOptions, setAutocompleteOptions] = React.useState([]);
+  const [value, setValue] = useState('');
+  const [hint, setHint] = useState('');
+  const [autocompleteOptions, setAutocompleteOptions] = useState([]);
 
-  const [isAutocompleteOpen, setIsAutocompleteOpen] = React.useState(false);
+  const [isAutocompleteOpen, setIsAutocompleteOpen] = useState(false);
 
-  const searchInputRef = React.useRef(null);
-  const autocompleteRef = React.useRef(null);
+  const searchInputRef = useRef(null);
+  const autocompleteRef = useRef(null);
 
   const onClear = () => {
     setValue('');
@@ -155,7 +155,7 @@ SearchAutocomplete = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleMenuKeys);
     window.addEventListener('click', handleClickOutside);
     return () => {
@@ -207,7 +207,7 @@ keyboard interactions, focus management, and general event handling.
 Note: This demo and its handling of 'date within' and a date picker is modeled after the gmail advanced search form.
 
 ```js
-import React from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
   ActionGroup,
   Button,
@@ -232,20 +232,20 @@ import {
 } from '@patternfly/react-core';
 
 AdvancedComposableSearchInput = () => {
-  const [value, setValue] = React.useState('');
-  const [hasWords, setHasWords] = React.useState('');
-  const [dateWithin, setDateWithin] = React.useState('1 day');
-  const [date, setDate] = React.useState();
+  const [value, setValue] = useState('');
+  const [hasWords, setHasWords] = useState('');
+  const [dateWithin, setDateWithin] = useState('1 day');
+  const [date, setDate] = useState();
 
-  const [isAdvancedSearchOpen, setIsAdvancedSearchOpen] = React.useState(false);
-  const [isDateWithinOpen, setIsDateWithinOpen] = React.useState(false);
+  const [isAdvancedSearchOpen, setIsAdvancedSearchOpen] = useState(false);
+  const [isDateWithinOpen, setIsDateWithinOpen] = useState(false);
 
-  const isInitialMount = React.useRef(true);
-  const firstAttrRef = React.useRef(null);
-  const searchInputRef = React.useRef(null);
-  const advancedSearchPaneRef = React.useRef(null);
-  const dateWithinToggleRef = React.useRef();
-  const dateWithinMenuRef = React.useRef();
+  const isInitialMount = useRef(true);
+  const firstAttrRef = useRef(null);
+  const searchInputRef = useRef(null);
+  const advancedSearchPaneRef = useRef(null);
+  const dateWithinToggleRef = useRef();
+  const dateWithinMenuRef = useRef();
 
   const onClear = () => {
     setValue('');
@@ -266,7 +266,7 @@ AdvancedComposableSearchInput = () => {
   // After initial page load, whenever the advanced search menu is opened, the browser focus should be placed on the
   // first advanced search form input. Whenever the advanced search menu is closed, the browser focus should
   // be returned to the search input.
-  React.useEffect(() => {
+  useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
     } else {
@@ -322,7 +322,7 @@ AdvancedComposableSearchInput = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleMenuKeys);
     window.addEventListener('click', handleClickOutside);
     return () => {

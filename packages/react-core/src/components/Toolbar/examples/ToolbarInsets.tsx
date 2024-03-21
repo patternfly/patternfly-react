@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
 
-export const ToolbarInsets: React.FunctionComponent = () => {
+export const ToolbarInsets: FunctionComponent = () => {
   const items = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem>
         <Button variant="secondary">Action</Button>
       </ToolbarItem>
@@ -33,7 +33,7 @@ export const ToolbarInsets: React.FunctionComponent = () => {
           <Button variant="secondary">Action</Button>
         </ToolbarItem>
       </ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

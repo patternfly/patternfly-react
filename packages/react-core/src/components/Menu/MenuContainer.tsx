@@ -1,4 +1,4 @@
-import React from 'react';
+import { JSXElementConstructor, ReactElement, RefObject, ReactNode, FunctionComponent, useEffect } from 'react';
 import { Popper } from '../../helpers/Popper/Popper';
 
 export interface MenuPopperProps {
@@ -19,13 +19,13 @@ export interface MenuPopperProps {
 }
 export interface MenuContainerProps {
   /** Menu to be rendered */
-  menu: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+  menu: ReactElement<any, string | JSXElementConstructor<any>>;
   /** Reference to the menu */
-  menuRef: React.RefObject<any>;
+  menuRef: RefObject<any>;
   /** Toggle to be rendered */
-  toggle: React.ReactNode;
+  toggle: ReactNode;
   /** Reference to the toggle */
-  toggleRef: React.RefObject<any>;
+  toggleRef: RefObject<any>;
   /** Flag to indicate if menu is opened.*/
   isOpen: boolean;
   /** Callback to change the open state of the menu.
@@ -43,7 +43,7 @@ export interface MenuContainerProps {
  * Container that links a menu and menu toggle together, to handle basic keyboard input and control the opening and closing of a menu.
  * This component is currently in beta and is subject to change.
  */
-export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
+export const MenuContainer: FunctionComponent<MenuContainerProps> = ({
   menu,
   menuRef,
   isOpen,
@@ -54,7 +54,7 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   popperProps,
   onOpenChangeKeys = ['Escape', 'Tab']
 }: MenuContainerProps) => {
-  React.useEffect(() => {
+  useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
       if (

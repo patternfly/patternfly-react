@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, ReactNode, FunctionComponent, cloneElement, Children, isValidElement, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 
 /* eslint-disable camelcase */
@@ -30,7 +30,6 @@ import { getComputedLegend, getLegendItemsExtraHeight, getLegendMaxTextWidth } f
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getPatternDefs, mergePatternData, useDefaultPatternProps } from '../ChartUtils/chart-patterns';
 import { getChartTheme } from '../ChartUtils/chart-theme-types';
-import { useEffect } from 'react';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartPoint } from '../ChartPoint/ChartPoint';
 
@@ -70,11 +69,11 @@ export interface ChartProps extends VictoryChartProps {
    * will be provided with the following properties calculated by Chart: height, polar, scale, style, x, y, width.
    * All of these props on Background should take prececence over what VictoryChart is trying to set.
    */
-  backgroundComponent?: React.ReactElement;
+  backgroundComponent?: ReactElement;
   /**
    * The children to render with the chart
    */
-  children?: React.ReactNode | React.ReactNode[];
+  children?: ReactNode | ReactNode[];
   /**
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.
@@ -90,7 +89,7 @@ export interface ChartProps extends VictoryChartProps {
    *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
-  containerComponent?: React.ReactElement<any>;
+  containerComponent?: ReactElement<any>;
   /**
    * Note: This prop should not be set manually.
    *
@@ -198,7 +197,7 @@ export interface ChartProps extends VictoryChartProps {
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart.
    * SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected
@@ -254,7 +253,7 @@ export interface ChartProps extends VictoryChartProps {
    * Note: Use legendData so the legend width can be calculated and positioned properly.
    * Default legend properties may be applied
    */
-  legendComponent?: React.ReactElement<any>;
+  legendComponent?: ReactElement<any>;
   /**
    * Specify data via the data prop. ChartLegend expects data as an
    * array of objects with name (required), symbol, and labels properties.
@@ -467,7 +466,7 @@ export interface ChartProps extends VictoryChartProps {
   width?: number;
 }
 
-export const Chart: React.FunctionComponent<ChartProps> = ({
+export const Chart: FunctionComponent<ChartProps> = ({
   ariaDesc,
   ariaTitle,
   children,
@@ -512,7 +511,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     containerComponent.props.labelComponent &&
     containerComponent.props.labelComponent.type.displayName === 'ChartLegendTooltip'
   ) {
-    labelComponent = React.cloneElement(containerComponent.props.labelComponent, {
+    labelComponent = cloneElement(containerComponent.props.labelComponent, {
       theme,
       ...(defaultPatternScale && { patternScale: defaultPatternScale }),
       ...containerComponent.props.labelComponent.props
@@ -520,7 +519,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   }
 
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     desc: ariaDesc,
     title: ariaTitle,
     theme,
@@ -534,21 +533,21 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     legendXOffset = getLegendMaxTextWidth(legendData, theme);
   }
 
-  const legend = React.cloneElement(legendComponent, {
+  const legend = cloneElement(legendComponent, {
     data: legendData,
     ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
     orientation: legendOrientation,
     theme,
     ...(legendDirection === 'rtl' && {
       dataComponent: legendComponent.props.dataComponent ? (
-        React.cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
+        cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
       ) : (
         <ChartPoint transform={`translate(${legendXOffset})`} />
       )
     }),
     ...(legendDirection === 'rtl' && {
       labelComponent: legendComponent.props.labelComponent ? (
-        React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
+        cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
       ) : (
         <ChartLabel direction="rtl" dx={legendXOffset - 30} />
       )
@@ -567,7 +566,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     let legendTitleHeight = legend.props.title ? 10 : 0;
 
     // Adjust for axis label
-    React.Children.toArray(children).map((child: any) => {
+    Children.toArray(children).map((child: any) => {
       if (child.type.role === 'axis' && child.props.label && !child.props.dependentAxis) {
         xAxisLabelHeight = getLabelTextSize({ text: child.props.label, theme }).height + 10;
         legendTitleHeight = 0;
@@ -604,10 +603,10 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
 
   // Render children
   const renderChildren = () =>
-    React.Children.toArray(children).map((child, index) => {
-      if (React.isValidElement(child)) {
+    Children.toArray(children).map((child, index) => {
+      if (isValidElement(child)) {
         const { ...childProps } = child.props;
-        return React.cloneElement(child, {
+        return cloneElement(child, {
           colorScale,
           ...(defaultPatternScale && { patternScale: defaultPatternScale }),
           ...(name &&

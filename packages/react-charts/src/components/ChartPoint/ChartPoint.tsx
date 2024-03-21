@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement } from 'react';
 import { Helpers, Path } from 'victory-core';
 import { PathHelpers, PathHelpersInterface } from './path-helpers';
 
@@ -50,7 +50,7 @@ export interface ChartPointProps {
   /**
    * The rendered path element
    */
-  pathComponent?: React.ReactElement<any>;
+  pathComponent?: ReactElement<any>;
   /**
    * A flag specifying whether the component is part of a polar chart
    */
@@ -138,7 +138,7 @@ const getPath = (props: ChartPointProps) => {
   return symbolFunction(x, y, size);
 };
 
-export const ChartPoint: React.FunctionComponent<ChartPointProps> = ({
+export const ChartPoint: FunctionComponent<ChartPointProps> = ({
   active,
   className,
   clipPath,
@@ -166,7 +166,7 @@ export const ChartPoint: React.FunctionComponent<ChartPointProps> = ({
     ...rest
   };
 
-  return React.cloneElement(pathComponent, {
+  return cloneElement(pathComponent, {
     className,
     clipPath,
     d: getPath(props),

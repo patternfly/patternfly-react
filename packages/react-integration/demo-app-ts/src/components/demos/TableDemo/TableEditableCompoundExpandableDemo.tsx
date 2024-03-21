@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent, Component, Fragment } from 'react';
 import {
   compoundExpand,
   IRow,
@@ -18,7 +18,7 @@ interface TableState {
   rows: IRow[];
 }
 
-export class TableEditableCompoundExpandableDemo extends React.Component<TableProps, TableState> {
+export class TableEditableCompoundExpandableDemo extends Component<TableProps, TableState> {
   static displayName = 'TableEditableCompoundExpandableDemo';
   constructor(props: TableProps) {
     super(props);
@@ -47,25 +47,25 @@ export class TableEditableCompoundExpandableDemo extends React.Component<TablePr
             { title: <a href="#">siemur/test-space</a>, props: { component: 'th' } },
             {
               title: (
-                <React.Fragment>
+                <Fragment>
                   <CodeBranchIcon key="icon" /> 10
-                </React.Fragment>
+                </Fragment>
               ),
               props: { isOpen: true, ariaControls: 'compoound-expansion-table-1' }
             },
             {
               title: (
-                <React.Fragment>
+                <Fragment>
                   <CodeIcon key="icon" /> 4
-                </React.Fragment>
+                </Fragment>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-2' }
             },
             {
               title: (
-                <React.Fragment>
+                <Fragment>
                   <CubeIcon key="icon" /> 4
-                </React.Fragment>
+                </Fragment>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-3' }
             },
@@ -124,25 +124,25 @@ export class TableEditableCompoundExpandableDemo extends React.Component<TablePr
             { title: <a href="#">siemur/test-space</a>, props: { component: 'th' } },
             {
               title: (
-                <React.Fragment>
+                <Fragment>
                   <CodeBranchIcon key="icon" /> 3
-                </React.Fragment>
+                </Fragment>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-4' }
             },
             {
               title: (
-                <React.Fragment>
+                <Fragment>
                   <CodeIcon key="icon" /> 4
-                </React.Fragment>
+                </Fragment>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-5' }
             },
             {
               title: (
-                <React.Fragment>
+                <Fragment>
                   <CubeIcon key="icon" /> 2
-                </React.Fragment>
+                </Fragment>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-6' }
             },
@@ -200,7 +200,7 @@ export class TableEditableCompoundExpandableDemo extends React.Component<TablePr
     this.onExpand = this.onExpand.bind(this);
   }
 
-  onExpand(event: React.MouseEvent, rowIndex: number, colIndex: number, isOpen: boolean) {
+  onExpand(event: MouseEvent, rowIndex: number, colIndex: number, isOpen: boolean) {
     const newRows = Array.from(this.state.rows);
     const rowCells = Array.from(newRows[rowIndex].cells) as IRowCell[];
     const thisCell = rowCells[colIndex];

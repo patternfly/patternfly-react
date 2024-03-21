@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css } from '@patternfly/react-styles';
 
-export const PopoverContent: React.FunctionComponent<PopoverContentProps> = ({
+export const PopoverContent: FunctionComponent<PopoverContentProps> = ({
   className = null,
   children,
   ...props
@@ -13,9 +13,9 @@ export const PopoverContent: React.FunctionComponent<PopoverContentProps> = ({
 );
 PopoverContent.displayName = 'PopoverContent';
 
-export interface PopoverContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface PopoverContentProps extends HTMLProps<HTMLDivElement> {
   /** PopoverContent additional class */
   className?: string;
   /** PopoverContent content */
-  children: React.ReactNode;
+  children: ReactNode;
 }

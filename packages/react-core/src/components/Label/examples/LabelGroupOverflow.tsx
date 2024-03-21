@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Label, LabelGroup } from '@patternfly/react-core';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
-export const LabelGroupOverflow: React.FunctionComponent = () => (
+export const LabelGroupOverflow: FunctionComponent = () => (
   <LabelGroup>
     <Label icon={<InfoCircleIcon />}>Label 1</Label>
     <Label icon={<InfoCircleIcon />} color="blue">

@@ -1,4 +1,4 @@
-import React from 'react';
+import { JSX, FunctionComponent, FormEvent, MouseEvent, useState, Fragment } from 'react';
 import {
   Button,
   DataList,
@@ -31,7 +31,7 @@ import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amou
 interface RowType {
   cells: (
     | {
-        title: React.JSX.Element;
+        title: JSX.Element;
         props: {
           column: string;
         };
@@ -45,7 +45,7 @@ interface RowType {
   )[];
 }
 
-export const TableColumnManagementWithDraggable: React.FunctionComponent = () => {
+export const TableColumnManagementWithDraggable: FunctionComponent = () => {
   const actions = [
     {
       title: <a href="#">Link</a>
@@ -66,34 +66,34 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
       cells: [
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <div>Node 1</div>
               <a href="#">siemur/test-space</a>
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Repositories' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CodeBranchIcon key="icon" /> 10
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Branches' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CodeIcon key="icon" /> 25
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Pull requests' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CubeIcon key="icon" /> 5
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Workspaces' }
         },
@@ -103,9 +103,9 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <a href="#">Action link</a>
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: '' }
         }
@@ -115,34 +115,34 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
       cells: [
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <div>Node 2</div>
               <a href="#">siemur/test-space</a>
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Repositories' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CodeBranchIcon key="icon" /> 8
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Branches' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CodeIcon key="icon" /> 30
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Pull requests' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CubeIcon key="icon" /> 2
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Workspaces' }
         },
@@ -152,9 +152,9 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <a href="#">Action link</a>
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: '' }
         }
@@ -164,34 +164,34 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
       cells: [
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <div>Node 3</div>
               <a href="#">siemur/test-space</a>
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Repositories' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CodeBranchIcon key="icon" /> 12
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Branches' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CodeIcon key="icon" /> 48
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Pull requests' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CubeIcon key="icon" /> 13
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Workspaces' }
         },
@@ -201,9 +201,9 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <a href="#">Action link</a>
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: '' }
         }
@@ -213,34 +213,34 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
       cells: [
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <div>Node 4</div>
               <a href="#">siemur/test-space</a>
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Repositories' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CodeBranchIcon key="icon" /> 3
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Branches' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CodeIcon key="icon" /> 8
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Pull requests' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CubeIcon key="icon" /> 20
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Workspaces' }
         },
@@ -250,9 +250,9 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <a href="#">Action link</a>
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: '' }
         }
@@ -262,34 +262,34 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
       cells: [
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <div>Node 5</div>
               <a href="#">siemur/test-space</a>
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Repositories' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CodeBranchIcon key="icon" /> 34
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Branches' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CodeIcon key="icon" /> 21
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Pull requests' }
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CubeIcon key="icon" /> 26
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: 'Workspaces' }
         },
@@ -299,9 +299,9 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <a href="#">Action link</a>
-            </React.Fragment>
+            </Fragment>
           ),
           props: { column: '' }
         }
@@ -309,16 +309,16 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
     }
   ];
 
-  const [filters, setFilters] = React.useState<string[]>([]);
-  const [filteredColumns, setFilteredColumns] = React.useState<string[]>([]);
-  const [columns, setColumns] = React.useState<string[]>(defaultColumns);
-  const [rows, setRows] = React.useState(defaultRows);
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [check1, setCheck1] = React.useState(true);
-  const [check2, setCheck2] = React.useState(true);
-  const [check3, setCheck3] = React.useState(true);
-  const [check4, setCheck4] = React.useState(true);
-  const [check5, setCheck5] = React.useState(true);
+  const [filters, setFilters] = useState<string[]>([]);
+  const [filteredColumns, setFilteredColumns] = useState<string[]>([]);
+  const [columns, setColumns] = useState<string[]>(defaultColumns);
+  const [rows, setRows] = useState(defaultRows);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [check1, setCheck1] = useState(true);
+  const [check2, setCheck2] = useState(true);
+  const [check3, setCheck3] = useState(true);
+  const [check4, setCheck4] = useState(true);
+  const [check5, setCheck5] = useState(true);
 
   const matchCheckboxNameToColumn = (name: string) => {
     switch (name) {
@@ -355,7 +355,7 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
     setFilters([]);
     setFilteredColumns(defaultColumns);
   };
-  const handleChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
+  const handleChange = (event: FormEvent<HTMLInputElement>, checked: boolean) => {
     const target = event.currentTarget;
     const name = target.name;
 
@@ -379,7 +379,7 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
         break;
     }
   };
-  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
+  const handleModalToggle = (_event: KeyboardEvent | MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
   const onSave = () => {
@@ -585,7 +585,7 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
   );
 
   const toolbarItems = (
-    <React.Fragment>
+    <Fragment>
       <span id="page-layout-table-draggable-column-management-action-toolbar-top-select-checkbox-label" hidden>
         Choose one
       </span>
@@ -615,17 +615,17 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
           </OverflowMenu>
         </ToolbarItem>
       </ToolbarContent>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <TableDeprecated
         gridBreakPoint="grid-xl"
         header={
-          <React.Fragment>
+          <Fragment>
             <Toolbar id="page-layout-table-draggable-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
-          </React.Fragment>
+          </Fragment>
         }
         aria-label="Column Management with Draggable Table"
         cells={columns}
@@ -636,6 +636,6 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
         <TableBody />
       </TableDeprecated>
       {renderModal()}
-    </React.Fragment>
+    </Fragment>
   );
 };

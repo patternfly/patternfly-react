@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 
@@ -11,9 +11,9 @@ export interface AriaProps {
   'aria-valuetext'?: string;
 }
 
-export interface ProgressBarProps extends React.HTMLProps<HTMLDivElement> {
+export interface ProgressBarProps extends HTMLProps<HTMLDivElement> {
   /** What should be rendered inside progress bar. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes for Progres bar. */
   className?: string;
   /** Actual progress value. */
@@ -22,7 +22,7 @@ export interface ProgressBarProps extends React.HTMLProps<HTMLDivElement> {
   progressBarAriaProps?: AriaProps;
 }
 
-export const ProgressBar: React.FunctionComponent<ProgressBarProps> = ({
+export const ProgressBar: FunctionComponent<ProgressBarProps> = ({
   progressBarAriaProps,
   className = '',
   children = null,

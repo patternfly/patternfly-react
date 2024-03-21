@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
@@ -27,9 +27,9 @@ export const favoritable: ITransform = (
   }
 
   /**
-   * @param {React.MouseEvent} event - Mouse event
+   * @param event - Mouse event
    */
-  function favoritesClick(event: React.MouseEvent<HTMLButtonElement>) {
+  function favoritesClick(event: MouseEvent<HTMLButtonElement>) {
     // tslint:disable-next-line:no-unused-expression
     onFavorite && onFavorite(event, rowData && !rowData.favorited, rowIndex, rowData, extraData);
   }

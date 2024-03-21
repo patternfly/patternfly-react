@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import { Split } from '../Split';
 import { SplitItem } from '../SplitItem';

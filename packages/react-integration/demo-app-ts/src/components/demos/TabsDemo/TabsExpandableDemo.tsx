@@ -1,5 +1,6 @@
+import { type MouseEvent as ReactMouseEvent } from 'react';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 export class TabsExpandableDemo extends Component {
   state = {
@@ -15,14 +16,14 @@ export class TabsExpandableDemo extends Component {
   };
 
   // Toggle currently active tab
-  private handleTabClickControlled = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
+  private handleTabClickControlled = (_event: ReactMouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey: tabIndex
     });
   };
 
   private handleTabClickUncontrolled = (
-    _event: React.MouseEvent<HTMLElement, MouseEvent>,
+    _event: ReactMouseEvent<HTMLElement, MouseEvent>,
     tabIndex: number | string
   ) => {
     this.setState({
@@ -30,53 +31,44 @@ export class TabsExpandableDemo extends Component {
     });
   };
 
-  private handleTabClickBreakpoint1 = (
-    _event: React.MouseEvent<HTMLElement, MouseEvent>,
-    tabIndex: number | string
-  ) => {
+  private handleTabClickBreakpoint1 = (_event: ReactMouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKeyBreakpoint1: tabIndex
     });
   };
 
-  private handleTabClickBreakpoint2 = (
-    _event: React.MouseEvent<HTMLElement, MouseEvent>,
-    tabIndex: number | string
-  ) => {
+  private handleTabClickBreakpoint2 = (_event: ReactMouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKeyBreakpoint2: tabIndex
     });
   };
 
-  private handleTabClickBreakpoint3 = (
-    _event: React.MouseEvent<HTMLElement, MouseEvent>,
-    tabIndex: number | string
-  ) => {
+  private handleTabClickBreakpoint3 = (_event: ReactMouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKeyBreakpoint3: tabIndex
     });
   };
 
   // Toggle Expandable tabs
-  private onToggleControlled = (_event: React.MouseEvent, isExpanded: boolean) => {
+  private onToggleControlled = (_event: ReactMouseEvent, isExpanded: boolean) => {
     this.setState({
       isExpandedControlled: isExpanded
     });
   };
 
-  private onToggleBreakpoint1 = (_event: React.MouseEvent, isExpanded: boolean) => {
+  private onToggleBreakpoint1 = (_event: ReactMouseEvent, isExpanded: boolean) => {
     this.setState({
       isExpandedBreakpoint1: isExpanded
     });
   };
 
-  private onToggleBreakpoint2 = (_event: React.MouseEvent, isExpanded: boolean) => {
+  private onToggleBreakpoint2 = (_event: ReactMouseEvent, isExpanded: boolean) => {
     this.setState({
       isExpandedBreakpoint2: isExpanded
     });
   };
 
-  private onToggleBreakpoint3 = (_event: React.MouseEvent, isExpanded: boolean) => {
+  private onToggleBreakpoint3 = (_event: ReactMouseEvent, isExpanded: boolean) => {
     this.setState({
       isExpandedBreakpoint3: isExpanded
     });
@@ -88,7 +80,7 @@ export class TabsExpandableDemo extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <div>
           <Tabs
             id="expandable-controlled"
@@ -218,7 +210,7 @@ export class TabsExpandableDemo extends Component {
             </Tab>
           </Tabs>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, useState, useRef } from 'react';
 import { MenuToggle, Divider, Select, SelectList, SelectOption, SelectGroup } from '@patternfly/react-core';
 
-export const OptionsMenuDemo: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [selected, setSelected] = React.useState<string>('');
-  const menuRef = React.useRef<HTMLDivElement>();
+export const OptionsMenuDemo: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selected, setSelected] = useState<string>('');
+  const menuRef = useRef<HTMLDivElement>();
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);

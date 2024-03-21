@@ -1,13 +1,13 @@
 import { Button } from '@patternfly/react-core';
 import { Wizard, WizardStep } from '@patternfly/react-core/deprecated';
-import React from 'react';
+import { HTMLProps, Component, Fragment } from 'react';
 
 interface WizardDeprecatedDemoState {
   isOpen: boolean;
   isOpenWithRole: boolean;
 }
 
-export class WizardDeprecatedDemo extends React.Component<React.HTMLProps<HTMLDivElement>, WizardDeprecatedDemoState> {
+export class WizardDeprecatedDemo extends Component<HTMLProps<HTMLDivElement>, WizardDeprecatedDemoState> {
   static displayName = 'WizardDemo';
   state = {
     isOpen: false,
@@ -171,7 +171,7 @@ export class WizardDeprecatedDemo extends React.Component<React.HTMLProps<HTMLDi
       }
     ];
     return (
-      <React.Fragment>
+      <Fragment>
         <Button id="launchWiz" variant="primary" onClick={this.handleModalToggle}>
           Show Modal
         </Button>
@@ -224,7 +224,7 @@ export class WizardDeprecatedDemo extends React.Component<React.HTMLProps<HTMLDi
           onClose={this.handleRoleWizardToggle}
           {...(this.state.isOpenWithRole && { isOpen: true })}
         />
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

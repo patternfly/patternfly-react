@@ -56,7 +56,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic pie chart
 ```js
-import React from 'react';
 import { ChartPie } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
@@ -85,7 +84,6 @@ import { ChartPie } from '@patternfly/react-charts';
 
 ### Bar chart
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '450px' }}>
@@ -122,7 +120,6 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
 
 ### Stack chart
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '250px', width: '600px' }}>
@@ -160,7 +157,6 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiCo
 
 ### Donut chart
 ```js
-import React from 'react';
 import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
@@ -194,7 +190,6 @@ import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
 This demonstrates how to hide a pattern for the static, unused portion of the donut utilization chart.
 
 ```js
-import React from 'react';
 import { ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '300px' }}>
@@ -229,7 +224,6 @@ import { ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts
 This demonstrates how to apply patterns to thresholds.
 
 ```js
-import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '675px' }}>
@@ -268,7 +262,7 @@ import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@pa
 This demonstrates how to add an interactive legend to a pie chart using events such as `onMouseOver`, `onMouseOut`, and `onClick`.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { 
   Chart,
   ChartLegend,
@@ -278,7 +272,7 @@ import {
   getInteractiveLegendItemStyles 
 } from '@patternfly/react-charts';
 
-class InteractivePieLegendChart extends React.Component {
+class InteractivePieLegendChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -387,7 +381,7 @@ class InteractivePieLegendChart extends React.Component {
 This demonstrates how to add an interactive legend using events such as `onMouseOver`, `onMouseOut`, and `onClick`.
 
 ```js
-import React from 'react';
+import { Component, createRef, cloneElement } from 'react';
 import { 
   Chart, 
   ChartArea, 
@@ -404,10 +398,10 @@ import {
 import { getResizeObserver } from '@patternfly/react-core';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
-class InteractiveLegendChart extends React.Component {
+class InteractiveLegendChart extends Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       hiddenSeries: new Set(),
@@ -530,7 +524,7 @@ class InteractiveLegendChart extends React.Component {
   render() {
     const { hiddenSeries, width } = this.state;
 
-    const container = React.cloneElement(
+    const container = cloneElement(
       this.cursorVoronoiContainer, 
       {
         disable: !this.isDataAvailable()
@@ -599,7 +593,6 @@ class InteractiveLegendChart extends React.Component {
 This demonstrates how to omit patterns from pie chart segments.
 
 ```js
-import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
@@ -632,7 +625,6 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 This demonstrates how to apply a custom color scale to patterns.
 
 ```js
-import React from 'react';
 import { ChartPie } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
@@ -668,7 +660,6 @@ import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color
 This demonstrates how to create custom patterns.
 
 ```js
-import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
@@ -710,14 +701,14 @@ import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color
 
 ### All patterns
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import { getResizeObserver } from '@patternfly/react-core';
 
-class PatternsPie extends React.Component {
+class PatternsPie extends Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       extraHeight: 0,

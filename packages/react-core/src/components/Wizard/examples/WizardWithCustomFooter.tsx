@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 
 import {
   Button,
@@ -28,7 +28,7 @@ const CustomWizardFooter = () => {
 
 const CustomStepTwoFooter = () => {
   const { goToNextStep, goToPrevStep, close } = useWizardContext();
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   async function onNext() {
     setIsLoading(true);
@@ -57,7 +57,7 @@ interface ReviewStepContentProps {
   isSubmitting: boolean | undefined;
 }
 
-const ReviewStepContent: React.FunctionComponent<ReviewStepContentProps> = ({ isSubmitting }) => {
+const ReviewStepContent: FunctionComponent<ReviewStepContentProps> = ({ isSubmitting }) => {
   if (isSubmitting === undefined) {
     return <FlexItem alignSelf={{ default: 'alignSelfFlexStart' }}>Review step content</FlexItem>;
   }
@@ -74,8 +74,8 @@ const ReviewStepContent: React.FunctionComponent<ReviewStepContentProps> = ({ is
   return <>50 points to Gryffindor!</>;
 };
 
-export const WizardWithCustomFooter: React.FunctionComponent = () => {
-  const [isSubmitting, setIsSubmitting] = React.useState<boolean>();
+export const WizardWithCustomFooter: FunctionComponent = () => {
+  const [isSubmitting, setIsSubmitting] = useState<boolean>();
 
   async function onSubmit(): Promise<void> {
     setIsSubmitting(true);

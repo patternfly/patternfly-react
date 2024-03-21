@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent, Component } from 'react';
 import {
   sortable,
   SortByDirection,
@@ -8,7 +8,7 @@ import {
 } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
-export class TableSortableDemo extends React.Component<
+export class TableSortableDemo extends Component<
   TableProps,
   { columns: (ICell | string)[]; rows: IRow[]; sortBy: ISortBy }
 > {
@@ -33,7 +33,7 @@ export class TableSortableDemo extends React.Component<
     this.onSort = this.onSort.bind(this);
   }
 
-  onSort(_event: React.MouseEvent, index: number, direction: SortByDirection) {
+  onSort(_event: MouseEvent, index: number, direction: SortByDirection) {
     const sortedRows = this.state.rows.sort((a, b) => {
       if (a[index] < b[index]) {
         return -1;

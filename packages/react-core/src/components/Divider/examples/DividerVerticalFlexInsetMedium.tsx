@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
-export const DividerVerticalFlexInsetMedium: React.FunctionComponent = () => (
+export const DividerVerticalFlexInsetMedium: FunctionComponent = () => (
   <Flex>
     <FlexItem>first item</FlexItem>
     <Divider

@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
-export const NumberInputCustomStepAndThreshold: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState<number | ''>(90);
+export const NumberInputCustomStepAndThreshold: FunctionComponent = () => {
+  const [value, setValue] = useState<number | ''>(90);
   const minValue = 90;
   const maxValue = 100;
   const step = 3;
@@ -22,12 +22,12 @@ export const NumberInputCustomStepAndThreshold: React.FunctionComponent = () => 
     setValue((value || 0) + stepValue);
   };
 
-  const onChange = (event: React.FormEvent<HTMLInputElement>) => {
+  const onChange = (event: FormEvent<HTMLInputElement>) => {
     const value = (event.target as HTMLInputElement).value;
     setValue(value === '' ? value : +value);
   };
 
-  const onBlur = (event: React.FormEvent<HTMLInputElement>) => {
+  const onBlur = (event: FormEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement;
     const newValue = normalizeBetween(isNaN(+target.value) ? 0 : Number(target.value), minValue, maxValue);
     setValue(newValue);

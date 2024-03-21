@@ -1,4 +1,18 @@
-import * as React from 'react';
+import {
+  ReactNode,
+  SyntheticEvent,
+  HTMLProps,
+  RefObject,
+  FormEvent,
+  FunctionComponent,
+  KeyboardEvent,
+  Ref,
+  MutableRefObject,
+  useState,
+  useRef,
+  useEffect,
+  forwardRef
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
@@ -27,7 +41,7 @@ export interface SearchInputSearchAttribute {
   /** The search attribute's display name. It is used to label the field in the advanced
    * search menu.
    */
-  display: React.ReactNode;
+  display: ReactNode;
 }
 
 /** Properties for creating an expandable search input. These properties should be passed into
@@ -38,14 +52,14 @@ export interface SearchInputExpandable {
   /** Flag to indicate if the search input is expanded. */
   isExpanded: boolean;
   /** Callback function to toggle the expandable search input. */
-  onToggleExpand: (event: React.SyntheticEvent<HTMLButtonElement>, isExpanded: boolean) => void;
+  onToggleExpand: (event: SyntheticEvent<HTMLButtonElement>, isExpanded: boolean) => void;
   /** An accessible label for the expandable search input toggle. */
   toggleAriaLabel: string;
 }
 
 /** The main search input component. */
 
-export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'results' | 'ref'> {
+export interface SearchInputProps extends Omit<HTMLProps<HTMLDivElement>, 'onChange' | 'results' | 'ref'> {
   /** Delimiter in the query string for pairing attributes with search values.
    * Required whenever attributes are passed as props.
    */
@@ -70,15 +84,15 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   expandableInput?: SearchInputExpandable;
   /* Additional elements added after the attributes in the form.
    * The new form elements can be wrapped in a form group component for automatic formatting. */
-  formAdditionalItems?: React.ReactNode;
+  formAdditionalItems?: ReactNode;
   /** Attribute label for strings unassociated with one of the provided listed attributes. */
-  hasWordsAttrLabel?: React.ReactNode;
+  hasWordsAttrLabel?: ReactNode;
   /** A suggestion for autocompleting. */
   hint?: string;
   /** Id for the search input */
   searchInputId?: string;
   /** @hide A reference object to attach to the input box. */
-  innerRef?: React.RefObject<any>;
+  innerRef?: RefObject<any>;
   /** A flag for controlling the open state of a custom advanced search implementation. */
   isAdvancedSearchOpen?: boolean;
   /** Flag indicating if search input is disabled. */
@@ -90,21 +104,17 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   /** Accessible label for the button to navigate to next result. */
   nextNavigationButtonAriaLabel?: string;
   /** A callback for when the input value changes. */
-  onChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
+  onChange?: (event: FormEvent<HTMLInputElement>, value: string) => void;
   /** A callback for when the user clicks the clear button. */
-  onClear?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  onClear?: (event: SyntheticEvent<HTMLButtonElement>) => void;
   /** A callback for when the user clicks to navigate to next result. */
-  onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  onNextClick?: (event: SyntheticEvent<HTMLButtonElement>) => void;
   /** A callback for when the user clicks to navigate to previous result. */
-  onPreviousClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  onPreviousClick?: (event: SyntheticEvent<HTMLButtonElement>) => void;
   /** A callback for when the search button is clicked. */
-  onSearch?: (
-    event: React.SyntheticEvent<HTMLButtonElement>,
-    value: string,
-    attrValueMap: { [key: string]: string }
-  ) => void;
+  onSearch?: (event: SyntheticEvent<HTMLButtonElement>, value: string, attrValueMap: { [key: string]: string }) => void;
   /** A callback for when the open advanced search button is clicked. */
-  onToggleAdvancedSearch?: (event: React.SyntheticEvent<HTMLButtonElement>, isOpen?: boolean) => void;
+  onToggleAdvancedSearch?: (event: SyntheticEvent<HTMLButtonElement>, isOpen?: boolean) => void;
   /** Accessible label for the button which opens the advanced search form menu. */
   openMenuButtonAriaLabel?: string;
   /** Placeholder text of the search input. */
@@ -126,7 +136,7 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   name?: string;
 }
 
-const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
+const SearchInputBase: FunctionComponent<SearchInputProps> = ({
   className,
   searchInputId,
   value = '',
@@ -161,19 +171,19 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   areUtilitiesDisplayed,
   ...props
 }: SearchInputProps) => {
-  const [isSearchMenuOpen, setIsSearchMenuOpen] = React.useState(false);
-  const [searchValue, setSearchValue] = React.useState(value);
-  const searchInputRef = React.useRef(null);
-  const ref = React.useRef(null);
+  const [isSearchMenuOpen, setIsSearchMenuOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState(value);
+  const searchInputRef = useRef(null);
+  const ref = useRef(null);
   const searchInputInputRef = innerRef || ref;
-  const searchInputExpandableToggleRef = React.useRef(null);
-  const triggerRef = React.useRef(null);
-  const popperRef = React.useRef(null);
-  const [focusAfterExpandChange, setFocusAfterExpandChange] = React.useState(false);
+  const searchInputExpandableToggleRef = useRef(null);
+  const triggerRef = useRef(null);
+  const popperRef = useRef(null);
+  const [focusAfterExpandChange, setFocusAfterExpandChange] = useState(false);
 
   const { isExpanded, onToggleExpand, toggleAriaLabel } = expandableInput || {};
 
-  React.useEffect(() => {
+  useEffect(() => {
     // this effect and the focusAfterExpandChange variable are needed to focus the input/toggle as needed when the
     // expansion toggle is fired without focusing on mount
     if (!focusAfterExpandChange) {
@@ -186,11 +196,11 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     setFocusAfterExpandChange(false);
   }, [focusAfterExpandChange, isExpanded, searchInputInputRef, searchInputExpandableToggleRef]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setSearchValue(value);
   }, [value]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (attributes.length > 0 && !advancedSearchDelimiter) {
       // eslint-disable-next-line no-console
       console.error(
@@ -199,18 +209,18 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     }
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsSearchMenuOpen(isAdvancedSearchOpen);
   }, [isAdvancedSearchOpen]);
 
-  const onChangeHandler = (event: React.FormEvent<HTMLInputElement>, value: string) => {
+  const onChangeHandler = (event: FormEvent<HTMLInputElement>, value: string) => {
     if (onChange) {
       onChange(event, value);
     }
     setSearchValue(value);
   };
 
-  const onToggle = (e: React.SyntheticEvent<HTMLButtonElement>) => {
+  const onToggle = (e: SyntheticEvent<HTMLButtonElement>) => {
     const isOpen = !isSearchMenuOpen;
     setIsSearchMenuOpen(isOpen);
     if (onToggleAdvancedSearch) {
@@ -218,7 +228,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     }
   };
 
-  const onSearchHandler = (event: React.SyntheticEvent<HTMLButtonElement>) => {
+  const onSearchHandler = (event: SyntheticEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (onSearch) {
       onSearch(event, value, getAttrValueMap());
@@ -265,13 +275,13 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     return attrValue;
   };
 
-  const onEnter = (event: React.KeyboardEvent<any>) => {
+  const onEnter = (event: KeyboardEvent<any>) => {
     if (event.key === 'Enter') {
       onSearchHandler(event);
     }
   };
 
-  const onClearInput = (e: React.SyntheticEvent<HTMLButtonElement>) => {
+  const onClearInput = (e: SyntheticEvent<HTMLButtonElement>) => {
     if (onClear) {
       onClear(e);
     }
@@ -280,7 +290,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     }
   };
 
-  const onExpandHandler = (event: React.SyntheticEvent<HTMLButtonElement>) => {
+  const onExpandHandler = (event: SyntheticEvent<HTMLButtonElement>) => {
     setSearchValue('');
     onToggleExpand(event, isExpanded);
     setFocusAfterExpandChange(true);
@@ -471,7 +481,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 };
 SearchInputBase.displayName = 'SearchInputBase';
 
-export const SearchInput = React.forwardRef((props: SearchInputProps, ref: React.Ref<HTMLInputElement>) => (
-  <SearchInputBase {...props} innerRef={ref as React.MutableRefObject<any>} />
+export const SearchInput = forwardRef((props: SearchInputProps, ref: Ref<HTMLInputElement>) => (
+  <SearchInputBase {...props} innerRef={ref as MutableRefObject<any>} />
 ));
 SearchInput.displayName = 'SearchInput';

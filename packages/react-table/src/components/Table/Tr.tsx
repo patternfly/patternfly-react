@@ -1,17 +1,28 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  Ref,
+  KeyboardEvent,
+  MouseEvent,
+  FunctionComponent,
+  useState,
+  useContext,
+  useEffect,
+  forwardRef
+} from 'react';
 import { useOUIAProps, OUIAProps } from '@patternfly/react-core/dist/esm/helpers';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 import { TableContext } from './Table';
 
-export interface TrProps extends Omit<React.HTMLProps<HTMLTableRowElement>, 'onResize'>, OUIAProps {
+export interface TrProps extends Omit<HTMLProps<HTMLTableRowElement>, 'onResize'>, OUIAProps {
   /** Content rendered inside the <tr> row */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the <tr> row  */
   className?: string;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
   /** Flag indicating the Tr is hidden */
   isHidden?: boolean;
   /** Only applicable to Tr within the Tbody: Makes the row expandable and determines if it's expanded or not.
@@ -29,7 +40,7 @@ export interface TrProps extends Omit<React.HTMLProps<HTMLTableRowElement>, 'onR
   /** Flag indicating the row will act as a border. This is typically used for a table with a nested and sticky header. */
   isBorderRow?: boolean;
   /** An event handler for the row */
-  onRowClick?: (event?: React.KeyboardEvent | React.MouseEvent) => void;
+  onRowClick?: (event?: KeyboardEvent | MouseEvent) => void;
   /** Flag indicating that the row is selectable */
   isSelectable?: boolean;
   /** Flag indicating the spacing offset of the first cell should be reset */
@@ -40,7 +51,7 @@ export interface TrProps extends Omit<React.HTMLProps<HTMLTableRowElement>, 'onR
   ouiaSafe?: boolean;
 }
 
-const TrBase: React.FunctionComponent<TrProps> = ({
+const TrBase: FunctionComponent<TrProps> = ({
   children,
   className,
   isExpanded,
@@ -60,11 +71,11 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   ...props
 }: TrProps) => {
   const ouiaProps = useOUIAProps('TableRow', ouiaId, ouiaSafe);
-  const [computedAriaLabel, setComputedAriaLabel] = React.useState<string | undefined>('');
+  const [computedAriaLabel, setComputedAriaLabel] = useState<string | undefined>('');
 
   let onKeyDown = null;
   if (onRowClick) {
-    onKeyDown = (e: React.KeyboardEvent) => {
+    onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Enter' || e.key === ' ') {
         onRowClick(e);
         e.preventDefault();
@@ -74,9 +85,9 @@ const TrBase: React.FunctionComponent<TrProps> = ({
 
   const rowIsHidden = isHidden || (isExpanded !== undefined && !isExpanded);
 
-  const { registerSelectableRow } = React.useContext(TableContext);
+  const { registerSelectableRow } = useContext(TableContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isSelectable && !rowIsHidden) {
       setComputedAriaLabel(`${isRowSelected ? 'Row selected' : ''}`);
       registerSelectableRow();
@@ -116,7 +127,5 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   );
 };
 
-export const Tr = React.forwardRef((props: TrProps, ref: React.Ref<HTMLTableRowElement>) => (
-  <TrBase {...props} innerRef={ref} />
-));
+export const Tr = forwardRef((props: TrProps, ref: Ref<HTMLTableRowElement>) => <TrBase {...props} innerRef={ref} />);
 Tr.displayName = 'Tr';

@@ -1,13 +1,18 @@
-import React from 'react';
+import {
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  useState,
+  type FunctionComponent
+} from 'react';
 import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
 
-export const TabsNavSecondary: React.FunctionComponent = () => {
-  const [activeTabKey1, setActiveTabKey1] = React.useState<string | number>(0);
-  const [activeTabKey2, setActiveTabKey2] = React.useState<string | number>(0);
+export const TabsNavSecondary: FunctionComponent = () => {
+  const [activeTabKey1, setActiveTabKey1] = useState<string | number>(0);
+  const [activeTabKey2, setActiveTabKey2] = useState<string | number>(0);
 
   // Toggle currently active primary tab
   const handleTabClickFirst = (
-    event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
+    event: ReactMouseEvent<any> | ReactKeyboardEvent | MouseEvent,
     tabIndex: string | number
   ) => {
     setActiveTabKey1(tabIndex);
@@ -15,7 +20,7 @@ export const TabsNavSecondary: React.FunctionComponent = () => {
 
   // Toggle currently active secondary tab
   const handleTabClickSecond = (
-    event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
+    event: ReactMouseEvent<any> | ReactKeyboardEvent | MouseEvent,
     tabIndex: string | number
   ) => {
     setActiveTabKey2(tabIndex);

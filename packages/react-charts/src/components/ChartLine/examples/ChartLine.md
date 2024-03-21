@@ -23,7 +23,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic with right aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '250px', width: '600px' }}>
@@ -96,10 +95,10 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '
 This demonstrates how to combine cursor and voronoi containers to display tooltips along with a cursor.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, createContainer } from '@patternfly/react-charts';
 
-class BottomAlignedLegend extends React.Component {
+class BottomAlignedLegend extends Component {
   render() {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("voronoi", "cursor");
@@ -192,15 +191,15 @@ class BottomAlignedLegend extends React.Component {
 This demonstrates zoom for the x axis only.
 
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
 import { getResizeObserver } from '@patternfly/react-core';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
-class MultiColorChart extends React.Component {
+class MultiColorChart extends Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       width: 0

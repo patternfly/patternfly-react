@@ -1,4 +1,10 @@
-import * as React from 'react';
+import {
+  type ReactNode,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type MouseEvent as ReactMouseEvent,
+  Component,
+  createRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownContext } from './dropdownConstants';
 import { css } from '@patternfly/react-styles';
@@ -11,14 +17,14 @@ export interface ToggleProps {
   /** Type to put on the button */
   type?: 'button' | 'submit' | 'reset';
   /** Anything which can be rendered as dropdown toggle */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classes applied to root element of dropdown toggle */
   className?: string;
   /** Flag to indicate if menu is opened */
   isOpen?: boolean;
   /** Callback called when toggle is clicked */
   onToggle?: (
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent | TouchEvent | KeyboardEvent | ReactKeyboardEvent<any> | ReactMouseEvent<HTMLButtonElement>,
     isOpen: boolean
   ) => void;
   /** Callback called when the Enter key is pressed */
@@ -51,9 +57,9 @@ const buttonVariantStyles = {
   secondary: styles.modifiers.secondary
 };
 
-class Toggle extends React.Component<ToggleProps> {
+class Toggle extends Component<ToggleProps> {
   static displayName = 'Toggle';
-  private buttonRef = React.createRef<HTMLButtonElement>();
+  private buttonRef = createRef<HTMLButtonElement>();
 
   static defaultProps: PickOptional<ToggleProps> = {
     className: '',
@@ -105,7 +111,7 @@ class Toggle extends React.Component<ToggleProps> {
     }
   };
 
-  onKeyDown = (event: React.KeyboardEvent<any>) => {
+  onKeyDown = (event: ReactKeyboardEvent<any>) => {
     if (event.key === 'Tab' && !this.props.isOpen) {
       return;
     }

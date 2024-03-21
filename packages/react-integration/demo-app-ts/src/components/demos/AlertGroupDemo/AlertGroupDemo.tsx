@@ -1,5 +1,5 @@
 /* eslint-disable patternfly-react/no-anonymous-functions */
-import React from 'react';
+import { ReactText, Component, Fragment } from 'react';
 import {
   Alert,
   AlertGroup,
@@ -14,7 +14,7 @@ import buttonStyles from '@patternfly/react-styles/css/components/Button/button'
 interface AlertDemoAlert {
   title: string;
   variant: keyof typeof AlertVariant;
-  key: React.ReactText;
+  key: ReactText;
 }
 
 interface AlertGroupDemoState {
@@ -22,12 +22,12 @@ interface AlertGroupDemoState {
   timer: number;
 }
 
-export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
+export class AlertGroupDemo extends Component<{}, AlertGroupDemoState> {
   static displayName = 'AlertGroupDemo';
   stopAsyncAlerts: () => void;
-  removeAlert: (key: React.ReactText) => void;
+  removeAlert: (key: ReactText) => void;
 
-  constructor(props: {}, removeAlert: (key: React.ReactText) => void) {
+  constructor(props: {}, removeAlert: (key: ReactText) => void) {
     super(props);
     this.state = {
       alerts: [],
@@ -47,7 +47,7 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
     };
     const getUniqueId = () => new Date().getTime();
     const btnClasses = css(buttonStyles.button, buttonStyles.modifiers.secondary);
-    this.removeAlert = (key: React.ReactText) => {
+    this.removeAlert = (key: ReactText) => {
       this.setState({ alerts: [...this.state.alerts.filter((el: AlertDemoAlert) => el.key !== key)] });
     };
     const startAsyncAlerts = () => {
@@ -63,7 +63,7 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
       this.setState({ timer: timerValue });
     };
     return (
-      <React.Fragment>
+      <Fragment>
         <InputGroup style={{ marginBottom: '16px' }}>
           <InputGroupItem>
             <button onClick={startAsyncAlerts} type="button" className={btnClasses}>
@@ -87,7 +87,7 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
             />
           ))}
         </AlertGroup>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

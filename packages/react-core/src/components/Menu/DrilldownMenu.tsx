@@ -1,12 +1,12 @@
-import React from 'react';
+import { HTMLAttributes, ReactNode, FunctionComponent, createRef } from 'react';
 import { Menu } from './Menu';
 import { MenuContent } from './MenuContent';
 import { MenuList } from './MenuList';
 import { MenuContext } from './MenuContext';
 
-export interface DrilldownMenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'ref' | 'onSelect'> {
+export interface DrilldownMenuProps extends Omit<HTMLAttributes<HTMLDivElement>, 'ref' | 'onSelect'> {
   /** Items within drilldown sub-menu */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** ID of the drilldown sub-menu */
   id?: string;
   /** Flag indicating whether the menu is drilled in */
@@ -15,7 +15,7 @@ export interface DrilldownMenuProps extends Omit<React.HTMLAttributes<HTMLDivEle
   getHeight?: (height: string) => void;
 }
 
-export const DrilldownMenu: React.FunctionComponent<DrilldownMenuProps> = ({
+export const DrilldownMenu: FunctionComponent<DrilldownMenuProps> = ({
   children,
   id,
   isMenuDrilledIn = false,
@@ -30,7 +30,7 @@ export const DrilldownMenu: React.FunctionComponent<DrilldownMenuProps> = ({
         parentMenu={menuId}
         isMenuDrilledIn={isMenuDrilledIn}
         isRootMenu={false}
-        ref={React.createRef()}
+        ref={createRef()}
         {...context}
         {...props}
       >

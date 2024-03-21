@@ -1,4 +1,3 @@
-import React from 'react';
 import { screen, render } from '@testing-library/react';
 import { ClipboardCopyToggle } from '../ClipboardCopyToggle';
 import userEvent from '@testing-library/user-event';

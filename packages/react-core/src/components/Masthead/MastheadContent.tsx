@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, DetailedHTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Masthead/masthead';
 import { css } from '@patternfly/react-styles';
 
-export interface MastheadContentProps extends React.DetailedHTMLProps<React.HTMLProps<HTMLDivElement>, HTMLDivElement> {
+export interface MastheadContentProps extends DetailedHTMLProps<HTMLProps<HTMLDivElement>, HTMLDivElement> {
   /** Content rendered inside of the masthead content block. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the masthead content. */
   className?: string;
 }
 
-export const MastheadContent: React.FunctionComponent<MastheadContentProps> = ({
+export const MastheadContent: FunctionComponent<MastheadContentProps> = ({
   children,
   className,
   ...props

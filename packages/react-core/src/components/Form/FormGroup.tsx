@@ -1,20 +1,20 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, ReactElement, FunctionComponent, isValidElement, Fragment } from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
 import { css } from '@patternfly/react-styles';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
-export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
+export interface FormGroupProps extends Omit<HTMLProps<HTMLDivElement>, 'label'> {
   /** Anything that can be rendered as FormGroup content. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the FormGroup. */
   className?: string;
   /** Label text before the field. */
-  label?: React.ReactNode;
+  label?: ReactNode;
   /** Additional label information displayed after the label. */
-  labelInfo?: React.ReactNode;
+  labelInfo?: ReactNode;
   /** Sets an icon for the label. For providing additional context. Host element for Popover  */
-  labelIcon?: React.ReactElement;
+  labelIcon?: ReactElement;
   /** Sets the FormGroup required. */
   isRequired?: boolean;
   /** Sets the FormGroup isInline. */
@@ -33,7 +33,7 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   role?: string;
 }
 
-export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
+export const FormGroup: FunctionComponent<FormGroupProps> = ({
   children = null,
   className = '',
   label,
@@ -51,7 +51,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   const LabelComponent = isGroupOrRadioGroup ? 'span' : 'label';
 
   const labelContent = (
-    <React.Fragment>
+    <Fragment>
       <LabelComponent className={css(styles.formLabel)} {...(!isGroupOrRadioGroup && { htmlFor: fieldId })}>
         <span className={css(styles.formLabelText)}>{label}</span>
         {isRequired && (
@@ -61,8 +61,8 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
           </span>
         )}
       </LabelComponent>{' '}
-      {React.isValidElement(labelIcon) && labelIcon}
-    </React.Fragment>
+      {isValidElement(labelIcon) && labelIcon}
+    </Fragment>
   );
 
   return (
@@ -84,10 +84,10 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
               {...(isGroupOrRadioGroup && { id: `${fieldId || randomId}-legend` })}
             >
               {labelInfo && (
-                <React.Fragment>
+                <Fragment>
                   <div className={css(styles.formGroupLabelMain)}>{labelContent}</div>
                   <div className={css(styles.formGroupLabelInfo)}>{labelInfo}</div>
-                </React.Fragment>
+                </Fragment>
               )}
               {!labelInfo && labelContent}
             </div>

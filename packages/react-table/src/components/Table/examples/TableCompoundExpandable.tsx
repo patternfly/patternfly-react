@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, TdProps, ExpandableRowContent } from '@patternfly/react-table';
 
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
@@ -14,7 +14,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const TableCompoundExpandable: React.FunctionComponent = () => {
+export const TableCompoundExpandable: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'siemur/test-space', branches: 10, prs: 4, workspaces: 4, lastCommit: '20 minutes' },
@@ -33,7 +33,7 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
   // In this example, expanded cells are tracked by the repo and property names from each row. This could be any pair of unique identifiers.
   // This is to prevent state from being based on row and column order index in case we later add sorting and rearranging columns.
   // Note that this behavior is very similar to selection state.
-  const [expandedCells, setExpandedCells] = React.useState<Record<string, ColumnKey>>({
+  const [expandedCells, setExpandedCells] = useState<Record<string, ColumnKey>>({
     'siemur/test-space': 'branches' // Default to the first cell of the first row being expanded
   });
   const setCellExpanded = (repo: Repository, columnKey: ColumnKey, isExpanding = true) => {

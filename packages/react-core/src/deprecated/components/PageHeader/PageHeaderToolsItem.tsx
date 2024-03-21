@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, useContext } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods } from '../../../helpers/util';
 import { PageContext } from '../../../components/Page/PageContext';
 
-export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement> {
+export interface PageHeaderToolsItemProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered in page header tools item. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Additional classes added to the page header tools item. */
   className?: string;
   /** HTML id of the PageHeaderToolsItem */
@@ -24,7 +24,7 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
   isSelected?: boolean;
 }
 
-export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemProps> = ({
+export const PageHeaderToolsItem: FunctionComponent<PageHeaderToolsItemProps> = ({
   children,
   id,
   className,
@@ -32,7 +32,7 @@ export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemPro
   isSelected,
   ...props
 }: PageHeaderToolsItemProps) => {
-  const { width, getBreakpoint } = React.useContext(PageContext);
+  const { width, getBreakpoint } = useContext(PageContext);
   return (
     <div
       className={css(

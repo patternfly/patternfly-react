@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Tile } from '@patternfly/react-core';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
-export const TileWithIcon: React.FunctionComponent = () => (
+export const TileWithIcon: FunctionComponent = () => (
   <div role="listbox" aria-label="Tiles with icon">
     <Tile title="Default" icon={<PlusIcon />} isSelected={false}>
       Subtext goes here

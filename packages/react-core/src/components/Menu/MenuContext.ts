@@ -1,6 +1,11 @@
-import * as React from 'react';
+import {
+  createContext,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type MouseEvent as ReactMouseEvent,
+  type Ref
+} from 'react';
 
-export const MenuContext = React.createContext<{
+export const MenuContext = createContext<{
   menuId?: string;
   parentMenu?: string;
   onSelect?: (event?: any, itemId?: any) => void;
@@ -10,15 +15,15 @@ export const MenuContext = React.createContext<{
   drilldownItemPath?: string[];
   drilledInMenus?: string[];
   onDrillIn?: (
-    event: React.KeyboardEvent | React.MouseEvent,
+    event: ReactKeyboardEvent | ReactMouseEvent,
     fromItemId: string,
     toItemId: string,
     itemId: string
   ) => void;
-  onDrillOut?: (event: React.KeyboardEvent | React.MouseEvent, toItemId: string, itemId: string) => void;
+  onDrillOut?: (event: ReactKeyboardEvent | ReactMouseEvent, toItemId: string, itemId: string) => void;
   onGetMenuHeight?: (menuId: string, height: number) => void;
-  flyoutRef?: React.Ref<HTMLLIElement>;
-  setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
+  flyoutRef?: Ref<HTMLLIElement>;
+  setFlyoutRef?: (ref: Ref<HTMLLIElement>) => void;
   disableHover?: boolean;
   role?: string;
 }>({
@@ -39,7 +44,7 @@ export const MenuContext = React.createContext<{
   role: 'menu'
 });
 
-export const MenuItemContext = React.createContext<{
+export const MenuItemContext = createContext<{
   itemId?: any;
   isDisabled?: boolean;
 }>({

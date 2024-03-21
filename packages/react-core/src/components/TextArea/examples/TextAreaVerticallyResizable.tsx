@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { TextArea } from '@patternfly/react-core';
 
-export const VerticalResizeTextArea: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
+export const VerticalResizeTextArea: FunctionComponent = () => {
+  const [value, setValue] = useState('');
   return (
     <TextArea
       value={value}

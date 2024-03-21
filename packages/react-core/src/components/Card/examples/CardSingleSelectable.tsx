@@ -1,13 +1,13 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Card, CardHeader, CardTitle, CardBody } from '@patternfly/react-core';
 
-export const SingleSelectableCard: React.FunctionComponent = () => {
+export const SingleSelectableCard: FunctionComponent = () => {
   const id1 = 'single-selectable-card-input-1';
   const id2 = 'single-selectable-card-input-2';
   const id3 = 'single-selectable-card-input-3';
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Card id="single-selectable-card-example-1" isSelectable>
         <CardHeader
           selectableActions={{
@@ -47,6 +47,6 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
         </CardHeader>
         <CardBody>This card is single selectable but disabled.</CardBody>
       </Card>
-    </React.Fragment>
+    </Fragment>
   );
 };

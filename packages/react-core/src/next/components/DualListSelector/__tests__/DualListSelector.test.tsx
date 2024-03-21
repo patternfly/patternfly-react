@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
 import { DualListSelectorPane } from '../../DualListSelector';
 import { SearchInput } from '../../../../components/SearchInput';
-import React from 'react';
 
 describe('DualListSelector', () => {
   test('basic', () => {

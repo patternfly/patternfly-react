@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 
-export interface DataListContentProps extends React.HTMLProps<HTMLElement> {
+export interface DataListContentProps extends HTMLProps<HTMLElement> {
   /** Content rendered inside the DataList item */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the DataList cell */
   className?: string;
   /** Identify the DataListContent item */
@@ -19,7 +19,7 @@ export interface DataListContentProps extends React.HTMLProps<HTMLElement> {
   'aria-label': string;
 }
 
-export const DataListContent: React.FunctionComponent<DataListContentProps> = ({
+export const DataListContent: FunctionComponent<DataListContentProps> = ({
   className = '',
   children = null,
   id = '',

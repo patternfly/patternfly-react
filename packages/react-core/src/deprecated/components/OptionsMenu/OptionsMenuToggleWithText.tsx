@@ -1,27 +1,36 @@
-import * as React from 'react';
+import {
+  type HTMLProps,
+  type ReactNode,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type MouseEvent as ReactMouseEvent,
+  type FunctionComponent,
+  type RefObject,
+  useRef,
+  useEffect
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import { KeyTypes } from '../../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { DropdownContext } from '../Dropdown';
 
-export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivElement> {
+export interface OptionsMenuToggleWithTextProps extends HTMLProps<HTMLDivElement> {
   /** Id of the parent options menu component */
   parentId?: string;
   /** Content to be rendered inside the options menu toggle as text or another non-interactive element */
-  toggleText: React.ReactNode;
+  toggleText: ReactNode;
   /** classes to be added to the options menu toggle text */
   toggleTextClassName?: string;
   /** Content to be rendered inside the options menu toggle button */
-  toggleButtonContents?: React.ReactNode;
+  toggleButtonContents?: ReactNode;
   /** Classes to be added to the options menu toggle button */
   toggleButtonContentsClassName?: string;
   /** Callback for when this options menu is toggled */
   onToggle?: (
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent | TouchEvent | KeyboardEvent | ReactKeyboardEvent<any> | ReactMouseEvent<HTMLButtonElement>,
     isOpen: boolean
   ) => void;
   /** Inner function to indicate open on Enter */
-  onEnter?: (event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<Element>) => void;
+  onEnter?: (event: ReactMouseEvent<HTMLButtonElement> | ReactKeyboardEvent<Element>) => void;
   /** Flag to indicate if menu is open */
   isOpen?: boolean;
   /** Flag to indicate if the button is plain */
@@ -31,7 +40,7 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   /** Disables the options menu toggle */
   isDisabled?: boolean;
   /** @hide Internal parent reference */
-  parentRef?: React.RefObject<HTMLElement>;
+  parentRef?: RefObject<HTMLElement>;
   /** Indicates that the element has a popup context menu or sub-level menu */
   'aria-haspopup'?: boolean | 'dialog' | 'menu' | 'listbox' | 'tree' | 'grid';
   /** Provides an accessible name for the button when an icon is used instead of text */
@@ -42,7 +51,7 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   getMenuRef?: () => HTMLElement;
 }
 
-export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggleWithTextProps> = ({
+export const OptionsMenuToggleWithText: FunctionComponent<OptionsMenuToggleWithTextProps> = ({
   parentId = '',
   toggleText,
   toggleTextClassName = '',
@@ -65,9 +74,9 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   'aria-label': ariaLabel = 'Options menu',
   ...props
 }: OptionsMenuToggleWithTextProps) => {
-  const buttonRef = React.useRef<HTMLButtonElement>();
+  const buttonRef = useRef<HTMLButtonElement>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener('mousedown', onDocClick);
     document.addEventListener('touchstart', onDocClick);
     document.addEventListener('keydown', onEscPress);
@@ -85,7 +94,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
     }
   };
 
-  const onKeyDown = (event: React.KeyboardEvent<any>) => {
+  const onKeyDown = (event: ReactKeyboardEvent<any>) => {
     if (event.key === 'Tab' && !isOpen) {
       return;
     }

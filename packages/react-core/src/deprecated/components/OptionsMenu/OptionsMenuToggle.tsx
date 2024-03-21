@@ -1,12 +1,19 @@
-import * as React from 'react';
+import {
+  Fragment,
+  type FunctionComponent,
+  type HTMLProps,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type MouseEvent as ReactMouseEvent,
+  type ReactNode
+} from 'react';
 import { DropdownToggle, DropdownContext } from '../Dropdown';
 
-export interface OptionsMenuToggleProps extends React.HTMLProps<HTMLButtonElement> {
+export interface OptionsMenuToggleProps extends HTMLProps<HTMLButtonElement> {
   /** Id of the parent options menu component */
   parentId?: string;
   /** Callback for when this options menu is toggled */
   onToggle?: (
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent | TouchEvent | KeyboardEvent | ReactKeyboardEvent<any> | ReactMouseEvent<HTMLButtonElement>,
     isOpen: boolean
   ) => void;
   /** Flag to indicate if menu is open */
@@ -23,19 +30,19 @@ export interface OptionsMenuToggleProps extends React.HTMLProps<HTMLButtonElemen
   /** Provides an accessible name for the button when an icon is used instead of text */
   'aria-label'?: string;
   /** @hide Internal function to implement enter click */
-  onEnter?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onEnter?: (event: ReactMouseEvent<HTMLButtonElement>) => void;
   /** @hide Internal parent reference */
   parentRef?: HTMLElement;
   /** Content to be rendered in the options menu toggle button */
-  toggleTemplate?: React.ReactNode;
+  toggleTemplate?: ReactNode;
 }
 
-export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> = ({
+export const OptionsMenuToggle: FunctionComponent<OptionsMenuToggleProps> = ({
   isPlain = false,
   isDisabled = false,
   isOpen = false,
   parentId = '',
-  toggleTemplate = <React.Fragment />,
+  toggleTemplate = <Fragment />,
   hideCaret = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isActive = false,

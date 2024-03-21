@@ -1,11 +1,11 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Alert, AlertGroup } from '@patternfly/react-core';
 
-export const AlertGroupStatic: React.FunctionComponent = () => (
-  <React.Fragment>
+export const AlertGroupStatic: FunctionComponent = () => (
+  <Fragment>
     <AlertGroup>
       <Alert title="Success alert" variant="success" isInline />
       <Alert title="Info alert" variant="info" isInline />
     </AlertGroup>
-  </React.Fragment>
+  </Fragment>
 );

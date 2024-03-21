@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent } from 'react';
 import { Popover, Button } from '@patternfly/react-core';
 
-export const PopoverCustomFocus: React.FunctionComponent = () => (
+export const PopoverCustomFocus: FunctionComponent = () => (
   <Popover
     elementToFocus="#popover-cancel-button"
     showClose={false}
@@ -12,7 +12,7 @@ export const PopoverCustomFocus: React.FunctionComponent = () => (
         Lorem ipsum dolor sit amet, consectetur adipisicing elit.{' '}
         <Button
           // Preventing default click behavior for example purposes only
-          onClick={(event: React.MouseEvent) => event.preventDefault()}
+          onClick={(event: MouseEvent) => event.preventDefault()}
           component="a"
           isInline
           variant="link"

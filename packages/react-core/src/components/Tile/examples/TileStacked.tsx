@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Tile } from '@patternfly/react-core';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
-export const TileStacked: React.FunctionComponent = () => (
+export const TileStacked: FunctionComponent = () => (
   <div role="listbox" aria-label="Stacked tiles">
     <Tile title="Default" icon={<BellIcon />} isStacked isSelected={false}>
       Subtext goes here

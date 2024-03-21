@@ -1,10 +1,10 @@
-import React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import { MenuListProps, MenuList } from '../Menu';
 
 export interface SelectListProps extends MenuListProps {
   /** Anything which can be rendered in a select list */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Classes applied to root element of select list */
   className?: string;
   /** @beta Indicates to assistive technologies whether more than one item can be selected
@@ -13,7 +13,7 @@ export interface SelectListProps extends MenuListProps {
   isAriaMultiselectable?: boolean;
 }
 
-export const SelectList: React.FunctionComponent<MenuListProps> = ({
+export const SelectList: FunctionComponent<MenuListProps> = ({
   children,
   className,
   isAriaMultiselectable = false,

@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent, ChangeEvent, Component } from 'react';
 import { StackItem, Title } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core/deprecated';
 
@@ -19,7 +19,7 @@ export interface SelectViewMoreTypeaheadGroupedDemoState {
   options: TypeAheadOption[];
 }
 
-export class SelectViewMoreTypeaheadGroupedDemo extends React.Component<SelectViewMoreTypeaheadGroupedDemoState> {
+export class SelectViewMoreTypeaheadGroupedDemo extends Component<SelectViewMoreTypeaheadGroupedDemoState> {
   static displayName = 'SelectViewMoreTypeaheadDemo';
   state = {
     isOpen: false,
@@ -59,7 +59,7 @@ export class SelectViewMoreTypeaheadGroupedDemo extends React.Component<SelectVi
     });
   };
 
-  onSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string, isPlaceholder: boolean) => {
+  onSelect = (_event: MouseEvent | ChangeEvent, selection: string, isPlaceholder: boolean) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {

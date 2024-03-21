@@ -26,7 +26,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic with right aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBoxPlot } from '@patternfly/react-charts';
 
 <div style={{ height: '300px', width: '750px' }}>
@@ -68,7 +67,6 @@ import { Chart, ChartAxis, ChartBoxPlot } from '@patternfly/react-charts';
 This demonstrates how to display labels.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBoxPlot } from '@patternfly/react-charts';
 
 <div style={{ height: '300px', width: '600px' }}>
@@ -115,11 +113,11 @@ import { Chart, ChartAxis, ChartBoxPlot } from '@patternfly/react-charts';
 This demonstrates how to embed a legend within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Chart, ChartAxis, ChartBoxPlot, ChartLegendTooltip, ChartThemeColor, ChartThreshold, createContainer } from '@patternfly/react-charts';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
-class EmbeddedLegend extends React.Component {
+class EmbeddedLegend extends Component {
   render() {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("voronoi", "cursor");
@@ -217,10 +215,10 @@ class EmbeddedLegend extends React.Component {
 This demonstrates how to embed HTML within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Chart, ChartAxis, ChartBoxPlot, ChartCursorTooltip, ChartThemeColor, createContainer } from '@patternfly/react-charts';
 
-class EmbeddedHtml extends React.Component {
+class EmbeddedHtml extends Component {
   constructor(props) {
     super(props);
     this.baseStyles = {

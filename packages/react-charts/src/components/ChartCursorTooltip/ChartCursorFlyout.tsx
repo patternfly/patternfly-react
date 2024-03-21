@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, cloneElement } from 'react';
 import { Helpers, OrientationTypes, Path, VictoryCommonPrimitiveProps } from 'victory-core';
 import isPlainObject from 'lodash/isPlainObject';
 
@@ -102,7 +102,7 @@ interface ChartCursorFlyoutProps extends VictoryCommonPrimitiveProps {
   dy?: number;
   height?: number;
   orientation?: OrientationTypes;
-  pathComponent?: React.ReactElement;
+  pathComponent?: ReactElement;
   pointerLength?: number;
   pointerWidth?: number;
   width?: number;
@@ -113,7 +113,7 @@ interface ChartCursorFlyoutProps extends VictoryCommonPrimitiveProps {
 const ChartCursorFlyout = (props: ChartCursorFlyoutProps) => {
   props = evaluateProps(props);
 
-  return React.cloneElement(props.pathComponent, {
+  return cloneElement(props.pathComponent, {
     ...props.events,
     style: props.style,
     d: getFlyoutPath(props),

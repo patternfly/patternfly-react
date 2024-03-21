@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { HelperText, HelperTextItem } from '@patternfly/react-core';
 import InfoIcon from '@patternfly/react-icons/dist/esm/icons/info-icon';
 import QuestionIcon from '@patternfly/react-icons/dist/esm/icons/question-icon';
@@ -6,8 +6,8 @@ import ExclamationIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const HelperTextStaticWithCustomIcon: React.FunctionComponent = () => (
-  <React.Fragment>
+export const HelperTextStaticWithCustomIcon: FunctionComponent = () => (
+  <Fragment>
     <HelperText>
       <HelperTextItem icon={<InfoIcon />}>This is default helper text</HelperTextItem>
     </HelperText>
@@ -31,5 +31,5 @@ export const HelperTextStaticWithCustomIcon: React.FunctionComponent = () => (
         This is error helper text
       </HelperTextItem>
     </HelperText>
-  </React.Fragment>
+  </Fragment>
 );

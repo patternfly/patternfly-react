@@ -1,14 +1,14 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, useContext, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from './PageContext';
 
-export interface PageNavigationProps extends React.HTMLProps<HTMLDivElement> {
+export interface PageNavigationProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes to apply to the PageNavigation */
   className?: string;
   /** Content rendered inside of the PageNavigation */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Limits the width of the PageNavigation */
   isWidthLimited?: boolean;
   /** Modifier indicating if the PageBreadcrumb is sticky to the top or bottom at various breakpoints */
@@ -41,9 +41,9 @@ export const PageNavigation = ({
   'aria-label': ariaLabel,
   ...props
 }: PageNavigationProps) => {
-  const { height, getVerticalBreakpoint } = React.useContext(PageContext);
+  const { height, getVerticalBreakpoint } = useContext(PageContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (hasOverflowScroll && !ariaLabel) {
       /* eslint-disable no-console */
       console.warn('PageNavigation: An accessible aria-label is required when hasOverflowScroll is set to true.');

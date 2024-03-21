@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -78,7 +78,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
    *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows..." />
    */
-  containerComponent?: React.ReactElement<any>;
+  containerComponent?: ReactElement<any>;
   /**
    * The data prop for ChartBoxPlot may be given in a variety of formats:
    *
@@ -206,7 +206,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * The height props specifies the height the svg viewBox of the chart container.
    * This value should be given as a number of pixels
@@ -255,7 +255,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
    * supplied component, or modified or ignored within the custom component itself. If a maxComponent is not provided,
    * ChartBoxPlot will use its default Whisker component.
    */
-  maxComponent?: React.ReactElement;
+  maxComponent?: ReactElement;
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -279,7 +279,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
    * custom component itself. If maxLabelComponent is omitted, a new ChartLabel will be created with props described
    * above.
    */
-  maxLabelComponent?: React.ReactElement;
+  maxLabelComponent?: ReactElement;
   /**
    * The maxLabels prop defines the labels that will appear above each point. This prop should be given as a boolean,
    * an array or as a function of the props corresponding to that label. When given as a boolean value, the max value
@@ -315,7 +315,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
    * props may be overridden by passing in props to the supplied component, or modified or ignored within the custom
    * component itself. If a medianComponent is not provided, ChartBoxPlot will use its default Line component.
    */
-  medianComponent?: React.ReactElement;
+  medianComponent?: ReactElement;
   /**
    * The medianLabelComponent prop takes a component instance which will be used to render the label corresponding to
    * the median value for each box. The new element created from the passed medianLabelComponent will be supplied with
@@ -324,7 +324,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
    * custom component itself. If medianLabelComponent is omitted, a new ChartLabel will be created with props
    * described above.
    */
-  medianLabelComponent?: React.ReactElement;
+  medianLabelComponent?: ReactElement;
   /**
    * The medianLabels prop defines the labels that will appear above each point. This prop should be given as a boolean,
    * an array or as a function of the props corresponding to that label. When given as a boolean value, the median value
@@ -363,7 +363,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
    * supplied component, or modified or ignored within the custom component itself. If a minComponent is not provided,
    * ChartBoxPlot will use its default Whisker component.
    */
-  minComponent?: React.ReactElement;
+  minComponent?: ReactElement;
   /**
    * The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum
    * domain of a chart is static, while the maximum value depends on data or other variable information. If the domain
@@ -387,7 +387,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
    * custom component itself. If minLabelComponent is omitted, a new ChartLabel will be created with props described
    * above.
    */
-  minLabelComponent?: React.ReactElement;
+  minLabelComponent?: ReactElement;
   /**
    * The minLabels prop defines the labels that will appear above each point. This prop should be given as a boolean, an
    * array or as a function of the props corresponding to that label. When given as a boolean value, the min value of
@@ -454,7 +454,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
    * may be overridden by passing in props to the supplied component, or modified or ignored within the custom component
    * itself. If a q1Component is not provided, ChartBoxPlot will use its default Box component.
    */
-  q1Component?: React.ReactElement;
+  q1Component?: ReactElement;
   /**
    * The q1LabelComponent prop takes a component instance which will be used to render the label corresponding to the q1
    * value for each box. The new element created from the passed q1LabelComponent will be supplied with the following
@@ -462,7 +462,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
    * props may be overridden by passing in props to the supplied component, or modified or ignored within the custom
    * component itself. If q1LabelComponent is omitted, a new ChartLabel will be created with props described above.
    */
-  q1LabelComponent?: React.ReactElement;
+  q1LabelComponent?: ReactElement;
   /**
    * The q1Labels prop defines the labels that will appear above each point. This prop should be given as a boolean, an
    * array or as a function of the props corresponding to that label. When given as a boolean value, the q1 value of
@@ -499,7 +499,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
    * may be overridden by passing in props to the supplied component, or modified or ignored within the custom component
    * itself. If a q3Component is not provided, ChartBoxPlot will use its default Box component.
    */
-  q3Component?: React.ReactElement;
+  q3Component?: ReactElement;
   /**
    * The q3LabelComponent prop takes a component instance which will be used to render the label corresponding to the q3
    * value for each box. The new element created from the passed q3LabelComponent will be supplied with the following
@@ -507,7 +507,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
    * props may be overridden by passing in props to the supplied component, or modified or ignored within the custom
    * component itself. If q3LabelComponent is omitted, a new ChartLabel will be created with props described above.
    */
-  q3LabelComponent?: React.ReactElement;
+  q3LabelComponent?: ReactElement;
   /**
    * The q3Labels prop defines the labels that will appear above each point. This prop should be given as a boolean, an
    * array or as a function of the props corresponding to that label. When given as a boolean value, the q3 value of
@@ -677,7 +677,7 @@ export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartBoxPlot: React.FunctionComponent<ChartBoxPlotProps> = ({
+export const ChartBoxPlot: FunctionComponent<ChartBoxPlotProps> = ({
   containerComponent = <ChartContainer />,
   themeColor,
 
@@ -686,7 +686,7 @@ export const ChartBoxPlot: React.FunctionComponent<ChartBoxPlotProps> = ({
   ...rest
 }: ChartBoxPlotProps) => {
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     theme,
     ...containerComponent.props
   });

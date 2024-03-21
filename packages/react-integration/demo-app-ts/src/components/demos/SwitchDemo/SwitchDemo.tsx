@@ -1,4 +1,4 @@
-import React from 'react';
+import { FormEvent, Component, Fragment } from 'react';
 import { Switch, Button } from '@patternfly/react-core';
 import { Table, TableBody, TableHeader } from '@patternfly/react-table/deprecated';
 
@@ -12,7 +12,7 @@ interface SwitchState {
   };
 }
 
-export class SwitchDemo extends React.Component<{}, SwitchState> {
+export class SwitchDemo extends Component<{}, SwitchState> {
   static displayName = 'SwitchDemo';
   state = {
     simple: {
@@ -28,11 +28,11 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
     }
   };
 
-  handleChangeSimple = (_event: React.FormEvent<HTMLInputElement>, isChecked: boolean) => {
+  handleChangeSimple = (_event: FormEvent<HTMLInputElement>, isChecked: boolean) => {
     this.setState({ simple: { isChecked } });
   };
 
-  handleChangeTable = (id: string) => (_event: React.FormEvent<HTMLInputElement>, isChecked: boolean) => {
+  handleChangeTable = (id: string) => (_event: FormEvent<HTMLInputElement>, isChecked: boolean) => {
     this.setState({
       table: {
         ...this.state.table,
@@ -50,7 +50,7 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
       simple: { isChecked }
     } = this.state;
     return (
-      <React.Fragment>
+      <Fragment>
         <Switch
           id="simple-switch"
           label={<div style={{ color: 'green' }}>Message when on</div>}
@@ -67,7 +67,7 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
           isChecked={false}
           isDisabled
         />
-      </React.Fragment>
+      </Fragment>
     );
   }
 
@@ -104,10 +104,10 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
 
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         {this.renderSimple()}
         {this.renderTable()}
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

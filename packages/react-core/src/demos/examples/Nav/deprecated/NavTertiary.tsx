@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState, Fragment } from 'react';
 import {
   Card,
   CardBody,
@@ -17,11 +17,11 @@ import {
 import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import { DashboardHeader } from '@patternfly/react-core/src/demos/DashboardHeader';
 
-export const NavTertiary: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState<string | number>(0);
+export const NavTertiary: FunctionComponent = () => {
+  const [activeItem, setActiveItem] = useState<string | number>(0);
 
   const onNavSelect = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: FormEvent<HTMLInputElement>,
     selectedItem: {
       groupId: number | string;
       itemId: number | string;
@@ -56,7 +56,7 @@ export const NavTertiary: React.FunctionComponent = () => {
   const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page
         header={<DashboardHeader />}
         breadcrumb={DashboardBreadcrumb}
@@ -87,6 +87,6 @@ export const NavTertiary: React.FunctionComponent = () => {
           </Gallery>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

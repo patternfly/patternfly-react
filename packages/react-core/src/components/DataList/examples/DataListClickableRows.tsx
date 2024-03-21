@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, KeyboardEvent, FormEvent, Ref, useState, Fragment } from 'react';
 import {
   DataList,
   DataListItem,
@@ -14,10 +14,10 @@ import {
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const DataListClickableRows: React.FunctionComponent = () => {
-  const [isOpen1, setIsOpen1] = React.useState(false);
-  const [isOpen2, setIsOpen2] = React.useState(false);
-  const [selectedDataListItemId, setSelectedDataListItemId] = React.useState('');
+export const DataListClickableRows: FunctionComponent = () => {
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [selectedDataListItemId, setSelectedDataListItemId] = useState('');
 
   const onToggle1 = () => {
     setIsOpen1(!isOpen1);
@@ -35,16 +35,16 @@ export const DataListClickableRows: React.FunctionComponent = () => {
     setIsOpen2(!isOpen2);
   };
 
-  const onSelectDataListItem = (_event: React.MouseEvent | React.KeyboardEvent, id: string) => {
+  const onSelectDataListItem = (_event: MouseEvent | KeyboardEvent, id: string) => {
     setSelectedDataListItemId(id);
   };
 
-  const handleInputChange = (_event: React.FormEvent<HTMLInputElement>, id: string) => {
+  const handleInputChange = (_event: FormEvent<HTMLInputElement>, id: string) => {
     setSelectedDataListItemId(id);
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DataList
         aria-label="clickable data list example"
         selectedDataListItemId={selectedDataListItemId}
@@ -70,7 +70,7 @@ export const DataListClickableRows: React.FunctionComponent = () => {
               <Dropdown
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect1}
-                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                toggle={(toggleRef: Ref<MenuToggleElement>) => (
                   <MenuToggle
                     ref={toggleRef}
                     isExpanded={isOpen1}
@@ -121,7 +121,7 @@ export const DataListClickableRows: React.FunctionComponent = () => {
               <Dropdown
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect2}
-                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                toggle={(toggleRef: Ref<MenuToggleElement>) => (
                   <MenuToggle
                     ref={toggleRef}
                     isExpanded={isOpen2}
@@ -154,6 +154,6 @@ export const DataListClickableRows: React.FunctionComponent = () => {
           </DataListItemRow>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </Fragment>
   );
 };

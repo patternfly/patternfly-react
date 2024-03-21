@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   OverflowMenu,
   OverflowMenuControl,
@@ -14,8 +14,8 @@ import {
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const OverflowMenuPersistent: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const OverflowMenuPersistent: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = () => {
     setIsOpen(!isOpen);

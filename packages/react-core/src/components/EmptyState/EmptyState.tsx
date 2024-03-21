@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
@@ -10,18 +10,18 @@ export enum EmptyStateVariant {
   full = 'full'
 }
 
-export interface EmptyStateProps extends React.HTMLProps<HTMLDivElement> {
+export interface EmptyStateProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the empty state */
   className?: string;
   /** Content rendered inside the empty state */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Modifies empty state max-width and sizes of icon, title and body */
   variant?: 'xs' | 'sm' | 'lg' | 'xl' | 'full';
   /** Cause component to consume the available height of its container */
   isFullHeight?: boolean;
 }
 
-export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
+export const EmptyState: FunctionComponent<EmptyStateProps> = ({
   children,
   className,
   variant = EmptyStateVariant.full,

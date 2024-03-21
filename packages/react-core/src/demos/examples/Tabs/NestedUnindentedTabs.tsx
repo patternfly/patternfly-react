@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -19,9 +19,9 @@ import {
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
-export const NestedUnindentedTabs: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState(1);
-  const [activeNestedTabKey, setActiveNestedTabKey] = React.useState(10);
+export const NestedUnindentedTabs: FunctionComponent = () => {
+  const [activeTabKey, setActiveTabKey] = useState(1);
+  const [activeNestedTabKey, setActiveNestedTabKey] = useState(10);
 
   // Toggle currently active tab
   const handleTabClick = (tabIndex: number) => setActiveTabKey(tabIndex);

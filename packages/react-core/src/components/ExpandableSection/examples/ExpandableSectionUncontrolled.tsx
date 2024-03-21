@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
-export const ExpandableSectionUncontrolled: React.FunctionComponent = () => (
+export const ExpandableSectionUncontrolled: FunctionComponent = () => (
   <ExpandableSection toggleText="Show more">
     This content is visible only when the component is expanded.
   </ExpandableSection>

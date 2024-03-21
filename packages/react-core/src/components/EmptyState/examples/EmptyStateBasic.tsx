@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   Button,
   EmptyState,
@@ -10,7 +10,7 @@ import {
 } from '@patternfly/react-core';
 import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
-export const EmptyStateBasic: React.FunctionComponent = () => (
+export const EmptyStateBasic: FunctionComponent = () => (
   <EmptyState>
     <EmptyStateHeader titleText="Empty state" headingLevel="h4" icon={<EmptyStateIcon icon={CubesIcon} />} />
     <EmptyStateBody>

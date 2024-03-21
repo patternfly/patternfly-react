@@ -1,8 +1,8 @@
 import { Tooltip } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { RefObject, createRef, Component } from 'react';
 
 export class TooltipDemo extends Component {
-  tooltipRef: React.RefObject<HTMLButtonElement>;
+  tooltipRef: RefObject<HTMLButtonElement>;
   myTooltipProps = {
     content: <div>World</div>,
     children: <div id="tooltipTarget">Hello</div>
@@ -10,7 +10,7 @@ export class TooltipDemo extends Component {
 
   constructor(props: any) {
     super(props);
-    this.tooltipRef = React.createRef();
+    this.tooltipRef = createRef();
   }
 
   componentDidMount() {

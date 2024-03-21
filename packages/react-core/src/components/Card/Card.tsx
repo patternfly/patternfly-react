@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FormEvent, FunctionComponent, createContext, useState, useRef, useEffect } from 'react';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { css } from '@patternfly/react-styles';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
+export interface CardProps extends HTMLProps<HTMLElement>, OUIAProps {
   /** Content rendered inside the Card */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** ID of the Card. Also passed back in the CardHeader onExpand callback. */
   id?: string;
   /** Additional classes added to the Card */
@@ -43,7 +43,7 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   /** @deprecated Aria label to apply to the selectable input if one is rendered */
   selectableInputAriaLabel?: string;
   /** @deprecated Callback that executes when the selectable input is changed */
-  onSelectableInputChange?: (event: React.FormEvent<HTMLInputElement>, labelledBy: string) => void;
+  onSelectableInputChange?: (event: FormEvent<HTMLInputElement>, labelledBy: string) => void;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -66,7 +66,7 @@ interface AriaProps {
   'aria-labelledby'?: string;
 }
 
-export const CardContext = React.createContext<Partial<CardContextProps>>({
+export const CardContext = createContext<Partial<CardContextProps>>({
   cardId: '',
   registerTitleId: () => {},
   isExpanded: false,
@@ -75,7 +75,7 @@ export const CardContext = React.createContext<Partial<CardContextProps>>({
   isDisabled: false
 });
 
-export const Card: React.FunctionComponent<CardProps> = ({
+export const Card: FunctionComponent<CardProps> = ({
   children,
   id = '',
   className,
@@ -102,8 +102,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
 }: CardProps) => {
   const Component = component as any;
   const ouiaProps = useOUIAProps(Card.displayName, ouiaId, ouiaSafe);
-  const [titleId, setTitleId] = React.useState('');
-  const [ariaProps, setAriaProps] = React.useState<AriaProps>();
+  const [titleId, setTitleId] = useState('');
+  const [ariaProps, setAriaProps] = useState<AriaProps>();
 
   if (isCompact && isLarge) {
     // eslint-disable-next-line no-console
@@ -133,14 +133,14 @@ export const Card: React.FunctionComponent<CardProps> = ({
     return '';
   };
 
-  const containsCardTitleChildRef = React.useRef(false);
+  const containsCardTitleChildRef = useRef(false);
 
   const registerTitleId = (id: string) => {
     setTitleId(id);
     containsCardTitleChildRef.current = !!id;
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (selectableInputAriaLabel) {
       setAriaProps({ 'aria-label': selectableInputAriaLabel });
     } else if (titleId) {

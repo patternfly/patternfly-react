@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Button, Tooltip } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const ButtonAriaDisabled: React.FunctionComponent = () => (
-  <React.Fragment>
+export const ButtonAriaDisabled: FunctionComponent = () => (
+  <Fragment>
     <Button isAriaDisabled>Primary aria disabled</Button>
     <Button isAriaDisabled>Secondary aria disabled</Button>{' '}
     <Button variant="secondary" isDanger isAriaDisabled>
@@ -48,5 +48,5 @@ export const ButtonAriaDisabled: React.FunctionComponent = () => (
         Tertiary link as button to core docs
       </Button>
     </Tooltip>
-  </React.Fragment>
+  </Fragment>
 );

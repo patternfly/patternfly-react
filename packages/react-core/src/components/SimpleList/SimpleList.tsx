@@ -1,19 +1,16 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, RefObject, ReactElement, createContext, Children, Component } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/SimpleList/simple-list';
 import { SimpleListGroup } from './SimpleListGroup';
 import { SimpleListItemProps } from './SimpleListItem';
 
-export interface SimpleListProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect'> {
+export interface SimpleListProps extends Omit<HTMLProps<HTMLDivElement>, 'onSelect'> {
   /** Content rendered inside the SimpleList */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the SimpleList container */
   className?: string;
   /** Callback when an item is selected */
-  onSelect?: (
-    ref: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
-    props: SimpleListItemProps
-  ) => void;
+  onSelect?: (ref: RefObject<HTMLButtonElement> | RefObject<HTMLAnchorElement>, props: SimpleListItemProps) => void;
   /** Indicates whether component is controlled by its internal state */
   isControlled?: boolean;
   /** aria-label for the <ul> element that wraps the SimpleList items. */
@@ -22,34 +19,34 @@ export interface SimpleListProps extends Omit<React.HTMLProps<HTMLDivElement>, '
 
 export interface SimpleListState {
   /** Ref of the current SimpleListItem */
-  currentRef: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>;
+  currentRef: RefObject<HTMLButtonElement> | RefObject<HTMLAnchorElement>;
 }
 
 interface SimpleListContextProps {
-  currentRef: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>;
+  currentRef: RefObject<HTMLButtonElement> | RefObject<HTMLAnchorElement>;
   updateCurrentRef: (
-    id: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
+    id: RefObject<HTMLButtonElement> | RefObject<HTMLAnchorElement>,
     props: SimpleListItemProps
   ) => void;
   isControlled: boolean;
 }
 
-export const SimpleListContext = React.createContext<Partial<SimpleListContextProps>>({});
+export const SimpleListContext = createContext<Partial<SimpleListContextProps>>({});
 
-class SimpleList extends React.Component<SimpleListProps, SimpleListState> {
+class SimpleList extends Component<SimpleListProps, SimpleListState> {
   static displayName = 'SimpleList';
   state = {
-    currentRef: null as React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>
+    currentRef: null as RefObject<HTMLButtonElement> | RefObject<HTMLAnchorElement>
   };
 
   static defaultProps: SimpleListProps = {
-    children: null as React.ReactNode,
+    children: null as ReactNode,
     className: '',
     isControlled: true
   };
 
   handleCurrentUpdate = (
-    newCurrentRef: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
+    newCurrentRef: RefObject<HTMLButtonElement> | RefObject<HTMLAnchorElement>,
     itemProps: SimpleListItemProps
   ) => {
     this.setState({ currentRef: newCurrentRef });
@@ -63,7 +60,7 @@ class SimpleList extends React.Component<SimpleListProps, SimpleListState> {
 
     let isGrouped = false;
     if (children) {
-      isGrouped = (React.Children.toArray(children)[0] as React.ReactElement).type === SimpleListGroup;
+      isGrouped = (Children.toArray(children)[0] as ReactElement).type === SimpleListGroup;
     }
 
     return (

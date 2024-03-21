@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Ref, useState } from 'react';
 import { ActionsColumn, Table, Thead, Tr, Th, Tbody, Td, ExpandableRowContent } from '@patternfly/react-table';
 import {
   Button,
@@ -24,9 +24,9 @@ import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/Dashboa
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
-export const TableCompoundExpansion: React.FunctionComponent = () => {
+export const TableCompoundExpansion: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
-  const [isSelectOpen, setIsSelectOpen] = React.useState(false);
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
 
   const NestedItemsTable = () => {
     // In real usage, this data would come from some external source like an API via props.
@@ -90,7 +90,7 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
           <Select
             id="select-example"
             aria-label="Select Input"
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle ref={toggleRef} onClick={() => setIsSelectOpen(!isSelectOpen)} isExpanded={isSelectOpen}>
                 <FilterIcon /> Status
               </MenuToggle>
@@ -172,7 +172,7 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
   // In this example, expanded cells are tracked by the repo and property names from each row. This could be any pair of unique identifiers.
   // This is to prevent state from being based on row and column order index in case we later add sorting and rearranging columns.
   // Note that this behavior is very similar to selection state.
-  const [expandedCells, setExpandedCells] = React.useState<IDictionary<string>>({
+  const [expandedCells, setExpandedCells] = useState<IDictionary<string>>({
     'siemur/test-space': 'branches' // Default to the first cell of the first row being expanded
   });
   const setCellExpanded = (repo: Repo, columnKey: string, isExpanding = true) => {

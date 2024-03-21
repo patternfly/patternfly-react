@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Skeleton } from '@patternfly/react-core';
 
-export const SkeletonPercentageHeight: React.FunctionComponent = () => (
+export const SkeletonPercentageHeight: FunctionComponent = () => (
   <div style={{ height: '400px', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
     <Skeleton height="25%" width="15%" screenreaderText="Loaded 25% of content" />
     <Skeleton height="33%" width="15%" screenreaderText="Loaded 33% of content" />

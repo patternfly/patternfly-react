@@ -16,7 +16,6 @@ Include JS code blocks:
 ``````md
 ### Your example title
 ```js
-import React from 'react';
 import { YourComponent } from '@patternfly/react-core';
 
 BasicExample = () => (

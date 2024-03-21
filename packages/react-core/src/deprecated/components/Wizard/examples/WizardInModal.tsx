@@ -1,11 +1,11 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, useState, Fragment } from 'react';
 import { Button } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
-export const WizardInModal: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const WizardInModal: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
+  const handleModalToggle = (_event: KeyboardEvent | MouseEvent) => {
     setIsOpen(!isOpen);
   };
 
@@ -24,7 +24,7 @@ export const WizardInModal: React.FunctionComponent = () => {
   const title = 'Wizard in modal example';
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show Modal
       </Button>
@@ -36,6 +36,6 @@ export const WizardInModal: React.FunctionComponent = () => {
         onClose={handleWizardToggle}
         isOpen={isOpen}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

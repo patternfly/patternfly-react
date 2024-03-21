@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Ref, useState } from 'react';
 import {
   Brand,
   Card,
@@ -17,10 +17,10 @@ import {
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import pfLogo from '../../assets/pfLogo.svg';
 
-export const CardWithImageAndActions: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
-  const [hasNoOffset, setHasNoOffset] = React.useState<boolean>(false);
+export const CardWithImageAndActions: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [hasNoOffset, setHasNoOffset] = useState<boolean>(false);
 
   const onSelect = () => {
     setIsOpen(!isOpen);
@@ -57,7 +57,7 @@ export const CardWithImageAndActions: React.FunctionComponent = () => {
     <>
       <Dropdown
         onSelect={onSelect}
-        toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+        toggle={(toggleRef: Ref<MenuToggleElement>) => (
           <MenuToggle
             ref={toggleRef}
             isExpanded={isOpen}

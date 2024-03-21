@@ -1,4 +1,13 @@
-import React, { useState } from 'react';
+import {
+  useState,
+  type ReactNode,
+  type MouseEvent as ReactMouseEvent,
+  type TransitionEvent as ReactTransitionEvent,
+  type ReactElement,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type FunctionComponent,
+  type FormEvent as ReactFormEvent
+} from 'react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -23,23 +32,23 @@ interface DashboardWrapperProps {
   /** Flag to render sample page title if custom title not passed */
   hasPageTemplateTitle?: boolean;
   /** Content rendered inside the main section of the page layout (e.g. <PageSection />) */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the page layout */
   className?: string;
   /** Header component (e.g. <Masthead />) */
-  header?: React.ReactNode;
+  header?: ReactNode;
   /** Sidebar component for a side nav (e.g. <PageSidebar />) */
-  sidebar?: React.ReactNode;
+  sidebar?: ReactNode;
   /** Notification drawer component for an optional notification drawer (e.g. <NotificationDrawer />) */
-  notificationDrawer?: React.ReactNode;
+  notificationDrawer?: ReactNode;
   /** Flag indicating Notification drawer in expanded */
   isNotificationDrawerExpanded?: boolean;
   /** Flag indicating if breadcrumb width should be limited */
   isBreadcrumbWidthLimited?: boolean;
   /** Callback when notification drawer panel is finished expanding. */
-  onNotificationDrawerExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
+  onNotificationDrawerExpand?: (event: KeyboardEvent | ReactMouseEvent | ReactTransitionEvent) => void;
   /** Skip to content component for the page */
-  skipToContent?: React.ReactElement;
+  skipToContent?: ReactElement;
   /** Sets the value for role on the <main> element */
   role?: string;
   /** an id to use for the [role="main"] element */
@@ -61,7 +70,7 @@ interface DashboardWrapperProps {
    * Can add callback to be notified when resize occurs, for example to set the sidebar isSidebarOpen prop to false for a width < 768px
    * Returns object { mobileView: boolean, windowSize: number }
    */
-  onPageResize?: ((event: MouseEvent | TouchEvent | React.KeyboardEvent, object: any) => void) | null;
+  onPageResize?: ((event: MouseEvent | TouchEvent | ReactKeyboardEvent, object: any) => void) | null;
   /**
    * The page resize observer uses the breakpoints returned from this function when adding the pf-m-breakpoint-[default|sm|md|lg|xl|2xl] class
    * You can override the default getBreakpoint function to return breakpoints at different sizes than the default
@@ -77,9 +86,9 @@ interface DashboardWrapperProps {
    */
   getVerticalBreakpoint?: (height: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** Breadcrumb component for the page */
-  breadcrumb?: React.ReactNode;
+  breadcrumb?: ReactNode;
   /** Tertiary nav component for the page */
-  tertiaryNav?: React.ReactNode;
+  tertiaryNav?: ReactNode;
   /** Accessible label, can be used to name main section */
   mainAriaLabel?: string;
   /** Flag indicating if the tertiaryNav should be in a group */
@@ -87,7 +96,7 @@ interface DashboardWrapperProps {
   /** Flag indicating if the breadcrumb should be in a group */
   isBreadcrumbGrouped?: boolean;
   /** Additional content of the group */
-  additionalGroupedContent?: React.ReactNode;
+  additionalGroupedContent?: ReactNode;
   /** HTML component used as main component of the page. Defaults to 'main', only pass in 'div' if another 'main' element already exists. */
   mainComponent?: 'main' | 'div';
   /** Additional props of the group */
@@ -116,7 +125,7 @@ const PageTemplateTitle = (
   </PageSection>
 );
 
-export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
+export const DashboardWrapper: FunctionComponent<DashboardWrapperProps> = ({
   children,
   mainContainerId,
   breadcrumb,
@@ -132,7 +141,7 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
 }: DashboardWrapperProps) => {
   const [activeItem, setActiveItem] = useState(1);
 
-  const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, result: any) => {
+  const onNavSelect = (_event: ReactFormEvent<HTMLInputElement>, result: any) => {
     setActiveItem(result.itemId);
   };
 
@@ -186,7 +195,7 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
       notificationDrawer={notificationDrawer}
       isNotificationDrawerExpanded={isNotificationDrawerExpanded}
       {...(typeof onPageResize === 'function' && {
-        onPageResize: (event: MouseEvent | TouchEvent | React.KeyboardEvent<Element>, resizeObject: any) =>
+        onPageResize: (event: MouseEvent | TouchEvent | ReactKeyboardEvent<Element>, resizeObject: any) =>
           onPageResize(event, resizeObject)
       })}
       {...pageProps}

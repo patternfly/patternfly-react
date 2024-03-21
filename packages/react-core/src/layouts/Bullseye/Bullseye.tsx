@@ -1,17 +1,17 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 
-export interface BullseyeProps extends React.HTMLProps<HTMLDivElement> {
+export interface BullseyeProps extends HTMLProps<HTMLDivElement> {
   /** content rendered inside the Bullseye layout */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** additional classes added to the Bullseye layout */
   className?: string;
   /** Sets the base component to render. defaults to div */
   component?: keyof JSX.IntrinsicElements;
 }
 
-export const Bullseye: React.FunctionComponent<BullseyeProps> = ({
+export const Bullseye: FunctionComponent<BullseyeProps> = ({
   children = null,
   className = '',
   component = 'div',

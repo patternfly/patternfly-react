@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   Card,
   CardBody,
@@ -13,7 +13,7 @@ import {
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
-export const WizardInModalDemo: React.FunctionComponent = () => (
+export const WizardInModalDemo: FunctionComponent = () => (
   <>
     <DashboardWrapper hasPageTemplateTitle>
       <PageSection isWidthLimited>

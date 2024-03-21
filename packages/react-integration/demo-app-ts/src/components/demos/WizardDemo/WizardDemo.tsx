@@ -1,4 +1,4 @@
-import React from 'react';
+import { HTMLProps, Component, Fragment } from 'react';
 import { Button, Modal, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
@@ -8,7 +8,7 @@ interface WizardDemoState {
   isOpenWithRole: boolean;
 }
 
-class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, WizardDemoState> {
+class WizardDemo extends Component<HTMLProps<HTMLDivElement>, WizardDemoState> {
   static displayName = 'WizardDemo';
   state = {
     isOpen: false,
@@ -32,7 +32,7 @@ class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, Wizard
     const { isOpen, isOpenWithRole } = this.state;
 
     return (
-      <React.Fragment>
+      <Fragment>
         <Button id="launchWiz" variant="primary" onClick={this.handleModalToggle}>
           Show Modal
         </Button>
@@ -362,7 +362,7 @@ class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, Wizard
             </WizardStep>
           </Wizard>
         </Modal>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

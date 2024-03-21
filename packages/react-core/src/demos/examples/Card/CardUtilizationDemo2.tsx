@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   Card,
   CardTitle,
@@ -14,7 +14,7 @@ import {
 } from '@patternfly/react-core';
 import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-export const CardUtilizationDemo2: React.FunctionComponent = () => (
+export const CardUtilizationDemo2: FunctionComponent = () => (
   <Gallery hasGutter minWidths={{ default: '360px' }}>
     <GalleryItem>
       <Card id="utilization-card-2-card" component="div">

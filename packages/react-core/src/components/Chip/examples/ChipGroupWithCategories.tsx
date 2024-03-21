@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Chip, ChipGroup } from '@patternfly/react-core';
 
-export const ChipGroupWithCategories: React.FunctionComponent = () => {
-  const [chips, setChips] = React.useState([
+export const ChipGroupWithCategories: FunctionComponent = () => {
+  const [chips, setChips] = useState([
     'Chip one',
     'Really long chip that goes on and on',
     'Chip three',

@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
 
-import * as React from 'react';
+import { ReactElement, DOMAttributes, CSSProperties, FunctionComponent, cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { LineSegment, OriginType, ValueOrAccessor, VictoryLabelProps } from 'victory-core';
 import {
@@ -31,7 +31,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * @private
    * @hide
    */
-  children?: React.ReactElement | React.ReactElement[];
+  children?: ReactElement | ReactElement[];
   /**
    * The className prop specifies a className that will be applied to the outer-most div rendered by the container
    */
@@ -45,7 +45,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * The cursorComponent prop takes a component instance which will be used to render a cursor element. The new element
    * created will be supplied with x1, y1, x2 and y2 positioning props.
    */
-  cursorComponent?: React.ReactElement<any>;
+  cursorComponent?: ReactElement<any>;
   /**
    * When the cursorDimension prop is set, the cursor will be a line to inspect the given dimension (either "x" or "y").
    * When this prop is not specified, the cursor will be a 2-dimensional crosshair. For example, if you would like to
@@ -66,7 +66,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * new element created from the passed cursorLabelComponent will be supplied with the following props: x, y, active,
    * text. If cursorLabelComponent is omitted, a new ChartLabel will be created with the props described above.
    */
-  cursorLabelComponent?: React.ReactElement;
+  cursorLabelComponent?: ReactElement;
   /**
    * The cursorLabelOffset prop determines the pixel offset of the cursor label from the cursor point. This prop should
    * be an Object with x and y properties, or a number to be used for both dimensions.
@@ -106,7 +106,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    *
    * @example {onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}
    */
-  events?: React.DOMAttributes<any>;
+  events?: DOMAttributes<any>;
   /**
    * The height props specifies the height the svg viewBox of the container.
    * This value should be given as a number of pixels. If no height prop
@@ -150,7 +150,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * render in the portal container. This prop defaults to Portal, and should only be overridden when changing rendered
    * elements from SVG to another type of element e.g., react-native-svg elements.
    */
-  portalComponent?: React.ReactElement;
+  portalComponent?: ReactElement;
   /**
    * The portalZIndex prop determines the z-index of the div enclosing the portal component. If a portalZIndex prop is
    * not set, the z-index of the enclosing div will be set to 99.
@@ -172,7 +172,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    *
    * @example {border: 1px solid red}
    */
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   /**
    * The tabIndex prop specifies the description of the chart/SVG to assist with accessibility.
    */
@@ -200,7 +200,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
   width?: number;
 }
 
-export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerProps> = ({
+export const ChartCursorContainer: FunctionComponent<ChartCursorContainerProps> = ({
   className,
   cursorComponent = <LineSegment />,
   themeColor,
@@ -211,13 +211,13 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
   ...rest
 }: ChartCursorContainerProps) => {
   const chartClassName = getClassName({ className });
-  const chartCursorLabelComponent = React.cloneElement(cursorLabelComponent, {
+  const chartCursorLabelComponent = cloneElement(cursorLabelComponent, {
     theme,
     ...cursorLabelComponent.props
   });
 
   // Clone so users can override cursor container props
-  const cursor = React.cloneElement(cursorComponent, {
+  const cursor = cloneElement(cursorComponent, {
     style: {
       strokeColor: chart_global_label_Fill.var
     },

@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode, MouseEvent, ChangeEvent, Component } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -14,25 +14,25 @@ import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pfic
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 interface DualListSelectorState {
-  availableOptions: React.ReactNode[];
-  chosenOptions: React.ReactNode[];
+  availableOptions: ReactNode[];
+  chosenOptions: ReactNode[];
   isAvailableKebabOpen: boolean;
   isChosenKebabOpen: boolean;
   availableDescending: boolean;
   chosenDescending: boolean;
 }
 
-export class DualListSelectorWithActionsDemo extends React.Component<DualListSelectorProps, DualListSelectorState> {
+export class DualListSelectorWithActionsDemo extends Component<DualListSelectorProps, DualListSelectorState> {
   static displayName = 'DualListSelectorDemo';
   onSort: (panel: string) => void;
   onListChange: (
-    event: React.MouseEvent<HTMLElement>,
-    newAvailableOptions: React.ReactNode[],
-    newChosenOptions: React.ReactNode[]
+    event: MouseEvent<HTMLElement>,
+    newAvailableOptions: ReactNode[],
+    newChosenOptions: ReactNode[]
   ) => void;
   onToggle: (pane: string) => void;
-  filterOption: (option: React.ReactNode, input: string) => boolean;
-  onOptionSelect: (e: React.MouseEvent | React.ChangeEvent) => void;
+  filterOption: (option: ReactNode, input: string) => boolean;
+  onOptionSelect: (e: MouseEvent | ChangeEvent) => void;
 
   constructor(props: DualListSelectorProps) {
     super(props);
@@ -112,7 +112,7 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
 
     this.filterOption = (option: any, input: string) => option.props.children.includes(input);
 
-    this.onOptionSelect = (e: React.MouseEvent | React.ChangeEvent) => {
+    this.onOptionSelect = (e: MouseEvent | ChangeEvent) => {
       // eslint-disable-next-line no-console
       console.log(e.currentTarget.children.toString());
     };

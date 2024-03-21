@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState, Fragment } from 'react';
 import {
   Avatar,
   Brand,
@@ -45,15 +45,15 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
-export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
-  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState<string | number>(0);
-  const [activeSubNavItem, setActiveSubNavItem] = React.useState<string | number>(7);
+export const NavHorizontalWithSubnav: FunctionComponent = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState<string | number>(0);
+  const [activeSubNavItem, setActiveSubNavItem] = useState<string | number>(7);
 
   const onNavSelect = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: FormEvent<HTMLInputElement>,
     selectedItem: {
       groupId: number | string;
       itemId: number | string;
@@ -62,7 +62,7 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
   ) => setActiveItem(selectedItem.itemId);
 
   const onSubNavSelect = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: FormEvent<HTMLInputElement>,
     selectedItem: {
       groupId: number | string;
       itemId: number | string;
@@ -263,7 +263,7 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
   const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page header={Header} skipToContent={PageSkipToContent} mainContainerId={pageId}>
         <PageSection type={PageSectionTypes.subNav} isWidthLimited>
           {SubNav}
@@ -292,6 +292,6 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
           </Gallery>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

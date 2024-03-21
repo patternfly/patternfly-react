@@ -1,12 +1,12 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { HTMLProps, ReactNode, MouseEvent, ReactElement, Component } from 'react';
+import ReactDOM from 'react-dom';
 import { canUseDOM, KeyTypes, PickOptional } from '../../../helpers';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { ModalContent } from './ModalContent';
 import { OUIAProps, getDefaultOUIAId } from '../../../helpers';
 
-export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
+export interface ModalProps extends HTMLProps<HTMLDivElement>, OUIAProps {
   /** The parent container to append the modal to. Defaults to "document.body". */
   appendTo?: HTMLElement | (() => HTMLElement);
   /** Id to use for the modal box description. This should match the ModalHeader labelId or descriptorId. */
@@ -16,7 +16,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Id to use for the modal box label. This should include the ModalHeader labelId. */
   'aria-labelledby'?: string;
   /** Content rendered inside the modal. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Additional classes added to the modal. */
   className?: string;
   /** Flag to disable focus trap. */
@@ -30,7 +30,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Flag to show the modal. */
   isOpen?: boolean;
   /** Add callback for when the close button is clicked. This prop needs to be passed to render the close button */
-  onClose?: (event: KeyboardEvent | React.MouseEvent) => void;
+  onClose?: (event: KeyboardEvent | MouseEvent) => void;
   /** Modal handles pressing of the escape key and closes the modal. If you want to handle
    * this yourself you can use this callback function. */
   onEscapePress?: (event: KeyboardEvent) => void;
@@ -62,7 +62,7 @@ interface ModalState {
   ouiaStateId: string;
 }
 
-class Modal extends React.Component<ModalProps, ModalState> {
+class Modal extends Component<ModalProps, ModalState> {
   static displayName = 'Modal';
   static currentId = 0;
   boxId = '';
@@ -195,7 +195,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
         {...props}
       />,
       container
-    ) as React.ReactElement;
+    ) as ReactElement;
   }
 }
 

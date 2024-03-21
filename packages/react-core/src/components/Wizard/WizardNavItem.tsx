@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, MouseEvent, HTMLAttributeAnchorTarget, useState, useEffect, useMemo } from 'react';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
@@ -12,9 +12,9 @@ import globalDangerColor100 from '@patternfly/react-tokens/dist/esm/global_dange
 
 export interface WizardNavItemProps extends OUIAProps {
   /** Can nest a WizardNav component for substeps */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** The content to display in the navigation item */
-  content?: React.ReactNode;
+  content?: ReactNode;
   /** Whether the navigation item is the currently active item */
   isCurrent?: boolean;
   /** Whether the navigation item is disabled */
@@ -24,13 +24,13 @@ export interface WizardNavItemProps extends OUIAProps {
   /** The step index passed into the onNavItemClick callback */
   stepIndex: number;
   /** Callback for when the navigation item is clicked */
-  onClick?: (event: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>, index: number) => any;
+  onClick?: (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLAnchorElement>, index: number) => any;
   /** Component used to render WizardNavItem */
   component?: 'button' | 'a';
   /** An optional url to use for when using an anchor component */
   href?: string;
   /** Where to display the linked URL when using an anchor component */
-  target?: React.HTMLAttributeAnchorTarget;
+  target?: HTMLAttributeAnchorTarget;
   /** Flag indicating that this NavItem has child steps and is expandable */
   isExpandable?: boolean;
   /** The id for the navigation item */
@@ -56,10 +56,10 @@ export const WizardNavItem = ({
   ouiaId,
   ouiaSafe = true
 }: WizardNavItemProps) => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const ouiaProps = useOUIAProps(WizardNavItem.displayName, ouiaId, ouiaSafe);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsExpanded(isCurrent);
   }, [isCurrent]);
 
@@ -68,7 +68,7 @@ export const WizardNavItem = ({
     console.error('WizardNavItem: When using an anchor, please provide an href');
   }
 
-  const ariaLabel = React.useMemo(() => {
+  const ariaLabel = useMemo(() => {
     if (status === WizardNavItemStatus.Error || (isVisited && !isCurrent)) {
       let label = content.toString();
 

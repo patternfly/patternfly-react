@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { TableVariant, expandable, IRowCell } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { Checkbox } from '@patternfly/react-core';
@@ -16,7 +16,7 @@ interface Repository {
   };
 }
 
-export const LegacyTableStripedExpandable: React.FunctionComponent = () => {
+export const LegacyTableStripedExpandable: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'a', workspaces: 'four' },
@@ -78,7 +78,7 @@ export const LegacyTableStripedExpandable: React.FunctionComponent = () => {
   // This is to prevent state from being based on row order index in case we later add sorting.
   // Note that this behavior is very similar to selection state.
   const initialExpandedRepoNames = repositories.filter((repo) => !!repo.details).map((repo) => repo.name); // Default to all expanded
-  const [expandedRepoNames, setExpandedRepoNames] = React.useState<string[]>(initialExpandedRepoNames);
+  const [expandedRepoNames, setExpandedRepoNames] = useState<string[]>(initialExpandedRepoNames);
   const setRepoExpanded = (repo: Repository, isExpanding = true) =>
     setExpandedRepoNames((prevExpanded) => {
       const otherExpandedRepoNames = prevExpanded.filter((r) => r !== repo.name);
@@ -86,7 +86,7 @@ export const LegacyTableStripedExpandable: React.FunctionComponent = () => {
     });
   const isRepoExpanded = (repo: Repository) => expandedRepoNames.includes(repo.name);
 
-  const [isExampleCompact, setIsExampleCompact] = React.useState(true);
+  const [isExampleCompact, setIsExampleCompact] = useState(true);
 
   // We want to be able to reference the original data object based on row index. But because an expanded
   // row takes up two row indexes, repositories[rowIndex] will not be accurate like it would in a normal table.
@@ -145,7 +145,7 @@ export const LegacyTableStripedExpandable: React.FunctionComponent = () => {
   });
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Checkbox
         label="Compact"
         isChecked={isExampleCompact}
@@ -170,6 +170,6 @@ export const LegacyTableStripedExpandable: React.FunctionComponent = () => {
         <TableHeader />
         <TableBody />
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

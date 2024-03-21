@@ -1,5 +1,11 @@
-import React from 'react';
-
+import {
+  type FunctionComponent,
+  useState,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type FormEvent as ReactFormEvent,
+  useEffect
+} from 'react';
 import {
   Button,
   Card,
@@ -32,20 +38,20 @@ import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/Dashboa
 import { capitalize } from '@patternfly/react-table/src/components/Table/utils/utils';
 import { rows, columns, SampleDataRow } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
-export const TableColumnManagement: React.FunctionComponent = () => {
+export const TableColumnManagement: FunctionComponent = () => {
   const defaultColumns = columns;
   const defaultRows = rows;
 
-  const [filters, setFilters] = React.useState<string[]>([]);
-  const [filteredColumns, setFilteredColumns] = React.useState<string[]>([]);
-  const [filteredRows, setFilteredRows] = React.useState<SampleDataRow[]>([]);
-  const [managedColumns, setManagedColumns] = React.useState<string[]>(defaultColumns);
-  const [managedRows, setManagedRows] = React.useState<SampleDataRow[]>(defaultRows);
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [checkedState, setCheckedState] = React.useState<boolean[]>(Array(columns.length).fill(true));
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
-  const [paginatedRows, setPaginatedRows] = React.useState<any[]>(rows);
+  const [filters, setFilters] = useState<string[]>([]);
+  const [filteredColumns, setFilteredColumns] = useState<string[]>([]);
+  const [filteredRows, setFilteredRows] = useState<SampleDataRow[]>([]);
+  const [managedColumns, setManagedColumns] = useState<string[]>(defaultColumns);
+  const [managedRows, setManagedRows] = useState<SampleDataRow[]>(defaultRows);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [checkedState, setCheckedState] = useState<boolean[]>(Array(columns.length).fill(true));
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
+  const [paginatedRows, setPaginatedRows] = useState<any[]>(rows);
 
   const matchCheckboxNameToColumn = (name: string): string => {
     switch (name) {
@@ -95,14 +101,14 @@ export const TableColumnManagement: React.FunctionComponent = () => {
 
   // Pagination logic
   const handleSetPage = (
-    _evt: MouseEvent | React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>,
+    _evt: MouseEvent | ReactMouseEvent<Element, MouseEvent> | ReactKeyboardEvent<Element>,
     newPage: number
   ) => {
     setPage(newPage);
   };
 
   const handlePerPageSelect = (
-    _evt: MouseEvent | React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>,
+    _evt: MouseEvent | ReactMouseEvent<Element, MouseEvent> | ReactKeyboardEvent<Element>,
     newPerPage: number
   ) => {
     setPerPage(newPerPage);
@@ -123,7 +129,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
     />
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     setPaginatedRows(managedRows.slice((page - 1) * perPage, page * perPage - 1));
   }, [managedRows, page, perPage]);
 
@@ -178,7 +184,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
     setFilteredRows(defaultRows);
   };
 
-  const handleChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
+  const handleChange = (event: ReactFormEvent<HTMLInputElement>, checked: boolean) => {
     const target = event.currentTarget;
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
@@ -191,7 +197,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
     setCheckedState(updatedCheckedState);
   };
 
-  const handleModalToggle = (_event: React.MouseEvent<Element, MouseEvent> | KeyboardEvent) => {
+  const handleModalToggle = (_event: ReactMouseEvent<Element, MouseEvent> | KeyboardEvent) => {
     setIsModalOpen(!isModalOpen);
   };
 
@@ -395,7 +401,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
   };
 
   const toolbarItems = (
-    <React.Fragment>
+    <>
       <Toolbar id="page-layout-table-column-management-action-toolbar-top">
         <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>
           Choose one
@@ -428,11 +434,11 @@ export const TableColumnManagement: React.FunctionComponent = () => {
           <ToolbarItem variant="pagination">{renderPagination('top', false)}</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
-    </React.Fragment>
+    </>
   );
 
   return (
-    <React.Fragment>
+    <>
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection isFilled>
           <Card>
@@ -481,6 +487,6 @@ export const TableColumnManagement: React.FunctionComponent = () => {
           </Card>
         </PageSection>
       </DashboardWrapper>
-    </React.Fragment>
+    </>
   );
 };

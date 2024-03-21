@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { FunctionComponent } from 'react';
 import { DropdownSeparator, SeparatorProps } from '../Dropdown/DropdownSeparator';
 
-export const ApplicationLauncherSeparator: React.FunctionComponent<SeparatorProps> = ({
+export const ApplicationLauncherSeparator: FunctionComponent<SeparatorProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   children,
   ...props

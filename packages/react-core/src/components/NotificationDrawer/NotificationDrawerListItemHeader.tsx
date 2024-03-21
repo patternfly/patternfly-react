@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, useRef, useState, useEffect, Fragment } from 'react';
 
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
@@ -20,13 +20,13 @@ export const variantIcons = {
   custom: BellIcon
 };
 
-export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<HTMLDivElement> {
+export interface NotificationDrawerListItemHeaderProps extends HTMLProps<HTMLDivElement> {
   /**  Actions rendered inside the notification drawer list item header */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**  Additional classes for notification drawer list item header. */
   className?: string;
   /**  Add custom icon for notification drawer list item header */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /**  Notification drawer list item header screen reader title */
   srTitle?: string;
   /**  Notification drawer list item title */
@@ -55,7 +55,7 @@ export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<H
   headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-export const NotificationDrawerListItemHeader: React.FunctionComponent<NotificationDrawerListItemHeaderProps> = ({
+export const NotificationDrawerListItemHeader: FunctionComponent<NotificationDrawerListItemHeaderProps> = ({
   children,
   className = '',
   icon = null,
@@ -67,9 +67,9 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
   headingLevel: HeadingLevel = 'h2',
   ...props
 }: NotificationDrawerListItemHeaderProps) => {
-  const titleRef = React.useRef(null);
-  const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
-  React.useEffect(() => {
+  const titleRef = useRef(null);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+  useEffect(() => {
     if (!titleRef.current || !truncateTitle) {
       return;
     }
@@ -92,7 +92,7 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div {...props} className={css(styles.notificationDrawerListItemHeader, className)}>
         <span className={css(styles.notificationDrawerListItemHeaderIcon)}>{icon ? icon : <Icon />}</span>
         {isTooltipVisible ? (
@@ -104,7 +104,7 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
         )}
       </div>
       {children && <div className={css(styles.notificationDrawerListItemAction)}>{children}</div>}
-    </React.Fragment>
+    </Fragment>
   );
 };
 NotificationDrawerListItemHeader.displayName = 'NotificationDrawerListItemHeader';

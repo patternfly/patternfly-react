@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Skeleton } from '@patternfly/react-core';
 /* eslint-disable camelcase */
 import global_FontSize_4xl from '@patternfly/react-tokens/dist/esm/global_FontSize_4xl';
@@ -9,8 +9,8 @@ import global_FontSize_lg from '@patternfly/react-tokens/dist/esm/global_FontSiz
 import global_FontSize_md from '@patternfly/react-tokens/dist/esm/global_FontSize_md';
 import global_FontSize_sm from '@patternfly/react-tokens/dist/esm/global_FontSize_sm';
 
-export const SkeletonText: React.FunctionComponent = () => (
-  <React.Fragment>
+export const SkeletonText: FunctionComponent = () => (
+  <Fragment>
     {global_FontSize_4xl.name}
     <Skeleton fontSize="4xl" screenreaderText="Loading font size 4xl" />
     <br />
@@ -31,5 +31,5 @@ export const SkeletonText: React.FunctionComponent = () => (
     <br />
     {global_FontSize_sm.name}
     <Skeleton fontSize="sm" screenreaderText="Loading font size sm" />
-  </React.Fragment>
+  </Fragment>
 );

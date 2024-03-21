@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, useState } from 'react';
 import { DualListSelector, DualListSelectorTreeItemData } from '@patternfly/react-core';
 
-export const DualListSelectorTreeExample: React.FunctionComponent = () => {
-  const [availableOptions, setAvailableOptions] = React.useState<DualListSelectorTreeItemData[]>([
+export const DualListSelectorTreeExample: FunctionComponent = () => {
+  const [availableOptions, setAvailableOptions] = useState<DualListSelectorTreeItemData[]>([
     {
       id: 'F1',
       text: 'Folder 1',
@@ -38,7 +38,7 @@ export const DualListSelectorTreeExample: React.FunctionComponent = () => {
     }
   ]);
 
-  const [chosenOptions, setChosenOptions] = React.useState<DualListSelectorTreeItemData[]>([
+  const [chosenOptions, setChosenOptions] = useState<DualListSelectorTreeItemData[]>([
     {
       id: 'CF1',
       text: 'Chosen Folder 1',
@@ -74,7 +74,7 @@ export const DualListSelectorTreeExample: React.FunctionComponent = () => {
   ]);
 
   const onListChange = (
-    event: React.MouseEvent<HTMLElement>,
+    event: MouseEvent<HTMLElement>,
     newAvailableOptions: DualListSelectorTreeItemData[],
     newChosenOptions: DualListSelectorTreeItemData[]
   ) => {

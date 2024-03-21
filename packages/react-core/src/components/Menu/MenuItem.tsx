@@ -1,4 +1,20 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  ElementType,
+  ComponentType,
+  ReactElement,
+  Ref,
+  FunctionComponent,
+  KeyboardEvent,
+  MouseEvent,
+  createContext,
+  useContext,
+  useState,
+  useRef,
+  useEffect,
+  forwardRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import topOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_top_offset';
@@ -16,9 +32,9 @@ import { canUseDOM } from '../../helpers/util';
 import { useIsomorphicLayoutEffect } from '../../helpers/useIsomorphicLayout';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
-export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
+export interface MenuItemProps extends Omit<HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Content rendered inside the menu list item. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the menu list item */
   className?: string;
   /** Identifies the component in the Menu onSelect or onActionClick callback */
@@ -44,7 +60,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Callback for item click */
   onClick?: (event?: any) => void;
   /** Component used to render the menu item */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: ElementType<any> | ComponentType<any>;
   /** Render item as disabled option */
   isDisabled?: boolean;
   /** Render item as aria-disabled option */
@@ -52,11 +68,11 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Props for adding a tooltip to a menu item */
   tooltipProps?: TooltipProps;
   /** Render item with icon */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** Render item with one or more actions */
-  actions?: React.ReactNode;
+  actions?: ReactNode;
   /** Description of the menu item */
-  description?: React.ReactNode;
+  description?: ReactNode;
   /** Render an external link icon on focus or hover, and set the link's
    * "target" attribute to a value of "_blank".
    */
@@ -68,11 +84,11 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Flag indicating the item is in danger state */
   isDanger?: boolean;
   /** @beta Flyout menu. Should not be used if the to prop is defined. */
-  flyoutMenu?: React.ReactElement;
+  flyoutMenu?: ReactElement;
   /** @beta Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: any) => void;
   /** @beta Drilldown menu of the item. Should be a Menu or DrilldownMenu type. */
-  drilldownMenu?: React.ReactNode | (() => React.ReactNode);
+  drilldownMenu?: ReactNode | (() => ReactNode);
   /** @beta Sub menu direction */
   direction?: 'down' | 'up';
   /** @beta True if item is on current selection path */
@@ -80,16 +96,16 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Adds an accessible name to the menu item. */
   'aria-label'?: string;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<HTMLAnchorElement | HTMLButtonElement>;
+  innerRef?: Ref<HTMLAnchorElement | HTMLButtonElement>;
   /** Sets the id attribute on the menu item component. */
   id?: string;
 }
 
-const FlyoutContext = React.createContext({
+const FlyoutContext = createContext({
   direction: 'right' as 'left' | 'right'
 });
 
-const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
+const MenuItemBase: FunctionComponent<MenuItemProps> = ({
   children,
   className,
   itemId = null,
@@ -138,15 +154,15 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     setFlyoutRef,
     disableHover,
     role: menuRole
-  } = React.useContext(MenuContext);
+  } = useContext(MenuContext);
   let Component = (to ? 'a' : component) as any;
   if (hasCheckbox && !to) {
     Component = 'label' as any;
   }
-  const [flyoutTarget, setFlyoutTarget] = React.useState(null);
-  const flyoutContext = React.useContext(FlyoutContext);
-  const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
-  const ref = React.useRef<HTMLLIElement>();
+  const [flyoutTarget, setFlyoutTarget] = useState(null);
+  const flyoutContext = useContext(FlyoutContext);
+  const [flyoutXDirection, setFlyoutXDirection] = useState(flyoutContext.direction);
+  const ref = useRef<HTMLLIElement>();
   const flyoutVisible = ref === flyoutRef;
 
   const hasFlyout = flyoutMenu !== undefined;
@@ -200,11 +216,11 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     }
   }, [flyoutVisible, flyoutMenu]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setFlyoutXDirection(flyoutContext.direction);
   }, [flyoutContext]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (flyoutTarget) {
       if (flyoutVisible) {
         const flyoutMenu = (flyoutTarget as HTMLElement).nextElementSibling;
@@ -218,8 +234,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     }
   }, [flyoutVisible, flyoutTarget]);
 
-  const handleFlyout = (event: React.KeyboardEvent | React.MouseEvent) => {
-    const key = (event as React.KeyboardEvent).key;
+  const handleFlyout = (event: KeyboardEvent | MouseEvent) => {
+    const key = (event as KeyboardEvent).key;
     const target = event.target;
     const type = event.type;
 
@@ -249,7 +265,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     }
   };
   const _isOnPath = (isOnPath && isOnPath) || (drilldownItemPath && drilldownItemPath.includes(itemId)) || false;
-  let drill: (event: React.KeyboardEvent | React.MouseEvent) => void;
+  let drill: (event: KeyboardEvent | MouseEvent) => void;
   if (direction) {
     if (direction === 'down') {
       drill = (event) =>
@@ -259,7 +275,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           menuId,
           typeof drilldownMenu === 'function'
             ? (drilldownMenu() as any).props.id
-            : (drilldownMenu as React.ReactElement).props.id,
+            : (drilldownMenu as ReactElement).props.id,
           itemId
         );
     } else {
@@ -321,7 +337,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isFocused && ref.current) {
       const itemEl = ref.current;
       const parentListEl = itemEl.parentElement;
@@ -353,7 +369,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             {...(!hasCheckbox && !flyoutMenu && isSelectMenu && { 'aria-selected': getIsSelected() })}
             ref={innerRef}
             {...(!hasCheckbox && {
-              onClick: (event: React.KeyboardEvent | React.MouseEvent) => {
+              onClick: (event: KeyboardEvent | MouseEvent) => {
                 if (!isAriaDisabled) {
                   onItemSelect(event, onSelect);
                   drill && drill(event);
@@ -461,8 +477,6 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   );
 };
 
-export const MenuItem = React.forwardRef((props: MenuItemProps, ref: React.Ref<any>) => (
-  <MenuItemBase {...props} innerRef={ref} />
-));
+export const MenuItem = forwardRef((props: MenuItemProps, ref: Ref<any>) => <MenuItemBase {...props} innerRef={ref} />);
 
 MenuItem.displayName = 'MenuItem';

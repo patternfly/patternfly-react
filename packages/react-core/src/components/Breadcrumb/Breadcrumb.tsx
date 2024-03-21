@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, ReactElement, Children, isValidElement, cloneElement } from 'react';
 import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface BreadcrumbProps extends React.HTMLProps<HTMLElement>, OUIAProps {
+export interface BreadcrumbProps extends HTMLProps<HTMLElement>, OUIAProps {
   /** Children nodes be rendered to the BreadCrumb. Should be of type BreadCrumbItem. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the breadcrumb nav. */
   className?: string;
   /** Aria label added to the breadcrumb nav. */
@@ -16,7 +16,7 @@ export interface BreadcrumbProps extends React.HTMLProps<HTMLElement>, OUIAProps
   ouiaSafe?: boolean;
 }
 
-export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
+export const Breadcrumb: FunctionComponent<BreadcrumbProps> = ({
   children = null,
   className = '',
   'aria-label': ariaLabel = 'Breadcrumb',
@@ -28,10 +28,10 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   return (
     <nav {...props} aria-label={ariaLabel} className={css(styles.breadcrumb, className)} {...ouiaProps}>
       <ol className={styles.breadcrumbList} role="list">
-        {React.Children.map(children, (child, index) => {
+        {Children.map(children, (child, index) => {
           const showDivider = index > 0;
-          if (React.isValidElement(child)) {
-            return React.cloneElement(child as React.ReactElement<any>, { showDivider });
+          if (isValidElement(child)) {
+            return cloneElement(child as ReactElement<any>, { showDivider });
           }
 
           return child;

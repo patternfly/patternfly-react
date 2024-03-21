@@ -1,14 +1,16 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent
+} from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-core';
 
-export const TabsBoxLight: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
-  const [isTabsLightScheme, setIsTabsLightScheme] = React.useState<boolean>(true);
+export const TabsBoxLight: FunctionComponent = () => {
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
+  const [isTabsLightScheme, setIsTabsLightScheme] = useState<boolean>(true);
   // Toggle currently active tab
-  const handleTabClick = (
-    event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
-    tabIndex: string | number
-  ) => {
+  const handleTabClick = (event: ReactMouseEvent<any> | ReactKeyboardEvent | MouseEvent, tabIndex: string | number) => {
     setActiveTabKey(tabIndex);
   };
 

@@ -1,4 +1,18 @@
-import * as React from 'react';
+import {
+  useContext,
+  type ComponentType,
+  type ElementType,
+  type FunctionComponent,
+  type HTMLProps,
+  type ReactElement,
+  type ReactNode,
+  useState,
+  useRef,
+  type MouseEvent as ReactMouseEvent,
+  useEffect,
+  cloneElement,
+  isValidElement
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
@@ -7,10 +21,10 @@ import { useOUIAProps, OUIAProps } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
-export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
+export interface NavItemProps extends Omit<HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
   /** Content rendered inside the nav item. */
-  children?: React.ReactNode;
-  /** Whether to set className on children when React.isValidElement(children) */
+  children?: ReactNode;
+  /** Whether to set className on children when isValidElement(children) */
   styleChildren?: boolean;
   /** Additional classes added to the nav item */
   className?: string;
@@ -26,10 +40,10 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   preventDefault?: boolean;
   /** Callback for item click */
   onClick?: NavSelectClickHandler;
-  /** Component used to render NavItems if  React.isValidElement(children) is false */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  /** Component used to render NavItems if  isValidElement(children) is false */
+  component?: ElementType<any> | ComponentType<any>;
   /** Flyout of a nav item. This should be a Menu component. Should not be used if the to prop is defined. */
-  flyout?: React.ReactElement;
+  flyout?: ReactElement;
   /** Callback when flyout is opened or closed */
   onShowFlyout?: () => void;
   /** z-index of the flyout nav item */
@@ -42,7 +56,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   hasNavLinkWrapper?: boolean;
 }
 
-export const NavItem: React.FunctionComponent<NavItemProps> = ({
+export const NavItem: FunctionComponent<NavItemProps> = ({
   children,
   styleChildren = true,
   className,
@@ -61,13 +75,13 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   hasNavLinkWrapper,
   ...props
 }: NavItemProps) => {
-  const { flyoutRef, setFlyoutRef, navRef } = React.useContext(NavContext);
-  const { isSidebarOpen } = React.useContext(PageSidebarContext);
-  const [flyoutTarget, setFlyoutTarget] = React.useState(null);
-  const [isHovered, setIsHovered] = React.useState(false);
-  const ref = React.useRef<HTMLLIElement>();
+  const { flyoutRef, setFlyoutRef, navRef } = useContext(NavContext);
+  const { isSidebarOpen } = useContext(PageSidebarContext);
+  const [flyoutTarget, setFlyoutTarget] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const ref = useRef<HTMLLIElement>();
   const flyoutVisible = ref === flyoutRef;
-  const popperRef = React.useRef<HTMLDivElement>();
+  const popperRef = useRef<HTMLDivElement>();
   const hasFlyout = flyout !== undefined;
   const Component = hasFlyout ? 'button' : (component as any);
 
@@ -87,7 +101,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     onShowFlyout && show && onShowFlyout();
   };
 
-  const onMouseOver = (event: React.MouseEvent) => {
+  const onMouseOver = (event: ReactMouseEvent) => {
     const evtContainedInFlyout = (event.target as HTMLElement).closest(`.${styles.navItem}.pf-m-flyout`);
     if (hasFlyout && !flyoutVisible) {
       showFlyout(true);
@@ -135,7 +149,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (hasFlyout) {
       window.addEventListener('click', onFlyoutClick);
     }
@@ -146,7 +160,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     };
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (flyoutTarget) {
       if (flyoutVisible) {
         const flyoutItems = Array.from(
@@ -174,7 +188,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
 
   const tabIndex = isSidebarOpen ? null : -1;
 
-  const renderDefaultLink = (context: any): React.ReactNode => {
+  const renderDefaultLink = (context: any): ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
       <Component
@@ -197,8 +211,8 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     );
   };
 
-  const renderClonedChild = (context: any, child: React.ReactElement): React.ReactNode =>
-    React.cloneElement(child, {
+  const renderClonedChild = (context: any, child: ReactElement): ReactNode =>
+    cloneElement(child, {
       onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
       'aria-current': isActive ? 'page' : null,
       ...(styleChildren && {
@@ -206,10 +220,10 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       }),
       tabIndex: child.props.tabIndex || tabIndex,
       children: hasFlyout ? (
-        <React.Fragment>
+        <>
           {child.props.children}
           {flyoutButton}
-        </React.Fragment>
+        </>
       ) : (
         child.props.children
       )
@@ -252,9 +266,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       >
         <NavContext.Consumer>
           {(context) =>
-            React.isValidElement(children)
-              ? renderClonedChild(context, children as React.ReactElement)
-              : renderDefaultLink(context)
+            isValidElement(children) ? renderClonedChild(context, children as ReactElement) : renderDefaultLink(context)
           }
         </NavContext.Consumer>
       </li>

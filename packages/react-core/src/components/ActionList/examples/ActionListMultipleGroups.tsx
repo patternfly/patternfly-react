@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { ActionList, ActionListGroup, ActionListItem, Button } from '@patternfly/react-core';
 
-export const ActionListMultipleGroups: React.FunctionComponent = () => (
+export const ActionListMultipleGroups: FunctionComponent = () => (
   <ActionList>
     <ActionListGroup>
       <ActionListItem>

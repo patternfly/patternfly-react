@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 
-export interface ApplicationLauncherTextProps extends React.HTMLProps<HTMLSpanElement> {
+export interface ApplicationLauncherTextProps extends HTMLProps<HTMLSpanElement> {
   /** content rendered inside the text container */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Additional classes added to the text container */
   className?: string;
 }
 
-export const ApplicationLauncherText: React.FunctionComponent<ApplicationLauncherTextProps> = ({
+export const ApplicationLauncherText: FunctionComponent<ApplicationLauncherTextProps> = ({
   className = '',
   children,
   ...props

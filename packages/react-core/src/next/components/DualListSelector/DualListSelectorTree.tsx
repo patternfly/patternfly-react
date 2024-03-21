@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent, ChangeEvent, KeyboardEvent, HTMLProps, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { DualListSelectorTreeItem } from './DualListSelectorTreeItem';
@@ -14,7 +14,7 @@ export interface DualListSelectorTreeItemData {
   hasBadge?: boolean;
   /** Callback fired when an option is checked. */
   onOptionCheck?: (
-    event: React.MouseEvent | React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent,
+    event: MouseEvent | ChangeEvent<HTMLInputElement> | KeyboardEvent,
     isChecked: boolean,
     isChosen: boolean,
     itemData: DualListSelectorTreeItemData
@@ -39,7 +39,7 @@ export interface DualListSelectorTreeItemData {
  * composable dual list selector with a tree.
  */
 
-export interface DualListSelectorTreeProps extends Omit<React.HTMLProps<HTMLUListElement>, 'data'> {
+export interface DualListSelectorTreeProps extends Omit<HTMLProps<HTMLUListElement>, 'data'> {
   /** Data of the tree view. */
   data: DualListSelectorTreeItemData[] | (() => DualListSelectorTreeItemData[]);
   /** ID of the tree view. */
@@ -54,13 +54,13 @@ export interface DualListSelectorTreeProps extends Omit<React.HTMLProps<HTMLULis
   isDisabled?: boolean;
   /** Callback fired when an option is checked. */
   onOptionCheck?: (
-    event: React.MouseEvent | React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent,
+    event: MouseEvent | ChangeEvent<HTMLInputElement> | KeyboardEvent,
     isChecked: boolean,
     itemData: DualListSelectorTreeItemData
   ) => void;
 }
 
-export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeProps> = ({
+export const DualListSelectorTree: FunctionComponent<DualListSelectorTreeProps> = ({
   data,
   hasBadges = false,
   isNested = false,

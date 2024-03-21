@@ -1,24 +1,24 @@
 /* eslint-disable no-console */
-import * as React from 'react';
+import { HTMLProps, ReactNode, MouseEvent, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import { Button, ButtonVariant } from '../../../components/Button';
 import { PageContextConsumer, PageContextProps } from '../../../components/Page/PageContext';
 
-export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
+export interface PageHeaderProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the page header */
   className?: string;
   /** Component to render the logo/brand, use <Brand /> */
-  logo?: React.ReactNode;
+  logo?: ReactNode;
   /** Additional props passed to the logo anchor container */
   logoProps?: any;
   /** Component to use to wrap the passed <logo> */
-  logoComponent?: React.ReactNode;
+  logoComponent?: ReactNode;
   /** Component to render the header tools, use <PageHeaderTools />  */
-  headerTools?: React.ReactNode;
+  headerTools?: ReactNode;
   /** Component to render navigation within the header, use <Nav /> */
-  topNav?: React.ReactNode;
+  topNav?: ReactNode;
   /** True to show the nav toggle button (toggles side nav) */
   showNavToggle?: boolean;
   /** Id for the nav toggle button */
@@ -28,23 +28,23 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Sets the value for role on the <main> element */
   role?: string;
   /** Callback function to handle the side nav toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */
-  onNavToggle?: (event: React.MouseEvent) => void;
+  onNavToggle?: (event: MouseEvent) => void;
   /** Aria Label for the nav toggle button */
   'aria-label'?: string;
 }
 
-export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
+export const PageHeader: FunctionComponent<PageHeaderProps> = ({
   className = '',
-  logo = null as React.ReactNode,
+  logo = null as ReactNode,
   logoProps = null as any,
   logoComponent,
-  headerTools = null as React.ReactNode,
-  topNav = null as React.ReactNode,
+  headerTools = null as ReactNode,
+  topNav = null as ReactNode,
   isNavOpen = true,
   role = undefined as string,
   showNavToggle = false,
   navToggleId = 'nav-toggle',
-  onNavToggle = (_event: React.MouseEvent) => undefined as any,
+  onNavToggle = (_event: MouseEvent) => undefined as any,
   'aria-label': ariaLabel = 'Global navigation',
   'aria-controls': ariaControls = null,
   ...props

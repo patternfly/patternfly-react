@@ -1,11 +1,11 @@
-import React from 'react';
+import { FunctionComponent, useState, useRef } from 'react';
 import { MenuToggle, Select, SelectList, SelectOption } from '@patternfly/react-core';
 import text from '@patternfly/react-styles/css/utilities/Text/text';
 
-export const DateSelectDemo: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<number>(0);
-  const menuRef = React.useRef<HTMLDivElement>();
+export const DateSelectDemo: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<number>(0);
+  const menuRef = useRef<HTMLDivElement>();
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);

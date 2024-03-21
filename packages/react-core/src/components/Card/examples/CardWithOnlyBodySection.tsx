@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Card, CardBody } from '@patternfly/react-core';
 
-export const CardWithOnlyBodySection: React.FunctionComponent = () => (
+export const CardWithOnlyBodySection: FunctionComponent = () => (
   <Card>
     <CardBody>Body</CardBody>
   </Card>

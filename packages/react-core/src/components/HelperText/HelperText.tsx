@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/HelperText/helper-text';
 import { css } from '@patternfly/react-styles';
 
-export interface HelperTextProps extends React.HTMLProps<HTMLDivElement | HTMLUListElement> {
+export interface HelperTextProps extends HTMLProps<HTMLDivElement | HTMLUListElement> {
   /** Content rendered inside the helper text container. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes applied to the helper text container. */
   className?: string;
   /** Component type of the helper text container */
@@ -22,7 +22,7 @@ export interface HelperTextProps extends React.HTMLProps<HTMLDivElement | HTMLUL
   'aria-label'?: string;
 }
 
-export const HelperText: React.FunctionComponent<HelperTextProps> = ({
+export const HelperText: FunctionComponent<HelperTextProps> = ({
   children,
   className,
   component = 'div',

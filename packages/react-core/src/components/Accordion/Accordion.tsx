@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 import { AccordionContext } from './AccordionContext';
 
-export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
+export interface AccordionProps extends HTMLProps<HTMLDListElement> {
   /** Content rendered inside the Accordion  */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the Accordion  */
   className?: string;
   /** Adds accessible text to the Accordion */
@@ -22,7 +22,7 @@ export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
   togglePosition?: 'start' | 'end';
 }
 
-export const Accordion: React.FunctionComponent<AccordionProps> = ({
+export const Accordion: FunctionComponent<AccordionProps> = ({
   children = null,
   className = '',
   'aria-label': ariaLabel,

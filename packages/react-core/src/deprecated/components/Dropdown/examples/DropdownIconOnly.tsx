@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core/deprecated';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 
-export const DropdownIconOnly: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const DropdownIconOnly: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);

@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, ReactElement, Children, cloneElement } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DroppableContext } from './DroppableContext';
 
-interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
+interface DroppableProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside DragDrop */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Class to add to outer div */
   className?: string;
   /** Name of zone that items can be dragged between. Should specify if there is more than one Droppable on the page. */
@@ -16,7 +16,7 @@ interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
   hasNoWrapper?: boolean;
 }
 
-export const Droppable: React.FunctionComponent<DroppableProps> = ({
+export const Droppable: FunctionComponent<DroppableProps> = ({
   className,
   children,
   zone = 'defaultZone',
@@ -29,19 +29,15 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
     'data-pf-droppableid': droppableId,
     // if has no wrapper is set, don't overwrite children className with the className prop
     className:
-      hasNoWrapper && React.Children.count(children) === 1
-        ? css(styles.droppable, className, (children as React.ReactElement).props.className)
+      hasNoWrapper && Children.count(children) === 1
+        ? css(styles.droppable, className, (children as ReactElement).props.className)
         : css(styles.droppable, className),
     ...props
   };
 
   return (
     <DroppableContext.Provider value={{ zone, droppableId }}>
-      {hasNoWrapper ? (
-        React.cloneElement(children as React.ReactElement, childProps)
-      ) : (
-        <div {...childProps}>{children}</div>
-      )}
+      {hasNoWrapper ? cloneElement(children as ReactElement, childProps) : <div {...childProps}>{children}</div>}
     </DroppableContext.Provider>
   );
 };

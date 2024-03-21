@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, RefObject, Ref, CSSProperties, useState, useRef, useEffect } from 'react';
 import {
   Button,
   Tooltip,
@@ -12,28 +12,28 @@ import {
   TooltipPosition
 } from '@patternfly/react-core';
 
-export const TooltipOptions: React.FunctionComponent = () => {
-  const [trigger, setTrigger] = React.useState(['mouseenter', 'focus']);
-  const [isVisible, setIsVisible] = React.useState(true);
-  const [contentLeftAligned, setContentLeftAligned] = React.useState(false);
-  const [enableFlip, setEnableFlip] = React.useState(true);
-  const [position, setPosition] = React.useState<TooltipPosition>(TooltipPosition.top);
-  const [positionSelectOpen, setPositionSelectOpen] = React.useState(false);
-  const [flipSelectOpen, setFlipSelectOpen] = React.useState(false);
-  const [flipBehavior, setFlipBehavior] = React.useState('flip');
-  const [entryDelayInput, setEntryDelayInput] = React.useState(0);
-  const [exitDelayInput, setExitDelayInput] = React.useState(0);
-  const [animationDuration, setAnimationDuration] = React.useState(300);
-  const tipBoxRef = React.useRef(null);
+export const TooltipOptions: FunctionComponent = () => {
+  const [trigger, setTrigger] = useState(['mouseenter', 'focus']);
+  const [isVisible, setIsVisible] = useState(true);
+  const [contentLeftAligned, setContentLeftAligned] = useState(false);
+  const [enableFlip, setEnableFlip] = useState(true);
+  const [position, setPosition] = useState<TooltipPosition>(TooltipPosition.top);
+  const [positionSelectOpen, setPositionSelectOpen] = useState(false);
+  const [flipSelectOpen, setFlipSelectOpen] = useState(false);
+  const [flipBehavior, setFlipBehavior] = useState('flip');
+  const [entryDelayInput, setEntryDelayInput] = useState(0);
+  const [exitDelayInput, setExitDelayInput] = useState(0);
+  const [animationDuration, setAnimationDuration] = useState(300);
+  const tipBoxRef = useRef(null);
 
-  const scrollToRef = (ref: React.RefObject<any>) => {
+  const scrollToRef = (ref: RefObject<any>) => {
     if (ref && ref.current) {
       ref.current.scrollTop = 400;
       ref.current.scrollLeft = 300;
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     scrollToRef(tipBoxRef);
   }, []);
 
@@ -107,7 +107,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
         <div style={{ border: '1px solid' }}>
           position (will flip if enableFlip is true). The 'auto' position requires enableFlip to be set to true.
           <Select
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
                 onClick={() => setPositionSelectOpen(!positionSelectOpen)}
@@ -115,7 +115,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
                 style={
                   {
                     width: '200px'
-                  } as React.CSSProperties
+                  } as CSSProperties
                 }
               >
                 {position}
@@ -190,7 +190,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
             }}
             isOpen={flipSelectOpen}
             selected={flipBehavior}
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
                 onClick={() => setFlipSelectOpen(!flipSelectOpen)}
@@ -198,7 +198,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
                 style={
                   {
                     width: '450px'
-                  } as React.CSSProperties
+                  } as CSSProperties
                 }
               >
                 {flipBehavior}

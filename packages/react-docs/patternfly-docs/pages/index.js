@@ -1,4 +1,3 @@
-import React from 'react';
 import { Title, PageSection } from '@patternfly/react-core';
 
 // https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/

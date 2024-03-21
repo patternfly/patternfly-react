@@ -1,13 +1,20 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  useRef,
+  useEffect,
+  type CSSProperties,
+  type MouseEvent as ReactMouseEvent
+} from 'react';
 import { Select, SelectOption, SelectList, MenuToggle, Spinner } from '@patternfly/react-core';
 
-export const SelectViewMore: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<string>('Select a value');
-  const [activeItem, setActiveItem] = React.useState<number | string>(0);
-  const [isLoading, setIsLoading] = React.useState(false);
+export const SelectViewMore: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<string>('Select a value');
+  const [activeItem, setActiveItem] = useState<number | string>(0);
+  const [isLoading, setIsLoading] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [selectOptions, setSelectOptions] = React.useState([
+  const [selectOptions, setSelectOptions] = useState([
     <SelectOption key={0} value="Option 1">
       Option 1
     </SelectOption>,
@@ -39,13 +46,13 @@ export const SelectViewMore: React.FunctionComponent = () => {
       Final Option 10
     </SelectOption>
   ]);
-  const [numOptions, setNumOptions] = React.useState(3);
-  const [visibleOptions, setVisibleOptions] = React.useState(selectOptions.slice(0, numOptions));
-  const activeItemRef = React.useRef<HTMLElement>(null);
-  const viewMoreRef = React.useRef<HTMLLIElement>(null);
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const [numOptions, setNumOptions] = useState(3);
+  const [visibleOptions, setVisibleOptions] = useState(selectOptions.slice(0, numOptions));
+  const activeItemRef = useRef<HTMLElement>(null);
+  const viewMoreRef = useRef<HTMLLIElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     activeItemRef.current?.focus();
   }, [visibleOptions]);
 
@@ -88,7 +95,7 @@ export const SelectViewMore: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
+  const onSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     // eslint-disable-next-line no-console
     console.log('selected', value);
 
@@ -107,7 +114,7 @@ export const SelectViewMore: React.FunctionComponent = () => {
       style={
         {
           width: '200px'
-        } as React.CSSProperties
+        } as CSSProperties
       }
     >
       {selected}

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { BreadcrumbHeading } from '../BreadcrumbHeading';
 import { render } from '@testing-library/react';
 

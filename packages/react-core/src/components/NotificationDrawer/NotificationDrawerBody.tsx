@@ -1,16 +1,16 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 import { css } from '@patternfly/react-styles';
 
-export interface NotificationDrawerBodyProps extends React.HTMLProps<HTMLDivElement> {
+export interface NotificationDrawerBodyProps extends HTMLProps<HTMLDivElement> {
   /**  Content rendered inside the body of the notification drawer */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**  Additional classes added to the notification drawer body */
   className?: string;
 }
 
-export const NotificationDrawerBody: React.FunctionComponent<NotificationDrawerBodyProps> = ({
+export const NotificationDrawerBody: FunctionComponent<NotificationDrawerBodyProps> = ({
   children,
   className = '',
   ...props

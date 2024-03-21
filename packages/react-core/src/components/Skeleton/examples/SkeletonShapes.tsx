@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Skeleton } from '@patternfly/react-core';
 
-export const SkeletonShapes: React.FunctionComponent = () => (
-  <React.Fragment>
+export const SkeletonShapes: FunctionComponent = () => (
+  <Fragment>
     Small circle
     <Skeleton shape="circle" width="15%" screenreaderText="Loading small circle contents" />
     <br />
@@ -35,5 +35,5 @@ export const SkeletonShapes: React.FunctionComponent = () => (
     <div style={{ height: '200px' }}>
       <Skeleton height="100%" screenreaderText="Loading large rectangle contents" />
     </div>
-  </React.Fragment>
+  </Fragment>
 );

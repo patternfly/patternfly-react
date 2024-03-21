@@ -1,4 +1,13 @@
-import * as React from 'react';
+import {
+  ReactNode,
+  ButtonHTMLAttributes,
+  HTMLAttributes,
+  DetailedHTMLProps,
+  Ref,
+  isValidElement,
+  Component,
+  forwardRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
 import { css } from '@patternfly/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
@@ -8,21 +17,18 @@ export type MenuToggleElement = HTMLDivElement | HTMLButtonElement;
 
 export interface SplitButtonOptions {
   /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
-  items: React.ReactNode[];
+  items: ReactNode[];
   /** Variant of split button toggle */
   variant?: 'action' | 'checkbox';
 }
 
 export interface MenuToggleProps
   extends Omit<
-    React.DetailedHTMLProps<
-      React.ButtonHTMLAttributes<HTMLButtonElement> & React.HTMLAttributes<HTMLDivElement>,
-      MenuToggleElement
-    >,
+    DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement> & HTMLAttributes<HTMLDivElement>, MenuToggleElement>,
     'ref'
   > {
   /** Content rendered inside the toggle */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the toggle */
   className?: string;
   /** Flag indicating the toggle has expanded styling */
@@ -40,14 +46,14 @@ export interface MenuToggleProps
   /** Optional icon or image rendered inside the toggle, before the children content. It is
    * recommended to wrap most basic icons in our icon component.
    */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** Optional badge rendered inside the toggle, after the children content */
-  badge?: BadgeProps | React.ReactNode;
+  badge?: BadgeProps | ReactNode;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<MenuToggleElement>;
+  innerRef?: Ref<MenuToggleElement>;
 }
 
-class MenuToggleBase extends React.Component<MenuToggleProps> {
+class MenuToggleBase extends Component<MenuToggleProps> {
   displayName = 'MenuToggleBase';
   static defaultProps: MenuToggleProps = {
     className: '',
@@ -89,7 +95,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
       <>
         {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
         {isTypeahead ? children : <span className={css(styles.menuToggleText)}>{children}</span>}
-        {React.isValidElement(badge) && <span className={css(styles.menuToggleCount)}>{badge}</span>}
+        {isValidElement(badge) && <span className={css(styles.menuToggleCount)}>{badge}</span>}
         {isTypeahead ? (
           <button
             type="button"
@@ -128,7 +134,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
     if (isTypeahead) {
       return (
         <div
-          ref={innerRef as React.Ref<HTMLDivElement>}
+          ref={innerRef as Ref<HTMLDivElement>}
           className={css(commonStyles, styles.modifiers.typeahead)}
           {...componentProps}
         />
@@ -138,7 +144,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
     if (splitButtonOptions) {
       return (
         <div
-          ref={innerRef as React.Ref<HTMLDivElement>}
+          ref={innerRef as Ref<HTMLDivElement>}
           className={css(
             commonStyles,
             styles.modifiers.splitButton,
@@ -167,7 +173,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
         type="button"
         aria-label={ariaLabel}
         aria-expanded={isExpanded}
-        ref={innerRef as React.Ref<HTMLButtonElement>}
+        ref={innerRef as Ref<HTMLButtonElement>}
         disabled={isDisabled}
         onClick={onClick}
         {...componentProps}
@@ -176,7 +182,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
   }
 }
 
-export const MenuToggle = React.forwardRef((props: MenuToggleProps, ref: React.Ref<MenuToggleElement>) => (
+export const MenuToggle = forwardRef((props: MenuToggleProps, ref: Ref<MenuToggleElement>) => (
   <MenuToggleBase innerRef={ref} {...props} />
 ));
 

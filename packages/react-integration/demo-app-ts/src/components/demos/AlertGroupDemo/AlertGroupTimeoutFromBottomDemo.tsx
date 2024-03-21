@@ -1,9 +1,9 @@
-import React from 'react';
+import { type FunctionComponent, useState, Fragment, type ReactNode } from 'react';
 import { Alert, AlertActionLink, AlertGroup, Button } from '@patternfly/react-core';
 
-export const AlertGroupTimeoutFromBottomDemo: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<React.ReactNode[]>([]);
-  const [count, setCount] = React.useState(0);
+export const AlertGroupTimeoutFromBottomDemo: FunctionComponent = () => {
+  const [alerts, setAlerts] = useState<ReactNode[]>([]);
+  const [count, setCount] = useState(0);
   const onClick = () => {
     const timeout = 3000;
     setAlerts((prevAlerts) => [
@@ -11,7 +11,7 @@ export const AlertGroupTimeoutFromBottomDemo: React.FunctionComponent = () => {
         title={`Alert no. ${count}`}
         timeout={timeout}
         actionLinks={
-          <React.Fragment>
+          <Fragment>
             <AlertActionLink component="a" href="#">
               View details
             </AlertActionLink>
@@ -20,7 +20,7 @@ export const AlertGroupTimeoutFromBottomDemo: React.FunctionComponent = () => {
             >
               Ignore
             </AlertActionLink>
-          </React.Fragment>
+          </Fragment>
         }
         key={`Alert no. ${count}`}
         id={`Alert no. ${count}`}
@@ -33,12 +33,12 @@ export const AlertGroupTimeoutFromBottomDemo: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="secondary" onClick={onClick}>
         Add alert
       </Button>
       <AlertGroup>{alerts}</AlertGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

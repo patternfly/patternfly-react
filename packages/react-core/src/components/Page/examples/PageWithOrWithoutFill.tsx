@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Page,
   Masthead,
@@ -16,8 +16,8 @@ import {
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
-export const PageWithOrWithoutFill: React.FunctionComponent = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
+export const PageWithOrWithoutFill: FunctionComponent = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const onSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);

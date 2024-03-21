@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 interface ExpandableRowContentProps {
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
-export const ExpandableRowContent: React.FunctionComponent<ExpandableRowContentProps> = ({
-  children = null as React.ReactNode,
+export const ExpandableRowContent: FunctionComponent<ExpandableRowContentProps> = ({
+  children = null as ReactNode,
   ...props
 }: ExpandableRowContentProps) => (
   <div {...props} className={css(styles.tableExpandableRowContent)}>

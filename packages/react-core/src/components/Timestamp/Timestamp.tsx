@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, HTMLProps, FunctionComponent, useState, useEffect } from 'react';
 import styles from '@patternfly/react-styles/css/components/Timestamp/timestamp';
 import { css } from '@patternfly/react-styles';
 import { Tooltip } from '../Tooltip';
@@ -22,19 +22,19 @@ export interface TimestampTooltip {
    */
   variant: 'default' | 'custom';
   /** Content displayed in the tooltip when using the "custom" variant. */
-  content?: React.ReactNode;
+  content?: ReactNode;
   /** Additional props passed to the tooltip. */
   tooltipProps?: any;
   /** A custom suffix to apply to a "default" variant tooltip. */
   suffix?: string;
 }
 
-export interface TimestampProps extends React.HTMLProps<HTMLSpanElement> {
+export interface TimestampProps extends HTMLProps<HTMLSpanElement> {
   /** Displays custom content inside the timestamp, such as a relative time. This prop will
    * override the default content that is displayed. Custom content will not be affected by
    * any props that format or add to displayed content.
    */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Class to add to the outer span. */
   className?: string;
   /** Applies custom formatting to the displayed date and/or time. Passing this prop in will
@@ -79,7 +79,7 @@ export interface TimestampProps extends React.HTMLProps<HTMLSpanElement> {
   tooltip?: TimestampTooltip;
 }
 
-export const Timestamp: React.FunctionComponent<TimestampProps> = ({
+export const Timestamp: FunctionComponent<TimestampProps> = ({
   children,
   className,
   customFormat,
@@ -93,7 +93,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
   tooltip,
   ...props
 }: TimestampProps) => {
-  const [date, setDate] = React.useState(() => {
+  const [date, setDate] = useState(() => {
     const initDate = new Date(dateProp);
     if (isValidDate(initDate)) {
       return initDate;
@@ -102,7 +102,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
     return new Date();
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     const dateFromProp = new Date(dateProp);
     if (isValidDate(dateFromProp) && dateFromProp.toString() !== new Date(date).toString()) {
       setDate(dateFromProp);

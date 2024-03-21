@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import { MenuGroupProps, MenuGroup } from '../Menu';
 
@@ -7,14 +7,14 @@ import { MenuGroupProps, MenuGroup } from '../Menu';
  */
 export interface DropdownGroupProps extends Omit<MenuGroupProps, 'ref'> {
   /** Anything which can be rendered in a dropdown group. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Classes applied to root element of dropdown group */
   className?: string;
   /** Label of the dropdown group */
   label?: string;
 }
 
-export const DropdownGroup: React.FunctionComponent<DropdownGroupProps> = ({
+export const DropdownGroup: FunctionComponent<DropdownGroupProps> = ({
   children,
   className,
   label,

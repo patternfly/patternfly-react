@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Tooltip, Button } from '@patternfly/react-core';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 
-export const TooltipIcon: React.FunctionComponent = () => {
-  const [showSuccessContent, setShowSuccessContent] = React.useState(false);
+export const TooltipIcon: FunctionComponent = () => {
+  const [showSuccessContent, setShowSuccessContent] = useState(false);
   const copyText: string = 'Copy to clipboard';
   const doneCopyText: string = 'Successfully copied to clipboard!';
 

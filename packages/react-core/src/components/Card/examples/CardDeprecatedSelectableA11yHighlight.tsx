@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, KeyboardEvent, MouseEvent, FormEvent, useState, Fragment } from 'react';
 import { Card, CardTitle, CardBody } from '@patternfly/react-core';
 
-export const CardLegacySelectableA11yHighlight: React.FunctionComponent = () => {
-  const [selected, setSelected] = React.useState<string>('');
+export const CardLegacySelectableA11yHighlight: FunctionComponent = () => {
+  const [selected, setSelected] = useState<string>('');
 
-  const onKeyDown = (event: React.KeyboardEvent) => {
+  const onKeyDown = (event: KeyboardEvent) => {
     if (event.target !== event.currentTarget) {
       return;
     }
@@ -15,18 +15,18 @@ export const CardLegacySelectableA11yHighlight: React.FunctionComponent = () => 
     }
   };
 
-  const onClick = (event: React.MouseEvent) => {
+  const onClick = (event: MouseEvent) => {
     const newSelected = event.currentTarget.id === selected ? '' : event.currentTarget.id;
     setSelected(newSelected);
   };
 
-  const onChange = (_event: React.FormEvent<HTMLInputElement>, labelledById: string) => {
+  const onChange = (_event: FormEvent<HTMLInputElement>, labelledById: string) => {
     const newSelected = labelledById === selected ? '' : labelledById;
     setSelected(newSelected);
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Card
         id="a11y-selectable-first-card"
         onKeyDown={onKeyDown}
@@ -56,6 +56,6 @@ export const CardLegacySelectableA11yHighlight: React.FunctionComponent = () => 
           selected.
         </CardBody>
       </Card>
-    </React.Fragment>
+    </Fragment>
   );
 };

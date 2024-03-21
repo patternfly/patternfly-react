@@ -1,18 +1,18 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/SkipToContent/skip-to-content';
 import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
 
-export interface SkipToContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface SkipToContentProps extends HTMLProps<HTMLDivElement> {
   /** The skip to content link. */
   href: string;
   /** Content to display within the skip to content component, typically a string. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional styles to apply to the skip to content component. */
   className?: string;
 }
 
-export const SkipToContent: React.FunctionComponent<SkipToContentProps> = ({
+export const SkipToContent: FunctionComponent<SkipToContentProps> = ({
   children = null,
   className = '',
   href,

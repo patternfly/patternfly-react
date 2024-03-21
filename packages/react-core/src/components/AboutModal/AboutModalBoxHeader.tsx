@@ -1,16 +1,16 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
 import { Title } from '../Title';
 
-export interface AboutModalBoxHeaderProps extends React.HTMLProps<HTMLDivElement> {
+export interface AboutModalBoxHeaderProps extends HTMLProps<HTMLDivElement> {
   /** Name of the product  */
   productName?: string;
   /** Id to use for about modal box header  */
   id: string;
 }
 
-export const AboutModalBoxHeader: React.FunctionComponent<AboutModalBoxHeaderProps> = ({
+export const AboutModalBoxHeader: FunctionComponent<AboutModalBoxHeaderProps> = ({
   productName,
   id,
   ...props

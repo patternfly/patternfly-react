@@ -1,4 +1,14 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  FormEvent,
+  SyntheticEvent,
+  RefObject,
+  FunctionComponent,
+  useRef,
+  useState,
+  useEffect
+} from 'react';
 import { Button } from '../Button';
 import { ActionGroup, Form, FormGroup } from '../Form';
 import { TextInput } from '../TextInput';
@@ -7,7 +17,7 @@ import { SearchInputSearchAttribute } from './SearchInput';
 import { Panel, PanelMain, PanelMainBody } from '../Panel';
 import { css } from '@patternfly/react-styles';
 
-export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export interface AdvancedSearchMenuProps extends Omit<HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Delimiter in the query string for pairing attributes with search values.
    * Required whenever attributes are passed as props.
    */
@@ -18,29 +28,25 @@ export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivEle
   className?: string;
   /* Additional elements added after the attributes in the form.
    * The new form elements can be wrapped in a form group component for automatic formatting. */
-  formAdditionalItems?: React.ReactNode;
+  formAdditionalItems?: ReactNode;
   /** Function which builds an attribute-value map by parsing the value in the search input. */
   getAttrValueMap?: () => { [key: string]: string };
   /** Attribute label for strings unassociated with one of the provided listed attributes. */
-  hasWordsAttrLabel?: React.ReactNode;
+  hasWordsAttrLabel?: ReactNode;
   /** Flag for toggling the open/close state of the advanced search menu. */
   isSearchMenuOpen?: boolean;
   /** A callback for when the input value changes. */
-  onChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
+  onChange?: (event: FormEvent<HTMLInputElement>, value: string) => void;
   /** A callback for when the user clicks the clear button. */
-  onClear?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  onClear?: (event: SyntheticEvent<HTMLButtonElement>) => void;
   /** A callback for when the search button is clicked. */
-  onSearch?: (
-    event: React.SyntheticEvent<HTMLButtonElement>,
-    value: string,
-    attrValueMap: { [key: string]: string }
-  ) => void;
+  onSearch?: (event: SyntheticEvent<HTMLButtonElement>, value: string, attrValueMap: { [key: string]: string }) => void;
   /** A callback for when the open advanced search button is clicked. */
-  onToggleAdvancedMenu?: (e: React.SyntheticEvent<HTMLButtonElement>) => void;
+  onToggleAdvancedMenu?: (e: SyntheticEvent<HTMLButtonElement>) => void;
   /** Ref of the input element within the search input. */
-  parentInputRef?: React.RefObject<any>;
+  parentInputRef?: RefObject<any>;
   /** Ref of the div wrapping the whole search input. */
-  parentRef?: React.RefObject<any>;
+  parentRef?: RefObject<any>;
   /** Label for the button which resets the advanced search form and clears the search input. */
   resetButtonLabel?: string;
   /** Label for the button which calls the onSearch event handler. */
@@ -49,7 +55,7 @@ export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivEle
   value?: string;
 }
 
-export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps> = ({
+export const AdvancedSearchMenu: FunctionComponent<AdvancedSearchMenuProps> = ({
   className,
   parentRef,
   parentInputRef,
@@ -67,10 +73,10 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   isSearchMenuOpen,
   onToggleAdvancedMenu
 }: AdvancedSearchMenuProps) => {
-  const firstAttrRef = React.useRef(null);
-  const [putFocusBackOnInput, setPutFocusBackOnInput] = React.useState(false);
+  const firstAttrRef = useRef(null);
+  const [putFocusBackOnInput, setPutFocusBackOnInput] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (attributes.length > 0 && !advancedSearchDelimiter) {
       // eslint-disable-next-line no-console
       console.error(
@@ -79,7 +85,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
     }
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isSearchMenuOpen && firstAttrRef && firstAttrRef.current) {
       firstAttrRef.current.focus();
       setPutFocusBackOnInput(true);
@@ -88,7 +94,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
     }
   }, [isSearchMenuOpen]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener('mousedown', onDocClick);
     document.addEventListener('touchstart', onDocClick);
     document.addEventListener('keydown', onEscPress);
@@ -121,7 +127,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
     }
   };
 
-  const onSearchHandler = (event: React.SyntheticEvent<HTMLButtonElement>) => {
+  const onSearchHandler = (event: SyntheticEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (onSearch) {
       onSearch(event, value, getAttrValueMap());
@@ -131,7 +137,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
     }
   };
 
-  const handleValueChange = (attribute: string, newValue: string, event: React.FormEvent<HTMLInputElement>) => {
+  const handleValueChange = (attribute: string, newValue: string, event: FormEvent<HTMLInputElement>) => {
     const newMap = getAttrValueMap();
 
     newMap[attribute] = newValue;
@@ -160,7 +166,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   };
 
   const buildFormGroups = () => {
-    const formGroups = [] as React.ReactNode[];
+    const formGroups = [] as ReactNode[];
     attributes.forEach((attribute: string | SearchInputSearchAttribute, index: number) => {
       const display = typeof attribute === 'string' ? attribute : attribute.display;
       const queryAttr = typeof attribute === 'string' ? attribute : attribute.attr;

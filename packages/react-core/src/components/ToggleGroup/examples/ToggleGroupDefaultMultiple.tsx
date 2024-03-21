@@ -1,12 +1,12 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { ToggleGroup, ToggleGroupItem, Button, Stack, StackItem } from '@patternfly/react-core';
 
-export const ToggleGroupDefaultMultiple: React.FunctionComponent = () => {
-  const [isSelected, setIsSelected] = React.useState({
+export const ToggleGroupDefaultMultiple: FunctionComponent = () => {
+  const [isSelected, setIsSelected] = useState({
     'toggle-group-multiple-1': false,
     'toggle-group-multiple-2': false
   });
-  const [disableAll, setDisableAll] = React.useState(false);
+  const [disableAll, setDisableAll] = useState(false);
   const handleItemClick = (event, isSelected: boolean) => {
     const id = event.currentTarget.id;
     setIsSelected((prevIsSelected) => ({ ...prevIsSelected, [id]: isSelected }));

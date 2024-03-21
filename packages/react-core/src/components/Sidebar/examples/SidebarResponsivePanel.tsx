@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 
-export const SidebarResponsivePanel: React.FunctionComponent = () => (
+export const SidebarResponsivePanel: FunctionComponent = () => (
   <Sidebar style={{ height: '200px', overflow: 'auto' }} tabIndex={0}>
     <SidebarPanel width={{ default: 'width_50', lg: 'width_33', xl: 'width_75' }}>Sidebar panel</SidebarPanel>
     <SidebarContent>

@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Timestamp } from '@patternfly/react-core';
 
-export const TimestampDefault: React.FunctionComponent = () => (
+export const TimestampDefault: FunctionComponent = () => (
   <>
     <Timestamp />
     <br />

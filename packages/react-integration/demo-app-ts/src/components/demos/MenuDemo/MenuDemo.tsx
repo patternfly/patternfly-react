@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { MouseEvent, FormEvent, FunctionComponent, Fragment, Component } from 'react';
 
 import {
   Menu,
@@ -89,7 +89,7 @@ export class MenuDemo extends Component {
     });
   };
 
-  onSimpleSelect = (event: React.MouseEvent, itemId: string) => {
+  onSimpleSelect = (event: MouseEvent, itemId: string) => {
     this.setState({ activeItem: itemId });
   };
 
@@ -143,7 +143,7 @@ export class MenuDemo extends Component {
     window.scrollTo(0, 0);
   }
 
-  onChange = (event: React.FormEvent, value: string) => {
+  onChange = (event: FormEvent, value: string) => {
     this.setState({
       input: value
     });
@@ -325,7 +325,7 @@ export class MenuDemo extends Component {
   renderMenuWithTitledGroups() {
     const { activeItem } = this.state;
 
-    const GroupMenuExampleCmp: React.FunctionComponent<{ className: string }> = ({ className }) => (
+    const GroupMenuExampleCmp: FunctionComponent<{ className: string }> = ({ className }) => (
       <div>
         <h1 className={className}>Group 4</h1>
       </div>
@@ -531,7 +531,7 @@ export class MenuDemo extends Component {
           activeItemId={activeItem}
         >
           {favorites.length > 0 && (
-            <React.Fragment>
+            <Fragment>
               <MenuGroup label="Favorites">
                 <MenuList>
                   {items
@@ -554,7 +554,7 @@ export class MenuDemo extends Component {
                 </MenuList>
               </MenuGroup>
               <Divider />
-            </React.Fragment>
+            </Fragment>
           )}
           <MenuGroup label="All actions">
             <MenuList>

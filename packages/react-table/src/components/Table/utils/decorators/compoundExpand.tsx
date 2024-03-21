@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
@@ -22,9 +22,9 @@ export const compoundExpand: ITransform = (
     property
   };
   /**
-   * @param {React.MouseEvent} event - Mouse event
+   * @param event - Mouse event
    */
-  function onToggle(event: React.MouseEvent) {
+  function onToggle(event: MouseEvent) {
     // tslint:disable-next-line:no-unused-expression
     onExpand && onExpand(event, rowIndex, columnIndex, props.isOpen, rowData, extraData);
   }

@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Progress, ProgressProps, HelperText, HelperTextItem, Radio } from '@patternfly/react-core';
 
-export const ProgressHelperText: React.FunctionComponent = () => {
+export const ProgressHelperText: FunctionComponent = () => {
   type ProgressVariant = ProgressProps['variant'];
 
-  const [selectedVariant, setSelectedVariant] = React.useState<ProgressVariant>(undefined);
+  const [selectedVariant, setSelectedVariant] = useState<ProgressVariant>(undefined);
 
   const progressVariants: ProgressVariant[] = [undefined, 'success', 'warning', 'danger'];
 

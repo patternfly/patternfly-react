@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, useRef, cloneElement, Fragment } from 'react';
 import {
   MenuToggle,
   MenuSearch,
@@ -14,14 +14,14 @@ import {
 import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 import pfIcon from '@patternfly/react-core/src/demos/Card/pf-logo-small.svg';
 
-const MockLink: React.FunctionComponent = ({ to, ...props }: any) => <a href={to} {...props}></a>;
+const MockLink: FunctionComponent = ({ to, ...props }: any) => <a href={to} {...props}></a>;
 
-export const ApplicationLauncherDemo: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [refFullOptions, setRefFullOptions] = React.useState<Element[]>();
-  const [favorites, setFavorites] = React.useState<string[]>([]);
-  const [filteredIds, setFilteredIds] = React.useState<string[]>(['*']);
-  const menuRef = React.useRef<HTMLDivElement>(null);
+export const ApplicationLauncherDemo: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [refFullOptions, setRefFullOptions] = useState<Element[]>();
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [filteredIds, setFilteredIds] = useState<string[]>(['*']);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const onToggleClick = () => {
     setTimeout(() => {
@@ -123,8 +123,8 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
     const filteredCopy = items
       .map((group) => {
         if (group.type === DropdownGroup) {
-          const filteredGroup = React.cloneElement(group, {
-            children: React.cloneElement(group.props.children, {
+          const filteredGroup = cloneElement(group, {
+            children: cloneElement(group.props.children, {
               children: group.props.children.props.children.filter((child) => {
                 if (filteredIds.includes(child.props.value)) {
                   return child;
@@ -140,7 +140,7 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
             keepDivider = false;
           }
         } else if (group.type === DropdownList) {
-          const filteredGroup = React.cloneElement(group, {
+          const filteredGroup = cloneElement(group, {
             children: group.props.children.filter((child) => {
               if (filteredIds.includes(child.props.value)) {
                 return child;
@@ -232,12 +232,12 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
       </MenuSearch>
       <Divider />
       {filteredFavorites.length > 0 && (
-        <React.Fragment>
+        <Fragment>
           <DropdownGroup key="favorites-group" label="Favorites">
             <DropdownList>{filteredFavorites}</DropdownList>
           </DropdownGroup>
           <Divider key="favorites-divider" />
-        </React.Fragment>
+        </Fragment>
       )}
       {filteredItems}
     </Dropdown>

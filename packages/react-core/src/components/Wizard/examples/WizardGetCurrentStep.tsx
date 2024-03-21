@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, useState } from 'react';
 import {
   DescriptionList,
   DescriptionListGroup,
@@ -33,10 +33,10 @@ const CurrentStepDescriptionList = ({ currentStep }: { currentStep: WizardStepTy
   </DescriptionList>
 );
 
-export const GetCurrentStepWizard: React.FunctionComponent = () => {
-  const [currentStep, setCurrentStep] = React.useState<WizardStepType>();
+export const GetCurrentStepWizard: FunctionComponent = () => {
+  const [currentStep, setCurrentStep] = useState<WizardStepType>();
 
-  const onStepChange = (_event: React.MouseEvent<HTMLButtonElement>, currentStep: WizardStepType) =>
+  const onStepChange = (_event: MouseEvent<HTMLButtonElement>, currentStep: WizardStepType) =>
     setCurrentStep(currentStep);
 
   return (

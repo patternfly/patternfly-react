@@ -1,4 +1,4 @@
-import React, { Component, RefObject } from 'react';
+import { Component, createRef, type RefObject, type MouseEvent as ReactMouseEvent } from 'react';
 import { Tabs, Tab, TabContent, TabTitleText, TabTitleIcon, Button } from '@patternfly/react-core';
 import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
 
@@ -17,34 +17,34 @@ export class TabDemo extends Component {
   constructor(props: {}) {
     super(props);
 
-    this.contentRef1 = React.createRef<HTMLDivElement>();
-    this.contentRef2 = React.createRef<HTMLDivElement>();
-    this.contentRef3 = React.createRef<HTMLDivElement>();
+    this.contentRef1 = createRef<HTMLDivElement>();
+    this.contentRef2 = createRef<HTMLDivElement>();
+    this.contentRef3 = createRef<HTMLDivElement>();
   }
 
   // Toggle currently active tab
-  private handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
+  private handleTabClick = (_event: ReactMouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey: tabIndex
     });
   };
 
   // Toggle currently active tab
-  private handleTabClick2 = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
+  private handleTabClick2 = (_event: ReactMouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey2: tabIndex
     });
   };
 
   // Toggle currently active tab
-  private handleTabClick3 = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
+  private handleTabClick3 = (_event: ReactMouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey3: tabIndex
     });
   };
 
   // Toggle currently active tab
-  private handleTabClick4 = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
+  private handleTabClick4 = (_event: ReactMouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey4: tabIndex
     });
@@ -58,7 +58,7 @@ export class TabDemo extends Component {
     const { isTab2Hidden } = this.state;
 
     return (
-      <React.Fragment>
+      <>
         <Button id="showTab2" onClick={() => this.setState({ isTab2Hidden: !isTab2Hidden })}>
           {isTab2Hidden ? 'Show' : 'Hide'} tab 2
         </Button>
@@ -102,7 +102,7 @@ export class TabDemo extends Component {
             ref={this.contentRef1}
             aria-label="Tab item 1"
             // eslint-disable-next-line no-console
-            onAuxClick={event => console.log(event)}
+            onAuxClick={(event) => console.log(event)}
           >
             Tab 1 section
           </TabContent>
@@ -185,7 +185,7 @@ export class TabDemo extends Component {
             Tab 3 section
           </Tab>
         </Tabs>
-      </React.Fragment>
+      </>
     );
   }
 }

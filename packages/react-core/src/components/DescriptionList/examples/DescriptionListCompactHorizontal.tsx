@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   Button,
   DescriptionList,
@@ -8,7 +8,7 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListCompactHorizontal: React.FunctionComponent = () => (
+export const DescriptionListCompactHorizontal: FunctionComponent = () => (
   <DescriptionList isCompact isHorizontal>
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>

@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent, ChangeEvent, useState, useRef, Fragment } from 'react';
 import {
   Modal,
   ModalVariant,
@@ -14,12 +14,12 @@ import {
 } from '@patternfly/react-core/deprecated';
 
 export const SelectInModal = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [isSelectOpen, setIsSelectOpen] = React.useState(false);
-  const [isTimePickerOpen, setIsTimePickerOpen] = React.useState(false);
-  const [selection, setSelection] = React.useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
+  const [isTimePickerOpen, setIsTimePickerOpen] = useState(false);
+  const [selection, setSelection] = useState(null);
 
-  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
+  const handleModalToggle = (_event: KeyboardEvent | MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
   const onEscapePress = (event: KeyboardEvent) => {
@@ -45,13 +45,13 @@ export const SelectInModal = () => {
     setIsSelectOpen(isOpen);
   };
 
-  const onSelect = (event: React.MouseEvent | React.ChangeEvent, newSelection: string | SelectOptionObject) => {
+  const onSelect = (event: MouseEvent | ChangeEvent, newSelection: string | SelectOptionObject) => {
     setSelection(newSelection);
   };
 
-  const inputGroupRef1 = React.useRef(null);
+  const inputGroupRef1 = useRef(null);
   return (
-    <React.Fragment>
+    <Fragment>
       <Button id="modal-for-select-in-modal" variant="primary" onClick={handleModalToggle}>
         Launch modal
       </Button>
@@ -104,6 +104,6 @@ export const SelectInModal = () => {
           </InputGroupItem>
         </InputGroup>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

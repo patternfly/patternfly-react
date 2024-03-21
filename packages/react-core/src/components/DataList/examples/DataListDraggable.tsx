@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, createRef } from 'react';
 import {
   DataList,
   DataListItem,
@@ -32,9 +32,9 @@ const reorder = (list: ItemType[], startIndex: number, endIndex: number) => {
   return result;
 };
 
-export const DataListDraggable: React.FunctionComponent = () => {
-  const [items, setItems] = React.useState(getItems(10));
-  const [liveText, setLiveText] = React.useState('');
+export const DataListDraggable: FunctionComponent = () => {
+  const [items, setItems] = useState(getItems(10));
+  const [liveText, setLiveText] = useState('');
 
   function onDrag(source) {
     setLiveText(`Started dragging ${items[source.index].content}`);
@@ -69,7 +69,7 @@ export const DataListDraggable: React.FunctionComponent = () => {
         <DataList aria-label="draggable data list example" isCompact>
           {items.map(({ id, content }) => (
             <Draggable key={id} hasNoWrapper>
-              <DataListItem aria-labelledby={`draggable-${id}`} ref={React.createRef()}>
+              <DataListItem aria-labelledby={`draggable-${id}`} ref={createRef()}>
                 <DataListItemRow>
                   <DataListControl>
                     <DataListDragButton

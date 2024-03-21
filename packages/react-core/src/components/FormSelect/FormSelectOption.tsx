@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent } from 'react';
 
-export interface FormSelectOptionProps extends Omit<React.HTMLProps<HTMLOptionElement>, 'disabled'> {
+export interface FormSelectOptionProps extends Omit<HTMLProps<HTMLOptionElement>, 'disabled'> {
   /** additional classes added to the Select Option */
   className?: string;
   /** the value for the option */
@@ -13,7 +13,7 @@ export interface FormSelectOptionProps extends Omit<React.HTMLProps<HTMLOptionEl
   isPlaceholder?: boolean;
 }
 
-export const FormSelectOption: React.FunctionComponent<FormSelectOptionProps> = ({
+export const FormSelectOption: FunctionComponent<FormSelectOptionProps> = ({
   className = '',
   value = '',
   isDisabled = false,

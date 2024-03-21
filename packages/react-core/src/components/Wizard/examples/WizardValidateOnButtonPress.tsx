@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, useCallback, useEffect } from 'react';
 
 import {
   Button,
@@ -28,16 +28,16 @@ interface ValidationProgressProps {
   onClose(): void;
 }
 
-const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ onClose }) => {
-  const [percentValidated, setPercentValidated] = React.useState(0);
+const ValidationProgress: FunctionComponent<ValidationProgressProps> = ({ onClose }) => {
+  const [percentValidated, setPercentValidated] = useState(0);
 
-  const tick = React.useCallback(() => {
+  const tick = useCallback(() => {
     if (percentValidated < 100) {
       setPercentValidated((prevValue) => prevValue + 20);
     }
   }, [percentValidated]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => tick(), 1000);
 
     return () => {
@@ -78,11 +78,7 @@ interface LastStepFooterProps {
   setHasErrorOnSubmit(isSubmitted: boolean): void;
 }
 
-const LastStepFooter: React.FunctionComponent<LastStepFooterProps> = ({
-  isValid,
-  setIsSubmitted,
-  setHasErrorOnSubmit
-}) => {
+const LastStepFooter: FunctionComponent<LastStepFooterProps> = ({ isValid, setIsSubmitted, setHasErrorOnSubmit }) => {
   const { goToNextStep, goToPrevStep } = useWizardContext();
 
   const onValidate = () => {
@@ -113,7 +109,7 @@ interface SampleFormProps {
   setIsValid: (isValid: boolean) => void;
 }
 
-const SampleForm: React.FunctionComponent<SampleFormProps> = ({ value, isValid, setValue, setIsValid }) => {
+const SampleForm: FunctionComponent<SampleFormProps> = ({ value, isValid, setValue, setIsValid }) => {
   const validated = isValid ? 'default' : 'error';
 
   const handleTextInputChange = (_event, value: string) => {
@@ -145,11 +141,11 @@ const SampleForm: React.FunctionComponent<SampleFormProps> = ({ value, isValid, 
   );
 };
 
-export const WizardValidateOnButtonPress: React.FunctionComponent = () => {
-  const [ageValue, setAgeValue] = React.useState('Thirty');
-  const [isSubmitted, setIsSubmitted] = React.useState(false);
-  const [isFirstStepValid, setIsFirstStepValid] = React.useState(false);
-  const [hasErrorOnSubmit, setHasErrorOnSubmit] = React.useState(false);
+export const WizardValidateOnButtonPress: FunctionComponent = () => {
+  const [ageValue, setAgeValue] = useState('Thirty');
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isFirstStepValid, setIsFirstStepValid] = useState(false);
+  const [hasErrorOnSubmit, setHasErrorOnSubmit] = useState(false);
 
   // eslint-disable-next-line no-console
   const onClose = () => console.log('Some close action occurs here.');

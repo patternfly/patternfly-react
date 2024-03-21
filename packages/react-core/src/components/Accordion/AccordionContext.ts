@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { ElementType, createContext } from 'react';
 
 interface AccordionContextProps {
-  ContentContainer: React.ElementType;
-  ToggleContainer: React.ElementType;
+  ContentContainer: ElementType;
+  ToggleContainer: ElementType;
   togglePosition: 'start' | 'end';
 }
 
-export const AccordionContext = React.createContext<Partial<AccordionContextProps>>({});
+export const AccordionContext = createContext<Partial<AccordionContextProps>>({});

@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
-export const TabsHorizontalOverflow: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
-  const [showTabCount, setShowTabCount] = React.useState(false);
+export const TabsHorizontalOverflow: FunctionComponent = () => {
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
+  const [showTabCount, setShowTabCount] = useState(false);
 
   const handleTabClick = (_event: any, tabIndex: string | number) => {
     setActiveTabKey(tabIndex);

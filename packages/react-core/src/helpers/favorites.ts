@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, ReactElement, cloneElement, Children } from 'react';
 import { ApplicationLauncherSeparator } from '../deprecated/components/ApplicationLauncher/ApplicationLauncherSeparator';
 import { Divider } from '../components/Divider/Divider';
 
@@ -17,26 +17,24 @@ export const createRenderableFavorites = (
   isEnterTriggersArrowDown?: boolean
 ) => {
   if (isGrouped) {
-    const favoriteItems: React.ReactNode[] = [];
-    (items as React.ReactElement[]).forEach((group) => {
+    const favoriteItems: ReactNode[] = [];
+    (items as ReactElement[]).forEach((group) => {
       if (favorites.length > 0) {
         return (
           group.props.children &&
-          (group.props.children as React.ReactElement[])
+          (group.props.children as ReactElement[])
             .filter((item) => favorites.includes(item.props.id))
             .map((item) => {
               if (isEnterTriggersArrowDown) {
                 return favoriteItems.push(
-                  React.cloneElement(item, {
+                  cloneElement(item, {
                     isFavorite: true,
                     enterTriggersArrowDown: isEnterTriggersArrowDown,
                     id: `favorite-${item.props.id}`
                   })
                 );
               } else {
-                return favoriteItems.push(
-                  React.cloneElement(item, { isFavorite: true, id: `favorite-${item.props.id}` })
-                );
+                return favoriteItems.push(cloneElement(item, { isFavorite: true, id: `favorite-${item.props.id}` }));
               }
             })
         );
@@ -44,9 +42,9 @@ export const createRenderableFavorites = (
     });
     return favoriteItems;
   }
-  return (items as React.ReactElement[])
+  return (items as ReactElement[])
     .filter((item) => favorites.includes(item.props.id))
-    .map((item) => React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: isEnterTriggersArrowDown }));
+    .map((item) => cloneElement(item, { isFavorite: true, enterTriggersArrowDown: isEnterTriggersArrowDown }));
 };
 
 /**
@@ -58,13 +56,13 @@ export const createRenderableFavorites = (
  */
 export const extendItemsWithFavorite = (items: object, isGrouped: boolean, favorites: any[]) => {
   if (isGrouped) {
-    return (items as React.ReactElement[]).map((group) =>
-      React.cloneElement(group, {
-        children: React.Children.map(group.props.children as React.ReactElement[], (item) => {
+    return (items as ReactElement[]).map((group) =>
+      cloneElement(group, {
+        children: Children.map(group.props.children as ReactElement[], (item) => {
           if (item.type === ApplicationLauncherSeparator || item.type === Divider) {
             return item;
           }
-          return React.cloneElement(item, {
+          return cloneElement(item, {
             isFavorite: favorites.some(
               (favoriteId) => favoriteId === item.props.id || `favorite-${favoriteId}` === item.props.id
             )
@@ -73,8 +71,8 @@ export const extendItemsWithFavorite = (items: object, isGrouped: boolean, favor
       })
     );
   }
-  return (items as React.ReactElement[]).map((item) =>
-    React.cloneElement(item, {
+  return (items as ReactElement[]).map((item) =>
+    cloneElement(item, {
       isFavorite: favorites.some((favoriteId) => favoriteId === item.props.id)
     })
   );

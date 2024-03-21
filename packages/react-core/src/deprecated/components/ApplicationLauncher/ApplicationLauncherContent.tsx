@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 import { ApplicationLauncherIcon } from './ApplicationLauncherIcon';
@@ -8,10 +8,10 @@ import { ApplicationLauncherItemContext } from './ApplicationLauncherItemContext
 
 export interface ApplicationLauncherContentProps {
   /** Main content to be rendered */
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-export const ApplicationLauncherContent: React.FunctionComponent<ApplicationLauncherContentProps> = ({
+export const ApplicationLauncherContent: FunctionComponent<ApplicationLauncherContentProps> = ({
   children
 }: ApplicationLauncherContentProps) => (
   <ApplicationLauncherItemContext.Consumer>

@@ -1,14 +1,14 @@
-import React from 'react';
+import { useState, type FunctionComponent, type MouseEvent as ReactMouseEvent } from 'react';
 import { Menu, MenuContent, MenuItem, MenuItemAction, MenuGroup, MenuList, Divider } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
-export const MenuWithFavorites: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState(0);
-  const [favorites, setFavorites] = React.useState<string[]>([]);
+export const MenuWithFavorites: FunctionComponent = () => {
+  const [activeItem, setActiveItem] = useState(0);
+  const [favorites, setFavorites] = useState<string[]>([]);
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
+  const onSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
     const item = itemId as number; // eslint-disable-next-line no-console
     console.log(`clicked ${item}`);
     setActiveItem(item);
@@ -55,7 +55,7 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
     <Menu onSelect={onSelect} onActionClick={onFavorite} activeItemId={activeItem}>
       <MenuContent>
         {favorites.length > 0 && (
-          <React.Fragment>
+          <>
             <MenuGroup label="Favorites" labelHeadingLevel="h3">
               <MenuList>
                 {items
@@ -77,7 +77,7 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
               </MenuList>
             </MenuGroup>
             <Divider />
-          </React.Fragment>
+          </>
         )}
         <MenuGroup label="All actions" labelHeadingLevel="h3">
           <MenuList>

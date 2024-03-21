@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext, type FunctionComponent, type MouseEvent as ReactMouseEvent, type ReactNode } from 'react';
 import { Button, ButtonProps, Tooltip } from '@patternfly/react-core';
 import { CodeEditorContext } from './CodeEditorUtils';
 
@@ -12,7 +12,7 @@ export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
   /** Additional classes added to the code editor control. */
   className?: string;
   /** Icon rendered inside the code editor control. */
-  icon: React.ReactNode;
+  icon: ReactNode;
   /** Event handler for the click of the button */
   onClick: (code: string, event?: any) => void;
   /** Flag indicating that the button is visible above the code editor. */
@@ -21,7 +21,7 @@ export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
   tooltipProps?: any;
 }
 
-export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> = ({
+export const CodeEditorControl: FunctionComponent<CodeEditorControlProps> = ({
   icon,
   className,
   'aria-label': ariaLabel,
@@ -30,9 +30,9 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
   tooltipProps = {},
   ...props
 }: CodeEditorControlProps) => {
-  const context = React.useContext(CodeEditorContext);
+  const context = useContext(CodeEditorContext);
 
-  const onCustomClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const onCustomClick = (event: ReactMouseEvent<HTMLButtonElement, MouseEvent>) => {
     onClick(context.code, event);
   };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode, ElementType, useState, useRef, useContext, useEffect } from 'react';
 
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
@@ -12,7 +12,7 @@ import { getResizeObserver } from '../../helpers/resizeObserver';
 
 export interface WizardBodyProps {
   /** Anything that can be rendered in the Wizard body */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Flag to remove the default body padding */
   hasNoPadding?: boolean;
   /** Adds an accessible name to the wrapper element when the content overflows and renders
@@ -24,7 +24,7 @@ export interface WizardBodyProps {
    */
   'aria-labelledby'?: string;
   /** Component used as the wrapping content container */
-  component?: React.ElementType;
+  component?: ElementType;
 }
 
 export const WizardBody = ({
@@ -34,14 +34,14 @@ export const WizardBody = ({
   'aria-labelledby': ariaLabelledBy,
   component = 'div'
 }: WizardBodyProps) => {
-  const [hasScrollbar, setHasScrollbar] = React.useState(false);
-  const [previousWidth, setPreviousWidth] = React.useState<number | undefined>(undefined);
-  const wrapperRef = React.useRef(null);
+  const [hasScrollbar, setHasScrollbar] = useState(false);
+  const [previousWidth, setPreviousWidth] = useState<number | undefined>(undefined);
+  const wrapperRef = useRef(null);
   const WrapperComponent = component;
-  const { activeStep } = React.useContext(WizardContext);
+  const { activeStep } = useContext(WizardContext);
   const defaultAriaLabel = ariaLabel || `${activeStep?.name} content`;
 
-  React.useEffect(() => {
+  useEffect(() => {
     const resize = () => {
       if (wrapperRef?.current) {
         const { offsetWidth, offsetHeight, scrollHeight } = wrapperRef.current;

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, ReactNode, useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, TreeRowWrapper, TdProps } from '@patternfly/react-table';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 
@@ -10,7 +10,7 @@ interface RepositoriesTreeNode {
   children?: RepositoriesTreeNode[];
 }
 
-export const TableTreeNoInset: React.FunctionComponent = () => {
+export const TableTreeNoInset: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const data: RepositoriesTreeNode[] = [
     {
@@ -42,7 +42,7 @@ export const TableTreeNoInset: React.FunctionComponent = () => {
     workspaces: 'Workspaces'
   };
 
-  const [selectedNodeNames, setSelectedNodeNames] = React.useState<string[]>([]);
+  const [selectedNodeNames, setSelectedNodeNames] = useState<string[]>([]);
   const isNodeChecked = (node: RepositoriesTreeNode) => selectedNodeNames.includes(node.name);
 
   /**
@@ -60,7 +60,7 @@ export const TableTreeNoInset: React.FunctionComponent = () => {
     posinset = 1,
     rowIndex = 0,
     isHidden = false
-  ): React.ReactNode[] => {
+  ): ReactNode[] => {
     if (!node) {
       return [];
     }

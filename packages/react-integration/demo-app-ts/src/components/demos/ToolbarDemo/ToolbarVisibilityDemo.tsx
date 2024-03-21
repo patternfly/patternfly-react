@@ -1,13 +1,13 @@
-import React from 'react';
+import { Component, Fragment } from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem, ToolbarToggleGroup } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
-export class ToolbarVisibilityDemo extends React.Component {
+export class ToolbarVisibilityDemo extends Component {
   static displayName = 'ToolbarVisibilityDemo';
 
   render() {
     const toolbarContents = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarContent visibility={{ default: 'visible', md: 'hidden' }}>ToolbarContent visibility sm</ToolbarContent>
         <ToolbarContent visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
           ToolbarContent visibility md
@@ -21,11 +21,11 @@ export class ToolbarVisibilityDemo extends React.Component {
         <ToolbarContent visibility={{ default: 'hidden', '2xl': 'visible' }}>
           ToolbarContent visibility 2xl
         </ToolbarContent>
-      </React.Fragment>
+      </Fragment>
     );
 
     const toolbarGroups = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarGroup visibility={{ default: 'visible', md: 'hidden' }}>ToolbarGroup visibility sm</ToolbarGroup>
         <ToolbarGroup visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
           ToolbarGroup visibility md
@@ -37,11 +37,11 @@ export class ToolbarVisibilityDemo extends React.Component {
           ToolbarGroup visibility xl
         </ToolbarGroup>
         <ToolbarGroup visibility={{ default: 'hidden', '2xl': 'visible' }}>ToolbarGroup visibility 2xl</ToolbarGroup>
-      </React.Fragment>
+      </Fragment>
     );
 
     const toolbarItems = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarItem visibility={{ default: 'visible', md: 'hidden' }}>ToolbarItem visibility sm</ToolbarItem>
         <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
           ToolbarItem visibility md
@@ -53,11 +53,11 @@ export class ToolbarVisibilityDemo extends React.Component {
           ToolbarItem visibility xl
         </ToolbarItem>
         <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>ToolbarItem visibility 2xl</ToolbarItem>
-      </React.Fragment>
+      </Fragment>
     );
 
     const toolbarToggleGroups = (
-      <React.Fragment>
+      <Fragment>
         <Toolbar>
           <ToolbarContent>
             <ToolbarToggleGroup
@@ -113,7 +113,7 @@ export class ToolbarVisibilityDemo extends React.Component {
             </ToolbarToggleGroup>
           </ToolbarContent>
         </Toolbar>
-      </React.Fragment>
+      </Fragment>
     );
 
     return (

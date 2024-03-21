@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
 
-export const MenuScrollableCustomMenuHeight: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState(0);
+export const MenuScrollableCustomMenuHeight: FunctionComponent = () => {
+  const [activeItem, setActiveItem] = useState(0);
 
   const onSelect = (_event, itemId) => {
     // eslint-disable-next-line no-console

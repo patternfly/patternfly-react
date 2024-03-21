@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import { FormFieldGroupToggle } from './FormFieldGroupToggle';
 import { GenerateId } from '../../helpers';
 
-export interface InternalFormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
+export interface InternalFormFieldGroupProps extends Omit<HTMLProps<HTMLDivElement>, 'label'> {
   /** Anything that can be rendered as form field group content. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the form field group. */
   className?: string;
   /** Form field group header */
@@ -21,7 +21,7 @@ export interface InternalFormFieldGroupProps extends Omit<React.HTMLProps<HTMLDi
   toggleAriaLabel?: string;
 }
 
-export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGroupProps> = ({
+export const InternalFormFieldGroup: FunctionComponent<InternalFormFieldGroupProps> = ({
   children,
   className,
   header,

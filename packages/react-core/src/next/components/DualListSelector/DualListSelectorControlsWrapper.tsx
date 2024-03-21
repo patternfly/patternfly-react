@@ -1,29 +1,39 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  RefObject,
+  FunctionComponent,
+  Ref,
+  MutableRefObject,
+  useRef,
+  useEffect,
+  forwardRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { handleArrows } from '../../../helpers';
 
 /** Acts as the container for the DualListSelectorControl sub-components. */
 
-export interface DualListSelectorControlsWrapperProps extends React.HTMLProps<HTMLDivElement> {
+export interface DualListSelectorControlsWrapperProps extends HTMLProps<HTMLDivElement> {
   /** Content to be rendered inside of the controls wrapper. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the wrapper. */
   className?: string;
   /** @hide Forwarded ref */
-  innerRef?: React.RefObject<HTMLDivElement>;
+  innerRef?: RefObject<HTMLDivElement>;
   /** Accessible label for the dual list selector controls wrapper. */
   'aria-label'?: string;
 }
 
-export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualListSelectorControlsWrapperProps> = ({
+export const DualListSelectorControlsWrapperBase: FunctionComponent<DualListSelectorControlsWrapperProps> = ({
   innerRef,
   children = null,
   className,
   'aria-label': ariaLabel = 'Controls for moving options between lists',
   ...props
 }: DualListSelectorControlsWrapperProps) => {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const wrapperRef = innerRef || ref;
   // Adds keyboard navigation to the dynamically built dual list selector controls. Works when controls are dynamically built
   // as well as when they are passed in via children.
@@ -55,7 +65,7 @@ export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualLi
     );
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleKeys);
     return () => {
       window.removeEventListener('keydown', handleKeys);
@@ -78,9 +88,9 @@ export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualLi
 
 DualListSelectorControlsWrapperBase.displayName = 'DualListSelectorControlsWrapperBase';
 
-export const DualListSelectorControlsWrapper = React.forwardRef(
-  (props: DualListSelectorControlsWrapperProps, ref: React.Ref<HTMLDivElement>) => (
-    <DualListSelectorControlsWrapperBase innerRef={ref as React.MutableRefObject<any>} role="group" {...props} />
+export const DualListSelectorControlsWrapper = forwardRef(
+  (props: DualListSelectorControlsWrapperProps, ref: Ref<HTMLDivElement>) => (
+    <DualListSelectorControlsWrapperBase innerRef={ref as MutableRefObject<any>} role="group" {...props} />
   )
 );
 

@@ -1,13 +1,13 @@
-import React from 'react';
+import { Component, Fragment } from 'react';
 import { ClipboardCopy, ClipboardCopyVariant, ClipboardCopyAction, Button } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 // eslint-disable-next-line patternfly-react/no-anonymous-functions
-export class ClipboardCopyDemo extends React.Component {
+export class ClipboardCopyDemo extends Component {
   static displayName = 'ClipboardCopyDemo';
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <ClipboardCopy variant={ClipboardCopyVariant.expansion}>
           Got a lot of text here, need to see all of it? Click that arrow on the left side and check out the resulting
           expansion.
@@ -55,7 +55,7 @@ export class ClipboardCopyDemo extends React.Component {
         >
           Some random text.
         </ClipboardCopy>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

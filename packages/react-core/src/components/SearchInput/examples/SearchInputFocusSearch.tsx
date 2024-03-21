@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, MutableRefObject, useState, useRef } from 'react';
 import { SearchInput, Button } from '@patternfly/react-core';
 
-export const SearchInputFocusSearch: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
-  const ref: React.MutableRefObject<HTMLInputElement | null> = React.useRef(null);
+export const SearchInputFocusSearch: FunctionComponent = () => {
+  const [value, setValue] = useState('');
+  const ref: MutableRefObject<HTMLInputElement | null> = useRef(null);
 
   return (
     <>

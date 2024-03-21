@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { createContext, type MouseEvent as ReactMouseEvent, type ChangeEvent as ReactChangeEvent } from 'react';
 import { SelectOptionObject } from './SelectOption';
 
 export interface SelectContextInterface {
   onSelect: (
-    event: React.MouseEvent<any, MouseEvent> | React.ChangeEvent<HTMLInputElement>,
+    event: ReactMouseEvent<any, MouseEvent> | ReactChangeEvent<HTMLInputElement>,
     value: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => void;
@@ -14,7 +14,7 @@ export interface SelectContextInterface {
   shouldResetOnSelect: boolean;
 }
 
-export const SelectContext = React.createContext<SelectContextInterface | null>(null);
+export const SelectContext = createContext<SelectContextInterface | null>(null);
 
 export const SelectProvider = SelectContext.Provider;
 export const SelectConsumer = SelectContext.Consumer;

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -11,11 +11,11 @@ export interface ColumnHelpWrapperProps {
   /**
    * The header cell that is wrapped
    */
-  children: React.ReactNode;
+  children: ReactNode;
   /**
    * The information that is presented in the tooltip/popover
    */
-  info: React.ReactNode;
+  info: ReactNode;
   /**
    * Optional classname to add to the tooltip/popover
    */
@@ -38,7 +38,7 @@ export interface ColumnHelpWrapperProps {
   ariaLabel?: string;
 }
 
-export const HeaderCellInfoWrapper: React.FunctionComponent<ColumnHelpWrapperProps> = ({
+export const HeaderCellInfoWrapper: FunctionComponent<ColumnHelpWrapperProps> = ({
   children,
   info,
   className,

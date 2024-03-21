@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, type FunctionComponent, type MouseEvent as ReactMouseEvent, type CSSProperties } from 'react';
 import {
   SearchInput,
   Toolbar,
@@ -61,11 +61,11 @@ const columnNames = {
   location: 'Location'
 };
 
-export const FilterAttributeSearch: React.FunctionComponent = () => {
+export const FilterAttributeSearch: FunctionComponent = () => {
   // Set up repo filtering
-  const [searchValue, setSearchValue] = React.useState('');
-  const [locationSelections, setLocationSelections] = React.useState<string[]>([]);
-  const [statusSelection, setStatusSelection] = React.useState('');
+  const [searchValue, setSearchValue] = useState('');
+  const [locationSelections, setLocationSelections] = useState<string[]>([]);
+  const [statusSelection, setStatusSelection] = useState('');
 
   const onSearchChange = (value: string) => {
     setSearchValue(value);
@@ -99,7 +99,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
   const isRepoSelectable = (repo: Repository) => repo.name !== 'a'; // Arbitrary logic for this example
-  const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
+  const [selectedRepoNames, setSelectedRepoNames] = useState<string[]>([]);
   const setRepoSelected = (repo: Repository, isSelecting = true) =>
     setSelectedRepoNames((prevSelected) => {
       const otherSelectedRepoNames = prevSelected.filter((r) => r !== repo.name);
@@ -112,8 +112,8 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
 
   // To allow shift+click to select/deselect multiple rows
-  const [recentSelectedRowIndex, setRecentSelectedRowIndex] = React.useState<number | null>(null);
-  const [shifting, setShifting] = React.useState(false);
+  const [recentSelectedRowIndex, setRecentSelectedRowIndex] = useState<number | null>(null);
+  const [shifting, setShifting] = useState(false);
 
   const onSelectRepo = (repo: Repository, rowIndex: number, isSelecting: boolean) => {
     // If the user is shift + selecting the checkboxes, then all intermediate checkboxes should be selected
@@ -130,7 +130,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     setRecentSelectedRowIndex(rowIndex);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Shift') {
         setShifting(true);
@@ -152,11 +152,11 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
   }, []);
 
   // Set up bulk selection menu
-  const bulkSelectMenuRef = React.useRef<HTMLDivElement>(null);
-  const bulkSelectToggleRef = React.useRef<any>(null);
-  const bulkSelectContainerRef = React.useRef<HTMLDivElement>(null);
+  const bulkSelectMenuRef = useRef<HTMLDivElement>(null);
+  const bulkSelectToggleRef = useRef<any>(null);
+  const bulkSelectContainerRef = useRef<HTMLDivElement>(null);
 
-  const [isBulkSelectOpen, setIsBulkSelectOpen] = React.useState<boolean>(false);
+  const [isBulkSelectOpen, setIsBulkSelectOpen] = useState<boolean>(false);
 
   const handleBulkSelectClickOutside = (event: MouseEvent) => {
     if (isBulkSelectOpen && !bulkSelectMenuRef.current?.contains(event.target as Node)) {
@@ -179,7 +179,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleBulkSelectMenuKeys);
     window.addEventListener('click', handleBulkSelectClickOutside);
     return () => {
@@ -188,7 +188,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     };
   }, [isBulkSelectOpen, bulkSelectMenuRef]);
 
-  const onBulkSelectToggleClick = (ev: React.MouseEvent) => {
+  const onBulkSelectToggleClick = (ev: ReactMouseEvent) => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (bulkSelectMenuRef.current) {
@@ -270,10 +270,10 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
   );
 
   // Set up status single select
-  const [isStatusMenuOpen, setIsStatusMenuOpen] = React.useState<boolean>(false);
-  const statusToggleRef = React.useRef<HTMLButtonElement>(null);
-  const statusMenuRef = React.useRef<HTMLDivElement>(null);
-  const statusContainerRef = React.useRef<HTMLDivElement>(null);
+  const [isStatusMenuOpen, setIsStatusMenuOpen] = useState<boolean>(false);
+  const statusToggleRef = useRef<HTMLButtonElement>(null);
+  const statusMenuRef = useRef<HTMLDivElement>(null);
+  const statusContainerRef = useRef<HTMLDivElement>(null);
 
   const handleStatusMenuKeys = (event: KeyboardEvent) => {
     if (isStatusMenuOpen && statusMenuRef.current?.contains(event.target as Node)) {
@@ -290,7 +290,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleStatusMenuKeys);
     window.addEventListener('click', handleStatusClickOutside);
     return () => {
@@ -299,7 +299,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     };
   }, [isStatusMenuOpen, statusMenuRef]);
 
-  const onStatusToggleClick = (ev: React.MouseEvent) => {
+  const onStatusToggleClick = (ev: ReactMouseEvent) => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (statusMenuRef.current) {
@@ -310,7 +310,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     setIsStatusMenuOpen(!isStatusMenuOpen);
   };
 
-  function onStatusSelect(event: React.MouseEvent | undefined, itemId: string | number | undefined) {
+  function onStatusSelect(event: ReactMouseEvent | undefined, itemId: string | number | undefined) {
     if (typeof itemId === 'undefined') {
       return;
     }
@@ -327,7 +327,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
       style={
         {
           width: '200px'
-        } as React.CSSProperties
+        } as CSSProperties
       }
     >
       Filter by status
@@ -362,10 +362,10 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
   );
 
   // Set up location checkbox select
-  const [isLocationMenuOpen, setIsLocationMenuOpen] = React.useState<boolean>(false);
-  const locationToggleRef = React.useRef<HTMLButtonElement>(null);
-  const locationMenuRef = React.useRef<HTMLDivElement>(null);
-  const locationContainerRef = React.useRef<HTMLDivElement>(null);
+  const [isLocationMenuOpen, setIsLocationMenuOpen] = useState<boolean>(false);
+  const locationToggleRef = useRef<HTMLButtonElement>(null);
+  const locationMenuRef = useRef<HTMLDivElement>(null);
+  const locationContainerRef = useRef<HTMLDivElement>(null);
 
   const handleLocationMenuKeys = (event: KeyboardEvent) => {
     if (isLocationMenuOpen && locationMenuRef.current?.contains(event.target as Node)) {
@@ -382,7 +382,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleLocationMenuKeys);
     window.addEventListener('click', handleLocationClickOutside);
     return () => {
@@ -391,7 +391,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     };
   }, [isLocationMenuOpen, locationMenuRef]);
 
-  const onLocationMenuToggleClick = (ev: React.MouseEvent) => {
+  const onLocationMenuToggleClick = (ev: ReactMouseEvent) => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (locationMenuRef.current) {
@@ -402,7 +402,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     setIsLocationMenuOpen(!isLocationMenuOpen);
   };
 
-  function onLocationMenuSelect(event: React.MouseEvent | undefined, itemId: string | number | undefined) {
+  function onLocationMenuSelect(event: ReactMouseEvent | undefined, itemId: string | number | undefined) {
     if (typeof itemId === 'undefined') {
       return;
     }
@@ -425,7 +425,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
       style={
         {
           width: '200px'
-        } as React.CSSProperties
+        } as CSSProperties
       }
     >
       Filter by location
@@ -475,11 +475,11 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
   );
 
   // Set up attribute selector
-  const [activeAttributeMenu, setActiveAttributeMenu] = React.useState<'Servers' | 'Status' | 'Location'>('Servers');
-  const [isAttributeMenuOpen, setIsAttributeMenuOpen] = React.useState(false);
-  const attributeToggleRef = React.useRef<HTMLButtonElement>(null);
-  const attributeMenuRef = React.useRef<HTMLDivElement>(null);
-  const attributeContainerRef = React.useRef<HTMLDivElement>(null);
+  const [activeAttributeMenu, setActiveAttributeMenu] = useState<'Servers' | 'Status' | 'Location'>('Servers');
+  const [isAttributeMenuOpen, setIsAttributeMenuOpen] = useState(false);
+  const attributeToggleRef = useRef<HTMLButtonElement>(null);
+  const attributeMenuRef = useRef<HTMLDivElement>(null);
+  const attributeContainerRef = useRef<HTMLDivElement>(null);
 
   const handleAttribueMenuKeys = (event: KeyboardEvent) => {
     if (!isAttributeMenuOpen) {
@@ -502,7 +502,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleAttribueMenuKeys);
     window.addEventListener('click', handleAttributeClickOutside);
     return () => {
@@ -511,7 +511,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     };
   }, [isAttributeMenuOpen, attributeMenuRef]);
 
-  const onAttributeToggleClick = (ev: React.MouseEvent) => {
+  const onAttributeToggleClick = (ev: ReactMouseEvent) => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (attributeMenuRef.current) {
@@ -646,7 +646,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <>
       {toolbar}
       <Table aria-label="Selectable table">
         <Thead>
@@ -701,6 +701,6 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
           )}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </>
   );
 };

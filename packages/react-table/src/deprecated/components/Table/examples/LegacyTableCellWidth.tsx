@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { classNames, cellWidth, Visibility } from '@patternfly/react-table';
 
@@ -10,7 +10,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const LegacyTableCellWidth: React.FunctionComponent = () => {
+export const LegacyTableCellWidth: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     {

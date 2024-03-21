@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
@@ -18,7 +18,7 @@ export interface EditColumnProps {
   editAriaLabel: string;
 }
 
-export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
+export const EditColumn: FunctionComponent<EditColumnProps> = ({
   onClick = null,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   className = '',
@@ -30,7 +30,7 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
   editAriaLabel,
   ...props
 }: EditColumnProps) => (
-  <React.Fragment>
+  <Fragment>
     <div className={css(inlineStyles.inlineEditGroup, inlineStyles.modifiers.iconGroup, 'pf-m-action-group')}>
       <div className={css(inlineStyles.inlineEditAction)}>
         <Button aria-label={saveAriaLabel} {...props} onClick={(e) => onClick(e, 'save')} variant="plain">
@@ -48,6 +48,6 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
         <PencilAltIcon />
       </Button>
     </div>
-  </React.Fragment>
+  </Fragment>
 );
 EditColumn.displayName = 'EditColumn';

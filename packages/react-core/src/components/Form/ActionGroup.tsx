@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 
-export interface ActionGroupProps extends React.HTMLProps<HTMLDivElement> {
+export interface ActionGroupProps extends HTMLProps<HTMLDivElement> {
   /** Anything that can be rendered as ActionGroup content. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the ActionGroup. */
   className?: string;
 }
 
-export const ActionGroup: React.FunctionComponent<ActionGroupProps> = ({
+export const ActionGroup: FunctionComponent<ActionGroupProps> = ({
   children = null,
   className = '',
   ...props

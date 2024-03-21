@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
-export const PopoverAdvanced: React.FunctionComponent = () => {
-  const [position, setPosition] = React.useState(PopoverPosition.auto);
-  const [show, setShow] = React.useState(false);
-  const [keepInViewChecked, setKeepInViewChecked] = React.useState(true);
+export const PopoverAdvanced: FunctionComponent = () => {
+  const [position, setPosition] = useState(PopoverPosition.auto);
+  const [show, setShow] = useState(false);
+  const [keepInViewChecked, setKeepInViewChecked] = useState(true);
 
   const handleKeepInViewChange = (checked: boolean) => {
     setKeepInViewChecked(checked);

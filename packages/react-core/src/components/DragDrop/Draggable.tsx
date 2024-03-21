@@ -1,13 +1,24 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  FunctionComponent,
+  TransitionEvent,
+  DragEvent,
+  ReactElement,
+  useState,
+  useContext,
+  cloneElement,
+  Fragment
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DroppableContext } from './DroppableContext';
 import { DragDropContext } from './DragDrop';
 import cssDraggingBackgroundColor from '@patternfly/react-tokens/dist/esm/c_draggable_m_dragging_BackgroundColor';
 
-export interface DraggableProps extends React.HTMLProps<HTMLDivElement> {
+export interface DraggableProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside DragDrop */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Don't wrap the component in a div. Requires passing a single child. */
   hasNoWrapper?: boolean;
   /** Class to add to outer div */
@@ -76,7 +87,7 @@ function overlaps(ev: MouseEvent, rect: DOMRect) {
   );
 }
 
-export const Draggable: React.FunctionComponent<DraggableProps> = ({
+export const Draggable: FunctionComponent<DraggableProps> = ({
   className,
   children,
   style: styleProp = {},
@@ -84,12 +95,12 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   ...props
 }: DraggableProps) => {
   /* eslint-disable prefer-const */
-  let [style, setStyle] = React.useState(styleProp);
+  let [style, setStyle] = useState(styleProp);
   /* eslint-enable prefer-const */
-  const [isDragging, setIsDragging] = React.useState(false);
-  const [isValidDrag, setIsValidDrag] = React.useState(true);
-  const { zone, droppableId } = React.useContext(DroppableContext);
-  const { onDrag, onDragMove, onDrop } = React.useContext(DragDropContext);
+  const [isDragging, setIsDragging] = useState(false);
+  const [isValidDrag, setIsValidDrag] = useState(true);
+  const { zone, droppableId } = useContext(DroppableContext);
+  const { onDrag, onDragMove, onDrop } = useContext(DragDropContext);
   // Some state is better just to leave as vars passed around between various callbacks
   // You can only drag around one item at a time anyways...
   let startX = 0;
@@ -103,7 +114,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   let startYOffset = 0;
 
   // After item returning to where it started animation completes
-  const onTransitionEnd = (_ev: React.TransitionEvent<HTMLElement>) => {
+  const onTransitionEnd = (_ev: TransitionEvent<HTMLElement>) => {
     if (isDragging) {
       setIsDragging(false);
       setStyle(styleProp);
@@ -231,7 +242,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     onDragMove(source, dest);
   };
 
-  const onDragStart = (ev: React.DragEvent<HTMLElement>) => {
+  const onDragStart = (ev: DragEvent<HTMLElement>) => {
     // Default HTML drag and drop doesn't allow us to change what the thing
     // being dragged looks like. Because of this we'll use prevent the default
     // and use `mouseMove` and `mouseUp` instead
@@ -311,19 +322,15 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       {/* Leave behind blank spot per-design */}
       {isDragging && (
         <div draggable {...props} style={{ ...styleProp, visibility: 'hidden' }}>
           {children}
         </div>
       )}
-      {hasNoWrapper ? (
-        React.cloneElement(children as React.ReactElement, childProps)
-      ) : (
-        <div {...childProps}>{children}</div>
-      )}
-    </React.Fragment>
+      {hasNoWrapper ? cloneElement(children as ReactElement, childProps) : <div {...childProps}>{children}</div>}
+    </Fragment>
   );
 };
 Draggable.displayName = 'Draggable';

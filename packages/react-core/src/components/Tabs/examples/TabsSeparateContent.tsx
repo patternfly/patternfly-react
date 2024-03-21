@@ -1,22 +1,25 @@
-import React from 'react';
+import {
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  useState,
+  type FunctionComponent,
+  createRef
+} from 'react';
 import { Tabs, Tab, TabTitleText, TabContent } from '@patternfly/react-core';
 
-export const TabsSeparateContent: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
+export const TabsSeparateContent: FunctionComponent = () => {
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
   // Toggle currently active tab
-  const handleTabClick = (
-    event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
-    tabIndex: string | number
-  ) => {
+  const handleTabClick = (event: ReactMouseEvent<any> | ReactKeyboardEvent | MouseEvent, tabIndex: string | number) => {
     setActiveTabKey(tabIndex);
   };
 
-  const contentRef1 = React.createRef<HTMLElement>();
-  const contentRef2 = React.createRef<HTMLElement>();
-  const contentRef3 = React.createRef<HTMLElement>();
+  const contentRef1 = createRef<HTMLElement>();
+  const contentRef2 = createRef<HTMLElement>();
+  const contentRef3 = createRef<HTMLElement>();
 
   return (
-    <React.Fragment>
+    <>
       <Tabs
         activeKey={activeTabKey}
         onSelect={handleTabClick}
@@ -70,6 +73,6 @@ export const TabsSeparateContent: React.FunctionComponent = () => {
           Tab 3 section
         </TabContent>
       </div>
-    </React.Fragment>
+    </>
   );
 };

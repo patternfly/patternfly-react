@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   Button,
   DescriptionList,
@@ -13,7 +13,7 @@ import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';
 import GlobeIcon from '@patternfly/react-icons/dist/esm/icons/globe-icon';
 import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
 
-export const DescriptionListIconsOnTerms: React.FunctionComponent = () => (
+export const DescriptionListIconsOnTerms: FunctionComponent = () => (
   <DescriptionList>
     <DescriptionListGroup>
       <DescriptionListTerm icon={<CubeIcon />}>Name</DescriptionListTerm>

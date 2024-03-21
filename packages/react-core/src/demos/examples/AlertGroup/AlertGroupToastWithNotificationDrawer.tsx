@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { type Key, type FunctionComponent, type Ref, useState, useEffect, type ReactElement } from 'react';
 import {
   Button,
   EmptyState,
@@ -40,24 +40,24 @@ interface NotificationProps {
   title: string;
   srTitle: string;
   variant: 'custom' | 'success' | 'danger' | 'warning' | 'info';
-  key: React.Key;
+  key: Key;
   timestamp: string;
   description: string;
   isNotificationRead: boolean;
 }
 
-export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = () => {
+export const AlertGroupToastWithNotificationDrawer: FunctionComponent = () => {
   const maxDisplayedAlerts = 3;
   const minAlerts = 0;
   const maxAlerts = 100;
   const alertTimeout = 8000;
 
-  const [isDrawerExpanded, setDrawerExpanded] = React.useState(false);
-  const [openDropdownKey, setOpenDropdownKey] = React.useState<React.Key | null>(null);
-  const [overflowMessage, setOverflowMessage] = React.useState<string>('');
-  const [maxDisplayed, setMaxDisplayed] = React.useState(maxDisplayedAlerts);
-  const [alerts, setAlerts] = React.useState<React.ReactElement<AlertProps>[]>([]);
-  const [notifications, setNotifications] = React.useState<NotificationProps[]>([]);
+  const [isDrawerExpanded, setDrawerExpanded] = useState(false);
+  const [openDropdownKey, setOpenDropdownKey] = useState<Key | null>(null);
+  const [overflowMessage, setOverflowMessage] = useState<string>('');
+  const [maxDisplayed, setMaxDisplayed] = useState(maxDisplayedAlerts);
+  const [alerts, setAlerts] = useState<ReactElement<AlertProps>[]>([]);
+  const [notifications, setNotifications] = useState<NotificationProps[]>([]);
 
   useEffect(() => {
     setOverflowMessage(buildOverflowMessage());
@@ -97,7 +97,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
     }
   };
 
-  const removeNotification = (key: React.Key) => {
+  const removeNotification = (key: Key) => {
     setNotifications((prevNotifications) => prevNotifications.filter((notification) => notification.key !== key));
   };
 
@@ -105,10 +105,10 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
     setNotifications([]);
   };
 
-  const isNotificationRead = (key: React.Key) =>
+  const isNotificationRead = (key: Key) =>
     notifications.find((notification) => notification.key === key)?.isNotificationRead;
 
-  const markNotificationRead = (key: React.Key) => {
+  const markNotificationRead = (key: Key) => {
     setNotifications((prevNotifications) =>
       prevNotifications.map((notification) =>
         notification.key === key ? { ...notification, isNotificationRead: true } : notification
@@ -145,7 +145,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
     setDrawerExpanded(!isDrawerExpanded);
   };
 
-  const onDropdownToggle = (id: React.Key) => {
+  const onDropdownToggle = (id: Key) => {
     if (id && openDropdownKey !== id) {
       setOpenDropdownKey(id);
       return;
@@ -178,7 +178,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
     );
   };
 
-  const removeAlert = (key: React.Key) => {
+  const removeAlert = (key: Key) => {
     setAlerts((prevAlerts) => prevAlerts.filter((alert) => alert.props.id !== key.toString()));
   };
 
@@ -227,7 +227,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
       </DropdownItem>
     </>
   );
-  const notificationDrawerDropdownItems = (key: React.Key) => [
+  const notificationDrawerDropdownItems = (key: Key) => [
     <DropdownItem key={`markRead-${key}`} onClick={() => markNotificationRead(key)}>
       Mark as read
     </DropdownItem>,
@@ -245,7 +245,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
           onSelect={onDropdownSelect}
           popperProps={{ position: 'right' }}
           onOpenChange={(isOpen: boolean) => !isOpen && setOpenDropdownKey(null)}
-          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          toggle={(toggleRef: Ref<MenuToggleElement>) => (
             <MenuToggle
               ref={toggleRef}
               isExpanded={openDropdownKey === 'dropdown-toggle-id-0'}
@@ -277,7 +277,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
                     onSelect={onDropdownSelect}
                     popperProps={{ position: 'right' }}
                     onOpenChange={(isOpen: boolean) => !isOpen && setOpenDropdownKey(null)}
-                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    toggle={(toggleRef: Ref<MenuToggleElement>) => (
                       <MenuToggle
                         ref={toggleRef}
                         isExpanded={openDropdownKey === key}

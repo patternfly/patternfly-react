@@ -1,4 +1,16 @@
-import * as React from 'react';
+import {
+  type HTMLProps,
+  type ReactNode,
+  type FormEvent as ReactFormEvent,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type Ref,
+  useState,
+  useMemo,
+  useRef,
+  useEffect,
+  forwardRef
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
@@ -26,7 +38,7 @@ export interface DatePickerRequiredObject {
 
 export interface DatePickerProps
   extends CalendarFormat,
-    Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
+    Omit<HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
   /** The container to append the menu to. Defaults to 'inline'.
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
    * Some examples:
@@ -45,7 +57,7 @@ export interface DatePickerProps
   /** How to parse the date in the text input. */
   dateParse?: (value: string) => Date;
   /** Helper text to display alongside the date picker. Expects a HelperText component. */
-  helperText?: React.ReactNode;
+  helperText?: ReactNode;
   /** Additional props for the text input. */
   inputProps?: TextInputProps;
   /** Flag indicating the date picker is disabled. */
@@ -55,7 +67,7 @@ export interface DatePickerProps
   /** Callback called every time the text input loses focus. */
   onBlur?: (event: any, value: string, date?: Date) => void;
   /** Callback called every time the text input value changes. */
-  onChange?: (event: React.FormEvent<HTMLInputElement>, value: string, date?: Date) => void;
+  onChange?: (event: ReactFormEvent<HTMLInputElement>, value: string, date?: Date) => void;
   /** String to display in the empty text input as a hint for the expected date format. */
   placeholder?: string;
   /** Props to pass to the popover that contains the calendar month component. */
@@ -122,29 +134,29 @@ const DatePickerBase = (
     inputProps = {},
     ...props
   }: DatePickerProps,
-  ref: React.Ref<DatePickerRef>
+  ref: Ref<DatePickerRef>
 ) => {
-  const [value, setValue] = React.useState(valueProp);
-  const [valueDate, setValueDate] = React.useState(dateParse(value));
-  const [errorText, setErrorText] = React.useState('');
-  const [popoverOpen, setPopoverOpen] = React.useState(false);
-  const [selectOpen, setSelectOpen] = React.useState(false);
-  const [pristine, setPristine] = React.useState(true);
-  const [textInputFocused, setTextInputFocused] = React.useState(false);
-  const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
+  const [value, setValue] = useState(valueProp);
+  const [valueDate, setValueDate] = useState(dateParse(value));
+  const [errorText, setErrorText] = useState('');
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const [selectOpen, setSelectOpen] = useState(false);
+  const [pristine, setPristine] = useState(true);
+  const [textInputFocused, setTextInputFocused] = useState(false);
+  const widthChars = useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
   const style = { [cssFormControlWidthChars.name]: widthChars, ...styleProps };
-  const buttonRef = React.useRef<HTMLButtonElement>();
-  const datePickerWrapperRef = React.useRef<HTMLDivElement>();
-  const triggerRef = React.useRef<HTMLDivElement>();
+  const buttonRef = useRef<HTMLButtonElement>();
+  const datePickerWrapperRef = useRef<HTMLDivElement>();
+  const triggerRef = useRef<HTMLDivElement>();
   const dateIsRequired = requiredDateOptions?.isRequired || false;
   const emptyDateText = requiredDateOptions?.emptyDateText || 'Date cannot be blank';
 
-  React.useEffect(() => {
+  useEffect(() => {
     setValue(valueProp);
     setValueDate(dateParse(valueProp));
   }, [valueProp]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setPristine(!value);
     const newValueDate = dateParse(value);
     if (errorText && isValidDate(newValueDate)) {
@@ -159,7 +171,7 @@ const DatePickerBase = (
     setErrorText(validators.map((validator) => validator(date)).join('\n') || '');
   };
 
-  const onTextInput = (event: React.FormEvent<HTMLInputElement>, value: string) => {
+  const onTextInput = (event: ReactFormEvent<HTMLInputElement>, value: string) => {
     setValue(value);
     setErrorText('');
     const newValueDate = dateParse(value);
@@ -191,7 +203,7 @@ const DatePickerBase = (
     }
   };
 
-  const onDateClick = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>, newValueDate: Date) => {
+  const onDateClick = (_event: ReactMouseEvent<HTMLButtonElement, MouseEvent>, newValueDate: Date) => {
     const newValue = dateFormat(newValueDate);
     setValue(newValue);
     setValueDate(newValueDate);
@@ -200,7 +212,7 @@ const DatePickerBase = (
     onChange(null, newValue, new Date(newValueDate));
   };
 
-  const onKeyPress = (ev: React.KeyboardEvent<HTMLInputElement>) => {
+  const onKeyPress = (ev: ReactKeyboardEvent<HTMLInputElement>) => {
     if (ev.key === 'Enter' && value) {
       if (isValidDate(valueDate)) {
         setError(valueDate);
@@ -331,5 +343,5 @@ const DatePickerBase = (
   );
 };
 
-export const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(DatePickerBase);
+export const DatePicker = forwardRef<DatePickerRef, DatePickerProps>(DatePickerBase);
 DatePicker.displayName = 'DatePicker';

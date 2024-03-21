@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { CodeEditor, Language } from '@patternfly/react-code-editor';
 import { Grid, GridItem, Chip } from '@patternfly/react-core';
 
-export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
+export const CodeEditorShortcutMainHeader: FunctionComponent = () => {
   const onEditorDidMount = (editor, monaco) => {
     editor.layout();
     editor.focus();
@@ -36,7 +36,7 @@ export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
     bodyContent: (
       <Grid span={6} hasGutter key="grid">
         {shortcuts.map((shortcut, index) => (
-          <React.Fragment key={index}>
+          <Fragment key={index}>
             <GridItem style={{ textAlign: 'right', marginRight: '1em' }}>
               {shortcut.keys
                 .map((key) => (
@@ -49,7 +49,7 @@ export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
                 ))}
             </GridItem>
             <GridItem>{shortcut.description}</GridItem>
-          </React.Fragment>
+          </Fragment>
         ))}
       </Grid>
     ),

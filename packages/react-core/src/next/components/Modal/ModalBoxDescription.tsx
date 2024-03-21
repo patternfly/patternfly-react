@@ -1,17 +1,17 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 
 export interface ModalBoxDescriptionProps {
   /** Content rendered inside the description. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the description. */
   className?: string;
   /** Id of the description. */
   id?: string;
 }
 
-export const ModalBoxDescription: React.FunctionComponent<ModalBoxDescriptionProps> = ({
+export const ModalBoxDescription: FunctionComponent<ModalBoxDescriptionProps> = ({
   children = null,
   className = '',
   id = '',

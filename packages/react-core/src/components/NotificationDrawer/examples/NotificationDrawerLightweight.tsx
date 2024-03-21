@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, type FunctionComponent, type MouseEvent as ReactMouseEvent } from 'react';
 import {
   Button,
   EmptyState,
@@ -20,10 +20,10 @@ import {
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
-export const NotificationDrawerLightweight: React.FunctionComponent = () => {
-  const [firstGroupExpanded, setFirstGroupExpanded] = React.useState(false);
-  const [secondGroupExpanded, setSecondGroupExpanded] = React.useState(true);
-  const [thirdGroupExpanded, setThirdGroupExpanded] = React.useState(false);
+export const NotificationDrawerLightweight: FunctionComponent = () => {
+  const [firstGroupExpanded, setFirstGroupExpanded] = useState(false);
+  const [secondGroupExpanded, setSecondGroupExpanded] = useState(true);
+  const [thirdGroupExpanded, setThirdGroupExpanded] = useState(false);
 
   const toggleFirstDrawer = (_event: any, value: boolean) => {
     setFirstGroupExpanded(value);
@@ -43,7 +43,7 @@ export const NotificationDrawerLightweight: React.FunctionComponent = () => {
     setFirstGroupExpanded(false);
   };
 
-  const onDrawerClose = (_event: KeyboardEvent | React.MouseEvent<Element, MouseEvent>) => {
+  const onDrawerClose = (_event: KeyboardEvent | ReactMouseEvent<Element, MouseEvent>) => {
     // do something cool in a callback
   };
 

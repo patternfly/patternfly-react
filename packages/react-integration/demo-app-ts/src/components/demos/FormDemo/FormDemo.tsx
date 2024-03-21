@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { FormEvent, SyntheticEvent, Fragment, Component } from 'react';
 import {
   Divider,
   Form,
@@ -44,10 +44,10 @@ export class FormDemo extends Component<FormProps, FormState> {
 
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
   }
-  handleTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  handleTextInputChange = (_event: FormEvent<HTMLInputElement>, value: string) => {
     this.setState({ value, isValid: /^\d+$/.test(value) });
   };
-  handleValidatedTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  handleValidatedTextInputChange = (_event: FormEvent<HTMLInputElement>, value: string) => {
     let validated = ValidatedOptions.default;
     if (value.length === 0) {
       validated = ValidatedOptions.warning;
@@ -61,7 +61,7 @@ export class FormDemo extends Component<FormProps, FormState> {
       isOpen
     });
   };
-  onSelect = (event: React.SyntheticEvent, selection: string | SelectOptionObject) => {
+  onSelect = (event: SyntheticEvent, selection: string | SelectOptionObject) => {
     const { selected } = this.state;
     if (selected.includes(selection.toString())) {
       this.setState(
@@ -107,7 +107,7 @@ export class FormDemo extends Component<FormProps, FormState> {
     ];
 
     return (
-      <React.Fragment>
+      <Fragment>
         <Form id="form-demo-1">
           <FormGroup
             id="form-group-age"
@@ -208,7 +208,7 @@ export class FormDemo extends Component<FormProps, FormState> {
             </FormGroup>
           </FormSection>
         </Form>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

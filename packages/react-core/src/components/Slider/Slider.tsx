@@ -1,5 +1,22 @@
-import * as React from 'react';
-import { useState } from 'react';
+import {
+  MouseEvent,
+  KeyboardEvent,
+  FormEvent,
+  TouchEvent,
+  FocusEvent,
+  HTMLProps,
+  ReactNode,
+  SetStateAction,
+  Dispatch,
+  FunctionComponent,
+  CSSProperties,
+  useRef,
+  useEffect,
+  useMemo,
+  useCallback,
+  useState
+} from 'react';
+
 import styles from '@patternfly/react-styles/css/components/Slider/slider';
 import { css } from '@patternfly/react-styles';
 import { SliderStep } from './SliderStep';
@@ -23,14 +40,14 @@ export interface SliderStepObject {
 }
 
 export type SliderOnChangeEvent =
-  | React.MouseEvent
-  | React.KeyboardEvent
-  | React.FormEvent<HTMLInputElement>
-  | React.TouchEvent
-  | React.FocusEvent<HTMLInputElement>;
+  | MouseEvent
+  | KeyboardEvent
+  | FormEvent<HTMLInputElement>
+  | TouchEvent
+  | FocusEvent<HTMLInputElement>;
 
 /** The main slider component. */
-export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export interface SliderProps extends Omit<HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Flag indicating if the slider is discrete for custom steps. This will cause the slider
    * to snap to the closest value.
    */
@@ -58,9 +75,9 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   /** Flag to show value input field. */
   isInputVisible?: boolean;
   /** @deprecated Use startActions instead. Actions placed at the start of the slider. */
-  leftActions?: React.ReactNode;
+  leftActions?: ReactNode;
   /** Actions placed at the start of the slider. */
-  startActions?: React.ReactNode;
+  startActions?: ReactNode;
   /** The maximum permitted value. */
   max?: number;
   /** The minimum permitted value. */
@@ -70,12 +87,12 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
     event: SliderOnChangeEvent,
     value: number,
     inputValue?: number,
-    setLocalInputValue?: React.Dispatch<React.SetStateAction<number>>
+    setLocalInputValue?: Dispatch<SetStateAction<number>>
   ) => void;
   /** @deprecated Use endActions instead. Actions placed to the right of the slider. */
-  rightActions?: React.ReactNode;
+  rightActions?: ReactNode;
   /** Actions placed at the end of the slider. */
-  endActions?: React.ReactNode;
+  endActions?: ReactNode;
   /** Flag to indicate if boundaries should be shown for slider that does not have custom steps. */
   showBoundaries?: boolean;
   /** Flag to indicate if ticks should be shown for slider that does not have custom steps. */
@@ -90,7 +107,7 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
 
 const getPercentage = (current: number, max: number) => (100 * current) / max;
 
-export const Slider: React.FunctionComponent<SliderProps> = ({
+export const Slider: FunctionComponent<SliderProps> = ({
   className,
   value = 0,
   customSteps,
@@ -117,23 +134,23 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   'aria-labelledby': ariaLabelledby,
   ...props
 }: SliderProps) => {
-  const sliderRailRef = React.useRef<HTMLDivElement>();
-  const thumbRef = React.useRef<HTMLDivElement>();
+  const sliderRailRef = useRef<HTMLDivElement>();
+  const thumbRef = useRef<HTMLDivElement>();
 
   const [localValue, setValue] = useState(value);
   const [localInputValue, setLocalInputValue] = useState(inputValue);
 
   let isRTL: boolean;
 
-  React.useEffect(() => {
+  useEffect(() => {
     isRTL = getLanguageDirection(sliderRailRef.current) === 'rtl';
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     setValue(value);
   }, [value]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setLocalInputValue(inputValue);
   }, [inputValue]);
 
@@ -142,15 +159,15 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
   // calculate style value percentage
   const stylePercent = ((localValue - min) * 100) / (max - min);
-  const style = { [cssSliderValue.name]: `${stylePercent}%` } as React.CSSProperties;
-  const widthChars = React.useMemo(() => localInputValue.toString().length, [localInputValue]);
-  const inputStyle = { [cssFormControlWidthChars.name]: widthChars } as React.CSSProperties;
+  const style = { [cssSliderValue.name]: `${stylePercent}%` } as CSSProperties;
+  const widthChars = useMemo(() => localInputValue.toString().length, [localInputValue]);
+  const inputStyle = { [cssFormControlWidthChars.name]: widthChars } as CSSProperties;
 
-  const onChangeHandler = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  const onChangeHandler = (_event: FormEvent<HTMLInputElement>, value: string) => {
     setLocalInputValue(Number(value));
   };
 
-  const handleKeyPressOnInput = (event: React.KeyboardEvent) => {
+  const handleKeyPressOnInput = (event: KeyboardEvent) => {
     if (event.key === 'Enter') {
       event.preventDefault();
       if (onChange) {
@@ -167,7 +184,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     thumbRef.current.focus();
   };
 
-  const onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+  const onBlur = (event: FocusEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(event, localValue, localInputValue, setLocalInputValue);
     }
@@ -193,7 +210,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     document.removeEventListener('touchcancel', callbackThumbUp);
   };
 
-  const handleMouseDown = (e: React.MouseEvent) => {
+  const handleMouseDown = (e: MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
 
@@ -207,7 +224,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     document.addEventListener('mouseup', callbackThumbUp);
   };
 
-  const handleTouchStart = (e: React.TouchEvent) => {
+  const handleTouchStart = (e: TouchEvent) => {
     e.stopPropagation();
 
     if (isRTL) {
@@ -303,10 +320,10 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     }
   };
 
-  const callbackThumbMove = React.useCallback(handleThumbMove, [min, max, customSteps, onChange]);
-  const callbackThumbUp = React.useCallback(handleThumbDragEnd, [min, max, customSteps, onChange]);
+  const callbackThumbMove = useCallback(handleThumbMove, [min, max, customSteps, onChange]);
+  const callbackThumbUp = useCallback(handleThumbDragEnd, [min, max, customSteps, onChange]);
 
-  const handleThumbKeys = (e: React.KeyboardEvent) => {
+  const handleThumbKeys = (e: KeyboardEvent) => {
     const key = e.key;
     if (key !== 'ArrowLeft' && key !== 'ArrowRight') {
       return;

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { type HTMLProps, type ReactNode, type MouseEvent as ReactMouseEvent, Component, createRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import { Tooltip, TooltipPosition } from '../Tooltip';
@@ -8,11 +8,11 @@ import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import cssChipTextMaxWidth from '@patternfly/react-tokens/dist/esm/c_chip__text_MaxWidth';
 
-export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
+export interface ChipProps extends HTMLProps<HTMLDivElement>, OUIAProps {
   /** Badge to add to the chip. The badge will be rendered after the chip text. */
-  badge?: React.ReactNode;
+  badge?: ReactNode;
   /** Content rendered inside the chip text */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Aria Label for close button */
   closeBtnAriaLabel?: string;
   /** Additional classes added to the chip item */
@@ -22,9 +22,9 @@ export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Flag indicating if chip is read only */
   isReadOnly?: boolean;
   /** Function that is called when clicking on the chip close button */
-  onClick?: (event: React.MouseEvent) => void;
+  onClick?: (event: ReactMouseEvent) => void;
   /** Component that will be used for chip. It is recommended that <button> or <li>  are used when the chip is an overflow chip. */
-  component?: React.ReactNode;
+  component?: ReactNode;
   /** Position of the tooltip which is displayed if text is longer */
   tooltipPosition?:
     | TooltipPosition
@@ -53,7 +53,7 @@ interface ChipState {
   ouiaStateId: string;
 }
 
-class Chip extends React.Component<ChipProps, ChipState> {
+class Chip extends Component<ChipProps, ChipState> {
   static displayName = 'Chip';
   constructor(props: ChipProps) {
     super(props);
@@ -62,7 +62,7 @@ class Chip extends React.Component<ChipProps, ChipState> {
       ouiaStateId: getDefaultOUIAId(Chip.displayName)
     };
   }
-  span = React.createRef<HTMLSpanElement>();
+  span = createRef<HTMLSpanElement>();
 
   static defaultProps: ChipProps = {
     closeBtnAriaLabel: 'close',
@@ -71,8 +71,8 @@ class Chip extends React.Component<ChipProps, ChipState> {
     isReadOnly: false,
     tooltipPosition: 'top' as 'auto' | 'top' | 'bottom' | 'left' | 'right',
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    onClick: (_e: React.MouseEvent) => undefined as any,
-    component: 'div' as React.ReactNode
+    onClick: (_e: ReactMouseEvent) => undefined as any,
+    component: 'div' as ReactNode
   };
 
   componentDidMount() {

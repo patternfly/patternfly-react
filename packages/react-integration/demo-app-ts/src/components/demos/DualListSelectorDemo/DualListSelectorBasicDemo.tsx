@@ -1,16 +1,16 @@
-import React from 'react';
+import { ReactNode, MouseEvent, Component } from 'react';
 import { DualListSelector, DualListSelectorProps } from '@patternfly/react-core';
 interface DualListSelectorState {
-  availableOptions: React.ReactNode[];
-  chosenOptions: React.ReactNode[];
+  availableOptions: ReactNode[];
+  chosenOptions: ReactNode[];
 }
 
-export class DualListSelectorBasicDemo extends React.Component<DualListSelectorProps, DualListSelectorState> {
+export class DualListSelectorBasicDemo extends Component<DualListSelectorProps, DualListSelectorState> {
   static displayName = 'DualListSelectorDemo';
   onListChange: (
-    event: React.MouseEvent<HTMLElement>,
-    newAvailableOptions: React.ReactNode[],
-    newChosenOptions: React.ReactNode[]
+    event: MouseEvent<HTMLElement>,
+    newAvailableOptions: ReactNode[],
+    newChosenOptions: ReactNode[]
   ) => void;
 
   constructor(props: DualListSelectorProps) {

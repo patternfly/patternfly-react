@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TableContext } from '../components/Table/Table';
 import { TableHeader } from '../components/Table';

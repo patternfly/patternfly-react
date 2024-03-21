@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Button,
   DescriptionList,
@@ -9,9 +9,9 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListWithCard: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
-  const [isSelectable, setSelectable] = React.useState<boolean>(false);
+export const DescriptionListWithCard: FunctionComponent = () => {
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [isSelectable, setSelectable] = useState<boolean>(false);
 
   const toggleSelectable = (checked: boolean) => {
     setSelectable(checked ? true : false);

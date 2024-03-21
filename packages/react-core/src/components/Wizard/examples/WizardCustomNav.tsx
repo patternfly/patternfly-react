@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   Wizard,
   WizardStep,
@@ -8,7 +8,7 @@ import {
   WizardNavItem
 } from '@patternfly/react-core';
 
-export const WizardWithCustomNav: React.FunctionComponent = () => {
+export const WizardWithCustomNav: FunctionComponent = () => {
   const nav: CustomWizardNavFunction = (
     isExpanded: boolean,
     steps: WizardStepType[],

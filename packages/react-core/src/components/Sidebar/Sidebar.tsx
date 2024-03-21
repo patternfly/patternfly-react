@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
 
-export interface SidebarProps extends React.HTMLProps<HTMLDivElement> {
-  children?: React.ReactNode;
+export interface SidebarProps extends HTMLProps<HTMLDivElement> {
+  children?: ReactNode;
   /** Indicates the direction of the layout. Default orientation is stack on small screens, and split on medium screens and above. */
   orientation?: 'stack' | 'split';
   /** Indicates that the panel is displayed to the right of the content when the oritentation is split. */
@@ -16,7 +16,7 @@ export interface SidebarProps extends React.HTMLProps<HTMLDivElement> {
   hasBorder?: boolean;
 }
 
-export const Sidebar: React.FunctionComponent<SidebarProps> = ({
+export const Sidebar: FunctionComponent<SidebarProps> = ({
   className,
   children,
   orientation,

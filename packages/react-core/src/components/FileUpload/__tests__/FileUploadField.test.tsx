@@ -1,5 +1,4 @@
 import { FileUploadField } from '../FileUploadField';
-import * as React from 'react';
 import { render } from '@testing-library/react';
 
 test('simple fileuploadfield', () => {

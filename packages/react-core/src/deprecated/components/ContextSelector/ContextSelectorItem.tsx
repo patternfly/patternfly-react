@@ -1,17 +1,17 @@
-import * as React from 'react';
+import { type ReactNode, type MouseEvent as ReactMouseEvent, Component, type RefObject, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
 import { ContextSelectorContext } from './contextSelectorConstants';
 
 export interface ContextSelectorItemProps {
   /** Anything which can be rendered as Context Selector item */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classes applied to root element of the Context Selector item */
   className?: string;
   /** Render Context  Selector item as disabled */
   isDisabled?: boolean;
   /** Callback for click event */
-  onClick?: (event: React.MouseEvent) => void;
+  onClick?: (event: ReactMouseEvent) => void;
   /** @hide internal index of the item */
   index?: number;
   /** Internal callback for ref tracking */
@@ -20,10 +20,10 @@ export interface ContextSelectorItemProps {
   href?: string;
 }
 
-class ContextSelectorItem extends React.Component<ContextSelectorItemProps> {
+class ContextSelectorItem extends Component<ContextSelectorItemProps> {
   static displayName = 'ContextSelectorItem';
   static defaultProps: ContextSelectorItemProps = {
-    children: null as React.ReactNode,
+    children: null as ReactNode,
     className: '',
     isDisabled: false,
     onClick: (): any => undefined,
@@ -32,7 +32,7 @@ class ContextSelectorItem extends React.Component<ContextSelectorItemProps> {
     href: null as string
   };
 
-  ref: React.RefObject<HTMLButtonElement & HTMLAnchorElement> = React.createRef();
+  ref: RefObject<HTMLButtonElement & HTMLAnchorElement> = createRef();
 
   componentDidMount() {
     /* eslint-disable-next-line */

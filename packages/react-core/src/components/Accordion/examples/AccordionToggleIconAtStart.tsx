@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
 
-export const AccordionToggleIconAtStart: React.FunctionComponent = () => {
-  const [expanded, setExpanded] = React.useState('start-toggle-toggle2');
+export const AccordionToggleIconAtStart: FunctionComponent = () => {
+  const [expanded, setExpanded] = useState('start-toggle-toggle2');
 
   const onToggle = (id: string) => {
     if (id === expanded) {

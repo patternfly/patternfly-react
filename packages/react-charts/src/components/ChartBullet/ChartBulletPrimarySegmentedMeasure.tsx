@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
 import { VictoryBar } from 'victory-bar';
@@ -105,7 +105,7 @@ export interface ChartBulletPrimarySegmentedMeasureProps {
    * provide a series label for ChartBar. If individual labels are required for each
    * data point, they should be created by composing ChartBar with VictoryScatter
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * The labels prop defines labels that will appear above each bar in your chart.
    * This prop should be given as an array of values or as a function of data.
@@ -119,7 +119,7 @@ export interface ChartBulletPrimarySegmentedMeasureProps {
   /**
    * The measureComponent prop takes an entire component which will be used to create the chart
    */
-  measureComponent?: React.ReactElement<any>;
+  measureComponent?: ReactElement<any>;
   /**
    * The theme prop takes a style object with nested data, labels, and parent objects.
    * You can create this object yourself, or you can use a theme provided by
@@ -192,7 +192,7 @@ export interface ChartBulletPrimarySegmentedMeasureProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBulletPrimarySegmentedMeasureProps> = ({
+export const ChartBulletPrimarySegmentedMeasure: FunctionComponent<ChartBulletPrimarySegmentedMeasureProps> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -229,7 +229,7 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
   // Label component
   //
   // Note: SVG height and width are provided by ChartBullet as a workaround to support constrainToVisibleArea
-  const tooltip = React.cloneElement(labelComponent, {
+  const tooltip = cloneElement(labelComponent, {
     constrainToVisibleArea,
     dx: () => {
       if (horizontal) {
@@ -250,7 +250,7 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
   });
 
   const measure = computedData.map((dataPoint: any, index) =>
-    React.cloneElement(measureComponent, {
+    cloneElement(measureComponent, {
       barWidth,
       data: [{ ...dataPoint }],
       domain,
@@ -277,7 +277,7 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
       {measure}
     </ChartContainer>
   ) : (
-    <React.Fragment>{measure}</React.Fragment>
+    <Fragment>{measure}</Fragment>
   );
 };
 ChartBulletPrimarySegmentedMeasure.displayName = 'ChartBulletPrimarySegmentedMeasure';

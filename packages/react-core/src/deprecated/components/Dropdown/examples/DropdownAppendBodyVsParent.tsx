@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Flex } from '@patternfly/react-core';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core/deprecated';
 
-export const DropdownAppendBodyVsParent: React.FunctionComponent = () => {
-  const [isBodyOpen, setIsBodyOpen] = React.useState(false);
-  const [isParentOpen, setIsParentOpen] = React.useState(false);
+export const DropdownAppendBodyVsParent: FunctionComponent = () => {
+  const [isBodyOpen, setIsBodyOpen] = useState(false);
+  const [isParentOpen, setIsParentOpen] = useState(false);
 
   const onBodyToggle = (_event: any, isBodyOpen: boolean) => {
     setIsBodyOpen(isBodyOpen);

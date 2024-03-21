@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, Fragment } from 'react';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
 
-export interface BreadcrumbHeadingProps extends React.HTMLProps<HTMLLIElement> {
+export interface BreadcrumbHeadingProps extends HTMLProps<HTMLLIElement> {
   /** Content rendered inside the breadcrumb title. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the breadcrumb item. */
   className?: string;
   /** HREF for breadcrumb link. */
@@ -13,12 +13,12 @@ export interface BreadcrumbHeadingProps extends React.HTMLProps<HTMLLIElement> {
   /** Target for breadcrumb link. */
   target?: string;
   /** Sets the base component to render. Defaults to <a> */
-  component?: React.ReactNode;
+  component?: ReactNode;
   /** Internal prop set by Breadcrumb on all but the first crumb */
   showDivider?: boolean;
 }
 
-export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> = ({
+export const BreadcrumbHeading: FunctionComponent<BreadcrumbHeadingProps> = ({
   children = null,
   className = '',
   to = undefined,
@@ -51,7 +51,7 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
             {children}
           </Component>
         )}
-        {!to && component !== 'button' && <React.Fragment>{children}</React.Fragment>}
+        {!to && component !== 'button' && <Fragment>{children}</Fragment>}
       </h1>
     </li>
   );

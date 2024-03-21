@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 import chart_container_cursor_line_Fill from '@patternfly/react-tokens/dist/esm/chart_container_cursor_line_Fill';
 
-import * as React from 'react';
 import { ContainerType, createContainer as victoryCreateContainer } from 'victory-create-container';
 import { ChartCursorTooltip } from '../ChartCursorTooltip/ChartCursorTooltip';
 import { ChartLabel } from '../ChartLabel/ChartLabel';

@@ -1,8 +1,8 @@
-import React from 'react';
+import { ReactElement, FunctionComponent, useState } from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core/deprecated';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
-const appLauncherItems: React.ReactElement[] = [
+const appLauncherItems: ReactElement[] = [
   <ApplicationLauncherItem key="application_1a" href="#">
     Application 1 (anchor link)
   </ApplicationLauncherItem>,
@@ -14,8 +14,8 @@ const appLauncherItems: React.ReactElement[] = [
   </ApplicationLauncherItem>
 ];
 
-export const ApplicationLauncherCustomIcon: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const ApplicationLauncherCustomIcon: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => setIsOpen(isOpen);
   const onSelect = (_event: any) => setIsOpen((prevIsOpen) => !prevIsOpen);

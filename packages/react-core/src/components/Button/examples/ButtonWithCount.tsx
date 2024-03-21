@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { BadgeCountObject, Button } from '@patternfly/react-core';
 
-export const ButtonWithCount: React.FunctionComponent = () => {
+export const ButtonWithCount: FunctionComponent = () => {
   const badgeCountObjectNotRead: BadgeCountObject = {
     isRead: false,
     count: 7,
@@ -15,7 +15,7 @@ export const ButtonWithCount: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <p>Unread:</p>
       <Button variant="primary" countOptions={badgeCountObjectNotRead}>
         View issues
@@ -84,6 +84,6 @@ export const ButtonWithCount: React.FunctionComponent = () => {
         View issues
       </Button>{' '}
       <br />
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { type ReactNode, type HTMLProps, type FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/{{typeDir}}/{{componentName}}';
 import { css } from '@patternfly/react-styles';
 
-interface {{ componentName }}Props extends React.HTMLProps<HTMLDivElement> {
+interface {{ componentName }}Props extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside {{ componentName }} */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Class to add to outer div */
   className?: string;
 }
 
-export const {{componentName}}: React.FunctionComponent<{{componentName}}Props> = ({
+export const {{componentName}}: FunctionComponent<{{componentName}}Props> = ({
   className,
   children,
   ...props

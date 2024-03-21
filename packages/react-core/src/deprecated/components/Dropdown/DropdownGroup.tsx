@@ -1,17 +1,17 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import { DropdownContext } from './dropdownConstants';
 
-export interface DropdownGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
+export interface DropdownGroupProps extends Omit<HTMLProps<HTMLDivElement>, 'label'> {
   /** Checkboxes within group */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the DropdownGroup control */
   className?: string;
   /** Group label */
-  label?: React.ReactNode;
+  label?: ReactNode;
 }
 
-export const DropdownGroup: React.FunctionComponent<DropdownGroupProps> = ({
+export const DropdownGroup: FunctionComponent<DropdownGroupProps> = ({
   children = null,
   className = '',
   label = '',

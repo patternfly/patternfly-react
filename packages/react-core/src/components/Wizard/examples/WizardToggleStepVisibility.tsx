@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactElement, Context, FunctionComponent, createContext, useState, useContext } from 'react';
 
 import { Checkbox, Wizard, WizardStep } from '@patternfly/react-core';
 
@@ -8,13 +8,13 @@ interface SomeContextProps {
 }
 type SomeContextRenderProps = Pick<SomeContextProps, 'isToggleStepChecked'>;
 interface SomeContextProviderProps {
-  children: (context: SomeContextRenderProps) => React.ReactElement;
+  children: (context: SomeContextRenderProps) => ReactElement;
 }
 
-const SomeContext: React.Context<SomeContextProps> = React.createContext({} as SomeContextProps);
+const SomeContext: Context<SomeContextProps> = createContext({} as SomeContextProps);
 
-const SomeContextProvider: React.FunctionComponent<SomeContextProviderProps> = ({ children }) => {
-  const [isToggleStepChecked, setIsToggleStepChecked] = React.useState(false);
+const SomeContextProvider: FunctionComponent<SomeContextProviderProps> = ({ children }) => {
+  const [isToggleStepChecked, setIsToggleStepChecked] = useState(false);
 
   return (
     <SomeContext.Provider value={{ isToggleStepChecked, setIsToggleStepChecked }}>
@@ -23,8 +23,8 @@ const SomeContextProvider: React.FunctionComponent<SomeContextProviderProps> = (
   );
 };
 
-const StepContentWithAction: React.FunctionComponent = () => {
-  const { isToggleStepChecked, setIsToggleStepChecked } = React.useContext(SomeContext);
+const StepContentWithAction: FunctionComponent = () => {
+  const { isToggleStepChecked, setIsToggleStepChecked } = useContext(SomeContext);
 
   return (
     <Checkbox
@@ -37,7 +37,7 @@ const StepContentWithAction: React.FunctionComponent = () => {
   );
 };
 
-export const WizardToggleStepVisibility: React.FunctionComponent = () => (
+export const WizardToggleStepVisibility: FunctionComponent = () => (
   <SomeContextProvider>
     {({ isToggleStepChecked }) => (
       <Wizard height={400} title="Toggle step visibility wizard">

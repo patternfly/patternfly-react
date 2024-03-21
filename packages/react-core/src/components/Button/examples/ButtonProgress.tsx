@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { Button } from '@patternfly/react-core';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
@@ -9,11 +9,11 @@ interface LoadingPropsType {
   isLoading: boolean;
 }
 
-export const ButtonProgress: React.FunctionComponent = () => {
-  const [isPrimaryLoading, setIsPrimaryLoading] = React.useState<boolean>(true);
-  const [isSecondaryLoading, setIsSecondaryLoading] = React.useState<boolean>(true);
-  const [isInlineLoading, setIsInlineLoading] = React.useState<boolean>(true);
-  const [isUploading, setIsUploading] = React.useState<boolean>(false);
+export const ButtonProgress: FunctionComponent = () => {
+  const [isPrimaryLoading, setIsPrimaryLoading] = useState<boolean>(true);
+  const [isSecondaryLoading, setIsSecondaryLoading] = useState<boolean>(true);
+  const [isInlineLoading, setIsInlineLoading] = useState<boolean>(true);
+  const [isUploading, setIsUploading] = useState<boolean>(false);
 
   const primaryLoadingProps = {} as LoadingPropsType;
   primaryLoadingProps.spinnerAriaValueText = 'Loading';
@@ -36,7 +36,7 @@ export const ButtonProgress: React.FunctionComponent = () => {
   uploadingProps.isLoading = isUploading;
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button
         variant="primary"
         id="primary-loading-button"
@@ -62,6 +62,6 @@ export const ButtonProgress: React.FunctionComponent = () => {
       <Button variant="link" isInline onClick={() => setIsInlineLoading(!isInlineLoading)} {...inlineLoadingProps}>
         {isInlineLoading ? 'Pause loading logs' : 'Resume loading logs'}
       </Button>{' '}
-    </React.Fragment>
+    </Fragment>
   );
 };

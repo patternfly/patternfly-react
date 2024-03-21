@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Radio } from '@patternfly/react-core';
 
-export const RadioWithDescriptionAndBody: React.FunctionComponent = () => (
+export const RadioWithDescriptionAndBody: FunctionComponent = () => (
   <Radio
     id="radio-description-body"
     label="Radio with description and body"

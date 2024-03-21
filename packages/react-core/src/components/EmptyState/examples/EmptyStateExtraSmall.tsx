@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   Button,
   EmptyState,
@@ -9,7 +9,7 @@ import {
   EmptyStateFooter
 } from '@patternfly/react-core';
 
-export const EmptyStateExtraSmall: React.FunctionComponent = () => (
+export const EmptyStateExtraSmall: FunctionComponent = () => (
   <EmptyState variant={EmptyStateVariant.xs}>
     <EmptyStateHeader titleText="Empty state" headingLevel="h4" />
     <EmptyStateBody>

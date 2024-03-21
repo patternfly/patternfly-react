@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { headerCol, ICell, IRow, IActions } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
@@ -8,7 +8,7 @@ interface ITableState {
   actions: IActions;
 }
 
-export class TableSimpleActionsDemo extends React.Component<TableProps, ITableState> {
+export class TableSimpleActionsDemo extends Component<TableProps, ITableState> {
   static displayName = 'TableSimpleActionsDemo';
   constructor(props: TableProps) {
     super(props);

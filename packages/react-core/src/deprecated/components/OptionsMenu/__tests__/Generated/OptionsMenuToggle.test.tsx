@@ -1,7 +1,7 @@
 /**
  * This test was generated
  */
-import * as React from 'react';
+import { MouseEvent } from 'react';
 import { render } from '@testing-library/react';
 import { OptionsMenuToggle } from '../../OptionsMenuToggle';
 // any missing imports can usually be resolved by adding them here
@@ -19,7 +19,7 @@ it('OptionsMenuToggle should match snapshot (auto-generated)', () => {
       isDisabled={false}
       hideCaret={false}
       aria-label={"'Options menu'"}
-      onEnter={(event: React.MouseEvent<HTMLButtonElement>) => undefined as void}
+      onEnter={(event: MouseEvent<HTMLButtonElement>) => undefined as void}
       parentRef={document.body}
       toggleTemplate={<div>ReactNode</div>}
     />

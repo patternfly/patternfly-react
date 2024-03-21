@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export interface DrawerCloseButtonProps extends React.HTMLProps<HTMLDivElement> {
+export interface DrawerCloseButtonProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer close button outer <div>. */
   className?: string;
   /** A callback for when the close button is clicked  */
@@ -13,7 +13,7 @@ export interface DrawerCloseButtonProps extends React.HTMLProps<HTMLDivElement> 
   'aria-label'?: string;
 }
 
-export const DrawerCloseButton: React.FunctionComponent<DrawerCloseButtonProps> = ({
+export const DrawerCloseButton: FunctionComponent<DrawerCloseButtonProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   onClose = () => undefined as any,

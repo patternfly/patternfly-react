@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, createRef, Component } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
 import fileUploadStyles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
@@ -116,7 +116,7 @@ export enum Language {
 
 /** The main code editor component. */
 
-export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export interface CodeEditorProps extends Omit<HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Additional classes added to the code editor. */
   className?: string;
   /** Code displayed in code editor. */
@@ -130,7 +130,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** A single node or array of nodes - ideally the code editor controls component - to display
    * above code editor.
    */
-  customControls?: React.ReactNode | React.ReactNode[];
+  customControls?: ReactNode | ReactNode[];
   /** Accessible label for the download button. */
   downloadButtonAriaLabel?: string;
   /** Text to display in the tooltip on the download button. */
@@ -140,15 +140,15 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** Additional props to pass to the monaco editor. */
   editorProps?: EditorProps;
   /** Content to display in space of the code editor when there is no code to display. */
-  emptyState?: React.ReactNode;
+  emptyState?: ReactNode;
   /** Override default empty state body text. */
-  emptyStateBody?: React.ReactNode;
+  emptyStateBody?: ReactNode;
   /** Override default empty state button text. */
-  emptyStateButton?: React.ReactNode;
+  emptyStateButton?: ReactNode;
   /** Override default empty state link text. */
-  emptyStateLink?: React.ReactNode;
+  emptyStateLink?: ReactNode;
   /** Override default empty state title text. */
-  emptyStateTitle?: React.ReactNode;
+  emptyStateTitle?: ReactNode;
   /** Editor header main content title. */
   headerMainContent?: string;
   /** Height of code editor. Defaults to 100%. 'sizeToFit' will automatically change the height
@@ -175,7 +175,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** Language displayed in the editor. */
   language?: Language;
   /** The loading screen before the editor will be loaded. Defaults to 'loading...'. */
-  loading?: React.ReactNode;
+  loading?: ReactNode;
   /** Function which fires each time the content of the code editor is manually changed. Does
    * not fire when a file is uploaded.
    */
@@ -236,11 +236,11 @@ interface CodeEditorState {
   copied: boolean;
 }
 
-class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
+class CodeEditor extends Component<CodeEditorProps, CodeEditorState> {
   static displayName = 'CodeEditor';
   private editor: editor.IStandaloneCodeEditor | null = null;
-  private wrapperRef = React.createRef<HTMLDivElement>();
-  private ref = React.createRef<HTMLDivElement>();
+  private wrapperRef = createRef<HTMLDivElement>();
+  private ref = createRef<HTMLDivElement>();
   private timer: number | null = null;
   private observer = () => {};
 

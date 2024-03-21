@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, useRef, Fragment } from 'react';
 import {
   Brand,
   Breadcrumb,
@@ -35,11 +35,11 @@ import {
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
-export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () => {
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState(0);
+export const WizardFullPageWithDrawerInfoStepDemo: FunctionComponent = () => {
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
+  const [activeItem, setActiveItem] = useState(0);
 
-  const drawerRef = React.useRef<HTMLSpanElement | null>(null);
+  const drawerRef = useRef<HTMLSpanElement | null>(null);
 
   const onExpand = () => {
     if (drawerRef.current) {
@@ -155,7 +155,7 @@ export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () 
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page
         header={Header}
         sidebar={Sidebar}
@@ -196,6 +196,6 @@ export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () 
           </Wizard>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

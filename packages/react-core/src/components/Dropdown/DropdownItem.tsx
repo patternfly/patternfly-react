@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode, Ref, FunctionComponent, forwardRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { MenuItemProps, MenuItem } from '../Menu';
 import { TooltipProps } from '../Tooltip';
@@ -9,13 +9,13 @@ import { useOUIAProps, OUIAProps } from '../../helpers';
  */
 export interface DropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps {
   /** Anything which can be rendered in a dropdown item */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classes applied to root element of dropdown item */
   className?: string;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<HTMLAnchorElement | HTMLButtonElement>;
+  innerRef?: Ref<HTMLAnchorElement | HTMLButtonElement>;
   /** Description of the dropdown item */
-  description?: React.ReactNode;
+  description?: ReactNode;
   /** Render item as disabled option */
   isDisabled?: boolean;
   /** Render item as aria-disabled option */
@@ -32,7 +32,7 @@ export interface DropdownItemProps extends Omit<MenuItemProps, 'ref'>, OUIAProps
   tooltipProps?: TooltipProps;
 }
 
-const DropdownItemBase: React.FunctionComponent<DropdownItemProps> = ({
+const DropdownItemBase: FunctionComponent<DropdownItemProps> = ({
   children,
   className,
   description,
@@ -65,10 +65,8 @@ const DropdownItemBase: React.FunctionComponent<DropdownItemProps> = ({
   );
 };
 
-export const DropdownItem = React.forwardRef(
-  (props: DropdownItemProps, ref: React.Ref<HTMLAnchorElement | HTMLButtonElement>) => (
-    <DropdownItemBase {...props} innerRef={ref} />
-  )
-);
+export const DropdownItem = forwardRef((props: DropdownItemProps, ref: Ref<HTMLAnchorElement | HTMLButtonElement>) => (
+  <DropdownItemBase {...props} innerRef={ref} />
+));
 
 DropdownItem.displayName = 'DropdownItem';

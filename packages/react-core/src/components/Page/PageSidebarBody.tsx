@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 
-export interface PageSidebarBodyProps extends React.HTMLProps<HTMLDivElement> {
+export interface PageSidebarBodyProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the page sidebar body */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the page sidebar body */
   className?: string;
   /** Flag indicating that the page sidebar body should use page insets. */
@@ -13,7 +13,7 @@ export interface PageSidebarBodyProps extends React.HTMLProps<HTMLDivElement> {
   isFilled?: boolean;
 }
 
-export const PageSidebarBody: React.FunctionComponent<PageSidebarBodyProps> = ({
+export const PageSidebarBody: FunctionComponent<PageSidebarBodyProps> = ({
   children,
   className,
   usePageInsets,

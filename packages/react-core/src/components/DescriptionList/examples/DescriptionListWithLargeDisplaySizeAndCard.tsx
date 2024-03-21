@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Button,
   DescriptionList,
@@ -9,9 +9,9 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListWithLargeDisplaySizeAndCard: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
-  const [displaySize, setDisplaySize] = React.useState<'lg' | '2xl'>('lg');
+export const DescriptionListWithLargeDisplaySizeAndCard: FunctionComponent = () => {
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [displaySize, setDisplaySize] = useState<'lg' | '2xl'>('lg');
 
   const toggleDisplaySize = (checked: boolean) => {
     setDisplaySize(checked ? '2xl' : 'lg');

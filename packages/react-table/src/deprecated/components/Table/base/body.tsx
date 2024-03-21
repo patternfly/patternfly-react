@@ -4,7 +4,7 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
-import * as React from 'react';
+import { Component, createElement } from 'react';
 import isEqual from 'lodash/isEqual';
 import {
   RowsType,
@@ -28,7 +28,7 @@ export interface BodyProps {
   className?: string;
 }
 
-class BaseBody extends React.Component<BodyProps, {}> {
+class BaseBody extends Component<BodyProps, {}> {
   static defaultProps = {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onRow: (...args: any) => ({})
@@ -45,10 +45,10 @@ class BaseBody extends React.Component<BodyProps, {}> {
       renderers &&
       renderers.body &&
       renderers.body.wrapper &&
-      (renderers.body.wrapper as React.Component).shouldComponentUpdate
+      (renderers.body.wrapper as Component).shouldComponentUpdate
     ) {
-      if (typeof (renderers.body.wrapper as React.Component).shouldComponentUpdate === 'function') {
-        return (renderers.body.wrapper as React.Component).shouldComponentUpdate.call(this, nextProps, {}, {});
+      if (typeof (renderers.body.wrapper as Component).shouldComponentUpdate === 'function') {
+        return (renderers.body.wrapper as Component).shouldComponentUpdate.call(this, nextProps, {}, {});
       }
       return true;
     }
@@ -66,7 +66,7 @@ class BaseBody extends React.Component<BodyProps, {}> {
     const { onRow, rows, rowKey, columns, renderers, ...props } = this.props;
     const children = (rows as []).map((rowData: RowType, index: number) => {
       const key = resolveRowKey({ rowData, rowIndex: index, rowKey });
-      return React.createElement(BodyRow, {
+      return createElement(BodyRow, {
         key,
         renderers: renderers.body,
         onRow,
@@ -77,7 +77,7 @@ class BaseBody extends React.Component<BodyProps, {}> {
       });
     });
 
-    return React.createElement(renderers.body.wrapper as createElementType, props, children);
+    return createElement(renderers.body.wrapper as createElementType, props, children);
   }
 }
 

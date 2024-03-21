@@ -1,5 +1,5 @@
 /* eslint-disable no-shadow */
-import * as React from 'react';
+import { FormEvent, MouseEvent, Component } from 'react';
 import {
   TableVariant,
   ICell,
@@ -48,7 +48,7 @@ interface Option {
   value: string;
 }
 
-export class TableEditableDemo extends React.Component<TableProps, TableState> {
+export class TableEditableDemo extends Component<TableProps, TableState> {
   static displayName = 'TableEditableDemo';
 
   private options: Option[];
@@ -329,7 +329,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     });
   };
 
-  handleTextInputChange = (newValue: string, evt: React.FormEvent, rowIndex: number, cellIndex: number) => {
+  handleTextInputChange = (newValue: string, evt: FormEvent, rowIndex: number, cellIndex: number) => {
     const newRows = Array.from(this.state.rows);
     const rowCells = newRows[rowIndex].cells;
     if (rowCells) {
@@ -340,7 +340,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     });
   };
 
-  onSelect = (_event: React.FormEvent, newValue: string, rowIndex: number, cellIndex: number, isPlaceholder?: boolean) => {
+  onSelect = (_event: FormEvent, newValue: string, rowIndex: number, cellIndex: number, isPlaceholder?: boolean) => {
     const newRows = Array.from(this.state.rows);
     const newCellProps = (newRows[rowIndex].cells[cellIndex] as IRowCell).props;
 
@@ -385,7 +385,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     });
   };
 
-  clearSelection = (_event: React.MouseEvent, rowIndex: number, cellIndex: number) => {
+  clearSelection = (_event: MouseEvent, rowIndex: number, cellIndex: number) => {
     const newRows = Array.from(this.state.rows);
     const newCellProps = (newRows[rowIndex].cells[cellIndex] as IRowCell).props;
     newCellProps.editableValue = [];

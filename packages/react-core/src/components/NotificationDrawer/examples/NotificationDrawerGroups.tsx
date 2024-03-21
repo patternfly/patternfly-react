@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Ref, useState } from 'react';
 import {
   Button,
   EmptyState,
@@ -26,11 +26,11 @@ import {
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
-export const NotificationDrawerGroups: React.FunctionComponent = () => {
-  const [firstGroupExpanded, setFirstGroupExpanded] = React.useState(false);
-  const [secondGroupExpanded, setSecondGroupExpanded] = React.useState(true);
-  const [thirdGroupExpanded, setThirdGroupExpanded] = React.useState(false);
-  const [isOpenMap, setIsOpenMap] = React.useState({});
+export const NotificationDrawerGroups: FunctionComponent = () => {
+  const [firstGroupExpanded, setFirstGroupExpanded] = useState(false);
+  const [secondGroupExpanded, setSecondGroupExpanded] = useState(true);
+  const [thirdGroupExpanded, setThirdGroupExpanded] = useState(false);
+  const [isOpenMap, setIsOpenMap] = useState({});
 
   const onToggle = (id: string) => {
     setIsOpenMap((prevState) => ({ ...prevState, [id]: !prevState[id] }));
@@ -83,7 +83,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
           isOpen={isOpenMap['groups-kebab-toggle-1'] || false}
           onOpenChange={() => setIsOpenMap({})}
           popperProps={{ position: 'right' }}
-          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          toggle={(toggleRef: Ref<MenuToggleElement>) => (
             <MenuToggle
               ref={toggleRef}
               id="groups-kebab-toggle-1"
@@ -119,7 +119,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     isOpen={isOpenMap['groups-kebab-toggle-2'] || false}
                     onOpenChange={() => setIsOpenMap({})}
                     popperProps={{ position: 'right' }}
-                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    toggle={(toggleRef: Ref<MenuToggleElement>) => (
                       <MenuToggle
                         ref={toggleRef}
                         id="groups-kebab-toggle-2"
@@ -150,7 +150,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     isOpen={isOpenMap['groups-kebab-toggle-3'] || false}
                     onOpenChange={() => setIsOpenMap({})}
                     popperProps={{ position: 'right' }}
-                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    toggle={(toggleRef: Ref<MenuToggleElement>) => (
                       <MenuToggle
                         ref={toggleRef}
                         id="groups-kebab-toggle-3"
@@ -182,7 +182,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     isOpen={isOpenMap['groups-kebab-toggle-4'] || false}
                     onOpenChange={() => setIsOpenMap({})}
                     popperProps={{ position: 'right' }}
-                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    toggle={(toggleRef: Ref<MenuToggleElement>) => (
                       <MenuToggle
                         ref={toggleRef}
                         id="groups-kebab-toggle-4"
@@ -213,7 +213,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     isOpen={isOpenMap['groups-kebab-toggle-5'] || false}
                     onOpenChange={() => setIsOpenMap({})}
                     popperProps={{ position: 'right' }}
-                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    toggle={(toggleRef: Ref<MenuToggleElement>) => (
                       <MenuToggle
                         ref={toggleRef}
                         id="groups-kebab-toggle-5"
@@ -253,7 +253,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     isOpen={isOpenMap['groups-kebab-toggle-6'] || false}
                     onOpenChange={() => setIsOpenMap({})}
                     popperProps={{ position: 'right' }}
-                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    toggle={(toggleRef: Ref<MenuToggleElement>) => (
                       <MenuToggle
                         ref={toggleRef}
                         id="groups-kebab-toggle-6"
@@ -284,7 +284,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     isOpen={isOpenMap['groups-kebab-toggle-7'] || false}
                     onOpenChange={() => setIsOpenMap({})}
                     popperProps={{ position: 'right' }}
-                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    toggle={(toggleRef: Ref<MenuToggleElement>) => (
                       <MenuToggle
                         ref={toggleRef}
                         id="groups-kebab-toggle-7"
@@ -316,7 +316,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     isOpen={isOpenMap['groups-kebab-toggle-8'] || false}
                     onOpenChange={() => setIsOpenMap({})}
                     popperProps={{ position: 'right' }}
-                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    toggle={(toggleRef: Ref<MenuToggleElement>) => (
                       <MenuToggle
                         ref={toggleRef}
                         id="groups-kebab-toggle-8"
@@ -347,7 +347,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     isOpen={isOpenMap['groups-kebab-toggle-9'] || false}
                     onOpenChange={() => setIsOpenMap({})}
                     popperProps={{ position: 'right' }}
-                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    toggle={(toggleRef: Ref<MenuToggleElement>) => (
                       <MenuToggle
                         ref={toggleRef}
                         id="groups-kebab-toggle-9"

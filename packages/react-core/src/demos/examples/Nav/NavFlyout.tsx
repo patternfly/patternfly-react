@@ -1,4 +1,10 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type FormEvent as ReactFormEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type MouseEvent as ReactMouseEvent
+} from 'react';
 import {
   Avatar,
   Brand,
@@ -43,17 +49,17 @@ import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 
-export const NavFlyout: React.FunctionComponent = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
-  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
-  const [isMobileView, setIsMobileView] = React.useState(false);
-  const [isSidebarOpenDesktop, setIsSidebarOpenDesktop] = React.useState(true);
-  const [isSidebarOpenMobile, setIsSidebarOpenMobile] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState<number | string>(0);
+export const NavFlyout: FunctionComponent = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
+  const [isSidebarOpenDesktop, setIsSidebarOpenDesktop] = useState(true);
+  const [isSidebarOpenMobile, setIsSidebarOpenMobile] = useState(false);
+  const [activeItem, setActiveItem] = useState<number | string>(0);
 
   const onNavSelect = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: ReactFormEvent<HTMLInputElement>,
     selectedItem: {
       groupId: number | string;
       itemId: number | string;
@@ -75,10 +81,10 @@ export const NavFlyout: React.FunctionComponent = () => {
     windowSize: number;
   }
 
-  const onPageResize = (_event: MouseEvent | TouchEvent | React.KeyboardEvent, { mobileView }: PageOptions) =>
+  const onPageResize = (_event: MouseEvent | TouchEvent | ReactKeyboardEvent, { mobileView }: PageOptions) =>
     setIsMobileView(mobileView);
 
-  const onMenuSelect = (_event: React.MouseEvent | undefined, itemId: string | number | undefined) => {
+  const onMenuSelect = (_event: ReactMouseEvent | undefined, itemId: string | number | undefined) => {
     itemId && setActiveItem(itemId);
   };
 

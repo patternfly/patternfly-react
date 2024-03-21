@@ -1,16 +1,16 @@
-import React from 'react';
+import { MouseEvent, ReactElement, FunctionComponent, useState, useRef } from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, MenuContainer } from '@patternfly/react-core';
 
 /* eslint-disable no-console */
-const onSelect = (event: React.MouseEvent | undefined, itemId: string | number | undefined) =>
+const onSelect = (event: MouseEvent | undefined, itemId: string | number | undefined) =>
   console.log('selected', itemId);
 /* eslint-enable no-console */
 interface FlyoutMenuProps {
-  children?: React.ReactElement;
+  children?: ReactElement;
   depth: number;
 }
 
-const FlyoutMenu: React.FunctionComponent<FlyoutMenuProps> = ({ depth, children }: FlyoutMenuProps) => (
+const FlyoutMenu: FunctionComponent<FlyoutMenuProps> = ({ depth, children }: FlyoutMenuProps) => (
   <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={onSelect}>
     <MenuContent>
       <MenuList>
@@ -30,10 +30,10 @@ const FlyoutMenu: React.FunctionComponent<FlyoutMenuProps> = ({ depth, children 
   </Menu>
 );
 
-export const FlyoutDemo: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const menuRef = React.useRef<HTMLDivElement>(null);
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
+export const FlyoutDemo: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   let curFlyout = <FlyoutMenu depth={1} />;
   for (let i = 2; i < 14; i++) {

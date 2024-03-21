@@ -1,4 +1,4 @@
-import React from 'react';
+import { useContext, useState, useRef, useEffect } from 'react';
 import {
   Button,
   Drawer,
@@ -24,7 +24,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
 
 const JumpLinksWrapper = ({ offsetHeight, headings }) => {
-  const { drawerContentRef } = React.useContext(DrawerContext);
+  const { drawerContentRef } = useContext(DrawerContext);
 
   return (
     <JumpLinks
@@ -47,11 +47,11 @@ const JumpLinksWrapper = ({ offsetHeight, headings }) => {
 export const JumpLinksWithDrawer = () => {
   const headings = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];
 
-  const [offsetHeight, setOffsetHeight] = React.useState(0);
-  const [isExpanded, setIsExpanded] = React.useState(false);
-  const drawerRef = React.useRef();
+  const [offsetHeight, setOffsetHeight] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const drawerRef = useRef();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const masthead = document.getElementsByClassName(mastheadStyles.masthead)[0];
     const drawerToggleSection = document.getElementById('drawer-toggle');
 

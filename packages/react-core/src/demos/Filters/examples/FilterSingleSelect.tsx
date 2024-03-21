@@ -1,4 +1,11 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  useEffect,
+  useRef,
+  type MouseEvent as ReactMouseEvent,
+  type CSSProperties
+} from 'react';
 import {
   Menu,
   MenuContent,
@@ -47,9 +54,9 @@ const columnNames = {
   location: 'Location'
 };
 
-export const FilterSingleSelect: React.FunctionComponent = () => {
+export const FilterSingleSelect: FunctionComponent = () => {
   // Set up repo filtering
-  const [searchValue, setSearchValue] = React.useState('');
+  const [searchValue, setSearchValue] = useState('');
   const onFilter = (repo: Repository) => {
     if (searchValue === 'all') {
       return true;
@@ -70,7 +77,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
   const isRepoSelectable = (repo: Repository) => repo.name !== 'a'; // Arbitrary logic for this example
-  const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
+  const [selectedRepoNames, setSelectedRepoNames] = useState<string[]>([]);
   const setRepoSelected = (repo: Repository, isSelecting = true) =>
     setSelectedRepoNames((prevSelected) => {
       const otherSelectedRepoNames = prevSelected.filter((r) => r !== repo.name);
@@ -83,8 +90,8 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
 
   // To allow shift+click to select/deselect multiple rows
-  const [recentSelectedRowIndex, setRecentSelectedRowIndex] = React.useState<number | null>(null);
-  const [shifting, setShifting] = React.useState(false);
+  const [recentSelectedRowIndex, setRecentSelectedRowIndex] = useState<number | null>(null);
+  const [shifting, setShifting] = useState(false);
 
   const onSelectRepo = (repo: Repository, rowIndex: number, isSelecting: boolean) => {
     // If the user is shift + selecting the checkboxes, then all intermediate checkboxes should be selected
@@ -101,7 +108,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
     setRecentSelectedRowIndex(rowIndex);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Shift') {
         setShifting(true);
@@ -123,11 +130,11 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
   }, []);
 
   // Set up bulk selection menu
-  const bulkSelectMenuRef = React.useRef<HTMLDivElement>(null);
-  const bulkSelectToggleRef = React.useRef<any>(null);
-  const bulkSelectContainerRef = React.useRef<HTMLDivElement>(null);
+  const bulkSelectMenuRef = useRef<HTMLDivElement>(null);
+  const bulkSelectToggleRef = useRef<any>(null);
+  const bulkSelectContainerRef = useRef<HTMLDivElement>(null);
 
-  const [isBulkSelectOpen, setIsBulkSelectOpen] = React.useState<boolean>(false);
+  const [isBulkSelectOpen, setIsBulkSelectOpen] = useState<boolean>(false);
 
   const handleBulkSelectClickOutside = (event: MouseEvent) => {
     if (isBulkSelectOpen && !bulkSelectMenuRef.current?.contains(event.target as Node)) {
@@ -150,7 +157,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleBulkSelectMenuKeys);
     window.addEventListener('click', handleBulkSelectClickOutside);
     return () => {
@@ -159,7 +166,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
     };
   }, [isBulkSelectOpen, bulkSelectMenuRef]);
 
-  const onBulkSelectToggleClick = (ev: React.MouseEvent) => {
+  const onBulkSelectToggleClick = (ev: ReactMouseEvent) => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (bulkSelectMenuRef.current) {
@@ -230,11 +237,11 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
   );
 
   // Set up single select menu & state
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [menuSelection, setMenuSelection] = React.useState<string>('all');
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
-  const menuRef = React.useRef<HTMLDivElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [menuSelection, setMenuSelection] = useState<string>('all');
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (isOpen && menuRef.current?.contains(event.target as Node)) {
@@ -251,7 +258,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleMenuKeys);
     window.addEventListener('click', handleClickOutside);
     return () => {
@@ -260,7 +267,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
     };
   }, [isOpen, menuRef]);
 
-  const onToggleClick = (ev: React.MouseEvent) => {
+  const onToggleClick = (ev: ReactMouseEvent) => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (menuRef.current) {
@@ -271,7 +278,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  function onSelect(event: React.MouseEvent | undefined, itemId: string | number | undefined) {
+  function onSelect(event: ReactMouseEvent | undefined, itemId: string | number | undefined) {
     if (typeof itemId === 'undefined') {
       return;
     }
@@ -299,7 +306,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
       style={
         {
           width: '200px'
-        } as React.CSSProperties
+        } as CSSProperties
       }
     >
       {menuToggleDisplay[menuSelection]}
@@ -357,7 +364,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <>
       {toolbar}
       <Table aria-label="Selectable table">
         <Thead>
@@ -404,6 +411,6 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
           ))}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </>
   );
 };

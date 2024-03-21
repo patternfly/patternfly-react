@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, RefObject, createRef, Component } from 'react';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
@@ -13,7 +13,7 @@ export interface ContextSelectorToggleProps {
   /** Component or string that will be used in the context selector.
    * This prop is placed in a button, and cannot contain any interactive elements
    */
-  toggleText?: React.ReactNode;
+  toggleText?: ReactNode;
   /** Flag to indicate if menu is opened */
   isOpen?: boolean;
   /** Callback called when toggle is clicked */
@@ -30,7 +30,7 @@ export interface ContextSelectorToggleProps {
   isText?: boolean;
 }
 
-class ContextSelectorToggle extends React.Component<ContextSelectorToggleProps> {
+class ContextSelectorToggle extends Component<ContextSelectorToggleProps> {
   static displayName = 'ContextSelectorToggle';
   static defaultProps: PickOptional<ContextSelectorToggleProps> = {
     className: '',
@@ -43,7 +43,7 @@ class ContextSelectorToggle extends React.Component<ContextSelectorToggleProps> 
     onToggle: (event: any, value: boolean) => undefined as any
   };
 
-  toggle: React.RefObject<HTMLButtonElement> = React.createRef();
+  toggle: RefObject<HTMLButtonElement> = createRef();
 
   componentDidMount = () => {
     document.addEventListener('mousedown', this.onDocClick);

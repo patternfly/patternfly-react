@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -43,7 +43,7 @@ describe('SearchInput', () => {
 
     const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = render(
-      <React.StrictMode>
+      <StrictMode>
         <SearchInput
           attributes={[
             { attr: 'username', display: 'Username' },
@@ -55,7 +55,7 @@ describe('SearchInput', () => {
           onSearch={props.onSearch}
           onClear={props.onClear}
         />
-      </React.StrictMode>
+      </StrictMode>
     );
     await user.click(screen.getByRole('button', { name: 'Search' }));
     expect(consoleError).not.toHaveBeenCalled();

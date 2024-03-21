@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css } from '@patternfly/react-styles';
 
@@ -9,7 +9,7 @@ export const PopoverPosition = {
   right: 'right'
 };
 
-export const PopoverDialog: React.FunctionComponent<PopoverDialogProps> = ({
+export const PopoverDialog: FunctionComponent<PopoverDialogProps> = ({
   position = 'top',
   children = null,
   className = null,
@@ -26,11 +26,11 @@ export const PopoverDialog: React.FunctionComponent<PopoverDialogProps> = ({
 );
 PopoverDialog.displayName = 'PopoverDialog';
 
-export interface PopoverDialogProps extends React.HTMLProps<HTMLDivElement> {
+export interface PopoverDialogProps extends HTMLProps<HTMLDivElement> {
   /** PopoverDialog position */
   position?: 'top' | 'bottom' | 'left' | 'right';
   /** PopoverDialog additional class */
   className?: string;
   /** PopoverDialog body */
-  children: React.ReactNode;
+  children: ReactNode;
 }

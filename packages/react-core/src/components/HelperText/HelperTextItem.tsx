@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/HelperText/helper-text';
 import { css } from '@patternfly/react-styles';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
@@ -6,9 +6,9 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
-export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HTMLLIElement> {
+export interface HelperTextItemProps extends HTMLProps<HTMLDivElement | HTMLLIElement> {
   /** Content rendered inside the helper text item. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes applied to the helper text item. */
   className?: string;
   /** Sets the component type of the helper text item. */
@@ -16,7 +16,7 @@ export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HT
   /** Variant styling of the helper text item. */
   variant?: 'default' | 'indeterminate' | 'warning' | 'success' | 'error';
   /** Custom icon prefixing the helper text. This property will override the default icon paired with each helper text variant. */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** Flag indicating the helper text item is dynamic. This prop should be used when the
    * text content of the helper text item will never change, but the icon and styling will
    * be dynamically updated via the `variant` prop.
@@ -43,7 +43,7 @@ const variantStyle = {
   error: styles.modifiers.error
 };
 
-export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
+export const HelperTextItem: FunctionComponent<HelperTextItemProps> = ({
   children,
   className,
   component = 'div',

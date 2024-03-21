@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 
-export interface CardActionsProps extends React.HTMLProps<HTMLDivElement> {
+export interface CardActionsProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the card action */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the action */
   className?: string;
 }
 
-export const CardSelectableActions: React.FunctionComponent<CardActionsProps> = ({
+export const CardSelectableActions: FunctionComponent<CardActionsProps> = ({
   children,
   className,
   ...props

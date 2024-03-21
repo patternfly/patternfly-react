@@ -1,9 +1,8 @@
-import * as React from 'react';
+import { ImgHTMLAttributes, DetailedHTMLProps, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Avatar/avatar';
 import { css } from '@patternfly/react-styles';
 
-export interface AvatarProps
-  extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
+export interface AvatarProps extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
   /** Additional classes added to the Avatar. */
   className?: string;
   /** Attribute that specifies the URL of the image for the Avatar. */
@@ -16,7 +15,7 @@ export interface AvatarProps
   size?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
-export const Avatar: React.FunctionComponent<AvatarProps> = ({
+export const Avatar: FunctionComponent<AvatarProps> = ({
   className = '',
   src = '',
   alt,

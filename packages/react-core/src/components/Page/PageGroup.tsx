@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, useContext, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from './PageContext';
-export interface PageGroupProps extends React.HTMLProps<HTMLDivElement> {
+export interface PageGroupProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes to apply to the PageGroup */
   className?: string;
   /** Content rendered inside of the PageGroup */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Modifier indicating if the PageBreadcrumb is sticky to the top or bottom at various breakpoints */
   stickyOnBreakpoint?: {
     default?: 'top' | 'bottom';
@@ -37,9 +37,9 @@ export const PageGroup = ({
   'aria-label': ariaLabel,
   ...props
 }: PageGroupProps) => {
-  const { height, getVerticalBreakpoint } = React.useContext(PageContext);
+  const { height, getVerticalBreakpoint } = useContext(PageContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (hasOverflowScroll && !ariaLabel) {
       /* eslint-disable no-console */
       console.warn('PageGroup: An accessible aria-label is required when hasOverflowScroll is set to true.');

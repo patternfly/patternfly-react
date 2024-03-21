@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 
-export const GuidesTreeView: React.FunctionComponent = () => {
+export const GuidesTreeView: FunctionComponent = () => {
   const options: TreeViewDataItem[] = [
     {
       name: 'Application launcher',

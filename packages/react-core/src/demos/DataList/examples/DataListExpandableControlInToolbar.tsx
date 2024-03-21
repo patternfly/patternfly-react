@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Ref, MouseEvent, useState, Fragment } from 'react';
 import {
   Button,
   DataList,
@@ -34,12 +34,12 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const DataListExpandableControlInToolbar: React.FunctionComponent = () => {
-  const [expanded, setExpanded] = React.useState(['ex-toggle1', 'ex-toggle3']);
-  const [isOpen1, setIsOpen1] = React.useState(false);
-  const [isOpen2, setIsOpen2] = React.useState(false);
-  const [isOpen3, setIsOpen3] = React.useState(false);
-  const [allExpanded, setAllExpanded] = React.useState(false);
+export const DataListExpandableControlInToolbar: FunctionComponent = () => {
+  const [expanded, setExpanded] = useState(['ex-toggle1', 'ex-toggle3']);
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [isOpen3, setIsOpen3] = useState(false);
+  const [allExpanded, setAllExpanded] = useState(false);
 
   const onToggleAll = () => {
     setAllExpanded((prevAllExpanded) => !prevAllExpanded);
@@ -76,7 +76,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
   };
 
   const renderToolbar = () => (
-    <React.Fragment>
+    <Fragment>
       <Toolbar>
         <ToolbarContent>
           <ToolbarGroup>
@@ -116,7 +116,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
           </ToolbarGroup>
         </ToolbarContent>
       </Toolbar>
-    </React.Fragment>
+    </Fragment>
   );
 
   const toggle = (id: string) => {
@@ -132,7 +132,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DashboardWrapper mainContainerId="main-content-datalist-view-default-nav" breadcrumb={null}>
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
@@ -181,7 +181,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                     onSelect={onSelect1}
                     popperProps={{ position: 'right' }}
                     onOpenChange={(isOpen: boolean) => setIsOpen1(isOpen)}
-                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    toggle={(toggleRef: Ref<MenuToggleElement>) => (
                       <MenuToggle
                         ref={toggleRef}
                         onClick={onToggle1}
@@ -202,7 +202,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                         key="link1"
                         to="#default-link2"
                         // Prevent the default onClick functionality for example purposes
-                        onClick={(ev: React.MouseEvent) => ev.preventDefault()}
+                        onClick={(ev: MouseEvent) => ev.preventDefault()}
                       >
                         Link
                       </DropdownItem>
@@ -263,7 +263,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                     onSelect={onSelect2}
                     popperProps={{ position: 'right' }}
                     onOpenChange={(isOpen: boolean) => setIsOpen2(isOpen)}
-                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    toggle={(toggleRef: Ref<MenuToggleElement>) => (
                       <MenuToggle
                         ref={toggleRef}
                         onClick={onToggle2}
@@ -284,7 +284,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                         key="link2"
                         to="#default-link2"
                         // Prevent the default onClick functionality for example purposes
-                        onClick={(ev: React.MouseEvent) => ev.preventDefault()}
+                        onClick={(ev: MouseEvent) => ev.preventDefault()}
                       >
                         Link
                       </DropdownItem>
@@ -345,7 +345,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                     onSelect={onSelect3}
                     popperProps={{ position: 'right' }}
                     onOpenChange={(isOpen: boolean) => setIsOpen3(isOpen)}
-                    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    toggle={(toggleRef: Ref<MenuToggleElement>) => (
                       <MenuToggle
                         ref={toggleRef}
                         onClick={onToggle3}
@@ -366,7 +366,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                         key="link3"
                         to="#default-link2"
                         // Prevent the default onClick functionality for example purposes
-                        onClick={(ev: React.MouseEvent) => ev.preventDefault()}
+                        onClick={(ev: MouseEvent) => ev.preventDefault()}
                       >
                         Link
                       </DropdownItem>
@@ -392,6 +392,6 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
           </DataList>
         </PageSection>
       </DashboardWrapper>
-    </React.Fragment>
+    </Fragment>
   );
 };

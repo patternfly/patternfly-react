@@ -1,14 +1,14 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Label } from '@patternfly/react-core';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
-export const LabelFilled: React.FunctionComponent = () => {
+export const LabelFilled: FunctionComponent = () => {
   const logColor = (color: string) => {
     // eslint-disable-next-line no-console
     console.log(color, 'label clicked');
   };
   return (
-    <React.Fragment>
+    <Fragment>
       <Label>Grey</Label> <Label icon={<InfoCircleIcon />}>Grey icon</Label>{' '}
       <Label onClose={() => Function.prototype}>Grey removable</Label>{' '}
       <Label icon={<InfoCircleIcon />} onClose={() => Function.prototype}>
@@ -219,6 +219,6 @@ export const LabelFilled: React.FunctionComponent = () => {
       <div style={{ width: '250px' }}>
         <Label>Label that overflows its parent, but has no textMaxWidth on its own</Label>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };

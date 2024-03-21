@@ -1,11 +1,11 @@
 import { Radio, RadioProps } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { FormEvent, Fragment, Component } from 'react';
 export class RadioDemo extends Component {
   state = {
     value: '4'
   };
 
-  handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+  handleChange = (event: FormEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget;
     this.setState({ value });
   };
@@ -68,7 +68,7 @@ export class RadioDemo extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <Radio
           id={this.myUncheckedControlledRadioProps.id}
           isChecked={this.state.value === '3'}
@@ -124,7 +124,7 @@ export class RadioDemo extends Component {
             aria-label={this.myStandaloneRadioProps['aria-label']}
           />
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

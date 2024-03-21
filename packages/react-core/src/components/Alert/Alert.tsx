@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { useState } from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, MouseEvent, useRef, useEffect, Fragment, useState } from 'react';
+
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import { AlertIcon } from './AlertIcon';
@@ -19,19 +19,19 @@ export enum AlertVariant {
 
 /** The main alert component. */
 
-export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'>, OUIAProps {
+export interface AlertProps extends Omit<HTMLProps<HTMLDivElement>, 'action' | 'title'>, OUIAProps {
   /** Close button; use the alert action close button component.  */
-  actionClose?: React.ReactNode;
+  actionClose?: ReactNode;
   /** Action links; use a single alert action link component or multiple wrapped in an array
-   * or React.Fragment.
+   * or .
    */
-  actionLinks?: React.ReactNode;
+  actionLinks?: ReactNode;
   /** Content rendered inside the alert. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes to add to the alert.  */
   className?: string;
   /** Set a custom icon to the alert. If not set the icon is set according to the variant. */
-  customIcon?: React.ReactNode;
+  customIcon?: ReactNode;
   /** Uniquely identifies the alert. */
   id?: string;
   /** Flag indicating that the alert is expandable. */
@@ -53,7 +53,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
    */
   timeoutAnimation?: number;
   /** Title of the alert.  */
-  title: React.ReactNode;
+  title: ReactNode;
   /** Sets the element to use as the alert title. Default is h4. */
   component?: keyof JSX.IntrinsicElements;
   /** Adds accessible text to the alert toggle. */
@@ -86,7 +86,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   ouiaSafe?: boolean;
 }
 
-export const Alert: React.FunctionComponent<AlertProps> = ({
+export const Alert: FunctionComponent<AlertProps> = ({
   variant = AlertVariant.custom,
   isInline = false,
   isPlain = false,
@@ -115,18 +115,18 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
 }: AlertProps) => {
   const ouiaProps = useOUIAProps(Alert.displayName, ouiaId, ouiaSafe, variant);
   const getHeadingContent = (
-    <React.Fragment>
+    <Fragment>
       <span className="pf-v5-screen-reader">{variantLabel}</span>
       {title}
-    </React.Fragment>
+    </Fragment>
   );
 
-  const titleRef = React.useRef(null);
+  const titleRef = useRef(null);
   const TitleComponent = component as any;
 
-  const divRef = React.useRef<HTMLDivElement>();
+  const divRef = useRef<HTMLDivElement>();
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
-  React.useEffect(() => {
+  useEffect(() => {
     if (!titleRef.current || !truncateTitle) {
       return;
     }
@@ -142,14 +142,14 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const [isMouseOver, setIsMouseOver] = useState<boolean | undefined>();
   const [containsFocus, setContainsFocus] = useState<boolean | undefined>();
   const dismissed = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
-  React.useEffect(() => {
+  useEffect(() => {
     const calculatedTimeout = timeout === true ? 8000 : Number(timeout);
     if (calculatedTimeout > 0) {
       const timer = setTimeout(() => setTimedOut(true), calculatedTimeout);
       return () => clearTimeout(timer);
     }
   }, [timeout]);
-  React.useEffect(() => {
+  useEffect(() => {
     const onDocumentFocus = () => {
       if (divRef.current) {
         if (divRef.current.contains(document.activeElement)) {
@@ -165,13 +165,13 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
 
     return () => document.removeEventListener('focus', onDocumentFocus, true);
   }, [containsFocus]);
-  React.useEffect(() => {
+  useEffect(() => {
     if (containsFocus === false || isMouseOver === false) {
       const timer = setTimeout(() => setTimedOutAnimation(true), timeoutAnimation);
       return () => clearTimeout(timer);
     }
   }, [containsFocus, isMouseOver, timeoutAnimation]);
-  React.useEffect(() => {
+  useEffect(() => {
     dismissed && onTimeout();
   }, [dismissed, onTimeout]);
 
@@ -180,13 +180,13 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     setIsExpanded(!isExpanded);
   };
 
-  const myOnMouseEnter = (ev: React.MouseEvent<HTMLDivElement>) => {
+  const myOnMouseEnter = (ev: MouseEvent<HTMLDivElement>) => {
     setIsMouseOver(true);
     setTimedOutAnimation(false);
     onMouseEnter(ev);
   };
 
-  const myOnMouseLeave = (ev: React.MouseEvent<HTMLDivElement>) => {
+  const myOnMouseLeave = (ev: MouseEvent<HTMLDivElement>) => {
     setIsMouseOver(false);
     onMouseLeave(ev);
   };

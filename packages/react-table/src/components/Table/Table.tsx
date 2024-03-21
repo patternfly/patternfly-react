@@ -1,4 +1,16 @@
-import * as React from 'react';
+import {
+  ReactNode,
+  Ref,
+  HTMLProps,
+  RefObject,
+  FunctionComponent,
+  MutableRefObject,
+  createContext,
+  useRef,
+  useState,
+  useEffect,
+  forwardRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
 import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
@@ -10,11 +22,11 @@ import { TableGridBreakpoint, TableVariant } from './TableTypes';
 
 export interface BaseCellProps {
   /** Content rendered inside the cell */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the cell  */
   className?: string;
   /** Element to render */
-  component?: React.ReactNode;
+  component?: ReactNode;
   /** Modifies cell to center its contents. */
   textCenter?: boolean;
   /** Style modifier to apply */
@@ -24,14 +36,14 @@ export interface BaseCellProps {
   /** Visibility breakpoint modifiers */
   visibility?: (keyof IVisibility)[];
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
 }
 
-export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps {
+export interface TableProps extends HTMLProps<HTMLTableElement>, OUIAProps {
   /** Adds an accessible name for the Table */
   'aria-label'?: string;
   /** Content rendered inside the Table */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the Table  */
   className?: string;
   /**
@@ -48,7 +60,7 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   /** If set to true, the table header sticks to the top of its container */
   isStickyHeader?: boolean;
   /** @hide Forwarded ref */
-  innerRef?: React.RefObject<any>;
+  innerRef?: RefObject<any>;
   /** Flag indicating table is a tree table */
   isTreeTable?: boolean;
   /** Flag indicating this table is nested within another table */
@@ -73,11 +85,11 @@ interface TableContextProps {
   registerSelectableRow?: () => void;
 }
 
-export const TableContext = React.createContext<TableContextProps>({
+export const TableContext = createContext<TableContextProps>({
   registerSelectableRow: () => {}
 });
 
-const TableBase: React.FunctionComponent<TableProps> = ({
+const TableBase: FunctionComponent<TableProps> = ({
   children,
   className,
   variant,
@@ -99,13 +111,13 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   selectableRowCaptionText,
   ...props
 }: TableProps) => {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const tableRef = innerRef || ref;
 
-  const [hasSelectableRows, setHasSelectableRows] = React.useState(false);
-  const [tableCaption, setTableCaption] = React.useState<JSX.Element | undefined>();
+  const [hasSelectableRows, setHasSelectableRows] = useState(false);
+  const [tableCaption, setTableCaption] = useState<JSX.Element | undefined>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener('keydown', handleKeys);
 
     // sets up roving tab-index to tree tables only
@@ -119,7 +131,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
     };
   }, [tableRef, tableRef.current]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (selectableRowCaptionText) {
       setTableCaption(
         <caption>
@@ -224,7 +236,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   );
 };
 
-export const Table = React.forwardRef((props: TableProps, ref: React.Ref<HTMLTableElement>) => (
-  <TableBase {...props} innerRef={ref as React.MutableRefObject<any>} />
+export const Table = forwardRef((props: TableProps, ref: Ref<HTMLTableElement>) => (
+  <TableBase {...props} innerRef={ref as MutableRefObject<any>} />
 ));
 Table.displayName = 'Table';

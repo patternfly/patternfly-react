@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FormEvent, SyntheticEvent, RefObject, createRef, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
 import { ContextSelectorToggle } from './ContextSelectorToggle';
@@ -11,7 +11,7 @@ import { SearchInput } from '../../../components/SearchInput';
 
 export interface ContextSelectorProps extends OUIAProps {
   /** content rendered inside the Context Selector */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classes applied to root element of Context Selector */
   className?: string;
   /** Flag to indicate if Context Selector is opened */
@@ -19,7 +19,7 @@ export interface ContextSelectorProps extends OUIAProps {
   /** Function callback called when user clicks toggle button */
   onToggle?: (event: any, value: boolean) => void;
   /** Function callback called when user selects item */
-  onSelect?: (event: any, value: React.ReactNode) => void;
+  onSelect?: (event: any, value: ReactNode) => void;
   /** The container to append the menu to. Defaults to 'inline'.
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
    * Some examples:
@@ -35,19 +35,19 @@ export interface ContextSelectorProps extends OUIAProps {
   /** Component or string that will be used in the context selector.
    * This prop is placed in a button, and cannot contain any interactive elements
    */
-  toggleText?: React.ReactNode;
+  toggleText?: ReactNode;
   /** Aria-label for the Context Selector Search Button */
   searchButtonAriaLabel?: string;
   /** Value in the Search field */
   searchInputValue?: string;
   /** Function callback called when user changes the Search Input */
-  onSearchInputChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
+  onSearchInputChange?: (event: FormEvent<HTMLInputElement>, value: string) => void;
   /** Search Input placeholder */
   searchInputPlaceholder?: string;
   /** Function callback for when Search Button is clicked */
-  onSearchButtonClick?: (event?: React.SyntheticEvent<HTMLButtonElement>) => void;
+  onSearchButtonClick?: (event?: SyntheticEvent<HTMLButtonElement>) => void;
   /** Footer of the context selector */
-  footer?: React.ReactNode;
+  footer?: ReactNode;
   /** Flag to indicate the toggle has no border or background */
   isPlain?: boolean;
   /** Flag to indicate if toggle is textual toggle */
@@ -71,10 +71,10 @@ export interface ContextSelectorProps extends OUIAProps {
   menuAriaLabel?: string;
 }
 
-class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
+class ContextSelector extends Component<ContextSelectorProps, { ouiaStateId: string }> {
   static displayName = 'ContextSelector';
   static defaultProps: ContextSelectorProps = {
-    children: null as React.ReactNode,
+    children: null as ReactNode,
     className: '',
     isOpen: false,
     onToggle: () => undefined as any,
@@ -89,7 +89,7 @@ class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateI
     menuAppendTo: 'inline',
     ouiaSafe: true,
     disableFocusTrap: false,
-    footer: null as React.ReactNode,
+    footer: null as ReactNode,
     isPlain: false,
     isText: false,
     isFlipEnabled: true,
@@ -102,8 +102,8 @@ class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateI
     };
   }
 
-  parentRef: React.RefObject<HTMLDivElement> = React.createRef();
-  popperRef: React.RefObject<HTMLDivElement> = React.createRef();
+  parentRef: RefObject<HTMLDivElement> = createRef();
+  popperRef: RefObject<HTMLDivElement> = createRef();
 
   render() {
     const {
@@ -151,7 +151,7 @@ class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateI
                 submitSearchButtonLabel={searchButtonAriaLabel}
                 placeholder={searchInputPlaceholder}
                 onChange={onSearchInputChange}
-                onSearch={(event: React.SyntheticEvent<HTMLButtonElement, Event>, _value: any, _: any) => {
+                onSearch={(event: SyntheticEvent<HTMLButtonElement, Event>, _value: any, _: any) => {
                   onSearchButtonClick(event);
                 }}
                 value={searchInputValue}

@@ -1,11 +1,11 @@
-import React from 'react';
+import { RefObject, Component, Fragment } from 'react';
 import { SimpleList, SimpleListGroup, SimpleListItem, SimpleListItemProps } from '@patternfly/react-core';
 
 interface SimpleListDemoState {
   activeItem: number | string;
 }
 
-export class SimpleListDemo extends React.Component<any, SimpleListDemoState> {
+export class SimpleListDemo extends Component<any, SimpleListDemoState> {
   static displayName = 'SimpleListDemo';
 
   constructor(props: SimpleListDemoState) {
@@ -23,7 +23,7 @@ export class SimpleListDemo extends React.Component<any, SimpleListDemoState> {
     const { activeItem } = this.state;
 
     return (
-      <React.Fragment>
+      <Fragment>
         <h2>Simple List</h2>
         <SimpleList id="simple-list-demo">
           <SimpleListItem isActive>Item 1</SimpleListItem>
@@ -49,7 +49,7 @@ export class SimpleListDemo extends React.Component<any, SimpleListDemoState> {
         <SimpleList
           id="simple-list-demo-uncontrolled"
           onSelect={(
-            ref: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
+            ref: RefObject<HTMLButtonElement> | RefObject<HTMLAnchorElement>,
             props: SimpleListItemProps
           ) => {
             this.setState({ activeItem: props.itemId });
@@ -66,7 +66,7 @@ export class SimpleListDemo extends React.Component<any, SimpleListDemoState> {
             Item 3
           </SimpleListItem>
         </SimpleList>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
