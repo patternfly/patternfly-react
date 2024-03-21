@@ -30,7 +30,7 @@ export interface GenerateIdProps {
   prefix?: string;
   /** Component to be rendered with the generated id */
   children(id: string): React.ReactNode;
-  /** Flag to prevent adding randomness to the generated id */
+  /** Flag to add randomness to the generated id, defaults to true */
   isRandom?: boolean;
 }
 
