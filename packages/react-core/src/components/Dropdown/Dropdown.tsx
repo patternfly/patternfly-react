@@ -144,6 +144,8 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
     };
   }, [isOpen, menuRef, toggleRef, onOpenChange, onOpenChangeKeys]);
 
+  const scrollable = maxMenuHeight !== undefined || menuHeight !== undefined || isScrollable;
+
   const menu = (
     <Menu
       className={css(className)}
@@ -153,7 +155,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
         shouldFocusToggleOnSelect && toggleRef.current.focus();
       }}
       isPlain={isPlain}
-      isScrollable={isScrollable}
+      isScrollable={scrollable}
       {...props}
       {...ouiaProps}
     >
