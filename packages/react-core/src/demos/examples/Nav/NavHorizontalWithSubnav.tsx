@@ -43,7 +43,7 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
-import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);

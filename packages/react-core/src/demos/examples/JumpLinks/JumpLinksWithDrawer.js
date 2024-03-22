@@ -20,7 +20,7 @@ import {
   getResizeObserver,
   DrawerContext
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
 
 const JumpLinksWrapper = ({ offsetHeight, headings }) => {
