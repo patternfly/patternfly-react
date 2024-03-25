@@ -87,7 +87,7 @@ Note: There is a new recommended drag and drop implementation with full keyboard
 
 Previously, draggable data lists had their own API for the [drag and drop component](/components/drag-and-drop), which wasn't flexible enough to allow custom styling for items as they are dragged. To address this disparity, `<DragDrop>`, `<Draggable>`, and `<Droppable>` components were added to replace our now deprecated HTML5-based API. Keyboard and screen reader accessibility for the `<DragDrop>` component is still in development.
 
-```ts isBeta file="./DataListDraggable.tsx"
+```ts isDeprecated file="./DataListDraggable.tsx"
 
 ```
 

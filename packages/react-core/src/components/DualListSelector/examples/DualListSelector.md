@@ -104,7 +104,7 @@ This example only allows reordering the contents of the "chosen" pane with drag 
 
 Keyboard and screen reader accessibility for the `<DragDrop>` component is still in development.
 
-```ts file="DualListSelectorComposableDragDrop.tsx"
+```ts isDeprecated file="DualListSelectorComposableDragDrop.tsx"
 
 ```
 
