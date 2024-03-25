@@ -79,7 +79,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   ...props
 }: CardHeaderProps) => (
   <CardContext.Consumer>
-    {({ cardId, isClickable, isSelectable, isSelectableInputHidden, isClicked, isDisabled: isCardDisabled }) => {
+    {({ cardId, isClickable, isSelectable, isClicked, isDisabled: isCardDisabled }) => {
       const cardHeaderToggle = (
         <div className={css(styles.cardHeaderToggle)}>
           <Button
@@ -118,7 +118,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
       const getClickableSelectableProps = () => {
         const baseProps = {
           className: 'pf-m-standalone',
-          inputClassName: ((isClickable && !isSelectable) || isSelectableInputHidden) && 'pf-v6-screen-reader',
+          inputClassName: isClickable && !isSelectable && 'pf-v6-screen-reader',
           label: <></>,
           'aria-label': selectableActions.selectableActionAriaLabel,
           'aria-labelledby': selectableActions.selectableActionAriaLabelledby,

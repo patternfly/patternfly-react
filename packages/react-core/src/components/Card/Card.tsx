@@ -16,8 +16,6 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isCompact?: boolean;
   /** Flag indicating that the card is selectable. */
   isSelectable?: boolean;
-  /** Flag indicating whether the input of a selectable card should be visually hidden. */
-  isSelectableInputHidden?: boolean;
   /** Flag indicating that the card is clickable and contains some action that triggers on click. */
   isClickable?: boolean;
   /** Flag indicating whether a card that is both clickable and selectable is currently selected and has selected styling.
@@ -51,7 +49,6 @@ interface CardContextProps {
   isExpanded: boolean;
   isClickable: boolean;
   isSelectable: boolean;
-  isSelectableInputHidden: boolean;
   isClicked: boolean;
   isDisabled: boolean;
 }
@@ -61,7 +58,6 @@ export const CardContext = React.createContext<Partial<CardContextProps>>({
   isExpanded: false,
   isClickable: false,
   isSelectable: false,
-  isSelectableInputHidden: false,
   isClicked: false,
   isDisabled: false
 });
@@ -73,7 +69,6 @@ export const Card: React.FunctionComponent<CardProps> = ({
   component = 'div',
   isCompact = false,
   isSelectable = false,
-  isSelectableInputHidden = false,
   isClickable = false,
   isDisabled = false,
   isSelected = false,
@@ -95,12 +90,6 @@ export const Card: React.FunctionComponent<CardProps> = ({
     // eslint-disable-next-line no-console
     console.warn('Card: Cannot use isCompact with isLarge. Defaulting to isCompact');
     isLarge = false;
-  }
-  if (isSelectableInputHidden && isClickable && isSelectable) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      'Card: Cannot set isSelectableInputHidden to true if the card is both selectable and clickable. Doing so would prevent selection.'
-    );
   }
 
   const getSelectableModifiers = () => {
@@ -130,7 +119,6 @@ export const Card: React.FunctionComponent<CardProps> = ({
         isExpanded,
         isClickable,
         isSelectable,
-        isSelectableInputHidden,
         isClicked,
         isDisabled
       }}
