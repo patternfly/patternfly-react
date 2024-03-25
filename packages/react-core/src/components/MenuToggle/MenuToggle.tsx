@@ -144,7 +144,6 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
             styles.modifiers.splitButton,
             splitButtonOptions?.variant === 'action' && styles.modifiers.action
           )}
-          onClick={onClick}
         >
           {splitButtonOptions?.items}
           <button

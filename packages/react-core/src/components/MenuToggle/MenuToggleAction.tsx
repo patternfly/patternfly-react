@@ -30,10 +30,7 @@ class MenuToggleAction extends React.Component<MenuToggleActionProps> {
       <button
         id={id}
         className={css(styles.menuToggleButton, className)}
-        onClick={(evt) => {
-          evt.stopPropagation();
-          onClick(evt);
-        }}
+        onClick={onClick}
         type="button"
         disabled={isDisabled}
         {...props}
