@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.12...@patternfly/react-core@5.3.0-prerelease.13) (2024-03-25)
+
+### Bug Fixes
+
+- **docs:** fix undefined dashboard wrapper error in demos ([#10191](https://github.com/patternfly/patternfly-react/issues/10191)) ([3b1987a](https://github.com/patternfly/patternfly-react/commit/3b1987a7991c2f8ce596a30ac094bc0aa7eb3b1f))
+
 # [5.3.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.11...@patternfly/react-core@5.3.0-prerelease.12) (2024-03-22)
 
 **Note:** Version bump only for package @patternfly/react-core
