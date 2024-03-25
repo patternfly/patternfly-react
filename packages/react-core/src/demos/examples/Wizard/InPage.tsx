@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageSection, PageSectionTypes, PageSectionVariants, Wizard, WizardStep } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 export const WizardFullPage: React.FunctionComponent = () => (
   <React.Fragment>
