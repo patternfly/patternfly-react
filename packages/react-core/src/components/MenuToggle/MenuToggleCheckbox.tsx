@@ -84,7 +84,7 @@ class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps, { ouia
       </span>
     );
     return (
-      <label className={css(styles.check, !children && styles.modifiers.standalone, className)} htmlFor={id}>
+      <label className={css(styles.check, !children && styles.modifiers.standalone, className)}>
         <input
           className={css(styles.checkInput)}
           {...(this.calculateChecked() !== undefined && { onChange: this.handleChange })}
@@ -93,7 +93,7 @@ class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps, { ouia
           ref={(elem) => elem && (elem.indeterminate = isChecked === null)}
           aria-invalid={!isValid}
           disabled={isDisabled}
-          {...(defaultChecked !== undefined ? { defaultChecked } : { checked: isChecked })}
+          {...(defaultChecked !== undefined ? { defaultChecked } : { checked: this.calculateChecked() })}
           {...getOUIAProps(
             MenuToggleCheckbox.displayName,
             ouiaId !== undefined ? ouiaId : this.state.ouiaStateId,
