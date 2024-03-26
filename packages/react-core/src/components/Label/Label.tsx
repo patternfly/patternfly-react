@@ -20,6 +20,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   variant?: 'outline' | 'filled';
   /** Flag indicating the label is compact. */
   isCompact?: boolean;
+  /** Flag indicating the label is disabled. Works only on clickable labels, so either href or onClick props must be passed in. */
+  isDisabled?: boolean;
   /** @beta Flag indicating the label is editable. */
   isEditable?: boolean;
   /** @beta Additional props passed to the editable label text div. Optionally passing onInput and onBlur callbacks will allow finer custom text input control. */
@@ -91,6 +93,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   color = 'grey',
   variant = 'filled',
   isCompact = false,
+  isDisabled = false,
   isEditable = false,
   editableProps,
   textMaxWidth,
@@ -198,7 +201,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     }
   };
 
-  const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
+  const isClickableDisabled = (href || onLabelClick) && isDisabled;
 
   const defaultCloseButton = (
     <Button
@@ -206,6 +209,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       variant="plain"
       onClick={onClose}
       aria-label={closeBtnAriaLabel || `Close ${children}`}
+      {...(isClickableDisabled && { isDisabled: true })}
       {...closeBtnProps}
     >
       <TimesIcon />
@@ -276,7 +280,9 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         e.stopPropagation();
       },
       ...editableProps
-    })
+    }),
+    ...(isClickableDisabled && isButton && { disabled: true }),
+    ...(isClickableDisabled && href && { tabindex: -1, 'aria-disabled': true })
   };
 
   let labelComponentChild = (
@@ -302,11 +308,14 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     );
   }
 
+  const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
+
   return (
     <LabelComponent
       {...props}
       className={css(
         styles.label,
+        isClickableDisabled && 'pf-m-disabled',
         colorStyles[color],
         variant === 'outline' && styles.modifiers.outline,
         isOverflowLabel && styles.modifiers.overflow,
