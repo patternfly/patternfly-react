@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.3.0-prerelease.14 (2024-03-26)
+
+### Bug Fixes
+
+- **ClipboardCopy:** warn when clipboard API is unavailable ([#10186](https://github.com/patternfly/patternfly-react/issues/10186)) ([38736a1](https://github.com/patternfly/patternfly-react/commit/38736a1e6b827aacc6a70e72cb36ff9457b99b42))
+- **MenuToggle:** fix indeterminate checkbox error, toggle click behavior ([#10066](https://github.com/patternfly/patternfly-react/issues/10066)) ([132939e](https://github.com/patternfly/patternfly-react/commit/132939eb64859a4051dd2c7948829e39e57fa56d))
+- **Table:** updated a11y for empty/nontext Th components ([#10152](https://github.com/patternfly/patternfly-react/issues/10152)) ([48d8140](https://github.com/patternfly/patternfly-react/commit/48d8140d5ecd1d467b88c573cffbd86183dce898))
+
 # [5.3.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.12...@patternfly/react-core@5.3.0-prerelease.13) (2024-03-25)
 
 ### Bug Fixes

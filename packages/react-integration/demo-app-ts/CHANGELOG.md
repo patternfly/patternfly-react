@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.1-prerelease.88 (2024-03-26)
+
+### Bug Fixes
+
+- **Table:** updated a11y for empty/nontext Th components ([#10152](https://github.com/patternfly/patternfly-react/issues/10152)) ([48d8140](https://github.com/patternfly/patternfly-react/commit/48d8140d5ecd1d467b88c573cffbd86183dce898))
+
 ## [5.1.1-prerelease.87](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.86...demo-app-ts@5.1.1-prerelease.87) (2024-03-25)
 
 **Note:** Version bump only for package demo-app-ts

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.3.0-prerelease.15 (2024-03-26)
+
+### Bug Fixes
+
+- **Table:** added ActionsColumn prop to control close on click ([#10179](https://github.com/patternfly/patternfly-react/issues/10179)) ([cbbfcf4](https://github.com/patternfly/patternfly-react/commit/cbbfcf46caab3459c3c19af6256cafda3f5b40df))
+- **TableSortableResponsive demo:** end page number ([#10170](https://github.com/patternfly/patternfly-react/issues/10170)) ([b1b8706](https://github.com/patternfly/patternfly-react/commit/b1b8706680dfd161f06c3377830426e9b20aed94))
+- **Table:** updated a11y for empty/nontext Th components ([#10152](https://github.com/patternfly/patternfly-react/issues/10152)) ([48d8140](https://github.com/patternfly/patternfly-react/commit/48d8140d5ecd1d467b88c573cffbd86183dce898))
+
 # [5.3.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.3.0-prerelease.13...@patternfly/react-table@5.3.0-prerelease.14) (2024-03-25)
 
 **Note:** Version bump only for package @patternfly/react-table
