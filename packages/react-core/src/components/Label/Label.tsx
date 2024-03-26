@@ -200,7 +200,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 
   const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
 
-  const defaultButton = (
+  const defaultCloseButton = (
     <Button
       type="button"
       variant="plain"
@@ -212,7 +212,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     </Button>
   );
 
-  const button = <span className={css(styles.labelActions)}>{closeBtn || defaultButton}</span>;
+  const closeButton = <span className={css(styles.labelActions)}>{closeBtn || defaultCloseButton}</span>;
   const textRef = React.createRef<any>();
   // ref to apply tooltip when rendered is used
   const componentRef = React.useRef();
@@ -318,7 +318,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       onClick={isOverflowLabel ? onLabelClick : undefined}
     >
       {!isEditableActive && labelComponentChild}
-      {!isEditableActive && onClose && button}
+      {!isEditableActive && onClose && closeButton}
       {isEditableActive && (
         <input
           className={css(styles.labelContent)}
