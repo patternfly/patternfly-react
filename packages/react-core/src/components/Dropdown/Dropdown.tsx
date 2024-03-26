@@ -65,6 +65,10 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   zIndex?: number;
   /** Additional properties to pass to the Popper */
   popperProps?: DropdownPopperProps;
+  /** Height of the dropdown menu */
+  menuHeight?: string;
+  /** Maximum height of dropdown menu */
+  maxMenuHeight?: string;
 }
 
 const DropdownBase: React.FunctionComponent<DropdownProps> = ({
@@ -83,6 +87,8 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   zIndex = 9999,
   popperProps,
   onOpenChangeKeys = ['Escape', 'Tab'],
+  menuHeight,
+  maxMenuHeight,
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -138,6 +144,8 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
     };
   }, [isOpen, menuRef, toggleRef, onOpenChange, onOpenChangeKeys]);
 
+  const scrollable = maxMenuHeight !== undefined || menuHeight !== undefined || isScrollable;
+
   const menu = (
     <Menu
       className={css(className)}
@@ -147,11 +155,13 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
         shouldFocusToggleOnSelect && toggleRef.current.focus();
       }}
       isPlain={isPlain}
-      isScrollable={isScrollable}
+      isScrollable={scrollable}
       {...props}
       {...ouiaProps}
     >
-      <MenuContent>{children}</MenuContent>
+      <MenuContent menuHeight={menuHeight} maxMenuHeight={maxMenuHeight}>
+        {children}
+      </MenuContent>
     </Menu>
   );
   return (
