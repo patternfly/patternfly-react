@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.15...@patternfly/react-core@5.3.0-prerelease.16) (2024-03-26)
+
+### Features
+
+- **Dropdown:** Added support for setting height for dropdown ([#10149](https://github.com/patternfly/patternfly-react/issues/10149)) ([9db5e7b](https://github.com/patternfly/patternfly-react/commit/9db5e7bda682eb034c1efb0998db9256d4b150c7))
+
 # 5.3.0-prerelease.15 (2024-03-26)
 
 ### Bug Fixes
