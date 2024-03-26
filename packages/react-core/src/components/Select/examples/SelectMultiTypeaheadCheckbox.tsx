@@ -44,7 +44,12 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
       // When no options are found after filtering, display 'No results found'
       if (!newSelectOptions.length) {
         newSelectOptions = [
-          { isDisabled: false, children: `No results found for "${inputValue}"`, value: 'no results' }
+          {
+            isDisabled: false,
+            children: `No results found for "${inputValue}"`,
+            value: 'no results',
+            hasCheckbox: false
+          }
         ];
       }
 
