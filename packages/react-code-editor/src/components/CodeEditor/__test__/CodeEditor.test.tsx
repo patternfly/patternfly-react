@@ -5,7 +5,6 @@ import styles from '@patternfly/react-styles/css/components/CodeEditor/code-edit
 import fileUploadStyles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
 
 jest.mock('@monaco-editor/react', () => jest.fn(() => <div data-testid="mock-editor"></div>));
-jest.mock('monaco-editor/esm/vs/editor/editor.api', () => jest.fn(() => {}));
 
 test('Matches snapshot without props', () => {
   const { asFragment } = render(<CodeEditor code="test" />);
