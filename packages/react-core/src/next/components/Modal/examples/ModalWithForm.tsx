@@ -1,8 +1,6 @@
 import React from 'react';
-import { Button, Form, FormGroup, Popover, TextInput } from '@patternfly/react-core';
+import { Button, Form, FormGroup, FormGroupLabelHelp, Popover, TextInput } from '@patternfly/react-core';
 import { Modal, ModalBody, ModalFooter, ModalHeader, ModalVariant } from '@patternfly/react-core/next';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
 export const ModalWithForm: React.FunctionComponent = () => {
   const [isModalOpen, setModalOpen] = React.useState(false);
@@ -47,7 +45,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
           <Form id="modal-with-form-form">
             <FormGroup
               label="Name"
-              labelIcon={
+              labelHelp={
                 <Popover
                   headerContent={
                     <div>
@@ -75,15 +73,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                     </div>
                   }
                 >
-                  <button
-                    type="button"
-                    aria-label="More info for name field"
-                    onClick={(e) => e.preventDefault()}
-                    aria-describedby="modal-with-form-form-name"
-                    className={formStyles.formGroupLabelHelp}
-                  >
-                    <HelpIcon />
-                  </button>
+                  <FormGroupLabelHelp aria-label="More info for name field" />
                 </Popover>
               }
               isRequired
@@ -100,7 +90,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
             </FormGroup>
             <FormGroup
               label="E-mail"
-              labelIcon={
+              labelHelp={
                 <Popover
                   headerContent={
                     <div>
@@ -124,15 +114,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                     </div>
                   }
                 >
-                  <button
-                    type="button"
-                    aria-label="More info for e-mail field"
-                    onClick={(e) => e.preventDefault()}
-                    aria-describedby="modal-with-form-form-email"
-                    className={formStyles.formGroupLabelHelp}
-                  >
-                    <HelpIcon />
-                  </button>
+                  <FormGroupLabelHelp aria-label="More info for e-mail field" />
                 </Popover>
               }
               isRequired
@@ -149,7 +131,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
             </FormGroup>
             <FormGroup
               label="Address"
-              labelIcon={
+              labelHelp={
                 <Popover
                   headerContent={
                     <div>
@@ -172,15 +154,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                     </div>
                   }
                 >
-                  <button
-                    type="button"
-                    aria-label="More info for address field"
-                    onClick={(e) => e.preventDefault()}
-                    aria-describedby="modal-with-form-form-address"
-                    className={formStyles.formGroupLabelHelp}
-                  >
-                    <HelpIcon />
-                  </button>
+                  <FormGroupLabelHelp aria-label="More info for address field" />
                 </Popover>
               }
               isRequired

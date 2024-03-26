@@ -42,31 +42,6 @@ exports[`Radio isDisabled 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Radio isLabelBeforeButton 1`] = `
-<DocumentFragment>
-  <div
-    class="pf-v6-c-radio"
-  >
-    <label
-      class="pf-v6-c-radio__label"
-      for="check"
-    >
-      Radio label
-    </label>
-    <input
-      aria-invalid="false"
-      class="pf-v6-c-radio__input"
-      data-ouia-component-id="OUIA-Generated-Radio-4"
-      data-ouia-component-type="PF5/Radio"
-      data-ouia-safe="true"
-      id="check"
-      name="check"
-      type="radio"
-    />
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Radio isLabelWrapped 1`] = `
 <DocumentFragment>
   <label
@@ -170,6 +145,31 @@ exports[`Radio label is string 1`] = `
     >
       Label
     </label>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Radio labelPosition is "start" 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-radio"
+  >
+    <label
+      class="pf-v6-c-radio__label"
+      for="check"
+    >
+      Radio label
+    </label>
+    <input
+      aria-invalid="false"
+      class="pf-v6-c-radio__input"
+      data-ouia-component-id="OUIA-Generated-Radio-4"
+      data-ouia-component-type="PF5/Radio"
+      data-ouia-safe="true"
+      id="check"
+      name="check"
+      type="radio"
+    />
   </div>
 </DocumentFragment>
 `;

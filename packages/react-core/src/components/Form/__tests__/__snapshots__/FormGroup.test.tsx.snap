@@ -20,7 +20,7 @@ exports[`FormGroup should render correctly when label is not a string with Child
           </div>
         </span>
       </label>
-       
+        
     </div>
     <div
       class="pf-v6-c-form__group-control"
@@ -55,7 +55,7 @@ exports[`FormGroup should render default form group variant 1`] = `
           label
         </span>
       </label>
-       
+        
     </div>
     <div
       class="pf-v6-c-form__group-control"
@@ -88,7 +88,7 @@ exports[`FormGroup should render form group variant with node label 1`] = `
           </h1>
         </span>
       </label>
-       
+        
     </div>
     <div
       class="pf-v6-c-form__group-control"
@@ -125,7 +125,7 @@ exports[`FormGroup should render form group variant with required label 1`] = `
            *
         </span>
       </label>
-       
+        
     </div>
     <div
       class="pf-v6-c-form__group-control"
@@ -177,7 +177,7 @@ exports[`FormGroup should render form group with additonal label info 1`] = `
             </h1>
           </span>
         </label>
-         
+          
       </div>
       <div
         class="pf-v6-c-form__group-label-info"
@@ -218,7 +218,7 @@ exports[`FormGroup should render horizontal form group variant 1`] = `
             label
           </span>
         </label>
-         
+          
       </div>
       <div
         class="pf-v6-c-form__group-control"
@@ -254,7 +254,7 @@ exports[`FormGroup should render stacked horizontal form group variant 1`] = `
             label
           </span>
         </label>
-         
+          
       </div>
       <div
         class="pf-v6-c-form__group-control pf-m-stack"

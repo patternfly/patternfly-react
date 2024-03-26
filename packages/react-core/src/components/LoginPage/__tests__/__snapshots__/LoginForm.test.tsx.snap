@@ -28,7 +28,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
              *
           </span>
         </label>
-         
+          
       </div>
       <div
         class="pf-v6-c-form__group-control"
@@ -72,7 +72,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
              *
           </span>
         </label>
-         
+          
       </div>
       <div
         class="pf-v6-c-form__group-control"
@@ -175,7 +175,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
              *
           </span>
         </label>
-         
+          
       </div>
       <div
         class="pf-v6-c-form__group-control"
@@ -219,7 +219,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
              *
           </span>
         </label>
-         
+          
       </div>
       <div
         class="pf-v6-c-form__group-control"
@@ -330,7 +330,7 @@ exports[`LoginForm should render Login form 1`] = `
              *
           </span>
         </label>
-         
+          
       </div>
       <div
         class="pf-v6-c-form__group-control"
@@ -374,7 +374,7 @@ exports[`LoginForm should render Login form 1`] = `
              *
           </span>
         </label>
-         
+          
       </div>
       <div
         class="pf-v6-c-form__group-control"

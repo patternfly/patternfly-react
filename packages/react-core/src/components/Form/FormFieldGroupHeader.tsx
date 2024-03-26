@@ -2,15 +2,12 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 
-// typo - rename to FormFieldGroupHeaderTitleTextObject during breaking change release
-export interface FormFiledGroupHeaderTitleTextObject {
+export interface FormFieldGroupHeaderTitleTextObject {
   /** Title text. */
   text: React.ReactNode;
-  /** The applied to the title div for accessibility */
+  /** The id applied to the title div for accessibility */
   id: string;
 }
-
-export interface FormFieldGroupHeaderTitleTextObject extends FormFiledGroupHeaderTitleTextObject {}
 
 export interface FormFieldGroupHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the section */

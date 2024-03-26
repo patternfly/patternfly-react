@@ -3,6 +3,7 @@ import {
   Divider,
   Form,
   FormGroup,
+  FormGroupLabelHelp,
   FormProps,
   FormSection,
   TextInput,
@@ -15,8 +16,6 @@ import {
 } from '@patternfly/react-core';
 import { Select, SelectOption, SelectOptionObject, SelectVariant } from '@patternfly/react-core/deprecated';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import styles from '@patternfly/react-styles/css/components/Form/form';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 export interface FormState {
@@ -113,7 +112,7 @@ export class FormDemo extends Component<FormProps, FormState> {
             id="form-group-age"
             label="Age"
             labelInfo="Age info"
-            labelIcon={
+            labelHelp={
               <Popover
                 headerContent={<div>The age of a person</div>}
                 bodyContent={
@@ -123,15 +122,7 @@ export class FormDemo extends Component<FormProps, FormState> {
                   </div>
                 }
               >
-                <button
-                  id="helper-text-target"
-                  aria-label="More info for name field"
-                  onClick={(e) => e.preventDefault()}
-                  aria-describedby="simple-form-name"
-                  className={styles.formGroupLabelHelp}
-                >
-                  <HelpIcon />
-                </button>
+                <FormGroupLabelHelp aria-label="More info for name field" />
               </Popover>
             }
             type="number"
