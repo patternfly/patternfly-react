@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.3.0-prerelease.15 (2024-03-26)
+
+**Note:** Version bump only for package @patternfly/react-drag-drop
+
 # 5.3.0-prerelease.14 (2024-03-26)
 
 **Note:** Version bump only for package @patternfly/react-drag-drop

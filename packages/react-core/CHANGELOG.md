@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.3.0-prerelease.15 (2024-03-26)
+
+### Bug Fixes
+
+- **misc:** demos not working due to variables not defined ([#10169](https://github.com/patternfly/patternfly-react/issues/10169)) ([e045572](https://github.com/patternfly/patternfly-react/commit/e045572e9ce326585e929fc4e2eb35e15d2b2d1b))
+
 # 5.3.0-prerelease.14 (2024-03-26)
 
 ### Bug Fixes
