@@ -271,7 +271,7 @@ To create a multiple typeahead toggle, pass a `<TextInputGroup>` component imple
 
 ### Status toggle
 
-To create a toggle with a status, pass in `status` to the `MenuToggle`. The default icon associated with each status may be overridden by using the `statusIcon` property.
+To create a toggle with a status, pass in the `status` property to the `MenuToggle`. The default icon associated with each status may be overridden by using the `statusIcon` property.
 
 When the status value is "warning" or "danger", you must include helper text that conveys what is causing the warning/error.
 
