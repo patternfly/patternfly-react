@@ -15,6 +15,8 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 Select builds off of the menu component suite to adapt commonly used properties and functions to create a select menu. See the [menu documentation](/components/menus/menu) for a full list of properties that may be used to further customize a select menu. View the [custom menu examples](/components/menus/custom-menus) to see examples of fully functional select menus.
 
+For use cases that do not require a lot of customization, there are various template components available to use in the `@react-templates` package. These templates have a streamlined API and logic, making them easier to set up and use, but are limited in scope and flexibility. See the [templates page](/components/menus/select/react-templates) for details.
+
 ### Single select
 To let users select a single item from a list, use a single select menu.
 
