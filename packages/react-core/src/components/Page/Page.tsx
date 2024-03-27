@@ -295,12 +295,13 @@ class Page extends React.Component<PageProps, PageState> {
     const Component: keyof JSX.IntrinsicElements = mainComponent;
 
     const main = (
-      <div className={css(styles.pageMainContainer)} tabIndex={mainTabIndex}>
+      <div className={css(styles.pageMainContainer)}>
         <Component
           ref={this.mainRef}
           role={role}
           id={mainContainerId}
           className={css(styles.pageMain)}
+          tabIndex={mainTabIndex}
           aria-label={mainAriaLabel}
         >
           {group}
