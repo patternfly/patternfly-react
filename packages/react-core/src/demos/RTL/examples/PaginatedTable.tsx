@@ -58,10 +58,22 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import HandPaperIcon from '@patternfly/react-icons/dist/esm/icons/hand-paper-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
-export const PaginatedTableAction = () => {
-  const [translation, setTranslation] = React.useState(translationsEn);
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
+interface Row {
+  name: string;
+  status: string;
+  location: string;
+  lastModified: string;
+  url: string;
+}
+
+interface Translation {
+  [key: string]: any;
+}
+
+export const PaginatedTableAction: React.FunctionComponent = () => {
+  const [translation, setTranslation] = React.useState<Translation>(translationsEn);
+  const [page, setPage] = React.useState<number>(1);
+  const [perPage, setPerPage] = React.useState<number>(10);
 
   const columns = [
     translation.table.columns.servers,
@@ -71,13 +83,13 @@ export const PaginatedTableAction = () => {
     translation.table.columns.url
   ];
 
-  const numRows = 25;
-  const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  const numRows: number = 25;
+  const getRandomInteger = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
   const createRows = () => {
-    const rows = [];
+    const rows: Row[] = [];
     for (let i = 0; i < numRows; i++) {
       const num = i + 1;
-      const rowObj = {
+      const rowObj: Row = {
         name: translation.table.rows.node + num,
         status: [
           translation.table.rows.status.stopped,
@@ -110,14 +122,14 @@ export const PaginatedTableAction = () => {
 
   const rows = createRows();
   const [managedRows, setManagedRows] = React.useState(rows);
-  const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
-  const [isDirRTL, setIsDirRTL] = React.useState(false);
+  const [paginatedRows, setPaginatedRows] = React.useState<Row[]>(rows.slice(0, 10));
+  const [isDirRTL, setIsDirRTL] = React.useState<boolean>(false);
 
-  const capitalize = (input) => input[0].toUpperCase() + input.substring(1);
+  const capitalize = (input: string) => input[0].toUpperCase() + input.substring(1);
 
   const switchTranslation = () => {
     setIsDirRTL((prevIsDirRTL) => !prevIsDirRTL);
-    setTranslation((prevTranslation) => (prevTranslation === translationsEn ? translationsHe : translationsEn));
+    setTranslation((prevTranslation: string) => (prevTranslation === translationsEn ? translationsHe : translationsEn));
   };
 
   React.useEffect(() => {
@@ -133,17 +145,29 @@ export const PaginatedTableAction = () => {
 
   // Pagination logic
 
-  const handleSetPage = (_evt, newPage, _perPage, startIdx, endIdx) => {
+  const handleSetPage = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPage: number,
+    _perPage: number | undefined,
+    startIdx: number | undefined,
+    endIdx: number | undefined
+  ) => {
     setPaginatedRows(managedRows.slice(startIdx, endIdx));
     setPage(newPage);
   };
 
-  const handlePerPageSelect = (_evt, newPerPage, _newPage, startIdx, endIdx) => {
+  const handlePerPageSelect = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPerPage: number,
+    _newPage: number,
+    startIdx: number | undefined,
+    endIdx: number | undefined
+  ) => {
     setPaginatedRows(managedRows.slice(startIdx, endIdx));
     setPerPage(newPerPage);
   };
 
-  const renderPagination = (variant) => {
+  const renderPagination = (variant: PaginationVariant) => {
     const { pagination } = translation;
 
     return (
@@ -181,7 +205,7 @@ export const PaginatedTableAction = () => {
     }
   };
 
-  const renderLabel = (labelText) => {
+  const renderLabel = (labelText: string) => {
     switch (labelText) {
       case 'Running':
       case 'רץ':
@@ -280,9 +304,9 @@ export const PaginatedTableAction = () => {
     </PageSidebar>
   );
 
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
-  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState<boolean>(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState<boolean>(false);
 
   const kebabDropdownItems = (
     <>
@@ -434,15 +458,17 @@ export const PaginatedTableAction = () => {
     </Masthead>
   );
 
+  const breadcrumbItemsLength = Object.keys(breadcrumbItems).length;
+
   return (
     <React.Fragment>
       <Page sidebar={sidebar} header={masthead} isManagedSidebar>
         <PageBreadcrumb>
           <Breadcrumb aria-label={translation.breadcrumbs.ariaLabel || undefined}>
-            {Object.keys(breadcrumbItems).map((key, idx, arr) => (
+            {Object.keys(breadcrumbItems).map((key: string, idx: number, arr: string[]) => (
               <BreadcrumbItem key={idx} isActive={arr.length - 1 === idx} to={`${breadcrumbItems[key].url}`}>
                 {translation.breadcrumbs[key]}
-                {breadcrumbItems.length}
+                {breadcrumbItemsLength}
               </BreadcrumbItem>
             ))}
           </Breadcrumb>
@@ -465,7 +491,7 @@ export const PaginatedTableAction = () => {
                 </Tr>
               </Thead>
               <Tbody>
-                {paginatedRows.map((row, rowIndex) => (
+                {paginatedRows.map((row: Row, rowIndex: number) => (
                   <Tr key={rowIndex}>
                     <>
                       {Object.entries(row).map(([key, value]) => {
