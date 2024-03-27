@@ -15,6 +15,7 @@ import pfIcon from '../assets/pf-logo-small.svg';
 import pfLogo from '../assets/pf-logo.svg';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import { Link } from '@reach/router';
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 ## Demos
 
