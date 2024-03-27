@@ -10,7 +10,8 @@ import {
   DrawerCloseButton,
   DrawerSection,
   Button,
-  DrawerColorVariant
+  DrawerColorVariant,
+  DrawerContentColorVariant
 } from '@patternfly/react-core';
 
 export const DrawerSecondaryBackground: React.FunctionComponent = () => {
@@ -96,7 +97,7 @@ export const DrawerSecondaryBackground: React.FunctionComponent = () => {
           drawer-section
         </DrawerSection>
         <DrawerContent
-          colorVariant={contentSecondary ? DrawerColorVariant.secondary : DrawerColorVariant.default}
+          colorVariant={contentSecondary ? DrawerContentColorVariant.secondary : DrawerContentColorVariant.default}
           panelContent={panelContent}
         >
           <DrawerContentBody>{drawerContent}</DrawerContentBody>

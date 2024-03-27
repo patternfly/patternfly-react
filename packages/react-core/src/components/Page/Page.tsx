@@ -295,19 +295,21 @@ class Page extends React.Component<PageProps, PageState> {
     const Component: keyof JSX.IntrinsicElements = mainComponent;
 
     const main = (
-      <Component
-        ref={this.mainRef}
-        role={role}
-        id={mainContainerId}
-        className={css(styles.pageMain)}
-        tabIndex={mainTabIndex}
-        aria-label={mainAriaLabel}
-      >
-        {group}
-        {!isHorizontalSubnavGrouped && nav}
-        {!isBreadcrumbGrouped && crumb}
-        {children}
-      </Component>
+      <div className={css(styles.pageMainContainer)}>
+        <Component
+          ref={this.mainRef}
+          role={role}
+          id={mainContainerId}
+          className={css(styles.pageMain)}
+          tabIndex={mainTabIndex}
+          aria-label={mainAriaLabel}
+        >
+          {group}
+          {!isHorizontalSubnavGrouped && nav}
+          {!isBreadcrumbGrouped && crumb}
+          {children}
+        </Component>
+      </div>
     );
 
     const panelContent = <DrawerPanelContent>{notificationDrawer}</DrawerPanelContent>;
