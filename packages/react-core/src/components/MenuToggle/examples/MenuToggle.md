@@ -53,14 +53,16 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ### With a badge
 
-To display a count of selected items in a toggle, use the `badge` property.
+To display a count of selected items in a toggle, use the `badge` property. You can also pass in `variant="plainText"` for a badge only toggle.
 
 ```ts
 import React from 'react';
 import { MenuToggle, Badge } from '@patternfly/react-core';
 
-<MenuToggle badge={<Badge>4 selected</Badge>}>Count</MenuToggle>
-
+<React.Fragment>
+  <MenuToggle badge={<Badge>4 selected</Badge>}>Count</MenuToggle>
+  <MenuToggle variant="plainText" badge={<Badge screenReaderText="additional items">4</Badge>} />
+</React.Fragment>
 ```
 
 ### With icons

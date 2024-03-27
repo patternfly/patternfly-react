@@ -12,7 +12,6 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 const dropdownItems = [
   <DropdownItem
@@ -66,14 +65,17 @@ export const BreadcrumbDropdown: React.FunctionComponent = () => {
           onSelect={onSelect}
           onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-            <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen} variant="plain">
-              <Badge isRead screenReaderText="additional items">
-                {dropdownItems.length}{' '}
-                <span>
-                  <CaretDownIcon />
-                </span>
-              </Badge>
-            </MenuToggle>
+            <MenuToggle
+              badge={
+                <Badge isRead screenReaderText="additional items">
+                  {dropdownItems.length}
+                </Badge>
+              }
+              ref={toggleRef}
+              onClick={onToggle}
+              isExpanded={isOpen}
+              variant="plainText"
+            />
           )}
           isOpen={isOpen}
         >
