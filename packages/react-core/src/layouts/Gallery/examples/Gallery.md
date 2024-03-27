@@ -1,6 +1,6 @@
 ---
 id: Gallery
-cssPrefix: pf-v5-l-gallery
+cssPrefix: pf-v6-l-gallery
 section: layouts
 propComponents: ['Gallery', 'GalleryItem']
 ---
@@ -129,11 +129,11 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
-<Gallery component='ul'>
-  <GalleryItem component='li'>Gallery item</GalleryItem>
-  <GalleryItem component='li'>Gallery item</GalleryItem>
-  <GalleryItem component='li'>Gallery item</GalleryItem>
-  <GalleryItem component='li'>Gallery item</GalleryItem>
-  <GalleryItem component='li'>Gallery item</GalleryItem>
-</Gallery>
+<Gallery component="ul">
+  <GalleryItem component="li">Gallery item</GalleryItem>
+  <GalleryItem component="li">Gallery item</GalleryItem>
+  <GalleryItem component="li">Gallery item</GalleryItem>
+  <GalleryItem component="li">Gallery item</GalleryItem>
+  <GalleryItem component="li">Gallery item</GalleryItem>
+</Gallery>;
 ```

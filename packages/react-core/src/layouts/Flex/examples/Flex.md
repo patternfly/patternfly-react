@@ -1,6 +1,6 @@
 ---
 id: Flex
-cssPrefix: pf-v5-l-flex
+cssPrefix: pf-v6-l-flex
 section: layouts
 propComponents: ['Flex', 'FlexItem']
 ---

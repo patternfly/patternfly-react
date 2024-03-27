@@ -1,6 +1,6 @@
 ---
 id: Split
-cssPrefix: pf-v5-l-split
+cssPrefix: pf-v6-l-split
 section: layouts
 propComponents: ['Split', 'SplitItem']
 ---
@@ -8,7 +8,9 @@ propComponents: ['Split', 'SplitItem']
 import './split.css';
 
 ## Examples
+
 ### Basic
+
 ```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
@@ -17,10 +19,11 @@ import { Split, SplitItem } from '@patternfly/react-core';
   <SplitItem>content</SplitItem>
   <SplitItem isFilled>pf-m-fill</SplitItem>
   <SplitItem>content</SplitItem>
-</Split>
+</Split>;
 ```
 
 ### With gutter
+
 ```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
@@ -29,10 +32,11 @@ import { Split, SplitItem } from '@patternfly/react-core';
   <SplitItem>content</SplitItem>
   <SplitItem isFilled>pf-m-fill</SplitItem>
   <SplitItem>content</SplitItem>
-</Split>
+</Split>;
 ```
 
 ### Wrappable
+
 ```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
@@ -52,5 +56,5 @@ import { Split, SplitItem } from '@patternfly/react-core';
   <SplitItem>content</SplitItem>
   <SplitItem>content</SplitItem>
   <SplitItem>content</SplitItem>
-</Split>
+</Split>;
 ```
