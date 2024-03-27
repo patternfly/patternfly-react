@@ -34,10 +34,9 @@ export const SelectableCard: React.FunctionComponent = () => {
   return (
     <>
       <Checkbox
-        label="secondary styling"
+        label="Secondary card styling"
         isChecked={isSecondary}
         onChange={(_event, checked) => toggleVariant(checked)}
-        aria-label="add secondary styling"
         id="toggle-variant-selectable"
         name="toggle-variant"
       />
