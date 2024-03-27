@@ -103,7 +103,7 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ### Column management with draggable
 
-```js isFullscreen file="./examples/TableColumnManagementWithDraggable.tsx"
+```js isDeprecated isFullscreen file="./examples/TableColumnManagementWithDraggable.tsx"
 
 ```
 

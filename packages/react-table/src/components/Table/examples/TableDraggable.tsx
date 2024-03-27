@@ -150,20 +150,23 @@ export const TableDraggable: React.FunctionComponent = () => {
         </Tr>
       </Thead>
       <Tbody ref={bodyRef} onDragOver={onDragOver} onDrop={onDragOver} onDragLeave={onDragLeave}>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex} id={row.id} draggable onDrop={onDrop} onDragEnd={onDragEnd} onDragStart={onDragStart}>
-            <Td
-              draggableRow={{
-                id: `draggable-row-${row.id}`
-              }}
-            />
-            {Object.keys(row).map((key, keyIndex) => (
-              <Td key={`${rowIndex}_${keyIndex}`} dataLabel={columns[keyIndex]}>
-                {row[key]}
-              </Td>
-            ))}
-          </Tr>
-        ))}
+        {rows.map((row, rowIndex) => {
+          const rowCellsToBuild = Object.keys(row).filter((rowCell) => rowCell !== 'id');
+          return (
+            <Tr key={rowIndex} id={row.id} draggable onDrop={onDrop} onDragEnd={onDragEnd} onDragStart={onDragStart}>
+              <Td
+                draggableRow={{
+                  id: `draggable-row-${row.id}`
+                }}
+              />
+              {rowCellsToBuild.map((key, keyIndex) => (
+                <Td key={`${rowIndex}_${keyIndex}`} dataLabel={columns[keyIndex]}>
+                  {row[key]}
+                </Td>
+              ))}
+            </Tr>
+          );
+        })}
       </Tbody>
     </Table>
   );
