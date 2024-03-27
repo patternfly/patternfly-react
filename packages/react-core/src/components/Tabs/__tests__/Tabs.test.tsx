@@ -7,6 +7,8 @@ import { TabTitleIcon } from '../TabTitleIcon';
 import { TabContent } from '../TabContent';
 import { TabContentBody } from '../TabContentBody';
 
+jest.mock('../../../helpers/GenerateId/GenerateId');
+
 test('should render simple tabs', () => {
   const { asFragment } = render(
     <Tabs id="simpleTabs">
