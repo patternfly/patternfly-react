@@ -315,7 +315,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       {...props}
       className={css(
         styles.label,
-        isClickableDisabled && 'pf-m-disabled',
+        isClickableDisabled && styles.modifiers.disabled,
         colorStyles[color],
         variant === 'outline' && styles.modifiers.outline,
         isOverflowLabel && styles.modifiers.overflow,
