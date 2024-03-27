@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { CheckboxSelectSimple } from './CheckboxSelectSimple';
+import { CheckboxSelect } from './CheckboxSelect';
 import styles from '@patternfly/react-styles/css/components/Badge/badge';
 
 test('renders checkbox select with options', async () => {
@@ -13,7 +13,7 @@ test('renders checkbox select with options', async () => {
 
   const user = userEvent.setup();
 
-  render(<CheckboxSelectSimple initialOptions={initialOptions} />);
+  render(<CheckboxSelect initialOptions={initialOptions} />);
 
   const toggle = screen.getByRole('button', { name: 'Filter by status' });
 
@@ -37,7 +37,7 @@ test('selects options when clicked', async () => {
 
   const user = userEvent.setup();
 
-  render(<CheckboxSelectSimple initialOptions={initialOptions} />);
+  render(<CheckboxSelect initialOptions={initialOptions} />);
 
   const toggle = screen.getByRole('button', { name: 'Filter by status' });
 
@@ -61,7 +61,7 @@ test('deselects options when an already selected option is clicked', async () =>
 
   const user = userEvent.setup();
 
-  render(<CheckboxSelectSimple initialOptions={initialOptions} />);
+  render(<CheckboxSelect initialOptions={initialOptions} />);
 
   const toggle = screen.getByRole('button', { name: 'Filter by status' });
 
@@ -85,7 +85,7 @@ test('calls the onSelect callback with the selected value when an option is sele
   const user = userEvent.setup();
   const onSelectMock = jest.fn();
 
-  render(<CheckboxSelectSimple initialOptions={initialOptions} onSelect={onSelectMock} />);
+  render(<CheckboxSelect initialOptions={initialOptions} onSelect={onSelectMock} />);
 
   const toggle = screen.getByRole('button', { name: 'Filter by status' });
 
@@ -109,7 +109,7 @@ test('does not call the onSelect callback when no options are selected', async (
   const user = userEvent.setup();
   const onSelectMock = jest.fn();
 
-  render(<CheckboxSelectSimple initialOptions={initialOptions} onSelect={onSelectMock} />);
+  render(<CheckboxSelect initialOptions={initialOptions} onSelect={onSelectMock} />);
 
   const toggle = screen.getByRole('button', { name: 'Filter by status' });
 
@@ -127,7 +127,7 @@ test('toggles the select menu when the toggle button is clicked', async () => {
 
   const user = userEvent.setup();
 
-  render(<CheckboxSelectSimple initialOptions={initialOptions} />);
+  render(<CheckboxSelect initialOptions={initialOptions} />);
 
   const toggleButton = screen.getByRole('button', { name: 'Filter by status' });
 
@@ -149,7 +149,7 @@ test('displays custom toggle content', async () => {
     { content: 'Option 3', value: 'option3' }
   ];
 
-  render(<CheckboxSelectSimple initialOptions={initialOptions} toggleContent="Custom Toggle" />);
+  render(<CheckboxSelect initialOptions={initialOptions} toggleContent="Custom Toggle" />);
 
   const toggleButton = screen.getByRole('button', { name: 'Custom Toggle' });
 
@@ -166,7 +166,7 @@ test('calls the onToggle callback when the select opens or closes', async () => 
   const user = userEvent.setup();
   const onToggleMock = jest.fn();
 
-  render(<CheckboxSelectSimple initialOptions={initialOptions} onToggle={onToggleMock} />);
+  render(<CheckboxSelect initialOptions={initialOptions} onToggle={onToggleMock} />);
 
   const toggle = screen.getByRole('button', { name: 'Filter by status' });
 
@@ -190,7 +190,7 @@ test('does not call the onToggle callback when the toggle is not clicked', async
 
   const onToggleMock = jest.fn();
 
-  render(<CheckboxSelectSimple initialOptions={initialOptions} onToggle={onToggleMock} />);
+  render(<CheckboxSelect initialOptions={initialOptions} onToggle={onToggleMock} />);
 
   expect(onToggleMock).not.toHaveBeenCalled();
 });
@@ -204,7 +204,7 @@ test('disables the select when isDisabled prop is true', async () => {
 
   const user = userEvent.setup();
 
-  render(<CheckboxSelectSimple initialOptions={initialOptions} isDisabled={true} />);
+  render(<CheckboxSelect initialOptions={initialOptions} isDisabled={true} />);
 
   const toggleButton = screen.getByRole('button', { name: 'Filter by status' });
 
@@ -220,7 +220,7 @@ test('passes other SelectOption props to the SelectOption component', async () =
 
   const user = userEvent.setup();
 
-  render(<CheckboxSelectSimple initialOptions={initialOptions} />);
+  render(<CheckboxSelect initialOptions={initialOptions} />);
 
   const toggle = screen.getByRole('button', { name: 'Filter by status' });
 
@@ -240,7 +240,7 @@ test('displays the badge count when options are selected', async () => {
 
   const user = userEvent.setup();
 
-  render(<CheckboxSelectSimple initialOptions={initialOptions} />);
+  render(<CheckboxSelect initialOptions={initialOptions} />);
 
   const toggle = screen.getByRole('button', { name: 'Filter by status' });
 
@@ -256,7 +256,7 @@ test('displays the badge count when options are selected', async () => {
 });
 
 test('checkbox select with no props snapshot', () => {
-  const { asFragment } = render(<CheckboxSelectSimple />);
+  const { asFragment } = render(<CheckboxSelect />);
 
   expect(asFragment()).toMatchSnapshot();
 });
@@ -270,7 +270,7 @@ test('opened checkbox select snapshot', async () => {
 
   const user = userEvent.setup();
 
-  const { asFragment } = render(<CheckboxSelectSimple initialOptions={initialOptions} />);
+  const { asFragment } = render(<CheckboxSelect initialOptions={initialOptions} />);
 
   const toggle = screen.getByRole('button', { name: 'Filter by status' });
 

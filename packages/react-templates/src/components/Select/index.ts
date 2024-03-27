@@ -1,2 +1,2 @@
 export * from './SelectSimple';
-export * from './CheckboxSelectSimple';
+export * from './CheckboxSelect';

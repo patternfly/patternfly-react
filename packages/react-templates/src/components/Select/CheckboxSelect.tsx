@@ -9,18 +9,18 @@ import {
   SelectOptionProps
 } from '@patternfly/react-core';
 
-export interface CheckboxSelectSimpleOption extends Omit<SelectOptionProps, 'content'> {
+export interface CheckboxSelectOption extends Omit<SelectOptionProps, 'content'> {
   /** Content of the select option. */
   content: React.ReactNode;
   /** Value of the select option. */
   value: string | number;
 }
 
-export interface CheckboxSelectSimpleProps {
+export interface CheckboxSelectProps {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */
-  initialOptions?: CheckboxSelectSimpleOption[];
+  initialOptions?: CheckboxSelectOption[];
   /** Callback triggered on selection. */
   onSelect?: (_event: React.MouseEvent<Element, MouseEvent>, value?: string | number) => void;
   /** Callback triggered when the select opens or closes. */
@@ -31,7 +31,7 @@ export interface CheckboxSelectSimpleProps {
   toggleContent?: React.ReactNode;
 }
 
-const CheckboxSelectSimpleBase: React.FunctionComponent<CheckboxSelectSimpleProps> = ({
+const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
   innerRef,
   initialOptions,
   isDisabled,
@@ -39,7 +39,7 @@ const CheckboxSelectSimpleBase: React.FunctionComponent<CheckboxSelectSimpleProp
   onToggle,
   toggleContent,
   ...props
-}: CheckboxSelectSimpleProps) => {
+}: CheckboxSelectProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string[]>([]);
 
@@ -108,6 +108,6 @@ const CheckboxSelectSimpleBase: React.FunctionComponent<CheckboxSelectSimpleProp
   );
 };
 
-export const CheckboxSelectSimple = React.forwardRef((props: CheckboxSelectSimpleProps, ref: React.Ref<any>) => (
-  <CheckboxSelectSimpleBase {...props} innerRef={ref} />
+export const CheckboxSelect = React.forwardRef((props: CheckboxSelectProps, ref: React.Ref<any>) => (
+  <CheckboxSelectBase {...props} innerRef={ref} />
 ));
