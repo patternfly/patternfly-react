@@ -1,12 +1,12 @@
 import React from 'react';
-import { Select, SelectList } from '@patternfly/react-core/dist/esm/components/Select';
+import { Select, SelectList, SelectOptionProps } from '@patternfly/react-core/dist/esm/components/Select';
 import { MenuToggle, MenuToggleElement } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 
 export interface SelectSimpleProps {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */
-  initialOptions?: React.ReactElement[];
+  initialOptions?: SelectOptionProps[];
   /** Callback triggered on selection. */
   onSelect?: (_event: React.MouseEvent<Element, MouseEvent>, selection: string | number) => void;
   /** Callback triggered when the select opens or closes. */
@@ -15,6 +15,8 @@ export interface SelectSimpleProps {
   isDisabled?: boolean;
   /** Content of the toggle. Defaults to the selected option. */
   toggleContent?: React.ReactNode;
+  /** Width of the toggle */
+  toggleWidth?: string;
 }
 
 const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
@@ -24,6 +26,7 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
   onSelect,
   onToggle,
   toggleContent,
+  toggleWidth = '200px',
   ...props
 }: SelectSimpleProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -48,7 +51,7 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
       isDisabled={isDisabled}
       style={
         {
-          width: '200px'
+          width: toggleWidth
         } as React.CSSProperties
       }
     >

@@ -6,7 +6,7 @@ This package provides wrapped Patternfly component demos with a streamlined API 
 
 #### Node Environment
 
-This project currently supports Node [Active LTS](https://github.com/nodejs/Release#release-schedule) releases. Please stay current with Node Active LTS when developing patternfly-react.
+This project currently supports [Node Active LTS](https://github.com/nodejs/Release#release-schedule) releases. Please stay current with Node Active LTS when developing patternfly-react.
 
 For example, to develop with Node 18, use the following:
 
@@ -15,7 +15,7 @@ nvm install 18
 nvm use 18
 ```
 
-This project also requires a Yarn version of >=1.6.0. The latest version can be installed [here](https://yarnpkg.com/).
+This project also requires a Yarn version of >=1.6.0. The latest version can be installed from the [Yarn](https://yarnpkg.com/) home page.
 
 ### Installing
 

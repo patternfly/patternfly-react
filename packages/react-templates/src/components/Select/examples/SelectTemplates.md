@@ -3,6 +3,7 @@ id: Select
 section: components
 subsection: menus
 template: true
+beta: true
 propComponents: ['SimpleSelect']
 ---
 
