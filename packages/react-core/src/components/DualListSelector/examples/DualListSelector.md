@@ -22,6 +22,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
 
 ## Examples
 
@@ -103,7 +104,7 @@ This example only allows reordering the contents of the "chosen" pane with drag 
 
 Keyboard and screen reader accessibility for the `<DragDrop>` component is still in development.
 
-```ts file="DualListSelectorComposableDragDrop.tsx"
+```ts isDeprecated file="DualListSelectorComposableDragDrop.tsx"
 
 ```
 

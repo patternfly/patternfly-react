@@ -1,5 +1,6 @@
 import React from 'react';
-import { DragDrop, Draggable, Droppable, Split, SplitItem } from '@patternfly/react-core';
+import { Split, SplitItem } from '@patternfly/react-core';
+import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
 
 interface ItemType {
   id: string;
