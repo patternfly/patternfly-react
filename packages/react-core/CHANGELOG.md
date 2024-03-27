@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.18...@patternfly/react-core@5.3.0-prerelease.19) (2024-03-27)
+
+### Bug Fixes
+
+- **TextArea:** remove invalid `onFocus` and `onBlur` props ([#10193](https://github.com/patternfly/patternfly-react/issues/10193)) ([afb2e19](https://github.com/patternfly/patternfly-react/commit/afb2e19f01b0135d0212f9a4249251d8ae6a9360)), closes [#10192](https://github.com/patternfly/patternfly-react/issues/10192)
+
 # [5.3.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.17...@patternfly/react-core@5.3.0-prerelease.18) (2024-03-27)
 
 ### Features
