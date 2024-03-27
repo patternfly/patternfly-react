@@ -13,7 +13,7 @@ export interface SelectSimpleProps {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */
-  initialOptions?: SelectOptionProps[];
+  initialOptions?: SelectSimpleOption[];
   /** Callback triggered on selection. */
   onSelect?: (_event: React.MouseEvent<Element, MouseEvent>, selection: string | number) => void;
   /** Callback triggered when the select opens or closes. */
