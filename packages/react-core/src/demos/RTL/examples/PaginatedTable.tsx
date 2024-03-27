@@ -60,14 +60,18 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 
 interface Row {
   name: string;
-  status: string[];
-  location: string[];
-  lastModified: string[];
+  status: string;
+  location: string;
+  lastModified: string;
   url: string;
 }
 
+interface Translation {
+  [key: string]: any;
+}
+
 export const PaginatedTableAction: React.FunctionComponent = () => {
-  const [translation, setTranslation] = React.useState<string>(translationsEn);
+  const [translation, setTranslation] = React.useState<Translation>(translationsEn);
   const [page, setPage] = React.useState<number>(1);
   const [perPage, setPerPage] = React.useState<number>(10);
 
@@ -141,12 +145,24 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
 
   // Pagination logic
 
-  const handleSetPage = (_evt: Event, newPage: number, _perPage: number, startIdx: number, endIdx: number) => {
+  const handleSetPage = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPage: number,
+    _perPage?: number,
+    startIdx?: number,
+    endIdx?: number
+  ) => {
     setPaginatedRows(managedRows.slice(startIdx, endIdx));
     setPage(newPage);
   };
 
-  const handlePerPageSelect = (_evt: Event, newPerPage: number, _newPage: number, startIdx: number, endIdx: number) => {
+  const handlePerPageSelect = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPerPage: number,
+    _newPage: number,
+    startIdx?: number,
+    endIdx?: number
+  ) => {
     setPaginatedRows(managedRows.slice(startIdx, endIdx));
     setPerPage(newPerPage);
   };
