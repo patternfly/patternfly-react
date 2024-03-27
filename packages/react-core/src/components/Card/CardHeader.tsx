@@ -80,7 +80,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
 }: CardHeaderProps) => (
   <CardContext.Consumer>
     {/* TODO: Remove hasSelectableInput when deprecated props are removed */}
-    {({ cardId, isClickable, isSelectable, isDisabled: isCardDisabled, hasSelectableInput }) => {
+    {({ cardId, isClickable, isSelectable, isClicked, isDisabled: isCardDisabled, hasSelectableInput }) => {
       const cardHeaderToggle = (
         <div className={css(styles.cardHeaderToggle)}>
           <Button
@@ -112,12 +112,10 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
       }
 
       const handleActionClick = (event: React.FormEvent<HTMLInputElement> | React.MouseEvent) => {
-        if (isClickable) {
-          if (selectableActions?.onClickAction) {
-            selectableActions.onClickAction(event);
-          } else if (selectableActions?.to) {
-            window.open(selectableActions.to, selectableActions.isExternalLink ? '_blank' : '_self');
-          }
+        if (selectableActions?.onClickAction) {
+          selectableActions.onClickAction(event);
+        } else if (selectableActions?.to) {
+          window.open(selectableActions.to, selectableActions.isExternalLink ? '_blank' : '_self');
         }
       };
 
@@ -134,7 +132,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
         };
 
         if (isClickable && !isSelectable) {
-          return { ...baseProps, onClick: handleActionClick };
+          return { ...baseProps, onClick: handleActionClick, isChecked: isClicked };
         }
         if (isSelectable) {
           return { ...baseProps, onChange: selectableActions.onChange, isChecked: selectableActions.isChecked };

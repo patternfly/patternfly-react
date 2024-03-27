@@ -14,15 +14,21 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   component?: keyof JSX.IntrinsicElements;
   /** Modifies the card to include compact styling. Should not be used with isLarge. */
   isCompact?: boolean;
-  /** Modifies the card to include selectable styling */
+  /** Flag indicating that the card is selectable. */
   isSelectable?: boolean;
   /** @deprecated Specifies the card is selectable, and applies raised styling on hover and select */
   isSelectableRaised?: boolean;
-  /** Modifies the card to include selected styling */
-  isSelected?: boolean;
-  /** Modifies the card to include clickable styling */
+  /** Flag indicating that the card is clickable and contains some action that triggers on click. */
   isClickable?: boolean;
-  /** Modifies a clickable or selectable card to have disabled styling. */
+  /** Flag indicating whether a card that is both clickable and selectable is currently selected and has selected styling.
+   * This will not determine the card's actual selected state.
+   */
+  isSelected?: boolean;
+  /** Flag indicating whether a card that is either only clickable or that is both clickable and selectable
+   * is currently clicked and has clicked styling.
+   */
+  isClicked?: boolean;
+  /** Flag indicating that a clickable or selectable card is disabled. */
   isDisabled?: boolean;
   /** @deprecated Modifies a raised selectable card to have disabled styling */
   isDisabledRaised?: boolean;
@@ -56,6 +62,7 @@ interface CardContextProps {
   isExpanded: boolean;
   isClickable: boolean;
   isSelectable: boolean;
+  isClicked: boolean;
   isDisabled: boolean;
   // TODO: Remove hasSelectableInput when deprecated prop is removed
   hasSelectableInput: boolean;
@@ -72,6 +79,7 @@ export const CardContext = React.createContext<Partial<CardContextProps>>({
   isExpanded: false,
   isClickable: false,
   isSelectable: false,
+  isClicked: false,
   isDisabled: false
 });
 
@@ -86,6 +94,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isDisabled = false,
   isSelectableRaised = false,
   isSelected = false,
+  isClicked = false,
   isDisabledRaised = false,
   isFlat = false,
   isExpanded = false,
@@ -119,7 +128,11 @@ export const Card: React.FunctionComponent<CardProps> = ({
       return css(styles.modifiers.selectableRaised, isSelected && styles.modifiers.selectedRaised);
     }
     if (isSelectable && isClickable) {
-      return css(styles.modifiers.selectable, styles.modifiers.clickable, isSelected && styles.modifiers.current);
+      return css(
+        styles.modifiers.selectable,
+        styles.modifiers.clickable,
+        (isSelected || isClicked) && styles.modifiers.current
+      );
     }
 
     if (isSelectable) {
@@ -127,7 +140,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
     }
 
     if (isClickable) {
-      return css(styles.modifiers.clickable, isSelected && styles.modifiers.selected);
+      return css(styles.modifiers.clickable, isClicked && styles.modifiers.current);
     }
 
     return '';
@@ -162,6 +175,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
         isExpanded,
         isClickable,
         isSelectable,
+        isClicked,
         isDisabled,
         // TODO: Remove hasSelectableInput when deprecated prop is removed
         hasSelectableInput
