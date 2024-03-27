@@ -44,7 +44,7 @@ export const SelectBasic: React.FunctionComponent = () => {
       // When no options are found after filtering, display 'No results found'
       if (!newSelectOptions.length) {
         newSelectOptions = [
-          { isDisabled: false, children: `No results found for "${filterValue}"`, value: 'no results' }
+          { isAriaDisabled: true, children: `No results found for "${filterValue}"`, value: 'no results' }
         ];
       }
 
@@ -58,6 +58,14 @@ export const SelectBasic: React.FunctionComponent = () => {
     setActiveItem(null);
     setFocusedItemIndex(null);
   }, [filterValue]);
+
+  const onInputClick = () => {
+    if (inputValue) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(!isOpen);
+    }
+  };
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -80,6 +88,10 @@ export const SelectBasic: React.FunctionComponent = () => {
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
     setFilterValue(value);
+
+    if (value !== selected) {
+      setSelected('');
+    }
   };
 
   const handleMenuArrowKeys = (key: string) => {
@@ -132,6 +144,7 @@ export const SelectBasic: React.FunctionComponent = () => {
       case 'Tab':
       case 'Escape':
         setIsOpen(false);
+        setFocusedItemIndex(null);
         setActiveItem(null);
         break;
       case 'ArrowUp':
@@ -154,7 +167,7 @@ export const SelectBasic: React.FunctionComponent = () => {
       <TextInputGroup isPlain>
         <TextInputGroupMain
           value={inputValue}
-          onClick={onToggleClick}
+          onClick={onInputClick}
           onChange={onTextInputChange}
           onKeyDown={onInputKeyDown}
           id="typeahead-select-input"
@@ -195,6 +208,8 @@ export const SelectBasic: React.FunctionComponent = () => {
       onSelect={onSelect}
       onOpenChange={() => {
         setIsOpen(false);
+        setFocusedItemIndex(null);
+        setActiveItem(null);
       }}
       toggle={toggle}
     >
