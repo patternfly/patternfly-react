@@ -1,13 +1,16 @@
 ---
 id: Grid
-cssPrefix: pf-v5-l-grid
+cssPrefix: pf-v6-l-grid
 section: layouts
 propComponents: ['Grid', 'GridItem']
 ---
+
 import './grid.css';
 
 ## Examples
+
 ### Basic
+
 ```js
 import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
@@ -29,10 +32,11 @@ import { Grid, GridItem } from '@patternfly/react-core';
   <GridItem span={2}>span = 2</GridItem>
   <GridItem span={4}>span = 4</GridItem>
   <GridItem span={4}>span = 4</GridItem>
-</Grid>
+</Grid>;
 ```
 
 ### With gutters
+
 ```js
 import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
@@ -54,10 +58,11 @@ import { Grid, GridItem } from '@patternfly/react-core';
   <GridItem span={2}>span = 2</GridItem>
   <GridItem span={4}>span = 4</GridItem>
   <GridItem span={4}>span = 4</GridItem>
-</Grid>
+</Grid>;
 ```
 
 ### With overrides
+
 ```js
 import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
@@ -77,7 +82,7 @@ import { Grid, GridItem } from '@patternfly/react-core';
   <GridItem>Grid Item</GridItem>
   <GridItem>Grid Item</GridItem>
   <GridItem>Grid Item</GridItem>
-</Grid>
+</Grid>;
 ```
 
 ## Ordering
@@ -89,10 +94,10 @@ import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 <Grid hasGutter span={3}>
-  <GridItem order={{default: "2"}}>Item A</GridItem>
+  <GridItem order={{ default: '2' }}>Item A</GridItem>
   <GridItem>Item B</GridItem>
-  <GridItem order={{default: "-1"}}>Item C</GridItem>
-</Grid>
+  <GridItem order={{ default: '-1' }}>Item C</GridItem>
+</Grid>;
 ```
 
 ### Responsive ordering
@@ -102,10 +107,10 @@ import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 <Grid hasGutter span={3}>
-  <GridItem order={{lg: "2"}}>Item A</GridItem>
+  <GridItem order={{ lg: '2' }}>Item A</GridItem>
   <GridItem>Item B</GridItem>
-  <GridItem order={{default: "-1", md: "1"}}>Item C</GridItem>
-</Grid>
+  <GridItem order={{ default: '-1', md: '1' }}>Item C</GridItem>
+</Grid>;
 ```
 
 ### Grouped ordering
@@ -115,19 +120,19 @@ import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 <Grid hasGutter span={12}>
-  <Grid hasGutter span={6} order={{default: "2"}}>
-    <GridItem order={{default: "3"}}>Set 1, Item A</GridItem>
-    <GridItem order={{default: "1"}}>Set 1, Item B</GridItem>
+  <Grid hasGutter span={6} order={{ default: '2' }}>
+    <GridItem order={{ default: '3' }}>Set 1, Item A</GridItem>
+    <GridItem order={{ default: '1' }}>Set 1, Item B</GridItem>
     <GridItem>Set 1, Item C</GridItem>
-    <GridItem order={{default: "2"}}>Set 1, Item D</GridItem>
+    <GridItem order={{ default: '2' }}>Set 1, Item D</GridItem>
   </Grid>
   <Grid hasGutter span={6}>
-    <GridItem order={{default: "2"}}>Set 2, Item A</GridItem>
-    <GridItem order={{default: "1"}}>Set 2, Item B</GridItem>
+    <GridItem order={{ default: '2' }}>Set 2, Item A</GridItem>
+    <GridItem order={{ default: '1' }}>Set 2, Item B</GridItem>
     <GridItem>Set 2, Item C</GridItem>
-    <GridItem order={{default: "2"}}>Set 2, Item D</GridItem>
+    <GridItem order={{ default: '2' }}>Set 2, Item D</GridItem>
   </Grid>
-</Grid>
+</Grid>;
 ```
 
 ### Alternative components
@@ -136,11 +141,11 @@ import { Grid, GridItem } from '@patternfly/react-core';
 import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
-<Grid component='ul'>
-  <GridItem component='li'>Grid item</GridItem>
-  <GridItem component='li'>Grid item</GridItem>
-  <GridItem component='li'>Grid item</GridItem>
-  <GridItem component='li'>Grid item</GridItem>
-  <GridItem component='li'>Grid item</GridItem>
-</Grid>
+<Grid component="ul">
+  <GridItem component="li">Grid item</GridItem>
+  <GridItem component="li">Grid item</GridItem>
+  <GridItem component="li">Grid item</GridItem>
+  <GridItem component="li">Grid item</GridItem>
+  <GridItem component="li">Grid item</GridItem>
+</Grid>;
 ```

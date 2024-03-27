@@ -1,5 +1,5 @@
 .ws-react-l-level {
-  padding: 9px;
+  padding: var(--pf-t--global--spacer--sm);
 }
 
 .ws-react-l-level .pf-v6-l-level {
@@ -8,7 +8,6 @@
 
 .ws-react-l-level .pf-v6-l-level,
 .ws-react-l-level .pf-v6-l-level > div {
-  padding: 9px;
-  border-width: 2px;
-  border-style: dashed;
+  padding: var(--pf-t--global--spacer--sm);
+  border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
 }

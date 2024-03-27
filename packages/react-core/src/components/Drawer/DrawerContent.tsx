@@ -2,7 +2,13 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerMain } from './DrawerMain';
-import { DrawerColorVariant, DrawerContext } from './Drawer';
+import { DrawerContext } from './Drawer';
+
+export enum DrawerContentColorVariant {
+  default = 'default',
+  primary = 'primary',
+  secondary = 'secondary'
+}
 
 export interface DrawerContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Drawer. */
@@ -12,14 +18,14 @@ export interface DrawerContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered in the drawer panel. */
   panelContent: React.ReactNode;
   /** Color variant of the background of the drawer panel */
-  colorVariant?: DrawerColorVariant | 'no-background' | 'default' | 'secondary';
+  colorVariant?: DrawerContentColorVariant | 'default' | 'primary' | 'secondary';
 }
 
 export const DrawerContent: React.FunctionComponent<DrawerContentProps> = ({
   className,
   children,
   panelContent,
-  colorVariant = DrawerColorVariant.default,
+  colorVariant = DrawerContentColorVariant.default,
   ...props
 }: DrawerContentProps) => {
   const { drawerContentRef } = React.useContext(DrawerContext);
@@ -29,8 +35,8 @@ export const DrawerContent: React.FunctionComponent<DrawerContentProps> = ({
       <div
         className={css(
           styles.drawerContent,
-          colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,
-          colorVariant === DrawerColorVariant.secondary && styles.modifiers.secondary,
+          colorVariant === DrawerContentColorVariant.primary && styles.modifiers.primary,
+          colorVariant === DrawerContentColorVariant.secondary && styles.modifiers.secondary,
           className
         )}
         ref={drawerContentRef}

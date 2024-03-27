@@ -48,6 +48,11 @@ const getLocalVarsMap = (cssFiles) => {
     const cssAst = parse(readFileSync(filePath, 'utf8'));
 
     getDeclarations(cssAst).forEach(({ property, value, parent }) => {
+      if (res[property]) {
+        // Accounts for multiple delcarations out of root scope.
+        // TODO: revamp CSS var mapping
+        return;
+      }
       if (property.startsWith(`--pf-${version}`)) {
         res[property] = {
           ...res[property],
