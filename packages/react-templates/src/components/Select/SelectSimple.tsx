@@ -1,6 +1,13 @@
 import React from 'react';
-import { Select, SelectList, SelectOptionProps } from '@patternfly/react-core/dist/esm/components/Select';
+import { Select, SelectList, SelectOption, SelectOptionProps } from '@patternfly/react-core/dist/esm/components/Select';
 import { MenuToggle, MenuToggleElement } from '@patternfly/react-core/dist/esm/components/MenuToggle';
+
+export interface SelectSimpleOption extends Omit<SelectOptionProps, 'content'> {
+  /** Content of the select option. */
+  content: React.ReactNode;
+  /** Value of the select option. */
+  value: string | number;
+}
 
 export interface SelectSimpleProps {
   /** @hide Forwarded ref */
@@ -31,6 +38,16 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
 }: SelectSimpleProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('Select a value');
+
+  const simpleSelectOptions = initialOptions?.map((option) => {
+    const { content, value, ...props } = option;
+    const isSelected = selected.includes(`${value}`);
+    return (
+      <SelectOption {...props} value={value} key={value} isSelected={isSelected}>
+        {content}
+      </SelectOption>
+    );
+  });
 
   const onToggleClick = () => {
     onToggle && onToggle(!isOpen);
@@ -71,7 +88,7 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
       ref={innerRef}
       {...props}
     >
-      <SelectList>{initialOptions}</SelectList>
+      <SelectList>{simpleSelectOptions}</SelectList>
     </Select>
   );
 };

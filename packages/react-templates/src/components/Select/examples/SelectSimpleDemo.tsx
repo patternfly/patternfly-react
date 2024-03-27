@@ -1,20 +1,14 @@
 import React from 'react';
-import { SelectOption, Checkbox } from '@patternfly/react-core';
-import { SelectSimple } from '@patternfly/react-templates';
+import { Checkbox } from '@patternfly/react-core';
+import { SelectSimple, SelectSimpleOption } from '@patternfly/react-templates';
 
 export const SelectSimpleDemo: React.FunctionComponent = () => {
   const [isDisabled, setIsDisabled] = React.useState<boolean>(false);
 
-  const initialOptions = [
-    <SelectOption value="Option 1" key={0}>
-      Option 1
-    </SelectOption>,
-    <SelectOption value="Option 2" key={1}>
-      Option 2
-    </SelectOption>,
-    <SelectOption value="Option 3" key={2}>
-      Option 3
-    </SelectOption>
+  const initialOptions: SelectSimpleOption[] = [
+    { content: 'Option 1', value: 'option1' },
+    { content: 'Option 2', value: 'option2' },
+    { content: 'Option 3', value: 'option3' }
   ];
 
   return (
