@@ -54,9 +54,11 @@ To group related select options together, use 1 or more `<SelectGroup>` componen
 
 ### With validation
 
-To validate selections that users make, pass the `status` property to the `MenuToggle`. Validating selections can let users know if the selections they make would cause issues or errors.
+To create a toggle with a status, pass in `status` to the `MenuToggle`. The default icon associated with each status may be overridden by using the `statusIcon` property.
 
-```ts file="./SelectValidated.tsx"
+When the status value is "warning" or "danger", you must include helper text that conveys what is causing the warning/error.
+
+```ts isBeta file="./SelectValidated.tsx"
 
 ```
 

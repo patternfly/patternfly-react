@@ -1,10 +1,19 @@
 import React from 'react';
-import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement, HelperText } from '@patternfly/react-core';
+import {
+  Select,
+  SelectOption,
+  SelectList,
+  MenuToggle,
+  MenuToggleElement,
+  MenuToggleStatus,
+  HelperText,
+  HelperTextItem
+} from '@patternfly/react-core';
 
 export const SelectValidated: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('Select a value');
-  const [status, setStatus] = React.useState<'success' | 'warning' | 'danger'>();
+  const [status, setStatus] = React.useState<MenuToggleStatus>();
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -15,7 +24,7 @@ export const SelectValidated: React.FunctionComponent = () => {
     console.log('selected', value);
 
     setSelected(value as string);
-    setStatus((value as string).toLowerCase() as 'success' | 'warning' | 'danger');
+    setStatus((value as string).toLowerCase() as MenuToggleStatus);
     setIsOpen(false);
   };
 
@@ -52,10 +61,12 @@ export const SelectValidated: React.FunctionComponent = () => {
           <SelectOption value="Danger">Danger</SelectOption>
         </SelectList>
       </Select>
-      {(status === 'warning' || status === 'danger') && (
+      {(status === MenuToggleStatus.warning || status === MenuToggleStatus.danger) && (
         <HelperText isLiveRegion>
-          Helper text may be used to convery additional information to the user about the status, and to inform
-          screenreaders a {status} status occured.
+          <HelperTextItem variant={status === MenuToggleStatus.warning ? 'warning' : 'error'}>
+            {status === MenuToggleStatus.warning && 'Warning text that explains the issue.'}
+            {status === MenuToggleStatus.danger && 'Danger text that explains the issue.'}
+          </HelperTextItem>
         </HelperText>
       )}
     </React.Fragment>

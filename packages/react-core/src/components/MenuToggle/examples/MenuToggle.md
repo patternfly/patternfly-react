@@ -273,6 +273,6 @@ To create a multiple typeahead toggle, pass a `<TextInputGroup>` component imple
 
 To create a toggle with a status, pass in `status` to the `MenuToggle`. The default icon associated with each status may be overridden by using the `statusIcon` property.
 
-```ts file='MenuToggleStatus.tsx'
+```ts isBeta file='MenuToggleStatus.tsx'
 
 ```

@@ -7,6 +7,12 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 
+export enum MenuToggleStatus {
+  success = 'success',
+  danger = 'danger',
+  warning = 'warning'
+}
+
 export type MenuToggleElement = HTMLDivElement | HTMLButtonElement;
 
 export interface SplitButtonOptions {
@@ -90,13 +96,13 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
     let _statusIcon = statusIcon;
     if (!statusIcon) {
       switch (status) {
-        case 'success':
+        case MenuToggleStatus.success:
           _statusIcon = <CheckCircleIcon aria-hidden="true" />;
           break;
-        case 'warning':
+        case MenuToggleStatus.warning:
           _statusIcon = <ExclamationTriangleIcon aria-hidden="true" />;
           break;
-        case 'danger':
+        case MenuToggleStatus.danger:
           _statusIcon = <ExclamationCircleIcon aria-hidden="true" />;
           break;
       }
@@ -137,9 +143,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
       isExpanded && styles.modifiers.expanded,
       variant === 'primary' && styles.modifiers.primary,
       variant === 'secondary' && styles.modifiers.secondary,
-      status === 'success' && styles.modifiers.success,
-      status === 'warning' && styles.modifiers.warning,
-      status === 'danger' && styles.modifiers.danger,
+      status && styles.modifiers[status],
       (isPlain || isPlainText) && styles.modifiers.plain,
       isPlainText && styles.modifiers.text,
       isFullHeight && styles.modifiers.fullHeight,
