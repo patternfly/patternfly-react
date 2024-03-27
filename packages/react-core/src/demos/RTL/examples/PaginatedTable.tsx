@@ -148,9 +148,9 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
   const handleSetPage = (
     _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
     newPage: number,
-    _perPage?: number,
-    startIdx?: number,
-    endIdx?: number
+    _perPage: number | undefined,
+    startIdx: number | undefined,
+    endIdx: number | undefined
   ) => {
     setPaginatedRows(managedRows.slice(startIdx, endIdx));
     setPage(newPage);
@@ -160,8 +160,8 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
     _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
     newPerPage: number,
     _newPage: number,
-    startIdx?: number,
-    endIdx?: number
+    startIdx: number | undefined,
+    endIdx: number | undefined
   ) => {
     setPaginatedRows(managedRows.slice(startIdx, endIdx));
     setPerPage(newPerPage);
