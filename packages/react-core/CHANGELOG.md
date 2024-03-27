@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.17...@patternfly/react-core@5.3.0-prerelease.18) (2024-03-27)
+
+### Features
+
+- **MenuToggle/Select:** add status ([#10209](https://github.com/patternfly/patternfly-react/issues/10209)) ([2afe1bf](https://github.com/patternfly/patternfly-react/commit/2afe1bf95c7b1ff39eab007442b910c1c985206e))
+- **templates:** add templates package ([#10110](https://github.com/patternfly/patternfly-react/issues/10110)) ([41a22fb](https://github.com/patternfly/patternfly-react/commit/41a22fbc6d7e6b874fb3a862d6558ac6d17fae03))
+
 # [5.3.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.16...@patternfly/react-core@5.3.0-prerelease.17) (2024-03-27)
 
 ### Bug Fixes

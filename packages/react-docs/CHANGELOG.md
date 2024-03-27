@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.3.0-prerelease.23...@patternfly/react-docs@6.3.0-prerelease.24) (2024-03-27)
+
+### Features
+
+- **templates:** add templates package ([#10110](https://github.com/patternfly/patternfly-react/issues/10110)) ([41a22fb](https://github.com/patternfly/patternfly-react/commit/41a22fbc6d7e6b874fb3a862d6558ac6d17fae03))
+
 # [6.3.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.3.0-prerelease.22...@patternfly/react-docs@6.3.0-prerelease.23) (2024-03-27)
 
 **Note:** Version bump only for package @patternfly/react-docs
