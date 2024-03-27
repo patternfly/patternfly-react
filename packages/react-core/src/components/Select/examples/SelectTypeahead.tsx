@@ -88,6 +88,10 @@ export const SelectBasic: React.FunctionComponent = () => {
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
     setFilterValue(value);
+
+    if (value !== selected) {
+      setSelected('');
+    }
   };
 
   const handleMenuArrowKeys = (key: string) => {
