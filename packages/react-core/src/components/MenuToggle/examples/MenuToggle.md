@@ -17,7 +17,7 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 ### Collapsed toggle
 
-A toggle is collapsed until it is selected by a user. 
+A toggle is collapsed until it is selected by a user.
 
 ```ts
 import React from 'react';
@@ -29,7 +29,7 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ### Expanded toggle
 
-When a user selects a toggle, it becomes expanded and is styled with a blue underline. To flag expanded toggles, and apply expanded styling, use the `isExpanded` property . 
+When a user selects a toggle, it becomes expanded and is styled with a blue underline. To flag expanded toggles, and apply expanded styling, use the `isExpanded` property .
 
 ```ts
 import React from 'react';
@@ -41,7 +41,7 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ### Disabled toggle
 
-To disable the selection and expansion of a toggle, use the `isDisabled` property. 
+To disable the selection and expansion of a toggle, use the `isDisabled` property.
 
 ```ts
 import React from 'react';
@@ -65,7 +65,7 @@ import { MenuToggle, Badge } from '@patternfly/react-core';
 
 ### With icons
 
-To add a recognizable icon to a menu toggle, use the `icon` property. The following example adds a `CogIcon` to the  toggle.
+To add a recognizable icon to a menu toggle, use the `icon` property. The following example adds a `CogIcon` to the toggle.
 
 For most basic icons, it is recommended to wrap it inside our [icon component](/components/icon).
 
@@ -111,7 +111,7 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 ### With avatar and text
 
-You can also pass images into the `icon` property. The following example passes in an `<Avatar>` component with an `imgAvatar`. 
+You can also pass images into the `icon` property. The following example passes in an `<Avatar>` component with an `imgAvatar`.
 
 This can be used alongside a text label that provides more context for the image.
 
@@ -150,9 +150,9 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 ### Plain toggle with icon
 
-To apply plain styling to a menu toggle with an icon, pass in `variant="plain"`. This will remove the default bottom border and caret. You may pass in an `icon` to serve as the menu toggle. The following example passes in an `EllipsisVIcon`. 
+To apply plain styling to a menu toggle with an icon, pass in `variant="plain"`. This will remove the default bottom border and caret. You may pass in an `icon` to serve as the menu toggle. The following example passes in an `EllipsisVIcon`.
 
-If the toggle does not have any visible text content, use the `aria-label` property to provide an accessible name. 
+If the toggle does not have any visible text content, use the `aria-label` property to provide an accessible name.
 
 ```ts
 import React from 'react';
@@ -171,6 +171,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
   </MenuToggle>
 </React.Fragment>
 ```
+
 ### Plain toggle with text label
 
 To apply plain styling to a menu toggle with a text label, pass in `variant="plainText"`. Unlike the “plain” variant, “plainText” adds a caret pointing down in the toggle.
@@ -201,27 +202,30 @@ The following example shows a split button with a `<MenuToggleCheckbox>`.
 Variant styling can be applied to split button toggles to adjust their appearance for different scenarios. Both "primary" and "secondary" variants can be used with split button toggles.
 
 ```ts file='MenuToggleSplitButtonCheckbox.tsx'
+
 ```
 
 ### Split button toggle with text label
 
-To display text in a split button menu toggle, add a label to the `items` property of `splitButtonOptions`.  
+To display text in a split button menu toggle, add a label to the `items` property of `splitButtonOptions`.
 
 ```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
+
 ```
 
 ### Split button toggle with action
 
-To add an action to a split button, pass `variant='action'` into `splitButtonOptions` and add a `<MenuToggleAction>` to the `items` property of `splitButtonOptions`. 
+To add an action to a split button, pass `variant='action'` into `splitButtonOptions` and add a `<MenuToggleAction>` to the `items` property of `splitButtonOptions`.
 
 Actions may be used with primary and secondary toggle variants.
-    
+
 ```ts file='MenuToggleSplitButtonAction.tsx'
+
 ```
 
 ### Full height toggle
 
-A full height toggle fills the height of its parent. To flag a full height toggle, use the `isFullHeight` property. 
+A full height toggle fills the height of its parent. To flag a full height toggle, use the `isFullHeight` property.
 
 In the following example, the toggle fills the size of the "80px" `<div>` element that it is within.
 
@@ -238,7 +242,7 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ### Full width toggle
 
-A full width toggle fills the width of its parent. To flag a full width toggle, use the `isFullWidth` property. 
+A full width toggle fills the width of its parent. To flag a full width toggle, use the `isFullWidth` property.
 
 In the following example, the toggle fills the width of its parent as the window size changes.
 
@@ -249,7 +253,7 @@ import { MenuToggle } from '@patternfly/react-core';
 const fullWidth: React.FunctionComponent = () => {
   return (
     <MenuToggle isFullWidth aria-label="Full width menu toggle" >
-      Full width 
+      Full width
     </MenuToggle>
   );
 }
@@ -262,4 +266,13 @@ To create a typeahead toggle, pass in `variant="typeahead"` to the `<MenuToggle>
 To create a multiple typeahead toggle, pass a `<TextInputGroup>` component implemented like the [text input group's filter example](/components/text-input-group#filters) as a child of `<MenuToggle>`.
 
 ```ts file='MenuToggleTypeahead.tsx'
+
+```
+
+### Status toggle
+
+To create a toggle with a status, pass in `status` to the `MenuToggle`. The default icon associated with each status may be overridden by using the `statusIcon` property.
+
+```ts file='MenuToggleStatus.tsx'
+
 ```
