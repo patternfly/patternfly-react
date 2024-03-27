@@ -1,12 +1,22 @@
 /* eslint-disable no-console */
-import * as React from 'react';
+import {
+  HTMLProps,
+  RefObject,
+  ReactNode,
+  FunctionComponent,
+  useState,
+  createRef,
+  useEffect,
+  cloneElement,
+  ReactElement
+} from 'react';
+
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css } from '@patternfly/react-styles';
 import { TooltipContent } from './TooltipContent';
 import { TooltipArrow } from './TooltipArrow';
 import { KeyTypes } from '../../helpers/constants';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/esm/c_tooltip_MaxWidth';
-import { ReactElement } from 'react';
 import { Popper } from '../../helpers/Popper/Popper';
 
 export enum TooltipPosition {
@@ -25,7 +35,7 @@ export enum TooltipPosition {
   rightEnd = 'right-end'
 }
 
-export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'content'> {
+export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'content'> {
   /** The element to append the tooltip to, defaults to body */
   appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
   /**
@@ -52,11 +62,11 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
    * When passed along with the trigger prop, the div element that wraps the trigger will be removed.
    * Usage: <Tooltip triggerRef={() => document.getElementById('reference-element')} />
    */
-  triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
+  triggerRef?: HTMLElement | (() => HTMLElement) | RefObject<any>;
   /** Tooltip additional class */
   className?: string;
   /** Tooltip content */
-  content: React.ReactNode;
+  content: ReactNode;
   /** Distance of the tooltip to its target, defaults to 15 */
   distance?: number;
   /** If true, tries to keep the tooltip in view by flipping it if necessary */
@@ -141,7 +151,7 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
 // id for associating trigger with the content aria-describedby or aria-labelledby
 let pfTooltipIdCounter = 1;
 
-export const Tooltip: React.FunctionComponent<TooltipProps> = ({
+export const Tooltip: FunctionComponent<TooltipProps> = ({
   content: bodyContent,
   position = 'top',
   trigger = 'mouseenter focus',
@@ -173,8 +183,8 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   const triggerOnFocus = trigger.includes('focus');
   const triggerOnClick = trigger.includes('click');
   const triggerManually = trigger === 'manual';
-  const [visible, setVisible] = React.useState(false);
-  const popperRef = React.createRef<HTMLDivElement>();
+  const [visible, setVisible] = useState(false);
+  const popperRef = createRef<HTMLDivElement>();
 
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (!triggerManually) {
@@ -192,7 +202,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       }
     }
   };
-  React.useEffect(() => {
+  useEffect(() => {
     if (isVisible) {
       show();
     } else {
@@ -262,9 +272,9 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
 
   const addAriaToTrigger = () => {
     if (aria === 'describedby' && children && children.props && !children.props['aria-describedby']) {
-      return React.cloneElement(children, { 'aria-describedby': id });
+      return cloneElement(children, { 'aria-describedby': id });
     } else if (aria === 'labelledby' && children.props && !children.props['aria-labelledby']) {
-      return React.cloneElement(children, { 'aria-labelledby': id });
+      return cloneElement(children, { 'aria-labelledby': id });
     }
     return children;
   };

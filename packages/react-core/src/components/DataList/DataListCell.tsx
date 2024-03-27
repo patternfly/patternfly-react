@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { DataListWrapModifier } from './DataList';
 
-export interface DataListCellProps extends Omit<React.HTMLProps<HTMLDivElement>, 'width'> {
+export interface DataListCellProps extends Omit<HTMLProps<HTMLDivElement>, 'width'> {
   /** Content rendered inside the DataList cell */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the DataList cell */
   className?: string;
   /** Width (from 1-5) to the DataList cell */
@@ -20,7 +20,7 @@ export interface DataListCellProps extends Omit<React.HTMLProps<HTMLDivElement>,
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
 }
 
-export const DataListCell: React.FunctionComponent<DataListCellProps> = ({
+export const DataListCell: FunctionComponent<DataListCellProps> = ({
   children = null,
   className = '',
   width = 1,

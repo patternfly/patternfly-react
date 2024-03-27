@@ -1,14 +1,14 @@
-import * as React from 'react';
+import { ButtonHTMLAttributes, DetailedHTMLProps, MouseEvent, ReactNode, FunctionComponent, createRef } from 'react';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import { Button } from '../Button';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 
 export interface ClipboardCopyButtonProps
-  extends Omit<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'ref'> {
+  extends Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'ref'> {
   /** Callback for the copy when the button is clicked */
-  onClick: (event: React.MouseEvent) => void;
+  onClick: (event: MouseEvent) => void;
   /** Content of the copy button */
-  children: React.ReactNode;
+  children: ReactNode;
   /** ID of the copy button */
   id: string;
   /** ID of the content that is being copied */
@@ -45,7 +45,7 @@ export interface ClipboardCopyButtonProps
   onTooltipHidden?: () => void;
 }
 
-export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonProps> = ({
+export const ClipboardCopyButton: FunctionComponent<ClipboardCopyButtonProps> = ({
   onClick,
   exitDelay = 0,
   entryDelay = 300,
@@ -60,7 +60,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   className,
   ...props
 }: ClipboardCopyButtonProps) => {
-  const triggerRef = React.createRef<HTMLButtonElement>();
+  const triggerRef = createRef<HTMLButtonElement>();
 
   return (
     <Tooltip

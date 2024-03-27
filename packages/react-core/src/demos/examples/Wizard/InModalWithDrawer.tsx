@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, useRef } from 'react';
 import {
   Button,
   Drawer,
@@ -16,9 +16,9 @@ import {
   DrawerColorVariant
 } from '@patternfly/react-core';
 
-export const WizardModalWithDrawerDemo: React.FunctionComponent = () => {
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
-  const drawerRef = React.useRef<HTMLSpanElement | null>(null);
+export const WizardModalWithDrawerDemo: FunctionComponent = () => {
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
+  const drawerRef = useRef<HTMLSpanElement | null>(null);
 
   const onExpand = () => {
     if (drawerRef.current) {

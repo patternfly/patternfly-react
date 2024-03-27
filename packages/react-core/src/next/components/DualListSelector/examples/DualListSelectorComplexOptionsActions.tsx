@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, ChangeEvent, KeyboardEvent, Ref, useState, Fragment } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -37,20 +37,20 @@ interface Option {
   isVisible: boolean;
 }
 
-export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent = () => {
-  const [availableOptions, setAvailableOptions] = React.useState<Option[]>([
+export const DualListSelectorComplexOptionsActionsNext: FunctionComponent = () => {
+  const [availableOptions, setAvailableOptions] = useState<Option[]>([
     { text: 'Option 1', selected: false, isVisible: true },
     { text: 'Option 2', selected: false, isVisible: true },
     { text: 'Option 3', selected: false, isVisible: true },
     { text: 'Option 4', selected: false, isVisible: true }
   ]);
 
-  const [chosenOptions, setChosenOptions] = React.useState<Option[]>([]);
-  const [isAvailableKebabOpen, setIsAvailableKebabOpen] = React.useState(false);
-  const [isChosenKebabOpen, setIsChosenKebabOpen] = React.useState(false);
-  const [availableFilter, setAvailableFilter] = React.useState('');
-  const [chosenFilter, setChosenFilter] = React.useState('');
-  const [isDisabled, setIsDisabled] = React.useState(false);
+  const [chosenOptions, setChosenOptions] = useState<Option[]>([]);
+  const [isAvailableKebabOpen, setIsAvailableKebabOpen] = useState(false);
+  const [isChosenKebabOpen, setIsChosenKebabOpen] = useState(false);
+  const [availableFilter, setAvailableFilter] = useState('');
+  const [chosenFilter, setChosenFilter] = useState('');
+  const [isDisabled, setIsDisabled] = useState(false);
 
   // callback for moving selected options between lists
   const moveSelected = (fromAvailable: boolean) => {
@@ -86,11 +86,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
   };
 
   // callback when option is selected
-  const onOptionSelect = (
-    event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent,
-    index: number,
-    isChosen: boolean
-  ) => {
+  const onOptionSelect = (event: MouseEvent | ChangeEvent | KeyboardEvent, index: number, isChosen: boolean) => {
     if (isChosen) {
       const newChosen = [...chosenOptions];
       newChosen[index].selected = !chosenOptions[index].selected;
@@ -160,7 +156,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
             <PficonSortCommonAscIcon />
           </Button>,
           <Dropdown
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
                 isDisabled={isDisabled}
@@ -197,7 +193,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
             <PficonSortCommonAscIcon />
           </Button>,
           <Dropdown
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
                 isDisabled={isDisabled}
@@ -240,7 +236,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DualListSelector>
         <DualListSelectorPane
           title="Available options"
@@ -342,6 +338,6 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
         isChecked={isDisabled}
         onChange={() => setIsDisabled(!isDisabled)}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

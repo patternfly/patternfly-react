@@ -6,7 +6,7 @@ import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getLabelTextSize } from '../ChartUtils/chart-label';
 import { getPieOrigin } from './chart-origin';
-import * as React from 'react';
+import { ReactElement, cloneElement } from 'react';
 
 interface ChartLegendInterface {
   allowWrap?: boolean; // Allow legend items to wrap to the next line
@@ -15,7 +15,7 @@ interface ChartLegendInterface {
   dx?: number; // Horizontal shift from the x coordinate
   dy?: number; // Vertical shift from the x coordinate
   height: number; // Overall height of SVG
-  legendComponent: React.ReactElement<any>; // The base legend component to render
+  legendComponent: ReactElement<any>; // The base legend component to render
   orientation?: 'horizontal' | 'vertical'; // Orientation of legend
   padding: PaddingProps; // Chart padding
   patternScale?: string[]; // Legend symbol patterns
@@ -145,7 +145,7 @@ export const getComputedLegend = ({
     x: legendX > 0 ? legendX : 0,
     y: legendY > 0 ? legendY : 0
   });
-  return React.cloneElement(legendComponent, legendProps);
+  return cloneElement(legendComponent, legendProps);
 };
 
 /**

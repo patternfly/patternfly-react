@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FormEvent, MouseEvent, Component } from 'react';
 import { sortable, ICell, IRow, ISortBy } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { Checkbox } from '@patternfly/react-core';
@@ -10,7 +10,7 @@ interface TableState {
   canSortFavorites: boolean;
 }
 
-export class TableFavoritesDemo extends React.Component<TableProps, TableState> {
+export class TableFavoritesDemo extends Component<TableProps, TableState> {
   static displayName = 'TableFavoritesDemo';
   constructor(props: TableProps) {
     super(props);
@@ -50,7 +50,7 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
     this.toggleFavsSort = this.toggleFavsSort.bind(this);
   }
 
-  onSelect(event: React.FormEvent, isSelected: boolean, rowId: number) {
+  onSelect(event: FormEvent, isSelected: boolean, rowId: number) {
     let rows;
     if (rowId === -1) {
       // header row
@@ -68,7 +68,7 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
     });
   }
 
-  onFavorite(event: React.MouseEvent, isFavorited: boolean, rowId: number) {
+  onFavorite(event: MouseEvent, isFavorited: boolean, rowId: number) {
     this.setState({
       rows: this.state.rows.map((row, index) => {
         if (index === rowId) {
@@ -84,7 +84,7 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
     });
   }
 
-  onSort(_event: React.MouseEvent, index: number, direction: 'asc' | 'desc') {
+  onSort(_event: MouseEvent, index: number, direction: 'asc' | 'desc') {
     let sortedRows;
     if (index === 1) {
       // favorites column

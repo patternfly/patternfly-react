@@ -1,9 +1,9 @@
-import React from 'react';
+import { ReactNode, FunctionComponent, useState, useEffect } from 'react';
 import { Form, FormGroup, TextInput } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated, WizardStep } from '@patternfly/react-core/deprecated';
 interface PrevStepInfo {
   prevId?: string | number;
-  prevName: React.ReactNode;
+  prevName: ReactNode;
 }
 
 interface sampleFormProps {
@@ -12,9 +12,9 @@ interface sampleFormProps {
   onChange?: (isValid: boolean, value: string) => void;
 }
 
-const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormProps) => {
-  const [value, setValue] = React.useState(props.formValue);
-  const [isValid, setIsValid] = React.useState(props.isFormValid);
+const SampleForm: FunctionComponent<sampleFormProps> = (props: sampleFormProps) => {
+  const [value, setValue] = useState(props.formValue);
+  const [isValid, setIsValid] = useState(props.isFormValid);
 
   const handleTextInputChange = (_event, value: string) => {
     const valid = /^\d+$/.test(value);
@@ -47,13 +47,13 @@ const SampleForm: React.FunctionComponent<sampleFormProps> = (props: sampleFormP
   );
 };
 
-export const WizardFormValidation: React.FunctionComponent = () => {
-  const [isFormValid, setIsFormValid] = React.useState(false);
-  const [formValue, setFormValue] = React.useState('Thirty');
-  const [allStepsValid, setAllStepsValid] = React.useState(false);
-  const [stepIdReached, setStepIdReached] = React.useState(1);
+export const WizardFormValidation: FunctionComponent = () => {
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [formValue, setFormValue] = useState('Thirty');
+  const [allStepsValid, setAllStepsValid] = useState(false);
+  const [stepIdReached, setStepIdReached] = useState(1);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setAllStepsValid(isFormValid);
   }, [isFormValid, stepIdReached]);
 

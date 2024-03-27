@@ -9,10 +9,10 @@ deprecated: true
 You can use the `<DragDrop>` component to move items in or between lists. The `<DragDrop>` component should contain `<Droppable>` components which contain `<Draggable>` components.
 
 ```ts noLive
-import React from 'react';
+import { type FunctionComponent } from 'react';
 import { DragDrop, Draggable, Droppable } from '@patternfly/react-core';
 
-const DragDropCodeSample: React.FunctionComponent = () => (
+const DragDropCodeSample: FunctionComponent = () => (
   <DragDrop>
     {' '}
     {/* DragDrop houses the context for dragging and dropping */}

@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { ReactNode, createContext } from 'react';
 
 interface AlertContext {
-  title: React.ReactNode;
+  title: ReactNode;
   variantLabel?: string;
 }
 
-export const AlertContext = React.createContext<AlertContext>(null);
+export const AlertContext = createContext<AlertContext>(null);

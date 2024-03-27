@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 import { formatBreakpointMods } from '../../helpers';
@@ -14,9 +14,9 @@ export interface BreakpointModifiers {
   '2xl'?: string;
 }
 
-export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElement>, 'type'> {
+export interface DescriptionListProps extends Omit<HTMLProps<HTMLDListElement>, 'type'> {
   /** Anything that can be rendered inside of the list */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the list */
   className?: string;
   /** Sets the description list to auto fit. */
@@ -83,7 +83,7 @@ const setBreakpointModifiers = (prefix: string, modifiers: BreakpointModifiers) 
   );
 };
 
-export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
+export const DescriptionList: FunctionComponent<DescriptionListProps> = ({
   className = '',
   children = null,
   isHorizontal = false,

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FunctionComponent, useContext } from 'react';
 import { Button, ButtonProps, ButtonVariant } from '../Button';
 import { AlertContext } from './AlertContext';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -16,14 +16,14 @@ export interface AlertToggleExpandButtonProps extends ButtonProps {
   variantLabel?: string;
 }
 
-export const AlertToggleExpandButton: React.FunctionComponent<AlertToggleExpandButtonProps> = ({
+export const AlertToggleExpandButton: FunctionComponent<AlertToggleExpandButtonProps> = ({
   'aria-label': ariaLabel = '',
   variantLabel,
   onToggleExpand,
   isExpanded = false,
   ...props
 }: AlertToggleExpandButtonProps) => {
-  const { title, variantLabel: alertVariantLabel } = React.useContext(AlertContext);
+  const { title, variantLabel: alertVariantLabel } = useContext(AlertContext);
   return (
     <Button
       variant={ButtonVariant.plain}

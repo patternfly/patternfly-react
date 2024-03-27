@@ -1,6 +1,6 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { CodeEditor } from '@patternfly/react-code-editor';
 
-export const CodeEditorWithActions: React.FunctionComponent = () => (
+export const CodeEditorWithActions: FunctionComponent = () => (
   <CodeEditor isUploadEnabled isDownloadEnabled isCopyEnabled isLanguageLabelVisible height="400px" />
 );

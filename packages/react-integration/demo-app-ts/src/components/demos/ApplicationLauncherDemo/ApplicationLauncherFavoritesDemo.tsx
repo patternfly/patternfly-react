@@ -1,4 +1,10 @@
-import React from 'react';
+import {
+  Component,
+  type SyntheticEvent,
+  type MouseEvent as ReactMouseEvent,
+  type FormEvent as ReactFormEvent,
+  cloneElement
+} from 'react';
 import {
   ApplicationLauncher,
   ApplicationLauncherItem,
@@ -12,8 +18,9 @@ interface ApplicationLauncherFavoritesDemoState {
   filteredItems: (JSX.Element | null)[] | null;
 }
 
-export class ApplicationLauncherFavoritesDemo extends React.Component<null, ApplicationLauncherFavoritesDemoState> {
+export class ApplicationLauncherFavoritesDemo extends Component<null, ApplicationLauncherFavoritesDemoState> {
   static displayName = 'ApplicationLauncherFavoritesDemo';
+
   state: ApplicationLauncherFavoritesDemoState = {
     isOpen: false,
     favorites: [''],
@@ -52,15 +59,15 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
     });
   };
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onSelect = (_event: React.SyntheticEvent) => {
+  onSelect = (_event: SyntheticEvent) => {
     this.setState({
       isOpen: !this.state.isOpen
     });
   };
-  onFavorite = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>, itemId: string, isFavorite: boolean) => {
+  onFavorite = (_event: ReactMouseEvent<HTMLButtonElement, MouseEvent>, itemId: string, isFavorite: boolean) => {
     if (isFavorite) {
       this.setState({
-        favorites: this.state.favorites.filter(id => id !== itemId)
+        favorites: this.state.favorites.filter((id) => id !== itemId)
       });
     } else {
       this.setState({
@@ -68,15 +75,15 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
       });
     }
   };
-  onSearch = (_event: React.FormEvent<HTMLInputElement>, textInput: string) => {
+  onSearch = (_event: ReactFormEvent<HTMLInputElement>, textInput: string) => {
     if (textInput === '') {
       this.setState({
         filteredItems: null
       });
     } else {
       const filteredGroups = this.appLauncherItems
-        .map(group => {
-          const filteredGroup = React.cloneElement(group, {
+        .map((group) => {
+          const filteredGroup = cloneElement(group, {
             children: group.props.children.filter((item: JSX.Element) => {
               if (item.type === ApplicationLauncherSeparator) {
                 return item;
@@ -93,12 +100,12 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
             return null;
           }
         })
-        .filter(newGroup => newGroup);
+        .filter((newGroup) => newGroup);
 
       if (filteredGroups.length > 0) {
         let lastGroup = filteredGroups.pop();
         if (lastGroup) {
-          lastGroup = React.cloneElement(lastGroup, {
+          lastGroup = cloneElement(lastGroup, {
             children: lastGroup.props.children.filter((item: JSX.Element) => item.type !== ApplicationLauncherSeparator)
           });
           filteredGroups.push(lastGroup);

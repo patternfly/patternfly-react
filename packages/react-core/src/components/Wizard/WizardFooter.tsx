@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent, ReactNode } from 'react';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
@@ -14,17 +14,17 @@ export interface WizardFooterProps {
   /** The active step */
   activeStep: WizardStepType;
   /** Next button callback */
-  onNext: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
+  onNext: (event: MouseEvent<HTMLButtonElement>) => void | Promise<void>;
   /** Back button callback */
-  onBack: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
+  onBack: (event: MouseEvent<HTMLButtonElement>) => void | Promise<void>;
   /** Cancel link callback */
-  onClose: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClose: (event: MouseEvent<HTMLButtonElement>) => void;
   /** Custom text for the Next button. The current step's nextButtonText takes precedence. */
-  nextButtonText?: React.ReactNode;
+  nextButtonText?: ReactNode;
   /** Custom text for the Back button */
-  backButtonText?: React.ReactNode;
+  backButtonText?: ReactNode;
   /** Custom text for the Cancel link */
-  cancelButtonText?: React.ReactNode;
+  cancelButtonText?: ReactNode;
   /** Flag to disable the next button */
   isNextDisabled?: boolean;
   /** Flag to disable the back button */
@@ -46,7 +46,7 @@ export interface WizardFooterProps {
  */
 
 interface WizardFooterWrapperProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const WizardFooterWrapper = ({ children }: WizardFooterWrapperProps) => (

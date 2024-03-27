@@ -15,7 +15,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic with right aligned legend
 ```js
-import React from 'react';
 import { ChartPie } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
@@ -43,7 +42,6 @@ import { ChartPie } from '@patternfly/react-charts';
 
 ### Orange with right aligned legend
 ```js
-import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
@@ -72,7 +70,6 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 ### Multi-color (ordered) with bottom aligned legend
 ```js
-import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '300px' }}>

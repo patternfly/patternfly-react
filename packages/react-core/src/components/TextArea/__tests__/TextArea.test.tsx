@@ -1,4 +1,4 @@
-import React from 'react';
+import { RefObject, createRef } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -128,7 +128,7 @@ test('Does not throw console error when aria-label is given but no id', () => {
 });
 
 test('TextArea can be accessed via passed ref', () => {
-  const testRef: React.RefObject<HTMLTextAreaElement> = React.createRef();
+  const testRef: RefObject<HTMLTextAreaElement> = createRef();
   render(<TextArea ref={testRef} />);
   global.scrollTo = jest.fn();
   testRef.current?.focus();

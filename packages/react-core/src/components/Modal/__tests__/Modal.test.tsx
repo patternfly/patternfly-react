@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -22,8 +22,8 @@ const props = {
 const target = document.createElement('div');
 
 const ModalWithSiblings = () => {
-  const [isOpen, setIsOpen] = React.useState(true);
-  const [isModalMounted, setIsModalMounted] = React.useState(true);
+  const [isOpen, setIsOpen] = useState(true);
+  const [isModalMounted, setIsModalMounted] = useState(true);
   const modalProps = { ...props, isOpen, appendTo: target, onClose: () => setIsOpen(false) };
 
   return (

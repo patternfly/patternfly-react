@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import {
   Form,
   FormGroup,
@@ -15,11 +15,11 @@ import {
   FormHelperText
 } from '@patternfly/react-core';
 
-export const FormHorizontal: React.FunctionComponent = () => {
-  const [name, setName] = React.useState('');
-  const [email, setEmail] = React.useState('');
-  const [experience, setExperience] = React.useState('');
-  const [option, setOption] = React.useState('please choose');
+export const FormHorizontal: FunctionComponent = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [experience, setExperience] = useState('');
+  const [option, setOption] = useState('please choose');
 
   const handleNameChange = (_event, name: string) => {
     setName(name);
@@ -33,7 +33,7 @@ export const FormHorizontal: React.FunctionComponent = () => {
     setExperience(experience);
   };
 
-  const handleOptionChange = (_event: React.FormEvent<HTMLSelectElement>, value: string) => {
+  const handleOptionChange = (_event: FormEvent<HTMLSelectElement>, value: string) => {
     setOption(value);
   };
 

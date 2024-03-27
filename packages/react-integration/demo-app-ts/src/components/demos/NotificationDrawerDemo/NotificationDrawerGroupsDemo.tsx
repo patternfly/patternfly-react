@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component, type MouseEvent as ReactMouseEvent, type SyntheticEvent } from 'react';
 import {
   Button,
   EmptyState,
@@ -35,7 +35,7 @@ interface GroupsNotificationDrawerDemoState {
   thirdGroupExpanded: boolean;
 }
 
-export class GroupsNotificationDrawerDemo extends React.Component<
+export class GroupsNotificationDrawerDemo extends Component<
   NotificationDrawerProps,
   GroupsNotificationDrawerDemoState
 > {
@@ -51,7 +51,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
     };
   }
 
-  onDrawerClose = (_event: KeyboardEvent | React.MouseEvent<Element, MouseEvent>) => {
+  onDrawerClose = (_event: KeyboardEvent | ReactMouseEvent<Element, MouseEvent>) => {
     this.setState({
       isDrawerOpen: false
     });
@@ -67,17 +67,17 @@ export class GroupsNotificationDrawerDemo extends React.Component<
       isOpenMap: {}
     });
   };
-  toggleFirstDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
+  toggleFirstDrawer = (event: SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       firstGroupExpanded: value
     });
   };
-  toggleSecondDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
+  toggleSecondDrawer = (event: SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       secondGroupExpanded: value
     });
   };
-  toggleThirdDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
+  toggleThirdDrawer = (event: SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       thirdGroupExpanded: value
     });

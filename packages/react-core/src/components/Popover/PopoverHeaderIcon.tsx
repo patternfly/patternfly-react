@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 
-export interface PopoverHeaderIconProps extends React.HTMLProps<HTMLSpanElement> {
+export interface PopoverHeaderIconProps extends HTMLProps<HTMLSpanElement> {
   /** Content of the header icon */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Class to be applied to the header icon */
   className?: string;
 }
 
-export const PopoverHeaderIcon: React.FunctionComponent<PopoverHeaderIconProps> = ({
+export const PopoverHeaderIcon: FunctionComponent<PopoverHeaderIconProps> = ({
   children,
   className,
   ...props

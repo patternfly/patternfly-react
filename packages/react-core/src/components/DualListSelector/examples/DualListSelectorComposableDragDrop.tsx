@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, ChangeEvent, KeyboardEvent, useState } from 'react';
 import {
   DragDrop,
   Droppable,
@@ -16,14 +16,14 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
-export const DualListSelectorComposableDragDrop: React.FunctionComponent = () => {
-  const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = React.useState(false);
-  const [availableOptions, setAvailableOptions] = React.useState([
+export const DualListSelectorComposableDragDrop: FunctionComponent = () => {
+  const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = useState(false);
+  const [availableOptions, setAvailableOptions] = useState([
     { text: 'Apple', selected: false, isVisible: true },
     { text: 'Banana', selected: false, isVisible: true },
     { text: 'Pineapple', selected: false, isVisible: true }
   ]);
-  const [chosenOptions, setChosenOptions] = React.useState([
+  const [chosenOptions, setChosenOptions] = useState([
     { text: 'Orange', selected: false, isVisible: true },
     { text: 'Grape', selected: false, isVisible: true },
     { text: 'Peach', selected: false, isVisible: true },
@@ -61,11 +61,7 @@ export const DualListSelectorComposableDragDrop: React.FunctionComponent = () =>
     }
   };
 
-  const onOptionSelect = (
-    event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent,
-    index: number,
-    isChosen: boolean
-  ) => {
+  const onOptionSelect = (event: MouseEvent | ChangeEvent | KeyboardEvent, index: number, isChosen: boolean) => {
     if (ignoreNextOptionSelect) {
       setIgnoreNextOptionSelect(false);
       return;

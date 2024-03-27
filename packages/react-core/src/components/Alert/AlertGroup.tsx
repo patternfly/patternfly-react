@@ -1,13 +1,13 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { HTMLProps, ReactNode, Component } from 'react';
+import ReactDOM from 'react-dom';
 import { canUseDOM } from '../../helpers';
 import { AlertGroupInline } from './AlertGroupInline';
 
-export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>, 'className'> {
+export interface AlertGroupProps extends Omit<HTMLProps<HTMLUListElement>, 'className'> {
   /** Additional classes added to the AlertGroup */
   className?: string;
   /** Alerts to be rendered in the AlertGroup */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Toast notifications are positioned at the top right corner of the viewport */
   isToast?: boolean;
   /** Turns the container into a live region so that changes to content within the AlertGroup, such as appending an Alert, are reliably announced to assistive technology. */
@@ -26,7 +26,7 @@ interface AlertGroupState {
   container: HTMLElement;
 }
 
-class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState> {
+class AlertGroup extends Component<AlertGroupProps, AlertGroupState> {
   static displayName = 'AlertGroup';
   state = {
     container: undefined

@@ -1,11 +1,11 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, useState } from 'react';
 import { Page, PageSidebar, PageSidebarBody, PageSection, PageSectionVariants } from '@patternfly/react-core';
 import { PageHeader as PageHeaderDeprecated, PageHeaderTools } from '@patternfly/react-core/deprecated';
 
-export const PageVerticalNavUsingPageHeaderComponent: React.FunctionComponent = () => {
-  const [isNavOpen, setIsNavOpen] = React.useState(true);
+export const PageVerticalNavUsingPageHeaderComponent: FunctionComponent = () => {
+  const [isNavOpen, setIsNavOpen] = useState(true);
 
-  const onNavToggle = (_event: React.MouseEvent) => {
+  const onNavToggle = (_event: MouseEvent) => {
     setIsNavOpen(!isNavOpen);
   };
 

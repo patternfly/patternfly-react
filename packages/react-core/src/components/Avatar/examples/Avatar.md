@@ -14,7 +14,6 @@ import './example.css';
 ### Basic
 
 ```ts
-import React from 'react';
 import { Avatar } from '@patternfly/react-core';
 import avatarImg from '../../assets/avatarImg.svg';
 
@@ -24,11 +23,10 @@ import avatarImg from '../../assets/avatarImg.svg';
 ### Size variations
 
 ```ts
-import React from 'react';
 import { Avatar } from '@patternfly/react-core';
 import avatarImg from '../../assets/avatarImg.svg';
 
-<React.Fragment>
+<>
   Small
   <br />
   <Avatar src={avatarImg} alt="avatar" size="sm" />
@@ -44,13 +42,12 @@ import avatarImg from '../../assets/avatarImg.svg';
   Extra Large
   <br />
   <Avatar src={avatarImg} alt="avatar" size="xl" />
-</React.Fragment>;
+</>;
 ```
 
 ### Bordered - light
 
 ```ts
-import React from 'react';
 import { Avatar } from '@patternfly/react-core';
 import avatarImg from '../../assets/avatarImg.svg';
 
@@ -60,7 +57,6 @@ import avatarImg from '../../assets/avatarImg.svg';
 ### Bordered - dark
 
 ```ts
-import React from 'react';
 import { Avatar } from '@patternfly/react-core';
 import avatarImgDark from '../../assets/avatarImgDark.svg';
 

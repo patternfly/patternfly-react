@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 import { DualListSelector } from '../../DualListSelector';
-import React from 'react';
 
 describe('DualListSelector', () => {
   test('basic', () => {

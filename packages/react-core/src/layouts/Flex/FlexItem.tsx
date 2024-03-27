@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, ElementType, ComponentType, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/layouts/Flex/flex';
 import * as flexToken from '@patternfly/react-tokens/dist/esm/l_flex_item_Order';
 
 import { formatBreakpointMods, setBreakpointCssVars } from '../../helpers/util';
 
-export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
+export interface FlexItemProps extends HTMLProps<HTMLDivElement> {
   /** content rendered inside the Flex layout */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** additional classes added to the Flex layout */
   className?: string;
   /** Spacers at various breakpoints */
@@ -136,10 +136,10 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: string;
   };
   /** Sets the base component to render. defaults to div */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: ElementType<any> | ComponentType<any>;
 }
 
-export const FlexItem: React.FunctionComponent<FlexItemProps> = ({
+export const FlexItem: FunctionComponent<FlexItemProps> = ({
   children = null,
   className = '',
   component = 'div',

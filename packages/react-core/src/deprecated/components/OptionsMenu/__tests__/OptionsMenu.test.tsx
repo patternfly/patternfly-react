@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode, Fragment } from 'react';
 import { render } from '@testing-library/react';
 import { OptionsMenu, OptionsMenuDirection, OptionsMenuPosition } from '../OptionsMenu';
 import { OptionsMenuToggle } from '../OptionsMenuToggle';
@@ -34,14 +34,14 @@ describe('optionsMenu', () => {
   test('renders in strict mode', () => {
     const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = render(
-      <React.StrictMode>
+      <StrictMode>
         <OptionsMenu
           id="regular"
           menuItems={menuItems}
           isOpen
           toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
         />
-      </React.StrictMode>
+      </StrictMode>
     );
     expect(consoleError).not.toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
@@ -113,9 +113,7 @@ describe('optionsMenu', () => {
       <OptionsMenu
         id="text"
         menuItems={menuItems}
-        toggle={
-          <OptionsMenuToggleWithText toggleButtonContents={<React.Fragment>Test</React.Fragment>} toggleText="Test" />
-        }
+        toggle={<OptionsMenuToggleWithText toggleButtonContents={<Fragment>Test</Fragment>} toggleText="Test" />}
       />
     );
     expect(asFragment()).toMatchSnapshot();

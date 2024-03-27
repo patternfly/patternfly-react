@@ -1,30 +1,27 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, SetStateAction, Dispatch, useState, Fragment } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
-export const NumberInputVaryingSizes: React.FunctionComponent = () => {
-  const [input1Value, setInput1Value] = React.useState<number | ''>(1);
-  const [input2Value, setInput2Value] = React.useState<number | ''>(1234567890);
-  const [input3Value, setInput3Value] = React.useState<number | ''>(5);
-  const [input4Value, setInput4Value] = React.useState<number | ''>(12345);
+export const NumberInputVaryingSizes: FunctionComponent = () => {
+  const [input1Value, setInput1Value] = useState<number | ''>(1);
+  const [input2Value, setInput2Value] = useState<number | ''>(1234567890);
+  const [input3Value, setInput3Value] = useState<number | ''>(5);
+  const [input4Value, setInput4Value] = useState<number | ''>(12345);
 
-  const onChange = (
-    event: React.FormEvent<HTMLInputElement>,
-    updateFunction: React.Dispatch<React.SetStateAction<number | ''>>
-  ) => {
+  const onChange = (event: FormEvent<HTMLInputElement>, updateFunction: Dispatch<SetStateAction<number | ''>>) => {
     const value = (event.target as HTMLInputElement).value;
     updateFunction(value === '' ? value : +value);
   };
 
-  const onMinus = (value: number | '', updateFunction: React.Dispatch<React.SetStateAction<number | ''>>) => {
+  const onMinus = (value: number | '', updateFunction: Dispatch<SetStateAction<number | ''>>) => {
     updateFunction((value || 0) - 1);
   };
 
-  const onPlus = (value: number | '', updateFunction: React.Dispatch<React.SetStateAction<number | ''>>) => {
+  const onPlus = (value: number | '', updateFunction: Dispatch<SetStateAction<number | ''>>) => {
     updateFunction((value || 0) + 1);
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <NumberInput
         value={input1Value}
         onMinus={() => onMinus(input1Value, setInput1Value)}
@@ -75,6 +72,6 @@ export const NumberInputVaryingSizes: React.FunctionComponent = () => {
         plusBtnAriaLabel="input 4 plus"
         widthChars={5}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

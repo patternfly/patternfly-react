@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Key, useState, Fragment } from 'react';
 import {
   Alert,
   AlertProps,
@@ -10,9 +10,9 @@ import {
 } from '@patternfly/react-core';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
-export const AlertGroupToastOverflowCapture: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
-  const [overflowMessage, setOverflowMessage] = React.useState<string>('');
+export const AlertGroupToastOverflowCapture: FunctionComponent = () => {
+  const [alerts, setAlerts] = useState<Partial<AlertProps>[]>([]);
+  const [overflowMessage, setOverflowMessage] = useState<string>('');
 
   const maxDisplayed = 4;
 
@@ -24,12 +24,12 @@ export const AlertGroupToastOverflowCapture: React.FunctionComponent = () => {
     return '';
   };
 
-  const addAlert = (title: string, variant: AlertProps['variant'], key: React.Key) => {
+  const addAlert = (title: string, variant: AlertProps['variant'], key: Key) => {
     setAlerts((prevAlerts) => [...prevAlerts, { title, variant, key }]);
     setOverflowMessage(getOverflowMessage(alerts.length + 1));
   };
 
-  const removeAlert = (key: React.Key) => {
+  const removeAlert = (key: Key) => {
     const newAlerts = alerts.filter((alert) => alert.key !== key);
     setAlerts(newAlerts);
     setOverflowMessage(getOverflowMessage(newAlerts.length));
@@ -57,7 +57,7 @@ export const AlertGroupToastOverflowCapture: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <InputGroup style={{ marginBottom: '16px' }}>
         <InputGroupItem>
           <button onClick={addSuccessAlert} type="button" className={btnClasses}>
@@ -91,6 +91,6 @@ export const AlertGroupToastOverflowCapture: React.FunctionComponent = () => {
           />
         ))}
       </AlertGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

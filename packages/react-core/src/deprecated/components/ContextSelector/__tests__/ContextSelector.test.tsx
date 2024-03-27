@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -32,11 +32,11 @@ describe('ContextSelector', () => {
   test('Renders in strict mode', () => {
     const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = render(
-      <React.StrictMode>
+      <StrictMode>
         <ContextSelector isOpen id="render">
           {items}
         </ContextSelector>
-      </React.StrictMode>
+      </StrictMode>
     );
     expect(consoleError).not.toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();

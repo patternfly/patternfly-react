@@ -1,16 +1,21 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type ChangeEvent as ReactChangeEvent,
+  type MouseEvent as ReactMouseEvent
+} from 'react';
 import { FileUpload, DropEvent } from '@patternfly/react-core';
 
-export const SimpleTextFileUpload: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
-  const [filename, setFilename] = React.useState('');
-  const [isLoading, setIsLoading] = React.useState(false);
+export const SimpleTextFileUpload: FunctionComponent = () => {
+  const [value, setValue] = useState('');
+  const [filename, setFilename] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFileInputChange = (_, file: File) => {
     setFilename(file.name);
   };
 
-  const handleTextChange = (_event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => {
+  const handleTextChange = (_event: ReactChangeEvent<HTMLTextAreaElement>, value: string) => {
     setValue(value);
   };
 
@@ -18,7 +23,7 @@ export const SimpleTextFileUpload: React.FunctionComponent = () => {
     setValue(value);
   };
 
-  const handleClear = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleClear = (_event: ReactMouseEvent<HTMLButtonElement, MouseEvent>) => {
     setFilename('');
     setValue('');
   };

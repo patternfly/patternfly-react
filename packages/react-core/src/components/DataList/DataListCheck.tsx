@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { HTMLProps, FormEvent, FunctionComponent, Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 
-export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'checked'> {
+export interface DataListCheckProps extends Omit<HTMLProps<HTMLInputElement>, 'onChange' | 'checked'> {
   /** Additional classes added to the DataList item checkbox */
   className?: string;
   /** Flag to show if the DataList checkbox selection is valid or invalid */
@@ -24,17 +24,17 @@ export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElemen
    */
   defaultChecked?: boolean;
   /** A callback for when the DataList checkbox selection changes */
-  onChange?: (event: React.FormEvent<HTMLInputElement>, checked: boolean) => void;
+  onChange?: (event: FormEvent<HTMLInputElement>, checked: boolean) => void;
   /** Aria-labelledby of the DataList checkbox */
   'aria-labelledby': string;
   /** Flag to indicate if other controls are used in the DataListItem */
   otherControls?: boolean;
 }
 
-export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
+export const DataListCheck: FunctionComponent<DataListCheckProps> = ({
   className = '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {},
+  onChange = (event: FormEvent<HTMLInputElement>, checked: boolean) => {},
   isValid = true,
   isDisabled = false,
   isChecked = false,
@@ -57,10 +57,10 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
     </div>
   );
   return (
-    <React.Fragment>
+    <Fragment>
       {!otherControls && <div className={css(styles.dataListItemControl, className)}>{check}</div>}
       {otherControls && check}
-    </React.Fragment>
+    </Fragment>
   );
 };
 DataListCheck.displayName = 'DataListCheck';

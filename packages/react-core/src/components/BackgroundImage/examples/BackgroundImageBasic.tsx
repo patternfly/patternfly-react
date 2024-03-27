@@ -1,6 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { BackgroundImage } from '@patternfly/react-core';
 
-export const BackgroundImageBasic: React.FunctionComponent = () => (
-  <BackgroundImage src="/assets/images/pfbg-icon.svg" />
-);
+export const BackgroundImageBasic: FunctionComponent = () => <BackgroundImage src="/assets/images/pfbg-icon.svg" />;

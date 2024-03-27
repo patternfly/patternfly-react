@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import {
   DataList,
   DataListItem,
@@ -30,7 +30,7 @@ const reorder = (list: ItemType[], startIndex: number, endIndex: number) => {
   return result;
 };
 
-export class DataListDraggableDemo extends React.Component {
+export class DataListDraggableDemo extends Component {
   static displayName = 'DataListDraggableDemo';
   state = {
     liveText: '',

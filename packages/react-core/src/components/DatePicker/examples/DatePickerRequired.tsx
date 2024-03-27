@@ -1,6 +1,6 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
-export const DatePickerRequired: React.FunctionComponent = () => (
+export const DatePickerRequired: FunctionComponent = () => (
   <DatePicker requiredDateOptions={{ isRequired: true, emptyDateText: 'Date is required' }} />
 );

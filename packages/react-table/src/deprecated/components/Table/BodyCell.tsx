@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, ReactElement, FunctionComponent, useState } from 'react';
 import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { Bullseye } from '@patternfly/react-core/dist/esm/layouts/Bullseye';
 import { EmptyState } from '@patternfly/react-core/dist/esm/components/EmptyState';
@@ -9,7 +9,7 @@ export interface BodyCellProps {
   'data-label'?: string;
   className?: string;
   colSpan?: number;
-  component?: React.ReactNode;
+  component?: ReactNode;
   errorText?: string;
   isVisible?: boolean;
   parentId?: number;
@@ -18,16 +18,16 @@ export interface BodyCellProps {
   ariaControls?: string;
   editableValue?: any;
   editableSelectProps?: SelectProps;
-  options?: React.ReactElement[];
+  options?: ReactElement[];
   isSelectOpen?: boolean;
   value?: any;
   isValid?: boolean;
   name?: string;
   tooltip?: string;
   onMouseEnter?: (event: any) => void;
-  children: React.ReactNode;
+  children: ReactNode;
 }
-export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
+export const BodyCell: FunctionComponent<BodyCellProps> = ({
   'data-label': dataLabel = '',
   className = '',
   colSpan,
@@ -52,7 +52,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
 }: BodyCellProps) => {
-  const [tooltip, setTooltip] = React.useState('');
+  const [tooltip, setTooltip] = useState('');
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       if (tooltipProp) {
@@ -69,10 +69,10 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   let isEmptyStateCell = false;
   if (children) {
     isEmptyStateCell =
-      ((children as React.ReactElement).type === Bullseye &&
-        (children as React.ReactElement).props.children &&
-        (children as React.ReactElement).props.children.type === EmptyState) ||
-      (children as React.ReactElement).type === EmptyState;
+      ((children as ReactElement).type === Bullseye &&
+        (children as ReactElement).props.children &&
+        (children as ReactElement).props.children.type === EmptyState) ||
+      (children as ReactElement).type === EmptyState;
   }
 
   const cell = (

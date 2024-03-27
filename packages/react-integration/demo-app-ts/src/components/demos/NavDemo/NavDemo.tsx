@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { FormEvent, Component } from 'react';
 
 import {
   Nav,
@@ -42,17 +42,17 @@ export class NavDemo extends Component {
     window.scrollTo(0, 0);
   }
 
-  onDefaultSelect = (_event: React.FormEvent<HTMLInputElement>, result: SelectedItem) => {
+  onDefaultSelect = (_event: FormEvent<HTMLInputElement>, result: SelectedItem) => {
     this.setState({ defaultActiveItem: result.itemId });
   };
 
-  onFlyoutSelect = (_event: React.FormEvent<HTMLInputElement>, result: SelectedItem) => {
+  onFlyoutSelect = (_event: FormEvent<HTMLInputElement>, result: SelectedItem) => {
     this.setState({ flyoutActiveItem: result.itemId });
   };
 
   handleNoNavigateLink = (
     /* eslint-disable @typescript-eslint/no-unused-vars, no-console */
-    e: React.FormEvent<HTMLInputElement>,
+    e: FormEvent<HTMLInputElement>,
     itemId: number | string,
     groupId: number | string,
     to: string
@@ -92,7 +92,7 @@ export class NavDemo extends Component {
                 isActive={defaultActiveItem === 4}
                 onClick={
                   this.handleNoNavigateLink as (
-                    e: React.FormEvent<HTMLInputElement>,
+                    e: FormEvent<HTMLInputElement>,
                     itemId: number | string,
                     groupId: number | string,
                     to: string
@@ -108,7 +108,7 @@ export class NavDemo extends Component {
     );
   }
 
-  onExpandableSelect = (_event: React.FormEvent<HTMLInputElement>, result: SelectedItem) => {
+  onExpandableSelect = (_event: FormEvent<HTMLInputElement>, result: SelectedItem) => {
     this.setState({
       expandableActiveGroup: result.groupId,
       expandableActiveItem: result.itemId
@@ -116,7 +116,7 @@ export class NavDemo extends Component {
   };
 
   handleItemOnclick = (
-    e: React.FormEvent<HTMLInputElement>,
+    e: FormEvent<HTMLInputElement>,
     itemId: number | string,
     groupId: number | string
   ): void => {
@@ -244,7 +244,7 @@ export class NavDemo extends Component {
     );
   }
 
-  onHorizontalSelect = (_event: React.FormEvent<HTMLInputElement>, result: SelectedItem) => {
+  onHorizontalSelect = (_event: FormEvent<HTMLInputElement>, result: SelectedItem) => {
     this.setState({ horizontalActiveItem: result.itemId });
   };
 
@@ -300,7 +300,7 @@ export class NavDemo extends Component {
       </StackItem>
     );
   }
-  onTertiarySelect = (_event: React.FormEvent<HTMLInputElement>, result: SelectedItem) => {
+  onTertiarySelect = (_event: FormEvent<HTMLInputElement>, result: SelectedItem) => {
     this.setState({ tertiaryActiveItem: result.itemId });
   };
 

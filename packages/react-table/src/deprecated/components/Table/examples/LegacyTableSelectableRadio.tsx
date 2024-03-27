@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { headerCol } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
@@ -10,7 +10,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const LegacyTableSelectableRadio: React.FunctionComponent = () => {
+export const LegacyTableSelectableRadio: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five' },
@@ -22,7 +22,7 @@ export const LegacyTableSelectableRadio: React.FunctionComponent = () => {
 
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
-  const [selectedRepoName, setSelectedRepoName] = React.useState<string | null>(null);
+  const [selectedRepoName, setSelectedRepoName] = useState<string | null>(null);
 
   const columns: TableProps['cells'] = [
     { title: 'Repositories', cellTransforms: [headerCol('selectable-radio')] },

@@ -1,12 +1,12 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, useState } from 'react';
 import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
-export const TreeViewWithIcons: React.FunctionComponent = () => {
-  const [activeItems, setActiveItems] = React.useState<TreeViewDataItem[]>();
+export const TreeViewWithIcons: FunctionComponent = () => {
+  const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();
 
-  const onSelect = (_event: React.MouseEvent, treeViewItem: TreeViewDataItem) => {
+  const onSelect = (_event: MouseEvent, treeViewItem: TreeViewDataItem) => {
     // Ignore folders for selection
     if (treeViewItem && !treeViewItem.children) {
       setActiveItems([treeViewItem]);

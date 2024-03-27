@@ -1,4 +1,14 @@
-import * as React from 'react';
+import {
+  Children,
+  Component,
+  createRef,
+  isValidElement,
+  type HTMLProps,
+  type JSXElementConstructor,
+  type ReactElement,
+  type MouseEvent as ReactMouseEvent,
+  type RefObject
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
@@ -29,10 +39,10 @@ export interface HorizontalOverflowObject {
   toggleAriaLabel?: string;
 }
 
-type TabElement = React.ReactElement<TabProps, React.JSXElementConstructor<TabProps>>;
+type TabElement = ReactElement<TabProps, JSXElementConstructor<TabProps>>;
 type TabsChild = TabElement | boolean | null | undefined;
 
-export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'>, OUIAProps {
+export interface TabsProps extends Omit<HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'>, OUIAProps {
   /** Content rendered inside the tabs component. Only `Tab` components or expressions resulting in a falsy value are allowed here. */
   children: TabsChild | TabsChild[];
   /** Additional classes added to the tabs */
@@ -44,11 +54,11 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** The index of the default active tab. Set this for uncontrolled Tabs */
   defaultActiveKey?: number | string;
   /** Callback to handle tab selection */
-  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
+  onSelect?: (event: ReactMouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
   /** Callback to handle tab closing and adds a basic close button to all tabs. This is overridden by the tab actions property. */
-  onClose?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
+  onClose?: (event: ReactMouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
   /** Callback for the add button. Passing this property inserts the add button */
-  onAdd?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+  onAdd?: (event: ReactMouseEvent<HTMLElement, MouseEvent>) => void;
   /** Aria-label for the add button */
   addButtonAriaLabel?: string;
   /** Uniquely identifies the tabs */
@@ -108,7 +118,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** Aria-label for the expandable toggle */
   toggleAriaLabel?: string;
   /** Callback function to toggle the expandable tabs. */
-  onToggle?: (event: React.MouseEvent, isExpanded: boolean) => void;
+  onToggle?: (event: ReactMouseEvent, isExpanded: boolean) => void;
   /** Flag which places overflowing tabs into a menu triggered by the last tab. Additionally an object can be passed with custom settings for the overflow tab. */
   isOverflowHorizontal?: boolean | HorizontalOverflowObject;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -140,10 +150,10 @@ interface TabsState {
   overflowingTabCount: number;
 }
 
-class Tabs extends React.Component<TabsProps, TabsState> {
+class Tabs extends Component<TabsProps, TabsState> {
   static displayName = 'Tabs';
-  tabList = React.createRef<HTMLUListElement>();
-  leftScrollButtonRef = React.createRef<HTMLButtonElement>();
+  tabList = createRef<HTMLUListElement>();
+  leftScrollButtonRef = createRef<HTMLButtonElement>();
   private direction = 'ltr';
   constructor(props: TabsProps) {
     super(props);
@@ -191,13 +201,13 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     ouiaSafe: true,
     variant: 'default',
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    onToggle: (_event: React.MouseEvent, _isExpanded: boolean): void => undefined
+    onToggle: (_event: ReactMouseEvent, _isExpanded: boolean): void => undefined
   };
 
   handleTabClick(
-    event: React.MouseEvent<HTMLElement, MouseEvent>,
+    event: ReactMouseEvent<HTMLElement, MouseEvent>,
     eventKey: number | string,
-    tabContentRef: React.RefObject<any>
+    tabContentRef: RefObject<any>
   ) {
     const { shownKeys } = this.state;
     const { onSelect, defaultActiveKey } = this.props;
@@ -212,8 +222,8 @@ class Tabs extends React.Component<TabsProps, TabsState> {
 
     // process any tab content sections outside of the component
     if (tabContentRef) {
-      React.Children.toArray(this.props.children)
-        .filter((child): child is TabElement => React.isValidElement(child))
+      Children.toArray(this.props.children)
+        .filter((child): child is TabElement => isValidElement(child))
         .filter(({ props }) => props.tabContentRef && props.tabContentRef.current)
         .forEach((child) => (child.props.tabContentRef.current.hidden = true));
       // most recently selected tabContent
@@ -361,7 +371,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     if (
       prevProps.children &&
       children &&
-      React.Children.toArray(prevProps.children).length !== React.Children.toArray(children).length
+      Children.toArray(prevProps.children).length !== Children.toArray(children).length
     ) {
       this.handleScrollButtons();
     }
@@ -431,13 +441,13 @@ class Tabs extends React.Component<TabsProps, TabsState> {
       uncontrolledIsExpandedLocal,
       overflowingTabCount
     } = this.state;
-    const filteredChildren = React.Children.toArray(children)
-      .filter((child): child is TabElement => React.isValidElement(child))
+    const filteredChildren = Children.toArray(children)
+      .filter((child): child is TabElement => isValidElement(child))
       .filter(({ props }) => !props.isHidden);
 
     const filteredChildrenWithoutOverflow = filteredChildren.slice(0, filteredChildren.length - overflowingTabCount);
     const filteredChildrenOverflowing = filteredChildren.slice(filteredChildren.length - overflowingTabCount);
-    const overflowingTabProps = filteredChildrenOverflowing.map((child: React.ReactElement<TabProps>) => child.props);
+    const overflowingTabProps = filteredChildrenOverflowing.map((child: ReactElement<TabProps>) => child.props);
 
     const uniqueId = id || getUniqueId();
     const Component: any = component === TabsComponent.nav ? 'nav' : 'div';
@@ -445,7 +455,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
 
     const isExpandedLocal = defaultIsExpanded !== undefined ? uncontrolledIsExpandedLocal : isExpanded;
     /*  Uncontrolled expandable tabs */
-    const toggleTabs = (event: React.MouseEvent, newValue: boolean) => {
+    const toggleTabs = (event: ReactMouseEvent, newValue: boolean) => {
       if (isExpanded === undefined) {
         this.setState({ uncontrolledIsExpandedLocal: newValue });
       } else {

@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import topSpacer from '@patternfly/react-tokens/dist/esm/c_modal_box_m_align_top_spacer';
 
-export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
+export interface ModalBoxProps extends HTMLProps<HTMLDivElement> {
   /** Id to use for the modal box description. */
   'aria-describedby': string;
   /** Accessible descriptor of the modal. */
@@ -11,7 +11,7 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   /** Id to use for the modal box label. */
   'aria-labelledby'?: string;
   /** Content rendered inside the modal box. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Additional classes added to the modal box. */
   className?: string;
   /** Position of the modal. By default a modal will be positioned vertically and horizontally centered. */
@@ -22,7 +22,7 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'small' | 'medium' | 'large' | 'default';
 }
 
-export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
+export const ModalBox: FunctionComponent<ModalBoxProps> = ({
   children,
   className = '',
   variant = 'default',

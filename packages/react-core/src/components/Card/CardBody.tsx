@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { css } from '@patternfly/react-styles';
 
-export interface CardBodyProps extends React.HTMLProps<HTMLDivElement> {
+export interface CardBodyProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Card Body */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the Card Body */
   className?: string;
   /** Sets the base component to render. defaults to div */
@@ -13,7 +13,7 @@ export interface CardBodyProps extends React.HTMLProps<HTMLDivElement> {
   isFilled?: boolean;
 }
 
-export const CardBody: React.FunctionComponent<CardBodyProps> = ({
+export const CardBody: FunctionComponent<CardBodyProps> = ({
   children,
   className,
   component = 'div',

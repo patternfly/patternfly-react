@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, ChangeEvent, FunctionComponent, CSSProperties } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { getUniqueId } from '../../../helpers';
@@ -12,32 +12,32 @@ import cssMenuMinHeight from '@patternfly/react-tokens/dist/esm/c_dual_list_sele
  * such as sorting, can also be passed into this sub-component.
  */
 
-export interface DualListSelectorPaneProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
+export interface DualListSelectorPaneProps extends Omit<HTMLProps<HTMLDivElement>, 'title'> {
   /** Additional classes applied to the dual list selector pane. */
   className?: string;
   /** A dual list selector list or dual list selector tree to be rendered in the pane. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Flag indicating if this pane is the chosen pane. */
   isChosen?: boolean;
   /** Status to display above the pane. */
   status?: string;
   /** Title of the pane. */
-  title?: React.ReactNode;
+  title?: ReactNode;
   /** A search input placed above the list at the top of the pane, before actions. */
-  searchInput?: React.ReactNode;
+  searchInput?: ReactNode;
   /** Actions to place above the pane. */
-  actions?: React.ReactNode[];
+  actions?: ReactNode[];
   /** ID of the pane. */
   id?: string;
   /** Flag indicating whether the component is disabled. */
   isDisabled?: boolean;
   /** Callback for search input. To be used when isSearchable is true. */
-  onSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onSearch?: (event: ChangeEvent<HTMLInputElement>) => void;
   /** Minimum height of the list of options rendered in the pane. **/
   listMinHeight?: string;
 }
 
-export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneProps> = ({
+export const DualListSelectorPane: FunctionComponent<DualListSelectorPaneProps> = ({
   isChosen = false,
   className = '',
   status = '',
@@ -83,7 +83,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
         aria-labelledby={`${id}-status`}
         id={`${id}-list`}
         {...(listMinHeight && {
-          style: { [cssMenuMinHeight.name]: listMinHeight } as React.CSSProperties
+          style: { [cssMenuMinHeight.name]: listMinHeight } as CSSProperties
         })}
       >
         {children}

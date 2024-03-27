@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Tile } from '@patternfly/react-core';
 
-export const TileWithSubtext: React.FunctionComponent = () => (
+export const TileWithSubtext: FunctionComponent = () => (
   <div role="listbox" aria-label="Tiles with subtext">
     <Tile title="Default" isSelected={false}>
       Subtext goes here

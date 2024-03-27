@@ -1,5 +1,5 @@
 import { Label, LabelGroup } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 interface LabelState {
   label1: string;

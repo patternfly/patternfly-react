@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import { css } from '@patternfly/react-styles';
 
 import { SelectConsumer, SelectVariant } from './selectConstants';
 
-export interface SelectGroupProps extends React.HTMLProps<HTMLDivElement> {
-  /** Checkboxes within group. Must be React.ReactElement<SelectOptionProps>[] */
-  children?: React.ReactNode;
+export interface SelectGroupProps extends HTMLProps<HTMLDivElement> {
+  /** Checkboxes within group. Must be ReactElement<SelectOptionProps>[] */
+  children?: ReactNode;
   /** Additional classes added to the CheckboxSelectGroup control */
   className?: string;
   /** Group label */
@@ -15,7 +15,7 @@ export interface SelectGroupProps extends React.HTMLProps<HTMLDivElement> {
   titleId?: string;
 }
 
-export const SelectGroup: React.FunctionComponent<SelectGroupProps> = ({
+export const SelectGroup: FunctionComponent<SelectGroupProps> = ({
   children = [],
   className = '',
   label = '',

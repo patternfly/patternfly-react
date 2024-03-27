@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   BlockProps,
@@ -41,7 +41,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * for the border component is based on approximated
    * text measurements, and may need to be adjusted.
    */
-  borderComponent?: React.ReactElement<any>;
+  borderComponent?: ReactElement<any>;
   /**
    * The borderPadding specifies the amount of padding that should
    * be added between the legend items and the border. This prop may be given as
@@ -79,7 +79,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
-  containerComponent?: React.ReactElement<any>;
+  containerComponent?: ReactElement<any>;
   /**
    * Specify data via the data prop. ChartLegend expects data as an
    * array of objects with name (required), symbol, and labels properties.
@@ -106,7 +106,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * If a dataComponent is not provided, ChartLegend will use its
    * default Point component.
    */
-  dataComponent?: React.ReactElement<any>;
+  dataComponent?: ReactElement<any>;
   /**
    * ChartLegend uses the standard eventKey prop to specify how event targets
    * are addressed. This prop is not commonly used.
@@ -131,7 +131,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * The gutter prop defines the number of pixels between legend rows or
    * columns, depending on orientation. When orientation is horizontal,
@@ -155,7 +155,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * custom component itself. If labelComponent is omitted, a new
    * ChartLabel will be created with the props described above.
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * The name prop is typically used to reference a component instance when defining shared events. However, this
    * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
@@ -273,7 +273,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * or ignored within the custom component itself. If labelComponent is omitted,
    * a new ChartLabel will be created with the props described above.
    */
-  titleComponent?: React.ReactElement<any>;
+  titleComponent?: ReactElement<any>;
   /**
    * The titleOrientation prop specifies where the title should be rendered
    * in relation to the rest of the legend. Possible values
@@ -301,7 +301,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
   y?: number;
 }
 
-export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
+export const ChartLegend: FunctionComponent<ChartLegendProps> = ({
   colorScale,
   containerComponent = <ChartContainer />,
   dataComponent = <ChartPoint />,
@@ -341,20 +341,20 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   };
 
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     responsive,
     theme,
     ...containerComponent.props
   });
 
   const getLabelComponent = () =>
-    React.cloneElement(labelComponent, {
+    cloneElement(labelComponent, {
       ...(name && { id: (props: any) => `${name}-${(labelComponent as any).type.displayName}-${props.index}` }),
       ...labelComponent.props
     });
 
   const getTitleComponent = () =>
-    React.cloneElement(titleComponent, {
+    cloneElement(titleComponent, {
       // Victory doesn't appear to call the id function here, but it's valid for label components
       ...(name && { id: () => `${name}-${(titleComponent as any).type.displayName}` }),
       ...titleComponent.props

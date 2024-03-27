@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { type MouseEvent as ReactMouseEvent, type ReactNode } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { CollapseColumn } from '../../CollapseColumn';
@@ -40,9 +40,9 @@ export const collapsible: IFormatter = (
   };
 
   /**
-   * @param {React.MouseEvent} event - Mouse event
+   * @param event - Mouse event
    */
-  function onToggle(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  function onToggle(event: ReactMouseEvent<HTMLButtonElement, MouseEvent>) {
     const open = rowData ? !rowData.isOpen : !allRowsExpanded;
     // tslint:disable-next-line:no-unused-expression
     onCollapse && onCollapse(event, rowIndex, open, rowData, extraData);
@@ -58,7 +58,7 @@ export const collapsible: IFormatter = (
         id={expandId + rowId}
         {...customProps}
       >
-        {value as React.ReactNode}
+        {value as ReactNode}
       </CollapseColumn>
     )
   };
@@ -66,7 +66,7 @@ export const collapsible: IFormatter = (
 
 export const expandable: IFormatter = (value: IFormatterValueType, { rowData }: IExtra) =>
   rowData && rowData.hasOwnProperty('parent') ? (
-    <ExpandableRowContent>{value as React.ReactNode}</ExpandableRowContent>
+    <ExpandableRowContent>{value as ReactNode}</ExpandableRowContent>
   ) : (
     value
   );

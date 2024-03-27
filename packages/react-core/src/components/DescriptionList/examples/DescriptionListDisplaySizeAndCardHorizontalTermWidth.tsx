@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, Card } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListDisplaySizeAndCardHorizontalTermWidth: React.FunctionComponent = () => (
+export const DescriptionListDisplaySizeAndCardHorizontalTermWidth: FunctionComponent = () => (
   <DescriptionList displaySize="lg" isHorizontal columnModifier={{ lg: '2Col' }} termWidth="10ch">
     <Card component="div">
       <DescriptionListTerm>Name</DescriptionListTerm>

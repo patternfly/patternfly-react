@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import { DropdownToggle } from '../DropdownToggle';
 import { KebabToggle } from '../KebabToggle';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ChangeEvent, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
@@ -8,7 +8,7 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
  * tree view component's toolbar property.
  */
 
-export interface TreeViewSearchProps extends React.HTMLProps<HTMLInputElement> {
+export interface TreeViewSearchProps extends HTMLProps<HTMLInputElement> {
   /** Accessible label for the search input. */
   'aria-label'?: string;
   /** Classes applied to the wrapper for the search input. */
@@ -18,10 +18,10 @@ export interface TreeViewSearchProps extends React.HTMLProps<HTMLInputElement> {
   /** Name for the search input. */
   name?: string;
   /** Callback for search input. */
-  onSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onSearch?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const TreeViewSearch: React.FunctionComponent<TreeViewSearchProps> = ({
+export const TreeViewSearch: FunctionComponent<TreeViewSearchProps> = ({
   className,
   onSearch,
   id,

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen, getDefaultNormalizer } from '@testing-library/react';
 import { Timestamp, TimestampFormat, TimestampTooltipVariant } from '../Timestamp';
 import styles from '@patternfly/react-styles/css/components/Timestamp/timestamp';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
 
@@ -15,7 +15,7 @@ export interface WizardNavProps {
   isInnerList?: boolean;
 }
 
-export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
+export const WizardNav: FunctionComponent<WizardNavProps> = ({
   children,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,

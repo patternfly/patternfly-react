@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Content/content';
 import { css } from '@patternfly/react-styles';
 
@@ -8,9 +8,9 @@ export enum TextListVariants {
   dl = 'dl'
 }
 
-export interface TextListProps extends React.HTMLProps<HTMLElement> {
+export interface TextListProps extends HTMLProps<HTMLElement> {
   /** Content rendered within the TextList */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the TextList */
   className?: string;
   /** The text list component */
@@ -19,7 +19,7 @@ export interface TextListProps extends React.HTMLProps<HTMLElement> {
   isPlain?: boolean;
 }
 
-export const TextList: React.FunctionComponent<TextListProps> = ({
+export const TextList: FunctionComponent<TextListProps> = ({
   children = null,
   className = '',
   component = TextListVariants.ul,

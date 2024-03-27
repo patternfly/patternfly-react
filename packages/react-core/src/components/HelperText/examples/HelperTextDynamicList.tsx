@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { HelperText, HelperTextItem } from '@patternfly/react-core';
 
-export const HelperTextDynamicList: React.FunctionComponent = () => (
+export const HelperTextDynamicList: FunctionComponent = () => (
   <HelperText component="ul">
     <HelperTextItem isDynamic variant="success" component="li">
       Must be at least 14 characters

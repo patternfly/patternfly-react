@@ -1,4 +1,16 @@
-import * as React from 'react';
+import {
+  type HTMLProps,
+  type ReactNode,
+  type MouseEvent as ReactMouseEvent,
+  type ChangeEvent as ReactChangeEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type RefObject,
+  type ReactElement,
+  type Ref,
+  Component,
+  createRef,
+  forwardRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
@@ -8,17 +20,17 @@ import { PickOptional } from '../../../helpers/typeUtils';
 import { findTabbableElements } from '../../../helpers/util';
 import { KeyTypes } from '../../../helpers/constants';
 
-export interface SelectToggleProps extends Omit<React.HTMLProps<HTMLElement>, 'ref'> {
+export interface SelectToggleProps extends Omit<HTMLProps<HTMLElement>, 'ref'> {
   /** HTML ID of dropdown toggle */
   id: string;
   /** Anything which can be rendered as dropdown toggle */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Classes applied to root element of dropdown toggle */
   className?: string;
   /** Flag to indicate if select is open */
   isOpen?: boolean;
   /** Callback called when toggle is clicked */
-  onToggle?: (event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event, isExpanded: boolean) => void;
+  onToggle?: (event: ReactMouseEvent | ReactChangeEvent | ReactKeyboardEvent | Event, isExpanded: boolean) => void;
   /** Callback for toggle open on keyboard entry */
   onEnter?: () => void;
   /** Callback for toggle close */
@@ -30,13 +42,13 @@ export interface SelectToggleProps extends Omit<React.HTMLProps<HTMLElement>, 'r
   /** @hide Internal callback to move focus to last menu item */
   moveFocusToLastMenuItem?: () => void;
   /** Element which wraps toggle */
-  parentRef: React.RefObject<HTMLDivElement>;
+  parentRef: RefObject<HTMLDivElement>;
   /** Custom icon for the dropdown replacing the CaretDownIcon */
-  toggleIndicator?: React.ReactElement;
+  toggleIndicator?: ReactElement;
   /** The menu element */
-  menuRef?: React.RefObject<HTMLElement>;
+  menuRef?: RefObject<HTMLElement>;
   /** The menu footer element */
-  footerRef?: React.RefObject<HTMLDivElement>;
+  footerRef?: RefObject<HTMLDivElement>;
   /** Forces active state */
   isActive?: boolean;
   /** Display the toggle with no border or background */
@@ -60,12 +72,12 @@ export interface SelectToggleProps extends Omit<React.HTMLProps<HTMLElement>, 'r
   /** @hide Internal callback for handling focus when typeahead toggle button clicked. */
   onClickTypeaheadToggleButton?: () => void;
   /** @hide Internal ref for the select toggle */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
 }
 
-class SelectToggleBase extends React.Component<SelectToggleProps> {
+class SelectToggleBase extends Component<SelectToggleProps> {
   static displayName = 'SelectToggle';
-  private toggle: React.RefObject<HTMLDivElement> | React.RefObject<HTMLButtonElement>;
+  private toggle: RefObject<HTMLDivElement> | RefObject<HTMLButtonElement>;
 
   static defaultProps: PickOptional<SelectToggleProps> = {
     className: '',
@@ -91,9 +103,9 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
     const { variant } = props;
     const isTypeahead = variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti;
     if (this.props.innerRef) {
-      this.toggle = this.props.innerRef as React.RefObject<HTMLButtonElement> | React.RefObject<HTMLDivElement>;
+      this.toggle = this.props.innerRef as RefObject<HTMLButtonElement> | RefObject<HTMLDivElement>;
     } else {
-      this.toggle = isTypeahead ? React.createRef<HTMLDivElement>() : React.createRef<HTMLButtonElement>();
+      this.toggle = isTypeahead ? createRef<HTMLDivElement>() : createRef<HTMLButtonElement>();
     }
   }
 
@@ -199,7 +211,7 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
     }
   };
 
-  onKeyDown = (event: React.KeyboardEvent) => {
+  onKeyDown = (event: ReactKeyboardEvent) => {
     const { isOpen, onToggle, variant, onClose, onEnter, handleTypeaheadKeys } = this.props;
 
     if (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) {
@@ -280,12 +292,12 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
       'aria-haspopup': (variant !== SelectVariant.checkbox && 'listbox') || null
     };
     return (
-      <React.Fragment>
+      <>
         {!isTypeahead && (
           <button
             {...props}
             {...toggleProps}
-            ref={this.toggle as React.RefObject<HTMLButtonElement>}
+            ref={this.toggle as RefObject<HTMLButtonElement>}
             type={type}
             className={css(
               styles.selectToggle,
@@ -314,7 +326,7 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
         {isTypeahead && (
           <div
             {...props}
-            ref={this.toggle as React.RefObject<HTMLDivElement>}
+            ref={this.toggle as RefObject<HTMLDivElement>}
             className={css(
               styles.selectToggle,
               hasPlaceholderStyle && styles.modifiers.placeholder,
@@ -357,11 +369,11 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
             </button>
           </div>
         )}
-      </React.Fragment>
+      </>
     );
   }
 }
 
-export const SelectToggle = React.forwardRef((props: SelectToggleProps, ref: React.Ref<any>) => (
+export const SelectToggle = forwardRef((props: SelectToggleProps, ref: Ref<any>) => (
   <SelectToggleBase innerRef={ref} {...props} />
 ));

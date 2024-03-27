@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { Button } from '../Button';
 
-export interface FormFieldGroupToggleProps extends React.HTMLProps<HTMLDivElement> {
+export interface FormFieldGroupToggleProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the section */
   className?: string;
   /** Callback for onClick */
@@ -19,7 +19,7 @@ export interface FormFieldGroupToggleProps extends React.HTMLProps<HTMLDivElemen
   toggleId?: string;
 }
 
-export const FormFieldGroupToggle: React.FunctionComponent<FormFieldGroupToggleProps> = ({
+export const FormFieldGroupToggle: FunctionComponent<FormFieldGroupToggleProps> = ({
   className,
   onToggle,
   isExpanded,

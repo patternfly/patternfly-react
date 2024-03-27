@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FormEvent, FunctionComponent, createRef, Fragment } from 'react';
 import { Tooltip, TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
 
 export enum RowSelectVariant {
@@ -8,35 +8,35 @@ export enum RowSelectVariant {
 
 export interface SelectColumnProps {
   name?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   className?: string;
-  onSelect?: (event: React.FormEvent<HTMLInputElement>) => void;
+  onSelect?: (event: FormEvent<HTMLInputElement>) => void;
   selectVariant?: RowSelectVariant;
   /** text to display on the tooltip */
-  tooltip?: React.ReactNode;
+  tooltip?: ReactNode;
   /** other props to pass to the tooltip */
   tooltipProps?: Omit<TooltipProps, 'content'>;
 }
 
-export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
-  children = null as React.ReactNode,
+export const SelectColumn: FunctionComponent<SelectColumnProps> = ({
+  children = null as ReactNode,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className,
-  onSelect = null as (event: React.FormEvent<HTMLInputElement>) => void,
+  onSelect = null as (event: FormEvent<HTMLInputElement>) => void,
   selectVariant,
   tooltip,
   tooltipProps,
   ...props
 }: SelectColumnProps) => {
-  const inputRef = React.createRef<HTMLInputElement>();
+  const inputRef = createRef<HTMLInputElement>();
 
   const content = (
-    <React.Fragment>
+    <Fragment>
       <label>
         <input {...props} ref={inputRef} type={selectVariant} onChange={onSelect} />
       </label>
       {children}
-    </React.Fragment>
+    </Fragment>
   );
 
   return tooltip ? (

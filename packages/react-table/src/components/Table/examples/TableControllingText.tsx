@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 // This example has been simplified to focus on the text modifier props. In real usage,
@@ -12,7 +12,7 @@ const columnNames = {
   nowrap: 'No wrap'
 };
 
-export const TableControllingText: React.FunctionComponent = () => (
+export const TableControllingText: FunctionComponent = () => (
   <Table aria-label="Controlling text">
     <Thead>
       <Tr>

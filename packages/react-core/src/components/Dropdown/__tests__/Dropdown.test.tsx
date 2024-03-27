@@ -1,4 +1,4 @@
-import React from 'react';
+import { RefObject } from 'react';
 import { Dropdown } from '../../Dropdown';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -7,7 +7,7 @@ jest.mock('../../Menu');
 
 jest.mock('../../../helpers/Popper/Popper');
 
-const toggle = (ref: React.RefObject<any>) => <button ref={ref}>Dropdown</button>;
+const toggle = (ref: RefObject<any>) => <button ref={ref}>Dropdown</button>;
 
 const dropdownChildren = <div>Dropdown children</div>;
 

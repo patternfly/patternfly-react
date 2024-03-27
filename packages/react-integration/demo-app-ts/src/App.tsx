@@ -1,4 +1,4 @@
-import React from 'react';
+import { FormEvent, MouseEvent, createElement, Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import {
   Page,
@@ -30,18 +30,18 @@ interface AppState {
   isDarkTheme: boolean;
 }
 
-class App extends React.Component<{}, AppState> {
+class App extends Component<{}, AppState> {
   state: AppState = {
     activeItem: '',
     isNavOpen: true,
     isDarkTheme: false
   };
 
-  private onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: { itemId: number | string }) => {
+  private onNavSelect = (_event: FormEvent<HTMLInputElement>, selectedItem: { itemId: number | string }) => {
     this.setState({ activeItem: selectedItem.itemId });
   };
 
-  private onNavToggle = (_event: React.MouseEvent) => {
+  private onNavToggle = (_event: MouseEvent) => {
     this.setState({ isNavOpen: !this.state.isNavOpen })
   }
 
@@ -66,7 +66,7 @@ class App extends React.Component<{}, AppState> {
             path={`/${demo.id}-nav-link`}
             render={() => (
               <PageSection style={{ zIndex: 2 }} id={`/${demo.id}-page-section`}>
-                {React.createElement(demo.componentType)}
+                {createElement(demo.componentType)}
               </PageSection>
             )}
             key={demo.id}
@@ -77,7 +77,7 @@ class App extends React.Component<{}, AppState> {
             path="/"
             render={() => (
               <PageSection style={{ zIndex: 2 }} id={`/${defaultDemo.id}-page-section`}>
-                {React.createElement(defaultDemo.componentType)}
+                {createElement(defaultDemo.componentType)}
               </PageSection>
             )}
             key={defaultDemo.id}
@@ -103,7 +103,7 @@ class App extends React.Component<{}, AppState> {
               label={`Light theme`}
               name="light-theme"
               isChecked={!isDarkTheme}
-              onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) =>
+              onChange={(_event: FormEvent<HTMLInputElement>, checked: boolean) =>
                 checked && this.onThemeSelect(false)
               }
             />
@@ -115,7 +115,7 @@ class App extends React.Component<{}, AppState> {
               aria-label="Dark theme"
               name="dark-theme"
               isChecked={isDarkTheme}
-              onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) =>
+              onChange={(_event: FormEvent<HTMLInputElement>, checked: boolean) =>
                 checked && this.onThemeSelect(true)
               }
             />

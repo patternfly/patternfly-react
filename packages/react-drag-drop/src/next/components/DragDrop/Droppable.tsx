@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { useDroppable } from '@dnd-kit/core';
 
-interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
+interface DroppableProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside DragDrop */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Class to add to outer div */
   className?: string;
   /** Name of zone that items can be dragged between. Should specify if there is more than one Droppable on the page. */
@@ -14,7 +14,7 @@ interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
   hasNoWrapper?: boolean;
 }
 
-export const Droppable: React.FunctionComponent<DroppableProps> = ({ children, ...props }: DroppableProps) => {
+export const Droppable: FunctionComponent<DroppableProps> = ({ children, ...props }: DroppableProps) => {
   const { isOver, setNodeRef } = useDroppable({ id: 'droppable' });
   const style = { color: isOver ? 'green' : undefined };
 

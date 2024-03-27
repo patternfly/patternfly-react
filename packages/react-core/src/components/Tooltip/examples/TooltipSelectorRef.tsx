@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Tooltip } from '@patternfly/react-core';
 
-export const TooltipSelectorRef: React.FunctionComponent = () => (
+export const TooltipSelectorRef: FunctionComponent = () => (
   <div style={{ margin: '100px' }}>
     <button aria-describedby="tooltip-ref2" id="tooltip-selector">
       Tooltip attached via selector ref

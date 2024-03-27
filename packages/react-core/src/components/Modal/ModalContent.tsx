@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, MouseEvent, ComponentType, FunctionComponent, CSSProperties } from 'react';
 import { FocusTrap } from '../../helpers';
 import modalStyles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import bullsEyeStyles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
@@ -38,11 +38,11 @@ export interface ModalContentProps extends OUIAProps {
   /** Id of the modal box container. */
   boxId: string;
   /** Content rendered inside the modal. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Additional classes added to the modal box. */
   className?: string;
   /** Description of the modal. */
-  description?: React.ReactNode;
+  description?: ReactNode;
   /** Id of the modal box description. */
   descriptorId: string;
   /** Flag to disable focus trap. */
@@ -52,19 +52,19 @@ export interface ModalContentProps extends OUIAProps {
    */
   elementToFocus?: HTMLElement | SVGElement | string;
   /** Custom footer. */
-  footer?: React.ReactNode;
+  footer?: ReactNode;
   /** Flag indicating if modal content should be placed in a modal box body wrapper. */
   hasNoBodyWrapper?: boolean;
   /** Complex header (more than just text), supersedes the title property for header content. */
-  header?: React.ReactNode;
+  header?: ReactNode;
   /** Optional help section for the modal header. */
-  help?: React.ReactNode;
+  help?: ReactNode;
   /** Flag to show the modal. */
   isOpen?: boolean;
   /** Id of the modal box title. */
   labelId: string;
   /** A callback for when the close button is clicked. */
-  onClose?: (event: KeyboardEvent | React.MouseEvent) => void;
+  onClose?: (event: KeyboardEvent | MouseEvent) => void;
   /** Position of the modal. By default a modal will be positioned vertically and horizontally centered. */
   position?: 'default' | 'top';
   /** Offset from alternate position. Can be any valid CSS length/percentage. */
@@ -76,7 +76,7 @@ export interface ModalContentProps extends OUIAProps {
   /** Optional alert icon (or other) to show before the title of the modal header. When the
    * predefined alert types are used the default styling will be automatically applied.
    */
-  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | React.ComponentType<any>;
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | ComponentType<any>;
   /** Optional title label text for screen readers. */
   titleLabel?: string;
   /** Variant of the modal. */
@@ -91,7 +91,7 @@ export interface ModalContentProps extends OUIAProps {
   ouiaSafe?: boolean;
 }
 
-export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
+export const ModalContent: FunctionComponent<ModalContentProps> = ({
   children,
   className = '',
   isOpen = false,
@@ -192,7 +192,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
           ...(maxWidth && {
             '--pf-v5-c-modal-box--MaxWidth': typeof maxWidth !== 'number' ? maxWidth : `${maxWidth}px`
           })
-        } as React.CSSProperties
+        } as CSSProperties
       }
     >
       {showClose && <ModalBoxCloseButton onClose={(event) => onClose(event)} ouiaId={ouiaId} />}

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Avatar } from '@patternfly/react-core';
 import {
   Dropdown,
@@ -9,8 +9,8 @@ import {
 } from '@patternfly/react-core/deprecated';
 import avatarImg from '../../../../components/assets/avatarImg.svg';
 
-export const DropdownImageAndText: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const DropdownImageAndText: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);

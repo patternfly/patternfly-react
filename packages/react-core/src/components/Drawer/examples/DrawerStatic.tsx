@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, useRef, Fragment } from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -11,9 +11,9 @@ import {
 } from '@patternfly/react-core';
 import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
-export const DrawerStatic: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
-  const drawerRef = React.useRef<HTMLDivElement>();
+export const DrawerStatic: FunctionComponent = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>();
 
   const onExpand = () => {
     drawerRef.current && drawerRef.current.focus();
@@ -44,7 +44,7 @@ export const DrawerStatic: React.FunctionComponent = () => {
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.';
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button className={accessibility.hiddenOnMd} aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
@@ -53,6 +53,6 @@ export const DrawerStatic: React.FunctionComponent = () => {
           <DrawerContentBody>{drawerContent}</DrawerContentBody>
         </DrawerContent>
       </Drawer>
-    </React.Fragment>
+    </Fragment>
   );
 };

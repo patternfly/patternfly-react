@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Dropdown, DropdownItem, BadgeToggle } from '@patternfly/react-core/deprecated';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 
-export const DropdownBadge: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const DropdownBadge: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);

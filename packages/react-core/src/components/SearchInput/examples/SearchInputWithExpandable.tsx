@@ -1,15 +1,15 @@
-import React from 'react';
+import { FunctionComponent, SyntheticEvent, useState } from 'react';
 import { SearchInput } from '@patternfly/react-core';
 
-export const SearchInputWithExpandable: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
-  const [isExpanded, setIsExpanded] = React.useState(false);
+export const SearchInputWithExpandable: FunctionComponent = () => {
+  const [value, setValue] = useState('');
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const onChange = (value: string) => {
     setValue(value);
   };
 
-  const onToggleExpand = (_event: React.SyntheticEvent<HTMLButtonElement>, isExpanded: boolean) => {
+  const onToggleExpand = (_event: SyntheticEvent<HTMLButtonElement>, isExpanded: boolean) => {
     setIsExpanded(!isExpanded);
   };
 

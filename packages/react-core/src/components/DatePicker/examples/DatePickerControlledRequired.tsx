@@ -1,11 +1,11 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { Button, DatePicker, Flex, FlexItem } from '@patternfly/react-core';
 
-export const DatePickerControlled: React.FunctionComponent = () => {
+export const DatePickerControlled: FunctionComponent = () => {
   const initialValue = '2020-03-17';
-  const [value, setValue] = React.useState(initialValue);
+  const [value, setValue] = useState(initialValue);
   return (
-    <React.Fragment>
+    <Fragment>
       <DatePicker
         requiredDateOptions={{ isRequired: true, emptyDateText: 'Date is required' }}
         value={value}
@@ -21,6 +21,6 @@ export const DatePickerControlled: React.FunctionComponent = () => {
           <Button onClick={() => setValue('')}>Clear date</Button>
         </FlexItem>
       </Flex>
-    </React.Fragment>
+    </Fragment>
   );
 };

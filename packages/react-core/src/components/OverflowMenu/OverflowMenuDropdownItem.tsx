@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FunctionComponent } from 'react';
 import { DropdownItem, DropdownItemProps } from '../Dropdown';
 import { OverflowMenuContext } from './OverflowMenuContext';
 
@@ -9,7 +9,7 @@ export interface OverflowMenuDropdownItemProps extends Omit<DropdownItemProps, '
   itemId?: string | number;
 }
 
-export const OverflowMenuDropdownItem: React.FunctionComponent<OverflowMenuDropdownItemProps> = ({
+export const OverflowMenuDropdownItem: FunctionComponent<OverflowMenuDropdownItemProps> = ({
   children,
   isShared = false,
   itemId,

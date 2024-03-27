@@ -1,11 +1,10 @@
-import * as React from 'react';
+import { OlHTMLAttributes, DetailedHTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/ProgressStepper/progress-stepper';
 import { css } from '@patternfly/react-styles';
 
-export interface ProgressStepperProps
-  extends React.DetailedHTMLProps<React.OlHTMLAttributes<HTMLOListElement>, HTMLOListElement> {
+export interface ProgressStepperProps extends DetailedHTMLProps<OlHTMLAttributes<HTMLOListElement>, HTMLOListElement> {
   /** Content rendered inside the progress stepper. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes applied to the progress stepper container. */
   className?: string;
   /** Flag indicating the progress stepper should be centered. */
@@ -18,7 +17,7 @@ export interface ProgressStepperProps
   'aria-label'?: string;
 }
 
-export const ProgressStepper: React.FunctionComponent<ProgressStepperProps> = ({
+export const ProgressStepper: FunctionComponent<ProgressStepperProps> = ({
   children,
   className,
   isCenterAligned,

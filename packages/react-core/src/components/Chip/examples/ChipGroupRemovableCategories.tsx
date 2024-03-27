@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { Chip, ChipGroup } from '@patternfly/react-core';
 
-export const ChipGroupRemovableCategories: React.FunctionComponent = () => {
-  const [chipGroup1, setChipGroup1] = React.useState(['Chip one', 'Chip two', 'Chip three']);
-  const [chipGroup2, setChipGroup2] = React.useState(['Chip one', 'Chip two', 'Chip three', 'Chip four']);
+export const ChipGroupRemovableCategories: FunctionComponent = () => {
+  const [chipGroup1, setChipGroup1] = useState(['Chip one', 'Chip two', 'Chip three']);
+  const [chipGroup2, setChipGroup2] = useState(['Chip one', 'Chip two', 'Chip three', 'Chip four']);
 
   const deleteItem = (id: string, group: string[]) => {
     const copyOfChips = [...group];
@@ -25,7 +25,7 @@ export const ChipGroupRemovableCategories: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <ChipGroup categoryName="Category one" isClosable onClick={() => deleteCategory(chipGroup1)}>
         {chipGroup1.map((currentChip) => (
           <Chip key={currentChip} onClick={() => deleteItem(currentChip, chipGroup1)}>
@@ -41,6 +41,6 @@ export const ChipGroupRemovableCategories: React.FunctionComponent = () => {
           </Chip>
         ))}
       </ChipGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,4 +1,13 @@
-import * as React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type HTMLProps,
+  type ReactElement,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  useRef,
+  useEffect
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { MenuToggle } from '../MenuToggle';
@@ -7,7 +16,7 @@ import { PaginationToggleTemplateProps, ToggleTemplate } from './ToggleTemplate'
 import { PerPageOptions, OnPerPageSelect } from './Pagination';
 import { fillTemplate } from '../../helpers';
 
-export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivElement> {
+export interface PaginationOptionsMenuProps extends HTMLProps<HTMLDivElement> {
   /** Custom class name added to the pagination options menu. */
   className?: string;
   /** Id added to the title of the pagination options menu. */
@@ -47,14 +56,14 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex,
    * itemCount, and/or itemsTitle props.
    */
-  toggleTemplate: ((props: PaginationToggleTemplateProps) => React.ReactElement) | string;
+  toggleTemplate: ((props: PaginationToggleTemplateProps) => ReactElement) | string;
   /** Function called when user selects number of items per page. */
   onPerPageSelect?: OnPerPageSelect;
   /** Label for the English word "of". */
   ofWord?: string;
 }
 
-export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMenuProps> = ({
+export const PaginationOptionsMenu: FunctionComponent<PaginationOptionsMenuProps> = ({
   className,
   widgetId,
   page: pageProp,
@@ -76,10 +85,10 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
   toggleTemplate,
   onPerPageSelect = () => null as any
 }: PaginationOptionsMenuProps) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
-  const menuRef = React.useRef<HTMLDivElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const onToggle = () => {
     setIsOpen((prevState) => !prevState);
@@ -90,7 +99,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
     toggleRef.current?.focus();
   };
 
-  const handleNewPerPage = (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPerPage: number) => {
+  const handleNewPerPage = (_evt: ReactMouseEvent | ReactKeyboardEvent | MouseEvent, newPerPage: number) => {
     let newPage = pageProp;
 
     while (Math.ceil(itemCount / newPerPage) < newPage) {
@@ -109,7 +118,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
     return onPerPageSelect(_evt, newPerPage, newPage, startIdx, endIdx);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape
       if (
@@ -180,7 +189,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
         fillTemplate(toggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })}
       {toggleTemplate &&
         typeof toggleTemplate !== 'string' &&
-        (toggleTemplate as (props: PaginationToggleTemplateProps) => React.ReactElement)({
+        (toggleTemplate as (props: PaginationToggleTemplateProps) => ReactElement)({
           firstIndex,
           lastIndex,
           ofWord,

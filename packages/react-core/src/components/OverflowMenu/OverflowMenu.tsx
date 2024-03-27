@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, RefObject, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { css } from '@patternfly/react-styles';
 import { OverflowMenuContext } from './OverflowMenuContext';
@@ -6,7 +6,7 @@ import { debounce } from '../../helpers/util';
 import { globalWidthBreakpoints } from '../../helpers/constants';
 import { getResizeObserver } from '../../helpers/resizeObserver';
 
-export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
+export interface OverflowMenuProps extends HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
   children?: any;
   /** Additional classes added to the OverflowMenu. */
@@ -14,15 +14,15 @@ export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   /** Indicates breakpoint at which to switch between horizontal menu and vertical dropdown */
   breakpoint: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** A container reference to base the specified breakpoint on instead of the viewport width. */
-  breakpointReference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
+  breakpointReference?: HTMLElement | (() => HTMLElement) | RefObject<any>;
 }
 
-export interface OverflowMenuState extends React.HTMLProps<HTMLDivElement> {
+export interface OverflowMenuState extends HTMLProps<HTMLDivElement> {
   isBelowBreakpoint: boolean;
   breakpointRef: HTMLElement;
 }
 
-class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMenuState> {
+class OverflowMenu extends Component<OverflowMenuProps, OverflowMenuState> {
   static displayName = 'OverflowMenu';
   constructor(props: OverflowMenuProps) {
     super(props);
@@ -37,8 +37,8 @@ class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMenuState>
   getBreakpointRef() {
     const { breakpointReference } = this.props;
 
-    if ((breakpointReference as React.RefObject<any>).current) {
-      return (breakpointReference as React.RefObject<any>).current;
+    if ((breakpointReference as RefObject<any>).current) {
+      return (breakpointReference as RefObject<any>).current;
     } else if (typeof breakpointReference === 'function') {
       return breakpointReference();
     }

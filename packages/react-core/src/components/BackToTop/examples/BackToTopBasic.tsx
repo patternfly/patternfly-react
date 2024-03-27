@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { BackToTop } from '@patternfly/react-core';
 
-export const BackToTopBasic: React.FunctionComponent = () => <BackToTop isAlwaysVisible />;
+export const BackToTopBasic: FunctionComponent = () => <BackToTop isAlwaysVisible />;

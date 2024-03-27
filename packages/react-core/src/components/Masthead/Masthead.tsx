@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { HTMLProps, DetailedHTMLProps, ReactNode, FunctionComponent, useContext } from 'react';
 import styles from '@patternfly/react-styles/css/components/Masthead/masthead';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from '../Page/PageContext';
 
-export interface MastheadProps extends React.DetailedHTMLProps<React.HTMLProps<HTMLDivElement>, HTMLDivElement> {
+export interface MastheadProps extends DetailedHTMLProps<HTMLProps<HTMLDivElement>, HTMLDivElement> {
   /** Content rendered inside of the masthead */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the masthead */
   className?: string;
   /** Background theme color of the masthead */
@@ -31,7 +31,7 @@ export interface MastheadProps extends React.DetailedHTMLProps<React.HTMLProps<H
   };
 }
 
-export const Masthead: React.FunctionComponent<MastheadProps> = ({
+export const Masthead: FunctionComponent<MastheadProps> = ({
   children,
   className,
   backgroundColor = 'dark',
@@ -41,7 +41,7 @@ export const Masthead: React.FunctionComponent<MastheadProps> = ({
   inset,
   ...props
 }: MastheadProps) => {
-  const { width, getBreakpoint } = React.useContext(PageContext);
+  const { width, getBreakpoint } = useContext(PageContext);
   return (
     <header
       className={css(

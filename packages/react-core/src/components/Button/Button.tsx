@@ -1,4 +1,13 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  ElementType,
+  ComponentType,
+  Ref,
+  FunctionComponent,
+  SyntheticEvent,
+  forwardRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import { Spinner, spinnerSize } from '../Spinner';
@@ -37,13 +46,13 @@ export interface BadgeCountObject {
   className?: string;
 }
 
-export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'ref' | 'size'>, OUIAProps {
+export interface ButtonProps extends Omit<HTMLProps<HTMLButtonElement>, 'ref' | 'size'>, OUIAProps {
   /** Content rendered inside the button */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the button */
   className?: string;
   /** Sets the base component to render. defaults to button */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: ElementType<any> | ComponentType<any>;
   /** Adds active styling to button. */
   isActive?: boolean;
   /** Adds block styling to button */
@@ -75,13 +84,13 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   /** Adds accessible text to the button. */
   'aria-label'?: string;
   /** Icon for the button. Usable by all variants except for plain. */
-  icon?: React.ReactNode | null;
+  icon?: ReactNode | null;
   /** Sets the button tabindex. */
   tabIndex?: number;
   /** Adds danger styling to secondary or link button variants */
   isDanger?: boolean;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
   /** Adds count number to button */
   countOptions?: BadgeCountObject;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -90,7 +99,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   ouiaSafe?: boolean;
 }
 
-const ButtonBase: React.FunctionComponent<ButtonProps> = ({
+const ButtonBase: FunctionComponent<ButtonProps> = ({
   children = null,
   className = '',
   component = 'button',
@@ -126,7 +135,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   const preventedEvents = inoperableEvents.reduce(
     (handlers, eventToPrevent) => ({
       ...handlers,
-      [eventToPrevent]: (event: React.SyntheticEvent<HTMLButtonElement>) => {
+      [eventToPrevent]: (event: SyntheticEvent<HTMLButtonElement>) => {
         event.preventDefault();
       }
     }),
@@ -199,8 +208,6 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   );
 };
 
-export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<any>) => (
-  <ButtonBase innerRef={ref} {...props} />
-));
+export const Button = forwardRef((props: ButtonProps, ref: Ref<any>) => <ButtonBase innerRef={ref} {...props} />);
 
 Button.displayName = 'Button';

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { DataList, DataListCell, DataListCheck, DataListControl, DataListItemCells } from '@patternfly/react-core';
 import { DragDropSort, DraggableObject } from '@patternfly/react-drag-drop';
 
@@ -21,8 +21,8 @@ const getItems = (count: number): DraggableObject[] =>
     )
   }));
 
-export const DataListDraggable: React.FunctionComponent = (props) => {
-  const [items, setItems] = React.useState<DraggableObject[]>(getItems(10));
+export const DataListDraggable: FunctionComponent = (props) => {
+  const [items, setItems] = useState<DraggableObject[]>(getItems(10));
 
   return (
     <DragDropSort

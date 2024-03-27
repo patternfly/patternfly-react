@@ -1,3 +1,5 @@
+import { type DragEvent as ReactDragEvent, type ChangeEvent as ReactChangeEvent } from 'react';
+
 // Gathers all the required keys from an interface/type T
 export type RequiredKeys<T> = {
   [K in keyof T]-?: {} extends { [P in K]: T[K] } ? never : K;
@@ -15,4 +17,4 @@ export type PickOptional<T> = Pick<T, OptionalKeys<T>>;
 // so that they cannot be accidentally omitted when providing default values
 export type PickAndRequireOptional<T> = Required<Pick<T, OptionalKeys<T>>>;
 
-export type DropEvent = React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event;
+export type DropEvent = ReactDragEvent<HTMLElement> | ReactChangeEvent<HTMLInputElement> | DragEvent | Event;

@@ -1,15 +1,15 @@
-import React from 'react';
+import { FunctionComponent, SetStateAction, Dispatch, useState } from 'react';
 import { Slider, SliderOnChangeEvent, Button, Text, TextVariants } from '@patternfly/react-core';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import LockIcon from '@patternfly/react-icons/dist/esm/icons/lock-icon';
 import LockOpenIcon from '@patternfly/react-icons/dist/esm/icons/lock-open-icon';
 
-export const SliderActions: React.FunctionComponent = () => {
-  const [value1, setValue1] = React.useState(50);
-  const [value2, setValue2] = React.useState(50);
-  const [inputValue, setInputValue] = React.useState(50);
-  const [isDisabled, setIsDisabled] = React.useState(false);
+export const SliderActions: FunctionComponent = () => {
+  const [value1, setValue1] = useState(50);
+  const [value2, setValue2] = useState(50);
+  const [inputValue, setInputValue] = useState(50);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const onChange1 = (_event: SliderOnChangeEvent, value: number) => {
     setValue1(Math.floor(Number(value)));
@@ -19,7 +19,7 @@ export const SliderActions: React.FunctionComponent = () => {
     _event: SliderOnChangeEvent,
     value: number,
     inputValue: number,
-    setLocalInputValue: React.Dispatch<React.SetStateAction<number>>
+    setLocalInputValue: Dispatch<SetStateAction<number>>
   ) => {
     let newValue;
     if (inputValue === undefined) {

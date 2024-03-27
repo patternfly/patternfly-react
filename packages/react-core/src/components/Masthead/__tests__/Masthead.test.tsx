@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import { Masthead, MastheadBrand, MastheadContent, MastheadMain, MastheadToggle } from '../index';
 

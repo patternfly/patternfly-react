@@ -10,7 +10,6 @@ propComponents: [Panel, PanelMain, PanelMainBody, PanelHeader, PanelFooter]
 ### Basic
 
 ```js
-import React from 'react';
 import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
 
 const BasicPanel = () => (
@@ -25,7 +24,6 @@ const BasicPanel = () => (
 ### Header
 
 ```js
-import React from 'react';
 import { Panel, PanelMain, PanelMainBody, PanelHeader, Divider } from '@patternfly/react-core';
 
 const HeaderPanel = () => (
@@ -42,7 +40,6 @@ const HeaderPanel = () => (
 ### Footer
 
 ```js
-import React from 'react';
 import { Panel, PanelMain, PanelMainBody, PanelFooter } from '@patternfly/react-core';
 
 const FooterPanel = () => (
@@ -58,7 +55,6 @@ const FooterPanel = () => (
 ### Header and footer
 
 ```js
-import React from 'react';
 import { Panel, PanelMain, PanelMainBody, PanelHeader, Divider, PanelFooter } from '@patternfly/react-core';
 
 const HeaderFooterPanel = () => (
@@ -76,7 +72,6 @@ const HeaderFooterPanel = () => (
 ### No body
 
 ```js
-import React from 'react';
 import { Panel, PanelMain } from '@patternfly/react-core';
 
 const NoBodyPanel = () => (
@@ -89,7 +84,6 @@ const NoBodyPanel = () => (
 ### Raised
 
 ```js
-import React from 'react';
 import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
 
 const RaisedPanel = () => (
@@ -104,7 +98,6 @@ const RaisedPanel = () => (
 ### Bordered
 
 ```js
-import React from 'react';
 import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
 
 const BorderedPanel = () => (
@@ -119,7 +112,6 @@ const BorderedPanel = () => (
 ### Scrollable
 
 ```js
-import React from 'react';
 import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
 
 const ScrollablePanel = () => (
@@ -160,7 +152,6 @@ const ScrollablePanel = () => (
 ### Scrollable with header and footer
 
 ```js
-import React from 'react';
 import { Panel, PanelMain, PanelMainBody, PanelHeader, Divider, PanelFooter } from '@patternfly/react-core';
 
 const ScrollableHeaderFooterPanel = () => (

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { DOMAttributes, ReactElement, CSSProperties, FunctionComponent, cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import defaults from 'lodash/defaults';
 import {
@@ -91,7 +91,7 @@ export interface ChartLegendTooltipLabelProps extends VictoryLabelProps {
    * The events prop attaches arbitrary event handlers to the label component.
    * Event handlers are currently only called with their corresponding events.
    */
-  events?: React.DOMAttributes<any>;
+  events?: DOMAttributes<any>;
   /**
    * The index prop represents the index of the datum in the data array.
    *
@@ -133,7 +133,7 @@ export interface ChartLegendTooltipLabelProps extends VictoryLabelProps {
   /**
    * The legendLabelComponent prop takes a component instance which will be used to render each legend tooltip.
    */
-  legendLabelComponent?: React.ReactElement<any>;
+  legendLabelComponent?: ReactElement<any>;
   /**
    * The lineHeight prop defines how much space a single line of text should take up.
    * Note that SVG has no notion of line-height, so the positioning may differ slightly from what you would expect with CSS,
@@ -179,7 +179,7 @@ export interface ChartLegendTooltipLabelProps extends VictoryLabelProps {
   /**
    * The style prop applies CSS properties to the rendered `<text>` element.
    */
-  style?: React.CSSProperties | React.CSSProperties[];
+  style?: CSSProperties | CSSProperties[];
   /**
    * The text prop defines the text ChartLabel will render. The text prop may be given as a string, number, a function
    * of datum, or an array of any of these. Strings may include newline characters, which ChartLabel will split into
@@ -204,7 +204,7 @@ export interface ChartLegendTooltipLabelProps extends VictoryLabelProps {
   /**
    * The valueLabelComponent prop takes a component instance which will be used to render each legend tooltip.
    */
-  valueLabelComponent?: React.ReactElement<any>;
+  valueLabelComponent?: ReactElement<any>;
   /**
    * The verticalAnchor prop defines how the text is vertically positioned relative to the given `x` and `y`
    * coordinates. Options are "start", "middle" and "end".
@@ -232,7 +232,7 @@ export interface ChartLegendTooltipLabelProps extends VictoryLabelProps {
   y?: number;
 }
 
-export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendTooltipLabelProps> = ({
+export const ChartLegendTooltipLabel: FunctionComponent<ChartLegendTooltipLabelProps> = ({
   dx = 0,
   index = 0,
   legendData,
@@ -248,7 +248,7 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendTooltip
   ...rest
 }: ChartLegendTooltipLabelProps) => {
   const getStyle = (styles: any) => {
-    const applyDefaultStyle = (customStyle: React.CSSProperties) =>
+    const applyDefaultStyle = (customStyle: CSSProperties) =>
       defaults(
         {
           ...customStyle
@@ -263,7 +263,7 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendTooltip
   const getLegendLabelComponent = () => {
     const label = legendData && legendData.length ? legendData[index as any].name : undefined;
 
-    return React.cloneElement(legendLabelComponent, {
+    return cloneElement(legendLabelComponent, {
       style: getStyle({}),
       text: label,
       textAnchor: 'start',
@@ -275,7 +275,7 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendTooltip
   const getValueLabelComponent = () => {
     const _x = x + Helpers.evaluateProp(dx);
 
-    return React.cloneElement(valueLabelComponent, {
+    return cloneElement(valueLabelComponent, {
       style: getStyle(style),
       text,
       textAnchor,
@@ -288,10 +288,10 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendTooltip
   const legendLabel = getLegendLabelComponent();
   const valueLabel = getValueLabelComponent();
   return (
-    <React.Fragment>
+    <Fragment>
       {legendLabel}
       {valueLabel}
-    </React.Fragment>
+    </Fragment>
   );
 };
 ChartLegendTooltipLabel.displayName = 'ChartLegendTooltipLabel';

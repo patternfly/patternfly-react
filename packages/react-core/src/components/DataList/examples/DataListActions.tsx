@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Ref, useState, Fragment } from 'react';
 import {
   Button,
   DataList,
@@ -15,9 +15,9 @@ import {
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const DataListActions: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [isDeleted, setIsDeleted] = React.useState(false);
+export const DataListActions: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   const onToggle = () => {
     setIsOpen(!isOpen);
@@ -28,7 +28,7 @@ export const DataListActions: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DataList aria-label="single action data list example ">
         {!isDeleted && (
           <DataListItem aria-labelledby="single-action-item1">
@@ -80,7 +80,7 @@ export const DataListActions: React.FunctionComponent = () => {
               <Dropdown
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect}
-                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                toggle={(toggleRef: Ref<MenuToggleElement>) => (
                   <MenuToggle
                     ref={toggleRef}
                     isExpanded={isOpen}
@@ -113,6 +113,6 @@ export const DataListActions: React.FunctionComponent = () => {
           </DataListItemRow>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </Fragment>
   );
 };

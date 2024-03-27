@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Form,
   FormGroup,
@@ -10,10 +10,10 @@ import {
   FormHelperText
 } from '@patternfly/react-core';
 
-export const FormGrid: React.FunctionComponent = () => {
-  const [name, setName] = React.useState('');
-  const [email, setEmail] = React.useState('');
-  const [phone, setPhone] = React.useState('');
+export const FormGrid: FunctionComponent = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
 
   const handleNameChange = (_event, name: string) => {
     setName(name);

@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Breadcrumb, BreadcrumbItem } from '@patternfly/react-core';
 
-export const BreadcrumbBasic: React.FunctionComponent = () => (
+export const BreadcrumbBasic: FunctionComponent = () => (
   <Breadcrumb ouiaId="BasicBreadcrumb">
     <BreadcrumbItem to="#">Section home</BreadcrumbItem>
     <BreadcrumbItem to="#">Section title</BreadcrumbItem>

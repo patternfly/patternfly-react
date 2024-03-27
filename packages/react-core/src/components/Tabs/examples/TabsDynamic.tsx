@@ -1,12 +1,12 @@
-import React from 'react';
+import { FunctionComponent, useState, useRef, useEffect } from 'react';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
-export const TabsDynamic: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<number>(0);
-  const [tabs, setTabs] = React.useState<string[]>(['Terminal 1', 'Terminal 2', 'Terminal 3']);
-  const [newTabNumber, setNewTabNumber] = React.useState<number>(4);
-  const tabComponentRef = React.useRef<any>();
-  const firstMount = React.useRef(true);
+export const TabsDynamic: FunctionComponent = () => {
+  const [activeTabKey, setActiveTabKey] = useState<number>(0);
+  const [tabs, setTabs] = useState<string[]>(['Terminal 1', 'Terminal 2', 'Terminal 3']);
+  const [newTabNumber, setNewTabNumber] = useState<number>(4);
+  const tabComponentRef = useRef<any>();
+  const firstMount = useRef(true);
 
   const onClose = (event: any, tabIndex: string | number) => {
     const tabIndexNum = tabIndex as number;
@@ -28,7 +28,7 @@ export const TabsDynamic: React.FunctionComponent = () => {
     setNewTabNumber(newTabNumber + 1);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (firstMount.current) {
       firstMount.current = false;
       return;

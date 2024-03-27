@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, FormEvent, ReactNode, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../../helpers/typeUtils';
@@ -6,7 +6,7 @@ import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../../helpers';
 import { Spinner } from '../../../components/Spinner';
 
 export interface DropdownToggleCheckboxProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'>,
+  extends Omit<HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'>,
     OUIAProps {
   /** Additional classes added to the DropdownToggleCheckbox */
   className?: string;
@@ -21,9 +21,9 @@ export interface DropdownToggleCheckboxProps
   /** Alternate Flag to show if the checkbox is checked */
   checked?: boolean | null;
   /** A callback for when the checkbox selection changes */
-  onChange?: (event: React.FormEvent<HTMLInputElement>, checked: boolean) => void;
+  onChange?: (event: FormEvent<HTMLInputElement>, checked: boolean) => void;
   /** Element to be rendered inside the <span> */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Id of the checkbox */
   id: string;
   /** Aria-label of the checkbox */
@@ -38,7 +38,7 @@ export interface DropdownToggleCheckboxProps
   ouiaSafe?: boolean;
 }
 
-class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckboxProps, { ouiaStateId: string }> {
+class DropdownToggleCheckbox extends Component<DropdownToggleCheckboxProps, { ouiaStateId: string }> {
   static displayName = 'DropdownToggleCheckbox';
   static defaultProps: PickOptional<DropdownToggleCheckboxProps> = {
     className: '',
@@ -54,7 +54,7 @@ class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckboxProps
     };
   }
 
-  handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+  handleChange = (event: FormEvent<HTMLInputElement>) => {
     this.props.onChange?.(event, (event.target as HTMLInputElement).checked);
   };
 

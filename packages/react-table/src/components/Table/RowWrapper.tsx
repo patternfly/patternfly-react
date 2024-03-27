@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, Ref, UIEventHandler, UIEvent, Component } from 'react';
 import { OUIAProps } from '@patternfly/react-core/dist/esm/helpers/OUIA/ouia';
 import { debounce, canUseDOM } from '@patternfly/react-core/dist/esm/helpers/util';
 import { Tr } from './Tr';
@@ -12,11 +12,11 @@ export interface RowWrapperRow {
 }
 
 export interface RowWrapperProps extends OUIAProps {
-  children?: React.ReactNode;
-  trRef?: React.Ref<any> | Function;
+  children?: ReactNode;
+  trRef?: Ref<any> | Function;
   className?: string;
-  onScroll?: React.UIEventHandler;
-  onResize?: React.UIEventHandler;
+  onScroll?: UIEventHandler;
+  onResize?: UIEventHandler;
   row?: IRow;
   rowProps?: {
     rowIndex: number;
@@ -26,7 +26,7 @@ export interface RowWrapperProps extends OUIAProps {
   ouiaId?: number | string;
 }
 
-class RowWrapper extends React.Component<RowWrapperProps> {
+class RowWrapper extends Component<RowWrapperProps> {
   static displayName = 'RowWrapper';
   static defaultProps = {
     className: '' as string,
@@ -79,13 +79,13 @@ class RowWrapper extends React.Component<RowWrapperProps> {
 
   handleScroll = (event: Event): void => {
     if (!this._unmounted) {
-      this.props.onScroll(event as unknown as React.UIEvent<Element>);
+      this.props.onScroll(event as unknown as UIEvent<Element>);
     }
   };
 
   handleResize = (event: Event) => {
     if (!this._unmounted) {
-      this.props.onResize(event as unknown as React.UIEvent<Element>);
+      this.props.onResize(event as unknown as UIEvent<Element>);
     }
   };
 
@@ -106,7 +106,7 @@ class RowWrapper extends React.Component<RowWrapperProps> {
     return (
       <Tr
         {...props}
-        ref={trRef as React.Ref<any>}
+        ref={trRef as Ref<any>}
         isExpanded={isExpanded}
         isEditable={isEditable}
         className={className}

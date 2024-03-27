@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { ButtonHTMLAttributes, DetailedHTMLProps, MouseEvent, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { Button } from '../Button';
 
 export interface ClipboardCopyToggleProps
-  extends Omit<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'ref'> {
-  onClick: (event: React.MouseEvent) => void;
+  extends Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'ref'> {
+  onClick: (event: MouseEvent) => void;
   id: string;
   textId: string;
   contentId: string;
@@ -14,7 +14,7 @@ export interface ClipboardCopyToggleProps
   className?: string;
 }
 
-export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyToggleProps> = ({
+export const ClipboardCopyToggle: FunctionComponent<ClipboardCopyToggleProps> = ({
   onClick,
   id,
   textId,

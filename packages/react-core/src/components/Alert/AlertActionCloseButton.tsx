@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FunctionComponent } from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { AlertContext } from './AlertContext';
@@ -18,7 +18,7 @@ export interface AlertActionCloseButtonProps extends ButtonProps {
   variantLabel?: string;
 }
 
-export const AlertActionCloseButton: React.FunctionComponent<AlertActionCloseButtonProps> = ({
+export const AlertActionCloseButton: FunctionComponent<AlertActionCloseButtonProps> = ({
   className,
   onClose = () => undefined as any,
   'aria-label': ariaLabel = '',

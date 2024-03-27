@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Tile, Flex } from '@patternfly/react-core';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
-export const TileWithExtraContent: React.FunctionComponent = () => (
+export const TileWithExtraContent: FunctionComponent = () => (
   <div role="listbox" aria-label="Tiles with extra content">
     <Flex>
       <Flex flex={{ default: 'flex_1' }}>

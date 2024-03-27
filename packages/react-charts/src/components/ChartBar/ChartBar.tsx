@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -89,7 +89,7 @@ export interface ChartBarProps extends VictoryBarProps {
    *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows..." />
    */
-  containerComponent?: React.ReactElement<any>;
+  containerComponent?: ReactElement<any>;
   /**
    * The cornerRadius prop specifies a radius to apply to each bar.
    * If this prop is given as a single number, the radius will only be applied to the top of each bar.
@@ -129,7 +129,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartBar will use its default Bar component.
    */
-  dataComponent?: React.ReactElement<any>;
+  dataComponent?: ReactElement<any>;
   /**
    * The domain prop describes the range of values your chart will cover. This prop can be
    * given as a array of the minimum and maximum expected values for your bar chart,
@@ -216,7 +216,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * The height props specifies the height the svg viewBox of the chart container.
    * This value should be given as a number of pixels
@@ -239,7 +239,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * provide a series label for ChartBar. If individual labels are required for each
    * data point, they should be created by composing ChartBar with VictoryScatter
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * The labels prop defines labels that will appear above each bar in your chart.
    * This prop should be given as an array of values or as a function of data.
@@ -462,7 +462,7 @@ export interface ChartBarProps extends VictoryBarProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
+export const ChartBar: FunctionComponent<ChartBarProps> = ({
   containerComponent = <ChartContainer />,
   themeColor,
 
@@ -471,7 +471,7 @@ export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
   ...rest
 }: ChartBarProps) => {
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     theme,
     ...containerComponent.props
   });

@@ -1,4 +1,10 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type Ref
+} from 'react';
 
 import {
   Button,
@@ -21,13 +27,13 @@ import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
-export const TableStaticBottomPagination: React.FunctionComponent = () => {
-  const [isSelectOpen, setIsSelectOpen] = React.useState(false);
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
-  const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
+export const TableStaticBottomPagination: FunctionComponent = () => {
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
+  const [paginatedRows, setPaginatedRows] = useState(rows.slice(0, 10));
   const handleSetPage = (
-    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    _evt: ReactMouseEvent | ReactKeyboardEvent | MouseEvent,
     newPage: number,
     _perPage: number,
     startIdx: number,
@@ -37,7 +43,7 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
     setPage(newPage);
   };
   const handlePerPageSelect = (
-    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    _evt: ReactMouseEvent | ReactKeyboardEvent | MouseEvent,
     newPerPage: number,
     newPage: number,
     startIdx: number,
@@ -100,7 +106,7 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
           <Select
             id="select-example"
             aria-label="Select Input"
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle ref={toggleRef} onClick={() => setIsSelectOpen(!isSelectOpen)} isExpanded={isSelectOpen}>
                 <FilterIcon /> Status
               </MenuToggle>
@@ -136,7 +142,7 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <>
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection isFilled>
           <Card>
@@ -172,6 +178,6 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
           </Card>
         </PageSection>
       </DashboardWrapper>
-    </React.Fragment>
+    </>
   );
 };

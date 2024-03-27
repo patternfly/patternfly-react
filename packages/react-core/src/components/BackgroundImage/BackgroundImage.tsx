@@ -1,17 +1,17 @@
-import React from 'react';
+import { HTMLProps, FunctionComponent, CSSProperties } from 'react';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/BackgroundImage/background-image';
 import cssBackgroundImage from '@patternfly/react-tokens/dist/esm/c_background_image_BackgroundImage';
 
-export interface BackgroundImageProps extends React.HTMLProps<HTMLDivElement> {
+export interface BackgroundImageProps extends HTMLProps<HTMLDivElement> {
   /** The URL or file path of the image for the background */
   src: string;
   /** Additional classes added to the background image. */
   className?: string;
 }
 
-export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
+export const BackgroundImage: FunctionComponent<BackgroundImageProps> = ({
   className,
   src,
   ...props
@@ -21,7 +21,7 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
     style={
       {
         [cssBackgroundImage.name]: `url(${src})`
-      } as React.CSSProperties
+      } as CSSProperties
     }
     {...props}
   />

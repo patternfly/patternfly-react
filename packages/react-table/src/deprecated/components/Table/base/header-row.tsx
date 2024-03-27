@@ -4,7 +4,7 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
-import * as React from 'react';
+import { FunctionComponent, createElement } from 'react';
 import {
   createElementType,
   ColumnType,
@@ -24,13 +24,13 @@ export interface HeaderRowProps {
   onRow?: Function;
 }
 
-export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
+export const HeaderRow: FunctionComponent<HeaderRowProps> = ({
   rowData,
   rowIndex,
   renderers,
   onRow = () => ({})
 }: HeaderRowProps) =>
-  React.createElement(
+  createElement(
     renderers.row as createElementType,
     onRow(rowData, { rowIndex }),
     (rowData as []).map((column: ColumnType, columnIndex: number) => {
@@ -107,7 +107,7 @@ export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
         cellNode = transformedProps.children || evaluateFormatters(formatters)(label, extraParameters);
       }
 
-      return React.createElement(
+      return createElement(
         renderers.cell as createElementType,
         {
           key: `${columnIndex}-header`,

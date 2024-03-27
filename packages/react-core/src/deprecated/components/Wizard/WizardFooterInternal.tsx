@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { Button, ButtonVariant } from '../../../components/Button';
@@ -11,12 +11,12 @@ export interface WizardFooterInternalProps {
   isValid: boolean;
   firstStep: boolean;
   activeStep: WizardStep;
-  nextButtonText: React.ReactNode;
-  backButtonText: React.ReactNode;
-  cancelButtonText: React.ReactNode;
+  nextButtonText: ReactNode;
+  backButtonText: ReactNode;
+  cancelButtonText: ReactNode;
 }
 
-export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalProps> = ({
+export const WizardFooterInternal: FunctionComponent<WizardFooterInternalProps> = ({
   onNext,
   onBack,
   onClose,

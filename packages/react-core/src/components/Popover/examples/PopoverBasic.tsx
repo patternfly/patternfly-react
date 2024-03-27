@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Popover, Button } from '@patternfly/react-core';
 
-export const PopoverBasic: React.FunctionComponent = () => (
+export const PopoverBasic: FunctionComponent = () => (
   <div style={{ margin: '50px' }}>
     <Popover
       aria-label="Basic popover"

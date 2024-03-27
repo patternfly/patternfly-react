@@ -1,4 +1,4 @@
-import React from 'react';
+import { FormEvent, MouseEvent, ChangeEvent, Component, Fragment } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -43,7 +43,7 @@ interface ToolbarState {
   kebabIsOpen: boolean;
 }
 
-export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
+export class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
   static displayName = 'ToolbarDemo';
   constructor(props: ToolbarProps) {
     super(props);
@@ -73,13 +73,13 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     }));
   };
 
-  onInputChange = (_event: React.FormEvent<HTMLInputElement>, newValue: string) => {
+  onInputChange = (_event: FormEvent<HTMLInputElement>, newValue: string) => {
     this.setState({ inputValue: newValue });
   };
 
   onSelect = (
     type: keyof Filter,
-    event: React.MouseEvent | React.ChangeEvent,
+    event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject
   ) => {
     const selectedTarget = event.target as HTMLInputElement;
@@ -97,11 +97,11 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     });
   };
 
-  onStatusSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  onStatusSelect = (event: MouseEvent | ChangeEvent, selection: string | SelectOptionObject) => {
     this.onSelect('status', event, selection);
   };
 
-  onRiskSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  onRiskSelect = (event: MouseEvent | ChangeEvent, selection: string | SelectOptionObject) => {
     this.onSelect('risk', event, selection);
   };
 
@@ -176,7 +176,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     ];
 
     const toggleGroupItems = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarItem id="toolbar-demo-search">
           <InputGroup>
             <InputGroupItem>
@@ -229,7 +229,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
             </Select>
           </ToolbarFilter>
         </ToolbarGroup>
-      </React.Fragment>
+      </Fragment>
     );
 
     const dropdownItems = [
@@ -262,7 +262,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     );
 
     const toolbarItems = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl" id="demo-toggle-group">
           {toggleGroupItems}
         </ToolbarToggleGroup>
@@ -296,11 +296,11 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
             <DropdownList>{dropdownItems}</DropdownList>
           </Dropdown>
         </ToolbarItem>
-      </React.Fragment>
+      </Fragment>
     );
 
     return (
-      <React.Fragment>
+      <Fragment>
         <Toolbar
           id="toolbar-filter-demo"
           clearAllFilters={this.onDelete}
@@ -430,7 +430,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
         >
           <ToolbarContent>{toolbarItems}</ToolbarContent>
         </Toolbar>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

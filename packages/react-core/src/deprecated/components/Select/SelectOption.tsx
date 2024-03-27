@@ -1,4 +1,12 @@
-import * as React from 'react';
+import {
+  type HTMLProps,
+  type ReactNode,
+  type MouseEvent as ReactMouseEvent,
+  type ChangeEvent as ReactChangeEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  Component,
+  createRef
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import checkStyles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
@@ -14,19 +22,19 @@ export interface SelectOptionObject {
   /** Function returns a true if the passed in select option is equal to this select option object, false otherwise */
   compareTo?(selectOption: any): boolean;
 }
-export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 'type' | 'ref' | 'value'> {
+export interface SelectOptionProps extends Omit<HTMLProps<HTMLElement>, 'type' | 'ref' | 'value'> {
   /** Optional alternate display for the option */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the Select Option */
   className?: string;
   /** Description of the item for single and both typeahead select variants */
-  description?: React.ReactNode;
+  description?: ReactNode;
   /** Number of items matching the option */
   itemCount?: number;
   /** @hide Internal index of the option */
   index?: number;
   /** Indicates which component will be used as select item */
-  component?: React.ReactNode;
+  component?: ReactNode;
   /** The value for the option, can be a string or select option object */
   value: string | SelectOptionObject;
   /** Flag indicating if the option is disabled */
@@ -42,16 +50,11 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   /** Flag forcing the focused state */
   isFocused?: boolean;
   /** @hide Internal callback for ref tracking */
-  sendRef?: (
-    ref: React.ReactNode,
-    favoriteRef: React.ReactNode,
-    optionContainerRef: React.ReactNode,
-    index: number
-  ) => void;
+  sendRef?: (ref: ReactNode, favoriteRef: ReactNode, optionContainerRef: ReactNode, index: number) => void;
   /** @hide Internal callback for keyboard navigation */
   keyHandler?: (index: number, innerIndex: number, position: string) => void;
   /** Optional callback for click event */
-  onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
+  onClick?: (event: ReactMouseEvent | ReactChangeEvent) => void;
   /** Id of the checkbox input */
   inputId?: string;
   /** @hide Internal Flag indicating if the option is favorited */
@@ -74,11 +77,11 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   isGrouped?: boolean;
 }
 
-class SelectOption extends React.Component<SelectOptionProps> {
+class SelectOption extends Component<SelectOptionProps> {
   static displayName = 'SelectOption';
-  private ref = React.createRef<any>();
-  private liRef = React.createRef<any>();
-  private favoriteRef = React.createRef<any>();
+  private ref = createRef<any>();
+  private liRef = createRef<any>();
+  private favoriteRef = createRef<any>();
   static defaultProps: SelectOptionProps = {
     className: '',
     value: '',
@@ -118,7 +121,7 @@ class SelectOption extends React.Component<SelectOptionProps> {
     );
   }
 
-  onKeyDown = (event: React.KeyboardEvent, innerIndex: number, onEnter?: any, isCheckbox?: boolean) => {
+  onKeyDown = (event: ReactKeyboardEvent, innerIndex: number, onEnter?: any, isCheckbox?: boolean) => {
     const { index, keyHandler, isLastOptionBeforeFooter } = this.props;
     let isLastItemBeforeFooter = false;
     if (isLastOptionBeforeFooter !== undefined) {
@@ -238,7 +241,7 @@ class SelectOption extends React.Component<SelectOptionProps> {
 
     const renderOption = (
       onSelect: (
-        event: React.MouseEvent<any, MouseEvent> | React.ChangeEvent<HTMLInputElement>,
+        event: ReactMouseEvent<any, MouseEvent> | ReactChangeEvent<HTMLInputElement>,
         value: string | SelectOptionObject,
         isPlaceholder?: boolean
       ) => void,
@@ -299,7 +302,7 @@ class SelectOption extends React.Component<SelectOptionProps> {
                   event.stopPropagation();
                 }}
                 ref={this.ref}
-                onKeyDown={(event: React.KeyboardEvent) => {
+                onKeyDown={(event: ReactKeyboardEvent) => {
                   this.onKeyDown(event, 0);
                 }}
                 type="button"
@@ -330,13 +333,13 @@ class SelectOption extends React.Component<SelectOptionProps> {
                   role="option"
                   aria-selected={isSelected || null}
                   ref={this.ref}
-                  onKeyDown={(event: React.KeyboardEvent) => {
+                  onKeyDown={(event: ReactKeyboardEvent) => {
                     this.onKeyDown(event, 0);
                   }}
                   type="button"
                 >
                   {description && (
-                    <React.Fragment>
+                    <>
                       <span className={css(styles.selectMenuItemMain)}>
                         {itemDisplay}
                         {isSelected && (
@@ -346,17 +349,17 @@ class SelectOption extends React.Component<SelectOptionProps> {
                         )}
                       </span>
                       <span className={css(styles.selectMenuItemDescription)}>{description}</span>
-                    </React.Fragment>
+                    </>
                   )}
                   {!description && (
-                    <React.Fragment>
+                    <>
                       {itemDisplay}
                       {isSelected && (
                         <span className={css(styles.selectMenuItemIcon)}>
                           <CheckIcon aria-hidden />
                         </span>
                       )}
-                    </React.Fragment>
+                    </>
                   )}
                 </Component>
                 {isFavorite !== null && id && favoriteButton(onFavorite)}
@@ -373,7 +376,7 @@ class SelectOption extends React.Component<SelectOptionProps> {
               isFocused && styles.modifiers.focus,
               className
             )}
-            onKeyDown={(event: React.KeyboardEvent) => {
+            onKeyDown={(event: ReactKeyboardEvent) => {
               this.onKeyDown(event, 0, undefined, true);
             }}
             onClick={(event: any) => {
@@ -400,7 +403,7 @@ class SelectOption extends React.Component<SelectOptionProps> {
               description && styles.modifiers.description,
               className
             )}
-            onKeyDown={(event: React.KeyboardEvent) => {
+            onKeyDown={(event: ReactKeyboardEvent) => {
               this.onKeyDown(event, 0, undefined, true);
             }}
           >
@@ -436,7 +439,7 @@ class SelectOption extends React.Component<SelectOptionProps> {
               role="option"
               aria-selected={isSelected || null}
               ref={this.ref}
-              onKeyDown={(event: React.KeyboardEvent) => {
+              onKeyDown={(event: ReactKeyboardEvent) => {
                 this.onKeyDown(event, 0, undefined, true);
               }}
               type="button"
@@ -451,9 +454,7 @@ class SelectOption extends React.Component<SelectOptionProps> {
     return (
       <SelectConsumer>
         {({ onSelect, onClose, variant, inputIdPrefix, onFavorite, shouldResetOnSelect }) => (
-          <React.Fragment>
-            {renderOption(onSelect, onClose, variant, inputIdPrefix, onFavorite, shouldResetOnSelect)}
-          </React.Fragment>
+          <>{renderOption(onSelect, onClose, variant, inputIdPrefix, onFavorite, shouldResetOnSelect)}</>
         )}
       </SelectConsumer>
     );

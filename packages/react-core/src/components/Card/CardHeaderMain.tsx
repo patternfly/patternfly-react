@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 
-export interface CardHeaderMainProps extends React.HTMLProps<HTMLDivElement> {
+export interface CardHeaderMainProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Card Head Main */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the Card Head Main */
   className?: string;
 }
 
-export const CardHeaderMain: React.FunctionComponent<CardHeaderMainProps> = ({
+export const CardHeaderMain: FunctionComponent<CardHeaderMainProps> = ({
   children,
   className,
   ...props

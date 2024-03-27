@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Key, useState, Fragment } from 'react';
 import {
   Alert,
   AlertProps,
@@ -10,14 +10,14 @@ import {
 } from '@patternfly/react-core';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
-export const AlertGroupSingularDynamic: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
+export const AlertGroupSingularDynamic: FunctionComponent = () => {
+  const [alerts, setAlerts] = useState<Partial<AlertProps>[]>([]);
 
-  const addAlert = (title: string, variant: AlertProps['variant'], key: React.Key) => {
+  const addAlert = (title: string, variant: AlertProps['variant'], key: Key) => {
     setAlerts((prevAlerts) => [...prevAlerts, { title, variant, key }]);
   };
 
-  const removeAlert = (key: React.Key) => {
+  const removeAlert = (key: Key) => {
     setAlerts((prevAlerts) => [...prevAlerts.filter((alert) => alert.key !== key)]);
   };
 
@@ -38,7 +38,7 @@ export const AlertGroupSingularDynamic: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <InputGroup style={{ marginBottom: '16px' }}>
         <InputGroupItem>
           <button onClick={addSuccessAlert} type="button" className={btnClasses}>
@@ -73,6 +73,6 @@ export const AlertGroupSingularDynamic: React.FunctionComponent = () => {
           />
         ))}
       </AlertGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

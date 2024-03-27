@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { formatBreakpointMods } from '../../helpers/util';
 
-export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'children'> {
+export interface DataListActionProps extends Omit<HTMLProps<HTMLDivElement>, 'children'> {
   /** Content rendered as DataList Action  (e.g <Button> or <Dropdown>) */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Additional classes added to the DataList Action */
   className?: string;
   /** Identify the DataList toggle number */
@@ -27,7 +27,7 @@ export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement
   isPlainButtonAction?: boolean;
 }
 
-export const DataListAction: React.FunctionComponent<DataListActionProps> = ({
+export const DataListAction: FunctionComponent<DataListActionProps> = ({
   children,
   className,
   visibility,

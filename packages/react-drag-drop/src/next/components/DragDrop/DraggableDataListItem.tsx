@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, HTMLProps, FunctionComponent } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { css } from '@patternfly/react-styles';
@@ -9,19 +9,19 @@ import { DataListItemRow, DataListControl } from '@patternfly/react-core';
 
 export interface DraggableDataListItemObject {
   id?: string;
-  content?: React.ReactNode;
+  content?: ReactNode;
 }
 
-export interface DraggableDataListItemProps extends React.HTMLProps<HTMLLIElement> {
+export interface DraggableDataListItemProps extends HTMLProps<HTMLLIElement> {
   /** Content rendered inside DragDrop */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Class to add to outer div */
   className?: string;
   /** @hide Id of the sortable context. */
   id?: string;
 }
 
-export const DraggableDataListItem: React.FunctionComponent<DraggableDataListItemProps> = ({
+export const DraggableDataListItem: FunctionComponent<DraggableDataListItemProps> = ({
   children,
   id,
   className,

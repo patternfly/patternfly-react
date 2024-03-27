@@ -1,4 +1,11 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type Ref,
+  type CSSProperties
+} from 'react';
 import {
   Badge,
   Button,
@@ -28,12 +35,12 @@ import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
-export const TableFilterable: React.FunctionComponent = () => {
-  const [filters, setFilters] = React.useState<Record<string, string[]>>({ location: [], name: [], status: [] });
-  const [currentCategory, setCurrentCategory] = React.useState('Status');
-  const [isFilterDropdownOpen, setIsFilterDropdownOpen] = React.useState(false);
-  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = React.useState(false);
-  const [inputValue, setInputValue] = React.useState('');
+export const TableFilterable: FunctionComponent = () => {
+  const [filters, setFilters] = useState<Record<string, string[]>>({ location: [], name: [], status: [] });
+  const [currentCategory, setCurrentCategory] = useState('Status');
+  const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false);
+  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
+  const [inputValue, setInputValue] = useState('');
 
   const rowData = rows.slice(0, 10);
 
@@ -62,7 +69,7 @@ export const TableFilterable: React.FunctionComponent = () => {
     setIsCategoryDropdownOpen(!isCategoryDropdownOpen);
   };
 
-  const onCategorySelect = (event: React.MouseEvent<Element, MouseEvent>, value: string) => {
+  const onCategorySelect = (event: ReactMouseEvent<Element, MouseEvent>, value: string) => {
     setCurrentCategory(value);
     setIsCategoryDropdownOpen(false);
   };
@@ -79,7 +86,7 @@ export const TableFilterable: React.FunctionComponent = () => {
     setInputValue(newValue);
   };
 
-  const onStatusSelect = (event: React.MouseEvent<Element, MouseEvent>, selection: string) => {
+  const onStatusSelect = (event: ReactMouseEvent<Element, MouseEvent>, selection: string) => {
     const checked = (event.target as HTMLInputElement).checked;
     setFilters({
       ...filters,
@@ -88,7 +95,7 @@ export const TableFilterable: React.FunctionComponent = () => {
     setIsFilterDropdownOpen(false);
   };
 
-  const onNameInput = (event: React.KeyboardEvent) => {
+  const onNameInput = (event: ReactKeyboardEvent) => {
     if (event.key && event.key !== 'Enter') {
       return;
     }
@@ -97,7 +104,7 @@ export const TableFilterable: React.FunctionComponent = () => {
     setFilters({ ...filters, name: prevFilters.includes(inputValue) ? prevFilters : [...prevFilters, inputValue] });
   };
 
-  const onLocationSelect = (event: React.MouseEvent<Element, MouseEvent>, selection: string) => {
+  const onLocationSelect = (event: ReactMouseEvent<Element, MouseEvent>, selection: string) => {
     setFilters({ ...filters, location: [selection] });
 
     setIsFilterDropdownOpen(false);
@@ -122,7 +129,7 @@ export const TableFilterable: React.FunctionComponent = () => {
         <Select
           onSelect={onCategorySelect}
           selected={currentCategory}
-          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          toggle={(toggleRef: Ref<MenuToggleElement>) => (
             <MenuToggle
               ref={toggleRef}
               onClick={onCategoryToggle}
@@ -132,7 +139,7 @@ export const TableFilterable: React.FunctionComponent = () => {
                 {
                   width: '100%',
                   verticalAlign: 'text-bottom'
-                } as React.CSSProperties
+                } as CSSProperties
               }
             >
               {currentCategory}
@@ -186,7 +193,7 @@ export const TableFilterable: React.FunctionComponent = () => {
     ];
 
     return (
-      <React.Fragment>
+      <>
         <ToolbarFilter
           chips={filters.location}
           deleteChip={(category, chip) => onDelete(category, chip as string)}
@@ -199,7 +206,7 @@ export const TableFilterable: React.FunctionComponent = () => {
             selected={filters.location[0]}
             isOpen={isFilterDropdownOpen}
             popperProps={{ minWidth: '100px' }}
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
                 onClick={onFilterToggle}
@@ -208,7 +215,7 @@ export const TableFilterable: React.FunctionComponent = () => {
                   {
                     width: '100%',
                     verticalAlign: 'text-bottom'
-                  } as React.CSSProperties
+                  } as CSSProperties
                 }
               >
                 {filters.location[0] || `Any`}
@@ -247,7 +254,7 @@ export const TableFilterable: React.FunctionComponent = () => {
             popperProps={{ minWidth: '100px' }}
             onSelect={onStatusSelect}
             selected={filters.status}
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
                 onClick={onFilterToggle}
@@ -256,7 +263,7 @@ export const TableFilterable: React.FunctionComponent = () => {
                   {
                     width: '100%',
                     verticalAlign: 'text-bottom'
-                  } as React.CSSProperties
+                  } as CSSProperties
                 }
               >
                 Filter by status
@@ -267,7 +274,7 @@ export const TableFilterable: React.FunctionComponent = () => {
             {statusMenuItems}
           </Select>
         </ToolbarFilter>
-      </React.Fragment>
+      </>
     );
   };
 
@@ -285,7 +292,7 @@ export const TableFilterable: React.FunctionComponent = () => {
               {
                 lineHeight: '22px',
                 alignItems: 'center'
-              } as React.CSSProperties
+              } as CSSProperties
             }
           >
             {buildCategoryDropdown()}
@@ -344,7 +351,7 @@ export const TableFilterable: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       {renderToolbar()}
       <Table aria-label="Filterable Table Demo">
         <Thead>
@@ -389,6 +396,6 @@ export const TableFilterable: React.FunctionComponent = () => {
           )}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </>
   );
 };

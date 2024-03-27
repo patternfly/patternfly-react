@@ -1,4 +1,4 @@
-import React from 'react';
+import { SyntheticEvent, Component } from 'react';
 import {
   Button,
   EmptyState,
@@ -28,7 +28,7 @@ interface GroupsNotificationDrawerDemoState {
   thirdGroupIsOpen: boolean;
 }
 
-export class LightweightNotificationDrawerDemo extends React.Component<
+export class LightweightNotificationDrawerDemo extends Component<
   NotificationDrawerProps,
   GroupsNotificationDrawerDemoState
 > {
@@ -49,19 +49,19 @@ export class LightweightNotificationDrawerDemo extends React.Component<
     }
   };
 
-  toggleFirstDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
+  toggleFirstDrawer = (event: SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       firstGroupIsOpen: value
     });
   };
 
-  toggleSecondDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
+  toggleSecondDrawer = (event: SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       secondGroupIsOpen: value
     });
   };
 
-  toggleThirdDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
+  toggleThirdDrawer = (event: SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       thirdGroupIsOpen: value
     });

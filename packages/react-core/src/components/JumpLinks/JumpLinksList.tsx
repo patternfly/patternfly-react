@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
 
-export interface JumpLinksListProps extends React.HTMLProps<HTMLUListElement> {
+export interface JumpLinksListProps extends HTMLProps<HTMLUListElement> {
   /** Text to be rendered inside span */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classname to add to ul. */
   className?: string;
 }
 
-export const JumpLinksList: React.FunctionComponent<JumpLinksListProps> = ({
+export const JumpLinksList: FunctionComponent<JumpLinksListProps> = ({
   children,
   className,
   ...props

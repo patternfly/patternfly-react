@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Label, LabelGroup, LabelProps } from '@patternfly/react-core';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
-export const LabelGroupVerticalCategoryOverflowRemovable: React.FunctionComponent = () => {
-  const [labels, setLabels] = React.useState([
+export const LabelGroupVerticalCategoryOverflowRemovable: FunctionComponent = () => {
+  const [labels, setLabels] = useState([
     ['Label 1', 'grey'],
     ['Label 2', 'blue'],
     ['Label 3', 'green'],

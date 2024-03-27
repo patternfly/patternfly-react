@@ -1,4 +1,4 @@
-import React from 'react';
+import { RefObject } from 'react';
 import { render, screen } from '@testing-library/react';
 import { Tabs } from '../Tabs';
 import { Tab } from '../Tab';
@@ -298,9 +298,9 @@ test('should render tabs with eventKey Strings', () => {
 });
 
 test('should render tabs with separate content', () => {
-  const contentRef1: React.RefObject<any> = null;
-  const contentRef2: React.RefObject<any> = null;
-  const contentRef3: React.RefObject<any> = null;
+  const contentRef1: RefObject<any> = null;
+  const contentRef2: RefObject<any> = null;
+  const contentRef3: RefObject<any> = null;
 
   const { asFragment } = render(
     <>

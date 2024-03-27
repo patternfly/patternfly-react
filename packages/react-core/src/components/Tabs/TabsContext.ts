@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent as ReactMouseEvent, createContext, type RefObject } from 'react';
 
 export interface TabsContextProps {
   variant: 'default' | 'light300';
@@ -7,18 +7,18 @@ export interface TabsContextProps {
   localActiveKey: string | number;
   uniqueId: string;
   handleTabClick: (
-    event: React.MouseEvent<HTMLElement, MouseEvent>,
+    event: ReactMouseEvent<HTMLElement, MouseEvent>,
     eventKey: number | string,
-    tabContentRef: React.RefObject<any>
+    tabContentRef: RefObject<any>
   ) => void;
   handleTabClose?: (
-    event: React.MouseEvent<HTMLElement, MouseEvent>,
+    event: ReactMouseEvent<HTMLElement, MouseEvent>,
     eventKey: number | string,
-    tabContentRef?: React.RefObject<any>
+    tabContentRef?: RefObject<any>
   ) => void;
 }
 
-export const TabsContext = React.createContext<TabsContextProps>({
+export const TabsContext = createContext<TabsContextProps>({
   variant: 'default',
   mountOnEnter: false,
   unmountOnExit: false,

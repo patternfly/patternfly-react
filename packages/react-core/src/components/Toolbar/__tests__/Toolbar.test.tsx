@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 
 import { render, screen } from '@testing-library/react';
 
@@ -15,12 +15,12 @@ jest.mock('../../../helpers/GenerateId/GenerateId');
 describe('Toolbar', () => {
   it('should render inset', () => {
     const items = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarItem>Test</ToolbarItem>
         <ToolbarItem>Test 2</ToolbarItem>
         <ToolbarItem variant="separator" />
         <ToolbarItem>Test 3 </ToolbarItem>
-      </React.Fragment>
+      </Fragment>
     );
 
     const { asFragment } = render(
@@ -42,12 +42,12 @@ describe('Toolbar', () => {
 
   it('should render with page inset flag', () => {
     const items = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarItem>Test</ToolbarItem>
         <ToolbarItem>Test 2</ToolbarItem>
         <ToolbarItem variant="separator" />
         <ToolbarItem>Test 3 </ToolbarItem>
-      </React.Fragment>
+      </Fragment>
     );
 
     const { asFragment } = render(
@@ -61,8 +61,8 @@ describe('Toolbar', () => {
 
   it('should render with custom chip content', () => {
     const items = (
-      <React.Fragment>
-        <ToolbarToggleGroup toggleIcon={<React.Fragment />} breakpoint="xl">
+      <Fragment>
+        <ToolbarToggleGroup toggleIcon={<Fragment />} breakpoint="xl">
           <ToolbarGroup variant="filter-group">
             <ToolbarFilter
               chips={['New', 'Pending']}
@@ -74,11 +74,11 @@ describe('Toolbar', () => {
             </ToolbarFilter>
           </ToolbarGroup>
         </ToolbarToggleGroup>
-      </React.Fragment>
+      </Fragment>
     );
 
     const customChipGroupContent = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarItem>
           <Button variant="link" onClick={() => {}} isInline>
             Save filters
@@ -89,7 +89,7 @@ describe('Toolbar', () => {
             Clear all filters
           </Button>
         </ToolbarItem>
-      </React.Fragment>
+      </Fragment>
     );
 
     const { asFragment } = render(

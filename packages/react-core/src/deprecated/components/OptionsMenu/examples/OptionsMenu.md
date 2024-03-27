@@ -13,10 +13,10 @@ import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amou
 ## Examples
 ### Single option
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core/deprecated';
 
-class SingleOption extends React.Component {
+class SingleOption extends Component {
   constructor(props) {
       super(props);
       this.state = {
@@ -63,10 +63,10 @@ class SingleOption extends React.Component {
 
 ### Disabled
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core/deprecated';
 
-class DisabledOptionsMenu extends React.Component {
+class DisabledOptionsMenu extends Component {
   constructor(props) {
       super(props);
       this.state = {
@@ -99,10 +99,10 @@ class DisabledOptionsMenu extends React.Component {
 
 ### Multiple options
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuSeparator, OptionsMenuItemGroup, OptionsMenuToggle} from '@patternfly/react-core/deprecated';
 
-class MultipleOptions extends React.Component {
+class MultipleOptions extends Component {
   constructor(props) {
       super(props);
       this.state = {
@@ -164,11 +164,11 @@ class MultipleOptions extends React.Component {
 
 ### Plain
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core/deprecated';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
-class Plain extends React.Component {
+class Plain extends Component {
   constructor(props) {
       super(props);
       this.state = {
@@ -222,7 +222,7 @@ class Plain extends React.Component {
     const disabledToggle = <OptionsMenuToggle isDisabled onToggle={this.onDisabledToggle} toggleTemplate={toggleTemplate} aria-label="Sort by" hideCaret/>
 
     return (
-      <React.Fragment>
+      <>
         <OptionsMenu id="plain-disabled-example" 
           isPlain
           menuItems={disabledMenuItems}  
@@ -233,7 +233,7 @@ class Plain extends React.Component {
           menuItems={menuItems}  
           isOpen={isOpen}
           toggle={toggle}/>
-      </React.Fragment>
+      </>
     );
   }
 }
@@ -241,10 +241,10 @@ class Plain extends React.Component {
 
 ### Align top
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuDirection, OptionsMenuToggle } from '@patternfly/react-core/deprecated';
 
-class Top extends React.Component {
+class Top extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -292,10 +292,10 @@ class Top extends React.Component {
 
 ### Align right
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuPosition, OptionsMenuToggle } from '@patternfly/react-core/deprecated';
 
-class AlignRight extends React.Component {
+class AlignRight extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -343,16 +343,16 @@ class AlignRight extends React.Component {
 
 ### Plain with text
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core/deprecated';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
-class PlainWithText extends React.Component {
+class PlainWithText extends Component {
   constructor(props) {
       super(props);
       this.state = {
         isOpen: false,
-        toggleText: <React.Fragment>Custom text</React.Fragment>,
+        toggleText: <>Custom text</>,
         buttonContents: <CaretDownIcon/>,
         customOption1: true,
         customOption2: false,
@@ -403,16 +403,16 @@ class PlainWithText extends React.Component {
 
 ### Plain with text disabled
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core/deprecated';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
-class PlainWithText extends React.Component {
+class PlainWithText extends Component {
   constructor(props) {
       super(props);
       this.state = {
         isOpen: false,
-        toggleText: <React.Fragment>Custom text</React.Fragment>,
+        toggleText: <>Custom text</>,
         buttonContents: <CaretDownIcon/>,
         customOption1: true,
         customOption2: false,
@@ -463,10 +463,10 @@ class PlainWithText extends React.Component {
 
 ### Grouped items with titles
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle, OptionsMenuItemGroup } from '@patternfly/react-core/deprecated';
 
-class GroupedItems extends React.Component {
+class GroupedItems extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -524,10 +524,10 @@ class GroupedItems extends React.Component {
 
 ### Single option with menu on document body
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core/deprecated';
 
-class SingleOption extends React.Component {
+class SingleOption extends Component {
   constructor(props) {
       super(props);
       this.state = {

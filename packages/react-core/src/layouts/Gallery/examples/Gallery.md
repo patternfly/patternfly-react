@@ -12,7 +12,6 @@ import './gallery.css';
 ### Basic
 
 ```js
-import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
 <Gallery>
@@ -30,7 +29,6 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 ### With gutters
 
 ```js
-import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
 <Gallery hasGutter>
@@ -46,7 +44,6 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 ### Adjusting min widths
 
 ```js
-import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
 <Gallery
@@ -72,7 +69,6 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 ### Adjusting max widths
 
 ```js
-import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
 <Gallery
@@ -97,7 +93,6 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 ### Adjusting min and max widths
 
 ```js
-import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
 <Gallery
@@ -126,7 +121,6 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 ### Alternative components
 
 ```js
-import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
 <Gallery component='ul'>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement, Fragment, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -32,7 +32,6 @@ import { getComputedLegend, getLegendItemsExtraHeight, getLegendMaxTextWidth } f
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getPatternDefs, useDefaultPatternProps } from '../ChartUtils/chart-patterns';
 import { getTheme } from '../ChartUtils/chart-theme';
-import { useEffect } from 'react';
 import { ChartPoint } from '../ChartPoint/ChartPoint';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 
@@ -111,7 +110,7 @@ export interface ChartPieProps extends VictoryPieProps {
    *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
-  containerComponent?: React.ReactElement<any>;
+  containerComponent?: ReactElement<any>;
   /**
    * Set the cornerRadius for every dataComponent (Slice by default) within ChartPie
    *
@@ -139,7 +138,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * the ChartPie; and the d3 compatible slice object.
    * If a dataComponent is not provided, ChartPie's Slice component will be used.
    */
-  dataComponent?: React.ReactElement<any>;
+  dataComponent?: ReactElement<any>;
   /**
    * The overall end angle of the pie in degrees. This prop is used in conjunction with
    * startAngle to create a pie that spans only a segment of a circle.
@@ -206,7 +205,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart.
    * SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected
@@ -256,7 +255,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * provide a series label for ChartPie. If individual labels are required for each
    * data point, they should be created by composing ChartPie with VictoryScatter
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * The labelPosition prop specifies the angular position of each label relative to its corresponding slice.
    * This prop should be given as "startAngle", "endAngle", "centroid", or as a function that returns one of these
@@ -303,7 +302,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * Note: Use legendData so the legend width can be calculated and positioned properly.
    * Default legend properties may be applied
    */
-  legendComponent?: React.ReactElement<any>;
+  legendComponent?: ReactElement<any>;
   /**
    * Specify data via the data prop. ChartLegend expects data as an
    * array of objects with name (required), symbol, and labels properties.
@@ -492,7 +491,7 @@ export interface ChartPieProps extends VictoryPieProps {
   y?: DataGetterPropType;
 }
 
-export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
+export const ChartPie: FunctionComponent<ChartPieProps> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -586,7 +585,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     legendXOffset = getLegendMaxTextWidth(legendData, theme);
   }
 
-  const legend = React.cloneElement(legendComponent, {
+  const legend = cloneElement(legendComponent, {
     colorScale,
     data: legendData,
     ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
@@ -595,14 +594,14 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     theme,
     ...(legendDirection === 'rtl' && {
       dataComponent: legendComponent.props.dataComponent ? (
-        React.cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
+        cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
       ) : (
         <ChartPoint transform={`translate(${legendXOffset})`} />
       )
     }),
     ...(legendDirection === 'rtl' && {
       labelComponent: legendComponent.props.labelComponent ? (
-        React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
+        cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
       ) : (
         <ChartLabel direction="rtl" dx={legendXOffset - 30} />
       )
@@ -630,7 +629,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
 
   // Clone so users can override container props
   const container = standalone
-    ? React.cloneElement(
+    ? cloneElement(
         containerComponent,
         {
           desc: ariaDesc,
@@ -663,13 +662,13 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   }, [computedLegend, legendAllowWrap, theme, width]);
 
   return standalone ? (
-    <React.Fragment>{container}</React.Fragment>
+    <Fragment>{container}</Fragment>
   ) : (
-    <React.Fragment>
+    <Fragment>
       {chart}
       {computedLegend}
       {isPatternDefs && getPatternDefs({ patternId, colorScale: defaultColorScale, patternUnshiftIndex })}
-    </React.Fragment>
+    </Fragment>
   );
 };
 ChartPie.displayName = 'ChartPie';

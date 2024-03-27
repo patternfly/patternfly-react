@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createRef, Component, Fragment } from 'react';
 import {
   OverflowMenu,
   OverflowMenuControl,
@@ -16,7 +16,7 @@ import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export class OverflowMenuDemo extends React.Component {
+export class OverflowMenuDemo extends Component {
   static displayName = 'OverflowMenuDemo';
   state = {
     isSimpleOpen: false,
@@ -25,7 +25,7 @@ export class OverflowMenuDemo extends React.Component {
     isContainerBreakpointOpen: false
   };
 
-  breakpointContainerRef = React.createRef<HTMLDivElement>();
+  breakpointContainerRef = createRef<HTMLDivElement>();
 
   style = {
     display: 'flex',
@@ -339,12 +339,12 @@ export class OverflowMenuDemo extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         {this.renderSimpleOverflowMenu()}
         {this.renderOverflowMenuAdditionalOptions()}
         {this.renderOverflowMenuPersist()}
         {this.renderContainerBreakpointOverflowMenu()}
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

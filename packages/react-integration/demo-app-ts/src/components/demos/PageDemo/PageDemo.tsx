@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent, Component } from 'react';
 import {
   Avatar,
   Button,
@@ -25,7 +25,7 @@ import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-
 import imgAvatar from '@patternfly/react-integration/demo-app-ts/src/assets/images/imgAvatar.svg';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export class PageDemo extends React.Component {
+export class PageDemo extends Component {
   static displayName = 'PageDemo';
   state = {
     isNavOpen: true,
@@ -33,7 +33,7 @@ export class PageDemo extends React.Component {
     isKebabDropdownOpen: false
   };
 
-  onNavToggle = (_event: React.MouseEvent) => {
+  onNavToggle = (_event: MouseEvent) => {
     this.setState({
       isNavOpen: !this.state.isNavOpen
     });

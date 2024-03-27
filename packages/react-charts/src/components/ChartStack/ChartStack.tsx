@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, ReactElement, FunctionComponent, cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -73,7 +73,7 @@ export interface ChartStackProps extends VictoryStackProps {
    * ChartGroup will be cloned and rendered with new props so that all children share common props such as domain and
    * scale.
    */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**
    * The colorScale prop is an optional prop that defines the color scale the chart's bars
    * will be created on. This prop should be given as an array of CSS colors, or as a string
@@ -97,7 +97,7 @@ export interface ChartStackProps extends VictoryStackProps {
    *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows..." />
    */
-  containerComponent?: React.ReactElement<any>;
+  containerComponent?: ReactElement<any>;
   /**
    * The domain prop describes the range of values your chart will include. This prop can be
    * given as a array of the minimum and maximum expected values for your chart,
@@ -185,7 +185,7 @@ export interface ChartStackProps extends VictoryStackProps {
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart.
    * SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected
@@ -221,7 +221,7 @@ export interface ChartStackProps extends VictoryStackProps {
    * provide a series label for ChartArea. If individual labels are required for each
    * data point, they should be created by composing ChartArea with VictoryScatter
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * The labels prop defines labels that will appear above each bar in your chart.
    * This prop should be given as an array of values or as a function of data.
@@ -402,7 +402,7 @@ export interface ChartStackProps extends VictoryStackProps {
   xOffset?: number;
 }
 
-export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
+export const ChartStack: FunctionComponent<ChartStackProps> = ({
   ariaDesc,
   ariaTitle,
   children,
@@ -417,7 +417,7 @@ export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
   ...rest
 }: ChartStackProps) => {
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     desc: ariaDesc,
     title: ariaTitle,
     theme,

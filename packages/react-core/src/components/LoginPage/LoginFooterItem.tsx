@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, isValidElement } from 'react';
 
-export interface LoginFooterItemProps extends React.HTMLProps<HTMLAnchorElement> {
+export interface LoginFooterItemProps extends HTMLProps<HTMLAnchorElement> {
   /** Content rendered inside the footer link item */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the footer link item  */
   className?: string;
   /** The URL of the footer link item */
@@ -11,13 +11,13 @@ export interface LoginFooterItemProps extends React.HTMLProps<HTMLAnchorElement>
   target?: string;
 }
 
-export const LoginFooterItem: React.FunctionComponent<LoginFooterItemProps> = ({
+export const LoginFooterItem: FunctionComponent<LoginFooterItemProps> = ({
   children = null,
   href = '#',
   target = '_blank',
   ...props
 }: LoginFooterItemProps) =>
-  React.isValidElement(children) ? (
+  isValidElement(children) ? (
     children
   ) : (
     <a target={target} href={href} {...props}>

@@ -1,4 +1,19 @@
-import * as React from 'react';
+import {
+  MouseEvent,
+  ChangeEvent,
+  HTMLProps,
+  ReactElement,
+  ReactNode,
+  Ref,
+  KeyboardEvent,
+  createRef,
+  Children,
+  isValidElement,
+  cloneElement,
+  Component,
+  Fragment,
+  type ComponentProps
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
@@ -46,13 +61,13 @@ export interface SelectViewMoreObject {
   /** View more text */
   text: string;
   /** Callback for when the view more button is clicked */
-  onClick: (event: React.MouseEvent | React.ChangeEvent) => void;
+  onClick: (event: MouseEvent | ChangeEvent) => void;
 }
 export interface SelectProps
-  extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'>,
+  extends Omit<HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'>,
     OUIAProps {
-  /** Content rendered inside the Select. Must be React.ReactElement<SelectGroupProps>[] */
-  children?: React.ReactElement[];
+  /** Content rendered inside the Select. Must be ReactElement<SelectGroupProps>[] */
+  children?: ReactElement[];
   /** Classes applied to the root of the Select */
   className?: string;
   /** Indicates where menu will be aligned horizontally */
@@ -86,7 +101,7 @@ export interface SelectProps
   /** Text displayed in typeahead select to prompt the user to create an item */
   createText?: string;
   /** Title text of Select */
-  placeholderText?: string | React.ReactNode;
+  placeholderText?: string | ReactNode;
   /** Text to display in typeahead select when no results are found */
   noResultsFoundText?: string;
   /** Array of selected items for multi select variants. */
@@ -96,7 +111,7 @@ export interface SelectProps
   /** Id for select toggle element */
   toggleId?: string;
   /** Ref for the select toggle element */
-  toggleRef?: React.Ref<HTMLButtonElement> | React.Ref<HTMLDivElement>;
+  toggleRef?: Ref<HTMLButtonElement> | Ref<HTMLDivElement>;
   /** Adds accessible text to Select */
   'aria-label'?: string;
   /** Id of label for the Select aria-labelledby */
@@ -122,19 +137,15 @@ export interface SelectProps
   /** Enables favorites. Callback called when a select options's favorite button is clicked */
   onFavorite?: (itemId: string, isFavorite: boolean) => void;
   /** Callback for selection behavior */
-  onSelect?: (
-    event: React.MouseEvent | React.ChangeEvent,
-    value: string | SelectOptionObject,
-    isPlaceholder?: boolean
-  ) => void;
+  onSelect?: (event: MouseEvent | ChangeEvent, value: string | SelectOptionObject, isPlaceholder?: boolean) => void;
   /** Callback for toggle button behavior */
-  onToggle: (event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event, isExpanded: boolean) => void;
+  onToggle: (event: MouseEvent | ChangeEvent | KeyboardEvent | Event, isExpanded: boolean) => void;
   /** Callback for toggle blur */
   onBlur?: (event?: any) => void;
   /** Callback for typeahead clear button */
-  onClear?: (event: React.MouseEvent) => void;
+  onClear?: (event: MouseEvent) => void;
   /** Optional callback for custom filtering */
-  onFilter?: (e: React.ChangeEvent<HTMLInputElement> | null, value: string) => React.ReactElement[] | undefined;
+  onFilter?: (e: ChangeEvent<HTMLInputElement> | null, value: string) => ReactElement[] | undefined;
   /** Optional callback for newly created options */
   onCreateOption?: (newOptionValue: string) => void;
   /** Optional event handler called each time the value in the typeahead input changes. */
@@ -146,11 +157,11 @@ export interface SelectProps
   /** Max height of the select container as a number of px or string percentage */
   maxHeight?: string | number;
   /** Icon element to render inside the select toggle */
-  toggleIcon?: React.ReactElement;
+  toggleIcon?: ReactElement;
   /** Custom icon for the dropdown replacing the CaretDownIcon */
-  toggleIndicator?: React.ReactElement;
+  toggleIndicator?: ReactElement;
   /** Custom content to render in the select menu.  If this prop is defined, the variant prop will be ignored and the select will render with a single select toggle */
-  customContent?: React.ReactNode;
+  customContent?: ReactNode;
   /** Flag indicating if select should have an inline text input for filtering */
   hasInlineFilter?: boolean;
   /** Placeholder text for inline filter */
@@ -164,7 +175,7 @@ export interface SelectProps
   /** Optional props to pass to the chip group in the typeaheadmulti variant */
   chipGroupProps?: Omit<ChipGroupProps, 'children' | 'ref'>;
   /** Optional props to render custom chip group in the typeaheadmulti variant */
-  chipGroupComponent?: React.ReactNode;
+  chipGroupComponent?: ReactNode;
   /** Flag for retaining keyboard-entered value in typeahead text field when focus leaves input away */
   isInputValuePersisted?: boolean;
   /** Flag for retaining filter results on blur from keyboard-entered typeahead text */
@@ -172,7 +183,7 @@ export interface SelectProps
   /** Flag indicating the typeahead input value should reset upon selection */
   shouldResetOnSelect?: boolean;
   /** Content rendered in the footer of the select menu */
-  footer?: React.ReactNode;
+  footer?: ReactNode;
   /** The container to append the menu to. Defaults to 'inline'.
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
    * Some examples:
@@ -197,8 +208,8 @@ export interface SelectProps
 export interface SelectState {
   focusFirstOption: boolean;
   typeaheadInputValue: string | null;
-  typeaheadFilteredChildren: React.ReactNode[];
-  favoritesGroup: React.ReactNode[];
+  typeaheadFilteredChildren: ReactNode[];
+  favoritesGroup: ReactNode[];
   typeaheadCurrIndex: number;
   creatableValue: string;
   tabbedIntoFavoritesMenu: boolean;
@@ -207,19 +218,19 @@ export interface SelectState {
   viewMoreNextIndex: number;
 }
 
-class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
+class Select extends Component<SelectProps & OUIAProps, SelectState> {
   static displayName = 'Select';
-  private parentRef = React.createRef<HTMLDivElement>();
-  private menuComponentRef = React.createRef<HTMLElement>();
-  private filterRef = React.createRef<HTMLInputElement>();
-  private clearRef = React.createRef<HTMLButtonElement>();
-  private inputRef = React.createRef<HTMLInputElement>();
+  private parentRef = createRef<HTMLDivElement>();
+  private menuComponentRef = createRef<HTMLElement>();
+  private filterRef = createRef<HTMLInputElement>();
+  private clearRef = createRef<HTMLButtonElement>();
+  private inputRef = createRef<HTMLInputElement>();
   private refCollection: HTMLElement[][] = [[]];
   private optionContainerRefCollection: HTMLElement[] = [];
-  private footerRef = React.createRef<HTMLDivElement>();
+  private footerRef = createRef<HTMLDivElement>();
 
   static defaultProps: PickOptional<SelectProps> = {
-    children: [] as React.ReactElement[],
+    children: [] as ReactElement[],
     className: '',
     position: SelectPosition.left,
     direction: SelectDirection.down,
@@ -249,8 +260,8 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
     width: '',
     onClear: () => undefined as void,
     onCreateOption: () => undefined as void,
-    toggleIcon: null as React.ReactElement,
-    toggleIndicator: null as React.ReactElement,
+    toggleIcon: null as ReactElement,
+    toggleIndicator: null as ReactElement,
     onFilter: null,
     onTypeaheadInputChanged: null,
     customContent: null,
@@ -275,8 +286,8 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
   state: SelectState = {
     focusFirstOption: false,
     typeaheadInputValue: null,
-    typeaheadFilteredChildren: React.Children.toArray(this.props.children),
-    favoritesGroup: [] as React.ReactNode[],
+    typeaheadFilteredChildren: Children.toArray(this.props.children),
+    favoritesGroup: [] as ReactNode[],
     typeaheadCurrIndex: -1,
     typeaheadStoredIndex: -1,
     creatableValue: '',
@@ -318,8 +329,8 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
       this.setState({ viewMoreNextIndex: -1 });
     }
 
-    const checkUpdatedChildren = (prevChildren: React.ReactElement[], currChildren: React.ReactElement[]) =>
-      Array.from(prevChildren).some((prevChild: React.ReactElement, index: number) => {
+    const checkUpdatedChildren = (prevChildren: ReactElement[], currChildren: ReactElement[]) =>
+      Array.from(prevChildren).some((prevChild: ReactElement, index: number) => {
         const prevChildProps = prevChild.props;
         const currChild = currChildren[index];
         const { props: currChildProps } = currChild;
@@ -341,7 +352,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
       checkUpdatedChildren(prevProps.children, this.props.children) ||
       (this.props.isGrouped &&
         Array.from(prevProps.children).some(
-          (prevChild: React.ReactElement, index: number) =>
+          (prevChild: ReactElement, index: number) =>
             prevChild.type === SelectGroup &&
             prevChild.props.children &&
             this.props.children[index].props.children &&
@@ -386,7 +397,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
     this.setState({ focusFirstOption: true });
   };
 
-  onToggle = (e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event, isExpanded: boolean) => {
+  onToggle = (e: MouseEvent | ChangeEvent | KeyboardEvent | Event, isExpanded: boolean) => {
     const { isInputValuePersisted, onSelect, onToggle, hasInlineFilter } = this.props;
     if (!isExpanded && isInputValuePersisted && onSelect) {
       onSelect(undefined, this.inputRef.current ? this.inputRef.current.value : '');
@@ -406,7 +417,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
       focusFirstOption: false,
       typeaheadInputValue: null,
       ...(!isInputFilterPersisted && {
-        typeaheadFilteredChildren: React.Children.toArray(this.props.children)
+        typeaheadFilteredChildren: Children.toArray(this.props.children)
       }),
       typeaheadCurrIndex: -1,
       tabbedIntoFavoritesMenu: false,
@@ -414,7 +425,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
     });
   };
 
-  onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  onChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.toString() !== '' && !this.props.isOpen) {
       this.onToggle(e, true);
     }
@@ -432,7 +443,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
     this.refCollection = [[]];
   };
 
-  updateTypeAheadFilteredChildren = (typeaheadInputValue: string, e: React.ChangeEvent<HTMLInputElement> | null) => {
+  updateTypeAheadFilteredChildren = (typeaheadInputValue: string, e: ChangeEvent<HTMLInputElement> | null) => {
     let typeaheadFilteredChildren: any;
 
     const {
@@ -460,30 +471,27 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
       } catch (err) {
         input = new RegExp(typeaheadInputValue.toString().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
       }
-      const childrenArray = React.Children.toArray(children) as React.ReactElement<SelectGroupProps>[];
+      const childrenArray = Children.toArray(children) as ReactElement<SelectGroupProps>[];
       if (isGrouped) {
-        const childFilter = (child: React.ReactElement<SelectGroupProps>) =>
+        const childFilter = (child: ReactElement<SelectGroupProps>) =>
           child.props.value &&
           child.props.value.toString &&
           this.getDisplay(child.props.value.toString(), 'text').search(input) === 0;
         typeaheadFilteredChildren =
           typeaheadInputValue.toString() !== ''
-            ? React.Children.map(children, (group) => {
-                if (
-                  React.isValidElement<React.ComponentProps<typeof SelectGroup>>(group) &&
-                  group.type === SelectGroup
-                ) {
+            ? Children.map(children, (group) => {
+                if (isValidElement<ComponentProps<typeof SelectGroup>>(group) && group.type === SelectGroup) {
                   const filteredGroupChildren = (
-                    React.Children.toArray(group.props.children) as React.ReactElement<SelectGroupProps>[]
+                    Children.toArray(group.props.children) as ReactElement<SelectGroupProps>[]
                   ).filter(childFilter);
                   if (filteredGroupChildren.length > 0) {
-                    return React.cloneElement(group, {
+                    return cloneElement(group, {
                       titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
                       children: filteredGroupChildren as any
                     });
                   }
                 } else {
-                  return (React.Children.toArray(group) as React.ReactElement<SelectGroupProps>[]).filter(childFilter);
+                  return (Children.toArray(group) as ReactElement<SelectGroupProps>[]).filter(childFilter);
                 }
               })
             : childrenArray;
@@ -534,7 +542,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
       const newValue = typeaheadInputValue;
       if (
         !typeaheadFilteredChildren.find(
-          (i: React.ReactElement) =>
+          (i: ReactElement) =>
             i.props.value && i.props.value.toString().toLowerCase() === newValue.toString().toLowerCase()
         )
       ) {
@@ -568,21 +576,21 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
     });
   };
 
-  onClick = (e: React.MouseEvent) => {
+  onClick = (e: MouseEvent) => {
     if (!this.props.isOpen) {
       this.onToggle(e, true);
     }
   };
 
-  clearSelection = (_e: React.MouseEvent) => {
+  clearSelection = (_e: MouseEvent) => {
     this.setState({
       typeaheadInputValue: null,
-      typeaheadFilteredChildren: React.Children.toArray(this.props.children),
+      typeaheadFilteredChildren: Children.toArray(this.props.children),
       typeaheadCurrIndex: -1
     });
   };
 
-  extendTypeaheadChildren(typeaheadCurrIndex: number, favoritesGroup?: React.ReactNode[]) {
+  extendTypeaheadChildren(typeaheadCurrIndex: number, favoritesGroup?: ReactNode[]) {
     const { isGrouped, onFavorite, createText } = this.props;
     const typeaheadChildren = favoritesGroup
       ? favoritesGroup.concat(this.state.typeaheadFilteredChildren)
@@ -597,44 +605,44 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
     this.refCollection = [[]];
     this.optionContainerRefCollection = [];
     if (isGrouped) {
-      return React.Children.map(typeaheadChildren as React.ReactElement[], (group: React.ReactElement) => {
+      return Children.map(typeaheadChildren as ReactElement[], (group: ReactElement) => {
         if (group.type === Divider) {
           return group;
         } else if (group.type === SelectGroup && onFavorite) {
-          return React.cloneElement(group, {
+          return cloneElement(group, {
             titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
-            children: React.Children.map(group.props.children, (child: React.ReactElement) =>
+            children: Children.map(group.props.children, (child: ReactElement) =>
               child.type === Divider
                 ? child
-                : React.cloneElement(child as React.ReactElement, {
+                : cloneElement(child as ReactElement, {
                     isFocused:
                       activeElement &&
-                      (activeElement.id === (child as React.ReactElement).props.id ||
+                      (activeElement.id === (child as ReactElement).props.id ||
                         (this.props.isCreatable &&
                           typeaheadActiveChild.textContent ===
-                            `${createText} "${(group as React.ReactElement).props.value}"`))
+                            `${createText} "${(group as ReactElement).props.value}"`))
                   })
             )
           });
         } else if (group.type === SelectGroup) {
-          return React.cloneElement(group, {
+          return cloneElement(group, {
             titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
-            children: React.Children.map(group.props.children, (child: React.ReactElement) =>
+            children: Children.map(group.props.children, (child: ReactElement) =>
               child.type === Divider
                 ? child
-                : React.cloneElement(child as React.ReactElement, {
+                : cloneElement(child as ReactElement, {
                     isFocused:
                       typeaheadActiveChild &&
-                      (typeaheadActiveChild.textContent === (child as React.ReactElement).props.value.toString() ||
+                      (typeaheadActiveChild.textContent === (child as ReactElement).props.value.toString() ||
                         (this.props.isCreatable &&
                           typeaheadActiveChild.textContent ===
-                            `${createText} "${(child as React.ReactElement).props.value}"`))
+                            `${createText} "${(child as ReactElement).props.value}"`))
                   })
             )
           });
         } else {
           // group has been filtered down to SelectOption
-          return React.cloneElement(group as React.ReactElement, {
+          return cloneElement(group as ReactElement, {
             isFocused:
               typeaheadActiveChild &&
               (typeaheadActiveChild.textContent === group.props.value.toString() ||
@@ -643,26 +651,21 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
         }
       });
     }
-    return typeaheadChildren.map((child: React.ReactNode, index) => {
+    return typeaheadChildren.map((child: ReactNode, index) => {
       const childElement = child as any;
       return childElement.type.displayName === 'Divider'
         ? child
-        : React.cloneElement(child as React.ReactElement, {
+        : cloneElement(child as ReactElement, {
             isFocused: typeaheadActiveChild
-              ? typeaheadActiveChild.textContent === (child as React.ReactElement).props.value.toString() ||
+              ? typeaheadActiveChild.textContent === (child as ReactElement).props.value.toString() ||
                 (this.props.isCreatable &&
-                  typeaheadActiveChild.textContent === `${createText} "${(child as React.ReactElement).props.value}"`)
+                  typeaheadActiveChild.textContent === `${createText} "${(child as ReactElement).props.value}"`)
               : index === typeaheadCurrIndex // fallback for view more + typeahead use cases, when the new expanded list is loaded and refCollection hasn't be updated yet
           });
     });
   }
 
-  sendRef = (
-    optionRef: React.ReactNode,
-    favoriteRef: React.ReactNode,
-    optionContainerRef: React.ReactNode,
-    index: number
-  ) => {
+  sendRef = (optionRef: ReactNode, favoriteRef: ReactNode, optionContainerRef: ReactNode, index: number) => {
     this.refCollection[index] = [optionRef as unknown as HTMLElement, favoriteRef as unknown as HTMLElement];
     this.optionContainerRefCollection[index] = optionContainerRef as unknown as HTMLElement;
   };
@@ -916,13 +919,12 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
       return;
     }
     const item = this.props.isGrouped
-      ? (React.Children.toArray(this.props.children) as React.ReactElement[])
-          .reduce((acc, curr) => [...acc, ...React.Children.toArray(curr.props.children)], [])
+      ? (Children.toArray(this.props.children) as ReactElement[])
+          .reduce((acc, curr) => [...acc, ...Children.toArray(curr.props.children)], [])
           .find((child) => child.props.value.toString() === value.toString())
-      : React.Children.toArray(this.props.children).find(
+      : Children.toArray(this.props.children).find(
           (child) =>
-            (child as React.ReactElement).props.value &&
-            (child as React.ReactElement).props.value.toString() === value.toString()
+            (child as ReactElement).props.value && (child as ReactElement).props.value.toString() === value.toString()
         );
     if (item) {
       if (item && item.props.children) {
@@ -936,14 +938,14 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
     return value.toString();
   };
 
-  findText = (item: React.ReactNode) => {
+  findText = (item: ReactNode) => {
     if (typeof item === 'string') {
       return item;
-    } else if (!React.isValidElement(item)) {
+    } else if (!isValidElement(item)) {
       return '';
     } else {
       const multi: string[] = [];
-      React.Children.toArray(item.props.children).forEach((child) => multi.push(this.findText(child)));
+      Children.toArray(item.props.children).forEach((child) => multi.push(this.findText(child)));
       return multi.join('');
     }
   };
@@ -1046,7 +1048,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
     const selectToggleId = toggleId || `pf-select-toggle-id-${currentId++}`;
     const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
     // Find out if the selected option is a placeholder
-    const selectedOption = React.Children.toArray(children).find(
+    const selectedOption = Children.toArray(children).find(
       (option: any) => option.props.value === selections[0]
     ) as any;
     const isSelectedPlaceholder = selectedOption && selectedOption.props.isPlaceholder;
@@ -1055,10 +1057,10 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
     let childPlaceholderText = null as string;
 
     // If onFavorites is set,  add isFavorite prop to children and add a Favorites group to the SelectMenu
-    let renderableItems: React.ReactNode[] = [];
+    let renderableItems: ReactNode[] = [];
     if (onFavorite) {
       // if variant is type-ahead call the extendTypeaheadChildren before adding favorites
-      let tempExtendedChildren: (React.ReactElement | React.ReactNode | {})[] = children;
+      let tempExtendedChildren: (ReactElement | ReactNode | {})[] = children;
       if (variant === 'typeahead' || variant === 'typeaheadmulti') {
         tempExtendedChildren = this.extendTypeaheadChildren(typeaheadCurrIndex, favoritesGroup);
       } else if (onFavorite) {
@@ -1072,11 +1074,11 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
 
     if (!customContent) {
       if (!hasAnySelections && !placeholderText) {
-        const childPlaceholder = React.Children.toArray(children).filter(
-          (child: React.ReactNode) => (child as React.ReactElement).props.isPlaceholder === true
+        const childPlaceholder = Children.toArray(children).filter(
+          (child: ReactNode) => (child as ReactElement).props.isPlaceholder === true
         );
         childPlaceholderText =
-          (childPlaceholder[0] && this.getDisplay((childPlaceholder[0] as React.ReactElement).props.value, 'node')) ||
+          (childPlaceholder[0] && this.getDisplay((childPlaceholder[0] as ReactElement).props.value, 'node')) ||
           (children[0] && this.getDisplay(children[0].props.value, 'node'));
       }
     }
@@ -1136,7 +1138,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
             (selections as string[]).map((item) => (
               <Chip
                 key={item}
-                onClick={(e: React.MouseEvent) => onSelect(e, item)}
+                onClick={(e: MouseEvent) => onSelect(e, item)}
                 closeBtnAriaLabel={removeSelectionAriaLabel}
               >
                 {this.getDisplay(item, 'node')}
@@ -1148,7 +1150,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
 
     if (hasInlineFilter) {
       const filterBox = (
-        <React.Fragment>
+        <Fragment>
           <div key="inline-filter" className={css(styles.selectMenuSearch)}>
             <div key="inline-filter" className={css(formStyles.formControl)}>
               <input
@@ -1201,10 +1203,10 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
             </div>
           </div>
           <Divider key="inline-filter-divider" />
-        </React.Fragment>
+        </Fragment>
       );
-      renderableItems = [filterBox, ...(typeaheadFilteredChildren as React.ReactElement[])].map((option, index) =>
-        React.cloneElement(option, { key: index })
+      renderableItems = [filterBox, ...(typeaheadFilteredChildren as ReactElement[])].map((option, index) =>
+        cloneElement(option, { key: index })
       );
     }
 
@@ -1284,7 +1286,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
 
     const menuContainer = footer ? <div className={css(styles.selectMenu)}> {innerMenu} </div> : innerMenu;
 
-    const popperRef = React.createRef<HTMLDivElement>();
+    const popperRef = createRef<HTMLDivElement>();
     const popperContainer = (
       <div
         className={css(
@@ -1354,7 +1356,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
             </div>
           )}
           {variant === SelectVariant.single && !customContent && (
-            <React.Fragment>
+            <Fragment>
               <div className={css(styles.selectToggleWrapper)}>
                 {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                 <span className={css(styles.selectToggleText)}>
@@ -1362,10 +1364,10 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
                 </span>
               </div>
               {hasOnClear && hasAnySelections && clearBtn}
-            </React.Fragment>
+            </Fragment>
           )}
           {variant === SelectVariant.checkbox && !customContent && (
-            <React.Fragment>
+            <Fragment>
               <div className={css(styles.selectToggleWrapper)}>
                 {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                 <span className={css(styles.selectToggleText)}>{placeholderText}</span>
@@ -1378,10 +1380,10 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
                 )}
               </div>
               {hasOnClear && hasAnySelections && clearBtn}
-            </React.Fragment>
+            </Fragment>
           )}
           {variant === SelectVariant.typeahead && !customContent && (
-            <React.Fragment>
+            <Fragment>
               <div className={css(styles.selectToggleWrapper)}>
                 {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                 <TextInput
@@ -1396,7 +1398,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
                       ? typeaheadInputValue
                       : this.getDisplay(selections[0] as string, 'text') || ''
                   }
-                  onChange={(event) => this.onChange(event as React.ChangeEvent<HTMLInputElement>)}
+                  onChange={(event) => this.onChange(event as ChangeEvent<HTMLInputElement>)}
                   onClick={this.onClick}
                   autoComplete={inputAutoComplete}
                   isDisabled={isDisabled}
@@ -1404,10 +1406,10 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
                 />
               </div>
               {hasOnClear && (selections[0] || typeaheadInputValue) && clearBtn}
-            </React.Fragment>
+            </Fragment>
           )}
           {variant === SelectVariant.typeaheadMulti && !customContent && (
-            <React.Fragment>
+            <Fragment>
               <div className={css(styles.selectToggleWrapper)}>
                 {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                 {selections && Array.isArray(selections) && selections.length > 0 && selectedChips}
@@ -1420,7 +1422,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
                   {...(typeAheadAriaDescribedby && { 'aria-describedby': typeAheadAriaDescribedby })}
                   placeholder={placeholderText as string}
                   value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
-                  onChange={(event) => this.onChange(event as React.ChangeEvent<HTMLInputElement>)}
+                  onChange={(event) => this.onChange(event as ChangeEvent<HTMLInputElement>)}
                   onClick={this.onClick}
                   autoComplete={inputAutoComplete}
                   isDisabled={isDisabled}
@@ -1428,7 +1430,7 @@ class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
                 />
               </div>
               {hasOnClear && ((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
-            </React.Fragment>
+            </Fragment>
           )}
           {validated === ValidatedOptions.success && (
             <span className={css(styles.selectToggleStatusIcon)}>

@@ -1,11 +1,11 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { cellWidth, truncate, breakWord, wrappable, fitContent, nowrap } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 // This example has been simplified to focus on the text modifier props. In real usage,
 // you may want to derive your rows from typed underlying data and minimal state. See other examples.
 
-export const LegacyTableControllingText: React.FunctionComponent = () => {
+export const LegacyTableControllingText: FunctionComponent = () => {
   const columns: TableProps['cells'] = [
     { title: 'Truncate (width 20%)', transforms: [cellWidth(20)], cellTransforms: [truncate] },
     { title: 'Break word', cellTransforms: [breakWord] },

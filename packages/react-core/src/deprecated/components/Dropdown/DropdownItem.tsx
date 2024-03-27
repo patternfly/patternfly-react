@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { InternalDropdownItemProps, InternalDropdownItem } from './InternalDropdownItem';
 import { DropdownArrowContext } from './dropdownConstants';
 import { useOUIAProps, OUIAProps } from '../../../helpers';
 
 export interface DropdownItemProps extends Omit<InternalDropdownItemProps, 'tabIndex'>, OUIAProps {
   /** Anything which can be rendered as dropdown item */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classes applied to root element of dropdown item */
   className?: string;
   /** Class to be applied to list item */
@@ -14,12 +14,12 @@ export interface DropdownItemProps extends Omit<InternalDropdownItemProps, 'tabI
    * A ReactElement to render, or a string to use as the component tag.
    * Example: component={<Link to="/components/alert/">Alert</Link>}
    * Example: component="button"
-   * If React.isValidElement(component) the className prop will be injected unless styleChildren="false"
+   * If isValidElement(component) the className prop will be injected unless styleChildren="false"
    */
-  component?: React.ReactNode;
+  component?: ReactNode;
   /** ID for the component element */
   componentID?: string;
-  /** Whether to set className on component when React.isValidElement(component) */
+  /** Whether to set className on component when isValidElement(component) */
   styleChildren?: boolean;
   /** Render dropdown item as disabled option */
   isDisabled?: boolean;
@@ -30,28 +30,28 @@ export interface DropdownItemProps extends Omit<InternalDropdownItemProps, 'tabI
   /** Default hyperlink location */
   href?: string;
   /** Tooltip to display when hovered over the item */
-  tooltip?: React.ReactNode;
+  tooltip?: ReactNode;
   /** Additional tooltip props forwarded to the Tooltip component */
   tooltipProps?: any;
   /** Additional node to include alongside item within the <li> */
-  additionalChild?: React.ReactNode;
+  additionalChild?: ReactNode;
   /** Custom item rendering that receives the DropdownContext */
-  customChild?: React.ReactNode;
+  customChild?: ReactNode;
   /** tabIndex to use, null to unset it */
   tabIndex?: number | null;
   /** An image to display within the DropdownItem, appearing before any component children */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** Initial focus on the item when the menu is opened (Note: Only applicable to one of the items) */
   autoFocus?: boolean;
   /** A short description of the dropdown item, displayed under the dropdown item content */
-  description?: React.ReactNode;
+  description?: ReactNode;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
 }
 
-export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
+export const DropdownItem: FunctionComponent<DropdownItemProps> = ({
   children,
   className,
   component = 'a',
@@ -64,7 +64,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   listItemClassName,
   onClick,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ref, // Types of Ref are different for React.FunctionComponent vs React.Component
+  ref, // Types of Ref are different for FunctionComponent vs Component
   additionalChild,
   customChild,
   tabIndex = -1,

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { FormEvent, ReactNode } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
@@ -28,9 +28,9 @@ export const selectable: ITransform = (
   const rowId = rowIndex !== undefined ? rowIndex : -1;
 
   /**
-   * @param {React.FormEvent} event - React form event
+   * @param event - React form event
    */
-  function selectClick(event: React.FormEvent<HTMLInputElement>) {
+  function selectClick(event: FormEvent<HTMLInputElement>) {
     const selected = rowIndex === undefined ? event.currentTarget.checked : rowData && !rowData.selected;
     // tslint:disable-next-line:no-unused-expression
     onSelect && onSelect(event, selected, rowId, rowData, extraData);
@@ -71,7 +71,7 @@ export const selectable: ITransform = (
         name={selectName}
         tooltip={tooltip}
       >
-        {label as React.ReactNode}
+        {label as ReactNode}
       </SelectColumn>
     )
   };

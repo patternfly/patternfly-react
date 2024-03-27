@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
 
-export const AccordionFixedWithMultipleExpandBehavior: React.FunctionComponent = () => {
-  const [expanded, setExpanded] = React.useState(['ex2-toggle4']);
+export const AccordionFixedWithMultipleExpandBehavior: FunctionComponent = () => {
+  const [expanded, setExpanded] = useState(['ex2-toggle4']);
 
   const toggle = (id) => {
     const index = expanded.indexOf(id);

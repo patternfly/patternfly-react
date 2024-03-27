@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Radio } from '@patternfly/react-core';
 
-export const RadioDisabled: React.FunctionComponent = () => (
-  <React.Fragment>
+export const RadioDisabled: FunctionComponent = () => (
+  <Fragment>
     <Radio id="radio-disabled" label="Disabled radio example" isDisabled name="radio-5" />
     <Radio
       id="radio-disabled-checked"
@@ -11,5 +11,5 @@ export const RadioDisabled: React.FunctionComponent = () => (
       isDisabled
       name="radio-6"
     />
-  </React.Fragment>
+  </Fragment>
 );

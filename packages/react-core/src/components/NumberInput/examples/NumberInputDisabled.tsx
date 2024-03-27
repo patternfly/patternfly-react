@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
-export const NumberInputDisabled: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState<number | ''>(100);
+export const NumberInputDisabled: FunctionComponent = () => {
+  const [value, setValue] = useState<number | ''>(100);
   const minValue = 0;
   const maxValue = 100;
 
@@ -11,7 +11,7 @@ export const NumberInputDisabled: React.FunctionComponent = () => {
     setValue(newValue);
   };
 
-  const onChange = (event: React.FormEvent<HTMLInputElement>) => {
+  const onChange = (event: FormEvent<HTMLInputElement>) => {
     const value = (event.target as HTMLInputElement).value;
     setValue(value === '' ? value : +value);
   };

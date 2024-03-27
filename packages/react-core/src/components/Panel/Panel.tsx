@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, Ref, FunctionComponent, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Panel/panel';
 import { css } from '@patternfly/react-styles';
 
-export interface PanelProps extends React.HTMLProps<HTMLDivElement> {
+export interface PanelProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the panel */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Class to add to outer div */
   className?: string;
   /** Adds panel variant styles */
@@ -12,10 +12,10 @@ export interface PanelProps extends React.HTMLProps<HTMLDivElement> {
   /** Flag to add scrollable styling to the panel */
   isScrollable?: boolean;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
 }
 
-const PanelBase: React.FunctionComponent<PanelProps> = ({
+const PanelBase: FunctionComponent<PanelProps> = ({
   className,
   children,
   variant,
@@ -38,7 +38,5 @@ const PanelBase: React.FunctionComponent<PanelProps> = ({
   </div>
 );
 
-export const Panel = React.forwardRef((props: PanelProps, ref: React.Ref<any>) => (
-  <PanelBase innerRef={ref} {...props} />
-));
+export const Panel = forwardRef((props: PanelProps, ref: Ref<any>) => <PanelBase innerRef={ref} {...props} />);
 Panel.displayName = 'Panel';

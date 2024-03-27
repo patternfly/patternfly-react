@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Divider } from '@patternfly/react-core';
 
-export const DividerUsingLi: React.FunctionComponent = () => (
+export const DividerUsingLi: FunctionComponent = () => (
   <ul role="list">
     <li>List item one</li>
     <Divider component="li" role="none" />

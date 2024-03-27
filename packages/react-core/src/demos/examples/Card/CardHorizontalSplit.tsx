@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Card, CardTitle, CardBody, CardFooter, Grid, GridItem, Button } from '@patternfly/react-core';
 
-export const CardHorizontalSplitDemo: React.FunctionComponent = () => (
+export const CardHorizontalSplitDemo: FunctionComponent = () => (
   <Card id="card-demo-horizontal-split-example" isFlat>
     <Grid md={6}>
       <GridItem

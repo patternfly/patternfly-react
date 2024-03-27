@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, ElementType, ComponentType, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
 import { css } from '@patternfly/react-styles';
 import { DeviceSizes } from '../../styles/sizes';
@@ -8,9 +8,9 @@ import { setBreakpointCssVars } from '../../helpers/util';
 
 export type gridItemSpanValueShape = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
-export interface GridProps extends React.HTMLProps<HTMLDivElement> {
+export interface GridProps extends HTMLProps<HTMLDivElement> {
   /** content rendered inside the Grid layout */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** additional classes added to the Grid layout */
   className?: string;
   /** Adds space between children. */
@@ -36,10 +36,10 @@ export interface GridProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: string;
   };
   /** Sets the base component to render. defaults to div */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: ElementType<any> | ComponentType<any>;
 }
 
-export const Grid: React.FunctionComponent<GridProps> = ({
+export const Grid: FunctionComponent<GridProps> = ({
   children = null,
   className = '',
   component = 'div',

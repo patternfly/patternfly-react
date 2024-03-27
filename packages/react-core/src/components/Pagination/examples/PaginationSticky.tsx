@@ -1,22 +1,27 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent
+} from 'react';
 import { Pagination, PaginationVariant, Gallery, GalleryItem, Card, CardBody } from '@patternfly/react-core';
 
-export const PaginationSticky: React.FunctionComponent = () => {
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(100);
-  const [isTopSticky, setIsTopSticky] = React.useState(true);
+export const PaginationSticky: FunctionComponent = () => {
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(100);
+  const [isTopSticky, setIsTopSticky] = useState(true);
   const itemCount = 523;
 
   const onToggleSticky = () => {
     setIsTopSticky((prev) => !prev);
   };
 
-  const onSetPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPage: number) => {
+  const onSetPage = (_event: ReactMouseEvent | ReactKeyboardEvent | MouseEvent, newPage: number) => {
     setPage(newPage);
   };
 
   const onPerPageSelect = (
-    _event: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    _event: ReactMouseEvent | ReactKeyboardEvent | MouseEvent,
     newPerPage: number,
     newPage: number
   ) => {
@@ -37,7 +42,7 @@ export const PaginationSticky: React.FunctionComponent = () => {
   };
 
   return isTopSticky ? (
-    <React.Fragment>
+    <>
       <Pagination
         itemCount={itemCount}
         perPage={perPage}
@@ -50,9 +55,9 @@ export const PaginationSticky: React.FunctionComponent = () => {
         <button onClick={onToggleSticky}>Toggle to bottom position</button>
       </Pagination>
       <Gallery hasGutter>{buildCards()}</Gallery>
-    </React.Fragment>
+    </>
   ) : (
-    <React.Fragment>
+    <>
       <Gallery hasGutter>{buildCards()}</Gallery>
       <Pagination
         itemCount={itemCount}
@@ -66,6 +71,6 @@ export const PaginationSticky: React.FunctionComponent = () => {
       >
         <button onClick={onToggleSticky}>Toggle to top position</button>
       </Pagination>
-    </React.Fragment>
+    </>
   );
 };

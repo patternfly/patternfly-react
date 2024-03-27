@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, RefObject, DOMAttributes, CSSProperties, FunctionComponent } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { OriginType, VictoryContainer, VictoryContainerProps } from 'victory-core';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
@@ -16,7 +16,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * The children prop specifies the child or children that will be rendered within the container. It will be set by
    * whatever Victory component is rendering the container.
    */
-  children?: React.ReactElement | React.ReactElement[];
+  children?: ReactElement | ReactElement[];
   /**
    * The className prop specifies a className that will be applied to the outer-most div rendered by ChartContainer
    */
@@ -31,7 +31,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    *
    * @example containerRef={(ref) => { this.chartRef = ref; }}
    */
-  containerRef?: React.RefObject<HTMLElement>;
+  containerRef?: RefObject<HTMLElement>;
   /**
    * The desc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers. The more info about the chart provided in
@@ -51,7 +51,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    *
    * @example {onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}
    */
-  events?: React.DOMAttributes<any>;
+  events?: DOMAttributes<any>;
   /**
    * The height props specifies the height the svg viewBox of the container.
    * This value should be given as a number of pixels. If no height prop
@@ -86,7 +86,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * render in the portal container. This prop defaults to Portal, and should only be overridden when changing rendered
    * elements from SVG to another type of element e.g., react-native-svg elements.
    */
-  portalComponent?: React.ReactElement;
+  portalComponent?: ReactElement;
   /**
    * The portalZIndex prop determines the z-index of the div enclosing the portal component. If a portalZIndex prop is
    * not set, the z-index of the enclosing div will be set to 99.
@@ -106,7 +106,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    *
    * @example {border: 1px solid red}
    */
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   /**
    * The tabIndex prop specifies the description of the chart/SVG to assist with accessibility.
    */
@@ -142,7 +142,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
   width?: number;
 }
 
-export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
+export const ChartContainer: FunctionComponent<ChartContainerProps> = ({
   className,
   themeColor,
 

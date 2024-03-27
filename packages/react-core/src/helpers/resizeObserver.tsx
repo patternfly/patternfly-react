@@ -6,7 +6,7 @@ import { canUseDOM } from './util';
  *
  * Example 1:
  *
- * private containerRef = React.createRef<HTMLDivElement>();
+ * private containerRef = createRef<HTMLDivElement>();
  * private observer: any = () => {};
  *
  * public componentDidMount() {
@@ -33,7 +33,7 @@ import { canUseDOM } from './util';
  *
  * Example 2:
  *
- * private inputRef = React.createRef<HTMLInputElement>();
+ * private inputRef = createRef<HTMLInputElement>();
  * private observer: any = () => {};
  *
  * public componentDidMount() {

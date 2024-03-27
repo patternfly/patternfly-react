@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 
 export enum TextListItemVariants {
@@ -7,16 +7,16 @@ export enum TextListItemVariants {
   dd = 'dd'
 }
 
-export interface TextListItemProps extends React.HTMLProps<HTMLElement> {
+export interface TextListItemProps extends HTMLProps<HTMLElement> {
   /** Content rendered within the TextListItem */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the TextListItem */
   className?: string;
   /** The text list item component */
   component?: 'li' | 'dt' | 'dd';
 }
 
-export const TextListItem: React.FunctionComponent<TextListItemProps> = ({
+export const TextListItem: FunctionComponent<TextListItemProps> = ({
   children = null,
   className = '',
   component = TextListItemVariants.li,

@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 
-export interface LevelItemProps extends React.HTMLProps<HTMLDivElement> {
+export interface LevelItemProps extends HTMLProps<HTMLDivElement> {
   /** content rendered inside the Level Layout Item */
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
-export const LevelItem: React.FunctionComponent<LevelItemProps> = ({ children = null, ...props }: LevelItemProps) => (
+export const LevelItem: FunctionComponent<LevelItemProps> = ({ children = null, ...props }: LevelItemProps) => (
   <div {...props}>{children}</div>
 );
 LevelItem.displayName = 'LevelItem';

@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
 
-export const ProgressStepperBasicFailure: React.FunctionComponent = () => (
+export const ProgressStepperBasicFailure: FunctionComponent = () => (
   <ProgressStepper aria-label="Basic progress stepper with failure">
     <ProgressStep
       variant="success"

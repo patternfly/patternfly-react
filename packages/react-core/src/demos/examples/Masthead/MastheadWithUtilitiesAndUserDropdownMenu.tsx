@@ -1,4 +1,13 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type FormEvent as ReactFormEvent,
+  useRef,
+  type MouseEvent as ReactMouseEvent,
+  useEffect,
+  cloneElement,
+  type Ref
+} from 'react';
 import {
   Avatar,
   Brand,
@@ -66,20 +75,20 @@ interface NavOnSelectProps {
   to: string;
 }
 
-export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
-  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState(1);
+export const MastheadWithUtilitiesAndUserDropdownMenu: FunctionComponent = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState(1);
 
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [refFullOptions, setRefFullOptions] = React.useState<Element[]>();
-  const [favorites, setFavorites] = React.useState<string[]>([]);
-  const [filteredIds, setFilteredIds] = React.useState<string[]>(['*']);
-  const menuRef = React.useRef<HTMLDivElement>(null);
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [refFullOptions, setRefFullOptions] = useState<Element[]>();
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [filteredIds, setFilteredIds] = useState<string[]>(['*']);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
-  const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
+  const onNavSelect = (_event: ReactFormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
   };
 
@@ -125,7 +134,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
     }
   };
 
-  const onToggleClick = (ev: React.MouseEvent) => {
+  const onToggleClick = (ev: ReactMouseEvent) => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (menuRef.current) {
@@ -139,7 +148,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
     setIsOpen(!isOpen);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleMenuKeys);
     window.addEventListener('click', handleClickOutside);
 
@@ -249,8 +258,8 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
     const filteredCopy = items
       .map((group) => {
         if (group.type === MenuGroup) {
-          const filteredGroup = React.cloneElement(group, {
-            children: React.cloneElement(group.props.children, {
+          const filteredGroup = cloneElement(group, {
+            children: cloneElement(group.props.children, {
               children: group.props.children.props.children.filter((child) => {
                 if (filteredIds.includes(child.props.itemId)) {
                   return child;
@@ -266,7 +275,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
             keepDivider = false;
           }
         } else if (group.type === MenuList) {
-          const filteredGroup = React.cloneElement(group, {
+          const filteredGroup = cloneElement(group, {
             children: group.props.children.filter((child) => {
               if (filteredIds.includes(child.props.itemId)) {
                 return child;
@@ -337,12 +346,12 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       <Divider />
       <MenuContent>
         {filteredFavorites.length > 0 && (
-          <React.Fragment>
+          <>
             <MenuGroup key="favorites-group" label="Favorites">
               <MenuList>{filteredFavorites}</MenuList>
             </MenuGroup>
             <Divider key="favorites-divider" />
-          </React.Fragment>
+          </>
         )}
         {filteredItems}
       </MenuContent>
@@ -406,7 +415,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
               onSelect={onKebabDropdownSelect}
               onOpenChange={(isOpen: boolean) => setIsKebabDropdownOpen(isOpen)}
               popperProps={{ position: 'right' }}
-              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              toggle={(toggleRef: Ref<MenuToggleElement>) => (
                 <MenuToggle
                   ref={toggleRef}
                   onClick={onKebabDropdownToggle}
@@ -427,7 +436,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
               onSelect={onFullKebabDropdownSelect}
               onOpenChange={(isOpen: boolean) => setIsFullKebabDropdownOpen(isOpen)}
               popperProps={{ position: 'right' }}
-              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+              toggle={(toggleRef: Ref<MenuToggleElement>) => (
                 <MenuToggle
                   ref={toggleRef}
                   onClick={onFullKebabDropdownToggle}
@@ -453,7 +462,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
             onSelect={onDropdownSelect}
             onOpenChange={(isOpen: boolean) => setIsDropdownOpen(isOpen)}
             popperProps={{ position: 'right' }}
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
                 onClick={onDropdownToggle}

@@ -20,7 +20,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 <div style={{ height: '150px', width: '600px' }}>
@@ -42,7 +41,6 @@ import { ChartBullet } from '@patternfly/react-charts';
 
 ### Segmented primary measure
 ```js
-import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
@@ -78,14 +76,14 @@ import { ChartBullet } from '@patternfly/react-charts';
 This demonstrates a responsive legend which wraps when items are wider than its container.
 
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 import { getResizeObserver } from '@patternfly/react-core';
 
-class BulletChart extends React.Component {
+class BulletChart extends Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       extraHeight: 0,
@@ -156,7 +154,6 @@ class BulletChart extends React.Component {
 
 ### Primary measure dot
 ```js
-import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
@@ -192,7 +189,6 @@ import { ChartBullet } from '@patternfly/react-charts';
 This is a green bullet chart with error measure and custom axis ticks with 3 legend items per row.
 
 ```js
-import React from 'react';
 import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
@@ -232,7 +228,6 @@ import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
 This is a gold bullet chart with primary measure greater than max range.
 
 ```js
-import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
@@ -270,7 +265,6 @@ import { ChartBullet } from '@patternfly/react-charts';
 This bullet chart with negative primary measure is for measures considered to be bad when they are low.
 
 ```js
-import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
@@ -307,7 +301,6 @@ import { ChartBullet } from '@patternfly/react-charts';
 This reversed bullet chart with right aligned legend is for measures considered to be good when they are low.
 
 ```js
-import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '700px' }}>
@@ -347,7 +340,6 @@ import { ChartBullet } from '@patternfly/react-charts';
 This bullet chart with negative and positive primary measures has 4 legend items per row.
 
 ```js
-import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
@@ -382,7 +374,6 @@ import { ChartBullet } from '@patternfly/react-charts';
 
 ### Vertical with segmented primary measure
 ```js
-import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 <div style={{ height: '500px', width: '500px' }}>
@@ -416,7 +407,6 @@ import { ChartBullet } from '@patternfly/react-charts';
 
 ### Vertical primary measure outside max range
 ```js
-import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 <div style={{ height: '500px', width: '500px' }}>
@@ -452,7 +442,6 @@ import { ChartBullet } from '@patternfly/react-charts';
 
 ### Custom labels
 ```js
-import React from 'react';
 import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
 
 <div style={{ height: '150px', width: '600px' }}>
@@ -493,7 +482,6 @@ import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
 
 ### Custom size
 ```js
-import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
@@ -526,7 +514,6 @@ import { ChartBullet } from '@patternfly/react-charts';
 
 ### Horizontal group
 ```js
-import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '500px', width: '600px' }}>
@@ -624,7 +611,6 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 ### Vertical group
 ```js
-import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '600px', width: '500px' }}>
@@ -726,7 +712,6 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 ### Horizontal group with title
 ```js
-import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '600px', width: '600px' }}>
@@ -826,7 +811,6 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 ### Vertical group with title
 ```js
-import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '600px', width: '500px' }}>

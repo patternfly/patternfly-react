@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, Ref, CSSProperties, forwardRef, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { MenuContext } from './MenuContext';
 import cssHeight from '@patternfly/react-tokens/dist/esm/c_menu__content_Height';
 import cssMaxHeight from '@patternfly/react-tokens/dist/esm/c_menu__content_MaxHeight';
 
-export interface MenuContentProps extends React.HTMLProps<HTMLElement> {
+export interface MenuContentProps extends HTMLProps<HTMLElement> {
   /** Items within group */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
   /** Height of the menu content */
   menuHeight?: string;
   /** Maximum height of menu content */
@@ -18,9 +18,9 @@ export interface MenuContentProps extends React.HTMLProps<HTMLElement> {
   getHeight?: (height: string) => void;
 }
 
-export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React.Ref<HTMLDivElement>) => {
+export const MenuContent = forwardRef((props: MenuContentProps, ref: Ref<HTMLDivElement>) => {
   const { getHeight, children, menuHeight, maxMenuHeight, ...rest } = props;
-  const menuContentRef = React.createRef<HTMLDivElement>();
+  const menuContentRef = createRef<HTMLDivElement>();
   const refCallback = (el: HTMLElement, menuId: string, onGetMenuHeight: (menuId: string, height: number) => void) => {
     if (el) {
       let clientHeight = el.clientHeight;
@@ -62,7 +62,7 @@ export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React
             {
               ...(menuHeight && { [cssHeight.name]: menuHeight }),
               ...(maxMenuHeight && { [cssMaxHeight.name]: maxMenuHeight })
-            } as React.CSSProperties
+            } as CSSProperties
           }
         >
           {children}

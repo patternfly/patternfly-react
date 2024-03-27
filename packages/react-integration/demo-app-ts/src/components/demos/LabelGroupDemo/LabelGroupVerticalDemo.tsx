@@ -1,5 +1,5 @@
 import { Badge, Label, LabelGroup } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 interface BadgeLabelState {
   badgeLabelArray: {

@@ -1,16 +1,16 @@
-import * as React from 'react';
+import { type FunctionComponent, type MouseEvent as ReactMouseEvent } from 'react';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 
 export interface FavoritesCellProps {
   id?: string;
   className?: string;
-  onFavorite?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onFavorite?: (event: ReactMouseEvent<HTMLButtonElement, MouseEvent>) => void;
   isFavorited?: boolean;
   rowIndex?: number;
 }
 
-export const FavoritesCell: React.FunctionComponent<FavoritesCellProps> = ({
+export const FavoritesCell: FunctionComponent<FavoritesCellProps> = ({
   className = '' as string,
   onFavorite,
   isFavorited,

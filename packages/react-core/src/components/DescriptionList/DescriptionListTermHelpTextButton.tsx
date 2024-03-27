@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 import { css } from '@patternfly/react-styles';
 
-export interface DescriptionListTermHelpTextButtonProps extends React.HTMLProps<HTMLSpanElement> {
+export interface DescriptionListTermHelpTextButtonProps extends HTMLProps<HTMLSpanElement> {
   /** Anything that can be rendered inside of list term */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Additional classes added to the DescriptionListTerm */
   className?: string;
 }
 
-export const DescriptionListTermHelpTextButton: React.FunctionComponent<DescriptionListTermHelpTextButtonProps> = ({
+export const DescriptionListTermHelpTextButton: FunctionComponent<DescriptionListTermHelpTextButtonProps> = ({
   children,
   className,
   ...props

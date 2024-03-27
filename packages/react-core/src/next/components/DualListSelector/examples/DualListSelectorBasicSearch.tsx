@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, ChangeEvent, KeyboardEvent, useState } from 'react';
 import {
   Button,
   DualListSelector,
@@ -28,17 +28,17 @@ interface Option {
   isVisible: boolean;
 }
 
-export const DualListSelectorSearch: React.FunctionComponent = () => {
-  const [availableOptions, setAvailableOptions] = React.useState<Option[]>([
+export const DualListSelectorSearch: FunctionComponent = () => {
+  const [availableOptions, setAvailableOptions] = useState<Option[]>([
     { text: 'Option 1', selected: false, isVisible: true },
     { text: 'Option 2', selected: false, isVisible: true },
     { text: 'Option 3', selected: false, isVisible: true },
     { text: 'Option 4', selected: false, isVisible: true }
   ]);
 
-  const [chosenOptions, setChosenOptions] = React.useState<Option[]>([]);
-  const [availableFilter, setAvailableFilter] = React.useState('');
-  const [chosenFilter, setChosenFilter] = React.useState('');
+  const [chosenOptions, setChosenOptions] = useState<Option[]>([]);
+  const [availableFilter, setAvailableFilter] = useState('');
+  const [chosenFilter, setChosenFilter] = useState('');
 
   // callback for moving selected options between lists
   const moveSelected = (fromAvailable: boolean) => {
@@ -74,11 +74,7 @@ export const DualListSelectorSearch: React.FunctionComponent = () => {
   };
 
   // callback when option is selected
-  const onOptionSelect = (
-    event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent,
-    index: number,
-    isChosen: boolean
-  ) => {
+  const onOptionSelect = (event: MouseEvent | ChangeEvent | KeyboardEvent, index: number, isChosen: boolean) => {
     if (isChosen) {
       const newChosen = [...chosenOptions];
       newChosen[index].selected = !chosenOptions[index].selected;

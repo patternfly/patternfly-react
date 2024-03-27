@@ -1,4 +1,15 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  FunctionComponent,
+  RefObject,
+  CSSProperties,
+  Ref,
+  useState,
+  createRef,
+  useEffect,
+  forwardRef
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
@@ -33,7 +44,7 @@ import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__st
 import cssStickyCellLeft from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_Left';
 import cssStickyCellRight from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_Right';
 
-export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
+export interface TdProps extends BaseCellProps, Omit<HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
   /**
    * The column header the cell corresponds to.
    * This attribute replaces table header in mobile viewport. It is rendered by ::before pseudo element.
@@ -63,7 +74,7 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
    * If you want to show a tooltip that differs from the cell text, you can set it here.
    * To disable it completely you can set it to null.
    */
-  tooltip?: React.ReactNode;
+  tooltip?: ReactNode;
   /** Callback on mouse enter */
   onMouseEnter?: (event: any) => void;
   /** Indicates the column should be sticky */
@@ -80,7 +91,7 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
   stickyRightOffset?: string;
 }
 
-const TdBase: React.FunctionComponent<TdProps> = ({
+const TdBase: FunctionComponent<TdProps> = ({
   children,
   className,
   isActionCell = false,
@@ -109,9 +120,9 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   stickyRightOffset,
   ...props
 }: TdProps) => {
-  const [showTooltip, setShowTooltip] = React.useState(false);
-  const [truncated, setTruncated] = React.useState(false);
-  const cellRef = innerRef ? innerRef : React.createRef();
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [truncated, setTruncated] = useState(false);
+  const cellRef = innerRef ? innerRef : createRef();
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       !showTooltip && setShowTooltip(true);
@@ -261,10 +272,9 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     (className && className.includes(treeViewStyles.tableTreeViewTitleCell)) ||
     (mergedClassName && mergedClassName.includes(treeViewStyles.tableTreeViewTitleCell));
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTruncated(
-      (cellRef as React.RefObject<HTMLElement>).current.offsetWidth <
-        (cellRef as React.RefObject<HTMLElement>).current.scrollWidth
+      (cellRef as RefObject<HTMLElement>).current.offsetWidth < (cellRef as RefObject<HTMLElement>).current.scrollWidth
     );
   }, [cellRef]);
 
@@ -297,7 +307,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
           [cssStickyCellLeft.name]: stickyLeftOffset ? stickyLeftOffset : 0,
           [cssStickyCellRight.name]: stickyRightOffset ? stickyRightOffset : 0,
           ...props.style
-        } as React.CSSProperties
+        } as CSSProperties
       })}
     >
       {mergedChildren || children}
@@ -308,18 +318,14 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   return tooltip !== null && canMakeDefaultTooltip && showTooltip ? (
     <>
       {cell}
-      <Tooltip
-        triggerRef={cellRef as React.RefObject<any>}
-        content={tooltip || (tooltip === '' && children)}
-        isVisible
-      />
+      <Tooltip triggerRef={cellRef as RefObject<any>} content={tooltip || (tooltip === '' && children)} isVisible />
     </>
   ) : (
     cell
   );
 };
 
-export const Td = React.forwardRef((props: TdProps, ref: React.Ref<HTMLTableDataCellElement>) => (
+export const Td = forwardRef((props: TdProps, ref: Ref<HTMLTableDataCellElement>) => (
   <TdBase {...props} innerRef={ref} />
 ));
 Td.displayName = 'Td';

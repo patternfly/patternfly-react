@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, type FunctionComponent, type MouseEvent as ReactMouseEvent } from 'react';
 import {
   Card,
   CardBody,
@@ -45,9 +45,9 @@ const descriptionListData = [
   }
 ];
 
-export const CardStatusTabbed: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState(0);
-  const handleTabClick = (_e: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => {
+export const CardStatusTabbed: FunctionComponent = () => {
+  const [activeTabKey, setActiveTabKey] = useState(0);
+  const handleTabClick = (_e: ReactMouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => {
     setActiveTabKey(Number(tabIndex));
   };
 

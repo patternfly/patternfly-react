@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 
-export interface FormAlertProps extends React.HTMLProps<HTMLDivElement> {
+export interface FormAlertProps extends HTMLProps<HTMLDivElement> {
   /** An inline PatternFly Alert. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the FormGroup. */
   className?: string;
 }
 
-export const FormAlert: React.FunctionComponent<FormAlertProps> = ({
+export const FormAlert: FunctionComponent<FormAlertProps> = ({
   children = null,
   className = '',
   ...props

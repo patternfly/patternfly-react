@@ -1,4 +1,12 @@
-import * as React from 'react';
+import {
+  type HTMLProps,
+  type ReactNode,
+  type Ref,
+  type MouseEvent as ReactMouseEvent,
+  type FunctionComponent,
+  useRef,
+  forwardRef
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Tooltip } from '../Tooltip';
@@ -8,26 +16,26 @@ import styles from '@patternfly/react-styles/css/components/DualListSelector/dua
  * dual list selector pane.
  */
 
-export interface DualListSelectorControlProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onClick'> {
+export interface DualListSelectorControlProps extends Omit<HTMLProps<HTMLDivElement>, 'onClick'> {
   /** Content to be rendered in the dual list selector control. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** @hide forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
   /** Flag indicating the control is disabled. */
   isDisabled?: boolean;
   /** Additional classes applied to the dual list selector control. */
   className?: string;
   /** Callback fired when dual list selector control is selected. */
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: (event: ReactMouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /** Accessible label for the dual list selector control. */
   'aria-label'?: string;
   /** Content to be displayed in a tooltip on hover of control. */
-  tooltipContent?: React.ReactNode;
+  tooltipContent?: ReactNode;
   /** Additional tooltip properties passed to the tooltip. */
   tooltipProps?: any;
 }
 
-export const DualListSelectorControlBase: React.FunctionComponent<DualListSelectorControlProps> = ({
+export const DualListSelectorControlBase: FunctionComponent<DualListSelectorControlProps> = ({
   innerRef,
   children = null,
   className,
@@ -38,7 +46,7 @@ export const DualListSelectorControlBase: React.FunctionComponent<DualListSelect
   tooltipProps = {} as any,
   ...props
 }: DualListSelectorControlProps) => {
-  const privateRef = React.useRef(null);
+  const privateRef = useRef(null);
   const ref = innerRef || privateRef;
   return (
     <div className={css(styles.dualListSelectorControlsItem, className)} {...props}>
@@ -59,7 +67,7 @@ export const DualListSelectorControlBase: React.FunctionComponent<DualListSelect
 };
 DualListSelectorControlBase.displayName = 'DualListSelectorControlBase';
 
-export const DualListSelectorControl = React.forwardRef((props: DualListSelectorControlProps, ref: React.Ref<any>) => (
+export const DualListSelectorControl = forwardRef((props: DualListSelectorControlProps, ref: Ref<any>) => (
   <DualListSelectorControlBase innerRef={ref} {...props} />
 ));
 

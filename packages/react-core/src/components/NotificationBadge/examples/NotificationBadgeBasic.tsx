@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { NotificationBadge, NotificationBadgeVariant } from '@patternfly/react-core';
 
-export const NotificationBadgeBasic: React.FunctionComponent = () => {
-  const [readExpanded, setReadExpanded] = React.useState(false);
-  const [unreadExpanded, setUnreadExpanded] = React.useState(false);
-  const [attentionExpanded, setAttentionExpanded] = React.useState(false);
+export const NotificationBadgeBasic: FunctionComponent = () => {
+  const [readExpanded, setReadExpanded] = useState(false);
+  const [unreadExpanded, setUnreadExpanded] = useState(false);
+  const [attentionExpanded, setAttentionExpanded] = useState(false);
 
   const onReadClick = () => {
     setReadExpanded(!readExpanded);

@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
-import * as React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { Button, ButtonProps, ButtonVariant } from '../../components/Button';
 import { PageContextConsumer, PageContextProps } from './PageContext';
 
 export interface PageToggleButtonProps extends ButtonProps {
   /** Content of the page toggle button */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** True if the sidebar is shown  */
   isSidebarOpen?: boolean;
   /** Callback function to handle the sidebar toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */
@@ -14,7 +14,7 @@ export interface PageToggleButtonProps extends ButtonProps {
   id?: string;
 }
 
-export const PageToggleButton: React.FunctionComponent<PageToggleButtonProps> = ({
+export const PageToggleButton: FunctionComponent<PageToggleButtonProps> = ({
   children,
   isSidebarOpen = true,
   onSidebarToggle = () => undefined as any,

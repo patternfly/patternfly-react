@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   DataList,
   DataListItem,
@@ -8,7 +8,7 @@ import {
   DataListWrapModifier
 } from '@patternfly/react-core';
 
-export const DataListControllingText: React.FunctionComponent = () => (
+export const DataListControllingText: FunctionComponent = () => (
   <DataList aria-label="Controlling text data list example">
     <DataListItem aria-labelledby="controlling-text-item1">
       <DataListItemRow>

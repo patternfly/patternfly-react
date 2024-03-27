@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-export const CardWithBodySectionFills: React.FunctionComponent = () => (
+export const CardWithBodySectionFills: FunctionComponent = () => (
   <Card style={{ minHeight: '30em' }}>
     <CardTitle>Title</CardTitle>
     <CardBody isFilled={false}>Body pf-m-no-fill</CardBody>

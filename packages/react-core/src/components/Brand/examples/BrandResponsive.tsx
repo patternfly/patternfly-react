@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Brand } from '@patternfly/react-core';
 import logoXl from '../../assets/pf-c-brand--logo-on-xl.svg';
 
@@ -8,7 +8,7 @@ import logoSm from '../../assets/pf-c-brand--logo-on-sm.svg';
 import logo from '../../assets/pf-c-brand--logo.svg';
 import logoBase from '../../assets/pf-c-brand--logo-base.jpg';
 
-export const BrandBasic: React.FunctionComponent = () => (
+export const BrandBasic: FunctionComponent = () => (
   <Brand src={logoBase} alt="Fallback patternfly default logo" widths={{ default: '40px', sm: '60px', md: '220px' }}>
     <source media="(min-width: 1200px)" srcSet={logoXl} />
     <source media="(min-width: 992px)" srcSet={logoLg} />

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Banner } from '../Banner';
 import styles from '@patternfly/react-styles/css/components/Banner/banner';

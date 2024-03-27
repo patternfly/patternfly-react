@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent, CSSProperties } from 'react';
 import styles from '@patternfly/react-styles/css/components/Skeleton/skeleton';
 import { css } from '@patternfly/react-styles';
 import cssHeight from '@patternfly/react-tokens/dist/esm/c_skeleton_Height';
 import cssWidth from '@patternfly/react-tokens/dist/esm/c_skeleton_Width';
 
-export interface SkeletonProps extends React.HTMLProps<HTMLDivElement> {
+export interface SkeletonProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Skeleton */
   className?: string;
   /** The width of the Skeleton. Must specify pixels or percentage. */
@@ -19,7 +19,7 @@ export interface SkeletonProps extends React.HTMLProps<HTMLDivElement> {
   screenreaderText?: string;
 }
 
-export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
+export const Skeleton: FunctionComponent<SkeletonProps> = ({
   className,
   width,
   height,
@@ -47,7 +47,7 @@ export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
           [cssWidth.name]: width ? width : undefined,
           [cssHeight.name]: height ? height : undefined,
           ...props.style
-        } as React.CSSProperties
+        } as CSSProperties
       })}
     >
       <span className="pf-v5-screen-reader">{screenreaderText}</span>

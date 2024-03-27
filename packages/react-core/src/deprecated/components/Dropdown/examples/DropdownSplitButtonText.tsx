@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Dropdown,
   DropdownToggle,
@@ -7,8 +7,8 @@ import {
   DropdownSeparator
 } from '@patternfly/react-core/deprecated';
 
-export const DropdownSplitButtonText: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const DropdownSplitButtonText: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);

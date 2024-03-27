@@ -22,7 +22,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ marginLeft: '50px', marginTop: '50px', height: '135px' }}>
@@ -58,7 +57,6 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContaine
 This demonstrates an alternate way of applying tooltips using CSS overflow
 
 ```js
-import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div className="ws-react-charts-sparkline-overflow">

@@ -13,6 +13,7 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
         "plugin:react-hooks/recommended"
     ],
     "parserOptions": {
@@ -89,6 +90,13 @@
         "no-eval": "error",
         "no-new-wrappers": "error",
         "no-prototype-builtins": "off",
+        "no-restricted-imports": ["error", {
+            "paths": [{
+                "name": "react",
+                "importNames": ["default"],
+                "message": "Please use named imports when importing from React."
+            }]
+        }],
         "no-shadow": "off",
         "no-throw-literal": "error",
         "no-trailing-spaces": "off",

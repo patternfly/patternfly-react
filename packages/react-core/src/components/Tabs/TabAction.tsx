@@ -1,25 +1,32 @@
-import * as React from 'react';
+import {
+  type HTMLProps,
+  type ReactNode,
+  type MouseEvent as ReactMouseEvent,
+  type Ref,
+  type FunctionComponent,
+  forwardRef
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { Button } from '../Button';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export interface TabActionProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'ref' | 'type' | 'size'>, OUIAProps {
+export interface TabActionProps extends Omit<HTMLProps<HTMLButtonElement>, 'ref' | 'type' | 'size'>, OUIAProps {
   /** Content rendered in the tab action */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the tab action span */
   className?: string;
   /** Click callback for tab action button */
-  onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+  onClick?: (event: ReactMouseEvent<HTMLElement, MouseEvent>) => void;
   /** Flag indicating if the tab action is disabled */
   isDisabled?: boolean;
   /** Accessible label for the tab action */
   'aria-label'?: string;
   /** @hide Callback for the section ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
 }
 
-const TabActionBase: React.FunctionComponent<TabActionProps> = ({
+const TabActionBase: FunctionComponent<TabActionProps> = ({
   children,
   className,
   onClick,
@@ -47,7 +54,7 @@ const TabActionBase: React.FunctionComponent<TabActionProps> = ({
   </span>
 );
 
-export const TabAction = React.forwardRef((props: TabActionProps, ref: React.Ref<HTMLElement>) => (
+export const TabAction = forwardRef((props: TabActionProps, ref: Ref<HTMLElement>) => (
   <TabActionBase {...props} innerRef={ref} />
 ));
 

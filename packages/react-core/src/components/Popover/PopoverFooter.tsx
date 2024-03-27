@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css } from '@patternfly/react-styles';
 
-export interface PopoverFooterProps extends React.HTMLProps<HTMLDivElement> {
+export interface PopoverFooterProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Popover footer */
   className?: string;
   /** Footer node */
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-export const PopoverFooter: React.FunctionComponent<PopoverFooterProps> = ({
+export const PopoverFooter: FunctionComponent<PopoverFooterProps> = ({
   children,
   className = '',
   ...props

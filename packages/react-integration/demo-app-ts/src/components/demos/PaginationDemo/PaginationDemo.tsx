@@ -1,4 +1,9 @@
-import React from 'react';
+import {
+  Component,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type HTMLProps
+} from 'react';
 import { Pagination, PaginationVariant, Stack, StackItem, Title } from '@patternfly/react-core';
 
 interface OptionsMenuDemoState {
@@ -8,8 +13,9 @@ interface OptionsMenuDemoState {
   perPage: number;
 }
 
-export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivElement>, OptionsMenuDemoState> {
+export class PaginationDemo extends Component<HTMLProps<HTMLDivElement>, OptionsMenuDemoState> {
   static displayName = 'PaginationDemo';
+
   state = {
     topPage: 1,
     bottomPage: 1,
@@ -17,32 +23,32 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
     perPage: 20
   };
 
-  onSetTopPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, pageNumber: number) => {
+  onSetTopPage = (_event: ReactMouseEvent | ReactKeyboardEvent | MouseEvent, pageNumber: number) => {
     this.setState({
       topPage: pageNumber
     });
   };
 
-  onSetBottomPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, pageNumber: number) => {
+  onSetBottomPage = (_event: ReactMouseEvent | ReactKeyboardEvent | MouseEvent, pageNumber: number) => {
     this.setState({
       bottomPage: pageNumber
     });
   };
 
-  onSetDefaultPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, pageNumber: number) => {
+  onSetDefaultPage = (_event: ReactMouseEvent | ReactKeyboardEvent | MouseEvent, pageNumber: number) => {
     this.setState({
       defaultFullPage: pageNumber
     });
   };
 
-  onPerPageSelect = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, perPage: number) => {
+  onPerPageSelect = (_event: ReactMouseEvent | ReactKeyboardEvent | MouseEvent, perPage: number) => {
     this.setState({
       perPage
     });
   };
 
   onDefaultToFullPerPageSelect = (
-    _event: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    _event: ReactMouseEvent | ReactKeyboardEvent | MouseEvent,
     perPage: number,
     pageNumber: number
   ) => {
@@ -58,7 +64,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
         <Title headingLevel="h2" size="2xl">
           Pagination
         </Title>
-        <React.Fragment>
+        <>
           <Pagination
             itemCount={523}
             perPage={this.state.perPage}
@@ -89,7 +95,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
             onPerPageSelect={this.onDefaultToFullPerPageSelect}
             isLastFullPageShown
           />
-        </React.Fragment>
+        </>
       </StackItem>
     );
   }
@@ -100,7 +106,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
         <Title headingLevel="h2" size="2xl">
           Disabled state
         </Title>
-        <React.Fragment>
+        <>
           <Pagination
             itemCount={523}
             perPage={this.state.perPage}
@@ -111,7 +117,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
             onPerPageSelect={this.onPerPageSelect}
             isDisabled
           />
-        </React.Fragment>
+        </>
       </StackItem>
     );
   }
@@ -122,7 +128,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
         <Title headingLevel="h2" size="2xl">
           Sticky state
         </Title>
-        <React.Fragment>
+        <>
           <Pagination
             isSticky
             itemCount={523}
@@ -133,7 +139,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
             className="pagination-options-menu-sticky"
             onPerPageSelect={this.onPerPageSelect}
           />
-        </React.Fragment>
+        </>
       </StackItem>
     );
   }

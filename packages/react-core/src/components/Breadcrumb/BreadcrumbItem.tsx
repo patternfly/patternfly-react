@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, ElementType, FunctionComponent } from 'react';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
@@ -8,9 +8,9 @@ export interface BreadcrumbItemRenderArgs {
   ariaCurrent: 'page' | undefined;
 }
 
-export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {
+export interface BreadcrumbItemProps extends HTMLProps<HTMLLIElement> {
   /** Content rendered inside the breadcrumb item. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the breadcrumb item. */
   className?: string;
   /** HREF for breadcrumb link. */
@@ -24,12 +24,12 @@ export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Target for breadcrumb link. */
   target?: string;
   /** Sets the base component to render. Defaults to <a> */
-  component?: React.ElementType;
+  component?: ElementType;
   /** A render function to render the component inside the breadcrumb item. */
-  render?: (props: BreadcrumbItemRenderArgs) => React.ReactNode;
+  render?: (props: BreadcrumbItemRenderArgs) => ReactNode;
 }
 
-export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
+export const BreadcrumbItem: FunctionComponent<BreadcrumbItemProps> = ({
   children = null,
   className: classNameProp = '',
   to = undefined,

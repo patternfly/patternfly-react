@@ -1,5 +1,15 @@
-import * as React from 'react';
-import { HTMLProps } from 'react';
+import {
+  ChangeEvent,
+  FocusEvent,
+  RefObject,
+  Ref,
+  MutableRefObject,
+  createRef,
+  Component,
+  forwardRef,
+  HTMLProps
+} from 'react';
+
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { capitalize, ValidatedOptions, canUseDOM } from '../../helpers';
@@ -35,23 +45,23 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   /** Value of the text area. */
   value?: string | number;
   /** A callback for when the text area value changes. */
-  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => void;
+  onChange?: (event: ChangeEvent<HTMLTextAreaElement>, value: string) => void;
   /** Callback function when text area is focused */
-  onFocus?: (event?: React.FocusEvent<HTMLTextAreaElement>) => void;
+  onFocus?: (event?: FocusEvent<HTMLTextAreaElement>) => void;
   /** Callback function when text area is blurred (focus leaves) */
-  onBlur?: (event?: React.FocusEvent<HTMLTextAreaElement>) => void;
+  onBlur?: (event?: FocusEvent<HTMLTextAreaElement>) => void;
   /** Sets the orientation to limit the resize to */
   resizeOrientation?: 'horizontal' | 'vertical' | 'both';
   /** Custom flag to show that the text area requires an associated id or aria-label. */
   'aria-label'?: string;
   /** @hide A reference object to attach to the text area. */
-  innerRef?: React.RefObject<any>;
+  innerRef?: RefObject<any>;
 }
 
-class TextAreaBase extends React.Component<TextAreaProps> {
+class TextAreaBase extends Component<TextAreaProps> {
   static displayName = 'TextArea';
   static defaultProps: TextAreaProps = {
-    innerRef: React.createRef<HTMLTextAreaElement>(),
+    innerRef: createRef<HTMLTextAreaElement>(),
     className: '',
     isRequired: false,
     isDisabled: false,
@@ -60,7 +70,7 @@ class TextAreaBase extends React.Component<TextAreaProps> {
     'aria-label': null as string
   };
 
-  inputRef = React.createRef<HTMLTextAreaElement>();
+  inputRef = createRef<HTMLTextAreaElement>();
 
   private setAutoHeight = (field: HTMLTextAreaElement) => {
     const parent = field.parentElement;
@@ -92,7 +102,7 @@ class TextAreaBase extends React.Component<TextAreaProps> {
     }
   }
 
-  private handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  private handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     // https://gomakethings.com/automatically-expand-a-textarea-as-the-user-types-using-vanilla-javascript/
     const field = event.currentTarget;
     if (this.props.autoResize && canUseDOM) {
@@ -162,7 +172,7 @@ class TextAreaBase extends React.Component<TextAreaProps> {
   }
 }
 
-export const TextArea = React.forwardRef((props: TextAreaProps, ref: React.Ref<HTMLTextAreaElement>) => (
-  <TextAreaBase {...props} innerRef={ref as React.MutableRefObject<any>} />
+export const TextArea = forwardRef((props: TextAreaProps, ref: Ref<HTMLTextAreaElement>) => (
+  <TextAreaBase {...props} innerRef={ref as MutableRefObject<any>} />
 ));
 TextArea.displayName = 'TextArea';

@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, useState } from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
-export const ExpandableSectionDisclosure: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+export const ExpandableSectionDisclosure: FunctionComponent = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  const onToggle = (_event: React.MouseEvent, isExpanded: boolean) => {
+  const onToggle = (_event: MouseEvent, isExpanded: boolean) => {
     setIsExpanded(isExpanded);
   };
 

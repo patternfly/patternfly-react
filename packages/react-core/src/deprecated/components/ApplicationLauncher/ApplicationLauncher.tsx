@@ -1,4 +1,11 @@
-import * as React from 'react';
+import {
+  type KeyboardEvent as ReactKeyboardEvent,
+  type HTMLProps,
+  type MouseEvent as ReactMouseEvent,
+  type FormEvent as ReactFormEvent,
+  Component,
+  type ReactNode
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
@@ -11,13 +18,13 @@ import { ApplicationLauncherContext } from './ApplicationLauncherContext';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../../helpers/favorites';
 import { SearchInput } from '../../../components/SearchInput';
 
-export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement> {
+export interface ApplicationLauncherProps extends HTMLProps<HTMLDivElement> {
   /** Additional element css classes */
   className?: string;
   /** Display menu above or below dropdown toggle */
   direction?: DropdownDirection | 'up' | 'down';
   /** Array of application launcher items */
-  items?: React.ReactNode[];
+  items?: ReactNode[];
   /** Render Application launcher toggle as disabled icon */
   isDisabled?: boolean;
   /** open bool */
@@ -28,7 +35,7 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   onSelect?: (event: any) => void;
   /** Callback called when application launcher toggle is clicked */
   onToggle?: (
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent | TouchEvent | KeyboardEvent | ReactKeyboardEvent<any> | ReactMouseEvent<HTMLButtonElement>,
     isOpen: boolean
   ) => void;
   /** Adds accessible text to the button. Required for plain buttons */
@@ -36,7 +43,7 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   /** Flag to indicate if application launcher has groups */
   isGrouped?: boolean;
   /** Toggle Icon, optional to override the icon used for the toggle */
-  toggleIcon?: React.ReactNode;
+  toggleIcon?: ReactNode;
   /** The container to append the menu to. Defaults to 'inline'.
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
    * Some examples:
@@ -48,9 +55,9 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   /** ID list of favorited ApplicationLauncherItems */
   favorites?: string[];
   /** Enables favorites. Callback called when an ApplicationLauncherItem's favorite button is clicked */
-  onFavorite?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, itemId: string, isFavorite: boolean) => void;
+  onFavorite?: (event: ReactMouseEvent<HTMLButtonElement, MouseEvent>, itemId: string, isFavorite: boolean) => void;
   /** Enables search. Callback called when text input is entered into search box */
-  onSearch?: (event: React.FormEvent<HTMLInputElement>, textInput: string) => void;
+  onSearch?: (event: ReactFormEvent<HTMLInputElement>, textInput: string) => void;
   /** Placeholder text for search input */
   searchPlaceholderText?: string;
   /** Text for search input when no results are found */
@@ -65,14 +72,14 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   zIndex?: number;
 }
 
-class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
+class ApplicationLauncher extends Component<ApplicationLauncherProps> {
   static displayName = 'ApplicationLauncher';
   static defaultProps: ApplicationLauncherProps = {
     className: '',
     isDisabled: false,
     direction: DropdownDirection.down,
     favorites: [] as string[],
-    items: [] as React.ReactNode[],
+    items: [] as ReactNode[],
     isOpen: false,
     position: DropdownPosition.left,
     /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -126,11 +133,11 @@ class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
       zIndex = 9999,
       ...props
     } = this.props;
-    let renderableItems: React.ReactNode[] = [];
+    let renderableItems: ReactNode[] = [];
 
     if (onFavorite) {
-      let favoritesGroup: React.ReactNode[] = [];
-      let renderableFavorites: React.ReactNode[] = [];
+      let favoritesGroup: ReactNode[] = [];
+      let renderableFavorites: ReactNode[] = [];
       if (favorites.length > 0) {
         renderableFavorites = createRenderableFavorites(items, isGrouped, favorites, true);
         favoritesGroup = [

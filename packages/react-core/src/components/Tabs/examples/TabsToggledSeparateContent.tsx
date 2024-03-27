@@ -1,23 +1,26 @@
-import React from 'react';
+import {
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  useState,
+  type FunctionComponent,
+  createRef
+} from 'react';
 import { Tabs, Tab, TabContent, Button, Divider } from '@patternfly/react-core';
 
-export const TabsToggledSeparateContent: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
-  const [isTab2Hidden, setisTab2Hidden] = React.useState<boolean>(false);
+export const TabsToggledSeparateContent: FunctionComponent = () => {
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
+  const [isTab2Hidden, setisTab2Hidden] = useState<boolean>(false);
   // Toggle currently active tab
-  const handleTabClick = (
-    event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
-    tabIndex: string | number
-  ) => {
+  const handleTabClick = (event: ReactMouseEvent<any> | ReactKeyboardEvent | MouseEvent, tabIndex: string | number) => {
     setActiveTabKey(tabIndex);
   };
 
-  const contentRef1 = React.createRef<HTMLElement>();
-  const contentRef2 = React.createRef<HTMLElement>();
-  const contentRef3 = React.createRef<HTMLElement>();
+  const contentRef1 = createRef<HTMLElement>();
+  const contentRef2 = createRef<HTMLElement>();
+  const contentRef3 = createRef<HTMLElement>();
 
   return (
-    <React.Fragment>
+    <>
       <Button onClick={() => setisTab2Hidden(!isTab2Hidden)}>{isTab2Hidden ? 'Show' : 'Hide'} tab 2</Button>
       <Divider style={{ paddingTop: '1rem', paddingBottom: '1rem' }} />
       <Tabs
@@ -62,6 +65,6 @@ export const TabsToggledSeparateContent: React.FunctionComponent = () => {
           Tab 3 section
         </TabContent>
       </div>
-    </React.Fragment>
+    </>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, useRef } from 'react';
 
 import {
   Drawer,
@@ -16,10 +16,10 @@ import {
 } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
-const StepContentWithDrawer: React.FunctionComponent = () => {
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
+const StepContentWithDrawer: FunctionComponent = () => {
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
   const { activeStep } = useWizardContext();
-  const drawerRef = React.useRef<HTMLSpanElement>(null);
+  const drawerRef = useRef<HTMLSpanElement>(null);
 
   const onWizardExpand = () => drawerRef.current && drawerRef.current.focus();
 
@@ -57,7 +57,7 @@ const StepContentWithDrawer: React.FunctionComponent = () => {
   );
 };
 
-export const WizardStepDrawerContent: React.FunctionComponent = () => (
+export const WizardStepDrawerContent: FunctionComponent = () => (
   <Wizard height={400} title="With drawer wizard">
     <WizardStep body={null} name="Step 1" id="with-drawer-step-1">
       <StepContentWithDrawer />

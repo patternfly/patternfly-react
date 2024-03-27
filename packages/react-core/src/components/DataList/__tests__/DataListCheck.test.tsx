@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { DataListCheck } from '../DataListCheck';
@@ -13,7 +13,7 @@ it('does not throw a "A component is changing an uncontrolled input of type chec
   const user = userEvent.setup();
 
   const ControlledDataListCheck = () => {
-    const [checked, setChecked] = React.useState(false);
+    const [checked, setChecked] = useState(false);
 
     return <DataListCheck isChecked={checked} onChange={() => setChecked(!checked)} aria-labelledby={'string'} />;
   };

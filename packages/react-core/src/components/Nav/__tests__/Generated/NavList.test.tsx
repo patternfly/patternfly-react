@@ -1,10 +1,8 @@
-import React from 'react';
-
-import { render } from '@testing-library/react';
 import * as ReactCoreUtils from '@patternfly/react-core/src/helpers/util';
+import { render } from '@testing-library/react';
 
-import { NavList } from '../../NavList';
 import { NavContext } from '../../Nav';
+import { NavList } from '../../NavList';
 
 describe('NavList', () => {
   beforeAll(() => {

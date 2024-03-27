@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Popover, Button } from '@patternfly/react-core';
 
-export const PopoverHover: React.FunctionComponent = () => (
+export const PopoverHover: FunctionComponent = () => (
   <div style={{ margin: '50px' }}>
     <Popover
       triggerAction="hover"

@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 
-export interface MultipleFileUploadTitleTextProps extends React.HTMLProps<HTMLDivElement> {
+export interface MultipleFileUploadTitleTextProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside multiple file upload title text */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Class to add to outer div */
   className?: string;
 }
 
-export const MultipleFileUploadTitleText: React.FunctionComponent<MultipleFileUploadTitleTextProps> = ({
+export const MultipleFileUploadTitleText: FunctionComponent<MultipleFileUploadTitleTextProps> = ({
   className,
   children,
   ...props

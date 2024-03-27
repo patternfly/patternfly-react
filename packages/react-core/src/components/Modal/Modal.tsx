@@ -1,12 +1,12 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { HTMLProps, ReactNode, MouseEvent, ComponentType, ReactElement, Component } from 'react';
+import ReactDOM from 'react-dom';
 import { canUseDOM, KeyTypes, PickOptional } from '../../helpers';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { ModalContent } from './ModalContent';
 import { OUIAProps, getDefaultOUIAId } from '../../helpers';
 
-export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
+export interface ModalProps extends HTMLProps<HTMLDivElement>, OUIAProps {
   /** Action buttons to add to the standard modal footer. Ignored if the footer property
    * is passed in.
    */
@@ -30,11 +30,11 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
    */
   bodyAriaRole?: string;
   /** Content rendered inside the modal. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Additional classes added to the modal. */
   className?: string;
   /** Description of the modal. */
-  description?: React.ReactNode;
+  description?: ReactNode;
   /** Flag to disable focus trap. */
   disableFocusTrap?: boolean;
   /** The element to focus when the modal opens. By default the first
@@ -42,19 +42,19 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
    */
   elementToFocus?: HTMLElement | SVGElement | string;
   /** Custom footer. */
-  footer?: React.ReactNode;
+  footer?: ReactNode;
   /** Flag indicating if modal content should be placed in a modal box body wrapper. */
   hasNoBodyWrapper?: boolean;
   /** Complex header (more than just text), supersedes the title property for header content. */
-  header?: React.ReactNode;
+  header?: ReactNode;
   /** Optional help section for the modal header. */
-  help?: React.ReactNode;
+  help?: ReactNode;
   /** An id to use for the modal box container. */
   id?: string;
   /** Flag to show the modal. */
   isOpen?: boolean;
   /** A callback for when the close button is clicked. */
-  onClose?: (event: KeyboardEvent | React.MouseEvent) => void;
+  onClose?: (event: KeyboardEvent | MouseEvent) => void;
   /** Modal handles pressing of the escape key and closes the modal. If you want to handle
    * this yourself you can use this callback function. */
   onEscapePress?: (event: KeyboardEvent) => void;
@@ -69,7 +69,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Optional alert icon (or other) to show before the title of the modal header. When the
    * predefined alert types are used the default styling will be automatically applied.
    */
-  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | React.ComponentType<any>;
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | ComponentType<any>;
   /** Optional title label text for screen readers. */
   titleLabel?: string;
   /** Variant of the modal. */
@@ -96,7 +96,7 @@ interface ModalState {
   ouiaStateId: string;
 }
 
-class Modal extends React.Component<ModalProps, ModalState> {
+class Modal extends Component<ModalProps, ModalState> {
   static displayName = 'Modal';
   static currentId = 0;
   boxId = '';
@@ -268,7 +268,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
         elementToFocus={elementToFocus}
       />,
       container
-    ) as React.ReactElement;
+    ) as ReactElement;
   }
 }
 

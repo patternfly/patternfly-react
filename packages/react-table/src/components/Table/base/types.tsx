@@ -5,7 +5,7 @@
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
 
-import * as React from 'react';
+import { ReactNode, ElementType, ComponentClass, FunctionComponent, Component, ReactElement } from 'react';
 import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { PopoverProps } from '@patternfly/react-core/dist/esm/components/Popover';
 import { DropdownPosition, DropdownDirection } from '@patternfly/react-core/dist/esm/deprecated/components/Dropdown';
@@ -73,7 +73,7 @@ export interface TdActionsType {
    */
   menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
   /** Custom toggle for the actions menu */
-  actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
+  actionsToggle?: (props: CustomActionsToggleProps) => ReactNode;
 }
 
 export interface TdExpandType {
@@ -149,9 +149,9 @@ export interface HeaderType {
   info?: ThInfoType;
 }
 export interface ThInfoType {
-  tooltip?: React.ReactNode;
+  tooltip?: ReactNode;
   tooltipProps?: Omit<TooltipProps, 'content'>;
-  popover?: React.ReactNode;
+  popover?: ReactNode;
   popoverProps?: Omit<PopoverProps, 'bodyContent'>;
   ariaLabel?: string;
   className?: string;
@@ -217,7 +217,7 @@ export const TableDefaults = {
 };
 
 // Formatters Types
-export type formatterValueType = object | string | React.ElementType;
+export type formatterValueType = object | string | ElementType;
 export interface ExtraParamsType {
   rowData?: RowType;
   column?: ColumnType;
@@ -234,13 +234,13 @@ export type transformType = (value: string | object, extra: ExtraParamsType) => 
 export type transformsType = transformType[];
 
 // Renderers Types
-export type createElementType = string | React.ComponentClass<any, any> | React.FunctionComponent<any>;
+export type createElementType = string | ComponentClass<any, any> | FunctionComponent<any>;
 export type rendererType =
   | string
   | Function
-  | React.ComponentClass<any, any>
-  | React.FunctionComponent<any>
-  | React.Component<any, {}, any>;
+  | ComponentClass<any, any>
+  | FunctionComponent<any>
+  | Component<any, {}, any>;
 export interface RendererType {
   wrapper?: rendererType;
   row?: rendererType;
@@ -289,7 +289,7 @@ export interface EditableSelectInputProps {
   /** String or SelectOptionObject, or array of strings or SelectOptionObjects representing current selections */
   selected: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Array of react elements to display in the select menu */
-  options: React.ReactElement[];
+  options: ReactElement[];
   /** Props to be passed down to the Select component */
   editableSelectProps?: SelectProps;
   /** arbitrary data to pass to the internal select component in the editable select input cell */

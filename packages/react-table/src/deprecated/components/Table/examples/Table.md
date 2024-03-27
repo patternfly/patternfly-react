@@ -302,7 +302,7 @@ Example:
 ```
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { SelectOption as SelectOptionDeprecated } from '@patternfly/react-core/deprecated';
 import {
   Table,
@@ -316,7 +316,7 @@ import {
   EditableSelectInputCell
 } from '@patternfly/react-table';
 
-class EditableRowsTable extends React.Component {
+class EditableRowsTable extends Component {
   constructor(props) {
     super(props);
 

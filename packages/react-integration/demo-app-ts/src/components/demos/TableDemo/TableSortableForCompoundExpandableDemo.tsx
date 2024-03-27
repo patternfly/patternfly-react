@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent, Component } from 'react';
 import {
   TableVariant,
   sortable,
@@ -23,7 +23,7 @@ interface DemoSortableTableState {
   sortBy: ISortBy;
 }
 
-export class DemoSortableTable extends React.Component<DemoSortableTableProps, DemoSortableTableState> {
+export class DemoSortableTable extends Component<DemoSortableTableProps, DemoSortableTableState> {
   static displayName = 'DemoSortableTable';
   constructor(props: TableProps) {
     super(props);
@@ -44,7 +44,7 @@ export class DemoSortableTable extends React.Component<DemoSortableTableProps, D
     };
   }
 
-  onSort = (_event: React.MouseEvent, index: number, direction: SortByDirection) => {
+  onSort = (_event: MouseEvent, index: number, direction: SortByDirection) => {
     const sortedRows = this.state.rows.sort(
       (a: { [index: number]: IRow | string }, b: { [index: number]: IRow | string }) => {
         if (a && b) {

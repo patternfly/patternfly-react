@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CodeBlock/code-block';
 
-export interface CodeBlockActionProps extends React.HTMLProps<HTMLDivElement> {
+export interface CodeBlockActionProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the code block action */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes passed to the code block action */
   className?: string;
 }
 
-export const CodeBlockAction: React.FunctionComponent<CodeBlockActionProps> = ({
+export const CodeBlockAction: FunctionComponent<CodeBlockActionProps> = ({
   children = null,
   className,
   ...props

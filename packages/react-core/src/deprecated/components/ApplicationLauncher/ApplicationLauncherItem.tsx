@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 import { DropdownItem, DropdownItemProps } from '../Dropdown';
@@ -10,18 +10,18 @@ import { getUniqueId } from '../../../helpers/util';
 
 export interface ApplicationLauncherItemProps {
   /** Icon rendered before the text */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** If clicking on the item should open the page in a separate window */
   isExternal?: boolean;
   /** Tooltip to display when hovered over the item */
-  tooltip?: React.ReactNode;
+  tooltip?: ReactNode;
   /** Additional tooltip props forwarded to the Tooltip component */
   tooltipProps?: any;
   /** A ReactElement to render, or a string to use as the component tag.
    * Example: component={<Link to="/components/alert/">Alert</Link>}
    * Example: component="button"
    */
-  component?: React.ReactNode;
+  component?: ReactNode;
   /** Flag indicating if the item is favorited */
   isFavorite?: boolean;
   /** Aria label text for favoritable button when favorited */
@@ -31,12 +31,12 @@ export interface ApplicationLauncherItemProps {
   /** ID of the item. Required for tracking favorites. */
   id?: string;
   /** Custom item rendering that receives the ApplicationLauncherContext */
-  customChild?: React.ReactNode;
+  customChild?: ReactNode;
   /** Flag indicating if hitting enter triggers an arrow down key press. Automatically passed to favorites list items. */
   enterTriggersArrowDown?: boolean;
 }
 
-export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLauncherItemProps & DropdownItemProps> = ({
+export const ApplicationLauncherItem: FunctionComponent<ApplicationLauncherItemProps & DropdownItemProps> = ({
   className = '',
   id,
   children,

@@ -1,18 +1,18 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
 import contentStyles from '@patternfly/react-styles/css/components/Content/content';
 
-export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface AboutModalBoxContentProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the about modal box content */
-  children: React.ReactNode;
+  children: ReactNode;
   /** The trademark info for the product  */
   trademark: string;
   /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts */
   hasNoContentContainer?: boolean;
 }
 
-export const AboutModalBoxContent: React.FunctionComponent<AboutModalBoxContentProps> = ({
+export const AboutModalBoxContent: FunctionComponent<AboutModalBoxContentProps> = ({
   children,
   trademark,
   hasNoContentContainer = false,

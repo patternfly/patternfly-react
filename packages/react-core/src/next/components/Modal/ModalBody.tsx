@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 
 /** Renders content in the body of the modal */
 
-export interface ModalBodyProps extends React.HTMLProps<HTMLDivElement> {
+export interface ModalBodyProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the modal body. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the modal body. */
   className?: string;
   /** Accessible label applied to the modal body. This should be used to communicate
@@ -20,7 +20,7 @@ export interface ModalBodyProps extends React.HTMLProps<HTMLDivElement> {
   role?: string;
 }
 
-export const ModalBody: React.FunctionComponent<ModalBodyProps> = ({
+export const ModalBody: FunctionComponent<ModalBodyProps> = ({
   children,
   className,
   'aria-label': ariaLabel,

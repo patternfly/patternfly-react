@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Ref, useState, Fragment } from 'react';
 import {
   DataList,
   DataListItem,
@@ -17,11 +17,11 @@ import {
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 
-export const DataListMixedExpandable: React.FunctionComponent = () => {
-  const [isOpen1, setIsOpen1] = React.useState(false);
-  const [isOpen2, setIsOpen2] = React.useState(false);
-  const [isOpen3, setIsOpen3] = React.useState(false);
-  const [expanded, setExpanded] = React.useState(['m-ex-toggle1', 'm-ex-toggle3']);
+export const DataListMixedExpandable: FunctionComponent = () => {
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [isOpen3, setIsOpen3] = useState(false);
+  const [expanded, setExpanded] = useState(['m-ex-toggle1', 'm-ex-toggle3']);
 
   const onToggle1 = () => {
     setIsOpen1(!isOpen1);
@@ -55,7 +55,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DataList aria-label="Mixed expandable data list example">
         <DataListItem aria-labelledby="m-ex-item1" isExpanded={expanded.includes('m-ex-toggle1')}>
           <DataListItemRow>
@@ -92,7 +92,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
               <Dropdown
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect1}
-                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                toggle={(toggleRef: Ref<MenuToggleElement>) => (
                   <MenuToggle
                     ref={toggleRef}
                     isExpanded={isOpen1}
@@ -170,7 +170,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
               <Dropdown
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect2}
-                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                toggle={(toggleRef: Ref<MenuToggleElement>) => (
                   <MenuToggle
                     ref={toggleRef}
                     isExpanded={isOpen2}
@@ -236,7 +236,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
               <Dropdown
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect3}
-                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                toggle={(toggleRef: Ref<MenuToggleElement>) => (
                   <MenuToggle
                     ref={toggleRef}
                     isExpanded={isOpen3}
@@ -279,6 +279,6 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
           </DataListContent>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </Fragment>
   );
 };

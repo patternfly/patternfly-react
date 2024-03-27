@@ -1,16 +1,16 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { InternalFormFieldGroup } from './InternalFormFieldGroup';
 
-export interface FormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
+export interface FormFieldGroupProps extends Omit<HTMLProps<HTMLDivElement>, 'label'> {
   /** Anything that can be rendered as form field group content. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the form field group. */
   className?: string;
   /** Form field group header */
-  header?: React.ReactNode;
+  header?: ReactNode;
 }
 
-export const FormFieldGroup: React.FunctionComponent<FormFieldGroupProps> = ({
+export const FormFieldGroup: FunctionComponent<FormFieldGroupProps> = ({
   children,
   className,
   header,

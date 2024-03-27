@@ -1,4 +1,12 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type ReactElement,
+  type ReactNode,
+  type MouseEvent as ReactMouseEvent,
+  type FormEvent as ReactFormEvent,
+  cloneElement
+} from 'react';
 import {
   ApplicationLauncher,
   ApplicationLauncherItem,
@@ -9,7 +17,7 @@ import pfLogoSm from '@patternfly/react-core/src/demos/assets/pf-logo-small.svg'
 
 const icon: JSX.Element = <img src={pfLogoSm} />;
 
-const appLauncherItems: React.ReactElement[] = [
+const appLauncherItems: ReactElement[] = [
   <ApplicationLauncherGroup key="group 1c">
     <ApplicationLauncherItem key="group 1a" id="item-1" icon={icon}>
       Item without group title
@@ -35,17 +43,17 @@ const appLauncherItems: React.ReactElement[] = [
   </ApplicationLauncherGroup>
 ];
 
-export const ApplicationLauncherFavoritesAndSearch: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [favorites, setFavorites] = React.useState<string[]>([]);
-  const [filteredItems, setFilteredItems] = React.useState<React.ReactNode[]>(null);
+export const ApplicationLauncherFavoritesAndSearch: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [filteredItems, setFilteredItems] = useState<ReactNode[]>(null);
 
   const onToggle = (_event: any, isOpen: boolean) => {
     setIsOpen(isOpen);
     setFilteredItems(null);
   };
 
-  const onFavorite = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>, itemId: string, isFavorite: boolean) => {
+  const onFavorite = (_event: ReactMouseEvent<HTMLButtonElement, MouseEvent>, itemId: string, isFavorite: boolean) => {
     let updatedFavorites: string[] = [...favorites, itemId];
 
     if (isFavorite) {
@@ -55,14 +63,14 @@ export const ApplicationLauncherFavoritesAndSearch: React.FunctionComponent = ()
     setFavorites(updatedFavorites);
   };
 
-  const onSearch = (_event: React.FormEvent<HTMLInputElement>, textInput: string) => {
+  const onSearch = (_event: ReactFormEvent<HTMLInputElement>, textInput: string) => {
     if (textInput === '') {
       setFilteredItems(null);
     } else {
       const filteredGroups = appLauncherItems
-        .map((group: React.ReactElement) => {
-          const filteredGroup = React.cloneElement(group, {
-            children: group.props.children.filter((item: React.ReactElement) => {
+        .map((group: ReactElement) => {
+          const filteredGroup = cloneElement(group, {
+            children: group.props.children.filter((item: ReactElement) => {
               if (item.type === ApplicationLauncherSeparator) {
                 return item;
               }
@@ -83,7 +91,7 @@ export const ApplicationLauncherFavoritesAndSearch: React.FunctionComponent = ()
       if (filteredGroups.length > 0) {
         let lastGroup = filteredGroups.pop();
 
-        lastGroup = React.cloneElement(lastGroup, {
+        lastGroup = cloneElement(lastGroup, {
           children: lastGroup.props.children.filter((item) => item.type !== ApplicationLauncherSeparator)
         });
 

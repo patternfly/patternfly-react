@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Popover, Button } from '@patternfly/react-core';
 
-export const PopoverWithoutHeaderFooterCloseNoPadding: React.FunctionComponent = () => (
+export const PopoverWithoutHeaderFooterCloseNoPadding: FunctionComponent = () => (
   <div style={{ margin: '50px' }}>
     <Popover
       aria-label="Popover with no header, footer, close button, and padding"

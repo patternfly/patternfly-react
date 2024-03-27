@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { SimpleList, SimpleListItem, SimpleListGroup } from '@patternfly/react-core';
 
-export const SimpleListGrouped: React.FunctionComponent = () => {
+export const SimpleListGrouped: FunctionComponent = () => {
   const group1Items = [
     <SimpleListItem key="item1" isActive>
       List item 1

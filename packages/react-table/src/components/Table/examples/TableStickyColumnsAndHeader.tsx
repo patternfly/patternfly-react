@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Table,
   Thead,
@@ -25,7 +25,7 @@ interface Fact {
   detail7: string;
 }
 
-export const TableStickyColumnsAndHeader: React.FunctionComponent = () => {
+export const TableStickyColumnsAndHeader: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const facts: Fact[] = Array.from({ length: 9 }, (_, index) => ({
     name: `Fact ${index + 1}`,
@@ -54,10 +54,10 @@ export const TableStickyColumnsAndHeader: React.FunctionComponent = () => {
   // Index of the currently sorted column
   // Note: if you intend to make columns reorderable, you may instead want to use a non-numeric key
   // as the identifier of the sorted column. See the "Compound expandable" example.
-  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  const [activeSortIndex, setActiveSortIndex] = useState(-1);
 
   // Sort direction of the currently sorted column
-  const [activeSortDirection, setActiveSortDirection] = React.useState<ISortBy['direction']>();
+  const [activeSortDirection, setActiveSortDirection] = useState<ISortBy['direction']>();
 
   // Since OnSort specifies sorted columns by index, we need sortable values for our object by column index.
   // This example is trivial since our data objects just contain strings, but if the data was more complex

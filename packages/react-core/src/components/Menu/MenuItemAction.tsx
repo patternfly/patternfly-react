@@ -1,14 +1,14 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, Ref, FunctionComponent, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 import { MenuContext, MenuItemContext } from './MenuContext';
 
-export interface MenuItemActionProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'type' | 'ref'> {
+export interface MenuItemActionProps extends Omit<HTMLProps<HTMLButtonElement>, 'type' | 'ref'> {
   /** Additional classes added to the action button */
   className?: string;
   /** The action icon to use */
-  icon?: 'favorites' | React.ReactNode;
+  icon?: 'favorites' | ReactNode;
   /** Callback on action click, can also specify onActionClick on the Menu instead */
   onClick?: (event?: any) => void;
   /** Accessibility label */
@@ -20,10 +20,10 @@ export interface MenuItemActionProps extends Omit<React.HTMLProps<HTMLButtonElem
   /** Identifies the action item in the onActionClick on the Menu */
   actionId?: any;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
 }
 
-const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
+const MenuItemActionBase: FunctionComponent<MenuItemActionProps> = ({
   className = '',
   icon,
   onClick,
@@ -70,7 +70,7 @@ const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
   </MenuContext.Consumer>
 );
 
-export const MenuItemAction = React.forwardRef((props: MenuItemActionProps, ref: React.Ref<HTMLButtonElement>) => (
+export const MenuItemAction = forwardRef((props: MenuItemActionProps, ref: Ref<HTMLButtonElement>) => (
   <MenuItemActionBase {...props} innerRef={ref} />
 ));
 MenuItemAction.displayName = 'MenuItemAction';

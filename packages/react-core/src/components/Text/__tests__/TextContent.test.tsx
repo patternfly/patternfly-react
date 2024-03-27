@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { TextContent } from '../TextContent';
 import styles from '@patternfly/react-styles/css/components/Content/content';

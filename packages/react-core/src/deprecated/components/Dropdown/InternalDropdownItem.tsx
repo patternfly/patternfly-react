@@ -1,4 +1,15 @@
-import * as React from 'react';
+import {
+  type HTMLProps,
+  type ReactNode,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  Component,
+  createRef,
+  cloneElement,
+  type MutableRefObject,
+  type ReactElement,
+  isValidElement
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import { DropdownContext } from './dropdownConstants';
 import { KEYHANDLER_DIRECTION } from '../../../helpers/constants';
@@ -6,17 +17,17 @@ import { preventedEvents } from '../../../helpers/util';
 import { Tooltip } from '../../../components/Tooltip';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 
-export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorElement> {
+export interface InternalDropdownItemProps extends HTMLProps<HTMLAnchorElement> {
   /** Anything which can be rendered as dropdown item */
-  children?: React.ReactNode;
-  /** Whether to set className on component when React.isValidElement(component) */
+  children?: ReactNode;
+  /** Whether to set className on component when isValidElement(component) */
   styleChildren?: boolean;
   /** Classes applied to root element of dropdown item */
   className?: string;
   /** Class applied to list element */
   listItemClassName?: string;
-  /** Indicates which component will be used as dropdown item. Will have className injected if React.isValidElement(component) */
-  component?: React.ReactNode;
+  /** Indicates which component will be used as dropdown item. Will have className injected if isValidElement(component) */
+  component?: ReactNode;
   /** Role for the item */
   role?: string;
   /** Render dropdown item as disabled option */
@@ -28,7 +39,7 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   /** Default hyperlink location */
   href?: string;
   /** Tooltip to display when hovered over the item */
-  tooltip?: React.ReactNode;
+  tooltip?: ReactNode;
   /** Additional tooltip props forwarded to the Tooltip component */
   tooltipProps?: any;
   index?: number;
@@ -37,31 +48,31 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
     sendRef?: (index: number, ref: any, isDisabled: boolean, isSeparator: boolean) => void;
   };
   /** Callback for click event */
-  onClick?: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => void;
+  onClick?: (event: ReactMouseEvent<any> | ReactKeyboardEvent | MouseEvent) => void;
   /** ID for the list element */
   id?: string;
   /** ID for the component element */
   componentID?: string;
   /** Additional content to include alongside item within the <li> */
-  additionalChild?: React.ReactNode;
+  additionalChild?: ReactNode;
   /** Custom item rendering that receives the DropdownContext */
-  customChild?: React.ReactNode;
+  customChild?: ReactNode;
   /** Flag indicating if hitting enter on an item also triggers an arrow down key press */
   enterTriggersArrowDown?: boolean;
   /** An image to display within the InternalDropdownItem, appearing before any component children */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** Initial focus on the item when the menu is opened (Note: Only applicable to one of the items) */
   autoFocus?: boolean;
   /** A short description of the dropdown item, displayed under the dropdown item content */
-  description?: React.ReactNode;
+  description?: ReactNode;
   /** Events to prevent when the item is disabled */
   inoperableEvents?: string[];
 }
 
-class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
+class InternalDropdownItem extends Component<InternalDropdownItemProps> {
   static displayName = 'InternalDropdownItem';
-  ref = React.createRef<HTMLLIElement>();
-  additionalRef = React.createRef<any>();
+  ref = createRef<HTMLLIElement>();
+  additionalRef = createRef<any>();
 
   static defaultProps: InternalDropdownItemProps = {
     className: '',
@@ -71,7 +82,7 @@ class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
     isPlainText: false,
     tooltipProps: {},
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    onClick: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => undefined as any,
+    onClick: (event: ReactMouseEvent<any> | ReactKeyboardEvent | MouseEvent) => undefined as any,
     index: -1,
     context: {
       keyHandler: () => {},
@@ -137,20 +148,20 @@ class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
   extendAdditionalChildRef() {
     const { additionalChild } = this.props;
 
-    return React.cloneElement(additionalChild as React.ReactElement<any>, {
+    return cloneElement(additionalChild as ReactElement<any>, {
       ref: this.additionalRef
     });
   }
 
   componentRef = (element: HTMLLIElement) => {
-    (this.ref as React.MutableRefObject<any>).current = element;
+    (this.ref as MutableRefObject<any>).current = element;
     const { component } = this.props;
     const ref = (component as any).ref;
     if (ref) {
       if (typeof ref === 'function') {
         ref(element);
       } else {
-        (ref as React.MutableRefObject<any>).current = element;
+        (ref as MutableRefObject<any>).current = element;
       }
     }
   };
@@ -193,7 +204,7 @@ class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
       additionalProps['aria-disabled'] = isDisabled || isAriaDisabled;
       additionalProps.type = additionalProps.type || 'button';
     }
-    const renderWithTooltip = (childNode: React.ReactNode) =>
+    const renderWithTooltip = (childNode: ReactNode) =>
       tooltip ? (
         <Tooltip content={tooltip} {...tooltipProps}>
           {childNode}
@@ -202,8 +213,8 @@ class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
         childNode
       );
 
-    const renderClonedComponent = (element: React.ReactElement<any>) =>
-      React.cloneElement(element, {
+    const renderClonedComponent = (element: ReactElement<any>) =>
+      cloneElement(element, {
         ...(styleChildren && {
           className: css(element.props.className, classes)
         }),
@@ -256,7 +267,7 @@ class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
             );
           }
           if (customChild) {
-            return React.cloneElement(customChild as React.ReactElement<any>, {
+            return cloneElement(customChild as ReactElement<any>, {
               ref: this.ref,
               onKeyDown: this.onKeyDown
             });
@@ -276,7 +287,7 @@ class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
               id={id}
             >
               {renderWithTooltip(
-                React.isValidElement(component)
+                isValidElement(component)
                   ? renderClonedComponent(component)
                   : renderDefaultComponent(component as string)
               )}

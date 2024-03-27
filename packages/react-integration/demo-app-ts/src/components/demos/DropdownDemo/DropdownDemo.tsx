@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, type FunctionComponent, type MouseEvent as ReactMouseEvent } from 'react';
 import { Dropdown, DropdownList, DropdownItem, Divider, MenuToggle } from '@patternfly/react-core';
 
 const dropDownItems = (
@@ -34,14 +34,14 @@ const dropDownItems = (
   </DropdownList>
 );
 
-export const DropdownDemo: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const DropdownDemo: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined) => {
+  const onSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined) => {
     setIsOpen(false);
   };
 

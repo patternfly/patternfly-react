@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { RefObject, ReactNode, Component } from 'react';
 import { canUseDOM } from './util';
 
 export interface KeyboardHandlerProps {
   /** Reference of the container to apply keyboard interaction */
-  containerRef: React.RefObject<any>;
+  containerRef: RefObject<any>;
   /** Callback returning an array of navigable elements to be traversable via vertical arrow keys. This array should not include non-navigable elements such as disabled elements. */
   createNavigableElements: () => Element[];
   /** Callback to determine if a given event is from the container. By default the function conducts a basic check to see if the containerRef contains the event target */
@@ -170,7 +170,7 @@ export const setTabIndex = (options: HTMLElement[]) => {
   }
 };
 
-class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
+class KeyboardHandler extends Component<KeyboardHandlerProps> {
   static displayName = 'KeyboardHandler';
   static defaultProps: KeyboardHandlerProps = {
     containerRef: null,
@@ -271,7 +271,7 @@ class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
   };
 
   render() {
-    return null as React.ReactNode;
+    return null as ReactNode;
   }
 }
 

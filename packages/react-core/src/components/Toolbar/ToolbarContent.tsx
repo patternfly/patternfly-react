@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, createRef, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
 import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from '../Page/PageContext';
 
-export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface ToolbarContentProps extends HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
   className?: string;
   /** Visibility at various breakpoints. */
@@ -21,7 +21,7 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Vertical alignment of children */
   alignItems?: 'start' | 'center' | 'baseline' | 'default';
   /** Content to be rendered as children of the content row */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
   isExpanded?: boolean;
   /** Optional callback for clearing all filters in the toolbar */
@@ -34,10 +34,10 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   toolbarId?: string;
 }
 
-class ToolbarContent extends React.Component<ToolbarContentProps> {
+class ToolbarContent extends Component<ToolbarContentProps> {
   static displayName = 'ToolbarContent';
-  private expandableContentRef = React.createRef<HTMLDivElement>();
-  private chipContainerRef = React.createRef<HTMLDivElement>();
+  private expandableContentRef = createRef<HTMLDivElement>();
+  private chipContainerRef = createRef<HTMLDivElement>();
   private static currentId = 0;
 
   static defaultProps: ToolbarContentProps = {

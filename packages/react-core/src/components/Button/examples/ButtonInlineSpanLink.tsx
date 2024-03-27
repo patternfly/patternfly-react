@@ -1,7 +1,7 @@
-import React from 'react';
+import { KeyboardEvent, FunctionComponent, Fragment } from 'react';
 import { Button } from '@patternfly/react-core';
 
-const handleKeydown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+const handleKeydown = (event: KeyboardEvent<HTMLButtonElement>) => {
   const { key } = event;
   const isEnterKey: boolean = key === 'Enter';
   const isEnterOrSpaceKey: boolean = isEnterKey || key === 'Space';
@@ -12,8 +12,8 @@ const handleKeydown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
   }
 };
 
-export const ButtonInlineSpanLink: React.FunctionComponent = () => (
-  <React.Fragment>
+export const ButtonInlineSpanLink: FunctionComponent = () => (
+  <Fragment>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       <Button variant="link" isInline component="span">
@@ -32,5 +32,5 @@ export const ButtonInlineSpanLink: React.FunctionComponent = () => (
       </Button>
       Pressing the Enter or Space keys on the inline link as span above demonstrates this by triggering an alert.
     </p>
-  </React.Fragment>
+  </Fragment>
 );

@@ -1,4 +1,5 @@
-import * as ReactDOM from 'react-dom';
+import { type CSSProperties, type RefObject, type SyntheticEvent } from 'react';
+import ReactDOM from 'react-dom';
 import { globalWidthBreakpoints, globalHeightBreakpoints, SIDE } from './constants';
 
 /**
@@ -264,7 +265,7 @@ export const setBreakpointCssVars = (
     '3xl'?: string;
   },
   cssVar: string
-): React.CSSProperties =>
+): CSSProperties =>
   Object.entries(mods || {}).reduce(
     (acc, [breakpoint, value]) =>
       breakpoint === 'default' ? { ...acc, [cssVar]: value } : { ...acc, [`${cssVar}-on-${breakpoint}`]: value },
@@ -505,7 +506,7 @@ export const preventedEvents = (events: string[]) =>
   events.reduce(
     (handlers, eventToPrevent) => ({
       ...handlers,
-      [eventToPrevent]: (event: React.SyntheticEvent<HTMLElement>) => {
+      [eventToPrevent]: (event: SyntheticEvent<HTMLElement>) => {
         event.preventDefault();
       }
     }),
@@ -513,9 +514,9 @@ export const preventedEvents = (events: string[]) =>
   );
 
 /**
- * @param {React.RefObject<any>[]} timeoutRefs - Timeout refs to clear
+ * @param timeoutRefs - Timeout refs to clear
  */
-export const clearTimeouts = (timeoutRefs: React.RefObject<any>[]) => {
+export const clearTimeouts = (timeoutRefs: RefObject<any>[]) => {
   timeoutRefs.forEach((ref) => {
     if (ref.current) {
       clearTimeout(ref.current);

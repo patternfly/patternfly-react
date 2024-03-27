@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
 import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
 
-export const ProgressStepperCustomIcons: React.FunctionComponent = () => (
+export const ProgressStepperCustomIcons: FunctionComponent = () => (
   <ProgressStepper aria-label="Progress stepper with custom icons">
     <ProgressStep
       variant="success"

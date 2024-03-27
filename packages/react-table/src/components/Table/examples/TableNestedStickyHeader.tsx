@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ThProps } from '@patternfly/react-table';
 import { Stack, StackItem } from '@patternfly/react-core';
 import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
@@ -19,7 +19,7 @@ interface PodConnection {
   packets: number;
 }
 
-export const TableNestedHeaders: React.FunctionComponent = () => {
+export const TableNestedHeaders: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const connections: PodConnection[] = [
     {
@@ -57,10 +57,10 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
   // Index of the currently sorted column
   // Note: if you intend to make columns reorderable, you may instead want to use a non-numeric key
   // as the identifier of the sorted column. See the "Compound expandable" example.
-  const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
+  const [activeSortIndex, setActiveSortIndex] = useState<number | null>(null);
 
   // Sort direction of the currently sorted column
-  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
+  const [activeSortDirection, setActiveSortDirection] = useState<'asc' | 'desc' | null>(null);
 
   // Since OnSort specifies sorted columns by index, we need sortable values for our object by column index.
   const getSortableRowValues = (connection: PodConnection): (string | number)[] => {

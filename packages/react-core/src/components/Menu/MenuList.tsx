@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, useContext } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { MenuContext } from './MenuContext';
 
-export interface MenuListProps extends React.HTMLProps<HTMLUListElement> {
+export interface MenuListProps extends HTMLProps<HTMLUListElement> {
   /** Anything that can be rendered inside of menu list */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Additional classes added to the menu list */
   className?: string;
   /** @beta Indicates to assistive technologies whether more than one item can be selected
@@ -16,14 +16,14 @@ export interface MenuListProps extends React.HTMLProps<HTMLUListElement> {
   'aria-label'?: string;
 }
 
-export const MenuList: React.FunctionComponent<MenuListProps> = ({
+export const MenuList: FunctionComponent<MenuListProps> = ({
   children = null,
   className,
   isAriaMultiselectable = false,
   'aria-label': ariaLabel,
   ...props
 }: MenuListProps) => {
-  const { role } = React.useContext(MenuContext);
+  const { role } = useContext(MenuContext);
 
   return (
     <ul

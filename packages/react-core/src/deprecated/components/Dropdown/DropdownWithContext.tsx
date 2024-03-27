@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, createRef, Children, cloneElement, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { DropdownMenu } from './DropdownMenu';
@@ -8,12 +8,12 @@ import { getOUIAProps, OUIAProps } from '../../../helpers';
 import { PickOptional } from '../../../helpers/typeUtils';
 import { Popper } from '../../../helpers/Popper/Popper';
 
-class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
+class DropdownWithContext extends Component<DropdownProps & OUIAProps> {
   static displayName = 'DropdownWithContext';
 
   openedOnEnter = false;
-  baseComponentRef = React.createRef<any>();
-  menuComponentRef = React.createRef<any>();
+  baseComponentRef = createRef<any>();
+  menuComponentRef = createRef<any>();
 
   // seed for the aria-labelledby ID
   static currentId = 0;
@@ -83,7 +83,7 @@ class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
     } = this.props;
     const id = toggle.props.id || `pf-dropdown-toggle-id-${DropdownWithContext.currentId++}`;
     let component: string;
-    let renderedContent: React.ReactNode[];
+    let renderedContent: ReactNode[];
     let ariaHasPopup = false;
     if (dropdownItems && dropdownItems.length > 0) {
       component = 'ul';
@@ -91,10 +91,10 @@ class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
       ariaHasPopup = true;
     } else {
       component = 'div';
-      renderedContent = React.Children.toArray(children);
+      renderedContent = Children.toArray(children);
     }
 
-    const popperRef = React.createRef<HTMLDivElement>();
+    const popperRef = createRef<HTMLDivElement>();
     const openedOnEnter = this.openedOnEnter;
     const isStatic = isFlipEnabled && menuAppendTo !== 'inline';
     return (
@@ -144,8 +144,8 @@ class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
               ref={this.baseComponentRef}
               {...getOUIAProps(ouiaComponentType, ouiaId, ouiaSafe)}
             >
-              {React.Children.map(toggle, (oneToggle) =>
-                React.cloneElement(oneToggle, {
+              {Children.map(toggle, (oneToggle) =>
+                cloneElement(oneToggle, {
                   parentRef: this.baseComponentRef,
                   getMenuRef: this.getMenuComponentRef,
                   isOpen,

@@ -1,4 +1,4 @@
-import React from 'react';
+import { ChangeEvent, Component, Fragment } from 'react';
 import { TextArea, Text, ValidatedOptions } from '@patternfly/react-core';
 
 interface TextAreaState {
@@ -14,7 +14,7 @@ interface TextAreaState {
   validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success | ValidatedOptions.warning;
 }
 
-export class TextAreaDemo extends React.Component<{}, TextAreaState> {
+export class TextAreaDemo extends Component<{}, TextAreaState> {
   static displayName = 'TextAreaDemo';
   state = {
     textAreaValue: '',
@@ -29,29 +29,29 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
     validated: ValidatedOptions.default
   };
 
-  handleChange = (_event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => {
+  handleChange = (_event: ChangeEvent<HTMLTextAreaElement>, value: string) => {
     // If the text area contains less than 1 character, set isValid to false
     const valid = !(value.length < 1);
     this.setState({ textAreaValue: value, isValid: valid });
   };
 
-  handleChangeRequired = (_event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => {
+  handleChangeRequired = (_event: ChangeEvent<HTMLTextAreaElement>, value: string) => {
     // If the text area contains less than 1 character, set requiredIsValid to false
     const isValid = !(value.length < 1);
     this.setState({ requiredTextAreaValue: value, requiredIsValid: isValid });
   };
 
-  handleChangeHorizontal = (_event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => {
+  handleChangeHorizontal = (_event: ChangeEvent<HTMLTextAreaElement>, value: string) => {
     // If the text area contains less than 1 character, set isValid to false
     const horizontalIsValid = !(value.length < 1);
     this.setState({ resizeHorizontalTextArea: value, horizontalIsValid });
   };
-  handleChangeVertical = (_event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => {
+  handleChangeVertical = (_event: ChangeEvent<HTMLTextAreaElement>, value: string) => {
     // If the text area contains less than 1 character, set isValid to false
     const verticalIsValid = !(value.length < 1);
     this.setState({ resizeVerticalTextArea: value, verticalIsValid });
   };
-  handleChangeValidated = (_event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => {
+  handleChangeValidated = (_event: ChangeEvent<HTMLTextAreaElement>, value: string) => {
     // If the text area contains less than 5 characters, set validated to error. If empty set to warning.
     let validated = ValidatedOptions.default;
     if (value.length === 0) {
@@ -80,7 +80,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
       validated
     } = this.state;
     return (
-      <React.Fragment>
+      <Fragment>
         <Text>Text area</Text>
         <TextArea
           id="textarea1"
@@ -136,7 +136,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           readOnlyVariant="default"
         />
         <TextArea id="autoResize" aria-label="resizable text area example" autoResize />
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

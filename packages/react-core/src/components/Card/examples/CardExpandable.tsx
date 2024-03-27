@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, Ref, useState, Fragment } from 'react';
 import {
   Card,
   CardHeader,
@@ -16,11 +16,11 @@ import {
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const CardExpandable: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
-  const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
-  const [isToggleRightAligned, setIsToggleRightAligned] = React.useState<boolean>(false);
+export const CardExpandable: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [isToggleRightAligned, setIsToggleRightAligned] = useState<boolean>(false);
 
   const onSelect = () => {
     setIsOpen(!isOpen);
@@ -30,7 +30,7 @@ export const CardExpandable: React.FunctionComponent = () => {
     setIsChecked(checked);
   };
 
-  const onExpand = (event: React.MouseEvent, id: string) => {
+  const onExpand = (event: MouseEvent, id: string) => {
     // eslint-disable-next-line no-console
     console.log(id);
     setIsExpanded(!isExpanded);
@@ -64,7 +64,7 @@ export const CardExpandable: React.FunctionComponent = () => {
     <>
       <Dropdown
         onSelect={onSelect}
-        toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+        toggle={(toggleRef: Ref<MenuToggleElement>) => (
           <MenuToggle
             ref={toggleRef}
             isExpanded={isOpen}
@@ -91,7 +91,7 @@ export const CardExpandable: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div style={{ marginBottom: '12px' }}>
         <Checkbox
           id={'isToggleRightAligned-1'}
@@ -120,6 +120,6 @@ export const CardExpandable: React.FunctionComponent = () => {
           <CardFooter>Footer</CardFooter>
         </CardExpandableContent>
       </Card>
-    </React.Fragment>
+    </Fragment>
   );
 };

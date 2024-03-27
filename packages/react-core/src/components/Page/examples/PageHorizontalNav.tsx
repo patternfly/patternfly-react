@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   Page,
   Masthead,
@@ -12,7 +12,7 @@ import {
   ToolbarItem
 } from '@patternfly/react-core';
 
-export const PageHorizontalNav: React.FunctionComponent = () => {
+export const PageHorizontalNav: FunctionComponent = () => {
   const headerToolbar = (
     <Toolbar id="horizontal-toolbar">
       <ToolbarContent>

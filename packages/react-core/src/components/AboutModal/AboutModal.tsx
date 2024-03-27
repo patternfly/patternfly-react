@@ -1,4 +1,4 @@
-import * as React from 'react';
+import type { HTMLProps, ReactNode, MouseEvent as ReactMouseEvent, FunctionComponent, CSSProperties } from 'react';
 import { css } from '@patternfly/react-styles';
 import backgroundImage from '@patternfly/react-tokens/dist/esm/c_about_modal_box_BackgroundImage';
 import { AboutModalBoxContent } from './AboutModalBoxContent';
@@ -9,15 +9,15 @@ import { AboutModalBox } from './AboutModalBox';
 import { Modal, ModalVariant } from '../Modal';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
-export interface AboutModalProps extends React.HTMLProps<HTMLDivElement> {
+export interface AboutModalProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the about modal */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Additional classes added to the about modal */
   className?: string;
   /** Flag to show the about modal  */
   isOpen?: boolean;
   /** A callback for when the close button is clicked  */
-  onClose?: (event: React.MouseEvent | MouseEvent | KeyboardEvent) => void;
+  onClose?: (event: ReactMouseEvent | MouseEvent | KeyboardEvent) => void;
   /** Product name  */
   productName?: string;
   /** Trademark information  */
@@ -40,7 +40,7 @@ export interface AboutModalProps extends React.HTMLProps<HTMLDivElement> {
   disableFocusTrap?: boolean;
 }
 
-export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
+export const AboutModal: FunctionComponent<AboutModalProps> = ({
   children,
   className,
   isOpen = false,
@@ -89,9 +89,7 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
         >
           <AboutModalBox
             style={
-              backgroundImageSrc
-                ? ({ [backgroundImage.name]: `url(${backgroundImageSrc})` } as React.CSSProperties)
-                : {}
+              backgroundImageSrc ? ({ [backgroundImage.name]: `url(${backgroundImageSrc})` } as CSSProperties) : {}
             }
             className={css(className)}
           >

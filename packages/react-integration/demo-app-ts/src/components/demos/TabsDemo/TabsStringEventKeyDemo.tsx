@@ -1,5 +1,6 @@
+import { createRef, type MouseEvent as ReactMouseEvent } from 'react';
 import { Tabs, Tab, TabContent, TabTitleText } from '@patternfly/react-core';
-import React, { Component, RefObject } from 'react';
+import { Component, RefObject } from 'react';
 
 export class TabsStringEventKeyDemo extends Component {
   state = {
@@ -13,13 +14,13 @@ export class TabsStringEventKeyDemo extends Component {
   constructor(props: {}) {
     super(props);
 
-    this.contentRefOne = React.createRef<HTMLDivElement>();
-    this.contentRefTwo = React.createRef<HTMLDivElement>();
-    this.contentRefThree = React.createRef<HTMLDivElement>();
+    this.contentRefOne = createRef<HTMLDivElement>();
+    this.contentRefTwo = createRef<HTMLDivElement>();
+    this.contentRefThree = createRef<HTMLDivElement>();
   }
 
   // Toggle currently active tab
-  private handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
+  private handleTabClick = (_event: ReactMouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey2: tabIndex
     });
@@ -31,7 +32,7 @@ export class TabsStringEventKeyDemo extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
           <Tab
             id="demoTabOne"
@@ -66,7 +67,7 @@ export class TabsStringEventKeyDemo extends Component {
             Tab 3 section
           </TabContent>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 
-export interface FormSelectOptionGroupProps extends Omit<React.HTMLProps<HTMLOptGroupElement>, 'disabled'> {
+export interface FormSelectOptionGroupProps extends Omit<HTMLProps<HTMLOptGroupElement>, 'disabled'> {
   /** content rendered inside the Select Option Group */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** additional classes added to the Select Option */
   className?: string;
   /** the label for the option */
@@ -11,7 +11,7 @@ export interface FormSelectOptionGroupProps extends Omit<React.HTMLProps<HTMLOpt
   isDisabled?: boolean;
 }
 
-export const FormSelectOptionGroup: React.FunctionComponent<FormSelectOptionGroupProps> = ({
+export const FormSelectOptionGroup: FunctionComponent<FormSelectOptionGroupProps> = ({
   children = null,
   className = '',
   isDisabled = false,

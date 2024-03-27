@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, Ref, FunctionComponent, CSSProperties, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import cssMaxWidth from '@patternfly/react-tokens/dist/esm/c_form_m_limit_width_MaxWidth';
 
-export interface FormProps extends Omit<React.HTMLProps<HTMLFormElement>, 'ref'> {
+export interface FormProps extends Omit<HTMLProps<HTMLFormElement>, 'ref'> {
   /** Anything that can be rendered as Form content. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the Form. */
   className?: string;
   /** Sets the Form to horizontal. */
@@ -15,10 +15,10 @@ export interface FormProps extends Omit<React.HTMLProps<HTMLFormElement>, 'ref'>
   /** Sets a custom max-width for the form. */
   maxWidth?: string;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
 }
 
-const FormBase: React.FunctionComponent<FormProps> = ({
+const FormBase: FunctionComponent<FormProps> = ({
   children = null,
   className = '',
   isHorizontal = false,
@@ -33,7 +33,7 @@ const FormBase: React.FunctionComponent<FormProps> = ({
       style: {
         [cssMaxWidth.name]: maxWidth,
         ...props.style
-      } as React.CSSProperties
+      } as CSSProperties
     })}
     {...props}
     className={css(
@@ -48,6 +48,6 @@ const FormBase: React.FunctionComponent<FormProps> = ({
   </form>
 );
 
-export const Form = React.forwardRef((props: FormProps, ref: React.Ref<any>) => <FormBase innerRef={ref} {...props} />);
+export const Form = forwardRef((props: FormProps, ref: Ref<any>) => <FormBase innerRef={ref} {...props} />);
 
 Form.displayName = 'Form';

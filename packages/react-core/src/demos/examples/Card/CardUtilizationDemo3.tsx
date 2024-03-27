@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import React from 'react';
+import { FunctionComponent, Ref, useState, Fragment } from 'react';
 import {
   Card,
   CardTitle,
@@ -26,8 +26,8 @@ import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_r
 import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
 import text from '@patternfly/react-styles/css/utilities/Text/text';
 
-export const CardUtilizationDemo3: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const CardUtilizationDemo3: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const selectItems = (
     <SelectList>
@@ -46,7 +46,7 @@ export const CardUtilizationDemo3: React.FunctionComponent = () => {
     </SelectList>
   );
 
-  const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
+  const toggle = (toggleRef: Ref<MenuToggleElement>) => (
     <MenuToggle ref={toggleRef} onClick={() => setIsOpen(!isOpen)} isExpanded={isOpen} variant="plainText">
       Filter
     </MenuToggle>
@@ -59,7 +59,7 @@ export const CardUtilizationDemo3: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <b>Note:</b> Custom CSS is used in this demo to align the card title and select toggle text to{' '}
       <code>baseline</code> alignment.
       <br />
@@ -169,6 +169,6 @@ export const CardUtilizationDemo3: React.FunctionComponent = () => {
           </Card>
         </GalleryItem>
       </Gallery>
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Ref, useState, Fragment } from 'react';
 import {
   Hint,
   HintBody,
@@ -13,8 +13,8 @@ import {
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const HintBasicWithoutTitle: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+export const HintBasicWithoutTitle: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const onToggle = () => {
     setIsOpen(!isOpen);
@@ -29,7 +29,7 @@ export const HintBasicWithoutTitle: React.FunctionComponent = () => {
       isOpen={isOpen}
       onSelect={onSelect}
       onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
-      toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+      toggle={(toggleRef: Ref<MenuToggleElement>) => (
         <MenuToggle
           ref={toggleRef}
           aria-label="Without title example kebab toggle"
@@ -71,7 +71,7 @@ export const HintBasicWithoutTitle: React.FunctionComponent = () => {
     </Dropdown>
   );
   return (
-    <React.Fragment>
+    <Fragment>
       <Hint>
         <HintBody>
           Welcome to the new documentation experience.
@@ -91,6 +91,6 @@ export const HintBasicWithoutTitle: React.FunctionComponent = () => {
           </Button>
         </HintFooter>
       </Hint>
-    </React.Fragment>
+    </Fragment>
   );
 };

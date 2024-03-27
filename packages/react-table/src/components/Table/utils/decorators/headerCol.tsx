@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
 
 export const headerCol = (id = 'simple-node') => {
@@ -6,7 +6,7 @@ export const headerCol = (id = 'simple-node') => {
     const result = typeof value === 'object' ? value.title : value;
     return {
       component: 'th',
-      children: <div id={`${id}${rowIndex}`}>{result as React.ReactNode}</div>
+      children: <div id={`${id}${rowIndex}`}>{result as ReactNode}</div>
     };
   };
 

@@ -1,4 +1,17 @@
-import * as React from 'react';
+import {
+  HTMLProps,
+  ReactNode,
+  MouseEvent,
+  ChangeEvent,
+  KeyboardEvent,
+  FunctionComponent,
+  ReactElement,
+  useRef,
+  useState,
+  useContext,
+  useEffect,
+  memo
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
@@ -7,9 +20,9 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import { flattenTree } from './treeUtils';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 
-export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIElement> {
+export interface DualListSelectorTreeItemProps extends HTMLProps<HTMLLIElement> {
   /** Content rendered inside the dual list selector. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes applied to the dual list selector. */
   className?: string;
   /** Flag indicating this option is expanded by default. */
@@ -18,7 +31,7 @@ export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIEle
   hasBadge?: boolean;
   /** Callback fired when an option is checked. */
   onOptionCheck?: (
-    event: React.MouseEvent | React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent,
+    event: MouseEvent | ChangeEvent<HTMLInputElement> | KeyboardEvent,
     isChecked: boolean,
     itemData: DualListSelectorTreeItemData
   ) => void;
@@ -40,7 +53,7 @@ export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIEle
   useMemo?: boolean;
 }
 
-const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTreeItemProps> = ({
+const DualListSelectorTreeItemBase: FunctionComponent<DualListSelectorTreeItemProps> = ({
   onOptionCheck,
   children,
   className,
@@ -57,11 +70,11 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
   useMemo,
   ...props
 }: DualListSelectorTreeItemProps) => {
-  const ref = React.useRef(null);
-  const [isExpanded, setIsExpanded] = React.useState(defaultExpanded || false);
-  const { setFocusedOption } = React.useContext(DualListSelectorListContext);
+  const ref = useRef(null);
+  const [isExpanded, setIsExpanded] = useState(defaultExpanded || false);
+  const { setFocusedOption } = useContext(DualListSelectorListContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsExpanded(defaultExpanded);
   }, [defaultExpanded]);
 
@@ -110,7 +123,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
                   }
                   e.stopPropagation();
                 }}
-                onKeyDown={(e: React.KeyboardEvent) => {
+                onKeyDown={(e: KeyboardEvent) => {
                   if (e.key === ' ' || e.key === 'Enter') {
                     (document.activeElement as HTMLElement).click();
                     e.preventDefault();
@@ -126,12 +139,12 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
             <span className={css(styles.dualListSelectorItemCheck)}>
               <input
                 type="checkbox"
-                onChange={(evt: React.ChangeEvent<HTMLInputElement>) => {
+                onChange={(evt: ChangeEvent<HTMLInputElement>) => {
                   onOptionCheck && onOptionCheck(evt, !isChecked, itemData);
                   setFocusedOption(id);
                 }}
-                onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
-                onKeyDown={(e: React.KeyboardEvent) => {
+                onClick={(evt: MouseEvent) => evt.stopPropagation()}
+                onKeyDown={(e: KeyboardEvent) => {
                   if (e.key === ' ' || e.key === 'Enter') {
                     onOptionCheck && onOptionCheck(e, !isChecked, itemData);
                     setFocusedOption(id);
@@ -148,7 +161,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
             <span className={css(styles.dualListSelectorItemText)}>{text}</span>
             {hasBadge && children && (
               <span className={css(styles.dualListSelectorItemCount)}>
-                <Badge {...badgeProps}>{flattenTree((children as React.ReactElement).props.data).length}</Badge>
+                <Badge {...badgeProps}>{flattenTree((children as ReactElement).props.data).length}</Badge>
               </span>
             )}
           </span>
@@ -159,7 +172,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
   );
 };
 
-export const DualListSelectorTreeItem = React.memo(DualListSelectorTreeItemBase, (prevProps, nextProps) => {
+export const DualListSelectorTreeItem = memo(DualListSelectorTreeItemBase, (prevProps, nextProps) => {
   if (!nextProps.useMemo) {
     return false;
   }

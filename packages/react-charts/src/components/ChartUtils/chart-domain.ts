@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement } from 'react';
 import { Data, DataGetterPropType } from 'victory-core';
 
 interface DomainInterface {
@@ -13,7 +13,7 @@ interface SourcesInterface {
   maxDomain?: any;
   minDomain?: any;
   sources?: {
-    component?: React.ReactElement<any>;
+    component?: ReactElement<any>;
     data?: any;
   }[];
 }

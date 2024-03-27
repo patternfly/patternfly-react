@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
-export const ToggleGroupCompact: React.FunctionComponent = () => {
-  const [isSelected, setIsSelected] = React.useState({
+export const ToggleGroupCompact: FunctionComponent = () => {
+  const [isSelected, setIsSelected] = useState({
     'toggle-group-compact-1': false,
     'toggle-group-compact-2': false
   });

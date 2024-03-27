@@ -1,15 +1,15 @@
-import React from 'react';
+import { FunctionComponent, useState, useEffect } from 'react';
 import { Form, FormGroup, FormHelperText, TextInput, HelperText, HelperTextItem } from '@patternfly/react-core';
 
-export const HelperTextStaticVariantDynamicText: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
-  const [inputValidation, setInputValidation] = React.useState('default');
+export const HelperTextStaticVariantDynamicText: FunctionComponent = () => {
+  const [value, setValue] = useState('');
+  const [inputValidation, setInputValidation] = useState('default');
 
   const handleInputChange = (_event, inputValue: string) => {
     setValue(inputValue);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (value === '') {
       setInputValidation('default');
     } else if (value === 'johndoe') {

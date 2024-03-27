@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Table, Caption, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 interface Repository {
@@ -9,7 +9,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const TableStriped: React.FunctionComponent = () => {
+export const TableStriped: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'Repository 1', branches: 10, prs: 25, workspaces: 5, lastCommit: '2 days ago' },

@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 import { css } from '@patternfly/react-styles';
 
-export interface DescriptionListGroupProps extends React.HTMLProps<HTMLDivElement> {
+export interface DescriptionListGroupProps extends HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the list group */
   children?: any;
   /** Additional classes added to the DescriptionListGroup */
   className?: string;
 }
 
-export const DescriptionListGroup: React.FunctionComponent<DescriptionListGroupProps> = ({
+export const DescriptionListGroup: FunctionComponent<DescriptionListGroupProps> = ({
   className,
   children,
   ...props

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Alert,
   Form,
@@ -11,11 +11,11 @@ import {
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
-export const FormInvalidWithAlert: React.FunctionComponent = () => {
+export const FormInvalidWithAlert: FunctionComponent = () => {
   type validate = 'success' | 'warning' | 'error' | 'default';
 
-  const [age, setAge] = React.useState('Five');
-  const [validated, setValidated] = React.useState<validate>('error');
+  const [age, setAge] = useState('Five');
+  const [validated, setValidated] = useState<validate>('error');
 
   const handleAgeChange = (_event, age: string) => {
     setAge(age);

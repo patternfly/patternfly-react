@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent, KeyboardEvent, HTMLProps, Component, Fragment } from 'react';
 import {
   OptionsMenu,
   OptionsMenuProps,
@@ -20,7 +20,7 @@ interface OptionsMenuDemoState {
   toggleTemplateText: string;
 }
 
-export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElement>, OptionsMenuDemoState> {
+export class OptionsMenuDemo extends Component<HTMLProps<HTMLDivElement>, OptionsMenuDemoState> {
   static displayName = 'OptionsMenuDemo';
   state = {
     singleOptionIsOpen: false,
@@ -42,7 +42,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
     this.setState({ disabledOptionsIsOpen: !this.state.disabledOptionsIsOpen });
   };
 
-  onSelect = (event?: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent) => {
+  onSelect = (event?: MouseEvent<HTMLAnchorElement> | KeyboardEvent) => {
     if (event) {
       const id = event.currentTarget.id;
       this.setState(() => ({ selectedOption: id }));
@@ -85,7 +85,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
       toggle: (
         <OptionsMenuToggle
           onToggle={this.singleOptionOnToggle}
-          toggleTemplate={<React.Fragment>{this.state.toggleTemplateText}</React.Fragment>}
+          toggleTemplate={<Fragment>{this.state.toggleTemplateText}</Fragment>}
         />
       ),
       isOpen: this.state.singleOptionIsOpen
@@ -104,7 +104,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
       ],
       toggle: (
         <OptionsMenuToggleWithText
-          toggleText={<React.Fragment>Custom text</React.Fragment>}
+          toggleText={<Fragment>Custom text</Fragment>}
           toggleButtonContents={<CaretDownIcon />}
           onToggle={this.modifiedOnToggle}
         />
@@ -123,14 +123,14 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
         <OptionsMenuToggle
           isDisabled
           onToggle={this.disabledOnToggle}
-          toggleTemplate={<React.Fragment>{this.state.toggleTemplateText}</React.Fragment>}
+          toggleTemplate={<Fragment>{this.state.toggleTemplateText}</Fragment>}
         />
       ),
       isOpen: this.state.disabledOptionsIsOpen
     };
 
     return (
-      <React.Fragment>
+      <Fragment>
         <OptionsMenu
           id={myOptionsMenuProps.id}
           menuItems={myOptionsMenuProps.menuItems}
@@ -155,7 +155,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
           isOpen={myDisabledOptionsMenuProps.isOpen}
           toggle={myDisabledOptionsMenuProps.toggle}
         />
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, HTMLProps, RefObject, createRef, Component } from 'react';
 import { KeyTypes } from '../../../helpers/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
@@ -15,13 +15,13 @@ export interface WizardStep {
   /** Optional identifier */
   id?: string | number;
   /** The name of the step */
-  name: React.ReactNode;
+  name: ReactNode;
   /** The component to render in the main body */
   component?: any;
   /** The content to render in the drawer panel (use when hasDrawer prop is set on the wizard).   */
   drawerPanelContent?: any;
   /** Custom drawer toggle button that opens the drawer. */
-  drawerToggleButton?: React.ReactNode;
+  drawerToggleButton?: ReactNode;
   /** Setting to true hides the side nav and footer */
   isFinishedStep?: boolean;
   /** Enables or disables the step in the navigation. Enabled by default. */
@@ -29,9 +29,9 @@ export interface WizardStep {
   /** Sub steps */
   steps?: WizardStep[];
   /** Props to pass to the WizardNavItem */
-  stepNavItemProps?: React.HTMLProps<HTMLButtonElement | HTMLAnchorElement> | WizardNavItemProps;
+  stepNavItemProps?: HTMLProps<HTMLButtonElement | HTMLAnchorElement> | WizardNavItemProps;
   /** (Unused if footer is controlled) Can change the Next button text. If nextButtonText is also set for the Wizard, this step specific one overrides it. */
-  nextButtonText?: React.ReactNode;
+  nextButtonText?: ReactNode;
   /** (Unused if footer is controlled) The condition needed to enable the Next button */
   enableNext?: boolean;
   /** (Unused if footer is controlled) True to hide the Cancel button */
@@ -43,11 +43,11 @@ export interface WizardStep {
 }
 
 export type WizardStepFunctionType = (
-  newStep: { id?: string | number; name: React.ReactNode },
-  prevStep: { prevId?: string | number; prevName: React.ReactNode }
+  newStep: { id?: string | number; name: ReactNode },
+  prevStep: { prevId?: string | number; prevName: ReactNode }
 ) => void;
 
-export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
+export interface WizardProps extends HTMLProps<HTMLDivElement> {
   /** Custom width of the wizard */
   width?: number | string;
   /** Custom height of the wizard */
@@ -59,7 +59,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   /** An optional id for the description */
   descriptionId?: string;
   /** The wizard description */
-  description?: React.ReactNode;
+  description?: ReactNode;
   /** Component type of the description */
   descriptionComponent?: 'div' | 'p';
   /** Flag indicating whether the close button should be in the header */
@@ -89,7 +89,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   /** Can remove the default padding around the main body content by setting this to true */
   hasNoBodyPadding?: boolean;
   /** (Use to control the footer) Passing in a footer component lets you control the buttons yourself */
-  footer?: React.ReactNode;
+  footer?: ReactNode;
   /** (Unused if footer is controlled) Callback function to save at the end of the wizard, if not specified uses onClose */
   onSave?: () => void;
   /** (Unused if footer is controlled) Callback function after Next button is clicked */
@@ -97,11 +97,11 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   /** (Unused if footer is controlled) Callback function after Back button is clicked */
   onBack?: WizardStepFunctionType;
   /** (Unused if footer is controlled) The Next button text */
-  nextButtonText?: React.ReactNode;
+  nextButtonText?: ReactNode;
   /** (Unused if footer is controlled) The Back button text */
-  backButtonText?: React.ReactNode;
+  backButtonText?: ReactNode;
   /** (Unused if footer is controlled) The Cancel button text */
-  cancelButtonText?: React.ReactNode;
+  cancelButtonText?: ReactNode;
   /** (Unused if footer is controlled) aria-label for the close button */
   closeButtonAriaLabel?: string;
   /** The parent container to append the modal to. Defaults to document.body */
@@ -125,7 +125,7 @@ interface WizardState {
   isNavOpen: boolean;
 }
 
-class Wizard extends React.Component<WizardProps, WizardState> {
+class Wizard extends Component<WizardProps, WizardState> {
   static displayName = 'Wizard';
   private static currentId = 0;
   static defaultProps: PickOptional<WizardProps> = {
@@ -149,7 +149,7 @@ class Wizard extends React.Component<WizardProps, WizardState> {
     onGoToStep: null as WizardStepFunctionType,
     width: null as string,
     height: null as string,
-    footer: null as React.ReactNode,
+    footer: null as ReactNode,
     onClose: () => undefined as any,
     appendTo: null as HTMLElement,
     isOpen: undefined,
@@ -160,7 +160,7 @@ class Wizard extends React.Component<WizardProps, WizardState> {
   };
   private titleId: string;
   private descriptionId: string;
-  private drawerRef: React.RefObject<any>;
+  private drawerRef: RefObject<any>;
 
   constructor(props: WizardProps) {
     super(props);
@@ -181,7 +181,7 @@ class Wizard extends React.Component<WizardProps, WizardState> {
       }
     }
 
-    this.drawerRef = React.createRef();
+    this.drawerRef = createRef();
   }
 
   private handleKeyClicks = (event: KeyboardEvent): void => {
@@ -320,7 +320,7 @@ class Wizard extends React.Component<WizardProps, WizardState> {
     return flattenedSteps;
   };
 
-  private getFlattenedStepsIndex = (flattenedSteps: WizardStep[], stepName: React.ReactNode): number => {
+  private getFlattenedStepsIndex = (flattenedSteps: WizardStep[], stepName: ReactNode): number => {
     for (let i = 0; i < flattenedSteps.length; i++) {
       if (flattenedSteps[i].name === stepName) {
         return i + 1;

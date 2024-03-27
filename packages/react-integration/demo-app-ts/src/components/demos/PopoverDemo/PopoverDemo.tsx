@@ -1,8 +1,8 @@
 import { Popover } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { RefObject, createRef, Component } from 'react';
 
 export class PopoverDemo extends Component {
-  popoverRef: React.RefObject<HTMLButtonElement>;
+  popoverRef: RefObject<HTMLButtonElement>;
   myPopoverProps = {
     headerContent: <div>Popover Header</div>,
     bodyContent: <div>Popover Body</div>,
@@ -11,7 +11,7 @@ export class PopoverDemo extends Component {
 
   constructor(props: any) {
     super(props);
-    this.popoverRef = React.createRef();
+    this.popoverRef = createRef();
   }
 
   componentDidMount() {

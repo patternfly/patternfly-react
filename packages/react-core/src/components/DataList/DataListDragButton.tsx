@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
 
-export interface DataListDragButtonProps extends React.HTMLProps<HTMLButtonElement> {
+export interface DataListDragButtonProps extends HTMLProps<HTMLButtonElement> {
   /** Additional classes added to the drag button */
   className?: string;
   /** Sets button type */
@@ -12,7 +12,7 @@ export interface DataListDragButtonProps extends React.HTMLProps<HTMLButtonEleme
   isDisabled?: boolean;
 }
 
-export const DataListDragButton: React.FunctionComponent<DataListDragButtonProps> = ({
+export const DataListDragButton: FunctionComponent<DataListDragButtonProps> = ({
   className = '',
   isDisabled = false,
   ...props

@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactElement, FunctionComponent, useState } from 'react';
 import {
   ApplicationLauncher,
   ApplicationLauncherItem,
@@ -9,7 +9,7 @@ import pfLogoSm from '@patternfly/react-core/src/demos/assets/pf-logo-small.svg'
 
 const icon = <img src={pfLogoSm} />;
 
-const appLauncherItems: React.ReactElement[] = [
+const appLauncherItems: ReactElement[] = [
   <ApplicationLauncherGroup key="group 1c">
     <ApplicationLauncherItem key="group 1a" icon={icon}>
       Item without group title
@@ -35,8 +35,8 @@ const appLauncherItems: React.ReactElement[] = [
   </ApplicationLauncherGroup>
 ];
 
-export const ApplicationLauncherSectionsAndIcons: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const ApplicationLauncherSectionsAndIcons: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => setIsOpen(isOpen);
   const onSelect = (_event: any) => setIsOpen((prevIsOpen) => !prevIsOpen);

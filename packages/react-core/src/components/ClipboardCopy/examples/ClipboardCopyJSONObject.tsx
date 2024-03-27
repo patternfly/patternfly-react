@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
-export const ClipboardCopyJSONObject: React.FunctionComponent = () => (
+export const ClipboardCopyJSONObject: FunctionComponent = () => (
   <ClipboardCopy isCode hoverTip="Copy" clickTip="Copied" variant={ClipboardCopyVariant.expansion}>
     {`{ "menu": {
     "id": "file",

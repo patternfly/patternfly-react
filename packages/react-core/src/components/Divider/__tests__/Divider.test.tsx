@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Divider } from '../Divider';
 import styles from '@patternfly/react-styles/css/components/Divider/divider';

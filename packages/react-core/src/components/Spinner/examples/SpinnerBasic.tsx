@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Spinner } from '@patternfly/react-core';
 
-export const SpinnerBasic: React.FunctionComponent = () => <Spinner aria-label="Contents of the basic example" />;
+export const SpinnerBasic: FunctionComponent = () => <Spinner aria-label="Contents of the basic example" />;

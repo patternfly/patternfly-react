@@ -1,4 +1,15 @@
-import * as React from 'react';
+import {
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type Ref,
+  type HTMLProps,
+  type ReactNode,
+  type FunctionComponent,
+  useState,
+  cloneElement,
+  type ReactElement,
+  forwardRef
+} from 'react';
 import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core/dist/esm/components/Dropdown';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
@@ -8,12 +19,12 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 
 export interface CustomActionsToggleProps {
-  onToggle: (event: React.MouseEvent | React.KeyboardEvent) => void;
+  onToggle: (event: ReactMouseEvent | ReactKeyboardEvent) => void;
   isOpen: boolean;
   isDisabled: boolean;
-  toggleRef: React.Ref<any>;
+  toggleRef: Ref<any>;
 }
-export interface ActionsColumnProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
+export interface ActionsColumnProps extends Omit<HTMLProps<HTMLElement>, 'label'> {
   /** Actions to be rendered within or without the action dropdown */
   items: IAction[];
   /** Indicates whether the actions dropdown is disabled */
@@ -23,18 +34,18 @@ export interface ActionsColumnProps extends Omit<React.HTMLProps<HTMLElement>, '
   /** Extra data of a row */
   extraData?: IExtraData;
   /** Custom actions toggle for the actions dropdown */
-  actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
+  actionsToggle?: (props: CustomActionsToggleProps) => ReactNode;
   /** Additional properties for the actions dropdown popper */
   popperProps?: any;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
   /** Ref to forward to the first item in the popup menu */
-  firstActionItemRef?: React.Ref<HTMLButtonElement>;
+  firstActionItemRef?: Ref<HTMLButtonElement>;
   /** Flag indicating that the dropdown's onOpenChange callback should not be called. */
   isOnOpenChangeDisabled?: boolean;
 }
 
-const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
+const ActionsColumnBase: FunctionComponent<ActionsColumnProps> = ({
   items,
   isDisabled,
   rowData,
@@ -49,35 +60,35 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
   isOnOpenChangeDisabled = false,
   ...props
 }: ActionsColumnProps) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = () => {
     setIsOpen(!isOpen);
   };
 
   const onActionClick = (
-    event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
+    event: ReactMouseEvent<any> | ReactKeyboardEvent | MouseEvent,
     onClick:
-      | ((event: React.MouseEvent, rowIndex: number | undefined, rowData: IRowData, extraData: IExtraData) => void)
+      | ((event: ReactMouseEvent, rowIndex: number | undefined, rowData: IRowData, extraData: IExtraData) => void)
       | undefined
   ): void => {
     // Only prevent default if onClick is provided.  This allows href support.
     if (onClick) {
       event.preventDefault();
       // tslint:disable-next-line:no-unused-expression
-      onClick(event as React.MouseEvent, extraData && extraData.rowIndex, rowData, extraData);
+      onClick(event as ReactMouseEvent, extraData && extraData.rowIndex, rowData, extraData);
     }
   };
 
   return (
-    <React.Fragment>
+    <>
       {items
         .filter((item) => item.isOutsideDropdown)
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         .map(({ title, itemKey, onClick, isOutsideDropdown, ...props }, key) =>
           typeof title === 'string' ? (
             <Button
-              onClick={(event: MouseEvent | React.MouseEvent<any, MouseEvent> | React.KeyboardEvent<Element>) =>
+              onClick={(event: MouseEvent | ReactMouseEvent<any, MouseEvent> | ReactKeyboardEvent<Element>) =>
                 onActionClick(event, onClick)
               }
               {...(props as any)}
@@ -88,7 +99,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
               {title}
             </Button>
           ) : (
-            React.cloneElement(title as React.ReactElement, { onClick, isDisabled, ...props })
+            cloneElement(title as ReactElement, { onClick, isDisabled, ...props })
           )
         )}
 
@@ -152,11 +163,11 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
             )}
         </DropdownList>
       </Dropdown>
-    </React.Fragment>
+    </>
   );
 };
 
-export const ActionsColumn = React.forwardRef((props: ActionsColumnProps, ref: React.Ref<HTMLElement>) => (
+export const ActionsColumn = forwardRef((props: ActionsColumnProps, ref: Ref<HTMLElement>) => (
   <ActionsColumnBase {...props} innerRef={ref} />
 ));
 ActionsColumn.displayName = 'ActionsColumn';

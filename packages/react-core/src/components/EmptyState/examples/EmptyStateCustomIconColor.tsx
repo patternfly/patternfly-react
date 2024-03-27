@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { EmptyState, EmptyStateBody, EmptyStateHeader, EmptyStateIcon } from '@patternfly/react-core';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 /* eslint-disable camelcase */
 import global_success_color_100 from '@patternfly/react-tokens/dist/esm/global_success_color_100';
 
-export const EmptyStateCustomIconColor: React.FunctionComponent = () => (
+export const EmptyStateCustomIconColor: FunctionComponent = () => (
   <EmptyState>
     <EmptyStateHeader
       titleText="Custom icon color"

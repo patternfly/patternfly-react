@@ -1,11 +1,11 @@
 import { Select, SelectOption, SelectOptionObject, SelectVariant } from '@patternfly/react-core/deprecated';
-import React, { Component } from 'react';
+import { ReactNode, MouseEvent, ChangeEvent, Component } from 'react';
 
 /* eslint-disable no-console */
 export interface FilteringSelectLiveUpdateDemoState {
   isOpen: boolean;
   selections: string[];
-  options: React.ReactNode[];
+  options: ReactNode[];
 }
 
 export class FilteringSelectLiveUpdateDemo extends Component<FilteringSelectLiveUpdateDemoState> {
@@ -41,7 +41,7 @@ export class FilteringSelectLiveUpdateDemo extends Component<FilteringSelectLive
     });
   };
 
-  onSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  onSelect = (event: MouseEvent | ChangeEvent, selection: string | SelectOptionObject) => {
     const { selections } = this.state;
     if (selections.includes(selection.toString())) {
       this.setState(

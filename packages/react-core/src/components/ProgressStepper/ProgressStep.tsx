@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { LiHTMLAttributes, DetailedHTMLProps, ReactNode, RefObject, FunctionComponent, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/ProgressStepper/progress-stepper';
 import { css } from '@patternfly/react-styles';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
@@ -15,10 +15,9 @@ export enum ProgressStepVariant {
   warning = 'warning'
 }
 
-export interface ProgressStepProps
-  extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
+export interface ProgressStepProps extends DetailedHTMLProps<LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
   /** Content rendered inside the progress step. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes applied to the progress step container. */
   className?: string;
   /** Variant of the progress step. Each variant has a default icon. */
@@ -26,16 +25,16 @@ export interface ProgressStepProps
   /** Flag indicating the progress step is the current step. */
   isCurrent?: boolean;
   /** Custom icon of a progress step. Will override default icons provided by the variant. */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** Description text of a progress step. */
-  description?: React.ReactNode;
+  description?: ReactNode;
   /** ID of the title of the progress step. */
   titleId?: string;
   /** Accessible label for the progress step. Should communicate all information being communicated by the progress
    * step's icon, including the variant and the completed status. */
   'aria-label'?: string;
   /** Forwards the step ref to rendered function.  Use this prop to add a popover to the step.*/
-  popoverRender?: (stepRef: React.RefObject<any>) => React.ReactNode;
+  popoverRender?: (stepRef: RefObject<any>) => ReactNode;
 }
 
 const variantIcons = {
@@ -56,7 +55,7 @@ const variantStyle = {
   danger: styles.modifiers.danger
 };
 
-export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
+export const ProgressStep: FunctionComponent<ProgressStepProps> = ({
   children,
   className,
   variant,
@@ -70,7 +69,7 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
 }: ProgressStepProps) => {
   const _icon = icon !== undefined ? icon : variantIcons[variant];
   const Component = popoverRender !== undefined ? 'button' : 'div';
-  const stepRef = React.useRef();
+  const stepRef = useRef();
 
   if (props.id === undefined || titleId === undefined) {
     /* eslint-disable no-console */

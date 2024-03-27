@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Wizard, WizardStep } from '@patternfly/react-core';
 
-export const WizardProgressiveSteps: React.FunctionComponent = () => (
+export const WizardProgressiveSteps: FunctionComponent = () => (
   <Wizard height={400} title="Progressive steps wizard" isProgressive>
     <WizardStep id="progressive-step-1" name="Get started">
       Get started content

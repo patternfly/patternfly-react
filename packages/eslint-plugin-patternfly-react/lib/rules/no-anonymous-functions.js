@@ -29,7 +29,7 @@ module.exports = {
         }
         const displayName = declaration.id.name; // AboutModalBoxCloseButton
 
-        // Handle arrow functions like `const AboutModalBoxCloseButton: React.FunctionComponent<AboutModalBoxCloseButtonProps> = ({`
+        // Handle arrow functions like `const AboutModalBoxCloseButton: FunctionComponent<AboutModalBoxCloseButtonProps> = ({`
         const typeAnnotation = declaration.id.typeAnnotation;
         if (
           typeAnnotation &&
@@ -41,10 +41,10 @@ module.exports = {
         ) {
           const displayNameNode = context
             .getSourceCode()
-            .ast.body.filter(n => n.type === 'ExpressionStatement')
-            .filter(n => n.expression.left)
+            .ast.body.filter((n) => n.type === 'ExpressionStatement')
+            .filter((n) => n.expression.left)
             .find(
-              n => n.expression.left.object.name === displayName && n.expression.left.property.name === 'displayName'
+              (n) => n.expression.left.object.name === displayName && n.expression.left.property.name === 'displayName'
             );
           if (!displayNameNode) {
             context.report({
@@ -56,7 +56,7 @@ module.exports = {
             });
           }
         }
-        // Handle class components like `class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState> {`
+        // Handle class components like `class AlertGroup extends Component<AlertGroupProps, AlertGroupState> {`
         if (
           declaration.superClass &&
           declaration.superClass.object &&
@@ -64,7 +64,7 @@ module.exports = {
           declaration.superClass.property.name === 'Component'
         ) {
           const classBody = declaration.body.body;
-          const displayNameNode = classBody.find(n => n.type === 'ClassProperty' && n.key.name === 'displayName');
+          const displayNameNode = classBody.find((n) => n.type === 'ClassProperty' && n.key.name === 'displayName');
           if (!displayNameNode) {
             context.report({
               node,

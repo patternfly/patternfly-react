@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 
 import { BackgroundImage } from '../BackgroundImage';
@@ -12,9 +12,9 @@ import { LoginMainHeader } from './LoginMainHeader';
 import { LoginMainBody } from './LoginMainBody';
 import { LoginMainFooter } from './LoginMainFooter';
 
-export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
+export interface LoginPageProps extends HTMLProps<HTMLDivElement> {
   /** Anything that can be rendered inside of the login page (e.g. <LoginPageForm>) */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the login page */
   className?: string;
   /** Attribute that specifies the URL of the brand image for the login page */
@@ -26,7 +26,7 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside of the text component of the login page */
   textContent?: string;
   /** Items rendered inside of the footer list component of the login page */
-  footerListItems?: React.ReactNode;
+  footerListItems?: ReactNode;
   /** Adds list variant styles for the footer list component of the login page. The only current value is'inline' */
   footerListVariants?: ListVariant.inline;
   /** Title for the login main body header of the login page */
@@ -34,18 +34,18 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   /** Subtitle for the login main body header of the login page */
   loginSubtitle?: string;
   /** Header utilities for the login main body header of the login page */
-  headerUtilities?: React.ReactNode;
+  headerUtilities?: ReactNode;
   /** Content rendered inside of login main footer band to display a sign up for account message */
-  signUpForAccountMessage?: React.ReactNode;
+  signUpForAccountMessage?: ReactNode;
   /** Content rendered inside of login main footer band to display a forgot credentials link. */
-  forgotCredentials?: React.ReactNode;
+  forgotCredentials?: ReactNode;
   /** Content rendered inside of social media login footer section */
-  socialMediaLoginContent?: React.ReactNode;
+  socialMediaLoginContent?: ReactNode;
   /** Adds an accessible name to the social media login list. */
   socialMediaLoginAriaLabel?: string;
 }
 
-export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
+export const LoginPage: FunctionComponent<LoginPageProps> = ({
   children = null,
   className = '',
   brandImgSrc = '',
@@ -64,9 +64,9 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
   ...props
 }: LoginPageProps) => {
   const HeaderBrand = (
-    <React.Fragment>
+    <Fragment>
       <Brand src={brandImgSrc} alt={brandImgAlt} />
-    </React.Fragment>
+    </Fragment>
   );
   const Header = <LoginHeader headerBrand={HeaderBrand} />;
   const Footer = (
@@ -77,7 +77,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       {backgroundImgSrc && <BackgroundImage src={backgroundImgSrc} />}
       <Login header={Header} footer={Footer} className={css(className)} {...props}>
         <LoginMainHeader title={loginTitle} subtitle={loginSubtitle} headerUtilities={headerUtilities} />
@@ -91,7 +91,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
           />
         )}
       </Login>
-    </React.Fragment>
+    </Fragment>
   );
 };
 LoginPage.displayName = 'LoginPage';

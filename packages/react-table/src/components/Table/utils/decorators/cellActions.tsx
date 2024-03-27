@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { ActionsColumn } from '../../ActionsColumn';
@@ -62,7 +62,7 @@ export const cellActions =
                 actionsToggle={actionsToggle}
                 popperProps={actionsPopperProps}
               >
-                {label as React.ReactNode}
+                {label as ReactNode}
               </ActionsColumn>
             )
           }

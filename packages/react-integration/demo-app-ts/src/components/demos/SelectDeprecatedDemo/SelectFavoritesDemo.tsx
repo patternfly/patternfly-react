@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { MouseEvent, ChangeEvent, Component } from 'react';
 import {
   StackItem,
   Title
@@ -110,14 +110,14 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
     });
   };
 
-  onSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  onSelect = (event: MouseEvent | ChangeEvent, selection: string) => {
     this.setState({
       selected: selection,
       isOpen: false
     });
   };
 
-  onSelectGrouped = (event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  onSelectGrouped = (event: MouseEvent | ChangeEvent, selection: string) => {
     this.setState({
       selectedGrouped: selection,
       isOpenGrouped: false
@@ -125,7 +125,7 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
   };
 
   typeaheadOnSelect = (
-    _event: React.MouseEvent | React.ChangeEvent,
+    _event: MouseEvent | ChangeEvent,
     selection: string | SelectOptionObject | (string | SelectOptionObject)[],
     isPlaceholder?: boolean
   ) => {
@@ -139,7 +139,7 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
       console.log('selected:', selection.toString());
     }
   };
-  typeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  typeaheadMultiOnSelect = (_event: MouseEvent | ChangeEvent, selection: string | SelectOptionObject) => {
     const { typeaheadMultiSelected } = this.state;
     if (typeaheadMultiSelected.includes(selection.toString())) {
       this.setState(

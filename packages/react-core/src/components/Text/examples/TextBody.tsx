@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { TextContent, Text, TextVariants } from '@patternfly/react-core';
 
-export const TextBody: React.FunctionComponent = () => (
+export const TextBody: FunctionComponent = () => (
   <TextContent>
     <Text component={TextVariants.p}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla

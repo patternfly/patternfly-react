@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, ComponentType, FunctionComponent, useState, useRef } from 'react';
 import modalStyles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import { css } from '@patternfly/react-styles';
 import { capitalize } from '../../../helpers';
@@ -19,15 +19,15 @@ export interface ModalBoxTitleProps {
   /** Id of the modal box title. */
   id?: string;
   /** Content rendered inside the modal box title. */
-  title: React.ReactNode;
+  title: ReactNode;
   /** Optional alert icon (or other) to show before the title. When the predefined alert types
    * are used the default styling will be automatically applied. */
-  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | React.ComponentType<any>;
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | ComponentType<any>;
   /** Optional title label text for screen readers. */
   titleScreenReaderText?: string;
 }
 
-export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
+export const ModalBoxTitle: FunctionComponent<ModalBoxTitleProps> = ({
   className,
   id,
   title,
@@ -35,8 +35,8 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
   titleScreenReaderText,
   ...props
 }: ModalBoxTitleProps) => {
-  const [hasTooltip, setHasTooltip] = React.useState(false);
-  const h1 = React.useRef<HTMLHeadingElement>(null);
+  const [hasTooltip, setHasTooltip] = useState(false);
+  const h1 = useRef<HTMLHeadingElement>(null);
   const label =
     titleScreenReaderText ||
     (isVariantIcon(titleIconVariant) ? `${capitalize(titleIconVariant)} alert:` : titleScreenReaderText);

@@ -9,7 +9,7 @@ import {
   SelectGroup,
   SelectVariant
 } from '@patternfly/react-core/deprecated';
-import React, { Component } from 'react';
+import { MouseEvent, ChangeEvent, ReactElement, cloneElement, Component } from 'react';
 
 /* eslint-disable no-console */
 export interface SelectFooterFilteringDemoState {
@@ -43,7 +43,7 @@ export class SelectFooterFilteringDemo extends Component<SelectFooterFilteringDe
     });
   };
 
-  onSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  onSelect = (_event: MouseEvent | ChangeEvent, selection: string | SelectOptionObject) => {
     const { selections } = this.state;
     if (selections.includes(selection.toString())) {
       this.setState(
@@ -65,9 +65,9 @@ export class SelectFooterFilteringDemo extends Component<SelectFooterFilteringDe
       return this.options;
     } else {
       return this.options
-        .map((group: React.ReactElement) => {
-          const filteredGroup = React.cloneElement(group, {
-            children: group.props.children.filter((item: React.ReactElement) =>
+        .map((group: ReactElement) => {
+          const filteredGroup = cloneElement(group, {
+            children: group.props.children.filter((item: ReactElement) =>
               item.props.value.toLowerCase().includes(textInput.toLowerCase())
             )
           });

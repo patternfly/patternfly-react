@@ -1,16 +1,21 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent
+} from 'react';
 import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
-export const PaginationBottom: React.FunctionComponent = () => {
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
+export const PaginationBottom: FunctionComponent = () => {
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
 
-  const onSetPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPage: number) => {
+  const onSetPage = (_event: ReactMouseEvent | ReactKeyboardEvent | MouseEvent, newPage: number) => {
     setPage(newPage);
   };
 
   const onPerPageSelect = (
-    _event: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    _event: ReactMouseEvent | ReactKeyboardEvent | MouseEvent,
     newPerPage: number,
     newPage: number
   ) => {

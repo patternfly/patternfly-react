@@ -1,4 +1,4 @@
-import React from 'react';
+import { FormEvent } from 'react';
 
 import { render, screen } from '@testing-library/react';
 
@@ -325,7 +325,7 @@ describe('Table', () => {
           parent: 0
         }
       ],
-      onSelect: (e: React.FormEvent<HTMLInputElement>) => e
+      onSelect: (e: FormEvent<HTMLInputElement>) => e
     };
 
     const { asFragment } = render(

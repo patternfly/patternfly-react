@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
 const text = [
@@ -7,7 +7,7 @@ const text = [
   'Click that arrow on the left side and check out the resulting expansion.'
 ];
 
-export const ClipboardCopyExpandedWithArray: React.FunctionComponent = () => (
+export const ClipboardCopyExpandedWithArray: FunctionComponent = () => (
   <ClipboardCopy hoverTip="Copy" clickTip="Copied" variant={ClipboardCopyVariant.expansion}>
     {text.join(' ')}
   </ClipboardCopy>

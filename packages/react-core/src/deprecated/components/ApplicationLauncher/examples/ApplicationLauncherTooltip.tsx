@@ -1,7 +1,7 @@
-import React from 'react';
+import { ReactElement, FunctionComponent, useState } from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core/deprecated';
 
-const appLauncherItems: React.ReactElement[] = [
+const appLauncherItems: ReactElement[] = [
   <ApplicationLauncherItem key="application_1b" href="#" tooltip={<div>Launch Application 1</div>}>
     Application 1 (anchor link)
   </ApplicationLauncherItem>,
@@ -25,8 +25,8 @@ const appLauncherItems: React.ReactElement[] = [
   </ApplicationLauncherItem>
 ];
 
-export const ApplicationLauncherTooltip: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const ApplicationLauncherTooltip: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => setIsOpen(isOpen);
   const onSelect = (_event: any) => setIsOpen((prevIsOpen) => !prevIsOpen);

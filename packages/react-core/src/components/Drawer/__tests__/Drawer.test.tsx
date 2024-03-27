@@ -9,7 +9,7 @@ import {
   DrawerColorVariant,
   DrawerPanelContent
 } from '../';
-import React from 'react';
+import { createContext } from 'react';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { KeyTypes } from '../../../helpers';
@@ -130,7 +130,7 @@ test(`Drawer has resizable callback and id`, () => {
 });
 
 test('Resizeable DrawerPanelContent can be wrapped in a context without causing an error', async () => {
-  const TestContext = React.createContext({});
+  const TestContext = createContext({});
 
   const consoleError = jest.spyOn(console, 'error').mockImplementation();
 

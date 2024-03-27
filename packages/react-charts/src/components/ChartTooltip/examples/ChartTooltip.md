@@ -45,7 +45,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 This demonstrates how to use a voronoi container to display tooltips.
 
 ```js
-import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '800px' }}>
@@ -109,10 +108,10 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
 This demonstrates how to combine cursor and voronoi containers to display tooltips along with a vertical cursor.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, createContainer } from '@patternfly/react-charts';
 
-class CombinedCursorVoronoiContainer extends React.Component {
+class CombinedCursorVoronoiContainer extends Component {
   render() {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("voronoi", "cursor");
@@ -199,10 +198,10 @@ class CombinedCursorVoronoiContainer extends React.Component {
 This demonstrates how to embed a legend within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegendTooltip, ChartLine, ChartThemeColor, createContainer } from '@patternfly/react-charts';
 
-class EmbeddedLegend extends React.Component {
+class EmbeddedLegend extends Component {
   render() {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("voronoi", "cursor");
@@ -295,10 +294,10 @@ class EmbeddedLegend extends React.Component {
 This demonstrates how to embed HTML within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Chart, ChartArea, ChartAxis, ChartCursorTooltip, ChartGroup, ChartPoint, ChartThemeColor, createContainer } from '@patternfly/react-charts';
 
-class EmbeddedHtml extends React.Component {
+class EmbeddedHtml extends Component {
   constructor(props) {
     super(props);
     this.baseStyles = { 
@@ -442,10 +441,10 @@ class EmbeddedHtml extends React.Component {
 This demonstrates how to embed a legend within a tooltip, but with a custom font size. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegendTooltip, ChartLegend, ChartLine, ChartLegendTooltipContent, ChartLegendTooltipLabel, ChartThemeColor, createContainer } from '@patternfly/react-charts';
 
-class EmbeddedLegendAlt extends React.Component {
+class EmbeddedLegendAlt extends Component {
   render() {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("voronoi", "cursor");
@@ -542,7 +541,6 @@ class EmbeddedLegendAlt extends React.Component {
 This demonstrates an alternate way of applying tooltips using data labels.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '450px' }}>
@@ -612,18 +610,18 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartTooltip }
 This demonstrates an approach for applying tooltips to a legend using a custom label component.
 
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
 
-class TooltipPieChart extends React.Component {
+class TooltipPieChart extends Component {
   constructor(props) {
     super(props);
 
     // Custom legend label component
     // Note: Tooltip wraps children with a div tag, so we add a reference to ChartLabel instead
     this.LegendLabel = ({datum, ...rest}) => {
-      const ref = React.createRef();
+      const ref = createRef();
       return (
         <g ref={ref}>
           <ChartLabel {...rest} />
@@ -678,10 +676,10 @@ class TooltipPieChart extends React.Component {
 This demonstrates how to customize tooltip label alignment using theme properties.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
 
-class TooltipThemeChart extends React.Component {
+class TooltipThemeChart extends Component {
   constructor(props) {
     super(props);
 
@@ -779,7 +777,6 @@ class TooltipThemeChart extends React.Component {
 This demonstrates an alternate way of applying tooltips using CSS overflow instead of <code>constrainToVisibleArea</code>.
 
 ```js
-import React from 'react';
 import { ChartArea, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div className="ws-react-charts-tooltip-overflow">
@@ -814,11 +811,11 @@ import { ChartArea, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContain
 This demonstrates an alternate way of applying tooltips by wrapping charts with the Tooltip component.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 import { Button, Tooltip, TooltipPosition } from '@patternfly/react-core';
 
-class TooltipChart extends React.Component {
+class TooltipChart extends Component {
   constructor(props) {
     super(props);
     this.state = {

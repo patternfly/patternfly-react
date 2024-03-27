@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
-import React from 'react';
+import { FunctionComponent, FormEvent } from 'react';
 import { TimePicker } from '@patternfly/react-core';
 
-export const TimePickerBasic12Hour: React.FunctionComponent = () => {
+export const TimePickerBasic12Hour: FunctionComponent = () => {
   const onChange = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: FormEvent<HTMLInputElement>,
     time: string,
     hour: number,
     minute: number,

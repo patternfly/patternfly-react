@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, Children, isValidElement, cloneElement } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ToggleGroup/toggle-group';
 import { ToggleGroupItem, ToggleGroupItemProps } from './ToggleGroupItem';
 
-export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
+export interface ToggleGroupProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the toggle group */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the toggle group */
   className?: string;
   /** Modifies the toggle group to include compact styling. */
@@ -16,7 +16,7 @@ export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
   'aria-label'?: string;
 }
 
-export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
+export const ToggleGroup: FunctionComponent<ToggleGroupProps> = ({
   className,
   children,
   isCompact = false,
@@ -24,10 +24,10 @@ export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
   'aria-label': ariaLabel,
   ...props
 }: ToggleGroupProps) => {
-  const toggleGroupItemList = React.Children.map(children, (child) =>
-    !(React.isValidElement(child) && child.type === ToggleGroupItem)
+  const toggleGroupItemList = Children.map(children, (child) =>
+    !(isValidElement(child) && child.type === ToggleGroupItem)
       ? child
-      : React.cloneElement<ToggleGroupItemProps>(child, areAllGroupsDisabled ? { isDisabled: true } : {})
+      : cloneElement<ToggleGroupItemProps>(child, areAllGroupsDisabled ? { isDisabled: true } : {})
   );
 
   return (

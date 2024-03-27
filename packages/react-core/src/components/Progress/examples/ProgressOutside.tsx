@@ -1,6 +1,6 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Progress, ProgressMeasureLocation } from '@patternfly/react-core';
 
-export const ProgressOutside: React.FunctionComponent = () => (
+export const ProgressOutside: FunctionComponent = () => (
   <Progress value={33} title="Title" measureLocation={ProgressMeasureLocation.outside} />
 );

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FormEvent } from 'react';
 import { IExtra, IFormatterValueType, OnCheckChange, OnTreeRowCollapse, OnToggleRowDetails } from '../../TableTypes';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -32,12 +32,12 @@ export const treeRow =
           </span>
         )}
         <span className={styles.tableText} key="table-text">
-          {content as React.ReactNode}
+          {content as ReactNode}
         </span>
       </div>
     );
-    const onChange = (isChecked: boolean, event: React.FormEvent<HTMLInputElement>) => {
-      onCheckChange(event, isChecked, rowIndex, content as React.ReactNode, rowData);
+    const onChange = (isChecked: boolean, event: FormEvent<HTMLInputElement>) => {
+      onCheckChange(event, isChecked, rowIndex, content as ReactNode, rowData);
     };
     return {
       component: 'th',
@@ -49,7 +49,7 @@ export const treeRow =
               <span className={css(stylesTreeView.tableToggle)} key="table-toggle">
                 <Button
                   variant="plain"
-                  onClick={(event) => onCollapse && onCollapse(event, rowIndex, content as React.ReactNode, rowData)}
+                  onClick={(event) => onCollapse && onCollapse(event, rowIndex, content as ReactNode, rowData)}
                   className={css(isExpanded && styles.modifiers.expanded)}
                   aria-expanded={isExpanded}
                   aria-label={toggleAriaLabel || `${isExpanded ? 'Collapse' : 'Expand'} row ${rowIndex}`}
@@ -80,7 +80,7 @@ export const treeRow =
                   aria-expanded={isDetailsExpanded}
                   aria-label={showDetailsAriaLabel || 'Show row details'}
                   onClick={(event) =>
-                    onToggleRowDetails && onToggleRowDetails(event, rowIndex, content as React.ReactNode, rowData)
+                    onToggleRowDetails && onToggleRowDetails(event, rowIndex, content as ReactNode, rowData)
                   }
                 >
                   <span className={`${styles.table}__details-toggle-icon`}>

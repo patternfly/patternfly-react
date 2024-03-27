@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Banner/banner';
 import { css } from '@patternfly/react-styles';
 
-export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
+export interface BannerProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the banner. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the banner. */
   className?: string;
   /** If set to true, the banner sticks to the top of its container */
@@ -17,7 +17,7 @@ export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'default' | 'blue' | 'red' | 'green' | 'gold';
 }
 
-export const Banner: React.FunctionComponent<BannerProps> = ({
+export const Banner: FunctionComponent<BannerProps> = ({
   children,
   className,
   variant = 'default',

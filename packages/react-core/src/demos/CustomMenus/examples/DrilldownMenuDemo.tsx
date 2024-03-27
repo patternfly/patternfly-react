@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, KeyboardEvent, MouseEvent, useState, useRef } from 'react';
 import {
   MenuToggle,
   Menu,
@@ -18,14 +18,14 @@ interface MenuHeightsType {
   [id: string]: number;
 }
 
-export const DrilldownMenuDemo: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [activeMenu, setActiveMenu] = React.useState<string>('rootMenu');
-  const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
-  const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
-  const [menuHeights, setMenuHeights] = React.useState<MenuHeightsType>({});
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
-  const menuRef = React.useRef<HTMLDivElement>(null);
+export const DrilldownMenuDemo: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [activeMenu, setActiveMenu] = useState<string>('rootMenu');
+  const [menuDrilledIn, setMenuDrilledIn] = useState<string[]>([]);
+  const [drilldownPath, setDrilldownPath] = useState<string[]>([]);
+  const [menuHeights, setMenuHeights] = useState<MenuHeightsType>({});
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
@@ -34,18 +34,13 @@ export const DrilldownMenuDemo: React.FunctionComponent = () => {
     setActiveMenu('rootMenu');
   };
 
-  const drillIn = (
-    _event: React.KeyboardEvent | React.MouseEvent,
-    fromMenuId: string,
-    toMenuId: string,
-    pathId: string
-  ) => {
+  const drillIn = (_event: KeyboardEvent | MouseEvent, fromMenuId: string, toMenuId: string, pathId: string) => {
     setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
     setDrilldownPath([...drilldownPath, pathId]);
     setActiveMenu(toMenuId);
   };
 
-  const drillOut = (_event: React.KeyboardEvent | React.MouseEvent, toMenuId: string) => {
+  const drillOut = (_event: KeyboardEvent | MouseEvent, toMenuId: string) => {
     setMenuDrilledIn(menuDrilledIn.slice(0, menuDrilledIn.length - 1));
     setDrilldownPath(drilldownPath.slice(0, drilldownPath.length - 1));
     setActiveMenu(toMenuId);

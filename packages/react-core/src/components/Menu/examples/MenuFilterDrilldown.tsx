@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, KeyboardEvent, MouseEvent, useState, createRef } from 'react';
 import {
   Menu,
   MenuContent,
@@ -11,24 +11,19 @@ import {
   SearchInput
 } from '@patternfly/react-core';
 
-export const MenuWithDrilldown: React.FunctionComponent = () => {
-  const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
-  const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
-  const [menuHeights, setMenuHeights] = React.useState<any>({});
-  const [activeMenu, setActiveMenu] = React.useState<string>('filter_drilldown-rootMenu');
+export const MenuWithDrilldown: FunctionComponent = () => {
+  const [menuDrilledIn, setMenuDrilledIn] = useState<string[]>([]);
+  const [drilldownPath, setDrilldownPath] = useState<string[]>([]);
+  const [menuHeights, setMenuHeights] = useState<any>({});
+  const [activeMenu, setActiveMenu] = useState<string>('filter_drilldown-rootMenu');
 
-  const drillIn = (
-    _event: React.KeyboardEvent | React.MouseEvent,
-    fromMenuId: string,
-    toMenuId: string,
-    pathId: string
-  ) => {
+  const drillIn = (_event: KeyboardEvent | MouseEvent, fromMenuId: string, toMenuId: string, pathId: string) => {
     setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
     setDrilldownPath([...drilldownPath, pathId]);
     setActiveMenu(toMenuId);
   };
 
-  const drillOut = (_event: React.KeyboardEvent | React.MouseEvent, toMenuId: string) => {
+  const drillOut = (_event: KeyboardEvent | MouseEvent, toMenuId: string) => {
     const menuDrilledInSansLast = menuDrilledIn.slice(0, menuDrilledIn.length - 1);
     const pathSansLast = drilldownPath.slice(0, drilldownPath.length - 1);
     setMenuDrilledIn(menuDrilledInSansLast);
@@ -45,8 +40,8 @@ export const MenuWithDrilldown: React.FunctionComponent = () => {
     }
   };
 
-  const searchRef = React.createRef<HTMLInputElement>();
-  const [startInput, setStartInput] = React.useState('');
+  const searchRef = createRef<HTMLInputElement>();
+  const [startInput, setStartInput] = useState('');
 
   const handleStartTextInputChange = (value: string) => {
     setStartInput(value);

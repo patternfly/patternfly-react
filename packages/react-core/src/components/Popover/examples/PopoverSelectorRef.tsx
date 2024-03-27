@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Popover } from '@patternfly/react-core';
 
-export const PopoverSelectorRef: React.FunctionComponent = () => (
+export const PopoverSelectorRef: FunctionComponent = () => (
   <div style={{ margin: '50px' }}>
     <button id="popover-selector">Popover attached via selector ref</button>
     <Popover

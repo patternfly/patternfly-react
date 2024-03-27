@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent, ReactNode, ReactElement, StrictMode } from 'react';
 
 import { configure, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -87,11 +87,11 @@ describe('Select', () => {
     test('renders expanded in strict mode successfully', () => {
       const consoleError = jest.spyOn(console, 'error');
       const { asFragment } = render(
-        <React.StrictMode>
+        <StrictMode>
           <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen ouiaId="test-id">
             {selectOptions}
           </Select>
-        </React.StrictMode>
+        </StrictMode>
       );
       expect(consoleError).not.toHaveBeenCalled();
       expect(asFragment()).toMatchSnapshot();
@@ -125,7 +125,7 @@ describe('Select', () => {
 
   describe('custom select filter', () => {
     test('filters properly', async () => {
-      const customFilter = (e: React.ChangeEvent<HTMLInputElement>, _value: string) => {
+      const customFilter = (e: ChangeEvent<HTMLInputElement>, _value: string) => {
         let input: RegExp;
         try {
           input = new RegExp(e.target.value, 'i');
@@ -134,7 +134,7 @@ describe('Select', () => {
         }
         const typeaheadFilteredChildren =
           e.target.value !== ''
-            ? selectOptions.filter((child: React.ReactNode) => input.test((child as React.ReactElement).props.value))
+            ? selectOptions.filter((child: ReactNode) => input.test((child as ReactElement).props.value))
             : selectOptions;
         return typeaheadFilteredChildren;
       };

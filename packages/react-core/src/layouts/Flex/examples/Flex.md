@@ -12,7 +12,6 @@ import './flex.css';
 ### Basic
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -27,7 +26,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Nesting
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -46,7 +44,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Nested with items
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -77,7 +74,6 @@ The flex layout provides two ways of spacing its direct children.
 ### Individually spaced
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -95,7 +91,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Spacing xl
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex spaceItems={{ default: 'spaceItemsXl' }}>
@@ -110,7 +105,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Spacing none
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex spaceItems={{ default: 'spaceItemsNone' }}>
@@ -127,7 +121,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Row gap
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex rowGap={{ default: 'rowGap2xl' }}>
@@ -147,7 +140,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Column gap
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex columnGap={{ default: 'columnGap2xl' }}>
@@ -167,7 +159,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Gap
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex gap={{ default: 'gap2xl' }}>
@@ -189,7 +180,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Default layout
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border">
@@ -204,7 +194,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Inline
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border" display={{ default: 'inlineFlex' }}>
@@ -219,7 +208,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Using canGrow
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -241,7 +229,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Adjusting width
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -263,7 +250,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Specifying column widths
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -287,7 +273,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Column layout
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex direction={{ default: 'column' }}>
@@ -300,7 +285,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Stacking elements
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex direction={{ default: 'column' }}>
@@ -322,7 +306,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Nesting elements in columns
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -343,7 +326,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Switching between direction column and row
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex direction={{ default: 'column', lg: 'row' }}>
@@ -363,7 +345,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Controlling width of text
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex direction={{ default: 'column', lg: 'row' }}>
@@ -386,7 +367,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Aligning right
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border">
@@ -401,7 +381,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Align right on single item
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border">
@@ -413,7 +392,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Align right on multiple groups
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -435,7 +413,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Align adjacent content
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -455,7 +432,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Align self flex end
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -474,7 +450,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Align self center
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -493,7 +468,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Align self baseline
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -512,7 +486,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Align self stretch
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
@@ -533,7 +506,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Justify content flex end
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border" justifyContent={{ default: 'justifyContentFlexEnd' }}>
@@ -547,7 +519,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Justify content space between
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border" justifyContent={{ default: 'justifyContentSpaceBetween' }}>
@@ -560,7 +531,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Justify content flex start
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border" justifyContent={{ default: 'justifyContentFlexStart' }}>
@@ -575,7 +545,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### First last ordering
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border">
@@ -592,7 +561,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Responsive first last ordering
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border">
@@ -611,7 +579,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Ordering
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border">
@@ -639,7 +606,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Responsive ordering
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex className="example-border">
@@ -668,7 +634,6 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ### Alternative components
 
 ```js
-import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex component="ul">

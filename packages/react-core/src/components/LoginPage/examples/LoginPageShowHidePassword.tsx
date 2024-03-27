@@ -1,4 +1,9 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type FormEvent as ReactFormEvent,
+  type MouseEvent as ReactMouseEvent
+} from 'react';
 import brandImg2 from '../../assets/brandImgColor2.svg';
 import {
   LoginFooterItem,
@@ -11,19 +16,19 @@ import {
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
-export const LoginPageHideShowPassword: React.FunctionComponent = () => {
-  const [showHelperText, setShowHelperText] = React.useState(false);
-  const [username, setUsername] = React.useState('');
-  const [isValidUsername, setIsValidUsername] = React.useState(true);
-  const [password, setPassword] = React.useState('');
-  const [isValidPassword, setIsValidPassword] = React.useState(true);
-  const [isRememberMeChecked, setIsRememberMeChecked] = React.useState(false);
+export const LoginPageHideShowPassword: FunctionComponent = () => {
+  const [showHelperText, setShowHelperText] = useState(false);
+  const [username, setUsername] = useState('');
+  const [isValidUsername, setIsValidUsername] = useState(true);
+  const [password, setPassword] = useState('');
+  const [isValidPassword, setIsValidPassword] = useState(true);
+  const [isRememberMeChecked, setIsRememberMeChecked] = useState(false);
 
-  const handleUsernameChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  const handleUsernameChange = (_event: ReactFormEvent<HTMLInputElement>, value: string) => {
     setUsername(value);
   };
 
-  const handlePasswordChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  const handlePasswordChange = (_event: ReactFormEvent<HTMLInputElement>, value: string) => {
     setPassword(value);
   };
 
@@ -31,7 +36,7 @@ export const LoginPageHideShowPassword: React.FunctionComponent = () => {
     setIsRememberMeChecked(!isRememberMeChecked);
   };
 
-  const onLoginButtonClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const onLoginButtonClick = (event: ReactMouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
     setIsValidUsername(!!username);
     setIsValidPassword(!!password);
@@ -39,7 +44,7 @@ export const LoginPageHideShowPassword: React.FunctionComponent = () => {
   };
 
   const socialMediaLoginContent = (
-    <React.Fragment>
+    <>
       <LoginMainFooterLinksItem
         href="https://www.patternfly.org/"
         linkComponentProps={{ 'aria-label': 'Login with Google' }}
@@ -80,7 +85,7 @@ export const LoginPageHideShowPassword: React.FunctionComponent = () => {
           <path d="M29.782 199.732L256 493.714 8.074 309.699c-6.856-5.142-9.712-13.996-7.141-21.993l28.849-87.974zm75.405-174.806c-3.142-8.854-15.709-8.854-18.851 0L29.782 199.732h131.961L105.187 24.926zm56.556 174.806L256 493.714l94.257-293.982H161.743zm349.324 87.974l-28.849-87.974L256 493.714l247.926-184.015c6.855-5.142 9.711-13.996 7.141-21.993zm-85.404-262.78c-3.142-8.854-15.709-8.854-18.851 0l-56.555 174.806h131.961L425.663 24.926z" />
         </svg>
       </LoginMainFooterLinksItem>
-    </React.Fragment>
+    </>
   );
 
   const signUpForAccountMessage = (
@@ -96,7 +101,7 @@ export const LoginPageHideShowPassword: React.FunctionComponent = () => {
   );
 
   const listItem = (
-    <React.Fragment>
+    <>
       <ListItem>
         <LoginFooterItem href="https://www.patternfly.org/">Terms of Use </LoginFooterItem>
       </ListItem>
@@ -106,7 +111,7 @@ export const LoginPageHideShowPassword: React.FunctionComponent = () => {
       <ListItem>
         <LoginFooterItem href="https://www.patternfly.org/">Privacy Policy</LoginFooterItem>
       </ListItem>
-    </React.Fragment>
+    </>
   );
 
   const loginForm = (

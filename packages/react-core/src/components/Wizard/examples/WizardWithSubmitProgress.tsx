@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, useCallback, useEffect } from 'react';
 import {
   EmptyState,
   EmptyStateHeader,
@@ -18,16 +18,16 @@ interface ValidationProgressProps {
   onClose(): void;
 }
 
-const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ onClose }) => {
-  const [percentValidated, setPercentValidated] = React.useState(0);
+const ValidationProgress: FunctionComponent<ValidationProgressProps> = ({ onClose }) => {
+  const [percentValidated, setPercentValidated] = useState(0);
 
-  const tick = React.useCallback(() => {
+  const tick = useCallback(() => {
     if (percentValidated < 100) {
       setPercentValidated((prevValue) => prevValue + 20);
     }
   }, [percentValidated]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => tick(), 1000);
 
     return () => {
@@ -62,8 +62,8 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
   );
 };
 
-export const WizardWithSubmitProgress: React.FunctionComponent = () => {
-  const [isSubmitted, setIsSubmitted] = React.useState(false);
+export const WizardWithSubmitProgress: FunctionComponent = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   // eslint-disable-next-line no-console
   const onClose = () => console.log('Some close action occurs here.');

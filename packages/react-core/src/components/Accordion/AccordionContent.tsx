@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, ElementType, FunctionComponent, useState, useRef, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 import { AccordionContext } from './AccordionContext';
 import { AccordionExpandableContentBody } from './AccordionExpandableContentBody';
 
-export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface AccordionContentProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Accordion  */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the Accordion content  */
   className?: string;
   /** Identify the AccordionContent item  */
@@ -20,12 +20,12 @@ export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Id of the controlling accordion toggle to label the content. */
   'aria-labelledby'?: string;
   /** Component to use as content container */
-  component?: React.ElementType;
+  component?: ElementType;
   /** Flag indicating content is custom. Expanded content Body wrapper will be removed from children.  This allows multiple bodies to be rendered as content. */
-  isCustomContent?: React.ReactNode;
+  isCustomContent?: ReactNode;
 }
 
-export const AccordionContent: React.FunctionComponent<AccordionContentProps> = ({
+export const AccordionContent: FunctionComponent<AccordionContentProps> = ({
   className = '',
   children = null,
   id = '',
@@ -37,10 +37,10 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
   component,
   ...props
 }: AccordionContentProps) => {
-  const [hasScrollbar, setHasScrollbar] = React.useState(false);
-  const containerRef = React.useRef(null);
+  const [hasScrollbar, setHasScrollbar] = useState(false);
+  const containerRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (containerRef?.current && isFixed && !isHidden) {
       const { offsetHeight, scrollHeight } = containerRef.current;
 

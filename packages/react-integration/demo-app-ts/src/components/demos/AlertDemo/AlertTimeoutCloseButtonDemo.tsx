@@ -1,11 +1,11 @@
 import { Alert, Button, AlertActionCloseButton } from '@patternfly/react-core';
-import React from 'react';
+import { Component, Fragment } from 'react';
 
 interface AlertTimeoutCloseButtonDemoState {
   isOpenAlert: boolean;
 }
 
-export class AlertTimeoutCloseButtonDemo extends React.Component<{}, AlertTimeoutCloseButtonDemoState> {
+export class AlertTimeoutCloseButtonDemo extends Component<{}, AlertTimeoutCloseButtonDemoState> {
   static displayName = 'AlertTimeoutCloseButtonDemo';
   constructor(props: {}) {
     super(props);
@@ -23,7 +23,7 @@ export class AlertTimeoutCloseButtonDemo extends React.Component<{}, AlertTimeou
   render() {
     const { isOpenAlert } = this.state;
     return (
-      <React.Fragment>
+      <Fragment>
         <Button id="close-button-alert-button" onClick={this.onClick}>
           Open Alert
         </Button>
@@ -37,7 +37,7 @@ export class AlertTimeoutCloseButtonDemo extends React.Component<{}, AlertTimeou
             Alert with close button and timeout
           </Alert>
         )}
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

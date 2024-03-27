@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Ref, useState, Fragment } from 'react';
 import {
   Button,
   InputGroup,
@@ -11,8 +11,8 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 
-export const InputGroupWithDropdown: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+export const InputGroupWithDropdown: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const onToggle = () => {
     setIsOpen(!isOpen);
@@ -23,14 +23,14 @@ export const InputGroupWithDropdown: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <InputGroup>
         <InputGroupItem>
           <Dropdown
             isOpen={isOpen}
             onSelect={onSelect}
             onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen}>
                 Dropdown
               </MenuToggle>
@@ -58,6 +58,6 @@ export const InputGroupWithDropdown: React.FunctionComponent = () => {
           </Button>
         </InputGroupItem>
       </InputGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

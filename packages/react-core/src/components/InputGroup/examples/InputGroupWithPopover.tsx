@@ -1,12 +1,12 @@
-import React from 'react';
+import { FunctionComponent, useRef, Fragment } from 'react';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import { Button, InputGroup, InputGroupItem, TextInput, Popover, PopoverPosition } from '@patternfly/react-core';
 
-export const InputGroupWithPopover: React.FunctionComponent = () => {
-  const inputGroupRef1 = React.useRef(null);
-  const inputGroupRef2 = React.useRef(null);
+export const InputGroupWithPopover: FunctionComponent = () => {
+  const inputGroupRef1 = useRef(null);
+  const inputGroupRef2 = useRef(null);
   return (
-    <React.Fragment>
+    <Fragment>
       <InputGroup ref={inputGroupRef1}>
         <InputGroupItem isFill>
           <TextInput
@@ -52,6 +52,6 @@ export const InputGroupWithPopover: React.FunctionComponent = () => {
           </Popover>
         </InputGroupItem>
       </InputGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

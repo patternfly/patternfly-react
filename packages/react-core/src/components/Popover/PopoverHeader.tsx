@@ -1,14 +1,14 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { PopoverHeaderIcon } from './PopoverHeaderIcon';
 import { PopoverHeaderText } from './PopoverHeaderText';
 
-export interface PopoverHeaderProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 'size'> {
+export interface PopoverHeaderProps extends Omit<HTMLProps<HTMLHeadingElement>, 'size'> {
   /** Content of the popover header. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Indicates the header contains an icon. */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** Class to be applied to the header. */
   className?: string;
   /** Heading level of the header title */
@@ -21,7 +21,7 @@ export interface PopoverHeaderProps extends Omit<React.HTMLProps<HTMLHeadingElem
   alertSeverityScreenReaderText?: string;
 }
 
-export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({
+export const PopoverHeader: FunctionComponent<PopoverHeaderProps> = ({
   children,
   icon,
   className,

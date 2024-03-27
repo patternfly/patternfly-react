@@ -17,7 +17,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '230px' }}>
@@ -36,7 +35,6 @@ import { ChartDonut } from '@patternfly/react-charts';
 
 ### Right aligned legend
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
@@ -65,7 +63,6 @@ import { ChartDonut } from '@patternfly/react-charts';
 
 ### Multi-color (ordered) with right aligned legend
 ```js
-import React from 'react';
 import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
@@ -95,7 +92,6 @@ import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
 
 ### Bottom aligned legend
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '300px' }}>
@@ -126,7 +122,6 @@ import { ChartDonut } from '@patternfly/react-charts';
 
 ### Small
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 <div style={{ height: '150px', width: '150px' }}>
@@ -147,7 +142,6 @@ import { ChartDonut } from '@patternfly/react-charts';
 
 ### Small with right aligned legend
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 <div style={{ height: '150px', width: '275px' }}>
@@ -177,7 +171,6 @@ import { ChartDonut } from '@patternfly/react-charts';
 
 ### Small with bottom aligned subtitle
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 <div style={{ height: '165px', width: '275px' }}>
@@ -208,7 +201,6 @@ import { ChartDonut } from '@patternfly/react-charts';
 
 ### Small with right aligned subtitle
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '300px' }}>

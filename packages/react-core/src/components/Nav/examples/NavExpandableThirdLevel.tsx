@@ -1,12 +1,12 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, MouseEvent, useState } from 'react';
 import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
 
-export const NavExpandableThirdLevel: React.FunctionComponent = () => {
-  const [activeGroup, setActiveGroup] = React.useState('nav-expand3rd-group-1');
-  const [activeItem, setActiveItem] = React.useState('nav-expand3rd-group-1_item-1');
+export const NavExpandableThirdLevel: FunctionComponent = () => {
+  const [activeGroup, setActiveGroup] = useState('nav-expand3rd-group-1');
+  const [activeItem, setActiveItem] = useState('nav-expand3rd-group-1_item-1');
 
   const onSelect = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: FormEvent<HTMLInputElement>,
     result: { itemId: number | string; groupId: number | string }
   ) => {
     setActiveGroup(result.groupId as string);
@@ -14,7 +14,7 @@ export const NavExpandableThirdLevel: React.FunctionComponent = () => {
   };
 
   const onToggle = (
-    _event: React.MouseEvent<HTMLButtonElement>,
+    _event: MouseEvent<HTMLButtonElement>,
     result: { groupId: number | string; isExpanded: boolean }
   ) => {
     // eslint-disable-next-line no-console

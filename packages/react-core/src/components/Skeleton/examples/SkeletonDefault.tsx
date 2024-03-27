@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Skeleton } from '@patternfly/react-core';
 
-export const SkeletonDefault: React.FunctionComponent = () => <Skeleton screenreaderText="Loading contents" />;
+export const SkeletonDefault: FunctionComponent = () => <Skeleton screenreaderText="Loading contents" />;

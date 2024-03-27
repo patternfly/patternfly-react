@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { compoundExpand } from '@patternfly/react-table';
 
@@ -15,7 +15,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
+export const LegacyTableCompoundExpandable: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'siemur/test-space', branches: 10, prs: 4, workspaces: 4, lastCommit: '20 minutes' },
@@ -27,7 +27,7 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
   // Note that these columnKeys must be in the same order as the `columns` below, because columnIndex will be used to look up the matching key.
   type ColumnKey = 'name' | 'branches' | 'prs' | 'workspaces' | 'lastCommit'; // For typechecking
   const columnKeys: ColumnKey[] = ['name', 'branches', 'prs', 'workspaces', 'lastCommit']; // For indexed order
-  const [expandedCells, setExpandedCells] = React.useState<Record<string, ColumnKey>>({
+  const [expandedCells, setExpandedCells] = useState<Record<string, ColumnKey>>({
     'siemur/test-space': 'branches' // Default to the first cell of the first row being expanded
   });
   const setCellExpanded = (repo: Repository, columnKey: ColumnKey, isExpanding = true) => {
@@ -75,9 +75,9 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
         { title: <a href="#">{repo.name}</a>, props: { component: 'th' } },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CodeBranchIcon key="icon" /> {repo.branches}
-            </React.Fragment>
+            </Fragment>
           ),
           props: {
             isOpen: expandedCellKey === 'branches',
@@ -86,9 +86,9 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CodeIcon key="icon" /> {repo.prs}
-            </React.Fragment>
+            </Fragment>
           ),
           props: {
             isOpen: expandedCellKey === 'prs',
@@ -97,9 +97,9 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
         },
         {
           title: (
-            <React.Fragment>
+            <Fragment>
               <CubeIcon key="icon" /> {repo.branches}
-            </React.Fragment>
+            </Fragment>
           ),
           props: {
             isOpen: expandedCellKey === 'workspaces',

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext } from 'react';
 import { getBreakpoint, getVerticalBreakpoint } from '../../helpers/util';
 
 export interface PageContextProps {
@@ -21,7 +21,7 @@ export const pageContextDefaults: PageContextProps = {
   getVerticalBreakpoint
 };
 
-export const PageContext = React.createContext<PageContextProps>(pageContextDefaults);
+export const PageContext = createContext<PageContextProps>(pageContextDefaults);
 
 export const PageContextProvider = PageContext.Provider;
 export const PageContextConsumer = PageContext.Consumer;

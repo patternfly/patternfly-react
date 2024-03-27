@@ -1,28 +1,28 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, useContext, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { CardContext } from './Card';
 
-export interface CardTitleProps extends React.HTMLProps<HTMLDivElement> {
+export interface CardTitleProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the CardTitle */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the CardTitle */
   className?: string;
   /** Sets the base component to render. defaults to div */
   component?: keyof JSX.IntrinsicElements;
 }
 
-export const CardTitle: React.FunctionComponent<CardTitleProps> = ({
+export const CardTitle: FunctionComponent<CardTitleProps> = ({
   children,
   className,
   component = 'div',
   ...props
 }: CardTitleProps) => {
-  const { cardId, registerTitleId } = React.useContext(CardContext);
+  const { cardId, registerTitleId } = useContext(CardContext);
   const Component = component as any;
   const titleId = cardId ? `${cardId}-title` : '';
 
-  React.useEffect(() => {
+  useEffect(() => {
     registerTitleId(titleId);
 
     return () => registerTitleId('');

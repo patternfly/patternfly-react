@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Button } from '@patternfly/react-core';
 
-export const ButtonLinks: React.FunctionComponent = () => (
-  <React.Fragment>
+export const ButtonLinks: FunctionComponent = () => (
+  <Fragment>
     <Button component="a" href="https://pf4.patternfly.org/" target="_blank" variant="primary">
       Link to core docs
     </Button>{' '}
@@ -15,5 +15,5 @@ export const ButtonLinks: React.FunctionComponent = () => (
     <Button component="a" href="https://pf4.patternfly.org/contribution/#modifiers" variant="link">
       Jump to modifiers in contribution guidelines
     </Button>
-  </React.Fragment>
+  </Fragment>
 );

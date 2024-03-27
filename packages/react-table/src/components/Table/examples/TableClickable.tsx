@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 interface Repository {
@@ -9,7 +9,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const TableClickable: React.FunctionComponent = () => {
+export const TableClickable: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },
@@ -27,7 +27,7 @@ export const TableClickable: React.FunctionComponent = () => {
 
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
-  const [selectedRepoName, setSelectedRepoName] = React.useState('');
+  const [selectedRepoName, setSelectedRepoName] = useState('');
 
   return (
     <Table aria-label="Clickable table">

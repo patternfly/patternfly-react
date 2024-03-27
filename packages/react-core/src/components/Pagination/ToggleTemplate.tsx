@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent, Fragment } from 'react';
 
 /** Allows more customization of the pagination dropdown toggle. The following properties
  * should be passed into the pagination component's toggleTemplate property.
@@ -14,21 +14,21 @@ export interface PaginationToggleTemplateProps {
   /** The type or title of the items being paginated */
   itemsTitle?: string;
   /** The word that joins the index and itemCount/itemsTitle */
-  ofWord?: React.ReactNode;
+  ofWord?: ReactNode;
 }
 
-export const ToggleTemplate: React.FunctionComponent<PaginationToggleTemplateProps> = ({
+export const ToggleTemplate: FunctionComponent<PaginationToggleTemplateProps> = ({
   firstIndex = 0,
   lastIndex = 0,
   itemCount = 0,
   itemsTitle = 'items',
   ofWord = 'of'
 }: PaginationToggleTemplateProps) => (
-  <React.Fragment>
+  <Fragment>
     <b>
       {firstIndex} - {lastIndex}
     </b>{' '}
     {ofWord} <b>{itemCount}</b> {itemsTitle}
-  </React.Fragment>
+  </Fragment>
 );
 ToggleTemplate.displayName = 'ToggleTemplate';

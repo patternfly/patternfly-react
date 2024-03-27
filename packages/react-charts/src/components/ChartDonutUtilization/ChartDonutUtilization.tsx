@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import orderBy from 'lodash/orderBy';
 import {
@@ -108,7 +108,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
-  containerComponent?: React.ReactElement<any>;
+  containerComponent?: ReactElement<any>;
   /**
    * Set the cornerRadius for every dataComponent (Slice by default) within ChartDonutUtilization
    *
@@ -137,7 +137,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * the ChartDonutUtilization; and the d3 compatible slice object.
    * If a dataComponent is not provided, ChartDonutUtilization's Slice component will be used.
    */
-  dataComponent?: React.ReactElement<any>;
+  dataComponent?: ReactElement<any>;
   /**
    * The desc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers. The more info about the chart provided in
@@ -217,7 +217,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart.
    * SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected
@@ -290,7 +290,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * provide a series label for ChartDonutUtilization. If individual labels are required for each
    * data point, they should be created by composing ChartDonutUtilization with VictoryScatter
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * The labelPosition prop specifies the angular position of each label relative to its corresponding slice.
    * This prop should be given as "startAngle", "endAngle", "centroid", or as a function that returns one of these
@@ -305,7 +305,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * Note: Use legendData so the legend width can be calculated and positioned properly.
    * Default legend properties may be applied
    */
-  legendComponent?: React.ReactElement<any>;
+  legendComponent?: ReactElement<any>;
   /**
    * Specify data via the data prop. ChartLegend expects data as an
    * array of objects with name (required), symbol, and labels properties.
@@ -476,7 +476,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * Note: Default label properties may be applied
    */
-  subTitleComponent?: React.ReactElement<any>;
+  subTitleComponent?: ReactElement<any>;
   /**
    * The orientation of the subtitle position. Valid values are 'bottom', 'center', and 'right'
    */
@@ -538,7 +538,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * Note: Default label properties may be applied
    */
-  titleComponent?: React.ReactElement<any>;
+  titleComponent?: ReactElement<any>;
   /**
    * The dynamic portion of the chart will change colors when data reaches the given threshold. Colors may be
    * overridden, but defaults shall be provided.
@@ -583,7 +583,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
   y?: DataGetterPropType;
 }
 
-export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizationProps> = ({
+export const ChartDonutUtilization: FunctionComponent<ChartDonutUtilizationProps> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -694,7 +694,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   );
 
   // Clone so users can override container props
-  const container = React.cloneElement(
+  const container = cloneElement(
     containerComponent,
     {
       desc: ariaDesc,
@@ -707,7 +707,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
     [chart]
   );
 
-  return standalone ? <React.Fragment>{container}</React.Fragment> : <React.Fragment>{chart}</React.Fragment>;
+  return standalone ? <Fragment>{container}</Fragment> : <Fragment>{chart}</Fragment>;
 };
 ChartDonutUtilization.displayName = 'ChartDonutUtilization';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import {
   Bullseye,
@@ -16,7 +16,7 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
-export const TableEmptyStateDefault: React.FunctionComponent = () => (
+export const TableEmptyStateDefault: FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
     <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
       <Card component="div">

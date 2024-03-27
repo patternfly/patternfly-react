@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { SkipToContent } from '@patternfly/react-core';
 
-export const SkipToContentBasic: React.FunctionComponent = () => (
-  <React.Fragment>
+export const SkipToContentBasic: FunctionComponent = () => (
+  <Fragment>
     <SkipToContent href="#main-content">Skip to content</SkipToContent>
     <p>Press tab to skip to content at the bottom of the page.</p>
     <div style={{ height: '2000px' }}></div>
@@ -124,5 +124,5 @@ export const SkipToContentBasic: React.FunctionComponent = () => (
       ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. Suspendisse euismod, elit vel rutrum commodo,
       ipsum tortor maximus dui, sed varius sapien odio vitae est. Etiam at cursus metus.
     </p>
-  </React.Fragment>
+  </Fragment>
 );

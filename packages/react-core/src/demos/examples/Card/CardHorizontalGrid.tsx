@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Ref, useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -24,9 +24,9 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-i
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const CardHorizontalGrid: React.FunctionComponent = () => {
-  const [isCardExpanded, setIsCardExpanded] = React.useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+export const CardHorizontalGrid: FunctionComponent = () => {
+  const [isCardExpanded, setIsCardExpanded] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const onCardExpand = () => {
     setIsCardExpanded(!isCardExpanded);
@@ -56,7 +56,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
       isOpen={isDropdownOpen}
       popperProps={{ position: 'right' }}
       onOpenChange={(isOpen: boolean) => setIsDropdownOpen(isOpen)}
-      toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+      toggle={(toggleRef: Ref<MenuToggleElement>) => (
         <MenuToggle
           ref={toggleRef}
           isExpanded={isDropdownOpen}

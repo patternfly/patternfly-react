@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
 import { RowWrapperProps } from './RowWrapper';
 import { Tr } from './Tr';
 
-export const DraggableRowWrapper: React.FunctionComponent<RowWrapperProps> = ({
+export const DraggableRowWrapper: FunctionComponent<RowWrapperProps> = ({
   className,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   rowProps,

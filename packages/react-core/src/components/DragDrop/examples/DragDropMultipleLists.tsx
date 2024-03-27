@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { DragDrop, Draggable, Droppable, Split, SplitItem } from '@patternfly/react-core';
 
 interface ItemType {
@@ -39,8 +39,8 @@ const move = (source: ItemType[], destination: ItemType[], sourceIndex: number, 
   return [sourceClone, destClone];
 };
 
-export const DragDropMultipleLists: React.FunctionComponent = () => {
-  const [items, setItems] = React.useState<MultipleListState>({
+export const DragDropMultipleLists: FunctionComponent = () => {
+  const [items, setItems] = useState<MultipleListState>({
     items1: getItems(10, 0),
     items2: getItems(5, 10)
   });

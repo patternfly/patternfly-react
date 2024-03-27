@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   OverflowMenu,
   OverflowMenuControl,
@@ -17,8 +17,8 @@ import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-ico
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
 
-export const OverflowMenuMultiGroup: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const OverflowMenuMultiGroup: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = () => {
     setIsOpen(!isOpen);

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { MouseEvent, ChangeEvent, Component } from 'react';
 import { StackItem, Title } from '@patternfly/react-core';
 import { Select, SelectOption, SelectOptionObject, SelectVariant } from '@patternfly/react-core/deprecated';
 
@@ -60,7 +60,7 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
     });
   };
 
-  onSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string, isPlaceholder: boolean) => {
+  onSelect = (event: MouseEvent | ChangeEvent, selection: string, isPlaceholder: boolean) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {
@@ -72,7 +72,7 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
     }
   };
 
-  onSelectCheck = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  onSelectCheck = (event: MouseEvent | ChangeEvent, selection: string | SelectOptionObject) => {
     const { selectedCheck } = this.state;
     if (selectedCheck.includes(selection.toString())) {
       this.setState(

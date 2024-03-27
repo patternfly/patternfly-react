@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, useState } from 'react';
 import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 
-export const TreeViewCustomBadges: React.FunctionComponent = () => {
-  const [activeItems, setActiveItems] = React.useState<TreeViewDataItem[]>();
+export const TreeViewCustomBadges: FunctionComponent = () => {
+  const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();
 
-  const onSelect = (_event: React.MouseEvent, treeViewItem: TreeViewDataItem) => {
+  const onSelect = (_event: MouseEvent, treeViewItem: TreeViewDataItem) => {
     // Ignore folders for selection
     if (treeViewItem && !treeViewItem.children) {
       setActiveItems([treeViewItem]);

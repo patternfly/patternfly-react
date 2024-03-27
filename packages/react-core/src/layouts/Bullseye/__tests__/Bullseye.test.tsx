@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { render, screen } from '@testing-library/react';
 import { Bullseye } from '../Bullseye';
 
@@ -21,7 +21,7 @@ describe('Bullseye', () => {
   });
 
   test('allows passing in a React Component as the component', () => {
-    const Component: React.FunctionComponent = () => <div>Some text</div>;
+    const Component: FunctionComponent = () => <div>Some text</div>;
 
     render(<Bullseye component={Component as unknown as keyof JSX.IntrinsicElements} />);
     expect(screen.getByText('Some text')).toBeInTheDocument();

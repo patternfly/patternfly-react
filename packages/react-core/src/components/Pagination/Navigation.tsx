@@ -1,4 +1,12 @@
-import * as React from 'react';
+import {
+  Component,
+  type HTMLProps,
+  type ReactText,
+  type SyntheticEvent,
+  type FormEvent as ReactFormEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type MouseEvent as ReactMouseEvent
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
@@ -11,7 +19,7 @@ import { OnSetPage } from './Pagination';
 import { pluralize, PickOptional } from '../../helpers';
 import { KeyTypes } from '../../helpers/constants';
 
-export interface NavigationProps extends React.HTMLProps<HTMLElement> {
+export interface NavigationProps extends HTMLProps<HTMLElement> {
   /** Additional classes for the pagination navigation container. */
   className?: string;
   /** Accessible label for the input displaying the current page. */
@@ -47,24 +55,24 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   /** Accessible label for the button which moves to the previous page. */
   toPreviousPageAriaLabel?: string;
   /** Function called when user clicks to navigate to first page. */
-  onFirstClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  onFirstClick?: (event: SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks to navigate to last page. */
-  onLastClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  onLastClick?: (event: SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks to navigate to next page. */
-  onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  onNextClick?: (event: SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks to navigate to previous page. */
-  onPreviousClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  onPreviousClick?: (event: SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user inputs page number. */
-  onPageInput?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  onPageInput?: (event: SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when page is changed. */
   onSetPage: OnSetPage;
 }
 
 export interface NavigationState {
-  userInputPage?: React.ReactText;
+  userInputPage?: ReactText;
 }
 
-class Navigation extends React.Component<NavigationProps, NavigationState> {
+class Navigation extends Component<NavigationProps, NavigationState> {
   static displayName = 'Navigation';
   constructor(props: NavigationProps) {
     super(props);
@@ -93,7 +101,7 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
     onPageInput: () => undefined as any
   };
 
-  private static parseInteger(input: React.ReactText, lastPage: number): number {
+  private static parseInteger(input: ReactText, lastPage: number): number {
     // eslint-disable-next-line radix
     let inputPage = Number.parseInt(input as string, 10);
     if (!Number.isNaN(inputPage)) {
@@ -103,16 +111,16 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
     return inputPage;
   }
 
-  private onChange(event: React.FormEvent<HTMLInputElement>, lastPage: number): void {
+  private onChange(event: ReactFormEvent<HTMLInputElement>, lastPage: number): void {
     const inputPage = Navigation.parseInteger(event.currentTarget.value, lastPage);
     this.setState({ userInputPage: Number.isNaN(inputPage as number) ? event.currentTarget.value : inputPage });
   }
 
   private onKeyDown(
-    event: React.KeyboardEvent<HTMLInputElement>,
+    event: ReactKeyboardEvent<HTMLInputElement>,
     page: number | string,
     lastPage: number,
-    onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void
+    onPageInput: (event: SyntheticEvent<HTMLButtonElement>, page: number) => void
   ): void {
     const allowedKeys = [
       'Tab',
@@ -134,7 +142,7 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
     }
   }
 
-  handleNewPage = (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPage: number) => {
+  handleNewPage = (_evt: ReactMouseEvent | ReactKeyboardEvent | MouseEvent, newPage: number) => {
     const { perPage, onSetPage } = this.props;
     const startIdx = (newPage - 1) * perPage;
     const endIdx = newPage * perPage;

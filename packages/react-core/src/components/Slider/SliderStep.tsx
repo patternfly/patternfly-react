@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent, CSSProperties } from 'react';
 import styles from '@patternfly/react-styles/css/components/Slider/slider';
 import { css } from '@patternfly/react-styles';
 import sliderStepLeft from '@patternfly/react-tokens/dist/esm/c_slider__step_Left';
 
-export interface SliderStepProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
+export interface SliderStepProps extends Omit<HTMLProps<HTMLDivElement>, 'label'> {
   /** Additional classes added to the slider step. */
   className?: string;
   /** Flag indicating the step is active. */
@@ -18,7 +18,7 @@ export interface SliderStepProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   value?: number;
 }
 
-export const SliderStep: React.FunctionComponent<SliderStepProps> = ({
+export const SliderStep: FunctionComponent<SliderStepProps> = ({
   className,
   label,
   value,
@@ -27,7 +27,7 @@ export const SliderStep: React.FunctionComponent<SliderStepProps> = ({
   isActive = false,
   ...props
 }: SliderStepProps) => {
-  const style = { [sliderStepLeft.name]: `${value ? value : sliderStepLeft.value}%` } as React.CSSProperties;
+  const style = { [sliderStepLeft.name]: `${value ? value : sliderStepLeft.value}%` } as CSSProperties;
   return (
     <div className={css(styles.sliderStep, isActive && styles.modifiers.active, className)} style={style} {...props}>
       {!isTickHidden && <div className={css(styles.sliderStepTick)} />}

@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import { Switch } from '@patternfly/react-core';
 
-export const SwitchCheckedWithLabel: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+export const SwitchCheckedWithLabel: FunctionComponent = () => {
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
-  const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
+  const handleChange = (_event: FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
   };
 

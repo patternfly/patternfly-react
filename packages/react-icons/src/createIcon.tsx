@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, SVGProps, ComponentClass, Component } from 'react';
 
 export interface IconDefinition {
   name?: string;
@@ -9,7 +9,7 @@ export interface IconDefinition {
   yOffset?: number;
 }
 
-export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'ref'> {
+export interface SVGIconProps extends Omit<HTMLProps<SVGElement>, 'ref'> {
   title?: string;
   className?: string;
 }
@@ -26,8 +26,8 @@ export function createIcon({
   width,
   height,
   svgPath
-}: IconDefinition): React.ComponentClass<SVGIconProps> {
-  return class SVGIcon extends React.Component<SVGIconProps> {
+}: IconDefinition): ComponentClass<SVGIconProps> {
+  return class SVGIcon extends Component<SVGIconProps> {
     static displayName = name;
 
     id = `icon-title-${currentId++}`;
@@ -49,7 +49,7 @@ export function createIcon({
           role="img"
           width="1em"
           height="1em"
-          {...(props as Omit<React.SVGProps<SVGElement>, 'ref'>)} // Lie.
+          {...(props as Omit<SVGProps<SVGElement>, 'ref'>)} // Lie.
         >
           {hasTitle && <title id={this.id}>{title}</title>}
           <path d={svgPath} />

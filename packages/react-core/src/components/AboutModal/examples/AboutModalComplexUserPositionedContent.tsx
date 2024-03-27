@@ -1,23 +1,23 @@
-import React from 'react';
+import { type FunctionComponent, useState, type MouseEvent as ReactMouseEvent } from 'react';
 import { AboutModal, Alert, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from '../../assets/brandImg.svg';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
-export const AboutModalComplexUserPositionedContent: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
+export const AboutModalComplexUserPositionedContent: FunctionComponent = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const toggleModal = (_event: React.MouseEvent<Element, MouseEvent> | KeyboardEvent | MouseEvent) => {
+  const toggleModal = (_event: ReactMouseEvent<Element, MouseEvent> | KeyboardEvent | MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
 
   return (
-    <React.Fragment>
+    <>
       <Button variant="primary" onClick={toggleModal}>
         Show about modal
       </Button>
       <AboutModal
         isOpen={isModalOpen}
-        onClose={(e: React.MouseEvent<Element, MouseEvent> | KeyboardEvent | MouseEvent) => toggleModal(e)}
+        onClose={(e: ReactMouseEvent<Element, MouseEvent> | KeyboardEvent | MouseEvent) => toggleModal(e)}
         trademark="Trademark and copyright information here"
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"
@@ -49,6 +49,6 @@ export const AboutModalComplexUserPositionedContent: React.FunctionComponent = (
           </TextList>
         </TextContent>
       </AboutModal>
-    </React.Fragment>
+    </>
   );
 };

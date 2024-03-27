@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component, Fragment } from 'react';
 import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
 import CalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/calendar-alt-icon';
@@ -26,7 +26,7 @@ interface InputGroupState {
   selected: string;
 }
 
-export class InputGroupDemo extends React.Component<{}, InputGroupState> {
+export class InputGroupDemo extends Component<{}, InputGroupState> {
   static displayName = 'InputGroupDemo';
   onToggle: () => void;
   onSelect: (event: any) => void;
@@ -51,7 +51,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
 
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <InputGroup>
           <InputGroupItem>
             <Button id="textAreaButton1" variant={ButtonVariant.control}>
@@ -209,7 +209,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
             %
           </InputGroupText>
         </InputGroup>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

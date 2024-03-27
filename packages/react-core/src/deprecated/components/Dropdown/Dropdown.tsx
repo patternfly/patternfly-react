@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, ReactElement, SyntheticEvent, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
 import { DropdownWithContext } from './DropdownWithContext';
 import { OUIAProps, useOUIAId } from '../../../helpers';
 
-export interface DropdownProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
+export interface DropdownProps extends HTMLProps<HTMLDivElement>, OUIAProps {
   /** Anything which can be rendered in a dropdown */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classes applied to root element of dropdown */
   className?: string;
   /** Array of DropdownItem nodes that will be rendered in the dropdown Menu list */
@@ -44,9 +44,9 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement>, OUIAProp
   /** Flag to indicate if dropdown has groups */
   isGrouped?: boolean;
   /** Toggle for the dropdown, examples: <DropdownToggle> or <DropdownToggleCheckbox> */
-  toggle: React.ReactElement<any>;
+  toggle: ReactElement<any>;
   /** Function callback called when user selects item */
-  onSelect?: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
+  onSelect?: (event?: SyntheticEvent<HTMLDivElement>) => void;
   /** Flag to indicate if the first dropdown item should gain initial focus, set false when adding
    * a specific auto-focus item (like a current selection) otherwise leave as true
    */
@@ -66,10 +66,10 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement>, OUIAProp
   ouiaSafe?: boolean;
 }
 
-export const Dropdown: React.FunctionComponent<DropdownProps> = ({
+export const Dropdown: FunctionComponent<DropdownProps> = ({
   onSelect,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ref, // Types of Ref are different for React.FunctionComponent vs React.Component
+  ref, // Types of Ref are different for FunctionComponent vs Component
   ouiaId,
   ouiaSafe,
   alignments,

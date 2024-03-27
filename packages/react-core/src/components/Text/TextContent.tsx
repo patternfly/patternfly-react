@@ -1,17 +1,17 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Content/content';
 import { css } from '@patternfly/react-styles';
 
-export interface TextContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface TextContentProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered within the TextContent */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the TextContent */
   className?: string;
   /** Flag to indicate the all links in a the content block have visited styles applied if the browser determines the link has been visited */
   isVisited?: boolean;
 }
 
-export const TextContent: React.FunctionComponent<TextContentProps> = ({
+export const TextContent: FunctionComponent<TextContentProps> = ({
   children,
   className = '',
   isVisited = false,

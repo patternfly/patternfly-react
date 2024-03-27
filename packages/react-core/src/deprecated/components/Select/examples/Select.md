@@ -23,12 +23,12 @@ A select list may use other properties for additional customization. Select each
 - To add an icon to a select toggle, use the `toggleIcon` property.
 
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { Checkbox, Divider } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant, SelectDirection } from '@patternfly/react-core/deprecated';
 
-class SingleSelectInput extends React.Component {
+class SingleSelectInput extends Component {
   constructor(props) {
     super(props);
     this.options = [
@@ -42,7 +42,7 @@ class SingleSelectInput extends React.Component {
       <SelectOption key={7} value="Other" />
     ];
 
-    this.toggleRef = React.createRef();
+    this.toggleRef = createRef();
 
     this.state = {
       isToggleIcon: false,
@@ -161,10 +161,10 @@ class SingleSelectInput extends React.Component {
 To give more context to a `<SelectOption>` in a list, use the `description` property.
 
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class SingleSelectDescription extends React.Component {
+class SingleSelectDescription extends Component {
   constructor(props) {
     super(props);
     this.options = [
@@ -176,7 +176,7 @@ class SingleSelectDescription extends React.Component {
       { value: 'Other', disabled: false }
     ];
 
-    this.toggleRef = React.createRef();
+    this.toggleRef = createRef();
 
     this.state = {
       isOpen: false,
@@ -251,11 +251,11 @@ class SingleSelectDescription extends React.Component {
 To group related select options together, use 1 or more `<SelectGroup>` components and title each group using the `label` property.
 
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import { Divider } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core/deprecated';
 
-class GroupedSingleSelectInput extends React.Component {
+class GroupedSingleSelectInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -263,7 +263,7 @@ class GroupedSingleSelectInput extends React.Component {
       selected: null
     };
 
-    this.toggleRef = React.createRef();
+    this.toggleRef = createRef();
 
     this.onToggle = (_event, isOpen) => {
       this.setState({
@@ -334,10 +334,10 @@ class GroupedSingleSelectInput extends React.Component {
 To allow users to favorite items in a select list, use the `onFavorite` callback. When users click the favorite button, the item is duplicated and placed in a separated group at the top of the menu. To change the name of the group use the `favoritesLabel` property.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core/deprecated';
 
-class FavoritesSelect extends React.Component {
+class FavoritesSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -429,10 +429,10 @@ To validate selections that users make, pass a validation state to the `validate
 The example below passes an "error" state when you choose “select a title”, a "warning" state when you choose "other", and a "success" state for any other item selected from the menu.
 
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class ValidatedSelect extends React.Component {
+class ValidatedSelect extends Component {
   constructor(props) {
     super(props);
     this.options = [
@@ -445,7 +445,7 @@ class ValidatedSelect extends React.Component {
       <SelectOption key={6} value="Other" />
     ];
 
-    this.toggleRef = React.createRef();
+    this.toggleRef = createRef();
 
     this.state = {
       isOpen: false,
@@ -532,12 +532,12 @@ To add a toggle label to a select, use the `placeholderText` property. The follo
 To fade the color of `placeholderText` to gray, use the `hasPlaceholderStyle` property.
 
 ```js
-import React from 'react';
+import { useState } from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
 function SelectWithPlaceholderStyle() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState([]);
 
   const options = [
     <SelectOption key={0} value="Active" />,
@@ -589,12 +589,12 @@ To set a `<SelectOption>` as a placeholder, use the `isPlaceholder` property. Th
 
 ```js
 
-import React from 'react';
+import { useState } from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
 function SelectWithPlaceholderStyle() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState([]);
 
   const options = [
     <SelectOption key={0} value="Filter by status" isPlaceholder />,
@@ -645,12 +645,12 @@ function SelectWithPlaceholderStyle() {
 You can add a `footer` to a `<Select>` list to hold actions that users can take on menu items.
 
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { Divider, Button } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant, SelectDirection } from '@patternfly/react-core/deprecated';
 
-class SelectWithFooter extends React.Component {
+class SelectWithFooter extends Component {
   constructor(props) {
     super(props);
     this.options = [
@@ -664,7 +664,7 @@ class SelectWithFooter extends React.Component {
       <SelectOption key={7} value="Other" />
     ];
 
-    this.toggleRef = React.createRef();
+    this.toggleRef = createRef();
 
     this.state = {
       isToggleIcon: false,
@@ -743,10 +743,10 @@ To reduce the processing load for long select lists, replace overflow items with
 Adjust the number of items shown above the "View more" link with the `numOptions` property. The following example passes 3 items into this property.
 
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class SelectViewMore extends React.Component {
+class SelectViewMore extends Component {
   constructor(props) {
     super(props);
     this.options = [
@@ -759,7 +759,7 @@ class SelectViewMore extends React.Component {
       <SelectOption key={6} value="Other" />
     ];
 
-    this.toggleRef = React.createRef();
+    this.toggleRef = createRef();
 
     this.state = {
       isOpen: false,
@@ -846,11 +846,11 @@ To let users select multiple list options via checkbox input, use a checkbox sel
 By default, a badge is displayed in the menu toggle that indicates the number of items a user has selected.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Divider } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class CheckboxSelectInput extends React.Component {
+class CheckboxSelectInput extends Component {
   constructor(props) {
     super(props);
 
@@ -927,10 +927,10 @@ class CheckboxSelectInput extends React.Component {
 You can use groups alongside checkbox input. The item count badge will display the number of items selected across all groups.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core/deprecated';
 
-class GroupedCheckboxSelectInput extends React.Component {
+class GroupedCheckboxSelectInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -1012,10 +1012,10 @@ class GroupedCheckboxSelectInput extends React.Component {
 To change the default badge text for a checkbox select, use the `customBadgeText` property. The following example uses `customBadgeText` to display "all" in the badge once all menu items are selected.
 
 ```js
-import React from 'react';
+import { Component, cloneElement } from 'react';
 import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class FilteringCheckboxSelectInputWithBadging extends React.Component {
+class FilteringCheckboxSelectInputWithBadging extends Component {
   constructor(props) {
     super(props);
 
@@ -1073,7 +1073,7 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
       } else {
         let filteredGroups = this.options
           .map(group => {
-            let filteredGroup = React.cloneElement(group, {
+            let filteredGroup = cloneElement(group, {
               children: group.props.children.filter(item => {
                 return item.props.value.toLowerCase().includes(textInput.toLowerCase());
               })
@@ -1138,10 +1138,10 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
 To remove the default item count badge, use the `isCheckboxSelectionBadgeHidden` property.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class CheckboxSelectInputNoBadge extends React.Component {
+class CheckboxSelectInputNoBadge extends Component {
   constructor(props) {
     super(props);
 
@@ -1217,11 +1217,11 @@ class CheckboxSelectInputNoBadge extends React.Component {
 To show users the number of items that a `<SelectOption>` would match, use the `itemCount` property. The numerical value you pass into `itemCount` is displayed to the right of each menu item.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Divider } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class CheckboxSelectWithCounts extends React.Component {
+class CheckboxSelectWithCounts extends Component {
   constructor(props) {
     super(props);
 
@@ -1297,11 +1297,11 @@ class CheckboxSelectWithCounts extends React.Component {
 You can combine a footer with checkbox input to allow users to apply an action to multiple items.
 
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import { Button } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class SelectWithFooterCheckbox extends React.Component {
+class SelectWithFooterCheckbox extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -1311,7 +1311,7 @@ class SelectWithFooterCheckbox extends React.Component {
       isLoading: false
     };
 
-    this.toggleRef = React.createRef();
+    this.toggleRef = createRef();
 
     this.options = [
       <SelectOption key={0} value="Active" description="This is a description" />,
@@ -1384,10 +1384,10 @@ class SelectWithFooterCheckbox extends React.Component {
 When a "view more" link is used alongside checkbox input, selections that users make prior to clicking "view more" are persisted after the click.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class SelectViewMoreCheckbox extends React.Component {
+class SelectViewMoreCheckbox extends Component {
   constructor(props) {
     super(props);
 
@@ -1488,10 +1488,10 @@ class SelectViewMoreCheckbox extends React.Component {
 To preload a filter search bar with placeholder text, use the `inlineFilterPlaceholderText` property. The following example preloads the search bar with "Filter by status".
 
 ```js
-import React from 'react';
+import { Component, cloneElement } from 'react';
 import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
+class FilteringCheckboxSelectInputWithPlaceholder extends Component {
   constructor(props) {
     super(props);
 
@@ -1542,7 +1542,7 @@ class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
       } else {
         let filteredGroups = this.options
           .map(group => {
-            let filteredGroup = React.cloneElement(group, {
+            let filteredGroup = cloneElement(group, {
               children: group.props.children.filter(item => {
                 return item.props.value.toLowerCase().includes(textInput.toLowerCase());
               })
@@ -1600,11 +1600,11 @@ To allow users to filter select lists using text input, use the `hasInlineFilter
 - To allow users to add new items to a select list, use the `isCreatable` property. When this property is applied and a user searches for an option that doesn't exist, they will be prompted to "create" the item.
 
 ```js
-import React from 'react';
+import { Component, cloneElement } from 'react';
 import { Checkbox } from '@patternfly/react-core';
 import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class FilteringSingleSelectInput extends React.Component {
+class FilteringSingleSelectInput extends Component {
   constructor(props) {
     super(props);
 
@@ -1647,7 +1647,7 @@ class FilteringSingleSelectInput extends React.Component {
       } else {
         let filteredGroups = this.options
           .map(group => {
-            let filteredGroup = React.cloneElement(group, {
+            let filteredGroup = cloneElement(group, {
               children: group.props.children.filter(item => {
                 return item.props.value.toLowerCase().includes(textInput.toLowerCase());
               })
@@ -1753,11 +1753,11 @@ A few additional customization options are shown in the example below. Select ea
 - To reset the typeahead value after a user makes a selection, use the `shouldResetOnSelect` property.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Checkbox } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class TypeaheadSelectInput extends React.Component {
+class TypeaheadSelectInput extends Component {
   constructor(props) {
     super(props);
     this.defaultOptions = [
@@ -1969,11 +1969,11 @@ class TypeaheadSelectInput extends React.Component {
 Typeahead matches items with user input across groups.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Checkbox, Divider } from '@patternfly/react-core';
 import { Select, SelectGroup, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class GroupedTypeaheadSelectInput extends React.Component {
+class GroupedTypeaheadSelectInput extends Component {
   constructor(props) {
     super(props);
 
@@ -2102,10 +2102,10 @@ class GroupedTypeaheadSelectInput extends React.Component {
 You can add custom filtering to a select list to better fit needs that aren't covered by inline filtering. If you use custom filtering, use the `onFilter` property to trigger a callback with your custom filter implementation.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class TypeaheadSelectInput extends React.Component {
+class TypeaheadSelectInput extends Component {
   constructor(props) {
     super(props);
     this.options = [
@@ -2190,11 +2190,11 @@ To create a multiple typeahead select variant, pass `variant={SelectVariant.type
 When many items are selected, you can hide overflowing items under a "more" button. The following example hides items after more than 3 are selected. To show hidden items, select the “more” button. Click "show less" to hide extra items again.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Checkbox } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class MultiTypeaheadSelectInput extends React.Component {
+class MultiTypeaheadSelectInput extends Component {
   constructor(props) {
     super(props);
 
@@ -2352,10 +2352,10 @@ class MultiTypeaheadSelectInput extends React.Component {
 To customize the appearance of chips, use the `chipGroupProps` property. The `numChips` property allows you to control the number of items shown, while the `expandedText` and `collapsedText` properties allow you to control the labels of the expansion and collapse chips.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
+class MultiTypeaheadSelectInputWithChipGroupProps extends Component {
   constructor(props) {
     super(props);
 
@@ -2442,11 +2442,11 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
 To customize chips even more, render a [`<ChipGroup>`](/components/chip-group) component and pass it into the `chipGroupComponent` property of the `<Select>` component.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { ChipGroup, Chip } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
+class MultiTypeaheadSelectInputWithChipGroupProps extends Component {
   constructor(props) {
     super(props);
 
@@ -2550,11 +2550,11 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
 A `<SelectOption>` can have an object passed into the `value` property in order to store additional data beyond just a string value. The object passed in must have a `toString` function that returns a string to display in the `SelectMenu`.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Divider } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class MultiTypeaheadSelectInputCustomObjects extends React.Component {
+class MultiTypeaheadSelectInputCustomObjects extends Component {
   constructor(props) {
     super(props);
     this.createState = (name, abbreviation, capital, founded) => {
@@ -2651,10 +2651,10 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
 To plainly style a typeahead, use the `isPlain` property.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
-class PlainSelectInput extends React.Component {
+class PlainSelectInput extends Component {
   constructor(props) {
     super(props);
     this.options = [
@@ -2737,12 +2737,12 @@ class PlainSelectInput extends React.Component {
 To add custom menu content, use the `customContent` property.
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { Checkbox } from '@patternfly/react-core';
 import { Select, SelectOption, SelectDirection } from '@patternfly/react-core/deprecated';
 
-class SingleSelectInput extends React.Component {
+class SingleSelectInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -2826,11 +2826,11 @@ The following example demonstrates both methods. When the dropdown is opened, bo
 - For the `parent` variant, however, the focus will be placed on the next tab-able element (the "Toggle JS code" button for the code editor in this case).
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 import { Select, SelectOption } from '@patternfly/react-core/deprecated';
 
-class SelectDocumentBodyVsParent extends React.Component {
+class SelectDocumentBodyVsParent extends Component {
   constructor(props) {
     super(props);
     this.bodyOptions = [

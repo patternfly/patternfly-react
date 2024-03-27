@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { SearchInput } from '@patternfly/react-core';
 
-export const SearchInputWithSubmitButton: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
+export const SearchInputWithSubmitButton: FunctionComponent = () => {
+  const [value, setValue] = useState('');
 
   return (
     <SearchInput

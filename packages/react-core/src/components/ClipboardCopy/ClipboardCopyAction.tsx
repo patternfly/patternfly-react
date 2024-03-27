@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
 
-export interface ClipboardCopyActionProps extends React.HTMLProps<HTMLLIElement> {
+export interface ClipboardCopyActionProps extends HTMLProps<HTMLLIElement> {
   /** Content rendered inside the clipboard copy action. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the clipboard copy action. */
   className?: string;
 }
 
-export const ClipboardCopyAction: React.FunctionComponent<ClipboardCopyActionProps> = ({
+export const ClipboardCopyAction: FunctionComponent<ClipboardCopyActionProps> = ({
   children = null,
   className = '',
   ...props

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Ref, useState } from 'react';
 import {
   DataList,
   DataListItem,
@@ -25,10 +25,10 @@ import global_BackgroundColor_200 from '@patternfly/react-tokens/dist/esm/global
 import global_BorderColor_100 from '@patternfly/react-tokens/dist/esm/global_BorderColor_100';
 import global_BorderWidth_sm from '@patternfly/react-tokens/dist/esm/global_BorderWidth_sm';
 
-export const DataListWidthModifiers: React.FunctionComponent = () => {
-  const [show, setShow] = React.useState(true);
-  const [isOpen1, setIsOpen1] = React.useState(false);
-  const [isOpen2, setIsOpen2] = React.useState(false);
+export const DataListWidthModifiers: FunctionComponent = () => {
+  const [show, setShow] = useState(true);
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
 
   const onToggle1 = () => {
     setIsOpen1(!isOpen1);
@@ -121,7 +121,7 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                 <Dropdown
                   popperProps={{ position: 'right' }}
                   onSelect={onSelect1}
-                  toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                  toggle={(toggleRef: Ref<MenuToggleElement>) => (
                     <MenuToggle
                       ref={toggleRef}
                       isExpanded={isOpen1}
@@ -138,7 +138,7 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                   <DropdownList>
                     <DropdownItem key="action">Action</DropdownItem>
                     {/* Prevent default onClick functionality for example
-                  purposes */}
+                purposes */}
                     <DropdownItem key="link" to="#" onClick={(event: any) => event.preventDefault()}>
                       Link
                     </DropdownItem>
@@ -202,7 +202,7 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                 <Dropdown
                   popperProps={{ position: 'right' }}
                   onSelect={onSelect2}
-                  toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                  toggle={(toggleRef: Ref<MenuToggleElement>) => (
                     <MenuToggle
                       ref={toggleRef}
                       isExpanded={isOpen2}
@@ -219,7 +219,7 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                   <DropdownList>
                     <DropdownItem key="action2">Action</DropdownItem>
                     {/* Prevent default onClick functionality for example
-                  purposes */}
+                purposes */}
                     <DropdownItem key="link2" to="#" onClick={(event: any) => event.preventDefault()}>
                       Link
                     </DropdownItem>

@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Button } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 
-export const WizardWithNavAnchors: React.FunctionComponent = () => {
+export const WizardWithNavAnchors: FunctionComponent = () => {
   const steps = [
     {
       name: (

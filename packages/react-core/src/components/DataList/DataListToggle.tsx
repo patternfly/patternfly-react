@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Button, ButtonProps, ButtonVariant } from '../Button';
 
-export interface DataListToggleProps extends React.HTMLProps<HTMLDivElement> {
+export interface DataListToggleProps extends HTMLProps<HTMLDivElement> {
   /** Additional classes added to the DataList cell */
   className?: string;
   /** Flag to show if the expanded content of the DataList item is visible */
@@ -23,7 +23,7 @@ export interface DataListToggleProps extends React.HTMLProps<HTMLDivElement> {
   buttonProps?: ButtonProps;
 }
 
-export const DataListToggle: React.FunctionComponent<DataListToggleProps> = ({
+export const DataListToggle: FunctionComponent<DataListToggleProps> = ({
   className = '',
   isExpanded = false,
   'aria-controls': ariaControls = '',

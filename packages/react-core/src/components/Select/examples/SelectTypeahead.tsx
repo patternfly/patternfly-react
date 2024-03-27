@@ -1,4 +1,13 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  useRef,
+  useEffect,
+  type MouseEvent as ReactMouseEvent,
+  type FormEvent as ReactFormEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type Ref
+} from 'react';
 import {
   Select,
   SelectOption,
@@ -22,17 +31,17 @@ const initialSelectOptions: SelectOptionProps[] = [
   { value: 'North Carolina', children: 'North Carolina' }
 ];
 
-export const SelectBasic: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<string>('');
-  const [inputValue, setInputValue] = React.useState<string>('');
-  const [filterValue, setFilterValue] = React.useState<string>('');
-  const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
-  const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
-  const [activeItem, setActiveItem] = React.useState<string | null>(null);
-  const textInputRef = React.useRef<HTMLInputElement>();
+export const SelectBasic: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string>('');
+  const [filterValue, setFilterValue] = useState<string>('');
+  const [selectOptions, setSelectOptions] = useState<SelectOptionProps[]>(initialSelectOptions);
+  const [focusedItemIndex, setFocusedItemIndex] = useState<number | null>(null);
+  const [activeItem, setActiveItem] = useState<string | null>(null);
+  const textInputRef = useRef<HTMLInputElement>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     let newSelectOptions: SelectOptionProps[] = initialSelectOptions;
 
     // Filter menu items based on the text input value when one exists
@@ -63,7 +72,7 @@ export const SelectBasic: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
+  const onSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     // eslint-disable-next-line no-console
     console.log('selected', value);
 
@@ -77,7 +86,7 @@ export const SelectBasic: React.FunctionComponent = () => {
     setActiveItem(null);
   };
 
-  const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  const onTextInputChange = (_event: ReactFormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
     setFilterValue(value);
   };
@@ -110,7 +119,7 @@ export const SelectBasic: React.FunctionComponent = () => {
     }
   };
 
-  const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const onInputKeyDown = (event: ReactKeyboardEvent<HTMLInputElement>) => {
     const enabledMenuItems = selectOptions.filter((option) => !option.isDisabled);
     const [firstMenuItem] = enabledMenuItems;
     const focusedItem = focusedItemIndex ? enabledMenuItems[focusedItemIndex] : firstMenuItem;
@@ -142,7 +151,7 @@ export const SelectBasic: React.FunctionComponent = () => {
     }
   };
 
-  const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
+  const toggle = (toggleRef: Ref<MenuToggleElement>) => (
     <MenuToggle
       ref={toggleRef}
       variant="typeahead"

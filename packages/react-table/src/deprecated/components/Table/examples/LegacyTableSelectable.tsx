@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, useEffect } from 'react';
 import { headerCol } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { Checkbox } from '@patternfly/react-core';
@@ -12,7 +12,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const LegacyTableSelectable: React.FunctionComponent = () => {
+export const LegacyTableSelectable: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five' },
@@ -28,7 +28,7 @@ export const LegacyTableSelectable: React.FunctionComponent = () => {
 
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
-  const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
+  const [selectedRepoNames, setSelectedRepoNames] = useState<string[]>([]);
   const setRepoSelected = (repo: Repository, isSelecting = true) =>
     setSelectedRepoNames((prevSelected) => {
       const otherSelectedRepoNames = prevSelected.filter((r) => r !== repo.name);
@@ -38,11 +38,11 @@ export const LegacyTableSelectable: React.FunctionComponent = () => {
     setSelectedRepoNames(isSelecting ? selectableRepos.map((r) => r.name) : []);
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
 
-  const [canSelectAll, setCanSelectAll] = React.useState(true);
+  const [canSelectAll, setCanSelectAll] = useState(true);
 
   // To allow shift+click to select/deselect multiple rows
-  const [recentSelectedRowIndex, setRecentSelectedRowIndex] = React.useState<number | null>(null);
-  const [shifting, setShifting] = React.useState(false);
+  const [recentSelectedRowIndex, setRecentSelectedRowIndex] = useState<number | null>(null);
+  const [shifting, setShifting] = useState(false);
 
   const onSelectRepo = (repo: Repository, rowIndex: number, isSelecting: boolean) => {
     // If the user is shift + selecting the checkboxes, then all intermediate checkboxes should be selected
@@ -59,7 +59,7 @@ export const LegacyTableSelectable: React.FunctionComponent = () => {
     setRecentSelectedRowIndex(rowIndex);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Shift') {
         setShifting(true);

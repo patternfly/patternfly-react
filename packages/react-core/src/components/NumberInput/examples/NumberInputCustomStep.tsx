@@ -1,15 +1,15 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
-export const NumberInputCustomStep: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState<number | ''>(90);
+export const NumberInputCustomStep: FunctionComponent = () => {
+  const [value, setValue] = useState<number | ''>(90);
   const step = 3;
 
   const stepper = (stepValue: number) => {
     setValue((value || 0) + stepValue);
   };
 
-  const onChange = (event: React.FormEvent<HTMLInputElement>) => {
+  const onChange = (event: FormEvent<HTMLInputElement>) => {
     const value = (event.target as HTMLInputElement).value;
     setValue(value === '' ? value : +value);
   };

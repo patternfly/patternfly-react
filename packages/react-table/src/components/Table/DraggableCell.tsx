@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { type FunctionComponent, type MouseEvent as ReactMouseEvent } from 'react';
 import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 
 export interface DraggableCellProps {
   id: string;
   className?: string;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: (event: ReactMouseEvent<HTMLButtonElement, MouseEvent>) => void;
   'aria-label'?: string;
 }
 
-export const DraggableCell: React.FunctionComponent<DraggableCellProps> = ({
+export const DraggableCell: FunctionComponent<DraggableCellProps> = ({
   className,
   onClick,
   'aria-label': ariaLabel,

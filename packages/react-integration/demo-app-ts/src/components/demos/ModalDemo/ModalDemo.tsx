@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent, HTMLProps, Component, Fragment } from 'react';
 import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
@@ -20,7 +20,7 @@ interface ModalDemoState {
 }
 
 // eslint-disable-next-line patternfly-react/no-anonymous-functions
-export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
+export class ModalDemo extends Component<HTMLProps<HTMLDivElement>, ModalDemoState> {
   static displayName = 'ModalDemo';
 
   state = {
@@ -39,7 +39,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     isCustomFocusModalOpen: false
   };
 
-  handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
+  handleModalToggle = (_event: KeyboardEvent | MouseEvent) => {
     this.setState(({ isModalOpen }) => ({
       isModalOpen: !isModalOpen
     }));
@@ -285,14 +285,14 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     const { isCustomHeaderFooterModalOpen } = this.state;
 
     const header = (
-      <React.Fragment>
+      <Fragment>
         <Title id="customHeaderTitle" headingLevel="h1" size={TitleSizes['2xl']}>
           Custom Modal Header/Footer
         </Title>
         <p id="customHeaderDescription" className={spacing.ptSm}>
           Allows for custom content in the header and/or footer by passing components.
         </p>
-      </React.Fragment>
+      </Fragment>
     );
 
     const footer = (
@@ -482,7 +482,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     };
 
     return (
-      <React.Fragment>
+      <Fragment>
         <div id="tabstop-test" tabIndex={0} style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
           <Button style={buttonStyle} variant="primary" onClick={this.handleModalToggle} id="showDefaultModalButton">
             Show Modal
@@ -575,7 +575,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         {this.renderModalWithAlertVariant()}
         {this.renderHelpModal()}
         {this.renderCustomFocusModal()}
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

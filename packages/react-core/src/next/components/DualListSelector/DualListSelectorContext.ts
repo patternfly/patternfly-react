@@ -1,21 +1,21 @@
-import * as React from 'react';
+import { createContext, type ReactNode } from 'react';
 
-export const DualListSelectorContext = React.createContext<{
+export const DualListSelectorContext = createContext<{
   isTree?: boolean;
 }>({ isTree: false });
 
-export const DualListSelectorListContext = React.createContext<{
+export const DualListSelectorListContext = createContext<{
   setFocusedOption?: (id: string) => void;
   isTree?: boolean;
   ariaLabelledBy?: string;
   focusedOption?: string;
-  displayOption?: (option: React.ReactNode) => boolean;
+  displayOption?: (option: ReactNode) => boolean;
   selectedOptions?: string[] | number[];
   id?: string;
-  options?: React.ReactNode[];
+  options?: ReactNode[];
   isDisabled?: boolean;
 }>({});
 
-export const DualListSelectorPaneContext = React.createContext<{
+export const DualListSelectorPaneContext = createContext<{
   isChosen: boolean;
 }>({ isChosen: false });

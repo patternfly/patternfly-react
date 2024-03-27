@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { SVGProps, FunctionComponent, CSSProperties } from 'react';
 import styles from '@patternfly/react-styles/css/components/Spinner/spinner';
 import { css } from '@patternfly/react-styles';
 import cssDiameter from '@patternfly/react-tokens/dist/esm/c_spinner_diameter';
@@ -10,7 +10,7 @@ export enum spinnerSize {
   xl = 'xl'
 }
 
-export interface SpinnerProps extends React.SVGProps<SVGSVGElement> {
+export interface SpinnerProps extends SVGProps<SVGSVGElement> {
   /** Additional classes added to the Spinner. */
   className?: string;
   /** Size variant of progress. */
@@ -27,7 +27,7 @@ export interface SpinnerProps extends React.SVGProps<SVGSVGElement> {
   'aria-labelledBy'?: string;
 }
 
-export const Spinner: React.FunctionComponent<SpinnerProps> = ({
+export const Spinner: FunctionComponent<SpinnerProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   size = 'xl',
@@ -43,7 +43,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
     role="progressbar"
     aria-valuetext={ariaValueText}
     viewBox="0 0 100 100"
-    {...(diameter && { style: { [cssDiameter.name]: diameter } as React.CSSProperties })}
+    {...(diameter && { style: { [cssDiameter.name]: diameter } as CSSProperties })}
     {...(ariaLabel && { 'aria-label': ariaLabel })}
     {...(ariaLabelledBy && { 'aria-labelledBy': ariaLabelledBy })}
     {...(!ariaLabel && !ariaLabelledBy && { 'aria-label': 'Contents' })}

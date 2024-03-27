@@ -1,5 +1,5 @@
 import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 export interface SliderDemoState {
   valueDiscrete: number;

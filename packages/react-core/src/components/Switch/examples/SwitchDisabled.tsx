@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Switch } from '@patternfly/react-core';
 
-export const SwitchDisabled: React.FunctionComponent = () => (
-  <React.Fragment>
+export const SwitchDisabled: FunctionComponent = () => (
+  <Fragment>
     <Switch
       id="disabled-switch-on"
       aria-label="Message when on"
@@ -24,5 +24,5 @@ export const SwitchDisabled: React.FunctionComponent = () => (
     <Switch id="disabled-no-label-switch-on" aria-label="Message when on" isChecked isDisabled />
     <br />
     <Switch id="disabled-no-label-switch-off" aria-label="Message when on" isChecked={false} isDisabled />
-  </React.Fragment>
+  </Fragment>
 );

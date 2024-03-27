@@ -1,18 +1,18 @@
-import * as React from 'react';
+import { ReactElement } from 'react';
 import { ChartDomain, getDomains } from '../../ChartUtils/chart-domain';
 
 interface ChartBulletDomainInterface {
-  comparativeErrorMeasureComponent?: React.ReactElement<any>;
+  comparativeErrorMeasureComponent?: ReactElement<any>;
   comparativeErrorMeasureData?: any[];
-  comparativeWarningMeasureComponent?: React.ReactElement<any>;
+  comparativeWarningMeasureComponent?: ReactElement<any>;
   comparativeWarningMeasureData?: any[];
-  primaryDotMeasureComponent?: React.ReactElement<any>;
+  primaryDotMeasureComponent?: ReactElement<any>;
   primaryDotMeasureData?: any[];
-  primarySegmentedMeasureComponent?: React.ReactElement<any>;
+  primarySegmentedMeasureComponent?: ReactElement<any>;
   primarySegmentedMeasureData?: any[];
   maxDomain?: any;
   minDomain?: any;
-  qualitativeRangeComponent?: React.ReactElement<any>;
+  qualitativeRangeComponent?: ReactElement<any>;
   qualitativeRangeData?: any[];
 }
 

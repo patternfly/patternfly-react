@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 import { MultipleFileUploadTitle } from './MultipleFileUploadTitle';
@@ -8,24 +8,24 @@ import { MultipleFileUploadInfo } from './MultipleFileUploadInfo';
 /** Creates the visual upload interface, including the area to drag and drop files,
  * an optional upload button, and descriptive instructions.
  */
-export interface MultipleFileUploadMainProps extends React.HTMLProps<HTMLDivElement> {
+export interface MultipleFileUploadMainProps extends HTMLProps<HTMLDivElement> {
   /** Class to add to outer div */
   className?: string;
   /** Content rendered inside the title icon div */
-  titleIcon?: React.ReactNode;
+  titleIcon?: ReactNode;
   /** Content rendered inside the title text div */
-  titleText?: React.ReactNode;
+  titleText?: ReactNode;
   /** Content rendered inside the title text separator div */
-  titleTextSeparator?: React.ReactNode;
+  titleTextSeparator?: ReactNode;
   /** Content rendered inside the info div */
-  infoText?: React.ReactNode;
+  infoText?: ReactNode;
   /** Flag to prevent the upload button from being rendered */
   isUploadButtonHidden?: boolean;
   /** Visible text label for the upload button */
   browseButtonText?: string;
 }
 
-export const MultipleFileUploadMain: React.FunctionComponent<MultipleFileUploadMainProps> = ({
+export const MultipleFileUploadMain: FunctionComponent<MultipleFileUploadMainProps> = ({
   className,
   titleIcon,
   titleText,

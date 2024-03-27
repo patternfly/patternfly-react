@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, FormEvent, ReactNode, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface MenuToggleCheckboxProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'>,
+  extends Omit<HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'>,
     OUIAProps {
   /** Additional classes added to the MenuToggleCheckbox */
   className?: string;
@@ -22,9 +22,9 @@ export interface MenuToggleCheckboxProps
    */
   defaultChecked?: boolean | null;
   /** A callback for when the checkbox selection changes */
-  onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (checked: boolean, event: FormEvent<HTMLInputElement>) => void;
   /** Element to be rendered inside the <span> */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Id of the checkbox */
   id: string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -33,7 +33,7 @@ export interface MenuToggleCheckboxProps
   ouiaSafe?: boolean;
 }
 
-class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps, { ouiaStateId: string }> {
+class MenuToggleCheckbox extends Component<MenuToggleCheckboxProps, { ouiaStateId: string }> {
   static displayName = 'MenuToggleCheckbox';
   static defaultProps: PickOptional<MenuToggleCheckboxProps> = {
     isValid: true,
@@ -48,7 +48,7 @@ class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps, { ouia
     };
   }
 
-  handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+  handleChange = (event: FormEvent<HTMLInputElement>) => {
     this.props.onChange((event.target as HTMLInputElement).checked, event);
   };
 

@@ -1,28 +1,23 @@
-import React from 'react';
+import { FunctionComponent, KeyboardEvent, MouseEvent, useState } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem, Divider, DrilldownMenu } from '@patternfly/react-core';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
-export const MenuWithDrilldown: React.FunctionComponent = () => {
-  const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
-  const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
-  const [menuHeights, setMenuHeights] = React.useState<any>({});
-  const [activeMenu, setActiveMenu] = React.useState<string>('drilldown-rootMenu');
+export const MenuWithDrilldown: FunctionComponent = () => {
+  const [menuDrilledIn, setMenuDrilledIn] = useState<string[]>([]);
+  const [drilldownPath, setDrilldownPath] = useState<string[]>([]);
+  const [menuHeights, setMenuHeights] = useState<any>({});
+  const [activeMenu, setActiveMenu] = useState<string>('drilldown-rootMenu');
 
-  const drillIn = (
-    _event: React.KeyboardEvent | React.MouseEvent,
-    fromMenuId: string,
-    toMenuId: string,
-    pathId: string
-  ) => {
+  const drillIn = (_event: KeyboardEvent | MouseEvent, fromMenuId: string, toMenuId: string, pathId: string) => {
     setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
     setDrilldownPath([...drilldownPath, pathId]);
     setActiveMenu(toMenuId);
   };
 
-  const drillOut = (_event: React.KeyboardEvent | React.MouseEvent, toMenuId: string) => {
+  const drillOut = (_event: KeyboardEvent | MouseEvent, toMenuId: string) => {
     const menuDrilledInSansLast = menuDrilledIn.slice(0, menuDrilledIn.length - 1);
     const pathSansLast = drilldownPath.slice(0, drilldownPath.length - 1);
     setMenuDrilledIn(menuDrilledInSansLast);

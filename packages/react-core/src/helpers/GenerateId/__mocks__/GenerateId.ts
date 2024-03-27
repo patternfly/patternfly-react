@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { GenerateIdProps } from '../GenerateId';
-class GenerateId extends React.Component<GenerateIdProps, {}> {
+class GenerateId extends Component<GenerateIdProps, {}> {
   static displayName = 'GenerateId';
 
   render() {

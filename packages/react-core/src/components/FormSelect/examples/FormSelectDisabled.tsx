@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 
-export const FormSelectDisabled: React.FunctionComponent = () => {
-  const [formSelectValue, setFormSelectValue] = React.useState('mrs');
+export const FormSelectDisabled: FunctionComponent = () => {
+  const [formSelectValue, setFormSelectValue] = useState('mrs');
 
-  const onChange = (_event: React.FormEvent<HTMLSelectElement>, value: string) => {
+  const onChange = (_event: FormEvent<HTMLSelectElement>, value: string) => {
     setFormSelectValue(value);
   };
 

@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
-export interface EmptyStateBodyProps extends React.HTMLProps<HTMLDivElement> {
+export interface EmptyStateBodyProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the empty state body */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the empty state body */
   className?: string;
 }
 
-export const EmptyStateBody: React.FunctionComponent<EmptyStateBodyProps> = ({
+export const EmptyStateBody: FunctionComponent<EmptyStateBodyProps> = ({
   children,
   className,
   ...props

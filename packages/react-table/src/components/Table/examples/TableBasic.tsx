@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@patternfly/react-core';
 import { Table, Caption, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
@@ -12,7 +12,7 @@ interface Repository {
 
 type ExampleType = 'default' | 'compact' | 'compactBorderless';
 
-export const TableBasic: React.FunctionComponent = () => {
+export const TableBasic: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },
@@ -29,14 +29,14 @@ export const TableBasic: React.FunctionComponent = () => {
   };
 
   // This state is just for the ToggleGroup in this example and isn't necessary for Table usage.
-  const [exampleChoice, setExampleChoice] = React.useState<ExampleType>('default');
+  const [exampleChoice, setExampleChoice] = useState<ExampleType>('default');
   const onExampleTypeChange: ToggleGroupItemProps['onChange'] = (event, _isSelected) => {
     const id = event.currentTarget.id;
     setExampleChoice(id as ExampleType);
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <ToggleGroup aria-label="Default with single selectable">
         <ToggleGroupItem
           text="Default"
@@ -84,6 +84,6 @@ export const TableBasic: React.FunctionComponent = () => {
           ))}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

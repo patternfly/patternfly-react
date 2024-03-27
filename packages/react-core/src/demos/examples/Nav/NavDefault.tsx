@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import {
   Card,
   CardBody,
@@ -19,11 +19,11 @@ import {
 import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import { DashboardHeader } from '@patternfly/react-core/src/demos/DashboardHeader';
 
-export const NavDefault: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState<number | string>(0);
+export const NavDefault: FunctionComponent = () => {
+  const [activeItem, setActiveItem] = useState<number | string>(0);
 
   const onNavSelect = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: FormEvent<HTMLInputElement>,
     selectedItem: {
       groupId: number | string;
       itemId: number | string;

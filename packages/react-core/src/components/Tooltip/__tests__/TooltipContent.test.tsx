@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { TooltipContent } from '../TooltipContent';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';

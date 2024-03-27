@@ -1,4 +1,11 @@
-import * as React from 'react';
+import {
+  type HTMLProps,
+  type ReactNode,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type MouseEvent as ReactMouseEvent,
+  type ElementType,
+  type FunctionComponent
+} from 'react';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { Toggle } from './Toggle';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
@@ -6,18 +13,18 @@ import { DropdownContext } from './dropdownConstants';
 import { css } from '@patternfly/react-styles';
 import { useOUIAProps, OUIAProps } from '../../../helpers';
 
-export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement>, OUIAProps {
+export interface DropdownToggleProps extends HTMLProps<HTMLButtonElement>, OUIAProps {
   /** HTML ID of dropdown toggle */
   id?: string;
   /** Anything which can be rendered as dropdown toggle button */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classes applied to root element of dropdown toggle button */
   className?: string;
   /** Flag to indicate if menu is opened */
   isOpen?: boolean;
   /** Callback called when toggle is clicked */
   onToggle?: (
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent | TouchEvent | KeyboardEvent | ReactKeyboardEvent<any> | ReactMouseEvent<HTMLButtonElement>,
     isOpen: boolean
   ) => void;
   /** Element which wraps toggle */
@@ -35,11 +42,11 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement>,
   /** Alternate styles for the dropdown toggle button */
   toggleVariant?: 'primary' | 'secondary' | 'default';
   /** An image to display within the dropdown toggle, appearing before any component children */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** The icon to display for the toggle, appearing after any component children. Defaults to CaretDownIcon. Set to null to not show an icon. */
-  toggleIndicator?: React.ElementType | null;
+  toggleIndicator?: ElementType | null;
   /** Elements to display before the toggle button. When included, renders the toggle as a split button. */
-  splitButtonItems?: React.ReactNode[];
+  splitButtonItems?: ReactNode[];
   /** Variant of split button toggle */
   splitButtonVariant?: 'action' | 'checkbox';
   /** Accessible label for the dropdown toggle button */
@@ -49,14 +56,14 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement>,
   /** Type to put on the button */
   type?: 'button' | 'submit' | 'reset';
   /** Callback called when the Enter key is pressed */
-  onEnter?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
+  onEnter?: (event?: ReactMouseEvent<HTMLButtonElement>) => void;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
 }
 
-export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
+export const DropdownToggle: FunctionComponent<DropdownToggleProps> = ({
   id = '',
   children = null,
   className = '',
@@ -79,7 +86,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   ouiaId,
   ouiaSafe,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ref, // Types of Ref are different for React.FunctionComponent vs React.Component
+  ref, // Types of Ref are different for FunctionComponent vs Component
   ...props
 }: DropdownToggleProps) => {
   const ouiaProps = useOUIAProps(DropdownToggle.displayName, ouiaId, ouiaSafe);

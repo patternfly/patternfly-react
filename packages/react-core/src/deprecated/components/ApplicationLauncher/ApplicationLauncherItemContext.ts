@@ -1,3 +1,3 @@
-import * as React from 'react';
+import { createContext } from 'react';
 
-export const ApplicationLauncherItemContext = React.createContext({ isExternal: false, icon: null });
+export const ApplicationLauncherItemContext = createContext({ isExternal: false, icon: null });

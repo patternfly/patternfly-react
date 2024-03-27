@@ -1,12 +1,12 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, MouseEvent, useState } from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList } from '@patternfly/react-core';
 
-export const NavExpandableExample: React.FunctionComponent = () => {
-  const [activeGroup, setActiveGroup] = React.useState('nav-expandable-group-1');
-  const [activeItem, setActiveItem] = React.useState('nav-expandable-group-1_item-1');
+export const NavExpandableExample: FunctionComponent = () => {
+  const [activeGroup, setActiveGroup] = useState('nav-expandable-group-1');
+  const [activeItem, setActiveItem] = useState('nav-expandable-group-1_item-1');
 
   const onSelect = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: FormEvent<HTMLInputElement>,
     result: { itemId: number | string; groupId: number | string }
   ) => {
     setActiveGroup(result.groupId as string);
@@ -14,18 +14,14 @@ export const NavExpandableExample: React.FunctionComponent = () => {
   };
 
   const onToggle = (
-    _event: React.MouseEvent<HTMLButtonElement>,
+    _event: MouseEvent<HTMLButtonElement>,
     result: { groupId: number | string; isExpanded: boolean }
   ) => {
     // eslint-disable-next-line no-console
     console.log(`Group ${result.groupId} expanded? ${result.isExpanded}`);
   };
 
-  const onItemClick = (
-    _event: React.FormEvent<HTMLInputElement>,
-    itemId: number | string,
-    _groupId: number | string
-  ) => {
+  const onItemClick = (_event: FormEvent<HTMLInputElement>, itemId: number | string, _groupId: number | string) => {
     // eslint-disable-next-line no-console
     console.log(`Custom click handler on ${itemId}`);
   };

@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuContext } from './OverflowMenuContext';
 
-export interface OverflowMenuGroupProps extends React.HTMLProps<HTMLDivElement> {
+export interface OverflowMenuGroupProps extends HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
   children?: any;
   /** Additional classes added to the OverflowMenuGroup */
@@ -14,7 +14,7 @@ export interface OverflowMenuGroupProps extends React.HTMLProps<HTMLDivElement> 
   groupType?: 'button' | 'icon';
 }
 
-export const OverflowMenuGroup: React.FunctionComponent<OverflowMenuGroupProps> = ({
+export const OverflowMenuGroup: FunctionComponent<OverflowMenuGroupProps> = ({
   className,
   children,
   isPersistent = false,

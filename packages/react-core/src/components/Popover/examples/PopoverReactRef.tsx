@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useRef } from 'react';
 import { Popover } from '@patternfly/react-core';
 
-export const PopoverReactRef: React.FunctionComponent = () => {
-  const popoverRef = React.useRef<HTMLButtonElement>(null);
+export const PopoverReactRef: FunctionComponent = () => {
+  const popoverRef = useRef<HTMLButtonElement>(null);
 
   return (
     <div style={{ margin: '50px' }}>

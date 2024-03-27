@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 
-export const SidebarPanelRightGutter: React.FunctionComponent = () => (
+export const SidebarPanelRightGutter: FunctionComponent = () => (
   <Sidebar isPanelRight hasGutter>
     <SidebarPanel>Sidebar panel on the right</SidebarPanel>
     <SidebarContent>

@@ -1,22 +1,22 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, useState, Fragment } from 'react';
 import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
-export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
+export const ModalCustomHeaderFooter: FunctionComponent = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
+  const handleModalToggle = (_event: KeyboardEvent | MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
 
   const header = (
-    <React.Fragment>
+    <Fragment>
       <Title id="modal-custom-header-label" headingLevel="h1" size={TitleSizes['2xl']}>
         Custom header/footer modal
       </Title>
       <p className={spacing.ptSm}>Allows for custom content in the header and/or footer by passing components.</p>
-    </React.Fragment>
+    </Fragment>
   );
 
   const footer = (
@@ -27,7 +27,7 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show custom header/footer modal
       </Button>
@@ -52,6 +52,6 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
         laborum.
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

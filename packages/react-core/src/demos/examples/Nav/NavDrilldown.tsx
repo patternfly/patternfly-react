@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, KeyboardEvent, MouseEvent, useState } from 'react';
 
 import {
   Page,
@@ -64,25 +64,20 @@ const subMenuOne: JSX.Element = (
   </DrilldownMenu>
 );
 
-export const NavDrilldown: React.FunctionComponent = () => {
-  const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
-  const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
-  const [menuHeights, setMenuHeights] = React.useState<MenuHeights>({});
-  const [activeMenuId, setActiveMenuId] = React.useState('rootMenu');
+export const NavDrilldown: FunctionComponent = () => {
+  const [menuDrilledIn, setMenuDrilledIn] = useState<string[]>([]);
+  const [drilldownPath, setDrilldownPath] = useState<string[]>([]);
+  const [menuHeights, setMenuHeights] = useState<MenuHeights>({});
+  const [activeMenuId, setActiveMenuId] = useState('rootMenu');
   const navLayer = getNavLayer(activeMenuId);
 
-  const onDrillIn = (
-    _event: React.KeyboardEvent | React.MouseEvent,
-    fromItemId: string,
-    toItemId: string,
-    itemId: string
-  ) => {
+  const onDrillIn = (_event: KeyboardEvent | MouseEvent, fromItemId: string, toItemId: string, itemId: string) => {
     setMenuDrilledIn((prevMenuDrilledIn) => [...prevMenuDrilledIn, fromItemId]);
     setDrilldownPath((prevDrilldownPath) => [...prevDrilldownPath, itemId]);
     setActiveMenuId(toItemId);
   };
 
-  const onDrillOut = (_event: React.KeyboardEvent | React.MouseEvent, toItemId: string, _itemId: string) => {
+  const onDrillOut = (_event: KeyboardEvent | MouseEvent, toItemId: string, _itemId: string) => {
     setMenuDrilledIn((prevMenuDrilledIn) => prevMenuDrilledIn.slice(0, prevMenuDrilledIn.length - 1));
     setDrilldownPath((prevDrilldownPath) => prevDrilldownPath.slice(0, prevDrilldownPath.length - 1));
     setActiveMenuId(toItemId);

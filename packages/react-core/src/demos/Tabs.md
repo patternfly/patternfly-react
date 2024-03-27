@@ -21,7 +21,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 ### Open tabs
 
 ```js isFullscreen
-import React from 'react';
+import { useState } from 'react';
 import {
   PageSection,
   PageSectionVariants,
@@ -50,7 +50,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 
 TabsOpenDemo = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState(0);
+  const [activeTabKey, setActiveTabKey] = useState(0);
 
   // Toggle currently active tab
   const handleTabClick = (event, tabIndex) => {
@@ -213,7 +213,7 @@ TabsOpenDemo = () => {
 ### Open tabs with secondary tabs
 
 ```js isFullscreen
-import React from 'react';
+import { useState } from 'react';
 import {
   PageSection,
   PageSectionVariants,
@@ -241,8 +241,8 @@ import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 TabsOpenWithSecondaryTabsDemo = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState(0);
-  const [activeTabKeySecondary, setActiveTabKeySecondary] = React.useState(10);
+  const [activeTabKey, setActiveTabKey] = useState(0);
+  const [activeTabKeySecondary, setActiveTabKeySecondary] = useState(10);
 
   // Toggle currently active tab
   const handleTabClick = (event, tabIndex) => {

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 
@@ -6,12 +6,12 @@ import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 
 export interface ModalFooterProps {
   /** Content rendered inside the modal footer. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the modal footer. */
   className?: string;
 }
 
-export const ModalFooter: React.FunctionComponent<ModalFooterProps> = ({
+export const ModalFooter: FunctionComponent<ModalFooterProps> = ({
   children,
   className,
   ...props

@@ -1,4 +1,4 @@
-import React from 'react';
+import { CSSProperties, ReactElement, FunctionComponent, useState } from 'react';
 import { Link } from '@reach/router';
 import {
   ApplicationLauncher,
@@ -11,12 +11,12 @@ import c_app_launcher__menu_item_Color from '@patternfly/react-tokens/dist/esm/c
 
 const icon: JSX.Element = <img src={pfLogoSm} />;
 
-const linkStyle: React.CSSProperties = {
+const linkStyle: CSSProperties = {
   color: c_app_launcher__menu_item_Color.var,
   textDecoration: 'none'
 };
 
-const appLauncherItems: React.ReactElement[] = [
+const appLauncherItems: ReactElement[] = [
   <ApplicationLauncherItem
     key="router1"
     component={
@@ -46,8 +46,8 @@ const appLauncherItems: React.ReactElement[] = [
   </ApplicationLauncherItem>
 ];
 
-export const ApplicationLauncherRouterLink: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const ApplicationLauncherRouterLink: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = (_event: any, isOpen: boolean) => setIsOpen(isOpen);
   const onSelect = (_event: any) => setIsOpen((prevIsOpen) => !prevIsOpen);

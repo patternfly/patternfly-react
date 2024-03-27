@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import {
   BackToTop,
   Card,
@@ -15,7 +15,7 @@ import {
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 export const Name = () => {
-  const [isAlwaysVisible, setIsAlwaysVisible] = React.useState(false);
+  const [isAlwaysVisible, setIsAlwaysVisible] = useState(false);
 
   const handleChange = (_event, isChecked) => {
     setIsAlwaysVisible(isChecked);

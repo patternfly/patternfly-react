@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, Key, useState, Fragment } from 'react';
 import {
   Alert,
   AlertProps,
@@ -11,9 +11,9 @@ import {
 } from '@patternfly/react-core';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
-export const AlertGroupAsync: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
-  const [isRunning, setIsRunning] = React.useState(false);
+export const AlertGroupAsync: FunctionComponent = () => {
+  const [alerts, setAlerts] = useState<Partial<AlertProps>[]>([]);
+  const [isRunning, setIsRunning] = useState(false);
 
   const btnClasses = [buttonStyles.button, buttonStyles.modifiers.secondary].join(' ');
 
@@ -30,7 +30,7 @@ export const AlertGroupAsync: React.FunctionComponent = () => {
     ]);
   };
 
-  const removeAlert = (key: React.Key) => {
+  const removeAlert = (key: Key) => {
     setAlerts((prevAlerts) => [...prevAlerts.filter((alert) => alert.key !== key)]);
   };
 
@@ -45,7 +45,7 @@ export const AlertGroupAsync: React.FunctionComponent = () => {
   useInterval(addAlert, isRunning ? 4500 : null);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <InputGroup style={{ marginBottom: '16px' }}>
         <InputGroupItem>
           <button onClick={startAsyncAlerts} type="button" className={btnClasses}>
@@ -74,6 +74,6 @@ export const AlertGroupAsync: React.FunctionComponent = () => {
           />
         ))}
       </AlertGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

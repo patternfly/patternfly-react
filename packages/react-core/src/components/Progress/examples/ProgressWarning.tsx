@@ -1,6 +1,6 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Progress, ProgressVariant } from '@patternfly/react-core';
 
-export const ProgressWarning: React.FunctionComponent = () => (
+export const ProgressWarning: FunctionComponent = () => (
   <Progress value={90} title="Title" variant={ProgressVariant.warning} />
 );

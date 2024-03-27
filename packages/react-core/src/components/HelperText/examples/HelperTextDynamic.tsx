@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { HelperText, HelperTextItem } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const HelperTextDynamic: React.FunctionComponent = () => (
-  <React.Fragment>
+export const HelperTextDynamic: FunctionComponent = () => (
+  <Fragment>
     <HelperText>
       <HelperTextItem isDynamic>This is default helper text</HelperTextItem>
     </HelperText>
@@ -37,5 +37,5 @@ export const HelperTextDynamic: React.FunctionComponent = () => (
         This is error helper text with no icon
       </HelperTextItem>
     </HelperText>
-  </React.Fragment>
+  </Fragment>
 );

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -29,7 +29,7 @@ import { getPieLabelX, getPieLabelY } from '../ChartUtils/chart-label';
 
 interface ChartDonutSubTitleInterface {
   dy?: number;
-  textComponent?: React.ReactElement<any>;
+  textComponent?: ReactElement<any>;
 }
 
 interface ChartDonutTitleInterface {
@@ -121,7 +121,7 @@ export interface ChartDonutProps extends ChartPieProps {
    *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
-  containerComponent?: React.ReactElement<any>;
+  containerComponent?: ReactElement<any>;
   /**
    * Set the cornerRadius for every dataComponent (Slice by default) within ChartDonut
    *
@@ -151,7 +151,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * the ChartDonut; and the d3 compatible slice object.
    * If a dataComponent is not provided, ChartDonut's Slice component will be used.
    */
-  dataComponent?: React.ReactElement<any>;
+  dataComponent?: ReactElement<any>;
   /**
    * The overall end angle of the pie in degrees. This prop is used in conjunction with
    * startAngle to create a pie that spans only a segment of a circle.
@@ -218,7 +218,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart.
    * SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected
@@ -267,7 +267,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * provide a series label for ChartDonut. If individual labels are required for each
    * data point, they should be created by composing ChartDonut with VictoryScatter
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * The labelPosition prop specifies the angular position of each label relative to its corresponding slice.
    * When this prop is not given, the label will be positioned at the centroid of each slice.
@@ -313,7 +313,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * Note: Use legendData so the legend width can be calculated and positioned properly.
    * Default legend properties may be applied
    */
-  legendComponent?: React.ReactElement<any>;
+  legendComponent?: ReactElement<any>;
   /**
    * Specify data via the data prop. ChartLegend expects data as an
    * array of objects with name (required), symbol, and labels properties.
@@ -458,7 +458,7 @@ export interface ChartDonutProps extends ChartPieProps {
    *
    * Note: Default label properties may be applied
    */
-  subTitleComponent?: React.ReactElement<any>;
+  subTitleComponent?: ReactElement<any>;
   /**
    * The orientation of the subtitle position. Valid values are 'bottom', 'center', and 'right'
    */
@@ -520,7 +520,7 @@ export interface ChartDonutProps extends ChartPieProps {
    *
    * Note: Default label properties may be applied
    */
-  titleComponent?: React.ReactElement<any>;
+  titleComponent?: ReactElement<any>;
   /**
    * Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels.
    *
@@ -560,7 +560,7 @@ export interface ChartDonutProps extends ChartPieProps {
 
 interface ChartDonutSubTitleInterface {
   dy?: number;
-  textComponent?: React.ReactElement<any>;
+  textComponent?: ReactElement<any>;
 }
 
 interface ChartDonutTitleInterface {
@@ -569,7 +569,7 @@ interface ChartDonutTitleInterface {
   titles?: string | string[];
 }
 
-export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
+export const ChartDonut: FunctionComponent<ChartDonutProps> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -621,10 +621,10 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       });
     }
     return (
-      <React.Fragment key="pf-chart-donut-titles">
+      <Fragment key="pf-chart-donut-titles">
         {getTitle({ titles: title, dy: centerSubTitle ? -8 : 0 })}
         {getSubTitle({ textComponent: subTitleComponent, dy: centerSubTitle ? 15 : 0 })}
-      </React.Fragment>
+      </Fragment>
     );
   };
 
@@ -638,7 +638,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     }
     const subTitleProps = textComponent.props ? textComponent.props : {};
 
-    return React.cloneElement(textComponent, {
+    return cloneElement(textComponent, {
       ...(name && { id: `${name}-${(textComponent as any).type.displayName}-subTitle` }),
       key: 'pf-chart-donut-subtitle',
       style: ChartDonutStyles.label.subTitle,
@@ -670,7 +670,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     }
     const titleProps = titleComponent ? titleComponent.props : {};
 
-    return React.cloneElement(titleComponent, {
+    return cloneElement(titleComponent, {
       ...(Array.isArray(titles) && { capHeight }), // Use capHeight with multiple labels
       ...(name && { id: `${name}-${(titleComponent as any).type.displayName}-title` }),
       key: 'pf-chart-donut-title',
@@ -716,7 +716,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   );
 
   // Clone so users can override container props
-  const container = React.cloneElement(
+  const container = cloneElement(
     containerComponent,
     {
       desc: ariaDesc,
@@ -730,12 +730,12 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   );
 
   return standalone ? (
-    <React.Fragment>{container}</React.Fragment>
+    <Fragment>{container}</Fragment>
   ) : (
-    <React.Fragment>
+    <Fragment>
       {chart}
       {getAllTitles()}
-    </React.Fragment>
+    </Fragment>
   );
 };
 ChartDonut.displayName = 'ChartDonut';

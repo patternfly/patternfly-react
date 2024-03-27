@@ -79,11 +79,11 @@ interface WizardContext {
 ### Progressive steps
 
 ```js
-import React from 'react';
+import { Component } from 'react';
 import { Button, Radio, Alert } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated, WizardFooter as WizardFooterDeprecated, WizardContextConsumer as WizardContextConsumerDeprecated } from '@patternfly/react-core/deprecated'
 
-class ProgressiveWizard extends React.Component {
+class ProgressiveWizard extends Component {
   constructor(props) {
     super(props);
     this.state = {

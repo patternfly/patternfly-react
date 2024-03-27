@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
 import { VictoryBar } from 'victory-bar';
@@ -102,7 +102,7 @@ export interface ChartBulletQualitativeRangeProps {
    * provide a series label for ChartBar. If individual labels are required for each
    * data point, they should be created by composing ChartBar with VictoryScatter
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * The labels prop defines labels that will appear above each bar in your chart.
    * This prop should be given as an array of values or as a function of data.
@@ -116,7 +116,7 @@ export interface ChartBulletQualitativeRangeProps {
   /**
    * The measureComponent prop takes an entire component which will be used to create the chart
    */
-  measureComponent?: React.ReactElement<any>;
+  measureComponent?: ReactElement<any>;
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -179,7 +179,7 @@ export interface ChartBulletQualitativeRangeProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQualitativeRangeProps> = ({
+export const ChartBulletQualitativeRange: FunctionComponent<ChartBulletQualitativeRangeProps> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -217,7 +217,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
   // Having the tooltip vertically centered is visually confusing with comparative measures.
   //
   // Note: SVG height and width are provided by ChartBullet as a workaround to support constrainToVisibleArea
-  const tooltip = React.cloneElement(labelComponent, {
+  const tooltip = cloneElement(labelComponent, {
     constrainToVisibleArea,
     dx: () => {
       if (horizontal) {
@@ -238,7 +238,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
   });
 
   const measure = computedData.map((dataPoint: any, index) =>
-    React.cloneElement(measureComponent, {
+    cloneElement(measureComponent, {
       barWidth,
       data: [{ ...dataPoint }],
       domain,
@@ -265,7 +265,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
       {measure}
     </ChartContainer>
   ) : (
-    <React.Fragment>{measure}</React.Fragment>
+    <Fragment>{measure}</Fragment>
   );
 };
 ChartBulletQualitativeRange.displayName = 'ChartBulletQualitativeRange';

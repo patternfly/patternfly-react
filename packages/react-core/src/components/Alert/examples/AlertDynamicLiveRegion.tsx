@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { Alert, AlertGroup, AlertVariant, InputGroup } from '@patternfly/react-core';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
@@ -8,8 +8,8 @@ interface AlertInfo {
   key: number;
 }
 
-export const DynamicLiveRegionAlert: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<AlertInfo[]>([]);
+export const DynamicLiveRegionAlert: FunctionComponent = () => {
+  const [alerts, setAlerts] = useState<AlertInfo[]>([]);
   const getUniqueId: () => number = () => new Date().getTime();
   const btnClasses = [buttonStyles.button, buttonStyles.modifiers.secondary].join(' ');
 
@@ -40,7 +40,7 @@ export const DynamicLiveRegionAlert: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <InputGroup style={{ marginBottom: '16px' }}>
         <button onClick={addSuccessAlert} type="button" className={btnClasses}>
           Add single success alert
@@ -57,6 +57,6 @@ export const DynamicLiveRegionAlert: React.FunctionComponent = () => {
           <Alert variant={variant} title={title} key={key} />
         ))}
       </AlertGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

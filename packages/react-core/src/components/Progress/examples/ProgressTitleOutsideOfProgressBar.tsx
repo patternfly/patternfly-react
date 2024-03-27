@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import {
   DescriptionList,
   DescriptionListGroup,
@@ -8,7 +8,7 @@ import {
   ProgressMeasureLocation
 } from '@patternfly/react-core';
 
-export const ProgressTitleOutsideOfProgressBar: React.FunctionComponent = () => (
+export const ProgressTitleOutsideOfProgressBar: FunctionComponent = () => (
   <DescriptionList>
     <DescriptionListGroup>
       <DescriptionListTerm id="title-outside-progress-example-label">Title outside of progress bar</DescriptionListTerm>

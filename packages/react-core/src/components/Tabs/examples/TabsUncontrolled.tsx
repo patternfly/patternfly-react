@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Tabs, Tab, TabTitleText, Tooltip } from '@patternfly/react-core';
 
-export const TabsUncontrolled: React.FunctionComponent = () => {
+export const TabsUncontrolled: FunctionComponent = () => {
   const tooltip = (
     <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." />
   );

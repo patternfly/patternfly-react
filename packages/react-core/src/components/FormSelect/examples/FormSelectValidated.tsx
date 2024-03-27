@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import {
   Form,
   FormGroup,
@@ -10,16 +10,16 @@ import {
   ValidatedOptions
 } from '@patternfly/react-core';
 
-export const FormSelectValidated: React.FunctionComponent = () => {
-  const [formValue, setFormValue] = React.useState('');
-  const [helperText, setHelperText] = React.useState('');
-  const [validated, setValidated] = React.useState<ValidatedOptions>(ValidatedOptions.default);
+export const FormSelectValidated: FunctionComponent = () => {
+  const [formValue, setFormValue] = useState('');
+  const [helperText, setHelperText] = useState('');
+  const [validated, setValidated] = useState<ValidatedOptions>(ValidatedOptions.default);
 
   const simulateNetworkCall = (callback: () => void) => {
     setTimeout(callback, 2000);
   };
 
-  const onChange = (_event: React.FormEvent<HTMLSelectElement>, value: string) => {
+  const onChange = (_event: FormEvent<HTMLSelectElement>, value: string) => {
     setFormValue(value);
     setValidated(ValidatedOptions.default);
     setHelperText('Validating...');

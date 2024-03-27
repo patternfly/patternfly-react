@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { SyntheticEvent, ReactElement, CSSProperties, FunctionComponent, cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   Helpers,
@@ -113,7 +113,7 @@ export interface ChartLegendTooltipProps extends Omit<ChartCursorTooltipProps, '
    * @propType object
    * @example events={{onClick: (evt) => alert("x: " + evt.clientX)}}
    */
-  events?: { [key: string]: (event: React.SyntheticEvent<any>) => void };
+  events?: { [key: string]: (event: SyntheticEvent<any>) => void };
   /**
    * The flyoutComponent prop takes a component instance which will be used to create the flyout path for each tooltip.
    * The new element created from the passed flyoutComponent will be supplied with the following properties: x, y, dx, dy,
@@ -124,7 +124,7 @@ export interface ChartLegendTooltipProps extends Omit<ChartCursorTooltipProps, '
    *
    * @example flyoutComponent={<Flyout x={50} y={50}/>}, flyoutComponent={<MyCustomFlyout/>}
    */
-  flyoutComponent?: React.ReactElement<any>;
+  flyoutComponent?: ReactElement<any>;
   /**
    * The flyoutHeight prop defines the height of the tooltip flyout. This prop may be given as a positive number or a function
    * of datum. If this prop is not set, height will be determined based on an approximate text size calculated from the
@@ -152,7 +152,7 @@ export interface ChartLegendTooltipProps extends Omit<ChartCursorTooltipProps, '
    * The groupComponent prop takes a component instance which will be used to create group elements for use within
    * container elements. This prop defaults to a <g> tag.}
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * This prop refers to the height of the svg that ChartLegendTooltip is rendered within. This prop is passed from
    * parents of ChartLegendTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to
@@ -188,7 +188,7 @@ export interface ChartLegendTooltipProps extends Omit<ChartCursorTooltipProps, '
    *
    * @example labelComponent={<ChartLabel dy={20}/>}, labelComponent={<MyCustomLabel/>}
    */
-  labelComponent?: React.ReactElement<any>;
+  labelComponent?: ReactElement<any>;
   /**
    * Defines how the labelComponent text is horizontally positioned relative to its `x` and `y` coordinates. Valid
    * values are 'start', 'middle', 'end', and 'inherit'.
@@ -267,7 +267,7 @@ export interface ChartLegendTooltipProps extends Omit<ChartCursorTooltipProps, '
   /**
    * The style prop applies CSS properties to the rendered `<text>` element.
    */
-  style?: React.CSSProperties | React.CSSProperties[];
+  style?: CSSProperties | CSSProperties[];
   /**
    * The text prop defines the text ChartTooltip will render. The text prop may be given as a string, number, or
    * function of datum. When ChartLabel is used as the labelComponent, strings may include newline characters, which
@@ -326,7 +326,7 @@ interface FlyoutProps {
   width: number; // legend width
 }
 
-export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps> = ({
+export const ChartLegendTooltip: FunctionComponent<ChartLegendTooltipProps> = ({
   activePoints,
   center = { x: 0, y: 0 },
   datum,
@@ -367,7 +367,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
 
   // Returns the tooltip content component
   const getTooltipContentComponent = (props: FlyoutProps) =>
-    React.cloneElement(labelComponent, {
+    cloneElement(labelComponent, {
       center,
       flyoutHeight: flyoutHeight || getFlyoutHeight(props),
       flyoutWidth: flyoutWidth || getFlyoutWidth(props),
@@ -388,7 +388,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
     }
     const _flyoutWidth = getFlyoutWidth(legendSize);
     const tooltipComponent = isCursorTooltip ? <ChartCursorTooltip /> : <ChartTooltip />;
-    return React.cloneElement(tooltipComponent, {
+    return cloneElement(tooltipComponent, {
       activePoints,
       center,
       datum,

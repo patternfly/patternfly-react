@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ElementType, FunctionComponent, ReactNode, useState, useRef, useEffect } from 'react';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
 import { WizardDrawerWrapper } from './WizardDrawerWrapper';
@@ -21,7 +21,7 @@ export interface WizardBodyProps {
    */
   'aria-labelledby': string;
   /** Component used as the primary content container */
-  mainComponent?: React.ElementType;
+  mainComponent?: ElementType;
   /** The currently active WizardStep */
   activeStep: WizardStep;
   hasDrawer?: boolean;
@@ -31,7 +31,7 @@ export interface WizardBodyProps {
   onExpandDrawer?: () => void;
 }
 
-export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
+export const WizardBody: FunctionComponent<WizardBodyProps> = ({
   children,
   hasNoBodyPadding = false,
   'aria-label': ariaLabel,
@@ -43,11 +43,11 @@ export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
   activeStep
 }: WizardBodyProps) => {
   const MainComponent = mainComponent;
-  const [hasScrollbar, setHasScrollbar] = React.useState(false);
-  const [previousWidth, setPreviousWidth] = React.useState<number | undefined>(undefined);
-  const wizardBodyRef = React.useRef(null);
+  const [hasScrollbar, setHasScrollbar] = useState(false);
+  const [previousWidth, setPreviousWidth] = useState<number | undefined>(undefined);
+  const wizardBodyRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const resize = () => {
       if (wizardBodyRef?.current) {
         const { offsetWidth, offsetHeight, scrollHeight } = wizardBodyRef.current;
@@ -84,7 +84,7 @@ export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
     >
       <WizardDrawerWrapper
         hasDrawer={hasDrawer && activeStep.drawerPanelContent}
-        wrapper={(children: React.ReactNode) => (
+        wrapper={(children: ReactNode) => (
           <Drawer isInline isExpanded={isDrawerExpanded} onExpand={onExpandDrawer}>
             <DrawerContent panelContent={activeStep.drawerPanelContent}>{children}</DrawerContent>
           </Drawer>

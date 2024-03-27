@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Button } from '@patternfly/react-core';
 
-export const ButtonSmall: React.FunctionComponent = () => (
-  <React.Fragment>
+export const ButtonSmall: FunctionComponent = () => (
+  <Fragment>
     <Button variant="primary" size="sm">
       Primary
     </Button>{' '}
@@ -20,5 +20,5 @@ export const ButtonSmall: React.FunctionComponent = () => (
     </Button>
     <br />
     <br />
-  </React.Fragment>
+  </Fragment>
 );

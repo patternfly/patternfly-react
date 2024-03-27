@@ -12,7 +12,15 @@ import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon'
 ### Provide a generated password
 
 ```ts
-import React from 'react';
+import {
+  type FunctionComponent,
+  useState,
+  useRef,
+  useEffect,
+  type FormEvent as ReactFormEvent,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent
+} from 'react';
 import {
   InputGroup,
   InputGroupItem,
@@ -29,7 +37,7 @@ import RedoIcon from '@patternfly/react-icons/dist/esm/icons/redo-icon';
 import EyeIcon from '@patternfly/react-icons/dist/esm/icons/eye-icon';
 import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon';
 
-const PasswordGenerator: React.FunctionComponent = () => {
+const PasswordGenerator: FunctionComponent = () => {
   const generatePassword = () => {
     const length = 12;
     const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@%()_-=+';
@@ -39,14 +47,14 @@ const PasswordGenerator: React.FunctionComponent = () => {
     }
     return retVal;
   };
-  const [password, setPassword] = React.useState<string>('');
-  const [generatedPassword, setGeneratedPassword] = React.useState<string>(generatePassword());
-  const [isAutocompleteOpen, setIsAutocompleteOpen] = React.useState<boolean>(false);
-  const [passwordHidden, setPasswordHidden] = React.useState<boolean>(true);
-  const searchInputRef = React.useRef(null);
-  const autocompleteRef = React.useRef(null);
+  const [password, setPassword] = useState<string>('');
+  const [generatedPassword, setGeneratedPassword] = useState<string>(generatePassword());
+  const [isAutocompleteOpen, setIsAutocompleteOpen] = useState<boolean>(false);
+  const [passwordHidden, setPasswordHidden] = useState<boolean>(true);
+  const searchInputRef = useRef(null);
+  const autocompleteRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleMenuKeys);
     window.addEventListener('click', handleClickOutside);
     return () => {
@@ -55,7 +63,7 @@ const PasswordGenerator: React.FunctionComponent = () => {
     };
   }, [isAutocompleteOpen, searchInputRef.current]);
 
-  const onChange = (_event: React.FormEvent<HTMLInputElement>, newValue: string) => {
+  const onChange = (_event: ReactFormEvent<HTMLInputElement>, newValue: string) => {
     if (searchInputRef && searchInputRef.current && searchInputRef.current.contains(document.activeElement)) {
       setIsAutocompleteOpen(true);
     } else {
@@ -66,14 +74,14 @@ const PasswordGenerator: React.FunctionComponent = () => {
 
   // Whenever an autocomplete option is selected, set the search input value, close the menu, and put the browser
   // focus back on the search input
-  const onSelect = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const onSelect = (event: ReactMouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     setPassword(generatedPassword);
     setIsAutocompleteOpen(false);
     searchInputRef.current.focus();
   };
 
-  const handleMenuKeys = (event: KeyboardEvent | React.KeyboardEvent<any>) => {
+  const handleMenuKeys = (event: KeyboardEvent | ReactKeyboardEvent<any>) => {
     if (!(isAutocompleteOpen && searchInputRef.current && searchInputRef.current.contains(event.target))) {
       return;
     }
@@ -98,7 +106,7 @@ const PasswordGenerator: React.FunctionComponent = () => {
 
   // The autocomplete menu should close if the user clicks outside the menu.
   const handleClickOutside = (
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>
+    event: MouseEvent | TouchEvent | KeyboardEvent | ReactKeyboardEvent<any> | ReactMouseEvent<HTMLButtonElement>
   ) => {
     if (
       isAutocompleteOpen &&

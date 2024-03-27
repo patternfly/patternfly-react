@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { GenerateId, PickOptional } from '../../../helpers';
@@ -16,10 +16,10 @@ export interface DualListSelectorProps {
   /** Flag indicating if the dual list selector uses trees instead of simple lists. */
   isTree?: boolean;
   /** Content to be rendered in the dual list selector. */
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
-class DualListSelector extends React.Component<DualListSelectorProps> {
+class DualListSelector extends Component<DualListSelectorProps> {
   static displayName = 'DualListSelector';
   static defaultProps: PickOptional<DualListSelectorProps> = {
     children: '',

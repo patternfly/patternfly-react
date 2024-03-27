@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import { Checkbox, Slider, SliderOnChangeEvent, Text, TextVariants } from '@patternfly/react-core';
 
-export const SliderContinuous: React.FunctionComponent = () => {
-  const [hasTooltipOverThumb, setHasTooltipOverThumb] = React.useState(false);
-  const [value, setValue] = React.useState(50);
-  const [valueCustom, setValueCustom] = React.useState(50);
+export const SliderContinuous: FunctionComponent = () => {
+  const [hasTooltipOverThumb, setHasTooltipOverThumb] = useState(false);
+  const [value, setValue] = useState(50);
+  const [valueCustom, setValueCustom] = useState(50);
 
   return (
     <>
@@ -12,7 +12,7 @@ export const SliderContinuous: React.FunctionComponent = () => {
         id="thumb-has-tooltip"
         label="hasTooltipOverThumb"
         isChecked={hasTooltipOverThumb}
-        onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => setHasTooltipOverThumb(checked)}
+        onChange={(_event: FormEvent<HTMLInputElement>, checked: boolean) => setHasTooltipOverThumb(checked)}
         style={{ marginBottom: 20 }}
       />
       <Text component={TextVariants.h3}>Slider Value is: {value}</Text>

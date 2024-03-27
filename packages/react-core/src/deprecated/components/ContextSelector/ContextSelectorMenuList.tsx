@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { ReactNode, ReactElement, Children, cloneElement, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
 
 export interface ContextSelectorMenuListProps {
   /** Content rendered inside the context selector menu */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classess applied to root element of context selector menu */
   className?: string;
   /** Flag to indicate if context selector menu is opened */
@@ -13,10 +13,10 @@ export interface ContextSelectorMenuListProps {
   'aria-label'?: string;
 }
 
-class ContextSelectorMenuList extends React.Component<ContextSelectorMenuListProps> {
+class ContextSelectorMenuList extends Component<ContextSelectorMenuListProps> {
   static displayName = 'ContextSelectorMenuList';
   static defaultProps: ContextSelectorMenuListProps = {
-    children: null as React.ReactNode,
+    children: null as ReactNode,
     className: '',
     isOpen: true
   };
@@ -28,8 +28,8 @@ class ContextSelectorMenuList extends React.Component<ContextSelectorMenuListPro
   };
 
   extendChildren() {
-    return React.Children.map(this.props.children, (child, index) =>
-      React.cloneElement(child as React.ReactElement<any>, {
+    return Children.map(this.props.children, (child, index) =>
+      cloneElement(child as ReactElement<any>, {
         sendRef: this.sendRef,
         index,
         role: 'menuitem'

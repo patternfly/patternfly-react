@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, FormEvent, CSSProperties, createRef, Component } from 'react';
 import { css } from '@patternfly/react-styles';
 import datePickerStyles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
@@ -24,7 +24,7 @@ import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-c
 import cssDatePickerFormControlWidth from '@patternfly/react-tokens/dist/esm/c_date_picker__input_c_form_control_Width';
 
 export interface TimePickerProps
-  extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
+  extends Omit<HTMLProps<HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
   /** Additional classes added to the time picker. */
   className?: string;
   /** Accessible label for the time picker */
@@ -45,7 +45,7 @@ export interface TimePickerProps
   is24Hour?: boolean;
   /** Optional event handler called each time the value in the time picker input changes. */
   onChange?: (
-    event: React.FormEvent<HTMLInputElement>,
+    event: FormEvent<HTMLInputElement>,
     time: string,
     hour?: number,
     minute?: number,
@@ -95,12 +95,12 @@ interface TimePickerState {
   maxTimeState: string;
 }
 
-class TimePicker extends React.Component<TimePickerProps, TimePickerState> {
+class TimePicker extends Component<TimePickerProps, TimePickerState> {
   static displayName = 'TimePicker';
-  private baseComponentRef = React.createRef<any>();
-  private toggleRef = React.createRef<HTMLDivElement>();
-  private inputRef = React.createRef<HTMLInputElement>();
-  private menuRef = React.createRef<HTMLDivElement>();
+  private baseComponentRef = createRef<any>();
+  private toggleRef = createRef<HTMLDivElement>();
+  private inputRef = createRef<HTMLInputElement>();
+  private menuRef = createRef<HTMLDivElement>();
 
   static defaultProps = {
     className: '',
@@ -425,7 +425,7 @@ class TimePicker extends React.Component<TimePickerProps, TimePickerState> {
     e.stopPropagation();
   };
 
-  onInputChange = (event: React.FormEvent<HTMLInputElement>, newTime: string) => {
+  onInputChange = (event: FormEvent<HTMLInputElement>, newTime: string) => {
     const { onChange } = this.props;
     const { timeRegex } = this.state;
     if (onChange) {
@@ -474,7 +474,7 @@ class TimePicker extends React.Component<TimePickerProps, TimePickerState> {
       ...props
     } = this.props;
     const { timeState, isTimeOptionsOpen, isInvalid, minTimeState, maxTimeState } = this.state;
-    const style = { [cssDatePickerFormControlWidth.name]: width } as React.CSSProperties;
+    const style = { [cssDatePickerFormControlWidth.name]: width } as CSSProperties;
     const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter, minTimeState, maxTimeState, includeSeconds);
     const isValidFormat = this.isValidFormat(timeState);
     const randomId = id || getUniqueId('time-picker');

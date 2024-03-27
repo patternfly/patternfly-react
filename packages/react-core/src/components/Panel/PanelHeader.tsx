@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Panel/panel';
 import { css } from '@patternfly/react-styles';
 
-export interface PanelHeaderProps extends React.HTMLProps<HTMLDivElement> {
+export interface PanelHeaderProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the panel header */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Class to add to outer div */
   className?: string;
 }
 
-export const PanelHeader: React.FunctionComponent<PanelHeaderProps> = ({
+export const PanelHeader: FunctionComponent<PanelHeaderProps> = ({
   className,
   children,
   ...props

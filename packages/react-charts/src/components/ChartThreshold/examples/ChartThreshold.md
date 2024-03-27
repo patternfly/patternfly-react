@@ -35,7 +35,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Multi-color (unordered) with responsive container
 ```js
-import React from 'react';
+import { Component, createRef } from 'react';
 import {
   Chart,
   ChartArea,
@@ -50,10 +50,10 @@ import { getResizeObserver } from '@patternfly/react-core';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
-class MultiColorChart extends React.Component {
+class MultiColorChart extends Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       width: 0

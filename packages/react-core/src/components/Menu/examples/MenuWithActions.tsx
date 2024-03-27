@@ -1,14 +1,14 @@
-import React from 'react';
+import { useState, type FunctionComponent, type MouseEvent as ReactMouseEvent } from 'react';
 import { Menu, MenuContent, MenuGroup, MenuList, MenuItem, MenuItemAction } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
-export const MenuWithActions: React.FunctionComponent = () => {
-  const [selectedItems, setSelectedItems] = React.useState<number[]>([0, 2, 3]);
+export const MenuWithActions: FunctionComponent = () => {
+  const [selectedItems, setSelectedItems] = useState<number[]>([0, 2, 3]);
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
+  const onSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
     const item = itemId as number;
     if (selectedItems.indexOf(item) !== -1) {
       setSelectedItems(selectedItems.filter((id) => id !== item));

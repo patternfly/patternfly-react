@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
-export const FormSelectGrouped: React.FunctionComponent = () => {
-  const [formSelectValue, setFormSelectValue] = React.useState('2');
+export const FormSelectGrouped: FunctionComponent = () => {
+  const [formSelectValue, setFormSelectValue] = useState('2');
 
-  const onChange = (_event: React.FormEvent<HTMLSelectElement>, value: string) => {
+  const onChange = (_event: FormEvent<HTMLSelectElement>, value: string) => {
     setFormSelectValue(value);
   };
 

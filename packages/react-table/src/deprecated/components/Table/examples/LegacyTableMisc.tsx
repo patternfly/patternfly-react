@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, LegacyRef } from 'react';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { css } from '@patternfly/react-styles';
 /* eslint-disable camelcase */
@@ -12,7 +12,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const LegacyTableMisc: React.FunctionComponent = () => {
+export const LegacyTableMisc: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },
@@ -36,7 +36,7 @@ export const LegacyTableMisc: React.FunctionComponent = () => {
     };
     return (
       <tr
-        ref={trRef as React.LegacyRef<HTMLTableRowElement>}
+        ref={trRef as LegacyRef<HTMLTableRowElement>}
         className={css(className, isOddRow ? 'odd-row-class' : 'even-row-class', 'custom-static-class')}
         style={isOddRow ? customStyle : {}}
       />

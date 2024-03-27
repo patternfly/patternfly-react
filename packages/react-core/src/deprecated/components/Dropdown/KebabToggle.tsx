@@ -1,4 +1,9 @@
-import * as React from 'react';
+import {
+  type ReactNode,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type MouseEvent as ReactMouseEvent,
+  type FunctionComponent
+} from 'react';
 import { DropdownToggleProps } from './DropdownToggle';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { Toggle } from './Toggle';
@@ -7,7 +12,7 @@ export interface KebabToggleProps extends DropdownToggleProps {
   /** HTML ID of dropdown toggle */
   id?: string;
   /** Anything which can be rendered as dropdown toggle */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classess applied to root element of dropdown toggle */
   className?: string;
   /** Flag to indicate if menu is opened */
@@ -16,7 +21,7 @@ export interface KebabToggleProps extends DropdownToggleProps {
   'aria-label'?: string;
   /** Callback called when toggle is clicked */
   onToggle?: (
-    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent | TouchEvent | KeyboardEvent | ReactKeyboardEvent<any> | ReactMouseEvent<HTMLButtonElement>,
     isOpen: boolean
   ) => void;
   /** Element which wraps toggle */
@@ -35,7 +40,7 @@ export interface KebabToggleProps extends DropdownToggleProps {
   bubbleEvent?: boolean;
 }
 
-export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
+export const KebabToggle: FunctionComponent<KebabToggleProps> = ({
   id = '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   children = null,
@@ -50,7 +55,7 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
   bubbleEvent = false,
   onToggle = () => undefined as void,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ref, // Types of Ref are different for React.FunctionComponent vs React.Component
+  ref, // Types of Ref are different for FunctionComponent vs Component
   ...props
 }: KebabToggleProps) => (
   <Toggle

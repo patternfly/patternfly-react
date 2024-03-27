@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, MouseEvent, KeyboardEvent, FormEvent, createContext, createRef, Component } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -19,15 +19,15 @@ export enum DataListWrapModifier {
   breakWord = 'breakWord'
 }
 
-export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, 'ref'> {
+export interface DataListProps extends Omit<HTMLProps<HTMLUListElement>, 'ref'> {
   /** Content rendered inside the DataList list */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the DataList list */
   className?: string;
   /** Adds accessible text to the DataList list */
   'aria-label': string;
   /** Optional callback to make DataList selectable, fired when DataListItem selected */
-  onSelectDataListItem?: (event: React.MouseEvent | React.KeyboardEvent, id: string) => void;
+  onSelectDataListItem?: (event: MouseEvent | KeyboardEvent, id: string) => void;
   /** Id of DataList item currently selected */
   selectedDataListItemId?: string;
   /** Flag indicating if DataList should have compact styling */
@@ -37,21 +37,21 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   /** Determines which wrapping modifier to apply to the DataList */
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
   /** Object that causes the data list to render hidden inputs which improve selectable item a11y */
-  onSelectableRowChange?: (event: React.FormEvent<HTMLInputElement>, id: string) => void;
+  onSelectableRowChange?: (event: FormEvent<HTMLInputElement>, id: string) => void;
 }
 
 interface DataListContextProps {
   isSelectable: boolean;
   selectedDataListItemId: string;
-  updateSelectedDataListItem: (event: React.MouseEvent | React.KeyboardEvent, id: string) => void;
-  onSelectableRowChange?: (event: React.FormEvent<HTMLInputElement>, id: string) => void;
+  updateSelectedDataListItem: (event: MouseEvent | KeyboardEvent, id: string) => void;
+  onSelectableRowChange?: (event: FormEvent<HTMLInputElement>, id: string) => void;
 }
 
-export const DataListContext = React.createContext<Partial<DataListContextProps>>({
+export const DataListContext = createContext<Partial<DataListContextProps>>({
   isSelectable: false
 });
 
-class DataList extends React.Component<DataListProps> {
+class DataList extends Component<DataListProps> {
   static displayName = 'DataList';
   static defaultProps: PickOptional<DataListProps> = {
     children: null,
@@ -61,7 +61,7 @@ class DataList extends React.Component<DataListProps> {
     gridBreakpoint: 'md',
     wrapModifier: null
   };
-  ref = React.createRef<HTMLUListElement>();
+  ref = createRef<HTMLUListElement>();
 
   constructor(props: DataListProps) {
     super(props);
@@ -84,7 +84,7 @@ class DataList extends React.Component<DataListProps> {
     } = this.props;
     const isSelectable = onSelectDataListItem !== undefined;
 
-    const updateSelectedDataListItem = (event: React.MouseEvent | React.KeyboardEvent, id: string) => {
+    const updateSelectedDataListItem = (event: MouseEvent | KeyboardEvent, id: string) => {
       onSelectDataListItem(event, id);
     };
 

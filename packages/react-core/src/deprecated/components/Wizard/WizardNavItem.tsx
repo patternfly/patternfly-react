@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent, useState, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -6,9 +6,9 @@ import { useOUIAProps, OUIAProps } from '../../../helpers';
 
 export interface WizardNavItemProps extends OUIAProps {
   /** Can nest a WizardNav component for substeps */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** The content to display in the nav item */
-  content?: React.ReactNode;
+  content?: ReactNode;
   /** Whether the nav item is the currently active item */
   isCurrent?: boolean;
   /** Whether the nav item is disabled */
@@ -27,7 +27,7 @@ export interface WizardNavItemProps extends OUIAProps {
   id?: string | number;
 }
 
-export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
+export const WizardNavItem: FunctionComponent<WizardNavItemProps> = ({
   children = null,
   content = '',
   isCurrent = false,
@@ -45,9 +45,9 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   const ouiaProps = useOUIAProps(WizardNavItem.displayName, ouiaId, ouiaSafe);
   const NavItemComponent = navItemComponent;
 
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsExpanded(isCurrent);
   }, [isCurrent]);
 

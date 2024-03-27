@@ -1,17 +1,17 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 
-export interface PopoverHeaderTextProps extends React.HTMLProps<HTMLDivElement> {
+export interface PopoverHeaderTextProps extends HTMLProps<HTMLDivElement> {
   /** Content of the header text */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Class to be applied to the header text */
   className?: string;
   /** Heading level of the header title */
   headingLevel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-export const PopoverHeaderText: React.FunctionComponent<PopoverHeaderTextProps> = ({
+export const PopoverHeaderText: FunctionComponent<PopoverHeaderTextProps> = ({
   children,
   className,
   headingLevel,

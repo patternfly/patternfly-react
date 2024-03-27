@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, CSSProperties } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import cssWidth from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
@@ -18,7 +18,7 @@ export enum ToolbarItemVariant {
   'expand-all' = 'expand-all'
 }
 
-export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
+export interface ToolbarItemProps extends HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar item */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of item */
@@ -76,10 +76,10 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Flag that modifies the toolbar item to hide overflow and respond to available space. Used for horizontal navigation. */
   isOverflowContainer?: boolean;
   /** Content to be rendered inside the data toolbar item */
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
-export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
+export const ToolbarItem: FunctionComponent<ToolbarItemProps> = ({
   className,
   variant,
   visibility,
@@ -138,7 +138,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
           {...(variant === 'label' && { 'aria-hidden': true })}
           id={id}
           {...props}
-          {...(widths && { style: { ...widthStyles, ...props.style } as React.CSSProperties })}
+          {...(widths && { style: { ...widthStyles, ...props.style } as CSSProperties })}
         >
           {children}
         </div>

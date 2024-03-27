@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, FunctionComponent, createContext } from 'react';
 
 export interface DraggableItemPosition {
   /** Parent droppableId */
@@ -7,7 +7,7 @@ export interface DraggableItemPosition {
   index: number;
 }
 
-export const DragDropContext = React.createContext({
+export const DragDropContext = createContext({
   onDrag: (_source: DraggableItemPosition) => true as boolean,
   onDragMove: (_source: DraggableItemPosition, _dest?: DraggableItemPosition) => {},
   onDrop: (_source: DraggableItemPosition, _dest?: DraggableItemPosition) => false as boolean
@@ -15,7 +15,7 @@ export const DragDropContext = React.createContext({
 
 interface DragDropProps {
   /** Potentially Droppable and Draggable children */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Callback for drag event. Return true to allow drag, false to disallow. */
   onDrag?: (source: DraggableItemPosition) => boolean;
   /** Callback on mouse move while dragging. */
@@ -24,7 +24,7 @@ interface DragDropProps {
   onDrop?: (source: DraggableItemPosition, dest?: DraggableItemPosition) => boolean;
 }
 
-export const DragDrop: React.FunctionComponent<DragDropProps> = ({
+export const DragDrop: FunctionComponent<DragDropProps> = ({
   children,
   onDrag = () => true,
   onDragMove = () => {},

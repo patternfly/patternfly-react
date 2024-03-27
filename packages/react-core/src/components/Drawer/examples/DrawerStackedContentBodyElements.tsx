@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, useRef, Fragment } from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -12,9 +12,9 @@ import {
   Title
 } from '@patternfly/react-core';
 
-export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
-  const drawerRef = React.useRef<HTMLDivElement>();
+export const DrawerStackedContentBodyElements: FunctionComponent = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>();
 
   const onExpand = () => {
     drawerRef.current && drawerRef.current.focus();
@@ -45,7 +45,7 @@ export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
@@ -56,6 +56,6 @@ export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
           <DrawerContentBody>content-body</DrawerContentBody>
         </DrawerContent>
       </Drawer>
-    </React.Fragment>
+    </Fragment>
   );
 };

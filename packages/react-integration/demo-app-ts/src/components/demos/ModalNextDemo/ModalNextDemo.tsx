@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent, HTMLProps, Component, Fragment } from 'react';
 import { Button, Title, TitleSizes } from '@patternfly/react-core';
 import { Modal, ModalHeader, ModalBody, ModalFooter, ModalVariant } from '@patternfly/react-core/next';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
@@ -21,7 +21,7 @@ interface ModalDemoState {
 }
 
 // eslint-disable-next-line patternfly-react/no-anonymous-functions
-export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
+export class ModalNextDemo extends Component<HTMLProps<HTMLDivElement>, ModalDemoState> {
   static displayName = 'ModalDemo';
 
   state = {
@@ -40,7 +40,7 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
     isCustomFocusModalOpen: false
   };
 
-  handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
+  handleModalToggle = (_event: KeyboardEvent | MouseEvent) => {
     this.setState(({ isModalOpen }) => ({
       isModalOpen: !isModalOpen
     }));
@@ -523,7 +523,7 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
     };
 
     return (
-      <React.Fragment>
+      <Fragment>
         <div id="tabstop-test" tabIndex={0} style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
           <Button style={buttonStyle} variant="primary" onClick={this.handleModalToggle} id="showDefaultModalButton">
             Show Modal
@@ -616,7 +616,7 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         {this.renderModalWithAlertVariant()}
         {this.renderHelpModal()}
         {this.renderCustomFocusModal()}
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

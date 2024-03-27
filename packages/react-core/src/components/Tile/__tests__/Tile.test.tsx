@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import { Tile } from '../Tile';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';

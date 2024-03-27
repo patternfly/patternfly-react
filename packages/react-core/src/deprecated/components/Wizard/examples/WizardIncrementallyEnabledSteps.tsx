@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Wizard as WizardDeprecated, WizardStep } from '@patternfly/react-core/deprecated';
 
-export const WizardIncrementallyEnabledSteps: React.FunctionComponent = () => {
-  const [stepIdReached, setStepIdReached] = React.useState(1);
+export const WizardIncrementallyEnabledSteps: FunctionComponent = () => {
+  const [stepIdReached, setStepIdReached] = useState(1);
 
   const onNext = ({ id }: WizardStep) => {
     if (id) {

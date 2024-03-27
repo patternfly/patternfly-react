@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Hint } from '../Hint';
 import styles from '@patternfly/react-styles/css/components/Hint/hint';

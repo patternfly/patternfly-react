@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, Ref, useState, Fragment } from 'react';
 import {
   Modal,
   ModalVariant,
@@ -10,11 +10,11 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 
-export const ModalWithDropdown: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+export const ModalWithDropdown: FunctionComponent = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
+  const handleModalToggle = (_event: KeyboardEvent | MouseEvent) => {
     setIsModalOpen(!isModalOpen);
     setIsDropdownOpen(false);
   };
@@ -43,7 +43,7 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show dropdown modal
       </Button>
@@ -74,7 +74,7 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
             isOpen={isDropdownOpen}
             onSelect={onSelect}
             onOpenChange={(isOpen: boolean) => setIsDropdownOpen(isOpen)}
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle ref={toggleRef} onClick={handleDropdownToggle} isExpanded={isDropdownOpen}>
                 Dropdown
               </MenuToggle>
@@ -103,6 +103,6 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
           </Dropdown>
         </div>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

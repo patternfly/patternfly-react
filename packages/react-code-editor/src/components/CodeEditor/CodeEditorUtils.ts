@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { createContext } from 'react';
 
 interface CodeEditorContext {
   code: string;
 }
 
-export const CodeEditorContext = React.createContext<CodeEditorContext>(null);
+export const CodeEditorContext = createContext<CodeEditorContext>(null);

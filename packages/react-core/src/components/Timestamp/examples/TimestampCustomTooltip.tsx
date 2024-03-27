@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Timestamp, TimestampTooltipVariant } from '@patternfly/react-core';
 
-export const TimestampCustomTooltip: React.FunctionComponent = () => (
+export const TimestampCustomTooltip: FunctionComponent = () => (
   <>
     <Timestamp
       date={new Date(2022, 7, 9, 14, 57, 0)}

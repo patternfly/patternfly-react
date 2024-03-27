@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import {
   Nav,
   NavGroup,
@@ -14,11 +14,11 @@ import {
 } from '@patternfly/react-core';
 import { DashboardHeader } from '@patternfly/react-core/src/demos/DashboardHeader';
 
-export const NavGrouped: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState<number | string>('grp-1_itm-1');
+export const NavGrouped: FunctionComponent = () => {
+  const [activeItem, setActiveItem] = useState<number | string>('grp-1_itm-1');
 
   const onNavSelect = (
-    _event: React.FormEvent<HTMLInputElement>,
+    _event: FormEvent<HTMLInputElement>,
     selectedItem: {
       groupId: number | string;
       itemId: number | string;

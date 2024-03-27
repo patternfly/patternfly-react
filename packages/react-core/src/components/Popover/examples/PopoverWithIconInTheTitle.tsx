@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Popover, Button } from '@patternfly/react-core';
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
-export const PopoverWithIconInTheTitle: React.FunctionComponent = () => (
+export const PopoverWithIconInTheTitle: FunctionComponent = () => (
   <div style={{ margin: '50px' }}>
     <Popover
       aria-label="Popover with icon in the title example"

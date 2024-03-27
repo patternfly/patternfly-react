@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { Label } from '@patternfly/react-core';
 
-export const LabelEditable: React.FunctionComponent = () => {
-  const [labelText, setLabelText] = React.useState('Editable label');
-  const [compactLabelText, setCompactLabelText] = React.useState('Compact editable label');
+export const LabelEditable: FunctionComponent = () => {
+  const [labelText, setLabelText] = useState('Editable label');
+  const [compactLabelText, setCompactLabelText] = useState('Compact editable label');
 
   const onEditCancel = (_event: KeyboardEvent, prevText: string) => {
     setLabelText(prevText);
@@ -22,7 +22,7 @@ export const LabelEditable: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Label
         color="blue"
         onClose={() => {}}
@@ -52,6 +52,6 @@ export const LabelEditable: React.FunctionComponent = () => {
       >
         {compactLabelText}
       </Label>
-    </React.Fragment>
+    </Fragment>
   );
 };

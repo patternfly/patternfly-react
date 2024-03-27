@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import {
   Badge,
   Breadcrumb,
@@ -13,7 +13,7 @@ import {
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
-export class BreadcrumbDemo extends React.Component {
+export class BreadcrumbDemo extends Component {
   static displayName = 'BreadcrumbDemo';
   state = {
     isOpen: false

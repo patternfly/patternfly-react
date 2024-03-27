@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent, LegacyRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/List/list';
 import { css } from '@patternfly/react-styles';
 
@@ -19,9 +19,9 @@ export enum ListComponent {
   ul = 'ul'
 }
 
-export interface ListProps extends Omit<React.HTMLProps<HTMLUListElement | HTMLOListElement>, 'type'> {
+export interface ListProps extends Omit<HTMLProps<HTMLUListElement | HTMLOListElement>, 'type'> {
   /** Anything that can be rendered inside of the list */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the list */
   className?: string;
   /** Adds list variant styles */
@@ -40,7 +40,7 @@ export interface ListProps extends Omit<React.HTMLProps<HTMLUListElement | HTMLO
   'aria-label'?: string;
 }
 
-export const List: React.FunctionComponent<ListProps> = ({
+export const List: FunctionComponent<ListProps> = ({
   className = '',
   children = null,
   variant = null,
@@ -54,7 +54,7 @@ export const List: React.FunctionComponent<ListProps> = ({
 }: ListProps) =>
   component === ListComponent.ol ? (
     <ol
-      ref={ref as React.LegacyRef<HTMLOListElement>}
+      ref={ref as LegacyRef<HTMLOListElement>}
       type={type}
       {...(isPlain && { role: 'list' })}
       {...props}
@@ -71,7 +71,7 @@ export const List: React.FunctionComponent<ListProps> = ({
     </ol>
   ) : (
     <ul
-      ref={ref as React.LegacyRef<HTMLUListElement>}
+      ref={ref as LegacyRef<HTMLUListElement>}
       {...(isPlain && { role: 'list' })}
       {...props}
       className={css(

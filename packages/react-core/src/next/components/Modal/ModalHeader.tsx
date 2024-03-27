@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode, ComponentType, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import { ModalBoxDescription } from './ModalBoxDescription';
@@ -8,27 +8,27 @@ import { ModalBoxTitle } from './ModalBoxTitle';
 
 export interface ModalHeaderProps {
   /** Custom content rendered inside the modal header. If children are supplied then the tile, tileIconVariant and titleScreenReaderText props are ignored. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the modal header. */
   className?: string;
   /** Description of the modal. */
-  description?: React.ReactNode;
+  description?: ReactNode;
   /** Id of the modal description. */
   descriptorId?: string;
   /** Optional help section for the modal header. */
-  help?: React.ReactNode;
+  help?: ReactNode;
   /** Id of the modal title. */
   labelId?: string;
   /** Content rendered inside the modal title. */
-  title?: React.ReactNode;
+  title?: ReactNode;
   /** Optional alert icon (or other) to show before the title. When the predefined alert types
    * are used the default styling will be automatically applied. */
-  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | React.ComponentType<any>;
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | ComponentType<any>;
   /** Optional title label text for screen readers. */
   titleScreenReaderText?: string;
 }
 
-export const ModalHeader: React.FunctionComponent<ModalHeaderProps> = ({
+export const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
   children,
   className,
   descriptorId,

@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactElement, Context, FunctionComponent, createContext, useState, useContext } from 'react';
 
 import { Checkbox, Wizard, WizardStep } from '@patternfly/react-core';
 
@@ -8,13 +8,13 @@ interface SomeContextProps {
 }
 type SomeContextRenderProps = Pick<SomeContextProps, 'errorMessage'>;
 interface SomeContextProviderProps {
-  children: (context: SomeContextRenderProps) => React.ReactElement;
+  children: (context: SomeContextRenderProps) => ReactElement;
 }
 
-const SomeContext: React.Context<SomeContextProps> = React.createContext({} as SomeContextProps);
+const SomeContext: Context<SomeContextProps> = createContext({} as SomeContextProps);
 
 const SomeContextProvider = ({ children }: SomeContextProviderProps) => {
-  const [errorMessage, setErrorMessage] = React.useState<string>();
+  const [errorMessage, setErrorMessage] = useState<string>();
 
   return (
     <SomeContext.Provider value={{ errorMessage, setErrorMessage }}>{children({ errorMessage })}</SomeContext.Provider>
@@ -22,7 +22,7 @@ const SomeContextProvider = ({ children }: SomeContextProviderProps) => {
 };
 
 const StepContentWithAction = () => {
-  const { errorMessage, setErrorMessage } = React.useContext(SomeContext);
+  const { errorMessage, setErrorMessage } = useContext(SomeContext);
 
   return (
     <Checkbox
@@ -35,7 +35,7 @@ const StepContentWithAction = () => {
   );
 };
 
-export const WizardStepErrorStatus: React.FunctionComponent = () => (
+export const WizardStepErrorStatus: FunctionComponent = () => (
   <SomeContextProvider>
     {({ errorMessage }) => (
       <Wizard height={400} title="Step error status wizard">

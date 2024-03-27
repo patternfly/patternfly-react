@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, ElementType, ComponentType, FunctionComponent, CSSProperties } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/layouts/Gallery/gallery';
 import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 import cssGridTemplateColumnsMax from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_max';
 
-export interface GalleryProps extends React.HTMLProps<HTMLDivElement> {
+export interface GalleryProps extends HTMLProps<HTMLDivElement> {
   /** content rendered inside the Gallery layout */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** additional classes added to the Gallery layout */
   className?: string;
   /** Adds space between children. */
@@ -30,9 +30,9 @@ export interface GalleryProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: string;
   };
   /** Sets the base component to render. defaults to div */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: ElementType<any> | ComponentType<any>;
 }
-export const Gallery: React.FunctionComponent<GalleryProps> = ({
+export const Gallery: FunctionComponent<GalleryProps> = ({
   children = null,
   className = '',
   component = 'div',
@@ -65,7 +65,7 @@ export const Gallery: React.FunctionComponent<GalleryProps> = ({
     <Component
       className={css(styles.gallery, hasGutter && styles.modifiers.gutter, className)}
       {...props}
-      {...((minWidths || maxWidths) && { style: { ...widthStyles, ...props.style } as React.CSSProperties })}
+      {...((minWidths || maxWidths) && { style: { ...widthStyles, ...props.style } as CSSProperties })}
     >
       {children}
     </Component>

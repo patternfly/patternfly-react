@@ -8,17 +8,17 @@ section: components
 ### Tiles with single selection
 
 ```ts
-import React from 'react';
+import { type FunctionComponent, useState, type MouseEvent, type KeyboardEvent } from 'react';
 import { Tile } from '@patternfly/react-core';
 
-const TileSingleSelect: React.FunctionComponent = () => {
-  const [selectedId, setSelectedId] = React.useState<string>('');
+const TileSingleSelect: FunctionComponent = () => {
+  const [selectedId, setSelectedId] = useState<string>('');
 
-  const onSelect = (event: React.MouseEvent) => {
+  const onSelect = (event: MouseEvent) => {
     setSelectedId(event.currentTarget.id);
   };
 
-  const onKeyDown = (event: React.KeyboardEvent) => {
+  const onKeyDown = (event: KeyboardEvent) => {
     if (event.key === ' ' || event.key === 'Enter') {
       event.preventDefault();
       setSelectedId(event.currentTarget.id);
@@ -39,13 +39,13 @@ const TileSingleSelect: React.FunctionComponent = () => {
 ### Tiles with multiple selection
 
 ```ts
-import React from 'react';
+import { type FunctionComponent, useState, type MouseEvent, type KeyboardEvent } from 'react';
 import { Tile } from '@patternfly/react-core';
 
-const TileMultiSelect: React.FunctionComponent = () => {
-  const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
+const TileMultiSelect: FunctionComponent = () => {
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
-  const onSelect = (event: React.MouseEvent | React.KeyboardEvent) => {
+  const onSelect = (event: MouseEvent | KeyboardEvent) => {
     const targetId = event.currentTarget.id;
     setSelectedIds(prevSelectedIds => {
       const newSelectedIds = prevSelectedIds.includes(targetId)
@@ -56,7 +56,7 @@ const TileMultiSelect: React.FunctionComponent = () => {
     });
   };
 
-  const onKeyDown = (event: React.KeyboardEvent) => {
+  const onKeyDown = (event: KeyboardEvent) => {
     console.log(event.key);
     if (event.key === ' ' || event.key === 'Enter') {
       event.preventDefault();

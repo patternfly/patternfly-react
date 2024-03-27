@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table-scrollable';
 
-export interface OuterScrollContainerProps extends React.HTMLProps<HTMLDivElement> {
+export interface OuterScrollContainerProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the outer scroll container */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the container */
   className?: string;
 }
 
-export const OuterScrollContainer: React.FunctionComponent<OuterScrollContainerProps> = ({
+export const OuterScrollContainer: FunctionComponent<OuterScrollContainerProps> = ({
   children,
   className,
   ...props

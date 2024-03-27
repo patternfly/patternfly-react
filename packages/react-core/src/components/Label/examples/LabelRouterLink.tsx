@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Label } from '@patternfly/react-core';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import { Link } from '@reach/router';
 
-export const LabelRouterLink: React.FunctionComponent = () => (
+export const LabelRouterLink: FunctionComponent = () => (
   <Label
     color="blue"
     icon={<InfoCircleIcon />}

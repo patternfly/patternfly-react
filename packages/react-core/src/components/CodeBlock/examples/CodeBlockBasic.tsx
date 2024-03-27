@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { CodeBlock, CodeBlockAction, CodeBlockCode, ClipboardCopyButton, Button } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
-export const BasicCodeBlock: React.FunctionComponent = () => {
-  const [copied, setCopied] = React.useState(false);
+export const BasicCodeBlock: FunctionComponent = () => {
+  const [copied, setCopied] = useState(false);
 
   const clipboardCopyFunc = (event, text) => {
     navigator.clipboard.writeText(text.toString());
@@ -23,7 +23,7 @@ connectionConfig:
 url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
 
   const actions = (
-    <React.Fragment>
+    <Fragment>
       <CodeBlockAction>
         <ClipboardCopyButton
           id="basic-copy-button"
@@ -43,7 +43,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
           <PlayIcon />
         </Button>
       </CodeBlockAction>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

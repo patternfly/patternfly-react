@@ -1,4 +1,4 @@
-import React from 'react';
+import { CSSProperties, useState } from 'react';
 import {
   ActionGroup,
   Button,
@@ -21,8 +21,8 @@ import {
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 export const FormState = () => {
-  const [isSelectOpen, setIsSelectOpen] = React.useState(false);
-  const [formStateExpanded, setFormStateExpanded] = React.useState(false);
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
+  const [formStateExpanded, setFormStateExpanded] = useState(false);
 
   return (
     <FormContextProvider initialValues={{ 'select-id': 'Option 1' }}>
@@ -69,7 +69,7 @@ export const FormState = () => {
                 style={
                   {
                     width: '200px'
-                  } as React.CSSProperties
+                  } as CSSProperties
                 }
               >
                 {getValue('select-id')}

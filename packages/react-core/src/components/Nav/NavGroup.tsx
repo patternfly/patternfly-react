@@ -1,20 +1,20 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { getUniqueId } from '../../helpers/util';
 
-export interface NavGroupProps extends React.HTMLProps<HTMLDivElement> {
+export interface NavGroupProps extends HTMLProps<HTMLDivElement> {
   /** Title shown for the group */
   title?: string;
   /** Anything that can be rendered inside of the group */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the container */
   className?: string;
   /** Identifier to use for the section aria label */
   id?: string;
 }
 
-export const NavGroup: React.FunctionComponent<NavGroupProps> = ({
+export const NavGroup: FunctionComponent<NavGroupProps> = ({
   title,
   children = null,
   className = '',

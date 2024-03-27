@@ -1,4 +1,17 @@
-import * as React from 'react';
+import {
+  type HTMLProps,
+  type ReactNode,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type FunctionComponent,
+  type MouseEvent as ReactMouseEvent,
+  type TouchEvent as ReactTouchEvent,
+  useRef,
+  useState,
+  useContext,
+  useEffect,
+  useCallback,
+  type CSSProperties
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerColorVariant, DrawerContext } from './Drawer';
@@ -24,19 +37,19 @@ export interface DrawerPanelFocusTrapObject {
   'aria-labelledby'?: string;
 }
 
-export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onResize'> {
+export interface DrawerPanelContentProps extends Omit<HTMLProps<HTMLDivElement>, 'onResize'> {
   /** Additional classes added to the drawer. */
   className?: string;
   /** ID of the drawer panel */
   id?: string;
   /** Content to be rendered in the drawer panel. */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Flag indicating that the drawer panel should not have a border. */
   hasNoBorder?: boolean;
   /** Flag indicating that the drawer panel should be resizable. */
   isResizable?: boolean;
   /** Callback for resize end. */
-  onResize?: (event: MouseEvent | TouchEvent | React.KeyboardEvent, width: number, id: string) => void;
+  onResize?: (event: MouseEvent | TouchEvent | ReactKeyboardEvent, width: number, id: string) => void;
   /** The minimum size of a drawer, in either pixels or percentage. */
   minSize?: string;
   /** The starting size of a resizable drawer, in either pixels or percentage. */
@@ -62,7 +75,7 @@ export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivEle
 let isResizing: boolean = null;
 let newSize: number = 0;
 
-export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps> = ({
+export const DrawerPanelContent: FunctionComponent<DrawerPanelContentProps> = ({
   className = '',
   id,
   children,
@@ -79,15 +92,14 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   focusTrap,
   ...props
 }: DrawerPanelContentProps) => {
-  const panel = React.useRef<HTMLDivElement>();
-  const splitterRef = React.useRef<HTMLDivElement>();
-  const [separatorValue, setSeparatorValue] = React.useState(0);
-  const { position, isExpanded, isStatic, onExpand, drawerRef, drawerContentRef, isInline } =
-    React.useContext(DrawerContext);
+  const panel = useRef<HTMLDivElement>();
+  const splitterRef = useRef<HTMLDivElement>();
+  const [separatorValue, setSeparatorValue] = useState(0);
+  const { position, isExpanded, isStatic, onExpand, drawerRef, drawerContentRef, isInline } = useContext(DrawerContext);
   const hidden = isStatic ? false : !isExpanded;
-  const [isExpandedInternal, setIsExpandedInternal] = React.useState(!hidden);
-  const [isFocusTrapActive, setIsFocusTrapActive] = React.useState(false);
-  const previouslyFocusedElement = React.useRef(null);
+  const [isExpandedInternal, setIsExpandedInternal] = useState(!hidden);
+  const [isFocusTrapActive, setIsFocusTrapActive] = useState(false);
+  const previouslyFocusedElement = useRef(null);
   let currWidth: number = 0;
   let panelRect: DOMRect;
   let end: number;
@@ -102,7 +114,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     );
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isStatic && isExpanded) {
       setIsExpandedInternal(isExpanded);
     }
@@ -168,14 +180,14 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     return Math.round((newSplitterPos + Number.EPSILON) * 100) / 100;
   };
 
-  const handleTouchStart = (e: React.TouchEvent) => {
+  const handleTouchStart = (e: ReactTouchEvent) => {
     e.stopPropagation();
     document.addEventListener('touchmove', callbackTouchMove, { passive: false });
     document.addEventListener('touchend', callbackTouchEnd);
     isResizing = true;
   };
 
-  const handleMousedown = (e: React.MouseEvent) => {
+  const handleMousedown = (e: ReactMouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
     document.addEventListener('mousemove', callbackMouseMove);
@@ -258,12 +270,12 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     document.removeEventListener('touchend', callbackTouchEnd);
   };
 
-  const callbackMouseMove = React.useCallback(handleMouseMove, []);
-  const callbackTouchEnd = React.useCallback(handleTouchEnd, []);
-  const callbackTouchMove = React.useCallback(handleTouchMove, []);
-  const callbackMouseUp = React.useCallback(handleMouseup, []);
+  const callbackMouseMove = useCallback(handleMouseMove, []);
+  const callbackTouchEnd = useCallback(handleTouchEnd, []);
+  const callbackTouchMove = useCallback(handleTouchMove, []);
+  const callbackMouseUp = useCallback(handleMouseup, []);
 
-  const handleKeys = (e: React.KeyboardEvent) => {
+  const handleKeys = (e: ReactKeyboardEvent) => {
     const isRTL = getLanguageDirection(panel.current) === 'rtl';
 
     const key = e.key;
@@ -383,15 +395,15 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
             }}
             hidden={hidden}
             {...((defaultSize || minSize || maxSize) && {
-              style: boundaryCssVars as React.CSSProperties
+              style: boundaryCssVars as CSSProperties
             })}
             {...props}
             ref={panel}
           >
             {isExpandedInternal && (
-              <React.Fragment>
+              <>
                 {isResizable && (
-                  <React.Fragment>
+                  <>
                     <div
                       className={css(styles.drawerSplitter, position !== 'bottom' && styles.modifiers.vertical)}
                       role="separator"
@@ -410,10 +422,10 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
                       <div className={css(styles.drawerSplitterHandle)} aria-hidden></div>
                     </div>
                     <div className={css(styles.drawerPanelMain)}>{children}</div>
-                  </React.Fragment>
+                  </>
                 )}
                 {!isResizable && children}
-              </React.Fragment>
+              </>
             )}
           </Component>
         );

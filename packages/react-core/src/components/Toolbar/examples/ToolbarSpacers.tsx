@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
 
-export const ToolbarSpacers: React.FunctionComponent = () => {
+export const ToolbarSpacers: FunctionComponent = () => {
   const items = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem spacer={{ default: 'spacerNone' }}>
         <Button variant="secondary">Action</Button>
       </ToolbarItem>
@@ -40,7 +40,7 @@ export const ToolbarSpacers: React.FunctionComponent = () => {
           <Button variant="secondary">Action</Button>
         </ToolbarItem>
       </ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

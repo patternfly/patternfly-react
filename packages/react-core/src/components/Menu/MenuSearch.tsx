@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, Ref, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 
-export interface MenuSearchProps extends React.HTMLProps<HTMLElement> {
+export interface MenuSearchProps extends HTMLProps<HTMLElement> {
   /** Items within search */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: Ref<any>;
 }
 
-export const MenuSearch = React.forwardRef((props: MenuSearchProps, ref: React.Ref<HTMLDivElement>) => (
+export const MenuSearch = forwardRef((props: MenuSearchProps, ref: Ref<HTMLDivElement>) => (
   <div {...props} className={css(styles.menuSearch, props.className)} ref={ref} />
 ));
 MenuSearch.displayName = 'MenuSearch';

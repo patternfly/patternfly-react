@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent, ReactNode, FormEvent, useState } from 'react';
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core/deprecated';
 
-export const ContextSelectorBasic: React.FunctionComponent = () => {
+export const ContextSelectorBasic: FunctionComponent = () => {
   const items = [
     {
       text: 'Link',
@@ -30,21 +30,21 @@ export const ContextSelectorBasic: React.FunctionComponent = () => {
   ];
 
   const firstItemText = typeof items[0] === 'string' ? items[0] : items[0].text;
-  const [isOpen, setOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState(firstItemText);
-  const [searchValue, setSearchValue] = React.useState('');
-  const [filteredItems, setFilteredItems] = React.useState(items);
+  const [isOpen, setOpen] = useState(false);
+  const [selected, setSelected] = useState(firstItemText);
+  const [searchValue, setSearchValue] = useState('');
+  const [filteredItems, setFilteredItems] = useState(items);
 
   const onToggle = (event: any, isOpen: boolean) => {
     setOpen(isOpen);
   };
 
-  const onSelect = (event: any, value: React.ReactNode) => {
+  const onSelect = (event: any, value: ReactNode) => {
     setSelected(value as string);
     setOpen(!isOpen);
   };
 
-  const onSearchInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  const onSearchInputChange = (_event: FormEvent<HTMLInputElement>, value: string) => {
     setSearchValue(value);
   };
 

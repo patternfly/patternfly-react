@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import {
   Form,
   FormGroup,
@@ -10,7 +10,7 @@ import {
 } from '@patternfly/react-core';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 
-export const FormFieldGroups: React.FunctionComponent = () => {
+export const FormFieldGroups: FunctionComponent = () => {
   const initialValues = {
     '0-label1': '',
     '0-label2': '',
@@ -36,7 +36,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
     '0-label4': ''
   };
 
-  const [inputValues, setInputValues] = React.useState(initialValues);
+  const [inputValues, setInputValues] = useState(initialValues);
 
   const handleChange = (event, value: string) => {
     const { name } = event.currentTarget;

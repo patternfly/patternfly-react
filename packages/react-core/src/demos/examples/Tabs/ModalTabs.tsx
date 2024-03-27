@@ -1,4 +1,10 @@
-import React from 'react';
+import {
+  useState,
+  type FunctionComponent,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  useCallback
+} from 'react';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import {
   PageSection,
@@ -46,12 +52,12 @@ const products: Product[] = [
   }
 ];
 
-export const ModalTabs: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(true);
-  const [selectedProduct, setSelectedProduct] = React.useState<Product>(products[0]);
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
+export const ModalTabs: FunctionComponent = () => {
+  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [selectedProduct, setSelectedProduct] = useState<Product>(products[0]);
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
 
-  const onCardClick = React.useCallback(
+  const onCardClick = useCallback(
     (product: Product) => () => {
       setSelectedProduct(product);
       setIsModalOpen(true);
@@ -59,8 +65,8 @@ export const ModalTabs: React.FunctionComponent = () => {
     []
   );
 
-  const onCardKeyPress = React.useCallback(
-    (product: Product) => (event: React.KeyboardEvent<HTMLElement>) => {
+  const onCardKeyPress = useCallback(
+    (product: Product) => (event: ReactKeyboardEvent<HTMLElement>) => {
       if (event.key === 'Enter' || event.key === ' ') {
         onCardClick(product)();
       }
@@ -68,19 +74,19 @@ export const ModalTabs: React.FunctionComponent = () => {
     []
   );
 
-  const closeModal = React.useCallback(() => {
+  const closeModal = useCallback(() => {
     setSelectedProduct(undefined);
     setIsModalOpen(false);
     setActiveTabKey(0);
   }, []);
 
-  const onTabSelect = React.useCallback(
-    (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => setActiveTabKey(tabIndex),
+  const onTabSelect = useCallback(
+    (_event: ReactMouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => setActiveTabKey(tabIndex),
     []
   );
 
   return (
-    <React.Fragment>
+    <>
       <DashboardWrapper mainContainerId="main-content-card-view-default-nav">
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
@@ -140,6 +146,6 @@ export const ModalTabs: React.FunctionComponent = () => {
           </Grid>
         </Modal>
       )}
-    </React.Fragment>
+    </>
   );
 };

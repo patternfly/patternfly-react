@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState, useRef, Fragment } from 'react';
 import {
   Brand,
   Breadcrumb,
@@ -35,11 +35,11 @@ import {
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
-export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState(0);
+export const WizardFullPageWithDrawerDemo: FunctionComponent = () => {
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
+  const [activeItem, setActiveItem] = useState(0);
 
-  const drawerRef = React.useRef<HTMLSpanElement>(null);
+  const drawerRef = useRef<HTMLSpanElement>(null);
 
   const onExpand = () => {
     if (drawerRef.current) {
@@ -55,7 +55,7 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
     setIsDrawerExpanded(false);
   };
 
-  const onNavSelect = (_event: React.FormEvent<HTMLElement>, result: { itemId: number | string }) => {
+  const onNavSelect = (_event: FormEvent<HTMLElement>, result: { itemId: number | string }) => {
     setActiveItem(result.itemId as number);
   };
 
@@ -150,7 +150,7 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page
         header={Header}
         sidebar={Sidebar}
@@ -191,6 +191,6 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
           </Wizard>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

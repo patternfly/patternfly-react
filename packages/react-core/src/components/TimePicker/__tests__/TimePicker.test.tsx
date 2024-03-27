@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { StrictMode } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -11,9 +11,9 @@ describe('TimePicker', () => {
 
     const consoleError = jest.spyOn(console, 'error');
     render(
-      <React.StrictMode>
+      <StrictMode>
         <TimePicker value={'00:00'} validateTime={validateTime} aria-label="time picker" />
-      </React.StrictMode>
+      </StrictMode>
     );
     expect(consoleError).not.toHaveBeenCalled();
     expect(screen.getByLabelText('time picker')).not.toHaveClass('pf-m-error');

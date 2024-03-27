@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, useState, useRef, Fragment } from 'react';
 import {
   Button,
   DrawerActions,
@@ -9,10 +9,10 @@ import {
 } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
-export const WizardWithDrawer: React.FunctionComponent = () => {
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
+export const WizardWithDrawer: FunctionComponent = () => {
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
 
-  const drawerRef = React.useRef<HTMLSpanElement>(null);
+  const drawerRef = useRef<HTMLSpanElement>(null);
 
   const onExpandDrawer = () => {
     drawerRef.current && drawerRef.current.focus();
@@ -117,7 +117,7 @@ export const WizardWithDrawer: React.FunctionComponent = () => {
   const title = 'Wizard with drawer example';
 
   return (
-    <React.Fragment>
+    <Fragment>
       <WizardDeprecated
         height={400}
         isDrawerExpanded={isDrawerExpanded}
@@ -126,6 +126,6 @@ export const WizardWithDrawer: React.FunctionComponent = () => {
         navAriaLabel={`${title} steps`}
         steps={steps}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

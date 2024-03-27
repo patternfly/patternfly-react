@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { TextInput } from '@patternfly/react-core';
 
-export const StartTruncatedTextInput: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState(
+export const StartTruncatedTextInput: FunctionComponent = () => {
+  const [value, setValue] = useState(
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
   );
   return (

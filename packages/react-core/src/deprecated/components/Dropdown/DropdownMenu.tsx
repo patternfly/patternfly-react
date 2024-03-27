@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { ReactNode, HTMLAttributes, ContextType, ReactElement, Children, cloneElement, Component } from 'react';
+import ReactDOM from 'react-dom';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { keyHandler, formatBreakpointMods } from '../../../helpers/util';
@@ -7,7 +7,7 @@ import { DropdownPosition, DropdownArrowContext, DropdownContext } from './dropd
 
 export interface DropdownMenuProps {
   /** Anything which can be rendered as dropdown items */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classess applied to root element of dropdown menu */
   className?: string;
   /** Flag to indicate if menu is opened */
@@ -17,7 +17,7 @@ export interface DropdownMenuProps {
    */
   autoFocus?: boolean;
   /** Indicates which component will be used as dropdown menu */
-  component?: React.ReactNode;
+  component?: ReactNode;
   /** Indicates where menu will be alligned horizontally */
   position?: DropdownPosition | 'right' | 'left';
   /** Indicates how the menu will align at screen size breakpoints */
@@ -34,16 +34,16 @@ export interface DropdownMenuProps {
   setMenuComponentRef?: any;
 }
 
-export interface DropdownMenuItem extends React.HTMLAttributes<any> {
+export interface DropdownMenuItem extends HTMLAttributes<any> {
   isDisabled: boolean;
   disabled: boolean;
   isHovered: boolean;
   ref: HTMLElement;
 }
 
-class DropdownMenu extends React.Component<DropdownMenuProps> {
+class DropdownMenu extends Component<DropdownMenuProps> {
   static displayName = 'DropdownMenu';
-  context!: React.ContextType<typeof DropdownContext>;
+  context!: ContextType<typeof DropdownContext>;
   refsCollection = [] as HTMLElement[][];
 
   static defaultProps: DropdownMenuProps = {
@@ -118,7 +118,7 @@ class DropdownMenu extends React.Component<DropdownMenuProps> {
       innerIndex,
       position,
       this.refsCollection,
-      this.props.isGrouped ? this.refsCollection : React.Children.toArray(this.props.children),
+      this.props.isGrouped ? this.refsCollection : Children.toArray(this.props.children),
       custom
     );
   };
@@ -143,27 +143,27 @@ class DropdownMenu extends React.Component<DropdownMenuProps> {
     const { children, isGrouped } = this.props;
     if (isGrouped) {
       let index = 0;
-      return React.Children.map(children, (groupedChildren) => {
-        const group = groupedChildren as React.ReactElement;
-        const props: { children?: React.ReactNode } = {};
+      return Children.map(children, (groupedChildren) => {
+        const group = groupedChildren as ReactElement;
+        const props: { children?: ReactNode } = {};
         if (group.props && group.props.children) {
           if (Array.isArray(group.props.children)) {
-            props.children = React.Children.map(group.props.children, (option) =>
-              React.cloneElement(option as React.ReactElement, {
+            props.children = Children.map(group.props.children, (option) =>
+              cloneElement(option as ReactElement, {
                 index: index++
               })
             );
           } else {
-            props.children = React.cloneElement(group.props.children as React.ReactElement, {
+            props.children = cloneElement(group.props.children as ReactElement, {
               index: index++
             });
           }
         }
-        return React.cloneElement(group, props);
+        return cloneElement(group, props);
       });
     }
-    return React.Children.map(children, (child, index) =>
-      React.cloneElement(child as React.ReactElement, {
+    return Children.map(children, (child, index) =>
+      cloneElement(child as ReactElement, {
         index
       })
     );

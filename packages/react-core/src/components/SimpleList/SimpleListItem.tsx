@@ -1,4 +1,10 @@
-import * as React from 'react';
+import {
+  type ReactNode,
+  type MouseEvent as ReactMouseEvent,
+  type ChangeEvent as ReactChangeEvent,
+  Component,
+  createRef
+} from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/SimpleList/simple-list';
 import { SimpleListContext } from './SimpleList';
@@ -7,7 +13,7 @@ export interface SimpleListItemProps {
   /** id for the item. */
   itemId?: number | string;
   /** Content rendered inside the SimpleList item */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes added to the SimpleList <li> */
   className?: string;
   /** Component type of the SimpleList item */
@@ -19,16 +25,16 @@ export interface SimpleListItemProps {
   /** Indicates if the link is current/highlighted */
   isActive?: boolean;
   /** OnClick callback for the SimpleList item */
-  onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
+  onClick?: (event: ReactMouseEvent | ReactChangeEvent) => void;
   /** Type of button SimpleList item */
   type?: 'button' | 'submit' | 'reset';
   /** Default hyperlink location */
   href?: string;
 }
 
-class SimpleListItem extends React.Component<SimpleListItemProps> {
+class SimpleListItem extends Component<SimpleListItemProps> {
   static displayName = 'SimpleListItem';
-  ref = React.createRef<any>();
+  ref = createRef<any>();
   static defaultProps: SimpleListItemProps = {
     children: null,
     className: '',
@@ -79,7 +85,7 @@ class SimpleListItem extends React.Component<SimpleListItemProps> {
                   isCurrentItem && styles.modifiers.current,
                   componentClassName
                 )}
-                onClick={(evt: React.MouseEvent) => {
+                onClick={(evt: ReactMouseEvent) => {
                   onClick(evt);
                   updateCurrentRef(this.ref, this.props);
                 }}

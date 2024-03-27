@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { ExpandableSection, ExpandableSectionToggle, Stack, StackItem } from '@patternfly/react-core';
 
-export const ExpandableSectionDetached: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+export const ExpandableSectionDetached: FunctionComponent = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const onToggle = (isExpanded: boolean) => {
     setIsExpanded(isExpanded);

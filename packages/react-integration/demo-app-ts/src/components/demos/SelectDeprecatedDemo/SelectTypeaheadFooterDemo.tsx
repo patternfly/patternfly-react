@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent, ChangeEvent, Component } from 'react';
 import { Button } from '@patternfly/react-core';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
 
@@ -8,7 +8,7 @@ export interface SelectTypeaheadFooterDemoState {
   selected: string[];
 }
 
-export class SelectTypeaheadFooterDemo extends React.Component<SelectTypeaheadFooterDemoState> {
+export class SelectTypeaheadFooterDemo extends Component<SelectTypeaheadFooterDemoState> {
   static displayName = 'SelectTypeaheadFooterDemo';
   state = {
     isOpen: false,
@@ -38,7 +38,7 @@ export class SelectTypeaheadFooterDemo extends React.Component<SelectTypeaheadFo
     });
   };
 
-  onSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string, isPlaceholder: boolean) => {
+  onSelect = (_event: MouseEvent | ChangeEvent, selection: string, isPlaceholder: boolean) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {

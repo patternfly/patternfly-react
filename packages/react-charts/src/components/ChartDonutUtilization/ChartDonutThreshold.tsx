@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactElement, FunctionComponent, Children, isValidElement, cloneElement, Fragment } from 'react';
 import {
   AnimatePropTypeInterface,
   CategoryPropType,
@@ -79,7 +79,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    * @private
    * @hide
    */
-  children?: React.ReactElement<any>;
+  children?: ReactElement<any>;
   /**
    * The colorScale prop is an optional prop that defines the color scale the pie
    * will be created on. This prop should be given as an array of CSS colors, or as a string
@@ -109,7 +109,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
-  containerComponent?: React.ReactElement<any>;
+  containerComponent?: ReactElement<any>;
   /**
    * Set the cornerRadius for every dataComponent (Slice by default) within ChartDonutThreshold
    *
@@ -138,7 +138,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    * the ChartDonutThreshold; and the d3 compatible slice object.
    * If a dataComponent is not provided, ChartDonutThreshold's Slice component will be used.
    */
-  dataComponent?: React.ReactElement<any>;
+  dataComponent?: ReactElement<any>;
   /**
    * The desc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers. The more info about the chart provided in
@@ -217,7 +217,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
    */
-  groupComponent?: React.ReactElement<any>;
+  groupComponent?: ReactElement<any>;
   /**
    * The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart.
    * SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected
@@ -428,7 +428,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
   y?: DataGetterPropType;
 }
 
-export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdProps> = ({
+export const ChartDonutThreshold: FunctionComponent<ChartDonutThresholdProps> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -500,12 +500,12 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   // Render dynamic utilization donut cart
   const computedData = getComputedData();
   const renderChildren = () =>
-    React.Children.toArray(children).map((child, index) => {
-      if (React.isValidElement(child)) {
+    Children.toArray(children).map((child, index) => {
+      if (isValidElement(child)) {
         const { data: childData, ...childProps } = child.props;
         const datum = Data.formatData([childData], childProps, ['x', 'y']); // Format child data independently of this component's props
         const dynamicTheme = childProps.theme || getDonutThresholdDynamicTheme(childProps.themeColor || themeColor);
-        return React.cloneElement(child, {
+        return cloneElement(child, {
           ...(hasPatterns && { hasPatterns: true }), // Enable ChartDonutUtilization patterns
           constrainToVisibleArea,
           data: childData,
@@ -552,7 +552,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   );
 
   // Clone so users can override container props
-  const container = React.cloneElement(
+  const container = cloneElement(
     containerComponent,
     {
       desc: ariaDesc,
@@ -566,12 +566,12 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   );
 
   return standalone ? (
-    <React.Fragment>{container}</React.Fragment>
+    <Fragment>{container}</Fragment>
   ) : (
-    <React.Fragment>
+    <Fragment>
       {chart}
       {renderChildren()}
-    </React.Fragment>
+    </Fragment>
   );
 };
 ChartDonutThreshold.displayName = 'ChartDonutThreshold';

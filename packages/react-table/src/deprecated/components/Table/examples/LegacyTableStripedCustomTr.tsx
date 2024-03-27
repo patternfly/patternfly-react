@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, LegacyRef } from 'react';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { css } from '@patternfly/react-styles';
 
@@ -10,7 +10,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const LegacyTableStripedCustomTr: React.FunctionComponent = () => {
+export const LegacyTableStripedCustomTr: FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },
@@ -29,9 +29,7 @@ export const LegacyTableStripedCustomTr: React.FunctionComponent = () => {
 
   const customRowWrapper: TableProps['rowWrapper'] = ({ trRef, className, rowProps, row: _row }) => {
     const isOddRow = rowProps ? !!((rowProps.rowIndex + 1) % 2) : true;
-    return (
-      <tr ref={trRef as React.LegacyRef<HTMLTableRowElement>} className={css(className, isOddRow && 'pf-m-striped')} />
-    );
+    return <tr ref={trRef as LegacyRef<HTMLTableRowElement>} className={css(className, isOddRow && 'pf-m-striped')} />;
   };
 
   return (

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { DOMAttributes, CSSProperties, FunctionComponent } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import defaults from 'lodash/defaults';
 import {
@@ -89,7 +89,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * The events prop attaches arbitrary event handlers to the label component.
    * Event handlers are currently only called with their corresponding events.
    */
-  events?: React.DOMAttributes<any>;
+  events?: DOMAttributes<any>;
   /**
    * The id prop specifies a HTML ID that will be applied to the rendered text element.
    */
@@ -163,7 +163,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
   /**
    * The style prop applies CSS properties to the rendered `<text>` element.
    */
-  style?: React.CSSProperties | React.CSSProperties[];
+  style?: CSSProperties | CSSProperties[];
   /**
    * The text prop defines the text ChartLabel will render. The text prop may be given as a string, number, a function
    * of datum, or an array of any of these. Strings may include newline characters, which ChartLabel will split into
@@ -212,12 +212,8 @@ export interface ChartLabelProps extends VictoryLabelProps {
   y?: number;
 }
 
-export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
-  style,
-  textAnchor,
-  ...rest
-}: ChartLabelProps) => {
-  const applyDefaultStyle = (customStyle: React.CSSProperties) =>
+export const ChartLabel: FunctionComponent<ChartLabelProps> = ({ style, textAnchor, ...rest }: ChartLabelProps) => {
+  const applyDefaultStyle = (customStyle: CSSProperties) =>
     defaults(
       {
         ...customStyle,

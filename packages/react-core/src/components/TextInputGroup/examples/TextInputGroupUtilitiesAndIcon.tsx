@@ -1,13 +1,13 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities, Button } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const TextInputGroupUtilitiesAndIcon: React.FunctionComponent = () => {
-  const [inputValue, setInputValue] = React.useState('');
+export const TextInputGroupUtilitiesAndIcon: FunctionComponent = () => {
+  const [inputValue, setInputValue] = useState('');
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
-  const handleInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  const handleInputChange = (_event: FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
   };
 

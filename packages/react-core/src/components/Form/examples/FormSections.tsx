@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Form, FormGroup, FormSection, TextInput } from '@patternfly/react-core';
 
-export const FormSections: React.FunctionComponent = () => {
-  const [input1, setInput1] = React.useState('');
-  const [input2, setInput2] = React.useState('');
+export const FormSections: FunctionComponent = () => {
+  const [input1, setInput1] = useState('');
+  const [input2, setInput2] = useState('');
 
   const handleInputChange1 = (_event, input1: string) => {
     setInput1(input1);

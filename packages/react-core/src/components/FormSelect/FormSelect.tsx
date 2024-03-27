@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FormEvent, Children, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -8,10 +8,10 @@ import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 export interface FormSelectProps
-  extends Omit<React.HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'>,
+  extends Omit<HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'>,
     OUIAProps {
   /** content rendered inside the FormSelect */
-  children: React.ReactNode;
+  children: ReactNode;
   /** additional classes added to the FormSelect control */
   className?: string;
   /** value of selected option */
@@ -26,11 +26,11 @@ export interface FormSelectProps
   /** Sets the FormSelect required. */
   isRequired?: boolean;
   /** Optional callback for updating when selection loses focus */
-  onBlur?: (event: React.FormEvent<HTMLSelectElement>) => void;
+  onBlur?: (event: FormEvent<HTMLSelectElement>) => void;
   /** Optional callback for updating when selection gets focus */
-  onFocus?: (event: React.FormEvent<HTMLSelectElement>) => void;
+  onFocus?: (event: FormEvent<HTMLSelectElement>) => void;
   /** Optional callback for updating when selection changes */
-  onChange?: (event: React.FormEvent<HTMLSelectElement>, value: string) => void;
+  onChange?: (event: FormEvent<HTMLSelectElement>, value: string) => void;
   /** Custom flag to show that the FormSelect requires an associated id or aria-label. */
   'aria-label'?: string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -39,7 +39,7 @@ export interface FormSelectProps
   ouiaSafe?: boolean;
 }
 
-class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: string }> {
+class FormSelect extends Component<FormSelectProps, { ouiaStateId: string }> {
   static displayName = 'FormSelect';
   constructor(props: FormSelectProps) {
     super(props);
@@ -71,7 +71,7 @@ class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: string 
   render() {
     const { children, className, value, validated, isDisabled, isRequired, ouiaId, ouiaSafe, ...props } = this.props;
     /* find selected option and get placeholder flag */
-    const selectedOption = React.Children.toArray(children).find((option: any) => option.props.value === value) as any;
+    const selectedOption = Children.toArray(children).find((option: any) => option.props.value === value) as any;
     const isSelectedPlaceholder = selectedOption && selectedOption.props.isPlaceholder;
     const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
 

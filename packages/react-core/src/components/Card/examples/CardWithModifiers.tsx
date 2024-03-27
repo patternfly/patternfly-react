@@ -1,12 +1,12 @@
-import React from 'react';
+import { FunctionComponent, useState, Fragment } from 'react';
 import { Card, CardTitle, CardBody, CardFooter, Checkbox } from '@patternfly/react-core';
 
-export const CardWithModifiers: React.FunctionComponent = () => {
+export const CardWithModifiers: FunctionComponent = () => {
   const mods = ['isCompact', 'isFlat', 'isRounded', 'isLarge', 'isFullHeight', 'isPlain'];
-  const [modifiers, setModifiers] = React.useState({});
+  const [modifiers, setModifiers] = useState({});
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div style={{ marginBottom: '12px' }}>
         {mods.map((mod) => (
           <Checkbox
@@ -28,6 +28,6 @@ export const CardWithModifiers: React.FunctionComponent = () => {
           <CardFooter>Footer</CardFooter>
         </Card>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };

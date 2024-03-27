@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { HTMLProps, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Divider/divider';
 import { formatBreakpointMods } from '../../helpers/util';
@@ -9,7 +9,7 @@ export enum DividerVariant {
   div = 'div'
 }
 
-export interface DividerProps extends React.HTMLProps<HTMLElement> {
+export interface DividerProps extends HTMLProps<HTMLElement> {
   /** Additional classes added to the divider */
   className?: string;
   /** The component type to use */
@@ -34,7 +34,7 @@ export interface DividerProps extends React.HTMLProps<HTMLElement> {
   };
 }
 
-export const Divider: React.FunctionComponent<DividerProps> = ({
+export const Divider: FunctionComponent<DividerProps> = ({
   className,
   component = DividerVariant.hr,
   inset,

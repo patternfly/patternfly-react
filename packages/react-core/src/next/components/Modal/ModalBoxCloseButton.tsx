@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import { Button } from '../../../components/Button';
@@ -9,14 +9,14 @@ export interface ModalBoxCloseButtonProps extends OUIAProps {
   /** Additional classes added to the close button. */
   className?: string;
   /** A callback for when the close button is clicked. */
-  onClose?: (event: KeyboardEvent | React.MouseEvent) => void;
+  onClose?: (event: KeyboardEvent | MouseEvent) => void;
   /** Accessible descriptor of the close button. */
   'aria-label'?: string;
   /** Value to set the data-ouia-component-id.*/
   ouiaId?: number | string;
 }
 
-export const ModalBoxCloseButton: React.FunctionComponent<ModalBoxCloseButtonProps> = ({
+export const ModalBoxCloseButton: FunctionComponent<ModalBoxCloseButtonProps> = ({
   className,
   onClose,
   'aria-label': ariaLabel = 'Close',

@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 
-export const TreeViewCompactNoBackground: React.FunctionComponent = () => {
+export const TreeViewCompactNoBackground: FunctionComponent = () => {
   const options: TreeViewDataItem[] = [
     {
       name: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',

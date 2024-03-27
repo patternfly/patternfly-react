@@ -1,15 +1,15 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, useState, Fragment } from 'react';
 import { Modal, ModalVariant, Button, Form, FormGroup, Popover, TextInput } from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
-export const ModalWithForm: React.FunctionComponent = () => {
-  const [isModalOpen, setModalOpen] = React.useState(false);
-  const [nameValue, setNameValue] = React.useState('');
-  const [emailValue, setEmailValue] = React.useState('');
-  const [addressValue, setAddressValue] = React.useState('');
+export const ModalWithForm: FunctionComponent = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [nameValue, setNameValue] = useState('');
+  const [emailValue, setEmailValue] = useState('');
+  const [addressValue, setAddressValue] = useState('');
 
-  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
+  const handleModalToggle = (_event: KeyboardEvent | MouseEvent) => {
     setModalOpen(!isModalOpen);
   };
 
@@ -25,7 +25,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show modal with form
       </Button>
@@ -197,6 +197,6 @@ export const ModalWithForm: React.FunctionComponent = () => {
           </FormGroup>
         </Form>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent, useRef } from 'react';
 import { Tooltip } from '@patternfly/react-core';
 
-export const TooltipReactRef: React.FunctionComponent = () => {
-  const tooltipRef = React.useRef<HTMLButtonElement>(null);
+export const TooltipReactRef: FunctionComponent = () => {
+  const tooltipRef = useRef<HTMLButtonElement>(null);
   return (
     <div style={{ margin: '100px' }}>
       <button aria-describedby="tooltip-ref1" ref={tooltipRef}>

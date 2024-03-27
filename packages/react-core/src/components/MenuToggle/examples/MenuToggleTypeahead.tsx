@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, FormEvent, useState } from 'react';
 import {
   MenuToggle,
   TextInputGroup,
@@ -8,10 +8,10 @@ import {
 } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const MenuToggleTypeahead: React.FunctionComponent = () => {
-  const [inputValue, setInputValue] = React.useState<string>('');
+export const MenuToggleTypeahead: FunctionComponent = () => {
+  const [inputValue, setInputValue] = useState<string>('');
 
-  const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  const onTextInputChange = (_event: FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
   };
 

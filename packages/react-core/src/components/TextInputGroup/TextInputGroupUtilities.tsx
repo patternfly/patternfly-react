@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 import { css } from '@patternfly/react-styles';
 
-export interface TextInputGroupUtilitiesProps extends React.HTMLProps<HTMLDivElement> {
+export interface TextInputGroupUtilitiesProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the text input group utilities div */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Additional classes applied to the text input group utilities container */
   className?: string;
 }
 
-export const TextInputGroupUtilities: React.FunctionComponent<TextInputGroupUtilitiesProps> = ({
+export const TextInputGroupUtilities: FunctionComponent<TextInputGroupUtilitiesProps> = ({
   children,
   className,
   ...props

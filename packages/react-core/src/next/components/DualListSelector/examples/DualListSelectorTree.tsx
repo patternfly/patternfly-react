@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, MouseEvent, ChangeEvent, KeyboardEvent, ReactNode, useState, useMemo } from 'react';
 import {
   DualListSelector,
   DualListSelectorPane,
@@ -33,11 +33,11 @@ interface ExampleProps {
   data: FoodNode[];
 }
 
-export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProps> = ({ data }: ExampleProps) => {
-  const [checkedLeafIds, setCheckedLeafIds] = React.useState<string[]>([]);
-  const [chosenLeafIds, setChosenLeafIds] = React.useState<string[]>(['beans', 'beef', 'chicken', 'tofu']);
-  const [chosenFilter, setChosenFilter] = React.useState<string>('');
-  const [availableFilter, setAvailableFilter] = React.useState<string>('');
+export const DualListSelectorComposableTree: FunctionComponent<ExampleProps> = ({ data }: ExampleProps) => {
+  const [checkedLeafIds, setCheckedLeafIds] = useState<string[]>([]);
+  const [chosenLeafIds, setChosenLeafIds] = useState<string[]>(['beans', 'beef', 'chicken', 'tofu']);
+  const [chosenFilter, setChosenFilter] = useState<string>('');
+  const [availableFilter, setAvailableFilter] = useState<string>('');
   let hiddenChosen: string[] = [];
   let hiddenAvailable: string[] = [];
 
@@ -84,7 +84,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
   };
 
   // Builds a map of child leaf nodes by node id - memoized so that it only rebuilds the list if the data changes.
-  const { memoizedLeavesById, memoizedAllLeaves, memoizedNodeText } = React.useMemo(() => {
+  const { memoizedLeavesById, memoizedAllLeaves, memoizedNodeText } = useMemo(() => {
     let leavesById = {};
     let allLeaves: string[] = [];
     let nodeTexts = {};
@@ -145,7 +145,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
   };
 
   const onOptionCheck = (
-    event: React.MouseEvent | React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent,
+    event: MouseEvent | ChangeEvent<HTMLInputElement> | KeyboardEvent,
     isChecked: boolean,
     node: DualListSelectorTreeItemData,
     isChosen: boolean
@@ -242,7 +242,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     ];
   };
 
-  const buildPane = (isChosen: boolean): React.ReactNode => {
+  const buildPane = (isChosen: boolean): ReactNode => {
     const options: DualListSelectorTreeItemData[] = buildOptions(isChosen, data, false);
     const numOptions = isChosen ? chosenLeafIds.length : memoizedAllLeaves.length - chosenLeafIds.length;
     const numSelected = checkedLeafIds.filter((id) =>
@@ -325,7 +325,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
   );
 };
 
-export const DualListSelectorComposableTreeExample: React.FunctionComponent = () => (
+export const DualListSelectorComposableTreeExample: FunctionComponent = () => (
   <DualListSelectorComposableTree
     data={[
       {

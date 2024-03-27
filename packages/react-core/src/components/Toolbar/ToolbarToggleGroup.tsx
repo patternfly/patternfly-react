@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { MouseEvent, ReactNode, RefObject, createRef, Component } from 'react';
+import ReactDOM from 'react-dom';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarGroupProps } from './ToolbarGroup';
@@ -14,9 +14,9 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** Flag indicating when toggle group is expanded for non-managed toolbar toggle groups. */
   isExpanded?: boolean;
   /** Callback for toggle group click event for non-managed toolbar toggle groups. */
-  onToggle?: (event: React.MouseEvent) => void;
+  onToggle?: (event: MouseEvent) => void;
   /** An icon to be rendered when the toggle group has collapsed down */
-  toggleIcon: React.ReactNode;
+  toggleIcon: ReactNode;
   /** Controls when filters are shown and when the toggle button is hidden. */
   breakpoint: 'md' | 'lg' | 'xl' | '2xl';
   /** Visibility at various breakpoints. */
@@ -52,7 +52,7 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
     '2xl'?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
   };
   /** Reference to a chip container group for filters inside the toolbar toggle group */
-  chipContainerRef?: React.RefObject<any>;
+  chipContainerRef?: RefObject<any>;
   /** Optional callback for clearing all filters in the toolbar toggle group */
   clearAllFilters?: () => void;
   /** Flag indicating that the clear all filters button should be visible in the toolbar toggle group */
@@ -61,10 +61,10 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   clearFiltersButtonText?: string;
 }
 
-class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
+class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
   static displayName = 'ToolbarToggleGroup';
-  toggleRef = React.createRef<HTMLButtonElement>();
-  expandableContentRef = React.createRef<HTMLDivElement>();
+  toggleRef = createRef<HTMLButtonElement>();
+  expandableContentRef = createRef<HTMLDivElement>();
 
   isContentPopup = () => {
     const viewportSize = canUseDOM ? window.innerWidth : 1200;
