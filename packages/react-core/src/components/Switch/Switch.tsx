@@ -127,7 +127,9 @@ class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: str
         ) : (
           <span className={css(styles.switchToggle)}>
             <div className={css(styles.switchToggleIcon)} aria-hidden="true">
-              <CheckIcon />
+              {hasCheckIcon && (
+                <CheckIcon />
+              )}
             </div>
           </span>
         )}
