@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.50](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.49...@patternfly/react-docs@7.0.0-alpha.50) (2024-03-27)
+
+### Features
+
+- **Page,Drawer:** core bump and updates ([#10211](https://github.com/patternfly/patternfly-react/issues/10211)) ([8210248](https://github.com/patternfly/patternfly-react/commit/82102488317d9b263f8075179f8fecfc365cc647))
+
 # [7.0.0-alpha.49](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.48...@patternfly/react-docs@7.0.0-alpha.49) (2024-03-27)
 
 **Note:** Version bump only for package @patternfly/react-docs
