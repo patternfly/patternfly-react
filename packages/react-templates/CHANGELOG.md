@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.0.0-prerelease.3...@patternfly/react-templates@1.0.0-prerelease.4) (2024-03-28)
+
+### Features
+
+- **Select:** add checkbox variant of the simple select template ([#10159](https://github.com/patternfly/patternfly-react/issues/10159)) ([7a33b34](https://github.com/patternfly/patternfly-react/commit/7a33b34cf54b205248ddcfd71e11918331cb3e58))
+
 # [1.0.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.0.0-prerelease.2...@patternfly/react-templates@1.0.0-prerelease.3) (2024-03-28)
 
 **Note:** Version bump only for package @patternfly/react-templates
