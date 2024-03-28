@@ -28,13 +28,12 @@ export const SelectableCard: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <Card id="selectable-card-example-1" isSelectable>
+      <Card id="selectable-card-example-1" isSelectable isSelected={isChecked1}>
         <CardHeader
           selectableActions={{
             selectableActionId: id1,
             selectableActionAriaLabelledby: 'selectable-card-example-1',
             name: id1,
-            isChecked: isChecked1,
             onChange
           }}
         >
@@ -42,13 +41,12 @@ export const SelectableCard: React.FunctionComponent = () => {
         </CardHeader>
         <CardBody>This card is selectable.</CardBody>
       </Card>
-      <Card id="selectable-card-example-2" isSelectable>
+      <Card id="selectable-card-example-2" isSelectable isSelected={isChecked2}>
         <CardHeader
           selectableActions={{
             selectableActionId: id2,
             selectableActionAriaLabelledby: 'selectable-card-example-2',
             name: id2,
-            isChecked: isChecked2,
             onChange
           }}
         >
@@ -56,13 +54,12 @@ export const SelectableCard: React.FunctionComponent = () => {
         </CardHeader>
         <CardBody>This card is selectable.</CardBody>
       </Card>
-      <Card id="selectable-card-example-3" isSelectable isDisabled>
+      <Card id="selectable-card-example-3" isSelectable isDisabled isSelected={isChecked3}>
         <CardHeader
           selectableActions={{
             selectableActionId: id3,
             selectableActionAriaLabelledby: 'selectable-card-example-3',
             name: id3,
-            isChecked: isChecked3,
             onChange
           }}
         >
