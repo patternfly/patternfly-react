@@ -352,4 +352,4 @@ class CardDemo extends React.Component {
 
 CardDemo.displayName = 'CardDemo';
 
-export default CardDemo;
+export { CardDemo };
