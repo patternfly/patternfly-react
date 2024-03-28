@@ -26,13 +26,14 @@ interface CardDemoState {
   isOpen: boolean;
   selectableChecked1: boolean;
   selectableChecked2: boolean;
+  singleSelectableChecked: string;
   drawerIsExpanded: boolean;
   selectableClickableChecked: boolean;
   selectableClickableSelected: boolean;
   selectaleClickableDrawerIsExpanded: boolean;
 }
 
-export class CardDemo extends React.Component {
+class CardDemo extends React.Component {
   static displayName = 'CardDemo';
 
   state: CardDemoState = {
@@ -41,6 +42,7 @@ export class CardDemo extends React.Component {
     isOpen: false,
     selectableChecked1: false,
     selectableChecked2: false,
+    singleSelectableChecked: '',
     drawerIsExpanded: false,
     selectableClickableChecked: false,
     selectableClickableSelected: false,
@@ -94,6 +96,10 @@ export class CardDemo extends React.Component {
     }
   };
 
+  onSingleSelectableChange = (event: React.FormEvent<HTMLInputElement>) => {
+    this.setState({ singleSelectableChecked: (event.target as HTMLElement).id });
+  };
+
   onSelectableClickableChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     this.setState({ selectableClickableChecked: checked });
   };
@@ -109,6 +115,7 @@ export class CardDemo extends React.Component {
     const {
       selectableChecked1,
       selectableChecked2,
+      singleSelectableChecked,
       drawerIsExpanded,
       selectableClickableChecked,
       selectableClickableSelected,
@@ -220,26 +227,36 @@ export class CardDemo extends React.Component {
           <CardBody>This card is selectable.</CardBody>
         </Card>
         <br></br>
-        <Card id="single-selectable-card-example-1" isSelectable>
+        <Card
+          id="single-selectable-card-example-1"
+          isSelectable
+          isSelected={singleSelectableChecked === 'single-selectable-card-input-1'}
+        >
           <CardHeader
             selectableActions={{
               selectableActionId: 'single-selectable-card-input-1',
               selectableActionAriaLabelledby: 'single-selectable-card-example-1',
               name: 'single-selectable-card-example',
-              variant: 'single'
+              variant: 'single',
+              onChange: this.onSingleSelectableChange
             }}
           >
             <CardTitle>First single selectable card</CardTitle>
           </CardHeader>
           <CardBody>This card is single selectable.</CardBody>
         </Card>
-        <Card id="single-selectable-card-example-2" isSelectable>
+        <Card
+          id="single-selectable-card-example-2"
+          isSelectable
+          isSelected={singleSelectableChecked === 'single-selectable-card-input-2'}
+        >
           <CardHeader
             selectableActions={{
               selectableActionId: 'single-selectable-card-input-2',
               selectableActionAriaLabelledby: 'single-selectable-card-example-2',
               name: 'single-selectable-card-example',
-              variant: 'single'
+              variant: 'single',
+              onChange: this.onSingleSelectableChange
             }}
           >
             <CardTitle>Second single selectable card</CardTitle>
@@ -332,3 +349,5 @@ export class CardDemo extends React.Component {
     );
   }
 }
+
+CardDemo.displayName = 'CardDemo';
