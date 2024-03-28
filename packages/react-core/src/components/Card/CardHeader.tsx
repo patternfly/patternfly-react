@@ -44,7 +44,9 @@ export interface CardHeaderSelectableActionsObject {
   isExternalLink?: boolean;
   /** Name for the input element of a clickable or selectable card. */
   name?: string;
-  /** Flag indicating whether the selectable card input is checked */
+  /** @deprecated Flag indicating whether the selectable card input is checked. We recommend using
+   * the isSelected prop on the card component instead.
+   */
   isChecked?: boolean;
 }
 
@@ -79,7 +81,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   ...props
 }: CardHeaderProps) => (
   <CardContext.Consumer>
-    {({ cardId, isClickable, isSelectable, isClicked, isDisabled: isCardDisabled }) => {
+    {({ cardId, isClickable, isSelectable, isSelected, isClicked, isDisabled: isCardDisabled }) => {
       const cardHeaderToggle = (
         <div className={css(styles.cardHeaderToggle)}>
           <Button
@@ -126,6 +128,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           name: selectableActions.name,
           isDisabled: isCardDisabled
         };
+        const isSelectableInputChecked = selectableActions.isChecked ?? isSelected;
 
         if (isClickable && !isSelectable) {
           return {
@@ -135,7 +138,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           };
         }
         if (isSelectable) {
-          return { ...baseProps, onChange: selectableActions.onChange, isChecked: selectableActions.isChecked };
+          return { ...baseProps, onChange: selectableActions.onChange, isChecked: isSelectableInputChecked };
         }
 
         return baseProps;

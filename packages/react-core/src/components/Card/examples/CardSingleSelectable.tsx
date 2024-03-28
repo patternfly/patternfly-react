@@ -13,14 +13,13 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
 
   return (
     <Gallery hasGutter>
-      <Card id="single-selectable-card-example-1" isSelectable>
+      <Card id="single-selectable-card-example-1" isSelectable isSelected={isChecked === id1}>
         <CardHeader
           selectableActions={{
             selectableActionId: id1,
             selectableActionAriaLabelledby: 'single-selectable-card-example-1',
             name: 'single-selectable-card-example',
             variant: 'single',
-            isChecked: isChecked === id1,
             onChange
           }}
         >
@@ -28,14 +27,13 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
         </CardHeader>
         <CardBody>This card is single selectable.</CardBody>
       </Card>
-      <Card id="single-selectable-card-example-2" isSelectable>
+      <Card id="single-selectable-card-example-2" isSelectable isSelected={isChecked === id2}>
         <CardHeader
           selectableActions={{
             selectableActionId: id2,
             selectableActionAriaLabelledby: 'single-selectable-card-example-2',
             name: 'single-selectable-card-example',
             variant: 'single',
-            isChecked: isChecked === id2,
             onChange
           }}
         >
@@ -43,14 +41,13 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
         </CardHeader>
         <CardBody>This card is single selectable.</CardBody>
       </Card>
-      <Card id="single-selectable-card-example-3" isSelectable isDisabled>
+      <Card id="single-selectable-card-example-3" isSelectable isDisabled isSelected={isChecked === id3}>
         <CardHeader
           selectableActions={{
             selectableActionId: id3,
             selectableActionAriaLabelledby: 'single-selectable-card-example-3',
             name: 'single-selectable-card-example',
             variant: 'single',
-            isChecked: isChecked === id3,
             onChange
           }}
         >

@@ -18,8 +18,8 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isSelectable?: boolean;
   /** Flag indicating that the card is clickable and contains some action that triggers on click. */
   isClickable?: boolean;
-  /** Flag indicating whether a card that is both clickable and selectable is currently selected and has selected styling.
-   * This will not determine the card's actual selected state.
+  /** Flag indicating whether a card that is either selectable only or both clickable and selectable is
+   * currently selected and has selected styling.
    */
   isSelected?: boolean;
   /** Flag indicating whether a card that is either only clickable or that is both clickable and selectable
@@ -49,6 +49,7 @@ interface CardContextProps {
   isExpanded: boolean;
   isClickable: boolean;
   isSelectable: boolean;
+  isSelected: boolean;
   isClicked: boolean;
   isDisabled: boolean;
 }
@@ -58,6 +59,7 @@ export const CardContext = React.createContext<Partial<CardContextProps>>({
   isExpanded: false,
   isClickable: false,
   isSelectable: false,
+  isSelected: false,
   isClicked: false,
   isDisabled: false
 });
@@ -119,6 +121,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
         isExpanded,
         isClickable,
         isSelectable,
+        isSelected,
         isClicked,
         isDisabled
       }}

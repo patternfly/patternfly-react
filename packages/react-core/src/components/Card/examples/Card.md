@@ -133,7 +133,7 @@ When a group of single selectable cards are related, you must pass the same `nam
 
 ### Actionable
 
-An actionable card can perform an action or navigate to a link by clicking anywhere within the card. You can also pass in the `isExternalLink` property to `selectableActions` if you want an actionable card's link to open in a new tab or window.
+An actionable card can perform an action or navigate to a link by clicking anywhere within the card. To open a link in a new tab or window, pass the `isExternalLink` property to `selectableActions`.
 
 You can pass the `isClicked` property to `<Card>` to convey that a card is the currently clicked one, such as when clicking a card would open a [primary-detail view](/patterns/primary-detail). This must not be used simply for "selection" of a card, and you should instead use our [selectable card](#selectable) or [single selectable card](#single-selectable).
 
