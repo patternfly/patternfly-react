@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.19...@patternfly/react-core@5.3.0-prerelease.20) (2024-03-28)
+
+### Bug Fixes
+
+- **Card:** updated v5 logic to prevent unclickable cards ([#10202](https://github.com/patternfly/patternfly-react/issues/10202)) ([779e288](https://github.com/patternfly/patternfly-react/commit/779e288960dae6a2ea5198d948a668d3fb7b6cdc))
+
 # [5.3.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.18...@patternfly/react-core@5.3.0-prerelease.19) (2024-03-27)
 
 ### Bug Fixes
