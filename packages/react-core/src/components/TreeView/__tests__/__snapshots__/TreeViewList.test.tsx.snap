@@ -3,6 +3,7 @@
 exports[`Matches snapshot by default 1`] = `
 <DocumentFragment>
   <ul
+    aria-multiselectable="false"
     class="pf-v5-c-tree-view__list"
     role="tree"
   >
@@ -20,6 +21,7 @@ exports[`Matches snapshot when toolbar is passed 1`] = `
     class="pf-v5-c-divider"
   />
   <ul
+    aria-multiselectable="false"
     class="pf-v5-c-tree-view__list"
     role="tree"
   >

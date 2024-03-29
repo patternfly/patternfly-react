@@ -1,7 +1,7 @@
 import React from 'react';
 import { TreeView, Button, TreeViewDataItem } from '@patternfly/react-core';
 
-export const TreeViewDefault: React.FunctionComponent = () => {
+export const TreeViewSingleSelectable: React.FunctionComponent = () => {
   const [activeItems, setActiveItems] = React.useState<TreeViewDataItem[]>();
   const [allExpanded, setAllExpanded] = React.useState<boolean>();
 

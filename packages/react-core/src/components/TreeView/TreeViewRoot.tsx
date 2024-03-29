@@ -44,7 +44,7 @@ class TreeViewRoot extends React.Component<TreeViewRootProps> {
       }
       if (this.props.hasSelectableNodes) {
         const firstTextButton = this.treeRef.current.getElementsByClassName(styles.treeViewNodeText)[0] as HTMLElement;
-        if (firstTextButton) {
+        if (firstTextButton && !firstTextButton.closest('li').contains(firstToggle)) {
           firstTextButton.tabIndex = 0;
         }
       }
@@ -114,6 +114,7 @@ class TreeViewRoot extends React.Component<TreeViewRootProps> {
         if (isExpandable && !isExpanded) {
           (activeElement as HTMLElement).tabIndex = -1;
           (activeElement as HTMLElement).click();
+        } else {
           const childElement = activeElement?.closest('li')?.querySelector('ul > li')?.querySelector('button');
           if (childElement) {
             childElement.tabIndex = 0;
