@@ -14,28 +14,28 @@ export const TreeViewMultiselectable: React.FunctionComponent = () => {
   const options = [
     {
       name: 'Application launcher',
-      id: 'example1-AppLaunch',
+      id: 'multiselectExample-AppLaunch',
       children: [
         {
           name: 'Application 1',
-          id: 'example1-App1',
+          id: 'multiselectExample-App1',
           children: [
-            { name: 'Settings', id: 'example1-App1Settings' },
-            { name: 'Current', id: 'example1-App1Current' }
+            { name: 'Settings', id: 'multiselectExample-App1Settings' },
+            { name: 'Current', id: 'multiselectExample-App1Current' }
           ]
         },
         {
           name: 'Application 2',
-          id: 'example1-App2',
+          id: 'multiselectExample-App2',
           children: [
-            { name: 'Settings', id: 'example1-App2Settings' },
+            { name: 'Settings', id: 'multiselectExample-App2Settings' },
             {
               name: 'Loader',
-              id: 'example1-App2Loader',
+              id: 'multiselectExample-App2Loader',
               children: [
-                { name: 'Loading App 1', id: 'example1-LoadApp1' },
-                { name: 'Loading App 2', id: 'example1-LoadApp2' },
-                { name: 'Loading App 3', id: 'example1-LoadApp3' }
+                { name: 'Loading App 1', id: 'multiselectExample-LoadApp1' },
+                { name: 'Loading App 2', id: 'multiselectExample-LoadApp2' },
+                { name: 'Loading App 3', id: 'multiselectExample-LoadApp3' }
               ]
             }
           ]
@@ -45,29 +45,33 @@ export const TreeViewMultiselectable: React.FunctionComponent = () => {
     },
     {
       name: 'Cost management',
-      id: 'example1-Cost',
+      id: 'multiselectExample-Cost',
       children: [
         {
           name: 'Application 3',
-          id: 'example1-App3',
+          id: 'multiselectExample-App3',
           children: [
-            { name: 'Settings', id: 'example1-App3Settings' },
-            { name: 'Current', id: 'example1-App3Current' }
+            { name: 'Settings', id: 'multiselectExample-App3Settings' },
+            { name: 'Current', id: 'multiselectExample-App3Current' }
           ]
         }
       ]
     },
     {
       name: 'Sources',
-      id: 'example1-Sources',
+      id: 'multiselectExample-Sources',
       children: [
-        { name: 'Application 4', id: 'example1-App4', children: [{ name: 'Settings', id: 'example1-App4Settings' }] }
+        {
+          name: 'Application 4',
+          id: 'multiselectExample-App4',
+          children: [{ name: 'Settings', id: 'multiselectExample-App4Settings' }]
+        }
       ]
     },
     {
       name: 'Really really really long folder name that overflows the container it is in',
-      id: 'example1-Long',
-      children: [{ name: 'Application 5', id: 'example1-App5' }]
+      id: 'multiselectExample-Long',
+      children: [{ name: 'Application 5', id: 'multiselectExample-App5' }]
     }
   ];
   return (
