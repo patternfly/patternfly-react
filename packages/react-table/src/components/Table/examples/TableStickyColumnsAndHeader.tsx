@@ -98,7 +98,7 @@ export const TableStickyColumnsAndHeader: React.FunctionComponent = () => {
   });
 
   return (
-    <div style={{ height: '600px' }}>
+    <div style={{ height: '400px' }}>
       <OuterScrollContainer>
         <InnerScrollContainer>
           <Table aria-label="Sticky columns and header table" gridBreakPoint="" isStickyHeader>
