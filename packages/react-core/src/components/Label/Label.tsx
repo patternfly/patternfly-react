@@ -20,6 +20,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   variant?: 'outline' | 'filled';
   /** Flag indicating the label is compact. */
   isCompact?: boolean;
+  /** Flag indicating the label is disabled. Works only on clickable labels, so either href or onClick props must be passed in. */
+  isDisabled?: boolean;
   /** @beta Flag indicating the label is editable. */
   isEditable?: boolean;
   /** @beta Additional props passed to the editable label text div. Optionally passing onInput and onBlur callbacks will allow finer custom text input control. */
@@ -91,6 +93,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   color = 'grey',
   variant = 'filled',
   isCompact = false,
+  isDisabled = false,
   isEditable = false,
   editableProps,
   textMaxWidth,
@@ -198,21 +201,22 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     }
   };
 
-  const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
+  const isClickableDisabled = (href || onLabelClick) && isDisabled;
 
-  const defaultButton = (
+  const defaultCloseButton = (
     <Button
       type="button"
       variant="plain"
       onClick={onClose}
       aria-label={closeBtnAriaLabel || `Close ${children}`}
+      {...(isClickableDisabled && { isDisabled: true })}
       {...closeBtnProps}
     >
       <TimesIcon />
     </Button>
   );
 
-  const button = <span className={css(styles.labelActions)}>{closeBtn || defaultButton}</span>;
+  const closeButton = <span className={css(styles.labelActions)}>{closeBtn || defaultCloseButton}</span>;
   const textRef = React.createRef<any>();
   // ref to apply tooltip when rendered is used
   const componentRef = React.useRef();
@@ -268,6 +272,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     className: css(styles.labelContent),
     ...(isTooltipVisible && { tabIndex: 0 }),
     ...(href && { href }),
+    // Need to prevent onClick since aria-disabled won't prevent AT from triggering the link
+    ...(href && isDisabled && { onClick: (event: MouseEvent) => event.preventDefault() }),
     ...(isButton && clickableLabelProps),
     ...(isEditable && {
       ref: editableButtonRef,
@@ -276,7 +282,9 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         e.stopPropagation();
       },
       ...editableProps
-    })
+    }),
+    ...(isClickableDisabled && isButton && { disabled: true }),
+    ...(isClickableDisabled && href && { tabindex: -1, 'aria-disabled': true })
   };
 
   let labelComponentChild = (
@@ -302,11 +310,14 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     );
   }
 
+  const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
+
   return (
     <LabelComponent
       {...props}
       className={css(
         styles.label,
+        isClickableDisabled && styles.modifiers.disabled,
         colorStyles[color],
         variant === 'outline' && styles.modifiers.outline,
         isOverflowLabel && styles.modifiers.overflow,
@@ -318,7 +329,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       onClick={isOverflowLabel ? onLabelClick : undefined}
     >
       {!isEditableActive && labelComponentChild}
-      {!isEditableActive && onClose && button}
+      {!isEditableActive && onClose && closeButton}
       {isEditableActive && (
         <input
           className={css(styles.labelContent)}
