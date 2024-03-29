@@ -5,7 +5,7 @@ export const CardClickable: React.FunctionComponent = () => {
   const [isChecked1, setIsChecked1] = React.useState(false);
   const [isChecked2, setIsChecked2] = React.useState(false);
   const [isChecked3, setIsChecked3] = React.useState(false);
-  const [isSelected1, setIsSelected1] = React.useState(false);
+  const [isClicked, setIsClicked] = React.useState(false);
   const [isSecondary, setIsSecondary] = React.useState<boolean>(false);
 
   const id1 = 'clickable-selectable-card-input-1';
@@ -13,7 +13,7 @@ export const CardClickable: React.FunctionComponent = () => {
   const id3 = 'clickable-selectable-card-input-3';
 
   const onClick = () => {
-    setIsSelected1((prevState) => !prevState);
+    setIsClicked((prevState) => !prevState);
   };
 
   const onChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
@@ -52,7 +52,8 @@ export const CardClickable: React.FunctionComponent = () => {
             id="clickable-selectable-card-example-1"
             isClickable
             isSelectable
-            isSelected={isSelected1}
+            isSelected={isChecked1}
+            isClicked={isClicked}
             variant={isSecondary ? 'secondary' : 'default'}
           >
             <CardHeader
@@ -60,7 +61,6 @@ export const CardClickable: React.FunctionComponent = () => {
                 selectableActionId: id1,
                 selectableActionAriaLabelledby: 'clickable-selectable-card-example-1',
                 name: id1,
-                isChecked: isChecked1,
                 onChange
               }}
             >
@@ -76,6 +76,7 @@ export const CardClickable: React.FunctionComponent = () => {
             id="clickable-selectable-card-example-2"
             isClickable
             isSelectable
+            isSelected={isChecked2}
             variant={isSecondary ? 'secondary' : 'default'}
           >
             <CardHeader
@@ -83,7 +84,6 @@ export const CardClickable: React.FunctionComponent = () => {
                 selectableActionId: id2,
                 selectableActionAriaLabelledby: 'clickable-selectable-card-example-2',
                 name: id2,
-                isChecked: isChecked2,
                 onChange
               }}
             >
@@ -102,6 +102,7 @@ export const CardClickable: React.FunctionComponent = () => {
             isClickable
             isSelectable
             isDisabled
+            isSelected={isChecked3}
             variant={isSecondary ? 'secondary' : 'default'}
           >
             <CardHeader
@@ -109,7 +110,6 @@ export const CardClickable: React.FunctionComponent = () => {
                 selectableActionId: id3,
                 selectableActionAriaLabelledby: 'clickable-selectable-card-example-3',
                 name: id3,
-                isChecked: isChecked3,
                 onChange
               }}
             >

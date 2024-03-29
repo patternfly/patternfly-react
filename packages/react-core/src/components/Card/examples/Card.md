@@ -115,9 +115,9 @@ A common use case of this is to set all but one body section to `isFilled={false
 
 ### Selectable
 
-A card can be selected by clicking anywhere within the card.
+A selectable card can be selected by clicking anywhere within the card.
 
-You must avoid rendering any other interactive content within the `<Card>` when it is meant to be selectable only. Refer to our [clickable and selectable example](#clickable-and-selectable-cards) if you need a card that is both selectable and has other interactive content.
+You must avoid rendering any other interactive content within the `<Card>` when it is meant to be selectable only. Refer to our [actionable and selectable example](#clickable-and-selectable-cards) if you need a card that is both selectable and has other interactive, actionable content.
 
 ```ts file='./CardSelectable.tsx'
 
@@ -125,27 +125,29 @@ You must avoid rendering any other interactive content within the `<Card>` when 
 
 ### Single selectable
 
-When a group of single selectable cards are related, you should pass the same `name` property to each card's `selectableActions` property.
+When a group of single selectable cards are related, you must pass the same `name` property to each card's `selectableActions` property.
 
 ```ts file='./CardSingleSelectable.tsx'
 
 ```
 
-### Clickable
+### Actionable
 
-A card can perform an action or navigate to a link by clicking anywhere within the card. You can also pass in the `isExternalLink` property to `selectableActions` if you want a clickable card's link to open in a new tab or window.
+An actionable card can perform an action or navigate to a link by clicking anywhere within the card. To open a link in a new tab or window, pass the `isExternalLink` property to `selectableActions`.
 
-When a card is meant to be clickable only, you must avoid rendering any other interactive content within the `<Card>`, similar to selectable cards.
+You can pass the `isClicked` property to `<Card>` to convey that a card is the currently clicked one, such as when clicking a card would open a [primary-detail view](/patterns/primary-detail). This must not be used simply for "selection" of a card, and you should instead use our [selectable card](#selectable) or [single selectable card](#single-selectable).
+
+When a card is meant to be actionable only, you must avoid rendering any other interactive content within the `<Card>`, similar to selectable cards.
 
 ```ts file='./CardClickable.tsx'
 
 ```
 
-### Clickable and selectable
+### Actionable and selectable
 
-A card can be selectable and have additional interactive content by passing both the `isClickable` and `isSelectable` properties to `<Card>`. The following example shows how the "clickable" functionality can be rendered anywhere within a selectable card.
+A card can be selectable and have additional interactive content by passing both the `isClickable` and `isSelectable` properties to `<Card>`. The following example shows how the actionable functionality can be rendered anywhere within a selectable card.
 
-When passing interactive content to a clickable and selectable card that is disabled, you should also ensure the interactive content is disabled as well, if applicable.
+When passing interactive content to an actionable and selectable card that is disabled, you should also ensure the interactive content is disabled as well, if applicable.
 
 ```ts file='./CardClickableSelectable.tsx'
 
@@ -170,6 +172,7 @@ An image can be placed in the card header to show users an icon beside the expan
 ```
 
 ### Card with dividers
+
 Dividers can be placed between sections of the card.
 
 ```ts file='./CardWithDividers.tsx'
