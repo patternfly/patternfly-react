@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.3.0-prerelease.22 (2024-03-29)
+
+### Features
+
+- **Label:** allow clickable labels to be disabled ([#10199](https://github.com/patternfly/patternfly-react/issues/10199)) ([fda9ced](https://github.com/patternfly/patternfly-react/commit/fda9ced579ea0a19ed3f52fa9e06b33aad4210f2))
+
 # [5.3.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.20...@patternfly/react-core@5.3.0-prerelease.21) (2024-03-28)
 
 **Note:** Version bump only for package @patternfly/react-core
