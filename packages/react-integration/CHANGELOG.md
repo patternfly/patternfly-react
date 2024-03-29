@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.24...@patternfly/react-integration@6.0.0-alpha.25) (2024-03-29)
+
+### Bug Fixes
+
+- **Card:** updated logic to prevent unclickable cards ([#10168](https://github.com/patternfly/patternfly-react/issues/10168)) ([87a6a66](https://github.com/patternfly/patternfly-react/commit/87a6a667b5827534a3c8115b3aff35aa83ce289c))
+
 # 6.0.0-alpha.24 (2024-03-27)
 
 ### Features

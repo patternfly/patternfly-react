@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.48](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.47...demo-app-ts@5.1.1-alpha.48) (2024-03-29)
+
+### Bug Fixes
+
+- **Card:** updated logic to prevent unclickable cards ([#10168](https://github.com/patternfly/patternfly-react/issues/10168)) ([87a6a66](https://github.com/patternfly/patternfly-react/commit/87a6a667b5827534a3c8115b3aff35aa83ce289c))
+
 ## [5.1.1-alpha.47](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.46...demo-app-ts@5.1.1-alpha.47) (2024-03-27)
 
 **Note:** Version bump only for package demo-app-ts
