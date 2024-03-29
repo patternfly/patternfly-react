@@ -164,7 +164,8 @@ export const TableExpandCollapseAll: React.FunctionComponent = () => {
                       collapseAllAriaLabel,
                       onToggle: onCollapseAll
                     }}
-                  ></Th>
+                    aria-label="Row expansion"
+                  />
                   {expandableColumns.map((column) => (
                     <Th key={column}>{column}</Th>
                   ))}
