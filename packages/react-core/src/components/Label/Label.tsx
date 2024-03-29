@@ -272,6 +272,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     className: css(styles.labelContent),
     ...(isTooltipVisible && { tabIndex: 0 }),
     ...(href && { href }),
+    // Need to prevent onClick since aria-disabled won't prevent AT from triggering the link
+    ...(href && isDisabled && { onClick: (event: MouseEvent) => event.preventDefault() }),
     ...(isButton && clickableLabelProps),
     ...(isEditable && {
       ref: editableButtonRef,
