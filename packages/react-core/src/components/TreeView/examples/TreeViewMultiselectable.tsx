@@ -70,5 +70,13 @@ export const TreeViewMultiselectable: React.FunctionComponent = () => {
       children: [{ name: 'Application 5', id: 'example1-App5' }]
     }
   ];
-  return <TreeView isMultiSelectable data={options} activeItems={activeItems} onSelect={onSelect} />;
+  return (
+    <TreeView
+      aria-label="Tree View multiselectable example"
+      isMultiSelectable
+      data={options}
+      activeItems={activeItems}
+      onSelect={onSelect}
+    />
+  );
 };

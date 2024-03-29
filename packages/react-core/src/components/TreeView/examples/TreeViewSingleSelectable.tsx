@@ -81,7 +81,13 @@ export const TreeViewSingleSelectable: React.FunctionComponent = () => {
         {allExpanded && 'Collapse all'}
         {!allExpanded && 'Expand all'}
       </Button>
-      <TreeView data={options} activeItems={activeItems} onSelect={onSelect} allExpanded={allExpanded} />
+      <TreeView
+        aria-label="Tree View single selectable example"
+        data={options}
+        activeItems={activeItems}
+        onSelect={onSelect}
+        allExpanded={allExpanded}
+      />
     </React.Fragment>
   );
 };
