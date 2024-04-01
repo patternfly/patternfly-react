@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.22...@patternfly/react-core@5.3.0-prerelease.23) (2024-04-01)
+
+### Bug Fixes
+
+- **GenerateId:** revert default behavior change ([#10232](https://github.com/patternfly/patternfly-react/issues/10232)) ([eed19ab](https://github.com/patternfly/patternfly-react/commit/eed19ab298e7c4686fc89436dc0fe04e078ddf8d))
+
 # 5.3.0-prerelease.22 (2024-03-29)
 
 ### Features
