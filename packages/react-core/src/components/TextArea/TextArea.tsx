@@ -36,10 +36,6 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   value?: string | number;
   /** A callback for when the text area value changes. */
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => void;
-  /** Callback function when text area is focused */
-  onFocus?: (event?: React.FocusEvent<HTMLTextAreaElement>) => void;
-  /** Callback function when text area is blurred (focus leaves) */
-  onBlur?: (event?: React.FocusEvent<HTMLTextAreaElement>) => void;
   /** Sets the orientation to limit the resize to */
   resizeOrientation?: 'horizontal' | 'vertical' | 'both';
   /** Custom flag to show that the text area requires an associated id or aria-label. */

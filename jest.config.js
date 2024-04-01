@@ -14,7 +14,6 @@ module.exports = {
     '^.+\\.svg$': 'jest-transform-stub'
   },
   setupFilesAfterEnv: ['<rootDir>/packages/testSetup.ts'],
-  transformIgnorePatterns: ['node_modules/(?!@patternfly|@novnc|@popperjs|lodash|monaco-editor|react-monaco-editor)'],
   testPathIgnorePatterns: ['<rootDir>/packages/react-integration/'],
   coveragePathIgnorePatterns: ['/dist/'],
   moduleNameMapper: {

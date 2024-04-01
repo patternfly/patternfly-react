@@ -44,7 +44,9 @@ export interface CardHeaderSelectableActionsObject {
   isExternalLink?: boolean;
   /** Name for the input element of a clickable or selectable card. */
   name?: string;
-  /** Flag indicating whether the selectable card input is checked */
+  /** @deprecated Flag indicating whether the selectable card input is checked. We recommend using
+   * the isSelected prop on the card component instead.
+   */
   isChecked?: boolean;
 }
 
@@ -80,7 +82,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
 }: CardHeaderProps) => (
   <CardContext.Consumer>
     {/* TODO: Remove hasSelectableInput when deprecated props are removed */}
-    {({ cardId, isClickable, isSelectable, isDisabled: isCardDisabled, hasSelectableInput }) => {
+    {({ cardId, isClickable, isSelectable, isSelected, isClicked, isDisabled: isCardDisabled, hasSelectableInput }) => {
       const cardHeaderToggle = (
         <div className={css(styles.cardHeaderToggle)}>
           <Button
@@ -112,12 +114,10 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
       }
 
       const handleActionClick = (event: React.FormEvent<HTMLInputElement> | React.MouseEvent) => {
-        if (isClickable) {
-          if (selectableActions?.onClickAction) {
-            selectableActions.onClickAction(event);
-          } else if (selectableActions?.to) {
-            window.open(selectableActions.to, selectableActions.isExternalLink ? '_blank' : '_self');
-          }
+        if (selectableActions?.onClickAction) {
+          selectableActions.onClickAction(event);
+        } else if (selectableActions?.to) {
+          window.open(selectableActions.to, selectableActions.isExternalLink ? '_blank' : '_self');
         }
       };
 
@@ -132,12 +132,13 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           name: selectableActions.name,
           isDisabled: isCardDisabled
         };
+        const isSelectableInputChecked = selectableActions.isChecked ?? isSelected;
 
         if (isClickable && !isSelectable) {
-          return { ...baseProps, onClick: handleActionClick };
+          return { ...baseProps, onClick: handleActionClick, isChecked: isClicked };
         }
         if (isSelectable) {
-          return { ...baseProps, onChange: selectableActions.onChange, isChecked: selectableActions.isChecked };
+          return { ...baseProps, onChange: selectableActions.onChange, isChecked: isSelectableInputChecked };
         }
 
         return baseProps;

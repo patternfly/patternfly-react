@@ -3,6 +3,15 @@ import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-togg
 import { css } from '@patternfly/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { BadgeProps } from '../Badge';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+
+export enum MenuToggleStatus {
+  success = 'success',
+  danger = 'danger',
+  warning = 'warning'
+}
 
 export type MenuToggleElement = HTMLDivElement | HTMLButtonElement;
 
@@ -37,6 +46,10 @@ export interface MenuToggleProps
   splitButtonOptions?: SplitButtonOptions;
   /** Variant styles of the menu toggle */
   variant?: 'default' | 'plain' | 'primary' | 'plainText' | 'secondary' | 'typeahead';
+  /** @beta Status styles of the menu toggle */
+  status?: 'success' | 'warning' | 'danger';
+  /** Overrides the status icon */
+  statusIcon?: React.ReactNode;
   /** Optional icon or image rendered inside the toggle, before the children content. It is
    * recommended to wrap most basic icons in our icon component.
    */
@@ -69,6 +82,8 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
       isFullWidth,
       splitButtonOptions,
       variant,
+      status,
+      statusIcon,
       innerRef,
       onClick,
       'aria-label': ariaLabel,
@@ -77,8 +92,25 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
     const isPlain = variant === 'plain';
     const isPlainText = variant === 'plainText';
     const isTypeahead = variant === 'typeahead';
+
+    let _statusIcon = statusIcon;
+    if (!statusIcon) {
+      switch (status) {
+        case MenuToggleStatus.success:
+          _statusIcon = <CheckCircleIcon aria-hidden="true" />;
+          break;
+        case MenuToggleStatus.warning:
+          _statusIcon = <ExclamationTriangleIcon aria-hidden="true" />;
+          break;
+        case MenuToggleStatus.danger:
+          _statusIcon = <ExclamationCircleIcon aria-hidden="true" />;
+          break;
+      }
+    }
+
     const toggleControls = (
       <span className={css(styles.menuToggleControls)}>
+        {status !== undefined && <span className={css(styles.menuToggleStatusIcon)}>{_statusIcon}</span>}
         <span className={css(styles.menuToggleToggleIcon)}>
           <CaretDownIcon aria-hidden />
         </span>
@@ -111,6 +143,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
       isExpanded && styles.modifiers.expanded,
       variant === 'primary' && styles.modifiers.primary,
       variant === 'secondary' && styles.modifiers.secondary,
+      status && styles.modifiers[status],
       (isPlain || isPlainText) && styles.modifiers.plain,
       isPlainText && styles.modifiers.text,
       isFullHeight && styles.modifiers.fullHeight,

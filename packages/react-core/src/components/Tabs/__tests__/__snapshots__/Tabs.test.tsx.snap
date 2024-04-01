@@ -408,12 +408,12 @@ exports[`should render expandable vertical tabs 1`] = `
       >
         <button
           aria-disabled="false"
-          aria-labelledby="pf-random-id-0-text pf-random-id-0-button"
+          aria-labelledby="generated-id-text generated-id-button"
           class="pf-v5-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-3"
           data-ouia-component-type="PF5/Button"
           data-ouia-safe="true"
-          id="pf-random-id-0-button"
+          id="generated-id-button"
           type="button"
         >
           <span
@@ -436,7 +436,7 @@ exports[`should render expandable vertical tabs 1`] = `
           </span>
           <span
             class="pf-v5-c-tabs__toggle-text"
-            id="pf-random-id-0-text"
+            id="generated-id-text"
           >
             toggle
           </span>

@@ -67,7 +67,7 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
           <Th>{columnNames.prs}</Th>
           <Th>{columnNames.workspaces}</Th>
           <Th>{columnNames.lastCommit}</Th>
-          <Th />
+          <Th screenReaderText="URL" />
         </Tr>
       </Thead>
       {repositories.map((repo: Repository, rowIndex: number) => {

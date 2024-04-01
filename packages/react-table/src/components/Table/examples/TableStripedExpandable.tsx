@@ -115,7 +115,7 @@ export const TableStripedExpandable: React.FunctionComponent = () => {
       <Table aria-label="Expandable table" variant={isExampleCompact ? 'compact' : undefined} isStriped isExpandable>
         <Thead>
           <Tr>
-            <Th />
+            <Th screenReaderText="Row expansion" />
             <Th width={25}>{columnNames.name}</Th>
             <Th width={10}>{columnNames.branches}</Th>
             <Th width={15}>{columnNames.prs}</Th>

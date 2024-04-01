@@ -3,6 +3,8 @@ import { render, screen } from '@testing-library/react';
 import { DrawerPanelContent } from '../DrawerPanelContent';
 import { Drawer } from '../Drawer';
 
+jest.mock('../../../helpers/GenerateId/GenerateId');
+
 test('Does not render with aria-labelledby by default', () => {
   render(
     <Drawer isExpanded>

@@ -21,7 +21,7 @@ exports[`Matches snapshot 1`] = `
           data-ouia-component-id="OUIA-Generated-TextInputBase-26"
           data-ouia-component-type="PF5/TextInput"
           data-ouia-safe="true"
-          id="text-input-34"
+          id="text-input-generated-id"
           type="text"
           value="Copyable text"
         />

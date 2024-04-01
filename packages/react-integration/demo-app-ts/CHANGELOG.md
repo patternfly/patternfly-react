@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.1.1-prerelease.96 (2024-03-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.95](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.94...demo-app-ts@5.1.1-prerelease.95) (2024-03-28)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.94](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.93...demo-app-ts@5.1.1-prerelease.94) (2024-03-28)
+
+### Bug Fixes
+
+- **Card:** updated v5 logic to prevent unclickable cards ([#10202](https://github.com/patternfly/patternfly-react/issues/10202)) ([779e288](https://github.com/patternfly/patternfly-react/commit/779e288960dae6a2ea5198d948a668d3fb7b6cdc))
+
+## [5.1.1-prerelease.93](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.92...demo-app-ts@5.1.1-prerelease.93) (2024-03-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.92](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.91...demo-app-ts@5.1.1-prerelease.92) (2024-03-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.91](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.90...demo-app-ts@5.1.1-prerelease.91) (2024-03-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.90](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.89...demo-app-ts@5.1.1-prerelease.90) (2024-03-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+## 5.1.1-prerelease.89 (2024-03-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+## 5.1.1-prerelease.88 (2024-03-26)
+
+### Bug Fixes
+
+- **Table:** updated a11y for empty/nontext Th components ([#10152](https://github.com/patternfly/patternfly-react/issues/10152)) ([48d8140](https://github.com/patternfly/patternfly-react/commit/48d8140d5ecd1d467b88c573cffbd86183dce898))
+
+## [5.1.1-prerelease.87](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.86...demo-app-ts@5.1.1-prerelease.87) (2024-03-25)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.86](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.85...demo-app-ts@5.1.1-prerelease.86) (2024-03-22)
+
+**Note:** Version bump only for package demo-app-ts
+
 ## 5.1.1-prerelease.85 (2024-03-20)
 
 **Note:** Version bump only for package demo-app-ts

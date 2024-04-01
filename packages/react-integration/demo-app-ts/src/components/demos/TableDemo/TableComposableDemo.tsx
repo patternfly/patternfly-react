@@ -347,7 +347,7 @@ export const TableComposableDemo = () => {
       <Table aria-label="Radio selectable table">
         <Thead>
           <Tr>
-            <Th />
+            <Th screenReaderText="Row select" />
             <Th>{columns[0]}</Th>
             <Th>{columns[1]}</Th>
             <Th>{columns[2]}</Th>
@@ -439,7 +439,7 @@ export const TableComposableDemo = () => {
             <Th>{columns[2]}</Th>
             <Th>{columns[3]}</Th>
             <Th>{columns[4]}</Th>
-            <Th />
+            <Th screenReaderText="Actions" />
           </Tr>
         </Thead>
         <Tbody>
@@ -616,7 +616,7 @@ export const TableComposableDemo = () => {
         <Table aria-label="Expandable Table" variant={compact ? 'compact' : null}>
           <Thead>
             <Tr>
-              <Th />
+              <Th screenReaderText="Row expansion" />
               <Th>{columns[0]}</Th>
               <Th>{columns[1]}</Th>
               <Th>{columns[2]}</Th>
