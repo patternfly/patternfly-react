@@ -39,6 +39,10 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
     setIsExpanded(false);
   };
 
+  const onClickCard = () => {
+    setIsExpanded(true);
+  };
+
   const panelContent = (
     <DrawerPanelContent>
       <DrawerHead>
@@ -131,8 +135,8 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
     <Gallery hasGutter>
       {Array.from({ length: 30 }).map((_value, index) => (
         <GalleryItem key={index}>
-          <Card key={index}>
-            <CardBody>This is a card</CardBody>
+          <Card key={index} onClick={onClickCard}>
+            <CardBody>Click here to open drawer</CardBody>
           </Card>
         </GalleryItem>
       ))}
