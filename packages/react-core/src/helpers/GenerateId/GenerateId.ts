@@ -30,7 +30,7 @@ export interface GenerateIdProps {
   prefix?: string;
   /** Component to be rendered with the generated id */
   children(id: string): React.ReactNode;
-  /** Flag to add randomness to the generated id, defaults to true */
+  /** Flag to add randomness to the generated id, should be used whenever possible */
   isRandom?: boolean;
 }
 
@@ -38,7 +38,7 @@ class GenerateId extends React.Component<GenerateIdProps, {}> {
   static displayName = 'GenerateId';
   static defaultProps = {
     prefix: 'pf-random-id-',
-    isRandom: true
+    isRandom: false
   };
   uniqueElement = this.props.isRandom ? getRandomId() : currentId++;
   id = `${this.props.prefix}${this.uniqueElement}`;
