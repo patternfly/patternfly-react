@@ -16,7 +16,6 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
-import text from '@patternfly/react-styles/css/utilities/Text/text';
 
 export const CardTrendDemo1: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -69,7 +68,7 @@ export const CardTrendDemo1: React.FunctionComponent = () => {
                   </CardTitle>
                 </FlexItem>
                 <FlexItem>
-                  <span className={text.color_200}>Workload</span>
+                  <span>Workload</span>
                 </FlexItem>
               </Flex>
             </CardHeader>
