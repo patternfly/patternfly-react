@@ -19,7 +19,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 ## Demos
 
-### Basic
+### In drawer
 
-```js file='./examples/DescriptionListBasic.tsx' isFullscreen
+```js file='./examples/DescriptionListDrawer.tsx' isFullscreen
 ```
