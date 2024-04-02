@@ -32,6 +32,8 @@ export const SelectTypeahead: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
   const textInputRef = React.useRef<HTMLInputElement>();
 
+  const NO_RESULTS = 'no results';
+
   React.useEffect(() => {
     let newSelectOptions: SelectOptionProps[] = initialSelectOptions;
 
@@ -44,8 +46,9 @@ export const SelectTypeahead: React.FunctionComponent = () => {
       // When no options are found after filtering, display 'No results found'
       if (!newSelectOptions.length) {
         newSelectOptions = [
-          { isAriaDisabled: true, children: `No results found for "${filterValue}"`, value: 'no results' }
+          { isAriaDisabled: true, children: `No results found for "${filterValue}"`, value: NO_RESULTS }
         ];
+        resetActiveAndFocusedItem();
       }
 
       // Open the menu when the input value changes and the new value is not empty
@@ -55,34 +58,48 @@ export const SelectTypeahead: React.FunctionComponent = () => {
     }
 
     setSelectOptions(newSelectOptions);
-    setActiveItem(null);
-    setFocusedItemIndex(null);
   }, [filterValue]);
 
-  const onInputClick = () => {
-    if (inputValue) {
-      setIsOpen(true);
-    } else {
-      setIsOpen(!isOpen);
+  React.useEffect(() => {
+    if (isOpen && selectOptions.length && selectOptions[0].value !== NO_RESULTS) {
+      setActiveAndFocusedItem(0);
     }
+  }, [isOpen, filterValue]);
+
+  const setActiveAndFocusedItem = (itemIndex: number) => {
+    setFocusedItemIndex(itemIndex);
+    const focusedItem = selectOptions.filter((option) => !option.isDisabled)[itemIndex];
+    setActiveItem(`select-typeahead-${focusedItem.value.replace(' ', '-')}`);
   };
 
-  const onToggleClick = () => {
-    setIsOpen(!isOpen);
+  const resetActiveAndFocusedItem = () => {
+    setFocusedItemIndex(null);
+    setActiveItem(null);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    resetActiveAndFocusedItem();
+  };
+
+  const onInputClick = () => {
+    if (!isOpen) {
+      setIsOpen(true);
+    } else if (!inputValue) {
+      closeMenu();
+    }
   };
 
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     // eslint-disable-next-line no-console
     console.log('selected', value);
 
-    if (value && value !== 'no results') {
+    if (value && value !== NO_RESULTS) {
       setInputValue(value as string);
       setFilterValue('');
       setSelected(value as string);
     }
-    setIsOpen(false);
-    setFocusedItemIndex(null);
-    setActiveItem(null);
+    closeMenu();
   };
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
@@ -116,9 +133,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
         }
       }
 
-      setFocusedItemIndex(indexToFocus);
-      const focusedItem = selectOptions.filter((option) => !option.isDisabled)[indexToFocus];
-      setActiveItem(`select-typeahead-${focusedItem.value.replace(' ', '-')}`);
+      setActiveAndFocusedItem(indexToFocus);
     }
   };
 
@@ -130,22 +145,19 @@ export const SelectTypeahead: React.FunctionComponent = () => {
     switch (event.key) {
       // Select the first available option
       case 'Enter':
-        if (isOpen && focusedItem.value !== 'no results') {
+        if (isOpen && focusedItem.value !== NO_RESULTS) {
           setInputValue(String(focusedItem.children));
           setFilterValue('');
           setSelected(String(focusedItem.children));
         }
 
         setIsOpen((prevIsOpen) => !prevIsOpen);
-        setFocusedItemIndex(null);
-        setActiveItem(null);
+        resetActiveAndFocusedItem();
 
         break;
       case 'Tab':
       case 'Escape':
-        setIsOpen(false);
-        setFocusedItemIndex(null);
-        setActiveItem(null);
+        closeMenu();
         break;
       case 'ArrowUp':
       case 'ArrowDown':
@@ -160,7 +172,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
       ref={toggleRef}
       variant="typeahead"
       aria-label="Typeahead menu toggle"
-      onClick={onToggleClick}
+      onClick={() => setIsOpen(!isOpen)}
       isExpanded={isOpen}
       isFullWidth
     >
@@ -206,12 +218,11 @@ export const SelectTypeahead: React.FunctionComponent = () => {
       isOpen={isOpen}
       selected={selected}
       onSelect={onSelect}
-      onOpenChange={() => {
-        setIsOpen(false);
-        setFocusedItemIndex(null);
-        setActiveItem(null);
+      onOpenChange={(isOpen) => {
+        !isOpen && closeMenu();
       }}
       toggle={toggle}
+      shouldFocusFirstMenuItemOnOpen={false}
     >
       <SelectList id="select-typeahead-listbox">
         {selectOptions.map((option, index) => (
