@@ -14,7 +14,6 @@ exports[`Matches snapshot with children 1`] = `
     >
       <button
         class="pf-v5-c-tree-view__node"
-        tabindex="-1"
         type="button"
       >
         <span
@@ -22,6 +21,7 @@ exports[`Matches snapshot with children 1`] = `
         >
           <span
             class="pf-v5-c-tree-view__node-toggle"
+            tabindex="-1"
           >
             <span
               class="pf-v5-c-tree-view__node-toggle-icon"
@@ -67,7 +67,6 @@ exports[`Matches snapshot without children 1`] = `
     >
       <button
         class="pf-v5-c-tree-view__node"
-        tabindex="-1"
         type="button"
       >
         <span

@@ -135,8 +135,8 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
         }
       }}
       {...((hasCheckbox || isSelectable) && { 'aria-labelledby': `label-${randomId}` })}
-      {...(ToggleComponent === 'button' && { type: 'button', tabIndex: -1 })}
-      // tabIndex={-1}
+      {...(ToggleComponent === 'button' && { type: 'button' })}
+      tabIndex={-1}
     >
       <span className={css(styles.treeViewNodeToggleIcon)}>
         <AngleRightIcon aria-hidden="true" />
@@ -217,7 +217,6 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
         <GenerateId prefix={isSelectable ? 'selectable-id' : 'checkbox-id'}>
           {(randomId) => (
             <Component
-              tabIndex={-1}
               className={css(
                 styles.treeViewNode,
                 children && (isSelectable || hasCheckbox) && styles.modifiers.selectable,
