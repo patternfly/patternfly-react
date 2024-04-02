@@ -155,10 +155,6 @@ export const SelectTypeahead: React.FunctionComponent = () => {
         resetActiveAndFocusedItem();
 
         break;
-      case 'Tab':
-      case 'Escape':
-        closeMenu();
-        break;
       case 'ArrowUp':
       case 'ArrowDown':
         event.preventDefault();
