@@ -172,7 +172,10 @@ export const SelectTypeahead: React.FunctionComponent = () => {
       ref={toggleRef}
       variant="typeahead"
       aria-label="Typeahead menu toggle"
-      onClick={() => setIsOpen(!isOpen)}
+      onClick={() => {
+        setIsOpen(!isOpen);
+        textInputRef?.current?.focus();
+      }}
       isExpanded={isOpen}
       isFullWidth
     >
