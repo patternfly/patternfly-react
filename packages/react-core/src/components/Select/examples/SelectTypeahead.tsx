@@ -233,6 +233,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
             key={option.value || option.children}
             isFocused={focusedItemIndex === index}
             className={option.className}
+            onMouseEnter={() => setActiveAndFocusedItem(index)}
             onClick={() => setSelected(option.value)}
             id={`select-typeahead-${option.value.replace(' ', '-')}`}
             {...option}
