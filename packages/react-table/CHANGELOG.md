@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.50](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.49...@patternfly/react-table@6.0.0-alpha.50) (2024-04-02)
+
+### Bug Fixes
+
+- **Table:** fix sticky header and column example ([#10225](https://github.com/patternfly/patternfly-react/issues/10225)) ([bf9073e](https://github.com/patternfly/patternfly-react/commit/bf9073e129a9e6e1adc2e0ceb2e4dba6b0da2efc))
+
 # [6.0.0-alpha.49](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.48...@patternfly/react-table@6.0.0-alpha.49) (2024-03-29)
 
 **Note:** Version bump only for package @patternfly/react-table
