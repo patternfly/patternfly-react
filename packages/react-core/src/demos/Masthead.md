@@ -24,3 +24,7 @@ Many mastheads contain utilities which collapse into a dropdown at smaller viewp
 ```ts file='./examples/Masthead/MastheadWithUtilitiesAndUserDropdownMenu.tsx' isFullscreen
 
 ```
+### Masthead with horizontal nav
+```ts file='./examples/Masthead/MastheadWithHorizontalNav.tsx' isFullscreen
+
+```
