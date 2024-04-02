@@ -1,6 +1,5 @@
 import React from 'react';
-import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
-import text from '@patternfly/react-styles/css/utilities/Text/text';
+import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper, Timestamp } from '@patternfly/react-core';
 
 export const ComposableSimpleDropdown: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -73,21 +72,21 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
   };
 
   const dateText = {
-    0: <small className={text.color_200}>({dateString(date)})</small>,
+    0: <Timestamp>({dateString(date)})</Timestamp>,
     1: (
-      <small className={text.color_200}>
+      <Timestamp>
         ({dateString(new Date(new Date().setDate(date.getDate() - 1)))} - {dateString(date)})
-      </small>
+      </Timestamp>
     ),
     2: (
-      <small className={text.color_200}>
+      <Timestamp>
         ({dateString(new Date(new Date().setDate(date.getDate() - 7)))} - {dateString(date)})
-      </small>
+      </Timestamp>
     ),
     3: (
-      <small className={text.color_200}>
+      <Timestamp>
         ({dateString(new Date(new Date().setDate(date.getDate() - 14)))} - {dateString(date)})
-      </small>
+      </Timestamp>
     )
   };
 

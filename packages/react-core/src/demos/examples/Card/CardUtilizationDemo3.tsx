@@ -24,7 +24,6 @@ import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
 import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
-import text from '@patternfly/react-styles/css/utilities/Text/text';
 
 export const CardUtilizationDemo3: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -80,7 +79,7 @@ export const CardUtilizationDemo3: React.FunctionComponent = () => {
                   <span>System</span>
                 </FlexItem>
                 <Flex>
-                  <ExclamationCircleIcon className={text.dangerColor_100} aria-hidden />
+                  <ExclamationCircleIcon aria-hidden />
                   <a href="#">25 incidents detected</a>
                 </Flex>
                 <FlexItem>

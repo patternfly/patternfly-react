@@ -6,25 +6,25 @@ import {
   CardTitle,
   CardBody,
   CardFooter,
-  Gallery,
-  Flex,
-  FlexItem,
-  Title,
   DescriptionList,
   DescriptionListGroup,
   DescriptionListTerm,
   DescriptionListDescription,
-  Spinner,
+  Divider,
+  Flex,
+  FlexItem,
+  Gallery,
+  MenuToggle,
   Select,
   SelectList,
   SelectOption,
-  Divider,
-  MenuToggle
+  Spinner,
+  Timestamp,
+  Title
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
-import text from '@patternfly/react-styles/css/utilities/Text/text';
 import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 export const CardEventsView: React.FunctionComponent = () => {
@@ -76,7 +76,7 @@ export const CardEventsView: React.FunctionComponent = () => {
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <ExclamationCircleIcon className={text.dangerColor_100} aria-hidden="true" />
+                      <ExclamationCircleIcon aria-hidden="true" />
                     </FlexItem>
                     <FlexItem>
                       <span>Readiness probe failed</span>
@@ -88,14 +88,14 @@ export const CardEventsView: React.FunctionComponent = () => {
                   connection refused
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 11:02 am</time>
+                  <Timestamp> Jun 17, 11:02 am </Timestamp>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <CheckCircleIcon className={text.successColor_100} aria-hidden="true" />
+                      <CheckCircleIcon aria-hidden="true" />
                     </FlexItem>
                     <FlexItem>
                       <span>Successful assignment</span>
@@ -106,7 +106,7 @@ export const CardEventsView: React.FunctionComponent = () => {
                   Successfully assigned default/example to ip-10-0-130-149.ec2.internal
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 11:13 am</time>
+                  <Timestamp> Jun 17, 11:13 am </Timestamp>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -122,14 +122,14 @@ export const CardEventsView: React.FunctionComponent = () => {
                 </DescriptionListTerm>
                 <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 10:59 am</time>
+                  <Timestamp> Jun 17, 10:59 am </Timestamp>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <CheckCircleIcon className={text.successColor_100} aria-hidden="true" />
+                      <CheckCircleIcon aria-hidden="true" />
                     </FlexItem>
                     <FlexItem>
                       <span>Created container</span>
@@ -138,7 +138,7 @@ export const CardEventsView: React.FunctionComponent = () => {
                 </DescriptionListTerm>
                 <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 10:45 am</time>
+                  <Timestamp> Jun 17, 10:45 am </Timestamp>
                 </DescriptionListDescription>
               </DescriptionListGroup>
             </DescriptionList>

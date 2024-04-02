@@ -1,8 +1,6 @@
 import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ThProps } from '@patternfly/react-table';
-import { Stack, StackItem } from '@patternfly/react-core';
-import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
-
+import { Stack, StackItem, Timestamp } from '@patternfly/react-core';
 interface PodConnection {
   source: {
     podName: string;
@@ -163,7 +161,7 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
               <Td dataLabel={columnNames.datetime}>
                 <div>
                   <span>{new Date(connection.timestamp).toDateString()}</span>{' '}
-                  <span className={textStyles.color_200}>{new Date(connection.timestamp).toLocaleTimeString()}</span>
+                  <Timestamp>{new Date(connection.timestamp).toLocaleTimeString()}</Timestamp>
                 </div>
               </Td>
               <Td dataLabel={columnNames.source}>
@@ -172,7 +170,7 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
                     <span>{connection.source.port.num}</span>
                   </StackItem>
                   <StackItem>
-                    <span className={textStyles.color_200}>({connection.source.port.protocol})</span>
+                    <Timestamp>({connection.source.port.protocol})</Timestamp>
                   </StackItem>
                 </Stack>
               </Td>
@@ -182,7 +180,7 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
                     <span>{connection.destination.port.num}</span>
                   </StackItem>
                   <StackItem>
-                    <span className={textStyles.color_200}>({connection.destination.port.protocol})</span>
+                    <Timestamp>({connection.destination.port.protocol})</Timestamp>
                   </StackItem>
                 </Stack>
               </Td>

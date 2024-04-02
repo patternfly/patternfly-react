@@ -11,7 +11,6 @@ import {
   FlexItem
 } from '@patternfly/react-core';
 import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
-import text from '@patternfly/react-styles/css/utilities/Text/text';
 
 export const CardTrendDemo2: React.FunctionComponent = () => (
   <Gallery hasGutter minWidths={{ default: '360px' }}>
@@ -29,7 +28,7 @@ export const CardTrendDemo2: React.FunctionComponent = () => (
                   </CardTitle>
                 </FlexItem>
                 <FlexItem>
-                  <span className={text.color_200}>Storage capacity</span>
+                  <span>Storage capacity</span>
                 </FlexItem>
               </Flex>
             </FlexItem>

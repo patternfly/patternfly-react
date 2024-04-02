@@ -6,20 +6,20 @@ import {
   CardTitle,
   CardBody,
   CardFooter,
-  Gallery,
-  Title,
   DescriptionList,
   DescriptionListGroup,
   DescriptionListTerm,
   DescriptionListDescription,
+  Divider,
+  Gallery,
+  MenuToggle,
+  MenuToggleElement,
   Select,
   SelectList,
   SelectOption,
-  Divider,
-  MenuToggle,
-  MenuToggleElement
+  Timestamp,
+  Title
 } from '@patternfly/react-core';
-import text from '@patternfly/react-styles/css/utilities/Text/text';
 import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
 import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
@@ -79,7 +79,7 @@ export const CardLogView: React.FunctionComponent = () => {
                   connection refused
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 11:02 am</time>
+                  <Timestamp> Jun 17, 11:02 am </Timestamp>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -88,21 +88,21 @@ export const CardLogView: React.FunctionComponent = () => {
                   Successfully assigned default/example to ip-10-0-130-149.ec2.internal
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 11:13 am</time>
+                  <Timestamp> Jun 17, 11:13 am </Timestamp>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>Pulling image</DescriptionListTerm>
                 <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 10:59 am</time>
+                  <Timestamp> Jun 17, 10:59 am </Timestamp>
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>Created container</DescriptionListTerm>
                 <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <time className={`${text.color_200} ${text.fontSizeSm}`}>Jun 17, 10:45 am</time>
+                  <Timestamp> Jun 17, 10:45 am </Timestamp>
                 </DescriptionListDescription>
               </DescriptionListGroup>
             </DescriptionList>
