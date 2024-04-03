@@ -16,9 +16,29 @@ export const FormGroupLabelHelp: React.FunctionComponent<FormGroupLabelHelpProps
   'aria-label': ariaLabel,
   className,
   ...props
-}) => (
-  <Button aria-label={ariaLabel} className={className} variant="plain" hasNoPadding {...props}>
-    <QuestionCircleIcon />
-  </Button>
-);
+}) => {
+  const buttonRef = React.useRef(null);
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLSpanElement>) => {
+    if (event.key === 'Enter' && buttonRef.current) {
+      buttonRef.current.click();
+    }
+  };
+
+  return (
+    <Button
+      component="span"
+      isInline
+      ref={buttonRef}
+      onKeyDown={handleKeyDown}
+      aria-label={ariaLabel}
+      className={className}
+      variant="plain"
+      hasNoPadding
+      {...props}
+    >
+      <QuestionCircleIcon />
+    </Button>
+  );
+};
 FormGroupLabelHelp.displayName = 'FormGroupLabelHelp';
