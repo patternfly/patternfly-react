@@ -43,6 +43,9 @@ export class FormDemo extends Component<FormProps, FormState> {
 
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
   }
+
+  labelHelpRef: React.RefObject<HTMLSpanElement> = React.createRef();
+
   handleTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     this.setState({ value, isValid: /^\d+$/.test(value) });
   };
@@ -114,6 +117,7 @@ export class FormDemo extends Component<FormProps, FormState> {
             labelInfo="Age info"
             labelHelp={
               <Popover
+                triggerRef={this.labelHelpRef}
                 headerContent={<div>The age of a person</div>}
                 bodyContent={
                   <div>
@@ -122,7 +126,7 @@ export class FormDemo extends Component<FormProps, FormState> {
                   </div>
                 }
               >
-                <FormGroupLabelHelp aria-label="More info for name field" />
+                <FormGroupLabelHelp ref={this.labelHelpRef} aria-label="More info for name field" />
               </Popover>
             }
             type="number"

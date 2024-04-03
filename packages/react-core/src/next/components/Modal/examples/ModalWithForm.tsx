@@ -7,6 +7,9 @@ export const ModalWithForm: React.FunctionComponent = () => {
   const [nameValue, setNameValue] = React.useState('');
   const [emailValue, setEmailValue] = React.useState('');
   const [addressValue, setAddressValue] = React.useState('');
+  const nameLabelHelpRef = React.useRef(null);
+  const emailLabelHelpRef = React.useRef(null);
+  const addressLabelHelpRef = React.useRef(null);
 
   const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setModalOpen(!isModalOpen);
@@ -47,6 +50,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
               label="Name"
               labelHelp={
                 <Popover
+                  triggerRef={nameLabelHelpRef}
                   headerContent={
                     <div>
                       The
@@ -73,7 +77,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                     </div>
                   }
                 >
-                  <FormGroupLabelHelp aria-label="More info for name field" />
+                  <FormGroupLabelHelp ref={nameLabelHelpRef} aria-label="More info for name field" />
                 </Popover>
               }
               isRequired
@@ -92,6 +96,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
               label="E-mail"
               labelHelp={
                 <Popover
+                  triggerRef={emailLabelHelpRef}
                   headerContent={
                     <div>
                       The
@@ -114,7 +119,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                     </div>
                   }
                 >
-                  <FormGroupLabelHelp aria-label="More info for e-mail field" />
+                  <FormGroupLabelHelp ref={emailLabelHelpRef} aria-label="More info for e-mail field" />
                 </Popover>
               }
               isRequired
@@ -133,6 +138,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
               label="Address"
               labelHelp={
                 <Popover
+                  triggerRef={addressLabelHelpRef}
                   headerContent={
                     <div>
                       The
@@ -154,7 +160,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                     </div>
                   }
                 >
-                  <FormGroupLabelHelp aria-label="More info for address field" />
+                  <FormGroupLabelHelp ref={addressLabelHelpRef} aria-label="More info for address field" />
                 </Popover>
               }
               isRequired
