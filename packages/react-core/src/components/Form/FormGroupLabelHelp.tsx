@@ -10,17 +10,24 @@ export interface FormGroupLabelHelpProps extends ButtonProps {
   'aria-label': string;
   /** Additional classes added to the help button. */
   className?: string;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<HTMLSpanElement>;
 }
 
-export const FormGroupLabelHelp: React.FunctionComponent<FormGroupLabelHelpProps> = ({
+const FormGroupLabelHelpBase: React.FunctionComponent<FormGroupLabelHelpProps> = ({
   'aria-label': ariaLabel,
   className,
+  innerRef,
   ...props
 }) => {
-  const buttonRef = React.useRef(null);
+  const ref = React.useRef<HTMLSpanElement>(null);
+  const buttonRef = innerRef || ref;
+
+  const isMutableRef = (ref: React.Ref<HTMLSpanElement>): ref is React.MutableRefObject<HTMLSpanElement> =>
+    typeof ref === 'object' && ref !== null && 'current' in ref && ref.current !== undefined;
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLSpanElement>) => {
-    if (event.key === 'Enter' && buttonRef.current) {
+    if (event.key === 'Enter' && isMutableRef(buttonRef) && buttonRef.current) {
       buttonRef.current.click();
     }
   };
@@ -41,4 +48,9 @@ export const FormGroupLabelHelp: React.FunctionComponent<FormGroupLabelHelpProps
     </Button>
   );
 };
+
+export const FormGroupLabelHelp = React.forwardRef((props: FormGroupLabelHelpProps, ref: React.Ref<any>) => (
+  <FormGroupLabelHelpBase innerRef={ref} {...props} />
+));
+
 FormGroupLabelHelp.displayName = 'FormGroupLabelHelp';
