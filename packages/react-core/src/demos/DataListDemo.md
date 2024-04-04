@@ -28,3 +28,8 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 ```js file="./DataList/examples/DataListExpandableControlInToolbar.tsx" isFullscreen
 ```
+
+### Draggable
+
+```js file="./DataList/examples/DataListDraggable.tsx" isFullscreen
+```
