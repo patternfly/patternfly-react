@@ -161,13 +161,13 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
     <Component
       {...props}
       {...(isAriaDisabled ? preventedEvents : null)}
-      aria-disabled={isDisabled || isAriaDisabled}
+      aria-disabled={isAriaDisabled || (!isButtonElement && isDisabled)}
       aria-label={ariaLabel}
       className={css(
         styles.button,
         styles.modifiers[variant],
         isBlock && styles.modifiers.block,
-        isDisabled && styles.modifiers.disabled,
+        isDisabled && !isButtonElement && styles.modifiers.disabled,
         isAriaDisabled && styles.modifiers.ariaDisabled,
         isClicked && styles.modifiers.clicked,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
