@@ -60,9 +60,23 @@ test('Renders with class pf-m-clicked when isClicked = true', () => {
   expect(screen.getByRole('button')).toHaveClass('pf-m-clicked');
 });
 
-test('Renders with class pf-m-disabled when isDisabled = true', () => {
+test('Does not render with class pf-m-disabled by default when isDisabled = true', () => {
   render(<Button isDisabled>Disabled Button</Button>);
-  expect(screen.getByRole('button')).toHaveClass('pf-m-disabled');
+  expect(screen.getByRole('button')).not.toHaveClass('pf-m-disabled');
+});
+
+test('aria-disabled is set to false when isDisabled = true', () => {
+  render(<Button isDisabled>Disabled Button</Button>);
+  expect(screen.getByRole('button')).toHaveAttribute('aria-disabled', 'false');
+});
+
+test('Renders with class pf-m-disabled when isDisabled = true and component is not a button', () => {
+  render(
+    <Button isDisabled component="a">
+      Disabled Anchor Button
+    </Button>
+  );
+  expect(screen.getByText('Disabled Anchor Button')).toHaveClass('pf-m-disabled');
 });
 
 test('Renders with class pf-m-aria-disabled when isAriaDisabled = true', () => {
@@ -208,7 +222,9 @@ test('aria-disabled is set to true and tabIndex to -1 if component is not a butt
       Disabled Anchor Button
     </Button>
   );
-  expect(screen.getByText('Disabled Anchor Button')).toHaveAttribute('tabindex', '-1');
+  const anchor = screen.getByText('Disabled Anchor Button');
+  expect(anchor).toHaveAttribute('tabindex', '-1');
+  expect(anchor).toHaveAttribute('aria-disabled', 'true');
 });
 
 test('setting tab index through props', () => {
