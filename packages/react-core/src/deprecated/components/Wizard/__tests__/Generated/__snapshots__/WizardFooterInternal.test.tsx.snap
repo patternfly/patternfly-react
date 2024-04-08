@@ -6,8 +6,8 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
     class="pf-v6-c-wizard__footer"
   >
     <button
-      aria-disabled="true"
-      class="pf-v6-c-button pf-m-secondary pf-m-disabled"
+      aria-disabled="false"
+      class="pf-v6-c-button pf-m-secondary"
       data-ouia-component-id="OUIA-Generated-Button-secondary-1"
       data-ouia-component-type="PF6/Button"
       data-ouia-safe="true"
