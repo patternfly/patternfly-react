@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.23...@patternfly/react-core@5.3.0-prerelease.24) (2024-04-08)
+
+### Features
+
+- **MenuToggle:** allow split action toggle text ([#10256](https://github.com/patternfly/patternfly-react/issues/10256)) ([afd3b85](https://github.com/patternfly/patternfly-react/commit/afd3b85ef307117784527740d6ae6d442055fbb0))
+
 # [5.3.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.22...@patternfly/react-core@5.3.0-prerelease.23) (2024-04-01)
 
 ### Bug Fixes
