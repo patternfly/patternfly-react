@@ -9,6 +9,8 @@ import { SelectGroup } from '../SelectGroup';
 import { SelectVariant, SelectDirection } from '../selectConstants';
 import { KeyTypes } from '../../../../helpers';
 
+jest.mock('../../../../helpers/GenerateId/GenerateId');
+
 class User implements SelectOptionObject {
   private firstName: string;
   private lastName: string;

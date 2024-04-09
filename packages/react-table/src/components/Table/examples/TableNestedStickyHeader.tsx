@@ -152,6 +152,9 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
               {columnNames.destination}
             </Th>
           </Tr>
+          {/* TODO: Remove the following Tr once Core updates towards https://github.com/patternfly/patternfly/issues/6272
+              are made for the v5 branch. For v6 branch the row can be removed immediately.
+          */}
           <Tr isBorderRow aria-hidden="true">
             <Td colSpan={9}></Td>
           </Tr>

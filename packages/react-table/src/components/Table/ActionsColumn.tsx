@@ -30,6 +30,8 @@ export interface ActionsColumnProps extends Omit<React.HTMLProps<HTMLElement>, '
   innerRef?: React.Ref<any>;
   /** Ref to forward to the first item in the popup menu */
   firstActionItemRef?: React.Ref<HTMLButtonElement>;
+  /** Flag indicating that the dropdown's onOpenChange callback should not be called. */
+  isOnOpenChangeDisabled?: boolean;
 }
 
 const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
@@ -44,6 +46,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
   },
   innerRef,
   firstActionItemRef,
+  isOnOpenChangeDisabled = false,
   ...props
 }: ActionsColumnProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -91,7 +94,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
 
       <Dropdown
         isOpen={isOpen}
-        onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
+        onOpenChange={!isOnOpenChangeDisabled ? (isOpen: boolean) => setIsOpen(isOpen) : undefined}
         toggle={(toggleRef: any) =>
           actionsToggle ? (
             actionsToggle({ onToggle, isOpen, isDisabled, toggleRef })
@@ -115,35 +118,37 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
         <DropdownList>
           {items
             .filter((item) => !item.isOutsideDropdown)
-            .map(({ title, itemKey, onClick, tooltipProps, isSeparator, ...props }, index) => {
-              if (isSeparator) {
-                return <Divider key={itemKey || index} data-key={itemKey || index} />;
-              }
-              const item = (
-                <DropdownItem
-                  onClick={(event: any) => {
-                    onActionClick(event, onClick);
-                    onToggle();
-                  }}
-                  {...props}
-                  key={itemKey || index}
-                  data-key={itemKey || index}
-                  ref={index === 0 ? firstActionItemRef : undefined}
-                >
-                  {title}
-                </DropdownItem>
-              );
-
-              if (tooltipProps?.content) {
-                return (
-                  <Tooltip key={itemKey || index} {...tooltipProps}>
-                    {item}
-                  </Tooltip>
+            .map(
+              ({ title, itemKey, onClick, tooltipProps, isSeparator, shouldCloseOnClick = true, ...props }, index) => {
+                if (isSeparator) {
+                  return <Divider key={itemKey || index} data-key={itemKey || index} />;
+                }
+                const item = (
+                  <DropdownItem
+                    onClick={(event: any) => {
+                      onActionClick(event, onClick);
+                      shouldCloseOnClick && onToggle();
+                    }}
+                    {...props}
+                    key={itemKey || index}
+                    data-key={itemKey || index}
+                    ref={index === 0 ? firstActionItemRef : undefined}
+                  >
+                    {title}
+                  </DropdownItem>
                 );
-              } else {
-                return item;
+
+                if (tooltipProps?.content) {
+                  return (
+                    <Tooltip key={itemKey || index} {...tooltipProps}>
+                      {item}
+                    </Tooltip>
+                  );
+                } else {
+                  return item;
+                }
               }
-            })}
+            )}
         </DropdownList>
       </Dropdown>
     </React.Fragment>

@@ -93,6 +93,7 @@ export const TableSelectable: React.FunctionComponent = () => {
               onSelect: (_event, isSelecting) => selectAllRepos(isSelecting),
               isSelected: areAllReposSelected
             }}
+            aria-label="Row select"
           />
           <Th>{columnNames.name}</Th>
           <Th>{columnNames.branches}</Th>

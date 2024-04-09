@@ -1,0 +1,50 @@
+{
+  "name": "@patternfly/react-templates",
+  "version": "1.0.0-prerelease.6",
+  "description": "This package provides wrapped component demos for ease of use\n",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "patternfly:src": "src/",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly",
+    "templates"
+  ],
+  "author": "Red Hat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/main/packages/react-templates#readme",
+  "scripts": {
+    "build:umd": "rollup -c --environment IS_PRODUCTION",
+    "build:single:packages": "node ../../scripts/build-single-packages.js --config single-packages.config.json",
+    "clean": "rimraf dist components deprecated",
+    "subpaths": "node ../../scripts/exportSubpaths.js --config subpaths.config.json"
+  },
+  "dependencies": {
+    "@patternfly/react-core": "^6.0.0-alpha.50",
+    "@patternfly/react-icons": "^6.0.0-alpha.19",
+    "@patternfly/react-styles": "^6.0.0-alpha.19",
+    "@patternfly/react-tokens": "^6.0.0-alpha.19",
+    "tslib": "^2.5.0"
+  },
+  "peerDependencies": {
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "typescript": "^4.7.4"
+  }
+}

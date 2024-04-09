@@ -51,7 +51,7 @@ import swaggerIcon from './assets/camel-swagger-java_200x150.png';
 import azureIcon from './assets/FuseConnector_Icons_AzureServices.png';
 import restIcon from './assets/FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
 
 export const PrimaryDetailCardView: React.FunctionComponent = () => {
@@ -574,7 +574,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
               </FlexItem>
               <FlexItem>
                 <TextContent>
-                  <Text component="small" className="pf-v6-u-color-200 pf-v6-u-font-family-text">
+                  <Text component="small" className="pf-v5-u-color-200 pf-v5-u-font-family-text">
                     Provided by Red Hat
                   </Text>
                 </TextContent>

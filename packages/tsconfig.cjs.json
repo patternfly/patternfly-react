@@ -21,6 +21,9 @@
     },
     {
       "path": "./react-table/tsconfig.cjs.json"
+    },
+    {
+      "path": "./react-templates/tsconfig.cjs.json"
     }
   ]
 }

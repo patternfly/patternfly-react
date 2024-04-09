@@ -671,6 +671,236 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package demo-app-ts
 
+## [5.1.1-prerelease.97](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.96...demo-app-ts@5.1.1-prerelease.97) (2024-04-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+## 5.1.1-prerelease.96 (2024-03-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.95](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.94...demo-app-ts@5.1.1-prerelease.95) (2024-03-28)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.94](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.93...demo-app-ts@5.1.1-prerelease.94) (2024-03-28)
+
+### Bug Fixes
+
+- **Card:** updated v5 logic to prevent unclickable cards ([#10202](https://github.com/patternfly/patternfly-react/issues/10202)) ([779e288](https://github.com/patternfly/patternfly-react/commit/779e288960dae6a2ea5198d948a668d3fb7b6cdc))
+
+## [5.1.1-prerelease.93](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.92...demo-app-ts@5.1.1-prerelease.93) (2024-03-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.92](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.91...demo-app-ts@5.1.1-prerelease.92) (2024-03-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.91](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.90...demo-app-ts@5.1.1-prerelease.91) (2024-03-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.90](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.89...demo-app-ts@5.1.1-prerelease.90) (2024-03-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+## 5.1.1-prerelease.89 (2024-03-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+## 5.1.1-prerelease.88 (2024-03-26)
+
+### Bug Fixes
+
+- **Table:** updated a11y for empty/nontext Th components ([#10152](https://github.com/patternfly/patternfly-react/issues/10152)) ([48d8140](https://github.com/patternfly/patternfly-react/commit/48d8140d5ecd1d467b88c573cffbd86183dce898))
+
+## [5.1.1-prerelease.87](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.86...demo-app-ts@5.1.1-prerelease.87) (2024-03-25)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.86](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.85...demo-app-ts@5.1.1-prerelease.86) (2024-03-22)
+
+**Note:** Version bump only for package demo-app-ts
+
+## 5.1.1-prerelease.85 (2024-03-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.84](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.83...demo-app-ts@5.1.1-prerelease.84) (2024-03-15)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.83](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.82...demo-app-ts@5.1.1-prerelease.83) (2024-03-12)
+
+**Note:** Version bump only for package demo-app-ts
+
+## 5.1.1-prerelease.82 (2024-03-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.81](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.80...demo-app-ts@5.1.1-prerelease.81) (2024-02-28)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.80](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.79...demo-app-ts@5.1.1-prerelease.80) (2024-02-28)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.79](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.78...demo-app-ts@5.1.1-prerelease.79) (2024-02-28)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.78](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.77...demo-app-ts@5.1.1-prerelease.78) (2024-02-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.77](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.76...demo-app-ts@5.1.1-prerelease.77) (2024-02-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.76](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.75...demo-app-ts@5.1.1-prerelease.76) (2024-02-19)
+
+**Note:** Version bump only for package demo-app-ts
+
+## 5.1.1-prerelease.75 (2024-02-19)
+
+**Note:** Version bump only for package demo-app-ts
+
+## 5.1.1-prerelease.74 (2024-02-08)
+
+### Bug Fixes
+
+- demo-app version bump issue ([#10072](https://github.com/patternfly/patternfly-react/issues/10072)) ([8af8de0](https://github.com/patternfly/patternfly-react/commit/8af8de089f7174665fd1e78f08bb19f1270a8076))
+
+## 5.1.1-prerelease.73 (2024-02-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+## 5.1.1-prerelease.72 (2024-01-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.71](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.70...demo-app-ts@5.1.1-prerelease.71) (2024-01-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+## 5.1.1-prerelease.70 (2024-01-16)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.69](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.68...demo-app-ts@5.1.1-prerelease.69) (2024-01-15)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.68](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.67...demo-app-ts@5.1.1-prerelease.68) (2024-01-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.67](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.66...demo-app-ts@5.1.1-prerelease.67) (2024-01-10)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.66](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.65...demo-app-ts@5.1.1-prerelease.66) (2024-01-09)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.65](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.64...demo-app-ts@5.1.1-prerelease.65) (2024-01-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+## 5.1.1-prerelease.64 (2024-01-05)
+
+### Features
+
+- **Modal next:** Introduce a next composable Modal ([#9852](https://github.com/patternfly/patternfly-react/issues/9852)) ([7ec2aff](https://github.com/patternfly/patternfly-react/commit/7ec2aff1d8dd1c6762c9d912c1d2e60a6b604ddd))
+
+## [5.1.1-prerelease.63](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.62...demo-app-ts@5.1.1-prerelease.63) (2024-01-04)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.62](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.61...demo-app-ts@5.1.1-prerelease.62) (2024-01-03)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.61](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.60...demo-app-ts@5.1.1-prerelease.61) (2024-01-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.60](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.59...demo-app-ts@5.1.1-prerelease.60) (2023-12-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.59](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.58...demo-app-ts@5.1.1-prerelease.59) (2023-12-14)
+
+### Bug Fixes
+
+- **MenuItem:** Add download to MenuItem ([#9892](https://github.com/patternfly/patternfly-react/issues/9892)) ([2afb5fd](https://github.com/patternfly/patternfly-react/commit/2afb5fdeb8ade43aee6dadaccf9067a0939212c7))
+
+## [5.1.1-prerelease.58](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.57...demo-app-ts@5.1.1-prerelease.58) (2023-12-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.57](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.56...demo-app-ts@5.1.1-prerelease.57) (2023-12-07)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.56](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.55...demo-app-ts@5.1.1-prerelease.56) (2023-12-06)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.55](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.54...demo-app-ts@5.1.1-prerelease.55) (2023-11-21)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.54](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.53...demo-app-ts@5.1.1-prerelease.54) (2023-11-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.53](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.52...demo-app-ts@5.1.1-prerelease.53) (2023-11-16)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.52](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.51...demo-app-ts@5.1.1-prerelease.52) (2023-11-14)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.51](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.50...demo-app-ts@5.1.1-prerelease.51) (2023-11-14)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.50](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.49...demo-app-ts@5.1.1-prerelease.50) (2023-11-14)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.49](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.48...demo-app-ts@5.1.1-prerelease.49) (2023-11-13)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.48](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.47...demo-app-ts@5.1.1-prerelease.48) (2023-11-10)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.47](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.46...demo-app-ts@5.1.1-prerelease.47) (2023-11-03)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.46](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.45...demo-app-ts@5.1.1-prerelease.46) (2023-11-03)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.45](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.44...demo-app-ts@5.1.1-prerelease.45) (2023-11-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.44](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.43...demo-app-ts@5.1.1-prerelease.44) (2023-11-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+## [5.1.1-prerelease.43](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.42...demo-app-ts@5.1.1-prerelease.43) (2023-11-02)
+
+**Note:** Version bump only for package demo-app-ts
+
 ## [5.1.1-prerelease.42](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.41...demo-app-ts@5.1.1-prerelease.42) (2023-10-30)
 
 **Note:** Version bump only for package demo-app-ts

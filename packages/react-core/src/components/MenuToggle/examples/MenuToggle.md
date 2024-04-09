@@ -152,9 +152,9 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 ### Plain toggle with icon
 
-To apply plain styling to a menu toggle with an icon, pass in `variant="plain"` and pass the icon to the `icon` property. This will remove the default bottom border and caret. The following example passes in an `EllipsisVIcon`.
+To apply plain styling to a menu toggle with an icon, pass in `variant="plain"`. This will remove the default bottom border and caret. You may pass in an `icon` to serve as the menu toggle. The following example passes in an `EllipsisVIcon`.
 
-If the toggle does not have any visible text content, you must pass in the `aria-label` property to provide an accessible name.
+If the toggle does not have any visible text content, use the `aria-label` property to provide an accessible name.
 
 ```ts
 import React from 'react';
@@ -264,5 +264,15 @@ To create a typeahead toggle, pass in `variant="typeahead"` to the `<MenuToggle>
 To create a multiple typeahead toggle, pass a `<TextInputGroup>` component implemented like the [text input group's filter example](/components/text-input-group#filters) as a child of `<MenuToggle>`.
 
 ```ts file='MenuToggleTypeahead.tsx'
+
+```
+
+### Status toggle
+
+To create a toggle with a status, pass in the `status` property to the `MenuToggle`. The default icon associated with each status may be overridden by using the `statusIcon` property.
+
+When the status value is "warning" or "danger", you must include helper text that conveys what is causing the warning/error.
+
+```ts isBeta file='MenuToggleStatus.tsx'
 
 ```

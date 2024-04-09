@@ -7,6 +7,8 @@ import { FormFieldGroupExpandable } from '../FormFieldGroupExpandable';
 import { FormFieldGroupHeader } from '../FormFieldGroupHeader';
 import { Button } from '../../Button';
 
+jest.mock('../../../helpers/GenerateId/GenerateId');
+
 test('Check form field group example against snapshot', () => {
   const FieldGroup = (
     <FormFieldGroup

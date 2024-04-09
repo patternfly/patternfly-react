@@ -225,6 +225,52 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @patternfly/react-integration
 
+## 5.1.1-prerelease.22 (2024-03-28)
+
+### Bug Fixes
+
+- **Card:** updated v5 logic to prevent unclickable cards ([#10202](https://github.com/patternfly/patternfly-react/issues/10202)) ([779e288](https://github.com/patternfly/patternfly-react/commit/779e288960dae6a2ea5198d948a668d3fb7b6cdc))
+
+## 5.1.1-prerelease.21 (2024-03-26)
+
+### Bug Fixes
+
+- **Table:** updated a11y for empty/nontext Th components ([#10152](https://github.com/patternfly/patternfly-react/issues/10152)) ([48d8140](https://github.com/patternfly/patternfly-react/commit/48d8140d5ecd1d467b88c573cffbd86183dce898))
+
+## 5.1.1-prerelease.20 (2024-02-08)
+
+### Bug Fixes
+
+- demo-app version bump issue ([#10072](https://github.com/patternfly/patternfly-react/issues/10072)) ([8af8de0](https://github.com/patternfly/patternfly-react/commit/8af8de089f7174665fd1e78f08bb19f1270a8076))
+
+## [5.1.1-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.18...@patternfly/react-integration@5.1.1-prerelease.19) (2024-01-05)
+
+### Features
+
+- **Modal next:** Introduce a next composable Modal ([#9852](https://github.com/patternfly/patternfly-react/issues/9852)) ([7ec2aff](https://github.com/patternfly/patternfly-react/commit/7ec2aff1d8dd1c6762c9d912c1d2e60a6b604ddd))
+
+## 5.1.1-prerelease.18 (2024-01-05)
+
+### Features
+
+- **CodeEditor:** use new monaco package ([#9842](https://github.com/patternfly/patternfly-react/issues/9842)) ([54dd134](https://github.com/patternfly/patternfly-react/commit/54dd134d6c67c4fc1d7630fd1e7c718f66061342))
+
+## 5.1.1-prerelease.17 (2024-01-03)
+
+### Bug Fixes
+
+- **Chip:** prevented duplicate ID being applied ([#9886](https://github.com/patternfly/patternfly-react/issues/9886)) ([91b7d62](https://github.com/patternfly/patternfly-react/commit/91b7d62cb3503f65371ab27478ffff091262b04b))
+
+## 5.1.1-prerelease.16 (2023-12-14)
+
+### Bug Fixes
+
+- **MenuItem:** Add download to MenuItem ([#9892](https://github.com/patternfly/patternfly-react/issues/9892)) ([2afb5fd](https://github.com/patternfly/patternfly-react/commit/2afb5fdeb8ade43aee6dadaccf9067a0939212c7))
+
+## 5.1.1-prerelease.15 (2023-11-14)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
 ## 5.1.1-prerelease.14 (2023-10-30)
 
 **Note:** Version bump only for package @patternfly/react-integration

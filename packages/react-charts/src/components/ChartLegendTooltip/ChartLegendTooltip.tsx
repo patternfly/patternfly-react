@@ -28,7 +28,7 @@ import { getTheme } from '../ChartUtils/chart-theme';
  *
  * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-tooltip/src/index.d.ts
  */
-export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
+export interface ChartLegendTooltipProps extends Omit<ChartCursorTooltipProps, 'title'> {
   /**
    * The active prop specifies whether the tooltip component should be displayed.
    */
@@ -295,8 +295,11 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
   themeColor?: string;
   /**
    * The title prop specifies a title to render with the legend.
+   *
+   * @propType number | string | Function | string[]
+   * @example title={(datum) => datum.x}
    */
-  title?: string;
+  title?: string[] | StringOrNumberOrCallback;
   /**
    * This prop refers to the width of the svg that ChartLegendTooltip is rendered within. This prop is passed from
    * parents of ChartLegendTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the

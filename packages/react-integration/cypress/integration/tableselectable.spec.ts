@@ -12,10 +12,7 @@ describe('Table Selectable Test', () => {
   });
 
   it('Check number of columns', () => {
-    cy.get('thead').find('th').should('have.length', 5);
-
-    // There should be a canSelectAll input
-    cy.get('thead').find('td').should('have.length', 1);
+    cy.get('thead').find('th').should('have.length', 6);
   });
 
   it('Test selectable checkbox', () => {

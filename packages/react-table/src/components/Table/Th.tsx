@@ -56,6 +56,14 @@ export interface ThProps
   stickyRightOffset?: string;
   /** Indicates the <th> is part of a subheader of a nested header */
   isSubheader?: boolean;
+  /** Visually hidden text accessible only via assistive technologies. This must be passed in if the
+   * th is intended to be visually empty, and must be conveyed as a column header text.
+   */
+  screenReaderText?: string;
+  /** Provides an accessible name to the th. This should only be passed in when the th contains only non-text
+   * content, such as a "select all" checkbox or "expand all" toggle.
+   */
+  'aria-label'?: string;
 }
 
 const ThBase: React.FunctionComponent<ThProps> = ({
@@ -83,8 +91,17 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   stickyLeftOffset,
   stickyRightOffset,
   isSubheader = false,
+  screenReaderText,
+  'aria-label': ariaLabel,
   ...props
 }: ThProps) => {
+  if (!children && !screenReaderText && !ariaLabel) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'Th: Table headers must have an accessible name. If the Th is intended to be visually empty, pass in screenReaderText. If the Th contains only non-text, interactive content such as a checkbox or expand toggle, pass in an aria-label.'
+    );
+  }
+
   const [showTooltip, setShowTooltip] = React.useState(false);
   const [truncated, setTruncated] = React.useState(false);
   const cellRef = innerRef ? innerRef : React.createRef();
@@ -188,8 +205,9 @@ const ThBase: React.FunctionComponent<ThProps> = ({
       onBlur={() => setShowTooltip(false)}
       data-label={dataLabel}
       onMouseEnter={tooltip !== null ? onMouseEnter : onMouseEnterProp}
-      scope={component === 'th' && children ? scope : null}
+      scope={component === 'th' ? scope : null}
       ref={cellRef}
+      aria-label={ariaLabel}
       className={css(
         styles.tableTh,
         className,
@@ -212,7 +230,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         } as React.CSSProperties
       })}
     >
-      {transformedChildren}
+      {transformedChildren || (screenReaderText && <span className="pf-v5-screen-reader">{screenReaderText}</span>)}
     </MergedComponent>
   );
 

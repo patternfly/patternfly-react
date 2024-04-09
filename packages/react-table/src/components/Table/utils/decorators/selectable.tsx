@@ -61,7 +61,7 @@ export const selectable: ITransform = (
 
   return {
     className: css(styles.tableCheck),
-    component: 'td',
+    component: rowId !== -1 ? 'td' : 'th',
     isVisible: !rowData || !rowData.fullWidth,
     children: (
       <SelectColumn

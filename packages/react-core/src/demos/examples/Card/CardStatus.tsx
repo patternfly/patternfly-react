@@ -94,7 +94,7 @@ export const CardStatus: React.FunctionComponent = () => {
       <Table variant="compact">
         <Thead>
           <Tr>
-            <Th />
+            <Th screenReaderText="Row expansion" />
             {columns.map((column, columnIndex) => (
               <Th key={columnIndex} modifier="fitContent">
                 {column}

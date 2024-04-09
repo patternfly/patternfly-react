@@ -19,9 +19,27 @@ export const LabelCompact: React.FunctionComponent = () => (
     </Label>
     <Label isCompact href="#compact" onClose={() => Function.prototype}>
       Compact link removable
-    </Label>
+    </Label>{' '}
+    <Label isCompact onClick={() => Function.prototype}>
+      Compact clickable
+    </Label>{' '}
+    <Label isCompact onClick={() => Function.prototype} onClose={() => Function.prototype}>
+      Compact clickable removable
+    </Label>{' '}
     <Label isCompact icon={<CubeIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
       Compact label with icon that overflows
+    </Label>{' '}
+    <Label isDisabled isCompact href="#compact" onClose={() => Function.prototype} icon={<CubeIcon />}>
+      Compact link removable (disabled)
+    </Label>{' '}
+    <Label
+      isDisabled
+      isCompact
+      onClick={() => Function.prototype}
+      onClose={() => Function.prototype}
+      icon={<CubeIcon />}
+    >
+      Compact clickable removable (disabled)
     </Label>
     <br />
     <br />

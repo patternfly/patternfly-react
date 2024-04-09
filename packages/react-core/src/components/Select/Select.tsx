@@ -124,8 +124,8 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
     };
 
     const handleClick = (event: MouseEvent) => {
-      // toggle was clicked open via keyboard, focus on first menu item
-      if (isOpen && toggleRef.current?.contains(event.target as Node) && event.detail === 0) {
+      // toggle was opened, focus on first menu item
+      if (isOpen && toggleRef.current?.contains(event.target as Node)) {
         setTimeout(() => {
           const firstElement = menuRef?.current?.querySelector('li button:not(:disabled),li input:not(:disabled)');
           firstElement && (firstElement as HTMLElement).focus();

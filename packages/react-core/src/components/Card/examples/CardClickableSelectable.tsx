@@ -51,9 +51,9 @@ export const CardClickable: React.FunctionComponent = () => {
           <Card
             id="clickable-selectable-card-example-1"
             isClickable
+            isClicked={isClicked}
             isSelectable
             isSelected={isChecked1}
-            isClicked={isClicked}
             variant={isSecondary ? 'secondary' : 'default'}
           >
             <CardHeader

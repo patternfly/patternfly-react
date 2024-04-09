@@ -34,6 +34,8 @@ test(`Renders with class ${styles.modifiers.secondary} when colorVariant="second
   expect(screen.getByText('Drawer panel content')).toHaveClass(styles.modifiers.secondary);
 });
 
+jest.mock('../../../helpers/GenerateId/GenerateId');
+
 test('Does not render with aria-labelledby by default', () => {
   render(
     <Drawer isExpanded>

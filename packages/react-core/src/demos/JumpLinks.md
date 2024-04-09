@@ -4,6 +4,7 @@ section: components
 ---
 
 import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 ## Demos
 
@@ -34,7 +35,7 @@ import {
   TextContent,
   getResizeObserver
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
 
 ScrollspyH2 = () => {

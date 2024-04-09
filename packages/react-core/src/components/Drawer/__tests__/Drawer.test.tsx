@@ -14,6 +14,8 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { KeyTypes } from '../../../helpers';
 
+jest.mock('../../../helpers/GenerateId/GenerateId');
+
 Object.values([
   { isExpanded: true, isInline: false, isStatic: false },
   { isExpanded: false, isInline: false, isStatic: false },

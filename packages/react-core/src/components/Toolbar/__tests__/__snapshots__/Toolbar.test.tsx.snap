@@ -111,12 +111,12 @@ exports[`Toolbar should render with custom chip content 1`] = `
               <span
                 aria-hidden="true"
                 class="pf-v6-c-label-group__label"
-                id="pf-random-id-0"
+                id="generated-id"
               >
                 Status
               </span>
               <ul
-                aria-labelledby="pf-random-id-0"
+                aria-labelledby="generated-id"
                 class="pf-v6-c-label-group__list"
                 role="list"
               >
@@ -216,12 +216,12 @@ exports[`Toolbar should render with custom chip content 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="Close label group"
-                aria-labelledby="remove_group_pf-random-id-0 pf-random-id-0"
+                aria-labelledby="remove_group_generated-id generated-id"
                 class="pf-v6-c-button pf-m-plain pf-m-no-padding"
                 data-ouia-component-id="OUIA-Generated-Button-plain-4"
                 data-ouia-component-type="PF5/Button"
                 data-ouia-safe="true"
-                id="remove_group_pf-random-id-0"
+                id="remove_group_generated-id"
                 type="button"
               >
                 <svg

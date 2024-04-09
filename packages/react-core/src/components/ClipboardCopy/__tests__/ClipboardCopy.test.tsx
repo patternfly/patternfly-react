@@ -4,6 +4,8 @@ import { ClipboardCopy } from '../ClipboardCopy';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import userEvent from '@testing-library/user-event';
 
+jest.mock('../../../helpers/GenerateId/GenerateId');
+
 jest.mock('../ClipboardCopyButton', () => ({
   ClipboardCopyButton: ({ 'aria-label': ariaLabel, children, entryDelay, exitDelay, maxWidth, position, onClick }) => (
     <div data-testid="clipboardCopyButton-mock">
