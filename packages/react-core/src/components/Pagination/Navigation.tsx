@@ -29,7 +29,7 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   /** Label for the English word "of". */
   ofWord?: string;
   /** The number of the current page. */
-  page: string | number;
+  page: number;
   /** The title of a page displayed beside the page number. */
   pagesTitle?: string;
   /** The title of a page displayed beside the page number (the plural form). */
@@ -55,13 +55,13 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   /** Function called when user clicks to navigate to previous page. */
   onPreviousClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user inputs page number. */
-  onPageInput?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  onPageInput?: (event: React.KeyboardEvent<HTMLInputElement>, page: number) => void;
   /** Function called when page is changed. */
   onSetPage: OnSetPage;
 }
 
 export interface NavigationState {
-  userInputPage?: React.ReactText;
+  userInputPage?: number | string;
 }
 
 class Navigation extends React.Component<NavigationProps, NavigationState> {
@@ -93,7 +93,7 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
     onPageInput: () => undefined as any
   };
 
-  private static parseInteger(input: React.ReactText, lastPage: number): number {
+  private static parseInteger(input: number | string, lastPage: number): number {
     // eslint-disable-next-line radix
     let inputPage = Number.parseInt(input as string, 10);
     if (!Number.isNaN(inputPage)) {
@@ -105,14 +105,14 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
 
   private onChange(event: React.FormEvent<HTMLInputElement>, lastPage: number): void {
     const inputPage = Navigation.parseInteger(event.currentTarget.value, lastPage);
-    this.setState({ userInputPage: Number.isNaN(inputPage as number) ? event.currentTarget.value : inputPage });
+    this.setState({ userInputPage: Number.isNaN(inputPage) ? event.currentTarget.value : inputPage });
   }
 
   private onKeyDown(
     event: React.KeyboardEvent<HTMLInputElement>,
-    page: number | string,
+    page: number,
     lastPage: number,
-    onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void
+    onPageInput: (event: React.KeyboardEvent<HTMLInputElement>, page: number) => void
   ): void {
     const allowedKeys = [
       'Tab',
@@ -126,9 +126,9 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
       'ArrowDown'
     ];
     if (event.key === KeyTypes.Enter) {
-      const inputPage = Navigation.parseInteger(this.state.userInputPage, lastPage) as number;
-      onPageInput(event, Number.isNaN(inputPage) ? (page as number) : inputPage);
-      this.handleNewPage(event, Number.isNaN(inputPage) ? (page as number) : inputPage);
+      const inputPage = Navigation.parseInteger(this.state.userInputPage, lastPage);
+      onPageInput(event, Number.isNaN(inputPage) ? page : inputPage);
+      this.handleNewPage(event, Number.isNaN(inputPage) ? page : inputPage);
     } else if (!/^\d*$/.test(event.key) && !allowedKeys.includes(event.key)) {
       event.preventDefault();
     }
@@ -206,7 +206,7 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
             isDisabled={isDisabled || page === firstPage || page === 0}
             data-action="previous"
             onClick={(event) => {
-              const newPage = (page as number) - 1 >= 1 ? (page as number) - 1 : 1;
+              const newPage = page - 1 >= 1 ? page - 1 : 1;
               onPreviousClick(event, newPage);
               this.handleNewPage(event, newPage);
               this.setState({ userInputPage: newPage });
@@ -244,7 +244,7 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
             aria-label={toNextPageAriaLabel}
             data-action="next"
             onClick={(event) => {
-              const newPage = (page as number) + 1 <= lastPage ? (page as number) + 1 : lastPage;
+              const newPage = page + 1 <= lastPage ? page + 1 : lastPage;
               onNextClick(event, newPage);
               this.handleNewPage(event, newPage);
               this.setState({ userInputPage: newPage });
