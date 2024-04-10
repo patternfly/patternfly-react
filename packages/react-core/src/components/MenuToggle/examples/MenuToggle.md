@@ -195,7 +195,9 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ### Split button toggle with checkbox
 
-To add an action button or other control to a menu toggle, use a split button. A `<MenuToggle>` can be rendered as a split button by adding a `splitButtonOptions` object. Elements to be displayed before the toggle button must be included in the `items` property of `splitButtonOptions`.
+To add a checkbox (or other action/control) to a menu toggle, use a split button. 
+
+A `<MenuToggle>` can be rendered as a split button by adding a `splitButtonOptions` object. Elements to be displayed before the toggle button must be included in the `items` property of `splitButtonOptions`.
 
 The following example shows a split button with a `<MenuToggleCheckbox>`.
 
@@ -205,21 +207,21 @@ Variant styling can be applied to split button toggles to adjust their appearanc
 
 ```
 
-### Split button toggle with checkbox label
+### Split button toggle with checkbox and text label
 
-To display text in a split button menu toggle, add a label to the `items` property of `splitButtonOptions`.
+To add a text label to a split button toggle, pass `children` to the `<MenuToggle>` component.
 
-```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
+```ts file='MenuToggleSplitButtonCheckboxWithToggleText.tsx'
 
 ```
 
-### Split button toggle with checkbox and toggle button text
+### Split button toggle with checkbox and clickable text label  
 
-For split button toggles that should still contain text which will trigger the toggle's `onClick`, pass `children` to the `MenuToggle`.
+You can allow users to select a toggle checkbox by clicking either the checkbox or the text label.
 
-The following example shows a split button with a `<MenuToggleCheckbox>` and toggle button text.
+To do so, pass `children` to the `<MenuToggleCheckbox>` component. When the menu toggle text is clicked, the checkbox's `onChange` callback will be triggered.
 
-```ts file='MenuToggleSplitButtonCheckboxWithToggleText.tsx'
+```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
 
 ```
 
