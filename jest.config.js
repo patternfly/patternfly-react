@@ -19,5 +19,6 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css|less)$': '<rootDir>/packages/react-styles/__mocks__/styleMock.js'
   },
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
+  transformIgnorePatterns: ['/node_modules/(?!(case-anything)/)']
 };
