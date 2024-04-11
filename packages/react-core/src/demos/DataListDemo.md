@@ -15,6 +15,10 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import global_Color_100 from '@patternfly/react-tokens/dist/esm/global_Color_100';
+import global_BackgroundColor_200 from '@patternfly/react-tokens/dist/esm/global_BackgroundColor_200';
+import global_BorderColor_100 from '@patternfly/react-tokens/dist/esm/global_BorderColor_100';
+import global_BorderWidth_sm from '@patternfly/react-tokens/dist/esm/global_BorderWidth_sm';
 
 ## Demos
 
@@ -27,4 +31,9 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 ### Expandable control in toolbar
 
 ```js file="./DataList/examples/DataListExpandableControlInToolbar.tsx" isFullscreen
+```
+
+### Width modifiers
+
+```js file="./DataList/examples/DataListWidthModifiers.tsx" isFullscreen
 ```
