@@ -125,10 +125,8 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
     };
 
     const handleClick = (event: MouseEvent) => {
-      // If the event is on the toggle and was fired via keyboard 'click', focus the first
-      // non-disabled menu item
-      // https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/detail
-      if (event.detail === 0 && isOpen && toggleRef.current?.contains(event.target as Node)) {
+      // Focus the first non-disabled menu item on toggle 'click'
+      if (isOpen && toggleRef.current?.contains(event.target as Node)) {
         setTimeout(() => {
           const firstElement = menuRef?.current?.querySelector('li button:not(:disabled)');
           firstElement && (firstElement as HTMLElement).focus();

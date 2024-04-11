@@ -64,7 +64,7 @@ export const TableNestedExpandable: React.FunctionComponent = () => {
       <Table aria-label="Nested column headers with expandable rows table" gridBreakPoint="">
         <Thead hasNestedHeader>
           <Tr>
-            <Th rowSpan={2} />
+            <Th screenReaderText="Row expansion" rowSpan={2} />
             <Th width={35} rowSpan={2} hasRightBorder>
               {columnNames.team}
             </Th>

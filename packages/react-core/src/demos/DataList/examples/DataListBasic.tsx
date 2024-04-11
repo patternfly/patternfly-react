@@ -24,7 +24,7 @@ import {
   ToolbarContent
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -38,7 +38,7 @@ export const DataListBasic: React.FunctionComponent = () => {
 
   const toolbarItems = (
     <React.Fragment>
-      <ToolbarItem>
+      <ToolbarItem variant="bulk-select">
         <MenuToggle
           aria-label="Select cards"
           splitButtonOptions={{
@@ -55,13 +55,15 @@ export const DataListBasic: React.FunctionComponent = () => {
       <ToolbarItem>
         <MenuToggle>Filter by creator name</MenuToggle>
       </ToolbarItem>
-      <ToolbarItem>
+      <ToolbarItem variant="overflow-menu">
         <OverflowMenu breakpoint="md">
           <OverflowMenuItem>
             <Button variant="primary">Create instance</Button>
           </OverflowMenuItem>
           <OverflowMenuControl hasAdditionalOptions>
-            <MenuToggle aria-label="Toolbar kebab overflow menu" variant="plain" icon={<EllipsisVIcon />} />
+            <MenuToggle aria-label="Toolbar kebab overflow menu" variant="plain">
+              <EllipsisVIcon />
+            </MenuToggle>
           </OverflowMenuControl>
         </OverflowMenu>
       </ToolbarItem>

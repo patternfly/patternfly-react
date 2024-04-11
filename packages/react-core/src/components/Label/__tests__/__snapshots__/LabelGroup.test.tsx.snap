@@ -134,12 +134,12 @@ exports[`LabelGroup label group with category 1`] = `
       <span
         aria-hidden="true"
         class="pf-v6-c-label-group__label"
-        id="pf-random-id-1"
+        id="generated-id"
       >
         category
       </span>
       <ul
-        aria-labelledby="pf-random-id-1"
+        aria-labelledby="generated-id"
         class="pf-v6-c-label-group__list"
         role="list"
       >
@@ -177,12 +177,12 @@ exports[`LabelGroup label group with category and tooltip 1`] = `
       <span
         aria-hidden="true"
         class="pf-v6-c-label-group__label"
-        id="pf-random-id-4"
+        id="generated-id"
       >
         A very long category name
       </span>
       <ul
-        aria-labelledby="pf-random-id-4"
+        aria-labelledby="generated-id"
         class="pf-v6-c-label-group__list"
         role="list"
       >
@@ -220,12 +220,12 @@ exports[`LabelGroup label group with closable category 1`] = `
       <span
         aria-hidden="true"
         class="pf-v6-c-label-group__label"
-        id="pf-random-id-2"
+        id="generated-id"
       >
         category
       </span>
       <ul
-        aria-labelledby="pf-random-id-2"
+        aria-labelledby="generated-id"
         class="pf-v6-c-label-group__list"
         role="list"
       >
@@ -254,12 +254,12 @@ exports[`LabelGroup label group with closable category 1`] = `
       <button
         aria-disabled="false"
         aria-label="Close label group"
-        aria-labelledby="remove_group_pf-random-id-2 pf-random-id-2"
+        aria-labelledby="remove_group_generated-id generated-id"
         class="pf-v6-c-button pf-m-plain pf-m-no-padding"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
-        id="remove_group_pf-random-id-2"
+        id="remove_group_generated-id"
         type="button"
       >
         <svg

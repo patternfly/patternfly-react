@@ -35,7 +35,7 @@ export const TableSelectableRadio: React.FunctionComponent = () => {
     <Table aria-label="Selectable table">
       <Thead>
         <Tr>
-          <Th />
+          <Th screenReaderText="Row select" />
           <Th>{columnNames.name}</Th>
           <Th>{columnNames.branches}</Th>
           <Th>{columnNames.prs}</Th>

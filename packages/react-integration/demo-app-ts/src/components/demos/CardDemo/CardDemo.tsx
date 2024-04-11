@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Brand,
   Button,
@@ -33,7 +33,7 @@ interface CardDemoState {
   selectaleClickableDrawerIsExpanded: boolean;
 }
 
-class CardDemo extends Component {
+class CardDemo extends React.Component {
   static displayName = 'CardDemo';
 
   state: CardDemoState = {

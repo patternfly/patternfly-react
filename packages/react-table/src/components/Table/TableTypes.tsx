@@ -166,6 +166,8 @@ export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'>, P
   onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
   /** Flag indicating this action should be placed outside the actions menu, beside the toggle */
   isOutsideDropdown?: boolean;
+  /** Flag indicating whether the actions dropdown should close after an item is clicked. */
+  shouldCloseOnClick?: boolean;
 }
 
 export interface ISeparator extends IAction {

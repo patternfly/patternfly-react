@@ -6,6 +6,8 @@ import userEvent from '@testing-library/user-event';
 import { Label } from '../../Label';
 import { LabelGroup } from '../index';
 
+jest.mock('../../../helpers/GenerateId/GenerateId');
+
 describe('LabelGroup', () => {
   test('label group default', () => {
     const { asFragment } = render(

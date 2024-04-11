@@ -3,6 +3,62 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 7.3.0-prerelease.6 (2024-03-26)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.3.0-prerelease.5 (2024-03-22)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [7.3.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.3.0-prerelease.3...@patternfly/react-charts@7.3.0-prerelease.4) (2024-03-05)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.3.0-prerelease.3 (2024-02-28)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.3.0-prerelease.2 (2024-02-28)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.3.0-prerelease.1 (2024-02-14)
+
+### Bug Fixes
+
+- **charts:** adjust for Victory types changes ([#10082](https://github.com/patternfly/patternfly-react/issues/10082)) ([714eaca](https://github.com/patternfly/patternfly-react/commit/714eaca02f99f709a6aadc1d9dd58d25940f7403))
+
+# 7.3.0-prerelease.0 (2024-02-02)
+
+# 5.2.0 (2024-02-02)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.2.0 (2024-02-02)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.2.0-prerelease.10 (2024-01-15)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.2.0-prerelease.9 (2024-01-11)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.2.0-prerelease.8 (2023-12-11)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.2.0-prerelease.7 (2023-11-10)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 7.2.0-prerelease.6 (2023-11-03)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
 # 8.0.0-alpha.19 (2024-04-02)
 
 **Note:** Version bump only for package @patternfly/react-charts

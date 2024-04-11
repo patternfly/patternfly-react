@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { MultipleFileUpload } from '../MultipleFileUpload';
 
+jest.mock('../../../helpers/GenerateId/GenerateId');
+
 describe('MultipleFileUpload', () => {
   test('renders with expected class names when not horizontal', () => {
     const { asFragment } = render(<MultipleFileUpload>Foo</MultipleFileUpload>);

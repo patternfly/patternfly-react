@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.3.0-prerelease.0 (2024-02-02)
+
+# 5.2.0 (2024-02-02)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+## 5.2.1 (2024-02-02)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+## 5.2.1-prerelease.0 (2024-02-02)
+
+### Reverts
+
+- Revert release attempt (#10062) ([1cd0691](https://github.com/patternfly/patternfly-react/commit/1cd0691ebc90b323682c54b43295a6afd174a120)), closes [#10062](https://github.com/patternfly/patternfly-react/issues/10062)
+
 # 5.2.0-alpha.1 (2024-03-08)
 
 **Note:** Version bump only for package eslint-plugin-patternfly-react

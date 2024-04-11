@@ -16,7 +16,7 @@ import {
   Flex,
   FlexItem
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
 
 export const NestedTabs: React.FunctionComponent = () => {
