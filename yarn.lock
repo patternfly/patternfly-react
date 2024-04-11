@@ -2891,7 +2891,7 @@
     acorn-static-class-features "^1.0.0"
     astring "^1.7.5"
 
-"@patternfly/documentation-framework@^6.0.0-alpha.11":
+"@patternfly/documentation-framework@^6.0.0-alpha.20":
   version "6.0.0-alpha.20"
   resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-6.0.0-alpha.20.tgz#bdd66d2647b39d1422edeccfb51ff2e6e18d8191"
   integrity sha512-OVhzLMjSWFqmzPHFiWkN9EooYVF5xgy1R9CByr8+TOI8lrXvBs4ACkErf3LCHwqNkzsbuFB26M0NSqK8OQZq5A==
@@ -2981,33 +2981,6 @@
   version "6.0.0-alpha.117"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-6.0.0-alpha.117.tgz#ae62a787f99085acfecb4422fd1c08cace2fd23a"
   integrity sha512-AqN09ur+jQXqtu7mf1UD7YmFa9fsbeb3tuyMwxut7P9QW4dvdTkHhFC9zv5eaJ5v7M03vvKKtxteVwPLaDn2zA==
-
-"@patternfly/react-core@^5.3.0-prerelease.25":
-  version "5.3.0-prerelease.25"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-5.3.0-prerelease.25.tgz#da5fa26fe922e4af9078d19793badcf4ab06aaf1"
-  integrity sha512-H5ERaltsCqZYi/WYaFy82H58zg33hgkJBSzrcBZxhW2+kpL/F8Q2jSAQhSMcfwniLuKoURrThAsO4GvdvZHrYg==
-  dependencies:
-    "@patternfly/react-icons" "^5.3.0-prerelease.3"
-    "@patternfly/react-styles" "^5.3.0-prerelease.3"
-    "@patternfly/react-tokens" "^5.3.0-prerelease.3"
-    focus-trap "7.5.2"
-    react-dropzone "^14.2.3"
-    tslib "^2.5.0"
-
-"@patternfly/react-icons@^5.3.0-prerelease.3":
-  version "5.3.0-prerelease.3"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-icons/-/react-icons-5.3.0-prerelease.3.tgz#7438cb29db36de620eb24d100377ab2cc3ae7f8a"
-  integrity sha512-WkWnQPxCWbffsmtmHMhp0PpMkBLen1ZPFnpBL/HZIBcr/vU+3Je3CL/4SSY9X9q92st9plswhcgWdZrE626lTQ==
-
-"@patternfly/react-styles@^5.3.0-prerelease.3":
-  version "5.3.0-prerelease.3"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-styles/-/react-styles-5.3.0-prerelease.3.tgz#6bc327efb8f69f8dde5d77e605dadd2f4f768a24"
-  integrity sha512-AUwfTdPHFNufgkguIcGobP4L2yAsz9dQjCkz25ngY43Knl2oR+uUI4habnJBSSKNDSGqv0E+26oMJ+tpdBcrKw==
-
-"@patternfly/react-tokens@^5.3.0-prerelease.3":
-  version "5.3.0-prerelease.3"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-tokens/-/react-tokens-5.3.0-prerelease.3.tgz#2ab5e896ab29c5dc3c5d217c64f89c6685230756"
-  integrity sha512-x9bGIh9HQT1OKJiE9uDV03Va4LCI/yf3pW27iu9AfrC3YEaYEfzbhogCB51QO0kaQngkTeodhUiOxkm62To9fw==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
