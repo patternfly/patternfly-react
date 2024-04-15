@@ -603,13 +603,13 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     top: getPaddingForSide('top', padding, theme.pie.padding)
   };
   const chartRadius = radius
-    ? radius
+    ? Helpers.evaluateProp(radius, undefined)
     : Helpers.getRadius({
         height,
         width,
         padding: defaultPadding
       });
-  const chartInnerRadius = innerRadius ? innerRadius : chartRadius - 9; // Todo: Add pf-core variable
+  const chartInnerRadius = innerRadius ? Helpers.evaluateProp(innerRadius, undefined) : chartRadius - 9; // Todo: Add pf-core variable
   const centerSubTitle = subTitle && subTitlePosition === 'center';
 
   // Returns title and subtitle

@@ -208,7 +208,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
   theme = getTheme(themeColor),
   ...rest
 }: ChartLegendTooltipContentProps) => {
-  const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
+  const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength, undefined) : 10;
   const legendProps = getLegendTooltipDataProps(legendComponent.props);
   const visibleLegendData = getLegendTooltipVisibleData({
     activePoints,
@@ -230,7 +230,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
       const x = (rest as any).x;
       return x ? x : undefined;
     }
-    const _flyoutWidth = Helpers.evaluateProp(flyoutWidth);
+    const _flyoutWidth = Helpers.evaluateProp(flyoutWidth, undefined);
     if (width > center.x + _flyoutWidth + pointerLength) {
       return center.x + ChartLegendTooltipStyles.flyout.padding / 2;
     } else if (center.x < _flyoutWidth + pointerLength) {
@@ -246,7 +246,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
       const y = (rest as any).y;
       return y ? y : undefined;
     }
-    const _flyoutHeight = Helpers.evaluateProp(flyoutHeight);
+    const _flyoutHeight = Helpers.evaluateProp(flyoutHeight, undefined);
     if (center.y < _flyoutHeight / 2) {
       return ChartLegendTooltipStyles.flyout.padding / 2;
     } else if (center.y > height - _flyoutHeight / 2) {
@@ -290,8 +290,8 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
       },
       text: _title,
       textAnchor: 'start',
-      x: getX() + titleOffsetX + Helpers.evaluateProp(dx),
-      y: getY() + titleOffsetY + Helpers.evaluateProp(dy),
+      x: getX() + titleOffsetX + Helpers.evaluateProp(dx, undefined),
+      y: getY() + titleOffsetY + Helpers.evaluateProp(dy, undefined),
       ...titleComponent.props
     });
   };
@@ -312,8 +312,8 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
       patternScale,
       standalone: false,
       theme,
-      x: getX() + legendOffsetX + Helpers.evaluateProp(dx),
-      y: getY() + legendOffsetY + Helpers.evaluateProp(dy),
+      x: getX() + legendOffsetX + Helpers.evaluateProp(dx, undefined),
+      y: getY() + legendOffsetY + Helpers.evaluateProp(dy, undefined),
       ...legendProps
     });
 
