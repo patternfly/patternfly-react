@@ -32,7 +32,6 @@
         "rollup",
         "rollup-plugin-scss",
         "rollup-plugin-terser",
-        "shx",
         "surge",
         "ts-patch"
       ],
@@ -69,7 +68,6 @@
         "rollup",
         "rollup-plugin-scss",
         "rollup-plugin-terser",
-        "shx",
         "surge",
         "ts-patch"
       ]
