@@ -28,3 +28,8 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 ```js file="./DataList/examples/DataListExpandableControlInToolbar.tsx" isFullscreen
 ```
+
+### Static pagination
+
+```js file="./DataList/examples/DataListPagination.tsx" isFullscreen
+```
