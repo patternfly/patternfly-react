@@ -154,7 +154,7 @@ export const TableBulkSelect: React.FunctionComponent = () => {
         <Table aria-label="Selectable table">
           <Thead>
             <Tr>
-              <Th />
+              <Th screenReaderText="Row select" />
               <Th key={0}>{columns[0]}</Th>
               <Th key={1}>{columns[1]}</Th>
               <Th key={2}>{columns[2]}</Th>

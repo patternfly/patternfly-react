@@ -51,7 +51,7 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
             <Th>{columnNames.description}</Th>
             <Th>{columnNames.date}</Th>
             <Th>{columnNames.status}</Th>
-            <Th />
+            <Th screenReaderText="Actions" />
           </Tr>
         </Thead>
         <Tbody>
@@ -210,7 +210,8 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
                 <Th>{columnNames.prs}</Th>
                 <Th>{columnNames.workspaces}</Th>
                 <Th>{columnNames.lastCommit}</Th>
-                <Th />
+                <Th screenReaderText="URL" />
+                <Th screenReaderText="Actions" />
               </Tr>
             </Thead>
             {repositories.map((repo, rowIndex) => {

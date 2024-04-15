@@ -5,6 +5,7 @@ section: components
 
 import { css } from '@patternfly/react-styles';
 import display from '@patternfly/react-styles/css/utilities/Display/display';
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 ## Demos
 
@@ -24,7 +25,7 @@ import {
   Text
 } from '@patternfly/react-core';
 
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import { css } from '@patternfly/react-styles';
 import display from '@patternfly/react-styles/css/utilities/Display/display';
 
@@ -89,7 +90,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import { css } from '@patternfly/react-styles';
 import display from '@patternfly/react-styles/css/utilities/Display/display';
 
@@ -132,8 +133,8 @@ class BannerDemo extends React.Component {
               <PageSection>
                 <Gallery hasGutter>
                   {Array.from({ length: 30 }).map((_value, index) => (
-                    <GalleryItem key={i}>
-                      <Card key={i}>
+                    <GalleryItem key={index}>
+                      <Card key={index}>
                         <CardBody>This is a card</CardBody>
                       </Card>
                     </GalleryItem>

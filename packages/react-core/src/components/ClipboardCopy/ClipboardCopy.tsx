@@ -10,8 +10,22 @@ import { ClipboardCopyToggle } from './ClipboardCopyToggle';
 import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, text?: string) => {
-  navigator.clipboard.writeText(text.toString());
+export const clipboardCopyFunc = (_event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {
+  try {
+    navigator.clipboard.writeText(text.toString());
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      "Clipboard API not found, this copy function will not work. This is likely because you're using an",
+      "unsupported browser or you're not using HTTPS. \n\nIf you're a developer building an application which needs",
+      "to support copying to the clipboard without the clipboard API, you'll have to create your own copy",
+      'function and pass it to the ClipboardCopy component as the onCopy prop. For more information see',
+      'https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clipboard'
+    );
+
+    // eslint-disable-next-line no-console
+    console.error(error);
+  }
 };
 
 export enum ClipboardCopyVariant {
@@ -70,8 +84,8 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   exitDelay?: number;
   /** Delay in ms before the tooltip appears. */
   entryDelay?: number;
-  /** A function that is triggered on clicking the copy button. */
-  onCopy?: (event: React.ClipboardEvent<HTMLDivElement>, text?: string) => void;
+  /** A function that is triggered on clicking the copy button. This will replace the existing clipboard copy functionality entirely. */
+  onCopy?: (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => void;
   /** A function that is triggered on changing the text. */
   onChange?: (event: React.FormEvent, text?: string) => void;
   /** The text which is copied. */

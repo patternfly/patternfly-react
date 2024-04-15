@@ -88,7 +88,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
   const kebabDropdownItems = [<OverflowMenuDropdownItem key="kebab-1">Some action</OverflowMenuDropdownItem>];
 
   React.useEffect(() => {
-    setSortedRows(sortedData.slice((page - 1) * perPage, page * perPage - 1));
+    setSortedRows(sortedData.slice((page - 1) * perPage, page * perPage));
   }, [sortedData, page, perPage]);
 
   const handleSetPage = (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPage: number) => {

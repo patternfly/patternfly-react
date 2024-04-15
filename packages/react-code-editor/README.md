@@ -26,7 +26,19 @@ yarn add @patternfly/react-code-editor
 or
 
 ```
-npm install @patternfly/react-code-editor --save
+npm install @patternfly/react-code-editor
+```
+
+[!NOTE] For TypeScript type definitions, this package uses the `monaco-editor` package as a peer dependency. So, if you need types and don't already have the `monaco-editor package` installed, you will need to do so:
+
+```
+yarn add --dev monaco-editor
+```
+
+or
+
+```
+npm install --dev monaco-editor
 ```
 
 ### Usage
@@ -41,14 +53,6 @@ import '@patternfly/react-core/dist/styles/base.css';
 
 ```js
 import { CodeEditor } from '@patternfly/react-code-editor';
-```
-
-Install peer deps
-
-```json
-"monaco-editor": "^0.21.3",
-"react": "^17 || ^18",
-"react-dom": "^17 || ^18"
 ```
 
 #### With create-react-app Projects

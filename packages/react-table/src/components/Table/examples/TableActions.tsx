@@ -116,8 +116,8 @@ export const TableActions: React.FunctionComponent = () => {
             <Th>{columnNames.prs}</Th>
             <Th>{columnNames.workspaces}</Th>
             <Th>{columnNames.lastCommit}</Th>
-            <Td></Td>
-            <Td></Td>
+            <Th screenReaderText="Primary action" />
+            <Th screenReaderText="Secondary action" />
           </Tr>
         </Thead>
         <Tbody>

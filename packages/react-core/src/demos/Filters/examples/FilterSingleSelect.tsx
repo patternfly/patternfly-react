@@ -362,7 +362,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
       <Table aria-label="Selectable table">
         <Thead>
           <Tr>
-            <Th />
+            <Th screenReaderText="Row select" />
             <Th width={20}>{columnNames.name}</Th>
             <Th width={10}>{columnNames.threads}</Th>
             <Th width={10}>{columnNames.apps}</Th>
