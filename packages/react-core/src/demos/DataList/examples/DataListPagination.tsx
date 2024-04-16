@@ -306,7 +306,7 @@ export const DataListPagination: React.FunctionComponent = () => {
                 />
               </DataListItemRow>
             </DataListItem>
-            <DataListItem>{renderPagination()}</DataListItem>
+            <DataListItem aria-labelledby="pagination">{renderPagination()}</DataListItem>
           </DataList>
         </PageSection>
       </DashboardWrapper>
