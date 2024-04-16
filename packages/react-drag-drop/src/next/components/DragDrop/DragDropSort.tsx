@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { css } from '@patternfly/react-styles';
 import {
   DndContext,
@@ -22,6 +23,7 @@ import { Draggable } from './Draggable';
 import { DraggableDataListItem } from './DraggableDataListItem';
 import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
 import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
+import { canUseDOM } from '@patternfly/react-core';
 
 export type DragDropSortDragEndEvent = DragEndEvent;
 export type DragDropSortDragStartEvent = DragStartEvent;
@@ -135,6 +137,8 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
     );
   };
 
+  const dragOverlay = <DragOverlay>{activeId && getDragOverlay()}</DragOverlay>;
+
   const renderedChildren = (
     <SortableContext items={itemIds} strategy={verticalListSortingStrategy} id="droppable">
       {items.map((item: DraggableObject) => {
@@ -159,7 +163,7 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
             );
         }
       })}
-      <DragOverlay>{activeId && getDragOverlay()}</DragOverlay>
+      {canUseDOM ? ReactDOM.createPortal(dragOverlay, document.getElementById('root')) : dragOverlay}
     </SortableContext>
   );
 
