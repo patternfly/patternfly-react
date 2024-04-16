@@ -50,6 +50,8 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** Color variant of the toolbar */
+  colorVariant?: 'no-background' | 'primary' | 'secondary';
 }
 
 export interface ToolbarState {
@@ -136,6 +138,7 @@ class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       ouiaId,
       numberOfFiltersText,
       customChipGroupContent,
+      colorVariant,
       ...props
     } = this.props;
 
@@ -157,6 +160,9 @@ class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
               usePageInsets && styles.modifiers.pageInsets,
               isSticky && styles.modifiers.sticky,
               formatBreakpointMods(inset, styles, '', getBreakpoint(width)),
+              colorVariant === 'primary' && styles.modifiers.primary,
+              colorVariant === 'secondary' && styles.modifiers.secondary,
+              colorVariant === 'no-background' && styles.modifiers.noBackground,
               className
             )}
             id={randomId}
