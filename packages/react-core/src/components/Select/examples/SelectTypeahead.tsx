@@ -221,7 +221,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
         !isOpen && closeMenu();
       }}
       toggle={toggle}
-      shouldFocusFirstMenuItemOnOpen={false}
+      shouldFocusFirstItemOnOpen={false}
     >
       <SelectList id="select-typeahead-listbox">
         {selectOptions.map((option, index) => (
