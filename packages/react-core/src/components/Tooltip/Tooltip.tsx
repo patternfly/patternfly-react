@@ -136,6 +136,8 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
   id?: string;
   /** CSS fade transition animation duration */
   animationDuration?: number;
+  /** Determines whether the tooltip is hidden regardless of visibility **/
+  hidden?: boolean;
 }
 
 // id for associating trigger with the content aria-describedby or aria-labelledby
@@ -165,6 +167,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   triggerRef,
   'aria-live': ariaLive = triggerRef ? 'polite' : 'off',
   onTooltipHidden = () => {},
+  hidden = false,
   ...rest
 }: TooltipProps) => {
   // could make this a prop in the future (true | false | 'toggle')
@@ -277,7 +280,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       popperRef={popperRef}
       minWidth={minWidth !== undefined ? minWidth : 'revert'}
       appendTo={appendTo}
-      isVisible={visible}
+      isVisible={!hidden && visible}
       positionModifiers={positionModifiers}
       distance={distance}
       placement={position}
