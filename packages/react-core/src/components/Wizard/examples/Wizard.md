@@ -59,6 +59,15 @@ import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 ```ts file="./WizardBasic.tsx"
 ```
 
+### Focus content on next/back
+
+To focus the main content element of the `Wizard`, pass in the `shouldFocusContentOnNextOrBack` property. It is recommended that this is passed in so that users can navigate through a `WizardStep` content in order.
+
+If a `WizardStep` is passed a `body={null}` property, you must manually handle focus.
+
+```ts file="./WizardFocusOnNextBack.tsx"
+```
+
 ### Basic with disabled steps
 
 ```ts file="./WizardBasicDisabledSteps.tsx"
