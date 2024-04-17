@@ -16,7 +16,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import { DashboardHeader } from '@patternfly/react-core/dis/js/demos/DashboardHeader';
+import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
 
 export const NavLight: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState<string | number>(0);
