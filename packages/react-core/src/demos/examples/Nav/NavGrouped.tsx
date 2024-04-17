@@ -12,7 +12,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import { DashboardHeader } from '@patternfly/react-core/src/demos/DashboardHeader';
+import { DashboardHeader } from '@patternfly/react-core/dis/js/demos/DashboardHeader';
 
 export const NavGrouped: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState<number | string>('grp-1_itm-1');
