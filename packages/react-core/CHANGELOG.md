@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.25...@patternfly/react-core@5.3.0-prerelease.26) (2024-04-17)
+
+### Bug Fixes
+
+- **demos:** Fixed the broken alert and navigation demos ([#10286](https://github.com/patternfly/patternfly-react/issues/10286)) ([7476fe4](https://github.com/patternfly/patternfly-react/commit/7476fe4740a6bd7e14b59596437d012509aaab61))
+
 # [5.3.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.24...@patternfly/react-core@5.3.0-prerelease.25) (2024-04-09)
 
 **Note:** Version bump only for package @patternfly/react-core
