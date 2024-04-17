@@ -28,11 +28,11 @@ export interface WizardContextProps {
   getStep: (stepId: number | string) => WizardStepType;
   /** Set step by ID */
   setStep: (step: Pick<WizardStepType, 'id'> & Partial<WizardStepType>) => void;
-  /** @beta Flag indicating whether the wizard content should be focused after the onNext or onBack callbacks
+  /** Flag indicating whether the wizard content should be focused after the onNext or onBack callbacks
    * are called.
    */
   shouldFocusContentOnNextOrBack: boolean;
-  /** @beta Ref for main wizard content element. */
+  /** Ref for main wizard content element. */
   mainWrapperRef: React.RefObject<HTMLElement>;
 }
 
