@@ -36,15 +36,14 @@ export const WizardBody = ({
 }: WizardBodyProps) => {
   const [hasScrollbar, setHasScrollbar] = React.useState(false);
   const [previousWidth, setPreviousWidth] = React.useState<number | undefined>(undefined);
-  const wrapperRef = React.useRef(null);
   const WrapperComponent = component;
-  const { activeStep } = React.useContext(WizardContext);
+  const { activeStep, shouldFocusContentOnNextOrBack, mainWrapperRef } = React.useContext(WizardContext);
   const defaultAriaLabel = ariaLabel || `${activeStep?.name} content`;
 
   React.useEffect(() => {
     const resize = () => {
-      if (wrapperRef?.current) {
-        const { offsetWidth, offsetHeight, scrollHeight } = wrapperRef.current;
+      if (mainWrapperRef?.current) {
+        const { offsetWidth, offsetHeight, scrollHeight } = mainWrapperRef.current;
 
         if (previousWidth !== offsetWidth) {
           setPreviousWidth(offsetWidth);
@@ -56,12 +55,12 @@ export const WizardBody = ({
     const handleResizeWithDelay = debounce(resize, 250);
     let observer = () => {};
 
-    if (wrapperRef?.current) {
-      observer = getResizeObserver(wrapperRef.current, handleResizeWithDelay);
-      const { offsetHeight, scrollHeight } = wrapperRef.current;
+    if (mainWrapperRef?.current) {
+      observer = getResizeObserver(mainWrapperRef.current, handleResizeWithDelay);
+      const { offsetHeight, scrollHeight } = mainWrapperRef.current;
 
       setHasScrollbar(offsetHeight < scrollHeight);
-      setPreviousWidth((wrapperRef.current as HTMLElement).offsetWidth);
+      setPreviousWidth((mainWrapperRef.current as HTMLElement).offsetWidth);
     }
 
     return () => {
@@ -71,7 +70,8 @@ export const WizardBody = ({
 
   return (
     <WrapperComponent
-      ref={wrapperRef}
+      ref={mainWrapperRef}
+      {...(shouldFocusContentOnNextOrBack && { tabIndex: -1 })}
       {...(component === 'div' && hasScrollbar && { role: 'region' })}
       {...(hasScrollbar && { 'aria-label': defaultAriaLabel, 'aria-labelledby': ariaLabelledBy, tabIndex: 0 })}
       className={css(styles.wizardMain)}
