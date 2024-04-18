@@ -97,6 +97,10 @@ async function generatePackages(components) {
 async function generateDynamicModuleMap() {
   const moduleMap = getDynamicModuleMap(root);
 
+  if (Object.keys(moduleMap).length === 0) {
+    return Promise.resolve();
+  }
+
   const moduleMapSorted = Object.keys(moduleMap)
     .sort()
     .reduce((acc, key) => ({ ...acc, [key]: moduleMap[key] }), {});
