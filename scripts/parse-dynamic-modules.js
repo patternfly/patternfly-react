@@ -5,13 +5,16 @@ const glob = require('glob');
 const ts = require('typescript');
 
 /** @type {ts.CompilerOptions} */
+const tsConfigBase = require(path.resolve(__dirname, '../packages/tsconfig.base.json'));
+
+/** @type {ts.CompilerOptions} */
 const defaultCompilerOptions = {
-  target: ts.ScriptTarget.ES2020,
-  module: ts.ModuleKind.ESNext,
-  moduleResolution: ts.ModuleResolutionKind.NodeJs,
+  target: tsConfigBase.target,
+  module: tsConfigBase.module,
+  moduleResolution: tsConfigBase.moduleResolution,
+  esModuleInterop: tsConfigBase.esModuleInterop,
   allowJs: true,
   strict: false,
-  esModuleInterop: true,
   skipLibCheck: true,
   noEmit: true
 };
@@ -38,9 +41,11 @@ const defaultCompilerOptions = {
  * import { Alert } from '@patternfly/react-core/dist/dynamic/components/Alert';
  * ```
  *
- * It may happen that the same export is provided by multiple dynamic modules; in such case,
- * the resolution favors non-deprecated modules with most specific file paths, for example
+ * It may happen that the same export is provided by multiple dynamic modules;
+ * in such case, the resolution favors modules with most specific file paths, for example
  * `dist/dynamic/components/Wizard/hooks` is favored over `dist/dynamic/components/Wizard`.
+ *
+ * Dynamic modules nested under `deprecated` or `next` directories are ignored.
  *
  * If the referenced index module does not exist, an empty object is returned.
  *
@@ -138,16 +143,13 @@ const getDynamicModuleMap = (
       dynamicModuleExports[modulePath].includes(exportName)
     );
 
-    if (foundModulePaths.length > 0) {
-      const nonDeprecatedModulePaths = foundModulePaths.filter(
-        (modulePath) => !modulePath.split(path.sep).includes('deprecated')
-      );
+    const filteredModulePaths = foundModulePaths.filter((modulePath) => {
+      const dirNames = path.dirname(modulePath).split(path.sep);
+      return !dirNames.includes('deprecated') && !dirNames.includes('next');
+    });
 
-      const targetModulePath = getMostSpecificModulePath(
-        nonDeprecatedModulePaths.length > 0 ? nonDeprecatedModulePaths : foundModulePaths
-      );
-
-      acc[exportName] = dynamicModulePathToPkgDir[targetModulePath];
+    if (filteredModulePaths.length > 0) {
+      acc[exportName] = dynamicModulePathToPkgDir[getMostSpecificModulePath(filteredModulePaths)];
     }
 
     return acc;
