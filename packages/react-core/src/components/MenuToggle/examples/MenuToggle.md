@@ -193,7 +193,7 @@ import { MenuToggle } from '@patternfly/react-core';
 </React.Fragment>
 ```
 
-### Split button toggle with checkbox
+### Split toggle with checkbox
 
 To add a checkbox (or other action/control) to a menu toggle, use a split button. 
 
@@ -207,7 +207,7 @@ Variant styling can be applied to split button toggles to adjust their appearanc
 
 ```
 
-### Split button toggle with checkbox and text label
+### Split toggle with labeled checkbox
 
 To add a text label to a split button toggle, pass `children` to the `<MenuToggle>` component.
 
@@ -215,7 +215,7 @@ To add a text label to a split button toggle, pass `children` to the `<MenuToggl
 
 ```
 
-### Split button toggle with checkbox and clickable text label  
+### Split toggle with checkbox and toggle text label
 
 You can allow users to select a toggle checkbox by clicking either the checkbox or the text label.
 
@@ -225,7 +225,7 @@ To do so, pass `children` to the `<MenuToggleCheckbox>` component. When the menu
 
 ```
 
-### Split button toggle with action
+### Split toggle with action
 
 To add an action to a split button, pass `variant='action'` into `splitButtonOptions` and add a `<MenuToggleAction>` to the `items` property of `splitButtonOptions`.
 
