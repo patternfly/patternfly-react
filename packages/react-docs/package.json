@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "6.4.0-prerelease.1",
+  "version": "6.4.0-prerelease.2",
   "publishConfig": {
     "access": "public"
   },
@@ -23,15 +23,15 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "5.3.0-prerelease.5",
-    "@patternfly/react-charts": "^7.4.0-prerelease.0",
-    "@patternfly/react-code-editor": "^5.4.0-prerelease.1",
-    "@patternfly/react-core": "^5.4.0-prerelease.1",
-    "@patternfly/react-drag-drop": "^5.4.0-prerelease.1",
-    "@patternfly/react-icons": "^5.4.0-prerelease.0",
-    "@patternfly/react-styles": "^5.4.0-prerelease.0",
-    "@patternfly/react-table": "^5.4.0-prerelease.1",
-    "@patternfly/react-templates": "^1.1.0-prerelease.1",
-    "@patternfly/react-tokens": "^5.4.0-prerelease.0"
+    "@patternfly/react-charts": "^7.4.0-prerelease.1",
+    "@patternfly/react-code-editor": "^5.4.0-prerelease.2",
+    "@patternfly/react-core": "^5.4.0-prerelease.2",
+    "@patternfly/react-drag-drop": "^5.4.0-prerelease.2",
+    "@patternfly/react-icons": "^5.4.0-prerelease.1",
+    "@patternfly/react-styles": "^5.4.0-prerelease.1",
+    "@patternfly/react-table": "^5.4.0-prerelease.2",
+    "@patternfly/react-templates": "^1.1.0-prerelease.2",
+    "@patternfly/react-tokens": "^5.4.0-prerelease.1"
   },
   "devDependencies": {
     "@patternfly/documentation-framework": "^5.8.2",
