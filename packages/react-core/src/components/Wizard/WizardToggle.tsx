@@ -103,7 +103,7 @@ export const WizardToggle = ({
         </span>
       </button>
       <div className={css(styles.wizardOuterWrap)}>
-        <div aria-live="polite" className={css(styles.wizardInnerWrap)}>
+        <div className={css(styles.wizardInnerWrap)}>
           {nav}
           {bodyContent}
         </div>
