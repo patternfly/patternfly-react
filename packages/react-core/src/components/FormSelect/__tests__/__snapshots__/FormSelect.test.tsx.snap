@@ -9,7 +9,7 @@ exports[`FormSelect Disabled FormSelect input  1`] = `
       aria-invalid="false"
       aria-label="disabled FormSelect"
       data-ouia-component-id="OUIA-Generated-FormSelect-default-3"
-      data-ouia-component-type="PF5/FormSelect"
+      data-ouia-component-type="PF6/FormSelect"
       data-ouia-safe="true"
       disabled=""
     >
@@ -54,7 +54,7 @@ exports[`FormSelect FormSelect input with aria-label does not generate console e
       aria-invalid="false"
       aria-label="label"
       data-ouia-component-id="OUIA-Generated-FormSelect-default-4"
-      data-ouia-component-type="PF5/FormSelect"
+      data-ouia-component-type="PF6/FormSelect"
       data-ouia-safe="true"
     >
       <option
@@ -98,7 +98,7 @@ exports[`FormSelect FormSelect input with id does not generate console error 1`]
       aria-invalid="false"
       aria-label="label"
       data-ouia-component-id="OUIA-Generated-FormSelect-default-5"
-      data-ouia-component-type="PF5/FormSelect"
+      data-ouia-component-type="PF6/FormSelect"
       data-ouia-safe="true"
       id="id"
     >
@@ -142,7 +142,7 @@ exports[`FormSelect FormSelect input with no aria-label or id generates console 
     <select
       aria-invalid="false"
       data-ouia-component-id="OUIA-Generated-FormSelect-default-6"
-      data-ouia-component-type="PF5/FormSelect"
+      data-ouia-component-type="PF6/FormSelect"
       data-ouia-safe="true"
     >
       <option
@@ -186,7 +186,7 @@ exports[`FormSelect Grouped FormSelect input 1`] = `
       aria-invalid="false"
       aria-label="grouped FormSelect"
       data-ouia-component-id="OUIA-Generated-FormSelect-default-2"
-      data-ouia-component-type="PF5/FormSelect"
+      data-ouia-component-type="PF6/FormSelect"
       data-ouia-safe="true"
     >
       <optgroup
@@ -276,7 +276,7 @@ exports[`FormSelect Simple FormSelect input 1`] = `
       aria-invalid="false"
       aria-label="simple FormSelect"
       data-ouia-component-id="OUIA-Generated-FormSelect-default-1"
-      data-ouia-component-type="PF5/FormSelect"
+      data-ouia-component-type="PF6/FormSelect"
       data-ouia-safe="true"
     >
       <option
@@ -358,7 +358,7 @@ exports[`FormSelect invalid FormSelect input 1`] = `
       aria-invalid="true"
       aria-label="invalid FormSelect"
       data-ouia-component-id="OUIA-Generated-FormSelect-error-1"
-      data-ouia-component-type="PF5/FormSelect"
+      data-ouia-component-type="PF6/FormSelect"
       data-ouia-safe="true"
     >
       <option
@@ -419,7 +419,7 @@ exports[`FormSelect validated success FormSelect input 1`] = `
       aria-invalid="false"
       aria-label="validated FormSelect"
       data-ouia-component-id="OUIA-Generated-FormSelect-success-1"
-      data-ouia-component-type="PF5/FormSelect"
+      data-ouia-component-type="PF6/FormSelect"
       data-ouia-safe="true"
     >
       <option
@@ -480,7 +480,7 @@ exports[`FormSelect validated warning FormSelect input 1`] = `
       aria-invalid="false"
       aria-label="validated FormSelect"
       data-ouia-component-id="OUIA-Generated-FormSelect-warning-1"
-      data-ouia-component-type="PF5/FormSelect"
+      data-ouia-component-type="PF6/FormSelect"
       data-ouia-safe="true"
     >
       <option

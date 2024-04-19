@@ -8,7 +8,7 @@ exports[`Matches snapshot 1`] = `
     aria-live="polite"
     class="pf-v6-c-alert pf-m-custom"
     data-ouia-component-id="ouia-id"
-    data-ouia-component-type="PF5/Alert"
+    data-ouia-component-type="PF6/Alert"
     data-ouia-safe="true"
   >
     <div>

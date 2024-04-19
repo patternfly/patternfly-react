@@ -11,7 +11,7 @@ exports[`chip group renders to match snapshot 1`] = `
       <ul
         aria-label="Chip group category"
         class="pf-v6-c-label-group__list"
-        data-ouia-component-type="PF5/ChipGroup"
+        data-ouia-component-type="PF6/ChipGroup"
         data-ouia-safe="true"
         role="list"
       >

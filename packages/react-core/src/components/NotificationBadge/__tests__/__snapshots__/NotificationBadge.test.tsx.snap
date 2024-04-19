@@ -7,7 +7,7 @@ exports[`NotificationBadge count 1`] = `
     aria-expanded="false"
     class="pf-v6-c-button pf-m-stateful pf-m-read"
     data-ouia-component-id="OUIA-Generated-Button-stateful-3"
-    data-ouia-component-type="PF5/Button"
+    data-ouia-component-type="PF6/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -40,7 +40,7 @@ exports[`false NotificationBadge needs attention 1`] = `
     aria-expanded="false"
     class="pf-v6-c-button pf-m-stateful pf-m-attention"
     data-ouia-component-id="OUIA-Generated-Button-stateful-2"
-    data-ouia-component-type="PF5/Button"
+    data-ouia-component-type="PF6/Button"
     data-ouia-safe="true"
     type="button"
   >
@@ -56,7 +56,7 @@ exports[`true NotificationBadge needs attention 1`] = `
     aria-expanded="false"
     class="pf-v6-c-button pf-m-stateful pf-m-attention"
     data-ouia-component-id="OUIA-Generated-Button-stateful-1"
-    data-ouia-component-type="PF5/Button"
+    data-ouia-component-type="PF6/Button"
     data-ouia-safe="true"
     type="button"
   >

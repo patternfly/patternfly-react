@@ -3,7 +3,7 @@
 exports[`should render tab button 1`] = `
 <DocumentFragment>
   <button
-    data-ouia-component-type="PF5/TabButton"
+    data-ouia-component-type="PF6/TabButton"
     data-ouia-safe="true"
     type="button"
   >

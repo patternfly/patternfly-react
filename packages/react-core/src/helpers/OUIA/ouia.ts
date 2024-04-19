@@ -33,7 +33,7 @@ const ouiaIdByRoute: any = {};
  */
 export function getOUIAProps(componentType: string, id: OuiaId, ouiaSafe: boolean = true) {
   return {
-    'data-ouia-component-type': `PF5/${componentType}`,
+    'data-ouia-component-type': `PF6/${componentType}`,
     'data-ouia-safe': ouiaSafe,
     'data-ouia-component-id': id
   };
@@ -49,7 +49,7 @@ export function getOUIAProps(componentType: string, id: OuiaId, ouiaSafe: boolea
  * @param {string} variant Optional variant to add to the generated ID
  */
 export const useOUIAProps = (componentType: string, id?: OuiaId, ouiaSafe: boolean = true, variant?: string) => ({
-  'data-ouia-component-type': `PF5/${componentType}`,
+  'data-ouia-component-type': `PF6/${componentType}`,
   'data-ouia-safe': ouiaSafe,
   'data-ouia-component-id': useOUIAId(componentType, id, variant)
 });

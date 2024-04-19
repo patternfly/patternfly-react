@@ -11,7 +11,7 @@ exports[`match snapshot 1`] = `
       <div
         class="customClass"
         data-ouia-component-id="dropdown"
-        data-ouia-component-type="PF5/Dropdown"
+        data-ouia-component-type="PF6/Dropdown"
         data-ouia-safe="true"
         data-testid="menu-mock"
       >

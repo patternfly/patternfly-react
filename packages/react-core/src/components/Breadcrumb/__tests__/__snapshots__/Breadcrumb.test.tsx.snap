@@ -6,7 +6,7 @@ exports[`Breadcrumb component should render breadcrumb with aria-label 1`] = `
     aria-label="custom label"
     class="pf-v6-c-breadcrumb"
     data-ouia-component-id="OUIA-Generated-Breadcrumb-3"
-    data-ouia-component-type="PF5/Breadcrumb"
+    data-ouia-component-type="PF6/Breadcrumb"
     data-ouia-safe="true"
   >
     <ol
@@ -23,7 +23,7 @@ exports[`Breadcrumb component should render breadcrumb with children 1`] = `
     aria-label="Breadcrumb"
     class="pf-v6-c-breadcrumb"
     data-ouia-component-id="OUIA-Generated-Breadcrumb-4"
-    data-ouia-component-type="PF5/Breadcrumb"
+    data-ouia-component-type="PF6/Breadcrumb"
     data-ouia-safe="true"
   >
     <ol
@@ -79,7 +79,7 @@ exports[`Breadcrumb component should render breadcrumb with className 1`] = `
     aria-label="Breadcrumb"
     class="pf-v6-c-breadcrumb className"
     data-ouia-component-id="OUIA-Generated-Breadcrumb-2"
-    data-ouia-component-type="PF5/Breadcrumb"
+    data-ouia-component-type="PF6/Breadcrumb"
     data-ouia-safe="true"
   >
     <ol
@@ -96,7 +96,7 @@ exports[`Breadcrumb component should render default breadcrumb 1`] = `
     aria-label="Breadcrumb"
     class="pf-v6-c-breadcrumb"
     data-ouia-component-id="OUIA-Generated-Breadcrumb-1"
-    data-ouia-component-type="PF5/Breadcrumb"
+    data-ouia-component-type="PF6/Breadcrumb"
     data-ouia-safe="true"
   >
     <ol
