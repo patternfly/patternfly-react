@@ -21,7 +21,8 @@ import {
   TextVariants,
   Toolbar,
   ToolbarItem,
-  ToolbarContent
+  ToolbarContent,
+  PaginationVariant
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
@@ -29,24 +30,64 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import { rows, getRandomInteger } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
 export const DataListPagination: React.FunctionComponent = () => {
-  const renderPagination = () => <Pagination itemCount={5} page={1} variant="top" isCompact />;
+  const [page, setPage] = React.useState<number | undefined>(1);
+  const [perPage, setPerPage] = React.useState<number>(10);
+  const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
+
+  const handleSetPage = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPage: number,
+    _perPage: number | undefined,
+    startIdx: number | undefined,
+    endIdx: number | undefined
+  ) => {
+    setPaginatedRows(rows?.slice(startIdx, endIdx));
+    setPage(newPage);
+  };
+
+  const handlePerPageSelect = (
+    _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    newPerPage: number,
+    newPage: number | undefined,
+    startIdx: number | undefined,
+    endIdx: number | undefined
+  ) => {
+    setPaginatedRows(rows.slice(startIdx, endIdx));
+    setPage(newPage);
+    setPerPage(newPerPage);
+  };
+
+  const renderPagination = (id: string, variant: PaginationVariant, isCompact: boolean, isSticky: boolean) => (
+    <Pagination
+      id={id}
+      variant={variant}
+      itemCount={rows.length}
+      page={page}
+      perPage={perPage}
+      isCompact={isCompact}
+      isSticky={isSticky}
+      onSetPage={handleSetPage}
+      onPerPageSelect={handlePerPageSelect}
+      titles={{
+        paginationAriaLabel: `${variant} pagination`
+      }}
+    />
+  );
 
   const toolbarItems = (
     <React.Fragment>
       <ToolbarItem variant="bulk-select">
         <MenuToggle
-          aria-label="Select cards"
+          aria-label="Select data list items"
           splitButtonOptions={{
             items: [
               <MenuToggleCheckbox
                 id="split-dropdown-checkbox"
                 key="split-dropdown-checkbox"
-                aria-label={'Select all cards'}
+                aria-label={'Select all data list items'}
               />
             ]
           }}
@@ -68,14 +109,14 @@ export const DataListPagination: React.FunctionComponent = () => {
         </OverflowMenu>
       </ToolbarItem>
       <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
-        {renderPagination()}
+        {renderPagination('top-pagination', PaginationVariant.top, false, false)}
       </ToolbarItem>
     </React.Fragment>
   );
 
   return (
     <React.Fragment>
-      <DashboardWrapper mainContainerId="main-content-datalist-view-default-nav" breadcrumb={null}>
+      <DashboardWrapper mainContainerId="main-content-datalist-view-pagination" breadcrumb={null}>
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Projects</Text>
@@ -87,227 +128,60 @@ export const DataListPagination: React.FunctionComponent = () => {
             <ToolbarContent>{toolbarItems}</ToolbarContent>
           </Toolbar>
           <DataList aria-label="Demo data list">
-            <DataListItem aria-labelledby="Demo-item1">
-              <DataListItemRow>
-                <DataListItemCells
-                  dataListCells={[
-                    <DataListCell isFilled={false} key="buttons1">
-                      <Flex direction={{ default: 'column' }}>
-                        <FlexItem>
-                          <Text component={TextVariants.p}>patternfly</Text>
-                        </FlexItem>
-                        <FlexItem>
-                          <Text component={TextVariants.small}>
-                            Working repo for
-                            <a href="http://www.patternfly.org/">PatternFly</a>
-                          </Text>
-                        </FlexItem>
-                        <FlexItem>
-                          <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+            {paginatedRows.map((row, rowIndex) => {
+              const { name, threads, applications, workspaces } = row;
+              return (
+                <DataListItem aria-labelledby={`Demo-item-${rowIndex}`} key={rowIndex}>
+                  <DataListItemRow>
+                    <DataListItemCells
+                      dataListCells={[
+                        <DataListCell isFilled={false} key="buttons1">
+                          <Flex direction={{ default: 'column' }}>
                             <FlexItem>
-                              <CodeBranchIcon /> 10
+                              <Text id={`Demo-item-${rowIndex}`} component={TextVariants.p}>
+                                {name}
+                              </Text>
                             </FlexItem>
                             <FlexItem>
-                              <CodeIcon /> 4
+                              <Text component={TextVariants.small}>
+                                Working repo for
+                                <a href="http://www.patternfly.org/">PatternFly</a>
+                              </Text>
                             </FlexItem>
                             <FlexItem>
-                              <CubeIcon /> 5
+                              <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                                <FlexItem>
+                                  <CodeBranchIcon /> {threads}
+                                </FlexItem>
+                                <FlexItem>
+                                  <CodeIcon /> {applications}
+                                </FlexItem>
+                                <FlexItem>
+                                  <CubeIcon /> {workspaces}
+                                </FlexItem>
+                                <FlexItem> Updated {getRandomInteger(1, rowIndex)} days ago</FlexItem>
+                              </Flex>
                             </FlexItem>
-                            <FlexItem> Updated 2 days ago</FlexItem>
                           </Flex>
-                        </FlexItem>
-                      </Flex>
-                    </DataListCell>,
-                    <DataListCell isFilled={false} alignRight key="secondary content align">
-                      <Flex>
-                        <FlexItem>
-                          <Button variant="secondary">Action</Button>
-                        </FlexItem>
-                        <FlexItem>
-                          <a href="#">Link</a>
-                        </FlexItem>
-                      </Flex>
-                    </DataListCell>
-                  ]}
-                />
-              </DataListItemRow>
-            </DataListItem>
-            <DataListItem aria-labelledby="Demo-item2">
-              <DataListItemRow>
-                <DataListItemCells
-                  dataListCells={[
-                    <DataListCell isFilled={false} key="buttons2">
-                      <Flex direction={{ default: 'column' }}>
-                        <FlexItem>
-                          <Text component={TextVariants.small}>patternfly-elements</Text>
-                        </FlexItem>
-                        <FlexItem>
-                          <Text component={TextVariants.small}>PatternFly elements</Text>
-                        </FlexItem>
-                        <FlexItem>
-                          <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                        </DataListCell>,
+                        <DataListCell isFilled={false} alignRight key="secondary content align">
+                          <Flex>
                             <FlexItem>
-                              <CodeBranchIcon /> 5
+                              <Button variant="secondary">Action</Button>
                             </FlexItem>
                             <FlexItem>
-                              <CodeIcon /> 9
+                              <a href="#">Link</a>
                             </FlexItem>
-                            <FlexItem>
-                              <CubeIcon /> 2
-                            </FlexItem>
-                            <FlexItem>
-                              <CheckCircleIcon />
-                              11
-                            </FlexItem>
-                            <FlexItem>
-                              <ExclamationTriangleIcon /> 4
-                            </FlexItem>
-                            <FlexItem>
-                              <TimesCircleIcon /> 1
-                            </FlexItem>
-                            <FlexItem> Updated 2 days ago</FlexItem>
                           </Flex>
-                        </FlexItem>
-                      </Flex>
-                    </DataListCell>,
-                    <DataListCell isFilled={false} alignRight key="secondary content align">
-                      <Flex>
-                        <FlexItem>
-                          <Button variant="secondary">Action</Button>
-                        </FlexItem>
-                        <FlexItem>
-                          <a href="#">Link</a>
-                        </FlexItem>
-                      </Flex>
-                    </DataListCell>
-                  ]}
-                />
-              </DataListItemRow>
-            </DataListItem>
-            <DataListItem>
-              <DataListItemRow>
-                <DataListItemCells
-                  dataListCells={[
-                    <DataListCell isFilled={false} key="Demo-item3">
-                      <Flex direction={{ default: 'column' }}>
-                        <FlexItem>
-                          <Text component={TextVariants.small}>patternfly-unified-design-kit</Text>
-                        </FlexItem>
-                      </Flex>
-                    </DataListCell>,
-                    <DataListCell isFilled={false} alignRight key="buttons3">
-                      <Flex>
-                        <FlexItem>
-                          <Button variant="secondary">Action</Button>
-                        </FlexItem>
-                        <FlexItem>
-                          <a href="#">Link</a>
-                        </FlexItem>
-                      </Flex>
-                    </DataListCell>
-                  ]}
-                />
-              </DataListItemRow>
-            </DataListItem>
-            <DataListItem aria-labelledby="Demo-item4">
-              <DataListItemRow>
-                <DataListItemCells
-                  dataListCells={[
-                    <DataListCell isFilled={false} key="buttons4">
-                      <Flex direction={{ default: 'column' }}>
-                        <FlexItem>
-                          <Text component={TextVariants.small}>patternfly</Text>
-                        </FlexItem>
-                        <FlexItem>
-                          <Text component={TextVariants.small}>
-                            Working repo for
-                            <a href="http://www.patternfly.org/">PatternFly</a>
-                          </Text>
-                        </FlexItem>
-                        <FlexItem>
-                          <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                            <FlexItem>
-                              <CodeBranchIcon />
-                              10
-                            </FlexItem>
-                            <FlexItem>
-                              <CodeIcon /> 4
-                            </FlexItem>
-                            <FlexItem>
-                              <CubeIcon /> 5
-                            </FlexItem>
-                            <FlexItem> Updated 2 days ago</FlexItem>
-                          </Flex>
-                        </FlexItem>
-                      </Flex>
-                    </DataListCell>,
-                    <DataListCell isFilled={false} alignRight key="secondary content align">
-                      <Flex>
-                        <FlexItem>
-                          <Button variant="secondary">Action</Button>
-                        </FlexItem>
-                        <FlexItem>
-                          <a href="#">Link</a>
-                        </FlexItem>
-                      </Flex>
-                    </DataListCell>
-                  ]}
-                />
-              </DataListItemRow>
-            </DataListItem>
-            <DataListItem aria-labelledby="Demo-item5">
-              <DataListItemRow>
-                <DataListItemCells
-                  dataListCells={[
-                    <DataListCell isFilled={false} key="buttons5">
-                      <Flex direction={{ default: 'column' }}>
-                        <FlexItem>
-                          <Text component={TextVariants.small}>patternfly-elements</Text>
-                        </FlexItem>
-                        <FlexItem>
-                          <Text component={TextVariants.small}>PatternFly elements</Text>
-                        </FlexItem>
-                        <FlexItem>
-                          <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                            <FlexItem>
-                              <CodeBranchIcon /> 5
-                            </FlexItem>
-                            <FlexItem>
-                              <CodeIcon /> 9
-                            </FlexItem>
-                            <FlexItem>
-                              <CubeIcon /> 2
-                            </FlexItem>
-                            <FlexItem>
-                              <CheckCircleIcon /> 11
-                            </FlexItem>
-                            <FlexItem>
-                              <ExclamationTriangleIcon /> 4
-                            </FlexItem>
-                            <FlexItem>
-                              <TimesCircleIcon /> 1
-                            </FlexItem>
-                            <FlexItem> Updated 2 days ago</FlexItem>
-                          </Flex>
-                        </FlexItem>
-                      </Flex>
-                    </DataListCell>,
-                    <DataListCell isFilled={false} alignRight key="secondary content align">
-                      <Flex>
-                        <FlexItem>
-                          <Button variant="secondary">Action</Button>
-                        </FlexItem>
-                        <FlexItem>
-                          <a href="#">Link</a>
-                        </FlexItem>
-                      </Flex>
-                    </DataListCell>
-                  ]}
-                />
-              </DataListItemRow>
-            </DataListItem>
-            <DataListItem aria-labelledby="pagination">{renderPagination()}</DataListItem>
+                        </DataListCell>
+                      ]}
+                    />
+                  </DataListItemRow>
+                </DataListItem>
+              );
+            })}
           </DataList>
+          {renderPagination('bottom-pagination', PaginationVariant.bottom, true, true)}
         </PageSection>
       </DashboardWrapper>
     </React.Fragment>
