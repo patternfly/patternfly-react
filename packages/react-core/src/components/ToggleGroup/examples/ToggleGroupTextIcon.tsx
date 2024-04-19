@@ -46,7 +46,7 @@ export const ToggleGroupIcon: React.FunctionComponent = () => {
           iconPosition="end"
           text="Copy"
           buttonId="toggle-group-text-icons-1"
-          isSelected={isSelected['toggle-group-text-icons-1']}
+          isSelected={isSelected['toggle-group-text-icons-4']}
           onChange={handleItemClick}
         />
         <ToggleGroupItem
@@ -54,7 +54,7 @@ export const ToggleGroupIcon: React.FunctionComponent = () => {
           iconPosition="end"
           text="Undo"
           buttonId="toggle-group-text-icons-2"
-          isSelected={isSelected['toggle-group-text-icons-2']}
+          isSelected={isSelected['toggle-group-text-icons-5']}
           onChange={handleItemClick}
         />
         <ToggleGroupItem
@@ -62,7 +62,7 @@ export const ToggleGroupIcon: React.FunctionComponent = () => {
           iconPosition="end"
           text="Share"
           buttonId="toggle-group-text-icons-3"
-          isSelected={isSelected['toggle-group-text-icons-3']}
+          isSelected={isSelected['toggle-group-text-icons-6']}
           onChange={handleItemClick}
         />
       </ToggleGroup>
