@@ -57,6 +57,7 @@
     "prettier": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "rimraf": "^5.0.5",
     "surge": "^0.23.1",
     "ts-node": "^10.9.1",
     "ts-patch": "^2.1.0",
