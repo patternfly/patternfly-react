@@ -53,6 +53,21 @@ describe('menu toggle', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('shows success status', () => {
+    render(<MenuToggle status="success">Toggle</MenuToggle>);
+    expect(screen.getByRole('button')).toHaveClass('pf-m-success');
+  });
+
+  test('shows warning status', () => {
+    render(<MenuToggle status="warning">Toggle</MenuToggle>);
+    expect(screen.getByRole('button')).toHaveClass('pf-m-warning');
+  });
+
+  test('shows danger status', () => {
+    render(<MenuToggle status="danger">Toggle</MenuToggle>);
+    expect(screen.getByRole('button')).toHaveClass('pf-m-danger');
+  });
+
   test('split toggle passes onClick', async () => {
     const mockClick = jest.fn();
     const user = userEvent.setup();

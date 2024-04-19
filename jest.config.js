@@ -14,13 +14,11 @@ module.exports = {
     '^.+\\.svg$': 'jest-transform-stub'
   },
   setupFilesAfterEnv: ['<rootDir>/packages/testSetup.ts'],
-  transformIgnorePatterns: [
-    'node_modules/(?!@patternfly|@novnc|@popperjs|lodash|monaco-editor|react-monaco-editor|case-anything)'
-  ],
   testPathIgnorePatterns: ['<rootDir>/packages/react-integration/'],
   coveragePathIgnorePatterns: ['/dist/'],
   moduleNameMapper: {
     '\\.(css|less)$': '<rootDir>/packages/react-styles/__mocks__/styleMock.js'
   },
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
+  transformIgnorePatterns: ['/node_modules/(?!(case-anything)/)']
 };

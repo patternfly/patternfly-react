@@ -14,6 +14,7 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 ## Demos
 

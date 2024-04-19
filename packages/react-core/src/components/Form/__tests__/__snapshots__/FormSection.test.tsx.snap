@@ -12,13 +12,13 @@ exports[`Check form section example against snapshot 1`] = `
 exports[`Check form section example with title 1`] = `
 <DocumentFragment>
   <section
-    aria-labelledby="pf-form-section-title1"
+    aria-labelledby="generated-id"
     class="pf-v6-c-form__section"
     role="group"
   >
     <h4
       class="pf-v6-c-form__section-title"
-      id="pf-form-section-title1"
+      id="generated-id"
     >
       Title
     </h4>

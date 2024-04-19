@@ -18,6 +18,8 @@ import restIcon from '../assets/FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
 
+import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+
 ## Demos
 
 This demonstrates how you can assemble a full page view that contains a grid of equal sized cards that includes a toolbar for managing card grid contents.

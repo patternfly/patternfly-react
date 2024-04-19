@@ -152,9 +152,6 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
               {columnNames.destination}
             </Th>
           </Tr>
-          <Tr isBorderRow aria-hidden="true">
-            <Td colSpan={9}></Td>
-          </Tr>
         </Thead>
         <Tbody>
           {sortedConnections.map((connection) => (

@@ -10,6 +10,8 @@ import { ToolbarFilter } from '../ToolbarFilter';
 import { ToolbarGroup } from '../ToolbarGroup';
 import { Button } from '../../Button/Button';
 
+jest.mock('../../../helpers/GenerateId/GenerateId');
+
 describe('Toolbar', () => {
   it('should render inset', () => {
     const items = (

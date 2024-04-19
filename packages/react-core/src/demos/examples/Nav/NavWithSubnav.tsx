@@ -16,7 +16,7 @@ import {
   TextContent,
   Text
 } from '@patternfly/react-core';
-import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import { DashboardHeader } from '@patternfly/react-core/src/demos/DashboardHeader';
 
 export const NavWithSubnav: React.FunctionComponent = () => {
