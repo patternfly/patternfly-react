@@ -67,8 +67,10 @@ const defaultKeyDownHandler = (args: DefaultKeyDownHandlerArgs) => (event: React
   }
 };
 
+const DEFAULT_VALUE = 0;
+
 export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
-  value = 0,
+  value = DEFAULT_VALUE,
   className,
   widthChars,
   isDisabled = false,
@@ -121,7 +123,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           <Button
             variant="control"
             aria-label={minusBtnAriaLabel}
-            isDisabled={isDisabled || value <= min}
+            isDisabled={isDisabled || (typeof value === 'number' ? value : DEFAULT_VALUE) <= min}
             onClick={(evt) => onMinus(evt, inputName)}
             {...minusBtnProps}
           >
@@ -149,7 +151,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           <Button
             variant="control"
             aria-label={plusBtnAriaLabel}
-            isDisabled={isDisabled || value >= max}
+            isDisabled={isDisabled || (typeof value === 'number' ? value : DEFAULT_VALUE) >= max}
             onClick={(evt) => onPlus(evt, inputName)}
             {...plusBtnProps}
           >
