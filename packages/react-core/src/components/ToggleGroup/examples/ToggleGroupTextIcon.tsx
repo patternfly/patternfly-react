@@ -16,7 +16,7 @@ export const ToggleGroupIcon: React.FunctionComponent = () => {
   };
   return (
     <>
-      <ToggleGroup aria-label="Text and icon toggle group">
+      <ToggleGroup aria-label="Text and icon toggle group with icons at start">
         <ToggleGroupItem
           icon={<CopyIcon />}
           text="Copy"
@@ -40,7 +40,7 @@ export const ToggleGroupIcon: React.FunctionComponent = () => {
         />
       </ToggleGroup>
       <br />
-      <ToggleGroup aria-label="Text and icon toggle group">
+      <ToggleGroup aria-label="Text and icon toggle group with icons at end">
         <ToggleGroupItem
           icon={<CopyIcon />}
           iconPosition="end"

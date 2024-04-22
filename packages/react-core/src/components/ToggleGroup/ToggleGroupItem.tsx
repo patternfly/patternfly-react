@@ -8,7 +8,7 @@ export interface ToggleGroupItemProps extends Omit<React.HTMLProps<HTMLDivElemen
   text?: React.ReactNode;
   /** Icon rendered inside the toggle group item */
   icon?: React.ReactNode;
-  /** Sets position of the icon */
+  /** Sets position of the icon when text is also passed in */
   iconPosition?: 'start' | 'end';
   /** Additional classes added to the toggle group item */
   className?: string;
