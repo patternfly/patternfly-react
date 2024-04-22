@@ -6,7 +6,7 @@ export const ToolbarColorVariant: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <Toolbar id="toolbar-" colorVariant={isSecondary ? 'secondary' : 'primary'}>
+      <Toolbar id="toolbar-color-variant" colorVariant={isSecondary ? 'secondary' : 'primary'}>
         <ToolbarContent>
           <ToolbarItem>
             <SearchInput aria-label="Items example search input" />
