@@ -30,7 +30,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import { rows, getRandomInteger } from '@patternfly/react-table/dist/esm/demos/sampleData';
+import { rows } from '@patternfly/react-core/dist/esm/demos/sampleData';
 
 export const DataListPagination: React.FunctionComponent = () => {
   const [page, setPage] = React.useState<number | undefined>(1);
@@ -129,7 +129,7 @@ export const DataListPagination: React.FunctionComponent = () => {
           </Toolbar>
           <DataList aria-label="Demo data list">
             {paginatedRows.map((row, rowIndex) => {
-              const { name, threads, applications, workspaces } = row;
+              const { name, threads, applications, workspaces, lastModified } = row;
               return (
                 <DataListItem aria-labelledby={`Demo-item-${rowIndex}`} key={rowIndex}>
                   <DataListItemRow>
@@ -159,7 +159,7 @@ export const DataListPagination: React.FunctionComponent = () => {
                                 <FlexItem>
                                   <CubeIcon /> {workspaces}
                                 </FlexItem>
-                                <FlexItem> Updated {getRandomInteger(1, rowIndex)} days ago</FlexItem>
+                                <FlexItem> Updated {lastModified}</FlexItem>
                               </Flex>
                             </FlexItem>
                           </Flex>
