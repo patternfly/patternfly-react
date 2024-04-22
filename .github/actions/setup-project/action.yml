@@ -1,0 +1,61 @@
+name: Set up and build project
+inputs:
+  skip-build:
+    description: Skip the build step
+    required: false
+    default: 'false'
+  skip-build-cache:
+    description: Skip the build cache step
+    required: false
+    default: 'false'
+runs:
+  using: composite
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+        check-latest: true
+
+    - name: Get Yarn configuration
+      id: yarn-config
+      shell: bash
+      run: |
+        echo "cache-directory=$(yarn cache dir)" >> $GITHUB_OUTPUT
+
+    # TODO: This can be simplified to use the `cache` option of the `actions/setup-node` action when it supports Corepack.
+    # See: https://github.com/actions/setup-node/issues/531
+    - uses: actions/cache@v4
+      name: Setup Yarn cache
+      with:
+        # Also cache Cypress binary.
+        path: |
+          ~/.cache/Cypress
+          ${{ steps.yarn-config.outputs.cache-directory }}
+        key: ${{ runner.os }}-yarn-cache-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-cache-
+
+    - name: Install dependencies
+      shell: bash
+      run: yarn install --frozen-lockfile
+
+    - uses: actions/cache@v4
+      if: inputs.skip-build != 'true' && inputs.skip-build-cache != 'true'
+      id: cache-build
+      name: Cache build
+      with:
+        path: |
+          packages/*/dist
+          packages/*/next
+          packages/*/deprecated
+          packages/*/components
+          packages/react-styles/css
+          packages/react-core/layouts
+          packages/react-core/helpers
+        key: ${{ runner.os }}-build-${{ hashFiles('yarn.lock', '**/package.json', 'packages/**', '!**/node_modules', '!**/dist') }}
+
+    - name: Run build
+      if: inputs.skip-build != 'true' && steps.cache-build.outputs.cache-hit != 'true'
+      shell: bash
+      run: yarn build && yarn build:umd
