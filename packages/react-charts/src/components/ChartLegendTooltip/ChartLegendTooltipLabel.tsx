@@ -273,7 +273,7 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendTooltip
   };
 
   const getValueLabelComponent = () => {
-    const _x = x + Helpers.evaluateProp(dx);
+    const _x = x + (Helpers.evaluateProp(dx, undefined) as number);
 
     return React.cloneElement(valueLabelComponent, {
       style: getStyle(style),

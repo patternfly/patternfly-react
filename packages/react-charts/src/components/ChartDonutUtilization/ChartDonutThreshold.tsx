@@ -462,7 +462,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
     top: getPaddingForSide('top', padding, theme.pie.padding)
   };
   const chartRadius =
-    radius ||
+    Helpers.evaluateProp(radius, undefined) ||
     Helpers.getRadius({
       height,
       width,

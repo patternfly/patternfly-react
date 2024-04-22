@@ -55,7 +55,7 @@ export const getCursorTooltipCenterOffset = ({
   offsetCursorDimensionY = false,
   theme
 }: ChartCursorTooltipCenterOffsetInterface) => {
-  const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
+  const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength, undefined) : 10;
   const offsetX = ({ center, flyoutWidth, width }: any) => {
     const offset = flyoutWidth / 2 + pointerLength;
     return width > center.x + flyoutWidth + pointerLength ? offset : -offset;
@@ -80,7 +80,7 @@ export const getCursorTooltipPoniterOrientation = ({
   horizontal = true,
   theme
 }: ChartCursorTooltipPoniterOrientationInterface): ((props: any) => OrientationTypes) => {
-  const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
+  const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength, undefined) : 10;
   const orientationX = ({ center, flyoutWidth, width }: any): OrientationTypes =>
     width > center.x + flyoutWidth + pointerLength ? 'left' : 'right';
   const orientationY = ({ center, flyoutHeight, height }: any): OrientationTypes =>
@@ -127,13 +127,17 @@ export const getLegendTooltipSize = ({
   text = '',
   theme
 }: ChartLegendTooltipFlyoutInterface) => {
-  const textEvaluated = Helpers.evaluateProp(text);
+  const textEvaluated = Helpers.evaluateProp(text, undefined);
   const _text = Array.isArray(textEvaluated) ? textEvaluated : [textEvaluated];
 
   // Find max char lengths
   let maxDataLength = 0;
   let maxTextLength = 0;
-  _text.map((item: string, index: number) => {
+  _text.map((item, index) => {
+    if (typeof item === 'number') {
+      return;
+    }
+
     if (item) {
       if (item.length > maxTextLength) {
         maxTextLength = item.length;
@@ -174,7 +178,11 @@ export const getLegendTooltipSize = ({
   // {name: "Dogs         1"}
   // {name: "Birds        4"}
   // {name: "Mice         3"}
-  const data = _text.map((label: string, index: number) => {
+  const data = _text.map((label, index) => {
+    if (typeof label === 'number') {
+      return;
+    }
+
     const hasData = legendData && legendData[index] && legendData[index].name !== undefined;
     const spacing = hasData ? getSpacing(legendData[index].name, label) : '';
 
@@ -197,7 +205,7 @@ export const getLegendTooltipSize = ({
   });
   // This should only use text. The row gutter changes when displaying all "no data" messages
   const heightDimensions = getLegendDimensions({
-    legendData: _text.map((name: string) => ({ name })),
+    legendData: _text.map((name) => ({ name })),
     legendOrientation,
     legendProps,
     theme
@@ -222,7 +230,7 @@ export const getLegendTooltipVisibleData = ({
   textAsLegendData = false,
   theme
 }: ChartLegendTooltipVisibleDataInterface) => {
-  const textEvaluated = Helpers.evaluateProp(text);
+  const textEvaluated = Helpers.evaluateProp(text, undefined);
   const _text = Array.isArray(textEvaluated) ? textEvaluated : [textEvaluated];
   const result = [];
 
@@ -267,7 +275,7 @@ export const getLegendTooltipVisibleText = ({
   legendData,
   text
 }: ChartLegendTooltipVisibleTextInterface) => {
-  const textEvaluated = Helpers.evaluateProp(text);
+  const textEvaluated = Helpers.evaluateProp(text, undefined);
   const _text = Array.isArray(textEvaluated) ? textEvaluated : [textEvaluated];
   const result = [];
   if (legendData) {
@@ -285,5 +293,5 @@ export const getLegendTooltipVisibleText = ({
       }
     }
   }
-  return result;
+  return result as string[] | number[];
 };
