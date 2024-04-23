@@ -18,7 +18,7 @@ module.exports = (baseSourceMD, sourceProps) => {
     .replace('package.json', 'src');
   const reactDragDropPath = require.resolve('@patternfly/react-drag-drop/package.json').replace('package.json', 'src');
   const reactTemplatesPath = require.resolve('@patternfly/react-templates/package.json').replace('package.json', 'src');
-  const reactPropsIgnore = '**/*.test.tsx';
+  const reactPropsIgnore = ['/**/examples/**', '/**/__mocks__/**', '/**/__tests__/**', '/**/*.test.tsx'];
 
   sourceProps(path.join(reactCorePath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactTablePath, '/**/*.tsx'), reactPropsIgnore);
