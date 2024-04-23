@@ -60,15 +60,9 @@ export const SelectTypeahead: React.FunctionComponent = () => {
     setSelectOptions(newSelectOptions);
   }, [filterValue]);
 
-  React.useEffect(() => {
-    if (isOpen && selectOptions.length && selectOptions[0].value !== NO_RESULTS) {
-      setActiveAndFocusedItem(0);
-    }
-  }, [isOpen, filterValue]);
-
   const setActiveAndFocusedItem = (itemIndex: number) => {
     setFocusedItemIndex(itemIndex);
-    const focusedItem = selectOptions.filter((option) => !option.isDisabled)[itemIndex];
+    const focusedItem = selectOptions[itemIndex];
     setActiveItem(`select-typeahead-${focusedItem.value.replace(' ', '-')}`);
   };
 
@@ -106,53 +100,77 @@ export const SelectTypeahead: React.FunctionComponent = () => {
     setInputValue(value);
     setFilterValue(value);
 
+    resetActiveAndFocusedItem();
+
     if (value !== selected) {
       setSelected('');
     }
   };
 
   const handleMenuArrowKeys = (key: string) => {
-    let indexToFocus;
+    let indexToFocus = 0;
 
-    if (isOpen) {
-      if (key === 'ArrowUp') {
-        // When no index is set or at the first index, focus to the last, otherwise decrement focus index
-        if (focusedItemIndex === null || focusedItemIndex === 0) {
-          indexToFocus = selectOptions.length - 1;
-        } else {
-          indexToFocus = focusedItemIndex - 1;
-        }
-      }
-
-      if (key === 'ArrowDown') {
-        // When no index is set or at the last index, focus to the first, otherwise increment focus index
-        if (focusedItemIndex === null || focusedItemIndex === selectOptions.length - 1) {
-          indexToFocus = 0;
-        } else {
-          indexToFocus = focusedItemIndex + 1;
-        }
-      }
-
-      setActiveAndFocusedItem(indexToFocus);
+    if (!isOpen) {
+      setIsOpen(true);
     }
+
+    if (selectOptions.every((option) => option.isDisabled)) {
+      return;
+    }
+
+    if (key === 'ArrowUp') {
+      // When no index is set or at the first index, focus to the last, otherwise decrement focus index
+      if (focusedItemIndex === null || focusedItemIndex === 0) {
+        indexToFocus = selectOptions.length - 1;
+      } else {
+        indexToFocus = focusedItemIndex - 1;
+      }
+
+      // Skip disabled options
+      while (selectOptions[indexToFocus].isDisabled) {
+        indexToFocus--;
+        if (indexToFocus === -1) {
+          indexToFocus = selectOptions.length - 1;
+        }
+      }
+    }
+
+    if (key === 'ArrowDown') {
+      // When no index is set or at the last index, focus to the first, otherwise increment focus index
+      if (focusedItemIndex === null || focusedItemIndex === selectOptions.length - 1) {
+        indexToFocus = 0;
+      } else {
+        indexToFocus = focusedItemIndex + 1;
+      }
+
+      // Skip disabled options
+      while (selectOptions[indexToFocus].isDisabled) {
+        indexToFocus++;
+        if (indexToFocus === selectOptions.length) {
+          indexToFocus = 0;
+        }
+      }
+    }
+
+    setActiveAndFocusedItem(indexToFocus);
   };
 
   const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const enabledMenuItems = selectOptions.filter((option) => !option.isDisabled);
-    const [firstMenuItem] = enabledMenuItems;
-    const focusedItem = focusedItemIndex ? enabledMenuItems[focusedItemIndex] : firstMenuItem;
+    const focusedItem = focusedItemIndex !== null ? selectOptions[focusedItemIndex] : null;
 
     switch (event.key) {
-      // Select the first available option
       case 'Enter':
-        if (isOpen && focusedItem.value !== NO_RESULTS) {
+        // Select an option
+        if (isOpen && focusedItem && focusedItem.value !== NO_RESULTS && !focusedItem.isAriaDisabled) {
           setInputValue(String(focusedItem.children));
           setFilterValue('');
           setSelected(String(focusedItem.children));
+          closeMenu();
         }
 
-        setIsOpen((prevIsOpen) => !prevIsOpen);
-        resetActiveAndFocusedItem();
+        if (!isOpen) {
+          setIsOpen(true);
+        }
 
         break;
       case 'ArrowUp':
