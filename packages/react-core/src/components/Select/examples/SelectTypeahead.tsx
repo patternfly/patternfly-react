@@ -209,21 +209,19 @@ export const SelectTypeahead: React.FunctionComponent = () => {
           aria-controls="select-typeahead-listbox"
         />
 
-        <TextInputGroupUtilities>
-          {!!inputValue && (
-            <Button
-              variant="plain"
-              onClick={() => {
-                setSelected('');
-                setInputValue('');
-                setFilterValue('');
-                textInputRef?.current?.focus();
-              }}
-              aria-label="Clear input value"
-            >
-              <TimesIcon aria-hidden />
-            </Button>
-          )}
+        <TextInputGroupUtilities {...(!inputValue ? { style: { display: 'none' } } : {})}>
+          <Button
+            variant="plain"
+            onClick={() => {
+              setSelected('');
+              setInputValue('');
+              setFilterValue('');
+              textInputRef?.current?.focus();
+            }}
+            aria-label="Clear input value"
+          >
+            <TimesIcon aria-hidden />
+          </Button>
         </TextInputGroupUtilities>
       </TextInputGroup>
     </MenuToggle>
