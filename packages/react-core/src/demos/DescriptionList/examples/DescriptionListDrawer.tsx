@@ -36,6 +36,7 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
 
   const onCloseClick = () => {
     setIsExpanded(false);
+    drawerRef.current && drawerRef.current.focus();
   };
 
   const onOpenDrawer = () => {
@@ -128,7 +129,7 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
       <GalleryItem key={0}>
         <Card>
           <CardBody>
-            <Button variant="link" onClick={onOpenDrawer}>
+            <Button variant="link" onClick={onOpenDrawer} tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
               Open drawer
             </Button>
           </CardBody>
