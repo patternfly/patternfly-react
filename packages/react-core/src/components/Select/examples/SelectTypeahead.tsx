@@ -29,7 +29,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
   const [filterValue, setFilterValue] = React.useState<string>('');
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
-  const [activeItem, setActiveItem] = React.useState<string | null>(null);
+  const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
   const textInputRef = React.useRef<HTMLInputElement>();
 
   const NO_RESULTS = 'no results';
@@ -48,7 +48,6 @@ export const SelectTypeahead: React.FunctionComponent = () => {
         newSelectOptions = [
           { isAriaDisabled: true, children: `No results found for "${filterValue}"`, value: NO_RESULTS }
         ];
-        resetActiveAndFocusedItem();
       }
 
       // Open the menu when the input value changes and the new value is not empty
@@ -60,15 +59,17 @@ export const SelectTypeahead: React.FunctionComponent = () => {
     setSelectOptions(newSelectOptions);
   }, [filterValue]);
 
+  const createItemId = (value: any) => `select-typeahead-${value.replace(' ', '-')}`;
+
   const setActiveAndFocusedItem = (itemIndex: number) => {
     setFocusedItemIndex(itemIndex);
     const focusedItem = selectOptions[itemIndex];
-    setActiveItem(`select-typeahead-${focusedItem.value.replace(' ', '-')}`);
+    setActiveItemId(createItemId(focusedItem.value));
   };
 
   const resetActiveAndFocusedItem = () => {
     setFocusedItemIndex(null);
-    setActiveItem(null);
+    setActiveItemId(null);
   };
 
   const closeMenu = () => {
@@ -84,16 +85,22 @@ export const SelectTypeahead: React.FunctionComponent = () => {
     }
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
+  const selectOption = (value: string | number, content: string | number) => {
     // eslint-disable-next-line no-console
-    console.log('selected', value);
+    console.log('selected', content);
 
-    if (value && value !== NO_RESULTS) {
-      setInputValue(value as string);
-      setFilterValue('');
-      setSelected(value as string);
-    }
+    setInputValue(String(content));
+    setFilterValue('');
+    setSelected(String(value));
+
     closeMenu();
+  };
+
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
+    if (value && value !== NO_RESULTS) {
+      const optionText = selectOptions.find((option) => option.value === value)?.children;
+      selectOption(value, optionText as string);
+    }
   };
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
@@ -160,12 +167,8 @@ export const SelectTypeahead: React.FunctionComponent = () => {
 
     switch (event.key) {
       case 'Enter':
-        // Select an option
         if (isOpen && focusedItem && focusedItem.value !== NO_RESULTS && !focusedItem.isAriaDisabled) {
-          setInputValue(String(focusedItem.children));
-          setFilterValue('');
-          setSelected(String(focusedItem.children));
-          closeMenu();
+          selectOption(focusedItem.value, focusedItem.children as string);
         }
 
         if (!isOpen) {
@@ -203,7 +206,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
           autoComplete="off"
           innerRef={textInputRef}
           placeholder="Select a state"
-          {...(activeItem && { 'aria-activedescendant': activeItem })}
+          {...(activeItemId && { 'aria-activedescendant': activeItemId })}
           role="combobox"
           isExpanded={isOpen}
           aria-controls="select-typeahead-listbox"
@@ -216,6 +219,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
               setSelected('');
               setInputValue('');
               setFilterValue('');
+              resetActiveAndFocusedItem();
               textInputRef?.current?.focus();
             }}
             aria-label="Clear input value"
@@ -245,9 +249,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
             key={option.value || option.children}
             isFocused={focusedItemIndex === index}
             className={option.className}
-            onMouseEnter={() => setActiveAndFocusedItem(index)}
-            onClick={() => setSelected(option.value)}
-            id={`select-typeahead-${option.value.replace(' ', '-')}`}
+            id={createItemId(option.value)}
             {...option}
             ref={null}
           />
