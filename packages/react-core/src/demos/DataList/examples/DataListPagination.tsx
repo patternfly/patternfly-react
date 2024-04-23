@@ -115,75 +115,73 @@ export const DataListPagination: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
-      <DashboardWrapper mainContainerId="main-content-datalist-view-pagination" breadcrumb={null}>
-        <PageSection variant={PageSectionVariants.light}>
-          <TextContent>
-            <Text component="h1">Projects</Text>
-            <Text component="p">This is a demo that showcases PatternFly Data List</Text>
-          </TextContent>
-        </PageSection>
-        <PageSection isFilled>
-          <Toolbar id="toolbar-group-types">
-            <ToolbarContent>{toolbarItems}</ToolbarContent>
-          </Toolbar>
-          <DataList aria-label="Demo data list">
-            {paginatedRows.map((row, rowIndex) => {
-              const { name, threads, applications, workspaces, lastModified } = row;
-              return (
-                <DataListItem aria-labelledby={`Demo-item-${rowIndex}`} key={rowIndex}>
-                  <DataListItemRow>
-                    <DataListItemCells
-                      dataListCells={[
-                        <DataListCell isFilled={false} key="buttons1">
-                          <Flex direction={{ default: 'column' }}>
-                            <FlexItem>
-                              <Text id={`Demo-item-${rowIndex}`} component={TextVariants.p}>
-                                {name}
-                              </Text>
-                            </FlexItem>
-                            <FlexItem>
-                              <Text component={TextVariants.small}>
-                                Working repo for
-                                <a href="http://www.patternfly.org/">PatternFly</a>
-                              </Text>
-                            </FlexItem>
-                            <FlexItem>
-                              <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                                <FlexItem>
-                                  <CodeBranchIcon /> {threads}
-                                </FlexItem>
-                                <FlexItem>
-                                  <CodeIcon /> {applications}
-                                </FlexItem>
-                                <FlexItem>
-                                  <CubeIcon /> {workspaces}
-                                </FlexItem>
-                                <FlexItem> Updated {lastModified}</FlexItem>
-                              </Flex>
-                            </FlexItem>
-                          </Flex>
-                        </DataListCell>,
-                        <DataListCell isFilled={false} alignRight key="secondary content align">
-                          <Flex>
-                            <FlexItem>
-                              <Button variant="secondary">Action</Button>
-                            </FlexItem>
-                            <FlexItem>
-                              <a href="#">Link</a>
-                            </FlexItem>
-                          </Flex>
-                        </DataListCell>
-                      ]}
-                    />
-                  </DataListItemRow>
-                </DataListItem>
-              );
-            })}
-          </DataList>
-          {renderPagination('bottom-pagination', PaginationVariant.bottom, true, true)}
-        </PageSection>
-      </DashboardWrapper>
-    </React.Fragment>
+    <DashboardWrapper mainContainerId="main-content-datalist-view-pagination" breadcrumb={null}>
+      <PageSection variant={PageSectionVariants.light}>
+        <TextContent>
+          <Text component="h1">Projects</Text>
+          <Text component="p">This is a demo that showcases PatternFly Data List</Text>
+        </TextContent>
+      </PageSection>
+      <PageSection isFilled>
+        <Toolbar id="toolbar-group-types">
+          <ToolbarContent>{toolbarItems}</ToolbarContent>
+        </Toolbar>
+        <DataList aria-label="Demo data list">
+          {paginatedRows.map((row, rowIndex) => {
+            const { name, threads, applications, workspaces, lastModified } = row;
+            return (
+              <DataListItem aria-labelledby={`Demo-item-${rowIndex}`} key={rowIndex}>
+                <DataListItemRow>
+                  <DataListItemCells
+                    dataListCells={[
+                      <DataListCell isFilled={false} key="buttons1">
+                        <Flex direction={{ default: 'column' }}>
+                          <FlexItem>
+                            <Text id={`Demo-item-${rowIndex}`} component={TextVariants.p}>
+                              {name}
+                            </Text>
+                          </FlexItem>
+                          <FlexItem>
+                            <Text component={TextVariants.small}>
+                              Working repo for
+                              <a href="http://www.patternfly.org/">PatternFly</a>
+                            </Text>
+                          </FlexItem>
+                          <FlexItem>
+                            <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                              <FlexItem>
+                                <CodeBranchIcon /> {threads}
+                              </FlexItem>
+                              <FlexItem>
+                                <CodeIcon /> {applications}
+                              </FlexItem>
+                              <FlexItem>
+                                <CubeIcon /> {workspaces}
+                              </FlexItem>
+                              <FlexItem> Updated {lastModified}</FlexItem>
+                            </Flex>
+                          </FlexItem>
+                        </Flex>
+                      </DataListCell>,
+                      <DataListCell isFilled={false} alignRight key="secondary content align">
+                        <Flex>
+                          <FlexItem>
+                            <Button variant="secondary">Action</Button>
+                          </FlexItem>
+                          <FlexItem>
+                            <a href="#">Link</a>
+                          </FlexItem>
+                        </Flex>
+                      </DataListCell>
+                    ]}
+                  />
+                </DataListItemRow>
+              </DataListItem>
+            );
+          })}
+        </DataList>
+        {renderPagination('bottom-pagination', PaginationVariant.bottom, true, true)}
+      </PageSection>
+    </DashboardWrapper>
   );
 };
