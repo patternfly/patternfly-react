@@ -71,5 +71,13 @@ export const TreeViewSelectableNodes: React.FunctionComponent = () => {
       children: [{ name: 'Application 5', id: 'SelNodesTreeView-App5' }]
     }
   ];
-  return <TreeView hasSelectableNodes data={options} activeItems={activeItems} onSelect={onSelect} />;
+  return (
+    <TreeView
+      aria-label="Tree View separate selection and expansion example"
+      hasSelectableNodes
+      data={options}
+      activeItems={activeItems}
+      onSelect={onSelect}
+    />
+  );
 };

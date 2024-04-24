@@ -46,6 +46,14 @@ export interface TreeViewProps {
    * internal state.
    */
   allExpanded?: boolean;
+  /** A text string that sets the accessible name of the tree view list. Either this or the aria-labelledby property must
+   * be passed in.
+   */
+  'aria-label'?: string;
+  /** A space separated list of element id's that sets the accessible name of the tree view list. Either
+   * this or the aria-label property must be passed in.
+   */
+  'aria-labelledby'?: string;
   /** Class to add if not passed a parentItem property. */
   className?: string;
   /** Comparison function for determining active items. */
@@ -72,6 +80,11 @@ export interface TreeViewProps {
   icon?: React.ReactNode;
   /** ID of the tree view. */
   id?: string;
+  /** Flag indicating whether multiple nodes can be selected in the tree view. This will also set the
+   * aria-multiselectable attribute on the tree view list which is required to be true when multiple selection is intended.
+   * Can only be applied to the root tree view list.
+   */
+  isMultiSelectable?: boolean;
   /** Callback for item checkbox selection. */
   onCheck?: (event: React.ChangeEvent<HTMLInputElement>, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Callback for item selection. */
@@ -104,6 +117,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   defaultAllExpanded = false,
   allExpanded,
   icon,
+  isMultiSelectable = false,
   expandedIcon,
   parentItem,
   onSelect,
@@ -115,10 +129,18 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   compareItems = (item, itemToCheck) => item.id === itemToCheck.id,
   className,
   useMemo,
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledby,
   ...props
 }: TreeViewProps) => {
   const treeViewList = (
-    <TreeViewList isNested={isNested} toolbar={toolbar}>
+    <TreeViewList
+      isNested={isNested}
+      toolbar={toolbar}
+      isMultiSelectable={isMultiSelectable}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
+    >
       {data.map((item) => (
         <TreeViewListItem
           key={item.id?.toString() || item.name?.toString()}

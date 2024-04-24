@@ -143,6 +143,8 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       </span>
     </ToggleComponent>
   );
+
+  const isCheckboxChecked = checkProps.checked === null ? false : checkProps.checked;
   const renderCheck = (randomId: string) => (
     <span className={css(styles.treeViewNodeCheck)}>
       <input
@@ -151,7 +153,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
         onClick={(evt) => evt.stopPropagation()}
         ref={(elem) => elem && (elem.indeterminate = checkProps.checked === null)}
         {...checkProps}
-        checked={checkProps.checked === null ? false : checkProps.checked}
+        checked={isCheckboxChecked}
         id={randomId}
         tabIndex={-1}
       />
@@ -194,6 +196,13 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       )}
     </>
   );
+
+  const isSelected =
+    (!children || isSelectable) &&
+    activeItems &&
+    activeItems.length > 0 &&
+    activeItems.some((item) => compareItems && item && compareItems(item, itemData));
+
   return (
     <li
       id={id}
@@ -201,6 +210,8 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       aria-expanded={internalIsExpanded}
       role="treeitem"
       tabIndex={-1}
+      {...(hasCheckbox && { 'aria-checked': isCheckboxChecked })}
+      {...(!hasCheckbox && { 'aria-selected': isSelected })}
     >
       <div className={css(styles.treeViewContent)}>
         <GenerateId prefix={isSelectable ? 'selectable-id' : 'checkbox-id'}>
@@ -209,12 +220,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
               className={css(
                 styles.treeViewNode,
                 children && (isSelectable || hasCheckbox) && styles.modifiers.selectable,
-                (!children || isSelectable) &&
-                  activeItems &&
-                  activeItems.length > 0 &&
-                  activeItems.some((item) => compareItems && item && compareItems(item, itemData))
-                  ? styles.modifiers.current
-                  : ''
+                isSelected && styles.modifiers.current
               )}
               onClick={(evt: React.MouseEvent) => {
                 if (!hasCheckbox) {
