@@ -46,7 +46,7 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceMD(path.join(reactCodeEditorPath, '/**/examples/*.md'), 'react');
 
   // Drag drop MD
-  sourceMD(path.join(reactDragDropPath, '/**/examples/*.md'), 'react-next');
+  sourceMD(path.join(reactDragDropPath, '/**/examples/*.md'), 'react');
 
   // Templates MD
   sourceMD(path.join(reactTemplatesPath, '/**/examples/*.md'), 'react-templates');

@@ -1,7 +1,7 @@
 ---
 id: Drag and drop
 section: components
-source: react-next-demos
+source: react-demos
 propComponents: ['DragDropSort', 'DraggableObject']
 beta: true
 ---
