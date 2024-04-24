@@ -184,15 +184,25 @@ export const SelectTypeahead: React.FunctionComponent = () => {
     }
   };
 
+  const onToggleClick = () => {
+    setIsOpen(!isOpen);
+    textInputRef?.current?.focus();
+  };
+
+  const onClearButtonClick = () => {
+    setSelected('');
+    setInputValue('');
+    setFilterValue('');
+    resetActiveAndFocusedItem();
+    textInputRef?.current?.focus();
+  };
+
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
     <MenuToggle
       ref={toggleRef}
       variant="typeahead"
       aria-label="Typeahead menu toggle"
-      onClick={() => {
-        setIsOpen(!isOpen);
-        textInputRef?.current?.focus();
-      }}
+      onClick={onToggleClick}
       isExpanded={isOpen}
       isFullWidth
     >
@@ -213,17 +223,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
         />
 
         <TextInputGroupUtilities {...(!inputValue ? { style: { display: 'none' } } : {})}>
-          <Button
-            variant="plain"
-            onClick={() => {
-              setSelected('');
-              setInputValue('');
-              setFilterValue('');
-              resetActiveAndFocusedItem();
-              textInputRef?.current?.focus();
-            }}
-            aria-label="Clear input value"
-          >
+          <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
             <TimesIcon aria-hidden />
           </Button>
         </TextInputGroupUtilities>
