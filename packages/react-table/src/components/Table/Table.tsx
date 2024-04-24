@@ -5,7 +5,7 @@ import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-
 import { css } from '@patternfly/react-styles';
 import { toCamel } from './utils';
 import { IVisibility } from './utils/decorators/classNames';
-import { useOUIAProps, OUIAProps, handleArrows, setTabIndex } from '@patternfly/react-core';
+import { useOUIAProps, OUIAProps, handleArrows, setTabIndex, KeyTypes } from '@patternfly/react-core';
 import { TableGridBreakpoint, TableVariant } from './TableTypes';
 
 export interface BaseCellProps {
@@ -169,7 +169,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
     const rows = (Array.from(tableRef.current.querySelectorAll('tbody tr')) as Element[]).filter(
       (el) => !el.classList.contains('pf-m-disabled') && !(el as HTMLElement).hidden
     );
-    if (key === 'Space' || key === 'Enter') {
+    if (key === KeyTypes.Space || key === KeyTypes.Enter) {
       (activeElement as HTMLElement).click();
       event.preventDefault();
     }
