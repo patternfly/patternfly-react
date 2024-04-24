@@ -69,7 +69,7 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
           </DescriptionListGroup>
           <DescriptionListGroup>
             <DescriptionListTerm>Pod selector</DescriptionListTerm>
-            <DescriptionListDescription>Nod selector is not available at this time</DescriptionListDescription>
+            <DescriptionListDescription>Node selector is not available at this time</DescriptionListDescription>
           </DescriptionListGroup>
           <DescriptionListGroup>
             <DescriptionListTerm>Tolerations</DescriptionListTerm>
