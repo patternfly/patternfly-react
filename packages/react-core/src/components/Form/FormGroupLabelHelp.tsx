@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, ButtonProps } from '../Button';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import { KeyTypes } from '../../helpers/constants';
 
 /** A help button to be passed to the FormGroup's labelHelp property. This should be wrapped or linked
  * to our Popover component.
@@ -27,7 +28,7 @@ const FormGroupLabelHelpBase: React.FunctionComponent<FormGroupLabelHelpProps> =
     typeof ref === 'object' && ref !== null && 'current' in ref && ref.current !== undefined;
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLSpanElement>) => {
-    if (event.key === 'Enter' && isMutableRef(buttonRef) && buttonRef.current) {
+    if ([KeyTypes.Space, KeyTypes.Enter].includes(event.key) && isMutableRef(buttonRef) && buttonRef.current) {
       buttonRef.current.click();
     }
   };
