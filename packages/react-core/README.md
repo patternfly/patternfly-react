@@ -51,6 +51,6 @@ All component documentation is available on [PatternFly.org](https://www.pattern
 ### Contribution guidelines
 All React contributors must first be [PatternFly community contributors](https://www.patternfly.org/contribute/about). If you are already a PatternFly community contributor, check out the [React contribution guidelines](https://github.com/patternfly/patternfly-react/tree/main/CONTRIBUTING.md) to make React contributions.
 
-### License
+### License  
 PatternFly React is licensed under the [MIT License](https://github.com/patternfly/patternfly-react/tree/main/LICENSE).
    
