@@ -8,7 +8,11 @@ import {
   PageSection,
   PageSectionVariants,
   Card,
-  CardBody
+  CardBody,
+  CardHeader,
+  TextContent,
+  Text,
+  Title
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
@@ -16,10 +20,16 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 export const DescriptionListBasic: React.FunctionComponent = () => (
   <DashboardWrapper>
     <PageSection variant={PageSectionVariants.light}>
+      <TextContent>
+        <Title headingLevel="h1">Projects</Title>
+        <Text component="p">This is a full page demo</Text>
+      </TextContent>
+    </PageSection>
+    <PageSection>
       <Card>
-        <CardBody> Details</CardBody>
-      </Card>
-      <Card>
+        <CardHeader>
+          <Title headingLevel="h2">Details</Title>
+        </CardHeader>
         <CardBody>
           <DescriptionList isFillColumns columnModifier={{ default: '2Col', lg: '3Col' }}>
             <DescriptionListGroup>
