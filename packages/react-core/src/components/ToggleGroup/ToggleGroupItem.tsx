@@ -8,6 +8,8 @@ export interface ToggleGroupItemProps extends Omit<React.HTMLProps<HTMLDivElemen
   text?: React.ReactNode;
   /** Icon rendered inside the toggle group item */
   icon?: React.ReactNode;
+  /** Sets position of the icon when text is also passed in */
+  iconPosition?: 'start' | 'end';
   /** Additional classes added to the toggle group item */
   className?: string;
   /** Flag indicating if the toggle group item is disabled */
@@ -25,6 +27,7 @@ export interface ToggleGroupItemProps extends Omit<React.HTMLProps<HTMLDivElemen
 export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
   text,
   icon,
+  iconPosition = 'start',
   className,
   isDisabled = false,
   isSelected = false,
@@ -42,6 +45,8 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
     console.warn('An accessible aria-label is required when using the toggle group item icon variant.');
   }
 
+  const toggleGroupIcon = <ToggleGroupItemElement variant={ToggleGroupItemVariant.icon}>{icon}</ToggleGroupItemElement>;
+
   return (
     <div className={css(styles.toggleGroupItem, className)} {...props}>
       <button
@@ -53,8 +58,9 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
         disabled={isDisabled}
         id={buttonId}
       >
-        {icon && <ToggleGroupItemElement variant={ToggleGroupItemVariant.icon}>{icon}</ToggleGroupItemElement>}
+        {icon && iconPosition === 'start' && toggleGroupIcon}
         {text && <ToggleGroupItemElement variant={ToggleGroupItemVariant.text}>{text}</ToggleGroupItemElement>}
+        {icon && iconPosition === 'end' && toggleGroupIcon}
       </button>
     </div>
   );
