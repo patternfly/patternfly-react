@@ -12,7 +12,8 @@ import {
   CardHeader,
   TextContent,
   Text,
-  Title
+  Title,
+  Divider
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
@@ -28,7 +29,10 @@ export const DescriptionListBasic: React.FunctionComponent = () => (
     <PageSection>
       <Card>
         <CardHeader>
-          <Title headingLevel="h2">Details</Title>
+          <Title headingLevel="h2" size="lg">
+            Details
+          </Title>
+          <Divider />
         </CardHeader>
         <CardBody>
           <DescriptionList isFillColumns columnModifier={{ default: '2Col', lg: '3Col' }}>
