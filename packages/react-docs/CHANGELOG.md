@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.55](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.54...@patternfly/react-docs@7.0.0-alpha.55) (2024-04-24)
+
+### Bug Fixes
+
+- **docs:** Add templates to react-docs ([#10298](https://github.com/patternfly/patternfly-react/issues/10298)) ([744dd31](https://github.com/patternfly/patternfly-react/commit/744dd31cdb30707c3b680379ed1cc854ccea8a0b))
+
 # [7.0.0-alpha.54](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.53...@patternfly/react-docs@7.0.0-alpha.54) (2024-04-24)
 
 ### Features
