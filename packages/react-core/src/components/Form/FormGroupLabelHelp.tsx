@@ -29,6 +29,7 @@ const FormGroupLabelHelpBase: React.FunctionComponent<FormGroupLabelHelpProps> =
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLSpanElement>) => {
     if ([KeyTypes.Space, KeyTypes.Enter].includes(event.key) && isMutableRef(buttonRef) && buttonRef.current) {
+      event.preventDefault();
       buttonRef.current.click();
     }
   };
