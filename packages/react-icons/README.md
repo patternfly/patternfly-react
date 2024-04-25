@@ -21,7 +21,7 @@ If not using @patternfly/react-icons in conjunction with @patternfly/react-style
 If using @patternfly/react-icons in conjunction with @patternfly/react-core, icons can be further styled by wrapping an icon from 
 @patternfly/react-icons in a PatternFly icon component.
 
-## Adding icons
+## Adding icons    
 
 Icons for this package are generated from the `@fortawesome/free-solid-svg-icons` package. To add more to what is generated, modify the [icons.js](./build/icons.js) file in the build folder.
 
