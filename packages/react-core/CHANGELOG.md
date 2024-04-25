@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0...@patternfly/react-core@5.3.1) (2024-04-25)
+
+### Bug Fixes
+
+- **deploy:** Update README.md ([af1687d](https://github.com/patternfly/patternfly-react/commit/af1687de0038c1a62e22562a67ce2c5babcf76f8))
+- **publish:** Updated code so that it would publish release. ([#10306](https://github.com/patternfly/patternfly-react/issues/10306)) ([5e80510](https://github.com/patternfly/patternfly-react/commit/5e80510d636145cae18e62c77f824cb268a1334f))
+- **readme:** Update README.md ([a08bbac](https://github.com/patternfly/patternfly-react/commit/a08bbacf9467d37dba1f0b63dba51818c83f9c1f))
+
 # 5.3.0 (2024-04-18)
 
 **Note:** Version bump only for package @patternfly/react-core
