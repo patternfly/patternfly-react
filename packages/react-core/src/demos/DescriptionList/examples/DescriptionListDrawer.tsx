@@ -129,7 +129,7 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
       <GalleryItem key={0}>
         <Card>
           <CardBody>
-            <Button variant="link" onClick={onOpenDrawer} tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
+            <Button variant="link" isInline onClick={onOpenDrawer} tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
               Open drawer
             </Button>
           </CardBody>
