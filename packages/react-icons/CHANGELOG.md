@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.3.1 (2024-04-25)
+
+### Bug Fixes
+
+- **deploy:** Update README.md ([0ae46a2](https://github.com/patternfly/patternfly-react/commit/0ae46a2bbeafdd2a7307d1931aca7bb7a384ecdb))
+
 # 5.3.0 (2024-04-18)
 
 **Note:** Version bump only for package @patternfly/react-icons
