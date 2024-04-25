@@ -37,9 +37,9 @@ export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivEle
   isResizable?: boolean;
   /** Callback for resize end. */
   onResize?: (event: MouseEvent | TouchEvent | React.KeyboardEvent, width: number, id: string) => void;
-  /** The minimum size of a drawer, in either pixels or percentage. */
+  /** The minimum size of a drawer. */
   minSize?: string;
-  /** The starting size of a resizable drawer. */
+  /** The starting size of a drawer. */
   defaultSize?: string;
   /** The maximum size of a drawer. */
   maxSize?: string;

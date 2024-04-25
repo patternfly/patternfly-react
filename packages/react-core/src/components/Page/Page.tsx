@@ -27,11 +27,11 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   notificationDrawer?: React.ReactNode;
   /** Flag indicating Notification drawer in expanded */
   isNotificationDrawerExpanded?: boolean;
-  /** Sets default drawer width size */
+  /** Sets default drawer size */
   drawerDefaultSize?: string;
-  /** The starting size of a resizable drawer */
+  /** Sets the minimum drawer size*/
   drawerMinSize?: string;
-  /** The maximum size of a drawer */
+  /** Sets the maximum drawer size */
   drawerMaxSize?: string;
   /** Flag indicating if breadcrumb width should be limited */
   isBreadcrumbWidthLimited?: boolean;
