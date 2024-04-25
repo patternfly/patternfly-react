@@ -15,7 +15,7 @@ This project provides the React core components for the [PatternFly project](htt
 ### Setup 
 Before you begin, check out this [overview of PatternFly](http://patternfly.org/get-started/about) to get familiar with the basic elements of the design system.  These instructions also assume that an existing React project is set up.  For more information on how to do this, please see our main [README](https://github.com/patternfly/patternfly-react/tree/main/README.md#setup).
 
-#### Install the @patternfly/react-core NPM package
+#### Install the @patternfly/react-core NPM package    
 * Using npm, run the following command to install:
   ```
   npm install @patternfly/react-core --save
