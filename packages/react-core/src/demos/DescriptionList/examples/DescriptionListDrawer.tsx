@@ -27,7 +27,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListDrawer: React.FunctionComponent = () => {
-  const drawerRef = React.useRef<HTMLDivElement>();
+  const drawerRef = React.useRef<HTMLDivElement>(null);
   const [isExpanded, setIsExpanded] = React.useState(true);
 
   const onExpand = () => {
@@ -46,7 +46,9 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
   const panelContent = (
     <DrawerPanelContent>
       <DrawerHead>
-        <Title headingLevel="h2">test</Title>
+        <Title headingLevel="h2" tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
+          test
+        </Title>
         <DrawerActions>
           <DrawerCloseButton onClick={onCloseClick} />
         </DrawerActions>
@@ -129,7 +131,7 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
       <GalleryItem key={0}>
         <Card>
           <CardBody>
-            <Button variant="link" isInline onClick={onOpenDrawer} tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
+            <Button variant="link" isInline onClick={onOpenDrawer}>
               Open drawer
             </Button>
           </CardBody>
