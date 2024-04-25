@@ -43,8 +43,10 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
         String(menuItem.children).toLowerCase().includes(filterValue.toLowerCase())
       );
 
-      // Display creation option
-      newSelectOptions = [...newSelectOptions, { children: `Create new option "${filterValue}"`, value: CREATE_NEW }];
+      // If no option matches the filter exactly, display creation option
+      if (!initialSelectOptions.some((option) => option.value === filterValue)) {
+        newSelectOptions = [...newSelectOptions, { children: `Create new option "${filterValue}"`, value: CREATE_NEW }];
+      }
 
       // Open the menu when the input value changes and the new value is not empty
       if (!isOpen) {
