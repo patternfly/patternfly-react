@@ -87,7 +87,7 @@ const DropdownSimpleBase: React.FC<DropdownSimpleProps> = ({
     </MenuToggle>
   );
 
-  const dropdownSimpleItems = initialItems.map((item) => {
+  const dropdownSimpleItems = initialItems?.map((item) => {
     const { content, onClick, to, value, isDivider, ...itemProps } = item;
 
     return isDivider ? (
