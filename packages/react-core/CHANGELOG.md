@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.3...@patternfly/react-core@5.4.0-prerelease.4) (2024-04-26)
+
+### Features
+
+- **Page:** add prop to set width of drawer ([#10279](https://github.com/patternfly/patternfly-react/issues/10279)) ([24df4bd](https://github.com/patternfly/patternfly-react/commit/24df4bdafc9b19d08c111a061cf099609d14d7d7))
+
 # 5.4.0-prerelease.3 (2024-04-24)
 
 ### Bug Fixes
