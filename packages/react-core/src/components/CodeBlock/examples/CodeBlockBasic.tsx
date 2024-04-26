@@ -14,7 +14,7 @@ export const BasicCodeBlock: React.FunctionComponent = () => {
     setCopied(true);
   };
 
-  const code = `apiVersion: helm.openshift.io/v1beta1/
+  const code = String.raw`apiVersion: helm.openshift.io/v1beta1/
 kind: HelmChartRepository
 metadata:
 name: azure-sample-repo0oooo00ooo
