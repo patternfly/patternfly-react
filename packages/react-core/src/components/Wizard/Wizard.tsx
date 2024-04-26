@@ -58,7 +58,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   /** @beta Flag indicating whether the wizard content should be focused after the onNext or onBack callbacks
    * are called.
    */
-  shouldFocusContentOnNextOrBack?: boolean;
+  shouldFocusContent?: boolean;
 }
 
 export const Wizard = ({
@@ -76,7 +76,7 @@ export const Wizard = ({
   onStepChange,
   onSave,
   onClose,
-  shouldFocusContentOnNextOrBack = false,
+  shouldFocusContent = false,
   ...wrapperProps
 }: WizardProps) => {
   const [activeStepIndex, setActiveStepIndex] = React.useState(startIndex);
@@ -105,7 +105,7 @@ export const Wizard = ({
 
     setActiveStepIndex(newStep?.index);
     onStepChange?.(event, newStep, steps[activeStepIndex - 1], WizardStepChangeScope.Next);
-    shouldFocusContentOnNextOrBack && focusMainContentElement();
+    shouldFocusContent && focusMainContentElement();
   };
 
   const goToPrevStep = (event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[] = initialSteps) => {
@@ -115,7 +115,7 @@ export const Wizard = ({
 
     setActiveStepIndex(newStep?.index);
     onStepChange?.(event, newStep, steps[activeStepIndex - 1], WizardStepChangeScope.Back);
-    shouldFocusContentOnNextOrBack && focusMainContentElement();
+    shouldFocusContent && focusMainContentElement();
   };
 
   const goToStepByIndex = (
@@ -170,7 +170,7 @@ export const Wizard = ({
       goToStepById={goToStepById}
       goToStepByName={goToStepByName}
       goToStepByIndex={goToStepByIndex}
-      shouldFocusContentOnNextOrBack={shouldFocusContentOnNextOrBack}
+      shouldFocusContent={shouldFocusContent}
       mainWrapperRef={wrapperRef}
     >
       <div

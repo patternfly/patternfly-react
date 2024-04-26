@@ -37,7 +37,7 @@ export const WizardBody = ({
   const [hasScrollbar, setHasScrollbar] = React.useState(false);
   const [previousWidth, setPreviousWidth] = React.useState<number | undefined>(undefined);
   const WrapperComponent = component;
-  const { activeStep, shouldFocusContentOnNextOrBack, mainWrapperRef } = React.useContext(WizardContext);
+  const { activeStep, shouldFocusContent, mainWrapperRef } = React.useContext(WizardContext);
   const defaultAriaLabel = ariaLabel || `${activeStep?.name} content`;
 
   React.useEffect(() => {
@@ -71,7 +71,7 @@ export const WizardBody = ({
   return (
     <WrapperComponent
       ref={mainWrapperRef}
-      {...(shouldFocusContentOnNextOrBack && { tabIndex: -1 })}
+      {...(shouldFocusContent && { tabIndex: -1 })}
       {...(component === 'div' && hasScrollbar && { role: 'region' })}
       {...(hasScrollbar && { 'aria-label': defaultAriaLabel, 'aria-labelledby': ariaLabelledBy, tabIndex: 0 })}
       className={css(styles.wizardMain)}

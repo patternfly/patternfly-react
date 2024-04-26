@@ -31,7 +31,7 @@ export interface WizardContextProps {
   /** Flag indicating whether the wizard content should be focused after the onNext or onBack callbacks
    * are called.
    */
-  shouldFocusContentOnNextOrBack: boolean;
+  shouldFocusContent: boolean;
   /** Ref for main wizard content element. */
   mainWrapperRef: React.RefObject<HTMLElement>;
 }
@@ -53,7 +53,7 @@ export interface WizardContextProviderProps {
     steps: WizardStepType[],
     index: number
   ): void;
-  shouldFocusContentOnNextOrBack: boolean;
+  shouldFocusContent: boolean;
   mainWrapperRef: React.RefObject<HTMLElement>;
 }
 
@@ -68,7 +68,7 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   goToStepById,
   goToStepByName,
   goToStepByIndex,
-  shouldFocusContentOnNextOrBack,
+  shouldFocusContent,
   mainWrapperRef
 }) => {
   const [currentSteps, setCurrentSteps] = React.useState<WizardStepType[]>(initialSteps);
@@ -150,7 +150,7 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
           (index: number) => goToStepByIndex(null, steps, index),
           [goToStepByIndex, steps]
         ),
-        shouldFocusContentOnNextOrBack,
+        shouldFocusContent,
         mainWrapperRef
       }}
     >
