@@ -48,7 +48,7 @@ export interface DropdownSimpleProps {
   toggleVariant?: 'default' | 'plain' | 'plainText';
 }
 
-const DropdownSimpleBase: React.FC<DropdownSimpleProps> = ({
+const DropdownSimpleBase: React.FunctionComponent<DropdownSimpleProps> = ({
   innerRef,
   initialItems,
   onSelect: onSelectProp,
