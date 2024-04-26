@@ -28,9 +28,11 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
   const [selected, setSelected] = React.useState<string[]>([]);
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
-  const [activeItem, setActiveItem] = React.useState<string | null>(null);
+  const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
   const [placeholder, setPlaceholder] = React.useState('0 items selected');
   const textInputRef = React.useRef<HTMLInputElement>();
+
+  const NO_RESULTS = 'no results';
 
   React.useEffect(() => {
     let newSelectOptions: SelectOptionProps[] = initialSelectOptions;
@@ -45,9 +47,9 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
       if (!newSelectOptions.length) {
         newSelectOptions = [
           {
-            isDisabled: false,
+            isAriaDisabled: true,
             children: `No results found for "${inputValue}"`,
-            value: 'no results',
+            value: NO_RESULTS,
             hasCheckbox: false
           }
         ];
@@ -60,56 +62,99 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
     }
 
     setSelectOptions(newSelectOptions);
-    setFocusedItemIndex(null);
-    setActiveItem(null);
   }, [inputValue]);
 
-  const handleMenuArrowKeys = (key: string) => {
-    let indexToFocus;
+  React.useEffect(() => {
+    setPlaceholder(`${selected.length} item${selected.length !== 1 ? 's' : ''} selected`);
+  }, [selected]);
 
-    if (isOpen) {
-      if (key === 'ArrowUp') {
-        // When no index is set or at the first index, focus to the last, otherwise decrement focus index
-        if (focusedItemIndex === null || focusedItemIndex === 0) {
-          indexToFocus = selectOptions.length - 1;
-        } else {
-          indexToFocus = focusedItemIndex - 1;
-        }
-      }
+  const createItemId = (value: any) => `select-multi-typeahead-${value.replace(' ', '-')}`;
 
-      if (key === 'ArrowDown') {
-        // When no index is set or at the last index, focus to the first, otherwise increment focus index
-        if (focusedItemIndex === null || focusedItemIndex === selectOptions.length - 1) {
-          indexToFocus = 0;
-        } else {
-          indexToFocus = focusedItemIndex + 1;
-        }
-      }
+  const setActiveAndFocusedItem = (itemIndex: number) => {
+    setFocusedItemIndex(itemIndex);
+    const focusedItem = selectOptions[itemIndex];
+    setActiveItemId(createItemId(focusedItem.value));
+  };
 
-      setFocusedItemIndex(indexToFocus);
-      const focusedItem = selectOptions.filter((option) => !option.isDisabled)[indexToFocus];
-      setActiveItem(`select-multi-typeahead-checkbox-${focusedItem.value.replace(' ', '-')}`);
+  const resetActiveAndFocusedItem = () => {
+    setFocusedItemIndex(null);
+    setActiveItemId(null);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    resetActiveAndFocusedItem();
+  };
+
+  const onInputClick = () => {
+    if (!isOpen) {
+      setIsOpen(true);
+    } else if (!inputValue) {
+      closeMenu();
     }
   };
 
+  const handleMenuArrowKeys = (key: string) => {
+    let indexToFocus = 0;
+
+    if (!isOpen) {
+      setIsOpen(true);
+    }
+
+    if (selectOptions.every((option) => option.isDisabled)) {
+      return;
+    }
+
+    if (key === 'ArrowUp') {
+      // When no index is set or at the first index, focus to the last, otherwise decrement focus index
+      if (focusedItemIndex === null || focusedItemIndex === 0) {
+        indexToFocus = selectOptions.length - 1;
+      } else {
+        indexToFocus = focusedItemIndex - 1;
+      }
+
+      // Skip disabled options
+      while (selectOptions[indexToFocus].isDisabled) {
+        indexToFocus--;
+        if (indexToFocus === -1) {
+          indexToFocus = selectOptions.length - 1;
+        }
+      }
+    }
+
+    if (key === 'ArrowDown') {
+      // When no index is set or at the last index, focus to the first, otherwise increment focus index
+      if (focusedItemIndex === null || focusedItemIndex === selectOptions.length - 1) {
+        indexToFocus = 0;
+      } else {
+        indexToFocus = focusedItemIndex + 1;
+      }
+
+      // Skip disabled options
+      while (selectOptions[indexToFocus].isDisabled) {
+        indexToFocus++;
+        if (indexToFocus === selectOptions.length) {
+          indexToFocus = 0;
+        }
+      }
+    }
+
+    setActiveAndFocusedItem(indexToFocus);
+  };
+
   const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const enabledMenuItems = selectOptions.filter((menuItem) => !menuItem.isDisabled);
-    const [firstMenuItem] = enabledMenuItems;
-    const focusedItem = focusedItemIndex ? enabledMenuItems[focusedItemIndex] : firstMenuItem;
+    const focusedItem = focusedItemIndex !== null ? selectOptions[focusedItemIndex] : null;
 
     switch (event.key) {
-      // Select the first available option
       case 'Enter':
-        if (!isOpen) {
-          setIsOpen((prevIsOpen) => !prevIsOpen);
-        } else if (isOpen && focusedItem.value !== 'no results') {
-          onSelect(focusedItem.value as string);
+        if (isOpen && focusedItem && focusedItem.value !== NO_RESULTS && !focusedItem.isAriaDisabled) {
+          onSelect(focusedItem.value);
         }
-        break;
-      case 'Tab':
-      case 'Escape':
-        setIsOpen(false);
-        setActiveItem(null);
+
+        if (!isOpen) {
+          setIsOpen(true);
+        }
+
         break;
       case 'ArrowUp':
       case 'ArrowDown':
@@ -121,17 +166,19 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);
+    textInputRef?.current?.focus();
   };
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
+    resetActiveAndFocusedItem();
   };
 
   const onSelect = (value: string) => {
-    // eslint-disable-next-line no-console
-    console.log('selected', value);
+    if (value && value !== NO_RESULTS) {
+      // eslint-disable-next-line no-console
+      console.log('selected', value);
 
-    if (value && value !== 'no results') {
       setSelected(
         selected.includes(value) ? selected.filter((selection) => selection !== value) : [...selected, value]
       );
@@ -140,9 +187,12 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
     textInputRef.current?.focus();
   };
 
-  React.useEffect(() => {
-    setPlaceholder(`${selected.length} items selected`);
-  }, [selected]);
+  const onClearButtonClick = () => {
+    setSelected([]);
+    setInputValue('');
+    resetActiveAndFocusedItem();
+    textInputRef?.current?.focus();
+  };
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
     <MenuToggle
@@ -156,32 +206,22 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
       <TextInputGroup isPlain>
         <TextInputGroupMain
           value={inputValue}
-          onClick={onToggleClick}
+          onClick={onInputClick}
           onChange={onTextInputChange}
           onKeyDown={onInputKeyDown}
           id="multi-typeahead-select-checkbox-input"
           autoComplete="off"
           innerRef={textInputRef}
           placeholder={placeholder}
-          {...(activeItem && { 'aria-activedescendant': activeItem })}
+          {...(activeItemId && { 'aria-activedescendant': activeItemId })}
           role="combobox"
           isExpanded={isOpen}
           aria-controls="select-multi-typeahead-checkbox-listbox"
         />
-        <TextInputGroupUtilities>
-          {selected.length > 0 && (
-            <Button
-              variant="plain"
-              onClick={() => {
-                setInputValue('');
-                setSelected([]);
-                textInputRef?.current?.focus();
-              }}
-              aria-label="Clear input value"
-            >
-              <TimesIcon aria-hidden />
-            </Button>
-          )}
+        <TextInputGroupUtilities {...(selected.length === 0 ? { style: { display: 'none' } } : {})}>
+          <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
+            <TimesIcon aria-hidden />
+          </Button>
         </TextInputGroupUtilities>
       </TextInputGroup>
     </MenuToggle>
@@ -193,19 +233,22 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
       id="multi-typeahead-checkbox-select"
       isOpen={isOpen}
       selected={selected}
-      onSelect={(ev, selection) => onSelect(selection as string)}
-      onOpenChange={() => setIsOpen(false)}
+      onSelect={(_event, selection) => onSelect(selection as string)}
+      onOpenChange={(isOpen) => {
+        !isOpen && closeMenu();
+      }}
       toggle={toggle}
+      shouldFocusFirstItemOnOpen={false}
     >
-      <SelectList id="select-multi-typeahead-checkbox-listbox">
+      <SelectList isAriaMultiselectable id="select-multi-typeahead-checkbox-listbox">
         {selectOptions.map((option, index) => (
           <SelectOption
-            {...(!option.isDisabled && { hasCheckbox: true })}
+            {...(!option.isDisabled && !option.isAriaDisabled && { hasCheckbox: true })}
             isSelected={selected.includes(option.value)}
             key={option.value || option.children}
             isFocused={focusedItemIndex === index}
             className={option.className}
-            id={`select-multi-typeahead-${option.value.replace(' ', '-')}`}
+            id={createItemId(option.value)}
             {...option}
             ref={null}
           />
