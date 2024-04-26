@@ -33,7 +33,7 @@ You can find the complete description on the [OUIA website](https://ouia.readthe
 
 PatternFly generates a `data-ouia-component-type` attribute for selected components automatically
 based on the name. For example, the `data-ouia-component-type` attribute for the
-[button component](/components/button) is `PF5/Button`. The id of the `data-ouia-component-id`
+[button component](/components/button) is `PF6/Button`. The id of the `data-ouia-component-id`
 attribute is random by default. To specify the concrete id, add an `ouiaId` prop to the
 component.
 

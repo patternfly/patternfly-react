@@ -6,7 +6,7 @@ exports[`Table Actions table 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-32"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -16,7 +16,7 @@ exports[`Table Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-145"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -110,7 +110,7 @@ exports[`Table Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-146"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -188,7 +188,7 @@ exports[`Table Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-147"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -266,7 +266,7 @@ exports[`Table Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-148"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -344,7 +344,7 @@ exports[`Table Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-149"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -422,7 +422,7 @@ exports[`Table Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-150"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -500,7 +500,7 @@ exports[`Table Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-151"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -578,7 +578,7 @@ exports[`Table Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-152"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -656,7 +656,7 @@ exports[`Table Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-153"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -734,7 +734,7 @@ exports[`Table Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-154"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -820,7 +820,7 @@ exports[`Table Cell header table 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-34"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -830,7 +830,7 @@ exports[`Table Cell header table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-155"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -918,7 +918,7 @@ exports[`Table Cell header table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-156"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -969,7 +969,7 @@ exports[`Table Cell header table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-157"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -1020,7 +1020,7 @@ exports[`Table Cell header table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-158"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -1071,7 +1071,7 @@ exports[`Table Cell header table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-159"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -1122,7 +1122,7 @@ exports[`Table Cell header table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-160"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -1173,7 +1173,7 @@ exports[`Table Cell header table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-161"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -1224,7 +1224,7 @@ exports[`Table Cell header table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-162"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -1275,7 +1275,7 @@ exports[`Table Cell header table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-163"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -1326,7 +1326,7 @@ exports[`Table Cell header table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-164"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -1385,7 +1385,7 @@ exports[`Table Collapsible nested table 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-40"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -1395,7 +1395,7 @@ exports[`Table Collapsible nested table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-180"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -1490,7 +1490,7 @@ exports[`Table Collapsible nested table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-181"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -1505,7 +1505,7 @@ exports[`Table Collapsible nested table 1`] = `
             aria-labelledby="simple-node0 expandable-toggle0"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-9"
-            data-ouia-component-type="PF5/Button"
+            data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             id="expandable-toggle0"
             type="button"
@@ -1577,7 +1577,7 @@ exports[`Table Collapsible nested table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-182"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -1593,7 +1593,7 @@ exports[`Table Collapsible nested table 1`] = `
             aria-labelledby="simple-node1 expandable-toggle1"
             class="pf-v6-c-button pf-m-plain pf-m-expanded"
             data-ouia-component-id="OUIA-Generated-Button-plain-10"
-            data-ouia-component-type="PF5/Button"
+            data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             id="expandable-toggle1"
             type="button"
@@ -1670,7 +1670,7 @@ exports[`Table Collapsible nested table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-183"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -1737,7 +1737,7 @@ exports[`Table Collapsible nested table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-184"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -1752,7 +1752,7 @@ exports[`Table Collapsible nested table 1`] = `
             aria-labelledby="simple-node3 expandable-toggle3"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-11"
-            data-ouia-component-type="PF5/Button"
+            data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             id="expandable-toggle3"
             type="button"
@@ -1824,7 +1824,7 @@ exports[`Table Collapsible nested table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-185"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -1891,7 +1891,7 @@ exports[`Table Collapsible nested table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-186"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -1952,7 +1952,7 @@ exports[`Table Collapsible nested table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-187"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2013,7 +2013,7 @@ exports[`Table Collapsible nested table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-188"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2074,7 +2074,7 @@ exports[`Table Collapsible nested table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-189"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2138,7 +2138,7 @@ exports[`Table Collapsible table 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-36"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -2148,7 +2148,7 @@ exports[`Table Collapsible table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-165"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -2243,7 +2243,7 @@ exports[`Table Collapsible table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-166"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2258,7 +2258,7 @@ exports[`Table Collapsible table 1`] = `
             aria-labelledby="simple-node0 expandable-toggle0"
             class="pf-v6-c-button pf-m-plain pf-m-expanded"
             data-ouia-component-id="OUIA-Generated-Button-plain-7"
-            data-ouia-component-type="PF5/Button"
+            data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             id="expandable-toggle0"
             type="button"
@@ -2330,7 +2330,7 @@ exports[`Table Collapsible table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row pf-m-expanded"
         data-ouia-component-id="OUIA-Generated-TableRow-167"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2396,7 +2396,7 @@ exports[`Table Collapsible table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-168"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2457,7 +2457,7 @@ exports[`Table Collapsible table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-169"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2472,7 +2472,7 @@ exports[`Table Collapsible table 1`] = `
             aria-labelledby="simple-node3 expandable-toggle3"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-8"
-            data-ouia-component-type="PF5/Button"
+            data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             id="expandable-toggle3"
             type="button"
@@ -2544,7 +2544,7 @@ exports[`Table Collapsible table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-170"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -2611,7 +2611,7 @@ exports[`Table Collapsible table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-171"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2672,7 +2672,7 @@ exports[`Table Collapsible table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-172"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2733,7 +2733,7 @@ exports[`Table Collapsible table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-173"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2794,7 +2794,7 @@ exports[`Table Collapsible table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-174"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2858,7 +2858,7 @@ exports[`Table Compound Expandable table 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-38"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -2868,7 +2868,7 @@ exports[`Table Compound Expandable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-175"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -2898,7 +2898,7 @@ exports[`Table Compound Expandable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-176"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2943,7 +2943,7 @@ exports[`Table Compound Expandable table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row pf-m-expanded"
         data-ouia-component-id="OUIA-Generated-TableRow-177"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -2964,7 +2964,7 @@ exports[`Table Compound Expandable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-178"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -3009,7 +3009,7 @@ exports[`Table Compound Expandable table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-179"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -3034,7 +3034,7 @@ exports[`Table Control text table 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-46"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -3044,7 +3044,7 @@ exports[`Table Control text table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-210"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -3101,7 +3101,7 @@ exports[`Table Control text table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-211"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -3152,7 +3152,7 @@ exports[`Table Control text table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-212"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -3204,7 +3204,7 @@ exports[`Table Control text table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-213"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -3261,7 +3261,7 @@ exports[`Table Control text table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-214"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -3312,7 +3312,7 @@ exports[`Table Control text table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-215"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -3369,7 +3369,7 @@ exports[`Table Control text table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-216"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -3425,7 +3425,7 @@ exports[`Table Control text table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-217"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -3481,7 +3481,7 @@ exports[`Table Control text table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-218"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -3537,7 +3537,7 @@ exports[`Table Control text table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-219"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -3596,7 +3596,7 @@ exports[`Table Header width table 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-48"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -3606,7 +3606,7 @@ exports[`Table Header width table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-220"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -3663,7 +3663,7 @@ exports[`Table Header width table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-221"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -3714,7 +3714,7 @@ exports[`Table Header width table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-222"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -3766,7 +3766,7 @@ exports[`Table Header width table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-223"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -3823,7 +3823,7 @@ exports[`Table Header width table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-224"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -3874,7 +3874,7 @@ exports[`Table Header width table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-225"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -3931,7 +3931,7 @@ exports[`Table Header width table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-226"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -3987,7 +3987,7 @@ exports[`Table Header width table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-227"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -4043,7 +4043,7 @@ exports[`Table Header width table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-228"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -4099,7 +4099,7 @@ exports[`Table Header width table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-229"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -4158,7 +4158,7 @@ exports[`Table Selectable table 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-42"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -4168,7 +4168,7 @@ exports[`Table Selectable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-190"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -4271,7 +4271,7 @@ exports[`Table Selectable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-191"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -4335,7 +4335,7 @@ exports[`Table Selectable table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-192"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -4392,7 +4392,7 @@ exports[`Table Selectable table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-193"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -4454,7 +4454,7 @@ exports[`Table Selectable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-194"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -4518,7 +4518,7 @@ exports[`Table Selectable table 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-195"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -4580,7 +4580,7 @@ exports[`Table Selectable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-196"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -4649,7 +4649,7 @@ exports[`Table Selectable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-197"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -4718,7 +4718,7 @@ exports[`Table Selectable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-198"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -4787,7 +4787,7 @@ exports[`Table Selectable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-199"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -4859,7 +4859,7 @@ exports[`Table Selectable table with Radio 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-44"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -4869,7 +4869,7 @@ exports[`Table Selectable table with Radio 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-200"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -4964,7 +4964,7 @@ exports[`Table Selectable table with Radio 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-201"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -5028,7 +5028,7 @@ exports[`Table Selectable table with Radio 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-202"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -5085,7 +5085,7 @@ exports[`Table Selectable table with Radio 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-203"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -5147,7 +5147,7 @@ exports[`Table Selectable table with Radio 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-204"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -5211,7 +5211,7 @@ exports[`Table Selectable table with Radio 1`] = `
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-205"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
       >
@@ -5273,7 +5273,7 @@ exports[`Table Selectable table with Radio 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-206"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -5342,7 +5342,7 @@ exports[`Table Selectable table with Radio 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-207"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -5411,7 +5411,7 @@ exports[`Table Selectable table with Radio 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-208"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -5480,7 +5480,7 @@ exports[`Table Selectable table with Radio 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-209"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -5552,7 +5552,7 @@ exports[`Table Selectable table with selected expandable row 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-50"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -5562,7 +5562,7 @@ exports[`Table Selectable table with selected expandable row 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-230"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -5599,7 +5599,7 @@ exports[`Table Selectable table with selected expandable row 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-231"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -5628,7 +5628,7 @@ exports[`Table Selectable table with selected expandable row 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-232"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -5656,7 +5656,7 @@ exports[`Table Simple Actions table 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-30"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -5666,7 +5666,7 @@ exports[`Table Simple Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-134"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -5760,7 +5760,7 @@ exports[`Table Simple Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-135"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -5838,7 +5838,7 @@ exports[`Table Simple Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-136"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -5916,7 +5916,7 @@ exports[`Table Simple Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-137"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -5994,7 +5994,7 @@ exports[`Table Simple Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-138"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6072,7 +6072,7 @@ exports[`Table Simple Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-139"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6150,7 +6150,7 @@ exports[`Table Simple Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-140"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6228,7 +6228,7 @@ exports[`Table Simple Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-141"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6306,7 +6306,7 @@ exports[`Table Simple Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-142"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6384,7 +6384,7 @@ exports[`Table Simple Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-143"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6462,7 +6462,7 @@ exports[`Table Simple Actions table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-144"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6549,7 +6549,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table"
     data-ouia-component-id="OUIA-Generated-Table-16"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -6559,7 +6559,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-64"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -6647,7 +6647,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-65"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6694,7 +6694,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-66"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6741,7 +6741,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-67"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6788,7 +6788,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-68"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6835,7 +6835,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-69"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6882,7 +6882,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-70"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6929,7 +6929,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-71"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -6976,7 +6976,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-72"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7023,7 +7023,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-73"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7078,7 +7078,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid"
     data-ouia-component-id="OUIA-Generated-Table-18"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -7088,7 +7088,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-74"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -7176,7 +7176,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-75"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7223,7 +7223,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-76"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7270,7 +7270,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-77"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7317,7 +7317,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-78"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7364,7 +7364,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-79"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7411,7 +7411,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-80"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7458,7 +7458,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-81"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7505,7 +7505,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-82"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7552,7 +7552,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-83"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7607,7 +7607,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-2xl"
     data-ouia-component-id="OUIA-Generated-Table-26"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -7617,7 +7617,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-114"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -7705,7 +7705,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-115"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7752,7 +7752,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-116"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7799,7 +7799,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-117"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7846,7 +7846,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-118"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7893,7 +7893,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-119"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7940,7 +7940,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-120"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -7987,7 +7987,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-121"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8034,7 +8034,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-122"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8081,7 +8081,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-123"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8136,7 +8136,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-lg"
     data-ouia-component-id="OUIA-Generated-Table-22"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -8146,7 +8146,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-94"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -8234,7 +8234,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-95"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8281,7 +8281,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-96"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8328,7 +8328,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-97"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8375,7 +8375,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-98"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8422,7 +8422,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-99"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8469,7 +8469,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-100"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8516,7 +8516,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-101"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8563,7 +8563,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-102"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8610,7 +8610,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-103"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8665,7 +8665,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-20"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -8675,7 +8675,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-84"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -8763,7 +8763,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-85"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8810,7 +8810,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-86"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8857,7 +8857,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-87"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8904,7 +8904,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-88"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8951,7 +8951,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-89"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -8998,7 +8998,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-90"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9045,7 +9045,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-91"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9092,7 +9092,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-92"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9139,7 +9139,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-93"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9194,7 +9194,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-xl"
     data-ouia-component-id="OUIA-Generated-Table-24"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -9204,7 +9204,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-104"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -9292,7 +9292,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-105"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9339,7 +9339,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-106"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9386,7 +9386,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-107"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9433,7 +9433,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-108"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9480,7 +9480,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-109"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9527,7 +9527,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-110"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9574,7 +9574,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-111"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9621,7 +9621,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-112"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9668,7 +9668,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-113"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9723,7 +9723,7 @@ exports[`Table Table variants Size - compact 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md pf-m-compact"
     data-ouia-component-id="OUIA-Generated-Table-28"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -9733,7 +9733,7 @@ exports[`Table Table variants Size - compact 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-124"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -9821,7 +9821,7 @@ exports[`Table Table variants Size - compact 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-125"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9868,7 +9868,7 @@ exports[`Table Table variants Size - compact 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-126"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9915,7 +9915,7 @@ exports[`Table Table variants Size - compact 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-127"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -9962,7 +9962,7 @@ exports[`Table Table variants Size - compact 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-128"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -10009,7 +10009,7 @@ exports[`Table Table variants Size - compact 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-129"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -10056,7 +10056,7 @@ exports[`Table Table variants Size - compact 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-130"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -10103,7 +10103,7 @@ exports[`Table Table variants Size - compact 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-131"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -10150,7 +10150,7 @@ exports[`Table Table variants Size - compact 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-132"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -10197,7 +10197,7 @@ exports[`Table Table variants Size - compact 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-133"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -10254,7 +10254,7 @@ exports[`Table simple Editable table 1`] = `
     <table
       class="pf-v6-c-table pf-m-grid-md"
       data-ouia-component-id="OUIA-Generated-Table-10"
-      data-ouia-component-type="PF5/Table"
+      data-ouia-component-type="PF6/Table"
       data-ouia-safe="true"
       role="grid"
     >
@@ -10267,7 +10267,7 @@ exports[`Table simple Editable table 1`] = `
         <tr
           class="pf-v6-c-table__tr"
           data-ouia-component-id="OUIA-Generated-TableRow-41"
-          data-ouia-component-type="PF5/TableRow"
+          data-ouia-component-type="PF6/TableRow"
           data-ouia-safe="true"
         >
           <th
@@ -10322,7 +10322,7 @@ exports[`Table simple Editable table 1`] = `
         <tr
           class="pf-v6-c-table__tr pf-m-inline-editable"
           data-ouia-component-id="OUIA-Generated-TableRow-42"
-          data-ouia-component-type="PF5/TableRow"
+          data-ouia-component-type="PF6/TableRow"
           data-ouia-safe="true"
         >
           <td
@@ -10346,7 +10346,7 @@ exports[`Table simple Editable table 1`] = `
                   aria-invalid="false"
                   aria-label="Row 1 cell 1 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-1"
-                  data-ouia-component-type="PF5/TextInput"
+                  data-ouia-component-type="PF6/TextInput"
                   data-ouia-safe="true"
                   type="text"
                   value="Row 1 cell 1 content"
@@ -10379,7 +10379,7 @@ exports[`Table simple Editable table 1`] = `
                   aria-invalid="false"
                   aria-label="Row 1 cell 2 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-2"
-                  data-ouia-component-type="PF5/TextInput"
+                  data-ouia-component-type="PF6/TextInput"
                   data-ouia-safe="true"
                   disabled=""
                   type="text"
@@ -10413,7 +10413,7 @@ exports[`Table simple Editable table 1`] = `
                   aria-invalid="false"
                   aria-label="Row 1 cell 3 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-3"
-                  data-ouia-component-type="PF5/TextInput"
+                  data-ouia-component-type="PF6/TextInput"
                   data-ouia-safe="true"
                   type="text"
                   value="Row 1 cell 3 content"
@@ -10446,7 +10446,7 @@ exports[`Table simple Editable table 1`] = `
                   aria-invalid="false"
                   aria-label="Row 1 cell 4 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-4"
-                  data-ouia-component-type="PF5/TextInput"
+                  data-ouia-component-type="PF6/TextInput"
                   data-ouia-safe="true"
                   type="text"
                   value="Row 1 cell 4 content"
@@ -10474,7 +10474,7 @@ exports[`Table simple Editable table 1`] = `
                   aria-label="Save row edits for row 0"
                   class="pf-v6-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-1"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -10501,7 +10501,7 @@ exports[`Table simple Editable table 1`] = `
                   aria-label="Cancel row edits for row 0"
                   class="pf-v6-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-2"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -10529,7 +10529,7 @@ exports[`Table simple Editable table 1`] = `
                 aria-label="Place row 0 in edit mode"
                 class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-3"
-                data-ouia-component-type="PF5/Button"
+                data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 type="button"
               >
@@ -10553,7 +10553,7 @@ exports[`Table simple Editable table 1`] = `
         <tr
           class="pf-v6-c-table__tr"
           data-ouia-component-id="OUIA-Generated-TableRow-43"
-          data-ouia-component-type="PF5/TableRow"
+          data-ouia-component-type="PF6/TableRow"
           data-ouia-safe="true"
         >
           <td
@@ -10577,7 +10577,7 @@ exports[`Table simple Editable table 1`] = `
                   aria-invalid="false"
                   aria-label="Row 1 cell 1 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-5"
-                  data-ouia-component-type="PF5/TextInput"
+                  data-ouia-component-type="PF6/TextInput"
                   data-ouia-safe="true"
                   type="text"
                   value="Row 2 cell 1 content"
@@ -10610,7 +10610,7 @@ exports[`Table simple Editable table 1`] = `
                   aria-invalid="false"
                   aria-label="Row 2 cell 2 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-6"
-                  data-ouia-component-type="PF5/TextInput"
+                  data-ouia-component-type="PF6/TextInput"
                   data-ouia-safe="true"
                   disabled=""
                   type="text"
@@ -10644,7 +10644,7 @@ exports[`Table simple Editable table 1`] = `
                   aria-invalid="false"
                   aria-label="Row 2 cell 3 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-7"
-                  data-ouia-component-type="PF5/TextInput"
+                  data-ouia-component-type="PF6/TextInput"
                   data-ouia-safe="true"
                   type="text"
                   value="Row 2 cell 3 content"
@@ -10677,7 +10677,7 @@ exports[`Table simple Editable table 1`] = `
                   aria-invalid="false"
                   aria-label="Row 2 cell 4 content"
                   data-ouia-component-id="OUIA-Generated-TextInputBase-8"
-                  data-ouia-component-type="PF5/TextInput"
+                  data-ouia-component-type="PF6/TextInput"
                   data-ouia-safe="true"
                   type="text"
                   value="Row 2 cell 4 content"
@@ -10705,7 +10705,7 @@ exports[`Table simple Editable table 1`] = `
                   aria-label="Save row edits for row 1"
                   class="pf-v6-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-4"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -10732,7 +10732,7 @@ exports[`Table simple Editable table 1`] = `
                   aria-label="Cancel row edits for row 1"
                   class="pf-v6-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-5"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -10760,7 +10760,7 @@ exports[`Table simple Editable table 1`] = `
                 aria-label="Place row 1 in edit mode"
                 class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-6"
-                data-ouia-component-type="PF5/Button"
+                data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 type="button"
               >
@@ -10793,7 +10793,7 @@ exports[`Table simple Row click table 1`] = `
     aria-label="Row click table"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-14"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -10803,7 +10803,7 @@ exports[`Table simple Row click table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-54"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -10891,7 +10891,7 @@ exports[`Table simple Row click table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-55"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -10938,7 +10938,7 @@ exports[`Table simple Row click table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-56"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -10985,7 +10985,7 @@ exports[`Table simple Row click table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-57"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11032,7 +11032,7 @@ exports[`Table simple Row click table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-58"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11079,7 +11079,7 @@ exports[`Table simple Row click table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-59"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11126,7 +11126,7 @@ exports[`Table simple Row click table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-60"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11173,7 +11173,7 @@ exports[`Table simple Row click table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-61"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11220,7 +11220,7 @@ exports[`Table simple Row click table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-62"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11267,7 +11267,7 @@ exports[`Table simple Row click table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-63"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11322,7 +11322,7 @@ exports[`Table simple Sortable table 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-12"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -11332,7 +11332,7 @@ exports[`Table simple Sortable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-44"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -11420,7 +11420,7 @@ exports[`Table simple Sortable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-45"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11467,7 +11467,7 @@ exports[`Table simple Sortable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-46"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11514,7 +11514,7 @@ exports[`Table simple Sortable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-47"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11561,7 +11561,7 @@ exports[`Table simple Sortable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-48"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11608,7 +11608,7 @@ exports[`Table simple Sortable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-49"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11655,7 +11655,7 @@ exports[`Table simple Sortable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-50"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11702,7 +11702,7 @@ exports[`Table simple Sortable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-51"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11749,7 +11749,7 @@ exports[`Table simple Sortable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-52"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11796,7 +11796,7 @@ exports[`Table simple Sortable table 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-53"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11851,7 +11851,7 @@ exports[`Table simple aria-label 1`] = `
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-8"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -11861,7 +11861,7 @@ exports[`Table simple aria-label 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-31"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -11918,7 +11918,7 @@ exports[`Table simple aria-label 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-32"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -11965,7 +11965,7 @@ exports[`Table simple aria-label 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-33"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12012,7 +12012,7 @@ exports[`Table simple aria-label 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-34"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12059,7 +12059,7 @@ exports[`Table simple aria-label 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-35"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12106,7 +12106,7 @@ exports[`Table simple aria-label 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-36"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12153,7 +12153,7 @@ exports[`Table simple aria-label 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-37"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12200,7 +12200,7 @@ exports[`Table simple aria-label 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-38"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12247,7 +12247,7 @@ exports[`Table simple aria-label 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-39"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12294,7 +12294,7 @@ exports[`Table simple aria-label 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-40"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12348,7 +12348,7 @@ exports[`Table simple caption 1`] = `
   <table
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-2"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -12361,7 +12361,7 @@ exports[`Table simple caption 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-1"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -12418,7 +12418,7 @@ exports[`Table simple caption 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-2"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12465,7 +12465,7 @@ exports[`Table simple caption 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-3"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12512,7 +12512,7 @@ exports[`Table simple caption 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-4"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12559,7 +12559,7 @@ exports[`Table simple caption 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-5"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12606,7 +12606,7 @@ exports[`Table simple caption 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-6"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12653,7 +12653,7 @@ exports[`Table simple caption 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-7"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12700,7 +12700,7 @@ exports[`Table simple caption 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-8"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12747,7 +12747,7 @@ exports[`Table simple caption 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-9"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12794,7 +12794,7 @@ exports[`Table simple caption 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-10"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12851,7 +12851,7 @@ exports[`Table simple header 1`] = `
   <table
     class="pf-v6-c-table pf-m-grid-md"
     data-ouia-component-id="OUIA-Generated-Table-6"
-    data-ouia-component-type="PF5/Table"
+    data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
   >
@@ -12861,7 +12861,7 @@ exports[`Table simple header 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-21"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <th
@@ -12918,7 +12918,7 @@ exports[`Table simple header 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-22"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -12965,7 +12965,7 @@ exports[`Table simple header 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-23"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -13012,7 +13012,7 @@ exports[`Table simple header 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-24"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -13059,7 +13059,7 @@ exports[`Table simple header 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-25"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -13106,7 +13106,7 @@ exports[`Table simple header 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-26"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -13153,7 +13153,7 @@ exports[`Table simple header 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-27"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -13200,7 +13200,7 @@ exports[`Table simple header 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-28"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -13247,7 +13247,7 @@ exports[`Table simple header 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-29"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td
@@ -13294,7 +13294,7 @@ exports[`Table simple header 1`] = `
       <tr
         class="pf-v6-c-table__tr"
         data-ouia-component-id="OUIA-Generated-TableRow-30"
-        data-ouia-component-type="PF5/TableRow"
+        data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
         <td

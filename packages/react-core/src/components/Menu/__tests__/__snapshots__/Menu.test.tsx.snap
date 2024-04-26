@@ -5,7 +5,7 @@ exports[`Menu should render Menu successfully 1`] = `
   <div
     class="pf-v6-c-menu"
     data-ouia-component-id="OUIA-Generated-Menu-1"
-    data-ouia-component-type="PF5/Menu"
+    data-ouia-component-type="PF6/Menu"
     data-ouia-safe="true"
   >
     content

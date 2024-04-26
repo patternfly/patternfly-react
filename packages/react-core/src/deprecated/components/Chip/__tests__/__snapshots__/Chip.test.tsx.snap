@@ -5,7 +5,7 @@ exports[`Matches snapshot 1`] = `
   <span
     class="pf-v6-c-label pf-m-outline"
     data-ouia-component-id="snapshot-test"
-    data-ouia-component-type="PF5/Chip"
+    data-ouia-component-type="PF6/Chip"
     data-ouia-safe="true"
     id="snapshot-test"
   >
@@ -27,7 +27,7 @@ exports[`Matches snapshot 1`] = `
         aria-label="Close Chip text"
         class="pf-v6-c-button pf-m-plain pf-m-no-padding"
         data-ouia-component-id="OUIA-Generated-Button-plain-17"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >

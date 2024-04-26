@@ -5,7 +5,7 @@ exports[`TabContent should match snapshot (auto-generated) 1`] = `
   <section
     aria-label="string"
     class="pf-v6-c-tab-content string"
-    data-ouia-component-type="PF5/TabContent"
+    data-ouia-component-type="PF6/TabContent"
     data-ouia-safe="true"
     id="string"
     role="tabpanel"

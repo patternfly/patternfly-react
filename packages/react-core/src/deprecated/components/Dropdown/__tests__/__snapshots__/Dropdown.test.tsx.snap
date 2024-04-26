@@ -5,7 +5,7 @@ exports[`Dropdown Renders in strict mode 1`] = `
   <div
     class="pf-v6-c-dropdown pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-Dropdown-10"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -13,7 +13,7 @@ exports[`Dropdown Renders in strict mode 1`] = `
       aria-haspopup="true"
       class="pf-v6-c-dropdown__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-10"
-      data-ouia-component-type="PF5/DropdownToggle"
+      data-ouia-component-type="PF6/DropdownToggle"
       data-ouia-safe="true"
       id="Dropdown Toggle"
       type="button"
@@ -130,7 +130,7 @@ exports[`Dropdown alignment breakpoints 1`] = `
     aria-label="Dropdown button"
     class="pf-v6-c-dropdown pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-Dropdown-3"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -138,7 +138,7 @@ exports[`Dropdown alignment breakpoints 1`] = `
       aria-haspopup="true"
       class="pf-v6-c-dropdown__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
-      data-ouia-component-type="PF5/DropdownToggle"
+      data-ouia-component-type="PF6/DropdownToggle"
       data-ouia-safe="true"
       id="Dropdown Toggle"
       type="button"
@@ -254,7 +254,7 @@ exports[`Dropdown basic 1`] = `
   <div
     class="pf-v6-c-dropdown pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-Dropdown-8"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -262,7 +262,7 @@ exports[`Dropdown basic 1`] = `
       aria-haspopup="false"
       class="pf-v6-c-dropdown__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
-      data-ouia-component-type="PF5/DropdownToggle"
+      data-ouia-component-type="PF6/DropdownToggle"
       data-ouia-safe="true"
       id="Dropdown Toggle"
       type="button"
@@ -306,7 +306,7 @@ exports[`Dropdown dropup + right aligned 1`] = `
   <div
     class="pf-v6-c-dropdown pf-m-top pf-m-align-right"
     data-ouia-component-id="OUIA-Generated-Dropdown-5"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -314,7 +314,7 @@ exports[`Dropdown dropup + right aligned 1`] = `
       aria-haspopup="true"
       class="pf-v6-c-dropdown__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
-      data-ouia-component-type="PF5/DropdownToggle"
+      data-ouia-component-type="PF6/DropdownToggle"
       data-ouia-safe="true"
       id="Dropdown Toggle"
       type="button"
@@ -351,7 +351,7 @@ exports[`Dropdown dropup 1`] = `
   <div
     class="pf-v6-c-dropdown pf-m-top"
     data-ouia-component-id="OUIA-Generated-Dropdown-4"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -359,7 +359,7 @@ exports[`Dropdown dropup 1`] = `
       aria-haspopup="true"
       class="pf-v6-c-dropdown__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
-      data-ouia-component-type="PF5/DropdownToggle"
+      data-ouia-component-type="PF6/DropdownToggle"
       data-ouia-safe="true"
       id="Dropdown Toggle"
       type="button"
@@ -397,7 +397,7 @@ exports[`Dropdown expanded 1`] = `
     aria-label="Dropdown button"
     class="pf-v6-c-dropdown pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-Dropdown-6"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -405,7 +405,7 @@ exports[`Dropdown expanded 1`] = `
       aria-haspopup="true"
       class="pf-v6-c-dropdown__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
-      data-ouia-component-type="PF5/DropdownToggle"
+      data-ouia-component-type="PF6/DropdownToggle"
       data-ouia-safe="true"
       id="Dropdown Toggle"
       type="button"
@@ -521,7 +521,7 @@ exports[`Dropdown primary 1`] = `
   <div
     class="pf-v6-c-dropdown"
     data-ouia-component-id="OUIA-Generated-Dropdown-7"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -529,7 +529,7 @@ exports[`Dropdown primary 1`] = `
       aria-haspopup="true"
       class="pf-v6-c-dropdown__toggle pf-m-primary"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
-      data-ouia-component-type="PF5/DropdownToggle"
+      data-ouia-component-type="PF6/DropdownToggle"
       data-ouia-safe="true"
       id="Dropdown Toggle"
       type="button"
@@ -566,7 +566,7 @@ exports[`Dropdown regular 1`] = `
   <div
     class="pf-v6-c-dropdown"
     data-ouia-component-id="OUIA-Generated-Dropdown-1"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -574,7 +574,7 @@ exports[`Dropdown regular 1`] = `
       aria-haspopup="true"
       class="pf-v6-c-dropdown__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
-      data-ouia-component-type="PF5/DropdownToggle"
+      data-ouia-component-type="PF6/DropdownToggle"
       data-ouia-safe="true"
       id="Dropdown Toggle"
       type="button"
@@ -611,7 +611,7 @@ exports[`Dropdown right aligned 1`] = `
   <div
     class="pf-v6-c-dropdown pf-m-align-right"
     data-ouia-component-id="OUIA-Generated-Dropdown-2"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -619,7 +619,7 @@ exports[`Dropdown right aligned 1`] = `
       aria-haspopup="true"
       class="pf-v6-c-dropdown__toggle"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
-      data-ouia-component-type="PF5/DropdownToggle"
+      data-ouia-component-type="PF6/DropdownToggle"
       data-ouia-safe="true"
       id="Dropdown Toggle"
       type="button"
@@ -656,7 +656,7 @@ exports[`KebabToggle basic 1`] = `
   <div
     class="pf-v6-c-dropdown pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-Dropdown-17"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -697,7 +697,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
   <div
     class="pf-v6-c-dropdown pf-m-top pf-m-align-right"
     data-ouia-component-id="OUIA-Generated-Dropdown-14"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -731,7 +731,7 @@ exports[`KebabToggle dropup 1`] = `
   <div
     class="pf-v6-c-dropdown pf-m-top"
     data-ouia-component-id="OUIA-Generated-Dropdown-13"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -766,7 +766,7 @@ exports[`KebabToggle expanded 1`] = `
     aria-label="Dropdown button"
     class="pf-v6-c-dropdown pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-Dropdown-15"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -879,7 +879,7 @@ exports[`KebabToggle plain 1`] = `
   <div
     class="pf-v6-c-dropdown"
     data-ouia-component-id="OUIA-Generated-Dropdown-16"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -914,7 +914,7 @@ exports[`KebabToggle regular 1`] = `
     aria-label="Dropdown button"
     class="pf-v6-c-dropdown"
     data-ouia-component-id="OUIA-Generated-Dropdown-11"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button
@@ -948,7 +948,7 @@ exports[`KebabToggle right aligned 1`] = `
   <div
     class="pf-v6-c-dropdown pf-m-align-right"
     data-ouia-component-id="OUIA-Generated-Dropdown-12"
-    data-ouia-component-type="PF5/Dropdown"
+    data-ouia-component-type="PF6/Dropdown"
     data-ouia-safe="true"
   >
     <button

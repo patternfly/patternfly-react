@@ -30,7 +30,7 @@ exports[`check loginpage example against snapshot 1`] = `
           <h2
             class="pf-v6-c-title pf-m-3xl"
             data-ouia-component-id="OUIA-Generated-Title-1"
-            data-ouia-component-type="PF5/Title"
+            data-ouia-component-type="PF6/Title"
             data-ouia-safe="true"
           >
             Log into your account

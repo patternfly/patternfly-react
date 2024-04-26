@@ -5,7 +5,7 @@ exports[`Matches the snapshot 1`] = `
   <p
     class=""
     data-ouia-component-id="ouia-id"
-    data-ouia-component-type="PF5/Text"
+    data-ouia-component-type="PF6/Text"
     data-ouia-safe="true"
     data-pf-content="true"
   >

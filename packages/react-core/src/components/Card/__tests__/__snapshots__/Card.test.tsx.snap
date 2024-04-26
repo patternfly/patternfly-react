@@ -5,7 +5,7 @@ exports[`Card card with isCompact applied  1`] = `
   <div
     class="pf-v6-c-card pf-m-compact"
     data-ouia-component-id="OUIA-Generated-Card-6"
-    data-ouia-component-type="PF5/Card"
+    data-ouia-component-type="PF6/Card"
     data-ouia-safe="true"
     id=""
   />
@@ -17,7 +17,7 @@ exports[`Card renders with PatternFly Core styles 1`] = `
   <div
     class="pf-v6-c-card"
     data-ouia-component-id="OUIA-Generated-Card-1"
-    data-ouia-component-type="PF5/Card"
+    data-ouia-component-type="PF6/Card"
     data-ouia-safe="true"
     id=""
   />

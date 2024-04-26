@@ -21,7 +21,7 @@ exports[`simple fileuploadfield 1`] = `
               aria-invalid="false"
               aria-label="Do something custom with this!"
               data-ouia-component-id="OUIA-Generated-TextInputBase-1"
-              data-ouia-component-type="PF5/TextInput"
+              data-ouia-component-type="PF6/TextInput"
               data-ouia-safe="true"
               id="custom-file-upload-filename"
               name="custom-file-upload-filename"
@@ -39,7 +39,7 @@ exports[`simple fileuploadfield 1`] = `
             aria-disabled="false"
             class="pf-v6-c-button pf-m-control"
             data-ouia-component-id="OUIA-Generated-Button-control-1"
-            data-ouia-component-type="PF5/Button"
+            data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             type="button"
           >
@@ -53,7 +53,7 @@ exports[`simple fileuploadfield 1`] = `
             aria-disabled="false"
             class="pf-v6-c-button pf-m-control"
             data-ouia-component-id="OUIA-Generated-Button-control-2"
-            data-ouia-component-type="PF5/Button"
+            data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             type="button"
           >

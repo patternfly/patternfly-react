@@ -93,7 +93,7 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
         aria-label="buttonAriaLabel"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-8"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
@@ -206,7 +206,7 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-2"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
@@ -321,7 +321,7 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-4"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
@@ -436,7 +436,7 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-5"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
@@ -568,7 +568,7 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-7"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
@@ -683,7 +683,7 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-3"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
@@ -796,7 +796,7 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
@@ -911,7 +911,7 @@ exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage whe
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-6"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
