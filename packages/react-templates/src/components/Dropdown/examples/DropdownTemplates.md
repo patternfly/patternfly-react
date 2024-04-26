@@ -11,6 +11,18 @@ Note: Templates live in their own package at [@patternfly/react-templates](https
 
 For custom use cases, please see the dropdown component suite from [@patternfly/react-core](https://www.npmjs.com/package/@patternfly/react-core).
 
+import {
+Checkbox,
+Divider,
+Dropdown,
+DropdownItem,
+DropdownList,
+DropdownItemProps,
+Flex,
+FlexItem,
+MenuToggle,
+MenuToggleElement
+} from '@patternfly/react-core';
 import { DropdownSimple } from '@patternfly/react-templates';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
