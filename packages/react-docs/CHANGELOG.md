@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.4.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.6...@patternfly/react-docs@6.4.0-prerelease.7) (2024-04-26)
+
+### Features
+
+- **docs:** fix props ignore paths ([#10301](https://github.com/patternfly/patternfly-react/issues/10301)) ([312a351](https://github.com/patternfly/patternfly-react/commit/312a3514d49da68e83df22a3c8d68c1f0b9434e5))
+
 # [6.4.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.5...@patternfly/react-docs@6.4.0-prerelease.6) (2024-04-26)
 
 **Note:** Version bump only for package @patternfly/react-docs
