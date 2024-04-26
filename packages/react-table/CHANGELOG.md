@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.0.0-alpha.53 (2024-04-26)
+
+### Bug Fixes
+
+- **helpers:** Updated OUIA ID prefix to PF6 ([#10292](https://github.com/patternfly/patternfly-react/issues/10292)) ([1c7af7a](https://github.com/patternfly/patternfly-react/commit/1c7af7ab9f352b9ad02caabb1deef08cf69e0950))
+
 # [6.0.0-alpha.52](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.51...@patternfly/react-table@6.0.0-alpha.52) (2024-04-24)
 
 **Note:** Version bump only for package @patternfly/react-table
