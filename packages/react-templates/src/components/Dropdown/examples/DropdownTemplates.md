@@ -23,7 +23,7 @@ FlexItem,
 MenuToggle,
 MenuToggleElement
 } from '@patternfly/react-core';
-import { DropdownSimple, DropdownSimpleItemProps } from '@patternfly/react-templates';
+import { DropdownSimple, DropdownSimpleItem } from '@patternfly/react-templates';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Examples

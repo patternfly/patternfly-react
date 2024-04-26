@@ -1,12 +1,12 @@
 import React from 'react';
 import { Checkbox, Flex, FlexItem } from '@patternfly/react-core';
-import { DropdownSimple, DropdownSimpleItemProps } from '@patternfly/react-templates';
+import { DropdownSimple, DropdownSimpleItem } from '@patternfly/react-templates';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const DropdownSimpleExample: React.FunctionComponent = () => {
   const [isDisabled, setIsDisabled] = React.useState(false);
 
-  const items: DropdownSimpleItemProps[] = [
+  const items: DropdownSimpleItem[] = [
     // eslint-disable-next-line no-console
     { content: 'Action', value: 1, onClick: () => console.log('Action clicked') },
     // Prevent default click behavior on link for example purposes
