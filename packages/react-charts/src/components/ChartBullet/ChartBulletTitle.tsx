@@ -215,7 +215,8 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
         dy,
         labelPosition
       }),
-      ...titleComponent.props
+      ...titleComponent.props,
+      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
     });
   };
 

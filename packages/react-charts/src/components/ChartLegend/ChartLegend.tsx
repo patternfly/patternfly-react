@@ -350,14 +350,16 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   const getLabelComponent = () =>
     React.cloneElement(labelComponent, {
       ...(name && { id: (props: any) => `${name}-${(labelComponent as any).type.displayName}-${props.index}` }),
-      ...labelComponent.props
+      ...labelComponent.props,
+      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
     });
 
   const getTitleComponent = () =>
     React.cloneElement(titleComponent, {
       // Victory doesn't appear to call the id function here, but it's valid for label components
       ...(name && { id: () => `${name}-${(titleComponent as any).type.displayName}` }),
-      ...titleComponent.props
+      ...titleComponent.props,
+      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
     });
 
   // Note: containerComponent is required for theme

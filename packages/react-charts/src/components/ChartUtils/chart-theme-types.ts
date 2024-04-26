@@ -1,5 +1,3 @@
-import cloneDeep from 'lodash/cloneDeep';
-
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import {
   ChartAxisTheme,
@@ -17,9 +15,13 @@ import {
   ChartDonutUtilizationStaticTheme,
   ChartDonutThresholdDynamicTheme,
   ChartDonutThresholdStaticTheme,
-  ChartThresholdTheme
+  ChartThresholdTheme,
+  ChartSkeletonTheme
 } from '../ChartTheme/ChartThemeTypes';
 import { getTheme, getCustomTheme } from './chart-theme';
+import { ChartThemeColor } from '../ChartTheme/ChartThemeColor';
+import merge from 'lodash/merge';
+import { SkeletonColorTheme } from '../ChartTheme/themes/colors/skeleton-theme';
 
 /**
  * Returns axis theme
@@ -38,22 +40,43 @@ export const getBulletTheme = (themeColor: string): ChartThemeDefinition =>
  * Returns comparative error measure theme for bullet chart
  * @private
  */
-export const getBulletComparativeErrorMeasureTheme = (themeColor: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, ChartBulletComparativeErrorMeasureTheme);
+export const getBulletComparativeErrorMeasureTheme = (themeColor: string): ChartThemeDefinition => {
+  const theme = getCustomTheme(themeColor, ChartBulletComparativeErrorMeasureTheme);
+
+  // Override zero measure
+  if (themeColor === ChartThemeColor.skeleton) {
+    theme.bar.style = merge(theme.bar.style, ChartSkeletonTheme.bar.style);
+  }
+  return theme;
+};
 
 /**
  * Returns comparative measure theme for bullet chart
  * @private
  */
-export const getBulletComparativeMeasureTheme = (themeColor: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, ChartBulletComparativeMeasureTheme);
+export const getBulletComparativeMeasureTheme = (themeColor: string): ChartThemeDefinition => {
+  const theme = getCustomTheme(themeColor, ChartBulletComparativeMeasureTheme);
+
+  // Override zero measure
+  if (themeColor === ChartThemeColor.skeleton) {
+    theme.bar.style = merge(theme.bar.style, ChartSkeletonTheme.bar.style);
+  }
+  return theme;
+};
 
 /**
  * Returns comparative warning measure theme for bullet chart
  * @private
  */
-export const getBulletComparativeWarningMeasureTheme = (themeColor: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, ChartBulletComparativeWarningMeasureTheme);
+export const getBulletComparativeWarningMeasureTheme = (themeColor: string): ChartThemeDefinition => {
+  const theme = getCustomTheme(themeColor, ChartBulletComparativeWarningMeasureTheme);
+
+  // Override zero measure
+  if (themeColor === ChartThemeColor.skeleton) {
+    theme.bar.style = merge(theme.bar.style, ChartSkeletonTheme.bar.style);
+  }
+  return theme;
+};
 
 /**
  * Returns group title theme for bullet chart
@@ -73,8 +96,15 @@ export const getBulletPrimaryDotMeasureTheme = (themeColor: string): ChartThemeD
  * Returns primary negative measure theme for bullet chart
  * @private
  */
-export const getBulletPrimaryNegativeMeasureTheme = (themeColor: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, ChartBulletPrimaryNegativeMeasureTheme);
+export const getBulletPrimaryNegativeMeasureTheme = (themeColor: string): ChartThemeDefinition => {
+  const theme = getCustomTheme(themeColor, ChartBulletPrimaryNegativeMeasureTheme);
+
+  // Override colorScale
+  if (themeColor === ChartThemeColor.skeleton) {
+    theme.group.colorScale = merge(theme.group.colorScale, SkeletonColorTheme.group.colorScale);
+  }
+  return theme;
+};
 
 /**
  * Returns primary segmented measure theme for bullet chart
@@ -87,8 +117,15 @@ export const getBulletPrimarySegmentedMeasureTheme = (themeColor: string): Chart
  * Returns qualitative range theme for bullet chart
  * @private
  */
-export const getBulletQualitativeRangeTheme = (themeColor: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, ChartBulletQualitativeRangeTheme);
+export const getBulletQualitativeRangeTheme = (themeColor: string): ChartThemeDefinition => {
+  const theme = getCustomTheme(themeColor, ChartBulletQualitativeRangeTheme);
+
+  // Override colorScale
+  if (themeColor === ChartThemeColor.skeleton) {
+    theme.group.colorScale = merge(theme.group.colorScale, SkeletonColorTheme.group.colorScale);
+  }
+  return theme;
+};
 
 /**
  * Returns theme for Chart component
@@ -99,13 +136,13 @@ export const getChartTheme = (themeColor: string, showAxis: boolean): ChartTheme
 
   if (!showAxis) {
     theme.axis.padding = 0;
-    theme.axis.style.axis.fill = 'none';
-    theme.axis.style.axis.stroke = 'none';
-    theme.axis.style.grid.fill = 'none';
-    theme.axis.style.grid.stroke = 'none';
-    theme.axis.style.ticks.fill = 'none';
-    theme.axis.style.ticks.stroke = 'none';
-    theme.axis.style.tickLabels.fill = 'none';
+    theme.axis.style.axis.fill = 'transparent';
+    theme.axis.style.axis.stroke = 'transparent';
+    theme.axis.style.grid.fill = 'transparent';
+    theme.axis.style.grid.stroke = 'transparent';
+    theme.axis.style.ticks.fill = 'transparent';
+    theme.axis.style.ticks.stroke = 'transparent';
+    theme.axis.style.tickLabels.fill = 'transparent';
   }
   return theme;
 };
@@ -128,6 +165,12 @@ export const getDonutThresholdDynamicTheme = (themeColor: string): ChartThemeDef
 
   // Merge the threshold colors in case users want to show the unused data
   theme.pie.colorScale = [theme.pie.colorScale[0], ...ChartDonutThresholdStaticTheme.pie.colorScale];
+
+  // Override colorScale
+  if (themeColor === ChartThemeColor.skeleton) {
+    theme.legend.colorScale = merge(theme.legend.colorScale, SkeletonColorTheme.legend.colorScale);
+    theme.pie.colorScale = merge(theme.pie.colorScale, SkeletonColorTheme.pie.colorScale);
+  }
   return theme;
 };
 
@@ -136,11 +179,18 @@ export const getDonutThresholdDynamicTheme = (themeColor: string): ChartThemeDef
  * @private
  */
 export const getDonutThresholdStaticTheme = (themeColor: string, invert?: boolean): ChartThemeDefinition => {
-  const staticTheme = cloneDeep(ChartDonutThresholdStaticTheme);
-  if (invert && staticTheme.pie.colorScale instanceof Array) {
-    staticTheme.pie.colorScale = staticTheme.pie.colorScale.reverse();
+  const theme = getCustomTheme(themeColor, ChartDonutThresholdStaticTheme);
+
+  if (invert && theme.pie.colorScale instanceof Array) {
+    const colorScale = [...ChartDonutThresholdStaticTheme.pie.colorScale];
+    theme.pie.colorScale = merge(theme.pie.colorScale, colorScale.reverse());
   }
-  return getCustomTheme(themeColor, staticTheme);
+
+  // Override colorScale
+  if (themeColor === ChartThemeColor.skeleton) {
+    theme.pie.colorScale = merge(theme.pie.colorScale, SkeletonColorTheme.pie.colorScale);
+  }
+  return theme;
 };
 
 /**
@@ -151,8 +201,14 @@ export const getDonutUtilizationTheme = (themeColor: string): ChartThemeDefiniti
   const theme = getCustomTheme(themeColor, ChartDonutUtilizationDynamicTheme);
 
   // Merge just the first color of dynamic (blue, green, etc.) with static (grey) for expected colorScale
-  theme.pie.colorScale = [theme.pie.colorScale[0], ...ChartDonutUtilizationStaticTheme.pie.colorScale];
   theme.legend.colorScale = [theme.legend.colorScale[0], ...ChartDonutUtilizationStaticTheme.legend.colorScale];
+  theme.pie.colorScale = [theme.pie.colorScale[0], ...ChartDonutUtilizationStaticTheme.pie.colorScale];
+
+  // Override colorScale
+  if (themeColor === ChartThemeColor.skeleton) {
+    theme.legend.colorScale = merge(theme.legend.colorScale, SkeletonColorTheme.legend.colorScale);
+    theme.pie.colorScale = merge(theme.pie.colorScale, SkeletonColorTheme.pie.colorScale);
+  }
   return theme;
 };
 

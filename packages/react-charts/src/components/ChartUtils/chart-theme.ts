@@ -1,12 +1,13 @@
 import merge from 'lodash/merge';
 import { ChartThemeColor } from '../ChartTheme/ChartThemeColor';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { ChartBaseTheme } from '../ChartTheme/ChartThemeTypes';
+import { ChartBaseTheme, ChartSkeletonTheme } from '../ChartTheme/ChartThemeTypes';
 import { BlueColorTheme } from '../ChartTheme/themes/colors/blue-theme';
 import { CyanColorTheme } from '../ChartTheme/themes/colors/cyan-theme';
 import { GoldColorTheme } from '../ChartTheme/themes/colors/gold-theme';
 import { GrayColorTheme } from '../ChartTheme/themes/colors/gray-theme';
 import { GreenColorTheme } from '../ChartTheme/themes/colors/green-theme';
+import { SkeletonColorTheme } from '../ChartTheme/themes/colors/skeleton-theme';
 import { MultiColorOrderedTheme } from '../ChartTheme/themes/colors/multi-ordered-theme';
 import { MultiColorUnorderedTheme } from '../ChartTheme/themes/colors/multi-unordered-theme';
 import { OrangeColorTheme } from '../ChartTheme/themes/colors/orange-theme';
@@ -27,11 +28,18 @@ export const getCustomTheme = (themeColor: string, customTheme: ChartThemeDefini
  * @public
  */
 export const getTheme = (themeColor: string): ChartThemeDefinition => {
-  // Deep clone
   const baseTheme = {
-    ...JSON.parse(JSON.stringify(ChartBaseTheme))
+    ...JSON.parse(JSON.stringify(ChartBaseTheme)) // Deep clone
   };
-  return merge(baseTheme, getThemeColors(themeColor));
+  const skeletonTheme =
+    themeColor === ChartThemeColor.skeleton
+      ? {
+          ...JSON.parse(JSON.stringify(ChartSkeletonTheme)) // Deep clone
+        }
+      : {};
+  const newTheme = merge(baseTheme, skeletonTheme);
+
+  return merge(newTheme, getThemeColors(themeColor));
 };
 
 /**
@@ -59,6 +67,8 @@ export const getThemeColors = (themeColor: string) => {
       return OrangeColorTheme;
     case ChartThemeColor.purple:
       return PurpleColorTheme;
+    case ChartThemeColor.skeleton:
+      return SkeletonColorTheme;
     default:
       return BlueColorTheme;
   }

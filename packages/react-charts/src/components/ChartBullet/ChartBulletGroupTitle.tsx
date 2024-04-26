@@ -183,7 +183,8 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
         dy: defaultPadding.top,
         labelPosition: 'top'
       }),
-      ...titleProps
+      ...titleProps,
+      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
     });
   };
 

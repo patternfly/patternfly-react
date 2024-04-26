@@ -1,6 +1,7 @@
 import { ChartThemeDefinition } from './ChartTheme';
 import { AxisTheme } from './themes/components/axis-theme';
 import { BaseTheme } from './themes/base-theme';
+import { SkeletonTheme } from './themes/skeleton-theme';
 import {
   BulletTheme,
   BulletComparativeErrorMeasureTheme,
@@ -108,13 +109,19 @@ export const ChartDonutTheme: ChartThemeDefinition = DonutTheme;
 export const ChartDonutThresholdDynamicTheme: ChartThemeDefinition = DonutThresholdDynamicTheme;
 
 /**
- * ChartDonutThresholdStatic theme
+ * Donut threshold static theme
  * @private
  */
 export const ChartDonutThresholdStaticTheme: ChartThemeDefinition = DonutThresholdStaticTheme;
 
 /**
- * Donut threshold static theme
+ * Skeleton theme
+ * @private
+ */
+export const ChartSkeletonTheme: ChartThemeDefinition = SkeletonTheme;
+
+/**
+ * Threshold static theme
  * @private
  */
 export const ChartThresholdTheme: ChartThemeDefinition = ThresholdTheme;

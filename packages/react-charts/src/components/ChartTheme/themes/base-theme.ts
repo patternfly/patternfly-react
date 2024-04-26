@@ -167,7 +167,7 @@ export const BaseTheme = {
       },
       grid: {
         fill: chart_axis_grid_Fill.var,
-        stroke: 'none',
+        stroke: 'transparent',
         pointerEvents: chart_axis_grid_PointerEvents.value,
         strokeLinecap: STROKE_LINE_CAP,
         strokeLinejoin: STROKE_LINE_JOIN

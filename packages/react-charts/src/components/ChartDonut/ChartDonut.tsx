@@ -659,7 +659,8 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         padding: defaultPadding,
         width
       }),
-      ...subTitleProps
+      ...subTitleProps,
+      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
     });
   };
 
@@ -692,7 +693,8 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         padding: defaultPadding,
         width
       }),
-      ...titleProps
+      ...titleProps,
+      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
     });
   };
 

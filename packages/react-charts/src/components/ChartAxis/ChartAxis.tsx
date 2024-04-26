@@ -462,7 +462,8 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
       ...(name && {
         id: () => `${name}-${(axisLabelComponent as any).type.displayName}`
       }),
-      ...axisLabelComponent.props
+      ...axisLabelComponent.props,
+      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
     });
 
   const getTickLabelComponent = () =>
@@ -470,7 +471,8 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
       ...(name && {
         id: (props: any) => `${name}-${(tickLabelComponent as any).type.displayName}-${props.index}`
       }),
-      ...tickLabelComponent.props
+      ...tickLabelComponent.props,
+      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
     });
 
   // Note: containerComponent is required for theme
