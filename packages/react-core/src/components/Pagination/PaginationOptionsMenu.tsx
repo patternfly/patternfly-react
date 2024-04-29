@@ -209,7 +209,6 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
   );
 
   return (
-    // <div ref={containerRef}>
     <Popper
       trigger={toggle}
       triggerRef={toggleRef}
@@ -220,7 +219,6 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
       appendTo={containerRef?.current || undefined}
       minWidth={minWidth !== undefined ? minWidth : 'revert'}
     />
-    // </div>
   );
 };
 
