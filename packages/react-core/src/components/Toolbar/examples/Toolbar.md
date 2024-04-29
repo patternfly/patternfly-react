@@ -112,3 +112,11 @@ When all of a toolbar's required elements cannot fit in a single line, you can s
 ```ts file="./ToolbarStacked.tsx"
 
 ```
+
+## Background color variants
+
+To change the background color of a toolbar, use the `colorVariant` property on the `<Toolbar>`.
+
+```ts file="./ToolbarColorVariant.tsx"
+
+```

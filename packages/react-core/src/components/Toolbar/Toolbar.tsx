@@ -8,6 +8,13 @@ import { formatBreakpointMods, canUseDOM } from '../../helpers/util';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
 import { PageContext } from '../Page/PageContext';
 
+export enum ToolbarColorVariant {
+  default = 'default',
+  primary = 'primary',
+  secondary = 'secondary',
+  noBackground = 'no-background'
+}
+
 export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
@@ -50,6 +57,8 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** Background color variant of the toolbar */
+  colorVariant?: ToolbarColorVariant | 'default' | 'no-background' | 'primary' | 'secondary';
 }
 
 export interface ToolbarState {
@@ -136,6 +145,7 @@ class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       ouiaId,
       numberOfFiltersText,
       customChipGroupContent,
+      colorVariant = ToolbarColorVariant.default,
       ...props
     } = this.props;
 
@@ -157,6 +167,9 @@ class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
               usePageInsets && styles.modifiers.pageInsets,
               isSticky && styles.modifiers.sticky,
               formatBreakpointMods(inset, styles, '', getBreakpoint(width)),
+              colorVariant === 'primary' && styles.modifiers.primary,
+              colorVariant === 'secondary' && styles.modifiers.secondary,
+              colorVariant === 'no-background' && styles.modifiers.noBackground,
               className
             )}
             id={randomId}
