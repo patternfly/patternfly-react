@@ -113,11 +113,9 @@ When all of a toolbar's required elements cannot fit in a single line, you can s
 
 ```
 
-### Toolbar with secondary color
+### Background color variants
 
 To change the background color of a toolbar, use the `colorVariant` property on the `<Toolbar>`.
-
-In the following example, toggle the "Secondary" checkbox to see the difference between primary and secondary variants.
 
 ```ts file="./ToolbarColorVariant.tsx"
 
