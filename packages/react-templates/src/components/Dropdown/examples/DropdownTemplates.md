@@ -21,7 +21,8 @@ DropdownItemProps,
 Flex,
 FlexItem,
 MenuToggle,
-MenuToggleElement
+MenuToggleElement,
+OUIAProps
 } from '@patternfly/react-core';
 import { DropdownSimple, DropdownSimpleItem } from '@patternfly/react-templates';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';

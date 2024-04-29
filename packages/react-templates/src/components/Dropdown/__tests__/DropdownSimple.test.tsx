@@ -39,17 +39,20 @@ describe('Dropdown toggle', () => {
     expect(onToggle).toHaveBeenCalledWith(true);
   });
 
-  test('Only calls onToggle when dropdown toggle is clicked', async () => {
+  test('Does not call onToggle when dropdown toggle is not clicked', async () => {
     const onToggle = jest.fn();
     const items = [{ content: 'Action', value: 1 }];
     const user = userEvent.setup();
-    render(<DropdownSimple initialItems={items} onToggle={onToggle} toggleContent="Dropdown" />);
+    render(
+      <div>
+        <button>Actual</button>
+        <DropdownSimple initialItems={items} onToggle={onToggle} toggleContent="Dropdown" />
+      </div>
+    );
 
-    const toggle = screen.getByRole('button', { name: 'Dropdown' });
-    await user.click(toggle);
-    const actionItem = screen.getByRole('menuitem', { name: 'Action' });
-    await user.click(actionItem);
-    expect(onToggle).toHaveBeenCalledTimes(1);
+    const btn = screen.getByRole('button', { name: 'Actual' });
+    await user.click(btn);
+    expect(onToggle).not.toHaveBeenCalled();
   });
 
   test('Calls toggle onSelect when item is clicked', async () => {
@@ -76,6 +79,44 @@ describe('Dropdown toggle', () => {
     await user.click(toggle);
     await user.click(toggle);
     expect(onSelect).not.toHaveBeenCalled();
+  });
+
+  test('Does not pass isToggleFullWidth to menu toggle by default', () => {
+    render(<DropdownSimple toggleContent="Dropdown" />);
+
+    expect(screen.getByRole('button', { name: 'Dropdown' })).not.toHaveClass(styles.modifiers.fullWidth);
+  });
+
+  test('Passes isToggleFullWidth to menu toggle when passed in', () => {
+    render(<DropdownSimple isToggleFullWidth toggleContent="Dropdown" />);
+
+    expect(screen.getByRole('button', { name: 'Dropdown' })).toHaveClass(styles.modifiers.fullWidth);
+  });
+
+  test('Does not focus toggle on item select by default', async () => {
+    const items = [{ content: 'Action', value: 1 }];
+    const user = userEvent.setup();
+    render(<DropdownSimple initialItems={items} toggleContent="Dropdown" />);
+
+    const toggle = screen.getByRole('button', { name: 'Dropdown' });
+    await user.click(toggle);
+    const actionItem = screen.getByRole('menuitem', { name: 'Action' });
+    await user.click(actionItem);
+
+    expect(toggle).not.toHaveFocus();
+  });
+
+  test('Focuses toggle on item select when shouldFocusToggleOnSelect is true', async () => {
+    const items = [{ content: 'Action', value: 1 }];
+    const user = userEvent.setup();
+    render(<DropdownSimple shouldFocusToggleOnSelect initialItems={items} toggleContent="Dropdown" />);
+
+    const toggle = screen.getByRole('button', { name: 'Dropdown' });
+    await user.click(toggle);
+    const actionItem = screen.getByRole('menuitem', { name: 'Action' });
+    await user.click(actionItem);
+
+    expect(toggle).toHaveFocus();
   });
 
   test('Matches snapshot', () => {
@@ -198,12 +239,12 @@ describe('Dropdown items', () => {
 
   test('Matches snapshot', async () => {
     const items = [
-      { content: 'Action', value: 1 },
-      { value: 'separator', isDivider: true },
-      { content: 'Link', value: 'separator', to: '#' }
+      { content: 'Action', value: 1, ouiaId: '1' },
+      { value: 'separator', isDivider: true, ouiaId: '2' },
+      { content: 'Link', value: 'separator', to: '#', ouiaId: '3' }
     ];
     const user = userEvent.setup();
-    const { asFragment } = render(<DropdownSimple initialItems={items} toggleContent="Dropdown" />);
+    const { asFragment } = render(<DropdownSimple ouiaId={4} initialItems={items} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);

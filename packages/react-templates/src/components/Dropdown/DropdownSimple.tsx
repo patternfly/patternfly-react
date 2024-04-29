@@ -7,6 +7,7 @@ import {
 } from '@patternfly/react-core/dist/esm/components/Dropdown';
 import { MenuToggle, MenuToggleElement } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
+import { OUIAProps } from '@patternfly/react-core/dist/esm/helpers';
 
 export interface DropdownSimpleItem extends Omit<DropdownItemProps, 'content'> {
   /** Content of the dropdown item. If the isDivider prop is true, this prop will be ignored. */
@@ -23,7 +24,7 @@ export interface DropdownSimpleItem extends Omit<DropdownItemProps, 'content'> {
   isDivider?: boolean;
 }
 
-export interface DropdownSimpleProps {
+export interface DropdownSimpleProps extends OUIAProps {
   /** Initial items of the dropdown. */
   initialItems?: DropdownSimpleItem[];
   /** @hide Forwarded ref */
