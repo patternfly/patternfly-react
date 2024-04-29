@@ -15,7 +15,7 @@ import {
   Title,
   Divider
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 export const DescriptionListBasic: React.FunctionComponent = () => (
@@ -38,29 +38,41 @@ export const DescriptionListBasic: React.FunctionComponent = () => (
           <DescriptionList isFillColumns columnModifier={{ default: '2Col', lg: '3Col' }}>
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
-              <DescriptionListDescription>Example</DescriptionListDescription>
+              <DescriptionListDescription>mary-test</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
-              <DescriptionListTerm>Namespace</DescriptionListTerm>
+              <DescriptionListTerm>Network Policies</DescriptionListTerm>
               <DescriptionListDescription>
-                <a href="#">mary-test</a>
+                <a href="#">Network Policies</a>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
-              <DescriptionListTerm>Labels</DescriptionListTerm>
-              <DescriptionListDescription>example</DescriptionListDescription>
-            </DescriptionListGroup>
-            <DescriptionListGroup>
-              <DescriptionListTerm>Pod selector</DescriptionListTerm>
+              <DescriptionListTerm>Status</DescriptionListTerm>
               <DescriptionListDescription>
-                <Button variant="link" isInline icon={<PlusCircleIcon />}>
-                  app=MyApp
+                <Button variant="link" isInline icon={<CheckCircleIcon color="green" />}>
+                  Active
                 </Button>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
-              <DescriptionListTerm>Annotation</DescriptionListTerm>
-              <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+              <DescriptionListTerm>Display name</DescriptionListTerm>
+              <DescriptionListDescription>mary</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Default pull secret</DescriptionListTerm>
+              <DescriptionListDescription>Not configured</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Requester</DescriptionListTerm>
+              <DescriptionListDescription>kube:admin</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Tolerations</DescriptionListTerm>
+              <DescriptionListDescription>6 Tolerations</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Created at:</DescriptionListTerm>
+              <DescriptionListDescription>3 minutes ago</DescriptionListDescription>
             </DescriptionListGroup>
           </DescriptionList>
         </CardBody>
