@@ -113,7 +113,7 @@ When all of a toolbar's required elements cannot fit in a single line, you can s
 
 ```
 
-### Background color variants
+## Background color variants
 
 To change the background color of a toolbar, use the `colorVariant` property on the `<Toolbar>`.
 
