@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.4.0-prerelease.6 (2024-04-29)
+
+**Note:** Version bump only for package @patternfly/react-drag-drop
+
 # [5.4.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@5.4.0-prerelease.4...@patternfly/react-drag-drop@5.4.0-prerelease.5) (2024-04-26)
 
 ### Bug Fixes

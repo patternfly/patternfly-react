@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.4.0-prerelease.5 (2024-04-29)
+
+### Bug Fixes
+
+- **Datepicker:** revalidate on validators prop change ([#10293](https://github.com/patternfly/patternfly-react/issues/10293)) ([fcf105e](https://github.com/patternfly/patternfly-react/commit/fcf105e75e40b7324e28c067fc62ad40e68f7183))
+
 # [5.4.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.3...@patternfly/react-core@5.4.0-prerelease.4) (2024-04-26)
 
 ### Features
