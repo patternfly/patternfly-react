@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.5...@patternfly/react-core@5.4.0-prerelease.6) (2024-04-29)
+
+### Bug Fixes
+
+- **Wizard:** added prop to focus content on next/back ([#10285](https://github.com/patternfly/patternfly-react/issues/10285)) ([fe1d86c](https://github.com/patternfly/patternfly-react/commit/fe1d86c89d5fc7f37a85a5a78c55fa0c3f4496d6))
+
 # 5.4.0-prerelease.5 (2024-04-29)
 
 ### Bug Fixes
