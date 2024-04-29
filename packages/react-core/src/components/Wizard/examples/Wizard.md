@@ -16,7 +16,7 @@ propComponents:
     'WizardContextProps',
     'WizardBasicStep',
     'WizardParentStep',
-    'WizardSubStep',
+    'WizardSubStep'
   ]
 ---
 
@@ -57,100 +57,119 @@ import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 ### Basic
 
 ```ts file="./WizardBasic.tsx"
+
 ```
 
 ### Focus content on next/back
 
-To focus the main content element of the `Wizard`, pass in the `shouldFocusContentOnNextOrBack` property. It is recommended that this is passed in so that users can navigate through a `WizardStep` content in order.
+To focus the main content element of the `Wizard`, pass in the `shouldFocusContent` property. It is recommended that this is passed in so that users can navigate through a `WizardStep` content in order.
 
 If a `WizardStep` is passed a `body={null}` property, you must manually handle focus.
 
 ```ts file="./WizardFocusOnNextBack.tsx"
+
 ```
 
 ### Basic with disabled steps
 
 ```ts file="./WizardBasicDisabledSteps.tsx"
+
 ```
 
 ### Anchors for nav items
 
 ```ts file="./WizardWithNavAnchors.tsx"
+
 ```
 
 ### Incrementally enabled steps
 
 ```ts file="./WizardStepVisitRequired.tsx"
+
 ```
 
 ### Expandable steps
 
 ```ts file="./WizardExpandableSteps.tsx"
+
 ```
 
 ### Progress after submission
 
 ```ts file="./WizardWithSubmitProgress.tsx"
+
 ```
 
 ### Enabled on form validation
 
 ```ts file="./WizardEnabledOnFormValidation.tsx"
+
 ```
 
 ### Validate on button press
 
 ```ts file="./WizardValidateOnButtonPress.tsx"
+
 ```
 
 ### Progressive steps
 
 ```ts file="./WizardProgressiveSteps.tsx"
+
 ```
 
 ### Get current step
 
 ```ts file="./WizardGetCurrentStep.tsx"
+
 ```
 
 ### Within modal
 
 ```ts file="./WizardWithinModal.tsx"
+
 ```
 
 ### Step drawer content
 
 ```ts file="./WizardStepDrawerContent.tsx"
+
 ```
 
 ### Custom navigation
 
 ```ts file="./WizardWithCustomNav.tsx"
+
 ```
 
 ### Header
 
 ```ts file="./WizardWithHeader.tsx"
+
 ```
 
 ### Custom footer
 
 ```ts file="./WizardWithCustomFooter.tsx"
+
 ```
 
 ### Custom navigation item
 
 ```ts file="./WizardWithCustomNavItem.tsx"
+
 ```
 
 ### Toggle step visibility
 
 ```ts file="./WizardToggleStepVisibility.tsx"
+
 ```
 
 ### Step error status
 
 ```ts file="./WizardStepErrorStatus.tsx"
+
 ```
 
 ## Hooks
