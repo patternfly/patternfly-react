@@ -22,49 +22,47 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          0
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            0
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -230,49 +228,47 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          0
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            0
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -438,49 +434,47 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          0
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            0
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -646,49 +640,47 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          0
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            0
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -854,49 +846,47 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          0
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            0
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -1062,49 +1052,47 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          0
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            0
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -1263,42 +1251,40 @@ exports[`Pagination component render custom pagination toggle 1`] = `
     >
       1 - 10 - 40 - 
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        1 - 10 - 40 - 
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          1 - 10 - 40 - 
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -1468,49 +1454,47 @@ exports[`Pagination component render custom perPageOptions 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          40
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            40
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -1680,49 +1664,47 @@ exports[`Pagination component render custom start end 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          5 - 15
+        </b>
+         of 
+        <b>
+          40
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            5 - 15
-          </b>
-           of 
-          <b>
-            40
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -2059,49 +2041,47 @@ exports[`Pagination component render last page 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          11 - 20
+        </b>
+         of 
+        <b>
+          20
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            11 - 20
-          </b>
-           of 
-          <b>
-            20
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -2271,49 +2251,47 @@ exports[`Pagination component render limited number of pages 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 20
+        </b>
+         of 
+        <b>
+          20
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 20
-          </b>
-           of 
-          <b>
-            20
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -2474,49 +2452,47 @@ exports[`Pagination component render should render correctly bottom 1`] = `
     id="options-menu-bottom-pagination"
     style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-bottom-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-bottom-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          20
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            20
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -2674,49 +2650,47 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
     id="options-menu-bottom-pagination"
     style="--pf-v5-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-bottom-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-bottom-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          20
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            20
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -2886,49 +2860,47 @@ exports[`Pagination component render should render correctly compact 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          20
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            20
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -3017,50 +2989,48 @@ exports[`Pagination component render should render correctly disabled 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text pf-m-disabled"
-        disabled=""
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text pf-m-disabled"
+      disabled=""
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          20
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            20
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -3233,49 +3203,47 @@ exports[`Pagination component render should render correctly sticky 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          20
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            20
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -3445,49 +3413,47 @@ exports[`Pagination component render should render correctly top 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          20
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            20
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -3657,49 +3623,47 @@ exports[`Pagination component render titles 1`] = `
       </b>
        values
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          40
+        </b>
+         values
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            40
-          </b>
-           values
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -3869,49 +3833,47 @@ exports[`Pagination component render up drop direction 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          1 - 10
+        </b>
+         of 
+        <b>
+          40
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            1 - 10
-          </b>
-           of 
-          <b>
-            40
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
@@ -4081,49 +4043,47 @@ exports[`Pagination component render zero results 1`] = `
       </b>
        
     </div>
-    <div>
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
-        id="options-menu-top-toggle"
-        type="button"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="pf-v5-c-menu-toggle pf-m-plain pf-m-text"
+      id="options-menu-top-toggle"
+      type="button"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__text"
+      >
+        <b>
+          0 - 0
+        </b>
+         of 
+        <b>
+          0
+        </b>
+         
+      </span>
+      <span
+        class="pf-v5-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__text"
+          class="pf-v5-c-menu-toggle__toggle-icon"
         >
-          <b>
-            0 - 0
-          </b>
-           of 
-          <b>
-            0
-          </b>
-           
-        </span>
-        <span
-          class="pf-v5-c-menu-toggle__controls"
-        >
-          <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v5-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            />
+          </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
     <nav
       aria-label="Pagination"
       class="pf-v5-c-pagination__nav"
