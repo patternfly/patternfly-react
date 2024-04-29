@@ -55,6 +55,10 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   onSave?: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
   /** Callback function to close the wizard */
   onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  /** @beta Flag indicating whether the wizard content should be focused after the onNext or onBack callbacks
+   * are called.
+   */
+  shouldFocusContent?: boolean;
 }
 
 export const Wizard = ({
@@ -72,11 +76,13 @@ export const Wizard = ({
   onStepChange,
   onSave,
   onClose,
+  shouldFocusContent = false,
   ...wrapperProps
 }: WizardProps) => {
   const [activeStepIndex, setActiveStepIndex] = React.useState(startIndex);
   const initialSteps = buildSteps(children);
   const firstStepRef = React.useRef(initialSteps[startIndex - 1]);
+  const wrapperRef = React.useRef(null);
 
   // When the startIndex maps to a parent step, focus on the first sub-step
   React.useEffect(() => {
@@ -84,6 +90,11 @@ export const Wizard = ({
       setActiveStepIndex(startIndex + 1);
     }
   }, [startIndex]);
+
+  const focusMainContentElement = () =>
+    setTimeout(() => {
+      wrapperRef?.current?.focus && wrapperRef.current.focus();
+    }, 0);
 
   const goToNextStep = (event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[] = initialSteps) => {
     const newStep = steps.find((step) => step.index > activeStepIndex && isStepEnabled(steps, step));
@@ -94,6 +105,7 @@ export const Wizard = ({
 
     setActiveStepIndex(newStep?.index);
     onStepChange?.(event, newStep, steps[activeStepIndex - 1], WizardStepChangeScope.Next);
+    shouldFocusContent && focusMainContentElement();
   };
 
   const goToPrevStep = (event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[] = initialSteps) => {
@@ -103,6 +115,7 @@ export const Wizard = ({
 
     setActiveStepIndex(newStep?.index);
     onStepChange?.(event, newStep, steps[activeStepIndex - 1], WizardStepChangeScope.Back);
+    shouldFocusContent && focusMainContentElement();
   };
 
   const goToStepByIndex = (
@@ -157,6 +170,8 @@ export const Wizard = ({
       goToStepById={goToStepById}
       goToStepByName={goToStepByName}
       goToStepByIndex={goToStepByIndex}
+      shouldFocusContent={shouldFocusContent}
+      mainWrapperRef={wrapperRef}
     >
       <div
         className={css(styles.wizard, className)}
