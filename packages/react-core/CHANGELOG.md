@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.54](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.53...@patternfly/react-core@6.0.0-alpha.54) (2024-04-29)
+
+### Features
+
+- **toolbar:** adds color variant ([#10284](https://github.com/patternfly/patternfly-react/issues/10284)) ([0f321d1](https://github.com/patternfly/patternfly-react/commit/0f321d1e8f2086dcf95e8981e8be63d55bec6db2))
+
 # 6.0.0-alpha.53 (2024-04-26)
 
 ### Bug Fixes
