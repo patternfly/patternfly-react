@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       core-version:
-        description: 'The PatternFly core version'
+        description: The PatternFly core version
         required: false
 jobs:
   deploy:
@@ -14,15 +14,16 @@ jobs:
       RELEASE_VERSION: ${{ github.event.inputs.version }}
       GH_TOKEN: ${{ secrets.GH_TOKEN_REDALLEN }}
     steps:
-      - uses: actions/checkout@v3
+      - name: Check out project
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_TOKEN_REDALLEN }} # needs to be an admin token to get around branch protection
-      - uses: actions/setup-node@v3
+          # Needs to be an admin token to get around branch protection.
+          token: ${{ secrets.GH_TOKEN_REDALLEN }}
+
+      - name: Set up and build project
+        uses: ./.github/actions/setup-project
         with:
-          node-version: '18'
-      - name: Install deps
-        run: yarn install --frozen-lockfile
-      - name: Build dist
-        run: yarn build && yarn build:umd
+          skip-build-cache: true
+
       - name: Deploy to NPM and Github
         run: .github/promote.sh
