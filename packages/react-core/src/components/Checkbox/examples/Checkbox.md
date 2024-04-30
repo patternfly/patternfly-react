@@ -20,6 +20,20 @@ propComponents: ['Checkbox']
 
 ```
 
+### Reversed
+
+```ts file="./CheckboxReversed.tsx"
+
+```
+
+### Label wraps
+
+When the input is wrapped in a label, larger area can be clicked to check the box, including the space between the checkbox and its description.
+
+```ts file="./CheckboxLabelWraps.tsx"
+
+```
+
 ### Disabled
 
 ```ts file='./CheckboxDisabled.tsx'
