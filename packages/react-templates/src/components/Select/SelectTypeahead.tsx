@@ -87,7 +87,7 @@ export const SelectTypeaheadBase: React.FunctionComponent<SelectTypeaheadProps> 
 
       // Open the menu when the input value changes and the new value is not empty
       if (!isOpen) {
-        setIsOpen(true);
+        openMenu();
       }
     }
 
@@ -107,14 +107,20 @@ export const SelectTypeaheadBase: React.FunctionComponent<SelectTypeaheadProps> 
     setActiveItemId(null);
   };
 
+  const openMenu = () => {
+    onToggle && onToggle(true);
+    setIsOpen(true);
+  };
+
   const closeMenu = () => {
+    onToggle && onToggle(false);
     setIsOpen(false);
     resetActiveAndFocusedItem();
   };
 
   const onInputClick = () => {
     if (!isOpen) {
-      setIsOpen(true);
+      openMenu();
     } else if (!inputValue) {
       closeMenu();
     }
@@ -156,7 +162,7 @@ export const SelectTypeaheadBase: React.FunctionComponent<SelectTypeaheadProps> 
     let indexToFocus = 0;
 
     if (!isOpen) {
-      setIsOpen(true);
+      openMenu();
     }
 
     if (selectOptions.every((option) => option.isDisabled)) {
