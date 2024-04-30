@@ -385,6 +385,10 @@ class Tabs extends React.Component<TabsProps, TabsState> {
   }
 
   static getDerivedStateFromProps(nextProps: TabsProps, prevState: TabsState) {
+    if (prevState.uncontrolledActiveKey === undefined) {
+      return null;
+    }
+
     const childrenHasTabWithActiveEventKey = React.Children.toArray(nextProps.children)
       .filter((child): child is TabElement => React.isValidElement(child))
       .some(({ props }) => props.eventKey === prevState.uncontrolledActiveKey);
