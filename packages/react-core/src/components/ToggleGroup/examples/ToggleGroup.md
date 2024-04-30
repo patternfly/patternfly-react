@@ -17,7 +17,7 @@ import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square
 
 A single select toggle group allows users to toggle between multiple items.
 
-To support single selection, use the `onChange` callback to pass the selected `<ToggleGroupItem>` to `isSelected`.
+To indicate whether a `<ToggleGroupItem>` is selected or not, use the `isSelected` property.
 
 ```ts file="./ToggleGroupDefaultSingle.tsx"
 ```
@@ -27,8 +27,6 @@ To support single selection, use the `onChange` callback to pass the selected `<
 A multi select toggle group allows users to select multiple items at once.
 
 When a toggle item is disabled it cannot be selected. Click the "Disable all" button in the following example to see this in action.
-
-To support multiple selection, use the `onChange` callback to pass each selected `<ToggleGroupItem>` to `isSelected`.
 
 ```ts file="./ToggleGroupDefaultMultiple.tsx"
 ```
@@ -47,8 +45,6 @@ To do this, pass an imported icon to the `icon` property of a `<ToggleGroupItem>
 Adding text to a toggle item with an icon helps clarify the button's function.
 
 To do this, pass a descriptive label to the `text` property of a `<ToggleGroupItem>`.
-
-When passing both `text` and `icon` properties to a `<ToggleGroupItem>`, you can also pass in `iconPosition` to determine whether the icon is rendered at the start or end of the item.
 
 ```ts file="./ToggleGroupTextIcon.tsx"
 ```
