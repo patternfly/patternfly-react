@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.6...@patternfly/react-core@5.4.0-prerelease.7) (2024-04-30)
+
+### Bug Fixes
+
+- **chore:** Fix broken application launcher example. ([#10305](https://github.com/patternfly/patternfly-react/issues/10305)) ([c1f87b2](https://github.com/patternfly/patternfly-react/commit/c1f87b254c41cb94d6a614f34ab1b086437333d1))
+
 # [5.4.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.5...@patternfly/react-core@5.4.0-prerelease.6) (2024-04-29)
 
 ### Bug Fixes
