@@ -234,6 +234,15 @@ export const SelectTypeaheadBase: React.FunctionComponent<SelectTypeaheadProps> 
     textInputRef?.current?.focus();
   };
 
+  const onClearButtonClick = () => {
+    setSelected('');
+    setInputValue('');
+    onInputChange && onInputChange('');
+    setFilterValue('');
+    resetActiveAndFocusedItem();
+    textInputRef?.current?.focus();
+  };
+
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
     <MenuToggle
       ref={toggleRef}
@@ -261,18 +270,7 @@ export const SelectTypeaheadBase: React.FunctionComponent<SelectTypeaheadProps> 
         />
 
         <TextInputGroupUtilities {...(!inputValue ? { style: { display: 'none' } } : {})}>
-          <Button
-            variant="plain"
-            onClick={() => {
-              setSelected('');
-              setInputValue('');
-              onInputChange && onInputChange('');
-              setFilterValue('');
-              resetActiveAndFocusedItem();
-              textInputRef?.current?.focus();
-            }}
-            aria-label="Clear input value"
-          >
+          <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
             <TimesIcon aria-hidden />
           </Button>
         </TextInputGroupUtilities>
