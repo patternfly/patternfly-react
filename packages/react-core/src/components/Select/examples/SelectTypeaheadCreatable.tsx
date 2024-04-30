@@ -102,7 +102,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
         }
         setSelected(filterValue);
         setFilterValue('');
-        resetActiveAndFocusedItem();
+        closeMenu();
       } else {
         const optionText = selectOptions.find((option) => option.value === value)?.children;
         selectOption(value, optionText as string);
