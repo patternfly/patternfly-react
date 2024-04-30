@@ -25,6 +25,14 @@ jobs:
     steps:
       - name: Check out project
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # Needs to be an admin token to get around branch protection.
+          token: ${{ secrets.GH_TOKEN_REDALLEN }}
+
+      # Fetches all tags from 'origin' and updates local tags, only fetches the latest commit.
+      - name: Fetch tags
+        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Set up and build project
         uses: ./.github/actions/setup-project
