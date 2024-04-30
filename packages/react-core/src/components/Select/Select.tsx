@@ -160,7 +160,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       }}
       isPlain={isPlain}
       selected={selected}
-      isScrollable={isScrollable}
+      isScrollable={isScrollable ?? (menuHeight !== undefined || maxMenuHeight !== undefined)}
       {...getOUIAProps(
         Select.displayName,
         props.ouiaId !== undefined ? props.ouiaId : getDefaultOUIAId(Select.displayName),
