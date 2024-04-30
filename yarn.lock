@@ -2896,37 +2896,10 @@
     puppeteer-cluster "^0.23.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@5.3.0-prerelease.5":
-  version "5.3.0-prerelease.5"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.3.0-prerelease.5.tgz#2b108f4a1d79dd3bb93723ce92beb52b237c5a00"
-  integrity sha512-F2IbfCxotoyJP7CHud8O5QPZczXnPFK4dMoc7DRplJQSBhod6vn3SVvsDi4P8Sa7egBUcCiA6q1x+PI3E6BAIA==
-
-"@patternfly/react-core@^5.3.0-prerelease.26":
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-5.3.0.tgz#2d4c767a95242b3688731a0f76e91798c35f6ac5"
-  integrity sha512-nMf8yrul3u+4+ch7IMsE+/3Rzmor8/yEUk8zzD9bYGRxjwniu1RqCF8NdgPvMw2C7Hz7xtpwsgXDfG4n8qd12g==
-  dependencies:
-    "@patternfly/react-icons" "^5.3.0"
-    "@patternfly/react-styles" "^5.3.0"
-    "@patternfly/react-tokens" "^5.3.0"
-    focus-trap "7.5.2"
-    react-dropzone "^14.2.3"
-    tslib "^2.5.0"
-
-"@patternfly/react-icons@^5.3.0":
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-icons/-/react-icons-5.3.0.tgz#04ac990fe539799a69da6de2e7b615a15a80ce87"
-  integrity sha512-oBdaK4Gz7yivNE7jQg46sPzfZakg7oxo5aSMLc0N6haOmDEegiTurNex+h+/z0oBPqzZC+cIQRaBeXEgXGwc9Q==
-
-"@patternfly/react-styles@^5.3.0":
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-styles/-/react-styles-5.3.0.tgz#4f34cfe557d9dad30c0add8dc92bfa3c6794dd91"
-  integrity sha512-/EdkURW+v7Rzw/CiEqL+NfGtLvLMGIwOEyDhvlMDbRip2usGw4HLZv3Bep0cJe29zOeY27cDVZDM1HfyXLebtw==
-
-"@patternfly/react-tokens@^5.3.0":
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-tokens/-/react-tokens-5.3.0.tgz#580e7c6a53f5056c317677ca98842fbdd04dcc7d"
-  integrity sha512-24ZY5hgwt11InW3XtINM5p9Fo1hDiVor6Q4uphPZh8Mt89AsZZw1UweTaGg54I0Ah2Wzv6rkQy51LX7tZtIwjQ==
+"@patternfly/patternfly@5.4.0-prerelease.1":
+  version "5.4.0-prerelease.1"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.4.0-prerelease.1.tgz#5fb2eb9e1cb755657b66ba88d451b6cc3bab3a21"
+  integrity sha512-IzBTJ2VRolxP0U7zMD8aQkVAzuakO7mOMJ2Zr1DK8bK7He6XbEWzbxy0SZ5mOrfPhn2YpiyMAAhYOqsP7cwtPA==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
@@ -17320,7 +17293,16 @@ string-length@^4.0.1:
     char-regex "^1.0.2"
     strip-ansi "^6.0.0"
 
-"string-width-cjs@npm:string-width@^4.2.0", "string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
+"string-width-cjs@npm:string-width@^4.2.0":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
+  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
+
+"string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -17453,7 +17435,7 @@ stringify-entities@^3.0.1:
     is-decimal "^1.0.2"
     is-hexadecimal "^1.0.0"
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -17471,6 +17453,13 @@ strip-ansi@^5.1.0:
   resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-5.2.0.tgz"
   dependencies:
     ansi-regex "^4.1.0"
+
+strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
+  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
+  dependencies:
+    ansi-regex "^5.0.1"
 
 strip-ansi@^7.0.1:
   version "7.1.0"
@@ -19554,7 +19543,7 @@ worker-farm@^1.7.0:
   dependencies:
     errno "~0.1.7"
 
-"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
@@ -19567,6 +19556,15 @@ wrap-ansi@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-6.2.0.tgz#e9393ba07102e6c91a3b221478f0257cd2856e53"
   integrity sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+
+wrap-ansi@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
+  integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
   dependencies:
     ansi-styles "^4.0.0"
     string-width "^4.1.0"
