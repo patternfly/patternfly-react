@@ -44,7 +44,7 @@ Before you begin, check out this [overview of PatternFly](http://patternfly.org/
 #### Install a package manager
 Install a package manager before using the PatternFly libraries.
 
-* [Use npm](https://nodejs.org/en/download)
+* [Use npm](https://nodejs.org/en/download/package-manager)
 * [Use Yarn](https://yarnpkg.com/en/docs/getting-started)
 
 

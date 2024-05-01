@@ -66,8 +66,6 @@ $ git checkout -b my-branch -t upstream/main
 
 While developing, you can run the patternfly-react workspace to view the component docs with live examples.
 
-**Note:** Be sure you are using node version >= 18.0.0
-
 ```bash
 # Start up the workspace locally on port 8002
  yarn install && yarn start
