@@ -6,8 +6,6 @@ import chart_bullet_qualitative_range_ColorScale_300 from '@patternfly/react-tok
 import chart_bullet_qualitative_range_ColorScale_400 from '@patternfly/react-tokens/dist/esm/chart_bullet_qualitative_range_ColorScale_400';
 import chart_bullet_qualitative_range_ColorScale_500 from '@patternfly/react-tokens/dist/esm/chart_bullet_qualitative_range_ColorScale_500';
 
-// import global_Color_100 from '@patternfly/react-tokens/dist/esm/global_Color_100';
-
 // Color scale
 // See https://docs.google.com/document/d/1cw10pJFXWruB1SA8TQwituxn5Ss6KpxYPCOYGrH8qAY/edit
 const COLOR_SCALE = [
