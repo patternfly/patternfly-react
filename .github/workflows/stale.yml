@@ -14,5 +14,5 @@ jobs:
           stale-issue-label: wontfix
           stale-issue-message: This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs.
           stale-pr-message: This PR has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs.
-          close-issue-message: false
-          close-pr-message: false
+          close-issue-message: 'This issue has been closed because it has not had activity since being marked as stale.'
+          close-pr-message: 'This PR has been closed because it has not had activity since being marked as stale.'
