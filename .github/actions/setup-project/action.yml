@@ -59,3 +59,7 @@ runs:
       if: inputs.skip-build != 'true' && steps.cache-build.outputs.cache-hit != 'true'
       shell: bash
       run: yarn build && yarn build:umd
+      env:
+        # Disable V8 compile cache to hard crashes in Node.js. This can likely be removed once upgraded to the next LTS version (version 22).
+        # See: https://github.com/nodejs/node/issues/51555
+        DISABLE_V8_COMPILE_CACHE: 1
