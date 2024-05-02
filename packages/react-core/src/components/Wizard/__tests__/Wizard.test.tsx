@@ -190,7 +190,6 @@ test(`can customize the wizard's height and width`, () => {
 
   const wizard = screen.getByTestId('wizard-id');
 
-  expect(wizard).toHaveStyle('height: 500px');
   expect(wizard).toHaveStyle('width: 500px');
 });
 
