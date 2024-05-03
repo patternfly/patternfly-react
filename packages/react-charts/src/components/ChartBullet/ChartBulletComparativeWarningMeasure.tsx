@@ -203,6 +203,7 @@ export const ChartBulletComparativeWarningMeasure: React.FunctionComponent<
     padding,
     standalone: false,
     theme,
+    themeColor,
     width,
     y,
     ...measureComponent.props

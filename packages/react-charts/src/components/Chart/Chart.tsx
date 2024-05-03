@@ -33,6 +33,7 @@ import { getChartTheme } from '../ChartUtils/chart-theme-types';
 import { useEffect } from 'react';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartPoint } from '../ChartPoint/ChartPoint';
+import { ChartThemeColor } from '../ChartTheme/ChartThemeColor';
 
 /**
  * Chart is a wrapper component that reconciles the domain for all its children, controls the layout of the chart,
@@ -473,7 +474,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   children,
   colorScale,
   hasPatterns,
-  legendAllowWrap = false,
+  legendAllowWrap,
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position,
@@ -526,7 +527,8 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     theme,
     ...containerComponent.props,
     className: getClassName({ className: containerComponent.props.className }), // Override VictoryContainer class name
-    ...(labelComponent && { labelComponent }) // Override label component props
+    ...(labelComponent && { labelComponent }), // Override label component props
+    ...(themeColor === ChartThemeColor.skeleton && { labelComponent: <ChartLabel /> }) // Omit cursor and tooltips
   });
 
   let legendXOffset = 0;
@@ -550,7 +552,11 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       labelComponent: legendComponent.props.labelComponent ? (
         React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
       ) : (
-        <ChartLabel direction="rtl" dx={legendXOffset - 30} />
+        <ChartLabel
+          direction="rtl"
+          dx={legendXOffset - 30}
+          backgroundStyle={theme.skeleton ? theme.skeleton.backgroundStyle : undefined} // override backgroundStyle
+        />
       )
     }),
     ...legendComponent.props

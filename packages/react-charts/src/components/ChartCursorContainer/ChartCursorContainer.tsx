@@ -213,7 +213,8 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
   const chartClassName = getClassName({ className });
   const chartCursorLabelComponent = React.cloneElement(cursorLabelComponent, {
     theme,
-    ...cursorLabelComponent.props
+    ...cursorLabelComponent.props,
+    ...(theme.skeleton && theme.skeleton) // override backgroundStyle
   });
 
   // Clone so users can override cursor container props

@@ -594,6 +594,8 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     standalone: false,
     subTitle: groupSubTitle,
     title: groupTitle,
+    theme,
+    themeColor,
     width,
     ...groupTitleComponent.props
   });
@@ -608,6 +610,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     standalone: false,
     subTitle,
     theme,
+    themeColor,
     title,
     titlePosition,
     width,
@@ -617,7 +620,12 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   // Comparative error measure
   const comparativeErrorMeasure = React.cloneElement(comparativeErrorMeasureComponent, {
     allowTooltip,
-    barWidth: getComparativeMeasureErrorWidth({ height: chartSize.height, horizontal, width: chartSize.width }),
+    barWidth: getComparativeMeasureErrorWidth({
+      height: chartSize.height,
+      horizontal,
+      themeColor,
+      width: chartSize.width
+    }),
     constrainToVisibleArea,
     data: comparativeErrorMeasureData,
     domain,
@@ -627,6 +635,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     labels,
     padding,
     standalone: false,
+    themeColor,
     width: chartSize.width,
     y: comparativeErrorMeasureDataY,
     ...comparativeErrorMeasureComponent.props
@@ -635,7 +644,12 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   // Comparative warning measure
   const comparativeWarningMeasure = React.cloneElement(comparativeWarningMeasureComponent, {
     allowTooltip,
-    barWidth: getComparativeMeasureWarningWidth({ height: chartSize.height, horizontal, width: chartSize.width }),
+    barWidth: getComparativeMeasureWarningWidth({
+      height: chartSize.height,
+      horizontal,
+      themeColor,
+      width: chartSize.width
+    }),
     constrainToVisibleArea,
     data: comparativeWarningMeasureData,
     domain,
@@ -645,6 +659,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     labels,
     padding,
     standalone: false,
+    themeColor,
     width: chartSize.width,
     y: comparativeWarningMeasureDataY,
     ...comparativeWarningMeasureComponent.props
@@ -652,13 +667,14 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
 
   // Comparative zero measure
   const comparativeZeroMeasure = React.cloneElement(comparativeZeroMeasureComponent, {
-    barWidth: getComparativeMeasureWidth({ height: chartSize.height, horizontal, width: chartSize.width }),
+    barWidth: getComparativeMeasureWidth({ height: chartSize.height, horizontal, themeColor, width: chartSize.width }),
     data: [{ y: 0 }],
     domain,
     height: chartSize.height,
     horizontal,
     padding,
     standalone: false,
+    themeColor,
     width: chartSize.width,
     ...comparativeZeroMeasureComponent.props
   });
@@ -691,6 +707,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     orientation: legendOrientation,
     position: legendPosition,
     theme,
+    themeColor,
     ...(legendDirection === 'rtl' && {
       dataComponent: legendComponent.props.dataComponent ? (
         React.cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
@@ -700,9 +717,17 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     }),
     ...(legendDirection === 'rtl' && {
       labelComponent: legendComponent.props.labelComponent ? (
-        React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
+        React.cloneElement(legendComponent.props.labelComponent, {
+          direction: 'rtl',
+          dx: legendXOffset - 30,
+          ...(theme.skeleton && theme.skeleton) // override backgroundStyle
+        })
       ) : (
-        <ChartLabel direction="rtl" dx={legendXOffset - 30} />
+        <ChartLabel
+          direction="rtl"
+          dx={legendXOffset - 30}
+          {...(theme.skeleton && theme.skeleton)} // override backgroundStyle
+        />
       )
     }),
     ...legendComponent.props
@@ -720,7 +745,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     labelComponent: allowTooltip ? <ChartTooltip height={height} theme={theme} width={width} /> : undefined,
     labels,
     padding,
-    size: getPrimaryDotMeasureSize({ height: chartSize.height, horizontal, width: chartSize.width }),
+    size: getPrimaryDotMeasureSize({ height: chartSize.height, horizontal, themeColor, width: chartSize.width }),
     standalone: false,
     themeColor,
     width: chartSize.width,
@@ -732,7 +757,12 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   const primarySegmentedMeasure = React.cloneElement(primarySegmentedMeasureComponent, {
     allowTooltip,
     constrainToVisibleArea,
-    barWidth: getPrimarySegmentedMeasureWidth({ height: chartSize.height, horizontal, width: chartSize.width }),
+    barWidth: getPrimarySegmentedMeasureWidth({
+      height: chartSize.height,
+      horizontal,
+      themeColor,
+      width: chartSize.width
+    }),
     data: primarySegmentedMeasureData,
     domain,
     height: chartSize.height,
@@ -752,7 +782,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   const qualitativeRange = React.cloneElement(qualitativeRangeComponent, {
     allowTooltip,
     constrainToVisibleArea,
-    barWidth: getQualitativeRangeBarWidth({ height: chartSize.height, horizontal, width: chartSize.width }),
+    barWidth: getQualitativeRangeBarWidth({ height: chartSize.height, horizontal, themeColor, width: chartSize.width }),
     data: qualitativeRangeData,
     domain,
     height: chartSize.height,
@@ -762,6 +792,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     labels,
     padding,
     standalone: false,
+    themeColor,
     width: chartSize.width,
     y: qualitativeRangeDataY,
     y0: qualitativeRangeDataY0,
@@ -868,6 +899,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     offsetY: horizontal ? 80 - defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - 25) : 0,
     padding,
     standalone: false,
+    themeColor,
     tickCount: ChartBulletStyles.axisTickCount,
     tickValues: getTickValues((domain as any).y[0], (domain as any).y[1]),
     width: chartSize.width,

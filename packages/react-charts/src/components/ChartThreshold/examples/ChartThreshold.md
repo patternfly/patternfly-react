@@ -116,6 +116,7 @@ class MultiColorChart extends React.Component {
               top: 50
             }}
             maxDomain={{ y: 9 }}
+            name="chart1"
             themeColor={ChartThemeColor.multiUnordered}
             width={width}
           >

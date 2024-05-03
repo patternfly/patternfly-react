@@ -230,6 +230,7 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
       padding,
       standalone: false,
       theme,
+      themeColor,
       width,
       ...measureComponent.props
     })
