@@ -232,6 +232,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   ...props
 }: PaginationProps) => {
   const paginationRef = React.useRef<HTMLDivElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const getLastPage = () =>
     // when itemCount is not known let's set lastPage as page+1 as we don't know the total count
@@ -335,6 +336,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
           widgetId={`${widgetId}-${variant}`}
           toggleTemplate={toggleTemplate}
           isDisabled={isDisabled}
+          containerRef={containerRef}
         />
       )}
       <Navigation
