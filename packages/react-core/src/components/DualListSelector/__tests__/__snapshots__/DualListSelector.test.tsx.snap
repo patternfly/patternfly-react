@@ -106,9 +106,9 @@ exports[`DualListSelector basic 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Add selected"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-1"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -163,9 +163,9 @@ exports[`DualListSelector basic 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Remove all"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-3"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -192,9 +192,9 @@ exports[`DualListSelector basic 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Remove selected"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-4"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -364,9 +364,9 @@ exports[`DualListSelector basic with disabled controls 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Add selected"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-13"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -393,9 +393,9 @@ exports[`DualListSelector basic with disabled controls 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Add all"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-14"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -422,9 +422,9 @@ exports[`DualListSelector basic with disabled controls 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Remove all"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-15"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -451,9 +451,9 @@ exports[`DualListSelector basic with disabled controls 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Remove selected"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-16"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -634,9 +634,9 @@ exports[`DualListSelector with actions 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Add selected"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-21"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -719,9 +719,9 @@ exports[`DualListSelector with actions 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Remove selected"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-24"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -956,9 +956,9 @@ exports[`DualListSelector with custom status 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Add selected"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-9"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -1013,9 +1013,9 @@ exports[`DualListSelector with custom status 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Remove all"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-11"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -1042,9 +1042,9 @@ exports[`DualListSelector with custom status 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Remove selected"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-12"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -1256,9 +1256,9 @@ exports[`DualListSelector with search inputs 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Add selected"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-5"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -1313,9 +1313,9 @@ exports[`DualListSelector with search inputs 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Remove all"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-7"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -1342,9 +1342,9 @@ exports[`DualListSelector with search inputs 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Remove selected"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-8"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -1633,9 +1633,9 @@ exports[`DualListSelector with tree 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Add selected"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-17"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -1690,9 +1690,9 @@ exports[`DualListSelector with tree 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Remove all"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-19"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -1719,9 +1719,9 @@ exports[`DualListSelector with tree 1`] = `
         class="pf-v6-c-dual-list-selector__controls-item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Remove selected"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-20"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"

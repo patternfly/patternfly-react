@@ -12,9 +12,9 @@ exports[`numberInput disables lower threshold 1`] = `
         class="pf-v6-c-input-group__item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Minus"
-          class="pf-v6-c-button pf-m-control pf-m-disabled"
+          class="pf-v6-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-13"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -155,9 +155,9 @@ exports[`numberInput disables upper threshold 1`] = `
         class="pf-v6-c-input-group__item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Plus"
-          class="pf-v6-c-button pf-m-control pf-m-disabled"
+          class="pf-v6-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-16"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -576,9 +576,9 @@ exports[`numberInput renders disabled 1`] = `
         class="pf-v6-c-input-group__item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Minus"
-          class="pf-v6-c-button pf-m-control pf-m-disabled"
+          class="pf-v6-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-11"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
@@ -627,9 +627,9 @@ exports[`numberInput renders disabled 1`] = `
         class="pf-v6-c-input-group__item"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Plus"
-          class="pf-v6-c-button pf-m-control pf-m-disabled"
+          class="pf-v6-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-12"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"

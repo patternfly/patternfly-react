@@ -75,9 +75,9 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-177"
           data-ouia-component-type="PF6/Button"
@@ -104,9 +104,9 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-178"
           data-ouia-component-type="PF6/Button"
@@ -285,9 +285,9 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-169"
           data-ouia-component-type="PF6/Button"
@@ -314,9 +314,9 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-170"
           data-ouia-component-type="PF6/Button"
@@ -495,9 +495,9 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-165"
           data-ouia-component-type="PF6/Button"
@@ -524,9 +524,9 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-166"
           data-ouia-component-type="PF6/Button"
@@ -705,9 +705,9 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-157"
           data-ouia-component-type="PF6/Button"
@@ -734,9 +734,9 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-158"
           data-ouia-component-type="PF6/Button"
@@ -915,9 +915,9 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-161"
           data-ouia-component-type="PF6/Button"
@@ -944,9 +944,9 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-162"
           data-ouia-component-type="PF6/Button"
@@ -1125,9 +1125,9 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-173"
           data-ouia-component-type="PF6/Button"
@@ -1154,9 +1154,9 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-174"
           data-ouia-component-type="PF6/Button"
@@ -1321,9 +1321,9 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-53"
           data-ouia-component-type="PF6/Button"
@@ -1350,9 +1350,9 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-54"
           data-ouia-component-type="PF6/Button"
@@ -1535,9 +1535,9 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-37"
           data-ouia-component-type="PF6/Button"
@@ -1564,9 +1564,9 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-38"
           data-ouia-component-type="PF6/Button"
@@ -1916,9 +1916,9 @@ exports[`Pagination component render empty per page options 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-41"
           data-ouia-component-type="PF6/Button"
@@ -1945,9 +1945,9 @@ exports[`Pagination component render empty per page options 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-42"
           data-ouia-component-type="PF6/Button"
@@ -2210,9 +2210,9 @@ exports[`Pagination component render last page 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-35"
           data-ouia-component-type="PF6/Button"
@@ -2239,9 +2239,9 @@ exports[`Pagination component render last page 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-36"
           data-ouia-component-type="PF6/Button"
@@ -2344,9 +2344,9 @@ exports[`Pagination component render limited number of pages 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-25"
           data-ouia-component-type="PF6/Button"
@@ -2373,9 +2373,9 @@ exports[`Pagination component render limited number of pages 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-26"
           data-ouia-component-type="PF6/Button"
@@ -2427,9 +2427,9 @@ exports[`Pagination component render limited number of pages 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-27"
           data-ouia-component-type="PF6/Button"
@@ -2456,9 +2456,9 @@ exports[`Pagination component render limited number of pages 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-28"
           data-ouia-component-type="PF6/Button"
@@ -2549,9 +2549,9 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-5"
           data-ouia-component-type="PF6/Button"
@@ -2578,9 +2578,9 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-6"
           data-ouia-component-type="PF6/Button"
@@ -2751,9 +2751,9 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-17"
           data-ouia-component-type="PF6/Button"
@@ -2780,9 +2780,9 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-18"
           data-ouia-component-type="PF6/Button"
@@ -2965,9 +2965,9 @@ exports[`Pagination component render should render correctly compact 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-9"
           data-ouia-component-type="PF6/Button"
@@ -2994,9 +2994,9 @@ exports[`Pagination component render should render correctly compact 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-10"
           data-ouia-component-type="PF6/Button"
@@ -3180,9 +3180,9 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-21"
           data-ouia-component-type="PF6/Button"
@@ -3209,9 +3209,9 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-22"
           data-ouia-component-type="PF6/Button"
@@ -3263,9 +3263,9 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-23"
           data-ouia-component-type="PF6/Button"
@@ -3292,9 +3292,9 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-24"
           data-ouia-component-type="PF6/Button"
@@ -3397,9 +3397,9 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-13"
           data-ouia-component-type="PF6/Button"
@@ -3426,9 +3426,9 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-14"
           data-ouia-component-type="PF6/Button"
@@ -3611,9 +3611,9 @@ exports[`Pagination component render should render correctly top 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-1"
           data-ouia-component-type="PF6/Button"
@@ -3640,9 +3640,9 @@ exports[`Pagination component render should render correctly top 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-2"
           data-ouia-component-type="PF6/Button"
@@ -3825,9 +3825,9 @@ exports[`Pagination component render titles 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-49"
           data-ouia-component-type="PF6/Button"
@@ -3854,9 +3854,9 @@ exports[`Pagination component render titles 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-50"
           data-ouia-component-type="PF6/Button"
@@ -4039,9 +4039,9 @@ exports[`Pagination component render up drop direction 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-57"
           data-ouia-component-type="PF6/Button"
@@ -4068,9 +4068,9 @@ exports[`Pagination component render up drop direction 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-58"
           data-ouia-component-type="PF6/Button"
@@ -4253,9 +4253,9 @@ exports[`Pagination component render zero results 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to first page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="first"
           data-ouia-component-id="OUIA-Generated-Button-plain-29"
           data-ouia-component-type="PF6/Button"
@@ -4282,9 +4282,9 @@ exports[`Pagination component render zero results 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to previous page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="previous"
           data-ouia-component-id="OUIA-Generated-Button-plain-30"
           data-ouia-component-type="PF6/Button"
@@ -4336,9 +4336,9 @@ exports[`Pagination component render zero results 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to next page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="next"
           data-ouia-component-id="OUIA-Generated-Button-plain-31"
           data-ouia-component-type="PF6/Button"
@@ -4365,9 +4365,9 @@ exports[`Pagination component render zero results 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
-          aria-disabled="true"
+          aria-disabled="false"
           aria-label="Go to last page"
-          class="pf-v6-c-button pf-m-plain pf-m-disabled"
+          class="pf-v6-c-button pf-m-plain"
           data-action="last"
           data-ouia-component-id="OUIA-Generated-Button-plain-32"
           data-ouia-component-type="PF6/Button"
