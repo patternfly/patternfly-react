@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.55](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.54...@patternfly/react-core@6.0.0-alpha.55) (2024-05-03)
+
+### Features
+
+- **Button:** change behaviour of isDisabled prop ([#10255](https://github.com/patternfly/patternfly-react/issues/10255)) ([fe6683f](https://github.com/patternfly/patternfly-react/commit/fe6683f4076cb93b23abe807ca097e5a6e31d293))
+
 # [6.0.0-alpha.54](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.53...@patternfly/react-core@6.0.0-alpha.54) (2024-04-29)
 
 ### Features
