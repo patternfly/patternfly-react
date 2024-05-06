@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Button,
   DescriptionList,
   DescriptionListTerm,
   DescriptionListGroup,
@@ -13,7 +12,9 @@ import {
   TextContent,
   Text,
   Title,
-  Divider
+  Divider,
+  Flex,
+  FlexItem
 } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
@@ -32,13 +33,32 @@ export const DescriptionListBasic: React.FunctionComponent = () => (
           <Title headingLevel="h2" size="lg">
             Details
           </Title>
-          <Divider />
         </CardHeader>
+        <Divider />
         <CardBody>
-          <DescriptionList isFillColumns columnModifier={{ default: '2Col', lg: '3Col' }}>
+          <DescriptionList isAutoFit>
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>mary-test</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Status</DescriptionListTerm>
+              <DescriptionListDescription>
+                <Flex>
+                  <FlexItem spacer={{ lg: 'spacerSm' }}>
+                    <CheckCircleIcon color="green" />
+                  </FlexItem>
+                  <FlexItem>Active</FlexItem>
+                </Flex>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Default pull secret</DescriptionListTerm>
+              <DescriptionListDescription>Not configured</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Tolerations</DescriptionListTerm>
+              <DescriptionListDescription>6 Tolerations</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>Network Policies</DescriptionListTerm>
@@ -47,28 +67,12 @@ export const DescriptionListBasic: React.FunctionComponent = () => (
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
-              <DescriptionListTerm>Status</DescriptionListTerm>
-              <DescriptionListDescription>
-                <Button variant="link" isInline icon={<CheckCircleIcon color="green" />}>
-                  Active
-                </Button>
-              </DescriptionListDescription>
-            </DescriptionListGroup>
-            <DescriptionListGroup>
               <DescriptionListTerm>Display name</DescriptionListTerm>
               <DescriptionListDescription>mary</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
-              <DescriptionListTerm>Default pull secret</DescriptionListTerm>
-              <DescriptionListDescription>Not configured</DescriptionListDescription>
-            </DescriptionListGroup>
-            <DescriptionListGroup>
               <DescriptionListTerm>Requester</DescriptionListTerm>
               <DescriptionListDescription>kube:admin</DescriptionListDescription>
-            </DescriptionListGroup>
-            <DescriptionListGroup>
-              <DescriptionListTerm>Tolerations</DescriptionListTerm>
-              <DescriptionListDescription>6 Tolerations</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>Created at:</DescriptionListTerm>
