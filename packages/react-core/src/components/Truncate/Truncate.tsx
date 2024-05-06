@@ -92,42 +92,46 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
   React.useEffect(() => {
     if (textElement && parentElement && !observer.current) {
       const totalTextWidth = calculateTotalTextWidth(textElement, trailingNumChars, content);
-
+      const textWidth = position === 'middle' ? totalTextWidth : textElement.scrollWidth;
       observer.current = new ResizeObserver(() => {
         const parentWidth = getActualWidth(parentElement);
-
-        const textWidth = position === 'middle' ? totalTextWidth : textElement.scrollWidth;
 
         setIsTruncated(textWidth >= parentWidth);
       });
 
-      observer.current.observe(subParentRef.current.parentElement.parentElement);
+      observer.current.observe(parentElement);
     }
   }, [textElement, parentElement]);
 
-  return (
-    <Tooltip hidden={!isTruncated} position={tooltipPosition} content={content}>
-      <span ref={subParentRef} className={css(styles.truncate, className)} {...props}>
-        {(position === TruncatePosition.end || position === TruncatePosition.start) && (
-          <span ref={textRef} className={truncateStyles[position]}>
-            {content}
-            {position === TruncatePosition.start && <React.Fragment>&lrm;</React.Fragment>}
-          </span>
+  const truncateBody = (
+    <span ref={subParentRef} className={css(styles.truncate, className)} {...props}>
+      {(position === TruncatePosition.end || position === TruncatePosition.start) && (
+        <span ref={textRef} className={truncateStyles[position]}>
+          {content}
+          {position === TruncatePosition.start && <React.Fragment>&lrm;</React.Fragment>}
+        </span>
+      )}
+      {position === TruncatePosition.middle &&
+        content.slice(0, content.length - trailingNumChars).length > minWidthCharacters && (
+          <React.Fragment>
+            <span ref={textRef} className={styles.truncateStart}>
+              {sliceContent(content, trailingNumChars)[0]}
+            </span>
+            <span className={styles.truncateEnd}>{sliceContent(content, trailingNumChars)[1]}</span>
+          </React.Fragment>
         )}
-        {position === TruncatePosition.middle &&
-          content.slice(0, content.length - trailingNumChars).length > minWidthCharacters && (
-            <React.Fragment>
-              <span ref={textRef} className={styles.truncateStart}>
-                {sliceContent(content, trailingNumChars)[0]}
-              </span>
-              <span className={styles.truncateEnd}>{sliceContent(content, trailingNumChars)[1]}</span>
-            </React.Fragment>
-          )}
-        {position === TruncatePosition.middle &&
-          content.slice(0, content.length - trailingNumChars).length <= minWidthCharacters &&
-          content}
-      </span>
+      {position === TruncatePosition.middle &&
+        content.slice(0, content.length - trailingNumChars).length <= minWidthCharacters &&
+        content}
+    </span>
+  );
+
+  return isTruncated ? (
+    <Tooltip hidden={!isTruncated} position={tooltipPosition} content={content}>
+      {truncateBody}
     </Tooltip>
+  ) : (
+    truncateBody
   );
 };
 
