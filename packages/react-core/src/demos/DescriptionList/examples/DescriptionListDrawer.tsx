@@ -5,9 +5,6 @@ import {
   GalleryItem,
   Card,
   CardBody,
-  Drawer,
-  DrawerPanelContent,
-  DrawerContent,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -28,6 +25,7 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-i
 
 export const DescriptionListDrawer: React.FunctionComponent = () => {
   const drawerRef = React.useRef<HTMLDivElement>(null);
+  const btnRef = React.useRef<HTMLDivElement>(null);
   const [isExpanded, setIsExpanded] = React.useState(true);
 
   const onExpand = () => {
@@ -36,7 +34,7 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
 
   const onCloseClick = () => {
     setIsExpanded(false);
-    drawerRef.current && drawerRef.current.focus();
+    btnRef.current && btnRef.current.focus();
   };
 
   const onOpenDrawer = () => {
@@ -44,10 +42,12 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
   };
 
   const panelContent = (
-    <DrawerPanelContent>
+    <>
       <DrawerHead>
-        <Title headingLevel="h2" tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
-          test
+        <Title headingLevel="h2">
+          <span ref={drawerRef} tabIndex={isExpanded ? 0 : -1}>
+            test
+          </span>
         </Title>
         <DrawerActions>
           <DrawerCloseButton onClick={onCloseClick} />
@@ -123,7 +123,7 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
           </DescriptionListGroup>
         </DescriptionList>
       </DrawerPanelBody>
-    </DrawerPanelContent>
+    </>
   );
 
   const drawerContent = (
@@ -131,7 +131,7 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
       <GalleryItem key={0}>
         <Card>
           <CardBody>
-            <Button variant="link" isInline onClick={onOpenDrawer}>
+            <Button variant="link" isInline onClick={onOpenDrawer} ref={btnRef}>
               Open drawer
             </Button>
           </CardBody>
@@ -147,14 +147,12 @@ export const DescriptionListDrawer: React.FunctionComponent = () => {
     </Gallery>
   );
 
-  const buildDrawer = (
-    <Drawer isExpanded={isExpanded} onExpand={onExpand}>
-      <DrawerContent panelContent={panelContent}></DrawerContent>
-    </Drawer>
-  );
-
   return (
-    <DashboardWrapper notificationDrawer={buildDrawer} isNotificationDrawerExpanded={isExpanded}>
+    <DashboardWrapper
+      notificationDrawer={panelContent}
+      isNotificationDrawerExpanded={isExpanded}
+      onNotificationDrawerExpand={onExpand}
+    >
       <Page>
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
