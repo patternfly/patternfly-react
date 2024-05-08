@@ -594,7 +594,6 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     standalone: false,
     subTitle: groupSubTitle,
     title: groupTitle,
-    theme,
     themeColor,
     width,
     ...groupTitleComponent.props
@@ -719,15 +718,10 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       labelComponent: legendComponent.props.labelComponent ? (
         React.cloneElement(legendComponent.props.labelComponent, {
           direction: 'rtl',
-          dx: legendXOffset - 30,
-          ...(theme.skeleton && theme.skeleton) // override backgroundStyle
+          dx: legendXOffset - 30
         })
       ) : (
-        <ChartLabel
-          direction="rtl"
-          dx={legendXOffset - 30}
-          {...(theme.skeleton && theme.skeleton)} // override backgroundStyle
-        />
+        <ChartLabel direction="rtl" dx={legendXOffset - 30} />
       )
     }),
     ...legendComponent.props

@@ -7,6 +7,7 @@ import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getBulletLabelX, getBulletLabelY } from '../ChartUtils/chart-label';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getBulletTheme } from '../ChartUtils/chart-theme-types';
+import { getComponentTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartBulletTitle renders the bullet chart title.
@@ -159,6 +160,7 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
 
   // Returns title
   const getTitle = () => {
+    const componentTheme = getComponentTheme(themeColor);
     const showBoth = title && subTitle;
 
     let labelPosition: 'bottom' | 'left' | 'top-left' = horizontal ? 'left' : 'bottom';
@@ -216,7 +218,7 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
         labelPosition
       }),
       ...titleComponent.props,
-      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
+      ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
     });
   };
 

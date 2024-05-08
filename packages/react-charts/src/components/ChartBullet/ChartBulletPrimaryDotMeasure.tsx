@@ -234,6 +234,7 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
         }
       },
       theme,
+      themeColor,
       width,
       ...measureComponent.props
     })

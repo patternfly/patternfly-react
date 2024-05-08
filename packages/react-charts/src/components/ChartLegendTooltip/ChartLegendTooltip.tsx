@@ -401,6 +401,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
       }),
       text,
       theme,
+      themeColor,
       width,
       ...rest
     });

@@ -26,6 +26,7 @@ import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getPieLabelX, getPieLabelY } from '../ChartUtils/chart-label';
+import { getComponentTheme } from '../ChartUtils/chart-theme';
 
 interface ChartDonutSubTitleInterface {
   dy?: number;
@@ -596,6 +597,8 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   width = theme.pie.width,
   ...rest
 }: ChartDonutProps) => {
+  const componentTheme = getComponentTheme(themeColor);
+
   const defaultPadding = {
     bottom: getPaddingForSide('bottom', padding, theme.pie.padding),
     left: getPaddingForSide('left', padding, theme.pie.padding),
@@ -660,7 +663,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         width
       }),
       ...subTitleProps,
-      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
+      ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
     });
   };
 
@@ -694,7 +697,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         width
       }),
       ...titleProps,
-      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
+      ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
     });
   };
 
@@ -712,6 +715,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       radius={chartRadius > 0 ? chartRadius : 0}
       standalone={false}
       theme={theme}
+      themeColor={themeColor}
       width={width}
       {...rest}
     />

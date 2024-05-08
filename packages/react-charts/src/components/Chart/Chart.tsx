@@ -541,6 +541,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
     orientation: legendOrientation,
     theme,
+    themeColor,
     ...(legendDirection === 'rtl' && {
       dataComponent: legendComponent.props.dataComponent ? (
         React.cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
@@ -552,11 +553,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       labelComponent: legendComponent.props.labelComponent ? (
         React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
       ) : (
-        <ChartLabel
-          direction="rtl"
-          dx={legendXOffset - 30}
-          backgroundStyle={theme.skeleton ? theme.skeleton.backgroundStyle : undefined} // override backgroundStyle
-        />
+        <ChartLabel direction="rtl" dx={legendXOffset - 30} />
       )
     }),
     ...legendComponent.props
@@ -603,6 +600,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       padding: defaultPadding,
       position: legendPosition,
       theme,
+      themeColor,
       width,
       ...(defaultPatternScale && { patternScale: defaultPatternScale })
     });
@@ -621,6 +619,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
               name: `${name}-${(child as any).type.displayName}-${index}`
             }),
           theme,
+          themeColor,
           ...childProps,
           ...((child as any).type.displayName === 'ChartPie' && {
             data: mergePatternData(childProps.data, defaultPatternScale)

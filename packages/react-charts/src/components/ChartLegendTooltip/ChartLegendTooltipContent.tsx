@@ -312,6 +312,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
       patternScale,
       standalone: false,
       theme,
+      themeColor,
       x: getX() + legendOffsetX + Helpers.evaluateProp(dx, undefined),
       y: getY() + legendOffsetY + Helpers.evaluateProp(dy, undefined),
       ...legendProps

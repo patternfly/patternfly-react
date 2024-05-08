@@ -34,7 +34,7 @@ import chart_theme_multi_color_unordered_ColorScale_3200 from '@patternfly/react
 import chart_theme_multi_color_unordered_ColorScale_3300 from '@patternfly/react-tokens/dist/esm/chart_theme_multi_color_unordered_ColorScale_3300';
 import chart_theme_multi_color_unordered_ColorScale_3400 from '@patternfly/react-tokens/dist/esm/chart_theme_multi_color_unordered_ColorScale_3400';
 import chart_theme_multi_color_unordered_ColorScale_3500 from '@patternfly/react-tokens/dist/esm/chart_theme_multi_color_unordered_ColorScale_3500';
-import { ColorTheme } from '../color-theme';
+import { ColorTheme, ColorComponentTheme } from '../color-theme';
 
 // The color order below improves the color contrast in unordered charts; area & line
 // See https://github.com/patternfly/patternfly-next/issues/1551
@@ -81,5 +81,14 @@ const COLOR_SCALE = [
  * @private
  */
 export const MultiColorUnorderedTheme = ColorTheme({
+  COLOR_SCALE
+});
+
+/**
+ * Multi-color unordered component theme
+ * @private
+ * @beta
+ */
+export const MultiColorUnorderedComponentTheme = ColorComponentTheme({
   COLOR_SCALE
 });
