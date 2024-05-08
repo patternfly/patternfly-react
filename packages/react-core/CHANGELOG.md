@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.56](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.55...@patternfly/react-core@6.0.0-alpha.56) (2024-05-08)
+
+### Features
+
+- **FormGroupLabelHelp:** update markup to match core ([#10248](https://github.com/patternfly/patternfly-react/issues/10248)) ([113ff75](https://github.com/patternfly/patternfly-react/commit/113ff758d1165bc843758f7cc5b6042d7eb9dc4e))
+
 # [6.0.0-alpha.55](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.54...@patternfly/react-core@6.0.0-alpha.55) (2024-05-03)
 
 ### Features

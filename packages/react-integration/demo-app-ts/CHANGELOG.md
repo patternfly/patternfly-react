@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.55](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.54...demo-app-ts@5.1.1-alpha.55) (2024-05-08)
+
+### Features
+
+- **FormGroupLabelHelp:** update markup to match core ([#10248](https://github.com/patternfly/patternfly-react/issues/10248)) ([113ff75](https://github.com/patternfly/patternfly-react/commit/113ff758d1165bc843758f7cc5b6042d7eb9dc4e))
+
 ## [5.1.1-alpha.54](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.53...demo-app-ts@5.1.1-alpha.54) (2024-05-03)
 
 **Note:** Version bump only for package demo-app-ts
