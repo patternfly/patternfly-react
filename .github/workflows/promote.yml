@@ -1,23 +1,18 @@
-name: promote
+name: Promote
 on:
   workflow_dispatch:
     inputs:
-      core-version:
-        description: The PatternFly core version
+      patternfly-version:
+        description: The version of PatternFly (`@patternfly/patternfly`) to promote to.
         required: false
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      CORE_VERSION: ${{ github.event.inputs.core-version }}
-      RELEASE_VERSION: ${{ github.event.inputs.version }}
-      GH_TOKEN: ${{ secrets.GH_TOKEN_REDALLEN }}
     steps:
       - name: Check out project
         uses: actions/checkout@v4
         with:
-          # Needs to be an admin token to get around branch protection.
+          # Pass in an administrator token to get around branch protection.
           token: ${{ secrets.GH_TOKEN_REDALLEN }}
 
       - name: Set up and build project
@@ -27,3 +22,6 @@ jobs:
 
       - name: Deploy to NPM and Github
         run: .github/promote.sh
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          PATTERNFLY_VERSION: ${{ github.event.inputs.patternfly-version }}
