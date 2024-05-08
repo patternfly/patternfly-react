@@ -29,7 +29,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
   const [filterValue, setFilterValue] = React.useState<string>('');
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
-  const [activeItem, setActiveItem] = React.useState<string | null>(null);
+  const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
   const textInputRef = React.useRef<HTMLInputElement>();
 
   const NO_RESULTS = 'no results';
@@ -48,7 +48,6 @@ export const SelectTypeahead: React.FunctionComponent = () => {
         newSelectOptions = [
           { isAriaDisabled: true, children: `No results found for "${filterValue}"`, value: NO_RESULTS }
         ];
-        resetActiveAndFocusedItem();
       }
 
       // Open the menu when the input value changes and the new value is not empty
@@ -60,21 +59,17 @@ export const SelectTypeahead: React.FunctionComponent = () => {
     setSelectOptions(newSelectOptions);
   }, [filterValue]);
 
-  React.useEffect(() => {
-    if (isOpen && selectOptions.length && selectOptions[0].value !== NO_RESULTS) {
-      setActiveAndFocusedItem(0);
-    }
-  }, [isOpen, filterValue]);
+  const createItemId = (value: any) => `select-typeahead-${value.replace(' ', '-')}`;
 
   const setActiveAndFocusedItem = (itemIndex: number) => {
     setFocusedItemIndex(itemIndex);
-    const focusedItem = selectOptions.filter((option) => !option.isDisabled)[itemIndex];
-    setActiveItem(`select-typeahead-${focusedItem.value.replace(' ', '-')}`);
+    const focusedItem = selectOptions[itemIndex];
+    setActiveItemId(createItemId(focusedItem.value));
   };
 
   const resetActiveAndFocusedItem = () => {
     setFocusedItemIndex(null);
-    setActiveItem(null);
+    setActiveItemId(null);
   };
 
   const closeMenu = () => {
@@ -90,21 +85,29 @@ export const SelectTypeahead: React.FunctionComponent = () => {
     }
   };
 
-  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
+  const selectOption = (value: string | number, content: string | number) => {
     // eslint-disable-next-line no-console
-    console.log('selected', value);
+    console.log('selected', content);
 
-    if (value && value !== NO_RESULTS) {
-      setInputValue(value as string);
-      setFilterValue('');
-      setSelected(value as string);
-    }
+    setInputValue(String(content));
+    setFilterValue('');
+    setSelected(String(value));
+
     closeMenu();
+  };
+
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
+    if (value && value !== NO_RESULTS) {
+      const optionText = selectOptions.find((option) => option.value === value)?.children;
+      selectOption(value, optionText as string);
+    }
   };
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
     setFilterValue(value);
+
+    resetActiveAndFocusedItem();
 
     if (value !== selected) {
       setSelected('');
@@ -112,47 +115,65 @@ export const SelectTypeahead: React.FunctionComponent = () => {
   };
 
   const handleMenuArrowKeys = (key: string) => {
-    let indexToFocus;
+    let indexToFocus = 0;
 
-    if (isOpen) {
-      if (key === 'ArrowUp') {
-        // When no index is set or at the first index, focus to the last, otherwise decrement focus index
-        if (focusedItemIndex === null || focusedItemIndex === 0) {
-          indexToFocus = selectOptions.length - 1;
-        } else {
-          indexToFocus = focusedItemIndex - 1;
-        }
-      }
-
-      if (key === 'ArrowDown') {
-        // When no index is set or at the last index, focus to the first, otherwise increment focus index
-        if (focusedItemIndex === null || focusedItemIndex === selectOptions.length - 1) {
-          indexToFocus = 0;
-        } else {
-          indexToFocus = focusedItemIndex + 1;
-        }
-      }
-
-      setActiveAndFocusedItem(indexToFocus);
+    if (!isOpen) {
+      setIsOpen(true);
     }
+
+    if (selectOptions.every((option) => option.isDisabled)) {
+      return;
+    }
+
+    if (key === 'ArrowUp') {
+      // When no index is set or at the first index, focus to the last, otherwise decrement focus index
+      if (focusedItemIndex === null || focusedItemIndex === 0) {
+        indexToFocus = selectOptions.length - 1;
+      } else {
+        indexToFocus = focusedItemIndex - 1;
+      }
+
+      // Skip disabled options
+      while (selectOptions[indexToFocus].isDisabled) {
+        indexToFocus--;
+        if (indexToFocus === -1) {
+          indexToFocus = selectOptions.length - 1;
+        }
+      }
+    }
+
+    if (key === 'ArrowDown') {
+      // When no index is set or at the last index, focus to the first, otherwise increment focus index
+      if (focusedItemIndex === null || focusedItemIndex === selectOptions.length - 1) {
+        indexToFocus = 0;
+      } else {
+        indexToFocus = focusedItemIndex + 1;
+      }
+
+      // Skip disabled options
+      while (selectOptions[indexToFocus].isDisabled) {
+        indexToFocus++;
+        if (indexToFocus === selectOptions.length) {
+          indexToFocus = 0;
+        }
+      }
+    }
+
+    setActiveAndFocusedItem(indexToFocus);
   };
 
   const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const enabledMenuItems = selectOptions.filter((option) => !option.isDisabled);
-    const [firstMenuItem] = enabledMenuItems;
-    const focusedItem = focusedItemIndex ? enabledMenuItems[focusedItemIndex] : firstMenuItem;
+    const focusedItem = focusedItemIndex !== null ? selectOptions[focusedItemIndex] : null;
 
     switch (event.key) {
-      // Select the first available option
       case 'Enter':
-        if (isOpen && focusedItem.value !== NO_RESULTS) {
-          setInputValue(String(focusedItem.children));
-          setFilterValue('');
-          setSelected(String(focusedItem.children));
+        if (isOpen && focusedItem && focusedItem.value !== NO_RESULTS && !focusedItem.isAriaDisabled) {
+          selectOption(focusedItem.value, focusedItem.children as string);
         }
 
-        setIsOpen((prevIsOpen) => !prevIsOpen);
-        resetActiveAndFocusedItem();
+        if (!isOpen) {
+          setIsOpen(true);
+        }
 
         break;
       case 'ArrowUp':
@@ -163,15 +184,25 @@ export const SelectTypeahead: React.FunctionComponent = () => {
     }
   };
 
+  const onToggleClick = () => {
+    setIsOpen(!isOpen);
+    textInputRef?.current?.focus();
+  };
+
+  const onClearButtonClick = () => {
+    setSelected('');
+    setInputValue('');
+    setFilterValue('');
+    resetActiveAndFocusedItem();
+    textInputRef?.current?.focus();
+  };
+
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
     <MenuToggle
       ref={toggleRef}
       variant="typeahead"
       aria-label="Typeahead menu toggle"
-      onClick={() => {
-        setIsOpen(!isOpen);
-        textInputRef?.current?.focus();
-      }}
+      onClick={onToggleClick}
       isExpanded={isOpen}
       isFullWidth
     >
@@ -185,27 +216,16 @@ export const SelectTypeahead: React.FunctionComponent = () => {
           autoComplete="off"
           innerRef={textInputRef}
           placeholder="Select a state"
-          {...(activeItem && { 'aria-activedescendant': activeItem })}
+          {...(activeItemId && { 'aria-activedescendant': activeItemId })}
           role="combobox"
           isExpanded={isOpen}
           aria-controls="select-typeahead-listbox"
         />
 
-        <TextInputGroupUtilities>
-          {!!inputValue && (
-            <Button
-              variant="plain"
-              onClick={() => {
-                setSelected('');
-                setInputValue('');
-                setFilterValue('');
-                textInputRef?.current?.focus();
-              }}
-              aria-label="Clear input value"
-            >
-              <TimesIcon aria-hidden />
-            </Button>
-          )}
+        <TextInputGroupUtilities {...(!inputValue ? { style: { display: 'none' } } : {})}>
+          <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
+            <TimesIcon aria-hidden />
+          </Button>
         </TextInputGroupUtilities>
       </TextInputGroup>
     </MenuToggle>
@@ -221,7 +241,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
         !isOpen && closeMenu();
       }}
       toggle={toggle}
-      shouldFocusFirstMenuItemOnOpen={false}
+      shouldFocusFirstItemOnOpen={false}
     >
       <SelectList id="select-typeahead-listbox">
         {selectOptions.map((option, index) => (
@@ -229,9 +249,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
             key={option.value || option.children}
             isFocused={focusedItemIndex === index}
             className={option.className}
-            onMouseEnter={() => setActiveAndFocusedItem(index)}
-            onClick={() => setSelected(option.value)}
-            id={`select-typeahead-${option.value.replace(' ', '-')}`}
+            id={createItemId(option.value)}
             {...option}
             ref={null}
           />
