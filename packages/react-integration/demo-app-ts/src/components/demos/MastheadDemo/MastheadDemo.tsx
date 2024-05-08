@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Masthead,
   MastheadToggle,
@@ -14,15 +14,16 @@ import {
   DropdownItem,
   DropdownList,
   MenuToggle,
-  Divider
+  Divider,
+  MenuToggleElement,
+  MastheadProps
 } from '@patternfly/react-core';
-import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core/deprecated';
 import imgBrand from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export class MastheadDemo extends React.Component {
-  displayName = 'MastheadDemo';
+export class MastheadDemo extends Component<MastheadProps> {
+  static displayName = 'MastheadDemo';
   items = [
     'My Project',
     'OpenShift Cluster',
@@ -45,9 +46,9 @@ export class MastheadDemo extends React.Component {
     filteredItems: this.items
   };
 
-  onToggle = (event: any, isOpen: boolean) => {
+  onToggle = () => {
     this.setState({
-      isOpen
+      isOpen: !this.state.isOpen
     });
   };
 
@@ -96,8 +97,7 @@ export class MastheadDemo extends React.Component {
   };
 
   render() {
-    const { isOpen, isDropdownOpen, isKebabOpen, selected, searchValue, filteredItems } = this.state;
-
+    const { isDropdownOpen, isKebabOpen, filteredItems } = this.state;
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
       <DropdownItem key="action">Action</DropdownItem>,
@@ -128,28 +128,34 @@ export class MastheadDemo extends React.Component {
           <Toolbar id="toolbar">
             <ToolbarContent>
               <ToolbarItem>
-                <ContextSelector
-                  toggleText={selected}
-                  onSearchInputChange={this.onSearchInputChange}
-                  isOpen={isOpen}
-                  searchInputValue={searchValue}
-                  onToggle={this.onToggle}
+                <Dropdown
+                  isOpen={isDropdownOpen}
                   onSelect={this.onSelect}
-                  onSearchButtonClick={this.onSearchButtonClick}
-                  screenReaderLabel="Selected Project:"
-                  isFullHeight
+                  onOpenChange={() =>
+                    this.setState({
+                      isOpen: !this.state.isOpen
+                    })
+                  }
+                  popperProps={{ position: 'right' }}
+                  toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                    <MenuToggle ref={toggleRef} onClick={this.onToggle} isFullHeight isExpanded={isDropdownOpen}>
+                      Ned Username
+                    </MenuToggle>
+                  )}
                 >
-                  {filteredItems.map((item, index) => (
-                    <ContextSelectorItem key={index}>{item}</ContextSelectorItem>
-                  ))}
-                </ContextSelector>
+                  <DropdownList>
+                    {filteredItems.map((item, index) => (
+                      <DropdownItem key={index}>{item}</DropdownItem>
+                    ))}
+                  </DropdownList>
+                </Dropdown>
               </ToolbarItem>
               <ToolbarGroup align={{ default: 'alignRight' }}>
                 <ToolbarItem visibility={{ default: 'hidden', lg: 'visible' }}>
                   <Dropdown
                     onSelect={this.onDropdownSelect}
                     isOpen={isDropdownOpen}
-                    toggle={(toggleRef) => (
+                    toggle={(toggleRef: any) => (
                       <MenuToggle
                         isFullHeight
                         ref={toggleRef}
@@ -167,7 +173,7 @@ export class MastheadDemo extends React.Component {
                   <Dropdown
                     onSelect={this.onKebabSelect}
                     isOpen={isKebabOpen}
-                    toggle={(toggleRef) => (
+                    toggle={(toggleRef: any) => (
                       <MenuToggle
                         ref={toggleRef}
                         isExpanded={isKebabOpen}
@@ -191,4 +197,4 @@ export class MastheadDemo extends React.Component {
   }
 }
 
-export default MastheadDemo;
+MastheadDemo.displayName = 'MastheadDemo';

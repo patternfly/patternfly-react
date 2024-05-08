@@ -18,9 +18,10 @@ import {
   DropdownItem,
   DropdownList,
   MenuToggle,
-  Divider
+  Divider,
+  Select,
+  SelectOption
 } from '@patternfly/react-core';
-import { Select, SelectOption, SelectOptionObject, SelectVariant } from '@patternfly/react-core/deprecated';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
@@ -77,11 +78,7 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     this.setState({ inputValue: newValue });
   };
 
-  onSelect = (
-    type: keyof Filter,
-    event: React.MouseEvent | React.ChangeEvent,
-    selection: string | SelectOptionObject
-  ) => {
+  onSelect = (type: keyof Filter, event: React.MouseEvent | React.ChangeEvent, selection: string) => {
     const selectedTarget = event.target as HTMLInputElement;
     const checked = selectedTarget.checked;
     this.setState((prevState) => {
@@ -199,7 +196,6 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
         <ToolbarGroup variant="filter-group" id="toolbar-demo-filters">
           <ToolbarFilter chips={filters.status} deleteChip={this.onDelete} categoryName="Status">
             <Select
-              variant={SelectVariant.checkbox}
               aria-label="Status"
               onToggle={this.onStatusToggle}
               onSelect={this.onStatusSelect}

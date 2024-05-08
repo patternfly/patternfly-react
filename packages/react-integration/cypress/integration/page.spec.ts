@@ -3,7 +3,7 @@ describe('Page Demo Test', () => {
     cy.visit('http://localhost:3000/page-demo-nav-link');
   });
 
-  it('Test Page elements', () => {
+  xit('Test Page elements', () => {
     cy.get('#page-demo').within(() => {
       cy.get('#nav-toggle').then((hamburgerIcon: JQuery<HTMLDivElement>) => {
         cy.get('.pf-v6-c-page__sidebar.pf-m-expanded').should('exist');

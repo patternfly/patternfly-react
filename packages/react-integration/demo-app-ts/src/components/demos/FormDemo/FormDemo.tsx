@@ -12,9 +12,11 @@ import {
   ValidatedOptions,
   HelperText,
   HelperTextItem,
-  FormHelperText
+  FormHelperText,
+  Select,
+  SelectOption,
+  MenuToggle
 } from '@patternfly/react-core';
-import { Select, SelectOption, SelectOptionObject, SelectVariant } from '@patternfly/react-core/deprecated';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
@@ -154,14 +156,18 @@ export class FormDemo extends Component<FormProps, FormState> {
               Select a state
             </span>
             <Select
-              variant={SelectVariant.typeaheadMulti}
               aria-label="Select a state"
-              onToggle={this.onToggle}
+              //      onToggle={this.onToggle}
               onSelect={this.onSelect}
               onClear={this.clearSelection}
               selections={selected}
               isOpen={isOpen}
               aria-labelledby={titleId}
+              toggle={(toggleRef: any) => (
+                <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen}>
+                  {isOpen ? 'Expanded' : 'Collapsed'}
+                </MenuToggle>
+              )}
               placeholderText="Select a state"
             >
               {options.map((option, index) => (

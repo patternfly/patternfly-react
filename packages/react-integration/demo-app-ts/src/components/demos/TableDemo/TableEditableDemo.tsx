@@ -1,5 +1,5 @@
 /* eslint-disable no-shadow */
-import * as React from 'react';
+import React, { Component } from 'react';
 import {
   TableVariant,
   ICell,
@@ -13,28 +13,28 @@ import {
   EditableTextCell,
   EditableSelectInputCell
 } from '@patternfly/react-table';
-import { SelectOption } from '@patternfly/react-core/deprecated';
+import { SelectOption } from '@patternfly/react-core/';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 const rowLevelValidationRules: IValidatorDef[] = [
   {
     name: 'required',
-    validator: value => value.trim() !== '',
+    validator: (value) => value.trim() !== '',
     errorText: 'This field is required'
   },
   {
     name: 'notFoo',
-    validator: value => value.trim().toLowerCase() !== 'foo',
+    validator: (value) => value.trim().toLowerCase() !== 'foo',
     errorText: 'Value cannot be "foo"'
   },
   {
     name: 'minLength',
-    validator: value => value.trim().length >= 7,
+    validator: (value) => value.trim().length >= 7,
     errorText: 'Value must be at least 7 characters'
   },
   {
     name: 'notXyz',
-    validator: value => value.trim().toLowerCase() !== 'xyz',
+    validator: (value) => value.trim().toLowerCase() !== 'xyz',
     errorText: 'Value cannot be xyz'
   }
 ];
@@ -48,7 +48,7 @@ interface Option {
   value: string;
 }
 
-export class TableEditableDemo extends React.Component<TableProps, TableState> {
+export class TableEditableDemo extends Component<TableProps, TableState> {
   static displayName = 'TableEditableDemo';
 
   private options: Option[];
@@ -155,8 +155,8 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   options={(updatedProps as any).options.map((option: any, index: number) => (
                     <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell5Option' + index} />
                   ))}
-                  onToggle={(_event: any, isOpen: boolean) => {
-                    this.onToggle(isOpen, rowIndex, cellIndex);
+                  onToggle={(_event: any) => {
+                    this.onToggle();
                   }}
                   selections={updatedProps.selected}
                 />
@@ -184,9 +184,9 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
         },
         {
           isEditable: false,
-          rowEditBtnAriaLabel: idx => `Edit row ${idx}`,
-          rowSaveBtnAriaLabel: idx => `Save edits for row ${idx}`,
-          rowCancelBtnAriaLabel: idx => `Cancel edits for row ${idx}`,
+          rowEditBtnAriaLabel: (idx) => `Edit row ${idx}`,
+          rowSaveBtnAriaLabel: (idx) => `Save edits for row ${idx}`,
+          rowCancelBtnAriaLabel: (idx) => `Cancel edits for row ${idx}`,
           cells: [
             {
               title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
@@ -266,8 +266,8 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   options={(updatedProps as any).options.map((option: any, index: number) => (
                     <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell5Option' + index} />
                   ))}
-                  onToggle={(_event: any, isOpen: boolean) => {
-                    this.onToggle(isOpen, rowIndex, cellIndex);
+                  onToggle={(_event: any) => {
+                    this.onToggle(rowIndex, cellIndex);
                   }}
                   selections={updatedProps.selected}
                 />
@@ -301,7 +301,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     window.scrollTo(0, 0);
   }
 
-  updateEditableRows: OnRowEdit = (evt, type, isEditable, rowIndex = 0, validationErrors) => {
+  updateEditableRows: OnRowEdit = (_evt, type, _isEditable, rowIndex = 0, validationErrors) => {
     const newRows = Array.from(this.state.rows);
 
     if (validationErrors && Object.keys(validationErrors).length) {
@@ -340,7 +340,13 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     });
   };
 
-  onSelect = (_event: React.FormEvent, newValue: string, rowIndex: number, cellIndex: number, isPlaceholder?: boolean) => {
+  onSelect = (
+    _event: React.FormEvent,
+    newValue: string,
+    rowIndex: number,
+    cellIndex: number,
+    isPlaceholder?: boolean
+  ) => {
     const newRows = Array.from(this.state.rows);
     const newCellProps = (newRows[rowIndex].cells[cellIndex] as IRowCell).props;
 
@@ -359,7 +365,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
           if (!newSelected.includes(newValue)) {
             newSelected.push(newValue);
           } else {
-            newSelected = newSelected.filter(el => el !== newValue);
+            newSelected = newSelected.filter((el) => el !== newValue);
           }
           break;
         }
@@ -377,9 +383,8 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     });
   };
 
-  onToggle = (isOpen: boolean, rowIndex: number, cellIndex: number) => {
+  onToggle = () => {
     const newRows = Array.from(this.state.rows);
-    (newRows[rowIndex].cells[cellIndex] as IRowCell).props.isSelectOpen = isOpen;
     this.setState({
       rows: newRows
     });

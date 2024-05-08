@@ -11,14 +11,10 @@ import {
   PageSidebarBody,
   Avatar,
   Brand,
-  Radio
+  Radio,
+  Masthead
 } from '@patternfly/react-core';
-import {
-  PageHeader,
-  PageHeaderTools,
-  PageHeaderToolsItem,
-  PageHeaderToolsGroup
-} from '@patternfly/react-core/deprecated';
+import { PageHeaderTools, PageHeaderToolsItem, PageHeaderToolsGroup } from '@patternfly/react-core/deprecated';
 import imgBrand from './assets/images/imgBrand.svg';
 import imgAvatar from './assets/images/imgAvatar.svg';
 import Demos from './Demos';
@@ -124,7 +120,7 @@ class App extends React.Component<{}, AppState> {
     );
 
     const AppHeader = (
-      <PageHeader
+      <Masthead
         logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
         headerTools={AppToolbar}
         showNavToggle

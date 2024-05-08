@@ -8,8 +8,7 @@
 import * as React from 'react';
 import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { PopoverProps } from '@patternfly/react-core/dist/esm/components/Popover';
-import { DropdownPosition, DropdownDirection } from '@patternfly/react-core/dist/esm/deprecated/components/Dropdown';
-import { SelectOptionObject, SelectProps } from '@patternfly/react-core/dist/esm/deprecated/components/Select';
+import { SelectProps } from '@patternfly/react-core/dist/esm/components/Select';
 import { Table } from '../Table';
 import { Thead } from '../Thead';
 import { Tbody } from '../Tbody';
@@ -61,9 +60,9 @@ export interface TdActionsType {
   /** Whether the actions are disabled */
   isDisabled?: boolean;
   /** Actions dropdown position */
-  dropdownPosition?: DropdownPosition;
+  dropdownPosition?: 'right' | 'left';
   /** Actions dropdown direction */
-  dropdownDirection?: DropdownDirection;
+  dropdownDirection?: 'up' | 'down';
   /** The container to append the dropdown menu to. Defaults to 'inline'.
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
    * Some examples:
@@ -286,11 +285,11 @@ export interface EditableSelectInputProps {
   value: string | string[];
   /** Flag controlling isOpen state of select */
   isSelectOpen: boolean;
-  /** String or SelectOptionObject, or array of strings or SelectOptionObjects representing current selections */
-  selected: string | SelectOptionObject | (string | SelectOptionObject)[];
+  /** Single select option value for single select menus, or array of select option values for multi select. You can also specify isSelected on the SelectOption */
+  selected: any | any[];
   /** Array of react elements to display in the select menu */
   options: React.ReactElement[];
-  /** Props to be passed down to the Select component */
+  /** Props to be passed down to the select component */
   editableSelectProps?: SelectProps;
   /** arbitrary data to pass to the internal select component in the editable select input cell */
   [key: string]: any;

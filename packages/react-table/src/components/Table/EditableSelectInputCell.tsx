@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import { Select, SelectOptionObject } from '@patternfly/react-core/dist/esm/deprecated/components/Select';
+import { Select } from '@patternfly/react-core/dist/esm/components/Select';
+import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import { EditableSelectInputProps } from './base/types';
@@ -15,7 +16,7 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
   /** Event handler which fires when user selects an option in this cell */
   onSelect: (
     event: React.MouseEvent | React.ChangeEvent,
-    newValue: string | SelectOptionObject,
+    newValue: any | any[],
     rowIndex: number,
     cellIndex: number,
     isPlaceholder?: boolean
@@ -25,11 +26,11 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
   /** Flag indicating the select input is disabled */
   isDisabled?: boolean;
   /** Current selected options to display as the read only value of the table cell */
-  selections?: string | SelectOptionObject | (string | SelectOptionObject)[];
+  selections?: any | any[];
   /** Flag indicating the select menu is open */
   isOpen?: boolean;
   /** Event handler which fires when the select toggle is toggled */
-  onToggle?: (event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event, isExpanded: boolean) => void;
+  onToggle?: (event: React.MouseEvent | undefined) => void;
   /** Event handler which fires when the user clears the selections */
   clearSelection?: (event: React.MouseEvent, rowIndex: number, cellIndex: number) => void;
 }
@@ -48,10 +49,10 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
 }: IEditableSelectInputCell) => {
   const onSelectHandler = (
     event: React.MouseEvent | React.ChangeEvent,
-    newValue: string | SelectOptionObject,
-    isPlaceholder: boolean
+    newValue: any | any[]
+    //    isPlaceholder: boolean
   ) => {
-    onSelect(event, newValue, rowIndex, cellIndex, isPlaceholder);
+    onSelect(event, newValue, rowIndex, cellIndex);
   };
 
   const onClear = (event: React.MouseEvent) => {
@@ -64,8 +65,12 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
       onSelect={onSelectHandler}
       {...(clearSelection && { onClear })}
       isOpen={isOpen}
-      onToggle={onToggle}
-      selections={selections}
+      selected={selections}
+      toggle={(toggleRef: any) => (
+        <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen}>
+          {isOpen ? 'Expanded' : 'Collapsed'}
+        </MenuToggle>
+      )}
     >
       {options}
     </Select>
