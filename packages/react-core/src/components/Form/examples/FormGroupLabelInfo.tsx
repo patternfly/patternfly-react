@@ -12,6 +12,7 @@ import {
 
 export const FormGroupLabelInfo: React.FunctionComponent = () => {
   const [name, setName] = React.useState('');
+  const labelHelpRef = React.useRef(null);
 
   const handleNameChange = (_event, name: string) => {
     setName(name);
@@ -24,6 +25,7 @@ export const FormGroupLabelInfo: React.FunctionComponent = () => {
         labelInfo="Additional label info"
         labelHelp={
           <Popover
+            triggerRef={labelHelpRef}
             headerContent={
               <div>
                 The{' '}
@@ -50,7 +52,7 @@ export const FormGroupLabelInfo: React.FunctionComponent = () => {
               </div>
             }
           >
-            <FormGroupLabelHelp aria-label="More info for name field" />
+            <FormGroupLabelHelp ref={labelHelpRef} aria-label="More info for name field" />
           </Popover>
         }
         isRequired

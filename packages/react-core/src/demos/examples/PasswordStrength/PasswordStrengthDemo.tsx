@@ -89,9 +89,15 @@ export const PasswordStrengthDemo: React.FunctionComponent = () => {
     }
   };
 
+  const labelHelpRef = React.useRef(null);
+
   const iconPopover = (
-    <Popover headerContent={<div>Password Requirements</div>} bodyContent={<div>Password rules</div>}>
-      <FormGroupLabelHelp aria-label="More info for name field" />
+    <Popover
+      triggerRef={labelHelpRef}
+      headerContent={<div>Password Requirements</div>}
+      bodyContent={<div>Password rules</div>}
+    >
+      <FormGroupLabelHelp ref={labelHelpRef} aria-label="More info for name field" />
     </Popover>
   );
 

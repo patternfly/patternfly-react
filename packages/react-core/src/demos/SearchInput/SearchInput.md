@@ -128,9 +128,9 @@ SearchAutocomplete = () => {
         event.preventDefault(); // by default, the up and down arrow keys scroll the window
         // the tab, enter, and space keys will close the menu, and the tab key will move browser
         // focus forward one element (by default)
-      } else if (event.key === 'Tab' || event.key === 'Enter' || event.key === 'Space') {
+      } else if (event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') {
         setIsAutocompleteOpen(false);
-        if (event.key === 'Enter' || event.key === 'Space') {
+        if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
         }
       }

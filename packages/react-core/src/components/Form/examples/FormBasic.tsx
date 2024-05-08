@@ -18,6 +18,7 @@ export const FormBasic: React.FunctionComponent = () => {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [phone, setPhone] = React.useState('');
+  const labelHelpRef = React.useRef(null);
 
   const handleNameChange = (_event, name: string) => {
     setName(name);
@@ -37,6 +38,7 @@ export const FormBasic: React.FunctionComponent = () => {
         label="Full name"
         labelHelp={
           <Popover
+            triggerRef={labelHelpRef}
             headerContent={
               <div>
                 The{' '}
@@ -63,7 +65,7 @@ export const FormBasic: React.FunctionComponent = () => {
               </div>
             }
           >
-            <FormGroupLabelHelp aria-label="More info for name field" />
+            <FormGroupLabelHelp ref={labelHelpRef} aria-label="More info for name field" />
           </Popover>
         }
         isRequired
