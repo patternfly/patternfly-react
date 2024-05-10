@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipPosition } from '../Tooltip';
+import { getResizeObserver } from '../../helpers/resizeObserver';
 
 export enum TruncatePosition {
   start = 'start',
@@ -93,13 +94,17 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
     if (textElement && parentElement && !observer.current) {
       const totalTextWidth = calculateTotalTextWidth(textElement, trailingNumChars, content);
       const textWidth = position === 'middle' ? totalTextWidth : textElement.scrollWidth;
-      observer.current = new ResizeObserver(() => {
+
+      const handleResize = () => {
         const parentWidth = getActualWidth(parentElement);
-
         setIsTruncated(textWidth >= parentWidth);
-      });
+      };
 
-      observer.current.observe(parentElement);
+      const observer = getResizeObserver(parentElement, handleResize);
+
+      return () => {
+        observer();
+      };
     }
   }, [textElement, parentElement]);
 
