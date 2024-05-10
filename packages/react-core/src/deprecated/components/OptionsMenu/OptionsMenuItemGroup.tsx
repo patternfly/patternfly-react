@@ -11,7 +11,7 @@ export interface OptionsMenuItemGroupProps extends React.HTMLProps<HTMLElement> 
   /** Provides an accessible name for the options menu items group */
   'aria-label'?: string;
   /** Optional title for the options menu items group */
-  groupTitle?: string | React.ReactNode;
+  groupTitle?: React.ReactNode;
   /** Flag indicating this options menu items group will be followed by a horizontal separator */
   hasSeparator?: boolean;
 }

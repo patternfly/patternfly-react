@@ -86,7 +86,7 @@ export interface SelectProps
   /** Text displayed in typeahead select to prompt the user to create an item */
   createText?: string;
   /** Title text of Select */
-  placeholderText?: string | React.ReactNode;
+  placeholderText?: React.ReactNode;
   /** Text to display in typeahead select when no results are found */
   noResultsFoundText?: string;
   /** Array of selected items for multi select variants. */
