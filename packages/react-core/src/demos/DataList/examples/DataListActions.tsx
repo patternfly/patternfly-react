@@ -15,11 +15,11 @@ import {
   PageSection,
   PageSectionVariants,
   TextContent,
-  Text
+  Text,
+  Title
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import { Title } from '../../../../dist/js/components';
 
 export const DataListActions: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
