@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.4.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.4.0-prerelease.3...@patternfly/react-charts@7.4.0-prerelease.4) (2024-05-10)
+
+### Features
+
+- **charts:** skeletons ([#10311](https://github.com/patternfly/patternfly-react/issues/10311)) ([029351e](https://github.com/patternfly/patternfly-react/commit/029351e0fa402c80a6199e2bd4b28e8c06f17562))
+
 # 7.4.0-prerelease.3 (2024-04-30)
 
 **Note:** Version bump only for package @patternfly/react-charts

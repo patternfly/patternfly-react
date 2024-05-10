@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.1.0-prerelease.8...@patternfly/react-templates@1.1.0-prerelease.9) (2024-05-10)
+
+### Features
+
+- **Dropdown:** Added simple template ([#10308](https://github.com/patternfly/patternfly-react/issues/10308)) ([86dcc02](https://github.com/patternfly/patternfly-react/commit/86dcc02e909b8f1d5288f5653bc290088e41b375))
+- **Select:** Typeahead example ([#10207](https://github.com/patternfly/patternfly-react/issues/10207)) ([2d19e26](https://github.com/patternfly/patternfly-react/commit/2d19e26b5fa95f6da0fa6b16f5bf9a299cf58df8))
+- **Select:** Typeahead template ([#10235](https://github.com/patternfly/patternfly-react/issues/10235)) ([c7d2e9f](https://github.com/patternfly/patternfly-react/commit/c7d2e9fcaee50cd17a306a0f25e43e96f78e4217))
+
 # [1.1.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.1.0-prerelease.7...@patternfly/react-templates@1.1.0-prerelease.8) (2024-04-30)
 
 **Note:** Version bump only for package @patternfly/react-templates

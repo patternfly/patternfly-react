@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.8...@patternfly/react-core@5.4.0-prerelease.9) (2024-05-10)
+
+### Bug Fixes
+
+- **Select:** set isScrollable internally ([#10320](https://github.com/patternfly/patternfly-react/issues/10320)) ([3970897](https://github.com/patternfly/patternfly-react/commit/3970897dc5586e2ad82b56789a0ee7115519ed94))
+- **Tabs:** uncontrolled Tabs react to updated defaultActiveKey ([#10317](https://github.com/patternfly/patternfly-react/issues/10317)) ([8e21814](https://github.com/patternfly/patternfly-react/commit/8e21814315adbd96ce2a8a6b7416e014fa859fc2))
+
+### Features
+
+- **Select:** Typeahead example ([#10207](https://github.com/patternfly/patternfly-react/issues/10207)) ([2d19e26](https://github.com/patternfly/patternfly-react/commit/2d19e26b5fa95f6da0fa6b16f5bf9a299cf58df8))
+- **Select:** Typeahead template ([#10235](https://github.com/patternfly/patternfly-react/issues/10235)) ([c7d2e9f](https://github.com/patternfly/patternfly-react/commit/c7d2e9fcaee50cd17a306a0f25e43e96f78e4217))
+
 # [5.4.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.7...@patternfly/react-core@5.4.0-prerelease.8) (2024-04-30)
 
 **Note:** Version bump only for package @patternfly/react-core
