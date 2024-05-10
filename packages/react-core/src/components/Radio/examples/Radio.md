@@ -29,7 +29,7 @@ ouia: true
 
 ### Label wraps
 
-When the input is wrapped in a label, larger area can be clicked to check the radio, including the space between the radio and its description.
+You can expand the clickable area of a radio so that it spans wider than the radio label by adding the `isLabelWrapped` property. This allows users to select a radio by clicking the radio itself, the label, or the area between the radio and the label.
 
 ```ts file="./RadioLabelWraps.tsx"
 

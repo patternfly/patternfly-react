@@ -28,7 +28,7 @@ propComponents: ['Checkbox']
 
 ### Label wraps
 
-When the input is wrapped in a label, larger area can be clicked to check the box, including the space between the checkbox and its description.
+You can expand the clickable area of a checkbox so that it spans wider than the checkbox label by adding the `isLabelWrapped` property. This allows users to select a checkbox by clicking the checkbox itself, the label, or the area between the checkbox and the label.
 
 ```ts file="./CheckboxLabelWraps.tsx"
 
