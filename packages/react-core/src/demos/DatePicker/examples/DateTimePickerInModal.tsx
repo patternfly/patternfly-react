@@ -1,13 +1,6 @@
 import React from 'react';
-import {
-  DatePicker,
-  Modal,
-  ModalVariant,
-  Button,
-  TimePicker,
-  InputGroup,
-  InputGroupItem
-} from '@patternfly/react-core';
+import { DatePicker, Button, TimePicker, InputGroup, InputGroupItem } from '@patternfly/react-core';
+import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 
 export const SimpleModal = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -33,9 +26,9 @@ export const SimpleModal = () => {
       <Button variant="primary" onClick={handleModalToggle}>
         Launch modal
       </Button>
-      <Modal
+      <ModalDeprecated
         id="date-time-picker-modal"
-        variant={ModalVariant.small}
+        variant={ModalVariantDeprecated.small}
         title="Generic modal header"
         isOpen={isModalOpen}
         onEscapePress={onEscapePress}
@@ -57,7 +50,7 @@ export const SimpleModal = () => {
             <TimePicker menuAppendTo="parent" isOpen={isTimePickerOpen} setIsOpen={setIsTimePickerOpen} />
           </InputGroupItem>
         </InputGroup>
-      </Modal>
+      </ModalDeprecated>
     </React.Fragment>
   );
 };

@@ -58,12 +58,12 @@ describe('Modal Test', () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     cy.tab();
-    cy.focused().should('have.attr', 'data-id', 'modal-01-cancel-btn');
+    cy.focused().should('have.attr', 'data-id', 'modal-01-confirm-btn');
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     cy.tab();
-    cy.focused().should('have.attr', 'data-id', 'modal-01-confirm-btn');
+    cy.focused().should('have.attr', 'data-id', 'modal-01-cancel-btn');
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore

@@ -17,27 +17,29 @@ export interface ModalBoxTitleProps {
   /** Additional classes added to the modal box title. */
   className?: string;
   /** Id of the modal box title. */
-  id: string;
+  id?: string;
   /** Content rendered inside the modal box title. */
   title: React.ReactNode;
   /** Optional alert icon (or other) to show before the title. When the predefined alert types
    * are used the default styling will be automatically applied. */
   titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | React.ComponentType<any>;
   /** Optional title label text for screen readers. */
-  titleLabel?: string;
+  titleScreenReaderText?: string;
 }
 
 export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
-  className = '',
+  className,
   id,
   title,
   titleIconVariant,
-  titleLabel = '',
+  titleScreenReaderText,
   ...props
 }: ModalBoxTitleProps) => {
   const [hasTooltip, setHasTooltip] = React.useState(false);
   const h1 = React.useRef<HTMLHeadingElement>(null);
-  const label = titleLabel || (isVariantIcon(titleIconVariant) ? `${capitalize(titleIconVariant)} alert:` : titleLabel);
+  const label =
+    titleScreenReaderText ||
+    (isVariantIcon(titleIconVariant) ? `${capitalize(titleIconVariant)} alert:` : titleScreenReaderText);
   const variantIcons = {
     success: <CheckCircleIcon />,
     danger: <ExclamationCircleIcon />,

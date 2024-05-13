@@ -2,8 +2,6 @@ import React from 'react';
 import {
   LabelGroup,
   Label,
-  Modal,
-  ModalVariant,
   Button,
   Form,
   FormGroup,
@@ -16,6 +14,7 @@ import {
   Radio,
   Popper
 } from '@patternfly/react-core';
+import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
@@ -255,8 +254,8 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
           </Label>
         ))}
       </LabelGroup>
-      <Modal
-        variant={ModalVariant.small}
+      <ModalDeprecated
+        variant={ModalVariantDeprecated.small}
         title="Add Label"
         isOpen={isModalOpen}
         onClose={handleModalToggle}
@@ -359,7 +358,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
             />
           </FormGroup>
         </Form>
-      </Modal>
+      </ModalDeprecated>
     </div>
   );
 };

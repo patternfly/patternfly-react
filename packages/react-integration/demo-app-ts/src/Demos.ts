@@ -228,14 +228,14 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.MenuDrilldownDemo
   },
   {
+    id: 'modal-deprecated-demo',
+    name: 'Modal Demo',
+    componentType: Examples.ModalDeprecatedDemo
+  },
+  {
     id: 'modal-demo',
     name: 'Modal Demo',
     componentType: Examples.ModalDemo
-  },
-  {
-    id: 'modal-next-demo',
-    name: 'Modal Next Demo',
-    componentType: Examples.ModalNextDemo
   },
   {
     id: 'nav-demo',

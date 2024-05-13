@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, Modal, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
+import { Button, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
+import { Modal as ModalDeprecated } from '@patternfly/react-core/deprecated';
+
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 
@@ -36,7 +38,7 @@ class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, Wizard
         <Button id="launchWiz" variant="primary" onClick={this.handleModalToggle}>
           Show Modal
         </Button>
-        <Modal isOpen={isOpen} showClose={false} hasNoBodyWrapper onEscapePress={this.handleModalToggle}>
+        <ModalDeprecated isOpen={isOpen} showClose={false} hasNoBodyWrapper onEscapePress={this.handleModalToggle}>
           <Wizard
             id="modalWizId"
             width={710}
@@ -71,7 +73,7 @@ class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, Wizard
               <p>Step 5</p>
             </WizardStep>
           </Wizard>
-        </Modal>
+        </ModalDeprecated>
         <br />
         <br />
         <Wizard id="inPageWizId" height={500}>
@@ -239,7 +241,12 @@ class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, Wizard
         <Button id="launchWizOverflow" variant="primary" onClick={this.handleRoleWizardToggle}>
           Show Modal with Overflow
         </Button>
-        <Modal isOpen={isOpenWithRole} showClose={false} hasNoBodyWrapper onEscapePress={this.handleRoleWizardToggle}>
+        <ModalDeprecated
+          isOpen={isOpenWithRole}
+          showClose={false}
+          hasNoBodyWrapper
+          onEscapePress={this.handleRoleWizardToggle}
+        >
           <Wizard
             id="inModalWizWithOverflow"
             height={400}
@@ -449,7 +456,7 @@ class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, Wizard
               </div>
             </WizardStep>
           </Wizard>
-        </Modal>
+        </ModalDeprecated>
       </React.Fragment>
     );
   }

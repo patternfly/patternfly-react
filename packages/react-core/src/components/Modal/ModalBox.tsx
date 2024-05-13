@@ -4,9 +4,9 @@ import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import topSpacer from '@patternfly/react-tokens/dist/esm/c_modal_box_m_align_top_spacer';
 
 export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
-  /** Id to use for the modal box description. */
-  'aria-describedby': string;
-  /** Accessible descriptor of the modal. */
+  /** Id to use for the modal box description. This should match the ModalHeader labelId or descriptorId */
+  'aria-describedby'?: string;
+  /** Adds an accessible name to the modal when there is no title in the ModalHeader. */
   'aria-label'?: string;
   /** Id to use for the modal box label. */
   'aria-labelledby'?: string;
@@ -24,12 +24,12 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
 
 export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   children,
-  className = '',
+  className,
   variant = 'default',
   position,
   positionOffset,
   'aria-labelledby': ariaLabelledby,
-  'aria-label': ariaLabel = '',
+  'aria-label': ariaLabel,
   'aria-describedby': ariaDescribedby,
   style,
   ...props
@@ -40,7 +40,6 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   }
   return (
     <div
-      {...props}
       role="dialog"
       aria-label={ariaLabel || null}
       aria-labelledby={ariaLabelledby || null}
@@ -55,6 +54,7 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
         variant === 'medium' && styles.modifiers.md
       )}
       style={style}
+      {...props}
     >
       {children}
     </div>

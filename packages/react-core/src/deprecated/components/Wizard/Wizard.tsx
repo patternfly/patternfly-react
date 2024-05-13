@@ -2,7 +2,7 @@ import * as React from 'react';
 import { KeyTypes } from '../../../helpers/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import { Modal, ModalVariant } from '../../../components/Modal';
+import { Modal, ModalVariant } from '../Modal';
 import { WizardFooterInternal } from './WizardFooterInternal';
 import { WizardToggle } from './WizardToggle';
 import { WizardNav } from './WizardNav';
