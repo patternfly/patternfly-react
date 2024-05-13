@@ -16,16 +16,6 @@ propComponents:
 ---
 
 import {
-Button,
-ButtonVariant,
-Checkbox,
-Dropdown,
-DropdownList,
-DropdownItem,
-MenuToggle,
-MenuToggleElement
-} from '@patternfly/react-core';
-import {
 DragDrop,
 Draggable,
 Droppable,
