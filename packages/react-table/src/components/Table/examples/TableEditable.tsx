@@ -1,15 +1,11 @@
 import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { Button } from '@patternfly/react-core/dist/esm/components/Button';
-import { Checkbox } from '@patternfly/react-core/dist/esm/components/Checkbox';
-import { Radio } from '@patternfly/react-core/dist/esm/components/Radio';
-import { TextInput } from '@patternfly/react-core/dist/esm/components/TextInput';
+import { Button, Checkbox, Radio, TextInput, getUniqueId } from '@patternfly/react-core';
 import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import inlineEditStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
-import { getUniqueId } from '@patternfly/react-core/dist/esm/helpers';
 
 interface EditColumnProps {
   onClick: (type: 'save' | 'cancel' | 'edit') => void;
