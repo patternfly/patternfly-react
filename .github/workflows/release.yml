@@ -17,22 +17,14 @@ jobs:
     name: Deploy release
     runs-on: ubuntu-latest
     needs: [ci, docs]
-    env:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      # Needs to be an admin token to get around branch protection.
-      GH_TOKEN: ${{ secrets.GH_TOKEN_REDALLEN }}
-      GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     steps:
       - name: Check out project
         uses: actions/checkout@v4
         with:
+          # Fetch all history for all branches and tags, which is needed for the release script.
           fetch-depth: 0
-          # Needs to be an admin token to get around branch protection.
+          # Pass in an administrator token to get around branch protection.
           token: ${{ secrets.GH_TOKEN_REDALLEN }}
-
-      # Fetches all tags from 'origin' and updates local tags, only fetches the latest commit.
-      - name: Fetch tags
-        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Set up and build project
         uses: ./.github/actions/setup-project
@@ -41,3 +33,6 @@ jobs:
 
       - name: Deploy to NPM and Github
         run: .github/release.sh
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
