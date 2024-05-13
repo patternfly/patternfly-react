@@ -157,7 +157,7 @@ export const getLegendTooltipSize = ({
   // Get spacing to help align legend labels and text values
   const spacer = 'x';
   const getSpacing = (legendLabel: string, textLabel: string) => {
-    let spacing = '';
+    let spacing = '\u00A0';
     if (maxLength === 0) {
       return spacing;
     }
