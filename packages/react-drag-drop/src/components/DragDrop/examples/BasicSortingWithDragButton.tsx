@@ -11,7 +11,6 @@ export const BasicSortingWithDragButton: React.FunctionComponent = () => {
   return (
     <DragDropSort
       items={items}
-      variant="defaultWithHandle"
       onDrop={(_, newItems) => {
         setItems(newItems);
       }}

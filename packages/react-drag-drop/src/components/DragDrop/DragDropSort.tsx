@@ -49,12 +49,12 @@ export interface DragDropSortProps extends DndContextProps {
   /** Callback when use begins dragging a draggable object */
   onDrag?: (event: DragDropSortDragStartEvent, oldIndex: number) => void;
   /** The variant determines which component wraps the draggable object.
-   * Default and defaultWithHandle varaints wrap the draggable object in a div.
+   * Default varaint wraps the draggable object in a div.
    * DataList vairant wraps the draggable object in a DataListItem
    * DualListSelectorList variant wraps the draggable objects in a DualListSelectorListItem and a div.pf-c-dual-list-selector__item-text element
    * TableComposable variant wraps the draggable objects in TODO
    * */
-  variant?: 'default' | 'defaultWithHandle' | 'DataList' | 'DualListSelectorList' | 'TableComposable';
+  variant?: 'default' | 'DataList' | 'DualListSelectorList' | 'TableComposable';
 }
 
 export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
@@ -115,7 +115,7 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
         break;
       default:
         content = (
-          <Draggable useDragButton={variant === 'defaultWithHandle'} key={item.id} id={item.id} {...item.props}>
+          <Draggable useDragButton={variant === 'default'} key={item.id} id={item.id} {...item.props}>
             {item.content}
           </Draggable>
         );
@@ -153,7 +153,7 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
             );
           default:
             return (
-              <Draggable useDragButton={variant === 'defaultWithHandle'} key={item.id} id={item.id} {...item.props}>
+              <Draggable useDragButton={variant === 'default'} key={item.id} id={item.id} {...item.props}>
                 {item.content}
               </Draggable>
             );
