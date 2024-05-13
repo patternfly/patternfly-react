@@ -1,12 +1,12 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
-import { handleArrows } from '../../helpers';
+import { handleArrows } from '../../../helpers';
 
 /** Acts as the container for the DualListSelectorControl sub-components. */
 
 export interface DualListSelectorControlsWrapperProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content to be rendered inside of the controls wrapper. */
+  /** Anything that can be rendered inside of the wrapper. */
   children?: React.ReactNode;
   /** Additional classes added to the wrapper. */
   className?: string;
@@ -60,7 +60,6 @@ export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualLi
     return () => {
       window.removeEventListener('keydown', handleKeys);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wrapperRef.current]);
 
   return (

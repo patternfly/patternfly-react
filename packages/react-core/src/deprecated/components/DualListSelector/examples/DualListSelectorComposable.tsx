@@ -1,12 +1,7 @@
 import React from 'react';
 import {
   Button,
-  DualListSelector,
-  DualListSelectorPane,
-  DualListSelectorList,
-  DualListSelectorListItem,
-  DualListSelectorControlsWrapper,
-  DualListSelectorControl,
+  ButtonVariant,
   SearchInput,
   EmptyState,
   EmptyStateVariant,
@@ -14,10 +9,19 @@ import {
   EmptyStateBody,
   EmptyStateActions
 } from '@patternfly/react-core';
+import {
+  DualListSelector as DLSDeprecated,
+  DualListSelectorPane as DLSPaneDeprecated,
+  DualListSelectorList as DLSListDeprecated,
+  DualListSelectorListItem as DLSListItemDeprecated,
+  DualListSelectorControlsWrapper as DLSControlsWrapperDeprecated,
+  DualListSelectorControl as DLSControlDeprecated
+} from '@patternfly/react-core/deprecated';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 interface Option {
@@ -26,14 +30,16 @@ interface Option {
   isVisible: boolean;
 }
 
-export const DualListSelectorSearch: React.FunctionComponent = () => {
+export const DualListSelectorComposable: React.FunctionComponent = () => {
   const [availableOptions, setAvailableOptions] = React.useState<Option[]>([
-    { text: 'Option 1', selected: false, isVisible: true },
-    { text: 'Option 2', selected: false, isVisible: true },
-    { text: 'Option 3', selected: false, isVisible: true },
-    { text: 'Option 4', selected: false, isVisible: true }
+    { text: 'Apple', selected: false, isVisible: true },
+    { text: 'Banana', selected: false, isVisible: true },
+    { text: 'Pineapple', selected: false, isVisible: true },
+    { text: 'Orange', selected: false, isVisible: true },
+    { text: 'Grape', selected: false, isVisible: true },
+    { text: 'Peach', selected: false, isVisible: true },
+    { text: 'Strawberry', selected: false, isVisible: true }
   ]);
-
   const [chosenOptions, setChosenOptions] = React.useState<Option[]>([]);
   const [availableFilter, setAvailableFilter] = React.useState('');
   const [chosenFilter, setChosenFilter] = React.useState('');
@@ -105,8 +111,35 @@ export const DualListSelectorSearch: React.FunctionComponent = () => {
     />
   );
 
+  // builds a sort control - passed to both dual list selector panes
+  const buildSort = (isAvailable: boolean) => {
+    const onSort = () => {
+      const toSort = isAvailable ? [...availableOptions] : [...chosenOptions];
+      toSort.sort((a, b) => {
+        if (a.text > b.text) {
+          return 1;
+        }
+        if (a.text < b.text) {
+          return -1;
+        }
+        return 0;
+      });
+      if (isAvailable) {
+        setAvailableOptions(toSort);
+      } else {
+        setChosenOptions(toSort);
+      }
+    };
+
+    return (
+      <Button variant={ButtonVariant.plain} onClick={onSort} aria-label="Sort" key="sortButton">
+        <PficonSortCommonAscIcon />
+      </Button>
+    );
+  };
+
   const buildEmptyState = (isAvailable: boolean) => (
-    <EmptyState titleText="No results found" variant={EmptyStateVariant.sm} headingLevel="h4" icon={SearchIcon}>
+    <EmptyState headingLevel="h4" titleText="No results found" icon={SearchIcon} variant={EmptyStateVariant.sm}>
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
       <EmptyStateFooter>
         <EmptyStateActions>
@@ -119,93 +152,100 @@ export const DualListSelectorSearch: React.FunctionComponent = () => {
   );
 
   return (
-    <DualListSelector>
-      <DualListSelectorPane
-        title="Available options"
+    <DLSDeprecated>
+      <DLSPaneDeprecated
+        title="Available"
         status={`${availableOptions.filter((option) => option.selected && option.isVisible).length} of ${
           availableOptions.filter((option) => option.isVisible).length
         } options selected`}
         searchInput={buildSearchInput(true)}
+        actions={[buildSort(true)]}
         listMinHeight="300px"
       >
         {availableFilter !== '' &&
           availableOptions.filter((option) => option.isVisible).length === 0 &&
           buildEmptyState(true)}
-
-        <DualListSelectorList>
-          {availableOptions.map((option, index) =>
-            option.isVisible ? (
-              <DualListSelectorListItem
-                key={index}
-                isSelected={option.selected}
-                id={`search-available-option-${index}`}
-                onOptionSelect={(e) => onOptionSelect(e, index, false)}
-              >
-                {option.text}
-              </DualListSelectorListItem>
-            ) : null
-          )}
-        </DualListSelectorList>
-      </DualListSelectorPane>
-      <DualListSelectorControlsWrapper>
-        <DualListSelectorControl
+        {availableOptions.filter((option) => option.isVisible).length > 0 && (
+          <DLSListDeprecated>
+            {availableOptions.map((option, index) =>
+              option.isVisible ? (
+                <DLSListItemDeprecated
+                  key={index}
+                  isSelected={option.selected}
+                  id={`composable-available-option-${index}`}
+                  onOptionSelect={(e) => onOptionSelect(e, index, false)}
+                >
+                  {option.text}
+                </DLSListItemDeprecated>
+              ) : null
+            )}
+          </DLSListDeprecated>
+        )}
+      </DLSPaneDeprecated>
+      <DLSControlsWrapperDeprecated>
+        <DLSControlDeprecated
           isDisabled={!availableOptions.some((option) => option.selected)}
           onClick={() => moveSelected(true)}
           aria-label="Add selected"
+          tooltipContent="Add selected"
         >
           <AngleRightIcon />
-        </DualListSelectorControl>
-        <DualListSelectorControl
+        </DLSControlDeprecated>
+        <DLSControlDeprecated
           isDisabled={availableOptions.length === 0}
           onClick={() => moveAll(true)}
           aria-label="Add all"
+          tooltipContent="Add all"
         >
           <AngleDoubleRightIcon />
-        </DualListSelectorControl>
-        <DualListSelectorControl
+        </DLSControlDeprecated>
+        <DLSControlDeprecated
           isDisabled={chosenOptions.length === 0}
           onClick={() => moveAll(false)}
           aria-label="Remove all"
+          tooltipContent="Remove all"
         >
           <AngleDoubleLeftIcon />
-        </DualListSelectorControl>
-        <DualListSelectorControl
+        </DLSControlDeprecated>
+        <DLSControlDeprecated
           onClick={() => moveSelected(false)}
           isDisabled={!chosenOptions.some((option) => option.selected)}
           aria-label="Remove selected"
+          tooltipContent="Remove selected"
         >
           <AngleLeftIcon />
-        </DualListSelectorControl>
-      </DualListSelectorControlsWrapper>
-      <DualListSelectorPane
-        title="Chosen options"
+        </DLSControlDeprecated>
+      </DLSControlsWrapperDeprecated>
+      <DLSPaneDeprecated
+        title="Chosen"
         status={`${chosenOptions.filter((option) => option.selected && option.isVisible).length} of ${
           chosenOptions.filter((option) => option.isVisible).length
         } options selected`}
         searchInput={buildSearchInput(false)}
-        listMinHeight="300px"
+        actions={[buildSort(false)]}
         isChosen
+        listMinHeight="300px"
       >
         {chosenFilter !== '' &&
           chosenOptions.filter((option) => option.isVisible).length === 0 &&
           buildEmptyState(false)}
         {chosenOptions.filter((option) => option.isVisible).length > 0 && (
-          <DualListSelectorList>
+          <DLSListDeprecated>
             {chosenOptions.map((option, index) =>
               option.isVisible ? (
-                <DualListSelectorListItem
+                <DLSListItemDeprecated
                   key={index}
                   isSelected={option.selected}
-                  id={`composable-search-chosen-option-${index}`}
+                  id={`composable-chosen-option-${index}`}
                   onOptionSelect={(e) => onOptionSelect(e, index, true)}
                 >
                   {option.text}
-                </DualListSelectorListItem>
+                </DLSListItemDeprecated>
               ) : null
             )}
-          </DualListSelectorList>
+          </DLSListDeprecated>
         )}
-      </DualListSelectorPane>
-    </DualListSelector>
+      </DLSPaneDeprecated>
+    </DLSDeprecated>
   );
 };

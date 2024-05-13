@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
-import { getUniqueId } from '../../helpers';
+import { getUniqueId } from '../../../helpers';
 import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
-import { Button, ButtonVariant } from '../Button';
+import { Button, ButtonVariant } from '../../../components/Button';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 
 /** Creates an individual option that can be selected and moved between the
@@ -17,7 +17,7 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   className?: string;
   /** Flag indicating the list item is currently selected. */
   isSelected?: boolean;
-  /** Callback fired when an option is selected. */
+  /** Callback fired when an option is selected.  */
   onOptionSelect?: (event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent, id?: string) => void;
   /** ID of the option. */
   id?: string;
@@ -25,11 +25,11 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   orderIndex?: number;
   /** @hide Forwarded ref */
   innerRef?: React.RefObject<HTMLLIElement>;
-  /** Flag indicating this item is draggable for reordering. */
+  /** Flag indicating this item is draggable for reordring */
   isDraggable?: boolean;
-  /** Accessible label for the draggable button on draggable list items. */
+  /** Accessible label for the draggable button on draggable list items */
   draggableButtonAriaLabel?: string;
-  /** Flag indicating if the dual list selector is in a disabled state. */
+  /** Flag indicating if the dual list selector is in a disabled state */
   isDisabled?: boolean;
 }
 

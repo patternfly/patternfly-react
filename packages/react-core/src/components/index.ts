@@ -23,7 +23,7 @@ export * from './DescriptionList';
 export * from './Divider';
 export * from './Drawer';
 export * from './Dropdown';
-export * from './DualListSelector';
+export * from '../deprecated/components/DualListSelector';
 export * from './EmptyState';
 export * from './ExpandableSection';
 export * from './FileUpload';

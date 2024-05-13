@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import { Button, ButtonVariant } from '../Button';
-import { Tooltip } from '../Tooltip';
+import { Button, ButtonVariant } from '../../../components/Button';
+import { Tooltip } from '../../../components/Tooltip';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 
 /** Renders an individual control button for moving selected options between each
@@ -29,7 +29,7 @@ export interface DualListSelectorControlProps extends Omit<React.HTMLProps<HTMLD
 
 export const DualListSelectorControlBase: React.FunctionComponent<DualListSelectorControlProps> = ({
   innerRef,
-  children,
+  children = null,
   className,
   'aria-label': ariaLabel,
   isDisabled = true,
