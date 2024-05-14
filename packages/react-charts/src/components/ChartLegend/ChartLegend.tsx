@@ -21,7 +21,7 @@ import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartPoint } from '../ChartPoint/ChartPoint';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { getTheme } from '../ChartUtils/chart-theme';
+import { getComponentTheme, getTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartLegend renders a chart legend component.
@@ -317,6 +317,8 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   theme = getTheme(themeColor),
   ...rest
 }: ChartLegendProps) => {
+  const componentTheme = getComponentTheme(themeColor);
+
   // Merge pattern IDs with `style.data.fill` property
   const getDefaultStyle = () => {
     if (!patternScale) {
@@ -351,7 +353,7 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
     React.cloneElement(labelComponent, {
       ...(name && { id: (props: any) => `${name}-${(labelComponent as any).type.displayName}-${props.index}` }),
       ...labelComponent.props,
-      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
+      ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
     });
 
   const getTitleComponent = () =>
@@ -359,7 +361,7 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
       // Victory doesn't appear to call the id function here, but it's valid for label components
       ...(name && { id: () => `${name}-${(titleComponent as any).type.displayName}` }),
       ...titleComponent.props,
-      ...(theme.skeleton && theme.skeleton) // override backgroundStyle
+      ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
     });
 
   // Note: containerComponent is required for theme

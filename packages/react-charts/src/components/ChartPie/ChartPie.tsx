@@ -593,6 +593,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     key: 'pf-chart-pie-legend',
     orientation: legendOrientation,
     theme,
+    themeColor,
     ...(legendDirection === 'rtl' && {
       dataComponent: legendComponent.props.dataComponent ? (
         React.cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })

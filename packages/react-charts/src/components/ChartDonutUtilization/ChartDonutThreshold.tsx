@@ -524,6 +524,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           standalone: false,
           subTitlePosition: childProps.subTitlePosition || subTitlePosition,
           theme: dynamicTheme,
+          themeColor,
           width,
           ...childProps
         });
@@ -546,6 +547,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
       padding={defaultPadding}
       standalone={false}
       theme={theme}
+      themeColor={themeColor}
       width={width}
       {...rest}
     />

@@ -11,7 +11,7 @@ import {
 } from 'victory-cursor-container';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { getTheme } from '../ChartUtils/chart-theme';
+import { getComponentTheme, getTheme } from '../ChartUtils/chart-theme';
 import { getClassName } from '../ChartUtils/chart-helpers';
 
 /**
@@ -210,11 +210,12 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
   cursorLabelComponent = <ChartLabel />, // Note that Victory provides its own label component here
   ...rest
 }: ChartCursorContainerProps) => {
+  const componentTheme = getComponentTheme(themeColor);
   const chartClassName = getClassName({ className });
   const chartCursorLabelComponent = React.cloneElement(cursorLabelComponent, {
     theme,
     ...cursorLabelComponent.props,
-    ...(theme.skeleton && theme.skeleton) // override backgroundStyle
+    ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
   });
 
   // Clone so users can override cursor container props
