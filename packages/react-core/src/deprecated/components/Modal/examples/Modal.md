@@ -4,6 +4,7 @@ section: components
 cssPrefix: pf-v5-c-modal-box
 propComponents: ['Modal']
 ouia: true
+deprecated: true
 ---
 
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
