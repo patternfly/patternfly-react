@@ -10,12 +10,11 @@ deprecated: true
 ---
 
 import { Button, Drawer, DrawerActions, DrawerCloseButton, DrawerColorVariant,
-DrawerContent, DrawerContentBody, DrawerHead, DrawerPanelContent, DrawerSection, ModalVariant, Alert, EmptyState, EmptyStateHeader, EmptyStateFooter, EmptyStateBody, EmptyStateActions, Title, Progress, Form, FormGroup, TextInput } from '@patternfly/react-core';
+DrawerContent, DrawerContentBody, DrawerHead, DrawerPanelContent, DrawerSection, ModalVariant, Alert, EmptyState, EmptyStateFooter, EmptyStateBody, EmptyStateActions, Title, Progress, Form, FormGroup, TextInput } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated, WizardFooter as WizardFooterDeprecated, WizardContextConsumer as WizardContextConsumerDeprecated } from '@patternfly/react-core/deprecated';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
-
 
 If you seek a wizard solution that allows for more composition, see the [React](/components/wizard) tab.
 
@@ -24,36 +23,43 @@ If you seek a wizard solution that allows for more composition, see the [React](
 ### Basic
 
 ```js file="./WizardBasic.tsx"
+
 ```
 
 ### Basic with disabled steps
 
 ```js file="./WizardBasicWithDisabledSteps.tsx"
+
 ```
 
 ### Anchors for nav items
 
 ```js file="./WizardAnchorsForNavItems.tsx"
+
 ```
 
 ### Incrementally enabled steps
 
 ```js file="./WizardIncrementallyEnabledSteps.tsx"
+
 ```
 
 ### Expandable steps
 
 ```js file="./WizardExpandableSteps.tsx"
+
 ```
 
 ### Finished
 
 ```js file="./WizardFinished.tsx"
+
 ```
 
 ### Enabled on form validation
 
 ```js file="./WizardEnabledOnFormValidation.tsx"
+
 ```
 
 ### Validate on button press
@@ -74,6 +80,7 @@ interface WizardContext {
 ```
 
 ```js file="./WizardValidateOnButtonPress.tsx"
+
 ```
 
 ### Progressive steps
@@ -81,7 +88,11 @@ interface WizardContext {
 ```js
 import React from 'react';
 import { Button, Radio, Alert } from '@patternfly/react-core';
-import { Wizard as WizardDeprecated, WizardFooter as WizardFooterDeprecated, WizardContextConsumer as WizardContextConsumerDeprecated } from '@patternfly/react-core/deprecated'
+import {
+  Wizard as WizardDeprecated,
+  WizardFooter as WizardFooterDeprecated,
+  WizardContextConsumer as WizardContextConsumerDeprecated
+} from '@patternfly/react-core/deprecated';
 
 class ProgressiveWizard extends React.Component {
   constructor(props) {
@@ -367,14 +378,17 @@ class ProgressiveWizard extends React.Component {
 ### Get current step
 
 ```js file="./WizardGetCurrentStep.tsx"
+
 ```
 
 ### Wizard in modal
 
 ```js file="./WizardInModal.tsx"
+
 ```
 
 ### Wizard with drawer
 
 ```js file="./WizardWithDrawer.tsx"
+
 ```
