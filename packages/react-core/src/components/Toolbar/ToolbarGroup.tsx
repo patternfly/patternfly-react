@@ -24,11 +24,11 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
   };
   /** Applies to a child of a flex layout, and aligns that child (and any adjacent children on the other side of it) to one side of the main axis */
   align?: {
-    default?: 'alignRight' | 'alignLeft';
-    md?: 'alignRight' | 'alignLeft';
-    lg?: 'alignRight' | 'alignLeft';
-    xl?: 'alignRight' | 'alignLeft';
-    '2xl'?: 'alignRight' | 'alignLeft';
+    default?: 'alignEnd' | 'alignStart';
+    md?: 'alignEnd' | 'alignStart';
+    lg?: 'alignEnd' | 'alignStart';
+    xl?: 'alignEnd' | 'alignStart';
+    '2xl'?: 'alignEnd' | 'alignStart';
   };
   /** Vertical alignment of children */
   alignItems?: 'start' | 'center' | 'baseline' | 'default';

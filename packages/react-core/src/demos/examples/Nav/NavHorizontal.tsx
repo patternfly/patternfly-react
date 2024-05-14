@@ -108,7 +108,7 @@ export const NavHorizontal: React.FunctionComponent = () => {
         <ToolbarItem isOverflowContainer>{PageNav}</ToolbarItem>
         <ToolbarGroup
           variant="icon-button-group"
-          align={{ default: 'alignRight' }}
+          align={{ default: 'alignEnd' }}
           spacer={{ default: 'spacerNone', md: 'spacerMd' }}
         >
           <ToolbarItem>
