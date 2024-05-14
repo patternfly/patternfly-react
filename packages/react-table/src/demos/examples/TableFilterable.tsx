@@ -6,8 +6,6 @@ import {
   EmptyState,
   EmptyStateActions,
   EmptyStateBody,
-  EmptyStateIcon,
-  EmptyStateHeader,
   EmptyStateFooter,
   Label,
   MenuToggle,
@@ -308,12 +306,7 @@ export const TableFilterable: React.FunctionComponent = () => {
       : rowData;
 
   const emptyState = (
-    <EmptyState>
-      <EmptyStateHeader
-        titleText="Clear all filters and try again."
-        headingLevel="h5"
-        icon={<EmptyStateIcon icon={SearchIcon} />}
-      />
+    <EmptyState icon={SearchIcon} titleText="Clear all filters and try again." headingLevel="h5">
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
       <EmptyStateFooter>
         <EmptyStateActions>

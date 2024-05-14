@@ -1,15 +1,6 @@
 import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import {
-  Bullseye,
-  Card,
-  EmptyState,
-  EmptyStateVariant,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateHeader,
-  PageSection
-} from '@patternfly/react-core';
+import { Bullseye, Card, EmptyState, EmptyStateVariant, EmptyStateBody, PageSection } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
@@ -31,12 +22,12 @@ export const TableEmptyStateError: React.FunctionComponent = () => (
             <Tr>
               <Td colSpan={8}>
                 <Bullseye>
-                  <EmptyState variant={EmptyStateVariant.sm} titleText="">
-                    <EmptyStateHeader
-                      titleText="Unable to connect"
-                      icon={<EmptyStateIcon icon={ExclamationCircleIcon} />}
-                      headingLevel="h2"
-                    />
+                  <EmptyState
+                    icon={ExclamationCircleIcon}
+                    titleText="Unable to connect"
+                    headingLevel="h2"
+                    variant={EmptyStateVariant.sm}
+                  >
                     <EmptyStateBody>
                       There was an error retrieving data. Check your connection and reload the page.
                     </EmptyStateBody>

@@ -1,14 +1,6 @@
 import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import {
-  Bullseye,
-  Card,
-  EmptyState,
-  EmptyStateIcon,
-  EmptyStateHeader,
-  PageSection,
-  Spinner
-} from '@patternfly/react-core';
+import { Bullseye, Card, EmptyState, PageSection, Spinner } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
 export const TableEmptyStateLoading: React.FunctionComponent = () => (
@@ -29,9 +21,7 @@ export const TableEmptyStateLoading: React.FunctionComponent = () => (
             <Tr>
               <Td colSpan={8}>
                 <Bullseye>
-                  <EmptyState>
-                    <EmptyStateHeader titleText="Loading" headingLevel="h2" icon={<EmptyStateIcon icon={Spinner} />} />
-                  </EmptyState>
+                  <EmptyState titleText="Loading" icon={Spinner} headingLevel="h2" />
                 </Bullseye>
               </Td>
             </Tr>

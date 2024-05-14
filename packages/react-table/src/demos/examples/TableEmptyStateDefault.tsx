@@ -6,9 +6,7 @@ import {
   Card,
   EmptyState,
   EmptyStateVariant,
-  EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateHeader,
   EmptyStateFooter,
   EmptyStateActions,
   PageSection
@@ -34,12 +32,12 @@ export const TableEmptyStateDefault: React.FunctionComponent = () => (
             <Tr>
               <Td colSpan={8}>
                 <Bullseye>
-                  <EmptyState variant={EmptyStateVariant.sm}>
-                    <EmptyStateHeader
-                      icon={<EmptyStateIcon icon={SearchIcon} />}
-                      titleText="No results found"
-                      headingLevel="h2"
-                    />
+                  <EmptyState
+                    titleText="No results found"
+                    icon={SearchIcon}
+                    headingLevel="h2"
+                    variant={EmptyStateVariant.sm}
+                  >
                     <EmptyStateBody>
                       No results match this filter criteria. Clear all filters and try again.
                     </EmptyStateBody>
