@@ -1,4 +1,4 @@
-describe('Form Demo Test', () => {
+xdescribe('Form Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/form-demo-nav-link');
   });

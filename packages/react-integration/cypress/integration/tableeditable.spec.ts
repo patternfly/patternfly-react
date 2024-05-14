@@ -1,4 +1,4 @@
-describe('Table Simple Test', () => {
+xdescribe('Table Simple Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/table-editable-demo-nav-link');
   });

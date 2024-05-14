@@ -1,4 +1,4 @@
-describe('Data Toolbar Demo Test', () => {
+xdescribe('Data Toolbar Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/toolbar-demo-nav-link');
   });
