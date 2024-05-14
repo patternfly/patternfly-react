@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.4.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.4.0-prerelease.5...@patternfly/react-charts@7.4.0-prerelease.6) (2024-05-14)
+
+### Bug Fixes
+
+- **charts:** tooltip whitespace is not preserved for Safari ([#10355](https://github.com/patternfly/patternfly-react/issues/10355)) ([13a5093](https://github.com/patternfly/patternfly-react/commit/13a50935281c748ad22dfdc4ca0e2f6123b38dce))
+
 # [7.4.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.4.0-prerelease.4...@patternfly/react-charts@7.4.0-prerelease.5) (2024-05-14)
 
 **Note:** Version bump only for package @patternfly/react-charts
