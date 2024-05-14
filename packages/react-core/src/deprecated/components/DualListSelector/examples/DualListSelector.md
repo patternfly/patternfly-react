@@ -13,6 +13,7 @@ propComponents:
     'DualListSelectorTree',
     'DualListSelectorTreeItemData'
   ]
+deprecated: true
 ---
 
 import {
