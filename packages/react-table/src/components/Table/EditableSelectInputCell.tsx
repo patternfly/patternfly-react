@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import { Select } from '@patternfly/react-core/dist/esm/components/Select';
+import { Select, SelectList } from '@patternfly/react-core/dist/esm/components/Select';
 import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
@@ -72,7 +72,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
         </MenuToggle>
       )}
     >
-      {options}
+      <SelectList>{options}</SelectList>
     </Select>
   );
 
