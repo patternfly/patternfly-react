@@ -341,7 +341,7 @@ export const PaginatedTableAction = () => {
           <ToolbarContent>
             <ToolbarGroup
               variant="icon-button-group"
-              align={{ default: 'alignRight' }}
+              align={{ default: 'alignEnd' }}
               spacer={{ default: 'spacerNone', md: 'spacerMd' }}
             >
               <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>

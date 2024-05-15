@@ -442,7 +442,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
           </OverflowMenuControl>
         </OverflowMenu>
       </ToolbarItem>
-      <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
+      <ToolbarItem variant="pagination" align={{ default: 'alignEnd' }}>
         {renderPagination()}
       </ToolbarItem>
     </React.Fragment>

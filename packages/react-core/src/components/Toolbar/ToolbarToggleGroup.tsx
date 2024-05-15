@@ -29,11 +29,11 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   };
   /** Alignment at various breakpoints. */
   alignment?: {
-    default?: 'alignRight' | 'alignLeft';
-    md?: 'alignRight' | 'alignLeft';
-    lg?: 'alignRight' | 'alignLeft';
-    xl?: 'alignRight' | 'alignLeft';
-    '2xl'?: 'alignRight' | 'alignLeft';
+    default?: 'alignEnd' | 'alignStart';
+    md?: 'alignEnd' | 'alignStart';
+    lg?: 'alignEnd' | 'alignStart';
+    xl?: 'alignEnd' | 'alignStart';
+    '2xl'?: 'alignEnd' | 'alignStart';
   };
   /** Spacers at various breakpoints. */
   spacer?: {

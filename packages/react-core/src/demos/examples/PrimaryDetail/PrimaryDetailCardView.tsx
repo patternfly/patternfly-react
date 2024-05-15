@@ -479,7 +479,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
           <DropdownList>{toolbarKebabDropdownItems}</DropdownList>
         </Dropdown>
       </ToolbarItem>
-      <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
+      <ToolbarItem variant="pagination" align={{ default: 'alignEnd' }}>
         {renderPagination()}
       </ToolbarItem>
     </React.Fragment>

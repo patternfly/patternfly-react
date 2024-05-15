@@ -475,8 +475,8 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
 
   const items = (
     <React.Fragment>
-      <ToolbarGroup align={{ default: 'alignLeft' }}>{leftAlignedItems}</ToolbarGroup>
-      <ToolbarGroup align={{ default: 'alignRight' }}>{rightAlignedItems}</ToolbarGroup>
+      <ToolbarGroup align={{ default: 'alignStart' }}>{leftAlignedItems}</ToolbarGroup>
+      <ToolbarGroup align={{ default: 'alignEnd' }}>{rightAlignedItems}</ToolbarGroup>
     </React.Fragment>
   );
 

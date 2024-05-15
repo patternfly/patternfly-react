@@ -382,7 +382,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       <ToolbarContent>
         <ToolbarGroup
           variant="icon-button-group"
-          align={{ default: 'alignRight' }}
+          align={{ default: 'alignEnd' }}
           spacer={{ default: 'spacerNone', md: 'spacerMd' }}
         >
           <ToolbarItem>
