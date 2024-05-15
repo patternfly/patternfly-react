@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.56](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.55...demo-app-ts@5.1.1-alpha.56) (2024-05-15)
+
+### Bug Fixes
+
+- **Toolbar:** update align prop type to alignEnd, alignStart ([#10366](https://github.com/patternfly/patternfly-react/issues/10366)) ([83db357](https://github.com/patternfly/patternfly-react/commit/83db3575d63e16fd883410188c7516efa2e62d62))
+
 ## [5.1.1-alpha.55](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.54...demo-app-ts@5.1.1-alpha.55) (2024-05-08)
 
 ### Features
