@@ -41,8 +41,5 @@
   "peerDependencies": {
     "react": "^17 || ^18",
     "react-dom": "^17 || ^18"
-  },
-  "devDependencies": {
-    "typescript": "^4.7.4"
   }
 }
