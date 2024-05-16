@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.58](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.57...@patternfly/react-core@6.0.0-alpha.58) (2024-05-16)
+
+### Features
+
+- **Select, dropdown, options menu, contect selector, app launcher:** Remove deprecated components ([#10345](https://github.com/patternfly/patternfly-react/issues/10345)) ([c7ed423](https://github.com/patternfly/patternfly-react/commit/c7ed423f4bcabee9bc4123ac92dac9f19a8bb808))
+
 # [6.0.0-alpha.57](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.56...@patternfly/react-core@6.0.0-alpha.57) (2024-05-15)
 
 ### Bug Fixes

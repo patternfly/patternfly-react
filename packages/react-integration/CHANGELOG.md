@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.28...@patternfly/react-integration@6.0.0-alpha.29) (2024-05-16)
+
+### Features
+
+- **Select, dropdown, options menu, contect selector, app launcher:** Remove deprecated components ([#10345](https://github.com/patternfly/patternfly-react/issues/10345)) ([c7ed423](https://github.com/patternfly/patternfly-react/commit/c7ed423f4bcabee9bc4123ac92dac9f19a8bb808))
+
 # [6.0.0-alpha.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.27...@patternfly/react-integration@6.0.0-alpha.28) (2024-05-15)
 
 ### Bug Fixes
