@@ -16,9 +16,9 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
-import global_success_color_100 from '@patternfly/react-tokens/dist/esm/global_success_color_100';
-import global_warning_color_100 from '@patternfly/react-tokens/dist/esm/global_warning_color_100';
-import global_danger_color_100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
+import global_color_status_success_default from '@patternfly/react-tokens/dist/esm/global_color_status_success_default';
+import global_color_status_warning_default from '@patternfly/react-tokens/dist/esm/global_color_status_warning_default';
+import global_color_status_danger_default from '@patternfly/react-tokens/dist/esm/global_color_status_danger_default';
 import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 interface ContentType {
@@ -46,7 +46,7 @@ const cardData: CardData = {
       title: '5 Clusters',
       content: [
         {
-          icon: <CheckCircleIcon color={global_success_color_100.var} />
+          icon: <CheckCircleIcon color={global_color_status_success_default.var} />
         }
       ],
       layout: 'icon'
@@ -55,7 +55,7 @@ const cardData: CardData = {
       title: '15 Clusters',
       content: [
         {
-          icon: <ExclamationTriangleIcon color={global_warning_color_100.var} />
+          icon: <ExclamationTriangleIcon color={global_color_status_warning_default.var} />
         }
       ],
       layout: 'icon'
@@ -64,7 +64,7 @@ const cardData: CardData = {
       title: '3 Clusters',
       content: [
         {
-          icon: <TimesCircleIcon color={global_danger_color_100.var} />
+          icon: <TimesCircleIcon color={global_color_status_danger_default.var} />
         }
       ],
       layout: 'icon'
@@ -75,11 +75,11 @@ const cardData: CardData = {
       title: '10 Hosts',
       content: [
         {
-          icon: <ExclamationCircleIcon color={global_success_color_100.var} />,
+          icon: <ExclamationCircleIcon color={global_color_status_success_default.var} />,
           count: 2
         },
         {
-          icon: <ExclamationTriangleIcon color={global_warning_color_100.var} />,
+          icon: <ExclamationTriangleIcon color={global_color_status_warning_default.var} />,
           count: 1
         }
       ],
@@ -89,11 +89,11 @@ const cardData: CardData = {
       title: '50 Hosts',
       content: [
         {
-          icon: <CheckCircleIcon color={global_success_color_100.var} />,
+          icon: <CheckCircleIcon color={global_color_status_success_default.var} />,
           count: 5
         },
         {
-          icon: <TimesCircleIcon color={global_danger_color_100.var} />,
+          icon: <TimesCircleIcon color={global_color_status_danger_default.var} />,
           count: 12
         }
       ],
@@ -103,11 +103,11 @@ const cardData: CardData = {
       title: '12 Hosts',
       content: [
         {
-          icon: <ExclamationTriangleIcon color={global_warning_color_100.var} />,
+          icon: <ExclamationTriangleIcon color={global_color_status_warning_default.var} />,
           count: 3
         },
         {
-          icon: <TimesCircleIcon color={global_danger_color_100.var} />,
+          icon: <TimesCircleIcon color={global_color_status_danger_default.var} />,
           count: 7
         }
       ],
@@ -119,12 +119,12 @@ const cardData: CardData = {
       title: '13 Hosts',
       content: [
         {
-          icon: <TimesCircleIcon color={global_danger_color_100.var} />,
+          icon: <TimesCircleIcon color={global_color_status_danger_default.var} />,
           status: '2 errors',
           subtitle: 'subtitle'
         },
         {
-          icon: <ExclamationTriangleIcon color={global_warning_color_100.var} />,
+          icon: <ExclamationTriangleIcon color={global_color_status_warning_default.var} />,
           status: '1 warning',
           subtitle: 'subtitle'
         }
@@ -135,12 +135,12 @@ const cardData: CardData = {
       title: '3 Hosts',
       content: [
         {
-          icon: <CheckCircleIcon color={global_success_color_100.var} />,
+          icon: <CheckCircleIcon color={global_color_status_success_default.var} />,
           status: '2 successes',
           subtitle: 'subtitle'
         },
         {
-          icon: <ExclamationTriangleIcon color={global_warning_color_100.var} />,
+          icon: <ExclamationTriangleIcon color={global_color_status_warning_default.var} />,
           status: '3 warnings',
           subtitle: 'subtitle'
         }
@@ -151,12 +151,12 @@ const cardData: CardData = {
       title: '50 Hosts',
       content: [
         {
-          icon: <ExclamationTriangleIcon color={global_warning_color_100.var} />,
+          icon: <ExclamationTriangleIcon color={global_color_status_warning_default.var} />,
           status: '7 warnings',
           subtitle: 'subtitle'
         },
         {
-          icon: <TimesCircleIcon color={global_danger_color_100.var} />,
+          icon: <TimesCircleIcon color={global_color_status_danger_default.var} />,
           status: '1 error',
           subtitle: 'subtitle'
         }

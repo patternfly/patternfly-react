@@ -26,9 +26,9 @@ import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import global_success_color_100 from '@patternfly/react-tokens/dist/esm/global_success_color_100';
-import global_danger_color_100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
-import global_Color_200 from '@patternfly/react-tokens/dist/esm/global_Color_200';
+import global_color_status_success_default from '@patternfly/react-tokens/dist/esm/global_color_status_success_default';
+import global_color_status_danger_default from '@patternfly/react-tokens/dist/esm/global_color_status_danger_default';
+import global_color_brand_200 from '@patternfly/react-tokens/dist/esm/global_color_brand_200';
 
 export const CardStatus: React.FunctionComponent = () => {
   const [drawerExpanded, setDrawerExpanded] = React.useState(false);
@@ -140,7 +140,7 @@ export const CardStatus: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <CheckCircleIcon color={global_success_color_100.var} />
+              <CheckCircleIcon color={global_color_status_success_default.var} />
             </FlexItem>
             <FlexItem>
               <span>Cluster</span>
@@ -150,7 +150,7 @@ export const CardStatus: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <ExclamationCircleIcon color={global_danger_color_100.var} />
+              <ExclamationCircleIcon color={global_color_status_danger_default.var} />
             </FlexItem>
             <FlexItem>
               <Popover headerContent="Control Panel Status" bodyContent={popoverBodyContent} minWidth="400px">
@@ -164,14 +164,14 @@ export const CardStatus: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <ExclamationCircleIcon color={global_danger_color_100.var} />
+              <ExclamationCircleIcon color={global_color_status_danger_default.var} />
             </FlexItem>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
                 <a href="#">Operators</a>
               </FlexItem>
               <FlexItem>
-                <span style={{ color: global_Color_200.var }}>1 degraded</span>
+                <span style={{ color: global_color_brand_200.var }}>1 degraded</span>
               </FlexItem>
             </Flex>
           </Flex>
@@ -179,14 +179,14 @@ export const CardStatus: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <CheckCircleIcon color={global_success_color_100.var} />
+              <CheckCircleIcon color={global_color_status_success_default.var} />
             </FlexItem>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
                 <a href="#">Image Vulnerabilities</a>
               </FlexItem>
               <FlexItem>
-                <span style={{ color: global_Color_200.var }}>0 vulnerabilities</span>
+                <span style={{ color: global_color_brand_200.var }}>0 vulnerabilities</span>
               </FlexItem>
             </Flex>
           </Flex>

@@ -56,7 +56,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
-import global_BackgroundColor_150 from '@patternfly/react-tokens/dist/esm/global_BackgroundColor_150';
+import global_background_color_200 from '@patternfly/react-tokens/dist/esm/global_background_color_200';
 
 ## Table examples
 
@@ -71,6 +71,7 @@ Some general notes:
 ### Basic
 
 ```ts file="TableBasic.tsx"
+
 ```
 
 ### Custom row wrapper, header tooltips & popovers
@@ -82,6 +83,7 @@ Some general notes:
 To add a header tooltip or popover to `Th`, pass a `ThInfoType` object via the `info` prop.
 
 ```ts file="TableMisc.tsx"
+
 ```
 
 ### Sortable & wrapping headers
@@ -103,6 +105,7 @@ type OnSort = (
 The built in display for sorting is not fully responsive, as the column headers will be displayed per row when the screen size is small. To see a full page demo of a responsive sortable table, utilizing a toolbar item to control sorting for small screens, view the `Sortable - responsive` demo in the `React demos` tab.
 
 ```ts file="TableSortable.tsx"
+
 ```
 
 ### Sortable - custom control
@@ -110,6 +113,7 @@ The built in display for sorting is not fully responsive, as the column headers 
 Sorting a table may also be controlled manually with a toolbar control. To see a full page demo of a responsive table, view the `Sortable - responsive` demo in the `React demos` tab.
 
 ```ts file="TableSortableCustom.tsx"
+
 ```
 
 ### Selectable with checkbox
@@ -140,6 +144,7 @@ type OnSelect = (
 checking checkboxes will check intermediate rows' checkboxes.
 
 ```ts file="TableSelectable.tsx"
+
 ```
 
 ### Selectable radio input
@@ -147,6 +152,7 @@ checking checkboxes will check intermediate rows' checkboxes.
 Similarly to the selectable example above, the radio buttons use the first column. The first header cell is empty, and each body row's first cell has radio button props.
 
 ```ts file="TableSelectableRadio.tsx"
+
 ```
 
 ### Row click handler, clickable rows
@@ -154,6 +160,7 @@ Similarly to the selectable example above, the radio buttons use the first colum
 This selectable rows feature is intended for use when a table is used to present a list of objects in a Primary-detail view.
 
 ```ts file="TableClickable.tsx"
+
 ```
 
 ### Actions
@@ -165,6 +172,7 @@ To make a cell an action cell, render an `ActionsColumn` component inside a row'
 If actions menus are getting clipped by other items on the page, such as sticky columns or rows, the `ActionsColumn` can be passed a `menuAppendTo` prop to adjust where the actions menu is appended.
 
 ```ts file="TableActions.tsx"
+
 ```
 
 ### Actions Overflow
@@ -172,6 +180,7 @@ If actions menus are getting clipped by other items on the page, such as sticky 
 Useing an `OverflowMenu` in the actions column, allowing the actions to condense into a dropdown if necessary for space.
 
 ```ts file="TableActionsOverflow.tsx"
+
 ```
 
 ### Expandable
@@ -197,6 +206,7 @@ type OnCollapse = (
 Note: Table column widths will respond automatically when toggling expanded rows. To retain column widths between expanded and collapsed states, column header and/or data cell widths must be set.
 
 ```ts file="TableExpandable.tsx"
+
 ```
 
 ### Compound expandable
@@ -221,16 +231,19 @@ export type OnExpand = (
 ```
 
 ```ts file="TableCompoundExpandable.tsx"
+
 ```
 
 ### Cell width, breakpoint modifiers
 
 ```ts file="TableCellWidth.tsx"
+
 ```
 
 ### Controlling text
 
 ```ts file="TableControllingText.tsx"
+
 ```
 
 ### Modifiers with table text
@@ -238,11 +251,13 @@ export type OnExpand = (
 If the "wrapModifier" property is set to "truncate", it's needed to ensure that the corresponding tooltip can be opened using both keyboard and screen reader. Since this particular Td element is generic and doesn't have any predefined decorators, the focus management required to trigger the tooltip needs to be handled manually by defining and manipulating the requisite props.
 
 ```ts file="TableTextModifiers.tsx"
+
 ```
 
 ### Empty state
 
 ```ts file="TableEmptyState.tsx"
+
 ```
 
 ### Favoritable (implemented with sortable)
@@ -265,6 +280,7 @@ type OnFavorite = (
 To make a favoritable column sortable, pass a `ThSortType` object to the favoritable column's `Th` with `isFavorites` set to true.
 
 ```ts file="TableFavoritable.tsx"
+
 ```
 
 ### Tree table
@@ -298,6 +314,7 @@ aria-posinset, and aria-setsize as violations. This is an intentional choice at 
 the voice over technologies will recognize the flat table structure as a tree.
 
 ```ts file="TableTree.tsx"
+
 ```
 
 ### Flat tree table with no inset
@@ -305,6 +322,7 @@ the voice over technologies will recognize the flat table structure as a tree.
 To remove the inset used to leave space for the expand/collapse toggle in a flat tree table, use the `hasNoInset` prop on the `Table` component.
 
 ```ts file="TableTreeNoInset.tsx"
+
 ```
 
 ### Draggable row table
@@ -318,6 +336,7 @@ To make a row draggable:
 5. The draggable `Td` in each row needs a `TdDraggableType` object passed to its `draggable` prop.
 
 ```ts isBeta file="TableDraggable.tsx"
+
 ```
 
 ### Sticky table modifiers
@@ -334,7 +353,7 @@ There are a few ways this can be handled:
 
 ### Sticky column
 
-To make a column sticky, wrap `Table` with `InnerScrollContainer` and add the following properties to the `Th` or `Td` that should be sticky: 
+To make a column sticky, wrap `Table` with `InnerScrollContainer` and add the following properties to the `Th` or `Td` that should be sticky:
 
 - `isStickyColumn`
 - `hasRightBorder` for a left-aligned sticky column, or `hasLeftBorder` for a right-aligned sticky column.
@@ -342,6 +361,7 @@ To make a column sticky, wrap `Table` with `InnerScrollContainer` and add the fo
 To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` or `Td` cells should also have the `modifier="nowrap"` property. To set the minimum width of the sticky column, use the `stickyMinWidth` property. For multiple sticky columns, use the `stickyLeftOffset` and `stickyRightOffset` properties for additional left or right sticky columns.
 
 ```ts file="TableStickyColumn.tsx"
+
 ```
 
 ### Multiple left-aligned sticky columns
@@ -351,11 +371,12 @@ To make multiple left-aligned columns sticky:
 - wrap `Table` with `InnerScrollContainer`
 - add `isStickyColumn` to all columns that should be sticky
 - add `hasRightBorder` to the rightmost sticky column
-- add `stickyLeftOffset` to each sticky column with a value that equals the combined width - set by `stickyMindWidth` - of the previous sticky columns. The leftmost sticky column should have a value of `0`, which is the default of this property. 
+- add `stickyLeftOffset` to each sticky column with a value that equals the combined width - set by `stickyMindWidth` - of the previous sticky columns. The leftmost sticky column should have a value of `0`, which is the default of this property.
 
 To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` or `Td` cells should also have the `modifier="nowrap"` property.
 
 ```ts file="TableMultipleStickyColumns.tsx"
+
 ```
 
 ### Multiple right-aligned sticky columns
@@ -365,11 +386,12 @@ To make multiple right-aligned columns sticky:
 - wrap `Table` with `InnerScrollContainer`
 - add `isStickyColumn` to all columns that should be sticky
 - add `hasLeftBorder` to the leftmost sticky column
-- add `stickyRightOffset` to each sticky column with a value that equals the combined width - set by `stickyMindWidth` - of the next sticky columns. The rightmost sticky column should have a value of `0`, which is the default of this property. 
+- add `stickyRightOffset` to each sticky column with a value that equals the combined width - set by `stickyMindWidth` - of the next sticky columns. The rightmost sticky column should have a value of `0`, which is the default of this property.
 
 To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` or `Td` cells should also have the `modifier="nowrap"` property.
 
 ```ts file="TableRightStickyColumn.tsx"
+
 ```
 
 ### Sticky columns and header
@@ -377,6 +399,7 @@ To prevent the default text wrapping behavior and allow horizontal scrolling, al
 To maintain proper sticky behavior across sticky columns and header, `Table` must be wrapped with `OuterScrollContainer` and `InnerScrollContainer`.
 
 ```ts file="TableStickyColumnsAndHeader.tsx"
+
 ```
 
 ### Nested column headers
@@ -393,21 +416,25 @@ The first `Tr` represents the top level of columns, and each must pass either `r
 The second `Tr` represents the second level of sub columns. The `Th` in this row each should pass `isSubHeader`, and the last sub column of a column should also pass `hasRightBorder`.
 
 ```ts file="TableNestedHeaders.tsx"
+
 ```
 
 ### Nested column headers and expandable rows
 
 ```ts file="TableNestedExpandable.tsx"
+
 ```
 
 ### Expandable with nested table
 
 ```ts file="TableNestedTableExpandable.tsx"
+
 ```
 
 ### Nested sticky header
 
 ```ts file="TableNestedStickyHeader.tsx"
+
 ```
 
 ### Striped
@@ -415,6 +442,7 @@ The second `Tr` represents the second level of sub columns. The `Th` in this row
 To apply striping to a basic table, add the `isStriped` property to `Table`.
 
 ```ts file="TableStriped.tsx"
+
 ```
 
 ### Striped expandable
@@ -422,6 +450,7 @@ To apply striping to a basic table, add the `isStriped` property to `Table`.
 To apply striping to an expandable table, add the `isStriped` and `isExpandable` properties to `Table`.
 
 ```ts file="TableStripedExpandable.tsx"
+
 ```
 
 ### Striped multiple tobdy
@@ -429,6 +458,7 @@ To apply striping to an expandable table, add the `isStriped` and `isExpandable`
 When there are multiple `Tbody` components within a table, a more granular application of striping may be controlled by adding either the `isEvenStriped` or `isOddStriped` properties to `Tbody`. These properties will stripe even or odd rows within that `Tbody` respectively.
 
 ```ts file="TableStripedMultipleTbody.tsx"
+
 ```
 
 ### Striped tr
@@ -436,4 +466,5 @@ When there are multiple `Tbody` components within a table, a more granular appli
 To manually control striping, add the `isStriped` property to each desired `Tr`. This replaces adding the `isStriped` property to `Table`.
 
 ```ts file="TableStripedTr.tsx"
+
 ```

@@ -1,6 +1,6 @@
 # @patternfly/react-tokens
 
-## Installation 
+## Installation
 
 ```bash
 yarn add @patternfly/react-tokens
@@ -32,11 +32,11 @@ import global_BackgroundColor_100 from '@patternfly/react-tokens/dist/esm/global
 - `var`: The property name wrapped in `var()`.
 
 ```js
-import global_BackgroundColor_100 from '@patternfly/react-tokens/dist/esm/global_-background-color_100';
+import global_BackgroundColor_100 from '@patternfly/react-tokens/dist/esm/global_background_color_100';
 
-global_BackgroundColor_100.name === '--pf-v5-global--BackgroundColor--100'; // true
+global_BackgroundColor_100.name === '--pf-t--global--background--color--100'; // true
 global_BackgroundColor_100.value === '#fff'; // true
-global_BackgroundColor_100.var === 'var(--pf-v5-global--BackgroundColor--100)'; // true
+global_BackgroundColor_100.var === 'var(--pf-t--global--background--color--100)'; // true
 ```
 
 [token-page]: https://react-staging.patternfly.org/developer-resources/global-css-variables
