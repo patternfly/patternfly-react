@@ -94,17 +94,16 @@ const InternalWizardFooter = ({
             {nextButtonText}
           </Button>
         </ActionListItem>
-
-        {!isCancelHidden && (
-          <ActionListGroup>
-            <ActionListItem>
-              <Button variant={ButtonVariant.link} onClick={onClose} {...cancelButtonProps}>
-                {cancelButtonText}
-              </Button>
-            </ActionListItem>
-          </ActionListGroup>
-        )}
       </ActionListGroup>
+      {!isCancelHidden && (
+        <ActionListGroup>
+          <ActionListItem>
+            <Button variant={ButtonVariant.link} onClick={onClose} {...cancelButtonProps}>
+              {cancelButtonText}
+            </Button>
+          </ActionListItem>
+        </ActionListGroup>
+      )}
     </ActionList>
   </WizardFooterWrapper>
 );

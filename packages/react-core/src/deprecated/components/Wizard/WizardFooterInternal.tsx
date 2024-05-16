@@ -44,11 +44,13 @@ export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalP
         </ActionListItem>
       </ActionListGroup>
       {!activeStep.hideCancelButton && (
-        <ActionListItem>
-          <Button variant={ButtonVariant.link} onClick={onClose}>
-            {cancelButtonText}
-          </Button>
-        </ActionListItem>
+        <ActionListGroup>
+          <ActionListItem>
+            <Button variant={ButtonVariant.link} onClick={onClose}>
+              {cancelButtonText}
+            </Button>
+          </ActionListItem>
+        </ActionListGroup>
       )}
     </ActionList>
   </footer>

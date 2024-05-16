@@ -275,18 +275,22 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
             </div>
           </div>
           <div
-            class="pf-v6-c-action-list__item"
+            class="pf-v6-c-action-list__group"
           >
-            <button
-              aria-disabled="false"
-              class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-2"
-              data-ouia-component-type="PF6/Button"
-              data-ouia-safe="true"
-              type="button"
+            <div
+              class="pf-v6-c-action-list__item"
             >
-              Cancel
-            </button>
+              <button
+                aria-disabled="false"
+                class="pf-v6-c-button pf-m-link"
+                data-ouia-component-id="OUIA-Generated-Button-link-2"
+                data-ouia-component-type="PF6/Button"
+                data-ouia-safe="true"
+                type="button"
+              >
+                Cancel
+              </button>
+            </div>
           </div>
         </div>
       </footer>
@@ -550,18 +554,22 @@ exports[`Wizard Wizard should match snapshot 1`] = `
             </div>
           </div>
           <div
-            class="pf-v6-c-action-list__item"
+            class="pf-v6-c-action-list__group"
           >
-            <button
-              aria-disabled="false"
-              class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-1"
-              data-ouia-component-type="PF6/Button"
-              data-ouia-safe="true"
-              type="button"
+            <div
+              class="pf-v6-c-action-list__item"
             >
-              Cancel
-            </button>
+              <button
+                aria-disabled="false"
+                class="pf-v6-c-button pf-m-link"
+                data-ouia-component-id="OUIA-Generated-Button-link-1"
+                data-ouia-component-type="PF6/Button"
+                data-ouia-safe="true"
+                type="button"
+              >
+                Cancel
+              </button>
+            </div>
           </div>
         </div>
       </footer>
@@ -697,18 +705,22 @@ exports[`Wizard bare wiz 1`] = `
             </div>
           </div>
           <div
-            class="pf-v6-c-action-list__item"
+            class="pf-v6-c-action-list__group"
           >
-            <button
-              aria-disabled="false"
-              class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-3"
-              data-ouia-component-type="PF6/Button"
-              data-ouia-safe="true"
-              type="button"
+            <div
+              class="pf-v6-c-action-list__item"
             >
-              Cancel
-            </button>
+              <button
+                aria-disabled="false"
+                class="pf-v6-c-button pf-m-link"
+                data-ouia-component-id="OUIA-Generated-Button-link-3"
+                data-ouia-component-type="PF6/Button"
+                data-ouia-safe="true"
+                type="button"
+              >
+                Cancel
+              </button>
+            </div>
           </div>
         </div>
       </footer>
