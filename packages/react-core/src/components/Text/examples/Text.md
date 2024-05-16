@@ -25,8 +25,6 @@ For example, rather than nesting the `<List>` and `<Title>` components within `<
 
 ```
 
-Text components such as Text, TextList, TextListItem need to be placed within a TextContent
-
 ### Unordered list
 
 ```ts file="./TextUnorderedList.tsx"
@@ -48,6 +46,14 @@ Text components such as Text, TextList, TextListItem need to be placed within a 
 ### Description list
 
 ```ts file="./TextDescriptionList.tsx"
+
+```
+
+Text components such as Text, TextList, TextListItem can be placed within a TextContent to provide styling for html elements, and additional styling options applied to the children.
+
+### Wrapped in TextContent
+
+```ts file="./TextContentWrapped.tsx"
 
 ```
 
