@@ -80,7 +80,8 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
         <div
           className={css(
             styles.toolbarItem,
-            variant && styles.modifiers[toCamel(variant) as 'pagination' | 'label' | 'chipGroup'],
+            variant && styles.modifiers[toCamel(variant) as 'pagination' | 'label'],
+            variant === ToolbarItemVariant['chip-group'] && styles.modifiers.labelGroup,
             isAllExpanded && styles.modifiers.expanded,
             isOverflowContainer && styles.modifiers.overflowContainer,
             formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),

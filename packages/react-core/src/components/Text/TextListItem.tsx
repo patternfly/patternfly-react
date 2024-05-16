@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styles from '@patternfly/react-styles/css/components/Content/content';
 import { css } from '@patternfly/react-styles';
 
 export enum TextListItemVariants {
@@ -6,6 +7,12 @@ export enum TextListItemVariants {
   dt = 'dt',
   dd = 'dd'
 }
+
+const componentStyles = {
+  li: styles.contentLi,
+  dt: styles.contentDt,
+  dd: styles.contentDd
+};
 
 export interface TextListItemProps extends React.HTMLProps<HTMLElement> {
   /** Content rendered within the TextListItem */
@@ -25,7 +32,7 @@ export const TextListItem: React.FunctionComponent<TextListItemProps> = ({
   const Component: any = component;
 
   return (
-    <Component {...props} className={css(className)}>
+    <Component {...props} className={css(componentStyles[component], className)}>
       {children}
     </Component>
   );

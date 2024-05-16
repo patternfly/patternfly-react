@@ -44,7 +44,7 @@ describe('Drawer Demo Test', () => {
     $drawerPanel.should('have.class', 'pf-m-width-50-on-lg');
     $drawerPanel.should('have.class', 'pf-m-width-33-on-xl');
     $drawerPanel.should('have.class', 'pf-m-width-25-on-2xl');
-    $drawerPanel.should('have.css', 'flex-basis', 'max(0% + 24px, min(0% + 300px, 100% + 0px))');
+    $drawerPanel.should('have.css', 'flex-basis', 'max(24px, min(300px, 100%))');
     // Medium viewport
     cy.viewport(800, 660);
     cy.get('#basic-drawer .pf-v6-c-drawer__panel').should(
@@ -61,11 +61,7 @@ describe('Drawer Demo Test', () => {
     );
     // 2Xl viewport
     cy.viewport(1450, 660);
-    cy.get('#basic-drawer .pf-v6-c-drawer__panel').should(
-      'have.css',
-      'flex-basis',
-      'max(0% + 24px, min(0% + 300px, 100% + 0px))'
-    );
+    cy.get('#basic-drawer .pf-v6-c-drawer__panel').should('have.css', 'flex-basis', 'max(24px, min(300px, 100%))');
   });
 
   it('Verify that focus gets sent to drawer', () => {

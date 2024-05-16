@@ -5,46 +5,62 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
   <footer
     class="pf-v6-c-wizard__footer"
   >
-    <button
-      aria-disabled="false"
-      class="pf-v6-c-button pf-m-secondary"
-      data-ouia-component-id="OUIA-Generated-Button-secondary-1"
-      data-ouia-component-type="PF6/Button"
-      data-ouia-safe="true"
-      disabled=""
-      type="button"
-    >
-      <div>
-        ReactNode
-      </div>
-    </button>
-    <button
-      aria-disabled="false"
-      class="pf-v6-c-button pf-m-primary"
-      data-ouia-component-id="OUIA-Generated-Button-primary-1"
-      data-ouia-component-type="PF6/Button"
-      data-ouia-safe="true"
-      type="submit"
-    >
-      <div>
-        ReactNode
-      </div>
-    </button>
     <div
-      class="pf-v6-c-wizard__footer-cancel"
+      class="pf-v6-c-action-list"
     >
-      <button
-        aria-disabled="false"
-        class="pf-v6-c-button pf-m-link"
-        data-ouia-component-id="OUIA-Generated-Button-link-1"
-        data-ouia-component-type="PF6/Button"
-        data-ouia-safe="true"
-        type="button"
+      <div
+        class="pf-v6-c-action-list__group"
       >
-        <div>
-          ReactNode
+        <div
+          class="pf-v6-c-action-list__item"
+        >
+          <button
+            aria-disabled="false"
+            class="pf-v6-c-button pf-m-secondary"
+            data-ouia-component-id="OUIA-Generated-Button-secondary-1"
+            data-ouia-component-type="PF6/Button"
+            data-ouia-safe="true"
+            disabled=""
+            type="button"
+          >
+            <div>
+              ReactNode
+            </div>
+          </button>
         </div>
-      </button>
+        <div
+          class="pf-v6-c-action-list__item"
+        >
+          <button
+            aria-disabled="false"
+            class="pf-v6-c-button pf-m-primary"
+            data-ouia-component-id="OUIA-Generated-Button-primary-1"
+            data-ouia-component-type="PF6/Button"
+            data-ouia-safe="true"
+            type="submit"
+          >
+            <div>
+              ReactNode
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        class="pf-v6-c-action-list__item"
+      >
+        <button
+          aria-disabled="false"
+          class="pf-v6-c-button pf-m-link"
+          data-ouia-component-id="OUIA-Generated-Button-link-1"
+          data-ouia-component-type="PF6/Button"
+          data-ouia-safe="true"
+          type="button"
+        >
+          <div>
+            ReactNode
+          </div>
+        </button>
+      </div>
     </div>
   </footer>
 </DocumentFragment>

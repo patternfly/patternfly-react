@@ -8,6 +8,12 @@ export enum TextListVariants {
   dl = 'dl'
 }
 
+const componentStyles = {
+  ul: styles.contentUl,
+  ol: styles.contentOl,
+  dl: styles.contentDl
+};
+
 export interface TextListProps extends React.HTMLProps<HTMLElement> {
   /** Content rendered within the TextList */
   children?: React.ReactNode;
@@ -29,7 +35,7 @@ export const TextList: React.FunctionComponent<TextListProps> = ({
   const Component: any = component;
 
   return (
-    <Component {...props} className={css(isPlain && styles.modifiers.plain, className)}>
+    <Component {...props} className={css(isPlain && styles.modifiers.plain, componentStyles[component], className)}>
       {children}
     </Component>
   );

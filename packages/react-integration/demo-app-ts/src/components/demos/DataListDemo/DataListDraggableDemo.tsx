@@ -6,11 +6,9 @@ import {
   DataListItemRow,
   DataListControl,
   DataListDragButton,
-  DataListItemCells,
-  DragDrop,
-  Draggable,
-  Droppable
+  DataListItemCells
 } from '@patternfly/react-core';
+import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
 
 interface ItemType {
   id: string;
@@ -110,3 +108,4 @@ class DataListDraggableDemo extends React.Component {
 }
 
 DataListDraggableDemo.displayName = 'DataListDraggableDemo';
+export { DataListDraggableDemo };

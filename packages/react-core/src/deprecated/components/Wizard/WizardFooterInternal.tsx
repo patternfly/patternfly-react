@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { Button, ButtonVariant } from '../../../components/Button';
 import { WizardStep } from './Wizard';
-
+import { ActionList, ActionListGroup, ActionListItem } from '../../../components/ActionList';
 export interface WizardFooterInternalProps {
   onNext: any;
   onBack: any;
@@ -28,21 +28,29 @@ export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalP
   cancelButtonText
 }: WizardFooterInternalProps) => (
   <footer className={css(styles.wizardFooter)}>
-    {!activeStep.hideBackButton && (
-      <Button variant={ButtonVariant.secondary} onClick={onBack} isDisabled={firstStep}>
-        {backButtonText}
-      </Button>
-    )}
-    <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={!isValid}>
-      {nextButtonText}
-    </Button>
-    {!activeStep.hideCancelButton && (
-      <div className={styles.wizardFooterCancel}>
-        <Button variant={ButtonVariant.link} onClick={onClose}>
-          {cancelButtonText}
-        </Button>
-      </div>
-    )}
+    <ActionList>
+      <ActionListGroup>
+        {!activeStep.hideBackButton && (
+          <ActionListItem>
+            <Button variant={ButtonVariant.secondary} onClick={onBack} isDisabled={firstStep}>
+              {backButtonText}
+            </Button>
+          </ActionListItem>
+        )}
+        <ActionListItem>
+          <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={!isValid}>
+            {nextButtonText}
+          </Button>
+        </ActionListItem>
+      </ActionListGroup>
+      {!activeStep.hideCancelButton && (
+        <ActionListItem>
+          <Button variant={ButtonVariant.link} onClick={onClose}>
+            {cancelButtonText}
+          </Button>
+        </ActionListItem>
+      )}
+    </ActionList>
   </footer>
 );
 WizardFooterInternal.displayName = 'WizardFooterInternal';

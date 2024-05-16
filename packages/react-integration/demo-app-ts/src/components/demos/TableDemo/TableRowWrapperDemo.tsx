@@ -5,7 +5,7 @@ import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-tab
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 /* eslint-disable camelcase */
-import global_primary_color_100 from '@patternfly/react-tokens/dist/esm/global_primary_color_100';
+import global_color_brand_default from '@patternfly/react-tokens/dist/esm/global_color_brand_default';
 
 interface ITableRowWrapperDemoState {
   rows: IRow[];
@@ -35,7 +35,7 @@ export class TableRowWrapperDemo extends Component<TableProps, ITableRowWrapperD
       const isExpanded = rest.row ? rest.row.isExpanded : false;
       const isOddRow = (rowProps.rowIndex + 1) % 2;
       const customStyle = {
-        borderLeft: `3px solid ${global_primary_color_100.var}`
+        borderLeft: `3px solid ${global_color_brand_default.var}`
       };
       return (
         <tr

@@ -30,8 +30,8 @@ import {
   TdTreeRowType
 } from './base/types';
 import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
-import cssStickyCellLeft from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_Left';
-import cssStickyCellRight from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_Right';
+import cssStickyCellInlineStart from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineStart';
+import cssStickyCellInlineEnd from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineEnd';
 
 export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
   /**
@@ -294,8 +294,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
       {...(isStickyColumn && {
         style: {
           [cssStickyCellMinWidth.name]: stickyMinWidth ? stickyMinWidth : undefined,
-          [cssStickyCellLeft.name]: stickyLeftOffset ? stickyLeftOffset : 0,
-          [cssStickyCellRight.name]: stickyRightOffset ? stickyRightOffset : 0,
+          [cssStickyCellInlineStart.name]: stickyLeftOffset ? stickyLeftOffset : 0,
+          [cssStickyCellInlineEnd.name]: stickyRightOffset ? stickyRightOffset : 0,
           ...props.style
         } as React.CSSProperties
       })}

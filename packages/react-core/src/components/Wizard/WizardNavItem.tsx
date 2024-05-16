@@ -7,8 +7,6 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclam
 
 import { OUIAProps, useOUIAProps } from '../../helpers';
 import { WizardNavItemStatus } from './types';
-import globalSpacerSm from '@patternfly/react-tokens/dist/esm/global_spacer_sm';
-import globalDangerColor100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
 
 export interface WizardNavItemProps extends OUIAProps {
   /** Can nest a WizardNav component for substeps */
@@ -105,7 +103,8 @@ export const WizardNavItem = ({
         className={css(
           styles.wizardNavLink,
           isCurrent && styles.modifiers.current,
-          isDisabled && styles.modifiers.disabled
+          isDisabled && styles.modifiers.disabled,
+          status === WizardNavItemStatus.Error && styles.modifiers.danger
         )}
         aria-disabled={isDisabled ? true : null}
         aria-current={isCurrent && !children ? 'step' : false}
@@ -113,26 +112,25 @@ export const WizardNavItem = ({
         {...(ariaLabel && { 'aria-label': ariaLabel })}
         {...ouiaProps}
       >
-        {isExpandable ? (
-          <>
-            <span className={css(styles.wizardNavLinkText)}>{content}</span>
-            <span className={css(styles.wizardNavLinkToggle)}>
-              <span className={css(styles.wizardNavLinkToggleIcon)}>
-                <AngleRightIcon aria-label={`${isCurrent ? 'Collapse' : 'Expand'} step icon`} />
-              </span>
-            </span>
-          </>
-        ) : (
-          <>
-            {content}
-            {/* TODO, patternfly/patternfly#5142 */}
-            {status === WizardNavItemStatus.Error && (
-              <span style={{ marginLeft: globalSpacerSm.var }}>
-                <ExclamationCircleIcon color={globalDangerColor100.var} />
-              </span>
-            )}
-          </>
+        {status === WizardNavItemStatus.Error && (
+          <span className={css(styles.wizardNavLinkStatusIcon)}>
+            <ExclamationCircleIcon />
+          </span>
         )}
+        <span className={css(styles.wizardNavLinkMain)}>
+          {isExpandable ? (
+            <>
+              <span className={css(styles.wizardNavLinkText)}>{content}</span>
+              <span className={css(styles.wizardNavLinkToggle)}>
+                <span className={css(styles.wizardNavLinkToggleIcon)}>
+                  <AngleRightIcon aria-label={`${isCurrent ? 'Collapse' : 'Expand'} step icon`} />
+                </span>
+              </span>
+            </>
+          ) : (
+            <>{content}</>
+          )}
+        </span>
       </NavItemComponent>
       {children}
     </li>

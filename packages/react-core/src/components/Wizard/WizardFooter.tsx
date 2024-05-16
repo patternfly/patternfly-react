@@ -5,7 +5,7 @@ import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 import { Button, ButtonVariant } from '../Button';
 import { isCustomWizardFooter, WizardFooterButtonProps, WizardStepType } from './types';
-
+import { ActionList, ActionListGroup, ActionListItem } from '../ActionList';
 /**
  * Hosts the standard structure of a footer with ties to the active step so that text for buttons can vary from step to step.
  */
@@ -74,29 +74,38 @@ const InternalWizardFooter = ({
   cancelButtonProps
 }: Omit<WizardFooterProps, 'activeStep'>) => (
   <WizardFooterWrapper>
-    {!isBackHidden && (
-      <Button variant={ButtonVariant.secondary} onClick={onBack} isDisabled={isBackDisabled} {...backButtonProps}>
-        {backButtonText}
-      </Button>
-    )}
+    <ActionList>
+      <ActionListGroup>
+        {!isBackHidden && (
+          <ActionListItem>
+            <Button variant={ButtonVariant.secondary} onClick={onBack} isDisabled={isBackDisabled} {...backButtonProps}>
+              {backButtonText}
+            </Button>
+          </ActionListItem>
+        )}
+        <ActionListItem>
+          <Button
+            variant={ButtonVariant.primary}
+            type="submit"
+            onClick={onNext}
+            isDisabled={isNextDisabled}
+            {...nextButtonProps}
+          >
+            {nextButtonText}
+          </Button>
+        </ActionListItem>
 
-    <Button
-      variant={ButtonVariant.primary}
-      type="submit"
-      onClick={onNext}
-      isDisabled={isNextDisabled}
-      {...nextButtonProps}
-    >
-      {nextButtonText}
-    </Button>
-
-    {!isCancelHidden && (
-      <div className={styles.wizardFooterCancel}>
-        <Button variant={ButtonVariant.link} onClick={onClose} {...cancelButtonProps}>
-          {cancelButtonText}
-        </Button>
-      </div>
-    )}
+        {!isCancelHidden && (
+          <ActionListGroup>
+            <ActionListItem>
+              <Button variant={ButtonVariant.link} onClick={onClose} {...cancelButtonProps}>
+                {cancelButtonText}
+              </Button>
+            </ActionListItem>
+          </ActionListGroup>
+        )}
+      </ActionListGroup>
+    </ActionList>
   </WizardFooterWrapper>
 );
 
