@@ -43,11 +43,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AlertGroupTimeoutFromBottomDemo
   },
   {
-    id: 'application-launcher-favorites-demo',
-    name: 'Application Launcher Favorites Demo',
-    componentType: Examples.ApplicationLauncherFavoritesDemo
-  },
-  {
     id: 'back-to-top-demo',
     name: 'Back To Top Demo',
     componentType: Examples.BackToTopDemo
@@ -103,11 +98,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.CodeEditorDemo
   },
   {
-    id: 'context-selector-demo',
-    name: 'ContextSelector Demo',
-    componentType: Examples.ContextSelectorDemo
-  },
-  {
     id: 'data-list-demo',
     name: 'Data List Demo',
     componentType: Examples.DataListDemo
@@ -146,11 +136,6 @@ export const Demos: DemoInterface[] = [
     id: 'drawer-resize-demo',
     name: 'Drawer Resize Demo',
     componentType: Examples.DrawerResizeDemo
-  },
-  {
-    id: 'dropdown-deprecated-demo',
-    name: 'Dropdown Deprecated Demo',
-    componentType: Examples.DropdownDeprecatedDemo
   },
   {
     id: 'dropdown-demo',
@@ -283,11 +268,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.NumberInputDemo
   },
   {
-    id: 'options-menu-demo',
-    name: 'Options Menu Demo',
-    componentType: Examples.OptionsMenuDemo
-  },
-  {
     id: 'overflow-menu-demo',
     name: 'Overflow Menu Demo',
     componentType: Examples.OverflowMenuDemo
@@ -321,61 +301,6 @@ export const Demos: DemoInterface[] = [
     id: 'search-input-demo',
     name: 'Search Input Demo',
     componentType: Examples.SearchInputDemo
-  },
-  {
-    id: 'select-demo',
-    name: 'Select Deprecated Demo',
-    componentType: Examples.SelectDemo
-  },
-  {
-    id: 'select-demo-filtering',
-    name: 'Select Deprecated Demo with Filtering',
-    componentType: Examples.FilteringSelectDemo
-  },
-  {
-    id: 'select-demo-filtering-live-updates',
-    name: 'Select Deprecated Demo with Filtering and Live Items Updates',
-    componentType: Examples.FilteringSelectLiveUpdateDemo
-  },
-  {
-    id: 'select-favorites-demo',
-    name: 'Select Deprecated Favorites Demo',
-    componentType: Examples.SelectFavoritesDemo
-  },
-  {
-    id: 'select-in-modal-demo',
-    name: 'Select Deprecated in modal demo',
-    componentType: Examples.SelectInModal
-  },
-  {
-    id: 'select-typeahead-footer-filtering-demo',
-    name: 'Select Deprecated Footer filtering Demo',
-    componentType: Examples.SelectFooterFilteringDemo
-  },
-  {
-    id: 'select-typeahead-footer-demo',
-    name: 'Select Deprecated Typeahead Footer Demo',
-    componentType: Examples.SelectTypeaheadFooterDemo
-  },
-  {
-    id: 'select-validated-demo',
-    name: 'Select Deprecated Validated Demo',
-    componentType: Examples.SelectValidatedDemo
-  },
-  {
-    id: 'select-view-more-demo',
-    name: 'Select Deprecated View More Demo',
-    componentType: Examples.SelectViewMoreDemo
-  },
-  {
-    id: 'select-view-more-grouped-demo',
-    name: 'Select Deprecated View More Grouped Demo',
-    componentType: Examples.SelectViewMoreGroupedDemo
-  },
-  {
-    id: 'select-view-more-typeahead-grouped-demo',
-    name: 'Select Deprecated View More Typeahead Grouped Demo',
-    componentType: Examples.SelectViewMoreTypeaheadGroupedDemo
   },
   {
     id: 'simple-list-demo',

@@ -3,7 +3,6 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { Page } from '../Page';
-import { PageHeader } from '../../../deprecated/components/PageHeader';
 import { PageSidebar } from '../PageSidebar';
 import { PageSidebarBody } from '../PageSidebarBody';
 import { PageSection } from '../PageSection';
@@ -13,6 +12,7 @@ import { SkipToContent } from '../../SkipToContent';
 import { PageBreadcrumb } from '../PageBreadcrumb';
 import { PageNavigation } from '../PageNavigation';
 import { PageGroup } from '../PageGroup';
+import { Masthead } from '../../Masthead';
 
 const props = {
   'aria-label': 'Page layout',
@@ -22,7 +22,7 @@ const props = {
 
 describe('Page', () => {
   test('Check page vertical layout example against snapshot', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" onNavToggle={() => undefined} />;
+    const Header = <Masthead />;
     const Sidebar = (
       <PageSidebar isSidebarOpen>
         <PageSidebarBody>Navigation</PageSidebarBody>
@@ -39,7 +39,7 @@ describe('Page', () => {
   });
 
   test('Check dark page against snapshot', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" onNavToggle={() => undefined} />;
+    const Header = <Masthead />;
     const Sidebar = (
       <PageSidebar isSidebarOpen>
         <PageSidebarBody>Navigation</PageSidebarBody>
@@ -56,7 +56,7 @@ describe('Page', () => {
   });
 
   test('Check page horizontal layout example against snapshot', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Header = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
 
     const { asFragment } = render(
@@ -69,7 +69,7 @@ describe('Page', () => {
   });
 
   test('Check page to verify breadcrumb is created', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Header = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
     const PageBreadcrumb = () => (
       <Breadcrumb>
@@ -93,7 +93,7 @@ describe('Page', () => {
   });
 
   test('Verify sticky top breadcrumb on all height breakpoints', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Header = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
     const PageBreadcrumb = () => (
       <Breadcrumb>
@@ -123,7 +123,7 @@ describe('Page', () => {
   });
 
   test('Verify sticky bottom breadcrumb on all height breakpoints', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Header = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
     const PageBreadcrumb = () => (
       <Breadcrumb>
@@ -155,7 +155,7 @@ describe('Page', () => {
   });
 
   test('Check page to verify breadcrumb is created - PageBreadcrumb syntax', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Header = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
 
     const { asFragment } = render(
@@ -179,7 +179,7 @@ describe('Page', () => {
   });
 
   test('Verify sticky top breadcrumb on all height breakpoints - PageBreadcrumb syntax', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Header = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
 
     const { asFragment } = render(
@@ -203,7 +203,7 @@ describe('Page', () => {
   });
 
   test('Sticky bottom breadcrumb on all height breakpoints - PageBreadcrumb syntax', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Header = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
 
     const { asFragment } = render(
@@ -229,7 +229,7 @@ describe('Page', () => {
   });
 
   test('Check page to verify nav is created - PageNavigation syntax', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Header = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
 
     const { asFragment } = render(
@@ -256,7 +256,7 @@ describe('Page', () => {
   });
 
   test('Check page to verify grouped nav and breadcrumb - new components syntax', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Header = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
 
     const { asFragment } = render(
@@ -295,7 +295,7 @@ describe('Page', () => {
   });
 
   test('Check page to verify grouped nav and breadcrumb - old / props syntax', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Header = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
     const crumb = (
       <PageBreadcrumb>
@@ -349,7 +349,7 @@ describe('Page', () => {
   });
 
   test('Check page to verify skip to content points to main content region', () => {
-    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Header = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
     const PageBreadcrumb = (
       <Breadcrumb>

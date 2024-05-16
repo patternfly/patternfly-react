@@ -1,26 +1,30 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import {
-  Page,
-  Nav,
-  NavList,
-  NavItem,
-  PageSection,
-  SkipToContent,
-  PageSidebar,
-  PageSidebarBody,
   Avatar,
   Brand,
-  Radio
+  Masthead,
+  MastheadBrand,
+  MastheadContent,
+  MastheadMain,
+  MastheadToggle,
+  Nav,
+  NavItem,
+  NavList,
+  Page,
+  PageSection,
+  PageSidebar,
+  PageSidebarBody,
+  PageToggleButton,
+  Radio,
+  SkipToContent,
+  Toolbar,
+  ToolbarGroup,
+  ToolbarItem
 } from '@patternfly/react-core';
-import {
-  PageHeader,
-  PageHeaderTools,
-  PageHeaderToolsItem,
-  PageHeaderToolsGroup
-} from '@patternfly/react-core/deprecated';
 import imgBrand from './assets/images/imgBrand.svg';
 import imgAvatar from './assets/images/imgAvatar.svg';
+import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import Demos from './Demos';
 import './App.css';
 
@@ -92,9 +96,9 @@ class App extends React.Component<{}, AppState> {
     const { isNavOpen, activeItem, isDarkTheme } = this.state;
 
     const AppToolbar = (
-      <PageHeaderTools>
-        <PageHeaderToolsGroup>
-          <PageHeaderToolsItem style={{ marginRight: '10px' }}>
+      <Toolbar>
+        <ToolbarGroup>
+          <ToolbarItem style={{ marginRight: '10px' }}>
             <Radio
               id="light-theme"
               aria-label="Light theme"
@@ -105,8 +109,8 @@ class App extends React.Component<{}, AppState> {
                 checked && this.onThemeSelect(false)
               }
             />
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem>
+          </ToolbarItem>
+          <ToolbarItem>
             <Radio
               id="dark-theme"
               label="Dark theme"
@@ -117,20 +121,26 @@ class App extends React.Component<{}, AppState> {
                 checked && this.onThemeSelect(true)
               }
             />
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
+          </ToolbarItem>
+        </ToolbarGroup>
         <Avatar src={imgAvatar} alt="Avatar image" />
-      </PageHeaderTools>
+      </Toolbar>
     );
 
     const AppHeader = (
-      <PageHeader
-        logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        headerTools={AppToolbar}
-        showNavToggle
-        isNavOpen={isNavOpen}
-        onNavToggle={this.onNavToggle}
-      />
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton onSidebarToggle={this.onNavToggle} variant="plain" aria-label="Global navigation">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand>
+            <Brand src={imgBrand} alt="PatternFly" heights={{ default: '36px' }} />
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{AppToolbar}</MastheadContent>
+      </Masthead>
     );
 
     const nav = (

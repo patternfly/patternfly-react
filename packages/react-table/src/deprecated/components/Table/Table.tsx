@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { OUIAProps, getDefaultOUIAId } from '@patternfly/react-core';
-import { DropdownDirection, DropdownPosition } from '@patternfly/react-core/dist/esm/deprecated/components';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 import { Provider } from '../../../components/Table/base/provider';
@@ -143,8 +142,8 @@ class Table extends React.Component<TableProps, {}> {
     rowLabeledBy: 'simple-node',
     expandId: 'expandable-toggle',
     contentId: 'expanded-content',
-    dropdownPosition: DropdownPosition.right,
-    dropdownDirection: DropdownDirection.down,
+    dropdownPosition: 'right',
+    dropdownDirection: 'down',
     actionsMenuAppendTo: 'inline',
     header: undefined as React.ReactNode,
     caption: undefined as React.ReactNode,

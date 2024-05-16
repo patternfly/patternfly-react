@@ -18,7 +18,6 @@ import {
   textCenter,
   cellActions
 } from './';
-import { DropdownPosition, DropdownDirection } from '@patternfly/react-core/dist/esm/deprecated/components/Dropdown';
 import {
   IAction,
   IActions,
@@ -58,8 +57,8 @@ const testCellActions = async ({
     rowData,
     column: {
       extraParams: {
-        dropdownPosition: DropdownPosition.right,
-        dropdownDirection: DropdownDirection.down
+        dropdownPosition: 'right',
+        dropdownDirection: 'down'
       }
     }
   });
