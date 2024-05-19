@@ -41,7 +41,7 @@ export class FilteringSelectLiveUpdateDemo extends Component<FilteringSelectLive
     });
   };
 
-  onSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  onSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     const { selections } = this.state;
     if (selections.includes(selection.toString())) {
       this.setState(

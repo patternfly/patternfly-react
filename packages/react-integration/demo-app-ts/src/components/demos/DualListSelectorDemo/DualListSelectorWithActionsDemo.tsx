@@ -26,13 +26,13 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
   static displayName = 'DualListSelectorDemo';
   onSort: (panel: string) => void;
   onListChange: (
-    event: React.MouseEvent<HTMLElement>,
+    event: React.MouseEvent<HTMLElement> | undefined,
     newAvailableOptions: React.ReactNode[],
     newChosenOptions: React.ReactNode[]
   ) => void;
   onToggle: (pane: string) => void;
   filterOption: (option: React.ReactNode, input: string) => boolean;
-  onOptionSelect: (e: React.MouseEvent | React.ChangeEvent) => void;
+  onOptionSelect: (event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent) => void;
 
   constructor(props: DualListSelectorProps) {
     super(props);
@@ -112,7 +112,7 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
 
     this.filterOption = (option: any, input: string) => option.props.children.includes(input);
 
-    this.onOptionSelect = (e: React.MouseEvent | React.ChangeEvent) => {
+    this.onOptionSelect = (e) => {
       // eslint-disable-next-line no-console
       console.log(e.currentTarget.children.toString());
     };

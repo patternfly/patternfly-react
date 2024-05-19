@@ -33,14 +33,14 @@ export class TableSimpleActionsDemo extends React.Component<TableProps, ITableSt
         }
       ],
       actions: [
-        /* eslint-disable @typescript-eslint/no-unused-vars, no-console */
+        /* eslint-disable no-console */
         {
           title: 'Some action',
-          onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
+          onClick: (_event, rowId) => console.log('clicked on Some action, on row: ', rowId)
         },
         {
           title: 'Another action',
-          onClick: (event, rowId, rowData, extra) => console.log('clicked on Another action, on row: ', rowId)
+          onClick: (_event, rowId) => console.log('clicked on Another action, on row: ', rowId)
         },
         {
           isSeparator: true,
@@ -48,9 +48,9 @@ export class TableSimpleActionsDemo extends React.Component<TableProps, ITableSt
         },
         {
           title: 'Third action',
-          onClick: (event, rowId, rowData, extra) => console.log('clicked on Third action, on row: ', rowId)
+          onClick: (_event, rowId) => console.log('clicked on Third action, on row: ', rowId)
         }
-        /* eslint-enable @typescript-eslint/no-unused-vars, no-console */
+        /* eslint-enable no-console */
       ]
     };
   }

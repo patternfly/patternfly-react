@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {  StackItem, Title, ValidatedOptions } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
+import { Select, SelectOption, SelectVariant, SelectOptionObject } from '@patternfly/react-core/deprecated';
 
 /* eslint-disable no-console */
 export interface SelectValidatedDemoState {
@@ -32,7 +32,11 @@ export class SelectValidatedDemo extends Component<SelectValidatedDemoState> {
     });
   };
 
-  onSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string, isPlaceholder: boolean) => {
+  onSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
     let validatedState = 'success';
     if (isPlaceholder) {
       this.clearSelection();
