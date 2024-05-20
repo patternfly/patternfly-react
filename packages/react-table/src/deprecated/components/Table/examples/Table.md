@@ -21,7 +21,6 @@ import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
-import { SelectOption as SelectOptionDeprecated } from '@patternfly/react-core/deprecated';
 import {
 Select as NewSelect,
 SelectGroup as NewSelectGroup,
@@ -316,7 +315,6 @@ Example:
 
 ```js
 import React from 'react';
-import { SelectOption as SelectOptionDeprecated } from '@patternfly/react-core/deprecated';
 import {
   Table,
   TableHeader,
@@ -326,7 +324,8 @@ import {
   validateCellEdits,
   applyCellEdits,
   EditableTextCell,
-  EditableSelectInputCell
+  EditableSelectInputCell,
+  SelectOption
 } from '@patternfly/react-table';
 
 class EditableRowsTable extends React.Component {
@@ -413,12 +412,9 @@ class EditableRowsTable extends React.Component {
                   onSelect={this.onSelect}
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => (
-                    <SelectOptionDeprecated
-                      key={index}
-                      value={option.value}
-                      id={'uniqueIdRow1Cell4Option' + index}
-                      isPlaceholder={option.isPlaceholder}
-                    />
+                    <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell4Option' + index}>
+                      {option.value}
+                    </SelectOption>
                   ))}
                   onToggle={(event, isOpen) => {
                     this.onToggle(isOpen, rowIndex, cellIndex);
@@ -432,7 +428,6 @@ class EditableRowsTable extends React.Component {
                 isSelectOpen: props.isSelectOpen || false,
                 selected: props.selected || ['Option 1'],
                 options: [
-                  { value: 'Placeholder...', isPlaceholder: true },
                   { value: 'Option 1' },
                   { value: 'Option 2' },
                   { value: 'Option 3' },
@@ -510,12 +505,9 @@ class EditableRowsTable extends React.Component {
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => {
                     return (
-                      <SelectOptionDeprecated
-                        key={index}
-                        value={option.value}
-                        id={'uniqueIdRow2Cell4Option' + index}
-                        isPlaceholder={option.isPlaceholder}
-                      />
+                      <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell4Option' + index}>
+                        {option.value}
+                      </SelectOption>
                     );
                   })}
                   onToggle={(event, isOpen) => {
@@ -630,12 +622,9 @@ class EditableRowsTable extends React.Component {
                   clearSelection={this.clearSelection}
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => (
-                    <SelectOptionDeprecated
-                      key={index}
-                      value={option.value}
-                      id={'uniqueIdRow3Cell4Option' + index}
-                      isPlaceholder={option.isPlaceholder}
-                    />
+                    <SelectOption key={index} value={option.value} id={'uniqueIdRow3Cell4Option' + index}>
+                      {option.value}
+                    </SelectOption>
                   ))}
                   onToggle={(event, isOpen) => {
                     this.onToggle(isOpen, rowIndex, cellIndex);

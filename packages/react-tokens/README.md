@@ -32,11 +32,11 @@ import global_BackgroundColor_100 from '@patternfly/react-tokens/dist/esm/global
 - `var`: The property name wrapped in `var()`.
 
 ```js
-import global_BackgroundColor_100 from '@patternfly/react-tokens/dist/esm/global_background_color_100';
+import global_background_color_primary_default from '@patternfly/react-tokens/dist/esm/global_background_color_primary_default';
 
-global_BackgroundColor_100.name === '--pf-t--global--background--color--100'; // true
-global_BackgroundColor_100.value === '#fff'; // true
-global_BackgroundColor_100.var === 'var(--pf-t--global--background--color--100)'; // true
+global_background_color_primary_default.name === '--pf-t--global--background--color--primary--default'; // true
+global_background_color_primary_default.value === '#fff'; // true
+global_background_color_primary_default.var === 'var(--pf-t--global--background--color--primary--default)'; // true
 ```
 
 [token-page]: https://react-staging.patternfly.org/developer-resources/global-css-variables

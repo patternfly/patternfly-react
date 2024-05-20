@@ -16,9 +16,8 @@ import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_colo
 import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
 import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 import global_color_status_success_default from '@patternfly/react-tokens/dist/esm/global_color_status_success_default';
-import global_color_status_warning_default from '@patternfly/react-tokens/dist/esm/global_color_status_warning_default';
 import global_color_status_danger_default from '@patternfly/react-tokens/dist/esm/global_color_status_danger_default';
-import global_color_brand_200 from '@patternfly/react-tokens/dist/esm/global_color_brand_200';
+import global_text_color_subtle from '@patternfly/react-tokens/dist/esm/global_text_color_subtle';
 import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
 import text from '@patternfly/react-styles/css/utilities/Text/text';
 import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';

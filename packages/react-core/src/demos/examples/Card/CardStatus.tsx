@@ -28,7 +28,7 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclama
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import global_color_status_success_default from '@patternfly/react-tokens/dist/esm/global_color_status_success_default';
 import global_color_status_danger_default from '@patternfly/react-tokens/dist/esm/global_color_status_danger_default';
-import global_color_brand_200 from '@patternfly/react-tokens/dist/esm/global_color_brand_200';
+import global_text_color_subtle from '@patternfly/react-tokens/dist/esm/global_text_color_subtle';
 
 export const CardStatus: React.FunctionComponent = () => {
   const [drawerExpanded, setDrawerExpanded] = React.useState(false);
@@ -171,7 +171,7 @@ export const CardStatus: React.FunctionComponent = () => {
                 <a href="#">Operators</a>
               </FlexItem>
               <FlexItem>
-                <span style={{ color: global_color_brand_200.var }}>1 degraded</span>
+                <span style={{ color: global_text_color_subtle.var }}>1 degraded</span>
               </FlexItem>
             </Flex>
           </Flex>
@@ -186,7 +186,7 @@ export const CardStatus: React.FunctionComponent = () => {
                 <a href="#">Image Vulnerabilities</a>
               </FlexItem>
               <FlexItem>
-                <span style={{ color: global_color_brand_200.var }}>0 vulnerabilities</span>
+                <span style={{ color: global_text_color_subtle.var }}>0 vulnerabilities</span>
               </FlexItem>
             </Flex>
           </Flex>

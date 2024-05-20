@@ -31,8 +31,6 @@ export interface WizardToggleProps {
   isNavExpanded?: boolean;
   /** Callback to expand or collapse the dropdown navigation */
   toggleNavExpanded?: (event: React.MouseEvent<HTMLButtonElement> | KeyboardEvent) => void;
-  /** Used to determine the icon displayed next to content. Default has no icon. */
-  status?: 'default' | 'error';
 }
 
 export const WizardToggle = ({
@@ -42,13 +40,13 @@ export const WizardToggle = ({
   nav,
   isNavExpanded,
   toggleNavExpanded,
-  status = 'default',
   'aria-label': ariaLabel = 'Wizard toggle'
 }: WizardToggleProps) => {
   const isActiveSubStep = isWizardSubStep(activeStep);
   const parentStep = isActiveSubStep && steps.find((step) => step.id === activeStep.parentId);
   const nonSubSteps = steps.filter((step) => !isWizardSubStep(step));
   const wizardToggleIndex = nonSubSteps.indexOf(parentStep || activeStep) + 1;
+  const isActiveStepStatus = activeStep.status;
 
   const handleKeyClicks = React.useCallback(
     (event: KeyboardEvent): void => {
@@ -94,8 +92,8 @@ export const WizardToggle = ({
         aria-expanded={isNavExpanded}
       >
         <span className={css(styles.wizardToggleList)}>
-          <span className={css(styles.wizardToggleListItem, status === 'error' && styles.modifiers.danger)}>
-            {status === 'error' ? (
+          <span className={css(styles.wizardToggleListItem, isActiveStepStatus === 'error' && styles.modifiers.danger)}>
+            {isActiveStepStatus === 'error' ? (
               <span className={css(styles.wizardNavLinkStatusIcon)}>
                 <ExclamationCircleIcon />
               </span>
