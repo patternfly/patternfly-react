@@ -32,7 +32,7 @@
     "mini-css-extract-plugin": "^0.11.1",
     "react-hot-loader": "4.13.1",
     "react-refresh": "0.14.0",
-    "react-refresh-typescript": "2.0.7",
+    "react-refresh-typescript": "2.0.9",
     "style-loader": "3.3.1",
     "ts-loader": "^8.3.0",
     "url-loader": "^4.1.0",
