@@ -26,7 +26,7 @@
     "copy-webpack-plugin": "^6.1.0",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.0",
-    "fork-ts-checker-webpack-plugin": "6.5.2",
+    "fork-ts-checker-webpack-plugin": "6.5.3",
     "html-webpack-plugin": "^5.5.0",
     "local-web-server": "^2.6.1",
     "mini-css-extract-plugin": "^0.11.1",
