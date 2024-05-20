@@ -30,7 +30,7 @@
     "html-webpack-plugin": "^5.5.0",
     "local-web-server": "^2.6.1",
     "mini-css-extract-plugin": "^0.11.1",
-    "react-hot-loader": "4.13.0",
+    "react-hot-loader": "4.13.1",
     "react-refresh": "0.14.0",
     "react-refresh-typescript": "2.0.7",
     "style-loader": "3.3.1",
