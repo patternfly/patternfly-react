@@ -3,7 +3,7 @@
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <p
-    class=""
+    class="pf-v6-c-content--p"
     data-ouia-component-id="ouia-id"
     data-ouia-component-type="PF6/Text"
     data-ouia-safe="true"

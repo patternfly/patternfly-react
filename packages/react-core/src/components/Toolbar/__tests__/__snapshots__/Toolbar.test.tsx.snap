@@ -100,7 +100,7 @@ exports[`Toolbar should render with custom chip content 1`] = `
         hidden=""
       >
         <div
-          class="pf-v6-c-toolbar__item pf-m-chip-group"
+          class="pf-v6-c-toolbar__item pf-m-label-group"
         >
           <div
             class="pf-v6-c-label-group pf-m-category"

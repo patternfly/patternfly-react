@@ -3,8 +3,6 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
-
-import { Text, TextVariants } from '../Text';
 import { Button, ButtonVariant } from '../Button';
 
 export interface NotificationDrawerHeaderProps extends React.HTMLProps<HTMLDivElement> {
@@ -38,9 +36,7 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
   ...props
 }: NotificationDrawerHeaderProps) => (
   <div {...props} className={css(styles.notificationDrawerHeader, className)}>
-    <Text component={TextVariants.h1} className={css(styles.notificationDrawerHeaderTitle)}>
-      {title}
-    </Text>
+    <h1 className={css(styles.notificationDrawerHeaderTitle)}>{title}</h1>
     {(customText !== undefined || count !== undefined) && (
       <span className={css(styles.notificationDrawerHeaderStatus)} aria-live="polite">
         {customText || `${count} ${unreadText}`}

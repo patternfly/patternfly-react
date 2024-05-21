@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tooltip, Text, Grid, GridItem, PageSection } from '@patternfly/react-core';
 import spacerMd from '@patternfly/react-tokens/dist/esm/global_spacer_md';
-import labelFontSize from '@patternfly/react-tokens/dist/esm/global_FontSize_sm';
+import labelFontSize from '@patternfly/react-tokens/dist/esm/global_font_size_sm';
 import * as IconsModule from '@patternfly/react-icons/dist/esm';
 
 const iconsPage = () => {

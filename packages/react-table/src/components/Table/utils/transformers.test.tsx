@@ -30,7 +30,7 @@ import {
 } from '../TableTypes';
 import { css } from '@patternfly/react-styles';
 import tableStyles from '@patternfly/react-styles/css/components/Table/table';
-import dropdownStyles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
+import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
 
 const testCellActions = async ({
   actions,
@@ -76,9 +76,7 @@ const testCellActions = async ({
     await user.click(screen.getAllByRole('button')[0]);
     await waitFor(() =>
       // eslint-disable-next-line testing-library/no-container
-      expect(container.querySelectorAll(`.${dropdownStyles.dropdownMenu} li button`)).toHaveLength(
-        expectDisabled ? 0 : 1
-      )
+      expect(container.querySelectorAll(`.${menuStyles.menu} li button`)).toHaveLength(expectDisabled ? 0 : 1)
     );
   }
 };

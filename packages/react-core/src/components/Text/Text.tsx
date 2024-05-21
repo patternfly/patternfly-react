@@ -32,6 +32,20 @@ export interface TextProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   ouiaSafe?: boolean;
 }
 
+const componentStyles = {
+  h1: styles.contentH1,
+  h2: styles.contentH2,
+  h3: styles.contentH3,
+  h4: styles.contentH4,
+  h5: styles.contentH5,
+  h6: styles.contentH6,
+  p: styles.contentP,
+  a: styles.contentA,
+  small: styles.contentSmall,
+  blockquote: styles.contentBlockquote,
+  pre: styles.contentPre
+};
+
 export const Text: React.FunctionComponent<TextProps> = ({
   children = null,
   className = '',
@@ -49,7 +63,11 @@ export const Text: React.FunctionComponent<TextProps> = ({
       {...ouiaProps}
       {...props}
       data-pf-content
-      className={css(isVisitedLink && component === TextVariants.a && styles.modifiers.visited, className)}
+      className={css(
+        isVisitedLink && component === TextVariants.a && styles.modifiers.visited,
+        componentStyles[component],
+        className
+      )}
     >
       {children}
     </Component>

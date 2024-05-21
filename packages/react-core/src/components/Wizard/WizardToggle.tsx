@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 import { KeyTypes } from '../../helpers/constants';
 import { WizardStepType, isWizardSubStep } from './types';
@@ -45,6 +46,7 @@ export const WizardToggle = ({
   const parentStep = isActiveSubStep && steps.find((step) => step.id === activeStep.parentId);
   const nonSubSteps = steps.filter((step) => !isWizardSubStep(step));
   const wizardToggleIndex = nonSubSteps.indexOf(parentStep || activeStep) + 1;
+  const isActiveStepStatus = activeStep.status;
 
   const handleKeyClicks = React.useCallback(
     (event: KeyboardEvent): void => {
@@ -90,8 +92,14 @@ export const WizardToggle = ({
         aria-expanded={isNavExpanded}
       >
         <span className={css(styles.wizardToggleList)}>
-          <span className={css(styles.wizardToggleListItem)}>
-            <span className={css(styles.wizardToggleNum)}>{wizardToggleIndex}</span>{' '}
+          <span className={css(styles.wizardToggleListItem, isActiveStepStatus === 'error' && styles.modifiers.danger)}>
+            {isActiveStepStatus === 'error' ? (
+              <span className={css(styles.wizardToggleStatusIcon)}>
+                <ExclamationCircleIcon />
+              </span>
+            ) : (
+              <span className={css(styles.wizardToggleNum)}>{wizardToggleIndex}</span>
+            )}{' '}
             {parentStep?.name || activeStep?.name}
             {isActiveSubStep && <AngleRightIcon className={css(styles.wizardToggleSeparator)} aria-hidden="true" />}
           </span>

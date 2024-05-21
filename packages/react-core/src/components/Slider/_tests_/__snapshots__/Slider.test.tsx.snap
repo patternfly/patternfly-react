@@ -22,7 +22,7 @@ exports[`slider renders continuous slider 1`] = `
       >
         <div
           class="pf-v6-c-slider__step pf-m-active"
-          style="--pf-v6-c-slider__step--Left: 0%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 0%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -32,7 +32,7 @@ exports[`slider renders continuous slider 1`] = `
         </div>
         <div
           class="pf-v6-c-slider__step"
-          style="--pf-v6-c-slider__step--Left: 100%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 100%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -96,7 +96,7 @@ exports[`slider renders continuous slider with custom steps 1`] = `
       >
         <div
           class="pf-v6-c-slider__step pf-m-active"
-          style="--pf-v6-c-slider__step--Left: 0%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 0%;"
         >
           <div
             class="pf-v6-c-slider__step-tick"
@@ -109,7 +109,7 @@ exports[`slider renders continuous slider with custom steps 1`] = `
         </div>
         <div
           class="pf-v6-c-slider__step"
-          style="--pf-v6-c-slider__step--Left: 100%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 100%;"
         >
           <div
             class="pf-v6-c-slider__step-tick"
@@ -159,7 +159,7 @@ exports[`slider renders disabled slider 1`] = `
       >
         <div
           class="pf-v6-c-slider__step pf-m-active"
-          style="--pf-v6-c-slider__step--Left: 0%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 0%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -169,7 +169,7 @@ exports[`slider renders disabled slider 1`] = `
         </div>
         <div
           class="pf-v6-c-slider__step"
-          style="--pf-v6-c-slider__step--Left: 100%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 100%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -216,7 +216,7 @@ exports[`slider renders discrete slider 1`] = `
       >
         <div
           class="pf-v6-c-slider__step pf-m-active"
-          style="--pf-v6-c-slider__step--Left: 0%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 0%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -226,7 +226,7 @@ exports[`slider renders discrete slider 1`] = `
         </div>
         <div
           class="pf-v6-c-slider__step"
-          style="--pf-v6-c-slider__step--Left: 100%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 100%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -290,7 +290,7 @@ exports[`slider renders discrete slider with custom steps 1`] = `
       >
         <div
           class="pf-v6-c-slider__step pf-m-active"
-          style="--pf-v6-c-slider__step--Left: 0%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 0%;"
         >
           <div
             class="pf-v6-c-slider__step-tick"
@@ -303,7 +303,7 @@ exports[`slider renders discrete slider with custom steps 1`] = `
         </div>
         <div
           class="pf-v6-c-slider__step pf-m-active"
-          style="--pf-v6-c-slider__step--Left: 25%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 25%;"
         >
           <div
             class="pf-v6-c-slider__step-tick"
@@ -311,7 +311,7 @@ exports[`slider renders discrete slider with custom steps 1`] = `
         </div>
         <div
           class="pf-v6-c-slider__step pf-m-active"
-          style="--pf-v6-c-slider__step--Left: 50%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 50%;"
         >
           <div
             class="pf-v6-c-slider__step-tick"
@@ -324,7 +324,7 @@ exports[`slider renders discrete slider with custom steps 1`] = `
         </div>
         <div
           class="pf-v6-c-slider__step"
-          style="--pf-v6-c-slider__step--Left: 75%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 75%;"
         >
           <div
             class="pf-v6-c-slider__step-tick"
@@ -332,7 +332,7 @@ exports[`slider renders discrete slider with custom steps 1`] = `
         </div>
         <div
           class="pf-v6-c-slider__step"
-          style="--pf-v6-c-slider__step--Left: 100%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 100%;"
         >
           <div
             class="pf-v6-c-slider__step-tick"
@@ -382,7 +382,7 @@ exports[`slider renders slider with input 1`] = `
       >
         <div
           class="pf-v6-c-slider__step pf-m-active"
-          style="--pf-v6-c-slider__step--Left: 0%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 0%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -392,7 +392,7 @@ exports[`slider renders slider with input 1`] = `
         </div>
         <div
           class="pf-v6-c-slider__step"
-          style="--pf-v6-c-slider__step--Left: 100%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 100%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -473,7 +473,7 @@ exports[`slider renders slider with input above thumb 1`] = `
       >
         <div
           class="pf-v6-c-slider__step pf-m-active"
-          style="--pf-v6-c-slider__step--Left: 0%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 0%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -483,7 +483,7 @@ exports[`slider renders slider with input above thumb 1`] = `
         </div>
         <div
           class="pf-v6-c-slider__step"
-          style="--pf-v6-c-slider__step--Left: 100%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 100%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -577,7 +577,7 @@ exports[`slider renders slider with input actions 1`] = `
       >
         <div
           class="pf-v6-c-slider__step pf-m-active"
-          style="--pf-v6-c-slider__step--Left: 0%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 0%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -587,7 +587,7 @@ exports[`slider renders slider with input actions 1`] = `
         </div>
         <div
           class="pf-v6-c-slider__step"
-          style="--pf-v6-c-slider__step--Left: 100%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 100%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -647,7 +647,7 @@ exports[`slider renders slider with tooltip on thumb 1`] = `
       >
         <div
           class="pf-v6-c-slider__step pf-m-active"
-          style="--pf-v6-c-slider__step--Left: 0%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 0%;"
         >
           <div
             class="pf-v6-c-slider__step-label"
@@ -657,7 +657,7 @@ exports[`slider renders slider with tooltip on thumb 1`] = `
         </div>
         <div
           class="pf-v6-c-slider__step"
-          style="--pf-v6-c-slider__step--Left: 100%;"
+          style="--pf-v6-c-slider__step--InsetInlineStart: 100%;"
         >
           <div
             class="pf-v6-c-slider__step-label"

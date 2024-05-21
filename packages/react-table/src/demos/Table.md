@@ -57,7 +57,6 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclam
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';

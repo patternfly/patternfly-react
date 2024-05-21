@@ -16,11 +16,6 @@ test('Renders children', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Renders without class name by default', () => {
-  render(<TextListItem>Test</TextListItem>);
-  expect(screen.getByText('Test')).not.toHaveClass();
-});
-
 test('Renders with custom class name when className prop is provided', () => {
   render(<TextListItem className="custom-class">Test</TextListItem>);
   expect(screen.getByText('Test')).toHaveClass('custom-class');

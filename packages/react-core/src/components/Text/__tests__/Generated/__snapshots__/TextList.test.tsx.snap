@@ -3,7 +3,7 @@
 exports[`TextList should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <ul
-    class="''"
+    class="pf-v6-c-content--ul ''"
   >
     ReactNode
   </ul>

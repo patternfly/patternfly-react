@@ -10,8 +10,8 @@ import { Tooltip, TooltipProps } from '@patternfly/react-core/dist/esm/component
 import { BaseCellProps } from './Table';
 import { IFormatterValueType, IColumn } from './TableTypes';
 import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
-import cssStickyCellLeft from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_Left';
-import cssStickyCellRight from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_Right';
+import cssStickyCellInlineStart from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineStart';
+import cssStickyCellInlineEnd from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineEnd';
 
 export interface ThProps
   extends BaseCellProps,
@@ -224,8 +224,8 @@ const ThBase: React.FunctionComponent<ThProps> = ({
       {...(isStickyColumn && {
         style: {
           [cssStickyCellMinWidth.name]: stickyMinWidth ? stickyMinWidth : undefined,
-          [cssStickyCellLeft.name]: stickyLeftOffset ? stickyLeftOffset : 0,
-          [cssStickyCellRight.name]: stickyRightOffset ? stickyRightOffset : 0,
+          [cssStickyCellInlineStart.name]: stickyLeftOffset ? stickyLeftOffset : 0,
+          [cssStickyCellInlineEnd.name]: stickyRightOffset ? stickyRightOffset : 0,
           ...props.style
         } as React.CSSProperties
       })}

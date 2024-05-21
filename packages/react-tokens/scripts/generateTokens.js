@@ -95,43 +95,27 @@ function generateTokens() {
   const cssFiles = glob
     .sync(['{**/{components,layouts}/**/*.css', '**/patternfly-charts.css', '**/patternfly-variables.css}'].join(','), {
       cwd: pfStylesDir,
-      ignore: ['assets/**'],
+      ignore: ['assets/**', '/**/_index.css'],
       absolute: true
     })
     // Sort to put variables and charts at END of list so getLocalVarsMap returns correct values
     .sort((a, b) => (a.split(sep).length < b.split(sep).length ? 1 : -1));
 
   // various lookup tables to resolve variables
-  let variables = readFileSync(require.resolve('@patternfly/patternfly/base/_variables.scss'), 'utf8');
-  variables = variables.replaceAll('#{$pf-global}', `pf-${version}-global`);
-  const cssGlobalsToScssVarsMap = getRegexMatches(variables, /(--pf-.*):\s*(?:#{)?(\$?pf-[\w- _]+)}?;/g);
-
-  // contains default values and mappings to colors.scss for color values
   const scssVariables = readFileSync(
     require.resolve('@patternfly/patternfly/sass-utilities/scss-variables.scss'),
     'utf8'
   );
   const scssVarsMap = getRegexMatches(scssVariables, /(\$.*):\s*([^;^!]+)/g);
 
-  // contains default values and mappings to colors.scss for color values
-  const scssColorVariables = readFileSync(require.resolve('@patternfly/patternfly/sass-utilities/colors.scss'), 'utf8');
-  const scssColorsMap = getRegexMatches(scssColorVariables, /(\$.*):\s*([^\s]+)\s*(?:!default);/g);
-
-  // contains default values and mappings to colors.scss for color values
   const cssGlobalVariablesAst = parse(
     readFileSync(require.resolve('@patternfly/patternfly/base/patternfly-variables.css'), 'utf8')
   );
-
   cssGlobalVariablesAst.stylesheet.rules = cssGlobalVariablesAst.stylesheet.rules.filter(
     (node) => !node.selectors || !node.selectors.some((item) => item.includes(`.pf-${version}-theme-dark`))
   );
 
   const cssGlobalVariablesMap = getRegexMatches(stringify(cssGlobalVariablesAst), /(--pf-[\w-]*):\s*([\w -_]+);/g);
-
-  const combinedScssVarsColorsMap = {
-    ...scssVarsMap,
-    ...scssColorsMap
-  };
 
   const getComputedCSSVarValue = (value, selector, varMap) =>
     value.replace(/var\(([\w-]*)(,.*)?\)/g, (full, m1, m2) => {
@@ -150,8 +134,8 @@ function generateTokens() {
 
   const getComputedScssVarValue = (value) =>
     value.replace(/\$pf[^,)\s*/]*/g, (match) => {
-      if (combinedScssVarsColorsMap[match]) {
-        return combinedScssVarsColorsMap[match];
+      if (scssVarsMap[match]) {
+        return scssVarsMap[match];
       } else {
         return match;
       }
@@ -169,7 +153,7 @@ function generateTokens() {
         finalValue = getComputedCSSVarValue(finalValue, selector, cssGlobalVariablesMap);
       }
       if (computedValue.includes('var(--pf')) {
-        computedValue = getComputedCSSVarValue(computedValue, selector, cssGlobalsToScssVarsMap);
+        computedValue = getComputedCSSVarValue(computedValue, selector);
       } else {
         computedValue = getComputedScssVarValue(computedValue);
       }

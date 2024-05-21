@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import breadcrumbStyles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
-import dropdownStyles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import { MenuContext } from './MenuContext';
@@ -193,9 +192,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
 
     const parentMenu = this.activeMenu;
     const key = event.key;
-    const isFromBreadcrumb =
-      activeElement.classList.contains(breadcrumbStyles.breadcrumbLink) ||
-      activeElement.classList.contains(dropdownStyles.dropdownToggle);
+    const isFromBreadcrumb = activeElement.classList.contains(breadcrumbStyles.breadcrumbLink);
 
     if (key === ' ' || key === 'Enter') {
       event.preventDefault();
@@ -313,7 +310,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             noHorizontalArrowHandling={
               document.activeElement &&
               (document.activeElement.classList.contains(breadcrumbStyles.breadcrumbLink) ||
-                document.activeElement.classList.contains(dropdownStyles.dropdownToggle) ||
                 document.activeElement.tagName === 'INPUT')
             }
             noEnterHandling

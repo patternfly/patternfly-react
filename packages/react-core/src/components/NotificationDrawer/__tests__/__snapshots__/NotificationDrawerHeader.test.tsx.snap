@@ -7,10 +7,6 @@ exports[`NotificationDrawerHeader drawer header with count applied 1`] = `
   >
     <h1
       class="pf-v6-c-notification-drawer__header-title"
-      data-ouia-component-id="OUIA-Generated-Text-3"
-      data-ouia-component-type="PF6/Text"
-      data-ouia-safe="true"
-      data-pf-content="true"
     >
       Notifications
     </h1>
@@ -31,10 +27,6 @@ exports[`NotificationDrawerHeader drawer header with custom unread text applied 
   >
     <h1
       class="pf-v6-c-notification-drawer__header-title"
-      data-ouia-component-id="OUIA-Generated-Text-5"
-      data-ouia-component-type="PF6/Text"
-      data-ouia-safe="true"
-      data-pf-content="true"
     >
       Notifications
     </h1>
@@ -55,10 +47,6 @@ exports[`NotificationDrawerHeader drawer header with title applied 1`] = `
   >
     <h1
       class="pf-v6-c-notification-drawer__header-title"
-      data-ouia-component-id="OUIA-Generated-Text-4"
-      data-ouia-component-type="PF6/Text"
-      data-ouia-safe="true"
-      data-pf-content="true"
     >
       Some Title
     </h1>
@@ -73,10 +61,6 @@ exports[`NotificationDrawerHeader renders with PatternFly Core styles 1`] = `
   >
     <h1
       class="pf-v6-c-notification-drawer__header-title"
-      data-ouia-component-id="OUIA-Generated-Text-1"
-      data-ouia-component-type="PF6/Text"
-      data-ouia-safe="true"
-      data-pf-content="true"
     >
       Notifications
     </h1>

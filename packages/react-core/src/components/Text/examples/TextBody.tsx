@@ -1,8 +1,8 @@
 import React from 'react';
-import { TextContent, Text, TextVariants } from '@patternfly/react-core';
+import { Text, TextVariants } from '@patternfly/react-core';
 
 export const TextBody: React.FunctionComponent = () => (
-  <TextContent>
+  <>
     <Text component={TextVariants.p}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla
       nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel
@@ -20,5 +20,5 @@ export const TextBody: React.FunctionComponent = () => (
       turpis.
     </Text>
     <Text component={TextVariants.small}>Sometimes you need small text to display things like date created</Text>
-  </TextContent>
+  </>
 );

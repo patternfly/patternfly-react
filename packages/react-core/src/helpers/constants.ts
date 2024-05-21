@@ -4,11 +4,11 @@ import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpo
 import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/global_breakpoint_xl';
 import globalBreakpoint2xl from '@patternfly/react-tokens/dist/esm/global_breakpoint_2xl';
 
-import globalHeightBreakpointSm from '@patternfly/react-tokens/dist/esm/global_height_breakpoint_sm';
-import globalHeightBreakpointMd from '@patternfly/react-tokens/dist/esm/global_height_breakpoint_md';
-import globalHeightBreakpointLg from '@patternfly/react-tokens/dist/esm/global_height_breakpoint_lg';
-import globalHeightBreakpointXl from '@patternfly/react-tokens/dist/esm/global_height_breakpoint_xl';
-import globalHeightBreakpoint2xl from '@patternfly/react-tokens/dist/esm/global_height_breakpoint_2xl';
+import globalHeightBreakpointSm from '@patternfly/react-tokens/dist/esm/global_breakpoint_height_sm';
+import globalHeightBreakpointMd from '@patternfly/react-tokens/dist/esm/global_breakpoint_height_md';
+import globalHeightBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpoint_height_lg';
+import globalHeightBreakpointXl from '@patternfly/react-tokens/dist/esm/global_breakpoint_height_xl';
+import globalHeightBreakpoint2xl from '@patternfly/react-tokens/dist/esm/global_breakpoint_height_2xl';
 
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';

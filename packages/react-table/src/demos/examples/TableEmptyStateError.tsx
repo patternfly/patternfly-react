@@ -11,7 +11,6 @@ import {
   PageSection
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
 export const TableEmptyStateError: React.FunctionComponent = () => (
@@ -32,10 +31,10 @@ export const TableEmptyStateError: React.FunctionComponent = () => (
             <Tr>
               <Td colSpan={8}>
                 <Bullseye>
-                  <EmptyState variant={EmptyStateVariant.sm}>
+                  <EmptyState variant={EmptyStateVariant.sm} titleText="">
                     <EmptyStateHeader
                       titleText="Unable to connect"
-                      icon={<EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />}
+                      icon={<EmptyStateIcon icon={ExclamationCircleIcon} />}
                       headingLevel="h2"
                     />
                     <EmptyStateBody>

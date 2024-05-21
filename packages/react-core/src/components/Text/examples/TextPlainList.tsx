@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text, TextVariants, TextContent, TextList, TextListVariants, TextListItem } from '@patternfly/react-core';
+import { Text, TextVariants, TextList, TextListVariants, TextListItem } from '@patternfly/react-core';
 
 export const TextPlainList: React.FunctionComponent = () => (
-  <TextContent>
+  <>
     <Text component={TextVariants.h3}>Plain unordered list</Text>
     <TextList isPlain>
       <TextListItem>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</TextListItem>
@@ -20,5 +20,5 @@ export const TextPlainList: React.FunctionComponent = () => (
       <TextListItem>Quisque aliquam cursus urna, non bibendum massa viverra eget.</TextListItem>
       <TextListItem>Vivamus maximus ultricies pulvinar.</TextListItem>
     </TextList>
-  </TextContent>
+  </>
 );
