@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.25...@patternfly/react-integration@5.1.1-prerelease.26) (2024-05-21)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
 ## [5.1.1-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.24...@patternfly/react-integration@5.1.1-prerelease.25) (2024-05-20)
 
 **Note:** Version bump only for package @patternfly/react-integration
