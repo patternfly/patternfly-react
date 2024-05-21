@@ -16,7 +16,6 @@ import {
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 interface ContentType {
@@ -72,7 +71,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="danger">
-              <TimesCircleIcon />
+              <ExclamationCircleIcon />
             </Icon>
           )
         }
@@ -87,7 +86,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="success">
-              <ExclamationCircleIcon />
+              <CheckCircleIcon />
             </Icon>
           ),
           count: 2
@@ -116,8 +115,8 @@ const cardData: CardData = {
         },
         {
           icon: (
-            <Icon status="success">
-              <TimesCircleIcon />
+            <Icon status="danger">
+              <ExclamationCircleIcon />
             </Icon>
           ),
           count: 12
@@ -139,7 +138,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="danger">
-              <TimesCircleIcon />
+              <ExclamationCircleIcon />
             </Icon>
           ),
           count: 7
@@ -155,7 +154,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="danger">
-              <TimesCircleIcon />
+              <ExclamationCircleIcon />
             </Icon>
           ),
           status: '2 errors',
@@ -212,7 +211,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="danger">
-              <TimesCircleIcon />
+              <ExclamationCircleIcon />
             </Icon>
           ),
           status: '1 error',

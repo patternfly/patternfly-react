@@ -22,7 +22,7 @@ All Tokens and their corresponding values can be viewed on the
 ## Examples
 
 ```js
-import global_BackgroundColor_100 from '@patternfly/react-tokens/dist/esm/global_-background-color_100';
+import global_background_color_primary_default from '@patternfly/react-tokens/dist/esm/global_background_color_primary_default';
 ```
 
 #### Each token as three properties

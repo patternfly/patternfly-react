@@ -7,7 +7,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import { CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon, TimesCircleIcon, BellIcon } from '@patternfly/react-icons';
+import { CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon, BellIcon } from '@patternfly/react-icons';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import { Chart, ChartAxis, ChartGroup, ChartVoronoiContainer, ChartStack, ChartBar, ChartTooltip, ChartDonutThreshold, ChartDonutUtilization, ChartArea, ChartContainer, ChartLabel } from '@patternfly/react-charts';
 import chart_color_gold_100 from '@patternfly/react-tokens/dist/esm/chart_color_gold_100';
@@ -15,8 +15,6 @@ import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
 import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
-import global_color_status_success_default from '@patternfly/react-tokens/dist/esm/global_color_status_success_default';
-import global_color_status_danger_default from '@patternfly/react-tokens/dist/esm/global_color_status_danger_default';
 import global_text_color_subtle from '@patternfly/react-tokens/dist/esm/global_text_color_subtle';
 import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
 import text from '@patternfly/react-styles/css/utilities/Text/text';

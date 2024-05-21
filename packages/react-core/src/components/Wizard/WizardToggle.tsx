@@ -94,7 +94,7 @@ export const WizardToggle = ({
         <span className={css(styles.wizardToggleList)}>
           <span className={css(styles.wizardToggleListItem, isActiveStepStatus === 'error' && styles.modifiers.danger)}>
             {isActiveStepStatus === 'error' ? (
-              <span className={css(styles.wizardNavLinkStatusIcon)}>
+              <span className={css(styles.wizardToggleStatusIcon)}>
                 <ExclamationCircleIcon />
               </span>
             ) : (
