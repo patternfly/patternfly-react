@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.58](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.57...demo-app-ts@5.1.1-alpha.58) (2024-05-21)
+
+### Features
+
+- **misc, TextContent:** update core version & text content updates ([#10378](https://github.com/patternfly/patternfly-react/issues/10378)) ([1f1b93c](https://github.com/patternfly/patternfly-react/commit/1f1b93c9f5f8bfeb686f7344bfc70152d5453df1))
+
 ## [5.1.1-alpha.57](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.56...demo-app-ts@5.1.1-alpha.57) (2024-05-16)
 
 ### Features
