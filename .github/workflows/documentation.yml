@@ -25,7 +25,7 @@ jobs:
         with:
           # Checkout the merge commit so that we can access the PR's changes.
           # This is nessesary because `pull_request_target` checks out the base branch (e.g. `main`) by default.
-          ref: ${{ github.event.pull_request.merge_commit_sha }}
+          ref: refs/pull/${{ env.GH_PR_NUM }}/head
 
       - name: Check out project
         if: github.event_name != 'pull_request_target'
