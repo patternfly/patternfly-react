@@ -49,7 +49,7 @@ export interface DragDropSortProps extends DndContextProps {
   /** Callback when use begins dragging a draggable object */
   onDrag?: (event: DragDropSortDragStartEvent, oldIndex: number) => void;
   /** The variant determines which component wraps the draggable object.
-   * Default varaint wraps the draggable object in a div.
+   * Default variant wraps the draggable object in a div.
    * DataList vairant wraps the draggable object in a DataListItem
    * DualListSelectorList variant wraps the draggable objects in a DualListSelectorListItem and a div.pf-c-dual-list-selector__item-text element
    * TableComposable variant wraps the draggable objects in TODO
