@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { Button, Checkbox, Radio, TextInput, getUniqueId } from '@patternfly/react-core';
+import { Button, Checkbox, Radio, TextInput, KeyTypes, getUniqueId } from '@patternfly/react-core';
 import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
@@ -9,6 +9,7 @@ import { css } from '@patternfly/react-styles';
 
 interface EditColumnProps {
   onClick: (type: 'save' | 'cancel' | 'edit') => void;
+  elementToFocusOnEditRef?: React.MutableRefObject<HTMLElement>;
   saveAriaLabel?: string;
   cancelAriaLabel?: string;
   editAriaLabel?: string;
@@ -16,31 +17,64 @@ interface EditColumnProps {
 
 const EditColumn: React.FunctionComponent<EditColumnProps> = ({
   onClick,
+  elementToFocusOnEditRef,
   saveAriaLabel = 'Save edits',
   cancelAriaLabel = 'Cancel edits',
-  editAriaLabel = 'Edit',
-  ...props
-}: EditColumnProps) => (
-  <React.Fragment>
-    <div className={css(inlineEditStyles.inlineEditGroup, inlineEditStyles.modifiers.iconGroup, 'pf-m-action-group')}>
-      <div className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.valid)}>
-        <Button aria-label={saveAriaLabel} {...props} onClick={() => onClick('save')} variant="plain">
-          <CheckIcon />
+  editAriaLabel = 'Edit'
+}) => {
+  const editButtonRef = React.useRef<HTMLButtonElement>();
+
+  const onKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, button: 'edit' | 'stopEditing') => {
+    const focusRef = button === 'edit' ? elementToFocusOnEditRef : editButtonRef;
+
+    if (event.key === KeyTypes.Enter || event.key === KeyTypes.Space) {
+      // because space key triggers click event before keyDown, we have to prevent default behaviour and trigger click manually
+      event.preventDefault();
+      (event.target as HTMLButtonElement).click();
+      setTimeout(() => {
+        focusRef?.current?.focus();
+      }, 0);
+    }
+  };
+
+  return (
+    <>
+      <div className={css(inlineEditStyles.inlineEditGroup, inlineEditStyles.modifiers.iconGroup, 'pf-m-action-group')}>
+        <div className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.valid)}>
+          <Button
+            aria-label={saveAriaLabel}
+            onClick={() => onClick('save')}
+            onKeyDown={(event) => onKeyDown(event, 'stopEditing')}
+            variant="plain"
+          >
+            <CheckIcon />
+          </Button>
+        </div>
+        <div className={css(inlineEditStyles.inlineEditAction)}>
+          <Button
+            aria-label={cancelAriaLabel}
+            onClick={() => onClick('cancel')}
+            onKeyDown={(event) => onKeyDown(event, 'stopEditing')}
+            variant="plain"
+          >
+            <TimesIcon />
+          </Button>
+        </div>
+      </div>
+      <div className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.enableEditable)}>
+        <Button
+          ref={editButtonRef}
+          aria-label={editAriaLabel}
+          onClick={() => onClick('edit')}
+          onKeyDown={(event) => onKeyDown(event, 'edit')}
+          variant="plain"
+        >
+          <PencilAltIcon />
         </Button>
       </div>
-      <div className={css(inlineEditStyles.inlineEditAction)}>
-        <Button aria-label={cancelAriaLabel} {...props} onClick={() => onClick('cancel')} variant="plain">
-          <TimesIcon />
-        </Button>
-      </div>
-    </div>
-    <div className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.enableEditable)}>
-      <Button aria-label={editAriaLabel} {...props} onClick={() => onClick('edit')} variant="plain">
-        <PencilAltIcon />
-      </Button>
-    </div>
-  </React.Fragment>
-);
+    </>
+  );
+};
 
 interface EditableCellProps {
   dataLabel: string;
@@ -48,7 +82,7 @@ interface EditableCellProps {
   editingValue: React.ReactNode;
 }
 
-const EditableCell = ({ dataLabel, staticValue, editingValue }: EditableCellProps) => {
+const EditableCell: React.FunctionComponent<EditableCellProps> = ({ dataLabel, staticValue, editingValue }) => {
   const hasMultipleInputs = Array.isArray(editingValue) && editingValue.every((elem) => React.isValidElement(elem));
 
   return (
@@ -74,9 +108,11 @@ interface EditableRow {
   saveChanges: (editedData: CustomData) => void;
 }
 
-const EditableRow = ({ data, columnNames, dataOptions, saveChanges }: EditableRow) => {
+const EditableRow: React.FunctionComponent<EditableRow> = ({ data, columnNames, dataOptions, saveChanges }) => {
   const [editable, setEditable] = React.useState(false);
   const [editedData, setEditedData] = React.useState(data);
+
+  const inputRef = React.useRef();
 
   return (
     <Tr className={css(inlineEditStyles.inlineEdit, editable ? inlineEditStyles.modifiers.inlineEditable : '')}>
@@ -85,6 +121,7 @@ const EditableRow = ({ data, columnNames, dataOptions, saveChanges }: EditableRo
         staticValue={data.textInput}
         editingValue={
           <TextInput
+            ref={inputRef}
             value={editedData.textInput}
             onChange={(e) => setEditedData((data) => ({ ...data, textInput: (e.target as HTMLInputElement).value }))}
           />
@@ -140,6 +177,7 @@ const EditableRow = ({ data, columnNames, dataOptions, saveChanges }: EditableRo
           type === 'save' && saveChanges(editedData);
           type === 'cancel' && setEditedData(data);
         }}
+        elementToFocusOnEditRef={inputRef}
       />
     </Tr>
   );
