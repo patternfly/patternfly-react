@@ -5,25 +5,25 @@ import { Button } from '@patternfly/react-core';
 export const ToolbarSpacers: React.FunctionComponent = () => {
   const items = (
     <React.Fragment>
-      <ToolbarItem spacer={{ default: 'spacerNone' }}>
+      <ToolbarItem>
         <Button variant="secondary">Action</Button>
       </ToolbarItem>
-      <ToolbarItem spacer={{ default: 'spacerSm' }}>
+      <ToolbarItem marginInlineEnd={{ default: 'marginInlineEndSm' }}>
         <Button variant="secondary">Action</Button>
       </ToolbarItem>
-      <ToolbarItem spacer={{ default: 'spacerMd' }}>
+      <ToolbarItem marginInlineEnd={{ default: 'marginInlineEndMd' }}>
         <Button variant="secondary">Action</Button>
       </ToolbarItem>
-      <ToolbarItem spacer={{ default: 'spacerLg' }}>
+      <ToolbarItem marginInlineEnd={{ default: 'marginInlineEndLg' }}>
         <Button variant="secondary">Action</Button>
       </ToolbarItem>
       <ToolbarItem variant="separator"></ToolbarItem>
       <ToolbarItem
-        spacer={{
-          default: 'spacerNone',
-          md: 'spacerSm',
-          lg: 'spacerMd',
-          xl: 'spacerLg'
+        marginInlineEnd={{
+          default: 'marginInlineEndNone',
+          md: 'marginInlineEndSm',
+          lg: 'marginInlineEndMd',
+          xl: 'marginInlineEndLg'
         }}
       >
         <Button variant="secondary">Action</Button>
@@ -32,7 +32,7 @@ export const ToolbarSpacers: React.FunctionComponent = () => {
         <Button variant="primary">Action</Button>
       </ToolbarItem>
       <ToolbarItem variant="separator"></ToolbarItem>
-      <ToolbarGroup spaceItems={{ lg: 'spaceItemsLg' }}>
+      <ToolbarGroup gap={{ lg: 'gapLg' }}>
         <ToolbarItem>
           <Button variant="secondary">Action</Button>
         </ToolbarItem>

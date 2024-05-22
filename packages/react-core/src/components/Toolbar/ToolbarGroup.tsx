@@ -34,21 +34,225 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
   alignItems?: 'start' | 'center' | 'baseline' | 'default';
   /** Vertical alignment */
   alignSelf?: 'start' | 'center' | 'baseline' | 'default';
-  /** Spacers at various breakpoints. */
-  spacer?: {
-    default?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
-    md?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
-    lg?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
-    xl?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
-    '2xl'?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+  /** Sets both the column and row gap at various breakpoints. */
+  gap?: {
+    default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    md?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    lg?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    xl?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    '2xl'?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
   };
-  /** Space items at various breakpoints. */
-  spaceItems?: {
-    default?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
-    md?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
-    lg?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
-    xl?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
-    '2xl'?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
+  /** Sets only the column gap at various breakpoints. */
+  columnGap?: {
+    default?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+    md?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+    lg?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+    xl?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+    '2xl'?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+  };
+  /** Sets only the row gap at various breakpoints. */
+  rowGap?: {
+    default?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+    md?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+    lg?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+    xl?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+    '2xl'?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+  };
+  /** Sets the margin-inline-start at various breakpoints. */
+  marginInlineStart?: {
+    default?:
+      | 'marginInlineStartNone'
+      | 'marginInlineStartXl'
+      | 'marginInlineStartSm'
+      | 'marginInlineStartMd'
+      | 'marginInlineStartLg'
+      | 'marginInlineStartXl'
+      | 'marginInlineStart2xl'
+      | 'marginInlineStart3xl'
+      | 'marginInlineStart4xl';
+    md?:
+      | 'marginInlineStartNone'
+      | 'marginInlineStartXl'
+      | 'marginInlineStartSm'
+      | 'marginInlineStartMd'
+      | 'marginInlineStartLg'
+      | 'marginInlineStartXl'
+      | 'marginInlineStart2xl'
+      | 'marginInlineStart3xl'
+      | 'marginInlineStart4xl';
+    lg?:
+      | 'marginInlineStartNone'
+      | 'marginInlineStartXl'
+      | 'marginInlineStartSm'
+      | 'marginInlineStartMd'
+      | 'marginInlineStartLg'
+      | 'marginInlineStartXl'
+      | 'marginInlineStart2xl'
+      | 'marginInlineStart3xl'
+      | 'marginInlineStart4xl';
+    xl?:
+      | 'marginInlineStartNone'
+      | 'marginInlineStartXl'
+      | 'marginInlineStartSm'
+      | 'marginInlineStartMd'
+      | 'marginInlineStartLg'
+      | 'marginInlineStartXl'
+      | 'marginInlineStart2xl'
+      | 'marginInlineStart3xl'
+      | 'marginInlineStart4xl';
+    '2xl'?:
+      | 'marginInlineStartNone'
+      | 'marginInlineStartXl'
+      | 'marginInlineStartSm'
+      | 'marginInlineStartMd'
+      | 'marginInlineStartLg'
+      | 'marginInlineStartXl'
+      | 'marginInlineStart2xl'
+      | 'marginInlineStart3xl'
+      | 'marginInlineStart4xl';
+  };
+  /** Sets the margin-inline-end at various breakpoints. */
+  marginInlineEnd?: {
+    default?:
+      | 'marginInlineEndNone'
+      | 'marginInlineEndXs'
+      | 'marginInlineEndSm'
+      | 'marginInlineEndMd'
+      | 'marginInlineEndLg'
+      | 'marginInlineEndXl'
+      | 'marginInlineEnd2xl'
+      | 'marginInlineEnd3xl'
+      | 'marginInlineEnd4xl';
+    md?:
+      | 'marginInlineEndNone'
+      | 'marginInlineEndXs'
+      | 'marginInlineEndSm'
+      | 'marginInlineEndMd'
+      | 'marginInlineEndLg'
+      | 'marginInlineEndXl'
+      | 'marginInlineEnd2xl'
+      | 'marginInlineEnd3xl'
+      | 'marginInlineEnd4xl';
+    lg?:
+      | 'marginInlineEndNone'
+      | 'marginInlineEndXs'
+      | 'marginInlineEndSm'
+      | 'marginInlineEndMd'
+      | 'marginInlineEndLg'
+      | 'marginInlineEndXl'
+      | 'marginInlineEnd2xl'
+      | 'marginInlineEnd3xl'
+      | 'marginInlineEnd4xl';
+    xl?:
+      | 'marginInlineEndNone'
+      | 'marginInlineEndXs'
+      | 'marginInlineEndSm'
+      | 'marginInlineEndMd'
+      | 'marginInlineEndLg'
+      | 'marginInlineEndXl'
+      | 'marginInlineEnd2xl'
+      | 'marginInlineEnd3xl'
+      | 'marginInlineEnd4xl';
+    '2xl'?:
+      | 'marginInlineEndNone'
+      | 'marginInlineEndXs'
+      | 'marginInlineEndSm'
+      | 'marginInlineEndMd'
+      | 'marginInlineEndLg'
+      | 'marginInlineEndXl'
+      | 'marginInlineEnd2xl'
+      | 'marginInlineEnd3xl'
+      | 'marginInlineEnd4xl';
   };
   /** Content to be rendered inside the data toolbar group */
   children?: React.ReactNode;
@@ -65,8 +269,11 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
       align,
       alignItems,
       alignSelf,
-      spacer,
-      spaceItems,
+      gap,
+      columnGap,
+      rowGap,
+      marginInlineStart,
+      marginInlineEnd,
       className,
       variant,
       children,
@@ -84,8 +291,11 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
               variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup'],
               formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
               formatBreakpointMods(align, styles, '', getBreakpoint(width)),
-              formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
-              formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(marginInlineStart, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(marginInlineEnd, styles, '', getBreakpoint(width)),
               alignItems === 'start' && styles.modifiers.alignItemsStart,
               alignItems === 'center' && styles.modifiers.alignItemsCenter,
               alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,

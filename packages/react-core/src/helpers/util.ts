@@ -273,12 +273,14 @@ export const setBreakpointCssVars = (
 
 export interface Mods {
   default?: string;
+  xs?: string;
   sm?: string;
   md?: string;
   lg?: string;
   xl?: string;
   '2xl'?: string;
   '3xl'?: string;
+  '4xl'?: string;
 }
 
 /**
