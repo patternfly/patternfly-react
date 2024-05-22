@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.13...@patternfly/react-core@5.4.0-prerelease.14) (2024-05-22)
+
+### Bug Fixes
+
+- **deps:** update dependency focus-trap to v7.5.4 ([#10401](https://github.com/patternfly/patternfly-react/issues/10401)) ([7c4430b](https://github.com/patternfly/patternfly-react/commit/7c4430bcba158939b951a2ab996af293d7ed2204))
+
 # [5.4.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.12...@patternfly/react-core@5.4.0-prerelease.13) (2024-05-20)
 
 **Note:** Version bump only for package @patternfly/react-core
