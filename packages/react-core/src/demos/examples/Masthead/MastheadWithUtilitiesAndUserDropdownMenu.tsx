@@ -383,7 +383,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
         <ToolbarGroup
           variant="icon-button-group"
           align={{ default: 'alignEnd' }}
-          spacer={{ default: 'spacerNone', md: 'spacerMd' }}
+          gap={{ default: 'gapNone', md: 'gapMd' }}
         >
           <ToolbarItem>
             <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} />

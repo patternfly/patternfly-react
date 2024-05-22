@@ -101,7 +101,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
             <ToolbarGroup
               variant="icon-button-group"
               align={{ default: 'alignEnd' }}
-              spacer={{ default: 'spacerNone', md: 'spacerMd' }}
+              gap={{ default: 'gapNone', md: 'gapMd' }}
             >
               {notificationBadge ?? (
                 <ToolbarItem>
