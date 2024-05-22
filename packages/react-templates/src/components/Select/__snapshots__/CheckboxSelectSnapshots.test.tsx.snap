@@ -5,6 +5,9 @@ exports[`checkbox select with no props snapshot 1`] = `
   <button
     aria-expanded="false"
     class="pf-v5-c-menu-toggle"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-1"
+    data-ouia-component-type="PF5/MenuToggle"
+    data-ouia-safe="true"
     style="width: 200px;"
     type="button"
   >
@@ -43,6 +46,9 @@ exports[`opened checkbox select snapshot 1`] = `
   <button
     aria-expanded="true"
     class="pf-v5-c-menu-toggle pf-m-expanded"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-2"
+    data-ouia-component-type="PF5/MenuToggle"
+    data-ouia-safe="true"
     style="width: 200px;"
     type="button"
   >
