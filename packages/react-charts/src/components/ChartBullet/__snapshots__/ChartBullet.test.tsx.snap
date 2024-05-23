@@ -380,7 +380,7 @@ A 0 0 0 0 1, 312.5, 85
           index="0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-bullet--qualitative-range--ColorScale--200, #92c5f9); stroke: var(--pf-v6-chart-bar--data--stroke, none); padding: 8px; stroke-width: 0;"
+          style="fill: var(--pf-v6-chart-bullet--qualitative-range--ColorScale--200, #e0e0e0); stroke: var(--pf-v6-chart-bar--data--stroke, none); padding: 8px; stroke-width: 0;"
         />
       </g>
       <g
@@ -399,7 +399,7 @@ A 0 0 0 0 1, 225, 85
           index="0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-bullet--qualitative-range--ColorScale--100, #92c5f9); stroke: var(--pf-v6-chart-bar--data--stroke, none); padding: 8px; stroke-width: 0;"
+          style="fill: var(--pf-v6-chart-bullet--qualitative-range--ColorScale--100, #f2f2f2); stroke: var(--pf-v6-chart-bar--data--stroke, none); padding: 8px; stroke-width: 0;"
         />
       </g>
       <g
