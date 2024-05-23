@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.0.0-alpha.60 (2024-05-23)
+
+### Features
+
+- **Toolbar:** updated spacer props to gap ([#10418](https://github.com/patternfly/patternfly-react/issues/10418)) ([29578a2](https://github.com/patternfly/patternfly-react/commit/29578a2f937456c07fb9c2d8f8ae23a1ad0b2b34))
+
 # [6.0.0-alpha.59](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.58...@patternfly/react-table@6.0.0-alpha.59) (2024-05-21)
 
 ### Features

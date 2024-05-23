@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.64](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.63...@patternfly/react-docs@7.0.0-alpha.64) (2024-05-23)
+
+### Features
+
+- **Toolbar:** updated spacer props to gap ([#10418](https://github.com/patternfly/patternfly-react/issues/10418)) ([29578a2](https://github.com/patternfly/patternfly-react/commit/29578a2f937456c07fb9c2d8f8ae23a1ad0b2b34))
+
 # [7.0.0-alpha.63](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.62...@patternfly/react-docs@7.0.0-alpha.63) (2024-05-23)
 
 **Note:** Version bump only for package @patternfly/react-docs
