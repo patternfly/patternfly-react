@@ -38,13 +38,119 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   alignItems?: 'start' | 'center' | 'baseline' | 'default';
   /** Vertical alignment */
   alignSelf?: 'start' | 'center' | 'baseline' | 'default';
-  /** Spacers at various breakpoints. */
-  spacer?: {
-    default?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
-    md?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
-    lg?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
-    xl?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
-    '2xl'?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+  /** Sets both the column and row gap at various breakpoints. */
+  gap?: {
+    default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    md?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    lg?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    xl?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    '2xl'?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+  };
+  /** Sets only the column gap at various breakpoints. */
+  columnGap?: {
+    default?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+    md?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+    lg?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+    xl?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+    '2xl'?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+  };
+  /** Sets only the row gap at various breakpoints. */
+  rowGap?: {
+    default?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+    md?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+    lg?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+    xl?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+    '2xl'?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
   };
   /** id for this data toolbar item */
   id?: string;
@@ -60,7 +166,9 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   className,
   variant,
   visibility,
-  spacer,
+  gap,
+  columnGap,
+  rowGap,
   align,
   alignSelf,
   alignItems,
@@ -86,7 +194,9 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
             isOverflowContainer && styles.modifiers.overflowContainer,
             formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
             formatBreakpointMods(align, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
             alignItems === 'start' && styles.modifiers.alignItemsStart,
             alignItems === 'center' && styles.modifiers.alignItemsCenter,
             alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,

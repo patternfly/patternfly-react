@@ -366,7 +366,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
             <ToolbarGroup
               variant="icon-button-group"
               align={{ default: 'alignEnd' }}
-              spacer={{ default: 'spacerNone', md: 'spacerMd' }}
+              gap={{ default: 'gapNone', md: 'gapMd' }}
             >
               <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
                 <ToolbarItem>

@@ -176,7 +176,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
   const headerToolbar = (
     <Toolbar isFullHeight>
       <ToolbarContent>
-        <ToolbarGroup spaceItems={{ default: 'spaceItemsNone' }} align={{ default: 'alignEnd' }}>
+        <ToolbarGroup align={{ default: 'alignEnd' }}>
           <ToolbarGroup variant="icon-button-group">
             <ToolbarItem visibility={{ default: 'visible' }} selected={isDrawerExpanded}>
               <NotificationBadge

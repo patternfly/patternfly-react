@@ -35,21 +35,119 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
     xl?: 'alignEnd' | 'alignStart';
     '2xl'?: 'alignEnd' | 'alignStart';
   };
-  /** Spacers at various breakpoints. */
-  spacer?: {
-    default?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
-    md?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
-    lg?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
-    xl?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
-    '2xl'?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+  /** Sets both the column and row gap at various breakpoints. */
+  gap?: {
+    default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    md?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    lg?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    xl?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    '2xl'?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
   };
-  /** Space items at various breakpoints. */
-  spaceItems?: {
-    default?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
-    md?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
-    lg?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
-    xl?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
-    '2xl'?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
+  /** Sets only the column gap at various breakpoints. */
+  columnGap?: {
+    default?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+    md?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+    lg?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+    xl?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+    '2xl'?:
+      | 'columnGapNone'
+      | 'columnGapXs'
+      | 'columnGapSm'
+      | 'columnGapMd'
+      | 'columnGapLg'
+      | 'columnGapXl'
+      | 'columnGap_2xl'
+      | 'columnGap_3xl'
+      | 'columnGap_4xl';
+  };
+  /** Sets only the row gap at various breakpoints. */
+  rowGap?: {
+    default?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+    md?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+    lg?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+    xl?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
+    '2xl'?:
+      | 'rowGapNone'
+      | 'rowGapXs'
+      | 'rowGapSm'
+      | 'rowGapMd'
+      | 'rowGapLg'
+      | 'rowGapXl'
+      | 'rowGap_2xl'
+      | 'rowGao_3xl'
+      | 'rowGap_4xl';
   };
   /** Reference to a chip container group for filters inside the toolbar toggle group */
   chipContainerRef?: React.RefObject<any>;
@@ -79,8 +177,9 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
       visibility,
       breakpoint,
       alignment,
-      spacer,
-      spaceItems,
+      gap,
+      columnGap,
+      rowGap,
       className,
       children,
       isExpanded,
@@ -166,8 +265,9 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
                           formatBreakpointMods(breakpointMod, styles, '', getBreakpoint(width)),
                           formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
                           formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
-                          formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
-                          formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
+                          formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
+                          formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
+                          formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
                           className
                         )}
                         {...props}
