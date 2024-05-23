@@ -8,24 +8,17 @@ export const ToolbarSpacers: React.FunctionComponent = () => {
       <ToolbarItem>
         <Button variant="secondary">Action</Button>
       </ToolbarItem>
-      <ToolbarItem marginInlineEnd={{ default: 'marginInlineEndSm' }}>
+      <ToolbarItem>
         <Button variant="secondary">Action</Button>
       </ToolbarItem>
-      <ToolbarItem marginInlineEnd={{ default: 'marginInlineEndMd' }}>
+      <ToolbarItem>
         <Button variant="secondary">Action</Button>
       </ToolbarItem>
-      <ToolbarItem marginInlineEnd={{ default: 'marginInlineEndLg' }}>
+      <ToolbarItem>
         <Button variant="secondary">Action</Button>
       </ToolbarItem>
       <ToolbarItem variant="separator"></ToolbarItem>
-      <ToolbarItem
-        marginInlineEnd={{
-          default: 'marginInlineEndNone',
-          md: 'marginInlineEndSm',
-          lg: 'marginInlineEndMd',
-          xl: 'marginInlineEndLg'
-        }}
-      >
+      <ToolbarItem>
         <Button variant="secondary">Action</Button>
       </ToolbarItem>
       <ToolbarItem>

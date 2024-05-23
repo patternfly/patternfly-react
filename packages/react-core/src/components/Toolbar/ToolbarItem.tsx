@@ -152,112 +152,6 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
       | 'rowGao_3xl'
       | 'rowGap_4xl';
   };
-  /** Sets the margin-inline-start at various breakpoints. */
-  marginInlineStart?: {
-    default?:
-      | 'marginInlineStartNone'
-      | 'marginInlineStartXl'
-      | 'marginInlineStartSm'
-      | 'marginInlineStartMd'
-      | 'marginInlineStartLg'
-      | 'marginInlineStartXl'
-      | 'marginInlineStart2xl'
-      | 'marginInlineStart3xl'
-      | 'marginInlineStart4xl';
-    md?:
-      | 'marginInlineStartNone'
-      | 'marginInlineStartXl'
-      | 'marginInlineStartSm'
-      | 'marginInlineStartMd'
-      | 'marginInlineStartLg'
-      | 'marginInlineStartXl'
-      | 'marginInlineStart2xl'
-      | 'marginInlineStart3xl'
-      | 'marginInlineStart4xl';
-    lg?:
-      | 'marginInlineStartNone'
-      | 'marginInlineStartXl'
-      | 'marginInlineStartSm'
-      | 'marginInlineStartMd'
-      | 'marginInlineStartLg'
-      | 'marginInlineStartXl'
-      | 'marginInlineStart2xl'
-      | 'marginInlineStart3xl'
-      | 'marginInlineStart4xl';
-    xl?:
-      | 'marginInlineStartNone'
-      | 'marginInlineStartXl'
-      | 'marginInlineStartSm'
-      | 'marginInlineStartMd'
-      | 'marginInlineStartLg'
-      | 'marginInlineStartXl'
-      | 'marginInlineStart2xl'
-      | 'marginInlineStart3xl'
-      | 'marginInlineStart4xl';
-    '2xl'?:
-      | 'marginInlineStartNone'
-      | 'marginInlineStartXl'
-      | 'marginInlineStartSm'
-      | 'marginInlineStartMd'
-      | 'marginInlineStartLg'
-      | 'marginInlineStartXl'
-      | 'marginInlineStart2xl'
-      | 'marginInlineStart3xl'
-      | 'marginInlineStart4xl';
-  };
-  /** Sets the margin-inline-end at various breakpoints. */
-  marginInlineEnd?: {
-    default?:
-      | 'marginInlineEndNone'
-      | 'marginInlineEndXs'
-      | 'marginInlineEndSm'
-      | 'marginInlineEndMd'
-      | 'marginInlineEndLg'
-      | 'marginInlineEndXl'
-      | 'marginInlineEnd2xl'
-      | 'marginInlineEnd3xl'
-      | 'marginInlineEnd4xl';
-    md?:
-      | 'marginInlineEndNone'
-      | 'marginInlineEndXs'
-      | 'marginInlineEndSm'
-      | 'marginInlineEndMd'
-      | 'marginInlineEndLg'
-      | 'marginInlineEndXl'
-      | 'marginInlineEnd2xl'
-      | 'marginInlineEnd3xl'
-      | 'marginInlineEnd4xl';
-    lg?:
-      | 'marginInlineEndNone'
-      | 'marginInlineEndXs'
-      | 'marginInlineEndSm'
-      | 'marginInlineEndMd'
-      | 'marginInlineEndLg'
-      | 'marginInlineEndXl'
-      | 'marginInlineEnd2xl'
-      | 'marginInlineEnd3xl'
-      | 'marginInlineEnd4xl';
-    xl?:
-      | 'marginInlineEndNone'
-      | 'marginInlineEndXs'
-      | 'marginInlineEndSm'
-      | 'marginInlineEndMd'
-      | 'marginInlineEndLg'
-      | 'marginInlineEndXl'
-      | 'marginInlineEnd2xl'
-      | 'marginInlineEnd3xl'
-      | 'marginInlineEnd4xl';
-    '2xl'?:
-      | 'marginInlineEndNone'
-      | 'marginInlineEndXs'
-      | 'marginInlineEndSm'
-      | 'marginInlineEndMd'
-      | 'marginInlineEndLg'
-      | 'marginInlineEndXl'
-      | 'marginInlineEnd2xl'
-      | 'marginInlineEnd3xl'
-      | 'marginInlineEnd4xl';
-  };
   /** id for this data toolbar item */
   id?: string;
   /** Flag indicating if the expand-all variant is expanded or not */
@@ -275,8 +169,6 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   gap,
   columnGap,
   rowGap,
-  marginInlineStart,
-  marginInlineEnd,
   align,
   alignSelf,
   alignItems,
@@ -305,8 +197,6 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
             formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(marginInlineStart, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(marginInlineEnd, styles, '', getBreakpoint(width)),
             alignItems === 'start' && styles.modifiers.alignItemsStart,
             alignItems === 'center' && styles.modifiers.alignItemsCenter,
             alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,

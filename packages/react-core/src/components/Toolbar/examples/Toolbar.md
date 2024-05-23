@@ -28,7 +28,7 @@ Note: This example does not demonstrate responsive toolbar behavior. Responsive 
 
 You may adjust the space between toolbar items to arrange them into groups. Read our spacers documentation to learn more about using spacers.
 
-Items are spaced “16px” apart by default via their parents' `gap` or `columnGap` property. To adjust the size of the space between individual items, use the `marginInlineStart` and `marginInlineEnd` properties of each `<ToolbarItem>`. You can set the property values at multiple breakpoints, including "default", "md", "lg", "xl", and "2xl".
+Items are spaced “16px” apart by default via their parents' `gap` or `columnGap` property. You can set the property values at multiple breakpoints, including "default", "md", "lg", "xl", and "2xl".
 
 ```ts file="./ToolbarSpacers.tsx"
 

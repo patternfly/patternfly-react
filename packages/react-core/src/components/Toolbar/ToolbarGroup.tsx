@@ -36,7 +36,7 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
   alignSelf?: 'start' | 'center' | 'baseline' | 'default';
   /** Sets both the column and row gap at various breakpoints. */
   gap?: {
-    default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl' | 'gap_3xl' | 'gap_4xl';
     md?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
     lg?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
     xl?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
@@ -148,112 +148,6 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
       | 'rowGao_3xl'
       | 'rowGap_4xl';
   };
-  /** Sets the margin-inline-start at various breakpoints. */
-  marginInlineStart?: {
-    default?:
-      | 'marginInlineStartNone'
-      | 'marginInlineStartXl'
-      | 'marginInlineStartSm'
-      | 'marginInlineStartMd'
-      | 'marginInlineStartLg'
-      | 'marginInlineStartXl'
-      | 'marginInlineStart2xl'
-      | 'marginInlineStart3xl'
-      | 'marginInlineStart4xl';
-    md?:
-      | 'marginInlineStartNone'
-      | 'marginInlineStartXl'
-      | 'marginInlineStartSm'
-      | 'marginInlineStartMd'
-      | 'marginInlineStartLg'
-      | 'marginInlineStartXl'
-      | 'marginInlineStart2xl'
-      | 'marginInlineStart3xl'
-      | 'marginInlineStart4xl';
-    lg?:
-      | 'marginInlineStartNone'
-      | 'marginInlineStartXl'
-      | 'marginInlineStartSm'
-      | 'marginInlineStartMd'
-      | 'marginInlineStartLg'
-      | 'marginInlineStartXl'
-      | 'marginInlineStart2xl'
-      | 'marginInlineStart3xl'
-      | 'marginInlineStart4xl';
-    xl?:
-      | 'marginInlineStartNone'
-      | 'marginInlineStartXl'
-      | 'marginInlineStartSm'
-      | 'marginInlineStartMd'
-      | 'marginInlineStartLg'
-      | 'marginInlineStartXl'
-      | 'marginInlineStart2xl'
-      | 'marginInlineStart3xl'
-      | 'marginInlineStart4xl';
-    '2xl'?:
-      | 'marginInlineStartNone'
-      | 'marginInlineStartXl'
-      | 'marginInlineStartSm'
-      | 'marginInlineStartMd'
-      | 'marginInlineStartLg'
-      | 'marginInlineStartXl'
-      | 'marginInlineStart2xl'
-      | 'marginInlineStart3xl'
-      | 'marginInlineStart4xl';
-  };
-  /** Sets the margin-inline-end at various breakpoints. */
-  marginInlineEnd?: {
-    default?:
-      | 'marginInlineEndNone'
-      | 'marginInlineEndXs'
-      | 'marginInlineEndSm'
-      | 'marginInlineEndMd'
-      | 'marginInlineEndLg'
-      | 'marginInlineEndXl'
-      | 'marginInlineEnd2xl'
-      | 'marginInlineEnd3xl'
-      | 'marginInlineEnd4xl';
-    md?:
-      | 'marginInlineEndNone'
-      | 'marginInlineEndXs'
-      | 'marginInlineEndSm'
-      | 'marginInlineEndMd'
-      | 'marginInlineEndLg'
-      | 'marginInlineEndXl'
-      | 'marginInlineEnd2xl'
-      | 'marginInlineEnd3xl'
-      | 'marginInlineEnd4xl';
-    lg?:
-      | 'marginInlineEndNone'
-      | 'marginInlineEndXs'
-      | 'marginInlineEndSm'
-      | 'marginInlineEndMd'
-      | 'marginInlineEndLg'
-      | 'marginInlineEndXl'
-      | 'marginInlineEnd2xl'
-      | 'marginInlineEnd3xl'
-      | 'marginInlineEnd4xl';
-    xl?:
-      | 'marginInlineEndNone'
-      | 'marginInlineEndXs'
-      | 'marginInlineEndSm'
-      | 'marginInlineEndMd'
-      | 'marginInlineEndLg'
-      | 'marginInlineEndXl'
-      | 'marginInlineEnd2xl'
-      | 'marginInlineEnd3xl'
-      | 'marginInlineEnd4xl';
-    '2xl'?:
-      | 'marginInlineEndNone'
-      | 'marginInlineEndXs'
-      | 'marginInlineEndSm'
-      | 'marginInlineEndMd'
-      | 'marginInlineEndLg'
-      | 'marginInlineEndXl'
-      | 'marginInlineEnd2xl'
-      | 'marginInlineEnd3xl'
-      | 'marginInlineEnd4xl';
-  };
   /** Content to be rendered inside the data toolbar group */
   children?: React.ReactNode;
   /** Flag that modifies the toolbar group to hide overflow and respond to available space. Used for horizontal navigation. */
@@ -272,8 +166,6 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
       gap,
       columnGap,
       rowGap,
-      marginInlineStart,
-      marginInlineEnd,
       className,
       variant,
       children,
@@ -294,8 +186,6 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
               formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
               formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
               formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
-              formatBreakpointMods(marginInlineStart, styles, '', getBreakpoint(width)),
-              formatBreakpointMods(marginInlineEnd, styles, '', getBreakpoint(width)),
               alignItems === 'start' && styles.modifiers.alignItemsStart,
               alignItems === 'center' && styles.modifiers.alignItemsCenter,
               alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,
