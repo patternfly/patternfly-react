@@ -162,7 +162,7 @@ export const Wizard = ({
       <div
         className={css(styles.wizard, className)}
         style={{
-          ...(height ? { [wizardHeightToken.name]: height } : {}),
+          ...(height ? { [wizardHeightToken.name]: typeof height === 'number' ? `${height}px` : height } : {}),
           ...(width ? { width } : {})
         }}
         {...wrapperProps}
