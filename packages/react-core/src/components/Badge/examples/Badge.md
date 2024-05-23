@@ -18,3 +18,8 @@ import './Badge.css';
 
 ```ts file="./BadgeUnread.tsx"
 ```
+
+## Disabled
+
+```ts file="./BadgeDisabled.tsx"
+```
