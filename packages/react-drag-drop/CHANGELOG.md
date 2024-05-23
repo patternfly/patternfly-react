@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.0.0-alpha.40...@patternfly/react-drag-drop@6.0.0-alpha.41) (2024-05-23)
+
+### Features
+
+- **DragDropSort:** update drag button usage ([#10356](https://github.com/patternfly/patternfly-react/issues/10356)) ([679d39c](https://github.com/patternfly/patternfly-react/commit/679d39c022eb19ff66752b8b989569a6808a0c46))
+
 # [6.0.0-alpha.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.0.0-alpha.39...@patternfly/react-drag-drop@6.0.0-alpha.40) (2024-05-21)
 
 **Note:** Version bump only for package @patternfly/react-drag-drop
