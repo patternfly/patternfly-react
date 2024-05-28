@@ -17,7 +17,7 @@ export const SelectInModal = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   const [isTimePickerOpen, setIsTimePickerOpen] = React.useState(false);
-  const [selection, setSelection] = React.useState(null);
+  const [selection, setSelection] = React.useState<string>();
 
   const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setIsModalOpen(!isModalOpen);
@@ -45,11 +45,11 @@ export const SelectInModal = () => {
     setIsSelectOpen(isOpen);
   };
 
-  const onSelect = (event: React.MouseEvent | React.ChangeEvent, newSelection: string | SelectOptionObject) => {
-    setSelection(newSelection);
+  const onSelect = (_event: React.MouseEvent | React.ChangeEvent, newSelection: string | SelectOptionObject) => {
+    setSelection(newSelection.toString());
   };
 
-  const inputGroupRef1 = React.useRef(null);
+  const inputGroupRef1 = React.useRef<HTMLDivElement>(null);
   return (
     <React.Fragment>
       <Button id="modal-for-select-in-modal" variant="primary" onClick={handleModalToggle}>
@@ -80,7 +80,7 @@ export const SelectInModal = () => {
               onSelect={onSelect}
               selections={selection}
               isOpen={isSelectOpen}
-              menuAppendTo={() => inputGroupRef1.current}
+              menuAppendTo={() => inputGroupRef1.current!}
               toggleId="select-in-modal-select"
             >
               {options.map((option, index) => (
@@ -98,8 +98,8 @@ export const SelectInModal = () => {
             <TimePicker
               id="select-in-modal-time-picker"
               isOpen={isTimePickerOpen}
-              setIsOpen={setIsTimePickerOpen}
-              menuAppendTo={() => inputGroupRef1.current}
+              setIsOpen={(isOpen) => setIsTimePickerOpen(isOpen ?? false)}
+              menuAppendTo={() => inputGroupRef1.current!}
             />
           </InputGroupItem>
         </InputGroup>

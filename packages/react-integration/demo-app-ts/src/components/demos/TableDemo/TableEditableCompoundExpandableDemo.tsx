@@ -200,9 +200,9 @@ export class TableEditableCompoundExpandableDemo extends React.Component<TablePr
     this.onExpand = this.onExpand.bind(this);
   }
 
-  onExpand(event: React.MouseEvent, rowIndex: number, colIndex: number, isOpen: boolean) {
+  onExpand(_event: React.MouseEvent, rowIndex: number, colIndex: number, isOpen: boolean) {
     const newRows = Array.from(this.state.rows);
-    const rowCells = Array.from(newRows[rowIndex].cells) as IRowCell[];
+    const rowCells = Array.from(newRows[rowIndex].cells as IRowCell[]) ;
     const thisCell = rowCells[colIndex];
 
     if (!isOpen) {

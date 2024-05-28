@@ -77,7 +77,11 @@ export class SelectViewMoreGroupedDemo extends Component<SelectViewMoreGroupedDe
     });
   };
 
-  onSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string, isPlaceholder: boolean) => {
+  onSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {
@@ -89,7 +93,7 @@ export class SelectViewMoreGroupedDemo extends Component<SelectViewMoreGroupedDe
     }
   };
 
-  onSelectCheck = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  onSelectCheck = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     const { selectedCheck } = this.state;
     if (selectedCheck.includes(selection.toString())) {
       this.setState(

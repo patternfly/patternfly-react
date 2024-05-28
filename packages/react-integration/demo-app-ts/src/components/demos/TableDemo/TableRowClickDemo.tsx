@@ -1,11 +1,9 @@
 import * as React from 'react';
 import {
-  IRow,
-  IExtraRowData,
-  IComputedData,
-  ICell
+  ICell,
+  IRow
 } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
+import { Table, TableBody, TableHeader, TableProps, type OnRowClick } from '@patternfly/react-table/deprecated';
 
 interface ITableRowClickDemoState {
   rows: IRow[];
@@ -14,7 +12,7 @@ interface ITableRowClickDemoState {
 
 export class TableRowClickDemo extends React.Component<TableProps, ITableRowClickDemoState> {
   static displayName = 'TableRowClickDemo';
-  rowClickHandler: (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) => void;
+  rowClickHandler: OnRowClick;
   constructor(props: TableProps) {
     super(props);
     this.state = {
@@ -37,7 +35,7 @@ export class TableRowClickDemo extends React.Component<TableProps, ITableRowClic
         }
       ]
     };
-    this.rowClickHandler = (event: React.MouseEvent, row: IRow) => {
+    this.rowClickHandler = (_event, row) => {
       // eslint-disable-next-line no-console
       console.log('handle row click', row);
     };

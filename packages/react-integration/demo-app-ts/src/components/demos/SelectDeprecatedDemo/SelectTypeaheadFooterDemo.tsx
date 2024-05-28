@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/deprecated';
+import { Select, SelectOption, SelectVariant, SelectOptionObject } from '@patternfly/react-core/deprecated';
 
 /* eslint-disable no-console */
 export interface SelectTypeaheadFooterDemoState {
@@ -38,7 +38,11 @@ export class SelectTypeaheadFooterDemo extends React.Component<SelectTypeaheadFo
     });
   };
 
-  onSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string, isPlaceholder: boolean) => {
+  onSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {
