@@ -128,7 +128,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.11.6", "@babel/core@^7.12.3", "@babel/core@^7.24.3", "@babel/core@^7.8.0":
+"@babel/core@^7.11.6", "@babel/core@^7.12.3", "@babel/core@^7.24.3", "@babel/core@^7.24.6", "@babel/core@^7.8.0":
   version "7.24.6"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.24.6.tgz#8650e0e4b03589ebe886c4e4a60398db0a7ec787"
   integrity sha512-qAHSfAdVyFmIvl0VHELib8xar7ONuSHrE2hLnsaWkYNTI68dmi1x8GYDhJjMI/e7XWal9QBlZkwbOnkcw7Z8gQ==
@@ -190,7 +190,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/eslint-parser@^7.19.1":
+"@babel/eslint-parser@^7.24.6":
   version "7.24.6"
   resolved "https://registry.yarnpkg.com/@babel/eslint-parser/-/eslint-parser-7.24.6.tgz#7f0ecc0f29307b8696e83ff6a9d8b4f3e0421ad2"
   integrity sha512-Q1BfQX42zXHx732PLW0w4+Y3wJjoZKEMaatFUEAmQ7Z+jCXxinzeqX9bvv2Q8xNPes/H6F0I23oGkcgjaItmLw==
@@ -1620,7 +1620,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/preset-react@^7.24.1":
+"@babel/preset-react@^7.24.1", "@babel/preset-react@^7.24.6":
   version "7.24.6"
   resolved "https://registry.yarnpkg.com/@babel/preset-react/-/preset-react-7.24.6.tgz#92eace66dce577e5263113eb82235a0d45096cae"
   integrity sha512-8mpzh1bWvmINmwM3xpz6ahu57mNaWavMm+wBNjQ4AFu1nghKBiIRET7l/Wmj4drXany/BBGjJZngICcD98F1iw==
@@ -1632,7 +1632,7 @@
     "@babel/plugin-transform-react-jsx-development" "^7.24.6"
     "@babel/plugin-transform-react-pure-annotations" "^7.24.6"
 
-"@babel/preset-typescript@^7.24.1":
+"@babel/preset-typescript@^7.24.6":
   version "7.24.6"
   resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.24.6.tgz#27057470fb981c31338bdb897fc3d9aa0cb7dab2"
   integrity sha512-U10aHPDnokCFRXgyT/MaIRTivUu2K/mu0vJlwRS9LxJmJet+PFQNKpggPyFCUtC6zWSBPjvxjnpNkAn3Uw2m5w==
@@ -3727,7 +3727,9 @@
     "@types/react" "*"
 
 "@types/react-router-dom@^5.3.3":
-  version "5.3.4"
+  version "5.3.3"
+  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-5.3.3.tgz#e9d6b4a66fcdbd651a5f106c2656a30088cc1e83"
+  integrity sha512-kpqnYK4wcdm5UaWI3fLcELopqLrHgLqNsdpHauzlQktfkHL3npOSwtj1Uz9oKBAzs7lFtVkV8j83voAz2D8fhw==
   dependencies:
     "@types/history" "^4.7.11"
     "@types/react" "*"
