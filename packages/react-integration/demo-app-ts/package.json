@@ -12,8 +12,8 @@
     "@patternfly/react-core": "^5.4.0-prerelease.14",
     "react": "^18",
     "react-dom": "^18",
-    "react-router": "^5.3.3",
-    "react-router-dom": "^5.3.3"
+    "react-router": "^5.3.4",
+    "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.13",
