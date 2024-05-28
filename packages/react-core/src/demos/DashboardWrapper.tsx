@@ -49,7 +49,7 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
   children,
   mainContainerId,
   breadcrumb,
-  header,
+  masthead,
   sidebar,
   sidebarNavOpen,
   onPageResize,
@@ -106,7 +106,7 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
 
   return (
     <Page
-      header={header ?? <DashboardHeader />}
+      masthead={masthead ?? <DashboardHeader />}
       sidebar={sidebar ?? _sidebar}
       isManagedSidebar
       skipToContent={PageSkipToContent}

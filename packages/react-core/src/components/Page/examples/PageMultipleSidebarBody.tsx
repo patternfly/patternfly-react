@@ -31,7 +31,7 @@ export const PageMultipleSidebarBody: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const header = (
+  const masthead = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton
@@ -64,7 +64,7 @@ export const PageMultipleSidebarBody: React.FunctionComponent = () => {
   );
 
   return (
-    <Page header={header} sidebar={sidebar}>
+    <Page masthead={masthead} sidebar={sidebar}>
       <PageSection>Section 1</PageSection>
       <PageSection>Section 2</PageSection>
       <PageSection>Section 3</PageSection>

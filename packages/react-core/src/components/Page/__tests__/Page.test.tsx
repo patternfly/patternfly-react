@@ -22,7 +22,7 @@ const props = {
 
 describe('Page', () => {
   test('Check page vertical layout example against snapshot', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = (
       <PageSidebar isSidebarOpen>
         <PageSidebarBody>Navigation</PageSidebarBody>
@@ -30,7 +30,7 @@ describe('Page', () => {
     );
 
     const { asFragment } = render(
-      <Page {...props} header={Header} sidebar={Sidebar}>
+      <Page {...props} masthead={masthead} sidebar={Sidebar}>
         <PageSection variant="default">Section with default background</PageSection>
       </Page>
     );
@@ -39,7 +39,7 @@ describe('Page', () => {
   });
 
   test('Check dark page against snapshot', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = (
       <PageSidebar isSidebarOpen>
         <PageSidebarBody>Navigation</PageSidebarBody>
@@ -47,7 +47,7 @@ describe('Page', () => {
     );
 
     const { asFragment } = render(
-      <Page {...props} header={Header} sidebar={Sidebar}>
+      <Page {...props} masthead={masthead} sidebar={Sidebar}>
         <PageSection variant="default">Section with default background</PageSection>
       </Page>
     );
@@ -56,11 +56,11 @@ describe('Page', () => {
   });
 
   test('Check page horizontal layout example against snapshot', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
 
     const { asFragment } = render(
-      <Page {...props} header={Header} sidebar={Sidebar}>
+      <Page {...props} masthead={masthead} sidebar={Sidebar}>
         <PageSection variant="default">Section with default background</PageSection>
       </Page>
     );
@@ -69,7 +69,7 @@ describe('Page', () => {
   });
 
   test('Check page to verify breadcrumb is created', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
     const PageBreadcrumb = () => (
       <Breadcrumb>
@@ -83,7 +83,7 @@ describe('Page', () => {
     );
 
     const { asFragment } = render(
-      <Page {...props} header={Header} sidebar={Sidebar} breadcrumb={<PageBreadcrumb />}>
+      <Page {...props} masthead={masthead} sidebar={Sidebar} breadcrumb={<PageBreadcrumb />}>
         <PageSection variant="default">Section with default background</PageSection>
       </Page>
     );
@@ -93,7 +93,7 @@ describe('Page', () => {
   });
 
   test('Verify sticky top breadcrumb on all height breakpoints', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
     const PageBreadcrumb = () => (
       <Breadcrumb>
@@ -109,7 +109,7 @@ describe('Page', () => {
     const { asFragment } = render(
       <Page
         {...props}
-        header={Header}
+        masthead={masthead}
         sidebar={Sidebar}
         breadcrumb={<PageBreadcrumb />}
         breadcrumbProps={{ stickyOnBreakpoint: { sm: 'top', md: 'top', lg: 'top', xl: 'top', '2xl': 'top' } }}
@@ -123,7 +123,7 @@ describe('Page', () => {
   });
 
   test('Verify sticky bottom breadcrumb on all height breakpoints', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
     const PageBreadcrumb = () => (
       <Breadcrumb>
@@ -139,7 +139,7 @@ describe('Page', () => {
     const { asFragment } = render(
       <Page
         {...props}
-        header={Header}
+        masthead={masthead}
         sidebar={Sidebar}
         breadcrumb={<PageBreadcrumb />}
         breadcrumbProps={{
@@ -155,11 +155,11 @@ describe('Page', () => {
   });
 
   test('Check page to verify breadcrumb is created - PageBreadcrumb syntax', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
 
     const { asFragment } = render(
-      <Page {...props} header={Header} sidebar={Sidebar}>
+      <Page {...props} masthead={masthead} sidebar={Sidebar}>
         <PageBreadcrumb>
           <Breadcrumb>
             <BreadcrumbItem>Section Home</BreadcrumbItem>
@@ -179,11 +179,11 @@ describe('Page', () => {
   });
 
   test('Verify sticky top breadcrumb on all height breakpoints - PageBreadcrumb syntax', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
 
     const { asFragment } = render(
-      <Page {...props} header={Header} sidebar={Sidebar}>
+      <Page {...props} masthead={masthead} sidebar={Sidebar}>
         <PageBreadcrumb stickyOnBreakpoint={{ sm: 'top', md: 'top', lg: 'top', xl: 'top', '2xl': 'top' }}>
           <Breadcrumb>
             <BreadcrumbItem>Section Home</BreadcrumbItem>
@@ -203,11 +203,11 @@ describe('Page', () => {
   });
 
   test('Sticky bottom breadcrumb on all height breakpoints - PageBreadcrumb syntax', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
 
     const { asFragment } = render(
-      <Page {...props} header={Header} sidebar={Sidebar}>
+      <Page {...props} masthead={masthead} sidebar={Sidebar}>
         <PageBreadcrumb
           stickyOnBreakpoint={{ sm: 'bottom', md: 'bottom', lg: 'bottom', xl: 'bottom', '2xl': 'bottom' }}
         >
@@ -229,11 +229,11 @@ describe('Page', () => {
   });
 
   test('Check page to verify nav is created - PageNavigation syntax', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
 
     const { asFragment } = render(
-      <Page {...props} header={Header} sidebar={Sidebar}>
+      <Page {...props} masthead={masthead} sidebar={Sidebar}>
         <PageNavigation>
           <Nav aria-label="Nav" variant="horizontal-subnav">
             <NavList>
@@ -256,11 +256,11 @@ describe('Page', () => {
   });
 
   test('Check page to verify grouped nav and breadcrumb - new components syntax', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
 
     const { asFragment } = render(
-      <Page {...props} header={Header} sidebar={Sidebar}>
+      <Page {...props} masthead={masthead} sidebar={Sidebar}>
         <PageGroup stickyOnBreakpoint={{ default: 'bottom' }}>
           <PageBreadcrumb>
             <Breadcrumb>
@@ -295,7 +295,7 @@ describe('Page', () => {
   });
 
   test('Check page to verify grouped nav and breadcrumb - old / props syntax', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
     const crumb = (
       <PageBreadcrumb>
@@ -326,7 +326,7 @@ describe('Page', () => {
     const { asFragment } = render(
       <Page
         {...props}
-        header={Header}
+        masthead={masthead}
         sidebar={Sidebar}
         breadcrumb={crumb}
         horizontalSubnav={nav}
@@ -349,7 +349,7 @@ describe('Page', () => {
   });
 
   test('Check page to verify skip to content points to main content region', () => {
-    const Header = <Masthead />;
+    const masthead = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
     const PageBreadcrumb = (
       <Breadcrumb>
@@ -367,7 +367,7 @@ describe('Page', () => {
     const { asFragment } = render(
       <Page
         {...props}
-        header={Header}
+        masthead={masthead}
         sidebar={Sidebar}
         breadcrumb={PageBreadcrumb}
         skipToContent={PageSkipToContent}

@@ -73,7 +73,7 @@ export const NavGrouped: React.FunctionComponent = () => {
   return (
     <>
       <Page
-        header={<DashboardHeader />}
+        masthead={<DashboardHeader />}
         sidebar={Sidebar}
         isManagedSidebar
         skipToContent={PageSkipToContent}
