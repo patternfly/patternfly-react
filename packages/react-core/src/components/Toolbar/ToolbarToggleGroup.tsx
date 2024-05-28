@@ -106,7 +106,7 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
       | 'rowGapLg'
       | 'rowGapXl'
       | 'rowGap_2xl'
-      | 'rowGao_3xl'
+      | 'rowGap_3xl'
       | 'rowGap_4xl';
     md?:
       | 'rowGapNone'
@@ -116,7 +116,7 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
       | 'rowGapLg'
       | 'rowGapXl'
       | 'rowGap_2xl'
-      | 'rowGao_3xl'
+      | 'rowGap_3xl'
       | 'rowGap_4xl';
     lg?:
       | 'rowGapNone'
@@ -126,7 +126,7 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
       | 'rowGapLg'
       | 'rowGapXl'
       | 'rowGap_2xl'
-      | 'rowGao_3xl'
+      | 'rowGap_3xl'
       | 'rowGap_4xl';
     xl?:
       | 'rowGapNone'
@@ -136,7 +136,7 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
       | 'rowGapLg'
       | 'rowGapXl'
       | 'rowGap_2xl'
-      | 'rowGao_3xl'
+      | 'rowGap_3xl'
       | 'rowGap_4xl';
     '2xl'?:
       | 'rowGapNone'
@@ -146,7 +146,7 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
       | 'rowGapLg'
       | 'rowGapXl'
       | 'rowGap_2xl'
-      | 'rowGao_3xl'
+      | 'rowGap_3xl'
       | 'rowGap_4xl';
   };
   /** Reference to a chip container group for filters inside the toolbar toggle group */
