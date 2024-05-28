@@ -34,7 +34,7 @@
     "@patternfly/react-tokens": "^5.4.0-prerelease.4"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^5.8.2",
+    "@patternfly/documentation-framework": "^5.15.7",
     "@patternfly/patternfly-a11y": "4.3.1"
   },
   "keywords": [
