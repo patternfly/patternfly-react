@@ -1,7 +1,7 @@
 {
   "name": "demo-app-ts",
   "private": true,
-  "version": "5.1.1-prerelease.119",
+  "version": "5.1.1-prerelease.120",
   "scripts": {
     "build:demo-app": "webpack --mode production",
     "start:demo-app": "webpack-dev-server",
