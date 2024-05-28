@@ -24,7 +24,7 @@ export const PageMainSectionPadding: React.FunctionComponent = () => {
   };
 
   const headerToolbar = (
-    <Toolbar id="main-padding-toolbar">
+    <Toolbar id="main-variations-toolbar">
       <ToolbarContent>
         <ToolbarItem>header-tools</ToolbarItem>
       </ToolbarContent>
@@ -39,7 +39,7 @@ export const PageMainSectionPadding: React.FunctionComponent = () => {
           aria-label="Global navigation"
           isSidebarOpen={isSidebarOpen}
           onSidebarToggle={onSidebarToggle}
-          id="main-padding-nav-toggle"
+          id="main-variations-nav-toggle"
         >
           <BarsIcon />
         </PageToggleButton>
@@ -54,7 +54,7 @@ export const PageMainSectionPadding: React.FunctionComponent = () => {
   );
 
   const sidebar = (
-    <PageSidebar isSidebarOpen={isSidebarOpen} id="main-padding-sidebar">
+    <PageSidebar isSidebarOpen={isSidebarOpen} id="main-variations-sidebar">
       <PageSidebarBody>Navigation</PageSidebarBody>
     </PageSidebar>
   );
