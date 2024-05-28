@@ -2,6 +2,7 @@ import React from 'react';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+import wizardHeightToken from '@patternfly/react-tokens/dist/esm/c_wizard_Height';
 
 import {
   isWizardParentStep,
@@ -161,7 +162,7 @@ export const Wizard = ({
       <div
         className={css(styles.wizard, className)}
         style={{
-          ...(height ? { height } : {}),
+          ...(height ? { [wizardHeightToken.name]: typeof height === 'number' ? `${height}px` : height } : {}),
           ...(width ? { width } : {})
         }}
         {...wrapperProps}
