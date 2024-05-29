@@ -13,6 +13,8 @@ import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
 
+jest.mock('../../../helpers/GenerateId/GenerateId');
+
 describe('Toolbar', () => {
   it('should render inset', () => {
     const items = (

@@ -31,7 +31,7 @@ export class PopoverDemo extends Component {
             headerContent={headerContent}
             bodyContent={bodyContent}
             footerContent={footerContent}
-            triggerRef={() => document.getElementById('popover-selector')}
+            triggerRef={() => document.getElementById('popover-selector')!}
           />
         </div>
         <div>

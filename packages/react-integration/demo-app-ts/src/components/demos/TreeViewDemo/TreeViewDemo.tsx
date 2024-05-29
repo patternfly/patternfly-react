@@ -129,19 +129,19 @@ export class TreeViewDemo extends Component {
   ];
 
   state = {
-    allExpanded: null as boolean,
+    allExpanded: undefined as boolean | undefined,
     activeItems: [] as TreeViewDataItem[],
     activeItems2: [] as TreeViewDataItem[],
     filteredItems: this.options
   };
 
-  onClick = (evt: React.MouseEvent, treeViewItem: TreeViewDataItem, parentItem: TreeViewDataItem) => {
+  onClick = (_evt: React.MouseEvent, treeViewItem: TreeViewDataItem, parentItem: TreeViewDataItem) => {
     this.setState({
       activeItems: [treeViewItem, parentItem]
     });
   };
 
-  onClick2 = (evt: React.MouseEvent, treeViewItem: TreeViewDataItem, parentItem: TreeViewDataItem) => {
+  onClick2 = (_evt: React.MouseEvent, treeViewItem: TreeViewDataItem, parentItem: TreeViewDataItem) => {
     this.setState({
       activeItems2: [treeViewItem, parentItem]
     });
@@ -160,7 +160,7 @@ export class TreeViewDemo extends Component {
   };
 
   filterItems = (item: TreeViewDataItem, input: string): boolean => {
-    if (item.name.toString().toLowerCase().includes(input.toLowerCase())) {
+    if (item.name?.toString().toLowerCase().includes(input.toLowerCase())) {
       return true;
     }
 
@@ -171,6 +171,8 @@ export class TreeViewDemo extends Component {
           .filter((child) => this.filterItems(child, input))).length > 0
       );
     }
+
+    return false;
   };
 
   onToggle = () => {

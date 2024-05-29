@@ -382,6 +382,27 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     this.direction = getLanguageDirection(this.tabList.current);
   }
 
+  static getDerivedStateFromProps(nextProps: TabsProps, prevState: TabsState) {
+    if (prevState.uncontrolledActiveKey === undefined) {
+      return null;
+    }
+
+    const childrenHasTabWithActiveEventKey = React.Children.toArray(nextProps.children)
+      .filter((child): child is TabElement => React.isValidElement(child))
+      .some(({ props }) => props.eventKey === prevState.uncontrolledActiveKey);
+
+    // if uncontrolledActiveKey is an existing eventKey of any Tab of nextProps.children --> don't update uncontrolledActiveKey
+    if (childrenHasTabWithActiveEventKey) {
+      return null;
+    }
+
+    // otherwise update state derived from nextProps.defaultActiveKey
+    return {
+      uncontrolledActiveKey: nextProps.defaultActiveKey,
+      shownKeys: nextProps.defaultActiveKey !== undefined ? [nextProps.defaultActiveKey] : [nextProps.activeKey] // only for mountOnEnter case
+    };
+  }
+
   render() {
     const {
       className,

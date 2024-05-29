@@ -82,5 +82,13 @@ export const TreeViewCustomBadges: React.FunctionComponent = () => {
       children: [{ name: 'Application 5', id: 'example6-App5' }]
     }
   ];
-  return <TreeView data={options} activeItems={activeItems} onSelect={onSelect} hasBadges />;
+  return (
+    <TreeView
+      aria-label="Tree View with custom badges example"
+      data={options}
+      activeItems={activeItems}
+      onSelect={onSelect}
+      hasBadges
+    />
+  );
 };

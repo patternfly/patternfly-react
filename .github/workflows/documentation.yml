@@ -1,0 +1,49 @@
+name: Documentation
+on:
+  pull_request_target:
+  workflow_call:
+    secrets:
+      SURGE_LOGIN:
+        required: true
+      SURGE_TOKEN:
+        required: true
+      GH_PR_TOKEN:
+        required: true
+jobs:
+  deploy:
+    name: Build, test & deploy
+    runs-on: ubuntu-latest
+    env:
+      SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+      SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+      GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
+      GH_PR_NUM: ${{ github.event.number }}
+    steps:
+      - name: Check out project from PR branch
+        if: github.event_name == 'pull_request_target'
+        uses: actions/checkout@v4
+        with:
+          # Checkout the merge commit so that we can access the PR's changes.
+          # This is nessesary because `pull_request_target` checks out the base branch (e.g. `main`) by default.
+          ref: refs/pull/${{ env.GH_PR_NUM }}/head
+
+      - name: Check out project
+        if: github.event_name != 'pull_request_target'
+        uses: actions/checkout@v4
+
+      - name: Set up and build project
+        uses: ./.github/actions/setup-project
+
+      - name: Build documentation
+        run: yarn build:docs
+
+      - name: Upload documentation
+        if: always()
+        run: node .github/upload-preview.js packages/react-docs/public
+
+      - name: Run accessibility tests
+        run: yarn serve:docs & yarn test:a11y
+
+      - name: Upload accessibility results
+        if: always()
+        run: node .github/upload-preview.js packages/react-docs/coverage

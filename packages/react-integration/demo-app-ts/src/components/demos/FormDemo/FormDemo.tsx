@@ -65,7 +65,7 @@ export class FormDemo extends Component<FormProps, FormState> {
       isOpen
     });
   };
-  onSelect = (event: React.SyntheticEvent, selection: string | SelectOptionObject) => {
+  onSelect = (_event: React.SyntheticEvent, selection: string | SelectOptionObject) => {
     const { selected } = this.state;
     if (selected.includes(selection.toString())) {
       this.setState(

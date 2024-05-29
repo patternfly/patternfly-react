@@ -267,6 +267,7 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
         }
       },
       theme,
+      themeColor,
       width,
       ...measureComponent.props
     })

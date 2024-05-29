@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import { SearchInput, SearchInputProps, Button } from '@patternfly/react-core';
 
 interface SearchInputState {
@@ -7,9 +7,9 @@ interface SearchInputState {
   currentResult: number;
 }
 
-export class SearchInputDemo extends React.Component<SearchInputProps, SearchInputState> {
+export class SearchInputDemo extends Component<SearchInputProps, SearchInputState> {
   static displayName = 'SearchInputDemo';
-  inputRef: React.RefObject<HTMLInputElement> = null;
+  inputRef: React.RefObject<HTMLInputElement>;
   constructor(props: SearchInputProps) {
     super(props);
     this.inputRef = React.createRef();
@@ -36,7 +36,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
   };
 
   onNext = () => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newCurrentResult = prevState.currentResult + 1;
       return {
         currentResult: newCurrentResult <= prevState.resultsCount ? newCurrentResult : prevState.resultsCount
@@ -45,7 +45,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
   };
 
   onPrevious = () => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newCurrentResult = prevState.currentResult - 1;
       return {
         currentResult: newCurrentResult > 0 ? newCurrentResult : 1

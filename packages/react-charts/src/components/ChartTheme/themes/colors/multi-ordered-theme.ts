@@ -24,7 +24,7 @@ import chart_theme_multi_color_ordered_ColorScale_2200 from '@patternfly/react-t
 import chart_theme_multi_color_ordered_ColorScale_2300 from '@patternfly/react-tokens/dist/esm/chart_theme_multi_color_ordered_ColorScale_2300';
 import chart_theme_multi_color_ordered_ColorScale_2400 from '@patternfly/react-tokens/dist/esm/chart_theme_multi_color_ordered_ColorScale_2400';
 import chart_theme_multi_color_ordered_ColorScale_2500 from '@patternfly/react-tokens/dist/esm/chart_theme_multi_color_ordered_ColorScale_2500';
-import { ColorTheme } from '../color-theme';
+import { ColorTheme, ColorComponentTheme } from '../color-theme';
 
 // The color order below (minus the purple color family) improves the color contrast in ordered charts; donut, pie, bar, & stack
 // See https://docs.google.com/document/d/1cw10pJFXWruB1SA8TQwituxn5Ss6KpxYPCOYGrH8qAY/edit
@@ -61,5 +61,14 @@ const COLOR_SCALE = [
  * @private
  */
 export const MultiColorOrderedTheme = ColorTheme({
+  COLOR_SCALE
+});
+
+/**
+ * Multi-color ordered component theme
+ * @private
+ * @beta
+ */
+export const MultiColorOrderedComponentTheme = ColorComponentTheme({
   COLOR_SCALE
 });

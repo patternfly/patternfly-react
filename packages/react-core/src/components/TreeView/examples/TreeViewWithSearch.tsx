@@ -118,6 +118,7 @@ export const TreeViewWithSearch: React.FunctionComponent = () => {
 
   return (
     <TreeView
+      aria-label="Tree View with search example"
       data={filteredItems}
       activeItems={activeItems}
       onSelect={onSelect}

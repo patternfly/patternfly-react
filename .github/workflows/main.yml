@@ -1,0 +1,99 @@
+name: CI
+on:
+  pull_request:
+  workflow_call:
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+
+      - name: Set up project
+        uses: ./.github/actions/setup-project
+        with:
+          skip-build: true
+
+      - uses: actions/cache@v4
+        name: Cache files proccesed by ESLint
+        with:
+          path: .eslintcache
+          key: ${{ runner.os }}-eslint-cache
+
+      - name: Run linter
+        run: yarn lint:all
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+
+      - name: Set up and build project
+        uses: ./.github/actions/setup-project
+
+  unit-tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+
+      - name: Set up and build project
+        uses: ./.github/actions/setup-project
+
+      - name: Run tests
+        run: yarn test --maxWorkers=2
+
+  demo-app:
+    name: Build demo app
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+
+      - name: Set up and build project
+        uses: ./.github/actions/setup-project
+
+      - name: Build demo app
+        run: yarn build:integration
+
+      - name: Upload demo app
+        uses: actions/upload-artifact@v4
+        with:
+          name: demo-app
+          path: packages/react-integration/demo-app-ts/public
+
+  integration-tests:
+    name: Integration tests
+    runs-on: ubuntu-latest
+    needs: demo-app
+    strategy:
+      fail-fast: false
+      matrix:
+        worker: [0, 1, 2, 3, 4]
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+
+      - name: Set up and build project
+        uses: ./.github/actions/setup-project
+
+      - name: Download demo app
+        uses: actions/download-artifact@v4
+        with:
+          name: demo-app
+          path: packages/react-integration/demo-app-ts/public
+
+      - name: Print environment variables
+        run: printenv
+
+      - name: Run Cypress tests
+        run: yarn serve:integration & yarn test:integration -s $(node .github/split.js)
+        env:
+          WORKER_NUM: ${{ matrix.worker }}
+          WORKER_COUNT: 5

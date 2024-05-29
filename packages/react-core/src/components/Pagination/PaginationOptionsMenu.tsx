@@ -1,5 +1,4 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { MenuToggle } from '../MenuToggle';
@@ -53,6 +52,7 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   onPerPageSelect?: OnPerPageSelect;
   /** Label for the English word "of". */
   ofWord?: string;
+  containerRef?: React.RefObject<HTMLDivElement>;
 }
 
 export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMenuProps> = ({
@@ -75,12 +75,12 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
   isLastFullPageShown = false,
   itemsTitle = 'items',
   toggleTemplate,
-  onPerPageSelect = () => null as any
+  onPerPageSelect = () => null as any,
+  containerRef
 }: PaginationOptionsMenuProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
   const menuRef = React.useRef<HTMLDivElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const onToggle = () => {
     setIsOpen((prevState) => !prevState);
@@ -209,18 +209,16 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
   );
 
   return (
-    <div className={css(styles.paginationPageMenu)} ref={containerRef}>
-      <Popper
-        trigger={toggle}
-        triggerRef={toggleRef}
-        popper={menu}
-        popperRef={menuRef}
-        isVisible={isOpen}
-        direction={dropDirection}
-        appendTo={containerRef.current || undefined}
-        minWidth={minWidth !== undefined ? minWidth : 'revert'}
-      />
-    </div>
+    <Popper
+      trigger={toggle}
+      triggerRef={toggleRef}
+      popper={menu}
+      popperRef={menuRef}
+      isVisible={isOpen}
+      direction={dropDirection}
+      appendTo={containerRef?.current || undefined}
+      minWidth={minWidth !== undefined ? minWidth : 'revert'}
+    />
   );
 };
 

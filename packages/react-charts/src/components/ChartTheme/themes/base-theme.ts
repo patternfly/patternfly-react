@@ -96,6 +96,29 @@ import chart_voronoi_flyout_stroke_Width from '@patternfly/react-tokens/dist/esm
 import chart_voronoi_flyout_PointerEvents from '@patternfly/react-tokens/dist/esm/chart_voronoi_flyout_PointerEvents';
 import chart_voronoi_flyout_stroke_Color from '@patternfly/react-tokens/dist/esm/chart_voronoi_flyout_stroke_Color';
 import chart_voronoi_flyout_stroke_Fill from '@patternfly/react-tokens/dist/esm/chart_voronoi_flyout_stroke_Fill';
+import chart_donut_pie_Height from '@patternfly/react-tokens/dist/esm/chart_donut_pie_Height';
+import chart_donut_pie_angle_Padding from '@patternfly/react-tokens/dist/esm/chart_donut_pie_angle_Padding';
+import chart_donut_pie_Padding from '@patternfly/react-tokens/dist/esm/chart_donut_pie_Padding';
+import chart_donut_pie_Width from '@patternfly/react-tokens/dist/esm/chart_donut_pie_Width';
+import chart_donut_threshold_dynamic_pie_Height from '@patternfly/react-tokens/dist/esm/chart_donut_threshold_dynamic_pie_Height';
+import chart_donut_threshold_dynamic_pie_Padding from '@patternfly/react-tokens/dist/esm/chart_donut_threshold_dynamic_pie_Padding';
+import chart_donut_threshold_dynamic_pie_Width from '@patternfly/react-tokens/dist/esm/chart_donut_threshold_dynamic_pie_Width';
+import chart_donut_threshold_static_pie_Height from '@patternfly/react-tokens/dist/esm/chart_donut_threshold_static_pie_Height';
+import chart_donut_threshold_static_pie_angle_Padding from '@patternfly/react-tokens/dist/esm/chart_donut_threshold_static_pie_angle_Padding';
+import chart_donut_threshold_static_pie_Padding from '@patternfly/react-tokens/dist/esm/chart_donut_threshold_static_pie_Padding';
+import chart_donut_threshold_static_pie_Width from '@patternfly/react-tokens/dist/esm/chart_donut_threshold_static_pie_Width';
+import chart_donut_utilization_dynamic_pie_Height from '@patternfly/react-tokens/dist/esm/chart_donut_utilization_dynamic_pie_Height';
+import chart_donut_utilization_dynamic_pie_Padding from '@patternfly/react-tokens/dist/esm/chart_donut_utilization_dynamic_pie_Padding';
+import chart_donut_utilization_dynamic_pie_angle_Padding from '@patternfly/react-tokens/dist/esm/chart_donut_utilization_dynamic_pie_angle_Padding';
+import chart_donut_utilization_dynamic_pie_Width from '@patternfly/react-tokens/dist/esm/chart_donut_utilization_dynamic_pie_Width';
+import chart_threshold_stroke_dash_array from '@patternfly/react-tokens/dist/esm/chart_threshold_stroke_dash_array';
+import chart_threshold_stroke_Width from '@patternfly/react-tokens/dist/esm/chart_threshold_stroke_Width';
+import chart_bullet_Height from '@patternfly/react-tokens/dist/esm/chart_bullet_Height';
+import chart_bullet_comparative_measure_error_stroke_Width from '@patternfly/react-tokens/dist/esm/chart_bullet_comparative_measure_error_stroke_Width';
+import chart_bullet_comparative_measure_stroke_Width from '@patternfly/react-tokens/dist/esm/chart_bullet_comparative_measure_stroke_Width';
+import chart_bullet_comparative_measure_warning_stroke_Width from '@patternfly/react-tokens/dist/esm/chart_bullet_comparative_measure_warning_stroke_Width';
+import chart_bullet_group_title_divider_stroke_Width from '@patternfly/react-tokens/dist/esm/chart_bullet_group_title_divider_stroke_Width';
+import { ChartComponentThemeDefinition, ChartThemeDefinition } from '../ChartTheme';
 
 // Note: Values must be in pixles
 
@@ -116,6 +139,7 @@ const LABEL_PROPS = {
   stroke: chart_global_label_stroke.var,
   fill: chart_global_label_Fill.var
 };
+
 const LABEL_CENTERED_PROPS = {
   ...LABEL_PROPS,
   textAnchor: chart_global_label_text_anchor.value
@@ -133,10 +157,10 @@ const STROKE_LINE_CAP = chart_global_stroke_line_cap.value;
 const STROKE_LINE_JOIN = chart_global_stroke_line_join.value;
 
 /**
- * Victory theme properties only
+ * Base theme containing Victory properties only
  * @private
  */
-export const BaseTheme = {
+export const BaseTheme: ChartThemeDefinition = {
   area: {
     ...LAYOUT_PROPS,
     style: {
@@ -167,7 +191,7 @@ export const BaseTheme = {
       },
       grid: {
         fill: chart_axis_grid_Fill.var,
-        stroke: 'none',
+        stroke: 'transparent',
         pointerEvents: chart_axis_grid_PointerEvents.value,
         strokeLinecap: STROKE_LINE_CAP,
         strokeLinejoin: STROKE_LINE_JOIN
@@ -198,7 +222,7 @@ export const BaseTheme = {
       },
       labels: LABEL_PROPS
     }
-  },
+  } as any, // Victory is missing barWidth
   boxplot: {
     ...LAYOUT_PROPS,
     style: {
@@ -329,7 +353,7 @@ export const BaseTheme = {
         strokeWidth: chart_stack_data_stroke_Width.value
       }
     }
-  },
+  } as any, // Victory is missing style
   tooltip: {
     cornerRadius: chart_tooltip_corner_radius.value,
     flyoutPadding: chart_tooltip_Padding.value,
@@ -346,7 +370,7 @@ export const BaseTheme = {
       fill: chart_tooltip_Fill.var, // text
       pointerEvents: chart_tooltip_PointerEvents.var
     }
-  },
+  } as any, // Victory is missing cornerRadius and pointerWidth
   voronoi: {
     ...LAYOUT_PROPS,
     style: {
@@ -367,6 +391,130 @@ export const BaseTheme = {
         pointerEvents: chart_voronoi_flyout_PointerEvents.var,
         stroke: chart_voronoi_flyout_stroke_Color.var, // border
         strokeWidth: chart_voronoi_flyout_stroke_Width.var
+      }
+    }
+  }
+};
+
+/**
+ * Base component theme
+ * @private
+ * @beta
+ */
+export const BaseComponentTheme: ChartComponentThemeDefinition = {
+  axis: {
+    // TBD...
+  },
+  bullet: {
+    chart: {
+      height: chart_bullet_Height.value
+    }
+  },
+  bulletComparativeErrorMeasure: {
+    bar: {
+      height: chart_bullet_Height.value,
+      style: {
+        data: {
+          strokeWidth: chart_bullet_comparative_measure_error_stroke_Width.value
+        }
+      }
+    }
+  },
+  bulletComparativeMeasure: {
+    bar: {
+      height: chart_bullet_Height.value,
+      style: {
+        data: {
+          strokeWidth: chart_bullet_comparative_measure_stroke_Width.value
+        }
+      }
+    }
+  },
+  bulletComparativeWarningMeasure: {
+    bar: {
+      height: chart_bullet_Height.value,
+      style: {
+        data: {
+          strokeWidth: chart_bullet_comparative_measure_warning_stroke_Width.value
+        }
+      }
+    }
+  },
+  bulletGroupTitle: {
+    chart: {
+      padding: {
+        bottom: 0,
+        left: 0,
+        right: 0,
+        top: chart_global_layout_Padding.value
+      } as any // Victory incorrectly typed ThemeBaseProps.padding as number instead of PaddingProps
+    },
+    line: {
+      style: {
+        data: {
+          strokeWidth: chart_bullet_group_title_divider_stroke_Width.value
+        }
+      }
+    }
+  },
+  bulletPrimaryDotMeasure: {
+    group: {
+      height: chart_bullet_Height.value
+    }
+  },
+  bulletPrimaryNegativeMeasure: {
+    group: {
+      height: chart_bullet_Height.value
+    }
+  },
+  bulletPrimarySegmentedMeasure: {
+    group: {
+      height: chart_bullet_Height.value
+    }
+  },
+  bulletQualitativeRange: {
+    group: {
+      height: chart_bullet_Height.value
+    }
+  },
+  donut: {
+    pie: {
+      height: chart_donut_pie_Height.value,
+      padding: chart_donut_pie_Padding.value,
+      padAngle: chart_donut_pie_angle_Padding.value,
+      width: chart_donut_pie_Width.value
+    } as any // Victory is missing padAngle
+  },
+  donutThresholdDynamic: {
+    pie: {
+      height: chart_donut_threshold_dynamic_pie_Height.value,
+      padding: chart_donut_threshold_dynamic_pie_Padding.value,
+      width: chart_donut_threshold_dynamic_pie_Width.value
+    }
+  },
+  donutThresholdStatic: {
+    pie: {
+      height: chart_donut_threshold_static_pie_Height.value,
+      padAngle: chart_donut_threshold_static_pie_angle_Padding.value,
+      padding: chart_donut_threshold_static_pie_Padding.value,
+      width: chart_donut_threshold_static_pie_Width.value
+    } as any // Victory is missing padAngle
+  },
+  donutUtilization: {
+    pie: {
+      height: chart_donut_utilization_dynamic_pie_Height.value,
+      padding: chart_donut_utilization_dynamic_pie_Padding.value,
+      padAngle: chart_donut_utilization_dynamic_pie_angle_Padding.value,
+      width: chart_donut_utilization_dynamic_pie_Width.value
+    } as any // Victory is missing padAngle
+  },
+  threshold: {
+    line: {
+      style: {
+        data: {
+          strokeDasharray: chart_threshold_stroke_dash_array.value,
+          strokeWidth: chart_threshold_stroke_Width.value
+        }
       }
     }
   }

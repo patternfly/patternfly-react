@@ -499,7 +499,8 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
     <VictoryGroup colorScale={colorScale} containerComponent={container} theme={theme} {...rest}>
       {renderChildrenWithPatterns({
         children,
-        patternScale: defaultPatternScale
+        patternScale: defaultPatternScale,
+        themeColor
       })}
       {isPatternDefs && getPatternDefs({ patternId, colorScale: defaultColorScale })}
     </VictoryGroup>

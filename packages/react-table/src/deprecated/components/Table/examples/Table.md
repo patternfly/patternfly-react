@@ -46,7 +46,7 @@ cells: (ICell | string)[];
 ```
 interface ICell {
   /* cell contents */
-  title?: string | React.ReactNode;
+  title?: React.ReactNode;
   /** transformations applied to the header cell */
   transforms?: ITransform[];
   /** transformations applied to the cells within the column's body */
@@ -109,7 +109,7 @@ interface IRow extends RowType {
   noPadding?: boolean;
 }
 interface IRowCell {
-  title?: string | React.ReactNode | RowCellContent;
+  title?: React.ReactNode | RowCellContent;
   props?: any;
   formatters?: IFormatter[];
 }

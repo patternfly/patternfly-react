@@ -22,7 +22,7 @@ export interface NotificationDrawerGroupProps extends Omit<React.HTMLProps<HTMLD
   /**  Callback for when group button is clicked to expand */
   onExpand?: (event: any, value: boolean) => void;
   /**  Notification drawer group title */
-  title: string | React.ReactNode;
+  title: React.ReactNode;
   /** Truncate title to number of lines */
   truncateTitle?: number;
   /** Position of the tooltip which is displayed if text is truncated */
