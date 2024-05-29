@@ -9,6 +9,7 @@ import {
   DescriptionListTerm,
   Flex,
   FlexItem,
+  Icon,
   Tab,
   TabContent,
   Tabs,
@@ -23,25 +24,41 @@ const descriptionListData = [
     status: 'Running',
     resourceName: 'Resource name that is long and can wrap',
     detail: '121 Systems',
-    icon: <CheckCircleIcon />
+    icon: (
+      <Icon status="success">
+        <CheckCircleIcon />
+      </Icon>
+    )
   },
   {
-    status: 'Ready',
+    status: 'Failed',
     resourceName: 'Resource name that is long and can wrap',
     detail: '123 Systems',
-    icon: <ExclamationCircleIcon />
+    icon: (
+      <Icon status="danger">
+        <ExclamationCircleIcon />
+      </Icon>
+    )
   },
   {
     status: 'Running',
     resourceName: 'Resource name that is long and can wrap',
     detail: '122 Systems',
-    icon: <CheckCircleIcon />
+    icon: (
+      <Icon status="success">
+        <CheckCircleIcon />
+      </Icon>
+    )
   },
   {
-    status: 'Ready',
+    status: 'Failed',
     resourceName: 'Resource name that is long and can wrap',
     detail: '124 Systems',
-    icon: <ExclamationCircleIcon />
+    icon: (
+      <Icon status="danger">
+        <ExclamationCircleIcon />
+      </Icon>
+    )
   }
 ];
 
