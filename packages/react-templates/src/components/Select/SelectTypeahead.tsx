@@ -42,8 +42,6 @@ export interface SelectTypeaheadProps extends Omit<SelectProps, 'toggle'> {
   noOptionsFoundMessage?: string | ((filter: string) => string);
   /** Flag indicating the select should be disabled. */
   isDisabled?: boolean;
-  /** Content of the toggle. Defaults to a typeahead input. */
-  toggleContent?: React.ReactNode;
   /** Width of the toggle. */
   toggleWidth?: string;
   /** Additional props passed to the toggle. */
@@ -59,7 +57,6 @@ export const SelectTypeaheadBase: React.FunctionComponent<SelectTypeaheadProps> 
   placeholder = 'Select an option',
   noOptionsFoundMessage = (filter) => `No results found for "${filter}"`,
   isDisabled,
-  toggleContent,
   toggleWidth,
   toggleProps,
   ...props
@@ -269,31 +266,27 @@ export const SelectTypeaheadBase: React.FunctionComponent<SelectTypeaheadProps> 
       }
       {...toggleProps}
     >
-      {toggleContent ? (
-        toggleContent
-      ) : (
-        <TextInputGroup isPlain>
-          <TextInputGroupMain
-            value={inputValue}
-            onClick={onInputClick}
-            onChange={onTextInputChange}
-            onKeyDown={onInputKeyDown}
-            autoComplete="off"
-            innerRef={textInputRef}
-            placeholder={placeholder}
-            {...(activeItemId && { 'aria-activedescendant': activeItemId })}
-            role="combobox"
-            isExpanded={isOpen}
-            aria-controls="select-typeahead-listbox"
-          />
+      <TextInputGroup isPlain>
+        <TextInputGroupMain
+          value={inputValue}
+          onClick={onInputClick}
+          onChange={onTextInputChange}
+          onKeyDown={onInputKeyDown}
+          autoComplete="off"
+          innerRef={textInputRef}
+          placeholder={placeholder}
+          {...(activeItemId && { 'aria-activedescendant': activeItemId })}
+          role="combobox"
+          isExpanded={isOpen}
+          aria-controls="select-typeahead-listbox"
+        />
 
-          <TextInputGroupUtilities {...(!inputValue ? { style: { display: 'none' } } : {})}>
-            <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
-              <TimesIcon aria-hidden />
-            </Button>
-          </TextInputGroupUtilities>
-        </TextInputGroup>
-      )}
+        <TextInputGroupUtilities {...(!inputValue ? { style: { display: 'none' } } : {})}>
+          <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
+            <TimesIcon aria-hidden />
+          </Button>
+        </TextInputGroupUtilities>
+      </TextInputGroup>
     </MenuToggle>
   );
 
