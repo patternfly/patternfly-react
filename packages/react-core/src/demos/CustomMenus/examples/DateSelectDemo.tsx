@@ -36,27 +36,39 @@ export const DateSelectDemo: React.FunctionComponent = () => {
     3: 'Last 14 days '
   };
 
+  const getDateNDaysBefore = (date: Date, days: number) => new Date(new Date().setDate(date.getDate() - days));
+
+  const dates = {
+    0: date,
+    1: getDateNDaysBefore(date, 1),
+    2: getDateNDaysBefore(date, 7),
+    3: getDateNDaysBefore(date, 14)
+  };
+
   const dateText = {
-    0: <Timestamp>({dateString(date)})</Timestamp>,
-    1: (
-      <Timestamp>
-        ({dateString(new Date(new Date().setDate(date.getDate() - 1)))} - {dateString(date)})
-      </Timestamp>
-    ),
+    0: <Timestamp date={dates[0]}>({dateString(dates[0])})</Timestamp>,
+    1: <Timestamp date={dates[1]}>({dateString(dates[1])})</Timestamp>,
     2: (
-      <Timestamp>
-        ({dateString(new Date(new Date().setDate(date.getDate() - 7)))} - {dateString(date)})
-      </Timestamp>
+      <>
+        <Timestamp date={dates[2]}>
+          ({dateString(dates[2])}
+          &nbsp;-&nbsp;
+        </Timestamp>
+        <Timestamp date={date}>{dateString(date)})</Timestamp>
+      </>
     ),
     3: (
-      <Timestamp>
-        ({dateString(new Date(new Date().setDate(date.getDate() - 14)))} - {dateString(date)})
-      </Timestamp>
+      <>
+        <Timestamp date={dates[3]}>
+          ({dateString(dates[3])}
+          &nbsp;-&nbsp;
+        </Timestamp>
+        <Timestamp date={date}>{dateString(date)})</Timestamp>
+      </>
     )
   };
 
   return (
-    // eslint-disable-next-line no-console
     <Select
       isOpen={isOpen}
       onOpenChange={(isOpen) => setIsOpen(isOpen)}

@@ -79,7 +79,7 @@ export const CardLogView: React.FunctionComponent = () => {
                   connection refused
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <Timestamp> Jun 17, 11:02 am </Timestamp>
+                  <Timestamp date={new Date('2023-06-17T11:02')} dateFormat="medium" timeFormat="short" />
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -88,21 +88,21 @@ export const CardLogView: React.FunctionComponent = () => {
                   Successfully assigned default/example to ip-10-0-130-149.ec2.internal
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <Timestamp> Jun 17, 11:13 am </Timestamp>
+                  <Timestamp date={new Date('2023-06-17T11:13')} dateFormat="medium" timeFormat="short" />
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>Pulling image</DescriptionListTerm>
                 <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <Timestamp> Jun 17, 10:59 am </Timestamp>
+                  <Timestamp date={new Date('2023-06-17T10:59')} dateFormat="medium" timeFormat="short" />
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>Created container</DescriptionListTerm>
                 <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <Timestamp> Jun 17, 10:45 am </Timestamp>
+                  <Timestamp date={new Date('2023-06-17T10:45')} dateFormat="medium" timeFormat="short" />
                 </DescriptionListDescription>
               </DescriptionListGroup>
             </DescriptionList>

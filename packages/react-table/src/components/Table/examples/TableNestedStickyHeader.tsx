@@ -160,8 +160,7 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
               <Td dataLabel={columnNames.destination}>{connection.destination.podName}</Td>\
               <Td dataLabel={columnNames.datetime}>
                 <div>
-                  <span>{new Date(connection.timestamp).toDateString()}</span>{' '}
-                  <Timestamp>{new Date(connection.timestamp).toLocaleTimeString()}</Timestamp>
+                  <Timestamp dateFormat="full" timeFormat="medium" date={new Date(connection.timestamp)} />
                 </div>
               </Td>
               <Td dataLabel={columnNames.source}>
@@ -170,7 +169,7 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
                     <span>{connection.source.port.num}</span>
                   </StackItem>
                   <StackItem>
-                    <Timestamp>({connection.source.port.protocol})</Timestamp>
+                    <small>({connection.source.port.protocol})</small>
                   </StackItem>
                 </Stack>
               </Td>
@@ -180,7 +179,7 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
                     <span>{connection.destination.port.num}</span>
                   </StackItem>
                   <StackItem>
-                    <Timestamp>({connection.destination.port.protocol})</Timestamp>
+                    <small>({connection.destination.port.protocol})</small>
                   </StackItem>
                 </Stack>
               </Td>
