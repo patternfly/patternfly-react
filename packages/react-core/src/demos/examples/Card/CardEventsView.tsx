@@ -14,6 +14,7 @@ import {
   Flex,
   FlexItem,
   Gallery,
+  Icon,
   MenuToggle,
   Select,
   SelectList,
@@ -76,7 +77,9 @@ export const CardEventsView: React.FunctionComponent = () => {
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <ExclamationCircleIcon aria-hidden="true" />
+                      <Icon status="danger">
+                        <ExclamationCircleIcon aria-hidden="true" />
+                      </Icon>
                     </FlexItem>
                     <FlexItem>
                       <span>Readiness probe failed</span>
@@ -95,7 +98,9 @@ export const CardEventsView: React.FunctionComponent = () => {
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <CheckCircleIcon aria-hidden="true" />
+                      <Icon status="success">
+                        <CheckCircleIcon aria-hidden="true" />
+                      </Icon>
                     </FlexItem>
                     <FlexItem>
                       <span>Successful assignment</span>
@@ -129,7 +134,9 @@ export const CardEventsView: React.FunctionComponent = () => {
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <CheckCircleIcon aria-hidden="true" />
+                      <Icon status="success">
+                        <CheckCircleIcon aria-hidden="true" />
+                      </Icon>
                     </FlexItem>
                     <FlexItem>
                       <span>Created container</span>
