@@ -1,6 +1,12 @@
 import React from 'react';
-import { Select, SelectList, SelectOption, SelectOptionProps } from '@patternfly/react-core/dist/esm/components/Select';
-import { MenuToggle, MenuToggleElement } from '@patternfly/react-core/dist/esm/components/MenuToggle';
+import {
+  Select,
+  SelectList,
+  SelectOption,
+  SelectOptionProps,
+  SelectProps
+} from '@patternfly/react-core/dist/esm/components/Select';
+import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 
 export interface SelectSimpleOption extends Omit<SelectOptionProps, 'content'> {
   /** Content of the select option. */
@@ -9,7 +15,7 @@ export interface SelectSimpleOption extends Omit<SelectOptionProps, 'content'> {
   value: string | number;
 }
 
-export interface SelectSimpleProps {
+export interface SelectSimpleProps extends Omit<SelectProps, 'toggle'> {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */
@@ -22,8 +28,10 @@ export interface SelectSimpleProps {
   isDisabled?: boolean;
   /** Content of the toggle. Defaults to the selected option. */
   toggleContent?: React.ReactNode;
-  /** Width of the toggle */
+  /** Width of the toggle. */
   toggleWidth?: string;
+  /** Additional props passed to the toggle. */
+  toggleProps?: MenuToggleProps;
 }
 
 const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
@@ -34,6 +42,7 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
   onToggle,
   toggleContent,
   toggleWidth = '200px',
+  toggleProps,
   ...props
 }: SelectSimpleProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -43,7 +52,7 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
     const { content, value, ...props } = option;
     const isSelected = selected.includes(`${value}`);
     return (
-      <SelectOption {...props} value={value} key={value} isSelected={isSelected}>
+      <SelectOption value={value} key={value} isSelected={isSelected} {...props}>
         {content}
       </SelectOption>
     );
@@ -57,6 +66,7 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
   const _onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     onSelect && onSelect(_event, value);
     setSelected(value as string);
+    onToggle && onToggle(!false);
     setIsOpen(false);
   };
 
@@ -71,6 +81,7 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
           width: toggleWidth
         } as React.CSSProperties
       }
+      {...toggleProps}
     >
       {toggleContent ? toggleContent : selected}
     </MenuToggle>
@@ -78,11 +89,13 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
 
   return (
     <Select
-      id="single-select"
       isOpen={isOpen}
       selected={selected}
       onSelect={_onSelect}
-      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      onOpenChange={(isOpen) => {
+        onToggle && onToggle(isOpen);
+        setIsOpen(isOpen);
+      }}
       toggle={toggle}
       shouldFocusToggleOnSelect
       ref={innerRef}
