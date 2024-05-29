@@ -13,7 +13,7 @@ function transformerCJSImports(context) {
   // Only transform for CJS build
   // ESM: module = 5, CJS: module = 1
   if (context.getCompilerOptions().module !== 1) {
-    return node => node;
+    return (node) => node;
   }
   /**
    * If a node is an import, change its moduleSpecifier
@@ -23,14 +23,14 @@ function transformerCJSImports(context) {
    */
   function visit(node) {
     if (ts.isImportDeclaration(node) && /@patternfly\/.*\/dist\/esm/.test(node.moduleSpecifier.text)) {
-      const newNode = ts.getMutableClone(node);
+      const newNode = ts.factory.cloneNode(node);
       const newPath = node.moduleSpecifier.text.replace(/dist\/esm/, 'dist/js');
-      newNode.moduleSpecifier = ts.createStringLiteral(newPath, true);
+      newNode.moduleSpecifier = ts.factory.createStringLiteral(newPath, true);
       return newNode;
     }
-    return ts.visitEachChild(node, child => visit(child), context);
+    return ts.visitEachChild(node, (child) => visit(child), context);
   }
-  return node => ts.visitNode(node, visit);
+  return (node) => ts.visitNode(node, visit);
 }
 
 module.exports = () => ({
