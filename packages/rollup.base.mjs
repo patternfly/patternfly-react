@@ -5,6 +5,7 @@ import replace from '@rollup/plugin-replace';
 import terser from '@rollup/plugin-terser';
 import { defineConfig } from 'rollup';
 import scss from 'rollup-plugin-scss';
+import svg from 'rollup-plugin-svg';
 
 const isProduction = process.env.IS_PRODUCTION;
 let exitCode = 0;
@@ -30,6 +31,9 @@ export default function baseConfig({ packageName, name }) {
     nodeResolve(),
     commonjs(),
     scss(),
+    // SVG plugin does not ship with types.
+    // @ts-ignore
+    svg(),
     circularFailPlugin()
   ];
 
