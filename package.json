@@ -64,6 +64,7 @@
     "rimraf": "^5.0.5",
     "rollup": "^4.17.2",
     "rollup-plugin-scss": "^4.0.0",
+    "rollup-plugin-svg": "^2.0.0",
     "sass": "^1.77.2",
     "surge": "^0.23.1",
     "ts-node": "^10.9.1",
