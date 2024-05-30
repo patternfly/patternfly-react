@@ -13,22 +13,47 @@ import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square
 
 ## Examples
 
-### Default with multiple selectable
-```ts file="./ToggleGroupDefaultMultiple.tsx"
-```
+### Single select toggle group
 
-### Default with single selectable
+A single select toggle group allows users to toggle between multiple items.
+
+To indicate whether a `<ToggleGroupItem>` is selected or not, use the `isSelected` property.
+
 ```ts file="./ToggleGroupDefaultSingle.tsx"
 ```
 
-### Icons
+### Multi select toggle group
+
+A multi select toggle group allows users to select multiple items at once.
+
+When a toggle item is disabled it cannot be selected. Click the "Disable all" button in the following example to see this in action.
+
+```ts file="./ToggleGroupDefaultMultiple.tsx"
+```
+
+### With icons
+
+You can use a recognizable icon as a toggle item label.
+
+To do this, pass an imported icon to the `icon` property of a `<ToggleGroupItem>`.
+
 ```ts file="./ToggleGroupIcon.tsx"
 ```
 
-### Text and icons
+### With text and icons
+
+Adding text to a toggle item with an icon helps clarify the button's function.
+
+To do this, pass a descriptive label to the `text` property of a `<ToggleGroupItem>`.
+
 ```ts file="./ToggleGroupTextIcon.tsx"
 ```
 
-### Compact variant
+### Compact toggle group
+
+When space in a UI is limited, you can use a compact toggle group. 
+
+To apply compact styling to a `<ToggleGroup>`, use `isCompact`.
+
 ```ts file="./ToggleGroupCompact.tsx"
 ```

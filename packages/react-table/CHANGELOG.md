@@ -372,7 +372,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 # [6.0.0-alpha.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.34...@patternfly/react-table@6.0.0-alpha.35) (2024-02-21)
 
 **Note:** Version bump only for package @patternfly/react-table
-
 # [6.0.0-alpha.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.33...@patternfly/react-table@6.0.0-alpha.34) (2024-02-19)
 
 **Note:** Version bump only for package @patternfly/react-table
@@ -1022,8 +1021,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 **Note:** Version bump only for package @patternfly/react-table
 
 # [5.2.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.2.0-prerelease.2...@patternfly/react-table@5.2.0-prerelease.3) (2023-10-10)
-
-**Note:** Version bump only for package @patternfly/react-table
 
 # 5.2.0-prerelease.2 (2023-10-09)
 

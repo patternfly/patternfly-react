@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { DualListSelector, DualListSelectorProps, DualListSelectorTreeItemData } from '@patternfly/react-core';
 interface DualListSelectorState {
   availableOptions: DualListSelectorTreeItemData[];
   chosenOptions: DualListSelectorTreeItemData[];
 }
 
-export class DualListSelectorTreeDemo extends React.Component<DualListSelectorProps, DualListSelectorState> {
+export class DualListSelectorTreeDemo extends Component<DualListSelectorProps, DualListSelectorState> {
   static displayName = 'DualListSelectorTreeDemo';
   onListChange: (
     event: React.MouseEvent<HTMLElement>,
@@ -40,7 +40,7 @@ export class DualListSelectorTreeDemo extends React.Component<DualListSelectorPr
       chosenOptions: []
     };
 
-    this.onListChange = (event, newAvailableOptions, newChosenOptions) => {
+    this.onListChange = (_event, newAvailableOptions, newChosenOptions) => {
       this.setState({
         availableOptions: newAvailableOptions,
         chosenOptions: newChosenOptions

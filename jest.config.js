@@ -15,10 +15,10 @@ module.exports = {
   },
   setupFilesAfterEnv: ['<rootDir>/packages/testSetup.ts'],
   testPathIgnorePatterns: ['<rootDir>/packages/react-integration/'],
+  transformIgnorePatterns: ['node_modules/victory-*/', '/node_modules/(?!(case-anything)/)'],
   coveragePathIgnorePatterns: ['/dist/'],
   moduleNameMapper: {
     '\\.(css|less)$': '<rootDir>/packages/react-styles/__mocks__/styleMock.js'
   },
-  testEnvironment: 'jsdom',
-  transformIgnorePatterns: ['/node_modules/(?!(case-anything)/)']
+  testEnvironment: 'jsdom'
 };

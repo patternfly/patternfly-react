@@ -136,5 +136,12 @@ export const TreeViewWithActionItems: React.FunctionComponent = () => {
       children: [{ name: 'Application 5', id: 'example7-App5' }]
     }
   ];
-  return <TreeView data={options} activeItems={activeItems} onSelect={onSelect} />;
+  return (
+    <TreeView
+      aria-label="Tree View with actions example"
+      data={options}
+      activeItems={activeItems}
+      onSelect={onSelect}
+    />
+  );
 };

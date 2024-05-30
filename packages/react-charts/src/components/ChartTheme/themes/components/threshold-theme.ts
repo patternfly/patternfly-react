@@ -5,6 +5,7 @@ import chart_threshold_stroke_Width from '@patternfly/react-tokens/dist/esm/char
 /**
  * Threshold theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const ThresholdTheme = {
   line: {

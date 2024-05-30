@@ -194,5 +194,5 @@ export const TreeViewWithCheckboxes: React.FunctionComponent = () => {
     }
   };
   const mapped = options.map((item) => mapTree(item));
-  return <TreeView data={mapped} onCheck={onCheck} hasCheckboxes />;
+  return <TreeView aria-label="Tree View with checkboxes example" data={mapped} onCheck={onCheck} hasCheckboxes />;
 };

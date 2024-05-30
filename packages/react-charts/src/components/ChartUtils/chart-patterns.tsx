@@ -10,6 +10,7 @@ interface PatternPropsInterface {
   patternId?: string;
   patternScale?: string[];
   patternUnshiftIndex?: number;
+  themeColor?: string;
   themeColorScale?: string[];
 }
 
@@ -359,7 +360,7 @@ export const useDefaultPatternProps = ({
  * Helper function to render children with patterns
  * @private
  */
-export const renderChildrenWithPatterns = ({ children, patternScale }: PatternPropsInterface) =>
+export const renderChildrenWithPatterns = ({ children, patternScale, themeColor }: PatternPropsInterface) =>
   React.Children.toArray(children).map((child, index) => {
     if (React.isValidElement(child)) {
       const { ...childProps } = child.props;
@@ -375,6 +376,7 @@ export const renderChildrenWithPatterns = ({ children, patternScale }: PatternPr
       }
       const _child = React.cloneElement(child, {
         ...(patternScale && { patternScale }),
+        ...(themeColor && { themeColor }),
         ...childProps,
         style // Override child props
       });

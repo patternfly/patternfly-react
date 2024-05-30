@@ -145,17 +145,23 @@ const DatePickerBase = (
   }, [valueProp]);
 
   React.useEffect(() => {
+    if (isValidDate(valueDate)) {
+      applyValidators(valueDate);
+    }
+  }, [validators]);
+
+  React.useEffect(() => {
     setPristine(!value);
     const newValueDate = dateParse(value);
     if (errorText && isValidDate(newValueDate)) {
-      setError(newValueDate);
+      applyValidators(newValueDate);
     }
     if (value === '' && !pristine && !textInputFocused) {
       dateIsRequired ? setErrorText(emptyDateText) : setErrorText('');
     }
   }, [value]);
 
-  const setError = (date: Date) => {
+  const applyValidators = (date: Date) => {
     setErrorText(validators.map((validator) => validator(date)).join('\n') || '');
   };
 
@@ -179,7 +185,7 @@ const DatePickerBase = (
     onBlur(event, value, onBlurDateArg);
 
     if (dateIsValid) {
-      setError(newValueDate);
+      applyValidators(newValueDate);
     }
 
     if (!dateIsValid && !pristine) {
@@ -195,7 +201,7 @@ const DatePickerBase = (
     const newValue = dateFormat(newValueDate);
     setValue(newValue);
     setValueDate(newValueDate);
-    setError(newValueDate);
+    applyValidators(newValueDate);
     setPopoverOpen(false);
     onChange(null, newValue, new Date(newValueDate));
   };
@@ -203,7 +209,7 @@ const DatePickerBase = (
   const onKeyPress = (ev: React.KeyboardEvent<HTMLInputElement>) => {
     if (ev.key === 'Enter' && value) {
       if (isValidDate(valueDate)) {
-        setError(valueDate);
+        applyValidators(valueDate);
       } else {
         setErrorText(invalidFormatText);
       }

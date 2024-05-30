@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { SimpleList, SimpleListGroup, SimpleListItem, SimpleListItemProps } from '@patternfly/react-core';
 
 interface SimpleListDemoState {
   activeItem: number | string;
 }
 
-export class SimpleListDemo extends React.Component<any, SimpleListDemoState> {
+export class SimpleListDemo extends Component<any, SimpleListDemoState> {
   static displayName = 'SimpleListDemo';
 
   constructor(props: SimpleListDemoState) {
@@ -49,10 +49,10 @@ export class SimpleListDemo extends React.Component<any, SimpleListDemoState> {
         <SimpleList
           id="simple-list-demo-uncontrolled"
           onSelect={(
-            ref: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
+            _ref: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
             props: SimpleListItemProps
           ) => {
-            this.setState({ activeItem: props.itemId });
+            this.setState({ activeItem: props.itemId! });
           }}
           isControlled={false}
         >

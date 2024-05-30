@@ -42,6 +42,7 @@ export const WizardNavItem = ({
   content = '',
   isCurrent = false,
   isDisabled = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isVisited = false,
   stepIndex,
   onClick,
@@ -65,23 +66,6 @@ export const WizardNavItem = ({
     // eslint-disable-next-line no-console
     console.error('WizardNavItem: When using an anchor, please provide an href');
   }
-
-  const ariaLabel = React.useMemo(() => {
-    if (status === WizardNavItemStatus.Error || (isVisited && !isCurrent)) {
-      let label = content.toString();
-
-      if (status === WizardNavItemStatus.Error) {
-        label += `, ${status}`;
-      }
-
-      // No need to signify step is visited if current
-      if (isVisited && !isCurrent) {
-        label += ', visited';
-      }
-
-      return label;
-    }
-  }, [content, isCurrent, isVisited, status]);
 
   return (
     <li
@@ -109,13 +93,15 @@ export const WizardNavItem = ({
         aria-disabled={isDisabled ? true : null}
         aria-current={isCurrent && !children ? 'step' : false}
         {...(isExpandable && { 'aria-expanded': isExpanded })}
-        {...(ariaLabel && { 'aria-label': ariaLabel })}
         {...ouiaProps}
       >
         {status === WizardNavItemStatus.Error && (
-          <span className={css(styles.wizardNavLinkStatusIcon)}>
-            <ExclamationCircleIcon />
-          </span>
+          <>
+            <span className="pf-v5-screen-reader">, {status}</span>
+            <span className={css(styles.wizardNavLinkStatusIcon)}>
+              <ExclamationCircleIcon />
+            </span>
+          </>
         )}
         <span className={css(styles.wizardNavLinkMain)}>
           {isExpandable ? (

@@ -13,7 +13,7 @@ import {
   EditableTextCell,
   EditableSelectInputCell
 } from '@patternfly/react-table';
-import { SelectOption } from '@patternfly/react-core/';
+import { SelectOption, SelectOptionObject } from '@patternfly/react-core/deprecated';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 const rowLevelValidationRules: IValidatorDef[] = [
@@ -44,25 +44,11 @@ interface TableState {
   columns: (ICell | string)[];
 }
 
-interface Option {
-  value: string;
-}
-
 export class TableEditableDemo extends Component<TableProps, TableState> {
   static displayName = 'TableEditableDemo';
 
-  private options: Option[];
-
   constructor(props: TableProps) {
     super(props);
-
-    this.options = [
-      { value: 'Option 1' },
-      { value: 'Option 2' },
-      { value: 'Option 3' },
-      { value: 'Option 4' },
-      { value: 'Option 5' }
-    ];
 
     this.state = {
       columns: [
@@ -78,11 +64,11 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
           rowEditValidationRules: rowLevelValidationRules,
           cells: [
             {
-              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
+              title: (value?: string, rowIndex?: number, cellIndex?: number, updatedProps?: any) => (
                 <EditableTextCell
-                  value={value}
-                  rowIndex={rowIndex}
-                  cellIndex={cellIndex}
+                  value={value!}
+                  rowIndex={rowIndex!}
+                  cellIndex={cellIndex!}
                   props={updatedProps}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 1 cell 1 content"
@@ -94,11 +80,11 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
+              title: (value?: string, rowIndex?: number, cellIndex?: number, updatedProps?: any) => (
                 <EditableTextCell
-                  value={value}
-                  rowIndex={rowIndex}
-                  cellIndex={cellIndex}
+                  value={value!}
+                  rowIndex={rowIndex!}
+                  cellIndex={cellIndex!}
                   props={updatedProps}
                   isDisabled
                   handleTextInputChange={this.handleTextInputChange}
@@ -111,11 +97,11 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
+              title: (value?: string, rowIndex?: number, cellIndex?: number, updatedProps?: any) => (
                 <EditableTextCell
-                  value={value}
-                  rowIndex={rowIndex}
-                  cellIndex={cellIndex}
+                  value={value!}
+                  rowIndex={rowIndex!}
+                  cellIndex={cellIndex!}
                   props={updatedProps}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 1 cell 3 content"
@@ -127,11 +113,11 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
+              title: (value?: string, rowIndex?: number, cellIndex?: number, updatedProps?: any) => (
                 <EditableTextCell
-                  value={value}
-                  rowIndex={rowIndex}
-                  cellIndex={cellIndex}
+                  value={value!}
+                  rowIndex={rowIndex!}
+                  cellIndex={cellIndex!}
                   props={updatedProps}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 1 cell 4 content"
@@ -143,12 +129,12 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
+              title: (value?: string, rowIndex?: number, cellIndex?: number, updatedProps?: any) => (
                 <EditableSelectInputCell
                   value={value}
-                  rowIndex={rowIndex}
-                  cellIndex={cellIndex}
-                  props={updatedProps}
+                  rowIndex={rowIndex!}
+                  cellIndex={cellIndex!}
+                  props={updatedProps!}
                   onSelect={this.onSelect}
                   clearSelection={this.clearSelection}
                   isOpen={updatedProps.isSelectOpen}
@@ -189,11 +175,11 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
           rowCancelBtnAriaLabel: (idx) => `Cancel edits for row ${idx}`,
           cells: [
             {
-              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
+              title: (value?: string, rowIndex?: number, cellIndex?: number, updatedProps?: any) => (
                 <EditableTextCell
-                  value={value}
-                  rowIndex={rowIndex}
-                  cellIndex={cellIndex}
+                  value={value!}
+                  rowIndex={rowIndex!}
+                  cellIndex={cellIndex!}
                   props={updatedProps}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 2 cell 1 content"
@@ -205,11 +191,11 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
+              title: (value?: string, rowIndex?: number, cellIndex?: number, updatedProps?: any) => (
                 <EditableTextCell
-                  value={value}
-                  rowIndex={rowIndex}
-                  cellIndex={cellIndex}
+                  value={value!}
+                  rowIndex={rowIndex!}
+                  cellIndex={cellIndex!}
                   props={updatedProps}
                   isDisabled
                   handleTextInputChange={this.handleTextInputChange}
@@ -222,11 +208,11 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
+              title: (value?: string, rowIndex?: number, cellIndex?: number, updatedProps?: any) => (
                 <EditableTextCell
-                  value={value}
-                  rowIndex={rowIndex}
-                  cellIndex={cellIndex}
+                  value={value!}
+                  rowIndex={rowIndex!}
+                  cellIndex={cellIndex!}
                   props={updatedProps}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 2 cell 3 content"
@@ -238,11 +224,11 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
+              title: (value?: string, rowIndex?: number, cellIndex?: number, updatedProps?: any) => (
                 <EditableTextCell
-                  value={value}
-                  rowIndex={rowIndex}
-                  cellIndex={cellIndex}
+                  value={value!}
+                  rowIndex={rowIndex!}
+                  cellIndex={cellIndex!}
                   props={updatedProps}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 2 cell 4 content"
@@ -254,11 +240,11 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
+              title: (value?: string, rowIndex?: number, cellIndex?: number, updatedProps?: any) => (
                 <EditableSelectInputCell
                   value={value}
-                  rowIndex={rowIndex}
-                  cellIndex={cellIndex}
+                  rowIndex={rowIndex!}
+                  cellIndex={cellIndex!}
                   props={updatedProps}
                   onSelect={this.onSelect}
                   clearSelection={this.clearSelection}
@@ -266,8 +252,8 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
                   options={(updatedProps as any).options.map((option: any, index: number) => (
                     <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell5Option' + index} />
                   ))}
-                  onToggle={(_event: any) => {
-                    this.onToggle(rowIndex, cellIndex);
+                  onToggle={(_event: any, _isOpen: boolean) => {
+                    this.onToggle();
                   }}
                   selections={updatedProps.selected}
                 />
@@ -301,7 +287,7 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
     window.scrollTo(0, 0);
   }
 
-  updateEditableRows: OnRowEdit = (_evt, type, _isEditable, rowIndex = 0, validationErrors) => {
+  updateEditableRows: OnRowEdit = (_event, type, _isEditable, rowIndex = 0, validationErrors) => {
     const newRows = Array.from(this.state.rows);
 
     if (validationErrors && Object.keys(validationErrors).length) {
@@ -329,7 +315,7 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
     });
   };
 
-  handleTextInputChange = (newValue: string, evt: React.FormEvent, rowIndex: number, cellIndex: number) => {
+  handleTextInputChange = (newValue: string, _event: React.FormEvent, rowIndex: number, cellIndex: number) => {
     const newRows = Array.from(this.state.rows);
     const rowCells = newRows[rowIndex].cells;
     if (rowCells) {
@@ -341,14 +327,15 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
   };
 
   onSelect = (
-    _event: React.FormEvent,
-    newValue: string,
+    _: React.MouseEvent | React.ChangeEvent,
+    newValue: string | SelectOptionObject,
     rowIndex: number,
     cellIndex: number,
     isPlaceholder?: boolean
   ) => {
     const newRows = Array.from(this.state.rows);
-    const newCellProps = (newRows[rowIndex].cells[cellIndex] as IRowCell).props;
+    const newCell = newRows?.[rowIndex].cells?.[cellIndex];
+    const newCellProps = (newCell as IRowCell).props;
 
     if (isPlaceholder) {
       newCellProps.editableValue = [];
@@ -362,15 +349,15 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
 
       switch (newCellProps.editableSelectProps.variant) {
         case 'checkbox': {
-          if (!newSelected.includes(newValue)) {
-            newSelected.push(newValue);
+          if (!newSelected.includes(newValue.toString())) {
+            newSelected.push(newValue.toString());
           } else {
             newSelected = newSelected.filter((el) => el !== newValue);
           }
           break;
         }
         default: {
-          newSelected = [newValue];
+          newSelected = [newValue.toString()];
         }
       }
 
@@ -392,9 +379,12 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
 
   clearSelection = (_event: React.MouseEvent, rowIndex: number, cellIndex: number) => {
     const newRows = Array.from(this.state.rows);
-    const newCellProps = (newRows[rowIndex].cells[cellIndex] as IRowCell).props;
+    const newCell = newRows?.[rowIndex].cells?.[cellIndex];
+    const newCellProps = (newCell as IRowCell).props;
+
     newCellProps.editableValue = [];
     newCellProps.selected = [];
+
     this.setState({
       rows: newRows
     });

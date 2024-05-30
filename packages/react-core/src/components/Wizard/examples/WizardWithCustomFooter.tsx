@@ -40,11 +40,11 @@ const CustomStepTwoFooter = () => {
 
   return (
     <WizardFooterWrapper>
-      <Button variant="primary" onClick={onNext} isLoading={isLoading} isDisabled={isLoading}>
-        Async Next
-      </Button>
       <Button variant="secondary" onClick={goToPrevStep} isDisabled={isLoading}>
         Back
+      </Button>
+      <Button variant="primary" onClick={onNext} isLoading={isLoading} isDisabled={isLoading}>
+        Async Next
       </Button>
       <Button variant="link" onClick={close} isDisabled={isLoading}>
         Cancel

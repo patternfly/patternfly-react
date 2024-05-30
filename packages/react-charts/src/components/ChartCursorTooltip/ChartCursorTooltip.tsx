@@ -287,9 +287,9 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
   const newStyle: any = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
 
   const getFlyoutComponent = () => {
-    let _pointerLength = Helpers.evaluateProp(pointerLength);
+    let _pointerLength = Helpers.evaluateProp(pointerLength, undefined);
     if (showPointer && _pointerLength === 0) {
-      _pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
+      _pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength, undefined) : 10;
     }
     return React.cloneElement(flyoutComponent, {
       pointerLength: _pointerLength,

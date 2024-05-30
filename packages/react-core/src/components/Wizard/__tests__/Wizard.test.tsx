@@ -410,7 +410,7 @@ test('incrementally shows/hides steps based on the activeStep when isProgressive
   await user.click(nextButton);
   expect(
     screen.getByRole('button', {
-      name: 'Test step 1, visited'
+      name: 'Test step 1'
     })
   ).toBeVisible();
   expect(
@@ -428,12 +428,12 @@ test('incrementally shows/hides steps based on the activeStep when isProgressive
   await user.click(nextButton);
   expect(
     screen.getByRole('button', {
-      name: 'Test step 1, visited'
+      name: 'Test step 1'
     })
   ).toBeVisible();
   expect(
     screen.getByRole('button', {
-      name: 'Test step 2, visited'
+      name: 'Test step 2'
     })
   ).toBeVisible();
   expect(
@@ -446,7 +446,7 @@ test('incrementally shows/hides steps based on the activeStep when isProgressive
   await user.click(backButton);
   expect(
     screen.getByRole('button', {
-      name: 'Test step 1, visited'
+      name: 'Test step 1'
     })
   ).toBeVisible();
   expect(

@@ -7,6 +7,7 @@ import chart_donut_pie_Width from '@patternfly/react-tokens/dist/esm/chart_donut
 /**
  * Donut theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const DonutTheme = {
   pie: {

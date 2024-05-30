@@ -15,7 +15,7 @@
   "scripts": {
     "analyze": "yarn build:docs --analyze",
     "build:docs": "pf-docs-framework build all",
-    "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js node_modules",
+    "clean": "rimraf cache public static/assets static/base.css src/generated",
     "develop": "yarn start",
     "start": "pf-docs-framework start",
     "serve": "pf-docs-framework serve public",
@@ -36,9 +36,7 @@
   },
   "devDependencies": {
     "@patternfly/documentation-framework": "^6.0.0-alpha.28",
-    "@patternfly/patternfly-a11y": "4.3.1",
-    "rimraf": "^2.6.3",
-    "shx": "^0.3.4"
+    "@patternfly/patternfly-a11y": "4.3.1"
   },
   "keywords": [
     "gatsby"

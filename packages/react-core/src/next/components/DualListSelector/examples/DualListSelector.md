@@ -1,7 +1,7 @@
 ---
 id: Dual list selector
 section: components
-cssPrefix: 'pf-v5-c-dual-list-selector'
+cssPrefix: 'pf-v6-c-dual-list-selector'
 propComponents:
   [
     'DualListSelector',

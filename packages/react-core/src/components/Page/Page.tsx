@@ -27,6 +27,12 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   notificationDrawer?: React.ReactNode;
   /** Flag indicating Notification drawer in expanded */
   isNotificationDrawerExpanded?: boolean;
+  /** Sets default drawer size */
+  drawerDefaultSize?: string;
+  /** Sets the minimum drawer size*/
+  drawerMinSize?: string;
+  /** Sets the maximum drawer size */
+  drawerMaxSize?: string;
   /** Flag indicating if breadcrumb width should be limited */
   isBreadcrumbWidthLimited?: boolean;
   /** Callback when notification drawer panel is finished expanding. */
@@ -219,6 +225,9 @@ class Page extends React.Component<PageProps, PageState> {
       notificationDrawer,
       isNotificationDrawerExpanded,
       onNotificationDrawerExpand,
+      drawerDefaultSize,
+      drawerMinSize,
+      drawerMaxSize,
       isHorizontalSubnavWidthLimited,
       skipToContent,
       role,
@@ -312,7 +321,11 @@ class Page extends React.Component<PageProps, PageState> {
       </div>
     );
 
-    const panelContent = <DrawerPanelContent>{notificationDrawer}</DrawerPanelContent>;
+    const panelContent = (
+      <DrawerPanelContent defaultSize={drawerDefaultSize} minSize={drawerMinSize} maxSize={drawerMaxSize}>
+        {notificationDrawer}
+      </DrawerPanelContent>
+    );
 
     return (
       <PageContextProvider value={context}>

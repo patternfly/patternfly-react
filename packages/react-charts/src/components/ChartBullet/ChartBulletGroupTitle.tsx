@@ -7,6 +7,7 @@ import { ChartBulletStyles } from '../ChartTheme/ChartStyles';
 import { getLabelTextSize, getBulletLabelX, getBulletLabelY } from '../ChartUtils/chart-label';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getBulletGroupTitleTheme } from '../ChartUtils/chart-theme-types';
+import { getComponentTheme } from '../ChartUtils/chart-theme';
 
 /**
  * ChartBulletGroupTitle renders a group title.
@@ -165,6 +166,7 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
 
   // Returns title
   const getTitle = () => {
+    const componentTheme = getComponentTheme(themeColor);
     const titleProps = titleComponent ? titleComponent.props : {};
     const showBoth = title && subTitle;
     return React.cloneElement(titleComponent, {
@@ -183,7 +185,8 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
         dy: defaultPadding.top,
         labelPosition: 'top'
       }),
-      ...titleProps
+      ...titleProps,
+      ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
     });
   };
 

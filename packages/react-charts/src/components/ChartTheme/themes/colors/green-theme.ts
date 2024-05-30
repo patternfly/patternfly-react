@@ -4,7 +4,7 @@ import chart_theme_green_ColorScale_200 from '@patternfly/react-tokens/dist/esm/
 import chart_theme_green_ColorScale_300 from '@patternfly/react-tokens/dist/esm/chart_theme_green_ColorScale_300';
 import chart_theme_green_ColorScale_400 from '@patternfly/react-tokens/dist/esm/chart_theme_green_ColorScale_400';
 import chart_theme_green_ColorScale_500 from '@patternfly/react-tokens/dist/esm/chart_theme_green_ColorScale_500';
-import { ColorTheme } from '../color-theme';
+import { ColorTheme, ColorComponentTheme } from '../color-theme';
 
 // Color scale
 // See https://docs.google.com/document/d/1cw10pJFXWruB1SA8TQwituxn5Ss6KpxYPCOYGrH8qAY/edit
@@ -21,5 +21,14 @@ const COLOR_SCALE = [
  * @private
  */
 export const GreenColorTheme = ColorTheme({
+  COLOR_SCALE
+});
+
+/**
+ * Green color component theme
+ * @private
+ * @beta
+ */
+export const GreenColorComponentTheme = ColorComponentTheme({
   COLOR_SCALE
 });

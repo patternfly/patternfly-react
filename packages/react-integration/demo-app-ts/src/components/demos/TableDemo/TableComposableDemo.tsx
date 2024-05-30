@@ -97,7 +97,7 @@ export const TableComposableDemo = () => {
       [{ title: 'one - 2', colSpan: 3 }, null, null, 'four - 2', 'five - 2'],
       ['one - 3', 'two - 3', 'three - 3', 'four - 3', { title: 'five - 3 (not centered)', textCenter: false }]
     ];
-    const onRowClick = (event: React.MouseEvent, rowIndex: number, row: any[]) => {
+    const onRowClick = (_event: React.MouseEvent, rowIndex: number, row: any[]) => {
       // eslint-disable-next-line no-console
       console.log(`handle row click ${rowIndex}`, row);
     };
@@ -202,7 +202,7 @@ export const TableComposableDemo = () => {
     const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
     // sort direction of the currently active column
     const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | 'none'>('none');
-    const onSort = (event: React.MouseEvent, index: number, direction: 'asc' | 'desc' | 'none') => {
+    const onSort = (_event: React.MouseEvent, index: number, direction: 'asc' | 'desc' | 'none') => {
       setActiveSortIndex(index);
       setActiveSortDirection(direction);
       // sorts the rows
@@ -221,7 +221,7 @@ export const TableComposableDemo = () => {
           <Tr>
             {columns.map((column, columnIndex) => {
               // In this example, wrap all but the first column just to demonstrate
-              const modifier = columnIndex !== 0 ? 'wrap' : null;
+              const modifier = columnIndex !== 0 ? 'wrap' : undefined;
               // In this example, make the 1st and 3rd columns sortable
               const sortParams =
                 columnIndex === 0 || columnIndex === 2
@@ -264,8 +264,8 @@ export const TableComposableDemo = () => {
     ];
     const [allRowsSelected, setAllRowsSelected] = React.useState(false);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [selected, setSelected] = React.useState(rows.map((row) => false));
-    const onSelect: OnSelect = (event, isSelected, rowId) => {
+    const [selected, setSelected] = React.useState(rows.map(() => false));
+    const onSelect: OnSelect = (_event, isSelected, rowId) => {
       setSelected(selected.map((sel, index) => (index === rowId ? isSelected : sel)));
       if (!isSelected && allRowsSelected) {
         setAllRowsSelected(false);
@@ -283,10 +283,10 @@ export const TableComposableDemo = () => {
         }
       }
     };
-    const onSelectAll: OnSelect = (event, isSelected) => {
+    const onSelectAll: OnSelect = (_event, isSelected) => {
       setAllRowsSelected(isSelected);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      setSelected(selected.map((sel) => isSelected));
+      setSelected(selected.map(() => isSelected));
     };
     return (
       <Table aria-label="Selectable Table">
@@ -340,7 +340,7 @@ export const TableComposableDemo = () => {
       ['p', 'two', 'b', 'four', 'five']
     ];
     const [selected, setSelected] = React.useState(-1);
-    const onSelect: OnSelect = (event, isSelected, rowId) => {
+    const onSelect: OnSelect = (_event, _isSelected, rowId) => {
       setSelected(rowId);
     };
     return (
@@ -387,8 +387,8 @@ export const TableComposableDemo = () => {
     const defaultActions: IActions = [
       {
         title: 'Some action',
-        // eslint-disable-next-line
-        onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
+        // eslint-disable-next-line no-console
+        onClick: (_event, rowId) => console.log('clicked on Some action, on row: ', rowId)
       },
       {
         title: <a href="https://www.patternfly.org">Link action</a>
@@ -398,28 +398,28 @@ export const TableComposableDemo = () => {
       },
       {
         title: 'Third action',
-        // eslint-disable-next-line
-        onClick: (event, rowId, rowData, extra) => console.log('clicked on Third action, on row: ', rowId)
+        // eslint-disable-next-line no-console
+        onClick: (_event, rowId) => console.log('clicked on Third action, on row: ', rowId)
       }
     ];
     const lastRowActions: IActions = [
       {
         title: 'Some action',
-        // eslint-disable-next-line
-        onClick: (event, rowId, rowData, extra) => console.log(`clicked on Some action, on row ${rowId}`)
+        // eslint-disable-next-line no-console
+        onClick: (_event, rowId) => console.log(`clicked on Some action, on row ${rowId}`)
       },
       {
         title: <div>Another action</div>,
-        // eslint-disable-next-line
-        onClick: (event, rowId, rowData, extra) => console.log(`clicked on Another action, on row ${rowId}`)
+        // eslint-disable-next-line no-console
+        onClick: (_event, rowId) => console.log(`clicked on Another action, on row ${rowId}`)
       },
       {
         isSeparator: true
       },
       {
         title: 'Third action',
-        // eslint-disable-next-line
-        onClick: (event, rowId, rowData, extra) => console.log(`clicked on Third action, on row ${rowId}`)
+        // eslint-disable-next-line no-console
+        onClick: (_event, rowId) => console.log(`clicked on Third action, on row ${rowId}`)
       }
     ];
     const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
@@ -446,7 +446,7 @@ export const TableComposableDemo = () => {
           {rows.map((row, rowIndex) => {
             let itemsActions = defaultActions;
             if (rowIndex === 1) {
-              itemsActions = null;
+              itemsActions = [];
             }
             if (rowIndex === 4) {
               itemsActions = lastRowActions;
@@ -462,7 +462,7 @@ export const TableComposableDemo = () => {
                   key={`${rowIndex}_5`}
                   actions={{
                     items: itemsActions,
-                    disable: rowIndex === 3
+                    isDisabled: rowIndex === 3
                   }}
                 />
               </Tr>
@@ -483,7 +483,7 @@ export const TableComposableDemo = () => {
       ['5', '2', 'b', 'four', 'five']
     ];
     const [choice, setChoice] = React.useState('default');
-    const handleItemClick = (event, _isSelected: boolean) => {
+    const handleItemClick = (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
       const id = event.currentTarget.id;
       setChoice(id);
     };
@@ -517,7 +517,7 @@ export const TableComposableDemo = () => {
         </Toolbar>
         <Table
           aria-label="Compact Table"
-          variant={choice !== 'default' ? 'compact' : null}
+          variant={choice !== 'default' ? 'compact' : undefined}
           borders={choice !== 'compactBorderless'}
         >
           <Thead>
@@ -590,7 +590,7 @@ export const TableComposableDemo = () => {
     const toggleCompact = (checked: boolean) => {
       setCompact(checked);
     };
-    const handleExpansionToggle: OnCollapse = (event: any, pairIndex: number) => {
+    const handleExpansionToggle: OnCollapse = (_event, pairIndex) => {
       setExpanded({
         ...expanded,
         [pairIndex]: !expanded[pairIndex]
@@ -613,7 +613,7 @@ export const TableComposableDemo = () => {
             </ToolbarItem>
           </ToolbarContent>
         </Toolbar>
-        <Table aria-label="Expandable Table" variant={compact ? 'compact' : null}>
+        <Table aria-label="Expandable Table" variant={compact ? 'compact' : undefined}>
           <Thead>
             <Tr>
               <Th screenReaderText="Row expansion" />
@@ -637,7 +637,7 @@ export const TableComposableDemo = () => {
                           isExpanded: expanded[pairIndex],
                           onToggle: handleExpansionToggle
                         }
-                      : null
+                      : undefined
                   }
                 />
                 {pair.parent.map((cell: any, cellIndex: number) => (
@@ -829,7 +829,7 @@ export const TableComposableDemo = () => {
       if (1 <= cellIndex && cellIndex <= 3) {
         return activeChild[rowIndex] === cellIndex;
       }
-      return null;
+      return false;
     };
     return (
       <Table aria-label="Compound expandable table">
@@ -917,7 +917,7 @@ export const TableComposableDemo = () => {
               <Th
                 key={columnIndex}
                 width={columnIndex === 2 ? 40 : 15}
-                visibility={columnIndex === 2 ? ['hiddenOnMd', 'visibleOnLg'] : null}
+                visibility={columnIndex === 2 ? ['hiddenOnMd', 'visibleOnLg'] : undefined}
               >
                 {column}
               </Th>
@@ -931,7 +931,7 @@ export const TableComposableDemo = () => {
                 <Td
                   key={`${rowIndex}_${cellIndex}`}
                   dataLabel={columns[cellIndex]}
-                  visibility={cellIndex === 2 ? ['hiddenOnMd', 'visibleOnLg'] : null}
+                  visibility={cellIndex === 2 ? ['hiddenOnMd', 'visibleOnLg'] : undefined}
                 >
                   {cell}
                 </Td>
@@ -1047,7 +1047,7 @@ export const TableComposableDemo = () => {
     const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
     // sort direction of the currently active column
     const [activeSortDirection, setActiveSortDirection] = React.useState('none');
-    const onSort: OnSort = (event, index, direction) => {
+    const onSort: OnSort = (_event, index, direction) => {
       setActiveSortIndex(index);
       setActiveSortDirection(direction);
       // sorts the rows
@@ -1088,7 +1088,7 @@ export const TableComposableDemo = () => {
               <Td
                 favorites={{
                   isFavorited: row.favorited,
-                  onFavorite: (event, isFavorited) =>
+                  onFavorite: (_event, isFavorited) =>
                     setRows(
                       rows.map((row, index) => {
                         if (index === rowIndex) {

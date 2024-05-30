@@ -40,7 +40,7 @@ export class TooltipDemo extends Component {
           <Tooltip
             id="tooltip-selector-content"
             content={<div>Tooltip content attached via selector ref</div>}
-            triggerRef={() => document.getElementById('tooltip-selector-trigger')}
+            triggerRef={() => document.getElementById('tooltip-selector-trigger') as HTMLElement}
           />
         </div>
         <div>

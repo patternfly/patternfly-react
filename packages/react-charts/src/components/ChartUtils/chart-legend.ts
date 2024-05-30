@@ -21,6 +21,7 @@ interface ChartLegendInterface {
   patternScale?: string[]; // Legend symbol patterns
   position: 'bottom' | 'bottom-left' | 'right'; // The legend position
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
+  themeColor?: string; // The theme color that will be applied to the chart
   width: number; // Overall width of SVG
 }
 
@@ -82,6 +83,7 @@ export const getComputedLegend = ({
   patternScale,
   position = ChartCommonStyles.legend.position,
   theme,
+  themeColor,
   width,
 
   // destructure last
@@ -142,6 +144,7 @@ export const getComputedLegend = ({
     patternScale,
     standalone: false,
     theme,
+    themeColor,
     x: legendX > 0 ? legendX : 0,
     y: legendY > 0 ? legendY : 0
   });

@@ -11,7 +11,7 @@ This project provides a set of React components for the [PatternFly project](htt
 1. [PatternFly React packages](#patternfly-react-packages)
 2. [Setup](#Setup)
 3. [Contribution guidelines](#Contribution-guidelines)
-4. [License](#License)
+4. [License](#License) 
 
 Using PatternFly 3? Take a look at the [PatternFly 3 React component information](https://github.com/patternfly/patternfly-react/blob/patternfly-3/README.md).
 
@@ -44,7 +44,7 @@ Before you begin, check out this [overview of PatternFly](http://patternfly.org/
 #### Install a package manager
 Install a package manager before using the PatternFly libraries.
 
-* [Use npm](https://nodejs.org/en/download)
+* [Use npm](https://nodejs.org/en/download/package-manager)
 * [Use Yarn](https://yarnpkg.com/en/docs/getting-started)
 
 
@@ -82,7 +82,6 @@ If you want to start with your existing project, skip to [Install and configure 
 
 ### Contribution guidelines
 All React contributors must first be [PatternFly community contributors](https://www.patternfly.org/get-started/contribute/contributing-to-patternfly). If you're already a PatternFly community contributor, check out the [React contribution guidelines](https://github.com/patternfly/patternfly-react/tree/main/CONTRIBUTING.md) to make React contributions.
-
 
 ### License
 PatternFly React is licensed under the [MIT License](https://github.com/patternfly/patternfly-react/tree/main/LICENSE).
