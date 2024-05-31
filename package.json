@@ -28,7 +28,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.24.6",
     "@babel/preset-react": "^7.24.6",
     "@babel/preset-typescript": "^7.24.6",
-    "@octokit/rest": "^20.0.0",
+    "@octokit/rest": "^20.1.1",
     "@rollup/plugin-commonjs": "^25.0.8",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.5",
