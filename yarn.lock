@@ -2924,7 +2924,7 @@
     acorn-static-class-features "^1.0.0"
     astring "^1.7.5"
 
-"@patternfly/documentation-framework@^5.8.2":
+"@patternfly/documentation-framework@^5.15.7":
   version "5.15.7"
   resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-5.15.7.tgz#014b6e192db689570452772ec82002d0fd9c9dc9"
   integrity sha512-atIcjvG2SEYH3GvvHXhDRE0TA/dC9Yjv1gR9XcyhKounzd0UNc6vFCUw+IS3MJzbBzspUncD+M6yV0SxofN4GA==
