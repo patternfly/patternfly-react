@@ -9,11 +9,19 @@ export interface HintProps {
   className?: string;
   /** Actions of the hint. */
   actions?: React.ReactNode;
+  /** Flag indicating that the actions have no offset */
+  hasNoOffset?: boolean;
 }
 
-export const Hint: React.FunctionComponent<HintProps> = ({ children, className, actions, ...props }: HintProps) => (
+export const Hint: React.FunctionComponent<HintProps> = ({
+  children,
+  className,
+  actions,
+  hasNoOffset = false,
+  ...props
+}: HintProps) => (
   <div className={css(styles.hint, className)} {...props}>
-    <div className={css(styles.hintActions)}>{actions}</div>
+    {actions && <div className={css(styles.hintActions, hasNoOffset && styles.modifiers.noOffset)}>{actions}</div>}
     {children}
   </div>
 );

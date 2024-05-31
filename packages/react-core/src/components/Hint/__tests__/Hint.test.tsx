@@ -55,6 +55,18 @@ test(`renders with class ${styles.hintActions} if there is an action prop`, () =
   expect(hint).toHaveClass(styles.hintActions);
 });
 
+test(`renders with class ${styles.modifiers.noOffset} if there is an action prop and hasNoOffset is true`, () => {
+  render(
+    <Hint actions="actions" hasNoOffset>
+      Test
+    </Hint>
+  );
+
+  const hint = screen.getByText('actions');
+
+  expect(hint).toHaveClass(styles.modifiers.noOffset);
+});
+
 test('renders with inherited element props spread to the component', () => {
   render(<Hint aria-label="labelling-id">Test</Hint>);
 
@@ -63,5 +75,10 @@ test('renders with inherited element props spread to the component', () => {
 
 test('matches hint snapshot', () => {
   const { asFragment } = render(<Hint />);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('actions are rendered', () => {
+  const { asFragment } = render(<Hint actions="test" />);
   expect(asFragment()).toMatchSnapshot();
 });

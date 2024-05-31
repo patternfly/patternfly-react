@@ -1,13 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches hint snapshot 1`] = `
+exports[`actions are rendered 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-hint"
   >
     <div
       class="pf-v6-c-hint__actions"
-    />
+    >
+      test
+    </div>
   </div>
+</DocumentFragment>
+`;
+
+exports[`matches hint snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-hint"
+  />
 </DocumentFragment>
 `;
