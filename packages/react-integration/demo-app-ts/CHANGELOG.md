@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.121](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.120...demo-app-ts@5.1.1-prerelease.121) (2024-05-31)
+
+### Bug Fixes
+
+- **deps:** update react-router monorepo to ^5.3.4 ([#10469](https://github.com/patternfly/patternfly-react/issues/10469)) ([85c4b0e](https://github.com/patternfly/patternfly-react/commit/85c4b0ec9176f352ddfd9d359a794c6e71085a93))
+
 ## [5.1.1-prerelease.120](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-prerelease.119...demo-app-ts@5.1.1-prerelease.120) (2024-05-28)
 
 **Note:** Version bump only for package demo-app-ts

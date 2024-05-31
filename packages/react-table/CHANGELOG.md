@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.4.0-prerelease.14...@patternfly/react-table@5.4.0-prerelease.15) (2024-05-31)
+
+### Bug Fixes
+
+- **deps:** update dependency lodash to ^4.17.21 ([#10407](https://github.com/patternfly/patternfly-react/issues/10407)) ([6eb6b30](https://github.com/patternfly/patternfly-react/commit/6eb6b30c49c2087f89fc99af58b042dcb10d3d86))
+
 # [5.4.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.4.0-prerelease.13...@patternfly/react-table@5.4.0-prerelease.14) (2024-05-22)
 
 **Note:** Version bump only for package @patternfly/react-table
