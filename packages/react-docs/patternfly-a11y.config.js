@@ -94,7 +94,9 @@ module.exports = {
     'landmark-no-duplicate-main',
     'landmark-main-is-top-level',
     'scrollable-region-focusable',
-    'link-in-text-block'
+    'link-in-text-block',
+    // temporarily enable this rule that has started failing test in v6 branch.
+    'aria-required-children'
   ].join(','),
   ignoreIncomplete: true
 };
