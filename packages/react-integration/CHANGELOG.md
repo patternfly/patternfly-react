@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.30...@patternfly/react-integration@6.0.0-alpha.31) (2024-05-31)
+
+### Features
+
+- **Wizard:** use height token to set height ([#10332](https://github.com/patternfly/patternfly-react/issues/10332)) ([2b5a598](https://github.com/patternfly/patternfly-react/commit/2b5a598e9b49f052d36b675a0929d5f679af6cca))
+
 # [6.0.0-alpha.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.29...@patternfly/react-integration@6.0.0-alpha.30) (2024-05-21)
 
 ### Features
