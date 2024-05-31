@@ -43,7 +43,7 @@
     "@patternfly/react-icons": "^5.4.0-prerelease.5",
     "@patternfly/react-styles": "^5.4.0-prerelease.5",
     "@patternfly/react-tokens": "^5.4.0-prerelease.4",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "tslib": "^2.6.2"
   },
   "peerDependencies": {
