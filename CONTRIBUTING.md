@@ -130,7 +130,7 @@ To make contributing components and packages easier a generator utility has been
 
 To start the generator run:
 
-```bash
+```sh
 yarn generate
 ```
 
@@ -179,9 +179,9 @@ Please ensure that all React UI components contributed meet the following guidel
 
 Adhering to the following process is the best way to get your work included in the project:
 
-1.  [Fork](https://help.github.com/fork-a-repo/) the project, clone your fork, and configure the remotes:
+1. [Fork](https://help.github.com/fork-a-repo/) the project, clone your fork, and configure the remotes:
 
-```bash
+```sh
 # Clone your fork of the repo into the current directory
 git clone https://github.com/<your-username>/patternfly-react.git
 # Navigate to the newly cloned directory
@@ -192,15 +192,24 @@ git remote add upstream https://github.com/patternfly/patternfly-react.git
 git fetch upstream
 ```
 
-2.  Create a branch:
+2. Set up tooling
 
-```text
-$ git checkout -b my-branch upstream/main
+[Install Node.js](https://nodejs.org/en/download/package-manager) version 20 (or higher). Then install the project dependencies and build it by running:
+
+```sh
+yarn install
+yarn build
 ```
 
-3. Generate your component
+3.  Create a branch:
 
-```bash
+```sh
+git checkout -b my-branch upstream/main
+```
+
+4. Generate your component
+
+```sh
 # Run the tool to Generate the component scaffolding
  yarn generate
 ```
@@ -214,37 +223,37 @@ $ git checkout -b my-branch upstream/main
     ComponentName.md - Component Docs
   ```
 
-4.  Develop your component. After development is complete, run build and ensure tests and lint standards pass.
+5.  Develop your component. After development is complete, run build and ensure tests and lint standards pass.
 
-```text
-$ yarn build
-$ yarn test
+```sh
+yarn build
+yarn test
 ```
 
 Ensure no lint errors are introduced in `yarn-error.log` after running this command.
 
 ***Note to Windows users:*** you may need to change the path for the lint script in package.json to be `node_modules/eslint/bin/eslint`
 
-5.  Add a commit using `git commit`:
+6.  Add a commit using `git commit`:
 
 This project uses [`lerna`](https://lernajs.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.
 
-6.  Rebase
+7.  Rebase
 
 Use `git rebase` (not `git merge`) to sync your work from time to time. Ensure all commits related to a single issue have been [squashed](https://github.com/ginatrapani/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit).
 
-```text
-$ git fetch upstream
-$ git rebase upstream/main
+```sh
+git fetch upstream
+git rebase upstream/main
 ```
 
-7.  Push
+8.  Push
 
-```text
-$ git push origin my-branch
+```sh
+git push origin my-branch
 ```
 
-8.  Create a pull request
+9.  Create a pull request
 
 [Open a pull request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `main` branch. Please be sure to include all of the following in your PR:
 

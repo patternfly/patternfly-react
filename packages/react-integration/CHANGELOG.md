@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.31...@patternfly/react-integration@5.1.1-prerelease.32) (2024-05-31)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+## [5.1.1-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.30...@patternfly/react-integration@5.1.1-prerelease.31) (2024-05-31)
+
+### Bug Fixes
+
+- **deps:** update react-router monorepo to ^5.3.4 ([#10469](https://github.com/patternfly/patternfly-react/issues/10469)) ([85c4b0e](https://github.com/patternfly/patternfly-react/commit/85c4b0ec9176f352ddfd9d359a794c6e71085a93))
+
+## [5.1.1-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.29...@patternfly/react-integration@5.1.1-prerelease.30) (2024-05-28)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+## [5.1.1-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.28...@patternfly/react-integration@5.1.1-prerelease.29) (2024-05-23)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+## [5.1.1-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.27...@patternfly/react-integration@5.1.1-prerelease.28) (2024-05-23)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+## [5.1.1-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.26...@patternfly/react-integration@5.1.1-prerelease.27) (2024-05-22)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+## [5.1.1-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.25...@patternfly/react-integration@5.1.1-prerelease.26) (2024-05-21)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+## [5.1.1-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.24...@patternfly/react-integration@5.1.1-prerelease.25) (2024-05-20)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+## [5.1.1-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.23...@patternfly/react-integration@5.1.1-prerelease.24) (2024-05-15)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+## 5.1.1-prerelease.23 (2024-04-18)
+
+# 5.3.0 (2024-04-18)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
 ## 5.1.1-prerelease.22 (2024-03-28)
 
 ### Bug Fixes

@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "6.3.0-prerelease.31",
+  "version": "6.4.0-prerelease.24",
   "publishConfig": {
     "access": "public"
   },
@@ -14,7 +14,7 @@
   "scripts": {
     "analyze": "yarn build:docs --analyze",
     "build:docs": "pf-docs-framework build all",
-    "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js node_modules",
+    "clean": "rimraf cache public static/assets static/base.css src/generated",
     "develop": "yarn start",
     "start": "pf-docs-framework start",
     "serve": "pf-docs-framework serve public",
@@ -22,22 +22,20 @@
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
   "dependencies": {
-    "@patternfly/patternfly": "5.3.0-prerelease.5",
-    "@patternfly/react-charts": "^7.3.0-prerelease.6",
-    "@patternfly/react-code-editor": "^5.3.0-prerelease.25",
-    "@patternfly/react-core": "^5.3.0-prerelease.23",
-    "@patternfly/react-drag-drop": "^5.3.0-prerelease.23",
-    "@patternfly/react-icons": "^5.3.0-prerelease.3",
-    "@patternfly/react-styles": "^5.3.0-prerelease.3",
-    "@patternfly/react-table": "^5.3.0-prerelease.25",
-    "@patternfly/react-templates": "^1.0.0-prerelease.6",
-    "@patternfly/react-tokens": "^5.3.0-prerelease.3"
+    "@patternfly/patternfly": "5.4.0-prerelease.3",
+    "@patternfly/react-charts": "^7.4.0-prerelease.11",
+    "@patternfly/react-code-editor": "^5.4.0-prerelease.17",
+    "@patternfly/react-core": "^5.4.0-prerelease.15",
+    "@patternfly/react-drag-drop": "^5.4.0-prerelease.16",
+    "@patternfly/react-icons": "^5.4.0-prerelease.5",
+    "@patternfly/react-styles": "^5.4.0-prerelease.6",
+    "@patternfly/react-table": "^5.4.0-prerelease.16",
+    "@patternfly/react-templates": "^1.1.0-prerelease.15",
+    "@patternfly/react-tokens": "^5.4.0-prerelease.5"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^5.8.2",
-    "@patternfly/patternfly-a11y": "4.3.1",
-    "rimraf": "^2.6.3",
-    "shx": "^0.3.4"
+    "@patternfly/documentation-framework": "^5.15.7",
+    "@patternfly/patternfly-a11y": "4.3.1"
   },
   "keywords": [
     "gatsby"

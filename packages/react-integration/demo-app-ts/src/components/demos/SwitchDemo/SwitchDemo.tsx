@@ -79,7 +79,7 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
     let rr = data;
     if (!all) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const [first, ...rest] = data;
+      const [_first, ...rest] = data;
       rr = rest;
     }
     const rows = rr.map(r => ({

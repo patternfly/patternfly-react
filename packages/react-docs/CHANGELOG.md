@@ -3,6 +3,124 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.4.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.23...@patternfly/react-docs@6.4.0-prerelease.24) (2024-05-31)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.22...@patternfly/react-docs@6.4.0-prerelease.23) (2024-05-31)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.21...@patternfly/react-docs@6.4.0-prerelease.22) (2024-05-28)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.20...@patternfly/react-docs@6.4.0-prerelease.21) (2024-05-23)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.19...@patternfly/react-docs@6.4.0-prerelease.20) (2024-05-22)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.18...@patternfly/react-docs@6.4.0-prerelease.19) (2024-05-20)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.17...@patternfly/react-docs@6.4.0-prerelease.18) (2024-05-15)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.16...@patternfly/react-docs@6.4.0-prerelease.17) (2024-05-15)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.15...@patternfly/react-docs@6.4.0-prerelease.16) (2024-05-14)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.14...@patternfly/react-docs@6.4.0-prerelease.15) (2024-05-14)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.13...@patternfly/react-docs@6.4.0-prerelease.14) (2024-05-10)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.12...@patternfly/react-docs@6.4.0-prerelease.13) (2024-05-10)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.11...@patternfly/react-docs@6.4.0-prerelease.12) (2024-05-10)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.10...@patternfly/react-docs@6.4.0-prerelease.11) (2024-04-30)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.9...@patternfly/react-docs@6.4.0-prerelease.10) (2024-04-30)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.8...@patternfly/react-docs@6.4.0-prerelease.9) (2024-04-29)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.7...@patternfly/react-docs@6.4.0-prerelease.8) (2024-04-29)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.6...@patternfly/react-docs@6.4.0-prerelease.7) (2024-04-26)
+
+### Features
+
+- **docs:** fix props ignore paths ([#10301](https://github.com/patternfly/patternfly-react/issues/10301)) ([312a351](https://github.com/patternfly/patternfly-react/commit/312a3514d49da68e83df22a3c8d68c1f0b9434e5))
+
+# [6.4.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.5...@patternfly/react-docs@6.4.0-prerelease.6) (2024-04-26)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.4...@patternfly/react-docs@6.4.0-prerelease.5) (2024-04-26)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.3...@patternfly/react-docs@6.4.0-prerelease.4) (2024-04-24)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.2...@patternfly/react-docs@6.4.0-prerelease.3) (2024-04-22)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.4.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.4.0-prerelease.1...@patternfly/react-docs@6.4.0-prerelease.2) (2024-04-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# 6.4.0-prerelease.1 (2024-04-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# 6.4.0-prerelease.0 (2024-04-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# 6.3.0 (2024-04-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.3.0-prerelease.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.3.0-prerelease.33...@patternfly/react-docs@6.3.0-prerelease.34) (2024-04-17)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.3.0-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.3.0-prerelease.32...@patternfly/react-docs@6.3.0-prerelease.33) (2024-04-09)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [6.3.0-prerelease.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.3.0-prerelease.31...@patternfly/react-docs@6.3.0-prerelease.32) (2024-04-08)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 # [6.3.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@6.3.0-prerelease.30...@patternfly/react-docs@6.3.0-prerelease.31) (2024-04-01)
 
 **Note:** Version bump only for package @patternfly/react-docs

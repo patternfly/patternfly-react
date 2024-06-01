@@ -2,30 +2,15 @@
 
 This package provides PatternFly charting components for [PatternFly][patternfly].
 
-### Prerequisite
-
-#### Node Environment 
-
-This project currently supports Node [Active LTS](https://github.com/nodejs/Release#release-schedule) releases. Please stay current with Node Active LTS when developing patternfly-react.
-
-For example, to develop with Node 8, use the following:
-
-```
-nvm install 8
-nvm use 8
-```
-
-This project also requires a Yarn version of >=1.6.0. The latest version can be installed [here](https://yarnpkg.com/).
-
 ### Installing
 
-```
+```sh
 yarn add @patternfly/react-charts
 ```
 
 or
 
-```
+```sh
 npm install @patternfly/react-charts --save
 ```
 

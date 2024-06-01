@@ -138,7 +138,7 @@ export interface IExtra extends IExtraData {
 }
 
 export type IFormatterValueType = formatterValueType & {
-  title?: string | React.ReactNode;
+  title?: React.ReactNode;
   props?: any;
 };
 
@@ -157,7 +157,7 @@ export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'>, P
   /** Key of actions menu item */
   itemKey?: string;
   /** Content to display in the actions menu item */
-  title?: string | React.ReactNode;
+  title?: React.ReactNode;
   /** Render item as aria-disabled option */
   isAriaDisabled?: boolean;
   /** Props for adding a tooltip to a menu item. This is used to display tooltip when hovered over the item  */
@@ -191,7 +191,7 @@ export interface decoratorReturnType {
   textCenter?: boolean;
   component?: string;
   isVisible?: boolean;
-  title?: string | React.ReactNode;
+  title?: React.ReactNode;
   props?: any;
   scope?: string;
   parentId?: number;
@@ -205,7 +205,7 @@ export type IFormatter = (data?: IFormatterValueType, extra?: IExtra) => formatt
 
 export interface ICell {
   /* cell contents */
-  title?: string | React.ReactNode;
+  title?: React.ReactNode;
   /** transformations applied to the header cell */
   transforms?: ITransform[];
   /** transformations applied to the cells within the column's body */
@@ -229,7 +229,7 @@ export interface ICell {
 export type RowCellContent<T = any> = (value?: string, rowIndex?: number, cellIndex?: number, props?: T) => void;
 
 export interface IRowCell<T = any> {
-  title?: string | React.ReactNode | RowCellContent<T>;
+  title?: React.ReactNode | RowCellContent<T>;
   props?: T;
   formatters?: IFormatter[];
 }

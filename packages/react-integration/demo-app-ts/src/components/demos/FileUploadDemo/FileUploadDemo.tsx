@@ -6,7 +6,7 @@ export class FileUploadDemo extends React.Component {
 
   state = { value: '', filename: '', isLoading: false };
   /* eslint-disable-next-line no-console */
-  handleFileInputChange = (event: React.ChangeEvent<HTMLInputElement>, file: File) =>
+  handleFileInputChange = (_event: DropEvent, file: File) =>
     this.setState({ value: file, filename: file.name });
   handleDataChange = (_event: DropEvent, value: string) => this.setState({ value });
   /* eslint-disable @typescript-eslint/no-unused-vars */

@@ -28,6 +28,12 @@ export interface WizardContextProps {
   getStep: (stepId: number | string) => WizardStepType;
   /** Set step by ID */
   setStep: (step: Pick<WizardStepType, 'id'> & Partial<WizardStepType>) => void;
+  /** Flag indicating whether the wizard content should be focused after the onNext or onBack callbacks
+   * are called.
+   */
+  shouldFocusContent: boolean;
+  /** Ref for main wizard content element. */
+  mainWrapperRef: React.RefObject<HTMLElement>;
 }
 
 export const WizardContext = React.createContext({} as WizardContextProps);
@@ -47,6 +53,8 @@ export interface WizardContextProviderProps {
     steps: WizardStepType[],
     index: number
   ): void;
+  shouldFocusContent: boolean;
+  mainWrapperRef: React.RefObject<HTMLElement>;
 }
 
 export const WizardContextProvider: React.FunctionComponent<WizardContextProviderProps> = ({
@@ -59,7 +67,9 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   onClose,
   goToStepById,
   goToStepByName,
-  goToStepByIndex
+  goToStepByIndex,
+  shouldFocusContent,
+  mainWrapperRef
 }) => {
   const [currentSteps, setCurrentSteps] = React.useState<WizardStepType[]>(initialSteps);
   const [currentFooter, setCurrentFooter] = React.useState<WizardFooterType>();
@@ -139,7 +149,9 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
         goToStepByIndex: React.useCallback(
           (index: number) => goToStepByIndex(null, steps, index),
           [goToStepByIndex, steps]
-        )
+        ),
+        shouldFocusContent,
+        mainWrapperRef
       }}
     >
       {children}

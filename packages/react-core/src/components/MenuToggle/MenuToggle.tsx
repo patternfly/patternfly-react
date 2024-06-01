@@ -129,6 +129,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
             aria-expanded={isExpanded}
             onClick={onClick}
             aria-label={ariaLabel || 'Menu toggle'}
+            tabIndex={-1}
           >
             {toggleControls}
           </button>
@@ -186,8 +187,10 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
             aria-label={ariaLabel}
             disabled={isDisabled}
             onClick={onClick}
+            {...(children && { style: { display: 'flex', paddingLeft: 'var(--pf-v5-global--spacer--sm)' } })}
             {...otherProps}
           >
+            {children && <span className={css(styles.menuToggleText)}>{children}</span>}
             {toggleControls}
           </button>
         </div>

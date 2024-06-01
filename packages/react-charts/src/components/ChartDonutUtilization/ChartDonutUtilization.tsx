@@ -688,6 +688,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
       padding={padding}
       standalone={false}
       theme={getThresholdTheme()}
+      themeColor={themeColor}
       width={width}
       {...rest}
     />

@@ -50,7 +50,14 @@ export const TreeViewWithMemoization: React.FunctionComponent = () => {
     options.push({ name: 'Option ' + i, id: i.toString(), children: childOptions });
   }
   const tree = (
-    <TreeView data={options} activeItems={activeItems} onSelect={onSelect} allExpanded={allExpanded} useMemo />
+    <TreeView
+      aria-label="Tree View with memoization example"
+      data={options}
+      activeItems={activeItems}
+      onSelect={onSelect}
+      allExpanded={allExpanded}
+      useMemo
+    />
   );
 
   return (

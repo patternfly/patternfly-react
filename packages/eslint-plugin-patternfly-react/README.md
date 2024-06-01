@@ -4,13 +4,13 @@ This package provides PatternFly React all ESLint rules bundled together for use
 
 ### Installing
 
-```
+```sh
 yarn add -D eslint-plugin-patternfly-react
 ```
 
 or
 
-```
+```sh
 npm install eslint-plugin-patternfly-react --save-dev
 ```
 

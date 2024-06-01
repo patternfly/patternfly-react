@@ -4,8 +4,8 @@ import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 export const TabsHorizontalOverflowDemo: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
   const [showTabCount, setShowTabCount] = React.useState(false);
-  const [defaultTitleText, setDefaultTitleText] = React.useState(undefined);
-  const [toggleAriaLabel, setToggleAriaLabel] = React.useState(undefined);
+  const [defaultTitleText, setDefaultTitleText] = React.useState<string>();
+  const [toggleAriaLabel, setToggleAriaLabel] = React.useState<string>();
 
   const handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => {
     setActiveTabKey(tabIndex);
@@ -64,12 +64,12 @@ export const TabsHorizontalOverflowDemo: React.FunctionComponent = () => {
         id="toggle-show-count-overflow"
       />
       <Checkbox
-        isChecked={defaultTitleText}
+        isChecked={!!defaultTitleText}
         onChange={() => setDefaultTitleText(defaultTitleText ? undefined : 'Overflow')}
         id="toggle-change-toggle-text"
       />
       <Checkbox
-        isChecked={toggleAriaLabel}
+        isChecked={!!toggleAriaLabel}
         onChange={() => setToggleAriaLabel(toggleAriaLabel ? undefined : 'Overflow aria label')}
         id="toggle-add-aria-label"
       />

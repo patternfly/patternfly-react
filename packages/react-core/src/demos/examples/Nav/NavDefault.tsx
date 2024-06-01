@@ -17,7 +17,7 @@ import {
   Text
 } from '@patternfly/react-core';
 import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import { DashboardHeader } from '@patternfly/react-core/src/demos/DashboardHeader';
+import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
 
 export const NavDefault: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState<number | string>(0);

@@ -322,7 +322,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   singleOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    _event: React.MouseEvent | React.ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -338,7 +338,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   singleRefOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    _event: React.MouseEvent | React.ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -354,7 +354,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   singleAppendOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    _event: React.MouseEvent | React.ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -370,7 +370,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   singleDescOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    _event: React.MouseEvent | React.ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -386,7 +386,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   dividerOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    _event: React.MouseEvent | React.ChangeEvent,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -539,7 +539,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   lbltypeaheadSelect = (
-    _event: React.MouseEvent | React.ChangeEvent,
+    _event: React.MouseEvent | React.ChangeEvent | undefined,
     selection: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => {
@@ -557,7 +557,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   plainTypeaheadMultiOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    _event: React.MouseEvent | React.ChangeEvent,
     selection: string | SelectOptionObject
   ) => {
     const { plainTypeaheadMultiSelected } = this.state;
@@ -579,7 +579,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   customTypeaheadMultiOnSelect = (
-    event: React.MouseEvent | React.ChangeEvent,
+    _event: React.MouseEvent | React.ChangeEvent,
     selection: string | SelectOptionObject
   ) => {
     const { customTypeaheadMultiSelected } = this.state;
@@ -786,7 +786,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   renderSelectWithDivider() {
     const { dividerisOpen, dividerSelected } = this.state;
     const titleId = 'select-with-divider-title-id';
-    const options = this.singleOptions.reduce((acc, option, index) => {
+    const options = this.singleOptions.reduce<JSX.Element[]>((acc, option, index) => {
       const selectOpt = (
         <SelectOption id={option.value} isDisabled={option.disabled} key={index} value={option.value} />
       );
@@ -1137,7 +1137,7 @@ export class SelectDemo extends Component<SelectDemoState> {
           </Select>
           <Button
             id="button-typeahead-labels"
-            onClick={() => this.lbltypeaheadSelect(null, typeaheadLabelOptions[1].value)}
+            onClick={() => this.lbltypeaheadSelect(undefined, typeaheadLabelOptions[1].value)}
           >
             Select {typeaheadLabelOptions[1].label}
           </Button>

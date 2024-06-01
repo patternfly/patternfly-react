@@ -20,6 +20,20 @@ propComponents: ['Checkbox']
 
 ```
 
+### Reversed
+
+```ts file="./CheckboxReversed.tsx"
+
+```
+
+### Label wraps
+
+You can expand the clickable area of a checkbox so that it spans wider than the checkbox label by adding the `isLabelWrapped` property. This allows users to select a checkbox by clicking the checkbox itself, the label, or the area between the checkbox and the label.
+
+```ts file="./CheckboxLabelWraps.tsx"
+
+```
+
 ### Disabled
 
 ```ts file='./CheckboxDisabled.tsx'

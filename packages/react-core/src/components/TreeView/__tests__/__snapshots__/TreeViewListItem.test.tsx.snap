@@ -4,6 +4,7 @@ exports[`Matches snapshot with children 1`] = `
 <DocumentFragment>
   <li
     aria-expanded="false"
+    aria-selected="false"
     class="pf-v5-c-tree-view__list-item"
     role="treeitem"
     tabindex="-1"
@@ -56,6 +57,7 @@ exports[`Matches snapshot without children 1`] = `
 <DocumentFragment>
   <li
     aria-expanded="false"
+    aria-selected="false"
     class="pf-v5-c-tree-view__list-item"
     role="treeitem"
     tabindex="-1"

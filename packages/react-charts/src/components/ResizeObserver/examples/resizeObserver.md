@@ -154,6 +154,7 @@ class MultiColorChart extends React.Component {
     this.containerRef = React.createRef();
     this.observer = () => {};
     this.state = {
+      extraHeight: 0,
       width: 0
     };
     this.handleResize = () => {
