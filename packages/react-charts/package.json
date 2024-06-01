@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-charts",
-  "version": "7.3.0-prerelease.6",
+  "version": "7.4.0-prerelease.11",
   "description": "This library provides a set of React chart components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -28,28 +28,28 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "@patternfly/react-styles": "^5.3.0-prerelease.3",
-    "@patternfly/react-tokens": "^5.3.0-prerelease.3",
+    "@patternfly/react-styles": "^5.4.0-prerelease.6",
+    "@patternfly/react-tokens": "^5.4.0-prerelease.5",
     "hoist-non-react-statics": "^3.3.0",
     "lodash": "^4.17.21",
-    "tslib": "^2.5.0",
-    "victory-area": "^36.9.1",
-    "victory-axis": "^36.9.1",
-    "victory-bar": "^36.9.1",
-    "victory-box-plot": "^36.9.1",
-    "victory-chart": "^36.9.1",
-    "victory-core": "^36.9.1",
-    "victory-create-container": "^36.9.1",
-    "victory-cursor-container": "^36.9.1",
-    "victory-group": "^36.9.1",
-    "victory-legend": "^36.9.1",
-    "victory-line": "^36.9.1",
-    "victory-pie": "^36.9.1",
-    "victory-scatter": "^36.9.1",
-    "victory-stack": "^36.9.1",
-    "victory-tooltip": "^36.9.1",
-    "victory-voronoi-container": "^36.9.1",
-    "victory-zoom-container": "^36.9.1"
+    "tslib": "^2.6.2",
+    "victory-area": "^37.0.2",
+    "victory-axis": "^37.0.2",
+    "victory-bar": "^37.0.2",
+    "victory-box-plot": "^37.0.2",
+    "victory-chart": "^37.0.2",
+    "victory-core": "^37.0.2",
+    "victory-create-container": "^37.0.2",
+    "victory-cursor-container": "^37.0.2",
+    "victory-group": "^37.0.2",
+    "victory-legend": "^37.0.2",
+    "victory-line": "^37.0.2",
+    "victory-pie": "^37.0.2",
+    "victory-scatter": "^37.0.2",
+    "victory-stack": "^37.0.2",
+    "victory-tooltip": "^37.0.2",
+    "victory-voronoi-container": "^37.0.2",
+    "victory-zoom-container": "^37.0.2"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
@@ -60,11 +60,9 @@
     "build:single:packages": "node ../../scripts/build-single-packages.js --config single-packages.config.json"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.157",
-    "css": "^2.2.3",
+    "@types/lodash": "^4.17.4",
+    "css": "^2.2.4",
     "fs-extra": "^11.0.0",
-    "glob": "^7.1.2",
-    "rimraf": "^2.6.2",
-    "typescript": "^4.7.4"
+    "glob": "^7.1.2"
   }
 }

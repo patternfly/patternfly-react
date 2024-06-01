@@ -255,6 +255,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
         }
       },
       theme,
+      themeColor,
       width,
       ...measureComponent.props
     })

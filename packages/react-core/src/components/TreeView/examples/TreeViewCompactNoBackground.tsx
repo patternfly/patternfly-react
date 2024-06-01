@@ -55,5 +55,5 @@ export const TreeViewCompactNoBackground: React.FunctionComponent = () => {
       ]
     }
   ];
-  return <TreeView data={options} variant="compactNoBackground" />;
+  return <TreeView aria-label="Tree View compact no background example" data={options} variant="compactNoBackground" />;
 };

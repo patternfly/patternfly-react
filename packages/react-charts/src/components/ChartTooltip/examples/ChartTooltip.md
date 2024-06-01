@@ -607,9 +607,34 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartTooltip }
 </div>
 ```
 
+### Fixed tooltip
+This demonstrates how to adjust the tooltip position and label radius
+```js
+import React from 'react';
+import { ChartDonut, ChartTooltip } from '@patternfly/react-charts';
+
+<div style={{ height: '150px', width: '150px' }}>
+  <ChartDonut
+    ariaDesc="Average number of pets"
+    ariaTitle="Donut chart example"
+    constrainToVisibleArea
+    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+    height={150}
+    labelComponent={<ChartTooltip center={{ x: 75, y: 0 }} />}
+    labelRadius={46}
+    labels={({ datum }) => `${datum.x}: ${datum.y}%`}
+    name="chart5"
+    subTitle="Pets"
+    title="100"
+    themeColor={ChartThemeColor.cyan}
+    width={150}
+  />
+</div>
+```
+
 ### Legend
 
-This demonstrates an approach for applying tooltips to a legend using a custom label component.
+This demonstrates an approach for applying tooltips to a legend using a custom legend label component.
 
 ```js
 import React from 'react';

@@ -201,6 +201,7 @@ export const ChartBulletComparativeErrorMeasure: React.FunctionComponent<ChartBu
     padding,
     standalone: false,
     theme,
+    themeColor,
     width,
     y,
     ...measureComponent.props

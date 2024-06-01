@@ -31,25 +31,24 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
     filteredItems: this.items
   };
 
-  onToggle = (event: React.SyntheticEvent, isOpen: boolean) => {
+  onToggle = (_event: React.SyntheticEvent, isOpen: boolean) => {
     this.setState({
       isOpen
     });
   };
 
-  onSelect = (event: React.SyntheticEvent, value: React.ReactNode) => {
+  onSelect = (_event: React.SyntheticEvent, value: React.ReactNode) => {
     this.setState({
       selected: value,
       isOpen: !this.state.isOpen
     });
   };
 
-  onSearchInputChange = (value: string) => {
+  onSearchInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     this.setState({ searchValue: value });
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onSearchButtonClick = (event?: React.SyntheticEvent<HTMLButtonElement, Event>) => {
+  onSearchButtonClick = () => {
     const filtered =
       this.state.searchValue === ''
         ? this.items

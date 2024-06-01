@@ -18,7 +18,7 @@ import { VictoryAxis, VictoryAxisProps, VictoryAxisTTargetType } from 'victory-a
 import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { getTheme } from '../ChartUtils/chart-theme';
+import { getComponentTheme, getTheme } from '../ChartUtils/chart-theme';
 import { getAxisTheme } from '../ChartUtils/chart-theme-types';
 
 /**
@@ -451,6 +451,8 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   theme = getTheme(themeColor),
   ...rest
 }: ChartAxisProps) => {
+  const componentTheme = getComponentTheme(themeColor);
+
   // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
     theme,
@@ -462,7 +464,8 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
       ...(name && {
         id: () => `${name}-${(axisLabelComponent as any).type.displayName}`
       }),
-      ...axisLabelComponent.props
+      ...axisLabelComponent.props,
+      ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
     });
 
   const getTickLabelComponent = () =>
@@ -470,7 +473,8 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
       ...(name && {
         id: (props: any) => `${name}-${(tickLabelComponent as any).type.displayName}-${props.index}`
       }),
-      ...tickLabelComponent.props
+      ...tickLabelComponent.props,
+      ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
     });
 
   // Note: containerComponent is required for theme

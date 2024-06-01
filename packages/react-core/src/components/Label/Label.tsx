@@ -284,7 +284,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       ...editableProps
     }),
     ...(isClickableDisabled && isButton && { disabled: true }),
-    ...(isClickableDisabled && href && { tabindex: -1, 'aria-disabled': true })
+    ...(isClickableDisabled && href && { tabIndex: -1, 'aria-disabled': true })
   };
 
   let labelComponentChild = (

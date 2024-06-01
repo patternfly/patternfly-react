@@ -9,9 +9,17 @@ import { FolderIcon, FolderOpenIcon, EllipsisVIcon, ClipboardIcon, HamburgerIcon
 
 ## Examples
 
-### Default
+### Single selectable
 
-```ts file='./TreeViewDefault.tsx'
+```ts file='./TreeViewSingleSelectable.tsx'
+
+```
+
+### Multiselectable
+
+A tree view can be setup to allow multiple nodes to be selected. When a tree view is intended to allow multiple selection, the `isMultiSelectable` property must be passed.
+
+```ts file='./TreeViewMultiselectable.tsx'
 
 ```
 
@@ -24,6 +32,8 @@ The `hasSelectableNodes` modifier will separate the expansion and selection beha
 ```
 
 ### With search
+
+A search input can be used to filter tree view items. It is recommended that a tree view with more than 7 nodes includes a search input.
 
 ```ts file='./TreeViewWithSearch.tsx'
 

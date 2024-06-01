@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-styles",
-  "version": "5.3.0-prerelease.3",
+  "version": "5.4.0-prerelease.6",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -18,14 +18,12 @@
     "clean": "rimraf dist css"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "5.3.0-prerelease.5",
+    "@patternfly/patternfly": "5.4.0-prerelease.3",
     "camel-case": "^3.0.0",
-    "css": "^2.2.3",
+    "css": "^2.2.4",
     "fs-extra": "^11.1.1",
     "glob": "^7.1.2",
-    "jsdom": "^15.1.0",
-    "rimraf": "^2.6.2",
-    "typescript": "^4.7.4"
+    "jsdom": "^15.1.0"
   },
   "license": "MIT"
 }

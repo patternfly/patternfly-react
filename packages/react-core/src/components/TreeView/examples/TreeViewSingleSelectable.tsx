@@ -1,7 +1,7 @@
 import React from 'react';
 import { TreeView, Button, TreeViewDataItem } from '@patternfly/react-core';
 
-export const TreeViewDefault: React.FunctionComponent = () => {
+export const TreeViewSingleSelectable: React.FunctionComponent = () => {
   const [activeItems, setActiveItems] = React.useState<TreeViewDataItem[]>();
   const [allExpanded, setAllExpanded] = React.useState<boolean>();
 
@@ -81,7 +81,13 @@ export const TreeViewDefault: React.FunctionComponent = () => {
         {allExpanded && 'Collapse all'}
         {!allExpanded && 'Expand all'}
       </Button>
-      <TreeView data={options} activeItems={activeItems} onSelect={onSelect} allExpanded={allExpanded} />
+      <TreeView
+        aria-label="Tree View single selectable example"
+        data={options}
+        activeItems={activeItems}
+        onSelect={onSelect}
+        allExpanded={allExpanded}
+      />
     </React.Fragment>
   );
 };

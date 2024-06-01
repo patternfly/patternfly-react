@@ -456,7 +456,7 @@ export const ChartThreshold: React.FunctionComponent<ChartThresholdProps> = ({
       strokeWidth: getStrokeWidth()
     };
   }
-  return <ChartLine style={thresholdStyle} theme={theme} {...rest} />;
+  return <ChartLine style={thresholdStyle} theme={theme} themeColor={themeColor} {...rest} />;
 };
 ChartThreshold.displayName = 'ChartThreshold';
 

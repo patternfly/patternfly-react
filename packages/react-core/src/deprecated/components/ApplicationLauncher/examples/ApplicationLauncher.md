@@ -12,6 +12,7 @@ import { DropdownDirection, DropdownPosition } from '@patternfly/react-core/depr
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import { Link } from '@reach/router';
 import pfLogoSm from '@patternfly/react-core/src/demos/assets/pf-logo-small.svg';
+import c_app_launcher__menu_item_Color from '@patternfly/react-tokens/dist/esm/c_app_launcher__menu_item_Color';
 
 Note: Application launcher is built on dropdown, for extended API go to [dropdown](/components/menus/dropdown) documentation.
 To add a tooltip, use the `tooltip` prop and optionally add more tooltip props by using `tooltipProps`. For more tooltip information go to [tooltip](/components/tooltip).

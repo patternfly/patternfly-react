@@ -15,7 +15,6 @@ import {
   NotificationDrawerListItem,
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
-  Title,
   EmptyStateHeader,
   EmptyStateActions,
   EmptyStateFooter
@@ -45,23 +44,23 @@ export class LightweightNotificationDrawerDemo extends React.Component<
   onFocus = (id: string) => {
     if (id) {
       const element = document.getElementById(id);
-      element.focus();
+      element?.focus();
     }
   };
 
-  toggleFirstDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
+  toggleFirstDrawer = (_event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       firstGroupIsOpen: value
     });
   };
 
-  toggleSecondDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
+  toggleSecondDrawer = (_event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       secondGroupIsOpen: value
     });
   };
 
-  toggleThirdDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
+  toggleThirdDrawer = (_event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       thirdGroupIsOpen: value
     });

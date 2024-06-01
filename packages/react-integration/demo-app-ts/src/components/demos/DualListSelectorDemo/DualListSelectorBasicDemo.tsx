@@ -20,7 +20,7 @@ export class DualListSelectorBasicDemo extends React.Component<DualListSelectorP
       chosenOptions: []
     };
 
-    this.onListChange = (event, newAvailableOptions, newChosenOptions) => {
+    this.onListChange = (_event, newAvailableOptions, newChosenOptions) => {
       this.setState({
         availableOptions: newAvailableOptions,
         chosenOptions: newChosenOptions

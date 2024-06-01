@@ -10,6 +10,7 @@ interface ChartThemeColorInterface {
   multiUnordered: string;
   orange: string;
   purple: string;
+  skeleton: string;
 }
 
 /**
@@ -49,5 +50,6 @@ export const ChartThemeColor: ChartThemeColorInterface = {
   multiOrdered: 'multi-ordered',
   multiUnordered: 'multi-unordered',
   orange: 'orange',
-  purple: 'purple'
+  purple: 'purple',
+  skeleton: 'skeleton'
 };

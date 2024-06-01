@@ -3,6 +3,110 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.14...@patternfly/react-core@5.4.0-prerelease.15) (2024-05-31)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.4.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.13...@patternfly/react-core@5.4.0-prerelease.14) (2024-05-22)
+
+### Bug Fixes
+
+- **deps:** update dependency focus-trap to v7.5.4 ([#10401](https://github.com/patternfly/patternfly-react/issues/10401)) ([7c4430b](https://github.com/patternfly/patternfly-react/commit/7c4430bcba158939b951a2ab996af293d7ed2204))
+
+# [5.4.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.12...@patternfly/react-core@5.4.0-prerelease.13) (2024-05-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.4.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.11...@patternfly/react-core@5.4.0-prerelease.12) (2024-05-15)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.4.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.10...@patternfly/react-core@5.4.0-prerelease.11) (2024-05-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.4.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.9...@patternfly/react-core@5.4.0-prerelease.10) (2024-05-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.4.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.8...@patternfly/react-core@5.4.0-prerelease.9) (2024-05-10)
+
+### Bug Fixes
+
+- **Select:** set isScrollable internally ([#10320](https://github.com/patternfly/patternfly-react/issues/10320)) ([3970897](https://github.com/patternfly/patternfly-react/commit/3970897dc5586e2ad82b56789a0ee7115519ed94))
+- **Tabs:** uncontrolled Tabs react to updated defaultActiveKey ([#10317](https://github.com/patternfly/patternfly-react/issues/10317)) ([8e21814](https://github.com/patternfly/patternfly-react/commit/8e21814315adbd96ce2a8a6b7416e014fa859fc2))
+
+### Features
+
+- **Select:** Typeahead example ([#10207](https://github.com/patternfly/patternfly-react/issues/10207)) ([2d19e26](https://github.com/patternfly/patternfly-react/commit/2d19e26b5fa95f6da0fa6b16f5bf9a299cf58df8))
+- **Select:** Typeahead template ([#10235](https://github.com/patternfly/patternfly-react/issues/10235)) ([c7d2e9f](https://github.com/patternfly/patternfly-react/commit/c7d2e9fcaee50cd17a306a0f25e43e96f78e4217))
+
+# [5.4.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.7...@patternfly/react-core@5.4.0-prerelease.8) (2024-04-30)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.4.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.6...@patternfly/react-core@5.4.0-prerelease.7) (2024-04-30)
+
+### Bug Fixes
+
+- **chore:** Fix broken application launcher example. ([#10305](https://github.com/patternfly/patternfly-react/issues/10305)) ([c1f87b2](https://github.com/patternfly/patternfly-react/commit/c1f87b254c41cb94d6a614f34ab1b086437333d1))
+
+# [5.4.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.5...@patternfly/react-core@5.4.0-prerelease.6) (2024-04-29)
+
+### Bug Fixes
+
+- **Wizard:** added prop to focus content on next/back ([#10285](https://github.com/patternfly/patternfly-react/issues/10285)) ([fe1d86c](https://github.com/patternfly/patternfly-react/commit/fe1d86c89d5fc7f37a85a5a78c55fa0c3f4496d6))
+
+# 5.4.0-prerelease.5 (2024-04-29)
+
+### Bug Fixes
+
+- **Datepicker:** revalidate on validators prop change ([#10293](https://github.com/patternfly/patternfly-react/issues/10293)) ([fcf105e](https://github.com/patternfly/patternfly-react/commit/fcf105e75e40b7324e28c067fc62ad40e68f7183))
+
+# [5.4.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.3...@patternfly/react-core@5.4.0-prerelease.4) (2024-04-26)
+
+### Features
+
+- **Page:** add prop to set width of drawer ([#10279](https://github.com/patternfly/patternfly-react/issues/10279)) ([24df4bd](https://github.com/patternfly/patternfly-react/commit/24df4bdafc9b19d08c111a061cf099609d14d7d7))
+
+# 5.4.0-prerelease.3 (2024-04-24)
+
+### Bug Fixes
+
+- **TreeView:** improved a11y experience ([#10220](https://github.com/patternfly/patternfly-react/issues/10220)) ([dc69ddb](https://github.com/patternfly/patternfly-react/commit/dc69ddb3e476153754a63822239e78afc3205bdf))
+
+# [5.4.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.1...@patternfly/react-core@5.4.0-prerelease.2) (2024-04-19)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# 5.4.0-prerelease.1 (2024-04-19)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# 5.4.0-prerelease.0 (2024-04-18)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# 5.3.0 (2024-04-18)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.3.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.25...@patternfly/react-core@5.3.0-prerelease.26) (2024-04-17)
+
+### Bug Fixes
+
+- **demos:** Fixed the broken alert and navigation demos ([#10286](https://github.com/patternfly/patternfly-react/issues/10286)) ([7476fe4](https://github.com/patternfly/patternfly-react/commit/7476fe4740a6bd7e14b59596437d012509aaab61))
+
+# [5.3.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.24...@patternfly/react-core@5.3.0-prerelease.25) (2024-04-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [5.3.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.23...@patternfly/react-core@5.3.0-prerelease.24) (2024-04-08)
+
+### Features
+
+- **MenuToggle:** allow split action toggle text ([#10256](https://github.com/patternfly/patternfly-react/issues/10256)) ([afd3b85](https://github.com/patternfly/patternfly-react/commit/afd3b85ef307117784527740d6ae6d442055fbb0))
+
 # [5.3.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.3.0-prerelease.22...@patternfly/react-core@5.3.0-prerelease.23) (2024-04-01)
 
 ### Bug Fixes

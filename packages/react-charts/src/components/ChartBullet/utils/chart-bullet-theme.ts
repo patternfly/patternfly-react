@@ -7,6 +7,8 @@ import {
 } from './chart-bullet-data';
 import { ChartThemeDefinition } from '../../ChartTheme/ChartTheme';
 import { getBulletTheme } from '../../ChartUtils/chart-theme-types';
+import { ChartThemeColor } from '../../ChartTheme/ChartThemeColor';
+import { SkeletonColorTheme } from '../../ChartTheme/themes/colors/skeleton-theme';
 
 interface ChartBulletThemeInterface {
   comparativeErrorMeasureData?: any[];
@@ -134,5 +136,8 @@ export const getBulletThemeWithLegendColorScale = ({
 
   const theme = getBulletTheme(themeColor);
   theme.legend.colorScale = [...colorScale];
+  if (themeColor === ChartThemeColor.skeleton) {
+    theme.legend.colorScale = SkeletonColorTheme.legend.colorScale;
+  }
   return theme;
 };

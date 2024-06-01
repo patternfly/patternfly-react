@@ -1,93 +1,15 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
-  "enabledManagers": ["npm"],
+  "rangeStrategy": "bump",
   "packageRules": [
     {
-      "packagePatterns": ["*"],
-      "excludePackagePatterns": [
-        "@babel/*",
-        "@octokit/rest",
-        "@patternfly/patternfly",
-        "@patternfly/patternfly-a11y",
-        "@patternfly/documentation-framework",
-        "@rollup/*",
-        "@testing-library/jest-dom",
-        "@testing-library/user-event",
-        "@types/jest",
-        "@types/react",
-        "@types/react-dom",
-        "@typescript-eslint/eslint-plugin",
-        "@typescript-eslint/parser",
-        "eslint",
-        "eslint-plugin-prettier",
-        "eslint-plugin-react",
-        "fs-extra",
-        "lint-staged",
-        "mutation-observer",
-        "plop",
-        "prettier",
-        "react-dropzone",
-        "rollup",
-        "rollup-plugin-scss",
-        "rollup-plugin-terser",
-        "shx",
-        "surge",
-        "ts-patch"
+      "matchUpdateTypes": [
+        "major"
       ],
       "enabled": false
-    },
-    {
-      "groupName": "devDependencies",
-      "matchDatasources": ["npm"],
-      "automerge": true,
-      "matchPackagePatterns": [
-        "@babel/*",
-        "@octokit/rest",
-        "@patternfly/patternfly-a11y",
-        "@patternfly/documentation-framework",
-        "@rollup/*",
-        "@testing-library/jest-dom",
-        "@testing-library/react-hooks",
-        "@testing-library/user-event",
-        "@types/jest",
-        "@types/react",
-        "@types/react-dom",
-        "@typescript-eslint/eslint-plugin",
-        "@typescript-eslint/parser",
-        "eslint",
-        "eslint-plugin-prettier",
-        "eslint-plugin-react",
-        "focus-trap",
-        "fs-extra",
-        "lint-staged",
-        "mutation-observer",
-        "plop",
-        "prettier",
-        "react-dropzone",
-        "rollup",
-        "rollup-plugin-scss",
-        "rollup-plugin-terser",
-        "shx",
-        "surge",
-        "ts-patch"
-      ]
-    },
-    {
-      "matchDatasources": ["npm"],
-      "matchPackageNames": [
-        "focus-trap",
-        "react-dropzone"
-      ]
-    },
-    {
-      "matchDatasources": ["npm"],
-      "matchPackageNames": [
-        "@patternfly/patternfly"
-      ],
-      "automerge": true,
-      "followTag": "prerelease"
     }
   ]
 }

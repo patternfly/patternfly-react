@@ -9,7 +9,8 @@ import {
   DataListItemCells,
   DragDrop,
   Draggable,
-  Droppable
+  Droppable,
+  DraggableItemPosition
 } from '@patternfly/react-core';
 
 interface ItemType {
@@ -55,7 +56,7 @@ export class DataListDraggableDemo extends React.Component {
     }
   };
 
-  onDrop = (source: any, dest: any) => {
+  onDrop = (source: DraggableItemPosition, dest?: DraggableItemPosition)  => {
     if (dest) {
       const newItems = reorder(this.state.items, source.index, dest.index);
       this.setState({
@@ -63,11 +64,13 @@ export class DataListDraggableDemo extends React.Component {
         liveText: 'Dragging finished.'
       });
       return true; // Signal that this is a valid drop and not to animate the item returning home.
-    } else {
-      this.setState({
-        liveText: 'Dragging cancelled. List unchanged.'
-      });
     }
+
+    this.setState({
+      liveText: 'Dragging cancelled. List unchanged.'
+    });
+
+    return false; // Signal that this is an invalid drop.
   };
 
   render() {

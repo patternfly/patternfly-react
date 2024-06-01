@@ -11,6 +11,8 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
 
 ## Demos
 

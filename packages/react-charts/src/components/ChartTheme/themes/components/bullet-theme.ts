@@ -30,6 +30,7 @@ import chart_global_layout_Padding from '@patternfly/react-tokens/dist/esm/chart
 /**
  * Bullet theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const BulletTheme = {
   chart: {
@@ -40,6 +41,7 @@ export const BulletTheme = {
 /**
  * Bullet comparative error measure theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const BulletComparativeErrorMeasureTheme = {
   bar: {
@@ -57,6 +59,7 @@ export const BulletComparativeErrorMeasureTheme = {
 /**
  * Bullet comparative measure theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const BulletComparativeMeasureTheme = {
   bar: {
@@ -74,6 +77,7 @@ export const BulletComparativeMeasureTheme = {
 /**
  * Bullet comparative measure warning theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const BulletComparativeWarningMeasureTheme = {
   bar: {
@@ -91,6 +95,7 @@ export const BulletComparativeWarningMeasureTheme = {
 /**
  * Bullet group title theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const BulletGroupTitleTheme = {
   chart: {
@@ -115,6 +120,7 @@ export const BulletGroupTitleTheme = {
 /**
  * Bullet primary dot measure theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const BulletPrimaryDotMeasureTheme = {
   group: {
@@ -125,6 +131,7 @@ export const BulletPrimaryDotMeasureTheme = {
 /**
  * Bullet primary negative measure theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const BulletPrimaryNegativeMeasureTheme = {
   group: {
@@ -142,6 +149,7 @@ export const BulletPrimaryNegativeMeasureTheme = {
 /**
  * Bullet primary segmented measure theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const BulletPrimarySegmentedMeasureTheme = {
   group: {
@@ -152,6 +160,7 @@ export const BulletPrimarySegmentedMeasureTheme = {
 /**
  * Bullet qualitative range theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const BulletQualitativeRangeTheme = {
   group: {

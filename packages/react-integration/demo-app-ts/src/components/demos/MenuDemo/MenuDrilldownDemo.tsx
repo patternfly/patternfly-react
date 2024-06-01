@@ -9,14 +9,18 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 export class MenuDrilldownDemo extends Component {
   displayName = 'MenuDrilldownDemo';
   state = {
-    activeItem: null as string,
+    activeItem: null as null | string,
     menuDrilledIn: [] as string[],
     drilldownPath: [] as string[],
     menuHeights: {} as any,
     activeMenu: 'rootMenu'
   };
 
-  onSelect = (event: React.MouseEvent, itemId: string) => {
+  onSelect = (_event?: React.MouseEvent, itemId?: string | number)  => {
+    if (typeof itemId !== 'string') {
+      return;
+    }
+    
     if (itemId.startsWith('group:')) {
       console.log(`selected sub-menu: ${itemId.split('group:')[1]}`);
     } else {

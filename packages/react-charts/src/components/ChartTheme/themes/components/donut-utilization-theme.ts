@@ -11,6 +11,7 @@ import chart_donut_utilization_static_pie_Padding from '@patternfly/react-tokens
 /**
  * Donut utilization dynamic theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const DonutUtilizationDynamicTheme = {
   pie: {
@@ -24,6 +25,7 @@ export const DonutUtilizationDynamicTheme = {
 /**
  * Donut utilization static theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const DonutUtilizationStaticTheme = {
   legend: {

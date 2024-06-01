@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 const { Octokit } = require('@octokit/rest');
 const octokit = new Octokit({ auth: process.env.GH_PR_TOKEN });
@@ -7,11 +6,9 @@ const publishFn = surge().publish();
 
 // From github actions
 const ghrepo = process.env.GITHUB_REPOSITORY || '';
-
-const owner = process.env.CIRCLE_PROJECT_USERNAME || ghrepo.split('/')[0]; // patternfly
-const repo = process.env.CIRCLE_PROJECT_REPONAME || ghrepo.split('/')[1];
-const prnum = process.env.CIRCLE_PR_NUMBER || process.env.GH_PR_NUM;
-const prbranch = process.env.CIRCLE_BRANCH || process.env.GITHUB_REF.split('/').pop();
+const [owner, repo] = ghrepo.split('/');
+const prnum = process.env.GH_PR_NUM;
+const prbranch = process.env.GITHUB_REF.split('/').pop();
 
 const uploadFolder = process.argv[2];
 if (!uploadFolder) {
