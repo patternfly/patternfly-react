@@ -47,7 +47,7 @@
     "eslint-plugin-markdown": "^3.0.1",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-testing-library": "^6.1.0",
+    "eslint-plugin-testing-library": "^6.2.2",
     "fs-extra": "^11.1.1",
     "glob": "^9.3.0",
     "husky": "^4.3.0",
