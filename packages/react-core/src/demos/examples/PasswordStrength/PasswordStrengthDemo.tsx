@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Form,
-  FormGroup,
-  FormGroupLabelHelp,
-  FormHelperText,
-  HelperText,
-  Popover,
-  HelperTextItem,
-  TextInput
-} from '@patternfly/react-core';
+import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextInput } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
@@ -89,18 +80,6 @@ export const PasswordStrengthDemo: React.FunctionComponent = () => {
     }
   };
 
-  const labelHelpRef = React.useRef(null);
-
-  const iconPopover = (
-    <Popover
-      triggerRef={labelHelpRef}
-      headerContent={<div>Password Requirements</div>}
-      bodyContent={<div>Password rules</div>}
-    >
-      <FormGroupLabelHelp ref={labelHelpRef} aria-label="More info for name field" />
-    </Popover>
-  );
-
   const passStrLabel = (
     <HelperText>
       <HelperTextItem variant={passStrength.variant} icon={passStrength.icon}>
@@ -113,7 +92,6 @@ export const PasswordStrengthDemo: React.FunctionComponent = () => {
     <Form>
       <FormGroup
         label="Password"
-        labelHelp={iconPopover}
         isRequired
         fieldId="password-field"
         {...(ruleLength === 'success' &&

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { expandable, ICell, IRow } from '@patternfly/react-table';
 
@@ -7,7 +7,7 @@ interface TableState {
   rows: IRow[];
 }
 
-export class TableCollapsibleDemo extends React.Component<TableProps, TableState> {
+export class TableCollapsibleDemo extends Component<TableProps, TableState> {
   static displayName = 'TableCollapsibleDemo';
   constructor(props: TableProps) {
     super(props);
@@ -60,7 +60,7 @@ export class TableCollapsibleDemo extends React.Component<TableProps, TableState
     this.onCollapse = this.onCollapse.bind(this);
   }
 
-  onCollapse(event: React.MouseEvent, rowIndex: number, isOpen: boolean) {
+  onCollapse(_event: React.MouseEvent, rowIndex: number, isOpen: boolean) {
     /**
      * Please do not use a row index for more complex tables.
      * Rather use some kind of identifier like ID passed with each row.

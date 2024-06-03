@@ -13,6 +13,7 @@ import chart_donut_threshold_static_pie_Width from '@patternfly/react-tokens/dis
 /**
  * Donut threshold dynamic theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const DonutThresholdDynamicTheme = {
   legend: {
@@ -28,6 +29,7 @@ export const DonutThresholdDynamicTheme = {
 /**
  * Donut threshold static theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const DonutThresholdStaticTheme = {
   pie: {

@@ -148,7 +148,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   /** Function called when user clicks on navigate to next page. */
   onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user inputs page number. */
-  onPageInput?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  onPageInput?: (event: React.KeyboardEvent<HTMLInputElement>, page: number) => void;
   /** Function called when user selects number of items per page. */
   onPerPageSelect?: OnPerPageSelect;
   /** Function called when user clicks on navigate to previous page. */
@@ -232,6 +232,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   ...props
 }: PaginationProps) => {
   const paginationRef = React.useRef<HTMLDivElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const getLastPage = () =>
     // when itemCount is not known let's set lastPage as page+1 as we don't know the total count
@@ -334,6 +335,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
           widgetId={`${widgetId}-${variant}`}
           toggleTemplate={toggleTemplate}
           isDisabled={isDisabled}
+          containerRef={containerRef}
         />
       )}
       <Navigation

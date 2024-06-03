@@ -46,7 +46,7 @@ export class TableSelectableDemo extends Component<TableProps, TableState> {
     this.toggleSelect = this.toggleSelect.bind(this);
   }
 
-  onSelect(event: React.FormEvent, isSelected: boolean, rowId: number) {
+  onSelect(_event: React.FormEvent, isSelected: boolean, rowId: number) {
     let rows: IRow[];
     if (rowId === -1 && this.state.selectVariant) {
       rows = this.state.rows.map((oneRow) => {

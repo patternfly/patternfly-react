@@ -26,6 +26,7 @@ import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getPieLabelX, getPieLabelY } from '../ChartUtils/chart-label';
+import { getComponentTheme } from '../ChartUtils/chart-theme';
 
 interface ChartDonutSubTitleInterface {
   dy?: number;
@@ -596,6 +597,8 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   width = theme.pie.width,
   ...rest
 }: ChartDonutProps) => {
+  const componentTheme = getComponentTheme(themeColor);
+
   const defaultPadding = {
     bottom: getPaddingForSide('bottom', padding, theme.pie.padding),
     left: getPaddingForSide('left', padding, theme.pie.padding),
@@ -603,13 +606,13 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     top: getPaddingForSide('top', padding, theme.pie.padding)
   };
   const chartRadius = radius
-    ? radius
+    ? Helpers.evaluateProp(radius, undefined)
     : Helpers.getRadius({
         height,
         width,
         padding: defaultPadding
       });
-  const chartInnerRadius = innerRadius ? innerRadius : chartRadius - 9; // Todo: Add pf-core variable
+  const chartInnerRadius = innerRadius ? Helpers.evaluateProp(innerRadius, undefined) : chartRadius - 9; // Todo: Add pf-core variable
   const centerSubTitle = subTitle && subTitlePosition === 'center';
 
   // Returns title and subtitle
@@ -659,7 +662,8 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         padding: defaultPadding,
         width
       }),
-      ...subTitleProps
+      ...subTitleProps,
+      ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
     });
   };
 
@@ -692,7 +696,8 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         padding: defaultPadding,
         width
       }),
-      ...titleProps
+      ...titleProps,
+      ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
     });
   };
 
@@ -710,6 +715,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       radius={chartRadius > 0 ? chartRadius : 0}
       standalone={false}
       theme={theme}
+      themeColor={themeColor}
       width={width}
       {...rest}
     />

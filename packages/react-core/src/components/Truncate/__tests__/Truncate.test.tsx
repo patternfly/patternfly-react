@@ -13,6 +13,12 @@ jest.mock('../../Tooltip', () => ({
   )
 }));
 
+global.ResizeObserver = jest.fn().mockImplementation(() => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  disconnect: jest.fn()
+}));
+
 test(`renders with class ${styles.truncate}`, () => {
   render(<Truncate content={''} aria-label="test-id" />);
 

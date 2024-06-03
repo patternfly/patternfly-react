@@ -1,7 +1,6 @@
 import React from 'react';
 import { PaginationOptionsMenu } from '../PaginationOptionsMenu';
 import { render, screen } from '@testing-library/react';
-import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 
 jest.mock('../../../helpers/Popper/Popper');
 
@@ -13,11 +12,4 @@ test('renders pagination options menu', () => {
   );
 
   expect(screen.getByTestId('options-menu').children[0]).toBeVisible();
-});
-
-test(`renders with class ${styles.paginationPageMenu} by default`, () => {
-  render(<PaginationOptionsMenu toggleTemplate="Test" />);
-
-  // Mocked Popper is rendered with data-testid="mock-wrapper"
-  expect(screen.getByTestId('mock-wrapper').parentElement).toHaveClass(styles.paginationPageMenu);
 });

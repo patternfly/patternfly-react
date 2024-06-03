@@ -105,7 +105,7 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
       | 'rowGapLg'
       | 'rowGapXl'
       | 'rowGap_2xl'
-      | 'rowGao_3xl'
+      | 'rowGap_3xl'
       | 'rowGap_4xl';
     md?:
       | 'rowGapNone'
@@ -115,7 +115,7 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
       | 'rowGapLg'
       | 'rowGapXl'
       | 'rowGap_2xl'
-      | 'rowGao_3xl'
+      | 'rowGap_3xl'
       | 'rowGap_4xl';
     lg?:
       | 'rowGapNone'
@@ -125,7 +125,7 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
       | 'rowGapLg'
       | 'rowGapXl'
       | 'rowGap_2xl'
-      | 'rowGao_3xl'
+      | 'rowGap_3xl'
       | 'rowGap_4xl';
     xl?:
       | 'rowGapNone'
@@ -135,7 +135,7 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
       | 'rowGapLg'
       | 'rowGapXl'
       | 'rowGap_2xl'
-      | 'rowGao_3xl'
+      | 'rowGap_3xl'
       | 'rowGap_4xl';
     '2xl'?:
       | 'rowGapNone'
@@ -145,7 +145,7 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
       | 'rowGapLg'
       | 'rowGapXl'
       | 'rowGap_2xl'
-      | 'rowGao_3xl'
+      | 'rowGap_3xl'
       | 'rowGap_4xl';
   };
   /** Content to be rendered inside the data toolbar group */

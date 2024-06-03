@@ -36,6 +36,8 @@ test(`Renders with class ${styles.modifiers.secondary} when colorVariant="second
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
 
+jest.mock('../../../helpers/GenerateId/GenerateId');
+
 test('Does not render with aria-labelledby by default', () => {
   render(
     <Drawer isExpanded>

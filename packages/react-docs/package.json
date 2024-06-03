@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "7.0.0-alpha.64",
+  "version": "7.0.0-alpha.65",
   "publishConfig": {
     "access": "public",
     "tag": "alpha"
@@ -15,7 +15,7 @@
   "scripts": {
     "analyze": "yarn build:docs --analyze",
     "build:docs": "pf-docs-framework build all",
-    "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js node_modules",
+    "clean": "rimraf cache public static/assets static/base.css src/generated",
     "develop": "yarn start",
     "start": "pf-docs-framework start",
     "serve": "pf-docs-framework serve public",
@@ -24,21 +24,19 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "6.0.0-alpha.139",
-    "@patternfly/react-charts": "^8.0.0-alpha.22",
-    "@patternfly/react-code-editor": "^6.0.0-alpha.60",
-    "@patternfly/react-core": "^6.0.0-alpha.60",
-    "@patternfly/react-drag-drop": "^6.0.0-alpha.42",
-    "@patternfly/react-icons": "^6.0.0-alpha.22",
-    "@patternfly/react-styles": "^6.0.0-alpha.22",
-    "@patternfly/react-table": "^6.0.0-alpha.60",
-    "@patternfly/react-templates": "^6.0.0-alpha.10",
-    "@patternfly/react-tokens": "^6.0.0-alpha.22"
+    "@patternfly/react-charts": "^8.0.0-alpha.23",
+    "@patternfly/react-code-editor": "^6.0.0-alpha.61",
+    "@patternfly/react-core": "^6.0.0-alpha.61",
+    "@patternfly/react-drag-drop": "^6.0.0-alpha.43",
+    "@patternfly/react-icons": "^6.0.0-alpha.23",
+    "@patternfly/react-styles": "^6.0.0-alpha.23",
+    "@patternfly/react-table": "^6.0.0-alpha.61",
+    "@patternfly/react-templates": "^6.0.0-alpha.11",
+    "@patternfly/react-tokens": "^6.0.0-alpha.23"
   },
   "devDependencies": {
     "@patternfly/documentation-framework": "^6.0.0-alpha.28",
-    "@patternfly/patternfly-a11y": "4.3.1",
-    "rimraf": "^2.6.3",
-    "shx": "^0.3.4"
+    "@patternfly/patternfly-a11y": "4.3.1"
   },
   "keywords": [
     "gatsby"

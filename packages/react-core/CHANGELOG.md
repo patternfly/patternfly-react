@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.61](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.60...@patternfly/react-core@6.0.0-alpha.61) (2024-05-31)
+
+### Bug Fixes
+
+- **Toolbar:** updated typo in rowgap values ([#10439](https://github.com/patternfly/patternfly-react/issues/10439)) ([76db304](https://github.com/patternfly/patternfly-react/commit/76db304c56120057e421d1bfc5986d7ae838cd33))
+
+### Features
+
+- **Wizard:** use height token to set height ([#10332](https://github.com/patternfly/patternfly-react/issues/10332)) ([2b5a598](https://github.com/patternfly/patternfly-react/commit/2b5a598e9b49f052d36b675a0929d5f679af6cca))
+
 # 6.0.0-alpha.60 (2024-05-23)
 
 ### Features

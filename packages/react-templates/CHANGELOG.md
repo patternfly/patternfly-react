@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.0.0-alpha.10...@patternfly/react-templates@6.0.0-alpha.11) (2024-05-31)
+
+### Bug Fixes
+
+- **build:** whitespace change to test v6 build ([#10484](https://github.com/patternfly/patternfly-react/issues/10484)) ([870fc3a](https://github.com/patternfly/patternfly-react/commit/870fc3a3a364a68702d774fc94b260d961241855))
+
 # 6.0.0-alpha.10 (2024-05-23)
 
 **Note:** Version bump only for package @patternfly/react-templates

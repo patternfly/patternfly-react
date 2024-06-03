@@ -5,6 +5,7 @@ import chart_axis_tick_stroke_Color from '@patternfly/react-tokens/dist/esm/char
 /**
  * Axis theme
  * @private
+ * @deprecated See BaseComponentTheme
  */
 export const AxisTheme = {
   axis: {

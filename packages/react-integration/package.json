@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-integration",
-  "version": "6.0.0-alpha.30",
+  "version": "6.0.0-alpha.31",
   "private": true,
   "description": "Integration testing for PF5 using demo applications",
   "main": "lib/index.js",
@@ -33,7 +33,6 @@
     "jasmine-xml2html-converter": "^0.0.2",
     "junit-merge": "^2.0.0",
     "ts-loader": "^8.3.0",
-    "typescript": "^4.7.4",
     "webpack": "^4.43.0"
   }
 }

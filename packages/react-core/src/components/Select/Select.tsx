@@ -53,6 +53,8 @@ export interface SelectProps extends MenuProps, OUIAProps {
   toggle: SelectToggleProps | ((toggleRef: React.RefObject<any>) => React.ReactNode);
   /** Flag indicating the toggle should be focused after a selection. If this use case is too restrictive, the optional toggleRef property with a node toggle may be used to control focus. */
   shouldFocusToggleOnSelect?: boolean;
+  /** @beta Flag indicating the first menu item should be focused after opening the menu. */
+  shouldFocusFirstItemOnOpen?: boolean;
   /** Function callback when user selects an option. */
   onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: string | number) => void;
   /** Callback to allow the select component to change the open state of the menu.
@@ -86,6 +88,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   selected,
   toggle,
   shouldFocusToggleOnSelect = false,
+  shouldFocusFirstItemOnOpen = true,
   onOpenChange,
   onOpenChangeKeys = ['Escape', 'Tab'],
   isPlain,
@@ -125,7 +128,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
 
     const handleClick = (event: MouseEvent) => {
       // toggle was opened, focus on first menu item
-      if (isOpen && toggleRef.current?.contains(event.target as Node)) {
+      if (isOpen && shouldFocusFirstItemOnOpen && toggleRef.current?.contains(event.target as Node)) {
         setTimeout(() => {
           const firstElement = menuRef?.current?.querySelector('li button:not(:disabled),li input:not(:disabled)');
           firstElement && (firstElement as HTMLElement).focus();
@@ -160,7 +163,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       }}
       isPlain={isPlain}
       selected={selected}
-      isScrollable={isScrollable}
+      isScrollable={isScrollable ?? (menuHeight !== undefined || maxMenuHeight !== undefined)}
       {...getOUIAProps(
         Select.displayName,
         props.ouiaId !== undefined ? props.ouiaId : getDefaultOUIAId(Select.displayName),

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.60](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.59...demo-app-ts@5.1.1-alpha.60) (2024-05-31)
+
+### Features
+
+- **Wizard:** use height token to set height ([#10332](https://github.com/patternfly/patternfly-react/issues/10332)) ([2b5a598](https://github.com/patternfly/patternfly-react/commit/2b5a598e9b49f052d36b675a0929d5f679af6cca))
+
 ## 5.1.1-alpha.59 (2024-05-23)
 
 **Note:** Version bump only for package demo-app-ts

@@ -89,11 +89,15 @@ export class MenuDemo extends Component {
     });
   };
 
-  onSimpleSelect = (event: React.MouseEvent, itemId: string) => {
+  onSimpleSelect = (_event?: React.MouseEvent, itemId?: string | number) => {
     this.setState({ activeItem: itemId });
   };
 
-  onActionSelect = (event: any, itemId: number) => {
+  onActionSelect = (_event?: React.MouseEvent, itemId?: string | number) => {
+    if (typeof itemId !== 'number') {
+      return;
+    }
+
     if (this.state.selectedItems.indexOf(itemId) !== -1) {
       this.setState({
         selectedItems: this.state.selectedItems.filter((id) => id !== itemId)
@@ -105,7 +109,7 @@ export class MenuDemo extends Component {
     }
   };
 
-  onFavorite = (event: any, itemId: string, actionId: string) => {
+  onFavorite = (_event: any, itemId: string, actionId: string) => {
     if (actionId === 'fav') {
       const isFavorite = this.state.favorites.includes(itemId);
       if (isFavorite) {
@@ -120,14 +124,18 @@ export class MenuDemo extends Component {
     }
   };
 
-  onSingleOptionSelect = (event: any, itemId: number) => {
+  onSingleOptionSelect = (_event?: React.MouseEvent, itemId?: string | number) => {
     this.setState({
       activeItem: itemId,
       selectedItem: itemId
     });
   };
 
-  onMultiOptionSelect = (event: any, itemId: number) => {
+  onMultiOptionSelect = (_event?: React.MouseEvent, itemId?: string | number) => {
+    if (typeof itemId !== 'number') {
+      return;
+    }
+
     if (this.state.selectedItems.indexOf(itemId) !== -1) {
       this.setState({
         selectedItems: this.state.selectedItems.filter((id) => id !== itemId)
@@ -143,7 +151,7 @@ export class MenuDemo extends Component {
     window.scrollTo(0, 0);
   }
 
-  onChange = (event: React.FormEvent, value: string) => {
+  onChange = (_event: React.FormEvent, value: string) => {
     this.setState({
       input: value
     });
@@ -438,7 +446,7 @@ export class MenuDemo extends Component {
         <Menu
           onSelect={this.onActionSelect}
           // eslint-disable-next-line no-console
-          onActionClick={(event, itemId, actionId) => console.log(`clicked on ${itemId} - ${actionId}`)}
+          onActionClick={(_event, itemId, actionId) => console.log(`clicked on ${itemId} - ${actionId}`)}
           activeItemId={activeItem}
           id="menu-with-actions"
         >

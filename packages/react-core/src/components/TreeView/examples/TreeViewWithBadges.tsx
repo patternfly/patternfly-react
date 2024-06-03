@@ -75,5 +75,13 @@ export const TreeViewBadges: React.FunctionComponent = () => {
     }
   ];
 
-  return <TreeView data={options} activeItems={activeItems} onSelect={onSelect} hasBadges />;
+  return (
+    <TreeView
+      aria-label="Tree View with badges example"
+      data={options}
+      activeItems={activeItems}
+      onSelect={onSelect}
+      hasBadges
+    />
+  );
 };

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.65](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.64...@patternfly/react-docs@7.0.0-alpha.65) (2024-05-31)
+
+### Bug Fixes
+
+- **build:** Test ci ([#10487](https://github.com/patternfly/patternfly-react/issues/10487)) ([8fbd30b](https://github.com/patternfly/patternfly-react/commit/8fbd30b5202c9a12d21cdc6cde5500b799bbc9f8))
+
 # [7.0.0-alpha.64](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.63...@patternfly/react-docs@7.0.0-alpha.64) (2024-05-23)
 
 ### Features
