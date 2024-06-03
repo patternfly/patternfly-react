@@ -32,7 +32,7 @@
     "cypress-plugin-tab": "^1.0.5",
     "jasmine-xml2html-converter": "^0.0.2",
     "junit-merge": "^2.0.0",
-    "ts-loader": "^8.3.0",
+    "ts-loader": "^8.4.0",
     "webpack": "^4.43.0"
   }
 }
