@@ -19,7 +19,7 @@ import './Badge.css';
 ```ts file="./BadgeUnread.tsx"
 ```
 
-## Disabled
+### Disabled
 
 ```ts file="./BadgeDisabled.tsx"
 ```

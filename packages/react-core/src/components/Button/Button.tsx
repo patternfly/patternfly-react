@@ -208,7 +208,9 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       )}
       {countOptions && (
         <span className={css(styles.buttonCount, countOptions.className)}>
-          <Badge isRead={countOptions.isRead}>{countOptions.count}</Badge>
+          <Badge isRead={countOptions.isRead} isDisabled={isDisabled}>
+            {countOptions.count}
+          </Badge>
         </span>
       )}
     </Component>
