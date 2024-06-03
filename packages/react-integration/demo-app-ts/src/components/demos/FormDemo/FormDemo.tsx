@@ -107,7 +107,7 @@ export class FormDemo extends Component<FormProps, FormState> {
     ];
 
     return (
-      <React.Fragment>
+      <>
         <Form id="form-demo-1">
           <FormGroup
             id="form-group-age"
@@ -208,7 +208,7 @@ export class FormDemo extends Component<FormProps, FormState> {
             </FormGroup>
           </FormSection>
         </Form>
-      </React.Fragment>
+      </>
     );
   }
 }

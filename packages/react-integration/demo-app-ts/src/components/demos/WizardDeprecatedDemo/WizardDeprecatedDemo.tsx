@@ -171,7 +171,7 @@ export class WizardDeprecatedDemo extends React.Component<React.HTMLProps<HTMLDi
       }
     ];
     return (
-      <React.Fragment>
+      <>
         <Button id="launchWiz" variant="primary" onClick={this.handleModalToggle}>
           Show Modal
         </Button>
@@ -224,7 +224,7 @@ export class WizardDeprecatedDemo extends React.Component<React.HTMLProps<HTMLDi
           onClose={this.handleRoleWizardToggle}
           {...(this.state.isOpenWithRole && { isOpen: true })}
         />
-      </React.Fragment>
+      </>
     );
   }
 }

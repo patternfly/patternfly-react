@@ -32,7 +32,7 @@ class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, Wizard
     const { isOpen, isOpenWithRole } = this.state;
 
     return (
-      <React.Fragment>
+      <>
         <Button id="launchWiz" variant="primary" onClick={this.handleModalToggle}>
           Show Modal
         </Button>
@@ -362,7 +362,7 @@ class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, Wizard
             </WizardStep>
           </Wizard>
         </Modal>
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -80,7 +80,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
       validated
     } = this.state;
     return (
-      <React.Fragment>
+      <>
         <Text>Text area</Text>
         <TextArea
           id="textarea1"
@@ -136,7 +136,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           readOnlyVariant="default"
         />
         <TextArea id="autoResize" aria-label="resizable text area example" autoResize />
-      </React.Fragment>
+      </>
     );
   }
 }

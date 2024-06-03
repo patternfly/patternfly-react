@@ -1,5 +1,5 @@
 import { Badge, Chip, ChipGroup } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 interface BadgeChipState {
   badgeChipArray: {

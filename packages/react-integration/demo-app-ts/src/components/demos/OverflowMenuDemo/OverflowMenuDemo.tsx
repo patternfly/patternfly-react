@@ -339,12 +339,12 @@ export class OverflowMenuDemo extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         {this.renderSimpleOverflowMenu()}
         {this.renderOverflowMenuAdditionalOptions()}
         {this.renderOverflowMenuPersist()}
         {this.renderContainerBreakpointOverflowMenu()}
-      </React.Fragment>
+      </>
     );
   }
 }

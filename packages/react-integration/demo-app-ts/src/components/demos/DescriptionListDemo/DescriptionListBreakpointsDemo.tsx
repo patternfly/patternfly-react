@@ -10,7 +10,7 @@ import {
   Divider
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 export class DescriptionListBreakpointsDemo extends Component {
   componentDidMount() {

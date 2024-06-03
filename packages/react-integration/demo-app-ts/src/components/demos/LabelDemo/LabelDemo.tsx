@@ -1,5 +1,5 @@
 import { Label } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ export class LabelDemo extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <Label id="no-tooltip">Grey</Label> <Label icon={<InfoCircleIcon />}>Grey icon</Label>{' '}
         <Label onClose={() => {}}>Grey removeable</Label>{' '}
         <Label icon={<InfoCircleIcon />} onClose={() => {}}>
@@ -80,7 +80,7 @@ export class LabelDemo extends Component {
         >
           Edit
         </Label>
-      </React.Fragment>
+      </>
     );
   }
 }
