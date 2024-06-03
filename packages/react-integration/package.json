@@ -28,7 +28,7 @@
     "test:integration": "node --max-old-space-size=4096 ./node_modules/.bin/cypress run"
   },
   "devDependencies": {
-    "cypress": "^8.0.0",
+    "cypress": "^8.7.0",
     "cypress-plugin-tab": "^1.0.5",
     "jasmine-xml2html-converter": "^0.0.2",
     "junit-merge": "^2.0.0",
