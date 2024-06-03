@@ -231,12 +231,30 @@ const DatePickerBase = (
   const createFocusSelectorString = (modifierClass: string) =>
     `.${calendarMonthStyles.calendarMonthDatesCell}.${modifierClass} .${calendarMonthStyles.calendarMonthDate}`;
   const focusSelectorForSelectedDate = createFocusSelectorString(calendarMonthStyles.modifiers.selected);
+  const focusSelectorForSelectedEndRangeDate = createFocusSelectorString(
+    `${calendarMonthStyles.modifiers.selected}.${calendarMonthStyles.modifiers.endRange}`
+  );
   const focusSelectorForUnselectedDate = createFocusSelectorString(calendarMonthStyles.modifiers.current);
+
+  /**
+   * Returns a CSS selector for a date button element which will receive initial focus after opening calendar popover.
+   * In case of a range picker it returns the end date, if it is selected, start date otherwise.
+   * In case of a normal datepicker it returns the selected date, if present, today otherwise.
+   */
+  const getElementSelectorToFocus = () => {
+    if (isValidDate(valueDate) && isValidDate(rangeStart)) {
+      return focusSelectorForSelectedEndRangeDate;
+    }
+    if (isValidDate(valueDate) || isValidDate(rangeStart)) {
+      return focusSelectorForSelectedDate;
+    }
+    return focusSelectorForUnselectedDate;
+  };
 
   return (
     <div className={css(styles.datePicker, className)} ref={datePickerWrapperRef} style={style} {...props}>
       <Popover
-        elementToFocus={isValidDate(valueDate) ? focusSelectorForSelectedDate : focusSelectorForUnselectedDate}
+        elementToFocus={getElementSelectorToFocus()}
         position="bottom"
         bodyContent={
           <CalendarMonth
