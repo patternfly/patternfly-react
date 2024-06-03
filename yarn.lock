@@ -19747,7 +19747,7 @@ webpack@5.91.0:
     watchpack "^2.4.1"
     webpack-sources "^3.2.3"
 
-webpack@^4.43.0:
+webpack@^4.47.0:
   version "4.47.0"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.47.0.tgz#8b8a02152d7076aeb03b61b47dad2eeed9810ebc"
   integrity sha512-td7fYwgLSrky3fI1EuU5cneU4+pbH6GgOfuKNS1tNPcfdGinGELAqsb/BP4nnvZyKSG2i/xFGU7+n2PvZA8HJQ==
