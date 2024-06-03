@@ -61,7 +61,7 @@
     "prettier": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "rimraf": "^5.0.5",
+    "rimraf": "^5.0.7",
     "rollup": "^4.17.2",
     "rollup-plugin-scss": "^4.0.0",
     "rollup-plugin-svg": "^2.0.0",
