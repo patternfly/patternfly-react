@@ -439,7 +439,7 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
         <Button key="save" variant="primary" onClick={onSave}>
           Save
         </Button>,
-        <Button key="cancel" variant="secondary" onClick={handleModalToggle}>
+        <Button key="cancel" variant="link" onClick={handleModalToggle}>
           Cancel
         </Button>
       ]}
