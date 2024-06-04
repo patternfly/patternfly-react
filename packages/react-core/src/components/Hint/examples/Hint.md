@@ -21,13 +21,13 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 
 ```
 
-### Basic without no actions offset
+### With actions
 
-The `actions` property for `<Hint>` can optionally be combined with the `hasNoOffset` property, which is `false` by default. When `hasNoOffset` is `false`, a negative margin is applied to help align default-sized hint titles with hint actions.
+You can add actions to a hint to allow users to respond to suggestions and initiate any related processes.
 
-You may use `hasNoOffset` to remove this negative margin, which better aligns hint actions in implementations that use large hint titles, for example.
+When a `<Hint>` contains `actions`, a negative margin is applied to the actions for proper alignment between the hint title and the actions. For larger-sized titles or non-plain actions such as a button, remove this negative margin by setting `hasNoActionsOffset` to `true`.
 
-Select the "actions hasNoOffset" checkbox in the example below to illustrate this behavior.
+To illustrate this behavior, select the "actions hasNoActionsOffset" checkbox in the following example.
 
 ```ts file="HintActionsWithNoOffset.tsx"
 

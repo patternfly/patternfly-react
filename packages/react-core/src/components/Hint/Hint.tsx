@@ -10,18 +10,20 @@ export interface HintProps {
   /** Actions of the hint. */
   actions?: React.ReactNode;
   /** Flag indicating that the actions have no offset */
-  hasNoOffset?: boolean;
+  hasNoActionsOffset?: boolean;
 }
 
 export const Hint: React.FunctionComponent<HintProps> = ({
   children,
   className,
   actions,
-  hasNoOffset = false,
+  hasNoActionsOffset = false,
   ...props
 }: HintProps) => (
   <div className={css(styles.hint, className)} {...props}>
-    {actions && <div className={css(styles.hintActions, hasNoOffset && styles.modifiers.noOffset)}>{actions}</div>}
+    {actions && (
+      <div className={css(styles.hintActions, hasNoActionsOffset && styles.modifiers.noOffset)}>{actions}</div>
+    )}
     {children}
   </div>
 );
