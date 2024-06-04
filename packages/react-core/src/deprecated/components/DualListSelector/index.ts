@@ -6,4 +6,3 @@ export * from './DualListSelectorPane';
 export * from './DualListSelectorList';
 export * from './DualListSelectorListItem';
 export * from './DualListSelectorTree';
-export * from './DualListSelectorContext';
