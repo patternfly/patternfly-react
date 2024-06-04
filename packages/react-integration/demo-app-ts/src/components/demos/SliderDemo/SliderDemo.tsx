@@ -1,31 +1,20 @@
 import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 
-export interface SliderDemoState {
-  valueDiscrete: number;
-  inputValueDiscrete: number;
-  valuePercent: number;
-  inputValuePercent: number;
-  valueContinuous: number;
-  inputValueContinuous: number;
-}
+export const SliderDemo = () => {
+  const [valueDiscrete, setValueDiscrete] = useState(62.5);
+  const [valuePercent, setValuePercent] = useState(50);
+  const [inputValuePercent, setInputValuePercent] = useState(50);
+  const [valueContinuous, setValueContinuous] = useState(50);
+  const [inputValueContinuous, setInputValueContinuous] = useState(50);
+  const [customStepsValue, setCustomStepsValue] = useState(20);
+  const [disabledValue, setDisabledValue] = useState(20);
 
-export class SliderDemo extends Component<SliderDemoState> {
-  static displayName = 'SliderDemo';
-  componentDidMount() {
+  useEffect(() => {
     window.scrollTo(0, 0);
-  }
+  }, []);
 
-  state = {
-    valueDiscrete: 62.5,
-    valueDiscreteNoLinearMinMax: 25,
-    valuePercent: 50,
-    inputValuePercent: 50,
-    valueContinuous: 50,
-    inputValueContinuous: 50
-  };
-
-  stepsDiscrete = [
+  const stepsDiscrete = [
     { value: 0, label: '0' },
     { value: 12.5, label: '1', isLabelHidden: true },
     { value: 25, label: '2' },
@@ -37,16 +26,7 @@ export class SliderDemo extends Component<SliderDemoState> {
     { value: 100, label: '8' }
   ];
 
-  stepsDiscreteNoLinearWithMaxMin = [
-    { value: 12, label: '12' },
-    { value: 15, label: '15' },
-    { value: 25, label: '25' },
-    { value: 54, label: '54' },
-    { value: 67, label: '67' },
-    { value: 86, label: '86' }
-  ];
-
-  stepsPercent = [
+  const stepsPercent = [
     { value: 0, label: '0%' },
     { value: 25, label: '25%', isLabelHidden: true },
     { value: 50, label: '50%' },
@@ -54,134 +34,129 @@ export class SliderDemo extends Component<SliderDemoState> {
     { value: 100, label: '100%' }
   ];
 
-  onChangeDiscreteNoLInearMinMax = (_event: SliderOnChangeEvent, value: number) => {
-    this.setState({ valueDiscreteMinMax: value });
-  };
+  const customSteps = [
+    { value: 0, label: '0' },
+    { value: 20, label: '20' },
+    { value: 40, label: '40' },
+    { value: 60, label: '60' },
+    { value: 80, label: '80' },
+    { value: 100, label: '100' }
+  ];
 
-  onChangeDiscrete = (_event: SliderOnChangeEvent, value: number, inputValue?: number) => {
+  const onChangeDiscrete = (_event: SliderOnChangeEvent, value: number, inputValue?: number) => {
     let newValue;
-    let newInputValue;
 
     if (!inputValue) {
-      const step = this.stepsDiscrete.find((step) => step.value === value);
-      newInputValue = step ? step.label : 0;
-      newInputValue = Number(newInputValue);
       newValue = value;
     } else {
-      const maxValue = Number(this.stepsDiscrete[this.stepsDiscrete.length - 1].label);
+      const maxValue = Number(stepsDiscrete[stepsDiscrete.length - 1].label);
       if (inputValue > maxValue) {
-        newValue = Number(this.stepsDiscrete[this.stepsDiscrete.length - 1].value);
-        newInputValue = maxValue;
+        newValue = Number(stepsDiscrete[stepsDiscrete.length - 1].value);
       } else {
-        const stepIndex = this.stepsDiscrete.findIndex((step) => Number(step.label) >= inputValue);
-        if (Number(this.stepsDiscrete[stepIndex].label) === inputValue) {
-          newValue = this.stepsDiscrete[stepIndex].value;
+        const stepIndex = stepsDiscrete.findIndex((step) => Number(step.label) >= inputValue);
+        if (Number(stepsDiscrete[stepIndex].label) === inputValue) {
+          newValue = stepsDiscrete[stepIndex].value;
         } else {
-          const midpoint =
-            (Number(this.stepsDiscrete[stepIndex].label) + Number(this.stepsDiscrete[stepIndex - 1].label)) / 2;
+          const midpoint = (Number(stepsDiscrete[stepIndex].label) + Number(stepsDiscrete[stepIndex - 1].label)) / 2;
           if (midpoint > inputValue) {
-            newValue = this.stepsDiscrete[stepIndex - 1].value;
-            newInputValue = Number(this.stepsDiscrete[stepIndex - 1].label);
+            newValue = stepsDiscrete[stepIndex - 1].value;
           } else {
-            newValue = this.stepsDiscrete[stepIndex].value;
-            newInputValue = Number(this.stepsDiscrete[stepIndex].label);
+            newValue = stepsDiscrete[stepIndex].value;
           }
         }
       }
     }
 
-    this.setState({
-      inputValueDiscrete: newInputValue,
-      valueDiscrete: newValue
-    });
+    setValueDiscrete(newValue);
   };
 
-  onChangePercent = (_event: SliderOnChangeEvent, value: number, inputValue?: number) => {
-    let newValue;
-    let newInputValue;
+  const onChangePercent = (_event: SliderOnChangeEvent, value: number, inputValue?: number) => {
+    let newValue = value;
+    let newInputValue = inputValue;
+
+    const getStepLabelValue = (label: string) => Number(label.slice(0, -1));
 
     if (!inputValue) {
-      const step = this.stepsPercent.find((step) => step.value === value);
-      newInputValue = step ? step.label.slice(0, -1) : 0;
-      newInputValue = Number(newInputValue);
-      newValue = value;
+      const step = stepsPercent.find((step) => step.value === value);
+      newInputValue = step ? getStepLabelValue(step.label) : 0;
     } else {
-      const maxValue = Number(this.stepsPercent[this.stepsPercent.length - 1].label.slice(0, -1));
+      const maxValue = getStepLabelValue(stepsPercent[stepsPercent.length - 1].label);
+
       if (inputValue > maxValue) {
-        newValue = Number(this.stepsPercent[this.stepsPercent.length - 1].value);
+        newValue = stepsPercent[stepsPercent.length - 1].value;
         newInputValue = maxValue;
       } else {
-        const stepIndex = this.stepsPercent.findIndex((step) => Number(step.label.slice(0, -1)) >= inputValue);
-        if (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) === inputValue) {
-          newValue = this.stepsPercent[stepIndex].value;
+        const stepIndex = stepsPercent.findIndex((step) => getStepLabelValue(step.label) >= inputValue);
+        const currentStepValue = getStepLabelValue(stepsPercent[stepIndex].label);
+
+        if (currentStepValue === inputValue) {
+          newValue = stepsPercent[stepIndex].value;
+          newInputValue = currentStepValue;
         } else {
-          const midpoint =
-            (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) +
-              Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1))) /
-            2;
-          if (midpoint > inputValue) {
-            newValue = this.stepsPercent[stepIndex - 1].value;
-            newInputValue = Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1));
+          const previousStepValue = getStepLabelValue(stepsPercent[stepIndex - 1].label);
+          const midpoint = (currentStepValue + previousStepValue) / 2;
+
+          if (inputValue < midpoint) {
+            newValue = stepsPercent[stepIndex - 1].value;
+            newInputValue = previousStepValue;
           } else {
-            newValue = this.stepsPercent[stepIndex].value;
-            newInputValue = Number(this.stepsPercent[stepIndex].label.slice(0, -1));
+            newValue = stepsPercent[stepIndex].value;
+            newInputValue = currentStepValue;
           }
         }
       }
     }
-    this.setState({
-      inputValuePercent: newInputValue,
-      valuePercent: newValue
-    });
+
+    setValuePercent(newValue);
+    setInputValuePercent(newInputValue);
   };
 
-  onChangeContinuous = (_event: SliderOnChangeEvent, value: number) => {
+  const onChangeContinuous = (_event: SliderOnChangeEvent, value: number) => {
     const newValue = Math.floor(value);
-    this.setState({
-      inputValueContinuous: newValue,
-      valueContinuous: newValue
-    });
+    setValueContinuous(newValue);
+    setInputValueContinuous(newValue);
   };
 
-  render() {
-    return (
-      <>
-        <Slider
-          id="discrete-slider"
-          value={this.state.valueDiscrete}
-          customSteps={this.stepsDiscrete}
-          onChange={this.onChangeDiscrete}
-        />
-        <br />
-        <Slider
-          value={this.state.valueDiscreteNoLinearMinMax}
-          showTicks
-          customSteps={this.stepsDiscreteNoLinearWithMaxMin}
-          onChange={this.onChangeDiscreteNoLInearMinMax}
-          min={12}
-          max={86}
-        />
-        <br />
-        <Slider
-          id="discrete-slider-input-label"
-          value={this.state.valuePercent}
-          isInputVisible
-          inputValue={this.state.inputValuePercent}
-          inputLabel="%"
-          onChange={this.onChangePercent}
-          customSteps={this.stepsPercent}
-        />
-        <br />
-        <Slider
-          id="continuous-slider"
-          value={this.state.valueContinuous}
-          isInputVisible
-          inputPosition="aboveThumb"
-          inputValue={this.state.inputValueContinuous}
-          inputLabel="%"
-          onChange={this.onChangeContinuous}
-        />
-      </>
-    );
-  }
-}
+  const onChangeCustomSteps = (_event: SliderOnChangeEvent, value: number) => {
+    setCustomStepsValue(value);
+  };
+
+  const onChangeDisabled = (_event: SliderOnChangeEvent, value: number) => {
+    setDisabledValue(value);
+  };
+
+  return (
+    <>
+      <Slider id="discrete-slider" value={valueDiscrete} customSteps={stepsDiscrete} onChange={onChangeDiscrete} />
+      <br />
+      <Slider
+        id="discrete-slider-input-label"
+        value={valuePercent}
+        isInputVisible
+        inputValue={inputValuePercent}
+        inputLabel="%"
+        onChange={onChangePercent}
+        customSteps={stepsPercent}
+      />
+      <br />
+      <Slider
+        id="continuous-slider"
+        value={valueContinuous}
+        isInputVisible
+        inputPosition="aboveThumb"
+        inputValue={inputValueContinuous}
+        inputLabel="%"
+        onChange={onChangeContinuous}
+      />
+      <br />
+      <Slider onChange={onChangeDisabled} value={disabledValue} id="disabled-slider" isDisabled inputLabel="%" />
+      <br />
+      <Slider
+        id="custom-steps-slider"
+        value={customStepsValue}
+        customSteps={customSteps}
+        onChange={onChangeCustomSteps}
+      />
+    </>
+  );
+};
