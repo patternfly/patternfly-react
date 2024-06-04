@@ -19,8 +19,8 @@ import {
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import { Chart, ChartStack, ChartBar, ChartTooltip } from '@patternfly/react-charts';
-import chart_color_gold_100 from '@patternfly/react-tokens/dist/esm/chart_color_gold_100';
-import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_yellow_100 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_100';
+import chart_color_yellow_300 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
 import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
@@ -88,8 +88,8 @@ export const CardUtilizationDemo3: React.FunctionComponent = () => {
                     ariaTitle="Mock stack chart"
                     domainPadding={{ x: [30, 25] }}
                     legendData={[
-                      { name: 'Low', symbol: { fill: chart_color_gold_100.value } },
-                      { name: 'Important', symbol: { fill: chart_color_gold_300.value } },
+                      { name: 'Low', symbol: { fill: chart_color_yellow_100.value } },
+                      { name: 'Important', symbol: { fill: chart_color_yellow_300.value } },
                       { name: 'Moderate', symbol: { fill: chart_color_orange_300.value } },
                       { name: 'Critical', symbol: { fill: chart_color_red_100.value } }
                     ]}
@@ -107,8 +107,8 @@ export const CardUtilizationDemo3: React.FunctionComponent = () => {
                     <ChartStack
                       horizontal
                       colorScale={[
-                        chart_color_gold_100.value,
-                        chart_color_gold_300.value,
+                        chart_color_yellow_100.value,
+                        chart_color_yellow_300.value,
                         chart_color_orange_300.value,
                         chart_color_red_100.value
                       ]}
