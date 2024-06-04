@@ -55,9 +55,9 @@ test(`renders with class ${styles.hintActions} if there is an action prop`, () =
   expect(hint).toHaveClass(styles.hintActions);
 });
 
-test(`renders with class ${styles.modifiers.noOffset} if there is an action prop and hasNoOffset is true`, () => {
+test(`renders with class ${styles.modifiers.noOffset} if there is an action prop and hasNoActionsOffset is true`, () => {
   render(
-    <Hint actions="actions" hasNoOffset>
+    <Hint actions="actions" hasNoActionsOffset>
       Test
     </Hint>
   );
