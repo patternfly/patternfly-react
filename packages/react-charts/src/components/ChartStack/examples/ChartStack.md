@@ -88,7 +88,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiCo
       right: 50, 
       top: 50
     }}
-    themeColor={ChartThemeColor.gold}
+    themeColor={ChartThemeColor.yellow}
     width={450}
   >
     <ChartAxis />

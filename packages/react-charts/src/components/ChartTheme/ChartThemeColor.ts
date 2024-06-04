@@ -1,8 +1,8 @@
 interface ChartThemeColorInterface {
   blue: string;
-  cyan: string;
+  teal: string;
   default: string;
-  gold: string;
+  yellow: string;
   gray: string;
   green: string;
   multi: string;
@@ -41,9 +41,9 @@ interface ChartThemeColorInterface {
  */
 export const ChartThemeColor: ChartThemeColorInterface = {
   blue: 'blue',
-  cyan: 'cyan',
+  teal: 'teal',
   default: 'blue',
-  gold: 'gold',
+  yellow: 'yellow',
   gray: 'gray',
   green: 'green',
   multi: 'multi',

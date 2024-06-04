@@ -83,7 +83,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
 </div>
 ```
 
-### Cyan with bottom aligned legend and axis label
+### Teal with bottom aligned legend and axis label
 
 This demonstrates how to combine cursor and voronoi containers to display tooltips along with a cursor.
 
@@ -124,7 +124,7 @@ class BottomAlignedLegend extends React.Component {
             top: 50,
           }}
           maxDomain={{y: 9}}
-          themeColor={ChartThemeColor.cyan}
+          themeColor={ChartThemeColor.teal}
           width={650}
         >
           <ChartAxis label="Years"/>
