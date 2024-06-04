@@ -31,7 +31,7 @@ export const PageVerticalNav: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const header = (
+  const masthead = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton
@@ -60,7 +60,7 @@ export const PageVerticalNav: React.FunctionComponent = () => {
   );
 
   return (
-    <Page header={header} sidebar={sidebar}>
+    <Page masthead={masthead} sidebar={sidebar}>
       <PageSection>Section 1</PageSection>
       <PageSection variant="secondary">Section 2 with secondary variant styling</PageSection>
       <PageSection>Section 3</PageSection>

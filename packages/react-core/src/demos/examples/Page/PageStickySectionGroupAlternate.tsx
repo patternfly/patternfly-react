@@ -248,7 +248,7 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
 
   return (
     <Page
-      header={masthead}
+      masthead={masthead}
       sidebar={sidebar}
       isManagedSidebar
       skipToContent={pageSkipToContent}

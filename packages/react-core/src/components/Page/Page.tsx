@@ -19,8 +19,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the page layout */
   className?: string;
-  /** Header component (e.g. <Masthead />) */
-  header?: React.ReactNode;
+  /** Masthead component (e.g. <Masthead />) */
+  masthead?: React.ReactNode;
   /** Sidebar component for a side nav (e.g. <PageSidebar />) */
   sidebar?: React.ReactNode;
   /** Notification drawer component for an optional notification drawer (e.g. <NotificationDrawer />) */
@@ -220,7 +220,7 @@ class Page extends React.Component<PageProps, PageState> {
       isBreadcrumbWidthLimited,
       className,
       children,
-      header,
+      masthead,
       sidebar,
       notificationDrawer,
       isNotificationDrawerExpanded,
@@ -341,7 +341,7 @@ class Page extends React.Component<PageProps, PageState> {
           )}
         >
           {skipToContent}
-          {header}
+          {masthead}
           {sidebar}
           {notificationDrawer && (
             <div className={css(styles.pageDrawer)}>

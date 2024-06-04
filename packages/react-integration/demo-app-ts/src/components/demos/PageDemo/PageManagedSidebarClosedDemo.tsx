@@ -25,7 +25,7 @@ export const PageManagedSidebarClosedDemo: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const header = (
+  const masthead = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton variant="plain" aria-label="Global navigation" id="uncontrolled-nav-toggle">
@@ -46,7 +46,7 @@ export const PageManagedSidebarClosedDemo: React.FunctionComponent = () => {
   );
 
   return (
-    <Page id="page-managed-sidebar-closed-demo" isManagedSidebar header={header} sidebar={sidebar}>
+    <Page id="page-managed-sidebar-closed-demo" isManagedSidebar masthead={masthead} sidebar={sidebar}>
       <PageSection>Section </PageSection>
     </Page>
   );

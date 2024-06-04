@@ -39,7 +39,7 @@ export const PageGroupSection: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const header = (
+  const masthead = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton
@@ -68,7 +68,7 @@ export const PageGroupSection: React.FunctionComponent = () => {
   );
 
   return (
-    <Page header={header} sidebar={sidebar}>
+    <Page masthead={masthead} sidebar={sidebar}>
       <PageGroup>
         <PageNavigation>
           <Nav aria-label="Group section navigation" variant="horizontal-subnav">

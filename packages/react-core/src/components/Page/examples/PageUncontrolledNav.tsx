@@ -25,7 +25,7 @@ export const PageUncontrolledNav: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const header = (
+  const masthead = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton variant="plain" aria-label="Global navigation" id="uncontrolled-nav-toggle">
@@ -48,7 +48,7 @@ export const PageUncontrolledNav: React.FunctionComponent = () => {
   );
 
   return (
-    <Page isManagedSidebar header={header} sidebar={sidebar}>
+    <Page isManagedSidebar masthead={masthead} sidebar={sidebar}>
       <PageSection>Section 1</PageSection>
       <PageSection>Section 2</PageSection>
       <PageSection>Section 3</PageSection>

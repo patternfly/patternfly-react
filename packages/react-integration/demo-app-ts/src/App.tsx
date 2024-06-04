@@ -127,7 +127,7 @@ class App extends React.Component<{}, AppState> {
       </Toolbar>
     );
 
-    const AppHeader = (
+    const AppMasthead = (
       <Masthead>
         <MastheadToggle>
           <PageToggleButton onSidebarToggle={this.onNavToggle} variant="plain" aria-label="Global navigation">
@@ -166,7 +166,7 @@ class App extends React.Component<{}, AppState> {
     return (
       <Router>
         <Page
-          header={AppHeader}
+          masthead={AppMasthead}
           sidebar={AppSidebar}
           skipToContent={this.getSkipToContentLink()}
           isManagedSidebar

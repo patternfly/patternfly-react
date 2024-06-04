@@ -90,7 +90,7 @@ export const NavExpandableDemo: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <Page
-        header={<DashboardHeader />}
+        masthead={<DashboardHeader />}
         sidebar={Sidebar}
         isManagedSidebar
         skipToContent={PageSkipToContent}
