@@ -8,11 +8,7 @@ interface DualListSelectorState {
   chosenOptions: React.ReactNode[];
 }
 
-<<<<<<< HEAD:packages/react-integration/demo-app-ts/src/components/demos/DualListSelectorDemo/DualListSelectorBasicDemo.tsx
-export class DualListSelectorBasicDemo extends Component<DualListSelectorProps, DualListSelectorState> {
-=======
-class DualListSelectorDeprecatedBasicDemo extends React.Component<DLSPropsDeprecated, DualListSelectorState> {
->>>>>>> 1949bbd2d (feat(DualListSelector): promoted Next version):packages/react-integration/demo-app-ts/src/components/demos/DualListSelectorDeprecatedDemo/DualListSelectorDeprecatedBasicDemo.tsx
+class DualListSelectorDeprecatedBasicDemo extends Component<DLSPropsDeprecated, DualListSelectorState> {
   static displayName = 'DualListSelectorDemo';
   onListChange: (
     event: React.MouseEvent<HTMLElement>,

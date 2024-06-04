@@ -9,11 +9,7 @@ interface DualListSelectorState {
   chosenOptions: DLSTreeItemDataDeprecated[];
 }
 
-<<<<<<< HEAD:packages/react-integration/demo-app-ts/src/components/demos/DualListSelectorDemo/DualListSelectorTreeDemo.tsx
-export class DualListSelectorTreeDemo extends Component<DualListSelectorProps, DualListSelectorState> {
-=======
-class DualListSelectorDeprecatedTreeDemo extends React.Component<DLSPropsDeprecated, DualListSelectorState> {
->>>>>>> 1949bbd2d (feat(DualListSelector): promoted Next version):packages/react-integration/demo-app-ts/src/components/demos/DualListSelectorDeprecatedDemo/DualListSelectorDeprecatedTreeDemo.tsx
+class DualListSelectorDeprecatedTreeDemo extends Component<DLSPropsDeprecated, DualListSelectorState> {
   static displayName = 'DualListSelectorTreeDemo';
   onListChange: (
     event: React.MouseEvent<HTMLElement>,
