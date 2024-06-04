@@ -47,12 +47,13 @@ test('renders actions options', () => {
   expect(actions).toBeVisible();
 });
 
-test(`renders with class ${styles.hintActions} if there is an action prop`, () => {
+test(`renders with class ${styles.hintActions} if there is an action prop and not have class ${styles.modifiers.noOffset} without hasNoActionsOffset prop`, () => {
   render(<Hint actions="actions">Test</Hint>);
 
   const hint = screen.getByText('actions');
 
   expect(hint).toHaveClass(styles.hintActions);
+  expect(hint).not.toHaveClass(styles.modifiers.noOffset);
 });
 
 test(`renders with class ${styles.modifiers.noOffset} if there is an action prop and hasNoActionsOffset is true`, () => {
