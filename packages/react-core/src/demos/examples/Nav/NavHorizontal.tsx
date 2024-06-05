@@ -193,7 +193,7 @@ export const NavHorizontal: React.FunctionComponent = () => {
       </ToolbarContent>
     </Toolbar>
   );
-  const Header = (
+  const masthead = (
     <Masthead>
       <MastheadMain>
         <MastheadBrand>
@@ -209,7 +209,12 @@ export const NavHorizontal: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <Page header={Header} skipToContent={PageSkipToContent} breadcrumb={DashboardBreadcrumb} mainContainerId={pageId}>
+      <Page
+        masthead={masthead}
+        skipToContent={PageSkipToContent}
+        breadcrumb={DashboardBreadcrumb}
+        mainContainerId={pageId}
+      >
         <PageSection>
           <TextContent>
             <Text component="h1">Main title</Text>

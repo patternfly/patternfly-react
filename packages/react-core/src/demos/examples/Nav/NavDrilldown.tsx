@@ -128,7 +128,7 @@ export const NavDrilldown: React.FunctionComponent = () => {
   );
 
   return (
-    <Page header={<DashboardHeader />} sidebar={sidebar}>
+    <Page masthead={<DashboardHeader />} sidebar={sidebar}>
       <PageSection>
         <strong>Nav Layer: </strong>
         {navLayer}

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.67](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.66...@patternfly/react-docs@7.0.0-alpha.67) (2024-06-05)
+
+### Bug Fixes
+
+- **charts:** renamed cyan to teal, gold to yellow ([#10518](https://github.com/patternfly/patternfly-react/issues/10518)) ([d407554](https://github.com/patternfly/patternfly-react/commit/d4075543aa02e6987abacde96011df2d0347e54a))
+
+# [7.0.0-alpha.66](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.65...@patternfly/react-docs@7.0.0-alpha.66) (2024-06-04)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 # [7.0.0-alpha.65](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.64...@patternfly/react-docs@7.0.0-alpha.65) (2024-05-31)
 
 ### Bug Fixes

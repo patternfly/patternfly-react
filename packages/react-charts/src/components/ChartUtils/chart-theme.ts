@@ -4,8 +4,8 @@ import { ChartThemeColor } from '../ChartTheme/ChartThemeColor';
 import { ChartThemeDefinition, ChartComponentThemeDefinition } from '../ChartTheme/ChartTheme';
 import { ChartBaseTheme, ChartBaseComponentTheme } from '../ChartTheme/ChartThemeTypes';
 import { BlueColorTheme, BlueColorComponentTheme } from '../ChartTheme/themes/colors/blue-theme';
-import { CyanColorTheme, CyanColorComponentTheme } from '../ChartTheme/themes/colors/cyan-theme';
-import { GoldColorTheme, GoldColorComponentTheme } from '../ChartTheme/themes/colors/gold-theme';
+import { TealColorTheme, TealColorComponentTheme } from '../ChartTheme/themes/colors/teal-theme';
+import { YellowColorTheme, YellowColorComponentTheme } from '../ChartTheme/themes/colors/yellow-theme';
 import { GrayColorTheme, GrayColorComponentTheme } from '../ChartTheme/themes/colors/gray-theme';
 import { GreenColorTheme, GreenColorComponentTheme } from '../ChartTheme/themes/colors/green-theme';
 import { SkeletonColorTheme, SkeletonColorComponentTheme } from '../ChartTheme/themes/colors/skeleton-theme';
@@ -57,10 +57,10 @@ export const getThemeColors = (themeColor: string) => {
   switch (themeColor) {
     case ChartThemeColor.blue:
       return BlueColorTheme;
-    case ChartThemeColor.cyan:
-      return CyanColorTheme;
-    case ChartThemeColor.gold:
-      return GoldColorTheme;
+    case ChartThemeColor.teal:
+      return TealColorTheme;
+    case ChartThemeColor.yellow:
+      return YellowColorTheme;
     case ChartThemeColor.gray:
       return GrayColorTheme;
     case ChartThemeColor.green:
@@ -90,10 +90,10 @@ export const getThemeComponentColors = (themeColor: string) => {
   switch (themeColor) {
     case ChartThemeColor.blue:
       return BlueColorComponentTheme;
-    case ChartThemeColor.cyan:
-      return CyanColorComponentTheme;
-    case ChartThemeColor.gold:
-      return GoldColorComponentTheme;
+    case ChartThemeColor.teal:
+      return TealColorComponentTheme;
+    case ChartThemeColor.yellow:
+      return YellowColorComponentTheme;
     case ChartThemeColor.gray:
       return GrayColorComponentTheme;
     case ChartThemeColor.green:

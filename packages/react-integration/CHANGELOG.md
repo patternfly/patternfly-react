@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.31...@patternfly/react-integration@6.0.0-alpha.32) (2024-06-04)
+
+### Features
+
+- **Page:** rename 'header' prop to 'masthead' ([#10454](https://github.com/patternfly/patternfly-react/issues/10454)) ([37dd6ad](https://github.com/patternfly/patternfly-react/commit/37dd6add1987568f83edf3c0669f058ec58461d5))
+
 # [6.0.0-alpha.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.30...@patternfly/react-integration@6.0.0-alpha.31) (2024-05-31)
 
 ### Features

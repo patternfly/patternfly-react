@@ -462,7 +462,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <Page sidebar={sidebar} header={masthead} isManagedSidebar>
+      <Page sidebar={sidebar} masthead={masthead} isManagedSidebar>
         <PageBreadcrumb>
           <Breadcrumb aria-label={translation.breadcrumbs.ariaLabel || undefined}>
             {Object.keys(breadcrumbItems).map((key: string, idx: number, arr: string[]) => (

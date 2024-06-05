@@ -64,7 +64,7 @@ export const NavDefault: React.FunctionComponent = () => {
   return (
     <>
       <Page
-        header={<DashboardHeader />}
+        masthead={<DashboardHeader />}
         sidebar={Sidebar}
         isManagedSidebar
         skipToContent={PageSkipToContent}

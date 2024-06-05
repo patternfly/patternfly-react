@@ -436,7 +436,7 @@ export const PaginatedTableAction = () => {
 
   return (
     <React.Fragment>
-      <Page sidebar={sidebar} header={masthead} isManagedSidebar>
+      <Page sidebar={sidebar} masthead={masthead} isManagedSidebar>
         <PageBreadcrumb>
           <Breadcrumb aria-label={translation.breadcrumbs.ariaLabel || undefined}>
             {Object.keys(breadcrumbItems).map((key, idx, arr) => (

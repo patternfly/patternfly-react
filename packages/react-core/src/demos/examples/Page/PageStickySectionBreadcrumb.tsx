@@ -256,7 +256,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
 
   return (
     <Page
-      header={masthead}
+      masthead={masthead}
       sidebar={sidebar}
       isManagedSidebar
       skipToContent={pageSkipToContent}

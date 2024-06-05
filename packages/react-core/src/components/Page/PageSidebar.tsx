@@ -10,7 +10,7 @@ export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /**
    * If true, manages the sidebar open/close state and there is no need to pass the isSidebarOpen boolean into
-   * the sidebar component or add a callback onSidebarToggle function into the PageHeader component
+   * the sidebar component or add a callback onSidebarToggle function into the Masthead component
    */
   isManagedSidebar?: boolean;
   /** Programmatically manage if the sidebar is shown, if isManagedSidebar is set to true in the Page component, this prop is managed */

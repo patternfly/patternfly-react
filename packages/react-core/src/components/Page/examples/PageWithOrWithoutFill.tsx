@@ -31,7 +31,7 @@ export const PageWithOrWithoutFill: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const header = (
+  const masthead = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton
@@ -60,7 +60,7 @@ export const PageWithOrWithoutFill: React.FunctionComponent = () => {
   );
 
   return (
-    <Page header={header} sidebar={sidebar}>
+    <Page masthead={masthead} sidebar={sidebar}>
       <PageSection>A default page section</PageSection>
       <PageSection isFilled={true}>This section fills the available space.</PageSection>
       <PageSection isFilled={false}>

@@ -87,7 +87,7 @@ import { Chart, ChartAxis, ChartBoxPlot } from '@patternfly/react-charts';
       right: 50,
       top: 50
     }}
-    themeColor={ChartThemeColor.gold}
+    themeColor={ChartThemeColor.yellow}
     width={600}
   >
   <ChartAxis />

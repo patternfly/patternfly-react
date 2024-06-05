@@ -22,8 +22,8 @@ import {
 } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
-import chart_color_cyan_300 from '@patternfly/react-tokens/dist/esm/chart_color_cyan_300';
-import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_teal_300 from '@patternfly/react-tokens/dist/esm/chart_color_teal_300';
+import chart_color_yellow_300 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_300';
 import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_color_purple_300';
 
 ## Introduction
@@ -212,7 +212,7 @@ import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartLegend, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
-import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_yellow_300 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_300';
 import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_color_purple_300';
 
 <div style={{ height: '275px', width: '450px' }}>
@@ -229,7 +229,7 @@ import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_colo
           },
           {
             name: 'Dogs',
-            symbol: { fill: chart_color_gold_300.var }
+            symbol: { fill: chart_color_yellow_300.var }
           },
           {
             name: 'Birds',
@@ -260,7 +260,7 @@ import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_colo
       horizontal
       colorScale={[
         chart_color_blue_300.var,
-        chart_color_gold_300.var,
+        chart_color_yellow_300.var,
         chart_color_green_300.var,
         chart_color_purple_300.var
       ]}
@@ -395,8 +395,8 @@ import React from 'react';
 import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
-import chart_color_cyan_300 from '@patternfly/react-tokens/dist/esm/chart_color_cyan_300';
-import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_teal_300 from '@patternfly/react-tokens/dist/esm/chart_color_teal_300';
+import chart_color_yellow_300 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_300';
 
 class MultiColorChart extends React.Component {
   constructor(props) {
@@ -406,8 +406,8 @@ class MultiColorChart extends React.Component {
     this.colorScale = [
       chart_color_blue_300.var,
       chart_color_green_300.var,
-      chart_color_cyan_300.var,
-      chart_color_gold_300.var
+      chart_color_teal_300.var,
+      chart_color_yellow_300.var
     ];
 
     // Layout
