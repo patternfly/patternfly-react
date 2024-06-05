@@ -229,7 +229,7 @@ import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
 
 ### Primary measure outside range
 
-This is a gold bullet chart with primary measure greater than max range.
+This is a yellow bullet chart with primary measure greater than max range.
 
 ```js
 import React from 'react';
@@ -257,7 +257,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
     qualitativeRangeData={[{ name: 'Range', y: 85 }, { name: 'Range', y: 125 }]}
     qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-    themeColor={ChartThemeColor.gold}
+    themeColor={ChartThemeColor.yellow}
     subTitle="Measure details"
     title="Text label"
     width={600}
@@ -444,7 +444,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
     subTitle="Measure details"
     title="Text label"
-    themeColor={ChartThemeColor.gold}
+    themeColor={ChartThemeColor.yellow}
     width={500}
   />
 </div>

@@ -482,7 +482,7 @@ class EmbeddedLegendAlt extends React.Component {
             right: 50,
             top: 50
           }}
-          themeColor={ChartThemeColor.gold}
+          themeColor={ChartThemeColor.yellow}
           width={450}
         >
           <ChartAxis tickValues={[2, 3, 4]} />
@@ -626,7 +626,7 @@ import { ChartDonut, ChartTooltip } from '@patternfly/react-charts';
     name="chart5"
     subTitle="Pets"
     title="100"
-    themeColor={ChartThemeColor.cyan}
+    themeColor={ChartThemeColor.teal}
     width={150}
   />
 </div>
