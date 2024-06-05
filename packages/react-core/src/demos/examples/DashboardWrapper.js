@@ -55,7 +55,7 @@ export default class DashboardWrapper extends React.Component {
       children,
       mainContainerId,
       breadcrumb,
-      header,
+      masthead,
       sidebar,
       sidebarNavOpen,
       onPageResize = () => {},
@@ -106,7 +106,7 @@ export default class DashboardWrapper extends React.Component {
 
     return (
       <Page
-        header={header !== undefined ? header : <DashboardHeader />}
+        masthead={masthead !== undefined ? masthead : <DashboardHeader />}
         sidebar={sidebar !== undefined ? sidebar : _sidebar}
         isManagedSidebar
         skipToContent={PageSkipToContent}

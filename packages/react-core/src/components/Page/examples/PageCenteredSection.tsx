@@ -35,7 +35,7 @@ export const PageCenteredSection: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const header = (
+  const masthead = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton
@@ -64,7 +64,7 @@ export const PageCenteredSection: React.FunctionComponent = () => {
   );
 
   return (
-    <Page header={header} sidebar={sidebar}>
+    <Page masthead={masthead} sidebar={sidebar}>
       <PageSection isWidthLimited isCenterAligned>
         <Card>
           <CardBody>

@@ -215,7 +215,7 @@ export const NavFlyout: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const Header = (
+  const masthead = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton
@@ -263,7 +263,7 @@ export const NavFlyout: React.FunctionComponent = () => {
 
   return (
     <Page
-      header={Header}
+      masthead={masthead}
       sidebar={Sidebar}
       onPageResize={onPageResize}
       skipToContent={PageSkipToContent}

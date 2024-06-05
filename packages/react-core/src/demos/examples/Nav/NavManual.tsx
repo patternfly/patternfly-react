@@ -209,7 +209,7 @@ export const NavManual: React.FunctionComponent = () => {
       </ToolbarContent>
     </Toolbar>
   );
-  const Header = (
+  const masthead = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton
@@ -240,7 +240,7 @@ export const NavManual: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <Page
-        header={Header}
+        masthead={masthead}
         sidebar={Sidebar}
         onPageResize={onPageResize}
         skipToContent={PageSkipToContent}

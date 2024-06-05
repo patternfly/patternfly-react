@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.63](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.62...@patternfly/react-table@6.0.0-alpha.63) (2024-06-05)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.0.0-alpha.62](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.61...@patternfly/react-table@6.0.0-alpha.62) (2024-06-04)
+
+### Features
+
+- **Page:** rename 'header' prop to 'masthead' ([#10454](https://github.com/patternfly/patternfly-react/issues/10454)) ([37dd6ad](https://github.com/patternfly/patternfly-react/commit/37dd6add1987568f83edf3c0669f058ec58461d5))
+
 # [6.0.0-alpha.61](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.60...@patternfly/react-table@6.0.0-alpha.61) (2024-05-31)
 
 **Note:** Version bump only for package @patternfly/react-table

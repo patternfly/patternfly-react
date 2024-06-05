@@ -80,7 +80,7 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
     </Nav>
   );
 
-  const Header = (
+  const masthead = (
     <Masthead id="basic">
       <MastheadToggle>
         <PageToggleButton variant="plain" aria-label="Global navigation">
@@ -151,7 +151,7 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <Page
-        header={Header}
+        masthead={masthead}
         sidebar={Sidebar}
         isManagedSidebar
         skipToContent={PageSkipToContent}

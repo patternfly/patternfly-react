@@ -44,8 +44,8 @@ import { getResizeObserver } from '@patternfly/react-core';
 import chart_color_black_500 from '@patternfly/react-tokens/dist/esm/chart_color_black_500';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
-import chart_color_cyan_300 from '@patternfly/react-tokens/dist/esm/chart_color_cyan_300';
-import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_teal_300 from '@patternfly/react-tokens/dist/esm/chart_color_teal_300';
+import chart_color_yellow_300 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_300';
 import '@patternfly/patternfly/patternfly-charts.css';
 
 ## Introduction
@@ -183,7 +183,7 @@ import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
     }}
     subTitle="Pets"
     title="100"
-    themeColor={ChartThemeColor.gold}
+    themeColor={ChartThemeColor.yellow}
     width={350}
   />
 </div>
@@ -635,14 +635,14 @@ This demonstrates how to apply a custom color scale to patterns.
 import React from 'react';
 import { ChartPie } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
-import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_yellow_300 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartPie
     ariaDesc="Average number of pets"
     ariaTitle="Pie chart example"
-    colorScale={[chart_color_blue_300.var, chart_color_gold_300.var, chart_color_green_300.var]}
+    colorScale={[chart_color_blue_300.var, chart_color_yellow_300.var, chart_color_green_300.var]}
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     hasPatterns={[ true, true, false ]}

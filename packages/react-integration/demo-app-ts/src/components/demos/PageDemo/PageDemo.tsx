@@ -70,7 +70,7 @@ export class PageDemo extends Component {
       </Toolbar>
     );
 
-    const Header = (
+    const masthead = (
       <Masthead>
         <MastheadToggle>
           <PageToggleButton variant="plain" aria-label="Global navigation">
@@ -95,7 +95,7 @@ export class PageDemo extends Component {
       <Page
         role={pageRole}
         id="page-demo"
-        header={Header}
+        masthead={masthead}
         sidebar={Sidebar}
         mainContainerId={pageId}
         skipToContent={PageSkipToContent}

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.0.0-alpha.23...@patternfly/react-tokens@6.0.0-alpha.24) (2024-06-05)
+
+### Bug Fixes
+
+- **charts:** renamed cyan to teal, gold to yellow ([#10518](https://github.com/patternfly/patternfly-react/issues/10518)) ([d407554](https://github.com/patternfly/patternfly-react/commit/d4075543aa02e6987abacde96011df2d0347e54a))
+
 # [6.0.0-alpha.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.0.0-alpha.22...@patternfly/react-tokens@6.0.0-alpha.23) (2024-05-31)
 
 **Note:** Version bump only for package @patternfly/react-tokens

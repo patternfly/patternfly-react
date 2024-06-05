@@ -312,7 +312,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const Header = (
+  const masthead = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton variant="plain" aria-label="Global navigation">
@@ -760,7 +760,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <Page
-        header={Header}
+        masthead={masthead}
         sidebar={Sidebar}
         isManagedSidebar
         notificationDrawer={notificationDrawer}

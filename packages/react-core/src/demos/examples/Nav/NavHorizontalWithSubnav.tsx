@@ -242,7 +242,7 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
       </ToolbarContent>
     </Toolbar>
   );
-  const Header = (
+  const masthead = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton variant="plain" aria-label="Global navigation">
@@ -263,7 +263,7 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <Page header={Header} skipToContent={PageSkipToContent} mainContainerId={pageId}>
+      <Page masthead={masthead} skipToContent={PageSkipToContent} mainContainerId={pageId}>
         <PageSection type={PageSectionTypes.subNav} isWidthLimited>
           {SubNav}
         </PageSection>

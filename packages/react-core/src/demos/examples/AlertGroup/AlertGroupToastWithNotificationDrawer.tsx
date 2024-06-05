@@ -310,7 +310,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
 
   return (
     <DashboardWrapper
-      header={<DashboardHeader notificationBadge={notificationBadge} />}
+      masthead={<DashboardHeader notificationBadge={notificationBadge} />}
       mainContainerId="main-content-page-layout-default-nav"
       notificationDrawer={notificationDrawer}
       isNotificationDrawerExpanded={isDrawerExpanded}

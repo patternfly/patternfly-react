@@ -31,7 +31,7 @@ export const PageMainSectionPadding: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const header = (
+  const masthead = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton
@@ -60,7 +60,7 @@ export const PageMainSectionPadding: React.FunctionComponent = () => {
   );
 
   return (
-    <Page header={header} sidebar={sidebar}>
+    <Page masthead={masthead} sidebar={sidebar}>
       <PageSection>Section with default padding</PageSection>
       <PageSection padding={{ default: 'noPadding' }}>Section with no padding</PageSection>
       <PageSection padding={{ default: 'noPadding', md: 'padding' }}>Section with padding on medium</PageSection>
