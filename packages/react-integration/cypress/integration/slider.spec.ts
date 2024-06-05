@@ -5,11 +5,12 @@ describe('Slider Demo Test', () => {
 
   it('renders the discrete slider', () => {
     cy.get('#discrete-slider').should('exist');
-    cy.get('#discrete-slider').should(
-      'have.attr',
-      'style',
-      '--pf-v5-c-slider--value: 62.5%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;'
-    );
+    cy.get('#discrete-slider')
+      .invoke('attr', 'style')
+      .should('be.oneOf', [
+        '--pf-v5-c-slider--value: 62.5%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;',
+        '--pf-v5-c-slider--value:62.5%; --pf-v5-c-slider__value--c-form-control--width-chars:1;'
+      ]);
   });
 
   it('changes discrete slider value when dragged', () => {
@@ -17,11 +18,12 @@ describe('Slider Demo Test', () => {
       .trigger('mousedown', { which: 1 })
       .trigger('mousemove', 150, 10, { force: true })
       .trigger('mouseup', { force: true });
-    cy.get('#discrete-slider').should(
-      'have.attr',
-      'style',
-      '--pf-v5-c-slider--value: 75%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;'
-    );
+    cy.get('#discrete-slider')
+      .invoke('attr', 'style')
+      .should('be.oneOf', [
+        '--pf-v5-c-slider--value: 75%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;',
+        '--pf-v5-c-slider--value:75%; --pf-v5-c-slider__value--c-form-control--width-chars:1;'
+      ]);
   });
 
   it('renders the slider with input', () => {
@@ -32,20 +34,22 @@ describe('Slider Demo Test', () => {
     cy.get(
       '#discrete-slider-input-label > .pf-v5-c-slider__value > .pf-v5-c-input-group > .pf-v5-c-input-group__item > .pf-v5-c-input-group__text'
     ).should('exist');
-    cy.get('#discrete-slider-input-label').should(
-      'have.attr',
-      'style',
-      '--pf-v5-c-slider--value: 50%; --pf-v5-c-slider__value--c-form-control--width-chars: 2;'
-    );
+    cy.get('#discrete-slider-input-label')
+      .invoke('attr', 'style')
+      .should('be.oneOf', [
+        '--pf-v5-c-slider--value: 50%; --pf-v5-c-slider__value--c-form-control--width-chars: 2;',
+        '--pf-v5-c-slider--value:50%; --pf-v5-c-slider__value--c-form-control--width-chars:2;'
+      ]);
   });
 
   it('renders the continuous slider', () => {
     cy.get('#continuous-slider').should('exist');
-    cy.get('#continuous-slider').should(
-      'have.attr',
-      'style',
-      '--pf-v5-c-slider--value: 50%; --pf-v5-c-slider__value--c-form-control--width-chars: 2;'
-    );
+    cy.get('#continuous-slider')
+      .invoke('attr', 'style')
+      .should('be.oneOf', [
+        '--pf-v5-c-slider--value: 50%; --pf-v5-c-slider__value--c-form-control--width-chars: 2;',
+        '--pf-v5-c-slider--value:50%; --pf-v5-c-slider__value--c-form-control--width-chars:2;'
+      ]);
   });
 
   it('changes continuous slider value when dragged', () => {
@@ -53,20 +57,23 @@ describe('Slider Demo Test', () => {
       .trigger('mousedown', { which: 1 })
       .trigger('mousemove', 430, 10, { force: true })
       .trigger('mouseup', { force: true });
-    cy.get('#continuous-slider').should(
-      'have.attr',
-      'style',
-      '--pf-v5-c-slider--value: 100%; --pf-v5-c-slider__value--c-form-control--width-chars: 3;'
-    );
+
+    cy.get('#continuous-slider')
+      .invoke('attr', 'style')
+      .should('be.oneOf', [
+        '--pf-v5-c-slider--value: 100%; --pf-v5-c-slider__value--c-form-control--width-chars: 3;',
+        '--pf-v5-c-slider--value:100%; --pf-v5-c-slider__value--c-form-control--width-chars:3;'
+      ]);
   });
 
   it('renders the disabled slider', () => {
     cy.get('#disabled-slider').should('exist');
-    cy.get('#disabled-slider').should(
-      'have.attr',
-      'style',
-      '--pf-v5-c-slider--value: 20%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;'
-    );
+    cy.get('#disabled-slider')
+      .invoke('attr', 'style')
+      .should('be.oneOf', [
+        '--pf-v5-c-slider--value: 20%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;',
+        '--pf-v5-c-slider--value:20%; --pf-v5-c-slider__value--c-form-control--width-chars:1;'
+      ]);
     cy.get('#disabled-slider').should('have.class', 'pf-m-disabled');
   });
 
@@ -75,20 +82,23 @@ describe('Slider Demo Test', () => {
       .trigger('mousedown', { which: 1 })
       .trigger('mousemove', 430, 10, { force: true })
       .trigger('mouseup', { force: true });
-    cy.get('#disabled-slider').should(
-      'have.attr',
-      'style',
-      '--pf-v5-c-slider--value: 20%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;'
-    );
+    cy.get('#disabled-slider')
+      .invoke('attr', 'style')
+      .should('be.oneOf', [
+        '--pf-v5-c-slider--value: 20%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;',
+        '--pf-v5-c-slider--value:20%; --pf-v5-c-slider__value--c-form-control--width-chars:1;'
+      ]);
   });
 
   it('renders slider with custom steps', () => {
     cy.get('#custom-steps-slider').should('exist');
-    cy.get('#custom-steps-slider').should(
-      'have.attr',
-      'style',
-      '--pf-v5-c-slider--value: 20%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;'
-    );
+
+    cy.get('#custom-steps-slider')
+      .invoke('attr', 'style')
+      .should('be.oneOf', [
+        '--pf-v5-c-slider--value: 20%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;',
+        '--pf-v5-c-slider--value:20%; --pf-v5-c-slider__value--c-form-control--width-chars:1;'
+      ]);
   });
 
   it('changes custom steps slider value when dragged', () => {
@@ -96,10 +106,11 @@ describe('Slider Demo Test', () => {
       .trigger('mousedown', { which: 1 })
       .trigger('mousemove', -200, 10, { force: true })
       .trigger('mouseup', { force: true });
-    cy.get('#custom-steps-slider').should(
-      'have.attr',
-      'style',
-      '--pf-v5-c-slider--value: 0%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;'
-    );
+    cy.get('#custom-steps-slider')
+      .invoke('attr', 'style')
+      .should('be.oneOf', [
+        '--pf-v5-c-slider--value: 0%; --pf-v5-c-slider__value--c-form-control--width-chars: 1;',
+        '--pf-v5-c-slider--value:0%; --pf-v5-c-slider__value--c-form-control--width-chars:1;'
+      ]);
   });
 });
