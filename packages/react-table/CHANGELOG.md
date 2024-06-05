@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.64](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.63...@patternfly/react-table@6.0.0-alpha.64) (2024-06-05)
+
+### Bug Fixes
+
+- **EmptyState:** Removed export of Header and Icon subcomponents ([#10364](https://github.com/patternfly/patternfly-react/issues/10364)) ([0f81473](https://github.com/patternfly/patternfly-react/commit/0f81473c9fec309f8861ab273d6117e3ddecafa5))
+
 # [6.0.0-alpha.63](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.62...@patternfly/react-table@6.0.0-alpha.63) (2024-06-05)
 
 **Note:** Version bump only for package @patternfly/react-table
