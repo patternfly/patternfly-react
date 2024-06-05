@@ -31,7 +31,7 @@ export class TabsStringEventKeyDemo extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
           <Tab
             id="demoTabOne"
@@ -66,7 +66,7 @@ export class TabsStringEventKeyDemo extends Component {
             Tab 3 section
           </TabContent>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

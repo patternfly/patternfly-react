@@ -51,7 +51,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <InputGroup>
           <InputGroupItem>
             <Button id="textAreaButton1" variant={ButtonVariant.control}>
@@ -209,7 +209,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
             %
           </InputGroupText>
         </InputGroup>
-      </React.Fragment>
+      </>
     );
   }
 }

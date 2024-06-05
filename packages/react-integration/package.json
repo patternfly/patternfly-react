@@ -24,15 +24,12 @@
     "clean": "rimraf cypress/videos cypress/screenshots",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "serve:integration": "cd demo-app-ts && yarn serve:demo-app",
+    "serve:integration": "cd demo-app-ts && yarn preview",
     "test:integration": "node --max-old-space-size=4096 ./node_modules/.bin/cypress run"
   },
   "devDependencies": {
     "cypress": "^8.7.0",
     "cypress-plugin-tab": "^1.0.5",
-    "jasmine-xml2html-converter": "^0.0.2",
-    "junit-merge": "^2.0.0",
-    "ts-loader": "^8.3.0",
-    "webpack": "^4.43.0"
+    "junit-merge": "^2.0.0"
   }
 }

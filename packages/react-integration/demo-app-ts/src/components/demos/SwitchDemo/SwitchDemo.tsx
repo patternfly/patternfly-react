@@ -50,7 +50,7 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
       simple: { isChecked }
     } = this.state;
     return (
-      <React.Fragment>
+      <>
         <Switch
           id="simple-switch"
           label={<div style={{ color: 'green' }}>Message when on</div>}
@@ -67,7 +67,7 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
           isChecked={false}
           isDisabled
         />
-      </React.Fragment>
+      </>
     );
   }
 
@@ -104,10 +104,10 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         {this.renderSimple()}
         {this.renderTable()}
-      </React.Fragment>
+      </>
     );
   }
 }

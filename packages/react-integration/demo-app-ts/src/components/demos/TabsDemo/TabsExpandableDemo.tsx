@@ -88,7 +88,7 @@ export class TabsExpandableDemo extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <div>
           <Tabs
             id="expandable-controlled"
@@ -218,7 +218,7 @@ export class TabsExpandableDemo extends Component {
             </Tab>
           </Tabs>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

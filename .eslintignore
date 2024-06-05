@@ -16,7 +16,7 @@ packages/react-docs/.cache
 packages/react-docs/static
 packages/react-docs/public
 packages/react-integration/results
-packages/react-integration/demo-app-ts/public
+packages/react-integration/demo-app-ts/dist
 
 # package managers
 yarn-error.log

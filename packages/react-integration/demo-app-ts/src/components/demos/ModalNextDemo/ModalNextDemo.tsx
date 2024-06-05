@@ -523,7 +523,7 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
     };
 
     return (
-      <React.Fragment>
+      <>
         <div id="tabstop-test" tabIndex={0} style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
           <Button style={buttonStyle} variant="primary" onClick={this.handleModalToggle} id="showDefaultModalButton">
             Show Modal
@@ -616,7 +616,7 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         {this.renderModalWithAlertVariant()}
         {this.renderHelpModal()}
         {this.renderCustomFocusModal()}
-      </React.Fragment>
+      </>
     );
   }
 }

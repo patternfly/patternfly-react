@@ -85,7 +85,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
       toggle: (
         <OptionsMenuToggle
           onToggle={this.singleOptionOnToggle}
-          toggleTemplate={<React.Fragment>{this.state.toggleTemplateText}</React.Fragment>}
+          toggleTemplate={<>{this.state.toggleTemplateText}</>}
         />
       ),
       isOpen: this.state.singleOptionIsOpen
@@ -104,7 +104,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
       ],
       toggle: (
         <OptionsMenuToggleWithText
-          toggleText={<React.Fragment>Custom text</React.Fragment>}
+          toggleText={<>Custom text</>}
           toggleButtonContents={<CaretDownIcon />}
           onToggle={this.modifiedOnToggle}
         />
@@ -123,14 +123,14 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
         <OptionsMenuToggle
           isDisabled
           onToggle={this.disabledOnToggle}
-          toggleTemplate={<React.Fragment>{this.state.toggleTemplateText}</React.Fragment>}
+          toggleTemplate={<>{this.state.toggleTemplateText}</>}
         />
       ),
       isOpen: this.state.disabledOptionsIsOpen
     };
 
     return (
-      <React.Fragment>
+      <>
         <OptionsMenu
           id={myOptionsMenuProps.id}
           menuItems={myOptionsMenuProps.menuItems}
@@ -155,7 +155,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
           isOpen={myDisabledOptionsMenuProps.isOpen}
           toggle={myDisabledOptionsMenuProps.toggle}
         />
-      </React.Fragment>
+      </>
     );
   }
 }
