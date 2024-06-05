@@ -236,8 +236,6 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
   );
 
   const PageHorizontalNav = () => (
-    <Toolbar id="toolbar-nav" isFullHeight>
-      <ToolbarContent>
         <ToolbarItem isOverflowContainer>
           <Nav
             id="page-layout-horizontal-nav-horizontal-nav"
