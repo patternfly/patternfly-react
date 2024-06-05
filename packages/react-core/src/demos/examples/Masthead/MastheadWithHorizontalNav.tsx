@@ -231,6 +231,8 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
             <DropdownList>{userDropdownItems}</DropdownList>
           </Dropdown>
         </ToolbarItem>
+        <PageHorizontalNav />
+
       </ToolbarContent>
     </Toolbar>
   );
