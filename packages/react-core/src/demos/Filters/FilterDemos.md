@@ -21,9 +21,7 @@ Badge,
 Pagination,
 EmptyState,
 EmptyStateBody,
-EmptyStateHeader,
 EmptyStateFooter,
-EmptyStateIcon,
 EmptyStateActions,
 Title,
 Button,
@@ -39,34 +37,41 @@ import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 ### Search input
 
 ```ts file="./examples/FilterSearchInput.tsx"
+
 ```
 
 ### Single select
 
 ```ts file="./examples/FilterSingleSelect.tsx"
+
 ```
 
 ### Checkbox select
 
 ```ts file="./examples/FilterCheckboxSelect.tsx"
+
 ```
 
 ### Attribute search
 
 ```ts file="./examples/FilterAttributeSearch.tsx"
+
 ```
 
 ### Mixed select filter group
 
 ```ts file="./examples/FilterMixedSelectGroup.tsx"
+
 ```
 
 ### Single select filter group
 
 ```ts file="./examples/FilterSameSelectGroup.tsx"
+
 ```
 
 ### Faceted filter
 
 ```ts file="./examples/FilterFaceted.tsx"
+
 ```
