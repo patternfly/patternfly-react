@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.63](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.62...@patternfly/react-core@6.0.0-alpha.63) (2024-06-05)
+
+### Bug Fixes
+
+- **charts:** renamed cyan to teal, gold to yellow ([#10518](https://github.com/patternfly/patternfly-react/issues/10518)) ([d407554](https://github.com/patternfly/patternfly-react/commit/d4075543aa02e6987abacde96011df2d0347e54a))
+
 # [6.0.0-alpha.62](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.61...@patternfly/react-core@6.0.0-alpha.62) (2024-06-04)
 
 ### Features
