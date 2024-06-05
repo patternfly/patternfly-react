@@ -268,8 +268,6 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
             </NavList>
           </Nav>
         </ToolbarItem>
-      </ToolbarContent>
-    </Toolbar>
   );
 
   const masthead = (
