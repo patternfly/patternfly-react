@@ -28,7 +28,7 @@ export const Badge: React.FunctionComponent<BadgeProps> = ({
     className={css(
       styles.badge,
       (isRead ? styles.modifiers.read : styles.modifiers.unread) as any,
-      (isDisabled ? styles.modifiers.disabled : '') as any,
+      isDisabled && styles.modifiers.disabled,
       className
     )}
   >
