@@ -144,9 +144,45 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
     </>
   ];
 
+  const PageHorizontalNav = () => (
+    <ToolbarItem isOverflowContainer>
+      <Nav
+        id="page-layout-horizontal-nav-horizontal-nav"
+        onSelect={onNavSelect}
+        aria-label="Global"
+        variant="horizontal"
+      >
+        <NavList>
+          <NavItem itemId={0} isActive={activeItem === 0} to="#horizontal-1">
+            Horizontal nav item 1
+          </NavItem>
+          <NavItem itemId={1} isActive={activeItem === 1} to="#horizontal-2">
+            Horizontal nav item 2
+          </NavItem>
+          <NavItem itemId={2} isActive={activeItem === 2} to="#horizontal-3">
+            Horizontal nav item 3
+          </NavItem>
+          <NavItem itemId={3} isActive={activeItem === 3} to="#horizontal-4">
+            Horizontal nav item 4
+          </NavItem>
+          <NavItem itemId={4} isActive={activeItem === 4} to="#horizontal-5">
+            Horizontal nav item 5
+          </NavItem>
+          <NavItem itemId={5} isActive={activeItem === 4} to="#horizontal-6">
+            Horizontal nav item 6
+          </NavItem>
+          <NavItem itemId={6} isActive={activeItem === 4} to="#horizontal-7">
+            Horizontal nav item 7
+          </NavItem>
+        </NavList>
+      </Nav>
+    </ToolbarItem>
+  );
+
   const headerToolbar = (
     <Toolbar id="toolbar" isFullHeight>
       <ToolbarContent>
+        <PageHorizontalNav />
         <ToolbarGroup
           variant="icon-button-group"
           align={{ default: 'alignRight' }}
@@ -231,45 +267,8 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
             <DropdownList>{userDropdownItems}</DropdownList>
           </Dropdown>
         </ToolbarItem>
-        <PageHorizontalNav />
-
       </ToolbarContent>
     </Toolbar>
-  );
-
-  const PageHorizontalNav = () => (
-        <ToolbarItem isOverflowContainer>
-          <Nav
-            id="page-layout-horizontal-nav-horizontal-nav"
-            onSelect={onNavSelect}
-            aria-label="Global"
-            variant="horizontal"
-          >
-            <NavList>
-              <NavItem itemId={0} isActive={activeItem === 0} to="#horizontal-1">
-                Horizontal nav item 1
-              </NavItem>
-              <NavItem itemId={1} isActive={activeItem === 1} to="#horizontal-2">
-                Horizontal nav item 2
-              </NavItem>
-              <NavItem itemId={2} isActive={activeItem === 2} to="#horizontal-3">
-                Horizontal nav item 3
-              </NavItem>
-              <NavItem itemId={3} isActive={activeItem === 3} to="#horizontal-4">
-                Horizontal nav item 4
-              </NavItem>
-              <NavItem itemId={4} isActive={activeItem === 4} to="#horizontal-5">
-                Horizontal nav item 5
-              </NavItem>
-              <NavItem itemId={5} isActive={activeItem === 4} to="#horizontal-6">
-                Horizontal nav item 6
-              </NavItem>
-              <NavItem itemId={6} isActive={activeItem === 4} to="#horizontal-7">
-                Horizontal nav item 7
-              </NavItem>
-            </NavList>
-          </Nav>
-        </ToolbarItem>
   );
 
   const masthead = (
@@ -279,12 +278,7 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
           <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
         </MastheadBrand>
       </MastheadMain>
-      <MastheadContent>
-        <>
-          <PageHorizontalNav />
-          {headerToolbar}
-        </>
-      </MastheadContent>
+      <MastheadContent>{headerToolbar}</MastheadContent>
     </Masthead>
   );
 
