@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.65](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.64...@patternfly/react-core@6.0.0-alpha.65) (2024-06-06)
+
+### Features
+
+- **badge:** add disabled badge variant ([#10445](https://github.com/patternfly/patternfly-react/issues/10445)) ([cf4a033](https://github.com/patternfly/patternfly-react/commit/cf4a0336a507d0625bac2a79a968ee132e5c0cef))
+
 # [6.0.0-alpha.64](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.63...@patternfly/react-core@6.0.0-alpha.64) (2024-06-05)
 
 ### Bug Fixes
