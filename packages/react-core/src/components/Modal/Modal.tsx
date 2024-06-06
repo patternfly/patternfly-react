@@ -7,53 +7,29 @@ import { ModalContent } from './ModalContent';
 import { OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
-  /** Action buttons to add to the standard modal footer. Ignored if the footer property
-   * is passed in.
-   */
-  actions?: any;
   /** The parent container to append the modal to. Defaults to "document.body". */
   appendTo?: HTMLElement | (() => HTMLElement);
-  /** Id to use for the modal box descriptor. */
+  /** Id to use for the modal box description. This should match the ModalHeader labelId or descriptorId. */
   'aria-describedby'?: string;
-  /** Accessible descriptor of the modal. */
+  /**   Adds an accessible name to the modal when there is no title in the ModalHeader. */
   'aria-label'?: string;
-  /** Id to use for the modal box label. */
+  /** Id to use for the modal box label. This should include the ModalHeader labelId. */
   'aria-labelledby'?: string;
-  /** Accessible label applied to the modal box body. This should be used to communicate
-   * important information about the modal box body div element if needed, such as that it
-   * is scrollable.
-   */
-  bodyAriaLabel?: string;
-  /** Accessible role applied to the modal box body. This will default to "region" if the
-   * bodyAriaLabel property is passed in. Set to a more appropriate role as applicable
-   * based on the modal content and context.
-   */
-  bodyAriaRole?: string;
   /** Content rendered inside the modal. */
   children: React.ReactNode;
   /** Additional classes added to the modal. */
   className?: string;
-  /** Description of the modal. */
-  description?: React.ReactNode;
   /** Flag to disable focus trap. */
   disableFocusTrap?: boolean;
   /** The element to focus when the modal opens. By default the first
    * focusable element will receive focus.
    */
   elementToFocus?: HTMLElement | SVGElement | string;
-  /** Custom footer. */
-  footer?: React.ReactNode;
-  /** Flag indicating if modal content should be placed in a modal box body wrapper. */
-  hasNoBodyWrapper?: boolean;
-  /** Complex header (more than just text), supersedes the title property for header content. */
-  header?: React.ReactNode;
-  /** Optional help section for the modal header. */
-  help?: React.ReactNode;
   /** An id to use for the modal box container. */
   id?: string;
   /** Flag to show the modal. */
   isOpen?: boolean;
-  /** A callback for when the close button is clicked. */
+  /** Add callback for when the close button is clicked. This prop needs to be passed to render the close button */
   onClose?: (event: KeyboardEvent | React.MouseEvent) => void;
   /** Modal handles pressing of the escape key and closes the modal. If you want to handle
    * this yourself you can use this callback function. */
@@ -62,16 +38,6 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   position?: 'default' | 'top';
   /** Offset from alternate position. Can be any valid CSS length/percentage. */
   positionOffset?: string;
-  /** Flag to show the close button in the header area of the modal. */
-  showClose?: boolean;
-  /** Simple text content of the modal header. Also used for the aria-label on the body. */
-  title?: string;
-  /** Optional alert icon (or other) to show before the title of the modal header. When the
-   * predefined alert types are used the default styling will be automatically applied.
-   */
-  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'custom' | React.ComponentType<any>;
-  /** Optional title label text for screen readers. */
-  titleLabel?: string;
   /** Variant of the modal. */
   variant?: 'small' | 'medium' | 'large' | 'default';
   /** Default width of the modal. */
@@ -100,24 +66,10 @@ class Modal extends React.Component<ModalProps, ModalState> {
   static displayName = 'Modal';
   static currentId = 0;
   boxId = '';
-  labelId = '';
-  descriptorId = '';
 
   static defaultProps: PickOptional<ModalProps> = {
-    className: '',
     isOpen: false,
-    title: '',
-    titleIconVariant: null,
-    titleLabel: '',
-    'aria-label': '',
-    showClose: true,
-    'aria-describedby': '',
-    'aria-labelledby': '',
-    id: undefined,
-    actions: [] as any[],
-    onClose: () => undefined as any,
     variant: 'default',
-    hasNoBodyWrapper: false,
     appendTo: () => document.body,
     ouiaSafe: true,
     position: 'default'
@@ -126,11 +78,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   constructor(props: ModalProps) {
     super(props);
     const boxIdNum = Modal.currentId++;
-    const labelIdNum = boxIdNum + 1;
-    const descriptorIdNum = boxIdNum + 2;
     this.boxId = props.id || `pf-modal-part-${boxIdNum}`;
-    this.labelId = `pf-modal-part-${labelIdNum}`;
-    this.descriptorId = `pf-modal-part-${descriptorIdNum}`;
 
     this.state = {
       container: undefined,
@@ -168,11 +116,9 @@ class Modal extends React.Component<ModalProps, ModalState> {
   componentDidMount() {
     const {
       appendTo,
-      title,
+      'aria-describedby': ariaDescribedby,
       'aria-label': ariaLabel,
-      'aria-labelledby': ariaLabelledby,
-      hasNoBodyWrapper,
-      header
+      'aria-labelledby': ariaLabelledby
     } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
     const container = document.createElement('div');
@@ -186,16 +132,9 @@ class Modal extends React.Component<ModalProps, ModalState> {
       target.classList.remove(css(styles.backdropOpen));
     }
 
-    if (this.isEmpty(title) && this.isEmpty(ariaLabel) && this.isEmpty(ariaLabelledby)) {
+    if (!ariaDescribedby && !ariaLabel && !ariaLabelledby) {
       // eslint-disable-next-line no-console
-      console.error('Modal: Specify at least one of: title, aria-label, aria-labelledby.');
-    }
-
-    if (this.isEmpty(ariaLabel) && this.isEmpty(ariaLabelledby) && (hasNoBodyWrapper || header)) {
-      // eslint-disable-next-line no-console
-      console.error(
-        'Modal: When using hasNoBodyWrapper or setting a custom header, ensure you assign an accessible name to the the modal container with aria-label or aria-labelledby.'
-      );
+      console.error('Modal: Specify at least one of: aria-describedby, aria-label, aria-labelledby.');
     }
   }
 
@@ -231,11 +170,6 @@ class Modal extends React.Component<ModalProps, ModalState> {
       'aria-labelledby': ariaLabelledby,
       'aria-label': ariaLabel,
       'aria-describedby': ariaDescribedby,
-      bodyAriaLabel,
-      bodyAriaRole,
-      title,
-      titleIconVariant,
-      titleLabel,
       ouiaId,
       ouiaSafe,
       position,
@@ -250,22 +184,15 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
     return ReactDOM.createPortal(
       <ModalContent
-        {...props}
         boxId={this.boxId}
-        labelId={this.labelId}
-        descriptorId={this.descriptorId}
-        title={title}
-        titleIconVariant={titleIconVariant}
-        titleLabel={titleLabel}
         aria-label={ariaLabel}
         aria-describedby={ariaDescribedby}
         aria-labelledby={ariaLabelledby}
-        bodyAriaLabel={bodyAriaLabel}
-        bodyAriaRole={bodyAriaRole}
         ouiaId={ouiaId !== undefined ? ouiaId : this.state.ouiaStateId}
         ouiaSafe={ouiaSafe}
         position={position}
         elementToFocus={elementToFocus}
+        {...props}
       />,
       container
     ) as React.ReactElement;

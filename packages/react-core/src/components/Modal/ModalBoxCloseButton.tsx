@@ -18,7 +18,7 @@ export interface ModalBoxCloseButtonProps extends OUIAProps {
 
 export const ModalBoxCloseButton: React.FunctionComponent<ModalBoxCloseButtonProps> = ({
   className,
-  onClose = () => undefined as any,
+  onClose,
   'aria-label': ariaLabel = 'Close',
   ouiaId,
   ...props

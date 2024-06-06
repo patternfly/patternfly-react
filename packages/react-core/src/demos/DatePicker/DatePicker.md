@@ -4,6 +4,8 @@ section: components
 subsection: date-and-time
 ---
 
+import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
+
 ## Demos
 
 ### Date range picker
@@ -57,8 +59,6 @@ DateRangePicker = () => {
   );
 };
 ```
-
-
 
 ### Date and time pickers in modal
 

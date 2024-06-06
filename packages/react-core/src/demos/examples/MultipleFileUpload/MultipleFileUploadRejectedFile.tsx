@@ -5,10 +5,10 @@ import {
   MultipleFileUploadMain,
   MultipleFileUploadStatus,
   MultipleFileUploadStatusItem,
-  Modal,
   Checkbox,
   DropEvent
 } from '@patternfly/react-core';
+import { Modal as ModalDeprecated } from '@patternfly/react-core/deprecated';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
 interface readFile {
@@ -135,7 +135,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
             ))}
           </MultipleFileUploadStatus>
         )}
-        <Modal
+        <ModalDeprecated
           isOpen={!!modalText}
           title="Unsupported file"
           titleIconVariant="warning"
@@ -144,7 +144,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
           onClose={() => setModalText('')}
         >
           {modalText}
-        </Modal>
+        </ModalDeprecated>
       </MultipleFileUpload>
       <Checkbox
         id="horizontal-checkbox"

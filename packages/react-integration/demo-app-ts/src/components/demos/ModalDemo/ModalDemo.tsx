@@ -1,5 +1,14 @@
 import React from 'react';
-import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ModalVariant,
+  Title,
+  TitleSizes
+} from '@patternfly/react-core';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
@@ -122,23 +131,27 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
 
     return (
       <Modal
-        title="Modal Header"
         isOpen={isModalOpen}
         onClose={this.handleModalToggle}
-        actions={[
-          <Button key="cancel" data-id="modal-01-cancel-btn" variant="secondary" onClick={this.handleModalToggle}>
-            Cancel
-          </Button>,
+        aria-labelledby="basic-modal-title"
+        aria-describedby="modal-box-body-basic"
+      >
+        <ModalHeader title="Modal Header" labelId="basic-modal-title" />
+        <ModalBody id="modal-box-body-basic">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" data-id="modal-01-confirm-btn" variant="primary" onClick={this.handleModalToggle}>
             Confirm
           </Button>
-        ]}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+          <Button key="cancel" data-id="modal-01-cancel-btn" variant="link" onClick={this.handleModalToggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -148,26 +161,34 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
 
     return (
       <Modal
-        title="Modal Header"
         isOpen={isModalDescriptionOpen}
         onClose={this.handleModalDescriptionToggle}
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        id="test-modal-id"
+        aria-labelledby="with-description-modal-title"
+        aria-describedby="modal-box-with-description-descriptor"
+      >
+        <ModalHeader
+          title="Modal Header"
+          labelId="with-description-modal-title"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua."
-        actions={[
-          <Button key="cancel" variant="secondary" onClick={this.handleModalDescriptionToggle}>
-            Cancel
-          </Button>,
+          descriptorId="modal-box-with-description-descriptor"
+        />
+        <ModalBody id="modal-box-body-with-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleModalDescriptionToggle}>
             Confirm
           </Button>
-        ]}
-        id="test-modal-id"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+          <Button key="cancel" variant="link" onClick={this.handleModalDescriptionToggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -179,23 +200,27 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
       <Modal
         variant={ModalVariant.small}
         position="top"
-        title="Modal Header"
         isOpen={isSmallModalOpen}
         onClose={this.handleSmallModalToggle}
-        actions={[
-          <Button key="cancel" variant="secondary" onClick={this.handleSmallModalToggle}>
-            Cancel
-          </Button>,
+        aria-labelledby="small-modal-title"
+        aria-describedby="modal-box-body-small"
+      >
+        <ModalHeader title="Modal Header" labelId="small-modal-title" />
+        <ModalBody id="modal-box-body-small">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleSmallModalToggle}>
             Confirm
           </Button>
-        ]}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+          <Button key="cancel" variant="link" onClick={this.handleSmallModalToggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -206,23 +231,27 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     return (
       <Modal
         variant={'medium'}
-        title="Modal Header"
         isOpen={isMediumModalOpen}
         onClose={this.handleMediumModalToggle}
-        actions={[
-          <Button key="cancel" variant="secondary" onClick={this.handleMediumModalToggle}>
-            Cancel
-          </Button>,
+        aria-labelledby="medium-modal-title"
+        aria-describedby="modal-box-body-medium"
+      >
+        <ModalHeader title="Modal Header" labelId="medium-modal-title" />
+        <ModalBody id="modal-box-body-medium">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleMediumModalToggle}>
             Confirm
           </Button>
-        ]}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+          <Button key="cancel" variant="link" onClick={this.handleMediumModalToggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -233,23 +262,27 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     return (
       <Modal
         variant={ModalVariant.large}
-        title="Modal Header"
         isOpen={isLargeModalOpen}
         onClose={this.handleLargeModalToggle}
-        actions={[
-          <Button key="cancel" variant="secondary" onClick={this.handleLargeModalToggle}>
-            Cancel
-          </Button>,
+        aria-labelledby="large-modal-title"
+        aria-describedby="modal-box-body-large"
+      >
+        <ModalHeader title="Modal Header" labelId="large-modal-title" />
+        <ModalBody id="modal-box-body-large">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleLargeModalToggle}>
             Confirm
           </Button>
-        ]}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+          <Button key="cancel" variant="link" onClick={this.handleLargeModalToggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -260,23 +293,27 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     return (
       <Modal
         width={'50%'}
-        title="Modal Header"
         isOpen={isHalfWidthModalOpen}
         onClose={this.handleHalfWidthModalToggle}
-        actions={[
-          <Button key="cancel" variant="secondary" onClick={this.handleHalfWidthModalToggle}>
-            Cancel
-          </Button>,
+        aria-labelledby="half-width-modal-title"
+        aria-describedby="modal-box-body-half-width"
+      >
+        <ModalHeader title="Modal Header" labelId="half-width-modal-title" />
+        <ModalBody id="modal-box-body-half-width">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleHalfWidthModalToggle}>
             Confirm
           </Button>
-        ]}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+          <Button key="cancel" variant="link" onClick={this.handleHalfWidthModalToggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -284,44 +321,38 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
   renderCustomHeaderFooterModal() {
     const { isCustomHeaderFooterModalOpen } = this.state;
 
-    const header = (
-      <React.Fragment>
-        <Title id="customHeaderTitle" headingLevel="h1" size={TitleSizes['2xl']}>
-          Custom Modal Header/Footer
-        </Title>
-        <p id="customHeaderDescription" className={spacing.ptSm}>
-          Allows for custom content in the header and/or footer by passing components.
-        </p>
-      </React.Fragment>
-    );
-
-    const footer = (
-      <Title id="customFooterTitle" headingLevel="h4" size={TitleSizes.md}>
-        <WarningTriangleIcon />
-        <span className={spacing.plSm}>Custom modal footer.</span>
-      </Title>
-    );
-
     return (
       <Modal
         variant={ModalVariant.large}
         isOpen={isCustomHeaderFooterModalOpen}
-        header={header}
-        title="custom header example"
         aria-labelledby="customHeaderTitle"
         aria-describedby="custom-header-example"
-        onClose={this.handleCustomHeaderFooterModalToggle}
-        footer={footer}
       >
-        <span id="custom-header-example">
-          When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
-          aria-describedby value.
-        </span>
-        <br />
-        <br />
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <ModalHeader>
+          <Title id="customHeaderTitle" headingLevel="h1" size={TitleSizes['2xl']}>
+            Custom Modal Header/Footer
+          </Title>
+          <p id="customHeaderDescription" className={spacing.ptSm}>
+            Allows for custom content in the header and/or footer by passing components.
+          </p>
+        </ModalHeader>
+        <ModalBody>
+          <span id="custom-header-example">
+            When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
+            aria-describedby value.
+          </span>
+          <br />
+          <br />
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </ModalBody>
+        <ModalFooter>
+          <Title id="customFooterTitle" headingLevel="h4" size={TitleSizes.md}>
+            <WarningTriangleIcon />
+            <span className={spacing.plSm}>Custom modal footer.</span>
+          </Title>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -336,19 +367,21 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         isOpen={isNoHeaderModalOpen}
         aria-describedby="no-header-example"
         onClose={this.handleNoHeaderModalToggle}
-        actions={[
+      >
+        <ModalBody>
+          <span id="no-header-example">
+            When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
+            aria-describedby value.
+          </span>{' '}
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleNoHeaderModalToggle}>
             Close
           </Button>
-        ]}
-      >
-        <span id="no-header-example">
-          When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
-          aria-describedby value.
-        </span>{' '}
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </ModalFooter>
       </Modal>
     );
   }
@@ -358,25 +391,28 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
 
     return (
       <Modal
-        title="Modal Header"
         isOpen={isModalCustomEscapeOpen}
         onClose={this.handleModalCustomEscapeToggle}
         aria-describedby="custom-escape-example"
-        actions={[
-          <Button key="cancel" variant="secondary" onClick={this.handleModalCustomEscapeToggle}>
-            Cancel
-          </Button>,
+        onEscapePress={(event: any) => this.handleModalCustomEscapeToggle(event, true)}
+        aria-labelledby="custom-escape-modal-title"
+      >
+        <ModalHeader title="Modal Header" labelId="custom-escape-modal-title" />
+        <ModalBody id="custom-escape-example">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleModalCustomEscapeToggle}>
             Confirm
           </Button>
-        ]}
-        onEscapePress={(event: any) => this.handleModalCustomEscapeToggle(event, true)}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+          <Button key="cancel" variant="link" onClick={this.handleModalCustomEscapeToggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -386,25 +422,27 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
 
     return (
       <Modal
-        title="Modal Header"
-        titleIconVariant="warning"
         isOpen={isModalAlertVariantOpen}
         onClose={this.handleModalAlertVariantToggle}
-        aria-describedby="custom-escape-example"
-        actions={[
-          <Button key="cancel" variant="secondary" onClick={this.handleModalAlertVariantToggle}>
-            Cancel
-          </Button>,
+        aria-describedby="modal-box-body-alert"
+        aria-labelledby="alert-modal-title"
+      >
+        <ModalHeader title="Modal Header" labelId="alert-modal-title" titleIconVariant="warning" />
+        <ModalBody id="modal-box-body-alert">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleModalAlertVariantToggle}>
             Confirm
           </Button>
-        ]}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+          <Button key="cancel" variant="link" onClick={this.handleModalAlertVariantToggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -415,25 +453,28 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     return (
       <Modal
         variant={ModalVariant.small}
-        help={<Button variant="plain">Help</Button>}
         position="top"
-        title="Modal Header"
         isOpen={isHelpModalOpen}
         onClose={this.handleHelpModalToggle}
-        actions={[
-          <Button key="cancel" variant="secondary" onClick={this.handleHelpModalToggle}>
-            Cancel
-          </Button>,
+        aria-describedby="modal-box-body-help"
+        aria-labelledby="help-modal-title"
+      >
+        <ModalHeader title="Modal Header" labelId="help-modal-title" help={<Button variant="plain">Help</Button>} />
+        <ModalBody id="modal-box-body-help">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={this.handleHelpModalToggle}>
             Confirm
           </Button>
-        ]}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+          <Button key="cancel" variant="link" onClick={this.handleHelpModalToggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
       </Modal>
     );
   }
@@ -444,10 +485,24 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     return (
       <Modal
         elementToFocus="#modal-custom-focus-confirm-button"
-        title="Modal with custom focus"
         isOpen={isCustomFocusModalOpen}
         onClose={this.handleCustomFocusModalToggle}
-        actions={[
+        aria-describedby="modal-box-body-focus"
+        aria-labelledby="focus-modal-title"
+      >
+        <ModalHeader
+          title="Modal with custom focus"
+          labelId="focus-modal-title"
+          help={<Button variant="plain">Help</Button>}
+        />
+        <ModalBody id="modal-box-body-focus">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </ModalBody>
+        <ModalFooter>
           <Button
             id="modal-custom-focus-confirm-button"
             key="confirm"
@@ -455,7 +510,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
             onClick={this.handleCustomFocusModalToggle}
           >
             Confirm
-          </Button>,
+          </Button>
           <Button
             id="modal-custom-focus-cancel-button"
             key="cancel"
@@ -464,13 +519,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
           >
             Cancel
           </Button>
-        ]}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+        </ModalFooter>
       </Modal>
     );
   }

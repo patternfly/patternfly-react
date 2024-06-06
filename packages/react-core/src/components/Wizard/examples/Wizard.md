@@ -46,6 +46,7 @@ WizardNavItem,
 WizardNav,
 WizardHeader
 } from '@patternfly/react-core';
+import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';

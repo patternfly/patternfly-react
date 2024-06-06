@@ -7,13 +7,12 @@ import { css } from '../../../../../react-styles/dist/js';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 
 import { Modal } from '../Modal';
-import { KeyTypes } from '../../../helpers';
+import { KeyTypes } from '../../../../helpers';
 
 jest.spyOn(document, 'createElement');
 jest.spyOn(document.body, 'addEventListener');
 
 const props = {
-  title: 'Modal',
   onClose: jest.fn(),
   isOpen: false,
   children: 'modal content'
@@ -48,9 +47,9 @@ describe('Modal', () => {
   test('modal closes with escape', async () => {
     const user = userEvent.setup();
 
-    render(<Modal {...props} isOpen appendTo={document.body} />);
+    render(<Modal {...props} isOpen appendTo={document.body} aria-label="modal-div" />);
 
-    await user.type(screen.getByText(props.title), `{${KeyTypes.Escape}}`);
+    await user.type(screen.getByLabelText('modal-div'), `{${KeyTypes.Escape}}`);
     expect(props.onClose).toHaveBeenCalled();
   });
 
@@ -70,33 +69,22 @@ describe('Modal', () => {
     expect(document.body).not.toHaveClass(css(styles.backdropOpen));
   });
 
-  test('modal shows the close button when showClose is true (true by default)', () => {
+  test('modal shows the close button when onClose prop is passed (true by default)', () => {
     render(<Modal {...props} isOpen />);
     expect(screen.getByRole('button', { name: 'Close' })).toBeInTheDocument();
   });
 
-  test('modal does not show the close button when showClose is false', () => {
-    render(<Modal {...props} isOpen showClose={false} tabIndex={0} />);
+  test('modal does not show the close button when onClose not passed', () => {
+    render(
+      <Modal isOpen disableFocusTrap>
+        No close button{' '}
+      </Modal>
+    );
     expect(screen.queryByRole('button', { name: 'Close' })).toBeNull();
   });
 
   test('modal generates console error when no accessible name is provided', () => {
     const props = {
-      onClose: jest.fn(),
-      isOpen: true,
-      children: 'modal content'
-    };
-    const consoleErrorMock = jest.fn();
-    global.console = { error: consoleErrorMock } as any;
-
-    render(<Modal {...props} />);
-
-    expect(consoleErrorMock).toHaveBeenCalled();
-  });
-
-  test('modal generates console warning when conflicting accessible name strategies are provided', () => {
-    const props = {
-      hasNoBodyWrapper: true,
       onClose: jest.fn(),
       isOpen: true,
       children: 'modal content'
@@ -153,60 +141,5 @@ describe('Modal', () => {
 
     expect(asideSibling).not.toHaveAttribute('aria-hidden');
     expect(articleSibling).not.toHaveAttribute('aria-hidden');
-  });
-  test('The modalBoxBody has no aria-label when bodyAriaLabel is not passed', () => {
-    const props = {
-      isOpen: true
-    };
-
-    render(<Modal {...props}>This is a ModalBox</Modal>);
-
-    const modalBoxBody = screen.getByText('This is a ModalBox');
-    expect(modalBoxBody).not.toHaveAccessibleName('modal box body aria label');
-  });
-
-  test('The modalBoxBody has the expected aria-label when bodyAriaLabel is passed', () => {
-    const props = {
-      isOpen: true
-    };
-
-    render(
-      <Modal bodyAriaLabel="modal box body aria label" {...props}>
-        This is a ModalBox
-      </Modal>
-    );
-
-    const modalBoxBody = screen.getByText('This is a ModalBox');
-    expect(modalBoxBody).toHaveAccessibleName('modal box body aria label');
-  });
-
-  test('The modalBoxBody has the expected aria role when bodyAriaLabel is passed and bodyAriaRole is not', () => {
-    const props = {
-      isOpen: true
-    };
-
-    render(
-      <Modal bodyAriaLabel="modal box body aria label" {...props}>
-        This is a ModalBox
-      </Modal>
-    );
-
-    const modalBoxBody = screen.getByRole('region', { name: 'modal box body aria label' });
-    expect(modalBoxBody).toBeInTheDocument();
-  });
-
-  test('The modalBoxBody has the expected aria role when bodyAriaRole is passed', () => {
-    const props = {
-      isOpen: true
-    };
-
-    render(
-      <Modal bodyAriaLabel="modal box body aria label" bodyAriaRole="article" {...props}>
-        This is a ModalBox
-      </Modal>
-    );
-
-    const modalBoxBody = screen.getByRole('article', { name: 'modal box body aria label' });
-    expect(modalBoxBody).toBeInTheDocument();
   });
 });

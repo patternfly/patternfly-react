@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, ModalVariant, Button, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
+import { Button, Modal, ModalVariant, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
 
 export const ModalWithWizard: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -25,12 +25,9 @@ export const ModalWithWizard: React.FunctionComponent = () => {
       </Button>
       <Modal
         variant={ModalVariant.large}
-        showClose={false}
         isOpen={isModalOpen}
         aria-labelledby="modal-wizard-label"
         aria-describedby="modal-wizard-description"
-        onClose={handleModalToggle}
-        hasNoBodyWrapper
       >
         <Wizard
           height={400}
@@ -39,6 +36,7 @@ export const ModalWithWizard: React.FunctionComponent = () => {
               title="Wizard modal"
               titleId="modal-wizard-label"
               description="This is a wizard inside of a modal."
+              descriptionId="modal-wizard-description"
               onClose={handleWizardToggle}
               closeButtonAriaLabel="Close wizard"
             />

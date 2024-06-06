@@ -6,7 +6,7 @@ import { AboutModalBoxHeader } from './AboutModalBoxHeader';
 import { AboutModalBoxBrand } from './AboutModalBoxBrand';
 import { AboutModalBoxCloseButton } from './AboutModalBoxCloseButton';
 import { AboutModalBox } from './AboutModalBox';
-import { Modal, ModalVariant } from '../Modal';
+import { Modal, ModalVariant } from '../../deprecated/components/Modal';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
 export interface AboutModalProps extends React.HTMLProps<HTMLDivElement> {
