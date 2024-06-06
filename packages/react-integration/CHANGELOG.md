@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.32...@patternfly/react-integration@6.0.0-alpha.33) (2024-06-06)
+
+### Features
+
+- **Modal:** promoted next version ([#10358](https://github.com/patternfly/patternfly-react/issues/10358)) ([3fabe0e](https://github.com/patternfly/patternfly-react/commit/3fabe0eb5fb41d33b520f154bbb3021bf2cb5fe4))
+
 # [6.0.0-alpha.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.31...@patternfly/react-integration@6.0.0-alpha.32) (2024-06-04)
 
 ### Features
