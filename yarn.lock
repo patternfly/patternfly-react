@@ -3176,10 +3176,10 @@
     is-module "^1.0.0"
     resolve "^1.22.1"
 
-"@rollup/plugin-replace@^5.0.5":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-replace/-/plugin-replace-5.0.5.tgz#33d5653dce6d03cb24ef98bef7f6d25b57faefdf"
-  integrity sha512-rYO4fOi8lMaTg/z5Jb+hKnrHHVn8j2lwkqwyS4kTRhKyWOLf2wST2sWXr4WzWiTcoHTp2sTjqUbqIj2E39slKQ==
+"@rollup/plugin-replace@^5.0.7":
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-replace/-/plugin-replace-5.0.7.tgz#150c9ee9db8031d9e4580a61a0edeaaed3d37687"
+  integrity sha512-PqxSfuorkHz/SPpyngLyg5GCEkOcee9M1bkxiVDr41Pd61mqP1PLOoDPbpl44SB2mQGKwV/In74gqQmGITOhEQ==
   dependencies:
     "@rollup/pluginutils" "^5.0.1"
     magic-string "^0.30.3"
