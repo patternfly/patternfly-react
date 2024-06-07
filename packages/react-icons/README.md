@@ -14,7 +14,7 @@ For a list of the available icons please refer to the [PatternFly react docs](ht
 
 ## Styling icons
 
-All icons from @patternfly/react-icons have the HTML class pf-v5-svg applied and CSS styles applied via @patternfly/react-styles.
+All icons from @patternfly/react-icons have the HTML class `pf-v6-svg` applied and CSS styles applied via @patternfly/react-styles.
 
 If not using @patternfly/react-icons in conjunction with @patternfly/react-styles, then the following generic styles will need to be applied to the icons: `height="1em", style="vertical-align: -0.125em;" width="1em"`
 
