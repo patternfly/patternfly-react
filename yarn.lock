@@ -9313,7 +9313,7 @@ __metadata:
     eslint-plugin-promise: "npm:^6.2.0"
     eslint-plugin-react: "npm:^7.7.0"
     eslint-plugin-react-hooks: "npm:^4.6.2"
-    eslint-plugin-rulesdir: "npm:^0.2.0"
+    eslint-plugin-rulesdir: "npm:^0.2.2"
     eslint-plugin-standard: "npm:^4.1.0"
   peerDependencies:
     eslint: ">=5"
@@ -9386,7 +9386,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-rulesdir@npm:^0.2.0":
+"eslint-plugin-rulesdir@npm:^0.2.2":
   version: 0.2.2
   resolution: "eslint-plugin-rulesdir@npm:0.2.2"
   checksum: 10c0/8d53a476abb538bb63f95051c4c8279f4960e64c78f6b045dfbfc9f9384dcf9c9b61df56303ac4970f4ce015bcf5e422c16d53d6877abac1431def2c4816e2f0
