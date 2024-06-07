@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@patternfly/react-core": "^5.4.0-prerelease.15",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4"
   },
