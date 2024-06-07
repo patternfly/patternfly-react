@@ -9315,7 +9315,7 @@ __metadata:
     eslint-plugin-jest: "npm:^27.9.0"
     eslint-plugin-jsx-a11y: "npm:^6.8.0"
     eslint-plugin-prettier: "npm:^5.0.0"
-    eslint-plugin-promise: "npm:^6.0.0"
+    eslint-plugin-promise: "npm:^6.2.0"
     eslint-plugin-react: "npm:^7.7.0"
     eslint-plugin-react-hooks: "npm:^4.1.2"
     eslint-plugin-rulesdir: "npm:^0.2.0"
@@ -9345,7 +9345,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-promise@npm:^6.0.0":
+"eslint-plugin-promise@npm:^6.2.0":
   version: 6.2.0
   resolution: "eslint-plugin-promise@npm:6.2.0"
   peerDependencies:
