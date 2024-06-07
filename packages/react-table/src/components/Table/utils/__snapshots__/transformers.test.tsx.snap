@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Transformer functions selectable unselected 1`] = `
-Object {
+{
   "children": <SelectColumn
     aria-label="Select row 0"
     checked={false}
@@ -17,7 +17,7 @@ Object {
 `;
 
 exports[`Transformer functions sortable asc 1`] = `
-Object {
+{
   "aria-sort": "ascending",
   "children": <SortColumn
     isSortedBy={true}
