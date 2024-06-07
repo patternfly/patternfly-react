@@ -3085,7 +3085,6 @@ __metadata:
     "@types/lodash": "npm:^4.17.4"
     css: "npm:^2.2.4"
     fs-extra: "npm:^11.2.0"
-    glob: "npm:^7.2.3"
     hoist-non-react-statics: "npm:^3.3.0"
     lodash: "npm:^4.17.21"
     tslib: "npm:^2.6.2"
@@ -3140,7 +3139,6 @@ __metadata:
     css: "npm:^2.2.4"
     focus-trap: "npm:7.5.4"
     fs-extra: "npm:^11.2.0"
-    glob: "npm:^7.2.3"
     react-dropzone: "npm:^14.2.3"
     tslib: "npm:^2.6.2"
   peerDependencies:
@@ -3195,7 +3193,6 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": "npm:^5.15.4"
     "@patternfly/patternfly": "npm:5.4.0-prerelease.3"
     fs-extra: "npm:^11.2.0"
-    glob: "npm:^7.2.3"
     tslib: "npm:^2.6.2"
   peerDependencies:
     react: ^17 || ^18
@@ -3244,7 +3241,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.32.2"
     eslint-plugin-testing-library: "npm:^6.2.2"
     fs-extra: "npm:^11.2.0"
-    glob: "npm:^9.3.5"
+    glob: "npm:^10.4.1"
     husky: "npm:^4.3.8"
     jest: "npm:27.5.1"
     jest-cli: "npm:27.5.1"
@@ -3276,7 +3273,6 @@ __metadata:
     camel-case: "npm:^3.0.0"
     css: "npm:^2.2.4"
     fs-extra: "npm:^11.2.0"
-    glob: "npm:^7.2.3"
     jsdom: "npm:^15.2.1"
   languageName: unknown
   linkType: soft
@@ -3319,7 +3315,6 @@ __metadata:
     "@patternfly/patternfly": "npm:5.4.0-prerelease.3"
     css: "npm:^2.2.4"
     fs-extra: "npm:^11.2.0"
-    glob: "npm:^7.2.3"
   languageName: unknown
   linkType: soft
 
@@ -8663,9 +8658,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.668":
-  version: 1.4.792
-  resolution: "electron-to-chromium@npm:1.4.792"
-  checksum: 10c0/ade79be9394a193030bf9df5119e7255df5a12680f41e5cde55dae072a11b1f86a7a2b449a893c68f2e69f0dbcd95a19f1b3c22f6f6c5f052828aac7591a288f
+  version: 1.4.795
+  resolution: "electron-to-chromium@npm:1.4.795"
+  checksum: 10c0/7a26fe5a0144085a90234d532560763d988ae3175514ffd18e3b6882096d8f877f71198180a8a7fe15858e485bb57406611c91e2c6b3bf4e8da446dc39a88a4f
   languageName: node
   linkType: hard
 
@@ -10877,7 +10872,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^10.2.2, glob@npm:^10.3.10, glob@npm:^10.3.7":
+"glob@npm:^10.2.2, glob@npm:^10.3.10, glob@npm:^10.3.7, glob@npm:^10.4.1":
   version: 10.4.1
   resolution: "glob@npm:10.4.1"
   dependencies:
@@ -10892,7 +10887,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^7.0.0, glob@npm:^7.0.3, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.2.3":
+"glob@npm:^7.0.0, glob@npm:^7.0.3, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
   dependencies:
@@ -10919,7 +10914,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^9.2.0, glob@npm:^9.3.5":
+"glob@npm:^9.2.0":
   version: 9.3.5
   resolution: "glob@npm:9.3.5"
   dependencies:
@@ -21683,8 +21678,8 @@ __metadata:
   linkType: hard
 
 "vite@npm:^5.2.12":
-  version: 5.2.12
-  resolution: "vite@npm:5.2.12"
+  version: 5.2.13
+  resolution: "vite@npm:5.2.13"
   dependencies:
     esbuild: "npm:^0.20.1"
     fsevents: "npm:~2.3.3"
@@ -21718,7 +21713,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/f03fdfc320adea3397df3e327029fd875f8220779f679ab183a3a994e8788b4ce531fee28f830361fb274f3cf08ed9adb9429496ecefdc3faf535b38da7ea8b1
+  checksum: 10c0/f7a99da71884e69cc581dcfb43d73c8d56d73b9668d6980131603c544d6323c6003a20f376531dc0cfcf36bf5009bc465f89e6c5f8bd9d22868987aba4e4af1b
   languageName: node
   linkType: hard
 
