@@ -4,18 +4,12 @@ describe('Chip Group Demo Test', () => {
   });
 
   it('Verify chip default text', () => {
-    cy.get('.pf-v5-c-chip__text')
-      .first()
-      .contains('Lemons');
+    cy.get('.pf-v5-c-chip__text').first().contains('Lemons');
   });
 
   it('Verify chip has badge', () => {
-    cy.get('span')
-      .children('.pf-v5-c-badge')
-      .should('not.be.undefined');
-    cy.get('span')
-      .children('.pf-v5-c-badge')
-      .should('not.equal', null);
+    cy.get('span').children('.pf-v5-c-badge').should('not.be.undefined');
+    cy.get('span').children('.pf-v5-c-badge').should('not.equal', null);
   });
 
   it('Verify delete button on first chip', () => {
