@@ -1,7 +1,8 @@
-const path = require('path');
-const fs = require('fs-extra');
-const { glob } = require('glob');
-const camelcase = require('camel-case');
+import camelCase from 'camelcase';
+import { glob } from 'glob';
+import fs from 'node:fs';
+import path from 'node:path';
+import url from 'node:url';
 
 /**
  * @param {string} cssString - CSS string
@@ -14,7 +15,7 @@ function getCSSClasses(cssString) {
  * @param {string} className - Class name
  */
 function formatClassName(className) {
-  return camelcase(className.replace(/pf-(v5-)?((c|l|m|u|is|has)-)?/g, ''));
+  return camelCase(className.replace(/pf-(v5-)?((c|l|m|u|is|has)-)?/g, ''));
 }
 
 /**
@@ -53,8 +54,8 @@ function getClassMaps(cssString) {
 /**
  * @returns {any} Map of file names to classMaps
  */
-function generateClassMaps() {
-  const pfStylesDir = path.dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
+export function generateClassMaps() {
+  const pfStylesDir = path.dirname(url.fileURLToPath(import.meta.resolve('@patternfly/patternfly/patternfly.css')));
 
   const patternflyCSSFiles = glob.sync('**/*.css', {
     cwd: pfStylesDir,
@@ -73,7 +74,3 @@ function generateClassMaps() {
 
   return res;
 }
-
-module.exports = {
-  generateClassMaps
-};
