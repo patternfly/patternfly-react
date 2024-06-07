@@ -26,7 +26,7 @@ export class TabUncontrolledDemo extends Component {
     const { isTab2Hidden } = this.state;
 
     return (
-      <React.Fragment>
+      <>
         <Button id="showTab2" onClick={() => this.setState({ isTab2Hidden: !isTab2Hidden })}>
           {isTab2Hidden ? 'Show' : 'Hide'} tab 2
         </Button>
@@ -70,7 +70,7 @@ export class TabUncontrolledDemo extends Component {
             ref={this.contentRef1}
             aria-label="Tab item 1"
             // eslint-disable-next-line no-console
-            onAuxClick={event => console.log(event)}
+            onAuxClick={(event) => console.log(event)}
           >
             Tab 1 section
           </TabContent>
@@ -147,7 +147,7 @@ export class TabUncontrolledDemo extends Component {
             Tab 3 section
           </Tab>
         </Tabs>
-      </React.Fragment>
+      </>
     );
   }
 }

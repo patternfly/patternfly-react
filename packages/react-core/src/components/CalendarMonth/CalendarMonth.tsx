@@ -168,7 +168,7 @@ export const CalendarMonth = ({
   const yearFormatted = yearFormat(focusedDate);
   const [yearInput, setYearInput] = React.useState(yearFormatted.toString());
 
-  const [hoveredDate, setHoveredDate] = React.useState(new Date(focusedDate));
+  const [hoveredDate, setHoveredDate] = React.useState<Date>(undefined);
   const focusRef = React.useRef<HTMLButtonElement>();
   const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
   const [shouldFocus, setShouldFocus] = React.useState(false);
@@ -192,7 +192,6 @@ export const CalendarMonth = ({
 
   const onMonthClick = (ev: React.MouseEvent, newDate: Date) => {
     setFocusedDate(newDate);
-    setHoveredDate(newDate);
     setShouldFocus(false);
     onMonthChange(ev, newDate);
     setYearInput(yearFormat(newDate).toString());
@@ -212,7 +211,6 @@ export const CalendarMonth = ({
     if (newDate.getTime() !== focusedDate.getTime() && isValidated(newDate)) {
       ev.preventDefault();
       setFocusedDate(newDate);
-      setHoveredDate(newDate);
       setShouldFocus(true);
     }
   };
@@ -238,7 +236,6 @@ export const CalendarMonth = ({
       if (yearNum >= MIN_YEAR && yearNum <= MAX_YEAR) {
         const newDate = changeYear(yearNum);
         setFocusedDate(newDate);
-        setHoveredDate(newDate);
         setShouldFocus(false);
 
         // We need to manually focus the year input in FireFox when the scroll buttons are clicked, as FireFox doesn't place focus automatically
@@ -282,10 +279,9 @@ export const CalendarMonth = ({
       .map(({ date }) => date)[0];
     if (toFocus) {
       setFocusedDate(toFocus);
-      setHoveredDate(toFocus);
     }
   }
-  const isHoveredDateValid = isValidated(hoveredDate);
+  const isHoveredDateValid = hoveredDate && isValidated(hoveredDate);
   const monthFormatted = monthFormat(focusedDate);
 
   const calendarToRender = (
@@ -331,7 +327,6 @@ export const CalendarMonth = ({
                     onSelectToggle(false);
                     const newDate = changeMonth(Number(monthNum as string));
                     setFocusedDate(newDate);
-                    setHoveredDate(newDate);
                     setShouldFocus(false);
                     onMonthChange(ev, newDate);
                   }, 0);
@@ -369,7 +364,7 @@ export const CalendarMonth = ({
           </Button>
         </div>
       </div>
-      <table className={styles.calendarMonthCalendar}>
+      <table className={styles.calendarMonthCalendar} onMouseLeave={() => setHoveredDate(undefined)}>
         <thead className={styles.calendarMonthDays}>
           <tr>
             {calendar[0].map(({ date }, index) => (
@@ -392,16 +387,21 @@ export const CalendarMonth = ({
                 const isRangeStart = isValidDate(rangeStart) && isSameDate(date, rangeStart);
                 let isInRange = false;
                 let isRangeEnd = false;
-                if (isValidDate(rangeStart) && isValidDate(dateProp)) {
-                  isInRange = date > rangeStart && date < dateProp;
-                  isRangeEnd = isSameDate(date, dateProp);
-                } else if (isValidDate(rangeStart) && isHoveredDateValid) {
-                  if (hoveredDate > rangeStart || isSameDate(hoveredDate, rangeStart)) {
-                    isInRange = date > rangeStart && date < hoveredDate;
-                    isRangeEnd = isSameDate(date, hoveredDate);
+                if (isValidDate(rangeStart)) {
+                  let rangeEndDate: Date;
+
+                  if (isValidDate(dateProp)) {
+                    rangeEndDate = dateProp;
                   }
-                  // Don't handle focused dates before start dates for now.
-                  // Core would likely need new styles
+                  if (isHoveredDateValid && (!isValidDate(dateProp) || hoveredDate > dateProp)) {
+                    rangeEndDate = hoveredDate;
+                  }
+
+                  if (rangeEndDate) {
+                    isInRange = date >= rangeStart && date <= rangeEndDate;
+                    isRangeEnd = isSameDate(date, rangeEndDate);
+                  }
+                  // Core would likely need new styles for "is selected but disabled"
                 }
 
                 return (
@@ -412,8 +412,8 @@ export const CalendarMonth = ({
                       isAdjacentMonth && styles.modifiers.adjacentMonth,
                       isToday && styles.modifiers.current,
                       (isSelected || isRangeStart) && styles.modifiers.selected,
-                      !isValid && styles.modifiers.disabled,
-                      (isInRange || isRangeStart || isRangeEnd) && styles.modifiers.inRange,
+                      !isValid && !(isInRange || isRangeStart || isRangeEnd || isSelected) && styles.modifiers.disabled,
+                      isInRange && styles.modifiers.inRange,
                       isRangeStart && styles.modifiers.startRange,
                       isRangeEnd && styles.modifiers.endRange
                     )}

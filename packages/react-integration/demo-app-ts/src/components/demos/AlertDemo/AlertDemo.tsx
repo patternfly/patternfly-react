@@ -24,7 +24,7 @@ export class AlertDemo extends React.Component<{}, AlertDemoState> {
   render() {
     const { alertOneVisible, alertTwoVisible } = this.state;
     return (
-      <React.Fragment>
+      <>
         {alertOneVisible && (
           <Alert
             id="info-alert"
@@ -65,7 +65,7 @@ export class AlertDemo extends React.Component<{}, AlertDemoState> {
         <Alert id="expandable-alert" title="Expandable alert title" isExpandable>
           Expandable alert description
         </Alert>
-      </React.Fragment>
+      </>
     );
   }
 }

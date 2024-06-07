@@ -131,7 +131,7 @@ export class MenuDemo extends Component {
     });
   };
 
-  onMultiOptionSelect = (_event?: React.MouseEvent, itemId?: string | number)=> {
+  onMultiOptionSelect = (_event?: React.MouseEvent, itemId?: string | number) => {
     if (typeof itemId !== 'number') {
       return;
     }
@@ -539,7 +539,7 @@ export class MenuDemo extends Component {
           activeItemId={activeItem}
         >
           {favorites.length > 0 && (
-            <React.Fragment>
+            <>
               <MenuGroup label="Favorites">
                 <MenuList>
                   {items
@@ -562,7 +562,7 @@ export class MenuDemo extends Component {
                 </MenuList>
               </MenuGroup>
               <Divider />
-            </React.Fragment>
+            </>
           )}
           <MenuGroup label="All actions">
             <MenuList>

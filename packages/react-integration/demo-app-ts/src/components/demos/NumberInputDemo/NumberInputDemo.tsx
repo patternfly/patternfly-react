@@ -69,7 +69,7 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
     const maxValue = 3;
 
     return (
-      <React.Fragment>
+      <>
         <NumberInput
           id="numberInput1"
           value={value}
@@ -130,7 +130,7 @@ export class NumberInputDemo extends Component<NumberInputDemoState> {
           unit="$"
           unitPosition="before"
         />
-      </React.Fragment>
+      </>
     );
   }
 }

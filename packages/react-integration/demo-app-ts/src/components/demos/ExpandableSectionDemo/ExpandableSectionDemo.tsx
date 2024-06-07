@@ -26,7 +26,7 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
   render() {
     const { isExpanded, isDetachedExpanded, isDisclosureExpanded } = this.state;
     return (
-      <React.Fragment>
+      <>
         <h1> Simple Expandable Example: </h1>
         <ExpandableSection
           toggleText={isExpanded ? 'Show Less' : 'Show More'}
@@ -81,7 +81,7 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
         >
           This content is visible only when the component is expanded.
         </ExpandableSection>
-      </React.Fragment>
+      </>
     );
   }
 }

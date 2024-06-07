@@ -1,16 +1,13 @@
-import * as React from 'react';
-import {
-  ICell,
-  IRow
-} from '@patternfly/react-table';
+import { ICell, IRow } from '@patternfly/react-table';
 import { Table, TableBody, TableHeader, TableProps, type OnRowClick } from '@patternfly/react-table/deprecated';
+import { Component } from 'react';
 
 interface ITableRowClickDemoState {
   rows: IRow[];
   columns: (ICell | string)[];
 }
 
-export class TableRowClickDemo extends React.Component<TableProps, ITableRowClickDemoState> {
+export class TableRowClickDemo extends Component<TableProps, ITableRowClickDemoState> {
   static displayName = 'TableRowClickDemo';
   rowClickHandler: OnRowClick;
   constructor(props: TableProps) {

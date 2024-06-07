@@ -1,17 +1,6 @@
 import React from 'react';
-import {
-  Modal,
-  ModalVariant,
-  Button,
-  TimePicker,
-  InputGroup,
-  InputGroupItem
-} from '@patternfly/react-core';
-import {
-  Select,
-  SelectOption,
-  SelectOptionObject
-} from '@patternfly/react-core/deprecated';
+import { Modal, ModalVariant, Button, TimePicker, InputGroup, InputGroupItem } from '@patternfly/react-core';
+import { Select, SelectOption, SelectOptionObject } from '@patternfly/react-core/deprecated';
 
 export const SelectInModal = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -51,7 +40,7 @@ export const SelectInModal = () => {
 
   const inputGroupRef1 = React.useRef<HTMLDivElement>(null);
   return (
-    <React.Fragment>
+    <>
       <Button id="modal-for-select-in-modal" variant="primary" onClick={handleModalToggle}>
         Launch modal
       </Button>
@@ -104,6 +93,6 @@ export const SelectInModal = () => {
           </InputGroupItem>
         </InputGroup>
       </Modal>
-    </React.Fragment>
+    </>
   );
 };

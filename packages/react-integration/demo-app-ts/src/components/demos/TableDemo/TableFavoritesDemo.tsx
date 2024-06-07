@@ -54,7 +54,7 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
     let rows;
     if (rowId === -1) {
       // header row
-      rows = this.state.rows.map(oneRow => {
+      rows = this.state.rows.map((oneRow) => {
         oneRow.selected = isSelected;
         return oneRow;
       });
@@ -84,7 +84,7 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
     });
   }
 
-  onSort(_event: React.MouseEvent, index: number, direction: 'asc' | 'desc') {
+  onSort(_: React.MouseEvent, index: number, direction: 'asc' | 'desc') {
     let sortedRows;
     if (index === 1) {
       // favorites column
@@ -99,7 +99,7 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
     } else {
       const userIndex = index - 2;
       sortedRows = [...this.state.rows].sort((a, b) => {
-        const aValue  = a.cells?.[userIndex];
+        const aValue = a.cells?.[userIndex];
         const bValue = b.cells?.[userIndex];
 
         if (typeof aValue !== 'number' || typeof bValue !== 'number') {
@@ -109,7 +109,7 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
         if (aValue < bValue) {
           return -1;
         }
-        
+
         if (aValue > bValue) {
           return 1;
         }

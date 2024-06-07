@@ -106,6 +106,14 @@ To remove padding at specific breakpoints, pass in 'noPadding' at those breakpoi
 
 ```
 
+### Main section variations
+
+This example shows all types of page sections.
+
+```ts file="./PageMainSectionVariations.tsx"
+
+```
+
 ### Group section
 
 To group page content sections, add 1 or more `<PageGroup>` components to a `<Page>`.

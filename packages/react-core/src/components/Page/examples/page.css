@@ -1,3 +1,4 @@
-.pf-v5-c-page__sidebar-body {
+.pf-v5-c-page__sidebar-body,
+.pf-v5-c-page__main-subnav {
   color: var(--pf-v5-global--Color--light-100);
 }

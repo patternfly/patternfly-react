@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as React from 'react';
 import {
   Table,
@@ -483,7 +484,7 @@ export const TableComposableDemo = () => {
       setChoice(id);
     };
     return (
-      <React.Fragment>
+      <>
         <Toolbar>
           <ToolbarContent>
             <ToolbarItem>
@@ -534,7 +535,7 @@ export const TableComposableDemo = () => {
             ))}
           </Tbody>
         </Table>
-      </React.Fragment>
+      </>
     );
   };
 
@@ -593,7 +594,7 @@ export const TableComposableDemo = () => {
     };
     let rowIndex = -1;
     return (
-      <React.Fragment>
+      <>
         <Toolbar>
           <ToolbarContent>
             <ToolbarItem>
@@ -695,7 +696,7 @@ export const TableComposableDemo = () => {
             );
           })}
         </Table>
-      </React.Fragment>
+      </>
     );
   };
 
@@ -798,21 +799,21 @@ export const TableComposableDemo = () => {
         return <a href="#">{cell}</a>;
       } else if (index === 1) {
         return (
-          <React.Fragment>
+          <>
             <CodeBranchIcon key="icon" /> {cell}
-          </React.Fragment>
+          </>
         );
       } else if (index === 2) {
         return (
-          <React.Fragment>
+          <>
             <CodeIcon key="icon" /> {cell}
-          </React.Fragment>
+          </>
         );
       } else if (index === 3) {
         return (
-          <React.Fragment>
+          <>
             <CubeIcon key="icon" /> {cell}
-          </React.Fragment>
+          </>
         );
       } else if (index === 5) {
         return <a href="#">{cell}</a>;
@@ -839,7 +840,7 @@ export const TableComposableDemo = () => {
           const isRowExpanded = activeChild[rowIndex] !== null;
           return (
             <Tbody key={rowIndex} isExpanded={isRowExpanded}>
-              <React.Fragment>
+              <>
                 <Tr>
                   {row.map((cell, cellIndex) => {
                     // for this example, only columns 1 - 3 are clickable
@@ -889,7 +890,7 @@ export const TableComposableDemo = () => {
                     </Td>
                   </Tr>
                 )}
-              </React.Fragment>
+              </>
             </Tbody>
           );
         })}

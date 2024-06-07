@@ -117,7 +117,12 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
         break;
       default:
         content = (
-          <Draggable useDragButton={variant === 'defaultWithHandle'} key={item.id} id={item.id} {...item.props}>
+          <Draggable
+            useDragButton={variant === 'defaultWithHandle' || variant === 'default'}
+            key={item.id}
+            id={item.id}
+            {...item.props}
+          >
             {item.content}
           </Draggable>
         );
@@ -157,7 +162,12 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
             );
           default:
             return (
-              <Draggable useDragButton={variant === 'defaultWithHandle'} key={item.id} id={item.id} {...item.props}>
+              <Draggable
+                useDragButton={variant === 'defaultWithHandle' || variant === 'default'}
+                key={item.id}
+                id={item.id}
+                {...item.props}
+              >
                 {item.content}
               </Draggable>
             );

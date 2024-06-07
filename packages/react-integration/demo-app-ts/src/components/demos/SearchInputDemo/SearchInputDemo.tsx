@@ -36,7 +36,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
   };
 
   onNext = () => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newCurrentResult = prevState.currentResult + 1;
       return {
         currentResult: newCurrentResult <= prevState.resultsCount ? newCurrentResult : prevState.resultsCount
@@ -45,7 +45,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
   };
 
   onPrevious = () => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newCurrentResult = prevState.currentResult - 1;
       return {
         currentResult: newCurrentResult > 0 ? newCurrentResult : 1
@@ -67,7 +67,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <SearchInput
           id="enabled-search"
           ref={this.inputRef}
@@ -102,7 +102,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
           isDisabled
         />
         <SearchInput id="hinted-search" hint="hint" />
-      </React.Fragment>
+      </>
     );
   }
 }
