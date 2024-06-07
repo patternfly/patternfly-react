@@ -14,12 +14,12 @@
     "access": "public"
   },
   "scripts": {
-    "generate": "rimraf css && node scripts/writeClassMaps.js && node scripts/copyStyles.js",
+    "generate": "rimraf css && node scripts/writeClassMaps.mjs && node scripts/copyStyles.mjs",
     "clean": "rimraf dist css"
   },
   "devDependencies": {
     "@patternfly/patternfly": "5.4.0-prerelease.3",
-    "camel-case": "^3.0.0",
+    "change-case": "^5.4.4",
     "css": "^2.2.4",
     "fs-extra": "^11.2.0",
     "jsdom": "^15.2.1"
