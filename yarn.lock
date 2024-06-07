@@ -9319,7 +9319,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.7.0"
     eslint-plugin-react-hooks: "npm:^4.1.2"
     eslint-plugin-rulesdir: "npm:^0.2.0"
-    eslint-plugin-standard: "npm:^4.0.0"
+    eslint-plugin-standard: "npm:^4.1.0"
   peerDependencies:
     eslint: ">=5"
   languageName: unknown
@@ -9398,7 +9398,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-standard@npm:^4.0.0":
+"eslint-plugin-standard@npm:^4.1.0":
   version: 4.1.0
   resolution: "eslint-plugin-standard@npm:4.1.0"
   peerDependencies:
