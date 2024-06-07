@@ -30,7 +30,7 @@
   "dependencies": {
     "@patternfly/react-styles": "^5.4.0-prerelease.6",
     "@patternfly/react-tokens": "^5.4.0-prerelease.5",
-    "hoist-non-react-statics": "^3.3.0",
+    "hoist-non-react-statics": "^3.3.2",
     "lodash": "^4.17.21",
     "tslib": "^2.6.2",
     "victory-area": "^37.0.2",

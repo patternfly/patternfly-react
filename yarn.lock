@@ -3085,7 +3085,7 @@ __metadata:
     "@types/lodash": "npm:^4.17.4"
     css: "npm:^2.2.4"
     fs-extra: "npm:^11.2.0"
-    hoist-non-react-statics: "npm:^3.3.0"
+    hoist-non-react-statics: "npm:^3.3.2"
     lodash: "npm:^4.17.21"
     tslib: "npm:^2.6.2"
     victory-area: "npm:^37.0.2"
@@ -11320,7 +11320,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.1.0, hoist-non-react-statics@npm:^3.3.0":
+"hoist-non-react-statics@npm:^3.1.0, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
