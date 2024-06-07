@@ -8,7 +8,7 @@
     "url": "https://github.com/patternfly/patternfly-react.git"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.14.0"
   },
   "packageManager": "yarn@4.2.2+sha512.c44e283c54e02de9d1da8687025b030078c1b9648d2895a65aab8e64225bfb7becba87e1809fc0b4b6778bbd47a1e2ab6ac647de4c5e383a53a7c17db6c3ff4b",
   "keywords": [
@@ -38,7 +38,7 @@
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "29.5.12",
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.14.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
