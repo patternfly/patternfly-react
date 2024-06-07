@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "@patternfly/react-styles": "^5.4.0-prerelease.6",
-    "@patternfly/react-tokens": "^5.4.0-prerelease.5",
+    "@patternfly/react-styles": "^3.6.27",
+    "@patternfly/react-tokens": "^1.0.0",
     "hoist-non-react-statics": "^3.3.0",
     "lodash": "^4.17.21",
     "tslib": "^2.6.2",
