@@ -3083,7 +3083,6 @@ __metadata:
     "@patternfly/react-styles": "workspace:^"
     "@patternfly/react-tokens": "workspace:^"
     "@types/lodash": "npm:^4.17.4"
-    css: "npm:^2.2.4"
     fs-extra: "npm:^11.2.0"
     hoist-non-react-statics: "npm:^3.3.2"
     lodash: "npm:^4.17.21"
@@ -3136,7 +3135,7 @@ __metadata:
     "@patternfly/react-icons": "workspace:^"
     "@patternfly/react-styles": "workspace:^"
     "@patternfly/react-tokens": "workspace:^"
-    css: "npm:^2.2.4"
+    css: "npm:^3.0.0"
     focus-trap: "npm:7.5.4"
     fs-extra: "npm:^11.2.0"
     react-dropzone: "npm:^14.2.3"
@@ -3271,7 +3270,6 @@ __metadata:
   dependencies:
     "@patternfly/patternfly": "npm:5.4.0-prerelease.3"
     change-case: "npm:^5.4.4"
-    css: "npm:^2.2.4"
     fs-extra: "npm:^11.2.0"
     jsdom: "npm:^15.2.1"
   languageName: unknown
@@ -3313,7 +3311,7 @@ __metadata:
   resolution: "@patternfly/react-tokens@workspace:packages/react-tokens"
   dependencies:
     "@patternfly/patternfly": "npm:5.4.0-prerelease.3"
-    css: "npm:^2.2.4"
+    css: "npm:^3.0.0"
     fs-extra: "npm:^11.2.0"
   languageName: unknown
   linkType: soft
@@ -7688,15 +7686,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css@npm:^2.2.4":
-  version: 2.2.4
-  resolution: "css@npm:2.2.4"
+"css@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "css@npm:3.0.0"
   dependencies:
-    inherits: "npm:^2.0.3"
+    inherits: "npm:^2.0.4"
     source-map: "npm:^0.6.1"
-    source-map-resolve: "npm:^0.5.2"
-    urix: "npm:^0.1.0"
-  checksum: 10c0/496fa66568ebd9e51b3153817dd36ec004a45780da6f818e13117e3c4e50b774af41fff70a6ff2fa03777b239c4028ff655fe571b20964b90e886441cd141569
+    source-map-resolve: "npm:^0.6.0"
+  checksum: 10c0/c17cb4a46a39c11b00225f1314158a892828af34cdf3badc7e88084882e9f414e4902a1d59231c0854f310af30bde343fd8a9e79c6001426fe88af45d3312fe2
   languageName: node
   linkType: hard
 
@@ -18145,13 +18142,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve-url@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "resolve-url@npm:0.2.1"
-  checksum: 10c0/c285182cfcddea13a12af92129ce0569be27fb0074ffaefbd3ba3da2eac2acecdfc996d435c4982a9fa2b4708640e52837c9153a5ab9255886a00b0b9e8d2a54
-  languageName: node
-  linkType: hard
-
 "resolve.exports@npm:^1.1.0":
   version: 1.1.1
   resolution: "resolve.exports@npm:1.1.1"
@@ -19138,16 +19128,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-resolve@npm:^0.5.2":
-  version: 0.5.3
-  resolution: "source-map-resolve@npm:0.5.3"
+"source-map-resolve@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "source-map-resolve@npm:0.6.0"
   dependencies:
     atob: "npm:^2.1.2"
     decode-uri-component: "npm:^0.2.0"
-    resolve-url: "npm:^0.2.1"
-    source-map-url: "npm:^0.4.0"
-    urix: "npm:^0.1.0"
-  checksum: 10c0/410acbe93882e058858d4c1297be61da3e1533f95f25b95903edddc1fb719654e705663644677542d1fb78a66390238fad1a57115fc958a0724cf9bb509caf57
+  checksum: 10c0/bc2a94af3d2417196195eecf0130925b3558726726504a7c7bd1b9e383c4a789fa3f4616c4c673cf8bd7930ddd2e80481f203422282aeae342dbd56b91995188
   languageName: node
   linkType: hard
 
@@ -19158,13 +19145,6 @@ __metadata:
     buffer-from: "npm:^1.0.0"
     source-map: "npm:^0.6.0"
   checksum: 10c0/9ee09942f415e0f721d6daad3917ec1516af746a8120bba7bb56278707a37f1eb8642bde456e98454b8a885023af81a16e646869975f06afc1a711fb90484e7d
-  languageName: node
-  linkType: hard
-
-"source-map-url@npm:^0.4.0":
-  version: 0.4.1
-  resolution: "source-map-url@npm:0.4.1"
-  checksum: 10c0/f8af0678500d536c7f643e32094d6718a4070ab4ca2d2326532512cfbe2d5d25a45849b4b385879326f2d7523bb3b686d0360dd347a3cda09fd89a5c28d4bc58
   languageName: node
   linkType: hard
 
@@ -21023,13 +21003,6 @@ __metadata:
   dependencies:
     punycode: "npm:^2.1.0"
   checksum: 10c0/4ef57b45aa820d7ac6496e9208559986c665e49447cb072744c13b66925a362d96dd5a46c4530a6b8e203e5db5fe849369444440cb22ecfc26c679359e5dfa3c
-  languageName: node
-  linkType: hard
-
-"urix@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "urix@npm:0.1.0"
-  checksum: 10c0/264f1b29360c33c0aec5fb9819d7e28f15d1a3b83175d2bcc9131efe8583f459f07364957ae3527f1478659ec5b2d0f1ad401dfb625f73e4d424b3ae35fc5fc0
   languageName: node
   linkType: hard
 

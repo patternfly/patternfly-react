@@ -20,7 +20,6 @@
   "devDependencies": {
     "@patternfly/patternfly": "5.4.0-prerelease.3",
     "change-case": "^5.4.4",
-    "css": "^2.2.4",
     "fs-extra": "^11.2.0",
     "jsdom": "^15.2.1"
   },
