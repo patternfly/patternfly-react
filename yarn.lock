@@ -8311,7 +8311,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-router: "npm:^5.3.4"
     react-router-dom: "npm:^5.3.4"
-    vite: "npm:^5.2.12"
+    vite: "npm:^5.2.13"
   languageName: unknown
   linkType: soft
 
@@ -21677,7 +21677,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.2.12":
+"vite@npm:^5.2.13":
   version: 5.2.13
   resolution: "vite@npm:5.2.13"
   dependencies:
