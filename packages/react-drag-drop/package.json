@@ -35,7 +35,7 @@
     "@patternfly/react-core": "^5.4.0-prerelease.15",
     "@patternfly/react-icons": "^5.4.0-prerelease.5",
     "@patternfly/react-styles": "^5.4.0-prerelease.6",
-    "memoize-one": "^5.1.0",
+    "memoize-one": "^5.2.1",
     "resize-observer-polyfill": "^1.5.1"
   },
   "peerDependencies": {

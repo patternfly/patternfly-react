@@ -3176,7 +3176,7 @@ __metadata:
     "@patternfly/react-core": "npm:^5.4.0-prerelease.15"
     "@patternfly/react-icons": "npm:^5.4.0-prerelease.5"
     "@patternfly/react-styles": "npm:^5.4.0-prerelease.6"
-    memoize-one: "npm:^5.1.0"
+    memoize-one: "npm:^5.2.1"
     resize-observer-polyfill: "npm:^1.5.1"
   peerDependencies:
     react: ^17 || ^18
@@ -14720,7 +14720,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"memoize-one@npm:^5.1.0":
+"memoize-one@npm:^5.2.1":
   version: 5.2.1
   resolution: "memoize-one@npm:5.2.1"
   checksum: 10c0/fd22dbe9a978a2b4f30d6a491fc02fb90792432ad0dab840dc96c1734d2bd7c9cdeb6a26130ec60507eb43230559523615873168bcbe8fafab221c30b11d54c1
