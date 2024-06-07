@@ -8,9 +8,9 @@
     "url": "https://github.com/patternfly/patternfly-react.git"
   },
   "engines": {
-    "node": ">=20",
-    "yarn": ">=1.6.0"
+    "node": ">=20"
   },
+  "packageManager": "yarn@4.2.2+sha512.c44e283c54e02de9d1da8687025b030078c1b9648d2895a65aab8e64225bfb7becba87e1809fc0b4b6778bbd47a1e2ab6ac647de4c5e383a53a7c17db6c3ff4b",
   "keywords": [
     "react",
     "patternfly",
@@ -38,6 +38,7 @@
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "29.5.12",
+    "@types/node": "^20.12.7",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
@@ -86,7 +87,7 @@
     "clean:build": "rimraf .cache .eslintcache coverage",
     "clean:exports": "lerna run clean:exports --parallel --stream",
     "generate": "yarn plop",
-    "lint": "node --max-old-space-size=4096 node_modules/.bin/eslint --ext js,jsx,ts,tsx --cache --cache-strategy content",
+    "lint": "eslint --ext js,jsx,ts,tsx --cache --cache-strategy content",
     "lint:all": "yarn lint:md && yarn lint:versions && yarn lint:ts",
     "lint:md": "yarn eslint packages --ext md --no-eslintrc --config .eslintrc-md.json --cache --cache-strategy content",
     "lint:ts": "yarn lint packages/*/src",
@@ -119,6 +120,5 @@
     "packages": [
       "packages/**"
     ]
-  },
-  "dependencies": {}
+  }
 }

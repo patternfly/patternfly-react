@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 
 import { TextInput, TextInputBase } from '../TextInput';
 import { ValidatedOptions } from '../../../helpers/constants';
-import * as ReactCoreUtils from '@patternfly/react-core/src/helpers/util';
+import * as ReactCoreUtils from '../../../helpers/util';
 
 const props = {
   onChange: jest.fn(),

@@ -25,7 +25,7 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "serve:integration": "cd demo-app-ts && yarn preview",
-    "test:integration": "node --max-old-space-size=4096 ./node_modules/.bin/cypress run"
+    "test:integration": "cypress run"
   },
   "devDependencies": {
     "cypress": "^8.7.0",
