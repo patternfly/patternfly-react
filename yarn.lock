@@ -3076,12 +3076,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/react-charts@npm:^7.4.0-prerelease.11, @patternfly/react-charts@workspace:packages/react-charts":
+"@patternfly/react-charts@workspace:^, @patternfly/react-charts@workspace:packages/react-charts":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-charts@workspace:packages/react-charts"
   dependencies:
-    "@patternfly/react-styles": "npm:^5.4.0-prerelease.6"
-    "@patternfly/react-tokens": "npm:^5.4.0-prerelease.5"
+    "@patternfly/react-styles": "workspace:^"
+    "@patternfly/react-tokens": "workspace:^"
     "@types/lodash": "npm:^4.17.4"
     css: "npm:^2.2.4"
     fs-extra: "npm:^11.2.0"
@@ -3111,14 +3111,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-code-editor@npm:^5.4.0-prerelease.17, @patternfly/react-code-editor@workspace:packages/react-code-editor":
+"@patternfly/react-code-editor@workspace:^, @patternfly/react-code-editor@workspace:packages/react-code-editor":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-code-editor@workspace:packages/react-code-editor"
   dependencies:
     "@monaco-editor/react": "npm:^4.6.0"
-    "@patternfly/react-core": "npm:^5.4.0-prerelease.15"
-    "@patternfly/react-icons": "npm:^5.4.0-prerelease.5"
-    "@patternfly/react-styles": "npm:^5.4.0-prerelease.6"
+    "@patternfly/react-core": "workspace:^"
+    "@patternfly/react-icons": "workspace:^"
+    "@patternfly/react-styles": "workspace:^"
     monaco-editor: "npm:^0.49.0"
     react-dropzone: "npm:14.2.3"
     tslib: "npm:^2.6.3"
@@ -3128,14 +3128,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-core@npm:^5.4.0-prerelease.15, @patternfly/react-core@workspace:packages/react-core":
+"@patternfly/react-core@workspace:^, @patternfly/react-core@workspace:packages/react-core":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-core@workspace:packages/react-core"
   dependencies:
     "@patternfly/patternfly": "npm:5.4.0-prerelease.3"
-    "@patternfly/react-icons": "npm:^5.4.0-prerelease.5"
-    "@patternfly/react-styles": "npm:^5.4.0-prerelease.6"
-    "@patternfly/react-tokens": "npm:^5.4.0-prerelease.5"
+    "@patternfly/react-icons": "workspace:^"
+    "@patternfly/react-styles": "workspace:^"
+    "@patternfly/react-tokens": "workspace:^"
     css: "npm:^2.2.4"
     focus-trap: "npm:7.5.4"
     fs-extra: "npm:^11.2.0"
@@ -3154,28 +3154,28 @@ __metadata:
     "@patternfly/documentation-framework": "npm:^5.16.4"
     "@patternfly/patternfly": "npm:5.4.0-prerelease.3"
     "@patternfly/patternfly-a11y": "npm:4.3.1"
-    "@patternfly/react-charts": "npm:^7.4.0-prerelease.11"
-    "@patternfly/react-code-editor": "npm:^5.4.0-prerelease.17"
-    "@patternfly/react-core": "npm:^5.4.0-prerelease.15"
-    "@patternfly/react-drag-drop": "npm:^5.4.0-prerelease.16"
-    "@patternfly/react-icons": "npm:^5.4.0-prerelease.5"
-    "@patternfly/react-styles": "npm:^5.4.0-prerelease.6"
-    "@patternfly/react-table": "npm:^5.4.0-prerelease.16"
-    "@patternfly/react-templates": "npm:^1.1.0-prerelease.15"
-    "@patternfly/react-tokens": "npm:^5.4.0-prerelease.5"
+    "@patternfly/react-charts": "workspace:^"
+    "@patternfly/react-code-editor": "workspace:^"
+    "@patternfly/react-core": "workspace:^"
+    "@patternfly/react-drag-drop": "workspace:^"
+    "@patternfly/react-icons": "workspace:^"
+    "@patternfly/react-styles": "workspace:^"
+    "@patternfly/react-table": "workspace:^"
+    "@patternfly/react-templates": "workspace:^"
+    "@patternfly/react-tokens": "workspace:^"
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-drag-drop@npm:^5.4.0-prerelease.16, @patternfly/react-drag-drop@workspace:packages/react-drag-drop":
+"@patternfly/react-drag-drop@workspace:^, @patternfly/react-drag-drop@workspace:packages/react-drag-drop":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-drag-drop@workspace:packages/react-drag-drop"
   dependencies:
     "@dnd-kit/core": "npm:^6.1.0"
     "@dnd-kit/modifiers": "npm:^6.0.1"
     "@dnd-kit/sortable": "npm:^7.0.2"
-    "@patternfly/react-core": "npm:^5.4.0-prerelease.15"
-    "@patternfly/react-icons": "npm:^5.4.0-prerelease.5"
-    "@patternfly/react-styles": "npm:^5.4.0-prerelease.6"
+    "@patternfly/react-core": "workspace:^"
+    "@patternfly/react-icons": "workspace:^"
+    "@patternfly/react-styles": "workspace:^"
     memoize-one: "npm:^5.2.1"
     resize-observer-polyfill: "npm:^1.5.1"
   peerDependencies:
@@ -3184,7 +3184,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-icons@npm:^5.4.0-prerelease.5, @patternfly/react-icons@workspace:packages/react-icons":
+"@patternfly/react-icons@workspace:^, @patternfly/react-icons@workspace:packages/react-icons":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-icons@workspace:packages/react-icons"
   dependencies:
@@ -3265,7 +3265,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-styles@npm:^5.4.0-prerelease.6, @patternfly/react-styles@workspace:packages/react-styles":
+"@patternfly/react-styles@workspace:^, @patternfly/react-styles@workspace:packages/react-styles":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-styles@workspace:packages/react-styles"
   dependencies:
@@ -3277,14 +3277,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-table@npm:^5.4.0-prerelease.16, @patternfly/react-table@workspace:packages/react-table":
+"@patternfly/react-table@workspace:^, @patternfly/react-table@workspace:packages/react-table":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-table@workspace:packages/react-table"
   dependencies:
-    "@patternfly/react-core": "npm:^5.4.0-prerelease.15"
-    "@patternfly/react-icons": "npm:^5.4.0-prerelease.5"
-    "@patternfly/react-styles": "npm:^5.4.0-prerelease.6"
-    "@patternfly/react-tokens": "npm:^5.4.0-prerelease.5"
+    "@patternfly/react-core": "workspace:^"
+    "@patternfly/react-icons": "workspace:^"
+    "@patternfly/react-styles": "workspace:^"
+    "@patternfly/react-tokens": "workspace:^"
     lodash: "npm:^4.17.21"
     tslib: "npm:^2.6.3"
   peerDependencies:
@@ -3293,14 +3293,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-templates@npm:^1.1.0-prerelease.15, @patternfly/react-templates@workspace:packages/react-templates":
+"@patternfly/react-templates@workspace:^, @patternfly/react-templates@workspace:packages/react-templates":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-templates@workspace:packages/react-templates"
   dependencies:
-    "@patternfly/react-core": "npm:^5.4.0-prerelease.15"
-    "@patternfly/react-icons": "npm:^5.4.0-prerelease.5"
-    "@patternfly/react-styles": "npm:^5.4.0-prerelease.6"
-    "@patternfly/react-tokens": "npm:^5.4.0-prerelease.5"
+    "@patternfly/react-core": "workspace:^"
+    "@patternfly/react-icons": "workspace:^"
+    "@patternfly/react-styles": "workspace:^"
+    "@patternfly/react-tokens": "workspace:^"
     tslib: "npm:^2.6.3"
   peerDependencies:
     react: ^17 || ^18
@@ -3308,7 +3308,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-tokens@npm:^5.4.0-prerelease.5, @patternfly/react-tokens@workspace:packages/react-tokens":
+"@patternfly/react-tokens@workspace:^, @patternfly/react-tokens@workspace:packages/react-tokens":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-tokens@workspace:packages/react-tokens"
   dependencies:
@@ -6002,11 +6002,11 @@ __metadata:
   linkType: hard
 
 "bare-stream@npm:^2.0.0":
-  version: 2.1.0
-  resolution: "bare-stream@npm:2.1.0"
+  version: 2.1.2
+  resolution: "bare-stream@npm:2.1.2"
   dependencies:
     streamx: "npm:^2.18.0"
-  checksum: 10c0/eede27114b209eb3b455a5c63f5926d17ffc28f28c5a61e502a5f9d92e0e1e8238f3ee7c9099fe07149e30d3223f6791b3704ff7d2d669f8dcd1fc13d41a9fc5
+  checksum: 10c0/081bd06aac77f2f51a90ac756ea1d69dd573987aea92f4bfa2140b408da41b2077e07e661bbeb65f9d61f321ee4ae09a7c6e0d1aa4d653b4017f575d0a6729d1
   languageName: node
   linkType: hard
 
@@ -8300,7 +8300,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "demo-app-ts@workspace:packages/react-integration/demo-app-ts"
   dependencies:
-    "@patternfly/react-core": "npm:^5.4.0-prerelease.15"
+    "@patternfly/react-core": "workspace:^"
     "@types/react-router": "npm:^5.1.20"
     "@types/react-router-dom": "npm:^5.3.3"
     "@vitejs/plugin-react-swc": "npm:^3.7.0"
