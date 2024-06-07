@@ -38,6 +38,6 @@
     "eslint-plugin-standard": "^4.1.0"
   },
   "peerDependencies": {
-    "eslint": ">=5"
+    "eslint": ">=5.16.0"
   }
 }
