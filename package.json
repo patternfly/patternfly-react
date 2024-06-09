@@ -52,7 +52,7 @@
     "eslint-plugin-testing-library": "^6.2.2",
     "fs-extra": "^11.2.0",
     "glob": "^10.4.1",
-    "husky": "^4.3.8",
+    "husky": "^9.0.11",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
     "jest-transform-stub": "^2.0.0",
@@ -93,7 +93,7 @@
     "lint:ts": "yarn lint packages/*/src",
     "lint:versions": "node scripts/verifyPatternflyVersions.js",
     "lint:tests": "yarn lint packages/*/src/components/*/__tests__/*.test.*",
-    "prepare": "ts-patch install -s",
+    "postinstall": "ts-patch install -s && husky",
     "serve:docs": "yarn workspace @patternfly/react-docs serve",
     "serve:integration": "lerna run preview --scope=demo-app-ts",
     "start": "yarn build && concurrently --kill-others \"yarn watch\" \"yarn workspace @patternfly/react-docs develop\"",
@@ -105,11 +105,6 @@
     "uninstall": "find . -name node_modules -type d | xargs rm -rf",
     "watch": "yarn build:esm --watch",
     "screenshots": "yarn workspace @patternfly/react-docs screenshots"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.md": "yarn lint:md --fix",
