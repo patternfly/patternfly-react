@@ -10,7 +10,7 @@ import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/reac
 import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
 import { OUIAProps } from '@patternfly/react-core/dist/esm/helpers';
 
-export interface DropdownSimpleItem extends Omit<DropdownItemProps, 'content'> {
+export interface SimpleDropdownItem extends Omit<DropdownItemProps, 'content'> {
   /** Content of the dropdown item. If the isDivider prop is true, this prop will be ignored. */
   content?: React.ReactNode;
   /** Unique identifier for the dropdown item, which is used in the dropdown onSelect callback */
@@ -25,9 +25,9 @@ export interface DropdownSimpleItem extends Omit<DropdownItemProps, 'content'> {
   isDivider?: boolean;
 }
 
-export interface DropdownSimpleProps extends Omit<DropdownProps, 'toggle'>, OUIAProps {
+export interface SimpleDropdownProps extends Omit<DropdownProps, 'toggle'>, OUIAProps {
   /** Initial items of the dropdown. */
-  initialItems?: DropdownSimpleItem[];
+  initialItems?: SimpleDropdownItem[];
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Flag indicating the dropdown should be disabled. */
@@ -54,7 +54,7 @@ export interface DropdownSimpleProps extends Omit<DropdownProps, 'toggle'>, OUIA
   toggleProps?: MenuToggleProps;
 }
 
-const DropdownSimpleBase: React.FunctionComponent<DropdownSimpleProps> = ({
+const SimpleDropdownBase: React.FunctionComponent<SimpleDropdownProps> = ({
   innerRef,
   initialItems,
   onSelect: onSelectProp,
@@ -68,7 +68,7 @@ const DropdownSimpleBase: React.FunctionComponent<DropdownSimpleProps> = ({
   toggleProps,
   shouldFocusToggleOnSelect,
   ...props
-}: DropdownSimpleProps) => {
+}: SimpleDropdownProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onSelect = (event: React.MouseEvent<Element, MouseEvent>, value: string | number) => {
@@ -132,8 +132,8 @@ const DropdownSimpleBase: React.FunctionComponent<DropdownSimpleProps> = ({
   );
 };
 
-export const DropdownSimple = React.forwardRef((props: DropdownSimpleProps, ref: React.Ref<any>) => (
-  <DropdownSimpleBase {...props} innerRef={ref} />
+export const SimpleDropdown = React.forwardRef((props: SimpleDropdownProps, ref: React.Ref<any>) => (
+  <SimpleDropdownBase {...props} innerRef={ref} />
 ));
 
-DropdownSimple.displayName = 'DropdownSimple';
+SimpleDropdown.displayName = 'SimpleDropdown';

@@ -15,18 +15,18 @@ import {
 } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export interface SelectTypeaheadOption extends Omit<SelectOptionProps, 'content'> {
+export interface TypeaheadSelectOption extends Omit<SelectOptionProps, 'content'> {
   /** Content of the select option. */
   content: string | number;
   /** Value of the select option. */
   value: string | number;
 }
 
-export interface SelectTypeaheadProps extends Omit<SelectProps, 'toggle'> {
+export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle'> {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */
-  initialOptions: SelectTypeaheadOption[];
+  initialOptions: TypeaheadSelectOption[];
   /** Callback triggered on selection. */
   onSelect?: (
     _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLInputElement>,
@@ -48,7 +48,7 @@ export interface SelectTypeaheadProps extends Omit<SelectProps, 'toggle'> {
   toggleProps?: MenuToggleProps;
 }
 
-export const SelectTypeaheadBase: React.FunctionComponent<SelectTypeaheadProps> = ({
+export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> = ({
   innerRef,
   initialOptions,
   onSelect,
@@ -60,12 +60,12 @@ export const SelectTypeaheadBase: React.FunctionComponent<SelectTypeaheadProps> 
   toggleWidth,
   toggleProps,
   ...props
-}: SelectTypeaheadProps) => {
+}: TypeaheadSelectProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('');
   const [inputValue, setInputValue] = React.useState<string>('');
   const [filterValue, setFilterValue] = React.useState<string>('');
-  const [selectOptions, setSelectOptions] = React.useState<SelectTypeaheadOption[]>(initialOptions);
+  const [selectOptions, setSelectOptions] = React.useState<TypeaheadSelectOption[]>(initialOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
   const textInputRef = React.useRef<HTMLInputElement>();
@@ -73,7 +73,7 @@ export const SelectTypeaheadBase: React.FunctionComponent<SelectTypeaheadProps> 
   const NO_RESULTS = 'no results';
 
   React.useEffect(() => {
-    let newSelectOptions: SelectTypeaheadOption[] = initialOptions;
+    let newSelectOptions: TypeaheadSelectOption[] = initialOptions;
 
     // Filter menu items based on the text input value when one exists
     if (filterValue) {
@@ -134,7 +134,7 @@ export const SelectTypeaheadBase: React.FunctionComponent<SelectTypeaheadProps> 
 
   const selectOption = (
     _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLInputElement> | undefined,
-    option: SelectTypeaheadOption
+    option: TypeaheadSelectOption
   ) => {
     onSelect && onSelect(_event, option.value);
 
@@ -317,10 +317,10 @@ export const SelectTypeaheadBase: React.FunctionComponent<SelectTypeaheadProps> 
     </Select>
   );
 };
-SelectTypeaheadBase.displayName = 'SelectTypeaheadBase';
+TypeaheadSelectBase.displayName = 'TypeaheadSelectBase';
 
-export const SelectTypeahead = React.forwardRef((props: SelectTypeaheadProps, ref: React.Ref<any>) => (
-  <SelectTypeaheadBase {...props} innerRef={ref} />
+export const TypeaheadSelect = React.forwardRef((props: TypeaheadSelectProps, ref: React.Ref<any>) => (
+  <TypeaheadSelectBase {...props} innerRef={ref} />
 ));
 
-SelectTypeahead.displayName = 'SelectTypeahead';
+TypeaheadSelect.displayName = 'TypeaheadSelect';

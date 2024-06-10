@@ -1,30 +1,30 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { DropdownSimple } from '../DropdownSimple';
+import { SimpleDropdown } from '../SimpleDropdown';
 import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
 
 describe('Dropdown toggle', () => {
   test('Renders dropdown toggle as not disabled when isDisabled is not true', () => {
-    render(<DropdownSimple toggleContent="Dropdown" />);
+    render(<SimpleDropdown toggleContent="Dropdown" />);
 
     expect(screen.getByRole('button', { name: 'Dropdown' })).not.toBeDisabled();
   });
 
   test('Renders dropdown toggle as disabled when isDisabled is true', () => {
-    render(<DropdownSimple toggleContent="Dropdown" isDisabled />);
+    render(<SimpleDropdown toggleContent="Dropdown" isDisabled />);
 
     expect(screen.getByRole('button', { name: 'Dropdown' })).toBeDisabled();
   });
 
   test('Passes toggleVariant', () => {
-    render(<DropdownSimple toggleContent="Dropdown" toggleVariant="plain" />);
+    render(<SimpleDropdown toggleContent="Dropdown" toggleVariant="plain" />);
 
     expect(screen.getByRole('button', { name: 'Dropdown' })).toHaveClass(styles.modifiers.plain);
   });
 
   test('Passes toggleAriaLabel', () => {
-    render(<DropdownSimple toggleContent="Dropdown" toggleAriaLabel="Aria label content" />);
+    render(<SimpleDropdown toggleContent="Dropdown" toggleAriaLabel="Aria label content" />);
 
     expect(screen.getByRole('button')).toHaveAccessibleName('Aria label content');
   });
@@ -32,7 +32,7 @@ describe('Dropdown toggle', () => {
   test('Calls onToggle with next isOpen state when dropdown toggle is clicked', async () => {
     const onToggle = jest.fn();
     const user = userEvent.setup();
-    render(<DropdownSimple onToggle={onToggle} toggleContent="Dropdown" />);
+    render(<SimpleDropdown onToggle={onToggle} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -46,7 +46,7 @@ describe('Dropdown toggle', () => {
     render(
       <div>
         <button>Actual</button>
-        <DropdownSimple initialItems={items} onToggle={onToggle} toggleContent="Dropdown" />
+        <SimpleDropdown initialItems={items} onToggle={onToggle} toggleContent="Dropdown" />
       </div>
     );
 
@@ -59,7 +59,7 @@ describe('Dropdown toggle', () => {
     const onSelect = jest.fn();
     const items = [{ content: 'Action', value: 1 }];
     const user = userEvent.setup();
-    render(<DropdownSimple initialItems={items} toggleContent="Dropdown" onSelect={onSelect} />);
+    render(<SimpleDropdown initialItems={items} toggleContent="Dropdown" onSelect={onSelect} />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -73,7 +73,7 @@ describe('Dropdown toggle', () => {
     const onSelect = jest.fn();
     const items = [{ content: 'Action', value: 1 }];
     const user = userEvent.setup();
-    render(<DropdownSimple initialItems={items} toggleContent="Dropdown" onSelect={onSelect} />);
+    render(<SimpleDropdown initialItems={items} toggleContent="Dropdown" onSelect={onSelect} />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -82,13 +82,13 @@ describe('Dropdown toggle', () => {
   });
 
   test('Does not pass isToggleFullWidth to menu toggle by default', () => {
-    render(<DropdownSimple toggleContent="Dropdown" />);
+    render(<SimpleDropdown toggleContent="Dropdown" />);
 
     expect(screen.getByRole('button', { name: 'Dropdown' })).not.toHaveClass(styles.modifiers.fullWidth);
   });
 
   test('Passes isToggleFullWidth to menu toggle when passed in', () => {
-    render(<DropdownSimple isToggleFullWidth toggleContent="Dropdown" />);
+    render(<SimpleDropdown isToggleFullWidth toggleContent="Dropdown" />);
 
     expect(screen.getByRole('button', { name: 'Dropdown' })).toHaveClass(styles.modifiers.fullWidth);
   });
@@ -96,7 +96,7 @@ describe('Dropdown toggle', () => {
   test('Does not focus toggle on item select by default', async () => {
     const items = [{ content: 'Action', value: 1 }];
     const user = userEvent.setup();
-    render(<DropdownSimple initialItems={items} toggleContent="Dropdown" />);
+    render(<SimpleDropdown initialItems={items} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -109,7 +109,7 @@ describe('Dropdown toggle', () => {
   test('Focuses toggle on item select when shouldFocusToggleOnSelect is true', async () => {
     const items = [{ content: 'Action', value: 1 }];
     const user = userEvent.setup();
-    render(<DropdownSimple shouldFocusToggleOnSelect initialItems={items} toggleContent="Dropdown" />);
+    render(<SimpleDropdown shouldFocusToggleOnSelect initialItems={items} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -120,7 +120,7 @@ describe('Dropdown toggle', () => {
   });
 
   test('Matches snapshot', () => {
-    const { asFragment } = render(<DropdownSimple toggleContent="Dropdown" />);
+    const { asFragment } = render(<SimpleDropdown toggleContent="Dropdown" />);
 
     expect(asFragment()).toMatchSnapshot();
   });
@@ -133,7 +133,7 @@ describe('Dropdown items', () => {
       { value: 'separator', isDivider: true }
     ];
     const user = userEvent.setup();
-    render(<DropdownSimple initialItems={items} toggleContent="Dropdown" />);
+    render(<SimpleDropdown initialItems={items} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -147,7 +147,7 @@ describe('Dropdown items', () => {
   test('Renders with a link item', async () => {
     const items = [{ content: 'Link', value: 1, to: '#' }];
     const user = userEvent.setup();
-    render(<DropdownSimple initialItems={items} toggleContent="Dropdown" />);
+    render(<SimpleDropdown initialItems={items} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -159,7 +159,7 @@ describe('Dropdown items', () => {
   test('Renders with items not disabled by default', async () => {
     const items = [{ content: 'Action', value: 1 }];
     const user = userEvent.setup();
-    render(<DropdownSimple initialItems={items} toggleContent="Dropdown" />);
+    render(<SimpleDropdown initialItems={items} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -171,7 +171,7 @@ describe('Dropdown items', () => {
   test('Renders with a disabled item', async () => {
     const items = [{ content: 'Action', value: 1, isDisabled: true }];
     const user = userEvent.setup();
-    render(<DropdownSimple initialItems={items} toggleContent="Dropdown" />);
+    render(<SimpleDropdown initialItems={items} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -183,7 +183,7 @@ describe('Dropdown items', () => {
   test('Spreads props on item', async () => {
     const items = [{ content: 'Action', value: 1, id: 'Test' }];
     const user = userEvent.setup();
-    render(<DropdownSimple initialItems={items} toggleContent="Dropdown" />);
+    render(<SimpleDropdown initialItems={items} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -196,7 +196,7 @@ describe('Dropdown items', () => {
     const onClick = jest.fn();
     const items = [{ content: 'Action', value: 1, onClick }];
     const user = userEvent.setup();
-    render(<DropdownSimple initialItems={items} toggleContent="Dropdown" />);
+    render(<SimpleDropdown initialItems={items} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -213,7 +213,7 @@ describe('Dropdown items', () => {
       { content: 'Action 2', value: 2 }
     ];
     const user = userEvent.setup();
-    render(<DropdownSimple initialItems={items} toggleContent="Dropdown" />);
+    render(<SimpleDropdown initialItems={items} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -227,7 +227,7 @@ describe('Dropdown items', () => {
     const onClick = jest.fn();
     const items = [{ content: 'Action', value: 1, onClick, isDisabled: true }];
     const user = userEvent.setup();
-    render(<DropdownSimple initialItems={items} toggleContent="Dropdown" />);
+    render(<SimpleDropdown initialItems={items} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);
@@ -244,7 +244,7 @@ describe('Dropdown items', () => {
       { content: 'Link', value: 'separator', to: '#', ouiaId: '3' }
     ];
     const user = userEvent.setup();
-    const { asFragment } = render(<DropdownSimple ouiaId={4} initialItems={items} toggleContent="Dropdown" />);
+    const { asFragment } = render(<SimpleDropdown ouiaId={4} initialItems={items} toggleContent="Dropdown" />);
 
     const toggle = screen.getByRole('button', { name: 'Dropdown' });
     await user.click(toggle);

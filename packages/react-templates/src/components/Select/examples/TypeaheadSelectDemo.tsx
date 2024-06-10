@@ -1,8 +1,8 @@
 import React from 'react';
-import { SelectTypeahead, SelectTypeaheadOption } from '@patternfly/react-templates';
+import { TypeaheadSelect, TypeaheadSelectOption } from '@patternfly/react-templates';
 
 export const SelectTypeaheadDemo: React.FunctionComponent = () => {
-  const initialOptions: SelectTypeaheadOption[] = [
+  const initialOptions: TypeaheadSelectOption[] = [
     { content: 'Alabama', value: 'option1' },
     { content: 'Florida', value: 'option2' },
     { content: 'New Jersey', value: 'option3' },
@@ -12,7 +12,7 @@ export const SelectTypeaheadDemo: React.FunctionComponent = () => {
   ];
 
   return (
-    <SelectTypeahead
+    <TypeaheadSelect
       initialOptions={initialOptions}
       placeholder="Select a state"
       noOptionsFoundMessage={(filter) => `No state was found for "${filter}"`}
