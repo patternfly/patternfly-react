@@ -120,13 +120,7 @@ class NavList extends React.Component<NavListProps> {
   }
 
   render() {
-    const {
-      children,
-      className,
-      backScrollAriaLabel,
-      forwardScrollAriaLabel,
-      ...props
-    } = this.props;
+    const { children, className, backScrollAriaLabel, forwardScrollAriaLabel, ...props } = this.props;
     const { scrollViewAtStart, scrollViewAtEnd } = this.state;
 
     return (
