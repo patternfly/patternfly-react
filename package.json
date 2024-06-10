@@ -8,7 +8,7 @@
     "url": "https://github.com/patternfly/patternfly-react.git"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.14.0"
   },
   "packageManager": "yarn@4.2.2+sha512.c44e283c54e02de9d1da8687025b030078c1b9648d2895a65aab8e64225bfb7becba87e1809fc0b4b6778bbd47a1e2ab6ac647de4c5e383a53a7c17db6c3ff4b",
   "keywords": [
@@ -24,12 +24,12 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "devDependencies": {
-    "@babel/core": "^7.24.6",
-    "@babel/plugin-transform-modules-commonjs": "^7.24.6",
-    "@babel/preset-react": "^7.24.6",
-    "@babel/preset-typescript": "^7.24.6",
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-transform-modules-commonjs": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
     "@octokit/rest": "^20.1.1",
-    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.7",
     "@rollup/plugin-terser": "^0.4.4",
@@ -38,31 +38,31 @@
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "29.5.12",
-    "@types/node": "^20.12.7",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "babel-jest": "^29.7.0",
     "concurrently": "^7.6.0",
-    "eslint": "^8.39.0",
+    "eslint": "^8.57.0",
     "eslint-plugin-markdown": "^3.0.1",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-testing-library": "^6.2.2",
     "fs-extra": "^11.2.0",
-    "glob": "^9.3.5",
-    "husky": "^4.3.8",
+    "glob": "^10.4.1",
+    "husky": "^9.0.11",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
     "jest-transform-stub": "^2.0.0",
     "lerna": "^7.4.2",
-    "lint-staged": "^14.0.1",
+    "lint-staged": "^15.2.5",
     "mutation-observer": "^1.0.3",
     "plop": "^3.1.2",
-    "prettier": "^3.0.0",
-    "react": "^18",
-    "react-dom": "^18",
+    "prettier": "^3.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "rimraf": "^5.0.7",
     "rollup": "^4.18.0",
     "rollup-plugin-scss": "^4.0.0",
@@ -88,12 +88,11 @@
     "clean:exports": "lerna run clean:exports --parallel --stream",
     "generate": "yarn plop",
     "lint": "eslint --ext js,jsx,ts,tsx --cache --cache-strategy content",
-    "lint:all": "yarn lint:md && yarn lint:versions && yarn lint:ts",
+    "lint:all": "yarn lint:md && yarn lint:ts",
     "lint:md": "yarn eslint packages --ext md --no-eslintrc --config .eslintrc-md.json --cache --cache-strategy content",
     "lint:ts": "yarn lint packages/*/src",
-    "lint:versions": "node scripts/verifyPatternflyVersions.js",
     "lint:tests": "yarn lint packages/*/src/components/*/__tests__/*.test.*",
-    "prepare": "ts-patch install -s",
+    "postinstall": "ts-patch install -s && husky",
     "serve:docs": "yarn workspace @patternfly/react-docs serve",
     "serve:integration": "lerna run preview --scope=demo-app-ts",
     "start": "yarn build && concurrently --kill-others \"yarn watch\" \"yarn workspace @patternfly/react-docs develop\"",
@@ -106,15 +105,9 @@
     "watch": "yarn build:esm --watch",
     "screenshots": "yarn workspace @patternfly/react-docs screenshots"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.md": "yarn lint:md --fix",
-    "*.{js,jsx,ts,tsx}": "yarn lint --fix",
-    "*.json": "yarn lint:versions --fix"
+    "*.{js,jsx,ts,tsx}": "yarn lint --fix"
   },
   "workspaces": {
     "packages": [

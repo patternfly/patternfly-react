@@ -1,34 +1,36 @@
-const { join, basename, resolve, relative, dirname } = require('path');
-const { outputFileSync, copyFileSync } = require('fs-extra');
-const { generateClassMaps } = require('./generateClassMaps');
+import { outputFileSync } from 'fs-extra/esm';
+import fs from 'node:fs';
+import path from 'node:path';
+import url from 'node:url';
+import { generateClassMaps } from './generateClassMaps.mjs';
 
-const outDir = resolve(__dirname, '../css');
+const outDir = path.resolve(import.meta.dirname, '../css');
 
 const writeCJSExport = (file, classMap) =>
   outputFileSync(
-    join(outDir, file.replace(/.css$/, '.js')),
+    path.join(outDir, file.replace(/.css$/, '.js')),
     `
 "use strict";
 exports.__esModule = true;
-require('./${basename(file, '.css.js')}');
+require('./${path.basename(file, '.css.js')}');
 exports.default = ${JSON.stringify(classMap, null, 2)};
 `.trim()
   );
 
 const writeESMExport = (file, classMap) =>
   outputFileSync(
-    join(outDir, file.replace(/.css$/, '.mjs')),
+    path.join(outDir, file.replace(/.css$/, '.mjs')),
     `
-import './${basename(file, '.css.js')}';
+import './${path.basename(file, '.css.js')}';
 export default ${JSON.stringify(classMap, null, 2)};
 `.trim()
   );
 
 const writeDTSExport = (file, classMap) =>
   outputFileSync(
-    join(outDir, file.replace(/.css$/, '.d.ts')),
+    path.join(outDir, file.replace(/.css$/, '.d.ts')),
     `
-import './${basename(file, '.css.js')}';
+import './${path.basename(file, '.css.js')}';
 declare const _default: ${JSON.stringify(classMap, null, 2)};
 export default _default;
 `.trim()
@@ -38,15 +40,15 @@ export default _default;
  * @param {any} classMaps Map of file names to classMaps
  */
 function writeClassMaps(classMaps) {
-  const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
+  const pfStylesDir = path.dirname(url.fileURLToPath(import.meta.resolve('@patternfly/patternfly/patternfly.css')));
 
   Object.entries(classMaps).forEach(([file, classMap]) => {
-    const outPath = file.includes(pfStylesDir) ? relative(pfStylesDir, file) : relative('src/css', file);
+    const outPath = file.includes(pfStylesDir) ? path.relative(pfStylesDir, file) : path.relative('src/css', file);
 
     writeCJSExport(outPath, classMap);
     writeDTSExport(outPath, classMap);
     writeESMExport(outPath, classMap);
-    copyFileSync(file, join(outDir, outPath));
+    fs.copyFileSync(file, path.join(outDir, outPath));
   });
 
   // eslint-disable-next-line no-console

@@ -34,8 +34,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@patternfly/patternfly": "5.4.0-prerelease.3",
     "fs-extra": "^11.2.0",
-    "glob": "^7.2.3",
-    "tslib": "^2.6.2"
+    "tslib": "^2.6.3"
   },
   "peerDependencies": {
     "react": "^17 || ^18",

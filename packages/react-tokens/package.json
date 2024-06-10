@@ -30,7 +30,6 @@
   "devDependencies": {
     "@patternfly/patternfly": "5.4.0-prerelease.3",
     "css": "^2.2.4",
-    "fs-extra": "^11.2.0",
-    "glob": "^7.2.3"
+    "fs-extra": "^11.2.0"
   }
 }

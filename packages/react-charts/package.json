@@ -28,11 +28,11 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "@patternfly/react-styles": "^5.4.0-prerelease.6",
-    "@patternfly/react-tokens": "^5.4.0-prerelease.5",
-    "hoist-non-react-statics": "^3.3.0",
+    "@patternfly/react-styles": "workspace:^",
+    "@patternfly/react-tokens": "workspace:^",
+    "hoist-non-react-statics": "^3.3.2",
     "lodash": "^4.17.21",
-    "tslib": "^2.6.2",
+    "tslib": "^2.6.3",
     "victory-area": "^37.0.2",
     "victory-axis": "^37.0.2",
     "victory-bar": "^37.0.2",
@@ -62,7 +62,6 @@
   "devDependencies": {
     "@types/lodash": "^4.17.4",
     "css": "^2.2.4",
-    "fs-extra": "^11.2.0",
-    "glob": "^7.2.3"
+    "fs-extra": "^11.2.0"
   }
 }
