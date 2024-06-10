@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-content"
+    data-ouia-component-id="ouia-id"
+    data-ouia-component-type="PF6/Content"
+    data-ouia-safe="true"
+    data-pf-content="true"
+  >
+    Test
+  </div>
+</DocumentFragment>
+`;
