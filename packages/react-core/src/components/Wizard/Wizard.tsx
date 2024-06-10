@@ -56,7 +56,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   onSave?: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
   /** Callback function to close the wizard */
   onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  /** @beta Flag indicating whether the wizard content should be focused after the onNext or onBack callbacks
+  /** Flag indicating whether the wizard content should be focused after the onNext or onBack callbacks
    * are called.
    */
   shouldFocusContent?: boolean;
