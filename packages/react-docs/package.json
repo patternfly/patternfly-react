@@ -23,15 +23,15 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "5.4.0-prerelease.3",
-    "@patternfly/react-charts": "^7.4.0-prerelease.11",
-    "@patternfly/react-code-editor": "^5.4.0-prerelease.17",
-    "@patternfly/react-core": "^5.4.0-prerelease.15",
-    "@patternfly/react-drag-drop": "^5.4.0-prerelease.16",
-    "@patternfly/react-icons": "^5.4.0-prerelease.5",
-    "@patternfly/react-styles": "^5.4.0-prerelease.6",
-    "@patternfly/react-table": "^5.4.0-prerelease.16",
-    "@patternfly/react-templates": "^1.1.0-prerelease.15",
-    "@patternfly/react-tokens": "^5.4.0-prerelease.5"
+    "@patternfly/react-charts": "workspace:^",
+    "@patternfly/react-code-editor": "workspace:^",
+    "@patternfly/react-core": "workspace:^",
+    "@patternfly/react-drag-drop": "workspace:^",
+    "@patternfly/react-icons": "workspace:^",
+    "@patternfly/react-styles": "workspace:^",
+    "@patternfly/react-table": "workspace:^",
+    "@patternfly/react-templates": "workspace:^",
+    "@patternfly/react-tokens": "workspace:^"
   },
   "devDependencies": {
     "@patternfly/documentation-framework": "^5.16.4",

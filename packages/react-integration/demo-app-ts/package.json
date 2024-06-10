@@ -9,7 +9,7 @@
     "preview": "vite preview --port 3000"
   },
   "dependencies": {
-    "@patternfly/react-core": "^5.4.0-prerelease.15",
+    "@patternfly/react-core": "workspace:^",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^5.3.4",

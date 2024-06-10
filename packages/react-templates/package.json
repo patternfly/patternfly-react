@@ -33,10 +33,10 @@
     "subpaths": "node ../../scripts/exportSubpaths.js --config subpaths.config.json"
   },
   "dependencies": {
-    "@patternfly/react-core": "^5.4.0-prerelease.15",
-    "@patternfly/react-icons": "^5.4.0-prerelease.5",
-    "@patternfly/react-styles": "^5.4.0-prerelease.6",
-    "@patternfly/react-tokens": "^5.4.0-prerelease.5",
+    "@patternfly/react-core": "workspace:^",
+    "@patternfly/react-icons": "workspace:^",
+    "@patternfly/react-styles": "workspace:^",
+    "@patternfly/react-tokens": "workspace:^",
     "tslib": "^2.6.3"
   },
   "peerDependencies": {
