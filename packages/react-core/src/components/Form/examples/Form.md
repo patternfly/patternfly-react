@@ -105,6 +105,6 @@ When using helper text inside a `FormGroup`, the `HelperText` component should b
 
 ### Form state
 
-```ts file="./FormState.tsx" isBeta
+```ts file="./FormState.tsx"
 
 ```

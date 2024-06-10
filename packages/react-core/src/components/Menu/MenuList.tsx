@@ -8,7 +8,7 @@ export interface MenuListProps extends React.HTMLProps<HTMLUListElement> {
   children: React.ReactNode;
   /** Additional classes added to the menu list */
   className?: string;
-  /** @beta Indicates to assistive technologies whether more than one item can be selected
+  /** Indicates to assistive technologies whether more than one item can be selected
    * for a non-checkbox menu. Only applies when the menu's role is "listbox".
    */
   isAriaMultiselectable?: boolean;

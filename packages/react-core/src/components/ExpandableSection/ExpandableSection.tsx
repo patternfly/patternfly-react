@@ -55,11 +55,11 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
    * both are specified; used for uncontrolled expandable with dynamic toggle text).
    */
   toggleTextExpanded?: string;
-  /** @beta Truncates the expandable content to the specified number of lines when using the
+  /** Truncates the expandable content to the specified number of lines when using the
    * "truncate" variant.
    */
   truncateMaxLines?: number;
-  /** @beta Determines the variant of the expandable section. When passing in "truncate" as the
+  /** Determines the variant of the expandable section. When passing in "truncate" as the
    * variant, the expandable content will be truncated after 3 lines by default.
    */
   variant?: 'default' | 'truncate';

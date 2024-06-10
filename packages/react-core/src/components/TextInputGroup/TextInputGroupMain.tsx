@@ -41,17 +41,17 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
   innerRef?: React.RefObject<any>;
   /** Name for the input */
   name?: string;
-  /** @beta The id of the active element. Required if role has a value of "combobox", and focus
+  /** The id of the active element. Required if role has a value of "combobox", and focus
    * should remain on the input.
    */
   'aria-activedescendant'?: string;
-  /** @beta Determines the accessible role of the input. */
+  /** Determines the accessible role of the input. */
   role?: string;
-  /** @beta Flag for whether an associated element controlled by the input is visible. Required if
+  /** Flag for whether an associated element controlled by the input is visible. Required if
    * role has a value of "combobox".
    */
   isExpanded?: boolean;
-  /** @beta The id of the element(s) controlled by the input. Required if role has a value of "combobox". */
+  /** The id of the element(s) controlled by the input. Required if role has a value of "combobox". */
   'aria-controls'?: string;
   /** The id of the input element */
   inputId?: string;

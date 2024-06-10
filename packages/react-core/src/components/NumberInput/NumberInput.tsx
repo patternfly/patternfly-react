@@ -18,9 +18,7 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   widthChars?: number;
   /** Indicates the whole number input should be disabled */
   isDisabled?: boolean;
-  /** Value to indicate if the input is modified to show that validation state
-   * @beta
-   */
+  /** Value to indicate if the input is modified to show that validation state */
   validated?: 'default' | 'error' | 'warning' | 'success' | ValidatedOptions;
   /** Callback for the minus button */
   onMinus?: (event: React.MouseEvent, name?: string) => void;

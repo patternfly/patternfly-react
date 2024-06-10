@@ -294,7 +294,7 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   labels?: string[] | number[] | ((data: any) => string | number | null);
   /**
-   * @beta Allows legend items to wrap onto the next line if the chart is not wide enough.
+   * Allows legend items to wrap onto the next line if the chart is not wide enough.
    *
    * Note that the chart's SVG height and width are 100% by default, so it can be responsive itself. However, if you
    * define the height and width of the chart's parent container, you must accommodate for extra legend height due to
@@ -347,7 +347,7 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   legendPosition?: 'bottom' | 'right';
   /**
-   * @beta Text direction of the legend labels.
+   * Text direction of the legend labels.
    */
   legendDirection?: 'ltr' | 'rtl';
   /**

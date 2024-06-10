@@ -60,19 +60,19 @@ The following example shows two navigation groups, each with a `title` prop pass
 
 A flyout should be a `Menu` component. Press `space` or `right arrow` to open a flyout using the keyboard, use the arrow keys to navigate between flyout items, and press `escape` or `left arrow` to close a flyout.
 
-```ts file="./NavFlyout.tsx" isBeta
+```ts file="./NavFlyout.tsx"
 
 ```
 
 ### Drilldown
 
-```ts isBeta file="./NavDrilldown.tsx"
+```ts file="./NavDrilldown.tsx"
 
 ```
 
 ### Link text
 
-```ts isBeta file="./NavLinkText.tsx"
+```ts file="./NavLinkText.tsx"
 
 ```
 

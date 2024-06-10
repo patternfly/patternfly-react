@@ -7,9 +7,7 @@ export interface SelectListProps extends MenuListProps {
   children: React.ReactNode;
   /** Classes applied to root element of select list */
   className?: string;
-  /** @beta Indicates to assistive technologies whether more than one item can be selected
-   * for a non-checkbox select.
-   */
+  /** Indicates to assistive technologies whether more than one item can be selected for a non-checkbox select */
   isAriaMultiselectable?: boolean;
 }
 

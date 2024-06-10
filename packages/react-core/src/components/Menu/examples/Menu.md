@@ -194,7 +194,7 @@ Use a drilldown menu to contain different levels of menu items. When a parent me
 - Use the `onDrillIn` and `onDrillOut` properties to contain callbacks for drilling into and drilling out of a submenu, respectively.
 - To account for updated heights as menus drill in and out of use, use the `onGetMenuHeight` property. When starting from a drilled-in state, the `onGetMenuHeight` property must define the height of the root menu.
 
-```ts file="./MenuWithDrilldown.tsx" isBeta
+```ts file="./MenuWithDrilldown.tsx"
 
 ```
 
@@ -202,7 +202,7 @@ Use a drilldown menu to contain different levels of menu items. When a parent me
 
 To render an initially drilled-in menu, the `drilldownItemPath`, `drilledInMenus`, and `activeMenu` properties must be set to default values.
 
-```ts file="./MenuWithDrilldownInitialState.tsx" isBeta
+```ts file="./MenuWithDrilldownInitialState.tsx"
 
 ```
 
@@ -210,7 +210,7 @@ To render an initially drilled-in menu, the `drilldownItemPath`, `drilledInMenus
 
 For added flexibility with large menus, you may create a menu by passing a function to `drilldownMenu`. This approach allows you to create menu items dynamically, rather than creating everything up front.
 
-```ts file="./MenuWithDrilldownSubmenuFunctions.tsx" isBeta
+```ts file="./MenuWithDrilldownSubmenuFunctions.tsx"
 
 ```
 
@@ -220,7 +220,7 @@ Use [breadcrumbs](/components/breadcrumb) when a drilldown menu has more than 2 
 
 To control the height of a menu, use the `maxMenuHeight` property. Selecting the "Set max menu height" checkbox in the following example sets the menu height to "100px" and makes the menu scrollable.
 
-```ts file="MenuWithDrilldownBreadcrumbs.tsx" isBeta
+```ts file="MenuWithDrilldownBreadcrumbs.tsx"
 
 ```
 

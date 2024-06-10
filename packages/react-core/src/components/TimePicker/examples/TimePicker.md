@@ -4,7 +4,6 @@ section: components
 subsection: date-and-time
 cssPrefix: pf-v5-c-time-picker
 propComponents: ['TimePicker']
-beta: true
 ---
 
 import { TimePicker } from '@patternfly/react-core';

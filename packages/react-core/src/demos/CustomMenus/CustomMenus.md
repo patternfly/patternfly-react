@@ -46,7 +46,7 @@ Additionally, menu components may be connected to each other manually through ou
 
 ### With drilldown
 
-```ts isBeta file="./examples/DrilldownMenuDemo.tsx"
+```ts file="./examples/DrilldownMenuDemo.tsx"
 
 ```
 
@@ -68,7 +68,7 @@ When rendering a menu-like element that does not contain `<MenuItem>` components
 
 The flyout will automatically position to the left or top if it would otherwise go outside the window. The menu must be placed in a container outside the main content like Popper, [popover](/components/popover) or [tooltip](/components/tooltip), since it may go over the side nav.
 
-```ts isBeta file="./examples/FlyoutDemo.tsx"
+```ts file="./examples/FlyoutDemo.tsx"
 
 ```
 

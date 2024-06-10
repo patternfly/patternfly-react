@@ -235,7 +235,7 @@ export interface ChartProps extends VictoryChartProps {
    */
   innerRadius?: number;
   /**
-   * @beta Allows legend items to wrap onto the next line if the chart is not wide enough.
+   * Allows legend items to wrap onto the next line if the chart is not wide enough.
    *
    * Note that the chart's SVG height and width are 100% by default, so it can be responsive itself. However, if you
    * define the height and width of the chart's parent container, you must accommodate for extra legend height due to
@@ -288,7 +288,7 @@ export interface ChartProps extends VictoryChartProps {
    */
   legendPosition?: 'bottom' | 'bottom-left' | 'right';
   /**
-   * @beta Text direction of the legend labels.
+   * Text direction of the legend labels.
    */
   legendDirection?: 'ltr' | 'rtl';
   /**

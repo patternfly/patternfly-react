@@ -108,7 +108,7 @@ Unlike normal disabled buttons, aria-disabled buttons can support tooltips. Furt
 
 Buttons can display a `count` in the form of a badge to indicate some value or number by passing in the `countOptions` prop as a `BadgeCountObject` object. The `BadgeCountObject` object will handle `count`, `isRead`, and `className` props for the badge count.
 
-```ts file="./ButtonWithCount.tsx" isBeta
+```ts file="./ButtonWithCount.tsx"
 ```
 
 ### Plain with no padding

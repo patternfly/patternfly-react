@@ -19,7 +19,7 @@ export interface SpinnerProps extends React.SVGProps<SVGSVGElement> {
   'aria-valuetext'?: string;
   /** Diameter of spinner set as CSS variable */
   diameter?: string;
-  /** @beta Indicates the spinner is inline and the size should inherit the text font size. This will override the size prop. */
+  /** Indicates the spinner is inline and the size should inherit the text font size. This will override the size prop. */
   isInline?: boolean;
   /** Accessible label to describe what is loading */
   'aria-label'?: string;

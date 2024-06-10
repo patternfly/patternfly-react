@@ -36,7 +36,6 @@ import { getTheme } from '../ChartUtils/chart-theme';
  *
  * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-bar/src/index.d.ts
  *
- * @beta
  */
 export interface ChartBoxPlotProps extends VictoryBoxPlotProps {
   /**
