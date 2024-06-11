@@ -7,20 +7,16 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import inlineEditStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 
-interface EditColumnProps {
+interface EditButtonsCellProps {
   onClick: (type: 'save' | 'cancel' | 'edit') => void;
   elementToFocusOnEditRef?: React.MutableRefObject<HTMLElement>;
-  saveAriaLabel?: string;
-  cancelAriaLabel?: string;
-  editAriaLabel?: string;
+  rowAriaLabel: string;
 }
 
-const EditColumn: React.FunctionComponent<EditColumnProps> = ({
+const EditButtonsCell: React.FunctionComponent<EditButtonsCellProps> = ({
   onClick,
   elementToFocusOnEditRef,
-  saveAriaLabel = 'Save edits',
-  cancelAriaLabel = 'Cancel edits',
-  editAriaLabel = 'Edit'
+  rowAriaLabel = 'row'
 }) => {
   const editButtonRef = React.useRef<HTMLButtonElement>();
 
@@ -39,10 +35,17 @@ const EditColumn: React.FunctionComponent<EditColumnProps> = ({
 
   return (
     <>
-      <div className={css(inlineEditStyles.inlineEditGroup, inlineEditStyles.modifiers.iconGroup, 'pf-m-action-group')}>
+      <Td
+        dataLabel="Save and cancel buttons"
+        className={css(
+          inlineEditStyles.inlineEditGroup,
+          inlineEditStyles.modifiers.iconGroup,
+          inlineEditStyles.modifiers.actionGroup
+        )}
+      >
         <div className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.valid)}>
           <Button
-            aria-label={saveAriaLabel}
+            aria-label={`Save edits of ${rowAriaLabel}`}
             onClick={() => onClick('save')}
             onKeyDown={(event) => onKeyDown(event, 'stopEditing')}
             variant="plain"
@@ -52,7 +55,7 @@ const EditColumn: React.FunctionComponent<EditColumnProps> = ({
         </div>
         <div className={css(inlineEditStyles.inlineEditAction)}>
           <Button
-            aria-label={cancelAriaLabel}
+            aria-label={`Discard edits of ${rowAriaLabel}`}
             onClick={() => onClick('cancel')}
             onKeyDown={(event) => onKeyDown(event, 'stopEditing')}
             variant="plain"
@@ -60,18 +63,21 @@ const EditColumn: React.FunctionComponent<EditColumnProps> = ({
             <TimesIcon />
           </Button>
         </div>
-      </div>
-      <div className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.enableEditable)}>
+      </Td>
+      <Td
+        dataLabel="Edit button"
+        className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.enableEditable)}
+      >
         <Button
           ref={editButtonRef}
-          aria-label={editAriaLabel}
+          aria-label={`Edit ${rowAriaLabel}`}
           onClick={() => onClick('edit')}
           onKeyDown={(event) => onKeyDown(event, 'edit')}
           variant="plain"
         >
           <PencilAltIcon />
         </Button>
-      </div>
+      </Td>
     </>
   );
 };
@@ -106,9 +112,16 @@ interface EditableRow {
   columnNames: ColumnNames<CustomData>;
   dataOptions?: CustomDataOptions;
   saveChanges: (editedData: CustomData) => void;
+  ariaLabel: string;
 }
 
-const EditableRow: React.FunctionComponent<EditableRow> = ({ data, columnNames, dataOptions, saveChanges }) => {
+const EditableRow: React.FunctionComponent<EditableRow> = ({
+  data,
+  columnNames,
+  dataOptions,
+  saveChanges,
+  ariaLabel
+}) => {
   const [editable, setEditable] = React.useState(false);
   const [editedData, setEditedData] = React.useState(data);
 
@@ -121,6 +134,7 @@ const EditableRow: React.FunctionComponent<EditableRow> = ({ data, columnNames, 
         staticValue={data.textInput}
         editingValue={
           <TextInput
+            aria-label={`${columnNames.textInput} ${ariaLabel}`}
             ref={inputRef}
             value={editedData.textInput}
             onChange={(e) => setEditedData((data) => ({ ...data, textInput: (e.target as HTMLInputElement).value }))}
@@ -130,7 +144,13 @@ const EditableRow: React.FunctionComponent<EditableRow> = ({ data, columnNames, 
       <EditableCell
         dataLabel={columnNames.textInputDisabled}
         staticValue={data.textInputDisabled}
-        editingValue={<TextInput isDisabled={true} value={editedData.textInputDisabled ?? ''} />}
+        editingValue={
+          <TextInput
+            aria-label={`${columnNames.textInputDisabled} ${ariaLabel}`}
+            isDisabled={true}
+            value={editedData.textInputDisabled ?? ''}
+          />
+        }
       />
       <EditableCell
         dataLabel={columnNames.checkboxes}
@@ -171,12 +191,13 @@ const EditableRow: React.FunctionComponent<EditableRow> = ({ data, columnNames, 
           );
         })}
       />
-      <EditColumn
+      <EditButtonsCell
         onClick={(type) => {
           type === 'edit' ? setEditable(true) : setEditable(false);
           type === 'save' && saveChanges(editedData);
           type === 'cancel' && setEditedData(data);
         }}
+        rowAriaLabel={ariaLabel}
         elementToFocusOnEditRef={inputRef}
       />
     </Tr>
@@ -253,6 +274,7 @@ export const TableEditable: React.FunctionComponent = () => {
           <Th>{columnNames.textInputDisabled}</Th>
           <Th>{columnNames.checkboxes}</Th>
           <Th>{columnNames.radios}</Th>
+          <Th screenReaderText="Row edit actions" />
         </Tr>
       </Thead>
       <Tbody>
@@ -265,6 +287,7 @@ export const TableEditable: React.FunctionComponent = () => {
             saveChanges={(editedRow) => {
               setRows((rows) => rows.map((row, i) => (i === index ? editedRow : row)));
             }}
+            ariaLabel={`row ${index + 1}`}
           ></EditableRow>
         ))}
       </Tbody>
