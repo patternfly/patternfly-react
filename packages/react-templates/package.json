@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-templates",
-  "version": "6.0.0-alpha.16",
+  "version": "6.0.0-alpha.17",
   "description": "This package provides wrapped component demos for ease of use\n",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -33,7 +33,7 @@
     "subpaths": "node ../../scripts/exportSubpaths.js --config subpaths.config.json"
   },
   "dependencies": {
-    "@patternfly/react-core": "^6.0.0-alpha.66",
+    "@patternfly/react-core": "^6.0.0-alpha.67",
     "@patternfly/react-icons": "^6.0.0-alpha.24",
     "@patternfly/react-styles": "^6.0.0-alpha.24",
     "@patternfly/react-tokens": "^6.0.0-alpha.24",

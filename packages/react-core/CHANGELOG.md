@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.67](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.66...@patternfly/react-core@6.0.0-alpha.67) (2024-06-11)
+
+### Bug Fixes
+
+- **misc:** clean up demos - Timestamp date prop, icon status colors ([#10471](https://github.com/patternfly/patternfly-react/issues/10471)) ([8c1d97b](https://github.com/patternfly/patternfly-react/commit/8c1d97b1d8adb5877a4baf4b3cf8284c9b316c86))
+
 # [6.0.0-alpha.66](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.65...@patternfly/react-core@6.0.0-alpha.66) (2024-06-06)
 
 ### Features
