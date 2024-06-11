@@ -1,0 +1,18 @@
+name: Move stale issues back to triage
+on:
+  issues:
+    types:
+      - labeled
+jobs:
+  update-status:
+    if: github.event.label.name == 'stale'
+    runs-on: ubuntu-latest
+    steps:
+        - uses: github/update-project-action@v3
+          with:
+            github_token: ${{ secrets.GH_PROJECTS }}
+            organization: patternfly
+            project_number: 7
+            content_id: ${{ github.event.client_payload.command.resource.id }}
+            field: Status
+            value: Needs triage
