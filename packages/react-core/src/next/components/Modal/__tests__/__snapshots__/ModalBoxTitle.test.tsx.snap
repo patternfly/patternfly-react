@@ -3,7 +3,7 @@
 exports[`ModalBoxTitle alert variant 1`] = `
 <DocumentFragment>
   <h1
-    class="pf-v5-c-modal-box__title pf-m-icon"
+    class="pf-v5-c-modal-box__title pf-m-icon pf-m-warning"
     id="boxId"
   >
     <span
@@ -72,7 +72,7 @@ exports[`ModalBoxTitle custom icon variant 1`] = `
 exports[`ModalBoxTitle custom variant 1`] = `
 <DocumentFragment>
   <h1
-    class="pf-v5-c-modal-box__title pf-m-icon"
+    class="pf-v5-c-modal-box__title pf-m-icon pf-m-custom"
     id="boxId"
   >
     <span
@@ -100,7 +100,7 @@ exports[`ModalBoxTitle custom variant 1`] = `
     <span
       class="pf-v5-c-modal-box__title-text"
     >
-      Test Modal Box warning
+      Test Modal Box custom
     </span>
   </h1>
 </DocumentFragment>
@@ -109,7 +109,7 @@ exports[`ModalBoxTitle custom variant 1`] = `
 exports[`ModalBoxTitle danger variant 1`] = `
 <DocumentFragment>
   <h1
-    class="pf-v5-c-modal-box__title pf-m-icon"
+    class="pf-v5-c-modal-box__title pf-m-icon pf-m-danger"
     id="boxId"
   >
     <span
@@ -146,7 +146,7 @@ exports[`ModalBoxTitle danger variant 1`] = `
 exports[`ModalBoxTitle info variant 1`] = `
 <DocumentFragment>
   <h1
-    class="pf-v5-c-modal-box__title pf-m-icon"
+    class="pf-v5-c-modal-box__title pf-m-icon pf-m-info"
     id="boxId"
   >
     <span
@@ -183,7 +183,7 @@ exports[`ModalBoxTitle info variant 1`] = `
 exports[`ModalBoxTitle success variant 1`] = `
 <DocumentFragment>
   <h1
-    class="pf-v5-c-modal-box__title pf-m-icon"
+    class="pf-v5-c-modal-box__title pf-m-icon pf-m-success"
     id="boxId"
   >
     <span
