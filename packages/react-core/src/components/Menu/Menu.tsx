@@ -19,34 +19,34 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   selected?: any | any[];
   /** Callback called when an MenuItems's action button is clicked. You can also specify it within a MenuItemAction. */
   onActionClick?: (event?: any, itemId?: any, actionId?: any) => void;
-  /** @beta Indicates if menu contains a flyout menu */
+  /** Indicates if menu contains a flyout menu */
   containsFlyout?: boolean;
-  /** @beta Indicating that the menu should have nav flyout styling */
+  /** Indicating that the menu should have nav flyout styling */
   isNavFlyout?: boolean;
-  /** @beta Indicates if menu contains a drilldown menu */
+  /** Indicates if menu contains a drilldown menu */
   containsDrilldown?: boolean;
-  /** @beta Indicates if a menu is drilled into */
+  /** Indicates if a menu is drilled into */
   isMenuDrilledIn?: boolean;
-  /** @beta Indicates the path of drilled in menu itemIds */
+  /** Indicates the path of drilled in menu itemIds */
   drilldownItemPath?: string[];
-  /** @beta Array of menus that are drilled in */
+  /** Array of menus that are drilled in */
   drilledInMenus?: string[];
-  /** @beta Callback for drilling into a submenu */
+  /** Callback for drilling into a submenu */
   onDrillIn?: (
     event: React.KeyboardEvent | React.MouseEvent,
     fromItemId: string,
     toItemId: string,
     itemId: string
   ) => void;
-  /** @beta Callback for drilling out of a submenu */
+  /** Callback for drilling out of a submenu */
   onDrillOut?: (event: React.KeyboardEvent | React.MouseEvent, toItemId: string, itemId: string) => void;
-  /** @beta Callback for collecting menu heights */
+  /** Callback for collecting menu heights */
   onGetMenuHeight?: (menuId: string, height: number) => void;
-  /** @beta ID of parent menu for drilldown menus */
+  /** ID of parent menu for drilldown menus */
   parentMenu?: string;
-  /** @beta ID of the currently active menu for the drilldown variant */
+  /** ID of the currently active menu for the drilldown variant */
   activeMenu?: string;
-  /** @beta itemId of the currently active item. You can also specify isActive on the MenuItem. */
+  /** itemId of the currently active item. You can also specify isActive on the MenuItem. */
   activeItemId?: string | number;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLDivElement>;
@@ -60,7 +60,7 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
-  /** @beta Determines the accessible role of the menu. For a non-checkbox menu that can have
+  /** Determines the accessible role of the menu. For a non-checkbox menu that can have
    * one or more items selected, pass in "listbox". */
   role?: string;
 }

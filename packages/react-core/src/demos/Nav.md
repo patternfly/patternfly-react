@@ -58,5 +58,5 @@ import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardH
 
 ### Drilldown nav
 
-```js isBeta isFullscreen file="./examples/Nav/NavDrilldown.tsx"
+```js isFullscreen file="./examples/Nav/NavDrilldown.tsx"
 ```

@@ -15,10 +15,6 @@ export interface NavListProps
   children?: React.ReactNode;
   /** Additional classes added to the list */
   className?: string;
-  /** @deprecated Please use backScrollAriaLabel. Aria-label for the left scroll button */
-  ariaLeftScroll?: string;
-  /** @deprecated Please use forwardScrollAriaLabel. Aria-label for the right scroll button */
-  ariaRightScroll?: string;
   /** Aria-label for the back scroll button */
   backScrollAriaLabel?: string;
   /** Aria-label for the forward scroll button */
@@ -30,9 +26,7 @@ class NavList extends React.Component<NavListProps> {
   static contextType = NavContext;
   context!: React.ContextType<typeof NavContext>;
   static defaultProps: NavListProps = {
-    ariaLeftScroll: 'Scroll left',
     backScrollAriaLabel: 'Scroll back',
-    ariaRightScroll: 'Scroll right',
     forwardScrollAriaLabel: 'Scroll foward'
   };
   private direction = 'ltr';
@@ -126,15 +120,7 @@ class NavList extends React.Component<NavListProps> {
   }
 
   render() {
-    const {
-      children,
-      className,
-      ariaLeftScroll,
-      ariaRightScroll,
-      backScrollAriaLabel,
-      forwardScrollAriaLabel,
-      ...props
-    } = this.props;
+    const { children, className, backScrollAriaLabel, forwardScrollAriaLabel, ...props } = this.props;
     const { scrollViewAtStart, scrollViewAtEnd } = this.state;
 
     return (
@@ -147,7 +133,7 @@ class NavList extends React.Component<NavListProps> {
                   <div className={css(styles.navScrollButton)}>
                     <Button
                       variant="plain"
-                      aria-label={backScrollAriaLabel || ariaLeftScroll}
+                      aria-label={backScrollAriaLabel}
                       onClick={this.scrollBack}
                       isDisabled={scrollViewAtStart}
                       tabIndex={isSidebarOpen ? null : -1}
@@ -169,7 +155,7 @@ class NavList extends React.Component<NavListProps> {
                   <div className={css(styles.navScrollButton)}>
                     <Button
                       variant="plain"
-                      aria-label={forwardScrollAriaLabel || ariaRightScroll}
+                      aria-label={forwardScrollAriaLabel}
                       onClick={this.scrollForward}
                       isDisabled={scrollViewAtEnd}
                       tabIndex={isSidebarOpen ? null : -1}

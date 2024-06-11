@@ -22,7 +22,7 @@ export interface ExpandableSectionToggleProps extends React.HTMLProps<HTMLDivEle
   toggleId?: string;
   /** Direction the toggle arrow should point when the expandable section is expanded. */
   direction?: 'up' | 'down';
-  /** @beta Flag to determine toggle styling when the expandable content is truncated. */
+  /** Flag to determine toggle styling when the expandable content is truncated. */
   hasTruncatedContent?: boolean;
   /** Flag indicating if the expandable section is expanded. */
   isExpanded?: boolean;

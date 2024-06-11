@@ -41,7 +41,7 @@ export interface IconComponentProps extends Omit<React.HTMLProps<HTMLSpanElement
   isInProgress?: boolean;
   /** Aria-label for the default progress icon */
   defaultProgressArialabel?: string;
-  /** @beta Flag indicating whether the icon passed as children should be mirrored for
+  /** Flag indicating whether the icon passed as children should be mirrored for
    * right to left (RTL) languages. This will not mirror the icon passed to progressIcon.
    */
   shouldMirrorRTL?: boolean;

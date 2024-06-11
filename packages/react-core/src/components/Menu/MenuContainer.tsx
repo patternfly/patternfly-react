@@ -41,7 +41,6 @@ export interface MenuContainerProps {
 
 /**
  * Container that links a menu and menu toggle together, to handle basic keyboard input and control the opening and closing of a menu.
- * This component is currently in beta and is subject to change.
  */
 export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   menu,

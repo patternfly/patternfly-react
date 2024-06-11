@@ -19,5 +19,5 @@ propComponents: ['Spinner']
 ```
 
 ### Inline size
-```ts file="./SpinnerInline.tsx" isBeta
+```ts file="./SpinnerInline.tsx"
 ```

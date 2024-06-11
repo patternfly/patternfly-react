@@ -67,15 +67,15 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   isFocused?: boolean;
   /** Flag indicating the item is in danger state */
   isDanger?: boolean;
-  /** @beta Flyout menu. Should not be used if the to prop is defined. */
+  /** Flyout menu. Should not be used if the to prop is defined. */
   flyoutMenu?: React.ReactElement;
-  /** @beta Callback function when mouse leaves trigger */
+  /** Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: any) => void;
-  /** @beta Drilldown menu of the item. Should be a Menu or DrilldownMenu type. */
+  /** Drilldown menu of the item. Should be a Menu or DrilldownMenu type. */
   drilldownMenu?: React.ReactNode | (() => React.ReactNode);
-  /** @beta Sub menu direction */
+  /** Sub menu direction */
   direction?: 'down' | 'up';
-  /** @beta True if item is on current selection path */
+  /** True if item is on current selection path */
   isOnPath?: boolean;
   /** Adds an accessible name to the menu item. */
   'aria-label'?: string;

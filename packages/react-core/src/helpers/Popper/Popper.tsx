@@ -60,7 +60,7 @@ export interface PopperProps {
   /** The popper (menu/tooltip/popover) element */
   popper: React.ReactElement;
   /**
-   * @beta Reference to the popper (menu/tooltip/popover) element.
+   * Reference to the popper (menu/tooltip/popover) element.
    * Passing this prop will remove the wrapper div element from the popper.
    */
   popperRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;

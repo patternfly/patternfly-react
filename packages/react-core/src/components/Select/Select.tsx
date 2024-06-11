@@ -60,7 +60,7 @@ export interface SelectProps extends MenuProps, OUIAProps {
   /** Callback to allow the select component to change the open state of the menu.
    * Triggered by clicking outside of the menu, or by pressing any keys specificed in onOpenChangeKeys. */
   onOpenChange?: (isOpen: boolean) => void;
-  /** @beta Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
+  /** Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
   /** Indicates if the select should be without the outer box-shadow */
   isPlain?: boolean;
@@ -68,7 +68,7 @@ export interface SelectProps extends MenuProps, OUIAProps {
   innerRef?: React.Ref<HTMLDivElement>;
   /** z-index of the select menu */
   zIndex?: number;
-  /** @beta Determines the accessible role of the select. For a checkbox select pass in "menu". */
+  /** Determines the accessible role of the select. For a checkbox select pass in "menu". */
   role?: string;
   /** Additional properties to pass to the popper */
   popperProps?: SelectPopperProps;

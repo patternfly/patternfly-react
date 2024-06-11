@@ -10,7 +10,6 @@ propComponents: [
   'ChartVoronoiContainer'
 ]
 hideDarkMode: true
-beta: true
 ---
 
 import { Chart, ChartAxis, ChartBoxPlot, ChartCursorFlyout, ChartCursorTooltip, ChartLegendTooltip, ChartThemeColor, ChartThreshold, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';

@@ -2,7 +2,6 @@
 id: Date and time picker
 section: components
 subsection: date-and-time
-beta: true
 ---
 
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';

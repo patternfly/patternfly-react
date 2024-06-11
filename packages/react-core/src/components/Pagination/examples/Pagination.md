@@ -57,5 +57,5 @@ By not passing `itemCount` and passing `toggleTemplate` you can customize the to
 
 ### Inset
 
-```ts file="./PaginationInset.tsx" isBeta
+```ts file="./PaginationInset.tsx"
 ```

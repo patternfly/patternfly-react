@@ -283,6 +283,6 @@ To create a toggle with a status, pass in the `status` property to the `MenuTogg
 
 When the status value is "warning" or "danger", you must include helper text that conveys what is causing the warning/error.
 
-```ts isBeta file='MenuToggleStatus.tsx'
+```ts file='MenuToggleStatus.tsx'
 
 ```

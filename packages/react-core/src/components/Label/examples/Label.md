@@ -42,7 +42,7 @@ Click or press either enter or space to begin editing a label. After editing, cl
 
 You can also customize any Label's close button aria-label as this example shows with `closeBtnAriaLabel`.
 
-```ts file="LabelEditable.tsx" isBeta
+```ts file="LabelEditable.tsx"
 
 ```
 
@@ -86,7 +86,7 @@ Labels in a group can also be stacked vertically. This example shows a verical l
 
 ### Editable label group
 
-```ts isBeta file="LabelGroupEditableLabels.tsx"
+```ts file="LabelGroupEditableLabels.tsx"
 
 ```
 
@@ -94,6 +94,6 @@ Labels in a group can also be stacked vertically. This example shows a verical l
 
 The contents of a label group can be modified by removing labels or adding new ones using the add button. For additional documentation that showcases adding a new label, see [label demos](/components/label/react-demos).
 
-```ts isBeta file="LabelGroupEditableAdd.tsx"
+```ts file="LabelGroupEditableAdd.tsx"
 
 ```

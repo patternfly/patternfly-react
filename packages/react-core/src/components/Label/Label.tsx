@@ -29,13 +29,13 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   isCompact?: boolean;
   /** Flag indicating the label is disabled. Works only on clickable labels, so either href or onClick props must be passed in. */
   isDisabled?: boolean;
-  /** @beta Flag indicating the label is editable. */
+  /** Flag indicating the label is editable. */
   isEditable?: boolean;
-  /** @beta Additional props passed to the editable label text div. Optionally passing onInput and onBlur callbacks will allow finer custom text input control. */
+  /** Additional props passed to the editable label text div. Optionally passing onInput and onBlur callbacks will allow finer custom text input control. */
   editableProps?: any;
-  /** @beta Callback when an editable label completes an edit. */
+  /** Callback when an editable label completes an edit. */
   onEditComplete?: (event: MouseEvent | KeyboardEvent, newText: string) => void;
-  /** @beta Callback when an editable label cancels an edit. */
+  /** Callback when an editable label cancels an edit. */
   onEditCancel?: (event: KeyboardEvent, previousText: string) => void;
   /** The max width of the label before it is truncated. Can be any valid CSS unit, such as '100%', '100px', or '16ch'. */
   textMaxWidth?: string;
