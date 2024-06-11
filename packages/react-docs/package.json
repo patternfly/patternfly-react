@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "7.0.0-alpha.71",
+  "version": "7.0.0-alpha.72",
   "publishConfig": {
     "access": "public",
     "tag": "alpha"
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "6.0.0-alpha.150",
-    "@patternfly/react-charts": "^8.0.0-alpha.24",
+    "@patternfly/react-charts": "^8.0.0-alpha.25",
     "@patternfly/react-code-editor": "^6.0.0-alpha.67",
     "@patternfly/react-core": "^6.0.0-alpha.67",
     "@patternfly/react-drag-drop": "^6.0.0-alpha.49",
