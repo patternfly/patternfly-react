@@ -14,6 +14,7 @@ import {
   Flex,
   FlexItem,
   Gallery,
+  Icon,
   MenuToggle,
   Select,
   SelectList,
@@ -39,7 +40,7 @@ export const CardEventsView: React.FunctionComponent = () => {
         Error
       </SelectOption>
       <SelectOption value="Warning" key="option3">
-        Error
+        Warning
       </SelectOption>
     </SelectList>
   );
@@ -76,7 +77,9 @@ export const CardEventsView: React.FunctionComponent = () => {
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <ExclamationCircleIcon aria-hidden="true" />
+                      <Icon status="danger">
+                        <ExclamationCircleIcon aria-hidden="true" />
+                      </Icon>
                     </FlexItem>
                     <FlexItem>
                       <span>Readiness probe failed</span>
@@ -88,14 +91,16 @@ export const CardEventsView: React.FunctionComponent = () => {
                   connection refused
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <Timestamp> Jun 17, 11:02 am </Timestamp>
+                  <Timestamp date={new Date('2023-06-17T11:02')} dateFormat="medium" timeFormat="short" />
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <CheckCircleIcon aria-hidden="true" />
+                      <Icon status="success">
+                        <CheckCircleIcon aria-hidden="true" />
+                      </Icon>
                     </FlexItem>
                     <FlexItem>
                       <span>Successful assignment</span>
@@ -106,7 +111,7 @@ export const CardEventsView: React.FunctionComponent = () => {
                   Successfully assigned default/example to ip-10-0-130-149.ec2.internal
                 </DescriptionListDescription>
                 <DescriptionListDescription>
-                  <Timestamp> Jun 17, 11:13 am </Timestamp>
+                  <Timestamp date={new Date('2023-06-17T11:13')} dateFormat="medium" timeFormat="short" />
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
@@ -122,14 +127,16 @@ export const CardEventsView: React.FunctionComponent = () => {
                 </DescriptionListTerm>
                 <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <Timestamp> Jun 17, 10:59 am </Timestamp>
+                  <Timestamp date={new Date('2023-06-17T10:59')} dateFormat="medium" timeFormat="short" />
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
-                      <CheckCircleIcon aria-hidden="true" />
+                      <Icon status="success">
+                        <CheckCircleIcon aria-hidden="true" />
+                      </Icon>
                     </FlexItem>
                     <FlexItem>
                       <span>Created container</span>
@@ -138,7 +145,7 @@ export const CardEventsView: React.FunctionComponent = () => {
                 </DescriptionListTerm>
                 <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
                 <DescriptionListDescription>
-                  <Timestamp> Jun 17, 10:45 am </Timestamp>
+                  <Timestamp date={new Date('2023-06-17T10:45')} dateFormat="medium" timeFormat="short" />
                 </DescriptionListDescription>
               </DescriptionListGroup>
             </DescriptionList>

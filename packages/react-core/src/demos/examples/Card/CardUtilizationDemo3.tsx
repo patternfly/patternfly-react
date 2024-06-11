@@ -15,7 +15,8 @@ import {
   SelectList,
   SelectOption,
   MenuToggle,
-  MenuToggleElement
+  MenuToggleElement,
+  Icon
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import { Chart, ChartStack, ChartBar, ChartTooltip } from '@patternfly/react-charts';
@@ -79,7 +80,9 @@ export const CardUtilizationDemo3: React.FunctionComponent = () => {
                   <span>System</span>
                 </FlexItem>
                 <Flex>
-                  <ExclamationCircleIcon aria-hidden />
+                  <Icon status="danger">
+                    <ExclamationCircleIcon aria-hidden />
+                  </Icon>
                   <a href="#">25 incidents detected</a>
                 </Flex>
                 <FlexItem>
