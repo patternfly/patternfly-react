@@ -19,7 +19,6 @@ const transformer: ts.TransformerFactory<ts.SourceFile> = (context) => (sourceFi
       if (/@patternfly\/react-styles\/css/.test(text) && !/\.[a-z]{1,5}('|");?$/.test(text)) {
         return factory.updateImportDeclaration(
           node,
-          node.decorators,
           node.modifiers,
           node.importClause,
           factory.createStringLiteral(text.trim().replace(/"|'/g, '').replace(/$/, '.mjs'), true),
