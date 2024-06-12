@@ -36,7 +36,7 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
     this.setState({
       table: {
         ...this.state.table,
-        data: this.state.table.data.map(d => (d.id === id ? { ...d, isChecked } : d))
+        data: this.state.table.data.map((d) => (d.id === id ? { ...d, isChecked } : d))
       }
     });
   };
@@ -82,7 +82,7 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
       const [_first, ...rest] = data;
       rr = rest;
     }
-    const rows = rr.map(r => ({
+    const rows = rr.map((r) => ({
       cells: [
         {
           title: <Switch id={r.id} isChecked={r.isChecked} onChange={this.handleChangeTable(r.id)} />

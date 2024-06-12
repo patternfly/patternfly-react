@@ -52,7 +52,7 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
     const filtered =
       this.state.searchValue === ''
         ? this.items
-        : this.items.filter(str => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
+        : this.items.filter((str) => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
 
     this.setState({ filteredItems: filtered || [] });
   };

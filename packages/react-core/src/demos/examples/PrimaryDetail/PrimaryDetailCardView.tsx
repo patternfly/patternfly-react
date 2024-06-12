@@ -518,7 +518,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
               actions: (
                 <>
                   <Dropdown
-                    isOpen={!!state[key] ?? false}
+                    isOpen={!!state[key]}
                     onOpenChange={(isOpen) => setState({ [key]: isOpen })}
                     popperProps={{ position: 'right' }}
                     toggle={(toggleRef: React.Ref<MenuToggleElement>) => (

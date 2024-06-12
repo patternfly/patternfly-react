@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import {
-  StackItem,
-  Title
-} from '@patternfly/react-core';
+import { StackItem, Title } from '@patternfly/react-core';
 import {
   Select,
   SelectGroup,
@@ -98,7 +95,7 @@ export class SelectViewMoreGroupedDemo extends Component<SelectViewMoreGroupedDe
     if (selectedCheck.includes(selection.toString())) {
       this.setState(
         (prevState: SelectViewMoreGroupedDemoState) => ({
-          selectedCheck: prevState.selectedCheck.filter(item => item !== selection)
+          selectedCheck: prevState.selectedCheck.filter((item) => item !== selection)
         }),
         () => console.log('selections: ', this.state.selectedCheck)
       );
@@ -144,16 +141,8 @@ export class SelectViewMoreGroupedDemo extends Component<SelectViewMoreGroupedDe
   };
 
   render() {
-    const {
-      isOpen,
-      isOpenCheck,
-      selected,
-      selectedCheck,
-      isLoading,
-      isLoadingCheck,
-      numOptions,
-      numOptionsCheck
-    } = this.state;
+    const { isOpen, isOpenCheck, selected, selectedCheck, isLoading, isLoadingCheck, numOptions, numOptionsCheck } =
+      this.state;
     const titleId = 'view-more-grouped-select-id';
     const titleIdCheck = 'view-more-grouped-check-select-id';
 

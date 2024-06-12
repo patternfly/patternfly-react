@@ -18,7 +18,7 @@ module.exports = {
     const [importMap = {}] = context.options;
     return {
       ImportDeclaration(node) {
-        const defaultImport = node.specifiers.find(spec => spec.type === 'ImportDefaultSpecifier');
+        const defaultImport = node.specifiers.find((spec) => spec.type === 'ImportDefaultSpecifier');
         if (!defaultImport) {
           return;
         }
@@ -35,7 +35,7 @@ module.exports = {
             fix(fixer) {
               const [varDecl] = context.getDeclaredVariables(node);
               return [
-                ...varDecl.references.map(ref => fixer.replaceText(ref.identifier, expectedName)),
+                ...varDecl.references.map((ref) => fixer.replaceText(ref.identifier, expectedName)),
                 fixer.replaceText(defaultImport, expectedName)
               ];
             }

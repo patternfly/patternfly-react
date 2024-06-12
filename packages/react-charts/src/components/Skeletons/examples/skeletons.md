@@ -113,6 +113,7 @@ export const ChartAreaSkeleton: React.FunctionComponent = () => {
     </>
   );
 }
+ChartAreaSkeleton.displayName = 'ChartAreaSkeleton';
 ```
 
 ### Bar chart
@@ -170,6 +171,7 @@ export const ChartBarSkeleton: React.FunctionComponent = () => {
     </>
   );
 }
+ChartBarSkeleton.displayName = 'ChartBarSkeleton';
 ```
 
 ### Box plot chart
@@ -228,6 +230,7 @@ export const ChartBoxPlotSkeleton: React.FunctionComponent = () => {
     </>
   );
 }
+ChartBoxPlotSkeleton.displayName = 'ChartBoxPlotSkeleton';
 ```
 
 ### Bullet chart
@@ -282,6 +285,7 @@ export const ChartBulletSkeleton: React.FunctionComponent = () => {
     </>
   );
 }
+ChartBulletSkeleton.displayName = 'ChartBulletSkeleton';
 ```
 
 ### Donut chart
@@ -321,6 +325,7 @@ export const ChartDonutSkeleton: React.FunctionComponent = () => {
     </>
   );
 }
+ChartDonutSkeleton.displayName = 'ChartDonutSkeleton';
 ```
 
 ### Donut utilization chart
@@ -370,6 +375,7 @@ export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
     </>
   );
 }
+ChartDonutUtilizationSkeleton.displayName = 'ChartDonutUtilizationSkeleton';
 ```
 
 ### Donut utilization threshold
@@ -414,6 +420,7 @@ export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
     </>
   );
 }
+ChartDonutUtilizationSkeleton.displayName = 'ChartDonutUtilizationSkeleton';
 ```
 
 ### Line chart
@@ -504,6 +511,7 @@ export const ChartLineSkeleton: React.FunctionComponent = () => {
     </>
   );
 }
+ChartLineSkeleton.displayName = 'ChartLineSkeleton';
 ```
 
 ### Pie chart
@@ -552,6 +560,7 @@ export const ChartPieSkeleton: React.FunctionComponent = () => {
     </>
   );
 }
+ChartPieSkeleton.displayName = 'ChartPieSkeleton';
 ```
 
 ### Scatter chart
@@ -609,6 +618,7 @@ export const ChartScatterSkeleton: React.FunctionComponent = () => {
     </>
   );
 }
+ChartScatterSkeleton.displayName = 'ChartScatterSkeleton';
 ```
 
 ### Stack chart
@@ -665,6 +675,7 @@ export const ChartStackSkeleton: React.FunctionComponent = () => {
     </>
   );
 }
+ChartStackSkeleton.displayName = 'ChartStackSkeleton';
 ```
 
 ### Threshold chart
@@ -766,6 +777,7 @@ export const ChartThresholdSkeleton: React.FunctionComponent = () => {
     </>
   );
 }
+ChartThresholdSkeleton.displayName = 'ChartThresholdSkeleton';
 ```
 
 ## Documentation

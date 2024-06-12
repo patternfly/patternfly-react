@@ -20,7 +20,7 @@ export class LabelDemo extends Component {
         <Label href="#" onClose={() => {}}>
           Grey link removeable
         </Label>
-        <span style={{ width: "150px", display: "inline-block"}}>
+        <span style={{ width: '150px', display: 'inline-block' }}>
           <Label id="tooltip" variant="outline">
             Very very very very long label text that should be truncated without textMaxWidth
           </Label>

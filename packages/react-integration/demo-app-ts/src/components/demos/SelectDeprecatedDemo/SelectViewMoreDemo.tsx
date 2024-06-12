@@ -81,7 +81,7 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
     if (selectedCheck.includes(selection.toString())) {
       this.setState(
         (prevState: SelectViewMoreDemoState) => ({
-          selectedCheck: prevState.selectedCheck.filter(item => item !== selection)
+          selectedCheck: prevState.selectedCheck.filter((item) => item !== selection)
         }),
         () => console.log('selections: ', this.state.selectedCheck)
       );
@@ -127,16 +127,8 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
   };
 
   render() {
-    const {
-      isOpen,
-      isOpenCheck,
-      selected,
-      selectedCheck,
-      isLoading,
-      isLoadingCheck,
-      numOptions,
-      numOptionsCheck
-    } = this.state;
+    const { isOpen, isOpenCheck, selected, selectedCheck, isLoading, isLoadingCheck, numOptions, numOptionsCheck } =
+      this.state;
     const titleId = 'view-more-select-id';
     const titleIdCheck = 'view-more-check-select-id';
 

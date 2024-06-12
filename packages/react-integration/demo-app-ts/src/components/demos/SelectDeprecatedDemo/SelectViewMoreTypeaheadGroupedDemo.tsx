@@ -1,8 +1,13 @@
 import React from 'react';
 import { StackItem, Title } from '@patternfly/react-core';
-import { Select, SelectOption, SelectVariant, SelectGroup, SelectOptionObject } from '@patternfly/react-core/deprecated';
+import {
+  Select,
+  SelectOption,
+  SelectVariant,
+  SelectGroup,
+  SelectOptionObject
+} from '@patternfly/react-core/deprecated';
 
-/* eslint-disable no-console */
 interface TypeAheadOption {
   value?: string;
   disabled?: boolean;

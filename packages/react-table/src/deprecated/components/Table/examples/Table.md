@@ -508,16 +508,14 @@ class EditableRowsTable extends React.Component {
                   onSelect={this.onSelect}
                   clearSelection={this.clearSelection}
                   isOpen={props.isSelectOpen}
-                  options={props.options.map((option, index) => {
-                    return (
+                  options={props.options.map((option, index) => (
                       <SelectOptionDeprecated
                         key={index}
                         value={option.value}
                         id={'uniqueIdRow2Cell4Option' + index}
                         isPlaceholder={option.isPlaceholder}
                       />
-                    );
-                  })}
+                    ))}
                   onToggle={(event, isOpen) => {
                     this.onToggle(isOpen, rowIndex, cellIndex);
                   }}
@@ -668,7 +666,7 @@ class EditableRowsTable extends React.Component {
     };
 
     this.updateEditableRows = (evt, type, isEditable, rowIndex, validationErrors) => {
-      let newRows = Array.from(this.state.rows);
+      const newRows = Array.from(this.state.rows);
 
       if (validationErrors && Object.keys(validationErrors).length) {
         newRows[rowIndex] = validateCellEdits(newRows[rowIndex], type, validationErrors);
@@ -688,7 +686,7 @@ class EditableRowsTable extends React.Component {
     };
 
     this.handleTextInputChange = (newValue, evt, rowIndex, cellIndex) => {
-      let newRows = Array.from(this.state.rows);
+      const newRows = Array.from(this.state.rows);
       newRows[rowIndex].cells[cellIndex].props.editableValue = newValue;
       this.setState({
         rows: newRows
@@ -748,7 +746,7 @@ class EditableRowsTable extends React.Component {
 
     this.onToggle = (isOpen, rowIndex, cellIndex) => {
       console.log('isOpen', isOpen);
-      let newRows = Array.from(this.state.rows);
+      const newRows = Array.from(this.state.rows);
       newRows[rowIndex].cells[cellIndex].props.isSelectOpen = isOpen;
       this.setState({
         rows: newRows

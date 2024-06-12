@@ -19,7 +19,7 @@ interface ItemType {
 }
 
 const getItems = (count: number) =>
-  Array.from({ length: count }, (_, idx) => idx).map(idx => ({
+  Array.from({ length: count }, (_, idx) => idx).map((idx) => ({
     id: `draggable-item-${idx}`,
     content: `item ${idx} `
   }));
@@ -56,7 +56,7 @@ export class DataListDraggableDemo extends React.Component {
     }
   };
 
-  onDrop = (source: DraggableItemPosition, dest?: DraggableItemPosition)  => {
+  onDrop = (source: DraggableItemPosition, dest?: DraggableItemPosition) => {
     if (dest) {
       const newItems = reorder(this.state.items, source.index, dest.index);
       this.setState({

@@ -33,9 +33,7 @@ class SingleOption extends React.Component {
       
       this.onSelect = event => {
         const id = event.currentTarget.id;
-        this.setState(() => {
-          return { selectedOption: id };
-        });
+        this.setState(() => ({ selectedOption: id }));
       };
       
     }
@@ -120,16 +118,12 @@ class MultipleOptions extends React.Component {
       
       this.onSelectColumn = event => {
         const id = event.currentTarget.id;
-        this.setState(() => {
-          return { sortColumn: id };
-        });
+        this.setState(() => ({ sortColumn: id }));
       };
       
       this.onSelectDirection = event => {
         const id = event.currentTarget.id;
-        this.setState(() => {
-          return { sortDirection: id };
-        });
+        this.setState(() => ({ sortDirection: id }));
       };
     }
 
@@ -196,9 +190,7 @@ class Plain extends React.Component {
       
       this.onSelect = event => {
         const id = event.currentTarget.id;
-        this.setState((prevState) => {
-          return { [id]: !prevState[id] };
-        });
+        this.setState((prevState) => ({ [id]: !prevState[id] }));
       };
     }
 
@@ -263,9 +255,7 @@ class Top extends React.Component {
     
     this.onSelect = event => {
       const id = event.currentTarget.id;
-      this.setState((prevState) => {
-        return { [id]: !prevState[id] };
-      });
+      this.setState((prevState) => ({ [id]: !prevState[id] }));
     };
   }
 
@@ -314,9 +304,7 @@ class AlignRight extends React.Component {
     
     this.onSelect = event => {
       const id = event.currentTarget.id;
-      this.setState((prevState) => {
-        return { [id]: !prevState[id] };
-      });
+      this.setState((prevState) => ({ [id]: !prevState[id] }));
     };
   }
 
@@ -367,9 +355,7 @@ class PlainWithText extends React.Component {
       
       this.onSelect = event => {
         const id = event.currentTarget.id;
-        this.setState((prevState) => {
-          return { [id]: !prevState[id] };
-        });
+        this.setState((prevState) => ({ [id]: !prevState[id] }));
       };
 
       this.onToggle = () => {
@@ -427,9 +413,7 @@ class PlainWithText extends React.Component {
       
       this.onSelect = event => {
         const id = event.currentTarget.id;
-        this.setState((prevState) => {
-          return { [id]: !prevState[id] };
-        });
+        this.setState((prevState) => ({ [id]: !prevState[id] }));
       };
 
       this.onToggle = () => {
@@ -483,9 +467,7 @@ class GroupedItems extends React.Component {
     
     this.onSelect = event => {
       const id = event.currentTarget.id;
-      this.setState(() => {
-        return { selectedOption: id };
-      });
+      this.setState(() => ({ selectedOption: id }));
     };
   }
   
@@ -544,9 +526,7 @@ class SingleOption extends React.Component {
       
       this.onSelect = event => {
         const id = event.currentTarget.id;
-        this.setState(() => {
-          return { selectedOption: id };
-        });
+        this.setState(() => ({ selectedOption: id }));
       };
       
     }

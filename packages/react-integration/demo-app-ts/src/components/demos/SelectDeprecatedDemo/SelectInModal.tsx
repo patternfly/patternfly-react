@@ -1,17 +1,6 @@
 import React from 'react';
-import {
-  Modal,
-  ModalVariant,
-  Button,
-  TimePicker,
-  InputGroup,
-  InputGroupItem
-} from '@patternfly/react-core';
-import {
-  Select,
-  SelectOption,
-  SelectOptionObject
-} from '@patternfly/react-core/deprecated';
+import { Modal, ModalVariant, Button, TimePicker, InputGroup, InputGroupItem } from '@patternfly/react-core';
+import { Select, SelectOption, SelectOptionObject } from '@patternfly/react-core/deprecated';
 
 export const SelectInModal = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);

@@ -65,7 +65,6 @@ describe('ToggleGroup', () => {
     const { asFragment } = render(
       <ToggleGroup isCompact aria-label="non-element children">
         <ToggleGroupItem text="Test" />
-        {false && <ToggleGroupItem text="Test2" />}
         {'Test 3'}
         {undefined}
         {null}

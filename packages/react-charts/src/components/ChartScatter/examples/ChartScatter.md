@@ -177,26 +177,22 @@ class ScatterLineChart extends React.Component {
             <ChartAxis tickValues={[2, 3, 4]} />
             <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
             <ChartGroup>
-              {this.series.map((s, idx) => {
-                return (
+              {this.series.map((s, idx) => (
                     <ChartScatter
                       data={s.datapoints}
                       key={'scatter-' + idx}
                       name={'scatter-' + idx}
                     />
-                );
-              })}
+                ))}
             </ChartGroup>
             <ChartGroup>
-              {this.series.map((s, idx) => {
-                return (
+              {this.series.map((s, idx) => (
                     <ChartLine
                       key={'line-' + idx}
                       name={'line-' + idx}
                       data={s.datapoints}
                     />
-                );
-              })}
+                ))}
             </ChartGroup>
           </Chart>
         </div>
@@ -303,21 +299,17 @@ class ScatterAreaChart extends React.Component {
             <ChartAxis />
             <ChartAxis dependentAxis showGrid />
             <ChartGroup>
-              {this.series.map((s, idx) => {
-                return (
+              {this.series.map((s, idx) => (
                   <ChartScatter data={s.datapoints} key={'scatter-' + idx} name={'scatter-' + idx} />
-                );
-              })}
+                ))}
             </ChartGroup>
             <ChartGroup>
-              {this.series.map((s, idx) => {
-                return (
+              {this.series.map((s, idx) => (
                   <ChartArea 
                     interpolation="monotoneX"
                     key={'area-' + idx} name={'area-' + idx} data={s.datapoints} 
                   />
-                );
-              })}
+                ))}
             </ChartGroup>
           </Chart>
         </div>

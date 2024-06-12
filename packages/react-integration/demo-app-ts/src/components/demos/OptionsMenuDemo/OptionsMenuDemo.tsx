@@ -83,10 +83,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
         </OptionsMenuItem>
       ],
       toggle: (
-        <OptionsMenuToggle
-          onToggle={this.singleOptionOnToggle}
-          toggleTemplate={<>{this.state.toggleTemplateText}</>}
-        />
+        <OptionsMenuToggle onToggle={this.singleOptionOnToggle} toggleTemplate={<>{this.state.toggleTemplateText}</>} />
       ),
       isOpen: this.state.singleOptionIsOpen
     };

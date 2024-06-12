@@ -22,7 +22,7 @@ jobs:
           key: ${{ runner.os }}-eslint-cache
 
       - name: Run linter
-        run: yarn lint:all
+        run: yarn lint
 
   build:
     name: Build

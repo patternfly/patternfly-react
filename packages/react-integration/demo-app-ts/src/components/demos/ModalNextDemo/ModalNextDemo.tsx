@@ -20,7 +20,6 @@ interface ModalDemoState {
   isCustomFocusModalOpen: boolean;
 }
 
-// eslint-disable-next-line patternfly-react/no-anonymous-functions
 export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
   static displayName = 'ModalDemo';
 
@@ -97,14 +96,14 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
   handleModalCustomEscapeToggle = (_event?: any, customEscapePressed?: boolean) => {
     this.setState(({ isModalCustomEscapeOpen }) => ({
       isModalCustomEscapeOpen: !isModalCustomEscapeOpen,
-      customEscapePressed: customEscapePressed ?? false 
+      customEscapePressed: customEscapePressed ?? false
     }));
   };
 
   handleModalAlertVariantToggle = (_event?: any, customEscapePressed?: boolean) => {
     this.setState(({ isModalAlertVariantOpen }) => ({
       isModalAlertVariantOpen: !isModalAlertVariantOpen,
-      customEscapePressed: customEscapePressed ?? false 
+      customEscapePressed: customEscapePressed ?? false
     }));
   };
 

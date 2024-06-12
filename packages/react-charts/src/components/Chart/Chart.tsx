@@ -615,6 +615,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
           colorScale,
           ...(defaultPatternScale && { patternScale: defaultPatternScale }),
           ...(name &&
+            // eslint-disable-next-line no-constant-binary-expression
             typeof (child as any).name !== undefined && {
               name: `${name}-${(child as any).type.displayName}-${index}`
             }),

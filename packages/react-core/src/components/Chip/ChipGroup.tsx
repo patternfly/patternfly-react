@@ -77,7 +77,7 @@ class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     defaultIsOpen: false,
     numChips: 3,
     isClosable: false,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     onClick: (_e: React.MouseEvent) => undefined as any,
     onOverflowChipClick: (_e: React.MouseEvent) => undefined as any,
     closeBtnAriaLabel: 'Close chip group',

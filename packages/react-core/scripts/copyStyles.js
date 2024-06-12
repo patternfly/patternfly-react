@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const { copySync, readFileSync, writeFileSync } = require('fs-extra');
 const { resolve, dirname, join } = require('path');
 const { parse: parseCSS, stringify: stringifyCSS } = require('css');
-/* eslint-enable @typescript-eslint/no-var-requires */
 
 const stylesDir = resolve(__dirname, '../dist/styles');
 const pfDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
@@ -32,10 +30,10 @@ for (const [targetCss, baseCss] of Object.entries(baseCssFiles)) {
   const ast = parseCSS(css);
 
   // Core provides font awesome fonts and utlities. React does not use these
-  ast.stylesheet.rules = ast.stylesheet.rules.filter(rule => {
+  ast.stylesheet.rules = ast.stylesheet.rules.filter((rule) => {
     switch (rule.type) {
       case 'rule':
-        return !rule.selectors.some(sel => unusedSelectorRegEx.test(sel));
+        return !rule.selectors.some((sel) => unusedSelectorRegEx.test(sel));
       case 'keyframes':
         return !unusedKeyFramesRegEx.test(rule.name);
       case 'charset':
@@ -43,7 +41,7 @@ for (const [targetCss, baseCss] of Object.entries(baseCssFiles)) {
         return false;
       case 'font-face':
         // eslint-disable-next-line no-case-declarations
-        const fontFamilyDecl = rule.declarations.find(decl => decl.property === 'font-family');
+        const fontFamilyDecl = rule.declarations.find((decl) => decl.property === 'font-family');
         return !unusedFontFamilyRegEx.test(fontFamilyDecl.value);
       default:
         return true;

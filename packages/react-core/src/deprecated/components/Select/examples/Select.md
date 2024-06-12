@@ -59,7 +59,7 @@ class SingleSelectInput extends React.Component {
     };
 
     this.onSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
+      if (isPlaceholder) {this.clearSelection();}
       else {
         this.setState({
           selected: selection,
@@ -191,7 +191,7 @@ class SingleSelectDescription extends React.Component {
     };
 
     this.onSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
+      if (isPlaceholder) {this.clearSelection();}
       else {
         this.setState({
           selected: selection,
@@ -353,7 +353,7 @@ class FavoritesSelect extends React.Component {
     };
 
     this.onSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
+      if (isPlaceholder) {this.clearSelection();}
       else {
         this.setState({
           selected: selection,
@@ -376,9 +376,9 @@ class FavoritesSelect extends React.Component {
           favorites: this.state.favorites.filter(id => id !== itemId)
         });
       } else
-        this.setState({
+        {this.setState({
           favorites: [...this.state.favorites, itemId]
-        });
+        });}
     };
 
     this.options = [
@@ -681,7 +681,7 @@ class SelectWithFooter extends React.Component {
     };
 
     this.onSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
+      if (isPlaceholder) {this.clearSelection();}
       else {
         this.setState({
           selected: selection,
@@ -775,7 +775,7 @@ class SelectViewMore extends React.Component {
     };
 
     this.onSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
+      if (isPlaceholder) {this.clearSelection();}
       else {
         this.setState({
           selected: selection,
@@ -1071,14 +1071,12 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
       if (textInput === '') {
         return this.options;
       } else {
-        let filteredGroups = this.options
+        const filteredGroups = this.options
           .map(group => {
-            let filteredGroup = React.cloneElement(group, {
-              children: group.props.children.filter(item => {
-                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
-              })
+            const filteredGroup = React.cloneElement(group, {
+              children: group.props.children.filter(item => item.props.value.toLowerCase().includes(textInput.toLowerCase()))
             });
-            if (filteredGroup.props.children.length > 0) return filteredGroup;
+            if (filteredGroup.props.children.length > 0) {return filteredGroup;}
           })
           .filter(newGroup => newGroup);
         return filteredGroups;
@@ -1540,14 +1538,12 @@ class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
       if (textInput === '') {
         return this.options;
       } else {
-        let filteredGroups = this.options
+        const filteredGroups = this.options
           .map(group => {
-            let filteredGroup = React.cloneElement(group, {
-              children: group.props.children.filter(item => {
-                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
-              })
+            const filteredGroup = React.cloneElement(group, {
+              children: group.props.children.filter(item => item.props.value.toLowerCase().includes(textInput.toLowerCase()))
             });
-            if (filteredGroup.props.children.length > 0) return filteredGroup;
+            if (filteredGroup.props.children.length > 0) {return filteredGroup;}
           })
           .filter(newGroup => newGroup);
         return filteredGroups;
@@ -1645,14 +1641,12 @@ class FilteringSingleSelectInput extends React.Component {
       if (textInput === '') {
         return this.options;
       } else {
-        let filteredGroups = this.options
+        const filteredGroups = this.options
           .map(group => {
-            let filteredGroup = React.cloneElement(group, {
-              children: group.props.children.filter(item => {
-                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
-              })
+            const filteredGroup = React.cloneElement(group, {
+              children: group.props.children.filter(item => item.props.value.toLowerCase().includes(textInput.toLowerCase()))
             });
-            if (filteredGroup.props.children.length > 0) return filteredGroup;
+            if (filteredGroup.props.children.length > 0) {return filteredGroup;}
           })
           .filter(Boolean);
         return filteredGroups;
@@ -1789,7 +1783,7 @@ class TypeaheadSelectInput extends React.Component {
     };
 
     this.onSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
+      if (isPlaceholder) {this.clearSelection();}
       else {
         this.setState({
           selected: selection,
@@ -2007,7 +2001,7 @@ class GroupedTypeaheadSelectInput extends React.Component {
     };
 
     this.onSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
+      if (isPlaceholder) {this.clearSelection();}
       else {
         this.setState({
           selected: selection,
@@ -2128,7 +2122,7 @@ class TypeaheadSelectInput extends React.Component {
     };
 
     this.onSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
+      if (isPlaceholder) {this.clearSelection();}
       else {
         this.setState({
           selected: selection,
@@ -2557,22 +2551,20 @@ import { Select, SelectOption, SelectVariant } from '@patternfly/react-core/depr
 class MultiTypeaheadSelectInputCustomObjects extends React.Component {
   constructor(props) {
     super(props);
-    this.createState = (name, abbreviation, capital, founded) => {
-      return {
-        name: name,
-        abbreviation: abbreviation,
-        capital: capital,
-        founded: founded,
-        toString: function() {
+    this.createState = (name, abbreviation, capital, founded) => ({
+        name,
+        abbreviation,
+        capital,
+        founded,
+        toString() {
           return `${this.name} (${this.abbreviation}) - Founded: ${this.founded}`;
         },
-        compareTo: function(value) {
+        compareTo(value) {
           return this.toString()
             .toLowerCase()
             .includes(value.toString().toLowerCase());
         }
-      };
-    };
+      });
     this.options = [
       <SelectOption key={0} value={this.createState('Alabama', 'AL', 'Montgomery', 1846)} />,
       <Divider component="li" key={111} />,
@@ -2873,7 +2865,7 @@ class SelectDocumentBodyVsParent extends React.Component {
     };
 
     this.onBodySelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
+      if (isPlaceholder) {this.clearSelection();}
       else {
         this.setState({
           bodySelected: selection,
@@ -2884,7 +2876,7 @@ class SelectDocumentBodyVsParent extends React.Component {
     };
 
     this.onParentSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSelection();
+      if (isPlaceholder) {this.clearSelection();}
       else {
         this.setState({
           parentSelected: selection,

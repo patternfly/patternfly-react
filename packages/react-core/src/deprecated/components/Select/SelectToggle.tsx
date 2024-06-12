@@ -297,7 +297,6 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
             )}
             aria-label={ariaLabel}
             onBlur={onBlur}
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             onClick={(event) => {
               onToggle(event, !isOpen);
               if (isOpen) {
@@ -324,7 +323,6 @@ class SelectToggleBase extends React.Component<SelectToggleProps> {
               className
             )}
             onBlur={onBlur}
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             onClick={(event) => {
               if (!isDisabled) {
                 onToggle(event, !isOpen);

@@ -46,7 +46,7 @@ export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
 
       if (!transformedProps) {
         // tslint:disable-next-line:no-console
-        console.warn('Table.Header - Failed to receive a transformed result'); // eslint-disable-line max-len, no-console
+        console.warn('Table.Header - Failed to receive a transformed result'); // eslint-disable-line no-console
       }
 
       let cellNode;

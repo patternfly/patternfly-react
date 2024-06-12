@@ -353,13 +353,11 @@ class InteractiveLegendChart extends React.Component {
     // Returns legend data styled per hiddenSeries
     this.getLegendData = () => {
       const { hiddenSeries } = this.state;
-      return this.series.map((s, index) => {
-        return {
+      return this.series.map((s, index) => ({
           childName: `area-${index}`, // Sync tooltip legend with the series associated with given chart name
           ...s.legendItem, // name property
           ...getInteractiveLegendItemStyles(hiddenSeries.has(index)) // hidden styles
-        };
-      });
+        }));
     };
 
     // Hide each data series individually
@@ -453,28 +451,24 @@ class InteractiveLegendChart extends React.Component {
             <ChartAxis tickValues={['2015', '2016', '2017', '2018']} />
             <ChartAxis dependentAxis showGrid />
             <ChartGroup>
-              {this.series.map((s, index) => {
-                return (
+              {this.series.map((s, index) => (
                   <ChartScatter
                     data={!hiddenSeries.has(index) ? s.datapoints : [{ y: null}]}
                     key={'scatter-' + index}
                     name={'scatter-' + index}
                     size={({ active }) => (active ? 5 : 3)}
                   />
-                );
-              })}
+                ))}
             </ChartGroup>
             <ChartGroup>
-              {this.series.map((s, index) => {
-                return (
+              {this.series.map((s, index) => (
                   <ChartArea
                     data={!hiddenSeries.has(index) ? s.datapoints : [{ y: null}]}
                     interpolation="monotoneX"
                     key={'area-' + index}
                     name={'area-' + index}
                   />
-                );
-              })}
+                ))}
             </ChartGroup>
           </Chart>
         </div>
@@ -538,12 +532,10 @@ class InteractivePieLegendChart extends React.Component {
     // Returns legend data styled per hiddenSeries
     this.getLegendData = () => {
       const { hiddenSeries } = this.state;
-      return this.series.map((s, index) => {
-        return {
+      return this.series.map((s, index) => ({
           ...s.legendItem, // name property
           ...getInteractiveLegendItemStyles(hiddenSeries.has(index)) // hidden styles
-        };
-      });
+        }));
     };
 
     // Hide each data series individually

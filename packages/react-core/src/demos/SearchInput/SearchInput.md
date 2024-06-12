@@ -336,8 +336,8 @@ AdvancedComposableSearchInput = () => {
     event.preventDefault();
 
     if (isValidDate(new Date(date)) && dateWithin) {
-      let afterDate = new Date(date);
-      let toDate = new Date(date);
+      const afterDate = new Date(date);
+      const toDate = new Date(date);
       switch (dateWithin) {
         case '1 day':
           afterDate.setDate(afterDate.getDate());

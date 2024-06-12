@@ -131,7 +131,7 @@ export class MenuDemo extends Component {
     });
   };
 
-  onMultiOptionSelect = (_event?: React.MouseEvent, itemId?: string | number)=> {
+  onMultiOptionSelect = (_event?: React.MouseEvent, itemId?: string | number) => {
     if (typeof itemId !== 'number') {
       return;
     }

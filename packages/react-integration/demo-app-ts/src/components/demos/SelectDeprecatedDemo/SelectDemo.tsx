@@ -1,12 +1,4 @@
-import {
-  Button,
-  Stack,
-  StackItem,
-  Title,
-  Checkbox,
-  Form,
-  Divider
-} from '@patternfly/react-core';
+import { Button, Stack, StackItem, Title, Checkbox, Form, Divider } from '@patternfly/react-core';
 import {
   Select,
   SelectOption,
@@ -437,7 +429,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     const { checkSelected } = this.state;
     if (checkSelected.includes(selection.toString())) {
       this.setState(
-        (prevState: SelectDemoState) => ({ checkSelected: prevState.checkSelected.filter(item => item !== selection) }),
+        (prevState: SelectDemoState) => ({
+          checkSelected: prevState.checkSelected.filter((item) => item !== selection)
+        }),
         () => console.log('selections: ', this.state.checkSelected)
       );
     } else {
@@ -453,7 +447,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     if (menuDocumentBodySelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({
-          menuDocumentBodySelected: prevState.menuDocumentBodySelected.filter(item => item !== selection)
+          menuDocumentBodySelected: prevState.menuDocumentBodySelected.filter((item) => item !== selection)
         }),
         () => console.log('selections: ', this.state.menuDocumentBodySelected)
       );
@@ -472,7 +466,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     if (noBadgeCheckSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({
-          noBadgeCheckSelected: prevState.noBadgeCheckSelected.filter(item => item !== selection)
+          noBadgeCheckSelected: prevState.noBadgeCheckSelected.filter((item) => item !== selection)
         }),
         () => console.log('selections: ', this.state.noBadgeCheckSelected)
       );
@@ -505,7 +499,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     if (typeaheadMultiSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({
-          typeaheadMultiSelected: prevState.typeaheadMultiSelected.filter(item => item !== selection)
+          typeaheadMultiSelected: prevState.typeaheadMultiSelected.filter((item) => item !== selection)
         }),
         () => console.log('selections: ', this.state.typeaheadMultiSelected)
       );
@@ -524,7 +518,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     if (cdtypeaheadMultiSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({
-          cdtypeaheadMultiSelected: prevState.cdtypeaheadMultiSelected.filter(item => item !== selection)
+          cdtypeaheadMultiSelected: prevState.cdtypeaheadMultiSelected.filter((item) => item !== selection)
         }),
         () => console.log('selections: ', this.state.cdtypeaheadMultiSelected)
       );
@@ -564,7 +558,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     if (plainTypeaheadMultiSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({
-          plainTypeaheadMultiSelected: prevState.plainTypeaheadMultiSelected.filter(item => item !== selection)
+          plainTypeaheadMultiSelected: prevState.plainTypeaheadMultiSelected.filter((item) => item !== selection)
         }),
         () => console.log('selections: ', this.state.plainTypeaheadMultiSelected)
       );
@@ -586,7 +580,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     if (customTypeaheadMultiSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({
-          customTypeaheadMultiSelected: prevState.customTypeaheadMultiSelected.filter(item => item !== selection)
+          customTypeaheadMultiSelected: prevState.customTypeaheadMultiSelected.filter((item) => item !== selection)
         }),
         () => console.log('selections: ', this.state.customTypeaheadMultiSelected)
       );
@@ -979,7 +973,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             aria-label="Select Input"
             onToggle={this.checkOnToggle}
             onSelect={this.checkOnSelect}
-            selections={checkSelected.filter(string => string)}
+            selections={checkSelected.filter((string) => string)}
             isOpen={checkisOpen}
             placeholderText="Filter by status"
             aria-labelledby={titleId}
@@ -1338,7 +1332,7 @@ export class SelectDemo extends Component<SelectDemoState> {
           Typeahead inside a form
         </Title>
         <Form
-          onSubmit={e => {
+          onSubmit={(e) => {
             window.location.href = '/404';
             e.preventDefault();
           }}
@@ -1385,7 +1379,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             aria-label="Select Input"
             onToggle={this.documentBodyOnToggle}
             onSelect={this.documentBodyOnSelect}
-            selections={menuDocumentBodySelected.filter(string => string)}
+            selections={menuDocumentBodySelected.filter((string) => string)}
             isOpen={menuDocumentBodyisOpen}
             placeholderText="Filter by status"
             aria-labelledby={titleId}

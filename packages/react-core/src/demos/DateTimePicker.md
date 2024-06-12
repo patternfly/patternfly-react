@@ -27,11 +27,9 @@ DateTimeRangePicker = () => {
   const [from, setFrom] = React.useState();
   const [to, setTo] = React.useState();
 
-  const toValidator = (date) => {
-    return isValidDate(from) && yyyyMMddFormat(date) >= yyyyMMddFormat(from)
+  const toValidator = (date) => isValidDate(from) && yyyyMMddFormat(date) >= yyyyMMddFormat(from)
       ? ''
       : 'The "to" date must be after the "from" date';
-  };
 
   const onFromDateChange = (_event, inputDate, newFromDate) => {
     if (isValidDate(from) && isValidDate(newFromDate) && inputDate === yyyyMMddFormat(newFromDate)) {

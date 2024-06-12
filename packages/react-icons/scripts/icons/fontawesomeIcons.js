@@ -40,7 +40,7 @@ function convertIcons(icons) {
   delete icons.faFontAwesomeLogoFull;
 
   return Object.values(icons)
-    .map(icon => ({
+    .map((icon) => ({
       name: getIconName(icon),
       data: convertIcon(icon)
     }))

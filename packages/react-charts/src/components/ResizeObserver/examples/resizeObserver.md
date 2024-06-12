@@ -319,44 +319,38 @@ class MonthlyResponsiveStack extends React.Component {
     };
 
     this.renderSocketBars = () => {
-      let socketBars = this.bars.map((tick, index) => {
-        return {
+      const socketBars = this.bars.map((tick, index) => ({
           x: tick.x,
           y: tick.y,
           name: 'Sockets',
           label: `${tick.x} Sockets: ${tick.y}`
-        };
-      });
+        }));
       return <ChartBar data={socketBars} labelComponent={<ChartTooltip constrainToVisibleArea />} />;
     }
 
     this.renderCoresBars = () => {
-      let coresBars = this.bars.map((tick, index) => {
-        return {
+      const coresBars = this.bars.map((tick, index) => ({
           x: tick.x,
           y: tick.y,
           name: 'Cores',
           label: `${tick.x} Cores: ${tick.y}`
-        };
-      });
+        }));
       return <ChartBar data={coresBars} labelComponent={<ChartTooltip constrainToVisibleArea />} />;
     }
 
     this.renderNodesBars = () => {
-      let nodesBars = this.bars.map((tick, index) => {
-        return {
+      const nodesBars = this.bars.map((tick, index) => ({
           key: index,
           x: tick.x,
           y: tick.y,
           name: 'Nodes',
           label: `${tick.x} Nodes: ${tick.y}`
-        };
-      });
+        }));
       return <ChartBar data={nodesBars} labelComponent={<ChartTooltip constrainToVisibleArea />} />;
     }
 
     this.getTickValues = (offset = 2) => {
-      let tickValues = [];
+      const tickValues = [];
       for(let i = 1; i < 32; i++){
         if (i % offset == 0){
           tickValues.push(`Aug. ${i}`);

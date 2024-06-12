@@ -513,7 +513,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
                     actions: (
                       <>
                         <Dropdown
-                          isOpen={!!state[key] ?? false}
+                          isOpen={!!state[key]}
                           onOpenChange={(isOpen) => setState({ [key]: isOpen })}
                           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
                             <MenuToggle

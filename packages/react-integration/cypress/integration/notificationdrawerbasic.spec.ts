@@ -49,26 +49,18 @@ describe('Notification Drawer Basic Demo Test', () => {
     // press Enter on toggle button, check whether the dropdown menu exsit and whether it focuses on the first item
     // then press Tab on toggle button, check whether the dropdown menu is closed
     cy.get('#toggle-id-0').then((toggleButton: JQuery<HTMLButtonElement>) => {
-      cy.wrap(toggleButton).type(' ', {waitForAnimations:true});
-      cy.get('#notification-0')
-        .find('.pf-v5-c-menu')
-        .should('exist');
-      cy.wrap(toggleButton).type('{esc}', {waitForAnimations:true});
-      cy.get('#notification-0')
-        .find('.pf-v5-c-menu')
-        .should('not.exist');
+      cy.wrap(toggleButton).type(' ', { waitForAnimations: true });
+      cy.get('#notification-0').find('.pf-v5-c-menu').should('exist');
+      cy.wrap(toggleButton).type('{esc}', { waitForAnimations: true });
+      cy.get('#notification-0').find('.pf-v5-c-menu').should('not.exist');
     });
     // Verify the list item header toggle button keyboard interactivity opens/closes dropdown menu
     // the method is the same as above
     cy.get('#toggle-id-1').then((toggleButton: JQuery<HTMLButtonElement>) => {
-      cy.wrap(toggleButton).type(' ', {waitForAnimations:true});
-      cy.get('#notification-1')
-        .find('.pf-v5-c-menu')
-        .should('exist');
-      cy.wrap(toggleButton).type('{esc}', {waitForAnimations:true});
-      cy.get('#notification-1')
-        .find('.pf-v5-c-menu')
-        .should('not.exist');
+      cy.wrap(toggleButton).type(' ', { waitForAnimations: true });
+      cy.get('#notification-1').find('.pf-v5-c-menu').should('exist');
+      cy.wrap(toggleButton).type('{esc}', { waitForAnimations: true });
+      cy.get('#notification-1').find('.pf-v5-c-menu').should('not.exist');
     });
   });
 

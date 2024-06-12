@@ -326,8 +326,7 @@ class ProgressiveWizard extends React.Component {
     const CustomFooter = (
       <WizardFooterDeprecated>
         <WizardContextConsumerDeprecated>
-          {({ activeStep, goToStepByName, goToStepById, onNext, onBack, onClose }) => {
-            return (
+          {({ activeStep, goToStepByName, goToStepById, onNext, onBack, onClose }) => (
               <>
                 <Button
                   variant="secondary"
@@ -343,8 +342,7 @@ class ProgressiveWizard extends React.Component {
                   Cancel
                 </Button>
               </>
-            );
-          }}
+            )}
         </WizardContextConsumerDeprecated>
       </WizardFooterDeprecated>
     );

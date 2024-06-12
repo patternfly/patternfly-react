@@ -263,7 +263,7 @@ export const TableComposableDemo = () => {
       ['p', 'two', 'b', 'four', 'five']
     ];
     const [allRowsSelected, setAllRowsSelected] = React.useState(false);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     const [selected, setSelected] = React.useState(rows.map(() => false));
     const onSelect: OnSelect = (_event, isSelected, rowId) => {
       setSelected(selected.map((sel, index) => (index === rowId ? isSelected : sel)));
@@ -285,7 +285,7 @@ export const TableComposableDemo = () => {
     };
     const onSelectAll: OnSelect = (_event, isSelected) => {
       setAllRowsSelected(isSelected);
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
       setSelected(selected.map(() => isSelected));
     };
     return (
@@ -387,6 +387,7 @@ export const TableComposableDemo = () => {
     const defaultActions: IActions = [
       {
         title: 'Some action',
+        // eslint-disable-next-line no-console
         onClick: (_event, rowId) => console.log('clicked on Some action, on row: ', rowId)
       },
       {
@@ -397,16 +398,19 @@ export const TableComposableDemo = () => {
       },
       {
         title: 'Third action',
+        // eslint-disable-next-line no-console
         onClick: (_event, rowId) => console.log('clicked on Third action, on row: ', rowId)
       }
     ];
     const lastRowActions: IActions = [
       {
         title: 'Some action',
+        // eslint-disable-next-line no-console
         onClick: (_event, rowId) => console.log(`clicked on Some action, on row ${rowId}`)
       },
       {
         title: <div>Another action</div>,
+        // eslint-disable-next-line no-console
         onClick: (_event, rowId) => console.log(`clicked on Another action, on row ${rowId}`)
       },
       {
@@ -414,6 +418,7 @@ export const TableComposableDemo = () => {
       },
       {
         title: 'Third action',
+        // eslint-disable-next-line no-console
         onClick: (_event, rowId) => console.log(`clicked on Third action, on row ${rowId}`)
       }
     ];

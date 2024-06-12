@@ -35,7 +35,7 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
 
   handleItemClick = (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent, isSelected: boolean) => {
     const id = event.currentTarget.id as 'first' | 'second' | 'third' | 'fourth' | 'fifth' | 'sixth' | 'seventh';
-    this.setState(prevState => {
+    this.setState((prevState) => {
       prevState.isSelected[id] = isSelected;
       return {
         isSelected: prevState.isSelected
