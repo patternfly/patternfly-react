@@ -39,7 +39,7 @@ export class LabelGroupVerticalDemo extends Component<{}, BadgeLabelState> {
     };
     this.deleteItem = (id: string) => {
       const copyOfbadgeLabelArray = this.state.badgeLabelArray;
-      const index = copyOfbadgeLabelArray.findIndex(labelObj => labelObj.name === id);
+      const index = copyOfbadgeLabelArray.findIndex((labelObj) => labelObj.name === id);
 
       if (index !== -1) {
         copyOfbadgeLabelArray.splice(index, 1);
@@ -62,7 +62,7 @@ export class LabelGroupVerticalDemo extends Component<{}, BadgeLabelState> {
         expandedText="Collapse labels"
         aria-label="Vertical fruit labels"
       >
-        {badgeLabelArray.map(label => (
+        {badgeLabelArray.map((label) => (
           <Label key={label.name} onClose={() => this.deleteItem(label.name)}>
             {label.name}
             <Badge isRead={label.isRead}>{label.count}</Badge>

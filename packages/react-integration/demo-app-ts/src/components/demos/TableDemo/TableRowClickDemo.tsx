@@ -1,7 +1,4 @@
-import {
-  ICell,
-  IRow
-} from '@patternfly/react-table';
+import { ICell, IRow } from '@patternfly/react-table';
 import { Table, TableBody, TableHeader, TableProps, type OnRowClick } from '@patternfly/react-table/deprecated';
 import { Component } from 'react';
 

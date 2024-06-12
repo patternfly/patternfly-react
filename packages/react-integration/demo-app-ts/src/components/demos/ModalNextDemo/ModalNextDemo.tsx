@@ -97,14 +97,14 @@ export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElemen
   handleModalCustomEscapeToggle = (_event?: any, customEscapePressed?: boolean) => {
     this.setState(({ isModalCustomEscapeOpen }) => ({
       isModalCustomEscapeOpen: !isModalCustomEscapeOpen,
-      customEscapePressed: customEscapePressed ?? false 
+      customEscapePressed: customEscapePressed ?? false
     }));
   };
 
   handleModalAlertVariantToggle = (_event?: any, customEscapePressed?: boolean) => {
     this.setState(({ isModalAlertVariantOpen }) => ({
       isModalAlertVariantOpen: !isModalAlertVariantOpen,
-      customEscapePressed: customEscapePressed ?? false 
+      customEscapePressed: customEscapePressed ?? false
     }));
   };
 

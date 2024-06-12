@@ -58,11 +58,7 @@ export class SliderDemo extends Component<SliderDemoState> {
     this.setState({ valueDiscreteMinMax: value });
   };
 
-  onChangeDiscrete = (
-    _event: SliderOnChangeEvent,
-    value: number,
-    inputValue?: number,
-  ) => {
+  onChangeDiscrete = (_event: SliderOnChangeEvent, value: number, inputValue?: number) => {
     let newValue;
     let newInputValue;
 
@@ -100,11 +96,7 @@ export class SliderDemo extends Component<SliderDemoState> {
     });
   };
 
-  onChangePercent = (
-    _event: SliderOnChangeEvent,
-    value: number,
-    inputValue?: number,
-  ) => {
+  onChangePercent = (_event: SliderOnChangeEvent, value: number, inputValue?: number) => {
     let newValue;
     let newInputValue;
 

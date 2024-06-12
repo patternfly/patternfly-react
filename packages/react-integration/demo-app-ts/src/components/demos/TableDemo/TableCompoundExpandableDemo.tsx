@@ -1,10 +1,5 @@
 import * as React from 'react';
-import {
-  compoundExpand,
-  IRow,
-  ICell,
-  IRowCell
-} from '@patternfly/react-table';
+import { compoundExpand, IRow, ICell, IRowCell } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
@@ -217,7 +212,7 @@ export class TableCompoundExpandableDemo extends React.Component<TableProps, Tab
       rowCells[colIndex] = { ...thisCell, props: { ...thisCell.props, isOpen: false } };
       newRows[rowIndex] = {
         ...newRows[rowIndex],
-        isOpen: rowCells.some(cell => cell.props && cell.props.isOpen)
+        isOpen: rowCells.some((cell) => cell.props && cell.props.isOpen)
       };
     }
     this.setState({

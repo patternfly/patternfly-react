@@ -36,7 +36,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
   };
 
   onNext = () => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newCurrentResult = prevState.currentResult + 1;
       return {
         currentResult: newCurrentResult <= prevState.resultsCount ? newCurrentResult : prevState.resultsCount
@@ -45,7 +45,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
   };
 
   onPrevious = () => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newCurrentResult = prevState.currentResult - 1;
       return {
         currentResult: newCurrentResult > 0 ? newCurrentResult : 1
