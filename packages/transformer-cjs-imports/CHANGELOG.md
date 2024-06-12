@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.79.4-alpha.4](https://github.com/patternfly/patternfly-react/compare/transformer-cjs-imports@4.79.4-alpha.3...transformer-cjs-imports@4.79.4-alpha.4) (2024-06-12)
+
+### Bug Fixes
+
+- **build:** get our custom TS transformers working again (v6) ([#10523](https://github.com/patternfly/patternfly-react/issues/10523)) ([e4d5886](https://github.com/patternfly/patternfly-react/commit/e4d58861016c49446d606d995e7b99f5a2369531))
+
 ## 4.79.4-alpha.3 (2023-07-14)
 
 ### Reverts
