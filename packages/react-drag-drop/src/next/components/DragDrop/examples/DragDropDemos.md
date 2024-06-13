@@ -42,6 +42,16 @@ To enable multiple drop zones, wrap the component with `<DragDropContainer>`, pl
 
 `<Droppable>` will create the component's usual `children` internally based on the `items` property, so `children` should not be passed where the `<Droppable>` is defined.
 
+To avoid a wrapping div inserted by `<Droppable>`, pass the desired container element to the `wrapper` property.
+
+### Data list
+
+To enable multiple drop zones with `<DataList>` components, place one or more `<Droppable>` within `<DragDropContainer>` and define the `variant` on all components as "DataList".
+
+```ts file="./DragDropContainerDataList.tsx"
+
+```
+
 ### Dual list selector
 
 To enable multiple drop zones in a `<DualListSelector>`, wrap the `<DualListSelector>` component with `<DragDropContainer>`, define the `variant` as "DualListSelector", and then within each pane's `<DualListSelectorList>`, include a `<Droppable>` component with the variant "DualListSelectorList".

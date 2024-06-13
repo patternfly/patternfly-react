@@ -16,16 +16,16 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 export const DragDropContainerDualListSelector: React.FunctionComponent = () => {
   const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = React.useState(false);
   const [availableOptions, setAvailableOptions] = React.useState<DraggableObject[]>([
-    { id: 'Kiwi', content: 'Kiwi', props: { key: 'Kiwi', isSelected: false } },
-    { id: 'Pear', content: 'Pear', props: { key: 'Pear', isSelected: false } },
-    { id: 'Cantaloupe', content: 'Cantaloupe', props: { key: 'Cantaloupe', isSelected: false } }
+    { id: 'Apple', content: 'Apple', props: { key: 'Apple', isSelected: false } },
+    { id: 'Banana', content: 'Banana', props: { key: 'Banana', isSelected: false } },
+    { id: 'Pineapple', content: 'Pineapple', props: { key: 'Pineapple', isSelected: false } }
   ]);
 
   const [chosenOptions, setChosenOptions] = React.useState<DraggableObject[]>([
-    { id: 'Honeydew', content: 'Honeydew', props: { key: 'Honeydew', isSelected: false } },
-    { id: 'Blackberry', content: 'Blackberry', props: { key: 'Blackberry', isSelected: false } },
-    { id: 'Watermelon', content: 'Watermelon', props: { key: 'Watermelon', isSelected: false } },
-    { id: 'Cherry', content: 'Cherry', props: { key: 'Cherry', isSelected: false } }
+    { id: 'Orange', content: 'Orange', props: { key: 'Orange', isSelected: false } },
+    { id: 'Grape', content: 'Grape', props: { key: 'Grape', isSelected: false } },
+    { id: 'Peach', content: 'Peach', props: { key: 'Peach', isSelected: false } },
+    { id: 'Strawberry', content: 'Strawberry', props: { key: 'Strawberry', isSelected: false } }
   ]);
 
   const [allDraggableItems, setAllItems] = React.useState<Record<string, DraggableObject[]>>({
@@ -34,7 +34,7 @@ export const DragDropContainerDualListSelector: React.FunctionComponent = () => 
       props: {
         key: option.props.key,
         isSelected: option.props.isSelected,
-        onOptionSelect: (e) => onOptionSelect(e, index, true)
+        onOptionSelect: (e) => onOptionSelect(e, index, false)
       }
     })),
     chosen: chosenOptions.map((option, index) => ({
@@ -52,6 +52,27 @@ export const DragDropContainerDualListSelector: React.FunctionComponent = () => 
     setChosenOptions(items.chosen);
     setAllItems(items);
   };
+
+  React.useEffect(() => {
+    setAllItems({
+      available: availableOptions.map((option, index) => ({
+        ...option,
+        props: {
+          key: option.props.key,
+          isSelected: option.props.isSelected,
+          onOptionSelect: (e) => onOptionSelect(e, index, false)
+        }
+      })),
+      chosen: chosenOptions.map((option, index) => ({
+        ...option,
+        props: {
+          key: option.props.key,
+          isSelected: option.props.isSelected,
+          onOptionSelect: (e) => onOptionSelect(e, index, true)
+        }
+      }))
+    });
+  }, [availableOptions, chosenOptions]);
 
   const moveSelected = (fromAvailable) => {
     const sourceOptions = fromAvailable ? availableOptions : chosenOptions;
@@ -115,9 +136,12 @@ export const DragDropContainerDualListSelector: React.FunctionComponent = () => 
             availableOptions.length
           } options selected`}
         >
-          <DualListSelectorList>
-            <NewDroppable id="available" items={allDraggableItems.available} variant="DualListSelectorList" />
-          </DualListSelectorList>
+          <NewDroppable
+            id="available"
+            items={allDraggableItems.available}
+            variant="DualListSelectorList"
+            wrapper={<DualListSelectorList />}
+          />
         </DualListSelectorPane>
         <DualListSelectorControlsWrapper aria-label="Selector controls">
           <DualListSelectorControl
@@ -154,9 +178,12 @@ export const DragDropContainerDualListSelector: React.FunctionComponent = () => 
           status={`${chosenOptions.filter((x) => x.props.isSelected).length} of ${chosenOptions.length} options selected`}
           isChosen
         >
-          <DualListSelectorList>
-            <NewDroppable id="chosen" items={allDraggableItems.chosen} variant="DualListSelectorList" />
-          </DualListSelectorList>
+          <NewDroppable
+            id="chosen"
+            items={allDraggableItems.chosen}
+            variant="DualListSelectorList"
+            wrapper={<DualListSelectorList />}
+          />
         </DualListSelectorPane>
       </DualListSelector>
     </DragDropContainer>

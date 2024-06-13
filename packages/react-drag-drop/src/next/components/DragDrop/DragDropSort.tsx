@@ -11,7 +11,12 @@ import {
   useSensor,
   useSensors,
   DragEndEvent,
-  DragStartEvent
+  DragStartEvent,
+  CollisionDetection,
+  pointerWithin,
+  rectIntersection,
+  getFirstCollision,
+  UniqueIdentifier
 } from '@dnd-kit/core';
 import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { Draggable } from './Draggable';
@@ -89,6 +94,43 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
     onDrag(event, itemIds.indexOf(event.active.id as string));
   };
 
+  const lastOverId = React.useRef<UniqueIdentifier | null>(null);
+  const collisionDetectionStrategy: CollisionDetection = React.useCallback(
+    (args) => {
+      if (activeId && activeId in items) {
+        return closestCenter({
+          ...args,
+          droppableContainers: args.droppableContainers.filter((container) => container.id in items)
+        });
+      }
+
+      const pointerIntersections = pointerWithin(args);
+      const intersections = pointerIntersections.length > 0 ? pointerIntersections : rectIntersection(args);
+      let overId = getFirstCollision(intersections, 'id');
+
+      if (overId != null) {
+        if (overId in items) {
+          const containerItems = items;
+
+          if (containerItems.length > 0) {
+            overId = closestCenter({
+              ...args,
+              droppableContainers: args.droppableContainers.filter(
+                (container) => container.id !== overId && containerItems.find((obj) => obj.id === container.id)
+              )
+            })[0]?.id;
+          }
+        }
+
+        lastOverId.current = overId;
+
+        return [{ id: overId }];
+      }
+      return lastOverId.current ? [{ id: lastOverId.current }] : [];
+    },
+    [activeId, items]
+  );
+
   const getDragOverlay = () => {
     if (!activeId) {
       return;
@@ -139,24 +181,16 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
   };
 
   const dragOverlay = <DragOverlay>{activeId && getDragOverlay()}</DragOverlay>;
-  const renderedChildren = <Droppable items={items} id="droppable" variant={variant} />;
 
   return (
     <DndContext
       sensors={sensors}
-      collisionDetection={closestCenter}
+      collisionDetection={collisionDetectionStrategy}
       onDragEnd={handleDragEnd}
       onDragStart={handleDragStart}
       {...props}
     >
-      {children &&
-        variant !== 'default' &&
-        variant !== 'defaultWithHandle' &&
-        React.cloneElement(children, {
-          children: renderedChildren
-        })}
-      {children && (variant === 'default' || variant === 'defaultWithHandle') && children}
-      {!children && renderedChildren}
+      <Droppable items={items} id="droppable" variant={variant} {...(children && { wrapper: children })} />
       {canUseDOM ? ReactDOM.createPortal(dragOverlay, document.getElementById('root')) : dragOverlay}
     </DndContext>
   );
