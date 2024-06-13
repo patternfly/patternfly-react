@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@5.4.0-prerelease.16...@patternfly/react-drag-drop@5.4.0-prerelease.17) (2024-06-13)
+
+### Bug Fixes
+
+- **deps:** update dependency @dnd-kit/core to ^6.1.0 ([#10519](https://github.com/patternfly/patternfly-react/issues/10519)) ([0964133](https://github.com/patternfly/patternfly-react/commit/0964133f29e2ded4472e8eee7f47db107f6d55cc))
+- **deps:** update dependency memoize-one to ^5.2.1 ([#10561](https://github.com/patternfly/patternfly-react/issues/10561)) ([ffcb88c](https://github.com/patternfly/patternfly-react/commit/ffcb88cd5356752a6534ab2a75de8e6c027b0667))
+
+### Features
+
+- **DragDropSort:** update drag button usage v5 ([#10357](https://github.com/patternfly/patternfly-react/issues/10357)) ([871ba54](https://github.com/patternfly/patternfly-react/commit/871ba54ff5cf95f9194a00a43ce07922f7226ac4))
+
 # [5.4.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@5.4.0-prerelease.15...@patternfly/react-drag-drop@5.4.0-prerelease.16) (2024-05-31)
 
 **Note:** Version bump only for package @patternfly/react-drag-drop

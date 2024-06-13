@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.32...@patternfly/react-integration@5.1.1-prerelease.33) (2024-06-13)
+
+### Bug Fixes
+
+- **build:** get our custom TS transformers working again ([#10477](https://github.com/patternfly/patternfly-react/issues/10477)) ([696957c](https://github.com/patternfly/patternfly-react/commit/696957c7d61903cae274e6d2513f4402e1c0be37))
+
 ## [5.1.1-prerelease.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.31...@patternfly/react-integration@5.1.1-prerelease.32) (2024-05-31)
 
 **Note:** Version bump only for package @patternfly/react-integration

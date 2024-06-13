@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.4.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.4.0-prerelease.11...@patternfly/react-charts@7.4.0-prerelease.12) (2024-06-13)
+
+### Bug Fixes
+
+- **deps:** update dependency hoist-non-react-statics to ^3.3.2 ([#10559](https://github.com/patternfly/patternfly-react/issues/10559)) ([5433a2d](https://github.com/patternfly/patternfly-react/commit/5433a2d92f718bd0ca561d14765073e9c6c32be0))
+- **deps:** update dependency tslib to ^2.6.3 ([#10562](https://github.com/patternfly/patternfly-react/issues/10562)) ([d702534](https://github.com/patternfly/patternfly-react/commit/d702534ce520316060be56eb0f1c4d8396bd57ed))
+
 # [7.4.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.4.0-prerelease.10...@patternfly/react-charts@7.4.0-prerelease.11) (2024-05-31)
 
 **Note:** Version bump only for package @patternfly/react-charts

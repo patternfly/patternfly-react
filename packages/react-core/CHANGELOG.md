@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.15...@patternfly/react-core@5.4.0-prerelease.16) (2024-06-13)
+
+### Bug Fixes
+
+- **DatePicker/CalendarMonth:** better range styling when some dates are disabled ([#10398](https://github.com/patternfly/patternfly-react/issues/10398)) ([b8710bc](https://github.com/patternfly/patternfly-react/commit/b8710bc2c5400e7936d503f60f20fff0083fc741))
+- **deps:** update dependency tslib to ^2.6.3 ([#10562](https://github.com/patternfly/patternfly-react/issues/10562)) ([d702534](https://github.com/patternfly/patternfly-react/commit/d702534ce520316060be56eb0f1c4d8396bd57ed))
+
+### Features
+
+- **MenuToggle:** add OUIA support ([#10414](https://github.com/patternfly/patternfly-react/issues/10414)) ([7574a50](https://github.com/patternfly/patternfly-react/commit/7574a50c5a1b59b666d8689c4f68c2062d89ec59))
+- **Modal Next:** Added status variant styling to title ([#10586](https://github.com/patternfly/patternfly-react/issues/10586)) ([9f84657](https://github.com/patternfly/patternfly-react/commit/9f84657c065e346aebfc972d8b454fc753d83578))
+- **Modal:** support ReactNode type for 'title' prop ([#10474](https://github.com/patternfly/patternfly-react/issues/10474)) ([5e42bba](https://github.com/patternfly/patternfly-react/commit/5e42bba687aace1ad9e335bdc6e3305cec736f21))
+
 # [5.4.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.14...@patternfly/react-core@5.4.0-prerelease.15) (2024-05-31)
 
 **Note:** Version bump only for package @patternfly/react-core

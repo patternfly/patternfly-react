@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.4.0-prerelease.16...@patternfly/react-table@5.4.0-prerelease.17) (2024-06-13)
+
+### Bug Fixes
+
+- **deps:** update dependency tslib to ^2.6.3 ([#10562](https://github.com/patternfly/patternfly-react/issues/10562)) ([d702534](https://github.com/patternfly/patternfly-react/commit/d702534ce520316060be56eb0f1c4d8396bd57ed))
+
+### Features
+
+- **MenuToggle:** add OUIA support ([#10414](https://github.com/patternfly/patternfly-react/issues/10414)) ([7574a50](https://github.com/patternfly/patternfly-react/commit/7574a50c5a1b59b666d8689c4f68c2062d89ec59))
+
 # [5.4.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.4.0-prerelease.15...@patternfly/react-table@5.4.0-prerelease.16) (2024-05-31)
 
 **Note:** Version bump only for package @patternfly/react-table
