@@ -72,6 +72,11 @@ test('Renders as "pre" element when component="pre"', () => {
   expect(screen.getByText('Test')).toHaveProperty('nodeName', 'PRE');
 });
 
+test('Renders as "hr" element when component="hr"', () => {
+  render(<Content component="hr" />);
+  expect(screen.getByRole('separator')).toHaveProperty('nodeName', 'HR');
+});
+
 test('Renders as "ul" element component="ul"', () => {
   render(<Content component="ul">Test</Content>);
   expect(screen.getByText('Test')).toHaveProperty('nodeName', 'UL');
@@ -158,7 +163,7 @@ test(`Renders with class name ${styles.contentPre} when component="pre"`, () => 
 });
 
 test(`Renders with class name ${styles.contentHr} when component="hr"`, () => {
-  render(<Content component="hr">Test</Content>);
+  render(<Content component="hr" />);
   expect(screen.getByRole('separator')).toHaveClass(styles.contentHr);
 });
 
