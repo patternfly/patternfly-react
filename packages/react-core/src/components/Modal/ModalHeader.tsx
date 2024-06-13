@@ -54,8 +54,6 @@ export const ModalHeader: React.FunctionComponent<ModalHeaderProps> = ({
     </>
   );
 
-  // TODO: apply variant modifier for icon styling.  Core fix needed first.  similar to this:
-  // className={css(className, isVariantIcon(titleIconVariant) && modalStyles.modifiers[titleIconVariant])}
   return (
     <header className={css(styles.modalBoxHeader, help && styles.modifiers.help, className)} {...props}>
       {help && (

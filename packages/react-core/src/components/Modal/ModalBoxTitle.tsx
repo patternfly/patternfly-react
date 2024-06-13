@@ -57,7 +57,12 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
     <h1
       id={id}
       ref={h1}
-      className={css(modalStyles.modalBoxTitle, titleIconVariant && modalStyles.modifiers.icon, className)}
+      className={css(
+        modalStyles.modalBoxTitle,
+        titleIconVariant && modalStyles.modifiers.icon,
+        isVariantIcon(titleIconVariant) && modalStyles.modifiers[titleIconVariant],
+        className
+      )}
       {...props}
     >
       {titleIconVariant && (
