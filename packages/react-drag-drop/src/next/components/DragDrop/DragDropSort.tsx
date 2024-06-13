@@ -1,19 +1,10 @@
 import * as React from 'react';
 import { DndContextProps, DragEndEvent, DragStartEvent } from '@dnd-kit/core';
 import { Droppable } from './Droppable';
-import { DragDropContainer } from './DragDropContainer';
+import { DragDropContainer, DraggableObject } from './DragDropContainer';
 
 export type DragDropSortDragEndEvent = DragEndEvent;
 export type DragDropSortDragStartEvent = DragStartEvent;
-
-export interface DraggableObject {
-  /** Unique id of the draggable object */
-  id: string | number;
-  /** Content rendered in the draggable object */
-  content: React.ReactNode;
-  /** Props spread to the rendered wrapper of the draggable object */
-  props?: any;
-}
 
 /**
  * DragDropSortProps extends dnd-kit's props which may be viewed at https://docs.dndkit.com/api-documentation/context-provider#props.
