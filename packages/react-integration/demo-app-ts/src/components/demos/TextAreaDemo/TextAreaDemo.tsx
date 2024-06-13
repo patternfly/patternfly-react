@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextArea, Text, ValidatedOptions } from '@patternfly/react-core';
+import { Content, TextArea, ValidatedOptions } from '@patternfly/react-core';
 
 interface TextAreaState {
   textAreaValue: string;
@@ -81,7 +81,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
     } = this.state;
     return (
       <React.Fragment>
-        <Text>Text area</Text>
+        <Content component="p">Text area</Content>
         <TextArea
           id="textarea1"
           value={textAreaValue}
@@ -89,7 +89,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           validated={isValid ? ValidatedOptions.default : ValidatedOptions.error}
           aria-label="text area example 1"
         />
-        <Text>Required text area</Text>
+        <Content component="p">Required text area</Content>
         <TextArea
           id="textarea2"
           value={requiredTextAreaValue}
@@ -98,7 +98,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           validated={requiredIsValid ? ValidatedOptions.default : ValidatedOptions.error}
           aria-label="text area example 2"
         />
-        <Text>Resize text area horizontally </Text>
+        <Content component="p">Resize text area horizontally </Content>
         <TextArea
           id="textarea3"
           resizeOrientation="horizontal"
@@ -107,7 +107,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           validated={horizontalIsValid ? ValidatedOptions.default : ValidatedOptions.error}
           aria-label="text area example 3"
         />
-        <Text>Resize text area vertically </Text>
+        <Content component="p">Resize text area vertically </Content>
         <TextArea
           id="textarea4"
           resizeOrientation="vertical"
@@ -116,7 +116,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           validated={verticalIsValid ? ValidatedOptions.default : ValidatedOptions.error}
           aria-label="text area example 4"
         />
-        <Text>Validated text area </Text>
+        <Content component="p">Validated text area </Content>
         <TextArea
           id="textarea5"
           value={validatedTextArea}
@@ -124,10 +124,10 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           validated={validated}
           aria-label="text area example 5"
         />
-        <Text>Disabled text area </Text>
+        <Content component="p">Disabled text area </Content>
         <TextArea id="textarea6-a" value={'disabled text area'} aria-label="text area example 6 a" disabled />
         <TextArea id="textarea6-b" value={'isDisabled text area'} aria-label="text area example 6 b" isDisabled />
-        <Text>Read only text area </Text>
+        <Content component="p">Read only text area </Content>
         <TextArea id="textarea7-a" value={'readOnly text area'} aria-label="text area example 7 a" readOnly />
         <TextArea
           id="textarea7-b"

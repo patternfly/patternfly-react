@@ -32,7 +32,7 @@ import {
   SidebarPanel,
   Switch,
   Title,
-  TextContent,
+  Content,
   getResizeObserver
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
@@ -102,7 +102,7 @@ ScrollspyH2 = () => {
           </SidebarPanel>
           <SidebarContent hasNoBackground>
             <PageSection>
-              <TextContent>
+              <Content>
                 {headings.map(i => (
                   <div key={i} style={{ maxWidth: '800px', marginBottom: '32px' }}>
                     <h2 id={`heading-${i}`} tabIndex={-1}>
@@ -129,7 +129,7 @@ ScrollspyH2 = () => {
                     </p>
                   </div>
                 ))}
-              </TextContent>
+              </Content>
             </PageSection>
           </SidebarContent>
         </Sidebar>

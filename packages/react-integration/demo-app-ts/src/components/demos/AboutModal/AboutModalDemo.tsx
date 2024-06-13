@@ -1,5 +1,5 @@
 import React from 'react';
-import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
+import { AboutModal, Button, Content } from '@patternfly/react-core';
 const brandImg = '../../../assets/images/brandImg.svg';
 
 interface AboutModalState {
@@ -37,24 +37,24 @@ export class AboutModalDemo extends React.Component<{}, AboutModalState> {
           brandImageAlt="Patternfly Logo"
           productName="Product Name"
         >
-          <TextContent>
-            <TextList component="dl">
-              <TextListItem component="dt">CFME Version</TextListItem>
-              <TextListItem component="dd">5.5.3.4.20102789036450</TextListItem>
-              <TextListItem component="dt">Cloudforms Version</TextListItem>
-              <TextListItem component="dd">4.1</TextListItem>
-              <TextListItem component="dt">Server Name</TextListItem>
-              <TextListItem component="dd">40DemoMaster</TextListItem>
-              <TextListItem component="dt">User Name</TextListItem>
-              <TextListItem component="dd">Administrator</TextListItem>
-              <TextListItem component="dt">User Role</TextListItem>
-              <TextListItem component="dd">EvmRole-super_administrator</TextListItem>
-              <TextListItem component="dt">Browser Version</TextListItem>
-              <TextListItem component="dd">601.2</TextListItem>
-              <TextListItem component="dt">Browser OS</TextListItem>
-              <TextListItem component="dd">Mac</TextListItem>
-            </TextList>
-          </TextContent>
+          <Content>
+            <dl>
+              <dt>CFME Version</dt>
+              <dd>5.5.3.4.20102789036450</dd>
+              <dt>Cloudforms Version</dt>
+              <dd>4.1</dd>
+              <dt>Server Name</dt>
+              <dd>40DemoMaster</dd>
+              <dt>User Name</dt>
+              <dd>Administrator</dd>
+              <dt>User Role</dt>
+              <dd>EvmRole-super_administrator</dd>
+              <dt>Browser Version</dt>
+              <dd>601.2</dd>
+              <dt>Browser OS</dt>
+              <dd>Mac</dd>
+            </dl>
+          </Content>
         </AboutModal>
       </React.Fragment>
     );

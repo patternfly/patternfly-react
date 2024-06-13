@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Button,
+  Content,
   DataList,
   DataListCheck,
   DataListControl,
@@ -16,9 +17,6 @@ import {
   OverflowMenu,
   OverflowMenuGroup,
   OverflowMenuItem,
-  Text,
-  TextContent,
-  TextVariants,
   MenuToggle
 } from '@patternfly/react-core';
 import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
@@ -427,12 +425,12 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
       isOpen={isModalOpen}
       variant="small"
       description={
-        <TextContent>
-          <Text component={TextVariants.p}>Selected categories will be displayed in the table.</Text>
+        <Content>
+          <p>Selected categories will be displayed in the table.</p>
           <Button isInline onClick={selectAllColumns} variant="link">
             Select all
           </Button>
-        </TextContent>
+        </Content>
       }
       onClose={handleModalToggle}
       actions={[

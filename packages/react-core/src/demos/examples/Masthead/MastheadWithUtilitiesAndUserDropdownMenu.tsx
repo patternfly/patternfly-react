@@ -8,6 +8,7 @@ import {
   ButtonVariant,
   Card,
   CardBody,
+  Content,
   Divider,
   Dropdown,
   DropdownGroup,
@@ -36,8 +37,6 @@ import {
   PageToggleButton,
   Popper,
   SkipToContent,
-  Text,
-  TextContent,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -532,10 +531,10 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       isBreadcrumbGrouped
       additionalGroupedContent={
         <PageSection>
-          <TextContent>
-            <Text component="h1">Main title</Text>
-            <Text component="p">This is a full page demo.</Text>
-          </TextContent>
+          <Content>
+            <h1>Main title</h1>
+            <p>This is a full page demo.</p>
+          </Content>
         </PageSection>
       }
     >

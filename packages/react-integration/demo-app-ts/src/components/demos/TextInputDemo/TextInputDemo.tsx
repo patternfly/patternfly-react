@@ -1,4 +1,4 @@
-import { Text, TextInput, TextInputProps, ValidatedOptions } from '@patternfly/react-core';
+import { Content, TextInput, TextInputProps, ValidatedOptions } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 export class TextInputDemo extends Component {
@@ -60,7 +60,7 @@ export class TextInputDemo extends Component {
   render() {
     return (
       <React.Fragment>
-        <Text>Simple Text Input Example</Text>
+        <Content component="p">Simple Text Input Example</Content>
         <TextInput id="text" onChange={this.myTextInputProps.onChange} />
         <TextInput
           id="text-disabled"
@@ -72,21 +72,21 @@ export class TextInputDemo extends Component {
           readOnlyVariant={this.myReadOnlyTextInputProps.readOnlyVariant}
           value={this.myReadOnlyTextInputProps.value}
         />
-        <Text>Text Input Truncated on Left Example</Text>
+        <Content component="p">Text Input Truncated on Left Example</Content>
         <TextInput
           id="text-truncated-on-left"
           isStartTruncated
           onChange={this.handleLeftTruncatedTextInputChange}
           value={this.state.leftTruncatedTextInputValue}
         />
-        <Text>Validated Text Input </Text>
+        <Content component="p">Validated Text Input </Content>
         <TextInput
           id="text-validated"
           onChange={this.handleValidatedTextInputChange}
           value={this.state.validatedTextInputValue}
           validated={this.state.validated}
         />
-        <Text>Select Text Using Ref Example </Text>
+        <Content component="p">Select Text Using Ref Example </Content>
         <TextInput
           id="text-using-ref"
           ref={this.ref}

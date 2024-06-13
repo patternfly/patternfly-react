@@ -13,17 +13,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 ```js isFullscreen
 import React from 'react';
-import {
-  Banner,
-  Card,
-  CardBody,
-  Flex,
-  Gallery,
-  GalleryItem,
-  PageSection,
-  TextContent,
-  Text
-} from '@patternfly/react-core';
+import { Banner, Card, CardBody, Flex, Gallery, GalleryItem, PageSection, Content } from '@patternfly/react-core';
 
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import { css } from '@patternfly/react-styles';
@@ -48,13 +38,13 @@ class BannerDemo extends React.Component {
             </Flex>
           </Banner>
           <PageSection>
-            <TextContent>
-              <Text component="h1">Main title</Text>
-              <Text component="p">
+            <Content>
+              <h1>Main title</h1>
+              <p>
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
                 of it’s relative line height of 1.5.
-              </Text>
-            </TextContent>
+              </p>
+            </Content>
           </PageSection>
           <PageSection>
             <Gallery hasGutter>
@@ -87,8 +77,7 @@ import {
   Gallery,
   GalleryItem,
   PageSection,
-  TextContent,
-  Text
+  Content
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import { css } from '@patternfly/react-styles';
@@ -122,13 +111,13 @@ class BannerDemo extends React.Component {
           <FlexItem grow={{ default: 'grow' }} style={{ minHeight: 0 }}>
             <DashboardWrapper breadcrumb={null}>
               <PageSection>
-                <TextContent>
-                  <Text component="h1">Main title</Text>
-                  <Text component="p">
+                <Content>
+                  <h1>Main title</h1>
+                  <p>
                     Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
                     of it’s relative line height of 1.5.
-                  </Text>
-                </TextContent>
+                  </p>
+                </Content>
               </PageSection>
               <PageSection>
                 <Gallery hasGutter>

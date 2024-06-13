@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider, SliderOnChangeEvent, Button, Text, TextVariants } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent, Button, Content } from '@patternfly/react-core';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import LockIcon from '@patternfly/react-icons/dist/esm/icons/lock-icon';
@@ -61,7 +61,7 @@ export const SliderActions: React.FunctionComponent = () => {
 
   return (
     <>
-      <Text component={TextVariants.h3}>Slider value is: {value1}</Text>
+      <Content component="h3">Slider value is: {value1}</Content>
       <Slider
         value={value1}
         onChange={onChange1}

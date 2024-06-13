@@ -8,7 +8,7 @@ import {
   ModalVariant,
   Title,
   TitleSizes,
-  TextContent,
+  Content,
   Flex
 } from '@patternfly/react-core';
 
@@ -34,12 +34,12 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
         aria-describedby="modal-custom-header-description"
       >
         <ModalHeader>
-          <TextContent>
+          <Content>
             <Title id="modal-custom-header-label" headingLevel="h1" size={TitleSizes['2xl']}>
               Custom header modal
             </Title>
             <p>Add custom content to the header by not passing the titles prop the modal box header component.</p>
-          </TextContent>
+          </Content>
         </ModalHeader>
         <ModalBody>
           <span id="modal-custom-header-description">

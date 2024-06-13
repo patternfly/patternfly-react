@@ -1,26 +1,16 @@
 import React from 'react';
-import {
-  BackToTop,
-  Card,
-  CardBody,
-  Gallery,
-  GalleryItem,
-  PageSection,
-  TextContent,
-  Text,
-  Page
-} from '@patternfly/react-core';
+import { BackToTop, Card, CardBody, Content, Gallery, GalleryItem, PageSection, Page } from '@patternfly/react-core';
 
 export const BackToTopDemo = () => (
   <Page>
     <PageSection>
-      <TextContent>
-        <Text component="h1">Main title</Text>
-        <Text component="p">
+      <Content>
+        <h1>Main title</h1>
+        <p>
           Body text should be Overpass Regular at 16px.It should have leading of 24px because <br />
           of it’s relative line height of 1.5.
-        </Text>
-      </TextContent>
+        </p>
+      </Content>
     </PageSection>
     <PageSection hasOverflowScroll name="scrolling-section">
       <Gallery hasGutter>

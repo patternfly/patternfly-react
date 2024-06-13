@@ -4,6 +4,7 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Button,
+  Content,
   Drawer,
   DrawerActions,
   DrawerCloseButton,
@@ -21,8 +22,6 @@ import {
   PageSidebar,
   PageSidebarBody,
   SkipToContent,
-  Text,
-  TextContent,
   Masthead,
   PageToggleButton,
   MastheadToggle,
@@ -159,10 +158,10 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
         mainContainerId={pageId}
       >
         <PageSection>
-          <TextContent>
-            <Text component="h1">Main title</Text>
-            <Text component="p">A demo of a wizard in a page.</Text>
-          </TextContent>
+          <Content>
+            <h1>Main title</h1>
+            <p>A demo of a wizard in a page.</p>
+          </Content>
         </PageSection>
         <PageSection type={PageSectionTypes.wizard}>
           <Wizard>

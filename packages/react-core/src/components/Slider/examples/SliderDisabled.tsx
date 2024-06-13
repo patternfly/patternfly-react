@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider, SliderOnChangeEvent, Text, TextVariants } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent, Content } from '@patternfly/react-core';
 
 export const SliderDisabled: React.FunctionComponent = () => {
   const [value, setValue] = React.useState(50);
@@ -22,7 +22,7 @@ export const SliderDisabled: React.FunctionComponent = () => {
 
   return (
     <>
-      <Text component={TextVariants.h3}>Slider value is: {displayValue()}</Text>
+      <Content component="h3">Slider value is: {displayValue()}</Content>
       <Slider
         isDisabled
         value={value}
