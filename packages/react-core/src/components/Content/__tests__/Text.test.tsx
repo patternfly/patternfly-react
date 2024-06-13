@@ -21,9 +21,9 @@ test('Renders with custom class name when className prop is provided', () => {
   expect(screen.getByText('Test')).toHaveClass('custom-class');
 });
 
-test('Renders as "p" element by default', () => {
+test('Renders as "div" element by default', () => {
   render(<Text>Test</Text>);
-  expect(screen.getByText('Test')).toHaveProperty('nodeName', 'P');
+  expect(screen.getByText('Test')).toHaveProperty('nodeName', 'DIV');
 });
 
 test('Renders as "h1" element when component="h1"', () => {
