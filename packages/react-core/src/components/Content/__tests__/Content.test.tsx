@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Text } from '../Text';
+import { Text } from '../Content';
 
 test('Renders without children', () => {
   render(

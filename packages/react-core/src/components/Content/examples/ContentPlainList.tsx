@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TextVariants, TextList, TextListVariants, TextListItem } from '@patternfly/react-core';
 
-export const TextPlainList: React.FunctionComponent = () => (
+export const ContentPlainList: React.FunctionComponent = () => (
   <>
     <Text component={TextVariants.h3}>Plain unordered list</Text>
     <TextList isPlain>

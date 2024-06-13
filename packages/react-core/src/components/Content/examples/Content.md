@@ -1,5 +1,5 @@
 ---
-id: Text
+id: Content
 section: components
 cssPrefix: pf-v5-c-content
 propComponents: ['TextContent', 'Text', 'TextList', 'TextListItem']
@@ -15,37 +15,37 @@ For example, rather than nesting the `<List>` and `<Title>` components within `<
 
 ### Headings
 
-```ts file="./TextHeadings.tsx"
+```ts file="./ContentHeadings.tsx"
 
 ```
 
 ### Body
 
-```ts file="./TextBody.tsx"
+```ts file="./ContentBody.tsx"
 
 ```
 
 ### Unordered list
 
-```ts file="./TextUnorderedList.tsx"
+```ts file="./ContentUnorderedList.tsx"
 
 ```
 
 ### Ordered list
 
-```ts file="./TextOrderedList.tsx"
+```ts file="./ContentOrderedList.tsx"
 
 ```
 
 ### Plain list
 
-```ts file="./TextPlainList.tsx"
+```ts file="./ContentPlainList.tsx"
 
 ```
 
 ### Description list
 
-```ts file="./TextDescriptionList.tsx"
+```ts file="./ContentDescriptionList.tsx"
 
 ```
 
@@ -53,12 +53,12 @@ Text components such as Text, TextList, TextListItem can be placed within a Text
 
 ### Wrapped in TextContent
 
-```ts file="./TextContentWrapped.tsx"
+```ts file="./ContentWrapper.tsx"
 
 ```
 
 ### Link and visited link
 
-```ts file="./TextVisited.tsx"
+```ts file="./ContentVisited.tsx"
 
 ```
