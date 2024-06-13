@@ -102,25 +102,102 @@ test('Renders as "dd" element when component="dd"', () => {
   expect(screen.getByText('Test')).toHaveProperty('nodeName', 'DD');
 });
 
+test(`Renders with class name ${styles.contentH1} when component="h1"`, () => {
+  render(<Content component="h1">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentH1);
+});
+
+test(`Renders with class name ${styles.contentH2} when component="h2"`, () => {
+  render(<Content component="h2">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentH2);
+});
+
+test(`Renders with class name ${styles.contentH3} when component="h3"`, () => {
+  render(<Content component="h3">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentH3);
+});
+
+test(`Renders with class name ${styles.contentH4} when component="h4"`, () => {
+  render(<Content component="h4">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentH4);
+});
+
+test(`Renders with class name ${styles.contentH5} when component="h5"`, () => {
+  render(<Content component="h5">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentH5);
+});
+
+test(`Renders with class name ${styles.contentH6} when component="h6"`, () => {
+  render(<Content component="h6">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentH6);
+});
+
+test(`Renders with class name ${styles.contentP} when component="p"`, () => {
+  render(<Content component="p">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentP);
+});
+
+test(`Renders with class name ${styles.contentA} when component="a"`, () => {
+  render(<Content component="a">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentA);
+});
+
+test(`Renders with class name ${styles.contentSmall} when component="small"`, () => {
+  render(<Content component="small">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentSmall);
+});
+
+test(`Renders with class name ${styles.contentBlockquote} when component="blockquote"`, () => {
+  render(<Content component="blockquote">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentBlockquote);
+});
+
+test(`Renders with class name ${styles.contentPre} when component="pre"`, () => {
+  render(<Content component="pre">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentPre);
+});
+
+test(`Renders with class name ${styles.contentHr} when component="hr"`, () => {
+  render(<Content component="hr">Test</Content>);
+  expect(screen.getByRole('separator')).toHaveClass(styles.contentHr);
+});
+
+test(`Renders with class name ${styles.contentUl} when component="ul"`, () => {
+  render(<Content component="ul">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentUl);
+});
+
+test(`Renders with class name ${styles.contentOl} when component="ol"`, () => {
+  render(<Content component="ol">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentOl);
+});
+
+test(`Renders with class name ${styles.contentDl} when component="dl"`, () => {
+  render(<Content component="dl">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentDl);
+});
+
+test(`Renders with class name ${styles.contentLi} when component="li"`, () => {
+  render(<Content component="li">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentLi);
+});
+
+test(`Renders with class name ${styles.contentDt} when component="dt"`, () => {
+  render(<Content component="dt">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentDt);
+});
+
+test(`Renders with class name ${styles.contentDd} when component="dd"`, () => {
+  render(<Content component="dd">Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass(styles.contentDd);
+});
+
 test(`Renders with class name ${styles.content} when no component prop is provided`, () => {
   render(<Content>Test</Content>);
   expect(screen.getByText('Test')).toHaveClass(styles.content);
 });
 
-test(`Renders with class name ${styles.content} when component is 'ul', 'ol' or 'dl'`, () => {
-  render(
-    <>
-      <Content component="ul">Test1</Content>
-      <Content component="ol">Test2</Content>
-      <Content component="dl">Test3</Content>
-    </>
-  );
-  expect(screen.getByText('Test1')).toHaveClass(styles.content);
-  expect(screen.getByText('Test2')).toHaveClass(styles.content);
-  expect(screen.getByText('Test3')).toHaveClass(styles.content);
-});
-
-test(`Renders without class name ${styles.content} when component is provided and it is not a list`, () => {
+test(`Renders without class name ${styles.content} when component is provided`, () => {
   render(<Content component="p">Test</Content>);
   expect(screen.getByText('Test')).not.toHaveClass(styles.content);
 });

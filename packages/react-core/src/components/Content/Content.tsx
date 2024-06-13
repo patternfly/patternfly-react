@@ -104,7 +104,6 @@ export const Content: React.FunctionComponent<ContentProps> = ({
       data-pf-content
       className={css(
         componentStyles[wrappingComponent],
-        isList && styles.content,
         isList && isPlainList && styles.modifiers.plain,
         isVisitedLink && styles.modifiers.visited,
         className
