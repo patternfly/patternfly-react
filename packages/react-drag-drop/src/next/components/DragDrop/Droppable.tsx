@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useDroppable } from '@dnd-kit/core';
-import { DraggableObject } from './DragDropSort';
+import { DraggableObject } from './DragDropContainer';
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
 import { DraggableDataListItem } from './DraggableDataListItem';
