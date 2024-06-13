@@ -1,27 +1,88 @@
 import * as React from 'react';
 import { useDroppable } from '@dnd-kit/core';
+import { DraggableObject } from './DragDropSort';
+import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
+import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
+import { DraggableDataListItem } from './DraggableDataListItem';
+import { Draggable } from './Draggable';
 
 interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered inside DragDrop */
-  children?: React.ReactNode;
-  /** Class to add to outer div */
+  /** ID of the drop zone */
+  id?: string;
+  /** Additional classes added to the div, or cloned element if wrapper is used */
   className?: string;
-  /** Name of zone that items can be dragged between. Should specify if there is more than one Droppable on the page. */
-  zone?: string;
-  /** Id to be passed back on drop events */
-  droppableId?: string;
-  /** Don't wrap the component in a div. Requires passing a single child. */
-  hasNoWrapper?: boolean;
+  /** Array of draggable objects */
+  items: DraggableObject[];
+  /** Alternative to wrapping drop zone in a div, will override any ref and style set on the element. */
+  wrapper?: React.ReactElement;
+  /** The variant determines which component wraps the draggable object.
+   * Default variant wraps the draggable object in a div.
+   * DataList vairant wraps the draggable object in a DataListItem
+   * DualListSelectorList variant wraps the draggable objects in a DualListSelectorListItem and a div.pf-c-dual-list-selector__item-text element
+   * TableComposable variant wraps the draggable objects in TODO
+   * */
+  variant?: 'default' | 'defaultWithHandle' | 'DataList' | 'DualListSelectorList' | 'TableComposable';
 }
 
-export const Droppable: React.FunctionComponent<DroppableProps> = ({ children, ...props }: DroppableProps) => {
-  const { isOver, setNodeRef } = useDroppable({ id: 'droppable' });
-  const style = { color: isOver ? 'green' : undefined };
+export const Droppable: React.FunctionComponent<DroppableProps> = ({
+  items,
+  id = 'droppable',
+  variant = 'default',
+  wrapper,
+  ...props
+}: DroppableProps) => {
+  const itemIds = React.useMemo(() => (items ? Array.from(items, (item) => item.id as string) : []), [items]);
+  const { active, over, setNodeRef } = useDroppable({ id: id ? id : 'droppable' });
+  const isOverContainer = over
+    ? (id === over.id && active?.data.current?.type !== 'container') || items.find((item) => item.id === over.id)
+    : false;
+
+  // TODO: container styling (or remove)
+  const style = { color: isOverContainer ? 'green' : undefined };
+
+  const content = items.map((item: DraggableObject) => {
+    switch (variant) {
+      case 'DualListSelectorList':
+        return (
+          <DraggableDualListSelectorListItem key={item.id} id={item.id} {...item.props}>
+            {item.content}
+          </DraggableDualListSelectorListItem>
+        );
+      case 'DataList':
+        return (
+          <DraggableDataListItem key={item.id} id={item.id} {...item.props}>
+            {item.content}
+          </DraggableDataListItem>
+        );
+      default:
+        return (
+          <Draggable
+            useDragButton={variant === 'default' || variant === 'defaultWithHandle'}
+            key={item.id}
+            id={item.id}
+            {...item.props}
+          >
+            {item.content}
+          </Draggable>
+        );
+    }
+  });
 
   return (
-    <div ref={setNodeRef} style={style} {...props}>
-      {children}
-    </div>
+    <SortableContext items={itemIds} strategy={verticalListSortingStrategy} id={id}>
+      {wrapper &&
+        React.cloneElement(wrapper, {
+          children: content,
+          ref: setNodeRef,
+          style,
+          ...props
+        })}
+      {!wrapper && (
+        <div ref={setNodeRef} style={style} {...props}>
+          {content}
+        </div>
+      )}
+    </SortableContext>
   );
 };
 Droppable.displayName = 'Droppable';

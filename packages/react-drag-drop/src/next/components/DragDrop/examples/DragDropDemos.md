@@ -14,7 +14,7 @@ import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-d
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 
-import { DragDropSort } from '@patternfly/react-drag-drop';
+import { DragDropSort, DragDropContainer, Droppable as NewDroppable } from '@patternfly/react-drag-drop';
 
 ## Sorting demos
 
@@ -33,5 +33,19 @@ To enable reordering in a `<DataList>`, wrap the `<DataList>` component with `<D
 To enable reordering in a `<DualListSelector>` pane wrap the `<DualListSelectorList>` component with `<DragDropSort>` and define the `variant` as "DualListSelectorList".
 
 ```ts file="./DualListSelectorDraggable.tsx"
+
+```
+
+## Multiple drop zone demos
+
+To enable multiple drop zones, wrap the component with `<DragDropContainer>`, place one or more `<Droppable>` components within the container, and define the `variant` property on all components. A collection of all draggable items should be passed to `<DragDropContainer>`, and each `<Droppable>` should be passed their respective draggable items.
+
+`<Droppable>` will create the component's usual `children` internally based on the `items` property, so `children` should not be passed where the `<Droppable>` is defined.
+
+### Dual list selector
+
+To enable multiple drop zones in a `<DualListSelector>`, wrap the `<DualListSelector>` component with `<DragDropContainer>`, define the `variant` as "DualListSelector", and then within each pane's `<DualListSelectorList>`, include a `<Droppable>` component with the variant "DualListSelectorList".
+
+```ts file="./DragDropContainerDualListSelector.tsx"
 
 ```

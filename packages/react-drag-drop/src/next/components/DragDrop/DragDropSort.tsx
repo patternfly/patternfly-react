@@ -13,24 +13,20 @@ import {
   DragEndEvent,
   DragStartEvent
 } from '@dnd-kit/core';
-import {
-  arrayMove,
-  SortableContext,
-  sortableKeyboardCoordinates,
-  verticalListSortingStrategy
-} from '@dnd-kit/sortable';
+import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { Draggable } from './Draggable';
 import { DraggableDataListItem } from './DraggableDataListItem';
 import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
 import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { canUseDOM } from '@patternfly/react-core';
+import { Droppable } from './Droppable';
 
 export type DragDropSortDragEndEvent = DragEndEvent;
 export type DragDropSortDragStartEvent = DragStartEvent;
 
 export interface DraggableObject {
   /** Unique id of the draggable object */
-  id: string;
+  id: string | number;
   /** Content rendered in the draggable object */
   content: React.ReactNode;
   /** Props spread to the rendered wrapper of the draggable object */
@@ -143,39 +139,7 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
   };
 
   const dragOverlay = <DragOverlay>{activeId && getDragOverlay()}</DragOverlay>;
-
-  const renderedChildren = (
-    <SortableContext items={itemIds} strategy={verticalListSortingStrategy} id="droppable">
-      {items.map((item: DraggableObject) => {
-        switch (variant) {
-          case 'DualListSelectorList':
-            return (
-              <DraggableDualListSelectorListItem key={item.id} id={item.id} {...item.props}>
-                {item.content}
-              </DraggableDualListSelectorListItem>
-            );
-          case 'DataList':
-            return (
-              <DraggableDataListItem key={item.id} id={item.id} {...item.props}>
-                {item.content}
-              </DraggableDataListItem>
-            );
-          default:
-            return (
-              <Draggable
-                useDragButton={variant === 'defaultWithHandle' || variant === 'default'}
-                key={item.id}
-                id={item.id}
-                {...item.props}
-              >
-                {item.content}
-              </Draggable>
-            );
-        }
-      })}
-      {canUseDOM ? ReactDOM.createPortal(dragOverlay, document.getElementById('root')) : dragOverlay}
-    </SortableContext>
-  );
+  const renderedChildren = <Droppable items={items} id="droppable" variant={variant} />;
 
   return (
     <DndContext
@@ -186,10 +150,14 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
       {...props}
     >
       {children &&
+        variant !== 'default' &&
+        variant !== 'defaultWithHandle' &&
         React.cloneElement(children, {
           children: renderedChildren
         })}
-      {!children && <div>{renderedChildren}</div>}
+      {children && (variant === 'default' || variant === 'defaultWithHandle') && children}
+      {!children && renderedChildren}
+      {canUseDOM ? ReactDOM.createPortal(dragOverlay, document.getElementById('root')) : dragOverlay}
     </DndContext>
   );
 };
