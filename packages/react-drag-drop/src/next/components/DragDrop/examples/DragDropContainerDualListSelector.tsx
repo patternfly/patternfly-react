@@ -16,16 +16,16 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 export const DragDropContainerDualListSelector: React.FunctionComponent = () => {
   const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = React.useState(false);
   const [availableOptions, setAvailableOptions] = React.useState<DraggableObject[]>([
-    { id: 'Apple', content: 'Apple', props: { key: 'Apple', isSelected: false } },
-    { id: 'Banana', content: 'Banana', props: { key: 'Banana', isSelected: false } },
-    { id: 'Pineapple', content: 'Pineapple', props: { key: 'Pineapple', isSelected: false } }
+    { id: 'Kiwi', content: 'Kiwi', props: { key: 'Kiwi', isSelected: false } },
+    { id: 'Pear', content: 'Pear', props: { key: 'Pear', isSelected: false } },
+    { id: 'Cantaloupe', content: 'Cantaloupe', props: { key: 'Cantaloupe', isSelected: false } }
   ]);
 
   const [chosenOptions, setChosenOptions] = React.useState<DraggableObject[]>([
-    { id: 'Orange', content: 'Orange', props: { key: 'Orange', isSelected: false } },
-    { id: 'Grape', content: 'Grape', props: { key: 'Grape', isSelected: false } },
-    { id: 'Peach', content: 'Peach', props: { key: 'Peach', isSelected: false } },
-    { id: 'Strawberry', content: 'Strawberry', props: { key: 'Strawberry', isSelected: false } }
+    { id: 'Honeydew', content: 'Honeydew', props: { key: 'Honeydew', isSelected: false } },
+    { id: 'Blackberry', content: 'Blackberry', props: { key: 'Blackberry', isSelected: false } },
+    { id: 'Watermelon', content: 'Watermelon', props: { key: 'Watermelon', isSelected: false } },
+    { id: 'Cherry', content: 'Cherry', props: { key: 'Cherry', isSelected: false } }
   ]);
 
   const [allDraggableItems, setAllItems] = React.useState<Record<string, DraggableObject[]>>({
