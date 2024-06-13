@@ -12,7 +12,5 @@ jobs:
           days-before-close: -1
           exempt-issue-labels: accessibility,breaking change :boom:,security,pinned
           stale-issue-label: stale
-          stale-issue-message: This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs.
-          stale-pr-message: This PR has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs.
-          close-issue-message: 'This issue has been closed because it has not had activity since being marked as stale.'
-          close-pr-message: 'This PR has been closed because it has not had activity since being marked as stale.'
+          stale-issue-message: This issue has been automatically marked as stale because it has not had recent activity.
+          stale-pr-message: This PR has been automatically marked as stale because it has not had recent activity.
