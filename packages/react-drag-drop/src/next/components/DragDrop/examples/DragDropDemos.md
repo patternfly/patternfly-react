@@ -54,7 +54,7 @@ To enable multiple drop zones with `<DataList>` components, place one or more `<
 
 ### Dual list selector
 
-To enable multiple drop zones in a `<DualListSelector>`, wrap the `<DualListSelector>` component with `<DragDropContainer>`, define the `variant` as "DualListSelector", and then within each pane's `<DualListSelectorList>`, include a `<Droppable>` component with the variant "DualListSelectorList".
+To enable multiple drop zones in a `<DualListSelector>`, wrap the `<DualListSelector>` component with `<DragDropContainer>`, and then include a `<Droppable>` component within each pane. Both `<DragDropContainer>` and `<Droppable>` should define the `variant` property as "DualListSelectorList".
 
 ```ts file="./DragDropContainerDualListSelector.tsx"
 

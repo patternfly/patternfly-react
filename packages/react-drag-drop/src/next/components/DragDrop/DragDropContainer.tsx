@@ -55,7 +55,7 @@ export interface DragDropContainerProps extends DndContextProps {
    * DualListSelectorList variant wraps the draggable objects in a DualListSelectorListItem and a div.pf-c-dual-list-selector__item-text element
    * TableComposable variant wraps the draggable objects in TODO
    * */
-  variant?: 'default' | 'DataList' | 'DualListSelector' | 'TableComposable';
+  variant?: 'default' | 'DataList' | 'DualListSelectorList' | 'TableComposable';
 }
 
 export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> = ({
@@ -233,7 +233,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
 
     let content;
     switch (variant) {
-      case 'DualListSelector':
+      case 'DualListSelectorList':
         content = (
           <DraggableDualListSelectorListItem key={item.id} id={item.id} {...item.props}>
             {item.content}

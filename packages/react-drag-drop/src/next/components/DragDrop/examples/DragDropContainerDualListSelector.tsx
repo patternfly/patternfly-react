@@ -127,7 +127,7 @@ export const DragDropContainerDualListSelector: React.FunctionComponent = () => 
       onDrop={handleDragOperation}
       onContainerMove={handleDragOperation}
       onCancel={handleDragOperation}
-      variant="DualListSelector"
+      variant="DualListSelectorList"
     >
       <DualListSelector>
         <DualListSelectorPane
