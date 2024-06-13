@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.68...@patternfly/react-core@6.0.0-alpha.69) (2024-06-13)
+
+### Features
+
+- **Modal:** Added status variant styling to title ([#10592](https://github.com/patternfly/patternfly-react/issues/10592)) ([c07a319](https://github.com/patternfly/patternfly-react/commit/c07a319cb99a7bf21e29e751aa2496434ccaffbd))
+
 # [6.0.0-alpha.68](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.67...@patternfly/react-core@6.0.0-alpha.68) (2024-06-12)
 
 ### Bug Fixes
