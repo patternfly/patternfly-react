@@ -95,7 +95,6 @@ module.exports = {
     'landmark-main-is-top-level',
     'scrollable-region-focusable',
     'link-in-text-block',
-    // temporarily enable this rule that has started failing test in v6 branch.
     'aria-required-children'
   ].join(','),
   ignoreIncomplete: true

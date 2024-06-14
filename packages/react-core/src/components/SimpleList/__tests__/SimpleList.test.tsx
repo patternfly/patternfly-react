@@ -14,13 +14,13 @@ const items = [
 ];
 
 const anchors = [
-  <SimpleListItem key="i1" component="a">
+  <SimpleListItem key="i1" component="a" href="#foo">
     Item 1
   </SimpleListItem>,
-  <SimpleListItem key="i2" component="a">
+  <SimpleListItem key="i2" component="a" href="#bar">
     Item 2
   </SimpleListItem>,
-  <SimpleListItem key="i3" component="a">
+  <SimpleListItem key="i3" component="a" href="#baz">
     Item 3
   </SimpleListItem>
 ];

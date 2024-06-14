@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { DrawerPanelDescription } from '../DrawerPanelDescription';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
+import '@testing-library/jest-dom';
 
 test(`Renders with only class ${styles.drawerDescription} by default`, () => {
   render(<DrawerPanelDescription>description content</DrawerPanelDescription>);
