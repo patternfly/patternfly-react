@@ -86,11 +86,10 @@
     "clean:build": "rimraf .cache .eslintcache coverage",
     "clean:exports": "lerna run clean:exports --parallel --stream",
     "generate": "yarn plop",
-    "lint": "node --max-old-space-size=4096 node_modules/.bin/eslint --ext js,jsx,ts,tsx --cache --cache-strategy content",
-    "lint:all": "yarn lint:md && yarn lint:versions && yarn lint:ts",
+    "lint": "eslint --ext js,jsx,ts,tsx --cache --cache-strategy content",
+    "lint:all": "yarn lint:md && yarn lint:ts",
     "lint:md": "yarn eslint packages --ext md --no-eslintrc --config .eslintrc-md.json --cache --cache-strategy content",
     "lint:ts": "yarn lint packages/*/src",
-    "lint:versions": "node scripts/verifyPatternflyVersions.js",
     "lint:tests": "yarn lint packages/*/src/components/*/__tests__/*.test.*",
     "prepare": "ts-patch install -s",
     "serve:docs": "yarn workspace @patternfly/react-docs serve",
@@ -112,8 +111,7 @@
   },
   "lint-staged": {
     "*.md": "yarn lint:md --fix",
-    "*.{js,jsx,ts,tsx}": "yarn lint --fix",
-    "*.json": "yarn lint:versions --fix"
+    "*.{js,jsx,ts,tsx}": "yarn lint --fix"
   },
   "workspaces": {
     "packages": [
