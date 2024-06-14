@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 /* eslint-disable camelcase */
-const brandImg = require('../../../assets/images/brandImgColor.svg') as string;
-const pfbg_icon = require('../../../assets/images/pfbg-icon.svg') as string;
+import brandImg from '../../../assets/images/brandImgColor.svg';
+import pfbg_icon from '../../../assets/images/pfbg-icon.svg';
 
 import {
   LoginFooterItem,
@@ -59,14 +59,14 @@ export class LoginPageDemo extends Component<React.HTMLProps<HTMLDivElement>, Lo
 
   render() {
     const helperText = (
-      <React.Fragment>
+      <>
         <ExclamationCircleIcon />
         &nbsp;Invalid login credentials.
-      </React.Fragment>
+      </>
     );
 
     const socialMediaLoginContent = (
-      <React.Fragment>
+      <>
         <LoginMainFooterLinksItem key="1" href="#">
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
             <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
@@ -92,7 +92,7 @@ export class LoginPageDemo extends Component<React.HTMLProps<HTMLDivElement>, Lo
             <path d="M29.782 199.732L256 493.714 8.074 309.699c-6.856-5.142-9.712-13.996-7.141-21.993l28.849-87.974zm75.405-174.806c-3.142-8.854-15.709-8.854-18.851 0L29.782 199.732h131.961L105.187 24.926zm56.556 174.806L256 493.714l94.257-293.982H161.743zm349.324 87.974l-28.849-87.974L256 493.714l247.926-184.015c6.855-5.142 9.711-13.996 7.141-21.993zm-85.404-262.78c-3.142-8.854-15.709-8.854-18.851 0l-56.555 174.806h131.961L425.663 24.926z" />
           </svg>
         </LoginMainFooterLinksItem>
-      </React.Fragment>
+      </>
     );
 
     const signUpForAccountMessage = (
@@ -107,7 +107,7 @@ export class LoginPageDemo extends Component<React.HTMLProps<HTMLDivElement>, Lo
     );
 
     const listItems = (
-      <React.Fragment>
+      <>
         <ListItem key="1">
           <LoginFooterItem href="#">Terms of Use </LoginFooterItem>
         </ListItem>
@@ -117,7 +117,7 @@ export class LoginPageDemo extends Component<React.HTMLProps<HTMLDivElement>, Lo
         <ListItem key="3">
           <LoginFooterItem href="#">Privacy Policy</LoginFooterItem>
         </ListItem>
-      </React.Fragment>
+      </>
     );
 
     const loginForm = (

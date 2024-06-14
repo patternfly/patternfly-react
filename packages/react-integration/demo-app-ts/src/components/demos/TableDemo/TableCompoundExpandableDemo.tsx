@@ -42,25 +42,25 @@ export class TableCompoundExpandableDemo extends Component<TableProps, TableStat
             { title: <a href="#">siemur/test-space</a>, props: { component: 'th' } },
             {
               title: (
-                <React.Fragment>
+                <>
                   <CodeBranchIcon key="icon" /> 10
-                </React.Fragment>
+                </>
               ),
               props: { isOpen: true, ariaControls: 'compoound-expansion-table-1' }
             },
             {
               title: (
-                <React.Fragment>
+                <>
                   <CodeIcon key="icon" /> 4
-                </React.Fragment>
+                </>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-2' }
             },
             {
               title: (
-                <React.Fragment>
+                <>
                   <CubeIcon key="icon" /> 4
-                </React.Fragment>
+                </>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-3' }
             },
@@ -119,25 +119,25 @@ export class TableCompoundExpandableDemo extends Component<TableProps, TableStat
             { title: <a href="#">siemur/test-space</a>, props: { component: 'th' } },
             {
               title: (
-                <React.Fragment>
+                <>
                   <CodeBranchIcon key="icon" /> 3
-                </React.Fragment>
+                </>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-4' }
             },
             {
               title: (
-                <React.Fragment>
+                <>
                   <CodeIcon key="icon" /> 4
-                </React.Fragment>
+                </>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-5' }
             },
             {
               title: (
-                <React.Fragment>
+                <>
                   <CubeIcon key="icon" /> 2
-                </React.Fragment>
+                </>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-6' }
             },

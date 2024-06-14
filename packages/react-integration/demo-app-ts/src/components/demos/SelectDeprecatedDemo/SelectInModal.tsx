@@ -40,7 +40,7 @@ export const SelectInModal = () => {
 
   const inputGroupRef1 = React.useRef<HTMLDivElement>(null);
   return (
-    <React.Fragment>
+    <>
       <Button id="modal-for-select-in-modal" variant="primary" onClick={handleModalToggle}>
         Launch modal
       </Button>
@@ -93,6 +93,6 @@ export const SelectInModal = () => {
           </InputGroupItem>
         </InputGroup>
       </Modal>
-    </React.Fragment>
+    </>
   );
 };

@@ -59,7 +59,7 @@ export class TextInputDemo extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <Text>Simple Text Input Example</Text>
         <TextInput id="text" onChange={this.myTextInputProps.onChange} />
         <TextInput
@@ -97,7 +97,7 @@ export class TextInputDemo extends Component {
           onChange={this.handleTextUsingRefInputChange}
           aria-label="select-all"
         />
-      </React.Fragment>
+      </>
     );
   }
 }

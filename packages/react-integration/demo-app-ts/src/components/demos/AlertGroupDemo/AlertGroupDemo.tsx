@@ -63,7 +63,7 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
       this.setState({ timer: timerValue });
     };
     return (
-      <React.Fragment>
+      <>
         <InputGroup style={{ marginBottom: '16px' }}>
           <InputGroupItem>
             <button onClick={startAsyncAlerts} type="button" className={btnClasses}>
@@ -87,7 +87,7 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
             />
           ))}
         </AlertGroup>
-      </React.Fragment>
+      </>
     );
   }
 }

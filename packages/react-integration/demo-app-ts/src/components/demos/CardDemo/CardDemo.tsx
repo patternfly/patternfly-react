@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Brand,
   Button,
@@ -18,10 +17,12 @@ import {
   MenuToggle
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import { Component } from 'react';
+
 const pfLogo = '../../../assets/images/pfLogo.svg';
 
 interface CardDemoState {
-  selected: string;
+  selected: string | null;
   isExpanded: boolean;
   isOpen: boolean;
   selectableChecked1: boolean;
@@ -33,7 +34,7 @@ interface CardDemoState {
   selectaleClickableDrawerIsExpanded: boolean;
 }
 
-class CardDemo extends React.Component {
+class CardDemo extends Component {
   static displayName = 'CardDemo';
 
   state: CardDemoState = {
@@ -157,7 +158,7 @@ class CardDemo extends React.Component {
     );
 
     return (
-      <React.Fragment>
+      <>
         <Card id="cardWithActions">
           <CardHeader actions={{ actions, hasNoOffset: true }}>
             <Brand src={pfLogo} alt="PatternFly" style={{ height: '50px' }} />
@@ -338,7 +339,7 @@ class CardDemo extends React.Component {
             </DrawerContent>
           </Drawer>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

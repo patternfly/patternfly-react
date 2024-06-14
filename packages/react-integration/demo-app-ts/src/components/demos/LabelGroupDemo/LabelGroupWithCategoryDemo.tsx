@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Label, LabelGroup } from '@patternfly/react-core';
 
 interface LabelWithCategoryGroupState {
@@ -65,7 +65,7 @@ export class LabelGroupWithCategoryDemo extends Component<{}, LabelWithCategoryG
   render() {
     const { labelGroups } = this.state;
 
-    return labelGroups.map(currentGroup => (
+    return labelGroups.map((currentGroup) => (
       <LabelGroup
         id={currentGroup.id}
         key={currentGroup.category}

@@ -173,7 +173,7 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     ];
 
     const toggleGroupItems = (
-      <React.Fragment>
+      <>
         <ToolbarItem id="toolbar-demo-search">
           <InputGroup>
             <InputGroupItem>
@@ -225,7 +225,7 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
             </Select>
           </ToolbarFilter>
         </ToolbarGroup>
-      </React.Fragment>
+      </>
     );
 
     const dropdownItems = [
@@ -243,7 +243,7 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     ];
 
     const toolbarItems = (
-      <React.Fragment>
+      <>
         <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl" id="demo-toggle-group">
           {toggleGroupItems}
         </ToolbarToggleGroup>
@@ -281,11 +281,11 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
             <DropdownList>{dropdownItems}</DropdownList>
           </Dropdown>
         </ToolbarItem>
-      </React.Fragment>
+      </>
     );
 
     return (
-      <React.Fragment>
+      <>
         <Toolbar
           id="toolbar-filter-demo"
           clearAllFilters={this.onDelete}
@@ -406,7 +406,7 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
         >
           <ToolbarContent>{toolbarItems}</ToolbarContent>
         </Toolbar>
-      </React.Fragment>
+      </>
     );
   }
 }

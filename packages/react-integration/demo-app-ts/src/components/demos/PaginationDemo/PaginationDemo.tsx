@@ -58,7 +58,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
         <Title headingLevel="h2" size="2xl">
           Pagination
         </Title>
-        <React.Fragment>
+        <>
           <Pagination
             itemCount={523}
             perPage={this.state.perPage}
@@ -89,7 +89,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
             onPerPageSelect={this.onDefaultToFullPerPageSelect}
             isLastFullPageShown
           />
-        </React.Fragment>
+        </>
       </StackItem>
     );
   }
@@ -100,7 +100,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
         <Title headingLevel="h2" size="2xl">
           Disabled state
         </Title>
-        <React.Fragment>
+        <>
           <Pagination
             itemCount={523}
             perPage={this.state.perPage}
@@ -111,7 +111,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
             onPerPageSelect={this.onPerPageSelect}
             isDisabled
           />
-        </React.Fragment>
+        </>
       </StackItem>
     );
   }
@@ -122,7 +122,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
         <Title headingLevel="h2" size="2xl">
           Sticky state
         </Title>
-        <React.Fragment>
+        <>
           <Pagination
             isSticky
             itemCount={523}
@@ -133,7 +133,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
             className="pagination-options-menu-sticky"
             onPerPageSelect={this.onPerPageSelect}
           />
-        </React.Fragment>
+        </>
       </StackItem>
     );
   }

@@ -84,7 +84,7 @@ export class TableFavoritesDemo extends Component<TableProps, TableState> {
     });
   }
 
-  onSort(_event: React.MouseEvent, index: number, direction: 'asc' | 'desc') {
+  onSort(_: React.MouseEvent, index: number, direction: 'asc' | 'desc') {
     let sortedRows;
     if (index === 1) {
       // favorites column

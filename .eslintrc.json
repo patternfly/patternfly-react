@@ -136,6 +136,14 @@
                 "react/jsx-key": "off",
                 "no-console": "off"
             }
+        },
+        {
+            "files": ["packages/react-integration/demo-app-ts/**/*"],
+            "rules": {
+                "patternfly-react/no-anonymous-functions": "off",
+                "react/react-in-jsx-scope": "off",
+                "spaced-comment": "off"
+            }
         }
     ]
 }

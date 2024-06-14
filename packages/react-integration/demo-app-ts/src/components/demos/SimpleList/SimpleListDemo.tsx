@@ -23,7 +23,7 @@ export class SimpleListDemo extends Component<any, SimpleListDemoState> {
     const { activeItem } = this.state;
 
     return (
-      <React.Fragment>
+      <>
         <h2>Simple List</h2>
         <SimpleList id="simple-list-demo">
           <SimpleListItem isActive>Item 1</SimpleListItem>
@@ -66,7 +66,7 @@ export class SimpleListDemo extends Component<any, SimpleListDemoState> {
             Item 3
           </SimpleListItem>
         </SimpleList>
-      </React.Fragment>
+      </>
     );
   }
 }
