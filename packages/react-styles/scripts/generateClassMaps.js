@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs-extra');
-const glob = require('glob');
+const { glob } = require('glob');
 const camelcase = require('camel-case');
 
 /**

@@ -1,4 +1,4 @@
-const glob = require('glob');
+const { glob } = require('glob');
 const { dirname, basename, sep } = require('path');
 const { parse, stringify } = require('css');
 const { readFileSync } = require('fs');

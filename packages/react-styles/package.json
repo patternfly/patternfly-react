@@ -21,10 +21,9 @@
   "devDependencies": {
     "@patternfly/patternfly": "6.0.0-alpha.150",
     "camel-case": "^3.0.0",
-    "css": "^2.2.3",
-    "fs-extra": "^11.1.1",
-    "glob": "^7.1.2",
-    "jsdom": "^15.1.0"
+    "css": "^2.2.4",
+    "fs-extra": "^11.2.0",
+    "jsdom": "^15.2.1"
   },
   "license": "MIT"
 }

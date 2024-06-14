@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const fse = require('fs-extra');
 const path = require('path');
-const glob = require('glob');
+const { glob } = require('glob');
 const getDynamicModuleMap = require('./parse-dynamic-modules');
 
 const root = process.cwd();

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const fs = require('fs-extra');
 const path = require('path');
-const glob = require('glob');
+const { glob } = require('glob');
 const ts = require('typescript');
 
 /** @type {ts.CompilerOptions} */

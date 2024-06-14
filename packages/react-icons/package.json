@@ -30,12 +30,11 @@
     "generate": "rimraf dist/esm/icons dist/js/icons && node scripts/writeIcons.mjs"
   },
   "devDependencies": {
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/free-regular-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@patternfly/patternfly": "6.0.0-alpha.150",
-    "fs-extra": "^11.1.1",
-    "glob": "^7.1.2",
+    "fs-extra": "^11.2.0",
     "tslib": "^2.6.2"
   },
   "peerDependencies": {
