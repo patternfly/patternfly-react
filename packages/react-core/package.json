@@ -57,7 +57,7 @@
   "devDependencies": {
     "@patternfly/patternfly": "6.0.0-alpha.150",
     "case-anything": "^2.1.13",
-    "css": "^2.2.4",
+    "css": "^3.0.0",
     "fs-extra": "^11.2.0"
   },
   "peerDependencies": {
