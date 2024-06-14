@@ -71,8 +71,8 @@ export interface ModalContentProps extends OUIAProps {
   positionOffset?: string;
   /** Flag to show the close button in the header area of the modal. */
   showClose?: boolean;
-  /** Simple text content of the modal header. Also used for the aria-label on the body. */
-  title?: string;
+  /** Text content of the modal header. */
+  title?: React.ReactNode;
   /** Optional alert icon (or other) to show before the title of the modal header. When the
    * predefined alert types are used the default styling will be automatically applied.
    */
