@@ -35,7 +35,6 @@
     "@patternfly/react-core": "workspace:^",
     "@patternfly/react-icons": "workspace:^",
     "@patternfly/react-styles": "workspace:^",
-    "memoize-one": "^5.2.1",
     "resize-observer-polyfill": "^1.5.1"
   },
   "peerDependencies": {
