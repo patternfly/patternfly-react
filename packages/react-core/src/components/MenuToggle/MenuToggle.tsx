@@ -6,6 +6,7 @@ import { BadgeProps } from '../Badge';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import { OUIAProps, getDefaultOUIAId, getOUIAProps } from '../../helpers';
 
 export enum MenuToggleStatus {
   success = 'success',
@@ -24,12 +25,13 @@ export interface SplitButtonOptions {
 
 export interface MenuToggleProps
   extends Omit<
-    React.DetailedHTMLProps<
-      React.ButtonHTMLAttributes<HTMLButtonElement> & React.HTMLAttributes<HTMLDivElement>,
-      MenuToggleElement
+      React.DetailedHTMLProps<
+        React.ButtonHTMLAttributes<HTMLButtonElement> & React.HTMLAttributes<HTMLDivElement>,
+        MenuToggleElement
+      >,
+      'ref'
     >,
-    'ref'
-  > {
+    OUIAProps {
   /** Content rendered inside the toggle */
   children?: React.ReactNode;
   /** Additional classes added to the toggle */
@@ -58,16 +60,29 @@ export interface MenuToggleProps
   badge?: BadgeProps | React.ReactNode;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<MenuToggleElement>;
+  /** Value to overwrite the randomly generated data-ouia-component-id. It will always target the toggle button. */
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
-class MenuToggleBase extends React.Component<MenuToggleProps> {
+interface MenuToggleState {
+  ouiaStateId: string;
+}
+
+class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
   displayName = 'MenuToggleBase';
   static defaultProps: MenuToggleProps = {
     className: '',
     isExpanded: false,
     isDisabled: false,
     isFullWidth: false,
-    isFullHeight: false
+    isFullHeight: false,
+    ouiaSafe: true
+  };
+
+  state: MenuToggleState = {
+    ouiaStateId: getDefaultOUIAId(MenuToggle.displayName, this.props.variant)
   };
 
   render() {
@@ -87,11 +102,15 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
       innerRef,
       onClick,
       'aria-label': ariaLabel,
+      ouiaId,
+      ouiaSafe,
       ...otherProps
     } = this.props;
     const isPlain = variant === 'plain';
     const isPlainText = variant === 'plainText';
     const isTypeahead = variant === 'typeahead';
+
+    const ouiaProps = getOUIAProps(MenuToggle.displayName, ouiaId ?? this.state.ouiaStateId, ouiaSafe);
 
     let _statusIcon = statusIcon;
     if (!statusIcon) {
@@ -130,6 +149,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
             onClick={onClick}
             aria-label={ariaLabel || 'Menu toggle'}
             tabIndex={-1}
+            {...ouiaProps}
           >
             {toggleControls}
           </button>
@@ -189,6 +209,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
             onClick={onClick}
             {...(children && { style: { display: 'flex', paddingLeft: 'var(--pf-v5-global--spacer--sm)' } })}
             {...otherProps}
+            {...ouiaProps}
           >
             {children && <span className={css(styles.menuToggleText)}>{children}</span>}
             {toggleControls}
@@ -207,6 +228,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
         disabled={isDisabled}
         onClick={onClick}
         {...componentProps}
+        {...ouiaProps}
       />
     );
   }
