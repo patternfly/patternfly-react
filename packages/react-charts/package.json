@@ -33,7 +33,7 @@
     "@patternfly/react-tokens": "workspace:^",
     "hoist-non-react-statics": "^3.3.2",
     "lodash": "^4.17.21",
-    "tslib": "^2.6.2",
+    "tslib": "^2.6.3",
     "victory-area": "^37.0.2",
     "victory-axis": "^37.0.2",
     "victory-bar": "^37.0.2",
@@ -61,7 +61,7 @@
     "build:single:packages": "node ../../scripts/build-single-packages.js --config single-packages.config.json"
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.4",
+    "@types/lodash": "^4.17.5",
     "fs-extra": "^11.2.0"
   }
 }
