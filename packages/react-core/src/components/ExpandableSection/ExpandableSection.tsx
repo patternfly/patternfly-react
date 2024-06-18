@@ -171,8 +171,8 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
   };
 
   resize = () => {
-    const { offsetWidth } = this.expandableContentRef.current;
-    if (this.state.previousWidth !== offsetWidth) {
+    const { offsetWidth } = this.expandableContentRef?.current;
+    if (offsetWidth && this.state.previousWidth !== offsetWidth) {
       this.setState({ previousWidth: offsetWidth });
       this.checkToggleVisibility();
     }
