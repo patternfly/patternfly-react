@@ -1,0 +1,14 @@
+import { defineConfig } from 'cypress';
+
+export default defineConfig({
+  video: false,
+  waitForAnimations: false,
+  screenshotOnRunFailure: false,
+  reporter: 'junit',
+  reporterOptions: {
+    mochaFile: 'results/my-test-output-[hash].xml',
+    toConsole: true
+  },
+  viewportWidth: 1200,
+  viewportHeight: 792
+});
