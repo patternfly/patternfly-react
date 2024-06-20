@@ -23,6 +23,18 @@ describe('Dropdown toggle', () => {
     expect(screen.getByRole('button', { name: 'Dropdown' })).toHaveClass(styles.modifiers.plain);
   });
 
+  test('Passes toggleWidth', () => {
+    render(<SimpleDropdown toggleContent="Dropdown" toggleWidth="500px" />);
+
+    expect(screen.getByRole('button', { name: 'Dropdown' })).toHaveAttribute('style', 'width: 500px;');
+  });
+
+  test('Passes additional toggleProps', () => {
+    render(<SimpleDropdown toggleContent="Dropdown" toggleProps={{ id: 'toggle' }} />);
+
+    expect(screen.getByRole('button', { name: 'Dropdown' })).toHaveAttribute('id', 'toggle');
+  });
+
   test('Passes toggleAriaLabel', () => {
     render(<SimpleDropdown toggleContent="Dropdown" toggleAriaLabel="Aria label content" />);
 
