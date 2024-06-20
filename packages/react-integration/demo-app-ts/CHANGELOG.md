@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.69](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.68...demo-app-ts@5.1.1-alpha.69) (2024-06-20)
+
+### Features
+
+- **DualListSelector:** promoted Next version ([#10359](https://github.com/patternfly/patternfly-react/issues/10359)) ([b395cc4](https://github.com/patternfly/patternfly-react/commit/b395cc44586a20a9f124e1d56d2c8021a64602db))
+
 ## [5.1.1-alpha.68](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.67...demo-app-ts@5.1.1-alpha.68) (2024-06-13)
 
 **Note:** Version bump only for package demo-app-ts

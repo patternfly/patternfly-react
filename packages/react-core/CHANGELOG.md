@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.70](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.69...@patternfly/react-core@6.0.0-alpha.70) (2024-06-20)
+
+### Features
+
+- **DualListSelector:** promoted Next version ([#10359](https://github.com/patternfly/patternfly-react/issues/10359)) ([b395cc4](https://github.com/patternfly/patternfly-react/commit/b395cc44586a20a9f124e1d56d2c8021a64602db))
+
 # [6.0.0-alpha.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.68...@patternfly/react-core@6.0.0-alpha.69) (2024-06-13)
 
 ### Features
