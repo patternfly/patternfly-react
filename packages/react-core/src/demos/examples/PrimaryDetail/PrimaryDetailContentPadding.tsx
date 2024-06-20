@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Button,
   ButtonVariant,
+  Content,
   DataList,
   DataListAction,
   DataListCell,
@@ -30,8 +31,6 @@ import {
   Progress,
   Stack,
   StackItem,
-  Text,
-  TextContent,
   TextInput,
   Title,
   Select,
@@ -419,13 +418,13 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
   return (
     <DashboardWrapper>
       <PageSection>
-        <TextContent>
-          <Text component="h1">Main title</Text>
-          <Text component="p">
+        <Content>
+          <h1>Main title</h1>
+          <p>
             Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
             of it's relative line height of 1.5.
-          </Text>
-        </TextContent>
+          </p>
+        </Content>
       </PageSection>
       <Divider component="div" />
       <PageSection padding={{ default: 'noPadding' }}>

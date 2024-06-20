@@ -6,6 +6,7 @@ import {
   BreadcrumbItem,
   Button,
   ButtonVariant,
+  Content,
   Divider,
   Dropdown,
   DropdownItem,
@@ -32,8 +33,6 @@ import {
   PageSidebar,
   PageSidebarBody,
   SkipToContent,
-  TextContent,
-  Text,
   PageToggleButton,
   Masthead,
   MastheadMain,
@@ -530,13 +529,13 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
         mainContainerId={pageId}
       >
         <PageSection>
-          <TextContent>
-            <Text component="h1">Main title</Text>
-            <Text component="p">
+          <Content>
+            <h1>Main title</h1>
+            <p>
               Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
               of its relative line height of 1.5.
-            </Text>
-          </TextContent>
+            </p>
+          </Content>
         </PageSection>
         <PageSection>Panel section content</PageSection>
       </Page>

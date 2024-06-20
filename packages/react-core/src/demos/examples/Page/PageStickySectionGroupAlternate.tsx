@@ -8,6 +8,7 @@ import {
   ButtonVariant,
   Card,
   CardBody,
+  Content,
   Divider,
   Dropdown,
   DropdownGroup,
@@ -33,8 +34,6 @@ import {
   PageSidebarBody,
   PageToggleButton,
   SkipToContent,
-  Text,
-  TextContent,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -266,10 +265,10 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
           </Breadcrumb>
         </PageBreadcrumb>
         <PageSection isWidthLimited>
-          <TextContent>
-            <Text component="h1">Main title</Text>
-            <Text component="p">This is a full page demo.</Text>
-          </TextContent>
+          <Content>
+            <h1>Main title</h1>
+            <p>This is a full page demo.</p>
+          </Content>
         </PageSection>{' '}
       </PageGroup>
       <PageSection>

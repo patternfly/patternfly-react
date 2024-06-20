@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider, SliderOnChangeEvent, Text, TextVariants } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent, Content } from '@patternfly/react-core';
 
 export const SliderDiscrete: React.FunctionComponent = () => {
   const initialValues = {
@@ -50,15 +50,15 @@ export const SliderDiscrete: React.FunctionComponent = () => {
 
   return (
     <>
-      <Text component={TextVariants.h3}>Slider value is: {numValue.value1}</Text>
+      <Content component="h3">Slider value is: {numValue.value1}</Content>
       <Slider
         value={initialValues.value1}
         onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value1')}
         customSteps={steps}
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {numValue.value2}</Text>
-      <Text component={TextVariants.small}>(min = 0, max = 200, step = 50) </Text>
+      <Content component="h3">Slider value is: {numValue.value2}</Content>
+      <Content component="small">(min = 0, max = 200, step = 50) </Content>
       <Slider
         value={initialValues.value2}
         onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value2')}
@@ -67,8 +67,8 @@ export const SliderDiscrete: React.FunctionComponent = () => {
         showTicks
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {Math.floor(numValue.value3)}</Text>
-      <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries not shown) </Text>
+      <Content component="h3">Slider value is: {Math.floor(numValue.value3)}</Content>
+      <Content component="small">(min = -25, max = 75, step = 10, boundaries not shown) </Content>
       <Slider
         value={initialValues.value3}
         onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value3')}
@@ -79,8 +79,8 @@ export const SliderDiscrete: React.FunctionComponent = () => {
         showBoundaries={false}
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {Math.floor(numValue.value4)}</Text>
-      <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries shown) </Text>
+      <Content component="h3">Slider value is: {Math.floor(numValue.value4)}</Content>
+      <Content component="small">(min = -25, max = 75, step = 10, boundaries shown) </Content>
       <Slider
         value={initialValues.value4}
         onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value4')}
@@ -90,8 +90,8 @@ export const SliderDiscrete: React.FunctionComponent = () => {
         showTicks
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {Math.floor(numValue.value5)}</Text>
-      <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries shown, ticks not shown) </Text>
+      <Content component="h3">Slider value is: {Math.floor(numValue.value5)}</Content>
+      <Content component="small">(min = -25, max = 75, step = 10, boundaries shown, ticks not shown) </Content>
       <Slider
         value={initialValues.value5}
         onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value5')}
@@ -100,8 +100,8 @@ export const SliderDiscrete: React.FunctionComponent = () => {
         step={10}
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {Math.floor(numValue.value6)}</Text>
-      <Text component={TextVariants.small}>(max = 5, custom steps) </Text>
+      <Content component="h3">Slider value is: {Math.floor(numValue.value6)}</Content>
+      <Content component="small">(max = 5, custom steps) </Content>
       <Slider
         value={initialValues.value6}
         showTicks
@@ -110,8 +110,8 @@ export const SliderDiscrete: React.FunctionComponent = () => {
         onChange={(_event: SliderOnChangeEvent, value: number) => handleChange(value, 'value6')}
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {Math.floor(numValue.value7)}</Text>
-      <Text component={TextVariants.small}>(min = 12, max = 86, custom steps with non linear data) </Text>
+      <Content component="h3">Slider value is: {Math.floor(numValue.value7)}</Content>
+      <Content component="small">(min = 12, max = 86, custom steps with non linear data) </Content>
       <Slider
         value={initialValues.value7}
         showTicks

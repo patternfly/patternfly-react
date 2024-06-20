@@ -6,6 +6,7 @@ import {
   ButtonVariant,
   Card,
   CardBody,
+  Content,
   Divider,
   Dropdown,
   DropdownGroup,
@@ -24,8 +25,6 @@ import {
   Page,
   PageSection,
   SkipToContent,
-  TextContent,
-  Text,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -216,13 +215,13 @@ export const NavHorizontal: React.FunctionComponent = () => {
         mainContainerId={pageId}
       >
         <PageSection>
-          <TextContent>
-            <Text component="h1">Main title</Text>
-            <Text component="p">
+          <Content>
+            <h1>Main title</h1>
+            <p>
               Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
               of its relative line height of 1.5.
-            </Text>
-          </TextContent>
+            </p>
+          </Content>
         </PageSection>
         <PageSection>
           <Gallery hasGutter>

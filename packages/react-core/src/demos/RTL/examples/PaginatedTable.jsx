@@ -8,6 +8,7 @@ import {
   Button,
   ButtonVariant,
   Card,
+  Content,
   Divider,
   Dropdown,
   DropdownGroup,
@@ -32,9 +33,6 @@ import {
   PageToggleButton,
   Pagination,
   PaginationVariant,
-  Text,
-  TextContent,
-  TextVariants,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -448,10 +446,10 @@ export const PaginatedTableAction = () => {
           </Breadcrumb>
         </PageBreadcrumb>
         <PageSection variant="light">
-          <TextContent>
-            <Text component={TextVariants.h1}>{translation.title}</Text>
-            <Text component={TextVariants.p}>{translation.body}</Text>
-          </TextContent>
+          <Content>
+            <h1>{translation.title}</h1>
+            <p>{translation.body}</p>
+          </Content>
         </PageSection>
         <PageSection>
           <Card>

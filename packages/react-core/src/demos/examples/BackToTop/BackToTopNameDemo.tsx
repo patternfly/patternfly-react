@@ -3,11 +3,10 @@ import {
   BackToTop,
   Card,
   CardBody,
+  Content,
   Gallery,
   GalleryItem,
   PageSection,
-  TextContent,
-  Text,
   Page,
   Switch
 } from '@patternfly/react-core';
@@ -24,14 +23,14 @@ export const Name = () => {
     <DashboardWrapper breadcrumb={null}>
       <Page>
         <PageSection>
-          <TextContent>
-            <Text component="h1">Main title</Text>
-            <Text component="p">
+          <Content>
+            <h1>Main title</h1>
+            <p>
               Body text should be Overpass Regular at 16px.It should have leading of 24px because <br />
               of it’s relative line height of 1.5.
-            </Text>
+            </p>
             <Switch label="Always show BackToTopButton" onChange={handleChange} isChecked={isAlwaysVisible} />
-          </TextContent>
+          </Content>
         </PageSection>
         <PageSection
           hasOverflowScroll

@@ -4,6 +4,7 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Button,
+  Content,
   Drawer,
   DrawerActions,
   DrawerCloseButton,
@@ -21,8 +22,6 @@ import {
   PageSidebar,
   PageSidebarBody,
   SkipToContent,
-  Text,
-  TextContent,
   Masthead,
   PageToggleButton,
   MastheadToggle,
@@ -138,8 +137,8 @@ export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () 
           spaceItems={{ default: 'spaceItemsLg' }}
           height="100%"
         >
-          <TextContent>
-            <Text>{stepName} content</Text>
+          <Content>
+            <p>{stepName} content</p>
             <p>
               Wizard description goes here. If you need more assistance,{' '}
               <Button isInline variant="link" onClick={onOpenClick}>
@@ -147,7 +146,7 @@ export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () 
               </Button>{' '}
               in the side drawer.{' '}
             </p>
-          </TextContent>
+          </Content>
         </Flex>
       </DrawerContent>
     </Drawer>
@@ -164,10 +163,10 @@ export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () 
         mainContainerId={pageId}
       >
         <PageSection>
-          <TextContent>
-            <Text component="h1">Main title</Text>
-            <Text component="p">A demo of a wizard in a page.</Text>
-          </TextContent>
+          <Content>
+            <h1>Main title</h1>
+            <p>A demo of a wizard in a page.</p>
+          </Content>
         </PageSection>
         <PageSection type={PageSectionTypes.wizard} ß>
           <Wizard>

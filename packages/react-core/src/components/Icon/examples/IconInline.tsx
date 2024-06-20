@@ -1,26 +1,24 @@
 import React from 'react';
-import { Icon, Text, TextContent } from '@patternfly/react-core';
+import { Icon, Content } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const IconInline: React.FunctionComponent = () => (
   <React.Fragment>
-    <TextContent>
-      <Text component="h1">
+    <Content>
+      <h1>
         Heading
         <Icon isInline>
           <PlusCircleIcon />
         </Icon>
-      </Text>
-      <Text component="p">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit Sed hendrerit nisi in cursus maximus.
-      </Text>
-      <Text component="h2">
+      </h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Sed hendrerit nisi in cursus maximus.</p>
+      <h2>
         Second level
         <Icon isInline>
           <PlusCircleIcon />
         </Icon>
-      </Text>
-      <Text component="p">
+      </h2>
+      <p>
         <Icon isInline>
           <PlusCircleIcon />
         </Icon>
@@ -33,7 +31,7 @@ export const IconInline: React.FunctionComponent = () => (
         </strong>
         blandit. Quisque condimentum maximus mi, sit amet commodo arcu rutrum id. Proin pretium urna vel cursus
         venenatis. Suspendisse potenti.
-      </Text>
+      </p>
       <small>
         Sometimes you need small text
         <Icon isInline>
@@ -57,6 +55,6 @@ export const IconInline: React.FunctionComponent = () => (
         <PlusCircleIcon />
       </Icon>
       extra large
-    </TextContent>
+    </Content>
   </React.Fragment>
 );

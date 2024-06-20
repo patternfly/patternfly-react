@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip, Text, Grid, GridItem, PageSection } from '@patternfly/react-core';
+import { Tooltip, Grid, GridItem, PageSection, Content } from '@patternfly/react-core';
 import spacerMd from '@patternfly/react-tokens/dist/esm/global_spacer_md';
 import labelFontSize from '@patternfly/react-tokens/dist/esm/global_font_size_sm';
 import * as IconsModule from '@patternfly/react-icons/dist/esm';
@@ -36,14 +36,14 @@ const iconsPage = () => {
 
   return (
     <PageSection>
-      <Text>
+      <Content component="p">
         These are all of the icons available for use in PatternFly React. For recommended icon usage, see our{' '}
         <a href="https://www.patternfly.org/v4/guidelines/icons">icon usage guidelines</a>.
-      </Text>
-      <Text>
+      </Content>
+      <Content component="p">
         Learn how you can use them in the{' '}
         <a href="https://github.com/patternfly/patternfly-react/tree/main/packages/react-icons">react-icons docs</a>.
-      </Text>
+      </Content>
       <Grid>
         {allIcons
           // BREAKING CHANGE - remove line below when AnsibeTowerIcon is removed

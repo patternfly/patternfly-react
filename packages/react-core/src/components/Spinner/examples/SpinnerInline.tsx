@@ -1,29 +1,27 @@
 import React from 'react';
-import { Spinner, Text, TextContent } from '@patternfly/react-core';
+import { Spinner, Content } from '@patternfly/react-core';
 
 export const SpinnerInline: React.FunctionComponent = () => (
   <React.Fragment>
-    <TextContent>
-      <Text component="h1">
+    <Content>
+      <h1>
         Heading
         <Spinner isInline aria-label="Spinner in a heading" />
-      </Text>
-      <Text component="p">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit Sed hendrerit nisi in cursus maximus.
-      </Text>
-      <Text component="h2">
+      </h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Sed hendrerit nisi in cursus maximus.</p>
+      <h2>
         Second level
         <Spinner isInline aria-label="spinner in a subheading" />
-      </Text>
-      <Text component="p">
+      </h2>
+      <p>
         Curabitur accumsan turpis pharetra blandit. Quisque condimentum maximus mi,{' '}
         <Spinner isInline aria-label="Spinner in a paragraph" /> sit amet commodo arcu rutrum id. Proin pretium urna vel
         cursus venenatis. Suspendisse potenti.
-      </Text>
+      </p>
       <small>
         Sometimes you need small text
         <Spinner isInline aria-label="Spinner in a small element" />
       </small>
-    </TextContent>
+    </Content>
   </React.Fragment>
 );
