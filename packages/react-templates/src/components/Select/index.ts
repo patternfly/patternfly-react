@@ -1,3 +1,3 @@
-export * from './SelectSimple';
+export * from './SimpleSelect';
 export * from './CheckboxSelect';
-export * from './SelectTypeahead';
+export * from './TypeaheadSelect';
