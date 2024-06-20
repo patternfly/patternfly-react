@@ -77,7 +77,7 @@ export const Wizard = ({
   onStepChange,
   onSave,
   onClose,
-  shouldFocusContent = false,
+  shouldFocusContent = true,
   ...wrapperProps
 }: WizardProps) => {
   const [activeStepIndex, setActiveStepIndex] = React.useState(startIndex);

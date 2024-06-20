@@ -1,6 +1,9 @@
 import React from 'react';
 
 import {
+  ActionList,
+  ActionListGroup,
+  ActionListItem,
   Button,
   Flex,
   FlexItem,
@@ -40,15 +43,27 @@ const CustomStepTwoFooter = () => {
 
   return (
     <WizardFooterWrapper>
-      <Button variant="secondary" onClick={goToPrevStep} isDisabled={isLoading}>
-        Back
-      </Button>
-      <Button variant="primary" onClick={onNext} isLoading={isLoading} isDisabled={isLoading}>
-        Async Next
-      </Button>
-      <Button variant="link" onClick={close} isDisabled={isLoading}>
-        Cancel
-      </Button>
+      <ActionList>
+        <ActionListGroup>
+          <ActionListItem>
+            <Button variant="secondary" onClick={goToPrevStep} isDisabled={isLoading}>
+              Back
+            </Button>
+          </ActionListItem>
+          <ActionListItem>
+            <Button variant="primary" onClick={onNext} isLoading={isLoading} isDisabled={isLoading}>
+              Async Next
+            </Button>
+          </ActionListItem>
+        </ActionListGroup>
+        <ActionListGroup>
+          <ActionListItem>
+            <Button variant="link" onClick={close} isDisabled={isLoading}>
+              Cancel
+            </Button>
+          </ActionListItem>
+        </ActionListGroup>
+      </ActionList>
     </WizardFooterWrapper>
   );
 };
