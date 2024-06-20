@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.1.0-prerelease.16...@patternfly/react-templates@1.1.0-prerelease.17) (2024-06-20)
+
+### Features
+
+- **templates:** toggle props & improvements ([#10473](https://github.com/patternfly/patternfly-react/issues/10473)) ([315fc80](https://github.com/patternfly/patternfly-react/commit/315fc80a0fb820d092505f1911c8889599170cd0))
+
 # [1.1.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.1.0-prerelease.15...@patternfly/react-templates@1.1.0-prerelease.16) (2024-06-13)
 
 ### Bug Fixes
