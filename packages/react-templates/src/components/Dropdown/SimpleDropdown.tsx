@@ -3,13 +3,14 @@ import {
   Dropdown,
   DropdownItem,
   DropdownList,
-  DropdownItemProps
+  DropdownItemProps,
+  DropdownProps
 } from '@patternfly/react-core/dist/esm/components/Dropdown';
-import { MenuToggle, MenuToggleElement } from '@patternfly/react-core/dist/esm/components/MenuToggle';
+import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
 import { OUIAProps } from '@patternfly/react-core/dist/esm/helpers';
 
-export interface DropdownSimpleItem extends Omit<DropdownItemProps, 'content'> {
+export interface SimpleDropdownItem extends Omit<DropdownItemProps, 'content'> {
   /** Content of the dropdown item. If the isDivider prop is true, this prop will be ignored. */
   content?: React.ReactNode;
   /** Unique identifier for the dropdown item, which is used in the dropdown onSelect callback */
@@ -24,9 +25,9 @@ export interface DropdownSimpleItem extends Omit<DropdownItemProps, 'content'> {
   isDivider?: boolean;
 }
 
-export interface DropdownSimpleProps extends OUIAProps {
+export interface SimpleDropdownProps extends Omit<DropdownProps, 'toggle'>, OUIAProps {
   /** Initial items of the dropdown. */
-  initialItems?: DropdownSimpleItem[];
+  initialItems?: SimpleDropdownItem[];
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Flag indicating the dropdown should be disabled. */
@@ -47,9 +48,13 @@ export interface DropdownSimpleProps extends OUIAProps {
   toggleContent: React.ReactNode;
   /** Variant style of the dropdown toggle. */
   toggleVariant?: 'default' | 'plain' | 'plainText';
+  /** Width of the toggle. */
+  toggleWidth?: string;
+  /** Additional props passed to the toggle. */
+  toggleProps?: MenuToggleProps;
 }
 
-const DropdownSimpleBase: React.FunctionComponent<DropdownSimpleProps> = ({
+const SimpleDropdownBase: React.FunctionComponent<SimpleDropdownProps> = ({
   innerRef,
   initialItems,
   onSelect: onSelectProp,
@@ -59,13 +64,16 @@ const DropdownSimpleBase: React.FunctionComponent<DropdownSimpleProps> = ({
   toggleContent,
   isToggleFullWidth,
   toggleVariant = 'default',
+  toggleWidth,
+  toggleProps,
   shouldFocusToggleOnSelect,
   ...props
-}: DropdownSimpleProps) => {
+}: SimpleDropdownProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onSelect = (event: React.MouseEvent<Element, MouseEvent>, value: string | number) => {
     onSelectProp && onSelectProp(event, value);
+    onToggleProp && onToggleProp(false);
     setIsOpen(false);
   };
 
@@ -83,6 +91,12 @@ const DropdownSimpleBase: React.FunctionComponent<DropdownSimpleProps> = ({
       variant={toggleVariant}
       aria-label={toggleAriaLabel}
       isFullWidth={isToggleFullWidth}
+      style={
+        {
+          width: toggleWidth
+        } as React.CSSProperties
+      }
+      {...toggleProps}
     >
       {toggleContent}
     </MenuToggle>
@@ -106,7 +120,10 @@ const DropdownSimpleBase: React.FunctionComponent<DropdownSimpleProps> = ({
       isOpen={isOpen}
       onSelect={onSelect}
       shouldFocusToggleOnSelect={shouldFocusToggleOnSelect}
-      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      onOpenChange={(isOpen) => {
+        onToggleProp && onToggleProp(isOpen);
+        setIsOpen(isOpen);
+      }}
       ref={innerRef}
       {...props}
     >
@@ -115,8 +132,8 @@ const DropdownSimpleBase: React.FunctionComponent<DropdownSimpleProps> = ({
   );
 };
 
-export const DropdownSimple = React.forwardRef((props: DropdownSimpleProps, ref: React.Ref<any>) => (
-  <DropdownSimpleBase {...props} innerRef={ref} />
+export const SimpleDropdown = React.forwardRef((props: SimpleDropdownProps, ref: React.Ref<any>) => (
+  <SimpleDropdownBase {...props} innerRef={ref} />
 ));
 
-DropdownSimple.displayName = 'DropdownSimple';
+SimpleDropdown.displayName = 'SimpleDropdown';

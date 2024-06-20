@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-expanded="true"
+    class="pf-v5-c-menu-toggle pf-m-expanded"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-14"
+    data-ouia-component-type="PF5/MenuToggle"
+    data-ouia-safe="true"
+    style="width: 200px;"
+    type="button"
+  >
+    <span
+      class="pf-v5-c-menu-toggle__text"
+    >
+      Select
+    </span>
+    <span
+      class="pf-v5-c-menu-toggle__controls"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__toggle-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v5-svg"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          />
+        </svg>
+      </span>
+    </span>
+  </button>
+  <div
+    class="pf-v5-c-menu"
+    data-ouia-component-id="OUIA-Generated-Select-25"
+    data-ouia-component-type="PF5/Select"
+    data-ouia-safe="true"
+    data-popper-escaped="true"
+    data-popper-placement="bottom-start"
+    data-popper-reference-hidden="true"
+    style="position: absolute; left: 0px; top: 0px; z-index: 9999; opacity: 1; transition: opacity 0ms cubic-bezier(.54, 1.5, .38, 1.11); min-width: 0px; transform: translate(0px, 0px);"
+  >
+    <div
+      class="pf-v5-c-menu__content"
+    >
+      <ul
+        aria-multiselectable="false"
+        class="pf-v5-c-menu__list"
+        role="listbox"
+      >
+        <li
+          class="pf-v5-c-menu__list-item"
+          role="none"
+        >
+          <button
+            aria-selected="false"
+            class="pf-v5-c-menu__item"
+            role="option"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="pf-v5-c-menu__item-main"
+            >
+              <span
+                class="pf-v5-c-menu__item-text"
+              >
+                Option 1
+              </span>
+            </span>
+          </button>
+        </li>
+        <li
+          class="pf-v5-c-menu__list-item"
+          role="none"
+        >
+          <button
+            aria-selected="false"
+            class="pf-v5-c-menu__item"
+            role="option"
+            tabindex="-1"
+            type="button"
+          >
+            <span
+              class="pf-v5-c-menu__item-main"
+            >
+              <span
+                class="pf-v5-c-menu__item-text"
+              >
+                Option 2
+              </span>
+            </span>
+          </button>
+        </li>
+        <li
+          class="pf-v5-c-menu__list-item"
+          role="none"
+        >
+          <button
+            aria-selected="false"
+            class="pf-v5-c-menu__item"
+            role="option"
+            tabindex="-1"
+            type="button"
+          >
+            <span
+              class="pf-v5-c-menu__item-main"
+            >
+              <span
+                class="pf-v5-c-menu__item-text"
+              >
+                Option 3
+              </span>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`checkbox select with no props snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-expanded="false"
+    class="pf-v5-c-menu-toggle"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-12"
+    data-ouia-component-type="PF5/MenuToggle"
+    data-ouia-safe="true"
+    style="width: 200px;"
+    type="button"
+  >
+    <span
+      class="pf-v5-c-menu-toggle__text"
+    >
+      Select a value
+    </span>
+    <span
+      class="pf-v5-c-menu-toggle__controls"
+    >
+      <span
+        class="pf-v5-c-menu-toggle__toggle-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v5-svg"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          />
+        </svg>
+      </span>
+    </span>
+  </button>
+</DocumentFragment>
+`;

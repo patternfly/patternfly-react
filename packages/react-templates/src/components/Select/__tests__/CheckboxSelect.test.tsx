@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { CheckboxSelect } from './CheckboxSelect';
+import { CheckboxSelect } from '../CheckboxSelect';
 import styles from '@patternfly/react-styles/css/components/Badge/badge';
 
 test('renders checkbox select with options', async () => {
@@ -154,6 +154,34 @@ test('displays custom toggle content', async () => {
   const toggleButton = screen.getByRole('button', { name: 'Custom Toggle' });
 
   expect(toggleButton).toBeInTheDocument();
+});
+
+test('Passes toggleWidth', () => {
+  const initialOptions = [
+    { content: 'Option 1', value: 'option1' },
+    { content: 'Option 2', value: 'option2' },
+    { content: 'Option 3', value: 'option3' }
+  ];
+
+  render(<CheckboxSelect initialOptions={initialOptions} toggleContent="Custom Toggle" toggleWidth="500px" />);
+
+  const toggleButton = screen.getByRole('button', { name: 'Custom Toggle' });
+  expect(toggleButton).toHaveAttribute('style', 'width: 500px;');
+});
+
+test('Passes additional toggleProps', () => {
+  const initialOptions = [
+    { content: 'Option 1', value: 'option1' },
+    { content: 'Option 2', value: 'option2' },
+    { content: 'Option 3', value: 'option3' }
+  ];
+
+  render(
+    <CheckboxSelect initialOptions={initialOptions} toggleContent="Custom Toggle" toggleProps={{ id: 'toggle' }} />
+  );
+
+  const toggleButton = screen.getByRole('button', { name: 'Custom Toggle' });
+  expect(toggleButton).toHaveAttribute('id', 'toggle');
 });
 
 test('calls the onToggle callback when the select opens or closes', async () => {
