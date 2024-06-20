@@ -69,6 +69,8 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   menuHeight?: string;
   /** Maximum height of dropdown menu */
   maxMenuHeight?: string;
+  /** @beta Flag indicating the first menu item should be focused after opening the dropdown. */
+  shouldFocusFirstItemOnOpen?: boolean;
 }
 
 const DropdownBase: React.FunctionComponent<DropdownProps> = ({
@@ -89,6 +91,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   onOpenChangeKeys = ['Escape', 'Tab'],
   menuHeight,
   maxMenuHeight,
+  shouldFocusFirstItemOnOpen = true,
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -118,7 +121,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
 
     const handleClick = (event: MouseEvent) => {
       // toggle was opened, focus on first menu item
-      if (isOpen && toggleRef.current?.contains(event.target as Node)) {
+      if (isOpen && shouldFocusFirstItemOnOpen && toggleRef.current?.contains(event.target as Node)) {
         setTimeout(() => {
           const firstElement = menuRef?.current?.querySelector(
             'li button:not(:disabled),li input:not(:disabled),li a:not([aria-disabled="true"])'
