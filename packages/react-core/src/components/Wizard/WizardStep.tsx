@@ -16,8 +16,8 @@ export interface WizardStepProps {
   id: string | number;
   /** Optional for when the step is used as a parent to sub-steps */
   children?: React.ReactNode | undefined;
-  /** Props for WizardBody that wraps content by default. Can be set to null for exclusion of WizardBody. */
-  body?: Omit<Omit<WizardBodyProps, 'children'>, 'children'> | null;
+  /** Props for WizardBody that wraps content by default. */
+  body?: Omit<Omit<WizardBodyProps, 'children'>, 'children'>;
   /** Optional list of sub-steps */
   steps?: React.ReactElement<WizardStepProps>[];
   /** Flag to disable the step's navigation item */

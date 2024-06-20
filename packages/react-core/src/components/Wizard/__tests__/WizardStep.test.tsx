@@ -55,11 +55,6 @@ test('renders with children', () => {
   expect(screen.getByText('content')).toBeVisible();
 });
 
-test('excludes WizardBody when body is set to null', () => {
-  render(<WizardStep id="test-step" name="Test step" body={null} />);
-  expect(screen.queryByRole('main')).toBeNull();
-});
-
 test('updates "isDisabled" in context when the value changes', () => {
   render(<WizardStep {...testStep} isDisabled />);
   expect(setStep).toHaveBeenCalledWith({ ...testStepProps, isDisabled: true, isVisited: true });

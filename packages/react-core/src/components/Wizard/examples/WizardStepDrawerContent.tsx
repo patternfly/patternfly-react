@@ -59,17 +59,27 @@ const StepContentWithDrawer: React.FunctionComponent = () => {
 
 export const WizardStepDrawerContent: React.FunctionComponent = () => (
   <Wizard height={400} title="With drawer wizard">
-    <WizardStep body={null} name="Step 1" id="with-drawer-step-1">
+    <WizardStep body={{ hasNoPadding: true }} name="Step 1" id="with-drawer-step-1">
       <StepContentWithDrawer />
     </WizardStep>
     <WizardStep
       name="Step 2"
       id="with-drawer-step-2"
       steps={[
-        <WizardStep body={null} key="with-drawer-substep-1" name="Substep 1" id="with-drawer-substep-1">
+        <WizardStep
+          body={{ hasNoPadding: true }}
+          key="with-drawer-substep-1"
+          name="Substep 1"
+          id="with-drawer-substep-1"
+        >
           <StepContentWithDrawer />
         </WizardStep>,
-        <WizardStep body={null} key="with-drawer-substep-2" name="Substep 2" id="with-drawer-substep-2">
+        <WizardStep
+          body={{ hasNoPadding: true }}
+          key="with-drawer-substep-2"
+          name="Substep 2"
+          id="with-drawer-substep-2"
+        >
           <StepContentWithDrawer />
         </WizardStep>
       ]}
