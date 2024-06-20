@@ -1,33 +1,35 @@
 import React from 'react';
 import {
-  DualListSelector,
-  DualListSelectorPane,
-  DualListSelectorList,
-  DualListSelectorListItem,
-  DualListSelectorControlsWrapper,
-  DualListSelectorControl
-} from '@patternfly/react-core';
+  DragDrop,
+  Draggable,
+  Droppable,
+  DraggableItemPosition,
+  DualListSelector as DLSDeprecated,
+  DualListSelectorPane as DLSPaneDeprecated,
+  DualListSelectorList as DLSListDeprecated,
+  DualListSelectorListItem as DLSListItemDeprecated,
+  DualListSelectorControlsWrapper as DLSControlsWrapperDeprecated,
+  DualListSelectorControl as DLSControlDeprecated
+} from '@patternfly/react-core/deprecated';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
-interface Option {
-  text: string;
-  selected: boolean;
-  isVisible: boolean;
-}
-
-export const DualListSelectorBasic: React.FunctionComponent = () => {
-  const [availableOptions, setAvailableOptions] = React.useState<Option[]>([
-    { text: 'Option 1', selected: false, isVisible: true },
-    { text: 'Option 2', selected: false, isVisible: true },
-    { text: 'Option 3', selected: false, isVisible: true },
-    { text: 'Option 4', selected: false, isVisible: true }
+export const DualListSelectorComposableDragDrop: React.FunctionComponent = () => {
+  const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = React.useState(false);
+  const [availableOptions, setAvailableOptions] = React.useState([
+    { text: 'Apple', selected: false, isVisible: true },
+    { text: 'Banana', selected: false, isVisible: true },
+    { text: 'Pineapple', selected: false, isVisible: true }
   ]);
-  const [chosenOptions, setChosenOptions] = React.useState<Option[]>([]);
+  const [chosenOptions, setChosenOptions] = React.useState([
+    { text: 'Orange', selected: false, isVisible: true },
+    { text: 'Grape', selected: false, isVisible: true },
+    { text: 'Peach', selected: false, isVisible: true },
+    { text: 'Strawberry', selected: false, isVisible: true }
+  ]);
 
-  // callback for moving selected options between lists
   const moveSelected = (fromAvailable: boolean) => {
     const sourceOptions = fromAvailable ? availableOptions : chosenOptions;
     const destinationOptions = fromAvailable ? chosenOptions : availableOptions;
@@ -49,7 +51,6 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
     }
   };
 
-  // callback for moving all options between lists
   const moveAll = (fromAvailable: boolean) => {
     if (fromAvailable) {
       setChosenOptions([...availableOptions.filter((option) => option.isVisible), ...chosenOptions]);
@@ -60,12 +61,15 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
     }
   };
 
-  // callback when option is selected
   const onOptionSelect = (
     event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent,
     index: number,
     isChosen: boolean
   ) => {
+    if (ignoreNextOptionSelect) {
+      setIgnoreNextOptionSelect(false);
+      return;
+    }
     if (isChosen) {
       const newChosen = [...chosenOptions];
       newChosen[index].selected = !chosenOptions[index].selected;
@@ -77,81 +81,104 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
     }
   };
 
+  const onDrop = (source: DraggableItemPosition, dest: DraggableItemPosition | undefined) => {
+    if (dest) {
+      const newList = [...chosenOptions];
+      const [removed] = newList.splice(source.index, 1);
+      newList.splice(dest.index, 0, removed);
+      setChosenOptions(newList);
+      return true;
+    }
+    return false;
+  };
+
   return (
-    <DualListSelector>
-      <DualListSelectorPane
-        title="Available options"
+    <DLSDeprecated>
+      <DLSPaneDeprecated
+        title="Available"
         status={`${availableOptions.filter((option) => option.selected && option.isVisible).length} of ${
           availableOptions.filter((option) => option.isVisible).length
         } options selected`}
       >
-        <DualListSelectorList>
+        <DLSListDeprecated>
           {availableOptions.map((option, index) =>
             option.isVisible ? (
-              <DualListSelectorListItem
+              <DLSListItemDeprecated
                 key={index}
                 isSelected={option.selected}
-                id={`basic-available-option-${index}`}
+                id={`composable-drag-drop-available-option-${index}`}
                 onOptionSelect={(e) => onOptionSelect(e, index, false)}
               >
                 {option.text}
-              </DualListSelectorListItem>
+              </DLSListItemDeprecated>
             ) : null
           )}
-        </DualListSelectorList>
-      </DualListSelectorPane>
-      <DualListSelectorControlsWrapper>
-        <DualListSelectorControl
+        </DLSListDeprecated>
+      </DLSPaneDeprecated>
+      <DLSControlsWrapperDeprecated>
+        <DLSControlDeprecated
           isDisabled={!availableOptions.some((option) => option.selected)}
           onClick={() => moveSelected(true)}
           aria-label="Add selected"
         >
           <AngleRightIcon />
-        </DualListSelectorControl>
-        <DualListSelectorControl
+        </DLSControlDeprecated>
+        <DLSControlDeprecated
           isDisabled={availableOptions.length === 0}
           onClick={() => moveAll(true)}
           aria-label="Add all"
         >
           <AngleDoubleRightIcon />
-        </DualListSelectorControl>
-        <DualListSelectorControl
+        </DLSControlDeprecated>
+        <DLSControlDeprecated
           isDisabled={chosenOptions.length === 0}
           onClick={() => moveAll(false)}
           aria-label="Remove all"
         >
           <AngleDoubleLeftIcon />
-        </DualListSelectorControl>
-        <DualListSelectorControl
+        </DLSControlDeprecated>
+        <DLSControlDeprecated
           onClick={() => moveSelected(false)}
           isDisabled={!chosenOptions.some((option) => option.selected)}
           aria-label="Remove selected"
         >
           <AngleLeftIcon />
-        </DualListSelectorControl>
-      </DualListSelectorControlsWrapper>
-      <DualListSelectorPane
-        title="Chosen options"
-        status={`${chosenOptions.filter((option) => option.selected && option.isVisible).length} of ${
-          chosenOptions.filter((option) => option.isVisible).length
-        } options selected`}
-        isChosen
+        </DLSControlDeprecated>
+      </DLSControlsWrapperDeprecated>
+      <DragDrop
+        onDrag={() => {
+          setIgnoreNextOptionSelect(true);
+          return true;
+        }}
+        onDrop={onDrop}
       >
-        <DualListSelectorList>
-          {chosenOptions.map((option, index) =>
-            option.isVisible ? (
-              <DualListSelectorListItem
-                key={index}
-                isSelected={option.selected}
-                id={`composable-basic-chosen-option-${index}`}
-                onOptionSelect={(e) => onOptionSelect(e, index, true)}
-              >
-                {option.text}
-              </DualListSelectorListItem>
-            ) : null
-          )}
-        </DualListSelectorList>
-      </DualListSelectorPane>
-    </DualListSelector>
+        <DLSPaneDeprecated
+          title="Chosen"
+          status={`${chosenOptions.filter((option) => option.selected && option.isVisible).length} of ${
+            chosenOptions.filter((option) => option.isVisible).length
+          } options selected`}
+          isChosen
+        >
+          <Droppable hasNoWrapper>
+            <DLSListDeprecated>
+              {chosenOptions.map((option, index) =>
+                option.isVisible ? (
+                  <Draggable key={index} hasNoWrapper>
+                    <DLSListItemDeprecated
+                      isSelected={option.selected}
+                      id={`composable-drag-drop-chosen-option-${index}`}
+                      onOptionSelect={(e) => onOptionSelect(e, index, true)}
+                      isDraggable
+                    >
+                      {option.text}
+                    </DLSListItemDeprecated>
+                  </Draggable>
+                ) : null
+              )}
+            </DLSListDeprecated>
+          </Droppable>
+        </DLSPaneDeprecated>
+      </DragDrop>
+    </DLSDeprecated>
   );
 };

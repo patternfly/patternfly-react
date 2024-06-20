@@ -10,26 +10,26 @@ export interface DualListSelectorTreeItemData {
   className?: string;
   /** Flag indicating this option is expanded by default. */
   defaultExpanded?: boolean;
-  /** Flag indicating this option has a badge. */
+  /** Flag indicating this option has a badge */
   hasBadge?: boolean;
-  /** Callback fired when an option is checked. */
+  /** Callback fired when an option is checked */
   onOptionCheck?: (
     event: React.MouseEvent | React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent,
     isChecked: boolean,
     isChosen: boolean,
     itemData: DualListSelectorTreeItemData
   ) => void;
-  /** ID of the option. */
+  /** ID of the option */
   id: string;
-  /** Text of the option. */
+  /** Text of the option */
   text: string;
-  /** Parent ID of an option. */
+  /** Parent id of an option */
   parentId?: string;
-  /** Checked state of the option. */
+  /** Checked state of the option */
   isChecked: boolean;
-  /** Additional properties to pass to the option checkbox. */
+  /** Additional properties to pass to the option checkbox */
   checkProps?: any;
-  /** Additional properties to pass to the option badge. */
+  /** Additional properties to pass to the option badge */
   badgeProps?: any;
   /** Flag indicating whether the component is disabled. */
   isDisabled?: boolean;
@@ -40,19 +40,19 @@ export interface DualListSelectorTreeItemData {
  */
 
 export interface DualListSelectorTreeProps extends Omit<React.HTMLProps<HTMLUListElement>, 'data'> {
-  /** Data of the tree view. */
+  /** Data of the tree view */
   data: DualListSelectorTreeItemData[] | (() => DualListSelectorTreeItemData[]);
-  /** ID of the tree view. */
+  /** ID of the tree view */
   id?: string;
-  /** @hide Flag indicating if the list is nested. */
+  /** @hide Flag indicating if the list is nested */
   isNested?: boolean;
-  /** Flag indicating if all options should have badges. */
+  /** Flag indicating if all options should have badges */
   hasBadges?: boolean;
-  /** Sets the default expanded behavior. */
+  /** Sets the default expanded behavior */
   defaultAllExpanded?: boolean;
-  /** Flag indicating if the dual list selector tree is in the disabled state. */
+  /** Flag indicating if the dual list selector tree is in the disabled state */
   isDisabled?: boolean;
-  /** Callback fired when an option is checked. */
+  /** Callback fired when an option is checked */
   onOptionCheck?: (
     event: React.MouseEvent | React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent,
     isChecked: boolean,

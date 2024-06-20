@@ -1,7 +1,7 @@
 ---
 id: Dual list selector
 section: components
-cssPrefix: 'pf-v5-c-dual-list-selector'
+cssPrefix: 'pf-v6-c-dual-list-selector'
 propComponents:
   [
     'DualListSelector',
@@ -13,9 +13,22 @@ propComponents:
     'DualListSelectorTree',
     'DualListSelectorTreeItemData'
   ]
-beta: true
+deprecated: true
 ---
 
+import {
+DragDrop,
+Draggable,
+Droppable,
+DualListSelector as DLSDeprecated,
+DualListSelectorPane as DLSPaneDeprecated,
+DualListSelectorList as DLSListDeprecated,
+DualListSelectorListItem as DLSListItemDeprecated,
+DualListSelectorControlsWrapper as DLSControlsWrapperDeprecated,
+DualListSelectorControl as DLSControlDeprecated,
+DualListSelectorTree as DLSTreeDeprecated,
+DualListSelectorTreeItemData as DLSTreeItemDataDeprecated,
+} from '@patternfly/react-core/deprecated';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
@@ -23,31 +36,8 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
 
 ## Examples
-
-The dual list selector is built in a composable manner to make customization easier. The standard sub-component relationships are arranged as follows:
-
-```noLive
-<DualListSelector>
-  <DualListSelectorPane>
-    <DualListSelectorList>
-      <DualListSelectorListItem />
-    </DualListSelectorList>
-  </DualListSelectorPane>
-
-  <DualListSelectorControlsWrapper>
-    <DualListSelectorControl /> /* A standard Dual list selector has 4 controls */
-  </DualListSelectorControlsWrapper>
-
-  <DualListSelectorPane isChosen>
-    <DualListSelectorList>
-      <DualListSelectorListItem />
-    </DualListSelectorList>
-  </DualListSelectorPane>
-</DualListSelector>
-```
 
 ### Basic
 
@@ -75,11 +65,43 @@ The dual list selector is built in a composable manner to make customization eas
 
 ### With tree
 
-```ts file="DualListSelectorTree.tsx"
+```ts file="./DualListSelectorTreeExample.tsx"
 
 ```
 
-### Drag and drop
+## Composable structure
+
+The dual list selector can also be built in a composable manner to make customization easier. The standard sub-component relationships are arranged as follows:
+
+```noLive
+<DualListSelector>
+  <DualListSelectorPane>
+    <DualListSelectorList>
+      <DualListSelectorListItem />
+    </DualListSelectorList>
+  </DualListSelectorPane>
+
+  <DualListSelectorControlsWrapper>
+    <DualListSelectorControl /> /* A standard Dual list selector has 4 controls */
+  </DualListSelectorControlsWrapper>
+
+  <DualListSelectorPane isChosen>
+    <DualListSelectorList>
+      <DualListSelectorListItem />
+    </DualListSelectorList>
+  </DualListSelectorPane>
+</DualListSelector>
+```
+
+### Composable dual list selector
+
+```ts file="./DualListSelectorComposable.tsx"
+
+```
+
+### Composable with drag and drop
+
+Note: There is a new recommended drag and drop implementation with full keyboard functionality, which replaces this implementation. To adhere to our new recommendations, refer to the [drag and drop demos](/components/drag-and-drop/react-demos).
 
 This example only allows reordering the contents of the "chosen" pane with drag and drop. To make a pane able to be reordered:
 
@@ -93,8 +115,14 @@ This example only allows reordering the contents of the "chosen" pane with drag 
   - define an `onDrag` callback which ensures that the drag event will not cross hairs with the `onOptionSelect` click
     event set on the option. Note: the `ignoreNextOptionSelect` state value is used to prevent selection while dragging.
 
-Note: Keyboard accessibility and screen reader accessibility for the `DragDrop` component are still in development.
+Keyboard and screen reader accessibility for the `<DragDrop>` component is still in development.
 
-```ts file="DualListSelectorDragDrop.tsx"
+```ts isDeprecated file="DualListSelectorComposableDragDrop.tsx"
+
+```
+
+### Composable with tree
+
+```ts file="DualListSelectorComposableTree.tsx"
 
 ```

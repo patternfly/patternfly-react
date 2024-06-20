@@ -1,4 +1,5 @@
 export * from './DualListSelector';
+export * from './DualListSelectorContext';
 export * from './DualListSelectorControl';
 export * from './DualListSelectorControlsWrapper';
 export * from './DualListSelectorPane';
