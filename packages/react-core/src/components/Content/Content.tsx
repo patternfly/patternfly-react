@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Content/content';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export enum TextVariants {
+export enum ContentVariants {
   h1 = 'h1',
   h2 = 'h2',
   h3 = 'h3',
@@ -24,7 +24,7 @@ export enum TextVariants {
   dd = 'dd'
 }
 
-export interface TextProps extends React.HTMLProps<HTMLElement>, OUIAProps {
+export interface ContentProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   /** The content component. If none provided, it will be a 'div' and styling will be applied to all its child components. */
   component?:
     | 'h1'
@@ -81,7 +81,7 @@ const componentStyles = {
   dd: styles.contentDd
 };
 
-export const Text: React.FunctionComponent<TextProps> = ({
+export const Content: React.FunctionComponent<ContentProps> = ({
   children,
   className = '',
   component,
@@ -90,10 +90,10 @@ export const Text: React.FunctionComponent<TextProps> = ({
   ouiaId,
   ouiaSafe = true,
   ...props
-}: TextProps) => {
+}: ContentProps) => {
   const wrappingComponent = component ?? 'div';
   const Component: any = wrappingComponent;
-  const ouiaProps = useOUIAProps(Text.displayName, ouiaId, ouiaSafe);
+  const ouiaProps = useOUIAProps(Content.displayName, ouiaId, ouiaSafe);
 
   const isList = ['ul', 'ol', 'dl'].includes(wrappingComponent);
 
@@ -113,4 +113,4 @@ export const Text: React.FunctionComponent<TextProps> = ({
     </Component>
   );
 };
-Text.displayName = 'Text';
+Content.displayName = 'Content';
