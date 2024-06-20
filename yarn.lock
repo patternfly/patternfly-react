@@ -14425,7 +14425,7 @@ __metadata:
     sass: "npm:^1.77.5"
     surge: "npm:^0.23.1"
     ts-node: "npm:^10.9.2"
-    ts-patch: "npm:^3.2.0"
+    ts-patch: "npm:^3.1.2"
     typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
@@ -31257,7 +31257,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-patch@npm:^3.2.0":
+"ts-patch@npm:^3.1.2":
   version: 3.2.0
   resolution: "ts-patch@npm:3.2.0"
   dependencies:
