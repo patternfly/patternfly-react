@@ -16,7 +16,7 @@ export interface SwitchProps
   label?: React.ReactNode;
   /** Adds an accessible name to the switch when the label prop is not passed, and must describe the isChecked="true" state. */
   'aria-label'?: string;
-  /** Adds an accessible name to the switch via a list of referenced id's. The computed accessible name must describe the isChecked="true" state. */
+  /** Adds an accessible name to the switch via one or more referenced id(s). The computed accessible name must describe the isChecked="true" state. */
   'aria-labelledby'?: string;
   /** Flag to show if the switch is checked when it is controlled by React state.
    * To make the switch uncontrolled instead use the defaultChecked prop, but do not use both.
