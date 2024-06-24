@@ -83,7 +83,7 @@ export const getResizeObserver = (
         if (useRequestAnimationFrame) {
           window.requestAnimationFrame(() => {
             if (Array.isArray(entries) && entries.length > 0) {
-              handleResize();
+              debounce(handleResize, 100);
             }
           });
           // Avoid wrapping function in requestAnimationFrame if the function is debounced
