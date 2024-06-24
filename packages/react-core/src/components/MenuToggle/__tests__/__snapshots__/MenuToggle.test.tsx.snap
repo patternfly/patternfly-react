@@ -5,6 +5,9 @@ exports[`menu toggle passes additional classes 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle test-class"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-2"
+    data-ouia-component-type="PF6/MenuToggle"
+    data-ouia-safe="true"
     type="button"
   >
     <span
@@ -42,6 +45,9 @@ exports[`menu toggle renders successfully 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-1"
+    data-ouia-component-type="PF6/MenuToggle"
+    data-ouia-safe="true"
     type="button"
   >
     <span
@@ -79,6 +85,9 @@ exports[`menu toggle shows badge 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-6"
+    data-ouia-component-type="PF6/MenuToggle"
+    data-ouia-safe="true"
     type="button"
   >
     <span
@@ -125,6 +134,9 @@ exports[`menu toggle shows icon 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-5"
+    data-ouia-component-type="PF6/MenuToggle"
+    data-ouia-safe="true"
     type="button"
   >
     <span
@@ -179,6 +191,9 @@ exports[`menu toggle shows isDisabled 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle pf-m-disabled"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-4"
+    data-ouia-component-type="PF6/MenuToggle"
+    data-ouia-safe="true"
     disabled=""
     type="button"
   >
@@ -217,6 +232,9 @@ exports[`menu toggle shows isExpanded 1`] = `
   <button
     aria-expanded="true"
     class="pf-v6-c-menu-toggle pf-m-expanded"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-3"
+    data-ouia-component-type="PF6/MenuToggle"
+    data-ouia-safe="true"
     type="button"
   >
     <span
@@ -254,6 +272,9 @@ exports[`menu toggle shows isPlain 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle pf-m-plain"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-plain-1"
+    data-ouia-component-type="PF6/MenuToggle"
+    data-ouia-safe="true"
     type="button"
   >
     <span
@@ -282,6 +303,9 @@ exports[`menu toggle shows isPrimary 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle pf-m-primary"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-primary-1"
+    data-ouia-component-type="PF6/MenuToggle"
+    data-ouia-safe="true"
     type="button"
   >
     <span
@@ -319,6 +343,9 @@ exports[`menu toggle shows plain text 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle pf-m-plain pf-m-text"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-plainText-1"
+    data-ouia-component-type="PF6/MenuToggle"
+    data-ouia-safe="true"
     type="button"
   >
     <span

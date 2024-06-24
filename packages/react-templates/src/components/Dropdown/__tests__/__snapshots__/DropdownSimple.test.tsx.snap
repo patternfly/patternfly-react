@@ -5,6 +5,9 @@ exports[`Dropdown items Matches snapshot 1`] = `
   <button
     aria-expanded="true"
     class="pf-v6-c-menu-toggle pf-m-expanded"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-default-21"
+    data-ouia-component-type="PF6/MenuToggle"
+    data-ouia-safe="true"
     type="button"
   >
     <span
@@ -114,6 +117,9 @@ exports[`Dropdown toggle Matches snapshot 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-default-12"
+    data-ouia-component-type="PF6/MenuToggle"
+    data-ouia-safe="true"
     type="button"
   >
     <span
