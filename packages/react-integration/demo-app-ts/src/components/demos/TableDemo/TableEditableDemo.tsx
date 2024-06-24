@@ -13,7 +13,7 @@ import {
   EditableTextCell,
   EditableSelectInputCell
 } from '@patternfly/react-table';
-import { SelectOption, SelectOptionObject } from '@patternfly/react-core/deprecated';
+import { SelectOption } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 const rowLevelValidationRules: IValidatorDef[] = [
@@ -141,8 +141,8 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
                   options={(updatedProps as any).options.map((option: any, index: number) => (
                     <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell5Option' + index} />
                   ))}
-                  onToggle={(_event: any) => {
-                    this.onToggle();
+                  onToggle={(event: any) => {
+                    this.onToggle(event);
                   }}
                   selections={updatedProps.selected}
                 />
@@ -252,8 +252,8 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
                   options={(updatedProps as any).options.map((option: any, index: number) => (
                     <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell5Option' + index} />
                   ))}
-                  onToggle={(_event: any, _isOpen: boolean) => {
-                    this.onToggle();
+                  onToggle={(_event: any) => {
+                    this.onToggle(_event);
                   }}
                   selections={updatedProps.selected}
                 />
@@ -328,7 +328,7 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
 
   onSelect = (
     _: React.MouseEvent | React.ChangeEvent,
-    newValue: string | SelectOptionObject,
+    newValue: string,
     rowIndex: number,
     cellIndex: number,
     isPlaceholder?: boolean
@@ -370,7 +370,7 @@ export class TableEditableDemo extends Component<TableProps, TableState> {
     });
   };
 
-  onToggle = () => {
+  onToggle = (_event: any) => {
     const newRows = Array.from(this.state.rows);
     this.setState({
       rows: newRows

@@ -24,7 +24,7 @@ import {
 } from '@patternfly/react-core';
 import imgBrand from './assets/images/imgBrand.svg';
 import imgAvatar from './assets/images/imgAvatar.svg';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import Demos from './Demos';
 import './App.css';
 
@@ -45,7 +45,7 @@ class App extends React.Component<{}, AppState> {
     this.setState({ activeItem: selectedItem.itemId });
   };
 
-  private onNavToggle = (_event: React.MouseEvent) => {
+  private onNavToggle = () => {
     this.setState({ isNavOpen: !this.state.isNavOpen });
   };
 

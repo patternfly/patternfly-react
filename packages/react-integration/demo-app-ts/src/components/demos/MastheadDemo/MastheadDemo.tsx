@@ -46,7 +46,7 @@ export class MastheadDemo extends Component<MastheadProps> {
     filteredItems: this.items
   };
 
-  onToggle = (_event: any, _isOpen: boolean) => {
+  onToggle = (_event: any) => {
     this.setState({
       isOpen: !this.state.isOpen
     });

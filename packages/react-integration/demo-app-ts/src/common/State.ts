@@ -1,6 +1,4 @@
-import { SelectOptionObject } from '@patternfly/react-core/deprecated';
-
-export class State implements SelectOptionObject {
+export class State {
   name: string;
   abbreviation: string;
   capital: string;

@@ -39,7 +39,6 @@ export class TableRowWrapperDemo extends Component<TableProps, ITableRowWrapperD
       };
       return (
         <tr
-          {...rest}
           ref={trRef as React.Ref<any>}
           className={css(
             className,

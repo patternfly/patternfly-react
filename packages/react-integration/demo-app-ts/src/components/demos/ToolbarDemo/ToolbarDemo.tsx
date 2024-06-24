@@ -20,6 +20,7 @@ import {
   MenuToggle,
   Divider,
   Select,
+  SelectList,
   SelectOption
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -46,21 +47,18 @@ interface ToolbarState {
 
 class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
   static displayName = 'ToolbarDemo';
-  constructor(props: ToolbarProps) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      inputValue: '',
-      statusisOpen: false,
-      riskisOpen: false,
-      filters: {
-        risk: ['Low'],
-        status: ['New', 'Pending'],
-        key: ['']
-      },
-      kebabIsOpen: false
-    };
-  }
+  state = {
+    isOpen: false,
+    inputValue: '',
+    statusisOpen: false,
+    riskisOpen: false,
+    filters: {
+      risk: ['Low'],
+      status: ['New', 'Pending'],
+      key: ['']
+    },
+    kebabIsOpen: false
+  };
 
   toggleisOpen = () => {
     this.setState((prevState) => ({
@@ -94,11 +92,11 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     });
   };
 
-  onStatusSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  onStatusSelect = (event: any, selection: any) => {
     this.onSelect('status', event, selection);
   };
 
-  onRiskSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  onRiskSelect = (event: any, selection: any) => {
     this.onSelect('risk', event, selection);
   };
 
@@ -134,15 +132,15 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     }
   };
 
-  onStatusToggle = (_event: any, isOpen: boolean) => {
+  onStatusToggle = (_event: any) => {
     this.setState({
-      statusisOpen: isOpen
+      statusisOpen: !this.state.statusisOpen
     });
   };
 
-  onRiskToggle = (_event: any, isOpen: boolean) => {
+  onRiskToggle = (_event: any) => {
     this.setState({
-      riskisOpen: isOpen
+      riskisOpen: !this.state.riskisOpen
     });
   };
 
@@ -160,10 +158,10 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     const { inputValue, filters, statusisOpen, riskisOpen, kebabIsOpen } = this.state;
 
     const statusMenuItems = [
-      <SelectOption key="statusNew" value="New" />,
-      <SelectOption key="statusPending" value="Pending" />,
-      <SelectOption key="statusRunning" value="Running" />,
-      <SelectOption key="statusCancelled" value="Cancelled" />
+      <SelectOption hasCheckbox key="statusNew" value="New" />,
+      <SelectOption hasCheckbox key="statusPending" value="Pending" />,
+      <SelectOption hasCheckbox key="statusRunning" value="Running" />,
+      <SelectOption hasCheckbox key="statusCancelled" value="Cancelled" />
     ];
 
     const riskMenuItems = [
@@ -197,13 +195,16 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
           <ToolbarFilter chips={filters.status} deleteChip={this.onDelete} categoryName="Status">
             <Select
               aria-label="Status"
-              onToggle={this.onStatusToggle}
               onSelect={this.onStatusSelect}
-              selections={filters.status}
+              selected={filters.status}
               isOpen={statusisOpen}
-              placeholderText="Status"
+              toggle={(toggleRef: any) => (
+                <MenuToggle ref={toggleRef} onClick={this.onStatusToggle} isExpanded={this.state.statusisOpen}>
+                  {this.state.riskisOpen ? 'Expanded' : 'Collapsed'}
+                </MenuToggle>
+              )}
             >
-              {statusMenuItems}
+              <SelectList>{statusMenuItems}</SelectList>
             </Select>
           </ToolbarFilter>
           <ToolbarFilter
@@ -213,15 +214,17 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
             categoryName="Risk"
           >
             <Select
-              variant={SelectVariant.checkbox}
               aria-label="Risk"
-              onToggle={this.onRiskToggle}
               onSelect={this.onRiskSelect}
-              selections={filters.risk}
+              selected={filters.risk}
               isOpen={riskisOpen}
-              placeholderText="Risk"
+              toggle={(toggleRef: any) => (
+                <MenuToggle ref={toggleRef} onClick={this.onRiskToggle} isExpanded={this.state.riskisOpen}>
+                  {this.state.riskisOpen ? 'Expanded' : 'Collapsed'}
+                </MenuToggle>
+              )}
             >
-              {riskMenuItems}
+              <SelectList>{riskMenuItems}</SelectList>
             </Select>
           </ToolbarFilter>
         </ToolbarGroup>
@@ -267,8 +270,8 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
         <ToolbarItem>
           <Dropdown
             isOpen={kebabIsOpen}
-            onOpenChange={(isOpen) => this.setState({ kebabIsOpen: isOpen })}
-            toggle={(toggleRef) => (
+            onOpenChange={(_event: any) => this.setState({ kebabIsOpen: this.state.kebabIsOpen })}
+            toggle={(toggleRef: React.Ref<any>) => (
               <MenuToggle
                 variant="plain"
                 ref={toggleRef}
@@ -402,7 +405,7 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
           clearAllFilters={this.onDelete}
           className="pf-m-toggle-group-container"
           clearFiltersButtonText="Clear filters"
-          numberOfFiltersText={(numOfFilters) => `Applied filters: ${numOfFilters}`}
+          numberOfFiltersText={(numOfFilters: any) => `Applied filters: ${numOfFilters}`}
         >
           <ToolbarContent>{toolbarItems}</ToolbarContent>
         </Toolbar>

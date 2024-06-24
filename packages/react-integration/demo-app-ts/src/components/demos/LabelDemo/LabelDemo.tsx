@@ -54,7 +54,7 @@ export class LabelDemo extends Component {
           Very very very very long label text that should be truncated
         </Label>
         <Label isCompact>Compact</Label>
-        <Label id="overflow-label" isOverflowLabel>
+        <Label id="overflow-label" variant="overflow">
           Overflow label
         </Label>
         <Label
