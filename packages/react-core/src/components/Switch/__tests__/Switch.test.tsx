@@ -26,15 +26,13 @@ describe('Switch', () => {
   });
 
   test('switch is checked', () => {
-    const { asFragment } = render(
-      <Switch id="switch-is-checked" label="On" labelOff="Off" isChecked aria-label="Switch label" />
-    );
+    const { asFragment } = render(<Switch id="switch-is-checked" label="On" isChecked aria-label="Switch label" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('switch is not checked', () => {
     const { asFragment } = render(
-      <Switch id="switch-is-not-checked" label="On" labelOff="Off" isChecked={false} aria-label="Switch label" />
+      <Switch id="switch-is-not-checked" label="On" isChecked={false} aria-label="Switch label" />
     );
     expect(asFragment()).toMatchSnapshot();
   });

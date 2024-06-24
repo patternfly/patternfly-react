@@ -11,8 +11,7 @@ export const SwitchBasic: React.FunctionComponent = () => {
   return (
     <Switch
       id="simple-switch"
-      label="Message when on"
-      labelOff="Message when off"
+      label="Togglable option for basic example"
       isChecked={isChecked}
       onChange={handleChange}
       ouiaId="BasicSwitch"

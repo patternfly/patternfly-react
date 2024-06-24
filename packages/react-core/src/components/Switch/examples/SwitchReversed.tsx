@@ -11,8 +11,7 @@ export const SwitchReversed: React.FunctionComponent = () => {
   return (
     <Switch
       id="reversed-switch"
-      label="Message when on"
-      labelOff="Message when off"
+      label="Togglable option for reversed example"
       isChecked={isChecked}
       onChange={handleChange}
       isReversed

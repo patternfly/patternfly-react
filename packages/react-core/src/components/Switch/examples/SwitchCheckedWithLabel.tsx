@@ -10,10 +10,8 @@ export const SwitchCheckedWithLabel: React.FunctionComponent = () => {
 
   return (
     <Switch
-      label="Message when on"
-      labelOff="Message when off"
+      label="Togglable option for check icon example"
       id="checked-with-label-switch-on"
-      aria-label="Message when on"
       isChecked={isChecked}
       hasCheckIcon
       onChange={handleChange}
