@@ -72,8 +72,7 @@ ScrollspyH2 = () => {
         </Title>
         <Switch
           id="is-vertical"
-          label="Vertical"
-          labelOff="Horizontal"
+          label="Vertical jump links"
           isChecked={isVertical}
           onChange={(_event, check) => setIsVertical(check)}
         />

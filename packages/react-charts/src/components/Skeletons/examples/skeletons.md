@@ -50,8 +50,7 @@ export const ChartAreaSkeleton: React.FunctionComponent = () => {
     <>
       <Switch
         id="area-skeleton-switch"
-        label="Skeleton on"
-        labelOff="Skeleton off"
+        label="Enable skeleton"
         isChecked={isChecked}
         onChange={handleChange}
       />
@@ -131,8 +130,7 @@ export const ChartBarSkeleton: React.FunctionComponent = () => {
     <>
       <Switch
         id="bar-skeleton-switch"
-        label="Skeleton on"
-        labelOff="Skeleton off"
+        label="Enable skeleton"
         isChecked={isChecked}
         onChange={handleChange}
       />
@@ -188,8 +186,7 @@ export const ChartBoxPlotSkeleton: React.FunctionComponent = () => {
     <>
       <Switch
         id="boxplot-skeleton-switch"
-        label="Skeleton on"
-        labelOff="Skeleton off"
+        label="Enable skeleton"
         isChecked={isChecked}
         onChange={handleChange}
       />
@@ -246,8 +243,7 @@ export const ChartBulletSkeleton: React.FunctionComponent = () => {
     <>
       <Switch
         id="bullet-skeleton-switch"
-        label="Skeleton on"
-        labelOff="Skeleton off"
+        label="Enable skeleton"
         isChecked={isChecked}
         onChange={handleChange}
       />
@@ -300,8 +296,7 @@ export const ChartDonutSkeleton: React.FunctionComponent = () => {
     <>
       <Switch
         id="donut-skeleton-switch"
-        label="Skeleton on"
-        labelOff="Skeleton off"
+        label="Enable skeleton"
         isChecked={isChecked}
         onChange={handleChange}
       />
@@ -339,8 +334,7 @@ export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
     <>
       <Switch
         id="donut-utilization-skeleton-switch"
-        label="Skeleton on"
-        labelOff="Skeleton off"
+        label="Enable skeleton"
         isChecked={isChecked}
         onChange={handleChange}
       />
@@ -388,8 +382,7 @@ export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
     <>
       <Switch
         id="donut-utilization-threshold-skeleton-switch"
-        label="Skeleton on"
-        labelOff="Skeleton off"
+        label="Enable skeleton"
         isChecked={isChecked}
         onChange={handleChange}
       />
@@ -432,8 +425,7 @@ export const ChartLineSkeleton: React.FunctionComponent = () => {
     <>
       <Switch
         id="line-skeleton-switch"
-        label="Skeleton on"
-        labelOff="Skeleton off"
+        label="Enable skeleton"
         isChecked={isChecked}
         onChange={handleChange}
       />
@@ -522,8 +514,7 @@ export const ChartPieSkeleton: React.FunctionComponent = () => {
     <>
       <Switch
         id="pie-skeleton-switch"
-        label="Skeleton on"
-        labelOff="Skeleton off"
+        label="Enable skeleton"
         isChecked={isChecked}
         onChange={handleChange}
       />
@@ -570,8 +561,7 @@ export const ChartScatterSkeleton: React.FunctionComponent = () => {
     <>
       <Switch
         id="scatter-skeleton-switch"
-        label="Skeleton on"
-        labelOff="Skeleton off"
+        label="Enable skeleton"
         isChecked={isChecked}
         onChange={handleChange}
       />
@@ -627,8 +617,7 @@ export const ChartStackSkeleton: React.FunctionComponent = () => {
     <>
       <Switch
         id="stack-skeleton-switch"
-        label="Skeleton on"
-        labelOff="Skeleton off"
+        label="Enable skeleton"
         isChecked={isChecked}
         onChange={handleChange}
       />
@@ -684,8 +673,7 @@ export const ChartThresholdSkeleton: React.FunctionComponent = () => {
     <>
       <Switch
         id="threshold-skeleton-switch"
-        label="Skeleton on"
-        labelOff="Skeleton off"
+        label="Enable skeleton"
         isChecked={isChecked}
         onChange={handleChange}
       />
