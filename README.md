@@ -45,7 +45,7 @@ Before you begin, check out this [overview of PatternFly](http://patternfly.org/
 Install a package manager before using the PatternFly libraries.
 
 * [Use npm](https://nodejs.org/en/download/package-manager)
-* [Use Yarn](https://yarnpkg.com/en/docs/getting-started)
+* [Use Yarn](https://yarnpkg.com/getting-started/install)
 
 
 #### Start with PatternFly React seed

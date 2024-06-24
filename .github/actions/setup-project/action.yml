@@ -17,11 +17,15 @@ runs:
         node-version: 20
         check-latest: true
 
+    - name: Enable Corepack
+      shell: bash
+      run: corepack enable
+
     - name: Get Yarn configuration
       id: yarn-config
       shell: bash
       run: |
-        echo "cache-directory=$(yarn cache dir)" >> $GITHUB_OUTPUT
+        echo "cache-folder=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
 
     # TODO: This can be simplified to use the `cache` option of the `actions/setup-node` action when it supports Corepack.
     # See: https://github.com/actions/setup-node/issues/531
@@ -31,14 +35,14 @@ runs:
         # Also cache Cypress binary.
         path: |
           ~/.cache/Cypress
-          ${{ steps.yarn-config.outputs.cache-directory }}
+          ${{ steps.yarn-config.outputs.cache-folder }}
         key: ${{ runner.os }}-yarn-cache-${{ hashFiles('yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-cache-
 
     - name: Install dependencies
       shell: bash
-      run: yarn install --frozen-lockfile
+      run: yarn install --immutable
 
     - uses: actions/cache@v4
       if: inputs.skip-build != 'true' && inputs.skip-build-cache != 'true'
