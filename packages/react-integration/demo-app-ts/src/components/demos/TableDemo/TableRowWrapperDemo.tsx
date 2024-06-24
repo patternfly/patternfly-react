@@ -31,7 +31,7 @@ export class TableRowWrapperDemo extends Component<TableProps, ITableRowWrapperD
         }
       ]
     };
-    this.customRowWrapper = ({ trRef, className, rowProps = { rowIndex: 0, rowKey: '' }, _onResize, ...rest }) => {
+    this.customRowWrapper = ({ trRef, className, rowProps = { rowIndex: 0, rowKey: '' }, ...rest }) => {
       const isExpanded = rest.row ? rest.row.isExpanded : false;
       const isOddRow = (rowProps.rowIndex + 1) % 2;
       const customStyle = {
