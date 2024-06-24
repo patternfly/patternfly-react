@@ -24,31 +24,20 @@ describe('Wizard Demo Test', () => {
       });
   });
 
-  it('Verify in-page wizard step content is focusable and has role only if content overflows', () => {
-    cy.get('#inPageWizWithOverflow .pf-v6-c-wizard__main').should('not.have.attr', 'tabindex');
+  it('Verify in-page wizard step content has role only if content overflows', () => {
     cy.get('#inPageWizWithOverflow .pf-v6-c-wizard__main').should('not.have.attr', 'role');
-    cy.get('#inPageWizWithOverflow .pf-v6-c-wizard__main').click();
-    cy.get('#inPageWizWithOverflow .pf-v6-c-wizard__main').should('not.have.focus');
     cy.get('#inPageWizWithOverflow #inPage-overflow-step-2.pf-v6-c-wizard__nav-link').click();
-    cy.get('#inPageWizWithOverflow .pf-v6-c-wizard__main').should('have.attr', 'tabindex');
     cy.get('#inPageWizWithOverflow .pf-v6-c-wizard__main').should('have.attr', 'role').and('eq', 'region');
-    cy.get('#inPageWizWithOverflow .pf-v6-c-wizard__main').click();
-    cy.get('#inPageWizWithOverflow .pf-v6-c-wizard__main').should('have.focus');
   });
 
-  it('Verify modal wizard step content is focusable only if content overflows', () => {
-    cy.get('#launchWizOverflow').click();
-    cy.get('#inModalWizWithOverflow.pf-v6-c-wizard').should('exist');
-    cy.get('#inModalWizWithOverflow .pf-v6-c-wizard__main').should('not.have.attr', 'tabindex');
-    cy.get('#inModalWizWithOverflow .pf-v6-c-wizard__main').should('not.have.attr', 'role');
-    cy.get('#inModalWizWithOverflow .pf-v6-c-wizard__main').click();
-    cy.get('#inModalWizWithOverflow .pf-v6-c-wizard__main').should('not.have.focus');
-    cy.get('#inModalWizWithOverflow #modal-overflow-step-2.pf-v6-c-wizard__nav-link').click();
-    cy.get('#inModalWizWithOverflow main.pf-v6-c-wizard__main').should('exist');
-    cy.get('#inModalWizWithOverflow main.pf-v6-c-wizard__main').should('have.attr', 'tabindex');
-    cy.get('#inModalWizWithOverflow main.pf-v6-c-wizard__main').click();
-    cy.get('#inModalWizWithOverflow main.pf-v6-c-wizard__main').should('have.focus');
-    cy.get('#inModalWizWithOverflow .pf-v6-c-wizard__close > button').click();
+  it('Verify in-page wizard step content receives focus only on next or back click', () => {
+    cy.get('#inPageFocusTest .pf-v6-c-wizard__main').should('not.have.focus');
+    cy.get('#inPageFocusTest .pf-v6-c-action-list__group button.pf-m-primary').click();
+    cy.get('#inPageFocusTest .pf-v6-c-wizard__main').should('have.focus');
+    cy.get('#inPageFocusTest #inPageFocusTest-wizard-step-b2').click();
+    cy.get('#inPageFocusTest .pf-v6-c-wizard__main').should('not.have.focus');
+    cy.get('#inPageFocusTest .pf-v6-c-action-list__group button.pf-m-secondary').click();
+    cy.get('#inPageFocusTest .pf-v6-c-wizard__main').should('have.focus');
   });
 
   it('Verify modal wizard roles are applied correctly', () => {
