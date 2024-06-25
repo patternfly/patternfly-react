@@ -3302,7 +3302,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.34.2"
     eslint-plugin-testing-library: "npm:^6.2.2"
     fs-extra: "npm:^11.2.0"
-    glob: "npm:^10.4.1"
+    glob: "npm:^10.4.2"
     husky: "npm:^9.0.11"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
@@ -10771,6 +10771,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"glob@npm:^10.4.2":
+  version: 10.4.2
+  resolution: "glob@npm:10.4.2"
+  dependencies:
+    foreground-child: "npm:^3.1.0"
+    jackspeak: "npm:^3.1.2"
+    minimatch: "npm:^9.0.4"
+    minipass: "npm:^7.1.2"
+    package-json-from-dist: "npm:^1.0.0"
+    path-scurry: "npm:^1.11.1"
+  bin:
+    glob: dist/esm/bin.mjs
+  checksum: 10c0/2c7296695fa75a935f3ad17dc62e4e170a8bb8752cf64d328be8992dd6ad40777939003754e10e9741ff8fbe43aa52fba32d6930d0ffa0e3b74bc3fb5eebaa2f
+  languageName: node
+  linkType: hard
+
 "glob@npm:^7.0.3, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
@@ -15909,6 +15925,13 @@ __metadata:
   dependencies:
     p-reduce: "npm:^2.0.0"
   checksum: 10c0/ccae582b75a3597018a375f8eac32b93e8bfb9fc22a8e5037787ef4ebf5958d7465c2d3cbe26443971fbbfda2bcb7b645f694b91f928fc9a71fa5031e6e33f85
+  languageName: node
+  linkType: hard
+
+"package-json-from-dist@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "package-json-from-dist@npm:1.0.0"
+  checksum: 10c0/e3ffaf6ac1040ab6082a658230c041ad14e72fabe99076a2081bb1d5d41210f11872403fc09082daf4387fc0baa6577f96c9c0e94c90c394fd57794b66aa4033
   languageName: node
   linkType: hard
 
