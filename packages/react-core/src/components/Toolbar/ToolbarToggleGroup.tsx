@@ -149,8 +149,8 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
       | 'rowGap_3xl'
       | 'rowGap_4xl';
   };
-  /** Reference to a chip container group for filters inside the toolbar toggle group */
-  chipContainerRef?: React.RefObject<any>;
+  /** Reference to a label container group for filters inside the toolbar toggle group */
+  labelContainerRef?: React.RefObject<any>;
   /** Optional callback for clearing all filters in the toolbar toggle group */
   clearAllFilters?: () => void;
   /** Flag indicating that the clear all filters button should be visible in the toolbar toggle group */
@@ -184,7 +184,7 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
       children,
       isExpanded,
       onToggle,
-      chipContainerRef,
+      labelContainerRef,
       clearAllFilters,
       showClearFiltersButton,
       clearFiltersButtonText,
@@ -208,15 +208,15 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
                   {({
                     expandableContentRef,
                     expandableContentId,
-                    chipContainerRef: managedChipContainerRef,
+                    labelContainerRef: managedLabelContainerRef,
                     isExpanded: managedIsExpanded,
                     clearAllFilters: clearAllFiltersContext,
                     clearFiltersButtonText: clearFiltersButtonContext,
                     showClearFiltersButton: showClearFiltersButtonContext
                   }) => {
                     const _isExpanded = isExpanded !== undefined ? isExpanded : managedIsExpanded;
-                    const _chipContainerRef =
-                      chipContainerRef !== undefined ? chipContainerRef : managedChipContainerRef;
+                    const _labelContainerRef =
+                      labelContainerRef !== undefined ? labelContainerRef : managedLabelContainerRef;
 
                     const breakpointMod: {
                       md?: 'show';
@@ -234,7 +234,7 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
                         clearAllFilters={clearAllFilters || clearAllFiltersContext}
                         showClearFiltersButton={showClearFiltersButton || showClearFiltersButtonContext}
                         clearFiltersButtonText={clearFiltersButtonText || clearFiltersButtonContext}
-                        chipContainerRef={_chipContainerRef}
+                        labelContainerRef={_labelContainerRef}
                       >
                         {children}
                       </ToolbarExpandableContent>

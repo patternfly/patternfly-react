@@ -358,9 +358,9 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
         <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
         <ToolbarGroup variant="filter-group">
           <ToolbarFilter
-            chips={selections}
-            deleteChip={(category, chip) => onSelect(undefined, chip as string)}
-            deleteChipGroup={() => setSelections([])}
+            labels={selections}
+            deleteLabel={(category, label) => onSelect(undefined, label as string)}
+            deleteLabelGroup={() => setSelections([])}
             categoryName="Location"
           >
             {select}

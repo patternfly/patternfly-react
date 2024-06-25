@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ToolbarChipGroupContent should match snapshot (auto-generated) 1`] = `
+exports[`ToolbarLabelGroupContent should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-toolbar__content pf-m-hidden string"

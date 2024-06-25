@@ -47,7 +47,7 @@ exports[`Toolbar should render inset 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Toolbar should render with custom chip content 1`] = `
+exports[`Toolbar should render with custom label content 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-toolbar pf-m-toggle-group-container"
@@ -104,7 +104,7 @@ exports[`Toolbar should render with custom chip content 1`] = `
         hidden=""
       >
         <div
-          class="pf-v6-c-toolbar__item pf-m-label-group"
+          class="pf-v6-c-toolbar__item pf-m-label-group pf-m-label-group"
         >
           <div
             class="pf-v6-c-label-group pf-m-category"

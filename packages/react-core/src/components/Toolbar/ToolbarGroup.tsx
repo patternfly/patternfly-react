@@ -152,7 +152,7 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
   children?: React.ReactNode;
   /** Flag that modifies the toolbar group to hide overflow and respond to available space. Used for horizontal navigation. */
   isOverflowContainer?: boolean;
-  /** @hide Reference to pass to this group if it has .pf-m-chip-container modifier */
+  /** @hide Reference to pass to this group if it has .pf-m-label-container modifier */
   innerRef?: React.RefObject<any>;
 }
 

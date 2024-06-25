@@ -19,7 +19,7 @@ import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 
-export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
+export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
   const [statusIsExpanded, setStatusIsExpanded] = React.useState<boolean>(false);
   const [riskIsExpanded, setRiskIsExpanded] = React.useState<boolean>(false);
   const [filters, setFilters] = React.useState({
@@ -100,9 +100,9 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
     <React.Fragment>
       <ToolbarGroup variant="filter-group">
         <ToolbarFilter
-          chips={filters.status}
-          deleteChip={(category, chip) => onDelete(category as string, chip as string)}
-          deleteChipGroup={(category) => onDeleteGroup(category as string)}
+          labels={filters.status}
+          deleteLabel={(category, label) => onDelete(category as string, label as string)}
+          deleteLabelGroup={(category) => onDeleteGroup(category as string)}
           categoryName="Status"
         >
           <Select
@@ -132,9 +132,9 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
           </Select>
         </ToolbarFilter>
         <ToolbarFilter
-          chips={filters.risk}
-          deleteChip={(category, chip) => onDelete(category as string, chip as string)}
-          deleteChipGroup={(category) => onDeleteGroup(category as string)}
+          labels={filters.risk}
+          deleteLabel={(category, label) => onDelete(category as string, label as string)}
+          deleteLabelGroup={(category) => onDeleteGroup(category as string)}
           categoryName="Risk"
         >
           <Select
@@ -186,7 +186,7 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
     </React.Fragment>
   );
 
-  const customChipGroupContent = (
+  const customLabelGroupContent = (
     <React.Fragment>
       <ToolbarItem>
         <Button variant="link" onClick={() => {}} isInline>
@@ -203,10 +203,10 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
 
   return (
     <Toolbar
-      id="toolbar-with-custom-chip-group"
+      id="toolbar-with-custom-label-group"
       className="pf-m-toggle-group-container"
       collapseListedFiltersBreakpoint="xl"
-      customChipGroupContent={customChipGroupContent}
+      customLabelGroupContent={customLabelGroupContent}
     >
       <ToolbarContent>{toolbarItems}</ToolbarContent>
     </Toolbar>

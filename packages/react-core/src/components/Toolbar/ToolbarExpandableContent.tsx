@@ -16,8 +16,8 @@ export interface ToolbarExpandableContentProps extends React.HTMLProps<HTMLDivEl
   isExpanded?: boolean;
   /** Expandable content reference for passing to data toolbar children */
   expandableContentRef?: RefObject<HTMLDivElement>;
-  /** Chip container reference for passing to data toolbar children */
-  chipContainerRef?: RefObject<any>;
+  /** Label container reference for passing to data toolbar children */
+  labelContainerRef?: RefObject<any>;
   /** optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
   /** Text to display in the clear all filters button */
@@ -40,16 +40,16 @@ class ToolbarExpandableContent extends React.Component<ToolbarExpandableContentP
       children,
       className,
       expandableContentRef,
-      chipContainerRef,
+      labelContainerRef,
       isExpanded,
       clearAllFilters,
       clearFiltersButtonText,
       showClearFiltersButton,
       ...props
     } = this.props;
-    const { numberOfFilters, customChipGroupContent } = this.context;
+    const { numberOfFilters, customLabelGroupContent } = this.context;
 
-    const clearChipGroups = () => {
+    const clearLabelGroups = () => {
       clearAllFilters();
     };
 
@@ -62,15 +62,15 @@ class ToolbarExpandableContent extends React.Component<ToolbarExpandableContentP
         <ToolbarGroup>{children}</ToolbarGroup>
         {numberOfFilters > 0 && (
           <ToolbarGroup>
-            <ToolbarGroup ref={chipContainerRef} />
-            {showClearFiltersButton && !customChipGroupContent && (
+            <ToolbarGroup ref={labelContainerRef} />
+            {showClearFiltersButton && !customLabelGroupContent && (
               <ToolbarItem>
-                <Button variant="link" onClick={clearChipGroups} isInline>
+                <Button variant="link" onClick={clearLabelGroups} isInline>
                   {clearFiltersButtonText}
                 </Button>
               </ToolbarItem>
             )}
-            {customChipGroupContent && customChipGroupContent}
+            {customLabelGroupContent && customLabelGroupContent}
           </ToolbarGroup>
         )}
       </div>

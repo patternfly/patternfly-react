@@ -364,8 +364,8 @@ export const CardViewBasic: React.FunctionComponent = () => {
     return (
       <ToolbarFilter
         categoryName="Products"
-        chips={filters.products}
-        deleteChip={(type, id) => onDelete(type as string, id as string)}
+        labels={filters.products}
+        deleteLabel={(type, id) => onDelete(type as string, id as string)}
       >
         <Select
           aria-label="Products"

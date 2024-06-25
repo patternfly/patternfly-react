@@ -10,13 +10,13 @@ import { ToolbarGroup } from './ToolbarGroup';
 import { globalBreakpoints } from './ToolbarUtils';
 import { PickOptional } from '../../helpers/typeUtils';
 
-export interface ToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface ToolbarLabelGroupContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
   className?: string;
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
   isExpanded?: boolean;
-  /** Chip group content reference for passing to data toolbar children */
-  chipGroupContentRef?: RefObject<any>;
+  /** Label group content reference for passing to data toolbar children */
+  labelGroupContentRef?: RefObject<any>;
   /** optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
   /** Flag indicating that the clear all filters button should be visible */
@@ -27,15 +27,15 @@ export interface ToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivEle
   numberOfFilters: number;
   /** Text to display in the total number of applied filters ToolbarFilter */
   numberOfFiltersText?: (numberOfFilters: number) => string;
-  /** The breakpoint at which the listed filters in chip groups are collapsed down to a summary */
+  /** The breakpoint at which the listed filters in label groups are collapsed down to a summary */
   collapseListedFiltersBreakpoint?: 'all' | 'md' | 'lg' | 'xl' | '2xl';
-  /** Custom additional content appended to the generated chips. To maintain spacing and styling, each node should be a ToolbarItem or ToolbarGroup. This property will remove the built in "Clear all filters" button. */
-  customChipGroupContent?: React.ReactNode;
+  /** Custom additional content appended to the generated labels. To maintain spacing and styling, each node should be a ToolbarItem or ToolbarGroup. This property will remove the built in "Clear all filters" button. */
+  customLabelGroupContent?: React.ReactNode;
 }
 
-class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupContentProps> {
-  static displayName = 'ToolbarChipGroupContent';
-  static defaultProps: PickOptional<ToolbarChipGroupContentProps> = {
+class ToolbarLabelGroupContent extends React.Component<ToolbarLabelGroupContentProps> {
+  static displayName = 'ToolbarLabelGroupContent';
+  static defaultProps: PickOptional<ToolbarLabelGroupContentProps> = {
     clearFiltersButtonText: 'Clear all filters',
     collapseListedFiltersBreakpoint: 'lg',
     numberOfFiltersText: (numberOfFilters: number) => `${numberOfFilters} filters applied`
@@ -45,18 +45,18 @@ class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupContentPro
     const {
       className,
       isExpanded,
-      chipGroupContentRef,
+      labelGroupContentRef,
       clearAllFilters,
       showClearFiltersButton,
       clearFiltersButtonText,
       collapseListedFiltersBreakpoint,
       numberOfFilters,
       numberOfFiltersText,
-      customChipGroupContent,
+      customLabelGroupContent,
       ...props
     } = this.props;
 
-    const clearChipGroups = () => {
+    const clearLabelGroups = () => {
       clearAllFilters();
     };
 
@@ -74,7 +74,7 @@ class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupContentPro
       <div
         className={css(styles.toolbarContent, isHidden && styles.modifiers.hidden, className)}
         {...((numberOfFilters === 0 || isExpanded) && { hidden: true })}
-        ref={chipGroupContentRef}
+        ref={labelGroupContentRef}
         {...props}
       >
         <ToolbarGroup
@@ -87,17 +87,17 @@ class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupContentPro
             <ToolbarItem>{numberOfFiltersText(numberOfFilters)}</ToolbarItem>
           </ToolbarGroup>
         )}
-        {showClearFiltersButton && !isExpanded && !customChipGroupContent && (
+        {showClearFiltersButton && !isExpanded && !customLabelGroupContent && (
           <ToolbarItem>
-            <Button variant="link" onClick={clearChipGroups} isInline>
+            <Button variant="link" onClick={clearLabelGroups} isInline>
               {clearFiltersButtonText}
             </Button>
           </ToolbarItem>
         )}
-        {customChipGroupContent && customChipGroupContent}
+        {customLabelGroupContent && customLabelGroupContent}
       </div>
     );
   }
 }
 
-export { ToolbarChipGroupContent };
+export { ToolbarLabelGroupContent };

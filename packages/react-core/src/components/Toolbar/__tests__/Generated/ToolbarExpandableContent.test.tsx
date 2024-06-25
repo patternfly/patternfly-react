@@ -13,7 +13,7 @@ it('ToolbarExpandableContent should match snapshot (auto-generated)', () => {
       className={'string'}
       isExpanded={false}
       expandableContentRef={{ current: document.createElement('div') }}
-      chipContainerRef={{ current: document.createElement('div') }}
+      labelContainerRef={{ current: document.createElement('div') }}
       clearAllFilters={() => undefined as void}
       clearFiltersButtonText={"'Clear all filters'"}
       showClearFiltersButton={true}

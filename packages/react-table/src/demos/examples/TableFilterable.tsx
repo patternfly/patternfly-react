@@ -19,7 +19,7 @@ import {
   Select,
   SelectOption,
   SearchInput,
-  ToolbarChipGroup
+  ToolbarLabelGroup
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
@@ -35,7 +35,7 @@ export const TableFilterable: React.FunctionComponent = () => {
 
   const rowData = rows.slice(0, 10);
 
-  const onDelete = (type: string | ToolbarChipGroup, id: string) => {
+  const onDelete = (type: string | ToolbarLabelGroup, id: string) => {
     if (type === 'Location') {
       setFilters({
         ...filters,
@@ -186,8 +186,8 @@ export const TableFilterable: React.FunctionComponent = () => {
     return (
       <React.Fragment>
         <ToolbarFilter
-          chips={filters.location}
-          deleteChip={(category, chip) => onDelete(category, chip as string)}
+          labels={filters.location}
+          deleteLabel={(category, label) => onDelete(category, label as string)}
           categoryName="Location"
           showToolbarItem={currentCategory === 'Location'}
         >
@@ -217,8 +217,8 @@ export const TableFilterable: React.FunctionComponent = () => {
           </Select>
         </ToolbarFilter>
         <ToolbarFilter
-          chips={filters.name}
-          deleteChip={(category, chip) => onDelete(category, chip as string)}
+          labels={filters.name}
+          deleteLabel={(category, label) => onDelete(category, label as string)}
           categoryName="Name"
           showToolbarItem={currentCategory === 'Name'}
         >
@@ -234,8 +234,8 @@ export const TableFilterable: React.FunctionComponent = () => {
           />
         </ToolbarFilter>
         <ToolbarFilter
-          chips={filters.status}
-          deleteChip={(category, chip) => onDelete(category, chip as string)}
+          labels={filters.status}
+          deleteLabel={(category, label) => onDelete(category, label as string)}
           categoryName="Status"
           showToolbarItem={currentCategory === 'Status'}
         >
@@ -271,7 +271,7 @@ export const TableFilterable: React.FunctionComponent = () => {
 
   const renderToolbar = () => (
     <Toolbar
-      id="toolbar-with-chip-groups"
+      id="toolbar-with-label-groups"
       clearAllFilters={() => setFilters({ location: [], name: [], status: [] })}
       collapseListedFiltersBreakpoint="xl"
     >
