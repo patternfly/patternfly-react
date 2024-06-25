@@ -46,6 +46,8 @@ Adding text to a toggle item with an icon helps clarify the button's function.
 
 To do this, pass a descriptive label to the `text` property of a `<ToggleGroupItem>`.
 
+When passing both `text` and `icon` properties to a `<ToggleGroupItem>`, you can also pass in `iconPosition` to determine whether the icon is rendered at the start or end of the item.
+
 ```ts file="./ToggleGroupTextIcon.tsx"
 ```
 
