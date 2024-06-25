@@ -3,6 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from './PageContext';
+import { PageMainBody } from './PageMainBody';
 
 export interface PageNavigationProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes to apply to the PageNavigation */
@@ -26,6 +27,10 @@ export interface PageNavigationProps extends React.HTMLProps<HTMLDivElement> {
   hasShadowBottom?: boolean;
   /** Flag indicating if the PageNavigation has a scrolling overflow */
   hasOverflowScroll?: boolean;
+  /** @beta Flag indicating whether children passed to the component should be wrapped by a PageMainBody.
+   * Set this to false in order to pass multiple, custom PageMainBody's as children.
+   */
+  hasMainBodyWrapper?: boolean;
   /** Adds an accessible name to the page navigation when the hasOverflowScroll prop is set to true. */
   'aria-label'?: string;
 }
@@ -39,6 +44,7 @@ export const PageNavigation = ({
   hasShadowBottom = false,
   hasOverflowScroll = false,
   'aria-label': ariaLabel,
+  hasMainBodyWrapper = true,
   ...props
 }: PageNavigationProps) => {
   const { height, getVerticalBreakpoint } = React.useContext(PageContext);
@@ -64,8 +70,7 @@ export const PageNavigation = ({
       {...(hasOverflowScroll && { tabIndex: 0, role: 'region', 'aria-label': ariaLabel })}
       {...props}
     >
-      {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
-      {!isWidthLimited && children}
+      {hasMainBodyWrapper ? <PageMainBody>{children}</PageMainBody> : children}
     </div>
   );
 };

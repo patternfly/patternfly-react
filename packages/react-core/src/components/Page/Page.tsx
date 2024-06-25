@@ -9,6 +9,7 @@ import { PageGroup, PageGroupProps } from './PageGroup';
 import { getResizeObserver } from '../../helpers/resizeObserver';
 import { formatBreakpointMods, getBreakpoint, getVerticalBreakpoint } from '../../helpers/util';
 import { PageContextProvider } from './PageContext';
+import { PageMainBody } from './PageMainBody';
 
 export enum PageLayouts {
   vertical = 'vertical',
@@ -266,7 +267,7 @@ class Page extends React.Component<PageProps, PageState> {
     if (horizontalSubnav && isHorizontalSubnavWidthLimited) {
       nav = (
         <div className={css(styles.pageMainNav, styles.modifiers.limitWidth)}>
-          <div className={css(styles.pageMainBody)}>{horizontalSubnav}</div>
+          <PageMainBody>{horizontalSubnav}</PageMainBody>
         </div>
       );
     } else if (horizontalSubnav) {
@@ -287,7 +288,7 @@ class Page extends React.Component<PageProps, PageState> {
           )
         )}
       >
-        {isBreadcrumbWidthLimited ? <div className={css(styles.pageMainBody)}>{breadcrumb}</div> : breadcrumb}
+        {isBreadcrumbWidthLimited ? <PageMainBody>{breadcrumb}</PageMainBody> : breadcrumb}
       </section>
     ) : null;
 
