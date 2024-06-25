@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.72](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.71...@patternfly/react-core@6.0.0-alpha.72) (2024-06-25)
+
+**Note:** Version bump only for package @patternfly/react-core
+
 # [6.0.0-alpha.71](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.70...@patternfly/react-core@6.0.0-alpha.71) (2024-06-25)
 
 **Note:** Version bump only for package @patternfly/react-core
