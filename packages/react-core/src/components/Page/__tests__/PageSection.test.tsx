@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { PageSection, PageSectionTypes } from '../PageSection';
+import styles from '@patternfly/react-styles/css/components/Page/page';
 
 jest.mock('../Page');
 
@@ -89,6 +90,7 @@ test('Verify page section overflow scroll', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
+// Old snapshot tests end here. The following tests can be kept if Page test suites need a revamp
 test('Renders without an aria-label by default', () => {
   render(<PageSection>test</PageSection>);
 
@@ -98,7 +100,7 @@ test('Renders without an aria-label by default', () => {
 test('Renders with the passed aria-label applied', () => {
   render(<PageSection aria-label="Test label">test</PageSection>);
 
-  expect(screen.getByText('test')).toHaveAccessibleName('Test label');
+  expect(screen.getByText('test').parentElement).toHaveAccessibleName('Test label');
 });
 
 test('Does not log a warning in the console by default', () => {
@@ -132,11 +134,22 @@ test('Logs a warning in the console when an aria-label is not included with hasO
 test('Renders as a section by default', () => {
   render(<PageSection>test</PageSection>);
 
-  expect(screen.getByText('test')).toHaveProperty('nodeName', 'SECTION');
+  expect(screen.getByText('test').parentElement).toHaveProperty('nodeName', 'SECTION');
 });
 
 test('Renders as other elements when a different element type is passed using the component prop', () => {
   render(<PageSection component="main">test</PageSection>);
 
   expect(screen.getByRole('main')).toHaveTextContent('test');
+});
+
+test('Renders with PageMainBody wrapper by default', () => {
+  render(<PageSection>test</PageSection>);
+
+  expect(screen.getByText('test')).toHaveClass(styles.pageMainBody);
+});
+test('Does not render with PageMainBody wrapper when hasMainBodyWrapper is false', () => {
+  render(<PageSection hasMainBodyWrapper={false}>test</PageSection>);
+
+  expect(screen.getByText('test')).not.toHaveClass(styles.pageMainBody);
 });

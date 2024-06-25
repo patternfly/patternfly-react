@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { PageNavigation } from '../PageNavigation';
+import styles from '@patternfly/react-styles/css/components/Page/page';
 
 describe('page navigation', () => {
   test('Verify basic render', () => {
@@ -32,6 +33,7 @@ describe('page navigation', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  // Old snapshot tests end here. The following tests can be kept if Page test suites need a revamp
   test('Renders without an aria-label by default', () => {
     render(<PageNavigation>test</PageNavigation>);
 
@@ -45,7 +47,7 @@ describe('page navigation', () => {
       </PageNavigation>
     );
 
-    expect(screen.getByText('test')).toHaveAccessibleName('Test label');
+    expect(screen.getByText('test').parentElement).toHaveAccessibleName('Test label');
   });
 
   test('Does not log a warning in the console by default', () => {
@@ -74,5 +76,16 @@ describe('page navigation', () => {
     render(<PageNavigation hasOverflowScroll>test</PageNavigation>);
 
     expect(consoleWarning).toHaveBeenCalled();
+  });
+
+  test('Renders with PageMainBody wrapper by default', () => {
+    render(<PageNavigation>test</PageNavigation>);
+
+    expect(screen.getByText('test')).toHaveClass(styles.pageMainBody);
+  });
+  test('Does not render with PageMainBody wrapper when hasMainBodyWrapper is false', () => {
+    render(<PageNavigation hasMainBodyWrapper={false}>test</PageNavigation>);
+
+    expect(screen.getByText('test')).not.toHaveClass(styles.pageMainBody);
   });
 });

@@ -5,7 +5,11 @@ exports[`page navigation Verify basic render 1`] = `
   <div
     class="pf-v6-c-page__main-nav"
   >
-    test
+    <div
+      class="pf-v6-c-page__main-body"
+    >
+      test
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -15,7 +19,11 @@ exports[`page navigation Verify bottom shadow 1`] = `
   <div
     class="pf-v6-c-page__main-nav pf-m-shadow-bottom"
   >
-    test
+    <div
+      class="pf-v6-c-page__main-body"
+    >
+      test
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -25,7 +33,11 @@ exports[`page navigation Verify bottom sticky 1`] = `
   <div
     class="pf-v6-c-page__main-nav pf-m-sticky-bottom"
   >
-    test
+    <div
+      class="pf-v6-c-page__main-body"
+    >
+      test
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -51,7 +63,11 @@ exports[`page navigation Verify overflow scroll 1`] = `
     role="region"
     tabindex="0"
   >
-    test
+    <div
+      class="pf-v6-c-page__main-body"
+    >
+      test
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -61,7 +77,11 @@ exports[`page navigation Verify top shadow 1`] = `
   <div
     class="pf-v6-c-page__main-nav pf-m-shadow-top"
   >
-    test
+    <div
+      class="pf-v6-c-page__main-body"
+    >
+      test
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -71,7 +91,11 @@ exports[`page navigation Verify top sticky 1`] = `
   <div
     class="pf-v6-c-page__main-nav pf-m-sticky-top"
   >
-    test
+    <div
+      class="pf-v6-c-page__main-body"
+    >
+      test
+    </div>
   </div>
 </DocumentFragment>
 `;
