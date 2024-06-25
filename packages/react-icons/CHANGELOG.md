@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.0.0-alpha.24...@patternfly/react-icons@6.0.0-alpha.25) (2024-06-25)
+
+### Bug Fixes
+
+- **docs:** fix v6 classname in icons readme ([#10575](https://github.com/patternfly/patternfly-react/issues/10575)) ([52c21a7](https://github.com/patternfly/patternfly-react/commit/52c21a79167dd889ea24b9f0045043f980193feb))
+
 # [6.0.0-alpha.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.0.0-alpha.23...@patternfly/react-icons@6.0.0-alpha.24) (2024-06-05)
 
 ### Bug Fixes
