@@ -14,11 +14,10 @@ export const PageMainBody: React.FunctionComponent<PageMainBodyProps> = ({
   className,
   children,
   ...props
-}: PageMainBodyProps) => {
-  return (
-    <div {...props} className={css(styles.pageMainBody, className)}>
-      {children}
-    </div>
-  );
-};
+}: PageMainBodyProps) => (
+  <div {...props} className={css(styles.pageMainBody, className)}>
+    {children}
+  </div>
+);
+
 PageMainBody.displayName = 'PageMainBody';

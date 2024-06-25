@@ -266,12 +266,12 @@ class Page extends React.Component<PageProps, PageState> {
     let nav = null;
     if (horizontalSubnav && isHorizontalSubnavWidthLimited) {
       nav = (
-        <div className={css(styles.pageMainNav, styles.modifiers.limitWidth)}>
+        <div className={css(styles.pageMainSubnav, styles.modifiers.limitWidth)}>
           <PageMainBody>{horizontalSubnav}</PageMainBody>
         </div>
       );
     } else if (horizontalSubnav) {
-      nav = <div className={css(styles.pageMainNav)}>{horizontalSubnav}</div>;
+      nav = <div className={css(styles.pageMainSubnav)}>{horizontalSubnav}</div>;
     }
 
     const crumb = breadcrumb ? (

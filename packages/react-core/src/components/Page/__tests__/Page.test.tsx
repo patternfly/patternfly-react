@@ -10,7 +10,6 @@ import { Breadcrumb, BreadcrumbItem } from '../../Breadcrumb';
 import { Nav, NavList, NavItem } from '../../Nav';
 import { SkipToContent } from '../../SkipToContent';
 import { PageBreadcrumb } from '../PageBreadcrumb';
-import { PageNavigation } from '../PageNavigation';
 import { PageGroup } from '../PageGroup';
 import { Masthead } from '../../Masthead';
 
@@ -228,33 +227,6 @@ describe('Page', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Check page to verify nav is created - PageNavigation syntax', () => {
-    const masthead = <Masthead />;
-    const Sidebar = <PageSidebar isSidebarOpen />;
-
-    const { asFragment } = render(
-      <Page {...props} masthead={masthead} sidebar={Sidebar}>
-        <PageNavigation>
-          <Nav aria-label="Nav" variant="horizontal-subnav">
-            <NavList>
-              <NavItem itemId={0} isActive>
-                System Panel
-              </NavItem>
-              <NavItem itemId={1}>Policy</NavItem>
-              <NavItem itemId={2}>Authentication</NavItem>
-              <NavItem itemId={3}>Network Services</NavItem>
-              <NavItem itemId={4}>Server</NavItem>
-            </NavList>
-          </Nav>
-        </PageNavigation>
-        <PageSection variant="default">Section with default background</PageSection>
-      </Page>
-    );
-
-    expect(screen.getByRole('main')).not.toHaveAttribute('id');
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   test('Check page to verify grouped nav and breadcrumb - new components syntax', () => {
     const masthead = <Masthead />;
     const Sidebar = <PageSidebar isSidebarOpen />;
@@ -272,19 +244,17 @@ describe('Page', () => {
               </BreadcrumbItem>
             </Breadcrumb>
           </PageBreadcrumb>
-          <PageNavigation>
-            <Nav aria-label="Nav" variant="horizontal-subnav">
-              <NavList>
-                <NavItem itemId={0} isActive>
-                  System Panel
-                </NavItem>
-                <NavItem itemId={1}>Policy</NavItem>
-                <NavItem itemId={2}>Authentication</NavItem>
-                <NavItem itemId={3}>Network Services</NavItem>
-                <NavItem itemId={4}>Server</NavItem>
-              </NavList>
-            </Nav>
-          </PageNavigation>
+          <Nav aria-label="Nav" variant="horizontal-subnav">
+            <NavList>
+              <NavItem itemId={0} isActive>
+                System Panel
+              </NavItem>
+              <NavItem itemId={1}>Policy</NavItem>
+              <NavItem itemId={2}>Authentication</NavItem>
+              <NavItem itemId={3}>Network Services</NavItem>
+              <NavItem itemId={4}>Server</NavItem>
+            </NavList>
+          </Nav>
         </PageGroup>
         <PageSection variant="default">Section with default background</PageSection>
       </Page>

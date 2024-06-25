@@ -31,4 +31,4 @@ test(`Renders with spread props`, () => {
 test('Matches snapshot', () => {
   const { asFragment } = render(<PageMainBody>Test</PageMainBody>);
   expect(asFragment()).toMatchSnapshot();
-})
+});

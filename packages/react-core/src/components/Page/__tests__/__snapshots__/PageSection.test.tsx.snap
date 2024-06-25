@@ -15,7 +15,7 @@ exports[`Check page main breadcrumb section against snapshot 1`] = `
 exports[`Check page main nav section against snapshot 1`] = `
 <DocumentFragment>
   <section
-    class="pf-v6-c-page__main-nav"
+    class="pf-v6-c-page__main-section"
   >
     <div
       class="pf-v6-c-page__main-body"
