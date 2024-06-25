@@ -29,11 +29,11 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "@patternfly/react-styles": "^6.0.0-alpha.24",
-    "@patternfly/react-tokens": "^6.0.0-alpha.24",
-    "hoist-non-react-statics": "^3.3.0",
+    "@patternfly/react-styles": "workspace:^",
+    "@patternfly/react-tokens": "workspace:^",
+    "hoist-non-react-statics": "^3.3.2",
     "lodash": "^4.17.21",
-    "tslib": "^2.6.2",
+    "tslib": "^2.6.3",
     "victory-area": "^37.0.2",
     "victory-axis": "^37.0.2",
     "victory-bar": "^37.0.2",
@@ -61,9 +61,7 @@
     "build:single:packages": "node ../../scripts/build-single-packages.js --config single-packages.config.json"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.157",
-    "css": "^2.2.3",
-    "fs-extra": "^11.0.0",
-    "glob": "^7.1.2"
+    "@types/lodash": "^4.17.5",
+    "fs-extra": "^11.2.0"
   }
 }

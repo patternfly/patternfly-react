@@ -38,7 +38,3 @@ PatternFly React has 3 linters you can run all at once using `yarn lint:all`. Th
 ### ESLint
 
 ESLint is run on .js, .jsx, .ts, and .tsx files. It uses the [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) parser with custom config added over the years. We write some of our own ESLint rules in `eslint-plugin-patternfly-react`. You can run this linter with `yarn lint:ts` or on specific files with `yarn lint <path>`.
-
-### Version lint
-
-The `@patternfly` version linter is run on all `package.json` files to ensure that versions of all `@patternfly/*` packages match. This is done to prevent mismatching versions of essential PatternFly packages from accidentally being published. You can run this linter with `yarn lint:versions`. 

@@ -1,14 +1,13 @@
 import { Title, JumpLinks, JumpLinksItem, PageSection, PageGroup } from '@patternfly/react-core';
-import React from 'react';
 
 export const JumpLinksDemo = () => {
   const headings = [1, 2, 3, 4, 5];
 
   return (
-    <React.Fragment>
+    <>
       <PageSection stickyOnBreakpoint={{ default: 'top' }}>
         <JumpLinks isCentered label="Jump to section" scrollableSelector="#scrollable-element">
-          {headings.map(i => (
+          {headings.map((i) => (
             <JumpLinksItem key={i} id={`#heading-${i}`} href={`#heading-${i}`}>
               {`Heading ${i}`}
             </JumpLinksItem>
@@ -17,7 +16,7 @@ export const JumpLinksDemo = () => {
       </PageSection>
       <PageGroup hasOverflowScroll id="scrollable-element">
         <PageSection>
-          {headings.map(i => (
+          {headings.map((i) => (
             <div key={i} style={{ maxWidth: '800px', marginBottom: '32px' }}>
               <Title headingLevel="h2" size={'2xl'} id={`heading-${i}`} tabIndex={-1}>
                 {`Heading ${i}`}
@@ -53,6 +52,6 @@ export const JumpLinksDemo = () => {
           ))}
         </PageSection>
       </PageGroup>
-    </React.Fragment>
+    </>
   );
 };

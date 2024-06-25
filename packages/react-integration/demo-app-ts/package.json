@@ -3,41 +3,21 @@
   "private": true,
   "version": "5.1.1-alpha.70",
   "scripts": {
-    "build:demo-app": "webpack --mode production",
-    "start:demo-app": "webpack-dev-server",
-    "start:demo-app:hot": "webpack-dev-server --hot=true",
-    "serve:demo-app": "node scripts/serve"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview --port 3000"
   },
   "dependencies": {
-    "@patternfly/react-core": "^6.0.0-alpha.71",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-router": "^5.3.3",
-    "react-router-dom": "^5.3.3"
+    "@patternfly/react-core": "workspace:^",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router": "^5.3.4",
+    "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
-    "@pmmmwh/react-refresh-webpack-plugin": "0.5.13",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
     "@types/react-router": "^5.1.20",
     "@types/react-router-dom": "^5.3.3",
-    "classnames": "^2.2.6",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^6.1.0",
-    "css-loader": "^4.3.0",
-    "file-loader": "^6.1.0",
-    "fork-ts-checker-webpack-plugin": "6.5.3",
-    "html-webpack-plugin": "^5.5.0",
-    "local-web-server": "^2.6.1",
-    "mini-css-extract-plugin": "^0.12.0",
-    "react-hot-loader": "4.13.1",
-    "react-refresh": "0.14.0",
-    "react-refresh-typescript": "2.0.9",
-    "style-loader": "3.3.4",
-    "ts-loader": "^8.3.0",
-    "url-loader": "^4.1.0",
-    "webpack": "5.91.0",
-    "webpack-cli": "4.10.0",
-    "webpack-dev-server": "4.15.2"
+    "@vitejs/plugin-react-swc": "^3.7.0",
+    "vite": "^5.2.12"
   }
 }

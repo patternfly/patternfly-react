@@ -178,7 +178,7 @@ export class TreeViewDemo extends Component {
   onToggle = () => {
     const { allExpanded } = this.state;
     this.setState({
-      allExpanded: allExpanded !== undefined ? !allExpanded : true
+      allExpanded: !allExpanded
     });
   };
 
@@ -269,7 +269,7 @@ export class TreeViewDemo extends Component {
     );
 
     return (
-      <React.Fragment>
+      <>
         <Button id="expand" variant="link" onClick={this.onToggle}>
           {allExpanded && 'Collapse all'}
           {!allExpanded && 'Expand all'}
@@ -301,7 +301,7 @@ export class TreeViewDemo extends Component {
           onSelect={this.onClick2}
           variant="compactNoBackground"
         />
-      </React.Fragment>
+      </>
     );
   }
 }

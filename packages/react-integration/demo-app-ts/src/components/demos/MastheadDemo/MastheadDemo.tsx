@@ -19,7 +19,7 @@ import {
   MastheadProps
 } from '@patternfly/react-core';
 import imgBrand from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export class MastheadDemo extends Component<MastheadProps> {
@@ -46,7 +46,7 @@ export class MastheadDemo extends Component<MastheadProps> {
     filteredItems: this.items
   };
 
-  onToggle = (_event: any, _isOpen: boolean) => {
+  onToggle = (_event: any) => {
     this.setState({
       isOpen: !this.state.isOpen
     });

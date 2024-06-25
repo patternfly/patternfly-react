@@ -47,9 +47,9 @@
     "clean:exports": "node scripts/cleanDistExports.js"
   },
   "dependencies": {
-    "@patternfly/react-icons": "^6.0.0-alpha.25",
-    "@patternfly/react-styles": "^6.0.0-alpha.24",
-    "@patternfly/react-tokens": "^6.0.0-alpha.24",
+    "@patternfly/react-icons": "workspace:^",
+    "@patternfly/react-styles": "workspace:^",
+    "@patternfly/react-tokens": "workspace:^",
     "focus-trap": "7.5.4",
     "react-dropzone": "^14.2.3",
     "tslib": "^2.6.2"
@@ -57,9 +57,8 @@
   "devDependencies": {
     "@patternfly/patternfly": "6.0.0-alpha.150",
     "case-anything": "^2.1.13",
-    "css": "^2.2.3",
-    "fs-extra": "^11.1.1",
-    "glob": "^7.1.2"
+    "css": "^3.0.0",
+    "fs-extra": "^11.2.0"
   },
   "peerDependencies": {
     "react": "^17 || ^18",

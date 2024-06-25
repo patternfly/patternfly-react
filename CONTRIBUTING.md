@@ -194,7 +194,7 @@ git fetch upstream
 
 2. Set up tooling
 
-[Install Node.js](https://nodejs.org/en/download/package-manager) version 20 (or higher). Then install the project dependencies and build it by running:
+[Install Node.js](https://nodejs.org/en/download/package-manager) version 20 (or higher), and make sure to [enable Corepack](https://nodejs.org/api/corepack.html). Then install the project dependencies and build it by running:
 
 ```sh
 yarn install

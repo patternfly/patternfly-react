@@ -1,1 +1,1 @@
-export * from './DropdownSimple';
+export * from './SimpleDropdown';

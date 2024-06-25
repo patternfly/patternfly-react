@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import * as ReactCoreUtils from '@patternfly/react-core/src/helpers/util';
+import * as ReactCoreUtils from '../../../../helpers/util';
 
 import { NavList } from '../../NavList';
 import { NavContext } from '../../Nav';

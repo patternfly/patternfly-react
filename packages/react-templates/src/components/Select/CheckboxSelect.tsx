@@ -3,10 +3,12 @@ import {
   Badge,
   MenuToggle,
   MenuToggleElement,
+  MenuToggleProps,
   Select,
   SelectList,
   SelectOption,
-  SelectOptionProps
+  SelectOptionProps,
+  SelectProps
 } from '@patternfly/react-core';
 
 export interface CheckboxSelectOption extends Omit<SelectOptionProps, 'content'> {
@@ -16,7 +18,7 @@ export interface CheckboxSelectOption extends Omit<SelectOptionProps, 'content'>
   value: string | number;
 }
 
-export interface CheckboxSelectProps {
+export interface CheckboxSelectProps extends Omit<SelectProps, 'toggle'> {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */
@@ -27,8 +29,12 @@ export interface CheckboxSelectProps {
   onToggle?: (nextIsOpen: boolean) => void;
   /** Flag indicating the select should be disabled. */
   isDisabled?: boolean;
-  /** Content of the toggle. Defaults to the selected option. */
+  /** Content of the toggle. Defaults to a string with badge count of selected options. */
   toggleContent?: React.ReactNode;
+  /** Width of the toggle. */
+  toggleWidth?: string;
+  /** Additional props passed to the toggle. */
+  toggleProps?: MenuToggleProps;
 }
 
 const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
@@ -38,6 +44,8 @@ const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
   onSelect: passedOnSelect,
   onToggle,
   toggleContent,
+  toggleWidth = '200px',
+  toggleProps,
   ...props
 }: CheckboxSelectProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -47,7 +55,7 @@ const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
     const { content, value, ...props } = option;
     const isSelected = selected.includes(`${value}`);
     return (
-      <SelectOption {...props} value={value} key={value} hasCheckbox isSelected={isSelected}>
+      <SelectOption value={value} key={value} hasCheckbox isSelected={isSelected} {...props}>
         {content}
       </SelectOption>
     );
@@ -83,9 +91,10 @@ const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
       isDisabled={isDisabled}
       style={
         {
-          width: '200px'
+          width: toggleWidth
         } as React.CSSProperties
       }
+      {...toggleProps}
     >
       {toggleContent || defaultToggleContent}
     </MenuToggle>
@@ -93,11 +102,13 @@ const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
 
   return (
     <Select
-      id="checkbox-select"
       isOpen={isOpen}
       selected={selected}
       onSelect={onSelect}
-      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      onOpenChange={(isOpen) => {
+        onToggle && onToggle(isOpen);
+        setIsOpen(isOpen);
+      }}
       toggle={toggle}
       ref={innerRef}
       role="menu"

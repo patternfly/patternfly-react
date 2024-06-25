@@ -14,6 +14,7 @@ import {
   HelperTextItem,
   FormHelperText,
   Select,
+  SelectList,
   SelectOption,
   MenuToggle
 } from '@patternfly/react-core';
@@ -60,32 +61,28 @@ export class FormDemo extends Component<FormProps, FormState> {
     }
     this.setState({ validatedValue: value, validated });
   };
-  onToggle = (_event: any, isOpen: boolean) => {
+  onToggle = (_event: any) => {
     this.setState({
-      isOpen
+      isOpen: !this.state.isOpen
     });
   };
-  onSelect = (_event: React.SyntheticEvent, selection: string | SelectOptionObject) => {
+  onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, selection: string | number | undefined) => {
     const { selected } = this.state;
-    if (selected.includes(selection.toString())) {
-      this.setState(
-        (prevState) => ({ selected: prevState.selected.filter((item) => item !== selection) }),
-        // eslint-disable-next-line no-console
-        () => console.log('selections: ', this.state.selected)
-      );
-    } else {
-      this.setState(
-        (prevState) => ({ selected: [...prevState.selected, selection.toString()] }),
-        // eslint-disable-next-line no-console
-        () => console.log('selections: ', this.state.selected)
-      );
+    if (selection) {
+      if (selected.includes(selection.toString())) {
+        this.setState(
+          (prevState) => ({ selected: prevState.selected.filter((item) => item !== selection) }),
+          // eslint-disable-next-line no-console
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          (prevState) => ({ selected: [...prevState.selected, selection.toString()] }),
+          // eslint-disable-next-line no-console
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
     }
-  };
-  clearSelection = () => {
-    this.setState({
-      selected: [],
-      isOpen: false
-    });
   };
 
   componentDidMount() {
@@ -111,7 +108,7 @@ export class FormDemo extends Component<FormProps, FormState> {
     ];
 
     return (
-      <React.Fragment>
+      <>
         <Form id="form-demo-1">
           <FormGroup
             id="form-group-age"
@@ -161,22 +158,21 @@ export class FormDemo extends Component<FormProps, FormState> {
             </span>
             <Select
               aria-label="Select a state"
-              //      onToggle={this.onToggle}
               onSelect={this.onSelect}
-              onClear={this.clearSelection}
-              selections={selected}
+              selected={selected}
               isOpen={isOpen}
               aria-labelledby={titleId}
               toggle={(toggleRef: any) => (
-                <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen}>
+                <MenuToggle ref={toggleRef} onClick={this.onToggle} isExpanded={isOpen}>
                   {isOpen ? 'Expanded' : 'Collapsed'}
                 </MenuToggle>
               )}
-              placeholderText="Select a state"
             >
-              {options.map((option, index) => (
-                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-              ))}
+              <SelectList>
+                {options.map((option, index) => (
+                  <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+                ))}
+              </SelectList>
             </Select>
           </FormGroup>
           <FormSection title="Title" titleElement="h4">
@@ -209,7 +205,7 @@ export class FormDemo extends Component<FormProps, FormState> {
             </FormGroup>
           </FormSection>
         </Form>
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -15,6 +15,7 @@
         "plugin:react/recommended",
         "plugin:react-hooks/recommended"
     ],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "sourceType": "module",
         "ecmaFeatures": {
@@ -46,6 +47,7 @@
         "@typescript-eslint/explicit-member-accessibility": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-duplicate-enum-values": "off",
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/no-explicit-any": "off",
@@ -119,7 +121,8 @@
         "react/no-unescaped-entities": ["error", {"forbid": [">", "}"]}],
         "spaced-comment": "error",
         "use-isnan": "error",
-        "patternfly-react/no-layout-effect": "error"
+        "patternfly-react/no-layout-effect": "error",
+        "valid-typeof": "off"
     },
     "overrides": [
         {
@@ -135,6 +138,14 @@
                 "testing-library/no-node-access": "off",
                 "react/jsx-key": "off",
                 "no-console": "off"
+            }
+        },
+        {
+            "files": ["packages/react-integration/demo-app-ts/**/*"],
+            "rules": {
+                "patternfly-react/no-anonymous-functions": "off",
+                "react/react-in-jsx-scope": "off",
+                "spaced-comment": "off"
             }
         }
     ]

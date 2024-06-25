@@ -66,7 +66,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: demo-app
-          path: packages/react-integration/demo-app-ts/public
+          path: packages/react-integration/demo-app-ts/dist
 
   integration-tests:
     name: Integration tests
@@ -87,7 +87,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: demo-app
-          path: packages/react-integration/demo-app-ts/public
+          path: packages/react-integration/demo-app-ts/dist
 
       - name: Print environment variables
         run: printenv

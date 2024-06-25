@@ -67,7 +67,7 @@ export class SearchInputDemo extends Component<SearchInputProps, SearchInputStat
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <SearchInput
           id="enabled-search"
           ref={this.inputRef}
@@ -102,7 +102,7 @@ export class SearchInputDemo extends Component<SearchInputProps, SearchInputStat
           isDisabled
         />
         <SearchInput id="hinted-search" hint="hint" />
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -163,6 +163,9 @@ exports[`Table Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-11"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -241,6 +244,9 @@ exports[`Table Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-12"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -319,6 +325,9 @@ exports[`Table Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-13"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -397,6 +406,9 @@ exports[`Table Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-14"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -475,6 +487,9 @@ exports[`Table Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-15"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -553,6 +568,9 @@ exports[`Table Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-16"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -631,6 +649,9 @@ exports[`Table Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-17"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -709,6 +730,9 @@ exports[`Table Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-18"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -787,6 +811,9 @@ exports[`Table Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-19"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -5813,6 +5840,9 @@ exports[`Table Simple Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-1"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -5891,6 +5921,9 @@ exports[`Table Simple Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-2"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -5969,6 +6002,9 @@ exports[`Table Simple Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-3"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -6047,6 +6083,9 @@ exports[`Table Simple Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-4"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -6125,6 +6164,9 @@ exports[`Table Simple Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-5"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -6203,6 +6245,9 @@ exports[`Table Simple Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-6"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -6281,6 +6326,9 @@ exports[`Table Simple Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-7"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -6359,6 +6407,9 @@ exports[`Table Simple Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-8"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -6437,6 +6488,9 @@ exports[`Table Simple Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-9"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             type="button"
           >
             <span
@@ -6515,6 +6569,9 @@ exports[`Table Simple Actions table 1`] = `
             aria-expanded="false"
             aria-label="Kebab toggle"
             class="pf-v6-c-menu-toggle pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-MenuToggle-plain-10"
+            data-ouia-component-type="PF6/MenuToggle"
+            data-ouia-safe="true"
             disabled=""
             type="button"
           >

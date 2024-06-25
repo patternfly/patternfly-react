@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { FileUpload, DropEvent } from '@patternfly/react-core';
 
 export class FileUploadDemo extends Component {

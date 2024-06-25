@@ -6,7 +6,7 @@ import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { ModalContent } from './ModalContent';
 import { OUIAProps, getDefaultOUIAId } from '../../../helpers';
 
-export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
+export interface ModalProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'>, OUIAProps {
   /** Action buttons to add to the standard modal footer. Ignored if the footer property
    * is passed in.
    */
@@ -64,8 +64,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   positionOffset?: string;
   /** Flag to show the close button in the header area of the modal. */
   showClose?: boolean;
-  /** Simple text content of the modal header. Also used for the aria-label on the body. */
-  title?: string;
+  /** Text content of the modal header. */
+  title?: React.ReactNode;
   /** Optional alert icon (or other) to show before the title of the modal header. When the
    * predefined alert types are used the default styling will be automatically applied.
    */
@@ -186,7 +186,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
       target.classList.remove(css(styles.backdropOpen));
     }
 
-    if (this.isEmpty(title) && this.isEmpty(ariaLabel) && this.isEmpty(ariaLabelledby)) {
+    if (!title && this.isEmpty(ariaLabel) && this.isEmpty(ariaLabelledby)) {
       // eslint-disable-next-line no-console
       console.error('Modal: Specify at least one of: title, aria-label, aria-labelledby.');
     }
