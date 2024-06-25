@@ -28,3 +28,7 @@ test(`Renders with spread props`, () => {
 
   expect(screen.getByText('Test')).toHaveAttribute('id', 'custom-id');
 });
+test('Matches snapshot', () => {
+  const { asFragment } = render(<PageMainBody>Test</PageMainBody>);
+  expect(asFragment()).toMatchSnapshot();
+})
