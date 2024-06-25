@@ -87,7 +87,8 @@ class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: str
       ...props
     } = this.props;
 
-    const isAriaLabelledBy = !ariaLabel || ariaLabelledBy;
+    const hasAccessibleName = label || ariaLabel || ariaLabelledBy;
+    const isAriaLabelledBy = hasAccessibleName && (!ariaLabel || ariaLabelledBy);
     const useDefaultAriaLabelledBy = !ariaLabelledBy && !ariaLabel;
     const ariaLabelledByIds = ariaLabelledBy ?? `${this.id}-label`;
 
