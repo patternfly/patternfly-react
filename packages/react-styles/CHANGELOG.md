@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.0.0-alpha.25...@patternfly/react-styles@6.0.0-alpha.26) (2024-06-26)
+
+### Features
+
+- **Banner,Label:** rename cyan/gold to teal/yellow ([#10661](https://github.com/patternfly/patternfly-react/issues/10661)) ([3e76f17](https://github.com/patternfly/patternfly-react/commit/3e76f173f62b0f5e9aef9e43c597ae5b7fffee92))
+
 # [6.0.0-alpha.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.0.0-alpha.24...@patternfly/react-styles@6.0.0-alpha.25) (2024-06-25)
 
 **Note:** Version bump only for package @patternfly/react-styles

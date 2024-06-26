@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0-alpha.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-alpha.27...@patternfly/react-charts@8.0.0-alpha.28) (2024-06-26)
+
+### Features
+
+- **Banner,Label:** rename cyan/gold to teal/yellow ([#10661](https://github.com/patternfly/patternfly-react/issues/10661)) ([3e76f17](https://github.com/patternfly/patternfly-react/commit/3e76f173f62b0f5e9aef9e43c597ae5b7fffee92))
+
 # [8.0.0-alpha.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-alpha.26...@patternfly/react-charts@8.0.0-alpha.27) (2024-06-25)
 
 **Note:** Version bump only for package @patternfly/react-charts

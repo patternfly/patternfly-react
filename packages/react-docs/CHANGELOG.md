@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.79](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.78...@patternfly/react-docs@7.0.0-alpha.79) (2024-06-26)
+
+### Features
+
+- **Banner,Label:** rename cyan/gold to teal/yellow ([#10661](https://github.com/patternfly/patternfly-react/issues/10661)) ([3e76f17](https://github.com/patternfly/patternfly-react/commit/3e76f173f62b0f5e9aef9e43c597ae5b7fffee92))
+
 # [7.0.0-alpha.78](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.77...@patternfly/react-docs@7.0.0-alpha.78) (2024-06-25)
 
 **Note:** Version bump only for package @patternfly/react-docs
