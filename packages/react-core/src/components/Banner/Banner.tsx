@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Banner/banner';
 import { css } from '@patternfly/react-styles';
 
-export type BannerColor = 'red' | 'orangered' | 'orange' | 'gold' | 'green' | 'cyan' | 'blue' | 'purple';
+export type BannerColor = 'red' | 'orangered' | 'orange' | 'yellow' | 'green' | 'teal' | 'blue' | 'purple';
 
 export type BannerStatus = 'success' | 'warning' | 'danger' | 'info' | 'custom';
 

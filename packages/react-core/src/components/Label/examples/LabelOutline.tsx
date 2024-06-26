@@ -328,101 +328,107 @@ export const LabelOutline: React.FunctionComponent = () => {
       </Label>
       <br />
       <br />
-      <Label variant="outline" color="cyan">
-        Cyan
+      <Label variant="outline" color="teal">
+        Teal
       </Label>
-      <Label variant="outline" color="cyan" icon={<CubeIcon />}>
-        Cyan icon
+      <Label variant="outline" color="teal" icon={<CubeIcon />}>
+        Teal icon
       </Label>
-      <Label variant="outline" color="cyan" onClose={() => Function.prototype}>
-        Cyan removable
+      <Label variant="outline" color="teal" onClose={() => Function.prototype}>
+        Teal removable
       </Label>
-      <Label variant="outline" color="cyan" icon={<CubeIcon />} onClose={() => Function.prototype}>
-        Cyan icon removable
+      <Label variant="outline" color="teal" icon={<CubeIcon />} onClose={() => Function.prototype}>
+        Teal icon removable
       </Label>
-      <Label variant="outline" color="cyan" href="#outline">
-        Cyan link
+      <Label variant="outline" color="teal" href="#outline">
+        Teal link
       </Label>
-      <Label variant="outline" color="cyan" href="#outline" onClose={() => Function.prototype}>
-        Cyan link removable
+      <Label variant="outline" color="teal" href="#outline" onClose={() => Function.prototype}>
+        Teal link removable
       </Label>{' '}
-      <Label variant="outline" color="cyan" onClick={() => logColor('cyan')}>
-        Cyan clickable
+      <Label variant="outline" color="teal" onClick={() => logColor('teal')}>
+        Teal clickable
       </Label>
-      <Label variant="outline" color="cyan" onClick={() => logColor('cyan')} onClose={() => Function.prototype}>
-        Cyan clickable removable
+      <Label variant="outline" color="teal" onClick={() => logColor('teal')} onClose={() => Function.prototype}>
+        Teal clickable removable
       </Label>
-      <Label variant="outline" color="cyan" icon={<CubeIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
-        Cyan label with icon that overflows
+      <Label variant="outline" color="teal" icon={<CubeIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
+        Teal label with icon that overflows
       </Label>{' '}
       <Label
         variant="outline"
-        color="cyan"
+        color="teal"
         isDisabled
         icon={<CubeIcon />}
         href="#filled"
         onClose={() => Function.prototype}
       >
-        Cyan link removable (disabled)
+        Teal link removable (disabled)
       </Label>{' '}
       <Label
         variant="outline"
-        color="cyan"
+        color="teal"
         isDisabled
         icon={<CubeIcon />}
-        onClick={() => logColor('cyan')}
+        onClick={() => logColor('teal')}
         onClose={() => Function.prototype}
       >
-        Cyan clickable removable (disabled)
+        Teal clickable removable (disabled)
       </Label>
       <br />
       <br />
-      <Label variant="outline" color="gold">
-        Gold
+      <Label variant="outline" color="yellow">
+        Yellow
       </Label>
-      <Label variant="outline" color="gold" icon={<CubeIcon />}>
-        Gold icon
+      <Label variant="outline" color="yellow" icon={<CubeIcon />}>
+        Yellow icon
       </Label>
-      <Label variant="outline" color="gold" onClose={() => Function.prototype}>
-        Gold removable
+      <Label variant="outline" color="yellow" onClose={() => Function.prototype}>
+        Yellow removable
       </Label>
-      <Label variant="outline" color="gold" icon={<CubeIcon />} onClose={() => Function.prototype}>
-        Gold icon removable
+      <Label variant="outline" color="yellow" icon={<CubeIcon />} onClose={() => Function.prototype}>
+        Yellow icon removable
       </Label>
-      <Label variant="outline" color="gold" href="#outline">
-        Gold link
+      <Label variant="outline" color="yellow" href="#outline">
+        Yellow link
       </Label>
-      <Label variant="outline" color="gold" href="#outline" onClose={() => Function.prototype}>
-        Gold link removable
+      <Label variant="outline" color="yellow" href="#outline" onClose={() => Function.prototype}>
+        Yellow link removable
       </Label>{' '}
-      <Label variant="outline" color="gold" onClick={() => logColor('gold')}>
-        Gold clickable
+      <Label variant="outline" color="yellow" onClick={() => logColor('yellow')}>
+        Yellow clickable
       </Label>
-      <Label variant="outline" color="gold" onClick={() => logColor('gold')} onClose={() => Function.prototype}>
-        Gold clickable removable
+      <Label variant="outline" color="yellow" onClick={() => logColor('yellow')} onClose={() => Function.prototype}>
+        Yellow clickable removable
       </Label>
-      <Label variant="outline" color="gold" icon={<CubeIcon />} onClose={() => Function.prototype} textMaxWidth="16ch">
-        Gold label with icon that overflows
+      <Label
+        variant="outline"
+        color="yellow"
+        icon={<CubeIcon />}
+        onClose={() => Function.prototype}
+        textMaxWidth="16ch"
+      >
+        Yellow label with icon that overflows
       </Label>{' '}
       <Label
         variant="outline"
-        color="gold"
+        color="yellow"
         isDisabled
         icon={<CubeIcon />}
         href="#filled"
         onClose={() => Function.prototype}
       >
-        Gold link removable (disabled)
+        Yellow link removable (disabled)
       </Label>{' '}
       <Label
         variant="outline"
-        color="gold"
+        color="yellow"
         isDisabled
         icon={<CubeIcon />}
-        onClick={() => logColor('gold')}
+        onClick={() => logColor('yellow')}
         onClose={() => Function.prototype}
       >
-        Gold clickable removable (disabled)
+        Yellow clickable removable (disabled)
       </Label>
       <br />
       <br />
