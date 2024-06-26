@@ -3,7 +3,7 @@ import { render, screen, waitForElementToBeRemoved } from '@testing-library/reac
 import userEvent from '@testing-library/user-event';
 import { SimpleSelect } from '../SimpleSelect';
 
-test('renders checkbox select with options', async () => {
+test('renders simple select with options', async () => {
   const initialOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
@@ -231,8 +231,6 @@ test('Matches snapshot', async () => {
   ];
 
   const user = userEvent.setup();
-
-  render(<SimpleSelect initialOptions={initialOptions} />);
 
   const { asFragment } = render(<SimpleSelect initialOptions={initialOptions} toggleContent="Select" />);
 
