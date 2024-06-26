@@ -77,7 +77,9 @@ export class PopoverDemo extends Component {
           footerContent="Popover footer"
           position="right-start"
         >
-          <button id="popover-right-top-toggle">Toggle Popover</button>
+          <button id="popover-right-top-toggle" style={{ width: '150px' }}>
+            Toggle Popover
+          </button>
         </Popover>
         <Popover
           id="popover-heading-level"

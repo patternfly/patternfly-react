@@ -4,7 +4,7 @@ describe('Notification Drawer Basic Demo Test', () => {
   });
 
   it('Verify svg width and height', () => {
-    cy.get('.pf-v6-c-button > svg').should('exist');
+    cy.get('.pf-v6-c-button svg').should('exist');
   });
 
   it('Verify 0 groups exist', () => {
