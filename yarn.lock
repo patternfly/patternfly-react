@@ -3321,7 +3321,7 @@ __metadata:
     sass: "npm:^1.77.5"
     surge: "npm:^0.23.1"
     ts-node: "npm:^10.9.2"
-    ts-patch: "npm:^3.2.0"
+    ts-patch: "npm:^3.2.1"
     typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
@@ -19816,9 +19816,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-patch@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "ts-patch@npm:3.2.0"
+"ts-patch@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "ts-patch@npm:3.2.1"
   dependencies:
     chalk: "npm:^4.1.2"
     global-prefix: "npm:^3.0.0"
@@ -19829,7 +19829,7 @@ __metadata:
   bin:
     ts-patch: bin/ts-patch.js
     tspc: bin/tspc.js
-  checksum: 10c0/fc7436fd60f5793da13dddde376fff36d86f65fb70dde4410fe9de3d9c137770f47acf0431830336bec7390e64c754ae49500390a57b58982add87f31e54558f
+  checksum: 10c0/c214e0218f905c6445830821d400280c9b127fa41f2984bbad59c1f19eda7b6a0529457af7bc6d80fdfa38289207d5b5e2f40912c33758a243ca2064ed0aa137
   languageName: node
   linkType: hard
 
