@@ -91,11 +91,12 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
               onExpand(evt, cardId);
             }}
             {...toggleButtonProps}
-          >
-            <span className={css(styles.cardHeaderToggleIcon)}>
-              <AngleRightIcon aria-hidden="true" />
-            </span>
-          </Button>
+            icon={
+              <span className={css(styles.cardHeaderToggleIcon)}>
+                <AngleRightIcon aria-hidden="true" />
+              </span>
+            }
+          />
         </div>
       );
 

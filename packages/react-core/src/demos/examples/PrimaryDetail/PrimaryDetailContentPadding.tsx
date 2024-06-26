@@ -115,9 +115,7 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
             />
           </InputGroupItem>
           <InputGroupItem>
-            <Button variant={ButtonVariant.control} aria-label="search button for search input">
-              <SearchIcon />
-            </Button>
+            <Button variant={ButtonVariant.control} aria-label="search button for search input" icon={<SearchIcon />} />
           </InputGroupItem>
         </InputGroup>
       </ToolbarItem>

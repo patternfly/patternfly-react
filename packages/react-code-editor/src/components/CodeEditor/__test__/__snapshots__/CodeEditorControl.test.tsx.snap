@@ -13,9 +13,13 @@ exports[`Matches snapshot 1`] = `
       data-ouia-safe="true"
       type="button"
     >
-      <div>
-        icon
-      </div>
+      <span
+        class="pf-v6-c-button__icon pf-m-start"
+      >
+        <div>
+          icon
+        </div>
+      </span>
     </button>
   </div>
 </DocumentFragment>

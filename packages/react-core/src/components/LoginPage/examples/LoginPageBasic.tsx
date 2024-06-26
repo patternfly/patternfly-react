@@ -47,29 +47,19 @@ export const SimpleLoginPage: React.FunctionComponent = () => {
   const socialMediaLoginContent = (
     <React.Fragment>
       <LoginMainFooterLinksItem>
-        <Button variant="plain" aria-label="Login with Google">
-          <GoogleIcon />
-        </Button>
+        <Button variant="plain" aria-label="Login with Google" icon={<GoogleIcon />} />
       </LoginMainFooterLinksItem>
       <LoginMainFooterLinksItem>
-        <Button variant="plain" aria-label="Login with Github">
-          <GithubIcon />
-        </Button>
+        <Button variant="plain" aria-label="Login with Github" icon={<GithubIcon />} />
       </LoginMainFooterLinksItem>
       <LoginMainFooterLinksItem>
-        <Button variant="plain" aria-label="Login with Dropbox">
-          <DropboxIcon />
-        </Button>
+        <Button variant="plain" aria-label="Login with Dropbox" icon={<DropboxIcon />} />
       </LoginMainFooterLinksItem>
       <LoginMainFooterLinksItem>
-        <Button variant="plain" aria-label="Login with Facebook">
-          <FacebookSquareIcon />
-        </Button>
+        <Button variant="plain" aria-label="Login with Facebook" icon={<FacebookSquareIcon />} />
       </LoginMainFooterLinksItem>
       <LoginMainFooterLinksItem>
-        <Button variant="plain" aria-label="Login with Gitlab">
-          <GitlabIcon />
-        </Button>
+        <Button variant="plain" aria-label="Login with Gitlab" icon={<GitlabIcon />} />
       </LoginMainFooterLinksItem>
     </React.Fragment>
   );

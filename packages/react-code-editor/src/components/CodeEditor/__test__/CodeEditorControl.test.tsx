@@ -9,7 +9,7 @@ test('Matches snapshot', () => {
 
 test('Renders with custom class when className is passed', () => {
   render(<CodeEditorControl className="custom" icon={<div>icon</div>} onClick={jest.fn()} />);
-  expect(screen.getByText('icon').parentElement).toHaveClass('custom');
+  expect(screen.getByText('icon').parentElement?.parentElement).toHaveClass('custom');
 });
 
 test('Renders with accessible name when aria-label is passed', () => {

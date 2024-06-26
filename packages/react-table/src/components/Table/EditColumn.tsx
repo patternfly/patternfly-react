@@ -33,20 +33,32 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
   <React.Fragment>
     <div className={css(inlineStyles.inlineEditGroup, inlineStyles.modifiers.iconGroup, 'pf-m-action-group')}>
       <div className={css(inlineStyles.inlineEditAction)}>
-        <Button aria-label={saveAriaLabel} {...props} onClick={(e) => onClick(e, 'save')} variant="plain">
-          <CheckIcon />
-        </Button>
+        <Button
+          aria-label={saveAriaLabel}
+          {...props}
+          onClick={(e) => onClick(e, 'save')}
+          variant="plain"
+          icon={<CheckIcon />}
+        />
       </div>
       <div className={css(inlineStyles.inlineEditAction)}>
-        <Button aria-label={cancelAriaLabel} {...props} onClick={(e) => onClick(e, 'cancel')} variant="plain">
-          <TimesIcon />
-        </Button>
+        <Button
+          aria-label={cancelAriaLabel}
+          {...props}
+          onClick={(e) => onClick(e, 'cancel')}
+          variant="plain"
+          icon={<TimesIcon />}
+        />
       </div>
     </div>
     <div className={css(inlineStyles.inlineEditAction, inlineStyles.modifiers.enableEditable)}>
-      <Button aria-label={editAriaLabel} {...props} onClick={(e) => onClick(e, 'edit')} variant="plain">
-        <PencilAltIcon />
-      </Button>
+      <Button
+        aria-label={editAriaLabel}
+        {...props}
+        onClick={(e) => onClick(e, 'edit')}
+        variant="plain"
+        icon={<PencilAltIcon />}
+      />
     </div>
   </React.Fragment>
 );

@@ -282,9 +282,12 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
         />
 
         <TextInputGroupUtilities {...(!inputValue ? { style: { display: 'none' } } : {})}>
-          <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
-            <TimesIcon aria-hidden />
-          </Button>
+          <Button
+            variant="plain"
+            onClick={onClearButtonClick}
+            aria-label="Clear input value"
+            icon={<TimesIcon aria-hidden />}
+          />
         </TextInputGroupUtilities>
       </TextInputGroup>
     </MenuToggle>

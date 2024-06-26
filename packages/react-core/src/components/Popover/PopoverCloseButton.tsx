@@ -9,9 +9,14 @@ export const PopoverCloseButton: React.FunctionComponent<PopoverCloseButtonProps
   ...props
 }: PopoverCloseButtonProps) => (
   <div className={css(styles.popoverClose)}>
-    <Button onClick={onClose} variant="plain" aria-label {...props} style={{ pointerEvents: 'auto' }}>
-      <TimesIcon />
-    </Button>
+    <Button
+      onClick={onClose}
+      variant="plain"
+      aria-label
+      {...props}
+      style={{ pointerEvents: 'auto' }}
+      icon={<TimesIcon />}
+    />
   </div>
 );
 

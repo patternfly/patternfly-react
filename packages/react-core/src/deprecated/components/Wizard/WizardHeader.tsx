@@ -36,9 +36,12 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
   <div className={css(styles.wizardHeader)}>
     {!hideClose && (
       <div className={css(styles.wizardClose)}>
-        <Button variant="plain" aria-label={closeButtonAriaLabel} onClick={onClose}>
-          <TimesIcon aria-hidden="true" />
-        </Button>
+        <Button
+          variant="plain"
+          aria-label={closeButtonAriaLabel}
+          onClick={onClose}
+          icon={<TimesIcon aria-hidden="true" />}
+        />
       </div>
     )}
     <div className={css(styles.wizardTitle)}>

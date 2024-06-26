@@ -47,9 +47,8 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
       aria-label="Sort available options"
       key="availableSortButton"
       isDisabled={isDisabled}
-    >
-      <PficonSortCommonAscIcon />
-    </Button>
+      icon={<PficonSortCommonAscIcon />}
+    />
   ];
 
   const chosenOptionsActions = [
@@ -59,9 +58,8 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
       aria-label="Sort chosen options"
       key="chosenSortButton"
       isDisabled={isDisabled}
-    >
-      <PficonSortCommonAscIcon />
-    </Button>
+      icon={<PficonSortCommonAscIcon />}
+    />
   ];
 
   return (

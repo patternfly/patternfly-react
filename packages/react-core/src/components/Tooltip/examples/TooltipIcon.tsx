@@ -15,9 +15,8 @@ export const TooltipIcon: React.FunctionComponent = () => {
           variant="plain"
           id="tt-ref"
           onClick={() => setShowSuccessContent(!showSuccessContent)}
-        >
-          <CopyIcon />
-        </Button>
+          icon={<CopyIcon />}
+        />
       </Tooltip>
     </div>
   );

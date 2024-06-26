@@ -137,9 +137,8 @@ const PasswordGenerator: React.FunctionComponent = () => {
             variant="control"
             onClick={() => setPasswordHidden(!passwordHidden)}
             aria-label={passwordHidden ? 'Show password' : 'Hide password'}
-          >
-            {passwordHidden ? <EyeIcon /> : <EyeSlashIcon />}
-          </Button>
+            icon={passwordHidden ? <EyeIcon /> : <EyeSlashIcon />}
+          />
         </InputGroupItem>
       </InputGroup>
     </div>

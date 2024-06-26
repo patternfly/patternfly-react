@@ -198,12 +198,11 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
           />
         </span>
       )}
-      {variant === ButtonVariant.plain && children === null && icon ? icon : null}
-      {variant !== ButtonVariant.plain && icon && (iconPosition === 'start' || iconPosition === 'left') && (
+      {icon && (iconPosition === 'start' || iconPosition === 'left') && (
         <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>
       )}
-      {children}
-      {variant !== ButtonVariant.plain && icon && (iconPosition === 'end' || iconPosition === 'right') && (
+      {children && <span className={css('pf-v6-c-button__text')}>{children}</span>}
+      {icon && (iconPosition === 'end' || iconPosition === 'right') && (
         <span className={css(styles.buttonIcon, styles.modifiers.end)}>{icon}</span>
       )}
       {countOptions && (

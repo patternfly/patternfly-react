@@ -35,9 +35,13 @@ exports[`renders tab action 1`] = `
         type="button"
       >
         <span
-          class="pf-v6-c-tabs__item-action-icon"
+          class="pf-v6-c-button__text"
         >
-          test
+          <span
+            class="pf-v6-c-tabs__item-action-icon"
+          >
+            test
+          </span>
         </span>
       </button>
     </span>

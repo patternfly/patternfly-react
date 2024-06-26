@@ -545,9 +545,8 @@ class Tabs extends React.Component<TabsProps, TabsState> {
                 aria-hidden={disableBackScrollButton}
                 ref={this.leftScrollButtonRef}
                 variant="plain"
-              >
-                <AngleLeftIcon />
-              </Button>
+                icon={<AngleLeftIcon />}
+              />
             </div>
           )}
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons} role="tablist">
@@ -562,16 +561,18 @@ class Tabs extends React.Component<TabsProps, TabsState> {
                 isDisabled={disableForwardScrollButton}
                 aria-hidden={disableForwardScrollButton}
                 variant="plain"
-              >
-                <AngleRightIcon />
-              </Button>
+                icon={<AngleRightIcon />}
+              />
             </div>
           )}
           {onAdd !== undefined && (
             <span className={css(styles.tabsAdd)}>
-              <Button variant="plain" aria-label={addButtonAriaLabel || 'Add tab'} onClick={onAdd}>
-                <PlusIcon />
-              </Button>
+              <Button
+                variant="plain"
+                aria-label={addButtonAriaLabel || 'Add tab'}
+                onClick={onAdd}
+                icon={<PlusIcon />}
+              />
             </span>
           )}
         </Component>

@@ -250,9 +250,8 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
                           aria-haspopup={_isExpanded && this.isContentPopup()}
                           aria-controls={_isExpanded ? expandableContentId : undefined}
                           ref={this.toggleRef}
-                        >
-                          {toggleIcon}
-                        </Button>
+                          icon={toggleIcon}
+                        />
                       </div>
                     );
 

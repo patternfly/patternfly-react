@@ -30,9 +30,8 @@ export const ModalBoxCloseButton: React.FunctionComponent<ModalBoxCloseButtonPro
       aria-label={ariaLabel}
       {...(ouiaId && { ouiaId: `${ouiaId}-${ModalBoxCloseButton.displayName}` })}
       {...props}
-    >
-      <TimesIcon />
-    </Button>
+      icon={<TimesIcon />}
+    />
   </div>
 );
 ModalBoxCloseButton.displayName = 'ModalBoxCloseButton';

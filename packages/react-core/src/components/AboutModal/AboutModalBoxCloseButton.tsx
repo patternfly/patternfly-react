@@ -17,9 +17,7 @@ export const AboutModalBoxCloseButton: React.FunctionComponent<AboutModalBoxClos
   ...props
 }: AboutModalBoxCloseButtonProps) => (
   <div className={css(styles.aboutModalBoxClose)} {...props}>
-    <Button variant="plain" onClick={onClose} aria-label={ariaLabel}>
-      <TimesIcon />
-    </Button>
+    <Button variant="plain" onClick={onClose} aria-label={ariaLabel} icon={<TimesIcon />} />
   </div>
 );
 AboutModalBoxCloseButton.displayName = 'AboutModalBoxCloseButton';

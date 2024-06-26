@@ -195,9 +195,8 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
                 this.handleNewPage(event, 1);
                 this.setState({ userInputPage: 1 });
               }}
-            >
-              <AngleDoubleLeftIcon />
-            </Button>
+              icon={<AngleDoubleLeftIcon />}
+            />
           </div>
         )}
         <div className={styles.paginationNavControl}>
@@ -212,9 +211,8 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
               this.setState({ userInputPage: newPage });
             }}
             aria-label={toPreviousPageAriaLabel}
-          >
-            <AngleLeftIcon />
-          </Button>
+            icon={<AngleLeftIcon />}
+          />
         </div>
         {!isCompact && (
           <div className={styles.paginationNavPageSelect}>
@@ -249,9 +247,8 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
               this.handleNewPage(event, newPage);
               this.setState({ userInputPage: newPage });
             }}
-          >
-            <AngleRightIcon />
-          </Button>
+            icon={<AngleRightIcon />}
+          />
         </div>
         {!isCompact && (
           <div className={css(styles.paginationNavControl, styles.modifiers.last)}>
@@ -265,9 +262,8 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
                 this.handleNewPage(event, lastPage);
                 this.setState({ userInputPage: lastPage });
               }}
-            >
-              <AngleDoubleRightIcon />
-            </Button>
+              icon={<AngleDoubleRightIcon />}
+            />
           </div>
         )}
       </nav>

@@ -47,9 +47,12 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
         {children}
         {onClose && (
           <div>
-            <Button variant={ButtonVariant.plain} aria-label={closeButtonAriaLabel} onClick={(event) => onClose(event)}>
-              <TimesIcon aria-hidden="true" />
-            </Button>
+            <Button
+              variant={ButtonVariant.plain}
+              aria-label={closeButtonAriaLabel}
+              onClick={(event) => onClose(event)}
+              icon={<TimesIcon aria-hidden="true" />}
+            />
           </div>
         )}
       </div>

@@ -288,30 +288,26 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
           isDisabled={!checkedLeafIds.filter((x) => !chosenLeafIds.includes(x)).length}
           onClick={() => moveChecked(true)}
           aria-label="Add selected"
-        >
-          <AngleRightIcon />
-        </DualListSelectorControl>
+          icon={<AngleRightIcon />}
+        />
         <DualListSelectorControl
           isDisabled={chosenLeafIds.length === memoizedAllLeaves.length}
           onClick={() => moveAll(true)}
           aria-label="Add all"
-        >
-          <AngleDoubleRightIcon />
-        </DualListSelectorControl>
+          icon={<AngleDoubleRightIcon />}
+        />
         <DualListSelectorControl
           isDisabled={chosenLeafIds.length === 0}
           onClick={() => moveAll(false)}
           aria-label="Remove all"
-        >
-          <AngleDoubleLeftIcon />
-        </DualListSelectorControl>
+          icon={<AngleDoubleLeftIcon />}
+        />
         <DualListSelectorControl
           onClick={() => moveChecked(false)}
           isDisabled={!checkedLeafIds.filter((x) => !!chosenLeafIds.includes(x)).length}
           aria-label="Remove selected"
-        >
-          <AngleLeftIcon />
-        </DualListSelectorControl>
+          icon={<AngleLeftIcon />}
+        />
       </DualListSelectorControlsWrapper>
       {buildPane(true)}
     </DualListSelector>

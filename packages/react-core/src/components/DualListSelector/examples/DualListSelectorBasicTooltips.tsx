@@ -107,36 +107,32 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
           aria-label="Add selected"
           tooltipContent="Add selected"
           tooltipProps={{ position: 'top', 'aria-live': 'off' }}
-        >
-          <AngleRightIcon />
-        </DualListSelectorControl>
+          icon={<AngleRightIcon />}
+        />
         <DualListSelectorControl
           isDisabled={availableOptions.length === 0}
           onClick={() => moveAll(true)}
           aria-label="Add all"
           tooltipContent="Add all"
           tooltipProps={{ position: 'right', 'aria-live': 'off' }}
-        >
-          <AngleDoubleRightIcon />
-        </DualListSelectorControl>
+          icon={<AngleDoubleRightIcon />}
+        />
         <DualListSelectorControl
           isDisabled={chosenOptions.length === 0}
           onClick={() => moveAll(false)}
           aria-label="Remove all"
           tooltipContent="Remove all"
           tooltipProps={{ position: 'left', 'aria-live': 'off' }}
-        >
-          <AngleDoubleLeftIcon />
-        </DualListSelectorControl>
+          icon={<AngleDoubleLeftIcon />}
+        />
         <DualListSelectorControl
           onClick={() => moveSelected(false)}
           isDisabled={!chosenOptions.some((option) => option.selected)}
           aria-label="Remove selected"
           tooltipContent="Remove selected"
           tooltipProps={{ position: 'bottom', 'aria-live': 'off' }}
-        >
-          <AngleLeftIcon />
-        </DualListSelectorControl>
+          icon={<AngleLeftIcon />}
+        />
       </DualListSelectorControlsWrapper>
       <DualListSelectorPane
         title="Chosen options"

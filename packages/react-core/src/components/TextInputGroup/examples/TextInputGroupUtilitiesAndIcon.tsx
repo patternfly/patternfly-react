@@ -28,9 +28,7 @@ export const TextInputGroupUtilitiesAndIcon: React.FunctionComponent = () => {
       {showUtilities && (
         <TextInputGroupUtilities>
           {showClearButton && (
-            <Button variant="plain" onClick={clearInput} aria-label="Clear button and input">
-              <TimesIcon />
-            </Button>
+            <Button variant="plain" onClick={clearInput} aria-label="Clear button and input" icon={<TimesIcon />} />
           )}
         </TextInputGroupUtilities>
       )}

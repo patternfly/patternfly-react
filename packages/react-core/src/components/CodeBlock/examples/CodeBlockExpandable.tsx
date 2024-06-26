@@ -60,9 +60,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
         </ClipboardCopyButton>
       </CodeBlockAction>
       <CodeBlockAction>
-        <Button variant="plain" aria-label="Play icon">
-          <PlayIcon />
-        </Button>
+        <Button variant="plain" aria-label="Play icon" icon={<PlayIcon />} />
       </CodeBlockAction>
     </React.Fragment>
   );

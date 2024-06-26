@@ -74,9 +74,12 @@ export const DateTimePicker: React.FunctionComponent = () => {
   );
 
   const calendarButton = (
-    <Button variant="control" aria-label="Toggle the calendar" onClick={onToggleCalendar}>
-      <OutlinedCalendarAltIcon />
-    </Button>
+    <Button
+      variant="control"
+      aria-label="Toggle the calendar"
+      onClick={onToggleCalendar}
+      icon={<OutlinedCalendarAltIcon />}
+    />
   );
 
   return (

@@ -23,9 +23,13 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
             disabled=""
             type="button"
           >
-            <div>
-              ReactNode
-            </div>
+            <span
+              class="pf-v6-c-button__text"
+            >
+              <div>
+                ReactNode
+              </div>
+            </span>
           </button>
         </div>
         <div
@@ -39,9 +43,13 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
             data-ouia-safe="true"
             type="submit"
           >
-            <div>
-              ReactNode
-            </div>
+            <span
+              class="pf-v6-c-button__text"
+            >
+              <div>
+                ReactNode
+              </div>
+            </span>
           </button>
         </div>
       </div>
@@ -59,9 +67,13 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
             data-ouia-safe="true"
             type="button"
           >
-            <div>
-              ReactNode
-            </div>
+            <span
+              class="pf-v6-c-button__text"
+            >
+              <div>
+                ReactNode
+              </div>
+            </span>
           </button>
         </div>
       </div>

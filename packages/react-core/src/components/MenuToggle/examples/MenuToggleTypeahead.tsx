@@ -27,9 +27,12 @@ export const MenuToggleTypeahead: React.FunctionComponent = () => {
 
         <TextInputGroupUtilities>
           {!!inputValue && (
-            <Button variant="plain" onClick={() => setInputValue('')} aria-label="Clear input value">
-              <TimesIcon aria-hidden />
-            </Button>
+            <Button
+              variant="plain"
+              onClick={() => setInputValue('')}
+              aria-label="Clear input value"
+              icon={<TimesIcon aria-hidden />}
+            />
           )}
         </TextInputGroupUtilities>
       </TextInputGroup>

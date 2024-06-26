@@ -26,26 +26,30 @@ exports[`expandable vertical with subsection 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-jump-links__toggle-icon"
+              class="pf-v6-c-button__text"
             >
-              <svg
-                aria-hidden="true"
-                class="pf-v6-svg"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                viewBox="0 0 256 512"
-                width="1em"
+              <span
+                class="pf-v6-c-jump-links__toggle-icon"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-            </span>
-            <span
-              class="pf-v6-c-jump-links__toggle-text"
-            >
-               Jump to section 
+                <svg
+                  aria-hidden="true"
+                  class="pf-v6-svg"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="pf-v6-c-jump-links__toggle-text"
+              >
+                 Jump to section 
+              </span>
             </span>
           </button>
         </div>
@@ -74,9 +78,13 @@ exports[`expandable vertical with subsection 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Inactive section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Inactive section
+                </span>
               </span>
             </a>
           </span>
@@ -96,9 +104,13 @@ exports[`expandable vertical with subsection 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Section with active subsection
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Section with active subsection
+                </span>
               </span>
             </a>
           </span>
@@ -122,9 +134,13 @@ exports[`expandable vertical with subsection 1`] = `
                   href="#"
                 >
                   <span
-                    class="pf-v6-c-jump-links__link-text"
+                    class="pf-v6-c-button__text"
                   >
-                    Active subsection
+                    <span
+                      class="pf-v6-c-jump-links__link-text"
+                    >
+                      Active subsection
+                    </span>
                   </span>
                 </a>
               </span>
@@ -144,9 +160,13 @@ exports[`expandable vertical with subsection 1`] = `
                   href="#"
                 >
                   <span
-                    class="pf-v6-c-jump-links__link-text"
+                    class="pf-v6-c-button__text"
                   >
-                    Inactive subsection
+                    <span
+                      class="pf-v6-c-jump-links__link-text"
+                    >
+                      Inactive subsection
+                    </span>
                   </span>
                 </a>
               </span>
@@ -166,9 +186,13 @@ exports[`expandable vertical with subsection 1`] = `
                   href="#"
                 >
                   <span
-                    class="pf-v6-c-jump-links__link-text"
+                    class="pf-v6-c-button__text"
                   >
-                    Inactive subsection
+                    <span
+                      class="pf-v6-c-jump-links__link-text"
+                    >
+                      Inactive subsection
+                    </span>
                   </span>
                 </a>
               </span>
@@ -190,9 +214,13 @@ exports[`expandable vertical with subsection 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Inactive section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Inactive section
+                </span>
               </span>
             </a>
           </span>
@@ -212,9 +240,13 @@ exports[`expandable vertical with subsection 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Inactive section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Inactive section
+                </span>
               </span>
             </a>
           </span>
@@ -255,9 +287,13 @@ exports[`jumplinks centered 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Inactive section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Inactive section
+                </span>
               </span>
             </a>
           </span>
@@ -278,9 +314,13 @@ exports[`jumplinks centered 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Active section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Active section
+                </span>
               </span>
             </a>
           </span>
@@ -300,9 +340,13 @@ exports[`jumplinks centered 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Inactive section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Inactive section
+                </span>
               </span>
             </a>
           </span>
@@ -350,9 +394,13 @@ exports[`jumplinks with label 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Inactive section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Inactive section
+                </span>
               </span>
             </a>
           </span>
@@ -373,9 +421,13 @@ exports[`jumplinks with label 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Active section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Active section
+                </span>
               </span>
             </a>
           </span>
@@ -395,9 +447,13 @@ exports[`jumplinks with label 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Inactive section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Inactive section
+                </span>
               </span>
             </a>
           </span>
@@ -438,9 +494,13 @@ exports[`simple jumplinks 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Inactive section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Inactive section
+                </span>
               </span>
             </a>
           </span>
@@ -461,9 +521,13 @@ exports[`simple jumplinks 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Active section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Active section
+                </span>
               </span>
             </a>
           </span>
@@ -483,9 +547,13 @@ exports[`simple jumplinks 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Inactive section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Inactive section
+                </span>
               </span>
             </a>
           </span>
@@ -533,9 +601,13 @@ exports[`vertical with label 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Inactive section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Inactive section
+                </span>
               </span>
             </a>
           </span>
@@ -556,9 +628,13 @@ exports[`vertical with label 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Active section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Active section
+                </span>
               </span>
             </a>
           </span>
@@ -578,9 +654,13 @@ exports[`vertical with label 1`] = `
               href="#"
             >
               <span
-                class="pf-v6-c-jump-links__link-text"
+                class="pf-v6-c-button__text"
               >
-                Inactive section
+                <span
+                  class="pf-v6-c-jump-links__link-text"
+                >
+                  Inactive section
+                </span>
               </span>
             </a>
           </span>

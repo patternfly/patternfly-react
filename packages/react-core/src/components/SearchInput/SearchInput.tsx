@@ -313,17 +313,15 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
                 aria-label={previousNavigationButtonAriaLabel}
                 isDisabled={isDisabled || isPreviousNavigationButtonDisabled}
                 onClick={onPreviousClick}
-              >
-                <AngleUpIcon />
-              </Button>
+                icon={<AngleUpIcon />}
+              />
               <Button
                 variant={ButtonVariant.plain}
                 aria-label={nextNavigationButtonAriaLabel}
                 isDisabled={isDisabled || isNextNavigationButtonDisabled}
                 onClick={onNextClick}
-              >
-                <AngleDownIcon />
-              </Button>
+                icon={<AngleDownIcon />}
+              />
             </div>
           )}
           {!!onClear && !expandableInput && (
@@ -332,9 +330,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
               isDisabled={isDisabled}
               aria-label={resetButtonLabel}
               onClick={onClearInput}
-            >
-              <TimesIcon />
-            </Button>
+              icon={<TimesIcon />}
+            />
           )}
         </TextInputGroupUtilities>
       )}
@@ -379,9 +376,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             onClick={onToggle}
             isDisabled={isDisabled}
             aria-expanded={isSearchMenuOpen}
-          >
-            <CaretDownIcon />
-          </Button>
+            icon={<CaretDownIcon />}
+          />
         </InputGroupItem>
       )}
       {!!onSearch && (
@@ -392,11 +388,12 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             aria-label={submitSearchButtonLabel}
             onClick={onSearchHandler}
             isDisabled={isDisabled}
-          >
-            <Icon shouldMirrorRTL>
-              <ArrowRightIcon />
-            </Icon>
-          </Button>
+            icon={
+              <Icon shouldMirrorRTL>
+                <ArrowRightIcon />
+              </Icon>
+            }
+          />
         </InputGroupItem>
       )}
       {expandableInput && <InputGroupItem>{expandableToggle}</InputGroupItem>}

@@ -101,7 +101,11 @@ exports[`EmptyState Main 1`] = `
             data-ouia-safe="true"
             type="button"
           >
-            New HTTP Proxy
+            <span
+              class="pf-v6-c-button__text"
+            >
+              New HTTP Proxy
+            </span>
           </button>
         </div>
         <div
@@ -116,7 +120,11 @@ exports[`EmptyState Main 1`] = `
             data-ouia-safe="true"
             type="button"
           >
-            Learn more about this in the documentation.
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Learn more about this in the documentation.
+            </span>
           </button>
         </div>
       </div>

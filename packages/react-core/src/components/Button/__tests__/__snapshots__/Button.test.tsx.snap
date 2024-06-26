@@ -11,7 +11,11 @@ exports[`Renders basic button 1`] = `
     data-ouia-safe="true"
     type="button"
   >
-    Basic Button
+    <span
+      class="pf-v6-c-button__text"
+    >
+      Basic Button
+    </span>
   </button>
 </DocumentFragment>
 `;

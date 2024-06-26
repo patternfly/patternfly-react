@@ -62,9 +62,8 @@ const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
                 variant="plain"
                 tabIndex={-1}
                 isDisabled={isDisabled || isDisabledContext}
-              >
-                {icon === 'favorites' || isFavorited !== null ? <StarIcon aria-hidden /> : icon}
-              </Button>
+                icon={icon === 'favorites' || isFavorited !== null ? <StarIcon aria-hidden /> : icon}
+              />
             </div>
           );
         }}

@@ -31,11 +31,12 @@ export const AlertToggleExpandButton: React.FunctionComponent<AlertToggleExpandB
       aria-expanded={isExpanded}
       aria-label={ariaLabel === '' ? `Toggle ${variantLabel || alertVariantLabel} alert: ${title}` : ariaLabel}
       {...props}
-    >
-      <span className={css(styles.alertToggleIcon)}>
-        <AngleRightIcon aria-hidden="true" />
-      </span>
-    </Button>
+      icon={
+        <span className={css(styles.alertToggleIcon)}>
+          <AngleRightIcon aria-hidden="true" />
+        </span>
+      }
+    />
   );
 };
 AlertToggleExpandButton.displayName = 'AlertToggleExpandButton';

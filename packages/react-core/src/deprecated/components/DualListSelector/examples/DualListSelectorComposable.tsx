@@ -132,9 +132,13 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
     };
 
     return (
-      <Button variant={ButtonVariant.plain} onClick={onSort} aria-label="Sort" key="sortButton">
-        <PficonSortCommonAscIcon />
-      </Button>
+      <Button
+        variant={ButtonVariant.plain}
+        onClick={onSort}
+        aria-label="Sort"
+        key="sortButton"
+        icon={<PficonSortCommonAscIcon />}
+      />
     );
   };
 

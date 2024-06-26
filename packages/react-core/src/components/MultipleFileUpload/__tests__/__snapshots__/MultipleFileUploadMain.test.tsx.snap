@@ -16,7 +16,11 @@ exports[`MultipleFileUploadMain passes props to the info component as expected 1
         data-ouia-safe="true"
         type="button"
       >
-        Upload
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Upload
+        </span>
       </button>
     </div>
     <div
@@ -63,7 +67,11 @@ exports[`MultipleFileUploadMain passes props to the title as expected 1`] = `
         data-ouia-safe="true"
         type="button"
       >
-        Upload
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Upload
+        </span>
       </button>
     </div>
   </div>
@@ -86,7 +94,11 @@ exports[`MultipleFileUploadMain renders custom class names 1`] = `
         data-ouia-safe="true"
         type="button"
       >
-        Upload
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Upload
+        </span>
       </button>
     </div>
   </div>
@@ -109,7 +121,11 @@ exports[`MultipleFileUploadMain renders with expected class names 1`] = `
         data-ouia-safe="true"
         type="button"
       >
-        Upload
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Upload
+        </span>
       </button>
     </div>
   </div>

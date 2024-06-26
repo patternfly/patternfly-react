@@ -72,11 +72,7 @@ export const TreeViewWithActionItems: React.FunctionComponent = () => {
         {
           name: 'Application 1',
           id: 'example7-App1',
-          action: (
-            <Button variant="plain" aria-label="Launch app 1">
-              <ClipboardIcon />
-            </Button>
-          ),
+          action: <Button variant="plain" aria-label="Launch app 1" icon={<ClipboardIcon />} />,
           actionProps: {
             'aria-label': 'Launch app 1'
           },
@@ -88,11 +84,7 @@ export const TreeViewWithActionItems: React.FunctionComponent = () => {
         {
           name: 'Application 2',
           id: 'example7-App2',
-          action: (
-            <Button variant="plain" aria-label="Launch app 1">
-              <HamburgerIcon />
-            </Button>
-          ),
+          action: <Button variant="plain" aria-label="Launch app 1" icon={<HamburgerIcon />} />,
           children: [
             { name: 'Settings', id: 'example7-App2Settings' },
             {

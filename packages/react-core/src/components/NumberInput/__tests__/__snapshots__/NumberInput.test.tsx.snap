@@ -22,21 +22,25 @@ exports[`numberInput disables lower threshold 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -71,21 +75,25 @@ exports[`numberInput disables lower threshold 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -115,21 +123,25 @@ exports[`numberInput disables upper threshold 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -165,21 +177,25 @@ exports[`numberInput disables upper threshold 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -210,21 +226,25 @@ exports[`numberInput passes button props successfully 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -260,21 +280,25 @@ exports[`numberInput passes button props successfully 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -304,21 +328,25 @@ exports[`numberInput passes input props successfully 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -353,21 +381,25 @@ exports[`numberInput passes input props successfully 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -398,21 +430,25 @@ exports[`numberInput renders custom width 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -447,21 +483,25 @@ exports[`numberInput renders custom width 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -492,21 +532,25 @@ exports[`numberInput renders defaults & extra props 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -541,21 +585,25 @@ exports[`numberInput renders defaults & extra props 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -586,21 +634,25 @@ exports[`numberInput renders disabled 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -637,21 +689,25 @@ exports[`numberInput renders disabled 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -681,21 +737,25 @@ exports[`numberInput renders error validated 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -751,21 +811,25 @@ exports[`numberInput renders error validated 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -795,21 +859,25 @@ exports[`numberInput renders success validated 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -865,21 +933,25 @@ exports[`numberInput renders success validated 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -914,21 +986,25 @@ exports[`numberInput renders unit & position 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -963,21 +1039,25 @@ exports[`numberInput renders unit & position 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -1007,21 +1087,25 @@ exports[`numberInput renders unit 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -1056,21 +1140,25 @@ exports[`numberInput renders unit 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -1105,21 +1193,25 @@ exports[`numberInput renders value 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -1154,21 +1246,25 @@ exports[`numberInput renders value 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -1198,21 +1294,25 @@ exports[`numberInput renders warning validated 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>
@@ -1268,21 +1368,25 @@ exports[`numberInput renders warning validated 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-number-input__icon"
+            class="pf-v6-c-button__text"
           >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 448 512"
-              width="1em"
+            <span
+              class="pf-v6-c-number-input__icon"
             >
-              <path
-                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="pf-v6-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                />
+              </svg>
+            </span>
           </span>
         </button>
       </div>

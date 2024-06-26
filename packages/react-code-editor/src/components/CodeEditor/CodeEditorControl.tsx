@@ -38,9 +38,14 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
 
   return isVisible ? (
     <Tooltip {...tooltipProps}>
-      <Button className={className} onClick={onCustomClick} variant="plain" aria-label={ariaLabel} {...props}>
-        {icon}
-      </Button>
+      <Button
+        className={className}
+        onClick={onCustomClick}
+        variant="plain"
+        aria-label={ariaLabel}
+        {...props}
+        icon={icon}
+      />
     </Tooltip>
   ) : null;
 };

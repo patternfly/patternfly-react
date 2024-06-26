@@ -69,9 +69,12 @@ export const TextInputGroupFilters: React.FunctionComponent = () => {
       {showUtilities && (
         <TextInputGroupUtilities>
           {showClearButton && (
-            <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button and input">
-              <TimesIcon />
-            </Button>
+            <Button
+              variant="plain"
+              onClick={clearChipsAndInput}
+              aria-label="Clear button and input"
+              icon={<TimesIcon />}
+            />
           )}
         </TextInputGroupUtilities>
       )}
