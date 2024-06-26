@@ -30,7 +30,7 @@ describe('Table Favorites Test', () => {
     cy.get('#favorites-button-2').parent().should('have.class', 'pf-m-favorited');
 
     // click fav sort icon
-    cy.get('thead > tr').children().eq(1).click();
+    cy.get('thead > tr button').first().click();
 
     // sorted ascending (favorited items first)
     cy.get('#favorites-button-0').parent().should('have.class', 'pf-m-favorited');
@@ -38,7 +38,7 @@ describe('Table Favorites Test', () => {
     cy.get('#favorites-button-2').parent().should('not.have.class', 'pf-m-favorited');
 
     // sort again descending (favorited items last)
-    cy.get('thead > tr').children().eq(1).click();
+    cy.get('thead > tr button').first().click();
 
     cy.get('#favorites-button-0').parent().should('not.have.class', 'pf-m-favorited');
     cy.get('#favorites-button-1').parent().should('have.class', 'pf-m-favorited');
