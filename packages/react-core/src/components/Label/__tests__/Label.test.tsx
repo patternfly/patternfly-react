@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 
 import { Label } from '../Label';
 
-const labelColors = ['blue', 'cyan', 'green', 'orange', 'purple', 'red', 'grey'];
+const labelColors = ['blue', 'teal', 'green', 'orange', 'purple', 'red', 'grey', 'yellow'];
 
 describe('Label', () => {
   test('renders', () => {

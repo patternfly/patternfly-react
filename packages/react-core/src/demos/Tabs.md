@@ -47,7 +47,6 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
-
 TabsOpenDemo = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
 
@@ -97,7 +96,7 @@ TabsOpenDemo = () => {
             <DescriptionListDescription>
               <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                 <FlexItem>
-                  <Label color="cyan">NS</Label>
+                  <Label color="teal">NS</Label>
                 </FlexItem>
                 <FlexItem>
                   <a href="#">knative-serving-ingress</a>
@@ -293,7 +292,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
             <DescriptionListDescription>
               <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                 <FlexItem>
-                  <Label color="cyan">NS</Label>
+                  <Label color="teal">NS</Label>
                 </FlexItem>
                 <FlexItem>
                   <a href="#">knative-serving-ingress</a>

@@ -225,42 +225,6 @@ exports[`Label label with close button and outline variant 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Label label with cyan color 1`] = `
-<DocumentFragment>
-  <span
-    class="pf-v6-c-label pf-m-cyan pf-m-filled"
-  >
-    <span
-      class="pf-v6-c-label__content"
-    >
-      <span
-        class="pf-v6-c-label__text"
-      >
-        Something
-      </span>
-    </span>
-  </span>
-</DocumentFragment>
-`;
-
-exports[`Label label with cyan color with outline variant 1`] = `
-<DocumentFragment>
-  <span
-    class="pf-v6-c-label pf-m-cyan pf-m-outline"
-  >
-    <span
-      class="pf-v6-c-label__content"
-    >
-      <span
-        class="pf-v6-c-label__text"
-      >
-        Something
-      </span>
-    </span>
-  </span>
-</DocumentFragment>
-`;
-
 exports[`Label label with green color 1`] = `
 <DocumentFragment>
   <span
@@ -479,6 +443,42 @@ exports[`Label label with red color with outline variant 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Label label with teal color 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v6-c-label pf-m-teal pf-m-filled"
+  >
+    <span
+      class="pf-v6-c-label__content"
+    >
+      <span
+        class="pf-v6-c-label__text"
+      >
+        Something
+      </span>
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Label label with teal color with outline variant 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v6-c-label pf-m-teal pf-m-outline"
+  >
+    <span
+      class="pf-v6-c-label__content"
+    >
+      <span
+        class="pf-v6-c-label__text"
+      >
+        Something
+      </span>
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
 exports[`Label label with truncation 1`] = `
 <DocumentFragment>
   <span
@@ -492,6 +492,42 @@ exports[`Label label with truncation 1`] = `
         style="--pf-v6-c-label__text--MaxWidth: 16ch;"
       >
         textMaxWidth set at 16ch on this very long label that should be truncated
+      </span>
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Label label with yellow color 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v6-c-label pf-m-yellow pf-m-filled"
+  >
+    <span
+      class="pf-v6-c-label__content"
+    >
+      <span
+        class="pf-v6-c-label__text"
+      >
+        Something
+      </span>
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Label label with yellow color with outline variant 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v6-c-label pf-m-yellow pf-m-outline"
+  >
+    <span
+      class="pf-v6-c-label__content"
+    >
+      <span
+        class="pf-v6-c-label__text"
+      >
+        Something
       </span>
     </span>
   </span>

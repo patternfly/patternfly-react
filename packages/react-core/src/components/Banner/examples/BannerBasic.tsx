@@ -11,11 +11,11 @@ export const BannerBasic: React.FunctionComponent = () => (
     <br />
     <Banner color="orange">Orange banner</Banner>
     <br />
-    <Banner color="gold">Gold banner</Banner>
+    <Banner color="yellow">Yellow banner</Banner>
     <br />
     <Banner color="green">Green banner</Banner>
     <br />
-    <Banner color="cyan">Cyan banner</Banner>
+    <Banner color="teal">Teal banner</Banner>
     <br />
     <Banner color="blue">Blue banner</Banner>
     <br />

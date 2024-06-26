@@ -182,7 +182,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
           <MenuItem itemId="Orange">Orange</MenuItem>
           <MenuItem itemId="Red">Red</MenuItem>
           <MenuItem itemId="Purple">Purple</MenuItem>
-          <MenuItem itemId="Cyan">Cyan</MenuItem>
+          <MenuItem itemId="Teal">Teal</MenuItem>
         </MenuList>
       </MenuContent>
     </Menu>

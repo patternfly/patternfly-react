@@ -47,9 +47,9 @@ test('Renders with class name pf-m-orange when "orange" is passed to color prop'
   expect(screen.getByText('Test')).toHaveClass('pf-m-orange');
 });
 
-test('Renders with class name pf-m-gold when "gold" is passed to color prop', () => {
-  render(<Banner color="gold">Test</Banner>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-gold');
+test('Renders with class name pf-m-yellow when "yellow" is passed to color prop', () => {
+  render(<Banner color="yellow">Test</Banner>);
+  expect(screen.getByText('Test')).toHaveClass('pf-m-yellow');
 });
 
 test('Renders with class name pf-m-green when "green" is passed to color prop', () => {
@@ -57,9 +57,9 @@ test('Renders with class name pf-m-green when "green" is passed to color prop', 
   expect(screen.getByText('Test')).toHaveClass('pf-m-green');
 });
 
-test('Renders with class name pf-m-cyan when "cyan" is passed to color prop', () => {
-  render(<Banner color="cyan">Test</Banner>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-cyan');
+test('Renders with class name pf-m-teal when "teal" is passed to color prop', () => {
+  render(<Banner color="teal">Test</Banner>);
+  expect(screen.getByText('Test')).toHaveClass('pf-m-teal');
 });
 
 test('Renders with class name pf-m-blue when "blue" is passed to color prop', () => {
