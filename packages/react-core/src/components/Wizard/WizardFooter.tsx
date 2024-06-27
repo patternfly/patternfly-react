@@ -39,6 +39,8 @@ export interface WizardFooterProps {
   backButtonProps?: Omit<WizardFooterButtonProps, 'isDisabled'>;
   /** Additional props for the Cancel button. */
   cancelButtonProps?: WizardFooterButtonProps;
+  /** Additional classes spread to the wizard footer */
+  className?: string;
 }
 
 /**
@@ -47,10 +49,11 @@ export interface WizardFooterProps {
 
 interface WizardFooterWrapperProps {
   children: React.ReactNode;
+  className?: string;
 }
 
-export const WizardFooterWrapper = ({ children }: WizardFooterWrapperProps) => (
-  <footer className={css(styles.wizardFooter)}>{children}</footer>
+export const WizardFooterWrapper = ({ children, className }: WizardFooterWrapperProps) => (
+  <footer className={css(styles.wizardFooter, className)}>{children}</footer>
 );
 
 export const WizardFooter = ({ activeStep, ...internalProps }: WizardFooterProps) => {
@@ -71,9 +74,10 @@ const InternalWizardFooter = ({
   cancelButtonText = 'Cancel',
   nextButtonProps,
   backButtonProps,
-  cancelButtonProps
+  cancelButtonProps,
+  className
 }: Omit<WizardFooterProps, 'activeStep'>) => (
-  <WizardFooterWrapper>
+  <WizardFooterWrapper className={className}>
     <ActionList>
       <ActionListGroup>
         {!isBackHidden && (

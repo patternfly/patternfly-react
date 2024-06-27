@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export interface WizardHeaderProps {
+export interface WizardHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Callback function called when the X (Close) button is clicked */
   onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Title of the wizard */
@@ -21,6 +21,8 @@ export interface WizardHeaderProps {
   titleId?: string;
   /** id for the description */
   descriptionId?: string;
+  /** Additional classes spread to the wizard header */
+  className?: string;
 }
 
 export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
@@ -31,9 +33,11 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
   closeButtonAriaLabel,
   titleId,
   descriptionComponent: Component = 'div',
-  descriptionId
+  descriptionId,
+  className,
+  ...props
 }: WizardHeaderProps) => (
-  <div className={css(styles.wizardHeader)}>
+  <div className={css(styles.wizardHeader, className)} {...props}>
     {!isCloseHidden && (
       <div className={css(styles.wizardClose)}>
         <Button variant="plain" aria-label={closeButtonAriaLabel} onClick={onClose}>
