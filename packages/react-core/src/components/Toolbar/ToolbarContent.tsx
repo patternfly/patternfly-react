@@ -16,8 +16,6 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** Vertical alignment. */
-  alignSelf?: 'start' | 'center' | 'baseline' | 'default';
   /** Vertical alignment of children */
   alignItems?: 'start' | 'center' | 'baseline' | 'default';
   /** Content to be rendered as children of the content row */
@@ -56,7 +54,6 @@ class ToolbarContent extends React.Component<ToolbarContentProps> {
       clearAllFilters,
       showClearFiltersButton,
       clearFiltersButtonText,
-      alignSelf,
       ...props
     } = this.props;
 
@@ -100,10 +97,7 @@ class ToolbarContent extends React.Component<ToolbarContentProps> {
                         styles.toolbarContentSection,
                         alignItems === 'center' && styles.modifiers.alignItemsCenter,
                         alignItems === 'start' && styles.modifiers.alignItemsStart,
-                        alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,
-                        alignSelf === 'center' && styles.modifiers.alignSelfCenter,
-                        alignSelf === 'start' && styles.modifiers.alignSelfStart,
-                        alignSelf === 'baseline' && styles.modifiers.alignSelfBaseline
+                        alignItems === 'baseline' && styles.modifiers.alignItemsBaseline
                       )}
                     >
                       {children}

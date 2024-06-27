@@ -25,7 +25,7 @@ export const ToolbarSpacers: React.FunctionComponent = () => {
         <Button variant="primary">Action</Button>
       </ToolbarItem>
       <ToolbarItem variant="separator"></ToolbarItem>
-      <ToolbarGroup gap={{ lg: 'gapLg' }}>
+      <ToolbarGroup variant="action-group" gap={{ lg: 'gapLg' }}>
         <ToolbarItem>
           <Button variant="secondary">Action</Button>
         </ToolbarItem>

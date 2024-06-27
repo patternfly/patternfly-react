@@ -227,7 +227,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
     <Toolbar isFullHeight>
       <ToolbarContent>
         <ToolbarGroup align={{ default: 'alignEnd' }}>
-          <ToolbarGroup variant="icon-button-group">
+          <ToolbarGroup variant="action-group-plain">
             <ToolbarItem visibility={{ default: 'visible' }} selected={isDrawerExpanded}>
               <NotificationBadge
                 variant={getNumberUnread(null) === 0 ? 'read' : 'unread'}
@@ -239,7 +239,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
               </NotificationBadge>
             </ToolbarItem>
             <ToolbarGroup
-              variant="icon-button-group"
+              variant="action-group-plain"
               visibility={{
                 default: 'hidden',
                 lg: 'visible'

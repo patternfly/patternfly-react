@@ -6,14 +6,23 @@ import { PageContext } from '../Page/PageContext';
 
 export enum ToolbarGroupVariant {
   'filter-group' = 'filter-group',
-  'icon-button-group' = 'icon-button-group'
+  'action-group' = 'action-group',
+  'action-group-inline' = 'action-group-inline',
+  'action-group-plain' = 'action-group-plain',
+  'label-group' = 'label-group'
 }
 
 export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'ref'> {
   /** Classes applied to root element of the data toolbar group */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of group */
-  variant?: ToolbarGroupVariant | 'filter-group' | 'icon-button-group';
+  variant?:
+    | ToolbarGroupVariant
+    | 'filter-group'
+    | 'action-group'
+    | 'action-group-inline'
+    | 'action-group-plain'
+    | 'label-group';
   /** Visibility at various breakpoints. */
   visibility?: {
     default?: 'hidden' | 'visible';
@@ -24,16 +33,16 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
   };
   /** Applies to a child of a flex layout, and aligns that child (and any adjacent children on the other side of it) to one side of the main axis */
   align?: {
-    default?: 'alignEnd' | 'alignStart';
-    md?: 'alignEnd' | 'alignStart';
-    lg?: 'alignEnd' | 'alignStart';
-    xl?: 'alignEnd' | 'alignStart';
-    '2xl'?: 'alignEnd' | 'alignStart';
+    default?: 'alignEnd' | 'alignStart' | 'alignCenter';
+    md?: 'alignEnd' | 'alignStart' | 'alignCenter';
+    lg?: 'alignEnd' | 'alignStart' | 'alignCenter';
+    xl?: 'alignEnd' | 'alignStart' | 'alignCenter';
+    '2xl'?: 'alignEnd' | 'alignStart' | 'alignCenter';
   };
   /** Vertical alignment of children */
-  alignItems?: 'start' | 'center' | 'baseline' | 'default';
+  alignItems?: 'start' | 'center' | 'baseline' | 'default' | 'end' | 'stretch';
   /** Vertical alignment */
-  alignSelf?: 'start' | 'center' | 'baseline' | 'default';
+  alignSelf?: 'start' | 'center' | 'baseline' | 'default' | 'end' | 'stretch';
   /** Sets both the column and row gap at various breakpoints. */
   gap?: {
     default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';

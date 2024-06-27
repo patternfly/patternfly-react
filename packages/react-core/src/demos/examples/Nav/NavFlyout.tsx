@@ -128,14 +128,14 @@ export const NavFlyout: React.FunctionComponent = () => {
     <Toolbar id="toolbar" isFullHeight isStatic>
       <ToolbarContent>
         <ToolbarGroup
-          variant="icon-button-group"
+          variant="action-group-plain"
           align={{ default: 'alignEnd' }}
           gap={{ default: 'gapNone', md: 'gapMd' }}
         >
           <ToolbarItem>
             <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} onClick={() => {}} />
           </ToolbarItem>
-          <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
+          <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
             <ToolbarItem>
               <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
             </ToolbarItem>

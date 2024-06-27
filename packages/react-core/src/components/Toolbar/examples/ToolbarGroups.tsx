@@ -182,7 +182,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
   const items = (
     <React.Fragment>
       <ToolbarGroup variant="filter-group">{filterGroupItems}</ToolbarGroup>
-      <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
+      <ToolbarGroup variant="action-group-plain">{iconButtonGroupItems}</ToolbarGroup>
       <ToolbarGroup>{buttonGroupItems}</ToolbarGroup>
     </React.Fragment>
   );

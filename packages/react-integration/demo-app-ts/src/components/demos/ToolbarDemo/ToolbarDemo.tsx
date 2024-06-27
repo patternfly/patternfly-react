@@ -250,7 +250,7 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
         <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl" id="demo-toggle-group">
           {toggleGroupItems}
         </ToolbarToggleGroup>
-        <ToolbarGroup variant="icon-button-group">
+        <ToolbarGroup variant="action-group-plain">
           <ToolbarItem>
             <Button variant="plain">
               <EditIcon />

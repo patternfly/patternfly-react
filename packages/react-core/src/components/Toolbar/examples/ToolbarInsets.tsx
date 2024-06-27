@@ -25,7 +25,7 @@ export const ToolbarInsets: React.FunctionComponent = () => {
         <Button variant="primary">Action</Button>
       </ToolbarItem>
       <ToolbarItem variant="separator"></ToolbarItem>
-      <ToolbarGroup>
+      <ToolbarGroup variant="action-group">
         <ToolbarItem>
           <Button variant="secondary">Action</Button>
         </ToolbarItem>

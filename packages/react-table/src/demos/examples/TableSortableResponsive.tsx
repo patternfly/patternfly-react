@@ -212,7 +212,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
             </OverflowMenuControl>
           </OverflowMenu>
         </ToolbarItem>
-        <ToolbarGroup variant="icon-button-group">
+        <ToolbarGroup variant="action-group-plain">
           <ToolbarItem>
             <Button aria-label="Edit" variant="plain" icon={<EditIcon />} />
           </ToolbarItem>

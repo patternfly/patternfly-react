@@ -27,14 +27,6 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** Alignment at various breakpoints. */
-  alignment?: {
-    default?: 'alignEnd' | 'alignStart';
-    md?: 'alignEnd' | 'alignStart';
-    lg?: 'alignEnd' | 'alignStart';
-    xl?: 'alignEnd' | 'alignStart';
-    '2xl'?: 'alignEnd' | 'alignStart';
-  };
   /** Sets both the column and row gap at various breakpoints. */
   gap?: {
     default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
@@ -176,7 +168,6 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
       variant,
       visibility,
       breakpoint,
-      alignment,
       gap,
       columnGap,
       rowGap,
@@ -263,7 +254,6 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
                           variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup'],
                           formatBreakpointMods(breakpointMod, styles, '', getBreakpoint(width)),
                           formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
-                          formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
                           formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
                           formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
                           formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),

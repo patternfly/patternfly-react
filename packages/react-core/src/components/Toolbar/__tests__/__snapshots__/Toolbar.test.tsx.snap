@@ -264,44 +264,36 @@ exports[`Toolbar should render with custom label content 1`] = `
         <div
           class="pf-v6-c-toolbar__item"
         >
-          2 filters applied
-        </div>
-      </div>
-      <div
-        class="pf-v6-c-toolbar__item"
-      >
-        <button
-          aria-disabled="false"
-          class="pf-v6-c-button pf-m-link pf-m-inline"
-          data-ouia-component-id="OUIA-Generated-Button-link-1"
-          data-ouia-component-type="PF6/Button"
-          data-ouia-safe="true"
-          type="button"
-        >
-          <span
-            class="pf-v6-c-button__text"
+          <button
+            aria-disabled="false"
+            class="pf-v6-c-button pf-m-link pf-m-inline"
+            data-ouia-component-id="OUIA-Generated-Button-link-1"
+            data-ouia-component-type="PF6/Button"
+            data-ouia-safe="true"
+            type="button"
           >
             Save filters
-          </span>
-        </button>
-      </div>
-      <div
-        class="pf-v6-c-toolbar__item"
-      >
-        <button
-          aria-disabled="false"
-          class="pf-v6-c-button pf-m-link pf-m-inline"
-          data-ouia-component-id="OUIA-Generated-Button-link-2"
-          data-ouia-component-type="PF6/Button"
-          data-ouia-safe="true"
-          type="button"
+          </button>
+        </div>
+        <div
+          class="pf-v6-c-toolbar__item"
         >
-          <span
-            class="pf-v6-c-button__text"
+          <button
+            aria-disabled="false"
+            class="pf-v6-c-button pf-m-link pf-m-inline"
+            data-ouia-component-id="OUIA-Generated-Button-link-2"
+            data-ouia-component-type="PF6/Button"
+            data-ouia-safe="true"
+            type="button"
           >
             Clear all filters
-          </span>
-        </button>
+          </button>
+        </div>
+        <div
+          class="pf-v6-c-toolbar__item"
+        >
+          2 filters applied
+        </div>
       </div>
     </div>
   </div>
