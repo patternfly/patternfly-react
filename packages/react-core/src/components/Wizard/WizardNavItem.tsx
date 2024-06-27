@@ -11,6 +11,8 @@ import { WizardNavItemStatus } from './types';
 export interface WizardNavItemProps
   extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick' | 'id' | 'content' | 'type'>,
     OUIAProps {
+  /** Additional classes spread to the wizard nav item */
+  className?: string;
   /** Can nest a WizardNav component for substeps */
   children?: React.ReactNode;
   /** The content to display in the navigation item */
