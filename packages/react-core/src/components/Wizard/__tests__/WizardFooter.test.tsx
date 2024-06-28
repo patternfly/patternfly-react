@@ -20,6 +20,15 @@ test('has button names of "Next", "Back", and "Cancel" by default', () => {
   expect(screen.getByRole('button', { name: 'Cancel' })).toBeVisible();
 });
 
+test(`Renders with additional classes when className is passed`, () => {
+  render(
+    <WizardFooter {...defaultProps} className="custom-class" data-testid="test-id">
+      Test
+    </WizardFooter>
+  );
+  expect(screen.getByTestId('test-id')).toHaveClass('custom-class');
+});
+
 test('calls onNext when the next button is clicked', async () => {
   const onNext = jest.fn();
   const user = userEvent.setup();

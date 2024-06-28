@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
 
-export interface WizardNavProps {
+export interface WizardNavProps extends Omit<React.HTMLProps<HTMLOListElement>, 'type' | 'ref'> {
   /** children should be WizardNavItem components */
   children?: any;
   /** Aria-label applied to the navigation element */
@@ -23,11 +23,12 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
   'aria-labelledby': ariaLabelledBy,
   isExpanded = false,
   isInnerList = false,
-  className
+  className,
+  ...props
 }: WizardNavProps) => {
   if (isInnerList) {
     return (
-      <ol className={css(styles.wizardNavList, className)} role="list">
+      <ol className={css(styles.wizardNavList, className)} role="list" {...props}>
         {children}
       </ol>
     );
@@ -38,6 +39,7 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
       className={css(styles.wizardNav, isExpanded && styles.modifiers.expanded, className)}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
+      {...props}
     >
       <ol className={css(styles.wizardNavList)} role="list">
         {children}

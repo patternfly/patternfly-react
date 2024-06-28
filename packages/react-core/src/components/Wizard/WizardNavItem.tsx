@@ -105,7 +105,7 @@ export const WizardNavItem = ({
       >
         {status === WizardNavItemStatus.Error && (
           <>
-            <span className="pf-v5-screen-reader">, {status}</span>
+            <span className="pf-v6-screen-reader">, {status}</span>
             <span className={css(styles.wizardNavLinkStatusIcon)}>
               <ExclamationCircleIcon />
             </span>
