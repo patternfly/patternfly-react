@@ -85,7 +85,8 @@ class ToolbarLabelGroupContent extends React.Component<ToolbarLabelGroupContentP
           {...(collapseListedFilters && { 'aria-hidden': true })}
         />
         {(showNumberOfFilters || showDefaultClearFilter || customChipGroupContent) && (
-          <ToolbarGroup>
+          <ToolbarGroup variant="action-group-inline">
+            {showNumberOfFilters && <ToolbarItem>{numberOfFiltersText(numberOfFilters)}</ToolbarItem>}
             {showDefaultClearFilter && (
               <ToolbarItem>
                 <Button variant="link" onClick={clearChipGroups} isInline>
@@ -94,7 +95,6 @@ class ToolbarLabelGroupContent extends React.Component<ToolbarLabelGroupContentP
               </ToolbarItem>
             )}
             {customChipGroupContent && customChipGroupContent}
-            {showNumberOfFilters && <ToolbarItem>{numberOfFiltersText(numberOfFilters)}</ToolbarItem>}
           </ToolbarGroup>
         )}
       </div>
