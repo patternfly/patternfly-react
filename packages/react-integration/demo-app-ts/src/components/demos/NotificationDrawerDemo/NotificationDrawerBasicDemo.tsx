@@ -62,6 +62,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
       <NotificationDrawer>
         <NotificationDrawerHeader count={2} id="notification-0" onClose={this.onDrawerClose}>
           <Dropdown
+            className="notification-0"
             onSelect={this.onSelect}
             isOpen={isOpen[0]}
             onOpenChange={(_isOpen) => this.setState({ isOpen: new Array(6).fill(false) })}
@@ -92,6 +93,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 truncateTitle={10}
               >
                 <Dropdown
+                  className="notification-1"
                   onSelect={this.onSelect}
                   isOpen={isOpen[1]}
                   onOpenChange={(_isOpen) => this.setState({ isOpen: new Array(6).fill(false) })}

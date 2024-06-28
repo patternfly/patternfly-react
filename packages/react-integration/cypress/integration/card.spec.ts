@@ -9,7 +9,7 @@ describe('Card Demo Test', () => {
       cy.wrap($menuToggle).click();
       cy.wrap($menuToggle).should('have.class', 'pf-m-expanded');
     });
-    cy.get('#cardWithActions .pf-v6-c-menu .pf-v6-c-menu__item').first().click();
+    cy.get('.cardWithActions.pf-v6-c-menu .pf-v6-c-menu__item').first().click();
     cy.get('#cardWithActions .pf-v6-c-menu-toggle').should('not.have.class', 'pf-m-expanded');
   });
 

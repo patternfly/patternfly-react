@@ -138,6 +138,7 @@ class CardDemo extends Component {
     const actions = (
       <>
         <Dropdown
+          className="cardWithActions"
           onSelect={this.onSelect}
           isOpen={this.state.isOpen}
           onOpenChange={(isOpen) => this.setState({ isOpen })}

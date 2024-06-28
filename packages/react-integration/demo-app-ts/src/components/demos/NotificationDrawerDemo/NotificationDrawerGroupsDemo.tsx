@@ -94,6 +94,7 @@ class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerPro
       <NotificationDrawer>
         <NotificationDrawerHeader count={4} id="notification-0" onClose={this.onDrawerClose}>
           <Dropdown
+            className="notification-0"
             onSelect={this.onSelect}
             isOpen={isOpenMap['toggle-id-0'] || false}
             onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
@@ -268,6 +269,7 @@ class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerPro
                     srTitle="Info notification:"
                   >
                     <Dropdown
+                      className="notification-9"
                       onSelect={this.onSelect}
                       isOpen={isOpenMap['toggle-id-9'] || false}
                       onOpenChange={(_isOpen) => this.setState({ isOpenMap: {} })}
