@@ -56,6 +56,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
   const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
+  const [isContextSelectorOpen, setIsContextSelectorOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(1);
 
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
@@ -86,6 +87,14 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
     setIsFullKebabDropdownOpen(false);
   };
 
+  const onContextSelectorToggle = () => {
+    setIsContextSelectorOpen(!isContextSelectorOpen);
+  };
+
+  const onContextSelectorSelect = () => {
+    setIsContextSelectorOpen(false);
+  };
+
   const dashboardBreadcrumb = (
     <Breadcrumb>
       <BreadcrumbItem>Section home</BreadcrumbItem>
@@ -107,6 +116,14 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
       </DropdownItem>
     </>
   );
+
+  const contextSelectorDropdownItems = (
+    <>
+      <DropdownItem>Developer</DropdownItem>
+      <DropdownItem>Admin</DropdownItem>
+    </>
+  );
+
   const userDropdownItems = (
     <>
       <DropdownItem key="group 2 profile">My profile</DropdownItem>
@@ -244,8 +261,24 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
     </Nav>
   );
 
+  const pageContextSelector = (
+    <Dropdown
+      isOpen={isContextSelectorOpen}
+      onSelect={onContextSelectorSelect}
+      onOpenChange={(isOpen: boolean) => setIsContextSelectorOpen(isOpen)}
+      toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+        <MenuToggle ref={toggleRef} onClick={onContextSelectorToggle} isExpanded={isContextSelectorOpen} isFullWidth>
+          Developer
+        </MenuToggle>
+      )}
+    >
+      <DropdownList>{contextSelectorDropdownItems}</DropdownList>
+    </Dropdown>
+  );
+
   const sidebar = (
     <PageSidebar>
+      <PageSidebarBody isContextSelector>{pageContextSelector}</PageSidebarBody>
       <PageSidebarBody>{pageNav}</PageSidebarBody>
     </PageSidebar>
   );
@@ -263,11 +296,6 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
       breadcrumb={dashboardBreadcrumb}
       mainContainerId={mainContainerId}
       isBreadcrumbWidthLimited
-      breadcrumbProps={{
-        stickyOnBreakpoint: {
-          md: 'top'
-        }
-      }}
     >
       <PageSection isWidthLimited>
         <TextContent>
