@@ -2,12 +2,15 @@ import * as React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { Nav, NavContext } from '../Nav';
 import { NavList } from '../NavList';
 import { NavGroup } from '../NavGroup';
 import { NavItem } from '../NavItem';
 import { NavExpandable } from '../NavExpandable';
+
+import styles from '@patternfly/react-styles/css/components/Nav/nav';
 
 const props = {
   items: [
@@ -241,5 +244,20 @@ describe('Nav', () => {
 
     await user.hover(screen.getByText('My custom node'));
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Nav with icon', () => {
+    renderNav(
+      <Nav>
+        <NavList className="test-nav-icon">
+          {props.items.map((item) => (
+            <NavItem to={item.to} key={item.to} icon={<span>this is an icon</span>} className="test-nav-item-class">
+              {item.label}
+            </NavItem>
+          ))}
+        </NavList>
+      </Nav>
+    );
+    expect(screen.getAllByText('this is an icon')[0].parentElement).toHaveClass(`${styles.nav}__link-icon`);
   });
 });

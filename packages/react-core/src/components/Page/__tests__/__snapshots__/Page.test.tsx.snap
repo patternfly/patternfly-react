@@ -499,7 +499,11 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
                     aria-current="page"
                     class="pf-v6-c-nav__link pf-m-current"
                   >
-                    System Panel
+                    <span
+                      class="pf-v6-c-nav__link-text"
+                    >
+                      System Panel
+                    </span>
                   </a>
                 </li>
                 <li
@@ -511,7 +515,11 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
                   <a
                     class="pf-v6-c-nav__link"
                   >
-                    Policy
+                    <span
+                      class="pf-v6-c-nav__link-text"
+                    >
+                      Policy
+                    </span>
                   </a>
                 </li>
                 <li
@@ -523,7 +531,11 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
                   <a
                     class="pf-v6-c-nav__link"
                   >
-                    Authentication
+                    <span
+                      class="pf-v6-c-nav__link-text"
+                    >
+                      Authentication
+                    </span>
                   </a>
                 </li>
                 <li
@@ -535,7 +547,11 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
                   <a
                     class="pf-v6-c-nav__link"
                   >
-                    Network Services
+                    <span
+                      class="pf-v6-c-nav__link-text"
+                    >
+                      Network Services
+                    </span>
                   </a>
                 </li>
                 <li
@@ -547,7 +563,11 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
                   <a
                     class="pf-v6-c-nav__link"
                   >
-                    Server
+                    <span
+                      class="pf-v6-c-nav__link-text"
+                    >
+                      Server
+                    </span>
                   </a>
                 </li>
               </ul>
@@ -617,7 +637,11 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                     aria-current="page"
                     class="pf-v6-c-nav__link pf-m-current"
                   >
-                    System Panel
+                    <span
+                      class="pf-v6-c-nav__link-text"
+                    >
+                      System Panel
+                    </span>
                   </a>
                 </li>
                 <li
@@ -629,7 +653,11 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                   <a
                     class="pf-v6-c-nav__link"
                   >
-                    Policy
+                    <span
+                      class="pf-v6-c-nav__link-text"
+                    >
+                      Policy
+                    </span>
                   </a>
                 </li>
                 <li
@@ -641,7 +669,11 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                   <a
                     class="pf-v6-c-nav__link"
                   >
-                    Authentication
+                    <span
+                      class="pf-v6-c-nav__link-text"
+                    >
+                      Authentication
+                    </span>
                   </a>
                 </li>
                 <li
@@ -653,7 +685,11 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                   <a
                     class="pf-v6-c-nav__link"
                   >
-                    Network Services
+                    <span
+                      class="pf-v6-c-nav__link-text"
+                    >
+                      Network Services
+                    </span>
                   </a>
                 </li>
                 <li
@@ -665,7 +701,11 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                   <a
                     class="pf-v6-c-nav__link"
                   >
-                    Server
+                    <span
+                      class="pf-v6-c-nav__link-text"
+                    >
+                      Server
+                    </span>
                   </a>
                 </li>
               </ul>
@@ -837,7 +877,11 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
                   aria-current="page"
                   class="pf-v6-c-nav__link pf-m-current"
                 >
-                  System Panel
+                  <span
+                    class="pf-v6-c-nav__link-text"
+                  >
+                    System Panel
+                  </span>
                 </a>
               </li>
               <li
@@ -849,7 +893,11 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
                 <a
                   class="pf-v6-c-nav__link"
                 >
-                  Policy
+                  <span
+                    class="pf-v6-c-nav__link-text"
+                  >
+                    Policy
+                  </span>
                 </a>
               </li>
               <li
@@ -861,7 +909,11 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
                 <a
                   class="pf-v6-c-nav__link"
                 >
-                  Authentication
+                  <span
+                    class="pf-v6-c-nav__link-text"
+                  >
+                    Authentication
+                  </span>
                 </a>
               </li>
               <li
@@ -873,7 +925,11 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
                 <a
                   class="pf-v6-c-nav__link"
                 >
-                  Network Services
+                  <span
+                    class="pf-v6-c-nav__link-text"
+                  >
+                    Network Services
+                  </span>
                 </a>
               </li>
               <li
@@ -885,7 +941,11 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
                 <a
                   class="pf-v6-c-nav__link"
                 >
-                  Server
+                  <span
+                    class="pf-v6-c-nav__link-text"
+                  >
+                    Server
+                  </span>
                 </a>
               </li>
             </ul>

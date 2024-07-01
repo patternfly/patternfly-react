@@ -9,6 +9,10 @@ ouia: true
 import './nav.css';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import UserIcon from '@patternfly/react-icons/dist/esm/icons/user-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
+import LinkIcon from '@patternfly/react-icons/dist/esm/icons/link-icon';
 
 ## Examples
 
@@ -70,11 +74,12 @@ A flyout should be a `Menu` component. Press `space` or `right arrow` to open a 
 
 ```
 
-### Link text
+### With item icons
 
-```ts file="./NavLinkText.tsx"
+```ts file="./NavIcons.tsx"
 
 ```
+
 
 ## Types
 
