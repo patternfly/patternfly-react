@@ -8,7 +8,11 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclam
 import { OUIAProps, useOUIAProps } from '../../helpers';
 import { WizardNavItemStatus } from './types';
 
-export interface WizardNavItemProps extends OUIAProps {
+export interface WizardNavItemProps
+  extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick' | 'id' | 'content' | 'type'>,
+    OUIAProps {
+  /** Additional classes spread to the wizard nav item */
+  className?: string;
   /** Can nest a WizardNav component for substeps */
   children?: React.ReactNode;
   /** The content to display in the navigation item */
@@ -53,7 +57,9 @@ export const WizardNavItem = ({
   status = 'default',
   target,
   ouiaId,
-  ouiaSafe = true
+  ouiaSafe = true,
+  className,
+  ...props
 }: WizardNavItemProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const ouiaProps = useOUIAProps(WizardNavItem.displayName, ouiaId, ouiaSafe);
@@ -72,8 +78,10 @@ export const WizardNavItem = ({
       className={css(
         styles.wizardNavItem,
         isExpandable && styles.modifiers.expandable,
-        isExpandable && isExpanded && styles.modifiers.expanded
+        isExpandable && isExpanded && styles.modifiers.expanded,
+        className
       )}
+      {...props}
     >
       <NavItemComponent
         {...(NavItemComponent === 'a'
@@ -97,7 +105,7 @@ export const WizardNavItem = ({
       >
         {status === WizardNavItemStatus.Error && (
           <>
-            <span className="pf-v5-screen-reader">, {status}</span>
+            <span className="pf-v6-screen-reader">, {status}</span>
             <span className={css(styles.wizardNavLinkStatusIcon)}>
               <ExclamationCircleIcon />
             </span>
