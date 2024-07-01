@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.74](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.73...@patternfly/react-core@6.0.0-alpha.74) (2024-07-01)
+
+### Bug Fixes
+
+- **Wizard:** add className props and spread them when possible ([#10670](https://github.com/patternfly/patternfly-react/issues/10670)) ([b7654e1](https://github.com/patternfly/patternfly-react/commit/b7654e138673ebe92c61887e12042699b8f820d8))
+
+### Features
+
+- **misc:** Replace Text, TextContent, TextList and TextListItem with Content - PART 1 ([#10611](https://github.com/patternfly/patternfly-react/issues/10611)) ([9f49fad](https://github.com/patternfly/patternfly-react/commit/9f49fadec038d19a1fa47e656fcea7ff115b412b))
+
 # [6.0.0-alpha.73](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.72...@patternfly/react-core@6.0.0-alpha.73) (2024-06-26)
 
 ### Features

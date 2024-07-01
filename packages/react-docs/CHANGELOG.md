@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.80](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.79...@patternfly/react-docs@7.0.0-alpha.80) (2024-07-01)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 # [7.0.0-alpha.79](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.78...@patternfly/react-docs@7.0.0-alpha.79) (2024-06-26)
 
 ### Features
