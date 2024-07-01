@@ -525,11 +525,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
                       <span className={css(styles.tabsToggleIcon)}>
                         <AngleRightIcon arian-hidden="true" />
                       </span>
-                      {toggleText && (
-                        <span className={css(styles.tabsToggleText)} id={`${randomId}-text`}>
-                          {toggleText}
-                        </span>
-                      )}
+                      {toggleText && <span id={`${randomId}-text`}>{toggleText}</span>}
                     </Button>
                   </div>
                 </div>

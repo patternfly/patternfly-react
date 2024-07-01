@@ -253,7 +253,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                 <span className={styles.jumpLinksToggleIcon}>
                   <AngleRightIcon />
                 </span>
-                {label && <span className={css(styles.jumpLinksToggleText)}> {label} </span>}
+                {label && <span> {label} </span>}
               </Button>
             </div>
           )}

@@ -41,3 +41,9 @@ This demonstrates a variety of navigation patterns in the context of a full page
 ```ts file='./examples/Page/PageStickySectionBreadcrumb.tsx' isFullscreen
 
 ```
+
+### Context selector/perspective switcher in sidebar
+
+```ts file='./examples/Page/PageContextSelector.tsx' isFullscreen
+
+```
