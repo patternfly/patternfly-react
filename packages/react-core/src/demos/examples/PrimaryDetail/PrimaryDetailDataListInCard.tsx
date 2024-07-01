@@ -91,7 +91,7 @@ export const PrimaryDetailDataListInCard: React.FunctionComponent = () => {
 
   const drawerContent = (
     <React.Fragment>
-      <Toolbar id="data-list-data-toolbar" usePageInsets>
+      <Toolbar id="data-list-data-toolbar">
         <ToolbarContent>
           <ToolbarItem>
             <Dropdown

@@ -210,7 +210,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
 
   const drawerContent = (
     <React.Fragment>
-      <Toolbar id="full-page-data-toolbar" usePageInsets>
+      <Toolbar id="full-page-data-toolbar">
         <ToolbarContent>{ToolbarItems}</ToolbarContent>
       </Toolbar>
       <DataList

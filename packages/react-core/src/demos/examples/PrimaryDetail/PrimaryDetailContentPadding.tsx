@@ -210,7 +210,7 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
 
   const drawerContent = (
     <React.Fragment>
-      <Toolbar id="content-padding-data-toolbar" usePageInsets>
+      <Toolbar id="content-padding-data-toolbar">
         <ToolbarContent>{ToolbarItems}</ToolbarContent>
       </Toolbar>
       <DataList

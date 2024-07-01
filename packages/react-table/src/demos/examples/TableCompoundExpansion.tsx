@@ -84,7 +84,7 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
   );
 
   const tableToolbar = (
-    <Toolbar id="compact-toolbar" usePageInsets>
+    <Toolbar id="compact-toolbar">
       <ToolbarContent>
         <ToolbarItem>
           <Select

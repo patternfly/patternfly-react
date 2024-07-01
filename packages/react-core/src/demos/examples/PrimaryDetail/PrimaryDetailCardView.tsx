@@ -627,7 +627,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
         </TextContent>
       </PageSection>
       <PageSection isFilled padding={{ default: 'noPadding' }}>
-        <Toolbar id="card-view-data-toolbar-group-types" usePageInsets clearAllFilters={onDelete}>
+        <Toolbar id="card-view-data-toolbar-group-types" clearAllFilters={onDelete}>
           <ToolbarContent>{toolbarItems}</ToolbarContent>
         </Toolbar>
         <Divider component="div" />
