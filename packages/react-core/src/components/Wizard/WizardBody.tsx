@@ -10,9 +10,11 @@ import { getResizeObserver } from '../../helpers/resizeObserver';
  * Used as a wrapper for WizardStep content, where the wrapping element is customizable.
  */
 
-export interface WizardBodyProps {
+export interface WizardBodyProps extends React.HTMLProps<HTMLElement> {
   /** Anything that can be rendered in the Wizard body */
   children: React.ReactNode;
+  /** Additional classes spread to the wizard body */
+  className?: string;
   /** Flag to remove the default body padding */
   hasNoPadding?: boolean;
   /** Adds an accessible name to the wrapper element when the content overflows and renders
@@ -29,10 +31,12 @@ export interface WizardBodyProps {
 
 export const WizardBody = ({
   children,
+  className,
   hasNoPadding = false,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
-  component = 'div'
+  component = 'div',
+  ...props
 }: WizardBodyProps) => {
   const [hasScrollbar, setHasScrollbar] = React.useState(false);
   const [previousWidth, setPreviousWidth] = React.useState<number | undefined>(undefined);
@@ -74,7 +78,8 @@ export const WizardBody = ({
       {...(shouldFocusContent && { tabIndex: -1 })}
       {...(component === 'div' && hasScrollbar && { role: 'region' })}
       {...(hasScrollbar && { 'aria-label': defaultAriaLabel, 'aria-labelledby': ariaLabelledBy, tabIndex: 0 })}
-      className={css(styles.wizardMain)}
+      className={css(styles.wizardMain, className)}
+      {...props}
     >
       <div className={css(styles.wizardMainBody, hasNoPadding && styles.modifiers.noPadding)}>{children}</div>
     </WrapperComponent>

@@ -5,12 +5,11 @@ import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 import { Button, ButtonVariant } from '../Button';
 import { isCustomWizardFooter, WizardFooterButtonProps, WizardStepType } from './types';
-
 /**
  * Hosts the standard structure of a footer with ties to the active step so that text for buttons can vary from step to step.
  */
 
-export interface WizardFooterProps {
+export interface WizardFooterProps extends React.HTMLProps<HTMLElement> {
   /** The active step */
   activeStep: WizardStepType;
   /** Next button callback */
@@ -39,18 +38,23 @@ export interface WizardFooterProps {
   backButtonProps?: Omit<WizardFooterButtonProps, 'isDisabled'>;
   /** Additional props for the Cancel button. */
   cancelButtonProps?: WizardFooterButtonProps;
+  /** Additional classes spread to the wizard footer */
+  className?: string;
 }
 
 /**
  * Applies default wizard footer styling any number of child elements.
  */
 
-interface WizardFooterWrapperProps {
+interface WizardFooterWrapperProps extends React.HTMLProps<HTMLElement> {
   children: React.ReactNode;
+  className?: string;
 }
 
-export const WizardFooterWrapper = ({ children }: WizardFooterWrapperProps) => (
-  <footer className={css(styles.wizardFooter)}>{children}</footer>
+export const WizardFooterWrapper = ({ children, className, ...props }: WizardFooterWrapperProps) => (
+  <footer className={css(styles.wizardFooter, className)} {...props}>
+    {children}
+  </footer>
 );
 
 export const WizardFooter = ({ activeStep, ...internalProps }: WizardFooterProps) => {
@@ -71,9 +75,11 @@ const InternalWizardFooter = ({
   cancelButtonText = 'Cancel',
   nextButtonProps,
   backButtonProps,
-  cancelButtonProps
+  cancelButtonProps,
+  className,
+  ...props
 }: Omit<WizardFooterProps, 'activeStep'>) => (
-  <WizardFooterWrapper>
+  <WizardFooterWrapper className={className} {...props}>
     {!isBackHidden && (
       <Button variant={ButtonVariant.secondary} onClick={onBack} isDisabled={isBackDisabled} {...backButtonProps}>
         {backButtonText}
