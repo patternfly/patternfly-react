@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TextVariants } from '@patternfly/react-core';
 
-export const TextHeadings: React.FunctionComponent = () => (
+export const ContentHeadings: React.FunctionComponent = () => (
   <>
     <Text component={TextVariants.h1}>Hello World</Text>
     <Text component={TextVariants.h2}>Second level</Text>

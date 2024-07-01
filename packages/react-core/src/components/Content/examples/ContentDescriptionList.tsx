@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextList, TextListVariants, TextListItem, TextListItemVariants } from '@patternfly/react-core';
 
-export const TextDescriptionList: React.FunctionComponent = () => (
+export const ContentDescriptionList: React.FunctionComponent = () => (
   <TextList component={TextListVariants.dl}>
     <TextListItem component={TextListItemVariants.dt}>Web</TextListItem>
     <TextListItem component={TextListItemVariants.dd}>
