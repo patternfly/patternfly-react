@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.82](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.81...@patternfly/react-docs@7.0.0-alpha.82) (2024-07-02)
+
+### Features
+
+- **Button:** add text wrapper, update icon usage ([#10663](https://github.com/patternfly/patternfly-react/issues/10663)) ([eca5878](https://github.com/patternfly/patternfly-react/commit/eca58789d1f07753657372a46a20c147f984b998))
+
 # [7.0.0-alpha.81](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.80...@patternfly/react-docs@7.0.0-alpha.81) (2024-07-02)
 
 **Note:** Version bump only for package @patternfly/react-docs

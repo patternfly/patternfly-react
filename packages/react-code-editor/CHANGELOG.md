@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.76](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.0.0-alpha.75...@patternfly/react-code-editor@6.0.0-alpha.76) (2024-07-02)
+
+### Features
+
+- **Button:** add text wrapper, update icon usage ([#10663](https://github.com/patternfly/patternfly-react/issues/10663)) ([eca5878](https://github.com/patternfly/patternfly-react/commit/eca58789d1f07753657372a46a20c147f984b998))
+
 # [6.0.0-alpha.75](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.0.0-alpha.74...@patternfly/react-code-editor@6.0.0-alpha.75) (2024-07-02)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
