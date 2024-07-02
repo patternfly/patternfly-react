@@ -185,7 +185,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   width,
   minWidth = 'trigger',
   maxWidth,
-  appendTo = 'inline',
+  appendTo = () => document.body,
   zIndex = 9999,
   isVisible = true,
   positionModifiers,

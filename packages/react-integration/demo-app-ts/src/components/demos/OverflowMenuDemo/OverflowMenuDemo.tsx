@@ -80,6 +80,7 @@ export class OverflowMenuDemo extends React.Component {
         </OverflowMenuContent>
         <OverflowMenuControl>
           <Dropdown
+            className="simple-overflow-menu"
             onSelect={this.onSimpleSelect}
             toggle={(toggleRef) => (
               <MenuToggle
@@ -173,6 +174,7 @@ export class OverflowMenuDemo extends React.Component {
         </OverflowMenuContent>
         <OverflowMenuControl hasAdditionalOptions>
           <Dropdown
+            className="additional-options-overflow-menu"
             onSelect={this.onAdditionalOptionsSelect}
             toggle={(toggleRef) => (
               <MenuToggle
@@ -240,6 +242,7 @@ export class OverflowMenuDemo extends React.Component {
         </OverflowMenuContent>
         <OverflowMenuControl hasAdditionalOptions>
           <Dropdown
+            className="persist-overflow-menu"
             onSelect={this.onPersistSelect}
             toggle={(toggleRef) => (
               <MenuToggle
@@ -315,6 +318,7 @@ export class OverflowMenuDemo extends React.Component {
           </OverflowMenuContent>
           <OverflowMenuControl>
             <Dropdown
+              className="container-breakpoint-overflow-menu"
               onSelect={this.onContainerBreakpointSelect}
               toggle={(toggleRef) => (
                 <MenuToggle
