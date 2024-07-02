@@ -129,6 +129,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps> {
             aria-expanded={isExpanded}
             onClick={onClick}
             aria-label={ariaLabel || 'Menu toggle'}
+            tabIndex={-1}
           >
             {toggleControls}
           </button>

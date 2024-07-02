@@ -1,19 +1,25 @@
 import React from 'react';
-import { Select, SelectList, SelectOption, SelectOptionProps } from '@patternfly/react-core/dist/esm/components/Select';
-import { MenuToggle, MenuToggleElement } from '@patternfly/react-core/dist/esm/components/MenuToggle';
+import {
+  Select,
+  SelectList,
+  SelectOption,
+  SelectOptionProps,
+  SelectProps
+} from '@patternfly/react-core/dist/esm/components/Select';
+import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 
-export interface SelectSimpleOption extends Omit<SelectOptionProps, 'content'> {
+export interface SimpleSelectOption extends Omit<SelectOptionProps, 'content'> {
   /** Content of the select option. */
   content: React.ReactNode;
   /** Value of the select option. */
   value: string | number;
 }
 
-export interface SelectSimpleProps {
+export interface SimpleSelectProps extends Omit<SelectProps, 'toggle'> {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */
-  initialOptions?: SelectSimpleOption[];
+  initialOptions?: SimpleSelectOption[];
   /** Callback triggered on selection. */
   onSelect?: (_event: React.MouseEvent<Element, MouseEvent>, selection: string | number) => void;
   /** Callback triggered when the select opens or closes. */
@@ -22,11 +28,13 @@ export interface SelectSimpleProps {
   isDisabled?: boolean;
   /** Content of the toggle. Defaults to the selected option. */
   toggleContent?: React.ReactNode;
-  /** Width of the toggle */
+  /** Width of the toggle. */
   toggleWidth?: string;
+  /** Additional props passed to the toggle. */
+  toggleProps?: MenuToggleProps;
 }
 
-const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
+const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
   innerRef,
   initialOptions,
   isDisabled,
@@ -34,8 +42,9 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
   onToggle,
   toggleContent,
   toggleWidth = '200px',
+  toggleProps,
   ...props
-}: SelectSimpleProps) => {
+}: SimpleSelectProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string>('Select a value');
 
@@ -43,7 +52,7 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
     const { content, value, ...props } = option;
     const isSelected = selected.includes(`${value}`);
     return (
-      <SelectOption {...props} value={value} key={value} isSelected={isSelected}>
+      <SelectOption value={value} key={value} isSelected={isSelected} {...props}>
         {content}
       </SelectOption>
     );
@@ -57,6 +66,7 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
   const _onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     onSelect && onSelect(_event, value);
     setSelected(value as string);
+    onToggle && onToggle(!false);
     setIsOpen(false);
   };
 
@@ -71,6 +81,7 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
           width: toggleWidth
         } as React.CSSProperties
       }
+      {...toggleProps}
     >
       {toggleContent ? toggleContent : selected}
     </MenuToggle>
@@ -78,11 +89,13 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
 
   return (
     <Select
-      id="single-select"
       isOpen={isOpen}
       selected={selected}
       onSelect={_onSelect}
-      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      onOpenChange={(isOpen) => {
+        onToggle && onToggle(isOpen);
+        setIsOpen(isOpen);
+      }}
       toggle={toggle}
       shouldFocusToggleOnSelect
       ref={innerRef}
@@ -93,8 +106,8 @@ const SelectSimpleBase: React.FunctionComponent<SelectSimpleProps> = ({
   );
 };
 
-export const SelectSimple = React.forwardRef((props: SelectSimpleProps, ref: React.Ref<any>) => (
-  <SelectSimpleBase {...props} innerRef={ref} />
+export const SimpleSelect = React.forwardRef((props: SimpleSelectProps, ref: React.Ref<any>) => (
+  <SimpleSelectBase {...props} innerRef={ref} />
 ));
 
-SelectSimple.displayName = 'SelectSimple';
+SimpleSelect.displayName = 'SimpleSelect';
