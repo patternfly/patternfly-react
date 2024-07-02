@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.74](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.73...demo-app-ts@5.1.1-alpha.74) (2024-07-02)
+
+### Bug Fixes
+
+- **Popper:** updated default appendTo prop for Penta styling ([#10675](https://github.com/patternfly/patternfly-react/issues/10675)) ([daef02d](https://github.com/patternfly/patternfly-react/commit/daef02d52c194ebd9c4a0863629e82367177c4f5))
+
 ## [5.1.1-alpha.73](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.72...demo-app-ts@5.1.1-alpha.73) (2024-07-01)
 
 **Note:** Version bump only for package demo-app-ts

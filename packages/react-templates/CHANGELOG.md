@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.0.0-alpha.24...@patternfly/react-templates@6.0.0-alpha.25) (2024-07-02)
+
+### Bug Fixes
+
+- **Popper:** updated default appendTo prop for Penta styling ([#10675](https://github.com/patternfly/patternfly-react/issues/10675)) ([daef02d](https://github.com/patternfly/patternfly-react/commit/daef02d52c194ebd9c4a0863629e82367177c4f5))
+
 # [6.0.0-alpha.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.0.0-alpha.23...@patternfly/react-templates@6.0.0-alpha.24) (2024-07-01)
 
 **Note:** Version bump only for package @patternfly/react-templates

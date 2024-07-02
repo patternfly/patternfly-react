@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.36...@patternfly/react-integration@6.0.0-alpha.37) (2024-07-02)
+
+### Bug Fixes
+
+- **Popper:** updated default appendTo prop for Penta styling ([#10675](https://github.com/patternfly/patternfly-react/issues/10675)) ([daef02d](https://github.com/patternfly/patternfly-react/commit/daef02d52c194ebd9c4a0863629e82367177c4f5))
+
 # [6.0.0-alpha.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.35...@patternfly/react-integration@6.0.0-alpha.36) (2024-06-26)
 
 ### Features
