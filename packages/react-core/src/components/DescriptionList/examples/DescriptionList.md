@@ -17,7 +17,7 @@ propComponents:
 
 import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup, DescriptionListTermHelpText, DescriptionListTermHelpTextButton, Popover, Checkbox, Card } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
-import Icon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import BookIcon from '@patternfly/react-icons/dist/esm/icons/book-icon';
 import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';
 import GlobeIcon from '@patternfly/react-icons/dist/esm/icons/globe-icon';
