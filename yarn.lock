@@ -3021,28 +3021,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/ast-helpers@npm:^1.16.9":
-  version: 1.16.9
-  resolution: "@patternfly/ast-helpers@npm:1.16.9"
+"@patternfly/ast-helpers@npm:^1.16.10":
+  version: 1.16.10
+  resolution: "@patternfly/ast-helpers@npm:1.16.10"
   dependencies:
     acorn: "npm:^8.4.1"
     acorn-class-fields: "npm:^1.0.0"
     acorn-jsx: "npm:^5.3.2"
     acorn-static-class-features: "npm:^1.0.0"
     astring: "npm:^1.7.5"
-  checksum: 10c0/fd6aa2bedd62ca8e05a2dc503c1acc92a922787deb2db641f61f0c21918f0abd3013e0a00e5cc806c25e1eec56d4dbe24104ef86d9cfa03343c9bf752429ad83
+  checksum: 10c0/82b14b492dd212f0cfb53f42bc2811740e3e5ae81f7fcca513910d92aa0b4eff6a7d9918fe5bbae811a39650c8b2c05cedca2fcb3cee2c5e160d5a6068601ec1
   languageName: node
   linkType: hard
 
-"@patternfly/documentation-framework@npm:^5.16.9":
-  version: 5.16.9
-  resolution: "@patternfly/documentation-framework@npm:5.16.9"
+"@patternfly/documentation-framework@npm:^5.16.10":
+  version: 5.16.10
+  resolution: "@patternfly/documentation-framework@npm:5.16.10"
   dependencies:
     "@babel/core": "npm:^7.24.3"
     "@babel/preset-env": "npm:^7.24.3"
     "@babel/preset-react": "npm:^7.24.1"
     "@mdx-js/util": "npm:1.6.16"
-    "@patternfly/ast-helpers": "npm:^1.16.9"
+    "@patternfly/ast-helpers": "npm:^1.16.10"
     "@reach/router": "npm:@gatsbyjs/reach-router@1.3.9"
     autoprefixer: "npm:9.8.6"
     babel-loader: "npm:^9.1.3"
@@ -3071,7 +3071,7 @@ __metadata:
     null-loader: "npm:4.0.1"
     parse-entities: "npm:2.0.0"
     path-browserify: "npm:1.0.1"
-    postcss: "npm:8.4.33"
+    postcss: "npm:8.4.39"
     postcss-loader: "npm:7.1.0"
     process: "npm:^0.11.10"
     puppeteer: "npm:19.11.1"
@@ -3110,7 +3110,7 @@ __metadata:
     react-dom: ^17.0.0 || ^18.0.0
   bin:
     pf-docs-framework: scripts/cli/cli.js
-  checksum: 10c0/00da3baea969b7d247ca94798b302f3850e25b8277b4f31483e677440ae57bf45f4becd5b0fe695c73cbe668a947d1bc7f7c394ee6cba6d1755321b8b88300eb
+  checksum: 10c0/efef4d1726c38dd70619f74cafd3b93817b7277874284357a33890cfa4ddcc6a160b24f0b2513f2623a1b4eeba395a43628a4ce23e3bc5315de73c9b359c4fac
   languageName: node
   linkType: hard
 
@@ -3213,7 +3213,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
-    "@patternfly/documentation-framework": "npm:^5.16.9"
+    "@patternfly/documentation-framework": "npm:^5.16.10"
     "@patternfly/patternfly": "npm:5.4.0-prerelease.6"
     "@patternfly/patternfly-a11y": "npm:4.3.1"
     "@patternfly/react-charts": "workspace:^"
@@ -16530,14 +16530,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.33":
-  version: 8.4.33
-  resolution: "postcss@npm:8.4.33"
+"postcss@npm:8.4.39":
+  version: 8.4.39
+  resolution: "postcss@npm:8.4.39"
   dependencies:
     nanoid: "npm:^3.3.7"
-    picocolors: "npm:^1.0.0"
-    source-map-js: "npm:^1.0.2"
-  checksum: 10c0/16eda83458fcd8a91bece287b5920c7f57164c3ea293e6c80d0ea71ce7843007bcd8592260a5160b9a7f02693e6ac93e2495b02d8c7596d3f3f72c1447e3ba79
+    picocolors: "npm:^1.0.1"
+    source-map-js: "npm:^1.2.0"
+  checksum: 10c0/16f5ac3c4e32ee76d1582b3c0dcf1a1fdb91334a45ad755eeb881ccc50318fb8d64047de4f1601ac96e30061df203f0f2e2edbdc0bfc49b9c57bc9fb9bedaea3
   languageName: node
   linkType: hard
 
@@ -18646,7 +18646,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-js@npm:>=0.6.2 <2.0.0, source-map-js@npm:^1.0.2, source-map-js@npm:^1.2.0":
+"source-map-js@npm:>=0.6.2 <2.0.0, source-map-js@npm:^1.2.0":
   version: 1.2.0
   resolution: "source-map-js@npm:1.2.0"
   checksum: 10c0/7e5f896ac10a3a50fe2898e5009c58ff0dc102dcb056ed27a354623a0ece8954d4b2649e1a1b2b52ef2e161d26f8859c7710350930751640e71e374fe2d321a4
