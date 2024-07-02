@@ -54,9 +54,12 @@ export const SliderActions: React.FunctionComponent = () => {
   };
 
   const buildAction = (isDisabled: boolean) => (
-    <Button variant="plain" aria-label={isDisabled ? 'Lock' : 'Unlock'} onClick={() => setIsDisabled(!isDisabled)}>
-      {isDisabled ? <LockIcon /> : <LockOpenIcon />}
-    </Button>
+    <Button
+      variant="plain"
+      aria-label={isDisabled ? 'Lock' : 'Unlock'}
+      onClick={() => setIsDisabled(!isDisabled)}
+      icon={isDisabled ? <LockIcon /> : <LockOpenIcon />}
+    />
   );
 
   return (
@@ -65,16 +68,8 @@ export const SliderActions: React.FunctionComponent = () => {
       <Slider
         value={value1}
         onChange={onChange1}
-        startActions={
-          <Button variant="plain" aria-label="Minus" onClick={onMinusClick}>
-            <MinusIcon />
-          </Button>
-        }
-        endActions={
-          <Button variant="plain" aria-label="Plus" onClick={onPlusClick}>
-            <PlusIcon />
-          </Button>
-        }
+        startActions={<Button variant="plain" aria-label="Minus" onClick={onMinusClick} icon={<MinusIcon />} />}
+        endActions={<Button variant="plain" aria-label="Plus" onClick={onPlusClick} icon={<PlusIcon />} />}
       />
       <br />
       <br />

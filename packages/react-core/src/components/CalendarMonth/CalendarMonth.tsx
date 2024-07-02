@@ -292,9 +292,8 @@ export const CalendarMonth = ({
             variant="plain"
             aria-label={prevMonthAriaLabel}
             onClick={(ev: React.MouseEvent) => onMonthClick(ev, prevMonth)}
-          >
-            <AngleLeftIcon aria-hidden={true} />
-          </Button>
+            icon={<AngleLeftIcon aria-hidden={true} />}
+          />
         </div>
         <InputGroup>
           <InputGroupItem isFill>
@@ -359,9 +358,8 @@ export const CalendarMonth = ({
             variant="plain"
             aria-label={nextMonthAriaLabel}
             onClick={(ev: React.MouseEvent) => onMonthClick(ev, nextMonth)}
-          >
-            <AngleRightIcon aria-hidden={true} />
-          </Button>
+            icon={<AngleRightIcon aria-hidden={true} />}
+          />
         </div>
       </div>
       <table className={styles.calendarMonthCalendar} onMouseLeave={() => setHoveredDate(undefined)}>

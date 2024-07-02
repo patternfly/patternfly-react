@@ -174,19 +174,13 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
       </ToolbarToggleGroup>
       <ToolbarGroup variant="icon-button-group">
         <ToolbarItem>
-          <Button variant="plain" aria-label="edit">
-            <EditIcon />
-          </Button>
+          <Button variant="plain" aria-label="edit" icon={<EditIcon />} />
         </ToolbarItem>
         <ToolbarItem>
-          <Button variant="plain" aria-label="clone">
-            <CloneIcon />
-          </Button>
+          <Button variant="plain" aria-label="clone" icon={<CloneIcon />} />
         </ToolbarItem>
         <ToolbarItem>
-          <Button variant="plain" aria-label="sync">
-            <SyncIcon />
-          </Button>
+          <Button variant="plain" aria-label="sync" icon={<SyncIcon />} />
         </ToolbarItem>
       </ToolbarGroup>
     </React.Fragment>

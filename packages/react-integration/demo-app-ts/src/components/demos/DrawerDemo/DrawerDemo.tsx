@@ -123,28 +123,30 @@ export class DrawerDemo extends Component<DrawerProps, DrawerDemoState> {
         <Button id="toggleButton" onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer id="basic-drawer" isExpanded={isExpanded} onExpand={this.onExpand} position="bottom">
+        <Drawer
+          id="basic-drawer"
+          isExpanded={isExpanded}
+          onExpand={this.onExpand}
+          position="bottom"
+          style={{ minHeight: '300px', height: '300px' }}
+        >
           <DrawerSection colorVariant={DrawerColorVariant.default}>drawer-section</DrawerSection>
           <DrawerContent colorVariant={DrawerColorVariant.default} panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>
-        <br />
-        <br />
         <Button id="toggleFocusTrapButton" onClick={this.onFocusTrapClick}>
           Toggle Drawer with focus trap
         </Button>
-        <Drawer isExpanded={isFocusTrapExpanded}>
+        <Drawer isExpanded={isFocusTrapExpanded} style={{ minHeight: '300px', height: '300px' }}>
           <DrawerContent colorVariant={DrawerColorVariant.default} panelContent={focusTrapPanelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>
-        <br />
-        <br />
         <Button id="toggleCustomFocusButton" onClick={this.onCustomFocusClick}>
           Toggle Drawer with custom focus
         </Button>
-        <Drawer isExpanded={isCustomFocusExpanded}>
+        <Drawer isExpanded={isCustomFocusExpanded} style={{ minHeight: '300px', height: '300px' }}>
           <DrawerContent colorVariant={DrawerColorVariant.default} panelContent={customFocusPanelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>

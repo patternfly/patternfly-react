@@ -5,9 +5,7 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 export const MastheadInsets: React.FunctionComponent = () => (
   <Masthead id="inset-masthead" inset={{ default: 'insetSm' }}>
     <MastheadToggle>
-      <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
-        <BarsIcon />
-      </Button>
+      <Button variant="plain" onClick={() => {}} aria-label="Global navigation" icon={<BarsIcon />} />
     </MastheadToggle>
     <MastheadMain>
       <MastheadBrand component="a">Logo</MastheadBrand>

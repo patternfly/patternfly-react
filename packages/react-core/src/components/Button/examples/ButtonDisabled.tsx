@@ -35,18 +35,14 @@ export const ButtonDisabled: React.FunctionComponent = () => (
       <Button variant="link" isDanger isDisabled>
         Danger link
       </Button>
-      <Button isDisabled variant="plain" aria-label="Action">
-        <TimesIcon />
-      </Button>
+      <Button isDisabled variant="plain" aria-label="Action" icon={<TimesIcon />} />
     </Flex>
     <br />
     <Flex columnGap={{ default: 'columnGapSm' }}>
       <Button isDisabled variant="control">
         Control
       </Button>
-      <Button isDisabled variant="control" aria-label="Copy">
-        <CopyIcon />
-      </Button>
+      <Button isDisabled variant="control" aria-label="Copy" icon={<CopyIcon />} />
     </Flex>
   </>
 );

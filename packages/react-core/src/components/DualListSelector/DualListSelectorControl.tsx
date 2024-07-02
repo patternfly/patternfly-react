@@ -11,6 +11,8 @@ import styles from '@patternfly/react-styles/css/components/DualListSelector/dua
 export interface DualListSelectorControlProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onClick'> {
   /** Content to be rendered in the dual list selector control. */
   children?: React.ReactNode;
+  /** Icon to be rendered in the dual list selector control. */
+  icon?: React.ReactNode;
   /** @hide forwarded ref */
   innerRef?: React.Ref<any>;
   /** Flag indicating the control is disabled. */
@@ -30,6 +32,7 @@ export interface DualListSelectorControlProps extends Omit<React.HTMLProps<HTMLD
 export const DualListSelectorControlBase: React.FunctionComponent<DualListSelectorControlProps> = ({
   innerRef,
   children,
+  icon,
   className,
   'aria-label': ariaLabel,
   isDisabled = true,
@@ -50,6 +53,7 @@ export const DualListSelectorControlBase: React.FunctionComponent<DualListSelect
         aria-label={ariaLabel}
         tabIndex={-1}
         ref={ref}
+        icon={icon}
       >
         {children}
       </Button>

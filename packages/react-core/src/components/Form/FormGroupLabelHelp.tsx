@@ -45,9 +45,8 @@ const FormGroupLabelHelpBase: React.FunctionComponent<FormGroupLabelHelpProps> =
       variant="plain"
       hasNoPadding
       {...props}
-    >
-      <QuestionCircleIcon />
-    </Button>
+      icon={<QuestionCircleIcon />}
+    />
   );
 };
 

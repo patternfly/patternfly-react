@@ -15,9 +15,7 @@ import pfIcon from '../../assets/PF-HorizontalLogo-Color.svg';
 export const MastheadIconRouterLink: React.FunctionComponent = () => (
   <Masthead id="icon-router-link">
     <MastheadToggle>
-      <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
-        <BarsIcon />
-      </Button>
+      <Button variant="plain" onClick={() => {}} aria-label="Global navigation" icon={<BarsIcon />} />
     </MastheadToggle>
     <MastheadMain>
       <MastheadBrand component={(props) => <Link {...props} to="#" />}>

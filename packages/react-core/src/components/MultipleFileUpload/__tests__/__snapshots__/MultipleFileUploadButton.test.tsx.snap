@@ -13,7 +13,11 @@ exports[`MultipleFileUploadButton renders custom class names 1`] = `
       data-ouia-safe="true"
       type="button"
     >
-      Upload
+      <span
+        class="pf-v6-c-button__text"
+      >
+        Upload
+      </span>
     </button>
   </div>
 </DocumentFragment>
@@ -33,7 +37,11 @@ exports[`MultipleFileUploadButton renders with aria-label applied to the button 
       data-ouia-safe="true"
       type="button"
     >
-      Upload
+      <span
+        class="pf-v6-c-button__text"
+      >
+        Upload
+      </span>
     </button>
   </div>
 </DocumentFragment>
@@ -52,7 +60,11 @@ exports[`MultipleFileUploadButton renders with expected class names 1`] = `
       data-ouia-safe="true"
       type="button"
     >
-      Upload
+      <span
+        class="pf-v6-c-button__text"
+      >
+        Upload
+      </span>
     </button>
   </div>
 </DocumentFragment>
@@ -71,7 +83,11 @@ exports[`MultipleFileUploadButton renders with label applied to the button 1`] =
       data-ouia-safe="true"
       type="button"
     >
-      test
+      <span
+        class="pf-v6-c-button__text"
+      >
+        test
+      </span>
     </button>
   </div>
 </DocumentFragment>

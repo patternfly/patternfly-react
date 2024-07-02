@@ -83,11 +83,10 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
         className={className}
         id={id}
         aria-labelledby={`${id} ${textId}`}
+        icon={<CopyIcon />}
         {...props}
         ref={triggerRef}
-      >
-        <CopyIcon />
-      </Button>
+      />
     </Tooltip>
   );
 };

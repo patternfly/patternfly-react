@@ -311,8 +311,11 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
         </Select>
       </ToolbarItem>
       <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
-        <Button variant={isPaused ? 'plain' : 'link'} onClick={pauseOrStart}>
-          {isPaused ? <PlayIcon /> : <PauseIcon />}
+        <Button
+          variant={isPaused ? 'plain' : 'link'}
+          onClick={pauseOrStart}
+          icon={isPaused ? <PlayIcon /> : <PauseIcon />}
+        >
           {isPaused ? ` Resume Log` : ` Pause Log`}
         </Button>
       </ToolbarItem>
@@ -364,9 +367,12 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
       </ToolbarItem>
       <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
         <Tooltip position="top" content={<div>{isPaused ? 'Resume log' : 'Pause log'}</div>}>
-          <Button variant="plain" onClick={pauseOrStart} aria-label={isPaused ? 'Play' : 'Paused'}>
-            {isPaused ? <PlayIcon /> : <PauseIcon />}
-          </Button>
+          <Button
+            variant="plain"
+            onClick={pauseOrStart}
+            aria-label={isPaused ? 'Play' : 'Paused'}
+            icon={isPaused ? <PlayIcon /> : <PauseIcon />}
+          />
         </Tooltip>
       </ToolbarItem>
     </React.Fragment>
@@ -465,9 +471,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
       {rightAlignedItemsMobile}
       <ToolbarItem>
         <Tooltip position="top" content={<div>Expand</div>}>
-          <Button variant="plain" aria-label="expand">
-            <ExpandIcon />
-          </Button>
+          <Button variant="plain" aria-label="expand" icon={<ExpandIcon />} />
         </Tooltip>
       </ToolbarItem>
     </React.Fragment>

@@ -44,7 +44,11 @@ exports[`simple fileupload 1`] = `
             data-ouia-safe="true"
             type="button"
           >
-            Browse...
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Browse...
+            </span>
           </button>
         </div>
         <div
@@ -59,7 +63,11 @@ exports[`simple fileupload 1`] = `
             disabled=""
             type="button"
           >
-            Clear
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Clear
+            </span>
           </button>
         </div>
       </div>

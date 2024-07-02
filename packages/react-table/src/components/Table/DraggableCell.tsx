@@ -24,9 +24,8 @@ export const DraggableCell: React.FunctionComponent<DraggableCellProps> = ({
     aria-label={ariaLabel || `Draggable row draggable button`}
     onClick={onClick}
     {...props}
-  >
-    <GripVerticalIcon aria-hidden />
-  </Button>
+    icon={<GripVerticalIcon aria-hidden />}
+  />
 );
 
 DraggableCell.displayName = 'DraggableCell';

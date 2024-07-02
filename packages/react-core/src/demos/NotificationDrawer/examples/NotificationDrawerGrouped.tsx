@@ -246,14 +246,10 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
               }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
             >
               <ToolbarItem>
-                <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-                  <CogIcon />
-                </Button>
+                <Button aria-label="Settings actions" variant={ButtonVariant.plain} icon={<CogIcon />} />
               </ToolbarItem>
               <ToolbarItem>
-                <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                  <QuestionCircleIcon />
-                </Button>
+                <Button aria-label="Help actions" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
               </ToolbarItem>
             </ToolbarGroup>
           </ToolbarGroup>

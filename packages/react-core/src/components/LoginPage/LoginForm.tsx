@@ -127,9 +127,8 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
                 variant="control"
                 onClick={() => setPasswordHidden(!passwordHidden)}
                 aria-label={passwordHidden ? showPasswordAriaLabel : hidePasswordAriaLabel}
-              >
-                {passwordHidden ? <EyeIcon /> : <EyeSlashIcon />}
-              </Button>
+                icon={passwordHidden ? <EyeIcon /> : <EyeSlashIcon />}
+              />
             </InputGroupItem>
           </InputGroup>
         )}

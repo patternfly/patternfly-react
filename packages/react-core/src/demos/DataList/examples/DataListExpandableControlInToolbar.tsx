@@ -94,13 +94,14 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                   onClick={onToggleAll}
                   variant="plain"
                   aria-label={allExpanded ? 'Collapse all rows' : 'Expand all rows'}
-                >
-                  <Icon shouldMirrorRTL>
-                    <ToolbarExpandIconWrapper>
-                      <AngleRightIcon />
-                    </ToolbarExpandIconWrapper>
-                  </Icon>
-                </Button>
+                  icon={
+                    <Icon shouldMirrorRTL>
+                      <ToolbarExpandIconWrapper>
+                        <AngleRightIcon />
+                      </ToolbarExpandIconWrapper>
+                    </Icon>
+                  }
+                />
               </Tooltip>
             </ToolbarItem>
             <ToolbarItem>

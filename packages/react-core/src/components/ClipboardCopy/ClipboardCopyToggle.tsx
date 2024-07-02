@@ -31,10 +31,11 @@ export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyTogglePro
     aria-controls={contentId}
     aria-expanded={isExpanded}
     {...props}
-  >
-    <div className={css(styles.clipboardCopyToggleIcon)}>
-      <AngleRightIcon aria-hidden="true" />
-    </div>
-  </Button>
+    icon={
+      <div className={css(styles.clipboardCopyToggleIcon)}>
+        <AngleRightIcon aria-hidden="true" />
+      </div>
+    }
+  />
 );
 ClipboardCopyToggle.displayName = 'ClipboardCopyToggle';

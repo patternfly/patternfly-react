@@ -32,10 +32,9 @@ export const AlertActionCloseButton: React.FunctionComponent<AlertActionCloseBut
         onClick={onClose}
         aria-label={ariaLabel === '' ? `Close ${variantLabel || alertVariantLabel} alert: ${title}` : ariaLabel}
         className={className}
+        icon={<TimesIcon />}
         {...props}
-      >
-        <TimesIcon />
-      </Button>
+      />
     )}
   </AlertContext.Consumer>
 );

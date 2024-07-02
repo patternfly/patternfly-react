@@ -137,9 +137,8 @@ class NavList extends React.Component<NavListProps> {
                       onClick={this.scrollBack}
                       isDisabled={scrollViewAtStart}
                       tabIndex={isSidebarOpen ? null : -1}
-                    >
-                      <AngleLeftIcon />
-                    </Button>
+                      icon={<AngleLeftIcon />}
+                    />
                   </div>
                 )}
                 <ul
@@ -159,9 +158,8 @@ class NavList extends React.Component<NavListProps> {
                       onClick={this.scrollForward}
                       isDisabled={scrollViewAtEnd}
                       tabIndex={isSidebarOpen ? null : -1}
-                    >
-                      <AngleRightIcon />
-                    </Button>
+                      icon={<AngleRightIcon />}
+                    />
                   </div>
                 )}
               </React.Fragment>

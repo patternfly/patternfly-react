@@ -81,9 +81,11 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
           <div className={css(styles.dualListSelectorDraggable)}>
             {/** TODO once keyboard accessibility is enabled, remove `component=span`
              and add `aria-label={draggableButtonAriaLabel}` */}
-            <Button variant={ButtonVariant.plain} component="span">
-              <GripVerticalIcon style={{ verticalAlign: '-0.3em' }} />
-            </Button>
+            <Button
+              variant={ButtonVariant.plain}
+              component="span"
+              icon={<GripVerticalIcon style={{ verticalAlign: '-0.3em' }} />}
+            />
           </div>
         )}
         <span className={css(styles.dualListSelectorItem)}>

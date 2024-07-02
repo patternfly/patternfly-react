@@ -219,9 +219,12 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
           aria-controls="select-multi-typeahead-checkbox-listbox"
         />
         <TextInputGroupUtilities {...(selected.length === 0 ? { style: { display: 'none' } } : {})}>
-          <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
-            <TimesIcon aria-hidden />
-          </Button>
+          <Button
+            variant="plain"
+            onClick={onClearButtonClick}
+            aria-label="Clear input value"
+            icon={<TimesIcon aria-hidden />}
+          />
         </TextInputGroupUtilities>
       </TextInputGroup>
     </MenuToggle>

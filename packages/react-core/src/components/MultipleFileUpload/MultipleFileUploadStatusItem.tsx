@@ -166,9 +166,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
         />
       </div>
       <div className={`${styles.multipleFileUploadStatusItem}-close`}>
-        <Button variant="plain" aria-label={buttonAriaLabel} onClick={onClearClick}>
-          <TimesIcon />
-        </Button>
+        <Button variant="plain" aria-label={buttonAriaLabel} onClick={onClearClick} icon={<TimesIcon />} />
       </div>
     </li>
   );

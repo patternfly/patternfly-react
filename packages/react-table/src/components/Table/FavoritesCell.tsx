@@ -33,9 +33,8 @@ export const FavoritesCell: React.FunctionComponent<FavoritesCellProps> = ({
       onClick={onFavorite}
       {...ariaProps}
       {...props}
-    >
-      <StarIcon aria-hidden />
-    </Button>
+      icon={<StarIcon aria-hidden />}
+    />
   );
 };
 FavoritesCell.displayName = 'FavoritesCell';

@@ -921,7 +921,11 @@ exports[`Page Check page to verify skip to content points to main content region
         data-ouia-safe="true"
         href="#main-content-page-layout-test-nav"
       >
-        Skip to Content
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Skip to Content
+        </span>
       </a>
     </div>
     <header

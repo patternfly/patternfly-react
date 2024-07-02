@@ -35,7 +35,7 @@ test('Renders with class pf-v6-c-button by default', () => {
 
 test('Renders with class pf-m-primary by default', () => {
   render(<Button>Button</Button>);
-  expect(screen.getByText('Button')).toHaveClass('pf-m-primary');
+  expect(screen.getByText('Button').parentElement).toHaveClass('pf-m-primary');
 });
 
 test('Renders with custom class', () => {
@@ -76,7 +76,7 @@ test('Renders with class pf-m-disabled when isDisabled = true and component is n
       Disabled Anchor Button
     </Button>
   );
-  expect(screen.getByText('Disabled Anchor Button')).toHaveClass('pf-m-disabled');
+  expect(screen.getByText('Disabled Anchor Button').parentElement).toHaveClass('pf-m-disabled');
 });
 
 test('Renders with class pf-m-aria-disabled when isAriaDisabled = true', () => {
@@ -206,14 +206,14 @@ test('Renders custom icon with class pf-m-in-progress when isLoading = true and 
   );
 
   expect(screen.getByText('ICON')).toBeVisible();
-  expect(screen.getByText('ICON').parentElement).toHaveClass('pf-m-in-progress');
+  expect(screen.getByText('ICON').parentElement?.parentElement).toHaveClass('pf-m-in-progress');
 });
 
 test('Renders as custom component when component is passed', () => {
   const component = 'a';
   render(<Button component={component}>anchor button</Button>);
 
-  expect(screen.getByText('anchor button').tagName).toBe('A');
+  expect(screen.getByText('anchor button').parentElement?.tagName).toBe('A');
 });
 
 test('aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled', () => {
@@ -222,7 +222,7 @@ test('aria-disabled is set to true and tabIndex to -1 if component is not a butt
       Disabled Anchor Button
     </Button>
   );
-  const anchor = screen.getByText('Disabled Anchor Button');
+  const anchor = screen.getByText('Disabled Anchor Button').parentElement;
   expect(anchor).toHaveAttribute('tabindex', '-1');
   expect(anchor).toHaveAttribute('aria-disabled', 'true');
 });

@@ -238,9 +238,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       aria-label={closeBtnAriaLabel || `Close ${children}`}
       {...(isClickableDisabled && { isDisabled: true })}
       {...closeBtnProps}
-    >
-      <TimesIcon />
-    </Button>
+      icon={<TimesIcon />}
+    />
   );
 
   const closeButton = <span className={css(styles.labelActions)}>{closeBtn || defaultCloseButton}</span>;

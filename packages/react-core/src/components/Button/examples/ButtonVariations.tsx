@@ -42,16 +42,12 @@ export const ButtonVariations: React.FunctionComponent = () => (
       <Button variant="link" isDanger>
         Danger link
       </Button>
-      <Button variant="plain" aria-label="Action">
-        <TimesIcon />
-      </Button>
+      <Button variant="plain" aria-label="Action" icon={<TimesIcon />} />
     </Flex>
     <br />
     <Flex columnGap={{ default: 'columnGapSm' }}>
       <Button variant="control">Control</Button>
-      <Button variant="control" aria-label="Copy">
-        <CopyIcon />
-      </Button>
+      <Button variant="control" aria-label="Copy" icon={<CopyIcon />} />
     </Flex>
     <br />
     <Flex columnGap={{ default: 'columnGapSm' }}>

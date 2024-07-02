@@ -152,30 +152,26 @@ export const DualListSelectorSearch: React.FunctionComponent = () => {
           isDisabled={!availableOptions.some((option) => option.selected)}
           onClick={() => moveSelected(true)}
           aria-label="Add selected"
-        >
-          <AngleRightIcon />
-        </DualListSelectorControl>
+          icon={<AngleRightIcon />}
+        />
         <DualListSelectorControl
           isDisabled={availableOptions.length === 0}
           onClick={() => moveAll(true)}
           aria-label="Add all"
-        >
-          <AngleDoubleRightIcon />
-        </DualListSelectorControl>
+          icon={<AngleDoubleRightIcon />}
+        />
         <DualListSelectorControl
           isDisabled={chosenOptions.length === 0}
           onClick={() => moveAll(false)}
           aria-label="Remove all"
-        >
-          <AngleDoubleLeftIcon />
-        </DualListSelectorControl>
+          icon={<AngleDoubleLeftIcon />}
+        />
         <DualListSelectorControl
           onClick={() => moveSelected(false)}
           isDisabled={!chosenOptions.some((option) => option.selected)}
           aria-label="Remove selected"
-        >
-          <AngleLeftIcon />
-        </DualListSelectorControl>
+          icon={<AngleLeftIcon />}
+        />
       </DualListSelectorControlsWrapper>
       <DualListSelectorPane
         title="Chosen options"

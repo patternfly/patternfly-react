@@ -5,13 +5,7 @@ exports[`Matches snapshot 1`] = `
   <button
     aria-expanded="false"
     aria-label="Toggle variantLabel alert: title"
-  >
-    <span
-      class="pf-v6-c-alert__toggle-icon"
-    >
-      Icon mock
-    </span>
-  </button>
+  />
   <p>
     variant: plain
   </p>
@@ -28,6 +22,12 @@ exports[`Matches snapshot 1`] = `
   </p>
   <div
     data-testid="icon"
-  />
+  >
+    <span
+      class="pf-v6-c-alert__toggle-icon"
+    >
+      Icon mock
+    </span>
+  </div>
 </DocumentFragment>
 `;

@@ -229,9 +229,12 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
         {showUtilities && (
           <TextInputGroupUtilities>
             {showClearButton && (
-              <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button for chips and input">
-                <TimesIcon />
-              </Button>
+              <Button
+                variant="plain"
+                onClick={clearChipsAndInput}
+                aria-label="Clear button for chips and input"
+                icon={<TimesIcon />}
+              />
             )}
           </TextInputGroupUtilities>
         )}

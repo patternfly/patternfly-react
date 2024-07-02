@@ -154,19 +154,13 @@ export const ToolbarGroups: React.FunctionComponent = () => {
   const iconButtonGroupItems = (
     <React.Fragment>
       <ToolbarItem>
-        <Button variant="plain" aria-label="edit">
-          <EditIcon />
-        </Button>
+        <Button variant="plain" aria-label="edit" icon={<EditIcon />} />
       </ToolbarItem>
       <ToolbarItem>
-        <Button variant="plain" aria-label="clone">
-          <CloneIcon />
-        </Button>
+        <Button variant="plain" aria-label="clone" icon={<CloneIcon />} />
       </ToolbarItem>
       <ToolbarItem>
-        <Button variant="plain" aria-label="sync">
-          <SyncIcon />
-        </Button>
+        <Button variant="plain" aria-label="sync" icon={<SyncIcon />} />
       </ToolbarItem>
     </React.Fragment>
   );

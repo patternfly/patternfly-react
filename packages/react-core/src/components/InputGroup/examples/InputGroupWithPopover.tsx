@@ -23,9 +23,7 @@ export const InputGroupWithPopover: React.FunctionComponent = () => {
             bodyContent="This field is an example of an input group with a popover."
             appendTo={() => inputGroupRef1.current}
           >
-            <Button variant="control" aria-label="popover for input">
-              <QuestionCircleIcon />
-            </Button>
+            <Button variant="control" aria-label="popover for input" icon={<QuestionCircleIcon />} />
           </Popover>
         </InputGroupItem>
       </InputGroup>
@@ -46,9 +44,7 @@ export const InputGroupWithPopover: React.FunctionComponent = () => {
             bodyContent="This field is an example of an input group with a popover."
             appendTo={() => inputGroupRef2.current}
           >
-            <Button variant="plain" aria-label="Popover for input">
-              <QuestionCircleIcon />
-            </Button>
+            <Button variant="plain" aria-label="Popover for input" icon={<QuestionCircleIcon />} />
           </Popover>
         </InputGroupItem>
       </InputGroup>

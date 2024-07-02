@@ -79,19 +79,13 @@ export const OverflowMenuGroupTypes: React.FunctionComponent = () => {
         </OverflowMenuGroup>
         <OverflowMenuGroup groupType="icon">
           <OverflowMenuItem>
-            <Button variant={ButtonVariant.plain} aria-label="Align left">
-              <AlignLeftIcon />
-            </Button>
+            <Button variant={ButtonVariant.plain} aria-label="Align left" icon={<AlignLeftIcon />} />
           </OverflowMenuItem>
           <OverflowMenuItem>
-            <Button variant={ButtonVariant.plain} aria-label="Align center">
-              <AlignCenterIcon />
-            </Button>
+            <Button variant={ButtonVariant.plain} aria-label="Align center" icon={<AlignCenterIcon />} />
           </OverflowMenuItem>
           <OverflowMenuItem>
-            <Button variant={ButtonVariant.plain} aria-label="Align right">
-              <AlignRightIcon />
-            </Button>
+            <Button variant={ButtonVariant.plain} aria-label="Align right" icon={<AlignRightIcon />} />
           </OverflowMenuItem>
         </OverflowMenuGroup>
       </OverflowMenuContent>
