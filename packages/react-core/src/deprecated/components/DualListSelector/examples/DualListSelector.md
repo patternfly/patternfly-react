@@ -27,7 +27,6 @@ DualListSelectorListItem as DLSListItemDeprecated,
 DualListSelectorControlsWrapper as DLSControlsWrapperDeprecated,
 DualListSelectorControl as DLSControlDeprecated,
 DualListSelectorTree as DLSTreeDeprecated,
-DualListSelectorTreeItemData as DLSTreeItemDataDeprecated,
 } from '@patternfly/react-core/deprecated';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';

@@ -17,7 +17,7 @@ export interface DropdownPopperProps {
   maxWidth?: string | 'trigger';
   /** Enable to flip the popper when it reaches the boundary */
   enableFlip?: boolean;
-  /** The container to append the popper to. Defaults to 'inline'. */
+  /** The container to append the popper to. Defaults to document.body. */
   appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
   /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
   preventOverflow?: boolean;
