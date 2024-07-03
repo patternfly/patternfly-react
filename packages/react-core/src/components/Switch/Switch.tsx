@@ -12,10 +12,12 @@ export interface SwitchProps
   id?: string;
   /** Additional classes added to the switch */
   className?: string;
-  /** Text value for the visible label when on */
+  /** Text value for the visible label */
   label?: React.ReactNode;
-  /** Text value for the visible label when off */
-  labelOff?: React.ReactNode;
+  /** Adds an accessible name to the switch when the label prop is not passed, and must describe the isChecked="true" state. */
+  'aria-label'?: string;
+  /** Adds an accessible name to the switch via one or more referenced id(s). The computed accessible name must describe the isChecked="true" state. */
+  'aria-labelledby'?: string;
   /** Flag to show if the switch is checked when it is controlled by React state.
    * To make the switch uncontrolled instead use the defaultChecked prop, but do not use both.
    */
@@ -30,9 +32,7 @@ export interface SwitchProps
   isDisabled?: boolean;
   /** A callback for when the switch selection changes. (event, isChecked) => {} */
   onChange?: (event: React.FormEvent<HTMLInputElement>, checked: boolean) => void;
-  /** Adds accessible text to the switch, and should describe the isChecked="true" state. When label is defined, aria-label should be set to the text string that is visible when isChecked is true. */
-  'aria-label'?: string;
-  /** Flag to reverse the layout of toggle and label (toggle on right). */
+  /** Flag to reverse the layout of toggle and label (label at start, toggle at end). */
   isReversed?: boolean;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
@@ -48,15 +48,18 @@ class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: str
     isChecked: true,
     isDisabled: false,
     isReversed: false,
-    'aria-label': '',
+    'aria-label': undefined,
+    'aria-labelledby': undefined,
     onChange: () => undefined as any
   };
 
   constructor(props: SwitchProps & OUIAProps) {
     super(props);
-    if (!props.label && !props['aria-label']) {
+    if (!props.label && !props['aria-label'] && !props['aria-labelledby']) {
       // eslint-disable-next-line no-console
-      console.error('Switch: Switch requires either a label or an aria-label to be specified');
+      console.error(
+        'Switch: Switch requires at least one of label, aria-labelledby, or aria-label props to be specified'
+      );
     }
 
     this.id = props.id || getUniqueId();
@@ -71,7 +74,6 @@ class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: str
       id,
       className,
       label,
-      labelOff,
       isChecked,
       defaultChecked,
       hasCheckIcon,
@@ -80,10 +82,16 @@ class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: str
       isReversed,
       ouiaId,
       ouiaSafe,
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
       ...props
     } = this.props;
 
-    const isAriaLabelledBy = props['aria-label'] === '';
+    const hasAccessibleName = label || ariaLabel || ariaLabelledBy;
+    const isAriaLabelledBy = hasAccessibleName && (!ariaLabel || ariaLabelledBy);
+    const useDefaultAriaLabelledBy = !ariaLabelledBy && !ariaLabel;
+    const ariaLabelledByIds = ariaLabelledBy ?? `${this.id}-label`;
+
     return (
       <label
         className={css(styles.switch, isReversed && styles.modifiers.reverse, className)}
@@ -94,10 +102,12 @@ class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: str
           id={this.id}
           className={css(styles.switchInput)}
           type="checkbox"
+          role="switch"
           onChange={(event) => onChange(event, event.target.checked)}
           {...(defaultChecked !== undefined ? { defaultChecked } : { checked: isChecked })}
           disabled={isDisabled}
-          aria-labelledby={!isAriaLabelledBy ? null : `${this.id}-${isChecked !== true ? 'off' : 'on'}`}
+          aria-labelledby={isAriaLabelledBy ? ariaLabelledByIds : null}
+          aria-label={ariaLabel}
           {...props}
         />
         {label !== undefined ? (
@@ -110,18 +120,11 @@ class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: str
               )}
             </span>
             <span
-              className={css(styles.switchLabel, styles.modifiers.on)}
-              id={isAriaLabelledBy ? `${this.id}-on` : null}
+              className={css(styles.switchLabel)}
+              id={isAriaLabelledBy && useDefaultAriaLabelledBy ? `${this.id}-label` : null}
               aria-hidden="true"
             >
               {label}
-            </span>
-            <span
-              className={css(styles.switchLabel, styles.modifiers.off)}
-              id={isAriaLabelledBy ? `${this.id}-off` : null}
-              aria-hidden="true"
-            >
-              {labelOff !== undefined ? labelOff : label}
             </span>
           </React.Fragment>
         ) : (

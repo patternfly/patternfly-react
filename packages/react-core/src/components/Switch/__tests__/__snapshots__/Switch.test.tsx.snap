@@ -14,6 +14,7 @@ exports[`Switch no label switch is checked 1`] = `
       checked=""
       class="pf-v6-c-switch__input"
       id="no-label-switch-is-checked"
+      role="switch"
       type="checkbox"
     />
     <span
@@ -55,6 +56,7 @@ exports[`Switch no label switch is not checked 1`] = `
       aria-label="Switch label"
       class="pf-v6-c-switch__input"
       id="no-label-switch-is-not-checked"
+      role="switch"
       type="checkbox"
     />
     <span
@@ -97,6 +99,7 @@ exports[`Switch switch is checked 1`] = `
       checked=""
       class="pf-v6-c-switch__input"
       id="switch-is-checked"
+      role="switch"
       type="checkbox"
     />
     <span
@@ -104,15 +107,9 @@ exports[`Switch switch is checked 1`] = `
     />
     <span
       aria-hidden="true"
-      class="pf-v6-c-switch__label pf-m-on"
+      class="pf-v6-c-switch__label"
     >
       On
-    </span>
-    <span
-      aria-hidden="true"
-      class="pf-v6-c-switch__label pf-m-off"
-    >
-      Off
     </span>
   </label>
 </DocumentFragment>
@@ -133,6 +130,7 @@ exports[`Switch switch is checked and disabled 1`] = `
       class="pf-v6-c-switch__input"
       disabled=""
       id="switch-is-checked-and-disabled"
+      role="switch"
       type="checkbox"
     />
     <span
@@ -174,6 +172,7 @@ exports[`Switch switch is not checked 1`] = `
       aria-label="Switch label"
       class="pf-v6-c-switch__input"
       id="switch-is-not-checked"
+      role="switch"
       type="checkbox"
     />
     <span
@@ -181,15 +180,9 @@ exports[`Switch switch is not checked 1`] = `
     />
     <span
       aria-hidden="true"
-      class="pf-v6-c-switch__label pf-m-on"
+      class="pf-v6-c-switch__label"
     >
       On
-    </span>
-    <span
-      aria-hidden="true"
-      class="pf-v6-c-switch__label pf-m-off"
-    >
-      Off
     </span>
   </label>
 </DocumentFragment>
@@ -209,6 +202,7 @@ exports[`Switch switch is not checked and disabled 1`] = `
       class="pf-v6-c-switch__input"
       disabled=""
       id="switch-is-not-checked-and-disabled"
+      role="switch"
       type="checkbox"
     />
     <span
@@ -247,11 +241,11 @@ exports[`Switch switch with only label is checked 1`] = `
     for="switch-is-checked"
   >
     <input
-      aria-label=""
-      aria-labelledby="switch-is-checked-on"
+      aria-labelledby="switch-is-checked-label"
       checked=""
       class="pf-v6-c-switch__input"
       id="switch-is-checked"
+      role="switch"
       type="checkbox"
     />
     <span
@@ -259,15 +253,8 @@ exports[`Switch switch with only label is checked 1`] = `
     />
     <span
       aria-hidden="true"
-      class="pf-v6-c-switch__label pf-m-on"
-      id="switch-is-checked-on"
-    >
-      On
-    </span>
-    <span
-      aria-hidden="true"
-      class="pf-v6-c-switch__label pf-m-off"
-      id="switch-is-checked-off"
+      class="pf-v6-c-switch__label"
+      id="switch-is-checked-label"
     >
       On
     </span>
@@ -285,10 +272,10 @@ exports[`Switch switch with only label is not checked 1`] = `
     for="switch-is-not-checked"
   >
     <input
-      aria-label=""
-      aria-labelledby="switch-is-not-checked-off"
+      aria-labelledby="switch-is-not-checked-label"
       class="pf-v6-c-switch__input"
       id="switch-is-not-checked"
+      role="switch"
       type="checkbox"
     />
     <span
@@ -296,15 +283,8 @@ exports[`Switch switch with only label is not checked 1`] = `
     />
     <span
       aria-hidden="true"
-      class="pf-v6-c-switch__label pf-m-on"
-      id="switch-is-not-checked-on"
-    >
-      Off
-    </span>
-    <span
-      aria-hidden="true"
-      class="pf-v6-c-switch__label pf-m-off"
-      id="switch-is-not-checked-off"
+      class="pf-v6-c-switch__label"
+      id="switch-is-not-checked-label"
     >
       Off
     </span>

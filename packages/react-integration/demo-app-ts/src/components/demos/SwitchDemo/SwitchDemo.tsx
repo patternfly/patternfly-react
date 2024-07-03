@@ -54,7 +54,6 @@ export class SwitchDemo extends Component<{}, SwitchState> {
         <Switch
           id="simple-switch"
           label={<div style={{ color: 'green' }}>Message when on</div>}
-          labelOff={<div style={{ color: 'red' }}>Message when off</div>}
           onChange={this.handleChangeSimple}
           aria-label="Switch"
           isChecked={isChecked}
@@ -62,7 +61,6 @@ export class SwitchDemo extends Component<{}, SwitchState> {
         <br />
         <Switch
           id="disabled-switch-off"
-          aria-label="disabled switch"
           label="Message when on"
           isChecked={false}
           isDisabled

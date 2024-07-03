@@ -8,5 +8,12 @@ export const SwitchWithoutLabel: React.FunctionComponent = () => {
     setIsChecked(checked);
   };
 
-  return <Switch id="no-label-switch-on" aria-label="Message when on" isChecked={isChecked} onChange={handleChange} />;
+  return (
+    <Switch
+      id="no-label-switch-on"
+      aria-label="Togglable option for no visible label example"
+      isChecked={isChecked}
+      onChange={handleChange}
+    />
+  );
 };

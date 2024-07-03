@@ -26,15 +26,13 @@ describe('Switch', () => {
   });
 
   test('switch is checked', () => {
-    const { asFragment } = render(
-      <Switch id="switch-is-checked" label="On" labelOff="Off" isChecked aria-label="Switch label" />
-    );
+    const { asFragment } = render(<Switch id="switch-is-checked" label="On" isChecked aria-label="Switch label" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('switch is not checked', () => {
     const { asFragment } = render(
-      <Switch id="switch-is-not-checked" label="On" labelOff="Off" isChecked={false} aria-label="Switch label" />
+      <Switch id="switch-is-not-checked" label="On" isChecked={false} aria-label="Switch label" />
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -84,7 +82,7 @@ describe('Switch', () => {
     expect(props.onChange).toHaveBeenCalledWith(expect.any(Object), true);
   });
 
-  test('should throw console error when no aria-label or label is given', () => {
+  test('should throw console error when no aria-label, aria-labelledby, or label is given', () => {
     const myMock = jest.fn();
 
     global.console = { ...global.console, error: myMock };
@@ -93,7 +91,7 @@ describe('Switch', () => {
     expect(myMock).toHaveBeenCalled();
   });
 
-  test('should not throw console error when label is given but no aria-label', () => {
+  test('should not throw console error when label is given', () => {
     const myMock = jest.fn();
     global.console = { ...global.console, error: myMock };
 
@@ -102,11 +100,20 @@ describe('Switch', () => {
     expect(myMock).not.toHaveBeenCalled();
   });
 
-  test('should not throw console error when aria-label is given but no label', () => {
+  test('should not throw console error when aria-label is given', () => {
     const myMock = jest.fn();
     global.console = { ...global.console, error: myMock };
 
     render(<Switch {...props} aria-label="test switch" />);
+
+    expect(myMock).not.toHaveBeenCalled();
+  });
+
+  test('should not throw console error when aria-labelledby is given', () => {
+    const myMock = jest.fn();
+    global.console = { ...global.console, error: myMock };
+
+    render(<Switch {...props} aria-labelledby="some-id" />);
 
     expect(myMock).not.toHaveBeenCalled();
   });
