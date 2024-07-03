@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.76](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.75...demo-app-ts@5.1.1-alpha.76) (2024-07-03)
+
+### Bug Fixes
+
+- **Switch:** updated a11y by removing dynamic labeling ([#10646](https://github.com/patternfly/patternfly-react/issues/10646)) ([730ac69](https://github.com/patternfly/patternfly-react/commit/730ac69eb9544d4831b9eb5fac693fc76a5fe06c))
+
 ## [5.1.1-alpha.75](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.74...demo-app-ts@5.1.1-alpha.75) (2024-07-02)
 
 ### Features

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.38...@patternfly/react-integration@6.0.0-alpha.39) (2024-07-03)
+
+### Bug Fixes
+
+- **Switch:** updated a11y by removing dynamic labeling ([#10646](https://github.com/patternfly/patternfly-react/issues/10646)) ([730ac69](https://github.com/patternfly/patternfly-react/commit/730ac69eb9544d4831b9eb5fac693fc76a5fe06c))
+
 # [6.0.0-alpha.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.37...@patternfly/react-integration@6.0.0-alpha.38) (2024-07-02)
 
 ### Features
