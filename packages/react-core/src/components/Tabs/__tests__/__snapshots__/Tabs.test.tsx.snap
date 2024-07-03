@@ -417,14 +417,13 @@ exports[`should render expandable vertical tabs 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-tabs__toggle-icon"
             >
               <svg
                 aria-hidden="true"
-                arian-hidden="true"
                 class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
@@ -437,8 +436,11 @@ exports[`should render expandable vertical tabs 1`] = `
                 />
               </svg>
             </span>
+          </span>
+          <span
+            class="pf-v6-c-button__text"
+          >
             <span
-              class="pf-v6-c-tabs__toggle-text"
               id="generated-id-text"
             >
               toggle
