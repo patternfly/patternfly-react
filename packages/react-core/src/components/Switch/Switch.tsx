@@ -32,7 +32,7 @@ export interface SwitchProps
   isDisabled?: boolean;
   /** A callback for when the switch selection changes. (event, isChecked) => {} */
   onChange?: (event: React.FormEvent<HTMLInputElement>, checked: boolean) => void;
-  /** Flag to reverse the layout of toggle and label (toggle on right). */
+  /** Flag to reverse the layout of toggle and label (label at start, toggle at end). */
   isReversed?: boolean;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
