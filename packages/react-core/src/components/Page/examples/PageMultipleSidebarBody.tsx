@@ -55,10 +55,13 @@ export const PageMultipleSidebarBody: React.FunctionComponent = () => {
 
   const sidebar = (
     <PageSidebar isSidebarOpen={isSidebarOpen} id="multiple-sidebar-body-sidebar">
-      <PageSidebarBody usePageInsets>First sidebar body (with insets)</PageSidebarBody>
-      <PageSidebarBody isFilled={true}>Second sidebar body (with fill)</PageSidebarBody>
+      <PageSidebarBody isContextSelector>
+        First sidebar body (for a context selector/perspective switcher)
+      </PageSidebarBody>
+      <PageSidebarBody usePageInsets>Second sidebar body (with insets)</PageSidebarBody>
+      <PageSidebarBody isFilled={true}>Third sidebar body (with fill)</PageSidebarBody>
       <PageSidebarBody isFilled={false} usePageInsets>
-        Third sidebar body (with insets and no fill)
+        Fourth sidebar body (with insets and no fill)
       </PageSidebarBody>
     </PageSidebar>
   );

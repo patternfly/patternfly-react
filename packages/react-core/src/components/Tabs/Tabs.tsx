@@ -521,15 +521,13 @@ class Tabs extends React.Component<TabsProps, TabsState> {
                       aria-expanded={isExpandedLocal}
                       id={`${randomId}-button`}
                       aria-labelledby={`${randomId}-text ${randomId}-button`}
-                    >
-                      <span className={css(styles.tabsToggleIcon)}>
-                        <AngleRightIcon arian-hidden="true" />
-                      </span>
-                      {toggleText && (
-                        <span className={css(styles.tabsToggleText)} id={`${randomId}-text`}>
-                          {toggleText}
+                      icon={
+                        <span className={css(styles.tabsToggleIcon)}>
+                          <AngleRightIcon />
                         </span>
-                      )}
+                      }
+                    >
+                      {toggleText && <span id={`${randomId}-text`}>{toggleText}</span>}
                     </Button>
                   </div>
                 </div>

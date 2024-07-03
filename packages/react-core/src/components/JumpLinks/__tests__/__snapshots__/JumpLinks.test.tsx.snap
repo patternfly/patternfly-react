@@ -26,7 +26,7 @@ exports[`expandable vertical with subsection 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-button__text"
+              class="pf-v6-c-button__icon pf-m-start"
             >
               <span
                 class="pf-v6-c-jump-links__toggle-icon"
@@ -45,11 +45,11 @@ exports[`expandable vertical with subsection 1`] = `
                   />
                 </svg>
               </span>
-              <span
-                class="pf-v6-c-jump-links__toggle-text"
-              >
-                 Jump to section 
-              </span>
+            </span>
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Jump to section
             </span>
           </button>
         </div>

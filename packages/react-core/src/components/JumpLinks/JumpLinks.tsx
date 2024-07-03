@@ -249,11 +249,13 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                 onClick={() => setIsExpanded(!isExpanded)}
                 aria-label={toggleAriaLabel}
                 aria-expanded={isExpanded}
+                icon={
+                  <span className={styles.jumpLinksToggleIcon}>
+                    <AngleRightIcon />
+                  </span>
+                }
               >
-                <span className={styles.jumpLinksToggleIcon}>
-                  <AngleRightIcon />
-                </span>
-                {label && <span className={css(styles.jumpLinksToggleText)}> {label} </span>}
+                {label && label}
               </Button>
             </div>
           )}

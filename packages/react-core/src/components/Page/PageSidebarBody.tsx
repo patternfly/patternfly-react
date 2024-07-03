@@ -11,6 +11,8 @@ export interface PageSidebarBodyProps extends React.HTMLProps<HTMLDivElement> {
   usePageInsets?: boolean;
   /** Flag indicating that the page sidebar body should fill the available vertical space. */
   isFilled?: boolean;
+  /** Flag indicating that the page sidebar body is for a context selector/perspective switcher */
+  isContextSelector?: boolean;
 }
 
 export const PageSidebarBody: React.FunctionComponent<PageSidebarBodyProps> = ({
@@ -18,6 +20,7 @@ export const PageSidebarBody: React.FunctionComponent<PageSidebarBodyProps> = ({
   className,
   usePageInsets,
   isFilled,
+  isContextSelector,
   ...props
 }: PageSidebarBodyProps) => (
   <div
@@ -26,6 +29,7 @@ export const PageSidebarBody: React.FunctionComponent<PageSidebarBodyProps> = ({
       usePageInsets && styles.modifiers.pageInsets,
       isFilled === false && styles.modifiers.noFill,
       isFilled === true && styles.modifiers.fill,
+      isContextSelector === true && styles.modifiers.contextSelector,
       className
     )}
     {...props}
