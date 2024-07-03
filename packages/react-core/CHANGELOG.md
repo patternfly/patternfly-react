@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.18...@patternfly/react-core@5.4.0-prerelease.19) (2024-07-03)
+
+### Bug Fixes
+
+- **Pagination:** fix pagination adding items string when titles prop is supplied ([#10677](https://github.com/patternfly/patternfly-react/issues/10677)) ([903b643](https://github.com/patternfly/patternfly-react/commit/903b6439bde362e19aea967bf0f0b62150e783b4))
+
+### Features
+
+- **Dropdown:** allowed preventing autofocus ([#10642](https://github.com/patternfly/patternfly-react/issues/10642)) ([dd8e31b](https://github.com/patternfly/patternfly-react/commit/dd8e31bc733c41cdcd432b2c3132f64c5f1165f5))
+
 # [5.4.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.17...@patternfly/react-core@5.4.0-prerelease.18) (2024-07-02)
 
 **Note:** Version bump only for package @patternfly/react-core

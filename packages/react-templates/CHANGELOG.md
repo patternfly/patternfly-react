@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.1.0-prerelease.19...@patternfly/react-templates@1.1.0-prerelease.20) (2024-07-03)
+
+### Features
+
+- **templates:** add TypeaheadSelect tests ([#10669](https://github.com/patternfly/patternfly-react/issues/10669)) ([d573604](https://github.com/patternfly/patternfly-react/commit/d573604608b325f7537285adee04e80293c67c90))
+
 # [1.1.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.1.0-prerelease.18...@patternfly/react-templates@1.1.0-prerelease.19) (2024-07-02)
 
 **Note:** Version bump only for package @patternfly/react-templates
