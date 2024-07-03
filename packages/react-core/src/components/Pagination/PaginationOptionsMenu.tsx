@@ -73,7 +73,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
   firstIndex = 0,
   lastIndex = 0,
   isLastFullPageShown = false,
-  itemsTitle = 'items',
+  itemsTitle = '',
   toggleTemplate,
   onPerPageSelect = () => null as any,
   containerRef
