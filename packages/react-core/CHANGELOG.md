@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.78](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.77...@patternfly/react-core@6.0.0-alpha.78) (2024-07-03)
+
+### Features
+
+- **page:** support for context selector in sidebar ([#10686](https://github.com/patternfly/patternfly-react/issues/10686)) ([b85fb19](https://github.com/patternfly/patternfly-react/commit/b85fb19e8e40f3003da644f12609f50b59584f92))
+
 # [6.0.0-alpha.77](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.76...@patternfly/react-core@6.0.0-alpha.77) (2024-07-03)
 
 ### Bug Fixes

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.77](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.76...demo-app-ts@5.1.1-alpha.77) (2024-07-03)
+
+**Note:** Version bump only for package demo-app-ts
+
 ## [5.1.1-alpha.76](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.75...demo-app-ts@5.1.1-alpha.76) (2024-07-03)
 
 ### Bug Fixes
