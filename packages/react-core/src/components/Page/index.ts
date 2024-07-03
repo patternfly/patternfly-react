@@ -1,5 +1,5 @@
 export * from './Page';
-export * from './PageMainBody';
+export * from './PageBody';
 export * from './PageBreadcrumb';
 export * from './PageGroup';
 export * from './PageSidebar';

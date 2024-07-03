@@ -143,13 +143,13 @@ test('Renders as other elements when a different element type is passed using th
   expect(screen.getByRole('main')).toHaveTextContent('test');
 });
 
-test('Renders with PageMainBody wrapper by default', () => {
+test('Renders with PageBody wrapper by default', () => {
   render(<PageSection>test</PageSection>);
 
   expect(screen.getByText('test')).toHaveClass(styles.pageMainBody);
 });
-test('Does not render with PageMainBody wrapper when hasMainBodyWrapper is false', () => {
-  render(<PageSection hasMainBodyWrapper={false}>test</PageSection>);
+test('Does not render with PageBody wrapper when hasBodyWrapper is false', () => {
+  render(<PageSection hasBodyWrapper={false}>test</PageSection>);
 
   expect(screen.getByText('test')).not.toHaveClass(styles.pageMainBody);
 });

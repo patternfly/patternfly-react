@@ -4,12 +4,12 @@ import { css } from '@patternfly/react-styles';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/global_breakpoint_xl';
 import { debounce, canUseDOM } from '../../helpers/util';
 import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '../Drawer';
-import { PageBreadcrumbProps } from './PageBreadcrumb';
+import { PageBreadcrumb, PageBreadcrumbProps } from './PageBreadcrumb';
 import { PageGroup, PageGroupProps } from './PageGroup';
 import { getResizeObserver } from '../../helpers/resizeObserver';
-import { formatBreakpointMods, getBreakpoint, getVerticalBreakpoint } from '../../helpers/util';
+import { getBreakpoint, getVerticalBreakpoint } from '../../helpers/util';
 import { PageContextProvider } from './PageContext';
-import { PageMainBody } from './PageMainBody';
+import { PageBody } from './PageBody';
 
 export enum PageLayouts {
   vertical = 'vertical',
@@ -267,7 +267,7 @@ class Page extends React.Component<PageProps, PageState> {
     if (horizontalSubnav && isHorizontalSubnavWidthLimited) {
       nav = (
         <div className={css(styles.pageMainSubnav, styles.modifiers.limitWidth)}>
-          <PageMainBody>{horizontalSubnav}</PageMainBody>
+          <PageBody>{horizontalSubnav}</PageBody>
         </div>
       );
     } else if (horizontalSubnav) {
@@ -275,21 +275,12 @@ class Page extends React.Component<PageProps, PageState> {
     }
 
     const crumb = breadcrumb ? (
-      <section
-        className={css(
-          styles.pageMainBreadcrumb,
-          isBreadcrumbWidthLimited && styles.modifiers.limitWidth,
-          formatBreakpointMods(
-            breadcrumbProps?.stickyOnBreakpoint,
-            styles,
-            'sticky-',
-            getVerticalBreakpoint(height),
-            true
-          )
-        )}
+      <PageBreadcrumb
+        stickyOnBreakpoint={breadcrumbProps?.stickyOnBreakpoint}
+        isWidthLimited={isBreadcrumbWidthLimited}
       >
-        {isBreadcrumbWidthLimited ? <PageMainBody>{breadcrumb}</PageMainBody> : breadcrumb}
-      </section>
+        <PageBody>{breadcrumb}</PageBody>
+      </PageBreadcrumb>
     ) : null;
 
     const isGrouped = isHorizontalSubnavGrouped || isBreadcrumbGrouped || additionalGroupedContent;

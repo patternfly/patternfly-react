@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from './PageContext';
-import { PageMainBody } from './PageMainBody';
+import { PageBody } from './PageBody';
 
 export enum PageSectionVariants {
   default = 'default',
@@ -57,10 +57,10 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   hasShadowBottom?: boolean;
   /** Flag indicating if the PageSection has a scrolling overflow */
   hasOverflowScroll?: boolean;
-  /** @beta Flag indicating whether children passed to the component should be wrapped by a PageMainBody.
-   * Set this to false in order to pass multiple, custom PageMainBody's as children.
+  /** @beta Flag indicating whether children passed to the component should be wrapped by a PageBody.
+   * Set this to false in order to pass multiple, custom PageBody's as children.
    */
-  hasMainBodyWrapper?: boolean;
+  hasBodyWrapper?: boolean;
   /** Adds an accessible name to the page section. Required when the hasOverflowScroll prop is set to true.
    * This prop should also be passed in if a heading is not being used to describe the content of the page section.
    */
@@ -97,7 +97,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   hasOverflowScroll = false,
   'aria-label': ariaLabel,
   component = 'section',
-  hasMainBodyWrapper = true,
+  hasBodyWrapper = true,
   ...props
 }: PageSectionProps) => {
   const { height, getVerticalBreakpoint } = React.useContext(PageContext);
@@ -131,7 +131,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
       {...(hasOverflowScroll && { tabIndex: 0 })}
       aria-label={ariaLabel}
     >
-      {hasMainBodyWrapper ? <PageMainBody>{children}</PageMainBody> : children}
+      {hasBodyWrapper ? <PageBody>{children}</PageBody> : children}
     </Component>
   );
 };

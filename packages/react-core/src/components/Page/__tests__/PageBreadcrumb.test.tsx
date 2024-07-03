@@ -74,13 +74,13 @@ describe('page breadcrumb', () => {
     expect(consoleWarning).toHaveBeenCalled();
   });
 
-  test('Renders with PageMainBody wrapper by default', () => {
+  test('Renders with PageBody wrapper by default', () => {
     render(<PageBreadcrumb>test</PageBreadcrumb>);
 
     expect(screen.getByText('test')).toHaveClass(styles.pageMainBody);
   });
-  test('Does not render with PageMainBody wrapper when hasMainBodyWrapper is false', () => {
-    render(<PageBreadcrumb hasMainBodyWrapper={false}>test</PageBreadcrumb>);
+  test('Does not render with PageBody wrapper when hasBodyWrapper is false', () => {
+    render(<PageBreadcrumb hasBodyWrapper={false}>test</PageBreadcrumb>);
 
     expect(screen.getByText('test')).not.toHaveClass(styles.pageMainBody);
   });
