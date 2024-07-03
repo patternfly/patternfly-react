@@ -258,6 +258,6 @@ describe('Nav', () => {
         </NavList>
       </Nav>
     );
-    expect(screen.getAllByText('this is an icon')[0].parentElement).toHaveClass(`${styles.nav}__link-icon`);
+    expect(screen.getAllByText('this is an icon')[0].parentElement).toHaveClass(styles.navLinkIcon);
   });
 });

@@ -193,8 +193,9 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
         {...(hasFlyout && { ...ariaFlyoutProps })}
         {...props}
       >
-        {icon && <span className={css(`${styles.nav}__link-icon`)}>{icon}</span>}
+        {icon && <span className={css(styles.navLinkIcon)}>{icon}</span>}
         <span className={css(`${styles.nav}__link-text`)}>{children}</span>
+        {flyout && flyoutButton}
       </Component>
     );
   };
