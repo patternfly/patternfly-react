@@ -32,13 +32,7 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
   ...props
 }: DroppableProps) => {
   const itemIds = React.useMemo(() => (items ? Array.from(items, (item) => item.id as string) : []), [items]);
-  const { active, over, setNodeRef } = useDroppable({ id: id ? id : 'droppable' });
-  const isOverContainer = over
-    ? (id === over.id && active?.data.current?.type !== 'container') || items.find((item) => item.id === over.id)
-    : false;
-
-  // TODO: container styling (or remove)
-  const style = { color: isOverContainer ? 'green' : undefined };
+  const { setNodeRef } = useDroppable({ id: id ? id : 'droppable' });
 
   const content = items.map((item: DraggableObject) => {
     switch (variant) {
@@ -74,11 +68,10 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
         React.cloneElement(wrapper, {
           children: content,
           ref: setNodeRef,
-          style,
           ...props
         })}
       {!wrapper && (
-        <div ref={setNodeRef} style={style} {...props}>
+        <div ref={setNodeRef} {...props}>
           {content}
         </div>
       )}
