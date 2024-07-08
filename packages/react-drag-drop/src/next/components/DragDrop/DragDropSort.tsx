@@ -27,7 +27,7 @@ export interface DragDropSortProps extends DndContextProps {
    * */
   variant?: 'default' | 'defaultWithHandle' | 'DataList' | 'DualListSelectorList' | 'TableComposable';
   /** Additional classes to apply to the drag overlay */
-  overlayProps?: string;
+  overlayProps?: any;
 }
 
 export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
