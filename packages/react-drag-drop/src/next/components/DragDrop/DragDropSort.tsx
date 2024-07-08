@@ -26,6 +26,8 @@ export interface DragDropSortProps extends DndContextProps {
    * TableComposable variant wraps the draggable objects in TODO
    * */
   variant?: 'default' | 'defaultWithHandle' | 'DataList' | 'DualListSelectorList' | 'TableComposable';
+  /** Additional classes to apply to the drag overlay */
+  overlayProps?: string;
 }
 
 export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
@@ -34,6 +36,7 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
   onDrag = () => {},
   variant = 'default',
   children,
+  overlayProps,
   ...props
 }: DragDropSortProps) => {
   const itemIds = React.useMemo(() => (items ? Array.from(items, (item) => item.id as string) : []), [items]);
@@ -58,6 +61,7 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
       items={{ [dropZoneId]: items }}
       onDrag={handleDragStart}
       onDrop={handleDragEnd}
+      overlayProps={overlayProps}
     >
       <Droppable items={items} id={dropZoneId} variant={variant} {...(children && { wrapper: children })} />
     </DragDropContainer>

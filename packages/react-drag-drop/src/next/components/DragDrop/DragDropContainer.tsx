@@ -25,7 +25,7 @@ import { Draggable } from './Draggable';
 import { DraggableDataListItem } from './DraggableDataListItem';
 import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
 import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
-import { canUseDOM } from '@patternfly/react-core';
+import { DataList, canUseDOM } from '@patternfly/react-core';
 
 export type DragDropContainerDragStartEvent = DragStartEvent;
 export type DragDropContainerDragOverEvent = DragOverEvent;
@@ -64,6 +64,8 @@ export interface DragDropContainerProps extends DndContextProps {
    * TableComposable variant wraps the draggable objects in TODO
    * */
   variant?: 'default' | 'DataList' | 'DualListSelectorList' | 'TableComposable';
+  /** Additional classes to apply to the drag overlay */
+  overlayProps?: any;
 }
 
 export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> = ({
@@ -74,6 +76,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
   onDrop = () => {},
   onCancel = () => {},
   variant = 'default',
+  overlayProps,
   ...props
 }: DragDropContainerProps) => {
   const itemsCopy = React.useRef<Record<string, DraggableObject[]> | null>(null);
@@ -272,7 +275,13 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
           } as React.CSSProperties
         }
       >
-        {content}
+        {variant === 'DualListSelectorList' && <ul className="pf-v5-c-dual-list-selector">{content}</ul>}
+        {variant === 'DataList' && (
+          <DataList aria-label="draggable overlay" {...overlayProps}>
+            {content}
+          </DataList>
+        )}
+        {variant !== 'DualListSelectorList' && variant !== 'DataList' && content}
       </div>
     );
   };

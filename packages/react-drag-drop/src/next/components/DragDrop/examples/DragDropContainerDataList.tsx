@@ -48,6 +48,7 @@ export const DataListDraggable: React.FunctionComponent = (props) => {
         setItems(prevItems);
       }}
       variant="DataList"
+      overlayProps={{ isCompact: true }}
     >
       <Grid hasGutter>
         <GridItem span={6}>

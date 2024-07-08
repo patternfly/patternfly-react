@@ -31,6 +31,7 @@ export const DataListDraggable: React.FunctionComponent = (props) => {
         setItems(newItems);
       }}
       variant="DataList"
+      overlayProps={{ isCompact: true }}
     >
       <DataList aria-label="draggable data list example" isCompact {...props} />
     </DragDropSort>

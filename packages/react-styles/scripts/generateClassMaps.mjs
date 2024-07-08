@@ -1,8 +1,9 @@
 import { camelCase } from 'change-case';
-import { glob } from 'glob';
+import pkg from 'glob';
 import fs from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';
+const { glob } = pkg;
 
 /**
  * @param {string} cssString - CSS string
