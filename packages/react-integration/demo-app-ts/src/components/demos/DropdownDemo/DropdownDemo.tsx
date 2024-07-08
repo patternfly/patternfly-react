@@ -3,7 +3,7 @@ import { Dropdown, DropdownList, DropdownItem, Divider, MenuToggle } from '@patt
 
 const dropDownItems = (
   <DropdownList>
-    <DropdownItem value={0} key="link">
+    <DropdownItem id="first-item" value={0} key="link">
       Link
     </DropdownItem>
     <DropdownItem
@@ -36,28 +36,55 @@ const dropDownItems = (
 
 export const DropdownDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isNoAutofocusOpen, setIsNoAutofocusOpen] = React.useState(false);
 
   const onToggleClick = () => {
+    setIsOpen(!isOpen);
+  };
+  const onNoAutofocusToggleClick = () => {
     setIsOpen(!isOpen);
   };
 
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined) => {
     setIsOpen(false);
   };
+  const onNoAutofocusSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined) => {
+    setIsOpen(false);
+  };
 
   return (
-    <Dropdown
-      isOpen={isOpen}
-      onOpenChange={(isOpen) => setIsOpen(isOpen)}
-      onSelect={onSelect}
-      toggle={(toggleRef) => (
-        <MenuToggle data-cy="toggle" onClick={onToggleClick} isExpanded={isOpen} ref={toggleRef}>
-          Dropdown
-        </MenuToggle>
-      )}
-    >
-      {dropDownItems}
-    </Dropdown>
+    <>
+      <Dropdown
+        isOpen={isOpen}
+        onOpenChange={(isOpen) => setIsOpen(isOpen)}
+        onSelect={onSelect}
+        toggle={(toggleRef) => (
+          <MenuToggle data-cy="toggle" onClick={onToggleClick} isExpanded={isOpen} ref={toggleRef}>
+            Dropdown
+          </MenuToggle>
+        )}
+      >
+        {dropDownItems}
+      </Dropdown>
+      <Dropdown
+        isOpen={isNoAutofocusOpen}
+        shouldFocusFirstItemOnOpen={false}
+        onOpenChange={(isOpen) => setIsNoAutofocusOpen(isOpen)}
+        onSelect={onNoAutofocusSelect}
+        toggle={(toggleRef) => (
+          <MenuToggle
+            data-cy="no-autofocus-toggle"
+            onClick={onNoAutofocusToggleClick}
+            isExpanded={isNoAutofocusOpen}
+            ref={toggleRef}
+          >
+            Dropdown
+          </MenuToggle>
+        )}
+      >
+        {dropDownItems}
+      </Dropdown>
+    </>
   );
 };
 DropdownDemo.displayName = 'DropdownDemo';
