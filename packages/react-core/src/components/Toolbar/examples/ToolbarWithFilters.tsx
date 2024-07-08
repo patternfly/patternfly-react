@@ -137,9 +137,9 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
       </ToolbarItem>
       <ToolbarGroup variant="filter-group">
         <ToolbarFilter
-          chips={filters.status}
-          deleteChip={(category, chip) => onDelete(category as string, chip as string)}
-          deleteChipGroup={(category) => onDeleteGroup(category as string)}
+          labels={filters.status}
+          deleteLabel={(category, label) => onDelete(category as string, label as string)}
+          deleteLabelGroup={(category) => onDeleteGroup(category as string)}
           categoryName="Status"
         >
           <Select
@@ -169,8 +169,8 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
           </Select>
         </ToolbarFilter>
         <ToolbarFilter
-          chips={filters.risk}
-          deleteChip={(category, chip) => onDelete(category as string, chip as string)}
+          labels={filters.risk}
+          deleteLabel={(category, label) => onDelete(category as string, label as string)}
           categoryName="Risk"
         >
           <Select

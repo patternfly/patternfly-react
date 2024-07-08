@@ -8,20 +8,20 @@ import globalBreakpoint2xl from '@patternfly/react-tokens/dist/esm/global_breakp
 export interface ToolbarContextProps {
   isExpanded: boolean;
   toggleIsExpanded: () => void;
-  chipGroupContentRef: RefObject<HTMLDivElement>;
+  labelGroupContentRef: RefObject<HTMLDivElement>;
   updateNumberFilters: (categoryName: string, numberOfFilters: number) => void;
   numberOfFilters: number;
   clearAllFilters?: () => void;
   clearFiltersButtonText?: string;
   showClearFiltersButton?: boolean;
   toolbarId?: string;
-  customChipGroupContent?: React.ReactNode;
+  customLabelGroupContent?: React.ReactNode;
 }
 
 export const ToolbarContext = React.createContext<ToolbarContextProps>({
   isExpanded: false,
   toggleIsExpanded: () => {},
-  chipGroupContentRef: null,
+  labelGroupContentRef: null,
   updateNumberFilters: () => {},
   numberOfFilters: 0,
   clearAllFilters: () => {}
@@ -30,7 +30,7 @@ export const ToolbarContext = React.createContext<ToolbarContextProps>({
 interface ToolbarContentContextProps {
   expandableContentRef: RefObject<HTMLDivElement>;
   expandableContentId: string;
-  chipContainerRef: RefObject<any>;
+  labelContainerRef: RefObject<any>;
   isExpanded?: boolean;
   clearAllFilters?: () => void;
   clearFiltersButtonText?: string;
@@ -40,7 +40,7 @@ interface ToolbarContentContextProps {
 export const ToolbarContentContext = React.createContext<ToolbarContentContextProps>({
   expandableContentRef: null,
   expandableContentId: '',
-  chipContainerRef: null,
+  labelContainerRef: null,
   clearAllFilters: () => {}
 });
 

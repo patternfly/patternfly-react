@@ -304,11 +304,11 @@ export const FilterFaceted: React.FunctionComponent = () => {
     }
   };
 
-  const onChipDelete = (category: string, chip: string) => {
+  const onLabelDelete = (category: string, label: string) => {
     if (category === 'status') {
-      setStatusSelections(statusSelections.filter((selection) => selection !== chip));
+      setStatusSelections(statusSelections.filter((selection) => selection !== label));
     } else {
-      setLocationSelections(locationSelections.filter((selection) => selection !== chip));
+      setLocationSelections(locationSelections.filter((selection) => selection !== label));
     }
   };
 
@@ -417,18 +417,18 @@ export const FilterFaceted: React.FunctionComponent = () => {
         <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
         <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
           <ToolbarFilter
-            chips={statusSelections}
-            deleteChip={(category, chip) => onChipDelete(category as string, chip as string)}
-            deleteChipGroup={() => setStatusSelections([])}
+            labels={statusSelections}
+            deleteLabel={(category, label) => onLabelDelete(category as string, label as string)}
+            deleteLabelGroup={() => setStatusSelections([])}
             categoryName="Status"
             showToolbarItem={false}
           >
             <div />
           </ToolbarFilter>
           <ToolbarFilter
-            chips={locationSelections}
-            deleteChip={(category, chip) => onChipDelete(category as string, chip as string)}
-            deleteChipGroup={() => setLocationSelections([])}
+            labels={locationSelections}
+            deleteLabel={(category, label) => onLabelDelete(category as string, label as string)}
+            deleteLabelGroup={() => setLocationSelections([])}
             categoryName="Location"
           >
             {select}

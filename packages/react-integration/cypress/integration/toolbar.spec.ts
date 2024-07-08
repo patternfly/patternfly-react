@@ -28,7 +28,7 @@ xdescribe('Data Toolbar Demo Test', () => {
     cy.get('#toolbar-2xl-inset.pf-m-inset-2xl').should('not.exist');
   });
 
-  describe('Toggle group and filter chips are appropriately responsive', () => {
+  describe('Toggle group and filter labels are appropriately responsive', () => {
     context('wide viewport', () => {
       beforeEach(() => {
         cy.viewport(1800, 800);
@@ -40,7 +40,7 @@ xdescribe('Data Toolbar Demo Test', () => {
         cy.get('.pf-v6-c-toolbar__expandable-content').should('not.exist');
       });
 
-      it('displays filter chips', () => {
+      it('displays filter labels', () => {
         cy.get('.pf-v6-c-label-group').should('be.visible');
         cy.get('.pf-m-filters-applied-message').should('not.exist');
         cy.get('.pf-v6-c-toolbar__item .pf-v6-c-button').should('be.visible');
@@ -62,7 +62,7 @@ xdescribe('Data Toolbar Demo Test', () => {
       });
 
       it('displays X filters applied message', () => {
-        cy.get('.pf-m-chip-container .pf-m-label-group').should('not.exist');
+        cy.get('.pf-m-label-container .pf-m-label-group').should('not.exist');
         cy.get('.pf-v6-c-toolbar__item').should('contain.text', 'filters applied');
         cy.get('.pf-v6-c-toolbar__item').should('contain.text', 'Applied filters: ');
         cy.get('.pf-v6-c-toolbar__item .pf-v6-c-button').should('be.visible');
@@ -85,14 +85,14 @@ xdescribe('Data Toolbar Demo Test', () => {
       cy.get('#demo-toggle-group .pf-v6-c-toolbar__toggle button').last().click();
       cy.get('.pf-v6-c-toolbar__expandable-content').should('have.class', 'pf-m-expanded');
       cy.get('.pf-v6-c-toolbar__expandable-content').should('be.visible');
-      cy.get('.pf-m-chip-container').should('be.visible');
+      cy.get('.pf-m-label-container').should('be.visible');
       cy.get('.pf-v6-c-toolbar__item .pf-v6-c-button').should('be.visible');
       cy.get('.pf-v6-c-toolbar__item .pf-v6-c-label-group__close').should('be.visible');
       cy.get('.pf-v6-c-toolbar__item .pf-v6-c-button').contains('Clear filters');
       cy.get('#demo-toggle-group .pf-v6-c-toolbar__toggle button').last().click();
       cy.get('.pf-v6-c-toolbar__expandable-content').should('not.have.class', 'pf-m-expanded');
       cy.get('.pf-v6-c-toolbar__expandable-content').should('not.be.visible');
-      cy.get('.pf-m-chip-container').should('not.be.visible');
+      cy.get('.pf-m-label-container').should('not.be.visible');
       cy.get('.pf-v6-c-toolbar__item .pf-v6-c-button').should('be.visible');
       cy.get('.pf-v6-c-toolbar__item .pf-v6-c-label-group__close').should('not.be.visible');
       cy.get('.pf-v6-c-toolbar__item .pf-v6-c-button').contains('Clear filters');

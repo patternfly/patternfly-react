@@ -589,27 +589,27 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
           <ToolbarGroup variant="filter-group">
             <ToolbarItem>{attributeDropdown}</ToolbarItem>
             <ToolbarFilter
-              chips={searchValue !== '' ? [searchValue] : ([] as string[])}
-              deleteChip={() => setSearchValue('')}
-              deleteChipGroup={() => setSearchValue('')}
+              labels={searchValue !== '' ? [searchValue] : ([] as string[])}
+              deleteLabel={() => setSearchValue('')}
+              deleteLabelGroup={() => setSearchValue('')}
               categoryName="Name"
               showToolbarItem={activeAttributeMenu === 'Servers'}
             >
               {searchInput}
             </ToolbarFilter>
             <ToolbarFilter
-              chips={statusSelection !== '' ? [statusSelection] : ([] as string[])}
-              deleteChip={() => setStatusSelection('')}
-              deleteChipGroup={() => setStatusSelection('')}
+              labels={statusSelection !== '' ? [statusSelection] : ([] as string[])}
+              deleteLabel={() => setStatusSelection('')}
+              deleteLabelGroup={() => setStatusSelection('')}
               categoryName="Status"
               showToolbarItem={activeAttributeMenu === 'Status'}
             >
               {statusSelect}
             </ToolbarFilter>
             <ToolbarFilter
-              chips={locationSelections}
-              deleteChip={(category, chip) => onLocationMenuSelect(undefined, chip as string)}
-              deleteChipGroup={() => setLocationSelections([])}
+              labels={locationSelections}
+              deleteLabel={(category, label) => onLocationMenuSelect(undefined, label as string)}
+              deleteLabelGroup={() => setLocationSelections([])}
               categoryName="Location"
               showToolbarItem={activeAttributeMenu === 'Location'}
             >

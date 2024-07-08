@@ -4,8 +4,8 @@ import {
   ButtonVariant,
   Toolbar,
   ToolbarItem,
-  ToolbarChip,
-  ToolbarChipGroup,
+  ToolbarLabel,
+  ToolbarLabelGroup,
   ToolbarContent,
   ToolbarFilter,
   ToolbarToggleGroup,
@@ -100,7 +100,7 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     this.onSelect('risk', event, selection);
   };
 
-  onDelete = (type: string | ToolbarChipGroup = '', id: ToolbarChip | string = '') => {
+  onDelete = (type: string | ToolbarLabelGroup = '', id: ToolbarLabel | string = '') => {
     if (type) {
       const lowerCaseType = typeof type === 'string' ? type.toLowerCase() : type.name.toLowerCase();
       this.setState((prevState) => {
@@ -192,7 +192,7 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
           </InputGroup>
         </ToolbarItem>
         <ToolbarGroup variant="filter-group" id="toolbar-demo-filters">
-          <ToolbarFilter chips={filters.status} deleteChip={this.onDelete} categoryName="Status">
+          <ToolbarFilter labels={filters.status} deleteLabel={this.onDelete} categoryName="Status">
             <Select
               aria-label="Status"
               onSelect={this.onStatusSelect}
@@ -208,9 +208,9 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
             </Select>
           </ToolbarFilter>
           <ToolbarFilter
-            chips={filters.risk}
-            deleteChip={this.onDelete}
-            deleteChipGroup={(category: string | ToolbarChipGroup) => this.onDeleteGroup(category as string)}
+            labels={filters.risk}
+            deleteLabel={this.onDelete}
+            deleteLabelGroup={(category: string | ToolbarLabelGroup) => this.onDeleteGroup(category as string)}
             categoryName="Risk"
           >
             <Select

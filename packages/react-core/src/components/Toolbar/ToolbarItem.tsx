@@ -9,7 +9,7 @@ export enum ToolbarItemVariant {
   separator = 'separator',
   pagination = 'pagination',
   label = 'label',
-  'chip-group' = 'chip-group',
+  'label-group' = 'label-group',
   'expand-all' = 'expand-all'
 }
 
@@ -17,7 +17,7 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar item */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of item */
-  variant?: ToolbarItemVariant | 'pagination' | 'label' | 'chip-group' | 'separator' | 'expand-all';
+  variant?: ToolbarItemVariant | 'pagination' | 'label' | 'label-group' | 'separator' | 'expand-all';
   /** Visibility at various breakpoints. */
   visibility?: {
     default?: 'hidden' | 'visible';
@@ -189,7 +189,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
           className={css(
             styles.toolbarItem,
             variant && styles.modifiers[toCamel(variant) as 'pagination' | 'label'],
-            variant === ToolbarItemVariant['chip-group'] && styles.modifiers.labelGroup,
+            variant === ToolbarItemVariant['label-group'] && styles.modifiers.labelGroup,
             isAllExpanded && styles.modifiers.expanded,
             isOverflowContainer && styles.modifiers.overflowContainer,
             formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),

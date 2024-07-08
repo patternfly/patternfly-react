@@ -62,15 +62,15 @@ describe('Toolbar', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render with custom chip content', () => {
+  it('should render with custom label content', () => {
     const items = (
       <React.Fragment>
         <ToolbarToggleGroup toggleIcon={<React.Fragment />} breakpoint="xl">
           <ToolbarGroup variant="filter-group">
             <ToolbarFilter
-              chips={['New', 'Pending']}
-              deleteChip={(_category, _chip) => {}}
-              deleteChipGroup={(_category) => {}}
+              labels={['New', 'Pending']}
+              deleteLabel={(_category, _label) => {}}
+              deleteLabelGroup={(_category) => {}}
               categoryName="Status"
             >
               test content
@@ -80,7 +80,7 @@ describe('Toolbar', () => {
       </React.Fragment>
     );
 
-    const customChipGroupContent = (
+    const customLabelGroupContent = (
       <React.Fragment>
         <ToolbarItem>
           <Button variant="link" onClick={() => {}} isInline>
@@ -100,7 +100,7 @@ describe('Toolbar', () => {
         id="toolbar-with-filter"
         className="pf-m-toggle-group-container"
         collapseListedFiltersBreakpoint="xl"
-        customChipGroupContent={customChipGroupContent}
+        customLabelGroupContent={customLabelGroupContent}
       >
         <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>

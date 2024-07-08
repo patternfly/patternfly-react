@@ -468,17 +468,17 @@ export const FilterMixedSelectGroup: React.FunctionComponent = () => {
         <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
         <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
           <ToolbarFilter
-            chips={statusSelection !== '' ? [statusSelection] : ([] as string[])}
-            deleteChip={() => setStatusSelection('')}
-            deleteChipGroup={() => setStatusSelection('')}
+            labels={statusSelection !== '' ? [statusSelection] : ([] as string[])}
+            deleteLabel={() => setStatusSelection('')}
+            deleteLabelGroup={() => setStatusSelection('')}
             categoryName="Status"
           >
             {statusSelect}
           </ToolbarFilter>
           <ToolbarFilter
-            chips={locationSelections}
-            deleteChip={(category, chip) => onLocationMenuSelect(undefined, chip as string)}
-            deleteChipGroup={() => setLocationSelections([])}
+            labels={locationSelections}
+            deleteLabel={(category, label) => onLocationMenuSelect(undefined, label as string)}
+            deleteLabelGroup={() => setLocationSelections([])}
             categoryName="Location"
           >
             {locationSelect}

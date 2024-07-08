@@ -3,16 +3,16 @@
  */
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { ToolbarChipGroupContent } from '../../ToolbarChipGroupContent';
+import { ToolbarLabelGroupContent } from '../../ToolbarLabelGroupContent';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
-it('ToolbarChipGroupContent should match snapshot (auto-generated)', () => {
+it('ToolbarLabelGroupContent should match snapshot (auto-generated)', () => {
   const { asFragment } = render(
-    <ToolbarChipGroupContent
+    <ToolbarLabelGroupContent
       className={'string'}
       isExpanded={true}
-      chipGroupContentRef={{ current: document.createElement('div') }}
+      labelGroupContentRef={{ current: document.createElement('div') }}
       clearAllFilters={() => undefined as void}
       showClearFiltersButton={true}
       clearFiltersButtonText={"'Clear all filters'"}
