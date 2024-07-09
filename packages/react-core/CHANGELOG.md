@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.80](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.79...@patternfly/react-core@6.0.0-alpha.80) (2024-07-09)
+
+### Bug Fixes
+
+- **expandable section:** Fix uncaught exception ([#10718](https://github.com/patternfly/patternfly-react/issues/10718)) ([0fe0754](https://github.com/patternfly/patternfly-react/commit/0fe0754bd570fde9547f15192a92e98be8c18024))
+
 # [6.0.0-alpha.79](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.78...@patternfly/react-core@6.0.0-alpha.79) (2024-07-08)
 
 ### Bug Fixes
