@@ -1,4 +1,4 @@
-import { canUseDOM } from './util';
+import { canUseDOM, debounce } from './util';
 
 /**
  * This function creates a ResizeObserver used to handle resize events for the given containerRef. If ResizeObserver
