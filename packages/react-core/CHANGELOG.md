@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.19...@patternfly/react-core@5.4.0-prerelease.20) (2024-07-09)
+
+### Bug Fixes
+
+- **expandable section:** Fix uncaught exception ([#10717](https://github.com/patternfly/patternfly-react/issues/10717)) ([f200eb4](https://github.com/patternfly/patternfly-react/commit/f200eb4f14bc57be31f5d434c3e27f8483b5f2cd))
+- **expandable section:** Fix uncaught exception ([#10659](https://github.com/patternfly/patternfly-react/issues/10659)) ([5925ef1](https://github.com/patternfly/patternfly-react/commit/5925ef10c378d8cf997bed862e952dc902b079bd))
+
 # [5.4.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.18...@patternfly/react-core@5.4.0-prerelease.19) (2024-07-03)
 
 ### Bug Fixes
