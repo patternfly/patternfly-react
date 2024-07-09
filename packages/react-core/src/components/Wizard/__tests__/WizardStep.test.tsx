@@ -75,4 +75,6 @@ test('updates "navItem" in context when the value changes', () => {
 test('updates "status" in context when the value changes', () => {
   render(<WizardStep {...testStep} status="error" />);
   expect(setStep).toHaveBeenCalledWith({ ...testStepProps, status: 'error', isVisited: true });
+  render(<WizardStep {...testStep} status="success" />);
+  expect(setStep).toHaveBeenCalledWith({ ...testStepProps, status: 'success', isVisited: true });
 });

@@ -29,7 +29,7 @@ export interface WizardStepProps {
   /** Replaces the step's footer. The step's footer takes precedance over the wizard's footer. */
   footer?: React.ReactElement | Partial<WizardFooterProps>;
   /** Used to determine icon next to the step's navigation item */
-  status?: 'default' | 'error';
+  status?: 'default' | 'error' | 'success';
   /** Flag to determine whether parent steps can expand or not. Defaults to false. */
   isExpandable?: boolean;
 }
