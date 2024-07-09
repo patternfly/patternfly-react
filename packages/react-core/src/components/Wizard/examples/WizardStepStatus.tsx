@@ -55,7 +55,7 @@ const StepContentWithAction = () => {
   );
 };
 
-export const WizardStepErrorStatus: React.FunctionComponent = () => (
+export const WizardStepStatus: React.FunctionComponent = () => (
   <SomeContextProvider>
     {({ errorMessage, successMessage }) => {
       let status = 'default';

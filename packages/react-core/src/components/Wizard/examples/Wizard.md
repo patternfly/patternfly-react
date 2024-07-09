@@ -167,9 +167,9 @@ If a `WizardStep` is passed a `body={null}` property, you must manually handle f
 
 ```
 
-### Step error status
+### Step status
 
-```ts file="./WizardStepErrorStatus.tsx"
+```ts file="./WizardStepStatus.tsx"
 
 ```
 
