@@ -3,7 +3,7 @@ const { setHelpers } = require('./scripts/generators/helpers');
 const setPFGenerators = require('./scripts/generators/patternfly-component');
 const setPackageGenerators = require('./scripts/generators/package');
 
-module.exports = plop => {
+module.exports = (plop) => {
   setHelpers(plop);
   setActionTypes(plop);
 

@@ -16,11 +16,11 @@ export class MenuDrilldownDemo extends Component {
     activeMenu: 'rootMenu'
   };
 
-  onSelect = (_event?: React.MouseEvent, itemId?: string | number)  => {
+  onSelect = (_event?: React.MouseEvent, itemId?: string | number) => {
     if (typeof itemId !== 'string') {
       return;
     }
-    
+
     if (itemId.startsWith('group:')) {
       console.log(`selected sub-menu: ${itemId.split('group:')[1]}`);
     } else {

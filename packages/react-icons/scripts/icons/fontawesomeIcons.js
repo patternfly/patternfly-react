@@ -6,8 +6,7 @@ const { fab } = require('@fortawesome/free-brands-svg-icons');
  * @param {object} icon FontAwesome icon to convert
  */
 function convertIcon(icon) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [width, height, ligatures, unicode, svgPathData] = icon.icon;
+  const [width, height, svgPathData] = icon.icon;
 
   return {
     xOffset: 0,
@@ -40,7 +39,7 @@ function convertIcons(icons) {
   delete icons.faFontAwesomeLogoFull;
 
   return Object.values(icons)
-    .map(icon => ({
+    .map((icon) => ({
       name: getIconName(icon),
       data: convertIcon(icon)
     }))

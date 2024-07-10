@@ -98,7 +98,6 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
     </MenuToggle>
   );
   const menu = (
-    // eslint-disable-next-line no-console
     <Menu ref={menuRef} onSelect={(_ev, itemId) => setSelected(itemId as number)} selected={selected}>
       <MenuContent>
         <MenuList>

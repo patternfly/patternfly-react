@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import {
-  StackItem,
-  Title
-} from '@patternfly/react-core';
+import { StackItem, Title } from '@patternfly/react-core';
 import {
   Select,
   SelectOption,
@@ -110,20 +107,14 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
     });
   };
 
-  onSelect = (
-    _event: React.MouseEvent | React.ChangeEvent,
-    selection: string | SelectOptionObject,
-  ) => {
+  onSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     this.setState({
       selected: selection,
       isOpen: false
     });
   };
 
-  onSelectGrouped = (
-    _event: React.MouseEvent | React.ChangeEvent,
-    selection: string | SelectOptionObject
-  ) => {
+  onSelectGrouped = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     this.setState({
       selectedGrouped: selection,
       isOpenGrouped: false
@@ -150,7 +141,7 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
     if (typeaheadMultiSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectFavoritesDemoState) => ({
-          typeaheadMultiSelected: prevState.typeaheadMultiSelected.filter(item => item !== selection)
+          typeaheadMultiSelected: prevState.typeaheadMultiSelected.filter((item) => item !== selection)
         }),
         () => console.log('selections: ', this.state.typeaheadMultiSelected)
       );
@@ -167,7 +158,7 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
   onFavorite = (itemId: string, isFavorite: boolean) => {
     if (isFavorite) {
       this.setState({
-        favorites: this.state.favorites.filter(id => id !== itemId)
+        favorites: this.state.favorites.filter((id) => id !== itemId)
       });
     } else {
       {
@@ -181,7 +172,7 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
   onFavoriteGrouped = (itemId: string, isFavorite: boolean) => {
     if (isFavorite) {
       this.setState({
-        favoritesGrouped: this.state.favoritesGrouped.filter(id => id !== itemId)
+        favoritesGrouped: this.state.favoritesGrouped.filter((id) => id !== itemId)
       });
     } else {
       {
@@ -195,7 +186,7 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
   onFavoriteTypeahead = (itemId: string, isFavorite: boolean) => {
     if (isFavorite) {
       this.setState({
-        typeaheadfavorites: this.state.typeaheadfavorites.filter(id => id !== itemId)
+        typeaheadfavorites: this.state.typeaheadfavorites.filter((id) => id !== itemId)
       });
     } else {
       {
@@ -209,7 +200,7 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
   onFavoriteTypeaheadMulti = (itemId: string, isFavorite: boolean) => {
     if (isFavorite) {
       this.setState({
-        typeaheadMultifavorites: this.state.typeaheadMultifavorites.filter(id => id !== itemId)
+        typeaheadMultifavorites: this.state.typeaheadMultifavorites.filter((id) => id !== itemId)
       });
     } else {
       {

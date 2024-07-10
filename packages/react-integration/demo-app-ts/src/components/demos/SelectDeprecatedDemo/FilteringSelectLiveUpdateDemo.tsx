@@ -27,11 +27,14 @@ export class FilteringSelectLiveUpdateDemo extends Component<FilteringSelectLive
      * This emulates the scenario of options being updated with polling or asyncronous API calls.
      */
     for (let i = 0; i < this.extraOptions.length; i++) {
-      setTimeout(() => {
-        this.setState((prevState: FilteringSelectLiveUpdateDemoState) => ({
-          options: [...prevState.options, this.extraOptions[i]]
-        }));
-      }, 5000 + i * 2000);
+      setTimeout(
+        () => {
+          this.setState((prevState: FilteringSelectLiveUpdateDemoState) => ({
+            options: [...prevState.options, this.extraOptions[i]]
+          }));
+        },
+        5000 + i * 2000
+      );
     }
   };
 
@@ -46,7 +49,7 @@ export class FilteringSelectLiveUpdateDemo extends Component<FilteringSelectLive
     if (selections.includes(selection.toString())) {
       this.setState(
         (prevState: FilteringSelectLiveUpdateDemoState) => ({
-          selections: prevState.selections.filter(item => item !== selection)
+          selections: prevState.selections.filter((item) => item !== selection)
         }),
         () => console.log('selections: ', this.state.selections)
       );
@@ -62,7 +65,7 @@ export class FilteringSelectLiveUpdateDemo extends Component<FilteringSelectLive
     if (textInput === '') {
       return this.state.options;
     } else {
-      return this.state.options.filter(item => item.props.value.toLowerCase().includes(textInput.toLowerCase()));
+      return this.state.options.filter((item) => item.props.value.toLowerCase().includes(textInput.toLowerCase()));
     }
   };
 
@@ -80,7 +83,7 @@ export class FilteringSelectLiveUpdateDemo extends Component<FilteringSelectLive
           aria-label="Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
-          selections={selections.filter(string => string)}
+          selections={selections.filter((string) => string)}
           isOpen={isOpen}
           placeholderText="Filter by status"
           aria-labelledby={titleId}

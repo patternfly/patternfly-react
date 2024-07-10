@@ -65,6 +65,7 @@ describe('ToggleGroup', () => {
     const { asFragment } = render(
       <ToggleGroup isCompact aria-label="non-element children">
         <ToggleGroupItem text="Test" />
+        {/* eslint-disable-next-line no-constant-binary-expression */}
         {false && <ToggleGroupItem text="Test2" />}
         {'Test 3'}
         {undefined}

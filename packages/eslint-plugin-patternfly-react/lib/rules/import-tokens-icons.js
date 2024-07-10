@@ -12,7 +12,7 @@ function makeImport(specifier, moduleName) {
   res += '/dist/esm';
   if (moduleName.includes('icon')) {
     res += '/icons/';
-    res += specifier.imported.name.replace(/[A-Z]/g, match => `-${match.toLowerCase()}`).replace(/^-/, '');
+    res += specifier.imported.name.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`).replace(/^-/, '');
   } else {
     res += `/${specifier.imported.name}`;
   }
@@ -42,7 +42,7 @@ module.exports = {
       ImportDeclaration(node) {
         if (/@patternfly\/react-(tokens|icons)(\/dist\/(js|esm))?/.test(node.source.value)) {
           const esmSpecifiers = node.specifiers.filter(
-            specifier =>
+            (specifier) =>
               specifier.type === 'ImportSpecifier' &&
               !(
                 node.source.value.startsWith('@patternfly/react-icons') &&
@@ -56,7 +56,7 @@ module.exports = {
               fix(fixer) {
                 return fixer.replaceText(
                   node,
-                  esmSpecifiers.map(spec => makeImport(spec, node.source.value)).join('\n')
+                  esmSpecifiers.map((spec) => makeImport(spec, node.source.value)).join('\n')
                 );
               }
             });

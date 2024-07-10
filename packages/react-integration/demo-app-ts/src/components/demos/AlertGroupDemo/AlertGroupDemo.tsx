@@ -1,4 +1,3 @@
-/* eslint-disable patternfly-react/no-anonymous-functions */
 import React from 'react';
 import {
   Alert,

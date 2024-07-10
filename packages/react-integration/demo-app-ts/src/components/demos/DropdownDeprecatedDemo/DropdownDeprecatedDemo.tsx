@@ -58,7 +58,7 @@ export class DropdownDeprecatedDemo extends React.Component<{}, DropdownState> {
         isOpen
       });
     };
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     this.onSelect = (_event) => {
       this.setState({
         isOpen: !this.state.isOpen
@@ -83,14 +83,14 @@ export class DropdownDeprecatedDemo extends React.Component<{}, DropdownState> {
         isActionOpen
       });
     };
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     this.onActionSelect = (_event) => {
       this.setState({
         isActionOpen: !this.state.isActionOpen
       });
       this.onActionFocus();
     };
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     this.onActionClick = (_event) => {
       // eslint-disable-next-line no-console
       console.log('Action clicked!');
@@ -107,14 +107,14 @@ export class DropdownDeprecatedDemo extends React.Component<{}, DropdownState> {
         isCogOpen
       });
     };
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     this.onCogSelect = (_event) => {
       this.setState({
         isCogOpen: !this.state.isCogOpen
       });
       this.onCogFocus();
     };
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     this.onCogClick = (_event) => {
       // eslint-disable-next-line no-console
       console.log('Cog clicked!');
@@ -131,7 +131,7 @@ export class DropdownDeprecatedDemo extends React.Component<{}, DropdownState> {
         isMenuOnDocumentBodyOpen
       });
     };
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     this.onMenuDocumentBodySelect = (_event) => {
       this.setState({
         isMenuOnDocumentBodyOpen: !this.state.isMenuOnDocumentBodyOpen

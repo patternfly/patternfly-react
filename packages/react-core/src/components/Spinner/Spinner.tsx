@@ -28,7 +28,6 @@ export interface SpinnerProps extends React.SVGProps<SVGSVGElement> {
 }
 
 export const Spinner: React.FunctionComponent<SpinnerProps> = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   size = 'xl',
   'aria-valuetext': ariaValueText = 'Loading...',

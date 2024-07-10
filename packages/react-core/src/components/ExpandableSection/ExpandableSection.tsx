@@ -184,7 +184,7 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
   render() {
     const {
       onToggle: onToggleProp,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
       isActive,
       className,
       toggleText,

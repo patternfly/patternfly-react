@@ -89,7 +89,6 @@ test('sideElementIsOutOfView Returns NONE when in view', () => {
 });
 
 test('fillTemplate interpolates strings correctly', () => {
-  // eslint-disable-next-line no-template-curly-in-string
   const templateString = 'My name is ${firstName} ${lastName}';
   const expected = 'My name is Jon Dough';
   const templatVars = {

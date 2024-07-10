@@ -33,8 +33,4 @@ Use Cypress tests to capture how the DOM should look after interactions. Save Cy
 
 ## Linting
 
-PatternFly React has 3 linters you can run all at once using `yarn lint:all`. These are run in `--fix` mode in on your staged files each commit.
-
-### ESLint
-
-ESLint is run on .js, .jsx, .ts, and .tsx files. It uses the [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) parser with custom config added over the years. We write some of our own ESLint rules in `eslint-plugin-patternfly-react`. You can run this linter with `yarn lint:ts` or on specific files with `yarn lint <path>`.
+PatternFly React has ESLint as the linter, you can run this linter with `yarn lint` or on specific files with `yarn lint <path>`. When you commit code, the linter will run automatically. If there are any errors, you will need to fix them before you can commit.

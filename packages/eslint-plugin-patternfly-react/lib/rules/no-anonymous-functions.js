@@ -41,10 +41,10 @@ module.exports = {
         ) {
           const displayNameNode = context
             .getSourceCode()
-            .ast.body.filter(n => n.type === 'ExpressionStatement')
-            .filter(n => n.expression.left)
+            .ast.body.filter((n) => n.type === 'ExpressionStatement')
+            .filter((n) => n.expression.left)
             .find(
-              n => n.expression.left.object.name === displayName && n.expression.left.property.name === 'displayName'
+              (n) => n.expression.left.object.name === displayName && n.expression.left.property.name === 'displayName'
             );
           if (!displayNameNode) {
             context.report({
@@ -64,7 +64,7 @@ module.exports = {
           declaration.superClass.property.name === 'Component'
         ) {
           const classBody = declaration.body.body;
-          const displayNameNode = classBody.find(n => n.type === 'ClassProperty' && n.key.name === 'displayName');
+          const displayNameNode = classBody.find((n) => n.type === 'ClassProperty' && n.key.name === 'displayName');
           if (!displayNameNode) {
             context.report({
               node,

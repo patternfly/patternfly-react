@@ -10,7 +10,7 @@ import svg from 'rollup-plugin-svg';
 const isProduction = process.env.IS_PRODUCTION;
 let exitCode = 0;
 
-  /** @returns {import('rollup').Plugin} */
+/** @returns {import('rollup').Plugin} */
 function circularFailPlugin() {
   return {
     name: 'circluarFailPlugin',
@@ -31,8 +31,7 @@ export default function baseConfig({ packageName, name }) {
     nodeResolve(),
     commonjs(),
     scss(),
-    // SVG plugin does not ship with types.
-    // @ts-ignore
+    // @ts-expect-error The SVG plugin does not ship with types.
     svg(),
     circularFailPlugin()
   ];

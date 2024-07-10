@@ -23,7 +23,7 @@ function setPackageGenerators(plop) {
         message: 'Does this build with Typescript?'
       }
     ],
-    actions: answers => {
+    actions: (answers) => {
       const packageBaseTemplate = join(packagesRoot, `./{{${REMOVE_NPM_SCOPE} name}}/`);
 
       return [
@@ -39,20 +39,17 @@ function setPackageGenerators(plop) {
             ? join(packageBaseTemplate, 'src/index.ts')
             : join(packageBaseTemplate, 'lib/index.js')
         },
-        answers.buildsWithTypescript &&
-        {
+        answers.buildsWithTypescript && {
           type: 'add',
           path: join(packageBaseTemplate, `.npmignore`),
           templateFile: resolve(__dirname, './.npmignore')
         },
-        answers.buildsWithTypescript &&
-        {
+        answers.buildsWithTypescript && {
           type: 'add',
           path: join(packageBaseTemplate, `tsconfig.json`),
           templateFile: resolve(__dirname, './tsconfig.json')
         },
-        answers.buildsWithTypescript &&
-        {
+        answers.buildsWithTypescript && {
           type: 'add',
           path: join(packageBaseTemplate, `tsconfig.cjs.json`),
           templateFile: resolve(__dirname, './tsconfig.cjs.json')

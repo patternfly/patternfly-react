@@ -12,7 +12,6 @@ export interface DrawerContentBodyProps extends React.HTMLProps<HTMLDivElement> 
 }
 
 export const DrawerContentBody: React.FunctionComponent<DrawerContentBodyProps> = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,
   hasPadding = false,

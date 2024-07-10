@@ -13,7 +13,6 @@ export interface DrawerHeadProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const DrawerHead: React.FunctionComponent<DrawerHeadProps> = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,
   hasNoPadding = false,
