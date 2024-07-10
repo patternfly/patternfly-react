@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.87](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.86...@patternfly/react-docs@7.0.0-alpha.87) (2024-07-10)
+
+### Bug Fixes
+
+- **docs-framework:** bump to alpha.54 version ([#10716](https://github.com/patternfly/patternfly-react/issues/10716)) ([28b8f1c](https://github.com/patternfly/patternfly-react/commit/28b8f1cd39beaca30e41c2696d3b21e8d7b105e0))
+
 # [7.0.0-alpha.86](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.85...@patternfly/react-docs@7.0.0-alpha.86) (2024-07-09)
 
 **Note:** Version bump only for package @patternfly/react-docs
