@@ -34,7 +34,7 @@
     "@patternfly/react-tokens": "workspace:^"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^5.16.11",
+    "@patternfly/documentation-framework": "^5.16.12",
     "@patternfly/patternfly-a11y": "4.3.1"
   },
   "keywords": [
