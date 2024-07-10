@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.4.0-prerelease.21...@patternfly/react-table@5.4.0-prerelease.22) (2024-07-10)
+
+### Bug Fixes
+
+- **Table:** compound expansion table row styles ([#10602](https://github.com/patternfly/patternfly-react/issues/10602)) ([974bb40](https://github.com/patternfly/patternfly-react/commit/974bb40bfd27b0a0fd583602ce19e4a04a8f8f95))
+
 # [5.4.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.4.0-prerelease.20...@patternfly/react-table@5.4.0-prerelease.21) (2024-07-09)
 
 **Note:** Version bump only for package @patternfly/react-table
