@@ -15,7 +15,7 @@ export const ToolbarSticky: React.FunctionComponent = () => {
             <ToolbarItem>
               <SearchInput aria-label="Sticky example search input" />
             </ToolbarItem>
-            <ToolbarItem>
+            <ToolbarItem alignSelf="center">
               <Checkbox
                 label="Show only even number items"
                 isChecked={showEvenOnly}
