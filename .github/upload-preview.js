@@ -1,4 +1,5 @@
  
+
 const path = require('path');
 const { Octokit } = require('@octokit/rest');
 const octokit = new Octokit({ auth: process.env.GH_PR_TOKEN });
@@ -19,7 +20,7 @@ if (!uploadFolder) {
 
 const uploadFolderName = path.basename(uploadFolder);
  
-let uploadURL = `${repo}-${prnum ? `pr-${prnum}` : prbranch}`.replace(/[\/|\.]/g, '-');
+let uploadURL = `${repo}-${prnum ? `pr-${prnum}` : prbranch}`.replace(/[/|\.]/g, '-');
 
 switch (uploadFolderName) {
   case 'coverage':
