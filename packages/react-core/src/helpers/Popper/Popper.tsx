@@ -221,6 +221,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   const [popperContent, setPopperContent] = React.useState(null);
   const [ready, setReady] = React.useState(false);
   const [opacity, setOpacity] = React.useState(0);
+  const [display, setDisplay] = React.useState('none');
   const [internalIsVisible, setInternalIsVisible] = React.useState(isVisible);
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
@@ -443,6 +444,12 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     ]
   });
 
+  React.useEffect(() => {
+    if (internalIsVisible) {
+      forceUpdate && forceUpdate();
+    }
+  }, [internalIsVisible]);
+
   /** We want to forceUpdate only when a tooltip's content is dynamically updated.
    * TODO: Investigate into 3rd party libraries for a less limited/specific solution
    */
@@ -475,6 +482,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     showTimerRef.current = setTimeout(() => {
       setInternalIsVisible(true);
       setOpacity(1);
+      setDisplay('');
       onShown();
     }, entryDelay);
   };
@@ -484,6 +492,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     clearTimeouts([showTimerRef]);
     hideTimerRef.current = setTimeout(() => {
       setOpacity(0);
+      setDisplay('none');
       transitionTimerRef.current = setTimeout(() => {
         setInternalIsVisible(false);
         onHidden();
@@ -516,6 +525,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       ...popperStyles.popper,
       zIndex,
       opacity,
+      display,
       transition: getOpacityTransition(animationDuration)
     },
     ...attributes.popper
