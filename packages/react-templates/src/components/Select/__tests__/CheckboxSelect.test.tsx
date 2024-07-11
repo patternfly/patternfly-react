@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { CheckboxSelect } from '../CheckboxSelect';
 import styles from '@patternfly/react-styles/css/components/Badge/badge';
@@ -136,8 +136,6 @@ test('toggles the select menu when the toggle button is clicked', async () => {
   expect(screen.getByRole('menu')).toBeInTheDocument();
 
   await user.click(toggleButton);
-
-  await waitForElementToBeRemoved(() => screen.queryByRole('menu'));
 
   expect(screen.queryByRole('menu')).not.toBeInTheDocument();
 });
