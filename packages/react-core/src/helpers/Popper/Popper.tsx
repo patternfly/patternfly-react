@@ -205,9 +205,9 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   flipBehavior = 'flip',
   triggerRef,
   popperRef,
-  animationDuration = 0,
+  animationDuration = 1000,
   entryDelay = 0,
-  exitDelay = 0,
+  exitDelay = 1000,
   onHidden = () => {},
   onHide = () => {},
   onMount = () => {},
@@ -492,9 +492,9 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     clearTimeouts([showTimerRef]);
     hideTimerRef.current = setTimeout(() => {
       setOpacity(0);
-      setDisplay('none');
       transitionTimerRef.current = setTimeout(() => {
         setInternalIsVisible(false);
+        setDisplay('none');
         onHidden();
       }, animationDuration);
     }, exitDelay);
