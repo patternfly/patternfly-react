@@ -99,9 +99,7 @@ exports[`Toolbar should render with custom label content 1`] = `
       class="pf-v6-c-toolbar__content"
     >
       <div
-        aria-hidden="true"
-        class="pf-v6-c-toolbar__group pf-m-hidden"
-        hidden=""
+        class="pf-v6-c-toolbar__group"
       >
         <div
           class="pf-v6-c-toolbar__item pf-m-label-group pf-m-label-group"
@@ -259,13 +257,8 @@ exports[`Toolbar should render with custom label content 1`] = `
         </div>
       </div>
       <div
-        class="pf-v6-c-toolbar__group"
+        class="pf-v6-c-toolbar__group pf-m-action-group-inline"
       >
-        <div
-          class="pf-v6-c-toolbar__item"
-        >
-          2 filters applied
-        </div>
         <div
           class="pf-v6-c-toolbar__item"
         >
@@ -277,7 +270,11 @@ exports[`Toolbar should render with custom label content 1`] = `
             data-ouia-safe="true"
             type="button"
           >
-            Save filters
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Save filters
+            </span>
           </button>
         </div>
         <div
@@ -291,7 +288,11 @@ exports[`Toolbar should render with custom label content 1`] = `
             data-ouia-safe="true"
             type="button"
           >
-            Clear all filters
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Clear all filters
+            </span>
           </button>
         </div>
       </div>
