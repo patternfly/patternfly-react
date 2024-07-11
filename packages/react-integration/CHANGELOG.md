@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.40...@patternfly/react-integration@6.0.0-alpha.41) (2024-07-11)
+
+### Features
+
+- **Dropdown:** allowed preventing autofocus v6 ([#10708](https://github.com/patternfly/patternfly-react/issues/10708)) ([9fe5e5a](https://github.com/patternfly/patternfly-react/commit/9fe5e5aa4fc3f1c49a5aae61bf4480f80b197eb3))
+
 # [6.0.0-alpha.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.39...@patternfly/react-integration@6.0.0-alpha.40) (2024-07-08)
 
 **Note:** Version bump only for package @patternfly/react-integration

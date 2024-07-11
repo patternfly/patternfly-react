@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.80](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.79...demo-app-ts@5.1.1-alpha.80) (2024-07-11)
+
+### Features
+
+- **Dropdown:** allowed preventing autofocus v6 ([#10708](https://github.com/patternfly/patternfly-react/issues/10708)) ([9fe5e5a](https://github.com/patternfly/patternfly-react/commit/9fe5e5aa4fc3f1c49a5aae61bf4480f80b197eb3))
+
 ## [5.1.1-alpha.79](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.78...demo-app-ts@5.1.1-alpha.79) (2024-07-09)
 
 **Note:** Version bump only for package demo-app-ts

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.81](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.80...@patternfly/react-core@6.0.0-alpha.81) (2024-07-11)
+
+### Features
+
+- **Dropdown:** allowed preventing autofocus v6 ([#10708](https://github.com/patternfly/patternfly-react/issues/10708)) ([9fe5e5a](https://github.com/patternfly/patternfly-react/commit/9fe5e5aa4fc3f1c49a5aae61bf4480f80b197eb3))
+- **Nav:** Added default nav item wrapper. Added support for nav item icons ([#10687](https://github.com/patternfly/patternfly-react/issues/10687)) ([2b5338b](https://github.com/patternfly/patternfly-react/commit/2b5338b78e1aa9532878878c04815907f217d6c8))
+
 # [6.0.0-alpha.80](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.79...@patternfly/react-core@6.0.0-alpha.80) (2024-07-09)
 
 ### Bug Fixes
