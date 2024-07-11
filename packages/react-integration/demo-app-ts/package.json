@@ -1,7 +1,7 @@
 {
   "name": "demo-app-ts",
   "private": true,
-  "version": "5.1.1-prerelease.128",
+  "version": "5.1.1-prerelease.129",
   "type": "module",
   "scripts": {
     "dev": "vite",

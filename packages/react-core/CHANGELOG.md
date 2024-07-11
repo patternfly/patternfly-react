@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.20...@patternfly/react-core@5.4.0-prerelease.21) (2024-07-11)
+
+### Bug Fixes
+
+- **Wizard:** add className and spread props when possible ([#10684](https://github.com/patternfly/patternfly-react/issues/10684)) ([51d6e6e](https://github.com/patternfly/patternfly-react/commit/51d6e6e2f4610baa4cdfef1927f137faa06562c0))
+
 # [5.4.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.19...@patternfly/react-core@5.4.0-prerelease.20) (2024-07-09)
 
 ### Bug Fixes

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@5.4.0-prerelease.9...@patternfly/react-styles@5.4.0-prerelease.10) (2024-07-11)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
 # [5.4.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@5.4.0-prerelease.8...@patternfly/react-styles@5.4.0-prerelease.9) (2024-07-02)
 
 **Note:** Version bump only for package @patternfly/react-styles
