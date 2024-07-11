@@ -36,12 +36,12 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   onShowFlyout?: () => void;
   /** z-index of the flyout nav item */
   zIndex?: number;
+  /** Icon added before the nav item children. */
+  icon?: React.ReactNode;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
-  /** Adds a wrapper around the nav link text. Improves the layout when the text is a react node. */
-  hasNavLinkWrapper?: boolean;
 }
 
 export const NavItem: React.FunctionComponent<NavItemProps> = ({
@@ -60,7 +60,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   ouiaId,
   ouiaSafe,
   zIndex = 9999,
-  hasNavLinkWrapper,
+  icon,
   ...props
 }: NavItemProps) => {
   const { flyoutRef, setFlyoutRef, navRef } = React.useContext(NavContext);
@@ -193,7 +193,8 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
         {...(hasFlyout && { ...ariaFlyoutProps })}
         {...props}
       >
-        {hasNavLinkWrapper ? <span className={css(`${styles.nav}__link-text`)}>{children}</span> : children}
+        {icon && <span className={css(styles.navLinkIcon)}>{icon}</span>}
+        <span className={css(`${styles.nav}__link-text`)}>{children}</span>
         {flyout && flyoutButton}
       </Component>
     );
