@@ -251,7 +251,15 @@ class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
                         className={css(
                           styles.toolbarGroup,
                           styles.modifiers.toggleGroup,
-                          variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup'],
+                          variant &&
+                            styles.modifiers[
+                              toCamel(variant) as
+                                | 'filterGroup'
+                                | 'actionGroup'
+                                | 'actionGroupInline'
+                                | 'actionGroupPlain'
+                                | 'labelGroup'
+                            ],
                           formatBreakpointMods(breakpointMod, styles, '', getBreakpoint(width)),
                           formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
                           formatBreakpointMods(gap, styles, '', getBreakpoint(width)),

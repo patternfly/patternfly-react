@@ -70,7 +70,7 @@ class ToolbarLabelGroupContent extends React.Component<ToolbarLabelGroupContentP
 
     const isHidden = numberOfFilters === 0 || isExpanded;
     const showNumberOfFilters = collapseListedFilters && numberOfFilters > 0 && !isExpanded;
-    const showDefaultClearFilter = showClearFiltersButton && !isExpanded && !customChipGroupContent;
+    const showDefaultClearFilter = showClearFiltersButton && !isExpanded && !customLabelGroupContent;
 
     return (
       <div
@@ -84,17 +84,17 @@ class ToolbarLabelGroupContent extends React.Component<ToolbarLabelGroupContentP
           {...(collapseListedFilters && { hidden: true })}
           {...(collapseListedFilters && { 'aria-hidden': true })}
         />
-        {(showNumberOfFilters || showDefaultClearFilter || customChipGroupContent) && (
+        {(showNumberOfFilters || showDefaultClearFilter || customLabelGroupContent) && (
           <ToolbarGroup variant="action-group-inline">
             {showNumberOfFilters && <ToolbarItem>{numberOfFiltersText(numberOfFilters)}</ToolbarItem>}
             {showDefaultClearFilter && (
               <ToolbarItem>
-                <Button variant="link" onClick={clearChipGroups} isInline>
+                <Button variant="link" onClick={clearLabelGroups} isInline>
                   {clearFiltersButtonText}
                 </Button>
               </ToolbarItem>
             )}
-            {customChipGroupContent && customChipGroupContent}
+            {customLabelGroupContent && customLabelGroupContent}
           </ToolbarGroup>
         )}
       </div>

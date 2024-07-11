@@ -189,7 +189,15 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
           <div
             className={css(
               styles.toolbarGroup,
-              variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup'],
+              variant &&
+                styles.modifiers[
+                  toCamel(variant) as
+                    | 'filterGroup'
+                    | 'actionGroup'
+                    | 'actionGroupInline'
+                    | 'actionGroupPlain'
+                    | 'labelGroup'
+                ],
               formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
               formatBreakpointMods(align, styles, '', getBreakpoint(width)),
               formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
