@@ -37,6 +37,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ### Area chart
 ```js
 import React from 'react';
+import { Switch } from '@patternfly/react-core';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 export const ChartAreaSkeleton: React.FunctionComponent = () => {
@@ -118,6 +119,7 @@ export const ChartAreaSkeleton: React.FunctionComponent = () => {
 ### Bar chart
 ```js
 import React from 'react';
+import { Switch } from '@patternfly/react-core';
 import { Chart, ChartBar, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 export const ChartBarSkeleton: React.FunctionComponent = () => {
@@ -175,6 +177,7 @@ export const ChartBarSkeleton: React.FunctionComponent = () => {
 ### Box plot chart
 ```js
 import React from 'react';
+import { Switch } from '@patternfly/react-core';
 import { Chart, ChartAxis, ChartBoxPlot } from '@patternfly/react-charts';
 
 export const ChartBoxPlotSkeleton: React.FunctionComponent = () => {
@@ -233,6 +236,7 @@ export const ChartBoxPlotSkeleton: React.FunctionComponent = () => {
 ### Bullet chart
 ```js
 import React from 'react';
+import { Switch } from '@patternfly/react-core';
 import { Chart, ChartAxis, ChartBullet, ChartLegend } from '@patternfly/react-charts';
 
 export const ChartBulletSkeleton: React.FunctionComponent = () => {
@@ -287,6 +291,7 @@ export const ChartBulletSkeleton: React.FunctionComponent = () => {
 ### Donut chart
 ```js
 import React from 'react';
+import { Switch } from '@patternfly/react-core';
 import { Chart, ChartAxis, ChartDonut } from '@patternfly/react-charts';
 
 export const ChartDonutSkeleton: React.FunctionComponent = () => {
@@ -326,6 +331,7 @@ export const ChartDonutSkeleton: React.FunctionComponent = () => {
 ### Donut utilization chart
 ```js
 import React from 'react';
+import { Switch } from '@patternfly/react-core';
 import { Chart, ChartAxis, ChartDonutUtilization } from '@patternfly/react-charts';
 
 export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
@@ -375,6 +381,7 @@ export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
 ### Donut utilization threshold
 ```js
 import React from 'react';
+import { Switch } from '@patternfly/react-core';
 import { Chart, ChartAxis, ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
 export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
@@ -419,7 +426,8 @@ export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
 ### Line chart
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartLine } from '@patternfly/react-charts';
+import { Switch } from '@patternfly/react-core';
+import { Chart, ChartVoronoiContainer, ChartGroup, ChartAxis, ChartLine } from '@patternfly/react-charts';
 
 export const ChartLineSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -509,6 +517,7 @@ export const ChartLineSkeleton: React.FunctionComponent = () => {
 ### Pie chart
 ```js
 import React from 'react';
+import { Switch } from '@patternfly/react-core';
 import { Chart, ChartAxis, ChartPie } from '@patternfly/react-charts';
 
 export const ChartPieSkeleton: React.FunctionComponent = () => {
@@ -557,7 +566,8 @@ export const ChartPieSkeleton: React.FunctionComponent = () => {
 ### Scatter chart
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartScatter } from '@patternfly/react-charts';
+import { Switch } from '@patternfly/react-core';
+import { Chart, ChartVoronoiContainer, ChartGroup, ChartAxis, ChartScatter } from '@patternfly/react-charts';
 
 export const ChartScatterSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -614,7 +624,8 @@ export const ChartScatterSkeleton: React.FunctionComponent = () => {
 ### Stack chart
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartStack } from '@patternfly/react-charts';
+import { Switch } from '@patternfly/react-core';
+import { Chart, ChartVoronoiContainer, ChartAxis, ChartStack, ChartBar } from '@patternfly/react-charts';
 
 export const ChartStackSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -670,7 +681,8 @@ export const ChartStackSkeleton: React.FunctionComponent = () => {
 ### Threshold chart
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartThreshold } from '@patternfly/react-charts';
+import { Switch } from '@patternfly/react-core';
+import { Chart, ChartVoronoiContainer, ChartLegend, ChartAxis, ChartThreshold, ChartGroup, ChartArea } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 
 export const ChartThresholdSkeleton: React.FunctionComponent = () => {

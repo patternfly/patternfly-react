@@ -89,7 +89,7 @@
     "generate": "yarn plop",
     "lint": "eslint --ext js,jsx,ts,tsx --cache --cache-strategy content",
     "lint:all": "yarn lint:md && yarn lint:ts",
-    "lint:md": "yarn eslint packages --ext md --no-eslintrc --config .eslintrc-md.json --cache --cache-strategy content",
+    "lint:md": "ESLINT_USE_FLAT_CONFIG=true eslint **/*.md --cache --cache-strategy content --config eslint.config-md.mjs --no-warn-ignored",
     "lint:ts": "yarn lint packages/*/src",
     "lint:tests": "yarn lint packages/*/src/components/*/__tests__/*.test.*",
     "postinstall": "ts-patch install -s && husky",
