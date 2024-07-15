@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@5.4.0-prerelease.23...@patternfly/react-drag-drop@5.4.0-prerelease.24) (2024-07-15)
+
+### Features
+
+- **DragDrop next:** add multiple drop zone support ([#10614](https://github.com/patternfly/patternfly-react/issues/10614)) ([8ff0c5e](https://github.com/patternfly/patternfly-react/commit/8ff0c5ebae19d64631c1f0ceba36b0d7829c3d58))
+
 # [5.4.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@5.4.0-prerelease.22...@patternfly/react-drag-drop@5.4.0-prerelease.23) (2024-07-11)
 
 **Note:** Version bump only for package @patternfly/react-drag-drop
