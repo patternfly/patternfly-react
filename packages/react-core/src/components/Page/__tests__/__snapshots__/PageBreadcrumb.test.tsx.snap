@@ -5,7 +5,11 @@ exports[`page breadcrumb Verify basic render 1`] = `
   <section
     class="pf-v6-c-page__main-breadcrumb"
   >
-    test
+    <div
+      class="pf-v6-c-page__main-body"
+    >
+      test
+    </div>
   </section>
 </DocumentFragment>
 `;
@@ -15,7 +19,11 @@ exports[`page breadcrumb Verify bottom shadow 1`] = `
   <section
     class="pf-v6-c-page__main-breadcrumb pf-m-shadow-bottom"
   >
-    test
+    <div
+      class="pf-v6-c-page__main-body"
+    >
+      test
+    </div>
   </section>
 </DocumentFragment>
 `;
@@ -25,7 +33,11 @@ exports[`page breadcrumb Verify bottom sticky 1`] = `
   <section
     class="pf-v6-c-page__main-breadcrumb pf-m-sticky-bottom"
   >
-    test
+    <div
+      class="pf-v6-c-page__main-body"
+    >
+      test
+    </div>
   </section>
 </DocumentFragment>
 `;
@@ -50,7 +62,11 @@ exports[`page breadcrumb Verify overflow scroll 1`] = `
     class="pf-v6-c-page__main-breadcrumb pf-m-overflow-scroll"
     tabindex="0"
   >
-    test
+    <div
+      class="pf-v6-c-page__main-body"
+    >
+      test
+    </div>
   </section>
 </DocumentFragment>
 `;
@@ -60,7 +76,11 @@ exports[`page breadcrumb Verify top shadow 1`] = `
   <section
     class="pf-v6-c-page__main-breadcrumb pf-m-shadow-top"
   >
-    test
+    <div
+      class="pf-v6-c-page__main-body"
+    >
+      test
+    </div>
   </section>
 </DocumentFragment>
 `;
@@ -70,7 +90,11 @@ exports[`page breadcrumb Verify top sticky 1`] = `
   <section
     class="pf-v6-c-page__main-breadcrumb pf-m-sticky-top"
   >
-    test
+    <div
+      class="pf-v6-c-page__main-body"
+    >
+      test
+    </div>
   </section>
 </DocumentFragment>
 `;

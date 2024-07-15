@@ -11,7 +11,6 @@ import {
   PageSection,
   PageGroup,
   PageBreadcrumb,
-  PageNavigation,
   PageToggleButton,
   Breadcrumb,
   BreadcrumbItem,
@@ -70,27 +69,25 @@ export const PageGroupSection: React.FunctionComponent = () => {
   return (
     <Page masthead={masthead} sidebar={sidebar}>
       <PageGroup>
-        <PageNavigation>
-          <Nav aria-label="Group section navigation" variant="horizontal-subnav">
-            <NavList>
-              <NavItem href="#" itemId={0} isActive>
-                System panel
-              </NavItem>
-              <NavItem href="#" itemId={1}>
-                Policy
-              </NavItem>
-              <NavItem href="#" itemId={2}>
-                Authentication
-              </NavItem>
-              <NavItem href="#" itemId={3}>
-                Network services
-              </NavItem>
-              <NavItem href="#" itemId={4}>
-                Server
-              </NavItem>
-            </NavList>
-          </Nav>
-        </PageNavigation>
+        <Nav aria-label="Group section navigation" variant="horizontal-subnav">
+          <NavList>
+            <NavItem href="#" itemId={0} isActive>
+              System panel
+            </NavItem>
+            <NavItem href="#" itemId={1}>
+              Policy
+            </NavItem>
+            <NavItem href="#" itemId={2}>
+              Authentication
+            </NavItem>
+            <NavItem href="#" itemId={3}>
+              Network services
+            </NavItem>
+            <NavItem href="#" itemId={4}>
+              Server
+            </NavItem>
+          </NavList>
+        </Nav>
         <PageBreadcrumb>
           <Breadcrumb>
             <BreadcrumbItem>Section home</BreadcrumbItem>

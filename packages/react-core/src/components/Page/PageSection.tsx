@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from './PageContext';
+import { PageBody } from './PageBody';
 
 export enum PageSectionVariants {
   default = 'default',
@@ -11,7 +12,6 @@ export enum PageSectionVariants {
 
 export enum PageSectionTypes {
   default = 'default',
-  nav = 'nav',
   subNav = 'subnav',
   breadcrumb = 'breadcrumb',
   tabs = 'tabs',
@@ -26,7 +26,7 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Section background color variant. This will only apply when the type prop has the "default" value. */
   variant?: 'default' | 'secondary';
   /** Section type variant */
-  type?: 'default' | 'nav' | 'subnav' | 'breadcrumb' | 'tabs' | 'wizard';
+  type?: 'default' | 'subnav' | 'breadcrumb' | 'tabs' | 'wizard';
   /** Enables the page section to fill the available vertical space */
   isFilled?: boolean;
   /** Limits the width of the section */
@@ -57,6 +57,10 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   hasShadowBottom?: boolean;
   /** Flag indicating if the PageSection has a scrolling overflow */
   hasOverflowScroll?: boolean;
+  /** @beta Flag indicating whether children passed to the component should be wrapped by a PageBody.
+   * Set this to false in order to pass multiple, custom PageBody's as children.
+   */
+  hasBodyWrapper?: boolean;
   /** Adds an accessible name to the page section. Required when the hasOverflowScroll prop is set to true.
    * This prop should also be passed in if a heading is not being used to describe the content of the page section.
    */
@@ -67,7 +71,6 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
 
 const variantType = {
   [PageSectionTypes.default]: styles.pageMainSection,
-  [PageSectionTypes.nav]: styles.pageMainNav,
   [PageSectionTypes.subNav]: styles.pageMainSubnav,
   [PageSectionTypes.breadcrumb]: styles.pageMainBreadcrumb,
   [PageSectionTypes.tabs]: styles.pageMainTabs,
@@ -94,6 +97,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   hasOverflowScroll = false,
   'aria-label': ariaLabel,
   component = 'section',
+  hasBodyWrapper = true,
   ...props
 }: PageSectionProps) => {
   const { height, getVerticalBreakpoint } = React.useContext(PageContext);
@@ -127,8 +131,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
       {...(hasOverflowScroll && { tabIndex: 0 })}
       aria-label={ariaLabel}
     >
-      {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
-      {!isWidthLimited && children}
+      {hasBodyWrapper ? <PageBody>{children}</PageBody> : children}
     </Component>
   );
 };

@@ -31,7 +31,11 @@ exports[`Page Check dark page against snapshot 1`] = `
         <section
           class="pf-v6-c-page__main-section"
         >
-          Section with default background
+          <div
+            class="pf-v6-c-page__main-body"
+          >
+            Section with default background
+          </div>
         </section>
       </main>
     </div>
@@ -64,7 +68,11 @@ exports[`Page Check page horizontal layout example against snapshot 1`] = `
         <section
           class="pf-v6-c-page__main-section"
         >
-          Section with default background
+          <div
+            class="pf-v6-c-page__main-body"
+          >
+            Section with default background
+          </div>
         </section>
       </main>
     </div>
@@ -97,287 +105,13 @@ exports[`Page Check page to verify breadcrumb is created - PageBreadcrumb syntax
         <section
           class="pf-v6-c-page__main-breadcrumb"
         >
-          <nav
-            aria-label="Breadcrumb"
-            class="pf-v6-c-breadcrumb"
-            data-ouia-component-id="OUIA-Generated-Breadcrumb-4"
-            data-ouia-component-type="PF6/Breadcrumb"
-            data-ouia-safe="true"
-          >
-            <ol
-              class="pf-v6-c-breadcrumb__list"
-              role="list"
-            >
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                Section Home
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
-                >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
-                >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  aria-current="page"
-                  class="pf-v6-c-breadcrumb__link pf-m-current"
-                  href="#"
-                >
-                  Section Landing
-                </a>
-              </li>
-            </ol>
-          </nav>
-        </section>
-        <section
-          class="pf-v6-c-page__main-section"
-        >
-          Section with default background
-        </section>
-      </main>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Page Check page to verify breadcrumb is created 1`] = `
-<DocumentFragment>
-  <div
-    aria-label="Page layout"
-    class="pf-v6-c-page my-page-class"
-    id="PageId"
-  >
-    <header
-      class="pf-v6-c-masthead pf-m-display-inline-on-md"
-    />
-    <div
-      aria-hidden="false"
-      class="pf-v6-c-page__sidebar pf-m-expanded"
-      id="page-sidebar"
-    />
-    <div
-      class="pf-v6-c-page__main-container"
-    >
-      <main
-        class="pf-v6-c-page__main"
-        tabindex="-1"
-      >
-        <section
-          class="pf-v6-c-page__main-breadcrumb"
-        >
-          <nav
-            aria-label="Breadcrumb"
-            class="pf-v6-c-breadcrumb"
-            data-ouia-component-id="OUIA-Generated-Breadcrumb-1"
-            data-ouia-component-type="PF6/Breadcrumb"
-            data-ouia-safe="true"
-          >
-            <ol
-              class="pf-v6-c-breadcrumb__list"
-              role="list"
-            >
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                Section Home
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
-                >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
-                >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  aria-current="page"
-                  class="pf-v6-c-breadcrumb__link pf-m-current"
-                  href="#"
-                >
-                  Section Landing
-                </a>
-              </li>
-            </ol>
-          </nav>
-        </section>
-        <section
-          class="pf-v6-c-page__main-section"
-        >
-          Section with default background
-        </section>
-      </main>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Page Check page to verify grouped nav and breadcrumb - new components syntax 1`] = `
-<DocumentFragment>
-  <div
-    aria-label="Page layout"
-    class="pf-v6-c-page my-page-class"
-    id="PageId"
-  >
-    <header
-      class="pf-v6-c-masthead pf-m-display-inline-on-md"
-    />
-    <div
-      aria-hidden="false"
-      class="pf-v6-c-page__sidebar pf-m-expanded"
-      id="page-sidebar"
-    />
-    <div
-      class="pf-v6-c-page__main-container"
-    >
-      <main
-        class="pf-v6-c-page__main"
-        tabindex="-1"
-      >
-        <div
-          class="pf-v6-c-page__main-group pf-m-sticky-bottom"
-        >
-          <section
-            class="pf-v6-c-page__main-breadcrumb"
+          <div
+            class="pf-v6-c-page__main-body"
           >
             <nav
               aria-label="Breadcrumb"
               class="pf-v6-c-breadcrumb"
-              data-ouia-component-id="OUIA-Generated-Breadcrumb-7"
+              data-ouia-component-id="OUIA-Generated-Breadcrumb-4"
               data-ouia-component-type="PF6/Breadcrumb"
               data-ouia-safe="true"
             >
@@ -474,110 +208,16 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
                 </li>
               </ol>
             </nav>
-          </section>
-          <div
-            class="pf-v6-c-page__main-nav"
-          >
-            <nav
-              aria-label="Nav"
-              class="pf-v6-c-nav pf-m-horizontal pf-m-subnav"
-              data-ouia-component-id="OUIA-Generated-Nav-horizontal-subnav-2"
-              data-ouia-component-type="PF6/Nav"
-              data-ouia-safe="true"
-            >
-              <ul
-                class="pf-v6-c-nav__list"
-                role="list"
-              >
-                <li
-                  class="pf-v6-c-nav__item"
-                  data-ouia-component-id="OUIA-Generated-NavItem-6"
-                  data-ouia-component-type="PF6/NavItem"
-                  data-ouia-safe="true"
-                >
-                  <a
-                    aria-current="page"
-                    class="pf-v6-c-nav__link pf-m-current"
-                  >
-                    <span
-                      class="pf-v6-c-nav__link-text"
-                    >
-                      System Panel
-                    </span>
-                  </a>
-                </li>
-                <li
-                  class="pf-v6-c-nav__item"
-                  data-ouia-component-id="OUIA-Generated-NavItem-7"
-                  data-ouia-component-type="PF6/NavItem"
-                  data-ouia-safe="true"
-                >
-                  <a
-                    class="pf-v6-c-nav__link"
-                  >
-                    <span
-                      class="pf-v6-c-nav__link-text"
-                    >
-                      Policy
-                    </span>
-                  </a>
-                </li>
-                <li
-                  class="pf-v6-c-nav__item"
-                  data-ouia-component-id="OUIA-Generated-NavItem-8"
-                  data-ouia-component-type="PF6/NavItem"
-                  data-ouia-safe="true"
-                >
-                  <a
-                    class="pf-v6-c-nav__link"
-                  >
-                    <span
-                      class="pf-v6-c-nav__link-text"
-                    >
-                      Authentication
-                    </span>
-                  </a>
-                </li>
-                <li
-                  class="pf-v6-c-nav__item"
-                  data-ouia-component-id="OUIA-Generated-NavItem-9"
-                  data-ouia-component-type="PF6/NavItem"
-                  data-ouia-safe="true"
-                >
-                  <a
-                    class="pf-v6-c-nav__link"
-                  >
-                    <span
-                      class="pf-v6-c-nav__link-text"
-                    >
-                      Network Services
-                    </span>
-                  </a>
-                </li>
-                <li
-                  class="pf-v6-c-nav__item"
-                  data-ouia-component-id="OUIA-Generated-NavItem-10"
-                  data-ouia-component-type="PF6/NavItem"
-                  data-ouia-safe="true"
-                >
-                  <a
-                    class="pf-v6-c-nav__link"
-                  >
-                    <span
-                      class="pf-v6-c-nav__link-text"
-                    >
-                      Server
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
           </div>
-        </div>
+        </section>
         <section
           class="pf-v6-c-page__main-section"
         >
-          Section with default background
+          <div
+            class="pf-v6-c-page__main-body"
+          >
+            Section with default background
+          </div>
         </section>
       </main>
     </div>
@@ -585,7 +225,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
 </DocumentFragment>
 `;
 
-exports[`Page Check page to verify grouped nav and breadcrumb - old / props syntax 1`] = `
+exports[`Page Check page to verify breadcrumb is created 1`] = `
 <DocumentFragment>
   <div
     aria-label="Page layout"
@@ -607,120 +247,19 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
         class="pf-v6-c-page__main"
         tabindex="-1"
       >
-        <div
-          aria-label="test"
-          class="pf-v6-c-page__main-group pf-m-sticky-bottom pf-m-shadow-top pf-m-overflow-scroll"
-          role="region"
-          tabindex="0"
+        <section
+          class="pf-v6-c-page__main-breadcrumb"
         >
           <div
-            class="pf-v6-c-page__main-nav"
+            class="pf-v6-c-page__main-body"
           >
-            <nav
-              aria-label="Nav"
-              class="pf-v6-c-nav pf-m-horizontal pf-m-subnav"
-              data-ouia-component-id="OUIA-Generated-Nav-horizontal-subnav-3"
-              data-ouia-component-type="PF6/Nav"
-              data-ouia-safe="true"
-            >
-              <ul
-                class="pf-v6-c-nav__list"
-                role="list"
-              >
-                <li
-                  class="pf-v6-c-nav__item"
-                  data-ouia-component-id="OUIA-Generated-NavItem-11"
-                  data-ouia-component-type="PF6/NavItem"
-                  data-ouia-safe="true"
-                >
-                  <a
-                    aria-current="page"
-                    class="pf-v6-c-nav__link pf-m-current"
-                  >
-                    <span
-                      class="pf-v6-c-nav__link-text"
-                    >
-                      System Panel
-                    </span>
-                  </a>
-                </li>
-                <li
-                  class="pf-v6-c-nav__item"
-                  data-ouia-component-id="OUIA-Generated-NavItem-12"
-                  data-ouia-component-type="PF6/NavItem"
-                  data-ouia-safe="true"
-                >
-                  <a
-                    class="pf-v6-c-nav__link"
-                  >
-                    <span
-                      class="pf-v6-c-nav__link-text"
-                    >
-                      Policy
-                    </span>
-                  </a>
-                </li>
-                <li
-                  class="pf-v6-c-nav__item"
-                  data-ouia-component-id="OUIA-Generated-NavItem-13"
-                  data-ouia-component-type="PF6/NavItem"
-                  data-ouia-safe="true"
-                >
-                  <a
-                    class="pf-v6-c-nav__link"
-                  >
-                    <span
-                      class="pf-v6-c-nav__link-text"
-                    >
-                      Authentication
-                    </span>
-                  </a>
-                </li>
-                <li
-                  class="pf-v6-c-nav__item"
-                  data-ouia-component-id="OUIA-Generated-NavItem-14"
-                  data-ouia-component-type="PF6/NavItem"
-                  data-ouia-safe="true"
-                >
-                  <a
-                    class="pf-v6-c-nav__link"
-                  >
-                    <span
-                      class="pf-v6-c-nav__link-text"
-                    >
-                      Network Services
-                    </span>
-                  </a>
-                </li>
-                <li
-                  class="pf-v6-c-nav__item"
-                  data-ouia-component-id="OUIA-Generated-NavItem-15"
-                  data-ouia-component-type="PF6/NavItem"
-                  data-ouia-safe="true"
-                >
-                  <a
-                    class="pf-v6-c-nav__link"
-                  >
-                    <span
-                      class="pf-v6-c-nav__link-text"
-                    >
-                      Server
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <section
-            class="pf-v6-c-page__main-breadcrumb"
-          >
-            <section
-              class="pf-v6-c-page__main-breadcrumb"
+            <div
+              class="pf-v6-c-page__main-body"
             >
               <nav
                 aria-label="Breadcrumb"
                 class="pf-v6-c-breadcrumb"
-                data-ouia-component-id="OUIA-Generated-Breadcrumb-8"
+                data-ouia-component-id="OUIA-Generated-Breadcrumb-1"
                 data-ouia-component-type="PF6/Breadcrumb"
                 data-ouia-safe="true"
               >
@@ -817,13 +356,17 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                   </li>
                 </ol>
               </nav>
-            </section>
-          </section>
-        </div>
+            </div>
+          </div>
+        </section>
         <section
           class="pf-v6-c-page__main-section"
         >
-          Section with default background
+          <div
+            class="pf-v6-c-page__main-body"
+          >
+            Section with default background
+          </div>
         </section>
       </main>
     </div>
@@ -831,7 +374,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
 </DocumentFragment>
 `;
 
-exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = `
+exports[`Page Check page to verify grouped nav and breadcrumb - new components syntax 1`] = `
 <DocumentFragment>
   <div
     aria-label="Page layout"
@@ -854,8 +397,116 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
         tabindex="-1"
       >
         <div
-          class="pf-v6-c-page__main-nav"
+          class="pf-v6-c-page__main-group pf-m-sticky-bottom"
         >
+          <section
+            class="pf-v6-c-page__main-breadcrumb"
+          >
+            <div
+              class="pf-v6-c-page__main-body"
+            >
+              <nav
+                aria-label="Breadcrumb"
+                class="pf-v6-c-breadcrumb"
+                data-ouia-component-id="OUIA-Generated-Breadcrumb-7"
+                data-ouia-component-type="PF6/Breadcrumb"
+                data-ouia-safe="true"
+              >
+                <ol
+                  class="pf-v6-c-breadcrumb__list"
+                  role="list"
+                >
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
+                  >
+                    Section Home
+                  </li>
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
+                  >
+                    <span
+                      class="pf-v6-c-breadcrumb__item-divider"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      class="pf-v6-c-breadcrumb__link"
+                      href="#"
+                    >
+                      Section Title
+                    </a>
+                  </li>
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
+                  >
+                    <span
+                      class="pf-v6-c-breadcrumb__item-divider"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      class="pf-v6-c-breadcrumb__link"
+                      href="#"
+                    >
+                      Section Title
+                    </a>
+                  </li>
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
+                  >
+                    <span
+                      class="pf-v6-c-breadcrumb__item-divider"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      aria-current="page"
+                      class="pf-v6-c-breadcrumb__link pf-m-current"
+                      href="#"
+                    >
+                      Section Landing
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </section>
           <nav
             aria-label="Nav"
             class="pf-v6-c-nav pf-m-horizontal pf-m-subnav"
@@ -954,7 +605,277 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
         <section
           class="pf-v6-c-page__main-section"
         >
-          Section with default background
+          <div
+            class="pf-v6-c-page__main-body"
+          >
+            Section with default background
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Page Check page to verify grouped nav and breadcrumb - old / props syntax 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="Page layout"
+    class="pf-v6-c-page my-page-class"
+    id="PageId"
+  >
+    <header
+      class="pf-v6-c-masthead pf-m-display-inline-on-md"
+    />
+    <div
+      aria-hidden="false"
+      class="pf-v6-c-page__sidebar pf-m-expanded"
+      id="page-sidebar"
+    />
+    <div
+      class="pf-v6-c-page__main-container"
+    >
+      <main
+        class="pf-v6-c-page__main"
+        tabindex="-1"
+      >
+        <div
+          aria-label="test"
+          class="pf-v6-c-page__main-group pf-m-sticky-bottom pf-m-shadow-top pf-m-overflow-scroll"
+          role="region"
+          tabindex="0"
+        >
+          <div
+            class="pf-v6-c-page__main-subnav"
+          >
+            <div
+              class="pf-v6-c-page__main-body"
+            >
+              <nav
+                aria-label="Nav"
+                class="pf-v6-c-nav pf-m-horizontal pf-m-subnav"
+                data-ouia-component-id="OUIA-Generated-Nav-horizontal-subnav-2"
+                data-ouia-component-type="PF6/Nav"
+                data-ouia-safe="true"
+              >
+                <ul
+                  class="pf-v6-c-nav__list"
+                  role="list"
+                >
+                  <li
+                    class="pf-v6-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-6"
+                    data-ouia-component-type="PF6/NavItem"
+                    data-ouia-safe="true"
+                  >
+                    <a
+                      aria-current="page"
+                      class="pf-v6-c-nav__link pf-m-current"
+                    >
+                      <span
+                        class="pf-v6-c-nav__link-text"
+                      >
+                        System Panel
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    class="pf-v6-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-7"
+                    data-ouia-component-type="PF6/NavItem"
+                    data-ouia-safe="true"
+                  >
+                    <a
+                      class="pf-v6-c-nav__link"
+                    >
+                      <span
+                        class="pf-v6-c-nav__link-text"
+                      >
+                        Policy
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    class="pf-v6-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-8"
+                    data-ouia-component-type="PF6/NavItem"
+                    data-ouia-safe="true"
+                  >
+                    <a
+                      class="pf-v6-c-nav__link"
+                    >
+                      <span
+                        class="pf-v6-c-nav__link-text"
+                      >
+                        Authentication
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    class="pf-v6-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-9"
+                    data-ouia-component-type="PF6/NavItem"
+                    data-ouia-safe="true"
+                  >
+                    <a
+                      class="pf-v6-c-nav__link"
+                    >
+                      <span
+                        class="pf-v6-c-nav__link-text"
+                      >
+                        Network Services
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    class="pf-v6-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-10"
+                    data-ouia-component-type="PF6/NavItem"
+                    data-ouia-safe="true"
+                  >
+                    <a
+                      class="pf-v6-c-nav__link"
+                    >
+                      <span
+                        class="pf-v6-c-nav__link-text"
+                      >
+                        Server
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <section
+            class="pf-v6-c-page__main-breadcrumb"
+          >
+            <div
+              class="pf-v6-c-page__main-body"
+            >
+              <div
+                class="pf-v6-c-page__main-body"
+              >
+                <section
+                  class="pf-v6-c-page__main-breadcrumb"
+                >
+                  <div
+                    class="pf-v6-c-page__main-body"
+                  >
+                    <nav
+                      aria-label="Breadcrumb"
+                      class="pf-v6-c-breadcrumb"
+                      data-ouia-component-id="OUIA-Generated-Breadcrumb-8"
+                      data-ouia-component-type="PF6/Breadcrumb"
+                      data-ouia-safe="true"
+                    >
+                      <ol
+                        class="pf-v6-c-breadcrumb__list"
+                        role="list"
+                      >
+                        <li
+                          class="pf-v6-c-breadcrumb__item"
+                        >
+                          Section Home
+                        </li>
+                        <li
+                          class="pf-v6-c-breadcrumb__item"
+                        >
+                          <span
+                            class="pf-v6-c-breadcrumb__item-divider"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="pf-v6-svg"
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              viewBox="0 0 256 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                              />
+                            </svg>
+                          </span>
+                          <a
+                            class="pf-v6-c-breadcrumb__link"
+                            href="#"
+                          >
+                            Section Title
+                          </a>
+                        </li>
+                        <li
+                          class="pf-v6-c-breadcrumb__item"
+                        >
+                          <span
+                            class="pf-v6-c-breadcrumb__item-divider"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="pf-v6-svg"
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              viewBox="0 0 256 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                              />
+                            </svg>
+                          </span>
+                          <a
+                            class="pf-v6-c-breadcrumb__link"
+                            href="#"
+                          >
+                            Section Title
+                          </a>
+                        </li>
+                        <li
+                          class="pf-v6-c-breadcrumb__item"
+                        >
+                          <span
+                            class="pf-v6-c-breadcrumb__item-divider"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="pf-v6-svg"
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              viewBox="0 0 256 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                              />
+                            </svg>
+                          </span>
+                          <a
+                            aria-current="page"
+                            class="pf-v6-c-breadcrumb__link pf-m-current"
+                            href="#"
+                          >
+                            Section Landing
+                          </a>
+                        </li>
+                      </ol>
+                    </nav>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </section>
+        </div>
+        <section
+          class="pf-v6-c-page__main-section"
+        >
+          <div
+            class="pf-v6-c-page__main-body"
+          >
+            Section with default background
+          </div>
         </section>
       </main>
     </div>
@@ -1007,111 +928,123 @@ exports[`Page Check page to verify skip to content points to main content region
         <section
           class="pf-v6-c-page__main-breadcrumb"
         >
-          <nav
-            aria-label="Breadcrumb"
-            class="pf-v6-c-breadcrumb"
-            data-ouia-component-id="OUIA-Generated-Breadcrumb-9"
-            data-ouia-component-type="PF6/Breadcrumb"
-            data-ouia-safe="true"
+          <div
+            class="pf-v6-c-page__main-body"
           >
-            <ol
-              class="pf-v6-c-breadcrumb__list"
-              role="list"
+            <div
+              class="pf-v6-c-page__main-body"
             >
-              <li
-                class="pf-v6-c-breadcrumb__item"
+              <nav
+                aria-label="Breadcrumb"
+                class="pf-v6-c-breadcrumb"
+                data-ouia-component-id="OUIA-Generated-Breadcrumb-9"
+                data-ouia-component-type="PF6/Breadcrumb"
+                data-ouia-safe="true"
               >
-                Section Home
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
+                <ol
+                  class="pf-v6-c-breadcrumb__list"
+                  role="list"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
-                >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                    Section Home
+                  </li>
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
-                >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                    <span
+                      class="pf-v6-c-breadcrumb__item-divider"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      class="pf-v6-c-breadcrumb__link"
+                      href="#"
+                    >
+                      Section Title
+                    </a>
+                  </li>
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  aria-current="page"
-                  class="pf-v6-c-breadcrumb__link pf-m-current"
-                  href="#"
-                >
-                  Section Landing
-                </a>
-              </li>
-            </ol>
-          </nav>
+                    <span
+                      class="pf-v6-c-breadcrumb__item-divider"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      class="pf-v6-c-breadcrumb__link"
+                      href="#"
+                    >
+                      Section Title
+                    </a>
+                  </li>
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
+                  >
+                    <span
+                      class="pf-v6-c-breadcrumb__item-divider"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      aria-current="page"
+                      class="pf-v6-c-breadcrumb__link pf-m-current"
+                      href="#"
+                    >
+                      Section Landing
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
         </section>
         <section
           class="pf-v6-c-page__main-section"
         >
-          Section with default background
+          <div
+            class="pf-v6-c-page__main-body"
+          >
+            Section with default background
+          </div>
         </section>
       </main>
     </div>
@@ -1150,7 +1083,11 @@ exports[`Page Check page vertical layout example against snapshot 1`] = `
         <section
           class="pf-v6-c-page__main-section"
         >
-          Section with default background
+          <div
+            class="pf-v6-c-page__main-body"
+          >
+            Section with default background
+          </div>
         </section>
       </main>
     </div>
@@ -1183,111 +1120,119 @@ exports[`Page Sticky bottom breadcrumb on all height breakpoints - PageBreadcrum
         <section
           class="pf-v6-c-page__main-breadcrumb pf-m-sticky-bottom-on-sm-height pf-m-sticky-bottom-on-md-height pf-m-sticky-bottom-on-lg-height pf-m-sticky-bottom-on-xl-height pf-m-sticky-bottom-on-2xl-height"
         >
-          <nav
-            aria-label="Breadcrumb"
-            class="pf-v6-c-breadcrumb"
-            data-ouia-component-id="OUIA-Generated-Breadcrumb-6"
-            data-ouia-component-type="PF6/Breadcrumb"
-            data-ouia-safe="true"
+          <div
+            class="pf-v6-c-page__main-body"
           >
-            <ol
-              class="pf-v6-c-breadcrumb__list"
-              role="list"
+            <nav
+              aria-label="Breadcrumb"
+              class="pf-v6-c-breadcrumb"
+              data-ouia-component-id="OUIA-Generated-Breadcrumb-6"
+              data-ouia-component-type="PF6/Breadcrumb"
+              data-ouia-safe="true"
             >
-              <li
-                class="pf-v6-c-breadcrumb__item"
+              <ol
+                class="pf-v6-c-breadcrumb__list"
+                role="list"
               >
-                Section Home
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
+                <li
+                  class="pf-v6-c-breadcrumb__item"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                  Section Home
+                </li>
+                <li
+                  class="pf-v6-c-breadcrumb__item"
+                >
+                  <span
+                    class="pf-v6-c-breadcrumb__item-divider"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
-                >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                    <svg
+                      aria-hidden="true"
+                      class="pf-v6-svg"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 256 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </span>
+                  <a
+                    class="pf-v6-c-breadcrumb__link"
+                    href="#"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
+                    Section Title
+                  </a>
+                </li>
+                <li
+                  class="pf-v6-c-breadcrumb__item"
                 >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                  <span
+                    class="pf-v6-c-breadcrumb__item-divider"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  aria-current="page"
-                  class="pf-v6-c-breadcrumb__link pf-m-current"
-                  href="#"
+                    <svg
+                      aria-hidden="true"
+                      class="pf-v6-svg"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 256 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </span>
+                  <a
+                    class="pf-v6-c-breadcrumb__link"
+                    href="#"
+                  >
+                    Section Title
+                  </a>
+                </li>
+                <li
+                  class="pf-v6-c-breadcrumb__item"
                 >
-                  Section Landing
-                </a>
-              </li>
-            </ol>
-          </nav>
+                  <span
+                    class="pf-v6-c-breadcrumb__item-divider"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="pf-v6-svg"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 256 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </span>
+                  <a
+                    aria-current="page"
+                    class="pf-v6-c-breadcrumb__link pf-m-current"
+                    href="#"
+                  >
+                    Section Landing
+                  </a>
+                </li>
+              </ol>
+            </nav>
+          </div>
         </section>
         <section
           class="pf-v6-c-page__main-section"
         >
-          Section with default background
+          <div
+            class="pf-v6-c-page__main-body"
+          >
+            Section with default background
+          </div>
         </section>
       </main>
     </div>
@@ -1320,111 +1265,123 @@ exports[`Page Verify sticky bottom breadcrumb on all height breakpoints 1`] = `
         <section
           class="pf-v6-c-page__main-breadcrumb pf-m-sticky-bottom-on-sm-height pf-m-sticky-bottom-on-md-height pf-m-sticky-bottom-on-lg-height pf-m-sticky-bottom-on-xl-height pf-m-sticky-bottom-on-2xl-height"
         >
-          <nav
-            aria-label="Breadcrumb"
-            class="pf-v6-c-breadcrumb"
-            data-ouia-component-id="OUIA-Generated-Breadcrumb-3"
-            data-ouia-component-type="PF6/Breadcrumb"
-            data-ouia-safe="true"
+          <div
+            class="pf-v6-c-page__main-body"
           >
-            <ol
-              class="pf-v6-c-breadcrumb__list"
-              role="list"
+            <div
+              class="pf-v6-c-page__main-body"
             >
-              <li
-                class="pf-v6-c-breadcrumb__item"
+              <nav
+                aria-label="Breadcrumb"
+                class="pf-v6-c-breadcrumb"
+                data-ouia-component-id="OUIA-Generated-Breadcrumb-3"
+                data-ouia-component-type="PF6/Breadcrumb"
+                data-ouia-safe="true"
               >
-                Section Home
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
+                <ol
+                  class="pf-v6-c-breadcrumb__list"
+                  role="list"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
-                >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                    Section Home
+                  </li>
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
-                >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                    <span
+                      class="pf-v6-c-breadcrumb__item-divider"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      class="pf-v6-c-breadcrumb__link"
+                      href="#"
+                    >
+                      Section Title
+                    </a>
+                  </li>
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  aria-current="page"
-                  class="pf-v6-c-breadcrumb__link pf-m-current"
-                  href="#"
-                >
-                  Section Landing
-                </a>
-              </li>
-            </ol>
-          </nav>
+                    <span
+                      class="pf-v6-c-breadcrumb__item-divider"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      class="pf-v6-c-breadcrumb__link"
+                      href="#"
+                    >
+                      Section Title
+                    </a>
+                  </li>
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
+                  >
+                    <span
+                      class="pf-v6-c-breadcrumb__item-divider"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      aria-current="page"
+                      class="pf-v6-c-breadcrumb__link pf-m-current"
+                      href="#"
+                    >
+                      Section Landing
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
         </section>
         <section
           class="pf-v6-c-page__main-section"
         >
-          Section with default background
+          <div
+            class="pf-v6-c-page__main-body"
+          >
+            Section with default background
+          </div>
         </section>
       </main>
     </div>
@@ -1457,111 +1414,119 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints - PageBread
         <section
           class="pf-v6-c-page__main-breadcrumb pf-m-sticky-top-on-sm-height pf-m-sticky-top-on-md-height pf-m-sticky-top-on-lg-height pf-m-sticky-top-on-xl-height pf-m-sticky-top-on-2xl-height"
         >
-          <nav
-            aria-label="Breadcrumb"
-            class="pf-v6-c-breadcrumb"
-            data-ouia-component-id="OUIA-Generated-Breadcrumb-5"
-            data-ouia-component-type="PF6/Breadcrumb"
-            data-ouia-safe="true"
+          <div
+            class="pf-v6-c-page__main-body"
           >
-            <ol
-              class="pf-v6-c-breadcrumb__list"
-              role="list"
+            <nav
+              aria-label="Breadcrumb"
+              class="pf-v6-c-breadcrumb"
+              data-ouia-component-id="OUIA-Generated-Breadcrumb-5"
+              data-ouia-component-type="PF6/Breadcrumb"
+              data-ouia-safe="true"
             >
-              <li
-                class="pf-v6-c-breadcrumb__item"
+              <ol
+                class="pf-v6-c-breadcrumb__list"
+                role="list"
               >
-                Section Home
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
+                <li
+                  class="pf-v6-c-breadcrumb__item"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                  Section Home
+                </li>
+                <li
+                  class="pf-v6-c-breadcrumb__item"
+                >
+                  <span
+                    class="pf-v6-c-breadcrumb__item-divider"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
-                >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                    <svg
+                      aria-hidden="true"
+                      class="pf-v6-svg"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 256 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </span>
+                  <a
+                    class="pf-v6-c-breadcrumb__link"
+                    href="#"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
+                    Section Title
+                  </a>
+                </li>
+                <li
+                  class="pf-v6-c-breadcrumb__item"
                 >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                  <span
+                    class="pf-v6-c-breadcrumb__item-divider"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  aria-current="page"
-                  class="pf-v6-c-breadcrumb__link pf-m-current"
-                  href="#"
+                    <svg
+                      aria-hidden="true"
+                      class="pf-v6-svg"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 256 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </span>
+                  <a
+                    class="pf-v6-c-breadcrumb__link"
+                    href="#"
+                  >
+                    Section Title
+                  </a>
+                </li>
+                <li
+                  class="pf-v6-c-breadcrumb__item"
                 >
-                  Section Landing
-                </a>
-              </li>
-            </ol>
-          </nav>
+                  <span
+                    class="pf-v6-c-breadcrumb__item-divider"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="pf-v6-svg"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 256 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </span>
+                  <a
+                    aria-current="page"
+                    class="pf-v6-c-breadcrumb__link pf-m-current"
+                    href="#"
+                  >
+                    Section Landing
+                  </a>
+                </li>
+              </ol>
+            </nav>
+          </div>
         </section>
         <section
           class="pf-v6-c-page__main-section"
         >
-          Section with default background
+          <div
+            class="pf-v6-c-page__main-body"
+          >
+            Section with default background
+          </div>
         </section>
       </main>
     </div>
@@ -1594,111 +1559,123 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints 1`] = `
         <section
           class="pf-v6-c-page__main-breadcrumb pf-m-sticky-top-on-sm-height pf-m-sticky-top-on-md-height pf-m-sticky-top-on-lg-height pf-m-sticky-top-on-xl-height pf-m-sticky-top-on-2xl-height"
         >
-          <nav
-            aria-label="Breadcrumb"
-            class="pf-v6-c-breadcrumb"
-            data-ouia-component-id="OUIA-Generated-Breadcrumb-2"
-            data-ouia-component-type="PF6/Breadcrumb"
-            data-ouia-safe="true"
+          <div
+            class="pf-v6-c-page__main-body"
           >
-            <ol
-              class="pf-v6-c-breadcrumb__list"
-              role="list"
+            <div
+              class="pf-v6-c-page__main-body"
             >
-              <li
-                class="pf-v6-c-breadcrumb__item"
+              <nav
+                aria-label="Breadcrumb"
+                class="pf-v6-c-breadcrumb"
+                data-ouia-component-id="OUIA-Generated-Breadcrumb-2"
+                data-ouia-component-type="PF6/Breadcrumb"
+                data-ouia-safe="true"
               >
-                Section Home
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
+                <ol
+                  class="pf-v6-c-breadcrumb__list"
+                  role="list"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
-                >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                    Section Home
+                  </li>
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  class="pf-v6-c-breadcrumb__link"
-                  href="#"
-                >
-                  Section Title
-                </a>
-              </li>
-              <li
-                class="pf-v6-c-breadcrumb__item"
-              >
-                <span
-                  class="pf-v6-c-breadcrumb__item-divider"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-v6-svg"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 256 512"
-                    width="1em"
+                    <span
+                      class="pf-v6-c-breadcrumb__item-divider"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      class="pf-v6-c-breadcrumb__link"
+                      href="#"
+                    >
+                      Section Title
+                    </a>
+                  </li>
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
                   >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </span>
-                <a
-                  aria-current="page"
-                  class="pf-v6-c-breadcrumb__link pf-m-current"
-                  href="#"
-                >
-                  Section Landing
-                </a>
-              </li>
-            </ol>
-          </nav>
+                    <span
+                      class="pf-v6-c-breadcrumb__item-divider"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      class="pf-v6-c-breadcrumb__link"
+                      href="#"
+                    >
+                      Section Title
+                    </a>
+                  </li>
+                  <li
+                    class="pf-v6-c-breadcrumb__item"
+                  >
+                    <span
+                      class="pf-v6-c-breadcrumb__item-divider"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      aria-current="page"
+                      class="pf-v6-c-breadcrumb__link pf-m-current"
+                      href="#"
+                    >
+                      Section Landing
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
         </section>
         <section
           class="pf-v6-c-page__main-section"
         >
-          Section with default background
+          <div
+            class="pf-v6-c-page__main-body"
+          >
+            Section with default background
+          </div>
         </section>
       </main>
     </div>

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-page__main-body"
+  >
+    Test
+  </div>
+</DocumentFragment>
+`;

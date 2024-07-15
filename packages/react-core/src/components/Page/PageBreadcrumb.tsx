@@ -3,6 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { formatBreakpointMods, Mods } from '../../helpers/util';
 import { PageContext } from './PageContext';
+import { PageBody } from './PageBody';
 
 export interface PageBreadcrumbProps extends React.HTMLProps<HTMLElement> {
   /** Additional classes to apply to the PageBreadcrumb */
@@ -26,6 +27,10 @@ export interface PageBreadcrumbProps extends React.HTMLProps<HTMLElement> {
   hasShadowBottom?: boolean;
   /** Flag indicating if the PageBreadcrumb has a scrolling overflow */
   hasOverflowScroll?: boolean;
+  /** @beta Flag indicating whether children passed to the component should be wrapped by a PageBody.
+   * Set this to false in order to pass multiple, custom PageBody's as children.
+   */
+  hasBodyWrapper?: boolean;
   /** Adds an accessible name to the breadcrumb section. Required when the hasOverflowScroll prop is set to true. */
   'aria-label'?: string;
 }
@@ -39,6 +44,7 @@ export const PageBreadcrumb = ({
   hasShadowBottom = false,
   hasOverflowScroll = false,
   'aria-label': ariaLabel,
+  hasBodyWrapper = true,
   ...props
 }: PageBreadcrumbProps) => {
   const { height, getVerticalBreakpoint } = React.useContext(PageContext);
@@ -65,8 +71,7 @@ export const PageBreadcrumb = ({
       aria-label={ariaLabel}
       {...props}
     >
-      {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
-      {!isWidthLimited && children}
+      {hasBodyWrapper ? <PageBody>{children}</PageBody> : children}
     </section>
   );
 };

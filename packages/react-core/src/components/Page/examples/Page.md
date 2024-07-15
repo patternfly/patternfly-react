@@ -3,16 +3,7 @@ id: Page
 section: components
 cssPrefix: pf-v5-c-page
 propComponents:
-  [
-    'Page',
-    'PageSidebar',
-    'PageSidebarBody',
-    'PageSection',
-    'PageGroup',
-    'PageBreadcrumb',
-    'PageNavigation',
-    'PageToggleButton'
-  ]
+  ['Page', 'PageSidebar', 'PageSidebarBody', 'PageSection', 'PageGroup', 'PageBreadcrumb', 'PageToggleButton']
 ---
 
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
@@ -107,7 +98,7 @@ This example shows all types of page sections.
 
 To group page content sections, add 1 or more `<PageGroup>` components to a `<Page>`.
 
-The following example adds a group containing `<PageNavigation>`, `<PageBreadcrumb>`, and `<PageSection>` components.
+The following example adds a group containing `<PageBreadcrumb>` and `<PageSection>` components.
 
 To add additional components and information to a group, you may use the following properties:
 
