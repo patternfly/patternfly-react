@@ -14,7 +14,7 @@ import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-d
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 
-import { DragDropSort } from '@patternfly/react-drag-drop';
+import { DragDropSort, DragDropContainer, Droppable as NewDroppable } from '@patternfly/react-drag-drop';
 
 ## Sorting demos
 
@@ -33,5 +33,29 @@ To enable reordering in a `<DataList>`, wrap the `<DataList>` component with `<D
 To enable reordering in a `<DualListSelector>` pane wrap the `<DualListSelectorList>` component with `<DragDropSort>` and define the `variant` as "DualListSelectorList".
 
 ```ts file="./DualListSelectorDraggable.tsx"
+
+```
+
+## Multiple drop zone demos
+
+To enable multiple drop zones, wrap the component with `<DragDropContainer>`, place one or more `<Droppable>` components within the container, and define the `variant` property on all components. A collection of all draggable items should be passed to `<DragDropContainer>`, and each `<Droppable>` should be passed their respective draggable items.
+
+`<Droppable>` will create the component's usual `children` internally based on the `items` property, so `children` should not be passed where the `<Droppable>` is defined.
+
+To avoid a wrapping div inserted by `<Droppable>`, pass the desired container element to the `wrapper` property.
+
+### Data list
+
+To enable multiple drop zones with `<DataList>` components, place one or more `<Droppable>` within `<DragDropContainer>` and define the `variant` on all components as "DataList".
+
+```ts file="./DragDropContainerDataList.tsx"
+
+```
+
+### Dual list selector
+
+To enable multiple drop zones in a `<DualListSelector>`, wrap the `<DualListSelector>` component with `<DragDropContainer>`, and then include a `<Droppable>` component within each pane. Both `<DragDropContainer>` and `<Droppable>` should define the `variant` property as "DualListSelectorList".
+
+```ts file="./DragDropContainerDualListSelector.tsx"
 
 ```

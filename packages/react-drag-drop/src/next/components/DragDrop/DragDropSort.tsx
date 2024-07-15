@@ -1,41 +1,10 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { css } from '@patternfly/react-styles';
-import {
-  DndContext,
-  closestCenter,
-  DragOverlay,
-  DndContextProps,
-  KeyboardSensor,
-  PointerSensor,
-  useSensor,
-  useSensors,
-  DragEndEvent,
-  DragStartEvent
-} from '@dnd-kit/core';
-import {
-  arrayMove,
-  SortableContext,
-  sortableKeyboardCoordinates,
-  verticalListSortingStrategy
-} from '@dnd-kit/sortable';
-import { Draggable } from './Draggable';
-import { DraggableDataListItem } from './DraggableDataListItem';
-import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
-import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
-import { canUseDOM } from '@patternfly/react-core';
+import { DndContextProps, DragEndEvent, DragStartEvent } from '@dnd-kit/core';
+import { Droppable } from './Droppable';
+import { DragDropContainer, DraggableObject } from './DragDropContainer';
 
 export type DragDropSortDragEndEvent = DragEndEvent;
 export type DragDropSortDragStartEvent = DragStartEvent;
-
-export interface DraggableObject {
-  /** Unique id of the draggable object */
-  id: string;
-  /** Content rendered in the draggable object */
-  content: React.ReactNode;
-  /** Props spread to the rendered wrapper of the draggable object */
-  props?: any;
-}
 
 /**
  * DragDropSortProps extends dnd-kit's props which may be viewed at https://docs.dndkit.com/api-documentation/context-provider#props.
@@ -57,6 +26,8 @@ export interface DragDropSortProps extends DndContextProps {
    * TableComposable variant wraps the draggable objects in TODO
    * */
   variant?: 'default' | 'defaultWithHandle' | 'DataList' | 'DualListSelectorList' | 'TableComposable';
+  /** Additional classes to apply to the drag overlay */
+  overlayProps?: any;
 }
 
 export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
@@ -65,132 +36,35 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
   onDrag = () => {},
   variant = 'default',
   children,
+  overlayProps,
   ...props
 }: DragDropSortProps) => {
-  const [activeId, setActiveId] = React.useState<string>(null);
   const itemIds = React.useMemo(() => (items ? Array.from(items, (item) => item.id as string) : []), [items]);
 
-  const getItemById = (id: string): DraggableObject => items.find((item) => item.id === id);
-
-  const sensors = useSensors(
-    useSensor(PointerSensor),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates
-    })
-  );
-
-  const handleDragEnd = (event: DragEndEvent) => {
-    const { active, over } = event;
-    const oldIndex = itemIds.indexOf(active.id as string);
-    const newIndex = itemIds.indexOf(over.id as string);
-    const newItems = arrayMove(items, oldIndex, newIndex);
-    onDrop(event, newItems, oldIndex, newIndex);
-    setActiveId(null);
-  };
-
   const handleDragStart = (event: DragStartEvent) => {
-    setActiveId(event.active.id as string);
     onDrag(event, itemIds.indexOf(event.active.id as string));
   };
 
-  const getDragOverlay = () => {
-    if (!activeId) {
-      return;
-    }
-    const item = getItemById(activeId);
-
-    let content;
-    switch (variant) {
-      case 'DualListSelectorList':
-        content = (
-          <DraggableDualListSelectorListItem key={item.id} id={item.id} {...item.props}>
-            {item.content}
-          </DraggableDualListSelectorListItem>
-        );
-        break;
-      case 'DataList':
-        content = (
-          <DraggableDataListItem key={item.id} id={item.id} {...item.props}>
-            {item.content}
-          </DraggableDataListItem>
-        );
-        break;
-      default:
-        content = (
-          <Draggable
-            useDragButton={variant === 'defaultWithHandle' || variant === 'default'}
-            key={item.id}
-            id={item.id}
-            {...item.props}
-          >
-            {item.content}
-          </Draggable>
-        );
-    }
-
-    return (
-      <div
-        className={css(styles.draggable, styles.modifiers.dragging)}
-        style={
-          {
-            '--pf-v5-c-draggable--m-dragging--BackgroundColor': 'var(--pf-v5-global--BackgroundColor--100)'
-          } as React.CSSProperties
-        }
-      >
-        {content}
-      </div>
-    );
+  const handleDragEnd = (event: DragEndEvent, newItems: Record<string, DraggableObject[]>) => {
+    const { active, over } = event;
+    const oldIndex = itemIds.indexOf(active.id as string);
+    const newIndex = itemIds.indexOf(over.id as string);
+    onDrop(event, newItems[dropZoneId], oldIndex, newIndex);
   };
 
-  const dragOverlay = <DragOverlay>{activeId && getDragOverlay()}</DragOverlay>;
-
-  const renderedChildren = (
-    <SortableContext items={itemIds} strategy={verticalListSortingStrategy} id="droppable">
-      {items.map((item: DraggableObject) => {
-        switch (variant) {
-          case 'DualListSelectorList':
-            return (
-              <DraggableDualListSelectorListItem key={item.id} id={item.id} {...item.props}>
-                {item.content}
-              </DraggableDualListSelectorListItem>
-            );
-          case 'DataList':
-            return (
-              <DraggableDataListItem key={item.id} id={item.id} {...item.props}>
-                {item.content}
-              </DraggableDataListItem>
-            );
-          default:
-            return (
-              <Draggable
-                useDragButton={variant === 'defaultWithHandle' || variant === 'default'}
-                key={item.id}
-                id={item.id}
-                {...item.props}
-              >
-                {item.content}
-              </Draggable>
-            );
-        }
-      })}
-      {canUseDOM ? ReactDOM.createPortal(dragOverlay, document.getElementById('root')) : dragOverlay}
-    </SortableContext>
-  );
+  const dropZoneId = props.id ? props.id : 'droppable';
+  const containerVariant = variant === 'defaultWithHandle' ? 'default' : variant;
 
   return (
-    <DndContext
-      sensors={sensors}
-      collisionDetection={closestCenter}
-      onDragEnd={handleDragEnd}
-      onDragStart={handleDragStart}
-      {...props}
+    <DragDropContainer
+      variant={containerVariant}
+      items={{ [dropZoneId]: items }}
+      onDrag={handleDragStart}
+      onDrop={handleDragEnd}
+      overlayProps={overlayProps}
     >
-      {children &&
-        React.cloneElement(children, {
-          children: renderedChildren
-        })}
-      {!children && <div>{renderedChildren}</div>}
-    </DndContext>
+      <Droppable items={items} id={dropZoneId} variant={variant} {...(children && { wrapper: children })} />
+    </DragDropContainer>
   );
 };
 DragDropSort.displayName = 'DragDropSort';
