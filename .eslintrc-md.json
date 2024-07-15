@@ -26,5 +26,5 @@
     "react/no-unknown-property": 2,
     "react/jsx-no-undef": 2
   },
-  "extends": "plugin:markdown/recommended"
+  "extends": "plugin:markdown/recommended-legacy"
 }
