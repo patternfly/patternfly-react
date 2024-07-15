@@ -14,7 +14,7 @@ or
 npm install @patternfly/react-code-editor
 ```
 
-[!NOTE] For TypeScript type definitions, this package uses the `monaco-editor` package as a peer dependency. So, if you need types and don't already have the `monaco-editor package` installed, you will need to do so:
+[!NOTE] For TypeScript type definitions, this package uses the `monaco-editor` package as a peer dependency. So, if you need types and don't already have the `monaco-editor` package installed, you will need to do so:
 
 ```sh
 yarn add --dev monaco-editor
@@ -62,6 +62,19 @@ Next, replace all of the `react-script` references in your `package.json` `scrip
 ```
 
 You can now start your app with `npm start` and syntax highlighting should work.
+
+#### To use monaco-editor as an npm package and avoid using CDN
+
+The `@monaco-editor/react` package is built on the `monaco-editor` package, which will fetch some additional files using CDN by default. To avoid this, include `monaco-editor` as a dependency and insert the following into your code:
+
+```
+import * as monaco from 'monaco-editor';
+import { loader } from '@monaco-editor/react';
+
+loader.config({ monaco });
+```
+
+This may require the additonal `webpack` plugins such as `monaco-editor-webpack-plugin`. To properly install the library `monaco-editor-webpack-plugin` be sure to follow the [plugin instructions](https://github.com/microsoft/monaco-editor/tree/main/webpack-plugin)
 
 #### Enable YAML Syntax Highlighting
 
