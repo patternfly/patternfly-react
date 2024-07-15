@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0-alpha.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-alpha.31...@patternfly/react-charts@8.0.0-alpha.32) (2024-07-15)
+
+### Bug Fixes
+
+- **Toolbar:** updated for parity with Core updates ([#10674](https://github.com/patternfly/patternfly-react/issues/10674)) ([d508325](https://github.com/patternfly/patternfly-react/commit/d50832554af01c6beeb3a5a03f2cdfb41daffbf4))
+
 # [8.0.0-alpha.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-alpha.30...@patternfly/react-charts@8.0.0-alpha.31) (2024-07-03)
 
 **Note:** Version bump only for package @patternfly/react-charts
