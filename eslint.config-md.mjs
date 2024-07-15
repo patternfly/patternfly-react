@@ -1,7 +1,7 @@
-import tsParser from '@typescript-eslint/parser';
 import markdown from 'eslint-plugin-markdown';
 import patternflyReact from 'eslint-plugin-patternfly-react';
 import react from 'eslint-plugin-react';
+import tseslint from 'typescript-eslint';
 
 export default [
   ...markdown.configs.recommended,
@@ -11,7 +11,7 @@ export default [
       'patternfly-react': patternflyReact
     },
     languageOptions: {
-      parser: tsParser
+      parser: tseslint.parser
     },
     settings: {
       react: {

@@ -7,12 +7,8 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const outDir = join(__dirname, '../dist');
 
-const removeSnake = s =>
-  s
-    .toUpperCase()
-    .replace('-', '')
-    .replace('_', '');
-const toCamel = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][\w])/gi, removeSnake)}`;
+const removeSnake = (s) => s.toUpperCase().replace('-', '').replace('_', '');
+const toCamel = (s) => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][\w])/gi, removeSnake)}`;
 
 const writeCJSExport = (fname, jsName, icon) => {
   outputFileSync(

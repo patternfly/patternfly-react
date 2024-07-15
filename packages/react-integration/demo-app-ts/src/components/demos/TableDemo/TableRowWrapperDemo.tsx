@@ -31,6 +31,7 @@ export class TableRowWrapperDemo extends React.Component<TableProps, ITableRowWr
         }
       ]
     };
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     this.customRowWrapper = ({ trRef, className, rowProps = { rowIndex: 0, rowKey: '' }, onResize, ...rest }) => {
       const isExpanded = rest.row ? rest.row.isExpanded : false;
       const isOddRow = (rowProps.rowIndex + 1) % 2;

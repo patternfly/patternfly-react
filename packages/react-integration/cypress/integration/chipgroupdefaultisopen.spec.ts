@@ -4,24 +4,16 @@ describe('Chip Group Demo Test', () => {
   });
 
   it('Verify chip default text', () => {
-    cy.get('.pf-v5-c-chip__text')
-      .first()
-      .contains('Lemons');
+    cy.get('.pf-v5-c-chip__text').first().contains('Lemons');
   });
 
   it('Verify chip is open on default', () => {
-    cy.get('.pf-v5-c-chip__text')
-      .eq(1)
-      .contains('Limes');
+    cy.get('.pf-v5-c-chip__text').eq(1).contains('Limes');
   });
 
   it('Verify chip has badge', () => {
-    cy.get('span')
-      .children('.pf-v5-c-badge')
-      .should('not.be.undefined');
-    cy.get('span')
-      .children('.pf-v5-c-badge')
-      .should('not.equal', null);
+    cy.get('span').children('.pf-v5-c-badge').should('not.be.undefined');
+    cy.get('span').children('.pf-v5-c-badge').should('not.equal', null);
   });
 
   it('Verify show less button works', () => {

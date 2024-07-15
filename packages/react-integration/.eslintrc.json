@@ -1,7 +1,0 @@
-{
-  "globals": {
-    "cy": "readonly",
-    "context": "readonly",
-    "xit": "readonly"
-  }
-}

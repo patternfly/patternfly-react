@@ -53,7 +53,7 @@ export class NavDemo extends Component {
   handleNoNavigateLink = (
     /* eslint-disable no-console */
     _event: React.FormEvent<HTMLInputElement>,
-    itemId: number | string,
+    itemId: number | string
   ): void => {
     console.log(`No Navigate Link clicked: ${itemId}`);
     /* eslint-enable no-console */

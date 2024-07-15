@@ -1,7 +1,4 @@
-import {
-  Checkbox,
-  Button
-} from '@patternfly/react-core';
+import { Checkbox, Button } from '@patternfly/react-core';
 import {
   Select,
   SelectOption,
@@ -48,7 +45,7 @@ export class SelectFooterFilteringDemo extends Component<SelectFooterFilteringDe
     if (selections.includes(selection.toString())) {
       this.setState(
         (prevState: SelectFooterFilteringDemoState) => ({
-          selections: prevState.selections.filter(item => item !== selection)
+          selections: prevState.selections.filter((item) => item !== selection)
         }),
         () => console.log('selections: ', this.state.selections)
       );
@@ -77,7 +74,7 @@ export class SelectFooterFilteringDemo extends Component<SelectFooterFilteringDe
             return <></>;
           }
         })
-        .filter(newGroup => newGroup.props.children);
+        .filter((newGroup) => newGroup.props.children);
     }
   };
 
@@ -101,7 +98,7 @@ export class SelectFooterFilteringDemo extends Component<SelectFooterFilteringDe
           aria-label="Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
-          selections={selections.filter(string => string)}
+          selections={selections.filter((string) => string)}
           isOpen={isOpen}
           placeholderText="Filter by status"
           aria-labelledby={titleId}

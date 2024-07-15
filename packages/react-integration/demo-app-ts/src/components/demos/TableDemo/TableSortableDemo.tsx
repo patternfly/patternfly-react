@@ -1,11 +1,5 @@
 import * as React from 'react';
-import {
-  sortable,
-  SortByDirection,
-  ICell,
-  IRow,
-  ISortBy
-} from '@patternfly/react-table';
+import { sortable, SortByDirection, ICell, IRow, ISortBy } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 export class TableSortableDemo extends React.Component<
