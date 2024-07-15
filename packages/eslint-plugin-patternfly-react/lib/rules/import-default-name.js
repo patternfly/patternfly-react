@@ -15,10 +15,11 @@ module.exports = {
     ]
   },
   create(context) {
+    const sourceCode = context.sourceCode ?? context.getSourceCode();
     const [importMap = {}] = context.options;
     return {
       ImportDeclaration(node) {
-        const defaultImport = node.specifiers.find(spec => spec.type === 'ImportDefaultSpecifier');
+        const defaultImport = node.specifiers.find((spec) => spec.type === 'ImportDefaultSpecifier');
         if (!defaultImport) {
           return;
         }
@@ -33,9 +34,11 @@ module.exports = {
               received: receivedName
             },
             fix(fixer) {
-              const [varDecl] = context.getDeclaredVariables(node);
+              const [varDecl] = sourceCode.getDeclaredVariables
+                ? sourceCode.getDeclaredVariables(node, fixer)
+                : context.getDeclaredVariables();
               return [
-                ...varDecl.references.map(ref => fixer.replaceText(ref.identifier, expectedName)),
+                ...varDecl.references.map((ref) => fixer.replaceText(ref.identifier, expectedName)),
                 fixer.replaceText(defaultImport, expectedName)
               ];
             }
