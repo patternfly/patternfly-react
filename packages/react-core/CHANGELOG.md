@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.83](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.82...@patternfly/react-core@6.0.0-alpha.83) (2024-07-15)
+
+### Features
+
+- **Page:** updated logic to allow section grouping ([#10650](https://github.com/patternfly/patternfly-react/issues/10650)) ([b9181ae](https://github.com/patternfly/patternfly-react/commit/b9181aee9c5649912a52bc3479e9af84a1252aa2))
+
 # [6.0.0-alpha.82](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.81...@patternfly/react-core@6.0.0-alpha.82) (2024-07-15)
 
 ### Bug Fixes
