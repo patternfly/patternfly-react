@@ -51,6 +51,11 @@ const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string[]>([]);
 
+  React.useEffect(() => {
+    const selectedOptions = initialOptions?.filter((option) => option.selected);
+    setSelected(selectedOptions?.map((selectedOption) => String(selectedOption.value)) ?? []);
+  }, [initialOptions]);
+
   const checkboxSelectOptions = initialOptions?.map((option) => {
     const { content, value, ...props } = option;
     const isSelected = selected.includes(`${value}`);
