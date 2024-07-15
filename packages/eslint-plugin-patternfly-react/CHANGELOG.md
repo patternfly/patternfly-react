@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@5.4.0-prerelease.5...eslint-plugin-patternfly-react@5.4.0-prerelease.6) (2024-07-15)
+
+### Bug Fixes
+
+- **deps:** update dependency eslint-plugin-react to ^7.34.4 ([#10731](https://github.com/patternfly/patternfly-react/issues/10731)) ([1f81cd7](https://github.com/patternfly/patternfly-react/commit/1f81cd766361955fc6776b8e67c5fe60ecc8a372))
+
 # [5.4.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@5.4.0-prerelease.4...eslint-plugin-patternfly-react@5.4.0-prerelease.5) (2024-07-01)
 
 ### Bug Fixes
