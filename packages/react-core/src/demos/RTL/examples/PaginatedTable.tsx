@@ -364,11 +364,11 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
         <Toolbar id="toolbar" isFullHeight isStatic>
           <ToolbarContent>
             <ToolbarGroup
-              variant="icon-button-group"
+              variant="action-group-plain"
               align={{ default: 'alignEnd' }}
               gap={{ default: 'gapNone', md: 'gapMd' }}
             >
-              <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
+              <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
                 <ToolbarItem>
                   <Button
                     aria-label={translation.kebabDropdown.settings}

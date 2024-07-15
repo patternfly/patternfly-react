@@ -28,16 +28,16 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   };
   /** Applies to a child of a flex layout, and aligns that child (and any adjacent children on the other side of it) to one side of the main axis */
   align?: {
-    default?: 'alignEnd' | 'alignStart';
-    md?: 'alignEnd' | 'alignStart';
-    lg?: 'alignEnd' | 'alignStart';
-    xl?: 'alignEnd' | 'alignStart';
-    '2xl'?: 'alignEnd' | 'alignStart';
+    default?: 'alignEnd' | 'alignStart' | 'alignCenter';
+    md?: 'alignEnd' | 'alignStart' | 'alignCenter';
+    lg?: 'alignEnd' | 'alignStart' | 'alignCenter';
+    xl?: 'alignEnd' | 'alignStart' | 'alignCenter';
+    '2xl'?: 'alignEnd' | 'alignStart' | 'alignCenter';
   };
   /** Vertical alignment of children */
-  alignItems?: 'start' | 'center' | 'baseline' | 'default';
+  alignItems?: 'start' | 'center' | 'baseline' | 'default' | 'end' | 'stretch';
   /** Vertical alignment */
-  alignSelf?: 'start' | 'center' | 'baseline' | 'default';
+  alignSelf?: 'start' | 'center' | 'baseline' | 'default' | 'end' | 'stretch';
   /** Sets both the column and row gap at various breakpoints. */
   gap?: {
     default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';

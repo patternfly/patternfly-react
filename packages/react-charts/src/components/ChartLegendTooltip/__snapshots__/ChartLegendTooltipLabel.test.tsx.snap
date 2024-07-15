@@ -16,7 +16,7 @@ exports[`renders component text 1`] = `
     <tspan
       dx="0"
       dy="0"
-      style="fill: var(--pf-v6-chart-voronoi--labels--Fill, #e0e0e0); text-anchor: start; font-family: var(--pf-v6-chart-global--FontFamily, "Red Hat Text VF"); font-size: 14px; letter-spacing: var(--pf-v6-chart-global--letter-spacing, normal); stroke: transparent;"
+      style="fill: var(--pf-v6-chart-voronoi--labels--Fill, #e0e0e0); text-anchor: start; font-family: var(--pf-v6-chart-global--FontFamily, "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", helvetica, arial, sans-serif); font-size: 14px; letter-spacing: var(--pf-v6-chart-global--letter-spacing, normal); stroke: transparent;"
       text-anchor="start"
       x="0"
     >
@@ -33,7 +33,7 @@ exports[`renders component text 1`] = `
     <tspan
       dx="0"
       dy="0"
-      style="fill: var(--pf-v6-chart-voronoi--labels--Fill, #e0e0e0); text-anchor: end; font-family: var(--pf-v6-chart-global--FontFamily, "Red Hat Text VF"); font-size: 14px; letter-spacing: var(--pf-v6-chart-global--letter-spacing, normal); stroke: transparent;"
+      style="fill: var(--pf-v6-chart-voronoi--labels--Fill, #e0e0e0); text-anchor: end; font-family: var(--pf-v6-chart-global--FontFamily, "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", helvetica, arial, sans-serif); font-size: 14px; letter-spacing: var(--pf-v6-chart-global--letter-spacing, normal); stroke: transparent;"
       text-anchor="end"
       x="NaN"
     >

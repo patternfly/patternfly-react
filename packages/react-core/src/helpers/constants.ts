@@ -39,19 +39,19 @@ export const KeyTypes = {
 };
 
 export const globalWidthBreakpoints = {
-  sm: parseInt(globalBreakpointSm.value),
-  md: parseInt(globalBreakpointMd.value),
-  lg: parseInt(globalBreakpointLg.value),
-  xl: parseInt(globalBreakpointXl.value),
-  '2xl': parseInt(globalBreakpoint2xl.value)
+  sm: parseInt(globalBreakpointSm.value) * 16,
+  md: parseInt(globalBreakpointMd.value) * 16,
+  lg: parseInt(globalBreakpointLg.value) * 16,
+  xl: parseInt(globalBreakpointXl.value) * 16,
+  '2xl': parseInt(globalBreakpoint2xl.value) * 16
 };
 
 export const globalHeightBreakpoints = {
-  sm: parseInt(globalHeightBreakpointSm.value),
-  md: parseInt(globalHeightBreakpointMd.value),
-  lg: parseInt(globalHeightBreakpointLg.value),
-  xl: parseInt(globalHeightBreakpointXl.value),
-  '2xl': parseInt(globalHeightBreakpoint2xl.value)
+  sm: parseInt(globalHeightBreakpointSm.value) * 16,
+  md: parseInt(globalHeightBreakpointMd.value) * 16,
+  lg: parseInt(globalHeightBreakpointLg.value) * 16,
+  xl: parseInt(globalHeightBreakpointXl.value) * 16,
+  '2xl': parseInt(globalHeightBreakpoint2xl.value) * 16
 };
 
 export const statusIcons = {

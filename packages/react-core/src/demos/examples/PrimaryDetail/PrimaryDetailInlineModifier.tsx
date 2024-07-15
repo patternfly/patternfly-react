@@ -210,7 +210,7 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
 
   const drawerContent = (
     <React.Fragment>
-      <Toolbar id="inline-modifier-data-toolbar" usePageInsets>
+      <Toolbar id="inline-modifier-data-toolbar">
         <ToolbarContent>{ToolbarItems}</ToolbarContent>
       </Toolbar>
       <DataList

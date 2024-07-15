@@ -38,8 +38,6 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
   isFullHeight?: boolean;
   /** Flag indicating the toolbar is static */
   isStatic?: boolean;
-  /** Flag indicating the toolbar should use the Page insets */
-  usePageInsets?: boolean;
   /** Flag indicating the toolbar should stick to the top of its container */
   isSticky?: boolean;
   /** Insets at various breakpoints. */
@@ -140,7 +138,6 @@ class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       isFullHeight,
       isStatic,
       inset,
-      usePageInsets,
       isSticky,
       ouiaId,
       numberOfFiltersText,
@@ -164,7 +161,6 @@ class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
               styles.toolbar,
               isFullHeight && styles.modifiers.fullHeight,
               isStatic && styles.modifiers.static,
-              usePageInsets && styles.modifiers.pageInsets,
               isSticky && styles.modifiers.sticky,
               formatBreakpointMods(inset, styles, '', getBreakpoint(width)),
               colorVariant === 'primary' && styles.modifiers.primary,

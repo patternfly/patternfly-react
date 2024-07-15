@@ -208,7 +208,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
       <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
         {toggleGroupItems}
       </ToolbarToggleGroup>
-      <ToolbarGroup variant="icon-button-group">
+      <ToolbarGroup variant="action-group-plain">
         <ToolbarItem>
           <Button variant="plain" aria-label="edit" icon={<EditIcon />} />
         </ToolbarItem>

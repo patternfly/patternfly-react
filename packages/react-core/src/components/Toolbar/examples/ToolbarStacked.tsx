@@ -203,11 +203,11 @@ export const ToolbarStacked: React.FunctionComponent = () => {
     <React.Fragment>
       <Toolbar>
         <ToolbarContent>
-          <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="lg">
+          <ToolbarToggleGroup variant="label-group" toggleIcon={<FilterIcon />} breakpoint="lg">
             {toggleGroupItems}
           </ToolbarToggleGroup>
           <ToolbarItem>
-            <OverflowMenu breakpoint="2xl">
+            <OverflowMenu breakpoint="xl">
               <OverflowMenuContent>
                 <OverflowMenuGroup groupType="button">
                   <OverflowMenuItem>

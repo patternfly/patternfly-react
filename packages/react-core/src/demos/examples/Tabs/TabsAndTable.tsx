@@ -177,7 +177,7 @@ export const TablesAndTabs = () => {
   );
 
   const toolbar = (
-    <Toolbar id="page-layout-table-column-management-action-toolbar-top" usePageInsets>
+    <Toolbar id="page-layout-table-column-management-action-toolbar-top">
       <ToolbarContent>
         <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
           <ToolbarItem>

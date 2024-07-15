@@ -43,25 +43,6 @@ describe('Toolbar', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render with page inset flag', () => {
-    const items = (
-      <React.Fragment>
-        <ToolbarItem>Test</ToolbarItem>
-        <ToolbarItem>Test 2</ToolbarItem>
-        <ToolbarItem variant="separator" />
-        <ToolbarItem>Test 3 </ToolbarItem>
-      </React.Fragment>
-    );
-
-    const { asFragment } = render(
-      <Toolbar id="toolbar" usePageInsets>
-        <ToolbarContent>{items}</ToolbarContent>
-      </Toolbar>
-    );
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render with custom label content', () => {
     const items = (
       <React.Fragment>

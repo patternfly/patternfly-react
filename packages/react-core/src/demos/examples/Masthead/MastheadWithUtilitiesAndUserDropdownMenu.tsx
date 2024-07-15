@@ -381,14 +381,14 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
     <Toolbar id="toolbar" isFullHeight isStatic>
       <ToolbarContent>
         <ToolbarGroup
-          variant="icon-button-group"
+          variant="action-group-plain"
           align={{ default: 'alignEnd' }}
           gap={{ default: 'gapNone', md: 'gapMd' }}
         >
           <ToolbarItem>
             <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} />
           </ToolbarItem>
-          <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
+          <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
             <ToolbarItem visibility={{ default: 'hidden', md: 'hidden', lg: 'visible' }}>
               <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />
             </ToolbarItem>
