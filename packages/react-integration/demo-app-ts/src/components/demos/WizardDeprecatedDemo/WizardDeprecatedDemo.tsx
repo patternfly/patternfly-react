@@ -210,7 +210,7 @@ export class WizardDeprecatedDemo extends React.Component<React.HTMLProps<HTMLDi
           id="wizard-focusable-overflow"
           steps={stepsOnOverflow}
           startAtStep={1}
-          height={200}
+          height={400}
           mainAriaLabel="Step content"
         />
         <Wizard

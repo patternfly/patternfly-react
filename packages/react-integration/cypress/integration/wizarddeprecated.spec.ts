@@ -6,7 +6,11 @@ describe('Wizard Deprecated Demo Test', () => {
   it('Verify wizard in modal launches in a dialog and has a custom width', () => {
     cy.get('#launchWiz').click();
     cy.get('#modalWizId.pf-v6-c-wizard').should('exist');
-    cy.get('.pf-v6-c-modal-box').should('have.attr', 'style', '--pf-v6-c-modal-box--Width:710px;');
+    cy.get('.pf-v6-c-modal-box').then((modalBox) => {
+      expect(modalBox)
+        .to.have.attr('style')
+        .match(/--pf-v6-c-modal-box--Width:\s*710px;/);
+    });
     cy.focused().click();
   });
 
