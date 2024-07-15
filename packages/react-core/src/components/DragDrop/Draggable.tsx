@@ -117,7 +117,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       index
     };
     const dest =
-      hoveringDroppableId !== null && hoveringIndex !== null
+      hoveringDroppableId !== null
         ? {
             droppableId: hoveringDroppableId,
             index: hoveringIndex
