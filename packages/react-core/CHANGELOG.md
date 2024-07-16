@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.24...@patternfly/react-core@5.4.0-prerelease.25) (2024-07-16)
+
+### Features
+
+- **Pagination:** allowed customizing appendTo of options menu ([#10746](https://github.com/patternfly/patternfly-react/issues/10746)) ([2c73dde](https://github.com/patternfly/patternfly-react/commit/2c73dde9e77be7677f61738ed36a697a30523baf))
+
 # [5.4.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.23...@patternfly/react-core@5.4.0-prerelease.24) (2024-07-16)
 
 ### Bug Fixes
