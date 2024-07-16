@@ -12,7 +12,7 @@ Note: Templates live in their own package at [@patternfly/react-templates](https
 For custom use cases, please see the select component suite from [@patternfly/react-core](https://www.npmjs.com/package/@patternfly/react-core).
 
 import { Checkbox } from '@patternfly/react-core';
-import { SimpleSelect, CheckboxSelect, TypeaheadSelect } from '@patternfly/react-templates';
+import { SimpleSelect, CheckboxSelect, TypeaheadSelect, MultiTypeaheadSelect } from '@patternfly/react-templates';
 
 ## Select template examples
 
@@ -31,5 +31,11 @@ import { SimpleSelect, CheckboxSelect, TypeaheadSelect } from '@patternfly/react
 ### Typeahead
 
 ```ts file="TypeaheadSelectDemo.tsx"
+
+```
+
+### Multi-Typeahead
+
+```ts file="MultiTypeaheadSelectDemo.tsx"
 
 ```
