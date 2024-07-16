@@ -90,7 +90,13 @@ interface EditableCellProps {
   ariaLabel?: string;
 }
 
-const EditableCell: React.FunctionComponent<EditableCellProps> = ({ dataLabel, staticValue, editingValue, role, ariaLabel }) => {
+const EditableCell: React.FunctionComponent<EditableCellProps> = ({
+  dataLabel,
+  staticValue,
+  editingValue,
+  role,
+  ariaLabel
+}) => {
   const hasMultipleInputs = Array.isArray(editingValue) && editingValue.every((elem) => React.isValidElement(elem));
 
   return (
