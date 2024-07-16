@@ -51,11 +51,15 @@ import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-i
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
+import inlineEditStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import global_BackgroundColor_150 from '@patternfly/react-tokens/dist/esm/global_BackgroundColor_150';
 
 ## Table examples
@@ -154,6 +158,13 @@ Similarly to the selectable example above, the radio buttons use the first colum
 This selectable rows feature is intended for use when a table is used to present a list of objects in a Primary-detail view.
 
 ```ts file="TableClickable.tsx"
+```
+
+### Editable rows
+
+This example shows a table with editable rows. Cells in a row can be edited after clicking on the edit icon.
+
+```ts file="TableEditable.tsx"
 ```
 
 ### Actions
