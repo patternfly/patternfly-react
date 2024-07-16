@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { MenuToggle } from '../MenuToggle';
 import { Popper } from '../../helpers/Popper/Popper';
@@ -166,38 +167,40 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
     ));
 
   const toggle = (
-    <MenuToggle
-      ref={toggleRef}
-      onClick={onToggle}
-      {...(optionsToggleAriaLabel && { 'aria-label': optionsToggleAriaLabel })}
-      isDisabled={isDisabled || (itemCount && itemCount <= 0)}
-      isExpanded={isOpen}
-      {...(widgetId && { id: `${widgetId}-toggle` })}
-      variant="plainText"
-      aria-haspopup="listbox"
-    >
-      {toggleTemplate &&
-        typeof toggleTemplate === 'string' &&
-        fillTemplate(toggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })}
-      {toggleTemplate &&
-        typeof toggleTemplate !== 'string' &&
-        (toggleTemplate as (props: PaginationToggleTemplateProps) => React.ReactElement)({
-          firstIndex,
-          lastIndex,
-          ofWord,
-          itemCount,
-          itemsTitle
-        })}
-      {!toggleTemplate && (
-        <ToggleTemplate
-          firstIndex={firstIndex}
-          lastIndex={lastIndex}
-          ofWord={ofWord}
-          itemCount={itemCount}
-          itemsTitle={itemsTitle}
-        />
-      )}
-    </MenuToggle>
+    <div className={css(styles.paginationPageMenu)}>
+      <MenuToggle
+        ref={toggleRef}
+        onClick={onToggle}
+        {...(optionsToggleAriaLabel && { 'aria-label': optionsToggleAriaLabel })}
+        isDisabled={isDisabled || (itemCount && itemCount <= 0)}
+        isExpanded={isOpen}
+        {...(widgetId && { id: `${widgetId}-toggle` })}
+        variant="plainText"
+        aria-haspopup="listbox"
+      >
+        {toggleTemplate &&
+          typeof toggleTemplate === 'string' &&
+          fillTemplate(toggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })}
+        {toggleTemplate &&
+          typeof toggleTemplate !== 'string' &&
+          (toggleTemplate as (props: PaginationToggleTemplateProps) => React.ReactElement)({
+            firstIndex,
+            lastIndex,
+            ofWord,
+            itemCount,
+            itemsTitle
+          })}
+        {!toggleTemplate && (
+          <ToggleTemplate
+            firstIndex={firstIndex}
+            lastIndex={lastIndex}
+            ofWord={ofWord}
+            itemCount={itemCount}
+            itemsTitle={itemsTitle}
+          />
+        )}
+      </MenuToggle>
+    </div>
   );
 
   const menu = (
