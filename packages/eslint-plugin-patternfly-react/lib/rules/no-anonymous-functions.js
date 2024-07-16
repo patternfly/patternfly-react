@@ -16,6 +16,7 @@ module.exports = {
     ]
   },
   create(context) {
+    const sourceCode = context.sourceCode ?? context.getSourceCode();
     return {
       ExportNamedDeclaration(node) {
         if (!node.declaration) {
@@ -39,12 +40,11 @@ module.exports = {
           typeAnnotation.typeAnnotation.typeName.left.name === 'React' &&
           ['FunctionComponent', 'FC', 'SFC'].includes(typeAnnotation.typeAnnotation.typeName.right.name)
         ) {
-          const displayNameNode = context
-            .getSourceCode()
-            .ast.body.filter(n => n.type === 'ExpressionStatement')
-            .filter(n => n.expression.left)
+          const displayNameNode = sourceCode.ast.body
+            .filter((n) => n.type === 'ExpressionStatement')
+            .filter((n) => n.expression.left)
             .find(
-              n => n.expression.left.object.name === displayName && n.expression.left.property.name === 'displayName'
+              (n) => n.expression.left.object.name === displayName && n.expression.left.property.name === 'displayName'
             );
           if (!displayNameNode) {
             context.report({
@@ -64,7 +64,7 @@ module.exports = {
           declaration.superClass.property.name === 'Component'
         ) {
           const classBody = declaration.body.body;
-          const displayNameNode = classBody.find(n => n.type === 'ClassProperty' && n.key.name === 'displayName');
+          const displayNameNode = classBody.find((n) => n.type === 'ClassProperty' && n.key.name === 'displayName');
           if (!displayNameNode) {
             context.report({
               node,
