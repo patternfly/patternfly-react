@@ -1,5 +1,5 @@
 import React from 'react';
-import { Split, SplitItem } from '@patternfly/react-core';
+import { Flex } from '@patternfly/react-core';
 import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
 
 interface ItemType {
@@ -86,19 +86,19 @@ export const DragDropMultipleLists: React.FunctionComponent = () => {
 
   return (
     <DragDrop onDrop={onDrop}>
-      <Split hasGutter>
+      <Flex alignItems={{ default: 'alignItemsStretch' }} flexWrap={{ default: 'nowrap' }}>
         {Object.entries(items).map(([key, subitems]) => (
-          <SplitItem key={key} style={{ flex: 1 }}>
-            <Droppable zone="multizone" droppableId={key}>
+          <Flex key={key} fullWidth={{ default: 'fullWidth' }} alignItems={{ default: 'alignItemsStretch' }}>
+            <Droppable zone="multizone" droppableId={key} style={{ flexGrow: '1' }}>
               {(subitems as ItemType[]).map(({ id, content }) => (
                 <Draggable key={id} style={{ padding: '8px' }}>
                   {content}
                 </Draggable>
               ))}
             </Droppable>
-          </SplitItem>
+          </Flex>
         ))}
-      </Split>
+      </Flex>
     </DragDrop>
   );
 };
