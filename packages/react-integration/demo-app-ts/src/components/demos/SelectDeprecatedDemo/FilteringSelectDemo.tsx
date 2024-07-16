@@ -1,5 +1,11 @@
 import { Checkbox } from '@patternfly/react-core';
-import { Select, SelectOption, SelectOptionObject, SelectGroup, SelectVariant } from '@patternfly/react-core/deprecated';
+import {
+  Select,
+  SelectOption,
+  SelectOptionObject,
+  SelectGroup,
+  SelectVariant
+} from '@patternfly/react-core/deprecated';
 import React, { Component } from 'react';
 
 /* eslint-disable no-console */
@@ -39,7 +45,7 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
     if (selections.includes(selection.toString())) {
       this.setState(
         (prevState: FilteringSelectDemoState) => ({
-          selections: prevState.selections.filter(item => item !== selection)
+          selections: prevState.selections.filter((item) => item !== selection)
         }),
         () => console.log('selections: ', this.state.selections)
       );
@@ -68,7 +74,7 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
             return <></>;
           }
         })
-        .filter(newGroup => newGroup.props.children);
+        .filter((newGroup) => newGroup.props.children);
     }
   };
 
@@ -92,7 +98,7 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
           aria-label="Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
-          selections={selections.filter(string => string)}
+          selections={selections.filter((string) => string)}
           isOpen={isOpen}
           placeholderText="Filter by status"
           aria-labelledby={titleId}

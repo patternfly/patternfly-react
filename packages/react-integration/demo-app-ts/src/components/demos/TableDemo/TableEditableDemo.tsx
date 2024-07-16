@@ -19,22 +19,22 @@ import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-tab
 const rowLevelValidationRules: IValidatorDef[] = [
   {
     name: 'required',
-    validator: value => value.trim() !== '',
+    validator: (value) => value.trim() !== '',
     errorText: 'This field is required'
   },
   {
     name: 'notFoo',
-    validator: value => value.trim().toLowerCase() !== 'foo',
+    validator: (value) => value.trim().toLowerCase() !== 'foo',
     errorText: 'Value cannot be "foo"'
   },
   {
     name: 'minLength',
-    validator: value => value.trim().length >= 7,
+    validator: (value) => value.trim().length >= 7,
     errorText: 'Value must be at least 7 characters'
   },
   {
     name: 'notXyz',
-    validator: value => value.trim().toLowerCase() !== 'xyz',
+    validator: (value) => value.trim().toLowerCase() !== 'xyz',
     errorText: 'Value cannot be xyz'
   }
 ];
@@ -170,9 +170,9 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
         },
         {
           isEditable: false,
-          rowEditBtnAriaLabel: idx => `Edit row ${idx}`,
-          rowSaveBtnAriaLabel: idx => `Save edits for row ${idx}`,
-          rowCancelBtnAriaLabel: idx => `Cancel edits for row ${idx}`,
+          rowEditBtnAriaLabel: (idx) => `Edit row ${idx}`,
+          rowSaveBtnAriaLabel: (idx) => `Save edits for row ${idx}`,
+          rowCancelBtnAriaLabel: (idx) => `Cancel edits for row ${idx}`,
           cells: [
             {
               title: (value?: string, rowIndex?: number, cellIndex?: number, updatedProps?: any) => (
@@ -352,7 +352,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
           if (!newSelected.includes(newValue.toString())) {
             newSelected.push(newValue.toString());
           } else {
-            newSelected = newSelected.filter(el => el !== newValue);
+            newSelected = newSelected.filter((el) => el !== newValue);
           }
           break;
         }

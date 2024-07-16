@@ -60,7 +60,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
   onFavorite = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>, itemId: string, isFavorite: boolean) => {
     if (isFavorite) {
       this.setState({
-        favorites: this.state.favorites.filter(id => id !== itemId)
+        favorites: this.state.favorites.filter((id) => id !== itemId)
       });
     } else {
       this.setState({
@@ -75,7 +75,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
       });
     } else {
       const filteredGroups = this.appLauncherItems
-        .map(group => {
+        .map((group) => {
           const filteredGroup = React.cloneElement(group, {
             children: group.props.children.filter((item: JSX.Element) => {
               if (item.type === ApplicationLauncherSeparator) {
@@ -93,7 +93,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
             return null;
           }
         })
-        .filter(newGroup => newGroup);
+        .filter((newGroup) => newGroup);
 
       if (filteredGroups.length > 0) {
         let lastGroup = filteredGroups.pop();
