@@ -17,6 +17,8 @@ export interface PageGroupProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'top' | 'bottom';
     '2xl'?: 'top' | 'bottom';
   };
+  /** Enables the page group to fill the available vertical space if true, or disable filling if false. */
+  isFilled?: boolean;
   /** Modifier indicating if PageGroup should have a shadow at the top */
   hasShadowTop?: boolean;
   /** Modifier indicating if PageGroup should have a shadow at the bottom */
@@ -31,6 +33,7 @@ export const PageGroup = ({
   className = '',
   children,
   stickyOnBreakpoint,
+  isFilled,
   hasShadowTop = false,
   hasShadowBottom = false,
   hasOverflowScroll = false,
@@ -52,6 +55,8 @@ export const PageGroup = ({
       className={css(
         styles.pageMainGroup,
         formatBreakpointMods(stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true),
+        isFilled === false && styles.modifiers.noFill,
+        isFilled === true && styles.modifiers.fill,
         hasShadowTop && styles.modifiers.shadowTop,
         hasShadowBottom && styles.modifiers.shadowBottom,
         hasOverflowScroll && styles.modifiers.overflowScroll,

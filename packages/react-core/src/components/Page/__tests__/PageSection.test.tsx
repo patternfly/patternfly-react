@@ -153,3 +153,30 @@ test('Does not render with PageBody wrapper when hasBodyWrapper is false', () =>
 
   expect(screen.getByText('test')).not.toHaveClass(styles.pageMainBody);
 });
+
+test(`Does not render with ${styles.modifiers.fill} or ${styles.modifiers.noFill} if isFilled is not passed`, () => {
+  render(<PageSection component="main">test</PageSection>);
+
+  expect(screen.getByRole('main')).not.toHaveClass(styles.modifiers.fill);
+  expect(screen.getByRole('main')).not.toHaveClass(styles.modifiers.noFill);
+});
+
+test(`Renders with ${styles.modifiers.fill} if isFilled={true} is passed`, () => {
+  render(
+    <PageSection component="main" isFilled={true}>
+      test
+    </PageSection>
+  );
+
+  expect(screen.getByRole('main')).toHaveClass(styles.modifiers.fill);
+});
+
+test(`Renders with ${styles.modifiers.noFill} if isFilled={false} is passed`, () => {
+  render(
+    <PageSection component="main" isFilled={false}>
+      test
+    </PageSection>
+  );
+
+  expect(screen.getByRole('main')).toHaveClass(styles.modifiers.noFill);
+});
