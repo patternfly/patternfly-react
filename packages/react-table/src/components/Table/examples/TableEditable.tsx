@@ -86,20 +86,24 @@ interface EditableCellProps {
   dataLabel: string;
   staticValue: React.ReactNode;
   editingValue: React.ReactNode;
+  role?: string;
+  ariaLabel?: string;
 }
 
-const EditableCell: React.FunctionComponent<EditableCellProps> = ({ dataLabel, staticValue, editingValue }) => {
+const EditableCell: React.FunctionComponent<EditableCellProps> = ({ dataLabel, staticValue, editingValue, role, ariaLabel }) => {
   const hasMultipleInputs = Array.isArray(editingValue) && editingValue.every((elem) => React.isValidElement(elem));
 
   return (
     <Td dataLabel={dataLabel}>
       <div className={css(inlineEditStyles.inlineEditValue)}>{staticValue}</div>
       {hasMultipleInputs ? (
-        (editingValue as React.ReactElement[]).map((elem, index) => (
-          <div key={index} className={css(inlineEditStyles.inlineEditInput)}>
-            {elem}
-          </div>
-        ))
+        <div className={css(inlineEditStyles.inlineEditGroup, 'pf-m-column')} role={role} aria-label={ariaLabel}>
+          {(editingValue as React.ReactElement[]).map((elem, index) => (
+            <div key={index} className={css(inlineEditStyles.inlineEditInput)}>
+              {elem}
+            </div>
+          ))}
+        </div>
       ) : (
         <div className={css(inlineEditStyles.inlineEditInput)}>{editingValue}</div>
       )}
@@ -113,6 +117,7 @@ interface EditableRow {
   dataOptions?: CustomDataOptions;
   saveChanges: (editedData: CustomData) => void;
   ariaLabel: string;
+  rowIndex?: number;
 }
 
 const EditableRow: React.FunctionComponent<EditableRow> = ({
@@ -120,7 +125,8 @@ const EditableRow: React.FunctionComponent<EditableRow> = ({
   columnNames,
   dataOptions,
   saveChanges,
-  ariaLabel
+  ariaLabel,
+  rowIndex
 }) => {
   const [editable, setEditable] = React.useState(false);
   const [editedData, setEditedData] = React.useState(data);
@@ -155,6 +161,8 @@ const EditableRow: React.FunctionComponent<EditableRow> = ({
       <EditableCell
         dataLabel={columnNames.checkboxes}
         staticValue={data.checkboxes.join(', ')}
+        role="group"
+        ariaLabel={`Checkbox group row ${rowIndex}`}
         editingValue={dataOptions?.checkboxes.map((option) => {
           const id = getUniqueId('checkbox');
           return (
@@ -177,6 +185,8 @@ const EditableRow: React.FunctionComponent<EditableRow> = ({
       <EditableCell
         dataLabel={columnNames.radios}
         staticValue={data.radios}
+        ariaLabel={`Radio button group row ${rowIndex}`}
+        role="radiogroup"
         editingValue={dataOptions?.radios.map((option) => {
           const id = getUniqueId('radio');
           return (
@@ -282,6 +292,7 @@ export const TableEditable: React.FunctionComponent = () => {
           <EditableRow
             key={index}
             data={data}
+            rowIndex={index}
             dataOptions={initialRowsOptions[index]}
             columnNames={columnNames}
             saveChanges={(editedRow) => {
