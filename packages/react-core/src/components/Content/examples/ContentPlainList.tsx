@@ -1,24 +1,24 @@
 import React from 'react';
-import { Text, TextVariants, TextList, TextListVariants, TextListItem } from '@patternfly/react-core';
+import { Content, ContentVariants } from '@patternfly/react-core';
 
 export const ContentPlainList: React.FunctionComponent = () => (
   <>
-    <Text component={TextVariants.h3}>Plain unordered list</Text>
-    <TextList isPlain>
-      <TextListItem>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</TextListItem>
-      <TextListItem>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</TextListItem>
-      <TextListItem>Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.</TextListItem>
-      <TextListItem>Ut non enim metus.</TextListItem>
-    </TextList>
-    <Text component={TextVariants.h3}>Plain ordered list</Text>
-    <TextList component={TextListVariants.ol} isPlain>
-      <TextListItem>Donec blandit a lorem id convallis.</TextListItem>
-      <TextListItem>Cras gravida arcu at diam gravida gravida.</TextListItem>
-      <TextListItem>Integer in volutpat libero.</TextListItem>
-      <TextListItem>Donec a diam tellus.</TextListItem>
-      <TextListItem>Aenean nec tortor orci.</TextListItem>
-      <TextListItem>Quisque aliquam cursus urna, non bibendum massa viverra eget.</TextListItem>
-      <TextListItem>Vivamus maximus ultricies pulvinar.</TextListItem>
-    </TextList>
+    <Content component={ContentVariants.h3}>Plain unordered list</Content>
+    <Content isPlainList>
+      <Content>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</Content>
+      <Content>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</Content>
+      <Content>Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.</Content>
+      <Content>Ut non enim metus.</Content>
+    </Content>
+    <Content component={ContentVariants.h3}>Plain ordered list</Content>
+    <Content component={ContentVariants.ol} isPlainList>
+      <Content>Donec blandit a lorem id convallis.</Content>
+      <Content>Cras gravida arcu at diam gravida gravida.</Content>
+      <Content>Integer in volutpat libero.</Content>
+      <Content>Donec a diam tellus.</Content>
+      <Content>Aenean nec tortor orci.</Content>
+      <Content>Quisque aliquam cursus urna, non bibendum massa viverra eget.</Content>
+      <Content>Vivamus maximus ultricies pulvinar.</Content>
+    </Content>
   </>
 );

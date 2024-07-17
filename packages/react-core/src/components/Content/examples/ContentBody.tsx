@@ -1,24 +1,26 @@
 import React from 'react';
-import { Text, TextVariants } from '@patternfly/react-core';
+import { Content, ContentVariants } from '@patternfly/react-core';
 
 export const ContentBody: React.FunctionComponent = () => (
   <>
-    <Text component={TextVariants.p}>
+    <Content component={ContentVariants.p}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla
       nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel
       erat vel, interdum mattis neque. Sub works as well!
-    </Text>
-    <Text component={TextVariants.p}>
+    </Content>
+    <Content component={ContentVariants.p}>
       Quisque ante lacus, malesuada ac auctor vitae, congue{' '}
-      <Text component={TextVariants.a} href="#">
+      <Content component={ContentVariants.a} href="#">
         non ante
-      </Text>
+      </Content>
       . Phasellus lacus ex, semper ac tortor nec, fringilla condimentum orci. Fusce eu rutrum tellus.
-    </Text>
-    <Text component={TextVariants.blockquote}>
+    </Content>
+    <Content component={ContentVariants.blockquote}>
       Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est tellus sit amet
       turpis.
-    </Text>
-    <Text component={TextVariants.small}>Sometimes you need small text to display things like date created</Text>
+    </Content>
+    <Content component={ContentVariants.small}>
+      Sometimes you need small text to display things like date created
+    </Content>
   </>
 );

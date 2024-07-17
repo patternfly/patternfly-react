@@ -1,34 +1,34 @@
 import React from 'react';
-import { TextContent, Text, TextVariants } from '@patternfly/react-core';
+import { Content, ContentVariants } from '@patternfly/react-core';
 
 export const ContentVisited: React.FunctionComponent = () => (
   <>
-    <TextContent>
-      <Text component={TextVariants.h3}>Link example</Text>
-      <Text component={TextVariants.p}>
-        <Text component={TextVariants.a} isVisitedLink href="#">
+    <Content>
+      <Content component={ContentVariants.h3}>Link example</Content>
+      <Content component={ContentVariants.p}>
+        <Content component={ContentVariants.a} isVisitedLink href="#">
           Click to visit link
-        </Text>
-      </Text>
-    </TextContent>
+        </Content>
+      </Content>
+    </Content>
     <br />
-    <TextContent isVisited>
-      <Text component={TextVariants.h3}>Link content example</Text>
-      <Text component={TextVariants.p}>
-        <Text component={TextVariants.a} href="#">
+    <Content isVisitedLink>
+      <Content component={ContentVariants.h3}>Link content example</Content>
+      <Content component={ContentVariants.p}>
+        <Content component={ContentVariants.a} href="#">
           content link 1
-        </Text>
-      </Text>
-      <Text component={TextVariants.p}>
-        <Text component={TextVariants.a} href="#">
+        </Content>
+      </Content>
+      <Content component={ContentVariants.p}>
+        <Content component={ContentVariants.a} href="#">
           content link 2
-        </Text>
-      </Text>
-      <Text component={TextVariants.p}>
-        <Text component={TextVariants.a} href="#">
+        </Content>
+      </Content>
+      <Content component={ContentVariants.p}>
+        <Content component={ContentVariants.a} href="#">
           content link 3
-        </Text>
-      </Text>
-    </TextContent>
+        </Content>
+      </Content>
+    </Content>
   </>
 );
