@@ -169,6 +169,8 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** @beta The container to append the pagination options menu to. */
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline';
 }
 
 const handleInputWidth = (lastPage: number, node: HTMLDivElement) => {
@@ -229,6 +231,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   ouiaSafe = true,
   usePageInsets,
   inset,
+  menuAppendTo,
   ...props
 }: PaginationProps) => {
   const paginationRef = React.useRef<HTMLDivElement>(null);
@@ -336,6 +339,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
           toggleTemplate={toggleTemplate}
           isDisabled={isDisabled}
           containerRef={containerRef}
+          appendTo={menuAppendTo}
         />
       )}
       <Navigation

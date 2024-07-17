@@ -53,7 +53,10 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   onPerPageSelect?: OnPerPageSelect;
   /** Label for the English word "of". */
   ofWord?: string;
+  /** React ref for the container to append the options menu to. This is a static ref provided by the main pagination component. */
   containerRef?: React.RefObject<HTMLDivElement>;
+  /** @beta The container to append the pagination options menu to. Overrides the containerRef prop. */
+  appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
 }
 
 export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMenuProps> = ({
@@ -77,7 +80,8 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
   itemsTitle = '',
   toggleTemplate,
   onPerPageSelect = () => null as any,
-  containerRef
+  containerRef,
+  appendTo
 }: PaginationOptionsMenuProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
@@ -211,6 +215,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
     </Menu>
   );
 
+  const containerToAppendTo = appendTo ?? (containerRef?.current || undefined);
   return (
     <Popper
       trigger={toggle}
@@ -219,7 +224,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
       popperRef={menuRef}
       isVisible={isOpen}
       direction={dropDirection}
-      appendTo={containerRef?.current || undefined}
+      appendTo={containerToAppendTo}
       minWidth={minWidth !== undefined ? minWidth : 'revert'}
     />
   );
