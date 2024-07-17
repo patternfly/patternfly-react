@@ -65,7 +65,7 @@ export const PageWithOrWithoutFill: React.FunctionComponent = () => {
       <PageSection isFilled={true} variant="secondary">
         This section fills the available space.
       </PageSection>
-      <PageSection isFilled={false}>This section is set to not fill the available space.</PageSection>
+      <PageSection>A default page section</PageSection>
     </Page>
   );
 };
