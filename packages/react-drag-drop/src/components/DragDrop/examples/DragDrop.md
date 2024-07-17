@@ -15,12 +15,24 @@ import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-d
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 
-import { DragDropSort } from '@patternfly/react-drag-drop';
+import { DragDropSort, DragDropContainer, Droppable as NewDroppable } from '@patternfly/react-drag-drop';
 
 ## Sorting examples
 
 ### Basic drag and drop sorting
 
+```ts file="./BasicSorting.tsx"
+
+```
+
+### Basic drag and drop sorting with drag button
+
 ```ts file="./BasicSortingWithDragButton.tsx"
+
+```
+
+### Multiple drop zones
+
+```ts file="./DragDropContainerBasic.tsx"
 
 ```
