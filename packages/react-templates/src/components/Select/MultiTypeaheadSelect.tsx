@@ -144,7 +144,7 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
     _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLInputElement> | undefined,
     option: string | number
   ) => {
-    const selections = selected.includes(option) ? selected.filter((o) => option === o) : [...selected, option];
+    const selections = selected.includes(option) ? selected.filter((o) => option !== o) : [...selected, option];
 
     onSelectionChange && onSelectionChange(_event, selections);
     setSelected(selections);
