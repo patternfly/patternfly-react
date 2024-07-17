@@ -21,7 +21,7 @@ interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
    * DualListSelectorList variant wraps the draggable objects in a DualListSelectorListItem and a div.pf-c-dual-list-selector__item-text element
    * TableComposable variant wraps the draggable objects in TODO
    * */
-  variant?: 'default' | 'defaultWithHandle' | 'DataList' | 'DualListSelectorList' | 'TableComposable';
+  variant?: 'default' | 'DataList' | 'DualListSelectorList' | 'TableComposable';
 }
 
 export const Droppable: React.FunctionComponent<DroppableProps> = ({
@@ -50,12 +50,7 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
         );
       default:
         return (
-          <Draggable
-            useDragButton={variant === 'default' || variant === 'defaultWithHandle'}
-            key={item.id}
-            id={item.id}
-            {...item.props}
-          >
+          <Draggable useDragButton key={item.id} id={item.id} {...item.props}>
             {item.content}
           </Draggable>
         );

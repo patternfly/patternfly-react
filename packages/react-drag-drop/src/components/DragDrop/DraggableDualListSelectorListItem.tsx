@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import dragStyles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DragButton } from './DragButton';
-import { DualListSelectorListContext as DLSListContextDeprecated } from '@patternfly/react-core/dist/esm/deprecated/components/DualListSelector';
+import { DualListSelectorListContext } from '@patternfly/react-core/dist/esm/components/DualListSelector/DualListSelectorContext';
 
 export interface DraggableDualListSelectorListItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside DragDrop */
@@ -42,7 +42,7 @@ export const DraggableDualListSelectorListItem: React.FunctionComponent<Draggabl
     animateLayoutChanges: () => false
   });
 
-  const { setFocusedOption } = React.useContext(DLSListContextDeprecated);
+  const { setFocusedOption } = React.useContext(DualListSelectorListContext);
 
   const style = {
     transform: CSS.Transform.toString(transform),

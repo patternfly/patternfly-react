@@ -25,12 +25,6 @@ import { DragDropSort, DragDropContainer, Droppable as NewDroppable } from '@pat
 
 ```
 
-### Basic drag and drop sorting with drag button
-
-```ts file="./BasicSortingWithDragButton.tsx"
-
-```
-
 ### Multiple drop zones
 
 ```ts file="./DragDropContainerBasic.tsx"

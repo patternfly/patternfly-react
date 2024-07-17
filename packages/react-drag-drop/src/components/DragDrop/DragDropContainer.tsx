@@ -271,11 +271,12 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
         className={css(styles.draggable, styles.modifiers.dragging)}
         style={
           {
-            '--pf-v5-c-draggable--m-dragging--BackgroundColor': 'var(--pf-v5-global--BackgroundColor--100)'
+            '--pf-v6-c-draggable--m-dragging--BackgroundColor':
+              'var(--pf-t--global--background--color--primary--default)'
           } as React.CSSProperties
         }
       >
-        {variant === 'DualListSelectorList' && <ul className="pf-v5-c-dual-list-selector">{content}</ul>}
+        {variant === 'DualListSelectorList' && <ul className="pf-v6-c-dual-list-selector">{content}</ul>}
         {variant === 'DataList' && (
           <DataList aria-label="draggable overlay" {...overlayProps}>
             {content}
