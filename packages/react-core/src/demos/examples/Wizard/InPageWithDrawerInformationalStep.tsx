@@ -171,25 +171,30 @@ export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () 
         </PageSection>
         <PageSection type={PageSectionTypes.wizard} ß>
           <Wizard>
-            <WizardStep body={null} name="Information" id="wizard-step-1">
+            <WizardStep body={{ hasNoPadding: true }} name="Information" id="wizard-step-1">
               {createStepContentWithDrawer('Information step')}
             </WizardStep>
             <WizardStep
               name="Configuration"
               id="wizard-step-2"
               steps={[
-                <WizardStep body={null} name="Substep A" id="wizard-step-2a" key="wizard-step-2a">
+                <WizardStep body={{ hasNoPadding: true }} name="Substep A" id="wizard-step-2a" key="wizard-step-2a">
                   {createStepContentWithDrawer('Configuration substep A')}
                 </WizardStep>,
-                <WizardStep body={null} name="Substep B" id="wizard-step-2b" key="wizard-step-2b">
+                <WizardStep body={{ hasNoPadding: true }} name="Substep B" id="wizard-step-2b" key="wizard-step-2b">
                   {createStepContentWithDrawer('Configuration substep B')}
                 </WizardStep>
               ]}
             />
-            <WizardStep body={null} name="Additional" id="wizard-step-3">
+            <WizardStep body={{ hasNoPadding: true }} name="Additional" id="wizard-step-3">
               {createStepContentWithDrawer('Additional step')}
             </WizardStep>
-            <WizardStep body={null} name="Review" id="wizard-step-4" footer={{ nextButtonText: 'Finish' }}>
+            <WizardStep
+              body={{ hasNoPadding: true }}
+              name="Review"
+              id="wizard-step-4"
+              footer={{ nextButtonText: 'Finish' }}
+            >
               {createStepContentWithDrawer('Review step')}
             </WizardStep>
           </Wizard>

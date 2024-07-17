@@ -238,6 +238,28 @@ class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, Wizard
         </Wizard>
         <br />
         <br />
+        <Wizard id="inPageFocusTest" height={500}>
+          <WizardStep name="A" id="inPageFocusTest-wizard-step-a">
+            <p>inPageFocusTest Step 1</p>
+          </WizardStep>
+          <WizardStep
+            name="B"
+            id="inPageFocusTest-wizard-step-b"
+            steps={[
+              <WizardStep name="B-1" id="inPageFocusTest-wizard-step-b1" key="inPageFocusTest-wizard-step-b1">
+                <p>inPageFocusTest Step 2</p>
+              </WizardStep>,
+              <WizardStep name="B-2" id="inPageFocusTest-wizard-step-b2" key="inPageFocusTest-wizard-step-b2">
+                <p>inPageFocusTest Step 3</p>
+              </WizardStep>
+            ]}
+          />
+          <WizardStep name="C" id="inPageFocusTest-wizard-step-c">
+            <p>inPageFocusTest Step 4</p>
+          </WizardStep>
+        </Wizard>
+        <br />
+        <br />
         <Button id="launchWizOverflow" variant="primary" onClick={this.handleRoleWizardToggle}>
           Show Modal with Overflow
         </Button>

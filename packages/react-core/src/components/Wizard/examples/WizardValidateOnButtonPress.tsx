@@ -2,6 +2,9 @@ import React from 'react';
 
 import {
   Button,
+  ActionList,
+  ActionListGroup,
+  ActionListItem,
   Alert,
   EmptyState,
   EmptyStateFooter,
@@ -96,10 +99,18 @@ const LastStepFooter: React.FunctionComponent<LastStepFooterProps> = ({
 
   return (
     <WizardFooterWrapper>
-      <Button onClick={onValidate}>Validate</Button>
-      <Button variant="secondary" onClick={goToPrevStep}>
-        Back
-      </Button>
+      <ActionList>
+        <ActionListGroup>
+          <ActionListItem>
+            <Button variant="secondary" onClick={goToPrevStep}>
+              Back
+            </Button>
+          </ActionListItem>
+          <ActionListItem>
+            <Button onClick={onValidate}>Validate</Button>
+          </ActionListItem>
+        </ActionListGroup>
+      </ActionList>
     </WizardFooterWrapper>
   );
 };

@@ -73,8 +73,7 @@ export const WizardToggle = ({
 
     return (
       <React.Fragment key={step.id}>
-        {activeStep?.id === step.id &&
-          (body || body === undefined ? <WizardBody {...body}>{children}</WizardBody> : children)}
+        {activeStep?.id === step.id && <WizardBody {...body}>{children}</WizardBody>}
 
         <div key={step.id} style={{ display: 'none' }}>
           <WizardStep {...propsWithoutChildren} />
