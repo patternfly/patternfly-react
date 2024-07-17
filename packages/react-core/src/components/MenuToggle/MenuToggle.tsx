@@ -201,13 +201,12 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
         >
           {splitButtonOptions?.items}
           <button
-            className={css(styles.menuToggleButton)}
+            className={css(styles.menuToggleButton, children && styles.modifiers.text)}
             type="button"
             aria-expanded={isExpanded}
             aria-label={ariaLabel}
             disabled={isDisabled}
             onClick={onClick}
-            {...(children && { style: { display: 'flex', paddingLeft: 'var(--pf-v5-global--spacer--sm)' } })}
             {...otherProps}
             {...ouiaProps}
           >
