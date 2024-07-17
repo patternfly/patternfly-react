@@ -3,23 +3,23 @@
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v5-c-menu-toggle pf-m-expanded pf-m-full-width pf-m-typeahead"
+    class="pf-v6-c-menu-toggle pf-m-expanded pf-m-full-width pf-m-typeahead"
   >
     <div
-      class="pf-v5-c-text-input-group pf-m-plain"
+      class="pf-v6-c-text-input-group pf-m-plain"
     >
       <div
         autocomplete="off"
-        class="pf-v5-c-text-input-group__main"
+        class="pf-v6-c-text-input-group__main"
       >
         <span
-          class="pf-v5-c-text-input-group__text"
+          class="pf-v6-c-text-input-group__text"
         >
           <input
             aria-controls="select-typeahead-listbox"
             aria-expanded="true"
             aria-label="Type to filter"
-            class="pf-v5-c-text-input-group__text-input"
+            class="pf-v6-c-text-input-group__text-input"
             placeholder="Select an option"
             role="combobox"
             type="text"
@@ -28,53 +28,57 @@ exports[`Matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="pf-v5-c-text-input-group__utilities"
+        class="pf-v6-c-text-input-group__utilities"
         style="display: none;"
       >
         <button
           aria-disabled="false"
           aria-label="Clear input value"
-          class="pf-v5-c-button pf-m-plain"
+          class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-17"
-          data-ouia-component-type="PF5/Button"
+          data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
         >
-          <svg
-            aria-hidden="true"
-            class="pf-v5-svg"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            viewBox="0 0 352 512"
-            width="1em"
+          <span
+            class="pf-v6-c-button__icon pf-m-start"
           >
-            <path
-              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-            />
-          </svg>
+            <svg
+              aria-hidden="true"
+              class="pf-v6-svg"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              viewBox="0 0 352 512"
+              width="1em"
+            >
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+              />
+            </svg>
+          </span>
         </button>
       </div>
     </div>
     <button
       aria-expanded="true"
       aria-label="Typeahead menu toggle"
-      class="pf-v5-c-menu-toggle__button"
+      class="pf-v6-c-menu-toggle__button"
       data-ouia-component-id="OUIA-Generated-MenuToggle-typeahead-17"
-      data-ouia-component-type="PF5/MenuToggle"
+      data-ouia-component-type="PF6/MenuToggle"
       data-ouia-safe="true"
       tabindex="-1"
       type="button"
     >
       <span
-        class="pf-v5-c-menu-toggle__controls"
+        class="pf-v6-c-menu-toggle__controls"
       >
         <span
-          class="pf-v5-c-menu-toggle__toggle-icon"
+          class="pf-v6-c-menu-toggle__toggle-icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v6-svg"
             fill="currentColor"
             height="1em"
             role="img"
@@ -88,93 +92,6 @@ exports[`Matches snapshot 1`] = `
         </span>
       </span>
     </button>
-  </div>
-  <div
-    class="pf-v5-c-menu"
-    data-ouia-component-id="OUIA-Generated-Select-51"
-    data-ouia-component-type="PF5/Select"
-    data-ouia-safe="true"
-    data-popper-escaped="true"
-    data-popper-placement="bottom-start"
-    data-popper-reference-hidden="true"
-    style="position: absolute; left: 0px; top: 0px; z-index: 9999; opacity: 1; transition: opacity 0ms cubic-bezier(.54, 1.5, .38, 1.11); min-width: 0px; transform: translate(0px, 0px);"
-  >
-    <div
-      class="pf-v5-c-menu__content"
-    >
-      <ul
-        aria-multiselectable="false"
-        class="pf-v5-c-menu__list"
-        role="listbox"
-      >
-        <li
-          class="pf-v5-c-menu__list-item"
-          role="none"
-        >
-          <button
-            aria-selected="false"
-            class="pf-v5-c-menu__item"
-            role="option"
-            tabindex="0"
-            type="button"
-          >
-            <span
-              class="pf-v5-c-menu__item-main"
-            >
-              <span
-                class="pf-v5-c-menu__item-text"
-              >
-                Option 1
-              </span>
-            </span>
-          </button>
-        </li>
-        <li
-          class="pf-v5-c-menu__list-item"
-          role="none"
-        >
-          <button
-            aria-selected="false"
-            class="pf-v5-c-menu__item"
-            role="option"
-            tabindex="-1"
-            type="button"
-          >
-            <span
-              class="pf-v5-c-menu__item-main"
-            >
-              <span
-                class="pf-v5-c-menu__item-text"
-              >
-                Option 2
-              </span>
-            </span>
-          </button>
-        </li>
-        <li
-          class="pf-v5-c-menu__list-item"
-          role="none"
-        >
-          <button
-            aria-selected="false"
-            class="pf-v5-c-menu__item"
-            role="option"
-            tabindex="-1"
-            type="button"
-          >
-            <span
-              class="pf-v5-c-menu__item-main"
-            >
-              <span
-                class="pf-v5-c-menu__item-text"
-              >
-                Option 3
-              </span>
-            </span>
-          </button>
-        </li>
-      </ul>
-    </div>
   </div>
 </DocumentFragment>
 `;
