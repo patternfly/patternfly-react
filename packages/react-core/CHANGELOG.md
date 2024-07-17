@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.84](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.83...@patternfly/react-core@6.0.0-alpha.84) (2024-07-17)
+
+### Bug Fixes
+
+- **Wizard:** allow dynamic step update ([#10766](https://github.com/patternfly/patternfly-react/issues/10766)) ([8932cdc](https://github.com/patternfly/patternfly-react/commit/8932cdcba34fe59e6c033c8eb5061bb52f064521))
+
+### Features
+
+- **Pagination:** Added wrapper arount menu toggle ([#10662](https://github.com/patternfly/patternfly-react/issues/10662)) ([6dbdcf4](https://github.com/patternfly/patternfly-react/commit/6dbdcf4a020176fd5b2669a3ce68ad0ddd77f3db))
+- **Pagination:** allowed customizing appendTo in v6 ([#10765](https://github.com/patternfly/patternfly-react/issues/10765)) ([7c47911](https://github.com/patternfly/patternfly-react/commit/7c4791159edc9910e6b7d5de8cda63657fd4e49e))
+
 # [6.0.0-alpha.83](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.82...@patternfly/react-core@6.0.0-alpha.83) (2024-07-15)
 
 ### Features
