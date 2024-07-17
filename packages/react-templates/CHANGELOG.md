@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.1.0-prerelease.27...@patternfly/react-templates@1.1.0-prerelease.28) (2024-07-17)
+
+### Features
+
+- **MultiTypeaheadSelect:** Add MultiTypeaheadSelect to react-templates ([#10757](https://github.com/patternfly/patternfly-react/issues/10757)) ([943e19d](https://github.com/patternfly/patternfly-react/commit/943e19dc049ee9a0f047c89b0e456cdc69c56547))
+
 # [1.1.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.1.0-prerelease.26...@patternfly/react-templates@1.1.0-prerelease.27) (2024-07-16)
 
 **Note:** Version bump only for package @patternfly/react-templates
