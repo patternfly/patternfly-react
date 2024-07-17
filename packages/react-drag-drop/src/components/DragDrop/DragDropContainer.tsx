@@ -59,11 +59,10 @@ export interface DragDropContainerProps extends DndContextProps {
   onCancel?: (event: DragDropContainerDragCancelEvent, items: Record<string, DraggableObject[]>) => void;
   /** The variant determines which component wraps the draggable object.
    * Default variant wraps the draggable object in a div.
-   * DataList vairant wraps the draggable object in a DataListItem
+   * DataList variant wraps the draggable object in a DataListItem
    * DualListSelectorList variant wraps the draggable objects in a DualListSelectorListItem and a div.pf-c-dual-list-selector__item-text element
-   * TableComposable variant wraps the draggable objects in TODO
    * */
-  variant?: 'default' | 'DataList' | 'DualListSelectorList' | 'TableComposable';
+  variant?: 'default' | 'DataList' | 'DualListSelectorList';
   /** Additional classes to apply to the drag overlay */
   overlayProps?: any;
 }
