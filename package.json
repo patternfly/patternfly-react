@@ -111,7 +111,8 @@
   },
   "workspaces": {
     "packages": [
-      "packages/**"
+      "packages/*",
+      "packages/react-integration/demo-app-ts"
     ]
   }
 }
