@@ -74,6 +74,11 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   const [currentSteps, setCurrentSteps] = React.useState<WizardStepType[]>(initialSteps);
   const [currentFooter, setCurrentFooter] = React.useState<WizardFooterType>();
 
+  // Callback to update steps if they change after initial render
+  React.useEffect(() => {
+    setCurrentSteps(initialSteps);
+  }, [initialSteps]);
+
   // Combined initial and current state steps
   const steps = React.useMemo(
     () =>

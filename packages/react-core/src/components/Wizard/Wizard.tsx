@@ -92,6 +92,11 @@ export const Wizard = ({
     }
   }, [startIndex]);
 
+  // When children change, active step index should reset
+  React.useEffect(() => {
+    setActiveStepIndex(startIndex);
+  }, [children, startIndex]);
+
   const focusMainContentElement = () =>
     setTimeout(() => {
       wrapperRef?.current?.focus && wrapperRef.current.focus();
