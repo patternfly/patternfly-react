@@ -92,10 +92,12 @@ export const Wizard = ({
     }
   }, [startIndex]);
 
-  // When children change, active step index should reset
+  // When the number of steps changes and pushes activeStepIndex out of bounds, reset back to startIndex
   React.useEffect(() => {
-    setActiveStepIndex(startIndex);
-  }, [children, startIndex]);
+    if (activeStepIndex > initialSteps.length) {
+      setActiveStepIndex(startIndex);
+    }
+  }, [initialSteps, activeStepIndex, startIndex]);
 
   const focusMainContentElement = () =>
     setTimeout(() => {
