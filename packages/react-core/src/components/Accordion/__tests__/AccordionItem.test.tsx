@@ -28,6 +28,12 @@ test(`Renders with additional classes when className is passed`, () => {
   expect(screen.getByText('Test')).toHaveClass('custom-class');
 });
 
+test(`Spreads props if others are passed`, () => {
+  render(<AccordionItem data-testId="testId">Test</AccordionItem>);
+
+  expect(screen.getByTestId('testId')).toBeInTheDocument();
+});
+
 test('Matches the snapshot', () => {
   const { asFragment } = render(<AccordionItem>Test</AccordionItem>);
   expect(asFragment()).toMatchSnapshot();
