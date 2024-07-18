@@ -25,7 +25,6 @@ import {
   MenuToggle,
   MenuToggleCheckbox,
   PageSection,
-  PageSectionVariants,
   Pagination,
   Progress,
   Select,
@@ -617,10 +616,10 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
-      <PageSection variant={PageSectionVariants.light}>
+      <PageSection>
         <Content>
           <h1>Projects</h1>
-          <p>This is a demo that showcases Patternfly Cards.</p>
+          <p>This is a demo that showcases Patternfly cards.</p>
         </Content>
       </PageSection>
       <PageSection isFilled padding={{ default: 'noPadding' }}>
@@ -631,7 +630,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
       </PageSection>
       <PageSection isFilled padding={{ default: 'noPadding' }}>
         <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
-          <DrawerContent panelContent={panelContent} colorVariant="no-background">
+          <DrawerContent panelContent={panelContent}>
             <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>

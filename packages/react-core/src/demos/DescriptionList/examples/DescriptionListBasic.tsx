@@ -19,7 +19,6 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 export const DescriptionListBasic: React.FunctionComponent = () => (
   <DashboardWrapper>
-    h1
     <PageSection>
       <Content>
         <Content component="h1">Projects</Content>

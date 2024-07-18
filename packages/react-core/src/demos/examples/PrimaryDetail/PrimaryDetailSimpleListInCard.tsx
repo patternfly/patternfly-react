@@ -14,7 +14,6 @@ import {
   Flex,
   FlexItem,
   PageSection,
-  PageSectionVariants,
   Progress,
   SimpleList,
   SimpleListGroup,
@@ -91,11 +90,11 @@ export const PrimaryDetailSimpleListInCard: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper>
-      <PageSection variant={PageSectionVariants.light}>
+      <PageSection>
         <Content>
           <h1>Main title</h1>
           <p>
-            Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
+            Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
             of it’s relative line height of 1.5.
           </p>
         </Content>

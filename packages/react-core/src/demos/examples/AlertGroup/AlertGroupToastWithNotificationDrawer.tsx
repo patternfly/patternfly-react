@@ -316,12 +316,12 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
     >
       <PageSection>
         <Content>
-          <h1>Alert Group with Notification Drawer demo</h1>
+          <h1>Alert group with notification drawer demo</h1>
           <p>
-            New alerts can be added with buttons below. Each alert has a timeout of 7 seconds, however, even after the
-            timeout expires, all alerts are still visible in the notification drawer. By default, only 3 alerts are
-            displayed. The rest can be accessed in the notification drawer after clicking on the bell icon in the header
-            or by clicking on the overflow message.
+            New alerts can be added with the following buttons. Each alert has a timeout of 7 seconds, however, even
+            after the timeout expires, all alerts are still visible in the notification drawer. By default, only 3
+            alerts are displayed. The rest can be accessed in the notification drawer after clicking on the bell icon in
+            the header or by clicking on the overflow message.
           </p>
         </Content>
       </PageSection>
@@ -350,7 +350,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
         <Content>
           <br />
           <h2>Max displayed alerts</h2>
-          <p>The maximum number of displayed alerts can be set below.</p>
+          <p>Adjust the maximum number of displayed alerts.</p>
         </Content>
         <NumberInput
           value={maxDisplayed}

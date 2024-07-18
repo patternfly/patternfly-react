@@ -83,7 +83,7 @@ export const ModalTabs: React.FunctionComponent = () => {
         <PageSection>
           <Content>
             <h1>Projects</h1>
-            <p>Click any project card to view Tabs within Modals.</p>
+            <p>Click any project card to view tabs within modals.</p>
           </Content>
         </PageSection>
         <PageSection isFilled>

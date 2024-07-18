@@ -41,7 +41,7 @@ class BannerDemo extends React.Component {
             <Content>
               <h1>Main title</h1>
               <p>
-                Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
+                Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
                 of it’s relative line height of 1.5.
               </p>
             </Content>
@@ -114,7 +114,7 @@ class BannerDemo extends React.Component {
                 <Content>
                   <h1>Main title</h1>
                   <p>
-                    Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
+                    Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
                     of it’s relative line height of 1.5.
                   </p>
                 </Content>
