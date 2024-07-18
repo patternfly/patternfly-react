@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.26...@patternfly/react-core@5.4.0-prerelease.27) (2024-07-18)
+
+### Bug Fixes
+
+- **DragDrop:** fix flexgrow type ([#10777](https://github.com/patternfly/patternfly-react/issues/10777)) ([0388a8a](https://github.com/patternfly/patternfly-react/commit/0388a8a154086dd738c1c6fad7aa926aa3be809e))
+
 # [5.4.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.25...@patternfly/react-core@5.4.0-prerelease.26) (2024-07-18)
 
 ### Features
