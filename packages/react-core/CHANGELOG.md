@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.85](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.84...@patternfly/react-core@6.0.0-alpha.85) (2024-07-18)
+
+### Bug Fixes
+
+- accordion sub components spread props ([#10679](https://github.com/patternfly/patternfly-react/issues/10679)) ([8f336ee](https://github.com/patternfly/patternfly-react/commit/8f336eefee89b40c0cd6920637a27c7be4c5daa4))
+
 # [6.0.0-alpha.84](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.83...@patternfly/react-core@6.0.0-alpha.84) (2024-07-17)
 
 ### Bug Fixes

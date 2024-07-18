@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.86](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.85...@patternfly/react-table@6.0.0-alpha.86) (2024-07-18)
+
+### Bug Fixes
+
+- **Table:** compound expansion styles ([#10603](https://github.com/patternfly/patternfly-react/issues/10603)) ([bb71602](https://github.com/patternfly/patternfly-react/commit/bb716028f9b4f54b13eb4b9fc448bc49afb63d60))
+
 # [6.0.0-alpha.85](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.84...@patternfly/react-table@6.0.0-alpha.85) (2024-07-17)
 
 **Note:** Version bump only for package @patternfly/react-table
