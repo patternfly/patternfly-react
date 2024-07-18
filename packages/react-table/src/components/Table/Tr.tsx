@@ -28,6 +28,8 @@ export interface TrProps extends Omit<React.HTMLProps<HTMLTableRowElement>, 'onR
   isStriped?: boolean;
   /** Flag indicating the row will act as a border. This is typically used for a table with a nested and sticky header. */
   isBorderRow?: boolean;
+  /** Flag indicating the row is controlling the expansion of another row. */
+  isControlRow?: boolean;
   /** An event handler for the row */
   onRowClick?: (event?: React.KeyboardEvent | React.MouseEvent) => void;
   /** Flag indicating that the row is selectable */
@@ -50,6 +52,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   isRowSelected = false,
   isStriped = false,
   isBorderRow = false,
+  isControlRow = false,
   innerRef,
   ouiaId,
   ouiaSafe = true,
@@ -100,6 +103,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
           isRowSelected && styles.modifiers.selected,
           isStriped && styles.modifiers.striped,
           isBorderRow && styles.modifiers.borderRow,
+          isControlRow && styles.tableControlRow,
           resetOffset && styles.modifiers.firstCellOffsetReset
         )}
         hidden={rowIsHidden}

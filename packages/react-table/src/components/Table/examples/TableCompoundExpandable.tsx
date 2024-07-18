@@ -75,7 +75,7 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
         const isRowExpanded = !!expandedCellKey;
         return (
           <Tbody key={repo.name} isExpanded={isRowExpanded}>
-            <Tr>
+            <Tr isControlRow>
               <Td width={25} dataLabel={columnNames.name} component="th">
                 <a href="#">{repo.name}</a>
               </Td>
@@ -109,7 +109,7 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
             </Tr>
             {isRowExpanded ? (
               <Tr isExpanded={isRowExpanded}>
-                <Td dataLabel={columnNames[expandedCellKey]} noPadding colSpan={6}>
+                <Td dataLabel={columnNames[expandedCellKey]} colSpan={6}>
                   <ExpandableRowContent>
                     <div className={spacing.mMd}>
                       Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem
