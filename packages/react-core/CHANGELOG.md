@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.27...@patternfly/react-core@5.4.0-prerelease.28) (2024-07-19)
+
+### Bug Fixes
+
+- **Wizard:** only update new steps when step count changes ([#10779](https://github.com/patternfly/patternfly-react/issues/10779)) ([73ee22b](https://github.com/patternfly/patternfly-react/commit/73ee22bc3a4cb938406f3ff5f6b14b39535146ec))
+
 # [5.4.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.26...@patternfly/react-core@5.4.0-prerelease.27) (2024-07-18)
 
 ### Bug Fixes
