@@ -165,9 +165,9 @@ To focus the main content element of the `Wizard`, pass in the `shouldFocusConte
 
 ```
 
-### Step error status
+### Step status
 
-```ts file="./WizardStepErrorStatus.tsx"
+```ts file="./WizardStepStatus.tsx"
 
 ```
 
