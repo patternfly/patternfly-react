@@ -110,7 +110,7 @@ export const WizardToggle = ({
                 <CheckCircleIcon />
               </span>
             )}
-            {isActiveStepStatus === 'default' && (
+            {isActiveStepStatus !== 'success' && isActiveStepStatus !== 'error' && (
               <span className={css(styles.wizardToggleNum)}>{wizardToggleIndex}</span>
             )}{' '}
             {parentStep?.name || activeStep?.name}
