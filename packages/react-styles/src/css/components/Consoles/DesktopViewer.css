@@ -1,6 +1,0 @@
-.pf-v6-c-console__desktop-viewer {
-  grid-area: main;
-  display: grid;
-  gap: var(--pf-v6-global--spacer--md);
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-}
