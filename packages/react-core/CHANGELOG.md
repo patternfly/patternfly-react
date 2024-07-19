@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.86](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.85...@patternfly/react-core@6.0.0-alpha.86) (2024-07-19)
+
+### Features
+
+- **Wizard:** implement success status on steps / nav items ([#10714](https://github.com/patternfly/patternfly-react/issues/10714)) ([aef93f3](https://github.com/patternfly/patternfly-react/commit/aef93f323aed793ae69cc23169bf549032e647c1))
+
 # [6.0.0-alpha.85](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.84...@patternfly/react-core@6.0.0-alpha.85) (2024-07-18)
 
 ### Bug Fixes
