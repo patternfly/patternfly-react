@@ -62,7 +62,7 @@ When the `isManagedSidebar` property is true, it manages the sidebar open/close 
 
 ### Filled page sections
 
-By default, page sections will not fill available vertical space of a page.
+By default, page sections will not expand to fill in the available vertical space in a page.
 
 To change this default behavior, pass `isContentFilled` to the `<Page>` component and `isFilled={true}` to any child `<PageSection>` or `<PageGroup>` component that you want to fill the space. If multiple components are set to fill, then the available space will be split equally between them.
 
