@@ -18,7 +18,7 @@ exports[`ChartPie 1`] = `
           d="M5.8170722959499274e-15,-95A95,95,0,0,1,61.06482292022124,-72.7742220963029L0,0Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #06c); padding: 8px; stroke: var(--pf-v6-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #0066cc); padding: 8px; stroke: var(--pf-v6-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
@@ -32,7 +32,7 @@ exports[`ChartPie 1`] = `
           d="M82.27241335952168,47.499999999999986A95,95,0,0,1,-82.27241335952165,47.50000000000003L0,0Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--300, #036); padding: 8px; stroke: var(--pf-v6-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--300, #003366); padding: 8px; stroke: var(--pf-v6-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
@@ -83,7 +83,7 @@ exports[`ChartPie 2`] = `
           d="M5.8170722959499274e-15,-95A95,95,0,0,1,61.06482292022124,-72.7742220963029L0,0Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #06c); padding: 8px; stroke: var(--pf-v6-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #0066cc); padding: 8px; stroke: var(--pf-v6-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
@@ -97,7 +97,7 @@ exports[`ChartPie 2`] = `
           d="M82.27241335952168,47.499999999999986A95,95,0,0,1,-82.27241335952165,47.50000000000003L0,0Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--300, #036); padding: 8px; stroke: var(--pf-v6-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--300, #003366); padding: 8px; stroke: var(--pf-v6-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
@@ -148,7 +148,7 @@ exports[`renders component data 1`] = `
           d="M4.898587196589413e-15,-80A80,80,0,0,1,64.7213595499958,47.022820183397855L0,0Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #06c); padding: 8px; stroke: var(--pf-v6-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #0066cc); padding: 8px; stroke: var(--pf-v6-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(100, 100)"
         />
         <path
@@ -162,7 +162,7 @@ exports[`renders component data 1`] = `
           d="M-47.02282018339786,-64.72135954999578A80,80,0,0,1,-1.4695761589768237e-14,-80L0,0Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--300, #036); padding: 8px; stroke: var(--pf-v6-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
+          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--300, #003366); padding: 8px; stroke: var(--pf-v6-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(100, 100)"
         />
       </g>

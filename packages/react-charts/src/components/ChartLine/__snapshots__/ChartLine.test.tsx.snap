@@ -34,7 +34,7 @@ exports[`ChartLine 1`] = `
           d="M50,250L57,246L64,242L71,238L78,234L85,230L92,226L99,222L106,218L113,214.00000000000003L120,210L127,206L134,202L141,198L148,194L155,190L162,185.99999999999997L169,181.99999999999997L176,178L183,174L190,170L197,166.00000000000003L204,162L211,158L218,154L225,150L232,146L239,142L246.00000000000003,138L252.99999999999997,134L260,130L267,126L274,122L281,117.99999999999999L288,113.99999999999999L295,109.99999999999999L302,106L309,102L316,98L323,94L330,89.99999999999999L337,85.99999999999999L344,82L351,78L358,74L365,70L372,65.99999999999999L379,61.999999999999986L386,58.00000000000001L393,54.00000000000001L400,50"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-line--data--Fill, transparent); stroke: var(--pf-v6-chart-theme--blue--ColorScale--100, #06c); pointer-events: stroke; opacity: 1; stroke-width: 2;"
+          style="fill: var(--pf-v6-chart-line--data--Fill, transparent); stroke: var(--pf-v6-chart-theme--blue--ColorScale--100, #0066cc); pointer-events: stroke; opacity: 1; stroke-width: 2;"
         />
       </g>
     </svg>
@@ -86,7 +86,7 @@ exports[`ChartLine 2`] = `
           d="M50,250L57,246L64,242L71,238L78,234L85,230L92,226L99,222L106,218L113,214.00000000000003L120,210L127,206L134,202L141,198L148,194L155,190L162,185.99999999999997L169,181.99999999999997L176,178L183,174L190,170L197,166.00000000000003L204,162L211,158L218,154L225,150L232,146L239,142L246.00000000000003,138L252.99999999999997,134L260,130L267,126L274,122L281,117.99999999999999L288,113.99999999999999L295,109.99999999999999L302,106L309,102L316,98L323,94L330,89.99999999999999L337,85.99999999999999L344,82L351,78L358,74L365,70L372,65.99999999999999L379,61.999999999999986L386,58.00000000000001L393,54.00000000000001L400,50"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-line--data--Fill, transparent); stroke: var(--pf-v6-chart-theme--blue--ColorScale--100, #06c); pointer-events: stroke; opacity: 1; stroke-width: 2;"
+          style="fill: var(--pf-v6-chart-line--data--Fill, transparent); stroke: var(--pf-v6-chart-theme--blue--ColorScale--100, #0066cc); pointer-events: stroke; opacity: 1; stroke-width: 2;"
         />
       </g>
     </svg>
@@ -139,7 +139,7 @@ exports[`renders component data 1`] = `
             d="M50,138.88888888888886L83.33333333333334,127.77777777777779L116.66666666666667,94.44444444444443L150,116.66666666666669"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-v6-chart-theme--blue--ColorScale--100, #06c); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-v6-chart-theme--blue--ColorScale--100, #0066cc); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -187,7 +187,7 @@ exports[`renders component data 1`] = `
             d="M50,116.66666666666669L83.33333333333334,105.55555555555557L116.66666666666667,50L150,94.44444444444443"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-v6-chart-theme--blue--ColorScale--300, #036); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-v6-chart-theme--blue--ColorScale--300, #003366); pointer-events: stroke; width: 3px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -251,7 +251,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",Helvetica,Arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="middle"
               x="50"
             >
@@ -282,7 +282,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",Helvetica,Arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="middle"
               x="66.66666666666667"
             >
@@ -313,7 +313,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",Helvetica,Arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="middle"
               x="83.33333333333334"
             >
@@ -344,7 +344,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",Helvetica,Arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="middle"
               x="100"
             >
@@ -375,7 +375,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",Helvetica,Arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="middle"
               x="116.66666666666667"
             >
@@ -406,7 +406,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",Helvetica,Arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="middle"
               x="133.33333333333334"
             >
@@ -437,7 +437,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",Helvetica,Arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="middle"
               x="150"
             >
@@ -482,7 +482,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",Helvetica,Arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="end"
               x="35"
             >
@@ -513,7 +513,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",Helvetica,Arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="end"
               x="35"
             >
@@ -544,7 +544,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",Helvetica,Arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="end"
               x="35"
             >
@@ -575,7 +575,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: "RedHatText","RedHatText","NotoSansArabic","NotoSansHebrew","NotoSansJP","NotoSansKR","NotoSansMalayalam","NotoSansSC","NotoSansTC","NotoSansThai",Helvetica,Arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="end"
               x="35"
             >

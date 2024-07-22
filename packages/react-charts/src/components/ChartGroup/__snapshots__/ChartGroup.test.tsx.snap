@@ -88,7 +88,7 @@ exports[`renders container children 1`] = `
           d="M50,121.42857142857142L75,92.85714285714286L100,58.57142857142856L125,50L125,150L100,150L75,150L50,150Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #06c); width: 6px; fill-opacity: 0.3; stroke-width: 2; stroke: var(--pf-v6-chart-theme--blue--ColorScale--100, #06c);"
+          style="fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #0066cc); width: 6px; fill-opacity: 0.3; stroke-width: 2; stroke: var(--pf-v6-chart-theme--blue--ColorScale--100, #0066cc);"
         />
       </g>
       <g
