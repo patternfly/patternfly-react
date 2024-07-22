@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.95](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.94...@patternfly/react-docs@7.0.0-alpha.95) (2024-07-22)
+
+### Features
+
+- **misc:** Replace Text, TextContent, TextList and TextListItem with Content - PART 2 ([#10643](https://github.com/patternfly/patternfly-react/issues/10643)) ([f067b7c](https://github.com/patternfly/patternfly-react/commit/f067b7c12850251704ba8ca7e6acb03730d371af))
+
 # [7.0.0-alpha.94](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.93...@patternfly/react-docs@7.0.0-alpha.94) (2024-07-22)
 
 ### Features

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.87](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.86...demo-app-ts@5.1.1-alpha.87) (2024-07-22)
+
+### Features
+
+- **misc:** Replace Text, TextContent, TextList and TextListItem with Content - PART 2 ([#10643](https://github.com/patternfly/patternfly-react/issues/10643)) ([f067b7c](https://github.com/patternfly/patternfly-react/commit/f067b7c12850251704ba8ca7e6acb03730d371af))
+
 ## [5.1.1-alpha.86](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.85...demo-app-ts@5.1.1-alpha.86) (2024-07-22)
 
 ### Features

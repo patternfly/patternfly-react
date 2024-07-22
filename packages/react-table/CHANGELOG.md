@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.89](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.88...@patternfly/react-table@6.0.0-alpha.89) (2024-07-22)
+
+### Features
+
+- **misc:** Replace Text, TextContent, TextList and TextListItem with Content - PART 2 ([#10643](https://github.com/patternfly/patternfly-react/issues/10643)) ([f067b7c](https://github.com/patternfly/patternfly-react/commit/f067b7c12850251704ba8ca7e6acb03730d371af))
+
 # [6.0.0-alpha.88](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.87...@patternfly/react-table@6.0.0-alpha.88) (2024-07-22)
 
 **Note:** Version bump only for package @patternfly/react-table
