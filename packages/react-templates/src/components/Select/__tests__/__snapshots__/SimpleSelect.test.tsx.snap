@@ -5,7 +5,7 @@ exports[`Matches snapshot 1`] = `
   <button
     aria-expanded="true"
     class="pf-v6-c-menu-toggle pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-MenuToggle-14"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-13"
     data-ouia-component-type="PF6/MenuToggle"
     data-ouia-safe="true"
     style="width: 200px;"
