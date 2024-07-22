@@ -62,9 +62,9 @@ When the `isManagedSidebar` property is true, it manages the sidebar open/close 
 
 ### Filled page sections
 
-By default, the last page section is "filled", meaning it fills the available vertical space of a page.
+By default, page sections will not expand to fill in the available vertical space in a page.
 
-To change the default behavior, use the `isFilled` property. To make other page sections "filled", set `isFilled` equal to "true". To disable the last page section from being "filled", set `isFilled` equal to "false".
+To change this default behavior, pass `isContentFilled` to the `<Page>` component and `isFilled={true}` to any child `<PageSection>` or `<PageGroup>` component that you want to fill the space. If multiple components are set to fill, then the available space will be split equally between them.
 
 ```ts file="./PageWithOrWithoutFill.tsx"
 

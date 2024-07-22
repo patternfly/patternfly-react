@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { PageGroup } from '../PageGroup';
+import styles from '@patternfly/react-styles/css/components/Page/page';
 
 describe('page group', () => {
   test('Verify basic render', () => {
@@ -70,5 +71,24 @@ describe('page group', () => {
     render(<PageGroup hasOverflowScroll>test</PageGroup>);
 
     expect(consoleWarning).toHaveBeenCalled();
+  });
+
+  test(`Does not render with ${styles.modifiers.fill} or ${styles.modifiers.noFill} if isFilled is not passed`, () => {
+    render(<PageGroup>test</PageGroup>);
+
+    expect(screen.getByText('test')).not.toHaveClass(styles.modifiers.fill);
+    expect(screen.getByText('test')).not.toHaveClass(styles.modifiers.noFill);
+  });
+
+  test(`Renders with ${styles.modifiers.fill} if isFilled={true} is passed`, () => {
+    render(<PageGroup isFilled={true}>test</PageGroup>);
+
+    expect(screen.getByText('test')).toHaveClass(styles.modifiers.fill);
+  });
+
+  test(`Renders with ${styles.modifiers.noFill} if isFilled={false} is passed`, () => {
+    render(<PageGroup isFilled={false}>test</PageGroup>);
+
+    expect(screen.getByText('test')).toHaveClass(styles.modifiers.noFill);
   });
 });

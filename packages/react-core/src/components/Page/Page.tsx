@@ -94,6 +94,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   groupProps?: PageGroupProps;
   /** Additional props of the breadcrumb */
   breadcrumbProps?: PageBreadcrumbProps;
+  /** Enables children to fill the available vertical space. Child page sections or groups that should fill should be passed the isFilled property. */
+  isContentFilled?: boolean;
 }
 
 export interface PageState {
@@ -249,6 +251,7 @@ class Page extends React.Component<PageProps, PageState> {
       additionalGroupedContent,
       groupProps,
       breadcrumbProps,
+      isContentFilled,
       ...rest
     } = this.props;
     const { mobileView, mobileIsSidebarOpen, desktopIsSidebarOpen, width, height } = this.state;
@@ -294,7 +297,7 @@ class Page extends React.Component<PageProps, PageState> {
     const Component: keyof JSX.IntrinsicElements = mainComponent;
 
     const main = (
-      <div className={css(styles.pageMainContainer)}>
+      <div className={css(styles.pageMainContainer, isContentFilled && styles.modifiers.fill)}>
         <Component
           ref={this.mainRef}
           role={role}

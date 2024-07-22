@@ -27,7 +27,7 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'default' | 'secondary';
   /** Section type variant */
   type?: 'default' | 'subnav' | 'breadcrumb' | 'tabs' | 'wizard';
-  /** Enables the page section to fill the available vertical space */
+  /** Enables the page section to fill the available vertical space if true, or disable filling if false. */
   isFilled?: boolean;
   /** Limits the width of the section */
   isWidthLimited?: boolean;

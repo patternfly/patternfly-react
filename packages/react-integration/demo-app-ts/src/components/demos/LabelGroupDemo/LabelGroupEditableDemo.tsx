@@ -46,7 +46,9 @@ export class LabelGroupEditableDemo extends Component<{}, LabelState> {
         >
           {this.state.label1}
         </Label>
-        <Label color="green">Static label</Label>
+        <Label id="static-label" color="green">
+          Static label
+        </Label>
         <Label
           color="blue"
           onClose={() => {}}

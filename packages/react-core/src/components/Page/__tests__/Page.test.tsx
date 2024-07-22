@@ -13,6 +13,8 @@ import { PageBreadcrumb } from '../PageBreadcrumb';
 import { PageGroup } from '../PageGroup';
 import { Masthead } from '../../Masthead';
 
+import styles from '@patternfly/react-styles/css/components/Page/page';
+
 const props = {
   'aria-label': 'Page layout',
   id: 'PageId',
@@ -351,5 +353,24 @@ describe('Page', () => {
     expect(screen.getByRole('main')).toHaveAttribute('id', mainId);
     expect(screen.getByTestId('page-test-id')).toHaveAttribute('id', props.id);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test(`Does not render with ${styles.modifiers.fill} or ${styles.modifiers.noFill} if isContentFilled is not passed`, () => {
+    render(<Page {...props} role="main"></Page>);
+
+    expect(screen.getByRole('main').parentElement).not.toHaveClass(styles.modifiers.fill);
+    expect(screen.getByRole('main').parentElement).not.toHaveClass(styles.modifiers.noFill);
+  });
+
+  test(`Renders with ${styles.modifiers.fill} if isContentFilled={true} is passed`, () => {
+    render(<Page {...props} role="main" isContentFilled={true}></Page>);
+
+    expect(screen.getByRole('main').parentElement).toHaveClass(styles.modifiers.fill);
+  });
+
+  test(`Does not render with ${styles.modifiers.noFill} if isContentFilled={false} is passed`, () => {
+    render(<Page {...props} role="main" isContentFilled={false}></Page>);
+
+    expect(screen.getByRole('main').parentElement).not.toHaveClass(styles.modifiers.noFill);
   });
 });
