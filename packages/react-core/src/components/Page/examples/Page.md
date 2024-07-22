@@ -64,7 +64,7 @@ When the `isManagedSidebar` property is true, it manages the sidebar open/close 
 
 By default, page sections will not fill available vertical space of a page.
 
-To change the default behavior, pass `isContentFilled` to the `Page` component, and use the `isFilled` property on any child `PageSection` or `PageGroup` components to specify whether they should fill the available vertical space.
+To change this default behavior, pass `isContentFilled` to the `<Page>` component and `isFilled={true}` to any child `<PageSection>` or `<PageGroup>` component that you want to fill the space. If multiple components are set to fill, then the available space will be split equally between them.
 
 ```ts file="./PageWithOrWithoutFill.tsx"
 
