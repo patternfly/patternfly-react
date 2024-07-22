@@ -3189,6 +3189,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@patternfly/react-core@npm:6.0.0-alpha.86":
+  version: 6.0.0-alpha.86
+  resolution: "@patternfly/react-core@npm:6.0.0-alpha.86"
+  dependencies:
+    "@patternfly/react-icons": "npm:^6.0.0-alpha.30"
+    "@patternfly/react-styles": "npm:^6.0.0-alpha.29"
+    "@patternfly/react-tokens": "npm:^6.0.0-alpha.29"
+    focus-trap: "npm:7.5.4"
+    react-dropzone: "npm:^14.2.3"
+    tslib: "npm:^2.6.2"
+  peerDependencies:
+    react: ^17 || ^18
+    react-dom: ^17 || ^18
+  checksum: 10c0/f8fca2423e628e0a442bd7e257e3964c81309a42cb0df4eb1aa00df3109a74b4c277f8d548fd857a3806eb4cfc40af730efc50682ab50fda7d2c00bc02e22c5b
+  languageName: node
+  linkType: hard
+
 "@patternfly/react-core@workspace:^, @patternfly/react-core@workspace:packages/react-core":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-core@workspace:packages/react-core"
@@ -3218,7 +3235,7 @@ __metadata:
     "@patternfly/patternfly-a11y": "npm:4.3.1"
     "@patternfly/react-charts": "workspace:^"
     "@patternfly/react-code-editor": "workspace:^"
-    "@patternfly/react-core": "workspace:^"
+    "@patternfly/react-core": "npm:6.0.0-alpha.86"
     "@patternfly/react-drag-drop": "workspace:^"
     "@patternfly/react-icons": "workspace:^"
     "@patternfly/react-styles": "workspace:^"
@@ -3245,7 +3262,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-icons@workspace:^, @patternfly/react-icons@workspace:packages/react-icons":
+"@patternfly/react-icons@npm:^6.0.0-alpha.30, @patternfly/react-icons@workspace:^, @patternfly/react-icons@workspace:packages/react-icons":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-icons@workspace:packages/react-icons"
   dependencies:
@@ -3326,7 +3343,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-styles@workspace:^, @patternfly/react-styles@workspace:packages/react-styles":
+"@patternfly/react-styles@npm:^6.0.0-alpha.29, @patternfly/react-styles@workspace:^, @patternfly/react-styles@workspace:packages/react-styles":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-styles@workspace:packages/react-styles"
   dependencies:
@@ -3367,7 +3384,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-tokens@workspace:^, @patternfly/react-tokens@workspace:packages/react-tokens":
+"@patternfly/react-tokens@npm:^6.0.0-alpha.29, @patternfly/react-tokens@workspace:^, @patternfly/react-tokens@workspace:packages/react-tokens":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-tokens@workspace:packages/react-tokens"
   dependencies:

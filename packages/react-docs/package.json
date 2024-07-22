@@ -26,7 +26,7 @@
     "@patternfly/patternfly": "6.0.0-alpha.187",
     "@patternfly/react-charts": "workspace:^",
     "@patternfly/react-code-editor": "workspace:^",
-    "@patternfly/react-core": "workspace:^",
+    "@patternfly/react-core": "6.0.0-alpha.86",
     "@patternfly/react-drag-drop": "workspace:^",
     "@patternfly/react-icons": "workspace:^",
     "@patternfly/react-styles": "workspace:^",
