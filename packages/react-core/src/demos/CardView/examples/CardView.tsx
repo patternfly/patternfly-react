@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
   CardBody,
+  Content,
   Divider,
   Dropdown,
   DropdownItem,
@@ -24,8 +25,6 @@ import {
   OverflowMenuItem,
   PageSection,
   Pagination,
-  TextContent,
-  Text,
   Toolbar,
   ToolbarItem,
   ToolbarFilter,
@@ -470,10 +469,10 @@ export const CardViewBasic: React.FunctionComponent = () => {
     <React.Fragment>
       <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
         <PageSection>
-          <TextContent>
-            <Text component="h1">Projects</Text>
-            <Text component="p">This is a demo that showcases PatternFly cards.</Text>
-          </TextContent>
+          <Content>
+            <h1>Projects</h1>
+            <p>This is a demo that showcases PatternFly cards.</p>
+          </Content>
           <Toolbar id="toolbar-group-types" clearAllFilters={onDelete}>
             <ToolbarContent>{toolbarItems}</ToolbarContent>
           </Toolbar>

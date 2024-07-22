@@ -13,8 +13,7 @@ import {
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
   PageSection,
-  TextContent,
-  Text,
+  Content,
   EmptyStateVariant,
   NumberInput,
   Alert,
@@ -316,15 +315,15 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
       isNotificationDrawerExpanded={isDrawerExpanded}
     >
       <PageSection>
-        <TextContent>
-          <Text component="h1">Alert Group with Notification Drawer demo</Text>
-          <Text component="p">
-            New alerts can be added with buttons below. Each alert has a timeout of 7 seconds, however, even after the
-            timeout expires, all alerts are still visible in the notification drawer. By default, only 3 alerts are
-            displayed. The rest can be accessed in the notification drawer after clicking on the bell icon in the header
-            or by clicking on the overflow message.
-          </Text>
-        </TextContent>
+        <Content>
+          <h1>Alert group with notification drawer demo</h1>
+          <p>
+            New alerts can be added with the following buttons. Each alert has a timeout of 7 seconds, however, even
+            after the timeout expires, all alerts are still visible in the notification drawer. By default, only 3
+            alerts are displayed. The rest can be accessed in the notification drawer after clicking on the bell icon in
+            the header or by clicking on the overflow message.
+          </p>
+        </Content>
       </PageSection>
 
       <PageSection>
@@ -348,11 +347,11 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
       </PageSection>
 
       <PageSection>
-        <TextContent>
+        <Content>
           <br />
-          <Text component="h2">Max displayed alerts</Text>
-          <Text component="p">The maximum number of displayed alerts can be set below.</Text>
-        </TextContent>
+          <h2>Max displayed alerts</h2>
+          <p>Adjust the maximum number of displayed alerts.</p>
+        </Content>
         <NumberInput
           value={maxDisplayed}
           min={minAlerts}

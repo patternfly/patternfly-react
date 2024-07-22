@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   Breadcrumb,
   BreadcrumbItem,
+  Content,
   Nav,
   NavItem,
   NavList,
@@ -10,9 +11,7 @@ import {
   PageSection,
   PageSidebar,
   PageSidebarBody,
-  SkipToContent,
-  Text,
-  TextContent
+  SkipToContent
 } from '../components';
 import { DashboardHeader } from './DashboardHeader';
 
@@ -38,10 +37,10 @@ export const DashboardBreadcrumb = (
 
 const PageTemplateTitle = (
   <PageSection>
-    <TextContent>
-      <Text component="h1">Main title</Text>
-      <Text component="p">This is a full page demo.</Text>
-    </TextContent>
+    <Content>
+      <h1>Main title</h1>
+      <p>This is a full page demo.</p>
+    </Content>
   </PageSection>
 );
 

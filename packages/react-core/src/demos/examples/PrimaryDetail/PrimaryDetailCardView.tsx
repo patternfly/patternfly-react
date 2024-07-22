@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardBody,
   CardTitle,
+  Content,
   Divider,
   Drawer,
   DrawerActions,
@@ -24,14 +25,11 @@ import {
   MenuToggle,
   MenuToggleCheckbox,
   PageSection,
-  PageSectionVariants,
   Pagination,
   Progress,
   Select,
   SelectList,
   SelectOption,
-  TextContent,
-  Text,
   Title,
   Toolbar,
   ToolbarFilter,
@@ -573,11 +571,9 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
                 </Button>
               </FlexItem>
               <FlexItem>
-                <TextContent>
-                  <Text component="small" className="pf-v6-u-color-200 pf-v6-u-font-family-text">
-                    Provided by Red Hat
-                  </Text>
-                </TextContent>
+                <Content>
+                  <small className="pf-v6-u-color-200 pf-v6-u-font-family-text">Provided by Red Hat</small>
+                </Content>
               </FlexItem>
             </Flex>
           </CardTitle>
@@ -620,11 +616,11 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
-      <PageSection variant={PageSectionVariants.light}>
-        <TextContent>
-          <Text component="h1">Projects</Text>
-          <Text component="p">This is a demo that showcases Patternfly Cards.</Text>
-        </TextContent>
+      <PageSection>
+        <Content>
+          <h1>Projects</h1>
+          <p>This is a demo that showcases Patternfly cards.</p>
+        </Content>
       </PageSection>
       <PageSection isFilled padding={{ default: 'noPadding' }}>
         <Toolbar id="card-view-data-toolbar-group-types" clearAllFilters={onDelete}>
@@ -634,7 +630,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
       </PageSection>
       <PageSection isFilled padding={{ default: 'noPadding' }}>
         <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
-          <DrawerContent panelContent={panelContent} colorVariant="no-background">
+          <DrawerContent panelContent={panelContent}>
             <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>

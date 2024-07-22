@@ -5,12 +5,10 @@ import {
   DescriptionListGroup,
   DescriptionListDescription,
   PageSection,
-  PageSectionVariants,
   Card,
   CardBody,
   CardHeader,
-  TextContent,
-  Text,
+  Content,
   Title,
   Divider,
   Flex,
@@ -21,11 +19,11 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 export const DescriptionListBasic: React.FunctionComponent = () => (
   <DashboardWrapper>
-    <PageSection variant={PageSectionVariants.light}>
-      <TextContent>
-        <Title headingLevel="h1">Projects</Title>
-        <Text component="p">This is a full page demo</Text>
-      </TextContent>
+    <PageSection>
+      <Content>
+        <Content component="h1">Projects</Content>
+        <Content component="p">This is a full page demo</Content>
+      </Content>
     </PageSection>
     <PageSection>
       <Card>

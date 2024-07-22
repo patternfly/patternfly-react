@@ -26,10 +26,8 @@ import {
   NavList,
   Page,
   PageSection,
-  PageSectionVariants,
   SkipToContent,
-  Text,
-  TextContent,
+  Content,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -185,8 +183,8 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
         <PageHorizontalNav />
         <ToolbarGroup
           variant="action-group-plain"
-          align={{ default: 'alignRight' }}
-          spacer={{ default: 'spacerNone', md: 'spacerMd' }}
+          align={{ default: 'alignEnd' }}
+          gap={{ default: 'gapNone', md: 'gapMd' }}
         >
           <ToolbarItem>
             <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} />
@@ -288,21 +286,19 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
 
   return (
     <Page
-      header={masthead}
+      masthead={masthead}
       isManagedSidebar
       skipToContent={pageSkipToContent}
       breadcrumb={dashboardBreadcrumb}
       mainContainerId={mainContainerId}
-      isTertiaryNavWidthLimited
       isBreadcrumbWidthLimited
-      isTertiaryNavGrouped
       isBreadcrumbGrouped
       additionalGroupedContent={
-        <PageSection variant={PageSectionVariants.light}>
-          <TextContent>
-            <Text component="h1">Main title</Text>
-            <Text component="p">This is a full page demo.</Text>
-          </TextContent>
+        <PageSection>
+          <Content>
+            <Content component="h1">Main title</Content>
+            <Content component="p">This is a full page demo.</Content>
+          </Content>
         </PageSection>
       }
     >

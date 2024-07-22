@@ -1,17 +1,17 @@
 import React from 'react';
-import { TextList, TextListItem } from '@patternfly/react-core';
+import { Content, ContentVariants } from '@patternfly/react-core';
 
 export const ContentUnorderedList: React.FunctionComponent = () => (
-  <TextList>
-    <TextListItem>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</TextListItem>
-    <TextListItem>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</TextListItem>
-    <TextListItem>
+  <Content component={ContentVariants.ul}>
+    <Content component={ContentVariants.li}>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</Content>
+    <Content component={ContentVariants.li}>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</Content>
+    <Content component={ContentVariants.li}>
       Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.
-      <TextList>
-        <TextListItem>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</TextListItem>
-        <TextListItem>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</TextListItem>
-      </TextList>
-    </TextListItem>
-    <TextListItem>Ut non enim metus.</TextListItem>
-  </TextList>
+      <Content component={ContentVariants.ul}>
+        <Content component={ContentVariants.li}>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</Content>
+        <Content component={ContentVariants.li}>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</Content>
+      </Content>
+    </Content>
+    <Content component={ContentVariants.li}>Ut non enim metus.</Content>
+  </Content>
 );

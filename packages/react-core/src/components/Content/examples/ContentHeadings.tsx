@@ -1,13 +1,13 @@
 import React from 'react';
-import { Text, TextVariants } from '@patternfly/react-core';
+import { Content, ContentVariants } from '@patternfly/react-core';
 
 export const ContentHeadings: React.FunctionComponent = () => (
   <>
-    <Text component={TextVariants.h1}>Hello World</Text>
-    <Text component={TextVariants.h2}>Second level</Text>
-    <Text component={TextVariants.h3}>Third level</Text>
-    <Text component={TextVariants.h4}>Fourth level</Text>
-    <Text component={TextVariants.h5}>Fifth level</Text>
-    <Text component={TextVariants.h6}>Sixth level</Text>
+    <Content component={ContentVariants.h1}>Hello World</Content>
+    <Content component={ContentVariants.h2}>Second level</Content>
+    <Content component={ContentVariants.h3}>Third level</Content>
+    <Content component={ContentVariants.h4}>Fourth level</Content>
+    <Content component={ContentVariants.h5}>Fifth level</Content>
+    <Content component={ContentVariants.h6}>Sixth level</Content>
   </>
 );

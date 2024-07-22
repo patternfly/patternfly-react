@@ -6,6 +6,7 @@ import {
   ButtonVariant,
   Card,
   CardBody,
+  Content,
   Divider,
   Dropdown,
   DropdownGroup,
@@ -27,8 +28,6 @@ import {
   PageSectionTypes,
   PageToggleButton,
   SkipToContent,
-  TextContent,
-  Text,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -271,13 +270,13 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
           {DashboardBreadcrumb}
         </PageSection>
         <PageSection>
-          <TextContent>
-            <Text component="h1">Main title</Text>
-            <Text component="p">
-              Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
+          <Content>
+            <h1>Main title</h1>
+            <p>
+              Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
               of it’s relative line height of 1.5.
-            </Text>
-          </TextContent>
+            </p>
+          </Content>
         </PageSection>
         <PageSection>
           <Gallery hasGutter>

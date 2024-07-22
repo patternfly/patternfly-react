@@ -1,15 +1,13 @@
 import React from 'react';
-import { TextList, TextListVariants, TextListItem, TextListItemVariants } from '@patternfly/react-core';
+import { Content, ContentVariants } from '@patternfly/react-core';
 
 export const ContentDescriptionList: React.FunctionComponent = () => (
-  <TextList component={TextListVariants.dl}>
-    <TextListItem component={TextListItemVariants.dt}>Web</TextListItem>
-    <TextListItem component={TextListItemVariants.dd}>
-      The part of the Internet that contains websites and web pages
-    </TextListItem>
-    <TextListItem component={TextListItemVariants.dt}>HTML</TextListItem>
-    <TextListItem component={TextListItemVariants.dd}>A markup language for creating web pages</TextListItem>
-    <TextListItem component={TextListItemVariants.dt}>CSS</TextListItem>
-    <TextListItem component={TextListItemVariants.dd}>A technology to make HTML look better</TextListItem>
-  </TextList>
+  <Content component={ContentVariants.dl}>
+    <Content component={ContentVariants.dt}>Web</Content>
+    <Content component={ContentVariants.dd}>The part of the Internet that contains websites and web pages</Content>
+    <Content component={ContentVariants.dt}>HTML</Content>
+    <Content component={ContentVariants.dd}>A markup language for creating web pages</Content>
+    <Content component={ContentVariants.dt}>CSS</Content>
+    <Content component={ContentVariants.dd}>A technology to make HTML look better</Content>
+  </Content>
 );

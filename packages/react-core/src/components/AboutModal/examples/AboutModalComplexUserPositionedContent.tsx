@@ -1,5 +1,5 @@
 import React from 'react';
-import { AboutModal, Alert, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
+import { AboutModal, Alert, Button, Content } from '@patternfly/react-core';
 import brandImg from '../../assets/PF-IconLogo.svg';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
@@ -25,29 +25,29 @@ export const AboutModalComplexUserPositionedContent: React.FunctionComponent = (
         hasNoContentContainer={true}
         productName="Product name"
       >
-        <TextContent id="test1" className={spacing.pyXl}>
+        <Content id="test1" className={spacing.pyXl}>
           <h4>About</h4>
           <p>Content here</p>
-        </TextContent>
+        </Content>
         <Alert variant="info" title="Updates available" />
-        <TextContent id="test2" className={spacing.pyXl}>
-          <TextList component="dl">
-            <TextListItem component="dt">CFME version</TextListItem>
-            <TextListItem component="dd">5.5.3.4.20102789036450</TextListItem>
-            <TextListItem component="dt">Cloudforms version</TextListItem>
-            <TextListItem component="dd">4.1</TextListItem>
-            <TextListItem component="dt">Server name</TextListItem>
-            <TextListItem component="dd">40DemoMaster</TextListItem>
-            <TextListItem component="dt">User name</TextListItem>
-            <TextListItem component="dd">Administrator</TextListItem>
-            <TextListItem component="dt">User role</TextListItem>
-            <TextListItem component="dd">EvmRole-super_administrator</TextListItem>
-            <TextListItem component="dt">Browser version</TextListItem>
-            <TextListItem component="dd">601.2</TextListItem>
-            <TextListItem component="dt">Browser OS</TextListItem>
-            <TextListItem component="dd">Mac</TextListItem>
-          </TextList>
-        </TextContent>
+        <Content id="test2" className={spacing.pyXl}>
+          <dl>
+            <dt>CFME version</dt>
+            <dd>5.5.3.4.20102789036450</dd>
+            <dt>Cloudforms version</dt>
+            <dd>4.1</dd>
+            <dt>Server name</dt>
+            <dd>40DemoMaster</dd>
+            <dt>User name</dt>
+            <dd>Administrator</dd>
+            <dt>User role</dt>
+            <dd>EvmRole-super_administrator</dd>
+            <dt>Browser version</dt>
+            <dd>601.2</dd>
+            <dt>Browser OS</dt>
+            <dd>Mac</dd>
+          </dl>
+        </Content>
       </AboutModal>
     </React.Fragment>
   );

@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Card,
   CardBody,
+  Content,
   Gallery,
   GalleryItem,
   Nav,
@@ -12,9 +13,7 @@ import {
   PageSectionTypes,
   PageSidebar,
   PageSidebarBody,
-  SkipToContent,
-  TextContent,
-  Text
+  SkipToContent
 } from '@patternfly/react-core';
 import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
@@ -116,13 +115,13 @@ export const NavWithSubnav: React.FunctionComponent = () => {
           {DashboardBreadcrumb}
         </PageSection>
         <PageSection>
-          <TextContent>
-            <Text component="h1">Main title</Text>
-            <Text component="p">
-              Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
+          <Content>
+            <h1>Main title</h1>
+            <p>
+              Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
               of it’s relative line height of 1.5.
-            </Text>
-          </TextContent>
+            </p>
+          </Content>
         </PageSection>
         <PageSection>
           <Gallery hasGutter>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, Slider, SliderOnChangeEvent, Text, TextVariants } from '@patternfly/react-core';
+import { Checkbox, Slider, SliderOnChangeEvent, Content } from '@patternfly/react-core';
 
 export const SliderContinuous: React.FunctionComponent = () => {
   const [hasTooltipOverThumb, setHasTooltipOverThumb] = React.useState(false);
@@ -15,14 +15,14 @@ export const SliderContinuous: React.FunctionComponent = () => {
         onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => setHasTooltipOverThumb(checked)}
         style={{ marginBottom: 20 }}
       />
-      <Text component={TextVariants.h3}>Slider Value is: {value}</Text>
+      <Content component="h3">Slider Value is: {value}</Content>
       <Slider
         hasTooltipOverThumb={hasTooltipOverThumb}
         value={value}
         onChange={(_event: SliderOnChangeEvent, value: number) => setValue(value)}
       />
       <br />
-      <Text component={TextVariants.h3}>Slider value is: {valueCustom}</Text>
+      <Content component="h3">Slider value is: {valueCustom}</Content>
       <Slider
         onChange={(_event: SliderOnChangeEvent, value: number) => setValueCustom(value)}
         value={valueCustom}

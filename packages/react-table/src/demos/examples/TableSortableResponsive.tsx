@@ -3,6 +3,7 @@ import React from 'react';
 import {
   Button,
   Card,
+  Content,
   Dropdown,
   DropdownList,
   Flex,
@@ -14,8 +15,6 @@ import {
   SelectOption,
   SelectList,
   SelectGroup,
-  Text,
-  TextContent,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -232,13 +231,13 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
     <React.Fragment>
       <DashboardWrapper>
         <PageSection isWidthLimited variant={PageSectionVariants.light}>
-          <TextContent>
-            <Text component="h1">Table demos</Text>
-            <Text component="p">
+          <Content>
+            <h1>Table demos</h1>
+            <p>
               Below is an example of a responsive sortable table. When the screen size shrinks the table into a compact
               form, the toolbar will display a dropdown menu containing sorting options.
-            </Text>
-          </TextContent>
+            </p>
+          </Content>
         </PageSection>
         <PageSection
           padding={{
