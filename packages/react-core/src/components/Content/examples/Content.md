@@ -2,7 +2,7 @@
 id: Content
 section: components
 cssPrefix: pf-v6-c-content
-propComponents: ['Content',]
+propComponents: ['Content']
 ---
 
 The `<Content>` component allows you to establish a block of HTML content and apply simple, built-in styling. `<Content>` can be used for any element supported by the `component` property (including `h1` through `h6`, `hr`, `p`, `a`, `small`, `blockquote`, and `pre`).
@@ -12,6 +12,14 @@ You cannot nest other components within `<Content>`, and doing so can cause styl
 For example, to create a level 1 heading, you should pass `component="h1"` to `<Content>`, instead of nesting a `<Title>` component within `<Content>`. Similarly, when you need to add a divider to a page, you should utilize the `hr` property of `<Content>` (which is styled as a divider), rather than using a separate `<Divider>` component.
 
 ## Examples
+
+HTML elements wrapped by `<Content>` are styled by the content component.
+
+### Content as a wrapper
+
+```ts file="./ContentWrapper.tsx"
+
+```
 
 ### Headings
 
@@ -46,14 +54,6 @@ For example, to create a level 1 heading, you should pass `component="h1"` to `<
 ### Description list
 
 ```ts file="./ContentDescriptionList.tsx"
-
-```
-
-HTML elements wrapped by `<Content>` are styled by the content component.
-
-### Wrapped in TextContent
-
-```ts file="./ContentWrapper.tsx"
 
 ```
 
