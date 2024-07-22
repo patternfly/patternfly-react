@@ -5,6 +5,7 @@ section: components
 
 import {
 Checkbox,
+Content,
 Label,
 PageSection,
 ToolbarExpandIconWrapper,
@@ -21,7 +22,6 @@ Breadcrumb,
 BreadcrumbItem,
 Page,
 PageSectionVariants,
-Text,
 Divider,
 Avatar,
 Brand,
