@@ -74,10 +74,20 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   const [currentSteps, setCurrentSteps] = React.useState<WizardStepType[]>(initialSteps);
   const [currentFooter, setCurrentFooter] = React.useState<WizardFooterType>();
 
-  // Callback to update steps if they change after initial render
+  // Callback to update steps if the overall step number changes
   React.useEffect(() => {
-    setCurrentSteps(initialSteps);
-  }, [initialSteps]);
+    if (currentSteps.length !== initialSteps.length) {
+      const newSteps = initialSteps.map((newStep) => {
+        const currentStepMatch = currentSteps.find((step) => step.id === newStep.id);
+        // If an existing step has the same id as a new step, carry over props
+        if (currentStepMatch) {
+          return { ...currentStepMatch, ...newStep };
+        }
+        return newStep;
+      });
+      setCurrentSteps(newSteps);
+    }
+  }, [currentSteps, initialSteps]);
 
   // Combined initial and current state steps
   const steps = React.useMemo(
@@ -130,7 +140,6 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
           if (prevStep.id === step.id) {
             return { ...prevStep, ...step };
           }
-
           return prevStep;
         })
       ),
