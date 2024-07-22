@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.0.0-alpha.29...@patternfly/react-tokens@6.0.0-alpha.30) (2024-07-22)
+
+### Features
+
+- **Page:** support page fill ([#10760](https://github.com/patternfly/patternfly-react/issues/10760)) ([850bd46](https://github.com/patternfly/patternfly-react/commit/850bd4631d4f5845c627ebb2cb86a6b1524d6ffc))
+
 # [6.0.0-alpha.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.0.0-alpha.28...@patternfly/react-tokens@6.0.0-alpha.29) (2024-07-15)
 
 ### Bug Fixes
