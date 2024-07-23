@@ -67,7 +67,7 @@ class DropdownMenu extends React.Component<DropdownMenuProps> {
       );
       const focusTarget = focusTargetCollection && focusTargetCollection[0];
       if (focusTarget && focusTarget.focus) {
-        setTimeout(() => focusTarget.focus());
+        setTimeout(() => focusTarget.focus(), 5);
       }
     }
   }
@@ -79,7 +79,7 @@ class DropdownMenu extends React.Component<DropdownMenuProps> {
   static validToggleClasses = [styles.dropdownToggle, styles.dropdownToggleButton] as string[];
   static focusFirstRef = (refCollection: HTMLElement[]) => {
     if (refCollection && refCollection[0] && refCollection[0].focus) {
-      setTimeout(() => refCollection[0].focus());
+      setTimeout(() => refCollection[0].focus(), 5);
     }
   };
 

@@ -127,7 +127,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
             'li button:not(:disabled),li input:not(:disabled),li a:not([aria-disabled="true"])'
           );
           firstElement && (firstElement as HTMLElement).focus();
-        }, 0);
+        }, 5);
       }
 
       // If the event is not on the toggle and onOpenChange callback is provided, close the menu
