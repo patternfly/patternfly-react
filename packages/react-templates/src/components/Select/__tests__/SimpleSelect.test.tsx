@@ -89,11 +89,12 @@ test('toggles the select menu when the toggle button is clicked', async () => {
 
   await user.click(toggleButton);
 
-  expect(screen.getByRole('listbox')).toBeInTheDocument();
+  const listbox = screen.getByRole('listbox');
+  expect(listbox).toBeInTheDocument();
 
   await user.click(toggleButton);
 
-  await waitForElementToBeRemoved(() => screen.queryByRole('listbox'));
+  await waitForElementToBeRemoved(listbox);
 
   expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
 });
