@@ -9,10 +9,13 @@ import { DualListSelectorListContext } from './DualListSelectorContext';
 export interface DualListSelectorListProps extends React.HTMLProps<HTMLUListElement> {
   /** Content rendered inside the dual list selector list. */
   children?: React.ReactNode;
+  /** @hide forwarded ref */
+  innerRef?: React.RefObject<HTMLUListElement>;
 }
 
-export const DualListSelectorList: React.FunctionComponent<DualListSelectorListProps> = ({
+export const DualListSelectorListBase: React.FunctionComponent<DualListSelectorListProps> = ({
   children,
+  innerRef,
   ...props
 }: DualListSelectorListProps) => {
   const { isTree, ariaLabelledBy, focusedOption, displayOption, selectedOptions, id, options, isDisabled } =
@@ -31,6 +34,7 @@ export const DualListSelectorList: React.FunctionComponent<DualListSelectorListP
         'aria-activedescendant': focusedOption
       })}
       aria-disabled={isDisabled ? 'true' : undefined}
+      ref={innerRef}
       {...props}
     >
       {options.length === 0
@@ -54,4 +58,12 @@ export const DualListSelectorList: React.FunctionComponent<DualListSelectorListP
     </ul>
   );
 };
+DualListSelectorListBase.displayName = 'DualListSelectorListBase';
+
+export const DualListSelectorList = React.forwardRef(
+  (props: DualListSelectorListProps, ref: React.Ref<HTMLUListElement>) => (
+    <DualListSelectorListBase innerRef={ref as React.MutableRefObject<any>} {...props} />
+  )
+);
+
 DualListSelectorList.displayName = 'DualListSelectorList';
