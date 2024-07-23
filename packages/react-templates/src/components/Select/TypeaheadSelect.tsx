@@ -40,6 +40,8 @@ export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle'> {
   onClearSelection?: () => void;
   /** Placeholder text for the select input. */
   placeholder?: string;
+  /** Message to display when no options are available. */
+  noOptionsAvailableMessage?: string;
   /** Message to display when no options match the filter. */
   noOptionsFoundMessage?: string | ((filter: string) => string);
   /** Flag indicating the select should be disabled. */
@@ -58,6 +60,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
   onInputChange,
   onClearSelection,
   placeholder = 'Select an option',
+  noOptionsAvailableMessage = 'No options are available',
   noOptionsFoundMessage = (filter) => `No results found for "${filter}"`,
   isDisabled,
   toggleWidth,
@@ -104,17 +107,23 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
       }
     }
 
+    // When no options are  available,  display 'No options available'
+    if (!newSelectOptions.length) {
+      newSelectOptions = [
+        {
+          isAriaDisabled: true,
+          content: noOptionsAvailableMessage,
+          value: NO_RESULTS
+        }
+      ];
+    }
+
     setSelectOptions(newSelectOptions);
   }, [filterValue, initialOptions]);
 
   React.useEffect(() => {
     const selectedOption = initialOptions.find((o) => o.selected);
-    if (selectedOption?.value !== selected) {
-      setInputValue(String(selectedOption?.content ?? ''));
-      setSelected(String(selectedOption?.content ?? ''));
-    }
-    // Do not update when selected changes, only if the given options have changed
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    setInputValue(String(selectedOption?.content ?? ''));
   }, [initialOptions]);
 
   const setActiveAndFocusedItem = (itemIndex: number) => {
