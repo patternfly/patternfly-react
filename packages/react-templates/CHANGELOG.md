@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-prerelease.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.1.0-prerelease.31...@patternfly/react-templates@1.1.0-prerelease.32) (2024-07-23)
+
+### Bug Fixes
+
+- **TypeaheadSelect:** Correctly show the newly selected item on selection ([#10792](https://github.com/patternfly/patternfly-react/issues/10792)) ([838f57b](https://github.com/patternfly/patternfly-react/commit/838f57bbd94638ee39915a9dda8d81f91b1047ed))
+
 # [1.1.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.1.0-prerelease.30...@patternfly/react-templates@1.1.0-prerelease.31) (2024-07-19)
 
 **Note:** Version bump only for package @patternfly/react-templates
