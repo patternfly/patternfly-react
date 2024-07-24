@@ -69,6 +69,7 @@ exports[`LabelGroup label group compact 1`] = `
         >
           <button
             class="pf-v5-c-label pf-m-overflow pf-m-compact"
+            type="button"
           >
             <span
               class="pf-v5-c-label__content"
