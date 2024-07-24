@@ -221,6 +221,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   const [popperContent, setPopperContent] = React.useState(null);
   const [ready, setReady] = React.useState(false);
   const [opacity, setOpacity] = React.useState(0);
+  const [display, setDisplay] = React.useState('none');
   const [internalIsVisible, setInternalIsVisible] = React.useState(isVisible);
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
@@ -469,11 +470,18 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     prevExitDelayRef.current = exitDelay;
   }, [exitDelay]);
 
+  React.useEffect(() => {
+    if (display !== 'none') {
+      forceUpdate && forceUpdate();
+    }
+  }, [display]);
+
   const show = () => {
     onShow();
     clearTimeouts([transitionTimerRef, hideTimerRef]);
     showTimerRef.current = setTimeout(() => {
       setInternalIsVisible(true);
+      setDisplay('');
       setOpacity(1);
       onShown();
     }, entryDelay);
@@ -488,6 +496,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         setInternalIsVisible(false);
         onHidden();
       }, animationDuration);
+      setDisplay('none');
     }, exitDelay);
   };
 
@@ -516,6 +525,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       ...popperStyles.popper,
       zIndex,
       opacity,
+      display,
       transition: getOpacityTransition(animationDuration)
     },
     ...attributes.popper

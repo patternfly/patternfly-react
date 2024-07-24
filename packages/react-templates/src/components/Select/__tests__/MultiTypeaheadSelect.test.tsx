@@ -106,8 +106,6 @@ describe('MultiTypeaheadSelect', () => {
     await user.click(clearButton);
 
     expect(input).toHaveValue('');
-
-    await user.click(toggle);
     expect(screen.getByRole('option', { name: 'Option 1' })).not.toHaveClass(styles.modifiers.selected);
   });
 

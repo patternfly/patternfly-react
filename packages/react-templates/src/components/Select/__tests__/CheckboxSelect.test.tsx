@@ -133,11 +133,12 @@ test('toggles the select menu when the toggle button is clicked', async () => {
 
   await user.click(toggleButton);
 
-  expect(screen.getByRole('menu')).toBeInTheDocument();
+  const menu = screen.getByRole('menu');
+  expect(menu).toBeInTheDocument();
 
   await user.click(toggleButton);
 
-  await waitForElementToBeRemoved(() => screen.queryByRole('menu'));
+  await waitForElementToBeRemoved(menu);
 
   expect(screen.queryByRole('menu')).not.toBeInTheDocument();
 });
