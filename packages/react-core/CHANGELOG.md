@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.29...@patternfly/react-core@5.4.0-prerelease.30) (2024-07-24)
+
+### Bug Fixes
+
+- **Label:** Added button type ([#10801](https://github.com/patternfly/patternfly-react/issues/10801)) ([8466bc0](https://github.com/patternfly/patternfly-react/commit/8466bc0383b6e271b39493e25d5205df5c0cfbe3))
+
 # [5.4.0-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.28...@patternfly/react-core@5.4.0-prerelease.29) (2024-07-24)
 
 ### Bug Fixes
