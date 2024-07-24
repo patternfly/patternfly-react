@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-prerelease.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.36...@patternfly/react-integration@5.1.1-prerelease.37) (2024-07-24)
+
+### Bug Fixes
+
+- **Popper:** added display styling to prevent page scroll ([#10797](https://github.com/patternfly/patternfly-react/issues/10797)) ([49de6eb](https://github.com/patternfly/patternfly-react/commit/49de6eb018e052e040a76d928112b285e843303d))
+
 ## [5.1.1-prerelease.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@5.1.1-prerelease.35...@patternfly/react-integration@5.1.1-prerelease.36) (2024-07-16)
 
 **Note:** Version bump only for package @patternfly/react-integration
