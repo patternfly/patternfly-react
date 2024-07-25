@@ -500,11 +500,10 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
     e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent,
     index: number,
     isChosen: boolean,
-    /* eslint-disable @typescript-eslint/no-unused-vars */
+
     id?: string,
     itemData?: any,
     parentData?: any
-    /* eslint-enable @typescript-eslint/no-unused-vars */
   ) => {
     this.setState((prevState) => {
       const originalArray = isChosen ? prevState.chosenOptionsSelected : prevState.availableOptionsSelected;

@@ -8,7 +8,6 @@ import {
   SelectOptionObject
 } from '@patternfly/react-core/deprecated';
 
-/* eslint-disable no-console */
 interface TypeAheadOption {
   value?: string;
   disabled?: boolean;
