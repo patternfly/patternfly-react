@@ -357,6 +357,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         className
       )}
       onClick={isOverflowLabel || isAddLabel ? onLabelClick : undefined}
+      {...(LabelComponent === 'button' && { type: 'button' })}
     >
       {!isEditableActive && labelComponentChild}
       {!isEditableActive && onClose && closeButton}
