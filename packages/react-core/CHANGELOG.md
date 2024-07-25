@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.30...@patternfly/react-core@5.4.0-prerelease.31) (2024-07-25)
+
+### Bug Fixes
+
+- **Popper:** reverted display update ([#10808](https://github.com/patternfly/patternfly-react/issues/10808)) ([c0f13d8](https://github.com/patternfly/patternfly-react/commit/c0f13d81923a272454d67ba438c4032b9456255d))
+
 # [5.4.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.29...@patternfly/react-core@5.4.0-prerelease.30) (2024-07-24)
 
 ### Bug Fixes
