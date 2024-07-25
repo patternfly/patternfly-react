@@ -93,7 +93,7 @@ class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
       isDisabled,
       role === 'separator'
     );
-    autoFocus && setTimeout(() => customRef.focus(), 5);
+    autoFocus && setTimeout(() => customRef.focus());
   }
 
   componentDidUpdate() {

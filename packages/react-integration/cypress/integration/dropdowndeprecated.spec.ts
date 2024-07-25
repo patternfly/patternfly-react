@@ -30,7 +30,7 @@ describe('Dropdown Deprecated Demo Test', () => {
     cy.clock();
     cy.get('#dropdown > button').trigger('keydown', { key: 'Enter' });
     cy.get('#dropdown').should('have.class', 'pf-m-expanded');
-    cy.tick(10);
+    cy.tick(1);
     cy.focused().contains('Link');
     // When toggle is expanded, enter closes panel
     cy.get('#toggle-id').trigger('keydown', { key: 'Enter' });
@@ -118,7 +118,7 @@ describe('Action Dropdown Demo Test', () => {
     cy.clock();
     cy.get('#action-dropdown button').last().trigger('keydown', { key: 'Enter' });
     cy.get('#action-dropdown').should('have.class', 'pf-m-expanded');
-    cy.tick(10);
+    cy.tick(1);
     cy.focused().contains('Action');
     // When toggle is expanded, enter closes panel
     cy.get('#action-toggle-id').trigger('keydown', { key: 'Enter' });
@@ -202,7 +202,7 @@ describe('Cog Dropdown Demo Test', () => {
     cy.clock();
     cy.get('#cog-dropdown button').last().trigger('keydown', { key: 'Enter' });
     cy.get('#cog-dropdown').should('have.class', 'pf-m-expanded');
-    cy.tick(10);
+    cy.tick(1);
     cy.focused().contains('Action');
     // When toggle is expanded, enter closes panel
     cy.get('#cog-toggle-id').trigger('keydown', { key: 'Enter' });
@@ -289,18 +289,18 @@ describe('Dropdown with menu on document body demo test', () => {
   });
 
   // When toggle is collapsed:
-  it.skip('Enter opens panel, places focus on first element in panel that can receive focus', () => {
+  it('Enter opens panel, places focus on first element in panel that can receive focus', () => {
     cy.clock();
     cy.get('#dropdown-document-body > button').trigger('keydown', { key: 'Enter' });
-    cy.tick(10);
     cy.get('#dropdown-document-body').should('have.class', 'pf-m-expanded');
+    cy.tick(1);
     cy.focused().contains('Link');
     // When toggle is expanded, enter closes panel
     cy.get('#toggle-id-document-body').trigger('keydown', { key: 'Enter' });
     cy.get('#dropdown-document-body').should('not.have.class', 'pf-m-expanded');
   });
 
-  it.skip('Space opens panel, places focus on first element in panel that can receive focus', () => {
+  it('Space opens panel, places focus on first element in panel that can receive focus', () => {
     cy.get('#dropdown-document-body > button').trigger('keydown', { key: ' ' });
     cy.get('#dropdown-document-body').should('have.class', 'pf-m-expanded');
     cy.focused().contains('Link');
