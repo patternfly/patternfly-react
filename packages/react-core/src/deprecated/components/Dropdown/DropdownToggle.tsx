@@ -67,9 +67,9 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   isPlain = false,
   isText = false,
   toggleVariant = 'default',
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   isActive = false,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   onToggle = (_evt: any, _isOpen: boolean) => undefined as any,
   icon = null,
   toggleIndicator: ToggleIndicator = CaretDownIcon,

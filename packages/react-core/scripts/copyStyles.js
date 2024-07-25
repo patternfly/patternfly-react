@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const { copySync, readFileSync, writeFileSync } = require('fs-extra');
 const { resolve, dirname, join } = require('path');
 const { parse: parseCSS, stringify: stringifyCSS } = require('css');
-/* eslint-enable @typescript-eslint/no-var-requires */
 
 const stylesDir = resolve(__dirname, '../dist/styles');
 const pfDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));

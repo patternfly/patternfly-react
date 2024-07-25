@@ -35,7 +35,7 @@ export const DataListAction: React.FunctionComponent<DataListActionProps> = ({
   id,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
-  /* eslint-disable @typescript-eslint/no-unused-vars */
+
   isPlainButtonAction,
   ...props
 }: DataListActionProps) => (

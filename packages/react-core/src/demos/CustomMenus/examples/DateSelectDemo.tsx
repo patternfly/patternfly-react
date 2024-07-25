@@ -57,7 +57,6 @@ export const DateSelectDemo: React.FunctionComponent = () => {
   };
 
   return (
-    // eslint-disable-next-line no-console
     <Select
       isOpen={isOpen}
       onOpenChange={(isOpen) => setIsOpen(isOpen)}

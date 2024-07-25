@@ -51,7 +51,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
       isOpen
     });
   };
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   onSelect = (_event: React.SyntheticEvent) => {
     this.setState({
       isOpen: !this.state.isOpen

@@ -14,7 +14,6 @@ export interface DrawerCloseButtonProps extends React.HTMLProps<HTMLDivElement> 
 }
 
 export const DrawerCloseButton: React.FunctionComponent<DrawerCloseButtonProps> = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   onClose = () => undefined as any,
   'aria-label': ariaLabel = 'Close drawer panel',

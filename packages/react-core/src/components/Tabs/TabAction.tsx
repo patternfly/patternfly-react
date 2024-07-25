@@ -26,7 +26,7 @@ const TabActionBase: React.FunctionComponent<TabActionProps> = ({
   isDisabled,
   'aria-label': ariaLabel = 'Tab action',
   innerRef,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   ouiaId,
   ouiaSafe,
   ...props

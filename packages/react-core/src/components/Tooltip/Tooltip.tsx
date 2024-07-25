@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css } from '@patternfly/react-styles';
