@@ -132,7 +132,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
         setTimeout(() => {
           const firstElement = menuRef?.current?.querySelector('li button:not(:disabled),li input:not(:disabled)');
           firstElement && (firstElement as HTMLElement).focus();
-        }, 5);
+        }, 0);
       }
 
       // If the event is not on the toggle and onOpenChange callback is provided, close the menu
