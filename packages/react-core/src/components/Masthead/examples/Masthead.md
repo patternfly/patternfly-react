@@ -11,7 +11,7 @@ import pfIcon from '../../assets/PF-HorizontalLogo-Color.svg';
 
 `Masthead` should contain the following components to maintain proper layout and formatting: `MastheadMain`, and `MastheadContent`.
 
-`MastheadMain` represents the smaller area taken up by a logo, and will typically contain a `MastheadLogo`. `MastheadContent` represents the main portion of the masthead area and will typically contain a `Toolbar` or other menu-like content such as `Dropdown`.
+`MastheadMain` represents the smaller area taken up by a toggle and logo, and will typically contain a `MastheadToggle` and a `MastheadLogo`. `MastheadContent` represents the main portion of the masthead area and will typically contain a `Toolbar` or other menu-like content such as `Dropdown`.
 
 ## Examples
 
