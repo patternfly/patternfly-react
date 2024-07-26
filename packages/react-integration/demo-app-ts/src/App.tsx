@@ -4,6 +4,7 @@ import {
   Avatar,
   Brand,
   Masthead,
+  MastheadLogo,
   MastheadBrand,
   MastheadContent,
   MastheadMain,
@@ -129,14 +130,16 @@ class App extends React.Component<{}, AppState> {
 
     const AppMasthead = (
       <Masthead>
-        <MastheadToggle>
-          <PageToggleButton onSidebarToggle={this.onNavToggle} variant="plain" aria-label="Global navigation">
-            <BarsIcon />
-          </PageToggleButton>
-        </MastheadToggle>
         <MastheadMain>
+          <MastheadToggle>
+            <PageToggleButton onSidebarToggle={this.onNavToggle} variant="plain" aria-label="Global navigation">
+              <BarsIcon />
+            </PageToggleButton>
+          </MastheadToggle>
           <MastheadBrand>
-            <Brand src={imgBrand} alt="PatternFly" heights={{ default: '36px' }} />
+            <MastheadLogo>
+              <Brand src={imgBrand} alt="PatternFly" heights={{ default: '36px' }} />
+            </MastheadLogo>
           </MastheadBrand>
         </MastheadMain>
         <MastheadContent>{AppToolbar}</MastheadContent>

@@ -1,9 +1,10 @@
 import React from 'react';
 import {
   Masthead,
-  MastheadToggle,
   MastheadMain,
+  MastheadToggle,
   MastheadBrand,
+  MastheadLogo,
   MastheadContent,
   Button,
   Flex,
@@ -13,11 +14,13 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 export const MastheadBasicMixedContent: React.FunctionComponent = () => (
   <Masthead id="basic-mixed">
-    <MastheadToggle>
-      <Button variant="plain" onClick={() => {}} aria-label="Global navigation" icon={<BarsIcon />} />
-    </MastheadToggle>
     <MastheadMain>
-      <MastheadBrand component="a">Logo</MastheadBrand>
+      <MastheadToggle>
+        <Button variant="plain" onClick={() => {}} aria-label="Global navigation" icon={<BarsIcon />} />
+      </MastheadToggle>
+      <MastheadBrand>
+        <MastheadLogo component="a">Logo</MastheadLogo>
+      </MastheadBrand>
     </MastheadMain>
     <MastheadContent>
       <Flex>

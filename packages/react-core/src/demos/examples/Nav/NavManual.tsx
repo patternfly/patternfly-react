@@ -15,9 +15,10 @@ import {
   Gallery,
   GalleryItem,
   Masthead,
-  MastheadBrand,
-  MastheadContent,
   MastheadMain,
+  MastheadLogo,
+  MastheadContent,
+  MastheadBrand,
   MastheadToggle,
   MenuToggle,
   Nav,
@@ -210,18 +211,20 @@ export const NavManual: React.FunctionComponent = () => {
   );
   const masthead = (
     <Masthead>
-      <MastheadToggle>
-        <PageToggleButton
-          onSidebarToggle={isMobileView ? onSidebarToggleMobile : onSidebarToggleDesktop}
-          variant="plain"
-          aria-label="Global navigation"
-        >
-          <BarsIcon />
-        </PageToggleButton>
-      </MastheadToggle>
       <MastheadMain>
+        <MastheadToggle>
+          <PageToggleButton
+            onSidebarToggle={isMobileView ? onSidebarToggleMobile : onSidebarToggleDesktop}
+            variant="plain"
+            aria-label="Global navigation"
+          >
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
         <MastheadBrand>
-          <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          <MastheadLogo>
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          </MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
       <MastheadContent>{headerToolbar}</MastheadContent>

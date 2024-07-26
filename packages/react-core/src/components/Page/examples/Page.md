@@ -16,7 +16,7 @@ import c_page_section_m_limit_width_MaxWidth from '@patternfly/react-tokens/dist
 A page will typically contain the following components:
 
 - A `<Page>` with a `masthead` prop that often contains a [masthead](/components/masthead) component
-  - Mastheads contain the `<PageToggleButton>`, a `<MastheadMain>` that contains a `<MastheadBrand>`, and the page's header toolbar within `<MastheadContent>`.
+  - Mastheads contain the `<MastheadMain>` that wraps a `<PageToggleButton>` and `<MastheadBrand>`. The `<MastheadBrand>` wraps `<MastheadLogo>`. The masthead also contains  the page's header toolbar within `<MastheadContent>`.
 - 1 or more `<PageSidebarBody>` components inside `<PageSidebar>` for vertical navigation or other sidebar content
 - 1 or more `<PageSection>` components
 

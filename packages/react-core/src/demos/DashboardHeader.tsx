@@ -10,9 +10,10 @@ import {
   DropdownItem,
   DropdownList,
   Masthead,
-  MastheadToggle,
   MastheadMain,
+  MastheadToggle,
   MastheadBrand,
+  MastheadLogo,
   MastheadContent,
   MenuToggle,
   Toolbar,
@@ -85,14 +86,16 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
 
   return (
     <Masthead>
-      <MastheadToggle>
-        <PageToggleButton variant="plain" aria-label="Global navigation">
-          <BarsIcon />
-        </PageToggleButton>
-      </MastheadToggle>
       <MastheadMain>
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label="Global navigation">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
         <MastheadBrand>
-          <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          <MastheadLogo>
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          </MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
       <MastheadContent>

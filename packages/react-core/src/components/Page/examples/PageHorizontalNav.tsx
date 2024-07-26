@@ -4,6 +4,7 @@ import {
   Masthead,
   MastheadMain,
   MastheadBrand,
+  MastheadLogo,
   MastheadContent,
   PageSection,
   Toolbar,
@@ -24,8 +25,10 @@ export const PageHorizontalNav: React.FunctionComponent = () => {
   const masthead = (
     <Masthead inset={{ default: 'insetXs' }}>
       <MastheadMain>
-        <MastheadBrand href="https://patternfly.org" target="_blank">
-          Logo
+        <MastheadBrand>
+          <MastheadLogo href="https://patternfly.org" target="_blank">
+            Logo
+          </MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
       <MastheadContent>{headerToolbar}</MastheadContent>

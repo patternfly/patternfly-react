@@ -36,9 +36,10 @@ import {
   PageToggleButton,
   Masthead,
   MastheadMain,
+  MastheadBrand,
   MastheadToggle,
   MastheadContent,
-  MastheadBrand,
+  MastheadLogo,
   Toolbar,
   ToolbarItem,
   ToolbarGroup,
@@ -259,14 +260,16 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
 
   const masthead = (
     <Masthead>
-      <MastheadToggle>
-        <PageToggleButton variant="plain" aria-label="Global navigation">
-          <BarsIcon />
-        </PageToggleButton>
-      </MastheadToggle>
       <MastheadMain>
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label="Global navigation">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
         <MastheadBrand>
-          <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          <MastheadLogo>
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          </MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
       <MastheadContent>{headerToolbar}</MastheadContent>
