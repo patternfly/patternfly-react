@@ -111,8 +111,8 @@ describe('Label', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('renders with isOverflow and type is set to button ', () => {
-    const { asFragment } = render(<Label isOverflowLabel>Something</Label>);
+  test('renders with variant overflow and type is set to button ', () => {
+    const { asFragment } = render(<Label variant="overflow">Something</Label>);
     expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
     expect(asFragment()).toMatchSnapshot();
   });

@@ -599,3 +599,22 @@ exports[`Label renders with outline variant 1`] = `
   </span>
 </DocumentFragment>
 `;
+
+exports[`Label renders with variant overflow and type is set to button  1`] = `
+<DocumentFragment>
+  <button
+    class="pf-v6-c-label pf-m-overflow"
+    type="button"
+  >
+    <span
+      class="pf-v6-c-label__content"
+    >
+      <span
+        class="pf-v6-c-label__text"
+      >
+        Something
+      </span>
+    </span>
+  </button>
+</DocumentFragment>
+`;
