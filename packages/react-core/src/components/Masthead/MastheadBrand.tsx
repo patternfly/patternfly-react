@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 
 export interface MastheadBrandProps extends React.DetailedHTMLProps<React.HTMLProps<HTMLDivElement>, HTMLDivElement> {
   /** Content rendered inside of the masthead brand. */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /** Additional classes added to the masthead brand. */
   className?: string;
 }
