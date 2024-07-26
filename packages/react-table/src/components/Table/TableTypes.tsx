@@ -82,7 +82,6 @@ export type OnCheckChange = (
 // Todo: Update type with next breaking change release
 // export type IHeaderRow = ColumnType;
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IHeaderRow extends ColumnType {}
 
 export interface IRowData extends IRow {

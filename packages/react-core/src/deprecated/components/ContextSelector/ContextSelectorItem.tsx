@@ -35,7 +35,6 @@ class ContextSelectorItem extends React.Component<ContextSelectorItemProps> {
   ref: React.RefObject<HTMLButtonElement & HTMLAnchorElement> = React.createRef();
 
   componentDidMount() {
-    /* eslint-disable-next-line */
     this.props.sendRef(this.props.index, this.ref.current);
   }
 

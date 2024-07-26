@@ -187,7 +187,7 @@ class SelectOption extends React.Component<SelectOptionProps> {
       isLoad,
       isLoading,
       setViewMoreNextIndex,
-      // eslint-disable-next-line no-console
+
       isLastOptionBeforeFooter,
       isGrouped = false,
       ...props

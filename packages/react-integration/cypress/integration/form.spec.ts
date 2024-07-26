@@ -84,7 +84,7 @@ describe('Form Demo Test', () => {
     cy.focused().type('{backspace}{backspace}{backspace}{backspace}orth');
     cy.get('.pf-v5-c-select__menu-item').should('exist').and('have.text', 'North Carolina');
     cy.focused().type('{backspace}{backspace}{backspace}{backspace}{backspace}');
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
     // @ts-ignore
     cy.tab();
     cy.get('.pf-v5-c-select__menu-item').should('not.exist');

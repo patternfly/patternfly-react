@@ -99,7 +99,6 @@ export const TableComposableDemo = () => {
       ['one - 3', 'two - 3', 'three - 3', 'four - 3', { title: 'five - 3 (not centered)', textCenter: false }]
     ];
     const onRowClick = (_event: React.MouseEvent, rowIndex: number, row: any[]) => {
-      // eslint-disable-next-line no-console
       console.log(`handle row click ${rowIndex}`, row);
     };
     return (
@@ -264,7 +263,7 @@ export const TableComposableDemo = () => {
       ['p', 'two', 'b', 'four', 'five']
     ];
     const [allRowsSelected, setAllRowsSelected] = React.useState(false);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     const [selected, setSelected] = React.useState(rows.map(() => false));
     const onSelect: OnSelect = (_event, isSelected, rowId) => {
       setSelected(selected.map((sel, index) => (index === rowId ? isSelected : sel)));
@@ -286,7 +285,7 @@ export const TableComposableDemo = () => {
     };
     const onSelectAll: OnSelect = (_event, isSelected) => {
       setAllRowsSelected(isSelected);
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
       setSelected(selected.map(() => isSelected));
     };
     return (

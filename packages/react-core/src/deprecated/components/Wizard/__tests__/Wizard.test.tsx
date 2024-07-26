@@ -30,7 +30,6 @@ describe('Wizard', () => {
       { name: 'D', id: 'step-D', component: <p>Step 5</p> }
     ];
     const onBack: WizardStepFunctionType = (step) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const name = { step };
     };
 
@@ -63,7 +62,6 @@ describe('Wizard', () => {
       { name: 'D', component: <p>Step 5</p> }
     ];
     const onBack: WizardStepFunctionType = (step) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const name = { step };
     };
 

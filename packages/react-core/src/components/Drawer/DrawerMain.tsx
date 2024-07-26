@@ -10,7 +10,6 @@ export interface DrawerMainProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const DrawerMain: React.FunctionComponent<DrawerMainProps> = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,
   ...props

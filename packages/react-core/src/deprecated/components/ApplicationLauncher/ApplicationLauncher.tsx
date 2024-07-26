@@ -75,10 +75,10 @@ class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
     items: [] as React.ReactNode[],
     isOpen: false,
     position: DropdownPosition.left,
-    /* eslint-disable @typescript-eslint/no-unused-vars */
+
     onSelect: (_event: any): any => undefined,
     onToggle: (_event: any, _value: boolean): any => undefined,
-    /* eslint-enable @typescript-eslint/no-unused-vars */
+
     'aria-label': 'Application launcher',
     isGrouped: false,
     toggleIcon: <ThIcon />,
