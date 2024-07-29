@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0-alpha.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-alpha.33...@patternfly/react-charts@8.0.0-alpha.34) (2024-07-29)
+
+### Features
+
+- **MenuToggle:** replaced custom styles with text modifier V6 ([#10793](https://github.com/patternfly/patternfly-react/issues/10793)) ([95a204c](https://github.com/patternfly/patternfly-react/commit/95a204c166019a433facfdc77204ccb33ce1726e))
+
 # [8.0.0-alpha.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-alpha.32...@patternfly/react-charts@8.0.0-alpha.33) (2024-07-22)
 
 **Note:** Version bump only for package @patternfly/react-charts

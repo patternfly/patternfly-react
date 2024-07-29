@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.0.0-alpha.30...@patternfly/react-tokens@6.0.0-alpha.31) (2024-07-29)
+
+### Features
+
+- **MenuToggle:** replaced custom styles with text modifier V6 ([#10793](https://github.com/patternfly/patternfly-react/issues/10793)) ([95a204c](https://github.com/patternfly/patternfly-react/commit/95a204c166019a433facfdc77204ccb33ce1726e))
+
 # [6.0.0-alpha.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.0.0-alpha.29...@patternfly/react-tokens@6.0.0-alpha.30) (2024-07-22)
 
 ### Features
