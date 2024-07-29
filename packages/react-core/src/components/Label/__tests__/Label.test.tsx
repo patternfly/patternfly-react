@@ -2,6 +2,7 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { Label } from '../Label';
 
@@ -107,6 +108,12 @@ describe('Label', () => {
 
     await user.click(button);
     expect(screen.queryByRole('button', { name: 'Something' })).toBeNull();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders with variant overflow and type is set to button ', () => {
+    const { asFragment } = render(<Label variant="overflow">Something</Label>);
+    expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
     expect(asFragment()).toMatchSnapshot();
   });
 
