@@ -9,14 +9,14 @@ describe('TimePicker', () => {
   test('Renders in strict mode', () => {
     const validateTime = (_time: string) => true;
 
-    // const consoleError = jest.spyOn(console, 'error');
+    const consoleError = jest.spyOn(console, 'error');
     render(
       <React.StrictMode>
         <TimePicker value={'00:00'} validateTime={validateTime} aria-label="time picker" />
       </React.StrictMode>
     );
-    // TODO: investigate why this assertion is failing with issue #10482
-    // expect(consoleError).not.toHaveBeenCalled();
+
+    expect(consoleError).not.toHaveBeenCalled();
     expect(screen.getByLabelText('time picker')).not.toHaveClass('pf-m-error');
   });
 
