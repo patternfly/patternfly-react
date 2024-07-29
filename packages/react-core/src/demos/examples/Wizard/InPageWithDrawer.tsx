@@ -23,10 +23,11 @@ import {
   PageSidebarBody,
   SkipToContent,
   Masthead,
-  PageToggleButton,
-  MastheadToggle,
   MastheadMain,
+  MastheadToggle,
   MastheadBrand,
+  MastheadLogo,
+  PageToggleButton,
   Wizard,
   WizardStep
 } from '@patternfly/react-core';
@@ -81,14 +82,16 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
 
   const masthead = (
     <Masthead id="basic">
-      <MastheadToggle>
-        <PageToggleButton variant="plain" aria-label="Global navigation">
-          <BarsIcon />
-        </PageToggleButton>
-      </MastheadToggle>
       <MastheadMain>
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label="Global navigation">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
         <MastheadBrand>
-          <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          <MastheadLogo>
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          </MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
     </Masthead>

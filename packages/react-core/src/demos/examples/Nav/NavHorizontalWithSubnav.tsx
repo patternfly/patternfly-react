@@ -16,9 +16,10 @@ import {
   GalleryItem,
   MenuToggle,
   Masthead,
-  MastheadBrand,
-  MastheadContent,
   MastheadMain,
+  MastheadLogo,
+  MastheadContent,
+  MastheadBrand,
   MastheadToggle,
   Nav,
   NavItem,
@@ -243,14 +244,16 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
   );
   const masthead = (
     <Masthead>
-      <MastheadToggle>
-        <PageToggleButton variant="plain" aria-label="Global navigation">
-          <BarsIcon />
-        </PageToggleButton>
-      </MastheadToggle>
       <MastheadMain>
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label="Global navigation">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
         <MastheadBrand>
-          <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          <MastheadLogo>
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          </MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
       <MastheadContent>{headerToolbar}</MastheadContent>

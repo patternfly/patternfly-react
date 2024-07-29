@@ -16,9 +16,10 @@ import {
   Gallery,
   GalleryItem,
   Masthead,
-  MastheadBrand,
-  MastheadContent,
   MastheadMain,
+  MastheadLogo,
+  MastheadContent,
+  MastheadBrand,
   MenuToggle,
   MenuToggleElement,
   Nav,
@@ -273,7 +274,9 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
     <Masthead>
       <MastheadMain>
         <MastheadBrand>
-          <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          <MastheadLogo>
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+          </MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
       <MastheadContent>{headerToolbar}</MastheadContent>

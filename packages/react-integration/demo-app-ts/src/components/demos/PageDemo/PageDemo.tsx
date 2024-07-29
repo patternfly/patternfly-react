@@ -7,10 +7,11 @@ import {
   PageToggleButton,
   SkipToContent,
   Masthead,
+  MastheadBrand,
   MastheadToggle,
   MastheadMain,
   MastheadContent,
-  MastheadBrand,
+  MastheadLogo,
   Toolbar,
   ToolbarContent,
   ToolbarItem
@@ -72,13 +73,15 @@ export class PageDemo extends Component {
 
     const masthead = (
       <Masthead>
-        <MastheadToggle>
-          <PageToggleButton variant="plain" aria-label="Global navigation">
-            <BarsIcon />
-          </PageToggleButton>
-        </MastheadToggle>
         <MastheadMain>
-          <MastheadBrand component="div">Logo that's a div</MastheadBrand>
+          <MastheadToggle>
+            <PageToggleButton variant="plain" aria-label="Global navigation">
+              <BarsIcon />
+            </PageToggleButton>
+          </MastheadToggle>
+          <MastheadBrand>
+            <MastheadLogo component="div">Logo that's a div</MastheadLogo>
+          </MastheadBrand>
         </MastheadMain>
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>

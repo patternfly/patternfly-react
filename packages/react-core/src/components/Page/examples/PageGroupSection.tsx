@@ -2,9 +2,10 @@ import React from 'react';
 import {
   Page,
   Masthead,
-  MastheadToggle,
   MastheadMain,
+  MastheadToggle,
   MastheadBrand,
+  MastheadLogo,
   MastheadContent,
   PageSidebar,
   PageSidebarBody,
@@ -40,20 +41,22 @@ export const PageGroupSection: React.FunctionComponent = () => {
 
   const masthead = (
     <Masthead>
-      <MastheadToggle>
-        <PageToggleButton
-          variant="plain"
-          aria-label="Global navigation"
-          isSidebarOpen={isSidebarOpen}
-          onSidebarToggle={onSidebarToggle}
-          id="group-section-nav-toggle"
-        >
-          <BarsIcon />
-        </PageToggleButton>
-      </MastheadToggle>
       <MastheadMain>
-        <MastheadBrand href="https://patternfly.org" target="_blank">
-          Logo
+        <MastheadToggle>
+          <PageToggleButton
+            variant="plain"
+            aria-label="Global navigation"
+            isSidebarOpen={isSidebarOpen}
+            onSidebarToggle={onSidebarToggle}
+            id="group-section-nav-toggle"
+          >
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadBrand>
+          <MastheadLogo href="https://patternfly.org" target="_blank">
+            Logo
+          </MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
       <MastheadContent>{headerToolbar}</MastheadContent>

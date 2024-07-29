@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Masthead, MastheadBrand, MastheadContent, MastheadMain, MastheadToggle } from '../index';
+import { Masthead, MastheadMain, MastheadLogo, MastheadContent, MastheadBrand, MastheadToggle } from '../index';
 
 describe('Masthead', () => {
   test('verify basic', () => {
@@ -12,9 +12,11 @@ describe('Masthead', () => {
   test('verify full structure', () => {
     const { asFragment } = render(
       <Masthead>
-        <MastheadToggle>Toggle</MastheadToggle>
         <MastheadMain>
-          <MastheadBrand>Logo</MastheadBrand>
+          <MastheadToggle>Toggle</MastheadToggle>
+          <MastheadBrand>
+            <MastheadLogo>Logo</MastheadLogo>
+          </MastheadBrand>
         </MastheadMain>
         <MastheadContent>
           <span>Content</span>
@@ -72,33 +74,33 @@ describe('Masthead', () => {
   });
 });
 
-describe('MastheadBrand', () => {
+describe('MastheadLogo', () => {
   test('verify basic', () => {
-    const { asFragment } = render(<MastheadBrand>test</MastheadBrand>);
+    const { asFragment } = render(<MastheadLogo>test</MastheadLogo>);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
-    const { asFragment } = render(<MastheadBrand className="custom-css">test</MastheadBrand>);
+    const { asFragment } = render(<MastheadLogo className="custom-css">test</MastheadLogo>);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify default component', () => {
-    const { asFragment } = render(<MastheadBrand>test</MastheadBrand>);
+    const { asFragment } = render(<MastheadLogo>test</MastheadLogo>);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify custom component', () => {
-    const { asFragment } = render(<MastheadBrand component="div">test</MastheadBrand>);
+    const { asFragment } = render(<MastheadLogo component="div">test</MastheadLogo>);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify anchor component with href', () => {
-    const { asFragment } = render(<MastheadBrand href="#">test</MastheadBrand>);
+    const { asFragment } = render(<MastheadLogo href="#">test</MastheadLogo>);
 
     expect(asFragment()).toMatchSnapshot();
   });
@@ -118,15 +120,15 @@ describe('MastheadContent', () => {
   });
 });
 
-describe('MastheadMain', () => {
+describe('MastheadBrand', () => {
   test('verify basic', () => {
-    const { asFragment } = render(<MastheadMain>test</MastheadMain>);
+    const { asFragment } = render(<MastheadBrand>test</MastheadBrand>);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
-    const { asFragment } = render(<MastheadMain className="custom-css">test</MastheadMain>);
+    const { asFragment } = render(<MastheadBrand className="custom-css">test</MastheadBrand>);
 
     expect(asFragment()).toMatchSnapshot();
   });

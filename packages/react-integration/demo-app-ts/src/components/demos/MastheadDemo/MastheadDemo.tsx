@@ -4,6 +4,7 @@ import {
   MastheadToggle,
   MastheadMain,
   MastheadBrand,
+  MastheadLogo,
   MastheadContent,
   Button,
   Toolbar,
@@ -114,14 +115,16 @@ export class MastheadDemo extends Component<MastheadProps> {
 
     return (
       <Masthead id="basic">
-        <MastheadToggle>
-          <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
-            <BarsIcon />
-          </Button>
-        </MastheadToggle>
         <MastheadMain>
+          <MastheadToggle>
+            <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
+              <BarsIcon />
+            </Button>
+          </MastheadToggle>
           <MastheadBrand>
-            <img src={imgBrand} alt="Patternfly logo" />
+            <MastheadLogo>
+              <img src={imgBrand} alt="Patternfly logo" />
+            </MastheadLogo>
           </MastheadBrand>
         </MastheadMain>
         <MastheadContent>

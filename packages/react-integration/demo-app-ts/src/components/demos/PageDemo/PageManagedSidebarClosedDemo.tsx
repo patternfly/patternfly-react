@@ -4,6 +4,7 @@ import {
   Masthead,
   MastheadToggle,
   MastheadMain,
+  MastheadLogo,
   MastheadBrand,
   MastheadContent,
   PageSidebar,
@@ -27,13 +28,15 @@ export const PageManagedSidebarClosedDemo: React.FunctionComponent = () => {
 
   const masthead = (
     <Masthead>
-      <MastheadToggle>
-        <PageToggleButton variant="plain" aria-label="Global navigation" id="uncontrolled-nav-toggle">
-          <BarsIcon />
-        </PageToggleButton>
-      </MastheadToggle>
       <MastheadMain>
-        <MastheadBrand component="div">Logo that's a div</MastheadBrand>
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label="Global navigation" id="uncontrolled-nav-toggle">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadBrand>
+          <MastheadLogo component="div">Logo that's a div</MastheadLogo>
+        </MastheadBrand>
       </MastheadMain>
       <MastheadContent>{headerToolbar}</MastheadContent>
     </Masthead>

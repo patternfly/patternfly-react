@@ -1,9 +1,10 @@
 import React from 'react';
 import {
   Masthead,
-  MastheadToggle,
   MastheadMain,
+  MastheadToggle,
   MastheadBrand,
+  MastheadLogo,
   MastheadContent,
   Button,
   Brand
@@ -14,12 +15,14 @@ import pfIcon from '../../assets/PF-HorizontalLogo-Color.svg';
 
 export const MastheadIconRouterLink: React.FunctionComponent = () => (
   <Masthead id="icon-router-link">
-    <MastheadToggle>
-      <Button variant="plain" onClick={() => {}} aria-label="Global navigation" icon={<BarsIcon />} />
-    </MastheadToggle>
     <MastheadMain>
-      <MastheadBrand component={(props) => <Link {...props} to="#" />}>
-        <Brand src={pfIcon} alt="PatternFly" heights={{ default: '36px' }} />
+      <MastheadToggle>
+        <Button variant="plain" onClick={() => {}} aria-label="Global navigation" icon={<BarsIcon />} />
+      </MastheadToggle>
+      <MastheadBrand>
+        <MastheadLogo component={(props) => <Link {...props} to="#" />}>
+          <Brand src={pfIcon} alt="PatternFly" heights={{ default: '36px' }} />
+        </MastheadLogo>
       </MastheadBrand>
     </MastheadMain>
     <MastheadContent>

@@ -25,19 +25,23 @@ exports[`Masthead verify full structure 1`] = `
   <header
     class="pf-v6-c-masthead pf-m-display-inline-on-md"
   >
-    <span
-      class="pf-v6-c-masthead__toggle"
-    >
-      Toggle
-    </span>
     <div
       class="pf-v6-c-masthead__main"
     >
       <span
+        class="pf-v6-c-masthead__toggle"
+      >
+        Toggle
+      </span>
+      <div
         class="pf-v6-c-masthead__brand"
       >
-        Logo
-      </span>
+        <span
+          class="pf-v6-c-masthead__logo"
+        >
+          Logo
+        </span>
+      </div>
     </div>
     <div
       class="pf-v6-c-masthead__content"
@@ -150,39 +154,7 @@ exports[`Masthead verify stack display breakpoints 1`] = `
 </DocumentFragment>
 `;
 
-exports[`MastheadBrand verify anchor component with href 1`] = `
-<DocumentFragment>
-  <a
-    class="pf-v6-c-masthead__brand"
-    href="#"
-    tabindex="0"
-  >
-    test
-  </a>
-</DocumentFragment>
-`;
-
 exports[`MastheadBrand verify basic 1`] = `
-<DocumentFragment>
-  <span
-    class="pf-v6-c-masthead__brand"
-  >
-    test
-  </span>
-</DocumentFragment>
-`;
-
-exports[`MastheadBrand verify custom class 1`] = `
-<DocumentFragment>
-  <span
-    class="pf-v6-c-masthead__brand custom-css"
-  >
-    test
-  </span>
-</DocumentFragment>
-`;
-
-exports[`MastheadBrand verify custom component 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-masthead__brand"
@@ -192,13 +164,13 @@ exports[`MastheadBrand verify custom component 1`] = `
 </DocumentFragment>
 `;
 
-exports[`MastheadBrand verify default component 1`] = `
+exports[`MastheadBrand verify custom class 1`] = `
 <DocumentFragment>
-  <span
-    class="pf-v6-c-masthead__brand"
+  <div
+    class="pf-v6-c-masthead__brand custom-css"
   >
     test
-  </span>
+  </div>
 </DocumentFragment>
 `;
 
@@ -222,23 +194,55 @@ exports[`MastheadContent verify custom class 1`] = `
 </DocumentFragment>
 `;
 
-exports[`MastheadMain verify basic 1`] = `
+exports[`MastheadLogo verify anchor component with href 1`] = `
+<DocumentFragment>
+  <a
+    class="pf-v6-c-masthead__logo"
+    href="#"
+    tabindex="0"
+  >
+    test
+  </a>
+</DocumentFragment>
+`;
+
+exports[`MastheadLogo verify basic 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v6-c-masthead__logo"
+  >
+    test
+  </span>
+</DocumentFragment>
+`;
+
+exports[`MastheadLogo verify custom class 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v6-c-masthead__logo custom-css"
+  >
+    test
+  </span>
+</DocumentFragment>
+`;
+
+exports[`MastheadLogo verify custom component 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v6-c-masthead__main"
+    class="pf-v6-c-masthead__logo"
   >
     test
   </div>
 </DocumentFragment>
 `;
 
-exports[`MastheadMain verify custom class 1`] = `
+exports[`MastheadLogo verify default component 1`] = `
 <DocumentFragment>
-  <div
-    class="pf-v6-c-masthead__main custom-css"
+  <span
+    class="pf-v6-c-masthead__logo"
   >
     test
-  </div>
+  </span>
 </DocumentFragment>
 `;
 

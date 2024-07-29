@@ -17,9 +17,10 @@ import {
   Icon,
   Label,
   Masthead,
-  MastheadBrand,
-  MastheadContent,
   MastheadMain,
+  MastheadLogo,
+  MastheadContent,
+  MastheadBrand,
   MastheadToggle,
   MenuToggle,
   Nav,
@@ -323,15 +324,17 @@ export const PaginatedTableAction = () => {
 
   const masthead = (
     <Masthead>
-      <MastheadToggle>
-        <PageToggleButton variant="plain" aria-label={translation.mastheadToggleAriaLabel}>
-          <BarsIcon />
-        </PageToggleButton>
-      </MastheadToggle>
       <MastheadMain>
-        <MastheadBrand dir="ltr">
-          <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
-          {translation.brandLanguage && <span className="brand-language">{translation.brandLanguage}</span>}
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label={translation.mastheadToggleAriaLabel}>
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadBrand>
+          <MastheadLogo dir="ltr">
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+            {translation.brandLanguage && <span className="brand-language">{translation.brandLanguage}</span>}
+          </MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
       <MastheadContent>
