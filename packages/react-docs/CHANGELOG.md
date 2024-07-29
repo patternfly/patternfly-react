@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.102](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.101...@patternfly/react-docs@7.0.0-alpha.102) (2024-07-29)
+
+### Bug Fixes
+
+- **deps:** bump v6 alphas ([#10816](https://github.com/patternfly/patternfly-react/issues/10816)) ([d99aa9b](https://github.com/patternfly/patternfly-react/commit/d99aa9b3157f4559a8741415528832946aa32ddf))
+
 # [7.0.0-alpha.101](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.100...@patternfly/react-docs@7.0.0-alpha.101) (2024-07-29)
 
 ### Features

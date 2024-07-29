@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.0.0-alpha.32...@patternfly/react-styles@6.0.0-alpha.33) (2024-07-29)
+
+### Bug Fixes
+
+- **deps:** bump v6 alphas ([#10816](https://github.com/patternfly/patternfly-react/issues/10816)) ([d99aa9b](https://github.com/patternfly/patternfly-react/commit/d99aa9b3157f4559a8741415528832946aa32ddf))
+
 # [6.0.0-alpha.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.0.0-alpha.31...@patternfly/react-styles@6.0.0-alpha.32) (2024-07-29)
 
 ### Features
