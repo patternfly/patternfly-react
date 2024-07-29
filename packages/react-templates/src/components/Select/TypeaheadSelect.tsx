@@ -40,6 +40,12 @@ export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle'> {
   onClearSelection?: () => void;
   /** Placeholder text for the select input. */
   placeholder?: string;
+  /** Flag to indicate if the typeahead select allows new items */
+  isCreatable?: boolean;
+  /** Flag to indicate if create option should be at top of typeahead */
+  isCreateOptionOnTop?: boolean;
+  /** Message to display to create a new option */
+  createOptionMessage?: string | ((newValue: string) => string);
   /** Message to display when no options are available. */
   noOptionsAvailableMessage?: string;
   /** Message to display when no options match the filter. */
@@ -52,6 +58,9 @@ export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle'> {
   toggleProps?: MenuToggleProps;
 }
 
+const defaultNoOptionsFoundMessage = (filter: string) => `No results found for "${filter}"`;
+const defaultCreateOptionMessage = (newValue: string) => `Create "${newValue}"`;
+
 export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> = ({
   innerRef,
   initialOptions,
@@ -61,7 +70,10 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
   onClearSelection,
   placeholder = 'Select an option',
   noOptionsAvailableMessage = 'No options are available',
-  noOptionsFoundMessage = (filter) => `No results found for "${filter}"`,
+  noOptionsFoundMessage = defaultNoOptionsFoundMessage,
+  isCreatable = false,
+  isCreateOptionOnTop = false,
+  createOptionMessage = defaultCreateOptionMessage,
   isDisabled,
   toggleWidth,
   toggleProps,
@@ -89,6 +101,20 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
         String(option.content).toLowerCase().includes(filterValue.toLowerCase())
       );
 
+      if (
+        isCreatable &&
+        filterValue &&
+        !initialOptions.find((o) => String(o.content).toLowerCase() === filterValue.toLowerCase())
+      ) {
+        const createOption = {
+          content: typeof createOptionMessage === 'string' ? createOptionMessage : createOptionMessage(filterValue),
+          value: filterValue
+        };
+        newSelectOptions = isCreateOptionOnTop
+          ? [createOption, ...newSelectOptions]
+          : [...newSelectOptions, createOption];
+      }
+
       // When no options are found after filtering, display 'No results found'
       if (!newSelectOptions.length) {
         newSelectOptions = [
@@ -102,9 +128,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
       }
 
       // Open the menu when the input value changes and the new value is not empty
-      if (!isOpen) {
-        openMenu();
-      }
+      openMenu();
     }
 
     // When no options are  available,  display 'No options available'
@@ -119,7 +143,15 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
     }
 
     setSelectOptions(newSelectOptions);
-  }, [filterValue, initialOptions]);
+  }, [
+    filterValue,
+    initialOptions,
+    noOptionsFoundMessage,
+    isCreatable,
+    isCreateOptionOnTop,
+    createOptionMessage,
+    noOptionsAvailableMessage
+  ]);
 
   React.useEffect(() => {
     const selectedOption = initialOptions.find((o) => o.selected);
@@ -138,8 +170,10 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
   };
 
   const openMenu = () => {
-    onToggle && onToggle(true);
-    setIsOpen(true);
+    if (!isOpen) {
+      onToggle && onToggle(true);
+      setIsOpen(true);
+    }
   };
 
   const closeMenu = () => {
@@ -191,9 +225,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
   const handleMenuArrowKeys = (key: string) => {
     let indexToFocus = 0;
 
-    if (!isOpen) {
-      openMenu();
-    }
+    openMenu();
 
     if (selectOptions.every((option) => option.isDisabled)) {
       return;
@@ -245,10 +277,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
           selectOption(event, focusedItem);
         }
 
-        if (!isOpen) {
-          onToggle && onToggle(true);
-          setIsOpen(true);
-        }
+        openMenu();
 
         break;
       case 'ArrowUp':
