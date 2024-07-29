@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.92](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.91...demo-app-ts@5.1.1-alpha.92) (2024-07-29)
+
+### Features
+
+- **Masthead:** Updates for new masthead structure in Penta ([#10809](https://github.com/patternfly/patternfly-react/issues/10809)) ([266ee47](https://github.com/patternfly/patternfly-react/commit/266ee476020c51487ae4d426fdab90efc73d12f1))
+
 ## [5.1.1-alpha.91](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.90...demo-app-ts@5.1.1-alpha.91) (2024-07-29)
 
 **Note:** Version bump only for package demo-app-ts

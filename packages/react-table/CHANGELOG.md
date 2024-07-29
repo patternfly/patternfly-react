@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.94](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.93...@patternfly/react-table@6.0.0-alpha.94) (2024-07-29)
+
+### Features
+
+- **Masthead:** Updates for new masthead structure in Penta ([#10809](https://github.com/patternfly/patternfly-react/issues/10809)) ([266ee47](https://github.com/patternfly/patternfly-react/commit/266ee476020c51487ae4d426fdab90efc73d12f1))
+
 # [6.0.0-alpha.93](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.92...@patternfly/react-table@6.0.0-alpha.93) (2024-07-29)
 
 **Note:** Version bump only for package @patternfly/react-table
