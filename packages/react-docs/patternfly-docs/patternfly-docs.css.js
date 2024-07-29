@@ -3,11 +3,6 @@ import '@patternfly/react-styles/src/css/components/Table/inline-edit.css'; // i
 import '@patternfly/react-styles/src/css/layouts/Toolbar/toolbar.css';
 import '@patternfly/react-styles/src/css/components/Popper/Popper.css';
 
-import '@patternfly/react-styles/src/css/components/Consoles/AccessConsoles.css';
-import '@patternfly/react-styles/src/css/components/Consoles/DesktopViewer.css';
-import '@patternfly/react-styles/src/css/components/Consoles/SerialConsole.css';
-import '@patternfly/react-styles/src/css/components/Consoles/VncConsole.css';
-
 // Global theme CSS
 import '@patternfly/documentation-framework/global.css';
 
