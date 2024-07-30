@@ -21,22 +21,24 @@ import display from '@patternfly/react-styles/css/utilities/Display/display';
 
 class BannerDemo extends React.Component {
   render() {
+    const banner = (
+      <Banner isSticky>
+        <Flex
+          justifyContent={{ default: 'justifyContentCenter', lg: 'justifyContentSpaceBetween' }}
+          flexWrap={{ default: 'nowrap' }}
+        >
+          <div className={css(display.displayNone, display.displayBlockOnLg)}>Localhost</div>
+          <div className={css(display.displayNone, display.displayBlockOnLg)}>
+            This message is sticky to the top of the page.
+          </div>
+          <div className={css(display.displayNoneOnLg)}>Drop some text on mobile, truncate if needed.</div>
+          <div className={css(display.displayNone, display.displayBlockOnLg)}>Ned Username</div>
+        </Flex>
+      </Banner>
+    );
     return (
       <React.Fragment>
-        <DashboardWrapper breadcrumb={null}>
-          <Banner isSticky>
-            <Flex
-              justifyContent={{ default: 'justifyContentCenter', lg: 'justifyContentSpaceBetween' }}
-              flexWrap={{ default: 'nowrap' }}
-            >
-              <div className={css(display.displayNone, display.displayBlockOnLg)}>Localhost</div>
-              <div className={css(display.displayNone, display.displayBlockOnLg)}>
-                This message is sticky to the top of the page.
-              </div>
-              <div className={css(display.displayNoneOnLg)}>Drop some text on mobile, truncate if needed.</div>
-              <div className={css(display.displayNone, display.displayBlockOnLg)}>Ned Username</div>
-            </Flex>
-          </Banner>
+        <DashboardWrapper banner={banner} breadcrumb={null}>
           <PageSection>
             <Content>
               <h1>Main title</h1>
@@ -114,7 +116,8 @@ class BannerDemo extends React.Component {
                 <Content>
                   <h1>Main title</h1>
                   <p>
-                    Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
+                    Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because{' '}
+                    <br />
                     of it’s relative line height of 1.5.
                   </p>
                 </Content>
