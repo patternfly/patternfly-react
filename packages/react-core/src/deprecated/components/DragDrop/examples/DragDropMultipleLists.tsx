@@ -89,7 +89,7 @@ export const DragDropMultipleLists: React.FunctionComponent = () => {
       <Flex alignItems={{ default: 'alignItemsStretch' }} flexWrap={{ default: 'nowrap' }}>
         {Object.entries(items).map(([key, subitems]) => (
           <Flex key={key} fullWidth={{ default: 'fullWidth' }} alignItems={{ default: 'alignItemsStretch' }}>
-            <Droppable zone="multizone" droppableId={key} style={{ flexGrow: '1' }}>
+            <Droppable zone="multizone" droppableId={key} style={{ flexGrow: 1 }}>
               {(subitems as ItemType[]).map(({ id, content }) => (
                 <Draggable key={id} style={{ padding: '8px' }}>
                   {content}
