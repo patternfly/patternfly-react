@@ -73,11 +73,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
             <FormFieldGroupHeader
               titleText={{ text: 'Nested field group 1', id: 'nested-field-group1-titleText-id' }}
               titleDescription="Nested field group 1 description text."
-              actions={
-                <Button variant="plain" aria-label="Remove">
-                  <TrashIcon />
-                </Button>
-              }
+              actions={<Button variant="plain" aria-label="Remove" icon={<TrashIcon />} />}
             />
           }
         >
@@ -105,11 +101,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
           header={
             <FormFieldGroupHeader
               titleText={{ text: 'Nested field group 2', id: 'nested-field-group2-titleText-id' }}
-              actions={
-                <Button variant="plain" aria-label="Remove">
-                  <TrashIcon />
-                </Button>
-              }
+              actions={<Button variant="plain" aria-label="Remove" icon={<TrashIcon />} />}
             />
           }
         >
@@ -138,11 +130,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
             <FormFieldGroupHeader
               titleText={{ text: 'Nested field group 3', id: 'nested-field-group3-titleText-id' }}
               titleDescription="Field group 3 description text."
-              actions={
-                <Button variant="plain" aria-label="Remove">
-                  <TrashIcon />
-                </Button>
-              }
+              actions={<Button variant="plain" aria-label="Remove" icon={<TrashIcon />} />}
             />
           }
         >
