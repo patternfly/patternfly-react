@@ -1,13 +1,30 @@
 import React from 'react';
 import { CheckboxSelect, CheckboxSelectOption } from '@patternfly/react-templates';
 
-export const SelectBasic: React.FunctionComponent = () => {
-  const initialOptions: CheckboxSelectOption[] = [
-    { content: 'Option 1', value: 'option-1' },
-    { content: 'Option 2', value: 'option-2', description: 'Option with description' },
-    { content: 'Option 3', value: 'option-3', isDisabled: true },
-    { content: 'Option 4', value: 'option-4' }
-  ];
+const Options: { content: string; value: string; description?: string; isDisabled?: boolean }[] = [
+  { content: 'Option 1', value: 'option-1' },
+  { content: 'Option 2', value: 'option-2', description: 'Option with description' },
+  { content: 'Option 3', value: 'option-3', isDisabled: true },
+  { content: 'Option 4', value: 'option-4' }
+];
 
-  return <CheckboxSelect initialOptions={initialOptions} />;
+export const SelectBasic: React.FunctionComponent = () => {
+  const [selected, setSelected] = React.useState<string[]>(['option-2']);
+
+  const initialOptions = React.useMemo<CheckboxSelectOption[]>(
+    () => Options.map((o) => ({ ...o, selected: selected.includes(o.value) })),
+    [selected]
+  );
+
+  return (
+    <CheckboxSelect
+      initialOptions={initialOptions}
+      onSelect={(_ev, value) => {
+        const val = String(value);
+        setSelected((prevSelected) =>
+          prevSelected.includes(val) ? prevSelected.filter((item) => item !== val) : [...prevSelected, String(val)]
+        );
+      }}
+    />
+  );
 };
