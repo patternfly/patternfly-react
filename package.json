@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "devDependencies": {
-    "@babel/core": "^7.24.7",
-    "@babel/plugin-transform-modules-commonjs": "^7.24.7",
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.24.8",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@eslint/compat": "^1.1.1",
