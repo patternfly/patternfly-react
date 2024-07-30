@@ -5,6 +5,7 @@ import '@testing-library/jest-dom';
 
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import { NotificationDrawerListItemHeader } from '../NotificationDrawerListItemHeader';
+import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 
 describe('NotificationDrawerListItemHeader', () => {
   test('renders with PatternFly Core styles', () => {
@@ -47,5 +48,28 @@ describe('NotificationDrawerListItemHeader', () => {
     render(<NotificationDrawerListItemHeader truncateTitle={1} title="Pod quit unexpectedly" variant="success" />);
 
     expect(screen.getByText('Pod quit unexpectedly')).toHaveClass('pf-m-truncate');
+  });
+
+  test(`renders with ${styles.modifiers.noOffset} if actionHasNoOffset={true} is passed`, () => {
+    render(
+      <NotificationDrawerListItemHeader title="Pod quit unexpectedly" actionHasNoOffset>
+        test
+      </NotificationDrawerListItemHeader>
+    );
+    expect(screen.getByText('test')).toHaveClass(styles.modifiers.noOffset);
+  });
+
+  test(`does not render with ${styles.modifiers.noOffset} if actionHasNoOffset={false} is passed`, () => {
+    render(
+      <NotificationDrawerListItemHeader title="Pod quit unexpectedly" actionHasNoOffset={false}>
+        test
+      </NotificationDrawerListItemHeader>
+    );
+    expect(screen.getByText('test')).not.toHaveClass(styles.modifiers.noOffset);
+  });
+
+  test(`does not render with ${styles.modifiers.noOffset} if actionHasNoOffset is not passed`, () => {
+    render(<NotificationDrawerListItemHeader title="Pod quit unexpectedly">test</NotificationDrawerListItemHeader>);
+    expect(screen.getByText('test')).not.toHaveClass(styles.modifiers.noOffset);
   });
 });
