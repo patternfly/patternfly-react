@@ -15,10 +15,8 @@ export default [
       '**/css',
       'packages/react-core/src/helpers/Popper/thirdparty',
       'packages/react-docs/patternfly-docs/generated',
-      'packages/react-docs/static',
-      // The Rollup configurations contain syntax not supported by ESLint, so ignore them for now.
-      '**/rollup.*.mjs',
-      '.history/*'
+      '.history/*',
+      'packages/react-docs/static'
     ]
   },
   js.configs.recommended,
