@@ -165,6 +165,8 @@ export interface ThSortType {
   columnIndex: number;
   /** True to make this a favoritable sorting cell */
   isFavorites?: boolean;
+  /** Click callback on the star icon button (only for favoritable cell). */
+  onFavorite?: OnFavorite;
 }
 
 export interface ThSelectType {

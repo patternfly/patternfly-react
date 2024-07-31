@@ -80,6 +80,9 @@ export const TableFavoritable: React.FunctionComponent = () => {
       setActiveSortIndex(index);
       setActiveSortDirection(direction);
     },
+    onFavorite: (_event, isFavorited) => {
+      repositories.forEach((repo) => setRepoFavorited(repo, isFavorited));
+    },
     columnIndex
   });
 

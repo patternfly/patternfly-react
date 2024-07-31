@@ -3,17 +3,18 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
 import { SortColumn, SortByDirection } from '../../SortColumn';
-import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 
 export const sortableFavorites = (sort: any) => () =>
-  sortable(<StarIcon aria-hidden />, {
+  sortable(null, {
     columnIndex: sort.columnIndex,
-    className: styles.modifiers.favorite,
+    className: styles.tableFavorite,
     ariaLabel: 'Sort favorites',
     column: {
       extraParams: {
         sortBy: sort.sortBy,
-        onSort: sort?.onSort
+        onSort: sort.onSort,
+        onFavorite: sort.onFavorite,
+        favorited: sort.favorited
       }
     },
     tooltip: sort.tooltip,
@@ -26,7 +27,7 @@ export const sortable: ITransform = (
   { columnIndex, column, property, className, ariaLabel, tooltip, tooltipProps, tooltipHasDefaultBehavior }: IExtra
 ) => {
   const {
-    extraParams: { sortBy, onSort }
+    extraParams: { sortBy, onSort, onFavorite, favorited }
   } = column;
 
   const extraData = {
@@ -62,6 +63,8 @@ export const sortable: ITransform = (
         tooltip={tooltip}
         tooltipProps={tooltipProps}
         tooltipHasDefaultBehavior={tooltipHasDefaultBehavior}
+        onFavorite={onFavorite}
+        favorited={favorited}
       >
         {label as React.ReactNode}
       </SortColumn>
