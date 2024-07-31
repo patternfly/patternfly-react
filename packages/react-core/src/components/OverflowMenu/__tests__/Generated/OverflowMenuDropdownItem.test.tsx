@@ -6,9 +6,7 @@ import { OverflowMenuDropdownItem } from '../../OverflowMenuDropdownItem';
 
 describe('OverflowMenuDropdownItem', () => {
   it('should match snapshot', () => {
-    const { asFragment } = render(
-        <OverflowMenuDropdownItem itemId="id" children={'any'} isShared={false} />
-    );
+    const { asFragment } = render(<OverflowMenuDropdownItem itemId="id" children={'any'} isShared={false} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

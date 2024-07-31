@@ -31,7 +31,8 @@ export class TableRowWrapperDemo extends Component<TableProps, ITableRowWrapperD
         }
       ]
     };
-    this.customRowWrapper = ({ trRef, className, rowProps = { rowIndex: 0, rowKey: '' }, ...rest }) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.customRowWrapper = ({ trRef, className, rowProps = { rowIndex: 0, rowKey: '' }, onResize, ...rest }) => {
       const isExpanded = rest.row ? rest.row.isExpanded : false;
       const isOddRow = (rowProps.rowIndex + 1) % 2;
       const customStyle = {

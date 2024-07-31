@@ -46,7 +46,7 @@ class App extends React.Component<{}, AppState> {
     this.setState({ activeItem: selectedItem.itemId });
   };
 
-  private onNavToggle = () => {
+  private onNavToggle = (_event: React.MouseEvent) => {
     this.setState({ isNavOpen: !this.state.isNavOpen });
   };
 
