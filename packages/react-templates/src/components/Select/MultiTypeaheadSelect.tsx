@@ -12,8 +12,8 @@ import {
   Button,
   MenuToggleProps,
   SelectProps,
-  ChipGroup,
-  Chip
+  Label,
+  LabelGroup
 } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
@@ -287,9 +287,9 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
           isExpanded={isOpen}
           aria-controls="select-typeahead-listbox"
         >
-          <ChipGroup aria-label="Current selections">
+          <LabelGroup aria-label="Current selections">
             {selected.map((selection, index) => (
-              <Chip
+              <Label
                 key={index}
                 datatest-id={`${selection}-chip`}
                 onClick={(ev) => {
@@ -298,9 +298,9 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
                 }}
               >
                 {initialOptions.find((o) => o.value === selection)?.content}
-              </Chip>
+              </Label>
             ))}
-          </ChipGroup>
+          </LabelGroup>
         </TextInputGroupMain>
         <TextInputGroupUtilities {...(selected.length === 0 ? { style: { display: 'none' } } : {})}>
           <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
