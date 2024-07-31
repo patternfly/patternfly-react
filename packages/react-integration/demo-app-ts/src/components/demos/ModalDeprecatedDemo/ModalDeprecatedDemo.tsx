@@ -20,8 +20,8 @@ interface ModalDemoState {
   isCustomFocusModalOpen: boolean;
 }
 
-export class ModalNextDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
-  static displayName = 'ModalDemo';
+export class ModalDeprecatedDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
+  static displayName = 'ModalDeprecatedDemo';
 
   state = {
     isModalOpen: false,

@@ -43,7 +43,7 @@ interface TableState {
   columns: (ICell | string)[];
 }
 
-export class TableEditableDemo extends Component<TableProps, TableState> {
+export class TableEditableDemo extends React.Component<TableProps, TableState> {
   static displayName = 'TableEditableDemo';
 
   constructor(props: TableProps) {
