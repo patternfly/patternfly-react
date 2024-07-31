@@ -35,7 +35,7 @@ export const SelectTypeaheadDemo: React.FunctionComponent = () => {
         noOptionsFoundMessage={(filter) => `No state was found for "${filter}"`}
         onClearSelection={() => setSelected(undefined)}
         onSelect={(_ev, selection) => {
-          if (!options.find((o) => o.content === selection)) {
+          if (!options.find((o) => o.value === selection)) {
             setOptions([...options, { content: String(selection), value: String(selection) }]);
           }
           setSelected(String(selection));
