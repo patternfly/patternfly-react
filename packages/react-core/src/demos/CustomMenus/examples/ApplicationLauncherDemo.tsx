@@ -203,7 +203,6 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
   }
 
   return (
-    // eslint-disable-next-line no-console
     <Dropdown
       isOpen={isOpen}
       onOpenChange={(isOpen) => setIsOpen(isOpen)}

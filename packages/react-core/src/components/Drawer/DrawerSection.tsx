@@ -13,7 +13,6 @@ export interface DrawerSectionProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const DrawerSection: React.FunctionComponent<DrawerSectionProps> = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,
   colorVariant = DrawerColorVariant.default,

@@ -145,7 +145,6 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
     }
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   expandContent = (_event: React.MouseEvent<Element, MouseEvent>) => {
     this.setState((prevState) => ({
       expanded: !prevState.expanded

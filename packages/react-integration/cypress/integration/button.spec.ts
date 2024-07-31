@@ -78,12 +78,11 @@ describe('Button Demo Test', () => {
 
   it('Verify that tabbing with keyboard sends focus to the correct elements', () => {
     cy.get('#tabstop-test').focus();
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
     // @ts-ignore
     cy.tab().tab().tab().tab();
     cy.focused().should('have.attr', 'id', 'tabstop-test-04');
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     cy.tab({ shift: true }).tab({ shift: true });
     cy.focused().should('have.attr', 'id', 'tabstop-test-02');

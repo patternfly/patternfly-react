@@ -51,21 +51,19 @@ describe('Modal Test', () => {
 
   it('Verify focustrap for basic modal', () => {
     cy.get('#tabstop-test').focus();
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
     // @ts-ignore
     cy.tab().click(); // click first btn to open first modal
     cy.focused().should('have.attr', 'aria-label', 'Close');
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
     // @ts-ignore
     cy.tab();
     cy.focused().should('have.attr', 'data-id', 'modal-01-cancel-btn');
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     cy.tab();
     cy.focused().should('have.attr', 'data-id', 'modal-01-confirm-btn');
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     cy.tab();
     cy.focused().should('have.attr', 'aria-label', 'Close');
@@ -74,7 +72,7 @@ describe('Modal Test', () => {
 
   it('Verify escape key closes modal', () => {
     cy.get('#tabstop-test').focus();
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
     // @ts-ignore
     cy.tab().tab().click(); // open second modal
 
