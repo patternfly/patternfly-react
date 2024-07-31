@@ -22,14 +22,14 @@ export interface TypeaheadSelectOption extends Omit<SelectOptionProps, 'content'
   value: string | number;
 }
 
-export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle'> {
+export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSelect'> {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */
   initialOptions: TypeaheadSelectOption[];
   /** Callback triggered on selection. */
   onSelect?: (
-    _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLInputElement>,
+    _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLInputElement> | undefined,
     selection: string | number
   ) => void;
   /** Callback triggered when the select opens or closes. */
@@ -154,14 +154,19 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
   ]);
 
   React.useEffect(() => {
+    // If the selected option changed and the current input value is the previously selected item, update the displayed value.
     const selectedOption = initialOptions.find((o) => o.selected);
-    setInputValue(String(selectedOption?.content ?? ''));
+    if (inputValue === selected && selectedOption?.value !== selected) {
+      setInputValue(String(selectedOption?.content ?? ''));
+    }
+    // Only update when options change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialOptions]);
 
   const setActiveAndFocusedItem = (itemIndex: number) => {
     setFocusedItemIndex(itemIndex);
     const focusedItem = selectOptions[itemIndex];
-    setActiveItemId(focusedItem.value as string);
+    setActiveItemId(String(focusedItem.value));
   };
 
   const resetActiveAndFocusedItem = () => {
@@ -291,7 +296,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
   const onToggleClick = () => {
     onToggle && onToggle(!isOpen);
     setIsOpen(!isOpen);
-    textInputRef?.current?.focus();
+    textInputRef.current?.focus();
   };
 
   const onClearButtonClick = () => {
@@ -300,7 +305,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
     onInputChange && onInputChange('');
     setFilterValue('');
     resetActiveAndFocusedItem();
-    textInputRef?.current?.focus();
+    textInputRef.current?.focus();
     onClearSelection && onClearSelection();
   };
 
