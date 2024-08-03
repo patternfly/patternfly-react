@@ -58,7 +58,7 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build:single:packages": "node ../../scripts/build-single-packages.js --config single-packages.config.json"
+    "build:single:packages": "node ../../scripts/build-single-packages.mjs --config single-packages.config.json"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.5",

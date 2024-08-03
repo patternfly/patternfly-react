@@ -1,6 +1,6 @@
-import faIcons from './icons/fontawesomeIcons.js';
+import faIcons from './icons/fontawesomeIcons.mjs';
 import patternflyIcons from './icons/patternflyIcons.mjs';
-import customIcons from './icons/customIcons.js';
+import customIcons from './icons/customIcons.mjs';
 
 /**
  * Generates icons from FontAwesome, PatternFly CSS, and custom icons in this repo.

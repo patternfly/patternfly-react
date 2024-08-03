@@ -1,6 +1,6 @@
-const { fas } = require('@fortawesome/free-solid-svg-icons');
-const { far } = require('@fortawesome/free-regular-svg-icons');
-const { fab } = require('@fortawesome/free-brands-svg-icons');
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
 /**
  * @param {object} icon FontAwesome icon to convert
@@ -50,8 +50,10 @@ function convertIcons(icons) {
     }, {});
 }
 
-module.exports = {
+const faIcons = {
   ...convertIcons(fas),
   ...convertIcons(fab),
   ...convertIcons(far)
 };
+
+export default faIcons;

@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "build:integration:report": "cd results && junit-merge * && node ../scripts/junit2html.js",
+    "build:integration:report": "cd results && junit-merge * && node ../scripts/junit2html.mjs",
     "clean": "rimraf cypress/videos cypress/screenshots",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",

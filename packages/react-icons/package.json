@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "build:single:packages": "node ../../scripts/build-single-packages.js --config single-packages.config.json",
+    "build:single:packages": "node ../../scripts/build-single-packages.mjs --config single-packages.config.json",
     "clean": "rimraf dist src/icons src/index.js src/index.d.ts",
     "generate": "rimraf dist/esm/icons dist/js/icons && node scripts/writeIcons.mjs"
   },

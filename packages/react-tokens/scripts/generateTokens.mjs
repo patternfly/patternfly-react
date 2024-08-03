@@ -1,8 +1,10 @@
-const { glob } = require('glob');
-const { dirname, basename, sep } = require('path');
-const { parse, stringify } = require('css');
-const { readFileSync } = require('fs');
+import { glob } from 'glob';
+import { createRequire } from 'node:module';
+import { dirname, basename, sep } from 'node:path';
+import { parse, stringify } from 'css';
+import { readFileSync } from 'node:fs';
 
+const require = createRequire(import.meta.url);
 const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
 const version = 'v6';
 
@@ -91,7 +93,7 @@ const getLocalVarsMap = (cssFiles) => {
  *   }
  * }
  */
-function generateTokens() {
+export function generateTokens() {
   const cssFiles = glob
     .sync(['{**/{components,layouts}/**/*.css', '**/patternfly-charts.css', '**/patternfly-variables.css}'].join(','), {
       cwd: pfStylesDir,
@@ -249,7 +251,3 @@ function generateTokens() {
 
   return fileTokens;
 }
-
-module.exports = {
-  generateTokens
-};

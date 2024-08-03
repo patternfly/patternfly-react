@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   openshift: {
     xOffset: 116,
     yOffset: 0,

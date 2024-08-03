@@ -1,8 +1,8 @@
-const { outputFileSync } = require('fs-extra');
-const { resolve, join } = require('path');
-const { generateTokens } = require('./generateTokens');
+import { outputFileSync } from 'fs-extra/esm';
+import { resolve, join } from 'node:path';
+import { generateTokens } from './generateTokens.mjs';
 
-const outDir = resolve(__dirname, '../dist');
+const outDir = resolve(import.meta.dirname, '../dist');
 
 const writeESMExport = (tokenName, tokenString) =>
   outputFileSync(

@@ -1,11 +1,14 @@
 /* eslint-disable no-console */
-const fs = require('fs-extra');
-const path = require('path');
-const { glob } = require('glob');
-const ts = require('typescript');
+import fs from 'fs-extra';
+import { createRequire } from 'node:module';
+import path from 'node:path';
+import { glob } from 'glob';
+import ts from 'typescript';
+
+const require = createRequire(import.meta.url);
 
 /** @type {ts.CompilerOptions} */
-const tsConfigBase = require(path.resolve(__dirname, '../packages/tsconfig.base.json'));
+const tsConfigBase = require(path.resolve(import.meta.dirname, '../packages/tsconfig.base.json'));
 
 /** @type {ts.CompilerOptions} */
 const defaultCompilerOptions = {
@@ -156,4 +159,4 @@ const getDynamicModuleMap = (
   }, {});
 };
 
-module.exports = getDynamicModuleMap;
+export default getDynamicModuleMap;
