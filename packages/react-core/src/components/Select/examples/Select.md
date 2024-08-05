@@ -60,7 +60,7 @@ To create a toggle with a status, pass in `status` to the `MenuToggle`. The defa
 
 When the status value is "warning" or "danger", you must include helper text that conveys what is causing the warning/error.
 
-```ts isBeta file="./SelectValidated.tsx"
+```ts file="./SelectValidated.tsx"
 
 ```
 

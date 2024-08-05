@@ -48,7 +48,7 @@ export interface MenuToggleProps
   splitButtonOptions?: SplitButtonOptions;
   /** Variant styles of the menu toggle */
   variant?: 'default' | 'plain' | 'primary' | 'plainText' | 'secondary' | 'typeahead';
-  /** @beta Status styles of the menu toggle */
+  /** Status styles of the menu toggle */
   status?: 'success' | 'warning' | 'danger';
   /** Overrides the status icon */
   statusIcon?: React.ReactNode;
