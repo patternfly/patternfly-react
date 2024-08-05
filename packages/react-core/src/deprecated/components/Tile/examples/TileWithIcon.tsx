@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tile } from '@patternfly/react-core';
+import { Tile } from '@patternfly/react-core/deprecated';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 export const TileWithIcon: React.FunctionComponent = () => (
