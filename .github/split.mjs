@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
 
-const BASE_DIR = path.join(__dirname, '../packages/react-integration/cypress/integration');
+const BASE_DIR = path.resolve(import.meta.dirname, '../packages/react-integration/cypress/integration');
 const WORKER_NUM = +process.env.WORKER_NUM;
 const WORKER_COUNT = +process.env.WORKER_COUNT;
 
