@@ -119,7 +119,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     if (this.context) {
       this.setState({ disableHover: this.context.disableHover });
     }
-    if (canUseDOM) {
+    if (canUseDOM && this.props.containsDrilldown) {
       window.addEventListener('transitionend', this.props.isRootMenu ? this.handleDrilldownTransition : null);
     }
 
@@ -127,7 +127,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   }
 
   componentWillUnmount() {
-    if (canUseDOM) {
+    if (canUseDOM && this.props.containsDrilldown) {
       window.removeEventListener('transitionend', this.handleDrilldownTransition);
     }
   }
