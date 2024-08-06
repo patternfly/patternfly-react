@@ -195,7 +195,7 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ### Split toggle with checkbox
 
-To add a checkbox (or other action/control) to a menu toggle, use a split button. 
+To add a checkbox (or other action/control) to a menu toggle, use a split button.
 
 A `<MenuToggle>` can be rendered as a split button by adding a `splitButtonOptions` object. Elements to be displayed before the toggle button must be included in the `items` property of `splitButtonOptions`.
 
@@ -287,6 +287,6 @@ To create a toggle with a status, pass in the `status` property to the `MenuTogg
 
 When the status value is "warning" or "danger", you must include helper text that conveys what is causing the warning/error.
 
-```ts isBeta file='MenuToggleStatus.tsx'
+```ts file='MenuToggleStatus.tsx'
 
 ```
