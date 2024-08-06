@@ -42,14 +42,14 @@ export const DropdownDemo: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
   const onNoAutofocusToggleClick = () => {
-    setIsOpen(!isOpen);
+    setIsNoAutofocusOpen(!isNoAutofocusOpen);
   };
 
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined) => {
     setIsOpen(false);
   };
   const onNoAutofocusSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined) => {
-    setIsOpen(false);
+    setIsNoAutofocusOpen(false);
   };
 
   return (
