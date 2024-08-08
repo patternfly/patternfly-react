@@ -6,6 +6,7 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
+import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
 
 describe('menu toggle', () => {
   test('renders successfully', () => {
@@ -53,19 +54,25 @@ describe('menu toggle', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('shows success status', () => {
+  // Old snapshot tests end here; following tests should be kept when refactoring
+  test(`Renders with class ${styles.modifiers.small} when size="sm" is passed`, () => {
+    render(<MenuToggle size="sm">Toggle</MenuToggle>);
+    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.small);
+  });
+
+  test(`Renders with class ${styles.modifiers.success} when status="success" is passed`, () => {
     render(<MenuToggle status="success">Toggle</MenuToggle>);
-    expect(screen.getByRole('button')).toHaveClass('pf-m-success');
+    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.success);
   });
 
-  test('shows warning status', () => {
+  test(`Renders with class ${styles.modifiers.warning} when status="success" is passed`, () => {
     render(<MenuToggle status="warning">Toggle</MenuToggle>);
-    expect(screen.getByRole('button')).toHaveClass('pf-m-warning');
+    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.warning);
   });
 
-  test('shows danger status', () => {
+  test(`Renders with class ${styles.modifiers.danger} when status="success" is passed`, () => {
     render(<MenuToggle status="danger">Toggle</MenuToggle>);
-    expect(screen.getByRole('button')).toHaveClass('pf-m-danger');
+    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.danger);
   });
 
   test('split toggle passes onClick', async () => {

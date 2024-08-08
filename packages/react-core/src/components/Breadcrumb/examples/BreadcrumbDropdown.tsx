@@ -66,6 +66,7 @@ export const BreadcrumbDropdown: React.FunctionComponent = () => {
           onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
             <MenuToggle
+              size="sm"
               badge={
                 <Badge isRead screenReaderText="additional items">
                   {dropdownItems.length}
