@@ -138,10 +138,12 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   clearSelection={this.clearSelection}
                   isOpen={updatedProps.isSelectOpen}
                   options={(updatedProps as any).options.map((option: any, index: number) => (
-                    <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell5Option' + index} />
+                    <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell5Option' + index}>
+                      {option.value}
+                    </SelectOption>
                   ))}
-                  onToggle={(event: any) => {
-                    this.onToggle(event);
+                  onToggle={(_event: any) => {
+                    this.onToggle(rowIndex, cellIndex);
                   }}
                   selections={updatedProps.selected}
                 />
@@ -249,10 +251,12 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   clearSelection={this.clearSelection}
                   isOpen={updatedProps.isSelectOpen}
                   options={(updatedProps as any).options.map((option: any, index: number) => (
-                    <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell5Option' + index} />
+                    <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell5Option' + index}>
+                      {option.value}
+                    </SelectOption>
                   ))}
                   onToggle={(_event: any) => {
-                    this.onToggle(_event);
+                    this.onToggle(rowIndex, cellIndex);
                   }}
                   selections={updatedProps.selected}
                 />
@@ -362,6 +366,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
 
       newCellProps.editableValue = newSelected;
       newCellProps.selected = newSelected;
+      newCellProps.isSelectOpen = false;
     }
 
     this.setState({
@@ -369,8 +374,10 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     });
   };
 
-  onToggle = (_event: any) => {
+  onToggle = (rowIndex: string | number | undefined, cellIndex: string | number | undefined) => {
     const newRows = Array.from(this.state.rows);
+    newRows[rowIndex as number].cells[cellIndex].props.isSelectOpen =
+      !newRows[rowIndex as number].cells[cellIndex].props.isSelectOpen;
     this.setState({
       rows: newRows
     });

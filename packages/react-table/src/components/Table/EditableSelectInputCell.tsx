@@ -47,6 +47,8 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
   options = [] as React.ReactElement[],
   props
 }: IEditableSelectInputCell) => {
+  const [isSelectOpen, setIsSelectOpen] = React.useState(isOpen);
+
   const onSelectHandler = (
     event: React.MouseEvent | React.ChangeEvent,
     newValue: any | any[]
@@ -64,11 +66,12 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
       {...props.editableSelectProps}
       onSelect={onSelectHandler}
       {...(clearSelection && { onClear })}
-      isOpen={isOpen}
+      isOpen={isSelectOpen}
+      onOpenChange={(isOpen: boolean) => setIsSelectOpen(isOpen)}
       selected={selections}
       toggle={(toggleRef: any) => (
-        <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen}>
-          {isOpen ? 'Expanded' : 'Collapsed'}
+        <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isSelectOpen}>
+          {isSelectOpen ? 'Expanded' : 'Collapsed'}
         </MenuToggle>
       )}
     >
