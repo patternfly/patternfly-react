@@ -158,6 +158,10 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
+   * When true, this prop adjusts the height between the axis label and bottom positioned legend
+   */
+  fixAxisLabelHeight?: boolean;
+  /**
    * When true, this prop reduces the number of tick labels to fit the length of the axis.
    * Labels are removed at approximately even intervals from the original array of labels.
    * This feature only works well for labels that are approximately evenly spaced.
