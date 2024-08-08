@@ -38,7 +38,6 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onSimpleSelect = () => {
     this.setState({
       isSimpleOpen: !this.state.isSimpleOpen
@@ -108,7 +107,6 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onAdditionalOptionsSelect = () => {
     this.setState({
       isAdditionalOptionsOpen: !this.state.isAdditionalOptionsOpen
@@ -202,7 +200,6 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onPersistSelect = () => {
     this.setState({
       isPersistOpen: !this.state.isPersistOpen
@@ -270,7 +267,6 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onContainerBreakpointSelect = () => {
     this.setState({
       isContainerBreakpointOpen: !this.state.isContainerBreakpointOpen

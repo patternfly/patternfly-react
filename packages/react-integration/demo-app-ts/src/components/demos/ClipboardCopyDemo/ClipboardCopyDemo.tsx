@@ -2,7 +2,6 @@ import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant, ClipboardCopyAction, Button } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
-// eslint-disable-next-line patternfly-react/no-anonymous-functions
 export class ClipboardCopyDemo extends React.Component {
   static displayName = 'ClipboardCopyDemo';
   render() {

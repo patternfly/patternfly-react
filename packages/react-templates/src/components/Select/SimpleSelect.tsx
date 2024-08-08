@@ -28,6 +28,8 @@ export interface SimpleSelectProps extends Omit<SelectProps, 'toggle'> {
   isDisabled?: boolean;
   /** Content of the toggle. Defaults to the selected option. */
   toggleContent?: React.ReactNode;
+  /** Placeholder text for the select input. */
+  placeholder?: string;
   /** Width of the toggle. */
   toggleWidth?: string;
   /** Additional props passed to the toggle. */
@@ -43,14 +45,20 @@ const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
   toggleContent,
   toggleWidth = '200px',
   toggleProps,
+  placeholder = 'Select a value',
   ...props
 }: SimpleSelectProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<string>('Select a value');
+  const [selected, setSelected] = React.useState<SimpleSelectOption | undefined>();
+
+  React.useEffect(() => {
+    const selectedOption = initialOptions?.find((option) => option.selected);
+    setSelected(selectedOption);
+  }, [initialOptions]);
 
   const simpleSelectOptions = initialOptions?.map((option) => {
     const { content, value, ...props } = option;
-    const isSelected = selected.includes(`${value}`);
+    const isSelected = selected?.value === value;
     return (
       <SelectOption value={value} key={value} isSelected={isSelected} {...props}>
         {content}
@@ -65,8 +73,8 @@ const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
 
   const _onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     onSelect && onSelect(_event, value);
-    setSelected(value as string);
-    onToggle && onToggle(!false);
+    setSelected(initialOptions.find((o) => o.value === value));
+    onToggle && onToggle(true);
     setIsOpen(false);
   };
 
@@ -83,7 +91,7 @@ const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
       }
       {...toggleProps}
     >
-      {toggleContent ? toggleContent : selected}
+      {toggleContent ? toggleContent : selected?.content || placeholder}
     </MenuToggle>
   );
 

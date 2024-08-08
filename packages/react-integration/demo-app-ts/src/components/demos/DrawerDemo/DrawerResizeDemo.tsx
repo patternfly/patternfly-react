@@ -32,7 +32,6 @@ export class DrawerResizeDemo extends React.Component<DrawerProps, DrawerResizeD
     this.drawerRef.current && this.drawerRef.current.focus();
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onResize = (_event: MouseEvent | TouchEvent | React.KeyboardEvent, newWidth: number, id: string) => {
     this.setState(
       {

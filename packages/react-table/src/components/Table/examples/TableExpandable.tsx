@@ -16,7 +16,6 @@ interface Repository {
   };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const TableExpandable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [

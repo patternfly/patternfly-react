@@ -23,7 +23,12 @@ describe('NavList', () => {
           setFlyoutRef: jest.fn()
         }}
       >
-        <NavList children={<>ReactNode</>} className="" backScrollAriaLabel="Scroll left" forwardScrollAriaLabel="Scroll right" />
+        <NavList
+          children={<>ReactNode</>}
+          className=""
+          backScrollAriaLabel="Scroll left"
+          forwardScrollAriaLabel="Scroll right"
+        />
       </NavContext.Provider>
     );
     expect(asFragment()).toMatchSnapshot();

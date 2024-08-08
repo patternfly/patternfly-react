@@ -11,43 +11,35 @@ import {
   TextInputGroupUtilities,
   Button,
   MenuToggleProps,
-  SelectProps
+  SelectProps,
+  Label,
+  LabelGroup
 } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export interface TypeaheadSelectOption extends Omit<SelectOptionProps, 'content'> {
+export interface MultiTypeaheadSelectOption extends Omit<SelectOptionProps, 'content'> {
   /** Content of the select option. */
   content: string | number;
   /** Value of the select option. */
   value: string | number;
 }
 
-export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSelect'> {
+export interface MultiTypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSelect'> {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */
-  initialOptions: TypeaheadSelectOption[];
+  initialOptions: MultiTypeaheadSelectOption[];
   /** Callback triggered on selection. */
-  onSelect?: (
-    _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLInputElement> | undefined,
-    selection: string | number
+  onSelectionChange?: (
+    _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLInputElement>,
+    selections: (string | number)[]
   ) => void;
   /** Callback triggered when the select opens or closes. */
   onToggle?: (nextIsOpen: boolean) => void;
   /** Callback triggered when the text in the input field changes. */
   onInputChange?: (newValue: string) => void;
-  /** Callback triggered when the clear button is selected */
-  onClearSelection?: () => void;
   /** Placeholder text for the select input. */
   placeholder?: string;
-  /** Flag to indicate if the typeahead select allows new items */
-  isCreatable?: boolean;
-  /** Flag to indicate if create option should be at top of typeahead */
-  isCreateOptionOnTop?: boolean;
-  /** Message to display to create a new option */
-  createOptionMessage?: string | ((newValue: string) => string);
-  /** Message to display when no options are available. */
-  noOptionsAvailableMessage?: string;
   /** Message to display when no options match the filter. */
   noOptionsFoundMessage?: string | ((filter: string) => string);
   /** Flag indicating the select should be disabled. */
@@ -58,62 +50,44 @@ export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSe
   toggleProps?: MenuToggleProps;
 }
 
-const defaultNoOptionsFoundMessage = (filter: string) => `No results found for "${filter}"`;
-const defaultCreateOptionMessage = (newValue: string) => `Create "${newValue}"`;
-
-export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> = ({
+export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSelectProps> = ({
   innerRef,
   initialOptions,
-  onSelect,
+  onSelectionChange,
   onToggle,
   onInputChange,
-  onClearSelection,
   placeholder = 'Select an option',
-  noOptionsAvailableMessage = 'No options are available',
-  noOptionsFoundMessage = defaultNoOptionsFoundMessage,
-  isCreatable = false,
-  isCreateOptionOnTop = false,
-  createOptionMessage = defaultCreateOptionMessage,
+  noOptionsFoundMessage = (filter) => `No results found for "${filter}"`,
   isDisabled,
   toggleWidth,
   toggleProps,
   ...props
-}: TypeaheadSelectProps) => {
+}: MultiTypeaheadSelectProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<string>(String(initialOptions.find((o) => o.selected)?.content ?? ''));
-  const [inputValue, setInputValue] = React.useState<string>(
-    String(initialOptions.find((o) => o.selected)?.content ?? '')
+  const [selected, setSelected] = React.useState<(string | number)[]>(
+    (initialOptions?.filter((o) => o.selected) ?? []).map((o) => o.value)
   );
-  const [filterValue, setFilterValue] = React.useState<string>('');
-  const [selectOptions, setSelectOptions] = React.useState<TypeaheadSelectOption[]>(initialOptions);
+  const [inputValue, setInputValue] = React.useState<string>();
+  const [selectOptions, setSelectOptions] = React.useState<MultiTypeaheadSelectOption[]>(initialOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
   const textInputRef = React.useRef<HTMLInputElement>();
 
   const NO_RESULTS = 'no results';
 
+  const openMenu = () => {
+    onToggle && onToggle(true);
+    setIsOpen(true);
+  };
+
   React.useEffect(() => {
-    let newSelectOptions: TypeaheadSelectOption[] = initialOptions;
+    let newSelectOptions: MultiTypeaheadSelectOption[] = initialOptions;
 
     // Filter menu items based on the text input value when one exists
-    if (filterValue) {
+    if (inputValue) {
       newSelectOptions = initialOptions.filter((option) =>
-        String(option.content).toLowerCase().includes(filterValue.toLowerCase())
+        String(option.content).toLowerCase().includes(inputValue.toLowerCase())
       );
-
-      if (
-        isCreatable &&
-        filterValue &&
-        !initialOptions.find((o) => String(o.content).toLowerCase() === filterValue.toLowerCase())
-      ) {
-        const createOption = {
-          content: typeof createOptionMessage === 'string' ? createOptionMessage : createOptionMessage(filterValue),
-          value: filterValue
-        };
-        newSelectOptions = isCreateOptionOnTop
-          ? [createOption, ...newSelectOptions]
-          : [...newSelectOptions, createOption];
-      }
 
       // When no options are found after filtering, display 'No results found'
       if (!newSelectOptions.length) {
@@ -121,7 +95,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
           {
             isAriaDisabled: true,
             content:
-              typeof noOptionsFoundMessage === 'string' ? noOptionsFoundMessage : noOptionsFoundMessage(filterValue),
+              typeof noOptionsFoundMessage === 'string' ? noOptionsFoundMessage : noOptionsFoundMessage(inputValue),
             value: NO_RESULTS
           }
         ];
@@ -131,42 +105,19 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
       openMenu();
     }
 
-    // When no options are  available,  display 'No options available'
-    if (!newSelectOptions.length) {
-      newSelectOptions = [
-        {
-          isAriaDisabled: true,
-          content: noOptionsAvailableMessage,
-          value: NO_RESULTS
-        }
-      ];
-    }
-
     setSelectOptions(newSelectOptions);
-  }, [
-    filterValue,
-    initialOptions,
-    noOptionsFoundMessage,
-    isCreatable,
-    isCreateOptionOnTop,
-    createOptionMessage,
-    noOptionsAvailableMessage
-  ]);
-
-  React.useEffect(() => {
-    // If the selected option changed and the current input value is the previously selected item, update the displayed value.
-    const selectedOption = initialOptions.find((o) => o.selected);
-    if (inputValue === selected && selectedOption?.value !== selected) {
-      setInputValue(String(selectedOption?.content ?? ''));
-    }
-    // Only update when options change
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialOptions]);
+  }, [inputValue, initialOptions]);
+
+  React.useEffect(
+    () => setSelected((initialOptions?.filter((o) => o.selected) ?? []).map((o) => o.value)),
+    [initialOptions]
+  );
 
   const setActiveAndFocusedItem = (itemIndex: number) => {
     setFocusedItemIndex(itemIndex);
     const focusedItem = selectOptions[itemIndex];
-    setActiveItemId(String(focusedItem.value));
+    setActiveItemId(focusedItem.value as string);
   };
 
   const resetActiveAndFocusedItem = () => {
@@ -174,21 +125,11 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
     setActiveItemId(null);
   };
 
-  const openMenu = () => {
-    if (!isOpen) {
-      onToggle && onToggle(true);
-      setIsOpen(true);
-    }
-  };
-
   const closeMenu = () => {
     onToggle && onToggle(false);
     setIsOpen(false);
     resetActiveAndFocusedItem();
-    const option = initialOptions.find((o) => o.value === selected);
-    if (option) {
-      setInputValue(String(option.content));
-    }
+    setInputValue('');
   };
 
   const onInputClick = () => {
@@ -201,28 +142,32 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
 
   const selectOption = (
     _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLInputElement> | undefined,
-    option: TypeaheadSelectOption
+    option: string | number
   ) => {
-    onSelect && onSelect(_event, option.value);
+    const selections = selected.includes(option) ? selected.filter((o) => option !== o) : [...selected, option];
 
-    setInputValue(String(option.content));
-    setFilterValue('');
-    setSelected(String(option.value));
+    onSelectionChange && onSelectionChange(_event, selections);
+    setSelected(selections);
+  };
 
-    closeMenu();
+  const clearOption = (
+    _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLInputElement> | undefined,
+    option: string | number
+  ) => {
+    const selections = selected.filter((o) => option !== o);
+    onSelectionChange && onSelectionChange(_event, selections);
+    setSelected(selections);
   };
 
   const _onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     if (value && value !== NO_RESULTS) {
-      const optionToSelect = selectOptions.find((option) => option.value === value);
-      selectOption(_event, optionToSelect);
+      selectOption(_event, value);
     }
   };
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
     onInputChange && onInputChange(value);
-    setFilterValue(value);
 
     resetActiveAndFocusedItem();
   };
@@ -230,7 +175,9 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
   const handleMenuArrowKeys = (key: string) => {
     let indexToFocus = 0;
 
-    openMenu();
+    if (!isOpen) {
+      openMenu();
+    }
 
     if (selectOptions.every((option) => option.isDisabled)) {
       return;
@@ -279,10 +226,13 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
     switch (event.key) {
       case 'Enter':
         if (isOpen && focusedItem && focusedItem.value !== NO_RESULTS && !focusedItem.isAriaDisabled) {
-          selectOption(event, focusedItem);
+          selectOption(event, focusedItem?.value);
         }
 
-        openMenu();
+        if (!isOpen) {
+          onToggle && onToggle(true);
+          setIsOpen(true);
+        }
 
         break;
       case 'ArrowUp':
@@ -296,24 +246,22 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
   const onToggleClick = () => {
     onToggle && onToggle(!isOpen);
     setIsOpen(!isOpen);
-    textInputRef.current?.focus();
+    textInputRef?.current?.focus();
   };
 
-  const onClearButtonClick = () => {
-    setSelected('');
-    setInputValue('');
+  const onClearButtonClick = (ev: React.MouseEvent) => {
+    setSelected([]);
     onInputChange && onInputChange('');
-    setFilterValue('');
     resetActiveAndFocusedItem();
-    textInputRef.current?.focus();
-    onClearSelection && onClearSelection();
+    textInputRef?.current?.focus();
+    onSelectionChange && onSelectionChange(ev, []);
   };
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
     <MenuToggle
       ref={toggleRef}
       variant="typeahead"
-      aria-label="Typeahead menu toggle"
+      aria-label="Multi select Typeahead menu toggle"
       onClick={onToggleClick}
       isExpanded={isOpen}
       isDisabled={isDisabled}
@@ -338,15 +286,26 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
           role="combobox"
           isExpanded={isOpen}
           aria-controls="select-typeahead-listbox"
-        />
-
-        <TextInputGroupUtilities {...(!inputValue ? { style: { display: 'none' } } : {})}>
-          <Button
-            variant="plain"
-            onClick={onClearButtonClick}
-            aria-label="Clear input value"
-            icon={<TimesIcon aria-hidden />}
-          />
+        >
+          <LabelGroup aria-label="Current selections">
+            {selected.map((selection, index) => (
+              <Label
+                key={index}
+                datatest-id={`${selection}-chip`}
+                onClick={(ev) => {
+                  ev.stopPropagation();
+                  clearOption(ev, selection);
+                }}
+              >
+                {initialOptions.find((o) => o.value === selection)?.content}
+              </Label>
+            ))}
+          </LabelGroup>
+        </TextInputGroupMain>
+        <TextInputGroupUtilities {...(selected.length === 0 ? { style: { display: 'none' } } : {})}>
+          <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
+            <TimesIcon aria-hidden />
+          </Button>
         </TextInputGroupUtilities>
       </TextInputGroup>
     </MenuToggle>
@@ -379,10 +338,11 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
     </Select>
   );
 };
-TypeaheadSelectBase.displayName = 'TypeaheadSelectBase';
 
-export const TypeaheadSelect = React.forwardRef((props: TypeaheadSelectProps, ref: React.Ref<any>) => (
-  <TypeaheadSelectBase {...props} innerRef={ref} />
+MultiTypeaheadSelectBase.displayName = 'MultiTypeaheadSelectBase';
+
+export const MultiTypeaheadSelect = React.forwardRef((props: MultiTypeaheadSelectProps, ref: React.Ref<any>) => (
+  <MultiTypeaheadSelectBase {...props} innerRef={ref} />
 ));
 
-TypeaheadSelect.displayName = 'TypeaheadSelect';
+MultiTypeaheadSelect.displayName = 'MultiTypeaheadSelect';

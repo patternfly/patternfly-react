@@ -86,7 +86,7 @@ class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState> {
     numLabels: 3,
     isClosable: false,
     isCompact: false,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     onClick: (_e: React.MouseEvent) => undefined as any,
     closeBtnAriaLabel: 'Close label group',
     tooltipPosition: 'top',

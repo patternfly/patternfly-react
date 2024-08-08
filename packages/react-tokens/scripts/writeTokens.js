@@ -38,7 +38,7 @@ const allIndex = {};
 const componentIndex = [];
 
 const outputIndex = (index, indexFile) => {
-  const esmIndexString = index.map(file => `export { ${file} } from './${file}';`).join('\n');
+  const esmIndexString = index.map((file) => `export { ${file} } from './${file}';`).join('\n');
   outputFileSync(join(outDir, 'esm', indexFile), esmIndexString);
   outputFileSync(
     join(outDir, 'js', indexFile),
@@ -48,7 +48,7 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 exports.__esModule = true;
-${index.map(file => `__export(require('./${file}'));`).join('\n')}
+${index.map((file) => `__export(require('./${file}'));`).join('\n')}
 `.trim()
   );
   outputFileSync(join(outDir, 'esm', indexFile.replace('.js', '.d.ts')), esmIndexString);
@@ -72,7 +72,7 @@ function writeTokens(tokens) {
 
     // Legacy token support -- values may be incorrect.
     Object.values(tokenValue)
-      .map(values => Object.entries(values))
+      .map((values) => Object.entries(values))
       .reduce((acc, val) => acc.concat(val), []) // flatten
       .forEach(([oldTokenName, { name, value }]) => {
         const isChart = oldTokenName.includes('chart');

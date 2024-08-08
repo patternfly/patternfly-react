@@ -54,7 +54,7 @@ class Chip extends React.Component<ChipProps> {
     isOverflowChip: false,
     isReadOnly: false,
     tooltipPosition: 'top' as 'auto' | 'top' | 'bottom' | 'left' | 'right',
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     onClick: (_e: React.MouseEvent) => undefined as any,
     textMaxWidth: '16ch'
   };

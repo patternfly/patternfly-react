@@ -59,12 +59,7 @@ export class SwitchDemo extends Component<{}, SwitchState> {
           isChecked={isChecked}
         />
         <br />
-        <Switch
-          id="disabled-switch-off"
-          label="Message when on"
-          isChecked={false}
-          isDisabled
-        />
+        <Switch id="disabled-switch-off" label="Message when on" isChecked={false} isDisabled />
       </>
     );
   }

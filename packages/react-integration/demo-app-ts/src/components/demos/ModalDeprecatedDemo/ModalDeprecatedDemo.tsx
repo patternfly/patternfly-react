@@ -20,9 +20,8 @@ interface ModalDemoState {
   isCustomFocusModalOpen: boolean;
 }
 
-// eslint-disable-next-line patternfly-react/no-anonymous-functions
 export class ModalDeprecatedDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
-  static displayName = 'ModalDemo';
+  static displayName = 'ModalDeprecatedDemo';
 
   state = {
     isModalOpen: false,

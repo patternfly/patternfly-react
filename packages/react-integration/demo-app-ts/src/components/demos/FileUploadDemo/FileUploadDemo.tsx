@@ -5,13 +5,12 @@ export class FileUploadDemo extends Component {
   static displayName = 'FileUploadDemo';
 
   state = { value: '', filename: '', isLoading: false };
-  /* eslint-disable-next-line no-console */
+
   handleFileInputChange = (_event: DropEvent, file: File) => this.setState({ value: file, filename: file.name });
   handleDataChange = (_event: DropEvent, value: string) => this.setState({ value });
-  /* eslint-disable @typescript-eslint/no-unused-vars */
+
   handleFileReadStarted = (_event: DropEvent, _fileHandle: File) => this.setState({ isLoading: true });
   handleFileReadFinished = (_event: DropEvent, _fileHandle: File) => this.setState({ isLoading: false });
-  /* eslint-enable @typescript-eslint/no-unused-vars */
 
   render() {
     const { value, filename, isLoading } = this.state;

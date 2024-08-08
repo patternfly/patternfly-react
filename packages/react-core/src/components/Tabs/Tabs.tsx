@@ -189,7 +189,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     unmountOnExit: false,
     ouiaSafe: true,
     variant: 'default',
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     onToggle: (_event: React.MouseEvent, _isExpanded: boolean): void => undefined
   };
 

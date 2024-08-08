@@ -29,5 +29,5 @@ function convertIcons(icons) {
   return icons;
 }
 
-const patternflyIcons = convertIcons(pfIcons)
+const patternflyIcons = convertIcons(pfIcons);
 export default patternflyIcons;

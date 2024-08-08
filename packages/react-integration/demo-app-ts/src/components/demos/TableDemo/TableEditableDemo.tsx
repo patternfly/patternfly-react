@@ -1,5 +1,4 @@
-/* eslint-disable no-shadow */
-import React, { Component } from 'react';
+import * as React from 'react';
 import {
   TableVariant,
   ICell,
@@ -44,7 +43,7 @@ interface TableState {
   columns: (ICell | string)[];
 }
 
-export class TableEditableDemo extends Component<TableProps, TableState> {
+export class TableEditableDemo extends React.Component<TableProps, TableState> {
   static displayName = 'TableEditableDemo';
 
   constructor(props: TableProps) {
