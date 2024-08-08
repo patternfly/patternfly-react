@@ -34,17 +34,3 @@ module.exports = {
   extends: ['plugin:patternfly-react/recommended']
 };
 ```
-
-### Building
-
-```
-yarn build
-```
-
-Note the build scripts for this are located in the root package.json under `yarn build`.
-
-### Publishing
-
-```
-yarn publish
-```
