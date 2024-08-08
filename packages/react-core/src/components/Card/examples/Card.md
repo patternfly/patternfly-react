@@ -19,6 +19,7 @@ ouia: true
 import pfLogo from '../../assets/PF-HorizontalLogo-Color.svg';
 import pfLogoSmall from '../../assets/PF-IconLogo.svg';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 ## Examples
 
@@ -176,5 +177,11 @@ An image can be placed in the card header to show users an icon beside the expan
 Dividers can be placed between sections of the card.
 
 ```ts file='./CardWithDividers.tsx'
+
+```
+
+### Cards as tiles
+
+```ts file='./CardTile.tsx'
 
 ```

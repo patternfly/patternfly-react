@@ -1,5 +1,6 @@
 import React from 'react';
-import { Tile, Flex } from '@patternfly/react-core';
+import { Flex } from '@patternfly/react-core';
+import { Tile } from '@patternfly/react-core/deprecated';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 export const TileWithExtraContent: React.FunctionComponent = () => (

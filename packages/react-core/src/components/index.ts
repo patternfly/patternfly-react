@@ -65,7 +65,6 @@ export * from './Switch';
 export * from './Tabs';
 export * from './TextArea';
 export * from './TextInput';
-export * from './Tile';
 export * from './TimePicker';
 export * from './Timestamp';
 export * from './Title';
