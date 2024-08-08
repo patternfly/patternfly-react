@@ -18,9 +18,9 @@ export const SelectTypeaheadDemo: React.FunctionComponent = () => {
   const [isCreatable, setIsCreatable] = React.useState<boolean>(false);
   const [isCreateOptionOnTop, setIsCreateOptionOnTop] = React.useState<boolean>(false);
 
-  const initialOptions = React.useMemo<TypeaheadSelectOption[]>(
-    () => options.map((o) => ({ ...o, selected: o.value === selected })),
-    [options, selected]
+  const selectOptions = React.useMemo<TypeaheadSelectOption[]>(
+    () => options.map((o) => ({ ...o })).sort((a, b) => a.content.localeCompare(b.content)),
+    [options]
   );
 
   React.useEffect(() => {
@@ -30,16 +30,18 @@ export const SelectTypeaheadDemo: React.FunctionComponent = () => {
   return (
     <>
       <TypeaheadSelect
-        initialOptions={initialOptions}
+        selectOptions={selectOptions}
         placeholder="Select a state"
         noOptionsFoundMessage={(filter) => `No state was found for "${filter}"`}
         onClearSelection={() => setSelected(undefined)}
-        onSelect={(_ev, selection) => {
+        onSelect={(_ev, selectedValue) => {
+          const selection = String(selectedValue);
           if (!options.find((o) => o.value === selection)) {
-            setOptions([...options, { content: String(selection), value: String(selection) }]);
+            setOptions([...options, { content: selection, value: selection }]);
           }
-          setSelected(String(selection));
+          setSelected((prev) => (prev !== selection ? selection : undefined));
         }}
+        selected={selected}
         isCreatable={isCreatable}
         isCreateOptionOnTop={isCreateOptionOnTop}
       />
