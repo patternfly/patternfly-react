@@ -30,6 +30,9 @@ import { SimpleSelect, CheckboxSelect, TypeaheadSelect, MultiTypeaheadSelect } f
 
 ### Typeahead
 
+Typeahead is a select variant that replaces the typical button toggle for opening the select menu with a text input and button toggle combo. As a user enters characters into the text input, the menu options will be filtered to match.
+
+Selection can be given by either the `selected` property or by setting `isSelected` on the option that is currently selected.
 ```ts file="TypeaheadSelectDemo.tsx"
 
 ```

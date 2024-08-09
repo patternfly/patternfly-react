@@ -5,7 +5,7 @@ import { TypeaheadSelect } from '../TypeaheadSelect';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 
 test('renders typeahead select with options', async () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
@@ -13,7 +13,7 @@ test('renders typeahead select with options', async () => {
 
   const user = userEvent.setup();
 
-  render(<TypeaheadSelect initialOptions={initialOptions} />);
+  render(<TypeaheadSelect selectOptions={selectOptions} />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
 
@@ -28,8 +28,8 @@ test('renders typeahead select with options', async () => {
   expect(option3).toBeInTheDocument();
 });
 
-test('selects options when clicked', async () => {
-  const initialOptions = [
+test('shows the selected item as selected', async () => {
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
@@ -37,7 +37,7 @@ test('selects options when clicked', async () => {
 
   const user = userEvent.setup();
 
-  render(<TypeaheadSelect initialOptions={initialOptions} />);
+  render(<TypeaheadSelect selectOptions={selectOptions} selected="option1" />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
 
@@ -45,15 +45,11 @@ test('selects options when clicked', async () => {
 
   const option1 = screen.getByRole('option', { name: 'Option 1' });
 
-  expect(option1).not.toHaveClass(styles.modifiers.selected);
-
-  await user.click(option1);
-
   expect(option1).toHaveClass(styles.modifiers.selected);
 });
 
 test('calls the onSelect callback with the selected value when an option is selected', async () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
@@ -62,7 +58,7 @@ test('calls the onSelect callback with the selected value when an option is sele
   const user = userEvent.setup();
   const onSelectMock = jest.fn();
 
-  render(<TypeaheadSelect initialOptions={initialOptions} onSelect={onSelectMock} />);
+  render(<TypeaheadSelect selectOptions={selectOptions} onSelect={onSelectMock} />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
 
@@ -78,23 +74,23 @@ test('calls the onSelect callback with the selected value when an option is sele
   expect(onSelectMock).toHaveBeenCalledWith(expect.anything(), 'option1');
 });
 
-test('deselects options when clear button is clicked', async () => {
-  const initialOptions = [
+test('calls the onClearSelection callback when clear button is clicked', async () => {
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
   ];
+  const onClearSelectionMock = jest.fn();
 
   const user = userEvent.setup();
 
-  render(<TypeaheadSelect initialOptions={initialOptions} />);
+  render(<TypeaheadSelect selectOptions={selectOptions} selected="option1" onClearSelection={onClearSelectionMock} />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
 
   await user.click(toggle);
 
   const option1 = screen.getByRole('option', { name: 'Option 1' });
-  await user.click(option1);
   expect(option1).toHaveClass(styles.modifiers.selected);
 
   const input = screen.getByRole('combobox');
@@ -102,14 +98,12 @@ test('deselects options when clear button is clicked', async () => {
 
   const clearButton = screen.getByRole('button', { name: 'Clear input value' });
   await user.click(clearButton);
-  expect(input).toHaveValue('');
 
-  await user.click(toggle);
-  expect(screen.getByRole('option', { name: 'Option 1' })).not.toHaveClass(styles.modifiers.selected);
+  expect(onClearSelectionMock).toHaveBeenCalledTimes(1);
 });
 
 test('toggles the select menu when the toggle button is clicked', async () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
@@ -117,7 +111,7 @@ test('toggles the select menu when the toggle button is clicked', async () => {
 
   const user = userEvent.setup();
 
-  render(<TypeaheadSelect initialOptions={initialOptions} />);
+  render(<TypeaheadSelect selectOptions={selectOptions} />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
 
@@ -134,7 +128,7 @@ test('toggles the select menu when the toggle button is clicked', async () => {
 });
 
 test('calls the onToggle callback when the toggle is clicked', async () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
@@ -143,7 +137,7 @@ test('calls the onToggle callback when the toggle is clicked', async () => {
   const user = userEvent.setup();
   const onToggleMock = jest.fn();
 
-  render(<TypeaheadSelect initialOptions={initialOptions} onToggle={onToggleMock} />);
+  render(<TypeaheadSelect selectOptions={selectOptions} onToggle={onToggleMock} />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
 
@@ -161,39 +155,39 @@ test('calls the onToggle callback when the toggle is clicked', async () => {
 });
 
 test('Passes toggleWidth', () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
   ];
 
-  render(<TypeaheadSelect initialOptions={initialOptions} toggleWidth="500px" />);
+  render(<TypeaheadSelect selectOptions={selectOptions} toggleWidth="500px" />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
   expect(toggle.parentElement).toHaveAttribute('style', 'width: 500px;');
 });
 
 test('Passes additional toggleProps', () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
   ];
 
-  render(<TypeaheadSelect initialOptions={initialOptions} toggleProps={{ id: 'toggle' }} />);
+  render(<TypeaheadSelect selectOptions={selectOptions} toggleProps={{ id: 'toggle' }} />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
   expect(toggle.parentElement).toHaveAttribute('id', 'toggle');
 });
 
 test('passes custom placeholder text', async () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
   ];
 
-  render(<TypeaheadSelect initialOptions={initialOptions} placeholder="custom" />);
+  render(<TypeaheadSelect selectOptions={selectOptions} placeholder="custom" />);
 
   const input = screen.getByRole('combobox');
 
@@ -201,14 +195,14 @@ test('passes custom placeholder text', async () => {
 });
 
 test('displays noOptionsFoundMessage when filter returns no results', async () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
   ];
   const user = userEvent.setup();
 
-  render(<TypeaheadSelect initialOptions={initialOptions} />);
+  render(<TypeaheadSelect selectOptions={selectOptions} />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
   const input = screen.getByRole('combobox');
@@ -235,14 +229,14 @@ test('displays noOptionsFoundMessage when filter returns no results', async () =
 });
 
 test('displays custom noOptionsFoundMessage', async () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
   ];
   const user = userEvent.setup();
 
-  render(<TypeaheadSelect initialOptions={initialOptions} noOptionsFoundMessage="custom" />);
+  render(<TypeaheadSelect selectOptions={selectOptions} noOptionsFoundMessage="custom" />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
   const input = screen.getByRole('combobox');
@@ -269,7 +263,7 @@ test('displays custom noOptionsFoundMessage', async () => {
 });
 
 test('disables the select when isDisabled prop is true', async () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
@@ -277,7 +271,7 @@ test('disables the select when isDisabled prop is true', async () => {
 
   const user = userEvent.setup();
 
-  render(<TypeaheadSelect initialOptions={initialOptions} isDisabled={true} />);
+  render(<TypeaheadSelect selectOptions={selectOptions} isDisabled={true} />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
 
@@ -289,11 +283,11 @@ test('disables the select when isDisabled prop is true', async () => {
 });
 
 test('passes other SelectOption props to the SelectOption component', async () => {
-  const initialOptions = [{ content: 'Option 1', value: 'option1', isDisabled: true }];
+  const selectOptions = [{ content: 'Option 1', value: 'option1', isDisabled: true }];
 
   const user = userEvent.setup();
 
-  render(<TypeaheadSelect initialOptions={initialOptions} />);
+  render(<TypeaheadSelect selectOptions={selectOptions} />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
 
@@ -303,38 +297,8 @@ test('passes other SelectOption props to the SelectOption component', async () =
   expect(option1).toBeDisabled();
 });
 
-test('displays the option in input when option is selected', async () => {
-  const initialOptions = [
-    { content: 'Option 1', value: 'option1' },
-    { content: 'Option 2', value: 'option2' },
-    { content: 'Option 3', value: 'option3' }
-  ];
-
-  const user = userEvent.setup();
-
-  render(<TypeaheadSelect initialOptions={initialOptions} />);
-
-  const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
-  const input = screen.getByRole('combobox');
-
-  expect(input).toHaveAttribute('placeholder', 'Select an option');
-
-  await user.click(toggle);
-
-  const option1 = screen.getByRole('option', { name: 'Option 1' });
-
-  await user.click(option1);
-
-  expect(input).toHaveValue('Option 1');
-
-  const clearButton = screen.getByRole('button', { name: 'Clear input value' });
-  await user.click(clearButton);
-
-  expect(input).toHaveValue('');
-});
-
 test('typing in input filters options', async () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
@@ -342,7 +306,7 @@ test('typing in input filters options', async () => {
 
   const user = userEvent.setup();
 
-  render(<TypeaheadSelect initialOptions={initialOptions} />);
+  render(<TypeaheadSelect selectOptions={selectOptions} />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
   const input = screen.getByRole('combobox');
@@ -368,7 +332,7 @@ test('typing in input filters options', async () => {
 });
 
 test('typing in input triggers onInputChange callback', async () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
@@ -377,7 +341,7 @@ test('typing in input triggers onInputChange callback', async () => {
   const user = userEvent.setup();
   const onInputChangeMock = jest.fn();
 
-  render(<TypeaheadSelect initialOptions={initialOptions} onInputChange={onInputChangeMock} />);
+  render(<TypeaheadSelect selectOptions={selectOptions} onInputChange={onInputChangeMock} />);
 
   const input = screen.getByRole('combobox');
 
@@ -391,7 +355,7 @@ test('typing in input triggers onInputChange callback', async () => {
 });
 
 test('Matches snapshot', async () => {
-  const initialOptions = [
+  const selectOptions = [
     { content: 'Option 1', value: 'option1' },
     { content: 'Option 2', value: 'option2' },
     { content: 'Option 3', value: 'option3' }
@@ -399,7 +363,7 @@ test('Matches snapshot', async () => {
 
   const user = userEvent.setup();
 
-  const { asFragment } = render(<TypeaheadSelect initialOptions={initialOptions} />);
+  const { asFragment } = render(<TypeaheadSelect selectOptions={selectOptions} />);
 
   const toggle = screen.getByRole('button', { name: 'Typeahead menu toggle' });
   await user.click(toggle);
