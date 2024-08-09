@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {
+  Button,
   Divider,
   Form,
   FormGroup,
   FormGroupLabelHelp,
   FormProps,
   FormSection,
-  TextInput,
   Checkbox,
   Popover,
   ValidatedOptions,
@@ -16,19 +16,42 @@ import {
   Select,
   SelectList,
   SelectOption,
-  MenuToggle
+  SelectOptionProps,
+  TextInput,
+  TextInputGroup,
+  TextInputGroupUtilities,
+  TextInputGroupMain,
+  Label,
+  LabelGroup,
+  MenuToggle,
+  MenuToggleElement
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
+const initialSelectOptions = [
+  { value: 'Alabama', children: 'Alabama' },
+  { value: 'Florida', children: 'Florida' },
+  { value: 'New Jersey', children: 'New Jersey' },
+  { value: 'New Mexico', children: 'New Mexico' },
+  { value: 'New York', children: 'New York' },
+  { value: 'North Carolina', children: 'North Carolina' }
+];
+
+const NO_RESULTS = 'no results';
 export interface FormState {
   value: string;
   isValid: boolean;
   isOpen: boolean;
   selected: string[];
+  selectOptions: SelectOptionProps[];
   validatedValue: string;
   validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.warning | ValidatedOptions.success;
   checkboxChecked: boolean;
+  inputValue: string;
+  focusedItemIndex: number | null;
+  activeItemId: string | null;
 }
 
 export class FormDemo extends Component<FormProps, FormState> {
@@ -39,19 +62,25 @@ export class FormDemo extends Component<FormProps, FormState> {
       isValid: false,
       isOpen: false,
       selected: [],
+      selectOptions: initialSelectOptions,
       validatedValue: '',
       validated: ValidatedOptions.default,
-      checkboxChecked: false
+      checkboxChecked: false,
+      inputValue: '',
+      focusedItemIndex: null,
+      activeItemId: null
     };
 
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
   }
 
   labelHelpRef: React.RefObject<HTMLSpanElement> = React.createRef();
+  textInputRef: React.useRef<HTMLInputElement> = React.createRef();
 
   handleTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     this.setState({ value, isValid: /^\d+$/.test(value) });
   };
+
   handleValidatedTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     let validated = ValidatedOptions.default;
     if (value.length === 0) {
@@ -61,11 +90,28 @@ export class FormDemo extends Component<FormProps, FormState> {
     }
     this.setState({ validatedValue: value, validated });
   };
-  onToggle = (_event: any) => {
+
+  createItemId = (value: any) => `select-multi-typeahead-${value.replace(' ', '-')}`;
+
+  setActiveAndFocusedItem = (itemIndex: number) => {
     this.setState({
-      isOpen: !this.state.isOpen
+      focusedItemIndex: itemIndex
+    });
+    const focusedItem = this.state.selectOptions[itemIndex];
+    this.setState({
+      activeItemId: this.createItemId(focusedItem.value)
     });
   };
+
+  resetActiveAndFocusedItem = () => {
+    this.setState({
+      focusedItemIndex: null
+    });
+    this.setState({
+      activeItemId: null
+    });
+  };
+
   onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, selection: string | number | undefined) => {
     const { selected } = this.state;
     if (selection) {
@@ -85,6 +131,115 @@ export class FormDemo extends Component<FormProps, FormState> {
     }
   };
 
+  handleMenuArrowKeys = (key: string) => {
+    const { selectOptions, isOpen, focusedItemIndex } = this.state;
+    let indexToFocus = 0;
+
+    if (!isOpen) {
+      this.setState({
+        isOpen: true
+      });
+    }
+
+    if (selectOptions.every((option) => option.isDisabled)) {
+      return;
+    }
+
+    if (key === 'ArrowUp') {
+      // When no index is set or at the first index, focus to the last, otherwise decrement focus index
+      if (focusedItemIndex === null || focusedItemIndex === 0) {
+        indexToFocus = selectOptions.length - 1;
+      } else {
+        indexToFocus = focusedItemIndex - 1;
+      }
+
+      // Skip disabled options
+      while (selectOptions[indexToFocus].isDisabled) {
+        indexToFocus--;
+        if (indexToFocus === -1) {
+          indexToFocus = selectOptions.length - 1;
+        }
+      }
+    }
+
+    if (key === 'ArrowDown') {
+      // When no index is set or at the last index, focus to the first, otherwise increment focus index
+      if (focusedItemIndex === null || focusedItemIndex === selectOptions.length - 1) {
+        indexToFocus = 0;
+      } else {
+        indexToFocus = focusedItemIndex + 1;
+      }
+
+      // Skip disabled options
+      while (selectOptions[indexToFocus].isDisabled) {
+        indexToFocus++;
+        if (indexToFocus === selectOptions.length) {
+          indexToFocus = 0;
+        }
+      }
+    }
+
+    this.setActiveAndFocusedItem(indexToFocus);
+  };
+
+  onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const { selectOptions, isOpen, focusedItemIndex } = this.state;
+    const focusedItem = focusedItemIndex !== null ? selectOptions[focusedItemIndex] : null;
+
+    switch (event.key) {
+      case 'Enter':
+        if (isOpen && focusedItem && focusedItem.value !== NO_RESULTS && !focusedItem.isAriaDisabled) {
+          this.onSelect(event, focusedItem.value);
+        }
+
+        if (!isOpen) {
+          this.setState({
+            isOpen: true
+          });
+        }
+
+        break;
+      case 'ArrowUp':
+      case 'ArrowDown':
+        event.preventDefault();
+        this.handleMenuArrowKeys(event.key);
+        break;
+    }
+  };
+
+  onToggle = (_event: any) => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+    this.textInputRef?.current?.focus();
+  };
+
+  closeMenu = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+    this.resetActiveAndFocusedItem();
+  };
+
+  onInputClick = () => {
+    if (!this.state.isOpen) {
+      this.setState({ isOpen: true });
+    } else if (!this.state.inputValue) {
+      this.closeMenu();
+    }
+  };
+
+  onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+    this.setState({ inputValue: value });
+    this.resetActiveAndFocusedItem();
+  };
+  onClearButtonClick = () => {
+    this.setState({ selected: [] });
+    this.setState({ inputValue: '' });
+    this.resetActiveAndFocusedItem();
+    this.textInputRef?.current?.focus();
+  };
+
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -96,16 +251,70 @@ export class FormDemo extends Component<FormProps, FormState> {
   }
 
   render() {
-    const { value, isValid, isOpen, selected, validatedValue, validated, checkboxChecked } = this.state;
+    const {
+      value,
+      isValid,
+      isOpen,
+      selectOptions,
+      selected,
+      validatedValue,
+      validated,
+      checkboxChecked,
+      inputValue,
+      activeItemId
+    } = this.state;
     const titleId = 'multi-typeahead-select-id';
-    const options = [
-      { value: 'Alabama', disabled: false },
-      { value: 'Florida', disabled: false },
-      { value: 'New Jersey', disabled: false },
-      { value: 'New Mexico', disabled: false },
-      { value: 'New York', disabled: false },
-      { value: 'North Carolina', disabled: false }
-    ];
+
+    const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
+      <MenuToggle
+        variant="typeahead"
+        aria-label="Multi typeahead menu toggle"
+        onClick={this.onToggle}
+        innerRef={toggleRef}
+        isExpanded={isOpen}
+        isFullWidth
+      >
+        <TextInputGroup isPlain>
+          <TextInputGroupMain
+            value={inputValue}
+            onClick={this.onInputClick}
+            onChange={this.onTextInputChange}
+            onKeyDown={this.onInputKeyDown}
+            id="multi-typeahead-select-input"
+            autoComplete="off"
+            innerRef={this.textInputRef}
+            placeholder="Select a state"
+            {...(activeItemId && { 'aria-activedescendant': activeItemId })}
+            role="combobox"
+            isExpanded={isOpen}
+            aria-controls="select-multi-typeahead-listbox"
+          >
+            <LabelGroup aria-label="Current selections">
+              {selected.map((selection, index) => (
+                <Label
+                  key={index}
+                  variant="outline"
+                  onClose={(ev: any) => {
+                    ev.stopPropagation();
+                    this.onSelect(ev, selection);
+                  }}
+                >
+                  {selection}
+                </Label>
+              ))}
+            </LabelGroup>
+          </TextInputGroupMain>
+          <TextInputGroupUtilities {...(selected.length === 0 ? { style: { display: 'none' } } : {})}>
+            <Button
+              variant="plain"
+              onClick={this.onClearButtonClick}
+              aria-label="Clear input value"
+              icon={<TimesIcon aria-hidden />}
+            />
+          </TextInputGroupUtilities>
+        </TextInputGroup>
+      </MenuToggle>
+    );
 
     return (
       <>
@@ -117,13 +326,8 @@ export class FormDemo extends Component<FormProps, FormState> {
             labelHelp={
               <Popover
                 triggerRef={this.labelHelpRef}
-                headerContent={<div>The age of a person</div>}
-                bodyContent={
-                  <div>
-                    Age is typically measured in years. It is also common to measure age in months for newborns, e.g. 18
-                    months.
-                  </div>
-                }
+                headerContent="The age of a person"
+                bodyContent="Age is typically measured in years. It is also common to measure age in months for newborns, e.g. 18months."
               >
                 <FormGroupLabelHelp ref={this.labelHelpRef} aria-label="More info for name field" />
               </Popover>
@@ -153,27 +357,25 @@ export class FormDemo extends Component<FormProps, FormState> {
 
         <Form id="form-demo-2">
           <FormGroup fieldId="select-state-typeahead">
-            <span id={titleId} hidden>
-              Select a state
-            </span>
-            <Select
-              aria-label="Select a state"
-              onSelect={this.onSelect}
-              selected={selected}
-              isOpen={isOpen}
-              aria-labelledby={titleId}
-              toggle={(toggleRef: any) => (
-                <MenuToggle ref={toggleRef} onClick={this.onToggle} isExpanded={isOpen}>
-                  {isOpen ? 'Expanded' : 'Collapsed'}
-                </MenuToggle>
-              )}
-            >
-              <SelectList>
-                {options.map((option, index) => (
-                  <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-                ))}
-              </SelectList>
-            </Select>
+            <>
+              <span id={titleId} hidden>
+                Select a state
+              </span>
+              <Select
+                aria-label="Select a state"
+                onSelect={this.onSelect}
+                selected={selected}
+                isOpen={isOpen}
+                aria-labelledby={titleId}
+                toggle={toggle}
+              >
+                <SelectList>
+                  {selectOptions.map((option, index) => (
+                    <SelectOption key={index} {...option} />
+                  ))}
+                </SelectList>
+              </Select>
+            </>
           </FormGroup>
           <FormSection title="Title" titleElement="h4">
             <FormGroup id="formgroup-validated" label="Validated Age" type="number" fieldId="age2">

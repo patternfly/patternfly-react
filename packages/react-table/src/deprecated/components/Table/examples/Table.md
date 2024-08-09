@@ -436,8 +436,8 @@ class EditableRowsTable extends React.Component {
                   { value: 'Option 5' }
                 ],
                 editableSelectProps: {
-                  variant: 'single',
-                  'aria-label': 'Row 1 cell 4 content'
+                  'aria-label': 'Row 1 cell 4 content',
+                  onOpenChange: (isOpen: boolean) => this.onOpenChange(isOpen, 0, 3)
                 }
               }
             }
@@ -531,9 +531,10 @@ class EditableRowsTable extends React.Component {
                   { value: 'Option 5' }
                 ],
                 editableSelectProps: {
-                  variant: 'typeaheadmulti',
                   'aria-label': 'Row 2 cell 4 content',
-                  toggleId: 'editable-toggle'
+                  toggleId: 'editable-toggle',
+                  onOpenChange: (isOpen: boolean) => this.onOpenChange(isOpen, 1, 3)
+
                 }
               }
             }
@@ -647,8 +648,9 @@ class EditableRowsTable extends React.Component {
                   { value: 'Option 5' }
                 ],
                 editableSelectProps: {
-                  variant: 'checkbox',
-                  'aria-label': 'Row 3 cell 4 content'
+                  'aria-label': 'Row 3 cell 4 content',
+                  onOpenChange: (isOpen: boolean) => this.onOpenChange(isOpen, 2, 3)
+
                 }
               }
             }
@@ -735,6 +737,15 @@ class EditableRowsTable extends React.Component {
         rows: newRows
       });
     };
+
+    // set open state if component closes menu on click (e.g. when you click outside of the menu)
+    this.onOpenChange = (isOpen: boolean, rowIndex: string | number | undefined, cellIndex: string | number | undefined) => {
+      const newRows = Array.from(this.state.rows);
+      newRows[rowIndex].cells[cellIndex].props.isSelectOpen = isOpen;
+      this.setState({
+        rows: newRows
+      });
+    }
 
     this.onToggle = (isOpen, rowIndex, cellIndex) => {
       console.log('isOpen', isOpen);

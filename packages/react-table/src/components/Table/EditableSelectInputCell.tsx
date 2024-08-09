@@ -18,8 +18,7 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
     event: React.MouseEvent | React.ChangeEvent,
     newValue: any | any[],
     rowIndex: number,
-    cellIndex: number,
-    isPlaceholder?: boolean
+    cellIndex: number
   ) => void;
   /** Options to display in the expandable select menu */
   options?: React.ReactElement[];
@@ -47,13 +46,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
   options = [] as React.ReactElement[],
   props
 }: IEditableSelectInputCell) => {
-  const [isSelectOpen, setIsSelectOpen] = React.useState(isOpen);
-
-  const onSelectHandler = (
-    event: React.MouseEvent | React.ChangeEvent,
-    newValue: any | any[]
-    //    isPlaceholder: boolean
-  ) => {
+  const onSelectHandler = (event: React.MouseEvent | React.ChangeEvent, newValue: any | any[]) => {
     onSelect(event, newValue, rowIndex, cellIndex);
   };
 
@@ -63,17 +56,16 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
 
   const select = (
     <Select
-      {...props.editableSelectProps}
       onSelect={onSelectHandler}
       {...(clearSelection && { onClear })}
-      isOpen={isSelectOpen}
-      onOpenChange={(isOpen: boolean) => setIsSelectOpen(isOpen)}
+      isOpen={isOpen}
       selected={selections}
       toggle={(toggleRef: any) => (
-        <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isSelectOpen}>
-          {isSelectOpen ? 'Expanded' : 'Collapsed'}
+        <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen}>
+          {isOpen ? 'Expanded' : 'Collapsed'}
         </MenuToggle>
       )}
+      {...props.editableSelectProps}
     >
       <SelectList>{options}</SelectList>
     </Select>

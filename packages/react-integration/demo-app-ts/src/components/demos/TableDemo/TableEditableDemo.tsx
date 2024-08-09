@@ -163,7 +163,8 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                 ],
                 editableSelectProps: {
                   variant: 'checkbox',
-                  'aria-label': 'Row 1 cell 5 content'
+                  'aria-label': 'Row 1 cell 5 content',
+                  onOpenChange: (isOpen: boolean) => this.onOpenChange(isOpen, 0, 4)
                 }
               }
             }
@@ -276,7 +277,8 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                 ],
                 editableSelectProps: {
                   variant: 'single',
-                  'aria-label': 'Row 2 cell 5 content'
+                  'aria-label': 'Row 2 cell 5 content',
+                  onOpenChange: (isOpen: boolean) => this.onOpenChange(isOpen, 1, 4)
                 }
               }
             }
@@ -369,6 +371,15 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
       newCellProps.isSelectOpen = false;
     }
 
+    this.setState({
+      rows: newRows
+    });
+  };
+
+  // set open state if component closes menu on click (e.g. when you click outside of the menu)
+  onOpenChange = (isOpen: boolean, rowIndex: string | number | undefined, cellIndex: string | number | undefined) => {
+    const newRows = Array.from(this.state.rows);
+    newRows[rowIndex as number].cells[cellIndex].props.isSelectOpen = isOpen;
     this.setState({
       rows: newRows
     });
