@@ -129,6 +129,7 @@ export class FormDemo extends Component<FormProps, FormState> {
         );
       }
     }
+    this.textInputRef.current?.focus();
   };
 
   handleMenuArrowKeys = (key: string) => {
@@ -216,7 +217,7 @@ export class FormDemo extends Component<FormProps, FormState> {
 
   closeMenu = () => {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: false
     });
     this.resetActiveAndFocusedItem();
   };
@@ -368,6 +369,10 @@ export class FormDemo extends Component<FormProps, FormState> {
                 isOpen={isOpen}
                 aria-labelledby={titleId}
                 toggle={toggle}
+                shouldFocusFirstItemOnOpen={false}
+                onOpenChange={(isOpen: any) => {
+                  !isOpen && this.closeMenu();
+                }}
               >
                 <SelectList>
                   {selectOptions.map((option, index) => (

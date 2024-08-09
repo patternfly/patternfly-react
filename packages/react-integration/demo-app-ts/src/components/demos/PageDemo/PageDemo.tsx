@@ -72,10 +72,15 @@ export class PageDemo extends Component {
     );
 
     const masthead = (
-      <Masthead>
+      <Masthead id="page-demo-masthead">
         <MastheadMain>
           <MastheadToggle>
-            <PageToggleButton variant="plain" aria-label="Global navigation">
+            <PageToggleButton
+              variant="plain"
+              aria-label="Global navigation"
+              isSidebarOpen={isNavOpen}
+              onSidebarToggle={this.onNavToggle}
+            >
               <BarsIcon />
             </PageToggleButton>
           </MastheadToggle>
