@@ -29,9 +29,7 @@ export const ModalWithHelp: React.FunctionComponent = () => {
             }
             footerContent="Popover Footer"
           >
-            <Button variant="plain" aria-label="Help">
-              <HelpIcon />
-            </Button>
+            <Button variant="plain" aria-label="Help" icon={<HelpIcon />} />
           </Popover>
         }
         isOpen={isModalOpen}

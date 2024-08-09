@@ -185,9 +185,11 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
               />
             </InputGroupItem>
             <InputGroupItem>
-              <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
-                <SearchIcon />
-              </Button>
+              <Button
+                variant={ButtonVariant.tertiary}
+                aria-label="search button for search input"
+                icon={<SearchIcon />}
+              />
             </InputGroupItem>
           </InputGroup>
         </ToolbarItem>
@@ -252,19 +254,13 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
         </ToolbarToggleGroup>
         <ToolbarGroup variant="action-group-plain">
           <ToolbarItem>
-            <Button variant="plain">
-              <EditIcon />
-            </Button>
+            <Button variant="plain" icon={<EditIcon />} />
           </ToolbarItem>
           <ToolbarItem>
-            <Button variant="plain">
-              <CloneIcon />
-            </Button>
+            <Button variant="plain" icon={<CloneIcon />} />
           </ToolbarItem>
           <ToolbarItem>
-            <Button variant="plain">
-              <SyncIcon />
-            </Button>
+            <Button variant="plain" icon={<SyncIcon />} />
           </ToolbarItem>
         </ToolbarGroup>
         <ToolbarItem>

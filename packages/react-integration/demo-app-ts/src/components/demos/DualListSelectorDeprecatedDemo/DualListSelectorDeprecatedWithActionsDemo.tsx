@@ -126,9 +126,8 @@ class DualListSelectorDeprecatedWithActionsDemo extends React.Component<DLSProps
         onClick={() => this.onSort('available')}
         aria-label="Sort"
         key="availableSortButton"
-      >
-        {this.state.availableDescending ? <PficonSortCommonDescIcon /> : <PficonSortCommonAscIcon />}
-      </Button>,
+        icon={this.state.availableDescending ? <PficonSortCommonDescIcon /> : <PficonSortCommonAscIcon />}
+      />,
       <Dropdown
         key="availableDropdown"
         isOpen={this.state.isAvailableKebabOpen}
@@ -154,9 +153,8 @@ class DualListSelectorDeprecatedWithActionsDemo extends React.Component<DLSProps
         onClick={() => this.onSort('chosen')}
         aria-label="Sort"
         key="chosenSortButton"
-      >
-        {this.state.chosenDescending ? <PficonSortCommonDescIcon /> : <PficonSortCommonAscIcon />}
-      </Button>,
+        icon={this.state.chosenDescending ? <PficonSortCommonDescIcon /> : <PficonSortCommonAscIcon />}
+      />,
       <Dropdown
         isOpen={this.state.isChosenKebabOpen}
         onOpenChange={(isOpen) => this.setState({ isChosenKebabOpen: isOpen })}

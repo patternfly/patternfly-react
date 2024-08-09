@@ -22,7 +22,7 @@ exports[`numberInput disables lower threshold 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -75,7 +75,7 @@ exports[`numberInput disables lower threshold 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -123,7 +123,7 @@ exports[`numberInput disables upper threshold 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -177,7 +177,7 @@ exports[`numberInput disables upper threshold 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -226,7 +226,7 @@ exports[`numberInput passes button props successfully 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -280,7 +280,7 @@ exports[`numberInput passes button props successfully 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -328,7 +328,7 @@ exports[`numberInput passes input props successfully 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -381,7 +381,7 @@ exports[`numberInput passes input props successfully 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -430,7 +430,7 @@ exports[`numberInput renders custom width 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -483,7 +483,7 @@ exports[`numberInput renders custom width 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -532,7 +532,7 @@ exports[`numberInput renders defaults & extra props 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -585,7 +585,7 @@ exports[`numberInput renders defaults & extra props 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -634,7 +634,7 @@ exports[`numberInput renders disabled 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -689,7 +689,7 @@ exports[`numberInput renders disabled 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -737,7 +737,7 @@ exports[`numberInput renders error validated 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -811,7 +811,7 @@ exports[`numberInput renders error validated 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -859,7 +859,7 @@ exports[`numberInput renders success validated 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -933,7 +933,7 @@ exports[`numberInput renders success validated 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -986,7 +986,7 @@ exports[`numberInput renders unit & position 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -1039,7 +1039,7 @@ exports[`numberInput renders unit & position 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -1087,7 +1087,7 @@ exports[`numberInput renders unit 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -1140,7 +1140,7 @@ exports[`numberInput renders unit 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -1193,7 +1193,7 @@ exports[`numberInput renders value 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -1246,7 +1246,7 @@ exports[`numberInput renders value 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -1294,7 +1294,7 @@ exports[`numberInput renders warning validated 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"
@@ -1368,7 +1368,7 @@ exports[`numberInput renders warning validated 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__text"
+            class="pf-v6-c-button__icon pf-m-start"
           >
             <span
               class="pf-v6-c-number-input__icon"

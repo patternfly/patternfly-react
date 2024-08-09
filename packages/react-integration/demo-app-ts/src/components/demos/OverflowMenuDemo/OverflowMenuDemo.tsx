@@ -154,19 +154,13 @@ export class OverflowMenuDemo extends React.Component {
           </OverflowMenuGroup>
           <OverflowMenuGroup groupType="icon">
             <OverflowMenuItem>
-              <Button variant="link" aria-label="Align left">
-                <AlignLeftIcon />
-              </Button>
+              <Button variant="link" aria-label="Align left" icon={<AlignLeftIcon />} />
             </OverflowMenuItem>
             <OverflowMenuItem>
-              <Button variant="link" aria-label="Align center">
-                <AlignCenterIcon />
-              </Button>
+              <Button variant="link" aria-label="Align center" icon={<AlignCenterIcon />} />
             </OverflowMenuItem>
             <OverflowMenuItem>
-              <Button variant="link" aria-label="Align right">
-                <AlignRightIcon />
-              </Button>
+              <Button variant="link" aria-label="Align right" icon={<AlignRightIcon />} />
             </OverflowMenuItem>
           </OverflowMenuGroup>
         </OverflowMenuContent>

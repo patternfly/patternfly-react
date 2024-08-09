@@ -20,9 +20,7 @@ export const DrawerCloseButton: React.FunctionComponent<DrawerCloseButtonProps> 
   ...props
 }: DrawerCloseButtonProps) => (
   <div className={css(styles.drawerClose, className)} {...props}>
-    <Button variant="plain" onClick={onClose} aria-label={ariaLabel}>
-      <TimesIcon />
-    </Button>
+    <Button variant="plain" onClick={onClose} aria-label={ariaLabel} icon={<TimesIcon />} />
   </div>
 );
 DrawerCloseButton.displayName = 'DrawerCloseButton';

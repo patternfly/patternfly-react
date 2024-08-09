@@ -124,12 +124,13 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
             aria-label={minusBtnAriaLabel}
             isDisabled={isDisabled || (typeof value === 'number' ? value : DEFAULT_VALUE) <= min}
             onClick={(evt) => onMinus(evt, inputName)}
+            icon={
+              <span className={css(styles.numberInputIcon)}>
+                <MinusIcon aria-hidden="true" />
+              </span>
+            }
             {...minusBtnProps}
-          >
-            <span className={css(styles.numberInputIcon)}>
-              <MinusIcon aria-hidden="true" />
-            </span>
-          </Button>
+          />
         </InputGroupItem>
         <InputGroupItem>
           <TextInput
@@ -152,12 +153,13 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
             aria-label={plusBtnAriaLabel}
             isDisabled={isDisabled || (typeof value === 'number' ? value : DEFAULT_VALUE) >= max}
             onClick={(evt) => onPlus(evt, inputName)}
+            icon={
+              <span className={css(styles.numberInputIcon)}>
+                <PlusIcon aria-hidden="true" />
+              </span>
+            }
             {...plusBtnProps}
-          >
-            <span className={css(styles.numberInputIcon)}>
-              <PlusIcon aria-hidden="true" />
-            </span>
-          </Button>
+          />
         </InputGroupItem>
       </InputGroup>
       {unit && unitPosition === 'after' && numberInputUnit}

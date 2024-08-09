@@ -128,9 +128,8 @@ export const ContextSelectorDemo: React.FunctionComponent = () => {
                 aria-label="Search menu items"
                 id="pf-v6-context-selector-search-button-id-1"
                 onClick={onSearchButtonClick}
-              >
-                <SearchIcon aria-hidden="true" />
-              </Button>
+                icon={<SearchIcon aria-hidden="true" />}
+              />
             </InputGroupItem>
           </InputGroup>
         </MenuSearchInput>

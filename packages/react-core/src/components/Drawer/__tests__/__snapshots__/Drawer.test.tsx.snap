@@ -43,7 +43,7 @@ exports[`Drawer expands from bottom 1`] = `
                 type="button"
               >
                 <span
-                  class="pf-v6-c-button__text"
+                  class="pf-v6-c-button__icon pf-m-start"
                 >
                   <svg
                     aria-hidden="true"
@@ -136,7 +136,7 @@ exports[`Drawer has resizable callback and id 1`] = `
                   type="button"
                 >
                   <span
-                    class="pf-v6-c-button__text"
+                    class="pf-v6-c-button__icon pf-m-start"
                   >
                     <svg
                       aria-hidden="true"
@@ -231,7 +231,7 @@ exports[`Drawer has resizable css and color variants 1`] = `
                   type="button"
                 >
                   <span
-                    class="pf-v6-c-button__text"
+                    class="pf-v6-c-button__icon pf-m-start"
                   >
                     <svg
                       aria-hidden="true"
@@ -360,7 +360,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
                 type="button"
               >
                 <span
-                  class="pf-v6-c-button__text"
+                  class="pf-v6-c-button__icon pf-m-start"
                 >
                   <svg
                     aria-hidden="true"
@@ -434,7 +434,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
                 type="button"
               >
                 <span
-                  class="pf-v6-c-button__text"
+                  class="pf-v6-c-button__icon pf-m-start"
                 >
                   <svg
                     aria-hidden="true"
@@ -508,7 +508,7 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
                 type="button"
               >
                 <span
-                  class="pf-v6-c-button__text"
+                  class="pf-v6-c-button__icon pf-m-start"
                 >
                   <svg
                     aria-hidden="true"

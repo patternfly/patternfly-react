@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import calendarMonthStyles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
 import { TextInput, TextInputProps } from '../TextInput/TextInput';
+import { Button } from '../Button';
 import { Popover, PopoverProps } from '../Popover/Popover';
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
@@ -325,17 +325,15 @@ const DatePickerBase = (
               />
             </InputGroupItem>
             <InputGroupItem>
-              <button
+              <Button
                 ref={buttonRef}
-                // TODO: Removed style follow up work with issue #8457
-                className={css(buttonStyles.button, buttonStyles.modifiers.control)}
+                variant="control"
                 aria-label={buttonAriaLabel}
-                type="button"
                 onClick={() => setPopoverOpen(!popoverOpen)}
-                disabled={isDisabled}
-              >
-                <OutlinedCalendarAltIcon />
-              </button>
+                isDisabled={isDisabled}
+                icon={<OutlinedCalendarAltIcon />}
+                aria-haspopup="dialog"
+              />
             </InputGroupItem>
           </InputGroup>
         </div>

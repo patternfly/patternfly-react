@@ -29,11 +29,12 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
         aria-label={props['aria-label'] || 'Details'}
         onClick={onToggle}
         aria-expanded={isOpen}
-      >
-        <div className={css(styles.tableToggleIcon)}>
-          <AngleDownIcon />
-        </div>
-      </Button>
+        icon={
+          <div className={css(styles.tableToggleIcon)}>
+            <AngleDownIcon />
+          </div>
+        }
+      />
     )}
     {children}
   </React.Fragment>

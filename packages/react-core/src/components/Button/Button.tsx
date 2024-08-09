@@ -85,7 +85,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   iconPosition?: 'start' | 'end' | 'left' | 'right';
   /** Adds accessible text to the button. */
   'aria-label'?: string;
-  /** Icon for the button. Usable by all variants except for plain. */
+  /** Icon for the button. */
   icon?: React.ReactNode | null;
   /** Sets the button tabindex. */
   tabIndex?: number;
