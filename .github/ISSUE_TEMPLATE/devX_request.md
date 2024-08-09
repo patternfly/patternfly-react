@@ -1,11 +1,14 @@
 ---
 name: Developer experience
-about: Suggest an enhancement to the developer experience (DX). DX enhancements improve experience for those building UIs with PatternFly, but have little to no end user impact.
+about: Suggest an enhancement to the developer experience (DX). DX enhancements improve
+  experience for those building UIs with PatternFly, but have little to no end user
+  impact.
 title: "[short description]"
 labels: DevX
 assignees: ''
 
 ---
+
 **Describe the enhancement or change**
 A clear and concise description of the request. What is the expected outcome?
 
