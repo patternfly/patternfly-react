@@ -3,7 +3,6 @@ id: Drag and drop
 section: components
 source: react-demos
 propComponents: ['DragDropSort', 'DraggableObject']
-beta: true
 ---
 
 Note: This drag and drop implementation lives in its own package at [@patternfly/react-drag-drop](https://www.npmjs.com/package/@patternfly/react-drag-drop)!

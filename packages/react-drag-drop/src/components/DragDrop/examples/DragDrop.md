@@ -4,7 +4,6 @@ section: components
 cssPrefix: pf-c-drag-drop
 propComponents: ['DragDropSort', 'DraggableObject']
 hideNavItem: true
-beta: true
 ---
 
 Note: This drag and drop implementation lives in its own package at [@patternfly/react-drag-drop](https://www.npmjs.com/package/@patternfly/react-drag-drop)!
