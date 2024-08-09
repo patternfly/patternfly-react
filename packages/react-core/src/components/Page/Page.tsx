@@ -76,6 +76,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * https://github.com/patternfly/patternfly-react/blob/main/packages/react-core/src/helpers/util.ts
    */
   getVerticalBreakpoint?: (height: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  /** Banner component for the page */
+  banner?: React.ReactNode;
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
   /** Horizontal sub navigation component for the page */
@@ -219,6 +221,7 @@ class Page extends React.Component<PageProps, PageState> {
 
   render() {
     const {
+      banner,
       breadcrumb,
       isBreadcrumbWidthLimited,
       className,
@@ -289,6 +292,7 @@ class Page extends React.Component<PageProps, PageState> {
     const group = isGrouped ? (
       <PageGroup {...groupProps}>
         {isHorizontalSubnavGrouped && nav}
+        {banner}
         {isBreadcrumbGrouped && crumb}
         {additionalGroupedContent}
       </PageGroup>
@@ -308,6 +312,7 @@ class Page extends React.Component<PageProps, PageState> {
         >
           {group}
           {!isHorizontalSubnavGrouped && nav}
+          {banner}
           {!isBreadcrumbGrouped && crumb}
           {children}
         </Component>
