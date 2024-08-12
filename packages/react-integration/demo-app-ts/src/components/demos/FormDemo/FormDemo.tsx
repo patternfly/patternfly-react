@@ -75,7 +75,7 @@ export class FormDemo extends Component<FormProps, FormState> {
   }
 
   labelHelpRef: React.RefObject<HTMLSpanElement> = React.createRef();
-  textInputRef: React.useRef<HTMLInputElement> = React.createRef();
+  textInputRef: React.RefObject<HTMLInputElement> = React.createRef();
 
   handleTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     this.setState({ value, isValid: /^\d+$/.test(value) });
@@ -112,7 +112,7 @@ export class FormDemo extends Component<FormProps, FormState> {
     });
   };
 
-  onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, selection: string | number | undefined) => {
+  onSelect = (_ev: any, selection: string | number | undefined) => {
     const { selected } = this.state;
     if (selection) {
       if (selected.includes(selection.toString())) {

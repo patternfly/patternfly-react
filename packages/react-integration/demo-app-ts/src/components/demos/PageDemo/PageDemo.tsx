@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import {
   Page,
   PageSidebar,
@@ -25,7 +25,7 @@ export class PageDemo extends Component {
     isKebabDropdownOpen: false
   };
 
-  onNavToggle = (_event: React.MouseEvent) => {
+  onNavToggle = () => {
     this.setState({
       isNavOpen: !this.state.isNavOpen
     });

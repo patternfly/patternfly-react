@@ -377,7 +377,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
   };
 
   // set open state if component closes menu on click (e.g. when you click outside of the menu)
-  onOpenChange = (isOpen: boolean, rowIndex: string | number | undefined, cellIndex: string | number | undefined) => {
+  onOpenChange = (isOpen: boolean, rowIndex: number, cellIndex: number) => {
     const newRows = Array.from(this.state.rows);
     newRows[rowIndex as number].cells[cellIndex].props.isSelectOpen = isOpen;
     this.setState({
@@ -387,8 +387,10 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
 
   onToggle = (rowIndex: string | number | undefined, cellIndex: string | number | undefined) => {
     const newRows = Array.from(this.state.rows);
-    newRows[rowIndex as number].cells[cellIndex].props.isSelectOpen =
-      !newRows[rowIndex as number].cells[cellIndex].props.isSelectOpen;
+    if (typeof rowIndex !== 'undefined' && typeof rowIndex !== 'undefined') {
+      newRows[rowIndex as number].cells[cellIndex as number].props.isSelectOpen =
+        !newRows[rowIndex as number].cells[cellIndex as number].props.isSelectOpen;
+    }
     this.setState({
       rows: newRows
     });
