@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-alpha.7](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@5.2.0-alpha.6...eslint-plugin-patternfly-react@5.2.0-alpha.7) (2024-08-12)
+
+- chore(eslint-plugin)!: remove dependencies from ESLint plugin (#10752) ([61a6194](https://github.com/patternfly/patternfly-react/commit/61a61941022d19f8c120db2d2712d1d707e9d5f6)), closes [#10752](https://github.com/patternfly/patternfly-react/issues/10752) [#10740](https://github.com/patternfly/patternfly-react/issues/10740)
+
+### BREAKING CHANGES
+
+- this removes the bundled dependencies and pre-defined rules from the ESLint 'reccomended' configuration.
+
+Signed-off-by: Jon Koops <jonkoops@gmail.com>
+
 # [5.2.0-alpha.6](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@5.2.0-alpha.5...eslint-plugin-patternfly-react@5.2.0-alpha.6) (2024-08-08)
 
 **Note:** Version bump only for package eslint-plugin-patternfly-react
