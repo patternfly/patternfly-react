@@ -3142,6 +3142,7 @@ __metadata:
   dependencies:
     "@patternfly/react-styles": "workspace:^"
     "@patternfly/react-tokens": "workspace:^"
+    "@types/echarts": "npm:^4.9.22"
     "@types/lodash": "npm:^4.17.5"
     fs-extra: "npm:^11.2.0"
     hoist-non-react-statics: "npm:^3.3.2"
@@ -3165,6 +3166,7 @@ __metadata:
     victory-voronoi-container: "npm:^37.0.2"
     victory-zoom-container: "npm:^37.0.2"
   peerDependencies:
+    echarts: ^5.5.1
     react: ^17 || ^18
     react-dom: ^17 || ^18
   languageName: unknown
@@ -3223,6 +3225,7 @@ __metadata:
     "@patternfly/react-table": "workspace:^"
     "@patternfly/react-templates": "workspace:^"
     "@patternfly/react-tokens": "workspace:^"
+    echarts: "npm:^5.5.1"
   languageName: unknown
   linkType: soft
 
@@ -4142,6 +4145,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/echarts@npm:^4.9.22":
+  version: 4.9.22
+  resolution: "@types/echarts@npm:4.9.22"
+  dependencies:
+    "@types/zrender": "npm:*"
+  checksum: 10c0/00e5e6f75b4a1ee46df0286fc1fe5b42773970280576317723d7174678598d0aeb2bac36870276ac1e65bf053241443334ef37ae97a84c1b782abdb980991f39
+  languageName: node
+  linkType: hard
+
 "@types/eslint-scope@npm:^3.7.3":
   version: 3.7.7
   resolution: "@types/eslint-scope@npm:3.7.7"
@@ -4637,6 +4649,13 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 10c0/f1b7c1b99fef9f2fe7f1985ef7426d0cebe48cd031f1780fcdc7451eec7e31ac97028f16f50121a59bcf53086a1fc8c856fd5b7d3e00970e43d92ae27d6b43dc
+  languageName: node
+  linkType: hard
+
+"@types/zrender@npm:*":
+  version: 4.0.6
+  resolution: "@types/zrender@npm:4.0.6"
+  checksum: 10c0/baaf25731115fe18cb281bf38e6d414964307532381d8479edf7a4b25baecec737fed620802380fa126139e506d56d62d70fe8142c5c386e340fa91aa988dddd
   languageName: node
   linkType: hard
 
@@ -8581,6 +8600,16 @@ __metadata:
     jsbn: "npm:~0.1.0"
     safer-buffer: "npm:^2.1.0"
   checksum: 10c0/6cf168bae1e2dad2e46561d9af9cbabfbf5ff592176ad4e9f0f41eaaf5fe5e10bb58147fe0a804de62b1ee9dad42c28810c88d652b21b6013c47ba8efa274ca1
+  languageName: node
+  linkType: hard
+
+"echarts@npm:^5.5.1":
+  version: 5.5.1
+  resolution: "echarts@npm:5.5.1"
+  dependencies:
+    tslib: "npm:2.3.0"
+    zrender: "npm:5.6.0"
+  checksum: 10c0/2f7e3037f17fda99d977092767943f4d9b0c8f886f86701ec88591707713b5e5fd683e56086b6ba5245b322f088184bdb06eac488234c20a1869b08cb6b4e523
   languageName: node
   linkType: hard
 
@@ -19751,6 +19780,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:2.3.0":
+  version: 2.3.0
+  resolution: "tslib@npm:2.3.0"
+  checksum: 10c0/a845aed84e7e7dbb4c774582da60d7030ea39d67307250442d35c4c5dd77e4b44007098c37dd079e100029c76055f2a362734b8442ba828f8cc934f15ed9be61
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^1.8.1, tslib@npm:^1.9.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
@@ -21532,22 +21568,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:^8.11.0":
-  version: 8.17.1
-  resolution: "ws@npm:8.17.1"
-  peerDependencies:
-    bufferutil: ^4.0.1
-    utf-8-validate: ">=5.0.2"
-  peerDependenciesMeta:
-    bufferutil:
-      optional: true
-    utf-8-validate:
-      optional: true
-  checksum: 10c0/f4a49064afae4500be772abdc2211c8518f39e1c959640457dcee15d4488628620625c783902a52af2dd02f68558da2868fd06e6fd0e67ebcd09e6881b1b5bfe
-  languageName: node
-  linkType: hard
-
-"ws@npm:^8.13.0":
+"ws@npm:^8.11.0, ws@npm:^8.13.0":
   version: 8.17.0
   resolution: "ws@npm:8.17.0"
   peerDependencies:
@@ -21744,5 +21765,14 @@ __metadata:
   version: 1.0.0
   resolution: "yocto-queue@npm:1.0.0"
   checksum: 10c0/856117aa15cf5103d2a2fb173f0ab4acb12b4b4d0ed3ab249fdbbf612e55d1cadfd27a6110940e24746fb0a78cf640b522cc8bca76f30a3b00b66e90cf82abe0
+  languageName: node
+  linkType: hard
+
+"zrender@npm:5.6.0":
+  version: 5.6.0
+  resolution: "zrender@npm:5.6.0"
+  dependencies:
+    tslib: "npm:2.3.0"
+  checksum: 10c0/f7c5a1739dfec60b9bead0d0657c47868391b1009cc82a603f9dbf247fa625df28dcdb3e7b2e18404657e2c987f95e0e1bb5613519c2d823854f3dda44e2ee96
   languageName: node
   linkType: hard

@@ -32,7 +32,8 @@
     "@patternfly/react-styles": "workspace:^",
     "@patternfly/react-table": "workspace:^",
     "@patternfly/react-templates": "workspace:^",
-    "@patternfly/react-tokens": "workspace:^"
+    "@patternfly/react-tokens": "workspace:^",
+    "echarts": "^5.5.1"
   },
   "devDependencies": {
     "@patternfly/documentation-framework": "^6.0.0-alpha.66",

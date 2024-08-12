@@ -5,6 +5,13 @@
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "next": [
+        "dist/esm/next/index.d.ts"
+      ]
+    }
+  },
   "patternfly:src": "src/",
   "sideEffects": [
     "*.css",
@@ -53,6 +60,7 @@
     "victory-zoom-container": "^37.0.2"
   },
   "peerDependencies": {
+    "echarts": "^5.5.1",
     "react": "^17 || ^18",
     "react-dom": "^17 || ^18"
   },
@@ -61,6 +69,7 @@
     "build:single:packages": "node ../../scripts/build-single-packages.mjs --config single-packages.config.json"
   },
   "devDependencies": {
+    "@types/echarts": "^4.9.22",
     "@types/lodash": "^4.17.5",
     "fs-extra": "^11.2.0"
   }
