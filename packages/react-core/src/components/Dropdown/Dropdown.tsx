@@ -104,6 +104,22 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
       ? localToggleRef
       : (toggle?.toggleRef as React.RefObject<HTMLButtonElement>);
 
+  const prevIsOpen = React.useRef<boolean>(isOpen);
+  React.useEffect(() => {
+    // menu was opened, focus on first menu item
+    if (prevIsOpen.current === false && isOpen === true && shouldFocusFirstItemOnOpen) {
+      setTimeout(() => {
+        const firstElement = menuRef?.current?.querySelector(
+          'li button:not(:disabled),li input:not(:disabled),li a:not([aria-disabled="true"])'
+        );
+        firstElement && (firstElement as HTMLElement).focus();
+      }, 0);
+    }
+
+    prevIsOpen.current = isOpen;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
+
   React.useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
@@ -120,16 +136,6 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
     };
 
     const handleClick = (event: MouseEvent) => {
-      // toggle was opened, focus on first menu item
-      if (isOpen && shouldFocusFirstItemOnOpen && toggleRef.current?.contains(event.target as Node)) {
-        setTimeout(() => {
-          const firstElement = menuRef?.current?.querySelector(
-            'li button:not(:disabled),li input:not(:disabled),li a:not([aria-disabled="true"])'
-          );
-          firstElement && (firstElement as HTMLElement).focus();
-        }, 0);
-      }
-
       // If the event is not on the toggle and onOpenChange callback is provided, close the menu
       if (isOpen && onOpenChange && !toggleRef?.current?.contains(event.target as Node)) {
         if (isOpen && !menuRef.current?.contains(event.target as Node)) {
