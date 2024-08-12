@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.49](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.48...@patternfly/react-integration@6.0.0-alpha.49) (2024-08-12)
+
+### Bug Fixes
+
+- **Menu:** update drilldown transition event handler ([#10839](https://github.com/patternfly/patternfly-react/issues/10839)) ([3601778](https://github.com/patternfly/patternfly-react/commit/360177842e7659d8f5f9bf1dcd6d5de18a46d3f0))
+
 # [6.0.0-alpha.48](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-alpha.47...@patternfly/react-integration@6.0.0-alpha.48) (2024-08-08)
 
 **Note:** Version bump only for package @patternfly/react-integration

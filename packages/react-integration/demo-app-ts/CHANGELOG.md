@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.97](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.96...demo-app-ts@5.1.1-alpha.97) (2024-08-12)
+
+### Bug Fixes
+
+- **Menu:** update drilldown transition event handler ([#10839](https://github.com/patternfly/patternfly-react/issues/10839)) ([3601778](https://github.com/patternfly/patternfly-react/commit/360177842e7659d8f5f9bf1dcd6d5de18a46d3f0))
+
 ## [5.1.1-alpha.96](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.95...demo-app-ts@5.1.1-alpha.96) (2024-08-12)
 
 **Note:** Version bump only for package demo-app-ts
