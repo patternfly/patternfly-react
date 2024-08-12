@@ -11,7 +11,7 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const TextInputGroupValidation: React.FunctionComponent = () => {
+export const TextInputGroupWithStatus: React.FunctionComponent = () => {
   const [successValue, setSuccessValue] = React.useState('Success validation');
   const [warningValue, setWarningValue] = React.useState('Warning validation with icon at start');
   const [errorValue, setErrorValue] = React.useState('Error validation with icon at start and utilities');
