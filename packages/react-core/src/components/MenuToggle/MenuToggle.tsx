@@ -14,6 +14,11 @@ export enum MenuToggleStatus {
   warning = 'warning'
 }
 
+export enum MenuToggleSize {
+  default = 'default',
+  sm = 'sm'
+}
+
 export type MenuToggleElement = HTMLDivElement | HTMLButtonElement;
 
 export interface SplitButtonOptions {
@@ -58,6 +63,8 @@ export interface MenuToggleProps
   icon?: React.ReactNode;
   /** Optional badge rendered inside the toggle, after the children content */
   badge?: BadgeProps | React.ReactNode;
+  /** Adds styling which affects the size of the menu toggle */
+  size?: 'default' | 'sm';
   /** @hide Forwarded ref */
   innerRef?: React.Ref<MenuToggleElement>;
   /** Value to overwrite the randomly generated data-ouia-component-id. It will always target the toggle button. */
@@ -78,6 +85,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
     isDisabled: false,
     isFullWidth: false,
     isFullHeight: false,
+    size: 'default',
     ouiaSafe: true
   };
 
@@ -104,6 +112,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
       'aria-label': ariaLabel,
       ouiaId,
       ouiaSafe,
+      size,
       ...otherProps
     } = this.props;
     const isPlain = variant === 'plain';
@@ -170,6 +179,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
       isFullHeight && styles.modifiers.fullHeight,
       isFullWidth && styles.modifiers.fullWidth,
       isDisabled && styles.modifiers.disabled,
+      size === MenuToggleSize.sm && styles.modifiers.small,
       className
     );
 

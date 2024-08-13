@@ -39,6 +39,14 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ```
 
+### Small toggle
+
+You can pass `size="sm"` to a MenuToggle to style it as a small toggle, such as within a [breadcrumb](/components/breadcrumb).
+
+```ts file="./MenuToggleSmall.tsx"
+
+```
+
 ### Disabled toggle
 
 To disable the selection and expansion of a toggle, use the `isDisabled` property.
@@ -193,7 +201,7 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ### Split toggle with checkbox
 
-To add a checkbox (or other action/control) to a menu toggle, use a split button. 
+To add a checkbox (or other action/control) to a menu toggle, use a split button.
 
 A `<MenuToggle>` can be rendered as a split button by adding a `splitButtonOptions` object. Elements to be displayed before the toggle button must be included in the `items` property of `splitButtonOptions`.
 
