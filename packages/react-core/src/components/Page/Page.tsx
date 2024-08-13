@@ -76,7 +76,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * https://github.com/patternfly/patternfly-react/blob/main/packages/react-core/src/helpers/util.ts
    */
   getVerticalBreakpoint?: (height: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-  /** Banner component for the page */
+  /** Banner component for the page. This will be rendered above a breadcrumb if one is also passed.
+   */
   banner?: React.ReactNode;
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
