@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "7.0.0-alpha.106",
+  "version": "7.0.0-alpha.107",
   "publishConfig": {
     "access": "public",
     "tag": "alpha"

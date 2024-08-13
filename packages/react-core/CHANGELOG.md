@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.99](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.98...@patternfly/react-core@6.0.0-alpha.99) (2024-08-13)
+
+### Features
+
+- **MenuToggle:** added size prop for small modifier class ([#10811](https://github.com/patternfly/patternfly-react/issues/10811)) ([c1a9e9f](https://github.com/patternfly/patternfly-react/commit/c1a9e9ffe21e4ec9270b4f85e6791918484a0d60))
+
 # [6.0.0-alpha.98](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.97...@patternfly/react-core@6.0.0-alpha.98) (2024-08-12)
 
 ### Bug Fixes
