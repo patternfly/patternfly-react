@@ -61,7 +61,8 @@ export const CardClickable: React.FunctionComponent = () => {
                 selectableActionId: id1,
                 selectableActionAriaLabelledby: 'clickable-selectable-card-example-1',
                 name: id1,
-                onChange
+                onChange,
+                hasNoOffset: true
               }}
             >
               <CardTitle>
@@ -84,7 +85,8 @@ export const CardClickable: React.FunctionComponent = () => {
                 selectableActionId: id2,
                 selectableActionAriaLabelledby: 'clickable-selectable-card-example-2',
                 name: id2,
-                onChange
+                onChange,
+                hasNoOffset: true
               }}
             >
               <CardTitle>Second Card</CardTitle>
@@ -110,7 +112,8 @@ export const CardClickable: React.FunctionComponent = () => {
                 selectableActionId: id3,
                 selectableActionAriaLabelledby: 'clickable-selectable-card-example-3',
                 name: id3,
-                onChange
+                onChange,
+                hasNoOffset: true
               }}
             >
               <CardTitle>

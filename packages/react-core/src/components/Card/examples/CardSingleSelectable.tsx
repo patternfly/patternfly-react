@@ -20,7 +20,8 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
             selectableActionAriaLabelledby: 'single-selectable-card-example-1',
             name: 'single-selectable-card-example',
             variant: 'single',
-            onChange
+            onChange,
+            hasNoOffset: true
           }}
         >
           <CardTitle>First card</CardTitle>
@@ -34,7 +35,8 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
             selectableActionAriaLabelledby: 'single-selectable-card-example-2',
             name: 'single-selectable-card-example',
             variant: 'single',
-            onChange
+            onChange,
+            hasNoOffset: true
           }}
         >
           <CardTitle>Second card</CardTitle>
@@ -48,7 +50,8 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
             selectableActionAriaLabelledby: 'single-selectable-card-example-3',
             name: 'single-selectable-card-example',
             variant: 'single',
-            onChange
+            onChange,
+            hasNoOffset: true
           }}
         >
           <CardTitle>Third card</CardTitle>
