@@ -28,7 +28,7 @@ interface CardDemoState {
   selectableChecked1: boolean;
   selectableChecked2: boolean;
   singleSelectableChecked: string;
-  drawerIsExpanded: boolean;
+  isCardClicked: boolean;
   selectableClickableChecked: boolean;
   selectableClickableSelected: boolean;
   selectaleClickableDrawerIsExpanded: boolean;
@@ -44,7 +44,7 @@ class CardDemo extends Component {
     selectableChecked1: false,
     selectableChecked2: false,
     singleSelectableChecked: '',
-    drawerIsExpanded: false,
+    isCardClicked: false,
     selectableClickableChecked: false,
     selectableClickableSelected: false,
     selectaleClickableDrawerIsExpanded: false
@@ -117,7 +117,7 @@ class CardDemo extends Component {
       selectableChecked1,
       selectableChecked2,
       singleSelectableChecked,
-      drawerIsExpanded,
+      isCardClicked,
       selectableClickableChecked,
       selectableClickableSelected,
       selectaleClickableDrawerIsExpanded
@@ -259,35 +259,21 @@ class CardDemo extends Component {
           <CardBody>This card is single selectable.</CardBody>
         </Card>
         <br></br>
-        <div style={{ height: '150px' }}>
-          <Drawer id="clickable-card-drawer" isExpanded={drawerIsExpanded}>
-            <DrawerContent
-              panelContent={
-                <DrawerPanelContent>
-                  <span>Clickable card drawer panel</span>
-                </DrawerPanelContent>
-              }
-            >
-              <DrawerContentBody>
-                <Card id="clickable-card-example-1" isClickable>
-                  <CardHeader
-                    selectableActions={{
-                      onClickAction: () => {
-                        this.setState({ drawerIsExpanded: !drawerIsExpanded });
-                      },
-                      selectableActionId: 'clickable-card-input-1',
-                      selectableActionAriaLabelledby: 'clickable-card-example-1',
-                      name: 'clickable-card-example-1'
-                    }}
-                  >
-                    <CardTitle>Clickable card with action</CardTitle>
-                  </CardHeader>
-                  <CardBody>This card performs an action on click.</CardBody>
-                </Card>
-              </DrawerContentBody>
-            </DrawerContent>
-          </Drawer>
-        </div>
+        <Card id="clickable-card-example-1" isClickable isClicked={isCardClicked}>
+          <CardHeader
+            selectableActions={{
+              onClickAction: () => {
+                this.setState({ isCardClicked: !isCardClicked });
+              },
+              selectableActionId: 'clickable-card-input-1',
+              selectableActionAriaLabelledby: 'clickable-card-example-1',
+              name: 'clickable-card-example-1'
+            }}
+          >
+            <CardTitle>Clickable card with action</CardTitle>
+          </CardHeader>
+          <CardBody>This card performs an action on click.</CardBody>
+        </Card>
         <br></br>
         <Card id="clickable-card-example-2" isClickable>
           <CardHeader
