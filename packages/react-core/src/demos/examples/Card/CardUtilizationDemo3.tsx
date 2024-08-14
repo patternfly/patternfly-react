@@ -23,7 +23,7 @@ import { Chart, ChartStack, ChartBar, ChartTooltip } from '@patternfly/react-cha
 import chart_color_yellow_100 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_100';
 import chart_color_yellow_300 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
-import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
+import chart_color_red_orange_400 from '@patternfly/react-tokens/dist/esm/chart_color_red_orange_400';
 import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
 
 export const CardUtilizationDemo3: React.FunctionComponent = () => {
@@ -94,7 +94,7 @@ export const CardUtilizationDemo3: React.FunctionComponent = () => {
                       { name: 'Low', symbol: { fill: chart_color_yellow_100.value } },
                       { name: 'Important', symbol: { fill: chart_color_yellow_300.value } },
                       { name: 'Moderate', symbol: { fill: chart_color_orange_300.value } },
-                      { name: 'Critical', symbol: { fill: chart_color_red_100.value } }
+                      { name: 'Critical', symbol: { fill: chart_color_red_orange_400.value } }
                     ]}
                     legendPosition="bottom-left"
                     height={50}
@@ -113,7 +113,7 @@ export const CardUtilizationDemo3: React.FunctionComponent = () => {
                         chart_color_yellow_100.value,
                         chart_color_yellow_300.value,
                         chart_color_orange_300.value,
-                        chart_color_red_100.value
+                        chart_color_red_orange_400.value
                       ]}
                     >
                       <ChartBar
