@@ -102,7 +102,6 @@ const ThBase: React.FunctionComponent<ThProps> = ({
     );
   }
 
-  const [favorited, setFavorited] = React.useState(false);
   const [showTooltip, setShowTooltip] = React.useState(false);
   const [truncated, setTruncated] = React.useState(false);
   const cellRef = innerRef ? innerRef : React.createRef();
@@ -123,11 +122,8 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         sortBy: sort.sortBy,
         tooltip: tooltip as string,
         tooltipProps,
-        onFavorite: (event: React.MouseEvent, isFavorited: boolean) => {
-          setFavorited(isFavorited);
-          sort.onFavorite(event, isFavorited);
-        },
-        favorited
+        onFavorite: (event: React.MouseEvent, isFavorited: boolean) => sort.onFavorite(event, isFavorited),
+        favorited: sort.favorited
       })();
     } else {
       sortParams = sortable(children as IFormatterValueType, {
@@ -223,7 +219,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         hasRightBorder && scrollStyles.modifiers.borderRight,
         hasLeftBorder && scrollStyles.modifiers.borderLeft,
         modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap'],
-        favorited && styles.modifiers.favorited,
+        sort?.favorited && styles.modifiers.favorited,
         mergedClassName
       )}
       {...mergedProps}

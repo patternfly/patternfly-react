@@ -167,6 +167,8 @@ export interface ThSortType {
   isFavorites?: boolean;
   /** Click callback on the star icon button (only for favoritable cell). */
   onFavorite?: OnFavorite;
+  /** Flag if the cell is favorited, only used for favoritable cells. */
+  favorited?: boolean;
 }
 
 export interface ThSelectType {

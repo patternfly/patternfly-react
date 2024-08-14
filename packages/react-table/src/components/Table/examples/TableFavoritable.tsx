@@ -42,6 +42,9 @@ export const TableFavoritable: React.FunctionComponent = () => {
     });
   const isRepoFavorited = (repo: Repository) => favoriteRepoNames.includes(repo.name);
 
+  // State of the header cell to favorite / unfavorite all rows
+  const [headerFavorited, setHeaderFavorited] = React.useState(false);
+
   // Since OnSort specifies sorted columns by index, we need sortable values for our object by column index.
   // In this example we only deal with booleans here because we only sort on the favorites column.
   // For more complex sorting, see Sortable.
@@ -80,9 +83,11 @@ export const TableFavoritable: React.FunctionComponent = () => {
       setActiveSortIndex(index);
       setActiveSortDirection(direction);
     },
-    onFavorite: (_event, isFavorited) => {
+    onFavorite: (_event, isFavorited: boolean) => {
       repositories.forEach((repo) => setRepoFavorited(repo, isFavorited));
+      setHeaderFavorited(isFavorited);
     },
+    favorited: headerFavorited,
     columnIndex
   });
 
@@ -104,7 +109,20 @@ export const TableFavoritable: React.FunctionComponent = () => {
             <Td
               favorites={{
                 isFavorited: isRepoFavorited(repo),
-                onFavorite: (_event, isFavoriting) => setRepoFavorited(repo, isFavoriting),
+                onFavorite: (_event, isFavoriting) => {
+                  setRepoFavorited(repo, isFavoriting);
+
+                  if (
+                    isFavoriting &&
+                    repositories.filter((r) => r !== repo).every((r) => favoriteRepoNames.includes(r.name))
+                  ) {
+                    setHeaderFavorited(true);
+                  }
+
+                  if (!isFavoriting && favoriteRepoNames.length === 1 && favoriteRepoNames.includes(repo.name)) {
+                    setHeaderFavorited(false);
+                  }
+                },
                 rowIndex
               }}
             />
