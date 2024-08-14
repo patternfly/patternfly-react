@@ -148,11 +148,9 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
         const isClickableLinkCard = selectableActions?.to !== undefined;
         const ClickableCardComponent = isClickableLinkCard ? 'a' : 'button';
         const getClickableProps = () => {
+          const isDisabledLinkCard = isCardDisabled && isClickableLinkCard;
           const baseProps = {
-            className: css(
-              'pf-v6-c-card__clickable-action',
-              isCardDisabled && isClickableLinkCard && styles.modifiers.disabled
-            ),
+            className: css('pf-v6-c-card__clickable-action', isDisabledLinkCard && styles.modifiers.disabled),
             id: selectableActions.selectableActionId,
             'aria-label': selectableActions.selectableActionAriaLabel,
             'aria-labelledby': selectableActions.selectableActionAriaLabelledby,
@@ -163,7 +161,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
             return {
               ...baseProps,
               href: selectableActions.to,
-              ...(isCardDisabled && { tabIndex: -1 }),
+              ...(isCardDisabled && { tabIndex: -1, 'aria-disabled': true }),
               ...(selectableActions.isExternalLink && { target: '_blank' })
             };
           }
