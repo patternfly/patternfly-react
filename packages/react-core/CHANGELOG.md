@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.100](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.99...@patternfly/react-core@6.0.0-alpha.100) (2024-08-14)
+
+### Bug Fixes
+
+- **Card demo:** use proper token ([#10837](https://github.com/patternfly/patternfly-react/issues/10837)) ([fde4792](https://github.com/patternfly/patternfly-react/commit/fde47928674638ede0b8ef3b3f0a7a7ab93b1f06))
+
 # [6.0.0-alpha.99](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.98...@patternfly/react-core@6.0.0-alpha.99) (2024-08-13)
 
 ### Features
