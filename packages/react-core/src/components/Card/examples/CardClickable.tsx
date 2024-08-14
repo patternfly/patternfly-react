@@ -4,10 +4,6 @@ import { Card, CardHeader, CardTitle, CardBody, Checkbox, Gallery } from '@patte
 export const CardClickable: React.FunctionComponent = () => {
   const [isSecondary, setIsSecondary] = React.useState<boolean>(false);
 
-  const id1 = 'clickable-card-input-1';
-  const id2 = 'clickable-card-input-2';
-  const id3 = 'clickable-card-input-3';
-
   const toggleVariant = (checked: boolean) => {
     setIsSecondary(checked);
   };
@@ -24,44 +20,38 @@ export const CardClickable: React.FunctionComponent = () => {
       />
       <div style={{ marginTop: '15px' }}>
         <Gallery hasGutter>
-          <Card id="clickable-card-example-1" isClickable variant={isSecondary ? 'secondary' : 'default'}>
+          <Card isClickable variant={isSecondary ? 'secondary' : 'default'}>
             <CardHeader
               selectableActions={{
                 // eslint-disable-next-line no-console
-                onClickAction: () => console.log(`${id1} clicked`),
-                selectableActionId: id1,
-                selectableActionAriaLabelledby: 'clickable-card-example-1',
-                name: 'clickable-card-example'
+                onClickAction: () => console.log(`First card in actionable example clicked`),
+                selectableActionAriaLabelledby: 'clickable-card-example-title-1'
               }}
             >
-              <CardTitle>First card</CardTitle>
+              <CardTitle id="clickable-card-example-title-1">First card in the actionable example</CardTitle>
             </CardHeader>
             <CardBody>This card performs an action on click.</CardBody>
           </Card>
-          <Card id="clickable-card-example-2" isClickable variant={isSecondary ? 'secondary' : 'default'}>
+          <Card isClickable variant={isSecondary ? 'secondary' : 'default'}>
             <CardHeader
               selectableActions={{
                 to: '#',
-                selectableActionId: id2,
-                selectableActionAriaLabelledby: 'clickable-card-example-2',
-                name: 'clickable-card-example'
+                selectableActionAriaLabelledby: 'clickable-card-example-title-2'
               }}
             >
-              <CardTitle>Second card</CardTitle>
+              <CardTitle id="clickable-card-example-title-2">Second card in the actionable example</CardTitle>
             </CardHeader>
             <CardBody>This card can navigate to a link on click.</CardBody>
           </Card>
-          <Card id="clickable-card-example-3" isClickable isDisabled variant={isSecondary ? 'secondary' : 'default'}>
+          <Card isClickable isDisabled variant={isSecondary ? 'secondary' : 'default'}>
             <CardHeader
               selectableActions={{
                 // eslint-disable-next-line no-console
-                onClickAction: () => console.log(`${id3} clicked`),
-                selectableActionId: id3,
-                selectableActionAriaLabelledby: 'clickable-card-example-3',
-                name: 'clickable-card-example'
+                onClickAction: () => console.log(`Third card in actionable example clicked`),
+                selectableActionAriaLabelledby: 'clickable-card-example-title-3'
               }}
             >
-              <CardTitle>Third card</CardTitle>
+              <CardTitle id="clickable-card-example-title-3">Third card in the actionable example</CardTitle>
             </CardHeader>
             <CardBody>This card is clickable but disabled.</CardBody>
           </Card>
