@@ -29,7 +29,7 @@ exports[`CardHeader onExpand adds the toggle button 1`] = `
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <span
             class="pf-v6-c-card__header-toggle-icon"

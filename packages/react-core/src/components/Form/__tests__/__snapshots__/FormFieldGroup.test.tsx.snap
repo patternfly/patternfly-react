@@ -26,7 +26,7 @@ exports[`Check expandable form field group example against snapshot 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <span
               class="pf-v6-c-form__field-group-toggle-icon"
