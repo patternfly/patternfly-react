@@ -43,26 +43,37 @@ ScrollspyH2 = () => {
 
   const [isVertical, setIsVertical] = React.useState(true);
   const [offsetHeight, setOffsetHeight] = React.useState(10);
+  const offsetForPadding = 10;
+  let masthead;
 
   // Update offset based on the masthead and jump links nav heights.
   React.useEffect(() => {
-    const masthead = document.getElementsByClassName(mastheadStyles.masthead)[0];
-    const offsetForPadding = 10;
+    masthead = document.getElementsByClassName(mastheadStyles.masthead)[0];
 
-    getResizeObserver(
-      masthead,
-      () => {
-        if (isVertical) {
-          setOffsetHeight(masthead.offsetHeight + offsetForPadding);
-        } else {
-          // Append jump links nav height to the masthead height when value exists.
-          const jumpLinksHeaderHeight = document.getElementsByClassName('pf-m-sticky')[0].offsetHeight;
-          jumpLinksHeaderHeight && setOffsetHeight(masthead.offsetHeight + jumpLinksHeaderHeight + offsetForPadding);
-        }
-      },
-      true
-    );
+    if (isVertical) {
+      setOffsetHeight(masthead.offsetHeight + offsetForPadding);
+    } else {
+      // Append jump links nav height to the masthead height when value exists.
+      const jumpLinksHeaderHeight = document.getElementsByClassName('pf-m-sticky')[0].offsetHeight;
+      jumpLinksHeaderHeight && setOffsetHeight(masthead.offsetHeight + jumpLinksHeaderHeight + offsetForPadding);
+    }
+
+    
   }, [isVertical]);
+
+  getResizeObserver(
+    document.getElementsByClassName(mastheadStyles.masthead)[0],
+    () => {
+      if (isVertical) {
+        setOffsetHeight(masthead.offsetHeight + offsetForPadding);
+      } else {
+        // Append jump links nav height to the masthead height when value exists.
+        const jumpLinksHeaderHeight = document.getElementsByClassName('pf-m-sticky')[0].offsetHeight;
+        jumpLinksHeaderHeight && setOffsetHeight(masthead.offsetHeight + jumpLinksHeaderHeight + offsetForPadding);
+      }
+    },
+    true
+  );
 
   return (
     <DashboardWrapper breadcrumb={null} mainContainerId="scrollable-element">
@@ -85,7 +96,7 @@ ScrollspyH2 = () => {
                 isVertical={isVertical}
                 isCentered={!isVertical}
                 label="Jump to section"
-                scrollableSelector="#scrollable-element"
+                scrollableSelector=".pf-v6-c-page__main-container"
                 offset={offsetHeight}
                 expandable={{ default: isVertical ? 'expandable' : 'nonExpandable', md: 'nonExpandable' }}
                 isExpanded
