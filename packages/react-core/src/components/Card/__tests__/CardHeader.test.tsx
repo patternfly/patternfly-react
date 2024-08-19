@@ -21,7 +21,9 @@ describe('Card with actions and selectableActions', () => {
   test('Does not render selectable or clickable actions by default', () => {
     render(<CardHeader>Test</CardHeader>);
 
-    expect(screen.queryByText('Test')?.previousElementSibling).toBeNull();
+    expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    expect(screen.queryByRole('link')).not.toBeInTheDocument();
   });
 
   test('Renders checkbox input when Card has isSelectable and selectableActions.variant = "multiple"', () => {
@@ -58,7 +60,7 @@ describe('Card with actions and selectableActions', () => {
       </CardContext.Provider>
     );
 
-    expect(screen.getByRole('checkbox')).toHaveAttribute('id');
+    expect(screen.getByRole('checkbox').getAttribute('id')).toMatch(/^card-selectable/);
   });
   test('Renders custom ID for selectable card input when selectableActions.selectableActionId is passed', () => {
     render(
@@ -72,11 +74,11 @@ describe('Card with actions and selectableActions', () => {
   test('Renders name on a selectable card input', () => {
     render(
       <CardContext.Provider value={{ isSelectable: true }}>
-        <CardHeader selectableActions={{ variant: 'multiple', name: 'test' }}>Test</CardHeader>
+        <CardHeader selectableActions={{ variant: 'single', name: 'test' }}>Test</CardHeader>
       </CardContext.Provider>
     );
 
-    expect(screen.getByRole('checkbox')).toHaveAttribute('name', 'test');
+    expect(screen.getByRole('radio')).toHaveAttribute('name', 'test');
   });
   test('Renders a selectable card input as not checked by default', () => {
     render(
@@ -85,7 +87,7 @@ describe('Card with actions and selectableActions', () => {
       </CardContext.Provider>
     );
 
-    expect(screen.getByRole('checkbox')).not.toHaveAttribute('checked');
+    expect(screen.getByRole('checkbox')).not.toBeChecked();
   });
   test('Renders a selectable card input as checked when Card has isSelected = true', () => {
     render(
@@ -94,7 +96,7 @@ describe('Card with actions and selectableActions', () => {
       </CardContext.Provider>
     );
 
-    expect(screen.getByRole('checkbox')).toHaveAttribute('checked');
+    expect(screen.getByRole('checkbox')).toBeChecked();
   });
   test('Renders a selectable card input as checked when deprecated selectableActions.isChecked is true', () => {
     render(
@@ -103,7 +105,7 @@ describe('Card with actions and selectableActions', () => {
       </CardContext.Provider>
     );
 
-    expect(screen.getByRole('checkbox')).toHaveAttribute('checked');
+    expect(screen.getByRole('checkbox')).toBeChecked();
   });
   test('Renders additional props on selectable card input when selectableActions.selectableActionProps is passed', () => {
     render(
@@ -115,6 +117,23 @@ describe('Card with actions and selectableActions', () => {
     );
 
     expect(screen.getByRole('checkbox')).toHaveAttribute('style');
+  });
+
+  test('Does not call onChange for selectable card when card is not clicked', async () => {
+    const user = userEvent.setup();
+    const onChangeMock = jest.fn();
+
+    render(
+      <>
+        <button>Test click</button>
+        <CardContext.Provider value={{ isSelectable: true }}>
+          <CardHeader selectableActions={{ variant: 'multiple', onChange: onChangeMock }}>Test</CardHeader>
+        </CardContext.Provider>
+      </>
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Test click' }));
+    expect(onChangeMock).not.toHaveBeenCalled();
   });
   test('Calls onChange for selectable card when card is clicked', async () => {
     const user = userEvent.setup();
