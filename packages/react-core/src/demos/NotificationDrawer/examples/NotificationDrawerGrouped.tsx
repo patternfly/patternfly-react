@@ -224,7 +224,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
     </>
   );
   const headerToolbar = (
-    <Toolbar isFullHeight>
+    <Toolbar>
       <ToolbarContent>
         <ToolbarGroup align={{ default: 'alignEnd' }}>
           <ToolbarGroup variant="action-group-plain">
@@ -292,8 +292,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                     ref={toggleRef}
                     isExpanded={isDropdownOpen}
                     onClick={onDropdownToggle}
-                    icon={<Avatar src={imgAvatar} alt="" />}
-                    isFullHeight
+                    icon={<Avatar src={imgAvatar} alt="" size="sm" />}
                   >
                     John Smith
                   </MenuToggle>

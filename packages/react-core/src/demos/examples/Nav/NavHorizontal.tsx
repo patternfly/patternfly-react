@@ -103,7 +103,7 @@ export const NavHorizontal: React.FunctionComponent = () => {
   );
 
   const headerToolbar = (
-    <Toolbar id="toolbar" isFullHeight isStatic>
+    <Toolbar id="toolbar" isStatic>
       <ToolbarContent>
         <ToolbarItem isOverflowContainer>{PageNav}</ToolbarItem>
         <ToolbarGroup
@@ -180,8 +180,7 @@ export const NavHorizontal: React.FunctionComponent = () => {
                 ref={toggleRef}
                 isExpanded={isDropdownOpen}
                 onClick={onDropdownToggle}
-                icon={<Avatar src={imgAvatar} alt="" />}
-                isFullHeight
+                icon={<Avatar src={imgAvatar} alt="" size="sm" />}
               >
                 Ned Username
               </MenuToggle>
