@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.0.0-alpha.35...@patternfly/react-icons@6.0.0-alpha.36) (2024-08-19)
+
+### Bug Fixes
+
+- **Card:** updated markup for actionable cards ([#10859](https://github.com/patternfly/patternfly-react/issues/10859)) ([d58b051](https://github.com/patternfly/patternfly-react/commit/d58b051f8d736f55580e3df9fc2bbddf479af099))
+
 # [6.0.0-alpha.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.0.0-alpha.34...@patternfly/react-icons@6.0.0-alpha.35) (2024-08-08)
 
 **Note:** Version bump only for package @patternfly/react-icons

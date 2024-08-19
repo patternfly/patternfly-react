@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1-alpha.100](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.99...demo-app-ts@5.1.1-alpha.100) (2024-08-19)
+
+### Bug Fixes
+
+- **Card:** updated markup for actionable cards ([#10859](https://github.com/patternfly/patternfly-react/issues/10859)) ([d58b051](https://github.com/patternfly/patternfly-react/commit/d58b051f8d736f55580e3df9fc2bbddf479af099))
+
 ## [5.1.1-alpha.99](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@5.1.1-alpha.98...demo-app-ts@5.1.1-alpha.99) (2024-08-14)
 
 **Note:** Version bump only for package demo-app-ts

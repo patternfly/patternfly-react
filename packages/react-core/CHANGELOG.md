@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.101](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.100...@patternfly/react-core@6.0.0-alpha.101) (2024-08-19)
+
+### Bug Fixes
+
+- **Card:** updated markup for actionable cards ([#10859](https://github.com/patternfly/patternfly-react/issues/10859)) ([d58b051](https://github.com/patternfly/patternfly-react/commit/d58b051f8d736f55580e3df9fc2bbddf479af099))
+
 # [6.0.0-alpha.100](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.99...@patternfly/react-core@6.0.0-alpha.100) (2024-08-14)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-alpha.109](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.108...@patternfly/react-docs@7.0.0-alpha.109) (2024-08-19)
+
+### Bug Fixes
+
+- **Card:** updated markup for actionable cards ([#10859](https://github.com/patternfly/patternfly-react/issues/10859)) ([d58b051](https://github.com/patternfly/patternfly-react/commit/d58b051f8d736f55580e3df9fc2bbddf479af099))
+
 # [7.0.0-alpha.108](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.107...@patternfly/react-docs@7.0.0-alpha.108) (2024-08-14)
 
 **Note:** Version bump only for package @patternfly/react-docs
