@@ -61,9 +61,9 @@ describe('Card Demo Test', () => {
   });
 
   it('Verify clickable only card action is triggered', () => {
-    cy.get('#clickable-card-drawer').should('not.have.class', 'pf-m-expanded');
-    cy.get('#clickable-card-example-1').click();
-    cy.get('#clickable-card-drawer').should('have.class', 'pf-m-expanded');
+    cy.get('#clickable-card-example-1').should('not.have.class', 'pf-m-current');
+    cy.get('#clickable-card-example-1 .pf-v6-c-card__clickable-action').click();
+    cy.get('#clickable-card-example-1').should('have.class', 'pf-m-current');
   });
 
   it('Verify clickable only card link is navigated to', () => {

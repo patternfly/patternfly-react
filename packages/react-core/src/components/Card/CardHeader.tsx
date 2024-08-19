@@ -26,23 +26,29 @@ export interface CardHeaderSelectableActionsObject {
   hasNoOffset?: boolean;
   /** Additional classes added to the selectable actions wrapper */
   className?: string;
-  /** ID passed to the selectable or clickable input */
-  selectableActionId: string;
-  /** Adds an accessible label to the selectable or clickable input */
+  /** Custom ID passed to the selectable card's input or a clickable-only card's button/anchor.
+   * If omitted, a random unique ID will be assigned to a selectable card's input. */
+  selectableActionId?: string;
+  /** Adds an accessible name to the input of a selectable card or clickable button/anchor of a clickable-only card.
+   * This or selectableActionAriaLabelledby is required for clickable-only cards.
+   */
   selectableActionAriaLabel?: string;
-  /** Adds an accessible label to the selectable or clickable input by passing in a
-   * space separated list of id's.
+  /** A single or list of space-delimited ID's that provide an accessible name to the input of a selectable card
+   * or clickable button/anchor of a clickable-only card. This or selectableActionAriaLabelledby is required
+   * for clickable-only cards.
    */
   selectableActionAriaLabelledby?: string;
   /** Callback for when a selectable card input changes */
   onChange?: (event: React.FormEvent<HTMLInputElement>, checked: boolean) => void;
-  /** Action to call when clickable card is clicked */
-  onClickAction?: (event: React.FormEvent<HTMLInputElement> | React.MouseEvent) => void;
-  /** Link to navigate to when clickable card is clicked */
+  /** Action to call when a clickable-only card is clicked. This cannot be combined with the to prop. */
+  onClickAction?: (event: React.MouseEvent) => void;
+  /** Link to navigate to when a clickable-only card is clicked. This cannot be combined with the onClickAction prop. */
   to?: string;
-  /** Flag to indicate whether a clickable card's link should open in a new tab/window. */
+  /** Additional props spread to a selectable card input or clickable-only card's button/anchor. */
+  selectableActionProps?: any;
+  /** Flag to indicate whether a clickable-only card's link should open in a new tab/window. */
   isExternalLink?: boolean;
-  /** Name for the input element of a clickable or selectable card. */
+  /** Name for the input element of a selectable card. */
   name?: string;
   /** @deprecated Flag indicating whether the selectable card input is checked. We recommend using
    * the isSelected prop on the card component instead.
@@ -79,101 +85,117 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   toggleButtonProps,
   isToggleRightAligned,
   ...props
-}: CardHeaderProps) => (
-  <CardContext.Consumer>
-    {({ cardId, isClickable, isSelectable, isSelected, isClicked, isDisabled: isCardDisabled }) => {
-      const cardHeaderToggle = (
-        <div className={css(styles.cardHeaderToggle)}>
-          <Button
-            variant="plain"
-            type="button"
-            onClick={(evt) => {
-              onExpand(evt, cardId);
-            }}
-            {...toggleButtonProps}
-            icon={
-              <span className={css(styles.cardHeaderToggleIcon)}>
-                <AngleRightIcon aria-hidden="true" />
-              </span>
-            }
-          />
-        </div>
-      );
+}: CardHeaderProps) => {
+  const uniqueId = React.useId();
 
-      const isClickableOrSelectableOnly = (isClickable && !isSelectable) || (isSelectable && !isClickable);
-      if (actions?.actions && isClickableOrSelectableOnly) {
-        // eslint-disable-next-line no-console
-        console.warn(
-          `${
-            isClickable ? 'Clickable' : 'Selectable'
-          } only cards should not contain any other actions. If you wish to include additional actions, use a clickable and selectable card.`
+  return (
+    <CardContext.Consumer>
+      {({ cardId, isClickable, isSelectable, isSelected, isDisabled: isCardDisabled }) => {
+        const cardHeaderToggle = (
+          <div className={css(styles.cardHeaderToggle)}>
+            <Button
+              variant="plain"
+              type="button"
+              onClick={(evt) => {
+                onExpand(evt, cardId);
+              }}
+              {...toggleButtonProps}
+              icon={
+                <span className={css(styles.cardHeaderToggleIcon)}>
+                  <AngleRightIcon aria-hidden="true" />
+                </span>
+              }
+            />
+          </div>
         );
-      }
 
-      const handleActionClick = (event: React.FormEvent<HTMLInputElement> | React.MouseEvent) => {
-        if (selectableActions?.onClickAction) {
-          selectableActions.onClickAction(event);
-        } else if (selectableActions?.to) {
-          window.open(selectableActions.to, selectableActions.isExternalLink ? '_blank' : '_self');
+        const isClickableOrSelectableOnly = (isClickable && !isSelectable) || (isSelectable && !isClickable);
+        if (actions?.actions && isClickableOrSelectableOnly) {
+          // eslint-disable-next-line no-console
+          console.error(
+            `Card: ${
+              isClickable ? 'Clickable' : 'Selectable'
+            } only cards should not contain any other actions. If you wish to include additional actions, use a clickable and selectable card.`
+          );
         }
-      };
 
-      const getClickableSelectableProps = () => {
-        const baseProps = {
+        const isClickableOnlyCard = isClickable && !isSelectable;
+        if (
+          (isClickableOnlyCard || isSelectable) &&
+          !selectableActions?.selectableActionAriaLabel &&
+          !selectableActions?.selectableActionAriaLabelledby
+        ) {
+          // eslint-disable-next-line no-console
+          console.error(
+            `Card: ${isClickableOnlyCard ? 'Clickable-only cards' : 'Cards with a selectable input'} must have either the selectableActions.selectableActionAriaLabel or selectableActions.selectableActionAriaLabelledby prop passed in order to provide an accessible name to the clickable element.`
+          );
+        }
+
+        const SelectableCardInput = selectableActions?.variant === 'single' ? Radio : Checkbox;
+        const getSelectableProps = () => ({
           className: 'pf-m-standalone',
-          inputClassName: isClickable && !isSelectable && 'pf-v6-screen-reader',
           label: <></>,
           'aria-label': selectableActions.selectableActionAriaLabel,
           'aria-labelledby': selectableActions.selectableActionAriaLabelledby,
-          id: selectableActions.selectableActionId,
+          id: selectableActions.selectableActionId ?? `card-selectable-${uniqueId}`,
           name: selectableActions.name,
-          isDisabled: isCardDisabled
-        };
-        const isSelectableInputChecked = selectableActions.isChecked ?? isSelected;
+          isDisabled: isCardDisabled,
+          onChange: selectableActions.onChange,
+          isChecked: selectableActions.isChecked ?? isSelected,
+          ...selectableActions.selectableActionProps
+        });
 
-        if (isClickable && !isSelectable) {
-          return {
-            ...baseProps,
-            onClick: handleActionClick,
-            isChecked: isClicked
+        const isClickableLinkCard = selectableActions?.to !== undefined;
+        const ClickableCardComponent = isClickableLinkCard ? 'a' : 'button';
+        const getClickableProps = () => {
+          const isDisabledLinkCard = isCardDisabled && isClickableLinkCard;
+          const baseProps = {
+            className: css('pf-v6-c-card__clickable-action', isDisabledLinkCard && styles.modifiers.disabled),
+            id: selectableActions.selectableActionId,
+            'aria-label': selectableActions.selectableActionAriaLabel,
+            'aria-labelledby': selectableActions.selectableActionAriaLabelledby,
+            ...selectableActions.selectableActionProps
           };
-        }
-        if (isSelectable) {
-          return { ...baseProps, onChange: selectableActions.onChange, isChecked: isSelectableInputChecked };
-        }
 
-        return baseProps;
-      };
+          if (isClickableLinkCard) {
+            return {
+              ...baseProps,
+              href: selectableActions.to,
+              ...(isCardDisabled && { tabIndex: -1, 'aria-disabled': true }),
+              ...(selectableActions.isExternalLink && { target: '_blank' })
+            };
+          }
 
-      return (
-        <div
-          className={css(styles.cardHeader, isToggleRightAligned && styles.modifiers.toggleRight, className)}
-          id={id}
-          {...props}
-        >
-          {onExpand && !isToggleRightAligned && cardHeaderToggle}
-          {(actions || (selectableActions && (isClickable || isSelectable))) && (
-            <CardActions
-              className={actions?.className}
-              hasNoOffset={actions?.hasNoOffset || selectableActions?.hasNoOffset}
-            >
-              {actions?.actions}
-              {selectableActions && (isClickable || isSelectable) && (
-                <CardSelectableActions className={selectableActions?.className}>
-                  {selectableActions?.variant === 'single' || (isClickable && !isSelectable) ? (
-                    <Radio {...getClickableSelectableProps()} />
-                  ) : (
-                    <Checkbox {...getClickableSelectableProps()} />
-                  )}
-                </CardSelectableActions>
-              )}
-            </CardActions>
-          )}
-          {children && <CardHeaderMain>{children}</CardHeaderMain>}
-          {onExpand && isToggleRightAligned && cardHeaderToggle}
-        </div>
-      );
-    }}
-  </CardContext.Consumer>
-);
+          return { ...baseProps, type: 'button', disabled: isCardDisabled, onClick: selectableActions.onClickAction };
+        };
+
+        return (
+          <div
+            className={css(styles.cardHeader, isToggleRightAligned && styles.modifiers.toggleRight, className)}
+            id={id}
+            {...props}
+          >
+            {onExpand && !isToggleRightAligned && cardHeaderToggle}
+            {(actions || (selectableActions && (isClickable || isSelectable))) && (
+              <CardActions
+                className={actions?.className}
+                hasNoOffset={actions?.hasNoOffset || selectableActions?.hasNoOffset}
+              >
+                {actions?.actions}
+                {selectableActions && (isClickable || isSelectable) && (
+                  <CardSelectableActions className={selectableActions?.className}>
+                    {isSelectable && <SelectableCardInput {...getSelectableProps()} />}
+                    {isClickableOnlyCard && <ClickableCardComponent {...getClickableProps()} />}
+                  </CardSelectableActions>
+                )}
+              </CardActions>
+            )}
+            {children && <CardHeaderMain>{children}</CardHeaderMain>}
+            {onExpand && isToggleRightAligned && cardHeaderToggle}
+          </div>
+        );
+      }}
+    </CardContext.Consumer>
+  );
+};
 CardHeader.displayName = 'CardHeader';
