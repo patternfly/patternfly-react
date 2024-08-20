@@ -6,9 +6,9 @@ import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { TableText } from './TableText';
-import { OnFavorite } from './TableTypes';
 import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { ActionList, ActionListItem, Button } from '@patternfly/react-core';
+import { FavoriteButtonProps } from './base/types';
 
 export enum SortByDirection {
   asc = 'asc',
@@ -24,8 +24,7 @@ export interface SortColumnProps extends React.ButtonHTMLAttributes<HTMLButtonEl
   tooltip?: React.ReactNode;
   tooltipProps?: Omit<TooltipProps, 'content'>;
   tooltipHasDefaultBehavior?: boolean;
-  onFavorite?: OnFavorite;
-  favorited?: boolean;
+  favoriteButtonProps?: FavoriteButtonProps;
 }
 
 export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
@@ -38,8 +37,7 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
   tooltip,
   tooltipProps,
   tooltipHasDefaultBehavior,
-  onFavorite,
-  favorited,
+  favoriteButtonProps,
   ...props
 }: SortColumnProps) => {
   let SortedByIcon;
@@ -50,16 +48,11 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
     SortedByIcon = ArrowsAltVIcon;
   }
 
-  if (onFavorite) {
+  if (favoriteButtonProps) {
     return (
       <ActionList isIconList>
         <ActionListItem>
-          <Button
-            variant="plain"
-            icon={<StarIcon />}
-            aria-label={favorited ? 'Unfavorite all' : 'Favorite all'}
-            onClick={(event) => onFavorite(event, !favorited)}
-          />
+          <Button variant="plain" icon={<StarIcon />} {...favoriteButtonProps} />
         </ActionListItem>
         <ActionListItem>
           <Button
@@ -69,8 +62,8 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
                 <SortedByIcon />
               </span>
             }
-            aria-label="Sort favorites"
             onClick={(event) => onSort && onSort(event)}
+            {...props}
           />
         </ActionListItem>
       </ActionList>

@@ -28,10 +28,10 @@ export const TableFavoritable: React.FunctionComponent = () => {
   // Index of the currently sorted column
   // Note: if you intend to make columns reorderable, you may instead want to use a non-numeric key
   // as the identifier of the sorted column. See the "Compound expandable" example.
-  const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
+  const [activeSortIndex, setActiveSortIndex] = React.useState<number>();
 
   // Sort direction of the currently sorted column
-  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
+  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc'>();
 
   // Favorite state is similar to selection state, see Selectable with checkbox.
   const [favoriteRepoNames, setFavoriteRepoNames] = React.useState<string[]>([]);
@@ -58,7 +58,7 @@ export const TableFavoritable: React.FunctionComponent = () => {
   // Note that we perform the sort as part of the component's render logic and not in onSort.
   // We shouldn't store the list of data in state because we don't want to have to sync that with props.
   let sortedRepositories = repositories;
-  if (activeSortIndex !== null) {
+  if (activeSortIndex !== undefined) {
     sortedRepositories = repositories.sort((a, b) => {
       const aValue = getSortableRowValues(a)[activeSortIndex];
       const bValue = getSortableRowValues(b)[activeSortIndex];
@@ -83,12 +83,16 @@ export const TableFavoritable: React.FunctionComponent = () => {
       setActiveSortIndex(index);
       setActiveSortDirection(direction);
     },
-    onFavorite: (_event, isFavorited: boolean) => {
-      repositories.forEach((repo) => setRepoFavorited(repo, isFavorited));
-      setHeaderFavorited(isFavorited);
-    },
-    favorited: headerFavorited,
-    columnIndex
+    'aria-label': 'Sort favorites',
+    columnIndex,
+    favoriteButtonProps: {
+      favorited: headerFavorited,
+      onClick: (_event) => {
+        repositories.forEach((repo) => setRepoFavorited(repo, !headerFavorited));
+        setHeaderFavorited(!headerFavorited);
+      },
+      'aria-label': headerFavorited ? 'Unfavorite all' : 'Favorite all'
+    }
   });
 
   return (

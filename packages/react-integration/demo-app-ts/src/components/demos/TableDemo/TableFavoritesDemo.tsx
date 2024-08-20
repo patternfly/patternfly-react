@@ -68,7 +68,7 @@ export class TableFavoritesDemo extends Component<TableProps, TableState> {
     });
   }
 
-  onFavorite(_event: React.MouseEvent, isFavorited: boolean, rowId?: number) {
+  onFavorite(_event: React.MouseEvent, isFavorited: boolean, rowId: number) {
     this.setState({
       rows: this.state.rows.map((row, index) => {
         if (index === rowId) {

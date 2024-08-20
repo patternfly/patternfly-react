@@ -63,9 +63,9 @@ export type OnRowEdit = (
 export type OnFavorite = (
   event: React.MouseEvent,
   isFavorited: boolean,
-  rowIndex?: number,
-  rowData?: IRowData,
-  extraData?: IExtraData
+  rowIndex: number,
+  rowData: IRowData,
+  extraData: IExtraData
 ) => void;
 
 export type OnTreeRowCollapse = (event: any, rowIndex: number, title: React.ReactNode, rowData: IRowData) => void;
@@ -109,7 +109,7 @@ export interface IColumn {
     allRowsExpanded?: boolean;
     isHeaderSelectDisabled?: boolean;
     onFavorite?: OnFavorite;
-    favorited?: boolean;
+    favoriteButtonProps?: ButtonProps;
   };
 }
 
