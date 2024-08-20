@@ -70,7 +70,7 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
 interface ExpandableSectionState {
   isExpanded: boolean;
   hasToggle: boolean;
-  previousWidth: number;
+  previousWidth?: number;
 }
 
 const setLineClamp = (lines: number, element: HTMLDivElement) => {
@@ -87,7 +87,7 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
     super(props);
 
     this.state = {
-      isExpanded: props.isExpanded,
+      isExpanded: props.isExpanded || false,
       hasToggle: true,
       previousWidth: undefined
     };
@@ -129,6 +129,9 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
   componentDidMount() {
     if (this.props.variant === ExpandableSectionVariant.truncate) {
       const expandableContent = this.expandableContentRef.current;
+      if (!expandableContent) {
+        return;
+      }
       this.setState({ previousWidth: expandableContent.offsetWidth });
       this.observer = getResizeObserver(expandableContent, this.handleResize, false);
 
@@ -143,6 +146,8 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
   componentDidUpdate(prevProps: ExpandableSectionProps) {
     if (
       this.props.variant === ExpandableSectionVariant.truncate &&
+      this.props.truncateMaxLines &&
+      this.expandableContentRef.current &&
       (prevProps.truncateMaxLines !== this.props.truncateMaxLines || prevProps.children !== this.props.children)
     ) {
       const expandableContent = this.expandableContentRef.current;
@@ -171,12 +176,13 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
   };
 
   resize = () => {
-    if (this.expandableContentRef.current) {
-      const { offsetWidth } = this.expandableContentRef.current;
-      if (this.state.previousWidth !== offsetWidth) {
-        this.setState({ previousWidth: offsetWidth });
-        this.checkToggleVisibility();
-      }
+    if (!this.expandableContentRef.current) {
+      return;
+    }
+    const { offsetWidth } = this.expandableContentRef.current;
+    if (this.state.previousWidth !== offsetWidth) {
+      this.setState({ previousWidth: offsetWidth });
+      this.checkToggleVisibility();
     }
   };
   handleResize = debounce(this.resize, 250);
@@ -221,7 +227,7 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
     if (isExpanded === undefined) {
       propOrStateIsExpanded = this.state.isExpanded;
       onToggle = (event, isOpen) => {
-        this.setState({ isExpanded: isOpen }, () => onToggleProp(event, this.state.isExpanded));
+        this.setState({ isExpanded: isOpen }, () => onToggleProp?.(event, this.state.isExpanded));
       };
     }
 
@@ -239,7 +245,7 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
         aria-expanded={propOrStateIsExpanded}
         aria-controls={uniqueContentId}
         id={uniqueToggleId}
-        onClick={(event) => onToggle(event, !propOrStateIsExpanded)}
+        onClick={(event) => onToggle?.(event, !propOrStateIsExpanded)}
       >
         {variant !== ExpandableSectionVariant.truncate && (
           <span className={css(styles.expandableSectionToggleIcon)}>
