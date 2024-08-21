@@ -1,4 +1,8 @@
 #!/bin/bash
+ # Make sure you update the version number when changing this script.
+version=2.0
+promote=false
+
 packages=(
   @patternfly/patternfly
   @patternfly/react-charts
@@ -12,7 +16,7 @@ packages=(
   @patternfly/react-tokens
 )
 
-packages-extensions=(
+packagesExtensions=(
   @patternfly/react-topology
   @patternfly/react-virtualized-extension
   @patternfly/quickstarts
@@ -25,12 +29,30 @@ packages-extensions=(
 
 prereleaseTag=prerelease
 
-while getOpts e:p:t: flag; 
+show_help() {
+  echo "Usage: $(basename $0) [OPTIONS]"
+  echo "Options:"
+  echo "  -h, --help     Display this help message"
+  echo "  -v, --version  Display version information"
+  echo "  -e             Shows extensions packages prerelease versions"
+  echo "  -p             Shows the command to promote to latest tag"
+  echo "  -t             Versions are displayed for this tag (default: prerelease)"
+  # Add more options and descriptions as needed
+  exit 0
+}
+
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+  show_help
+fi
+
+while getopts ept:v flag; 
 do
   case "${flag}" in
-    e) packages+=(${packages-extensions[@]});;
+    e) packages+=(${packagesExtensions[@]});;
     p) promote=true;;
     t) prereleaseTag=${OPTARG};;
+   
+    v) echo "$(basename $0): version $version"; exit 0;;
   esac
 done
 
@@ -45,7 +67,7 @@ function getPrereleaseVersion {
 
 for p in ${packages[@]}; do
   version=$(getPrereleaseVersion $p)
-  if [ "$promote" = true]; then
+  if [ "$promote" = true ]; then
     echo "npm dist-tag add $p@$version latest"
   else # list
     echo "\"$p\": \"$version\","
