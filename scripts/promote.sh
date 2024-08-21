@@ -33,7 +33,7 @@ show_help() {
   echo "Usage: $(basename $0) [OPTIONS]"
   echo "Options:"
   echo "  -h, --help     Display this help message"
-  echo "  -v, --version  Display version information"
+  echo "  -v, -version   Display version information"
   echo "  -e             Shows extensions packages prerelease versions"
   echo "  -p             Shows the command to promote to latest tag"
   echo "  -t             Versions are displayed for this tag (default: prerelease)"
@@ -44,15 +44,16 @@ show_help() {
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
   show_help
 fi
-
+if [[ "$1" == "-v" || "$1" == "--version" ]]; then
+  echo "Version: $version"
+  exit 0
+fi
 while getopts ept:v flag; 
 do
   case "${flag}" in
     e) packages+=(${packagesExtensions[@]});;
     p) promote=true;;
     t) prereleaseTag=${OPTARG};;
-   
-    v) echo "$(basename $0): version $version"; exit 0;;
   esac
 done
 
