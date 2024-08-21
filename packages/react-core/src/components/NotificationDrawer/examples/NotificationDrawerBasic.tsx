@@ -64,9 +64,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               onClick={onToggle(0)}
               variant="plain"
               aria-label={`Basic example header kebab toggle`}
-            >
-              <EllipsisVIcon aria-hidden="true" />
-            </MenuToggle>
+              icon={<EllipsisVIcon aria-hidden="true" />}
+            />
           )}
         >
           <DropdownList>{dropdownItems}</DropdownList>
@@ -92,9 +91,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onToggle(1)}
                     variant="plain"
                     aria-label={`Basic example notification 1 kebab toggle`}
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
+                    icon={<EllipsisVIcon aria-hidden="true" />}
+                  />
                 )}
               >
                 <DropdownList>{dropdownItems}</DropdownList>
@@ -122,9 +120,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onToggle(2)}
                     variant="plain"
                     aria-label={`Basic example notification 2 kebab toggle`}
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
+                    icon={<EllipsisVIcon aria-hidden="true" />}
+                  />
                 )}
               >
                 <DropdownList>{dropdownItems}</DropdownList>
@@ -154,9 +151,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onToggle(3)}
                     variant="plain"
                     aria-label={`Basic example notification 3 kebab toggle`}
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
+                    icon={<EllipsisVIcon aria-hidden="true" />}
+                  />
                 )}
               >
                 <DropdownList>{dropdownItems}</DropdownList>
@@ -185,9 +181,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onToggle(4)}
                     variant="plain"
                     aria-label={`Basic example notification 4 kebab toggle`}
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
+                    icon={<EllipsisVIcon aria-hidden="true" />}
+                  />
                 )}
               >
                 <DropdownList>{dropdownItems}</DropdownList>
@@ -215,9 +210,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onToggle(5)}
                     variant="plain"
                     aria-label={`Basic example notification 5 kebab toggle`}
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
+                    icon={<EllipsisVIcon aria-hidden="true" />}
+                  />
                 )}
               >
                 <DropdownList>{dropdownItems}</DropdownList>
@@ -241,9 +235,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onToggle(6)}
                     variant="plain"
                     aria-label={`Basic example notification 6 kebab toggle`}
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
+                    icon={<EllipsisVIcon aria-hidden="true" />}
+                  />
                 )}
               >
                 <DropdownList>{dropdownItems}</DropdownList>

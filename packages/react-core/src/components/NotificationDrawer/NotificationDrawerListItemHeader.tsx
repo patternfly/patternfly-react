@@ -53,6 +53,8 @@ export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<H
     | 'right-end';
   /** Sets the heading level to use for the list item header title. Default is h2. */
   headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /** Removes the offset of the notification drawer actions. */
+  actionHasNoOffset?: boolean;
 }
 
 export const NotificationDrawerListItemHeader: React.FunctionComponent<NotificationDrawerListItemHeaderProps> = ({
@@ -65,6 +67,7 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
   truncateTitle = 0,
   tooltipPosition,
   headingLevel: HeadingLevel = 'h2',
+  actionHasNoOffset = false,
   ...props
 }: NotificationDrawerListItemHeaderProps) => {
   const titleRef = React.useRef(null);
@@ -103,7 +106,11 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
           Title
         )}
       </div>
-      {children && <div className={css(styles.notificationDrawerListItemAction)}>{children}</div>}
+      {children && (
+        <div className={css(styles.notificationDrawerListItemAction, actionHasNoOffset && styles.modifiers.noOffset)}>
+          {children}
+        </div>
+      )}
     </React.Fragment>
   );
 };

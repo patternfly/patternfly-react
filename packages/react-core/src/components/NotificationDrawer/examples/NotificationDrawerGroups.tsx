@@ -89,9 +89,8 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
               onClick={() => onToggle('groups-kebab-toggle-1')}
               variant="plain"
               aria-label={`Groups example header kebab toggle`}
-            >
-              <EllipsisVIcon aria-hidden="true" />
-            </MenuToggle>
+              icon={<EllipsisVIcon aria-hidden="true" />}
+            />
           )}
         >
           <DropdownList>{dropdownItems}</DropdownList>
@@ -125,9 +124,8 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-2')}
                         variant="plain"
                         aria-label={`Groups example group 1 notification 1 kebab toggle`}
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon aria-hidden="true" />}
+                      />
                     )}
                   >
                     <DropdownList>{dropdownItems}</DropdownList>
@@ -156,9 +154,8 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-3')}
                         variant="plain"
                         aria-label={`Groups example group 1 notification 2 kebab toggle`}
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon aria-hidden="true" />}
+                      />
                     )}
                   >
                     <DropdownList>{dropdownItems}</DropdownList>
@@ -188,9 +185,8 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-4')}
                         variant="plain"
                         aria-label={`Groups example group 1 notification 3 kebab toggle`}
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon aria-hidden="true" />}
+                      />
                     )}
                   >
                     <DropdownList>{dropdownItems}</DropdownList>
@@ -219,9 +215,8 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-5')}
                         variant="plain"
                         aria-label={`Groups example group 1 notification 4 kebab toggle`}
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon aria-hidden="true" />}
+                      />
                     )}
                   >
                     <DropdownList>{dropdownItems}</DropdownList>
@@ -259,9 +254,8 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-6')}
                         variant="plain"
                         aria-label={`Groups example group 2 notification 1 kebab toggle`}
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon aria-hidden="true" />}
+                      />
                     )}
                   >
                     <DropdownList>{dropdownItems}</DropdownList>
@@ -290,9 +284,8 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-7')}
                         variant="plain"
                         aria-label={`Groups example group 2 notification 2 kebab toggle`}
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon aria-hidden="true" />}
+                      />
                     )}
                   >
                     <DropdownList>{dropdownItems}</DropdownList>
@@ -322,9 +315,8 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-8')}
                         variant="plain"
                         aria-label={`Groups example group 2 notification 3 kebab toggle`}
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon aria-hidden="true" />}
+                      />
                     )}
                   >
                     <DropdownList>{dropdownItems}</DropdownList>
@@ -353,9 +345,8 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-9')}
                         variant="plain"
                         aria-label={`Groups example group 2 notification 4 kebab toggle`}
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon aria-hidden="true" />}
+                      />
                     )}
                   >
                     <DropdownList>{dropdownItems}</DropdownList>
