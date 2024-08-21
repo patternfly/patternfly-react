@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.102](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.101...@patternfly/react-core@6.0.0-alpha.102) (2024-08-21)
+
+### Features
+
+- **NotificationDrawer:** add no offset prop ([#10822](https://github.com/patternfly/patternfly-react/issues/10822)) ([2ac50fe](https://github.com/patternfly/patternfly-react/commit/2ac50fe50c87eb77892ebf8702f96159a7a40b85))
+
 # [6.0.0-alpha.101](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.100...@patternfly/react-core@6.0.0-alpha.101) (2024-08-19)
 
 ### Bug Fixes
