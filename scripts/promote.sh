@@ -48,12 +48,14 @@ if [[ "$1" == "-v" || "$1" == "--version" ]]; then
   echo "Version: $version"
   exit 0
 fi
-while getopts ept:v flag; 
+while getopts ept: flag; 
 do
   case "${flag}" in
     e) packages+=(${packagesExtensions[@]});;
     p) promote=true;;
     t) prereleaseTag=${OPTARG};;
+
+    *) show_help;;
   esac
 done
 
