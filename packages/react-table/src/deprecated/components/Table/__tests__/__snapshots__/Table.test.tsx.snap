@@ -1393,7 +1393,6 @@ exports[`Table Collapsible nested table 1`] = `
           class="pf-v5-c-table__th"
           data-key="0"
           data-label=""
-          scope=""
           tabindex="-1"
         />
         <th
@@ -2146,7 +2145,6 @@ exports[`Table Collapsible table 1`] = `
           class="pf-v5-c-table__th"
           data-key="0"
           data-label=""
-          scope=""
           tabindex="-1"
         />
         <th
@@ -4166,7 +4164,6 @@ exports[`Table Selectable table 1`] = `
           class="pf-v5-c-table__th pf-v5-c-table__check"
           data-key="0"
           data-label=""
-          scope=""
           tabindex="-1"
         >
           <label>
@@ -4867,7 +4864,6 @@ exports[`Table Selectable table with Radio 1`] = `
           class="pf-v5-c-table__th"
           data-key="0"
           data-label=""
-          scope=""
           tabindex="-1"
         />
         <th
@@ -5560,7 +5556,6 @@ exports[`Table Selectable table with selected expandable row 1`] = `
           class="pf-v5-c-table__th pf-v5-c-table__check"
           data-key="0"
           data-label=""
-          scope=""
           tabindex="-1"
         >
           <label>
@@ -10291,7 +10286,6 @@ exports[`Table simple Editable table 1`] = `
             class="pf-v5-c-table__th"
             data-key="4"
             data-label=""
-            scope=""
             tabindex="-1"
           />
         </tr>
