@@ -9,7 +9,7 @@ export const scopeColTransformer: ITransform = () => ({
 });
 
 export const emptyCol: ITransform = (label: IFormatterValueType) => ({
-  ...(label ? {} : { scope: '' })
+  ...(label ? {} : { scope: null })
 });
 
 export const parentId: ITransform = (_value: IFormatterValueType, { rowData }: IExtra) => ({
