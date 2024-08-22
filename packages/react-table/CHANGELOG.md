@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0-prerelease.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.4.0-prerelease.36...@patternfly/react-table@5.4.0-prerelease.37) (2024-08-22)
+
+### Bug Fixes
+
+- **Table:** remove blank scope in empty deprecated table headers ([#10875](https://github.com/patternfly/patternfly-react/issues/10875)) ([279c54f](https://github.com/patternfly/patternfly-react/commit/279c54f5021026e9a8a588ea17ddf2bb0994773f))
+
 # [5.4.0-prerelease.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.4.0-prerelease.35...@patternfly/react-table@5.4.0-prerelease.36) (2024-08-06)
 
 **Note:** Version bump only for package @patternfly/react-table
