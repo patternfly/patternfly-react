@@ -62,3 +62,9 @@ HTML elements wrapped by `<Content>` are styled by the content component.
 ```ts file="./ContentVisited.tsx"
 
 ```
+
+### Editorial content
+
+```ts file="./ContentEditorial.tsx"
+
+```

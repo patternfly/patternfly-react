@@ -53,6 +53,8 @@ export interface ContentProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isPlainList?: boolean;
   /** Flag to indicate the link (or all links within the content) has visited styles applied if the browser determines the link has been visited. */
   isVisitedLink?: boolean;
+  /** Flag to indicate the content has editorial styling */
+  isEditorial?: boolean;
   /** Value to overwrite the randomly generated data-ouia-component-id. */
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -89,6 +91,7 @@ export const Content: React.FunctionComponent<ContentProps> = ({
   isVisitedLink = false,
   ouiaId,
   ouiaSafe = true,
+  isEditorial = false,
   ...props
 }: ContentProps) => {
   const wrappingComponent = component ?? 'div';
@@ -106,6 +109,7 @@ export const Content: React.FunctionComponent<ContentProps> = ({
         componentStyles[wrappingComponent],
         isList && isPlainList && styles.modifiers.plain,
         isVisitedLink && styles.modifiers.visited,
+        isEditorial && styles.modifiers.editorial,
         className
       )}
     >
