@@ -24,7 +24,7 @@ exports[`check loginpage example against snapshot 1`] = `
       <main
         class="pf-v6-c-login__main"
       >
-        <header
+        <div
           class="pf-v6-c-login__main-header"
         >
           <h2
@@ -35,7 +35,7 @@ exports[`check loginpage example against snapshot 1`] = `
           >
             Log into your account
           </h2>
-        </header>
+        </div>
         <div
           class="pf-v6-c-login__main-body"
         />
