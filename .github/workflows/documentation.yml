@@ -39,11 +39,11 @@ jobs:
 
       - name: Upload documentation
         if: always()
-        run: node .github/upload-preview.js packages/react-docs/public
+        run: node .github/upload-preview.mjs packages/react-docs/public
 
       - name: Run accessibility tests
         run: yarn serve:docs & yarn test:a11y
 
       - name: Upload accessibility results
         if: always()
-        run: node .github/upload-preview.js packages/react-docs/coverage
+        run: node .github/upload-preview.mjs packages/react-docs/coverage

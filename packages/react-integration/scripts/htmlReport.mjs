@@ -1,4 +1,4 @@
-const xmlDocument = require('xmldoc');
+import xmlDocument from 'xmldoc';
 
 // stacked bar chart & execution details data gets captured during input xml parsing
 let dataSeries = '';
@@ -188,7 +188,7 @@ const generateTSTable = function (testConfig) {
  * @param {any} reportXml - XML data
  * @param {object} testConfig - config object
  */
-function getHTMLReport(reportXml, testConfig) {
+export function getHTMLReport(reportXml, testConfig) {
   const testDetails = generateTDTable(reportXml);
   const testSummary = generateTSTable(testConfig);
 
@@ -203,6 +203,3 @@ function getHTMLReport(reportXml, testConfig) {
 
   return htmlReport;
 }
-
-// @exports
-export default { getHTMLReport };

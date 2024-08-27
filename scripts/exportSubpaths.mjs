@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
-const fse = require('fs-extra');
-const path = require('path');
+import fse from 'fs-extra';
+import { createRequire } from 'node:module';
+import path from 'node:path';
 
+const require = createRequire(import.meta.url);
 const root = process.cwd();
 const packageJson = require(`${root}/package.json`);
 

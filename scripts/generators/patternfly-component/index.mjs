@@ -1,8 +1,8 @@
-const { join, resolve } = require('path');
-const { ADD_TO_BARREL_FILE } = require('../actionTypes');
+import { join, resolve } from 'node:path';
+import { ADD_TO_BARREL_FILE } from '../actionTypes.mjs';
 
-const templatesDir = resolve(__dirname, './templates');
-const reactCoreRoot = resolve(__dirname, '../../../packages/react-core');
+const templatesDir = resolve(import.meta.dirname, './templates');
+const reactCoreRoot = resolve(import.meta.dirname, '../../../packages/react-core');
 
 const componentTypes = new Map([
   ['component', 'components'],
@@ -10,7 +10,7 @@ const componentTypes = new Map([
   ['internal', 'internal']
 ]);
 
-function setPFGenerators(plop) {
+export default function setPFGenerators(plop) {
   plop.setGenerator('PatternFly Component', {
     description: 'Component or Layout for PatternFly react-core package',
     prompts: [
@@ -62,5 +62,3 @@ function setPFGenerators(plop) {
     }
   });
 }
-
-module.exports = setPFGenerators;

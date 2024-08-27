@@ -1,9 +1,11 @@
 /* eslint-disable no-console */
-const fse = require('fs-extra');
-const path = require('path');
-const { glob } = require('glob');
-const getDynamicModuleMap = require('./parse-dynamic-modules');
+import fse from 'fs-extra';
+import { createRequire } from 'node:module';
+import path from 'node:path';
+import { glob } from 'glob';
+import getDynamicModuleMap from './parse-dynamic-modules.mjs';
 
+const require = createRequire(import.meta.url);
 const root = process.cwd();
 const packageJson = require(`${root}/package.json`);
 

@@ -1,9 +1,9 @@
-const path = require('path');
-const fs = require('fs-extra');
+import path from 'node:path';
+import fs from 'fs-extra';
 
-const ADD_TO_BARREL_FILE = 'addToBarrelFile';
+export const ADD_TO_BARREL_FILE = 'addToBarrelFile';
 
-function setActionTypes(plop) {
+export function setActionTypes(plop) {
   plop.setActionType(ADD_TO_BARREL_FILE, addToBarrelFile);
 }
 
@@ -29,8 +29,3 @@ async function addToBarrelFile(answers, config, plop) {
   await fs.outputFile(pathToFile, updatedLines.join('\n'));
   return `-> ${pathToFile}`;
 }
-
-module.exports = {
-  setActionTypes,
-  ADD_TO_BARREL_FILE
-};

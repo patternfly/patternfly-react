@@ -1,8 +1,9 @@
 /* eslint-disable no-console, camelcase */
-const path = require('path');
-const { Octokit } = require('@octokit/rest');
+import { Octokit } from '@octokit/rest';
+import path from 'node:path';
+import surge from 'surge';
+
 const octokit = new Octokit({ auth: process.env.GH_PR_TOKEN });
-const surge = require('surge');
 const publishFn = surge().publish();
 
 // From github actions

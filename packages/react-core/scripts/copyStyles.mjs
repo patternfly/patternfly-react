@@ -1,8 +1,11 @@
-const { copySync, readFileSync, writeFileSync } = require('fs-extra');
-const { resolve, dirname, join } = require('path');
-const { parse: parseCSS, stringify: stringifyCSS } = require('css');
+import { copySync } from 'fs-extra/esm';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { resolve, dirname, join } from 'node:path';
+import { parse as parseCSS, stringify as stringifyCSS } from 'css';
 
-const stylesDir = resolve(__dirname, '../dist/styles');
+const require = createRequire(import.meta.url);
+const stylesDir = resolve(import.meta.dirname, '../dist/styles');
 const pfDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
 
 const unusedSelectorRegEx = /(\.fas?|\.sr-only)/;

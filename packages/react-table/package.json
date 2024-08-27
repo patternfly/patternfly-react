@@ -35,9 +35,9 @@
   "homepage": "https://github.com/patternfly/patternfly-react/tree/main/packages/react-table#readme",
   "scripts": {
     "build:umd": "rollup -c --environment IS_PRODUCTION",
-    "build:single:packages": "node ../../scripts/build-single-packages.js --config single-packages.config.json",
+    "build:single:packages": "node ../../scripts/build-single-packages.mjs --config single-packages.config.json",
     "clean": "rimraf dist components deprecated",
-    "subpaths": "node ../../scripts/exportSubpaths.js --config subpaths.config.json"
+    "subpaths": "node ../../scripts/exportSubpaths.mjs --config subpaths.config.json"
   },
   "dependencies": {
     "@patternfly/react-core": "workspace:^",

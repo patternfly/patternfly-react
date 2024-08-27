@@ -93,7 +93,7 @@ jobs:
         run: printenv
 
       - name: Run Cypress tests
-        run: yarn serve:integration & yarn test:integration -s $(node .github/split.js)
+        run: yarn serve:integration & yarn test:integration -s $(node .github/split.mjs)
         env:
           WORKER_NUM: ${{ matrix.worker }}
           WORKER_COUNT: 5

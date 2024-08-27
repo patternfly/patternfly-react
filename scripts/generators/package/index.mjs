@@ -1,9 +1,9 @@
-const { join, resolve } = require('path');
-const { REMOVE_NPM_SCOPE } = require('../helpers');
+import { join, resolve } from 'node:path';
+import { REMOVE_NPM_SCOPE } from '../helpers.mjs';
 
-const packagesRoot = resolve(__dirname, '../../../packages');
+const packagesRoot = resolve(import.meta.dirname, '../../../packages');
 
-function setPackageGenerators(plop) {
+export default function setPackageGenerators(plop) {
   plop.setGenerator('Package', {
     description: 'A new package for the monorepo',
     prompts: [
@@ -30,7 +30,7 @@ function setPackageGenerators(plop) {
         {
           type: 'add',
           path: join(packageBaseTemplate, `package.json`),
-          templateFile: resolve(__dirname, './package.json.hbs')
+          templateFile: resolve(import.meta.dirname, './package.json.hbs')
         },
         {
           type: 'add',
@@ -42,17 +42,17 @@ function setPackageGenerators(plop) {
         answers.buildsWithTypescript && {
           type: 'add',
           path: join(packageBaseTemplate, `.npmignore`),
-          templateFile: resolve(__dirname, './.npmignore')
+          templateFile: resolve(import.meta.dirname, './.npmignore')
         },
         answers.buildsWithTypescript && {
           type: 'add',
           path: join(packageBaseTemplate, `tsconfig.json`),
-          templateFile: resolve(__dirname, './tsconfig.json')
+          templateFile: resolve(import.meta.dirname, './tsconfig.json')
         },
         answers.buildsWithTypescript && {
           type: 'add',
           path: join(packageBaseTemplate, `tsconfig.cjs.json`),
-          templateFile: resolve(__dirname, './tsconfig.cjs.json')
+          templateFile: resolve(import.meta.dirname, './tsconfig.cjs.json')
         },
         {
           type: 'add',
@@ -63,5 +63,3 @@ function setPackageGenerators(plop) {
     }
   });
 }
-
-module.exports = setPackageGenerators;
