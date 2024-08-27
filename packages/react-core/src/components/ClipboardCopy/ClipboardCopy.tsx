@@ -231,6 +231,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                         this.setState({ copied: true });
                       }}
                       onTooltipHidden={() => this.setState({ copied: false })}
+                      hasNoPadding
                     >
                       {this.state.copied ? clickTip : hoverTip}
                     </ClipboardCopyButton>

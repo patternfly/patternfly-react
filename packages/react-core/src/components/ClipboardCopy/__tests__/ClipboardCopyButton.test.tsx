@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ClipboardCopyButton } from '../ClipboardCopyButton';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
+import '@testing-library/jest-dom';
 
 jest.mock('../../Tooltip', () => ({
   Tooltip: ({ content, children, exitDelay, entryDelay, maxWidth, position, onTooltipHidden }) => (
@@ -87,6 +88,13 @@ test('Passes variant to Button when variant is passed', () => {
   render(<ClipboardCopyButton variant="plain" {...requiredProps} />);
 
   expect(screen.getByRole('button')).toHaveClass(buttonStyles.modifiers.plain);
+});
+
+test('Removes padding when hasNoPadding prop passed', () => {
+  render(<ClipboardCopyButton variant="plain" hasNoPadding {...requiredProps} />);
+
+  expect(screen.getByRole('button')).toHaveClass(buttonStyles.modifiers.plain);
+  expect(screen.getByRole('button')).toHaveClass(buttonStyles.modifiers.noPadding);
 });
 
 test('Calls onClick when ClipboardCopyButton is clicked', async () => {

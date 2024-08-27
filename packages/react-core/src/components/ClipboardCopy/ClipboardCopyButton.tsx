@@ -43,6 +43,8 @@ export interface ClipboardCopyButtonProps
   variant?: 'control' | 'plain';
   /** Callback when tooltip's hide transition has finished executing */
   onTooltipHidden?: () => void;
+  /** Removes padding from clipboard copy button. This is used for inline-compact variant */
+  hasNoPadding?: boolean;
 }
 
 export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonProps> = ({
@@ -58,6 +60,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   variant = 'control',
   onTooltipHidden = () => {},
   className,
+  hasNoPadding = false,
   ...props
 }: ClipboardCopyButtonProps) => {
   const triggerRef = React.createRef<HTMLButtonElement>();
@@ -78,6 +81,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
       <Button
         type="button"
         variant={variant}
+        hasNoPadding={hasNoPadding}
         onClick={onClick}
         aria-label={ariaLabel}
         className={className}
