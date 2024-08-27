@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.4.0 (2024-08-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
 # [5.4.0-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0-prerelease.32...@patternfly/react-core@5.4.0-prerelease.33) (2024-08-06)
 
 **Note:** Version bump only for package @patternfly/react-core
