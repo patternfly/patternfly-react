@@ -143,7 +143,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                     </SelectOption>
                   ))}
                   onToggle={(_event: any) => {
-                    this.onToggle(rowIndex, cellIndex);
+                    this.onToggle(updatedProps.isSelectOpen, rowIndex as number, cellIndex as number);
                   }}
                   selections={updatedProps.selected}
                 />
@@ -257,7 +257,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                     </SelectOption>
                   ))}
                   onToggle={(_event: any) => {
-                    this.onToggle(rowIndex, cellIndex);
+                    this.onToggle(updatedProps.isSelectOpen, rowIndex as number, cellIndex as number);
                   }}
                   selections={updatedProps.selected}
                 />
@@ -379,21 +379,30 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
   // set open state if component closes menu on click (e.g. when you click outside of the menu)
   onOpenChange = (isOpen: boolean, rowIndex: number, cellIndex: number) => {
     const newRows = Array.from(this.state.rows);
-    newRows[rowIndex as number].cells[cellIndex].props.isSelectOpen = isOpen;
-    this.setState({
-      rows: newRows
-    });
+    const rowCells = newRows[rowIndex as number].cells;
+    if (rowCells) {
+      const cell = rowCells[cellIndex as number];
+      if (cell) {
+        (cell as IRowCell).props.isSelectOpen = isOpen;
+        this.setState({
+          rows: newRows
+        });
+      }
+    }
   };
 
-  onToggle = (rowIndex: string | number | undefined, cellIndex: string | number | undefined) => {
+  onToggle = (isOpen: boolean, rowIndex: number, cellIndex: number) => {
     const newRows = Array.from(this.state.rows);
-    if (typeof rowIndex !== 'undefined' && typeof rowIndex !== 'undefined') {
-      newRows[rowIndex as number].cells[cellIndex as number].props.isSelectOpen =
-        !newRows[rowIndex as number].cells[cellIndex as number].props.isSelectOpen;
+    const rowCells = newRows[rowIndex].cells;
+    if (rowCells) {
+      const cell = rowCells[cellIndex as number];
+      if (cell) {
+        (cell as IRowCell).props.isSelectOpen = isOpen;
+        this.setState({
+          rows: newRows
+        });
+      }
     }
-    this.setState({
-      rows: newRows
-    });
   };
 
   clearSelection = (_event: React.MouseEvent, rowIndex: number, cellIndex: number) => {
