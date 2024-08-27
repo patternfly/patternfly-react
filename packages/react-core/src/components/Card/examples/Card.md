@@ -180,8 +180,18 @@ Dividers can be placed between sections of the card.
 
 ```
 
-### Cards as tiles
+## Cards as tiles
+
+Sets of selectable cards may also be used as tiles, and may be made either single selectable or multiselectable by passing the `variant` property to the `selectableActions` object. You may toggle the visibility of the radio or checkbox by additionally passing the `isHidden` property to the `selectableActions` object.
+
+### Single selectable tiles
 
 ```ts file='./CardTile.tsx'
+
+```
+
+### Multi selectable tiles
+
+```ts file='./CardTileMulti.tsx'
 
 ```

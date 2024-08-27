@@ -54,6 +54,8 @@ export interface CardHeaderSelectableActionsObject {
    * the isSelected prop on the card component instead.
    */
   isChecked?: boolean;
+  /** Flag indicating the action is hidden */
+  isHidden?: boolean;
 }
 
 export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
@@ -142,7 +144,11 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
           isDisabled: isCardDisabled,
           onChange: selectableActions.onChange,
           isChecked: selectableActions.isChecked ?? isSelected,
-          ...selectableActions.selectableActionProps
+          ...selectableActions.selectableActionProps,
+          style: {
+            ...selectableActions.selectableActionProps?.style,
+            ...(selectableActions?.isHidden && { visibility: 'hidden' })
+          }
         });
 
         const isClickableLinkCard = selectableActions?.to !== undefined;
@@ -154,7 +160,11 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
             id: selectableActions.selectableActionId,
             'aria-label': selectableActions.selectableActionAriaLabel,
             'aria-labelledby': selectableActions.selectableActionAriaLabelledby,
-            ...selectableActions.selectableActionProps
+            ...selectableActions.selectableActionProps,
+            style: {
+              ...selectableActions.selectableActionProps?.style,
+              ...(selectableActions?.isHidden && { visibility: 'hidden' })
+            }
           };
 
           if (isClickableLinkCard) {
