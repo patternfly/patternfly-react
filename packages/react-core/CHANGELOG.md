@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.104](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.103...@patternfly/react-core@6.0.0-alpha.104) (2024-08-28)
+
+### Bug Fixes
+
+- **docs:** fix jumplinks scrollspy subsections demo ([#10866](https://github.com/patternfly/patternfly-react/issues/10866)) ([137ef68](https://github.com/patternfly/patternfly-react/commit/137ef685759dd36770a8d492f08463b3012a3c2c))
+- promote former next components out of beta ([#10799](https://github.com/patternfly/patternfly-react/issues/10799)) ([df479ef](https://github.com/patternfly/patternfly-react/commit/df479efabe0865dd9dc75c8c0017fb1dc2848723))
+
 # [6.0.0-alpha.103](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.102...@patternfly/react-core@6.0.0-alpha.103) (2024-08-27)
 
 **Note:** Version bump only for package @patternfly/react-core
