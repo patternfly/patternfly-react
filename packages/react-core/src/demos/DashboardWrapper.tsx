@@ -47,6 +47,7 @@ const PageTemplateTitle = (
 export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
   children,
   mainContainerId,
+  banner,
   breadcrumb,
   masthead,
   sidebar,
@@ -109,6 +110,7 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
       sidebar={sidebar ?? _sidebar}
       isManagedSidebar
       skipToContent={PageSkipToContent}
+      banner={banner}
       breadcrumb={renderedBreadcrumb}
       mainContainerId={mainContainerId ?? 'main-content-page-layout-default-nav'}
       notificationDrawer={notificationDrawer}
