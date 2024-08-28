@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.105](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.104...@patternfly/react-core@6.0.0-alpha.105) (2024-08-28)
+
+### Bug Fixes
+
+- **LoginPage:** updated markup for LoginMainHeader ([#10880](https://github.com/patternfly/patternfly-react/issues/10880)) ([bc34872](https://github.com/patternfly/patternfly-react/commit/bc34872ec9f310622e434f40e8c9ad8dba23a927))
+
 # [6.0.0-alpha.104](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.103...@patternfly/react-core@6.0.0-alpha.104) (2024-08-28)
 
 ### Bug Fixes
