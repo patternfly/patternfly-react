@@ -4,7 +4,6 @@ section: components
 cssPrefix: pf-v5-c-modal-box
 propComponents: ['Modal', 'ModalBody', 'ModalHeader', 'ModalFooter']
 ouia: true
-beta: true
 ---
 
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
