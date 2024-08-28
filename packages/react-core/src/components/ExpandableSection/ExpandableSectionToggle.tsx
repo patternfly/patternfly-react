@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
 import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import { Button } from '../Button';
 
 /** Acts as the toggle sub-component when the main expandable section component has the isDetached
  * property passed in. Allows for more custom control over the expandable section's toggle.
@@ -50,26 +51,30 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
     )}
     {...props}
   >
-    <button
-      className={css(styles.expandableSectionToggle)}
-      type="button"
-      aria-expanded={isExpanded}
-      aria-controls={contentId}
-      onClick={() => onToggle(!isExpanded)}
-      id={toggleId}
-    >
-      {!hasTruncatedContent && (
-        <span
-          className={css(
-            styles.expandableSectionToggleIcon,
-            isExpanded && direction === 'up' && styles.modifiers.expandTop
-          )}
-        >
-          <AngleRightIcon aria-hidden />
-        </span>
-      )}
-      <span className={css(styles.expandableSectionToggleText)}>{children}</span>
-    </button>
+    <div className={css(styles.expandableSectionToggle)}>
+      <Button
+        variant="link"
+        {...(hasTruncatedContent && { isInline: true })}
+        aria-expanded={isExpanded}
+        aria-controls={contentId}
+        onClick={() => onToggle(!isExpanded)}
+        id={toggleId}
+        {...(!hasTruncatedContent && {
+          icon: (
+            <span
+              className={css(
+                styles.expandableSectionToggleIcon,
+                isExpanded && direction === 'up' && styles.modifiers.expandTop
+              )}
+            >
+              <AngleRightIcon aria-hidden />
+            </span>
+          )
+        })}
+      >
+        <span className={css(styles.expandableSectionToggleText)}>{children}</span>
+      </Button>
+    </div>
   </div>
 );
 

@@ -17,36 +17,52 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
   <div
     class="pf-v6-c-expandable-section pf-m-expanded"
   >
-    <button
-      aria-controls="content-id"
-      aria-expanded="true"
+    <div
       class="pf-v6-c-expandable-section__toggle"
-      id="toggle-id"
-      type="button"
     >
-      <span
-        class="pf-v6-c-expandable-section__toggle-icon pf-m-expand-top"
+      <button
+        aria-controls="content-id"
+        aria-disabled="false"
+        aria-expanded="true"
+        class="pf-v6-c-button pf-m-link"
+        data-ouia-component-id="OUIA-Generated-Button-link-5"
+        data-ouia-component-type="PF6/Button"
+        data-ouia-safe="true"
+        id="toggle-id"
+        type="button"
       >
-        <svg
-          aria-hidden="true"
-          class="pf-v6-svg"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          viewBox="0 0 256 512"
-          width="1em"
+        <span
+          class="pf-v6-c-button__icon pf-m-start"
         >
-          <path
-            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-          />
-        </svg>
-      </span>
-      <span
-        class="pf-v6-c-expandable-section__toggle-text"
-      >
-        Toggle text
-      </span>
-    </button>
+          <span
+            class="pf-v6-c-expandable-section__toggle-icon pf-m-expand-top"
+          >
+            <svg
+              aria-hidden="true"
+              class="pf-v6-svg"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              viewBox="0 0 256 512"
+              width="1em"
+            >
+              <path
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="pf-v6-c-button__text"
+        >
+          <span
+            class="pf-v6-c-expandable-section__toggle-text"
+          >
+            Toggle text
+          </span>
+        </span>
+      </button>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -56,33 +72,49 @@ exports[`Disclosure ExpandableSection 1`] = `
   <div
     class="pf-v6-c-expandable-section pf-m-display-lg pf-m-limit-width"
   >
-    <button
-      aria-controls="content-id"
+    <div
       class="pf-v6-c-expandable-section__toggle"
-      id="toggle-id"
-      type="button"
     >
-      <span
-        class="pf-v6-c-expandable-section__toggle-icon"
+      <button
+        aria-controls="content-id"
+        aria-disabled="false"
+        class="pf-v6-c-button pf-m-link"
+        data-ouia-component-id="OUIA-Generated-Button-link-6"
+        data-ouia-component-type="PF6/Button"
+        data-ouia-safe="true"
+        id="toggle-id"
+        type="button"
       >
-        <svg
-          aria-hidden="true"
-          class="pf-v6-svg"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          viewBox="0 0 256 512"
-          width="1em"
+        <span
+          class="pf-v6-c-button__icon pf-m-start"
         >
-          <path
-            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+          <span
+            class="pf-v6-c-expandable-section__toggle-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="pf-v6-svg"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              viewBox="0 0 256 512"
+              width="1em"
+            >
+              <path
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="pf-v6-c-button__text"
+        >
+          <span
+            class="pf-v6-c-expandable-section__toggle-text"
           />
-        </svg>
-      </span>
-      <span
-        class="pf-v6-c-expandable-section__toggle-text"
-      />
-    </button>
+        </span>
+      </button>
+    </div>
     <div
       aria-labelledby="toggle-id"
       class="pf-v6-c-expandable-section__content"
@@ -101,33 +133,49 @@ exports[`ExpandableSection 1`] = `
   <div
     class="pf-v6-c-expandable-section"
   >
-    <button
-      aria-controls="content-id"
+    <div
       class="pf-v6-c-expandable-section__toggle"
-      id="toggle-id"
-      type="button"
     >
-      <span
-        class="pf-v6-c-expandable-section__toggle-icon"
+      <button
+        aria-controls="content-id"
+        aria-disabled="false"
+        class="pf-v6-c-button pf-m-link"
+        data-ouia-component-id="OUIA-Generated-Button-link-1"
+        data-ouia-component-type="PF6/Button"
+        data-ouia-safe="true"
+        id="toggle-id"
+        type="button"
       >
-        <svg
-          aria-hidden="true"
-          class="pf-v6-svg"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          viewBox="0 0 256 512"
-          width="1em"
+        <span
+          class="pf-v6-c-button__icon pf-m-start"
         >
-          <path
-            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+          <span
+            class="pf-v6-c-expandable-section__toggle-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="pf-v6-svg"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              viewBox="0 0 256 512"
+              width="1em"
+            >
+              <path
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="pf-v6-c-button__text"
+        >
+          <span
+            class="pf-v6-c-expandable-section__toggle-text"
           />
-        </svg>
-      </span>
-      <span
-        class="pf-v6-c-expandable-section__toggle-text"
-      />
-    </button>
+        </span>
+      </button>
+    </div>
     <div
       aria-labelledby="toggle-id"
       class="pf-v6-c-expandable-section__content"
@@ -146,34 +194,50 @@ exports[`Renders ExpandableSection expanded 1`] = `
   <div
     class="pf-v6-c-expandable-section pf-m-expanded"
   >
-    <button
-      aria-controls="content-id"
-      aria-expanded="true"
+    <div
       class="pf-v6-c-expandable-section__toggle"
-      id="toggle-id"
-      type="button"
     >
-      <span
-        class="pf-v6-c-expandable-section__toggle-icon"
+      <button
+        aria-controls="content-id"
+        aria-disabled="false"
+        aria-expanded="true"
+        class="pf-v6-c-button pf-m-link"
+        data-ouia-component-id="OUIA-Generated-Button-link-2"
+        data-ouia-component-type="PF6/Button"
+        data-ouia-safe="true"
+        id="toggle-id"
+        type="button"
       >
-        <svg
-          aria-hidden="true"
-          class="pf-v6-svg"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          viewBox="0 0 256 512"
-          width="1em"
+        <span
+          class="pf-v6-c-button__icon pf-m-start"
         >
-          <path
-            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+          <span
+            class="pf-v6-c-expandable-section__toggle-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="pf-v6-svg"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              viewBox="0 0 256 512"
+              width="1em"
+            >
+              <path
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="pf-v6-c-button__text"
+        >
+          <span
+            class="pf-v6-c-expandable-section__toggle-text"
           />
-        </svg>
-      </span>
-      <span
-        class="pf-v6-c-expandable-section__toggle-text"
-      />
-    </button>
+        </span>
+      </button>
+    </div>
     <div
       aria-labelledby="toggle-id"
       class="pf-v6-c-expandable-section__content"
@@ -191,34 +255,50 @@ exports[`Renders ExpandableSection indented 1`] = `
   <div
     class="pf-v6-c-expandable-section pf-m-expanded pf-m-indented"
   >
-    <button
-      aria-controls="content-id"
-      aria-expanded="true"
+    <div
       class="pf-v6-c-expandable-section__toggle"
-      id="toggle-id"
-      type="button"
     >
-      <span
-        class="pf-v6-c-expandable-section__toggle-icon"
+      <button
+        aria-controls="content-id"
+        aria-disabled="false"
+        aria-expanded="true"
+        class="pf-v6-c-button pf-m-link"
+        data-ouia-component-id="OUIA-Generated-Button-link-7"
+        data-ouia-component-type="PF6/Button"
+        data-ouia-safe="true"
+        id="toggle-id"
+        type="button"
       >
-        <svg
-          aria-hidden="true"
-          class="pf-v6-svg"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          viewBox="0 0 256 512"
-          width="1em"
+        <span
+          class="pf-v6-c-button__icon pf-m-start"
         >
-          <path
-            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+          <span
+            class="pf-v6-c-expandable-section__toggle-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="pf-v6-svg"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              viewBox="0 0 256 512"
+              width="1em"
+            >
+              <path
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="pf-v6-c-button__text"
+        >
+          <span
+            class="pf-v6-c-expandable-section__toggle-text"
           />
-        </svg>
-      </span>
-      <span
-        class="pf-v6-c-expandable-section__toggle-text"
-      />
-    </button>
+        </span>
+      </button>
+    </div>
     <div
       aria-labelledby="toggle-id"
       class="pf-v6-c-expandable-section__content"
@@ -236,35 +316,51 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
   <div
     class="pf-v6-c-expandable-section"
   >
-    <button
-      aria-controls="content-id"
+    <div
       class="pf-v6-c-expandable-section__toggle"
-      id="toggle-id"
-      type="button"
     >
-      <span
-        class="pf-v6-c-expandable-section__toggle-icon"
+      <button
+        aria-controls="content-id"
+        aria-disabled="false"
+        class="pf-v6-c-button pf-m-link"
+        data-ouia-component-id="OUIA-Generated-Button-link-4"
+        data-ouia-component-type="PF6/Button"
+        data-ouia-safe="true"
+        id="toggle-id"
+        type="button"
       >
-        <svg
-          aria-hidden="true"
-          class="pf-v6-svg"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          viewBox="0 0 256 512"
-          width="1em"
+        <span
+          class="pf-v6-c-button__icon pf-m-start"
         >
-          <path
-            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-          />
-        </svg>
-      </span>
-      <span
-        class="pf-v6-c-expandable-section__toggle-text"
-      >
-        Show More
-      </span>
-    </button>
+          <span
+            class="pf-v6-c-expandable-section__toggle-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="pf-v6-svg"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              viewBox="0 0 256 512"
+              width="1em"
+            >
+              <path
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="pf-v6-c-button__text"
+        >
+          <span
+            class="pf-v6-c-expandable-section__toggle-text"
+          >
+            Show More
+          </span>
+        </span>
+      </button>
+    </div>
     <div
       aria-labelledby="toggle-id"
       class="pf-v6-c-expandable-section__content"
