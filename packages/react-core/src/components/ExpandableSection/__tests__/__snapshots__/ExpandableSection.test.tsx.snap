@@ -55,11 +55,7 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
         <span
           class="pf-v6-c-button__text"
         >
-          <span
-            class="pf-v6-c-expandable-section__toggle-text"
-          >
-            Toggle text
-          </span>
+          Toggle text
         </span>
       </button>
     </div>
@@ -105,13 +101,6 @@ exports[`Disclosure ExpandableSection 1`] = `
               />
             </svg>
           </span>
-        </span>
-        <span
-          class="pf-v6-c-button__text"
-        >
-          <span
-            class="pf-v6-c-expandable-section__toggle-text"
-          />
         </span>
       </button>
     </div>
@@ -166,13 +155,6 @@ exports[`ExpandableSection 1`] = `
               />
             </svg>
           </span>
-        </span>
-        <span
-          class="pf-v6-c-button__text"
-        >
-          <span
-            class="pf-v6-c-expandable-section__toggle-text"
-          />
         </span>
       </button>
     </div>
@@ -229,13 +211,6 @@ exports[`Renders ExpandableSection expanded 1`] = `
             </svg>
           </span>
         </span>
-        <span
-          class="pf-v6-c-button__text"
-        >
-          <span
-            class="pf-v6-c-expandable-section__toggle-text"
-          />
-        </span>
       </button>
     </div>
     <div
@@ -289,13 +264,6 @@ exports[`Renders ExpandableSection indented 1`] = `
               />
             </svg>
           </span>
-        </span>
-        <span
-          class="pf-v6-c-button__text"
-        >
-          <span
-            class="pf-v6-c-expandable-section__toggle-text"
-          />
         </span>
       </button>
     </div>
@@ -353,11 +321,7 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
         <span
           class="pf-v6-c-button__text"
         >
-          <span
-            class="pf-v6-c-expandable-section__toggle-text"
-          >
-            Show More
-          </span>
+          Show More
         </span>
       </button>
     </div>

@@ -229,7 +229,7 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
     );
 
     const expandableToggle = !isDetached && (
-      <div className={css(styles.expandableSectionToggle)}>
+      <div className={`${styles.expandableSection}__toggle`}>
         <Button
           variant="link"
           {...(variant === ExpandableSectionVariant.truncate && { isInline: true })}
@@ -245,7 +245,7 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
             )
           })}
         >
-          <span className={css(styles.expandableSectionToggleText)}>{toggleContent || computedToggleText}</span>
+          {toggleContent || computedToggleText}
         </Button>
       </div>
     );

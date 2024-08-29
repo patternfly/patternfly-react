@@ -51,7 +51,7 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
     )}
     {...props}
   >
-    <div className={css(styles.expandableSectionToggle)}>
+    <div className={`${styles.expandableSection}__toggle`}>
       <Button
         variant="link"
         {...(hasTruncatedContent && { isInline: true })}
@@ -72,7 +72,7 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
           )
         })}
       >
-        <span className={css(styles.expandableSectionToggleText)}>{children}</span>
+        {children}
       </Button>
     </div>
   </div>
