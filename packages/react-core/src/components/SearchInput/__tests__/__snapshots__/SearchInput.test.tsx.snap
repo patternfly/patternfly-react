@@ -55,7 +55,7 @@ exports[`SearchInput advanced search 1`] = `
               type="button"
             >
               <span
-                class="pf-v6-c-button__icon pf-m-start"
+                class="pf-v6-c-button__icon"
               >
                 <svg
                   aria-hidden="true"
@@ -86,7 +86,7 @@ exports[`SearchInput advanced search 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -114,7 +114,7 @@ exports[`SearchInput advanced search 1`] = `
           type="submit"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <span
               class="pf-v6-c-icon"
@@ -208,7 +208,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
               type="button"
             >
               <span
-                class="pf-v6-c-button__icon pf-m-start"
+                class="pf-v6-c-button__icon"
               >
                 <svg
                   aria-hidden="true"
@@ -239,7 +239,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -267,7 +267,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
           type="submit"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <span
               class="pf-v6-c-icon"
@@ -547,7 +547,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
               type="button"
             >
               <span
-                class="pf-v6-c-button__icon pf-m-start"
+                class="pf-v6-c-button__icon"
               >
                 <svg
                   aria-hidden="true"
@@ -578,7 +578,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -606,7 +606,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
           type="submit"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <span
               class="pf-v6-c-icon"
@@ -706,7 +706,7 @@ exports[`SearchInput search input with hint 1`] = `
               type="button"
             >
               <span
-                class="pf-v6-c-button__icon pf-m-start"
+                class="pf-v6-c-button__icon"
               >
                 <svg
                   aria-hidden="true"
@@ -730,7 +730,7 @@ exports[`SearchInput search input with hint 1`] = `
               type="button"
             >
               <span
-                class="pf-v6-c-button__icon pf-m-start"
+                class="pf-v6-c-button__icon"
               >
                 <svg
                   aria-hidden="true"
@@ -755,7 +755,7 @@ exports[`SearchInput search input with hint 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-button__icon pf-m-start"
+              class="pf-v6-c-button__icon"
             >
               <svg
                 aria-hidden="true"
@@ -785,7 +785,7 @@ exports[`SearchInput search input with hint 1`] = `
         type="submit"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <span
             class="pf-v6-c-icon"
@@ -870,7 +870,7 @@ exports[`SearchInput simple search input 1`] = `
               type="button"
             >
               <span
-                class="pf-v6-c-button__icon pf-m-start"
+                class="pf-v6-c-button__icon"
               >
                 <svg
                   aria-hidden="true"
@@ -894,7 +894,7 @@ exports[`SearchInput simple search input 1`] = `
               type="button"
             >
               <span
-                class="pf-v6-c-button__icon pf-m-start"
+                class="pf-v6-c-button__icon"
               >
                 <svg
                   aria-hidden="true"
@@ -919,7 +919,7 @@ exports[`SearchInput simple search input 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-button__icon pf-m-start"
+              class="pf-v6-c-button__icon"
             >
               <svg
                 aria-hidden="true"
@@ -949,7 +949,7 @@ exports[`SearchInput simple search input 1`] = `
         type="submit"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <span
             class="pf-v6-c-icon"

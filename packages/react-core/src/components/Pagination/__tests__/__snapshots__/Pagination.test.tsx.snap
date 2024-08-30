@@ -89,7 +89,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -122,7 +122,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -173,7 +173,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -205,7 +205,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -318,7 +318,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -351,7 +351,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -402,7 +402,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -434,7 +434,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -547,7 +547,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -580,7 +580,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -631,7 +631,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -663,7 +663,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -776,7 +776,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -809,7 +809,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -860,7 +860,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -892,7 +892,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1005,7 +1005,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1038,7 +1038,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1089,7 +1089,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1121,7 +1121,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1234,7 +1234,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1267,7 +1267,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1318,7 +1318,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1350,7 +1350,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1449,7 +1449,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1482,7 +1482,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1538,7 +1538,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1570,7 +1570,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1682,7 +1682,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1715,7 +1715,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1771,7 +1771,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1803,7 +1803,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1914,7 +1914,7 @@ exports[`Pagination component render custom start end 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -1946,7 +1946,7 @@ exports[`Pagination component render custom start end 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2002,7 +2002,7 @@ exports[`Pagination component render custom start end 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2034,7 +2034,7 @@ exports[`Pagination component render custom start end 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2098,7 +2098,7 @@ exports[`Pagination component render empty per page options 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2131,7 +2131,7 @@ exports[`Pagination component render empty per page options 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2187,7 +2187,7 @@ exports[`Pagination component render empty per page options 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2219,7 +2219,7 @@ exports[`Pagination component render empty per page options 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2330,7 +2330,7 @@ exports[`Pagination component render last page 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2362,7 +2362,7 @@ exports[`Pagination component render last page 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2419,7 +2419,7 @@ exports[`Pagination component render last page 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2452,7 +2452,7 @@ exports[`Pagination component render last page 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2564,7 +2564,7 @@ exports[`Pagination component render limited number of pages 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2597,7 +2597,7 @@ exports[`Pagination component render limited number of pages 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2655,7 +2655,7 @@ exports[`Pagination component render limited number of pages 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2688,7 +2688,7 @@ exports[`Pagination component render limited number of pages 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2788,7 +2788,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2821,7 +2821,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2877,7 +2877,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -2909,7 +2909,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3009,7 +3009,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3042,7 +3042,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3098,7 +3098,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3130,7 +3130,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3242,7 +3242,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3275,7 +3275,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3331,7 +3331,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3363,7 +3363,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3476,7 +3476,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3509,7 +3509,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3567,7 +3567,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3600,7 +3600,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3712,7 +3712,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3745,7 +3745,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3801,7 +3801,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3833,7 +3833,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3945,7 +3945,7 @@ exports[`Pagination component render should render correctly top 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -3978,7 +3978,7 @@ exports[`Pagination component render should render correctly top 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4034,7 +4034,7 @@ exports[`Pagination component render should render correctly top 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4066,7 +4066,7 @@ exports[`Pagination component render should render correctly top 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4178,7 +4178,7 @@ exports[`Pagination component render titles 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4211,7 +4211,7 @@ exports[`Pagination component render titles 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4267,7 +4267,7 @@ exports[`Pagination component render titles 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4299,7 +4299,7 @@ exports[`Pagination component render titles 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4411,7 +4411,7 @@ exports[`Pagination component render up drop direction 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4444,7 +4444,7 @@ exports[`Pagination component render up drop direction 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4500,7 +4500,7 @@ exports[`Pagination component render up drop direction 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4532,7 +4532,7 @@ exports[`Pagination component render up drop direction 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4644,7 +4644,7 @@ exports[`Pagination component render zero results 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4677,7 +4677,7 @@ exports[`Pagination component render zero results 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4735,7 +4735,7 @@ exports[`Pagination component render zero results 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"
@@ -4768,7 +4768,7 @@ exports[`Pagination component render zero results 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <svg
               aria-hidden="true"

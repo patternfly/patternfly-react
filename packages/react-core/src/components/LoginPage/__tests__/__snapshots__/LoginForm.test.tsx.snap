@@ -263,7 +263,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
               type="button"
             >
               <span
-                class="pf-v6-c-button__icon pf-m-start"
+                class="pf-v6-c-button__icon"
               >
                 <svg
                   aria-hidden="true"

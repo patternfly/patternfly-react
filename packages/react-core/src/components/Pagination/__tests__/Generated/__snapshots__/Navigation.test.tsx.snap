@@ -26,7 +26,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <svg
             aria-hidden="true"
@@ -58,7 +58,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <svg
             aria-hidden="true"
@@ -109,7 +109,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <svg
             aria-hidden="true"
@@ -141,7 +141,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <svg
             aria-hidden="true"

@@ -136,6 +136,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   const Component = component as any;
   const isButtonElement = Component === 'button';
   const isInlineSpan = isInline && Component === 'span';
+  const isIconAlignedAtEnd = iconPosition === 'end' || iconPosition === 'right';
 
   const preventedEvents = inoperableEvents.reduce(
     (handlers, eventToPrevent) => ({
@@ -156,6 +157,13 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       return 0;
     }
   };
+
+  const _icon = icon && (
+    <span className={css(styles.buttonIcon, children && styles.modifiers[isIconAlignedAtEnd ? 'end' : 'start'])}>
+      {icon}
+    </span>
+  );
+  const _children = children && <span className={css('pf-v6-c-button__text')}>{children}</span>;
 
   return (
     <Component
@@ -198,12 +206,16 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
           />
         </span>
       )}
-      {icon && (iconPosition === 'start' || iconPosition === 'left') && (
-        <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>
-      )}
-      {children && <span className={css('pf-v6-c-button__text')}>{children}</span>}
-      {icon && (iconPosition === 'end' || iconPosition === 'right') && (
-        <span className={css(styles.buttonIcon, styles.modifiers.end)}>{icon}</span>
+      {isIconAlignedAtEnd ? (
+        <>
+          {_children}
+          {_icon}
+        </>
+      ) : (
+        <>
+          {_icon}
+          {_children}
+        </>
       )}
       {countOptions && (
         <span className={css(styles.buttonCount, countOptions.className)}>

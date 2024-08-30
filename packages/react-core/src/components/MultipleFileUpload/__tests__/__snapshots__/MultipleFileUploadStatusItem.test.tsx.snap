@@ -98,7 +98,7 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <svg
             aria-hidden="true"
@@ -215,7 +215,7 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <svg
             aria-hidden="true"
@@ -334,7 +334,7 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <svg
             aria-hidden="true"
@@ -453,7 +453,7 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <svg
             aria-hidden="true"
@@ -589,7 +589,7 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <svg
             aria-hidden="true"
@@ -708,7 +708,7 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <svg
             aria-hidden="true"
@@ -825,7 +825,7 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <svg
             aria-hidden="true"
@@ -944,7 +944,7 @@ exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage whe
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <svg
             aria-hidden="true"

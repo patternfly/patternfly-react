@@ -79,7 +79,7 @@ exports[`Toolbar should render with custom label content 1`] = `
               type="button"
             >
               <span
-                class="pf-v6-c-button__icon pf-m-start"
+                class="pf-v6-c-button__icon"
               />
             </button>
           </div>
@@ -152,7 +152,7 @@ exports[`Toolbar should render with custom label content 1`] = `
                         type="button"
                       >
                         <span
-                          class="pf-v6-c-button__icon pf-m-start"
+                          class="pf-v6-c-button__icon"
                         >
                           <svg
                             aria-hidden="true"
@@ -200,7 +200,7 @@ exports[`Toolbar should render with custom label content 1`] = `
                         type="button"
                       >
                         <span
-                          class="pf-v6-c-button__icon pf-m-start"
+                          class="pf-v6-c-button__icon"
                         >
                           <svg
                             aria-hidden="true"
@@ -237,7 +237,7 @@ exports[`Toolbar should render with custom label content 1`] = `
                 type="button"
               >
                 <span
-                  class="pf-v6-c-button__icon pf-m-start"
+                  class="pf-v6-c-button__icon"
                 >
                   <svg
                     aria-hidden="true"
