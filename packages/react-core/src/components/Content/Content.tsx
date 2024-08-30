@@ -53,7 +53,7 @@ export interface ContentProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isPlainList?: boolean;
   /** Flag to indicate the link (or all links within the content) has visited styles applied if the browser determines the link has been visited. */
   isVisitedLink?: boolean;
-  /** Flag to indicate the content has editorial styling */
+  /** Flag to indicate the content has editorial styling. This styling increases the font size of body text and small text by one tier, increasing body text to large and small text to the previous body text size.  */
   isEditorial?: boolean;
   /** Value to overwrite the randomly generated data-ouia-component-id. */
   ouiaId?: number | string;
