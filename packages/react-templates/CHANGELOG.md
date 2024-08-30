@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.56](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.0.0-alpha.55...@patternfly/react-templates@6.0.0-alpha.56) (2024-08-30)
+
+### Bug Fixes
+
+- **Button:** rendered position modifier only when children are passed ([#10864](https://github.com/patternfly/patternfly-react/issues/10864)) ([3ed73d3](https://github.com/patternfly/patternfly-react/commit/3ed73d3dc78ba229b184bc4e91cc11f45ccc94c3))
+
 # [6.0.0-alpha.55](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.0.0-alpha.54...@patternfly/react-templates@6.0.0-alpha.55) (2024-08-28)
 
 **Note:** Version bump only for package @patternfly/react-templates

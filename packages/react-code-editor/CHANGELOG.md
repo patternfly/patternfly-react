@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.106](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.0.0-alpha.105...@patternfly/react-code-editor@6.0.0-alpha.106) (2024-08-30)
+
+### Bug Fixes
+
+- **Button:** rendered position modifier only when children are passed ([#10864](https://github.com/patternfly/patternfly-react/issues/10864)) ([3ed73d3](https://github.com/patternfly/patternfly-react/commit/3ed73d3dc78ba229b184bc4e91cc11f45ccc94c3))
+
 # [6.0.0-alpha.105](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.0.0-alpha.104...@patternfly/react-code-editor@6.0.0-alpha.105) (2024-08-28)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
