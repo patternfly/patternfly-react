@@ -10,7 +10,7 @@ import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import './Tile.css';
 
-Note: Tile has been deprecated, please use the [Card](/components/card) component.
+Note: Tile has been deprecated, please use the [Card](/components/card#cards-as-tiles) component.
 
 ## Examples
 
