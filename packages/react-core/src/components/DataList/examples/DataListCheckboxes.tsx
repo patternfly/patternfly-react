@@ -48,7 +48,7 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
     <DataList aria-label="Checkbox and action data list example">
       <DataListItem aria-labelledby="check-action-item1">
         <DataListItemRow>
-          <DataListCheck aria-labelledby="check-action-item1" name="check-action-check1" />
+          <DataListCheck id="check-item1" aria-labelledby="check-action-item1" name="check-action-check1" />
           <DataListItemCells
             dataListCells={[
               <DataListCell key="primary content">
@@ -112,7 +112,7 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
       </DataListItem>
       <DataListItem aria-labelledby="check-action-item2">
         <DataListItemRow>
-          <DataListCheck aria-labelledby="check-action-item2" name="check-action-check2" />
+          <DataListCheck id="check-item2" aria-labelledby="check-action-item2" name="check-action-check2" />
           <DataListItemCells
             dataListCells={[
               <DataListCell key="primary content">
@@ -177,7 +177,7 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
       </DataListItem>
       <DataListItem aria-labelledby="check-action-item3">
         <DataListItemRow>
-          <DataListCheck aria-labelledby="check-action-item3" name="check-action-check3" />
+          <DataListCheck id="check-item3" aria-labelledby="check-action-item3" name="check-action-check3" />
           <DataListItemCells
             dataListCells={[
               <DataListCell key="primary content">

@@ -10,11 +10,12 @@ import {} from '../..';
 it('DataListCheck should match snapshot (auto-generated)', () => {
   const { asFragment } = render(
     <DataListCheck
+      id="test"
       className={"''"}
       isValid={true}
       isDisabled={false}
-      isChecked={null}
-      checked={null}
+      isChecked={false}
+      checked={false}
       onChange={(event: React.FormEvent<HTMLInputElement>, checked: boolean) => {}}
       aria-labelledby={'string'}
     />
