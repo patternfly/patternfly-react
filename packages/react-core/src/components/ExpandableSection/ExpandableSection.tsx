@@ -6,6 +6,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import { PickOptional } from '../../helpers/typeUtils';
 import { debounce, getUniqueId } from '../../helpers/util';
 import { getResizeObserver } from '../../helpers/resizeObserver';
+import { Button } from '../Button';
 
 export enum ExpandableSectionVariant {
   default = 'default',
@@ -228,21 +229,25 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
     );
 
     const expandableToggle = !isDetached && (
-      <button
-        className={css(styles.expandableSectionToggle)}
-        type="button"
-        aria-expanded={propOrStateIsExpanded}
-        aria-controls={uniqueContentId}
-        id={uniqueToggleId}
-        onClick={(event) => onToggle(event, !propOrStateIsExpanded)}
-      >
-        {variant !== ExpandableSectionVariant.truncate && (
-          <span className={css(styles.expandableSectionToggleIcon)}>
-            <AngleRightIcon aria-hidden />
-          </span>
-        )}
-        <span className={css(styles.expandableSectionToggleText)}>{toggleContent || computedToggleText}</span>
-      </button>
+      <div className={`${styles.expandableSection}__toggle`}>
+        <Button
+          variant="link"
+          {...(variant === ExpandableSectionVariant.truncate && { isInline: true })}
+          aria-expanded={propOrStateIsExpanded}
+          aria-controls={uniqueContentId}
+          id={uniqueToggleId}
+          onClick={(event) => onToggle(event, !propOrStateIsExpanded)}
+          {...(variant !== ExpandableSectionVariant.truncate && {
+            icon: (
+              <span className={css(styles.expandableSectionToggleIcon)}>
+                <AngleRightIcon aria-hidden />
+              </span>
+            )
+          })}
+        >
+          {toggleContent || computedToggleText}
+        </Button>
+      </div>
     );
 
     return (
