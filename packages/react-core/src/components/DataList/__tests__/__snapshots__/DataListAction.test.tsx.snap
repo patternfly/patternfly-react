@@ -5,7 +5,11 @@ exports[`Renders to match snapshot 1`] = `
   <div
     class="pf-v6-c-data-list__item-action"
   >
-    test
+    <div
+      class="pf-v6-c-data-list__action"
+    >
+      test
+    </div>
   </div>
 </DocumentFragment>
 `;

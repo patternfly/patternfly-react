@@ -75,7 +75,6 @@ export const DataListActions: React.FunctionComponent = () => {
               aria-labelledby="multi-actions-item1 multi-actions-action1"
               id="multi-actions-action1"
               aria-label="Actions"
-              isPlainButtonAction
             >
               <Dropdown
                 popperProps={{ position: 'right' }}

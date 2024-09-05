@@ -81,12 +81,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
                 </DataListCell>
               ]}
             />
-            <DataListAction
-              aria-labelledby="ex-item1 ex-action1"
-              id="ex-action1"
-              aria-label="Actions"
-              isPlainButtonAction
-            >
+            <DataListAction aria-labelledby="ex-item1 ex-action1" id="ex-action1" aria-label="Actions">
               <Dropdown
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect1}
@@ -157,12 +152,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
                 </DataListCell>
               ]}
             />
-            <DataListAction
-              aria-labelledby="ex-item2 ex-action2"
-              id="ex-action2"
-              aria-label="Actions"
-              isPlainButtonAction
-            >
+            <DataListAction aria-labelledby="ex-item2 ex-action2" id="ex-action2" aria-label="Actions">
               <Dropdown
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect2}
@@ -233,12 +223,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
                 </DataListCell>
               ]}
             />
-            <DataListAction
-              aria-labelledby="ex-item3 ex-action3"
-              id="ex-action3"
-              aria-label="Actions"
-              isPlainButtonAction
-            >
+            <DataListAction aria-labelledby="ex-item3 ex-action3" id="ex-action3" aria-label="Actions">
               <Dropdown
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect3}

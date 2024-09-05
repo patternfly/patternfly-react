@@ -65,7 +65,6 @@ export const DataListClickableRows: React.FunctionComponent = () => {
               aria-labelledby="clickable-action-item1 clickable-action-action1"
               id="clickable-action-action1"
               aria-label="Actions"
-              isPlainButtonAction
             >
               <Dropdown
                 popperProps={{ position: 'right' }}
@@ -116,7 +115,6 @@ export const DataListClickableRows: React.FunctionComponent = () => {
               aria-labelledby="clickable-actions-item2 clickable-actions-action2"
               id="clickable-actions-action2"
               aria-label="Actions"
-              isPlainButtonAction
             >
               <Dropdown
                 popperProps={{ position: 'right' }}

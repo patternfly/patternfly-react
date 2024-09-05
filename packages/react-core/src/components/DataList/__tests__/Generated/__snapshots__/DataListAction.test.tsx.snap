@@ -5,8 +5,12 @@ exports[`DataListAction should match snapshot (auto-generated) 1`] = `
   <div
     class="pf-v6-c-data-list__item-action ''"
   >
-    <div>
-      ReactNode
+    <div
+      class="pf-v6-c-data-list__action"
+    >
+      <div>
+        ReactNode
+      </div>
     </div>
   </div>
 </DocumentFragment>
