@@ -571,7 +571,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
 
     // Adjust for axis label
     React.Children.toArray(children).map((child: any) => {
-      if (child.type.role === 'axis' && child.props.label && !child.props.dependentAxis) {
+      if (child.type.role === 'axis' && child.props.label && child.props.fixAxisLabelHeight) {
         xAxisLabelHeight = getLabelTextSize({ text: child.props.label, theme }).height + 10;
         legendTitleHeight = 0;
       }
