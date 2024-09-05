@@ -30,6 +30,9 @@ export const createContainer = (behaviorA: ContainerType, behaviorB: ContainerTy
   const isCursor = behaviorA === 'cursor' || behaviorB === 'cursor';
   const isVoronoi = behaviorA === 'voronoi' || behaviorB === 'voronoi';
 
+  if (!container?.defaultProps) {
+    container.defaultProps = {};
+  }
   if (isCursor) {
     container.defaultProps.cursorLabelComponent = <ChartLabel textAnchor="start" />;
     container.defaultProps.cursorComponent = (
