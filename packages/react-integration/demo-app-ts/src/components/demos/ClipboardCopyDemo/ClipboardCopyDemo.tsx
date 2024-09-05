@@ -21,9 +21,7 @@ export class ClipboardCopyDemo extends React.Component {
             isBlock
             additionalActions={
               <ClipboardCopyAction>
-                <Button variant="plain" aria-label="Run in web terminal">
-                  <PlayIcon aria-hidden />
-                </Button>
+                <Button variant="plain" aria-label="Run in web terminal" icon={<PlayIcon aria-hidden />} />
               </ClipboardCopyAction>
             }
           >

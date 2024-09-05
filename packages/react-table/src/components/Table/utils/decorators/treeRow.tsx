@@ -53,11 +53,12 @@ export const treeRow =
                   className={css(isExpanded && styles.modifiers.expanded)}
                   aria-expanded={isExpanded}
                   aria-label={toggleAriaLabel || `${isExpanded ? 'Collapse' : 'Expand'} row ${rowIndex}`}
-                >
-                  <div className={css(stylesTreeView.tableToggleIcon)}>
-                    <AngleDownIcon aria-hidden="true" />
-                  </div>
-                </Button>
+                  icon={
+                    <div className={css(stylesTreeView.tableToggleIcon)}>
+                      <AngleDownIcon aria-hidden="true" />
+                    </div>
+                  }
+                />
               </span>
             )}
             {!!onCheckChange && (
@@ -82,11 +83,12 @@ export const treeRow =
                   onClick={(event) =>
                     onToggleRowDetails && onToggleRowDetails(event, rowIndex, content as React.ReactNode, rowData)
                   }
-                >
-                  <span className={`${styles.table}__details-toggle-icon`}>
-                    <EllipsisHIcon aria-hidden />
-                  </span>
-                </Button>
+                  icon={
+                    <span className={`${styles.table}__details-toggle-icon`}>
+                      <EllipsisHIcon aria-hidden />
+                    </span>
+                  }
+                />
               </span>
             )}
           </div>

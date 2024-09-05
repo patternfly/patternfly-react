@@ -39,11 +39,10 @@ const TabActionBase: React.FunctionComponent<TabActionProps> = ({
       aria-label={ariaLabel}
       onClick={onClick}
       isDisabled={isDisabled}
+      icon={<span className={css(styles.tabsItemActionIcon)}>{children}</span>}
       {...getOUIAProps(TabAction.displayName, ouiaId, ouiaSafe)}
       {...props}
-    >
-      <span className={css(styles.tabsItemActionIcon)}>{children}</span>
-    </Button>
+    />
   </span>
 );
 

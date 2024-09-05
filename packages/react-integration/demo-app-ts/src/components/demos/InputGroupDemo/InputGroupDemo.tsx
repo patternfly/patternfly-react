@@ -176,9 +176,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
             <TextInput name="textInput11" id="textInput11" type="search" aria-label="search input example" />
           </InputGroupItem>
           <InputGroupItem>
-            <Button variant={ButtonVariant.control} aria-label="search button for search input">
-              <SearchIcon />
-            </Button>
+            <Button variant={ButtonVariant.control} aria-label="search button for search input" icon={<SearchIcon />} />
           </InputGroupItem>
         </InputGroup>
         <br />
@@ -193,9 +191,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
               position={PopoverPosition.top}
               bodyContent="This field is an example of input group with popover"
             >
-              <Button variant={ButtonVariant.control} aria-label="popover for input">
-                <QuestionCircleIcon />
-              </Button>
+              <Button variant={ButtonVariant.control} aria-label="popover for input" icon={<QuestionCircleIcon />} />
             </Popover>
           </InputGroupItem>
         </InputGroup>

@@ -117,9 +117,7 @@ export class MastheadDemo extends Component<MastheadProps> {
       <Masthead id="basic">
         <MastheadMain>
           <MastheadToggle>
-            <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
-              <BarsIcon />
-            </Button>
+            <Button variant="plain" onClick={() => {}} aria-label="Global navigation" icon={<BarsIcon />} />
           </MastheadToggle>
           <MastheadBrand>
             <MastheadLogo>
