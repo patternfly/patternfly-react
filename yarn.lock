@@ -1605,7 +1605,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dnd-kit/core@npm:^6.0.8":
+"@dnd-kit/core@npm:^6.1.0":
   version: 6.1.0
   resolution: "@dnd-kit/core@npm:6.1.0"
   dependencies:
@@ -3230,7 +3230,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-drag-drop@workspace:packages/react-drag-drop"
   dependencies:
-    "@dnd-kit/core": "npm:^6.0.8"
+    "@dnd-kit/core": "npm:^6.1.0"
     "@dnd-kit/modifiers": "npm:^6.0.1"
     "@dnd-kit/sortable": "npm:^7.0.2"
     "@patternfly/react-core": "workspace:^"
