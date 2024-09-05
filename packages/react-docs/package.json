@@ -1,10 +1,10 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "7.0.0-alpha.114",
+  "version": "7.0.0-prerelease.0",
   "publishConfig": {
     "access": "public",
-    "tag": "alpha"
+    "tag": "prerelease"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
   "dependencies": {
-    "@patternfly/patternfly": "6.0.0-alpha.210",
+    "@patternfly/patternfly": "6.0.0-prerelease.210",
     "@patternfly/react-charts": "workspace:^",
     "@patternfly/react-code-editor": "workspace:^",
     "@patternfly/react-core": "workspace:^",
@@ -35,7 +35,7 @@
     "@patternfly/react-tokens": "workspace:^"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^6.0.0-alpha.66",
+    "@patternfly/documentation-framework": "^6.0.0-prerelease.66",
     "@patternfly/patternfly-a11y": "4.3.1"
   },
   "keywords": [

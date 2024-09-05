@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-styles",
-  "version": "6.0.0-alpha.35",
+  "version": "6.0.0-prerelease.0",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -12,14 +12,14 @@
   "author": "Red Hat",
   "publishConfig": {
     "access": "public",
-    "tag": "alpha"
+    "tag": "prerelease"
   },
   "scripts": {
     "generate": "rimraf css && node scripts/writeClassMaps.mjs && node scripts/copyStyles.mjs",
     "clean": "rimraf dist css"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "6.0.0-alpha.210",
+    "@patternfly/patternfly": "6.0.0-prerelease.0",
     "change-case": "^5.4.4",
     "fs-extra": "^11.2.0"
   },

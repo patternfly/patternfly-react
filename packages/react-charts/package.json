@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-charts",
-  "version": "8.0.0-alpha.39",
+  "version": "8.0.0-prerelease.0",
   "description": "This library provides a set of React chart components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -12,7 +12,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "tag": "alpha"
+    "tag": "prerelase"
   },
   "repository": {
     "type": "git",

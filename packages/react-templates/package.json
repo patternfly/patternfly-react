@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-templates",
-  "version": "6.0.0-alpha.56",
+  "version": "6.0.0-prerelease.0",
   "description": "This package provides wrapped component demos for ease of use\n",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -9,7 +9,7 @@
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
-    "tag": "alpha"
+    "tag": "prerelease"
   },
   "repository": {
     "type": "git",
