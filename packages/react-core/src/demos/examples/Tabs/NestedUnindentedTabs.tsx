@@ -40,8 +40,6 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
       <GridItem>
         <Tabs
           activeKey={activeNestedTabKey}
-          isSecondary
-          hasSecondaryBorderBottom
           onSelect={(_event, tabIndex) => handleNestedTabClick(Number(tabIndex))}
           id="nested-tabs-example-nested-tabs-list"
         >
