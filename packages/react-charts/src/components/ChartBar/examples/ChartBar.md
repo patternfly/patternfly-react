@@ -14,9 +14,9 @@ hideDarkMode: true
 
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartLabel, ChartThemeColor, ChartTooltip, ChartVoronoiContainer } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory-zoom-container';
-import global_danger_color_100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
-import global_info_color_100 from '@patternfly/react-tokens/dist/esm/global_info_color_100';
-import global_warning_color_100 from '@patternfly/react-tokens/dist/esm/global_warning_color_100';
+import global_color_status_danger_100 from '@patternfly/react-tokens/dist/esm/global_color_status_danger_100';
+import global_color_status_info_100 from '@patternfly/react-tokens/dist/esm/global_color_status_info_100';
+import global_color_status_warning_100 from '@patternfly/react-tokens/dist/esm/global_color_status_warning_100';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -216,9 +216,9 @@ A gnatt-like chart using `y` and `y0` data properties for alert start/end dates
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartLabel, ChartTooltip, ChartVoronoiContainer } from '@patternfly/react-charts';
-import global_danger_color_100 from '@patternfly/react-tokens/dist/esm/global_danger_color_100';
-import global_info_color_100 from '@patternfly/react-tokens/dist/esm/global_info_color_100';
-import global_warning_color_100 from '@patternfly/react-tokens/dist/esm/global_warning_color_100';
+import global_color_status_danger_100 from '@patternfly/react-tokens/dist/esm/global_color_status_danger_100';
+import global_color_status_info_100 from '@patternfly/react-tokens/dist/esm/global_color_status_info_100';
+import global_color_status_warning_100 from '@patternfly/react-tokens/dist/esm/global_color_status_warning_100';
 
 
 class Timeline extends React.Component {
@@ -290,10 +290,10 @@ class Timeline extends React.Component {
           ...datum,
           x: alerts.length - index,
           fill: datum.severity === "danger"
-            ? global_danger_color_100.var
+            ? global_color_status_danger_100.var
             : datum.severity === "warn"
-              ? global_warning_color_100.var
-              : global_info_color_100.var,
+              ? global_color_status_warning_100.var
+              : global_color_status_info_100.var,
         });
       });
 
@@ -329,9 +329,9 @@ class Timeline extends React.Component {
           }
           domainPadding={{ x: [20, 20], y: [20, 20] }}
           legendData={[
-            { name: "Danger", symbol: { fill: global_danger_color_100.var } },
-            { name: "Info", symbol: { fill: global_info_color_100.var } },
-            { name: "Warning", symbol: { fill: global_warning_color_100.var } }
+            { name: "Danger", symbol: { fill: global_color_status_danger_100.var } },
+            { name: "Info", symbol: { fill: global_color_status_info_100.var } },
+            { name: "Warning", symbol: { fill: global_color_status_warning_100.var } }
           ]}
           legendPosition="bottom-left"
           height={400}

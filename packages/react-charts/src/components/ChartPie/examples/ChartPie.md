@@ -7,7 +7,7 @@ hideDarkMode: true
 
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import chart_theme_blue_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_blue_ColorScale_100';
-import chart_theme_gold_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_gold_ColorScale_100';
+import chart_theme_yellow_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_yellow_ColorScale_100';
 import chart_theme_orange_ColorScale_300 from '@patternfly/react-tokens/dist/esm/chart_theme_orange_ColorScale_300';
 
 ## Introduction
@@ -80,14 +80,14 @@ This demonstrates how to apply a custom color scale.
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import chart_theme_blue_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_blue_ColorScale_100';
-import chart_theme_gold_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_gold_ColorScale_100';
+import chart_theme_yellow_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_yellow_ColorScale_100';
 import chart_theme_orange_ColorScale_300 from '@patternfly/react-tokens/dist/esm/chart_theme_orange_ColorScale_300';
 
 <div style={{ height: '230px', width: '450px' }}>
   <ChartPie
     ariaDesc="Average number of pets"
     ariaTitle="Pie chart example"
-    colorScale={[ chart_theme_blue_ColorScale_100.var, chart_theme_orange_ColorScale_300.var, chart_theme_gold_ColorScale_100.var, chart_theme_blue_ColorScale_100.var, ]}
+    colorScale={[ chart_theme_blue_ColorScale_100.var, chart_theme_orange_ColorScale_300.var, chart_theme_yellow_ColorScale_100.var, chart_theme_blue_ColorScale_100.var, ]}
     constrainToVisibleArea
     data={[{ x: 'Sky', y: 38 }, { x: 'Shady side of pyramid', y: 7 }, { x: 'Sunny side of pyramid', y: 17 }, { x: 'Sky', y: 38 }]}
     height={230}
