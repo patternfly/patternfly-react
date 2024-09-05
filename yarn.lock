@@ -3325,7 +3325,7 @@ __metadata:
     ts-node: "npm:^10.9.2"
     ts-patch: "npm:^3.2.1"
     typescript: "npm:^5.4.5"
-    typescript-eslint: "npm:^7.16.1"
+    typescript-eslint: "npm:^7.18.0"
   languageName: unknown
   linkType: soft
 
@@ -19873,7 +19873,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-eslint@npm:^7.16.1":
+"typescript-eslint@npm:^7.18.0":
   version: 7.18.0
   resolution: "typescript-eslint@npm:7.18.0"
   dependencies:
