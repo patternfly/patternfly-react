@@ -4,18 +4,18 @@ exports[`ChartContainer 1`] = `
 <DocumentFragment>
   <div
     class="pf-v5-c-chart"
-    style="pointer-events: none; position: relative; width: 100%; height: 100%;"
+    style="pointer-events: none; position: relative;"
   >
     <svg
       role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
+      style="width: 100%; height: 100%; pointer-events: all;"
       viewBox="0 0 undefined undefined"
     />
     <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+      style="width: 100%; height: 100%; z-index: 99; position: absolute; top: 0px; left: 0px;"
     >
       <svg
-        style="overflow: visible; width: 100%; height: 100%;"
+        style="width: 100%; height: 100%; overflow: visible;"
         viewBox="0 0 undefined undefined"
       />
     </div>
@@ -27,18 +27,18 @@ exports[`ChartContainer 2`] = `
 <DocumentFragment>
   <div
     class="pf-v5-c-chart"
-    style="pointer-events: none; position: relative; width: 100%; height: 100%;"
+    style="pointer-events: none; position: relative;"
   >
     <svg
       role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
+      style="width: 100%; height: 100%; pointer-events: all;"
       viewBox="0 0 undefined undefined"
     />
     <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+      style="width: 100%; height: 100%; z-index: 99; position: absolute; top: 0px; left: 0px;"
     >
       <svg
-        style="overflow: visible; width: 100%; height: 100%;"
+        style="width: 100%; height: 100%; overflow: visible;"
         viewBox="0 0 undefined undefined"
       />
     </div>
@@ -50,11 +50,11 @@ exports[`renders container via ChartLegend 1`] = `
 <DocumentFragment>
   <div
     class="pf-v5-c-chart"
-    style="pointer-events: none; position: relative; width: 100%; height: 100%;"
+    style="pointer-events: none; position: relative;"
   >
     <svg
       role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
+      style="width: 100%; height: 100%; pointer-events: all;"
       viewBox="0 0 undefined undefined"
     >
       <g>
@@ -142,10 +142,10 @@ exports[`renders container via ChartLegend 1`] = `
       </g>
     </svg>
     <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+      style="width: 100%; height: 100%; z-index: 99; position: absolute; top: 0px; left: 0px;"
     >
       <svg
-        style="overflow: visible; width: 100%; height: 100%;"
+        style="width: 100%; height: 100%; overflow: visible;"
         viewBox="0 0 undefined undefined"
       />
     </div>
