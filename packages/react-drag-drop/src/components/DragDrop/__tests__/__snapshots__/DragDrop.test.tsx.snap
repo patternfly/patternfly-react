@@ -23,7 +23,7 @@ exports[`renders some divs 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <span
               class="pf-v6-c-data-list__item-draggable-icon"
@@ -63,7 +63,7 @@ exports[`renders some divs 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <span
               class="pf-v6-c-data-list__item-draggable-icon"
@@ -103,7 +103,7 @@ exports[`renders some divs 1`] = `
           type="button"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-button__icon"
           >
             <span
               class="pf-v6-c-data-list__item-draggable-icon"

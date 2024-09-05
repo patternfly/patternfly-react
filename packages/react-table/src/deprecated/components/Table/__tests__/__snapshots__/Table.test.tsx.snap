@@ -1538,7 +1538,7 @@ exports[`Table Collapsible nested table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-button__icon pf-m-start"
+              class="pf-v6-c-button__icon"
             >
               <div
                 class="pf-v6-c-table__toggle-icon"
@@ -1630,7 +1630,7 @@ exports[`Table Collapsible nested table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-button__icon pf-m-start"
+              class="pf-v6-c-button__icon"
             >
               <div
                 class="pf-v6-c-table__toggle-icon"
@@ -1793,7 +1793,7 @@ exports[`Table Collapsible nested table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-button__icon pf-m-start"
+              class="pf-v6-c-button__icon"
             >
               <div
                 class="pf-v6-c-table__toggle-icon"
@@ -2303,7 +2303,7 @@ exports[`Table Collapsible table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-button__icon pf-m-start"
+              class="pf-v6-c-button__icon"
             >
               <div
                 class="pf-v6-c-table__toggle-icon"
@@ -2521,7 +2521,7 @@ exports[`Table Collapsible table 1`] = `
             type="button"
           >
             <span
-              class="pf-v6-c-button__icon pf-m-start"
+              class="pf-v6-c-button__icon"
             >
               <div
                 class="pf-v6-c-table__toggle-icon"
