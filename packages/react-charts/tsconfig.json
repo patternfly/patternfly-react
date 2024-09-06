@@ -1,10 +1,15 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
+    "jsx": "react",
     "rootDir": "./src",
     "outDir": "./dist/esm",
     "tsBuildInfoFile": "dist/esm.tsbuildinfo",
     "noImplicitAny": false,
+    "baseUrl": ".",
+    "paths": {
+      "./next": ["./src/next"]
+    }
   },
   "include": [
     "./src/*",

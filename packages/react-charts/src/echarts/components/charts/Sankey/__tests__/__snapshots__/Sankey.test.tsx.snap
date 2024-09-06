@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-chart"
+    id="sankey-chart"
+    style="height: 400px; width: 800px; position: relative;"
+  >
+    <div
+      style="position: relative; overflow: hidden; width: 800px; height: 400px;"
+    >
+      <svg
+        baseProfile="full"
+        height="400"
+        style="position: absolute; left: 0px; top: 0px; user-select: none;"
+        version="1.1"
+        width="800"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <rect
+          fill="none"
+          height="400"
+          width="800"
+          x="0"
+          y="0"
+        />
+        <g>
+          <g
+            clip-path="url(#zr0-c0)"
+          >
+            <path
+              d="M20 0C300 0 300 68.0881 580 68.0881L580 160.7197C300 160.7197 300 92.6316 20 92.6316Z"
+              fill="#0066cc"
+              fill-opacity="0.6"
+              transform="translate(40 20)"
+            />
+            <path
+              d="M20 148.2105C300 148.2105 300 187.246 580 187.246L580 242.8249C300 242.8249 300 203.7895 20 203.7895Z"
+              fill="#0066cc"
+              fill-opacity="0.6"
+              transform="translate(40 20)"
+            />
+            <path
+              d="M20 211.7895C155 211.7895 155 186.1865 290 186.1865L290 334.397C155 334.397 155 360 20 360Z"
+              fill="#92c5f9"
+              fill-opacity="0.6"
+              transform="translate(40 20)"
+            />
+            <path
+              d="M20 92.6316C155 92.6316 155 130.6075 290 130.6075L290 186.1865C155 186.1865 155 148.2105 20 148.2105Z"
+              fill="#0066cc"
+              fill-opacity="0.6"
+              transform="translate(40 20)"
+            />
+            <path
+              d="M310 130.6075C445 130.6075 445 160.7197 580 160.7197L580 179.246C445 179.246 445 149.1338 310 149.1338Z"
+              fill="#004d99"
+              fill-opacity="0.6"
+              transform="translate(40 20)"
+            />
+            <path
+              d="M310 149.1338C445 149.1338 445 250.8249 580 250.8249L580 287.8776C445 287.8776 445 186.1865 310 186.1865Z"
+              fill="#004d99"
+              fill-opacity="0.6"
+              transform="translate(40 20)"
+            />
+            <path
+              d="M0 0l20 0l0 203.7895l-20 0Z"
+              fill="#0066cc"
+              stroke="#1f1f1f"
+              stroke-width="0"
+              transform="translate(40 20)"
+            />
+            <path
+              d="M0 211.7895l20 0l0 148.2105l-20 0Z"
+              fill="#92c5f9"
+              stroke="#1f1f1f"
+              stroke-width="0"
+              transform="translate(40 20)"
+            />
+            <path
+              d="M580 68.0881l20 0l0 111.1579l-20 0Z"
+              fill="#003366"
+              stroke="#1f1f1f"
+              stroke-width="0"
+              transform="translate(40 20)"
+            />
+            <path
+              d="M580 187.246l20 0l0 55.5789l-20 0Z"
+              fill="#4394e5"
+              stroke="#1f1f1f"
+              stroke-width="0"
+              transform="translate(40 20)"
+            />
+            <path
+              d="M290 130.6075l20 0l0 203.7895l-20 0Z"
+              fill="#004d99"
+              stroke="#1f1f1f"
+              stroke-width="0"
+              transform="translate(40 20)"
+            />
+            <path
+              d="M580 250.8249l20 0l0 37.0526l-20 0Z"
+              fill="#0066cc"
+              stroke="#1f1f1f"
+              stroke-width="0"
+              transform="translate(40 20)"
+            />
+            <text
+              dominant-baseline="central"
+              fill="#1f1f1f"
+              style="font-size: 12px; font-family: var(--pf-v6-chart-global--FontFamily, "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif);"
+              text-anchor="start"
+              transform="translate(65 121.8947)"
+            >
+              a
+            </text>
+            <text
+              dominant-baseline="central"
+              fill="#1f1f1f"
+              style="font-size: 12px; font-family: var(--pf-v6-chart-global--FontFamily, "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif);"
+              text-anchor="start"
+              transform="translate(65 305.8947)"
+            >
+              b
+            </text>
+            <text
+              dominant-baseline="central"
+              fill="#1f1f1f"
+              style="font-size: 12px; font-family: var(--pf-v6-chart-global--FontFamily, "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif);"
+              text-anchor="start"
+              transform="translate(645 143.667)"
+            >
+              a1
+            </text>
+            <text
+              dominant-baseline="central"
+              fill="#1f1f1f"
+              style="font-size: 12px; font-family: var(--pf-v6-chart-global--FontFamily, "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif);"
+              text-anchor="start"
+              transform="translate(645 235.0355)"
+            >
+              a2
+            </text>
+            <text
+              dominant-baseline="central"
+              fill="#1f1f1f"
+              style="font-size: 12px; font-family: var(--pf-v6-chart-global--FontFamily, "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif);"
+              text-anchor="start"
+              transform="translate(355 252.5022)"
+            >
+              b1
+            </text>
+            <text
+              dominant-baseline="central"
+              fill="#1f1f1f"
+              style="font-size: 12px; font-family: var(--pf-v6-chart-global--FontFamily, "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif);"
+              text-anchor="start"
+              transform="translate(645 289.3513)"
+            >
+              c
+            </text>
+          </g>
+          <path
+            d="M-5 -5l32 0l0 11l-32 0Z"
+            fill="rgb(0,0,0)"
+            fill-opacity="0"
+            stroke="#ccc"
+            stroke-width="0"
+            transform="translate(5 5)"
+          />
+          <text
+            dominant-baseline="central"
+            fill="#1f1f1f"
+            style="font-size: 14px; font-family: var(--pf-v6-chart-global--FontFamily, "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif); font-weight: bold;"
+            text-anchor="start"
+            transform="translate(5 5)"
+            xml:space="preserve"
+            y="0.5"
+          >
+            This is a Sankey chart
+          </text>
+        </g>
+        <defs>
+          <clippath
+            id="zr0-c0"
+          >
+            <path
+              d="M-10 -10l0 0l0 380l0 0Z"
+              fill="#000"
+              transform="translate(40 20)"
+            />
+          </clippath>
+        </defs>
+      </svg>
+    </div>
+    <div
+      class=""
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders title 1`] = `
+<text
+  dominant-baseline="central"
+  fill="#1f1f1f"
+  style="font-size: 14px; font-family: var(--pf-v6-chart-global--FontFamily, "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif); font-weight: bold;"
+  text-anchor="start"
+  transform="translate(5 5)"
+  xml:space="preserve"
+  y="0.5"
+>
+  This is a Sankey chart
+</text>
+`;

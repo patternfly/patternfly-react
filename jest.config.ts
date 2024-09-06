@@ -19,9 +19,9 @@ const config: Config = {
     '^.+\\.m?[jt]sx?$': 'babel-jest',
     '^.+\\.svg$': 'jest-transform-stub'
   },
-  setupFilesAfterEnv: ['<rootDir>/packages/testSetup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/packages/testSetup.ts', 'jest-canvas-mock'],
   testPathIgnorePatterns: ['<rootDir>/packages/react-integration/'],
-  transformIgnorePatterns: ['node_modules/victory-*/', '/node_modules/(?!(case-anything)/)'],
+  transformIgnorePatterns: ['/node_modules/victory-*/', '/node_modules/(?!(chart\\.js|echarts|zrender)).*\\.js$'],
   coveragePathIgnorePatterns: ['/dist/'],
   moduleNameMapper: {
     '\\.(css|less)$': '<rootDir>/packages/react-styles/__mocks__/styleMock.js'
