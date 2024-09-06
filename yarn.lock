@@ -3019,28 +3019,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/ast-helpers@npm:^1.4.0-alpha.56":
-  version: 1.18.0
-  resolution: "@patternfly/ast-helpers@npm:1.18.0"
+"@patternfly/ast-helpers@npm:^1.4.0-alpha.79":
+  version: 1.23.0
+  resolution: "@patternfly/ast-helpers@npm:1.23.0"
   dependencies:
     acorn: "npm:^8.4.1"
     acorn-class-fields: "npm:^1.0.0"
     acorn-jsx: "npm:^5.3.2"
     acorn-static-class-features: "npm:^1.0.0"
     astring: "npm:^1.7.5"
-  checksum: 10c0/2809394af8fc7f0f4de592fade748dd8ae747e835a9d5f45cb76823c03105f24ebfec51aab17d059b77d7046d5ad9c98227bda08332d07601d6c8ca450449c7f
+  checksum: 10c0/cb712f883cbe3eef5da14e451e9a4c1faadfbb18d38806a9c9cc72a399ba93efce313c8597e73d24f6ae2c699bc7db99dba7de41793077a501732d774335478e
   languageName: node
   linkType: hard
 
-"@patternfly/documentation-framework@npm:^6.0.0-alpha.66":
-  version: 6.0.0-alpha.67
-  resolution: "@patternfly/documentation-framework@npm:6.0.0-alpha.67"
+"@patternfly/documentation-framework@npm:^6.0.0-alpha.90":
+  version: 6.0.0-alpha.90
+  resolution: "@patternfly/documentation-framework@npm:6.0.0-alpha.90"
   dependencies:
     "@babel/core": "npm:^7.24.3"
     "@babel/preset-env": "npm:^7.24.3"
     "@babel/preset-react": "npm:^7.24.1"
     "@mdx-js/util": "npm:1.6.16"
-    "@patternfly/ast-helpers": "npm:^1.4.0-alpha.56"
+    "@patternfly/ast-helpers": "npm:^1.4.0-alpha.79"
     "@reach/router": "npm:@gatsbyjs/reach-router@1.3.9"
     autoprefixer: "npm:9.8.6"
     babel-loader: "npm:^9.1.3"
@@ -3099,15 +3099,15 @@ __metadata:
     webpack-dev-server: "npm:4.13.1"
     webpack-merge: "npm:5.8.0"
   peerDependencies:
-    "@patternfly/patternfly": 6.0.0-alpha.181
-    "@patternfly/react-code-editor": 6.0.0-alpha.89
-    "@patternfly/react-core": 6.0.0-alpha.89
-    "@patternfly/react-table": 6.0.0-alpha.90
+    "@patternfly/patternfly": 6.0.0-alpha.227
+    "@patternfly/react-code-editor": 6.0.0-alpha.105
+    "@patternfly/react-core": 6.0.0-alpha.105
+    "@patternfly/react-table": 6.0.0-alpha.106
     react: ^17.0.0 || ^18.0.0
     react-dom: ^17.0.0 || ^18.0.0
   bin:
     pf-docs-framework: scripts/cli/cli.js
-  checksum: 10c0/eab465970640b9bc09a0dc849d69e8a24e84a0b0f0b76c47983713c39d3d5d287fc8f17ad7580c093474e9e6720adedbc15aa460448be69f74303ded240cd6e9
+  checksum: 10c0/e8559be62ec75946a04b6bb28ca34eba6024a48141cb991c64373c03fffff88a2af20410d591663cbdd3bc4f4b99324b7da3f6bee9ac9baaab157b67f5eba3a6
   languageName: node
   linkType: hard
 
@@ -3211,7 +3211,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
-    "@patternfly/documentation-framework": "npm:^6.0.0-alpha.66"
+    "@patternfly/documentation-framework": "npm:^6.0.0-alpha.90"
     "@patternfly/patternfly": "npm:6.0.0-alpha.226"
     "@patternfly/patternfly-a11y": "npm:4.3.1"
     "@patternfly/react-charts": "workspace:^"
