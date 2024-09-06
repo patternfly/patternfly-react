@@ -1,5 +1,6 @@
 import * as React from 'react';
 import uniqueId from 'lodash/uniqueId';
+import cloneDeep from 'lodash/cloneDeep';
 
 interface PatternPropsInterface {
   children?: any;
@@ -330,7 +331,7 @@ export const useDefaultPatternProps = ({
   themeColorScale
 }: PatternPropsInterface) => {
   const defaultColorScale = getDefaultColorScale(colorScale, themeColorScale);
-  let defaultPatternScale = patternScale;
+  let defaultPatternScale = cloneDeep(patternScale);
   let isPatternDefs = !patternScale && hasPatterns !== undefined;
   const patternId = React.useMemo(() => (isPatternDefs ? getPatternId() : undefined), [isPatternDefs]);
 

@@ -41,9 +41,10 @@ module.exports = (baseSourceMD, sourceProps) => {
 
   // Charts MD
   sourceMD(path.join(reactChartsPath, '/echarts/components/**/examples/*.md'), 'react');
-  sourceMD(path.join(reactChartsPath, '/next/echarts/components/**/examples/*.md'), 'react-next');
-  sourceMD(path.join(reactChartsPath, '/next/victory/components/**/examples/*.md'), 'react-next');
+  sourceMD(path.join(reactChartsPath, '/echarts/components/**/examples/next/*.md'), 'react-next');
+  sourceMD(path.join(reactChartsPath, '/echarts/next/components/**/examples/*.md'), 'react-next');
   sourceMD(path.join(reactChartsPath, '/victory/components/**/examples/*.md'), 'react');
+  sourceMD(path.join(reactChartsPath, '/victory/next/components/**/examples/*.md'), 'react-next');
 
   // Code Editor MD
   sourceMD(path.join(reactCodeEditorPath, '/**/examples/*.md'), 'react');
