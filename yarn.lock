@@ -3180,7 +3180,7 @@ __metadata:
     "@patternfly/react-core": "workspace:^"
     "@patternfly/react-icons": "workspace:^"
     "@patternfly/react-styles": "workspace:^"
-    monaco-editor: "npm:^0.49.0"
+    monaco-editor: "npm:^0.51.0"
     react-dropzone: "npm:14.2.3"
     tslib: "npm:^2.6.2"
   peerDependencies:
@@ -14665,10 +14665,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"monaco-editor@npm:^0.49.0":
-  version: 0.49.0
-  resolution: "monaco-editor@npm:0.49.0"
-  checksum: 10c0/c62d19e65f8ad441d0b29d8f43181c730bd373854ff0f9331c42ed1b97b729ab099e6f961c2e377acddda6923b8030e0453ae87edd3f7db3ace75c91f44431cd
+"monaco-editor@npm:^0.51.0":
+  version: 0.51.0
+  resolution: "monaco-editor@npm:0.51.0"
+  checksum: 10c0/7fde310c747e46cd7293e1a0f5e1fa85c389df9a1f8db03b9ccd58fd45356ab021a591b46198d19345566ad54556158f6489e2da4ad428a7a6ca3ea7b504afcb
   languageName: node
   linkType: hard
 
