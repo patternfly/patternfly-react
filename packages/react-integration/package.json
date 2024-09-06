@@ -28,7 +28,7 @@
     "test:integration": "cypress run"
   },
   "devDependencies": {
-    "cypress": "^8.0.0",
+    "cypress": "^8.7.0",
     "cypress-plugin-tab": "^1.0.5",
     "junit-merge": "^2.0.0"
   }
