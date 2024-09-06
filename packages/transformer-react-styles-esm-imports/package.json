@@ -7,6 +7,6 @@
   "author": "Red Hat",
   "license": "MIT",
   "peerDependencies": {
-    "typescript": ">=3.7.2"
+    "typescript": ">=3.9.10"
   }
 }
