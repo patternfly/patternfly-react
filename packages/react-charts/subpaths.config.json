@@ -1,4 +1,4 @@
 {
   "packageName": "@patternfly/react-charts",
-  "paths": ["victory"]
+  "paths": ["echarts", "victory"]
 }
