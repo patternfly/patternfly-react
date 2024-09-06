@@ -338,7 +338,7 @@ export const PaginatedTableAction = () => {
         </MastheadBrand>
       </MastheadMain>
       <MastheadContent>
-        <Toolbar id="toolbar" isFullHeight isStatic>
+        <Toolbar id="toolbar" isStatic>
           <ToolbarContent>
             <ToolbarGroup
               variant="action-group-plain"
@@ -419,8 +419,7 @@ export const PaginatedTableAction = () => {
                     ref={toggleRef}
                     isExpanded={isDropdownOpen}
                     onClick={onDropdownToggle}
-                    icon={<Avatar src={imgAvatar} alt="" />}
-                    isFullHeight
+                    icon={<Avatar src={imgAvatar} alt="" size="sm" />}
                   >
                     {translation.username}
                   </MenuToggle>

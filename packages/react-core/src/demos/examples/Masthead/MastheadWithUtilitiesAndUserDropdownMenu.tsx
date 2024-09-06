@@ -378,7 +378,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
   ];
 
   const headerToolbar = (
-    <Toolbar id="toolbar" isFullHeight isStatic>
+    <Toolbar id="toolbar" isStatic>
       <ToolbarContent>
         <ToolbarGroup
           variant="action-group-plain"
@@ -456,9 +456,8 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
               <MenuToggle
                 ref={toggleRef}
                 onClick={onDropdownToggle}
-                isFullHeight
                 isExpanded={isDropdownOpen}
-                icon={<Avatar src={imgAvatar} alt="" />}
+                icon={<Avatar src={imgAvatar} alt="" size="sm" />}
               >
                 Ned Username
               </MenuToggle>
