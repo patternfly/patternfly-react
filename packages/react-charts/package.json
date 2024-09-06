@@ -61,7 +61,7 @@
     "build:single:packages": "node ../../scripts/build-single-packages.mjs --config single-packages.config.json"
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.5",
+    "@types/lodash": "^4.17.7",
     "fs-extra": "^11.2.0"
   }
 }
