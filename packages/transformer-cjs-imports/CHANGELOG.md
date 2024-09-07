@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.79.4-prerelease.1](https://github.com/patternfly/patternfly-react/compare/transformer-cjs-imports@4.79.4-alpha.4...transformer-cjs-imports@4.79.4-prerelease.1) (2024-09-07)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
 ## [4.79.4-alpha.4](https://github.com/patternfly/patternfly-react/compare/transformer-cjs-imports@4.79.4-alpha.3...transformer-cjs-imports@4.79.4-alpha.4) (2024-06-12)
 
 ### Bug Fixes

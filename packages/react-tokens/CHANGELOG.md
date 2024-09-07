@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.0.0-alpha.36...@patternfly/react-tokens@6.0.0-prerelease.1) (2024-09-07)
+
+### Bug Fixes
+
+- **expandable section:** update to use <Button> for toggle ([#10891](https://github.com/patternfly/patternfly-react/issues/10891)) ([fd9ce14](https://github.com/patternfly/patternfly-react/commit/fd9ce14865230be76444ef025def90a5619d464e))
+
 # [6.0.0-alpha.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.0.0-alpha.35...@patternfly/react-tokens@6.0.0-alpha.36) (2024-08-27)
 
 **Note:** Version bump only for package @patternfly/react-tokens

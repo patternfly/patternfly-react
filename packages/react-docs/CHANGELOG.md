@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.114...@patternfly/react-docs@7.0.0-prerelease.1) (2024-09-07)
+
+### Bug Fixes
+
+- **expandable section:** update to use <Button> for toggle ([#10891](https://github.com/patternfly/patternfly-react/issues/10891)) ([fd9ce14](https://github.com/patternfly/patternfly-react/commit/fd9ce14865230be76444ef025def90a5619d464e))
+
 # [7.0.0-alpha.114](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-alpha.113...@patternfly/react-docs@7.0.0-alpha.114) (2024-08-30)
 
 **Note:** Version bump only for package @patternfly/react-docs

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.107...@patternfly/react-table@6.0.0-prerelease.1) (2024-09-07)
+
+### Bug Fixes
+
+- **CI:** Update snapshot tests ([#10922](https://github.com/patternfly/patternfly-react/issues/10922)) ([e7ba60e](https://github.com/patternfly/patternfly-react/commit/e7ba60e78895e955abc5a38fe27c1c87cc1d2ee2))
+
+### Features
+
+- **misc:** remove isFullHeight from page toolbar and dropdown ([#10867](https://github.com/patternfly/patternfly-react/issues/10867)) ([5a91d13](https://github.com/patternfly/patternfly-react/commit/5a91d13006ffcb14efe912d94b6af3e73e7d812f))
+
 # [6.0.0-alpha.107](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-alpha.106...@patternfly/react-table@6.0.0-alpha.107) (2024-08-30)
 
 ### Bug Fixes
