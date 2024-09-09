@@ -49,6 +49,8 @@ export interface MenuToggleProps
   isFullHeight?: boolean;
   /** Flag indicating the toggle takes up the full width of its parent */
   isFullWidth?: boolean;
+  /** Flag indicating the toggle contains placeholder text */
+  isPlaceholder?: boolean;
   /** Object used to configure a split button menu toggle */
   splitButtonOptions?: SplitButtonOptions;
   /** Variant styles of the menu toggle */
@@ -85,6 +87,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
     isDisabled: false,
     isFullWidth: false,
     isFullHeight: false,
+    isPlaceholder: false,
     size: 'default',
     ouiaSafe: true
   };
@@ -103,6 +106,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
       isDisabled,
       isFullHeight,
       isFullWidth,
+      isPlaceholder,
       splitButtonOptions,
       variant,
       status,
@@ -179,6 +183,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
       isFullHeight && styles.modifiers.fullHeight,
       isFullWidth && styles.modifiers.fullWidth,
       isDisabled && styles.modifiers.disabled,
+      isPlaceholder && styles.modifiers.placeholder,
       size === MenuToggleSize.sm && styles.modifiers.small,
       className
     );

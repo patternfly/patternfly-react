@@ -296,3 +296,11 @@ When the status value is "warning" or "danger", you must include helper text tha
 ```ts file='MenuToggleStatus.tsx'
 
 ```
+
+### Placeholder text in toggle
+
+To indicate the toggle contains placeholder text, pass the `isPlaceholder` property to the `MenuToggle`.
+
+```ts file='MenuTogglePlaceholder.tsx'
+
+```

@@ -100,4 +100,9 @@ describe('menu toggle', () => {
     await user.click(screen.getByRole(`button`) as Element);
     expect(mockClick).toHaveBeenCalled();
   });
+
+  test(`Renders with class ${styles.modifiers.placeholder} when isPlaceholder is passed`, () => {
+    render(<MenuToggle isPlaceholder>Toggle</MenuToggle>);
+    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.placeholder);
+  });
 });
