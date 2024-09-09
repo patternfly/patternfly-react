@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.1...@patternfly/react-core@6.0.0-prerelease.2) (2024-09-09)
+
+### Features
+
+- **MenuToggle:** add placeholder support ([#10882](https://github.com/patternfly/patternfly-react/issues/10882)) ([dd53ab9](https://github.com/patternfly/patternfly-react/commit/dd53ab94ea49e93b590f258fe923b2653ac23e67))
+
 # [6.0.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-alpha.106...@patternfly/react-core@6.0.0-prerelease.1) (2024-09-07)
 
 ### Bug Fixes
