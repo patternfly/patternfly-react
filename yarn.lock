@@ -19799,7 +19799,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "transformer-cjs-imports@workspace:packages/transformer-cjs-imports"
   peerDependencies:
-    typescript: ">=3.7.2"
+    typescript: ">=3.9.10"
   languageName: unknown
   linkType: soft
 
@@ -19807,7 +19807,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "transformer-react-styles-esm-imports@workspace:packages/transformer-react-styles-esm-imports"
   peerDependencies:
-    typescript: ">=3.7.2"
+    typescript: ">=3.9.10"
   languageName: unknown
   linkType: soft
 
