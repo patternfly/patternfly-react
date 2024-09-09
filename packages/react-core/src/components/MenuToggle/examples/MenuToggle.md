@@ -217,7 +217,7 @@ Variant styling can be applied to split button toggles to adjust their appearanc
 
 You can allow users to select a toggle checkbox by clicking either the checkbox or the text label.
 
-To do so, pass `children` to the `<MenuToggleCheckbox>` component. When the menu toggle text is clicked, the checkbox's `onChange` callback will be triggered.
+To link a split toggle label to the toggle's checkbox, pass both the label and the `<MenuToggleCheckbox>` component to `splitButtonOptions`. 
 
 ```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
 
@@ -225,7 +225,7 @@ To do so, pass `children` to the `<MenuToggleCheckbox>` component. When the menu
 
 ### Split toggle with checkbox and toggle text 
 
-To add a text label to a split button toggle, pass `children` to the `<MenuToggle>` component.
+To link a split toggle label to the toggle button itself, pass the label to the `<MenuToggle>` component, instead of `splitButtonOptions`.
 
 ```ts file='MenuToggleSplitButtonCheckboxWithToggleText.tsx'
 
