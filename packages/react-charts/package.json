@@ -35,7 +35,7 @@
     "lodash": "^4.17.21",
     "tslib": "^2.6.3",
     "victory-area": "^37.0.2",
-    "victory-axis": "^37.0.2",
+    "victory-axis": "^37.1.1",
     "victory-bar": "^37.0.2",
     "victory-box-plot": "^37.0.2",
     "victory-chart": "^37.0.2",
