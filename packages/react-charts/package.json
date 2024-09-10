@@ -34,7 +34,7 @@
     "hoist-non-react-statics": "^3.3.2",
     "lodash": "^4.17.21",
     "tslib": "^2.7.0",
-    "victory-area": "^37.0.2",
+    "victory-area": "^37.1.1",
     "victory-axis": "^37.1.1",
     "victory-bar": "^37.0.2",
     "victory-box-plot": "^37.0.2",
