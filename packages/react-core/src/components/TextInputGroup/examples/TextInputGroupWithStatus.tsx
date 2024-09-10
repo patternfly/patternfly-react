@@ -13,8 +13,10 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export const TextInputGroupWithStatus: React.FunctionComponent = () => {
   const [successValue, setSuccessValue] = React.useState('Success validation');
-  const [warningValue, setWarningValue] = React.useState('Warning validation with icon at start');
-  const [errorValue, setErrorValue] = React.useState('Error validation with icon at start and utilities');
+  const [warningValue, setWarningValue] = React.useState('Warning validation with custom non-status icon at start');
+  const [errorValue, setErrorValue] = React.useState(
+    'Error validation with custom non-status icon at start and utilities'
+  );
 
   /** show the input clearing button only when the input is not empty */
   const showClearButton = !!errorValue;
