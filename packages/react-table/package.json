@@ -45,7 +45,7 @@
     "@patternfly/react-styles": "workspace:^",
     "@patternfly/react-tokens": "workspace:^",
     "lodash": "^4.17.21",
-    "tslib": "^2.6.3"
+    "tslib": "^2.7.0"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
