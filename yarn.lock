@@ -3166,7 +3166,7 @@ __metadata:
     victory-core: "npm:^37.0.2"
     victory-create-container: "npm:^37.0.2"
     victory-cursor-container: "npm:^37.0.2"
-    victory-group: "npm:^37.0.2"
+    victory-group: "npm:^37.1.1"
     victory-legend: "npm:^37.0.2"
     victory-line: "npm:^37.0.2"
     victory-pie: "npm:^37.0.2"
@@ -20956,17 +20956,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"victory-group@npm:^37.0.2":
-  version: 37.0.2
-  resolution: "victory-group@npm:37.0.2"
+"victory-group@npm:^37.1.1":
+  version: 37.1.1
+  resolution: "victory-group@npm:37.1.1"
   dependencies:
     lodash: "npm:^4.17.19"
     react-fast-compare: "npm:^3.2.0"
-    victory-core: "npm:^37.0.2"
-    victory-shared-events: "npm:^37.0.2"
+    victory-core: "npm:37.1.1"
+    victory-shared-events: "npm:37.1.1"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 10c0/7da430ee270700115eef9e5ed8722f59dcfbbe5fb3fc7abdc691245d90f380118b592600c352288548319de32ffcbe2dc18a32d570ef68cf5f3e4b567ecb4669
+  checksum: 10c0/cd9d9a5ff9f3edfdaf8d1c0cd676eddc6b244c81ea2f2f6ed6e9fae6c03bb920eec06ea00c46d40dd6ba2fc9ded49077a66d1cdc21363afa822244b8c2572e82
   languageName: node
   linkType: hard
 

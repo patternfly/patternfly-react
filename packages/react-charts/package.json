@@ -42,7 +42,7 @@
     "victory-core": "^37.0.2",
     "victory-create-container": "^37.0.2",
     "victory-cursor-container": "^37.0.2",
-    "victory-group": "^37.0.2",
+    "victory-group": "^37.1.1",
     "victory-legend": "^37.0.2",
     "victory-line": "^37.0.2",
     "victory-pie": "^37.0.2",
