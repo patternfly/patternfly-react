@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.0.0-prerelease.2...@patternfly/react-code-editor@6.0.0-prerelease.3) (2024-09-10)
+
+### Bug Fixes
+
+- **deps:** update dependency tslib to ^2.7.0 ([#10949](https://github.com/patternfly/patternfly-react/issues/10949)) ([024b3cc](https://github.com/patternfly/patternfly-react/commit/024b3cc4b1afd4ba9f2dc774c0842712d4fbab1a))
+
 # [6.0.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.0.0-prerelease.1...@patternfly/react-code-editor@6.0.0-prerelease.2) (2024-09-09)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
