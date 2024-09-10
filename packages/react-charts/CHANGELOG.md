@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-prerelease.5...@patternfly/react-charts@8.0.0-prerelease.6) (2024-09-10)
+
+### Bug Fixes
+
+- **deps:** update dependency victory-chart to ^37.1.1 ([#10956](https://github.com/patternfly/patternfly-react/issues/10956)) ([ece3987](https://github.com/patternfly/patternfly-react/commit/ece39872f3b7ef6893d3deeedefb64baa60fbd67))
+
 # [8.0.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-prerelease.4...@patternfly/react-charts@8.0.0-prerelease.5) (2024-09-10)
 
 ### Bug Fixes
