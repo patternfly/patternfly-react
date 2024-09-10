@@ -2,6 +2,8 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 import { css } from '@patternfly/react-styles';
 import { TextInputGroupContext } from './TextInputGroup';
+import { TextInputGroupIcon } from './TextInputGroupIcon';
+import { statusIcons, ValidatedOptions } from '../../helpers';
 
 export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Content rendered inside the text input group main div */
@@ -78,9 +80,10 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
   inputId,
   ...props
 }: TextInputGroupMainProps) => {
-  const { isDisabled } = React.useContext(TextInputGroupContext);
+  const { isDisabled, validated } = React.useContext(TextInputGroupContext);
   const ref = React.useRef(null);
   const textInputGroupInputInputRef = innerRef || ref;
+  const StatusIcon = statusIcons[validated === ValidatedOptions.error ? 'danger' : validated];
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     onChange(event, event.currentTarget.value);
@@ -100,7 +103,7 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
             id={inputId}
           />
         )}
-        {icon && <span className={css(styles.textInputGroupIcon)}>{icon}</span>}
+        {icon && <TextInputGroupIcon>{icon}</TextInputGroupIcon>}
         <input
           ref={textInputGroupInputInputRef}
           type={type}
@@ -119,6 +122,7 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
           {...(isExpanded !== undefined && { 'aria-expanded': isExpanded })}
           {...(ariaControls && { 'aria-controls': ariaControls })}
         />
+        {validated && <TextInputGroupIcon isStatus>{<StatusIcon aria-hidden="true" />}</TextInputGroupIcon>}
       </span>
     </div>
   );

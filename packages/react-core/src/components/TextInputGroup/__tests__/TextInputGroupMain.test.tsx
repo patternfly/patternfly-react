@@ -242,6 +242,16 @@ describe('TextInputGroupMain', () => {
     expect(hintInput).toBeVisible();
   });
 
+  it(`Renders status icon with class ${styles.modifiers.status} when a validated prop is passed`, () => {
+    render(
+      <TextInputGroupContext.Provider value={{ validated: 'success' }}>
+        <TextInputGroupMain />
+      </TextInputGroupContext.Provider>
+    );
+
+    expect(screen.getByRole('textbox').nextElementSibling).toHaveClass(styles.modifiers.status);
+  });
+
   it('does not call onChange callback when the input does not change', () => {
     const onChangeMock = jest.fn();
 

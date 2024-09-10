@@ -34,20 +34,42 @@ describe('TextInputGroup', () => {
     expect(inputGroup).toHaveClass('custom-class');
   });
 
-  it('does not render with the pf-m-disabled class when not disabled', () => {
+  it(`does not render with the ${styles.modifiers.disabled} class when not disabled`, () => {
     render(<TextInputGroup>Test</TextInputGroup>);
 
     const inputGroup = screen.getByText('Test');
 
-    expect(inputGroup).not.toHaveClass('pf-m-disabled');
+    expect(inputGroup).not.toHaveClass(styles.modifiers.disabled);
   });
 
-  it('renders with the pf-m-disabled class when disabled', () => {
+  it(`renders with the ${styles.modifiers.disabled} class when disabled`, () => {
     render(<TextInputGroup isDisabled>Test</TextInputGroup>);
 
     const inputGroup = screen.getByText('Test');
 
-    expect(inputGroup).toHaveClass('pf-m-disabled');
+    expect(inputGroup).toHaveClass(styles.modifiers.disabled);
+  });
+
+  it(`renders with class ${styles.modifiers.success} when validated="success"`, () => {
+    render(<TextInputGroup validated="success">Test</TextInputGroup>);
+
+    const inputGroup = screen.getByText('Test');
+
+    expect(inputGroup).toHaveClass(styles.modifiers.success);
+  });
+  it(`renders with class ${styles.modifiers.warning} when validated="warning"`, () => {
+    render(<TextInputGroup validated="warning">Test</TextInputGroup>);
+
+    const inputGroup = screen.getByText('Test');
+
+    expect(inputGroup).toHaveClass(styles.modifiers.warning);
+  });
+  it(`renders with class ${styles.modifiers.error} when validated="error"`, () => {
+    render(<TextInputGroup validated="error">Test</TextInputGroup>);
+
+    const inputGroup = screen.getByText('Test');
+
+    expect(inputGroup).toHaveClass(styles.modifiers.error);
   });
 
   it('passes isDisabled=false to children via a context when isDisabled prop is not passed', () => {
