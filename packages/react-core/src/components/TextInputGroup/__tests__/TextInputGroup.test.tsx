@@ -50,22 +50,22 @@ describe('TextInputGroup', () => {
     expect(inputGroup).toHaveClass(styles.modifiers.disabled);
   });
 
-  it(`renders with class ${styles.modifiers.success} when status="success"`, () => {
-    render(<TextInputGroup status="success">Test</TextInputGroup>);
+  it(`renders with class ${styles.modifiers.success} when validated="success"`, () => {
+    render(<TextInputGroup validated="success">Test</TextInputGroup>);
 
     const inputGroup = screen.getByText('Test');
 
     expect(inputGroup).toHaveClass(styles.modifiers.success);
   });
-  it(`renders with class ${styles.modifiers.warning} when status="warning"`, () => {
-    render(<TextInputGroup status="warning">Test</TextInputGroup>);
+  it(`renders with class ${styles.modifiers.warning} when validated="warning"`, () => {
+    render(<TextInputGroup validated="warning">Test</TextInputGroup>);
 
     const inputGroup = screen.getByText('Test');
 
     expect(inputGroup).toHaveClass(styles.modifiers.warning);
   });
-  it(`renders with class ${styles.modifiers.error} when status="error"`, () => {
-    render(<TextInputGroup status="error">Test</TextInputGroup>);
+  it(`renders with class ${styles.modifiers.error} when validated="error"`, () => {
+    render(<TextInputGroup validated="error">Test</TextInputGroup>);
 
     const inputGroup = screen.getByText('Test');
 

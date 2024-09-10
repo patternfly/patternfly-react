@@ -28,9 +28,9 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 ```
 
-### With status
+### With validation
 
-You can add a status to a `<TextInputGroup>` by passing the `status` property with a value of either "success", "warning", or "error".
+You can add a validation status to a `<TextInputGroup>` by passing the `validated` property with a value of either "success", "warning", or "error".
 
 ```ts file="./TextInputGroupWithStatus.tsx"
 

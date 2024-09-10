@@ -242,9 +242,9 @@ describe('TextInputGroupMain', () => {
     expect(hintInput).toBeVisible();
   });
 
-  it(`Renders status icon with class ${styles.modifiers.status} when a status prop is passed`, () => {
+  it(`Renders status icon with class ${styles.modifiers.status} when a validated prop is passed`, () => {
     render(
-      <TextInputGroupContext.Provider value={{ status: 'success' }}>
+      <TextInputGroupContext.Provider value={{ validated: 'success' }}>
         <TextInputGroupMain />
       </TextInputGroupContext.Provider>
     );

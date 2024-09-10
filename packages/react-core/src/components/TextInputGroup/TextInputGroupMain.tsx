@@ -80,10 +80,10 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
   inputId,
   ...props
 }: TextInputGroupMainProps) => {
-  const { isDisabled, status } = React.useContext(TextInputGroupContext);
+  const { isDisabled, validated } = React.useContext(TextInputGroupContext);
   const ref = React.useRef(null);
   const textInputGroupInputInputRef = innerRef || ref;
-  const StatusIcon = statusIcons[status === ValidatedOptions.error ? 'danger' : status];
+  const StatusIcon = statusIcons[validated === ValidatedOptions.error ? 'danger' : validated];
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     onChange(event, event.currentTarget.value);
@@ -122,7 +122,7 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
           {...(isExpanded !== undefined && { 'aria-expanded': isExpanded })}
           {...(ariaControls && { 'aria-controls': ariaControls })}
         />
-        {status && <TextInputGroupIcon isStatus>{<StatusIcon aria-hidden="true" />}</TextInputGroupIcon>}
+        {validated && <TextInputGroupIcon isStatus>{<StatusIcon aria-hidden="true" />}</TextInputGroupIcon>}
       </span>
     </div>
   );

@@ -32,12 +32,12 @@ export const TextInputGroupWithStatus: React.FunctionComponent = () => {
   return (
     <Flex direction={{ default: 'column' }} rowGap={{ default: 'rowGapSm' }}>
       <FlexItem>
-        <TextInputGroup status={ValidatedOptions.success}>
+        <TextInputGroup validated={ValidatedOptions.success}>
           <TextInputGroupMain value={successValue} onChange={(_event, value) => setSuccessValue(value)} />
         </TextInputGroup>
       </FlexItem>
       <FlexItem>
-        <TextInputGroup status={ValidatedOptions.warning}>
+        <TextInputGroup validated={ValidatedOptions.warning}>
           <TextInputGroupMain
             icon={<SearchIcon />}
             value={warningValue}
@@ -46,7 +46,7 @@ export const TextInputGroupWithStatus: React.FunctionComponent = () => {
         </TextInputGroup>
       </FlexItem>
       <FlexItem>
-        <TextInputGroup status={ValidatedOptions.error}>
+        <TextInputGroup validated={ValidatedOptions.error}>
           <TextInputGroupMain
             icon={<SearchIcon />}
             value={errorValue}
