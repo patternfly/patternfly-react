@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.3...@patternfly/react-core@6.0.0-prerelease.4) (2024-09-10)
+
+### Features
+
+- **TextInputGroup:** added validation support ([#10815](https://github.com/patternfly/patternfly-react/issues/10815)) ([4e32ef9](https://github.com/patternfly/patternfly-react/commit/4e32ef9dda84be96e8901255f09ddb27fbec1f6f))
+
 # [6.0.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.2...@patternfly/react-core@6.0.0-prerelease.3) (2024-09-10)
 
 ### Bug Fixes
