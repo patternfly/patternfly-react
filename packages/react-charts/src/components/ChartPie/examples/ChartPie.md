@@ -6,6 +6,9 @@ hideDarkMode: true
 ---
 
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import chart_theme_blue_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_blue_ColorScale_100';
+import chart_theme_yellow_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_yellow_ColorScale_100';
+import chart_theme_orange_ColorScale_300 from '@patternfly/react-tokens/dist/esm/chart_theme_orange_ColorScale_300';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -41,35 +44,6 @@ import { ChartPie } from '@patternfly/react-charts';
 </div>
 ```
 
-### Orange with right aligned legend
-```js
-import React from 'react';
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
-
-<div style={{ height: '230px', width: '350px' }}>
-  <ChartPie
-    ariaDesc="Average number of pets"
-    ariaTitle="Pie chart example"
-    constrainToVisibleArea
-    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    height={230}
-    labels={({ datum }) => `${datum.x}: ${datum.y}`}
-    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    name="chart2"
-    padding={{
-      bottom: 20,
-      left: 20,
-      right: 140, // Adjusted to accommodate legend
-      top: 20
-    }}
-    themeColor={ChartThemeColor.orange}
-    width={350}
-  />
-</div>
-```
-
 ### Multi-color (ordered) with bottom aligned legend
 ```js
 import React from 'react';
@@ -94,6 +68,42 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     }}
     themeColor={ChartThemeColor.multiOrdered}
     width={300}
+  />
+</div>
+```
+
+### Custom color scale
+
+This demonstrates how to apply a custom color scale.
+
+```js
+import React from 'react';
+import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import chart_theme_blue_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_blue_ColorScale_100';
+import chart_theme_yellow_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_yellow_ColorScale_100';
+import chart_theme_orange_ColorScale_300 from '@patternfly/react-tokens/dist/esm/chart_theme_orange_ColorScale_300';
+
+<div style={{ height: '230px', width: '450px' }}>
+  <ChartPie
+    ariaDesc="Average number of pets"
+    ariaTitle="Pie chart example"
+    colorScale={[ chart_theme_blue_ColorScale_100.var, chart_theme_orange_ColorScale_300.var, chart_theme_yellow_ColorScale_100.var, chart_theme_blue_ColorScale_100.var, ]}
+    constrainToVisibleArea
+    data={[{ x: 'Sky', y: 38 }, { x: 'Shady side of pyramid', y: 7 }, { x: 'Sunny side of pyramid', y: 17 }, { x: 'Sky', y: 38 }]}
+    height={230}
+    labels={({ datum }) => `${datum.x}`}
+    legendData={[{ name: 'Sky' }, { name: 'Shady side of pyramid' }, { name: 'Sunny side of pyramid' }]}
+    legendOrientation="vertical"
+    legendPosition="right"
+    name="chart2"
+    padding={{
+      bottom: 20,
+      left: 20,
+      right: 240, // Adjusted to accommodate legend
+      top: 20
+    }}
+    themeColor={ChartThemeColor.orange}
+    width={450}
   />
 </div>
 ```
