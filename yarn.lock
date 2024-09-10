@@ -3154,7 +3154,7 @@ __metadata:
     victory-bar: "npm:^37.1.1"
     victory-box-plot: "npm:^37.1.1"
     victory-chart: "npm:^37.1.1"
-    victory-core: "npm:^37.0.2"
+    victory-core: "npm:^37.1.1"
     victory-create-container: "npm:^37.0.2"
     victory-cursor-container: "npm:^37.0.2"
     victory-group: "npm:^37.0.2"
@@ -20887,7 +20887,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"victory-core@npm:37.1.1":
+"victory-core@npm:37.1.1, victory-core@npm:^37.1.1":
   version: 37.1.1
   resolution: "victory-core@npm:37.1.1"
   dependencies:
