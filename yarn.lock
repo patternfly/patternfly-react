@@ -3152,7 +3152,7 @@ __metadata:
     victory-area: "npm:^37.1.1"
     victory-axis: "npm:^37.1.1"
     victory-bar: "npm:^37.1.1"
-    victory-box-plot: "npm:^37.0.2"
+    victory-box-plot: "npm:^37.1.1"
     victory-chart: "npm:^37.0.2"
     victory-core: "npm:^37.0.2"
     victory-create-container: "npm:^37.0.2"
@@ -20857,16 +20857,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"victory-box-plot@npm:^37.0.2":
-  version: 37.0.2
-  resolution: "victory-box-plot@npm:37.0.2"
+"victory-box-plot@npm:^37.1.1":
+  version: 37.1.1
+  resolution: "victory-box-plot@npm:37.1.1"
   dependencies:
     lodash: "npm:^4.17.19"
-    victory-core: "npm:^37.0.2"
-    victory-vendor: "npm:^37.0.2"
+    victory-core: "npm:37.1.1"
+    victory-vendor: "npm:37.1.1"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 10c0/974055f9374a1eb024ac3b34b992c9811b078998bbdc3801ef820337ce377c3c09599ddb299838c14cb145e43f9486d1ec2410558da0fa3d01a1728ae62d4fb8
+  checksum: 10c0/7a31e2088135a19ef524f27f97a67064bcfb1f20423b5c21bb788ec7dfdf1bd50251552e26950ef6f1b75378f1870ee90f5a5ecf4f1ac300289f9497a1a97866
   languageName: node
   linkType: hard
 
