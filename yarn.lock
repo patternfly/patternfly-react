@@ -3151,7 +3151,7 @@ __metadata:
     tslib: "npm:^2.7.0"
     victory-area: "npm:^37.0.2"
     victory-axis: "npm:^37.1.1"
-    victory-bar: "npm:^37.0.2"
+    victory-bar: "npm:^37.1.1"
     victory-box-plot: "npm:^37.0.2"
     victory-chart: "npm:^37.0.2"
     victory-core: "npm:^37.0.2"
@@ -20844,16 +20844,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"victory-bar@npm:^37.0.2":
-  version: 37.0.2
-  resolution: "victory-bar@npm:37.0.2"
+"victory-bar@npm:^37.1.1":
+  version: 37.1.1
+  resolution: "victory-bar@npm:37.1.1"
   dependencies:
     lodash: "npm:^4.17.19"
-    victory-core: "npm:^37.0.2"
-    victory-vendor: "npm:^37.0.2"
+    victory-core: "npm:37.1.1"
+    victory-vendor: "npm:37.1.1"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 10c0/ffb3c79c69d5e44b1192ef0668d025f05913ee9eb81e9f4b75fa1662bac3def13114015a64657a1a98d6cec637d656e0ea162fe939a3c49ecb08c33c0949bd2e
+  checksum: 10c0/f5f3f1656281a594aa31c8309d8f7ee4e2d8b90def4e7ae6181430214fe2d44aca7566e5fc3649a580dcf44ddc3c875a65363a5a94b98fd6f0c6f5b4adfb9b3e
   languageName: node
   linkType: hard
 
