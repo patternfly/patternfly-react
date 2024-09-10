@@ -3153,7 +3153,7 @@ __metadata:
     victory-axis: "npm:^37.1.1"
     victory-bar: "npm:^37.1.1"
     victory-box-plot: "npm:^37.1.1"
-    victory-chart: "npm:^37.0.2"
+    victory-chart: "npm:^37.1.1"
     victory-core: "npm:^37.0.2"
     victory-create-container: "npm:^37.0.2"
     victory-cursor-container: "npm:^37.0.2"
@@ -20820,19 +20820,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"victory-axis@npm:^37.0.2":
-  version: 37.0.2
-  resolution: "victory-axis@npm:37.0.2"
-  dependencies:
-    lodash: "npm:^4.17.19"
-    victory-core: "npm:^37.0.2"
-  peerDependencies:
-    react: ">=16.6.0"
-  checksum: 10c0/9df39a72c92fe9e88256c40570799f0a9ca59c903d164c7c7fdc2adcc4deee6e2c9a5ef1c73ab9df53b704930e125fa5982d8a364a04198e846246610cceea60
-  languageName: node
-  linkType: hard
-
-"victory-axis@npm:^37.1.1":
+"victory-axis@npm:37.1.1, victory-axis@npm:^37.1.1":
   version: 37.1.1
   resolution: "victory-axis@npm:37.1.1"
   dependencies:
@@ -20883,19 +20871,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"victory-chart@npm:^37.0.2":
-  version: 37.0.2
-  resolution: "victory-chart@npm:37.0.2"
+"victory-chart@npm:^37.1.1":
+  version: 37.1.1
+  resolution: "victory-chart@npm:37.1.1"
   dependencies:
     lodash: "npm:^4.17.19"
     react-fast-compare: "npm:^3.2.0"
-    victory-axis: "npm:^37.0.2"
-    victory-core: "npm:^37.0.2"
-    victory-polar-axis: "npm:^37.0.2"
-    victory-shared-events: "npm:^37.0.2"
+    victory-axis: "npm:37.1.1"
+    victory-core: "npm:37.1.1"
+    victory-polar-axis: "npm:37.1.1"
+    victory-shared-events: "npm:37.1.1"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 10c0/5cf8d4877c9ed4f7ab4253f2aba7d3511434c83403004b3ac52547260fe61b7fae42d63293b32e3650db06e65663f6167b894d3c10d5c7be329e490b23f458bd
+  checksum: 10c0/b750f4dc9708a0e8ecae1f717aa4fdf7a18d0d6cfd5f28333b54dc6bc76e0a4ae0741a13b4068c0af972c3404f8438dd7d2e49363d0cf0477cdf0980bf6285f9
   languageName: node
   linkType: hard
 
@@ -21006,15 +20994,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"victory-polar-axis@npm:^37.0.2":
-  version: 37.0.2
-  resolution: "victory-polar-axis@npm:37.0.2"
+"victory-polar-axis@npm:37.1.1":
+  version: 37.1.1
+  resolution: "victory-polar-axis@npm:37.1.1"
   dependencies:
     lodash: "npm:^4.17.19"
-    victory-core: "npm:^37.0.2"
+    victory-core: "npm:37.1.1"
   peerDependencies:
     react: ">=16.6.0"
-  checksum: 10c0/68178863594f2120f0d101aa08d4bb721f7024d6c1b1629fa9ac1eadb44b967aaba9a3e447c82b8aa2ea88b286f7cfe27abe6b057cdab879a85169be8d576d11
+  checksum: 10c0/4423ddc077a31ca2c80d76ce2f1230502073b3ed428c9eff4462cf9c92f33ed2ebc48e76bb21720b8b4e5ad84f46d334aa784efa8928d3fcfd46126865211336
   languageName: node
   linkType: hard
 
@@ -21039,6 +21027,20 @@ __metadata:
   peerDependencies:
     react: ">=16.6.0"
   checksum: 10c0/adc2a9dc4fdcc39e6b0110e5ec8bfbf83b719bdd6920e7d118221458f60bc773c355e2d218ae018b79d8c4f898eaa3bc0d49fefa4a46b1251ab2aa6013656e99
+  languageName: node
+  linkType: hard
+
+"victory-shared-events@npm:37.1.1":
+  version: 37.1.1
+  resolution: "victory-shared-events@npm:37.1.1"
+  dependencies:
+    json-stringify-safe: "npm:^5.0.1"
+    lodash: "npm:^4.17.19"
+    react-fast-compare: "npm:^3.2.0"
+    victory-core: "npm:37.1.1"
+  peerDependencies:
+    react: ">=16.6.0"
+  checksum: 10c0/19b804d93ddef2e390a4551308205041003275b0407375ddfc0567a72a6d6aacdb6eb5ceb27552729ae92c83216fb58c664d3ade99ff0946f34e4c03dbcce3fe
   languageName: node
   linkType: hard
 
