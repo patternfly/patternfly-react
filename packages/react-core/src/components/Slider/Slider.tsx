@@ -475,7 +475,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
         )}
         {hasTooltipOverThumb ? (
           <Tooltip
-            className={css('.pf-v6-m-tabular-nums')}
+            className={css('pf-v6-m-tabular-nums')}
             triggerRef={thumbRef}
             entryDelay={0}
             content={findAriaTextValue()}
