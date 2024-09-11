@@ -1,7 +1,7 @@
 ---
 id: Pagination
 section: components
-cssPrefix: null
+cssPrefix: pf-v6-c-pagination
 propComponents: ['Pagination', PaginationTitles, PerPageOptions, PaginationToggleTemplateProps]
 ouia: true
 ---

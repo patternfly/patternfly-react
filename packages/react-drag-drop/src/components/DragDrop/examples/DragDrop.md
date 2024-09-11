@@ -1,7 +1,7 @@
 ---
 id: Drag and drop
 section: components
-cssPrefix: pf-c-drag-drop
+cssPrefix: ['pf-v6-c-draggable', 'pf-v6-c-droppable']
 propComponents: ['DragDropSort', 'DraggableObject']
 hideNavItem: true
 ---

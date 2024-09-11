@@ -1,7 +1,7 @@
 ---
 id: Clipboard copy
 section: components
-cssPrefix: pf-v6-c-copyclipboard
+cssPrefix: pf-v6-c-clipboard-copy
 propComponents: ['ClipboardCopy', 'ClipboardCopyButton']
 ouia: true
 ---

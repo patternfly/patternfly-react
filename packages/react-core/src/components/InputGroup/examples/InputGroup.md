@@ -1,7 +1,7 @@
 ---
 id: Input group
 section: components
-cssPrefix: null
+cssPrefix: pf-v6-c-input-group
 propComponents: ['InputGroup', 'InputGroupItem', 'InputGroupText']
 ---
 

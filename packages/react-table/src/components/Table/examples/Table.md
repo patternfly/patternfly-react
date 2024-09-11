@@ -1,6 +1,6 @@
 ---
 id: Table
-cssPrefix: pf-c-table
+cssPrefix: pf-v6-c-table
 section: components
 propComponents:
   [

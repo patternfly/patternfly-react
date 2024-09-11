@@ -1,6 +1,7 @@
 ---
 id: Jump links
 section: components
+cssPrefix: pf-v6-c-jump-links
 propComponents: ['JumpLinks', 'JumpLinksItem']
 ---
 
