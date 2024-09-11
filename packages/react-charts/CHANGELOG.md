@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-prerelease.6...@patternfly/react-charts@8.0.0-prerelease.7) (2024-09-11)
+
+### Bug Fixes
+
+- **charts:** victoryCreateContainer breakage (v6) ([#10925](https://github.com/patternfly/patternfly-react/issues/10925)) ([4a815fb](https://github.com/patternfly/patternfly-react/commit/4a815fb80f0c53c53947fcc53002111bfbf02a4d))
+
 # [8.0.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-prerelease.5...@patternfly/react-charts@8.0.0-prerelease.6) (2024-09-10)
 
 ### Bug Fixes
