@@ -69,7 +69,7 @@ describe('Form Demo Test', () => {
     cy.get('[aria-label="Close"]').type('{enter}');
   });
 
-  xit('Verify keypress can control the multi-select-typeahead', () => {
+  it('Verify keypress can control the multi-select-typeahead', () => {
     cy.get('.pf-v6-c-menu-toggle').type('{downarrow}{downarrow}{enter}');
     cy.get('.pf-v6-c-label__text').should('exist').and('have.text', 'Florida');
 
@@ -77,14 +77,14 @@ describe('Form Demo Test', () => {
 
     cy.get('.pf-v6-c-text-input-group__text-input').click().type('New J');
 
-    cy.get('.pf-v6-c-select__menu-item').should('exist').and('have.text', 'New Jersey');
+    cy.get('.pf-v6-c-menu__item').should('exist').and('have.text', 'New Jersey');
     cy.focused().type('{backspace}{backspace}{backspace}{backspace}orth');
-    cy.get('.pf-v6-c-select__menu-item').should('exist').and('have.text', 'North Carolina');
+    cy.get('.pf-v6-c-menu__item').should('exist').and('have.text', 'North Carolina');
     cy.focused().type('{backspace}{backspace}{backspace}{backspace}{backspace}');
 
     // @ts-ignore
     cy.tab();
-    cy.get('.pf-v6-c-select__menu-item').should('not.exist');
+    cy.get('.pf-v6-c-menu__item').should('not.exist');
   });
 
   it('Verify pressing spacebar selects the checkbox component', () => {

@@ -231,7 +231,20 @@ export class FormDemo extends Component<FormProps, FormState> {
   };
 
   onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+    let newSelectOptions: SelectOptionProps[] = initialSelectOptions;
+    if (value) {
+      newSelectOptions = initialSelectOptions.filter((menuItem) =>
+        String(menuItem.children).toLowerCase().includes(value.toLowerCase())
+      );
+      if (!newSelectOptions.length) {
+        newSelectOptions = [{ isAriaDisabled: true, children: `No results found for "${value}"`, value: NO_RESULTS }];
+      }
+      if (!this.state.isOpen) {
+        this.setState({ isOpen: true });
+      }
+    }
     this.setState({ inputValue: value });
+    this.setState({ selectOptions: newSelectOptions });
     this.resetActiveAndFocusedItem();
   };
   onClearButtonClick = () => {
