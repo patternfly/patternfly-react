@@ -2,7 +2,7 @@
 id: Checkbox
 section: components
 subsection: forms
-cssPrefix: pf-v5-c-check
+cssPrefix: pf-v6-c-check
 propComponents: ['Checkbox']
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: Skeleton
 section: components
-cssPrefix: pf-v5-c-skeleton
+cssPrefix: pf-v6-c-skeleton
 propComponents: ['Skeleton']
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: Background image
 section: components
-cssPrefix: pf-v5-c-background-image
+cssPrefix: pf-v6-c-background-image
 propComponents: ['BackgroundImage']
 ---
 

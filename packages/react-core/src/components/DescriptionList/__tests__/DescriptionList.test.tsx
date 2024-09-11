@@ -137,7 +137,7 @@ test(`Renders style when isHorizontal and horizontalTermWidthModifier is set`, (
 test.skip(`Renders style when termWidth is set`, () => {
   render(<DescriptionList aria-label="list" isHorizontal termWidth="30px" />);
   expect(screen.getByLabelText('list')).toHaveStyle({
-    '--pf-v5-c-description-list__term--width': '30px'
+    '--pf-v6-c-description-list__term--width': '30px'
   });
 });
 

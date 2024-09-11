@@ -1,7 +1,7 @@
 ---
 id: Button
 section: components
-cssPrefix: pf-v5-c-button
+cssPrefix: pf-v6-c-button
 propComponents: ['Button', 'BadgeCountObject']
 ouia: true
 ---

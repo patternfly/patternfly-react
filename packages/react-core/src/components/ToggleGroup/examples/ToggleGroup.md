@@ -1,7 +1,7 @@
 ---
 id: Toggle group
 section: components
-cssPrefix: pf-v5-c-toggle-group
+cssPrefix: pf-v6-c-toggle-group
 propComponents: ['ToggleGroup', 'ToggleGroupItem']
 ---
 import './toggleGroup.css';

@@ -45,7 +45,7 @@ ProgressStepperDemo = () => {
         <br />
       </StackItem>
       <StackItem>
-        <div className="pf-v5-screen-reader" aria-live="polite">
+        <div className="pf-v6-screen-reader" aria-live="polite">
           {steps[currentStep] && `On ${steps[currentStep].title}.`}
           {steps[currentStep - 1] && `${steps[currentStep - 1].title} was successful.`}
         </div>

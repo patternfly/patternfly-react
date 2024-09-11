@@ -2,7 +2,7 @@
 id: Radio
 section: components
 subsection: forms
-cssPrefix: pf-v5-c-radio
+cssPrefix: pf-v6-c-radio
 propComponents: ['Radio']
 ouia: true
 ---

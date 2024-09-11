@@ -7,7 +7,7 @@ import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/c_descr
 import cssHorizontalTermWidth from '@patternfly/react-tokens/dist/esm/c_description_list_m_horizontal__term_width';
 
 const cssTermWidth = {
-  name: '--pf-v5-c-description-list__term-width'
+  name: '--pf-v6-c-description-list__term-width'
 };
 
 export interface BreakpointModifiers {

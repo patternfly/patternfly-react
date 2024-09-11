@@ -1,6 +1,6 @@
 ---
 id: Sidebar
-cssPrefix: pf-v5-c-sidebar
+cssPrefix: pf-v6-c-sidebar
 section: components
 propComponents: ['Sidebar', 'SidebarContent', 'SidebarPanel']
 ---

@@ -230,7 +230,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         } as React.CSSProperties
       })}
     >
-      {transformedChildren || (screenReaderText && <span className="pf-v5-screen-reader">{screenReaderText}</span>)}
+      {transformedChildren || (screenReaderText && <span className="pf-v6-screen-reader">{screenReaderText}</span>)}
     </MergedComponent>
   );
 
