@@ -92,6 +92,11 @@ describe('EmptyState', () => {
     expect(screen.getByRole('heading', { level: 3, name: 'Empty state' })).toHaveClass(styles.emptyStateTitleText);
   });
 
+  test('title is not rendered when titleText is not passed', () => {
+    render(<EmptyStateHeader headingLevel="h3" />);
+    expect(screen.queryByRole('heading', { level: 3 })).not.toBeInTheDocument();
+  });
+
   test('Footer', () => {
     render(<EmptyStateFooter className="custom-empty-state-footer" data-testid="actions-test-id" />);
     expect(screen.getByTestId('actions-test-id')).toHaveClass('custom-empty-state-footer');
