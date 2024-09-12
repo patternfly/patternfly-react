@@ -19,7 +19,7 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
     newValue: any | any[],
     rowIndex: number,
     cellIndex: number,
-    isPlaceholder: boolean
+    isPlaceholder?: boolean
   ) => void;
   /** Options to display in the expandable select menu */
   options?: React.ReactElement[];
