@@ -522,8 +522,9 @@ class EditableRowsTable extends React.Component {
                 name: 'uniqueIdRow2Cell4',
                 isSelectOpen: props.isSelectOpen || false,
                 selected: props.selected || [],
+                isPlaceholder: true,
                 options: [
-                  { value: 'Placeholder...', isPlaceholder: true },
+                   { value: 'Placeholder...', isPlaceholder: true},
                   { value: 'Option 1' },
                   { value: 'Option 2' },
                   { value: 'Option 3' },
@@ -639,8 +640,9 @@ class EditableRowsTable extends React.Component {
                 name: 'uniqueIdRow3Cell4',
                 isSelectOpen: props.isSelectOpen || false,
                 selected: props.selected || ['Option 3'],
+                isPlaceholder: false,
                 options: [
-                  { value: 'Placeholder...', isPlaceholder: true },
+                  { value: 'Placeholder...', isPlaceholder: true},
                   { value: 'Option 1' },
                   { value: 'Option 2' },
                   { value: 'Option 3' },
