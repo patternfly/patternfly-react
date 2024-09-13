@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.7...@patternfly/react-core@6.0.0-prerelease.8) (2024-09-13)
+
+### Bug Fixes
+
+- **slider:** Add tabular number font styling to tooltips ([#10901](https://github.com/patternfly/patternfly-react/issues/10901)) ([b41061c](https://github.com/patternfly/patternfly-react/commit/b41061c3b83e5f2a5e865170543a63d307ecaa17))
+
 # [6.0.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.6...@patternfly/react-core@6.0.0-prerelease.7) (2024-09-12)
 
 ### Features
