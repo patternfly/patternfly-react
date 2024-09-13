@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
+import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { info, sortable, sortableFavorites, selectable, collapsible, cellWidth, Visibility, classNames } from './utils';
 import { ThInfoType, ThSelectType, ThExpandType, ThSortType, formatterValueType } from './base/types';
 import { mergeProps } from './base/merge-props';
@@ -12,7 +13,6 @@ import { IFormatterValueType, IColumn } from './TableTypes';
 import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
 import cssStickyCellInlineStart from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineStart';
 import cssStickyCellInlineEnd from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineEnd';
-import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility';
 
 export interface ThProps
   extends BaseCellProps,
