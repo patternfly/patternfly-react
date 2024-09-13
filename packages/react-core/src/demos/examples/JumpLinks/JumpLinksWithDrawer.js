@@ -21,6 +21,7 @@ import {
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
+import breadcrumbStyles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 
 const JumpLinksWrapper = ({ offsetHeight, headings }) => {
   const { drawerContentRef } = React.useContext(DrawerContext);
@@ -52,12 +53,14 @@ export const JumpLinksWithDrawer = () => {
 
   React.useEffect(() => {
     const masthead = document.getElementsByClassName(mastheadStyles.masthead)[0];
+    const breadcrumb = document.getElementsByClassName(breadcrumbStyles.breadcrumb)[0];
     const drawerToggleSection = document.getElementById('drawer-toggle');
+    setOffsetHeight(masthead.offsetHeight + breadcrumb.offsetHeight + drawerToggleSection.offsetHeight);
 
     getResizeObserver(
       masthead,
       () => {
-        setOffsetHeight(masthead.offsetHeight + drawerToggleSection.offsetHeight);
+        setOffsetHeight(masthead.offsetHeight + breadcrumb.offsetHeight + drawerToggleSection.offsetHeight);
       },
       true
     );

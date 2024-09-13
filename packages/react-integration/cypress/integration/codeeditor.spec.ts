@@ -1,4 +1,4 @@
-describe('Context Selector Demo Test', () => {
+describe('Code Editor Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/code-editor-demo-nav-link');
   });

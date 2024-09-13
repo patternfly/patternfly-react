@@ -9,10 +9,8 @@ describe('Jump Link Demo Test', () => {
       expect(firstScroll).to.eq(0);
     });
     cy.get('#heading-3').click();
-    cy.get('#ts-demo-app-page-id')
-      .parent()
-      .then((el) => {
-        expect(el.scrollTop()).to.not.eq(0);
-      });
+    cy.get('#ts-demo-app-page-id').then((el) => {
+      expect(el.scrollTop()).to.not.eq(0);
+    });
   });
 });
