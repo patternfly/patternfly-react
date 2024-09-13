@@ -10,7 +10,7 @@ const version = 'v6';
 
 // Helpers
 const formatCustomPropertyName = (key) =>
-  key.replace(`--pf-${version}-`, '').replace('--pf-t--', '').replace(/-+/g, '_');
+  key.replace(`--pf-${version}-`, '').replace('--pf-t--', 't_').replace(/-+/g, '_');
 
 const getRegexMatches = (string, regex) => {
   const res = {};
@@ -35,11 +35,13 @@ const getDeclarations = (cssAst) =>
 const formatFilePathToName = (filePath) => {
   // const filePathArr = filePath.split('/');
   let prefix = '';
+
   if (filePath.includes('components/')) {
     prefix = 'c_';
   } else if (filePath.includes('layouts/')) {
     prefix = 'l_';
   }
+ 
   return `${prefix}${basename(filePath, '.css').replace(/-+/g, '_')}`;
 };
 
