@@ -35,13 +35,11 @@ const getDeclarations = (cssAst) =>
 const formatFilePathToName = (filePath) => {
   // const filePathArr = filePath.split('/');
   let prefix = '';
-
   if (filePath.includes('components/')) {
     prefix = 'c_';
   } else if (filePath.includes('layouts/')) {
     prefix = 'l_';
   }
- 
   return `${prefix}${basename(filePath, '.css').replace(/-+/g, '_')}`;
 };
 
