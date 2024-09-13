@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DroppableContext } from './DroppableContext';
 import { DragDropContext } from './DragDrop';
 // import cssDraggingBackgroundColor from '@patternfly/react-tokens/dist/esm/c_draggable_m_dragging_BackgroundColor';
-const cssDraggingBackgroundColor = { name: '--pf-v6-c-draggable--m-dragging--BackgroundColor' };
+const cssDraggingBackgroundColor = { name: `--${styles.draggable}--m-dragging--BackgroundColor` };
 
 export interface DraggableProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside DragDrop */
