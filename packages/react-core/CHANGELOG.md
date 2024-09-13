@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.8...@patternfly/react-core@6.0.0-prerelease.9) (2024-09-13)
+
+### Bug Fixes
+
+- **tree view:** Fix with action items example so menu is closed by default ([#10947](https://github.com/patternfly/patternfly-react/issues/10947)) ([26525f0](https://github.com/patternfly/patternfly-react/commit/26525f0f2594a12f43053ab9d9cf781a464b0a04))
+
+# [6.0.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.7...@patternfly/react-core@6.0.0-prerelease.8) (2024-09-13)
+
+### Bug Fixes
+
+- **slider:** Add tabular number font styling to tooltips ([#10901](https://github.com/patternfly/patternfly-react/issues/10901)) ([b41061c](https://github.com/patternfly/patternfly-react/commit/b41061c3b83e5f2a5e865170543a63d307ecaa17))
+
 # [6.0.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.6...@patternfly/react-core@6.0.0-prerelease.7) (2024-09-12)
 
 ### Features

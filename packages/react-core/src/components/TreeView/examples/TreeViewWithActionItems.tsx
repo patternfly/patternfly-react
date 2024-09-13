@@ -14,7 +14,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 
 export const TreeViewWithActionItems: React.FunctionComponent = () => {
   const [activeItems, setActiveItems] = React.useState<TreeViewDataItem[]>();
-  const [isOpen, setIsOpen] = React.useState<boolean>();
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   const onSelect = (_event: React.MouseEvent, treeViewItem: TreeViewDataItem) => {
     // Ignore folders for selection
