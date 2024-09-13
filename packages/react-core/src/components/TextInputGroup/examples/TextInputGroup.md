@@ -21,16 +21,14 @@ A basic text input group updates its contents as users enter text.
 
 To prevent users from making edits to a text input group, you can disable it using `isDisabled`.
 
-When you disable a text input group, add an `aria-label` to provide context to assistive technologies.
-
 ```ts file="./TextInputGroupDisabled.tsx"
 ```
 
-### With icon and clear button
+### With icon and utilities
 
 To help users identify the purpose of an input group, you can add an icon. To do this, import your icon and pass it to `icon` within `<TextInputGroupMain>`.
 
-You can also add a clear button that allows users remove their previous input. Pass your button into `<TextInputGroupUtilities>`.
+You can also add additional actions or utilities via `<TextInputGroupUtilities>`. The following example includes a clear button that allows users to remove their previous input. 
 
 ```ts file="./TextInputGroupUtilitiesAndIcon.tsx"
 ```
