@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.2...@patternfly/react-integration@6.0.0-prerelease.3) (2024-09-12)
+
+### Features
+
+- **DualListSelector:** new demos and integration tests ([#10829](https://github.com/patternfly/patternfly-react/issues/10829)) ([09d72ea](https://github.com/patternfly/patternfly-react/commit/09d72eaf058fe8e5be2884f8075f443b5576cb4d))
+
 # [6.0.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.1...@patternfly/react-integration@6.0.0-prerelease.2) (2024-09-11)
 
 **Note:** Version bump only for package @patternfly/react-integration

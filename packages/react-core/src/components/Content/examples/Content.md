@@ -62,3 +62,11 @@ HTML elements wrapped by `<Content>` are styled by the content component.
 ```ts file="./ContentVisited.tsx"
 
 ```
+
+### Editorial content
+
+Editorial styling increases the font size of body text and small text by 1 tier, where body text becomes "lg" and small text becomes "md". To applying editorial styling, use `isEditorial`.
+
+```ts file="./ContentEditorial.tsx"
+
+```
