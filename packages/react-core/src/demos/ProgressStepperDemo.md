@@ -3,6 +3,8 @@ id: Progress stepper
 section: components
 ---
 
+import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
+
 ## Demos
 
 ### Basic
@@ -10,7 +12,7 @@ section: components
 ```js
 import React from 'react';
 import { ProgressStepper, ProgressStep, Button, Stack, StackItem } from '@patternfly/react-core';
-import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility';
+import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 ProgressStepperDemo = () => {
   const [currentStep, setCurrentStep] = React.useState(0);
