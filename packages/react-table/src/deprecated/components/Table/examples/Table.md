@@ -31,7 +31,7 @@ SelectOption as NewSelectOption,
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import global_color_brand_default from '@patternfly/react-tokens/dist/esm/global_color_brand_default';
+import t_global_color_brand_default from '@patternfly/react-tokens/dist/esm/t_global_color_brand_default';
 
 ## Table Columns
 

@@ -1,14 +1,14 @@
-import globalBreakpointSm from '@patternfly/react-tokens/dist/esm/global_breakpoint_sm';
-import globalBreakpointMd from '@patternfly/react-tokens/dist/esm/global_breakpoint_md';
-import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpoint_lg';
-import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/global_breakpoint_xl';
-import globalBreakpoint2xl from '@patternfly/react-tokens/dist/esm/global_breakpoint_2xl';
+import globalBreakpointSm from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_sm';
+import globalBreakpointMd from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_md';
+import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
+import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_xl';
+import globalBreakpoint2xl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_2xl';
 
-import globalHeightBreakpointSm from '@patternfly/react-tokens/dist/esm/global_breakpoint_height_sm';
-import globalHeightBreakpointMd from '@patternfly/react-tokens/dist/esm/global_breakpoint_height_md';
-import globalHeightBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpoint_height_lg';
-import globalHeightBreakpointXl from '@patternfly/react-tokens/dist/esm/global_breakpoint_height_xl';
-import globalHeightBreakpoint2xl from '@patternfly/react-tokens/dist/esm/global_breakpoint_height_2xl';
+import globalHeightBreakpointSm from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_height_sm';
+import globalHeightBreakpointMd from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_height_md';
+import globalHeightBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_height_lg';
+import globalHeightBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_height_xl';
+import globalHeightBreakpoint2xl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_height_2xl';
 
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
