@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.4.0...@patternfly/react-charts@7.4.1) (2024-09-13)
+
+### Bug Fixes
+
+- **charts:** victoryCreateContainer breakage (v5) ([#10905](https://github.com/patternfly/patternfly-react/issues/10905)) ([ee81f6e](https://github.com/patternfly/patternfly-react/commit/ee81f6e4b73be70ef258167af00017346f07df62))
+
 # 7.4.0 (2024-08-27)
 
 **Note:** Version bump only for package @patternfly/react-charts
