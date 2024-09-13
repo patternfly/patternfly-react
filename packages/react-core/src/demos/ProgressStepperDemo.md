@@ -10,6 +10,7 @@ section: components
 ```js
 import React from 'react';
 import { ProgressStepper, ProgressStep, Button, Stack, StackItem } from '@patternfly/react-core';
+import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility';
 
 ProgressStepperDemo = () => {
   const [currentStep, setCurrentStep] = React.useState(0);
@@ -45,7 +46,7 @@ ProgressStepperDemo = () => {
         <br />
       </StackItem>
       <StackItem>
-        <div className="pf-v6-screen-reader" aria-live="polite">
+        <div className={accessibilityStyles.screenReader} aria-live="polite">
           {steps[currentStep] && `On ${steps[currentStep].title}.`}
           {steps[currentStep - 1] && `${steps[currentStep - 1].title} was successful.`}
         </div>

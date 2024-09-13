@@ -12,6 +12,7 @@ import { IFormatterValueType, IColumn } from './TableTypes';
 import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
 import cssStickyCellInlineStart from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineStart';
 import cssStickyCellInlineEnd from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineEnd';
+import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility';
 
 export interface ThProps
   extends BaseCellProps,
@@ -230,7 +231,8 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         } as React.CSSProperties
       })}
     >
-      {transformedChildren || (screenReaderText && <span className="pf-v6-screen-reader">{screenReaderText}</span>)}
+      {transformedChildren ||
+        (screenReaderText && <span className={accessibilityStyles.screenReader}>{screenReaderText}</span>)}
     </MergedComponent>
   );
 
