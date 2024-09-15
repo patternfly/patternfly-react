@@ -14,6 +14,7 @@ import {
   Dropdown,
   DropdownItem,
   DropdownList,
+  Icon,
   MenuToggle
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
@@ -149,7 +150,11 @@ class CardDemo extends Component {
               ref={toggleRef}
               isExpanded={this.state.isOpen}
               onClick={this.onToggle}
-              icon={<EllipsisVIcon />}
+              icon={
+                <Icon>
+                  <EllipsisVIcon />
+                </Icon>
+              }
             />
           )}
         >

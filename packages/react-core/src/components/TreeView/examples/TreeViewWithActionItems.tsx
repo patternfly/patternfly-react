@@ -5,6 +5,7 @@ import {
   Dropdown,
   DropdownList,
   DropdownItem,
+  Icon,
   MenuToggle,
   TreeViewDataItem
 } from '@patternfly/react-core';
@@ -47,9 +48,12 @@ export const TreeViewWithActionItems: React.FunctionComponent = () => {
               onClick={onToggle}
               variant="plain"
               aria-label="Tree view with actions example kebab toggle"
-            >
-              <EllipsisVIcon aria-hidden="true" />
-            </MenuToggle>
+              icon={
+                <Icon>
+                  <EllipsisVIcon />
+                </Icon>
+              }
+            />
           )}
         >
           <DropdownList>

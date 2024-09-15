@@ -10,6 +10,7 @@ import {
   DropdownItem,
   DropdownList,
   Divider,
+  Icon,
   MenuToggle,
   MenuToggleCheckbox,
   MenuToggleElement,
@@ -229,9 +230,12 @@ export const ToolbarStacked: React.FunctionComponent = () => {
                       variant="plain"
                       onClick={onKebabToggle}
                       isExpanded={kebabIsOpen}
-                    >
-                      <EllipsisVIcon />
-                    </MenuToggle>
+                      icon={
+                        <Icon>
+                          <EllipsisVIcon />
+                        </Icon>
+                      }
+                    />
                   )}
                   isOpen={kebabIsOpen}
                 >

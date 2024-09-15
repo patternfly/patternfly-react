@@ -10,6 +10,7 @@ import {
   Dropdown,
   DropdownList,
   DropdownItem,
+  Icon,
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
@@ -64,7 +65,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               onClick={onToggle(0)}
               variant="plain"
               aria-label={`Basic example header kebab toggle`}
-              icon={<EllipsisVIcon aria-hidden="true" />}
+              icon={
+                <Icon>
+                  <EllipsisVIcon aria-hidden="true" />
+                </Icon>
+              }
             />
           )}
         >
@@ -91,7 +96,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onToggle(1)}
                     variant="plain"
                     aria-label={`Basic example notification 1 kebab toggle`}
-                    icon={<EllipsisVIcon aria-hidden="true" />}
+                    icon={
+                      <Icon>
+                        <EllipsisVIcon aria-hidden="true" />
+                      </Icon>
+                    }
                   />
                 )}
               >
@@ -120,7 +129,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onToggle(2)}
                     variant="plain"
                     aria-label={`Basic example notification 2 kebab toggle`}
-                    icon={<EllipsisVIcon aria-hidden="true" />}
+                    icon={
+                      <Icon>
+                        <EllipsisVIcon aria-hidden="true" />
+                      </Icon>
+                    }
                   />
                 )}
               >
@@ -151,7 +164,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onToggle(3)}
                     variant="plain"
                     aria-label={`Basic example notification 3 kebab toggle`}
-                    icon={<EllipsisVIcon aria-hidden="true" />}
+                    icon={
+                      <Icon>
+                        <EllipsisVIcon aria-hidden="true" />
+                      </Icon>
+                    }
                   />
                 )}
               >
@@ -181,7 +198,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onToggle(4)}
                     variant="plain"
                     aria-label={`Basic example notification 4 kebab toggle`}
-                    icon={<EllipsisVIcon aria-hidden="true" />}
+                    icon={
+                      <Icon>
+                        <EllipsisVIcon aria-hidden="true" />
+                      </Icon>
+                    }
                   />
                 )}
               >
@@ -210,7 +231,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onToggle(5)}
                     variant="plain"
                     aria-label={`Basic example notification 5 kebab toggle`}
-                    icon={<EllipsisVIcon aria-hidden="true" />}
+                    icon={
+                      <Icon>
+                        <EllipsisVIcon aria-hidden="true" />
+                      </Icon>
+                    }
                   />
                 )}
               >
@@ -235,7 +260,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onToggle(6)}
                     variant="plain"
                     aria-label={`Basic example notification 6 kebab toggle`}
-                    icon={<EllipsisVIcon aria-hidden="true" />}
+                    icon={
+                      <Icon>
+                        <EllipsisVIcon aria-hidden="true" />
+                      </Icon>
+                    }
                   />
                 )}
               >

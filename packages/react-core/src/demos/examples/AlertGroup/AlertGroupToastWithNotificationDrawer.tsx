@@ -24,6 +24,7 @@ import {
   Dropdown,
   DropdownList,
   DropdownItem,
+  Icon,
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
@@ -248,9 +249,12 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
               variant="plain"
               onClick={() => onDropdownToggle('dropdown-toggle-id-0')}
               aria-label="Notification drawer actions"
-            >
-              <EllipsisVIcon aria-hidden="true" />
-            </MenuToggle>
+              icon={
+                <Icon>
+                  <EllipsisVIcon aria-hidden="true" />
+                </Icon>
+              }
+            />
           )}
         >
           <DropdownList>{notificationDrawerActions}</DropdownList>
@@ -280,9 +284,12 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
                         variant="plain"
                         onClick={() => onDropdownToggle(key)}
                         aria-label={`Notification ${index + 1} actions`}
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={
+                          <Icon>
+                            <EllipsisVIcon aria-hidden="true" />
+                          </Icon>
+                        }
+                      />
                     )}
                   >
                     <DropdownList>{notificationDrawerDropdownItems(key)}</DropdownList>

@@ -15,6 +15,7 @@ import {
   DropdownList,
   Flex,
   FlexItem,
+  Icon,
   Label,
   LabelGroup,
   MenuToggle,
@@ -171,9 +172,12 @@ export const TablesAndTabs = () => {
       aria-haspopup="menu"
       isExpanded={props.isOpen}
       ref={props.toggleRef}
-    >
-      <EllipsisVIcon />
-    </MenuToggle>
+      icon={
+        <Icon>
+          <EllipsisVIcon />
+        </Icon>
+      }
+    />
   );
 
   const toolbar = (
@@ -185,7 +189,15 @@ export const TablesAndTabs = () => {
           </ToolbarItem>
         </ToolbarToggleGroup>
         <ToolbarItem>
-          <MenuToggle variant="plain" aria-label="Sort columns" icon={<SortAmountDownIcon aria-hidden="true" />} />
+          <MenuToggle
+            variant="plain"
+            aria-label="Sort columns"
+            icon={
+              <Icon>
+                <SortAmountDownIcon aria-hidden="true" />
+              </Icon>
+            }
+          />
         </ToolbarItem>
         <OverflowMenu breakpoint="md">
           <OverflowMenuContent>
@@ -208,7 +220,11 @@ export const TablesAndTabs = () => {
                   variant="plain"
                   onClick={() => {}}
                   isExpanded={false}
-                  icon={<EllipsisVIcon />}
+                  icon={
+                    <Icon>
+                      <EllipsisVIcon />
+                    </Icon>
+                  }
                 />
               )}
               isOpen={false}

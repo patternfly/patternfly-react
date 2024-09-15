@@ -7,6 +7,7 @@ import {
   Dropdown,
   DropdownList,
   DropdownItem,
+  Icon,
   MenuToggle,
   MenuToggleElement,
   Divider
@@ -84,9 +85,12 @@ export const ActionListSingleGroup: React.FunctionComponent = () => {
                   variant="plain"
                   isExpanded={isOpen}
                   aria-label="Action list single group kebab"
-                >
-                  <EllipsisVIcon />
-                </MenuToggle>
+                  icon={
+                    <Icon>
+                      <EllipsisVIcon />
+                    </Icon>
+                  }
+                />
               )}
               isOpen={isOpen}
               onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonVariant, Dropdown, DropdownItem, DropdownList, MenuToggle } from '@patternfly/react-core';
+import { Button, ButtonVariant, Dropdown, DropdownItem, DropdownList, Icon, MenuToggle } from '@patternfly/react-core';
 import {
   DualListSelector as DLSDeprecated,
   DualListSelectorProps as DLSPropsDeprecated
@@ -139,7 +139,11 @@ class DualListSelectorDeprecatedWithActionsDemo extends React.Component<DLSProps
             ref={toggleRef}
             isExpanded={this.state.isAvailableKebabOpen}
             onClick={() => this.onToggle('available')}
-            icon={<EllipsisVIcon />}
+            icon={
+              <Icon>
+                <EllipsisVIcon />
+              </Icon>
+            }
           />
         )}
       >
@@ -166,7 +170,11 @@ class DualListSelectorDeprecatedWithActionsDemo extends React.Component<DLSProps
             ref={toggleRef}
             isExpanded={this.state.isChosenKebabOpen}
             onClick={() => this.onToggle('chosen')}
-            icon={<EllipsisVIcon />}
+            icon={
+              <Icon>
+                <EllipsisVIcon />
+              </Icon>
+            }
           />
         )}
       >

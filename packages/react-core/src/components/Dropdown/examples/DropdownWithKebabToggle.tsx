@@ -1,5 +1,13 @@
 import React from 'react';
-import { Dropdown, DropdownItem, DropdownList, Divider, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownList,
+  Divider,
+  Icon,
+  MenuToggle,
+  MenuToggleElement
+} from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const DropdownWithKebab: React.FunctionComponent = () => {
@@ -27,9 +35,12 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
           variant="plain"
           onClick={onToggleClick}
           isExpanded={isOpen}
-        >
-          <EllipsisVIcon />
-        </MenuToggle>
+          icon={
+            <Icon>
+              <EllipsisVIcon />
+            </Icon>
+          }
+        />
       )}
       shouldFocusToggleOnSelect
     >

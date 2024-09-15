@@ -16,6 +16,7 @@ import {
   DropdownList,
   Gallery,
   GalleryItem,
+  Icon,
   Masthead,
   MastheadMain,
   MastheadLogo,
@@ -147,9 +148,12 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
                   isExpanded={isKebabDropdownOpen}
                   variant="plain"
                   aria-label="Settings and help"
-                >
-                  <EllipsisVIcon aria-hidden="true" />
-                </MenuToggle>
+                  icon={
+                    <Icon>
+                      <EllipsisVIcon aria-hidden="true" />
+                    </Icon>
+                  }
+                />
               )}
             >
               <DropdownList>{kebabDropdownItems}</DropdownList>
@@ -168,9 +172,12 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
                   isExpanded={isFullKebabDropdownOpen}
                   variant="plain"
                   aria-label="Toolbar menu"
-                >
-                  <EllipsisVIcon aria-hidden="true" />
-                </MenuToggle>
+                  icon={
+                    <Icon>
+                      <EllipsisVIcon aria-hidden="true" />
+                    </Icon>
+                  }
+                />
               )}
             >
               <DropdownGroup key="group 2" aria-label="User actions">

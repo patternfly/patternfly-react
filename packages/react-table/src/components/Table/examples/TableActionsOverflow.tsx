@@ -9,7 +9,8 @@ import {
   OverflowMenuDropdownItem,
   MenuToggle,
   Dropdown,
-  DropdownList
+  DropdownList,
+  Icon
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
@@ -105,7 +106,11 @@ export const TableActions: React.FunctionComponent = () => {
                             setRepos(repos.map((r) => (r.name !== repo.name ? r : { ...r, isMenuOpen: !r.isMenuOpen })))
                           }
                           isExpanded={repo.isMenuOpen}
-                          icon={<EllipsisVIcon />}
+                          icon={
+                            <Icon>
+                              <EllipsisVIcon />
+                            </Icon>
+                          }
                         />
                       )}
                       isOpen={repo.isMenuOpen}

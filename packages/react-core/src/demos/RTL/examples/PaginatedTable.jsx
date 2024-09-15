@@ -374,9 +374,12 @@ export const PaginatedTableAction = () => {
                       onClick={onKebabDropdownToggle}
                       variant="plain"
                       aria-label={translation.kebabDropdown.settingsAndHelp}
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={
+                        <Icon>
+                          <EllipsisVIcon aria-hidden="true" />
+                        </Icon>
+                      }
+                    />
                   )}
                 >
                   <DropdownList>{kebabDropdownItems}</DropdownList>
@@ -395,9 +398,12 @@ export const PaginatedTableAction = () => {
                       onClick={onFullKebabToggle}
                       variant="plain"
                       aria-label={translation.kebabAndUserDropdown.toolbarMenuAriaLabel}
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={
+                        <Icon>
+                          <EllipsisVIcon aria-hidden="true" />
+                        </Icon>
+                      }
+                    />
                   )}
                 >
                   <DropdownGroup key="group 2" aria-label={translation.kebabAndUserDropdown.groupAriaLabel}>

@@ -9,6 +9,7 @@ import {
   DropdownGroup,
   DropdownItem,
   DropdownList,
+  Icon,
   Masthead,
   MastheadMain,
   MastheadToggle,
@@ -137,9 +138,12 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                       onClick={onKebabDropdownToggle}
                       variant="plain"
                       aria-label="Settings and help"
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={
+                        <Icon>
+                          <EllipsisVIcon aria-hidden="true" />
+                        </Icon>
+                      }
+                    />
                   )}
                 >
                   <DropdownList>{kebabDropdownItems}</DropdownList>
@@ -158,9 +162,12 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                       onClick={onFullKebabToggle}
                       variant="plain"
                       aria-label="Toolbar menu"
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={
+                        <Icon>
+                          <EllipsisVIcon aria-hidden="true" />
+                        </Icon>
+                      }
+                    />
                   )}
                 >
                   <DropdownGroup key="group 2" aria-label="User actions">

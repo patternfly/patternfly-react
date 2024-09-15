@@ -9,6 +9,7 @@ import {
   DataListItemCells,
   Flex,
   FlexItem,
+  Icon,
   MenuToggle,
   MenuToggleCheckbox,
   OverflowMenu,
@@ -58,9 +59,15 @@ export const DataListBasic: React.FunctionComponent = () => {
             <Button variant="primary">Create instance</Button>
           </OverflowMenuItem>
           <OverflowMenuControl hasAdditionalOptions>
-            <MenuToggle aria-label="Toolbar kebab overflow menu" variant="plain">
-              <EllipsisVIcon />
-            </MenuToggle>
+            <MenuToggle
+              aria-label="Toolbar kebab overflow menu"
+              variant="plain"
+              icon={
+                <Icon>
+                  <EllipsisVIcon />
+                </Icon>
+              }
+            />
           </OverflowMenuControl>
         </OverflowMenu>
       </ToolbarItem>

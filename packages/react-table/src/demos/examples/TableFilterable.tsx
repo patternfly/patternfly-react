@@ -7,6 +7,7 @@ import {
   EmptyStateActions,
   EmptyStateBody,
   EmptyStateFooter,
+  Icon,
   Label,
   MenuToggle,
   MenuToggleElement,
@@ -125,7 +126,11 @@ export const TableFilterable: React.FunctionComponent = () => {
               ref={toggleRef}
               onClick={onCategoryToggle}
               isExpanded={isCategoryDropdownOpen}
-              icon={<FilterIcon />}
+              icon={
+                <Icon>
+                  <FilterIcon />
+                </Icon>
+              }
               style={
                 {
                   width: '100%',

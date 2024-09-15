@@ -17,7 +17,8 @@ import {
   Button,
   Bullseye,
   ToolbarToggleGroup,
-  EmptyStateActions
+  EmptyStateActions,
+  Icon
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -293,7 +294,11 @@ export const FilterSameSelectGroup: React.FunctionComponent = () => {
       ref={statusToggleRef}
       onClick={onStatusToggleClick}
       isExpanded={isStatusMenuOpen}
-      icon={<FilterIcon />}
+      icon={
+        <Icon>
+          <FilterIcon />
+        </Icon>
+      }
       style={
         {
           width: '200px'
@@ -387,7 +392,11 @@ export const FilterSameSelectGroup: React.FunctionComponent = () => {
       ref={locationToggleRef}
       onClick={onLocationMenuToggleClick}
       isExpanded={isLocationMenuOpen}
-      icon={<FilterIcon />}
+      icon={
+        <Icon>
+          <FilterIcon />
+        </Icon>
+      }
       style={
         {
           width: '200px'

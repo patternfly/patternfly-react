@@ -10,6 +10,7 @@ import {
   DataListItemRow,
   DataListCell,
   DataListItemCells,
+  Icon,
   Toolbar,
   ToolbarContent,
   ToolbarItem,
@@ -591,10 +592,26 @@ export const TableColumnManagementWithDraggable: React.FunctionComponent = () =>
         <ToolbarItem variant="overflow-menu">
           <OverflowMenu breakpoint="md">
             <OverflowMenuItem isPersistent>
-              <MenuToggle icon={<FilterIcon />}>Name</MenuToggle>
+              <MenuToggle
+                icon={
+                  <Icon>
+                    <FilterIcon />
+                  </Icon>
+                }
+              >
+                Name
+              </MenuToggle>
             </OverflowMenuItem>
             <OverflowMenuItem>
-              <MenuToggle variant="plain" aria-label="Sort columns" icon={<SortAmountDownIcon aria-hidden="true" />} />
+              <MenuToggle
+                variant="plain"
+                aria-label="Sort columns"
+                icon={
+                  <Icon>
+                    <SortAmountDownIcon aria-hidden="true" />
+                  </Icon>
+                }
+              />
             </OverflowMenuItem>
             <OverflowMenuGroup groupType="button" isPersistent>
               <OverflowMenuItem>

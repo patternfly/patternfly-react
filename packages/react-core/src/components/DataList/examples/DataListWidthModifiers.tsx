@@ -13,6 +13,7 @@ import {
   Dropdown,
   DropdownList,
   DropdownItem,
+  Icon,
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
@@ -104,9 +105,12 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                       onClick={onToggle1}
                       variant="plain"
                       aria-label="Data list width modifiers example kebab toggle 1"
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={
+                        <Icon>
+                          <EllipsisVIcon aria-hidden="true" />
+                        </Icon>
+                      }
+                    />
                   )}
                   isOpen={isOpen1}
                   onOpenChange={(isOpen: boolean) => setIsOpen1(isOpen)}
@@ -179,9 +183,12 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                       onClick={onToggle2}
                       variant="plain"
                       aria-label="Data list width modifiers example kebab toggle 2"
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={
+                        <Icon>
+                          <EllipsisVIcon aria-hidden="true" />
+                        </Icon>
+                      }
+                    />
                   )}
                   isOpen={isOpen2}
                   onOpenChange={(isOpen: boolean) => setIsOpen2(isOpen)}

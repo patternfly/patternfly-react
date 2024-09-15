@@ -11,6 +11,7 @@ import {
   Dropdown,
   DropdownItem,
   DropdownList,
+  Icon,
   MenuToggle,
   MenuToggleElement,
   Divider
@@ -74,9 +75,12 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 onClick={() => this.onToggle(0)}
                 id="toggle-id-0"
                 variant="plain"
-              >
-                <EllipsisVIcon aria-hidden="true" />
-              </MenuToggle>
+                icon={
+                  <Icon>
+                    <EllipsisVIcon aria-hidden="true" />
+                  </Icon>
+                }
+              />
             )}
           >
             <DropdownList>{dropdownItems}</DropdownList>
@@ -105,9 +109,12 @@ export class BasicNotificationDrawerDemo extends React.Component<
                       onClick={() => this.onToggle(1)}
                       id="toggle-id-1"
                       variant="plain"
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={
+                        <Icon>
+                          <EllipsisVIcon aria-hidden="true" />
+                        </Icon>
+                      }
+                    />
                   )}
                 >
                   <DropdownList>{dropdownItems}</DropdownList>
@@ -135,9 +142,12 @@ export class BasicNotificationDrawerDemo extends React.Component<
                       onClick={() => this.onToggle(2)}
                       id="toggle-id-2"
                       variant="plain"
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={
+                        <Icon>
+                          <EllipsisVIcon aria-hidden="true" />
+                        </Icon>
+                      }
+                    />
                   )}
                 >
                   <DropdownList>{dropdownItems}</DropdownList>
@@ -167,9 +177,12 @@ export class BasicNotificationDrawerDemo extends React.Component<
                       onClick={() => this.onToggle(3)}
                       id="toggle-id-3"
                       variant="plain"
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={
+                        <Icon>
+                          <EllipsisVIcon aria-hidden="true" />
+                        </Icon>
+                      }
+                    />
                   )}
                 >
                   <DropdownList>{dropdownItems}</DropdownList>
@@ -201,9 +214,12 @@ export class BasicNotificationDrawerDemo extends React.Component<
                       onClick={() => this.onToggle(4)}
                       id="toggle-id-4"
                       variant="plain"
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={
+                        <Icon>
+                          <EllipsisVIcon aria-hidden="true" />
+                        </Icon>
+                      }
+                    />
                   )}
                 >
                   <DropdownList>{dropdownItems}</DropdownList>
@@ -228,9 +244,12 @@ export class BasicNotificationDrawerDemo extends React.Component<
                       onClick={() => this.onToggle(5)}
                       id="toggle-id-5"
                       variant="plain"
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={
+                        <Icon>
+                          <EllipsisVIcon aria-hidden="true" />
+                        </Icon>
+                      }
+                    />
                   )}
                 >
                   <DropdownList>{dropdownItems}</DropdownList>

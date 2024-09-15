@@ -9,7 +9,8 @@ import {
   MenuToggle,
   Button,
   Dropdown,
-  DropdownList
+  DropdownList,
+  Icon
 } from '@patternfly/react-core';
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
@@ -88,9 +89,12 @@ export class OverflowMenuDemo extends React.Component {
                 variant="plain"
                 onClick={this.onSimpleToggle}
                 isExpanded={isSimpleOpen}
-              >
-                <EllipsisVIcon />
-              </MenuToggle>
+                icon={
+                  <Icon>
+                    <EllipsisVIcon />
+                  </Icon>
+                }
+              />
             )}
             isOpen={isSimpleOpen}
           >
@@ -175,9 +179,12 @@ export class OverflowMenuDemo extends React.Component {
                 variant="plain"
                 onClick={this.onAdditionalOptionsToggle}
                 isExpanded={isAdditionalOptionsOpen}
-              >
-                <EllipsisVIcon />
-              </MenuToggle>
+                icon={
+                  <Icon>
+                    <EllipsisVIcon />
+                  </Icon>
+                }
+              />
             )}
             isOpen={isAdditionalOptionsOpen}
           >
@@ -242,9 +249,12 @@ export class OverflowMenuDemo extends React.Component {
                 variant="plain"
                 onClick={this.onPersistToggle}
                 isExpanded={isPersistOpen}
-              >
-                <EllipsisVIcon />
-              </MenuToggle>
+                icon={
+                  <Icon>
+                    <EllipsisVIcon />
+                  </Icon>
+                }
+              />
             )}
             isOpen={isPersistOpen}
           >
@@ -317,9 +327,12 @@ export class OverflowMenuDemo extends React.Component {
                   variant="plain"
                   onClick={this.onContainerBreakpointToggle}
                   isExpanded={isContainerBreakpointOpen}
-                >
-                  <EllipsisVIcon />
-                </MenuToggle>
+                  icon={
+                    <Icon>
+                      <EllipsisVIcon />
+                    </Icon>
+                  }
+                />
               )}
               isOpen={isContainerBreakpointOpen}
             >

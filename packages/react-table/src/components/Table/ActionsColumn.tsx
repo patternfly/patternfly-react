@@ -3,6 +3,7 @@ import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core/dis
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
 import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
+import { Icon } from '@patternfly/react-core/dist/esm/components/Icon';
 import { IAction, IExtraData, IRowData } from './TableTypes';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
@@ -106,7 +107,11 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
               isExpanded={isOpen}
               isDisabled={isDisabled}
               variant="plain"
-              icon={<EllipsisVIcon />}
+              icon={
+                <Icon>
+                  <EllipsisVIcon />
+                </Icon>
+              }
             />
           )
         }

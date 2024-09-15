@@ -9,7 +9,8 @@ import {
   SelectList,
   SelectOption,
   MenuToggle,
-  MenuToggleElement
+  MenuToggleElement,
+  Icon
 } from '@patternfly/react-core';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
@@ -117,7 +118,11 @@ export const TableSortableCustom: React.FunctionComponent = () => {
                   isExpanded={isSortDropdownOpen}
                   variant="plain"
                   aria-label="Sort columns"
-                  icon={<SortAmountDownIcon />}
+                  icon={
+                    <Icon>
+                      <SortAmountDownIcon />
+                    </Icon>
+                  }
                 />
               )}
             >

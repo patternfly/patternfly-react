@@ -17,6 +17,7 @@ import {
   EmptyStateVariant,
   EmptyStateActions,
   Gallery,
+  Icon,
   MenuToggle,
   MenuToggleCheckbox,
   OverflowMenu,
@@ -429,9 +430,12 @@ export const CardViewBasic: React.FunctionComponent = () => {
                   variant="plain"
                   onClick={onToolbarKebabDropdownToggle}
                   isExpanded={isLowerToolbarKebabDropdownOpen}
-                >
-                  <EllipsisVIcon />
-                </MenuToggle>
+                  icon={
+                    <Icon>
+                      <EllipsisVIcon />
+                    </Icon>
+                  }
+                />
               )}
               isOpen={isLowerToolbarKebabDropdownOpen}
               onOpenChange={(isOpen) => setIsLowerToolbarDropdownOpen(isOpen)}
@@ -520,9 +524,12 @@ export const CardViewBasic: React.FunctionComponent = () => {
                                 onCardKebabDropdownToggle(e, key.toString());
                               }}
                               isExpanded={!!state[key]}
-                            >
-                              <EllipsisVIcon />
-                            </MenuToggle>
+                              icon={
+                                <Icon>
+                                  <EllipsisVIcon />
+                                </Icon>
+                              }
+                            />
                           )}
                           popperProps={{ position: 'right' }}
                         >

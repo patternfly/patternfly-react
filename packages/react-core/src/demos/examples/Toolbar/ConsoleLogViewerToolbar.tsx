@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Badge,
   Button,
+  Icon,
   MenuToggle,
   SearchInput,
   Select,
@@ -301,7 +302,16 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
           onOpenChangeKeys={['Escape']}
           onSelect={onOptionSelect}
           toggle={(toggleRef) => (
-            <MenuToggle ref={toggleRef} isExpanded={optionExpanded} onClick={onOptionToggle} icon={<CogIcon />}>
+            <MenuToggle
+              ref={toggleRef}
+              isExpanded={optionExpanded}
+              onClick={onOptionToggle}
+              icon={
+                <Icon>
+                  <CogIcon />
+                </Icon>
+              }
+            >
               Options
             </MenuToggle>
           )}
@@ -355,7 +365,11 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
                 ref={toggleRef}
                 isExpanded={optionExpandedMobile}
                 onClick={onOptionToggleMobile}
-                icon={<CogIcon />}
+                icon={
+                  <Icon>
+                    <CogIcon />
+                  </Icon>
+                }
                 aria-label="Options"
               />
             )}
@@ -431,7 +445,11 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
                 ref={toggleRef}
                 isExpanded={externalExpandedMobile}
                 onClick={onExternalToggleMobile}
-                icon={<ExternalLinkAltIcon />}
+                icon={
+                  <Icon>
+                    <ExternalLinkAltIcon />
+                  </Icon>
+                }
                 aria-label="External logs"
               />
             )}
@@ -452,7 +470,11 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
                 ref={toggleRef}
                 isExpanded={downloadExpandedMobile}
                 onClick={onDownloadToggleMobile}
-                icon={<DownloadIcon />}
+                icon={
+                  <Icon>
+                    <DownloadIcon />
+                  </Icon>
+                }
                 aria-label="Download"
               />
             )}

@@ -10,6 +10,7 @@ import {
   Dropdown,
   DropdownList,
   DropdownItem,
+  Icon,
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
@@ -87,9 +88,12 @@ export const DataListActions: React.FunctionComponent = () => {
                     onClick={onToggle}
                     variant="plain"
                     aria-label="Data list with actions example kebab toggle"
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
+                    icon={
+                      <Icon>
+                        <EllipsisVIcon aria-hidden="true" />
+                      </Icon>
+                    }
+                  />
                 )}
                 isOpen={isOpen}
                 onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}

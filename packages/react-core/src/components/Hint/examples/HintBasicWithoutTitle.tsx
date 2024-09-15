@@ -8,6 +8,7 @@ import {
   DropdownList,
   DropdownItem,
   Divider,
+  Icon,
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
@@ -36,9 +37,12 @@ export const HintBasicWithoutTitle: React.FunctionComponent = () => {
           variant="plain"
           onClick={onToggle}
           isExpanded={isOpen}
-        >
-          <EllipsisVIcon />
-        </MenuToggle>
+          icon={
+            <Icon>
+              <EllipsisVIcon />
+            </Icon>
+          }
+        />
       )}
     >
       <DropdownList>

@@ -8,6 +8,7 @@ import {
   DropdownList,
   Flex,
   FlexItem,
+  Icon,
   MenuToggle,
   MenuToggleElement,
   PageSection,
@@ -153,7 +154,11 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
                 onClick={() => setIsSortDropdownOpen(!isSortDropdownOpen)}
                 isExpanded={isSortDropdownOpen}
                 variant="plain"
-                icon={<SortAmountDownIcon />}
+                icon={
+                  <Icon>
+                    <SortAmountDownIcon />
+                  </Icon>
+                }
               />
             )}
           >
@@ -201,7 +206,11 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
                     variant="plain"
                     onClick={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)}
                     isExpanded={false}
-                    icon={<EllipsisVIcon />}
+                    icon={
+                      <Icon>
+                        <EllipsisVIcon />
+                      </Icon>
+                    }
                   />
                 )}
                 isOpen={isKebabDropdownOpen}

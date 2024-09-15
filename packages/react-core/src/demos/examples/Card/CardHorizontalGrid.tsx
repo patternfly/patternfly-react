@@ -10,6 +10,7 @@ import {
   Label,
   Grid,
   Flex,
+  Icon,
   List,
   ListItem,
   Button,
@@ -63,9 +64,12 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
           onClick={onActionToggle}
           variant="plain"
           aria-label="Horizontal card grid demo kebab toggle"
-        >
-          <EllipsisVIcon aria-hidden="true" />
-        </MenuToggle>
+          icon={
+            <Icon>
+              <EllipsisVIcon aria-hidden="true" />
+            </Icon>
+          }
+        />
       )}
     >
       <DropdownList>{dropdownItems}</DropdownList>
