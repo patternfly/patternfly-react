@@ -72,8 +72,12 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
 
   const ariaLabelledbyFormatted = (): string => {
     const idRefList: string[] = [];
-    if (ariaLabel && boxId) {
-      idRefList.push(ariaLabel && boxId);
+    if (ariaLabel) {
+      // we shouldn't set an aria-labelledby attribute if we have an aria-label
+      return undefined;
+    }
+    if (boxId) {
+      idRefList.push(boxId);
     }
     if (ariaLabelledby) {
       idRefList.push(ariaLabelledby);
