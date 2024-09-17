@@ -18,7 +18,7 @@ export interface EmptyStateHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the title inside empty state header */
   titleClassName?: string;
   /** Text of the title inside empty state header, will be wrapped in headingLevel */
-  titleText: React.ReactNode;
+  titleText?: React.ReactNode;
   /** Empty state icon element to be rendered. Can also be a spinner component */
   icon?: React.ComponentType<any>;
   /** The heading level to use, default is h1 */
@@ -35,9 +35,11 @@ export const EmptyStateHeader: React.FunctionComponent<EmptyStateHeaderProps> = 
 }: EmptyStateHeaderProps) => (
   <div className={css(`${styles.emptyState}__header`, className)} {...props}>
     {Icon && <EmptyStateIcon icon={Icon} />}
-    <div className={css(`${styles.emptyState}__title`)}>
-      <HeadingLevel className={css(styles.emptyStateTitleText, titleClassName)}>{titleText}</HeadingLevel>
-    </div>
+    {titleText && (
+      <div className={css(`${styles.emptyState}__title`)}>
+        <HeadingLevel className={css(styles.emptyStateTitleText, titleClassName)}>{titleText}</HeadingLevel>
+      </div>
+    )}
   </div>
 );
 
