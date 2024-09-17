@@ -149,7 +149,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   emptyStateTitle?: React.ReactNode;
   /** Editor header main content title. */
   headerMainContent?: string;
-  /** Height of code editor. Defaults to 100%. 'sizeToFit' will automatically change the height
+  /** Height of code editor. 'sizeToFit' will automatically change the height
    * to the height of the content.
    */
   height?: string | 'sizeToFit';
@@ -157,6 +157,8 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isCopyEnabled?: boolean;
   /** Flag indicating the editor is styled using monaco's dark theme. */
   isDarkTheme?: boolean;
+  /** Flag that enables component to consume the available height of its container. If `height` prop is set to 100%, this will also become enabled. */
+  isFullHeight?: boolean;
   /** Flag indicating the editor has a plain header. */
   isHeaderPlain?: boolean;
   /** Flag to add download button to code editor actions. */
@@ -250,7 +252,6 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
     onEditorDidMount: () => {},
     language: Language.plaintext,
     isDarkTheme: false,
-    height: '',
     width: '',
     isLineNumbersVisible: true,
     isReadOnly: false,
@@ -522,6 +523,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
       },
       ...optionsProp
     };
+    const isFullHeight = this.props.height === '100%' ? true : this.props.isFullHeight;
 
     return (
       <Dropzone multiple={false} onDropAccepted={this.onDropAccepted} onDropRejected={this.onDropRejected}>
@@ -644,7 +646,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
           const editor = (
             <div className={css(styles.codeEditorCode)} ref={this.wrapperRef} tabIndex={0} dir="ltr">
               <Editor
-                height={height}
+                height={height === '100%' ? undefined : height}
                 width={width}
                 language={language}
                 value={value}
@@ -660,13 +662,21 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
           );
 
           return (
-            <div className={css(styles.codeEditor, isReadOnly && styles.modifiers.readOnly, className)} ref={this.ref}>
+            <div
+              className={css(
+                styles.codeEditor,
+                isReadOnly && styles.modifiers.readOnly,
+                isFullHeight && styles.modifiers.fullHeight,
+                className
+              )}
+              ref={this.ref}
+            >
               {isUploadEnabled || providedEmptyState ? (
                 <div
                   {...getRootProps({
                     onClick: (event) => event.stopPropagation() // Prevents clicking TextArea from opening file dialog
                   })}
-                  className={css(isLoading && fileUploadStyles.modifiers.loading)}
+                  className={css(styles.codeEditorContainer, isLoading && fileUploadStyles.modifiers.loading)}
                 >
                   {editorHeader}
                   <div className={css(styles.codeEditorMain, isDragActive && styles.modifiers.dragHover)}>

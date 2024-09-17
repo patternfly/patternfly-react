@@ -6,7 +6,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
     class="pf-v6-c-code-editor"
   >
     <div
-      class=""
+      class="pf-v6-c-code-editor__container"
       role="presentation"
       tabindex="0"
     >

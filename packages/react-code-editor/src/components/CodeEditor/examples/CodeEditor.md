@@ -24,6 +24,12 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 ```
 
+### With isFullHeight height, height will match the size of the parent
+
+```ts file="CodeEditorFullHeight.tsx"
+
+```
+
 ### With shortcut menu and main header content
 
 These examples below are the shortcuts that we recommend describing in the popover since they are monaco features.
