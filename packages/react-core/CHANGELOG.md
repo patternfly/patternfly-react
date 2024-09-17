@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.10...@patternfly/react-core@6.0.0-prerelease.11) (2024-09-17)
+
+### Bug Fixes
+
+- **empty state:** Do not require titleText prop) ([#10987](https://github.com/patternfly/patternfly-react/issues/10987)) ([c7f037a](https://github.com/patternfly/patternfly-react/commit/c7f037ac57b58b6955631f4130466bbcfdaecfba))
+
 # [6.0.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.9...@patternfly/react-core@6.0.0-prerelease.10) (2024-09-16)
 
 **Note:** Version bump only for package @patternfly/react-core
