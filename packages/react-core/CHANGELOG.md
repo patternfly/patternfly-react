@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0...@patternfly/react-core@5.4.1) (2024-09-18)
+
+### Bug Fixes
+
+- **dropdown:** Delay setting focus on first item to prevent inadvertent scroll ([#11018](https://github.com/patternfly/patternfly-react/issues/11018)) ([eb245e8](https://github.com/patternfly/patternfly-react/commit/eb245e8801d22d4b60a14a3eefb9b22f3d5be32f))
+
 # 5.4.0 (2024-08-27)
 
 **Note:** Version bump only for package @patternfly/react-core
