@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.11...@patternfly/react-core@6.0.0-prerelease.12) (2024-09-18)
+
+### Bug Fixes
+
+- **generate tokens:** prefix tokens with a t\_ ([#11002](https://github.com/patternfly/patternfly-react/issues/11002)) ([0dac6b8](https://github.com/patternfly/patternfly-react/commit/0dac6b88b9f560975627c80c6e8ab816d8b78ac9))
+
 # [6.0.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.10...@patternfly/react-core@6.0.0-prerelease.11) (2024-09-17)
 
 ### Bug Fixes

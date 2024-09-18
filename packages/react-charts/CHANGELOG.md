@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-prerelease.8...@patternfly/react-charts@8.0.0-prerelease.9) (2024-09-18)
+
+### Bug Fixes
+
+- **generate tokens:** prefix tokens with a t\_ ([#11002](https://github.com/patternfly/patternfly-react/issues/11002)) ([0dac6b8](https://github.com/patternfly/patternfly-react/commit/0dac6b88b9f560975627c80c6e8ab816d8b78ac9))
+
 # [8.0.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-prerelease.7...@patternfly/react-charts@8.0.0-prerelease.8) (2024-09-11)
 
 **Note:** Version bump only for package @patternfly/react-charts

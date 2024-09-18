@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-prerelease.19...@patternfly/react-docs@7.0.0-prerelease.20) (2024-09-18)
+
+### Bug Fixes
+
+- **generate tokens:** prefix tokens with a t\_ ([#11002](https://github.com/patternfly/patternfly-react/issues/11002)) ([0dac6b8](https://github.com/patternfly/patternfly-react/commit/0dac6b88b9f560975627c80c6e8ab816d8b78ac9))
+
 # [7.0.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-prerelease.18...@patternfly/react-docs@7.0.0-prerelease.19) (2024-09-18)
 
 **Note:** Version bump only for package @patternfly/react-docs
