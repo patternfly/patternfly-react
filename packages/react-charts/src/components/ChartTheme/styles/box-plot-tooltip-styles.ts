@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import global_font_weight_heading_bold from '@patternfly/react-tokens/dist/esm/global_font_weight_heading_bold';
+import t_global_font_weight_heading_bold from '@patternfly/react-tokens/dist/esm/t_global_font_weight_heading_bold';
 import chart_voronoi_labels_Fill from '@patternfly/react-tokens/dist/esm/chart_voronoi_labels_Fill';
 
 /**
@@ -12,6 +12,6 @@ export const BoxPlotTooltipStyles = {
   },
   label: {
     fill: chart_voronoi_labels_Fill.var,
-    fontWeight: global_font_weight_heading_bold.value
+    fontWeight: t_global_font_weight_heading_bold.value
   } as any
 };

@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 import { ToolbarGroupProps } from './ToolbarGroup';
 import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';
-import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpoint_lg';
+import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
 import { formatBreakpointMods, toCamel, canUseDOM } from '../../helpers/util';
 import { PageContext } from '../Page/PageContext';
 import { ToolbarExpandableContent } from './ToolbarExpandableContent';

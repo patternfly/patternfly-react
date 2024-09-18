@@ -1,30 +1,26 @@
 ---
 id: Bar chart
 section: charts
-propComponents: [
-  'Chart',
-  'ChartAxis',
-  'ChartBar',
-  'ChartGroup',
-  'ChartLabel',
-  'ChartVoronoiContainer'
-]
+propComponents: ['Chart', 'ChartAxis', 'ChartBar', 'ChartGroup', 'ChartLabel', 'ChartVoronoiContainer']
 hideDarkMode: true
 ---
 
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartLabel, ChartThemeColor, ChartTooltip, ChartVoronoiContainer } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory-zoom-container';
-import global_color_status_danger_100 from '@patternfly/react-tokens/dist/esm/global_color_status_danger_100';
-import global_color_status_info_100 from '@patternfly/react-tokens/dist/esm/global_color_status_info_100';
-import global_color_status_warning_100 from '@patternfly/react-tokens/dist/esm/global_color_status_warning_100';
+import t_global_color_status_danger_100 from '@patternfly/react-tokens/dist/esm/t_global_color_status_danger_100';
+import t_global_color_status_info_100 from '@patternfly/react-tokens/dist/esm/t_global_color_status_info_100';
+import t_global_color_status_warning_100 from '@patternfly/react-tokens/dist/esm/t_global_color_status_warning_100';
 
 ## Introduction
+
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
 ## Examples
+
 ### Basic with right aligned legend
+
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -33,8 +29,10 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@
   <Chart
     ariaDesc="Average number of pets"
     ariaTitle="Bar chart example"
-    containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-    domain={{y: [0,9]}}
+    containerComponent={
+      <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
+    }
+    domain={{ y: [0, 9] }}
     domainPadding={{ x: [30, 25] }}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendOrientation="vertical"
@@ -52,13 +50,41 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@
     <ChartAxis />
     <ChartAxis dependentAxis showGrid />
     <ChartGroup offset={11}>
-      <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
-      <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
-      <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
-      <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
+      <ChartBar
+        data={[
+          { name: 'Cats', x: '2015', y: 1 },
+          { name: 'Cats', x: '2016', y: 2 },
+          { name: 'Cats', x: '2017', y: 5 },
+          { name: 'Cats', x: '2018', y: 3 }
+        ]}
+      />
+      <ChartBar
+        data={[
+          { name: 'Dogs', x: '2015', y: 2 },
+          { name: 'Dogs', x: '2016', y: 1 },
+          { name: 'Dogs', x: '2017', y: 7 },
+          { name: 'Dogs', x: '2018', y: 4 }
+        ]}
+      />
+      <ChartBar
+        data={[
+          { name: 'Birds', x: '2015', y: 4 },
+          { name: 'Birds', x: '2016', y: 4 },
+          { name: 'Birds', x: '2017', y: 9 },
+          { name: 'Birds', x: '2018', y: 7 }
+        ]}
+      />
+      <ChartBar
+        data={[
+          { name: 'Mice', x: '2015', y: 3 },
+          { name: 'Mice', x: '2016', y: 3 },
+          { name: 'Mice', x: '2017', y: 8 },
+          { name: 'Mice', x: '2018', y: 5 }
+        ]}
+      />
     </ChartGroup>
   </Chart>
-</div>
+</div>;
 ```
 
 ### Purple with bottom aligned legend
@@ -170,16 +196,45 @@ import { VictoryZoomContainer } from 'victory-zoom-container';
     <ChartAxis />
     <ChartAxis dependentAxis showGrid />
     <ChartGroup offset={11} horizontal>
-      <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
-      <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
-      <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
-      <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
+      <ChartBar
+        data={[
+          { name: 'Cats', x: '2015', y: 1 },
+          { name: 'Cats', x: '2016', y: 2 },
+          { name: 'Cats', x: '2017', y: 5 },
+          { name: 'Cats', x: '2018', y: 3 }
+        ]}
+      />
+      <ChartBar
+        data={[
+          { name: 'Dogs', x: '2015', y: 2 },
+          { name: 'Dogs', x: '2016', y: 1 },
+          { name: 'Dogs', x: '2017', y: 7 },
+          { name: 'Dogs', x: '2018', y: 4 }
+        ]}
+      />
+      <ChartBar
+        data={[
+          { name: 'Birds', x: '2015', y: 4 },
+          { name: 'Birds', x: '2016', y: 4 },
+          { name: 'Birds', x: '2017', y: 9 },
+          { name: 'Birds', x: '2018', y: 7 }
+        ]}
+      />
+      <ChartBar
+        data={[
+          { name: 'Mice', x: '2015', y: 3 },
+          { name: 'Mice', x: '2016', y: 3 },
+          { name: 'Mice', x: '2017', y: 8 },
+          { name: 'Mice', x: '2018', y: 5 }
+        ]}
+      />
     </ChartGroup>
   </Chart>
-</div>
+</div>;
 ```
 
 ### Single with right aligned legend
+
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -188,8 +243,10 @@ import { Chart, ChartBar, ChartVoronoiContainer } from '@patternfly/react-charts
   <Chart
     ariaDesc="Average number of pets"
     ariaTitle="Bar chart example"
-    containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-    domain={{y: [0,9]}}
+    containerComponent={
+      <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
+    }
+    domain={{ y: [0, 9] }}
     domainPadding={{ x: [30, 25] }}
     legendData={[{ name: 'Cats' }]}
     legendOrientation="vertical"
@@ -204,9 +261,16 @@ import { Chart, ChartBar, ChartVoronoiContainer } from '@patternfly/react-charts
     }}
     width={600}
   >
-    <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
+    <ChartBar
+      data={[
+        { name: 'Cats', x: '2015', y: 1 },
+        { name: 'Cats', x: '2016', y: 2 },
+        { name: 'Cats', x: '2017', y: 5 },
+        { name: 'Cats', x: '2018', y: 3 }
+      ]}
+    />
   </Chart>
-</div>
+</div>;
 ```
 
 ### Alerts timeline
@@ -215,85 +279,93 @@ A gnatt-like chart using `y` and `y0` data properties for alert start/end dates
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartLabel, ChartTooltip, ChartVoronoiContainer } from '@patternfly/react-charts';
-import global_color_status_danger_100 from '@patternfly/react-tokens/dist/esm/global_color_status_danger_100';
-import global_color_status_info_100 from '@patternfly/react-tokens/dist/esm/global_color_status_info_100';
-import global_color_status_warning_100 from '@patternfly/react-tokens/dist/esm/global_color_status_warning_100';
-
+import {
+  Chart,
+  ChartAxis,
+  ChartBar,
+  ChartGroup,
+  ChartLabel,
+  ChartTooltip,
+  ChartVoronoiContainer
+} from '@patternfly/react-charts';
+import t_global_color_status_danger_100 from '@patternfly/react-tokens/dist/esm/t_global_color_status_danger_100';
+import t_global_color_status_info_100 from '@patternfly/react-tokens/dist/esm/t_global_color_status_info_100';
+import t_global_color_status_warning_100 from '@patternfly/react-tokens/dist/esm/t_global_color_status_warning_100';
 
 class Timeline extends React.Component {
   render() {
     // Start = y0, end = y
     const alerts = [
       [
-        { y0: new Date("2024-08-06T01:30:00"), y: new Date("2024-08-09T02:30:00"), severity: 'danger' },
-        { y0: new Date("2024-08-10T05:30:00"), y: new Date("2024-08-10T20:00:00"), severity: 'danger' },
-        { y0: new Date("2024-08-12T10:00:00"), y: new Date("2024-08-13T10:30:00"), severity: 'danger' }
+        { y0: new Date('2024-08-06T01:30:00'), y: new Date('2024-08-09T02:30:00'), severity: 'danger' },
+        { y0: new Date('2024-08-10T05:30:00'), y: new Date('2024-08-10T20:00:00'), severity: 'danger' },
+        { y0: new Date('2024-08-12T10:00:00'), y: new Date('2024-08-13T10:30:00'), severity: 'danger' }
       ],
       [
-        { y0: new Date("2024-08-06T01:30:00"), y: new Date("2024-08-07T02:30:00"), severity: 'danger' },
-        { y0: new Date("2024-08-07T07:30:00"), y: new Date("2024-08-09T09:30:00"), severity: 'danger' },
-        { y0: new Date("2024-08-10T05:30:00"), y: new Date("2024-08-10T20:00:00"), severity: 'warn' },
-        { y0: new Date("2024-08-12T10:00:00"), y: new Date("2024-08-13T10:30:00"), severity: 'danger' }
+        { y0: new Date('2024-08-06T01:30:00'), y: new Date('2024-08-07T02:30:00'), severity: 'danger' },
+        { y0: new Date('2024-08-07T07:30:00'), y: new Date('2024-08-09T09:30:00'), severity: 'danger' },
+        { y0: new Date('2024-08-10T05:30:00'), y: new Date('2024-08-10T20:00:00'), severity: 'warn' },
+        { y0: new Date('2024-08-12T10:00:00'), y: new Date('2024-08-13T10:30:00'), severity: 'danger' }
       ],
       [
-        { y0: new Date("2024-08-06T01:30:00"), y: new Date("2024-08-07T02:30:00"), severity: 'danger' },
-        { y0: new Date("2024-08-08T07:30:00"), y: new Date("2024-08-09T09:30:00"), severity: 'danger' },
-        { y0: new Date("2024-08-10T05:30:00"), y: new Date("2024-08-10T20:00:00"), severity: 'info' },
-        { y0: new Date("2024-08-12T10:00:00"), y: new Date("2024-08-13T10:30:00"), severity: 'warn' }
+        { y0: new Date('2024-08-06T01:30:00'), y: new Date('2024-08-07T02:30:00'), severity: 'danger' },
+        { y0: new Date('2024-08-08T07:30:00'), y: new Date('2024-08-09T09:30:00'), severity: 'danger' },
+        { y0: new Date('2024-08-10T05:30:00'), y: new Date('2024-08-10T20:00:00'), severity: 'info' },
+        { y0: new Date('2024-08-12T10:00:00'), y: new Date('2024-08-13T10:30:00'), severity: 'warn' }
       ],
       [
-        { y0: new Date("2024-08-06T01:30:00"), y: new Date("2024-08-08T02:30:00"), severity: 'info' },
-        { y0: new Date("2024-08-08T07:30:00"), y: new Date("2024-08-09T09:30:00"), severity: 'info' },
-        { y0: new Date("2024-08-10T05:30:00"), y: new Date("2024-08-11T20:00:00"), severity: 'warn' },
-        { y0: new Date("2024-08-12T10:00:00"), y: new Date("2024-08-13T10:30:00"), severity: 'info' }
+        { y0: new Date('2024-08-06T01:30:00'), y: new Date('2024-08-08T02:30:00'), severity: 'info' },
+        { y0: new Date('2024-08-08T07:30:00'), y: new Date('2024-08-09T09:30:00'), severity: 'info' },
+        { y0: new Date('2024-08-10T05:30:00'), y: new Date('2024-08-11T20:00:00'), severity: 'warn' },
+        { y0: new Date('2024-08-12T10:00:00'), y: new Date('2024-08-13T10:30:00'), severity: 'info' }
       ],
       [
-        { y0: new Date("2024-08-06T01:30:00"), y: new Date("2024-08-07T02:30:00"), severity: 'warn' },
-        { y0: new Date("2024-08-08T07:30:00"), y: new Date("2024-08-09T09:30:00"), severity: 'warn' },
-        { y0: new Date("2024-08-09T05:30:00"), y: new Date("2024-08-10T20:00:00"), severity: 'warn' },
-        { y0: new Date("2024-08-12T10:00:00"), y: new Date("2024-08-13T10:30:00"), severity: 'warn' }
+        { y0: new Date('2024-08-06T01:30:00'), y: new Date('2024-08-07T02:30:00'), severity: 'warn' },
+        { y0: new Date('2024-08-08T07:30:00'), y: new Date('2024-08-09T09:30:00'), severity: 'warn' },
+        { y0: new Date('2024-08-09T05:30:00'), y: new Date('2024-08-10T20:00:00'), severity: 'warn' },
+        { y0: new Date('2024-08-12T10:00:00'), y: new Date('2024-08-13T10:30:00'), severity: 'warn' }
       ],
       [
-        { y0: new Date("2024-08-06T01:30:00"), y: new Date("2024-08-08T02:30:00"), severity: 'warn' },
-        { y0: new Date("2024-08-08T07:30:00"), y: new Date("2024-08-09T09:30:00"), severity: 'warn' },
-        { y0: new Date("2024-08-10T05:30:00"), y: new Date("2024-08-11T20:00:00"), severity: 'warn' },
-        { y0: new Date("2024-08-12T10:00:00"), y: new Date("2024-08-13T10:30:00"), severity: 'warn' }
+        { y0: new Date('2024-08-06T01:30:00'), y: new Date('2024-08-08T02:30:00'), severity: 'warn' },
+        { y0: new Date('2024-08-08T07:30:00'), y: new Date('2024-08-09T09:30:00'), severity: 'warn' },
+        { y0: new Date('2024-08-10T05:30:00'), y: new Date('2024-08-11T20:00:00'), severity: 'warn' },
+        { y0: new Date('2024-08-12T10:00:00'), y: new Date('2024-08-13T10:30:00'), severity: 'warn' }
       ],
       [
-        { y0: new Date("2024-08-06T01:30:00"), y: new Date("2024-08-07T02:30:00"), severity: 'warn' },
-        { y0: new Date("2024-08-07T04:30:00"), y: new Date("2024-08-08T05:30:00"), severity: 'warn' },
-        { y0: new Date("2024-08-08T07:30:00"), y: new Date("2024-08-09T09:30:00"), severity: 'warn' },
-        { y0: new Date("2024-08-10T05:30:00"), y: new Date("2024-08-10T20:00:00"), severity: 'warn' },
-        { y0: new Date("2024-08-11T05:30:00"), y: new Date("2024-08-11T20:00:00"), severity: 'warn' },
-        { y0: new Date("2024-08-12T10:00:00"), y: new Date("2024-08-13T10:30:00"), severity: 'warn' }
+        { y0: new Date('2024-08-06T01:30:00'), y: new Date('2024-08-07T02:30:00'), severity: 'warn' },
+        { y0: new Date('2024-08-07T04:30:00'), y: new Date('2024-08-08T05:30:00'), severity: 'warn' },
+        { y0: new Date('2024-08-08T07:30:00'), y: new Date('2024-08-09T09:30:00'), severity: 'warn' },
+        { y0: new Date('2024-08-10T05:30:00'), y: new Date('2024-08-10T20:00:00'), severity: 'warn' },
+        { y0: new Date('2024-08-11T05:30:00'), y: new Date('2024-08-11T20:00:00'), severity: 'warn' },
+        { y0: new Date('2024-08-12T10:00:00'), y: new Date('2024-08-13T10:30:00'), severity: 'warn' }
       ],
       [
-        { y0: new Date("2024-08-06T01:30:00"), y: new Date("2024-08-08T02:30:00"), severity: 'warn' },
-        { y0: new Date("2024-08-08T07:30:00"), y: new Date("2024-08-09T09:30:00"), severity: 'warn' },
-        { y0: new Date("2024-08-10T05:30:00"), y: new Date("2024-08-11T20:00:00"), severity: 'warn' },
-        { y0: new Date("2024-08-12T10:00:00"), y: new Date("2024-08-13T10:30:00"), severity: 'warn' }
-      ],
+        { y0: new Date('2024-08-06T01:30:00'), y: new Date('2024-08-08T02:30:00'), severity: 'warn' },
+        { y0: new Date('2024-08-08T07:30:00'), y: new Date('2024-08-09T09:30:00'), severity: 'warn' },
+        { y0: new Date('2024-08-10T05:30:00'), y: new Date('2024-08-11T20:00:00'), severity: 'warn' },
+        { y0: new Date('2024-08-12T10:00:00'), y: new Date('2024-08-13T10:30:00'), severity: 'warn' }
+      ]
     ];
 
     const formatDate = (date, isTime) => {
-      const dateString = date?.toLocaleDateString("en-US", { month: 'short', day: 'numeric' });
-      const timeString = date?.toLocaleTimeString("en-US", { hour12: false });
+      const dateString = date?.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      const timeString = date?.toLocaleTimeString('en-US', { hour12: false });
       return isTime ? `${dateString} ${timeString}` : dateString;
     };
 
     const getChart = (alert, index) => {
       const data = [];
 
-      alert?.map(datum => {
+      alert?.map((datum) => {
         data.push({
           ...datum,
           x: alerts.length - index,
-          fill: datum.severity === "danger"
-            ? global_color_status_danger_100.var
-            : datum.severity === "warn"
-              ? global_color_status_warning_100.var
-              : global_color_status_info_100.var,
+          fill:
+            datum.severity === 'danger'
+              ? t_global_color_status_danger_100.var
+              : datum.severity === 'warn'
+                ? t_global_color_status_warning_100.var
+                : t_global_color_status_info_100.var
         });
       });
 
@@ -307,7 +379,7 @@ class Timeline extends React.Component {
           style={{
             data: {
               fill: ({ datum }) => datum.fill,
-              stroke: ({ datum }) => datum.fill,
+              stroke: ({ datum }) => datum.fill
             }
           }}
         />
@@ -315,7 +387,7 @@ class Timeline extends React.Component {
     };
 
     return (
-      <div style={{ height: "400px", width: "450px" }}>
+      <div style={{ height: '400px', width: '450px' }}>
         <Chart
           ariaDesc="Average number of pets"
           ariaTitle="Bar chart example"
@@ -324,14 +396,16 @@ class Timeline extends React.Component {
               labelComponent={
                 <ChartTooltip constrainToVisibleArea labelComponent={<ChartLabel dx={-65} textAnchor="start" />} />
               }
-              labels={({ datum }) => `Severity: ${datum.severity}\nStart: ${formatDate(new Date(datum.y0), true)}\nEnd: ${formatDate(new Date(datum.y), true)}`}
+              labels={({ datum }) =>
+                `Severity: ${datum.severity}\nStart: ${formatDate(new Date(datum.y0), true)}\nEnd: ${formatDate(new Date(datum.y), true)}`
+              }
             />
           }
           domainPadding={{ x: [20, 20], y: [20, 20] }}
           legendData={[
-            { name: "Danger", symbol: { fill: global_color_status_danger_100.var } },
-            { name: "Info", symbol: { fill: global_color_status_info_100.var } },
-            { name: "Warning", symbol: { fill: global_color_status_warning_100.var } }
+            { name: 'Danger', symbol: { fill: t_global_color_status_danger_100.var } },
+            { name: 'Info', symbol: { fill: t_global_color_status_info_100.var } },
+            { name: 'Warning', symbol: { fill: t_global_color_status_warning_100.var } }
           ]}
           legendPosition="bottom-left"
           height={400}
@@ -347,30 +421,31 @@ class Timeline extends React.Component {
           <ChartAxis
             dependentAxis
             showGrid
-            tickFormat={(t) => new Date(t).toLocaleDateString("en-US", { month: 'short', day: 'numeric' })}
-            tickValues={[new Date("2024-08-06T00:00:00"), new Date("2024-08-08T00:00:00"), new Date("2024-08-10T00:00:00"), new Date("2024-08-12T00:00:00")]}
+            tickFormat={(t) => new Date(t).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+            tickValues={[
+              new Date('2024-08-06T00:00:00'),
+              new Date('2024-08-08T00:00:00'),
+              new Date('2024-08-10T00:00:00'),
+              new Date('2024-08-12T00:00:00')
+            ]}
           />
           <ChartAxis
-            axisLabelComponent={
-              <ChartLabel angle={0} dy={-125} />
-            }
+            axisLabelComponent={<ChartLabel angle={0} dy={-125} />}
             label="Incidents"
             padding={{ top: 20, bottom: 60 }}
             style={{
               axis: {
-                stroke: "transparent",
+                stroke: 'transparent'
               },
               ticks: {
-                stroke: "transparent"
+                stroke: 'transparent'
               },
               tickLabels: {
-                fill: "transparent"
+                fill: 'transparent'
               }
             }}
           />
-          <ChartGroup horizontal>
-            {alerts.map((alert, index) => getChart(alert, index))}
-          </ChartGroup>
+          <ChartGroup horizontal>{alerts.map((alert, index) => getChart(alert, index))}</ChartGroup>
         </Chart>
       </div>
     );
@@ -379,7 +454,9 @@ class Timeline extends React.Component {
 ```
 
 ## Documentation
+
 ### Tips
+
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
@@ -387,7 +464,8 @@ class Timeline extends React.Component {
 - Use `ChartGroup` to apply theme color scales and other properties to multiple components
 
 ### Note
-Currently, the generated documentation below is not able to resolve type definitions from Victory imports. For the 
+
+Currently, the generated documentation below is not able to resolve type definitions from Victory imports. For the
 components used in the examples above, Victory pass-thru props are also documented here:
 
 - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)

@@ -10,7 +10,7 @@ const version = 'v6';
 
 // Helpers
 const formatCustomPropertyName = (key) =>
-  key.replace(`--pf-${version}-`, '').replace('--pf-t--', '').replace(/-+/g, '_');
+  key.replace(`--pf-${version}-`, '').replace('--pf-t--', 't_').replace(/-+/g, '_');
 
 const getRegexMatches = (string, regex) => {
   const res = {};
