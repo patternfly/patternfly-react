@@ -70,12 +70,12 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     return null;
   }
 
-  const ariaLabelledbyFormatted = (): string | undefined => {
-    if (ariaLabel) {
-      return undefined;
-    }
+  const getAriaLabelledBy = (): string | undefined => {
     if (ariaLabelledby) {
       return ariaLabelledby;
+    }
+    if (ariaLabel) {
+      return undefined;
     }
     return boxId;
   };
@@ -87,7 +87,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       position={position}
       positionOffset={positionOffset}
       aria-label={ariaLabel}
-      aria-labelledby={ariaLabelledbyFormatted()}
+      aria-labelledby={getAriaLabelledBy()}
       aria-describedby={ariaDescribedby}
       {...getOUIAProps(ModalContent.displayName, ouiaId, ouiaSafe)}
       style={
