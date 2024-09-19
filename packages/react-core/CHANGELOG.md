@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.12...@patternfly/react-core@6.0.0-prerelease.13) (2024-09-19)
+
+### Bug Fixes
+
+- **Modal:** Prevent auto aria-labelledby if aria-label is passed ([#11012](https://github.com/patternfly/patternfly-react/issues/11012)) ([5bb4c1f](https://github.com/patternfly/patternfly-react/commit/5bb4c1fb500315b85c54c22b79846f90805cfd5d))
+
 # [6.0.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.11...@patternfly/react-core@6.0.0-prerelease.12) (2024-09-18)
 
 ### Bug Fixes
