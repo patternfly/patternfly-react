@@ -111,7 +111,12 @@ interface ChartCursorFlyoutProps extends VictoryCommonPrimitiveProps {
 }
 
 const ChartCursorFlyout = (props: ChartCursorFlyoutProps) => {
-  props = evaluateProps(props);
+  props = evaluateProps({
+    pathComponent: <Path />,
+    role: 'presentation',
+    shapeRendering: 'auto',
+    ...props
+  });
 
   return React.cloneElement(props.pathComponent, {
     ...props.events,
@@ -123,12 +128,6 @@ const ChartCursorFlyout = (props: ChartCursorFlyoutProps) => {
     transform: props.transform,
     clipPath: props.clipPath
   });
-};
-
-ChartCursorFlyout.defaultProps = {
-  pathComponent: <Path />,
-  role: 'presentation',
-  shapeRendering: 'auto'
 };
 
 export { ChartCursorFlyout };

@@ -127,7 +127,7 @@ class BottomAlignedLegend extends React.Component {
           themeColor={ChartThemeColor.teal}
           width={650}
         >
-          <ChartAxis label="Years"/>
+          <ChartAxis label="Years" fixAxisLabelHeight />
           <ChartAxis dependentAxis showGrid/>
           <ChartGroup>
             <ChartArea
