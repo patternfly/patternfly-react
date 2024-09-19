@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.4.1...@patternfly/react-charts@7.4.2) (2024-09-19)
+
+### Bug Fixes
+
+- **charts:** defaultProps deprecation warning ([#11019](https://github.com/patternfly/patternfly-react/issues/11019)) ([#11028](https://github.com/patternfly/patternfly-react/issues/11028)) ([9b9a7ba](https://github.com/patternfly/patternfly-react/commit/9b9a7ba16aeb23d19421a0b2cc1742a0cefe428b))
+
 ## [7.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@7.4.0...@patternfly/react-charts@7.4.1) (2024-09-13)
 
 ### Bug Fixes
