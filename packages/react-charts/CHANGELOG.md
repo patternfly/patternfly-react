@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-prerelease.9...@patternfly/react-charts@8.0.0-prerelease.10) (2024-09-19)
+
+### Bug Fixes
+
+- **charts:** defaultProps deprecation warning ([#11019](https://github.com/patternfly/patternfly-react/issues/11019)) ([#11027](https://github.com/patternfly/patternfly-react/issues/11027)) ([fc44673](https://github.com/patternfly/patternfly-react/commit/fc44673efe193d37e400b4e87c0f300a205eefbc))
+
 # [8.0.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-prerelease.8...@patternfly/react-charts@8.0.0-prerelease.9) (2024-09-18)
 
 ### Bug Fixes
