@@ -8,12 +8,13 @@ import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 export const sortableFavorites = (sort: any) => () =>
   sortable(<StarIcon aria-hidden />, {
     columnIndex: sort.columnIndex,
-    className: styles.modifiers.favorite,
-    ariaLabel: 'Sort favorites',
+    className: styles.tableFavorite,
+    ariaLabel: sort.ariaLabel ?? 'Sort favorites',
     column: {
       extraParams: {
         sortBy: sort.sortBy,
-        onSort: sort?.onSort
+        onSort: sort.onSort,
+        favoriteButtonProps: sort.favoriteButtonProps
       }
     },
     tooltip: sort.tooltip,
@@ -26,7 +27,7 @@ export const sortable: ITransform = (
   { columnIndex, column, property, className, ariaLabel, tooltip, tooltipProps, tooltipHasDefaultBehavior }: IExtra
 ) => {
   const {
-    extraParams: { sortBy, onSort }
+    extraParams: { sortBy, onSort, favoriteButtonProps }
   } = column;
 
   const extraData = {
@@ -62,6 +63,7 @@ export const sortable: ITransform = (
         tooltip={tooltip}
         tooltipProps={tooltipProps}
         tooltipHasDefaultBehavior={tooltipHasDefaultBehavior}
+        favoriteButtonProps={favoriteButtonProps}
       >
         {label as React.ReactNode}
       </SortColumn>

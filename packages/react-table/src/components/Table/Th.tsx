@@ -113,15 +113,18 @@ const ThBase: React.FunctionComponent<ThProps> = ({
     }
     onMouseEnterProp(event);
   };
+
   let sortParams = null;
   if (sort) {
     if (sort.isFavorites) {
       sortParams = sortableFavorites({
-        onSort: sort?.onSort,
+        onSort: sort.onSort,
         columnIndex: sort.columnIndex,
         sortBy: sort.sortBy,
         tooltip: tooltip as string,
-        tooltipProps
+        tooltipProps,
+        ariaLabel: sort['aria-label'],
+        favoriteButtonProps: sort.favoriteButtonProps
       })();
     } else {
       sortParams = sortable(children as IFormatterValueType, {
@@ -137,6 +140,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
       });
     }
   }
+
   const selectParams = select
     ? selectable(children as IFormatterValueType, {
         rowData: {
@@ -217,6 +221,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         hasRightBorder && scrollStyles.modifiers.borderRight,
         hasLeftBorder && scrollStyles.modifiers.borderLeft,
         modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap'],
+        sort?.favoriteButtonProps?.favorited && styles.modifiers.favorited,
         mergedClassName
       )}
       {...mergedProps}
