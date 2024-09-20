@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-prerelease.14...@patternfly/react-table@6.0.0-prerelease.15) (2024-09-20)
+
+### Features
+
+- **Table:** favoritable sortable header cell and example ([#10823](https://github.com/patternfly/patternfly-react/issues/10823)) ([7eb9dfa](https://github.com/patternfly/patternfly-react/commit/7eb9dfacdae6bf2b0b5e4a346d4802d0e7bfda2d))
+
 # [6.0.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-prerelease.13...@patternfly/react-table@6.0.0-prerelease.14) (2024-09-20)
 
 **Note:** Version bump only for package @patternfly/react-table
