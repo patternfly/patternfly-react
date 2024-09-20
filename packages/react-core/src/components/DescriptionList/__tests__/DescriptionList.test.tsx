@@ -124,21 +124,21 @@ test(`Renders style when isHorizontal and horizontalTermWidthModifier is set`, (
       }}
     />
   );
-  expect(screen.getByLabelText('list')).toHaveStyle({
-    '--pf-v6-c-description-list--m-horizontal__term--width': '12ch',
-    '--pf-v6-c-description-list--m-horizontal__term--width-on-sm': '15ch',
-    '--pf-v6-c-description-list--m-horizontal__term--width-on-md': '20ch',
-    '--pf-v6-c-description-list--m-horizontal__term--width-on-lg': '28ch',
-    '--pf-v6-c-description-list--m-horizontal__term--width-on-xl': '30ch',
-    '--pf-v6-c-description-list--m-horizontal__term--width-on-2xl': '35ch'
-  });
+  const listStyles = {};
+  listStyles[`--${styles.descriptionList}--m-horizontal__term--width`] = '12ch';
+  listStyles[`--${styles.descriptionList}--m-horizontal__term--width-on-sm`] = '15ch';
+  listStyles[`--${styles.descriptionList}--m-horizontal__term--width-on-md`] = '20ch';
+  listStyles[`--${styles.descriptionList}--m-horizontal__term--width-on-lg`] = '28ch';
+  listStyles[`--${styles.descriptionList}--m-horizontal__term--width-on-xl`] = '30ch';
+  listStyles[`--${styles.descriptionList}--m-horizontal__term--width-on-2x`] = '35ch';
+  expect(screen.getByLabelText('list')).toHaveStyle(listStyles);
 });
 
 test.skip(`Renders style when termWidth is set`, () => {
   render(<DescriptionList aria-label="list" isHorizontal termWidth="30px" />);
-  expect(screen.getByLabelText('list')).toHaveStyle({
-    '--pf-v6-c-description-list__term--width': '30px'
-  });
+  const listStyles = {};
+  listStyles[`--${styles.descriptionList}__term--width`] = '30px';
+  expect(screen.getByLabelText('list')).toHaveStyle(listStyles);
 });
 
 test(`Renders style when isAutoFit and horizontalTermWidthModifier is set`, () => {
@@ -149,8 +149,10 @@ test(`Renders style when isAutoFit and horizontalTermWidthModifier is set`, () =
       autoFitMinModifier={{ default: '50px', sm: '50px', md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}
     />
   );
+  const listStyles = {};
+
   expect(screen.getByLabelText('list')).toHaveAttribute(
     'style',
-    '--pf-v6-c-description-list--GridTemplateColumns--min: 50px; --pf-v6-c-description-list--GridTemplateColumns--min-on-sm: 50px; --pf-v6-c-description-list--GridTemplateColumns--min-on-md: 100px; --pf-v6-c-description-list--GridTemplateColumns--min-on-lg: 150px; --pf-v6-c-description-list--GridTemplateColumns--min-on-xl: 200px; --pf-v6-c-description-list--GridTemplateColumns--min-on-2xl: 300px;'
+    `--${styles.descriptionList}--GridTemplateColumns--min: 50px; --${styles.descriptionList}--GridTemplateColumns--min-on-sm: 50px; --${styles.descriptionList}--GridTemplateColumns--min-on-md: 100px; --${styles.descriptionList}--GridTemplateColumns--min-on-lg: 150px; --${styles.descriptionList}--GridTemplateColumns--min-on-xl: 200px; --${styles.descriptionList}--GridTemplateColumns--min-on-2xl: 300px;`
   );
 });
