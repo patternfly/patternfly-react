@@ -3,7 +3,7 @@ describe('Page Demo Test', () => {
     cy.visit('http://localhost:3000/page-demo-nav-link');
   });
 
-  xit('Test Page elements', () => {
+  it('Test Page elements', () => {
     cy.get('#page-demo').within(() => {
       cy.get('#nav-toggle').then((hamburgerIcon: JQuery<HTMLDivElement>) => {
         cy.get('.pf-v6-c-page__sidebar.pf-m-expanded').should('exist');
@@ -12,9 +12,11 @@ describe('Page Demo Test', () => {
         cy.get('.pf-v6-c-page__sidebar.pf-m-collapsed').should('exist');
         cy.get('.pf-v6-c-page__sidebar.pf-m-expanded').should('not.exist');
       });
-      cy.get('#page-demo-header').should('not.have.attr', 'role');
+      cy.get('#page-demo-masthead').should('not.have.attr', 'role');
       cy.get('#page-demo-page-id').should('not.have.attr', 'role');
-      cy.get('div[class="pf-v6-c-page__header-brand-link"]').invoke('text').should('eq', "Logo that's a <div>");
+      cy.get(
+        '#page-demo-masthead > .pf-v6-c-masthead__main > .pf-v6-c-masthead__brand > .pf-v6-c-masthead__logo'
+      ).should('exist');
       cy.get('.pf-v6-c-page__main-section.pf-m-no-padding').should('exist');
       cy.get('.pf-v6-c-page__main-section.pf-m-no-padding-on-md').should('exist');
     });

@@ -138,10 +138,12 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   clearSelection={this.clearSelection}
                   isOpen={updatedProps.isSelectOpen}
                   options={(updatedProps as any).options.map((option: any, index: number) => (
-                    <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell5Option' + index} />
+                    <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell5Option' + index}>
+                      {option.value}
+                    </SelectOption>
                   ))}
-                  onToggle={(event: any) => {
-                    this.onToggle(event);
+                  onToggle={(_event: any) => {
+                    this.onToggle(rowIndex as number, cellIndex as number);
                   }}
                   selections={updatedProps.selected}
                 />
@@ -161,7 +163,8 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                 ],
                 editableSelectProps: {
                   variant: 'checkbox',
-                  'aria-label': 'Row 1 cell 5 content'
+                  'aria-label': 'Row 1 cell 5 content',
+                  onOpenChange: () => this.onOpenChange(0, 4)
                 }
               }
             }
@@ -249,10 +252,12 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   clearSelection={this.clearSelection}
                   isOpen={updatedProps.isSelectOpen}
                   options={(updatedProps as any).options.map((option: any, index: number) => (
-                    <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell5Option' + index} />
+                    <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell5Option' + index}>
+                      {option.value}
+                    </SelectOption>
                   ))}
                   onToggle={(_event: any) => {
-                    this.onToggle(_event);
+                    this.onToggle(rowIndex as number, cellIndex as number);
                   }}
                   selections={updatedProps.selected}
                 />
@@ -272,7 +277,8 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                 ],
                 editableSelectProps: {
                   variant: 'single',
-                  'aria-label': 'Row 2 cell 5 content'
+                  'aria-label': 'Row 2 cell 5 content',
+                  onOpenChange: () => this.onOpenChange(1, 4)
                 }
               }
             }
@@ -362,6 +368,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
 
       newCellProps.editableValue = newSelected;
       newCellProps.selected = newSelected;
+      newCellProps.isSelectOpen = false;
     }
 
     this.setState({
@@ -369,11 +376,33 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     });
   };
 
-  onToggle = (_event: any) => {
+  // set open state if component closes menu on click (e.g. when you click outside of the menu)
+  onOpenChange = (rowIndex: number, cellIndex: number) => {
     const newRows = Array.from(this.state.rows);
-    this.setState({
-      rows: newRows
-    });
+    const rowCells = newRows[rowIndex as number].cells;
+    if (rowCells) {
+      const cell = rowCells[cellIndex as number];
+      if (cell) {
+        (cell as IRowCell).props.isSelectOpen = !(cell as IRowCell).props.isSelectOpen;
+        this.setState({
+          rows: newRows
+        });
+      }
+    }
+  };
+
+  onToggle = (rowIndex: number, cellIndex: number) => {
+    const newRows = Array.from(this.state.rows);
+    const rowCells = newRows[rowIndex].cells;
+    if (rowCells) {
+      const cell = rowCells[cellIndex as number];
+      if (cell) {
+        (cell as IRowCell).props.isSelectOpen = !(cell as IRowCell).props.isSelectOpen;
+        this.setState({
+          rows: newRows
+        });
+      }
+    }
   };
 
   clearSelection = (_event: React.MouseEvent, rowIndex: number, cellIndex: number) => {

@@ -325,8 +325,9 @@ import {
   applyCellEdits,
   EditableTextCell,
   EditableSelectInputCell,
-  SelectOption
 } from '@patternfly/react-table';
+
+import { SelectOption as NewSelectOption} from '@patternfly/react-core/dist/esm/components/Select';
 
 class EditableRowsTable extends React.Component {
   constructor(props) {
@@ -412,12 +413,12 @@ class EditableRowsTable extends React.Component {
                   onSelect={this.onSelect}
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => (
-                    <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell4Option' + index}>
+                    <NewSelectOption key={index} value={option.value} id={'uniqueIdRow1Cell4Option' + index}>
                       {option.value}
-                    </SelectOption>
+                    </NewSelectOption>
                   ))}
-                  onToggle={(event, isOpen) => {
-                    this.onToggle(isOpen, rowIndex, cellIndex);
+                  onToggle={(event) => {
+                    this.onToggle(props.isSelectOpen, rowIndex, cellIndex);
                   }}
                   selections={props.selected}
                 />
@@ -435,8 +436,8 @@ class EditableRowsTable extends React.Component {
                   { value: 'Option 5' }
                 ],
                 editableSelectProps: {
-                  variant: 'single',
-                  'aria-label': 'Row 1 cell 4 content'
+                  'aria-label': 'Row 1 cell 4 content',
+                  onOpenChange: (isOpen: boolean) => this.onOpenChange(isOpen, 0, 3)
                 }
               }
             }
@@ -505,13 +506,13 @@ class EditableRowsTable extends React.Component {
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => {
                     return (
-                      <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell4Option' + index}>
+                      <NewSelectOption key={index} value={option.value} id={'uniqueIdRow2Cell4Option' + index}>
                         {option.value}
-                      </SelectOption>
+                      </NewSelectOption>
                     );
                   })}
-                  onToggle={(event, isOpen) => {
-                    this.onToggle(isOpen, rowIndex, cellIndex);
+                  onToggle={(event) => {
+                    this.onToggle(props.isSelectOpen, rowIndex, cellIndex);
                   }}
                   selections={props.selected}
                 />
@@ -521,8 +522,9 @@ class EditableRowsTable extends React.Component {
                 name: 'uniqueIdRow2Cell4',
                 isSelectOpen: props.isSelectOpen || false,
                 selected: props.selected || [],
+                isPlaceholder: true,
                 options: [
-                  { value: 'Placeholder...', isPlaceholder: true },
+                   { value: 'Placeholder...', isPlaceholder: true},
                   { value: 'Option 1' },
                   { value: 'Option 2' },
                   { value: 'Option 3' },
@@ -530,9 +532,10 @@ class EditableRowsTable extends React.Component {
                   { value: 'Option 5' }
                 ],
                 editableSelectProps: {
-                  variant: 'typeaheadmulti',
                   'aria-label': 'Row 2 cell 4 content',
-                  toggleId: 'editable-toggle'
+                  toggleId: 'editable-toggle',
+                  onOpenChange: (isOpen: boolean) => this.onOpenChange(isOpen, 1, 3)
+
                 }
               }
             }
@@ -622,12 +625,12 @@ class EditableRowsTable extends React.Component {
                   clearSelection={this.clearSelection}
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => (
-                    <SelectOption key={index} value={option.value} id={'uniqueIdRow3Cell4Option' + index}>
+                    <NewSelectOption key={index} value={option.value} id={'uniqueIdRow3Cell4Option' + index}>
                       {option.value}
-                    </SelectOption>
+                    </NewSelectOption>
                   ))}
-                  onToggle={(event, isOpen) => {
-                    this.onToggle(isOpen, rowIndex, cellIndex);
+                  onToggle={(event) => {
+                    this.onToggle(props.isSelectOpen, rowIndex, cellIndex);
                   }}
                   selections={props.selected}
                 />
@@ -637,8 +640,9 @@ class EditableRowsTable extends React.Component {
                 name: 'uniqueIdRow3Cell4',
                 isSelectOpen: props.isSelectOpen || false,
                 selected: props.selected || ['Option 3'],
+                isPlaceholder: false,
                 options: [
-                  { value: 'Placeholder...', isPlaceholder: true },
+                  { value: 'Placeholder...', isPlaceholder: true},
                   { value: 'Option 1' },
                   { value: 'Option 2' },
                   { value: 'Option 3' },
@@ -646,8 +650,9 @@ class EditableRowsTable extends React.Component {
                   { value: 'Option 5' }
                 ],
                 editableSelectProps: {
-                  variant: 'checkbox',
-                  'aria-label': 'Row 3 cell 4 content'
+                  'aria-label': 'Row 3 cell 4 content',
+                  onOpenChange: (isOpen: boolean) => this.onOpenChange(isOpen, 2, 3)
+
                 }
               }
             }
@@ -735,10 +740,19 @@ class EditableRowsTable extends React.Component {
       });
     };
 
+    // set open state if component closes menu on click (e.g. when you click outside of the menu)
+    this.onOpenChange = (isOpen: boolean, rowIndex: string | number | undefined, cellIndex: string | number | undefined) => {
+      const newRows = Array.from(this.state.rows);
+      newRows[rowIndex].cells[cellIndex].props.isSelectOpen = isOpen;
+      this.setState({
+        rows: newRows
+      });
+    }
+
     this.onToggle = (isOpen, rowIndex, cellIndex) => {
       console.log('isOpen', isOpen);
       let newRows = Array.from(this.state.rows);
-      newRows[rowIndex].cells[cellIndex].props.isSelectOpen = isOpen;
+      newRows[rowIndex].cells[cellIndex].props.isSelectOpen = !newRows[rowIndex].cells[cellIndex].props.isSelectOpen;
       this.setState({
         rows: newRows
       });
