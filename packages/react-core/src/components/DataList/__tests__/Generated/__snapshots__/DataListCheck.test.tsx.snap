@@ -8,8 +8,9 @@ exports[`DataListCheck should match snapshot (auto-generated) 1`] = `
     <div
       class="pf-v6-c-data-list__check"
     >
-      <div
+      <label
         class="pf-v6-c-check pf-m-standalone"
+        for="test"
       >
         <input
           aria-invalid="false"
@@ -21,7 +22,7 @@ exports[`DataListCheck should match snapshot (auto-generated) 1`] = `
           id="test"
           type="checkbox"
         />
-      </div>
+      </label>
     </div>
   </div>
 </DocumentFragment>
