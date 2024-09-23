@@ -2,7 +2,7 @@
 id: Date picker
 section: components
 subsection: date-and-time
-cssPrefix: pf-v5-c-date-picker
+cssPrefix: pf-v6-c-date-picker
 propComponents: ['DatePicker', 'CalendarFormat', 'DatePickerRef', 'DatePickerRequiredObject']
 ---
 

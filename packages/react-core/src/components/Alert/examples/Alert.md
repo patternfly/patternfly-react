@@ -1,7 +1,7 @@
 ---
 id: Alert
 section: components
-cssPrefix: ['pf-v5-c-alert', 'pf-v5-c-alert-group']
+cssPrefix: ['pf-v6-c-alert', 'pf-v6-c-alert-group']
 propComponents: ['Alert', 'AlertGroup', 'AlertActionCloseButton', 'AlertActionLink']
 ouia: true
 ---

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
+import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { info, sortable, sortableFavorites, selectable, collapsible, cellWidth, Visibility, classNames } from './utils';
 import { ThInfoType, ThSelectType, ThExpandType, ThSortType, formatterValueType } from './base/types';
 import { mergeProps } from './base/merge-props';
@@ -235,7 +236,8 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         } as React.CSSProperties
       })}
     >
-      {transformedChildren || (screenReaderText && <span className="pf-v5-screen-reader">{screenReaderText}</span>)}
+      {transformedChildren ||
+        (screenReaderText && <span className={accessibilityStyles.screenReader}>{screenReaderText}</span>)}
     </MergedComponent>
   );
 

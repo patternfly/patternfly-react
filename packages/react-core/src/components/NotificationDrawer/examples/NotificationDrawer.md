@@ -1,7 +1,7 @@
 ---
 id: Notification drawer
 section: components
-cssPrefix: pf-v5-c-notification-drawer
+cssPrefix: pf-v6-c-notification-drawer
 propComponents:
   [
     'NotificationDrawer',

@@ -1,6 +1,6 @@
 ---
 id: Simple file upload
-cssPrefix: pf-v5-c-file-upload
+cssPrefix: pf-v6-c-file-upload
 propComponents: ['FileUpload', 'FileUploadField']
 section: components
 subsection: file-upload

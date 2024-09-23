@@ -1,7 +1,7 @@
 ---
 id: Overflow menu
 section: components
-cssPrefix: pf-v5-c-overflow-menu
+cssPrefix: pf-v6-c-overflow-menu
 propComponents:
   [
     'OverflowMenu',

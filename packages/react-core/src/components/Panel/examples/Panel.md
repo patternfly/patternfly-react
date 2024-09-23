@@ -1,7 +1,7 @@
 ---
 id: Panel
 section: components
-cssPrefix: pf-v5-c-panel
+cssPrefix: pf-v6-c-panel
 propComponents: [Panel, PanelMain, PanelMainBody, PanelHeader, PanelFooter]
 ---
 

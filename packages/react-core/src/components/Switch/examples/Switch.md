@@ -1,7 +1,7 @@
 ---
 id: Switch
 section: components
-cssPrefix: pf-v5-c-switch
+cssPrefix: pf-v6-c-switch
 propComponents: ['Switch']
 ouia: true
 ---

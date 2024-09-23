@@ -2,7 +2,7 @@
 id: Dropdown
 section: components
 subsection: menus
-cssPrefix: pf-v5-c-menu
+cssPrefix: pf-v6-c-menu
 propComponents:
   [
     'Dropdown',

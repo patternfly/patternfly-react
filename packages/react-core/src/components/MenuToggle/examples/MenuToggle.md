@@ -2,7 +2,7 @@
 id: Menu toggle
 section: components
 subsection: menus
-cssPrefix: pf-v5-c-menu-toggle
+cssPrefix: pf-v6-c-menu-toggle
 propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox', 'SplitButtonOptions']
 ---
 

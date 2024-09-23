@@ -1,7 +1,7 @@
 ---
 id: Wizard
 section: components
-cssPrefix: pf-v5-c-wizard
+cssPrefix: pf-v6-c-wizard
 propComponents:
   ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'WizardBody', 'WizardFooter', 'WizardToggle', 'WizardStep']
 ouia: true

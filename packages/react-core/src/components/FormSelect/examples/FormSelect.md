@@ -2,7 +2,7 @@
 id: Form select
 section: components
 subsection: forms
-cssPrefix: pf-v5-c-form-control
+cssPrefix: pf-v6-c-form-control
 propComponents: ['FormSelect', 'FormSelectOption', 'FormSelectOptionGroup']
 ouia: true
 ---

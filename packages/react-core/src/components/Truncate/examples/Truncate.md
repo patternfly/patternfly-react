@@ -1,6 +1,7 @@
 ---
 id: Truncate
 section: components
+cssPrefix: pf-v6-c-truncate
 propComponents: [Truncate]
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: Banner
 section: components
-cssPrefix: pf-v5-c-banner
+cssPrefix: pf-v6-c-banner
 propComponents: ['Banner']
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: Text input group
 section: components
-cssPrefix: pf-v5-c-text-input-group
+cssPrefix: pf-v6-c-text-input-group
 propComponents: ['TextInputGroup', 'TextInputGroupMain', 'TextInputGroupUtilities']
 ---
 

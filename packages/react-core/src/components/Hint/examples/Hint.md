@@ -1,7 +1,7 @@
 ---
 id: Hint
 section: components
-cssPrefix: null
+cssPrefix: pf-v6-c-hint
 propComponents: ['Hint', 'HintTitle', 'HintBody', 'HintFooter']
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: Data list
 section: components
-cssPrefix: pf-v5-c-data-list
+cssPrefix: pf-v6-c-data-list
 propComponents:
   [
     'DataList',

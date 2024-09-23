@@ -1,7 +1,7 @@
 ---
 id: Tree view
 section: components
-cssPrefix: pf-v5-c-tree-view
+cssPrefix: pf-v6-c-tree-view
 propComponents: ['TreeView', 'TreeViewDataItem', 'TreeViewSearch']
 ---
 

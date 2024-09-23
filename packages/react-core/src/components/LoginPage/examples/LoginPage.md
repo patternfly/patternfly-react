@@ -1,7 +1,7 @@
 ---
 id: Login page
 section: components
-cssPrefix: pf-v5-c-login
+cssPrefix: pf-v6-c-login
 propComponents:
   [
     'LoginPage',

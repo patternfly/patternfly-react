@@ -1,6 +1,6 @@
 ---
 id: Toolbar
-cssPrefix: pf-v5-c-toolbar
+cssPrefix: pf-v6-c-toolbar
 propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarGroup', 'ToolbarItem', 'ToolbarToggleGroup', 'ToolbarFilter']
 section: components
 ---
