@@ -130,7 +130,7 @@ test(`Renders style when isHorizontal and horizontalTermWidthModifier is set`, (
   listStyles[`--${styles.descriptionList}--m-horizontal__term--width-on-md`] = '20ch';
   listStyles[`--${styles.descriptionList}--m-horizontal__term--width-on-lg`] = '28ch';
   listStyles[`--${styles.descriptionList}--m-horizontal__term--width-on-xl`] = '30ch';
-  listStyles[`--${styles.descriptionList}--m-horizontal__term--width-on-2x`] = '35ch';
+  listStyles[`--${styles.descriptionList}--m-horizontal__term--width-on-2xl`] = '35ch';
   expect(screen.getByLabelText('list')).toHaveStyle(listStyles);
 });
 
