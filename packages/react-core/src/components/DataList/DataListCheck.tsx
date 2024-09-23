@@ -5,7 +5,7 @@ import { Checkbox, CheckboxProps } from '../Checkbox';
 
 export interface DataListCheckProps extends Omit<CheckboxProps, 'ref'> {
   /** Id of the DataList checkbox. */
-  id: string;
+  id?: string;
   /** Additional classes added to the DataList item checkbox */
   className?: string;
   /** Flag to show if the DataList checkbox selection is valid or invalid */
@@ -35,6 +35,7 @@ export interface DataListCheckProps extends Omit<CheckboxProps, 'ref'> {
 }
 
 export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
+  id,
   className,
   onChange,
   isValid = true,
@@ -45,15 +46,19 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
   otherControls = false,
   ...props
 }: DataListCheckProps) => {
+  const uniqueId = React.useId();
+
   const check = (
     <div className={css(styles.dataListCheck)}>
       <Checkbox
+        id={id ?? `datalist-check-${uniqueId}`}
         isChecked={isChecked}
         checked={checked}
         defaultChecked={defaultChecked}
         onChange={onChange}
         aria-invalid={!isValid}
         isDisabled={isDisabled}
+        isLabelWrapped
         {...props}
       />
     </div>
