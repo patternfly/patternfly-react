@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Checkbox, CheckboxProps } from '../Checkbox';
 
-export interface DataListCheckProps extends Omit<CheckboxProps, 'ref'> {
+export interface DataListCheckProps extends Omit<CheckboxProps, 'ref' | 'id'> {
   /** Id of the DataList checkbox. */
   id?: string;
   /** Additional classes added to the DataList item checkbox */
