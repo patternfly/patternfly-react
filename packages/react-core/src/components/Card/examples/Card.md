@@ -182,15 +182,21 @@ Dividers can be placed between sections of the card.
 
 ## Cards as tiles
 
-Sets of selectable cards may also be used as tiles, and may be made either single selectable or multiselectable by passing the `variant` property to the `selectableActions` object. You may toggle the visibility of the radio or checkbox by additionally passing the `isHidden` property to the `selectableActions` object.
+Sets of selectable cards can be used as tiles, which are static options that users can select.
+
+They can be either single selectable or multi selectable, by passing the `variant` property to the `selectableActions` object. You can also toggle the visibility of the radio or checkbox by passing the `isHidden` property to the `selectableActions` object.
 
 ### Single selectable tiles
+
+To prevent users from selecting more than 1 tile in a set, set `variant` to "single" within the `selectableActions` object of `<CardHeader>`.
 
 ```ts file='./CardTile.tsx'
 
 ```
 
 ### Multi selectable tiles
+
+To allow users to select more than 1 tile in a set, do not set `variant` within the `selectableActions` object of `<CardHeader>`.
 
 ```ts file='./CardTileMulti.tsx'
 

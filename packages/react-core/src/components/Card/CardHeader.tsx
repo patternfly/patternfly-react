@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Card/card';
+import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { CardContext } from './Card';
 import { CardHeaderMain } from './CardHeaderMain';
 import { CardActions } from './CardActions';
@@ -135,7 +136,8 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
 
         const SelectableCardInput = selectableActions?.variant === 'single' ? Radio : Checkbox;
         const getSelectableProps = () => ({
-          className: css('pf-m-standalone', selectableActions?.isHidden && 'pf-v6-screen-reader'),
+          className: css('pf-m-standalone'),
+          inputClassName: css(selectableActions?.isHidden && accessibilityStyles.screenReader),
           label: <></>,
           'aria-label': selectableActions.selectableActionAriaLabel,
           'aria-labelledby': selectableActions.selectableActionAriaLabelledby,
@@ -155,7 +157,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
             className: css(
               'pf-v6-c-card__clickable-action',
               isDisabledLinkCard && styles.modifiers.disabled,
-              selectableActions?.isHidden && 'pf-v6-screen-reader'
+              selectableActions?.isHidden && accessibilityStyles.screenReader
             ),
             id: selectableActions.selectableActionId,
             'aria-label': selectableActions.selectableActionAriaLabel,
