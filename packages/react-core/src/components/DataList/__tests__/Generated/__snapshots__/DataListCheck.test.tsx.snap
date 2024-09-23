@@ -8,11 +8,21 @@ exports[`DataListCheck should match snapshot (auto-generated) 1`] = `
     <div
       class="pf-v6-c-data-list__check"
     >
-      <input
-        aria-invalid="false"
-        aria-labelledby="string"
-        type="checkbox"
-      />
+      <label
+        class="pf-v6-c-check pf-m-standalone"
+        for="test"
+      >
+        <input
+          aria-invalid="false"
+          aria-labelledby="string"
+          class="pf-v6-c-check__input"
+          data-ouia-component-id="OUIA-Generated-Checkbox-1"
+          data-ouia-component-type="PF6/Checkbox"
+          data-ouia-safe="true"
+          id="test"
+          type="checkbox"
+        />
+      </label>
     </div>
   </div>
 </DocumentFragment>

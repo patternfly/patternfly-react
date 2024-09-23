@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import { Checkbox, CheckboxProps } from '../Checkbox';
 
-export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'checked'> {
+export interface DataListCheckProps extends Omit<CheckboxProps, 'ref' | 'id'> {
+  /** Id of the DataList checkbox. */
+  id?: string;
   /** Additional classes added to the DataList item checkbox */
   className?: string;
   /** Flag to show if the DataList checkbox selection is valid or invalid */
@@ -32,27 +35,31 @@ export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElemen
 }
 
 export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
-  className = '',
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {},
+  id,
+  className,
+  onChange,
   isValid = true,
   isDisabled = false,
-  isChecked = false,
-  checked = false,
+  isChecked,
+  checked,
   defaultChecked,
   otherControls = false,
   ...props
 }: DataListCheckProps) => {
+  const uniqueId = React.useId();
+
   const check = (
     <div className={css(styles.dataListCheck)}>
-      <input
-        {...props}
-        type="checkbox"
-        onChange={(event) => onChange(event, event.currentTarget.checked)}
+      <Checkbox
+        id={id ?? `datalist-check-${uniqueId}`}
+        isChecked={isChecked}
+        checked={checked}
+        defaultChecked={defaultChecked}
+        onChange={onChange}
         aria-invalid={!isValid}
-        disabled={isDisabled}
-        {...([true, false].includes(defaultChecked) && { defaultChecked })}
-        {...(![true, false].includes(defaultChecked) && { checked: isChecked || checked })}
+        isDisabled={isDisabled}
+        isLabelWrapped
+        {...props}
       />
     </div>
   );

@@ -48,7 +48,7 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
         <DataList aria-label="Width modifier data list example 1">
           <DataListItem aria-labelledby="width-ex1-item1">
             <DataListItemRow>
-              <DataListCheck aria-labelledby="width-ex1-item1" name="width-ex1-item1" />
+              <DataListCheck id="check-width-ex1-item1" aria-labelledby="width-ex1-item1" name="width-ex1-item1" />
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="default">
@@ -75,7 +75,7 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
         <DataList aria-label="Width modifier data list example 2">
           <DataListItem aria-labelledby="width-ex2-item1">
             <DataListItemRow>
-              <DataListCheck aria-labelledby="width-ex2-item1" name="width-ex2-item1" />
+              <DataListCheck id="check-width-ex2-item1" aria-labelledby="width-ex2-item1" name="width-ex2-item1" />
               <DataListItemCells
                 dataListCells={[
                   <DataListCell width={2} key="width 2">
@@ -149,7 +149,7 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                 aria-controls="width-ex3-expand1"
                 onClick={() => setShow(!show)}
               />
-              <DataListCheck aria-labelledby="width-ex3-item1" name="width-ex3-item1" />
+              <DataListCheck id="check-width-ex3-item1" aria-labelledby="width-ex3-item1" name="width-ex3-item1" />
               <DataListItemCells
                 dataListCells={[
                   <DataListCell width={5} key="width 5">
