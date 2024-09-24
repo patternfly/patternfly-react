@@ -117,7 +117,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       setTimeout(() => {
         const firstElement = menuRef?.current?.querySelector('li button:not(:disabled),li input:not(:disabled)');
         firstElement && (firstElement as HTMLElement).focus();
-      }, 0);
+      }, 10);
     }
 
     prevIsOpen.current = isOpen;

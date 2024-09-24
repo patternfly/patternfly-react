@@ -65,7 +65,7 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
           'li button:not(:disabled),li input:not(:disabled),li a:not([aria-disabled="true"])'
         );
         firstElement && (firstElement as HTMLElement).focus();
-      }, 0);
+      }, 10);
     }
 
     prevIsOpen.current = isOpen;
