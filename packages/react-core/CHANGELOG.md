@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.16...@patternfly/react-core@6.0.0-prerelease.17) (2024-09-24)
+
+### Bug Fixes
+
+- **Modal:** Allow users to add classes to backdrop ([#11015](https://github.com/patternfly/patternfly-react/issues/11015)) ([f6f8abb](https://github.com/patternfly/patternfly-react/commit/f6f8abb8f1a464a78754580f47f5685de03927fd))
+
 # [6.0.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.15...@patternfly/react-core@6.0.0-prerelease.16) (2024-09-24)
 
 **Note:** Version bump only for package @patternfly/react-core
