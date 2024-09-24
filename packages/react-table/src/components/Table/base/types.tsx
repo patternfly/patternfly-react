@@ -6,9 +6,7 @@
  */
 
 import * as React from 'react';
-import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
-import { PopoverProps } from '@patternfly/react-core/dist/esm/components/Popover';
-import { SelectProps } from '@patternfly/react-core/dist/esm/components/Select';
+import { ButtonProps, PopoverProps, SelectProps, TooltipProps } from '@patternfly/react-core';
 import { Table } from '../Table';
 import { Thead } from '../Thead';
 import { Tbody } from '../Tbody';
@@ -156,6 +154,11 @@ export interface ThInfoType {
   className?: string;
 }
 
+export interface FavoriteButtonProps extends ButtonProps {
+  /** Flag if the button is favorited. */
+  favorited?: boolean;
+}
+
 export interface ThSortType {
   /** Wraps the content in a button and adds a sort icon - Click callback on the sortable cell */
   onSort?: OnSort;
@@ -163,8 +166,12 @@ export interface ThSortType {
   sortBy: ISortBy;
   /** The column index */
   columnIndex: number;
+  /** Adds accessible text to the sort button. */
+  'aria-label'?: string;
   /** True to make this a favoritable sorting cell */
   isFavorites?: boolean;
+  /** Props for the favorite button (only for favoritable cell). */
+  favoriteButtonProps?: FavoriteButtonProps;
 }
 
 export interface ThSelectType {

@@ -1,7 +1,7 @@
 ---
 id: Expandable section
 section: components
-cssPrefix: pf-v5-c-expandable-section
+cssPrefix: pf-v6-c-expandable-section
 propComponents: ['ExpandableSection', 'ExpandableSectionToggle']
 ---
 

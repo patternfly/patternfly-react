@@ -264,6 +264,30 @@ test('Renders with inherited element props spread to the component', () => {
   expect(screen.getByText('Test')).toHaveAccessibleName('Test label');
 });
 
+test(`Renders without class name ${styles.modifiers.editorial} by default`, () => {
+  render(<Content>Test</Content>);
+  expect(screen.getByText('Test')).not.toHaveClass('pf-m-editorial');
+});
+
+test(`Renders with class name ${styles.modifiers.editorial} when isEditorial = true`, () => {
+  render(<Content isEditorial>Test</Content>);
+  expect(screen.getByText('Test')).toHaveClass('pf-m-editorial');
+});
+
+test(`Renders with class name ${styles.modifiers.editorial} when isEditorial = true and component is specified`, () => {
+  render(
+    <Content component="h1" isEditorial>
+      Test
+    </Content>
+  );
+  expect(screen.getByText('Test')).toHaveClass('pf-m-editorial');
+});
+
+test(`Renders without class name ${styles.modifiers.editorial} when isEditorial = false`, () => {
+  render(<Content isEditorial={false}>Test</Content>);
+  expect(screen.getByText('Test')).not.toHaveClass('pf-m-editorial');
+});
+
 test('Matches the snapshot', () => {
   const { asFragment } = render(<Content ouiaId="ouia-id">Test</Content>);
   expect(asFragment()).toMatchSnapshot();

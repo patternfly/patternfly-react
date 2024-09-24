@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/global_breakpoint_xl';
+import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_xl';
 import { debounce, canUseDOM } from '../../helpers/util';
 import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '../Drawer';
 import { PageBreadcrumb, PageBreadcrumbProps } from './PageBreadcrumb';

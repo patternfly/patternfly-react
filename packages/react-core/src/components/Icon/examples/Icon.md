@@ -1,7 +1,7 @@
 ---
 id: Icon
 section: components
-cssPrefix: pf-v5-c-icon
+cssPrefix: pf-v6-c-icon
 propComponents: ['Icon']
 ---
 

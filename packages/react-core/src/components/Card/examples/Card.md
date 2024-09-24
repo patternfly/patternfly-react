@@ -1,7 +1,7 @@
 ---
 id: Card
 section: components
-cssPrefix: pf-v5-c-card
+cssPrefix: pf-v6-c-card
 propComponents:
   [
     'Card',

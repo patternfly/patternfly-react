@@ -1,7 +1,7 @@
 ---
 id: Skip to content
 section: components
-cssPrefix: pf-v5-c-skip-to-content
+cssPrefix: pf-v6-c-skip-to-content
 propComponents: ['SkipToContent']
 ---
 

@@ -25,6 +25,8 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
   options?: React.ReactElement[];
   /** Flag indicating the select input is disabled */
   isDisabled?: boolean;
+  /** Flag indicating the toggle gets placeholder styles **/
+  isPlaceholder?: boolean;
   /** Current selected options to display as the read only value of the table cell */
   selections?: any | any[];
   /** Flag indicating the select menu is open */
@@ -42,17 +44,14 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
   onSelect = () => {},
   clearSelection,
   isOpen = false,
+  isPlaceholder = false,
   onToggle = () => {},
   selections = [''],
   options = [] as React.ReactElement[],
   props
 }: IEditableSelectInputCell) => {
-  const onSelectHandler = (
-    event: React.MouseEvent | React.ChangeEvent,
-    newValue: any | any[]
-    //    isPlaceholder: boolean
-  ) => {
-    onSelect(event, newValue, rowIndex, cellIndex);
+  const onSelectHandler = (event: React.MouseEvent | React.ChangeEvent, newValue: any | any[]) => {
+    onSelect(event, newValue, rowIndex, cellIndex, isPlaceholder);
   };
 
   const onClear = (event: React.MouseEvent) => {
@@ -61,16 +60,16 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
 
   const select = (
     <Select
-      {...props.editableSelectProps}
       onSelect={onSelectHandler}
       {...(clearSelection && { onClear })}
       isOpen={isOpen}
       selected={selections}
       toggle={(toggleRef: any) => (
-        <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen}>
+        <MenuToggle ref={toggleRef} onClick={onToggle} isExpanded={isOpen} isPlaceholder={isPlaceholder}>
           {isOpen ? 'Expanded' : 'Collapsed'}
         </MenuToggle>
       )}
+      {...props.editableSelectProps}
     >
       <SelectList>{options}</SelectList>
     </Select>

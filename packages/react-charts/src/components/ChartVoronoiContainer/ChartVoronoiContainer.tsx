@@ -249,7 +249,6 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
   );
 };
 ChartVoronoiContainer.displayName = 'ChartVoronoiContainer';
-ChartVoronoiContainer.defaultProps = (VictoryVoronoiContainer as any).defaultProps;
 
 // Note: VictoryVoronoiContainer.defaultEvents & VictoryContainer.role must be hoisted
 hoistNonReactStatics(ChartVoronoiContainer, VictoryVoronoiContainer);

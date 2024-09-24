@@ -1,7 +1,7 @@
 ---
 id: Navigation
 section: components
-cssPrefix: pf-v5-c-nav
+cssPrefix: pf-v6-c-nav
 propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'NavExpandable']
 ouia: true
 ---

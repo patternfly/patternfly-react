@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.14...@patternfly/react-core@6.0.0-prerelease.15) (2024-09-23)
+
+### Bug Fixes
+
+- **table:** update v5 to v6 for docs, description list, draggable, Th ([#10968](https://github.com/patternfly/patternfly-react/issues/10968)) ([db72b52](https://github.com/patternfly/patternfly-react/commit/db72b5287c18d023c094be247a46f9352d50fd7b))
+
+### Features
+
+- **DataList:** use Checkbox in DataListCheck ([#10916](https://github.com/patternfly/patternfly-react/issues/10916)) ([bd61a94](https://github.com/patternfly/patternfly-react/commit/bd61a9423fbe8ef41072ce993b5d0ea8dfbd7080))
+
+# [6.0.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.13...@patternfly/react-core@6.0.0-prerelease.14) (2024-09-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.0.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.12...@patternfly/react-core@6.0.0-prerelease.13) (2024-09-19)
+
+### Bug Fixes
+
+- **Modal:** Prevent auto aria-labelledby if aria-label is passed ([#11012](https://github.com/patternfly/patternfly-react/issues/11012)) ([5bb4c1f](https://github.com/patternfly/patternfly-react/commit/5bb4c1fb500315b85c54c22b79846f90805cfd5d))
+
+# [6.0.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.11...@patternfly/react-core@6.0.0-prerelease.12) (2024-09-18)
+
+### Bug Fixes
+
+- **generate tokens:** prefix tokens with a t\_ ([#11002](https://github.com/patternfly/patternfly-react/issues/11002)) ([0dac6b8](https://github.com/patternfly/patternfly-react/commit/0dac6b88b9f560975627c80c6e8ab816d8b78ac9))
+
+# [6.0.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.10...@patternfly/react-core@6.0.0-prerelease.11) (2024-09-17)
+
+### Bug Fixes
+
+- **empty state:** Do not require titleText prop) ([#10987](https://github.com/patternfly/patternfly-react/issues/10987)) ([c7f037a](https://github.com/patternfly/patternfly-react/commit/c7f037ac57b58b6955631f4130466bbcfdaecfba))
+
+# [6.0.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.9...@patternfly/react-core@6.0.0-prerelease.10) (2024-09-16)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.0.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.8...@patternfly/react-core@6.0.0-prerelease.9) (2024-09-13)
+
+### Bug Fixes
+
+- **tree view:** Fix with action items example so menu is closed by default ([#10947](https://github.com/patternfly/patternfly-react/issues/10947)) ([26525f0](https://github.com/patternfly/patternfly-react/commit/26525f0f2594a12f43053ab9d9cf781a464b0a04))
+
+# [6.0.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.7...@patternfly/react-core@6.0.0-prerelease.8) (2024-09-13)
+
+### Bug Fixes
+
+- **slider:** Add tabular number font styling to tooltips ([#10901](https://github.com/patternfly/patternfly-react/issues/10901)) ([b41061c](https://github.com/patternfly/patternfly-react/commit/b41061c3b83e5f2a5e865170543a63d307ecaa17))
+
+# [6.0.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.6...@patternfly/react-core@6.0.0-prerelease.7) (2024-09-12)
+
+### Features
+
+- **Content:** add editorial support ([#10881](https://github.com/patternfly/patternfly-react/issues/10881)) ([c671921](https://github.com/patternfly/patternfly-react/commit/c67192152b1e319228a99626aea735dc1505032a))
+
 # [6.0.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.5...@patternfly/react-core@6.0.0-prerelease.6) (2024-09-12)
 
 ### Bug Fixes

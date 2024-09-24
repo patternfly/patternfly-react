@@ -1,4 +1,4 @@
-xdescribe('Table Simple Test', () => {
+describe('Table Simple Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/table-editable-demo-nav-link');
   });
@@ -20,9 +20,9 @@ xdescribe('Table Simple Test', () => {
       '.pf-m-inline-editable > [data-label="Text input col 1"] > .pf-v6-c-inline-edit__input > .pf-v6-c-form-control > input'
     ).type('test');
     cy.get(
-      '.pf-m-inline-editable > [data-label="Dropdown col 5"] > .pf-v6-c-inline-edit__input > .pf-v6-c-select > .pf-v6-c-select__toggle > .pf-v6-c-select__toggle-button'
+      '.pf-m-inline-editable > [data-label="Dropdown col 5"] > .pf-v6-c-inline-edit__input > .pf-v6-c-menu-toggle > .pf-v6-c-menu-toggle__controls'
     ).click();
-    cy.get(':nth-child(4) > .pf-v6-c-check__label').click();
+    cy.get('#uniqueIdRow1Cell5Option3').click();
     cy.get(
       '.pf-m-inline-editable > .pf-v6-c-table__inline-edit-action > .pf-v6-c-inline-edit__group > :nth-child(1) > .pf-v6-c-button'
     ).click();
@@ -46,9 +46,9 @@ xdescribe('Table Simple Test', () => {
       .clear()
       .type('xyz');
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(2) > [data-label="Dropdown col 5"] > .pf-v6-c-inline-edit__input > .pf-v6-c-select > .pf-v6-c-select__toggle > .pf-v6-c-select__toggle-button'
+      '.pf-m-inline-editable > [data-label="Dropdown col 5"] > .pf-v6-c-inline-edit__input > .pf-v6-c-menu-toggle > .pf-v6-c-menu-toggle__controls'
     ).click();
-    cy.get('#uniqueIdRow2Cell5Option3 > .pf-v6-c-select__menu-item').click();
+    cy.get('#uniqueIdRow2Cell5Option3').click();
     cy.get(
       '.pf-m-inline-editable:nth-of-type(2) > .pf-v6-c-table__inline-edit-action > .pf-v6-c-inline-edit__group > :nth-child(2) > .pf-v6-c-button'
     ).click();

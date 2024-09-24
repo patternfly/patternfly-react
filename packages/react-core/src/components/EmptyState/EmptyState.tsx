@@ -36,7 +36,7 @@ export interface EmptyStateProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the title inside empty state header */
   titleClassName?: string;
   /** Text of the title inside empty state header, will be wrapped in headingLevel */
-  titleText: React.ReactNode;
+  titleText?: React.ReactNode;
   /** Empty state icon element to be rendered. Can also be a spinner component */
   icon?: React.ComponentType<any>;
   /** The heading level to use, default is h1 */

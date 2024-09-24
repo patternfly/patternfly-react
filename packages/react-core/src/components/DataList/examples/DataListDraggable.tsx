@@ -76,7 +76,12 @@ export const DataListDraggable: React.FunctionComponent = () => {
                       aria-describedby={`description-${uniqueId}`}
                       aria-pressed="false"
                     />
-                    <DataListCheck aria-labelledby={`draggable-${id}`} name={id} otherControls />
+                    <DataListCheck
+                      id={`check-draggable-${id}`}
+                      aria-labelledby={`draggable-${id}`}
+                      name={id}
+                      otherControls
+                    />
                   </DataListControl>
                   <DataListItemCells
                     dataListCells={[

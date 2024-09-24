@@ -8,7 +8,7 @@ const getItems = (count: number): DraggableObject[] =>
     content: (
       <>
         <DataListControl>
-          <DataListCheck aria-labelledby={`item-${idx}`} name={`item-${idx}`} otherControls />
+          <DataListCheck id={`check-drag-${idx}`} aria-labelledby={`item-${idx}`} name={`item-${idx}`} otherControls />
         </DataListControl>
         <DataListItemCells
           dataListCells={[

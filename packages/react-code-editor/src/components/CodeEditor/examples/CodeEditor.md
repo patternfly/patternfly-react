@@ -1,7 +1,7 @@
 ---
 id: Code editor
 section: components
-cssPrefix: pf-c-code-editor
+cssPrefix: pf-v6-c-code-editor
 propComponents: ['CodeEditor', 'CodeEditorControl', 'Popover']
 ---
 

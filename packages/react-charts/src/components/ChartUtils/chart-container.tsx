@@ -26,25 +26,30 @@ import { LineSegment } from 'victory-core';
  * @public
  */
 export const createContainer = (behaviorA: ContainerType, behaviorB: ContainerType) => {
-  const container: any = victoryCreateContainer(behaviorA, behaviorB);
+  const Container: any = victoryCreateContainer(behaviorA, behaviorB);
   const isCursor = behaviorA === 'cursor' || behaviorB === 'cursor';
   const isVoronoi = behaviorA === 'voronoi' || behaviorB === 'voronoi';
 
-  if (!container?.defaultProps) {
-    container.defaultProps = {};
-  }
-  if (isCursor) {
-    container.defaultProps.cursorLabelComponent = <ChartLabel textAnchor="start" />;
-    container.defaultProps.cursorComponent = (
-      <LineSegment
-        style={{
-          stroke: chart_container_cursor_line_Fill.var
-        }}
-      />
-    );
-  }
-  if (isVoronoi) {
-    container.defaultProps.labelComponent = <ChartCursorTooltip />;
-  }
-  return container;
+  const containerWrapper = (props: any) => {
+    const containerProps = {
+      ...(isCursor && {
+        cursorLabelComponent: <ChartLabel textAnchor="start" />,
+        cursorComponent: (
+          <LineSegment
+            style={{
+              stroke: chart_container_cursor_line_Fill.var
+            }}
+          />
+        )
+      }),
+      ...(isVoronoi && { labelComponent: <ChartCursorTooltip /> }),
+      ...props
+    };
+    return <Container {...containerProps} />;
+  };
+  containerWrapper.defaultEvents = Container.defaultEvents;
+  containerWrapper.displayName = Container.displayName;
+  containerWrapper.role = Container.role;
+
+  return containerWrapper;
 };

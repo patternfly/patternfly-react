@@ -1,6 +1,6 @@
 ---
 id: Table
-cssPrefix: pf-c-table
+cssPrefix: pf-v6-c-table
 section: components
 propComponents:
   [
@@ -60,7 +60,7 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
 import inlineEditStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import global_background_color_secondary_default from '@patternfly/react-tokens/dist/esm/global_background_color_secondary_default';
+import t_global_background_color_secondary_default from '@patternfly/react-tokens/dist/esm/t_global_background_color_secondary_default';
 
 ## Table examples
 
@@ -172,6 +172,7 @@ This selectable rows feature is intended for use when a table is used to present
 This example shows a table with editable rows. Cells in a row can be edited after clicking on the edit icon.
 
 ```ts file="TableEditable.tsx"
+
 ```
 
 ### Actions

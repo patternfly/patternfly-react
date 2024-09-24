@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
+import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { info, sortable, sortableFavorites, selectable, collapsible, cellWidth, Visibility, classNames } from './utils';
 import { ThInfoType, ThSelectType, ThExpandType, ThSortType, formatterValueType } from './base/types';
 import { mergeProps } from './base/merge-props';
@@ -113,15 +114,18 @@ const ThBase: React.FunctionComponent<ThProps> = ({
     }
     onMouseEnterProp(event);
   };
+
   let sortParams = null;
   if (sort) {
     if (sort.isFavorites) {
       sortParams = sortableFavorites({
-        onSort: sort?.onSort,
+        onSort: sort.onSort,
         columnIndex: sort.columnIndex,
         sortBy: sort.sortBy,
         tooltip: tooltip as string,
-        tooltipProps
+        tooltipProps,
+        ariaLabel: sort['aria-label'],
+        favoriteButtonProps: sort.favoriteButtonProps
       })();
     } else {
       sortParams = sortable(children as IFormatterValueType, {
@@ -137,6 +141,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
       });
     }
   }
+
   const selectParams = select
     ? selectable(children as IFormatterValueType, {
         rowData: {
@@ -217,6 +222,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         hasRightBorder && scrollStyles.modifiers.borderRight,
         hasLeftBorder && scrollStyles.modifiers.borderLeft,
         modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap'],
+        sort?.favoriteButtonProps?.favorited && styles.modifiers.favorited,
         mergedClassName
       )}
       {...mergedProps}
@@ -230,7 +236,8 @@ const ThBase: React.FunctionComponent<ThProps> = ({
         } as React.CSSProperties
       })}
     >
-      {transformedChildren || (screenReaderText && <span className="pf-v5-screen-reader">{screenReaderText}</span>)}
+      {transformedChildren ||
+        (screenReaderText && <span className={accessibilityStyles.screenReader}>{screenReaderText}</span>)}
     </MergedComponent>
   );
 

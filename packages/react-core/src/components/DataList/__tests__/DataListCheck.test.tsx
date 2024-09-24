@@ -15,7 +15,9 @@ it('does not throw a "A component is changing an uncontrolled input of type chec
   const ControlledDataListCheck = () => {
     const [checked, setChecked] = React.useState(false);
 
-    return <DataListCheck isChecked={checked} onChange={() => setChecked(!checked)} aria-labelledby={'string'} />;
+    return (
+      <DataListCheck id="test" isChecked={checked} onChange={() => setChecked(!checked)} aria-labelledby={'string'} />
+    );
   };
 
   render(<ControlledDataListCheck />);

@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.7...@patternfly/react-integration@6.0.0-prerelease.8) (2024-09-23)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [6.0.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.6...@patternfly/react-integration@6.0.0-prerelease.7) (2024-09-20)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [6.0.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.5...@patternfly/react-integration@6.0.0-prerelease.6) (2024-09-20)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [6.0.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.4...@patternfly/react-integration@6.0.0-prerelease.5) (2024-09-18)
+
+### Bug Fixes
+
+- **generate tokens:** prefix tokens with a t\_ ([#11002](https://github.com/patternfly/patternfly-react/issues/11002)) ([0dac6b8](https://github.com/patternfly/patternfly-react/commit/0dac6b88b9f560975627c80c6e8ab816d8b78ac9))
+
+# [6.0.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.3...@patternfly/react-integration@6.0.0-prerelease.4) (2024-09-13)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [6.0.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.2...@patternfly/react-integration@6.0.0-prerelease.3) (2024-09-12)
+
+### Features
+
+- **DualListSelector:** new demos and integration tests ([#10829](https://github.com/patternfly/patternfly-react/issues/10829)) ([09d72ea](https://github.com/patternfly/patternfly-react/commit/09d72eaf058fe8e5be2884f8075f443b5576cb4d))
+
 # [6.0.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.1...@patternfly/react-integration@6.0.0-prerelease.2) (2024-09-11)
 
 **Note:** Version bump only for package @patternfly/react-integration

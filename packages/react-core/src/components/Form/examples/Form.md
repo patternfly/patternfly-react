@@ -2,7 +2,7 @@
 id: Form
 section: components
 subsection: forms
-cssPrefix: pf-v5-c-form
+cssPrefix: pf-v6-c-form
 propComponents:
   [
     'ActionGroup',

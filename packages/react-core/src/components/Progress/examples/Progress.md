@@ -1,7 +1,7 @@
 ---
 id: Progress
 section: components
-cssPrefix: pf-v5-c-progress
+cssPrefix: pf-v6-c-progress
 propComponents: ['Progress']
 ---
 

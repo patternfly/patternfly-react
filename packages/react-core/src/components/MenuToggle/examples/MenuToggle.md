@@ -2,7 +2,7 @@
 id: Menu toggle
 section: components
 subsection: menus
-cssPrefix: pf-v5-c-menu-toggle
+cssPrefix: pf-v6-c-menu-toggle
 propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox', 'SplitButtonOptions']
 ---
 
@@ -215,19 +215,19 @@ Variant styling can be applied to split button toggles to adjust their appearanc
 
 ### Split toggle with labeled checkbox
 
-To add a text label to a split button toggle, pass `children` to the `<MenuToggle>` component.
+You can allow users to select a toggle checkbox by clicking either the checkbox or the text label.
 
-```ts file='MenuToggleSplitButtonCheckboxWithToggleText.tsx'
+To link a split toggle label to the toggle's checkbox, pass both the label and the `<MenuToggleCheckbox>` component to `splitButtonOptions`. 
+
+```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
 
 ```
 
-### Split toggle with checkbox and toggle text label
+### Split toggle with checkbox and toggle text 
 
-You can allow users to select a toggle checkbox by clicking either the checkbox or the text label.
+To link a split toggle label to the toggle button itself, pass the label to the `<MenuToggle>` component, instead of `splitButtonOptions`.
 
-To do so, pass `children` to the `<MenuToggleCheckbox>` component. When the menu toggle text is clicked, the checkbox's `onChange` callback will be triggered.
-
-```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
+```ts file='MenuToggleSplitButtonCheckboxWithToggleText.tsx'
 
 ```
 

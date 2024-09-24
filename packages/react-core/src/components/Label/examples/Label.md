@@ -1,7 +1,7 @@
 ---
 id: Label
 section: components
-cssPrefix: ['pf-v5-c-label', 'pf-v5-c-label-group']
+cssPrefix: ['pf-v6-c-label', 'pf-v6-c-label-group']
 propComponents: ['Label', 'LabelGroup']
 ---
 

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { RefObject } from 'react';
-import globalBreakpointMd from '@patternfly/react-tokens/dist/esm/global_breakpoint_md';
-import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpoint_lg';
-import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/global_breakpoint_xl';
-import globalBreakpoint2xl from '@patternfly/react-tokens/dist/esm/global_breakpoint_2xl';
+import globalBreakpointMd from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_md';
+import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
+import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_xl';
+import globalBreakpoint2xl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_2xl';
 
 export interface ToolbarContextProps {
   isExpanded: boolean;

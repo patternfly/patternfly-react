@@ -1,7 +1,7 @@
 ---
 id: Progress stepper
 section: components
-cssPrefix: pf-v5-c-progress-stepper
+cssPrefix: pf-v6-c-progress-stepper
 propComponents: ['ProgressStepper', 'ProgressStep']
 ---
 

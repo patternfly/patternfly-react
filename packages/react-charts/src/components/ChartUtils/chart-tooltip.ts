@@ -92,7 +92,7 @@ export const getCursorTooltipPoniterOrientation = ({
  * Returns props associated with legend data
  * @private
  */
-export const getLegendTooltipDataProps = (defaultProps: ChartLegendProps) =>
+export const getLegendTooltipDataProps = (props: ChartLegendProps) =>
   merge(
     {
       borderPadding: 0,
@@ -112,7 +112,7 @@ export const getLegendTooltipDataProps = (defaultProps: ChartLegendProps) =>
         }
       }
     },
-    { ...defaultProps }
+    { ...props }
   );
 
 /**

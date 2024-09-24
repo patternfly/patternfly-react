@@ -1,7 +1,7 @@
 ---
 id: Badge
 section: components
-cssPrefix: pf-v5-c-badge
+cssPrefix: pf-v6-c-badge
 propComponents: ['Badge']
 ---
 

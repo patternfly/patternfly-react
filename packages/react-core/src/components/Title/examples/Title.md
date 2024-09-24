@@ -1,7 +1,7 @@
 ---
 id: Title
 section: components
-cssPrefix: pf-v5-c-title
+cssPrefix: pf-v6-c-title
 propComponents: ['Title']
 ---
 
