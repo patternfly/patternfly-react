@@ -16,14 +16,11 @@ import {
   Sidebar,
   SidebarContent,
   SidebarPanel,
-  getResizeObserver,
   DrawerContext
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
-import breadcrumbStyles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 
-const JumpLinksWrapper = ({ offsetHeight, headings }) => {
+const JumpLinksWrapper = ({ headings }) => {
   const { drawerContentRef } = React.useContext(DrawerContext);
 
   return (
@@ -31,7 +28,6 @@ const JumpLinksWrapper = ({ offsetHeight, headings }) => {
       isVertical={true}
       label="Jump to section"
       scrollableRef={drawerContentRef}
-      offset={offsetHeight}
       expandable={{ default: 'expandable', md: 'nonExpandable' }}
     >
       {headings.map((heading) => (
@@ -47,24 +43,8 @@ const JumpLinksWrapper = ({ offsetHeight, headings }) => {
 export const JumpLinksWithDrawer = () => {
   const headings = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];
 
-  const [offsetHeight, setOffsetHeight] = React.useState(0);
   const [isExpanded, setIsExpanded] = React.useState(false);
   const drawerRef = React.useRef();
-
-  React.useEffect(() => {
-    const masthead = document.getElementsByClassName(mastheadStyles.masthead)[0];
-    const breadcrumb = document.getElementsByClassName(breadcrumbStyles.breadcrumb)[0];
-    const drawerToggleSection = document.getElementById('drawer-toggle');
-    setOffsetHeight(masthead.offsetHeight + breadcrumb.offsetHeight + drawerToggleSection.offsetHeight);
-
-    getResizeObserver(
-      masthead,
-      () => {
-        setOffsetHeight(masthead.offsetHeight + breadcrumb.offsetHeight + drawerToggleSection.offsetHeight);
-      },
-      true
-    );
-  }, []);
 
   const onCloseClick = () => {
     setIsExpanded(false);
@@ -95,14 +75,14 @@ export const JumpLinksWithDrawer = () => {
             <Sidebar>
               <SidebarPanel variant="sticky">
                 <PageSection>
-                  <JumpLinksWrapper offsetHeight={offsetHeight} headings={headings} />
+                  <JumpLinksWrapper headings={headings} />
                 </PageSection>
               </SidebarPanel>
               <SidebarContent>
                 <PageSection id="drawer-toggle" stickyOnBreakpoint={{ default: 'top' }}>
                   <Button onClick={onToggleClick}>Toggle drawer</Button>
                 </PageSection>
-                <PageSection>
+                <PageSection hasOverflowScroll>
                   <Content>
                     {headings.map((heading) => (
                       <div key={heading} style={{ maxWidth: '800px', marginBottom: '32px' }}>
