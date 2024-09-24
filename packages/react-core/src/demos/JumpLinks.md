@@ -4,6 +4,7 @@ section: components
 ---
 
 import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
+import breadcrumbStyles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 ## Demos
