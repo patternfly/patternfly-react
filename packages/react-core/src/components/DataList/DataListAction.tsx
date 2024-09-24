@@ -36,7 +36,7 @@ export const DataListAction: React.FunctionComponent<DataListActionProps> = ({
   ...props
 }: DataListActionProps) => (
   <div className={css(styles.dataListItemAction, formatBreakpointMods(visibility, styles), className)} {...props}>
-    <div className={css(styles.dataListAction)}>{children}</div>
+    {children}
   </div>
 );
 DataListAction.displayName = 'DataListAction';
