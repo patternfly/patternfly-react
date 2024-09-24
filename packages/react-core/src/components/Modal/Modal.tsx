@@ -19,6 +19,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   children: React.ReactNode;
   /** Additional classes added to the modal. */
   className?: string;
+  /** Additional classes added to the modal backdrop. */
+  backdropClassName?: string;
   /** Flag to disable focus trap. */
   disableFocusTrap?: boolean;
   /** The element to focus when the modal opens. By default the first
@@ -182,6 +184,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
         ouiaSafe={ouiaSafe}
         position={position}
         elementToFocus={elementToFocus}
+        backdropClassName={props.backdropClassName}
         {...props}
       />,
       container

@@ -20,6 +20,8 @@ export interface ModalContentProps extends OUIAProps {
   children: React.ReactNode;
   /** Additional classes added to the modal box. */
   className?: string;
+  /** Additional classes added to the modal backdrop. */
+  backdropClassName?: string;
   /** Flag to disable focus trap. */
   disableFocusTrap?: boolean;
   /** The element to focus when the modal opens. By default the first
@@ -47,6 +49,7 @@ export interface ModalContentProps extends OUIAProps {
 }
 
 export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
+  backdropClassName,
   children,
   className,
   isOpen = false,
@@ -106,7 +109,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     </ModalBox>
   );
   return (
-    <Backdrop>
+    <Backdrop className={css(backdropClassName)}>
       <FocusTrap
         active={!disableFocusTrap}
         focusTrapOptions={{
