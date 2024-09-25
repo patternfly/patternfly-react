@@ -169,12 +169,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                     </DataListCell>
                   ]}
                 />
-                <DataListAction
-                  aria-labelledby="ex-item1 ex-action1"
-                  id="ex-action1"
-                  aria-label="Actions"
-                  isPlainButtonAction
-                >
+                <DataListAction aria-labelledby="ex-item1 ex-action1" id="ex-action1" aria-label="Actions">
                   <Dropdown
                     isOpen={isOpen1}
                     onSelect={onSelect1}
@@ -251,12 +246,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                     </DataListCell>
                   ]}
                 />
-                <DataListAction
-                  aria-labelledby="ex-item2 ex-action2"
-                  id="ex-action2"
-                  aria-label="Actions"
-                  isPlainButtonAction
-                >
+                <DataListAction aria-labelledby="ex-item2 ex-action2" id="ex-action2" aria-label="Actions">
                   <Dropdown
                     isOpen={isOpen2}
                     onSelect={onSelect2}
@@ -333,12 +323,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                     </DataListCell>
                   ]}
                 />
-                <DataListAction
-                  aria-labelledby="ex-item3 ex-action3"
-                  id="ex-action3"
-                  aria-label="Actions"
-                  isPlainButtonAction
-                >
+                <DataListAction aria-labelledby="ex-item3 ex-action3" id="ex-action3" aria-label="Actions">
                   <Dropdown
                     isOpen={isOpen3}
                     onSelect={onSelect3}

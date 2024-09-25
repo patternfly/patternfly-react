@@ -92,7 +92,6 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                 aria-labelledby="width-ex2-item1 width-ex2-action1"
                 id="width-ex2-action1"
                 aria-label="Actions"
-                isPlainButtonAction
               >
                 <Dropdown
                   popperProps={{ position: 'right' }}
@@ -167,7 +166,6 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                 aria-labelledby="width-ex3-item1 width-ex3-action1"
                 id="width-ex3-action1"
                 aria-label="Actions"
-                isPlainButtonAction
               >
                 <Dropdown
                   popperProps={{ position: 'right' }}

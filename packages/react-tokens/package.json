@@ -29,7 +29,7 @@
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "6.0.0-prerelease.7",
+    "@patternfly/patternfly": "6.0.0-prerelease.13",
     "css": "^3.0.0",
     "fs-extra": "^11.2.0"
   }

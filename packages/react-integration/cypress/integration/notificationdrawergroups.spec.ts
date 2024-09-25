@@ -59,10 +59,10 @@ describe('Notification Drawer Groups Demo Test', () => {
     cy.get('#toggle-id-0').then((toggleButton: JQuery<HTMLButtonElement>) => {
       cy.clock();
       cy.wrap(toggleButton).type('{enter}', { waitForAnimations: true });
-      cy.tick(200);
+      cy.tick(1000);
       cy.get('.notification-0.pf-v6-c-menu').should('exist');
       cy.wrap(toggleButton).type('{esc}', { waitForAnimations: true });
-      cy.tick(200);
+      cy.tick(1000);
       cy.get('.notification-0.pf-v6-c-menu').should('not.exist');
     });
     // Verify the group header keyboard interactivity opens/closes the whole group

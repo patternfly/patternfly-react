@@ -69,7 +69,6 @@ class DataListDemo extends React.Component<DataListProps, DataListState> {
               aria-labelledby="selectable-action-item1 selectable-action-action1"
               id="selectable-action-action1"
               aria-label="Actions"
-              isPlainButtonAction
             >
               <Dropdown
                 id="dropdown"

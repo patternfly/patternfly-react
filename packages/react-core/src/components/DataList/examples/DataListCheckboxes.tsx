@@ -73,7 +73,6 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
             aria-labelledby="check-action-item1 check-action-action1"
             id="check-action-action1"
             aria-label="Actions"
-            isPlainButtonAction
           >
             <Dropdown
               popperProps={{ position: 'right' }}
@@ -129,7 +128,6 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
             aria-labelledby="check-action-item2 check-action-action2"
             id="check-action-action2"
             aria-label="Actions"
-            isPlainButtonAction
           >
             <Dropdown
               popperProps={{ position: 'right' }}
@@ -194,7 +192,6 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
             aria-labelledby="check-action-item3 check-action-action3"
             id="check-action-action3"
             aria-label="Actions"
-            isPlainButtonAction
           >
             <Dropdown
               popperProps={{ position: 'right' }}
