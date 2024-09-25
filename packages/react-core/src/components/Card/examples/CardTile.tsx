@@ -25,7 +25,7 @@ export const CardTile: React.FunctionComponent = () => {
             isHidden: true
           }}
         >
-          <Flex>
+          <Flex gap={{ default: 'gapSm' }} alignItems={{ default: 'alignItemsCenter' }}>
             <PlusIcon />
             <b>Tile header</b>
           </Flex>
@@ -43,7 +43,7 @@ export const CardTile: React.FunctionComponent = () => {
             isHidden: true
           }}
         >
-          <Flex>
+          <Flex gap={{ default: 'gapSm' }} alignItems={{ default: 'alignItemsCenter' }}>
             <PlusIcon />
             <b>Tile header</b>
           </Flex>
@@ -61,7 +61,7 @@ export const CardTile: React.FunctionComponent = () => {
             isHidden: true
           }}
         >
-          <Flex>
+          <Flex gap={{ default: 'gapSm' }} alignItems={{ default: 'alignItemsCenter' }}>
             <PlusIcon />
             <b>Tile header (disabled)</b>
           </Flex>
