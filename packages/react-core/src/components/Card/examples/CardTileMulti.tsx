@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardBody, Gallery } from '@patternfly/react-core';
+import { Card, CardHeader, CardBody, Gallery, Flex } from '@patternfly/react-core';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 export const CardTileMulti: React.FunctionComponent = () => {
@@ -38,8 +38,10 @@ export const CardTileMulti: React.FunctionComponent = () => {
             isHidden: true
           }}
         >
-          <PlusIcon />
-          <b>Tile header</b>
+          <Flex>
+            <PlusIcon />
+            <b>Tile header</b>
+          </Flex>
         </CardHeader>
         <CardBody>Tile content and description</CardBody>
       </Card>
@@ -53,8 +55,10 @@ export const CardTileMulti: React.FunctionComponent = () => {
             isHidden: true
           }}
         >
-          <PlusIcon />
-          <b>Tile header</b>
+          <Flex>
+            <PlusIcon />
+            <b>Tile header</b>
+          </Flex>
         </CardHeader>
         <CardBody>Tile content and description</CardBody>
       </Card>
@@ -68,8 +72,10 @@ export const CardTileMulti: React.FunctionComponent = () => {
             isHidden: true
           }}
         >
-          <PlusIcon />
-          <b>Tile header (disabled)</b>
+          <Flex>
+            <PlusIcon />
+            <b>Tile header (disabled)</b>
+          </Flex>
         </CardHeader>
         <CardBody>Tile content and description</CardBody>
       </Card>
