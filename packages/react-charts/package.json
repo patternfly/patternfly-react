@@ -60,7 +60,7 @@
     "build:single:packages": "node ../../scripts/build-single-packages.js --config single-packages.config.json"
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.7",
+    "@types/lodash": "^4.17.9",
     "fs-extra": "^11.2.0"
   }
 }
