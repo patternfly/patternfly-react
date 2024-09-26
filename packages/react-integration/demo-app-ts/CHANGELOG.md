@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.20...demo-app-ts@6.0.0-prerelease.21) (2024-09-26)
+
+### Bug Fixes
+
+- **datalist:** actions wrapper ([#10939](https://github.com/patternfly/patternfly-react/issues/10939)) ([833465f](https://github.com/patternfly/patternfly-react/commit/833465f0ea0ef48cd3a02e307c0dd559a8f4e880))
+
 # [6.0.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.19...demo-app-ts@6.0.0-prerelease.20) (2024-09-24)
 
 **Note:** Version bump only for package demo-app-ts

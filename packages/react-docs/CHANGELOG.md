@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-prerelease.27...@patternfly/react-docs@7.0.0-prerelease.28) (2024-09-26)
+
+### Bug Fixes
+
+- **datalist:** actions wrapper ([#10939](https://github.com/patternfly/patternfly-react/issues/10939)) ([833465f](https://github.com/patternfly/patternfly-react/commit/833465f0ea0ef48cd3a02e307c0dd559a8f4e880))
+
 # [7.0.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.0.0-prerelease.26...@patternfly/react-docs@7.0.0-prerelease.27) (2024-09-24)
 
 **Note:** Version bump only for package @patternfly/react-docs
