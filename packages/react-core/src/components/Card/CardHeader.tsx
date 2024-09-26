@@ -54,6 +54,8 @@ export interface CardHeaderSelectableActionsObject {
    * the isSelected prop on the card component instead.
    */
   isChecked?: boolean;
+  /** Flag indicating the action is hidden */
+  isHidden?: boolean;
 }
 
 export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
@@ -133,7 +135,8 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
 
         const SelectableCardInput = selectableActions?.variant === 'single' ? Radio : Checkbox;
         const getSelectableProps = () => ({
-          className: 'pf-m-standalone',
+          className: css('pf-m-standalone'),
+          inputClassName: css(selectableActions?.isHidden && 'pf-v6-screen-reader'),
           label: <></>,
           'aria-label': selectableActions.selectableActionAriaLabel,
           'aria-labelledby': selectableActions.selectableActionAriaLabelledby,
@@ -150,7 +153,11 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
         const getClickableProps = () => {
           const isDisabledLinkCard = isCardDisabled && isClickableLinkCard;
           const baseProps = {
-            className: css('pf-v6-c-card__clickable-action', isDisabledLinkCard && styles.modifiers.disabled),
+            className: css(
+              'pf-v6-c-card__clickable-action',
+              isDisabledLinkCard && styles.modifiers.disabled,
+              selectableActions?.isHidden && 'pf-v6-screen-reader'
+            ),
             id: selectableActions.selectableActionId,
             'aria-label': selectableActions.selectableActionAriaLabel,
             'aria-labelledby': selectableActions.selectableActionAriaLabelledby,

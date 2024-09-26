@@ -19,6 +19,7 @@ ouia: true
 import pfLogo from '../../assets/PF-HorizontalLogo-Color.svg';
 import pfLogoSmall from '../../assets/PF-IconLogo.svg';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 ## Examples
 
@@ -176,5 +177,27 @@ An image can be placed in the card header to show users an icon beside the expan
 Dividers can be placed between sections of the card.
 
 ```ts file='./CardWithDividers.tsx'
+
+```
+
+## Cards as tiles
+
+Sets of selectable cards can be used as tiles, which are static options that users can select.
+
+They can be either single selectable or multi selectable, by passing the `variant` property to the `selectableActions` object. You can also toggle the visibility of the radio or checkbox by passing the `isHidden` property to the `selectableActions` object.
+
+### Single selectable tiles
+
+To prevent users from selecting more than 1 tile in a set, set `variant` to "single" within the `selectableActions` object of `<CardHeader>`.
+
+```ts file='./CardTile.tsx'
+
+```
+
+### Multi selectable tiles
+
+To allow users to select more than 1 tile in a set, do not set `variant` within the `selectableActions` object of `<CardHeader>`.
+
+```ts file='./CardTileMulti.tsx'
 
 ```
