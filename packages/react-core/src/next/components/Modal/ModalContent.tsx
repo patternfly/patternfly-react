@@ -70,19 +70,14 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     return null;
   }
 
-  const ariaLabelledbyFormatted = (): string => {
-    const idRefList: string[] = [];
-    if (ariaLabel && boxId) {
-      idRefList.push(ariaLabel && boxId);
-    }
+  const getAriaLabelledBy = (): string | undefined => {
     if (ariaLabelledby) {
-      idRefList.push(ariaLabelledby);
+      return ariaLabelledby;
     }
-    if (idRefList.length === 0) {
+    if (ariaLabel) {
       return undefined;
-    } else {
-      return idRefList.join(' ');
     }
+    return boxId;
   };
 
   const modalBox = (
@@ -92,7 +87,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       position={position}
       positionOffset={positionOffset}
       aria-label={ariaLabel}
-      aria-labelledby={ariaLabelledbyFormatted()}
+      aria-labelledby={getAriaLabelledBy()}
       aria-describedby={ariaDescribedby}
       {...getOUIAProps(ModalContent.displayName, ouiaId, ouiaSafe)}
       style={

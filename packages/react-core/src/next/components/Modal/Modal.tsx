@@ -114,12 +114,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   isEmpty = (value: string | null | undefined) => value === null || value === undefined || value === '';
 
   componentDidMount() {
-    const {
-      appendTo,
-      'aria-describedby': ariaDescribedby,
-      'aria-label': ariaLabel,
-      'aria-labelledby': ariaLabelledby
-    } = this.props;
+    const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
     const container = document.createElement('div');
     this.setState({ container });
@@ -130,11 +125,6 @@ class Modal extends React.Component<ModalProps, ModalState> {
       target.classList.add(css(styles.backdropOpen));
     } else {
       target.classList.remove(css(styles.backdropOpen));
-    }
-
-    if (!ariaDescribedby && !ariaLabel && !ariaLabelledby) {
-      // eslint-disable-next-line no-console
-      console.error('Modal: Specify at least one of: aria-describedby, aria-label, aria-labelledby.');
     }
   }
 
