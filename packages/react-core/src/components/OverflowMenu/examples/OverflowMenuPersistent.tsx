@@ -10,8 +10,7 @@ import {
   Button,
   ButtonVariant,
   Dropdown,
-  DropdownList,
-  Icon
+  DropdownList
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
@@ -63,11 +62,7 @@ export const OverflowMenuPersistent: React.FunctionComponent = () => {
               variant="plain"
               onClick={onToggle}
               isExpanded={isOpen}
-              icon={
-                <Icon>
-                  <EllipsisVIcon />
-                </Icon>
-              }
+              icon={<EllipsisVIcon />}
             />
           )}
           isOpen={isOpen}

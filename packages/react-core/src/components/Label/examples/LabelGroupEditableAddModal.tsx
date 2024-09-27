@@ -5,7 +5,6 @@ import {
   Button,
   Form,
   FormGroup,
-  Icon,
   TextInput,
   Menu,
   MenuContent,
@@ -201,12 +200,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
   };
 
   const iconToggle = (
-    <MenuToggle
-      ref={iconToggleRef}
-      onClick={onIconToggleClick}
-      isExpanded={isIconOpen}
-      icon={icon ? <Icon>{icon}</Icon> : null}
-    >
+    <MenuToggle ref={iconToggleRef} onClick={onIconToggleClick} isExpanded={isIconOpen} icon={icon}>
       {icon ? '' : 'Select'}
     </MenuToggle>
   );

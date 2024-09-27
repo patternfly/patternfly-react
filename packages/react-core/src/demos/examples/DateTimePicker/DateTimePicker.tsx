@@ -9,7 +9,6 @@ import {
   Dropdown,
   DropdownItem,
   DropdownList,
-  Icon,
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
@@ -66,11 +65,7 @@ export const DateTimePicker: React.FunctionComponent = () => {
           onClick={onToggleTime}
           isExpanded={isTimeOpen}
           aria-label="Time picker"
-          icon={
-            <Icon>
-              <OutlinedClockIcon aria-hidden="true" />
-            </Icon>
-          }
+          icon={<OutlinedClockIcon aria-hidden="true" />}
         />
       )}
     >

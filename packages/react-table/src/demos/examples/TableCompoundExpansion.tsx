@@ -5,7 +5,6 @@ import {
   Card,
   Flex,
   FlexItem,
-  Icon,
   MenuToggle,
   MenuToggleElement,
   Toolbar,
@@ -96,11 +95,7 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
                 ref={toggleRef}
                 onClick={() => setIsSelectOpen(!isSelectOpen)}
                 isExpanded={isSelectOpen}
-                icon={
-                  <Icon>
-                    <FilterIcon />
-                  </Icon>
-                }
+                icon={<FilterIcon />}
               >
                 Status
               </MenuToggle>

@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Button,
   Card,
-  Icon,
   MenuToggle,
   MenuToggleElement,
   Pagination,
@@ -74,11 +73,7 @@ export const TableCompact: React.FunctionComponent = () => {
             aria-label="Select Input"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
               <MenuToggle
-                icon={
-                  <Icon>
-                    <FilterIcon />
-                  </Icon>
-                }
+                icon={<FilterIcon />}
                 ref={toggleRef}
                 onClick={() => setIsSelectOpen(!isSelectOpen)}
                 isExpanded={isSelectOpen}

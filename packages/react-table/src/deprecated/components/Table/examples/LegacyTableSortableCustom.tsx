@@ -1,7 +1,7 @@
 import React from 'react';
 import { sortable, info } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import { Toolbar, ToolbarContent, ToolbarItem, MenuToggle, MenuToggleElement, Icon } from '@patternfly/react-core';
+import { Toolbar, ToolbarContent, ToolbarItem, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
 import {
   Select as NewSelect,
   SelectGroup as NewSelectGroup,
@@ -137,11 +137,7 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
                   isExpanded={isSortDropdownOpen}
                   variant="plain"
                   aria-label="Sort columns"
-                  icon={
-                    <Icon>
-                      <SortAmountDownIcon />
-                    </Icon>
-                  }
+                  icon={<SortAmountDownIcon />}
                 />
               )}
             >

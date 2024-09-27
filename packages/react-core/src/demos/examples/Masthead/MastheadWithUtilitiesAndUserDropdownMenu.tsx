@@ -16,7 +16,6 @@ import {
   DropdownList,
   Gallery,
   GalleryItem,
-  Icon,
   Masthead,
   MastheadMain,
   MastheadLogo,
@@ -157,11 +156,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       onClick={onToggleClick}
       isExpanded={isOpen}
       style={{ width: 'auto' }}
-      icon={
-        <Icon>
-          <ThIcon />
-        </Icon>
-      }
+      icon={<ThIcon />}
     />
   );
 
@@ -416,11 +411,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
                   isExpanded={isKebabDropdownOpen}
                   variant="plain"
                   aria-label="Settings and help"
-                  icon={
-                    <Icon>
-                      <EllipsisVIcon aria-hidden="true" />
-                    </Icon>
-                  }
+                  icon={<EllipsisVIcon aria-hidden="true" />}
                 />
               )}
             >
@@ -440,11 +431,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
                   isExpanded={isFullKebabDropdownOpen}
                   variant="plain"
                   aria-label="Toolbar menu"
-                  icon={
-                    <Icon>
-                      <EllipsisVIcon aria-hidden="true" />
-                    </Icon>
-                  }
+                  icon={<EllipsisVIcon aria-hidden="true" />}
                 />
               )}
             >

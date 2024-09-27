@@ -9,8 +9,7 @@ import {
   Dropdown,
   DropdownGroup,
   DropdownList,
-  DropdownItem,
-  Icon
+  DropdownItem
 } from '@patternfly/react-core';
 import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 import pfIcon from '@patternfly/react-core/src/demos/Card/pf-logo-small.svg';
@@ -216,11 +215,7 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
           onClick={onToggleClick}
           isExpanded={isOpen}
           style={{ width: 'auto' }}
-          icon={
-            <Icon>
-              <ThIcon />
-            </Icon>
-          }
+          icon={<ThIcon />}
         />
       )}
       ref={menuRef}

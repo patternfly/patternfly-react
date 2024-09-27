@@ -21,8 +21,7 @@ import {
   ToolbarGroup,
   ToolbarFilter,
   ToolbarToggleGroup,
-  EmptyStateActions,
-  Icon
+  EmptyStateActions
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -526,11 +525,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
       ref={attributeToggleRef}
       onClick={onAttributeToggleClick}
       isExpanded={isAttributeMenuOpen}
-      icon={
-        <Icon>
-          <FilterIcon />
-        </Icon>
-      }
+      icon={<FilterIcon />}
     >
       {activeAttributeMenu}
     </MenuToggle>

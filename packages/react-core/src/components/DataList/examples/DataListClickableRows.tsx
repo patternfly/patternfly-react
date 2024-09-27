@@ -9,7 +9,6 @@ import {
   Dropdown,
   DropdownList,
   DropdownItem,
-  Icon,
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
@@ -78,11 +77,7 @@ export const DataListClickableRows: React.FunctionComponent = () => {
                     onClick={onToggle1}
                     variant="plain"
                     aria-label="Data list clickable rows example kebab toggle 1"
-                    icon={
-                      <Icon>
-                        <EllipsisVIcon aria-hidden="true" />
-                      </Icon>
-                    }
+                    icon={<EllipsisVIcon aria-hidden="true" />}
                   />
                 )}
                 isOpen={isOpen1}
@@ -132,11 +127,7 @@ export const DataListClickableRows: React.FunctionComponent = () => {
                     onClick={onToggle2}
                     variant="plain"
                     aria-label="Data list clickable rows example kebab toggle 2"
-                    icon={
-                      <Icon>
-                        <EllipsisVIcon aria-hidden="true" />
-                      </Icon>
-                    }
+                    icon={<EllipsisVIcon aria-hidden="true" />}
                   />
                 )}
                 isOpen={isOpen2}

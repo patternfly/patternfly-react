@@ -4,7 +4,6 @@ import {
   Dropdown,
   DropdownList,
   DropdownItem,
-  Icon,
   Toolbar,
   ToolbarItem,
   ToolbarContent,
@@ -232,11 +231,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
               onClick={onKebabToggle}
               variant="plain"
               aria-label="Toolbar with filters example kebab toggle"
-              icon={
-                <Icon>
-                  <EllipsisVIcon aria-hidden="true" />
-                </Icon>
-              }
+              icon={<EllipsisVIcon aria-hidden="true" />}
             />
           )}
         >

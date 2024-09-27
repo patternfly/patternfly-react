@@ -3,7 +3,6 @@ import React from 'react';
 import {
   Button,
   Card,
-  Icon,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -103,11 +102,7 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
             aria-label="Select Input"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
               <MenuToggle
-                icon={
-                  <Icon>
-                    <FilterIcon />
-                  </Icon>
-                }
+                icon={<FilterIcon />}
                 ref={toggleRef}
                 onClick={() => setIsSelectOpen(!isSelectOpen)}
                 isExpanded={isSelectOpen}

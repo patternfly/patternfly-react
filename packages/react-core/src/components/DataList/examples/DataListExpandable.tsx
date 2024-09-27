@@ -11,7 +11,6 @@ import {
   Dropdown,
   DropdownList,
   DropdownItem,
-  Icon,
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
@@ -98,11 +97,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
                     onClick={onToggle1}
                     variant="plain"
                     aria-label="Data list exapndable example kebaby toggle 1"
-                    icon={
-                      <Icon>
-                        <EllipsisVIcon aria-hidden="true" />
-                      </Icon>
-                    }
+                    icon={<EllipsisVIcon aria-hidden="true" />}
                   />
                 )}
                 isOpen={isOpen1}
@@ -177,11 +172,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
                     onClick={onToggle2}
                     variant="plain"
                     aria-label="Data list exapndable example kebaby toggle 2"
-                    icon={
-                      <Icon>
-                        <EllipsisVIcon aria-hidden="true" />
-                      </Icon>
-                    }
+                    icon={<EllipsisVIcon aria-hidden="true" />}
                   />
                 )}
                 isOpen={isOpen2}
@@ -256,11 +247,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
                     onClick={onToggle3}
                     variant="plain"
                     aria-label="Data list exapndable example kebaby toggle 3"
-                    icon={
-                      <Icon>
-                        <EllipsisVIcon aria-hidden="true" />
-                      </Icon>
-                    }
+                    icon={<EllipsisVIcon aria-hidden="true" />}
                   />
                 )}
                 isOpen={isOpen3}

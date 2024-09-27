@@ -9,8 +9,7 @@ import {
   MenuToggle,
   Button,
   Dropdown,
-  DropdownList,
-  Icon
+  DropdownList
 } from '@patternfly/react-core';
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
@@ -89,11 +88,7 @@ export class OverflowMenuDemo extends React.Component {
                 variant="plain"
                 onClick={this.onSimpleToggle}
                 isExpanded={isSimpleOpen}
-                icon={
-                  <Icon>
-                    <EllipsisVIcon />
-                  </Icon>
-                }
+                icon={<EllipsisVIcon />}
               />
             )}
             isOpen={isSimpleOpen}
@@ -179,11 +174,7 @@ export class OverflowMenuDemo extends React.Component {
                 variant="plain"
                 onClick={this.onAdditionalOptionsToggle}
                 isExpanded={isAdditionalOptionsOpen}
-                icon={
-                  <Icon>
-                    <EllipsisVIcon />
-                  </Icon>
-                }
+                icon={<EllipsisVIcon />}
               />
             )}
             isOpen={isAdditionalOptionsOpen}
@@ -249,11 +240,7 @@ export class OverflowMenuDemo extends React.Component {
                 variant="plain"
                 onClick={this.onPersistToggle}
                 isExpanded={isPersistOpen}
-                icon={
-                  <Icon>
-                    <EllipsisVIcon />
-                  </Icon>
-                }
+                icon={<EllipsisVIcon />}
               />
             )}
             isOpen={isPersistOpen}
@@ -327,11 +314,7 @@ export class OverflowMenuDemo extends React.Component {
                   variant="plain"
                   onClick={this.onContainerBreakpointToggle}
                   isExpanded={isContainerBreakpointOpen}
-                  icon={
-                    <Icon>
-                      <EllipsisVIcon />
-                    </Icon>
-                  }
+                  icon={<EllipsisVIcon />}
                 />
               )}
               isOpen={isContainerBreakpointOpen}

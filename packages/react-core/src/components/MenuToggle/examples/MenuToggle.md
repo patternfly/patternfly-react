@@ -81,36 +81,24 @@ For most basic icons, it is recommended to wrap it inside our [icon component](/
 
 ```ts
 import React from 'react';
-import { MenuToggle, Icon } from '@patternfly/react-core';
+import { MenuToggle } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 <React.Fragment>
   <MenuToggle
-    icon={
-      <Icon>
-        <CogIcon />
-      </Icon>
-    }
+    icon={<CogIcon />}
     variant="primary"
   >
     Icon
   </MenuToggle>{' '}
   <MenuToggle
-    icon={
-      <Icon>
-        <CogIcon />
-      </Icon>
-    }
+    icon={<CogIcon />}
     variant="secondary"
   >
     Icon
   </MenuToggle>{' '}
   <MenuToggle
-    icon={
-      <Icon>
-        <CogIcon />
-      </Icon>
-    }
+    icon={<CogIcon />}
     variant="secondary"
     isDisabled
   >
@@ -127,13 +115,13 @@ This can be used alongside a text label that provides more context for the image
 
 ```ts
 import React from 'react';
-import { MenuToggle, Avatar, Icon } from '@patternfly/react-core';
+import { MenuToggle, Avatar } from '@patternfly/react-core';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
 <React.Fragment>
-  <MenuToggle icon={<Icon><Avatar src={imgAvatar} alt="avatar" /></Icon>}>Ned Username</MenuToggle>{' '}
-  <MenuToggle icon={<Icon><Avatar src={imgAvatar} alt="avatar" /></Icon>} isExpanded>Ned Username</MenuToggle>{' '}
-  <MenuToggle icon={<Icon><Avatar src={imgAvatar} alt="avatar" /></Icon>} isDisabled>Ned Username</MenuToggle>
+  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />}>Ned Username</MenuToggle>{' '}
+  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isExpanded>Ned Username</MenuToggle>{' '}
+  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isDisabled>Ned Username</MenuToggle>
 </React.Fragment>
 ```
 
@@ -166,15 +154,15 @@ If the toggle does not have any visible text content, use the `aria-label` prope
 
 ```ts
 import React from 'react';
-import { MenuToggle, Icon } from '@patternfly/react-core';
+import { MenuToggle } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 <React.Fragment>
-  <MenuToggle icon={<Icon><EllipsisVIcon /></Icon>} variant="plain" aria-label="plain kebab"/>
+  <MenuToggle icon={<EllipsisVIcon />} variant="plain" aria-label="plain kebab"/>
   {' '}
-  <MenuToggle icon={<Icon><EllipsisVIcon /></Icon>} variant="plain" isExpanded aria-label="plain expanded kebab"/>
+  <MenuToggle icon={<EllipsisVIcon />} variant="plain" isExpanded aria-label="plain expanded kebab"/>
   {' '}
-  <MenuToggle icon={<Icon><EllipsisVIcon /></Icon>} variant="plain" isDisabled aria-label="disabled plain kebab"/>
+  <MenuToggle icon={<EllipsisVIcon />} variant="plain" isDisabled aria-label="disabled plain kebab"/>
 </React.Fragment>
 ```
 

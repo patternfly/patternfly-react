@@ -14,7 +14,6 @@ import {
   DropdownList,
   Gallery,
   GalleryItem,
-  Icon,
   Masthead,
   MastheadMain,
   MastheadLogo,
@@ -152,11 +151,7 @@ export const NavManual: React.FunctionComponent = () => {
                   onClick={onKebabDropdownToggle}
                   variant="plain"
                   aria-label="Settings and help"
-                  icon={
-                    <Icon>
-                      <EllipsisVIcon aria-hidden="true" />
-                    </Icon>
-                  }
+                  icon={<EllipsisVIcon aria-hidden="true" />}
                 />
               )}
             >
@@ -176,11 +171,7 @@ export const NavManual: React.FunctionComponent = () => {
                   onClick={onFullKebabToggle}
                   variant="plain"
                   aria-label="Toolbar menu"
-                  icon={
-                    <Icon>
-                      <EllipsisVIcon aria-hidden="true" />
-                    </Icon>
-                  }
+                  icon={<EllipsisVIcon aria-hidden="true" />}
                 />
               )}
             >

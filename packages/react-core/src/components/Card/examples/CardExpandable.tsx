@@ -11,7 +11,6 @@ import {
   DropdownList,
   DropdownItem,
   Divider,
-  Icon,
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
@@ -72,11 +71,7 @@ export const CardExpandable: React.FunctionComponent = () => {
             onClick={() => setIsOpen(!isOpen)}
             variant="plain"
             aria-label="Card expandable example kebab toggle"
-            icon={
-              <Icon>
-                <EllipsisVIcon aria-hidden="true" />
-              </Icon>
-            }
+            icon={<EllipsisVIcon aria-hidden="true" />}
           />
         )}
         isOpen={isOpen}

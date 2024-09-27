@@ -20,8 +20,7 @@ import {
   ToolbarFilter,
   ToolbarToggleGroup,
   MenuGroup,
-  EmptyStateActions,
-  Icon
+  EmptyStateActions
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -323,11 +322,7 @@ export const FilterFaceted: React.FunctionComponent = () => {
       {...(areSelectionsPresent && {
         badge: <Badge isRead>{locationSelections.length + statusSelections.length}</Badge>
       })}
-      icon={
-        <Icon>
-          <FilterIcon />
-        </Icon>
-      }
+      icon={<FilterIcon />}
       style={
         {
           width: '200px'

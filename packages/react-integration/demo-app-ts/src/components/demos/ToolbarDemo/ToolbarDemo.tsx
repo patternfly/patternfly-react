@@ -11,7 +11,6 @@ import {
   ToolbarToggleGroup,
   ToolbarGroup,
   ToolbarProps,
-  Icon,
   InputGroup,
   InputGroupItem,
   TextInput,
@@ -274,11 +273,7 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
                 ref={toggleRef}
                 onClick={this.onKebabToggle}
                 isExpanded={kebabIsOpen}
-                icon={
-                  <Icon>
-                    <EllipsisVIcon />
-                  </Icon>
-                }
+                icon={<EllipsisVIcon />}
               />
             )}
           >

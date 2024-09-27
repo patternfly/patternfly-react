@@ -10,7 +10,6 @@ import {
   DataListItemRow,
   DataListCell,
   DataListItemCells,
-  Icon,
   Label,
   Toolbar,
   ToolbarContent,
@@ -403,25 +402,13 @@ export const TableColumnManagement: React.FunctionComponent = () => {
           <ToolbarItem variant="overflow-menu">
             <OverflowMenu breakpoint="md">
               <OverflowMenuItem>
-                <MenuToggle
-                  icon={
-                    <Icon>
-                      <FilterIcon />
-                    </Icon>
-                  }
-                >
-                  Name
-                </MenuToggle>
+                <MenuToggle icon={<FilterIcon />}>Name</MenuToggle>
               </OverflowMenuItem>
               <OverflowMenuItem>
                 <MenuToggle
                   variant="plain"
                   aria-label="Sort columns"
-                  icon={
-                    <Icon>
-                      <SortAmountDownIcon aria-hidden="true" />
-                    </Icon>
-                  }
+                  icon={<SortAmountDownIcon aria-hidden="true" />}
                 />
               </OverflowMenuItem>
               <OverflowMenuGroup groupType="button" isPersistent>

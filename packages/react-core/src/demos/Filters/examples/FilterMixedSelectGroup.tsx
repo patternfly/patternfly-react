@@ -19,8 +19,7 @@ import {
   Badge,
   ToolbarFilter,
   ToolbarToggleGroup,
-  EmptyStateActions,
-  Icon
+  EmptyStateActions
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -293,11 +292,7 @@ export const FilterMixedSelectGroup: React.FunctionComponent = () => {
       ref={statusToggleRef}
       onClick={onStatusToggleClick}
       isExpanded={isStatusMenuOpen}
-      icon={
-        <Icon>
-          <FilterIcon />
-        </Icon>
-      }
+      icon={<FilterIcon />}
       style={
         {
           width: '200px'
@@ -396,11 +391,7 @@ export const FilterMixedSelectGroup: React.FunctionComponent = () => {
       onClick={onLocationMenuToggleClick}
       isExpanded={isLocationMenuOpen}
       {...(locationSelections.length > 0 && { badge: <Badge isRead>{locationSelections.length}</Badge> })}
-      icon={
-        <Icon>
-          <FilterIcon />
-        </Icon>
-      }
+      icon={<FilterIcon />}
       style={
         {
           width: '200px'

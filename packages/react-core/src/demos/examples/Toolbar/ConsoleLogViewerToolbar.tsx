@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Badge,
   Button,
-  Icon,
   MenuToggle,
   SearchInput,
   Select,
@@ -302,16 +301,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
           onOpenChangeKeys={['Escape']}
           onSelect={onOptionSelect}
           toggle={(toggleRef) => (
-            <MenuToggle
-              ref={toggleRef}
-              isExpanded={optionExpanded}
-              onClick={onOptionToggle}
-              icon={
-                <Icon>
-                  <CogIcon />
-                </Icon>
-              }
-            >
+            <MenuToggle ref={toggleRef} isExpanded={optionExpanded} onClick={onOptionToggle} icon={<CogIcon />}>
               Options
             </MenuToggle>
           )}
@@ -365,11 +355,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
                 ref={toggleRef}
                 isExpanded={optionExpandedMobile}
                 onClick={onOptionToggleMobile}
-                icon={
-                  <Icon>
-                    <CogIcon />
-                  </Icon>
-                }
+                icon={<CogIcon />}
                 aria-label="Options"
               />
             )}
@@ -445,11 +431,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
                 ref={toggleRef}
                 isExpanded={externalExpandedMobile}
                 onClick={onExternalToggleMobile}
-                icon={
-                  <Icon>
-                    <ExternalLinkAltIcon />
-                  </Icon>
-                }
+                icon={<ExternalLinkAltIcon />}
                 aria-label="External logs"
               />
             )}
@@ -470,11 +452,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
                 ref={toggleRef}
                 isExpanded={downloadExpandedMobile}
                 onClick={onDownloadToggleMobile}
-                icon={
-                  <Icon>
-                    <DownloadIcon />
-                  </Icon>
-                }
+                icon={<DownloadIcon />}
                 aria-label="Download"
               />
             )}

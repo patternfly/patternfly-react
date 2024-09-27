@@ -9,7 +9,6 @@ import {
   DropdownList,
   DropdownItem,
   Divider,
-  Icon,
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
@@ -38,11 +37,7 @@ export const HintBasicWithTitle: React.FunctionComponent = () => {
           variant="plain"
           onClick={onToggle}
           isExpanded={isOpen}
-          icon={
-            <Icon>
-              <EllipsisVIcon />
-            </Icon>
-          }
+          icon={<EllipsisVIcon />}
         />
       )}
     >

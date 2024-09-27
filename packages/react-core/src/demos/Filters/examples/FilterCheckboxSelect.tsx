@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Icon,
   Menu,
   MenuContent,
   MenuList,
@@ -292,11 +291,7 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
       ref={toggleRef}
       onClick={onToggleClick}
       isExpanded={isOpen}
-      icon={
-        <Icon>
-          <FilterIcon />
-        </Icon>
-      }
+      icon={<FilterIcon />}
       {...(selections.length > 0 && { badge: <Badge isRead>{selections.length}</Badge> })}
       style={
         {

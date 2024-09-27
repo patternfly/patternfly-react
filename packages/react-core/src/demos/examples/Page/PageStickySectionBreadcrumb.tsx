@@ -16,7 +16,6 @@ import {
   DropdownList,
   Gallery,
   GalleryItem,
-  Icon,
   Masthead,
   MastheadMain,
   MastheadLogo,
@@ -148,11 +147,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
                   isExpanded={isKebabDropdownOpen}
                   variant="plain"
                   aria-label="Settings and help"
-                  icon={
-                    <Icon>
-                      <EllipsisVIcon aria-hidden="true" />
-                    </Icon>
-                  }
+                  icon={<EllipsisVIcon aria-hidden="true" />}
                 />
               )}
             >
@@ -172,11 +167,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
                   isExpanded={isFullKebabDropdownOpen}
                   variant="plain"
                   aria-label="Toolbar menu"
-                  icon={
-                    <Icon>
-                      <EllipsisVIcon aria-hidden="true" />
-                    </Icon>
-                  }
+                  icon={<EllipsisVIcon aria-hidden="true" />}
                 />
               )}
             >

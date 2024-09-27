@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Icon,
   Menu,
   MenuContent,
   MenuList,
@@ -296,11 +295,7 @@ export const FilterSingleSelect: React.FunctionComponent = () => {
       ref={toggleRef}
       onClick={onToggleClick}
       isExpanded={isOpen}
-      icon={
-        <Icon>
-          <FilterIcon />
-        </Icon>
-      }
+      icon={<FilterIcon />}
       style={
         {
           width: '200px'

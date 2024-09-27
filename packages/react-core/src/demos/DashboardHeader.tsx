@@ -9,7 +9,6 @@ import {
   DropdownGroup,
   DropdownItem,
   DropdownList,
-  Icon,
   Masthead,
   MastheadMain,
   MastheadToggle,
@@ -138,11 +137,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                       onClick={onKebabDropdownToggle}
                       variant="plain"
                       aria-label="Settings and help"
-                      icon={
-                        <Icon>
-                          <EllipsisVIcon aria-hidden="true" />
-                        </Icon>
-                      }
+                      icon={<EllipsisVIcon aria-hidden="true" />}
                     />
                   )}
                 >
@@ -162,11 +157,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                       onClick={onFullKebabToggle}
                       variant="plain"
                       aria-label="Toolbar menu"
-                      icon={
-                        <Icon>
-                          <EllipsisVIcon aria-hidden="true" />
-                        </Icon>
-                      }
+                      icon={<EllipsisVIcon aria-hidden="true" />}
                     />
                   )}
                 >
@@ -189,11 +180,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                     ref={toggleRef}
                     isExpanded={isDropdownOpen}
                     onClick={onDropdownToggle}
-                    icon={
-                      <Icon>
-                        <Avatar src={imgAvatar} alt="" size="sm" />
-                      </Icon>
-                    }
+                    icon={<Avatar src={imgAvatar} alt="" size="sm" />}
                   >
                     Ned Username
                   </MenuToggle>

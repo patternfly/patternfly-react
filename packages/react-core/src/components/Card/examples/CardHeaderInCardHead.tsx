@@ -9,7 +9,6 @@ import {
   Dropdown,
   DropdownList,
   DropdownItem,
-  Icon,
   MenuToggle,
   MenuToggleElement,
   Divider
@@ -59,11 +58,7 @@ export const CardTitleInHeader: React.FunctionComponent = () => {
             onClick={() => setIsOpen(!isOpen)}
             variant="plain"
             aria-label="Card title inline with images and actions example kebab toggle"
-            icon={
-              <Icon>
-                <EllipsisVIcon aria-hidden="true" />
-              </Icon>
-            }
+            icon={<EllipsisVIcon aria-hidden="true" />}
           />
         )}
         isOpen={isOpen}

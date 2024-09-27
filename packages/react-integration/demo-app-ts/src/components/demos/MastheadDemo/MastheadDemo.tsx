@@ -16,7 +16,6 @@ import {
   DropdownList,
   MenuToggle,
   Divider,
-  Icon,
   MenuToggleElement,
   MastheadProps
 } from '@patternfly/react-core';
@@ -182,11 +181,7 @@ export class MastheadDemo extends Component<MastheadProps> {
                         onClick={this.onKebabToggle}
                         id="toggle-id-kebab"
                         variant="plain"
-                        icon={
-                          <Icon>
-                            <EllipsisVIcon />
-                          </Icon>
-                        }
+                        icon={<EllipsisVIcon />}
                       />
                     )}
                   >

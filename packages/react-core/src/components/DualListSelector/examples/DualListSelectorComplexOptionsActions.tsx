@@ -18,7 +18,6 @@ import {
   EmptyStateFooter,
   EmptyStateBody,
   EmptyStateActions,
-  Icon,
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
@@ -167,11 +166,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
                 variant="plain"
                 id="complex-available-toggle"
                 aria-label="Complex actions example available kebab toggle"
-                icon={
-                  <Icon>
-                    <EllipsisVIcon aria-hidden="true" />
-                  </Icon>
-                }
+                icon={<EllipsisVIcon aria-hidden="true" />}
               />
             )}
             isOpen={isAvailableKebabOpen}
@@ -206,11 +201,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
                 variant="plain"
                 id="complex-chosen-toggle"
                 aria-label="Complex actions example chosen kebab toggle"
-                icon={
-                  <Icon>
-                    <EllipsisVIcon aria-hidden="true" />
-                  </Icon>
-                }
+                icon={<EllipsisVIcon aria-hidden="true" />}
               />
             )}
             isOpen={isChosenKebabOpen}

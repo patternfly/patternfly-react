@@ -22,7 +22,6 @@ import {
   Flex,
   FlexItem,
   Gallery,
-  Icon,
   MenuToggle,
   MenuToggleCheckbox,
   PageSection,
@@ -470,11 +469,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
               variant="plain"
               onClick={onToolbarKebabDropdownToggle}
               aria-label="Toolbar actions"
-              icon={
-                <Icon>
-                  <EllipsisVIcon aria-hidden="true" />
-                </Icon>
-              }
+              icon={<EllipsisVIcon aria-hidden="true" />}
             />
           )}
         >
@@ -532,11 +527,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
                           onCardKebabDropdownToggle(e, key.toString());
                         }}
                         isExpanded={!!state[key]}
-                        icon={
-                          <Icon>
-                            <EllipsisVIcon />
-                          </Icon>
-                        }
+                        icon={<EllipsisVIcon />}
                       />
                     )}
                   >
