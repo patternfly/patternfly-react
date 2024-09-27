@@ -19,7 +19,7 @@ import {
   Icon
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import { Chart, ChartStack, ChartBar, ChartTooltip } from '@patternfly/react-charts';
+import { Chart, ChartStack, ChartBar, ChartTooltip } from '@patternfly/react-charts/victory';
 import chart_color_yellow_100 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_100';
 import chart_color_yellow_300 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';

@@ -13,7 +13,7 @@ import {
   Flex,
   FlexItem
 } from '@patternfly/react-core';
-import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
 import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
