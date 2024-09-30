@@ -15,7 +15,7 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 export const CardTrendDemo1: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);

@@ -39,8 +39,11 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceMD(path.join(reactTablePath, '/deprecated/components/**/examples/*.md'), 'react-deprecated');
   sourceMD(path.join(reactTablePath, '/**/demos/*.md'), 'react-demos');
 
-  // Charts MD (no demos yet)
-  sourceMD(path.join(reactChartsPath, '/**/examples/*.md'), 'react');
+  // Charts MD
+  sourceMD(path.join(reactChartsPath, '/echarts/components/**/examples/*.md'), 'react');
+  sourceMD(path.join(reactChartsPath, '/next/echarts/components/**/examples/*.md'), 'react-next');
+  sourceMD(path.join(reactChartsPath, '/next/victory/components/**/examples/*.md'), 'react-next');
+  sourceMD(path.join(reactChartsPath, '/victory/components/**/examples/*.md'), 'react');
 
   // Code Editor MD
   sourceMD(path.join(reactCodeEditorPath, '/**/examples/*.md'), 'react');

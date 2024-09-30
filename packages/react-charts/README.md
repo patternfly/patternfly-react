@@ -27,7 +27,7 @@ import '@patternfly/react-core/dist/styles/base.css';
 #### Example Component Usage
 
 ```js
-import { Area } from '@patternfly/react-charts';
+import { Area } from '@patternfly/react-charts/victory';
 
 export default <Area />;
 

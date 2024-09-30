@@ -12,7 +12,7 @@ import {
   Stack,
   Divider
 } from '@patternfly/react-core';
-import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 export const CardUtilizationDemo2: React.FunctionComponent = () => (
   <Gallery hasGutter minWidths={{ default: '360px' }}>
