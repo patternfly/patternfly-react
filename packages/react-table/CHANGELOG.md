@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-prerelease.20...@patternfly/react-table@6.0.0-prerelease.21) (2024-09-30)
+
+### Bug Fixes
+
+- **Table:** Add hasNoPadding prop to header info button ([#11089](https://github.com/patternfly/patternfly-react/issues/11089)) ([f98b02d](https://github.com/patternfly/patternfly-react/commit/f98b02d72b50abdd3bb1a9b5e4e05c7a65b97d27))
+
 # [6.0.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.0.0-prerelease.19...@patternfly/react-table@6.0.0-prerelease.20) (2024-09-26)
 
 **Note:** Version bump only for package @patternfly/react-table
