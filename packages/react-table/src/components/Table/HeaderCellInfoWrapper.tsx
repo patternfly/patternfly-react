@@ -54,6 +54,7 @@ export const HeaderCellInfoWrapper: React.FunctionComponent<ColumnHelpWrapperPro
         <Tooltip content={info} {...tooltipProps}>
           <Button
             variant="plain"
+            hasNoPadding
             aria-label={ariaLabel || (typeof info === 'string' && info) || 'More info'}
             icon={<HelpIcon />}
           />
@@ -62,6 +63,7 @@ export const HeaderCellInfoWrapper: React.FunctionComponent<ColumnHelpWrapperPro
         <Popover bodyContent={info} {...popoverProps}>
           <Button
             variant="plain"
+            hasNoPadding
             aria-label={ariaLabel || (typeof info === 'string' && info) || 'More info'}
             icon={<HelpIcon />}
           />
