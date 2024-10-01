@@ -3,7 +3,7 @@ id: Menu toggle
 section: components
 subsection: menus
 cssPrefix: pf-v6-c-menu-toggle
-propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox', 'SplitButtonOptions']
+propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox']
 ---
 
 import './MenuToggle.css'
@@ -203,7 +203,7 @@ import { MenuToggle } from '@patternfly/react-core';
 
 To add a checkbox (or other action/control) to a menu toggle, use a split button.
 
-A `<MenuToggle>` can be rendered as a split button by adding a `splitButtonOptions` object. Elements to be displayed before the toggle button must be included in the `items` property of `splitButtonOptions`.
+A `<MenuToggle>` can be rendered as a split button by adding a `splitButtonItems` property. Elements to be displayed before the toggle button must be included in the `splitButtonItems`.
 
 The following example shows a split button with a `<MenuToggleCheckbox>`.
 
@@ -217,7 +217,7 @@ Variant styling can be applied to split button toggles to adjust their appearanc
 
 You can allow users to select a toggle checkbox by clicking either the checkbox or the text label.
 
-To link a split toggle label to the toggle's checkbox, pass both the label and the `<MenuToggleCheckbox>` component to `splitButtonOptions`. 
+To link a split toggle label to the toggle's checkbox, pass both the label and the `<MenuToggleCheckbox>` component to `splitButtonItems`. 
 
 ```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
 
@@ -225,7 +225,7 @@ To link a split toggle label to the toggle's checkbox, pass both the label and t
 
 ### Split toggle with checkbox and toggle text 
 
-To link a split toggle label to the toggle button itself, pass the label to the `<MenuToggle>` component, instead of `splitButtonOptions`.
+To link a split toggle label to the toggle button itself, pass the label to the `<MenuToggle>` component, instead of `splitButtonItems`.
 
 ```ts file='MenuToggleSplitButtonCheckboxWithToggleText.tsx'
 
@@ -233,7 +233,7 @@ To link a split toggle label to the toggle button itself, pass the label to the 
 
 ### Split toggle with action
 
-To add an action to a split button, pass `variant='action'` into `splitButtonOptions` and add a `<MenuToggleAction>` to the `items` property of `splitButtonOptions`.
+To add an action to a split button, add a `<MenuToggleAction>` to the `splitButtonItems` property.
 
 Actions may be used with primary and secondary toggle variants.
 

@@ -209,17 +209,15 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
       ref={bulkSelectToggleRef}
       onClick={onBulkSelectToggleClick}
       isExpanded={isBulkSelectOpen}
-      splitButtonOptions={{
-        items: [
-          <MenuToggleCheckbox
-            id="attribute-search-input-bulk-select"
-            key="attribute-search-input-bulk-select"
-            aria-label="Select all"
-            isChecked={menuToggleCheckmark}
-            onChange={(checked, _event) => selectAllRepos(checked)}
-          />
-        ]
-      }}
+      splitButtonItems={[
+        <MenuToggleCheckbox
+          id="attribute-search-input-bulk-select"
+          key="attribute-search-input-bulk-select"
+          aria-label="Select all"
+          isChecked={menuToggleCheckmark}
+          onChange={(checked, _event) => selectAllRepos(checked)}
+        />
+      ]}
       aria-label="Full table selection checkbox"
     />
   );

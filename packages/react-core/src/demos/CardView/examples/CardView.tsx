@@ -283,19 +283,17 @@ export const CardViewBasic: React.FunctionComponent = () => {
             isExpanded={splitButtonDropdownIsOpen}
             onClick={onSplitButtonToggle}
             aria-label="Select cards"
-            splitButtonOptions={{
-              items: [
-                <MenuToggleCheckbox
-                  id="split-dropdown-checkbox"
-                  key="split-dropdown-checkbox"
-                  aria-label={anySelected ? 'Deselect all cards' : 'Select all cards'}
-                  isChecked={areAllSelected}
-                  onClick={(e) => splitCheckboxSelectAll(e)}
-                >
-                  {numSelected !== 0 && `${numSelected} selected`}
-                </MenuToggleCheckbox>
-              ]
-            }}
+            splitButtonItems={[
+              <MenuToggleCheckbox
+                id="split-dropdown-checkbox"
+                key="split-dropdown-checkbox"
+                aria-label={anySelected ? 'Deselect all cards' : 'Select all cards'}
+                isChecked={areAllSelected}
+                onClick={(e) => splitCheckboxSelectAll(e)}
+              >
+                {numSelected !== 0 && `${numSelected} selected`}
+              </MenuToggleCheckbox>
+            ]}
           ></MenuToggle>
         )}
       >

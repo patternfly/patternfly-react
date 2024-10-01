@@ -38,15 +38,13 @@ export const DataListBasic: React.FunctionComponent = () => {
       <ToolbarItem variant="bulk-select">
         <MenuToggle
           aria-label="Select cards"
-          splitButtonOptions={{
-            items: [
-              <MenuToggleCheckbox
-                id="split-dropdown-checkbox"
-                key="split-dropdown-checkbox"
-                aria-label={'Select all cards'}
-              />
-            ]
-          }}
+          splitButtonItems={[
+            <MenuToggleCheckbox
+              id="split-dropdown-checkbox"
+              key="split-dropdown-checkbox"
+              aria-label={'Select all cards'}
+            />
+          ]}
         ></MenuToggle>
       </ToolbarItem>
       <ToolbarItem>
