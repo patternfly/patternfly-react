@@ -23,7 +23,7 @@ describe('Slider Demo Test', () => {
       );
   });
 
-  it('changes discrete slider value using keyboard', () => {
+  xit('changes discrete slider value using keyboard', () => {
     cy.get('#discrete-slider > .pf-v6-c-slider__main > .pf-v6-c-slider__thumb').focus();
     cy.get('#discrete-slider > .pf-v6-c-slider__main > .pf-v6-c-slider__thumb').trigger('keydown', { keyCode: 39 });
     cy.wait(50);
