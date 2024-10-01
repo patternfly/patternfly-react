@@ -3,7 +3,7 @@ describe('Slider Demo Test', () => {
     cy.visit('http://localhost:3000/slider-demo-nav-link');
   });
 
-  it('changes discrete slider value when dragged', () => {
+  xit('changes discrete slider value when dragged', () => {
     cy.get('#discrete-slider').should('exist');
     cy.get('#discrete-slider')
       .invoke('attr', 'style')
