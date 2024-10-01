@@ -36,8 +36,6 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
   const [chosenLeafIds, setChosenLeafIds] = React.useState<string[]>(['beans', 'beef', 'chicken', 'tofu']);
   const [chosenFilter, setChosenFilter] = React.useState<string>('');
   const [availableFilter, setAvailableFilter] = React.useState<string>('');
-  let hiddenChosen: string[] = [];
-  let hiddenAvailable: string[] = [];
 
   // helper function to build memoized lists
   const buildTextById = (node: FoodNode): { [key: string]: string } => {
@@ -82,7 +80,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
   };
 
   // Builds a map of child leaf nodes by node id - memoized so that it only rebuilds the list if the data changes.
-  const { memoizedLeavesById, memoizedAllLeaves, memoizedNodeText } = React.useMemo(() => {
+  const { memoizedLeavesById, memoizedAllLeaves, memoizedNodeTexts } = React.useMemo(() => {
     let leavesById = {};
     let allLeaves: string[] = [];
     let nodeTexts = {};
@@ -94,32 +92,47 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     return {
       memoizedLeavesById: leavesById,
       memoizedAllLeaves: allLeaves,
-      memoizedNodeText: nodeTexts
+      memoizedNodeTexts: nodeTexts
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
+  const getVisibleLeafIds = (leafIds: string[], filter: string) => {
+    const filterMatchingNodeIds = Object.keys(memoizedLeavesById).filter((nodeId) =>
+      memoizedNodeTexts[nodeId].includes(filter)
+    );
+    const filterMatchingLeafIds = filterMatchingNodeIds.map((nodeId) => memoizedLeavesById[nodeId]).flat();
+    return leafIds.filter((leafId) => filterMatchingLeafIds.includes(leafId));
+  };
+
+  const availableLeafIds = memoizedAllLeaves.filter((leafId) => !chosenLeafIds.includes(leafId));
+  const visibleChosenLeafIds = getVisibleLeafIds(chosenLeafIds, chosenFilter);
+  const visibleAvailableLeafIds = getVisibleLeafIds(availableLeafIds, availableFilter);
+
   const moveChecked = (toChosen: boolean) => {
+    const visibleCheckedChosenLeafIds = checkedLeafIds.filter((leafId) => visibleChosenLeafIds.includes(leafId));
+    const visibleCheckedAvailableLeafIds = checkedLeafIds.filter((leafId) => visibleAvailableLeafIds.includes(leafId));
+
     setChosenLeafIds(
       (prevChosenIds) =>
         toChosen
-          ? [...prevChosenIds, ...checkedLeafIds] // add checked ids to chosen list
-          : [...prevChosenIds.filter((x) => !checkedLeafIds.includes(x))] // remove checked ids from chosen list
+          ? [...prevChosenIds, ...visibleCheckedAvailableLeafIds] // add visible checked ids to chosen list
+          : prevChosenIds.filter((x) => !visibleCheckedChosenLeafIds.includes(x)) // remove visible checked ids from chosen list
     );
 
     // uncheck checked ids that just moved
     setCheckedLeafIds((prevChecked) =>
       toChosen
-        ? [...prevChecked.filter((x) => chosenLeafIds.includes(x))]
-        : [...prevChecked.filter((x) => !chosenLeafIds.includes(x))]
+        ? prevChecked.filter((x) => !visibleCheckedAvailableLeafIds.includes(x))
+        : prevChecked.filter((x) => !visibleCheckedChosenLeafIds.includes(x))
     );
   };
 
   const moveAll = (toChosen: boolean) => {
     if (toChosen) {
-      setChosenLeafIds(memoizedAllLeaves);
+      setChosenLeafIds((prevChosenIds) => [...prevChosenIds, ...visibleAvailableLeafIds]);
     } else {
-      setChosenLeafIds([]);
+      setChosenLeafIds((prevChosenIds) => prevChosenIds.filter((id) => !visibleChosenLeafIds.includes(id)));
     }
   };
 
@@ -149,15 +162,9 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     isChosen: boolean
   ) => {
     const nodeIdsToCheck = memoizedLeavesById[node.id].filter((id) =>
-      isChosen
-        ? chosenLeafIds.includes(id) && !hiddenChosen.includes(id)
-        : !chosenLeafIds.includes(id) && !hiddenAvailable.includes(id)
+      isChosen ? visibleChosenLeafIds.includes(id) : visibleAvailableLeafIds.includes(id)
     );
-    if (isChosen) {
-      hiddenChosen = [];
-    } else {
-      hiddenAvailable = [];
-    }
+
     setCheckedLeafIds((prevChecked) => {
       const otherCheckedNodeNames = prevChecked.filter((id) => !nodeIdsToCheck.includes(id));
       return !isChecked ? otherCheckedNodeNames : [...otherCheckedNodeNames, ...nodeIdsToCheck];
@@ -196,7 +203,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
       : descendentLeafIds.filter((id) => !chosenLeafIds.includes(id));
 
     const hasMatchingChildren =
-      filterValue && descendentsOnThisPane.some((id) => memoizedNodeText[id].includes(filterValue));
+      filterValue && descendentsOnThisPane.some((id) => memoizedNodeTexts[id].includes(filterValue));
     const isFilterMatch = filterValue && node.text.includes(filterValue) && descendentsOnThisPane.length > 0;
 
     // A node is displayed if either of the following is true:
@@ -207,14 +214,6 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
       hasMatchingChildren ||
       (hasParentMatch && descendentsOnThisPane.length > 0) ||
       isFilterMatch;
-
-    if (!isDisplayed) {
-      if (isChosen) {
-        hiddenChosen.push(node.id);
-      } else {
-        hiddenAvailable.push(node.id);
-      }
-    }
 
     return [
       ...(isDisplayed
@@ -242,9 +241,9 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
 
   const buildPane = (isChosen: boolean): React.ReactNode => {
     const options: DualListSelectorTreeItemData[] = buildOptions(isChosen, data, false);
-    const numOptions = isChosen ? chosenLeafIds.length : memoizedAllLeaves.length - chosenLeafIds.length;
+    const numOptions = isChosen ? visibleChosenLeafIds.length : visibleAvailableLeafIds.length;
     const numSelected = checkedLeafIds.filter((id) =>
-      isChosen ? chosenLeafIds.includes(id) : !chosenLeafIds.includes(id)
+      isChosen ? visibleChosenLeafIds.includes(id) : visibleAvailableLeafIds.includes(id)
     ).length;
     const status = `${numSelected} of ${numOptions} options selected`;
     const filterApplied = isChosen ? chosenFilter !== '' : availableFilter !== '';
@@ -285,7 +284,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
       {buildPane(false)}
       <DualListSelectorControlsWrapper>
         <DualListSelectorControl
-          isDisabled={!checkedLeafIds.filter((x) => !chosenLeafIds.includes(x)).length}
+          isDisabled={!checkedLeafIds.filter((x) => visibleAvailableLeafIds.includes(x)).length}
           onClick={() => moveChecked(true)}
           aria-label="Add selected"
           icon={<AngleRightIcon />}
@@ -304,7 +303,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
         />
         <DualListSelectorControl
           onClick={() => moveChecked(false)}
-          isDisabled={!checkedLeafIds.filter((x) => !!chosenLeafIds.includes(x)).length}
+          isDisabled={!checkedLeafIds.filter((x) => visibleChosenLeafIds.includes(x)).length}
           aria-label="Remove selected"
           icon={<AngleLeftIcon />}
         />
