@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.20...@patternfly/react-core@6.0.0-prerelease.21) (2024-10-02)
+
+### Bug Fixes
+
+- **Menu toggle:** Remove pf-m-action modifier ([#11096](https://github.com/patternfly/patternfly-react/issues/11096)) ([fe6871c](https://github.com/patternfly/patternfly-react/commit/fe6871cf3063eab33dc572f30a57c52e84f34131))
+- **Page:** Remove drawer content body wrapper from notification drawer ([#11094](https://github.com/patternfly/patternfly-react/issues/11094)) ([ce25e4c](https://github.com/patternfly/patternfly-react/commit/ce25e4ce2d687ad0ae818d575f69ef9070a6ca4a))
+
 # [6.0.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.19...@patternfly/react-core@6.0.0-prerelease.20) (2024-09-30)
 
 ### Features

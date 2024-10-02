@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.11...@patternfly/react-integration@6.0.0-prerelease.12) (2024-10-02)
+
+### Bug Fixes
+
+- **Menu toggle:** Remove pf-m-action modifier ([#11096](https://github.com/patternfly/patternfly-react/issues/11096)) ([fe6871c](https://github.com/patternfly/patternfly-react/commit/fe6871cf3063eab33dc572f30a57c52e84f34131))
+
 # [6.0.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.10...@patternfly/react-integration@6.0.0-prerelease.11) (2024-09-26)
 
 **Note:** Version bump only for package @patternfly/react-integration

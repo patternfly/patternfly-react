@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.0.0-prerelease.6...@patternfly/react-icons@6.0.0-prerelease.7) (2024-10-02)
+
+### Bug Fixes
+
+- **Menu toggle:** Remove pf-m-action modifier ([#11096](https://github.com/patternfly/patternfly-react/issues/11096)) ([fe6871c](https://github.com/patternfly/patternfly-react/commit/fe6871cf3063eab33dc572f30a57c52e84f34131))
+
 # [6.0.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.0.0-prerelease.5...@patternfly/react-icons@6.0.0-prerelease.6) (2024-09-26)
 
 ### Bug Fixes
