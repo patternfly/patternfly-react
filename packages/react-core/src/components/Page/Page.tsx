@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_xl';
 import { debounce, canUseDOM } from '../../helpers/util';
-import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '../Drawer';
+import { Drawer, DrawerContent, DrawerPanelContent } from '../Drawer';
 import { PageBreadcrumb, PageBreadcrumbProps } from './PageBreadcrumb';
 import { PageGroup, PageGroupProps } from './PageGroup';
 import { getResizeObserver } from '../../helpers/resizeObserver';
@@ -345,9 +345,7 @@ class Page extends React.Component<PageProps, PageState> {
           {notificationDrawer && (
             <div className={css(styles.pageDrawer)}>
               <Drawer isExpanded={isNotificationDrawerExpanded} onExpand={(event) => onNotificationDrawerExpand(event)}>
-                <DrawerContent panelContent={panelContent}>
-                  <DrawerContentBody>{main}</DrawerContentBody>
-                </DrawerContent>
+                <DrawerContent panelContent={panelContent}>{main}</DrawerContent>
               </Drawer>
             </div>
           )}
