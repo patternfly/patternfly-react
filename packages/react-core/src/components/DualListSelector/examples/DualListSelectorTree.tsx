@@ -97,9 +97,11 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
+  const matchesFilter = (value: string, filter: string) => value.toLowerCase().includes(filter.trim().toLowerCase());
+
   const getVisibleLeafIds = (leafIds: string[], filter: string) => {
     const filterMatchingNodeIds = Object.keys(memoizedLeavesById).filter((nodeId) =>
-      memoizedNodeTexts[nodeId].includes(filter)
+      matchesFilter(memoizedNodeTexts[nodeId], filter)
     );
     const filterMatchingLeafIds = filterMatchingNodeIds.map((nodeId) => memoizedLeavesById[nodeId]).flat();
     return leafIds.filter((leafId) => filterMatchingLeafIds.includes(leafId));
@@ -203,8 +205,8 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
       : descendentLeafIds.filter((id) => !chosenLeafIds.includes(id));
 
     const hasMatchingChildren =
-      filterValue && descendentsOnThisPane.some((id) => memoizedNodeTexts[id].includes(filterValue));
-    const isFilterMatch = filterValue && node.text.includes(filterValue) && descendentsOnThisPane.length > 0;
+      filterValue && descendentsOnThisPane.some((id) => matchesFilter(memoizedNodeTexts[id], filterValue));
+    const isFilterMatch = filterValue && matchesFilter(node.text, filterValue) && descendentsOnThisPane.length > 0;
 
     // A node is displayed if either of the following is true:
     //   - There is no filter value and this node or its descendents belong on this pane
