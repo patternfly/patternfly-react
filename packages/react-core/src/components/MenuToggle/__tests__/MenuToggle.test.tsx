@@ -7,6 +7,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
+import '@testing-library/jest-dom';
 
 describe('menu toggle', () => {
   test('renders successfully', () => {
@@ -82,17 +83,15 @@ describe('menu toggle', () => {
     render(
       <MenuToggle
         onClick={mockClick}
-        splitButtonOptions={{
-          items: [
-            <MenuToggleCheckbox
-              id="split-button-checkbox-with-text-disabled-example"
-              key="split-checkbox-with-text-disabled"
-              aria-label="Select all"
-            >
-              10 selected
-            </MenuToggleCheckbox>
-          ]
-        }}
+        splitButtonItems={[
+          <MenuToggleCheckbox
+            id="split-button-checkbox-with-text-disabled-example"
+            key="split-checkbox-with-text-disabled"
+            aria-label="Select all"
+          >
+            10 selected
+          </MenuToggleCheckbox>
+        ]}
         aria-label="Menu toggle with checkbox split button and text"
       />
     );

@@ -260,15 +260,13 @@ export const ToolbarStacked: React.FunctionComponent = () => {
                   isExpanded={isSplitButtonDropdownOpen}
                   onClick={onSplitButtonToggle}
                   aria-label="Toolbar stacked example split toggle"
-                  splitButtonOptions={{
-                    items: [
-                      <MenuToggleCheckbox
-                        key="toolbar-stacked-split-button-checkbox-1"
-                        id="toolbar-stacked-split-button-checkbox-1"
-                        aria-label="Select all"
-                      />
-                    ]
-                  }}
+                  splitButtonItems={[
+                    <MenuToggleCheckbox
+                      key="toolbar-stacked-split-button-checkbox-1"
+                      id="toolbar-stacked-split-button-checkbox-1"
+                      aria-label="Select all"
+                    />
+                  ]}
                 />
               )}
             >

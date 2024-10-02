@@ -21,13 +21,6 @@ export enum MenuToggleSize {
 
 export type MenuToggleElement = HTMLDivElement | HTMLButtonElement;
 
-export interface SplitButtonOptions {
-  /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
-  items: React.ReactNode[];
-  /** Variant of split button toggle */
-  variant?: 'action' | 'checkbox';
-}
-
 export interface MenuToggleProps
   extends Omit<
       React.DetailedHTMLProps<
@@ -51,8 +44,8 @@ export interface MenuToggleProps
   isFullWidth?: boolean;
   /** Flag indicating the toggle contains placeholder text */
   isPlaceholder?: boolean;
-  /** Object used to configure a split button menu toggle */
-  splitButtonOptions?: SplitButtonOptions;
+  /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
+  splitButtonItems?: React.ReactNode[];
   /** Variant styles of the menu toggle */
   variant?: 'default' | 'plain' | 'primary' | 'plainText' | 'secondary' | 'typeahead';
   /** Status styles of the menu toggle */
@@ -107,7 +100,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
       isFullHeight,
       isFullWidth,
       isPlaceholder,
-      splitButtonOptions,
+      splitButtonItems,
       variant,
       status,
       statusIcon,
@@ -204,17 +197,10 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
       );
     }
 
-    if (splitButtonOptions) {
+    if (splitButtonItems) {
       return (
-        <div
-          ref={innerRef as React.Ref<HTMLDivElement>}
-          className={css(
-            commonStyles,
-            styles.modifiers.splitButton,
-            splitButtonOptions?.variant === 'action' && styles.modifiers.action
-          )}
-        >
-          {splitButtonOptions?.items}
+        <div ref={innerRef as React.Ref<HTMLDivElement>} className={css(commonStyles, styles.modifiers.splitButton)}>
+          {splitButtonItems}
           <button
             className={css(styles.menuToggleButton, children && styles.modifiers.text)}
             type="button"

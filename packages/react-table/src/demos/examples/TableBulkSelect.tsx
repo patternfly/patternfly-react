@@ -113,21 +113,19 @@ export const TableBulkSelect: React.FunctionComponent = () => {
             isExpanded={isBulkSelectDropdownOpen}
             onClick={() => setIsBulkSelectDropdownOpen(!isBulkSelectDropdownOpen)}
             aria-label="Select cards"
-            splitButtonOptions={{
-              items: [
-                <MenuToggleCheckbox
-                  id="split-dropdown-checkbox"
-                  key="split-dropdown-checkbox"
-                  aria-label={anySelected ? 'Deselect all cards' : 'Select all cards'}
-                  isChecked={isChecked}
-                  onClick={() => {
-                    anySelected ? setSelectedRows([]) : selectAllRows(bulkSelection !== 'all');
-                  }}
-                >
-                  {numSelected !== 0 && `${numSelected} selected`}
-                </MenuToggleCheckbox>
-              ]
-            }}
+            splitButtonItems={[
+              <MenuToggleCheckbox
+                id="split-dropdown-checkbox"
+                key="split-dropdown-checkbox"
+                aria-label={anySelected ? 'Deselect all cards' : 'Select all cards'}
+                isChecked={isChecked}
+                onClick={() => {
+                  anySelected ? setSelectedRows([]) : selectAllRows(bulkSelection !== 'all');
+                }}
+              >
+                {numSelected !== 0 && `${numSelected} selected`}
+              </MenuToggleCheckbox>
+            ]}
           ></MenuToggle>
         )}
       >

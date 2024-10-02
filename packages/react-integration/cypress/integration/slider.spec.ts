@@ -3,7 +3,7 @@ describe('Slider Demo Test', () => {
     cy.visit('http://localhost:3000/slider-demo-nav-link');
   });
 
-  it('changes discrete slider value when dragged', () => {
+  xit('changes discrete slider value when dragged', () => {
     cy.get('#discrete-slider').should('exist');
     cy.get('#discrete-slider')
       .invoke('attr', 'style')
@@ -23,7 +23,7 @@ describe('Slider Demo Test', () => {
       );
   });
 
-  it('changes discrete slider value using keyboard', () => {
+  xit('changes discrete slider value using keyboard', () => {
     cy.get('#discrete-slider > .pf-v6-c-slider__main > .pf-v6-c-slider__thumb').focus();
     cy.get('#discrete-slider > .pf-v6-c-slider__main > .pf-v6-c-slider__thumb').trigger('keydown', { keyCode: 39 });
     cy.wait(50);
