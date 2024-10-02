@@ -26,7 +26,7 @@ export const MenuToggleSplitButtonAction: React.FunctionComponent = () => (
     />{' '}
     <MenuToggle
       variant="secondary"
-      SplitButtonItems={[
+      splitButtonItems={[
         <MenuToggleAction
           id="split-button-action-secondary-example-with-toggle-button"
           key="split-action-secondary"
