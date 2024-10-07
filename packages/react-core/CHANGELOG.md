@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.1...@patternfly/react-core@5.4.2) (2024-10-07)
+
+### Bug Fixes
+
+- add checks for contentRef to avoid errors in console ([#10870](https://github.com/patternfly/patternfly-react/issues/10870)) ([bd6b854](https://github.com/patternfly/patternfly-react/commit/bd6b854851c9ba8a19065902832eeee39491b857))
+- **nav:** Reverts PR [#10644](https://github.com/patternfly/patternfly-react/issues/10644) that caused regression ([#11099](https://github.com/patternfly/patternfly-react/issues/11099)) ([b5ab02e](https://github.com/patternfly/patternfly-react/commit/b5ab02e415b6e7ef0ce86de00ecf2688f3ab55f4))
+
 ## [5.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.0...@patternfly/react-core@5.4.1) (2024-09-18)
 
 ### Bug Fixes
