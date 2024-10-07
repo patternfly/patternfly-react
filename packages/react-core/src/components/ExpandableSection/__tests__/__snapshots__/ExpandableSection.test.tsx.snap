@@ -58,6 +58,7 @@ exports[`Disclosure ExpandableSection 1`] = `
   >
     <button
       aria-controls="content-id"
+      aria-expanded="false"
       class="pf-v5-c-expandable-section__toggle"
       id="toggle-id"
       type="button"
@@ -103,6 +104,7 @@ exports[`ExpandableSection 1`] = `
   >
     <button
       aria-controls="content-id"
+      aria-expanded="false"
       class="pf-v5-c-expandable-section__toggle"
       id="toggle-id"
       type="button"
@@ -238,6 +240,7 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
   >
     <button
       aria-controls="content-id"
+      aria-expanded="false"
       class="pf-v5-c-expandable-section__toggle"
       id="toggle-id"
       type="button"
