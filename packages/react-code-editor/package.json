@@ -34,7 +34,7 @@
     "@patternfly/react-icons": "workspace:^",
     "@patternfly/react-styles": "workspace:^",
     "react-dropzone": "14.2.3",
-    "tslib": "^2.6.3"
+    "tslib": "^2.7.0"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
