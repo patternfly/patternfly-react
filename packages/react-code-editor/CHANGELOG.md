@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.4.4...@patternfly/react-code-editor@5.4.5) (2024-10-07)
+
+### Bug Fixes
+
+- **deps:** update dependency tslib to ^2.7.0 ([#11082](https://github.com/patternfly/patternfly-react/issues/11082)) ([7dfd76f](https://github.com/patternfly/patternfly-react/commit/7dfd76f01ec8fefae2537f406cd658edcd25cc91))
+
 ## [5.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@5.4.3...@patternfly/react-code-editor@5.4.4) (2024-10-07)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
