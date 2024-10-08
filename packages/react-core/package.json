@@ -49,7 +49,7 @@
     "@patternfly/react-icons": "workspace:^",
     "@patternfly/react-styles": "workspace:^",
     "@patternfly/react-tokens": "workspace:^",
-    "focus-trap": "7.5.4",
+    "focus-trap": "7.6.0",
     "react-dropzone": "^14.2.3",
     "tslib": "^2.7.0"
   },
