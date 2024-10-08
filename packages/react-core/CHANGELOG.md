@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.3...@patternfly/react-core@5.4.4) (2024-10-08)
+
+### Bug Fixes
+
+- **deps:** update dependency focus-trap to v7.6.0 ([#11081](https://github.com/patternfly/patternfly-react/issues/11081)) ([5feaa1b](https://github.com/patternfly/patternfly-react/commit/5feaa1b631d4ad5098545bee569caa85ba0b5a95))
+
 ## [5.4.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.2...@patternfly/react-core@5.4.3) (2024-10-07)
 
 ### Bug Fixes
