@@ -248,9 +248,8 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
               variant="plain"
               onClick={() => onDropdownToggle('dropdown-toggle-id-0')}
               aria-label="Notification drawer actions"
-            >
-              <EllipsisVIcon aria-hidden="true" />
-            </MenuToggle>
+              icon={<EllipsisVIcon aria-hidden="true" />}
+            />
           )}
         >
           <DropdownList>{notificationDrawerActions}</DropdownList>
@@ -280,9 +279,8 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
                         variant="plain"
                         onClick={() => onDropdownToggle(key)}
                         aria-label={`Notification ${index + 1} actions`}
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon aria-hidden="true" />}
+                      />
                     )}
                   >
                     <DropdownList>{notificationDrawerDropdownItems(key)}</DropdownList>

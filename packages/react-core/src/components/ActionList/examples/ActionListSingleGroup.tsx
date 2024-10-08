@@ -84,9 +84,8 @@ export const ActionListSingleGroup: React.FunctionComponent = () => {
                   variant="plain"
                   isExpanded={isOpen}
                   aria-label="Action list single group kebab"
-                >
-                  <EllipsisVIcon />
-                </MenuToggle>
+                  icon={<EllipsisVIcon />}
+                />
               )}
               isOpen={isOpen}
               onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}

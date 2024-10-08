@@ -221,9 +221,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onKebabDropdownToggle}
                     variant="plain"
                     aria-label="Settings and help"
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
+                    icon={<EllipsisVIcon aria-hidden="true" />}
+                  />
                 )}
               >
                 <DropdownList>{kebabDropdownItems}</DropdownList>
@@ -341,9 +340,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               variant="plain"
               onClick={() => onToggle('toggle-id-0')}
               isExpanded={isActionsMenuOpen['toggle-id-0'] || false}
-            >
-              <EllipsisVIcon aria-hidden="true" />
-            </MenuToggle>
+              icon={<EllipsisVIcon aria-hidden="true" />}
+            />
           )}
         >
           <DropdownList>{notificationDrawerActions}</DropdownList>
@@ -376,9 +374,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                       variant="plain"
                       onClick={() => onToggle('toggle-id-1')}
                       isExpanded={isActionsMenuOpen['toggle-id-1'] || false}
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={<EllipsisVIcon aria-hidden="true" />}
+                    />
                   )}
                 >
                   <DropdownList>{notificationDrawerDropdownItems}</DropdownList>
@@ -412,9 +409,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                       variant="plain"
                       onClick={() => onToggle('toggle-id-2')}
                       isExpanded={isActionsMenuOpen['toggle-id-2'] || false}
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={<EllipsisVIcon aria-hidden="true" />}
+                    />
                   )}
                 >
                   <DropdownList>{notificationDrawerDropdownItems}</DropdownList>
@@ -449,9 +445,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                       variant="plain"
                       onClick={() => onToggle('toggle-id-3')}
                       isExpanded={isActionsMenuOpen['toggle-id-3'] || false}
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={<EllipsisVIcon aria-hidden="true" />}
+                    />
                   )}
                 >
                   <DropdownList>{notificationDrawerDropdownItems}</DropdownList>
@@ -485,9 +480,8 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                       variant="plain"
                       onClick={() => onToggle('toggle-id-4')}
                       isExpanded={isActionsMenuOpen['toggle-id-4'] || false}
-                    >
-                      <EllipsisVIcon aria-hidden="true" />
-                    </MenuToggle>
+                      icon={<EllipsisVIcon aria-hidden="true" />}
+                    />
                   )}
                 >
                   <DropdownList>{notificationDrawerDropdownItems}</DropdownList>

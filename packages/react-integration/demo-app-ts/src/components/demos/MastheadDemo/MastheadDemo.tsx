@@ -181,9 +181,8 @@ export class MastheadDemo extends Component<MastheadProps> {
                         onClick={this.onKebabToggle}
                         id="toggle-id-kebab"
                         variant="plain"
-                      >
-                        <EllipsisVIcon />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon />}
+                      />
                     )}
                   >
                     <DropdownList>{dropdownItems}</DropdownList>

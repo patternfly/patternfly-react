@@ -402,14 +402,14 @@ export const TableColumnManagement: React.FunctionComponent = () => {
           <ToolbarItem variant="overflow-menu">
             <OverflowMenu breakpoint="md">
               <OverflowMenuItem>
-                <MenuToggle>
-                  <FilterIcon /> Name
-                </MenuToggle>
+                <MenuToggle icon={<FilterIcon />}>Name</MenuToggle>
               </OverflowMenuItem>
               <OverflowMenuItem>
-                <MenuToggle variant="plain" aria-label="Sort columns">
-                  <SortAmountDownIcon aria-hidden="true" />
-                </MenuToggle>
+                <MenuToggle
+                  variant="plain"
+                  aria-label="Sort columns"
+                  icon={<SortAmountDownIcon aria-hidden="true" />}
+                />
               </OverflowMenuItem>
               <OverflowMenuGroup groupType="button" isPersistent>
                 <OverflowMenuItem>
