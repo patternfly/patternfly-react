@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.3](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@5.4.2...eslint-plugin-patternfly-react@5.4.3) (2024-10-08)
+
+### Bug Fixes
+
+- **deps:** update dependency eslint-plugin-prettier to ^5.2.1 ([#11076](https://github.com/patternfly/patternfly-react/issues/11076)) ([c5259ba](https://github.com/patternfly/patternfly-react/commit/c5259ba034aa51470bb9bc3e7bf945a2577ad392))
+
 ## [5.4.2](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@5.4.1...eslint-plugin-patternfly-react@5.4.2) (2024-10-08)
 
 ### Bug Fixes
