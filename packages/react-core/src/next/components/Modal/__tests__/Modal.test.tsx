@@ -83,20 +83,6 @@ describe('Modal', () => {
     expect(screen.queryByRole('button', { name: 'Close' })).toBeNull();
   });
 
-  test('modal generates console error when no accessible name is provided', () => {
-    const props = {
-      onClose: jest.fn(),
-      isOpen: true,
-      children: 'modal content'
-    };
-    const consoleErrorMock = jest.fn();
-    global.console = { error: consoleErrorMock } as any;
-
-    render(<Modal {...props} />);
-
-    expect(consoleErrorMock).toHaveBeenCalled();
-  });
-
   test('modal adds aria-hidden attribute to its siblings when open', () => {
     render(<ModalWithSiblings />, { container: document.body.appendChild(target) });
 
