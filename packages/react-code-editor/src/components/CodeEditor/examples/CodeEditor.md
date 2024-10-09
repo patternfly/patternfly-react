@@ -43,3 +43,9 @@ These examples below are the shortcuts that we recommend describing in the popov
 ```ts file="CodeEditorCustomControl.tsx"
 
 ```
+
+### With 100% height
+
+```ts file="CodeEditorModal.tsx"
+
+```
