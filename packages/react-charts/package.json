@@ -7,6 +7,9 @@
   "types": "dist/esm/index.d.ts",
   "typesVersions": {
     "*": {
+      "echarts": [
+        "dist/esm/echarts/index.d.ts"
+      ],
       "victory": [
         "dist/esm/victory/index.d.ts"
       ]
@@ -43,6 +46,7 @@
     "tslib": "^2.7.0"
   },
   "peerDependencies": {
+    "echarts": "^5.5.1",
     "react": "^17 || ^18",
     "react-dom": "^17 || ^18",
     "victory-area": "^37.1.1",
@@ -69,7 +73,7 @@
     "subpaths": "node ../../scripts/exportSubpaths.mjs --config subpaths.config.json"
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.9",
+    "@types/lodash": "^4.17.7",
     "fs-extra": "^11.2.0"
   }
 }
