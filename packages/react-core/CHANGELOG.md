@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.4...@patternfly/react-core@5.4.5) (2024-10-09)
+
+### Bug Fixes
+
+- **next modal:** prevent auto aria-labelledby if aria-label is passed ([#11088](https://github.com/patternfly/patternfly-react/issues/11088)) ([742e728](https://github.com/patternfly/patternfly-react/commit/742e7286c247931d378f66c3f0ba06983f3fa15d))
+
 ## [5.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.3...@patternfly/react-core@5.4.4) (2024-10-08)
 
 ### Bug Fixes
