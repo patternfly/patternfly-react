@@ -69,7 +69,7 @@
     "subpaths": "node ../../scripts/exportSubpaths.mjs --config subpaths.config.json"
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.9",
+    "@types/lodash": "^4.17.10",
     "fs-extra": "^11.2.0"
   }
 }
