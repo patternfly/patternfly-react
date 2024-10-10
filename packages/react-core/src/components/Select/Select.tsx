@@ -78,6 +78,10 @@ export interface SelectProps extends MenuProps, OUIAProps {
   maxMenuHeight?: string;
   /** Indicates if the select menu should be scrollable */
   isScrollable?: boolean;
+  /** Flag indicating if scroll on focus of the first menu item should occur. */
+  shouldPreventScrollOnItemFocus?: boolean;
+  /** Time in ms to wait before firing the toggles' focus event. Defaults to 0 */
+  focusTimeoutDelay?: number;
 }
 
 const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
@@ -99,6 +103,8 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   menuHeight,
   maxMenuHeight,
   isScrollable,
+  shouldPreventScrollOnItemFocus = true,
+  focusTimeoutDelay = 0,
   ...props
 }: SelectProps & OUIAProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -121,7 +127,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
         if (onOpenChangeKeys.includes(event.key)) {
           event.preventDefault();
           onOpenChange(false);
-          toggleRef.current?.focus();
+          toggleRef.current?.focus({ preventScroll: shouldPreventScrollOnItemFocus });
         }
       }
     };
@@ -131,8 +137,8 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       if (isOpen && shouldFocusFirstItemOnOpen && toggleRef.current?.contains(event.target as Node)) {
         setTimeout(() => {
           const firstElement = menuRef?.current?.querySelector('li button:not(:disabled),li input:not(:disabled)');
-          firstElement && (firstElement as HTMLElement).focus();
-        }, 10);
+          firstElement && (firstElement as HTMLElement).focus({ preventScroll: shouldPreventScrollOnItemFocus });
+        }, focusTimeoutDelay);
       }
 
       // If the event is not on the toggle and onOpenChange callback is provided, close the menu
@@ -150,7 +156,16 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       window.removeEventListener('keydown', handleMenuKeys);
       window.removeEventListener('click', handleClick);
     };
-  }, [isOpen, menuRef, toggleRef, onOpenChange, onOpenChangeKeys]);
+  }, [
+    isOpen,
+    menuRef,
+    toggleRef,
+    onOpenChange,
+    onOpenChangeKeys,
+    shouldPreventScrollOnItemFocus,
+    shouldFocusFirstItemOnOpen,
+    focusTimeoutDelay
+  ]);
 
   const menu = (
     <Menu

@@ -56,6 +56,10 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   containerRef?: React.RefObject<HTMLDivElement>;
   /** @beta The container to append the pagination options menu to. Overrides the containerRef prop. */
   appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
+  /** Flag indicating if scroll on focus of the first menu item should occur. */
+  shouldPreventScrollOnItemFocus?: boolean;
+  /** Time in ms to wait before firing the toggles' focus event. Defaults to 0 */
+  focusTimeoutDelay?: number;
 }
 
 export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMenuProps> = ({
@@ -80,7 +84,9 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
   toggleTemplate,
   onPerPageSelect = () => null as any,
   containerRef,
-  appendTo
+  appendTo,
+  shouldPreventScrollOnItemFocus = true,
+  focusTimeoutDelay = 0
 }: PaginationOptionsMenuProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
@@ -123,7 +129,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
       ) {
         if (event.key === 'Escape' || event.key === 'Tab') {
           setIsOpen(false);
-          toggleRef.current?.focus();
+          toggleRef.current?.focus({ preventScroll: shouldPreventScrollOnItemFocus });
         }
       }
     };
@@ -133,8 +139,8 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
       if (isOpen && toggleRef.current?.contains(event.target as Node)) {
         setTimeout(() => {
           const firstElement = menuRef?.current?.querySelector('li button:not(:disabled)');
-          firstElement && (firstElement as HTMLElement).focus();
-        }, 0);
+          firstElement && (firstElement as HTMLElement).focus({ preventScroll: shouldPreventScrollOnItemFocus });
+        }, focusTimeoutDelay);
       }
 
       // If the event is not on the toggle, close the menu
@@ -154,7 +160,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
       window.removeEventListener('keydown', handleMenuKeys);
       window.removeEventListener('click', handleClick);
     };
-  }, [isOpen, menuRef]);
+  }, [focusTimeoutDelay, isOpen, menuRef, shouldPreventScrollOnItemFocus]);
 
   const renderItems = () =>
     perPageOptions.map(({ value, title }) => (
