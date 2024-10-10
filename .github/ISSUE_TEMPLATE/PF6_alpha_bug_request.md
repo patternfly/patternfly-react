@@ -1,6 +1,6 @@
 ---
 name: PF6 bug
-about: Report a bug discovered while testing the PatternFly 6 alphas
+about: Report a bug discovered while testing PatternFly 6 
 title: "[short description]"
 labels: 'PF6 bug'
 assignees: ''
