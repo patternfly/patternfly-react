@@ -1,8 +1,8 @@
 ---
-name: PF6 alpha bug
+name: PF6 bug
 about: Report a bug discovered while testing the PatternFly 6 alphas
 title: "[short description]"
-labels: 'v6 alpha bug'
+labels: 'PF6 bug'
 assignees: ''
 
 ---
