@@ -12,15 +12,15 @@ import { css } from '@patternfly/react-styles';
  * @param {any} props - Props
  */
 export function mergeProps(...props: any) {
-  const firstProps = props[0];
+  const firstProps = Object.assign({}, props[0]);
   const restProps = props.slice(1);
 
   if (!restProps.length) {
-    return mergeWith({}, firstProps);
+    return firstProps;
   }
 
   // Avoid mutating the first prop collection
-  return mergeWith(mergeWith({}, firstProps), ...restProps, (a: any, b: any, key: any) => {
+  return mergeWith(firstProps, ...restProps, (a: any, b: any, key: any) => {
     if (key === 'children') {
       if (a && b) {
         // compose the two
