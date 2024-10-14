@@ -22,7 +22,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
+import { DragDropSort, DragDropContainer, Droppable as NewDroppable } from '@patternfly/react-drag-drop';
 
 ## Examples
 
@@ -78,22 +78,24 @@ The dual list selector is built in a composable manner to make customization eas
 
 ```
 
-### Drag and drop
+### Draggable
 
-This example only allows reordering the contents of the "chosen" pane with drag and drop. To make a pane able to be reordered:
+To enable drag and drop, wrap the `<DualListSelectorList>` component with `<DragDropSort>`, define the `variant` property as "DualListSelectorList", and pass both the sortable items and `onDrop` callback to `<DragDropSort>`. `<DragDropSort>` will create the component's usual children internally based on the items property, so children inside the `<DualListSelectorList>` should not be passed to the wrapped component.
 
-- wrap the `DualListSelectorPane` in a `DragDrop` component
-- wrap the `DualListSelectorList` in a `Droppable` component
-- wrap the `DualListSelectorListItem` components in a `Draggable` component
-- define an `onDrop` callback which reorders the sortable options.
-  - The `onDrop` function provides the starting location and destination location for a dragged item. It should return
-    true to enable the 'drop' animation in the new location and false to enable the 'drop' animation back to the item's
-    old position.
-  - define an `onDrag` callback which ensures that the drag event will not cross hairs with the `onOptionSelect` click
-    event set on the option. Note: the `ignoreNextOptionSelect` state value is used to prevent selection while dragging.
+Full drag and drop details can be found on the [drag and drop](/components/drag-and-drop) component page.
 
-Note: Keyboard accessibility and screen reader accessibility for the `DragDrop` component are still in development.
+```ts file="../../../../../react-drag-drop/src/components/DragDrop/examples/DualListSelectorDraggable.tsx"
 
-```ts file="DualListSelectorDragDrop.tsx"
+```
+
+### Draggable with multiple drop zones
+
+To enable multiple drop zones, wrap the `<DualListSelector>` component with `<DragDropContainer>`, and create the desired amount of `<Droppable>` components within `<DragDropContainer>`. `<Droppable>` components should be located where `<DualListSelectorList>` usually would go for each pane to be made draggable.
+
+Each `<Droppable>` should define the `wrapper` property as the component that acts as the drop zone, `<DualListSelectorList>`, and the `items` property of their respective draggable items as an array of `<DraggableObject>` data. `<DragDropContainer>` should be passed the `onDrop`, `onContainerMove`, and `onCancel` callbacks to handle items being dropped, items moving between droppable containers, and what happens if the drag is cancelled respectively. `<DragDropContainer>` should also be given a `Record` representing all sortable drop zones' items. Both components should define the `variant` property as "DualListSelectorList".
+
+Full drag and drop details can be found on the [drag and drop](/components/drag-and-drop) component page.
+
+```ts file="../../../../../react-drag-drop/src/components/DragDrop/examples/DragDropContainerDualListSelector.tsx"
 
 ```
