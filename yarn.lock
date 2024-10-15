@@ -3169,7 +3169,7 @@ __metadata:
     react: ^17 || ^18
     react-dom: ^17 || ^18
     victory-area: ^37.1.1
-    victory-axis: ^37.1.1
+    victory-axis: ^37.2.0
     victory-bar: ^37.1.1
     victory-box-plot: ^37.1.1
     victory-chart: ^37.1.1
