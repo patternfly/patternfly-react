@@ -91,7 +91,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   onOpenChangeKeys = ['Escape', 'Tab'],
   menuHeight,
   maxMenuHeight,
-  shouldFocusFirstItemOnOpen = true,
+  shouldFocusFirstItemOnOpen = false,
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
