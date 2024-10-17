@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.5...@patternfly/react-core@5.4.6) (2024-10-17)
+
+### Bug Fixes
+
+- **Select/Dropdown:** updated autofocus to false by default in v5 ([#11114](https://github.com/patternfly/patternfly-react/issues/11114)) ([408b802](https://github.com/patternfly/patternfly-react/commit/408b802f12e2dd01457a13ef9b9e29b806cd0b1e))
+
 ## [5.4.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.4...@patternfly/react-core@5.4.5) (2024-10-09)
 
 ### Bug Fixes
