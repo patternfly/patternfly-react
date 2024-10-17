@@ -68,12 +68,12 @@ export const DropdownDemo: React.FunctionComponent = () => {
       </Dropdown>
       <Dropdown
         isOpen={isNoAutofocusOpen}
-        shouldFocusFirstItemOnOpen={false}
+        shouldFocusFirstItemOnOpen={true}
         onOpenChange={(isOpen) => setIsNoAutofocusOpen(isOpen)}
         onSelect={onNoAutofocusSelect}
         toggle={(toggleRef) => (
           <MenuToggle
-            data-cy="no-autofocus-toggle"
+            data-cy="autofocus-toggle"
             onClick={onNoAutofocusToggleClick}
             isExpanded={isNoAutofocusOpen}
             ref={toggleRef}

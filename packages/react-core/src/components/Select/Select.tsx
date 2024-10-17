@@ -88,7 +88,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   selected,
   toggle,
   shouldFocusToggleOnSelect = false,
-  shouldFocusFirstItemOnOpen = true,
+  shouldFocusFirstItemOnOpen = false,
   onOpenChange,
   onOpenChangeKeys = ['Escape', 'Tab'],
   isPlain,
