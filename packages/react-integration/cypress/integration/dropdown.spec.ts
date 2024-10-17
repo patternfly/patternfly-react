@@ -50,7 +50,7 @@ describe('Dropdown demo test', () => {
   });
   it('Autofocuses first item on click when shouldFocusFirstItemOnOpen is true', () => {
     cy.get('[data-cy="autofocus-toggle"]').click();
-    cy.get('#first-item').should('not.be.focused');
+    cy.get('#first-item').should('be.focused');
     cy.get('[data-cy="toggle"]').trigger('keydown', { key: 'Escape' });
   });
 });
