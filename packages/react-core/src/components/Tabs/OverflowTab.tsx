@@ -21,6 +21,10 @@ export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   toggleAriaLabel?: string;
   /** z-index of the overflow tab */
   zIndex?: number;
+  /** Flag indicating if scroll on focus of the first menu item should occur. */
+  shouldPreventScrollOnItemFocus?: boolean;
+  /** Time in ms to wait before firing the toggles' focus event. Defaults to 0 */
+  focusTimeoutDelay?: number;
 }
 
 export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
@@ -30,6 +34,8 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   defaultTitleText = 'More',
   toggleAriaLabel,
   zIndex = 9999,
+  shouldPreventScrollOnItemFocus = true,
+  focusTimeoutDelay = 0,
   ...props
 }: OverflowTabProps) => {
   const menuRef = React.useRef<HTMLDivElement>();
@@ -78,9 +84,9 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
     setTimeout(() => {
       if (menuRef?.current) {
         const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled)');
-        firstElement && (firstElement as HTMLElement).focus();
+        firstElement && (firstElement as HTMLElement).focus({ preventScroll: shouldPreventScrollOnItemFocus });
       }
-    }, 0);
+    }, focusTimeoutDelay);
   };
 
   const overflowTab = (
