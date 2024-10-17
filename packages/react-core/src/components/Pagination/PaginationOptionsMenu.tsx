@@ -129,7 +129,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
       ) {
         if (event.key === 'Escape' || event.key === 'Tab') {
           setIsOpen(false);
-          toggleRef.current?.focus({ preventScroll: shouldPreventScrollOnItemFocus });
+          toggleRef.current?.focus();
         }
       }
     };

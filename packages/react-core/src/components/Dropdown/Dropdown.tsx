@@ -120,7 +120,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
       ) {
         if (onOpenChangeKeys.includes(event.key)) {
           onOpenChange(false);
-          toggleRef.current?.focus({ preventScroll: shouldPreventScrollOnItemFocus });
+          toggleRef.current?.focus();
         }
       }
     };

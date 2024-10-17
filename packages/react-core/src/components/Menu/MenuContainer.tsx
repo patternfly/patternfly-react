@@ -69,7 +69,7 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
       ) {
         if (onOpenChangeKeys.includes(event.key)) {
           onOpenChange(false);
-          toggleRef.current?.focus({ preventScroll: shouldPreventScrollOnItemFocus });
+          toggleRef.current?.focus();
         }
       }
     };

@@ -127,7 +127,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
         if (onOpenChangeKeys.includes(event.key)) {
           event.preventDefault();
           onOpenChange(false);
-          toggleRef.current?.focus({ preventScroll: shouldPreventScrollOnItemFocus });
+          toggleRef.current?.focus();
         }
       }
     };
