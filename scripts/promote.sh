@@ -11,7 +11,7 @@ packages=(
   @patternfly/react-templates
   @patternfly/react-tokens
 )
-prereleaseTag=prerelease
+prereleaseTag=prerelease-v5
 
 function getPrereleaseVersion {
   local version=$(
