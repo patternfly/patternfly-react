@@ -224,7 +224,7 @@ class EmbeddedHtml extends React.Component {
     super(props);
     this.baseStyles = {
       color: '#f0f0f0',
-      fontFamily: 'RedHatText, Overpass, overpass, helvetica, arial, sans-serif',
+      fontFamily: '"Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif',
       fontSize: '14px'
     };
     this.leftColumn = {
