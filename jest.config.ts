@@ -6,7 +6,12 @@ import type { Config } from 'jest';
 
 const config: Config = {
   collectCoverage: true,
-  coverageReporters: ['lcov'],
+  coverageReporters: ['lcov', 'text'],
+  collectCoverageFrom: [
+    '<rootDir>/packages/react-core/src/components/**/*.tsx',
+    '!<rootDir>/packages/react-core/src/components/*/examples/*.tsx'
+  ],
+  coverageDirectory: './packages/react-docs/coverage/',
   clearMocks: true,
   testMatch: ['**/__tests__/**/*.{js,ts}?(x)', '**/*.test.{js,ts}?(x)'],
   modulePathIgnorePatterns: [
