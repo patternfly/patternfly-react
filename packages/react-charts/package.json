@@ -63,6 +63,59 @@
     "victory-voronoi-container": "^37.1.1",
     "victory-zoom-container": "^37.1.1"
   },
+  "peerDependenciesMeta": {
+    "victory-area": {
+      "optional": true
+    },
+    "victory-axis": {
+      "optional": true
+    },
+    "victory-bar": {
+      "optional": true
+    },
+    "victory-box-plot": {
+      "optional": true
+    },
+    "victory-chart": {
+      "optional": true
+    },
+    "victory-core": {
+      "optional": true
+    },
+    "victory-create-container": {
+      "optional": true
+    },
+    "victory-cursor-container": {
+      "optional": true
+    },
+    "victory-group": {
+      "optional": true
+    },
+    "victory-legend": {
+      "optional": true
+    },
+    "victory-line": {
+      "optional": true
+    },
+    "victory-pie": {
+      "optional": true
+    },
+    "victory-scatter": {
+      "optional": true
+    },
+    "victory-stack": {
+      "optional": true
+    },
+    "victory-tooltip": {
+      "optional": true
+    },
+    "victory-voronoi-container": {
+      "optional": true
+    },
+    "victory-zoom-container": {
+      "optional": true
+    }
+  },
   "scripts": {
     "clean": "rimraf dist echarts victory",
     "build:single:packages": "node ../../scripts/build-single-packages.mjs --config single-packages.config.json",
