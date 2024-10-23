@@ -39,6 +39,10 @@ export interface MenuContainerProps {
   popperProps?: MenuPopperProps;
   /** @beta Flag indicating the first menu item should be focused after opening the dropdown. */
   shouldFocusFirstItemOnOpen?: boolean;
+  /** Flag indicating if scroll on focus of the first menu item should occur. */
+  shouldPreventScrollOnItemFocus?: boolean;
+  /** Time in ms to wait before firing the toggles' focus event. Defaults to 0 */
+  focusTimeoutDelay?: number;
 }
 
 /**
@@ -54,7 +58,9 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   zIndex = 9999,
   popperProps,
   onOpenChangeKeys = ['Escape', 'Tab'],
-  shouldFocusFirstItemOnOpen = true
+  shouldFocusFirstItemOnOpen = true,
+  shouldPreventScrollOnItemFocus = true,
+  focusTimeoutDelay = 0
 }: MenuContainerProps) => {
   const prevIsOpen = React.useRef<boolean>(isOpen);
   React.useEffect(() => {
@@ -64,8 +70,8 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
         const firstElement = menuRef?.current?.querySelector(
           'li button:not(:disabled),li input:not(:disabled),li a:not([aria-disabled="true"])'
         );
-        firstElement && (firstElement as HTMLElement).focus();
-      }, 10);
+        firstElement && (firstElement as HTMLElement).focus({ preventScroll: shouldPreventScrollOnItemFocus });
+      }, focusTimeoutDelay);
     }
 
     prevIsOpen.current = isOpen;
@@ -102,7 +108,7 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
       window.removeEventListener('keydown', handleMenuKeys);
       window.removeEventListener('click', handleClick);
     };
-  }, [isOpen, menuRef, onOpenChange, onOpenChangeKeys, toggleRef]);
+  }, [focusTimeoutDelay, isOpen, menuRef, onOpenChange, onOpenChangeKeys, shouldPreventScrollOnItemFocus, toggleRef]);
 
   return (
     <Popper

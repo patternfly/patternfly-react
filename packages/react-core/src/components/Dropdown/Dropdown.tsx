@@ -71,6 +71,10 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   maxMenuHeight?: string;
   /** @beta Flag indicating the first menu item should be focused after opening the dropdown. */
   shouldFocusFirstItemOnOpen?: boolean;
+  /** Flag indicating if scroll on focus of the first menu item should occur. */
+  shouldPreventScrollOnItemFocus?: boolean;
+  /** Time in ms to wait before firing the toggles' focus event. Defaults to 0 */
+  focusTimeoutDelay?: number;
 }
 
 const DropdownBase: React.FunctionComponent<DropdownProps> = ({
@@ -92,6 +96,8 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   menuHeight,
   maxMenuHeight,
   shouldFocusFirstItemOnOpen = false,
+  shouldPreventScrollOnItemFocus = true,
+  focusTimeoutDelay = 0,
   ...props
 }: DropdownProps) => {
   const localMenuRef = React.useRef<HTMLDivElement>();
@@ -112,8 +118,8 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
         const firstElement = menuRef?.current?.querySelector(
           'li button:not(:disabled),li input:not(:disabled),li a:not([aria-disabled="true"])'
         );
-        firstElement && (firstElement as HTMLElement).focus();
-      }, 10);
+        firstElement && (firstElement as HTMLElement).focus({ preventScroll: shouldPreventScrollOnItemFocus });
+      }, focusTimeoutDelay);
     }
 
     prevIsOpen.current = isOpen;
@@ -151,7 +157,16 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
       window.removeEventListener('keydown', handleMenuKeys);
       window.removeEventListener('click', handleClick);
     };
-  }, [isOpen, menuRef, toggleRef, onOpenChange, onOpenChangeKeys]);
+  }, [
+    isOpen,
+    menuRef,
+    toggleRef,
+    onOpenChange,
+    onOpenChangeKeys,
+    shouldPreventScrollOnItemFocus,
+    shouldFocusFirstItemOnOpen,
+    focusTimeoutDelay
+  ]);
 
   const scrollable = maxMenuHeight !== undefined || menuHeight !== undefined || isScrollable;
 
@@ -161,7 +176,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
       ref={menuRef}
       onSelect={(event, value) => {
         onSelect && onSelect(event, value);
-        shouldFocusToggleOnSelect && toggleRef.current.focus();
+        shouldFocusToggleOnSelect && toggleRef.current?.focus();
       }}
       isPlain={isPlain}
       isScrollable={scrollable}
