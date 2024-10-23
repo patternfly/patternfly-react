@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-prerelease.14...@patternfly/react-charts@8.0.0-prerelease.15) (2024-10-23)
+
+### Bug Fixes
+
+- **charts:** update Victory packages to be optional peer dependencies ([#11128](https://github.com/patternfly/patternfly-react/issues/11128)) ([09a8f38](https://github.com/patternfly/patternfly-react/commit/09a8f38fbe2d8c1d2fb4d607440a8f14271224c8))
+
 # [8.0.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.0.0-prerelease.13...@patternfly/react-charts@8.0.0-prerelease.14) (2024-10-02)
 
 **Note:** Version bump only for package @patternfly/react-charts

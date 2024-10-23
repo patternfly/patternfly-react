@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.12...@patternfly/react-integration@6.0.0-prerelease.13) (2024-10-23)
+
+### Bug Fixes
+
+- **Select/Dropdown:** updated autofocus to false by default in v6 ([#11115](https://github.com/patternfly/patternfly-react/issues/11115)) ([2b2bc35](https://github.com/patternfly/patternfly-react/commit/2b2bc35d3da32c662050645838a903bf479d58fc))
+
 # [6.0.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.11...@patternfly/react-integration@6.0.0-prerelease.12) (2024-10-02)
 
 ### Bug Fixes
