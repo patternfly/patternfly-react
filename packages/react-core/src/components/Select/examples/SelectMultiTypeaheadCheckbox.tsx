@@ -241,7 +241,7 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
         !isOpen && closeMenu();
       }}
       toggle={toggle}
-      shouldFocusFirstItemOnOpen={false}
+      isTypeahead
     >
       <SelectList isAriaMultiselectable id="select-multi-typeahead-checkbox-listbox">
         {selectOptions.map((option, index) => (

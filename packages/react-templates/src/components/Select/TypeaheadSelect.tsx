@@ -361,7 +361,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
         !isOpen && closeMenu();
       }}
       toggle={toggle}
-      shouldFocusFirstItemOnOpen={false}
+      isTypeahead
       ref={innerRef}
       {...props}
     >
