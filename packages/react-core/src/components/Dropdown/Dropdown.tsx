@@ -95,7 +95,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   onOpenChangeKeys = ['Escape', 'Tab'],
   menuHeight,
   maxMenuHeight,
-  shouldFocusFirstItemOnOpen = true,
+  shouldFocusFirstItemOnOpen = false,
   shouldPreventScrollOnItemFocus = true,
   focusTimeoutDelay = 0,
   ...props
