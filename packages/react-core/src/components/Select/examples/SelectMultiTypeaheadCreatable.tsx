@@ -256,7 +256,7 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
         !isOpen && closeMenu();
       }}
       toggle={toggle}
-      shouldFocusFirstItemOnOpen={false}
+      isTypeahead
     >
       <SelectList isAriaMultiselectable id="select-multi-create-typeahead-listbox">
         {selectOptions.map((option, index) => (
