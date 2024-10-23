@@ -62,6 +62,8 @@ export interface SelectProps extends MenuProps, OUIAProps {
   onOpenChange?: (isOpen: boolean) => void;
   /** Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
+  /** Custom callback to override the default behaviour when pressing up/down arrows. Defaults to navigating through the menu items (with focus on them). */
+  onArrowUpDownKeyPress?: (event: KeyboardEvent) => void;
   /** Indicates if the select should be without the outer box-shadow */
   isPlain?: boolean;
   /** @hide Forwarded ref */
@@ -95,6 +97,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   shouldFocusFirstItemOnOpen = false,
   onOpenChange,
   onOpenChangeKeys = ['Escape', 'Tab'],
+  onArrowUpDownKeyPress,
   isPlain,
   innerRef,
   zIndex = 9999,
@@ -131,6 +134,18 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   }, [isOpen]);
 
   React.useEffect(() => {
+    const onArrowUpDownKeyPressDefault = (event: KeyboardEvent) => {
+      event.preventDefault();
+
+      const firstItemSelector = 'li button:not(:disabled),li input:not(:disabled)';
+      const lastItemSelector = 'li:last-child button:not(:disabled),li:last-child input:not(:disabled)';
+
+      const elementToFocus = menuRef?.current?.querySelector(
+        event.key === 'ArrowDown' ? firstItemSelector : lastItemSelector
+      );
+      elementToFocus && (elementToFocus as HTMLElement).focus();
+    };
+
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
       if (
@@ -143,6 +158,10 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
           onOpenChange(false);
           toggleRef.current?.focus();
         }
+      }
+
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        onArrowUpDownKeyPress ? onArrowUpDownKeyPress(event) : onArrowUpDownKeyPressDefault(event);
       }
     };
 
