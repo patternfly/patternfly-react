@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.22...@patternfly/react-core@6.0.0-prerelease.23) (2024-10-23)
+
+### Bug Fixes
+
+- **Menus:** added new fix for scroll jump bug ([#11119](https://github.com/patternfly/patternfly-react/issues/11119)) ([f19a7a5](https://github.com/patternfly/patternfly-react/commit/f19a7a51be930da22a1067c48d0a5c0185a345e4))
+
 # [6.0.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.0.0-prerelease.21...@patternfly/react-core@6.0.0-prerelease.22) (2024-10-23)
 
 ### Bug Fixes
