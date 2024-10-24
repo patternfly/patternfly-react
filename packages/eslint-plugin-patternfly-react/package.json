@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/blob/main/packages/eslint-plugin/README.md",
+  "homepage": "https://github.com/patternfly/patternfly-react/blob/main/packages/eslint-plugin-patternfly-react/README.md",
   "peerDependencies": {
     "eslint": ">=5.16.0"
   }
