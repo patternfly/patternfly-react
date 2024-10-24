@@ -360,6 +360,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
       onOpenChange={(isOpen) => {
         !isOpen && closeMenu();
       }}
+      onArrowUpDownKeyPress={(_event) => {}}
       toggle={toggle}
       shouldFocusFirstItemOnOpen={false}
       ref={innerRef}

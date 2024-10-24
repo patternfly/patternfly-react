@@ -243,6 +243,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
       onOpenChange={(isOpen) => {
         !isOpen && closeMenu();
       }}
+      onArrowUpDownKeyPress={(_event) => {}}
       toggle={toggle}
       shouldFocusFirstItemOnOpen={false}
     >
