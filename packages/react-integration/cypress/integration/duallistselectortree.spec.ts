@@ -31,14 +31,18 @@ describe('Dual List Selector Tree Demo Test', () => {
     cy.get('.pf-v6-c-dual-list-selector__list').eq(1).find('li').should('have.length', 2);
   });
 
-  xit('Verify add all filtered options works', () => {
+  it('Verify add all filtered options works', () => {
     cy.get('.pf-v6-c-dual-list-selector__list').eq(0).find('li').should('have.length', 2);
     cy.get('.pf-v6-c-dual-list-selector__tools-filter input').eq(0).type('Fru');
-    cy.get('.pf-v6-c-dual-list-selector__list').eq(0).find('li').should('have.length', 1);
+    cy.get('.pf-v6-c-dual-list-selector__list').eq(0).find('li').should('have.length', 6);
     cy.get('.pf-v6-c-dual-list-selector__controls-item').eq(1).click();
-    cy.get('.pf-v6-c-dual-list-selector__list').eq(1).find('li').should('have.length', 3);
+    cy.get('.pf-v6-c-dual-list-selector__status-text').eq(0).should('have.text', '0 of 0 options selected');
+    cy.get('.pf-v6-c-empty-state').eq(0).should('exist');
+    cy.get('.pf-v6-c-dual-list-selector__list').eq(0).find('li').should('have.length', 3); // "Chosen" list is at index 0, because "Available" displays empty state instead
+    cy.get('.pf-v6-c-dual-list-selector__status-text').eq(1).should('have.text', '0 of 9 options selected');
     cy.get('.pf-v6-c-dual-list-selector__tools-filter input').eq(0).type('{backspace}{backspace}{backspace}');
     cy.get('.pf-v6-c-dual-list-selector__list').eq(0).find('li').should('have.length', 1);
+    cy.get('.pf-v6-c-dual-list-selector__status-text').eq(0).should('have.text', '0 of 2 options selected');
   });
 
   it('Verify chosen search works', () => {
@@ -49,16 +53,16 @@ describe('Dual List Selector Tree Demo Test', () => {
     cy.get('.pf-v6-c-dual-list-selector__menu').eq(1).find('li').should('have.length', 1);
   });
 
-  xit('Verify remove all filtered options works', () => {
-    cy.get('.pf-v6-c-dual-list-selector__list').eq(0).find('li').should('have.length', 0);
-    cy.get('.pf-v6-c-dual-list-selector__list').eq(1).find('li').should('have.length', 1);
+  it('Verify remove all filtered options works', () => {
+    cy.get('.pf-v6-c-dual-list-selector__menu').eq(0).should('be.empty');
+    cy.get('.pf-v6-c-dual-list-selector__list').eq(0).find('li').should('have.length', 1); // "Chosen" list is at index 0, because "Available" is empty
     cy.get('.pf-v6-c-dual-list-selector__controls-item').eq(2).click();
     cy.get('.pf-v6-c-dual-list-selector__list').eq(0).find('li').should('have.length', 1);
-    cy.get('.pf-v6-c-dual-list-selector__list').eq(1).find('li').should('have.length', 0);
+    cy.get('.pf-v6-c-empty-state').eq(0).should('exist');
     cy.get('.pf-v6-c-dual-list-selector__tools-filter input').eq(1).type('{backspace}{backspace}{backspace}');
     cy.get('.pf-v6-c-dual-list-selector__list').eq(1).find('li').should('have.length', 3);
     cy.get('.pf-v6-c-dual-list-selector__controls-item').eq(2).click();
     cy.get('.pf-v6-c-dual-list-selector__list').eq(0).find('li').should('have.length', 4);
-    cy.get('.pf-v6-c-dual-list-selector__list').eq(1).find('li').should('have.length', 0);
+    cy.get('.pf-v6-c-dual-list-selector__menu').eq(1).should('be.empty');
   });
 });
