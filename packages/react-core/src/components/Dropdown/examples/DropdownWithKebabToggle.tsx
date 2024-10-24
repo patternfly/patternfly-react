@@ -27,9 +27,8 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
           variant="plain"
           onClick={onToggleClick}
           isExpanded={isOpen}
-        >
-          <EllipsisVIcon />
-        </MenuToggle>
+          icon={<EllipsisVIcon />}
+        />
       )}
       shouldFocusToggleOnSelect
     >

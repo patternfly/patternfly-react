@@ -13,6 +13,7 @@ import {
   Dropdown,
   DropdownItem,
   DropdownList,
+  Icon,
   MenuToggle,
   MenuToggleElement,
   Toolbar,
@@ -22,7 +23,6 @@ import {
   ToolbarContent,
   SearchInput,
   Tooltip,
-  Icon,
   PageSection
 } from '@patternfly/react-core';
 
@@ -182,9 +182,8 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                         isExpanded={isOpen1}
                         variant="plain"
                         aria-label="Primary content kebab toggle"
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon aria-hidden="true" />}
+                      />
                     )}
                   >
                     <DropdownList>
@@ -259,9 +258,8 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                         isExpanded={isOpen2}
                         variant="plain"
                         aria-label="Secondary content kebab toggle"
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon aria-hidden="true" />}
+                      />
                     )}
                   >
                     <DropdownList>
@@ -336,9 +334,8 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                         isExpanded={isOpen3}
                         variant="plain"
                         aria-label="Tertiary content kebab toggle"
-                      >
-                        <EllipsisVIcon aria-hidden="true" />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon aria-hidden="true" />}
+                      />
                     )}
                   >
                     <DropdownList>

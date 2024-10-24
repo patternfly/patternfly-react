@@ -467,9 +467,8 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
               variant="plain"
               onClick={onToolbarKebabDropdownToggle}
               aria-label="Toolbar actions"
-            >
-              <EllipsisVIcon aria-hidden="true" />
-            </MenuToggle>
+              icon={<EllipsisVIcon aria-hidden="true" />}
+            />
           )}
         >
           <DropdownList>{toolbarKebabDropdownItems}</DropdownList>
@@ -526,9 +525,8 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
                           onCardKebabDropdownToggle(e, key.toString());
                         }}
                         isExpanded={!!state[key]}
-                      >
-                        <EllipsisVIcon />
-                      </MenuToggle>
+                        icon={<EllipsisVIcon />}
+                      />
                     )}
                   >
                     <DropdownList>

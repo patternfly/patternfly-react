@@ -427,9 +427,8 @@ export const CardViewBasic: React.FunctionComponent = () => {
                   variant="plain"
                   onClick={onToolbarKebabDropdownToggle}
                   isExpanded={isLowerToolbarKebabDropdownOpen}
-                >
-                  <EllipsisVIcon />
-                </MenuToggle>
+                  icon={<EllipsisVIcon />}
+                />
               )}
               isOpen={isLowerToolbarKebabDropdownOpen}
               onOpenChange={(isOpen) => setIsLowerToolbarDropdownOpen(isOpen)}
@@ -518,9 +517,8 @@ export const CardViewBasic: React.FunctionComponent = () => {
                                 onCardKebabDropdownToggle(e, key.toString());
                               }}
                               isExpanded={!!state[key]}
-                            >
-                              <EllipsisVIcon />
-                            </MenuToggle>
+                              icon={<EllipsisVIcon />}
+                            />
                           )}
                           popperProps={{ position: 'right' }}
                         >

@@ -157,9 +157,8 @@ export const NavFlyout: React.FunctionComponent = () => {
                   onClick={onKebabDropdownToggle}
                   variant="plain"
                   aria-label="Settings and help"
-                >
-                  <EllipsisVIcon aria-hidden="true" />
-                </MenuToggle>
+                  icon={<EllipsisVIcon aria-hidden="true" />}
+                />
               )}
             >
               <DropdownList>{kebabDropdownItems}</DropdownList>
@@ -178,9 +177,8 @@ export const NavFlyout: React.FunctionComponent = () => {
                   onClick={onFullKebabToggle}
                   variant="plain"
                   aria-label="Toolbar menu"
-                >
-                  <EllipsisVIcon aria-hidden="true" />
-                </MenuToggle>
+                  icon={<EllipsisVIcon aria-hidden="true" />}
+                />
               )}
             >
               <DropdownGroup key="group 2" aria-label="User actions">

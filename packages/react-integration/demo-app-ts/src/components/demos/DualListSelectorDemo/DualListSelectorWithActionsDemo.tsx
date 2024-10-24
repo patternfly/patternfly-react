@@ -190,9 +190,8 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
                 variant="plain"
                 id="complex-available-toggle"
                 aria-label="Complex actions example available kebab toggle"
-              >
-                <EllipsisVIcon aria-hidden="true" />
-              </MenuToggle>
+                icon={<EllipsisVIcon aria-hidden="true" />}
+              />
             )}
             isOpen={isAvailableKebabOpen}
             onOpenChange={(isOpen: boolean) => setIsAvailableKebabOpen(isOpen)}
@@ -226,9 +225,8 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
                 variant="plain"
                 id="complex-chosen-toggle"
                 aria-label="Complex actions example chosen kebab toggle"
-              >
-                <EllipsisVIcon aria-hidden="true" />
-              </MenuToggle>
+                icon={<EllipsisVIcon aria-hidden="true" />}
+              />
             )}
             isOpen={isChosenKebabOpen}
             onOpenChange={(isOpen: boolean) => setIsChosenKebabOpen(isOpen)}

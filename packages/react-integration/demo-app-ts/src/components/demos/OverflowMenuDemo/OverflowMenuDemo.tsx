@@ -88,9 +88,8 @@ export class OverflowMenuDemo extends React.Component {
                 variant="plain"
                 onClick={this.onSimpleToggle}
                 isExpanded={isSimpleOpen}
-              >
-                <EllipsisVIcon />
-              </MenuToggle>
+                icon={<EllipsisVIcon />}
+              />
             )}
             isOpen={isSimpleOpen}
           >
@@ -175,9 +174,8 @@ export class OverflowMenuDemo extends React.Component {
                 variant="plain"
                 onClick={this.onAdditionalOptionsToggle}
                 isExpanded={isAdditionalOptionsOpen}
-              >
-                <EllipsisVIcon />
-              </MenuToggle>
+                icon={<EllipsisVIcon />}
+              />
             )}
             isOpen={isAdditionalOptionsOpen}
           >
@@ -242,9 +240,8 @@ export class OverflowMenuDemo extends React.Component {
                 variant="plain"
                 onClick={this.onPersistToggle}
                 isExpanded={isPersistOpen}
-              >
-                <EllipsisVIcon />
-              </MenuToggle>
+                icon={<EllipsisVIcon />}
+              />
             )}
             isOpen={isPersistOpen}
           >
@@ -317,9 +314,8 @@ export class OverflowMenuDemo extends React.Component {
                   variant="plain"
                   onClick={this.onContainerBreakpointToggle}
                   isExpanded={isContainerBreakpointOpen}
-                >
-                  <EllipsisVIcon />
-                </MenuToggle>
+                  icon={<EllipsisVIcon />}
+                />
               )}
               isOpen={isContainerBreakpointOpen}
             >
