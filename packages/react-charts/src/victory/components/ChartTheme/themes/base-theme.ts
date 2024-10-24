@@ -125,8 +125,8 @@ import { ChartComponentThemeDefinition, ChartThemeDefinition } from '../ChartThe
 // Typography
 //
 // Note: Victory's approximateTextSize function uses specific character widths and does not work with font variables
-// See https://github.com/patternfly/patternfly-react/issues/5300
-const TYPOGRAPHY_FONT_FAMILY = chart_global_FontFamily.value.replace(/ /g, '');
+// See https://github.com/patternfly/patternfly-react/issues/5300 and https://github.com/patternfly/patternfly-react/pull/5301
+const TYPOGRAPHY_FONT_FAMILY = chart_global_FontFamily.value;
 const TYPOGRAPHY_LETTER_SPACING = chart_global_letter_spacing.value;
 const TYPOGRAPHY_FONT_SIZE = chart_global_FontSize_sm.value;
 
