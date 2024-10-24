@@ -12,17 +12,17 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 # Update their versions and changelogs according to angular commit guidelines
 # https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
 
-if [[ ! -z "${PATTERNFLY_VERSION}" ]]; then
-  echo "Updating to @patternfly/patternfly: ${PATTERNFLY_VERSION}"
-  npm pkg set dependencies.@patternfly/patternfly=${PATTERNFLY_VERSION} --workspace @patternfly/react-docs
-  npm pkg set devDependencies.@patternfly/patternfly=${PATTERNFLY_VERSION} --workspace @patternfly/react-core --workspace @patternfly/react-styles --workspace @patternfly/react-tokens --workspace @patternfly/react-icons 
-fi
+#if [[ ! -z "${PATTERNFLY_VERSION}" ]]; then
+#  echo "Updating to @patternfly/patternfly: ${PATTERNFLY_VERSION}"
+#  npm pkg set dependencies.@patternfly/patternfly=${PATTERNFLY_VERSION} --workspace @patternfly/react-docs
+#  npm pkg set devDependencies.@patternfly/patternfly=${PATTERNFLY_VERSION} --workspace @patternfly/react-core --workspace @patternfly/react-styles --workspace @patternfly/react-tokens --workspace @patternfly/react-icons 
+#fi
 
 # publish to npm
-yarn run lerna publish --conventional-commits --conventional-graduate --no-private --dist-tag=latest --yes
+# yarn run lerna publish --conventional-commits --conventional-graduate --no-private --dist-tag=latest --yes
 
 # immediately after promote - set up repo for next prerelease
-# yarn run lerna version preminor --force-publish --conventional-commits --no-private --yes --preid prerelease
+yarn run lerna version preminor --force-publish --conventional-commits --no-private --yes --preid prerelease
 
 # dry run
 # yarn run lerna version --conventional-commits --conventional-graduate --no-private --yes --no-git-tag-version --no-push
