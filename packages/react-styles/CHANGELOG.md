@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.0.0 (2024-10-24)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
 # [6.0.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.0.0-prerelease.5...@patternfly/react-styles@6.0.0-prerelease.6) (2024-10-02)
 
 ### Bug Fixes
