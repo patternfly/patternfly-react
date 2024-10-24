@@ -23,7 +23,7 @@ import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-ico
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { css } from '@patternfly/react-styles';
-import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
+import { DragDropSort, DragDropContainer, Droppable as NewDroppable } from '@patternfly/react-drag-drop';
 
 ## Examples
 
@@ -83,11 +83,23 @@ import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecate
 
 ### Draggable
 
-Note: There is a new recommended drag and drop implementation with full keyboard functionality, which replaces this implementation. To adhere to our new recommendations, refer to the [drag and drop demos](/components/drag-and-drop/react-demos).
+To enable drag and drop, wrap the `<DataList>` component with `<DragDropSort>`, define the `variant` property as "DataList", and pass both the sortable items and `onDrop` callback to `<DragDropSort>`. `<DragDropSort>` will create the component's usual children internally based on the items property, so children should not be passed to the wrapped component.
 
-Previously, draggable data lists had their own API for the [drag and drop component](/components/drag-and-drop), which wasn't flexible enough to allow custom styling for items as they are dragged. To address this disparity, `<DragDrop>`, `<Draggable>`, and `<Droppable>` components were added to replace our now deprecated HTML5-based API. Keyboard and screen reader accessibility for the `<DragDrop>` component is still in development.
+Full drag and drop details can be found on the [drag and drop](/components/drag-and-drop) component page.
 
-```ts isDeprecated file="./DataListDraggable.tsx"
+```ts file="../../../../../react-drag-drop/src/components/DragDrop/examples/DataListDraggable.tsx"
+
+```
+
+### Draggable with multiple drop zones
+
+To enable multiple drop zones, and create the desired amount of `<Droppable>` components within a `<DragDropContainer>`.
+
+Each `<Droppable>` should define the `wrapper` property as the component that acts as the drop zone, `<DataList>`, and the `items` property of their respective draggable items as an array of `<DraggableObject>` data. `<DragDropContainer>` should be passed the `onDrop`, `onContainerMove`, and `onCancel` callbacks to handle items being dropped, items moving between droppable containers, and what happens if the drag is cancelled respectively. `<DragDropContainer>` should also be given a `Record` representing all sortable drop zones' items. Both components should define the `variant` property as "DataList".
+
+Full drag and drop details can be found on the [drag and drop](/components/drag-and-drop) component page.
+
+```ts file="../../../../../react-drag-drop/src/components/DragDrop/examples/DragDropContainerDataList.tsx"
 
 ```
 
