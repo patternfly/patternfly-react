@@ -17,6 +17,7 @@ export interface MenuPopperProps {
   /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
   preventOverflow?: boolean;
 }
+
 export interface MenuContainerProps {
   /** Menu to be rendered */
   menu: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
@@ -33,6 +34,8 @@ export interface MenuContainerProps {
   onOpenChange?: (isOpen: boolean) => void;
   /** Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
+  /** Custom callback to override the default behaviour when pressing up/down arrows. Default is focusing the menu items (first item on arrow down, last item on arrow up). */
+  onArrowUpDownKeyDown?: (event: KeyboardEvent) => void;
   /** z-index of the dropdown menu */
   zIndex?: number;
   /** Additional properties to pass to the Popper */
@@ -55,10 +58,11 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   toggle,
   toggleRef,
   onOpenChange,
+  onArrowUpDownKeyDown,
   zIndex = 9999,
   popperProps,
   onOpenChangeKeys = ['Escape', 'Tab'],
-  shouldFocusFirstItemOnOpen = true,
+  shouldFocusFirstItemOnOpen = false,
   shouldPreventScrollOnItemFocus = true,
   focusTimeoutDelay = 0
 }: MenuContainerProps) => {
@@ -79,6 +83,23 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   }, [isOpen]);
 
   React.useEffect(() => {
+    const onArrowUpDownKeyDownDefault = (event: KeyboardEvent) => {
+      event.preventDefault();
+
+      let listItem: HTMLLIElement;
+      if (event.key === 'ArrowDown') {
+        listItem = menuRef.current?.querySelector('li');
+      } else {
+        const allItems = menuRef.current?.querySelectorAll('li');
+        listItem = allItems ? allItems[allItems.length - 1] : null;
+      }
+
+      const focusableElement = listItem?.querySelector(
+        'button:not(:disabled),input:not(:disabled),a:not([aria-disabled="true"])'
+      );
+      focusableElement && (focusableElement as HTMLElement).focus();
+    };
+
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
       if (
@@ -88,6 +109,14 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
         if (onOpenChangeKeys.includes(event.key)) {
           onOpenChange(false);
           toggleRef.current?.focus();
+        }
+      }
+
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        if (onArrowUpDownKeyDown) {
+          onArrowUpDownKeyDown(event);
+        } else {
+          onArrowUpDownKeyDownDefault(event);
         }
       }
     };
@@ -108,7 +137,16 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
       window.removeEventListener('keydown', handleMenuKeys);
       window.removeEventListener('click', handleClick);
     };
-  }, [focusTimeoutDelay, isOpen, menuRef, onOpenChange, onOpenChangeKeys, shouldPreventScrollOnItemFocus, toggleRef]);
+  }, [
+    focusTimeoutDelay,
+    isOpen,
+    menuRef,
+    onOpenChange,
+    onOpenChangeKeys,
+    onArrowUpDownKeyDown,
+    shouldPreventScrollOnItemFocus,
+    toggleRef
+  ]);
 
   return (
     <Popper
