@@ -53,7 +53,7 @@ export const sortable: ITransform = (
 
   return {
     className: css(styles.tableSort, isSortedBy && styles.modifiers.selected, className),
-    'aria-sort': isSortedBy ? `${sortBy.direction}ending` : 'none',
+    ...(isSortedBy && { 'aria-sort': `${sortBy.direction}ending` }),
     children: (
       <SortColumn
         isSortedBy={isSortedBy}
