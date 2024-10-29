@@ -502,6 +502,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
       showEditor,
       options: optionsProp,
       overrideServices,
+      loading,
       editorProps
     } = this.props;
     const shortcutsPopoverProps: PopoverProps = {
@@ -647,6 +648,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                 onChange={this.onChange}
                 onMount={this.editorDidMount}
                 theme={isDarkTheme ? 'vs-dark' : 'vs-light'}
+                loading={loading}
                 {...editorProps}
               />
             </div>
