@@ -34,8 +34,8 @@ export interface MenuContainerProps {
   onOpenChange?: (isOpen: boolean) => void;
   /** Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
-  /** Custom callback to override the default behaviour when pressing up/down arrows. Default is focusing the menu items (first item on arrow down, last item on arrow up). */
-  onArrowUpDownKeyDown?: (event: KeyboardEvent) => void;
+  /** Callback to override the default behavior when pressing up/down arrow keys when the toggle has focus and the menu is open. By default non-disabled menu items will receive focus - the first item on arrow down or the last item on arrow up. */
+  onToggleArrowKeydown?: (event: KeyboardEvent) => void;
   /** z-index of the dropdown menu */
   zIndex?: number;
   /** Additional properties to pass to the Popper */
@@ -57,7 +57,7 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   toggle,
   toggleRef,
   onOpenChange,
-  onArrowUpDownKeyDown,
+  onToggleArrowKeydown,
   zIndex = 9999,
   popperProps,
   onOpenChangeKeys = ['Escape', 'Tab'],
@@ -65,7 +65,7 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   focusTimeoutDelay = 0
 }: MenuContainerProps) => {
   React.useEffect(() => {
-    const onArrowUpDownKeyDownDefault = (event: KeyboardEvent) => {
+    const onToggleArrowKeydownDefault = (event: KeyboardEvent) => {
       event.preventDefault();
 
       let listItem: HTMLLIElement;
@@ -94,11 +94,15 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
         }
       }
 
-      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-        if (onArrowUpDownKeyDown) {
-          onArrowUpDownKeyDown(event);
+      if (
+        isOpen &&
+        toggleRef.current?.contains(event.target as Node) &&
+        (event.key === 'ArrowDown' || event.key === 'ArrowUp')
+      ) {
+        if (onToggleArrowKeydown) {
+          onToggleArrowKeydown(event);
         } else {
-          onArrowUpDownKeyDownDefault(event);
+          onToggleArrowKeydownDefault(event);
         }
       }
     };
@@ -135,7 +139,7 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
     menuRef,
     onOpenChange,
     onOpenChangeKeys,
-    onArrowUpDownKeyDown,
+    onToggleArrowKeydown,
     shouldPreventScrollOnItemFocus,
     toggleRef
   ]);

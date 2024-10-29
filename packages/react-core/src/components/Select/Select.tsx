@@ -62,8 +62,8 @@ export interface SelectProps extends MenuProps, OUIAProps {
   onOpenChange?: (isOpen: boolean) => void;
   /** @beta Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
-  /** Custom callback to override the default behaviour when pressing up/down arrows. Default is focusing the menu items (first item on arrow down, last item on arrow up). */
-  onArrowUpDownKeyDown?: (event: KeyboardEvent) => void;
+  /** Callback to override the default behavior when pressing up/down arrow keys when the toggle has focus and the menu is open. By default non-disabled menu items will receive focus - the first item on arrow down or the last item on arrow up. */
+  onToggleArrowKeydown?: (event: KeyboardEvent) => void;
   /** Indicates that the Select is used as a typeahead (combobox). Focus won't shift to menu items when pressing up/down arrows. */
   isTypeahead?: boolean;
   /** Indicates if the select should be without the outer box-shadow */
@@ -99,7 +99,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   shouldFocusFirstItemOnOpen = false,
   onOpenChange,
   onOpenChangeKeys = ['Escape', 'Tab'],
-  onArrowUpDownKeyDown,
+  onToggleArrowKeydown,
   isTypeahead,
   isPlain,
   innerRef,
@@ -123,7 +123,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       : (toggle?.toggleRef as React.RefObject<HTMLButtonElement>);
 
   React.useEffect(() => {
-    const onArrowUpDownKeyDownDefault = (event: KeyboardEvent) => {
+    const onToggleArrowKeydownDefault = (event: KeyboardEvent) => {
       event.preventDefault();
 
       let listItem: HTMLLIElement;
@@ -152,11 +152,15 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
         }
       }
 
-      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-        if (onArrowUpDownKeyDown) {
-          onArrowUpDownKeyDown(event);
+      if (
+        isOpen &&
+        toggleRef.current?.contains(event.target as Node) &&
+        (event.key === 'ArrowDown' || event.key === 'ArrowUp')
+      ) {
+        if (onToggleArrowKeydown) {
+          onToggleArrowKeydown(event);
         } else if (!isTypeahead) {
-          onArrowUpDownKeyDownDefault(event);
+          onToggleArrowKeydownDefault(event);
         }
       }
     };
@@ -191,7 +195,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
     toggleRef,
     onOpenChange,
     onOpenChangeKeys,
-    onArrowUpDownKeyDown,
+    onToggleArrowKeydown,
     shouldPreventScrollOnItemFocus,
     shouldFocusFirstItemOnOpen,
     focusTimeoutDelay
