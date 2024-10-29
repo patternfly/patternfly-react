@@ -79,6 +79,10 @@ describe('Notification Drawer Groups Demo Test', () => {
       cy.wrap(toggleButton).type('{esc}', { waitForAnimations: true });
       cy.tick(200);
       cy.get('.notification-9.pf-v6-c-menu').should('not.exist');
+      // restore the clock
+      cy.clock().then((clock) => {
+        clock.restore();
+      });
     });
   });
 
