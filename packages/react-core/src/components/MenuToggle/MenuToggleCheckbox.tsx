@@ -20,7 +20,7 @@ export interface MenuToggleCheckboxProps
   /** Flag to set the default checked value of the checkbox when it is uncontrolled by React state.
    * To make the checkbox controlled instead use the isChecked prop, but do not use both.
    */
-  defaultChecked?: boolean | null;
+  defaultChecked?: boolean;
   /** A callback for when the checkbox selection changes */
   onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Element to be rendered inside the <span> */
