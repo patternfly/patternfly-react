@@ -349,7 +349,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
           aria-controls="select-typeahead-listbox"
         />
         <TextInputGroupUtilities
-          {...(!(isFiltering && filterValue) && !selected ? { style: { display: 'none' } } : {})}
+          {...(!(isFiltering && filterValue) && !(selected && onClearSelection) ? { style: { display: 'none' } } : {})}
         >
           <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
             <TimesIcon aria-hidden />
