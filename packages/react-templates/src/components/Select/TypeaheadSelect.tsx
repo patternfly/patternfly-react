@@ -26,7 +26,7 @@ export interface TypeaheadSelectOption extends Omit<SelectOptionProps, 'content'
 
 export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSelect'> {
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: React.Ref<HTMLDivElement>;
   /** Options of the select */
   selectOptions: TypeaheadSelectOption[];
   /** Callback triggered on selection. */
@@ -386,7 +386,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
 };
 TypeaheadSelectBase.displayName = 'TypeaheadSelectBase';
 
-export const TypeaheadSelect = React.forwardRef((props: TypeaheadSelectProps, ref: React.Ref<any>) => (
+export const TypeaheadSelect = React.forwardRef((props: TypeaheadSelectProps, ref: React.Ref<HTMLDivElement>) => (
   <TypeaheadSelectBase {...props} innerRef={ref} />
 ));
 
