@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.4.8...@patternfly/react-table@5.4.9) (2024-10-30)
+
+### Bug Fixes
+
+- **table,a11y:** only apply aria-sort when sorting ([#11144](https://github.com/patternfly/patternfly-react/issues/11144)) ([bddeead](https://github.com/patternfly/patternfly-react/commit/bddeead88ede0ddbdfcef3a62685e1ac1b118e35))
+
 ## [5.4.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@5.4.7...@patternfly/react-table@5.4.8) (2024-10-17)
 
 **Note:** Version bump only for package @patternfly/react-table
