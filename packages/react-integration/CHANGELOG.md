@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.13...@patternfly/react-integration@6.0.0-prerelease.14) (2024-10-30)
+
+### Bug Fixes
+
+- **DualListSelector example:** improved behaviour when filter is applied ([#11097](https://github.com/patternfly/patternfly-react/issues/11097)) ([b146983](https://github.com/patternfly/patternfly-react/commit/b146983291454cd64099e9a10a2ccb6ad249a920))
+
 # [6.0.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.12...@patternfly/react-integration@6.0.0-prerelease.13) (2024-10-23)
 
 ### Bug Fixes

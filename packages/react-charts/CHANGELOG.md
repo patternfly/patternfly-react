@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.1.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.1.0-prerelease.0...@patternfly/react-charts@8.1.0-prerelease.1) (2024-10-30)
+
+### Bug Fixes
+
+- **charts:** update font-family ([#11122](https://github.com/patternfly/patternfly-react/issues/11122)) ([e2d9e39](https://github.com/patternfly/patternfly-react/commit/e2d9e3922801f96336993037dda91eeb150c465e))
+
 # 8.1.0-prerelease.0 (2024-10-24)
 
 **Note:** Version bump only for package @patternfly/react-charts

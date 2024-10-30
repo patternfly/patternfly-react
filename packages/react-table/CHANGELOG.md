@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.1.0-prerelease.0...@patternfly/react-table@6.1.0-prerelease.1) (2024-10-30)
+
+### Bug Fixes
+
+- **table,a11y:** only apply aria-sort when sorting for V6 ([#11147](https://github.com/patternfly/patternfly-react/issues/11147)) ([71b9ab7](https://github.com/patternfly/patternfly-react/commit/71b9ab7a41e8abb76e4c2005c16666e1fea031dd))
+
 # 6.1.0-prerelease.0 (2024-10-24)
 
 **Note:** Version bump only for package @patternfly/react-table

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.0...@patternfly/react-core@6.1.0-prerelease.1) (2024-10-30)
+
+### Bug Fixes
+
+- **DualListSelector example:** improved behaviour when filter is applied ([#11097](https://github.com/patternfly/patternfly-react/issues/11097)) ([b146983](https://github.com/patternfly/patternfly-react/commit/b146983291454cd64099e9a10a2ccb6ad249a920))
+
 # 6.1.0-prerelease.0 (2024-10-24)
 
 **Note:** Version bump only for package @patternfly/react-core
