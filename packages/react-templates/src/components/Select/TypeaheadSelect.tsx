@@ -325,7 +325,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
       aria-label="Typeahead menu toggle"
       onClick={onToggleClick}
       isExpanded={isOpen}
-      isDisabled={isDisabled}
+      isDisabled={isDisabled || false}
       isFullWidth
       style={
         {
