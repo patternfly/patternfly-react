@@ -20,7 +20,6 @@ exports[`Table Actions table 1`] = `
         data-ouia-safe="true"
       >
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="0"
           data-label="Header cell"
@@ -825,7 +824,6 @@ exports[`Table Cell header table 1`] = `
         data-ouia-safe="true"
       >
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="0"
           data-label="Header cell"
@@ -1396,7 +1394,6 @@ exports[`Table Collapsible nested table 1`] = `
           tabindex="-1"
         />
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="1"
           data-label="Header cell"
@@ -2148,7 +2145,6 @@ exports[`Table Collapsible table 1`] = `
           tabindex="-1"
         />
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="1"
           data-label="Header cell"
@@ -4175,7 +4171,6 @@ exports[`Table Selectable table 1`] = `
           </label>
         </th>
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="1"
           data-label="Header cell"
@@ -4867,7 +4862,6 @@ exports[`Table Selectable table with Radio 1`] = `
           tabindex="-1"
         />
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="1"
           data-label="Header cell"
@@ -5656,7 +5650,6 @@ exports[`Table Simple Actions table 1`] = `
         data-ouia-safe="true"
       >
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="0"
           data-label="Header cell"
@@ -6539,7 +6532,6 @@ exports[`Table Table variants Breakpoint -  1`] = `
         data-ouia-safe="true"
       >
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="0"
           data-label="Header cell"
@@ -7068,7 +7060,6 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
         data-ouia-safe="true"
       >
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="0"
           data-label="Header cell"
@@ -7597,7 +7588,6 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
         data-ouia-safe="true"
       >
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="0"
           data-label="Header cell"
@@ -8126,7 +8116,6 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
         data-ouia-safe="true"
       >
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="0"
           data-label="Header cell"
@@ -8655,7 +8644,6 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
         data-ouia-safe="true"
       >
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="0"
           data-label="Header cell"
@@ -9184,7 +9172,6 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
         data-ouia-safe="true"
       >
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="0"
           data-label="Header cell"
@@ -9713,7 +9700,6 @@ exports[`Table Table variants Size - compact 1`] = `
         data-ouia-safe="true"
       >
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="0"
           data-label="Header cell"
@@ -10782,7 +10768,6 @@ exports[`Table simple Row click table 1`] = `
         data-ouia-safe="true"
       >
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="0"
           data-label="Header cell"
@@ -11311,7 +11296,6 @@ exports[`Table simple Sortable table 1`] = `
         data-ouia-safe="true"
       >
         <th
-          aria-sort="none"
           class="pf-v5-c-table__th pf-v5-c-table__sort"
           data-key="0"
           data-label="Header cell"
