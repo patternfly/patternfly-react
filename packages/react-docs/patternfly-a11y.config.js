@@ -35,10 +35,7 @@ const urls = Object.keys(fullscreenRoutes)
           }
           // some components have their default tab as trailing 'react-deprecated'
         } else if (path.match(/\/components\/.*\/react-deprecated$/g)) {
-          if (
-            path.includes('/tile/') ||
-            path.includes('/chip/')
-          ) {
+          if (path.includes('/tile/') || path.includes('/chip/')) {
             return path.replace(/\/react-deprecated$/, '');
           }
         }
