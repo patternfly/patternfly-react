@@ -33,6 +33,14 @@ const urls = Object.keys(fullscreenRoutes)
           ) {
             return path.replace(/\/react-demos$/, '');
           }
+          // some components have their default tab as trailing 'react-deprecated'
+        } else if (path.match(/\/components\/.*\/react-deprecated$/g)) {
+          if (
+            path.includes('/tile/') ||
+            path.includes('/chip/')
+          ) {
+            return path.replace(/\/react-deprecated$/, '');
+          }
         }
         // all other pages in the components section have a trailing 'react' string in their default tab
         return path.replace(/\/react$/, '');
