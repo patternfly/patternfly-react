@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@patternfly/documentation-framework": "^6.0.0-alpha.106",
-    "@patternfly/patternfly-a11y": "4.3.1"
+    "@patternfly/patternfly-a11y": "5.0.0"
   },
   "keywords": [
     "gatsby"
