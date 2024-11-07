@@ -15,6 +15,14 @@ import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
 ## Examples
 
+### TEST PR
+
+this example is for testing the fix testing and will be deleted before PR merges.
+
+```ts file="./Test.tsx"
+
+```
+
 ### Basic modals
 
 Basic modals give users the option to either confirm or cancel an action. 

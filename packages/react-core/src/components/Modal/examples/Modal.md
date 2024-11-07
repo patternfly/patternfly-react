@@ -17,7 +17,7 @@ import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
 ### TEST PR
 
-// this example is for testing the fix testing and will be deleted before PR merges.
+this example is for testing the fix testing and will be deleted before PR merges.
 
 ```ts file="./Test.tsx"
 

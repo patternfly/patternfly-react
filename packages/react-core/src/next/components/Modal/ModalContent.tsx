@@ -16,6 +16,8 @@ export interface ModalContentProps extends OUIAProps {
   'aria-labelledby'?: string;
   /** Id of the modal box container. */
   boxId: string;
+  /** Id of the backdrop. */
+  backdropId?: string;
   /** Content rendered inside the modal. */
   children: React.ReactNode;
   /** Additional classes added to the modal box. */
@@ -60,6 +62,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   width,
   maxWidth,
   boxId,
+  backdropId,
   disableFocusTrap = false,
   ouiaId,
   ouiaSafe = true,
@@ -106,7 +109,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     </ModalBox>
   );
   return (
-    <Backdrop>
+    <Backdrop id={backdropId}>
       <FocusTrap
         active={!disableFocusTrap}
         focusTrapOptions={{
