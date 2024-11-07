@@ -51,3 +51,21 @@ test('Wrappable', () => {
   );
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('component on Split', () => {
+  const { asFragment } = render(
+    <Split component="span">
+      <SplitItem>Basic content</SplitItem>
+    </Split>
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('component on SplitItem', () => {
+  const { asFragment } = render(
+    <Split>
+      <SplitItem component="span">Basic content</SplitItem>
+    </Split>
+  );
+  expect(asFragment()).toMatchSnapshot();
+});

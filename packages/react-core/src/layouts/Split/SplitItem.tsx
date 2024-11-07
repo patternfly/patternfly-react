@@ -3,22 +3,28 @@ import styles from '@patternfly/react-styles/css/layouts/Split/split';
 import { css } from '@patternfly/react-styles';
 
 export interface SplitItemProps extends React.HTMLProps<HTMLDivElement> {
-  /** Flag indicating if this Split Layout item should fill the available horizontal space. */
+  /** Flag indicating if this split layout item should fill the available horizontal space. */
   isFilled?: boolean;
-  /** content rendered inside the Split Layout Item */
+  /** Content rendered inside the split layout item. */
   children?: React.ReactNode;
-  /** additional classes added to the Split Layout Item */
+  /** Additional classes added to the split layout item. */
   className?: string;
+  /** Sets the base component to render. Defaults to div. */
+  component?: React.ReactNode;
 }
 
 export const SplitItem: React.FunctionComponent<SplitItemProps> = ({
   isFilled = false,
   className = '',
   children = null,
+  component = 'div',
   ...props
-}: SplitItemProps) => (
-  <div {...props} className={css(styles.splitItem, isFilled && styles.modifiers.fill, className)}>
-    {children}
-  </div>
-);
+}: SplitItemProps) => {
+  const Component = component as any;
+  return (
+    <Component {...props} className={css(styles.splitItem, isFilled && styles.modifiers.fill, className)}>
+      {children}
+    </Component>
+  );
+};
 SplitItem.displayName = 'SplitItem';

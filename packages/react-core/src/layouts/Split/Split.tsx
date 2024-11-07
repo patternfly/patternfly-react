@@ -5,13 +5,13 @@ import { css } from '@patternfly/react-styles';
 export interface SplitProps extends React.HTMLProps<HTMLDivElement> {
   /** Adds space between children. */
   hasGutter?: boolean;
-  /** Allows children to wrap */
+  /** Allows children to wrap. */
   isWrappable?: boolean;
-  /** content rendered inside the Split layout */
+  /** content rendered inside the split layout. */
   children?: React.ReactNode;
-  /** additional classes added to the Split layout */
+  /** Additional classes added to the split layout. */
   className?: string;
-  /** Sets the base component to render. defaults to div */
+  /** Sets the base component to render. Defaults to div. */
   component?: React.ReactNode;
 }
 

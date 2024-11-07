@@ -93,6 +93,34 @@ exports[`Wrappable 1`] = `
 </DocumentFragment>
 `;
 
+exports[`component on Split 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v6-l-split"
+  >
+    <div
+      class="pf-v6-l-split__item"
+    >
+      Basic content
+    </div>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`component on SplitItem 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-l-split"
+  >
+    <span
+      class="pf-v6-l-split__item"
+    >
+      Basic content
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`isFilled 1`] = `
 <DocumentFragment>
   <div
