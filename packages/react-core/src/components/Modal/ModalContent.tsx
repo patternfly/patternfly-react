@@ -25,6 +25,8 @@ export interface ModalContentProps extends OUIAProps {
   'aria-label'?: string;
   /** Id to use for the modal box label. */
   'aria-labelledby'?: string | null;
+  /** Id of the backdrop. */
+  backdropId?: string;
   /** Accessible label applied to the modal box body. This should be used to communicate
    * important information about the modal box body div element if needed, such as that it
    * is scrollable.
@@ -117,6 +119,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   maxWidth,
   boxId,
   labelId,
+  backdropId,
   descriptorId,
   disableFocusTrap = false,
   hasNoBodyWrapper = false,
@@ -202,7 +205,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     </ModalBox>
   );
   return (
-    <Backdrop>
+    <Backdrop id={backdropId}>
       <FocusTrap
         active={!disableFocusTrap}
         focusTrapOptions={{
