@@ -123,7 +123,7 @@ export const getLegendTooltipSize = ({
   legendData,
   legendOrientation = 'vertical',
   legendProps,
-  minSpacing = 1,
+  minSpacing = 2, // Adjust min spacing, see https://issues.redhat.com/browse/COST-5648
   text = '',
   theme
 }: ChartLegendTooltipFlyoutInterface) => {
