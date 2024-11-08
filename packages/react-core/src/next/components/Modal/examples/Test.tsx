@@ -22,8 +22,11 @@ export const Test: React.FunctionComponent = () => {
           <>
             <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
               <ModalBody>
-                Inspect the div containing the modal to see the value of aria-hidden.
-                <div>Render count: {renderCount.current}</div>
+                <s>
+                  Inspect the div containing the modal to see the value of aria-hidden.
+                  <div>Render count: {renderCount.current}</div>
+                </s>
+                <p>FIXED: Root div for portal has been removed. Only siblings of modal should have aria-hidden</p>
               </ModalBody>
             </Modal>
           </>
@@ -39,7 +42,11 @@ export const Test: React.FunctionComponent = () => {
         <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
         <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
           <ModalBody>
-            Inspect the div containing the modal to see the value of all root siblings having no aria-hidden attribute.
+            <s>
+              Inspect the div containing the modal to see the value of all root siblings having no aria-hidden
+              attribute.
+            </s>
+            <p>FIXED: Root siblings now have aria-hidden applied.</p>
           </ModalBody>
         </Modal>
         <Modal isOpen={false} onClose={() => {}}>
@@ -59,10 +66,16 @@ export const Test: React.FunctionComponent = () => {
       </p>
       <br />
       <p>
-        When the strict mode modal opens, inspect the DOM to see that the open modal has aria-hidden="true" when it
-        should be "false".
+        <s>
+          When the strict mode modal opens, inspect the DOM to see that the open modal has aria-hidden="true" when it
+          should be "false".
+        </s>
       </p>
-      <p>Also, every time the modal opens a new div is appened and is never removed until the page is refreshed.</p>
+      <p>FIXED: root no longer has aria-hidden</p>
+      <p>
+        <s>Also, every time the modal opens a new div is appened and is never removed until the page is refreshed.</s>
+      </p>
+      <p>FIXED: the div was removed as it is not needed.</p>
       <React.StrictMode>
         <YourIssue1 strict />
       </React.StrictMode>
@@ -71,9 +84,12 @@ export const Test: React.FunctionComponent = () => {
       <br />
       <br />
       <p>
-        Opening a modal while another adjacent modal is closed causes the aria-hidden attribute to be removed from the
-        root and all siblings.
+        <s>
+          Opening a modal while another adjacent modal is closed causes the aria-hidden attribute to be removed from the
+          root and all siblings.
+        </s>
       </p>
+      <p>FIXED: aria hidden is no longer removed.</p>
       <YourIssue2 />
     </div>
   );
