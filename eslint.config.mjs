@@ -2,6 +2,7 @@ import { fixupPluginRules } from '@eslint/compat';
 import js from '@eslint/js';
 import patternflyReact from 'eslint-plugin-patternfly-react';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import reactCompiler from 'eslint-plugin-react-compiler';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
 import testingLibrary from 'eslint-plugin-testing-library';
@@ -27,7 +28,8 @@ export default [
   {
     plugins: {
       'patternfly-react': fixupPluginRules(patternflyReact),
-      'react-hooks': fixupPluginRules(reactHooks)
+      'react-hooks': fixupPluginRules(reactHooks),
+      'react-compiler': reactCompiler
     },
     languageOptions: {
       globals: {
@@ -119,6 +121,7 @@ export default [
       radix: ['error', 'as-needed'],
       'react/prop-types': 0,
       'react/display-name': 0,
+      'react-compiler/react-compiler': 'warn',
       'react-hooks/exhaustive-deps': 'warn',
       'react/no-unescaped-entities': ['error', { forbid: ['>', '}'] }],
       'spaced-comment': 'error',
