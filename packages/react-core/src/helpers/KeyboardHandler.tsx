@@ -183,17 +183,17 @@ export const onToggleArrowKeydownDefault = (event: KeyboardEvent, menuRef: React
 
   event.preventDefault();
 
-  const interactiveElementSelector = 'button:not(:disabled),input:not(:disabled),a:not([aria-disabled="true"])';
-  const listItemSelector = `li:has(${interactiveElementSelector})`;
-  let listItem: Element;
-  if (event.key === 'ArrowDown') {
-    listItem = menuRef.current?.querySelector(listItemSelector);
-  } else {
-    const allItems = menuRef.current?.querySelectorAll(listItemSelector);
-    listItem = allItems ? allItems[allItems.length - 1] : null;
-  }
+  const listItems = Array.from(menuRef.current?.querySelectorAll('li'));
+  const focusableElements = listItems
+    .map((li) => li.querySelector('button:not(:disabled),input:not(:disabled),a:not([aria-disabled="true"])'))
+    .filter((el) => el !== null);
 
-  const focusableElement = listItem?.querySelector(interactiveElementSelector);
+  let focusableElement: Element;
+  if (event.key === 'ArrowDown') {
+    focusableElement = focusableElements[0];
+  } else {
+    focusableElement = focusableElements[focusableElements.length - 1];
+  }
   focusableElement && (focusableElement as HTMLElement).focus();
 };
 
