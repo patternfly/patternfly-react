@@ -34,8 +34,8 @@ export interface MenuContainerProps {
   onOpenChange?: (isOpen: boolean) => void;
   /** Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
-  /** Callback to override the default behavior when pressing up/down arrow keys when the toggle has focus and the menu is open. By default non-disabled menu items will receive focus - the first item on arrow down or the last item on arrow up. */
-  onToggleArrowKeydown?: (event: KeyboardEvent) => void;
+  /** Callback to override the toggle keydown behavior. By default, when the toggle has focus and the menu is open, pressing the up/down arrow keys will focus a valid non-disabled menu item - the first item for the down arrow key and last item for the up arrow key. */
+  onToggleKeydown?: (event: KeyboardEvent) => void;
   /** z-index of the dropdown menu */
   zIndex?: number;
   /** Additional properties to pass to the Popper */
@@ -57,7 +57,7 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   toggle,
   toggleRef,
   onOpenChange,
-  onToggleArrowKeydown,
+  onToggleKeydown,
   zIndex = 9999,
   popperProps,
   onOpenChangeKeys = ['Escape', 'Tab'],
@@ -77,10 +77,10 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
         }
       }
 
-      if (isOpen && toggleRef.current?.contains(event.target as Node)) {
-        if (onToggleArrowKeydown) {
-          onToggleArrowKeydown(event);
-        } else {
+      if (toggleRef.current?.contains(event.target as Node)) {
+        if (onToggleKeydown) {
+          onToggleKeydown(event);
+        } else if (isOpen) {
           onToggleArrowKeydownDefault(event, menuRef);
         }
       }
@@ -118,7 +118,7 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
     menuRef,
     onOpenChange,
     onOpenChangeKeys,
-    onToggleArrowKeydown,
+    onToggleKeydown,
     shouldPreventScrollOnItemFocus,
     toggleRef
   ]);

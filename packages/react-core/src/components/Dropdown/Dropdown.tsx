@@ -51,8 +51,8 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   onOpenChange?: (isOpen: boolean) => void;
   /** @beta Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
-  /** Callback to override the default behavior when pressing up/down arrow keys when the toggle has focus and the menu is open. By default non-disabled menu items will receive focus - the first item on arrow down or the last item on arrow up. */
-  onToggleArrowKeydown?: (event: KeyboardEvent) => void;
+  /** Callback to override the toggle keydown behavior. By default, when the toggle has focus and the menu is open, pressing the up/down arrow keys will focus a valid non-disabled menu item - the first item for the down arrow key and last item for the up arrow key. */
+  onToggleKeydown?: (event: KeyboardEvent) => void;
   /** Indicates if the menu should be without the outer box-shadow. */
   isPlain?: boolean;
   /** Indicates if the menu should be scrollable. */
@@ -87,7 +87,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   toggle,
   shouldFocusToggleOnSelect = false,
   onOpenChange,
-  onToggleArrowKeydown,
+  onToggleKeydown,
   isPlain,
   isScrollable,
   innerRef,
@@ -127,10 +127,10 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
         }
       }
 
-      if (isOpen && toggleRef.current?.contains(event.target as Node)) {
-        if (onToggleArrowKeydown) {
-          onToggleArrowKeydown(event);
-        } else {
+      if (toggleRef.current?.contains(event.target as Node)) {
+        if (onToggleKeydown) {
+          onToggleKeydown(event);
+        } else if (isOpen) {
           onToggleArrowKeydownDefault(event, menuRef);
         }
       }
@@ -168,7 +168,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
     toggleRef,
     onOpenChange,
     onOpenChangeKeys,
-    onToggleArrowKeydown,
+    onToggleKeydown,
     shouldPreventScrollOnItemFocus,
     shouldFocusFirstItemOnOpen,
     focusTimeoutDelay
