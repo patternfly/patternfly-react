@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
 import { Popper } from '../../helpers/Popper/Popper';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId, onToggleArrowKeydownDefault } from '../../helpers';
 
 export interface SelectPopperProps {
   /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
@@ -123,21 +123,6 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       : (toggle?.toggleRef as React.RefObject<HTMLButtonElement>);
 
   React.useEffect(() => {
-    const onToggleArrowKeydownDefault = (event: KeyboardEvent) => {
-      event.preventDefault();
-
-      let listItem: HTMLLIElement;
-      if (event.key === 'ArrowDown') {
-        listItem = menuRef.current?.querySelector('li');
-      } else {
-        const allItems = menuRef.current?.querySelectorAll('li');
-        listItem = allItems ? allItems[allItems.length - 1] : null;
-      }
-
-      const focusableElement = listItem?.querySelector('button:not(:disabled),input:not(:disabled)');
-      focusableElement && (focusableElement as HTMLElement).focus();
-    };
-
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
       if (
@@ -152,15 +137,11 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
         }
       }
 
-      if (
-        isOpen &&
-        toggleRef.current?.contains(event.target as Node) &&
-        (event.key === 'ArrowDown' || event.key === 'ArrowUp')
-      ) {
+      if (isOpen && toggleRef.current?.contains(event.target as Node)) {
         if (onToggleArrowKeydown) {
           onToggleArrowKeydown(event);
         } else if (!isTypeahead) {
-          onToggleArrowKeydownDefault(event);
+          onToggleArrowKeydownDefault(event, menuRef);
         }
       }
     };

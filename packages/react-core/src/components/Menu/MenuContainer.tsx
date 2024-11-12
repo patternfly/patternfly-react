@@ -1,5 +1,5 @@
 import React from 'react';
-import { Popper } from '../../helpers/Popper/Popper';
+import { onToggleArrowKeydownDefault, Popper } from '../../helpers';
 
 export interface MenuPopperProps {
   /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
@@ -65,23 +65,6 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   focusTimeoutDelay = 0
 }: MenuContainerProps) => {
   React.useEffect(() => {
-    const onToggleArrowKeydownDefault = (event: KeyboardEvent) => {
-      event.preventDefault();
-
-      let listItem: HTMLLIElement;
-      if (event.key === 'ArrowDown') {
-        listItem = menuRef.current?.querySelector('li');
-      } else {
-        const allItems = menuRef.current?.querySelectorAll('li');
-        listItem = allItems ? allItems[allItems.length - 1] : null;
-      }
-
-      const focusableElement = listItem?.querySelector(
-        'button:not(:disabled),input:not(:disabled),a:not([aria-disabled="true"])'
-      );
-      focusableElement && (focusableElement as HTMLElement).focus();
-    };
-
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
       if (
@@ -94,15 +77,11 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
         }
       }
 
-      if (
-        isOpen &&
-        toggleRef.current?.contains(event.target as Node) &&
-        (event.key === 'ArrowDown' || event.key === 'ArrowUp')
-      ) {
+      if (isOpen && toggleRef.current?.contains(event.target as Node)) {
         if (onToggleArrowKeydown) {
           onToggleArrowKeydown(event);
         } else {
-          onToggleArrowKeydownDefault(event);
+          onToggleArrowKeydownDefault(event, menuRef);
         }
       }
     };
