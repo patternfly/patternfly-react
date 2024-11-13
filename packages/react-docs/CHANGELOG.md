@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.1.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.1.0-prerelease.2...@patternfly/react-docs@7.1.0-prerelease.3) (2024-11-13)
+
+### Bug Fixes
+
+- bump patternfly-a11y dependency ([#11166](https://github.com/patternfly/patternfly-react/issues/11166)) ([79e3652](https://github.com/patternfly/patternfly-react/commit/79e36524c7c3bfc8a984588854a40d60c9e4c939))
+- **CodeEditor:** Set default height ([#11014](https://github.com/patternfly/patternfly-react/issues/11014)) ([6ddfc93](https://github.com/patternfly/patternfly-react/commit/6ddfc93376a48028fed46948b08a185e3c9617f6))
+
 # [7.1.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.1.0-prerelease.1...@patternfly/react-docs@7.1.0-prerelease.2) (2024-11-06)
 
 **Note:** Version bump only for package @patternfly/react-docs

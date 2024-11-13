@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.1.0-prerelease.0...@patternfly/react-icons@6.1.0-prerelease.1) (2024-11-13)
+
+### Bug Fixes
+
+- **CodeEditor:** Set default height ([#11014](https://github.com/patternfly/patternfly-react/issues/11014)) ([6ddfc93](https://github.com/patternfly/patternfly-react/commit/6ddfc93376a48028fed46948b08a185e3c9617f6))
+
 # 6.1.0-prerelease.0 (2024-10-24)
 
 **Note:** Version bump only for package @patternfly/react-icons

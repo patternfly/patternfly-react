@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.1...@patternfly/react-core@6.1.0-prerelease.2) (2024-11-13)
+
+### Bug Fixes
+
+- **CodeEditor:** Set default height ([#11014](https://github.com/patternfly/patternfly-react/issues/11014)) ([6ddfc93](https://github.com/patternfly/patternfly-react/commit/6ddfc93376a48028fed46948b08a185e3c9617f6))
+- **MenuToggle:** incorrect inheritance of HTMLInputElement ([#11145](https://github.com/patternfly/patternfly-react/issues/11145)) ([838d64a](https://github.com/patternfly/patternfly-react/commit/838d64ab66231e8c5d28a850fbc54f67bcb78aa2))
+
 # [6.1.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.0...@patternfly/react-core@6.1.0-prerelease.1) (2024-10-30)
 
 ### Bug Fixes
