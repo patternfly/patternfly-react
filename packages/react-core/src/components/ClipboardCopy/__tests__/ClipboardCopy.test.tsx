@@ -336,6 +336,21 @@ test('Does not call onCopy when ClipboardCopyButton is not clicked', async () =>
   expect(onCopyMock).not.toHaveBeenCalled();
 });
 
+test('Can take array of strings as children', async () => {
+  const onCopyMock = jest.fn();
+  const user = userEvent.setup();
+  const childrenArray = children.split(' ');
+
+  // sanity check to ensure we are checking an array with at least 2 elements
+  expect(childrenArray.length).toBeGreaterThan(1);
+
+  render(<ClipboardCopy onCopy={onCopyMock}>{childrenArray}</ClipboardCopy>);
+
+  await user.click(screen.getByRole('button', { name: 'Test CCB clicker' }));
+
+  expect(onCopyMock).toHaveBeenCalledWith(children);
+});
+
 test('Matches snapshot', () => {
   const { asFragment } = render(
     <ClipboardCopy id="snapshot" ouiaId="snapshot">
