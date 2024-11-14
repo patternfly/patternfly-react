@@ -76,9 +76,8 @@ export const DataListClickableRows: React.FunctionComponent = () => {
                     onClick={onToggle1}
                     variant="plain"
                     aria-label="Data list clickable rows example kebab toggle 1"
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
+                    icon={<EllipsisVIcon aria-hidden="true" />}
+                  />
                 )}
                 isOpen={isOpen1}
                 onOpenChange={(isOpen: boolean) => setIsOpen1(isOpen)}
@@ -126,9 +125,8 @@ export const DataListClickableRows: React.FunctionComponent = () => {
                     onClick={onToggle2}
                     variant="plain"
                     aria-label="Data list clickable rows example kebab toggle 2"
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
+                    icon={<EllipsisVIcon aria-hidden="true" />}
+                  />
                 )}
                 isOpen={isOpen2}
                 onOpenChange={(isOpen: boolean) => setIsOpen2(isOpen)}

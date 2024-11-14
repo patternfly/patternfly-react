@@ -215,9 +215,8 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
           onClick={onToggleClick}
           isExpanded={isOpen}
           style={{ width: 'auto' }}
-        >
-          <ThIcon />
-        </MenuToggle>
+          icon={<ThIcon />}
+        />
       )}
       ref={menuRef}
       onActionClick={onFavorite}

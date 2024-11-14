@@ -271,9 +271,8 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                     onClick={onKebabDropdownToggle}
                     variant="plain"
                     aria-label="Settings and help"
-                  >
-                    <EllipsisVIcon aria-hidden="true" />
-                  </MenuToggle>
+                    icon={<EllipsisVIcon aria-hidden="true" />}
+                  />
                 )}
               >
                 <DropdownList>{kebabDropdownItems}</DropdownList>
@@ -392,9 +391,8 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
               variant="plain"
               onClick={() => onToggle('toggle-id-0')}
               isExpanded={isActionsMenuOpen['toggle-id-0'] || false}
-            >
-              <EllipsisVIcon aria-hidden="true" />
-            </MenuToggle>
+              icon={<EllipsisVIcon aria-hidden="true" />}
+            />
           )}
         >
           <DropdownList>{notificationDrawerActions}</DropdownList>
@@ -434,9 +432,8 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-5')}
                           isExpanded={isActionsMenuOpen['toggle-id-5'] || false}
-                        >
-                          <EllipsisVIcon aria-hidden="true" />
-                        </MenuToggle>
+                          icon={<EllipsisVIcon aria-hidden="true" />}
+                        />
                       )}
                     >
                       <DropdownList>{notificationDrawerDropdownItems}</DropdownList>
@@ -470,9 +467,8 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-6')}
                           isExpanded={isActionsMenuOpen['toggle-id-6'] || false}
-                        >
-                          <EllipsisVIcon aria-hidden="true" />
-                        </MenuToggle>
+                          icon={<EllipsisVIcon aria-hidden="true" />}
+                        />
                       )}
                     >
                       <DropdownList>{notificationDrawerDropdownItems}</DropdownList>
@@ -507,9 +503,8 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-7')}
                           isExpanded={isActionsMenuOpen['toggle-id-7'] || false}
-                        >
-                          <EllipsisVIcon aria-hidden="true" />
-                        </MenuToggle>
+                          icon={<EllipsisVIcon aria-hidden="true" />}
+                        />
                       )}
                     >
                       <DropdownList>{notificationDrawerDropdownItems}</DropdownList>
@@ -543,9 +538,8 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-8')}
                           isExpanded={isActionsMenuOpen['toggle-id-8'] || false}
-                        >
-                          <EllipsisVIcon aria-hidden="true" />
-                        </MenuToggle>
+                          icon={<EllipsisVIcon aria-hidden="true" />}
+                        />
                       )}
                     >
                       <DropdownList>{notificationDrawerDropdownItems}</DropdownList>
@@ -588,9 +582,8 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-9')}
                           isExpanded={isActionsMenuOpen['toggle-id-9'] || false}
-                        >
-                          <EllipsisVIcon aria-hidden="true" />
-                        </MenuToggle>
+                          icon={<EllipsisVIcon aria-hidden="true" />}
+                        />
                       )}
                     >
                       <DropdownList>{notificationDrawerDropdownItems}</DropdownList>
@@ -624,9 +617,8 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-10')}
                           isExpanded={isActionsMenuOpen['toggle-id-10'] || false}
-                        >
-                          <EllipsisVIcon aria-hidden="true" />
-                        </MenuToggle>
+                          icon={<EllipsisVIcon aria-hidden="true" />}
+                        />
                       )}
                     >
                       <DropdownList>{notificationDrawerDropdownItems}</DropdownList>
@@ -661,9 +653,8 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-11')}
                           isExpanded={isActionsMenuOpen['toggle-id-11'] || false}
-                        >
-                          <EllipsisVIcon aria-hidden="true" />
-                        </MenuToggle>
+                          icon={<EllipsisVIcon aria-hidden="true" />}
+                        />
                       )}
                     >
                       <DropdownList>{notificationDrawerDropdownItems}</DropdownList>
@@ -697,9 +688,8 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-12')}
                           isExpanded={isActionsMenuOpen['toggle-id-12'] || false}
-                        >
-                          <EllipsisVIcon aria-hidden="true" />
-                        </MenuToggle>
+                          icon={<EllipsisVIcon aria-hidden="true" />}
+                        />
                       )}
                     >
                       <DropdownList>{notificationDrawerDropdownItems}</DropdownList>

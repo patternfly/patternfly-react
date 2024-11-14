@@ -229,9 +229,8 @@ export const ToolbarStacked: React.FunctionComponent = () => {
                       variant="plain"
                       onClick={onKebabToggle}
                       isExpanded={kebabIsOpen}
-                    >
-                      <EllipsisVIcon />
-                    </MenuToggle>
+                      icon={<EllipsisVIcon />}
+                    />
                   )}
                   isOpen={kebabIsOpen}
                 >

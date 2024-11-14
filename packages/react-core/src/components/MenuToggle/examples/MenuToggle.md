@@ -81,36 +81,24 @@ For most basic icons, it is recommended to wrap it inside our [icon component](/
 
 ```ts
 import React from 'react';
-import { MenuToggle, Icon } from '@patternfly/react-core';
+import { MenuToggle } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 <React.Fragment>
   <MenuToggle
-    icon={
-      <Icon>
-        <CogIcon />
-      </Icon>
-    }
+    icon={<CogIcon />}
     variant="primary"
   >
     Icon
   </MenuToggle>{' '}
   <MenuToggle
-    icon={
-      <Icon>
-        <CogIcon />
-      </Icon>
-    }
+    icon={<CogIcon />}
     variant="secondary"
   >
     Icon
   </MenuToggle>{' '}
   <MenuToggle
-    icon={
-      <Icon>
-        <CogIcon />
-      </Icon>
-    }
+    icon={<CogIcon />}
     variant="secondary"
     isDisabled
   >

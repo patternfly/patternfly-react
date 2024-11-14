@@ -71,9 +71,8 @@ export const CardExpandable: React.FunctionComponent = () => {
             onClick={() => setIsOpen(!isOpen)}
             variant="plain"
             aria-label="Card expandable example kebab toggle"
-          >
-            <EllipsisVIcon aria-hidden="true" />
-          </MenuToggle>
+            icon={<EllipsisVIcon aria-hidden="true" />}
+          />
         )}
         isOpen={isOpen}
         onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}

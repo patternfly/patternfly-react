@@ -62,9 +62,8 @@ export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => 
               variant="plain"
               onClick={onToggle}
               isExpanded={isOpen}
-            >
-              <EllipsisVIcon />
-            </MenuToggle>
+              icon={<EllipsisVIcon />}
+            />
           )}
           isOpen={isOpen}
           onOpenChange={(isOpen) => setIsOpen(isOpen)}

@@ -171,9 +171,8 @@ export const TablesAndTabs = () => {
       aria-haspopup="menu"
       isExpanded={props.isOpen}
       ref={props.toggleRef}
-    >
-      <EllipsisVIcon />
-    </MenuToggle>
+      icon={<EllipsisVIcon />}
+    />
   );
 
   const toolbar = (

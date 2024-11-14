@@ -200,8 +200,8 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
   };
 
   const iconToggle = (
-    <MenuToggle ref={iconToggleRef} onClick={onIconToggleClick} isExpanded={isIconOpen}>
-      {icon || 'Select'}
+    <MenuToggle ref={iconToggleRef} onClick={onIconToggleClick} isExpanded={isIconOpen} icon={icon}>
+      {icon ? '' : 'Select'}
     </MenuToggle>
   );
 
