@@ -26,7 +26,7 @@ export interface TypeaheadSelectOption extends Omit<SelectOptionProps, 'content'
 
 export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSelect'> {
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: React.Ref<HTMLDivElement>;
   /** Options of the select */
   selectOptions: TypeaheadSelectOption[];
   /** Callback triggered on selection. */
@@ -325,7 +325,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
       aria-label="Typeahead menu toggle"
       onClick={onToggleClick}
       isExpanded={isOpen}
-      isDisabled={isDisabled}
+      isDisabled={isDisabled || false}
       isFullWidth
       style={
         {
@@ -349,7 +349,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
           aria-controls="select-typeahead-listbox"
         />
         <TextInputGroupUtilities
-          {...(!(isFiltering && filterValue) && !selected ? { style: { display: 'none' } } : {})}
+          {...(!(isFiltering && filterValue) && !(selected && onClearSelection) ? { style: { display: 'none' } } : {})}
         >
           <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
             <TimesIcon aria-hidden />
@@ -386,7 +386,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
 };
 TypeaheadSelectBase.displayName = 'TypeaheadSelectBase';
 
-export const TypeaheadSelect = React.forwardRef((props: TypeaheadSelectProps, ref: React.Ref<any>) => (
+export const TypeaheadSelect = React.forwardRef((props: TypeaheadSelectProps, ref: React.Ref<HTMLDivElement>) => (
   <TypeaheadSelectBase {...props} innerRef={ref} />
 ));
 
