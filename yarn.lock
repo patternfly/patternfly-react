@@ -3672,7 +3672,7 @@ __metadata:
     "@patternfly/react-tokens": "workspace:^"
     case-anything: "npm:^2.1.13"
     css: "npm:^3.0.0"
-    focus-trap: "npm:7.6.0"
+    focus-trap: "npm:7.6.1"
     fs-extra: "npm:^11.2.0"
     react-dropzone: "npm:^14.2.3"
     tslib: "npm:^2.7.0"
@@ -10752,12 +10752,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"focus-trap@npm:7.6.0":
-  version: 7.6.0
-  resolution: "focus-trap@npm:7.6.0"
+"focus-trap@npm:7.6.1":
+  version: 7.6.1
+  resolution: "focus-trap@npm:7.6.1"
   dependencies:
     tabbable: "npm:^6.2.0"
-  checksum: 10c0/5d1cdefdc11ae97f2c7bcced5c0facfa9794e1ec7a9d8b6547f3f03b51de0423ab572666371f6632b2165613470ec8245daea836160319d52d7a6434e6847a23
+  checksum: 10c0/a80198ac09efc2934d7fc710cad029cb3707a298ef74b4e9b6e007d06a583e58658cc9036606d0770756444ef5fd060a46bce4c82259089e9a4769e91c5cd9a8
   languageName: node
   linkType: hard
 
