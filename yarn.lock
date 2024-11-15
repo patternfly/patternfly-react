@@ -3609,7 +3609,7 @@ __metadata:
     victory-pie: ^37.1.1
     victory-scatter: ^37.1.1
     victory-stack: ^37.1.1
-    victory-tooltip: ^37.1.1
+    victory-tooltip: ^37.3.2
     victory-voronoi-container: ^37.1.1
     victory-zoom-container: ^37.1.1
   peerDependenciesMeta:
