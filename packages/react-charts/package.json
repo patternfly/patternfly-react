@@ -47,7 +47,7 @@
     "react-dom": "^17 || ^18",
     "victory-area": "^37.3.2",
     "victory-axis": "^37.3.2",
-    "victory-bar": "^37.1.1",
+    "victory-bar": "^37.3.2",
     "victory-box-plot": "^37.3.2",
     "victory-chart": "^37.3.2",
     "victory-core": "^37.1.1",
