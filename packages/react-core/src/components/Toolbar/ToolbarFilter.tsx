@@ -134,7 +134,10 @@ class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterSta
       return (
         <React.Fragment>
           {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
-          {ReactDOM.createPortal(chipGroup, chipGroupContentRef.current.firstElementChild)}
+          {chipGroupContentRef &&
+            chipGroupContentRef?.current !== null &&
+            chipGroupContentRef.current?.firstElementChild !== null &&
+            ReactDOM.createPortal(chipGroup, chipGroupContentRef.current.firstElementChild)}
         </React.Fragment>
       );
     }
