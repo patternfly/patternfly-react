@@ -5,7 +5,9 @@ cssPrefix: null
 propComponents: ['Brand']
 ---
 
+## Examples
 import './Brand.css';
+import pfLogoOptimized from '../../assets/pfLogoOptimized.svg';
 import pfLogo from '../../assets/PF-HorizontalLogo-Color.svg';
 import pfLogoDark from '../../assets/PF-HorizontalLogo-Reverse.svg';
 import pfLogoSm from '../../assets/PF-IconLogo-color.svg';
@@ -16,6 +18,11 @@ import pfLogoSmDark from '../../assets/PF-IconLogo-Reverse.svg';
 The brand component does not have any built-in theme support. If a brand should be dynamically styled, you must manually set up the necessary logic on your own.
 
 These examples adjust styling when the PatternFly website is toggled between the light and dark theme.
+
+### Optimized svg
+
+```ts file="./BrandOptimizedSvg.tsx"
+```
 
 ### Basic
 
