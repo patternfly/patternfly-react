@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.1.0-prerelease.1...@patternfly/react-icons@6.1.0-prerelease.2) (2024-11-18)
+
+### Bug Fixes
+
+- **deps:** update dependency tslib to ^2.8.1 ([#11222](https://github.com/patternfly/patternfly-react/issues/11222)) ([7c90e9b](https://github.com/patternfly/patternfly-react/commit/7c90e9bff23083f097e78246570be60dacfb27c0))
+
 # [6.1.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.1.0-prerelease.0...@patternfly/react-icons@6.1.0-prerelease.1) (2024-11-13)
 
 ### Bug Fixes

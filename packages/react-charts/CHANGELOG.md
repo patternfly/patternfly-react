@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.1.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.1.0-prerelease.9...@patternfly/react-charts@8.1.0-prerelease.10) (2024-11-18)
+
+### Bug Fixes
+
+- **deps:** update dependency tslib to ^2.8.1 ([#11222](https://github.com/patternfly/patternfly-react/issues/11222)) ([7c90e9b](https://github.com/patternfly/patternfly-react/commit/7c90e9bff23083f097e78246570be60dacfb27c0))
+
 # [8.1.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.1.0-prerelease.8...@patternfly/react-charts@8.1.0-prerelease.9) (2024-11-18)
 
 **Note:** Version bump only for package @patternfly/react-charts

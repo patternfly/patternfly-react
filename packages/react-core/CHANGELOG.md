@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.4...@patternfly/react-core@6.1.0-prerelease.5) (2024-11-18)
+
+### Bug Fixes
+
+- **deps:** update dependency focus-trap to v7.6.2 ([#11219](https://github.com/patternfly/patternfly-react/issues/11219)) ([d6fa6b4](https://github.com/patternfly/patternfly-react/commit/d6fa6b467c5612ff0abef72110075693aa8fbbef))
+- **deps:** update dependency tslib to ^2.8.1 ([#11222](https://github.com/patternfly/patternfly-react/issues/11222)) ([7c90e9b](https://github.com/patternfly/patternfly-react/commit/7c90e9bff23083f097e78246570be60dacfb27c0))
+
 # [6.1.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.3...@patternfly/react-core@6.1.0-prerelease.4) (2024-11-15)
 
 **Note:** Version bump only for package @patternfly/react-core
