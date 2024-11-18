@@ -3611,7 +3611,7 @@ __metadata:
     victory-stack: ^37.1.1
     victory-tooltip: ^37.3.2
     victory-voronoi-container: ^37.3.2
-    victory-zoom-container: ^37.1.1
+    victory-zoom-container: ^37.3.2
   peerDependenciesMeta:
     victory-area:
       optional: true
