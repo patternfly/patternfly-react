@@ -60,7 +60,6 @@ export enum ModalVariant {
 }
 
 interface ModalState {
-  container: HTMLElement;
   ouiaStateId: string;
 }
 
@@ -68,6 +67,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   static displayName = 'Modal';
   static currentId = 0;
   boxId = '';
+  backdropId = '';
 
   static defaultProps: PickOptional<ModalProps> = {
     isOpen: false,
@@ -80,10 +80,11 @@ class Modal extends React.Component<ModalProps, ModalState> {
   constructor(props: ModalProps) {
     super(props);
     const boxIdNum = Modal.currentId++;
+    const backdropId = boxIdNum + 1;
     this.boxId = props.id || `pf-modal-part-${boxIdNum}`;
+    this.backdropId = `pf-modal-part-${backdropId}`;
 
     this.state = {
-      container: undefined,
       ouiaStateId: getDefaultOUIAId(Modal.displayName, props.variant)
     };
   }
@@ -107,7 +108,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const target: HTMLElement = this.getElement(appendTo);
     const bodyChildren = target.children;
     for (const child of Array.from(bodyChildren)) {
-      if (child !== this.state.container) {
+      if (child.id !== this.backdropId) {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
       }
     }
@@ -118,36 +119,31 @@ class Modal extends React.Component<ModalProps, ModalState> {
   componentDidMount() {
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
-    const container = document.createElement('div');
-    this.setState({ container });
-    target.appendChild(container);
     target.addEventListener('keydown', this.handleEscKeyClick, false);
 
     if (this.props.isOpen) {
       target.classList.add(css(styles.backdropOpen));
-    } else {
-      target.classList.remove(css(styles.backdropOpen));
+      this.toggleSiblingsFromScreenReaders(true);
     }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps: ModalProps) {
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
     if (this.props.isOpen) {
       target.classList.add(css(styles.backdropOpen));
       this.toggleSiblingsFromScreenReaders(true);
     } else {
-      target.classList.remove(css(styles.backdropOpen));
-      this.toggleSiblingsFromScreenReaders(false);
+      if (prevProps.isOpen !== this.props.isOpen) {
+        target.classList.remove(css(styles.backdropOpen));
+        this.toggleSiblingsFromScreenReaders(false);
+      }
     }
   }
 
   componentWillUnmount() {
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
-    if (this.state.container) {
-      target.removeChild(this.state.container);
-    }
     target.removeEventListener('keydown', this.handleEscKeyClick, false);
     target.classList.remove(css(styles.backdropOpen));
     this.toggleSiblingsFromScreenReaders(false);
@@ -155,7 +151,6 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   render() {
     const {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       appendTo,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onEscapePress,
@@ -168,15 +163,15 @@ class Modal extends React.Component<ModalProps, ModalState> {
       elementToFocus,
       ...props
     } = this.props;
-    const { container } = this.state;
 
-    if (!canUseDOM || !container) {
+    if (!canUseDOM || !this.getElement(appendTo)) {
       return null;
     }
 
     return ReactDOM.createPortal(
       <ModalContent
         boxId={this.boxId}
+        backdropId={this.backdropId}
         aria-label={ariaLabel}
         aria-describedby={ariaDescribedby}
         aria-labelledby={ariaLabelledby}
@@ -187,7 +182,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
         backdropClassName={props.backdropClassName}
         {...props}
       />,
-      container
+      this.getElement(appendTo)
     ) as React.ReactElement;
   }
 }

@@ -92,7 +92,6 @@ export enum ModalVariant {
 }
 
 interface ModalState {
-  container: HTMLElement;
   ouiaStateId: string;
 }
 
@@ -102,6 +101,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   boxId = '';
   labelId = '';
   descriptorId = '';
+  backdropId = '';
 
   static defaultProps: PickOptional<ModalProps> = {
     className: '',
@@ -128,12 +128,13 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const boxIdNum = Modal.currentId++;
     const labelIdNum = boxIdNum + 1;
     const descriptorIdNum = boxIdNum + 2;
+    const backdropIdNum = boxIdNum + 3;
     this.boxId = props.id || `pf-modal-part-${boxIdNum}`;
     this.labelId = `pf-modal-part-${labelIdNum}`;
     this.descriptorId = `pf-modal-part-${descriptorIdNum}`;
+    this.backdropId = `pf-modal-part-${backdropIdNum}`;
 
     this.state = {
-      container: undefined,
       ouiaStateId: getDefaultOUIAId(Modal.displayName, props.variant)
     };
   }
@@ -157,7 +158,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const target: HTMLElement = this.getElement(appendTo);
     const bodyChildren = target.children;
     for (const child of Array.from(bodyChildren)) {
-      if (child !== this.state.container) {
+      if (child.id !== this.backdropId) {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
       }
     }
@@ -175,15 +176,11 @@ class Modal extends React.Component<ModalProps, ModalState> {
       header
     } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
-    const container = document.createElement('div');
-    this.setState({ container });
-    target.appendChild(container);
     target.addEventListener('keydown', this.handleEscKeyClick, false);
 
     if (this.props.isOpen) {
       target.classList.add(css(styles.backdropOpen));
-    } else {
-      target.classList.remove(css(styles.backdropOpen));
+      this.toggleSiblingsFromScreenReaders(true);
     }
 
     if (!title && this.isEmpty(ariaLabel) && this.isEmpty(ariaLabelledby)) {
@@ -199,24 +196,23 @@ class Modal extends React.Component<ModalProps, ModalState> {
     }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps: ModalProps) {
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
     if (this.props.isOpen) {
       target.classList.add(css(styles.backdropOpen));
       this.toggleSiblingsFromScreenReaders(true);
     } else {
-      target.classList.remove(css(styles.backdropOpen));
-      this.toggleSiblingsFromScreenReaders(false);
+      if (prevProps.isOpen !== this.props.isOpen) {
+        target.classList.remove(css(styles.backdropOpen));
+        this.toggleSiblingsFromScreenReaders(false);
+      }
     }
   }
 
   componentWillUnmount() {
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
-    if (this.state.container) {
-      target.removeChild(this.state.container);
-    }
     target.removeEventListener('keydown', this.handleEscKeyClick, false);
     target.classList.remove(css(styles.backdropOpen));
     this.toggleSiblingsFromScreenReaders(false);
@@ -224,7 +220,6 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   render() {
     const {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       appendTo,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onEscapePress,
@@ -242,9 +237,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
       elementToFocus,
       ...props
     } = this.props;
-    const { container } = this.state;
 
-    if (!canUseDOM || !container) {
+    if (!canUseDOM || !this.getElement(appendTo)) {
       return null;
     }
 
@@ -254,6 +248,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
         boxId={this.boxId}
         labelId={this.labelId}
         descriptorId={this.descriptorId}
+        backdropId={this.backdropId}
         title={title}
         titleIconVariant={titleIconVariant}
         titleLabel={titleLabel}
@@ -267,7 +262,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
         position={position}
         elementToFocus={elementToFocus}
       />,
-      container
+      this.getElement(appendTo)
     ) as React.ReactElement;
   }
 }

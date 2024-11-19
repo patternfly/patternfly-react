@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { css } from '../../../../../../react-styles/dist/js';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
@@ -34,6 +35,32 @@ const ModalWithSiblings = () => {
         <Modal {...modalProps}>
           <button onClick={() => setIsModalMounted(false)}>Unmount Modal</button>
         </Modal>
+      )}
+    </>
+  );
+};
+
+const ModalWithAdjacentModal = () => {
+  const [isOpen, setIsOpen] = React.useState(true);
+  const [isModalMounted, setIsModalMounted] = React.useState(true);
+  const modalProps = { ...props, isOpen, appendTo: target, onClose: () => setIsOpen(false) };
+
+  return (
+    <>
+      <aside>Aside sibling</aside>
+      <article>Section sibling</article>
+      {isModalMounted && (
+        <>
+          <Modal {...modalProps}>
+            <button onClick={() => setIsModalMounted(false)}>Unmount Modal</button>
+          </Modal>
+          <Modal isOpen={false} onClose={() => {}}>
+            Modal closed for test
+          </Modal>
+          <Modal isOpen={false} onClose={() => {}}>
+            modal closed for test
+          </Modal>
+        </>
       )}
     </>
   );
@@ -154,6 +181,7 @@ describe('Modal', () => {
     expect(asideSibling).not.toHaveAttribute('aria-hidden');
     expect(articleSibling).not.toHaveAttribute('aria-hidden');
   });
+
   test('The modalBoxBody has no aria-label when bodyAriaLabel is not passed', () => {
     const props = {
       isOpen: true

@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { css } from '../../../../../react-styles/dist/js';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
@@ -33,6 +34,32 @@ const ModalWithSiblings = () => {
         <Modal {...modalProps}>
           <button onClick={() => setIsModalMounted(false)}>Unmount Modal</button>
         </Modal>
+      )}
+    </>
+  );
+};
+
+const ModalWithAdjacentModal = () => {
+  const [isOpen, setIsOpen] = React.useState(true);
+  const [isModalMounted, setIsModalMounted] = React.useState(true);
+  const modalProps = { ...props, isOpen, appendTo: target, onClose: () => setIsOpen(false) };
+
+  return (
+    <>
+      <aside>Aside sibling</aside>
+      <article>Section sibling</article>
+      {isModalMounted && (
+        <>
+          <Modal {...modalProps}>
+            <button onClick={() => setIsModalMounted(false)}>Unmount Modal</button>
+          </Modal>
+          <Modal isOpen={false} onClose={() => {}}>
+            Modal closed for test
+          </Modal>
+          <Modal isOpen={false} onClose={() => {}}>
+            modal closed for test
+          </Modal>
+        </>
       )}
     </>
   );
@@ -115,6 +142,24 @@ describe('Modal', () => {
     const user = userEvent.setup();
 
     render(<ModalWithSiblings />, { container: document.body.appendChild(target) });
+
+    const asideSibling = screen.getByRole('complementary', { hidden: true });
+    const articleSibling = screen.getByRole('article', { hidden: true });
+    const unmountButton = screen.getByRole('button', { name: 'Unmount Modal' });
+
+    expect(asideSibling).toHaveAttribute('aria-hidden');
+    expect(articleSibling).toHaveAttribute('aria-hidden');
+
+    await user.click(unmountButton);
+
+    expect(asideSibling).not.toHaveAttribute('aria-hidden');
+    expect(articleSibling).not.toHaveAttribute('aria-hidden');
+  });
+
+  test('modal siblings have the aria-hidden attribute when it has adjacent modals', async () => {
+    const user = userEvent.setup();
+
+    render(<ModalWithAdjacentModal />, { container: document.body.appendChild(target) });
 
     const asideSibling = screen.getByRole('complementary', { hidden: true });
     const articleSibling = screen.getByRole('article', { hidden: true });
