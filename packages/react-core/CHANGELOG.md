@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.5...@patternfly/react-core@6.1.0-prerelease.6) (2024-11-19)
+
+### Bug Fixes
+
+- **CheckboxReversed example:** fix prop ([#11175](https://github.com/patternfly/patternfly-react/issues/11175)) ([47cb1de](https://github.com/patternfly/patternfly-react/commit/47cb1de593ab6dc39e207786e817eb97805427df))
+- **split/stack:** add component prop to StackItem/SplitItem ([#11170](https://github.com/patternfly/patternfly-react/issues/11170)) ([a6e0821](https://github.com/patternfly/patternfly-react/commit/a6e08212c4a3e6a88f41b91abaa1faa196631e81))
+
 # [6.1.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.4...@patternfly/react-core@6.1.0-prerelease.5) (2024-11-18)
 
 ### Bug Fixes
