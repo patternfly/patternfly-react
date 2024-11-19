@@ -27,7 +27,7 @@ Using PatternFly 3? Take a look at the [PatternFly 3 React component information
 | &nbsp;&nbsp;[@patternfly/react-styles](./packages/react-styles/README.md) | PatternFly CSS styles |
 | &nbsp;&nbsp;[@patternfly/react-tokens](./packages/react-tokens/README.md) | PatternFly CSS variable tokens |
 | **:yellow_heart: Extension packages** |
-| &nbsp;&nbsp;[@patternfly/react-log-viewer](https://github.com/patternfly/react-log-viewer/README.md) | Virtualized log viewer component |
+| &nbsp;&nbsp;[@patternfly/react-log-viewer](https://github.com/patternfly/react-log-viewer) | Virtualized log viewer component |
 | &nbsp;&nbsp;[@patternfly/react-catalog-view-extension](https://github.com/patternfly/react-catalog-view/README.md) | Catalog view extension |
 | &nbsp;&nbsp;[@patternfly/react-topology](https://github.com/patternfly/react-topology/README.md) | Topology components |
 | **:open_file_folder: Supporting packages** |
