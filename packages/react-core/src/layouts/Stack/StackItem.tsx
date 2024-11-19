@@ -3,22 +3,28 @@ import styles from '@patternfly/react-styles/css/layouts/Stack/stack';
 import { css } from '@patternfly/react-styles';
 
 export interface StackItemProps extends React.HTMLProps<HTMLDivElement> {
-  /** Flag indicating if this Stack Layout item should fill the available vertical space. */
+  /** Flag indicating if this stack layout item should fill the available vertical space. */
   isFilled?: boolean;
-  /** additional classes added to the Stack Layout Item */
+  /** Additional classes added to the stack layout item. */
   children?: React.ReactNode;
-  /** content rendered inside the Stack Layout Item */
+  /** Content rendered inside the stack layout item. */
   className?: string;
+  /** Sets the base component to render. Defaults to div. */
+  component?: React.ReactNode;
 }
 
 export const StackItem: React.FunctionComponent<StackItemProps> = ({
   isFilled = false,
   className = '',
   children = null,
+  component = 'div',
   ...props
-}: StackItemProps) => (
-  <div {...props} className={css(styles.stackItem, isFilled && styles.modifiers.fill, className)}>
-    {children}
-  </div>
-);
+}: StackItemProps) => {
+  const Component = component as any;
+  return (
+    <Component {...props} className={css(styles.stackItem, isFilled && styles.modifiers.fill, className)}>
+      {children}
+    </Component>
+  );
+};
 StackItem.displayName = 'StackItem';

@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`component on Stack 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v6-l-stack"
+  >
+    <div
+      class="pf-v6-l-stack__item"
+    >
+      Basic content
+    </div>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`component on StackItem 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-l-stack"
+  >
+    <span
+      class="pf-v6-l-stack__item"
+    >
+      Basic content
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`gutter 1`] = `
 <DocumentFragment>
   <div
@@ -14,7 +42,7 @@ exports[`gutter 1`] = `
 </DocumentFragment>
 `;
 
-exports[`isMain defaults to false 1`] = `
+exports[`isFilled defaults to false 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-l-stack"
@@ -28,7 +56,7 @@ exports[`isMain defaults to false 1`] = `
 </DocumentFragment>
 `;
 
-exports[`isMain set to true 1`] = `
+exports[`isFilled set to true 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-l-stack"
