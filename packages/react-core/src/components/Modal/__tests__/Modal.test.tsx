@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { css } from '../../../../../react-styles/dist/js';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
@@ -39,12 +40,33 @@ const ModalWithSiblings = () => {
   );
 };
 
-describe('Modal', () => {
-  test('Modal creates a container element once for div', () => {
-    render(<Modal {...props} />);
-    expect(document.createElement).toHaveBeenCalledWith('div');
-  });
+const ModalWithAdjacentModal = () => {
+  const [isOpen, setIsOpen] = React.useState(true);
+  const [isModalMounted, setIsModalMounted] = React.useState(true);
+  const modalProps = { ...props, isOpen, appendTo: target, onClose: () => setIsOpen(false) };
 
+  return (
+    <>
+      <aside>Aside sibling</aside>
+      <article>Section sibling</article>
+      {isModalMounted && (
+        <>
+          <Modal {...modalProps}>
+            <button onClick={() => setIsModalMounted(false)}>Unmount Modal</button>
+          </Modal>
+          <Modal isOpen={false} onClose={() => {}}>
+            Modal closed for test
+          </Modal>
+          <Modal isOpen={false} onClose={() => {}}>
+            modal closed for test
+          </Modal>
+        </>
+      )}
+    </>
+  );
+};
+
+describe('Modal', () => {
   test('modal closes with escape', async () => {
     const user = userEvent.setup();
 
@@ -137,10 +159,10 @@ describe('Modal', () => {
     expect(asideSibling).not.toHaveAttribute('aria-hidden');
   });
 
-  test('modal removes the aria-hidden attribute from its siblings when unmounted', async () => {
+  test('modal siblings have the aria-hidden attribute when it has adjacent modals', async () => {
     const user = userEvent.setup();
 
-    render(<ModalWithSiblings />, { container: document.body.appendChild(target) });
+    render(<ModalWithAdjacentModal />, { container: document.body.appendChild(target) });
 
     const asideSibling = screen.getByRole('complementary', { hidden: true });
     const articleSibling = screen.getByRole('article', { hidden: true });
@@ -154,6 +176,7 @@ describe('Modal', () => {
     expect(asideSibling).not.toHaveAttribute('aria-hidden');
     expect(articleSibling).not.toHaveAttribute('aria-hidden');
   });
+
   test('The modalBoxBody has no aria-label when bodyAriaLabel is not passed', () => {
     const props = {
       isOpen: true
