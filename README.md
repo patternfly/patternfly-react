@@ -34,9 +34,10 @@ Using PatternFly 3? Take a look at the [PatternFly 3 React component information
 | &nbsp;&nbsp;[@patternfly/react-docs](./packages/react-docs/README.md) | Gatsby documentation site for components |
 | &nbsp;&nbsp;[@patternfly/react-integration](./packages/react-integration/README.md) | Cypress integration tests |
 | **:x: Deprecated packages** |
-| &nbsp;&nbsp;[@patternfly/react-virtualized-extension](https://github.com/patternfly/react-virtualized-extension/README.md) | Table and list row virtualization extension |
+| &nbsp;&nbsp;[@patternfly/react-inline-edit-extension](./packages/react-inline-edit-extension/README.md) | Table inline edit extension |
+| &nbsp;&nbsp;[@patternfly/react-virtualized-extension](https://github.com/patternfly/react-virtualized-extension) | Table and list row virtualization extension |
 
-### Setup 
+### Setup  
 
 Before you begin, check out this [overview of PatternFly](http://patternfly.org/get-started/about) to get familiar with the basic elements of the design system.
 
