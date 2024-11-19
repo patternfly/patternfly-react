@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.6...@patternfly/react-core@6.1.0-prerelease.7) (2024-11-19)
+
+### Bug Fixes
+
+- **Modal:** Fixes various bugs in the Modal and deprecated Modal ([#11207](https://github.com/patternfly/patternfly-react/issues/11207)) ([2fd40f3](https://github.com/patternfly/patternfly-react/commit/2fd40f3e5527eb4ac76b5edbb1b4962007ad24cf))
+
 # [6.1.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.5...@patternfly/react-core@6.1.0-prerelease.6) (2024-11-19)
 
 ### Bug Fixes
