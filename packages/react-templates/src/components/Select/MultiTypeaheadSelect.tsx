@@ -320,7 +320,7 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
         !isOpen && closeMenu();
       }}
       toggle={toggle}
-      isTypeahead
+      variant="typeahead"
       ref={innerRef}
       {...props}
     >
