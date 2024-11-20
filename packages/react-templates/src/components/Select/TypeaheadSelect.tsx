@@ -361,7 +361,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
         !isOpen && closeMenu();
       }}
       toggle={toggle}
-      isTypeahead
+      variant="typeahead"
       ref={innerRef}
       {...props}
     >

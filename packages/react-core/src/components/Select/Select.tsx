@@ -64,8 +64,8 @@ export interface SelectProps extends MenuProps, OUIAProps {
   onOpenChangeKeys?: string[];
   /** Callback to override the toggle keydown behavior. By default, when the toggle has focus and the menu is open, pressing the up/down arrow keys will focus a valid non-disabled menu item - the first item for the down arrow key and last item for the up arrow key. */
   onToggleKeydown?: (event: KeyboardEvent) => void;
-  /** Indicates that the Select is used as a typeahead (combobox). Focus won't shift to menu items when pressing up/down arrows. */
-  isTypeahead?: boolean;
+  /** Select variant. For typeahead variant focus won't shift to menu items when pressing up/down arrows. */
+  variant?: 'default' | 'typeahead';
   /** Indicates if the select should be without the outer box-shadow */
   isPlain?: boolean;
   /** @hide Forwarded ref */
@@ -100,7 +100,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   onOpenChange,
   onOpenChangeKeys = ['Escape', 'Tab'],
   onToggleKeydown,
-  isTypeahead,
+  variant,
   isPlain,
   innerRef,
   zIndex = 9999,
@@ -154,7 +154,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       if (toggleRef.current?.contains(event.target as Node)) {
         if (onToggleKeydown) {
           onToggleKeydown(event);
-        } else if (isOpen && !isTypeahead) {
+        } else if (isOpen && variant !== 'typeahead') {
           onToggleArrowKeydownDefault(event, menuRef);
         }
       }
