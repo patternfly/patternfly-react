@@ -3387,7 +3387,7 @@ __metadata:
     "@patternfly/react-icons": "workspace:^"
     "@patternfly/react-styles": "workspace:^"
     monaco-editor: "npm:^0.52.0"
-    react-dropzone: "npm:14.2.3"
+    react-dropzone: "npm:14.3.5"
     tslib: "npm:^2.7.0"
   peerDependencies:
     react: ^17 || ^18
@@ -3406,7 +3406,7 @@ __metadata:
     css: "npm:^3.0.0"
     focus-trap: "npm:7.6.2"
     fs-extra: "npm:^11.2.0"
-    react-dropzone: "npm:^14.2.3"
+    react-dropzone: "npm:^14.3.5"
     tslib: "npm:^2.7.0"
   peerDependencies:
     react: ^17 || ^18
@@ -6095,10 +6095,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"attr-accept@npm:^2.2.2":
-  version: 2.2.2
-  resolution: "attr-accept@npm:2.2.2"
-  checksum: 10c0/f77c073ac9616a783f2df814a56f65f1c870193e8da6097139e30b3be84ecc19fb835b93e81315d1da4f19e80721f14e8c8075014205e00abd37b856fe030b80
+"attr-accept@npm:^2.2.4":
+  version: 2.2.5
+  resolution: "attr-accept@npm:2.2.5"
+  checksum: 10c0/9b4cb82213925cab2d568f71b3f1c7a7778f9192829aac39a281e5418cd00c04a88f873eb89f187e0bf786fa34f8d52936f178e62cbefb9254d57ecd88ada99b
   languageName: node
   linkType: hard
 
@@ -10364,12 +10364,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-selector@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "file-selector@npm:0.6.0"
+"file-selector@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "file-selector@npm:2.1.0"
   dependencies:
-    tslib: "npm:^2.4.0"
-  checksum: 10c0/477ca1b56274db9fee1a8a623c4bfef580389726a5fef843af8c1f2f17f70ec2d1e41b29115777c92e120a15f1cca734c6ef36bb48bfa2ee027c68da16cd0d28
+    tslib: "npm:^2.7.0"
+  checksum: 10c0/6eccfba9e0ac9f2d91fd43678ce120661088bc5cee23a679f67101f979afff71171fc10f35d39916ce244edf1e151451091cee1692a8826d3a33eb4c81cdd4b8
   languageName: node
   linkType: hard
 
@@ -17517,16 +17517,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dropzone@npm:14.2.3, react-dropzone@npm:^14.2.3":
-  version: 14.2.3
-  resolution: "react-dropzone@npm:14.2.3"
+"react-dropzone@npm:14.3.5, react-dropzone@npm:^14.3.5":
+  version: 14.3.5
+  resolution: "react-dropzone@npm:14.3.5"
   dependencies:
-    attr-accept: "npm:^2.2.2"
-    file-selector: "npm:^0.6.0"
+    attr-accept: "npm:^2.2.4"
+    file-selector: "npm:^2.1.0"
     prop-types: "npm:^15.8.1"
   peerDependencies:
     react: ">= 16.8 || 18.0.0"
-  checksum: 10c0/6433517c53309aca1bb4f4a535aeee297345ca1e11b123676f46c7682ffab34a3428cbda106448fc92b5c9a5e0fa5d225bc188adebcd4d302366bf6b1f9c3fc1
+  checksum: 10c0/e3e5dddd3bead7c6410bd3fccc3a87e93086ceac47526a2d35421ef7e11a9e59f47c8af8da5c4600a58ef238a5af87c751a71b6391d5c6f77f1f2857946c07cc
   languageName: node
   linkType: hard
 
