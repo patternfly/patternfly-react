@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
 import { Popper } from '../../helpers/Popper/Popper';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId, onToggleArrowKeydownDefault } from '../../helpers';
 
 export interface SelectPopperProps {
   /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
@@ -62,6 +62,10 @@ export interface SelectProps extends MenuProps, OUIAProps {
   onOpenChange?: (isOpen: boolean) => void;
   /** Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
+  /** Callback to override the toggle keydown behavior. By default, when the toggle has focus and the menu is open, pressing the up/down arrow keys will focus a valid non-disabled menu item - the first item for the down arrow key and last item for the up arrow key. */
+  onToggleKeydown?: (event: KeyboardEvent) => void;
+  /** Select variant. For typeahead variant focus won't shift to menu items when pressing up/down arrows. */
+  variant?: 'default' | 'typeahead';
   /** Indicates if the select should be without the outer box-shadow */
   isPlain?: boolean;
   /** @hide Forwarded ref */
@@ -95,6 +99,8 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   shouldFocusFirstItemOnOpen = false,
   onOpenChange,
   onOpenChangeKeys = ['Escape', 'Tab'],
+  onToggleKeydown,
+  variant,
   isPlain,
   innerRef,
   zIndex = 9999,
@@ -144,6 +150,14 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
           toggleRef.current?.focus();
         }
       }
+
+      if (toggleRef.current?.contains(event.target as Node)) {
+        if (onToggleKeydown) {
+          onToggleKeydown(event);
+        } else if (isOpen && variant !== 'typeahead') {
+          onToggleArrowKeydownDefault(event, menuRef);
+        }
+      }
     };
 
     const handleClick = (event: MouseEvent) => {
@@ -168,6 +182,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
     toggleRef,
     onOpenChange,
     onOpenChangeKeys,
+    onToggleKeydown,
     shouldPreventScrollOnItemFocus,
     shouldFocusFirstItemOnOpen,
     focusTimeoutDelay
