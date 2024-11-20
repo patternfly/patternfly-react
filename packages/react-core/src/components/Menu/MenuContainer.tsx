@@ -40,6 +40,8 @@ export interface MenuContainerProps {
   zIndex?: number;
   /** Additional properties to pass to the Popper */
   popperProps?: MenuPopperProps;
+  /** @beta Flag indicating the first menu item should be focused after opening the dropdown. */
+  shouldFocusFirstItemOnOpen?: boolean;
   /** Flag indicating if scroll on focus of the first menu item should occur. */
   shouldPreventScrollOnItemFocus?: boolean;
   /** Time in ms to wait before firing the toggles' focus event. Defaults to 0 */
@@ -61,9 +63,26 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   zIndex = 9999,
   popperProps,
   onOpenChangeKeys = ['Escape', 'Tab'],
+  shouldFocusFirstItemOnOpen = false,
   shouldPreventScrollOnItemFocus = true,
   focusTimeoutDelay = 0
 }: MenuContainerProps) => {
+  const prevIsOpen = React.useRef<boolean>(isOpen);
+  React.useEffect(() => {
+    // menu was opened, focus on first menu item
+    if (prevIsOpen.current === false && isOpen === true && shouldFocusFirstItemOnOpen) {
+      setTimeout(() => {
+        const firstElement = menuRef?.current?.querySelector(
+          'li button:not(:disabled),li input:not(:disabled),li a:not([aria-disabled="true"])'
+        );
+        firstElement && (firstElement as HTMLElement).focus({ preventScroll: shouldPreventScrollOnItemFocus });
+      }, focusTimeoutDelay);
+    }
+
+    prevIsOpen.current = isOpen;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
+
   React.useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
@@ -87,16 +106,6 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
     };
 
     const handleClick = (event: MouseEvent) => {
-      // toggle was opened, focus on first menu item
-      if (isOpen && toggleRef.current?.contains(event.target as Node)) {
-        setTimeout(() => {
-          const firstElement = menuRef?.current?.querySelector(
-            'li button:not(:disabled),li input:not(:disabled),li a:not([aria-disabled="true"])'
-          );
-          firstElement && (firstElement as HTMLElement).focus({ preventScroll: shouldPreventScrollOnItemFocus });
-        }, focusTimeoutDelay);
-      }
-
       // If the event is not on the toggle and onOpenChange callback is provided, close the menu
       if (isOpen && onOpenChange && !toggleRef?.current?.contains(event.target as Node)) {
         if (isOpen && !menuRef.current?.contains(event.target as Node)) {
