@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.9...@patternfly/react-core@6.1.0-prerelease.10) (2024-11-20)
+
+### Bug Fixes
+
+- **Toolbar:** Fixed null exception in Toolbar filter ([#11227](https://github.com/patternfly/patternfly-react/issues/11227)) ([76b516e](https://github.com/patternfly/patternfly-react/commit/76b516ed1e69a390c4b97761df9441bdd8b288fd))
+
 # [6.1.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.8...@patternfly/react-core@6.1.0-prerelease.9) (2024-11-20)
 
 ### Bug Fixes
