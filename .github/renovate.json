@@ -12,5 +12,5 @@
       "enabled": false
     }
   ],
-  "baseBranches": ["main", "v5"]
+  "baseBranches": ["main"]
 }
