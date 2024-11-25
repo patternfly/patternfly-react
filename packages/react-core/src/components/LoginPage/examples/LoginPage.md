@@ -18,7 +18,7 @@ propComponents:
   ]
 ---
 
-import brandImg2 from '../../assets/brandImgColor2.svg';
+import brandImg from '../../assets/PF-IconLogo.svg';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import GoogleIcon from '@patternfly/react-icons/dist/esm/icons/google-icon';
 import GithubIcon from '@patternfly/react-icons/dist/esm/icons/github-icon';
