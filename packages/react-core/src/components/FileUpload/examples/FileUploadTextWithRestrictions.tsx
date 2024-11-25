@@ -30,14 +30,23 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
     setValue(value);
   };
 
-  const handleClear = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const reset = () => {
     setFilename('');
     setValue('');
+  };
+
+  const handleClear = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    reset();
     setIsRejected(false);
   };
 
   const handleFileRejected = () => {
+    reset();
     setIsRejected(true);
+  };
+
+  const handleFileAccepted = () => {
+    setIsRejected(false);
   };
 
   const handleFileReadStarted = (_event: DropEvent, _fileHandle: File) => {
@@ -69,11 +78,14 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
             maxSize: 1024,
             onDropRejected: (rejections) => {
               const error = rejections[0].errors[0];
-              if (error.code === DropzoneErrorCode.FileInvalidType) {
-                setMessage('File must be a valid CSV file');
+              if (error.code === DropzoneErrorCode.FileTooLarge) {
+                setMessage('File is too big');
+              } else if (error.code === DropzoneErrorCode.FileInvalidType) {
+                setMessage('File is not a CSV file');
               }
               handleFileRejected();
-            }
+            },
+            onDropAccepted: handleFileAccepted
           }}
           validated={isRejected ? 'error' : 'default'}
           browseButtonText="Upload"
@@ -84,7 +96,7 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
               <HelperTextItem id="restricted-file-example-helpText" variant={isRejected ? 'error' : 'default'}>
                 {isRejected ? (
                   <>
-                    <Icon status="danger">{/* <ExclamationCircleIcon /> */}</Icon>
+                    <Icon status="danger" />
                     {message}
                   </>
                 ) : (

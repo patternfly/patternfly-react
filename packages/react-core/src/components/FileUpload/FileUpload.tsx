@@ -125,8 +125,8 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
     dropzoneProps.onDropAccepted && dropzoneProps.onDropAccepted(acceptedFiles, event);
   };
 
-  const onDropRejected = (rejectedFiles: FileRejection[], event: DropEvent, error: ErrorCode) => {
-    dropzoneProps.onDropRejected && dropzoneProps.onDropRejected(rejectedFiles, event, error);
+  const onDropRejected = (rejectedFiles: FileRejection[], event: DropEvent) => {
+    dropzoneProps.onDropRejected && dropzoneProps.onDropRejected(rejectedFiles, event);
   };
 
   const onClearButtonClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
