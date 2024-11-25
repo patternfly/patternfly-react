@@ -40,7 +40,7 @@ Typing/pasting text in the box will call `onTextChange` with a string, and a str
 
 ### Restricting file size and type
 
-Any [props accepted by `react-dropzone`'s `Dropzone` component](https://react-dropzone.js.org/#!/Dropzone) can be passed as a `dropzoneProps` object in order to customize the behavior of the Dropzone, such as restricting the size and type of files allowed. The following example will only accept CSV files smaller than 1 KB. Note that file type determination is not reliable across platforms (see the note on react-dropzone's docs about the `accept` prop), so be sure to test the behavior of your file upload restriction on all browsers and operating systems targeted by your application.
+Any [props accepted by `react-dropzone`'s `Dropzone` component](https://react-dropzone.js.org/#!/Dropzone) can be passed as a `dropzoneProps` object in order to customize the behavior of the Dropzone, such as restricting the size and type of files allowed. You can also capture and act upon native `react-dropzone` errors using the exposed `DropzoneErrorCode` enum. The following example will only accept CSV files smaller than 1 KB. Note that file type determination is not reliable across platforms (see the note on react-dropzone's docs about the `accept` prop), so be sure to test the behavior of your file upload restriction on all browsers and operating systems targeted by your application.
 
 #### IMPORTANT: A note about security
 
