@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.11...@patternfly/react-core@6.1.0-prerelease.12) (2024-12-02)
+
+### Bug Fixes
+
+- **docs:** drilldown infinite loop ([#11271](https://github.com/patternfly/patternfly-react/issues/11271)) ([c6f9df9](https://github.com/patternfly/patternfly-react/commit/c6f9df91572041b8ea3b7d1e13cdcf7cac38715d))
+
 # [6.1.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.10...@patternfly/react-core@6.1.0-prerelease.11) (2024-11-25)
 
 **Note:** Version bump only for package @patternfly/react-core
