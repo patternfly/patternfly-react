@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.12...@patternfly/react-core@6.1.0-prerelease.13) (2024-12-02)
+
+### Features
+
+- **FileUpload:** expose dropdown error types ([#11289](https://github.com/patternfly/patternfly-react/issues/11289)) ([469ea9d](https://github.com/patternfly/patternfly-react/commit/469ea9d75ff00ccaba2112937ed89ee0b8a1bb7f))
+
 # [6.1.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.11...@patternfly/react-core@6.1.0-prerelease.12) (2024-12-02)
 
 ### Bug Fixes
