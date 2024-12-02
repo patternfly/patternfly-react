@@ -234,7 +234,21 @@ export const NavManual: React.FunctionComponent = () => {
     </PageSidebar>
   );
   const pageId = 'main-content-page-layout-manual-nav';
-  const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
+
+  const handleClick = (event) => {
+    event.preventDefault();
+
+    const mainContentElement = document.getElementById(pageId);
+    if (mainContentElement) {
+      mainContentElement.focus();
+    }
+  };
+
+  const PageSkipToContent = (
+    <SkipToContent onClick={handleClick} href={`#${pageId}`}>
+      Skip to content
+    </SkipToContent>
+  );
 
   return (
     <React.Fragment>

@@ -284,7 +284,20 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
 
   const mainContainerId = 'main-content';
 
-  const pageSkipToContent = <SkipToContent href={`#${mainContainerId}`}>Skip to content</SkipToContent>;
+  const handleClick = (event) => {
+    event.preventDefault();
+
+    const mainContentElement = document.getElementById(mainContainerId);
+    if (mainContentElement) {
+      mainContentElement.focus();
+    }
+  };
+
+  const pageSkipToContent = (
+    <SkipToContent onClick={handleClick} href={`#${mainContainerId}`}>
+      Skip to content
+    </SkipToContent>
+  );
 
   return (
     <Page

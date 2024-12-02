@@ -168,8 +168,17 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
     </PageSidebar>
   );
 
+  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    event.preventDefault();
+
+    const mainContentElement = document.getElementById(mainContainerId ?? 'main-content-page-layout-default-nav');
+    if (mainContentElement) {
+      mainContentElement.focus();
+    }
+  };
+
   const PageSkipToContent = (
-    <SkipToContent href={`#${mainContainerId ?? 'main-content-page-layout-default-nav'}`}>
+    <SkipToContent onClick={handleClick} href={`#${mainContainerId ?? 'main-content-page-layout-default-nav'}`}>
       Skip to content
     </SkipToContent>
   );
