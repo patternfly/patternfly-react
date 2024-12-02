@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DropzoneInputProps, DropzoneOptions, FileRejection, useDropzone } from 'react-dropzone';
+import { DropzoneInputProps, DropzoneOptions, FileRejection, useDropzone, ErrorCode } from 'react-dropzone';
 import { FileUploadField, FileUploadFieldProps } from './FileUploadField';
 import { readFile, fileReaderType } from '../../helpers/fileUtils';
 import { DropEvent } from '../../helpers/typeUtils';
@@ -83,6 +83,8 @@ export interface FileUploadProps
   /** Text area text changed. */
   onTextChange?: (event: React.ChangeEvent<HTMLTextAreaElement>, text: string) => void;
 }
+
+export { ErrorCode as DropzoneErrorCode }; // FileInvalidType, FileTooLarge, FileTooSmall, TooManyFiles
 
 export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   id,

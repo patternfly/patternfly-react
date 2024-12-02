@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   FileUpload,
+  DropzoneErrorCode,
   FileUploadHelperText,
   Form,
   FormGroup,
@@ -9,13 +10,13 @@ import {
   DropEvent,
   Icon
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
   const [filename, setFilename] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(false);
   const [isRejected, setIsRejected] = React.useState(false);
+  const [message, setMessage] = React.useState('Must be a CSV file no larger than 1 KB');
 
   const handleFileInputChange = (_, file: File) => {
     setFilename(file.name);
@@ -29,14 +30,23 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
     setValue(value);
   };
 
-  const handleClear = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const reset = () => {
     setFilename('');
     setValue('');
+  };
+
+  const handleClear = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    reset();
     setIsRejected(false);
   };
 
   const handleFileRejected = () => {
+    reset();
     setIsRejected(true);
+  };
+
+  const handleFileAccepted = () => {
+    setIsRejected(false);
   };
 
   const handleFileReadStarted = (_event: DropEvent, _fileHandle: File) => {
@@ -66,7 +76,16 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
           dropzoneProps={{
             accept: { 'text/csv': ['.csv'] },
             maxSize: 1024,
-            onDropRejected: handleFileRejected
+            onDropRejected: (rejections) => {
+              const error = rejections[0].errors[0];
+              if (error.code === DropzoneErrorCode.FileTooLarge) {
+                setMessage('File is too big');
+              } else if (error.code === DropzoneErrorCode.FileInvalidType) {
+                setMessage('File is not a CSV file');
+              }
+              handleFileRejected();
+            },
+            onDropAccepted: handleFileAccepted
           }}
           validated={isRejected ? 'error' : 'default'}
           browseButtonText="Upload"
@@ -77,10 +96,8 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
               <HelperTextItem id="restricted-file-example-helpText" variant={isRejected ? 'error' : 'default'}>
                 {isRejected ? (
                   <>
-                    <Icon status="danger">
-                      <ExclamationCircleIcon />
-                    </Icon>
-                    Must be a CSV file no larger than 1 KB
+                    <Icon status="danger" />
+                    {message}
                   </>
                 ) : (
                   'Upload a CSV file'
