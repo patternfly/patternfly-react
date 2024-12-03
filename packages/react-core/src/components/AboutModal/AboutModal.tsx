@@ -6,7 +6,7 @@ import { AboutModalBoxHeader } from './AboutModalBoxHeader';
 import { AboutModalBoxBrand } from './AboutModalBoxBrand';
 import { AboutModalBoxCloseButton } from './AboutModalBoxCloseButton';
 import { AboutModalBox } from './AboutModalBox';
-import { Modal, ModalVariant } from '../../deprecated/components/Modal';
+import { Modal, ModalVariant } from '../Modal';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
 export interface AboutModalProps extends React.HTMLProps<HTMLDivElement> {
@@ -82,10 +82,8 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
           {...(productName && { 'aria-labelledby': ariaLabelledBy })}
           aria-label={ariaLabel}
           onEscapePress={onClose}
-          showClose={false}
           appendTo={appendTo}
           disableFocusTrap={disableFocusTrap}
-          hasNoBodyWrapper
         >
           <AboutModalBox
             style={
