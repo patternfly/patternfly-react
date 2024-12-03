@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.1.11...@patternfly/react-templates@1.1.12) (2024-12-03)
+
+### Features
+
+- **V5 Select/Dropdown/MenuContainer:** arrow key handling to focus items ([#11249](https://github.com/patternfly/patternfly-react/issues/11249)) ([623da5e](https://github.com/patternfly/patternfly-react/commit/623da5efe36cd25d5e4968b9d1fe96fc4f226ad2))
+
 ## [1.1.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@1.1.10...@patternfly/react-templates@1.1.11) (2024-11-20)
 
 **Note:** Version bump only for package @patternfly/react-templates
