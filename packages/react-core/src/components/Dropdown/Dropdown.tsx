@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
 import { Popper } from '../../helpers/Popper/Popper';
-import { useOUIAProps, OUIAProps } from '../../helpers';
+import { useOUIAProps, OUIAProps, onToggleArrowKeydownDefault } from '../../helpers';
 
 export interface DropdownPopperProps {
   /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
@@ -51,6 +51,8 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   onOpenChange?: (isOpen: boolean) => void;
   /** @beta Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
+  /** Callback to override the toggle keydown behavior. By default, when the toggle has focus and the menu is open, pressing the up/down arrow keys will focus a valid non-disabled menu item - the first item for the down arrow key and last item for the up arrow key. */
+  onToggleKeydown?: (event: KeyboardEvent) => void;
   /** Indicates if the menu should be without the outer box-shadow. */
   isPlain?: boolean;
   /** Indicates if the menu should be scrollable. */
@@ -85,6 +87,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   toggle,
   shouldFocusToggleOnSelect = false,
   onOpenChange,
+  onToggleKeydown,
   isPlain,
   isScrollable,
   innerRef,
@@ -123,6 +126,14 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
           toggleRef.current?.focus();
         }
       }
+
+      if (toggleRef.current?.contains(event.target as Node)) {
+        if (onToggleKeydown) {
+          onToggleKeydown(event);
+        } else if (isOpen) {
+          onToggleArrowKeydownDefault(event, menuRef);
+        }
+      }
     };
 
     const handleClick = (event: MouseEvent) => {
@@ -157,6 +168,7 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
     toggleRef,
     onOpenChange,
     onOpenChangeKeys,
+    onToggleKeydown,
     shouldPreventScrollOnItemFocus,
     shouldFocusFirstItemOnOpen,
     focusTimeoutDelay

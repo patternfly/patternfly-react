@@ -1,5 +1,5 @@
 import React from 'react';
-import { Popper } from '../../helpers/Popper/Popper';
+import { onToggleArrowKeydownDefault, Popper } from '../../helpers';
 
 export interface MenuPopperProps {
   /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
@@ -17,6 +17,7 @@ export interface MenuPopperProps {
   /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
   preventOverflow?: boolean;
 }
+
 export interface MenuContainerProps {
   /** Menu to be rendered */
   menu: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
@@ -33,10 +34,14 @@ export interface MenuContainerProps {
   onOpenChange?: (isOpen: boolean) => void;
   /** Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
+  /** Callback to override the toggle keydown behavior. By default, when the toggle has focus and the menu is open, pressing the up/down arrow keys will focus a valid non-disabled menu item - the first item for the down arrow key and last item for the up arrow key. */
+  onToggleKeydown?: (event: KeyboardEvent) => void;
   /** z-index of the dropdown menu */
   zIndex?: number;
   /** Additional properties to pass to the Popper */
   popperProps?: MenuPopperProps;
+  /** @beta Flag indicating the first menu item should be focused after opening the dropdown. */
+  shouldFocusFirstItemOnOpen?: boolean;
   /** Flag indicating if scroll on focus of the first menu item should occur. */
   shouldPreventScrollOnItemFocus?: boolean;
   /** Time in ms to wait before firing the toggles' focus event. Defaults to 0 */
@@ -54,12 +59,30 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   toggle,
   toggleRef,
   onOpenChange,
+  onToggleKeydown,
   zIndex = 9999,
   popperProps,
   onOpenChangeKeys = ['Escape', 'Tab'],
+  shouldFocusFirstItemOnOpen = false,
   shouldPreventScrollOnItemFocus = true,
   focusTimeoutDelay = 0
 }: MenuContainerProps) => {
+  const prevIsOpen = React.useRef<boolean>(isOpen);
+  React.useEffect(() => {
+    // menu was opened, focus on first menu item
+    if (prevIsOpen.current === false && isOpen === true && shouldFocusFirstItemOnOpen) {
+      setTimeout(() => {
+        const firstElement = menuRef?.current?.querySelector(
+          'li button:not(:disabled),li input:not(:disabled),li a:not([aria-disabled="true"])'
+        );
+        firstElement && (firstElement as HTMLElement).focus({ preventScroll: shouldPreventScrollOnItemFocus });
+      }, focusTimeoutDelay);
+    }
+
+    prevIsOpen.current = isOpen;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
+
   React.useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
@@ -72,19 +95,17 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
           toggleRef.current?.focus();
         }
       }
+
+      if (toggleRef.current?.contains(event.target as Node)) {
+        if (onToggleKeydown) {
+          onToggleKeydown(event);
+        } else if (isOpen) {
+          onToggleArrowKeydownDefault(event, menuRef);
+        }
+      }
     };
 
     const handleClick = (event: MouseEvent) => {
-      // toggle was opened, focus on first menu item
-      if (isOpen && toggleRef.current?.contains(event.target as Node)) {
-        setTimeout(() => {
-          const firstElement = menuRef?.current?.querySelector(
-            'li button:not(:disabled),li input:not(:disabled),li a:not([aria-disabled="true"])'
-          );
-          firstElement && (firstElement as HTMLElement).focus({ preventScroll: shouldPreventScrollOnItemFocus });
-        }, focusTimeoutDelay);
-      }
-
       // If the event is not on the toggle and onOpenChange callback is provided, close the menu
       if (isOpen && onOpenChange && !toggleRef?.current?.contains(event.target as Node)) {
         if (isOpen && !menuRef.current?.contains(event.target as Node)) {
@@ -100,7 +121,16 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
       window.removeEventListener('keydown', handleMenuKeys);
       window.removeEventListener('click', handleClick);
     };
-  }, [focusTimeoutDelay, isOpen, menuRef, onOpenChange, onOpenChangeKeys, shouldPreventScrollOnItemFocus, toggleRef]);
+  }, [
+    focusTimeoutDelay,
+    isOpen,
+    menuRef,
+    onOpenChange,
+    onOpenChangeKeys,
+    onToggleKeydown,
+    shouldPreventScrollOnItemFocus,
+    toggleRef
+  ]);
 
   return (
     <Popper
