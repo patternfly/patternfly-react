@@ -69,7 +69,7 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
           id="3"
           isFavorited={favorites.includes('3')}
           isExternalLink
-          icon={<img src={brandImg} width={25} height={25} />}
+          icon={<img src={brandImg} alt="" width={25} height={25} />}
           component={(props) => <MockLink {...props} to="#router-link2" />}
         >
           Custom component with icon
