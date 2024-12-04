@@ -98,8 +98,19 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
     </PageSidebar>
   );
 
+  const defaultContainerId = 'main-content-page-layout-default-nav';
+
+  const handleClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+
+    const mainContentElement = document.getElementById(mainContainerId ?? defaultContainerId);
+    if (mainContentElement) {
+      mainContentElement.focus();
+    }
+  };
+
   const PageSkipToContent = (
-    <SkipToContent href={`#${mainContainerId ?? 'main-content-page-layout-default-nav'}`}>
+    <SkipToContent onClick={handleClick} href={`#${mainContainerId ?? defaultContainerId}`}>
       Skip to content
     </SkipToContent>
   );
@@ -112,7 +123,7 @@ export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
       skipToContent={PageSkipToContent}
       banner={banner}
       breadcrumb={renderedBreadcrumb}
-      mainContainerId={mainContainerId ?? 'main-content-page-layout-default-nav'}
+      mainContainerId={mainContainerId ?? defaultContainerId}
       notificationDrawer={notificationDrawer}
       isNotificationDrawerExpanded={isNotificationDrawerExpanded}
       {...(typeof onPageResize === 'function' && {

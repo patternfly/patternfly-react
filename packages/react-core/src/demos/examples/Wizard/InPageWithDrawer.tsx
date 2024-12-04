@@ -104,7 +104,21 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
   );
 
   const pageId = 'main-content-page-layout-default-nav';
-  const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
+
+  const handleClick = (event) => {
+    event.preventDefault();
+
+    const mainContentElement = document.getElementById(pageId);
+    if (mainContentElement) {
+      mainContentElement.focus();
+    }
+  };
+
+  const PageSkipToContent = (
+    <SkipToContent onClick={handleClick} href={`#${pageId}`}>
+      Skip to content
+    </SkipToContent>
+  );
 
   const PageBreadcrumb = (
     <Breadcrumb>
