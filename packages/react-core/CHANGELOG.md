@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.13...@patternfly/react-core@6.1.0-prerelease.14) (2024-12-04)
+
+### Bug Fixes
+
+- **expandable section:** Remove returns within text content so that example truncates correctly ([#11226](https://github.com/patternfly/patternfly-react/issues/11226)) ([5b91445](https://github.com/patternfly/patternfly-react/commit/5b914458c01a13abc782af85a8d85e002f59f37e))
+
 # [6.1.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.12...@patternfly/react-core@6.1.0-prerelease.13) (2024-12-02)
 
 ### Features
