@@ -1,4 +1,3 @@
-import React from 'react';
 import { ProgressStepper, ProgressStep, Popover } from '@patternfly/react-core';
 
 export const PopoverProgressStep = () => (

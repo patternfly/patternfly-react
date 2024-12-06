@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { DrawerPanelDescription } from '../DrawerPanelDescription';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';

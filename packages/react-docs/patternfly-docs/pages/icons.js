@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tooltip, Grid, GridItem, PageSection, Content } from '@patternfly/react-core';
 import spacerMd from '@patternfly/react-tokens/dist/esm/t_global_spacer_md';
 import labelFontSize from '@patternfly/react-tokens/dist/esm/t_global_font_size_sm';
