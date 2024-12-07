@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
 import { DraggableCell } from '../../DraggableCell';
 
