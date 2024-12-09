@@ -20,7 +20,7 @@ Basic modals give users the option to either confirm or cancel an action.
 
 To flag an open modal, use the `isOpen` property. To execute a callback when a modal is closed, use the `onClose` property.
 
-A modal must have a `<ModalBody>`, containing the main content of the modal. The `<ModalHeader>` and `<ModalFooter>` components are not required, but are typically used to display the modal title and any button actions, respectively. 
+The `<ModalBody>`, `<ModalHeader>`, and `<ModalFooter>` components are not required, but are typically used to display the main content of the modal, modal title, and any button actions, respectively.
 
 ```ts file="./ModalBasic.tsx"
 

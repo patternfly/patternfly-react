@@ -1,21 +1,18 @@
 import React from 'react';
-import { Button, Wizard, WizardStep, WizardHeader } from '@patternfly/react-core';
-import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
+import { Button, Modal, ModalVariant, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
 
-export const WizardWithinModal = () => {
+export const WizardWithinModal: React.FunctionComponent = () => {
   const [isModelOpen, setIsModalOpen] = React.useState(false);
 
   return (
     <>
       <Button onClick={() => setIsModalOpen(true)}>Show Modal</Button>
 
-      <ModalDeprecated
+      <Modal
         isOpen={isModelOpen}
-        showClose={false}
         aria-label="Wizard modal"
-        hasNoBodyWrapper
         onEscapePress={() => setIsModalOpen(false)}
-        variant={ModalVariantDeprecated.medium}
+        variant={ModalVariant.medium}
       >
         <Wizard
           height={400}
@@ -43,7 +40,7 @@ export const WizardWithinModal = () => {
             Review step content
           </WizardStep>
         </Wizard>
-      </ModalDeprecated>
+      </Modal>
     </>
   );
 };
