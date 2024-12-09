@@ -45,7 +45,7 @@
   "peerDependencies": {
     "react": "^17 || ^18",
     "react-dom": "^17 || ^18",
-    "victory-area": "^37.3.2",
+    "victory-area": "^37.3.3",
     "victory-axis": "^37.3.2",
     "victory-bar": "^37.3.2",
     "victory-box-plot": "^37.3.2",
