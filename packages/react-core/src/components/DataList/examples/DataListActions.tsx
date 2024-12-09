@@ -86,7 +86,7 @@ export const DataListActions: React.FunctionComponent = () => {
                     onClick={onToggle}
                     variant="plain"
                     aria-label="Data list with actions example kebab toggle"
-                    icon={<EllipsisVIcon aria-hidden="true" />}
+                    icon={<EllipsisVIcon />}
                   />
                 )}
                 isOpen={isOpen}

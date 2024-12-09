@@ -223,12 +223,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
         />
 
         <TextInputGroupUtilities {...(!inputValue ? { style: { display: 'none' } } : {})}>
-          <Button
-            variant="plain"
-            onClick={onClearButtonClick}
-            aria-label="Clear input value"
-            icon={<TimesIcon aria-hidden />}
-          />
+          <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value" icon={<TimesIcon />} />
         </TextInputGroupUtilities>
       </TextInputGroup>
     </MenuToggle>

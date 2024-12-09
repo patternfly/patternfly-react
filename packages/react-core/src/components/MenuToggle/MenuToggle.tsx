@@ -122,13 +122,13 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
     if (!statusIcon) {
       switch (status) {
         case MenuToggleStatus.success:
-          _statusIcon = <CheckCircleIcon aria-hidden="true" />;
+          _statusIcon = <CheckCircleIcon />;
           break;
         case MenuToggleStatus.warning:
-          _statusIcon = <ExclamationTriangleIcon aria-hidden="true" />;
+          _statusIcon = <ExclamationTriangleIcon />;
           break;
         case MenuToggleStatus.danger:
-          _statusIcon = <ExclamationCircleIcon aria-hidden="true" />;
+          _statusIcon = <ExclamationCircleIcon />;
           break;
       }
     }
@@ -137,7 +137,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
       <span className={css(styles.menuToggleControls)}>
         {status !== undefined && <span className={css(styles.menuToggleStatusIcon)}>{_statusIcon}</span>}
         <span className={css(styles.menuToggleToggleIcon)}>
-          <CaretDownIcon aria-hidden />
+          <CaretDownIcon />
         </span>
       </span>
     );

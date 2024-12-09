@@ -240,7 +240,7 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
           {...(variant !== ExpandableSectionVariant.truncate && {
             icon: (
               <span className={css(styles.expandableSectionToggleIcon)}>
-                <AngleRightIcon aria-hidden />
+                <AngleRightIcon />
               </span>
             )
           })}

@@ -139,7 +139,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       tabIndex={-1}
     >
       <span className={css(styles.treeViewNodeToggleIcon)}>
-        <AngleRightIcon aria-hidden="true" />
+        <AngleRightIcon />
       </span>
     </ToggleComponent>
   );

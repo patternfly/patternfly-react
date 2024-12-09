@@ -239,12 +239,7 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
           </LabelGroup>
         </TextInputGroupMain>
         <TextInputGroupUtilities {...(selected.length === 0 ? { style: { display: 'none' } } : {})}>
-          <Button
-            variant="plain"
-            onClick={onClearButtonClick}
-            aria-label="Clear input value"
-            icon={<TimesIcon aria-hidden />}
-          />
+          <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value" icon={<TimesIcon />} />
         </TextInputGroupUtilities>
       </TextInputGroup>
     </MenuToggle>

@@ -166,7 +166,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
                 variant="plain"
                 id="complex-available-toggle"
                 aria-label="Complex actions example available kebab toggle"
-                icon={<EllipsisVIcon aria-hidden="true" />}
+                icon={<EllipsisVIcon />}
               />
             )}
             isOpen={isAvailableKebabOpen}
@@ -201,7 +201,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
                 variant="plain"
                 id="complex-chosen-toggle"
                 aria-label="Complex actions example chosen kebab toggle"
-                icon={<EllipsisVIcon aria-hidden="true" />}
+                icon={<EllipsisVIcon />}
               />
             )}
             isOpen={isChosenKebabOpen}

@@ -43,7 +43,7 @@ export const SimpleDropdownExample: React.FunctionComponent = () => {
             toggleVariant="plain"
             initialItems={items}
             isDisabled={isDisabled}
-            toggleContent={<EllipsisVIcon aria-hidden="true" />}
+            toggleContent={<EllipsisVIcon />}
             toggleAriaLabel="Plain dropdown toggle"
           />
         </FlexItem>

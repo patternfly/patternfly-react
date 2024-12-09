@@ -369,7 +369,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             <span className={css(styles.menuItemMain)}>
               {direction === 'up' && (
                 <span className={css(styles.menuItemToggleIcon)}>
-                  <AngleLeftIcon aria-hidden />
+                  <AngleLeftIcon />
                 </span>
               )}
               {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
@@ -388,17 +388,17 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
               <span className={css(styles.menuItemText)}>{children}</span>
               {isExternalLink && (
                 <span className={css(styles.menuItemExternalIcon)}>
-                  <ExternalLinkAltIcon aria-hidden />
+                  <ExternalLinkAltIcon />
                 </span>
               )}
               {(flyoutMenu || direction === 'down') && (
                 <span className={css(styles.menuItemToggleIcon)}>
-                  <AngleRightIcon aria-hidden />
+                  <AngleRightIcon />
                 </span>
               )}
               {getIsSelected() && (
                 <span className={css(styles.menuItemSelectIcon)}>
-                  <CheckIcon aria-hidden />
+                  <CheckIcon />
                 </span>
               )}
             </span>

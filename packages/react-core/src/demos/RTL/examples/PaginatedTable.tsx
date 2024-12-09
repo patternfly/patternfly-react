@@ -398,7 +398,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
                       onClick={onKebabDropdownToggle}
                       variant="plain"
                       aria-label={translation.kebabDropdown.settingsAndHelp}
-                      icon={<EllipsisVIcon aria-hidden="true" />}
+                      icon={<EllipsisVIcon />}
                     />
                   )}
                 >
@@ -418,7 +418,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
                       onClick={onFullKebabToggle}
                       variant="plain"
                       aria-label={translation.kebabAndUserDropdown.toolbarMenuAriaLabel}
-                      icon={<EllipsisVIcon aria-hidden="true" />}
+                      icon={<EllipsisVIcon />}
                     />
                   )}
                 >

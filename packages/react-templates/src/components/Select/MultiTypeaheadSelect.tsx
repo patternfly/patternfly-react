@@ -304,7 +304,7 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
         </TextInputGroupMain>
         <TextInputGroupUtilities {...(selected.length === 0 ? { style: { display: 'none' } } : {})}>
           <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
-            <TimesIcon aria-hidden />
+            <TimesIcon />
           </Button>
         </TextInputGroupUtilities>
       </TextInputGroup>

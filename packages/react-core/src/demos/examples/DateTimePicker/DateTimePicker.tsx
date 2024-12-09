@@ -65,7 +65,7 @@ export const DateTimePicker: React.FunctionComponent = () => {
           onClick={onToggleTime}
           isExpanded={isTimeOpen}
           aria-label="Time picker"
-          icon={<OutlinedClockIcon aria-hidden="true" />}
+          icon={<OutlinedClockIcon />}
         />
       )}
     >

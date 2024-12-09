@@ -164,7 +164,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   const flyoutButton = (
     <span className={css(styles.navToggle)}>
       <span className={css(styles.navToggleIcon)}>
-        <AngleRightIcon aria-hidden />
+        <AngleRightIcon />
       </span>
     </span>
   );

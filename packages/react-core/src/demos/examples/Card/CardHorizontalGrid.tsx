@@ -63,7 +63,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
           onClick={onActionToggle}
           variant="plain"
           aria-label="Horizontal card grid demo kebab toggle"
-          icon={<EllipsisVIcon aria-hidden="true" />}
+          icon={<EllipsisVIcon />}
         />
       )}
     >
