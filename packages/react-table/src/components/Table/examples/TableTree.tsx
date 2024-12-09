@@ -139,7 +139,7 @@ export const TableTree: React.FunctionComponent = () => {
     const isChecked = isNodeChecked(node);
     let icon = <LeafIcon />;
     if (node.children) {
-      icon = isExpanded ? <FolderOpenIcon aria-hidden /> : <FolderIcon aria-hidden />;
+      icon = isExpanded ? <FolderOpenIcon /> : <FolderIcon />;
     }
 
     const treeRow: TdProps['treeRow'] = {

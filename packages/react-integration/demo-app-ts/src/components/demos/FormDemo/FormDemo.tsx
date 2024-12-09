@@ -323,7 +323,7 @@ export class FormDemo extends Component<FormProps, FormState> {
               variant="plain"
               onClick={this.onClearButtonClick}
               aria-label="Clear input value"
-              icon={<TimesIcon aria-hidden />}
+              icon={<TimesIcon />}
             />
           </TextInputGroupUtilities>
         </TextInputGroup>

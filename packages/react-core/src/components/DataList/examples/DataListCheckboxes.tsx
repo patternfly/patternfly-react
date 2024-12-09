@@ -84,7 +84,7 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
                   onClick={onToggle1}
                   variant="plain"
                   aria-label="Data list with checkboxes, actions and additional cells example kebab toggle 1"
-                  icon={<EllipsisVIcon aria-hidden="true" />}
+                  icon={<EllipsisVIcon />}
                 />
               )}
               isOpen={isOpen1}
@@ -138,7 +138,7 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
                   onClick={onToggle2}
                   variant="plain"
                   aria-label="Data list with checkboxes, actions and additional cells example kebab toggle 2"
-                  icon={<EllipsisVIcon aria-hidden="true" />}
+                  icon={<EllipsisVIcon />}
                 />
               )}
               isOpen={isOpen2}
@@ -201,7 +201,7 @@ export const DataListCheckboxes: React.FunctionComponent = () => {
                   onClick={onToggle3}
                   variant="plain"
                   aria-label="Data list with checkboxes, actions and additional cells example kebab toggle 3"
-                  icon={<EllipsisVIcon aria-hidden="true" />}
+                  icon={<EllipsisVIcon />}
                 />
               )}
               isOpen={isOpen3}

@@ -184,7 +184,7 @@ export const TablesAndTabs = () => {
           </ToolbarItem>
         </ToolbarToggleGroup>
         <ToolbarItem>
-          <MenuToggle variant="plain" aria-label="Sort columns" icon={<SortAmountDownIcon aria-hidden="true" />} />
+          <MenuToggle variant="plain" aria-label="Sort columns" icon={<SortAmountDownIcon />} />
         </ToolbarItem>
         <OverflowMenu breakpoint="md">
           <OverflowMenuContent>

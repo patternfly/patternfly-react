@@ -33,7 +33,7 @@ export const AlertToggleExpandButton: React.FunctionComponent<AlertToggleExpandB
       {...props}
       icon={
         <span className={css(styles.alertToggleIcon)}>
-          <AngleRightIcon aria-hidden="true" />
+          <AngleRightIcon />
         </span>
       }
     />

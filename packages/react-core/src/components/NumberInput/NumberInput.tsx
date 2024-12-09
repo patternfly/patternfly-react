@@ -126,7 +126,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
             onClick={(evt) => onMinus(evt, inputName)}
             icon={
               <span className={css(styles.numberInputIcon)}>
-                <MinusIcon aria-hidden="true" />
+                <MinusIcon />
               </span>
             }
             {...minusBtnProps}
@@ -155,7 +155,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
             onClick={(evt) => onPlus(evt, inputName)}
             icon={
               <span className={css(styles.numberInputIcon)}>
-                <PlusIcon aria-hidden="true" />
+                <PlusIcon />
               </span>
             }
             {...plusBtnProps}

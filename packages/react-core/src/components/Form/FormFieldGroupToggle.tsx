@@ -39,7 +39,7 @@ export const FormFieldGroupToggle: React.FunctionComponent<FormFieldGroupToggleP
         id={toggleId}
         icon={
           <span className={css(styles.formFieldGroupToggleIcon)}>
-            <AngleRightIcon aria-hidden="true" />
+            <AngleRightIcon />
           </span>
         }
       />

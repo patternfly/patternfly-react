@@ -33,7 +33,7 @@ export const FavoritesCell: React.FunctionComponent<FavoritesCellProps> = ({
       onClick={onFavorite}
       {...ariaProps}
       {...props}
-      icon={<StarIcon aria-hidden />}
+      icon={<StarIcon />}
     />
   );
 };

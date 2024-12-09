@@ -31,7 +31,7 @@ export const MenuToggleTypeahead: React.FunctionComponent = () => {
               variant="plain"
               onClick={() => setInputValue('')}
               aria-label="Clear input value"
-              icon={<TimesIcon aria-hidden />}
+              icon={<TimesIcon />}
             />
           )}
         </TextInputGroupUtilities>

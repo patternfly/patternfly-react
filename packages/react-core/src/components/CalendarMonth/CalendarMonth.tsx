@@ -292,7 +292,7 @@ export const CalendarMonth = ({
             variant="plain"
             aria-label={prevMonthAriaLabel}
             onClick={(ev: React.MouseEvent) => onMonthClick(ev, prevMonth)}
-            icon={<AngleLeftIcon aria-hidden={true} />}
+            icon={<AngleLeftIcon />}
           />
         </div>
         <InputGroup>
@@ -358,7 +358,7 @@ export const CalendarMonth = ({
             variant="plain"
             aria-label={nextMonthAriaLabel}
             onClick={(ev: React.MouseEvent) => onMonthClick(ev, nextMonth)}
-            icon={<AngleRightIcon aria-hidden={true} />}
+            icon={<AngleRightIcon />}
           />
         </div>
       </div>

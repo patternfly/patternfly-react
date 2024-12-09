@@ -122,7 +122,7 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
           {...(isExpanded !== undefined && { 'aria-expanded': isExpanded })}
           {...(ariaControls && { 'aria-controls': ariaControls })}
         />
-        {validated && <TextInputGroupIcon isStatus>{<StatusIcon aria-hidden="true" />}</TextInputGroupIcon>}
+        {validated && <TextInputGroupIcon isStatus>{<StatusIcon />}</TextInputGroupIcon>}
       </span>
     </div>
   );

@@ -32,21 +32,21 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
       text: 'Item 1',
       description: 'Description 1',
       itemId: 'item-1',
-      action: <BarsIcon aria-hidden />,
+      action: <BarsIcon />,
       actionId: 'bars'
     },
     {
       text: 'Item 2',
       description: 'Description 2',
       itemId: 'item-2',
-      action: <ClipboardIcon aria-hidden />,
+      action: <ClipboardIcon />,
       actionId: 'clipboard'
     },
     {
       text: 'Item 3',
       description: 'Description 3',
       itemId: 'item-3',
-      action: <BellIcon aria-hidden />,
+      action: <BellIcon />,
       actionId: 'bell'
     }
   ];

@@ -74,7 +74,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                 onClick={() => this.onToggle(0)}
                 id="toggle-id-0"
                 variant="plain"
-                icon={<EllipsisVIcon aria-hidden="true" />}
+                icon={<EllipsisVIcon />}
               />
             )}
           >
@@ -104,7 +104,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                       onClick={() => this.onToggle(1)}
                       id="toggle-id-1"
                       variant="plain"
-                      icon={<EllipsisVIcon aria-hidden="true" />}
+                      icon={<EllipsisVIcon />}
                     />
                   )}
                 >
@@ -133,7 +133,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                       onClick={() => this.onToggle(2)}
                       id="toggle-id-2"
                       variant="plain"
-                      icon={<EllipsisVIcon aria-hidden="true" />}
+                      icon={<EllipsisVIcon />}
                     />
                   )}
                 >
@@ -164,7 +164,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                       onClick={() => this.onToggle(3)}
                       id="toggle-id-3"
                       variant="plain"
-                      icon={<EllipsisVIcon aria-hidden="true" />}
+                      icon={<EllipsisVIcon />}
                     />
                   )}
                 >
@@ -197,7 +197,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                       onClick={() => this.onToggle(4)}
                       id="toggle-id-4"
                       variant="plain"
-                      icon={<EllipsisVIcon aria-hidden="true" />}
+                      icon={<EllipsisVIcon />}
                     />
                   )}
                 >
@@ -223,7 +223,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
                       onClick={() => this.onToggle(5)}
                       id="toggle-id-5"
                       variant="plain"
-                      icon={<EllipsisVIcon aria-hidden="true" />}
+                      icon={<EllipsisVIcon />}
                     />
                   )}
                 >

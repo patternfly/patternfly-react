@@ -31,7 +31,7 @@ export const MenuWithActions: React.FunctionComponent = () => {
               isSelected={selectedItems.indexOf(0) !== -1}
               actions={
                 <MenuItemAction
-                  icon={<CodeBranchIcon aria-hidden />}
+                  icon={<CodeBranchIcon />}
                   actionId="code"
                   // eslint-disable-next-line no-console
                   onClick={() => console.log('clicked on code icon')}
@@ -46,7 +46,7 @@ export const MenuWithActions: React.FunctionComponent = () => {
             <MenuItem
               isDisabled
               isSelected={selectedItems.indexOf(1) !== -1}
-              actions={<MenuItemAction icon={<BellIcon aria-hidden />} actionId="alert" aria-label="Alert" />}
+              actions={<MenuItemAction icon={<BellIcon />} actionId="alert" aria-label="Alert" />}
               description="This is a description"
               itemId={1}
             >
@@ -54,14 +54,14 @@ export const MenuWithActions: React.FunctionComponent = () => {
             </MenuItem>
             <MenuItem
               isSelected={selectedItems.indexOf(2) !== -1}
-              actions={<MenuItemAction icon={<ClipboardIcon aria-hidden />} actionId="copy" aria-label="Copy" />}
+              actions={<MenuItemAction icon={<ClipboardIcon />} actionId="copy" aria-label="Copy" />}
               itemId={2}
             >
               Item 3
             </MenuItem>
             <MenuItem
               isSelected={selectedItems.indexOf(3) !== -1}
-              actions={<MenuItemAction icon={<BarsIcon aria-hidden />} actionId="expand" aria-label="Expand" />}
+              actions={<MenuItemAction icon={<BarsIcon />} actionId="expand" aria-label="Expand" />}
               description="This is a description"
               itemId={3}
             >

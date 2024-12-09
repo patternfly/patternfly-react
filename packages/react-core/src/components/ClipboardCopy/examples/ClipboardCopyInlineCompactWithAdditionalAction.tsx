@@ -9,7 +9,7 @@ export const ClipboardCopyInlineCompactWithAdditionalAction: React.FunctionCompo
     variant="inline-compact"
     additionalActions={
       <ClipboardCopyAction>
-        <Button variant="plain" hasNoPadding aria-label="Run in web terminal" icon={<PlayIcon aria-hidden />} />
+        <Button variant="plain" hasNoPadding aria-label="Run in web terminal" icon={<PlayIcon />} />
       </ClipboardCopyAction>
     }
   >

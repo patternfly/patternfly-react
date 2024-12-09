@@ -193,13 +193,13 @@ export class MenuDemo extends Component {
         </Title>
         <Menu onSelect={this.onSimpleSelect} activeItemId={activeItem} id="menu-with-icons">
           <MenuList>
-            <MenuItem id="icons-menu-item-1" icon={<CodeBranchIcon id="code-branch-icon" aria-hidden />} itemId={0}>
+            <MenuItem id="icons-menu-item-1" icon={<CodeBranchIcon id="code-branch-icon" />} itemId={0}>
               From Git
             </MenuItem>
-            <MenuItem id="icons-menu-item-2" icon={<LayerGroupIcon id="layer-group-icon" aria-hidden />} itemId={1}>
+            <MenuItem id="icons-menu-item-2" icon={<LayerGroupIcon id="layer-group-icon" />} itemId={1}>
               Container Image
             </MenuItem>
-            <MenuItem id="icons-menu-item-3" icon={<CubeIcon id="cube-icon" aria-hidden />} itemId={2}>
+            <MenuItem id="icons-menu-item-3" icon={<CubeIcon id="cube-icon" />} itemId={2}>
               Docker File
             </MenuItem>
           </MenuList>
@@ -404,26 +404,15 @@ export class MenuDemo extends Component {
         </Title>
         <Menu id="menu-with-description" onSelect={this.onSimpleSelect} activeItemId={activeItem}>
           <MenuList>
-            <MenuItem
-              id="description-item-1"
-              icon={<CodeBranchIcon aria-hidden />}
-              description="Description"
-              itemId={0}
-            >
+            <MenuItem id="description-item-1" icon={<CodeBranchIcon />} description="Description" itemId={0}>
               Action 1
             </MenuItem>
-            <MenuItem
-              id="description-item-2"
-              isDisabled
-              icon={<CodeBranchIcon aria-hidden />}
-              description="Description"
-              itemId={1}
-            >
+            <MenuItem id="description-item-2" isDisabled icon={<CodeBranchIcon />} description="Description" itemId={1}>
               Action 2 disabled
             </MenuItem>
             <MenuItem
               id="description-item-3"
-              icon={<CodeBranchIcon aria-hidden />}
+              icon={<CodeBranchIcon />}
               description="Nunc non ornare ex, et pretium dui. Duis nec augue at urna elementum blandit tincidunt eget metus. Aenean sed metus id urna dignissim interdum. Aenean vel nisl vitae arcu vehicula pulvinar eget nec turpis. Cras sit amet est est."
               itemId={2}
             >
@@ -456,7 +445,7 @@ export class MenuDemo extends Component {
                 isSelected={selectedItems.indexOf(0) !== -1}
                 actions={
                   <MenuItemAction
-                    icon={<CodeBranchIcon aria-hidden />}
+                    icon={<CodeBranchIcon />}
                     actionId="code"
                     // eslint-disable-next-line no-console
                     onClick={() => console.log('clicked on code icon')}
@@ -472,7 +461,7 @@ export class MenuDemo extends Component {
               <MenuItem
                 isDisabled
                 isSelected={selectedItems.indexOf(1) !== -1}
-                actions={<MenuItemAction icon={<BellIcon aria-hidden />} actionId="alert" aria-label="Alert" />}
+                actions={<MenuItemAction icon={<BellIcon />} actionId="alert" aria-label="Alert" />}
                 description="This is a description"
                 itemId={1}
               >
@@ -480,14 +469,14 @@ export class MenuDemo extends Component {
               </MenuItem>
               <MenuItem
                 isSelected={selectedItems.indexOf(2) !== -1}
-                actions={<MenuItemAction icon={<ClipboardIcon aria-hidden />} actionId="copy" aria-label="Copy" />}
+                actions={<MenuItemAction icon={<ClipboardIcon />} actionId="copy" aria-label="Copy" />}
                 itemId={2}
               >
                 Item 3
               </MenuItem>
               <MenuItem
                 isSelected={selectedItems.indexOf(3) !== -1}
-                actions={<MenuItemAction icon={<BarsIcon aria-hidden />} actionId="expand" aria-label="Expand" />}
+                actions={<MenuItemAction icon={<BarsIcon />} actionId="expand" aria-label="Expand" />}
                 description="This is a description"
                 itemId={3}
               >
@@ -508,21 +497,21 @@ export class MenuDemo extends Component {
         text: 'Item 1',
         description: 'Description 1',
         itemId: 'item-1',
-        action: <BarsIcon aria-hidden />,
+        action: <BarsIcon />,
         actionId: 'bars'
       },
       {
         text: 'Item 2',
         description: 'Description 2',
         itemId: 'item-2',
-        action: <ClipboardIcon aria-hidden />,
+        action: <ClipboardIcon />,
         actionId: 'clipboard'
       },
       {
         text: 'Item 3',
         description: 'Description 3',
         itemId: 'item-3',
-        action: <BellIcon aria-hidden />,
+        action: <BellIcon />,
         actionId: 'bell'
       }
     ];
@@ -609,7 +598,7 @@ export class MenuDemo extends Component {
             <MenuItem id="single-select-item-2" itemId={1}>
               Option 2
             </MenuItem>
-            <MenuItem id="single-select-item-3" icon={<TableIcon aria-hidden />} itemId={2}>
+            <MenuItem id="single-select-item-3" icon={<TableIcon />} itemId={2}>
               Option 3
             </MenuItem>
           </MenuList>
@@ -639,7 +628,7 @@ export class MenuDemo extends Component {
             <MenuItem id="multi-select-item-2" itemId={1}>
               Option 2
             </MenuItem>
-            <MenuItem id="multi-select-item-3" icon={<TableIcon aria-hidden />} itemId={2}>
+            <MenuItem id="multi-select-item-3" icon={<TableIcon />} itemId={2}>
               Option 3
             </MenuItem>
           </MenuList>

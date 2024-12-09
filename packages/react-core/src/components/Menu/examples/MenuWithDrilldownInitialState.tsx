@@ -156,21 +156,21 @@ export const MenuDrilldownInitialState: React.FunctionComponent = () => {
           </MenuItem>
           <MenuItem
             itemId="group:storage"
-            icon={<StorageDomainIcon aria-hidden />}
+            icon={<StorageDomainIcon />}
             direction="down"
             drilldownMenu={
               <DrilldownMenu id="initial-state-drilldownMenuStorage">
-                <MenuItem itemId="group:storage_breadcrumb" icon={<StorageDomainIcon aria-hidden />} direction="up">
+                <MenuItem itemId="group:storage_breadcrumb" icon={<StorageDomainIcon />} direction="up">
                   Add storage
                 </MenuItem>
                 <Divider component="li" />
-                <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId="git">
+                <MenuItem icon={<CodeBranchIcon />} itemId="git">
                   From git
                 </MenuItem>
-                <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId="container">
+                <MenuItem icon={<LayerGroupIcon />} itemId="container">
                   Container image
                 </MenuItem>
-                <MenuItem icon={<CubeIcon aria-hidden />} itemId="docker">
+                <MenuItem icon={<CubeIcon />} itemId="docker">
                   Docker file
                 </MenuItem>
               </DrilldownMenu>
