@@ -40,8 +40,12 @@ NavItem,
 NavList,
 PageSidebar,
 PageSidebarBody,
+Modal,
+ModalHeader,
+ModalBody,
+ModalFooter,
 } from '@patternfly/react-core';
-import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
+import { DragDropSort } from '@patternfly/react-drag-drop';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
