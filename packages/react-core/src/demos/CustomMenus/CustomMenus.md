@@ -17,7 +17,7 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
-import pfIcon from '../assets/pf-logo-small.svg';
+import brandImg from '../assets/PF-IconLogo.svg';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';

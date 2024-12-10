@@ -12,7 +12,7 @@ import {
   DropdownItem
 } from '@patternfly/react-core';
 import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
-import pfIcon from '@patternfly/react-core/src/demos/Card/pf-logo-small.svg';
+import brandImg from '@patternfly/react-core/src/demos/assets/PF-IconLogo.svg';
 
 const MockLink: React.FunctionComponent = ({ to, ...props }: any) => <a href={to} {...props}></a>;
 
@@ -69,7 +69,7 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
           id="3"
           isFavorited={favorites.includes('3')}
           isExternalLink
-          icon={<img src={pfIcon} />}
+          icon={<img src={brandImg} alt="" width={25} height={25} />}
           component={(props) => <MockLink {...props} to="#router-link2" />}
         >
           Custom component with icon
