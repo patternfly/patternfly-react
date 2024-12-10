@@ -114,7 +114,7 @@ class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: str
           <React.Fragment>
             <span className={css(styles.switchToggle)}>
               {hasCheckIcon && (
-                <span className={css(styles.switchToggleIcon)} aria-hidden="true">
+                <span className={css(styles.switchToggleIcon)}>
                   <CheckIcon />
                 </span>
               )}
@@ -129,7 +129,7 @@ class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: str
           </React.Fragment>
         ) : (
           <span className={css(styles.switchToggle)}>
-            <div className={css(styles.switchToggleIcon)} aria-hidden="true">
+            <div className={css(styles.switchToggleIcon)}>
               <CheckIcon />
             </div>
           </span>

@@ -33,7 +33,7 @@ export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyTogglePro
     {...props}
     icon={
       <div className={css(styles.clipboardCopyToggleIcon)}>
-        <AngleRightIcon aria-hidden="true" />
+        <AngleRightIcon />
       </div>
     }
   />

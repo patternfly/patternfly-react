@@ -135,7 +135,7 @@ class NavExpandable extends React.Component<NavExpandableProps, NavExpandableSta
                   {typeof title !== 'string' ? <span className={css(`${styles.nav}__link-text`)}>{title}</span> : title}
                   <span className={css(styles.navToggle)}>
                     <span className={css(styles.navToggleIcon)}>
-                      <AngleRightIcon aria-hidden="true" />
+                      <AngleRightIcon />
                     </span>
                   </span>
                 </button>

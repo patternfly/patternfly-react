@@ -184,7 +184,7 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
                   onClick={onKebabDropdownToggle}
                   variant="plain"
                   aria-label="Settings and help"
-                  icon={<EllipsisVIcon aria-hidden="true" />}
+                  icon={<EllipsisVIcon />}
                 />
               )}
             >
@@ -204,7 +204,7 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
                   onClick={onFullKebabToggle}
                   variant="plain"
                   aria-label="Toolbar menu"
-                  icon={<EllipsisVIcon aria-hidden="true" />}
+                  icon={<EllipsisVIcon />}
                 />
               )}
             >

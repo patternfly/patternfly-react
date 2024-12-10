@@ -103,7 +103,7 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                       onClick={onToggle1}
                       variant="plain"
                       aria-label="Data list width modifiers example kebab toggle 1"
-                      icon={<EllipsisVIcon aria-hidden="true" />}
+                      icon={<EllipsisVIcon />}
                     />
                   )}
                   isOpen={isOpen1}
@@ -176,7 +176,7 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                       onClick={onToggle2}
                       variant="plain"
                       aria-label="Data list width modifiers example kebab toggle 2"
-                      icon={<EllipsisVIcon aria-hidden="true" />}
+                      icon={<EllipsisVIcon />}
                     />
                   )}
                   isOpen={isOpen2}

@@ -104,7 +104,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
               {...toggleButtonProps}
               icon={
                 <span className={css(styles.cardHeaderToggleIcon)}>
-                  <AngleRightIcon aria-hidden="true" />
+                  <AngleRightIcon />
                 </span>
               }
             />

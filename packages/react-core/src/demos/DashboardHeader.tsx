@@ -137,7 +137,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                       onClick={onKebabDropdownToggle}
                       variant="plain"
                       aria-label="Settings and help"
-                      icon={<EllipsisVIcon aria-hidden="true" />}
+                      icon={<EllipsisVIcon />}
                     />
                   )}
                 >
@@ -157,7 +157,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                       onClick={onFullKebabToggle}
                       variant="plain"
                       aria-label="Toolbar menu"
-                      icon={<EllipsisVIcon aria-hidden="true" />}
+                      icon={<EllipsisVIcon />}
                     />
                   )}
                 >

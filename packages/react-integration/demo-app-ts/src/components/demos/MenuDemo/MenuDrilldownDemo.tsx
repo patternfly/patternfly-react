@@ -181,21 +181,21 @@ export class MenuDrilldownDemo extends Component {
             </MenuItem>
             <MenuItem
               itemId="group:storage"
-              icon={<StorageDomainIcon aria-hidden />}
+              icon={<StorageDomainIcon />}
               direction="down"
               drilldownMenu={
                 <DrilldownMenu id="drilldownMenuStorage">
-                  <MenuItem itemId="group:storage" icon={<StorageDomainIcon aria-hidden />} direction="up">
+                  <MenuItem itemId="group:storage" icon={<StorageDomainIcon />} direction="up">
                     Add storage
                   </MenuItem>
                   <Divider component="li" />
-                  <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId="git">
+                  <MenuItem icon={<CodeBranchIcon />} itemId="git">
                     From Git
                   </MenuItem>
-                  <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId="container">
+                  <MenuItem icon={<LayerGroupIcon />} itemId="container">
                     Container Image
                   </MenuItem>
-                  <MenuItem icon={<CubeIcon aria-hidden />} itemId="docker">
+                  <MenuItem icon={<CubeIcon />} itemId="docker">
                     Docker File
                   </MenuItem>
                 </DrilldownMenu>

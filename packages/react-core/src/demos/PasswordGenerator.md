@@ -151,7 +151,7 @@ const PasswordGenerator: React.FunctionComponent = () => {
             itemId={0}
             actions={
               <MenuItemAction
-                icon={<RedoIcon aria-hidden />}
+                icon={<RedoIcon />}
                 onClick={(e) => {
                   setGeneratedPassword(generatePassword());
                 }}

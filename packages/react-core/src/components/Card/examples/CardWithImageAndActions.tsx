@@ -64,7 +64,7 @@ export const CardWithImageAndActions: React.FunctionComponent = () => {
             onClick={() => setIsOpen(!isOpen)}
             variant="plain"
             aria-label="Card header images and actions example kebab toggle"
-            icon={<EllipsisVIcon aria-hidden="true" />}
+            icon={<EllipsisVIcon />}
           />
         )}
         isOpen={isOpen}

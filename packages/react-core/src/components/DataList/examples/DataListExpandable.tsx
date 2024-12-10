@@ -92,7 +92,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
                     onClick={onToggle1}
                     variant="plain"
                     aria-label="Data list exapndable example kebaby toggle 1"
-                    icon={<EllipsisVIcon aria-hidden="true" />}
+                    icon={<EllipsisVIcon />}
                   />
                 )}
                 isOpen={isOpen1}
@@ -162,7 +162,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
                     onClick={onToggle2}
                     variant="plain"
                     aria-label="Data list exapndable example kebaby toggle 2"
-                    icon={<EllipsisVIcon aria-hidden="true" />}
+                    icon={<EllipsisVIcon />}
                   />
                 )}
                 isOpen={isOpen2}
@@ -232,7 +232,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
                     onClick={onToggle3}
                     variant="plain"
                     aria-label="Data list exapndable example kebaby toggle 3"
-                    icon={<EllipsisVIcon aria-hidden="true" />}
+                    icon={<EllipsisVIcon />}
                   />
                 )}
                 isOpen={isOpen3}

@@ -210,7 +210,7 @@ class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState> {
             onClick={onClick}
             id={`remove_group_${id}`}
             aria-labelledby={`remove_group_${id} ${id}`}
-            icon={<TimesCircleIcon aria-hidden="true" />}
+            icon={<TimesCircleIcon />}
           />
         </div>
       );

@@ -58,7 +58,7 @@ export const CardTitleInHeader: React.FunctionComponent = () => {
             onClick={() => setIsOpen(!isOpen)}
             variant="plain"
             aria-label="Card title inline with images and actions example kebab toggle"
-            icon={<EllipsisVIcon aria-hidden="true" />}
+            icon={<EllipsisVIcon />}
           />
         )}
         isOpen={isOpen}

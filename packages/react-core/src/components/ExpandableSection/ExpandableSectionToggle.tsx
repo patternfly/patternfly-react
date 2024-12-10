@@ -67,7 +67,7 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
                 isExpanded && direction === 'up' && styles.modifiers.expandTop
               )}
             >
-              <AngleRightIcon aria-hidden />
+              <AngleRightIcon />
             </span>
           )
         })}

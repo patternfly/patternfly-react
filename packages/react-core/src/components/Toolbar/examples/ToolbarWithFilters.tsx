@@ -231,7 +231,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
               onClick={onKebabToggle}
               variant="plain"
               aria-label="Toolbar with filters example kebab toggle"
-              icon={<EllipsisVIcon aria-hidden="true" />}
+              icon={<EllipsisVIcon />}
             />
           )}
         >

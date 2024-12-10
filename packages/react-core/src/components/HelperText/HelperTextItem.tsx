@@ -63,11 +63,7 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
       id={id}
       {...props}
     >
-      {(defaultIcon || icon) && (
-        <span className={css(styles.helperTextItemIcon)} aria-hidden>
-          {icon || defaultIcon}
-        </span>
-      )}
+      {(defaultIcon || icon) && <span className={css(styles.helperTextItemIcon)}>{icon || defaultIcon}</span>}
 
       <span className={css(styles.helperTextItemText)}>
         {children}
