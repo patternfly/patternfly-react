@@ -319,18 +319,15 @@ export const CalendarMonth = ({
                   onSelectToggle(isOpen);
                 }}
                 onSelect={(ev, monthNum) => {
-                  // When we put CalendarMonth in a Popover we want the Popover's onDocumentClick
-                  // to see the SelectOption as a child so it doesn't close the Popover.
-                  setTimeout(() => {
-                    setIsSelectOpen(false);
-                    onSelectToggle(false);
-                    const newDate = changeMonth(Number(monthNum as string));
-                    setFocusedDate(newDate);
-                    setShouldFocus(false);
-                    onMonthChange(ev, newDate);
-                  }, 0);
+                  setIsSelectOpen(false);
+                  onSelectToggle(false);
+                  const newDate = changeMonth(Number(monthNum as string));
+                  setFocusedDate(newDate);
+                  setShouldFocus(false);
+                  onMonthChange(ev, newDate);
                 }}
                 selected={monthFormatted}
+                popperProps={{ appendTo: 'inline' }}
               >
                 <SelectList>
                   {longMonths.map((longMonth, index) => (
