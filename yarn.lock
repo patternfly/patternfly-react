@@ -2125,15 +2125,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/compat@npm:^1.2.3":
-  version: 1.2.3
-  resolution: "@eslint/compat@npm:1.2.3"
+"@eslint/compat@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "@eslint/compat@npm:1.2.4"
   peerDependencies:
     eslint: ^9.10.0
   peerDependenciesMeta:
     eslint:
       optional: true
-  checksum: 10c0/b7439e62f73b9a05abea3b54ad8edc171e299171fc4673fc5a2c84d97a584bb9487a7f0bee397342f6574bd53597819a8abe52f1ca72184378cf387275b84e32
+  checksum: 10c0/afea54435f0ae6b05f1b732132ae4a9d95ff106be0fc9988ac19f31037eb89b2a0e968212be4d2fbf757ff16923031825a27739d94a365559089dfd8269331e3
   languageName: node
   linkType: hard
 
@@ -3765,7 +3765,7 @@ __metadata:
     "@babel/plugin-transform-modules-commonjs": "npm:^7.24.7"
     "@babel/preset-react": "npm:^7.24.7"
     "@babel/preset-typescript": "npm:^7.24.7"
-    "@eslint/compat": "npm:^1.2.3"
+    "@eslint/compat": "npm:^1.2.4"
     "@eslint/js": "npm:^9.11.1"
     "@octokit/rest": "npm:^20.1.1"
     "@rollup/plugin-commonjs": "npm:^26.0.3"
