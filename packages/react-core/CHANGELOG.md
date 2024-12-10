@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.14...@patternfly/react-core@6.1.0-prerelease.15) (2024-12-10)
+
+### Bug Fixes
+
+- **CalendarMonth:** fix selection closing datepicker popover ([#11341](https://github.com/patternfly/patternfly-react/issues/11341)) ([d8c26ac](https://github.com/patternfly/patternfly-react/commit/d8c26acdf5a50e16fc84e23371b37c74baaa95c9))
+
+### Features
+
+- **Wizard:** replace deprecations in examples ([#11298](https://github.com/patternfly/patternfly-react/issues/11298)) ([2de9fea](https://github.com/patternfly/patternfly-react/commit/2de9feaaf661307f23991b5c51d786e1106db114))
+
 # [6.1.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0-prerelease.13...@patternfly/react-core@6.1.0-prerelease.14) (2024-12-04)
 
 ### Bug Fixes
