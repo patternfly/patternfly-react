@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import AddCircleOIcon from '@patternfly/react-icons/dist/esm/icons/add-circle-o-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import figma from '@figma/code-connect';
 
@@ -24,8 +24,8 @@ figma.connect(Button, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-
       })
     }),
     icon: figma.enum('Type', {
-      Default: <PlusCircleIcon />,
-      Danger: <PlusCircleIcon />,
+      Default: <AddCircleOIcon />,
+      Danger: <AddCircleOIcon />,
       'External link': <ExternalLinkAltIcon />
     }),
     isDanger: figma.enum('Type', {

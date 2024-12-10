@@ -25,6 +25,6 @@ figma.connect(
         false: undefined
       })
     },
-    example: ({ orientation, inset }) => <Divider orientation={orientation as any} inset={inset} />
+    example: ({ orientation, inset }) => <Divider orientation={orientation} inset={inset} />
   }
 );
