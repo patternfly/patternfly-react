@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from './Button';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import figma from '@figma/code-connect';
 
 /**
@@ -18,7 +17,8 @@ figma.connect(Button, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-
     }),
     isDisabled: figma.enum('State', {
       Disabled: true
-    })
+    }),
+    icon: figma.children(['IconWrapper', 'Icon'])
   },
-  example: (props) => <Button variant="plain" aria-label="Action" icon={<EllipsisVIcon />} {...props} />
+  example: (props) => <Button variant="plain" aria-label="Action" {...props} />
 });

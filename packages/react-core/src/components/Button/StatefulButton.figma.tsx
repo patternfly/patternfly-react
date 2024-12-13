@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from './Button';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import figma from '@figma/code-connect';
 
 /**
@@ -21,10 +20,11 @@ figma.connect(
         Read: 'read',
         Unread: 'unread',
         'Unread - Needs attention': 'attention'
-      })
+      }),
+      icon: figma.children(['IconWrapper', 'Icon'])
     },
-    example: ({ text, state }) => (
-      <Button variant="stateful" state={state} icon={<BellIcon />}>
+    example: ({ text, ...props }) => (
+      <Button variant="stateful" {...props}>
         {text}
       </Button>
     )

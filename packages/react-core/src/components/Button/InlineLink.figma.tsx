@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from './Button';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import figma from '@figma/code-connect';
 
 /**
@@ -14,9 +13,7 @@ import figma from '@figma/code-connect';
 figma.connect(Button, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-code-connect?node-id=1291-2153&m=dev', {
   props: {
     text: figma.string('Text'),
-    icon: figma.enum('Type', {
-      'Inline link external': <ExternalLinkAltIcon />
-    }),
+    icon: figma.children(['IconWrapper', 'Icon']),
     iconPosition: figma.enum('Type', {
       'Inline link external': 'end'
     }),
