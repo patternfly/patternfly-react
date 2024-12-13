@@ -1,5 +1,5 @@
 import React from 'react';
-import brandImg2 from '../../assets/brandImgColor2.svg';
+import brandImg from '../../assets/PF-IconLogo.svg';
 import {
   LoginFooterItem,
   LoginForm,
@@ -115,7 +115,7 @@ export const LoginPageHideShowPassword: React.FunctionComponent = () => {
   return (
     <LoginPage
       footerListVariants={ListVariant.inline}
-      brandImgSrc={brandImg2}
+      brandImgSrc={brandImg}
       brandImgAlt="PatternFly logo"
       backgroundImgSrc="/assets/images/pfbg-icon.svg"
       footerListItems={listItem}
