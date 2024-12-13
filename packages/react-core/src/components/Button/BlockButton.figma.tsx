@@ -15,10 +15,11 @@ figma.connect(Button, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-
     text: figma.string('Text'),
     isDisabled: figma.enum('State', {
       Disabled: true
-    })
+    }),
+    icon: figma.children(['IconWrapper', 'Icon'])
   },
-  example: ({ text, isDisabled }) => (
-    <Button isBlock isDisabled={isDisabled}>
+  example: ({ text, ...props }) => (
+    <Button isBlock {...props}>
       {text}
     </Button>
   )

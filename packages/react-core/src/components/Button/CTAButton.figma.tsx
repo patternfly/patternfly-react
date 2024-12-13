@@ -21,7 +21,8 @@ figma.connect(Button, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-
     }),
     isInline: figma.enum('Type', {
       Inline: true
-    })
+    }),
+    icon: figma.children(['IconWrapper', 'Icon'])
   },
   example: ({ text, ...props }) => (
     <Button {...props} size="lg">

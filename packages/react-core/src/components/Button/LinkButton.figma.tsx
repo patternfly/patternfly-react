@@ -1,7 +1,5 @@
 import React from 'react';
 import { Button } from './Button';
-import AddCircleOIcon from '@patternfly/react-icons/dist/esm/icons/add-circle-o-icon';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import figma from '@figma/code-connect';
 
 /**
@@ -16,18 +14,11 @@ figma.connect(Button, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-
   props: {
     text: figma.string('✏️ Text'),
     // text: figma.string('Text'),
-    iconPosition: figma.boolean('Icon left', {
-      true: 'left',
-      false: figma.boolean('Icon right', {
-        true: 'right',
-        false: undefined
-      })
+    iconPosition: figma.boolean('Icon right', {
+      true: 'end',
+      false: undefined
     }),
-    icon: figma.enum('Type', {
-      Default: <AddCircleOIcon />,
-      Danger: <AddCircleOIcon />,
-      'External link': <ExternalLinkAltIcon />
-    }),
+    icon: figma.children(['IconWrapper', 'Icon']),
     isDanger: figma.enum('Type', {
       Danger: true
     }),

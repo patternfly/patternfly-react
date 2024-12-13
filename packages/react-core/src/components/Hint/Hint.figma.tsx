@@ -17,17 +17,17 @@ figma.connect(Hint, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-co
     // swapButton: figma.instance('Swap button'),
     // showBody: figma.boolean('Show Body'),
     titleText: figma.string('✏️ Title'),
-    bodyText: figma.string('✏️ Body'),
+    // bodyText: figma.string('✏️ Body'),
     hintTitle: figma.boolean('Show Title ', {
       true: <HintTitle>{titleText}</HintTitle>,
       false: undefined
     }),
     showBody: figma.boolean('Show Body', {
-      true: <HintBody>{bodyText}</HintBody>,
+      true: <HintBody>{figma.string('✏️ Body')}</HintBody>,
       false: undefined
     }),
     showFooter: figma.boolean('Show Footer', {
-      true: <HintFooter>{figma.instance('Swap button')}</HintFooter>,
+      true: figma.instance('Button'),
       false: undefined
     })
   },
@@ -35,7 +35,7 @@ figma.connect(Hint, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-co
     <Hint>
       {hintTitle}
       {showBody}
-      {showFooter}
+      <HintFooter>{showFooter}</HintFooter>
     </Hint>
   )
 });

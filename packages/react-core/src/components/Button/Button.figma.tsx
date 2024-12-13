@@ -31,13 +31,11 @@ figma.connect(Button, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-
     isDisabled: figma.enum('State', {
       Disabled: true
     }),
-    iconPosition: figma.boolean('Icon left', {
-      true: 'left',
-      false: figma.boolean('Icon right', {
-        true: 'right',
-        false: undefined
-      })
+    iconPosition: figma.boolean('Icon right', {
+      true: 'end',
+      false: undefined
     }),
+    icon: figma.children(['IconWrapper', 'Icon']),
     text: figma.string('✏️ Text'),
     isLoading: figma.enum('Type', {
       Progress: true,

@@ -17,9 +17,17 @@ figma.connect(
     props: {
       productName: figma.string('Product name')
     },
-    example: (props) => (
-      <AboutModal productName={props.productName} brandImageAlt="Brand image alt text" brandImageSrc="Brand image src">
-        {'Children here'}
+    example: ({ productName }) => (
+      <AboutModal
+        isOpen={true}
+        onClose={() => {}}
+        brandImageAlt="image alt text"
+        brandImageSrc="/assets/brand_image_src.jpg"
+        backgroundImageSrc="/assets/background_image_src.jpg"
+        productName={productName}
+        trademark={'Sample footer trademark text'}
+      >
+        {'About modal children content here'}
       </AboutModal>
     )
   }
