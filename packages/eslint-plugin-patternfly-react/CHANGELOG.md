@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.1.0 (2024-12-16)
+
+### Bug Fixes
+
+- Update promote.sh to release 6.1.0 ([2b5106f](https://github.com/patternfly/patternfly-react/commit/2b5106ff88ce207d4a9ed2066fd390009e81fb79))
+
 # [6.1.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@6.1.0-prerelease.0...eslint-plugin-patternfly-react@6.1.0-prerelease.1) (2024-10-30)
 
 ### Bug Fixes

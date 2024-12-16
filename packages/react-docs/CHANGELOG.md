@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 7.1.0 (2024-12-16)
+
+### Bug Fixes
+
+- Update promote.sh to release 6.1.0 ([2b5106f](https://github.com/patternfly/patternfly-react/commit/2b5106ff88ce207d4a9ed2066fd390009e81fb79))
+
 # [7.1.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.1.0-prerelease.24...@patternfly/react-docs@7.1.0-prerelease.25) (2024-12-13)
 
 **Note:** Version bump only for package @patternfly/react-docs
