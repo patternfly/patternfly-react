@@ -233,7 +233,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item1"
-                checked={checkedState[0]}
+                isChecked={checkedState[0]}
                 name="check1"
                 id="check1"
                 onChange={handleChange}
@@ -251,7 +251,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item2"
-                checked={checkedState[1]}
+                isChecked={checkedState[1]}
                 name="check2"
                 id="check2"
                 onChange={handleChange}
@@ -269,7 +269,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item3"
-                checked={checkedState[2]}
+                isChecked={checkedState[2]}
                 name="check3"
                 id="check3"
                 onChange={handleChange}
@@ -287,7 +287,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item4"
-                checked={checkedState[3]}
+                isChecked={checkedState[3]}
                 name="check4"
                 id="check4"
                 onChange={handleChange}
@@ -305,7 +305,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item4"
-                checked={checkedState[4]}
+                isChecked={checkedState[4]}
                 name="check5"
                 id="check5"
                 onChange={handleChange}
@@ -323,7 +323,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item5"
-                checked={checkedState[5]}
+                isChecked={checkedState[5]}
                 name="check6"
                 id="check6"
                 onChange={handleChange}
@@ -341,7 +341,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item6"
-                checked={checkedState[6]}
+                isChecked={checkedState[6]}
                 name="check7"
                 id="check7"
                 onChange={handleChange}
@@ -359,7 +359,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item5"
-                checked={checkedState[7]}
+                isChecked={checkedState[7]}
                 name="check8"
                 id="check8"
                 onChange={handleChange}
