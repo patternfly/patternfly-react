@@ -9,6 +9,7 @@ import { Button } from '../Button';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { Radio } from '../Radio';
 import { Checkbox } from '../Checkbox';
+import { uniqueId as lodashId } from 'lodash';
 
 export interface CardHeaderActionsObject {
   /** Actions of the card header */
@@ -88,7 +89,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   isToggleRightAligned,
   ...props
 }: CardHeaderProps) => {
-  const uniqueId = React.useId();
+  const uniqueId = lodashId();
 
   return (
     <CardContext.Consumer>
