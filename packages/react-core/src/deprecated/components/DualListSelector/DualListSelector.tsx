@@ -59,7 +59,7 @@ export interface DualListSelectorProps {
   addSelectedAriaLabel?: string;
   /** Tooltip content for the dynamically built add selected button */
   addSelectedTooltip?: React.ReactNode;
-  /** Additonal tooltip properties for the dynamically built add selected tooltip */
+  /** Additional tooltip properties for the dynamically built add selected tooltip */
   addSelectedTooltipProps?: any;
   /** Callback fired every time dynamically built options are chosen or removed */
   onListChange?: (
@@ -73,7 +73,7 @@ export interface DualListSelectorProps {
   addAllAriaLabel?: string;
   /** Tooltip content for the dynamically built add all button */
   addAllTooltip?: React.ReactNode;
-  /** Additonal tooltip properties for the dynamically built add all tooltip */
+  /** Additional tooltip properties for the dynamically built add all tooltip */
   addAllTooltipProps?: any;
   /** Optional callback for the dynamically built remove selected button */
   removeSelected?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
@@ -81,7 +81,7 @@ export interface DualListSelectorProps {
   removeSelectedAriaLabel?: string;
   /** Tooltip content for the dynamically built remove selected button */
   removeSelectedTooltip?: React.ReactNode;
-  /** Additonal tooltip properties for the dynamically built remove selected tooltip  */
+  /** Additional tooltip properties for the dynamically built remove selected tooltip  */
   removeSelectedTooltipProps?: any;
   /** Optional callback for the dynamically built remove all button */
   removeAll?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
@@ -89,7 +89,7 @@ export interface DualListSelectorProps {
   removeAllAriaLabel?: string;
   /** Tooltip content for the dynamically built remove all button */
   removeAllTooltip?: React.ReactNode;
-  /** Additonal tooltip properties for the dynamically built remove all tooltip */
+  /** Additional tooltip properties for the dynamically built remove all tooltip */
   removeAllTooltipProps?: any;
   /** Optional callback fired when a dynamically built option is selected */
   onOptionSelect?: (
@@ -286,8 +286,8 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
         chosenFilteredOptions: newChosen,
         availableOptions: newAvailable,
         availableFilteredOptions: newAvailable,
-        chosenOptionsSelected: [],
-        availableOptionsSelected: []
+        chosenOptionsSelected: [] as number[],
+        availableOptionsSelected: [] as number[]
       };
     });
   };
@@ -319,8 +319,8 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
         chosenFilteredOptions: newChosen,
         availableOptions: newAvailable,
         availableFilteredOptions: newAvailable,
-        availableTreeOptionsChecked: [],
-        chosenTreeOptionsChecked: []
+        availableTreeOptionsChecked: [] as string[],
+        chosenTreeOptionsChecked: [] as string[]
       };
     });
   };
@@ -342,8 +342,8 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
       this.props.onListChange && this.props.onListChange(event, newAvailable, newChosen);
 
       return {
-        chosenOptionsSelected: [],
-        availableOptionsSelected: [],
+        chosenOptionsSelected: [] as number[],
+        availableOptionsSelected: [] as number[],
         chosenOptions: newChosen,
         chosenFilteredOptions: newChosen,
         availableOptions: newAvailable,
@@ -374,8 +374,8 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
       this.props.onListChange && this.props.onListChange(event, newAvailable, newChosen);
 
       return {
-        availableTreeOptionsChecked: [],
-        chosenTreeOptionsChecked: [],
+        availableTreeOptionsChecked: [] as string[],
+        chosenTreeOptionsChecked: [] as string[],
         availableOptions: newAvailable,
         chosenOptions: newChosen
       };
@@ -404,8 +404,8 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
         chosenFilteredOptions: newChosen,
         availableOptions: newAvailable,
         availableFilteredOptions: newAvailable,
-        chosenOptionsSelected: [],
-        availableOptionsSelected: []
+        chosenOptionsSelected: [] as number[],
+        availableOptionsSelected: [] as number[]
       };
     });
   };
@@ -433,8 +433,8 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
       return {
         chosenOptions: newChosen,
         availableOptions: newAvailable,
-        availableTreeOptionsChecked: [],
-        chosenTreeOptionsChecked: []
+        availableTreeOptionsChecked: [] as string[],
+        chosenTreeOptionsChecked: [] as string[]
       };
     });
   };
@@ -456,8 +456,8 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
       this.props.onListChange && this.props.onListChange(event, newAvailable, newChosen);
 
       return {
-        chosenOptionsSelected: [],
-        availableOptionsSelected: [],
+        chosenOptionsSelected: [] as number[],
+        availableOptionsSelected: [] as number[],
         chosenOptions: newChosen,
         chosenFilteredOptions: newChosen,
         availableOptions: newAvailable,
@@ -488,8 +488,8 @@ class DualListSelector extends React.Component<DualListSelectorProps, DualListSe
       this.props.onListChange && this.props.onListChange(event, newAvailable, newChosen);
 
       return {
-        availableTreeOptionsChecked: [],
-        chosenTreeOptionsChecked: [],
+        availableTreeOptionsChecked: [] as string[],
+        chosenTreeOptionsChecked: [] as string[],
         availableOptions: newAvailable,
         chosenOptions: newChosen
       };
