@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.11...@patternfly/react-core@5.4.12) (2024-12-18)
+
+### Bug Fixes
+
+- **DualListSelector:** resolve tsc type issues ([#11346](https://github.com/patternfly/patternfly-react/issues/11346)) ([7c157a0](https://github.com/patternfly/patternfly-react/commit/7c157a037074c136021211cbc79a4887d37b2ddd))
+
 ## [5.4.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.10...@patternfly/react-core@5.4.11) (2024-12-03)
 
 ### Features
