@@ -113,13 +113,13 @@ export const WizardToggle = ({
               <span className={css(styles.wizardToggleNum)}>{wizardToggleIndex}</span>
             )}{' '}
             {parentStep?.name || activeStep?.name}
-            {isActiveSubStep && <AngleRightIcon className={css(styles.wizardToggleSeparator)} aria-hidden="true" />}
+            {isActiveSubStep && <AngleRightIcon className={css(styles.wizardToggleSeparator)} />}
           </span>
           {isActiveSubStep && <span className={css(styles.wizardToggleListItem)}>{activeStep?.name}</span>}
         </span>
 
         <span className={css(styles.wizardToggleIcon)}>
-          <CaretDownIcon aria-hidden="true" />
+          <CaretDownIcon />
         </span>
       </button>
       <div className={css(styles.wizardOuterWrap)}>

@@ -17,13 +17,13 @@ export const MenuWithIcons: React.FunctionComponent = () => {
     <Menu onSelect={onSelect} activeItemId={activeItem}>
       <MenuContent>
         <MenuList>
-          <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId={0}>
+          <MenuItem icon={<CodeBranchIcon />} itemId={0}>
             From git
           </MenuItem>
-          <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId={1}>
+          <MenuItem icon={<LayerGroupIcon />} itemId={1}>
             Container image
           </MenuItem>
-          <MenuItem icon={<CubeIcon aria-hidden />} itemId={2}>
+          <MenuItem icon={<CubeIcon />} itemId={2}>
             Docker file
           </MenuItem>
         </MenuList>

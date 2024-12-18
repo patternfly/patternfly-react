@@ -106,7 +106,7 @@ class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerPro
                 variant="plain"
                 onClick={() => this.onToggle('toggle-id-0')}
                 isExpanded={isOpenMap['toggle-id-0'] || false}
-                icon={<EllipsisVIcon aria-hidden="true" />}
+                icon={<EllipsisVIcon />}
               />
             )}
           >
@@ -143,7 +143,7 @@ class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerPro
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-5')}
                           isExpanded={isOpenMap['toggle-id-5'] || false}
-                          icon={<EllipsisVIcon aria-hidden="true" />}
+                          icon={<EllipsisVIcon />}
                         />
                       )}
                     >
@@ -173,7 +173,7 @@ class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerPro
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-6')}
                           isExpanded={isOpenMap['toggle-id-6'] || false}
-                          icon={<EllipsisVIcon aria-hidden="true" />}
+                          icon={<EllipsisVIcon />}
                         />
                       )}
                     >
@@ -204,7 +204,7 @@ class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerPro
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-7')}
                           isExpanded={isOpenMap['toggle-id-7'] || false}
-                          icon={<EllipsisVIcon aria-hidden="true" />}
+                          icon={<EllipsisVIcon />}
                         />
                       )}
                     >
@@ -234,7 +234,7 @@ class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerPro
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-8')}
                           isExpanded={isOpenMap['toggle-id-8'] || false}
-                          icon={<EllipsisVIcon aria-hidden="true" />}
+                          icon={<EllipsisVIcon />}
                         />
                       )}
                     >
@@ -276,7 +276,7 @@ class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerPro
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-9')}
                           isExpanded={isOpenMap['toggle-id-9'] || false}
-                          icon={<EllipsisVIcon aria-hidden="true" />}
+                          icon={<EllipsisVIcon />}
                         />
                       )}
                     >
@@ -306,7 +306,7 @@ class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerPro
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-10')}
                           isExpanded={isOpenMap['toggle-id-10'] || false}
-                          icon={<EllipsisVIcon aria-hidden="true" />}
+                          icon={<EllipsisVIcon />}
                         />
                       )}
                     >
@@ -337,7 +337,7 @@ class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerPro
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-11')}
                           isExpanded={isOpenMap['toggle-id-11'] || false}
-                          icon={<EllipsisVIcon aria-hidden="true" />}
+                          icon={<EllipsisVIcon />}
                         />
                       )}
                     >
@@ -367,7 +367,7 @@ class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerPro
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-12')}
                           isExpanded={isOpenMap['toggle-id-12'] || false}
-                          icon={<EllipsisVIcon aria-hidden="true" />}
+                          icon={<EllipsisVIcon />}
                         />
                       )}
                     >

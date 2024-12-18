@@ -126,7 +126,7 @@ export const LegacyTableTree: React.FunctionComponent = () => {
     const isChecked = isNodeChecked(node);
     let icon = <LeafIcon />;
     if (node.children) {
-      icon = isExpanded ? <FolderOpenIcon aria-hidden /> : <FolderIcon aria-hidden />;
+      icon = isExpanded ? <FolderOpenIcon /> : <FolderIcon />;
     }
     flattenedNodes.push(node);
 

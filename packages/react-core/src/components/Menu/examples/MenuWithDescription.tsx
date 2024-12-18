@@ -15,14 +15,14 @@ export const MenuWithDescription: React.FunctionComponent = () => {
     <Menu onSelect={onSelect} activeItemId={activeItem}>
       <MenuContent>
         <MenuList>
-          <MenuItem icon={<CodeBranchIcon aria-hidden />} description="Description" itemId={0}>
+          <MenuItem icon={<CodeBranchIcon />} description="Description" itemId={0}>
             Action 1
           </MenuItem>
-          <MenuItem isDisabled icon={<CodeBranchIcon aria-hidden />} description="Description" itemId={1}>
+          <MenuItem isDisabled icon={<CodeBranchIcon />} description="Description" itemId={1}>
             Action 2 disabled
           </MenuItem>
           <MenuItem
-            icon={<CodeBranchIcon aria-hidden />}
+            icon={<CodeBranchIcon />}
             description="Nunc non ornare ex, et pretium dui. Duis nec augue at urna elementum blandit tincidunt eget metus. Aenean sed metus id urna dignissim interdum. Aenean vel nisl vitae arcu vehicula pulvinar eget nec turpis. Cras sit amet est est."
             itemId={2}
           >

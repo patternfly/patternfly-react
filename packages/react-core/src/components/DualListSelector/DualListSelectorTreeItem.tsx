@@ -119,7 +119,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
                 tabIndex={-1}
               >
                 <span className={css(styles.dualListSelectorItemToggleIcon)}>
-                  <AngleRightIcon aria-hidden />
+                  <AngleRightIcon />
                 </span>
               </div>
             )}

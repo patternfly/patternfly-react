@@ -151,7 +151,7 @@ export const NavManual: React.FunctionComponent = () => {
                   onClick={onKebabDropdownToggle}
                   variant="plain"
                   aria-label="Settings and help"
-                  icon={<EllipsisVIcon aria-hidden="true" />}
+                  icon={<EllipsisVIcon />}
                 />
               )}
             >
@@ -171,7 +171,7 @@ export const NavManual: React.FunctionComponent = () => {
                   onClick={onFullKebabToggle}
                   variant="plain"
                   aria-label="Toolbar menu"
-                  icon={<EllipsisVIcon aria-hidden="true" />}
+                  icon={<EllipsisVIcon />}
                 />
               )}
             >

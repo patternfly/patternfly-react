@@ -81,7 +81,7 @@ export const CardUtilizationDemo3: React.FunctionComponent = () => {
                 </FlexItem>
                 <Flex>
                   <Icon status="danger">
-                    <ExclamationCircleIcon aria-hidden />
+                    <ExclamationCircleIcon />
                   </Icon>
                   <a href="#">25 incidents detected</a>
                 </Flex>

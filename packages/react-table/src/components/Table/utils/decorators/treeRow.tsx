@@ -55,7 +55,7 @@ export const treeRow =
                   aria-label={toggleAriaLabel || `${isExpanded ? 'Collapse' : 'Expand'} row ${rowIndex}`}
                   icon={
                     <div className={css(stylesTreeView.tableToggleIcon)}>
-                      <AngleDownIcon aria-hidden="true" />
+                      <AngleDownIcon />
                     </div>
                   }
                 />
@@ -85,7 +85,7 @@ export const treeRow =
                   }
                   icon={
                     <span className={`${styles.table}__details-toggle-icon`}>
-                      <EllipsisHIcon aria-hidden />
+                      <EllipsisHIcon />
                     </span>
                   }
                 />

@@ -6,7 +6,7 @@ import { SortColumn, SortByDirection } from '../../SortColumn';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 
 export const sortableFavorites = (sort: any) => () =>
-  sortable(<StarIcon aria-hidden />, {
+  sortable(<StarIcon />, {
     columnIndex: sort.columnIndex,
     className: styles.tableFavorite,
     ariaLabel: sort.ariaLabel ?? 'Sort favorites',

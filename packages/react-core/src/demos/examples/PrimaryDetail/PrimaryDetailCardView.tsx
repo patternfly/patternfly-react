@@ -467,7 +467,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
               variant="plain"
               onClick={onToolbarKebabDropdownToggle}
               aria-label="Toolbar actions"
-              icon={<EllipsisVIcon aria-hidden="true" />}
+              icon={<EllipsisVIcon />}
             />
           )}
         >

@@ -51,7 +51,7 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
               variant={ButtonVariant.plain}
               aria-label={closeButtonAriaLabel}
               onClick={(event) => onClose(event)}
-              icon={<TimesIcon aria-hidden="true" />}
+              icon={<TimesIcon />}
             />
           </div>
         )}

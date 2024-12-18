@@ -56,7 +56,7 @@ export const CardOnlyActionsInCardHead: React.FunctionComponent = () => {
             onClick={() => setIsOpen(!isOpen)}
             variant="plain"
             aria-label="Card header without title example kebab toggle"
-            icon={<EllipsisVIcon aria-hidden="true" />}
+            icon={<EllipsisVIcon />}
           />
         )}
         isOpen={isOpen}

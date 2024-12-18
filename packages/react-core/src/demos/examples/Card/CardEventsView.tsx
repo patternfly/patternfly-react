@@ -78,7 +78,7 @@ export const CardEventsView: React.FunctionComponent = () => {
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
                       <Icon status="danger">
-                        <ExclamationCircleIcon aria-hidden="true" />
+                        <ExclamationCircleIcon />
                       </Icon>
                     </FlexItem>
                     <FlexItem>
@@ -99,7 +99,7 @@ export const CardEventsView: React.FunctionComponent = () => {
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
                       <Icon status="success">
-                        <CheckCircleIcon aria-hidden="true" />
+                        <CheckCircleIcon />
                       </Icon>
                     </FlexItem>
                     <FlexItem>
@@ -135,7 +135,7 @@ export const CardEventsView: React.FunctionComponent = () => {
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
                       <Icon status="success">
-                        <CheckCircleIcon aria-hidden="true" />
+                        <CheckCircleIcon />
                       </Icon>
                     </FlexItem>
                     <FlexItem>
