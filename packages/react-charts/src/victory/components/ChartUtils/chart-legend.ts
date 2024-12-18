@@ -1,5 +1,6 @@
 import defaults from 'lodash/defaults';
-import { Helpers, PaddingProps, TextSize } from 'victory-core';
+import { Helpers, TextSize } from 'victory-core';
+import { ElementPadding } from 'victory-core/src/victory-util/helpers';
 import { VictoryLegend } from 'victory-legend';
 import { ChartLegendProps } from '../ChartLegend/ChartLegend';
 import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
@@ -17,7 +18,7 @@ interface ChartLegendInterface {
   height: number; // Overall height of SVG
   legendComponent: React.ReactElement<any>; // The base legend component to render
   orientation?: 'horizontal' | 'vertical'; // Orientation of legend
-  padding: PaddingProps; // Chart padding
+  padding: ElementPadding; // Chart padding
   patternScale?: string[]; // Legend symbol patterns
   position: 'bottom' | 'bottom-left' | 'right'; // The legend position
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
@@ -41,7 +42,7 @@ interface ChartLegendPositionInterface {
   legendOrientation: 'horizontal' | 'vertical'; // Orientation of legend
   legendPosition: 'bottom' | 'bottom-left' | 'right'; // Position of legend
   legendProps: any; // The legend props used to determine width
-  padding?: PaddingProps; // Chart padding
+  padding?: ElementPadding; // Chart padding
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
   width?: number; // Overall width of SVG
 }
@@ -187,7 +188,7 @@ const doesLegendFit = ({
   theme,
   width
 }: ChartLegendPositionInterface) => {
-  const { left, right } = Helpers.getPadding({ padding });
+  const { left, right } = Helpers.getPadding(padding);
   const chartSize = {
     height, // Fixed size
     width: width - left - right
@@ -322,7 +323,7 @@ const getBulletLegendY = ({
   theme,
   width
 }: ChartLegendPositionInterface) => {
-  const { left, right } = Helpers.getPadding({ padding });
+  const { left, right } = Helpers.getPadding(padding);
   const chartSize = {
     height, // Fixed size
     width: width - left - right
@@ -363,7 +364,7 @@ const getChartLegendX = ({
   theme,
   width
 }: ChartLegendPositionInterface) => {
-  const { top, bottom, left, right } = Helpers.getPadding({ padding });
+  const { top, bottom, left, right } = Helpers.getPadding(padding);
   const chartSize = {
     height: Math.abs(height - (bottom + top)),
     width: Math.abs(width - (left + right))
@@ -402,7 +403,7 @@ const getChartLegendY = ({
   theme,
   width
 }: ChartLegendPositionInterface) => {
-  const { top, bottom, left, right } = Helpers.getPadding({ padding });
+  const { top, bottom, left, right } = Helpers.getPadding(padding);
   const chartSize = {
     height: Math.abs(height - (bottom + top)),
     width: Math.abs(width - (left + right))

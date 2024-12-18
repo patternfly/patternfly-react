@@ -12,7 +12,7 @@ interface ChartPieOriginInterface {
  * @private
  */
 export const getPieOrigin = ({ height, padding, width }: ChartPieOriginInterface) => {
-  const { top, bottom, left, right } = Helpers.getPadding({ padding });
+  const { top, bottom, left, right } = Helpers.getPadding(padding);
   const radius = Helpers.getRadius({ height, width, padding });
   const offsetX = (width - radius * 2 - left - right) / 2;
   const offsetY = (height - radius * 2 - top - bottom) / 2;
