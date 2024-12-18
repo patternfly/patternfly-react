@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Checkbox, CheckboxProps } from '../Checkbox';
-import { uniqueId as lodashId } from 'lodash';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
 export interface DataListCheckProps extends Omit<CheckboxProps, 'ref' | 'id'> {
   /** Id of the DataList checkbox. */
@@ -47,21 +47,23 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
   otherControls = false,
   ...props
 }: DataListCheckProps) => {
-  const uniqueId = lodashId();
-
   const check = (
     <div className={css(styles.dataListCheck)}>
-      <Checkbox
-        id={id ?? `datalist-check-${uniqueId}`}
-        isChecked={isChecked}
-        checked={checked}
-        defaultChecked={defaultChecked}
-        onChange={onChange}
-        aria-invalid={!isValid}
-        isDisabled={isDisabled}
-        isLabelWrapped
-        {...props}
-      />
+      <GenerateId>
+        {(randomId) => (
+          <Checkbox
+            id={id ?? `datalist-check-${randomId}`}
+            isChecked={isChecked}
+            checked={checked}
+            defaultChecked={defaultChecked}
+            onChange={onChange}
+            aria-invalid={!isValid}
+            isDisabled={isDisabled}
+            isLabelWrapped
+            {...props}
+          />
+        )}
+      </GenerateId>
     </div>
   );
   return (

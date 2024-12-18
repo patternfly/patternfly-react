@@ -9,7 +9,7 @@ import { Button } from '../Button';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { Radio } from '../Radio';
 import { Checkbox } from '../Checkbox';
-import { uniqueId as lodashId } from 'lodash';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
 export interface CardHeaderActionsObject {
   /** Actions of the card header */
@@ -88,122 +88,122 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   toggleButtonProps,
   isToggleRightAligned,
   ...props
-}: CardHeaderProps) => {
-  const uniqueId = lodashId();
-
-  return (
-    <CardContext.Consumer>
-      {({ cardId, isClickable, isSelectable, isSelected, isDisabled: isCardDisabled }) => {
-        const cardHeaderToggle = (
-          <div className={css(styles.cardHeaderToggle)}>
-            <Button
-              variant="plain"
-              type="button"
-              onClick={(evt) => {
-                onExpand(evt, cardId);
-              }}
-              {...toggleButtonProps}
-              icon={
-                <span className={css(styles.cardHeaderToggleIcon)}>
-                  <AngleRightIcon />
-                </span>
-              }
-            />
-          </div>
-        );
-
-        const isClickableOrSelectableOnly = (isClickable && !isSelectable) || (isSelectable && !isClickable);
-        if (actions?.actions && isClickableOrSelectableOnly) {
-          // eslint-disable-next-line no-console
-          console.error(
-            `Card: ${
-              isClickable ? 'Clickable' : 'Selectable'
-            } only cards should not contain any other actions. If you wish to include additional actions, use a clickable and selectable card.`
+}: CardHeaderProps) => (
+  <GenerateId>
+    {(randomId) => (
+      <CardContext.Consumer>
+        {({ cardId, isClickable, isSelectable, isSelected, isDisabled: isCardDisabled }) => {
+          const cardHeaderToggle = (
+            <div className={css(styles.cardHeaderToggle)}>
+              <Button
+                variant="plain"
+                type="button"
+                onClick={(evt) => {
+                  onExpand(evt, cardId);
+                }}
+                {...toggleButtonProps}
+                icon={
+                  <span className={css(styles.cardHeaderToggleIcon)}>
+                    <AngleRightIcon />
+                  </span>
+                }
+              />
+            </div>
           );
-        }
 
-        const isClickableOnlyCard = isClickable && !isSelectable;
-        if (
-          (isClickableOnlyCard || isSelectable) &&
-          !selectableActions?.selectableActionAriaLabel &&
-          !selectableActions?.selectableActionAriaLabelledby
-        ) {
-          // eslint-disable-next-line no-console
-          console.error(
-            `Card: ${isClickableOnlyCard ? 'Clickable-only cards' : 'Cards with a selectable input'} must have either the selectableActions.selectableActionAriaLabel or selectableActions.selectableActionAriaLabelledby prop passed in order to provide an accessible name to the clickable element.`
-          );
-        }
-
-        const SelectableCardInput = selectableActions?.variant === 'single' ? Radio : Checkbox;
-        const getSelectableProps = () => ({
-          className: css('pf-m-standalone'),
-          inputClassName: css(selectableActions?.isHidden && 'pf-v6-screen-reader'),
-          label: <></>,
-          'aria-label': selectableActions.selectableActionAriaLabel,
-          'aria-labelledby': selectableActions.selectableActionAriaLabelledby,
-          id: selectableActions.selectableActionId ?? `card-selectable-${uniqueId}`,
-          name: selectableActions.name,
-          isDisabled: isCardDisabled,
-          onChange: selectableActions.onChange,
-          isChecked: selectableActions.isChecked ?? isSelected,
-          ...selectableActions.selectableActionProps
-        });
-
-        const isClickableLinkCard = selectableActions?.to !== undefined;
-        const ClickableCardComponent = isClickableLinkCard ? 'a' : 'button';
-        const getClickableProps = () => {
-          const isDisabledLinkCard = isCardDisabled && isClickableLinkCard;
-          const baseProps = {
-            className: css(
-              'pf-v6-c-card__clickable-action',
-              isDisabledLinkCard && styles.modifiers.disabled,
-              selectableActions?.isHidden && 'pf-v6-screen-reader'
-            ),
-            id: selectableActions.selectableActionId,
-            'aria-label': selectableActions.selectableActionAriaLabel,
-            'aria-labelledby': selectableActions.selectableActionAriaLabelledby,
-            ...selectableActions.selectableActionProps
-          };
-
-          if (isClickableLinkCard) {
-            return {
-              ...baseProps,
-              href: selectableActions.to,
-              ...(isCardDisabled && { tabIndex: -1, 'aria-disabled': true }),
-              ...(selectableActions.isExternalLink && { target: '_blank' })
-            };
+          const isClickableOrSelectableOnly = (isClickable && !isSelectable) || (isSelectable && !isClickable);
+          if (actions?.actions && isClickableOrSelectableOnly) {
+            // eslint-disable-next-line no-console
+            console.error(
+              `Card: ${
+                isClickable ? 'Clickable' : 'Selectable'
+              } only cards should not contain any other actions. If you wish to include additional actions, use a clickable and selectable card.`
+            );
           }
 
-          return { ...baseProps, type: 'button', disabled: isCardDisabled, onClick: selectableActions.onClickAction };
-        };
+          const isClickableOnlyCard = isClickable && !isSelectable;
+          if (
+            (isClickableOnlyCard || isSelectable) &&
+            !selectableActions?.selectableActionAriaLabel &&
+            !selectableActions?.selectableActionAriaLabelledby
+          ) {
+            // eslint-disable-next-line no-console
+            console.error(
+              `Card: ${isClickableOnlyCard ? 'Clickable-only cards' : 'Cards with a selectable input'} must have either the selectableActions.selectableActionAriaLabel or selectableActions.selectableActionAriaLabelledby prop passed in order to provide an accessible name to the clickable element.`
+            );
+          }
 
-        return (
-          <div
-            className={css(styles.cardHeader, isToggleRightAligned && styles.modifiers.toggleRight, className)}
-            id={id}
-            {...props}
-          >
-            {onExpand && !isToggleRightAligned && cardHeaderToggle}
-            {(actions || (selectableActions && (isClickable || isSelectable))) && (
-              <CardActions
-                className={actions?.className}
-                hasNoOffset={actions?.hasNoOffset || selectableActions?.hasNoOffset}
-              >
-                {actions?.actions}
-                {selectableActions && (isClickable || isSelectable) && (
-                  <CardSelectableActions className={selectableActions?.className}>
-                    {isSelectable && <SelectableCardInput {...getSelectableProps()} />}
-                    {isClickableOnlyCard && <ClickableCardComponent {...getClickableProps()} />}
-                  </CardSelectableActions>
-                )}
-              </CardActions>
-            )}
-            {children && <CardHeaderMain>{children}</CardHeaderMain>}
-            {onExpand && isToggleRightAligned && cardHeaderToggle}
-          </div>
-        );
-      }}
-    </CardContext.Consumer>
-  );
-};
+          const SelectableCardInput = selectableActions?.variant === 'single' ? Radio : Checkbox;
+          const getSelectableProps = () => ({
+            className: css('pf-m-standalone'),
+            inputClassName: css(selectableActions?.isHidden && 'pf-v6-screen-reader'),
+            label: <></>,
+            'aria-label': selectableActions.selectableActionAriaLabel,
+            'aria-labelledby': selectableActions.selectableActionAriaLabelledby,
+            id: selectableActions.selectableActionId ?? `card-selectable-${randomId}`,
+            name: selectableActions.name,
+            isDisabled: isCardDisabled,
+            onChange: selectableActions.onChange,
+            isChecked: selectableActions.isChecked ?? isSelected,
+            ...selectableActions.selectableActionProps
+          });
+
+          const isClickableLinkCard = selectableActions?.to !== undefined;
+          const ClickableCardComponent = isClickableLinkCard ? 'a' : 'button';
+          const getClickableProps = () => {
+            const isDisabledLinkCard = isCardDisabled && isClickableLinkCard;
+            const baseProps = {
+              className: css(
+                'pf-v6-c-card__clickable-action',
+                isDisabledLinkCard && styles.modifiers.disabled,
+                selectableActions?.isHidden && 'pf-v6-screen-reader'
+              ),
+              id: selectableActions.selectableActionId,
+              'aria-label': selectableActions.selectableActionAriaLabel,
+              'aria-labelledby': selectableActions.selectableActionAriaLabelledby,
+              ...selectableActions.selectableActionProps
+            };
+
+            if (isClickableLinkCard) {
+              return {
+                ...baseProps,
+                href: selectableActions.to,
+                ...(isCardDisabled && { tabIndex: -1, 'aria-disabled': true }),
+                ...(selectableActions.isExternalLink && { target: '_blank' })
+              };
+            }
+
+            return { ...baseProps, type: 'button', disabled: isCardDisabled, onClick: selectableActions.onClickAction };
+          };
+
+          return (
+            <div
+              className={css(styles.cardHeader, isToggleRightAligned && styles.modifiers.toggleRight, className)}
+              id={id}
+              {...props}
+            >
+              {onExpand && !isToggleRightAligned && cardHeaderToggle}
+              {(actions || (selectableActions && (isClickable || isSelectable))) && (
+                <CardActions
+                  className={actions?.className}
+                  hasNoOffset={actions?.hasNoOffset || selectableActions?.hasNoOffset}
+                >
+                  {actions?.actions}
+                  {selectableActions && (isClickable || isSelectable) && (
+                    <CardSelectableActions className={selectableActions?.className}>
+                      {isSelectable && <SelectableCardInput {...getSelectableProps()} />}
+                      {isClickableOnlyCard && <ClickableCardComponent {...getClickableProps()} />}
+                    </CardSelectableActions>
+                  )}
+                </CardActions>
+              )}
+              {children && <CardHeaderMain>{children}</CardHeaderMain>}
+              {onExpand && isToggleRightAligned && cardHeaderToggle}
+            </div>
+          );
+        }}
+      </CardContext.Consumer>
+    )}
+  </GenerateId>
+);
 CardHeader.displayName = 'CardHeader';
