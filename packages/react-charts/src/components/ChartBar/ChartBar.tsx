@@ -482,4 +482,4 @@ export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
 ChartBar.displayName = 'ChartBar';
 
 // Note: VictoryBar.getDomain & VictoryBar.role must be hoisted
-hoistNonReactStatics(ChartBar, VictoryBar);
+hoistNonReactStatics(ChartBar, VictoryBar, { getBaseProps: true });
