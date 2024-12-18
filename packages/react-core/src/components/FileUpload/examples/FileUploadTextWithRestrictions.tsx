@@ -7,8 +7,7 @@ import {
   FormGroup,
   HelperText,
   HelperTextItem,
-  DropEvent,
-  Icon
+  DropEvent
 } from '@patternfly/react-core';
 
 export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
@@ -94,14 +93,7 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
           <FileUploadHelperText>
             <HelperText isLiveRegion>
               <HelperTextItem id="restricted-file-example-helpText" variant={isRejected ? 'error' : 'default'}>
-                {isRejected ? (
-                  <>
-                    <Icon status="danger" />
-                    {message}
-                  </>
-                ) : (
-                  'Upload a CSV file'
-                )}
+                {isRejected ? message : 'Upload a CSV file'}
               </HelperTextItem>
             </HelperText>
           </FileUploadHelperText>
