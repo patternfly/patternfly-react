@@ -1,6 +1,16 @@
 import React from 'react';
-import { DatePicker, Button, TimePicker, InputGroup, InputGroupItem } from '@patternfly/react-core';
-import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
+import {
+  DatePicker,
+  Button,
+  TimePicker,
+  InputGroup,
+  InputGroupItem,
+  Modal,
+  ModalVariant,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
+} from '@patternfly/react-core';
 
 export const SimpleModal = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -26,31 +36,37 @@ export const SimpleModal = () => {
       <Button variant="primary" onClick={handleModalToggle}>
         Launch modal
       </Button>
-      <ModalDeprecated
+      <Modal
         id="date-time-picker-modal"
-        variant={ModalVariantDeprecated.small}
-        title="Generic modal header"
+        variant={ModalVariant.small}
         isOpen={isModalOpen}
         onEscapePress={onEscapePress}
         onClose={handleModalToggle}
-        actions={[
+      >
+        <ModalHeader title="Generic modal header" />
+        <ModalBody>
+          <InputGroup>
+            <InputGroupItem>
+              <DatePicker ref={dateRef} appendTo={() => document.body} />
+            </InputGroupItem>
+            <InputGroupItem>
+              <TimePicker
+                menuAppendTo={() => document.body}
+                isOpen={isTimePickerOpen}
+                setIsOpen={setIsTimePickerOpen}
+              />
+            </InputGroupItem>
+          </InputGroup>
+        </ModalBody>
+        <ModalFooter>
           <Button key="confirm" variant="primary" onClick={handleModalToggle}>
             Confirm
-          </Button>,
+          </Button>
           <Button key="cancel" variant="link" onClick={handleModalToggle}>
             Cancel
           </Button>
-        ]}
-      >
-        <InputGroup>
-          <InputGroupItem>
-            <DatePicker ref={dateRef} appendTo={() => document.getElementById('date-time-picker-modal')} />
-          </InputGroupItem>
-          <InputGroupItem>
-            <TimePicker menuAppendTo="parent" isOpen={isTimePickerOpen} setIsOpen={setIsTimePickerOpen} />
-          </InputGroupItem>
-        </InputGroup>
-      </ModalDeprecated>
+        </ModalFooter>
+      </Modal>
     </React.Fragment>
   );
 };
