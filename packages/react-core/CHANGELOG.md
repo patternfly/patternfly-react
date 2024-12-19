@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.1.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.1-prerelease.0...@patternfly/react-core@6.1.1-prerelease.1) (2024-12-19)
+
+### Bug Fixes
+
+- **DualListSelector:** Resolve tsc type issues in PF6 ([#11360](https://github.com/patternfly/patternfly-react/issues/11360)) ([6a1686f](https://github.com/patternfly/patternfly-react/commit/6a1686f55f2148248c6e6ecf2a92e04d9c70af5b))
+- replace react useId with lodash uniqueId ([#11351](https://github.com/patternfly/patternfly-react/issues/11351)) ([#11357](https://github.com/patternfly/patternfly-react/issues/11357)) ([1c3dd97](https://github.com/patternfly/patternfly-react/commit/1c3dd97e5a7da813023de1e6d584008c59efd7fd))
+
 ## [6.1.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.1.0...@patternfly/react-core@6.1.1-prerelease.0) (2024-12-18)
 
 **Note:** Version bump only for package @patternfly/react-core
