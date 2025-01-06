@@ -37,8 +37,8 @@ export const TableColumnManagement: React.FunctionComponent = () => {
   const defaultRows = rows;
 
   const [filters, setFilters] = React.useState<string[]>([]);
-  const [filteredColumns, setFilteredColumns] = React.useState<string[]>([]);
-  const [filteredRows, setFilteredRows] = React.useState<SampleDataRow[]>([]);
+  const [filteredColumns, setFilteredColumns] = React.useState<string[]>(defaultColumns);
+  const [filteredRows, setFilteredRows] = React.useState<SampleDataRow[]>(defaultRows);
   const [managedColumns, setManagedColumns] = React.useState<string[]>(defaultColumns);
   const [managedRows, setManagedRows] = React.useState<SampleDataRow[]>(defaultRows);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
