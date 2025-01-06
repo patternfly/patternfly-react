@@ -322,7 +322,7 @@ class Timeline extends React.Component {
       [
         { y0: new Date('2024-08-06T01:30:00'), y: new Date('2024-08-07T02:30:00'), severity: 'warn' },
         { y0: new Date('2024-08-08T07:30:00'), y: new Date('2024-08-09T09:30:00'), severity: 'warn' },
-        { y0: new Date('2024-08-09T05:30:00'), y: new Date('2024-08-10T20:00:00'), severity: 'warn' },
+        { y0: new Date('2024-08-09T11:30:00'), y: new Date('2024-08-10T20:00:00'), severity: 'warn' },
         { y0: new Date('2024-08-12T10:00:00'), y: new Date('2024-08-13T10:30:00'), severity: 'warn' }
       ],
       [
@@ -394,7 +394,13 @@ class Timeline extends React.Component {
           containerComponent={
             <ChartVoronoiContainer
               labelComponent={
-                <ChartTooltip constrainToVisibleArea labelComponent={<ChartLabel dx={-65} textAnchor="start" />} />
+                <ChartTooltip
+                  constrainToVisibleArea
+                  dx={({ x, x0 }) => -(x - x0) / 2} // Position tooltip so pointer appears centered
+                  dy={-5} // Position tooltip so pointer appears above bar
+                  labelComponent={<ChartLabel dx={-68} textAnchor="start" />}
+                  orientation="top" // Mimic bullet chart tooltip orientation
+                />
               }
               labels={({ datum }) =>
                 `Severity: ${datum.severity}\nStart: ${formatDate(new Date(datum.y0), true)}\nEnd: ${formatDate(new Date(datum.y), true)}`
