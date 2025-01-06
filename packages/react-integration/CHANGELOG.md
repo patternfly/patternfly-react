@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.19...@patternfly/react-integration@6.0.0-prerelease.20) (2025-01-06)
+
+# 6.1.0 (2025-01-06)
+
+### Bug Fixes
+
+- **test:** Disable failing cypress test ([#11380](https://github.com/patternfly/patternfly-react/issues/11380)) ([e02c093](https://github.com/patternfly/patternfly-react/commit/e02c093f47c0f40f02f40ab80b54fa1a07f9b00b))
+
 # [6.0.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.18...@patternfly/react-integration@6.0.0-prerelease.19) (2024-12-19)
 
 **Note:** Version bump only for package @patternfly/react-integration
