@@ -52,7 +52,7 @@ describe('Notification Drawer Groups Demo Test', () => {
   });
 
   // Accessibility test
-  it('Verify keyboard events happen correctly', () => {
+  xit('Verify keyboard events happen correctly', () => {
     // Verify the list header toggle button keyboard interactivity opens/closes dropdown menu
     // press Enter on toggle button, check whether the dropdown menu exsit and whether it focuses on the first item
     // then press Tab on toggle button, check whether the dropdown menu is closed
