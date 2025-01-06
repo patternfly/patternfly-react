@@ -1,24 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import {
-  Page,
-  Nav,
-  NavList,
-  NavItem,
-  PageSection,
-  SkipToContent,
-  PageSidebar,
-  PageSidebarBody,
-  Avatar,
-  Brand,
-  Radio
-} from '@patternfly/react-core';
+import { Avatar } from '@patternfly/react-core/dist/esm/components/Avatar';
+import { Brand } from '@patternfly/react-core/dist/esm/components/Brand';
+import { Nav, NavList, NavItem } from '@patternfly/react-core/dist/esm/components/Nav';
+import { Page, PageSection, PageSidebar, PageSidebarBody } from '@patternfly/react-core/dist/esm/components/Page';
+import { Radio } from '@patternfly/react-core/dist/esm/components/Radio';
+import { SkipToContent } from '@patternfly/react-core/dist/esm/components/SkipToContent';
 import {
   PageHeader,
   PageHeaderTools,
   PageHeaderToolsItem,
   PageHeaderToolsGroup
-} from '@patternfly/react-core/deprecated';
+} from '@patternfly/react-core/dist/esm/deprecated/components/PageHeader';
 import imgBrand from './assets/images/imgBrand.svg';
 import imgAvatar from './assets/images/imgAvatar.svg';
 import Demos from './Demos';
