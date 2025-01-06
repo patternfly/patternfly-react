@@ -5,7 +5,7 @@ cssPrefix: pf-v6-c-tree-view
 propComponents: ['TreeView', 'TreeViewDataItem', 'TreeViewSearch']
 ---
 
-import { FolderIcon, FolderOpenIcon, EllipsisVIcon, ClipboardIcon, HamburgerIcon } from '@patternfly/react-icons';
+import { FolderIcon, FolderOpenIcon, EllipsisVIcon, ClipboardIcon, HamburgerIcon, GitlabIcon, GithubIcon, GoogleIcon } from '@patternfly/react-icons';
 
 ## Examples
 
@@ -48,6 +48,12 @@ A search input can be used to filter tree view items. It is recommended that a t
 ### With icons
 
 ```ts file='./TreeViewWithIcons.tsx'
+
+```
+
+### With unique icon per item
+
+```ts file='./TreeViewWithIconPerItem.tsx'
 
 ```
 
