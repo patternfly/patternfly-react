@@ -6,7 +6,10 @@
  */
 
 import * as React from 'react';
-import { ButtonProps, PopoverProps, SelectProps, TooltipProps } from '@patternfly/react-core';
+import { ButtonProps } from '@patternfly/react-core/dist/esm/components/Button';
+import { PopoverProps } from '@patternfly/react-core/dist/esm/components/Popover';
+import { SelectProps } from '@patternfly/react-core/dist/esm/components/Select';
+import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { Table } from '../Table';
 import { Thead } from '../Thead';
 import { Tbody } from '../Tbody';
