@@ -8,7 +8,8 @@ import { FormControlIcon } from '../FormControl/FormControlIcon';
 export enum TextAreResizeOrientation {
   horizontal = 'horizontal',
   vertical = 'vertical',
-  both = 'both'
+  both = 'both',
+  disabled = 'disabled'
 }
 
 export enum TextAreaReadOnlyVariant {
@@ -37,7 +38,7 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   /** A callback for when the text area value changes. */
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>, value: string) => void;
   /** Sets the orientation to limit the resize to */
-  resizeOrientation?: 'horizontal' | 'vertical' | 'both';
+  resizeOrientation?: 'horizontal' | 'vertical' | 'both' | 'disabled';
   /** Custom flag to show that the text area requires an associated id or aria-label. */
   'aria-label'?: string;
   /** @hide A reference object to attach to the text area. */
@@ -118,10 +119,10 @@ class TextAreaBase extends React.Component<TextAreaProps> {
       onFocus,
       ...props
     } = this.props;
-    const orientation = `resize${capitalize(resizeOrientation)}` as
-      | 'resizeVertical'
-      | 'resizeHorizontal'
-      | 'resizeBoth';
+    const orientation =
+      resizeOrientation !== 'disabled'
+        ? (`resize${capitalize(resizeOrientation)}` as 'resizeVertical' | 'resizeHorizontal' | 'resizeBoth')
+        : undefined;
     const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
 
     return (
@@ -130,7 +131,7 @@ class TextAreaBase extends React.Component<TextAreaProps> {
           styles.formControl,
           readOnlyVariant && styles.modifiers.readonly,
           readOnlyVariant === 'plain' && styles.modifiers.plain,
-          resizeOrientation && styles.modifiers[orientation],
+          resizeOrientation !== 'disabled' && styles.modifiers[orientation],
           isDisabled && styles.modifiers.disabled,
           hasStatusIcon && styles.modifiers[validated as 'success' | 'warning' | 'error'],
           className
