@@ -1,20 +1,19 @@
 import React from 'react';
+import { Button } from '@patternfly/react-core/dist/esm/components/Button';
+import { Chip, ChipGroup } from '@patternfly/react-core/dist/esm/components/Chip';
+import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import {
   Select,
-  SelectOption,
   SelectList,
+  SelectOption,
   SelectOptionProps,
-  MenuToggle,
-  MenuToggleElement,
+  SelectProps
+} from '@patternfly/react-core/dist/esm/components/Select';
+import {
   TextInputGroup,
   TextInputGroupMain,
-  TextInputGroupUtilities,
-  Button,
-  MenuToggleProps,
-  SelectProps,
-  ChipGroup,
-  Chip
-} from '@patternfly/react-core';
+  TextInputGroupUtilities
+} from '@patternfly/react-core/dist/esm/components/TextInputGroup';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export interface MultiTypeaheadSelectOption extends Omit<SelectOptionProps, 'content'> {

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Button, ButtonProps, Tooltip } from '@patternfly/react-core';
+import { Button, ButtonProps } from '@patternfly/react-core/dist/esm/components/Button';
+import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { CodeEditorContext } from './CodeEditorUtils';
 
 /** Allows customizing the code editor controls by passing this sub-component into the

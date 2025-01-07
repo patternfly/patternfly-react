@@ -1,5 +1,8 @@
 import React from 'react';
-import { Tooltip, Text, Grid, GridItem, PageSection } from '@patternfly/react-core';
+import { Grid, GridItem } from '@patternfly/react-core/dist/esm/layouts/Grid';
+import { PageSection } from '@patternfly/react-core/dist/esm/components/Page/PageSection';
+import { Text } from '@patternfly/react-core/dist/esm/components/Text';
+import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import spacerMd from '@patternfly/react-tokens/dist/esm/global_spacer_md';
 import labelFontSize from '@patternfly/react-tokens/dist/esm/global_FontSize_sm';
 import * as IconsModule from '@patternfly/react-icons/dist/esm';
