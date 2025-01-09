@@ -30,6 +30,11 @@ import { rows } from '@patternfly/react-core/dist/esm/demos/sampleData';
 ```js file="./DataList/examples/DataListExpandableControlInToolbar.tsx" isFullscreen
 ```
 
+### Actionable
+
+```js file="./DataList/examples/DataListActionable.tsx" isFullscreen
+```
+
 ### Static bottom pagination
 
 ```js file="./DataList/examples/DataListStaticBottomPagination.tsx" isFullscreen
