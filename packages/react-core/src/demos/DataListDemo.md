@@ -32,5 +32,5 @@ import { rows } from '@patternfly/react-core/dist/esm/demos/sampleData';
 
 ### Static bottom pagination
 
-```js file="./DataList/examples/DataListPagination.tsx" isFullscreen
+```js file="./DataList/examples/DataListStaticBottomPagination.tsx" isFullscreen
 ```
