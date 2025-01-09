@@ -15,6 +15,7 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { rows } from '@patternfly/react-core/dist/esm/demos/sampleData';
 
 ## Demos
 
@@ -27,4 +28,9 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 ### Expandable control in toolbar
 
 ```js file="./DataList/examples/DataListExpandableControlInToolbar.tsx" isFullscreen
+```
+
+### Static bottom pagination
+
+```js file="./DataList/examples/DataListPagination.tsx" isFullscreen
 ```
