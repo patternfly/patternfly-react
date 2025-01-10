@@ -70,7 +70,7 @@
     "react-dom": "^18.3.1",
     "rimraf": "^5.0.10",
     "rollup": "^4.28.1",
-    "rollup-plugin-scss": "^4.0.0",
+    "rollup-plugin-scss": "^4.0.1",
     "rollup-plugin-svg": "^2.0.0",
     "sass": "^1.81.0",
     "surge": "^0.24.6",
