@@ -9,7 +9,6 @@ import {
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  PageSectionVariants,
   DrawerPanelBody,
   DescriptionList,
   DescriptionListTerm,
@@ -151,7 +150,7 @@ export const DescriptionListInDrawer: React.FunctionComponent = () => {
       isNotificationDrawerExpanded={isExpanded}
       onNotificationDrawerExpand={onExpand}
     >
-      <PageSection variant={PageSectionVariants.secondary}>
+      <PageSection>
         <Content>
           <Content component="h1">Main title</Content>
           <Content component="p">This is a full page demo.</Content>
