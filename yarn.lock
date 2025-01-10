@@ -3807,7 +3807,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     rimraf: "npm:^5.0.10"
     rollup: "npm:^4.28.1"
-    rollup-plugin-scss: "npm:^4.0.0"
+    rollup-plugin-scss: "npm:^4.0.1"
     rollup-plugin-svg: "npm:^2.0.0"
     sass: "npm:^1.81.0"
     surge: "npm:^0.24.6"
@@ -19092,12 +19092,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-scss@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "rollup-plugin-scss@npm:4.0.0"
+"rollup-plugin-scss@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "rollup-plugin-scss@npm:4.0.1"
   dependencies:
     rollup-pluginutils: "npm:^2.3.3"
-  checksum: 10c0/21e138e0ac011b7e70077763df7c8b6fefdce98c2786ba909c57b38dee215110bc321c507082e4664b95e8c68739f343dc702ccac7f0169ecaa02d0f8dd1d39d
+  checksum: 10c0/1f076acbcd01719bc1dcabfcc2f4a90d04f2bf31f85f20ec4863d6aefd771fe9f893ee07cc626f9cc025ee6ec0436b1ef2a1c24a1616a1794a4ef3c680667b97
   languageName: node
   linkType: hard
 
