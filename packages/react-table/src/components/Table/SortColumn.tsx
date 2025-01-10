@@ -6,8 +6,9 @@ import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { TableText } from './TableText';
+import { ActionList, ActionListItem } from '@patternfly/react-core/dist/esm/components/ActionList';
+import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
-import { ActionList, ActionListItem, Button } from '@patternfly/react-core';
 import { FavoriteButtonProps } from './base/types';
 
 export enum SortByDirection {

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Title, PageSection } from '@patternfly/react-core';
+import { PageSection } from '@patternfly/react-core/dist/esm/components/Page/PageSection';
+import { Title } from '@patternfly/react-core/dist/esm/components/Title';
 
 // https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
 const centerStyle = {

@@ -2,19 +2,17 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
 import fileUploadStyles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
+import { Button, ButtonVariant } from '@patternfly/react-core/dist/esm/components/Button';
 import {
-  Button,
-  ButtonVariant,
   EmptyState,
-  EmptyStateBody,
   EmptyStateActions,
-  EmptyStateVariant,
+  EmptyStateBody,
   EmptyStateFooter,
-  getResizeObserver,
-  Popover,
-  PopoverProps,
-  TooltipPosition
-} from '@patternfly/react-core';
+  EmptyStateVariant
+} from '@patternfly/react-core/dist/esm/components/EmptyState';
+import { Popover, PopoverProps } from '@patternfly/react-core/dist/esm/components/Popover';
+import { TooltipPosition } from '@patternfly/react-core/dist/esm/components/Tooltip';
+import { getResizeObserver } from '@patternfly/react-core/dist/esm/helpers/resizeObserver';
 import Editor, { EditorProps, Monaco } from '@monaco-editor/react';
 import type { editor } from 'monaco-editor';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';

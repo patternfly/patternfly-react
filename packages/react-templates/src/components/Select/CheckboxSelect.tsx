@@ -1,15 +1,13 @@
 import React from 'react';
+import { Badge } from '@patternfly/react-core/dist/esm/components/Badge';
+import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import {
-  Badge,
-  MenuToggle,
-  MenuToggleElement,
-  MenuToggleProps,
   Select,
   SelectList,
   SelectOption,
   SelectOptionProps,
   SelectProps
-} from '@patternfly/react-core';
+} from '@patternfly/react-core/dist/esm/components/Select';
 
 export interface CheckboxSelectOption extends Omit<SelectOptionProps, 'content'> {
   /** Content of the select option. */
