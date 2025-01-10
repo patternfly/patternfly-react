@@ -1,5 +1,5 @@
 import { createFocusTrap, FocusTrap as FocusTrapInstance, Options as FocusTrapOptions } from 'focus-trap';
-import React, { ComponentPropsWithRef, forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
+import { ComponentPropsWithRef, forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 import { useUnmountEffect } from '../useUnmountEffect';
 
 export interface FocusTrapProps extends ComponentPropsWithRef<'div'> {
