@@ -16,7 +16,6 @@ import {
   OverflowMenuControl,
   OverflowMenuItem,
   PageSection,
-  PageSectionVariants,
   Pagination,
   Toolbar,
   ToolbarItem,
@@ -114,7 +113,7 @@ export const DataListStaticBottomPagination: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper mainContainerId="main-content-datalist-view-pagination" breadcrumb={null}>
-      <PageSection variant={PageSectionVariants.secondary}>
+      <PageSection>
         <Content>
           <Content component="h1">Projects</Content>
           <Content component="p">This is a demo that showcases PatternFly Data List</Content>
@@ -184,7 +183,7 @@ export const DataListStaticBottomPagination: React.FunctionComponent = () => {
             );
           })}
         </DataList>
-        {renderPagination(PaginationVariant.bottom, true, false, true)}
+        {renderPagination(PaginationVariant.bottom, false, false, true)}
       </PageSection>
     </DashboardWrapper>
   );
