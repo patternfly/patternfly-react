@@ -38,6 +38,12 @@ propComponents: ['TextArea']
 
 ```
 
+### Not resizable
+
+```ts file="./TextAreaResizableNone.tsx"
+
+```
+
 ### Uncontrolled
 
 ```ts file="./TextAreaUncontrolled.tsx"

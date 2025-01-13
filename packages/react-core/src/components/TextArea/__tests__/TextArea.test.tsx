@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -93,6 +94,16 @@ test('Text area is not invalid by default', () => {
   expect(screen.getByRole('textbox')).not.toBeInvalid();
 });
 
+test('Renders vertically & resizable text area by default', () => {
+  render(<TextArea aria-label="vertical resize textarea" />);
+  expect(screen.getByRole('textbox').parentElement).toHaveClass('pf-m-resize-both');
+});
+
+test('Renders vertically & resizable text area when resizeOrientation is set to both', () => {
+  render(<TextArea aria-label="vertical resize textarea" resizeOrientation="both" />);
+  expect(screen.getByRole('textbox').parentElement).toHaveClass('pf-m-resize-both');
+});
+
 test('Renders vertically resizable text area', () => {
   render(<TextArea aria-label="vertical resize textarea" resizeOrientation="vertical" />);
   expect(screen.getByRole('textbox').parentElement).toHaveClass('pf-m-resize-vertical');
@@ -101,6 +112,13 @@ test('Renders vertically resizable text area', () => {
 test('Renders horizontally resizable text area', () => {
   render(<TextArea aria-label="horizontal resize textarea" resizeOrientation="horizontal" />);
   expect(screen.getByRole('textbox').parentElement).toHaveClass('pf-m-resize-horizontal');
+});
+
+test('Disables resizable text area', () => {
+  render(<TextArea aria-label="disabled resize textarea" resizeOrientation="none" />);
+  expect(screen.getByRole('textbox').parentElement).not.toHaveClass('pf-m-resize-vertical');
+  expect(screen.getByRole('textbox').parentElement).not.toHaveClass('pf-m-resize-horizontal');
+  expect(screen.getByRole('textbox').parentElement).not.toHaveClass('pf-m-resize-both');
 });
 
 test('Throws console error when no aria-label or id is given', () => {
