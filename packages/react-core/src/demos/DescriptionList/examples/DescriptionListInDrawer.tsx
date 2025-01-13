@@ -34,8 +34,8 @@ export const DescriptionListInDrawer: React.FunctionComponent = () => {
     btnRef.current && btnRef.current.focus();
   };
 
-  const onOpenDrawer = () => {
-    setIsExpanded(true);
+  const onToggleDrawer = () => {
+    setIsExpanded((prevIsExpanded) => !prevIsExpanded);
   };
 
   const panelContent = (
@@ -128,8 +128,8 @@ export const DescriptionListInDrawer: React.FunctionComponent = () => {
       <GalleryItem key={0}>
         <Card>
           <CardBody>
-            <Button variant="link" isInline onClick={onOpenDrawer} ref={btnRef}>
-              Open drawer
+            <Button variant="link" isInline onClick={onToggleDrawer} ref={btnRef}>
+              {`${isExpanded ? 'Close' : 'Open'} drawer`}
             </Button>
           </CardBody>
         </Card>
