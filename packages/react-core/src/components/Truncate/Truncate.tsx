@@ -44,7 +44,8 @@ interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
     | 'right-end';
 }
 
-const sliceContent = (str: string, slice: number) => [str.slice(0, str.length - slice), str.slice(-slice)];
+const sliceContent = (str: string, slice: number) =>
+  str.length > slice ? [str.slice(0, str.length - slice), str.slice(-slice)] : str;
 
 export const Truncate: React.FunctionComponent<TruncateProps> = ({
   className,
@@ -88,7 +89,7 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
     if (subParentRef && subParentRef.current.parentElement.parentElement && !parentElement) {
       setParentElement(subParentRef.current.parentElement.parentElement);
     }
-  }, [textRef, subParentRef]);
+  }, [textRef, subParentRef, textElement, parentElement]);
 
   React.useEffect(() => {
     if (textElement && parentElement && !observer.current) {
@@ -106,7 +107,7 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
         observer();
       };
     }
-  }, [textElement, parentElement]);
+  }, [textElement, parentElement, trailingNumChars, content, position]);
 
   const truncateBody = (
     <span ref={subParentRef} className={css(styles.truncate, className)} {...props}>
