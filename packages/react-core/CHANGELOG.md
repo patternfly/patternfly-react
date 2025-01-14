@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.2...@patternfly/react-core@6.2.0-prerelease.3) (2025-01-14)
+
+### Features
+
+- **Text area:** Add resize disable feature ([#11383](https://github.com/patternfly/patternfly-react/issues/11383)) ([9868ab5](https://github.com/patternfly/patternfly-react/commit/9868ab5364b6776b3782c8a0fb5cfa8b7581e9f0))
+
 # [6.2.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.1...@patternfly/react-core@6.2.0-prerelease.2) (2025-01-10)
 
 **Note:** Version bump only for package @patternfly/react-core
