@@ -3606,7 +3606,7 @@ __metadata:
     victory-axis: ^37.3.5
     victory-bar: ^37.3.5
     victory-box-plot: ^37.3.5
-    victory-chart: ^37.3.3
+    victory-chart: ^37.3.6
     victory-core: ^37.3.5
     victory-create-container: ^37.3.4
     victory-cursor-container: ^37.3.4
