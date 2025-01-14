@@ -3777,7 +3777,7 @@ __metadata:
     "@testing-library/react": "npm:^16.0.1"
     "@testing-library/user-event": "npm:^14.5.2"
     "@types/jest": "npm:29.5.14"
-    "@types/node": "npm:^20.17.9"
+    "@types/node": "npm:^20.17.13"
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
     babel-jest: "npm:^29.7.0"
@@ -5037,12 +5037,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.17.9":
-  version: 20.17.9
-  resolution: "@types/node@npm:20.17.9"
+"@types/node@npm:^20.17.13":
+  version: 20.17.13
+  resolution: "@types/node@npm:20.17.13"
   dependencies:
     undici-types: "npm:~6.19.2"
-  checksum: 10c0/1c37c3618407d56b76301578edabcb4c6a7ef093d0811c50fc4df8df68fc546797a294cafac0e50789f4e0e485cd1d6871964d8e6222fd420658bdae89c1fb4a
+  checksum: 10c0/a5ba630b5ead5144e8f605402bc14d77dc3cf6b31708a92c7221de9b06b17724ada661d0f66b6c974830857a79e7f38e976dd105fca330ab706de9e4d75cf8b9
   languageName: node
   linkType: hard
 
