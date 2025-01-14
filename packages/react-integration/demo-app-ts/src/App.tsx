@@ -1,28 +1,26 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Avatar } from '@patternfly/react-core/dist/esm/components/Avatar';
+import { Brand } from '@patternfly/react-core/dist/esm/components/Brand';
 import {
-  Avatar,
-  Brand,
   Masthead,
   MastheadLogo,
   MastheadBrand,
   MastheadContent,
   MastheadMain,
-  MastheadToggle,
-  Nav,
-  NavItem,
-  NavList,
+  MastheadToggle
+} from '@patternfly/react-core/dist/esm/components/Masthead';
+import { Nav, NavList, NavItem } from '@patternfly/react-core/dist/esm/components/Nav';
+import {
   Page,
   PageSection,
   PageSidebar,
   PageSidebarBody,
-  PageToggleButton,
-  Radio,
-  SkipToContent,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
-} from '@patternfly/react-core';
+  PageToggleButton
+} from '@patternfly/react-core/dist/esm/components/Page';
+import { Radio } from '@patternfly/react-core/dist/esm/components/Radio';
+import { SkipToContent } from '@patternfly/react-core/dist/esm/components/SkipToContent';
+import { Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core/dist/esm/components/Toolbar';
 import imgBrand from './assets/images/imgBrand.svg';
 import imgAvatar from './assets/images/imgAvatar.svg';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
