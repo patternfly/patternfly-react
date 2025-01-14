@@ -102,7 +102,7 @@ exports[`opened checkbox select snapshot 1`] = `
         >
           <label
             class="pf-v5-c-menu__item"
-            for="generated-id"
+            for="pf-random-id-0"
             tabindex="-1"
           >
             <span
@@ -121,7 +121,7 @@ exports[`opened checkbox select snapshot 1`] = `
                     data-ouia-component-id="OUIA-Generated-Checkbox-1"
                     data-ouia-component-type="PF5/Checkbox"
                     data-ouia-safe="true"
-                    id="generated-id"
+                    id="pf-random-id-0"
                     type="checkbox"
                   />
                 </span>
@@ -140,7 +140,7 @@ exports[`opened checkbox select snapshot 1`] = `
         >
           <label
             class="pf-v5-c-menu__item"
-            for="generated-id"
+            for="pf-random-id-1"
             tabindex="-1"
           >
             <span
@@ -159,7 +159,7 @@ exports[`opened checkbox select snapshot 1`] = `
                     data-ouia-component-id="OUIA-Generated-Checkbox-2"
                     data-ouia-component-type="PF5/Checkbox"
                     data-ouia-safe="true"
-                    id="generated-id"
+                    id="pf-random-id-1"
                     type="checkbox"
                   />
                 </span>
@@ -178,7 +178,7 @@ exports[`opened checkbox select snapshot 1`] = `
         >
           <label
             class="pf-v5-c-menu__item"
-            for="generated-id"
+            for="pf-random-id-2"
             tabindex="-1"
           >
             <span
@@ -197,7 +197,7 @@ exports[`opened checkbox select snapshot 1`] = `
                     data-ouia-component-id="OUIA-Generated-Checkbox-3"
                     data-ouia-component-type="PF5/Checkbox"
                     data-ouia-safe="true"
-                    id="generated-id"
+                    id="pf-random-id-2"
                     type="checkbox"
                   />
                 </span>
