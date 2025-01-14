@@ -3612,7 +3612,7 @@ __metadata:
     victory-cursor-container: ^37.3.4
     victory-group: ^37.3.6
     victory-legend: ^37.3.4
-    victory-line: ^37.3.4
+    victory-line: ^37.3.6
     victory-pie: ^37.3.4
     victory-scatter: ^37.3.4
     victory-stack: ^37.3.4
