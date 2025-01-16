@@ -81,6 +81,7 @@ exports[`simple fileupload 1`] = `
       </span>
     </div>
     <input
+      hidden=""
       style="display: none;"
       tabindex="-1"
       type="file"
