@@ -66,6 +66,7 @@ export const MultipleFileUpload: React.FunctionComponent<MultipleFileUploadProps
         <input
           /* hidden, necessary for react-dropzone */
           {...getInputProps()}
+          hidden
         />
         {children}
       </div>
