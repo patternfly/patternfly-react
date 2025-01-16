@@ -179,6 +179,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
       <input
         /* hidden, necessary for react-dropzone */
         {...inputProps}
+        hidden
       />
       {children}
     </FileUploadField>
