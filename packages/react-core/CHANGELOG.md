@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.5...@patternfly/react-core@6.2.0-prerelease.6) (2025-01-20)
+
+### Bug Fixes
+
+- **Toolbar:** Fix formatting of Stacked example ([#11426](https://github.com/patternfly/patternfly-react/issues/11426)) ([ffc6d88](https://github.com/patternfly/patternfly-react/commit/ffc6d883aa4ce3c23403e905a41f4f3e6ecd8d59))
+
 # [6.2.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.4...@patternfly/react-core@6.2.0-prerelease.5) (2025-01-20)
 
 ### Features
