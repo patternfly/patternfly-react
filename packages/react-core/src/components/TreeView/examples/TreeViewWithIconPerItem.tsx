@@ -18,7 +18,6 @@ export const TreeViewWithIconPerItem: React.FunctionComponent = () => {
       name: 'Github accounts',
       id: 'iconPerItem-Github',
       icon: <GithubIcon />,
-      expandedIcon: <GithubIcon />,
       children: [
         {
           name: 'Account 1',
@@ -35,7 +34,6 @@ export const TreeViewWithIconPerItem: React.FunctionComponent = () => {
       name: 'Gitlab accounts',
       id: 'iconPerItem-Gitlab',
       icon: <GitlabIcon />,
-      expandedIcon: <GitlabIcon />,
       children: [
         {
           name: 'Account 3',
@@ -47,7 +45,6 @@ export const TreeViewWithIconPerItem: React.FunctionComponent = () => {
       name: 'Google accounts',
       id: 'iconPerItem-Google',
       icon: <GoogleIcon />,
-      expandedIcon: <GoogleIcon />,
       children: [
         {
           name: 'Account 4',
