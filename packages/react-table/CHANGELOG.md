@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.2.0-prerelease.5...@patternfly/react-table@6.2.0-prerelease.6) (2025-01-20)
+
+### Features
+
+- **Table,misc:** rewrite column management demo, remove old dnd examples ([#11295](https://github.com/patternfly/patternfly-react/issues/11295)) ([b24648d](https://github.com/patternfly/patternfly-react/commit/b24648d5b2d515691032798ceecd6b6fc63d63e5))
+
 # [6.2.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.2.0-prerelease.4...@patternfly/react-table@6.2.0-prerelease.5) (2025-01-14)
 
 **Note:** Version bump only for package @patternfly/react-table
