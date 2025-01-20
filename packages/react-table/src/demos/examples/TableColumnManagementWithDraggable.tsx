@@ -1,635 +1,386 @@
 import React from 'react';
+
 import {
   Button,
   Content,
   DataList,
   DataListCheck,
-  DataListControl,
-  DataListDragButton,
-  DataListItem,
-  DataListItemRow,
   DataListCell,
   DataListItemCells,
+  DataListControl,
+  Label,
   Toolbar,
   ToolbarContent,
   ToolbarItem,
+  MenuToggle,
   Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
   OverflowMenu,
   OverflowMenuGroup,
   OverflowMenuItem,
-  MenuToggle
+  PageSection,
+  Pagination,
+  PaginationVariant
 } from '@patternfly/react-core';
-import { Table as TableDeprecated, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { DragDropSort } from '@patternfly/react-drag-drop';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
+import { capitalize } from '@patternfly/react-table/src/components/Table/utils/utils';
+import { rows, columns, SampleDataRow } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
-interface RowType {
-  cells: (
-    | {
-        title: React.JSX.Element;
-        props: {
-          column: string;
-        };
-      }
-    | {
-        title: string;
-        props: {
-          column: string;
-        };
-      }
-  )[];
-}
-
-export const TableColumnManagementWithDraggable: React.FunctionComponent = () => {
-  const actions = [
-    {
-      title: <a href="#">Link</a>
-    },
-    {
-      title: 'Action'
-    },
-    {
-      isSeparator: true
-    },
-    {
-      title: <a href="#">Separated link</a>
-    }
-  ];
-  const defaultColumns: string[] = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit', ''];
-  const defaultRows = [
-    {
-      cells: [
-        {
-          title: (
-            <React.Fragment>
-              <div>Node 1</div>
-              <a href="#">siemur/test-space</a>
-            </React.Fragment>
-          ),
-          props: { column: 'Repositories' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CodeBranchIcon key="icon" /> 10
-            </React.Fragment>
-          ),
-          props: { column: 'Branches' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CodeIcon key="icon" /> 25
-            </React.Fragment>
-          ),
-          props: { column: 'Pull requests' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CubeIcon key="icon" /> 5
-            </React.Fragment>
-          ),
-          props: { column: 'Workspaces' }
-        },
-        {
-          title: '2 days ago',
-          props: { column: 'Last commit' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <a href="#">Action link</a>
-            </React.Fragment>
-          ),
-          props: { column: '' }
-        }
-      ]
-    },
-    {
-      cells: [
-        {
-          title: (
-            <React.Fragment>
-              <div>Node 2</div>
-              <a href="#">siemur/test-space</a>
-            </React.Fragment>
-          ),
-          props: { column: 'Repositories' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CodeBranchIcon key="icon" /> 8
-            </React.Fragment>
-          ),
-          props: { column: 'Branches' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CodeIcon key="icon" /> 30
-            </React.Fragment>
-          ),
-          props: { column: 'Pull requests' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CubeIcon key="icon" /> 2
-            </React.Fragment>
-          ),
-          props: { column: 'Workspaces' }
-        },
-        {
-          title: '2 days ago',
-          props: { column: 'Last commit' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <a href="#">Action link</a>
-            </React.Fragment>
-          ),
-          props: { column: '' }
-        }
-      ]
-    },
-    {
-      cells: [
-        {
-          title: (
-            <React.Fragment>
-              <div>Node 3</div>
-              <a href="#">siemur/test-space</a>
-            </React.Fragment>
-          ),
-          props: { column: 'Repositories' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CodeBranchIcon key="icon" /> 12
-            </React.Fragment>
-          ),
-          props: { column: 'Branches' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CodeIcon key="icon" /> 48
-            </React.Fragment>
-          ),
-          props: { column: 'Pull requests' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CubeIcon key="icon" /> 13
-            </React.Fragment>
-          ),
-          props: { column: 'Workspaces' }
-        },
-        {
-          title: '30 days ago',
-          props: { column: 'Last commit' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <a href="#">Action link</a>
-            </React.Fragment>
-          ),
-          props: { column: '' }
-        }
-      ]
-    },
-    {
-      cells: [
-        {
-          title: (
-            <React.Fragment>
-              <div>Node 4</div>
-              <a href="#">siemur/test-space</a>
-            </React.Fragment>
-          ),
-          props: { column: 'Repositories' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CodeBranchIcon key="icon" /> 3
-            </React.Fragment>
-          ),
-          props: { column: 'Branches' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CodeIcon key="icon" /> 8
-            </React.Fragment>
-          ),
-          props: { column: 'Pull requests' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CubeIcon key="icon" /> 20
-            </React.Fragment>
-          ),
-          props: { column: 'Workspaces' }
-        },
-        {
-          title: '8 days ago',
-          props: { column: 'Last commit' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <a href="#">Action link</a>
-            </React.Fragment>
-          ),
-          props: { column: '' }
-        }
-      ]
-    },
-    {
-      cells: [
-        {
-          title: (
-            <React.Fragment>
-              <div>Node 5</div>
-              <a href="#">siemur/test-space</a>
-            </React.Fragment>
-          ),
-          props: { column: 'Repositories' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CodeBranchIcon key="icon" /> 34
-            </React.Fragment>
-          ),
-          props: { column: 'Branches' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CodeIcon key="icon" /> 21
-            </React.Fragment>
-          ),
-          props: { column: 'Pull requests' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <CubeIcon key="icon" /> 26
-            </React.Fragment>
-          ),
-          props: { column: 'Workspaces' }
-        },
-        {
-          title: '2 days ago',
-          props: { column: 'Last commit' }
-        },
-        {
-          title: (
-            <React.Fragment>
-              <a href="#">Action link</a>
-            </React.Fragment>
-          ),
-          props: { column: '' }
-        }
-      ]
-    }
-  ];
+export const TableColumnManagement: React.FunctionComponent = () => {
+  const defaultColumns = columns;
+  const defaultRows = rows;
 
   const [filters, setFilters] = React.useState<string[]>([]);
-  const [filteredColumns, setFilteredColumns] = React.useState<string[]>([]);
-  const [columns, setColumns] = React.useState<string[]>(defaultColumns);
-  const [rows, setRows] = React.useState(defaultRows);
+  const [filteredColumns, setFilteredColumns] = React.useState<string[]>(defaultColumns);
+  const [filteredRows, setFilteredRows] = React.useState<SampleDataRow[]>(defaultRows);
+  const [managedColumns, setManagedColumns] = React.useState<string[]>(defaultColumns);
+  const [managedRows, setManagedRows] = React.useState<SampleDataRow[]>(defaultRows);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [check1, setCheck1] = React.useState(true);
-  const [check2, setCheck2] = React.useState(true);
-  const [check3, setCheck3] = React.useState(true);
-  const [check4, setCheck4] = React.useState(true);
-  const [check5, setCheck5] = React.useState(true);
+  const [page, setPage] = React.useState(1);
+  const [perPage, setPerPage] = React.useState(10);
+  const [paginatedRows, setPaginatedRows] = React.useState<any[]>(rows);
 
-  const matchCheckboxNameToColumn = (name: string) => {
+  const [columnData, setColumnData] = React.useState(defaultColumns.map((col) => ({ name: col, checked: true })));
+  const [initialColData, setInitialColData] = React.useState(columnData);
+
+  const matchSelectedColumnNameToAttr = (name: string): string => {
     switch (name) {
-      case 'check1':
-        return 'Repositories';
-      case 'check2':
-        return 'Branches';
-      case 'check3':
-        return 'Pull requests';
-      case 'check4':
-        return 'Workspaces';
-      case 'check5':
-        return 'Last commit';
+      case 'Servers':
+        return 'name';
+      case 'Threads':
+        return 'threads';
+      case 'Applications':
+        return 'applications';
+      case 'Workspaces':
+        return 'workspaces';
+      case 'Status':
+        return 'status';
+      case 'Location':
+        return 'location';
+      case 'Last Modified':
+        return 'lastModified';
+      case 'URL':
+        return 'url';
       default:
         return '';
     }
   };
 
+  // Pagination logic
+  const handleSetPage = (
+    _evt: MouseEvent | React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>,
+    newPage: number
+  ) => {
+    setPage(newPage);
+  };
+
+  const handlePerPageSelect = (
+    _evt: MouseEvent | React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>,
+    newPerPage: number
+  ) => {
+    setPerPage(newPerPage);
+  };
+
+  const renderPagination = (variant: 'top' | 'bottom' | PaginationVariant, isCompact: boolean) => (
+    <Pagination
+      isCompact={isCompact}
+      itemCount={rows.length}
+      page={page}
+      perPage={perPage}
+      onSetPage={handleSetPage}
+      onPerPageSelect={handlePerPageSelect}
+      variant={variant}
+      titles={{
+        paginationAriaLabel: `${variant} pagination`
+      }}
+    />
+  );
+
+  React.useEffect(() => {
+    setPaginatedRows(managedRows.slice((page - 1) * perPage, page * perPage - 1));
+  }, [managedRows, page, perPage]);
+
+  // Removes attribute from each node object in Data.jsx
+  const removePropFromObject = (object: any, keys: string[]): any =>
+    keys.reduce((obj, prop) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { [prop]: _, ...keep } = obj;
+      return keep;
+    }, object);
+
+  // Filters columns out of table that are not selected in the column management modal
   const filterData = (checked: boolean, name: string) => {
+    const selectedColumn = matchSelectedColumnNameToAttr(name);
+
+    const filteredRows: SampleDataRow[] = [];
     if (checked) {
-      const updatedFilters = filters.filter((item) => item !== name);
-      const updatedFilteredColumns = defaultColumns.filter((column) => !updatedFilters.includes(column));
+      const updatedFilters = filters.filter((item) => item !== selectedColumn);
+
+      // Only show the names of columns that were selected in the modal
+      const filteredColumns = defaultColumns.filter(
+        (column) => !updatedFilters.includes(matchSelectedColumnNameToAttr(column))
+      );
+
+      // Remove the attributes (i.e. "columns") that were not selected
+      defaultRows.forEach((item) => filteredRows.push(removePropFromObject(item, updatedFilters)));
+
       setFilters(updatedFilters);
-      setFilteredColumns(updatedFilteredColumns);
+      setFilteredColumns(filteredColumns);
+      setFilteredRows(filteredRows);
     } else {
       const updatedFilters = filters;
-      updatedFilters.push(name);
-      const updatedFilteredColumns = columns.filter((column) => !filters.includes(column));
+      updatedFilters.push(selectedColumn);
+
+      // Only show the names of columns that were selected in the modal
+      const filteredColumns = managedColumns.filter(
+        (column) => !filters.includes(matchSelectedColumnNameToAttr(column))
+      );
+
+      // Remove the attributes (i.e. "columns") that were not selected
+      managedRows.forEach((item) => filteredRows.push(removePropFromObject(item, updatedFilters)));
+
       setFilters(updatedFilters);
-      setFilteredColumns(updatedFilteredColumns);
+      setFilteredColumns(filteredColumns);
+      setFilteredRows(filteredRows);
     }
   };
+
   const unfilterAllData = () => {
     setFilters([]);
     setFilteredColumns(defaultColumns);
+    setFilteredRows(defaultRows);
   };
-  const handleChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
-    const target = event.currentTarget;
-    const name = target.name;
 
-    const value = target.type === 'checkbox' ? checked : !!target.value;
-    filterData(checked, matchCheckboxNameToColumn(target.name));
-    switch (name) {
-      case 'check1':
-        setCheck1(value);
-        break;
-      case 'check2':
-        setCheck2(value);
-        break;
-      case 'check3':
-        setCheck3(value);
-        break;
-      case 'check4':
-        setCheck4(value);
-        break;
-      case 'check5':
-        setCheck5(value);
-        break;
-    }
-  };
-  const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
+  const handleModalToggle = (_event: React.MouseEvent<Element, MouseEvent> | KeyboardEvent) => {
     setIsModalOpen(!isModalOpen);
+    setInitialColData(columnData);
   };
+
   const onSave = () => {
-    // concat empty string at the end for actions column
-    const filteredOrderedColumns: string[] = columns
-      .filter((col) => filteredColumns.length === 0 || filteredColumns.indexOf(col as string) > -1)
-      .concat(['']);
-    const orderedRows: RowType[] = [];
-    defaultRows.forEach((row) => {
-      const updatedCells = row.cells
-        .filter((cell) => filteredOrderedColumns.indexOf(cell.props.column) > -1)
-        .sort((cellA, cellB) => {
-          const indexA = filteredOrderedColumns.indexOf(cellA.props.column);
-          const indexB = filteredOrderedColumns.indexOf(cellB.props.column);
-          if (indexA < indexB) {
-            return -1;
-          }
-          if (indexA > indexB) {
-            return 1;
-          }
-          // a must be equal to b
-          return 0;
-        });
-      orderedRows.push({
-        cells: updatedCells
-      });
+    const orderedFilteredColumns: string[] = [];
+    columnData.map((col) => {
+      if (filteredColumns.find((filteredCol) => filteredCol === col.name)) {
+        orderedFilteredColumns.push(col.name);
+      }
     });
-    setColumns(filteredOrderedColumns as string[]);
-    setRows(orderedRows);
+
+    const orderedFilteredRows = filteredRows.map((row) => {
+      let orderedRow;
+      columnData.map((col) => {
+        if (filteredColumns.find((filteredCol) => filteredCol === col.name)) {
+          const rowField = matchSelectedColumnNameToAttr(col.name);
+          orderedRow = { ...orderedRow, [rowField]: row[rowField] };
+        }
+      });
+      return orderedRow;
+    });
+
+    setManagedColumns(orderedFilteredColumns);
+    setManagedRows(orderedFilteredRows);
+    setPaginatedRows(filteredRows);
     setIsModalOpen(!isModalOpen);
   };
 
   const selectAllColumns = () => {
     unfilterAllData();
-    setCheck1(true);
-    setCheck2(true);
-    setCheck3(true);
-    setCheck4(true);
-    setCheck5(true);
+    setColumnData(columnData.map((col) => ({ name: col.name, checked: true })));
   };
 
   const renderModal = () => (
     <Modal
-      title="Manage columns"
       isOpen={isModalOpen}
       variant="small"
-      description={
-        <Content>
-          <p>Selected categories will be displayed in the table.</p>
-          <Button isInline onClick={selectAllColumns} variant="link">
-            Select all
-          </Button>
-        </Content>
-      }
       onClose={handleModalToggle}
-      actions={[
+      aria-labelledby="basic-modal-title"
+      aria-describedby="modal-box-body-basic"
+    >
+      <ModalHeader
+        title="Manage columns"
+        labelId="basic-modal-title"
+        description={
+          <Content>
+            <p>Selected categories will be displayed in the table.</p>
+            <Button isInline onClick={selectAllColumns} variant="secondary">
+              Select all
+            </Button>
+          </Content>
+        }
+      />
+      <ModalBody id="modal-box-body-basic">
+        <DragDropSort
+          items={columnData.map((colData) => ({
+            id: colData.name,
+            content: (
+              <>
+                <DataListControl>
+                  <DataListCheck
+                    aria-labelledby={`table-column-management-item-${colData.name}`}
+                    isChecked={colData.checked}
+                    name={`check-${colData.name}`}
+                    id={`check-${colData.name}`}
+                    onChange={(event: React.FormEvent<HTMLInputElement>, _checked: boolean) => {
+                      let newColumnData: { name: string; checked: boolean }[] = [];
+
+                      columnData.map((colData) => {
+                        if (event.currentTarget.name === `check-${colData.name}`) {
+                          newColumnData = [...newColumnData, { name: colData.name, checked: !colData.checked }];
+                          filterData(!colData.checked, colData.name);
+                        } else {
+                          newColumnData = [...newColumnData, colData];
+                        }
+                      });
+
+                      setColumnData(newColumnData);
+                    }}
+                  />
+                </DataListControl>
+                <DataListItemCells
+                  dataListCells={[
+                    <DataListCell
+                      id={`table-column-management-item-${colData.name}`}
+                      key={`table-column-management-item-${colData.name}`}
+                    >
+                      <label htmlFor={`check-${colData.name}`}>{colData.name}</label>
+                    </DataListCell>
+                  ]}
+                />
+              </>
+            ),
+            data: colData
+          }))}
+          onDrop={(_, newItems) => {
+            setColumnData(newItems.map((item) => (item as any).data));
+          }}
+          variant="DataList"
+          overlayProps={{ isCompact: true }}
+        >
+          <DataList aria-label="Table column management" id="table-column-management" isCompact />
+        </DragDropSort>
+      </ModalBody>
+      <ModalFooter>
         <Button key="save" variant="primary" onClick={onSave}>
           Save
-        </Button>,
-        <Button key="cancel" variant="link" onClick={handleModalToggle}>
+        </Button>
+        <Button
+          key="cancel"
+          variant="link"
+          onClick={(event: React.MouseEvent<Element, MouseEvent> | KeyboardEvent) => {
+            setColumnData(initialColData);
+            handleModalToggle(event);
+          }}
+        >
           Cancel
         </Button>
-      ]}
-    >
-      <DataList aria-label="Table column management" id="table-column-management" isCompact>
-        <DataListItem aria-labelledby="table-column-management-item1" id="data1">
-          <DataListItemRow>
-            <DataListControl>
-              <DataListDragButton
-                aria-label="Reorder"
-                aria-labelledby="table-column-management-item1"
-                aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                aria-pressed="false"
-              />
-              <DataListCheck
-                aria-labelledby="table-column-management-item1"
-                checked={check1}
-                name="check1"
-                id="check1"
-                onChange={handleChange}
-                otherControls
-              />
-            </DataListControl>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell id="table-column-management-item1" key="table-column-management-item1">
-                  <label htmlFor="check1">Repositories</label>
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-labelledby="table-column-management-item2" id="data2">
-          <DataListItemRow>
-            <DataListControl>
-              <DataListDragButton
-                aria-label="Reorder"
-                aria-labelledby="table-column-management-item2"
-                aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                aria-pressed="false"
-              />
-              <DataListCheck
-                aria-labelledby="table-column-management-item2"
-                checked={check2}
-                name="check2"
-                id="check2"
-                onChange={handleChange}
-                otherControls
-              />
-            </DataListControl>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell id="table-column-management-item2" key="table-column-management-item2">
-                  <label htmlFor="check2">Branches</label>
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-labelledby="table-column-management-item3" id="data3">
-          <DataListItemRow>
-            <DataListControl>
-              <DataListDragButton
-                aria-label="Reorder"
-                aria-labelledby="table-column-management-item3"
-                aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                aria-pressed="false"
-              />
-              <DataListCheck
-                aria-labelledby="table-column-management-item3"
-                checked={check3}
-                name="check3"
-                id="check3"
-                onChange={handleChange}
-                otherControls
-              />
-            </DataListControl>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell id="table-column-management-item3" key="table-column-management-item3">
-                  <label htmlFor="check3">Pull requests</label>
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-labelledby="table-column-management-item4" id="data4">
-          <DataListItemRow>
-            <DataListControl>
-              <DataListDragButton
-                aria-label="Reorder"
-                aria-labelledby="table-column-management-item4"
-                aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                aria-pressed="false"
-              />
-              <DataListCheck
-                aria-labelledby="table-column-management-item4"
-                checked={check4}
-                name="check4"
-                id="check4"
-                onChange={handleChange}
-                otherControls
-              />
-            </DataListControl>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell id="table-column-management-item4" key="table-column-management-item4">
-                  <label htmlFor="check4">Workspaces</label>
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-labelledby="table-column-management-item5" id="data5">
-          <DataListItemRow>
-            <DataListControl>
-              <DataListDragButton
-                aria-label="Reorder"
-                aria-labelledby="table-column-management-item5"
-                aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                aria-pressed="false"
-              />
-              <DataListCheck
-                aria-labelledby="table-column-management-item5"
-                checked={check5}
-                name="check5"
-                id="check5"
-                onChange={handleChange}
-                otherControls
-              />
-            </DataListControl>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell id="table-column-management-item5" key="table-column-management-item5">
-                  <label htmlFor="check5">Last commit</label>
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-      </DataList>
+      </ModalFooter>
     </Modal>
   );
 
+  const renderLabel = (labelText: string): JSX.Element => {
+    switch (labelText) {
+      case 'Running':
+        return <Label color="green">{labelText}</Label>;
+      case 'Stopped':
+        return <Label color="orange">{labelText}</Label>;
+      case 'Needs maintenance':
+        return <Label color="blue">{labelText}</Label>;
+      case 'Down':
+        return <Label color="red">{labelText}</Label>;
+      default:
+        return <></>;
+    }
+  };
+
   const toolbarItems = (
     <React.Fragment>
-      <span id="page-layout-table-draggable-column-management-action-toolbar-top-select-checkbox-label" hidden>
-        Choose one
-      </span>
-      <ToolbarContent>
-        <ToolbarItem variant="overflow-menu">
-          <OverflowMenu breakpoint="md">
-            <OverflowMenuItem isPersistent>
-              <MenuToggle icon={<FilterIcon />}>Name</MenuToggle>
-            </OverflowMenuItem>
-            <OverflowMenuItem>
-              <MenuToggle variant="plain" aria-label="Sort columns" icon={<SortAmountDownIcon />} />
-            </OverflowMenuItem>
-            <OverflowMenuGroup groupType="button" isPersistent>
+      <Toolbar id="page-layout-table-column-management-action-toolbar-top">
+        <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>
+          Choose one
+        </span>
+        <ToolbarContent>
+          <ToolbarItem>
+            <OverflowMenu breakpoint="md">
               <OverflowMenuItem>
-                <Button variant="primary">Action</Button>
+                <MenuToggle icon={<FilterIcon />}>Name</MenuToggle>
               </OverflowMenuItem>
               <OverflowMenuItem>
-                <Button variant="link" onClick={handleModalToggle}>
-                  Manage columns
-                </Button>
+                <MenuToggle
+                  variant="plain"
+                  aria-label="Sort columns"
+                  icon={<SortAmountDownIcon aria-hidden="true" />}
+                />
               </OverflowMenuItem>
-            </OverflowMenuGroup>
-          </OverflowMenu>
-        </ToolbarItem>
-      </ToolbarContent>
+              <OverflowMenuGroup groupType="button" isPersistent>
+                <OverflowMenuItem>
+                  <Button variant="primary">Action</Button>
+                </OverflowMenuItem>
+                <OverflowMenuItem isPersistent>
+                  <Button variant="link" onClick={handleModalToggle}>
+                    Manage columns
+                  </Button>
+                </OverflowMenuItem>
+              </OverflowMenuGroup>
+            </OverflowMenu>
+          </ToolbarItem>
+          <ToolbarItem variant="pagination">{renderPagination('top', false)}</ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
     </React.Fragment>
   );
 
   return (
     <React.Fragment>
-      <TableDeprecated
-        gridBreakPoint="grid-xl"
-        header={
-          <React.Fragment>
-            <Toolbar id="page-layout-table-draggable-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
-          </React.Fragment>
-        }
-        aria-label="Column Management with Draggable Table"
-        cells={columns}
-        rows={rows}
-        actions={actions}
-      >
-        <TableHeader />
-        <TableBody />
-      </TableDeprecated>
-      {renderModal()}
+      <DashboardWrapper hasPageTemplateTitle>
+        <PageSection isFilled>
+          {toolbarItems}
+          <Table variant="compact" aria-label="Column Management Table">
+            <Thead>
+              <Tr>
+                {managedColumns.map((column, columnIndex) => (
+                  <Th key={columnIndex}>{column}</Th>
+                ))}
+              </Tr>
+            </Thead>
+            <Tbody>
+              {paginatedRows.map((row, rowIndex) => (
+                <Tr key={rowIndex}>
+                  <>
+                    {Object.entries(row).map(([key, value], idx) =>
+                      // eslint-disable-next-line no-nested-ternary
+                      key === 'status' ? (
+                        <Td width={15} dataLabel="Status" key={`${idx}-${value}`}>
+                          {renderLabel(value as string)}
+                        </Td>
+                      ) : key === 'url' ? (
+                        <Td width={10} dataLabel="URL" modifier="truncate" key={`${idx}-${value}`}>
+                          <TableText>
+                            <a href="#">{row.url}</a>
+                          </TableText>
+                        </Td>
+                      ) : (
+                        <Td
+                          width={key === 'name' ? 15 : 10}
+                          dataLabel={key === 'lastModified' ? 'Last modified' : capitalize(key)}
+                          key={`${idx}-${value}`}
+                        >
+                          {value as string}
+                        </Td>
+                      )
+                    )}
+                  </>
+                </Tr>
+              ))}
+            </Tbody>
+          </Table>
+          {renderPagination('bottom', false)}
+          {renderModal()}
+        </PageSection>
+      </DashboardWrapper>
     </React.Fragment>
   );
 };
