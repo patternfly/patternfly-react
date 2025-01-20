@@ -379,7 +379,6 @@ export const TableColumnManagement: React.FunctionComponent = () => {
         <Button key="save" variant="primary" onClick={onSave}>
           Save
         </Button>
-        ,
         <Button key="cancel" variant="link" onClick={handleModalToggle}>
           Cancel
         </Button>
