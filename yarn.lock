@@ -3615,7 +3615,7 @@ __metadata:
     victory-line: ^37.3.6
     victory-pie: ^37.3.6
     victory-scatter: ^37.3.6
-    victory-stack: ^37.3.4
+    victory-stack: ^37.3.6
     victory-tooltip: ^37.3.6
     victory-voronoi-container: ^37.3.4
     victory-zoom-container: ^37.3.4
