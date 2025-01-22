@@ -44,8 +44,7 @@ interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
     | 'right-end';
 }
 
-const sliceContent = (str: string, slice: number) =>
-  str.length > slice ? [str.slice(0, str.length - slice), str.slice(-slice)] : str;
+const sliceContent = (str: string, slice: number) => [str.slice(0, str.length - slice), str.slice(-slice)];
 
 export const Truncate: React.FunctionComponent<TruncateProps> = ({
   className,
@@ -117,18 +116,16 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
           {position === TruncatePosition.start && <React.Fragment>&lrm;</React.Fragment>}
         </span>
       )}
-      {position === TruncatePosition.middle &&
-        content.slice(0, content.length - trailingNumChars).length > minWidthCharacters && (
-          <React.Fragment>
-            <span ref={textRef} className={styles.truncateStart}>
-              {sliceContent(content, trailingNumChars)[0]}
-            </span>
-            <span className={styles.truncateEnd}>{sliceContent(content, trailingNumChars)[1]}</span>
-          </React.Fragment>
-        )}
-      {position === TruncatePosition.middle &&
-        content.slice(0, content.length - trailingNumChars).length <= minWidthCharacters &&
-        content}
+      {position === TruncatePosition.middle && content.length - trailingNumChars > minWidthCharacters ? (
+        <React.Fragment>
+          <span ref={textRef} className={styles.truncateStart}>
+            {sliceContent(content, trailingNumChars)[0]}
+          </span>
+          <span className={styles.truncateEnd}>{sliceContent(content, trailingNumChars)[1]}</span>
+        </React.Fragment>
+      ) : (
+        content
+      )}
     </span>
   );
 
