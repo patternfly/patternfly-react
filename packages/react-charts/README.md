@@ -6,13 +6,19 @@ This package provides PatternFly charting components for [PatternFly][patternfly
 
 ```sh
 yarn add @patternfly/react-charts
+yarn add victory
 ```
 
 or
 
 ```sh
 npm install @patternfly/react-charts --save
+npm install victory --save
 ```
+
+Note that Victory is now an optional peer dependency, allowing future chart libraries to be installed without including Victory dependencies and vice versa
+  - You may choose to install the single "victory" package to cover all features
+  - Or, install packages based on the features used in your app (e.g., "victory-core", "victory-tooltip", etc.).
 
 # Usage
 
