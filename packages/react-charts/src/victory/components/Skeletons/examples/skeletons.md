@@ -37,7 +37,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ### Area chart
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 import { Switch } from '@patternfly/react-core';
 
 export const ChartAreaSkeleton: React.FunctionComponent = () => {
@@ -119,7 +119,7 @@ export const ChartAreaSkeleton: React.FunctionComponent = () => {
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
-import { Chart, ChartBar, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 export const ChartBarSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -175,8 +175,8 @@ export const ChartBarSkeleton: React.FunctionComponent = () => {
 ### Box plot chart
 ```js
 import React from 'react';
-import { Switch } from '@patternfly/react-charts/victory'
-import { Chart, ChartAxis, ChartBoxPlot } from '@patternfly/react-charts/victory';
+import { Switch } from '@patternfly/react-core'
+import { Chart, ChartAxis, ChartBoxPlot, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartBoxPlotSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -234,7 +234,7 @@ export const ChartBoxPlotSkeleton: React.FunctionComponent = () => {
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
-import { Chart, ChartAxis, ChartBullet, ChartLegend } from '@patternfly/react-charts/victory';
+import { Chart, ChartAxis, ChartBullet, ChartLegend, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartBulletSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -288,7 +288,7 @@ export const ChartBulletSkeleton: React.FunctionComponent = () => {
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
-import { Chart, ChartAxis, ChartDonut } from '@patternfly/react-charts/victory';
+import { Chart, ChartAxis, ChartDonut, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartDonutSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -327,7 +327,7 @@ export const ChartDonutSkeleton: React.FunctionComponent = () => {
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
-import { Chart, ChartAxis, ChartDonutUtilization } from '@patternfly/react-charts/victory';
+import { Chart, ChartAxis, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -376,7 +376,7 @@ export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
-import { Chart, ChartAxis, ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
+import { Chart, ChartAxis, ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -420,7 +420,7 @@ export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
-import { Chart, ChartVoronoiContainer, ChartGroup, ChartAxis, ChartLine } from '@patternfly/react-charts/victory';
+import { Chart, ChartVoronoiContainer, ChartGroup, ChartAxis, ChartLine, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartLineSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -510,7 +510,7 @@ export const ChartLineSkeleton: React.FunctionComponent = () => {
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
-import { Chart, ChartAxis, ChartPie } from '@patternfly/react-charts/victory';
+import { Chart, ChartAxis, ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartPieSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -558,7 +558,7 @@ export const ChartPieSkeleton: React.FunctionComponent = () => {
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
-import { Chart, ChartVoronoiContainer, ChartGroup, ChartAxis, ChartScatter } from '@patternfly/react-charts/victory';
+import { Chart, ChartVoronoiContainer, ChartGroup, ChartAxis, ChartScatter, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartScatterSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -615,7 +615,7 @@ export const ChartScatterSkeleton: React.FunctionComponent = () => {
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
-import { Chart, ChartVoronoiContainer, ChartAxis, ChartStack, ChartBar } from '@patternfly/react-charts/victory';
+import { Chart, ChartVoronoiContainer, ChartAxis, ChartStack, ChartBar, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartStackSkeleton: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(true);
@@ -671,7 +671,7 @@ export const ChartStackSkeleton: React.FunctionComponent = () => {
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
-import { Chart, ChartVoronoiContainer, ChartLegend, ChartAxis, ChartThreshold, ChartGroup, ChartArea } from '@patternfly/react-charts/victory';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLegend, ChartThemeColor, ChartThreshold, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 
 export const ChartThresholdSkeleton: React.FunctionComponent = () => {
