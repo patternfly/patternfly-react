@@ -27,7 +27,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ### Basic with right aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBoxPlot } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBoxPlot, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '300px', width: '750px' }}>
   <Chart
@@ -69,7 +69,7 @@ This demonstrates how to display labels.
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBoxPlot } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBoxPlot, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '300px', width: '600px' }}>
   <Chart
