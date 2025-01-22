@@ -116,15 +116,20 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
           {position === TruncatePosition.start && <React.Fragment>&lrm;</React.Fragment>}
         </span>
       )}
-      {position === TruncatePosition.middle && content.length - trailingNumChars > minWidthCharacters ? (
+      {position === TruncatePosition.middle && content.length - trailingNumChars > minWidthCharacters && (
         <React.Fragment>
           <span ref={textRef} className={styles.truncateStart}>
             {sliceContent(content, trailingNumChars)[0]}
           </span>
           <span className={styles.truncateEnd}>{sliceContent(content, trailingNumChars)[1]}</span>
         </React.Fragment>
-      ) : (
-        content
+      )}
+      {position === TruncatePosition.middle && content.length - trailingNumChars <= minWidthCharacters && (
+        <React.Fragment>
+          <span ref={textRef} className={styles.truncateStart}>
+            {content}
+          </span>
+        </React.Fragment>
       )}
     </span>
   );
