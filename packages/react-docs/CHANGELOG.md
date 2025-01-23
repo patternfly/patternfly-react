@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.2.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.2.0-prerelease.15...@patternfly/react-docs@7.2.0-prerelease.16) (2025-01-23)
+
+### Bug Fixes
+
+- **deps:** update dependency victory to ^37.3.6 ([#11447](https://github.com/patternfly/patternfly-react/issues/11447)) ([6686381](https://github.com/patternfly/patternfly-react/commit/6686381558104f5392a1eb25c37f0bd73e9f33a6))
+
 # [7.2.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.2.0-prerelease.14...@patternfly/react-docs@7.2.0-prerelease.15) (2025-01-21)
 
 ### Bug Fixes
