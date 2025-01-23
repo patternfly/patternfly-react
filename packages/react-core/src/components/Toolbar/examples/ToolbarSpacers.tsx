@@ -46,7 +46,7 @@ export const ToolbarSpacers: React.FunctionComponent = () => {
   const groupColumnGapItems = (
     <React.Fragment>
       <ToolbarGroup variant="action-group" columnGap={{ default: 'columnGapNone' }}>
-        <ToolbarItem className="pf-m-wrap">
+        <ToolbarItem>
           <Button variant="secondary">No Column Gap</Button>
         </ToolbarItem>
         <ToolbarItem>
@@ -55,7 +55,7 @@ export const ToolbarSpacers: React.FunctionComponent = () => {
       </ToolbarGroup>
       <ToolbarItem variant="separator"></ToolbarItem>
       <ToolbarGroup variant="action-group" columnGap={{ default: 'columnGapSm' }}>
-        <ToolbarItem className="pf-m-wrap">
+        <ToolbarItem>
           <Button variant="secondary">Small Column Gap</Button>
         </ToolbarItem>
         <ToolbarItem>
@@ -64,7 +64,7 @@ export const ToolbarSpacers: React.FunctionComponent = () => {
       </ToolbarGroup>
       <ToolbarItem variant="separator"></ToolbarItem>
       <ToolbarGroup variant="action-group" columnGap={{ default: 'columnGapXl' }}>
-        <ToolbarItem className="pf-m-wrap">
+        <ToolbarItem>
           <Button variant="secondary">Extra Large Column Gap</Button>
         </ToolbarItem>
         <ToolbarItem>
