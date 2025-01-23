@@ -224,38 +224,46 @@ export const ToolbarSpacers: React.FunctionComponent = () => {
 
   return (
     <>
-      <strong>Toolbar Group Spacing:</strong>
+      <h4>Toolbar group spacing</h4>
+      <br />
+      Using gap
       <br />
       <br />
       <Toolbar id="toolbar-spacers">
         <ToolbarContent>{groupGapItems}</ToolbarContent>
       </Toolbar>
-      <strong>Using column gap</strong>
+      <br />
+      Using column gap
       <br />
       <br />
       <Toolbar id="toolbar-spacers">
         <ToolbarContent>{groupColumnGapItems}</ToolbarContent>
       </Toolbar>
-      <strong>Using row gap</strong>
+      <br />
+      Using row gap
       <br />
       <br />
       <Toolbar id="toolbar-spacers">
         <ToolbarContent>{groupRowGapItems}</ToolbarContent>
       </Toolbar>
       <br />
-      <strong>Toolbar Item Spacing:</strong>
+      <h4>Toolbar item spacing</h4>
+      <br />
+      Using gap
       <br />
       <br />
       <Toolbar id="toolbar-spacers">
         <ToolbarContent>{itemGapItems}</ToolbarContent>
       </Toolbar>
-      <strong>Using column gap</strong>
+      <br />
+      Using column gap
       <br />
       <br />
       <Toolbar id="toolbar-spacers">
         <ToolbarContent>{itemColumnGapItems}</ToolbarContent>
       </Toolbar>
-      <strong>Using row gap</strong>
+      <br />
+      Using row gap
       <br />
       <br />
       <Toolbar id="toolbar-spacers">
