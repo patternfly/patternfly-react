@@ -15,6 +15,7 @@ test('simple fileuploadfield', () => {
       filenamePlaceholder="Do something custom with this!"
       onBrowseButtonClick={browserBtnClickHandler}
       onClearButtonClick={clearBtnClickHandler}
+      isBrowseButtonDisabled={false}
       isClearButtonDisabled={false}
       isLoading={false}
       isDragActive={false}
