@@ -53,7 +53,7 @@
     "eslint-plugin-react-compiler": "19.0.0-beta-df7b47d-20241124",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-testing-library": "^6.5.0",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^11.3.0",
     "glob": "^10.4.5",
     "globals": "^15.14.0",
     "husky": "^9.1.7",

@@ -3595,7 +3595,7 @@ __metadata:
     "@patternfly/react-styles": "workspace:^"
     "@patternfly/react-tokens": "workspace:^"
     "@types/lodash": "npm:^4.17.14"
-    fs-extra: "npm:^11.2.0"
+    fs-extra: "npm:^11.3.0"
     hoist-non-react-statics: "npm:^3.3.2"
     lodash: "npm:^4.17.21"
     tslib: "npm:^2.8.1"
@@ -3685,7 +3685,7 @@ __metadata:
     case-anything: "npm:^2.1.13"
     css: "npm:^3.0.0"
     focus-trap: "npm:7.6.4"
-    fs-extra: "npm:^11.2.0"
+    fs-extra: "npm:^11.3.0"
     react-dropzone: "npm:^14.3.5"
     tslib: "npm:^2.8.1"
   peerDependencies:
@@ -3739,7 +3739,7 @@ __metadata:
     "@fortawesome/free-regular-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-solid-svg-icons": "npm:^5.15.4"
     "@patternfly/patternfly": "npm:6.1.0"
-    fs-extra: "npm:^11.2.0"
+    fs-extra: "npm:^11.3.0"
     tslib: "npm:^2.8.1"
   peerDependencies:
     react: ^17 || ^18
@@ -3790,7 +3790,7 @@ __metadata:
     eslint-plugin-react-compiler: "npm:19.0.0-beta-df7b47d-20241124"
     eslint-plugin-react-hooks: "npm:^4.6.2"
     eslint-plugin-testing-library: "npm:^6.5.0"
-    fs-extra: "npm:^11.2.0"
+    fs-extra: "npm:^11.3.0"
     glob: "npm:^10.4.5"
     globals: "npm:^15.14.0"
     husky: "npm:^9.1.7"
@@ -3824,7 +3824,7 @@ __metadata:
   dependencies:
     "@patternfly/patternfly": "npm:6.1.0"
     change-case: "npm:^5.4.4"
-    fs-extra: "npm:^11.2.0"
+    fs-extra: "npm:^11.3.0"
   languageName: unknown
   linkType: soft
 
@@ -3865,7 +3865,7 @@ __metadata:
   dependencies:
     "@patternfly/patternfly": "npm:6.1.0"
     css: "npm:^3.0.0"
-    fs-extra: "npm:^11.2.0"
+    fs-extra: "npm:^11.3.0"
   languageName: unknown
   linkType: soft
 
@@ -11097,6 +11097,17 @@ __metadata:
     jsonfile: "npm:^6.0.1"
     universalify: "npm:^2.0.0"
   checksum: 10c0/d77a9a9efe60532d2e790e938c81a02c1b24904ef7a3efb3990b835514465ba720e99a6ea56fd5e2db53b4695319b644d76d5a0e9988a2beef80aa7b1da63398
+  languageName: node
+  linkType: hard
+
+"fs-extra@npm:^11.3.0":
+  version: 11.3.0
+  resolution: "fs-extra@npm:11.3.0"
+  dependencies:
+    graceful-fs: "npm:^4.2.0"
+    jsonfile: "npm:^6.0.1"
+    universalify: "npm:^2.0.0"
+  checksum: 10c0/5f95e996186ff45463059feb115a22fb048bdaf7e487ecee8a8646c78ed8fdca63630e3077d4c16ce677051f5e60d3355a06f3cd61f3ca43f48cc58822a44d0a
   languageName: node
   linkType: hard
 
