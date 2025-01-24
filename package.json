@@ -75,7 +75,7 @@
     "sass": "^1.83.4",
     "surge": "^0.24.6",
     "ts-node": "^10.9.2",
-    "ts-patch": "^3.2.1",
+    "ts-patch": "^3.3.0",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.18.0"
   },
