@@ -1,7 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Truncate } from '../Truncate';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
+import '@testing-library/jest-dom';
 
 jest.mock('../../Tooltip', () => ({
   Tooltip: ({ content, position, children, ...props }) => (
@@ -110,6 +111,21 @@ test('renders different content when trailingNumChars is passed with middle trun
   const end = screen.getByText('an.');
 
   expect(end).toHaveClass(styles.truncateEnd);
+});
+
+test('renders full content when trailingNumChars exceeds the length of the original string using middle truncate', () => {
+  render(
+    <Truncate
+      content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'} // 75 chars
+      trailingNumChars={80}
+      position="middle"
+    />
+  );
+
+  const start = screen.getByText('Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.');
+
+  expect(start).toHaveClass(styles.truncateStart);
+  expect(start).not.toHaveClass(styles.truncateEnd);
 });
 
 test('renders tooltip position', () => {
