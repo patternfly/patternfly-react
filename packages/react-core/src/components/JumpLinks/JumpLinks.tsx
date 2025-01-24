@@ -46,6 +46,8 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   toggleAriaLabel?: string;
   /** Class for nav */
   className?: string;
+  /** Whether the navigation history should be replaced rather than pushed */
+  replaceNavHistory?: boolean;
 }
 
 // Recursively find JumpLinkItems and return an array of all their scrollNodes
@@ -92,6 +94,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   alwaysShowLabel = true,
   toggleAriaLabel = 'Toggle jump links',
   className,
+  replaceNavHistory = false,
   ...props
 }: JumpLinksProps) => {
   const hasScrollSpy = Boolean(scrollableRef || scrollableSelector);
@@ -207,7 +210,11 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                     scrollableElement.scrollTo(0, newScrollItem.offsetTop - offset);
                   }
                   newScrollItem.focus();
-                  window.history.pushState('', '', (ev.currentTarget as HTMLAnchorElement).href);
+                  if (replaceNavHistory) {
+                    window.history.replaceState('', '', (ev.currentTarget as HTMLAnchorElement).href);
+                  } else {
+                    window.history.pushState('', '', (ev.currentTarget as HTMLAnchorElement).href);
+                  }
                   ev.preventDefault();
                   setActiveIndex(itemIndex);
                 }
