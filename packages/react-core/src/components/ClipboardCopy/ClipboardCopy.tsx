@@ -89,7 +89,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** A function that is triggered on changing the text. */
   onChange?: (event: React.FormEvent, text?: string) => void;
   /** The text which is copied. */
-  children: string;
+  children: string | string[];
   /** Additional actions for inline clipboard copy. Should be wrapped with ClipboardCopyAction. */
   additionalActions?: React.ReactNode;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -103,7 +103,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
   timer = null as number;
   constructor(props: ClipboardCopyProps) {
     super(props);
-    const text = Array.isArray(this.props.children) ? this.props.children.join('') : (this.props.children as string);
+    const text = Array.isArray(this.props.children) ? this.props.children.join(' ') : (this.props.children as string);
     this.state = {
       text,
       expanded: this.props.isExpanded,
@@ -134,7 +134,9 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   componentDidUpdate = (prevProps: ClipboardCopyProps, prevState: ClipboardCopyState) => {
     if (prevProps.children !== this.props.children) {
-      const newText = this.props.children as string;
+      const newText = Array.isArray(this.props.children)
+        ? this.props.children.join(' ')
+        : (this.props.children as string);
       this.setState({ text: newText, textWhenExpanded: newText });
     }
   };
