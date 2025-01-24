@@ -12,7 +12,10 @@ hideDarkMode: true
 ---
 
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+
+<!-- Workaround for documentation-framework issue https://github.com/patternfly/patternfly-react/issues/11455
 import './sparkline.css';
+-->
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -60,6 +63,16 @@ This demonstrates an alternate way of applying tooltips using CSS overflow
 ```js
 import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+
+// Workaround for documentation-framework issue https://github.com/patternfly/patternfly-react/issues/11455
+const sheet = (() => {
+  var style = document.createElement("style");
+  document.head.appendChild(style);
+  return style.sheet;
+})();
+
+sheet.insertRule(".ws-react-charts-sparkline-overflow { margin-left: 50px; margin-top: 50px; height: 135px; }", sheet.cssRules.length);
+sheet.insertRule(".ws-react-charts-sparkline-overflow svg { overflow: visible; }", sheet.cssRules.length);
 
 <div className="ws-react-charts-sparkline-overflow">
   <div style={{ height: '100px', width: '400px' }}>

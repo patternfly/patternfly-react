@@ -193,7 +193,7 @@ This is a green bullet chart with error measure and custom axis ticks with 3 leg
 
 ```js
 import React from 'react';
-import { ChartAxis, ChartBullet } from '@patternfly/react-charts/victory';
+import { ChartAxis, ChartBullet, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '200px', width: '600px' }}>
   <ChartBullet
@@ -233,7 +233,7 @@ This is a yellow bullet chart with primary measure greater than max range.
 
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts/victory';
+import { ChartBullet, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '200px', width: '600px' }}>
   <ChartBullet
@@ -417,7 +417,7 @@ import { ChartBullet } from '@patternfly/react-charts/victory';
 ### Vertical primary measure outside max range
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts/victory';
+import { ChartBullet, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '500px', width: '500px' }}>
   <ChartBullet

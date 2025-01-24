@@ -32,7 +32,10 @@ import {
   createContainer,
   getCustomTheme
 } from '@patternfly/react-charts/victory';
+
+<!-- Workaround for documentation-framework issue https://github.com/patternfly/patternfly-react/issues/11455
 import './chart-tooltip.css';
+-->
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -611,7 +614,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartTooltip }
 This demonstrates how to adjust the tooltip position and label radius
 ```js
 import React from 'react';
-import { ChartDonut, ChartTooltip } from '@patternfly/react-charts/victory';
+import { ChartDonut, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '150px', width: '150px' }}>
   <ChartDonut
@@ -806,6 +809,16 @@ This demonstrates an alternate way of applying tooltips using CSS overflow inste
 ```js
 import React from 'react';
 import { ChartArea, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+
+// Workaround for documentation-framework issue https://github.com/patternfly/patternfly-react/issues/11455
+const sheet = (() => {
+  var style = document.createElement("style");
+  document.head.appendChild(style);
+  return style.sheet;
+})();
+
+sheet.insertRule(".ws-react-charts-tooltip-overflow { margin-left: 50px; margin-top: 50px; height: 135px; }", sheet.cssRules.length);
+sheet.insertRule(".ws-react-charts-tooltip-overflow svg { overflow: visible; }", sheet.cssRules.length);
 
 <div className="ws-react-charts-tooltip-overflow">
   <div style={{ height: '100px', width: '400px' }}>
