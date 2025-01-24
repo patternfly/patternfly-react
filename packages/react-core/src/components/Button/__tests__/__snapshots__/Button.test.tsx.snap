@@ -3,10 +3,9 @@
 exports[`Renders basic button 1`] = `
 <DocumentFragment>
   <button
-    aria-disabled="false"
     aria-label="basic button"
     class="pf-v6-c-button pf-m-primary"
-    data-ouia-component-id="OUIA-Generated-Button-primary-30"
+    data-ouia-component-id="OUIA-Generated-Button-primary-31"
     data-ouia-component-type="PF6/Button"
     data-ouia-safe="true"
     type="button"

@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { render, screen } from '@testing-library/react';
-
 import { Button, ButtonState, ButtonVariant } from '../Button';
+import styles from '@patternfly/react-styles/css/components/Button/button';
 
 Object.values(ButtonVariant).forEach((variant) => {
   if (variant !== 'primary') {
@@ -65,11 +64,6 @@ test('Does not render with class pf-m-disabled by default when isDisabled = true
   expect(screen.getByRole('button')).not.toHaveClass('pf-m-disabled');
 });
 
-test('aria-disabled is set to false when isDisabled = true', () => {
-  render(<Button isDisabled>Disabled Button</Button>);
-  expect(screen.getByRole('button')).toHaveAttribute('aria-disabled', 'false');
-});
-
 test('Renders with class pf-m-disabled when isDisabled = true and component is not a button', () => {
   render(
     <Button isDisabled component="a">
@@ -79,9 +73,28 @@ test('Renders with class pf-m-disabled when isDisabled = true and component is n
   expect(screen.getByText('Disabled Anchor Button').parentElement).toHaveClass('pf-m-disabled');
 });
 
-test('Renders with class pf-m-aria-disabled when isAriaDisabled = true', () => {
+test(`aria-disabled and class ${styles.modifiers.ariaDisabled} are not rendered when isAriaDisabled is not passed by default`, () => {
+  render(<Button>Button</Button>);
+
+  const button = screen.getByRole('button');
+  expect(button).not.toHaveAttribute('aria-disabled');
+  expect(button).not.toHaveClass(styles.modifiers.ariaDisabled);
+});
+
+test(`aria-disabled and class ${styles.modifiers.ariaDisabled} are not rendered when isDisabled is true, but isAriaDisabled is not passed`, () => {
+  render(<Button isDisabled>Disabled Button</Button>);
+
+  const button = screen.getByRole('button');
+  expect(button).not.toHaveAttribute('aria-disabled');
+  expect(button).not.toHaveClass(styles.modifiers.ariaDisabled);
+});
+
+test('Renders with class pf-m-aria-disabled and aria-disabled attribute when isAriaDisabled = true', () => {
   render(<Button isAriaDisabled>Disabled yet focusable button</Button>);
-  expect(screen.getByRole('button')).toHaveClass('pf-m-aria-disabled');
+  const button = screen.getByRole('button');
+
+  expect(button).toHaveAttribute('aria-disabled', 'true');
+  expect(button).toHaveClass('pf-m-aria-disabled');
 });
 
 test('Does not disable button when isDisabled = true and component = a', () => {
