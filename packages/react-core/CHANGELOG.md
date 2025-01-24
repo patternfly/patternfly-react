@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.9...@patternfly/react-core@6.2.0-prerelease.10) (2025-01-24)
+
+### Bug Fixes
+
+- **ClipboardCopy:** Add string[] type to children ([#11177](https://github.com/patternfly/patternfly-react/issues/11177)) ([33feb10](https://github.com/patternfly/patternfly-react/commit/33feb109b2b95bce52c8b91a46494257b46e0a3d))
+
 # [6.2.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.8...@patternfly/react-core@6.2.0-prerelease.9) (2025-01-23)
 
 **Note:** Version bump only for package @patternfly/react-core
