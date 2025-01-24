@@ -253,7 +253,6 @@ exports[`LabelGroup label group with closable category 1`] = `
       class="pf-v6-c-label-group__close"
     >
       <button
-        aria-disabled="false"
         aria-label="Close label group"
         aria-labelledby="remove_group_generated-id generated-id"
         class="pf-v6-c-button pf-m-plain pf-m-no-padding"

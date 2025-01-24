@@ -34,7 +34,6 @@ exports[`Drawer expands from bottom 1`] = `
               class="pf-v6-c-drawer__close"
             >
               <button
-                aria-disabled="false"
                 aria-label="Close drawer panel"
                 class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-4"
@@ -127,7 +126,6 @@ exports[`Drawer has resizable callback and id 1`] = `
                 class="pf-v6-c-drawer__close"
               >
                 <button
-                  aria-disabled="false"
                   aria-label="Close drawer panel"
                   class="pf-v6-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-6"
@@ -222,7 +220,6 @@ exports[`Drawer has resizable css and color variants 1`] = `
                 class="pf-v6-c-drawer__close"
               >
                 <button
-                  aria-disabled="false"
                   aria-label="Close drawer panel"
                   class="pf-v6-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-5"
@@ -351,7 +348,6 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
               class="pf-v6-c-drawer__close"
             >
               <button
-                aria-disabled="false"
                 aria-label="Close drawer panel"
                 class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-1"
@@ -425,7 +421,6 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
               class="pf-v6-c-drawer__close"
             >
               <button
-                aria-disabled="false"
                 aria-label="Close drawer panel"
                 class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-3"
@@ -499,7 +494,6 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
               class="pf-v6-c-drawer__close"
             >
               <button
-                aria-disabled="false"
                 aria-label="Close drawer panel"
                 class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-2"

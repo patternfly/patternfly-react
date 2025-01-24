@@ -13,7 +13,6 @@ exports[`MultipleFileUploadStatus renders custom class names 1`] = `
       >
         <button
           aria-controls="generated-id-content"
-          aria-disabled="false"
           aria-expanded="true"
           class="pf-v6-c-button pf-m-link"
           data-ouia-component-id="OUIA-Generated-Button-link-2"
@@ -90,7 +89,6 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
       >
         <button
           aria-controls="generated-id-content"
-          aria-disabled="false"
           aria-expanded="true"
           class="pf-v6-c-button pf-m-link"
           data-ouia-component-id="OUIA-Generated-Button-link-4"
@@ -181,7 +179,6 @@ exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
       >
         <button
           aria-controls="generated-id-content"
-          aria-disabled="false"
           aria-expanded="true"
           class="pf-v6-c-button pf-m-link"
           data-ouia-component-id="OUIA-Generated-Button-link-3"
@@ -260,7 +257,6 @@ exports[`MultipleFileUploadStatus renders with expected class names 1`] = `
       >
         <button
           aria-controls="generated-id-content"
-          aria-disabled="false"
           aria-expanded="true"
           class="pf-v6-c-button pf-m-link"
           data-ouia-component-id="OUIA-Generated-Button-link-1"
