@@ -348,7 +348,7 @@ test('Can take array of strings as children', async () => {
 
   await user.click(screen.getByRole('button', { name: 'Test CCB clicker' }));
 
-  expect(onCopyMock).toHaveBeenCalledWith(children);
+  expect(onCopyMock).toHaveBeenCalledWith(expect.any(Object), children);
 });
 
 test('Matches snapshot', () => {
