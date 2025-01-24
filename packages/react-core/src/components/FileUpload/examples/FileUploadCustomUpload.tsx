@@ -4,6 +4,7 @@ import { FileUploadField, FileUploadHelperText, HelperText, HelperTextItem, Chec
 export const CustomPreviewFileUpload: React.FunctionComponent = () => {
   const properties = [
     'filename',
+    'isBrowseButtonDisabled',
     'isClearButtonDisabled',
     'isDragActive',
     'isLoading',
@@ -15,6 +16,7 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
 
   const [value, setValue] = React.useState('');
   const [filename, setFilename] = React.useState(false);
+  const [isBrowseButtonDisabled, setIsBrowseButtonDisabled] = React.useState(true);
   const [isClearButtonDisabled, setIsClearButtonDisabled] = React.useState(true);
   const [isLoading, setIsLoading] = React.useState(false);
   const [isDragActive, setIsDragActive] = React.useState(false);
@@ -24,6 +26,7 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
   const [hasPlaceholderText, setHasPlaceholderText] = React.useState(false);
   const [checkedState, setCheckedState] = React.useState([
     filename,
+    isBrowseButtonDisabled,
     isClearButtonDisabled,
     isLoading,
     isDragActive,
@@ -42,6 +45,10 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
     switch (stateKey) {
       case 'filename':
         checked ? setFilename(true) : setFilename(false);
+        break;
+
+      case 'isBrowseButtonDisabled':
+        checked ? setIsBrowseButtonDisabled(true) : setIsBrowseButtonDisabled(false);
         break;
 
       case 'isClearButtonDisabled':
@@ -109,6 +116,7 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
         filenamePlaceholder="Do something custom with this!"
         onBrowseButtonClick={() => alert('Browse button clicked!')}
         onClearButtonClick={() => alert('Clear button clicked!')}
+        isBrowseButtonDisabled={isBrowseButtonDisabled}
         isClearButtonDisabled={isClearButtonDisabled}
         isLoading={isLoading}
         isDragActive={isDragActive}

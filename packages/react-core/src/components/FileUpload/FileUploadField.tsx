@@ -43,6 +43,8 @@ export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElemen
   id: string;
   /** Name property for the text input. */
   name?: string;
+  /** Flag to disable the browse button. */
+  isBrowseButtonDisabled?: boolean;
   /** Flag to disable the clear button. */
   isClearButtonDisabled?: boolean;
   /** Flag to show if the field is disabled. */
@@ -114,6 +116,7 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
   browseButtonText = 'Browse...',
   browseButtonAriaDescribedby,
   clearButtonText = 'Clear',
+  isBrowseButtonDisabled = false,
   isClearButtonDisabled = !filename && !value,
   containerRef = null as React.Ref<HTMLDivElement>,
   allowEditingUploadedText = false,
@@ -153,7 +156,7 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
             <Button
               variant={ButtonVariant.control}
               onClick={onBrowseButtonClick}
-              isDisabled={isDisabled}
+              isDisabled={isDisabled || isBrowseButtonDisabled}
               aria-describedby={browseButtonAriaDescribedby}
             >
               {browseButtonText}
