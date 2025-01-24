@@ -407,7 +407,6 @@ exports[`should render expandable vertical tabs 1`] = `
         class="pf-v6-c-tabs__toggle-button"
       >
         <button
-          aria-disabled="false"
           aria-labelledby="generated-id-text generated-id-button"
           class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-3"

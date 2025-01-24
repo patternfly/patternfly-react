@@ -69,7 +69,6 @@ exports[`Toolbar should render with custom label content 1`] = `
             class="pf-v6-c-toolbar__toggle"
           >
             <button
-              aria-disabled="false"
               aria-haspopup="false"
               aria-label="Show Filters"
               class="pf-v6-c-button pf-m-plain"
@@ -143,7 +142,6 @@ exports[`Toolbar should render with custom label content 1`] = `
                       class="pf-v6-c-label__actions"
                     >
                       <button
-                        aria-disabled="false"
                         aria-label="Close New"
                         class="pf-v6-c-button pf-m-plain pf-m-no-padding"
                         data-ouia-component-id="OUIA-Generated-Button-plain-2"
@@ -191,7 +189,6 @@ exports[`Toolbar should render with custom label content 1`] = `
                       class="pf-v6-c-label__actions"
                     >
                       <button
-                        aria-disabled="false"
                         aria-label="Close Pending"
                         class="pf-v6-c-button pf-m-plain pf-m-no-padding"
                         data-ouia-component-id="OUIA-Generated-Button-plain-3"
@@ -226,7 +223,6 @@ exports[`Toolbar should render with custom label content 1`] = `
               class="pf-v6-c-label-group__close"
             >
               <button
-                aria-disabled="false"
                 aria-label="Close label group"
                 aria-labelledby="remove_group_generated-id generated-id"
                 class="pf-v6-c-button pf-m-plain pf-m-no-padding"
@@ -270,7 +266,6 @@ exports[`Toolbar should render with custom label content 1`] = `
           class="pf-v6-c-toolbar__item"
         >
           <button
-            aria-disabled="false"
             class="pf-v6-c-button pf-m-link pf-m-inline"
             data-ouia-component-id="OUIA-Generated-Button-link-1"
             data-ouia-component-type="PF6/Button"
@@ -288,7 +283,6 @@ exports[`Toolbar should render with custom label content 1`] = `
           class="pf-v6-c-toolbar__item"
         >
           <button
-            aria-disabled="false"
             class="pf-v6-c-button pf-m-link pf-m-inline"
             data-ouia-component-id="OUIA-Generated-Button-link-2"
             data-ouia-component-type="PF6/Button"

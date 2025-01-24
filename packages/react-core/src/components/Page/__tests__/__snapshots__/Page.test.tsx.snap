@@ -895,7 +895,6 @@ exports[`Page Check page to verify skip to content points to main content region
       class="pf-v6-c-skip-to-content"
     >
       <a
-        aria-disabled="false"
         class="pf-v6-c-button pf-m-primary"
         data-ouia-component-id="OUIA-Generated-Button-primary-1"
         data-ouia-component-type="PF6/Button"

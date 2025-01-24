@@ -6,7 +6,6 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
     class="pf-v6-c-about-modal-box__close"
   >
     <button
-      aria-disabled="false"
       aria-label="Close Dialog"
       class="pf-v6-c-button pf-m-plain"
       data-ouia-component-id="OUIA-Generated-Button-plain-1"
@@ -42,7 +41,6 @@ exports[`AboutModalBoxCloseButton Test close button aria label 1`] = `
     class="pf-v6-c-about-modal-box__close"
   >
     <button
-      aria-disabled="false"
       aria-label="Klose Daylok"
       class="pf-v6-c-button pf-m-plain"
       data-ouia-component-id="OUIA-Generated-Button-plain-3"
@@ -78,7 +76,6 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
     class="pf-v6-c-about-modal-box__close"
   >
     <button
-      aria-disabled="false"
       aria-label="Close Dialog"
       class="pf-v6-c-button pf-m-plain"
       data-ouia-component-id="OUIA-Generated-Button-plain-2"

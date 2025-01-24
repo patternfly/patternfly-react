@@ -89,7 +89,6 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
       class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
-        aria-disabled="false"
         aria-label="buttonAriaLabel"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-8"
@@ -206,7 +205,6 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
       class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
-        aria-disabled="false"
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-2"
@@ -325,7 +323,6 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
       class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
-        aria-disabled="false"
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-4"
@@ -444,7 +441,6 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
       class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
-        aria-disabled="false"
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-5"
@@ -580,7 +576,6 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
       class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
-        aria-disabled="false"
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-7"
@@ -699,7 +694,6 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
       class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
-        aria-disabled="false"
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-3"
@@ -816,7 +810,6 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
       class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
-        aria-disabled="false"
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
@@ -935,7 +928,6 @@ exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage whe
       class="pf-v6-c-multiple-file-upload__status-item-close"
     >
       <button
-        aria-disabled="false"
         aria-label="Remove from list"
         class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-6"

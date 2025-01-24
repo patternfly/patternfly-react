@@ -6,7 +6,6 @@ exports[`MultipleFileUploadButton renders custom class names 1`] = `
     class="pf-v6-c-multiple-file-upload__upload test"
   >
     <button
-      aria-disabled="false"
       class="pf-v6-c-button pf-m-secondary"
       data-ouia-component-id="OUIA-Generated-Button-secondary-2"
       data-ouia-component-type="PF6/Button"
@@ -29,7 +28,6 @@ exports[`MultipleFileUploadButton renders with aria-label applied to the button 
     class="pf-v6-c-multiple-file-upload__upload"
   >
     <button
-      aria-disabled="false"
       aria-label="test"
       class="pf-v6-c-button pf-m-secondary"
       data-ouia-component-id="OUIA-Generated-Button-secondary-3"
@@ -53,7 +51,6 @@ exports[`MultipleFileUploadButton renders with expected class names 1`] = `
     class="pf-v6-c-multiple-file-upload__upload"
   >
     <button
-      aria-disabled="false"
       class="pf-v6-c-button pf-m-secondary"
       data-ouia-component-id="OUIA-Generated-Button-secondary-1"
       data-ouia-component-type="PF6/Button"
@@ -76,7 +73,6 @@ exports[`MultipleFileUploadButton renders with label applied to the button 1`] =
     class="pf-v6-c-multiple-file-upload__upload"
   >
     <button
-      aria-disabled="false"
       class="pf-v6-c-button pf-m-secondary"
       data-ouia-component-id="OUIA-Generated-Button-secondary-4"
       data-ouia-component-type="PF6/Button"
