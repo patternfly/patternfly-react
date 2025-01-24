@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.10...@patternfly/react-core@6.2.0-prerelease.11) (2025-01-24)
+
+### Bug Fixes
+
+- **FileUploadField:** Allow browse button disable ([#11476](https://github.com/patternfly/patternfly-react/issues/11476)) ([0d31dcd](https://github.com/patternfly/patternfly-react/commit/0d31dcd160f74e3d0018a588730157303a2323a9))
+- **Truncate:** fix text duplication in middle position ([#11417](https://github.com/patternfly/patternfly-react/issues/11417)) ([711a561](https://github.com/patternfly/patternfly-react/commit/711a56192d8dcfd754439b6aff86ea733e42e7d0))
+
 # [6.2.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.9...@patternfly/react-core@6.2.0-prerelease.10) (2025-01-24)
 
 ### Bug Fixes
