@@ -22,7 +22,6 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
     >
       <button
         aria-controls="content-id"
-        aria-disabled="false"
         aria-expanded="true"
         class="pf-v6-c-button pf-m-link"
         data-ouia-component-id="OUIA-Generated-Button-link-5"
@@ -73,7 +72,6 @@ exports[`Disclosure ExpandableSection 1`] = `
     >
       <button
         aria-controls="content-id"
-        aria-disabled="false"
         class="pf-v6-c-button pf-m-link"
         data-ouia-component-id="OUIA-Generated-Button-link-6"
         data-ouia-component-type="PF6/Button"
@@ -127,7 +125,6 @@ exports[`ExpandableSection 1`] = `
     >
       <button
         aria-controls="content-id"
-        aria-disabled="false"
         class="pf-v6-c-button pf-m-link"
         data-ouia-component-id="OUIA-Generated-Button-link-1"
         data-ouia-component-type="PF6/Button"
@@ -181,7 +178,6 @@ exports[`Renders ExpandableSection expanded 1`] = `
     >
       <button
         aria-controls="content-id"
-        aria-disabled="false"
         aria-expanded="true"
         class="pf-v6-c-button pf-m-link"
         data-ouia-component-id="OUIA-Generated-Button-link-2"
@@ -235,7 +231,6 @@ exports[`Renders ExpandableSection indented 1`] = `
     >
       <button
         aria-controls="content-id"
-        aria-disabled="false"
         aria-expanded="true"
         class="pf-v6-c-button pf-m-link"
         data-ouia-component-id="OUIA-Generated-Button-link-7"
@@ -289,7 +284,6 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
     >
       <button
         aria-controls="content-id"
-        aria-disabled="false"
         class="pf-v6-c-button pf-m-link"
         data-ouia-component-id="OUIA-Generated-Button-link-4"
         data-ouia-component-type="PF6/Button"

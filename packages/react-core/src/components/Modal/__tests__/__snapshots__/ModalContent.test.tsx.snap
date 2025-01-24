@@ -101,7 +101,6 @@ exports[`Modal Content Test with onclose 1`] = `
           class="pf-v6-c-modal-box__close"
         >
           <button
-            aria-disabled="false"
             aria-label="Close"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-1"

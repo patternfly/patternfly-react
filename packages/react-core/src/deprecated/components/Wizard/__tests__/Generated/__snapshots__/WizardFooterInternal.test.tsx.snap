@@ -15,7 +15,6 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
           class="pf-v6-c-action-list__item"
         >
           <button
-            aria-disabled="false"
             class="pf-v6-c-button pf-m-secondary"
             data-ouia-component-id="OUIA-Generated-Button-secondary-1"
             data-ouia-component-type="PF6/Button"
@@ -36,7 +35,6 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
           class="pf-v6-c-action-list__item"
         >
           <button
-            aria-disabled="false"
             class="pf-v6-c-button pf-m-primary"
             data-ouia-component-id="OUIA-Generated-Button-primary-1"
             data-ouia-component-type="PF6/Button"
@@ -60,7 +58,6 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
           class="pf-v6-c-action-list__item"
         >
           <button
-            aria-disabled="false"
             class="pf-v6-c-button pf-m-link"
             data-ouia-component-id="OUIA-Generated-Button-link-1"
             data-ouia-component-type="PF6/Button"

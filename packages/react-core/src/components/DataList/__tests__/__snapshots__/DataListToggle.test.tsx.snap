@@ -10,7 +10,6 @@ exports[`Renders to match snapshot 1`] = `
     >
       <button
         aria-controls="false"
-        aria-disabled="false"
         aria-expanded="false"
         aria-label="Details"
         aria-labelledby=" ex-toggle2"

@@ -6,7 +6,6 @@ exports[`PopoverCloseButton should match snapshot (auto-generated) 1`] = `
     class="pf-v6-c-popover__close"
   >
     <button
-      aria-disabled="false"
       aria-label="string"
       class="pf-v6-c-button pf-m-plain"
       data-ouia-component-id="OUIA-Generated-Button-plain-1"
