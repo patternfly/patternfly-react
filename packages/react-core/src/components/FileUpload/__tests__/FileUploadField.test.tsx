@@ -1,6 +1,7 @@
 import { FileUploadField } from '../FileUploadField';
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 test('simple fileuploadfield', () => {
   const browserBtnClickHandler = jest.fn();
@@ -33,7 +34,7 @@ test('Renders without aria-describedby on browse button by default', () => {
   expect(screen.getByRole('button', { name: 'Upload' })).not.toHaveAccessibleDescription();
 });
 
-test('Renders without aria-describedby on browse button by default', () => {
+test('Renders with aria-describedby on browse button', () => {
   render(
     <FileUploadField id="file-upload-field" browseButtonText="Upload" browseButtonAriaDescribedby="helper-text">
       <div id="helper-text">Helper text</div>
@@ -41,4 +42,16 @@ test('Renders without aria-describedby on browse button by default', () => {
   );
 
   expect(screen.getByRole('button', { name: 'Upload' })).toHaveAccessibleDescription('Helper text');
+});
+
+test('Browse button is enabled by default', () => {
+  render(<FileUploadField id="file-upload-field" browseButtonText="Upload" />);
+
+  expect(screen.getByRole('button', { name: 'Upload' })).not.toHaveAttribute('disabled');
+});
+
+test('Browse button is disabled with isBrowseButtonDisabled prop', () => {
+  render(<FileUploadField id="file-upload-field" browseButtonText="Upload" isBrowseButtonDisabled={true} />);
+
+  expect(screen.getByRole('button', { name: 'Upload' })).toHaveAttribute('disabled');
 });
