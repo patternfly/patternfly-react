@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.12...@patternfly/react-core@6.2.0-prerelease.13) (2025-01-27)
+
+### Bug Fixes
+
+- **TextArea:** added missing modifier class ([#11482](https://github.com/patternfly/patternfly-react/issues/11482)) ([cba24a1](https://github.com/patternfly/patternfly-react/commit/cba24a1eda8cf789692be158e2bdcf1a174c7ece))
+
 # [6.2.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.11...@patternfly/react-core@6.2.0-prerelease.12) (2025-01-27)
 
 ### Features
