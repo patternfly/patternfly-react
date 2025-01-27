@@ -74,7 +74,7 @@ exports[`simple fileuploadfield 1`] = `
       class="pf-v6-c-file-upload__file-details"
     >
       <span
-        class="pf-v6-c-form-control pf-m-resize-vertical"
+        class="pf-v6-c-form-control pf-m-textarea pf-m-resize-vertical"
       >
         <textarea
           aria-invalid="false"

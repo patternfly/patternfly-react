@@ -69,9 +69,12 @@ test('Text area is not read only by default', () => {
   expect(screen.getByRole('textbox')).not.toHaveAttribute('readonly');
 });
 
-test('Renders text area with default class name only', () => {
+test('Renders text area with default class names only', () => {
   render(<TextArea aria-label="validated textarea" />);
-  expect(screen.getByRole('textbox').parentElement).toHaveClass(formControlStyles.formControl);
+
+  const formControlWrapper = screen.getByRole('textbox').parentElement;
+  expect(formControlWrapper).toHaveClass(formControlStyles.formControl);
+  expect(formControlWrapper).toHaveClass(formControlStyles.modifiers.textarea);
 });
 
 test('Renders validated text area with success className', () => {

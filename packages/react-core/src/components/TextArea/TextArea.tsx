@@ -129,6 +129,7 @@ class TextAreaBase extends React.Component<TextAreaProps> {
       <span
         className={css(
           styles.formControl,
+          styles.modifiers.textarea,
           readOnlyVariant && styles.modifiers.readonly,
           readOnlyVariant === 'plain' && styles.modifiers.plain,
           resizeOrientation !== 'none' && styles.modifiers[orientation],
