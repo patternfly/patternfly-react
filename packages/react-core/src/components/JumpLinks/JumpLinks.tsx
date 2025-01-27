@@ -2,13 +2,12 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
 import sidebarStyles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
-import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
-import { JumpLinksList } from './JumpLinksList';
-import { formatBreakpointMods } from '../../helpers/util';
-import { Button } from '../Button';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import cssToggleDisplayVar from '@patternfly/react-tokens/dist/esm/c_jump_links__toggle_Display';
-import { canUseDOM } from '../../helpers/util';
+import { Button } from '../Button';
+import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
+import { JumpLinksList } from './JumpLinksList';
+import { canUseDOM, formatBreakpointMods } from '../../helpers/util';
 
 export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
@@ -46,6 +45,8 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   toggleAriaLabel?: string;
   /** Class for nav */
   className?: string;
+  /** Whether the current entry in the navigation history should be replaced when a JumpLinksItem is clicked. By default a new entry will be pushed to the navigation history. */
+  shouldReplaceNavHistory?: boolean;
 }
 
 // Recursively find JumpLinkItems and return an array of all their scrollNodes
@@ -92,6 +93,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   alwaysShowLabel = true,
   toggleAriaLabel = 'Toggle jump links',
   className,
+  shouldReplaceNavHistory = false,
   ...props
 }: JumpLinksProps) => {
   const hasScrollSpy = Boolean(scrollableRef || scrollableSelector);
@@ -207,7 +209,11 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                     scrollableElement.scrollTo(0, newScrollItem.offsetTop - offset);
                   }
                   newScrollItem.focus();
-                  window.history.pushState('', '', (ev.currentTarget as HTMLAnchorElement).href);
+                  if (shouldReplaceNavHistory) {
+                    window.history.replaceState('', '', (ev.currentTarget as HTMLAnchorElement).href);
+                  } else {
+                    window.history.pushState('', '', (ev.currentTarget as HTMLAnchorElement).href);
+                  }
                   ev.preventDefault();
                   setActiveIndex(itemIndex);
                 }
