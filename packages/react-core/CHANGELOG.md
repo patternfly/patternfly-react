@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.11...@patternfly/react-core@6.2.0-prerelease.12) (2025-01-27)
+
+### Features
+
+- **JumpLinks:** Add replaceNavHistory option ([#11473](https://github.com/patternfly/patternfly-react/issues/11473)) ([8594b4c](https://github.com/patternfly/patternfly-react/commit/8594b4c15b044d8abdaf5c5af82ec85cc18701cb))
+
 # [6.2.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.10...@patternfly/react-core@6.2.0-prerelease.11) (2025-01-24)
 
 ### Bug Fixes
