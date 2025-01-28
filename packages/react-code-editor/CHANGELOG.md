@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.2.0-prerelease.14...@patternfly/react-code-editor@6.2.0-prerelease.15) (2025-01-28)
+
+### Bug Fixes
+
+- **Button:** updated rendering of aria-disabled attribute ([#11478](https://github.com/patternfly/patternfly-react/issues/11478)) ([058b14f](https://github.com/patternfly/patternfly-react/commit/058b14fc93233860cd604cdfb60f7c666cc0d436))
+
 # [6.2.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.2.0-prerelease.13...@patternfly/react-code-editor@6.2.0-prerelease.14) (2025-01-27)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
