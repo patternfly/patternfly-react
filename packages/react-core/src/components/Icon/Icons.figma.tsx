@@ -1,1789 +1,2290 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import figma from '@figma/code-connect';
 
-import AccessibleIconIcon from '@patternfly/react-icons/icons/accessible-icon-icon/dist/esm/icons/accessible-icon-icon';
-import AccusoftIcon from '@patternfly/react-icons/icons/accusoft-icon/dist/esm/icons/accusoft-icon';
-import AcquisitionsIncorporatedIcon from '@patternfly/react-icons/icons/acquisitions-incorporated-icon/dist/esm/icons/acquisitions-incorporated-icon';
-import AdIcon from '@patternfly/react-icons/icons/ad-icon/dist/esm/icons/ad-icon';
-import AddCircleOIcon from '@patternfly/react-icons/icons/add-circle-o-icon/dist/esm/icons/add-circle-o-icon';
-import AddressBookIcon from '@patternfly/react-icons/icons/address-book-icon/dist/esm/icons/address-book-icon';
-import AddressCardIcon from '@patternfly/react-icons/icons/address-card-icon/dist/esm/icons/address-card-icon';
-import AdjustIcon from '@patternfly/react-icons/icons/adjust-icon/dist/esm/icons/adjust-icon';
-import AdnIcon from '@patternfly/react-icons/icons/adn-icon/dist/esm/icons/adn-icon';
-import AdversalIcon from '@patternfly/react-icons/icons/adversal-icon/dist/esm/icons/adversal-icon';
-import AffiliatethemeIcon from '@patternfly/react-icons/icons/affiliatetheme-icon/dist/esm/icons/affiliatetheme-icon';
-import AirFreshenerIcon from '@patternfly/react-icons/icons/air-freshener-icon/dist/esm/icons/air-freshener-icon';
-import AirbnbIcon from '@patternfly/react-icons/icons/airbnb-icon/dist/esm/icons/airbnb-icon';
-import AlgoliaIcon from '@patternfly/react-icons/icons/algolia-icon/dist/esm/icons/algolia-icon';
-import AlignCenterIcon from '@patternfly/react-icons/icons/align-center-icon/dist/esm/icons/align-center-icon';
-import AlignJustifyIcon from '@patternfly/react-icons/icons/align-justify-icon/dist/esm/icons/align-justify-icon';
-import AlignLeftIcon from '@patternfly/react-icons/icons/align-left-icon/dist/esm/icons/align-left-icon';
-import AlignRightIcon from '@patternfly/react-icons/icons/align-right-icon/dist/esm/icons/align-right-icon';
-import AlipayIcon from '@patternfly/react-icons/icons/alipay-icon/dist/esm/icons/alipay-icon';
-import AllergiesIcon from '@patternfly/react-icons/icons/allergies-icon/dist/esm/icons/allergies-icon';
-import AmazonIcon from '@patternfly/react-icons/icons/amazon-icon/dist/esm/icons/amazon-icon';
-import AmazonPayIcon from '@patternfly/react-icons/icons/amazon-pay-icon/dist/esm/icons/amazon-pay-icon';
-import AmbulanceIcon from '@patternfly/react-icons/icons/ambulance-icon/dist/esm/icons/ambulance-icon';
-import AmericanSignLanguageInterpretingIcon from '@patternfly/react-icons/icons/american-sign-language-interpreting-icon/dist/esm/icons/american-sign-language-interpreting-icon';
-import AmiliaIcon from '@patternfly/react-icons/icons/amilia-icon/dist/esm/icons/amilia-icon';
-import AnchorIcon from '@patternfly/react-icons/icons/anchor-icon/dist/esm/icons/anchor-icon';
-import AndroidIcon from '@patternfly/react-icons/icons/android-icon/dist/esm/icons/android-icon';
-import AngellistIcon from '@patternfly/react-icons/icons/angellist-icon/dist/esm/icons/angellist-icon';
-import AngleDoubleDownIcon from '@patternfly/react-icons/icons/angle-double-down-icon/dist/esm/icons/angle-double-down-icon';
-import AngleDoubleLeftIcon from '@patternfly/react-icons/icons/angle-double-left-icon/dist/esm/icons/angle-double-left-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/icons/angle-double-right-icon/dist/esm/icons/angle-double-right-icon';
-import AngleDoubleUpIcon from '@patternfly/react-icons/icons/angle-double-up-icon/dist/esm/icons/angle-double-up-icon';
-import AngleDownIcon from '@patternfly/react-icons/icons/angle-down-icon/dist/esm/icons/angle-down-icon';
-import AngleLeftIcon from '@patternfly/react-icons/icons/angle-left-icon/dist/esm/icons/angle-left-icon';
-import AngleRightIcon from '@patternfly/react-icons/icons/angle-right-icon/dist/esm/icons/angle-right-icon';
-import AngleUpIcon from '@patternfly/react-icons/icons/angle-up-icon/dist/esm/icons/angle-up-icon';
-import AngryIcon from '@patternfly/react-icons/icons/angry-icon/dist/esm/icons/angry-icon';
-import AngrycreativeIcon from '@patternfly/react-icons/icons/angrycreative-icon/dist/esm/icons/angrycreative-icon';
-import AngularIcon from '@patternfly/react-icons/icons/angular-icon/dist/esm/icons/angular-icon';
-import AnkhIcon from '@patternfly/react-icons/icons/ankh-icon/dist/esm/icons/ankh-icon';
-import AnsibeTowerIcon from '@patternfly/react-icons/icons/ansibe-tower-icon/dist/esm/icons/ansibe-tower-icon';
-import AnsibleTowerIcon from '@patternfly/react-icons/icons/ansible-tower-icon/dist/esm/icons/ansible-tower-icon';
-import AppStoreIcon from '@patternfly/react-icons/icons/app-store-icon/dist/esm/icons/app-store-icon';
-import AppStoreIosIcon from '@patternfly/react-icons/icons/app-store-ios-icon/dist/esm/icons/app-store-ios-icon';
-import ApperIcon from '@patternfly/react-icons/icons/apper-icon/dist/esm/icons/apper-icon';
-import AppleAltIcon from '@patternfly/react-icons/icons/apple-alt-icon/dist/esm/icons/apple-alt-icon';
-import AppleIcon from '@patternfly/react-icons/icons/apple-icon/dist/esm/icons/apple-icon';
-import ApplePayIcon from '@patternfly/react-icons/icons/apple-pay-icon/dist/esm/icons/apple-pay-icon';
-import ApplicationsIcon from '@patternfly/react-icons/icons/applications-icon/dist/esm/icons/applications-icon';
-import ArchiveIcon from '@patternfly/react-icons/icons/archive-icon/dist/esm/icons/archive-icon';
-import ArchwayIcon from '@patternfly/react-icons/icons/archway-icon/dist/esm/icons/archway-icon';
-import ArrowAltCircleDownIcon from '@patternfly/react-icons/icons/arrow-alt-circle-down-icon/dist/esm/icons/arrow-alt-circle-down-icon';
-import ArrowAltCircleLeftIcon from '@patternfly/react-icons/icons/arrow-alt-circle-left-icon/dist/esm/icons/arrow-alt-circle-left-icon';
-import ArrowAltCircleRightIcon from '@patternfly/react-icons/icons/arrow-alt-circle-right-icon/dist/esm/icons/arrow-alt-circle-right-icon';
-import ArrowAltCircleUpIcon from '@patternfly/react-icons/icons/arrow-alt-circle-up-icon/dist/esm/icons/arrow-alt-circle-up-icon';
-import ArrowCircleDownIcon from '@patternfly/react-icons/icons/arrow-circle-down-icon/dist/esm/icons/arrow-circle-down-icon';
-import ArrowCircleLeftIcon from '@patternfly/react-icons/icons/arrow-circle-left-icon/dist/esm/icons/arrow-circle-left-icon';
-import ArrowCircleRightIcon from '@patternfly/react-icons/icons/arrow-circle-right-icon/dist/esm/icons/arrow-circle-right-icon';
-import ArrowCircleUpIcon from '@patternfly/react-icons/icons/arrow-circle-up-icon/dist/esm/icons/arrow-circle-up-icon';
-import ArrowDownIcon from '@patternfly/react-icons/icons/arrow-down-icon/dist/esm/icons/arrow-down-icon';
-import ArrowIcon from '@patternfly/react-icons/icons/arrow-icon/dist/esm/icons/arrow-icon';
-import ArrowLeftIcon from '@patternfly/react-icons/icons/arrow-left-icon/dist/esm/icons/arrow-left-icon';
-import ArrowRightIcon from '@patternfly/react-icons/icons/arrow-right-icon/dist/esm/icons/arrow-right-icon';
-import ArrowUpIcon from '@patternfly/react-icons/icons/arrow-up-icon/dist/esm/icons/arrow-up-icon';
-import ArrowsAltHIcon from '@patternfly/react-icons/icons/arrows-alt-h-icon/dist/esm/icons/arrows-alt-h-icon';
-import ArrowsAltIcon from '@patternfly/react-icons/icons/arrows-alt-icon/dist/esm/icons/arrows-alt-icon';
-import ArrowsAltVIcon from '@patternfly/react-icons/icons/arrows-alt-v-icon/dist/esm/icons/arrows-alt-v-icon';
-import ArtstationIcon from '@patternfly/react-icons/icons/artstation-icon/dist/esm/icons/artstation-icon';
-import AsleepIcon from '@patternfly/react-icons/icons/asleep-icon/dist/esm/icons/asleep-icon';
-import AssistiveListeningSystemsIcon from '@patternfly/react-icons/icons/assistive-listening-systems-icon/dist/esm/icons/assistive-listening-systems-icon';
-import AsteriskIcon from '@patternfly/react-icons/icons/asterisk-icon/dist/esm/icons/asterisk-icon';
-import AsymmetrikIcon from '@patternfly/react-icons/icons/asymmetrik-icon/dist/esm/icons/asymmetrik-icon';
-import AtIcon from '@patternfly/react-icons/icons/at-icon/dist/esm/icons/at-icon';
-import AtlasIcon from '@patternfly/react-icons/icons/atlas-icon/dist/esm/icons/atlas-icon';
-import AtlassianIcon from '@patternfly/react-icons/icons/atlassian-icon/dist/esm/icons/atlassian-icon';
-import AtomIcon from '@patternfly/react-icons/icons/atom-icon/dist/esm/icons/atom-icon';
-import AttentionBellIcon from '@patternfly/react-icons/icons/attention-bell-icon/dist/esm/icons/attention-bell-icon';
-import AudibleIcon from '@patternfly/react-icons/icons/audible-icon/dist/esm/icons/audible-icon';
-import AudioDescriptionIcon from '@patternfly/react-icons/icons/audio-description-icon/dist/esm/icons/audio-description-icon';
-import AutomationIcon from '@patternfly/react-icons/icons/automation-icon/dist/esm/icons/automation-icon';
-import AutoprefixerIcon from '@patternfly/react-icons/icons/autoprefixer-icon/dist/esm/icons/autoprefixer-icon';
-import AvianexIcon from '@patternfly/react-icons/icons/avianex-icon/dist/esm/icons/avianex-icon';
-import AviatoIcon from '@patternfly/react-icons/icons/aviato-icon/dist/esm/icons/aviato-icon';
-import AwardIcon from '@patternfly/react-icons/icons/award-icon/dist/esm/icons/award-icon';
-import AwsIcon from '@patternfly/react-icons/icons/aws-icon/dist/esm/icons/aws-icon';
-import AzureIcon from '@patternfly/react-icons/icons/azure-icon/dist/esm/icons/azure-icon';
-import BabyCarriageIcon from '@patternfly/react-icons/icons/baby-carriage-icon/dist/esm/icons/baby-carriage-icon';
-import BabyIcon from '@patternfly/react-icons/icons/baby-icon/dist/esm/icons/baby-icon';
-import BackspaceIcon from '@patternfly/react-icons/icons/backspace-icon/dist/esm/icons/backspace-icon';
-import BackwardIcon from '@patternfly/react-icons/icons/backward-icon/dist/esm/icons/backward-icon';
-import BaconIcon from '@patternfly/react-icons/icons/bacon-icon/dist/esm/icons/bacon-icon';
-import BacteriaIcon from '@patternfly/react-icons/icons/bacteria-icon/dist/esm/icons/bacteria-icon';
-import BacteriumIcon from '@patternfly/react-icons/icons/bacterium-icon/dist/esm/icons/bacterium-icon';
-import BahaiIcon from '@patternfly/react-icons/icons/bahai-icon/dist/esm/icons/bahai-icon';
-import BalanceScaleIcon from '@patternfly/react-icons/icons/balance-scale-icon/dist/esm/icons/balance-scale-icon';
-import BalanceScaleLeftIcon from '@patternfly/react-icons/icons/balance-scale-left-icon/dist/esm/icons/balance-scale-left-icon';
-import BalanceScaleRightIcon from '@patternfly/react-icons/icons/balance-scale-right-icon/dist/esm/icons/balance-scale-right-icon';
-import BanIcon from '@patternfly/react-icons/icons/ban-icon/dist/esm/icons/ban-icon';
-import BandAidIcon from '@patternfly/react-icons/icons/band-aid-icon/dist/esm/icons/band-aid-icon';
-import BandcampIcon from '@patternfly/react-icons/icons/bandcamp-icon/dist/esm/icons/bandcamp-icon';
-import BarcodeIcon from '@patternfly/react-icons/icons/barcode-icon/dist/esm/icons/barcode-icon';
-import BarsIcon from '@patternfly/react-icons/icons/bars-icon/dist/esm/icons/bars-icon';
-import BaseballBallIcon from '@patternfly/react-icons/icons/baseball-ball-icon/dist/esm/icons/baseball-ball-icon';
-import BasketballBallIcon from '@patternfly/react-icons/icons/basketball-ball-icon/dist/esm/icons/basketball-ball-icon';
-import BathIcon from '@patternfly/react-icons/icons/bath-icon/dist/esm/icons/bath-icon';
-import BatteryEmptyIcon from '@patternfly/react-icons/icons/battery-empty-icon/dist/esm/icons/battery-empty-icon';
-import BatteryFullIcon from '@patternfly/react-icons/icons/battery-full-icon/dist/esm/icons/battery-full-icon';
-import BatteryHalfIcon from '@patternfly/react-icons/icons/battery-half-icon/dist/esm/icons/battery-half-icon';
-import BatteryQuarterIcon from '@patternfly/react-icons/icons/battery-quarter-icon/dist/esm/icons/battery-quarter-icon';
-import BatteryThreeQuartersIcon from '@patternfly/react-icons/icons/battery-three-quarters-icon/dist/esm/icons/battery-three-quarters-icon';
-import BattleNetIcon from '@patternfly/react-icons/icons/battle-net-icon/dist/esm/icons/battle-net-icon';
-import BedIcon from '@patternfly/react-icons/icons/bed-icon/dist/esm/icons/bed-icon';
-import BeerIcon from '@patternfly/react-icons/icons/beer-icon/dist/esm/icons/beer-icon';
-import BehanceIcon from '@patternfly/react-icons/icons/behance-icon/dist/esm/icons/behance-icon';
-import BehanceSquareIcon from '@patternfly/react-icons/icons/behance-square-icon/dist/esm/icons/behance-square-icon';
-import BellIcon from '@patternfly/react-icons/icons/bell-icon/dist/esm/icons/bell-icon';
-import BellSlashIcon from '@patternfly/react-icons/icons/bell-slash-icon/dist/esm/icons/bell-slash-icon';
-import BezierCurveIcon from '@patternfly/react-icons/icons/bezier-curve-icon/dist/esm/icons/bezier-curve-icon';
-import BibleIcon from '@patternfly/react-icons/icons/bible-icon/dist/esm/icons/bible-icon';
-import BicycleIcon from '@patternfly/react-icons/icons/bicycle-icon/dist/esm/icons/bicycle-icon';
-import BikingIcon from '@patternfly/react-icons/icons/biking-icon/dist/esm/icons/biking-icon';
-import BimobjectIcon from '@patternfly/react-icons/icons/bimobject-icon/dist/esm/icons/bimobject-icon';
-import BinocularsIcon from '@patternfly/react-icons/icons/binoculars-icon/dist/esm/icons/binoculars-icon';
-import BiohazardIcon from '@patternfly/react-icons/icons/biohazard-icon/dist/esm/icons/biohazard-icon';
-import BirthdayCakeIcon from '@patternfly/react-icons/icons/birthday-cake-icon/dist/esm/icons/birthday-cake-icon';
-import BitbucketIcon from '@patternfly/react-icons/icons/bitbucket-icon/dist/esm/icons/bitbucket-icon';
-import BitcoinIcon from '@patternfly/react-icons/icons/bitcoin-icon/dist/esm/icons/bitcoin-icon';
-import BityIcon from '@patternfly/react-icons/icons/bity-icon/dist/esm/icons/bity-icon';
-import BlackTieIcon from '@patternfly/react-icons/icons/black-tie-icon/dist/esm/icons/black-tie-icon';
-import BlackberryIcon from '@patternfly/react-icons/icons/blackberry-icon/dist/esm/icons/blackberry-icon';
-import BlenderIcon from '@patternfly/react-icons/icons/blender-icon/dist/esm/icons/blender-icon';
-import BlenderPhoneIcon from '@patternfly/react-icons/icons/blender-phone-icon/dist/esm/icons/blender-phone-icon';
-import BlindIcon from '@patternfly/react-icons/icons/blind-icon/dist/esm/icons/blind-icon';
-import BlogIcon from '@patternfly/react-icons/icons/blog-icon/dist/esm/icons/blog-icon';
-import BloggerBIcon from '@patternfly/react-icons/icons/blogger-b-icon/dist/esm/icons/blogger-b-icon';
-import BloggerIcon from '@patternfly/react-icons/icons/blogger-icon/dist/esm/icons/blogger-icon';
-import BlueprintIcon from '@patternfly/react-icons/icons/blueprint-icon/dist/esm/icons/blueprint-icon';
-import BluetoothBIcon from '@patternfly/react-icons/icons/bluetooth-b-icon/dist/esm/icons/bluetooth-b-icon';
-import BluetoothIcon from '@patternfly/react-icons/icons/bluetooth-icon/dist/esm/icons/bluetooth-icon';
-import BoldIcon from '@patternfly/react-icons/icons/bold-icon/dist/esm/icons/bold-icon';
-import BoltIcon from '@patternfly/react-icons/icons/bolt-icon/dist/esm/icons/bolt-icon';
-import BombIcon from '@patternfly/react-icons/icons/bomb-icon/dist/esm/icons/bomb-icon';
-import BoneIcon from '@patternfly/react-icons/icons/bone-icon/dist/esm/icons/bone-icon';
-import BongIcon from '@patternfly/react-icons/icons/bong-icon/dist/esm/icons/bong-icon';
-import BookDeadIcon from '@patternfly/react-icons/icons/book-dead-icon/dist/esm/icons/book-dead-icon';
-import BookIcon from '@patternfly/react-icons/icons/book-icon/dist/esm/icons/book-icon';
-import BookMedicalIcon from '@patternfly/react-icons/icons/book-medical-icon/dist/esm/icons/book-medical-icon';
-import BookOpenIcon from '@patternfly/react-icons/icons/book-open-icon/dist/esm/icons/book-open-icon';
-import BookReaderIcon from '@patternfly/react-icons/icons/book-reader-icon/dist/esm/icons/book-reader-icon';
-import BookmarkIcon from '@patternfly/react-icons/icons/bookmark-icon/dist/esm/icons/bookmark-icon';
-import BootstrapIcon from '@patternfly/react-icons/icons/bootstrap-icon/dist/esm/icons/bootstrap-icon';
-import BorderAllIcon from '@patternfly/react-icons/icons/border-all-icon/dist/esm/icons/border-all-icon';
-import BorderNoneIcon from '@patternfly/react-icons/icons/border-none-icon/dist/esm/icons/border-none-icon';
-import BorderStyleIcon from '@patternfly/react-icons/icons/border-style-icon/dist/esm/icons/border-style-icon';
-import BowlingBallIcon from '@patternfly/react-icons/icons/bowling-ball-icon/dist/esm/icons/bowling-ball-icon';
-import BoxIcon from '@patternfly/react-icons/icons/box-icon/dist/esm/icons/box-icon';
-import BoxOpenIcon from '@patternfly/react-icons/icons/box-open-icon/dist/esm/icons/box-open-icon';
-import BoxTissueIcon from '@patternfly/react-icons/icons/box-tissue-icon/dist/esm/icons/box-tissue-icon';
-import BoxesIcon from '@patternfly/react-icons/icons/boxes-icon/dist/esm/icons/boxes-icon';
-import BrailleIcon from '@patternfly/react-icons/icons/braille-icon/dist/esm/icons/braille-icon';
-import BrainIcon from '@patternfly/react-icons/icons/brain-icon/dist/esm/icons/brain-icon';
-import BreadSliceIcon from '@patternfly/react-icons/icons/bread-slice-icon/dist/esm/icons/bread-slice-icon';
-import BriefcaseIcon from '@patternfly/react-icons/icons/briefcase-icon/dist/esm/icons/briefcase-icon';
-import BriefcaseMedicalIcon from '@patternfly/react-icons/icons/briefcase-medical-icon/dist/esm/icons/briefcase-medical-icon';
-import BroadcastTowerIcon from '@patternfly/react-icons/icons/broadcast-tower-icon/dist/esm/icons/broadcast-tower-icon';
-import BroomIcon from '@patternfly/react-icons/icons/broom-icon/dist/esm/icons/broom-icon';
-import BrushIcon from '@patternfly/react-icons/icons/brush-icon/dist/esm/icons/brush-icon';
-import BtcIcon from '@patternfly/react-icons/icons/btc-icon/dist/esm/icons/btc-icon';
-import BufferIcon from '@patternfly/react-icons/icons/buffer-icon/dist/esm/icons/buffer-icon';
-import BugIcon from '@patternfly/react-icons/icons/bug-icon/dist/esm/icons/bug-icon';
-import BuildIcon from '@patternfly/react-icons/icons/build-icon/dist/esm/icons/build-icon';
-import BuilderImageIcon from '@patternfly/react-icons/icons/builder-image-icon/dist/esm/icons/builder-image-icon';
-import BuildingIcon from '@patternfly/react-icons/icons/building-icon/dist/esm/icons/building-icon';
-import BullhornIcon from '@patternfly/react-icons/icons/bullhorn-icon/dist/esm/icons/bullhorn-icon';
-import BullseyeIcon from '@patternfly/react-icons/icons/bullseye-icon/dist/esm/icons/bullseye-icon';
-import BundleIcon from '@patternfly/react-icons/icons/bundle-icon/dist/esm/icons/bundle-icon';
-import BurnIcon from '@patternfly/react-icons/icons/burn-icon/dist/esm/icons/burn-icon';
-import BuromobelexperteIcon from '@patternfly/react-icons/icons/buromobelexperte-icon/dist/esm/icons/buromobelexperte-icon';
-import BusAltIcon from '@patternfly/react-icons/icons/bus-alt-icon/dist/esm/icons/bus-alt-icon';
-import BusIcon from '@patternfly/react-icons/icons/bus-icon/dist/esm/icons/bus-icon';
-import BusinessTimeIcon from '@patternfly/react-icons/icons/business-time-icon/dist/esm/icons/business-time-icon';
-import BuyNLargeIcon from '@patternfly/react-icons/icons/buy-n-large-icon/dist/esm/icons/buy-n-large-icon';
-import BuyselladsIcon from '@patternfly/react-icons/icons/buysellads-icon/dist/esm/icons/buysellads-icon';
-import CalculatorIcon from '@patternfly/react-icons/icons/calculator-icon/dist/esm/icons/calculator-icon';
-import CalendarAltIcon from '@patternfly/react-icons/icons/calendar-alt-icon/dist/esm/icons/calendar-alt-icon';
-import CalendarCheckIcon from '@patternfly/react-icons/icons/calendar-check-icon/dist/esm/icons/calendar-check-icon';
-import CalendarDayIcon from '@patternfly/react-icons/icons/calendar-day-icon/dist/esm/icons/calendar-day-icon';
-import CalendarIcon from '@patternfly/react-icons/icons/calendar-icon/dist/esm/icons/calendar-icon';
-import CalendarMinusIcon from '@patternfly/react-icons/icons/calendar-minus-icon/dist/esm/icons/calendar-minus-icon';
-import CalendarPlusIcon from '@patternfly/react-icons/icons/calendar-plus-icon/dist/esm/icons/calendar-plus-icon';
-import CalendarTimesIcon from '@patternfly/react-icons/icons/calendar-times-icon/dist/esm/icons/calendar-times-icon';
-import CalendarWeekIcon from '@patternfly/react-icons/icons/calendar-week-icon/dist/esm/icons/calendar-week-icon';
-import CameraIcon from '@patternfly/react-icons/icons/camera-icon/dist/esm/icons/camera-icon';
-import CameraRetroIcon from '@patternfly/react-icons/icons/camera-retro-icon/dist/esm/icons/camera-retro-icon';
-import CampgroundIcon from '@patternfly/react-icons/icons/campground-icon/dist/esm/icons/campground-icon';
-import CanadianMapleLeafIcon from '@patternfly/react-icons/icons/canadian-maple-leaf-icon/dist/esm/icons/canadian-maple-leaf-icon';
-import CandyCaneIcon from '@patternfly/react-icons/icons/candy-cane-icon/dist/esm/icons/candy-cane-icon';
-import CannabisIcon from '@patternfly/react-icons/icons/cannabis-icon/dist/esm/icons/cannabis-icon';
-import CapsulesIcon from '@patternfly/react-icons/icons/capsules-icon/dist/esm/icons/capsules-icon';
-import CarAltIcon from '@patternfly/react-icons/icons/car-alt-icon/dist/esm/icons/car-alt-icon';
-import CarBatteryIcon from '@patternfly/react-icons/icons/car-battery-icon/dist/esm/icons/car-battery-icon';
-import CarCrashIcon from '@patternfly/react-icons/icons/car-crash-icon/dist/esm/icons/car-crash-icon';
-import CarIcon from '@patternfly/react-icons/icons/car-icon/dist/esm/icons/car-icon';
-import CarSideIcon from '@patternfly/react-icons/icons/car-side-icon/dist/esm/icons/car-side-icon';
-import CaravanIcon from '@patternfly/react-icons/icons/caravan-icon/dist/esm/icons/caravan-icon';
-import CaretDownIcon from '@patternfly/react-icons/icons/caret-down-icon/dist/esm/icons/caret-down-icon';
-import CaretLeftIcon from '@patternfly/react-icons/icons/caret-left-icon/dist/esm/icons/caret-left-icon';
-import CaretRightIcon from '@patternfly/react-icons/icons/caret-right-icon/dist/esm/icons/caret-right-icon';
-import CaretSquareDownIcon from '@patternfly/react-icons/icons/caret-square-down-icon/dist/esm/icons/caret-square-down-icon';
-import CaretSquareLeftIcon from '@patternfly/react-icons/icons/caret-square-left-icon/dist/esm/icons/caret-square-left-icon';
-import CaretSquareRightIcon from '@patternfly/react-icons/icons/caret-square-right-icon/dist/esm/icons/caret-square-right-icon';
-import CaretSquareUpIcon from '@patternfly/react-icons/icons/caret-square-up-icon/dist/esm/icons/caret-square-up-icon';
-import CaretUpIcon from '@patternfly/react-icons/icons/caret-up-icon/dist/esm/icons/caret-up-icon';
-import CarrotIcon from '@patternfly/react-icons/icons/carrot-icon/dist/esm/icons/carrot-icon';
-import CartArrowDownIcon from '@patternfly/react-icons/icons/cart-arrow-down-icon/dist/esm/icons/cart-arrow-down-icon';
-import CartPlusIcon from '@patternfly/react-icons/icons/cart-plus-icon/dist/esm/icons/cart-plus-icon';
-import CashRegisterIcon from '@patternfly/react-icons/icons/cash-register-icon/dist/esm/icons/cash-register-icon';
-import CatIcon from '@patternfly/react-icons/icons/cat-icon/dist/esm/icons/cat-icon';
-import CatalogIcon from '@patternfly/react-icons/icons/catalog-icon/dist/esm/icons/catalog-icon';
-import CcAmazonPayIcon from '@patternfly/react-icons/icons/cc-amazon-pay-icon/dist/esm/icons/cc-amazon-pay-icon';
-import CcAmexIcon from '@patternfly/react-icons/icons/cc-amex-icon/dist/esm/icons/cc-amex-icon';
-import CcApplePayIcon from '@patternfly/react-icons/icons/cc-apple-pay-icon/dist/esm/icons/cc-apple-pay-icon';
-import CcDinersClubIcon from '@patternfly/react-icons/icons/cc-diners-club-icon/dist/esm/icons/cc-diners-club-icon';
-import CcDiscoverIcon from '@patternfly/react-icons/icons/cc-discover-icon/dist/esm/icons/cc-discover-icon';
-import CcJcbIcon from '@patternfly/react-icons/icons/cc-jcb-icon/dist/esm/icons/cc-jcb-icon';
-import CcMastercardIcon from '@patternfly/react-icons/icons/cc-mastercard-icon/dist/esm/icons/cc-mastercard-icon';
-import CcPaypalIcon from '@patternfly/react-icons/icons/cc-paypal-icon/dist/esm/icons/cc-paypal-icon';
-import CcStripeIcon from '@patternfly/react-icons/icons/cc-stripe-icon/dist/esm/icons/cc-stripe-icon';
-import CcVisaIcon from '@patternfly/react-icons/icons/cc-visa-icon/dist/esm/icons/cc-visa-icon';
-import CentercodeIcon from '@patternfly/react-icons/icons/centercode-icon/dist/esm/icons/centercode-icon';
-import CentosIcon from '@patternfly/react-icons/icons/centos-icon/dist/esm/icons/centos-icon';
-import CertificateIcon from '@patternfly/react-icons/icons/certificate-icon/dist/esm/icons/certificate-icon';
-import ChairIcon from '@patternfly/react-icons/icons/chair-icon/dist/esm/icons/chair-icon';
-import ChalkboardIcon from '@patternfly/react-icons/icons/chalkboard-icon/dist/esm/icons/chalkboard-icon';
-import ChalkboardTeacherIcon from '@patternfly/react-icons/icons/chalkboard-teacher-icon/dist/esm/icons/chalkboard-teacher-icon';
-import ChargingStationIcon from '@patternfly/react-icons/icons/charging-station-icon/dist/esm/icons/charging-station-icon';
-import ChartAreaIcon from '@patternfly/react-icons/icons/chart-area-icon/dist/esm/icons/chart-area-icon';
-import ChartBarIcon from '@patternfly/react-icons/icons/chart-bar-icon/dist/esm/icons/chart-bar-icon';
-import ChartLineIcon from '@patternfly/react-icons/icons/chart-line-icon/dist/esm/icons/chart-line-icon';
-import ChartPieIcon from '@patternfly/react-icons/icons/chart-pie-icon/dist/esm/icons/chart-pie-icon';
-import ChartSpikeIcon from '@patternfly/react-icons/icons/chart-spike-icon/dist/esm/icons/chart-spike-icon';
-import ChatIcon from '@patternfly/react-icons/icons/chat-icon/dist/esm/icons/chat-icon';
-import CheckCircleIcon from '@patternfly/react-icons/icons/check-circle-icon/dist/esm/icons/check-circle-icon';
-import CheckDoubleIcon from '@patternfly/react-icons/icons/check-double-icon/dist/esm/icons/check-double-icon';
-import CheckIcon from '@patternfly/react-icons/icons/check-icon/dist/esm/icons/check-icon';
-import CheckSquareIcon from '@patternfly/react-icons/icons/check-square-icon/dist/esm/icons/check-square-icon';
-import CheeseIcon from '@patternfly/react-icons/icons/cheese-icon/dist/esm/icons/cheese-icon';
-import ChessBishopIcon from '@patternfly/react-icons/icons/chess-bishop-icon/dist/esm/icons/chess-bishop-icon';
-import ChessBoardIcon from '@patternfly/react-icons/icons/chess-board-icon/dist/esm/icons/chess-board-icon';
-import ChessIcon from '@patternfly/react-icons/icons/chess-icon/dist/esm/icons/chess-icon';
-import ChessKingIcon from '@patternfly/react-icons/icons/chess-king-icon/dist/esm/icons/chess-king-icon';
-import ChessKnightIcon from '@patternfly/react-icons/icons/chess-knight-icon/dist/esm/icons/chess-knight-icon';
-import ChessPawnIcon from '@patternfly/react-icons/icons/chess-pawn-icon/dist/esm/icons/chess-pawn-icon';
-import ChessQueenIcon from '@patternfly/react-icons/icons/chess-queen-icon/dist/esm/icons/chess-queen-icon';
-import ChessRookIcon from '@patternfly/react-icons/icons/chess-rook-icon/dist/esm/icons/chess-rook-icon';
-import ChevronCircleDownIcon from '@patternfly/react-icons/icons/chevron-circle-down-icon/dist/esm/icons/chevron-circle-down-icon';
-import ChevronCircleLeftIcon from '@patternfly/react-icons/icons/chevron-circle-left-icon/dist/esm/icons/chevron-circle-left-icon';
-import ChevronCircleRightIcon from '@patternfly/react-icons/icons/chevron-circle-right-icon/dist/esm/icons/chevron-circle-right-icon';
-import ChevronCircleUpIcon from '@patternfly/react-icons/icons/chevron-circle-up-icon/dist/esm/icons/chevron-circle-up-icon';
-import ChevronDownIcon from '@patternfly/react-icons/icons/chevron-down-icon/dist/esm/icons/chevron-down-icon';
-import ChevronLeftIcon from '@patternfly/react-icons/icons/chevron-left-icon/dist/esm/icons/chevron-left-icon';
-import ChevronRightIcon from '@patternfly/react-icons/icons/chevron-right-icon/dist/esm/icons/chevron-right-icon';
-import ChevronUpIcon from '@patternfly/react-icons/icons/chevron-up-icon/dist/esm/icons/chevron-up-icon';
-import ChildIcon from '@patternfly/react-icons/icons/child-icon/dist/esm/icons/child-icon';
-import ChromeIcon from '@patternfly/react-icons/icons/chrome-icon/dist/esm/icons/chrome-icon';
-import ChromecastIcon from '@patternfly/react-icons/icons/chromecast-icon/dist/esm/icons/chromecast-icon';
-import ChurchIcon from '@patternfly/react-icons/icons/church-icon/dist/esm/icons/church-icon';
-import CircleIcon from '@patternfly/react-icons/icons/circle-icon/dist/esm/icons/circle-icon';
-import CircleNotchIcon from '@patternfly/react-icons/icons/circle-notch-icon/dist/esm/icons/circle-notch-icon';
-import CityIcon from '@patternfly/react-icons/icons/city-icon/dist/esm/icons/city-icon';
-import ClinicMedicalIcon from '@patternfly/react-icons/icons/clinic-medical-icon/dist/esm/icons/clinic-medical-icon';
-import ClipboardCheckIcon from '@patternfly/react-icons/icons/clipboard-check-icon/dist/esm/icons/clipboard-check-icon';
-import ClipboardIcon from '@patternfly/react-icons/icons/clipboard-icon/dist/esm/icons/clipboard-icon';
-import ClipboardListIcon from '@patternfly/react-icons/icons/clipboard-list-icon/dist/esm/icons/clipboard-list-icon';
-import ClockIcon from '@patternfly/react-icons/icons/clock-icon/dist/esm/icons/clock-icon';
-import CloneIcon from '@patternfly/react-icons/icons/clone-icon/dist/esm/icons/clone-icon';
-import CloseIcon from '@patternfly/react-icons/icons/close-icon/dist/esm/icons/close-icon';
-import ClosedCaptioningIcon from '@patternfly/react-icons/icons/closed-captioning-icon/dist/esm/icons/closed-captioning-icon';
-import CloudCircleIcon from '@patternfly/react-icons/icons/cloud-circle-icon/dist/esm/icons/cloud-circle-icon';
-import CloudDownloadAltIcon from '@patternfly/react-icons/icons/cloud-download-alt-icon/dist/esm/icons/cloud-download-alt-icon';
-import CloudIcon from '@patternfly/react-icons/icons/cloud-icon/dist/esm/icons/cloud-icon';
-import CloudMeatballIcon from '@patternfly/react-icons/icons/cloud-meatball-icon/dist/esm/icons/cloud-meatball-icon';
-import CloudMoonIcon from '@patternfly/react-icons/icons/cloud-moon-icon/dist/esm/icons/cloud-moon-icon';
-import CloudMoonRainIcon from '@patternfly/react-icons/icons/cloud-moon-rain-icon/dist/esm/icons/cloud-moon-rain-icon';
-import CloudRainIcon from '@patternfly/react-icons/icons/cloud-rain-icon/dist/esm/icons/cloud-rain-icon';
-import CloudSecurityIcon from '@patternfly/react-icons/icons/cloud-security-icon/dist/esm/icons/cloud-security-icon';
-import CloudServerIcon from '@patternfly/react-icons/icons/cloud-server-icon/dist/esm/icons/cloud-server-icon';
-import CloudShowersHeavyIcon from '@patternfly/react-icons/icons/cloud-showers-heavy-icon/dist/esm/icons/cloud-showers-heavy-icon';
-import CloudSunIcon from '@patternfly/react-icons/icons/cloud-sun-icon/dist/esm/icons/cloud-sun-icon';
-import CloudSunRainIcon from '@patternfly/react-icons/icons/cloud-sun-rain-icon/dist/esm/icons/cloud-sun-rain-icon';
-import CloudTenantIcon from '@patternfly/react-icons/icons/cloud-tenant-icon/dist/esm/icons/cloud-tenant-icon';
-import CloudUploadAltIcon from '@patternfly/react-icons/icons/cloud-upload-alt-icon/dist/esm/icons/cloud-upload-alt-icon';
-import CloudflareIcon from '@patternfly/react-icons/icons/cloudflare-icon/dist/esm/icons/cloudflare-icon';
-import CloudscaleIcon from '@patternfly/react-icons/icons/cloudscale-icon/dist/esm/icons/cloudscale-icon';
-import CloudsmithIcon from '@patternfly/react-icons/icons/cloudsmith-icon/dist/esm/icons/cloudsmith-icon';
-import CloudversifyIcon from '@patternfly/react-icons/icons/cloudversify-icon/dist/esm/icons/cloudversify-icon';
-import ClusterIcon from '@patternfly/react-icons/icons/cluster-icon/dist/esm/icons/cluster-icon';
-import CocktailIcon from '@patternfly/react-icons/icons/cocktail-icon/dist/esm/icons/cocktail-icon';
-import CodeBranchIcon from '@patternfly/react-icons/icons/code-branch-icon/dist/esm/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/icons/code-icon/dist/esm/icons/code-icon';
-import CodepenIcon from '@patternfly/react-icons/icons/codepen-icon/dist/esm/icons/codepen-icon';
-import CodiepieIcon from '@patternfly/react-icons/icons/codiepie-icon/dist/esm/icons/codiepie-icon';
-import CoffeeIcon from '@patternfly/react-icons/icons/coffee-icon/dist/esm/icons/coffee-icon';
-import CogIcon from '@patternfly/react-icons/icons/cog-icon/dist/esm/icons/cog-icon';
-import CogsIcon from '@patternfly/react-icons/icons/cogs-icon/dist/esm/icons/cogs-icon';
-import CoinsIcon from '@patternfly/react-icons/icons/coins-icon/dist/esm/icons/coins-icon';
-import ColumnsIcon from '@patternfly/react-icons/icons/columns-icon/dist/esm/icons/columns-icon';
-import CommentAltIcon from '@patternfly/react-icons/icons/comment-alt-icon/dist/esm/icons/comment-alt-icon';
-import CommentDollarIcon from '@patternfly/react-icons/icons/comment-dollar-icon/dist/esm/icons/comment-dollar-icon';
-import CommentDotsIcon from '@patternfly/react-icons/icons/comment-dots-icon/dist/esm/icons/comment-dots-icon';
-import CommentIcon from '@patternfly/react-icons/icons/comment-icon/dist/esm/icons/comment-icon';
-import CommentMedicalIcon from '@patternfly/react-icons/icons/comment-medical-icon/dist/esm/icons/comment-medical-icon';
-import CommentSlashIcon from '@patternfly/react-icons/icons/comment-slash-icon/dist/esm/icons/comment-slash-icon';
-import CommentsDollarIcon from '@patternfly/react-icons/icons/comments-dollar-icon/dist/esm/icons/comments-dollar-icon';
-import CommentsIcon from '@patternfly/react-icons/icons/comments-icon/dist/esm/icons/comments-icon';
-import CompactDiscIcon from '@patternfly/react-icons/icons/compact-disc-icon/dist/esm/icons/compact-disc-icon';
-import CompassIcon from '@patternfly/react-icons/icons/compass-icon/dist/esm/icons/compass-icon';
-import CompressAltIcon from '@patternfly/react-icons/icons/compress-alt-icon/dist/esm/icons/compress-alt-icon';
-import CompressArrowsAltIcon from '@patternfly/react-icons/icons/compress-arrows-alt-icon/dist/esm/icons/compress-arrows-alt-icon';
-import CompressIcon from '@patternfly/react-icons/icons/compress-icon/dist/esm/icons/compress-icon';
-import ConciergeBellIcon from '@patternfly/react-icons/icons/concierge-bell-icon/dist/esm/icons/concierge-bell-icon';
-import ConfluenceIcon from '@patternfly/react-icons/icons/confluence-icon/dist/esm/icons/confluence-icon';
-import ConnectdevelopIcon from '@patternfly/react-icons/icons/connectdevelop-icon/dist/esm/icons/connectdevelop-icon';
-import ConnectedIcon from '@patternfly/react-icons/icons/connected-icon/dist/esm/icons/connected-icon';
-import ContainerNodeIcon from '@patternfly/react-icons/icons/container-node-icon/dist/esm/icons/container-node-icon';
-import ContaoIcon from '@patternfly/react-icons/icons/contao-icon/dist/esm/icons/contao-icon';
-import CookieBiteIcon from '@patternfly/react-icons/icons/cookie-bite-icon/dist/esm/icons/cookie-bite-icon';
-import CookieIcon from '@patternfly/react-icons/icons/cookie-icon/dist/esm/icons/cookie-icon';
-import CopyIcon from '@patternfly/react-icons/icons/copy-icon/dist/esm/icons/copy-icon';
-import CopyrightIcon from '@patternfly/react-icons/icons/copyright-icon/dist/esm/icons/copyright-icon';
-import CottonBureauIcon from '@patternfly/react-icons/icons/cotton-bureau-icon/dist/esm/icons/cotton-bureau-icon';
-import CouchIcon from '@patternfly/react-icons/icons/couch-icon/dist/esm/icons/couch-icon';
-import CpanelIcon from '@patternfly/react-icons/icons/cpanel-icon/dist/esm/icons/cpanel-icon';
-import CpuIcon from '@patternfly/react-icons/icons/cpu-icon/dist/esm/icons/cpu-icon';
-import CreativeCommonsByIcon from '@patternfly/react-icons/icons/creative-commons-by-icon/dist/esm/icons/creative-commons-by-icon';
-import CreativeCommonsIcon from '@patternfly/react-icons/icons/creative-commons-icon/dist/esm/icons/creative-commons-icon';
-import CreativeCommonsNcEuIcon from '@patternfly/react-icons/icons/creative-commons-nc-eu-icon/dist/esm/icons/creative-commons-nc-eu-icon';
-import CreativeCommonsNcIcon from '@patternfly/react-icons/icons/creative-commons-nc-icon/dist/esm/icons/creative-commons-nc-icon';
-import CreativeCommonsNcJpIcon from '@patternfly/react-icons/icons/creative-commons-nc-jp-icon/dist/esm/icons/creative-commons-nc-jp-icon';
-import CreativeCommonsNdIcon from '@patternfly/react-icons/icons/creative-commons-nd-icon/dist/esm/icons/creative-commons-nd-icon';
-import CreativeCommonsPdAltIcon from '@patternfly/react-icons/icons/creative-commons-pd-alt-icon/dist/esm/icons/creative-commons-pd-alt-icon';
-import CreativeCommonsPdIcon from '@patternfly/react-icons/icons/creative-commons-pd-icon/dist/esm/icons/creative-commons-pd-icon';
-import CreativeCommonsRemixIcon from '@patternfly/react-icons/icons/creative-commons-remix-icon/dist/esm/icons/creative-commons-remix-icon';
-import CreativeCommonsSaIcon from '@patternfly/react-icons/icons/creative-commons-sa-icon/dist/esm/icons/creative-commons-sa-icon';
-import CreativeCommonsSamplingIcon from '@patternfly/react-icons/icons/creative-commons-sampling-icon/dist/esm/icons/creative-commons-sampling-icon';
-import CreativeCommonsSamplingPlusIcon from '@patternfly/react-icons/icons/creative-commons-sampling-plus-icon/dist/esm/icons/creative-commons-sampling-plus-icon';
-import CreativeCommonsShareIcon from '@patternfly/react-icons/icons/creative-commons-share-icon/dist/esm/icons/creative-commons-share-icon';
-import CreativeCommonsZeroIcon from '@patternfly/react-icons/icons/creative-commons-zero-icon/dist/esm/icons/creative-commons-zero-icon';
-import CreditCardIcon from '@patternfly/react-icons/icons/credit-card-icon/dist/esm/icons/credit-card-icon';
-import CriticalRiskIcon from '@patternfly/react-icons/icons/critical-risk-icon/dist/esm/icons/critical-risk-icon';
-import CriticalRoleIcon from '@patternfly/react-icons/icons/critical-role-icon/dist/esm/icons/critical-role-icon';
-import CropAltIcon from '@patternfly/react-icons/icons/crop-alt-icon/dist/esm/icons/crop-alt-icon';
-import CropIcon from '@patternfly/react-icons/icons/crop-icon/dist/esm/icons/crop-icon';
-import CrossIcon from '@patternfly/react-icons/icons/cross-icon/dist/esm/icons/cross-icon';
-import CrosshairsIcon from '@patternfly/react-icons/icons/crosshairs-icon/dist/esm/icons/crosshairs-icon';
-import CrowIcon from '@patternfly/react-icons/icons/crow-icon/dist/esm/icons/crow-icon';
-import CrownIcon from '@patternfly/react-icons/icons/crown-icon/dist/esm/icons/crown-icon';
-import CrutchIcon from '@patternfly/react-icons/icons/crutch-icon/dist/esm/icons/crutch-icon';
-import Css3AltIcon from '@patternfly/react-icons/icons/css3-alt-icon/dist/esm/icons/css3-alt-icon';
-import Css3AltIconConfig from '@patternfly/react-icons/icons/css3-alt-icon/dist/esm/icons/css3-alt-icon-config';
-import Css3Icon from '@patternfly/react-icons/icons/css3-icon/dist/esm/icons/css3-icon';
-import Css3IconConfig from '@patternfly/react-icons/icons/css3-icon/dist/esm/icons/css3-icon-config';
-import CubeIcon from '@patternfly/react-icons/icons/cube-icon/dist/esm/icons/cube-icon';
-import CubesIcon from '@patternfly/react-icons/icons/cubes-icon/dist/esm/icons/cubes-icon';
-import CutIcon from '@patternfly/react-icons/icons/cut-icon/dist/esm/icons/cut-icon';
-import CuttlefishIcon from '@patternfly/react-icons/icons/cuttlefish-icon/dist/esm/icons/cuttlefish-icon';
-import DAndDBeyondIcon from '@patternfly/react-icons/icons/d-and-d-beyond-icon/dist/esm/icons/d-and-d-beyond-icon';
-import DAndDIcon from '@patternfly/react-icons/icons/d-and-d-icon/dist/esm/icons/d-and-d-icon';
-import DailymotionIcon from '@patternfly/react-icons/icons/dailymotion-icon/dist/esm/icons/dailymotion-icon';
-import DashcubeIcon from '@patternfly/react-icons/icons/dashcube-icon/dist/esm/icons/dashcube-icon';
-import DataProcessorIcon from '@patternfly/react-icons/icons/data-processor-icon/dist/esm/icons/data-processor-icon';
-import DataSinkIcon from '@patternfly/react-icons/icons/data-sink-icon/dist/esm/icons/data-sink-icon';
-import DataSourceIcon from '@patternfly/react-icons/icons/data-source-icon/dist/esm/icons/data-source-icon';
-import DatabaseIcon from '@patternfly/react-icons/icons/database-icon/dist/esm/icons/database-icon';
-import DeafIcon from '@patternfly/react-icons/icons/deaf-icon/dist/esm/icons/deaf-icon';
-import DeezerIcon from '@patternfly/react-icons/icons/deezer-icon/dist/esm/icons/deezer-icon';
-import DegradedIcon from '@patternfly/react-icons/icons/degraded-icon/dist/esm/icons/degraded-icon';
-import DeliciousIcon from '@patternfly/react-icons/icons/delicious-icon/dist/esm/icons/delicious-icon';
-import DemocratIcon from '@patternfly/react-icons/icons/democrat-icon/dist/esm/icons/democrat-icon';
-import DeploydogIcon from '@patternfly/react-icons/icons/deploydog-icon/dist/esm/icons/deploydog-icon';
-import DeskproIcon from '@patternfly/react-icons/icons/deskpro-icon/dist/esm/icons/deskpro-icon';
-import DesktopIcon from '@patternfly/react-icons/icons/desktop-icon/dist/esm/icons/desktop-icon';
-import DevIcon from '@patternfly/react-icons/icons/dev-icon/dist/esm/icons/dev-icon';
-import DeviantartIcon from '@patternfly/react-icons/icons/deviantart-icon/dist/esm/icons/deviantart-icon';
-import DharmachakraIcon from '@patternfly/react-icons/icons/dharmachakra-icon/dist/esm/icons/dharmachakra-icon';
-import DhlIcon from '@patternfly/react-icons/icons/dhl-icon/dist/esm/icons/dhl-icon';
-import DiagnosesIcon from '@patternfly/react-icons/icons/diagnoses-icon/dist/esm/icons/diagnoses-icon';
-import DiasporaIcon from '@patternfly/react-icons/icons/diaspora-icon/dist/esm/icons/diaspora-icon';
-import DiceD20Icon from '@patternfly/react-icons/icons/dice-d20-icon/dist/esm/icons/dice-d20-icon';
-import DiceD20IconConfig from '@patternfly/react-icons/icons/dice-d20-icon/dist/esm/icons/dice-d20-icon-config';
-import DiceD6Icon from '@patternfly/react-icons/icons/dice-d6-icon/dist/esm/icons/dice-d6-icon';
-import DiceD6IconConfig from '@patternfly/react-icons/icons/dice-d6-icon/dist/esm/icons/dice-d6-icon-config';
-import DiceFiveIcon from '@patternfly/react-icons/icons/dice-five-icon/dist/esm/icons/dice-five-icon';
-import DiceFourIcon from '@patternfly/react-icons/icons/dice-four-icon/dist/esm/icons/dice-four-icon';
-import DiceIcon from '@patternfly/react-icons/icons/dice-icon/dist/esm/icons/dice-icon';
-import DiceOneIcon from '@patternfly/react-icons/icons/dice-one-icon/dist/esm/icons/dice-one-icon';
-import DiceSixIcon from '@patternfly/react-icons/icons/dice-six-icon/dist/esm/icons/dice-six-icon';
-import DiceThreeIcon from '@patternfly/react-icons/icons/dice-three-icon/dist/esm/icons/dice-three-icon';
-import DiceTwoIcon from '@patternfly/react-icons/icons/dice-two-icon/dist/esm/icons/dice-two-icon';
-import DiggIcon from '@patternfly/react-icons/icons/digg-icon/dist/esm/icons/digg-icon';
-import DigitalOceanIcon from '@patternfly/react-icons/icons/digital-ocean-icon/dist/esm/icons/digital-ocean-icon';
-import DigitalTachographIcon from '@patternfly/react-icons/icons/digital-tachograph-icon/dist/esm/icons/digital-tachograph-icon';
-import DirectionsIcon from '@patternfly/react-icons/icons/directions-icon/dist/esm/icons/directions-icon';
-import DisconnectedIcon from '@patternfly/react-icons/icons/disconnected-icon/dist/esm/icons/disconnected-icon';
-import DiscordIcon from '@patternfly/react-icons/icons/discord-icon/dist/esm/icons/discord-icon';
-import DiscourseIcon from '@patternfly/react-icons/icons/discourse-icon/dist/esm/icons/discourse-icon';
-import DiseaseIcon from '@patternfly/react-icons/icons/disease-icon/dist/esm/icons/disease-icon';
-import DivideIcon from '@patternfly/react-icons/icons/divide-icon/dist/esm/icons/divide-icon';
-import DizzyIcon from '@patternfly/react-icons/icons/dizzy-icon/dist/esm/icons/dizzy-icon';
-import DnaIcon from '@patternfly/react-icons/icons/dna-icon/dist/esm/icons/dna-icon';
-import DochubIcon from '@patternfly/react-icons/icons/dochub-icon/dist/esm/icons/dochub-icon';
-import DockerIcon from '@patternfly/react-icons/icons/docker-icon/dist/esm/icons/docker-icon';
-import DogIcon from '@patternfly/react-icons/icons/dog-icon/dist/esm/icons/dog-icon';
-import DollarSignIcon from '@patternfly/react-icons/icons/dollar-sign-icon/dist/esm/icons/dollar-sign-icon';
-import DollyFlatbedIcon from '@patternfly/react-icons/icons/dolly-flatbed-icon/dist/esm/icons/dolly-flatbed-icon';
-import DollyIcon from '@patternfly/react-icons/icons/dolly-icon/dist/esm/icons/dolly-icon';
-import DomainIcon from '@patternfly/react-icons/icons/domain-icon/dist/esm/icons/domain-icon';
-import DonateIcon from '@patternfly/react-icons/icons/donate-icon/dist/esm/icons/donate-icon';
-import DoorClosedIcon from '@patternfly/react-icons/icons/door-closed-icon/dist/esm/icons/door-closed-icon';
-import DoorOpenIcon from '@patternfly/react-icons/icons/door-open-icon/dist/esm/icons/door-open-icon';
-import DotCircleIcon from '@patternfly/react-icons/icons/dot-circle-icon/dist/esm/icons/dot-circle-icon';
-import DoveIcon from '@patternfly/react-icons/icons/dove-icon/dist/esm/icons/dove-icon';
-import DownloadIcon from '@patternfly/react-icons/icons/download-icon/dist/esm/icons/download-icon';
-import Draft2digitalIcon from '@patternfly/react-icons/icons/draft2digital-icon/dist/esm/icons/draft2digital-icon';
-import Draft2digitalIconConfig from '@patternfly/react-icons/icons/draft2digital-icon/dist/esm/icons/draft2digital-icon-config';
-import DraftingCompassIcon from '@patternfly/react-icons/icons/drafting-compass-icon/dist/esm/icons/drafting-compass-icon';
-import DragonIcon from '@patternfly/react-icons/icons/dragon-icon/dist/esm/icons/dragon-icon';
-import DrawPolygonIcon from '@patternfly/react-icons/icons/draw-polygon-icon/dist/esm/icons/draw-polygon-icon';
-import DribbbleIcon from '@patternfly/react-icons/icons/dribbble-icon/dist/esm/icons/dribbble-icon';
-import DribbbleSquareIcon from '@patternfly/react-icons/icons/dribbble-square-icon/dist/esm/icons/dribbble-square-icon';
-import DropboxIcon from '@patternfly/react-icons/icons/dropbox-icon/dist/esm/icons/dropbox-icon';
-import DrumIcon from '@patternfly/react-icons/icons/drum-icon/dist/esm/icons/drum-icon';
-import DrumSteelpanIcon from '@patternfly/react-icons/icons/drum-steelpan-icon/dist/esm/icons/drum-steelpan-icon';
-import DrumstickBiteIcon from '@patternfly/react-icons/icons/drumstick-bite-icon/dist/esm/icons/drumstick-bite-icon';
-import DrupalIcon from '@patternfly/react-icons/icons/drupal-icon/dist/esm/icons/drupal-icon';
-import DumbbellIcon from '@patternfly/react-icons/icons/dumbbell-icon/dist/esm/icons/dumbbell-icon';
-import DumpsterFireIcon from '@patternfly/react-icons/icons/dumpster-fire-icon/dist/esm/icons/dumpster-fire-icon';
-import DumpsterIcon from '@patternfly/react-icons/icons/dumpster-icon/dist/esm/icons/dumpster-icon';
-import DungeonIcon from '@patternfly/react-icons/icons/dungeon-icon/dist/esm/icons/dungeon-icon';
-import DyalogIcon from '@patternfly/react-icons/icons/dyalog-icon/dist/esm/icons/dyalog-icon';
-import EarlybirdsIcon from '@patternfly/react-icons/icons/earlybirds-icon/dist/esm/icons/earlybirds-icon';
-import EbayIcon from '@patternfly/react-icons/icons/ebay-icon/dist/esm/icons/ebay-icon';
-import EdgeIcon from '@patternfly/react-icons/icons/edge-icon/dist/esm/icons/edge-icon';
-import EdgeLegacyIcon from '@patternfly/react-icons/icons/edge-legacy-icon/dist/esm/icons/edge-legacy-icon';
-import EditAltIcon from '@patternfly/react-icons/icons/edit-alt-icon/dist/esm/icons/edit-alt-icon';
-import EditIcon from '@patternfly/react-icons/icons/edit-icon/dist/esm/icons/edit-icon';
-import EggIcon from '@patternfly/react-icons/icons/egg-icon/dist/esm/icons/egg-icon';
-import EjectIcon from '@patternfly/react-icons/icons/eject-icon/dist/esm/icons/eject-icon';
-import ElementorIcon from '@patternfly/react-icons/icons/elementor-icon/dist/esm/icons/elementor-icon';
-import EllipsisHIcon from '@patternfly/react-icons/icons/ellipsis-h-icon/dist/esm/icons/ellipsis-h-icon';
-import EllipsisVIcon from '@patternfly/react-icons/icons/ellipsis-v-icon/dist/esm/icons/ellipsis-v-icon';
-import ElloIcon from '@patternfly/react-icons/icons/ello-icon/dist/esm/icons/ello-icon';
-import EmberIcon from '@patternfly/react-icons/icons/ember-icon/dist/esm/icons/ember-icon';
-import EmpireIcon from '@patternfly/react-icons/icons/empire-icon/dist/esm/icons/empire-icon';
-import EnhancementIcon from '@patternfly/react-icons/icons/enhancement-icon/dist/esm/icons/enhancement-icon';
-import EnterpriseIcon from '@patternfly/react-icons/icons/enterprise-icon/dist/esm/icons/enterprise-icon';
-import EnvelopeIcon from '@patternfly/react-icons/icons/envelope-icon/dist/esm/icons/envelope-icon';
-import EnvelopeOpenIcon from '@patternfly/react-icons/icons/envelope-open-icon/dist/esm/icons/envelope-open-icon';
-import EnvelopeOpenTextIcon from '@patternfly/react-icons/icons/envelope-open-text-icon/dist/esm/icons/envelope-open-text-icon';
-import EnvelopeSquareIcon from '@patternfly/react-icons/icons/envelope-square-icon/dist/esm/icons/envelope-square-icon';
-import EnviraIcon from '@patternfly/react-icons/icons/envira-icon/dist/esm/icons/envira-icon';
-import EqualizerIcon from '@patternfly/react-icons/icons/equalizer-icon/dist/esm/icons/equalizer-icon';
-import EqualsIcon from '@patternfly/react-icons/icons/equals-icon/dist/esm/icons/equals-icon';
-import EraserIcon from '@patternfly/react-icons/icons/eraser-icon/dist/esm/icons/eraser-icon';
-import ErlangIcon from '@patternfly/react-icons/icons/erlang-icon/dist/esm/icons/erlang-icon';
-import ErrorCircleOIcon from '@patternfly/react-icons/icons/error-circle-o-icon/dist/esm/icons/error-circle-o-icon';
-import EthereumIcon from '@patternfly/react-icons/icons/ethereum-icon/dist/esm/icons/ethereum-icon';
-import EthernetIcon from '@patternfly/react-icons/icons/ethernet-icon/dist/esm/icons/ethernet-icon';
-import EtsyIcon from '@patternfly/react-icons/icons/etsy-icon/dist/esm/icons/etsy-icon';
-import EuroSignIcon from '@patternfly/react-icons/icons/euro-sign-icon/dist/esm/icons/euro-sign-icon';
-import EvernoteIcon from '@patternfly/react-icons/icons/evernote-icon/dist/esm/icons/evernote-icon';
-import ExchangeAltIcon from '@patternfly/react-icons/icons/exchange-alt-icon/dist/esm/icons/exchange-alt-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/icons/exclamation-circle-icon/dist/esm/icons/exclamation-circle-icon';
-import ExclamationIcon from '@patternfly/react-icons/icons/exclamation-icon/dist/esm/icons/exclamation-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/icons/exclamation-triangle-icon/dist/esm/icons/exclamation-triangle-icon';
-import ExpandAltIcon from '@patternfly/react-icons/icons/expand-alt-icon/dist/esm/icons/expand-alt-icon';
-import ExpandArrowsAltIcon from '@patternfly/react-icons/icons/expand-arrows-alt-icon/dist/esm/icons/expand-arrows-alt-icon';
-import ExpandIcon from '@patternfly/react-icons/icons/expand-icon/dist/esm/icons/expand-icon';
-import ExpeditedsslIcon from '@patternfly/react-icons/icons/expeditedssl-icon/dist/esm/icons/expeditedssl-icon';
-import ExportIcon from '@patternfly/react-icons/icons/export-icon/dist/esm/icons/export-icon';
-import ExternalLinkAltIcon from '@patternfly/react-icons/icons/external-link-alt-icon/dist/esm/icons/external-link-alt-icon';
-import ExternalLinkSquareAltIcon from '@patternfly/react-icons/icons/external-link-square-alt-icon/dist/esm/icons/external-link-square-alt-icon';
-import EyeDropperIcon from '@patternfly/react-icons/icons/eye-dropper-icon/dist/esm/icons/eye-dropper-icon';
-import EyeIcon from '@patternfly/react-icons/icons/eye-icon/dist/esm/icons/eye-icon';
-import EyeSlashIcon from '@patternfly/react-icons/icons/eye-slash-icon/dist/esm/icons/eye-slash-icon';
-import FacebookFIcon from '@patternfly/react-icons/icons/facebook-f-icon/dist/esm/icons/facebook-f-icon';
-import FacebookIcon from '@patternfly/react-icons/icons/facebook-icon/dist/esm/icons/facebook-icon';
-import FacebookMessengerIcon from '@patternfly/react-icons/icons/facebook-messenger-icon/dist/esm/icons/facebook-messenger-icon';
-import FacebookSquareIcon from '@patternfly/react-icons/icons/facebook-square-icon/dist/esm/icons/facebook-square-icon';
-import FanIcon from '@patternfly/react-icons/icons/fan-icon/dist/esm/icons/fan-icon';
-import FantasyFlightGamesIcon from '@patternfly/react-icons/icons/fantasy-flight-games-icon/dist/esm/icons/fantasy-flight-games-icon';
-import FastBackwardIcon from '@patternfly/react-icons/icons/fast-backward-icon/dist/esm/icons/fast-backward-icon';
-import FastForwardIcon from '@patternfly/react-icons/icons/fast-forward-icon/dist/esm/icons/fast-forward-icon';
-import FaucetIcon from '@patternfly/react-icons/icons/faucet-icon/dist/esm/icons/faucet-icon';
-import FaxIcon from '@patternfly/react-icons/icons/fax-icon/dist/esm/icons/fax-icon';
-import FeatherAltIcon from '@patternfly/react-icons/icons/feather-alt-icon/dist/esm/icons/feather-alt-icon';
-import FeatherIcon from '@patternfly/react-icons/icons/feather-icon/dist/esm/icons/feather-icon';
-import FedexIcon from '@patternfly/react-icons/icons/fedex-icon/dist/esm/icons/fedex-icon';
-import FedoraIcon from '@patternfly/react-icons/icons/fedora-icon/dist/esm/icons/fedora-icon';
-import FemaleIcon from '@patternfly/react-icons/icons/female-icon/dist/esm/icons/female-icon';
-import FighterJetIcon from '@patternfly/react-icons/icons/fighter-jet-icon/dist/esm/icons/fighter-jet-icon';
-import FigmaIcon from '@patternfly/react-icons/icons/figma-icon/dist/esm/icons/figma-icon';
-import FileAltIcon from '@patternfly/react-icons/icons/file-alt-icon/dist/esm/icons/file-alt-icon';
-import FileArchiveIcon from '@patternfly/react-icons/icons/file-archive-icon/dist/esm/icons/file-archive-icon';
-import FileAudioIcon from '@patternfly/react-icons/icons/file-audio-icon/dist/esm/icons/file-audio-icon';
-import FileCodeIcon from '@patternfly/react-icons/icons/file-code-icon/dist/esm/icons/file-code-icon';
-import FileContractIcon from '@patternfly/react-icons/icons/file-contract-icon/dist/esm/icons/file-contract-icon';
-import FileCsvIcon from '@patternfly/react-icons/icons/file-csv-icon/dist/esm/icons/file-csv-icon';
-import FileDownloadIcon from '@patternfly/react-icons/icons/file-download-icon/dist/esm/icons/file-download-icon';
-import FileExcelIcon from '@patternfly/react-icons/icons/file-excel-icon/dist/esm/icons/file-excel-icon';
-import FileExportIcon from '@patternfly/react-icons/icons/file-export-icon/dist/esm/icons/file-export-icon';
-import FileIcon from '@patternfly/react-icons/icons/file-icon/dist/esm/icons/file-icon';
-import FileImageIcon from '@patternfly/react-icons/icons/file-image-icon/dist/esm/icons/file-image-icon';
-import FileImportIcon from '@patternfly/react-icons/icons/file-import-icon/dist/esm/icons/file-import-icon';
-import FileInvoiceDollarIcon from '@patternfly/react-icons/icons/file-invoice-dollar-icon/dist/esm/icons/file-invoice-dollar-icon';
-import FileInvoiceIcon from '@patternfly/react-icons/icons/file-invoice-icon/dist/esm/icons/file-invoice-icon';
-import FileMedicalAltIcon from '@patternfly/react-icons/icons/file-medical-alt-icon/dist/esm/icons/file-medical-alt-icon';
-import FileMedicalIcon from '@patternfly/react-icons/icons/file-medical-icon/dist/esm/icons/file-medical-icon';
-import FilePdfIcon from '@patternfly/react-icons/icons/file-pdf-icon/dist/esm/icons/file-pdf-icon';
-import FilePowerpointIcon from '@patternfly/react-icons/icons/file-powerpoint-icon/dist/esm/icons/file-powerpoint-icon';
-import FilePrescriptionIcon from '@patternfly/react-icons/icons/file-prescription-icon/dist/esm/icons/file-prescription-icon';
-import FileSignatureIcon from '@patternfly/react-icons/icons/file-signature-icon/dist/esm/icons/file-signature-icon';
-import FileUploadIcon from '@patternfly/react-icons/icons/file-upload-icon/dist/esm/icons/file-upload-icon';
-import FileVideoIcon from '@patternfly/react-icons/icons/file-video-icon/dist/esm/icons/file-video-icon';
-import FileWordIcon from '@patternfly/react-icons/icons/file-word-icon/dist/esm/icons/file-word-icon';
-import FillDripIcon from '@patternfly/react-icons/icons/fill-drip-icon/dist/esm/icons/fill-drip-icon';
-import FillIcon from '@patternfly/react-icons/icons/fill-icon/dist/esm/icons/fill-icon';
-import FilmIcon from '@patternfly/react-icons/icons/film-icon/dist/esm/icons/film-icon';
-import FilterAltIcon from '@patternfly/react-icons/icons/filter-alt-icon/dist/esm/icons/filter-alt-icon';
-import FilterIcon from '@patternfly/react-icons/icons/filter-icon/dist/esm/icons/filter-icon';
-import FingerprintIcon from '@patternfly/react-icons/icons/fingerprint-icon/dist/esm/icons/fingerprint-icon';
-import FireAltIcon from '@patternfly/react-icons/icons/fire-alt-icon/dist/esm/icons/fire-alt-icon';
-import FireExtinguisherIcon from '@patternfly/react-icons/icons/fire-extinguisher-icon/dist/esm/icons/fire-extinguisher-icon';
-import FireIcon from '@patternfly/react-icons/icons/fire-icon/dist/esm/icons/fire-icon';
-import FirefoxBrowserIcon from '@patternfly/react-icons/icons/firefox-browser-icon/dist/esm/icons/firefox-browser-icon';
-import FirefoxIcon from '@patternfly/react-icons/icons/firefox-icon/dist/esm/icons/firefox-icon';
-import FirstAidIcon from '@patternfly/react-icons/icons/first-aid-icon/dist/esm/icons/first-aid-icon';
-import FirstOrderAltIcon from '@patternfly/react-icons/icons/first-order-alt-icon/dist/esm/icons/first-order-alt-icon';
-import FirstOrderIcon from '@patternfly/react-icons/icons/first-order-icon/dist/esm/icons/first-order-icon';
-import FirstdraftIcon from '@patternfly/react-icons/icons/firstdraft-icon/dist/esm/icons/firstdraft-icon';
-import FishIcon from '@patternfly/react-icons/icons/fish-icon/dist/esm/icons/fish-icon';
-import FistRaisedIcon from '@patternfly/react-icons/icons/fist-raised-icon/dist/esm/icons/fist-raised-icon';
-import FiveHundredPxIcon from '@patternfly/react-icons/icons/five-hundred-px-icon/dist/esm/icons/five-hundred-px-icon';
-import FlagCheckeredIcon from '@patternfly/react-icons/icons/flag-checkered-icon/dist/esm/icons/flag-checkered-icon';
-import FlagIcon from '@patternfly/react-icons/icons/flag-icon/dist/esm/icons/flag-icon';
-import FlagUsaIcon from '@patternfly/react-icons/icons/flag-usa-icon/dist/esm/icons/flag-usa-icon';
-import FlaskIcon from '@patternfly/react-icons/icons/flask-icon/dist/esm/icons/flask-icon';
-import FlavorIcon from '@patternfly/react-icons/icons/flavor-icon/dist/esm/icons/flavor-icon';
-import FlickrIcon from '@patternfly/react-icons/icons/flickr-icon/dist/esm/icons/flickr-icon';
-import FlipboardIcon from '@patternfly/react-icons/icons/flipboard-icon/dist/esm/icons/flipboard-icon';
-import FlushedIcon from '@patternfly/react-icons/icons/flushed-icon/dist/esm/icons/flushed-icon';
-import FlyIcon from '@patternfly/react-icons/icons/fly-icon/dist/esm/icons/fly-icon';
-import FolderCloseIcon from '@patternfly/react-icons/icons/folder-close-icon/dist/esm/icons/folder-close-icon';
-import FolderIcon from '@patternfly/react-icons/icons/folder-icon/dist/esm/icons/folder-icon';
-import FolderMinusIcon from '@patternfly/react-icons/icons/folder-minus-icon/dist/esm/icons/folder-minus-icon';
-import FolderOpenAltIcon from '@patternfly/react-icons/icons/folder-open-alt-icon/dist/esm/icons/folder-open-alt-icon';
-import FolderOpenIcon from '@patternfly/react-icons/icons/folder-open-icon/dist/esm/icons/folder-open-icon';
-import FolderPlusIcon from '@patternfly/react-icons/icons/folder-plus-icon/dist/esm/icons/folder-plus-icon';
-import FontAwesomeAltIcon from '@patternfly/react-icons/icons/font-awesome-alt-icon/dist/esm/icons/font-awesome-alt-icon';
-import FontAwesomeFlagIcon from '@patternfly/react-icons/icons/font-awesome-flag-icon/dist/esm/icons/font-awesome-flag-icon';
-import FontAwesomeIcon from '@patternfly/react-icons/icons/font-awesome-icon/dist/esm/icons/font-awesome-icon';
-import FontIcon from '@patternfly/react-icons/icons/font-icon/dist/esm/icons/font-icon';
-import FonticonsFiIcon from '@patternfly/react-icons/icons/fonticons-fi-icon/dist/esm/icons/fonticons-fi-icon';
-import FonticonsIcon from '@patternfly/react-icons/icons/fonticons-icon/dist/esm/icons/fonticons-icon';
-import FootballBallIcon from '@patternfly/react-icons/icons/football-ball-icon/dist/esm/icons/football-ball-icon';
-import FortAwesomeAltIcon from '@patternfly/react-icons/icons/fort-awesome-alt-icon/dist/esm/icons/fort-awesome-alt-icon';
-import FortAwesomeIcon from '@patternfly/react-icons/icons/fort-awesome-icon/dist/esm/icons/fort-awesome-icon';
-import ForumbeeIcon from '@patternfly/react-icons/icons/forumbee-icon/dist/esm/icons/forumbee-icon';
-import ForwardIcon from '@patternfly/react-icons/icons/forward-icon/dist/esm/icons/forward-icon';
-import FoursquareIcon from '@patternfly/react-icons/icons/foursquare-icon/dist/esm/icons/foursquare-icon';
-import FreeCodeCampIcon from '@patternfly/react-icons/icons/free-code-camp-icon/dist/esm/icons/free-code-camp-icon';
-import FreebsdIcon from '@patternfly/react-icons/icons/freebsd-icon/dist/esm/icons/freebsd-icon';
-import FrogIcon from '@patternfly/react-icons/icons/frog-icon/dist/esm/icons/frog-icon';
-import FrownIcon from '@patternfly/react-icons/icons/frown-icon/dist/esm/icons/frown-icon';
-import FrownOpenIcon from '@patternfly/react-icons/icons/frown-open-icon/dist/esm/icons/frown-open-icon';
-import FulcrumIcon from '@patternfly/react-icons/icons/fulcrum-icon/dist/esm/icons/fulcrum-icon';
-import FunnelDollarIcon from '@patternfly/react-icons/icons/funnel-dollar-icon/dist/esm/icons/funnel-dollar-icon';
-import FutbolIcon from '@patternfly/react-icons/icons/futbol-icon/dist/esm/icons/futbol-icon';
-import GalacticRepublicIcon from '@patternfly/react-icons/icons/galactic-republic-icon/dist/esm/icons/galactic-republic-icon';
-import GalacticSenateIcon from '@patternfly/react-icons/icons/galactic-senate-icon/dist/esm/icons/galactic-senate-icon';
-import GamepadIcon from '@patternfly/react-icons/icons/gamepad-icon/dist/esm/icons/gamepad-icon';
-import GasPumpIcon from '@patternfly/react-icons/icons/gas-pump-icon/dist/esm/icons/gas-pump-icon';
-import GavelIcon from '@patternfly/react-icons/icons/gavel-icon/dist/esm/icons/gavel-icon';
-import GemIcon from '@patternfly/react-icons/icons/gem-icon/dist/esm/icons/gem-icon';
-import GenderlessIcon from '@patternfly/react-icons/icons/genderless-icon/dist/esm/icons/genderless-icon';
-import GetPocketIcon from '@patternfly/react-icons/icons/get-pocket-icon/dist/esm/icons/get-pocket-icon';
-import GgCircleIcon from '@patternfly/react-icons/icons/gg-circle-icon/dist/esm/icons/gg-circle-icon';
-import GgIcon from '@patternfly/react-icons/icons/gg-icon/dist/esm/icons/gg-icon';
-import GhostIcon from '@patternfly/react-icons/icons/ghost-icon/dist/esm/icons/ghost-icon';
-import GiftIcon from '@patternfly/react-icons/icons/gift-icon/dist/esm/icons/gift-icon';
-import GiftsIcon from '@patternfly/react-icons/icons/gifts-icon/dist/esm/icons/gifts-icon';
-import GitAltIcon from '@patternfly/react-icons/icons/git-alt-icon/dist/esm/icons/git-alt-icon';
-import GitIcon from '@patternfly/react-icons/icons/git-icon/dist/esm/icons/git-icon';
-import GitSquareIcon from '@patternfly/react-icons/icons/git-square-icon/dist/esm/icons/git-square-icon';
-import GithubAltIcon from '@patternfly/react-icons/icons/github-alt-icon/dist/esm/icons/github-alt-icon';
-import GithubIcon from '@patternfly/react-icons/icons/github-icon/dist/esm/icons/github-icon';
-import GithubSquareIcon from '@patternfly/react-icons/icons/github-square-icon/dist/esm/icons/github-square-icon';
-import GitkrakenIcon from '@patternfly/react-icons/icons/gitkraken-icon/dist/esm/icons/gitkraken-icon';
-import GitlabIcon from '@patternfly/react-icons/icons/gitlab-icon/dist/esm/icons/gitlab-icon';
-import GitterIcon from '@patternfly/react-icons/icons/gitter-icon/dist/esm/icons/gitter-icon';
-import GlassCheersIcon from '@patternfly/react-icons/icons/glass-cheers-icon/dist/esm/icons/glass-cheers-icon';
-import GlassMartiniAltIcon from '@patternfly/react-icons/icons/glass-martini-alt-icon/dist/esm/icons/glass-martini-alt-icon';
-import GlassMartiniIcon from '@patternfly/react-icons/icons/glass-martini-icon/dist/esm/icons/glass-martini-icon';
-import GlassWhiskeyIcon from '@patternfly/react-icons/icons/glass-whiskey-icon/dist/esm/icons/glass-whiskey-icon';
-import GlassesIcon from '@patternfly/react-icons/icons/glasses-icon/dist/esm/icons/glasses-icon';
-import GlideGIcon from '@patternfly/react-icons/icons/glide-g-icon/dist/esm/icons/glide-g-icon';
-import GlideIcon from '@patternfly/react-icons/icons/glide-icon/dist/esm/icons/glide-icon';
-import GlobeAfricaIcon from '@patternfly/react-icons/icons/globe-africa-icon/dist/esm/icons/globe-africa-icon';
-import GlobeAmericasIcon from '@patternfly/react-icons/icons/globe-americas-icon/dist/esm/icons/globe-americas-icon';
-import GlobeAsiaIcon from '@patternfly/react-icons/icons/globe-asia-icon/dist/esm/icons/globe-asia-icon';
-import GlobeEuropeIcon from '@patternfly/react-icons/icons/globe-europe-icon/dist/esm/icons/globe-europe-icon';
-import GlobeIcon from '@patternfly/react-icons/icons/globe-icon/dist/esm/icons/globe-icon';
-import GlobeRouteIcon from '@patternfly/react-icons/icons/globe-route-icon/dist/esm/icons/globe-route-icon';
-import GoforeIcon from '@patternfly/react-icons/icons/gofore-icon/dist/esm/icons/gofore-icon';
-import GolfBallIcon from '@patternfly/react-icons/icons/golf-ball-icon/dist/esm/icons/golf-ball-icon';
-import GoodreadsGIcon from '@patternfly/react-icons/icons/goodreads-g-icon/dist/esm/icons/goodreads-g-icon';
-import GoodreadsIcon from '@patternfly/react-icons/icons/goodreads-icon/dist/esm/icons/goodreads-icon';
-import GoogleDriveIcon from '@patternfly/react-icons/icons/google-drive-icon/dist/esm/icons/google-drive-icon';
-import GoogleIcon from '@patternfly/react-icons/icons/google-icon/dist/esm/icons/google-icon';
-import GooglePayIcon from '@patternfly/react-icons/icons/google-pay-icon/dist/esm/icons/google-pay-icon';
-import GooglePlayIcon from '@patternfly/react-icons/icons/google-play-icon/dist/esm/icons/google-play-icon';
-import GooglePlusGIcon from '@patternfly/react-icons/icons/google-plus-g-icon/dist/esm/icons/google-plus-g-icon';
-import GooglePlusIcon from '@patternfly/react-icons/icons/google-plus-icon/dist/esm/icons/google-plus-icon';
-import GooglePlusSquareIcon from '@patternfly/react-icons/icons/google-plus-square-icon/dist/esm/icons/google-plus-square-icon';
-import GoogleWalletIcon from '@patternfly/react-icons/icons/google-wallet-icon/dist/esm/icons/google-wallet-icon';
-import GopuramIcon from '@patternfly/react-icons/icons/gopuram-icon/dist/esm/icons/gopuram-icon';
-import GraduationCapIcon from '@patternfly/react-icons/icons/graduation-cap-icon/dist/esm/icons/graduation-cap-icon';
-import GratipayIcon from '@patternfly/react-icons/icons/gratipay-icon/dist/esm/icons/gratipay-icon';
-import GravIcon from '@patternfly/react-icons/icons/grav-icon/dist/esm/icons/grav-icon';
-import GreaterThanEqualIcon from '@patternfly/react-icons/icons/greater-than-equal-icon/dist/esm/icons/greater-than-equal-icon';
-import GreaterThanIcon from '@patternfly/react-icons/icons/greater-than-icon/dist/esm/icons/greater-than-icon';
-import GrimaceIcon from '@patternfly/react-icons/icons/grimace-icon/dist/esm/icons/grimace-icon';
-import GrinAltIcon from '@patternfly/react-icons/icons/grin-alt-icon/dist/esm/icons/grin-alt-icon';
-import GrinBeamIcon from '@patternfly/react-icons/icons/grin-beam-icon/dist/esm/icons/grin-beam-icon';
-import GrinBeamSweatIcon from '@patternfly/react-icons/icons/grin-beam-sweat-icon/dist/esm/icons/grin-beam-sweat-icon';
-import GrinHeartsIcon from '@patternfly/react-icons/icons/grin-hearts-icon/dist/esm/icons/grin-hearts-icon';
-import GrinIcon from '@patternfly/react-icons/icons/grin-icon/dist/esm/icons/grin-icon';
-import GrinSquintIcon from '@patternfly/react-icons/icons/grin-squint-icon/dist/esm/icons/grin-squint-icon';
-import GrinSquintTearsIcon from '@patternfly/react-icons/icons/grin-squint-tears-icon/dist/esm/icons/grin-squint-tears-icon';
-import GrinStarsIcon from '@patternfly/react-icons/icons/grin-stars-icon/dist/esm/icons/grin-stars-icon';
-import GrinTearsIcon from '@patternfly/react-icons/icons/grin-tears-icon/dist/esm/icons/grin-tears-icon';
-import GrinTongueIcon from '@patternfly/react-icons/icons/grin-tongue-icon/dist/esm/icons/grin-tongue-icon';
-import GrinTongueSquintIcon from '@patternfly/react-icons/icons/grin-tongue-squint-icon/dist/esm/icons/grin-tongue-squint-icon';
-import GrinTongueWinkIcon from '@patternfly/react-icons/icons/grin-tongue-wink-icon/dist/esm/icons/grin-tongue-wink-icon';
-import GrinWinkIcon from '@patternfly/react-icons/icons/grin-wink-icon/dist/esm/icons/grin-wink-icon';
-import GripHorizontalIcon from '@patternfly/react-icons/icons/grip-horizontal-icon/dist/esm/icons/grip-horizontal-icon';
-import GripLinesIcon from '@patternfly/react-icons/icons/grip-lines-icon/dist/esm/icons/grip-lines-icon';
-import GripLinesVerticalIcon from '@patternfly/react-icons/icons/grip-lines-vertical-icon/dist/esm/icons/grip-lines-vertical-icon';
-import GripVerticalIcon from '@patternfly/react-icons/icons/grip-vertical-icon/dist/esm/icons/grip-vertical-icon';
-import GripfireIcon from '@patternfly/react-icons/icons/gripfire-icon/dist/esm/icons/gripfire-icon';
-import GruntIcon from '@patternfly/react-icons/icons/grunt-icon/dist/esm/icons/grunt-icon';
-import GuildedIcon from '@patternfly/react-icons/icons/guilded-icon/dist/esm/icons/guilded-icon';
-import GuitarIcon from '@patternfly/react-icons/icons/guitar-icon/dist/esm/icons/guitar-icon';
-import GulpIcon from '@patternfly/react-icons/icons/gulp-icon/dist/esm/icons/gulp-icon';
-import HSquareIcon from '@patternfly/react-icons/icons/h-square-icon/dist/esm/icons/h-square-icon';
-import HackerNewsIcon from '@patternfly/react-icons/icons/hacker-news-icon/dist/esm/icons/hacker-news-icon';
-import HackerNewsSquareIcon from '@patternfly/react-icons/icons/hacker-news-square-icon/dist/esm/icons/hacker-news-square-icon';
-import HackerrankIcon from '@patternfly/react-icons/icons/hackerrank-icon/dist/esm/icons/hackerrank-icon';
-import HamburgerIcon from '@patternfly/react-icons/icons/hamburger-icon/dist/esm/icons/hamburger-icon';
-import HammerIcon from '@patternfly/react-icons/icons/hammer-icon/dist/esm/icons/hammer-icon';
-import HamsaIcon from '@patternfly/react-icons/icons/hamsa-icon/dist/esm/icons/hamsa-icon';
-import HandHoldingHeartIcon from '@patternfly/react-icons/icons/hand-holding-heart-icon/dist/esm/icons/hand-holding-heart-icon';
-import HandHoldingIcon from '@patternfly/react-icons/icons/hand-holding-icon/dist/esm/icons/hand-holding-icon';
-import HandHoldingMedicalIcon from '@patternfly/react-icons/icons/hand-holding-medical-icon/dist/esm/icons/hand-holding-medical-icon';
-import HandHoldingUsdIcon from '@patternfly/react-icons/icons/hand-holding-usd-icon/dist/esm/icons/hand-holding-usd-icon';
-import HandHoldingWaterIcon from '@patternfly/react-icons/icons/hand-holding-water-icon/dist/esm/icons/hand-holding-water-icon';
-import HandLizardIcon from '@patternfly/react-icons/icons/hand-lizard-icon/dist/esm/icons/hand-lizard-icon';
-import HandMiddleFingerIcon from '@patternfly/react-icons/icons/hand-middle-finger-icon/dist/esm/icons/hand-middle-finger-icon';
-import HandPaperIcon from '@patternfly/react-icons/icons/hand-paper-icon/dist/esm/icons/hand-paper-icon';
-import HandPeaceIcon from '@patternfly/react-icons/icons/hand-peace-icon/dist/esm/icons/hand-peace-icon';
-import HandPointDownIcon from '@patternfly/react-icons/icons/hand-point-down-icon/dist/esm/icons/hand-point-down-icon';
-import HandPointLeftIcon from '@patternfly/react-icons/icons/hand-point-left-icon/dist/esm/icons/hand-point-left-icon';
-import HandPointRightIcon from '@patternfly/react-icons/icons/hand-point-right-icon/dist/esm/icons/hand-point-right-icon';
-import HandPointUpIcon from '@patternfly/react-icons/icons/hand-point-up-icon/dist/esm/icons/hand-point-up-icon';
-import HandPointerIcon from '@patternfly/react-icons/icons/hand-pointer-icon/dist/esm/icons/hand-pointer-icon';
-import HandRockIcon from '@patternfly/react-icons/icons/hand-rock-icon/dist/esm/icons/hand-rock-icon';
-import HandScissorsIcon from '@patternfly/react-icons/icons/hand-scissors-icon/dist/esm/icons/hand-scissors-icon';
-import HandSparklesIcon from '@patternfly/react-icons/icons/hand-sparkles-icon/dist/esm/icons/hand-sparkles-icon';
-import HandSpockIcon from '@patternfly/react-icons/icons/hand-spock-icon/dist/esm/icons/hand-spock-icon';
-import HandsHelpingIcon from '@patternfly/react-icons/icons/hands-helping-icon/dist/esm/icons/hands-helping-icon';
-import HandsIcon from '@patternfly/react-icons/icons/hands-icon/dist/esm/icons/hands-icon';
-import HandsWashIcon from '@patternfly/react-icons/icons/hands-wash-icon/dist/esm/icons/hands-wash-icon';
-import HandshakeAltSlashIcon from '@patternfly/react-icons/icons/handshake-alt-slash-icon/dist/esm/icons/handshake-alt-slash-icon';
-import HandshakeIcon from '@patternfly/react-icons/icons/handshake-icon/dist/esm/icons/handshake-icon';
-import HandshakeSlashIcon from '@patternfly/react-icons/icons/handshake-slash-icon/dist/esm/icons/handshake-slash-icon';
-import HanukiahIcon from '@patternfly/react-icons/icons/hanukiah-icon/dist/esm/icons/hanukiah-icon';
-import HardHatIcon from '@patternfly/react-icons/icons/hard-hat-icon/dist/esm/icons/hard-hat-icon';
-import HashtagIcon from '@patternfly/react-icons/icons/hashtag-icon/dist/esm/icons/hashtag-icon';
-import HatCowboyIcon from '@patternfly/react-icons/icons/hat-cowboy-icon/dist/esm/icons/hat-cowboy-icon';
-import HatCowboySideIcon from '@patternfly/react-icons/icons/hat-cowboy-side-icon/dist/esm/icons/hat-cowboy-side-icon';
-import HatWizardIcon from '@patternfly/react-icons/icons/hat-wizard-icon/dist/esm/icons/hat-wizard-icon';
-import HddIcon from '@patternfly/react-icons/icons/hdd-icon/dist/esm/icons/hdd-icon';
-import HeadSideCoughIcon from '@patternfly/react-icons/icons/head-side-cough-icon/dist/esm/icons/head-side-cough-icon';
-import HeadSideCoughSlashIcon from '@patternfly/react-icons/icons/head-side-cough-slash-icon/dist/esm/icons/head-side-cough-slash-icon';
-import HeadSideMaskIcon from '@patternfly/react-icons/icons/head-side-mask-icon/dist/esm/icons/head-side-mask-icon';
-import HeadSideVirusIcon from '@patternfly/react-icons/icons/head-side-virus-icon/dist/esm/icons/head-side-virus-icon';
-import HeadingIcon from '@patternfly/react-icons/icons/heading-icon/dist/esm/icons/heading-icon';
-import HeadphonesAltIcon from '@patternfly/react-icons/icons/headphones-alt-icon/dist/esm/icons/headphones-alt-icon';
-import HeadphonesIcon from '@patternfly/react-icons/icons/headphones-icon/dist/esm/icons/headphones-icon';
-import HeadsetIcon from '@patternfly/react-icons/icons/headset-icon/dist/esm/icons/headset-icon';
-import HeartBrokenIcon from '@patternfly/react-icons/icons/heart-broken-icon/dist/esm/icons/heart-broken-icon';
-import HeartIcon from '@patternfly/react-icons/icons/heart-icon/dist/esm/icons/heart-icon';
-import HeartbeatIcon from '@patternfly/react-icons/icons/heartbeat-icon/dist/esm/icons/heartbeat-icon';
-import HelicopterIcon from '@patternfly/react-icons/icons/helicopter-icon/dist/esm/icons/helicopter-icon';
-import HelpIcon from '@patternfly/react-icons/icons/help-icon/dist/esm/icons/help-icon';
-import HighlighterIcon from '@patternfly/react-icons/icons/highlighter-icon/dist/esm/icons/highlighter-icon';
-import HikingIcon from '@patternfly/react-icons/icons/hiking-icon/dist/esm/icons/hiking-icon';
-import HippoIcon from '@patternfly/react-icons/icons/hippo-icon/dist/esm/icons/hippo-icon';
-import HipsIcon from '@patternfly/react-icons/icons/hips-icon/dist/esm/icons/hips-icon';
-import HireAHelperIcon from '@patternfly/react-icons/icons/hire-a-helper-icon/dist/esm/icons/hire-a-helper-icon';
-import HistoryIcon from '@patternfly/react-icons/icons/history-icon/dist/esm/icons/history-icon';
-import HiveIcon from '@patternfly/react-icons/icons/hive-icon/dist/esm/icons/hive-icon';
-import HockeyPuckIcon from '@patternfly/react-icons/icons/hockey-puck-icon/dist/esm/icons/hockey-puck-icon';
-import HollyBerryIcon from '@patternfly/react-icons/icons/holly-berry-icon/dist/esm/icons/holly-berry-icon';
-import HomeAltIcon from '@patternfly/react-icons/icons/home-alt-icon/dist/esm/icons/home-alt-icon';
-import HomeIcon from '@patternfly/react-icons/icons/home-icon/dist/esm/icons/home-icon';
-import HooliIcon from '@patternfly/react-icons/icons/hooli-icon/dist/esm/icons/hooli-icon';
-import HornbillIcon from '@patternfly/react-icons/icons/hornbill-icon/dist/esm/icons/hornbill-icon';
-import HorseHeadIcon from '@patternfly/react-icons/icons/horse-head-icon/dist/esm/icons/horse-head-icon';
-import HorseIcon from '@patternfly/react-icons/icons/horse-icon/dist/esm/icons/horse-icon';
-import HospitalAltIcon from '@patternfly/react-icons/icons/hospital-alt-icon/dist/esm/icons/hospital-alt-icon';
-import HospitalIcon from '@patternfly/react-icons/icons/hospital-icon/dist/esm/icons/hospital-icon';
-import HospitalSymbolIcon from '@patternfly/react-icons/icons/hospital-symbol-icon/dist/esm/icons/hospital-symbol-icon';
-import HospitalUserIcon from '@patternfly/react-icons/icons/hospital-user-icon/dist/esm/icons/hospital-user-icon';
-import HotTubIcon from '@patternfly/react-icons/icons/hot-tub-icon/dist/esm/icons/hot-tub-icon';
-import HotdogIcon from '@patternfly/react-icons/icons/hotdog-icon/dist/esm/icons/hotdog-icon';
-import HotelIcon from '@patternfly/react-icons/icons/hotel-icon/dist/esm/icons/hotel-icon';
-import HotjarIcon from '@patternfly/react-icons/icons/hotjar-icon/dist/esm/icons/hotjar-icon';
-import HourglassEndIcon from '@patternfly/react-icons/icons/hourglass-end-icon/dist/esm/icons/hourglass-end-icon';
-import HourglassHalfIcon from '@patternfly/react-icons/icons/hourglass-half-icon/dist/esm/icons/hourglass-half-icon';
-import HourglassIcon from '@patternfly/react-icons/icons/hourglass-icon/dist/esm/icons/hourglass-icon';
-import HourglassStartIcon from '@patternfly/react-icons/icons/hourglass-start-icon/dist/esm/icons/hourglass-start-icon';
-import HouseDamageIcon from '@patternfly/react-icons/icons/house-damage-icon/dist/esm/icons/house-damage-icon';
-import HouseUserIcon from '@patternfly/react-icons/icons/house-user-icon/dist/esm/icons/house-user-icon';
-import HouzzIcon from '@patternfly/react-icons/icons/houzz-icon/dist/esm/icons/houzz-icon';
-import HryvniaIcon from '@patternfly/react-icons/icons/hryvnia-icon/dist/esm/icons/hryvnia-icon';
-import Html5Icon from '@patternfly/react-icons/icons/html5-icon/dist/esm/icons/html5-icon';
-import Html5IconConfig from '@patternfly/react-icons/icons/html5-icon/dist/esm/icons/html5-icon-config';
-import HubspotIcon from '@patternfly/react-icons/icons/hubspot-icon/dist/esm/icons/hubspot-icon';
-import ICursorIcon from '@patternfly/react-icons/icons/i-cursor-icon/dist/esm/icons/i-cursor-icon';
-import IceCreamIcon from '@patternfly/react-icons/icons/ice-cream-icon/dist/esm/icons/ice-cream-icon';
-import IciclesIcon from '@patternfly/react-icons/icons/icicles-icon/dist/esm/icons/icicles-icon';
-import IconsIcon from '@patternfly/react-icons/icons/icons-icon/dist/esm/icons/icons-icon';
-import IdBadgeIcon from '@patternfly/react-icons/icons/id-badge-icon/dist/esm/icons/id-badge-icon';
-import IdCardAltIcon from '@patternfly/react-icons/icons/id-card-alt-icon/dist/esm/icons/id-card-alt-icon';
-import IdCardIcon from '@patternfly/react-icons/icons/id-card-icon/dist/esm/icons/id-card-icon';
-import IdealIcon from '@patternfly/react-icons/icons/ideal-icon/dist/esm/icons/ideal-icon';
-import IglooIcon from '@patternfly/react-icons/icons/igloo-icon/dist/esm/icons/igloo-icon';
-import ImageIcon from '@patternfly/react-icons/icons/image-icon/dist/esm/icons/image-icon';
-import ImagesIcon from '@patternfly/react-icons/icons/images-icon/dist/esm/icons/images-icon';
-import ImdbIcon from '@patternfly/react-icons/icons/imdb-icon/dist/esm/icons/imdb-icon';
-import ImportIcon from '@patternfly/react-icons/icons/import-icon/dist/esm/icons/import-icon';
-import InProgressIcon from '@patternfly/react-icons/icons/in-progress-icon/dist/esm/icons/in-progress-icon';
-import InboxIcon from '@patternfly/react-icons/icons/inbox-icon/dist/esm/icons/inbox-icon';
-import IndentIcon from '@patternfly/react-icons/icons/indent-icon/dist/esm/icons/indent-icon';
-import IndustryIcon from '@patternfly/react-icons/icons/industry-icon/dist/esm/icons/industry-icon';
-import InfinityIcon from '@patternfly/react-icons/icons/infinity-icon/dist/esm/icons/infinity-icon';
-import InfoAltIcon from '@patternfly/react-icons/icons/info-alt-icon/dist/esm/icons/info-alt-icon';
-import InfoCircleIcon from '@patternfly/react-icons/icons/info-circle-icon/dist/esm/icons/info-circle-icon';
-import InfoIcon from '@patternfly/react-icons/icons/info-icon/dist/esm/icons/info-icon';
-import InfrastructureIcon from '@patternfly/react-icons/icons/infrastructure-icon/dist/esm/icons/infrastructure-icon';
-import InnosoftIcon from '@patternfly/react-icons/icons/innosoft-icon/dist/esm/icons/innosoft-icon';
-import InstagramIcon from '@patternfly/react-icons/icons/instagram-icon/dist/esm/icons/instagram-icon';
-import InstagramSquareIcon from '@patternfly/react-icons/icons/instagram-square-icon/dist/esm/icons/instagram-square-icon';
-import InstalodIcon from '@patternfly/react-icons/icons/instalod-icon/dist/esm/icons/instalod-icon';
-import IntegrationIcon from '@patternfly/react-icons/icons/integration-icon/dist/esm/icons/integration-icon';
-import IntercomIcon from '@patternfly/react-icons/icons/intercom-icon/dist/esm/icons/intercom-icon';
-import InternetExplorerIcon from '@patternfly/react-icons/icons/internet-explorer-icon/dist/esm/icons/internet-explorer-icon';
-import InvisionIcon from '@patternfly/react-icons/icons/invision-icon/dist/esm/icons/invision-icon';
-import IoxhostIcon from '@patternfly/react-icons/icons/ioxhost-icon/dist/esm/icons/ioxhost-icon';
-import ItalicIcon from '@patternfly/react-icons/icons/italic-icon/dist/esm/icons/italic-icon';
-import ItchIoIcon from '@patternfly/react-icons/icons/itch-io-icon/dist/esm/icons/itch-io-icon';
-import ItunesIcon from '@patternfly/react-icons/icons/itunes-icon/dist/esm/icons/itunes-icon';
-import ItunesNoteIcon from '@patternfly/react-icons/icons/itunes-note-icon/dist/esm/icons/itunes-note-icon';
-import JavaIcon from '@patternfly/react-icons/icons/java-icon/dist/esm/icons/java-icon';
-import JediIcon from '@patternfly/react-icons/icons/jedi-icon/dist/esm/icons/jedi-icon';
-import JediOrderIcon from '@patternfly/react-icons/icons/jedi-order-icon/dist/esm/icons/jedi-order-icon';
-import JenkinsIcon from '@patternfly/react-icons/icons/jenkins-icon/dist/esm/icons/jenkins-icon';
-import JiraIcon from '@patternfly/react-icons/icons/jira-icon/dist/esm/icons/jira-icon';
-import JogetIcon from '@patternfly/react-icons/icons/joget-icon/dist/esm/icons/joget-icon';
-import JointIcon from '@patternfly/react-icons/icons/joint-icon/dist/esm/icons/joint-icon';
-import JoomlaIcon from '@patternfly/react-icons/icons/joomla-icon/dist/esm/icons/joomla-icon';
-import JournalWhillsIcon from '@patternfly/react-icons/icons/journal-whills-icon/dist/esm/icons/journal-whills-icon';
-import JsIcon from '@patternfly/react-icons/icons/js-icon/dist/esm/icons/js-icon';
-import JsSquareIcon from '@patternfly/react-icons/icons/js-square-icon/dist/esm/icons/js-square-icon';
-import JsfiddleIcon from '@patternfly/react-icons/icons/jsfiddle-icon/dist/esm/icons/jsfiddle-icon';
-import KaabaIcon from '@patternfly/react-icons/icons/kaaba-icon/dist/esm/icons/kaaba-icon';
-import KaggleIcon from '@patternfly/react-icons/icons/kaggle-icon/dist/esm/icons/kaggle-icon';
-import KeyIcon from '@patternfly/react-icons/icons/key-icon/dist/esm/icons/key-icon';
-import KeybaseIcon from '@patternfly/react-icons/icons/keybase-icon/dist/esm/icons/keybase-icon';
-import KeyboardIcon from '@patternfly/react-icons/icons/keyboard-icon/dist/esm/icons/keyboard-icon';
-import KeycdnIcon from '@patternfly/react-icons/icons/keycdn-icon/dist/esm/icons/keycdn-icon';
-import KhandaIcon from '@patternfly/react-icons/icons/khanda-icon/dist/esm/icons/khanda-icon';
-import KickstarterIcon from '@patternfly/react-icons/icons/kickstarter-icon/dist/esm/icons/kickstarter-icon';
-import KickstarterKIcon from '@patternfly/react-icons/icons/kickstarter-k-icon/dist/esm/icons/kickstarter-k-icon';
-import KissBeamIcon from '@patternfly/react-icons/icons/kiss-beam-icon/dist/esm/icons/kiss-beam-icon';
-import KissIcon from '@patternfly/react-icons/icons/kiss-icon/dist/esm/icons/kiss-icon';
-import KissWinkHeartIcon from '@patternfly/react-icons/icons/kiss-wink-heart-icon/dist/esm/icons/kiss-wink-heart-icon';
-import KiwiBirdIcon from '@patternfly/react-icons/icons/kiwi-bird-icon/dist/esm/icons/kiwi-bird-icon';
-import KorvueIcon from '@patternfly/react-icons/icons/korvue-icon/dist/esm/icons/korvue-icon';
-import LandmarkIcon from '@patternfly/react-icons/icons/landmark-icon/dist/esm/icons/landmark-icon';
-import LanguageIcon from '@patternfly/react-icons/icons/language-icon/dist/esm/icons/language-icon';
-import LaptopCodeIcon from '@patternfly/react-icons/icons/laptop-code-icon/dist/esm/icons/laptop-code-icon';
-import LaptopHouseIcon from '@patternfly/react-icons/icons/laptop-house-icon/dist/esm/icons/laptop-house-icon';
-import LaptopIcon from '@patternfly/react-icons/icons/laptop-icon/dist/esm/icons/laptop-icon';
-import LaptopMedicalIcon from '@patternfly/react-icons/icons/laptop-medical-icon/dist/esm/icons/laptop-medical-icon';
-import LaravelIcon from '@patternfly/react-icons/icons/laravel-icon/dist/esm/icons/laravel-icon';
-import LastfmIcon from '@patternfly/react-icons/icons/lastfm-icon/dist/esm/icons/lastfm-icon';
-import LastfmSquareIcon from '@patternfly/react-icons/icons/lastfm-square-icon/dist/esm/icons/lastfm-square-icon';
-import LaughBeamIcon from '@patternfly/react-icons/icons/laugh-beam-icon/dist/esm/icons/laugh-beam-icon';
-import LaughIcon from '@patternfly/react-icons/icons/laugh-icon/dist/esm/icons/laugh-icon';
-import LaughSquintIcon from '@patternfly/react-icons/icons/laugh-squint-icon/dist/esm/icons/laugh-squint-icon';
-import LaughWinkIcon from '@patternfly/react-icons/icons/laugh-wink-icon/dist/esm/icons/laugh-wink-icon';
-import LayerGroupIcon from '@patternfly/react-icons/icons/layer-group-icon/dist/esm/icons/layer-group-icon';
-import LeafIcon from '@patternfly/react-icons/icons/leaf-icon/dist/esm/icons/leaf-icon';
-import LeanpubIcon from '@patternfly/react-icons/icons/leanpub-icon/dist/esm/icons/leanpub-icon';
-import LemonIcon from '@patternfly/react-icons/icons/lemon-icon/dist/esm/icons/lemon-icon';
-import LessIcon from '@patternfly/react-icons/icons/less-icon/dist/esm/icons/less-icon';
-import LessThanEqualIcon from '@patternfly/react-icons/icons/less-than-equal-icon/dist/esm/icons/less-than-equal-icon';
-import LessThanIcon from '@patternfly/react-icons/icons/less-than-icon/dist/esm/icons/less-than-icon';
-import LevelDownAltIcon from '@patternfly/react-icons/icons/level-down-alt-icon/dist/esm/icons/level-down-alt-icon';
-import LevelUpAltIcon from '@patternfly/react-icons/icons/level-up-alt-icon/dist/esm/icons/level-up-alt-icon';
-import LifeRingIcon from '@patternfly/react-icons/icons/life-ring-icon/dist/esm/icons/life-ring-icon';
-import LightbulbIcon from '@patternfly/react-icons/icons/lightbulb-icon/dist/esm/icons/lightbulb-icon';
-import LineIcon from '@patternfly/react-icons/icons/line-icon/dist/esm/icons/line-icon';
-import LinkIcon from '@patternfly/react-icons/icons/link-icon/dist/esm/icons/link-icon';
-import LinkedinIcon from '@patternfly/react-icons/icons/linkedin-icon/dist/esm/icons/linkedin-icon';
-import LinkedinInIcon from '@patternfly/react-icons/icons/linkedin-in-icon/dist/esm/icons/linkedin-in-icon';
-import LinodeIcon from '@patternfly/react-icons/icons/linode-icon/dist/esm/icons/linode-icon';
-import LinuxIcon from '@patternfly/react-icons/icons/linux-icon/dist/esm/icons/linux-icon';
-import LiraSignIcon from '@patternfly/react-icons/icons/lira-sign-icon/dist/esm/icons/lira-sign-icon';
-import ListAltIcon from '@patternfly/react-icons/icons/list-alt-icon/dist/esm/icons/list-alt-icon';
-import ListIcon from '@patternfly/react-icons/icons/list-icon/dist/esm/icons/list-icon';
-import ListOlIcon from '@patternfly/react-icons/icons/list-ol-icon/dist/esm/icons/list-ol-icon';
-import ListUlIcon from '@patternfly/react-icons/icons/list-ul-icon/dist/esm/icons/list-ul-icon';
-import LocationArrowIcon from '@patternfly/react-icons/icons/location-arrow-icon/dist/esm/icons/location-arrow-icon';
-import LockIcon from '@patternfly/react-icons/icons/lock-icon/dist/esm/icons/lock-icon';
-import LockOpenIcon from '@patternfly/react-icons/icons/lock-open-icon/dist/esm/icons/lock-open-icon';
-import LockedIcon from '@patternfly/react-icons/icons/locked-icon/dist/esm/icons/locked-icon';
-import LongArrowAltDownIcon from '@patternfly/react-icons/icons/long-arrow-alt-down-icon/dist/esm/icons/long-arrow-alt-down-icon';
-import LongArrowAltLeftIcon from '@patternfly/react-icons/icons/long-arrow-alt-left-icon/dist/esm/icons/long-arrow-alt-left-icon';
-import LongArrowAltRightIcon from '@patternfly/react-icons/icons/long-arrow-alt-right-icon/dist/esm/icons/long-arrow-alt-right-icon';
-import LongArrowAltUpIcon from '@patternfly/react-icons/icons/long-arrow-alt-up-icon/dist/esm/icons/long-arrow-alt-up-icon';
-import LowVisionIcon from '@patternfly/react-icons/icons/low-vision-icon/dist/esm/icons/low-vision-icon';
-import LuggageCartIcon from '@patternfly/react-icons/icons/luggage-cart-icon/dist/esm/icons/luggage-cart-icon';
-import LungsIcon from '@patternfly/react-icons/icons/lungs-icon/dist/esm/icons/lungs-icon';
-import LungsVirusIcon from '@patternfly/react-icons/icons/lungs-virus-icon/dist/esm/icons/lungs-virus-icon';
-import LyftIcon from '@patternfly/react-icons/icons/lyft-icon/dist/esm/icons/lyft-icon';
-import MagentoIcon from '@patternfly/react-icons/icons/magento-icon/dist/esm/icons/magento-icon';
-import MagicIcon from '@patternfly/react-icons/icons/magic-icon/dist/esm/icons/magic-icon';
-import MagnetIcon from '@patternfly/react-icons/icons/magnet-icon/dist/esm/icons/magnet-icon';
-import MailBulkIcon from '@patternfly/react-icons/icons/mail-bulk-icon/dist/esm/icons/mail-bulk-icon';
-import MailchimpIcon from '@patternfly/react-icons/icons/mailchimp-icon/dist/esm/icons/mailchimp-icon';
-import MaintenanceIcon from '@patternfly/react-icons/icons/maintenance-icon/dist/esm/icons/maintenance-icon';
-import MaleIcon from '@patternfly/react-icons/icons/male-icon/dist/esm/icons/male-icon';
-import MandalorianIcon from '@patternfly/react-icons/icons/mandalorian-icon/dist/esm/icons/mandalorian-icon';
-import MapIcon from '@patternfly/react-icons/icons/map-icon/dist/esm/icons/map-icon';
-import MapMarkedAltIcon from '@patternfly/react-icons/icons/map-marked-alt-icon/dist/esm/icons/map-marked-alt-icon';
-import MapMarkedIcon from '@patternfly/react-icons/icons/map-marked-icon/dist/esm/icons/map-marked-icon';
-import MapMarkerAltIcon from '@patternfly/react-icons/icons/map-marker-alt-icon/dist/esm/icons/map-marker-alt-icon';
-import MapMarkerIcon from '@patternfly/react-icons/icons/map-marker-icon/dist/esm/icons/map-marker-icon';
-import MapPinIcon from '@patternfly/react-icons/icons/map-pin-icon/dist/esm/icons/map-pin-icon';
-import MapSignsIcon from '@patternfly/react-icons/icons/map-signs-icon/dist/esm/icons/map-signs-icon';
-import MarkdownIcon from '@patternfly/react-icons/icons/markdown-icon/dist/esm/icons/markdown-icon';
-import MarkerIcon from '@patternfly/react-icons/icons/marker-icon/dist/esm/icons/marker-icon';
-import MarsDoubleIcon from '@patternfly/react-icons/icons/mars-double-icon/dist/esm/icons/mars-double-icon';
-import MarsIcon from '@patternfly/react-icons/icons/mars-icon/dist/esm/icons/mars-icon';
-import MarsStrokeHIcon from '@patternfly/react-icons/icons/mars-stroke-h-icon/dist/esm/icons/mars-stroke-h-icon';
-import MarsStrokeIcon from '@patternfly/react-icons/icons/mars-stroke-icon/dist/esm/icons/mars-stroke-icon';
-import MarsStrokeVIcon from '@patternfly/react-icons/icons/mars-stroke-v-icon/dist/esm/icons/mars-stroke-v-icon';
-import MaskIcon from '@patternfly/react-icons/icons/mask-icon/dist/esm/icons/mask-icon';
-import MastodonIcon from '@patternfly/react-icons/icons/mastodon-icon/dist/esm/icons/mastodon-icon';
-import MaxcdnIcon from '@patternfly/react-icons/icons/maxcdn-icon/dist/esm/icons/maxcdn-icon';
-import MdbIcon from '@patternfly/react-icons/icons/mdb-icon/dist/esm/icons/mdb-icon';
-import MedalIcon from '@patternfly/react-icons/icons/medal-icon/dist/esm/icons/medal-icon';
-import MedappsIcon from '@patternfly/react-icons/icons/medapps-icon/dist/esm/icons/medapps-icon';
-import MediumIcon from '@patternfly/react-icons/icons/medium-icon/dist/esm/icons/medium-icon';
-import MediumMIcon from '@patternfly/react-icons/icons/medium-m-icon/dist/esm/icons/medium-m-icon';
-import MedkitIcon from '@patternfly/react-icons/icons/medkit-icon/dist/esm/icons/medkit-icon';
-import MedrtIcon from '@patternfly/react-icons/icons/medrt-icon/dist/esm/icons/medrt-icon';
-import MeetupIcon from '@patternfly/react-icons/icons/meetup-icon/dist/esm/icons/meetup-icon';
-import MegaportIcon from '@patternfly/react-icons/icons/megaport-icon/dist/esm/icons/megaport-icon';
-import MehBlankIcon from '@patternfly/react-icons/icons/meh-blank-icon/dist/esm/icons/meh-blank-icon';
-import MehIcon from '@patternfly/react-icons/icons/meh-icon/dist/esm/icons/meh-icon';
-import MehRollingEyesIcon from '@patternfly/react-icons/icons/meh-rolling-eyes-icon/dist/esm/icons/meh-rolling-eyes-icon';
-import MemoryAltIcon from '@patternfly/react-icons/icons/memory-alt-icon/dist/esm/icons/memory-alt-icon';
-import MemoryIcon from '@patternfly/react-icons/icons/memory-icon/dist/esm/icons/memory-icon';
-import MendeleyIcon from '@patternfly/react-icons/icons/mendeley-icon/dist/esm/icons/mendeley-icon';
-import MenorahIcon from '@patternfly/react-icons/icons/menorah-icon/dist/esm/icons/menorah-icon';
-import MercuryIcon from '@patternfly/react-icons/icons/mercury-icon/dist/esm/icons/mercury-icon';
-import MessagesIcon from '@patternfly/react-icons/icons/messages-icon/dist/esm/icons/messages-icon';
-import MeteorIcon from '@patternfly/react-icons/icons/meteor-icon/dist/esm/icons/meteor-icon';
-import MicroblogIcon from '@patternfly/react-icons/icons/microblog-icon/dist/esm/icons/microblog-icon';
-import MicrochipIcon from '@patternfly/react-icons/icons/microchip-icon/dist/esm/icons/microchip-icon';
-import MicrophoneAltIcon from '@patternfly/react-icons/icons/microphone-alt-icon/dist/esm/icons/microphone-alt-icon';
-import MicrophoneAltSlashIcon from '@patternfly/react-icons/icons/microphone-alt-slash-icon/dist/esm/icons/microphone-alt-slash-icon';
-import MicrophoneIcon from '@patternfly/react-icons/icons/microphone-icon/dist/esm/icons/microphone-icon';
-import MicrophoneSlashIcon from '@patternfly/react-icons/icons/microphone-slash-icon/dist/esm/icons/microphone-slash-icon';
-import MicroscopeIcon from '@patternfly/react-icons/icons/microscope-icon/dist/esm/icons/microscope-icon';
-import MicrosoftIcon from '@patternfly/react-icons/icons/microsoft-icon/dist/esm/icons/microsoft-icon';
-import MiddlewareIcon from '@patternfly/react-icons/icons/middleware-icon/dist/esm/icons/middleware-icon';
-import MigrationIcon from '@patternfly/react-icons/icons/migration-icon/dist/esm/icons/migration-icon';
-import MinusCircleIcon from '@patternfly/react-icons/icons/minus-circle-icon/dist/esm/icons/minus-circle-icon';
-import MinusIcon from '@patternfly/react-icons/icons/minus-icon/dist/esm/icons/minus-icon';
-import MinusSquareIcon from '@patternfly/react-icons/icons/minus-square-icon/dist/esm/icons/minus-square-icon';
-import MittenIcon from '@patternfly/react-icons/icons/mitten-icon/dist/esm/icons/mitten-icon';
-import MixIcon from '@patternfly/react-icons/icons/mix-icon/dist/esm/icons/mix-icon';
-import MixcloudIcon from '@patternfly/react-icons/icons/mixcloud-icon/dist/esm/icons/mixcloud-icon';
-import MixerIcon from '@patternfly/react-icons/icons/mixer-icon/dist/esm/icons/mixer-icon';
-import MizuniIcon from '@patternfly/react-icons/icons/mizuni-icon/dist/esm/icons/mizuni-icon';
-import MobileAltIcon from '@patternfly/react-icons/icons/mobile-alt-icon/dist/esm/icons/mobile-alt-icon';
-import MobileIcon from '@patternfly/react-icons/icons/mobile-icon/dist/esm/icons/mobile-icon';
-import ModuleIcon from '@patternfly/react-icons/icons/module-icon/dist/esm/icons/module-icon';
-import ModxIcon from '@patternfly/react-icons/icons/modx-icon/dist/esm/icons/modx-icon';
-import MoneroIcon from '@patternfly/react-icons/icons/monero-icon/dist/esm/icons/monero-icon';
-import MoneyBillAltIcon from '@patternfly/react-icons/icons/money-bill-alt-icon/dist/esm/icons/money-bill-alt-icon';
-import MoneyBillIcon from '@patternfly/react-icons/icons/money-bill-icon/dist/esm/icons/money-bill-icon';
-import MoneyBillWaveAltIcon from '@patternfly/react-icons/icons/money-bill-wave-alt-icon/dist/esm/icons/money-bill-wave-alt-icon';
-import MoneyBillWaveIcon from '@patternfly/react-icons/icons/money-bill-wave-icon/dist/esm/icons/money-bill-wave-icon';
-import MoneyCheckAltIcon from '@patternfly/react-icons/icons/money-check-alt-icon/dist/esm/icons/money-check-alt-icon';
-import MoneyCheckIcon from '@patternfly/react-icons/icons/money-check-icon/dist/esm/icons/money-check-icon';
-import MonitoringIcon from '@patternfly/react-icons/icons/monitoring-icon/dist/esm/icons/monitoring-icon';
-import MonumentIcon from '@patternfly/react-icons/icons/monument-icon/dist/esm/icons/monument-icon';
-import MoonIcon from '@patternfly/react-icons/icons/moon-icon/dist/esm/icons/moon-icon';
-import MortarPestleIcon from '@patternfly/react-icons/icons/mortar-pestle-icon/dist/esm/icons/mortar-pestle-icon';
-import MosqueIcon from '@patternfly/react-icons/icons/mosque-icon/dist/esm/icons/mosque-icon';
-import MotorcycleIcon from '@patternfly/react-icons/icons/motorcycle-icon/dist/esm/icons/motorcycle-icon';
-import MountainIcon from '@patternfly/react-icons/icons/mountain-icon/dist/esm/icons/mountain-icon';
-import MouseIcon from '@patternfly/react-icons/icons/mouse-icon/dist/esm/icons/mouse-icon';
-import MousePointerIcon from '@patternfly/react-icons/icons/mouse-pointer-icon/dist/esm/icons/mouse-pointer-icon';
-import MugHotIcon from '@patternfly/react-icons/icons/mug-hot-icon/dist/esm/icons/mug-hot-icon';
-import MulticlusterIcon from '@patternfly/react-icons/icons/multicluster-icon/dist/esm/icons/multicluster-icon';
-import MusicIcon from '@patternfly/react-icons/icons/music-icon/dist/esm/icons/music-icon';
-import NamespacesIcon from '@patternfly/react-icons/icons/namespaces-icon/dist/esm/icons/namespaces-icon';
-import NapsterIcon from '@patternfly/react-icons/icons/napster-icon/dist/esm/icons/napster-icon';
-import NeosIcon from '@patternfly/react-icons/icons/neos-icon/dist/esm/icons/neos-icon';
-import NetworkIcon from '@patternfly/react-icons/icons/network-icon/dist/esm/icons/network-icon';
-import NetworkWiredIcon from '@patternfly/react-icons/icons/network-wired-icon/dist/esm/icons/network-wired-icon';
-import NeuterIcon from '@patternfly/react-icons/icons/neuter-icon/dist/esm/icons/neuter-icon';
-import NewProcessIcon from '@patternfly/react-icons/icons/new-process-icon/dist/esm/icons/new-process-icon';
-import NewspaperIcon from '@patternfly/react-icons/icons/newspaper-icon/dist/esm/icons/newspaper-icon';
-import NimblrIcon from '@patternfly/react-icons/icons/nimblr-icon/dist/esm/icons/nimblr-icon';
-import NodeIcon from '@patternfly/react-icons/icons/node-icon/dist/esm/icons/node-icon';
-import NodeJsIcon from '@patternfly/react-icons/icons/node-js-icon/dist/esm/icons/node-js-icon';
-import NotEqualIcon from '@patternfly/react-icons/icons/not-equal-icon/dist/esm/icons/not-equal-icon';
-import NotStartedIcon from '@patternfly/react-icons/icons/not-started-icon/dist/esm/icons/not-started-icon';
-import NotesMedicalIcon from '@patternfly/react-icons/icons/notes-medical-icon/dist/esm/icons/notes-medical-icon';
-import NpmIcon from '@patternfly/react-icons/icons/npm-icon/dist/esm/icons/npm-icon';
-import Ns8Icon from '@patternfly/react-icons/icons/ns8-icon/dist/esm/icons/ns8-icon';
-import Ns8IconConfig from '@patternfly/react-icons/icons/ns8-icon/dist/esm/icons/ns8-icon-config';
-import NutritionixIcon from '@patternfly/react-icons/icons/nutritionix-icon/dist/esm/icons/nutritionix-icon';
-import ObjectGroupIcon from '@patternfly/react-icons/icons/object-group-icon/dist/esm/icons/object-group-icon';
-import ObjectUngroupIcon from '@patternfly/react-icons/icons/object-ungroup-icon/dist/esm/icons/object-ungroup-icon';
-import OctopusDeployIcon from '@patternfly/react-icons/icons/octopus-deploy-icon/dist/esm/icons/octopus-deploy-icon';
-import OdnoklassnikiIcon from '@patternfly/react-icons/icons/odnoklassniki-icon/dist/esm/icons/odnoklassniki-icon';
-import OdnoklassnikiSquareIcon from '@patternfly/react-icons/icons/odnoklassniki-square-icon/dist/esm/icons/odnoklassniki-square-icon';
-import OffIcon from '@patternfly/react-icons/icons/off-icon/dist/esm/icons/off-icon';
-import OilCanIcon from '@patternfly/react-icons/icons/oil-can-icon/dist/esm/icons/oil-can-icon';
-import OkIcon from '@patternfly/react-icons/icons/ok-icon/dist/esm/icons/ok-icon';
-import OldRepublicIcon from '@patternfly/react-icons/icons/old-republic-icon/dist/esm/icons/old-republic-icon';
-import OmIcon from '@patternfly/react-icons/icons/om-icon/dist/esm/icons/om-icon';
-import OnIcon from '@patternfly/react-icons/icons/on-icon/dist/esm/icons/on-icon';
-import OnRunningIcon from '@patternfly/react-icons/icons/on-running-icon/dist/esm/icons/on-running-icon';
-import OpenDrawerRightIcon from '@patternfly/react-icons/icons/open-drawer-right-icon/dist/esm/icons/open-drawer-right-icon';
-import OpencartIcon from '@patternfly/react-icons/icons/opencart-icon/dist/esm/icons/opencart-icon';
-import OpenidIcon from '@patternfly/react-icons/icons/openid-icon/dist/esm/icons/openid-icon';
-import OpenshiftIcon from '@patternfly/react-icons/icons/openshift-icon/dist/esm/icons/openshift-icon';
-import OpenstackIcon from '@patternfly/react-icons/icons/openstack-icon/dist/esm/icons/openstack-icon';
-import OperaIcon from '@patternfly/react-icons/icons/opera-icon/dist/esm/icons/opera-icon';
-import OptimizeIcon from '@patternfly/react-icons/icons/optimize-icon/dist/esm/icons/optimize-icon';
-import OptinMonsterIcon from '@patternfly/react-icons/icons/optin-monster-icon/dist/esm/icons/optin-monster-icon';
-import OrcidIcon from '@patternfly/react-icons/icons/orcid-icon/dist/esm/icons/orcid-icon';
-import OrdersIcon from '@patternfly/react-icons/icons/orders-icon/dist/esm/icons/orders-icon';
-import OsImageIcon from '@patternfly/react-icons/icons/os-image-icon/dist/esm/icons/os-image-icon';
-import OsiIcon from '@patternfly/react-icons/icons/osi-icon/dist/esm/icons/osi-icon';
-import OtterIcon from '@patternfly/react-icons/icons/otter-icon/dist/esm/icons/otter-icon';
-import OutdentIcon from '@patternfly/react-icons/icons/outdent-icon/dist/esm/icons/outdent-icon';
-import OutlinedAddressBookIcon from '@patternfly/react-icons/icons/outlined-address-book-icon/dist/esm/icons/outlined-address-book-icon';
-import OutlinedAddressCardIcon from '@patternfly/react-icons/icons/outlined-address-card-icon/dist/esm/icons/outlined-address-card-icon';
-import OutlinedAngryIcon from '@patternfly/react-icons/icons/outlined-angry-icon/dist/esm/icons/outlined-angry-icon';
-import OutlinedArrowAltCircleDownIcon from '@patternfly/react-icons/icons/outlined-arrow-alt-circle-down-icon/dist/esm/icons/outlined-arrow-alt-circle-down-icon';
-import OutlinedArrowAltCircleLeftIcon from '@patternfly/react-icons/icons/outlined-arrow-alt-circle-left-icon/dist/esm/icons/outlined-arrow-alt-circle-left-icon';
-import OutlinedArrowAltCircleRightIcon from '@patternfly/react-icons/icons/outlined-arrow-alt-circle-right-icon/dist/esm/icons/outlined-arrow-alt-circle-right-icon';
-import OutlinedArrowAltCircleUpIcon from '@patternfly/react-icons/icons/outlined-arrow-alt-circle-up-icon/dist/esm/icons/outlined-arrow-alt-circle-up-icon';
-import OutlinedBellIcon from '@patternfly/react-icons/icons/outlined-bell-icon/dist/esm/icons/outlined-bell-icon';
-import OutlinedBellSlashIcon from '@patternfly/react-icons/icons/outlined-bell-slash-icon/dist/esm/icons/outlined-bell-slash-icon';
-import OutlinedBookmarkIcon from '@patternfly/react-icons/icons/outlined-bookmark-icon/dist/esm/icons/outlined-bookmark-icon';
-import OutlinedBuildingIcon from '@patternfly/react-icons/icons/outlined-building-icon/dist/esm/icons/outlined-building-icon';
-import OutlinedCalendarAltIcon from '@patternfly/react-icons/icons/outlined-calendar-alt-icon/dist/esm/icons/outlined-calendar-alt-icon';
-import OutlinedCalendarCheckIcon from '@patternfly/react-icons/icons/outlined-calendar-check-icon/dist/esm/icons/outlined-calendar-check-icon';
-import OutlinedCalendarIcon from '@patternfly/react-icons/icons/outlined-calendar-icon/dist/esm/icons/outlined-calendar-icon';
-import OutlinedCalendarMinusIcon from '@patternfly/react-icons/icons/outlined-calendar-minus-icon/dist/esm/icons/outlined-calendar-minus-icon';
-import OutlinedCalendarPlusIcon from '@patternfly/react-icons/icons/outlined-calendar-plus-icon/dist/esm/icons/outlined-calendar-plus-icon';
-import OutlinedCalendarTimesIcon from '@patternfly/react-icons/icons/outlined-calendar-times-icon/dist/esm/icons/outlined-calendar-times-icon';
-import OutlinedCaretSquareDownIcon from '@patternfly/react-icons/icons/outlined-caret-square-down-icon/dist/esm/icons/outlined-caret-square-down-icon';
-import OutlinedCaretSquareLeftIcon from '@patternfly/react-icons/icons/outlined-caret-square-left-icon/dist/esm/icons/outlined-caret-square-left-icon';
-import OutlinedCaretSquareRightIcon from '@patternfly/react-icons/icons/outlined-caret-square-right-icon/dist/esm/icons/outlined-caret-square-right-icon';
-import OutlinedCaretSquareUpIcon from '@patternfly/react-icons/icons/outlined-caret-square-up-icon/dist/esm/icons/outlined-caret-square-up-icon';
-import OutlinedChartBarIcon from '@patternfly/react-icons/icons/outlined-chart-bar-icon/dist/esm/icons/outlined-chart-bar-icon';
-import OutlinedCheckCircleIcon from '@patternfly/react-icons/icons/outlined-check-circle-icon/dist/esm/icons/outlined-check-circle-icon';
-import OutlinedCheckSquareIcon from '@patternfly/react-icons/icons/outlined-check-square-icon/dist/esm/icons/outlined-check-square-icon';
-import OutlinedCircleIcon from '@patternfly/react-icons/icons/outlined-circle-icon/dist/esm/icons/outlined-circle-icon';
-import OutlinedClipboardIcon from '@patternfly/react-icons/icons/outlined-clipboard-icon/dist/esm/icons/outlined-clipboard-icon';
-import OutlinedClockIcon from '@patternfly/react-icons/icons/outlined-clock-icon/dist/esm/icons/outlined-clock-icon';
-import OutlinedCloneIcon from '@patternfly/react-icons/icons/outlined-clone-icon/dist/esm/icons/outlined-clone-icon';
-import OutlinedClosedCaptioningIcon from '@patternfly/react-icons/icons/outlined-closed-captioning-icon/dist/esm/icons/outlined-closed-captioning-icon';
-import OutlinedCommentAltIcon from '@patternfly/react-icons/icons/outlined-comment-alt-icon/dist/esm/icons/outlined-comment-alt-icon';
-import OutlinedCommentDotsIcon from '@patternfly/react-icons/icons/outlined-comment-dots-icon/dist/esm/icons/outlined-comment-dots-icon';
-import OutlinedCommentIcon from '@patternfly/react-icons/icons/outlined-comment-icon/dist/esm/icons/outlined-comment-icon';
-import OutlinedCommentsIcon from '@patternfly/react-icons/icons/outlined-comments-icon/dist/esm/icons/outlined-comments-icon';
-import OutlinedCompassIcon from '@patternfly/react-icons/icons/outlined-compass-icon/dist/esm/icons/outlined-compass-icon';
-import OutlinedCopyIcon from '@patternfly/react-icons/icons/outlined-copy-icon/dist/esm/icons/outlined-copy-icon';
-import OutlinedCopyrightIcon from '@patternfly/react-icons/icons/outlined-copyright-icon/dist/esm/icons/outlined-copyright-icon';
-import OutlinedCreditCardIcon from '@patternfly/react-icons/icons/outlined-credit-card-icon/dist/esm/icons/outlined-credit-card-icon';
-import OutlinedDizzyIcon from '@patternfly/react-icons/icons/outlined-dizzy-icon/dist/esm/icons/outlined-dizzy-icon';
-import OutlinedDotCircleIcon from '@patternfly/react-icons/icons/outlined-dot-circle-icon/dist/esm/icons/outlined-dot-circle-icon';
-import OutlinedEditIcon from '@patternfly/react-icons/icons/outlined-edit-icon/dist/esm/icons/outlined-edit-icon';
-import OutlinedEnvelopeIcon from '@patternfly/react-icons/icons/outlined-envelope-icon/dist/esm/icons/outlined-envelope-icon';
-import OutlinedEnvelopeOpenIcon from '@patternfly/react-icons/icons/outlined-envelope-open-icon/dist/esm/icons/outlined-envelope-open-icon';
-import OutlinedEyeIcon from '@patternfly/react-icons/icons/outlined-eye-icon/dist/esm/icons/outlined-eye-icon';
-import OutlinedEyeSlashIcon from '@patternfly/react-icons/icons/outlined-eye-slash-icon/dist/esm/icons/outlined-eye-slash-icon';
-import OutlinedFileAltIcon from '@patternfly/react-icons/icons/outlined-file-alt-icon/dist/esm/icons/outlined-file-alt-icon';
-import OutlinedFileArchiveIcon from '@patternfly/react-icons/icons/outlined-file-archive-icon/dist/esm/icons/outlined-file-archive-icon';
-import OutlinedFileAudioIcon from '@patternfly/react-icons/icons/outlined-file-audio-icon/dist/esm/icons/outlined-file-audio-icon';
-import OutlinedFileCodeIcon from '@patternfly/react-icons/icons/outlined-file-code-icon/dist/esm/icons/outlined-file-code-icon';
-import OutlinedFileExcelIcon from '@patternfly/react-icons/icons/outlined-file-excel-icon/dist/esm/icons/outlined-file-excel-icon';
-import OutlinedFileIcon from '@patternfly/react-icons/icons/outlined-file-icon/dist/esm/icons/outlined-file-icon';
-import OutlinedFileImageIcon from '@patternfly/react-icons/icons/outlined-file-image-icon/dist/esm/icons/outlined-file-image-icon';
-import OutlinedFilePdfIcon from '@patternfly/react-icons/icons/outlined-file-pdf-icon/dist/esm/icons/outlined-file-pdf-icon';
-import OutlinedFilePowerpointIcon from '@patternfly/react-icons/icons/outlined-file-powerpoint-icon/dist/esm/icons/outlined-file-powerpoint-icon';
-import OutlinedFileVideoIcon from '@patternfly/react-icons/icons/outlined-file-video-icon/dist/esm/icons/outlined-file-video-icon';
-import OutlinedFileWordIcon from '@patternfly/react-icons/icons/outlined-file-word-icon/dist/esm/icons/outlined-file-word-icon';
-import OutlinedFlagIcon from '@patternfly/react-icons/icons/outlined-flag-icon/dist/esm/icons/outlined-flag-icon';
-import OutlinedFlushedIcon from '@patternfly/react-icons/icons/outlined-flushed-icon/dist/esm/icons/outlined-flushed-icon';
-import OutlinedFolderIcon from '@patternfly/react-icons/icons/outlined-folder-icon/dist/esm/icons/outlined-folder-icon';
-import OutlinedFolderOpenIcon from '@patternfly/react-icons/icons/outlined-folder-open-icon/dist/esm/icons/outlined-folder-open-icon';
-import OutlinedFrownIcon from '@patternfly/react-icons/icons/outlined-frown-icon/dist/esm/icons/outlined-frown-icon';
-import OutlinedFrownOpenIcon from '@patternfly/react-icons/icons/outlined-frown-open-icon/dist/esm/icons/outlined-frown-open-icon';
-import OutlinedFutbolIcon from '@patternfly/react-icons/icons/outlined-futbol-icon/dist/esm/icons/outlined-futbol-icon';
-import OutlinedGemIcon from '@patternfly/react-icons/icons/outlined-gem-icon/dist/esm/icons/outlined-gem-icon';
-import OutlinedGrimaceIcon from '@patternfly/react-icons/icons/outlined-grimace-icon/dist/esm/icons/outlined-grimace-icon';
-import OutlinedGrinAltIcon from '@patternfly/react-icons/icons/outlined-grin-alt-icon/dist/esm/icons/outlined-grin-alt-icon';
-import OutlinedGrinBeamIcon from '@patternfly/react-icons/icons/outlined-grin-beam-icon/dist/esm/icons/outlined-grin-beam-icon';
-import OutlinedGrinBeamSweatIcon from '@patternfly/react-icons/icons/outlined-grin-beam-sweat-icon/dist/esm/icons/outlined-grin-beam-sweat-icon';
-import OutlinedGrinHeartsIcon from '@patternfly/react-icons/icons/outlined-grin-hearts-icon/dist/esm/icons/outlined-grin-hearts-icon';
-import OutlinedGrinIcon from '@patternfly/react-icons/icons/outlined-grin-icon/dist/esm/icons/outlined-grin-icon';
-import OutlinedGrinSquintIcon from '@patternfly/react-icons/icons/outlined-grin-squint-icon/dist/esm/icons/outlined-grin-squint-icon';
-import OutlinedGrinSquintTearsIcon from '@patternfly/react-icons/icons/outlined-grin-squint-tears-icon/dist/esm/icons/outlined-grin-squint-tears-icon';
-import OutlinedGrinStarsIcon from '@patternfly/react-icons/icons/outlined-grin-stars-icon/dist/esm/icons/outlined-grin-stars-icon';
-import OutlinedGrinTearsIcon from '@patternfly/react-icons/icons/outlined-grin-tears-icon/dist/esm/icons/outlined-grin-tears-icon';
-import OutlinedGrinTongueIcon from '@patternfly/react-icons/icons/outlined-grin-tongue-icon/dist/esm/icons/outlined-grin-tongue-icon';
-import OutlinedGrinTongueSquintIcon from '@patternfly/react-icons/icons/outlined-grin-tongue-squint-icon/dist/esm/icons/outlined-grin-tongue-squint-icon';
-import OutlinedGrinTongueWinkIcon from '@patternfly/react-icons/icons/outlined-grin-tongue-wink-icon/dist/esm/icons/outlined-grin-tongue-wink-icon';
-import OutlinedGrinWinkIcon from '@patternfly/react-icons/icons/outlined-grin-wink-icon/dist/esm/icons/outlined-grin-wink-icon';
-import OutlinedHandLizardIcon from '@patternfly/react-icons/icons/outlined-hand-lizard-icon/dist/esm/icons/outlined-hand-lizard-icon';
-import OutlinedHandPaperIcon from '@patternfly/react-icons/icons/outlined-hand-paper-icon/dist/esm/icons/outlined-hand-paper-icon';
-import OutlinedHandPeaceIcon from '@patternfly/react-icons/icons/outlined-hand-peace-icon/dist/esm/icons/outlined-hand-peace-icon';
-import OutlinedHandPointDownIcon from '@patternfly/react-icons/icons/outlined-hand-point-down-icon/dist/esm/icons/outlined-hand-point-down-icon';
-import OutlinedHandPointLeftIcon from '@patternfly/react-icons/icons/outlined-hand-point-left-icon/dist/esm/icons/outlined-hand-point-left-icon';
-import OutlinedHandPointRightIcon from '@patternfly/react-icons/icons/outlined-hand-point-right-icon/dist/esm/icons/outlined-hand-point-right-icon';
-import OutlinedHandPointUpIcon from '@patternfly/react-icons/icons/outlined-hand-point-up-icon/dist/esm/icons/outlined-hand-point-up-icon';
-import OutlinedHandPointerIcon from '@patternfly/react-icons/icons/outlined-hand-pointer-icon/dist/esm/icons/outlined-hand-pointer-icon';
-import OutlinedHandRockIcon from '@patternfly/react-icons/icons/outlined-hand-rock-icon/dist/esm/icons/outlined-hand-rock-icon';
-import OutlinedHandScissorsIcon from '@patternfly/react-icons/icons/outlined-hand-scissors-icon/dist/esm/icons/outlined-hand-scissors-icon';
-import OutlinedHandSpockIcon from '@patternfly/react-icons/icons/outlined-hand-spock-icon/dist/esm/icons/outlined-hand-spock-icon';
-import OutlinedHandshakeIcon from '@patternfly/react-icons/icons/outlined-handshake-icon/dist/esm/icons/outlined-handshake-icon';
-import OutlinedHddIcon from '@patternfly/react-icons/icons/outlined-hdd-icon/dist/esm/icons/outlined-hdd-icon';
-import OutlinedHeartIcon from '@patternfly/react-icons/icons/outlined-heart-icon/dist/esm/icons/outlined-heart-icon';
-import OutlinedHospitalIcon from '@patternfly/react-icons/icons/outlined-hospital-icon/dist/esm/icons/outlined-hospital-icon';
-import OutlinedHourglassIcon from '@patternfly/react-icons/icons/outlined-hourglass-icon/dist/esm/icons/outlined-hourglass-icon';
-import OutlinedIdBadgeIcon from '@patternfly/react-icons/icons/outlined-id-badge-icon/dist/esm/icons/outlined-id-badge-icon';
-import OutlinedIdCardIcon from '@patternfly/react-icons/icons/outlined-id-card-icon/dist/esm/icons/outlined-id-card-icon';
-import OutlinedImageIcon from '@patternfly/react-icons/icons/outlined-image-icon/dist/esm/icons/outlined-image-icon';
-import OutlinedImagesIcon from '@patternfly/react-icons/icons/outlined-images-icon/dist/esm/icons/outlined-images-icon';
-import OutlinedKeyboardIcon from '@patternfly/react-icons/icons/outlined-keyboard-icon/dist/esm/icons/outlined-keyboard-icon';
-import OutlinedKissBeamIcon from '@patternfly/react-icons/icons/outlined-kiss-beam-icon/dist/esm/icons/outlined-kiss-beam-icon';
-import OutlinedKissIcon from '@patternfly/react-icons/icons/outlined-kiss-icon/dist/esm/icons/outlined-kiss-icon';
-import OutlinedKissWinkHeartIcon from '@patternfly/react-icons/icons/outlined-kiss-wink-heart-icon/dist/esm/icons/outlined-kiss-wink-heart-icon';
-import OutlinedLaughBeamIcon from '@patternfly/react-icons/icons/outlined-laugh-beam-icon/dist/esm/icons/outlined-laugh-beam-icon';
-import OutlinedLaughIcon from '@patternfly/react-icons/icons/outlined-laugh-icon/dist/esm/icons/outlined-laugh-icon';
-import OutlinedLaughSquintIcon from '@patternfly/react-icons/icons/outlined-laugh-squint-icon/dist/esm/icons/outlined-laugh-squint-icon';
-import OutlinedLaughWinkIcon from '@patternfly/react-icons/icons/outlined-laugh-wink-icon/dist/esm/icons/outlined-laugh-wink-icon';
-import OutlinedLemonIcon from '@patternfly/react-icons/icons/outlined-lemon-icon/dist/esm/icons/outlined-lemon-icon';
-import OutlinedLifeRingIcon from '@patternfly/react-icons/icons/outlined-life-ring-icon/dist/esm/icons/outlined-life-ring-icon';
-import OutlinedLightbulbIcon from '@patternfly/react-icons/icons/outlined-lightbulb-icon/dist/esm/icons/outlined-lightbulb-icon';
-import OutlinedListAltIcon from '@patternfly/react-icons/icons/outlined-list-alt-icon/dist/esm/icons/outlined-list-alt-icon';
-import OutlinedMapIcon from '@patternfly/react-icons/icons/outlined-map-icon/dist/esm/icons/outlined-map-icon';
-import OutlinedMehBlankIcon from '@patternfly/react-icons/icons/outlined-meh-blank-icon/dist/esm/icons/outlined-meh-blank-icon';
-import OutlinedMehIcon from '@patternfly/react-icons/icons/outlined-meh-icon/dist/esm/icons/outlined-meh-icon';
-import OutlinedMehRollingEyesIcon from '@patternfly/react-icons/icons/outlined-meh-rolling-eyes-icon/dist/esm/icons/outlined-meh-rolling-eyes-icon';
-import OutlinedMinusSquareIcon from '@patternfly/react-icons/icons/outlined-minus-square-icon/dist/esm/icons/outlined-minus-square-icon';
-import OutlinedMoneyBillAltIcon from '@patternfly/react-icons/icons/outlined-money-bill-alt-icon/dist/esm/icons/outlined-money-bill-alt-icon';
-import OutlinedMoonIcon from '@patternfly/react-icons/icons/outlined-moon-icon/dist/esm/icons/outlined-moon-icon';
-import OutlinedNewspaperIcon from '@patternfly/react-icons/icons/outlined-newspaper-icon/dist/esm/icons/outlined-newspaper-icon';
-import OutlinedObjectGroupIcon from '@patternfly/react-icons/icons/outlined-object-group-icon/dist/esm/icons/outlined-object-group-icon';
-import OutlinedObjectUngroupIcon from '@patternfly/react-icons/icons/outlined-object-ungroup-icon/dist/esm/icons/outlined-object-ungroup-icon';
-import OutlinedPaperPlaneIcon from '@patternfly/react-icons/icons/outlined-paper-plane-icon/dist/esm/icons/outlined-paper-plane-icon';
-import OutlinedPauseCircleIcon from '@patternfly/react-icons/icons/outlined-pause-circle-icon/dist/esm/icons/outlined-pause-circle-icon';
-import OutlinedPlayCircleIcon from '@patternfly/react-icons/icons/outlined-play-circle-icon/dist/esm/icons/outlined-play-circle-icon';
-import OutlinedPlusSquareIcon from '@patternfly/react-icons/icons/outlined-plus-square-icon/dist/esm/icons/outlined-plus-square-icon';
-import OutlinedQuestionCircleIcon from '@patternfly/react-icons/icons/outlined-question-circle-icon/dist/esm/icons/outlined-question-circle-icon';
-import OutlinedRegisteredIcon from '@patternfly/react-icons/icons/outlined-registered-icon/dist/esm/icons/outlined-registered-icon';
-import OutlinedSadCryIcon from '@patternfly/react-icons/icons/outlined-sad-cry-icon/dist/esm/icons/outlined-sad-cry-icon';
-import OutlinedSadTearIcon from '@patternfly/react-icons/icons/outlined-sad-tear-icon/dist/esm/icons/outlined-sad-tear-icon';
-import OutlinedSaveIcon from '@patternfly/react-icons/icons/outlined-save-icon/dist/esm/icons/outlined-save-icon';
-import OutlinedShareSquareIcon from '@patternfly/react-icons/icons/outlined-share-square-icon/dist/esm/icons/outlined-share-square-icon';
-import OutlinedSmileBeamIcon from '@patternfly/react-icons/icons/outlined-smile-beam-icon/dist/esm/icons/outlined-smile-beam-icon';
-import OutlinedSmileIcon from '@patternfly/react-icons/icons/outlined-smile-icon/dist/esm/icons/outlined-smile-icon';
-import OutlinedSmileWinkIcon from '@patternfly/react-icons/icons/outlined-smile-wink-icon/dist/esm/icons/outlined-smile-wink-icon';
-import OutlinedSnowflakeIcon from '@patternfly/react-icons/icons/outlined-snowflake-icon/dist/esm/icons/outlined-snowflake-icon';
-import OutlinedSquareIcon from '@patternfly/react-icons/icons/outlined-square-icon/dist/esm/icons/outlined-square-icon';
-import OutlinedStarHalfIcon from '@patternfly/react-icons/icons/outlined-star-half-icon/dist/esm/icons/outlined-star-half-icon';
-import OutlinedStarIcon from '@patternfly/react-icons/icons/outlined-star-icon/dist/esm/icons/outlined-star-icon';
-import OutlinedStickyNoteIcon from '@patternfly/react-icons/icons/outlined-sticky-note-icon/dist/esm/icons/outlined-sticky-note-icon';
-import OutlinedStopCircleIcon from '@patternfly/react-icons/icons/outlined-stop-circle-icon/dist/esm/icons/outlined-stop-circle-icon';
-import OutlinedSunIcon from '@patternfly/react-icons/icons/outlined-sun-icon/dist/esm/icons/outlined-sun-icon';
-import OutlinedSurpriseIcon from '@patternfly/react-icons/icons/outlined-surprise-icon/dist/esm/icons/outlined-surprise-icon';
-import OutlinedThumbsDownIcon from '@patternfly/react-icons/icons/outlined-thumbs-down-icon/dist/esm/icons/outlined-thumbs-down-icon';
-import OutlinedThumbsUpIcon from '@patternfly/react-icons/icons/outlined-thumbs-up-icon/dist/esm/icons/outlined-thumbs-up-icon';
-import OutlinedTimesCircleIcon from '@patternfly/react-icons/icons/outlined-times-circle-icon/dist/esm/icons/outlined-times-circle-icon';
-import OutlinedTiredIcon from '@patternfly/react-icons/icons/outlined-tired-icon/dist/esm/icons/outlined-tired-icon';
-import OutlinedTrashAltIcon from '@patternfly/react-icons/icons/outlined-trash-alt-icon/dist/esm/icons/outlined-trash-alt-icon';
-import OutlinedUserCircleIcon from '@patternfly/react-icons/icons/outlined-user-circle-icon/dist/esm/icons/outlined-user-circle-icon';
-import OutlinedUserIcon from '@patternfly/react-icons/icons/outlined-user-icon/dist/esm/icons/outlined-user-icon';
-import OutlinedWindowCloseIcon from '@patternfly/react-icons/icons/outlined-window-close-icon/dist/esm/icons/outlined-window-close-icon';
-import OutlinedWindowMaximizeIcon from '@patternfly/react-icons/icons/outlined-window-maximize-icon/dist/esm/icons/outlined-window-maximize-icon';
-import OutlinedWindowMinimizeIcon from '@patternfly/react-icons/icons/outlined-window-minimize-icon/dist/esm/icons/outlined-window-minimize-icon';
-import OutlinedWindowRestoreIcon from '@patternfly/react-icons/icons/outlined-window-restore-icon/dist/esm/icons/outlined-window-restore-icon';
-import PackageIcon from '@patternfly/react-icons/icons/package-icon/dist/esm/icons/package-icon';
-import Page4Icon from '@patternfly/react-icons/icons/page4-icon/dist/esm/icons/page4-icon';
-import Page4IconConfig from '@patternfly/react-icons/icons/page4-icon/dist/esm/icons/page4-icon-config';
-import PagelinesIcon from '@patternfly/react-icons/icons/pagelines-icon/dist/esm/icons/pagelines-icon';
-import PagerIcon from '@patternfly/react-icons/icons/pager-icon/dist/esm/icons/pager-icon';
-import PaintBrushIcon from '@patternfly/react-icons/icons/paint-brush-icon/dist/esm/icons/paint-brush-icon';
-import PaintRollerIcon from '@patternfly/react-icons/icons/paint-roller-icon/dist/esm/icons/paint-roller-icon';
-import PaletteIcon from '@patternfly/react-icons/icons/palette-icon/dist/esm/icons/palette-icon';
-import PalfedIcon from '@patternfly/react-icons/icons/palfed-icon/dist/esm/icons/palfed-icon';
-import PalletIcon from '@patternfly/react-icons/icons/pallet-icon/dist/esm/icons/pallet-icon';
-import PanelCloseIcon from '@patternfly/react-icons/icons/panel-close-icon/dist/esm/icons/panel-close-icon';
-import PanelOpenIcon from '@patternfly/react-icons/icons/panel-open-icon/dist/esm/icons/panel-open-icon';
-import PaperPlaneAltIcon from '@patternfly/react-icons/icons/paper-plane-alt-icon/dist/esm/icons/paper-plane-alt-icon';
-import PaperPlaneIcon from '@patternfly/react-icons/icons/paper-plane-icon/dist/esm/icons/paper-plane-icon';
-import PaperclipIcon from '@patternfly/react-icons/icons/paperclip-icon/dist/esm/icons/paperclip-icon';
-import ParachuteBoxIcon from '@patternfly/react-icons/icons/parachute-box-icon/dist/esm/icons/parachute-box-icon';
-import ParagraphIcon from '@patternfly/react-icons/icons/paragraph-icon/dist/esm/icons/paragraph-icon';
-import ParkingIcon from '@patternfly/react-icons/icons/parking-icon/dist/esm/icons/parking-icon';
-import PassportIcon from '@patternfly/react-icons/icons/passport-icon/dist/esm/icons/passport-icon';
-import PastafarianismIcon from '@patternfly/react-icons/icons/pastafarianism-icon/dist/esm/icons/pastafarianism-icon';
-import PasteIcon from '@patternfly/react-icons/icons/paste-icon/dist/esm/icons/paste-icon';
-import PathMissingIcon from '@patternfly/react-icons/icons/path-missing-icon/dist/esm/icons/path-missing-icon';
-import PatreonIcon from '@patternfly/react-icons/icons/patreon-icon/dist/esm/icons/patreon-icon';
-import PauseCircleIcon from '@patternfly/react-icons/icons/pause-circle-icon/dist/esm/icons/pause-circle-icon';
-import PauseIcon from '@patternfly/react-icons/icons/pause-icon/dist/esm/icons/pause-icon';
-import PausedIcon from '@patternfly/react-icons/icons/paused-icon/dist/esm/icons/paused-icon';
-import PawIcon from '@patternfly/react-icons/icons/paw-icon/dist/esm/icons/paw-icon';
-import PaypalIcon from '@patternfly/react-icons/icons/paypal-icon/dist/esm/icons/paypal-icon';
-import PeaceIcon from '@patternfly/react-icons/icons/peace-icon/dist/esm/icons/peace-icon';
-import PenAltIcon from '@patternfly/react-icons/icons/pen-alt-icon/dist/esm/icons/pen-alt-icon';
-import PenFancyIcon from '@patternfly/react-icons/icons/pen-fancy-icon/dist/esm/icons/pen-fancy-icon';
-import PenIcon from '@patternfly/react-icons/icons/pen-icon/dist/esm/icons/pen-icon';
-import PenNibIcon from '@patternfly/react-icons/icons/pen-nib-icon/dist/esm/icons/pen-nib-icon';
-import PenSquareIcon from '@patternfly/react-icons/icons/pen-square-icon/dist/esm/icons/pen-square-icon';
-import PencilAltIcon from '@patternfly/react-icons/icons/pencil-alt-icon/dist/esm/icons/pencil-alt-icon';
-import PencilRulerIcon from '@patternfly/react-icons/icons/pencil-ruler-icon/dist/esm/icons/pencil-ruler-icon';
-import PendingIcon from '@patternfly/react-icons/icons/pending-icon/dist/esm/icons/pending-icon';
-import PennyArcadeIcon from '@patternfly/react-icons/icons/penny-arcade-icon/dist/esm/icons/penny-arcade-icon';
-import PeopleArrowsIcon from '@patternfly/react-icons/icons/people-arrows-icon/dist/esm/icons/people-arrows-icon';
-import PeopleCarryIcon from '@patternfly/react-icons/icons/people-carry-icon/dist/esm/icons/people-carry-icon';
-import PepperHotIcon from '@patternfly/react-icons/icons/pepper-hot-icon/dist/esm/icons/pepper-hot-icon';
-import PerbyteIcon from '@patternfly/react-icons/icons/perbyte-icon/dist/esm/icons/perbyte-icon';
-import PercentIcon from '@patternfly/react-icons/icons/percent-icon/dist/esm/icons/percent-icon';
-import PercentageIcon from '@patternfly/react-icons/icons/percentage-icon/dist/esm/icons/percentage-icon';
-import PeriscopeIcon from '@patternfly/react-icons/icons/periscope-icon/dist/esm/icons/periscope-icon';
-import PersonBoothIcon from '@patternfly/react-icons/icons/person-booth-icon/dist/esm/icons/person-booth-icon';
-import PficonDragdropIcon from '@patternfly/react-icons/icons/pficon-dragdrop-icon/dist/esm/icons/pficon-dragdrop-icon';
-import PficonHistoryIcon from '@patternfly/react-icons/icons/pficon-history-icon/dist/esm/icons/pficon-history-icon';
-import PficonNetworkRangeIcon from '@patternfly/react-icons/icons/pficon-network-range-icon/dist/esm/icons/pficon-network-range-icon';
-import PficonSatelliteIcon from '@patternfly/react-icons/icons/pficon-satellite-icon/dist/esm/icons/pficon-satellite-icon';
-import PficonSortCommonAscIcon from '@patternfly/react-icons/icons/pficon-sort-common-asc-icon/dist/esm/icons/pficon-sort-common-asc-icon';
-import PficonSortCommonDescIcon from '@patternfly/react-icons/icons/pficon-sort-common-desc-icon/dist/esm/icons/pficon-sort-common-desc-icon';
-import PficonTemplateIcon from '@patternfly/react-icons/icons/pficon-template-icon/dist/esm/icons/pficon-template-icon';
-import PficonVcenterIcon from '@patternfly/react-icons/icons/pficon-vcenter-icon/dist/esm/icons/pficon-vcenter-icon';
-import PhabricatorIcon from '@patternfly/react-icons/icons/phabricator-icon/dist/esm/icons/phabricator-icon';
-import PhoenixFrameworkIcon from '@patternfly/react-icons/icons/phoenix-framework-icon/dist/esm/icons/phoenix-framework-icon';
-import PhoenixSquadronIcon from '@patternfly/react-icons/icons/phoenix-squadron-icon/dist/esm/icons/phoenix-squadron-icon';
-import PhoneAltIcon from '@patternfly/react-icons/icons/phone-alt-icon/dist/esm/icons/phone-alt-icon';
-import PhoneIcon from '@patternfly/react-icons/icons/phone-icon/dist/esm/icons/phone-icon';
-import PhoneSlashIcon from '@patternfly/react-icons/icons/phone-slash-icon/dist/esm/icons/phone-slash-icon';
-import PhoneSquareAltIcon from '@patternfly/react-icons/icons/phone-square-alt-icon/dist/esm/icons/phone-square-alt-icon';
-import PhoneSquareIcon from '@patternfly/react-icons/icons/phone-square-icon/dist/esm/icons/phone-square-icon';
-import PhoneVolumeIcon from '@patternfly/react-icons/icons/phone-volume-icon/dist/esm/icons/phone-volume-icon';
-import PhotoVideoIcon from '@patternfly/react-icons/icons/photo-video-icon/dist/esm/icons/photo-video-icon';
-import PhpIcon from '@patternfly/react-icons/icons/php-icon/dist/esm/icons/php-icon';
-import PiedPiperAltIcon from '@patternfly/react-icons/icons/pied-piper-alt-icon/dist/esm/icons/pied-piper-alt-icon';
-import PiedPiperHatIcon from '@patternfly/react-icons/icons/pied-piper-hat-icon/dist/esm/icons/pied-piper-hat-icon';
-import PiedPiperIcon from '@patternfly/react-icons/icons/pied-piper-icon/dist/esm/icons/pied-piper-icon';
-import PiedPiperPpIcon from '@patternfly/react-icons/icons/pied-piper-pp-icon/dist/esm/icons/pied-piper-pp-icon';
-import PiedPiperSquareIcon from '@patternfly/react-icons/icons/pied-piper-square-icon/dist/esm/icons/pied-piper-square-icon';
-import PiggyBankIcon from '@patternfly/react-icons/icons/piggy-bank-icon/dist/esm/icons/piggy-bank-icon';
-import PillsIcon from '@patternfly/react-icons/icons/pills-icon/dist/esm/icons/pills-icon';
-import PinterestIcon from '@patternfly/react-icons/icons/pinterest-icon/dist/esm/icons/pinterest-icon';
-import PinterestPIcon from '@patternfly/react-icons/icons/pinterest-p-icon/dist/esm/icons/pinterest-p-icon';
-import PinterestSquareIcon from '@patternfly/react-icons/icons/pinterest-square-icon/dist/esm/icons/pinterest-square-icon';
-import PizzaSliceIcon from '@patternfly/react-icons/icons/pizza-slice-icon/dist/esm/icons/pizza-slice-icon';
-import PlaceOfWorshipIcon from '@patternfly/react-icons/icons/place-of-worship-icon/dist/esm/icons/place-of-worship-icon';
-import PlaneArrivalIcon from '@patternfly/react-icons/icons/plane-arrival-icon/dist/esm/icons/plane-arrival-icon';
-import PlaneDepartureIcon from '@patternfly/react-icons/icons/plane-departure-icon/dist/esm/icons/plane-departure-icon';
-import PlaneIcon from '@patternfly/react-icons/icons/plane-icon/dist/esm/icons/plane-icon';
-import PlaneSlashIcon from '@patternfly/react-icons/icons/plane-slash-icon/dist/esm/icons/plane-slash-icon';
-import PlayCircleIcon from '@patternfly/react-icons/icons/play-circle-icon/dist/esm/icons/play-circle-icon';
-import PlayIcon from '@patternfly/react-icons/icons/play-icon/dist/esm/icons/play-icon';
-import PlaystationIcon from '@patternfly/react-icons/icons/playstation-icon/dist/esm/icons/playstation-icon';
-import PlugIcon from '@patternfly/react-icons/icons/plug-icon/dist/esm/icons/plug-icon';
-import PluggedIcon from '@patternfly/react-icons/icons/plugged-icon/dist/esm/icons/plugged-icon';
-import PlusCircleIcon from '@patternfly/react-icons/icons/plus-circle-icon/dist/esm/icons/plus-circle-icon';
-import PlusIcon from '@patternfly/react-icons/icons/plus-icon/dist/esm/icons/plus-icon';
-import PlusSquareIcon from '@patternfly/react-icons/icons/plus-square-icon/dist/esm/icons/plus-square-icon';
-import PodcastIcon from '@patternfly/react-icons/icons/podcast-icon/dist/esm/icons/podcast-icon';
-import PollHIcon from '@patternfly/react-icons/icons/poll-h-icon/dist/esm/icons/poll-h-icon';
-import PollIcon from '@patternfly/react-icons/icons/poll-icon/dist/esm/icons/poll-icon';
-import PooIcon from '@patternfly/react-icons/icons/poo-icon/dist/esm/icons/poo-icon';
-import PooStormIcon from '@patternfly/react-icons/icons/poo-storm-icon/dist/esm/icons/poo-storm-icon';
-import PoopIcon from '@patternfly/react-icons/icons/poop-icon/dist/esm/icons/poop-icon';
-import PortIcon from '@patternfly/react-icons/icons/port-icon/dist/esm/icons/port-icon';
-import PortraitIcon from '@patternfly/react-icons/icons/portrait-icon/dist/esm/icons/portrait-icon';
-import PoundSignIcon from '@patternfly/react-icons/icons/pound-sign-icon/dist/esm/icons/pound-sign-icon';
-import PowerOffIcon from '@patternfly/react-icons/icons/power-off-icon/dist/esm/icons/power-off-icon';
-import PrayIcon from '@patternfly/react-icons/icons/pray-icon/dist/esm/icons/pray-icon';
-import PrayingHandsIcon from '@patternfly/react-icons/icons/praying-hands-icon/dist/esm/icons/praying-hands-icon';
-import PrescriptionBottleAltIcon from '@patternfly/react-icons/icons/prescription-bottle-alt-icon/dist/esm/icons/prescription-bottle-alt-icon';
-import PrescriptionBottleIcon from '@patternfly/react-icons/icons/prescription-bottle-icon/dist/esm/icons/prescription-bottle-icon';
-import PrescriptionIcon from '@patternfly/react-icons/icons/prescription-icon/dist/esm/icons/prescription-icon';
-import PrintAltIcon from '@patternfly/react-icons/icons/print-alt-icon/dist/esm/icons/print-alt-icon';
-import PrintIcon from '@patternfly/react-icons/icons/print-icon/dist/esm/icons/print-icon';
-import PrivateIcon from '@patternfly/react-icons/icons/private-icon/dist/esm/icons/private-icon';
-import ProceduresIcon from '@patternfly/react-icons/icons/procedures-icon/dist/esm/icons/procedures-icon';
-import ProcessAutomationIcon from '@patternfly/react-icons/icons/process-automation-icon/dist/esm/icons/process-automation-icon';
-import ProductHuntIcon from '@patternfly/react-icons/icons/product-hunt-icon/dist/esm/icons/product-hunt-icon';
-import ProjectDiagramIcon from '@patternfly/react-icons/icons/project-diagram-icon/dist/esm/icons/project-diagram-icon';
-import ProjectIcon from '@patternfly/react-icons/icons/project-icon/dist/esm/icons/project-icon';
-import PumpMedicalIcon from '@patternfly/react-icons/icons/pump-medical-icon/dist/esm/icons/pump-medical-icon';
-import PumpSoapIcon from '@patternfly/react-icons/icons/pump-soap-icon/dist/esm/icons/pump-soap-icon';
-import PushedIcon from '@patternfly/react-icons/icons/pushed-icon/dist/esm/icons/pushed-icon';
-import PuzzlePieceIcon from '@patternfly/react-icons/icons/puzzle-piece-icon/dist/esm/icons/puzzle-piece-icon';
-import PythonIcon from '@patternfly/react-icons/icons/python-icon/dist/esm/icons/python-icon';
-import QqIcon from '@patternfly/react-icons/icons/qq-icon/dist/esm/icons/qq-icon';
-import QrcodeIcon from '@patternfly/react-icons/icons/qrcode-icon/dist/esm/icons/qrcode-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/icons/question-circle-icon/dist/esm/icons/question-circle-icon';
-import QuestionIcon from '@patternfly/react-icons/icons/question-icon/dist/esm/icons/question-icon';
-import QuidditchIcon from '@patternfly/react-icons/icons/quidditch-icon/dist/esm/icons/quidditch-icon';
-import QuinscapeIcon from '@patternfly/react-icons/icons/quinscape-icon/dist/esm/icons/quinscape-icon';
-import QuoraIcon from '@patternfly/react-icons/icons/quora-icon/dist/esm/icons/quora-icon';
-import QuoteLeftIcon from '@patternfly/react-icons/icons/quote-left-icon/dist/esm/icons/quote-left-icon';
-import QuoteRightIcon from '@patternfly/react-icons/icons/quote-right-icon/dist/esm/icons/quote-right-icon';
-import QuranIcon from '@patternfly/react-icons/icons/quran-icon/dist/esm/icons/quran-icon';
-import RProjectIcon from '@patternfly/react-icons/icons/r-project-icon/dist/esm/icons/r-project-icon';
-import RadiationAltIcon from '@patternfly/react-icons/icons/radiation-alt-icon/dist/esm/icons/radiation-alt-icon';
-import RadiationIcon from '@patternfly/react-icons/icons/radiation-icon/dist/esm/icons/radiation-icon';
-import RainbowIcon from '@patternfly/react-icons/icons/rainbow-icon/dist/esm/icons/rainbow-icon';
-import RandomIcon from '@patternfly/react-icons/icons/random-icon/dist/esm/icons/random-icon';
-import RaspberryPiIcon from '@patternfly/react-icons/icons/raspberry-pi-icon/dist/esm/icons/raspberry-pi-icon';
-import RavelryIcon from '@patternfly/react-icons/icons/ravelry-icon/dist/esm/icons/ravelry-icon';
-import ReactIcon from '@patternfly/react-icons/icons/react-icon/dist/esm/icons/react-icon';
-import ReacteuropeIcon from '@patternfly/react-icons/icons/reacteurope-icon/dist/esm/icons/reacteurope-icon';
-import ReadmeIcon from '@patternfly/react-icons/icons/readme-icon/dist/esm/icons/readme-icon';
-import RebalanceIcon from '@patternfly/react-icons/icons/rebalance-icon/dist/esm/icons/rebalance-icon';
-import RebelIcon from '@patternfly/react-icons/icons/rebel-icon/dist/esm/icons/rebel-icon';
-import RebootingIcon from '@patternfly/react-icons/icons/rebooting-icon/dist/esm/icons/rebooting-icon';
-import ReceiptIcon from '@patternfly/react-icons/icons/receipt-icon/dist/esm/icons/receipt-icon';
-import RecordVinylIcon from '@patternfly/react-icons/icons/record-vinyl-icon/dist/esm/icons/record-vinyl-icon';
-import RecycleIcon from '@patternfly/react-icons/icons/recycle-icon/dist/esm/icons/recycle-icon';
-import RedRiverIcon from '@patternfly/react-icons/icons/red-river-icon/dist/esm/icons/red-river-icon';
-import RedditAlienIcon from '@patternfly/react-icons/icons/reddit-alien-icon/dist/esm/icons/reddit-alien-icon';
-import RedditIcon from '@patternfly/react-icons/icons/reddit-icon/dist/esm/icons/reddit-icon';
-import RedditSquareIcon from '@patternfly/react-icons/icons/reddit-square-icon/dist/esm/icons/reddit-square-icon';
-import RedhatIcon from '@patternfly/react-icons/icons/redhat-icon/dist/esm/icons/redhat-icon';
-import RedoAltIcon from '@patternfly/react-icons/icons/redo-alt-icon/dist/esm/icons/redo-alt-icon';
-import RedoIcon from '@patternfly/react-icons/icons/redo-icon/dist/esm/icons/redo-icon';
-import RegionsIcon from '@patternfly/react-icons/icons/regions-icon/dist/esm/icons/regions-icon';
-import RegisteredIcon from '@patternfly/react-icons/icons/registered-icon/dist/esm/icons/registered-icon';
-import RegistryIcon from '@patternfly/react-icons/icons/registry-icon/dist/esm/icons/registry-icon';
-import Remove2Icon from '@patternfly/react-icons/icons/remove2-icon/dist/esm/icons/remove2-icon';
-import Remove2IconConfig from '@patternfly/react-icons/icons/remove2-icon/dist/esm/icons/remove2-icon-config';
-import RemoveFormatIcon from '@patternfly/react-icons/icons/remove-format-icon/dist/esm/icons/remove-format-icon';
-import RenrenIcon from '@patternfly/react-icons/icons/renren-icon/dist/esm/icons/renren-icon';
-import ReplicatorIcon from '@patternfly/react-icons/icons/replicator-icon/dist/esm/icons/replicator-icon';
-import ReplyAllIcon from '@patternfly/react-icons/icons/reply-all-icon/dist/esm/icons/reply-all-icon';
-import ReplyIcon from '@patternfly/react-icons/icons/reply-icon/dist/esm/icons/reply-icon';
-import ReplydIcon from '@patternfly/react-icons/icons/replyd-icon/dist/esm/icons/replyd-icon';
-import RepositoryIcon from '@patternfly/react-icons/icons/repository-icon/dist/esm/icons/repository-icon';
-import RepublicanIcon from '@patternfly/react-icons/icons/republican-icon/dist/esm/icons/republican-icon';
-import ResearchgateIcon from '@patternfly/react-icons/icons/researchgate-icon/dist/esm/icons/researchgate-icon';
-import ResolvingIcon from '@patternfly/react-icons/icons/resolving-icon/dist/esm/icons/resolving-icon';
-import ResourcePoolIcon from '@patternfly/react-icons/icons/resource-pool-icon/dist/esm/icons/resource-pool-icon';
-import ResourcesAlmostEmptyIcon from '@patternfly/react-icons/icons/resources-almost-empty-icon/dist/esm/icons/resources-almost-empty-icon';
-import ResourcesAlmostFullIcon from '@patternfly/react-icons/icons/resources-almost-full-icon/dist/esm/icons/resources-almost-full-icon';
-import ResourcesEmptyIcon from '@patternfly/react-icons/icons/resources-empty-icon/dist/esm/icons/resources-empty-icon';
-import ResourcesFullIcon from '@patternfly/react-icons/icons/resources-full-icon/dist/esm/icons/resources-full-icon';
-import RestroomIcon from '@patternfly/react-icons/icons/restroom-icon/dist/esm/icons/restroom-icon';
-import RetweetIcon from '@patternfly/react-icons/icons/retweet-icon/dist/esm/icons/retweet-icon';
-import RevIcon from '@patternfly/react-icons/icons/rev-icon/dist/esm/icons/rev-icon';
-import RibbonIcon from '@patternfly/react-icons/icons/ribbon-icon/dist/esm/icons/ribbon-icon';
-import RingIcon from '@patternfly/react-icons/icons/ring-icon/dist/esm/icons/ring-icon';
-import RoadIcon from '@patternfly/react-icons/icons/road-icon/dist/esm/icons/road-icon';
-import RobotIcon from '@patternfly/react-icons/icons/robot-icon/dist/esm/icons/robot-icon';
-import RocketIcon from '@patternfly/react-icons/icons/rocket-icon/dist/esm/icons/rocket-icon';
-import RocketchatIcon from '@patternfly/react-icons/icons/rocketchat-icon/dist/esm/icons/rocketchat-icon';
-import RockrmsIcon from '@patternfly/react-icons/icons/rockrms-icon/dist/esm/icons/rockrms-icon';
-import RouteIcon from '@patternfly/react-icons/icons/route-icon/dist/esm/icons/route-icon';
-import RssIcon from '@patternfly/react-icons/icons/rss-icon/dist/esm/icons/rss-icon';
-import RssSquareIcon from '@patternfly/react-icons/icons/rss-square-icon/dist/esm/icons/rss-square-icon';
-import RubleSignIcon from '@patternfly/react-icons/icons/ruble-sign-icon/dist/esm/icons/ruble-sign-icon';
-import RulerCombinedIcon from '@patternfly/react-icons/icons/ruler-combined-icon/dist/esm/icons/ruler-combined-icon';
-import RulerHorizontalIcon from '@patternfly/react-icons/icons/ruler-horizontal-icon/dist/esm/icons/ruler-horizontal-icon';
-import RulerIcon from '@patternfly/react-icons/icons/ruler-icon/dist/esm/icons/ruler-icon';
-import RulerVerticalIcon from '@patternfly/react-icons/icons/ruler-vertical-icon/dist/esm/icons/ruler-vertical-icon';
-import RunningIcon from '@patternfly/react-icons/icons/running-icon/dist/esm/icons/running-icon';
-import RupeeSignIcon from '@patternfly/react-icons/icons/rupee-sign-icon/dist/esm/icons/rupee-sign-icon';
-import RustIcon from '@patternfly/react-icons/icons/rust-icon/dist/esm/icons/rust-icon';
-import SadCryIcon from '@patternfly/react-icons/icons/sad-cry-icon/dist/esm/icons/sad-cry-icon';
-import SadTearIcon from '@patternfly/react-icons/icons/sad-tear-icon/dist/esm/icons/sad-tear-icon';
-import SafariIcon from '@patternfly/react-icons/icons/safari-icon/dist/esm/icons/safari-icon';
-import SalesforceIcon from '@patternfly/react-icons/icons/salesforce-icon/dist/esm/icons/salesforce-icon';
-import SassIcon from '@patternfly/react-icons/icons/sass-icon/dist/esm/icons/sass-icon';
-import SatelliteDishIcon from '@patternfly/react-icons/icons/satellite-dish-icon/dist/esm/icons/satellite-dish-icon';
-import SatelliteIcon from '@patternfly/react-icons/icons/satellite-icon/dist/esm/icons/satellite-icon';
-import SaveAltIcon from '@patternfly/react-icons/icons/save-alt-icon/dist/esm/icons/save-alt-icon';
-import SaveIcon from '@patternfly/react-icons/icons/save-icon/dist/esm/icons/save-icon';
-import SchlixIcon from '@patternfly/react-icons/icons/schlix-icon/dist/esm/icons/schlix-icon';
-import SchoolIcon from '@patternfly/react-icons/icons/school-icon/dist/esm/icons/school-icon';
-import ScreenIcon from '@patternfly/react-icons/icons/screen-icon/dist/esm/icons/screen-icon';
-import ScrewdriverIcon from '@patternfly/react-icons/icons/screwdriver-icon/dist/esm/icons/screwdriver-icon';
-import ScribdIcon from '@patternfly/react-icons/icons/scribd-icon/dist/esm/icons/scribd-icon';
-import ScrollIcon from '@patternfly/react-icons/icons/scroll-icon/dist/esm/icons/scroll-icon';
-import SdCardIcon from '@patternfly/react-icons/icons/sd-card-icon/dist/esm/icons/sd-card-icon';
-import SearchDollarIcon from '@patternfly/react-icons/icons/search-dollar-icon/dist/esm/icons/search-dollar-icon';
-import SearchIcon from '@patternfly/react-icons/icons/search-icon/dist/esm/icons/search-icon';
-import SearchLocationIcon from '@patternfly/react-icons/icons/search-location-icon/dist/esm/icons/search-location-icon';
-import SearchMinusIcon from '@patternfly/react-icons/icons/search-minus-icon/dist/esm/icons/search-minus-icon';
-import SearchPlusIcon from '@patternfly/react-icons/icons/search-plus-icon/dist/esm/icons/search-plus-icon';
-import SearchenginIcon from '@patternfly/react-icons/icons/searchengin-icon/dist/esm/icons/searchengin-icon';
-import SecurityIcon from '@patternfly/react-icons/icons/security-icon/dist/esm/icons/security-icon';
-import SeedlingIcon from '@patternfly/react-icons/icons/seedling-icon/dist/esm/icons/seedling-icon';
-import SellcastIcon from '@patternfly/react-icons/icons/sellcast-icon/dist/esm/icons/sellcast-icon';
-import SellsyIcon from '@patternfly/react-icons/icons/sellsy-icon/dist/esm/icons/sellsy-icon';
-import ServerAltIcon from '@patternfly/react-icons/icons/server-alt-icon/dist/esm/icons/server-alt-icon';
-import ServerGroupIcon from '@patternfly/react-icons/icons/server-group-icon/dist/esm/icons/server-group-icon';
-import ServerIcon from '@patternfly/react-icons/icons/server-icon/dist/esm/icons/server-icon';
-import ServiceCatalogIcon from '@patternfly/react-icons/icons/service-catalog-icon/dist/esm/icons/service-catalog-icon';
-import ServiceIcon from '@patternfly/react-icons/icons/service-icon/dist/esm/icons/service-icon';
-import ServicesIcon from '@patternfly/react-icons/icons/services-icon/dist/esm/icons/services-icon';
-import ServicestackIcon from '@patternfly/react-icons/icons/servicestack-icon/dist/esm/icons/servicestack-icon';
-import SeverityCriticalIcon from '@patternfly/react-icons/icons/severity-critical-icon/dist/esm/icons/severity-critical-icon';
-import SeverityImportantIcon from '@patternfly/react-icons/icons/severity-important-icon/dist/esm/icons/severity-important-icon';
-import SeverityMinorIcon from '@patternfly/react-icons/icons/severity-minor-icon/dist/esm/icons/severity-minor-icon';
-import SeverityModerateIcon from '@patternfly/react-icons/icons/severity-moderate-icon/dist/esm/icons/severity-moderate-icon';
-import SeverityNoneIcon from '@patternfly/react-icons/icons/severity-none-icon/dist/esm/icons/severity-none-icon';
-import SeverityUndefinedIcon from '@patternfly/react-icons/icons/severity-undefined-icon/dist/esm/icons/severity-undefined-icon';
-import ShapesIcon from '@patternfly/react-icons/icons/shapes-icon/dist/esm/icons/shapes-icon';
-import ShareAltIcon from '@patternfly/react-icons/icons/share-alt-icon/dist/esm/icons/share-alt-icon';
-import ShareAltSquareIcon from '@patternfly/react-icons/icons/share-alt-square-icon/dist/esm/icons/share-alt-square-icon';
-import ShareIcon from '@patternfly/react-icons/icons/share-icon/dist/esm/icons/share-icon';
-import ShareSquareIcon from '@patternfly/react-icons/icons/share-square-icon/dist/esm/icons/share-square-icon';
-import ShekelSignIcon from '@patternfly/react-icons/icons/shekel-sign-icon/dist/esm/icons/shekel-sign-icon';
-import ShieldAltIcon from '@patternfly/react-icons/icons/shield-alt-icon/dist/esm/icons/shield-alt-icon';
-import ShieldVirusIcon from '@patternfly/react-icons/icons/shield-virus-icon/dist/esm/icons/shield-virus-icon';
-import ShipIcon from '@patternfly/react-icons/icons/ship-icon/dist/esm/icons/ship-icon';
-import ShippingFastIcon from '@patternfly/react-icons/icons/shipping-fast-icon/dist/esm/icons/shipping-fast-icon';
-import ShirtsinbulkIcon from '@patternfly/react-icons/icons/shirtsinbulk-icon/dist/esm/icons/shirtsinbulk-icon';
-import ShoePrintsIcon from '@patternfly/react-icons/icons/shoe-prints-icon/dist/esm/icons/shoe-prints-icon';
-import ShopifyIcon from '@patternfly/react-icons/icons/shopify-icon/dist/esm/icons/shopify-icon';
-import ShoppingBagIcon from '@patternfly/react-icons/icons/shopping-bag-icon/dist/esm/icons/shopping-bag-icon';
-import ShoppingBasketIcon from '@patternfly/react-icons/icons/shopping-basket-icon/dist/esm/icons/shopping-basket-icon';
-import ShoppingCartIcon from '@patternfly/react-icons/icons/shopping-cart-icon/dist/esm/icons/shopping-cart-icon';
-import ShopwareIcon from '@patternfly/react-icons/icons/shopware-icon/dist/esm/icons/shopware-icon';
-import ShowerIcon from '@patternfly/react-icons/icons/shower-icon/dist/esm/icons/shower-icon';
-import ShuttleVanIcon from '@patternfly/react-icons/icons/shuttle-van-icon/dist/esm/icons/shuttle-van-icon';
-import SignIcon from '@patternfly/react-icons/icons/sign-icon/dist/esm/icons/sign-icon';
-import SignInAltIcon from '@patternfly/react-icons/icons/sign-in-alt-icon/dist/esm/icons/sign-in-alt-icon';
-import SignLanguageIcon from '@patternfly/react-icons/icons/sign-language-icon/dist/esm/icons/sign-language-icon';
-import SignOutAltIcon from '@patternfly/react-icons/icons/sign-out-alt-icon/dist/esm/icons/sign-out-alt-icon';
-import SignalIcon from '@patternfly/react-icons/icons/signal-icon/dist/esm/icons/signal-icon';
-import SignatureIcon from '@patternfly/react-icons/icons/signature-icon/dist/esm/icons/signature-icon';
-import SimCardIcon from '@patternfly/react-icons/icons/sim-card-icon/dist/esm/icons/sim-card-icon';
-import SimplybuiltIcon from '@patternfly/react-icons/icons/simplybuilt-icon/dist/esm/icons/simplybuilt-icon';
-import SinkIcon from '@patternfly/react-icons/icons/sink-icon/dist/esm/icons/sink-icon';
-import SistrixIcon from '@patternfly/react-icons/icons/sistrix-icon/dist/esm/icons/sistrix-icon';
-import SitemapIcon from '@patternfly/react-icons/icons/sitemap-icon/dist/esm/icons/sitemap-icon';
-import SithIcon from '@patternfly/react-icons/icons/sith-icon/dist/esm/icons/sith-icon';
-import SkatingIcon from '@patternfly/react-icons/icons/skating-icon/dist/esm/icons/skating-icon';
-import SketchIcon from '@patternfly/react-icons/icons/sketch-icon/dist/esm/icons/sketch-icon';
-import SkiingIcon from '@patternfly/react-icons/icons/skiing-icon/dist/esm/icons/skiing-icon';
-import SkiingNordicIcon from '@patternfly/react-icons/icons/skiing-nordic-icon/dist/esm/icons/skiing-nordic-icon';
-import SkullCrossbonesIcon from '@patternfly/react-icons/icons/skull-crossbones-icon/dist/esm/icons/skull-crossbones-icon';
-import SkullIcon from '@patternfly/react-icons/icons/skull-icon/dist/esm/icons/skull-icon';
-import SkyatlasIcon from '@patternfly/react-icons/icons/skyatlas-icon/dist/esm/icons/skyatlas-icon';
-import SkypeIcon from '@patternfly/react-icons/icons/skype-icon/dist/esm/icons/skype-icon';
-import SlackHashIcon from '@patternfly/react-icons/icons/slack-hash-icon/dist/esm/icons/slack-hash-icon';
-import SlackIcon from '@patternfly/react-icons/icons/slack-icon/dist/esm/icons/slack-icon';
-import SlashIcon from '@patternfly/react-icons/icons/slash-icon/dist/esm/icons/slash-icon';
-import SleighIcon from '@patternfly/react-icons/icons/sleigh-icon/dist/esm/icons/sleigh-icon';
-import SlidersHIcon from '@patternfly/react-icons/icons/sliders-h-icon/dist/esm/icons/sliders-h-icon';
-import SlideshareIcon from '@patternfly/react-icons/icons/slideshare-icon/dist/esm/icons/slideshare-icon';
-import SmileBeamIcon from '@patternfly/react-icons/icons/smile-beam-icon/dist/esm/icons/smile-beam-icon';
-import SmileIcon from '@patternfly/react-icons/icons/smile-icon/dist/esm/icons/smile-icon';
-import SmileWinkIcon from '@patternfly/react-icons/icons/smile-wink-icon/dist/esm/icons/smile-wink-icon';
-import SmogIcon from '@patternfly/react-icons/icons/smog-icon/dist/esm/icons/smog-icon';
-import SmokingBanIcon from '@patternfly/react-icons/icons/smoking-ban-icon/dist/esm/icons/smoking-ban-icon';
-import SmokingIcon from '@patternfly/react-icons/icons/smoking-icon/dist/esm/icons/smoking-icon';
-import SmsIcon from '@patternfly/react-icons/icons/sms-icon/dist/esm/icons/sms-icon';
-import SnapchatGhostIcon from '@patternfly/react-icons/icons/snapchat-ghost-icon/dist/esm/icons/snapchat-ghost-icon';
-import SnapchatIcon from '@patternfly/react-icons/icons/snapchat-icon/dist/esm/icons/snapchat-icon';
-import SnapchatSquareIcon from '@patternfly/react-icons/icons/snapchat-square-icon/dist/esm/icons/snapchat-square-icon';
-import SnowboardingIcon from '@patternfly/react-icons/icons/snowboarding-icon/dist/esm/icons/snowboarding-icon';
-import SnowflakeIcon from '@patternfly/react-icons/icons/snowflake-icon/dist/esm/icons/snowflake-icon';
-import SnowmanIcon from '@patternfly/react-icons/icons/snowman-icon/dist/esm/icons/snowman-icon';
-import SnowplowIcon from '@patternfly/react-icons/icons/snowplow-icon/dist/esm/icons/snowplow-icon';
-import SoapIcon from '@patternfly/react-icons/icons/soap-icon/dist/esm/icons/soap-icon';
-import SocksIcon from '@patternfly/react-icons/icons/socks-icon/dist/esm/icons/socks-icon';
-import SolarPanelIcon from '@patternfly/react-icons/icons/solar-panel-icon/dist/esm/icons/solar-panel-icon';
-import SortAlphaDownAltIcon from '@patternfly/react-icons/icons/sort-alpha-down-alt-icon/dist/esm/icons/sort-alpha-down-alt-icon';
-import SortAlphaDownIcon from '@patternfly/react-icons/icons/sort-alpha-down-icon/dist/esm/icons/sort-alpha-down-icon';
-import SortAlphaUpAltIcon from '@patternfly/react-icons/icons/sort-alpha-up-alt-icon/dist/esm/icons/sort-alpha-up-alt-icon';
-import SortAlphaUpIcon from '@patternfly/react-icons/icons/sort-alpha-up-icon/dist/esm/icons/sort-alpha-up-icon';
-import SortAmountDownAltIcon from '@patternfly/react-icons/icons/sort-amount-down-alt-icon/dist/esm/icons/sort-amount-down-alt-icon';
-import SortAmountDownIcon from '@patternfly/react-icons/icons/sort-amount-down-icon/dist/esm/icons/sort-amount-down-icon';
-import SortAmountUpAltIcon from '@patternfly/react-icons/icons/sort-amount-up-alt-icon/dist/esm/icons/sort-amount-up-alt-icon';
-import SortAmountUpIcon from '@patternfly/react-icons/icons/sort-amount-up-icon/dist/esm/icons/sort-amount-up-icon';
-import SortDownIcon from '@patternfly/react-icons/icons/sort-down-icon/dist/esm/icons/sort-down-icon';
-import SortIcon from '@patternfly/react-icons/icons/sort-icon/dist/esm/icons/sort-icon';
-import SortNumericDownAltIcon from '@patternfly/react-icons/icons/sort-numeric-down-alt-icon/dist/esm/icons/sort-numeric-down-alt-icon';
-import SortNumericDownIcon from '@patternfly/react-icons/icons/sort-numeric-down-icon/dist/esm/icons/sort-numeric-down-icon';
-import SortNumericUpAltIcon from '@patternfly/react-icons/icons/sort-numeric-up-alt-icon/dist/esm/icons/sort-numeric-up-alt-icon';
-import SortNumericUpIcon from '@patternfly/react-icons/icons/sort-numeric-up-icon/dist/esm/icons/sort-numeric-up-icon';
-import SortUpIcon from '@patternfly/react-icons/icons/sort-up-icon/dist/esm/icons/sort-up-icon';
-import SoundcloudIcon from '@patternfly/react-icons/icons/soundcloud-icon/dist/esm/icons/soundcloud-icon';
-import SourcetreeIcon from '@patternfly/react-icons/icons/sourcetree-icon/dist/esm/icons/sourcetree-icon';
-import SpaIcon from '@patternfly/react-icons/icons/spa-icon/dist/esm/icons/spa-icon';
-import SpaceShuttleIcon from '@patternfly/react-icons/icons/space-shuttle-icon/dist/esm/icons/space-shuttle-icon';
-import SpeakapIcon from '@patternfly/react-icons/icons/speakap-icon/dist/esm/icons/speakap-icon';
-import SpeakerDeckIcon from '@patternfly/react-icons/icons/speaker-deck-icon/dist/esm/icons/speaker-deck-icon';
-import SpellCheckIcon from '@patternfly/react-icons/icons/spell-check-icon/dist/esm/icons/spell-check-icon';
-import SpiderIcon from '@patternfly/react-icons/icons/spider-icon/dist/esm/icons/spider-icon';
-import Spinner2Icon from '@patternfly/react-icons/icons/spinner2-icon/dist/esm/icons/spinner2-icon';
-import Spinner2IconConfig from '@patternfly/react-icons/icons/spinner2-icon/dist/esm/icons/spinner2-icon-config';
-import SpinnerAltIcon from '@patternfly/react-icons/icons/spinner-alt-icon/dist/esm/icons/spinner-alt-icon';
-import SpinnerIcon from '@patternfly/react-icons/icons/spinner-icon/dist/esm/icons/spinner-icon';
-import SplotchIcon from '@patternfly/react-icons/icons/splotch-icon/dist/esm/icons/splotch-icon';
-import SpotifyIcon from '@patternfly/react-icons/icons/spotify-icon/dist/esm/icons/spotify-icon';
-import SprayCanIcon from '@patternfly/react-icons/icons/spray-can-icon/dist/esm/icons/spray-can-icon';
-import SquareFullIcon from '@patternfly/react-icons/icons/square-full-icon/dist/esm/icons/square-full-icon';
-import SquareIcon from '@patternfly/react-icons/icons/square-icon/dist/esm/icons/square-icon';
-import SquareRootAltIcon from '@patternfly/react-icons/icons/square-root-alt-icon/dist/esm/icons/square-root-alt-icon';
-import SquarespaceIcon from '@patternfly/react-icons/icons/squarespace-icon/dist/esm/icons/squarespace-icon';
-import StackExchangeIcon from '@patternfly/react-icons/icons/stack-exchange-icon/dist/esm/icons/stack-exchange-icon';
-import StackOverflowIcon from '@patternfly/react-icons/icons/stack-overflow-icon/dist/esm/icons/stack-overflow-icon';
-import StackpathIcon from '@patternfly/react-icons/icons/stackpath-icon/dist/esm/icons/stackpath-icon';
-import StampIcon from '@patternfly/react-icons/icons/stamp-icon/dist/esm/icons/stamp-icon';
-import StarAndCrescentIcon from '@patternfly/react-icons/icons/star-and-crescent-icon/dist/esm/icons/star-and-crescent-icon';
-import StarHalfAltIcon from '@patternfly/react-icons/icons/star-half-alt-icon/dist/esm/icons/star-half-alt-icon';
-import StarHalfIcon from '@patternfly/react-icons/icons/star-half-icon/dist/esm/icons/star-half-icon';
-import StarIcon from '@patternfly/react-icons/icons/star-icon/dist/esm/icons/star-icon';
-import StarOfDavidIcon from '@patternfly/react-icons/icons/star-of-david-icon/dist/esm/icons/star-of-david-icon';
-import StarOfLifeIcon from '@patternfly/react-icons/icons/star-of-life-icon/dist/esm/icons/star-of-life-icon';
-import StaylinkedIcon from '@patternfly/react-icons/icons/staylinked-icon/dist/esm/icons/staylinked-icon';
-import SteamIcon from '@patternfly/react-icons/icons/steam-icon/dist/esm/icons/steam-icon';
-import SteamSquareIcon from '@patternfly/react-icons/icons/steam-square-icon/dist/esm/icons/steam-square-icon';
-import SteamSymbolIcon from '@patternfly/react-icons/icons/steam-symbol-icon/dist/esm/icons/steam-symbol-icon';
-import StepBackwardIcon from '@patternfly/react-icons/icons/step-backward-icon/dist/esm/icons/step-backward-icon';
-import StepForwardIcon from '@patternfly/react-icons/icons/step-forward-icon/dist/esm/icons/step-forward-icon';
-import StethoscopeIcon from '@patternfly/react-icons/icons/stethoscope-icon/dist/esm/icons/stethoscope-icon';
-import StickerMuleIcon from '@patternfly/react-icons/icons/sticker-mule-icon/dist/esm/icons/sticker-mule-icon';
-import StickyNoteIcon from '@patternfly/react-icons/icons/sticky-note-icon/dist/esm/icons/sticky-note-icon';
-import StopCircleIcon from '@patternfly/react-icons/icons/stop-circle-icon/dist/esm/icons/stop-circle-icon';
-import StopIcon from '@patternfly/react-icons/icons/stop-icon/dist/esm/icons/stop-icon';
-import Stopwatch20Icon from '@patternfly/react-icons/icons/stopwatch-20-icon/dist/esm/icons/stopwatch20-icon';
-import Stopwatch20IconConfig from '@patternfly/react-icons/icons/stopwatch-20-icon/dist/esm/icons/stopwatch20-icon-config';
-import StopwatchIcon from '@patternfly/react-icons/icons/stopwatch-icon/dist/esm/icons/stopwatch-icon';
-import StorageDomainIcon from '@patternfly/react-icons/icons/storage-domain-icon/dist/esm/icons/storage-domain-icon';
-import StoreAltIcon from '@patternfly/react-icons/icons/store-alt-icon/dist/esm/icons/store-alt-icon';
-import StoreAltSlashIcon from '@patternfly/react-icons/icons/store-alt-slash-icon/dist/esm/icons/store-alt-slash-icon';
-import StoreIcon from '@patternfly/react-icons/icons/store-icon/dist/esm/icons/store-icon';
-import StoreSlashIcon from '@patternfly/react-icons/icons/store-slash-icon/dist/esm/icons/store-slash-icon';
-import StravaIcon from '@patternfly/react-icons/icons/strava-icon/dist/esm/icons/strava-icon';
-import StreamIcon from '@patternfly/react-icons/icons/stream-icon/dist/esm/icons/stream-icon';
-import StreetViewIcon from '@patternfly/react-icons/icons/street-view-icon/dist/esm/icons/street-view-icon';
-import StrikethroughIcon from '@patternfly/react-icons/icons/strikethrough-icon/dist/esm/icons/strikethrough-icon';
-import StripeIcon from '@patternfly/react-icons/icons/stripe-icon/dist/esm/icons/stripe-icon';
-import StripeSIcon from '@patternfly/react-icons/icons/stripe-s-icon/dist/esm/icons/stripe-s-icon';
-import StroopwafelIcon from '@patternfly/react-icons/icons/stroopwafel-icon/dist/esm/icons/stroopwafel-icon';
-import StudiovinariIcon from '@patternfly/react-icons/icons/studiovinari-icon/dist/esm/icons/studiovinari-icon';
-import StumbleuponCircleIcon from '@patternfly/react-icons/icons/stumbleupon-circle-icon/dist/esm/icons/stumbleupon-circle-icon';
-import StumbleuponIcon from '@patternfly/react-icons/icons/stumbleupon-icon/dist/esm/icons/stumbleupon-icon';
-import SubscriptIcon from '@patternfly/react-icons/icons/subscript-icon/dist/esm/icons/subscript-icon';
-import SubwayIcon from '@patternfly/react-icons/icons/subway-icon/dist/esm/icons/subway-icon';
-import SuitcaseIcon from '@patternfly/react-icons/icons/suitcase-icon/dist/esm/icons/suitcase-icon';
-import SuitcaseRollingIcon from '@patternfly/react-icons/icons/suitcase-rolling-icon/dist/esm/icons/suitcase-rolling-icon';
-import SunIcon from '@patternfly/react-icons/icons/sun-icon/dist/esm/icons/sun-icon';
-import SuperpowersIcon from '@patternfly/react-icons/icons/superpowers-icon/dist/esm/icons/superpowers-icon';
-import SuperscriptIcon from '@patternfly/react-icons/icons/superscript-icon/dist/esm/icons/superscript-icon';
-import SuppleIcon from '@patternfly/react-icons/icons/supple-icon/dist/esm/icons/supple-icon';
-import SurpriseIcon from '@patternfly/react-icons/icons/surprise-icon/dist/esm/icons/surprise-icon';
-import SuseIcon from '@patternfly/react-icons/icons/suse-icon/dist/esm/icons/suse-icon';
-import SwatchbookIcon from '@patternfly/react-icons/icons/swatchbook-icon/dist/esm/icons/swatchbook-icon';
-import SwiftIcon from '@patternfly/react-icons/icons/swift-icon/dist/esm/icons/swift-icon';
-import SwimmerIcon from '@patternfly/react-icons/icons/swimmer-icon/dist/esm/icons/swimmer-icon';
-import SwimmingPoolIcon from '@patternfly/react-icons/icons/swimming-pool-icon/dist/esm/icons/swimming-pool-icon';
-import SymfonyIcon from '@patternfly/react-icons/icons/symfony-icon/dist/esm/icons/symfony-icon';
-import SynagogueIcon from '@patternfly/react-icons/icons/synagogue-icon/dist/esm/icons/synagogue-icon';
-import SyncAltIcon from '@patternfly/react-icons/icons/sync-alt-icon/dist/esm/icons/sync-alt-icon';
-import SyncIcon from '@patternfly/react-icons/icons/sync-icon/dist/esm/icons/sync-icon';
-import SyringeIcon from '@patternfly/react-icons/icons/syringe-icon/dist/esm/icons/syringe-icon';
-import TableIcon from '@patternfly/react-icons/icons/table-icon/dist/esm/icons/table-icon';
-import TableTennisIcon from '@patternfly/react-icons/icons/table-tennis-icon/dist/esm/icons/table-tennis-icon';
-import TabletAltIcon from '@patternfly/react-icons/icons/tablet-alt-icon/dist/esm/icons/tablet-alt-icon';
-import TabletIcon from '@patternfly/react-icons/icons/tablet-icon/dist/esm/icons/tablet-icon';
-import TabletsIcon from '@patternfly/react-icons/icons/tablets-icon/dist/esm/icons/tablets-icon';
-import TachometerAltIcon from '@patternfly/react-icons/icons/tachometer-alt-icon/dist/esm/icons/tachometer-alt-icon';
-import TagIcon from '@patternfly/react-icons/icons/tag-icon/dist/esm/icons/tag-icon';
-import TagsIcon from '@patternfly/react-icons/icons/tags-icon/dist/esm/icons/tags-icon';
-import TapeIcon from '@patternfly/react-icons/icons/tape-icon/dist/esm/icons/tape-icon';
-import TaskIcon from '@patternfly/react-icons/icons/task-icon/dist/esm/icons/task-icon';
-import TasksIcon from '@patternfly/react-icons/icons/tasks-icon/dist/esm/icons/tasks-icon';
-import TaxiIcon from '@patternfly/react-icons/icons/taxi-icon/dist/esm/icons/taxi-icon';
-import TeamspeakIcon from '@patternfly/react-icons/icons/teamspeak-icon/dist/esm/icons/teamspeak-icon';
-import TeethIcon from '@patternfly/react-icons/icons/teeth-icon/dist/esm/icons/teeth-icon';
-import TeethOpenIcon from '@patternfly/react-icons/icons/teeth-open-icon/dist/esm/icons/teeth-open-icon';
-import TelegramIcon from '@patternfly/react-icons/icons/telegram-icon/dist/esm/icons/telegram-icon';
-import TelegramPlaneIcon from '@patternfly/react-icons/icons/telegram-plane-icon/dist/esm/icons/telegram-plane-icon';
-import TemperatureHighIcon from '@patternfly/react-icons/icons/temperature-high-icon/dist/esm/icons/temperature-high-icon';
-import TemperatureLowIcon from '@patternfly/react-icons/icons/temperature-low-icon/dist/esm/icons/temperature-low-icon';
-import TenantIcon from '@patternfly/react-icons/icons/tenant-icon/dist/esm/icons/tenant-icon';
-import TencentWeiboIcon from '@patternfly/react-icons/icons/tencent-weibo-icon/dist/esm/icons/tencent-weibo-icon';
-import TengeIcon from '@patternfly/react-icons/icons/tenge-icon/dist/esm/icons/tenge-icon';
-import TerminalIcon from '@patternfly/react-icons/icons/terminal-icon/dist/esm/icons/terminal-icon';
-import TextHeightIcon from '@patternfly/react-icons/icons/text-height-icon/dist/esm/icons/text-height-icon';
-import TextWidthIcon from '@patternfly/react-icons/icons/text-width-icon/dist/esm/icons/text-width-icon';
-import ThIcon from '@patternfly/react-icons/icons/th-icon/dist/esm/icons/th-icon';
-import ThLargeIcon from '@patternfly/react-icons/icons/th-large-icon/dist/esm/icons/th-large-icon';
-import ThListIcon from '@patternfly/react-icons/icons/th-list-icon/dist/esm/icons/th-list-icon';
-import TheRedYetiIcon from '@patternfly/react-icons/icons/the-red-yeti-icon/dist/esm/icons/the-red-yeti-icon';
-import TheaterMasksIcon from '@patternfly/react-icons/icons/theater-masks-icon/dist/esm/icons/theater-masks-icon';
-import ThemecoIcon from '@patternfly/react-icons/icons/themeco-icon/dist/esm/icons/themeco-icon';
-import ThemeisleIcon from '@patternfly/react-icons/icons/themeisle-icon/dist/esm/icons/themeisle-icon';
-import ThermometerEmptyIcon from '@patternfly/react-icons/icons/thermometer-empty-icon/dist/esm/icons/thermometer-empty-icon';
-import ThermometerFullIcon from '@patternfly/react-icons/icons/thermometer-full-icon/dist/esm/icons/thermometer-full-icon';
-import ThermometerHalfIcon from '@patternfly/react-icons/icons/thermometer-half-icon/dist/esm/icons/thermometer-half-icon';
-import ThermometerIcon from '@patternfly/react-icons/icons/thermometer-icon/dist/esm/icons/thermometer-icon';
-import ThermometerQuarterIcon from '@patternfly/react-icons/icons/thermometer-quarter-icon/dist/esm/icons/thermometer-quarter-icon';
-import ThermometerThreeQuartersIcon from '@patternfly/react-icons/icons/thermometer-three-quarters-icon/dist/esm/icons/thermometer-three-quarters-icon';
-import ThinkPeaksIcon from '@patternfly/react-icons/icons/think-peaks-icon/dist/esm/icons/think-peaks-icon';
-import ThumbTackIcon from '@patternfly/react-icons/icons/thumb-tack-icon/dist/esm/icons/thumb-tack-icon';
-import ThumbsDownIcon from '@patternfly/react-icons/icons/thumbs-down-icon/dist/esm/icons/thumbs-down-icon';
-import ThumbsUpIcon from '@patternfly/react-icons/icons/thumbs-up-icon/dist/esm/icons/thumbs-up-icon';
-import ThumbtackIcon from '@patternfly/react-icons/icons/thumbtack-icon/dist/esm/icons/thumbtack-icon';
-import TicketAltIcon from '@patternfly/react-icons/icons/ticket-alt-icon/dist/esm/icons/ticket-alt-icon';
-import TiktokIcon from '@patternfly/react-icons/icons/tiktok-icon/dist/esm/icons/tiktok-icon';
-import TimesCircleIcon from '@patternfly/react-icons/icons/times-circle-icon/dist/esm/icons/times-circle-icon';
-import TimesIcon from '@patternfly/react-icons/icons/times-icon/dist/esm/icons/times-icon';
-import TintIcon from '@patternfly/react-icons/icons/tint-icon/dist/esm/icons/tint-icon';
-import TintSlashIcon from '@patternfly/react-icons/icons/tint-slash-icon/dist/esm/icons/tint-slash-icon';
-import TiredIcon from '@patternfly/react-icons/icons/tired-icon/dist/esm/icons/tired-icon';
-import ToggleOffIcon from '@patternfly/react-icons/icons/toggle-off-icon/dist/esm/icons/toggle-off-icon';
-import ToggleOnIcon from '@patternfly/react-icons/icons/toggle-on-icon/dist/esm/icons/toggle-on-icon';
-import ToiletIcon from '@patternfly/react-icons/icons/toilet-icon/dist/esm/icons/toilet-icon';
-import ToiletPaperIcon from '@patternfly/react-icons/icons/toilet-paper-icon/dist/esm/icons/toilet-paper-icon';
-import ToiletPaperSlashIcon from '@patternfly/react-icons/icons/toilet-paper-slash-icon/dist/esm/icons/toilet-paper-slash-icon';
-import ToolboxIcon from '@patternfly/react-icons/icons/toolbox-icon/dist/esm/icons/toolbox-icon';
-import ToolsIcon from '@patternfly/react-icons/icons/tools-icon/dist/esm/icons/tools-icon';
-import ToothIcon from '@patternfly/react-icons/icons/tooth-icon/dist/esm/icons/tooth-icon';
-import TopologyIcon from '@patternfly/react-icons/icons/topology-icon/dist/esm/icons/topology-icon';
-import TorahIcon from '@patternfly/react-icons/icons/torah-icon/dist/esm/icons/torah-icon';
-import ToriiGateIcon from '@patternfly/react-icons/icons/torii-gate-icon/dist/esm/icons/torii-gate-icon';
-import TractorIcon from '@patternfly/react-icons/icons/tractor-icon/dist/esm/icons/tractor-icon';
-import TradeFederationIcon from '@patternfly/react-icons/icons/trade-federation-icon/dist/esm/icons/trade-federation-icon';
-import TrademarkIcon from '@patternfly/react-icons/icons/trademark-icon/dist/esm/icons/trademark-icon';
-import TrafficLightIcon from '@patternfly/react-icons/icons/traffic-light-icon/dist/esm/icons/traffic-light-icon';
-import TrailerIcon from '@patternfly/react-icons/icons/trailer-icon/dist/esm/icons/trailer-icon';
-import TrainIcon from '@patternfly/react-icons/icons/train-icon/dist/esm/icons/train-icon';
-import TramIcon from '@patternfly/react-icons/icons/tram-icon/dist/esm/icons/tram-icon';
-import TransgenderAltIcon from '@patternfly/react-icons/icons/transgender-alt-icon/dist/esm/icons/transgender-alt-icon';
-import TransgenderIcon from '@patternfly/react-icons/icons/transgender-icon/dist/esm/icons/transgender-icon';
-import TrashAltIcon from '@patternfly/react-icons/icons/trash-alt-icon/dist/esm/icons/trash-alt-icon';
-import TrashIcon from '@patternfly/react-icons/icons/trash-icon/dist/esm/icons/trash-icon';
-import TrashRestoreAltIcon from '@patternfly/react-icons/icons/trash-restore-alt-icon/dist/esm/icons/trash-restore-alt-icon';
-import TrashRestoreIcon from '@patternfly/react-icons/icons/trash-restore-icon/dist/esm/icons/trash-restore-icon';
-import TreeIcon from '@patternfly/react-icons/icons/tree-icon/dist/esm/icons/tree-icon';
-import TreeviewIcon from '@patternfly/react-icons/icons/treeview-icon/dist/esm/icons/treeview-icon';
-import TrelloIcon from '@patternfly/react-icons/icons/trello-icon/dist/esm/icons/trello-icon';
-import TrendDownIcon from '@patternfly/react-icons/icons/trend-down-icon/dist/esm/icons/trend-down-icon';
-import TrendUpIcon from '@patternfly/react-icons/icons/trend-up-icon/dist/esm/icons/trend-up-icon';
-import TrophyIcon from '@patternfly/react-icons/icons/trophy-icon/dist/esm/icons/trophy-icon';
-import TruckIcon from '@patternfly/react-icons/icons/truck-icon/dist/esm/icons/truck-icon';
-import TruckLoadingIcon from '@patternfly/react-icons/icons/truck-loading-icon/dist/esm/icons/truck-loading-icon';
-import TruckMonsterIcon from '@patternfly/react-icons/icons/truck-monster-icon/dist/esm/icons/truck-monster-icon';
-import TruckMovingIcon from '@patternfly/react-icons/icons/truck-moving-icon/dist/esm/icons/truck-moving-icon';
-import TruckPickupIcon from '@patternfly/react-icons/icons/truck-pickup-icon/dist/esm/icons/truck-pickup-icon';
-import TshirtIcon from '@patternfly/react-icons/icons/tshirt-icon/dist/esm/icons/tshirt-icon';
-import TtyIcon from '@patternfly/react-icons/icons/tty-icon/dist/esm/icons/tty-icon';
-import TumblrIcon from '@patternfly/react-icons/icons/tumblr-icon/dist/esm/icons/tumblr-icon';
-import TumblrSquareIcon from '@patternfly/react-icons/icons/tumblr-square-icon/dist/esm/icons/tumblr-square-icon';
-import TvIcon from '@patternfly/react-icons/icons/tv-icon/dist/esm/icons/tv-icon';
-import TwitchIcon from '@patternfly/react-icons/icons/twitch-icon/dist/esm/icons/twitch-icon';
-import TwitterIcon from '@patternfly/react-icons/icons/twitter-icon/dist/esm/icons/twitter-icon';
-import TwitterSquareIcon from '@patternfly/react-icons/icons/twitter-square-icon/dist/esm/icons/twitter-square-icon';
-import Typo3Icon from '@patternfly/react-icons/icons/typo3-icon/dist/esm/icons/typo3-icon';
-import Typo3IconConfig from '@patternfly/react-icons/icons/typo3-icon/dist/esm/icons/typo3-icon-config';
-import UberIcon from '@patternfly/react-icons/icons/uber-icon/dist/esm/icons/uber-icon';
-import UbuntuIcon from '@patternfly/react-icons/icons/ubuntu-icon/dist/esm/icons/ubuntu-icon';
-import UikitIcon from '@patternfly/react-icons/icons/uikit-icon/dist/esm/icons/uikit-icon';
-import UmbracoIcon from '@patternfly/react-icons/icons/umbraco-icon/dist/esm/icons/umbraco-icon';
-import UmbrellaBeachIcon from '@patternfly/react-icons/icons/umbrella-beach-icon/dist/esm/icons/umbrella-beach-icon';
-import UmbrellaIcon from '@patternfly/react-icons/icons/umbrella-icon/dist/esm/icons/umbrella-icon';
-import UnchartedIcon from '@patternfly/react-icons/icons/uncharted-icon/dist/esm/icons/uncharted-icon';
-import UnderlineIcon from '@patternfly/react-icons/icons/underline-icon/dist/esm/icons/underline-icon';
-import UndoAltIcon from '@patternfly/react-icons/icons/undo-alt-icon/dist/esm/icons/undo-alt-icon';
-import UndoIcon from '@patternfly/react-icons/icons/undo-icon/dist/esm/icons/undo-icon';
-import UniregistryIcon from '@patternfly/react-icons/icons/uniregistry-icon/dist/esm/icons/uniregistry-icon';
-import UnityIcon from '@patternfly/react-icons/icons/unity-icon/dist/esm/icons/unity-icon';
-import UniversalAccessIcon from '@patternfly/react-icons/icons/universal-access-icon/dist/esm/icons/universal-access-icon';
-import UniversityIcon from '@patternfly/react-icons/icons/university-icon/dist/esm/icons/university-icon';
-import UnknownIcon from '@patternfly/react-icons/icons/unknown-icon/dist/esm/icons/unknown-icon';
-import UnlinkIcon from '@patternfly/react-icons/icons/unlink-icon/dist/esm/icons/unlink-icon';
-import UnlockAltIcon from '@patternfly/react-icons/icons/unlock-alt-icon/dist/esm/icons/unlock-alt-icon';
-import UnlockIcon from '@patternfly/react-icons/icons/unlock-icon/dist/esm/icons/unlock-icon';
-import UnlockedIcon from '@patternfly/react-icons/icons/unlocked-icon/dist/esm/icons/unlocked-icon';
-import UnpluggedIcon from '@patternfly/react-icons/icons/unplugged-icon/dist/esm/icons/unplugged-icon';
-import UnsplashIcon from '@patternfly/react-icons/icons/unsplash-icon/dist/esm/icons/unsplash-icon';
-import UntappdIcon from '@patternfly/react-icons/icons/untappd-icon/dist/esm/icons/untappd-icon';
-import UploadIcon from '@patternfly/react-icons/icons/upload-icon/dist/esm/icons/upload-icon';
-import UpsIcon from '@patternfly/react-icons/icons/ups-icon/dist/esm/icons/ups-icon';
-import UsbIcon from '@patternfly/react-icons/icons/usb-icon/dist/esm/icons/usb-icon';
-import UserAltIcon from '@patternfly/react-icons/icons/user-alt-icon/dist/esm/icons/user-alt-icon';
-import UserAltSlashIcon from '@patternfly/react-icons/icons/user-alt-slash-icon/dist/esm/icons/user-alt-slash-icon';
-import UserAstronautIcon from '@patternfly/react-icons/icons/user-astronaut-icon/dist/esm/icons/user-astronaut-icon';
-import UserCheckIcon from '@patternfly/react-icons/icons/user-check-icon/dist/esm/icons/user-check-icon';
-import UserCircleIcon from '@patternfly/react-icons/icons/user-circle-icon/dist/esm/icons/user-circle-icon';
-import UserClockIcon from '@patternfly/react-icons/icons/user-clock-icon/dist/esm/icons/user-clock-icon';
-import UserCogIcon from '@patternfly/react-icons/icons/user-cog-icon/dist/esm/icons/user-cog-icon';
-import UserEditIcon from '@patternfly/react-icons/icons/user-edit-icon/dist/esm/icons/user-edit-icon';
-import UserFriendsIcon from '@patternfly/react-icons/icons/user-friends-icon/dist/esm/icons/user-friends-icon';
-import UserGraduateIcon from '@patternfly/react-icons/icons/user-graduate-icon/dist/esm/icons/user-graduate-icon';
-import UserIcon from '@patternfly/react-icons/icons/user-icon/dist/esm/icons/user-icon';
-import UserInjuredIcon from '@patternfly/react-icons/icons/user-injured-icon/dist/esm/icons/user-injured-icon';
-import UserLockIcon from '@patternfly/react-icons/icons/user-lock-icon/dist/esm/icons/user-lock-icon';
-import UserMdIcon from '@patternfly/react-icons/icons/user-md-icon/dist/esm/icons/user-md-icon';
-import UserMinusIcon from '@patternfly/react-icons/icons/user-minus-icon/dist/esm/icons/user-minus-icon';
-import UserNinjaIcon from '@patternfly/react-icons/icons/user-ninja-icon/dist/esm/icons/user-ninja-icon';
-import UserNurseIcon from '@patternfly/react-icons/icons/user-nurse-icon/dist/esm/icons/user-nurse-icon';
-import UserPlusIcon from '@patternfly/react-icons/icons/user-plus-icon/dist/esm/icons/user-plus-icon';
-import UserSecIcon from '@patternfly/react-icons/icons/user-sec-icon/dist/esm/icons/user-sec-icon';
-import UserSecretIcon from '@patternfly/react-icons/icons/user-secret-icon/dist/esm/icons/user-secret-icon';
-import UserShieldIcon from '@patternfly/react-icons/icons/user-shield-icon/dist/esm/icons/user-shield-icon';
-import UserSlashIcon from '@patternfly/react-icons/icons/user-slash-icon/dist/esm/icons/user-slash-icon';
-import UserTagIcon from '@patternfly/react-icons/icons/user-tag-icon/dist/esm/icons/user-tag-icon';
-import UserTieIcon from '@patternfly/react-icons/icons/user-tie-icon/dist/esm/icons/user-tie-icon';
-import UserTimesIcon from '@patternfly/react-icons/icons/user-times-icon/dist/esm/icons/user-times-icon';
-import UsersAltIcon from '@patternfly/react-icons/icons/users-alt-icon/dist/esm/icons/users-alt-icon';
-import UsersCogIcon from '@patternfly/react-icons/icons/users-cog-icon/dist/esm/icons/users-cog-icon';
-import UsersIcon from '@patternfly/react-icons/icons/users-icon/dist/esm/icons/users-icon';
-import UsersSlashIcon from '@patternfly/react-icons/icons/users-slash-icon/dist/esm/icons/users-slash-icon';
-import UspsIcon from '@patternfly/react-icons/icons/usps-icon/dist/esm/icons/usps-icon';
-import UssunnahIcon from '@patternfly/react-icons/icons/ussunnah-icon/dist/esm/icons/ussunnah-icon';
-import UtensilSpoonIcon from '@patternfly/react-icons/icons/utensil-spoon-icon/dist/esm/icons/utensil-spoon-icon';
-import UtensilsIcon from '@patternfly/react-icons/icons/utensils-icon/dist/esm/icons/utensils-icon';
-import VaadinIcon from '@patternfly/react-icons/icons/vaadin-icon/dist/esm/icons/vaadin-icon';
-import VectorSquareIcon from '@patternfly/react-icons/icons/vector-square-icon/dist/esm/icons/vector-square-icon';
-import VenusDoubleIcon from '@patternfly/react-icons/icons/venus-double-icon/dist/esm/icons/venus-double-icon';
-import VenusIcon from '@patternfly/react-icons/icons/venus-icon/dist/esm/icons/venus-icon';
-import VenusMarsIcon from '@patternfly/react-icons/icons/venus-mars-icon/dist/esm/icons/venus-mars-icon';
-import VestIcon from '@patternfly/react-icons/icons/vest-icon/dist/esm/icons/vest-icon';
-import VestPatchesIcon from '@patternfly/react-icons/icons/vest-patches-icon/dist/esm/icons/vest-patches-icon';
-import ViacoinIcon from '@patternfly/react-icons/icons/viacoin-icon/dist/esm/icons/viacoin-icon';
-import ViadeoIcon from '@patternfly/react-icons/icons/viadeo-icon/dist/esm/icons/viadeo-icon';
-import ViadeoSquareIcon from '@patternfly/react-icons/icons/viadeo-square-icon/dist/esm/icons/viadeo-square-icon';
-import VialIcon from '@patternfly/react-icons/icons/vial-icon/dist/esm/icons/vial-icon';
-import VialsIcon from '@patternfly/react-icons/icons/vials-icon/dist/esm/icons/vials-icon';
-import ViberIcon from '@patternfly/react-icons/icons/viber-icon/dist/esm/icons/viber-icon';
-import VideoIcon from '@patternfly/react-icons/icons/video-icon/dist/esm/icons/video-icon';
-import VideoSlashIcon from '@patternfly/react-icons/icons/video-slash-icon/dist/esm/icons/video-slash-icon';
-import ViharaIcon from '@patternfly/react-icons/icons/vihara-icon/dist/esm/icons/vihara-icon';
-import VimeoIcon from '@patternfly/react-icons/icons/vimeo-icon/dist/esm/icons/vimeo-icon';
-import VimeoSquareIcon from '@patternfly/react-icons/icons/vimeo-square-icon/dist/esm/icons/vimeo-square-icon';
-import VimeoVIcon from '@patternfly/react-icons/icons/vimeo-v-icon/dist/esm/icons/vimeo-v-icon';
-import VineIcon from '@patternfly/react-icons/icons/vine-icon/dist/esm/icons/vine-icon';
-import VirtualMachineIcon from '@patternfly/react-icons/icons/virtual-machine-icon/dist/esm/icons/virtual-machine-icon';
-import VirusIcon from '@patternfly/react-icons/icons/virus-icon/dist/esm/icons/virus-icon';
-import VirusSlashIcon from '@patternfly/react-icons/icons/virus-slash-icon/dist/esm/icons/virus-slash-icon';
-import VirusesIcon from '@patternfly/react-icons/icons/viruses-icon/dist/esm/icons/viruses-icon';
-import VkIcon from '@patternfly/react-icons/icons/vk-icon/dist/esm/icons/vk-icon';
-import VnvIcon from '@patternfly/react-icons/icons/vnv-icon/dist/esm/icons/vnv-icon';
-import VoicemailIcon from '@patternfly/react-icons/icons/voicemail-icon/dist/esm/icons/voicemail-icon';
-import VolleyballBallIcon from '@patternfly/react-icons/icons/volleyball-ball-icon/dist/esm/icons/volleyball-ball-icon';
-import VolumeDownIcon from '@patternfly/react-icons/icons/volume-down-icon/dist/esm/icons/volume-down-icon';
-import VolumeIcon from '@patternfly/react-icons/icons/volume-icon/dist/esm/icons/volume-icon';
-import VolumeMuteIcon from '@patternfly/react-icons/icons/volume-mute-icon/dist/esm/icons/volume-mute-icon';
-import VolumeOffIcon from '@patternfly/react-icons/icons/volume-off-icon/dist/esm/icons/volume-off-icon';
-import VolumeUpIcon from '@patternfly/react-icons/icons/volume-up-icon/dist/esm/icons/volume-up-icon';
-import VoteYeaIcon from '@patternfly/react-icons/icons/vote-yea-icon/dist/esm/icons/vote-yea-icon';
-import VrCardboardIcon from '@patternfly/react-icons/icons/vr-cardboard-icon/dist/esm/icons/vr-cardboard-icon';
-import VuejsIcon from '@patternfly/react-icons/icons/vuejs-icon/dist/esm/icons/vuejs-icon';
-import WalkingIcon from '@patternfly/react-icons/icons/walking-icon/dist/esm/icons/walking-icon';
-import WalletIcon from '@patternfly/react-icons/icons/wallet-icon/dist/esm/icons/wallet-icon';
-import WarehouseIcon from '@patternfly/react-icons/icons/warehouse-icon/dist/esm/icons/warehouse-icon';
-import WarningTriangleIcon from '@patternfly/react-icons/icons/warning-triangle-icon/dist/esm/icons/warning-triangle-icon';
-import WatchmanMonitoringIcon from '@patternfly/react-icons/icons/watchman-monitoring-icon/dist/esm/icons/watchman-monitoring-icon';
-import WaterIcon from '@patternfly/react-icons/icons/water-icon/dist/esm/icons/water-icon';
-import WaveSquareIcon from '@patternfly/react-icons/icons/wave-square-icon/dist/esm/icons/wave-square-icon';
-import WazeIcon from '@patternfly/react-icons/icons/waze-icon/dist/esm/icons/waze-icon';
-import WeeblyIcon from '@patternfly/react-icons/icons/weebly-icon/dist/esm/icons/weebly-icon';
-import WeiboIcon from '@patternfly/react-icons/icons/weibo-icon/dist/esm/icons/weibo-icon';
-import WeightHangingIcon from '@patternfly/react-icons/icons/weight-hanging-icon/dist/esm/icons/weight-hanging-icon';
-import WeightIcon from '@patternfly/react-icons/icons/weight-icon/dist/esm/icons/weight-icon';
-import WeixinIcon from '@patternfly/react-icons/icons/weixin-icon/dist/esm/icons/weixin-icon';
-import WhatsappIcon from '@patternfly/react-icons/icons/whatsapp-icon/dist/esm/icons/whatsapp-icon';
-import WhatsappSquareIcon from '@patternfly/react-icons/icons/whatsapp-square-icon/dist/esm/icons/whatsapp-square-icon';
-import WheelchairIcon from '@patternfly/react-icons/icons/wheelchair-icon/dist/esm/icons/wheelchair-icon';
-import WhmcsIcon from '@patternfly/react-icons/icons/whmcs-icon/dist/esm/icons/whmcs-icon';
-import WifiIcon from '@patternfly/react-icons/icons/wifi-icon/dist/esm/icons/wifi-icon';
-import WikipediaWIcon from '@patternfly/react-icons/icons/wikipedia-w-icon/dist/esm/icons/wikipedia-w-icon';
-import WindIcon from '@patternfly/react-icons/icons/wind-icon/dist/esm/icons/wind-icon';
-import WindowCloseIcon from '@patternfly/react-icons/icons/window-close-icon/dist/esm/icons/window-close-icon';
-import WindowMaximizeIcon from '@patternfly/react-icons/icons/window-maximize-icon/dist/esm/icons/window-maximize-icon';
-import WindowMinimizeIcon from '@patternfly/react-icons/icons/window-minimize-icon/dist/esm/icons/window-minimize-icon';
-import WindowRestoreIcon from '@patternfly/react-icons/icons/window-restore-icon/dist/esm/icons/window-restore-icon';
-import WindowsIcon from '@patternfly/react-icons/icons/windows-icon/dist/esm/icons/windows-icon';
-import WineBottleIcon from '@patternfly/react-icons/icons/wine-bottle-icon/dist/esm/icons/wine-bottle-icon';
-import WineGlassAltIcon from '@patternfly/react-icons/icons/wine-glass-alt-icon/dist/esm/icons/wine-glass-alt-icon';
-import WineGlassIcon from '@patternfly/react-icons/icons/wine-glass-icon/dist/esm/icons/wine-glass-icon';
-import WixIcon from '@patternfly/react-icons/icons/wix-icon/dist/esm/icons/wix-icon';
-import WizardsOfTheCoastIcon from '@patternfly/react-icons/icons/wizards-of-the-coast-icon/dist/esm/icons/wizards-of-the-coast-icon';
-import WoduIcon from '@patternfly/react-icons/icons/wodu-icon/dist/esm/icons/wodu-icon';
-import WolfPackBattalionIcon from '@patternfly/react-icons/icons/wolf-pack-battalion-icon/dist/esm/icons/wolf-pack-battalion-icon';
-import WonSignIcon from '@patternfly/react-icons/icons/won-sign-icon/dist/esm/icons/won-sign-icon';
-import WordpressIcon from '@patternfly/react-icons/icons/wordpress-icon/dist/esm/icons/wordpress-icon';
-import WordpressSimpleIcon from '@patternfly/react-icons/icons/wordpress-simple-icon/dist/esm/icons/wordpress-simple-icon';
-import WpbeginnerIcon from '@patternfly/react-icons/icons/wpbeginner-icon/dist/esm/icons/wpbeginner-icon';
-import WpexplorerIcon from '@patternfly/react-icons/icons/wpexplorer-icon/dist/esm/icons/wpexplorer-icon';
-import WpformsIcon from '@patternfly/react-icons/icons/wpforms-icon/dist/esm/icons/wpforms-icon';
-import WpressrIcon from '@patternfly/react-icons/icons/wpressr-icon/dist/esm/icons/wpressr-icon';
-import WrenchIcon from '@patternfly/react-icons/icons/wrench-icon/dist/esm/icons/wrench-icon';
-import XRayIcon from '@patternfly/react-icons/icons/x-ray-icon/dist/esm/icons/x-ray-icon';
-import XboxIcon from '@patternfly/react-icons/icons/xbox-icon/dist/esm/icons/xbox-icon';
-import XingIcon from '@patternfly/react-icons/icons/xing-icon/dist/esm/icons/xing-icon';
-import XingSquareIcon from '@patternfly/react-icons/icons/xing-square-icon/dist/esm/icons/xing-square-icon';
-import YCombinatorIcon from '@patternfly/react-icons/icons/y-combinator-icon/dist/esm/icons/y-combinator-icon';
-import YahooIcon from '@patternfly/react-icons/icons/yahoo-icon/dist/esm/icons/yahoo-icon';
-import YammerIcon from '@patternfly/react-icons/icons/yammer-icon/dist/esm/icons/yammer-icon';
-import YandexIcon from '@patternfly/react-icons/icons/yandex-icon/dist/esm/icons/yandex-icon';
-import YandexInternationalIcon from '@patternfly/react-icons/icons/yandex-international-icon/dist/esm/icons/yandex-international-icon';
-import YarnIcon from '@patternfly/react-icons/icons/yarn-icon/dist/esm/icons/yarn-icon';
-import YelpIcon from '@patternfly/react-icons/icons/yelp-icon/dist/esm/icons/yelp-icon';
-import YenSignIcon from '@patternfly/react-icons/icons/yen-sign-icon/dist/esm/icons/yen-sign-icon';
-import YinYangIcon from '@patternfly/react-icons/icons/yin-yang-icon/dist/esm/icons/yin-yang-icon';
-import YoastIcon from '@patternfly/react-icons/icons/yoast-icon/dist/esm/icons/yoast-icon';
-import YoutubeIcon from '@patternfly/react-icons/icons/youtube-icon/dist/esm/icons/youtube-icon';
-import YoutubeSquareIcon from '@patternfly/react-icons/icons/youtube-square-icon/dist/esm/icons/youtube-square-icon';
-import ZhihuIcon from '@patternfly/react-icons/icons/zhihu-icon/dist/esm/icons/zhihu-icon';
-import ZoneIcon from '@patternfly/react-icons/icons/zone-icon/dist/esm/icons/zone-icon';
+import UpRightAndDownLeftFromCenterSolidIcon from '@patternfly/react-icons/dist/esm/icons/up-right-and-down-left-from-center-solid-icon';
+figma.connect(
+  UpRightAndDownLeftFromCenterSolidIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=13274-2864&m=dev',
+  {
+    example: () => <UpRightAndDownLeftFromCenterSolidIcon />
+  }
+);
 
-figma.connect(AddCircleOIcon, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-code-connect?node-id=243-706', {
-  example: () => <AddCircleOIcon />
-});
-figma.connect(TimesIcon, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-code-connect?node-id=243-722', {
-  example: () => <TimesIcon />
-});
-figma.connect(EllipsisVIcon, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-code-connect?node-id=243-839', {
-  example: () => <EllipsisVIcon />
-});
+import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
+figma.connect(
+  CogsIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=25229-2108&m=dev',
+  {
+    example: () => <CogsIcon />
+  }
+);
+
+import NotStartedIcon from '@patternfly/react-icons/dist/esm/icons/not-started-icon';
+figma.connect(
+  NotStartedIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-545&m=dev',
+  {
+    example: () => <NotStartedIcon />
+  }
+);
+
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+figma.connect(
+  AngleRightIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-837&m=dev',
+  {
+    example: () => <AngleRightIcon />
+  }
+);
+
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+figma.connect(
+  SearchIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-730&m=dev',
+  {
+    example: () => <SearchIcon />
+  }
+);
+
+import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
+figma.connect(
+  AngleDoubleLeftIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-831&m=dev',
+  {
+    example: () => <AngleDoubleLeftIcon />
+  }
+);
+
+import TrendUpIcon from '@patternfly/react-icons/dist/esm/icons/trend-up-icon';
+figma.connect(
+  TrendUpIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-583&m=dev',
+  {
+    example: () => <TrendUpIcon />
+  }
+);
+
+import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
+figma.connect(
+  ArrowRightIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-852&m=dev',
+  {
+    example: () => <ArrowRightIcon />
+  }
+);
+
+import DownLeftAndUpRightToCenterSolidIcon from '@patternfly/react-icons/dist/esm/icons/down-left-and-up-right-to-center-solid-icon';
+figma.connect(
+  DownLeftAndUpRightToCenterSolidIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=13488-1851&m=dev',
+  {
+    example: () => <DownLeftAndUpRightToCenterSolidIcon />
+  }
+);
+
+// import Icon Size=Standalone 2XLIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Standalone -2XL-icon';
+// figma.connect(
+//   Icon Size=Standalone 2XLIcon,
+//   'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=198-1577&m=dev',
+//   {
+//     example: () => <Icon Size=Standalone 2XLIcon />
+//   }
+// );
+
+import GithubIcon from '@patternfly/react-icons/dist/esm/icons/github-icon';
+figma.connect(
+  GithubIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8764&m=dev',
+  {
+    example: () => <GithubIcon />
+  }
+);
+
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+figma.connect(
+  ExclamationTriangleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=1179-52&m=dev',
+  {
+    example: () => <ExclamationTriangleIcon />
+  }
+);
+
+import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
+figma.connect(
+  CubesIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=1179-51&m=dev',
+  {
+    example: () => <CubesIcon />
+  }
+);
+
+figma.connect(
+  SearchIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=1179-26&m=dev',
+  {
+    example: () => <SearchIcon />
+  }
+);
+
+import LinkedinIcon from '@patternfly/react-icons/dist/esm/icons/linkedin-icon';
+figma.connect(
+  LinkedinIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8760&m=dev',
+  {
+    example: () => <LinkedinIcon />
+  }
+);
+
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+figma.connect(
+  PlusCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=1179-79&m=dev',
+  {
+    example: () => <PlusCircleIcon />
+  }
+);
+
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+figma.connect(
+  CheckCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=1179-71&m=dev',
+  {
+    example: () => <CheckCircleIcon />
+  }
+);
+
+import WrenchIcon from '@patternfly/react-icons/dist/esm/icons/wrench-icon';
+figma.connect(
+  WrenchIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=1179-49&m=dev',
+  {
+    example: () => <WrenchIcon />
+  }
+);
+
+import TwitterIcon from '@patternfly/react-icons/dist/esm/icons/twitter-icon';
+figma.connect(
+  TwitterIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8762&m=dev',
+  {
+    example: () => <TwitterIcon />
+  }
+);
+
+import HistoryIcon from '@patternfly/react-icons/dist/esm/icons/history-icon';
+figma.connect(
+  HistoryIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-556&m=dev',
+  {
+    example: () => <HistoryIcon />
+  }
+);
+
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+figma.connect(
+  BarsIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-841&m=dev',
+  {
+    example: () => <BarsIcon />
+  }
+);
+
+figma.connect(
+  WrenchIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-573&m=dev',
+  {
+    example: () => <WrenchIcon />
+  }
+);
+
+import BalanceScaleIcon from '@patternfly/react-icons/dist/esm/icons/balance-scale-icon';
+figma.connect(
+  BalanceScaleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-560&m=dev',
+  {
+    example: () => <BalanceScaleIcon />
+  }
+);
+
+import ThumbtackIcon from '@patternfly/react-icons/dist/esm/icons/thumbtack-icon';
+figma.connect(
+  ThumbtackIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-832&m=dev',
+  {
+    example: () => <ThumbtackIcon />
+  }
+);
+
+import CloudTenantIcon from '@patternfly/react-icons/dist/esm/icons/cloud-tenant-icon';
+figma.connect(
+  CloudTenantIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-814&m=dev',
+  {
+    example: () => <CloudTenantIcon />
+  }
+);
+
+import PanelOpenIcon from '@patternfly/react-icons/dist/esm/icons/panel-open-icon';
+figma.connect(
+  PanelOpenIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-721&m=dev',
+  {
+    example: () => <PanelOpenIcon />
+  }
+);
+
+import AddCircleOIcon from '@patternfly/react-icons/dist/esm/icons/add-circle-o-icon';
+figma.connect(
+  AddCircleOIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-706&m=dev',
+  {
+    example: () => <AddCircleOIcon />
+  }
+);
+
+import DropboxIcon from '@patternfly/react-icons/dist/esm/icons/dropbox-icon';
+figma.connect(
+  DropboxIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8761&m=dev',
+  {
+    example: () => <DropboxIcon />
+  }
+);
+
+import RedoIcon from '@patternfly/react-icons/dist/esm/icons/redo-icon';
+figma.connect(
+  RedoIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-707&m=dev',
+  {
+    example: () => <RedoIcon />
+  }
+);
+
+import DataProcessorIcon from '@patternfly/react-icons/dist/esm/icons/data-processor-icon';
+figma.connect(
+  DataProcessorIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=955-4123&m=dev',
+  {
+    example: () => <DataProcessorIcon />
+  }
+);
+
+import ResourcesAlmostEmptyIcon from '@patternfly/react-icons/dist/esm/icons/resources-almost-empty-icon';
+figma.connect(
+  ResourcesAlmostEmptyIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-547&m=dev',
+  {
+    example: () => <ResourcesAlmostEmptyIcon />
+  }
+);
+
+import DrupalIcon from '@patternfly/react-icons/dist/esm/icons/drupal-icon';
+figma.connect(
+  DrupalIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8758&m=dev',
+  {
+    example: () => <DrupalIcon />
+  }
+);
+
+import MiddlewareIcon from '@patternfly/react-icons/dist/esm/icons/middleware-icon';
+figma.connect(
+  MiddlewareIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-791&m=dev',
+  {
+    example: () => <MiddlewareIcon />
+  }
+);
+
+import ClusterIcon from '@patternfly/react-icons/dist/esm/icons/cluster-icon';
+figma.connect(
+  ClusterIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-809&m=dev',
+  {
+    example: () => <ClusterIcon />
+  }
+);
+
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+figma.connect(
+  CogIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-732&m=dev',
+  {
+    example: () => <CogIcon />
+  }
+);
+
+import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
+figma.connect(
+  PencilAltIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-729&m=dev',
+  {
+    example: () => <PencilAltIcon />
+  }
+);
+
+import ThLargeIcon from '@patternfly/react-icons/dist/esm/icons/th-large-icon';
+figma.connect(
+  ThLargeIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-657&m=dev',
+  {
+    example: () => <ThLargeIcon />
+  }
+);
+
+import NewProcessIcon from '@patternfly/react-icons/dist/esm/icons/new-process-icon';
+figma.connect(
+  NewProcessIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-581&m=dev',
+  {
+    example: () => <NewProcessIcon />
+  }
+);
+
+import LongArrowAltUpIcon from '@patternfly/react-icons/dist/esm/icons/long-arrow-alt-up-icon';
+figma.connect(
+  LongArrowAltUpIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-858&m=dev',
+  {
+    example: () => <LongArrowAltUpIcon />
+  }
+);
+
+import AutomationIcon from '@patternfly/react-icons/dist/esm/icons/automation-icon';
+figma.connect(
+  AutomationIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-823&m=dev',
+  {
+    example: () => <AutomationIcon />
+  }
+);
+
+import OpenstackIcon from '@patternfly/react-icons/dist/esm/icons/openstack-icon';
+figma.connect(
+  OpenstackIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8769&m=dev',
+  {
+    example: () => <OpenstackIcon />
+  }
+);
+
+import ConnectedIcon from '@patternfly/react-icons/dist/esm/icons/connected-icon';
+figma.connect(
+  ConnectedIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-576&m=dev',
+  {
+    example: () => <ConnectedIcon />
+  }
+);
+
+import PauseCircleIcon from '@patternfly/react-icons/dist/esm/icons/pause-circle-icon';
+figma.connect(
+  PauseCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-578&m=dev',
+  {
+    example: () => <PauseCircleIcon />
+  }
+);
+
+import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
+figma.connect(
+  ShareSquareIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-737&m=dev',
+  {
+    example: () => <ShareSquareIcon />
+  }
+);
+
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+figma.connect(
+  CheckIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-747&m=dev',
+  {
+    example: () => <CheckIcon />
+  }
+);
+
+import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
+figma.connect(
+  DatabaseIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-816&m=dev',
+  {
+    example: () => <DatabaseIcon />
+  }
+);
+
+import SortAmountDownAltIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-alt-icon';
+figma.connect(
+  SortAmountDownAltIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-745&m=dev',
+  {
+    example: () => <SortAmountDownAltIcon />
+  }
+);
+
+import PanelCloseIcon from '@patternfly/react-icons/dist/esm/icons/panel-close-icon';
+figma.connect(
+  PanelCloseIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-711&m=dev',
+  {
+    example: () => <PanelCloseIcon />
+  }
+);
+
+import SatelliteIcon from '@patternfly/react-icons/dist/esm/icons/satellite-icon';
+figma.connect(
+  SatelliteIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8766&m=dev',
+  {
+    example: () => <SatelliteIcon />
+  }
+);
+
+import ClipboardCheckIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-check-icon';
+figma.connect(
+  ClipboardCheckIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-822&m=dev',
+  {
+    example: () => <ClipboardCheckIcon />
+  }
+);
+
+import SeverityModerateIcon from '@patternfly/react-icons/dist/esm/icons/severity-moderate-icon';
+figma.connect(
+  SeverityModerateIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=24000-218695&m=dev',
+  {
+    example: () => <SeverityModerateIcon />
+  }
+);
+
+import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+figma.connect(
+  FolderIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-838&m=dev',
+  {
+    example: () => <FolderIcon />
+  }
+);
+
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+figma.connect(
+  SortAmountDownIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-735&m=dev',
+  {
+    example: () => <SortAmountDownIcon />
+  }
+);
+
+import CatalogIcon from '@patternfly/react-icons/dist/esm/icons/catalog-icon';
+figma.connect(
+  CatalogIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-784&m=dev',
+  {
+    example: () => <CatalogIcon />
+  }
+);
+
+import CalendarIcon from '@patternfly/react-icons/dist/esm/icons/calendar-icon';
+figma.connect(
+  CalendarIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-855&m=dev',
+  {
+    example: () => <CalendarIcon />
+  }
+);
+
+import EyeIcon from '@patternfly/react-icons/dist/esm/icons/eye-icon';
+figma.connect(
+  EyeIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-851&m=dev',
+  {
+    example: () => <EyeIcon />
+  }
+);
+
+import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
+figma.connect(
+  PauseIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-746&m=dev',
+  {
+    example: () => <PauseIcon />
+  }
+);
+
+import EnhancementIcon from '@patternfly/react-icons/dist/esm/icons/enhancement-icon';
+figma.connect(
+  EnhancementIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-554&m=dev',
+  {
+    example: () => <EnhancementIcon />
+  }
+);
+
+import ExpandArrowsAltIcon from '@patternfly/react-icons/dist/esm/icons/expand-arrows-alt-icon';
+figma.connect(
+  ExpandArrowsAltIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-720&m=dev',
+  {
+    example: () => <ExpandArrowsAltIcon />
+  }
+);
+
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+figma.connect(
+  CodeBranchIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-825&m=dev',
+  {
+    example: () => <CodeBranchIcon />
+  }
+);
+
+import ResourcePoolIcon from '@patternfly/react-icons/dist/esm/icons/resource-pool-icon';
+figma.connect(
+  ResourcePoolIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-811&m=dev',
+  {
+    example: () => <ResourcePoolIcon />
+  }
+);
+
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+figma.connect(
+  TimesIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-722&m=dev',
+  {
+    example: () => <TimesIcon />
+  }
+);
+
+import CloudSecurityIcon from '@patternfly/react-icons/dist/esm/icons/cloud-security-icon';
+figma.connect(
+  CloudSecurityIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-802&m=dev',
+  {
+    example: () => <CloudSecurityIcon />
+  }
+);
+
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+figma.connect(
+  QuestionCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-850&m=dev',
+  {
+    example: () => <QuestionCircleIcon />
+  }
+);
+
+import NetworkRangeIcon from '@patternfly/react-icons/dist/esm/icons/network-range-icon';
+figma.connect(
+  NetworkRangeIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-788&m=dev',
+  {
+    example: () => <NetworkRangeIcon />
+  }
+);
+
+import OffIcon from '@patternfly/react-icons/dist/esm/icons/off-icon';
+figma.connect(
+  OffIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-553&m=dev',
+  {
+    example: () => <OffIcon />
+  }
+);
+
+import ResourcesFullIcon from '@patternfly/react-icons/dist/esm/icons/resources-full-icon';
+figma.connect(
+  ResourcesFullIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-546&m=dev',
+  {
+    example: () => <ResourcesFullIcon />
+  }
+);
+
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
+figma.connect(
+  PlayIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-736&m=dev',
+  {
+    example: () => <PlayIcon />
+  }
+);
+
+import WindowRestoreIcon from '@patternfly/react-icons/dist/esm/icons/window-restore-icon';
+figma.connect(
+  WindowRestoreIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-742&m=dev',
+  {
+    example: () => <WindowRestoreIcon />
+  }
+);
+
+import SeverityMinorIcon from '@patternfly/react-icons/dist/esm/icons/severity-minor-icon';
+figma.connect(
+  SeverityMinorIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=24000-218665&m=dev',
+  {
+    example: () => <SeverityMinorIcon />
+  }
+);
+
+import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
+figma.connect(
+  UndoIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-716&m=dev',
+  {
+    example: () => <UndoIcon />
+  }
+);
+
+import TaskIcon from '@patternfly/react-icons/dist/esm/icons/task-icon';
+figma.connect(
+  TaskIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-833&m=dev',
+  {
+    example: () => <TaskIcon />
+  }
+);
+
+import ArrowCircleDownIcon from '@patternfly/react-icons/dist/esm/icons/arrow-circle-down-icon';
+figma.connect(
+  ArrowCircleDownIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-571&m=dev',
+  {
+    example: () => <ArrowCircleDownIcon />
+  }
+);
+
+import TemplateIcon from '@patternfly/react-icons/dist/esm/icons/template-icon';
+figma.connect(
+  TemplateIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-783&m=dev',
+  {
+    example: () => <TemplateIcon />
+  }
+);
+
+import PrintIcon from '@patternfly/react-icons/dist/esm/icons/print-icon';
+figma.connect(
+  PrintIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-725&m=dev',
+  {
+    example: () => <PrintIcon />
+  }
+);
+
+import TenantIcon from '@patternfly/react-icons/dist/esm/icons/tenant-icon';
+figma.connect(
+  TenantIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-778&m=dev',
+  {
+    example: () => <TenantIcon />
+  }
+);
+
+import ArrowCircleUpIcon from '@patternfly/react-icons/dist/esm/icons/arrow-circle-up-icon';
+figma.connect(
+  ArrowCircleUpIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-582&m=dev',
+  {
+    example: () => <ArrowCircleUpIcon />
+  }
+);
+
+import MonitoringIcon from '@patternfly/react-icons/dist/esm/icons/monitoring-icon';
+figma.connect(
+  MonitoringIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-794&m=dev',
+  {
+    example: () => <MonitoringIcon />
+  }
+);
+
+import DisconnectedIcon from '@patternfly/react-icons/dist/esm/icons/disconnected-icon';
+figma.connect(
+  DisconnectedIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-558&m=dev',
+  {
+    example: () => <DisconnectedIcon />
+  }
+);
+
+import RegionsIcon from '@patternfly/react-icons/dist/esm/icons/regions-icon';
+figma.connect(
+  RegionsIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-786&m=dev',
+  {
+    example: () => <RegionsIcon />
+  }
+);
+
+import BanIcon from '@patternfly/react-icons/dist/esm/icons/ban-icon';
+figma.connect(
+  BanIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-580&m=dev',
+  {
+    example: () => <BanIcon />
+  }
+);
+
+import SearchMinusIcon from '@patternfly/react-icons/dist/esm/icons/search-minus-icon';
+figma.connect(
+  SearchMinusIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-743&m=dev',
+  {
+    example: () => <SearchMinusIcon />
+  }
+);
+
+import UnknownIcon from '@patternfly/react-icons/dist/esm/icons/unknown-icon';
+figma.connect(
+  UnknownIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-555&m=dev',
+  {
+    example: () => <UnknownIcon />
+  }
+);
+
+import DataSourceIcon from '@patternfly/react-icons/dist/esm/icons/data-source-icon';
+figma.connect(
+  DataSourceIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=955-4122&m=dev',
+  {
+    example: () => <DataSourceIcon />
+  }
+);
+
+import BundleIcon from '@patternfly/react-icons/dist/esm/icons/bundle-icon';
+figma.connect(
+  BundleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-806&m=dev',
+  {
+    example: () => <BundleIcon />
+  }
+);
+
+figma.connect(
+  CheckCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-567&m=dev',
+  {
+    example: () => <CheckCircleIcon />
+  }
+);
+
+import StackOverflowIcon from '@patternfly/react-icons/dist/esm/icons/stack-overflow-icon';
+figma.connect(
+  StackOverflowIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8767&m=dev',
+  {
+    example: () => <StackOverflowIcon />
+  }
+);
+
+import NetworkIcon from '@patternfly/react-icons/dist/esm/icons/network-icon';
+figma.connect(
+  NetworkIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-804&m=dev',
+  {
+    example: () => <NetworkIcon />
+  }
+);
+
+import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
+figma.connect(
+  DownloadIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-724&m=dev',
+  {
+    example: () => <DownloadIcon />
+  }
+);
+
+import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
+figma.connect(
+  StorageDomainIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-793&m=dev',
+  {
+    example: () => <StorageDomainIcon />
+  }
+);
+
+import SeverityUnidentifiedIcon from '@patternfly/react-icons/dist/esm/icons/severity-unidentified-icon';
+figma.connect(
+  SeverityUnidentifiedIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=24000-218676&m=dev',
+  {
+    example: () => <SeverityUnidentifiedIcon />
+  }
+);
+
+import UserIcon from '@patternfly/react-icons/dist/esm/icons/user-icon';
+figma.connect(
+  UserIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-790&m=dev',
+  {
+    example: () => <UserIcon />
+  }
+);
+
+import SeverityNoneIcon from '@patternfly/react-icons/dist/esm/icons/severity-none-icon';
+figma.connect(
+  SeverityNoneIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=24000-218672&m=dev',
+  {
+    example: () => <SeverityNoneIcon />
+  }
+);
+
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+figma.connect(
+  FilterIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-733&m=dev',
+  {
+    example: () => <FilterIcon />
+  }
+);
+
+import MapMarkerIcon from '@patternfly/react-icons/dist/esm/icons/map-marker-icon';
+figma.connect(
+  MapMarkerIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-853&m=dev',
+  {
+    example: () => <MapMarkerIcon />
+  }
+);
+
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+figma.connect(
+  CubeIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-808&m=dev',
+  {
+    example: () => <CubeIcon />
+  }
+);
+
+import VolumeIcon from '@patternfly/react-icons/dist/esm/icons/volume-icon';
+figma.connect(
+  VolumeIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-780&m=dev',
+  {
+    example: () => <VolumeIcon />
+  }
+);
+
+import ServerGroupIcon from '@patternfly/react-icons/dist/esm/icons/server-group-icon';
+figma.connect(
+  ServerGroupIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-782&m=dev',
+  {
+    example: () => <ServerGroupIcon />
+  }
+);
+
+import WindowsIcon from '@patternfly/react-icons/dist/esm/icons/windows-icon';
+figma.connect(
+  WindowsIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8772&m=dev',
+  {
+    example: () => <WindowsIcon />
+  }
+);
+
+import FlavorIcon from '@patternfly/react-icons/dist/esm/icons/flavor-icon';
+figma.connect(
+  FlavorIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-799&m=dev',
+  {
+    example: () => <FlavorIcon />
+  }
+);
+
+import AnsibleIcon from '@patternfly/react-icons/dist/esm/icons/ansible-icon';
+figma.connect(
+  AnsibleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8770&m=dev',
+  {
+    example: () => <AnsibleIcon />
+  }
+);
+
+figma.connect(
+  UserIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-798&m=dev',
+  {
+    example: () => <UserIcon />
+  }
+);
+
+import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+figma.connect(
+  TimesCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-738&m=dev',
+  {
+    example: () => <TimesCircleIcon />
+  }
+);
+
+import MemoryIcon from '@patternfly/react-icons/dist/esm/icons/memory-icon';
+figma.connect(
+  MemoryIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-817&m=dev',
+  {
+    example: () => <MemoryIcon />
+  }
+);
+
+import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
+figma.connect(
+  StarIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-776&m=dev',
+  {
+    example: () => <StarIcon />
+  }
+);
+
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+figma.connect(
+  CopyIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-727&m=dev',
+  {
+    example: () => <CopyIcon />
+  }
+);
+
+import ArrowsAltVIcon from '@patternfly/react-icons/dist/esm/icons/arrows-alt-v-icon';
+figma.connect(
+  ArrowsAltVIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-847&m=dev',
+  {
+    example: () => <ArrowsAltVIcon />
+  }
+);
+
+import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
+figma.connect(
+  TableIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-659&m=dev',
+  {
+    example: () => <TableIcon />
+  }
+);
+
+import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
+figma.connect(
+  FolderOpenIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-857&m=dev',
+  {
+    example: () => <FolderOpenIcon />
+  }
+);
+
+figma.connect(
+  ArrowRightIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=955-4147&m=dev',
+  {
+    example: () => <ArrowRightIcon />
+  }
+);
+
+import LockIcon from '@patternfly/react-icons/dist/esm/icons/lock-icon';
+figma.connect(
+  LockIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-584&m=dev',
+  {
+    example: () => <LockIcon />
+  }
+);
+
+import VcenterIcon from '@patternfly/react-icons/dist/esm/icons/vcenter-icon';
+figma.connect(
+  VcenterIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-777&m=dev',
+  {
+    example: () => <VcenterIcon />
+  }
+);
+
+import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
+figma.connect(
+  FlagIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-789&m=dev',
+  {
+    example: () => <FlagIcon />
+  }
+);
+
+import ListIcon from '@patternfly/react-icons/dist/esm/icons/list-icon';
+figma.connect(
+  ListIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-661&m=dev',
+  {
+    example: () => <ListIcon />
+  }
+);
+
+figma.connect(
+  PauseCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-710&m=dev',
+  {
+    example: () => <PauseCircleIcon />
+  }
+);
+
+import MulticlusterIcon from '@patternfly/react-icons/dist/esm/icons/multicluster-icon';
+figma.connect(
+  MulticlusterIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=955-4124&m=dev',
+  {
+    example: () => <MulticlusterIcon />
+  }
+);
+
+figma.connect(
+  PlusCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-709&m=dev',
+  {
+    example: () => <PlusCircleIcon />
+  }
+);
+
+import DegradedIcon from '@patternfly/react-icons/dist/esm/icons/degraded-icon';
+figma.connect(
+  DegradedIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-561&m=dev',
+  {
+    example: () => <DegradedIcon />
+  }
+);
+
+figma.connect(
+  CubesIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-827&m=dev',
+  {
+    example: () => <CubesIcon />
+  }
+);
+
+import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
+figma.connect(
+  PendingIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-570&m=dev',
+  {
+    example: () => <PendingIcon />
+  }
+);
+
+import ZoneIcon from '@patternfly/react-icons/dist/esm/icons/zone-icon';
+figma.connect(
+  ZoneIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-779&m=dev',
+  {
+    example: () => <ZoneIcon />
+  }
+);
+
+import TagIcon from '@patternfly/react-icons/dist/esm/icons/tag-icon';
+figma.connect(
+  TagIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-813&m=dev',
+  {
+    example: () => <TagIcon />
+  }
+);
+
+import FileIcon from '@patternfly/react-icons/dist/esm/icons/file-icon';
+figma.connect(
+  FileIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=955-4139&m=dev',
+  {
+    example: () => <FileIcon />
+  }
+);
+
+import ServiceCatalogIcon from '@patternfly/react-icons/dist/esm/icons/service-catalog-icon';
+figma.connect(
+  ServiceCatalogIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-810&m=dev',
+  {
+    example: () => <ServiceCatalogIcon />
+  }
+);
+
+import TachometerAltIcon from '@patternfly/react-icons/dist/esm/icons/tachometer-alt-icon';
+figma.connect(
+  TachometerAltIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-660&m=dev',
+  {
+    example: () => <TachometerAltIcon />
+  }
+);
+
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+figma.connect(
+  ExclamationCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-566&m=dev',
+  {
+    example: () => <ExclamationCircleIcon />
+  }
+);
+
+import TreeviewIcon from '@patternfly/react-icons/dist/esm/icons/treeview-icon';
+figma.connect(
+  TreeviewIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=501-2712&m=dev',
+  {
+    example: () => <TreeviewIcon />
+  }
+);
+
+import CommentsIcon from '@patternfly/react-icons/dist/esm/icons/comments-icon';
+figma.connect(
+  CommentsIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-849&m=dev',
+  {
+    example: () => <CommentsIcon />
+  }
+);
+
+import EnterpriseIcon from '@patternfly/react-icons/dist/esm/icons/enterprise-icon';
+figma.connect(
+  EnterpriseIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-812&m=dev',
+  {
+    example: () => <EnterpriseIcon />
+  }
+);
+
+import ResourcesAlmostFullIcon from '@patternfly/react-icons/dist/esm/icons/resources-almost-full-icon';
+figma.connect(
+  ResourcesAlmostFullIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-575&m=dev',
+  {
+    example: () => <ResourcesAlmostFullIcon />
+  }
+);
+
+import TopologyIcon from '@patternfly/react-icons/dist/esm/icons/topology-icon';
+figma.connect(
+  TopologyIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-656&m=dev',
+  {
+    example: () => <TopologyIcon />
+  }
+);
+
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+figma.connect(
+  EllipsisVIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-839&m=dev',
+  {
+    example: () => <EllipsisVIcon />
+  }
+);
+
+import ImageIcon from '@patternfly/react-icons/dist/esm/icons/image-icon';
+figma.connect(
+  ImageIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-821&m=dev',
+  {
+    example: () => <ImageIcon />
+  }
+);
+
+import DesktopIcon from '@patternfly/react-icons/dist/esm/icons/desktop-icon';
+figma.connect(
+  DesktopIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-807&m=dev',
+  {
+    example: () => <DesktopIcon />
+  }
+);
+
+import LockOpenIcon from '@patternfly/react-icons/dist/esm/icons/lock-open-icon';
+figma.connect(
+  LockOpenIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-564&m=dev',
+  {
+    example: () => <LockOpenIcon />
+  }
+);
+
+import DataSinkIcon from '@patternfly/react-icons/dist/esm/icons/data-sink-icon';
+figma.connect(
+  DataSinkIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=955-4105&m=dev',
+  {
+    example: () => <DataSinkIcon />
+  }
+);
+
+import ServiceIcon from '@patternfly/react-icons/dist/esm/icons/service-icon';
+figma.connect(
+  ServiceIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-820&m=dev',
+  {
+    example: () => <ServiceIcon />
+  }
+);
+
+import RepositoryIcon from '@patternfly/react-icons/dist/esm/icons/repository-icon';
+figma.connect(
+  RepositoryIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-785&m=dev',
+  {
+    example: () => <RepositoryIcon />
+  }
+);
+
+import BuilderImageIcon from '@patternfly/react-icons/dist/esm/icons/builder-image-icon';
+figma.connect(
+  BuilderImageIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-824&m=dev',
+  {
+    example: () => <BuilderImageIcon />
+  }
+);
+
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+figma.connect(
+  CodeIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-829&m=dev',
+  {
+    example: () => <CodeIcon />
+  }
+);
+
+import ProcessAutomationIcon from '@patternfly/react-icons/dist/esm/icons/process-automation-icon';
+figma.connect(
+  ProcessAutomationIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-792&m=dev',
+  {
+    example: () => <ProcessAutomationIcon />
+  }
+);
+
+import PrivateIcon from '@patternfly/react-icons/dist/esm/icons/private-icon';
+figma.connect(
+  PrivateIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-565&m=dev',
+  {
+    example: () => <PrivateIcon />
+  }
+);
+
+import DomainIcon from '@patternfly/react-icons/dist/esm/icons/domain-icon';
+figma.connect(
+  DomainIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-797&m=dev',
+  {
+    example: () => <DomainIcon />
+  }
+);
+
+import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+figma.connect(
+  AttentionBellIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-551&m=dev',
+  {
+    example: () => <AttentionBellIcon />
+  }
+);
+
+import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
+figma.connect(
+  InProgressIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-552&m=dev',
+  {
+    example: () => <InProgressIcon />
+  }
+);
+
+import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';
+figma.connect(
+  KeyIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-826&m=dev',
+  {
+    example: () => <KeyIcon />
+  }
+);
+
+import RunningIcon from '@patternfly/react-icons/dist/esm/icons/running-icon';
+figma.connect(
+  RunningIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-568&m=dev',
+  {
+    example: () => <RunningIcon />
+  }
+);
+
+import MinusCircleIcon from '@patternfly/react-icons/dist/esm/icons/minus-circle-icon';
+figma.connect(
+  MinusCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-715&m=dev',
+  {
+    example: () => <MinusCircleIcon />
+  }
+);
+
+import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
+figma.connect(
+  ThIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-658&m=dev',
+  {
+    example: () => <ThIcon />
+  }
+);
+
+import ServicesIcon from '@patternfly/react-icons/dist/esm/icons/services-icon';
+figma.connect(
+  ServicesIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-819&m=dev',
+  {
+    example: () => <ServicesIcon />
+  }
+);
+
+import TrendDownIcon from '@patternfly/react-icons/dist/esm/icons/trend-down-icon';
+figma.connect(
+  TrendDownIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-563&m=dev',
+  {
+    example: () => <TrendDownIcon />
+  }
+);
+
+figma.connect(
+  UserIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-859&m=dev',
+  {
+    example: () => <UserIcon />
+  }
+);
+
+figma.connect(
+  LockIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=1179-50&m=dev',
+  {
+    example: () => <LockIcon />
+  }
+);
+
+import RouteIcon from '@patternfly/react-icons/dist/esm/icons/route-icon';
+figma.connect(
+  RouteIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-803&m=dev',
+  {
+    example: () => <RouteIcon />
+  }
+);
+
+import VirtualMachineIcon from '@patternfly/react-icons/dist/esm/icons/virtual-machine-icon';
+figma.connect(
+  VirtualMachineIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-781&m=dev',
+  {
+    example: () => <VirtualMachineIcon />
+  }
+);
+
+import LinuxIcon from '@patternfly/react-icons/dist/esm/icons/linux-icon';
+figma.connect(
+  LinuxIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8765&m=dev',
+  {
+    example: () => <LinuxIcon />
+  }
+);
+
+import RegistryIcon from '@patternfly/react-icons/dist/esm/icons/registry-icon';
+figma.connect(
+  RegistryIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-801&m=dev',
+  {
+    example: () => <RegistryIcon />
+  }
+);
+
+import HomeIcon from '@patternfly/react-icons/dist/esm/icons/home-icon';
+figma.connect(
+  HomeIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-848&m=dev',
+  {
+    example: () => <HomeIcon />
+  }
+);
+
+import PowerOffIcon from '@patternfly/react-icons/dist/esm/icons/power-off-icon';
+figma.connect(
+  PowerOffIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-577&m=dev',
+  {
+    example: () => <PowerOffIcon />
+  }
+);
+
+import OpenDrawerRightIcon from '@patternfly/react-icons/dist/esm/icons/open-drawer-right-icon';
+figma.connect(
+  OpenDrawerRightIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=1322-74&m=dev',
+  {
+    example: () => <OpenDrawerRightIcon />
+  }
+);
+
+import BugIcon from '@patternfly/react-icons/dist/esm/icons/bug-icon';
+figma.connect(
+  BugIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-549&m=dev',
+  {
+    example: () => <BugIcon />
+  }
+);
+
+// import QuestionCircle(far)Icon from '@patternfly/react-icons/dist/esm/icons/question-circle(far)-icon';
+// figma.connect(
+//   QuestionCircle(far)Icon,
+//   'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-840&m=dev',
+//   {
+//     example: () => <QuestionCircle(far)Icon />
+//   }
+// );
+
+import OptimizeIcon from '@patternfly/react-icons/dist/esm/icons/optimize-icon';
+figma.connect(
+  OptimizeIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-713&m=dev',
+  {
+    example: () => <OptimizeIcon />
+  }
+);
+
+import LongArrowAltDownIcon from '@patternfly/react-icons/dist/esm/icons/long-arrow-alt-down-icon';
+figma.connect(
+  LongArrowAltDownIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-842&m=dev',
+  {
+    example: () => <LongArrowAltDownIcon />
+  }
+);
+
+import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
+figma.connect(
+  MinusIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-740&m=dev',
+  {
+    example: () => <MinusIcon />
+  }
+);
+
+import SecurityIcon from '@patternfly/react-icons/dist/esm/icons/security-icon';
+figma.connect(
+  SecurityIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-574&m=dev',
+  {
+    example: () => <SecurityIcon />
+  }
+);
+
+import PortIcon from '@patternfly/react-icons/dist/esm/icons/port-icon';
+figma.connect(
+  PortIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-796&m=dev',
+  {
+    example: () => <PortIcon />
+  }
+);
+
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+figma.connect(
+  BellIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-562&m=dev',
+  {
+    example: () => <BellIcon />
+  }
+);
+
+import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon';
+figma.connect(
+  EyeSlashIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-836&m=dev',
+  {
+    example: () => <EyeSlashIcon />
+  }
+);
+
+import ReplicatorIcon from '@patternfly/react-icons/dist/esm/icons/replicator-icon';
+figma.connect(
+  ReplicatorIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-787&m=dev',
+  {
+    example: () => <ReplicatorIcon />
+  }
+);
+
+import InfrastructureIcon from '@patternfly/react-icons/dist/esm/icons/infrastructure-icon';
+figma.connect(
+  InfrastructureIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-800&m=dev',
+  {
+    example: () => <InfrastructureIcon />
+  }
+);
+
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+figma.connect(
+  InfoCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-550&m=dev',
+  {
+    example: () => <InfoCircleIcon />
+  }
+);
+
+import HddIcon from '@patternfly/react-icons/dist/esm/icons/hdd-icon';
+figma.connect(
+  HddIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-818&m=dev',
+  {
+    example: () => <HddIcon />
+  }
+);
+
+import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
+figma.connect(
+  GripVerticalIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-854&m=dev',
+  {
+    example: () => <GripVerticalIcon />
+  }
+);
+
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+figma.connect(
+  AngleLeftIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-844&m=dev',
+  {
+    example: () => <AngleLeftIcon />
+  }
+);
+
+figma.connect(
+  CheckIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-572&m=dev',
+  {
+    example: () => <CheckIcon />
+  }
+);
+
+figma.connect(
+  ExclamationTriangleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-557&m=dev',
+  {
+    example: () => <ExclamationTriangleIcon />
+  }
+);
+
+import GripHorizontalIcon from '@patternfly/react-icons/dist/esm/icons/grip-horizontal-icon';
+figma.connect(
+  GripHorizontalIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-830&m=dev',
+  {
+    example: () => <GripHorizontalIcon />
+  }
+);
+
+import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
+figma.connect(
+  AngleDownIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-845&m=dev',
+  {
+    example: () => <AngleDownIcon />
+  }
+);
+
+figma.connect(
+  BellIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-846&m=dev',
+  {
+    example: () => <BellIcon />
+  }
+);
+
+import CompressIcon from '@patternfly/react-icons/dist/esm/icons/compress-icon';
+figma.connect(
+  CompressIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-731&m=dev',
+  {
+    example: () => <CompressIcon />
+  }
+);
+
+import IntegrationIcon from '@patternfly/react-icons/dist/esm/icons/integration-icon';
+figma.connect(
+  IntegrationIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-805&m=dev',
+  {
+    example: () => <IntegrationIcon />
+  }
+);
+
+import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
+figma.connect(
+  ClockIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-843&m=dev',
+  {
+    example: () => <ClockIcon />
+  }
+);
+
+import FacebookIcon from '@patternfly/react-icons/dist/esm/icons/facebook-icon';
+figma.connect(
+  FacebookIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8763&m=dev',
+  {
+    example: () => <FacebookIcon />
+  }
+);
+
+import AsleepIcon from '@patternfly/react-icons/dist/esm/icons/asleep-icon';
+figma.connect(
+  AsleepIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-579&m=dev',
+  {
+    example: () => <AsleepIcon />
+  }
+);
+
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+figma.connect(
+  CaretDownIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-835&m=dev',
+  {
+    example: () => <CaretDownIcon />
+  }
+);
+
+figma.connect(
+  ExclamationCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=1179-72&m=dev',
+  {
+    example: () => <ExclamationCircleIcon />
+  }
+);
+
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
+figma.connect(
+  TrashIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-719&m=dev',
+  {
+    example: () => <TrashIcon />
+  }
+);
+
+import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
+figma.connect(
+  ExpandIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-728&m=dev',
+  {
+    example: () => <ExpandIcon />
+  }
+);
+
+import SyncAltIcon from '@patternfly/react-icons/dist/esm/icons/sync-alt-icon';
+figma.connect(
+  SyncAltIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-723&m=dev',
+  {
+    example: () => <SyncAltIcon />
+  }
+);
+
+import CompressArrowsAltIcon from '@patternfly/react-icons/dist/esm/icons/compress-arrows-alt-icon';
+figma.connect(
+  CompressArrowsAltIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-726&m=dev',
+  {
+    example: () => <CompressArrowsAltIcon />
+  }
+);
+
+import ExportIcon from '@patternfly/react-icons/dist/esm/icons/export-icon';
+figma.connect(
+  ExportIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-744&m=dev',
+  {
+    example: () => <ExportIcon />
+  }
+);
+
+import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
+figma.connect(
+  BlueprintIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-795&m=dev',
+  {
+    example: () => <BlueprintIcon />
+  }
+);
+
+figma.connect(
+  FlagIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-717&m=dev',
+  {
+    example: () => <FlagIcon />
+  }
+);
+
+import SaveIcon from '@patternfly/react-icons/dist/esm/icons/save-icon';
+figma.connect(
+  SaveIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-712&m=dev',
+  {
+    example: () => <SaveIcon />
+  }
+);
+
+import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
+figma.connect(
+  UploadIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-714&m=dev',
+  {
+    example: () => <UploadIcon />
+  }
+);
+
+import ImportIcon from '@patternfly/react-icons/dist/esm/icons/import-icon';
+figma.connect(
+  ImportIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-718&m=dev',
+  {
+    example: () => <ImportIcon />
+  }
+);
+
+import GoogleIcon from '@patternfly/react-icons/dist/esm/icons/google-icon';
+figma.connect(
+  GoogleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8768&m=dev',
+  {
+    example: () => <GoogleIcon />
+  }
+);
+
+import ResourcesEmptyIcon from '@patternfly/react-icons/dist/esm/icons/resources-empty-icon';
+figma.connect(
+  ResourcesEmptyIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-548&m=dev',
+  {
+    example: () => <ResourcesEmptyIcon />
+  }
+);
+
+import SeverityCriticalIcon from '@patternfly/react-icons/dist/esm/icons/severity-critical-icon';
+figma.connect(
+  SeverityCriticalIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=24002-223128&m=dev',
+  {
+    example: () => <SeverityCriticalIcon />
+  }
+);
+
+import OpenshiftIcon from '@patternfly/react-icons/dist/esm/icons/openshift-icon';
+figma.connect(
+  OpenshiftIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8773&m=dev',
+  {
+    example: () => <OpenshiftIcon />
+  }
+);
+
+import BitbucketIcon from '@patternfly/react-icons/dist/esm/icons/bitbucket-icon';
+figma.connect(
+  BitbucketIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=947-4061&m=dev',
+  {
+    example: () => <BitbucketIcon />
+  }
+);
+
+import SeverityImportantIcon from '@patternfly/react-icons/dist/esm/icons/severity-important-icon';
+figma.connect(
+  SeverityImportantIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=24000-218644&m=dev',
+  {
+    example: () => <SeverityImportantIcon />
+  }
+);
+
+figma.connect(
+  CogsIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-861&m=dev',
+  {
+    example: () => <CogsIcon />
+  }
+);
+
+import GitlabIcon from '@patternfly/react-icons/dist/esm/icons/gitlab-icon';
+figma.connect(
+  GitlabIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8771&m=dev',
+  {
+    example: () => <GitlabIcon />
+  }
+);
+
+import ColumnsIcon from '@patternfly/react-icons/dist/esm/icons/columns-icon';
+figma.connect(
+  ColumnsIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-741&m=dev',
+  {
+    example: () => <ColumnsIcon />
+  }
+);
+
+import MicrochipIcon from '@patternfly/react-icons/dist/esm/icons/microchip-icon';
+figma.connect(
+  MicrochipIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-815&m=dev',
+  {
+    example: () => <MicrochipIcon />
+  }
+);
+
+import PatternflyIcon from '@patternfly/react-icons/dist/esm/icons/patternfly-icon';
+figma.connect(
+  PatternflyIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8757&m=dev',
+  {
+    example: () => <PatternflyIcon />
+  }
+);
+
+import SearchPlusIcon from '@patternfly/react-icons/dist/esm/icons/search-plus-icon';
+figma.connect(
+  SearchPlusIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-739&m=dev',
+  {
+    example: () => <SearchPlusIcon />
+  }
+);
+
+import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
+figma.connect(
+  AngleDoubleRightIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-856&m=dev',
+  {
+    example: () => <AngleDoubleRightIcon />
+  }
+);
+
+import BuildIcon from '@patternfly/react-icons/dist/esm/icons/build-icon';
+figma.connect(
+  BuildIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-828&m=dev',
+  {
+    example: () => <BuildIcon />
+  }
+);
+
+import CheckCircle2xlIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-2xl-icon';
+figma.connect(
+  CheckCircle2xlIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=1179-74&m=dev',
+  {
+    example: () => <CheckCircle2xlIcon />
+  }
+);
+
+import JsIcon from '@patternfly/react-icons/dist/esm/icons/js-icon';
+figma.connect(
+  JsIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=242-8759&m=dev',
+  {
+    example: () => <JsIcon />
+  }
+);
+
+import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
+figma.connect(
+  AngleUpIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-834&m=dev',
+  {
+    example: () => <AngleUpIcon />
+  }
+);
+
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+figma.connect(
+  PlusIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-708&m=dev',
+  {
+    example: () => <PlusIcon />
+  }
+);
+
+import MigrationIcon from '@patternfly/react-icons/dist/esm/icons/migration-icon';
+figma.connect(
+  MigrationIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-559&m=dev',
+  {
+    example: () => <MigrationIcon />
+  }
+);
+
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 figma.connect(
   ExternalLinkAltIcon,
-  'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-code-connect?node-id=243-734&',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-734&m=dev',
   {
     example: () => <ExternalLinkAltIcon />
   }
 );
-figma.connect(ArrowRightIcon, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-code-connect?node-id=243-852', {
-  example: () => <ArrowRightIcon />
-});
-figma.connect(CheckIcon, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-code-connect?node-id=243-747', {
-  example: () => <CheckIcon />
-});
-figma.connect(BellIcon, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-code-connect?node-id=243-846&m=dev', {
-  example: () => <BellIcon />
-});
+
+import SpaceShuttle2xlIcon from '@patternfly/react-icons/dist/esm/icons/space-shuttle-2xl-icon';
+figma.connect(
+  SpaceShuttle2xlIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=243-862&m=dev',
+  {
+    example: () => <SpaceShuttle2xlIcon />
+  }
+);
+
+import ThumbsUpRegularIcon from '@patternfly/react-icons/dist/esm/icons/thumbs-up-regular-icon';
+figma.connect(
+  ThumbsUpRegularIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-30367&m=dev',
+  {
+    example: () => <ThumbsUpRegularIcon />
+  }
+);
+
+import ThumbsDownRegularIcon from '@patternfly/react-icons/dist/esm/icons/thumbs-down-regular-icon';
+figma.connect(
+  ThumbsDownRegularIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-30358&m=dev',
+  {
+    example: () => <ThumbsDownRegularIcon />
+  }
+);
+
+import MessageIcon from '@patternfly/react-icons/dist/esm/icons/message-icon';
+figma.connect(
+  MessageIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30046-208&m=dev',
+  {
+    example: () => <MessageIcon />
+  }
+);
+
+import ThumbsUpIcon from '@patternfly/react-icons/dist/esm/icons/thumbs-up-icon';
+figma.connect(
+  ThumbsUpIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-30364&m=dev',
+  {
+    example: () => <ThumbsUpIcon />
+  }
+);
+
+import FingerprintIcon from '@patternfly/react-icons/dist/esm/icons/fingerprint-icon';
+figma.connect(
+  FingerprintIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-175&m=dev',
+  {
+    example: () => <FingerprintIcon />
+  }
+);
+
+import StopIcon from '@patternfly/react-icons/dist/esm/icons/stop-icon';
+figma.connect(
+  StopIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-30382&m=dev',
+  {
+    example: () => <StopIcon />
+  }
+);
+
+import MicrophoneIcon from '@patternfly/react-icons/dist/esm/icons/microphone-icon';
+figma.connect(
+  MicrophoneIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-30379&m=dev',
+  {
+    example: () => <MicrophoneIcon />
+  }
+);
+
+import VolumeHighIcon from '@patternfly/react-icons/dist/esm/icons/volume-high-icon';
+figma.connect(
+  VolumeHighIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-30376&m=dev',
+  {
+    example: () => <VolumeHighIcon />
+  }
+);
+
+import PaperclipIcon from '@patternfly/react-icons/dist/esm/icons/paperclip-icon';
+figma.connect(
+  PaperclipIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-164&m=dev',
+  {
+    example: () => <PaperclipIcon />
+  }
+);
+
+import ThumbsDownIcon from '@patternfly/react-icons/dist/esm/icons/thumbs-down-icon';
+figma.connect(
+  ThumbsDownIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-30361&m=dev',
+  {
+    example: () => <ThumbsDownIcon />
+  }
+);
+
+import RobotIcon from '@patternfly/react-icons/dist/esm/icons/robot-icon';
+figma.connect(
+  RobotIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-171&m=dev',
+  {
+    example: () => <RobotIcon />
+  }
+);
+
+import HardDriveIcon from '@patternfly/react-icons/dist/esm/icons/hard-drive-icon';
+figma.connect(
+  HardDriveIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-179&m=dev',
+  {
+    example: () => <HardDriveIcon />
+  }
+);
+
+import PaperPlaneIcon from '@patternfly/react-icons/dist/esm/icons/paper-plane-icon';
+figma.connect(
+  PaperPlaneIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-30373&m=dev',
+  {
+    example: () => <PaperPlaneIcon />
+  }
+);
+
+import SlidersIcon from '@patternfly/react-icons/dist/esm/icons/sliders-icon';
+figma.connect(
+  SlidersIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30048-30370&m=dev',
+  {
+    example: () => <SlidersIcon />
+  }
+);
+
+figma.connect(
+  InfoCircleIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=1179-73&m=dev',
+  {
+    example: () => <InfoCircleIcon />
+  }
+);
+/*  
+import Icon Size=Heading - H4Icon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Heading - H4-icon';
+figma.connect(
+  Icon Size=Heading - H4Icon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=12682-8373&m=dev',
+  {
+    example: () => <Icon Size=Heading - H4Icon />
+  }
+);
+  
+import Icon Size=Font size - XSIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Font size - XS-icon';
+figma.connect(
+  Icon Size=Font size - XSIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=15739-100&m=dev',
+  {
+    example: () => <Icon Size=Font size - XSIcon />
+  }
+);
+  
+import Icon Size=Body - SmallIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Body - Small-icon';
+figma.connect(
+  Icon Size=Body - SmallIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=198-1586&m=dev',
+  {
+    example: () => <Icon Size=Body - SmallIcon />
+  }
+);
+  
+import Icon Size=Standalone - 3XLIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Standalone - 3XL-icon';
+figma.connect(
+  Icon Size=Standalone - 3XLIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=198-1574&m=dev',
+  {
+    example: () => <Icon Size=Standalone - 3XLIcon />
+  }
+);
+  
+import Icon Size=Font size - XLIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Font size - XL-icon';
+figma.connect(
+  Icon Size=Font size - XLIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=15740-18411&m=dev',
+  {
+    example: () => <Icon Size=Font size - XLIcon />
+  }
+);
+  
+import Icon Size=Font size - 3xlIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Font size - 3xl-icon';
+figma.connect(
+  Icon Size=Font size - 3xlIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=15742-124&m=dev',
+  {
+    example: () => <Icon Size=Font size - 3xlIcon />
+  }
+);
+  
+import Icon Size=Font size - SmIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Font size - Sm-icon';
+figma.connect(
+  Icon Size=Font size - SmIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=15739-6261&m=dev',
+  {
+    example: () => <Icon Size=Font size - SmIcon />
+  }
+);
+  
+import Icon Size=Font size - 4xlIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Font size - 4xl-icon';
+figma.connect(
+  Icon Size=Font size - 4xlIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=15751-12699&m=dev',
+  {
+    example: () => <Icon Size=Font size - 4xlIcon />
+  }
+);
+  
+import Icon Size=Heading - H2Icon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Heading - H2-icon';
+figma.connect(
+  Icon Size=Heading - H2Icon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=12662-80&m=dev',
+  {
+    example: () => <Icon Size=Heading - H2Icon />
+  }
+);
+  
+import Icon Size=Heading - H3Icon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Heading - H3-icon';
+figma.connect(
+  Icon Size=Heading - H3Icon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=12675-84&m=dev',
+  {
+    example: () => <Icon Size=Heading - H3Icon />
+  }
+);
+  
+import Icon Size=Body - LargeIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Body - Large-icon';
+figma.connect(
+  Icon Size=Body - LargeIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=12613-33719&m=dev',
+  {
+    example: () => <Icon Size=Body - LargeIcon />
+  }
+);
+  
+import Icon Size=Standalone - SmallIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Standalone - Small-icon';
+figma.connect(
+  Icon Size=Standalone - SmallIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=12647-4062&m=dev',
+  {
+    example: () => <Icon Size=Standalone - SmallIcon />
+  }
+);
+  
+import Icon Size=Heading - H1Icon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Heading - H1-icon';
+figma.connect(
+  Icon Size=Heading - H1Icon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=198-1580&m=dev',
+  {
+    example: () => <Icon Size=Heading - H1Icon />
+  }
+);
+  
+import Icon Size=Standalone - XLIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Standalone - XL-icon';
+figma.connect(
+  Icon Size=Standalone - XLIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=12647-4053&m=dev',
+  {
+    example: () => <Icon Size=Standalone - XLIcon />
+  }
+);
+  
+import Icon Size=Standalone - LargeIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Standalone - Large-icon';
+figma.connect(
+  Icon Size=Standalone - LargeIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=12647-4059&m=dev',
+  {
+    example: () => <Icon Size=Standalone - LargeIcon />
+  }
+);
+  
+import Icon Size=Heading - H5Icon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Heading - H5-icon';
+figma.connect(
+  Icon Size=Heading - H5Icon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=12682-11731&m=dev',
+  {
+    example: () => <Icon Size=Heading - H5Icon />
+  }
+);
+  
+import Icon Size=Body - DefaultIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Body - Default-icon';
+figma.connect(
+  Icon Size=Body - DefaultIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=198-1583&m=dev',
+  {
+    example: () => <Icon Size=Body - DefaultIcon />
+  }
+);
+  
+import Icon Size=Font size - LgIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Font size - Lg-icon';
+figma.connect(
+  Icon Size=Font size - LgIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=15740-11593&m=dev',
+  {
+    example: () => <Icon Size=Font size - LgIcon />
+  }
+);
+  
+import Icon Size=Font size - MedIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Font size - Med-icon';
+figma.connect(
+  Icon Size=Font size - MedIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=15739-11207&m=dev',
+  {
+    example: () => <Icon Size=Font size - MedIcon />
+  }
+);
+  
+import Icon Size=Font size - 2XLIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Font size - 2XL-icon';
+figma.connect(
+  Icon Size=Font size - 2XLIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=15740-20281&m=dev',
+  {
+    example: () => <Icon Size=Font size - 2XLIcon />
+  }
+);
+  
+import Icon Size=Heading - H6Icon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Heading - H6-icon';
+figma.connect(
+  Icon Size=Heading - H6Icon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=12684-1062&m=dev',
+  {
+    example: () => <Icon Size=Heading - H6Icon />
+  }
+);
+  
+import Icon Size=Standalone - MediumIcon from '@patternfly/react-icons/dist/esm/icons/Icon Size=Standalone - Medium-icon';
+figma.connect(
+  Icon Size=Standalone - MediumIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=12647-4056&m=dev',
+  {
+    example: () => <Icon Size=Standalone - MediumIcon />
+  }
+);
+*/
+
+import ShareSquareOutlineIcon from '@patternfly/react-icons/dist/esm/icons/share-square-outline-icon';
+figma.connect(
+  ShareSquareOutlineIcon,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6%3A-Components?node-id=30057-266018&m=dev',
+  {
+    example: () => <ShareSquareOutlineIcon />
+  }
+);
