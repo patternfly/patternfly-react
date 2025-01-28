@@ -49,7 +49,6 @@ exports[`SearchInput advanced search 1`] = `
             class="pf-v6-c-text-input-group__utilities"
           >
             <button
-              aria-disabled="false"
               aria-label="Reset"
               class="pf-v6-c-button pf-m-plain"
               type="button"
@@ -79,7 +78,6 @@ exports[`SearchInput advanced search 1`] = `
         class="pf-v6-c-input-group__item pf-m-plain"
       >
         <button
-          aria-disabled="false"
           aria-expanded="false"
           aria-label="Open advanced search"
           class="pf-v6-c-button pf-m-control"
@@ -108,7 +106,6 @@ exports[`SearchInput advanced search 1`] = `
         class="pf-v6-c-input-group__item"
       >
         <button
-          aria-disabled="false"
           aria-label="Search"
           class="pf-v6-c-button pf-m-control"
           type="submit"
@@ -202,7 +199,6 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
             class="pf-v6-c-text-input-group__utilities"
           >
             <button
-              aria-disabled="false"
               aria-label="Reset"
               class="pf-v6-c-button pf-m-plain"
               type="button"
@@ -232,7 +228,6 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
         class="pf-v6-c-input-group__item pf-m-plain"
       >
         <button
-          aria-disabled="false"
           aria-expanded="true"
           aria-label="Open advanced search"
           class="pf-v6-c-button pf-m-control pf-m-expanded"
@@ -261,7 +256,6 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
         class="pf-v6-c-input-group__item"
       >
         <button
-          aria-disabled="false"
           aria-label="Search"
           class="pf-v6-c-button pf-m-control"
           type="submit"
@@ -420,7 +414,6 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                   class="pf-v6-c-form__group-control"
                 >
                   <button
-                    aria-disabled="false"
                     class="pf-v6-c-button pf-m-link pf-m-inline"
                     type="button"
                   >
@@ -459,7 +452,6 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                     class="pf-v6-c-form__actions"
                   >
                     <button
-                      aria-disabled="false"
                       class="pf-v6-c-button pf-m-primary"
                       type="submit"
                     >
@@ -470,7 +462,6 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                       </span>
                     </button>
                     <button
-                      aria-disabled="false"
                       class="pf-v6-c-button pf-m-link"
                       type="reset"
                     >
@@ -541,7 +532,6 @@ exports[`SearchInput renders search input in strict mode 1`] = `
             class="pf-v6-c-text-input-group__utilities"
           >
             <button
-              aria-disabled="false"
               aria-label="Reset"
               class="pf-v6-c-button pf-m-plain"
               type="button"
@@ -571,7 +561,6 @@ exports[`SearchInput renders search input in strict mode 1`] = `
         class="pf-v6-c-input-group__item pf-m-plain"
       >
         <button
-          aria-disabled="false"
           aria-expanded="false"
           aria-label="Open advanced search"
           class="pf-v6-c-button pf-m-control"
@@ -600,7 +589,6 @@ exports[`SearchInput renders search input in strict mode 1`] = `
         class="pf-v6-c-input-group__item"
       >
         <button
-          aria-disabled="false"
           aria-label="Search"
           class="pf-v6-c-button pf-m-control"
           type="submit"
@@ -700,7 +688,6 @@ exports[`SearchInput search input with hint 1`] = `
             class="pf-v6-c-text-input-group__group"
           >
             <button
-              aria-disabled="false"
               aria-label="Previous"
               class="pf-v6-c-button pf-m-plain"
               type="button"
@@ -724,7 +711,6 @@ exports[`SearchInput search input with hint 1`] = `
               </span>
             </button>
             <button
-              aria-disabled="false"
               aria-label="Next"
               class="pf-v6-c-button pf-m-plain"
               type="button"
@@ -749,7 +735,6 @@ exports[`SearchInput search input with hint 1`] = `
             </button>
           </div>
           <button
-            aria-disabled="false"
             aria-label="Reset"
             class="pf-v6-c-button pf-m-plain"
             type="button"
@@ -779,7 +764,6 @@ exports[`SearchInput search input with hint 1`] = `
       class="pf-v6-c-input-group__item"
     >
       <button
-        aria-disabled="false"
         aria-label="Search"
         class="pf-v6-c-button pf-m-control"
         type="submit"
@@ -864,7 +848,6 @@ exports[`SearchInput simple search input 1`] = `
             class="pf-v6-c-text-input-group__group"
           >
             <button
-              aria-disabled="false"
               aria-label="Previous"
               class="pf-v6-c-button pf-m-plain"
               type="button"
@@ -888,7 +871,6 @@ exports[`SearchInput simple search input 1`] = `
               </span>
             </button>
             <button
-              aria-disabled="false"
               aria-label="Next"
               class="pf-v6-c-button pf-m-plain"
               type="button"
@@ -913,7 +895,6 @@ exports[`SearchInput simple search input 1`] = `
             </button>
           </div>
           <button
-            aria-disabled="false"
             aria-label="Reset"
             class="pf-v6-c-button pf-m-plain"
             type="button"
@@ -943,7 +924,6 @@ exports[`SearchInput simple search input 1`] = `
       class="pf-v6-c-input-group__item"
     >
       <button
-        aria-disabled="false"
         aria-label="Search"
         class="pf-v6-c-button pf-m-control"
         type="submit"
