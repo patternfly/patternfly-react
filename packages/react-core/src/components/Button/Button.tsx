@@ -6,6 +6,7 @@ import { useOUIAProps, OUIAProps } from '../../helpers/OUIA/ouia';
 import { Badge } from '../Badge';
 
 export enum ButtonVariant {
+  test = 'test',
   primary = 'primary',
   secondary = 'secondary',
   tertiary = 'tertiary',

@@ -16,14 +16,22 @@ figma.connect(Hint, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-co
     // body: figma.string('✏️ Body'),
     // swapButton: figma.instance('Swap button'),
     // showBody: figma.boolean('Show Body'),
-    titleText: figma.string('✏️ Title'),
+    // titleText: figma.string('✏️ Title'),
     // bodyText: figma.string('✏️ Body'),
+    // true: <HintTitle>{titleText}</HintTitle>,
     hintTitle: figma.boolean('Show Title ', {
-      true: <HintTitle>{titleText}</HintTitle>,
+      true: <HintTitle>'hello'</HintTitle>,
       false: undefined
     }),
     showBody: figma.boolean('Show Body', {
       true: <HintBody>{figma.string('✏️ Body')}</HintBody>,
+      false: undefined
+    }),
+    showTitle: figma.boolean('Show Title', {
+      // Define the title text as a prop or constant
+      true: <HintTitle>{'Example Title'}</HintTitle>, // Fixed version
+      // Or if you need dynamic titles:
+      // true: ({ title }) => <HintTitle>{title}</HintTitle>,
       false: undefined
     }),
     showFooter: figma.boolean('Show Footer', {
@@ -31,7 +39,7 @@ figma.connect(Hint, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-co
       false: undefined
     })
   },
-  example: ({ hintTitle, showBody, showFooter }) => (
+  example: ({ hintTitle = 'hello', showBody, showFooter }) => (
     <Hint>
       {hintTitle}
       {showBody}

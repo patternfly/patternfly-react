@@ -3,7 +3,7 @@
     "parser": "react",
     "label": "PF-React",
     "importPaths": {
-      "packages/react-core/src/*": "@patternfly/react-core"
+      "src/components/*": "@ui/components"
     },
     "paths": {
       "./next": ["packages/react-core/src/next"],

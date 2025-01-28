@@ -55,6 +55,8 @@
   },
   "devDependencies": {
     "@patternfly/patternfly": "6.2.0-prerelease.15",
+    "@figma/code-connect": "^1.3.0",
+    "@patternfly/patternfly": "6.1.0",
     "case-anything": "^3.1.2",
     "css": "^3.0.0",
     "fs-extra": "^11.3.0"
