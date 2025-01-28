@@ -89,7 +89,7 @@ test(`aria-disabled and class ${styles.modifiers.ariaDisabled} are not rendered 
   expect(button).not.toHaveClass(styles.modifiers.ariaDisabled);
 });
 
-test('Renders with class pf-m-aria-disabled and aria-disabled attribute when isAriaDisabled = true', () => {
+test(`Renders with class ${styles.modifiers.ariaDisabled} and aria-disabled attribute when isAriaDisabled = true`, () => {
   render(<Button isAriaDisabled>Disabled yet focusable button</Button>);
   const button = screen.getByRole('button');
 
