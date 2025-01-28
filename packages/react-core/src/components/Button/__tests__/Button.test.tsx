@@ -94,7 +94,7 @@ test('Renders with class pf-m-aria-disabled and aria-disabled attribute when isA
   const button = screen.getByRole('button');
 
   expect(button).toHaveAttribute('aria-disabled', 'true');
-  expect(button).toHaveClass('pf-m-aria-disabled');
+  expect(button).toHaveClass(styles.modifiers.ariaDisabled);
 });
 
 test('Does not disable button when isDisabled = true and component = a', () => {
