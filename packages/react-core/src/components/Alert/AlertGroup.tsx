@@ -8,6 +8,8 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   className?: string;
   /** Alerts to be rendered in the AlertGroup */
   children?: React.ReactNode;
+  /** Flag indicating whether alerts will have animations when being added or removed from the AlertGroup. */
+  hasAnimations?: boolean;
   /** Toast notifications are positioned at the top right corner of the viewport */
   isToast?: boolean;
   /** Turns the container into a live region so that changes to content within the AlertGroup, such as appending an Alert, are reliably announced to assistive technology. */
@@ -58,6 +60,7 @@ class AlertGroup extends Component<AlertGroupProps, AlertGroupState> {
     const {
       className,
       children,
+      hasAnimations,
       isToast,
       isLiveRegion,
       onOverflowClick,
@@ -75,6 +78,7 @@ class AlertGroup extends Component<AlertGroupProps, AlertGroupState> {
         isLiveRegion={isLiveRegion}
         overflowMessage={overflowMessage}
         aria-label={ariaLabel}
+        hasAnimations={hasAnimations}
         {...props}
       >
         {children}
