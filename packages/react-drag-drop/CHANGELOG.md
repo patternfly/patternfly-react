@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.2.0-prerelease.16...@patternfly/react-drag-drop@6.2.0-prerelease.17) (2025-01-31)
+
+### Bug Fixes
+
+- **deps:** update dependency @dnd-kit/core to ^6.3.1 ([#11475](https://github.com/patternfly/patternfly-react/issues/11475)) ([ef18cb8](https://github.com/patternfly/patternfly-react/commit/ef18cb83cd52570312e1a2c16773c39e001f5dc4))
+
 # [6.2.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.2.0-prerelease.15...@patternfly/react-drag-drop@6.2.0-prerelease.16) (2025-01-28)
 
 **Note:** Version bump only for package @patternfly/react-drag-drop
