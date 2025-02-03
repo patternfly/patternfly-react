@@ -18,7 +18,7 @@ export const AlertGroupAnimations: React.FunctionComponent = () => {
   const getUniqueId = () => new Date().getTime();
 
   const addToastAlert = () => {
-    addAlert('Toast alert withs animation', getUniqueId(), true);
+    addAlert('Toast alert with animation', getUniqueId(), true);
   };
 
   const addInlineAlert = () => {
