@@ -31,6 +31,8 @@ import {
   Nav,
   NavItem,
   NavList,
+  NotificationBadge,
+  NotificationBadgeVariant,
   Page,
   PageSection,
   PageSidebar,
@@ -50,7 +52,6 @@ import {
 import { Link } from '@reach/router';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
@@ -385,7 +386,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
           gap={{ default: 'gapNone', md: 'gapMd' }}
         >
           <ToolbarItem>
-            <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} />
+            <NotificationBadge aria-label="Notifications" variant={NotificationBadgeVariant.read} onClick={() => {}} />
           </ToolbarItem>
           <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
             <ToolbarItem visibility={{ default: 'hidden', md: 'hidden', lg: 'visible' }}>
