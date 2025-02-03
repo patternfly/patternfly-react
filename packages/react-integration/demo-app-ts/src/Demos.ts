@@ -38,6 +38,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AlertGroupDemo
   },
   {
+    id: 'alert-group-animations-demo',
+    name: 'Alert Group Animations Demo',
+    componentType: Examples.AlertGroupAnimationsDemo
+  },
+  {
     id: 'alert-group-timeout-from-bottom-demo',
     name: 'Alert Group Timeout From Bottom Demo',
     componentType: Examples.AlertGroupTimeoutFromBottomDemo
