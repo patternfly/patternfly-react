@@ -25,7 +25,7 @@ export const AlertGroupSingularDynamicOverflow: React.FunctionComponent = () => 
   };
 
   const addAlert = (title: string, variant: AlertProps['variant'], key: React.Key) => {
-    setAlerts((prevAlerts) => [...prevAlerts, { title, variant, key }]);
+    setAlerts((prevAlerts) => [{ title, variant, key }, ...prevAlerts]);
     setOverflowMessage(getOverflowMessage(alerts.length + 1));
   };
 
