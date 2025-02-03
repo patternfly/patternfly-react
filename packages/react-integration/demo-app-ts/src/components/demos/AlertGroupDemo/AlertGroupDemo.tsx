@@ -4,11 +4,10 @@ import {
   AlertGroup,
   AlertVariant,
   AlertActionCloseButton,
+  Button,
   InputGroup,
   InputGroupItem
 } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 interface AlertDemoAlert {
   title: string;
@@ -42,11 +41,10 @@ export class AlertGroupDemo extends Component<{}, AlertGroupDemoState> {
   }
   render() {
     const addAlerts = (incomingAlerts: AlertGroupDemoState['alerts']) => {
-      this.setState({ alerts: [...this.state.alerts, ...incomingAlerts] });
+      this.setState({ alerts: [...incomingAlerts, ...this.state.alerts] });
     };
     const getUniqueId = () => new Date().getTime();
-    const btnClasses = css(buttonStyles.button, buttonStyles.modifiers.secondary);
-    this.removeAlert = (key: number | string) => {
+    this.removeAlert = (key: React.Key) => {
       this.setState({ alerts: [...this.state.alerts.filter((el: AlertDemoAlert) => el.key !== key)] });
     };
     const startAsyncAlerts = () => {
@@ -65,14 +63,14 @@ export class AlertGroupDemo extends Component<{}, AlertGroupDemoState> {
       <>
         <InputGroup style={{ marginBottom: '16px' }}>
           <InputGroupItem>
-            <button onClick={startAsyncAlerts} type="button" className={btnClasses}>
+            <Button variant="secondary" onClick={startAsyncAlerts} type="button">
               Start Async Alerts
-            </button>
+            </Button>
           </InputGroupItem>
           <InputGroupItem>
-            <button onClick={this.stopAsyncAlerts} type="button" className={btnClasses}>
+            <Button variant="secondary" onClick={this.stopAsyncAlerts} type="button">
               Stop Async Alerts
-            </button>
+            </Button>
           </InputGroupItem>
         </InputGroup>
         <AlertGroup isToast>
