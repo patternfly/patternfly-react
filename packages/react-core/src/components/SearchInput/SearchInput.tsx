@@ -140,7 +140,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   onSearch,
   onClear,
   onToggleAdvancedSearch,
-  isAdvancedSearchOpen,
+  isAdvancedSearchOpen = false,
   resultsCount,
   onNextClick,
   onPreviousClick,
