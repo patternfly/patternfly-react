@@ -116,7 +116,6 @@ const AlertTimeout: React.FunctionComponent = () => {
     setNewAlertKey((key) => key + 1);
     setAlerts((prevAlerts) => {
       return [
-        ...prevAlerts,
         <Alert
           title="Default timeout Alert"
           timeout={timeout}
@@ -135,7 +134,7 @@ const AlertTimeout: React.FunctionComponent = () => {
           key={newAlertKey}
         >
           This alert will dismiss after {`${timeout / 1000} seconds`}
-        </Alert>
+        </Alert>, ...prevAlerts
       ];
     });
   };
@@ -477,5 +476,15 @@ In the following example, there can be a maximum of 4 alerts shown at once.
 You may add multiple alerts to an alert group at once. Click the "add alert collection" button in the example below to add a batch of 3 toast alerts to a group.
 
 ```ts file="./AlertGroupMultipleDynamic.tsx"
+
+```
+
+### Alert group with animations
+
+You can apply animations to alerts within an `<AlertGroup>` by passing the `hasAnimations` property. Doing so will animate alerts when added or removed from an `<AlertGroup>`. The following example shows both a toast and inline `<AlertGroup>` with animations applied.
+
+When using animations, each alert must have a unique `id` or `key` passed to it.
+
+```ts file="./AlertGroupAnimations.tsx"
 
 ```
