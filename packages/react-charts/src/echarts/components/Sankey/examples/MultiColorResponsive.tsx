@@ -1,5 +1,6 @@
 import React from 'react';
-import { Sankey } from '@patternfly/react-charts/echarts';
+import { Sankey, ThemeColor } from '@patternfly/react-charts/echarts';
+import { getResizeObserver } from '@patternfly/react-core';
 
 export const FormBasic: React.FunctionComponent = () => {
   const data = [
@@ -56,13 +57,39 @@ export const FormBasic: React.FunctionComponent = () => {
     }
   ];
 
+  const legend = {
+    orient: 'vertical',
+    left: 'left',
+    data: ['a', 'a1', 'b', 'b1', 'c']
+  };
+
+  // let observer = () => {};
+  const containerRef = React.useRef<HTMLDivElement>();
+  const [width, setWidth] = React.useState(0);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (containerRef.current && containerRef.current.clientWidth) {
+        setWidth(containerRef.current.clientWidth);
+      }
+    };
+    let observer = () => {};
+    observer = getResizeObserver(containerRef.current, handleResize);
+
+    return () => {
+      observer();
+    };
+  }, [containerRef, width]);
+
   return (
-    <div>
+    <div ref={containerRef}>
       <Sankey
         height={400}
         id="chart1"
+        legend={legend}
         nodeSelector="html"
         series={[{ data, links }]}
+        themeColor={ThemeColor.multiUnordered}
         title={{
           subtext: 'This is a Sankey chart',
           left: 'center'
@@ -70,7 +97,7 @@ export const FormBasic: React.FunctionComponent = () => {
         tooltip={{
           valueFormatter: (value) => `${value} GiB`
         }}
-        width={825}
+        width={width}
       />
     </div>
   );

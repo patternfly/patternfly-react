@@ -7,7 +7,7 @@ import * as echarts from 'echarts';
 import { useCallback, useRef, useState } from 'react';
 import defaultsDeep from 'lodash/defaultsDeep';
 import { getMutationObserver } from '../utils/observe';
-import { getComputedStyle } from '../utils/theme';
+import { getComputedValue } from '../utils/styles';
 
 // import { BarChart, SankeyChart } from 'echarts/charts';
 // import { CanvasRenderer } from 'echarts/renderers';
@@ -34,9 +34,10 @@ import { getComputedStyle } from '../utils/theme';
 //   CanvasRenderer
 // ]);
 
-import { getTheme } from './theme';
-import { getClassName } from '../utils/misc';
 import { EChartsInitOpts } from 'echarts/types/dist/echarts';
+import { ThemeDefinition } from '../themes/Theme';
+import { getClassName } from '../utils/styles';
+import { getTheme } from '../utils/theme';
 
 /**
  * Sankey diagram is a specific type of streamgraph (can also be seen as a directed acyclic graph) in which the width
@@ -57,6 +58,12 @@ export interface SankeyProps {
    * The id prop specifies an ID that will be applied to outermost element.
    */
   id?: string;
+  /**
+   * Legend component properties
+   *
+   * See https://echarts.apache.org/en/option.html#legend
+   */
+  legend?: any;
   /**
    * This creates a Mutation Observer to watch the given DOM selector.
    *
@@ -93,7 +100,15 @@ export interface SankeyProps {
    *
    * See https://echarts.apache.org/handbook/en/concepts/style/#theme
    */
-  theme?: any; // Todo: Add theme type
+  theme?: ThemeDefinition;
+  /**
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
+   *
+   * Note: Not compatible with theme prop
+   *
+   * @example themeColor={ChartThemeColor.blue}
+   */
+  themeColor?: string;
   /**
    * Title component properties
    *
@@ -124,11 +139,12 @@ export const Sankey: React.FunctionComponent<SankeyProps> = ({
   className,
   height,
   id,
+  legend,
   nodeSelector,
   opts,
   series,
-
   theme,
+  themeColor,
   title,
   tooltip = {
     valueFormatter: (value: number | string) => value
@@ -139,7 +155,7 @@ export const Sankey: React.FunctionComponent<SankeyProps> = ({
 }: SankeyProps) => {
   const containerRef = useRef<HTMLDivElement>();
   const echart = useRef<echarts.ECharts>();
-  const [chartTheme, setChartTheme] = useState(theme || getTheme());
+  const [chartTheme, setChartTheme] = useState(theme || getTheme(themeColor));
 
   const getItemColor = useCallback(
     (params: any) => {
@@ -161,7 +177,7 @@ export const Sankey: React.FunctionComponent<SankeyProps> = ({
   const getTooltip = useCallback(() => {
     const symbolSize = '10px';
     const defaults = {
-      backgroundColor: getComputedStyle(chart_voronoi_flyout_stroke_Fill),
+      backgroundColor: getComputedValue(chart_voronoi_flyout_stroke_Fill),
       confine: true,
       formatter: (params: any) => {
         const result = `
@@ -187,7 +203,7 @@ export const Sankey: React.FunctionComponent<SankeyProps> = ({
         return result.replace(/\s\s+/g, ' ');
       },
       textStyle: {
-        color: getComputedStyle(chart_voronoi_labels_Fill)
+        color: getComputedValue(chart_voronoi_labels_Fill)
       },
       trigger: 'item',
       triggerOn: 'mousemove'
@@ -221,6 +237,7 @@ export const Sankey: React.FunctionComponent<SankeyProps> = ({
 
     echart.current?.setOption({
       series: newSeries,
+      legend,
       title,
       tooltip: getTooltip()
     });
@@ -228,7 +245,7 @@ export const Sankey: React.FunctionComponent<SankeyProps> = ({
     return () => {
       echart.current?.dispose();
     };
-  }, [chartTheme, containerRef, getTooltip, opts, series, title, tooltip]);
+  }, [chartTheme, containerRef, getTooltip, legend, opts, series, title, tooltip]);
 
   // Resize observer
   React.useEffect(() => {
@@ -239,7 +256,7 @@ export const Sankey: React.FunctionComponent<SankeyProps> = ({
   React.useEffect(() => {
     let observer = () => {};
     observer = getMutationObserver(nodeSelector, () => {
-      setChartTheme(getTheme());
+      setChartTheme(theme || getTheme(themeColor));
     });
     return () => {
       observer();

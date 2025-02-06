@@ -21,3 +21,18 @@ export const getClassName = (className: string) => {
   }
   return cleanClassName?.length ? `pf-v6-c-chart ${cleanClassName}` : 'pf-v6-c-chart';
 };
+
+/**
+ * Get computed style -- see https://github.com/apache/echarts/issues/19743
+ *
+ * @private
+ * @beta
+ */
+export const getComputedValue = (token: any) => {
+  let result;
+
+  if (canUseDOM) {
+    result = window.getComputedStyle(document.body)?.getPropertyValue(token.name);
+  }
+  return result?.length ? result : token.value;
+};

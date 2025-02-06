@@ -7,7 +7,7 @@ propComponents: [
 beta: true
 ---
 
-import { Sankey } from '@patternfly/react-charts/echarts';
+import { Sankey, ThemeColor } from '@patternfly/react-charts/echarts';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -18,5 +18,11 @@ PatternFly React charts are based on the [Apache ECharts](https://echarts.apache
 ### Basic
 
 ```ts file="./Basic.tsx"
+
+```
+
+### Multi-color (unordered) with responsive container
+
+```ts file="./MultiColorResponsive.tsx"
 
 ```

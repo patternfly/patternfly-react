@@ -26,54 +26,54 @@ import chart_theme_multi_color_ordered_ColorScale_2400 from '@patternfly/react-t
 import chart_theme_multi_color_ordered_ColorScale_2500 from '@patternfly/react-tokens/dist/esm/chart_theme_multi_color_ordered_ColorScale_2500';
 import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
 
-import { getComputedStyle } from '../utils/theme';
+import { getComputedValue } from '../utils/styles';
 
 export const getTheme = () => {
   // The color order below improves the color contrast in unordered charts; area & line
   // See https://github.com/patternfly/patternfly-next/issues/1551
   const COLOR_SCALE = [
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_100),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_200),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_300),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_400),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_500),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_600),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_700),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_800),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_900),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_1000),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_1100),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_1200),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_1300),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_1400),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_1500),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_1600),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_1700),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_1800),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_1900),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_2000),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_2100),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_2200),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_2300),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_2400),
-    getComputedStyle(chart_theme_multi_color_ordered_ColorScale_2500)
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_100),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_200),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_300),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_400),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_500),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_600),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_700),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_800),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_900),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_1000),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_1100),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_1200),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_1300),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_1400),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_1500),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_1600),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_1700),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_1800),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_1900),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_2000),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_2100),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_2200),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_2300),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_2400),
+    getComputedValue(chart_theme_multi_color_ordered_ColorScale_2500)
   ];
 
   return {
     color: COLOR_SCALE,
     backgroundColor: 'rgba(0,0,0,0)',
     label: {
-      color: getComputedStyle(chart_global_label_Fill)
+      color: getComputedValue(chart_global_label_Fill)
     },
     textStyle: {},
     title: {
       textStyle: {
         // color: '#464646'
-        color: getComputedStyle(chart_global_label_Fill)
+        color: getComputedValue(chart_global_label_Fill)
       },
       subtextStyle: {
         // color: '#6e7079'
-        color: getComputedStyle(chart_global_label_Fill)
+        color: getComputedValue(chart_global_label_Fill)
       }
     },
     line: {
