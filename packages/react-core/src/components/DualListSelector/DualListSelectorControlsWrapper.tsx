@@ -11,7 +11,7 @@ export interface DualListSelectorControlsWrapperProps extends React.HTMLProps<HT
   /** Additional classes added to the wrapper. */
   className?: string;
   /** @hide Forwarded ref */
-  innerRef?: React.RefObject<HTMLDivElement>;
+  innerRef?: React.RefObject<HTMLDivElement | null>;
   /** Accessible label for the dual list selector controls wrapper. */
   'aria-label'?: string;
 }

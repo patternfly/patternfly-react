@@ -9,7 +9,7 @@ export interface WizardContextProps {
   /** Current step */
   activeStep: WizardStepType;
   /** Footer element */
-  footer: React.ReactElement;
+  footer: React.ReactElement<any>;
   /** Close the wizard */
   close: () => void;
   /** Navigate to the next step */
@@ -23,7 +23,7 @@ export interface WizardContextProps {
   /** Navigate to step by index */
   goToStepByIndex: (index: number) => void;
   /** Update the footer with any react element */
-  setFooter: (footer: React.ReactElement | Partial<WizardFooterProps>) => void;
+  setFooter: (footer: React.ReactElement<any> | Partial<WizardFooterProps>) => void;
   /** Get step by ID */
   getStep: (stepId: number | string) => WizardStepType;
   /** Set step by ID */
@@ -33,7 +33,7 @@ export interface WizardContextProps {
    */
   shouldFocusContent: boolean;
   /** Ref for main wizard content element. */
-  mainWrapperRef: React.RefObject<HTMLElement>;
+  mainWrapperRef: React.RefObject<HTMLElement | null>;
 }
 
 export const WizardContext = React.createContext({} as WizardContextProps);
@@ -42,7 +42,7 @@ export interface WizardContextProviderProps {
   steps: WizardStepType[];
   activeStepIndex: number;
   footer: WizardFooterType;
-  children: React.ReactElement;
+  children: React.ReactElement<any>;
   onNext(event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[]): void;
   onBack(event: React.MouseEvent<HTMLButtonElement>, steps: WizardStepType[]): void;
   onClose?(event: React.MouseEvent<HTMLButtonElement>): void;
@@ -54,7 +54,7 @@ export interface WizardContextProviderProps {
     index: number
   ): void;
   shouldFocusContent: boolean;
-  mainWrapperRef: React.RefObject<HTMLElement>;
+  mainWrapperRef: React.RefObject<HTMLElement | null>;
 }
 
 export const WizardContextProvider: React.FunctionComponent<WizardContextProviderProps> = ({

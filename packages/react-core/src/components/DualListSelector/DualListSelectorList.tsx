@@ -10,7 +10,7 @@ export interface DualListSelectorListProps extends React.HTMLProps<HTMLUListElem
   /** Content rendered inside the dual list selector list. */
   children?: React.ReactNode;
   /** @hide forwarded ref */
-  innerRef?: React.RefObject<HTMLUListElement>;
+  innerRef?: React.RefObject<HTMLUListElement | null>;
 }
 
 export const DualListSelectorListBase: React.FunctionComponent<DualListSelectorListProps> = ({

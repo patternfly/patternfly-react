@@ -29,9 +29,7 @@ export const LegacyTableStripedCustomTr: React.FunctionComponent = () => {
 
   const customRowWrapper: TableProps['rowWrapper'] = ({ trRef, className, rowProps, row: _row }) => {
     const isOddRow = rowProps ? !!((rowProps.rowIndex + 1) % 2) : true;
-    return (
-      <tr ref={trRef as React.LegacyRef<HTMLTableRowElement>} className={css(className, isOddRow && 'pf-m-striped')} />
-    );
+    return <tr ref={trRef as React.Ref<HTMLTableRowElement>} className={css(className, isOddRow && 'pf-m-striped')} />;
   };
 
   return (

@@ -244,8 +244,8 @@ AdvancedComposableSearchInput = () => {
   const firstAttrRef = React.useRef(null);
   const searchInputRef = React.useRef(null);
   const advancedSearchPaneRef = React.useRef(null);
-  const dateWithinToggleRef = React.useRef();
-  const dateWithinMenuRef = React.useRef();
+  const dateWithinToggleRef = React.useRef(undefined);
+  const dateWithinMenuRef = React.useRef(undefined);
 
   const onClear = () => {
     setValue('');

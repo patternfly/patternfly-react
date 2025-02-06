@@ -23,7 +23,7 @@ export interface WizardToggleProps {
   /** The current step */
   activeStep: WizardStepType;
   /** Wizard footer */
-  footer: React.ReactElement;
+  footer: React.ReactElement<any>;
   /** Wizard navigation */
   nav: React.ReactElement<WizardNavProps>;
   /** The expandable dropdown button's aria-label */

@@ -74,8 +74,8 @@ export class FormDemo extends Component<FormProps, FormState> {
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
   }
 
-  labelHelpRef: React.RefObject<HTMLSpanElement> = React.createRef();
-  textInputRef: React.RefObject<HTMLInputElement> = React.createRef();
+  labelHelpRef: React.RefObject<HTMLSpanElement | null> = React.createRef();
+  textInputRef: React.RefObject<HTMLInputElement | null> = React.createRef();
 
   handleTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     this.setState({ value, isValid: /^\d+$/.test(value) });

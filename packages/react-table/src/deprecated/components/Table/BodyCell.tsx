@@ -18,7 +18,7 @@ export interface BodyCellProps {
   ariaControls?: string;
   editableValue?: any;
   editableSelectProps?: SelectProps;
-  options?: React.ReactElement[];
+  options?: React.ReactElement<any>[];
   isSelectOpen?: boolean;
   value?: any;
   isValid?: boolean;
@@ -69,10 +69,10 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   let isEmptyStateCell = false;
   if (children) {
     isEmptyStateCell =
-      ((children as React.ReactElement).type === Bullseye &&
-        (children as React.ReactElement).props.children &&
-        (children as React.ReactElement).props.children.type === EmptyState) ||
-      (children as React.ReactElement).type === EmptyState;
+      ((children as React.ReactElement<any>).type === Bullseye &&
+        (children as React.ReactElement<any>).props.children &&
+        (children as React.ReactElement<any>).props.children.type === EmptyState) ||
+      (children as React.ReactElement<any>).type === EmptyState;
   }
 
   const cell = (

@@ -71,7 +71,7 @@ export interface ChartProps extends VictoryChartProps {
    * will be provided with the following properties calculated by Chart: height, polar, scale, style, x, y, width.
    * All of these props on Background should take prececence over what VictoryChart is trying to set.
    */
-  backgroundComponent?: React.ReactElement;
+  backgroundComponent?: React.ReactElement<any>;
   /**
    * The children to render with the chart
    */

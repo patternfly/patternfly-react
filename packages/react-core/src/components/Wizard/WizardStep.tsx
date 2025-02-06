@@ -27,7 +27,7 @@ export interface WizardStepProps {
   /** Replaces the step's navigation item or its properties. */
   navItem?: WizardNavItemType;
   /** Replaces the step's footer. The step's footer takes precedance over the wizard's footer. */
-  footer?: React.ReactElement | Partial<WizardFooterProps>;
+  footer?: React.ReactElement<any> | Partial<WizardFooterProps>;
   /** Used to determine icon next to the step's navigation item */
   status?: 'default' | 'error' | 'success';
   /** Flag to determine whether parent steps can expand or not. Defaults to false. */

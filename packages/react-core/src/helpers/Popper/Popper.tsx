@@ -58,7 +58,7 @@ export interface PopperProps {
    */
   triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** The popper (menu/tooltip/popover) element */
-  popper: React.ReactElement;
+  popper: React.ReactElement<any>;
   /**
    * Reference to the popper (menu/tooltip/popover) element.
    * Passing this prop will remove the wrapper div element from the popper.
@@ -225,7 +225,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
-  const prevExitDelayRef = React.useRef<number>();
+  const prevExitDelayRef = React.useRef<number>(undefined);
 
   const refOrTrigger = refElement || triggerElement;
   const showPopper = isVisible || internalIsVisible;
@@ -527,7 +527,12 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     return popperRef ? (
       localPopper
     ) : (
-      <div style={{ display: 'contents' }} ref={(node) => setPopperElement(node?.firstElementChild as HTMLElement)}>
+      <div
+        style={{ display: 'contents' }}
+        ref={(node) => {
+          setPopperElement(node?.firstElementChild as HTMLElement);
+        }}
+      >
         {localPopper}
       </div>
     );
@@ -545,7 +550,12 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   return (
     <>
       {!triggerRef && trigger && React.isValidElement(trigger) && (
-        <div style={{ display: 'contents' }} ref={(node) => setTriggerElement(node?.firstElementChild as HTMLElement)}>
+        <div
+          style={{ display: 'contents' }}
+          ref={(node) => {
+            setTriggerElement(node?.firstElementChild as HTMLElement);
+          }}
+        >
           {trigger}
         </div>
       )}

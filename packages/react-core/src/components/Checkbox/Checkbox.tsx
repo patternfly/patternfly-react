@@ -125,7 +125,9 @@ class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
         aria-label={ariaLabel}
         disabled={isDisabled}
         required={isRequired}
-        ref={(elem) => elem && (elem.indeterminate = isChecked === null)}
+        ref={(elem) => {
+          elem && (elem.indeterminate = isChecked === null);
+        }}
         {...checkedProps}
         {...getOUIAProps(Checkbox.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
       />

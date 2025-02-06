@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, type JSX } from 'react';
 import { TextInput } from '../TextInput';
 import { Button } from '../Button';
 import { Select, SelectList, SelectOption } from '../Select';
@@ -169,7 +169,7 @@ export const CalendarMonth = ({
   const [yearInput, setYearInput] = React.useState(yearFormatted.toString());
 
   const [hoveredDate, setHoveredDate] = React.useState<Date>(undefined);
-  const focusRef = React.useRef<HTMLButtonElement>();
+  const focusRef = React.useRef<HTMLButtonElement>(undefined);
   const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
   const [shouldFocus, setShouldFocus] = React.useState(false);
 

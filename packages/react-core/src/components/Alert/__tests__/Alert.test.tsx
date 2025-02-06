@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { act } from 'react-dom/test-utils';
+import { act } from 'react';
 
 import { Alert, AlertVariant } from '../Alert';
 import { AlertContext } from '../AlertContext';

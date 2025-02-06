@@ -117,8 +117,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   'aria-labelledby': ariaLabelledby,
   ...props
 }: SliderProps) => {
-  const sliderRailRef = React.useRef<HTMLDivElement>();
-  const thumbRef = React.useRef<HTMLDivElement>();
+  const sliderRailRef = React.useRef<HTMLDivElement>(undefined);
+  const thumbRef = React.useRef<HTMLDivElement>(undefined);
 
   const [localValue, setValue] = useState(value);
   const [localInputValue, setLocalInputValue] = useState(inputValue);

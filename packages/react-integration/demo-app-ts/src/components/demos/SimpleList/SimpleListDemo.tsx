@@ -49,7 +49,7 @@ export class SimpleListDemo extends Component<any, SimpleListDemoState> {
         <SimpleList
           id="simple-list-demo-uncontrolled"
           onSelect={(
-            _ref: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
+            _ref: React.RefObject<HTMLButtonElement | null> | React.RefObject<HTMLAnchorElement | null>,
             props: SimpleListItemProps
           ) => {
             this.setState({ activeItem: props.itemId! });

@@ -12,7 +12,7 @@ export type DragDropSortDragStartEvent = DragStartEvent;
 export interface DragDropSortProps extends DndContextProps {
   /** Custom defined content wrapper for draggable items. By default, draggable items are wrapped in a styled div.
    * Intended to be a 'DataList' or 'DualListSelectorList' without children. */
-  children?: React.ReactElement;
+  children?: React.ReactElement<any>;
   /** Sorted array of draggable objects */
   items: DraggableObject[];
   /** Callback when user drops a draggable object */

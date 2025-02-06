@@ -30,7 +30,7 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
     // if has no wrapper is set, don't overwrite children className with the className prop
     className:
       hasNoWrapper && React.Children.count(children) === 1
-        ? css(styles.droppable, className, (children as React.ReactElement).props.className)
+        ? css(styles.droppable, className, (children as React.ReactElement<any>).props.className)
         : css(styles.droppable, className),
     ...props
   };
@@ -38,7 +38,7 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
   return (
     <DroppableContext.Provider value={{ zone, droppableId }}>
       {hasNoWrapper ? (
-        React.cloneElement(children as React.ReactElement, childProps)
+        React.cloneElement(children as React.ReactElement<any>, childProps)
       ) : (
         <div {...childProps}>{children}</div>
       )}

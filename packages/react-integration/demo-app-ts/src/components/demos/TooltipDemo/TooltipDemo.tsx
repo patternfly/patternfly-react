@@ -2,7 +2,7 @@ import { Tooltip } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 export class TooltipDemo extends Component {
-  tooltipRef: React.RefObject<HTMLButtonElement>;
+  tooltipRef: React.RefObject<HTMLButtonElement | null>;
   myTooltipProps = {
     content: <div>World</div>,
     children: <div id="tooltipTarget">Hello</div>

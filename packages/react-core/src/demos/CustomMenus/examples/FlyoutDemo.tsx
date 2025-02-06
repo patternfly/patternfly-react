@@ -6,7 +6,7 @@ const onSelect = (event: React.MouseEvent | undefined, itemId: string | number |
   console.log('selected', itemId);
 /* eslint-enable no-console */
 interface FlyoutMenuProps {
-  children?: React.ReactElement;
+  children?: React.ReactElement<any>;
   depth: number;
 }
 

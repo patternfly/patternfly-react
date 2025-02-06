@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import { MenuToggle, Divider, Dropdown, DropdownGroup, DropdownList, DropdownItem } from '@patternfly/react-core';
 
 export const FavoritesDemo: React.FunctionComponent = () => {

@@ -41,7 +41,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * @private
    * @hide
    */
-  children?: React.ReactElement | React.ReactElement[];
+  children?: React.ReactElement<any> | React.ReactElement<any>[];
   /**
    * The className prop specifies a className that will be applied to the outermost div rendered by the container
    */
@@ -150,7 +150,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * render in the portal container. This prop defaults to Portal, and should only be overridden when changing rendered
    * elements from SVG to another type of element e.g., react-native-svg elements.
    */
-  portalComponent?: React.ReactElement;
+  portalComponent?: React.ReactElement<any>;
   /**
    * The portalZIndex prop determines the z-index of the div enclosing the portal component. If a portalZIndex prop is
    * not set, the z-index of the enclosing div will be set to 99.

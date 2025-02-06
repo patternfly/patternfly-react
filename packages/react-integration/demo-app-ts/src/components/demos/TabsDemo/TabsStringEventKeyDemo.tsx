@@ -6,9 +6,9 @@ export class TabsStringEventKeyDemo extends Component {
     activeTabKey: 'one'
   };
 
-  private contentRefOne: RefObject<HTMLDivElement>;
-  private contentRefTwo: RefObject<HTMLDivElement>;
-  private contentRefThree: RefObject<HTMLDivElement>;
+  private contentRefOne: RefObject<HTMLDivElement | null>;
+  private contentRefTwo: RefObject<HTMLDivElement | null>;
+  private contentRefThree: RefObject<HTMLDivElement | null>;
 
   constructor(props: {}) {
     super(props);

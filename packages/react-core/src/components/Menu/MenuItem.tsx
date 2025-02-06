@@ -68,7 +68,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Flag indicating the item is in danger state */
   isDanger?: boolean;
   /** Flyout menu. Should not be used if the to prop is defined. */
-  flyoutMenu?: React.ReactElement;
+  flyoutMenu?: React.ReactElement<any>;
   /** Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: any) => void;
   /** Drilldown menu of the item. Should be a Menu or DrilldownMenu type. */
@@ -146,7 +146,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const flyoutContext = React.useContext(FlyoutContext);
   const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
-  const ref = React.useRef<HTMLLIElement>();
+  const ref = React.useRef<HTMLLIElement>(undefined);
   const flyoutVisible = ref === flyoutRef;
 
   const hasFlyout = flyoutMenu !== undefined;
@@ -259,7 +259,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           menuId,
           typeof drilldownMenu === 'function'
             ? (drilldownMenu() as any).props.id
-            : (drilldownMenu as React.ReactElement).props.id,
+            : (drilldownMenu as React.ReactElement<any>).props.id,
           itemId
         );
     } else {

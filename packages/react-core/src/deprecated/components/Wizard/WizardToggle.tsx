@@ -8,7 +8,7 @@ import { WizardBody } from './WizardBody';
 
 export interface WizardToggleProps {
   /** Function that returns the WizardNav component */
-  nav: (isWizardNavOpen: boolean) => React.ReactElement;
+  nav: (isWizardNavOpen: boolean) => React.ReactElement<any>;
   /** The wizard steps */
   steps: WizardStep[];
   /** The currently active WizardStep */

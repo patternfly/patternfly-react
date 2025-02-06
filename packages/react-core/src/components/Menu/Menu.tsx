@@ -90,7 +90,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   constructor(props: MenuProps) {
     super(props);
     if (props.innerRef) {
-      this.menuRef = props.innerRef as React.RefObject<HTMLDivElement>;
+      this.menuRef = props.innerRef as React.RefObject<HTMLDivElement | null>;
     }
   }
 
@@ -290,7 +290,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       >
         {isRootMenu && (
           <KeyboardHandler
-            containerRef={(this.menuRef as React.RefObject<HTMLDivElement>) || null}
+            containerRef={(this.menuRef as React.RefObject<HTMLDivElement | null>) || null}
             additionalKeyHandler={this.handleExtraKeys}
             createNavigableElements={this.createNavigableElements}
             isActiveElement={(element: Element) =>

@@ -133,9 +133,9 @@ const DatePickerBase = (
   const [textInputFocused, setTextInputFocused] = React.useState(false);
   const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
   const style = { [cssFormControlWidthChars.name]: widthChars, ...styleProps };
-  const buttonRef = React.useRef<HTMLButtonElement>();
-  const datePickerWrapperRef = React.useRef<HTMLDivElement>();
-  const triggerRef = React.useRef<HTMLDivElement>();
+  const buttonRef = React.useRef<HTMLButtonElement>(undefined);
+  const datePickerWrapperRef = React.useRef<HTMLDivElement>(undefined);
+  const triggerRef = React.useRef<HTMLDivElement>(undefined);
   const dateIsRequired = requiredDateOptions?.isRequired || false;
   const emptyDateText = requiredDateOptions?.emptyDateText || 'Date cannot be blank';
 

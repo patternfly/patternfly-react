@@ -10,6 +10,8 @@ import { KeyTypes } from '@patternfly/react-core/dist/esm/helpers/constants';
 import { useOUIAProps, OUIAProps } from '@patternfly/react-core/dist/esm/helpers/OUIA/ouia';
 import { TableGridBreakpoint, TableVariant } from './TableTypes';
 
+import type { JSX } from 'react';
+
 export interface BaseCellProps {
   /** Content rendered inside the cell */
   children?: React.ReactNode;

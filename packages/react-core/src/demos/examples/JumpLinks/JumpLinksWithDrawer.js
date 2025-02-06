@@ -44,7 +44,7 @@ export const JumpLinksWithDrawer = () => {
   const headings = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];
 
   const [isExpanded, setIsExpanded] = React.useState(false);
-  const drawerRef = React.useRef();
+  const drawerRef = React.useRef(undefined);
 
   const onCloseClick = () => {
     setIsExpanded(false);
