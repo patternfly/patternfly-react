@@ -298,7 +298,7 @@ export interface EditableSelectInputProps {
   /** Single select option value for single select menus, or array of select option values for multi select. You can also specify isSelected on the SelectOption */
   selected: any | any[];
   /** Array of react elements to display in the select menu */
-  options: React.ReactElement[];
+  options: React.ReactElement<any>[];
   /** Props to be passed down to the select component */
   editableSelectProps?: SelectProps;
   /** arbitrary data to pass to the internal select component in the editable select input cell */

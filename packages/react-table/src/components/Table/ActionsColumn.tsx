@@ -88,10 +88,9 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
               {title}
             </Button>
           ) : (
-            React.cloneElement(title as React.ReactElement, { onClick, isDisabled, ...props })
+            React.cloneElement(title as React.ReactElement<any>, { onClick, isDisabled, ...props })
           )
         )}
-
       <Dropdown
         isOpen={isOpen}
         onOpenChange={!isOnOpenChangeDisabled ? (isOpen: boolean) => setIsOpen(isOpen) : undefined}

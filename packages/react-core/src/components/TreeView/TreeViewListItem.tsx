@@ -151,7 +151,9 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
         type="checkbox"
         onChange={(evt) => onCheck && onCheck(evt, itemData, parentItem)}
         onClick={(evt) => evt.stopPropagation()}
-        ref={(elem) => elem && (elem.indeterminate = checkProps.checked === null)}
+        ref={(elem) => {
+          elem && (elem.indeterminate = checkProps.checked === null);
+        }}
         {...checkProps}
         checked={isCheckboxChecked}
         id={randomId}
@@ -185,7 +187,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       {hasBadge && children && (
         <span className={css(styles.treeViewNodeCount)}>
           <Badge {...badgeProps}>
-            {customBadgeContent ? customBadgeContent : (children as React.ReactElement).props.data.length}
+            {customBadgeContent ? customBadgeContent : (children as React.ReactElement<any>).props.data.length}
           </Badge>
         </span>
       )}

@@ -24,7 +24,7 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   /** @hide Internal field used to keep track of order of unfiltered options. */
   orderIndex?: number;
   /** @hide Forwarded ref */
-  innerRef?: React.RefObject<HTMLLIElement>;
+  innerRef?: React.RefObject<HTMLLIElement | null>;
   /** Flag indicating this item is draggable for reordering. */
   isDraggable?: boolean;
   /** Accessible label for the draggable button on draggable list items. */

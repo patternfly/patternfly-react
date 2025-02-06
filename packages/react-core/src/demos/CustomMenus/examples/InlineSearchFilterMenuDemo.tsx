@@ -16,8 +16,8 @@ export const InlineSearchFilterMenuDemo: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState(0);
   const [input, setInput] = React.useState('');
   const [isOpen, setIsOpen] = React.useState(false);
-  const toggleRef = React.useRef<any>();
-  const menuRef = React.useRef<any>();
+  const toggleRef = React.useRef<any>(undefined);
+  const menuRef = React.useRef<any>(undefined);
 
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
     const item = itemId as number;

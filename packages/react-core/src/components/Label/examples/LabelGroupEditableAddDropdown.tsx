@@ -2,9 +2,9 @@ import React from 'react';
 import { LabelGroup, Label, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
 
 export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
-  const toggleRef = React.useRef<HTMLDivElement>();
-  const menuRef = React.useRef<HTMLDivElement>();
-  const containerRef = React.useRef<HTMLDivElement>();
+  const toggleRef = React.useRef<HTMLDivElement>(undefined);
+  const menuRef = React.useRef<HTMLDivElement>(undefined);
+  const containerRef = React.useRef<HTMLDivElement>(undefined);
 
   const [idIndex, setIdIndex] = React.useState<number>(3);
   const [isOpen, setIsOpen] = React.useState<boolean>(false);

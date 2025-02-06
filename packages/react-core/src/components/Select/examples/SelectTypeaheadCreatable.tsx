@@ -30,7 +30,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
-  const textInputRef = React.useRef<HTMLInputElement>();
+  const textInputRef = React.useRef<HTMLInputElement>(undefined);
 
   const CREATE_NEW = 'create';
 

@@ -10,9 +10,9 @@ export class TabDemo extends Component {
     activeTabKey4: 0,
     isTab2Hidden: true
   };
-  private contentRef1: RefObject<HTMLDivElement>;
-  private contentRef2: RefObject<HTMLDivElement>;
-  private contentRef3: RefObject<HTMLDivElement>;
+  private contentRef1: RefObject<HTMLDivElement | null>;
+  private contentRef2: RefObject<HTMLDivElement | null>;
+  private contentRef3: RefObject<HTMLDivElement | null>;
 
   constructor(props: {}) {
     super(props);

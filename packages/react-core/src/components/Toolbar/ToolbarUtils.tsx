@@ -8,7 +8,7 @@ import globalBreakpoint2xl from '@patternfly/react-tokens/dist/esm/t_global_brea
 export interface ToolbarContextProps {
   isExpanded: boolean;
   toggleIsExpanded: () => void;
-  labelGroupContentRef: RefObject<HTMLDivElement>;
+  labelGroupContentRef: RefObject<HTMLDivElement | null>;
   updateNumberFilters: (categoryName: string, numberOfFilters: number) => void;
   numberOfFilters: number;
   clearAllFilters?: () => void;
@@ -28,7 +28,7 @@ export const ToolbarContext = React.createContext<ToolbarContextProps>({
 });
 
 interface ToolbarContentContextProps {
-  expandableContentRef: RefObject<HTMLDivElement>;
+  expandableContentRef: RefObject<HTMLDivElement | null>;
   expandableContentId: string;
   labelContainerRef: RefObject<any>;
   isExpanded?: boolean;

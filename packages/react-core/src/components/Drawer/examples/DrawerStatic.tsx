@@ -13,7 +13,7 @@ import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/
 
 export const DrawerStatic: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
-  const drawerRef = React.useRef<HTMLDivElement>();
+  const drawerRef = React.useRef<HTMLDivElement>(undefined);
 
   const onExpand = () => {
     drawerRef.current && drawerRef.current.focus();

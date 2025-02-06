@@ -41,7 +41,7 @@ export const TableProvider = withContext({
   contextType: { columns: PropTypes.any, renderers: PropTypes.any }
 })('table');
 
-const MockedTableChanges = ({ updateFunc, columns }) => (
+const MockedTableChanges = ({ updateFunc = () => undefined, columns = [] }) => (
   <TableContext.Provider value={{ updateHeaderData: updateFunc }}>
     <TableProvider>
       <TableHeader headerRows={columns} />
@@ -52,11 +52,6 @@ const MockedTableChanges = ({ updateFunc, columns }) => (
 MockedTableChanges.propTypes = {
   updateFunc: PropTypes.func,
   columns: PropTypes.array
-};
-
-MockedTableChanges.defaultProps = {
-  updateFunc: () => undefined,
-  columns: []
 };
 
 export default MockedTableChanges;

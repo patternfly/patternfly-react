@@ -38,7 +38,7 @@ export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
   /** Object that causes the data list to render hidden inputs which improve selectable item a11y */
   onSelectableRowChange?: (event: React.FormEvent<HTMLInputElement>, id: string) => void;
   /** @hide custom ref of the DataList */
-  innerRef?: React.RefObject<HTMLUListElement>;
+  innerRef?: React.RefObject<HTMLUListElement | null>;
 }
 
 interface DataListContextProps {

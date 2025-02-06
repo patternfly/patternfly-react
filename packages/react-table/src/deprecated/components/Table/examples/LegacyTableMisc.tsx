@@ -36,7 +36,7 @@ export const LegacyTableMisc: React.FunctionComponent = () => {
     };
     return (
       <tr
-        ref={trRef as React.LegacyRef<HTMLTableRowElement>}
+        ref={trRef as React.Ref<HTMLTableRowElement>}
         className={css(className, isOddRow ? 'odd-row-class' : 'even-row-class', 'custom-static-class')}
         style={isOddRow ? customStyle : {}}
       />

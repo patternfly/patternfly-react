@@ -39,7 +39,7 @@ export interface ToolbarFilterProps extends ToolbarItemProps {
   /** Flag to show the toolbar item */
   showToolbarItem?: boolean;
   /** Reference to a label container created with a custom expandable content group, for non-managed multiple toolbar toggle groups. */
-  expandableLabelContainerRef?: React.RefObject<HTMLDivElement>;
+  expandableLabelContainerRef?: React.RefObject<HTMLDivElement | null>;
 }
 
 interface ToolbarFilterState {

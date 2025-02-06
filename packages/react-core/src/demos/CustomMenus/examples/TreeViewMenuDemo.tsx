@@ -14,7 +14,7 @@ export const TreeViewMenuDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [checkedItems, setCheckedItems] = React.useState<TreeViewDataItem[]>([]);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
-  const menuRef = React.useRef<HTMLDivElement>();
+  const menuRef = React.useRef<HTMLDivElement>(undefined);
 
   const statusOptions: TreeViewDataItem[] = [
     {

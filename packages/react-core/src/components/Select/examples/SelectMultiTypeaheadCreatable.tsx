@@ -32,7 +32,7 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
   const [onCreation, setOnCreation] = React.useState<boolean>(false); // Boolean to refresh filter state after new option is created
-  const textInputRef = React.useRef<HTMLInputElement>();
+  const textInputRef = React.useRef<HTMLInputElement>(undefined);
 
   const CREATE_NEW = 'create';
 

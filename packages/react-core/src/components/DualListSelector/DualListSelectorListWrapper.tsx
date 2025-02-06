@@ -15,7 +15,7 @@ export interface DualListSelectorListWrapperProps extends React.HTMLProps<HTMLDi
   /** Accessibly label for the list. */
   'aria-labelledby': string;
   /** @hide forwarded ref */
-  innerRef?: React.RefObject<HTMLDivElement>;
+  innerRef?: React.RefObject<HTMLDivElement | null>;
   /** @hide Options to list in the pane. */
   options?: React.ReactNode[];
   /** @hide Options currently selected in the pane. */

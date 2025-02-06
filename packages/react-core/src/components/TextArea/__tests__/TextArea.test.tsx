@@ -149,7 +149,7 @@ test('Does not throw console error when aria-label is given but no id', () => {
 });
 
 test('TextArea can be accessed via passed ref', () => {
-  const testRef: React.RefObject<HTMLTextAreaElement> = React.createRef();
+  const testRef: React.RefObject<HTMLTextAreaElement | null> = React.createRef();
   render(<TextArea ref={testRef} />);
   global.scrollTo = jest.fn();
   testRef.current?.focus();

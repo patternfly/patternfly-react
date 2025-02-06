@@ -10,7 +10,7 @@ import {} from '../..';
 it('WizardToggle should match snapshot (auto-generated)', () => {
   const { asFragment } = render(
     <WizardToggle
-      nav={(_isWizardNavOpen: boolean) => undefined as React.ReactElement}
+      nav={(_isWizardNavOpen: boolean) => undefined as unknown as React.ReactElement<any>}
       steps={[]}
       activeStep={{ name: 'some step' }}
       children={<div>ReactNode</div>}

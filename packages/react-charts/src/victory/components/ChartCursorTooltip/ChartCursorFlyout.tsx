@@ -102,7 +102,7 @@ interface ChartCursorFlyoutProps extends VictoryCommonPrimitiveProps {
   dy?: number;
   height?: number;
   orientation?: OrientationTypes;
-  pathComponent?: React.ReactElement;
+  pathComponent?: React.ReactElement<any>;
   pointerLength?: number;
   pointerWidth?: number;
   width?: number;

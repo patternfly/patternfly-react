@@ -127,8 +127,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 }: LabelProps) => {
   const [isEditableActive, setIsEditableActive] = useState<boolean>(false);
   const [currValue, setCurrValue] = useState(children);
-  const editableButtonRef = React.useRef<HTMLButtonElement>();
-  const editableInputRef = React.useRef<HTMLInputElement>();
+  const editableButtonRef = React.useRef<HTMLButtonElement>(undefined);
+  const editableInputRef = React.useRef<HTMLInputElement>(undefined);
 
   const isOverflowLabel = variant === 'overflow';
   const isAddLabel = variant === 'add';
@@ -245,7 +245,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const closeButton = <span className={css(styles.labelActions)}>{closeBtn || defaultCloseButton}</span>;
   const textRef = React.createRef<any>();
   // ref to apply tooltip when rendered is used
-  const componentRef = React.useRef();
+  const componentRef = React.useRef(undefined);
   const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
   useIsomorphicLayoutEffect(() => {
     const currTextRef = isEditable ? editableButtonRef : textRef;

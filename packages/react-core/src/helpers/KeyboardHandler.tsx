@@ -182,7 +182,7 @@ export const setTabIndex = (options: HTMLElement[]) => {
  * @param event Event triggered by the keyboard
  * @param menuRef Menu reference
  */
-export const onToggleArrowKeydownDefault = (event: KeyboardEvent, menuRef: React.RefObject<HTMLDivElement>) => {
+export const onToggleArrowKeydownDefault = (event: KeyboardEvent, menuRef: React.RefObject<HTMLDivElement | null>) => {
   if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') {
     return;
   }

@@ -17,11 +17,11 @@ export interface WizardBasicStep {
   /** Flag to determine whether the step is hidden */
   isHidden?: boolean;
   /** Content shown when the step's navigation item is selected. When treated as a parent step, only sub-step content will be shown. */
-  component?: React.ReactElement;
+  component?: React.ReactElement<any>;
   /** Replaces the step's navigation item or its properties. */
   navItem?: WizardNavItemType;
   /** Replaces the step's footer. The step's footer takes precedance over the wizard's footer. */
-  footer?: React.ReactElement | Partial<WizardFooterProps>;
+  footer?: React.ReactElement<any> | Partial<WizardFooterProps>;
   /** Used to determine icon next to the step's navItem */
   status?: 'default' | 'error' | 'success';
 }
@@ -58,9 +58,9 @@ export enum WizardStepChangeScope {
   Nav = 'nav'
 }
 
-export type WizardFooterType = Partial<WizardFooterProps> | CustomWizardFooterFunction | React.ReactElement;
-export type WizardNavType = Partial<WizardNavProps> | CustomWizardNavFunction | React.ReactElement;
-export type WizardNavItemType = Partial<WizardNavItemProps> | CustomWizardNavItemFunction | React.ReactElement;
+export type WizardFooterType = Partial<WizardFooterProps> | CustomWizardFooterFunction | React.ReactElement<any>;
+export type WizardNavType = Partial<WizardNavProps> | CustomWizardNavFunction | React.ReactElement<any>;
+export type WizardNavItemType = Partial<WizardNavItemProps> | CustomWizardNavItemFunction | React.ReactElement<any>;
 
 /** Callback for the Wizard's 'nav' property. Returns element which replaces the Wizard's default navigation. */
 export type CustomWizardNavFunction = (
@@ -86,19 +86,19 @@ export type CustomWizardFooterFunction = (
   onClose: (event: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>
 ) => React.ReactElement<WizardFooterProps>;
 
-export function isCustomWizardNav(nav: WizardNavType): nav is CustomWizardNavFunction | React.ReactElement {
+export function isCustomWizardNav(nav: WizardNavType): nav is CustomWizardNavFunction | React.ReactElement<any> {
   return typeof nav === 'function' || React.isValidElement(nav);
 }
 
 export function isCustomWizardNavItem(
   navItem: WizardNavItemType
-): navItem is CustomWizardNavItemFunction | React.ReactElement {
+): navItem is CustomWizardNavItemFunction | React.ReactElement<any> {
   return typeof navItem === 'function' || React.isValidElement(navItem);
 }
 
 export function isCustomWizardFooter(
   footer: WizardFooterType
-): footer is CustomWizardFooterFunction | React.ReactElement {
+): footer is CustomWizardFooterFunction | React.ReactElement<any> {
   return typeof footer === 'function' || React.isValidElement(footer);
 }
 

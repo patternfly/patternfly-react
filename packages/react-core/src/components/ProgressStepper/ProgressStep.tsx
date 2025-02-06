@@ -70,7 +70,7 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
 }: ProgressStepProps) => {
   const _icon = icon !== undefined ? icon : variantIcons[variant];
   const Component = popoverRender !== undefined ? 'button' : 'div';
-  const stepRef = React.useRef();
+  const stepRef = React.useRef(undefined);
 
   if (props.id === undefined || titleId === undefined) {
     /* eslint-disable no-console */

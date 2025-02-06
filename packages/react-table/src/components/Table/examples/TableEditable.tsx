@@ -18,7 +18,7 @@ const EditButtonsCell: React.FunctionComponent<EditButtonsCellProps> = ({
   elementToFocusOnEditRef,
   rowAriaLabel = 'row'
 }) => {
-  const editButtonRef = React.useRef<HTMLButtonElement>();
+  const editButtonRef = React.useRef<HTMLButtonElement>(undefined);
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, button: 'edit' | 'stopEditing') => {
     const focusRef = button === 'edit' ? elementToFocusOnEditRef : editButtonRef;
@@ -104,7 +104,7 @@ const EditableCell: React.FunctionComponent<EditableCellProps> = ({
       <div className={css(inlineEditStyles.inlineEditValue)}>{staticValue}</div>
       {hasMultipleInputs ? (
         <div className={css(inlineEditStyles.inlineEditGroup, 'pf-m-column')} role={role} aria-label={ariaLabel}>
-          {(editingValue as React.ReactElement[]).map((elem, index) => (
+          {(editingValue as React.ReactElement<any>[]).map((elem, index) => (
             <div key={index} className={css(inlineEditStyles.inlineEditInput)}>
               {elem}
             </div>
@@ -137,7 +137,7 @@ const EditableRow: React.FunctionComponent<EditableRow> = ({
   const [editable, setEditable] = React.useState(false);
   const [editedData, setEditedData] = React.useState(data);
 
-  const inputRef = React.useRef();
+  const inputRef = React.useRef(undefined);
 
   return (
     <Tr className={css(inlineEditStyles.inlineEdit, editable ? inlineEditStyles.modifiers.inlineEditable : '')}>

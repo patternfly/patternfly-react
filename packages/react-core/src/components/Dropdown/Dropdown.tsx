@@ -27,7 +27,7 @@ export interface DropdownToggleProps {
   /**  Dropdown toggle node. */
   toggleNode: React.ReactNode;
   /** Reference to the toggle. */
-  toggleRef?: React.RefObject<HTMLButtonElement>;
+  toggleRef?: React.RefObject<HTMLButtonElement | null>;
 }
 
 /**
@@ -103,15 +103,15 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   focusTimeoutDelay = 0,
   ...props
 }: DropdownProps) => {
-  const localMenuRef = React.useRef<HTMLDivElement>();
-  const localToggleRef = React.useRef<HTMLButtonElement>();
+  const localMenuRef = React.useRef<HTMLDivElement>(undefined);
+  const localToggleRef = React.useRef<HTMLButtonElement>(undefined);
   const ouiaProps = useOUIAProps(Dropdown.displayName, ouiaId, ouiaSafe);
 
-  const menuRef = (innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
+  const menuRef = (innerRef as React.RefObject<HTMLDivElement | null>) || localMenuRef;
   const toggleRef =
     typeof toggle === 'function' || (typeof toggle !== 'function' && !toggle.toggleRef)
       ? localToggleRef
-      : (toggle?.toggleRef as React.RefObject<HTMLButtonElement>);
+      : (toggle?.toggleRef as React.RefObject<HTMLButtonElement | null>);
 
   const prevIsOpen = React.useRef<boolean>(isOpen);
   React.useEffect(() => {
