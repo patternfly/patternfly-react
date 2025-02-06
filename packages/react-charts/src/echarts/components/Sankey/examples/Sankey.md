@@ -9,6 +9,9 @@ beta: true
 
 import { Sankey, ThemeColor } from '@patternfly/react-charts/echarts';
 
+import * as echarts from 'echarts/core';
+import { ToolboxComponent } from 'echarts/components';
+
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
@@ -23,6 +26,14 @@ PatternFly React charts are based on the [Apache ECharts](https://echarts.apache
 
 ### Multi-color (unordered) with responsive container
 
-```ts file="./MultiColorResponsive.tsx"
+```ts file="./MultiColor.tsx"
+
+```
+
+### Teal color with responsive container and toolbox
+
+This demonstrates how to import `ToolboxComponent` for use with ECharts
+
+```ts file="./Toolbox.tsx"
 
 ```

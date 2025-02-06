@@ -57,12 +57,6 @@ export const FormBasic: React.FunctionComponent = () => {
     }
   ];
 
-  const legend = {
-    orient: 'vertical',
-    left: 'left',
-    data: ['a', 'a1', 'b', 'b1', 'c']
-  };
-
   // let observer = () => {};
   const containerRef = React.useRef<HTMLDivElement>();
   const [width, setWidth] = React.useState(0);
@@ -85,18 +79,19 @@ export const FormBasic: React.FunctionComponent = () => {
     <div ref={containerRef}>
       <Sankey
         height={400}
-        id="chart1"
-        legend={legend}
+        id="multi-color-responsive-chart"
         nodeSelector="html"
-        series={[{ data, links }]}
+        option={{
+          series: [{ data, links }],
+          title: {
+            subtext: 'This is a Sankey chart',
+            left: 'center'
+          },
+          tooltip: {
+            valueFormatter: (value) => `${value} GiB`
+          }
+        }}
         themeColor={ThemeColor.multiUnordered}
-        title={{
-          subtext: 'This is a Sankey chart',
-          left: 'center'
-        }}
-        tooltip={{
-          valueFormatter: (value) => `${value} GiB`
-        }}
         width={width}
       />
     </div>

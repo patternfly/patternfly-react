@@ -3,6 +3,11 @@ import { ThemeDefinition } from './Theme';
 import { getComputedValue } from '../utils/styles';
 
 import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
+import chart_axis_axis_label_stroke_Color from '@patternfly/react-tokens/dist/esm/chart_axis_axis_label_stroke_Color';
+import chart_axis_axis_stroke_Color from '@patternfly/react-tokens/dist/esm/chart_axis_axis_stroke_Color';
+import chart_candelstick_candle_positive_Color from '@patternfly/react-tokens/dist/esm/chart_candelstick_candle_positive_Color';
+import chart_candelstick_candle_negative_Color from '@patternfly/react-tokens/dist/esm/chart_candelstick_candle_negative_Color';
+import chart_tooltip_flyoutStyle_stroke_Color from '@patternfly/react-tokens/dist/esm/chart_tooltip_flyoutStyle_stroke_Color';
 
 interface ColorThemeInterface {
   COLOR_SCALE: string[];
@@ -16,92 +21,93 @@ interface ColorThemeInterface {
 export const ColorTheme = (props: ColorThemeInterface): ThemeDefinition => {
   const { COLOR_SCALE } = props;
 
+  const axisProps = {
+    axisLabel: {
+      color: getComputedValue(chart_axis_axis_label_stroke_Color)
+    },
+    axisLine: {
+      lineStyle: {
+        color: getComputedValue(chart_axis_axis_stroke_Color)
+      }
+    },
+    axisTick: {
+      lineStyle: {
+        color: getComputedValue(chart_axis_axis_stroke_Color)
+      }
+    },
+    splitArea: {
+      areaStyle: {
+        color: COLOR_SCALE
+      }
+    },
+    splitLine: {
+      lineStyle: {
+        color: [COLOR_SCALE[0]]
+      }
+    }
+  };
+
   return {
-    color: COLOR_SCALE,
-    // backgroundColor: 'rgba(0,0,0,0)',
-    backgroundColor: '#eb5454',
+    color: COLOR_SCALE, // See https://echarts.apache.org/en/option.html#color
+    backgroundColor: 'rgba(0,0,0,0)', // See https://echarts.apache.org/en/option.html#backgroundColor
     bar: {
       itemStyle: {
-        barBorderColor: '#ccc'
+        barBorderColor: getComputedValue(chart_axis_axis_stroke_Color)
       }
     },
     boxplot: {
       itemStyle: {
-        borderColor: '#ccc'
+        borderColor: getComputedValue(chart_axis_axis_stroke_Color)
       }
     },
     candlestick: {
       itemStyle: {
-        borderColor: '#eb5454',
-        borderColor0: '#47b262',
-        color: '#eb5454',
-        color0: '#47b262'
+        borderColor: getComputedValue(chart_candelstick_candle_negative_Color),
+        borderColor0: getComputedValue(chart_candelstick_candle_positive_Color),
+        color: getComputedValue(chart_candelstick_candle_negative_Color),
+        color0: getComputedValue(chart_candelstick_candle_positive_Color)
       }
     },
-    categoryAxis: {
-      axisLabel: {
-        color: '#6E7079'
-      },
-      axisLine: {
-        lineStyle: {
-          color: '#6E7079'
-        }
-      },
-      axisTick: {
-        lineStyle: {
-          color: '#6E7079'
-        }
-      },
-      splitArea: {
-        areaStyle: {
-          color: ['rgba(250,250,250,0.2)', 'rgba(210,219,238,0.2)']
-        }
-      },
-      splitLine: {
-        lineStyle: {
-          color: ['#E0E6F1']
-        }
-      }
-    },
+    categoryAxis: { ...axisProps },
     dataZoom: {},
     funnel: {
       itemStyle: {
-        borderColor: '#ccc'
+        borderColor: getComputedValue(chart_axis_axis_stroke_Color)
       }
     },
     gauge: {
       itemStyle: {
-        borderColor: '#ccc'
+        borderColor: getComputedValue(chart_axis_axis_stroke_Color)
       }
     },
     geo: {
       emphasis: {
         itemStyle: {
-          areaColor: 'rgba(255,215,0,0.8)',
-          borderColor: '#444'
+          areaColor: COLOR_SCALE[0],
+          borderColor: getComputedValue(chart_tooltip_flyoutStyle_stroke_Color)
         },
         label: {
-          color: 'rgb(100,0,0)'
+          color: getComputedValue(chart_global_label_Fill)
         }
       },
       itemStyle: {
         areaColor: '#eee',
-        borderColor: '#444'
+        borderColor: getComputedValue(chart_tooltip_flyoutStyle_stroke_Color)
       },
       label: {
-        color: '#000'
+        color: getComputedValue(chart_global_label_Fill)
       }
     },
     graph: {
-      color: ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'],
+      color: COLOR_SCALE,
       itemStyle: {
-        borderColor: '#ccc'
+        borderColor: getComputedValue(chart_axis_axis_stroke_Color)
       },
       label: {
-        color: '#eeeeee'
+        color: getComputedValue(chart_global_label_Fill)
       },
       lineStyle: {
-        color: '#aaaaaa'
+        color: getComputedValue(chart_global_label_Fill)
       }
     },
     label: {
@@ -109,111 +115,64 @@ export const ColorTheme = (props: ColorThemeInterface): ThemeDefinition => {
     },
     legend: {
       textStyle: {
-        color: '#333333'
+        color: getComputedValue(chart_global_label_Fill)
       }
     },
     line: {},
-    logAxis: {
-      axisLabel: {
-        color: '#6E7079'
-      },
-      axisLine: {
-        lineStyle: {
-          color: '#6E7079'
-        }
-      },
-      axisTick: {
-        lineStyle: {
-          color: '#6E7079'
-        }
-      },
-      splitArea: {
-        areaStyle: {
-          color: ['rgba(250,250,250,0.2)', 'rgba(210,219,238,0.2)']
-        }
-      },
-      splitLine: {
-        lineStyle: {
-          color: ['#E0E6F1']
-        }
-      }
-    },
+    logAxis: { ...axisProps },
     map: {
       emphasis: {
         itemStyle: {
-          areaColor: 'rgba(255,215,0,0.8)',
-          borderColor: '#444'
+          areaColor: COLOR_SCALE[0],
+          borderColor: getComputedValue(chart_tooltip_flyoutStyle_stroke_Color)
         },
         label: {
-          color: 'rgb(100,0,0)'
+          color: getComputedValue(chart_global_label_Fill)
         }
       },
       itemStyle: {
         areaColor: '#eee',
-        borderColor: '#444'
+        borderColor: getComputedValue(chart_tooltip_flyoutStyle_stroke_Color)
       },
       label: {
-        color: '#000'
+        color: getComputedValue(chart_global_label_Fill)
       }
     },
     markPoint: {
       emphasis: {
         label: {
-          color: '#eeeeee'
+          color: getComputedValue(chart_global_label_Fill)
         }
       },
       label: {
-        color: '#eeeeee'
+        color: getComputedValue(chart_global_label_Fill)
       }
     },
     parallel: {
       itemStyle: {
-        borderColor: '#ccc'
+        borderColor: getComputedValue(chart_axis_axis_stroke_Color)
       }
     },
     pie: {
       itemStyle: {
-        borderColor: '#ccc'
+        borderColor: getComputedValue(chart_axis_axis_stroke_Color)
       }
     },
     radar: {},
     sankey: {
       itemStyle: {
-        borderColor: '#eb5454' // '#ccc'
+        borderColor: getComputedValue(chart_axis_axis_stroke_Color)
       }
     },
     scatter: {
       itemStyle: {
-        borderColor: '#ccc'
+        borderColor: getComputedValue(chart_axis_axis_stroke_Color)
       }
     },
     textStyle: {},
-    timeAxis: {
-      axisLabel: {
-        color: '#6E7079'
-      },
-      axisLine: {
-        lineStyle: {
-          color: '#6E7079'
-        }
-      },
-      axisTick: {
-        lineStyle: {
-          color: '#6E7079'
-        }
-      },
-      splitArea: {
-        areaStyle: {
-          color: ['rgba(250,250,250,0.2)', 'rgba(210,219,238,0.2)']
-        }
-      },
-      splitLine: {
-        lineStyle: {
-          color: ['#E0E6F1']
-        }
-      }
-    },
+    timeAxis: { ...axisProps },
     timeline: {
+      // See https://echarts.apache.org/examples/en/editor.html?c=doc-example%2Fmix-timeline-all&edit=1&reset=1
       emphasis: {
         controlStyle: {
           color: '#a4b1d7',
@@ -223,7 +182,7 @@ export const ColorTheme = (props: ColorThemeInterface): ThemeDefinition => {
           color: '#ffffff'
         },
         label: {
-          color: '#a4b1d7'
+          color: getComputedValue(chart_global_label_Fill)
         }
       },
       checkpointStyle: {
@@ -238,7 +197,7 @@ export const ColorTheme = (props: ColorThemeInterface): ThemeDefinition => {
         color: '#a4b1d7'
       },
       label: {
-        color: '#a4b1d7'
+        color: getComputedValue(chart_global_label_Fill)
       },
       lineStyle: {
         color: '#dae1f5'
@@ -255,50 +214,26 @@ export const ColorTheme = (props: ColorThemeInterface): ThemeDefinition => {
     toolbox: {
       emphasis: {
         iconStyle: {
-          borderColor: '#666666'
+          borderColor: getComputedValue(chart_tooltip_flyoutStyle_stroke_Color)
         }
       },
       iconStyle: {
-        borderColor: '#999999'
+        borderColor: getComputedValue(chart_axis_axis_stroke_Color)
       }
     },
     tooltip: {
       axisPointer: {
         crossStyle: {
-          color: '#cccccc'
+          color: getComputedValue(chart_tooltip_flyoutStyle_stroke_Color.var)
         },
         lineStyle: {
-          color: '#cccccc'
+          color: getComputedValue(chart_tooltip_flyoutStyle_stroke_Color.var)
         }
       }
     },
-    valueAxis: {
-      axisLabel: {
-        color: '#6E7079'
-      },
-      axisLine: {
-        lineStyle: {
-          color: '#6E7079'
-        }
-      },
-      axisTick: {
-        lineStyle: {
-          color: '#6E7079'
-        }
-      },
-      splitArea: {
-        areaStyle: {
-          color: ['rgba(250,250,250,0.2)', 'rgba(210,219,238,0.2)']
-        }
-      },
-      splitLine: {
-        lineStyle: {
-          color: ['#E0E6F1']
-        }
-      }
-    },
+    valueAxis: { ...axisProps },
     visualMap: {
-      color: ['#bf444c', '#d88273', '#f6efa6']
+      color: COLOR_SCALE
     }
   };
 };

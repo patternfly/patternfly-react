@@ -3,36 +3,19 @@ import chart_voronoi_flyout_stroke_Fill from '@patternfly/react-tokens/dist/esm/
 import chart_voronoi_labels_Fill from '@patternfly/react-tokens/dist/esm/chart_voronoi_labels_Fill';
 
 import * as React from 'react';
-import * as echarts from 'echarts';
 import { useCallback, useRef, useState } from 'react';
 import defaultsDeep from 'lodash/defaultsDeep';
 import { getMutationObserver } from '../utils/observe';
 import { getComputedValue } from '../utils/styles';
 
-// import { BarChart, SankeyChart } from 'echarts/charts';
-// import { CanvasRenderer } from 'echarts/renderers';
+import * as echarts from 'echarts/core';
+import { EChartsOption } from 'echarts/types/dist/option';
+import { SankeyChart } from 'echarts/charts';
+import { TitleComponent, TooltipComponent } from 'echarts/components';
+import { SVGRenderer } from 'echarts/renderers';
 
-// import {
-//   TitleComponent,
-//   TooltipComponent,
-//   GridComponent,
-//   DatasetComponent,
-//   TransformComponent
-// } from 'echarts/components';
-
-// Register the required components
-// echarts.use([
-//   BarChart,
-//   SankeyChart,
-//   TitleComponent,
-//   TooltipComponent,
-//   GridComponent,
-//   DatasetComponent,
-//   TransformComponent,
-//   LabelLayout,
-//   UniversalTransition,
-//   CanvasRenderer
-// ]);
+// Register minimal required components
+echarts.use([SankeyChart, SVGRenderer, TitleComponent, TooltipComponent]);
 
 import { EChartsInitOpts } from 'echarts/types/dist/echarts';
 import { ThemeDefinition } from '../themes/Theme';
@@ -40,10 +23,20 @@ import { getClassName } from '../utils/styles';
 import { getTheme } from '../utils/theme';
 
 /**
- * Sankey diagram is a specific type of streamgraph (can also be seen as a directed acyclic graph) in which the width
- * of each branch is shown proportionally to the flow quantity. These graphs are typically used to visualize energy or
- * material or cost transfers between processes. They can also visualize the energy accounts, material flow accounts
- * on a regional or national level, and also the breakdown of cost of item or services.
+ * The Sankey diagram is a specific type of streamgraph (can also be seen as a directed acyclic graph) in which the
+ * width of each branch is shown proportionally to the flow quantity. These graphs are typically used to visualize
+ * energy or material or cost transfers between processes. They can also visualize the energy accounts, material flow
+ * accounts on a regional or national level, and also the breakdown of cost of item or services.
+ *
+ * Note: Only the minimum requirements for Samkey are imported from echarts. This includes components to support
+ * the series, title, and tooltip properties. To include a toolbox; for example, you must include the component
+ * (in addition to toolbox props) like so:
+ *
+ * import * as echarts from 'echarts/core';
+ * import { ToolboxComponent } from 'echarts/components';
+ * echarts.use([ToolboxComponent]);
+ *
+ * @beta
  */
 export interface SankeyProps {
   /**
@@ -58,12 +51,6 @@ export interface SankeyProps {
    * The id prop specifies an ID that will be applied to outermost element.
    */
   id?: string;
-  /**
-   * Legend component properties
-   *
-   * See https://echarts.apache.org/en/option.html#legend
-   */
-  legend?: any;
   /**
    * This creates a Mutation Observer to watch the given DOM selector.
    *
@@ -83,17 +70,17 @@ export interface SankeyProps {
    */
   nodeSelector?: string;
   /**
+   * ECharts uses this object to configure its properties; for example, series, title, and tooltip
+   *
+   * See https://echarts.apache.org/en/option.html
+   */
+  option?: EChartsOption;
+  /**
    * Optional chart configuration
    *
    * See https://echarts.apache.org/en/api.html#echarts.init
    */
   opts?: EChartsInitOpts;
-  /**
-   * Series component properties
-   *
-   * See https://echarts.apache.org/en/option.html#series-sankey
-   */
-  series: any[];
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
@@ -110,19 +97,7 @@ export interface SankeyProps {
    */
   themeColor?: string;
   /**
-   * Title component properties
-   *
-   * See https://echarts.apache.org/en/option.html#title
-   */
-  title?: any;
-  /**
-   * Tooltip component properties
-   *
-   * See https://echarts.apache.org/en/option.html#tooltip
-   */
-  tooltip?: any;
-  /**
-   * This is the destination label shown in the tooltip
+   * The destination label shown in the tooltip
    */
   tooltipDestinationLabel?: string;
   /**
@@ -139,16 +114,11 @@ export const Sankey: React.FunctionComponent<SankeyProps> = ({
   className,
   height,
   id,
-  legend,
   nodeSelector,
+  option,
   opts,
-  series,
   theme,
   themeColor,
-  title,
-  tooltip = {
-    valueFormatter: (value: number | string) => value
-  },
   tooltipDestinationLabel = 'Destination',
   tooltipSourceLabel = 'Source',
   width
@@ -159,14 +129,14 @@ export const Sankey: React.FunctionComponent<SankeyProps> = ({
 
   const getItemColor = useCallback(
     (params: any) => {
-      const serie = series[params.seriesIndex];
+      const serie = option?.series[params.seriesIndex];
       const sourceData = serie?.data.find((datum: any) => datum.name === params.data?.source);
       const targetData = serie?.data.find((datum: any) => datum.name === params.data?.target);
       const sourceColor = sourceData?.itemStyle?.color;
       const targetColor = targetData?.itemStyle?.color;
       return { sourceColor, targetColor };
     },
-    [series]
+    [option?.series]
   );
 
   const getSize = () => ({
@@ -176,6 +146,8 @@ export const Sankey: React.FunctionComponent<SankeyProps> = ({
 
   const getTooltip = useCallback(() => {
     const symbolSize = '10px';
+    const tooltip: any = option?.tooltip; // Workaround for CommonTooltipOption
+    const valueFormatter = tooltip?.valueFormatter ? tooltip.valueFormatter : (value: number | string) => value;
     const defaults = {
       backgroundColor: getComputedValue(chart_voronoi_flyout_stroke_Fill),
       confine: true,
@@ -195,7 +167,7 @@ export const Sankey: React.FunctionComponent<SankeyProps> = ({
               <div style="display: inline-block; background-color: ${targetColor}; height: ${symbolSize}; width: ${symbolSize};"></div>
               ${params.data.target}
               <strong style="float:right;">
-                ${tooltip.valueFormatter(params.value, params.dataIndex)}
+                ${valueFormatter(params.value, params.dataIndex)}
               </strong>
             </p>
           `;
@@ -208,44 +180,46 @@ export const Sankey: React.FunctionComponent<SankeyProps> = ({
       trigger: 'item',
       triggerOn: 'mousemove'
     };
-    return defaultsDeep(tooltip, defaults);
-  }, [getItemColor, tooltipDestinationLabel, tooltipSourceLabel, tooltip]);
+    return defaultsDeep(option?.tooltip, defaults);
+  }, [getItemColor, option?.tooltip, tooltipDestinationLabel, tooltipSourceLabel]);
 
   React.useEffect(() => {
     echarts.registerTheme('pf-sankey', chartTheme);
-    echart.current = echarts.init(containerRef.current, 'pf-v5-sankey', defaultsDeep(opts, { renderer: 'svg' }));
+    echart.current = echarts.init(containerRef.current, 'pf-v6-sankey', defaultsDeep(opts, { renderer: 'svg' }));
 
-    const newSeries = series.map((serie: any) => {
-      const defaults = {
-        data: serie.data.map((datum: any, index: number) => ({
-          itemStyle: {
-            color: chartTheme?.color[index % chartTheme?.color.length]
-          }
-        })),
-        emphasis: {
-          focus: 'adjacency'
-        },
-        layout: 'none',
-        lineStyle: {
-          color: 'source',
-          opacity: 0.6
-        },
-        type: 'sankey'
-      };
-      return defaultsDeep(serie, defaults);
-    });
-
+    const getSeries = () => {
+      const series: any = option?.series; // Workaround for SeriesOption type
+      return series.map((serie: any) => {
+        const defaults = {
+          data: serie.data.map((datum: any, index: number) => ({
+            itemStyle: {
+              color: chartTheme?.color[index % chartTheme?.color.length]
+            }
+          })),
+          emphasis: {
+            focus: 'adjacency'
+          },
+          layout: 'none',
+          lineStyle: {
+            color: 'source',
+            opacity: 0.6
+          },
+          type: 'sankey'
+        };
+        return defaultsDeep(serie, defaults);
+      });
+    };
     echart.current?.setOption({
-      series: newSeries,
-      legend,
-      title,
+      ...option,
+      series: getSeries(),
+      title: option?.title,
       tooltip: getTooltip()
     });
 
     return () => {
       echart.current?.dispose();
     };
-  }, [chartTheme, containerRef, getTooltip, legend, opts, series, title, tooltip]);
+  }, [chartTheme, containerRef, getTooltip, option, opts]);
 
   // Resize observer
   React.useEffect(() => {
