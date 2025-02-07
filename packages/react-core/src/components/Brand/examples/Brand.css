@@ -10,3 +10,9 @@
 :where(.pf-v6-theme-dark) .show-dark .pf-m-picture {
   display: inline-flex;
 }
+
+.pf-v6-theme-dark {
+  img.my-svg {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
