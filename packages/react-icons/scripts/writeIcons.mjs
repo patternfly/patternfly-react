@@ -51,7 +51,7 @@ export default ${jsName};
 };
 
 const writeDTSExport = (fname, jsName, icon) => {
-  const text = `import * as React from 'react';
+  const text = `import { ComponentClass } from 'react';
 import { SVGIconProps } from '../createIcon';
 export declare const ${jsName}Config: {
   name: '${jsName}',
@@ -61,7 +61,7 @@ export declare const ${jsName}Config: {
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
 };
-export declare const ${jsName}: React.ComponentClass<SVGIconProps>;
+export declare const ${jsName}: ComponentClass<SVGIconProps>;
 export default ${jsName};
     `.trim();
   const filename = `${fname}.d.ts`;
