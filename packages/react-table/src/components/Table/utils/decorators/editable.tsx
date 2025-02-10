@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { IExtra, IFormatterValueType, ITransform, IRowCell, OnRowEdit, RowErrors, RowEditType } from '../../TableTypes';
 import { EditColumn } from '../../EditColumn';
 import tableStyles from '@patternfly/react-styles/css/components/Table/table';
