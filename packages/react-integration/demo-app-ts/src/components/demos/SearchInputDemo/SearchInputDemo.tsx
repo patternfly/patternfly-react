@@ -70,7 +70,7 @@ export class SearchInputDemo extends Component<SearchInputProps, SearchInputStat
       <>
         <SearchInput
           id="enabled-search"
-          ref={this.inputRef}
+          ref={this.inputRef as React.RefObject<HTMLInputElement>}
           attributes={[
             { attr: 'username', display: 'Username' },
             { attr: 'firstname', display: 'First name' }

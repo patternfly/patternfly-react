@@ -26,7 +26,7 @@ export class TooltipDemo extends Component {
           </Tooltip>
         </div>
         <div>
-          <button ref={this.tooltipRef} id="tooltip-ref-trigger">
+          <button ref={this.tooltipRef as React.RefObject<HTMLButtonElement>} id="tooltip-ref-trigger">
             Tooltip trigger attached via react ref
           </button>
           <Tooltip

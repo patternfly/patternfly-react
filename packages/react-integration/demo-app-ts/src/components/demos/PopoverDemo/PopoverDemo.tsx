@@ -1,4 +1,4 @@
-import { Popover } from '@patternfly/react-core';
+import { Popover, Button } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 export class PopoverDemo extends Component {
@@ -35,9 +35,9 @@ export class PopoverDemo extends Component {
           />
         </div>
         <div>
-          <button ref={this.popoverRef} id="popover-ref">
+          <Button ref={this.popoverRef} id="popover-ref">
             Popover attached via react ref
-          </button>
+          </Button>
           <Popover
             position="right-start"
             headerContent={headerContent}
