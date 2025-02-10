@@ -1,4 +1,3 @@
-import React from 'react';
 import { PopperProps } from '../Popper';
 
 export const Popper = ({

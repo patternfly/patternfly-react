@@ -1,4 +1,3 @@
-import React from 'react';
 import { MenuListProps } from '../MenuList';
 
 export const MenuList = ({ className, children }: MenuListProps) => (
