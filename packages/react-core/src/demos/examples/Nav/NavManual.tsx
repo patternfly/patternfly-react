@@ -24,6 +24,8 @@ import {
   Nav,
   NavItem,
   NavList,
+  NotificationBadge,
+  NotificationBadgeVariant,
   Page,
   PageSection,
   PageSidebar,
@@ -39,7 +41,6 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
@@ -128,7 +129,7 @@ export const NavManual: React.FunctionComponent = () => {
           gap={{ default: 'gapNone', md: 'gapMd' }}
         >
           <ToolbarItem>
-            <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} onClick={() => {}} />
+            <NotificationBadge aria-label="Notifications" variant={NotificationBadgeVariant.read} onClick={() => {}} />
           </ToolbarItem>
           <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
             <ToolbarItem>

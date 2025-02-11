@@ -27,6 +27,8 @@ import {
   Nav,
   NavItem,
   NavList,
+  NotificationBadge,
+  NotificationBadgeVariant,
   Page,
   PageSection,
   PageSidebar,
@@ -39,7 +41,6 @@ import {
   ToolbarItem
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -124,7 +125,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
           gap={{ default: 'gapNone', md: 'gapMd' }}
         >
           <ToolbarItem>
-            <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} />
+            <NotificationBadge aria-label="Notifications" variant={NotificationBadgeVariant.read} onClick={() => {}} />
           </ToolbarItem>
           <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
             <ToolbarItem>

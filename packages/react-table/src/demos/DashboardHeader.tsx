@@ -16,6 +16,8 @@ import {
   MastheadLogo,
   MastheadContent,
   MenuToggle,
+  NotificationBadge,
+  NotificationBadgeVariant,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -26,7 +28,6 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgAvatar from '@patternfly/react-table/src/demos/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-table/src/demos/assets/pf-logo.svg';
@@ -108,10 +109,9 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
             >
               {notificationBadge ?? (
                 <ToolbarItem>
-                  <Button
+                  <NotificationBadge
                     aria-label="Notifications"
-                    variant={ButtonVariant.plain}
-                    icon={<BellIcon />}
+                    variant={NotificationBadgeVariant.read}
                     onClick={() => {}}
                   />
                 </ToolbarItem>
