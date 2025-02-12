@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@6.2.0-prerelease.3...eslint-plugin-patternfly-react@6.2.0-prerelease.4) (2025-02-12)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
 # [6.2.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@6.2.0-prerelease.2...eslint-plugin-patternfly-react@6.2.0-prerelease.3) (2025-02-10)
 
 **Note:** Version bump only for package eslint-plugin-patternfly-react
