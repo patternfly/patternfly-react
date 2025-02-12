@@ -73,7 +73,7 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
             </Button>
           </InputGroupItem>
         </InputGroup>
-        <AlertGroup isToast>
+        <AlertGroup hasAnimations={false} isToast>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
               isLiveRegion
