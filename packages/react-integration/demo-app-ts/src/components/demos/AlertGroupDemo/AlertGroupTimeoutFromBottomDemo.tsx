@@ -37,7 +37,7 @@ export const AlertGroupTimeoutFromBottomDemo: React.FunctionComponent = () => {
       <Button variant="secondary" onClick={onClick}>
         Add alert
       </Button>
-      <AlertGroup>{alerts}</AlertGroup>
+      <AlertGroup hasAnimations={false}>{alerts}</AlertGroup>
     </>
   );
 };
