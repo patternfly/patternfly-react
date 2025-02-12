@@ -60,7 +60,7 @@ class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState> {
     const {
       className,
       children,
-      hasAnimations,
+      hasAnimations = true,
       isToast,
       isLiveRegion,
       onOverflowClick,
