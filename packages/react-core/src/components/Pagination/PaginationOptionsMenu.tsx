@@ -48,13 +48,13 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex,
    * itemCount, and/or itemsTitle props.
    */
-  toggleTemplate: ((props: PaginationToggleTemplateProps) => React.ReactElement) | string;
+  toggleTemplate: ((props: PaginationToggleTemplateProps) => React.ReactElement<any>) | string;
   /** Function called when user selects number of items per page. */
   onPerPageSelect?: OnPerPageSelect;
   /** Label for the English word "of". */
   ofWord?: string;
   /** React ref for the container to append the options menu to. This is a static ref provided by the main pagination component. */
-  containerRef?: React.RefObject<HTMLDivElement>;
+  containerRef?: React.RefObject<HTMLDivElement | null>;
   /** @beta The container to append the pagination options menu to. Overrides the containerRef prop. */
   appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
   /** Flag indicating if scroll on focus of the first menu item should occur. */
@@ -193,7 +193,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
           fillTemplate(toggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })}
         {toggleTemplate &&
           typeof toggleTemplate !== 'string' &&
-          (toggleTemplate as (props: PaginationToggleTemplateProps) => React.ReactElement)({
+          (toggleTemplate as (props: PaginationToggleTemplateProps) => React.ReactElement<any>)({
             firstIndex,
             lastIndex,
             ofWord,

@@ -13,7 +13,7 @@ import buttonStyles from '@patternfly/react-styles/css/components/Button/button'
 interface AlertDemoAlert {
   title: string;
   variant: keyof typeof AlertVariant;
-  key: React.ReactText;
+  key: number | string;
 }
 
 interface AlertGroupDemoState {
@@ -24,9 +24,9 @@ interface AlertGroupDemoState {
 export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
   static displayName = 'AlertGroupDemo';
   stopAsyncAlerts: () => void;
-  removeAlert: (key: React.ReactText) => void;
+  removeAlert: (key: number | string) => void;
 
-  constructor(props: {}, removeAlert: (key: React.ReactText) => void) {
+  constructor(props: {}, removeAlert: (key: number | string) => void) {
     super(props);
     this.state = {
       alerts: [],
@@ -46,7 +46,7 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
     };
     const getUniqueId = () => new Date().getTime();
     const btnClasses = css(buttonStyles.button, buttonStyles.modifiers.secondary);
-    this.removeAlert = (key: React.ReactText) => {
+    this.removeAlert = (key: number | string) => {
       this.setState({ alerts: [...this.state.alerts.filter((el: AlertDemoAlert) => el.key !== key)] });
     };
     const startAsyncAlerts = () => {

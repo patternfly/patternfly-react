@@ -76,7 +76,7 @@ test('Renders with passed aria-label', () => {
 });
 
 test('BackToTop can be accessed via passed innerRef', () => {
-  const testRef: RefObject<HTMLElement> = React.createRef();
+  const testRef: RefObject<HTMLElement | null> = React.createRef();
   render(<BackToTop innerRef={testRef} isAlwaysVisible />);
   global.scrollTo = jest.fn();
   testRef.current?.click();

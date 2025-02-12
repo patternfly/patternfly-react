@@ -24,11 +24,11 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
 
   /** auto-completing suggestion text items to be shown in the menu */
   const suggestionItems = ['Cluster', 'Kind', 'Label', 'Name', 'Namespace', 'Status'];
-  const [menuItems, setMenuItems] = React.useState<React.ReactElement[]>([]);
+  const [menuItems, setMenuItems] = React.useState<React.ReactElement<any>[]>([]);
 
   /** refs used to detect when clicks occur inside vs outside of the textInputGroup and menu popper */
-  const menuRef = React.useRef<HTMLDivElement>();
-  const textInputGroupRef = React.useRef<HTMLDivElement>();
+  const menuRef = React.useRef<HTMLDivElement>(undefined);
+  const textInputGroupRef = React.useRef<HTMLDivElement>(undefined);
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
   const handleInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {

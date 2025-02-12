@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import { render, screen } from '@testing-library/react';
 import { CardBody } from '../CardBody';
 

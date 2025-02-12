@@ -6,9 +6,9 @@ export class TabsStringEventKeyDemo extends Component {
     activeTabKey: 'one'
   };
 
-  private contentRefOne: RefObject<HTMLDivElement>;
-  private contentRefTwo: RefObject<HTMLDivElement>;
-  private contentRefThree: RefObject<HTMLDivElement>;
+  private contentRefOne: RefObject<HTMLDivElement | null>;
+  private contentRefTwo: RefObject<HTMLDivElement | null>;
+  private contentRefThree: RefObject<HTMLDivElement | null>;
 
   constructor(props: {}) {
     super(props);
@@ -56,13 +56,30 @@ export class TabsStringEventKeyDemo extends Component {
           />
         </Tabs>
         <div>
-          <TabContent eventKey={'one'} id="demoTab1Section" ref={this.contentRefOne} aria-label="Tab item 1">
+          <TabContent
+            eventKey={'one'}
+            id="demoTab1Section"
+            ref={this.contentRefOne as RefObject<HTMLDivElement>}
+            aria-label="Tab item 1"
+          >
             Tab 1 section
           </TabContent>
-          <TabContent eventKey={'two'} id="demoTab2Section" ref={this.contentRefTwo} aria-label="Tab item 2" hidden>
+          <TabContent
+            eventKey={'two'}
+            id="demoTab2Section"
+            ref={this.contentRefTwo as RefObject<HTMLDivElement>}
+            aria-label="Tab item 2"
+            hidden
+          >
             Tab 2 section
           </TabContent>
-          <TabContent eventKey={'three'} id="demoTab3Section" ref={this.contentRefThree} aria-label="Tab item 3" hidden>
+          <TabContent
+            eventKey={'three'}
+            id="demoTab3Section"
+            ref={this.contentRefThree as RefObject<HTMLDivElement>}
+            aria-label="Tab item 3"
+            hidden
+          >
             Tab 3 section
           </TabContent>
         </div>

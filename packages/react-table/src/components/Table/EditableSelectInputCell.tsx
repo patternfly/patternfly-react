@@ -22,7 +22,7 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
     isPlaceholder?: boolean
   ) => void;
   /** Options to display in the expandable select menu */
-  options?: React.ReactElement[];
+  options?: React.ReactElement<any>[];
   /** Flag indicating the select input is disabled */
   isDisabled?: boolean;
   /** Flag indicating the toggle gets placeholder styles **/
@@ -47,7 +47,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
   isPlaceholder = false,
   onToggle = () => {},
   selections = [''],
-  options = [] as React.ReactElement[],
+  options = [] as React.ReactElement<any>[],
   props
 }: IEditableSelectInputCell) => {
   const onSelectHandler = (event: React.MouseEvent | React.ChangeEvent, newValue: any | any[]) => {

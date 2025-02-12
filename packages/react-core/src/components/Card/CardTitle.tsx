@@ -3,6 +3,8 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { CardContext } from './Card';
 
+import type { JSX } from 'react';
+
 export interface CardTitleProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the CardTitle */
   children?: React.ReactNode;

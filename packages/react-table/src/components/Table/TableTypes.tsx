@@ -195,7 +195,7 @@ export interface decoratorReturnType {
   scope?: string;
   parentId?: number;
   colSpan?: number;
-  id?: React.ReactText;
+  id?: number | string;
 }
 
 export type ITransform = (label?: IFormatterValueType, extra?: IExtra) => decoratorReturnType;

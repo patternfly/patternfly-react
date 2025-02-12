@@ -15,7 +15,7 @@ export interface ToolbarExpandableContentProps extends React.HTMLProps<HTMLDivEl
   /** Flag indicating the expandable content is expanded */
   isExpanded?: boolean;
   /** Expandable content reference for passing to data toolbar children */
-  expandableContentRef?: RefObject<HTMLDivElement>;
+  expandableContentRef?: RefObject<HTMLDivElement | null>;
   /** Label container reference for passing to data toolbar children */
   labelContainerRef?: RefObject<any>;
   /** optional callback for clearing all filters in the toolbar */

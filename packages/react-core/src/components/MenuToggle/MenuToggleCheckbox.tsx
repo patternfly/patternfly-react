@@ -90,7 +90,9 @@ class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps, { ouia
           {...(this.calculateChecked() !== undefined && { onChange: this.handleChange })}
           name={id}
           type="checkbox"
-          ref={(elem) => elem && (elem.indeterminate = isChecked === null)}
+          ref={(elem) => {
+            elem && (elem.indeterminate = isChecked === null);
+          }}
           aria-invalid={!isValid}
           disabled={isDisabled}
           {...(defaultChecked !== undefined ? { defaultChecked } : { checked: this.calculateChecked() })}

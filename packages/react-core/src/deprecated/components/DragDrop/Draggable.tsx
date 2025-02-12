@@ -320,7 +320,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
         </div>
       )}
       {hasNoWrapper ? (
-        React.cloneElement(children as React.ReactElement, childProps)
+        React.cloneElement(children as React.ReactElement<any>, childProps)
       ) : (
         <div {...childProps}>{children}</div>
       )}

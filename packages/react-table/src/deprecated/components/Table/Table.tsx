@@ -29,6 +29,8 @@ import {
   CustomActionsToggleProps
 } from '../../../components';
 
+import type { JSX } from 'react';
+
 export interface TableProps extends OUIAProps {
   /** Adds an accessible name for the Table */
   'aria-label'?: string;

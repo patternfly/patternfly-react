@@ -57,7 +57,7 @@ export interface NavContextProps {
   isHorizontal?: boolean;
   flyoutRef?: React.Ref<HTMLLIElement>;
   setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
-  navRef?: React.RefObject<HTMLElement>;
+  navRef?: React.RefObject<HTMLElement | null>;
 }
 export const navContextDefaults = {};
 export const NavContext = React.createContext<NavContextProps>(navContextDefaults);

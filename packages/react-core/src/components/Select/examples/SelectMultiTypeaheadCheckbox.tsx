@@ -30,7 +30,7 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
   const [placeholder, setPlaceholder] = React.useState('0 items selected');
-  const textInputRef = React.useRef<HTMLInputElement>();
+  const textInputRef = React.useRef<HTMLInputElement>(undefined);
 
   const NO_RESULTS = 'no results';
 

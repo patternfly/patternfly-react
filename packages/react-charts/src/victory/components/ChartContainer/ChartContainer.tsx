@@ -16,7 +16,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * The children prop specifies the child or children that will be rendered within the container. It will be set by
    * whatever Victory component is rendering the container.
    */
-  children?: React.ReactElement | React.ReactElement[];
+  children?: React.ReactElement<any> | React.ReactElement<any>[];
   /**
    * The className prop specifies a className that will be applied to the outermost div rendered by ChartContainer
    */
@@ -31,7 +31,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    *
    * @example containerRef={(ref) => { this.chartRef = ref; }}
    */
-  containerRef?: React.RefObject<HTMLElement>;
+  containerRef?: React.RefObject<HTMLElement | null>;
   /**
    * The desc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers. The more info about the chart provided in
@@ -86,7 +86,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * render in the portal container. This prop defaults to Portal, and should only be overridden when changing rendered
    * elements from SVG to another type of element e.g., react-native-svg elements.
    */
-  portalComponent?: React.ReactElement;
+  portalComponent?: React.ReactElement<any>;
   /**
    * The portalZIndex prop determines the z-index of the div enclosing the portal component. If a portalZIndex prop is
    * not set, the z-index of the enclosing div will be set to 99.

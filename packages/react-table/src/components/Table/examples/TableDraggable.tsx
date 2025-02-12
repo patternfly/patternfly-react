@@ -9,7 +9,7 @@ export const TableDraggable: React.FunctionComponent = () => {
   const [itemOrder, setItemOrder] = React.useState(['row1', 'row2', 'row3']);
   const [tempItemOrder, setTempItemOrder] = React.useState<string[]>([]);
 
-  const bodyRef = React.useRef<HTMLTableSectionElement>();
+  const bodyRef = React.useRef<HTMLTableSectionElement>(undefined);
 
   const onDragStart: TrProps['onDragStart'] = (evt) => {
     evt.dataTransfer.effectAllowed = 'move';

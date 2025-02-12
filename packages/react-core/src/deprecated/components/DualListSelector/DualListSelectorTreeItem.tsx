@@ -138,7 +138,9 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
                     e.preventDefault();
                   }
                 }}
-                ref={(elem) => elem && (elem.indeterminate = isChecked === null)}
+                ref={(elem) => {
+                  elem && (elem.indeterminate = isChecked === null);
+                }}
                 checked={isChecked || false}
                 tabIndex={-1}
                 {...checkProps}
@@ -148,7 +150,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
             <span className={css(styles.dualListSelectorItemText)}>{text}</span>
             {hasBadge && children && (
               <span className={css(styles.dualListSelectorItemCount)}>
-                <Badge {...badgeProps}>{flattenTree((children as React.ReactElement).props.data).length}</Badge>
+                <Badge {...badgeProps}>{flattenTree((children as React.ReactElement<any>).props.data).length}</Badge>
               </span>
             )}
           </span>

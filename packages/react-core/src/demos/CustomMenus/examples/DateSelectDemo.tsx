@@ -4,7 +4,7 @@ import { MenuToggle, Select, SelectList, SelectOption, Timestamp } from '@patter
 export const DateSelectDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<number>(0);
-  const menuRef = React.useRef<HTMLDivElement>();
+  const menuRef = React.useRef<HTMLDivElement>(undefined);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);

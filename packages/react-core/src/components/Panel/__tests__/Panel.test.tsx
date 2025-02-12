@@ -58,7 +58,7 @@ test(`Renders with class name ${styles.modifiers.scrollable} when isScrollable i
 
 test('Renders with ref', async () => {
   const user = userEvent.setup();
-  const panelRef: React.RefObject<HTMLDivElement> = React.createRef();
+  const panelRef: React.RefObject<HTMLDivElement | null> = React.createRef();
 
   const BasicPanel = () => {
     const [lastClickWasInPanel, setLastClickWasInPanel] = React.useState(false);

@@ -9,7 +9,7 @@ interface SearchInputState {
 
 export class SearchInputDemo extends Component<SearchInputProps, SearchInputState> {
   static displayName = 'SearchInputDemo';
-  inputRef: React.RefObject<HTMLInputElement>;
+  inputRef: React.RefObject<HTMLInputElement | null>;
   constructor(props: SearchInputProps) {
     super(props);
     this.inputRef = React.createRef();
@@ -70,7 +70,7 @@ export class SearchInputDemo extends Component<SearchInputProps, SearchInputStat
       <>
         <SearchInput
           id="enabled-search"
-          ref={this.inputRef}
+          ref={this.inputRef as React.RefObject<HTMLInputElement>}
           attributes={[
             { attr: 'username', display: 'Username' },
             { attr: 'firstname', display: 'First name' }

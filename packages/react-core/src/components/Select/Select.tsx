@@ -33,7 +33,7 @@ export interface SelectToggleProps {
   /**  Select toggle node. */
   toggleNode: React.ReactNode;
   /** Reference to the toggle. */
-  toggleRef?: React.RefObject<HTMLButtonElement>;
+  toggleRef?: React.RefObject<HTMLButtonElement | null>;
 }
 
 /**
@@ -113,14 +113,14 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   focusTimeoutDelay = 0,
   ...props
 }: SelectProps & OUIAProps) => {
-  const localMenuRef = React.useRef<HTMLDivElement>();
-  const localToggleRef = React.useRef<HTMLButtonElement>();
+  const localMenuRef = React.useRef<HTMLDivElement>(undefined);
+  const localToggleRef = React.useRef<HTMLButtonElement>(undefined);
 
-  const menuRef = (innerRef as React.RefObject<HTMLDivElement>) || localMenuRef;
+  const menuRef = (innerRef as React.RefObject<HTMLDivElement | null>) || localMenuRef;
   const toggleRef =
     typeof toggle === 'function' || (typeof toggle !== 'function' && !toggle.toggleRef)
       ? localToggleRef
-      : (toggle?.toggleRef as React.RefObject<HTMLButtonElement>);
+      : (toggle?.toggleRef as React.RefObject<HTMLButtonElement | null>);
 
   const prevIsOpen = React.useRef<boolean>(isOpen);
   React.useEffect(() => {

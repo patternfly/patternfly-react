@@ -20,7 +20,7 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
 
   const onSort = (pane: string) => {
     const toSort = pane === 'available' ? [...availableOptions] : [...chosenOptions];
-    (toSort as React.ReactElement[]).sort((a, b) => {
+    (toSort as React.ReactElement<any>[]).sort((a, b) => {
       if (a.props.children > b.props.children) {
         return 1;
       }
@@ -38,7 +38,7 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
   };
 
   const filterOption = (option: React.ReactNode, input: string) =>
-    (option as React.ReactElement).props.children.includes(input);
+    (option as React.ReactElement<any>).props.children.includes(input);
 
   const availableOptionsActions = [
     <Button

@@ -38,9 +38,9 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   focusTimeoutDelay = 0,
   ...props
 }: OverflowTabProps) => {
-  const menuRef = React.useRef<HTMLDivElement>();
-  const overflowTabRef = React.useRef<HTMLButtonElement>();
-  const overflowLIRef = React.useRef<HTMLLIElement>();
+  const menuRef = React.useRef<HTMLDivElement>(undefined);
+  const overflowTabRef = React.useRef<HTMLButtonElement>(undefined);
+  const overflowLIRef = React.useRef<HTMLLIElement>(undefined);
 
   const [isExpanded, setIsExpanded] = React.useState(false);
 

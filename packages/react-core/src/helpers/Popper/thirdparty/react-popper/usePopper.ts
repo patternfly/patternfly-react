@@ -102,7 +102,7 @@ export const usePopper = (
     updateStateModifier
   ]);
 
-  const popperInstanceRef = React.useRef<any>();
+  const popperInstanceRef = React.useRef<any>(undefined);
 
   useIsomorphicLayoutEffect(() => {
     if (popperInstanceRef && popperInstanceRef.current) {
