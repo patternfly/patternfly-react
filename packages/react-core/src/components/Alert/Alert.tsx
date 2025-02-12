@@ -161,8 +161,8 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   }, [shouldDismiss, hasAnimations, isDismissed]);
 
   React.useEffect(() => {
-    const prefersReducedMotion = !window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
     const handleOnTransitionEnd = (event: TransitionEvent) => {
+      const prefersReducedMotion = !window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
       const parentAlertGroupItem = getParentAlertGroupItem();
       if (
         parentAlertGroupItem?.contains(event.target as Node) &&

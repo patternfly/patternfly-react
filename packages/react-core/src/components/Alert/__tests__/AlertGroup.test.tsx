@@ -71,7 +71,7 @@ test('alertgroup closes when alerts are closed', async () => {
   const user = userEvent.setup();
 
   render(
-    <AlertGroup isToast appendTo={document.body}>
+    <AlertGroup hasAnimations={false} isToast appendTo={document.body}>
       <Alert
         isLiveRegion
         title={'Test Alert'}
