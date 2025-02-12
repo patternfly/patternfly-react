@@ -3,7 +3,6 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { AlertContext } from './AlertContext';
 import { AlertGroupContext } from './AlertGroupContext';
 import alertGroupStyles from '@patternfly/react-styles/css/components/Alert/alert-group';
-import fadeShort from '@patternfly/react-tokens/dist/esm/t_global_motion_duration_fade_short';
 
 /** Renders a close button for a dismissable alert when this sub-component is passed into
  * the alert's actionClose property.
@@ -27,26 +26,47 @@ export const AlertActionCloseButton: React.FunctionComponent<AlertActionCloseBut
   variantLabel,
   ...props
 }: AlertActionCloseButtonProps) => {
-  const [alertIsDismissed, setAlertIsDismissed] = React.useState(false);
+  const [shouldDismissOnTransition, setShouldDismissOnTransition] = React.useState(false);
   const closeButtonRef = React.useRef(null);
   const { hasAnimations } = React.useContext(AlertGroupContext);
+  const { offstageRight } = alertGroupStyles.modifiers;
 
-  React.useEffect(() => {
-    if (alertIsDismissed && hasAnimations) {
-      closeButtonRef.current
-        ?.closest(`.${alertGroupStyles.alertGroupItem}`)
-        ?.classList.add(alertGroupStyles.modifiers.offstageRight);
-    }
-  }, [alertIsDismissed]);
-
-  const handleOnClose = () => {
+  const getParentAlertGroupItem = () => closeButtonRef.current?.closest(`.${alertGroupStyles.alertGroupItem}`);
+  const handleOnClick = () => {
     if (hasAnimations) {
-      setAlertIsDismissed(true);
-      setTimeout(() => onClose(), parseInt(fadeShort.value));
+      getParentAlertGroupItem()?.classList.add(offstageRight);
+      setShouldDismissOnTransition(true);
     } else {
       onClose();
     }
   };
+
+  React.useEffect(() => {
+    const prefersReducedMotion = !window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
+    const handleOnTransitionEnd = (event: TransitionEvent) => {
+      const parentAlertGroupItem = getParentAlertGroupItem();
+      if (
+        shouldDismissOnTransition &&
+        parentAlertGroupItem?.contains(event.target as Node) &&
+        // If a user has no motion preference, we want to target the grid template rows transition
+        // so that the onClose is called after the "slide up" animation of other alerts finishes. Otherwise
+        // we want to target the opacity transition since no other transition with be firing.
+        ((prefersReducedMotion && event.propertyName === 'opacity') ||
+          (!prefersReducedMotion && event.propertyName === 'grid-template-rows')) &&
+        (event.target as HTMLElement).className.includes(offstageRight)
+      ) {
+        onClose();
+      }
+    };
+
+    if (hasAnimations) {
+      window.addEventListener('transitionend', handleOnTransitionEnd);
+    }
+
+    return () => {
+      window.removeEventListener('transitionend', handleOnTransitionEnd);
+    };
+  }, [hasAnimations, shouldDismissOnTransition]);
 
   return (
     <AlertContext.Consumer>
@@ -54,7 +74,7 @@ export const AlertActionCloseButton: React.FunctionComponent<AlertActionCloseBut
         <Button
           ref={closeButtonRef}
           variant={ButtonVariant.plain}
-          onClick={handleOnClose}
+          onClick={handleOnClick}
           aria-label={ariaLabel === '' ? `Close ${variantLabel || alertVariantLabel} alert: ${title}` : ariaLabel}
           className={className}
           icon={<TimesIcon />}

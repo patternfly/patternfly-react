@@ -2,7 +2,6 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import alertGroupStyles from '@patternfly/react-styles/css/components/Alert/alert-group';
-import fadeShort from '@patternfly/react-tokens/dist/esm/t_global_motion_duration_fade_short';
 import { AlertIcon } from './AlertIcon';
 import { capitalize, useOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';
@@ -146,22 +145,48 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const shouldDismiss = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
   const [isDismissed, setIsDismissed] = React.useState(false);
   const { hasAnimations } = React.useContext(AlertGroupContext);
+  const { offstageRight } = alertGroupStyles.modifiers;
 
   const getParentAlertGroupItem = () => divRef.current?.closest(`.${alertGroupStyles.alertGroupItem}`);
   useEffect(() => {
     const shouldSetDismissed = shouldDismiss && !isDismissed;
     if (shouldSetDismissed && hasAnimations) {
       const alertGroupItem = getParentAlertGroupItem();
-      alertGroupItem?.classList.add(alertGroupStyles.modifiers.offstageRight);
-      setTimeout(() => {
-        setIsDismissed(true);
-      }, parseInt(fadeShort.value));
+      alertGroupItem?.classList.add(offstageRight);
     }
 
     if (shouldSetDismissed && !hasAnimations) {
       setIsDismissed(true);
     }
-  }, [shouldDismiss]);
+  }, [shouldDismiss, hasAnimations, isDismissed]);
+
+  React.useEffect(() => {
+    const prefersReducedMotion = !window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
+    const handleOnTransitionEnd = (event: TransitionEvent) => {
+      const parentAlertGroupItem = getParentAlertGroupItem();
+      if (
+        parentAlertGroupItem?.contains(event.target as Node) &&
+        // If a user has no motion preference, we want to target the grid template rows transition
+        // so that the onClose is called after the "slide up" animation of other alerts finishes. Otherwise
+        // we want to target the opacity transition since no other transition with be firing.
+        ((prefersReducedMotion && event.propertyName === 'opacity') ||
+          (!prefersReducedMotion && event.propertyName === 'grid-template-rows')) &&
+        (event.target as HTMLElement).className.includes(offstageRight) &&
+        !isDismissed &&
+        shouldDismiss
+      ) {
+        setIsDismissed(true);
+      }
+    };
+
+    if (hasAnimations) {
+      window.addEventListener('transitionend', handleOnTransitionEnd);
+    }
+
+    return () => {
+      window.removeEventListener('transitionend', handleOnTransitionEnd);
+    };
+  }, [hasAnimations, shouldDismiss, isDismissed]);
 
   React.useEffect(() => {
     const calculatedTimeout = timeout === true ? 8000 : Number(timeout);
