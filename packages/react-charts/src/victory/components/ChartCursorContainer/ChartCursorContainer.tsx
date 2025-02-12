@@ -31,7 +31,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * @private
    * @hide
    */
-  children?: React.ReactElement | React.ReactElement[];
+  children?: React.ReactElement<any> | React.ReactElement<any>[];
   /**
    * The className prop specifies a className that will be applied to the outermost div rendered by the container
    */
@@ -66,7 +66,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * new element created from the passed cursorLabelComponent will be supplied with the following props: x, y, active,
    * text. If cursorLabelComponent is omitted, a new ChartLabel will be created with the props described above.
    */
-  cursorLabelComponent?: React.ReactElement;
+  cursorLabelComponent?: React.ReactElement<any>;
   /**
    * The cursorLabelOffset prop determines the pixel offset of the cursor label from the cursor point. This prop should
    * be an Object with x and y properties, or a number to be used for both dimensions.
@@ -150,7 +150,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * render in the portal container. This prop defaults to Portal, and should only be overridden when changing rendered
    * elements from SVG to another type of element e.g., react-native-svg elements.
    */
-  portalComponent?: React.ReactElement;
+  portalComponent?: React.ReactElement<any>;
   /**
    * The portalZIndex prop determines the z-index of the div enclosing the portal component. If a portalZIndex prop is
    * not set, the z-index of the enclosing div will be set to 99.

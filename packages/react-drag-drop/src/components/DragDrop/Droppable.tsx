@@ -14,7 +14,7 @@ interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
   /** Array of draggable objects */
   items: DraggableObject[];
   /** Alternative to wrapping drop zone in a div, will override any ref and style set on the element. */
-  wrapper?: React.ReactElement;
+  wrapper?: React.ReactElement<any>;
   /** The variant determines which component wraps the draggable object.
    * Default variant wraps the draggable object in a div.
    * DataList vairant wraps the draggable object in a DataListItem

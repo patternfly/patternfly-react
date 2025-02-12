@@ -48,7 +48,7 @@ const dropdownItems = [
 
 export const BreadcrumbDropdown: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const badgeToggleRef = React.useRef<HTMLButtonElement>();
+  const badgeToggleRef = React.useRef<HTMLButtonElement>(undefined);
 
   const onToggle = () => setIsOpen(!isOpen);
 

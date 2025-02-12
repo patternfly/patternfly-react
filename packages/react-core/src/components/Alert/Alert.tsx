@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import { AlertIcon } from './AlertIcon';
@@ -124,7 +124,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const titleRef = React.useRef(null);
   const TitleComponent = component as any;
 
-  const divRef = React.useRef<HTMLDivElement>();
+  const divRef = React.useRef<HTMLDivElement>(undefined);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   React.useEffect(() => {
     if (!titleRef.current || !truncateTitle) {

@@ -14,7 +14,7 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   /** Additional label information displayed after the label. */
   labelInfo?: React.ReactNode;
   /** A help button for the label. We recommend using FormGroupLabelHelp element as a help icon button. The help button should be wrapped or linked to our popover component. */
-  labelHelp?: React.ReactElement;
+  labelHelp?: React.ReactElement<any>;
   /** Sets the FormGroup required. */
   isRequired?: boolean;
   /** Sets the FormGroup isInline. */

@@ -6,9 +6,9 @@ export class TabUncontrolledDemo extends Component {
   state = {
     isTab2Hidden: true
   };
-  private contentRef1: RefObject<HTMLDivElement>;
-  private contentRef2: RefObject<HTMLDivElement>;
-  private contentRef3: RefObject<HTMLDivElement>;
+  private contentRef1: RefObject<HTMLDivElement | null>;
+  private contentRef2: RefObject<HTMLDivElement | null>;
+  private contentRef3: RefObject<HTMLDivElement | null>;
 
   constructor(props: {}) {
     super(props);
@@ -67,17 +67,29 @@ export class TabUncontrolledDemo extends Component {
           <TabContent
             eventKey={0}
             id="demoTab1Section"
-            ref={this.contentRef1}
+            ref={this.contentRef1 as RefObject<HTMLDivElement>}
             aria-label="Tab item 1"
             // eslint-disable-next-line no-console
             onAuxClick={(event) => console.log(event)}
           >
             Tab 1 section
           </TabContent>
-          <TabContent eventKey={1} id="demoTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>
+          <TabContent
+            eventKey={1}
+            id="demoTab2Section"
+            ref={this.contentRef2 as RefObject<HTMLDivElement>}
+            aria-label="Tab item 2"
+            hidden
+          >
             Tab 2 section
           </TabContent>
-          <TabContent eventKey={2} id="demoTab3Section" ref={this.contentRef3} aria-label="Tab item 3" hidden>
+          <TabContent
+            eventKey={2}
+            id="demoTab3Section"
+            ref={this.contentRef3 as RefObject<HTMLDivElement>}
+            aria-label="Tab item 3"
+            hidden
+          >
             Tab 3 section
           </TabContent>
         </div>

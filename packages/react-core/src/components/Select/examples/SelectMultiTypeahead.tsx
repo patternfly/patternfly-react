@@ -31,7 +31,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
   const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
   const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
-  const textInputRef = React.useRef<HTMLInputElement>();
+  const textInputRef = React.useRef<HTMLInputElement>(undefined);
 
   const NO_RESULTS = 'no results';
 

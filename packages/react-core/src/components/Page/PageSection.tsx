@@ -5,6 +5,8 @@ import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from './PageContext';
 import { PageBody } from './PageBody';
 
+import type { JSX } from 'react';
+
 export enum PageSectionVariants {
   default = 'default',
   secondary = 'secondary'

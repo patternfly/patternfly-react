@@ -54,7 +54,7 @@ export const List: React.FunctionComponent<ListProps> = ({
 }: ListProps) =>
   component === ListComponent.ol ? (
     <ol
-      ref={ref as React.LegacyRef<HTMLOListElement>}
+      ref={ref as React.Ref<HTMLOListElement>}
       type={type}
       {...(isPlain && { role: 'list' })}
       {...props}
@@ -71,7 +71,7 @@ export const List: React.FunctionComponent<ListProps> = ({
     </ol>
   ) : (
     <ul
-      ref={ref as React.LegacyRef<HTMLUListElement>}
+      ref={ref as React.Ref<HTMLUListElement>}
       {...(isPlain && { role: 'list' })}
       {...props}
       className={css(

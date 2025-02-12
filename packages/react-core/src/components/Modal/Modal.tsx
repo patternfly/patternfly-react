@@ -183,7 +183,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
         {...props}
       />,
       this.getElement(appendTo)
-    ) as React.ReactElement;
+    ) as React.ReactElement<any>;
   }
 }
 

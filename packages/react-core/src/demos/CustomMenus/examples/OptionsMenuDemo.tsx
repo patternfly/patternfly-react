@@ -4,7 +4,7 @@ import { MenuToggle, Divider, Select, SelectList, SelectOption, SelectGroup } fr
 export const OptionsMenuDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<string>('');
-  const menuRef = React.useRef<HTMLDivElement>();
+  const menuRef = React.useRef<HTMLDivElement>(undefined);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);

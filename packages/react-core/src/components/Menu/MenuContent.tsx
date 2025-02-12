@@ -57,7 +57,9 @@ export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React
         <div
           {...rest}
           className={css(styles.menuContent, props.className)}
-          ref={(el) => refCallback(el, menuId, onGetMenuHeight)}
+          ref={(el) => {
+            refCallback(el, menuId, onGetMenuHeight);
+          }}
           style={
             {
               ...(menuHeight && { [cssHeight.name]: menuHeight }),

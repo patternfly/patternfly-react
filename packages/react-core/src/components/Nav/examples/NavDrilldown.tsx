@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 
 import { Nav, MenuContent, MenuItem, MenuList, DrilldownMenu, Menu } from '@patternfly/react-core';
 

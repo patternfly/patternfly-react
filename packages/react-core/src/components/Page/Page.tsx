@@ -11,6 +11,8 @@ import { getBreakpoint, getVerticalBreakpoint } from '../../helpers/util';
 import { PageContextProvider } from './PageContext';
 import { PageBody } from './PageBody';
 
+import type { JSX } from 'react';
+
 export enum PageLayouts {
   vertical = 'vertical',
   horizontal = 'horizontal'
@@ -39,7 +41,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   /** Callback when notification drawer panel is finished expanding. */
   onNotificationDrawerExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
   /** Skip to content component for the page */
-  skipToContent?: React.ReactElement;
+  skipToContent?: React.ReactElement<any>;
   /** Sets the value for role on the <main> element */
   role?: string;
   /** an id to use for the [role="main"] element */

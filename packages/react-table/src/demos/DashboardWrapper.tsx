@@ -38,7 +38,7 @@ interface DashboardWrapperProps {
   /** Callback when notification drawer panel is finished expanding. */
   onNotificationDrawerExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
   /** Skip to content component for the page */
-  skipToContent?: React.ReactElement;
+  skipToContent?: React.ReactElement<any>;
   /** Sets the value for role on the <main> element */
   role?: string;
   /** an id to use for the [role="main"] element */

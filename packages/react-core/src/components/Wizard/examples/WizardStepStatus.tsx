@@ -10,7 +10,7 @@ interface SomeContextProps {
 }
 type SomeContextRenderProps = Pick<SomeContextProps, 'successMessage', 'errorMessage'>;
 interface SomeContextProviderProps {
-  children: (context: SomeContextRenderProps) => React.ReactElement;
+  children: (context: SomeContextRenderProps) => React.ReactElement<any>;
 }
 
 const SomeContext: React.Context<SomeContextProps> = React.createContext({} as SomeContextProps);

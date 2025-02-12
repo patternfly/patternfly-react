@@ -31,7 +31,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   /** Component used to render NavItems if  React.isValidElement(children) is false */
   component?: React.ElementType<any> | React.ComponentType<any>;
   /** Flyout of a nav item. This should be a Menu component. Should not be used if the to prop is defined. */
-  flyout?: React.ReactElement;
+  flyout?: React.ReactElement<any>;
   /** Callback when flyout is opened or closed */
   onShowFlyout?: () => void;
   /** z-index of the flyout nav item */
@@ -67,9 +67,9 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   const { isSidebarOpen } = React.useContext(PageSidebarContext);
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const [isHovered, setIsHovered] = React.useState(false);
-  const ref = React.useRef<HTMLLIElement>();
+  const ref = React.useRef<HTMLLIElement>(undefined);
   const flyoutVisible = ref === flyoutRef;
-  const popperRef = React.useRef<HTMLDivElement>();
+  const popperRef = React.useRef<HTMLDivElement>(undefined);
   const hasFlyout = flyout !== undefined;
   const Component = hasFlyout ? 'button' : (component as any);
 
@@ -200,7 +200,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     );
   };
 
-  const renderClonedChild = (context: any, child: React.ReactElement): React.ReactNode =>
+  const renderClonedChild = (context: any, child: React.ReactElement<any>): React.ReactNode =>
     React.cloneElement(child, {
       onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
       'aria-current': isActive ? 'page' : null,
@@ -256,7 +256,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
         <NavContext.Consumer>
           {(context) =>
             React.isValidElement(children)
-              ? renderClonedChild(context, children as React.ReactElement)
+              ? renderClonedChild(context, children as React.ReactElement<any>)
               : renderDefaultLink(context)
           }
         </NavContext.Consumer>

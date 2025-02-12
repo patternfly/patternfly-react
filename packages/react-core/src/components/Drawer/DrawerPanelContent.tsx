@@ -79,8 +79,8 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   focusTrap,
   ...props
 }: DrawerPanelContentProps) => {
-  const panel = React.useRef<HTMLDivElement>();
-  const splitterRef = React.useRef<HTMLDivElement>();
+  const panel = React.useRef<HTMLDivElement>(undefined);
+  const splitterRef = React.useRef<HTMLDivElement>(undefined);
   const [separatorValue, setSeparatorValue] = React.useState(0);
   const { position, isExpanded, isStatic, onExpand, drawerRef, drawerContentRef, isInline } =
     React.useContext(DrawerContext);

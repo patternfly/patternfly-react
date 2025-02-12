@@ -263,8 +263,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
 
   React.useEffect(() => {
     setTruncated(
-      (cellRef as React.RefObject<HTMLElement>).current.offsetWidth <
-        (cellRef as React.RefObject<HTMLElement>).current.scrollWidth
+      (cellRef as React.RefObject<HTMLElement | null>).current.offsetWidth <
+        (cellRef as React.RefObject<HTMLElement | null>).current.scrollWidth
     );
   }, [cellRef]);
 

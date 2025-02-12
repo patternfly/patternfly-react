@@ -21,7 +21,7 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   /** Adds an accessible label to the internal nav element. Defaults to the value of the label prop. */
   'aria-label'?: string;
   /** Reference to the scrollable element to spy on. Takes precedence over scrollableSelector. Not passing a scrollableRef or scrollableSelector disables spying. */
-  scrollableRef?: HTMLElement | (() => HTMLElement) | React.RefObject<HTMLElement>;
+  scrollableRef?: HTMLElement | (() => HTMLElement) | React.RefObject<HTMLElement | null>;
   /** Selector for the scrollable element to spy on. Not passing a scrollableSelector or scrollableRef disables spying. */
   scrollableSelector?: string;
   /** The index of the child Jump link to make active. */
@@ -102,7 +102,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   const [isExpanded, setIsExpanded] = React.useState(isExpandedProp);
   // Boolean to disable scroll listener from overriding active state of clicked jumplink
   const isLinkClicked = React.useRef(false);
-  const navRef = React.useRef<HTMLElement>();
+  const navRef = React.useRef<HTMLElement>(undefined);
 
   let scrollableElement: HTMLElement;
 
@@ -113,7 +113,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
       } else if (typeof scrollableRef === 'function') {
         return scrollableRef();
       }
-      return (scrollableRef as React.RefObject<HTMLElement>).current;
+      return (scrollableRef as React.RefObject<HTMLElement | null>).current;
     } else if (scrollableSelector) {
       return document.querySelector(scrollableSelector) as HTMLElement;
     }

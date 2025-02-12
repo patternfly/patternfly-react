@@ -6,7 +6,7 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 export const TabsHelpAndClose: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState<number>(0);
   const [tabs, setTabs] = React.useState<string[]>(['Terminal 1', 'Terminal 2', 'Terminal 3']);
-  const tabComponentRef = React.useRef<any>();
+  const tabComponentRef = React.useRef<any>(undefined);
   const firstMount = React.useRef(true);
 
   const onClose = (event: any, tabIndex: string | number) => {

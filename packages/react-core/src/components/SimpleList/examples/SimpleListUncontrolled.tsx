@@ -5,7 +5,7 @@ export const SimpleListUncontrolled: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState(0);
 
   const onSelect = (
-    selectedItem: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
+    selectedItem: React.RefObject<HTMLButtonElement | null> | React.RefObject<HTMLAnchorElement | null>,
     selectedItemProps: SimpleListItemProps
   ) => {
     setActiveItem(selectedItemProps.itemId as number);

@@ -263,7 +263,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
         elementToFocus={elementToFocus}
       />,
       this.getElement(appendTo)
-    ) as React.ReactElement;
+    ) as React.ReactElement<any>;
   }
 }
 

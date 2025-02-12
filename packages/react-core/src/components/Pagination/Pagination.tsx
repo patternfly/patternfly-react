@@ -160,7 +160,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex,
    * itemCount, itemsTitle, and/or ofWord props.
    */
-  toggleTemplate?: ((props: PaginationToggleTemplateProps) => React.ReactElement) | string;
+  toggleTemplate?: ((props: PaginationToggleTemplateProps) => React.ReactElement<any>) | string;
   /** Position where pagination is rendered. */
   variant?: 'top' | 'bottom' | PaginationVariant;
   /** Id to ideintify widget on page. */
@@ -304,7 +304,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
             fillTemplate(toggleTemplate, PaginationToggleTemplateProps)}
           {toggleTemplate &&
             typeof toggleTemplate !== 'string' &&
-            (toggleTemplate as (props: PaginationToggleTemplateProps) => React.ReactElement)(
+            (toggleTemplate as (props: PaginationToggleTemplateProps) => React.ReactElement<any>)(
               PaginationToggleTemplateProps
             )}
           {!toggleTemplate && (
