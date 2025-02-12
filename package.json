@@ -8,7 +8,7 @@
     "url": "https://github.com/patternfly/patternfly-react.git"
   },
   "engines": {
-    "node": ">=20.18.2"
+    "node": ">=20.18.3"
   },
   "packageManager": "yarn@4.6.0",
   "keywords": [
