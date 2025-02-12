@@ -105,6 +105,8 @@ describe('SearchInput', () => {
         onClear={props.onClear}
       />
     );
+    const expandButton = screen.getByRole('button', { name: 'Open advanced search' });
+    expect(expandButton).toHaveAttribute('aria-expanded', 'false');
 
     await user.click(screen.getByRole('button', { name: 'Search' }));
 
@@ -139,7 +141,12 @@ describe('SearchInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Search' }));
 
-    await user.click(screen.getByRole('button', { name: 'Open advanced search' }));
+    const expandButton = screen.getByRole('button', { name: 'Open advanced search' });
+    expect(expandButton).toHaveAttribute('aria-expanded', 'false');
+
+    await user.click(expandButton);
+    expect(expandButton).toHaveAttribute('aria-expanded', 'true');
+
     expect(screen.getByTestId('test-id')).toContainElement(screen.getByText('First name'));
 
     expect(props.onSearch).toHaveBeenCalled();
@@ -149,7 +156,14 @@ describe('SearchInput', () => {
   test('advanced search with custom attributes and appendTo="inline', async () => {
     const user = userEvent.setup();
 
-    render(<SearchInput data-testid="test-id" attributes={[{ attr: 'test', display: 'test' }]} appendTo="inline" />);
+    render(
+      <SearchInput
+        data-testid="test-id"
+        attributes={[{ attr: 'test', display: 'test' }]}
+        advancedSearchDelimiter=":"
+        appendTo="inline"
+      />
+    );
 
     await user.click(screen.getByRole('button', { name: 'Open advanced search' }));
 
@@ -160,7 +174,12 @@ describe('SearchInput', () => {
     const user = userEvent.setup();
 
     render(
-      <SearchInput data-testid="test-id" attributes={[{ attr: 'test', display: 'test' }]} appendTo={document.body} />
+      <SearchInput
+        data-testid="test-id"
+        attributes={[{ attr: 'test', display: 'test' }]}
+        advancedSearchDelimiter=":"
+        appendTo={document.body}
+      />
     );
 
     await user.click(screen.getByRole('button', { name: 'Open advanced search' }));
