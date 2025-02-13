@@ -364,6 +364,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
 
   handleResize = () => {
     if (this.editor) {
+      this.editor.layout({ width: 0, height: 0 }); // ensures the editor won't take up more space than it needs
       this.editor.layout();
     }
   };
