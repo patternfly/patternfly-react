@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.17...@patternfly/react-core@6.2.0-prerelease.18) (2025-02-13)
+
+### Bug Fixes
+
+- **SearchInput:** advanced search aria-expanded set by default ([#11494](https://github.com/patternfly/patternfly-react/issues/11494)) ([64842c0](https://github.com/patternfly/patternfly-react/commit/64842c08b8816f528782601d8f16668a2e364504))
+
 # [6.2.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.16...@patternfly/react-core@6.2.0-prerelease.17) (2025-02-12)
 
 **Note:** Version bump only for package @patternfly/react-core
