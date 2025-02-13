@@ -41,9 +41,12 @@ jobs:
         if: always()
         run: node .github/upload-preview.mjs packages/react-docs/public
 
-      - name: Run accessibility tests
+      - name: Serve docs
         if: always()
-        run: yarn serve:docs & yarn test:a11y
+        run: yarn serve:docs
+
+      - name: Run accessibility tests
+        run: yarn test:a11y
 
       - name: Upload accessibility results
         if: always()
