@@ -1,4 +1,3 @@
-import React from 'react';
 import { MenuGroupProps } from '../MenuGroup';
 
 export const MenuGroup = ({ className, children, label, labelHeadingLevel }: MenuGroupProps) => (
