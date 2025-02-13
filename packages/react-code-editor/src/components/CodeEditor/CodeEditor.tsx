@@ -612,7 +612,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                   {customControls && customControls}
                 </CodeEditorContext.Provider>
               </div>
-              {<div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}
+              {headerMainContent && <div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}
               {!!shortcutsPopoverProps.bodyContent && (
                 <div className={`${styles.codeEditor}__keyboard-shortcuts`}>
                   <Popover {...shortcutsPopoverProps}>
