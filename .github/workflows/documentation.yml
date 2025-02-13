@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           # Checkout the merge commit so that we can access the PR's changes.
-          # This is necessary because `pull_request_target` checks out the base branch (e.g. `main`) by default.
+          # This is nessesary because `pull_request_target` checks out the base branch (e.g. `main`) by default.
           ref: refs/pull/${{ env.GH_PR_NUM }}/head
 
       - name: Check out project
@@ -41,12 +41,8 @@ jobs:
         if: always()
         run: node .github/upload-preview.mjs packages/react-docs/public
 
-      - name: Serve docs
-        if: always()
-        run: yarn serve:docs
-
       - name: Run accessibility tests
-        run: yarn test:a11y
+        run: yarn serve:docs & yarn test:a11y
 
       - name: Upload accessibility results
         if: always()
