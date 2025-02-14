@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.2.0-prerelease.2...@patternfly/react-tokens@6.2.0-prerelease.3) (2025-02-14)
+
+### Bug Fixes
+
+- **deps:** update dependency @patternfly/patternfly to v6.2.0-prerelease.4 ([#11525](https://github.com/patternfly/patternfly-react/issues/11525)) ([04daac6](https://github.com/patternfly/patternfly-react/commit/04daac6234bf7b85bdf663e4e9cb1093a16b9f44))
+
 # [6.2.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.2.0-prerelease.1...@patternfly/react-tokens@6.2.0-prerelease.2) (2025-01-23)
 
 **Note:** Version bump only for package @patternfly/react-tokens
