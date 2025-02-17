@@ -10,7 +10,6 @@ import {
   DrawerCloseButton,
   DrawerContent,
   DrawerPanelContent,
-  DrawerColorVariant,
   DrawerHead,
   Flex,
   Nav,
@@ -135,7 +134,7 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
     <Drawer isInline isExpanded={isDrawerExpanded} onExpand={onExpand}>
       <DrawerContent
         panelContent={
-          <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.secondary}>
+          <DrawerPanelContent widths={{ default: 'width_33' }}>
             <DrawerHead>
               <span tabIndex={isDrawerExpanded ? 0 : -1} ref={drawerRef}>
                 Drawer content: {stepName}
