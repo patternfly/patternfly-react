@@ -1,5 +1,5 @@
 'use strict';
-
+import { createRoot } from 'react-dom/client';
 const e = React.createElement;
 
 class LikeButton extends React.Component {
@@ -17,14 +17,10 @@ class LikeButton extends React.Component {
       });
     }
 
-    return e(
-      PatternFlyReact.Button,
-      { onClick: () => this.setState({ liked: true }) },
-      'Like'
-    );
+    return e(PatternFlyReact.Button, { onClick: () => this.setState({ liked: true }) }, 'Like');
   }
 }
 
-
 const domContainer = document.querySelector('#react-root');
-ReactDOM.render(e(LikeButton), domContainer);
+const root = createRoot(domContainer);
+root.render(e(LikeButton));
