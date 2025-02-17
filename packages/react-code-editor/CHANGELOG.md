@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.2.0-prerelease.20...@patternfly/react-code-editor@6.2.0-prerelease.21) (2025-02-17)
+
+### Bug Fixes
+
+- **CodeEditor:** do not include extra div if `headerMainContent` is unset ([#11534](https://github.com/patternfly/patternfly-react/issues/11534)) ([86ff923](https://github.com/patternfly/patternfly-react/commit/86ff9239f935b974896958ff4b3c4af5b8d98825))
+- **CodeEditor:** ensure that handleResize works when viewport shrinks ([#11532](https://github.com/patternfly/patternfly-react/issues/11532)) ([c06dbde](https://github.com/patternfly/patternfly-react/commit/c06dbdec017daa3b84e7af02a2e57b9a7efd0faa))
+
 # [6.2.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.2.0-prerelease.19...@patternfly/react-code-editor@6.2.0-prerelease.20) (2025-02-14)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
