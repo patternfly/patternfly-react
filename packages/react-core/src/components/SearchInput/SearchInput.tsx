@@ -124,6 +124,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   value?: string;
   /** Name attribue for the search input */
   name?: string;
+  /** Additional props to spread to the search input element. */
+  inputProps?: any;
 }
 
 const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
@@ -159,6 +161,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   zIndex = 9999,
   name,
   areUtilitiesDisplayed,
+  inputProps,
   ...props
 }: SearchInputProps) => {
   const [isSearchMenuOpen, setIsSearchMenuOpen] = React.useState(false);
@@ -302,6 +305,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         onChange={onChangeHandler}
         name={name}
         inputId={searchInputId}
+        inputProps={inputProps}
       />
       {(renderUtilities || areUtilitiesDisplayed) && (
         <TextInputGroupUtilities>
