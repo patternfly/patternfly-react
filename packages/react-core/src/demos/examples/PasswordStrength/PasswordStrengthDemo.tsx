@@ -102,7 +102,7 @@ export const PasswordStrengthDemo: React.FunctionComponent = () => {
       >
         <TextInput
           isRequired
-          type="text"
+          type="password"
           id="password-field"
           name="password-field"
           aria-describedby="password-field-helper"
