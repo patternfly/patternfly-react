@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.12...@patternfly/react-core@5.4.13) (2025-02-18)
+
+### Bug Fixes
+
+- **FileUpload:** hid input of type file from AT (v5) ([#11437](https://github.com/patternfly/patternfly-react/issues/11437)) ([754b6a7](https://github.com/patternfly/patternfly-react/commit/754b6a7b2dd49c50fca0ba1b0a1e97fe34e8992e))
+
 ## [5.4.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.11...@patternfly/react-core@5.4.12) (2024-12-18)
 
 ### Bug Fixes
