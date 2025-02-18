@@ -3611,9 +3611,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/patternfly-a11y@npm:5.0.0":
-  version: 5.0.0
-  resolution: "@patternfly/patternfly-a11y@npm:5.0.0"
+"@patternfly/patternfly-a11y@npm:5.1.0":
+  version: 5.1.0
+  resolution: "@patternfly/patternfly-a11y@npm:5.1.0"
   dependencies:
     axe-core: "npm:^4.10.2"
     chromedriver: "npm:^130.0.1"
@@ -3638,7 +3638,7 @@ __metadata:
     victory-voronoi-container: ^37.1.1
   bin:
     patternfly-a11y: cli.js
-  checksum: 10c0/a988fa48b63f14edbcb99d15bb0a914ba689f01df2f96cb32907ab84d3463815eb2d35360d23be5722612fc49b70244cda1812c1e1e4ecde8aa49395b368f566
+  checksum: 10c0/e24f5be4ecb204af2d68f51da448748312d8b3c76ec39dc5cb436cb39ee0bac3f72929971df3e4a0dc1865c492f5414b48cf04840236cb2a4b1a597dcf5d3e54
   languageName: node
   linkType: hard
 
@@ -3761,7 +3761,7 @@ __metadata:
   dependencies:
     "@patternfly/documentation-framework": "npm:^6.5.11"
     "@patternfly/patternfly": "npm:6.2.0-prerelease.4"
-    "@patternfly/patternfly-a11y": "npm:5.0.0"
+    "@patternfly/patternfly-a11y": "npm:5.1.0"
     "@patternfly/react-charts": "workspace:^"
     "@patternfly/react-code-editor": "workspace:^"
     "@patternfly/react-core": "workspace:^"
