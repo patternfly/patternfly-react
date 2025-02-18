@@ -680,7 +680,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                   {editorHeader}
                   <div className={css(styles.codeEditorMain, isDragActive && styles.modifiers.dragHover)}>
                     <div className={css(styles.codeEditorUpload)}>
-                      <input {...getInputProps()} /* hidden, necessary for react-dropzone */ />
+                      <input {...getInputProps()} /* hidden, necessary for react-dropzone */ hidden />
                       {(showEmptyState || providedEmptyState) && !value ? emptyState : editor}
                     </div>
                   </div>
