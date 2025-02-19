@@ -36,12 +36,4 @@ describe('Label Demo Test', () => {
       cy.wrap(noTooltipLinkMaxWidth).trigger('mouseleave');
     });
   });
-
-  it('Verify router link label', () => {
-    cy.get('#router-link > .pf-v6-c-label__content').then((routerTooltipLink: JQuery<HTMLDivElement>) => {
-      cy.get('.pf-v6-c-tooltip').should('not.exist');
-      cy.wrap(routerTooltipLink).trigger('mouseenter').get('.pf-v6-c-tooltip').should('exist');
-    });
-    cy.get('#router-link > a').invoke('attr', 'href').should('eq', '/');
-  });
 });

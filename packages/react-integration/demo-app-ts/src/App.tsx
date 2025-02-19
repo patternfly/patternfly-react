@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { Avatar } from '@patternfly/react-core/dist/esm/components/Avatar';
 import { Brand } from '@patternfly/react-core/dist/esm/components/Brand';
 import {
@@ -63,28 +63,28 @@ class App extends React.Component<{}, AppState> {
   private getPages = () => {
     const defaultDemo = Demos.find((demo) => demo.isDefault);
     return (
-      <Switch>
+      <Routes>
         {Demos.map((demo) => (
           <Route
             path={`/${demo.id}-nav-link`}
-            render={() => (
+            element={
               <PageSection id={`/${demo.id}-page-section`}>{React.createElement(demo.componentType)}</PageSection>
-            )}
+            }
             key={demo.id}
           />
         ))}
         {defaultDemo ? (
           <Route
             path="/"
-            render={() => (
+            element={
               <PageSection id={`/${defaultDemo.id}-page-section`}>
                 {React.createElement(defaultDemo.componentType)}
               </PageSection>
-            )}
+            }
             key={defaultDemo.id}
           />
         ) : null}
-      </Switch>
+      </Routes>
     );
   };
 

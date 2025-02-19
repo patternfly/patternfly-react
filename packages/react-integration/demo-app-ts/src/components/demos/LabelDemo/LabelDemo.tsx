@@ -1,7 +1,6 @@
 import { Label } from '@patternfly/react-core';
 import { Component } from 'react';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
-import { Link } from 'react-router-dom';
 
 export class LabelDemo extends Component {
   componentDidMount() {
@@ -56,19 +55,6 @@ export class LabelDemo extends Component {
         <Label isCompact>Compact</Label>
         <Label id="overflow-label" variant="overflow">
           Overflow label
-        </Label>
-        <Label
-          id="router-link"
-          color="blue"
-          icon={<InfoCircleIcon />}
-          textMaxWidth="100px"
-          render={({ className, content, componentRef }) => (
-            <Link to="/" className={className} innerRef={componentRef}>
-              {content}
-            </Link>
-          )}
-        >
-          Blue label fake router link with icon that overflows
         </Label>
         <Label
           color="blue"
