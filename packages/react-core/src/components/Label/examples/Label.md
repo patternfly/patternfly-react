@@ -30,7 +30,9 @@ import './Label.css';
 
 ```
 
-### Label with router link
+### Label with custom render
+
+Labels may be passed a custom renderer to display customized content or for use with router components.
 
 ```ts file="LabelRouterLink.tsx"
 

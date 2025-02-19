@@ -31,6 +31,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   isDisabled?: boolean;
   /** Flag indicating the label is editable. */
   isEditable?: boolean;
+  /** Flag indicating the label is clickable. This flag will automatically be set if a href is passed, or if an onClick handler is passed and the label is not an overflow or add variant. */
+  isClickable?: boolean;
   /** Additional props passed to the editable label text div. Optionally passing onInput and onBlur callbacks will allow finer custom text input control. */
   editableProps?: any;
   /** Callback when an editable label completes an edit. */
@@ -110,6 +112,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   isCompact = false,
   isDisabled = false,
   isEditable = false,
+  isClickable: isClickableProp = false,
   editableProps,
   textMaxWidth,
   tooltipPosition,
@@ -132,7 +135,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 
   const isOverflowLabel = variant === 'overflow';
   const isAddLabel = variant === 'add';
-  const isClickable = (onLabelClick && !isOverflowLabel && !isAddLabel) || href;
+  const isClickable = isClickableProp || (onLabelClick && !isOverflowLabel && !isAddLabel) || href;
 
   let _icon;
   if (status) {
