@@ -14,7 +14,6 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-i
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import { Link } from '@reach/router';
 
 ## Examples
 
@@ -86,13 +85,6 @@ Inline links should use `component="span"` and the `isInline` property to wrap i
 ```ts file="./ButtonInlineSpanLink.tsx"
 ```
 
-### Router link
-
-Router links can be used for in-app linking in React environments to prevent page reloading.
-
-```ts file="./ButtonRouterLink.tsx"
-```
-
 ### Aria-disabled examples
 
 [Accessible Rich Internet Applications (ARIA)](https://www.w3.org/WAI/standards-guidelines/aria/) is a set of roles and attributes specified by the World Wide Web Consortium. ARIA defines ways to make web content and web applications more accessible to people with disabilities.
@@ -123,4 +115,14 @@ To display a plain/icon button inline with text, use `noPadding` prop in additio
 Stateful buttons are ideal for displaying the state of notifications. Use `variant="stateful"` alongside with the `state` property, which can have these 3 values: `read`, `unread` (used as default) and `attention` (which means unread and requires attention).
 
 ```ts file="./ButtonStateful.tsx"
+```
+
+## Using router links
+
+Router links can be used for in-app linking in React environments to prevent page reloading. To use a `Link` component from a router package, you can pass a callback to the `component` property of the `Button`:
+
+```nolive
+<Button variant="link" component={(props: any) => <Link {...props} to="#" />}>
+  Router link
+</Button>
 ```
