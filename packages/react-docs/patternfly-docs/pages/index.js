@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars, no-restricted-imports
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react';
 import { PageSection } from '@patternfly/react-core/dist/esm/components/Page/PageSection';
 import { Title } from '@patternfly/react-core/dist/esm/components/Title';

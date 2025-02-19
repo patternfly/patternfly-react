@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars, no-restricted-imports
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react';
 import { Content } from '@patternfly/react-core/dist/esm/components/Content';
 import { Grid, GridItem } from '@patternfly/react-core/dist/esm/layouts/Grid';
