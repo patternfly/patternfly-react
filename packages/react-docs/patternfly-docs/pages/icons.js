@@ -1,3 +1,4 @@
+import React from 'react';
 import { Content } from '@patternfly/react-core/dist/esm/components/Content';
 import { Grid, GridItem } from '@patternfly/react-core/dist/esm/layouts/Grid';
 import { PageSection } from '@patternfly/react-core/dist/esm/components/Page/PageSection';
