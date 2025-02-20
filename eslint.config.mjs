@@ -4,7 +4,7 @@ import patternflyReact from 'eslint-plugin-patternfly-react';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import reactCompiler from 'eslint-plugin-react-compiler';
 import reactHooks from 'eslint-plugin-react-hooks';
-import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
+import react from 'eslint-plugin-react';
 import testingLibrary from 'eslint-plugin-testing-library';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -23,7 +23,8 @@ export default [
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
-  reactRecommended,
+  react.configs.flat.recommended,
+  react.configs.flat['jsx-runtime'],
   eslintPluginPrettierRecommended,
   {
     plugins: {
@@ -98,6 +99,18 @@ export default [
       'no-eval': 'error',
       'no-new-wrappers': 'error',
       'no-prototype-builtins': 'off',
+      'no-restricted-imports': [
+        'warn',
+        {
+          paths: [
+            {
+              name: 'react',
+              importNames: ['default'],
+              message: 'Please use named imports when importing from React.'
+            }
+          ]
+        }
+      ],
       'no-shadow': 'off',
       'no-throw-literal': 'error',
       'no-trailing-spaces': 'off',

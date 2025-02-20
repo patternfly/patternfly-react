@@ -1,4 +1,3 @@
-import React from 'react';
 import { MenuItemProps } from '../MenuItem';
 
 export const MenuItem = ({ className, children, description, itemId }: MenuItemProps) => (

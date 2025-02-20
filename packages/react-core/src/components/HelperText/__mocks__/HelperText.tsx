@@ -1,4 +1,3 @@
-import React from 'react';
 import { HelperTextProps } from '../';
 
 export const HelperText = ({ children, isLiveRegion }: HelperTextProps) => (
