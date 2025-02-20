@@ -4922,13 +4922,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/history@npm:^4.7.11":
-  version: 4.7.11
-  resolution: "@types/history@npm:4.7.11"
-  checksum: 10c0/3facf37c2493d1f92b2e93a22cac7ea70b06351c2ab9aaceaa3c56aa6099fb63516f6c4ec1616deb5c56b4093c026a043ea2d3373e6c0644d55710364d02c934
-  languageName: node
-  linkType: hard
-
 "@types/html-minifier-terser@npm:^6.0.0":
   version: 6.1.0
   resolution: "@types/html-minifier-terser@npm:6.1.0"
@@ -5155,37 +5148,6 @@ __metadata:
   peerDependencies:
     "@types/react": ^18.0.0
   checksum: 10c0/b163d35a6b32a79f5782574a7aeb12a31a647e248792bf437e6d596e2676961c394c5e3c6e91d1ce44ae90441dbaf93158efb4f051c0d61e2612f1cb04ce4faa
-  languageName: node
-  linkType: hard
-
-"@types/react-router-dom@npm:^5.3.3":
-  version: 5.3.3
-  resolution: "@types/react-router-dom@npm:5.3.3"
-  dependencies:
-    "@types/history": "npm:^4.7.11"
-    "@types/react": "npm:*"
-    "@types/react-router": "npm:*"
-  checksum: 10c0/a9231a16afb9ed5142678147eafec9d48582809295754fb60946e29fcd3757a4c7a3180fa94b45763e4c7f6e3f02379e2fcb8dd986db479dcab40eff5fc62a91
-  languageName: node
-  linkType: hard
-
-"@types/react-router@npm:*, @types/react-router@npm:^5.1.20":
-  version: 5.1.20
-  resolution: "@types/react-router@npm:5.1.20"
-  dependencies:
-    "@types/history": "npm:^4.7.11"
-    "@types/react": "npm:*"
-  checksum: 10c0/1f7eee61981d2f807fa01a34a0ef98ebc0774023832b6611a69c7f28fdff01de5a38cabf399f32e376bf8099dcb7afaf724775bea9d38870224492bea4cb5737
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:*":
-  version: 18.3.3
-  resolution: "@types/react@npm:18.3.3"
-  dependencies:
-    "@types/prop-types": "npm:*"
-    csstype: "npm:^3.0.2"
-  checksum: 10c0/fe455f805c5da13b89964c3d68060cebd43e73ec15001a68b34634604a78140e6fc202f3f61679b9d809dde6d7a7c2cb3ed51e0fd1462557911db09879b55114
   languageName: node
   linkType: hard
 
@@ -9141,8 +9103,6 @@ __metadata:
   resolution: "demo-app-ts@workspace:packages/react-integration/demo-app-ts"
   dependencies:
     "@patternfly/react-core": "workspace:^"
-    "@types/react-router": "npm:^5.1.20"
-    "@types/react-router-dom": "npm:^5.3.3"
     "@vitejs/plugin-react-swc": "npm:^3.8.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
