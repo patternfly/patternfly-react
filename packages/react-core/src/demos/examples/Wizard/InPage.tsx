@@ -5,7 +5,7 @@ import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrap
 export const WizardFullPage: React.FunctionComponent = () => (
   <React.Fragment>
     <DashboardWrapper hasPageTemplateTitle>
-      <PageSection type={PageSectionTypes.wizard}>
+      <PageSection hasBodyWrapper={false} type={PageSectionTypes.wizard}>
         <Wizard>
           <WizardStep name="Information" id="wizard-step-1">
             <p>Step 1 content</p>

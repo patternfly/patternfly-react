@@ -4,7 +4,6 @@ import {
   Drawer,
   DrawerContent,
   DrawerPanelContent,
-  DrawerColorVariant,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -38,7 +37,7 @@ export const WizardModalWithDrawerDemo: React.FunctionComponent = () => {
     <Drawer isInline isExpanded={isDrawerExpanded} onExpand={onExpand}>
       <DrawerContent
         panelContent={
-          <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.secondary}>
+          <DrawerPanelContent widths={{ default: 'width_33' }}>
             <DrawerHead>
               <span tabIndex={isDrawerExpanded ? 0 : -1} ref={drawerRef}>
                 Drawer content: {stepName}
@@ -86,7 +85,6 @@ export const WizardModalWithDrawerDemo: React.FunctionComponent = () => {
             descriptionId="wiz-modal-demo-description"
           />
         }
-        height={400}
       >
         <WizardStep body={{ hasNoPadding: true }} name="Information" id="wizard-step-1">
           {createStepContentWithDrawer('Information step')}
