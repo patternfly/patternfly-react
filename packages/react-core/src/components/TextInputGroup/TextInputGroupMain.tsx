@@ -57,6 +57,8 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
   'aria-controls'?: string;
   /** The id of the input element */
   inputId?: string;
+  /** Additional props to spread to the input element. */
+  inputProps?: any;
 }
 
 const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> = ({
@@ -78,6 +80,7 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
   isExpanded,
   'aria-controls': ariaControls,
   inputId,
+  inputProps,
   ...props
 }: TextInputGroupMainProps) => {
   const { isDisabled, validated } = React.useContext(TextInputGroupContext);
@@ -121,6 +124,7 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
           {...(role && { role })}
           {...(isExpanded !== undefined && { 'aria-expanded': isExpanded })}
           {...(ariaControls && { 'aria-controls': ariaControls })}
+          {...inputProps}
         />
         {validated && <TextInputGroupIcon isStatus>{<StatusIcon />}</TextInputGroupIcon>}
       </span>

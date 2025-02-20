@@ -275,3 +275,8 @@ test('Utilities are rendered when areUtilitiesDisplayed is set', () => {
   render(<SearchInput {...props} areUtilitiesDisplayed resetButtonLabel="test-util-display" />);
   expect(screen.getByLabelText('test-util-display')).toBeVisible();
 });
+
+test('Additional props are spread when inputProps prop is passed', () => {
+  render(<SearchInput aria-label="Test input" inputProps={{ autofocus: 'true' }} />);
+  expect(screen.getByLabelText('Test input')).toHaveAttribute('autofocus', 'true');
+});

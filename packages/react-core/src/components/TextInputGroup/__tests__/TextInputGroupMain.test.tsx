@@ -317,6 +317,11 @@ describe('TextInputGroupMain', () => {
     expect(onBlurMock).toHaveBeenCalledTimes(1);
   });
 
+  test('Additional props are spread when inputProps prop is passed', () => {
+    render(<TextInputGroupMain aria-label="Test input" inputProps={{ autofocus: 'true' }} />);
+    expect(screen.getByLabelText('Test input')).toHaveAttribute('autofocus', 'true');
+  });
+
   it('matches the snapshot', () => {
     const { asFragment } = render(<TextInputGroupMain>Test</TextInputGroupMain>);
 
