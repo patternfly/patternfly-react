@@ -282,8 +282,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
     shortcutsPopoverButtonText: 'View Shortcuts',
     shortcutsPopoverProps: {
       bodyContent: '',
-      'aria-label': 'Keyboard Shortcuts',
-      ...Popover.defaultProps
+      'aria-label': 'Keyboard Shortcuts'
     },
     showEditor: true,
     options: {},

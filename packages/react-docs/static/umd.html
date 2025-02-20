@@ -33,7 +33,7 @@
     @patternfly/react-core exposes a "PatternFlyReact" object for use in your like-button.js. Populate your like-button.js with something like:
     <pre>
       'use strict';
-
+      import { createRoot } from 'react-dom/client';
       const e = React.createElement;
 
       class LikeButton extends React.Component {
@@ -61,7 +61,8 @@
 
 
       const domContainer = document.querySelector('#react-root');
-      ReactDOM.render(e(LikeButton), domContainer);
+      const root = createRoot(domContainer);
+      root.render(e(LikeButton));
     </pre>
   </p>
   <h2 class="pf-c-title pf-m-2xl">3. (Optional) Include styles</h2>
