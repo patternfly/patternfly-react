@@ -179,7 +179,7 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
             <p>A demo of a wizard in a page.</p>
           </Content>
         </PageSection>
-        <PageSection type={PageSectionTypes.wizard}>
+        <PageSection hasBodyWrapper={false} type={PageSectionTypes.wizard}>
           <Wizard>
             <WizardStep body={{ hasNoPadding: true }} name="Information" id="wizard-step-1">
               {createStepContentWithDrawer('Information step')}
