@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.19...@patternfly/react-core@6.2.0-prerelease.20) (2025-02-20)
+
+### Bug Fixes
+
+- **deps:** update dependency @patternfly/patternfly to v6.2.0-prerelease.7 ([#11543](https://github.com/patternfly/patternfly-react/issues/11543)) ([1779da2](https://github.com/patternfly/patternfly-react/commit/1779da23c863dfc7637ad68d3e266253d77569e9))
+- **FileUpload:** hid input of type file from AT ([#11438](https://github.com/patternfly/patternfly-react/issues/11438)) ([9b41c4f](https://github.com/patternfly/patternfly-react/commit/9b41c4fcc72b3ade937dddf144bb387b9866cb95))
+- **SearchInput:** allowed spreading of props to input element ([#11540](https://github.com/patternfly/patternfly-react/issues/11540)) ([1c787a8](https://github.com/patternfly/patternfly-react/commit/1c787a8122e6e125c1bf4bb30793245856edf383))
+
 # [6.2.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.18...@patternfly/react-core@6.2.0-prerelease.19) (2025-02-14)
 
 ### Bug Fixes

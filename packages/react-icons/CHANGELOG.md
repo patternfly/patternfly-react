@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.2.0-prerelease.3...@patternfly/react-icons@6.2.0-prerelease.4) (2025-02-20)
+
+### Bug Fixes
+
+- **deps:** update dependency @patternfly/patternfly to v6.2.0-prerelease.7 ([#11543](https://github.com/patternfly/patternfly-react/issues/11543)) ([1779da2](https://github.com/patternfly/patternfly-react/commit/1779da23c863dfc7637ad68d3e266253d77569e9))
+
 # [6.2.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.2.0-prerelease.2...@patternfly/react-icons@6.2.0-prerelease.3) (2025-02-14)
 
 ### Bug Fixes
