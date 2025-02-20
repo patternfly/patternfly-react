@@ -59,6 +59,11 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
   const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
   const [isContextSelectorOpen, setIsContextSelectorOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(1);
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
+
+  const onSidebarToggle = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
@@ -225,7 +230,12 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
     <Masthead>
       <MastheadMain>
         <MastheadToggle>
-          <PageToggleButton variant="plain" aria-label="Global navigation">
+          <PageToggleButton
+            variant="plain"
+            aria-label="Global navigation"
+            isSidebarOpen={isSidebarOpen}
+            onSidebarToggle={onSidebarToggle}
+          >
             <BarsIcon />
           </PageToggleButton>
         </MastheadToggle>
@@ -267,7 +277,13 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
       onSelect={onContextSelectorSelect}
       onOpenChange={(isOpen: boolean) => setIsContextSelectorOpen(isOpen)}
       toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-        <MenuToggle ref={toggleRef} onClick={onContextSelectorToggle} isExpanded={isContextSelectorOpen} isFullWidth>
+        <MenuToggle
+          tabIndex={isSidebarOpen ? undefined : -1}
+          ref={toggleRef}
+          onClick={onContextSelectorToggle}
+          isExpanded={isContextSelectorOpen}
+          isFullWidth
+        >
           Developer
         </MenuToggle>
       )}
@@ -277,7 +293,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
   );
 
   const sidebar = (
-    <PageSidebar>
+    <PageSidebar isSidebarOpen={isSidebarOpen}>
       <PageSidebarBody isContextSelector>{pageContextSelector}</PageSidebarBody>
       <PageSidebarBody>{pageNav}</PageSidebarBody>
     </PageSidebar>
@@ -304,7 +320,6 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
     <Page
       masthead={masthead}
       sidebar={sidebar}
-      isManagedSidebar
       skipToContent={pageSkipToContent}
       breadcrumb={dashboardBreadcrumb}
       mainContainerId={mainContainerId}

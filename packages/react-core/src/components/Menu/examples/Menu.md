@@ -229,3 +229,15 @@ To control the height of a menu, use the `maxMenuHeight` property. Selecting the
 ```ts file="MenuFilterDrilldown.tsx"
 
 ```
+
+## Using router links
+
+Router links can be used for in-app linking in React environments to prevent page reloading. To use a `Link` component from a router package, you can pass a callback to the `component` property of the `MenuItem`:
+
+```nolive
+<MenuItem
+  component={(props) => <Link {...props} to="#" />}
+>
+  {...Link Content}
+</MenuItem>
+```

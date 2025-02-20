@@ -49,7 +49,6 @@ import {
   SearchInput,
   Tooltip
 } from '@patternfly/react-core';
-import { Link } from '@reach/router';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
@@ -185,9 +184,10 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
           itemId="2"
           id="2"
           isFavorited={favorites.includes('2')}
-          component={(props) => <Link {...props} to="#router-link" />}
+          to="#default-link3"
+          onClick={(ev) => ev.preventDefault()}
         >
-          @reach/router Link
+          Application 3
         </MenuItem>
         <MenuItem
           itemId="3"
@@ -195,17 +195,18 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
           isFavorited={favorites.includes('3')}
           isExternalLink
           icon={<img src={pfIcon} />}
-          component={(props) => <Link {...props} to="#router-link2" />}
+          to="#default-link4"
+          onClick={(ev) => ev.preventDefault()}
         >
-          @reach/router Link with icon
+          Application 4 with icon
         </MenuItem>
       </MenuList>
     </MenuGroup>,
     <Divider key="group2-divider" />,
     <MenuList key="other-items">
       <MenuItem key="tooltip-app" isFavorited={favorites.includes('4')} itemId="4" id="4">
-        <Tooltip content={<div>Launch Application 3</div>} position="right">
-          <span>Application 3 with tooltip</span>
+        <Tooltip content={<div>Launch Application 4</div>} position="right">
+          <span>Application 4 with tooltip</span>
         </Tooltip>
       </MenuItem>
       <MenuItem key="disabled-app" itemId="5" id="5" isDisabled>

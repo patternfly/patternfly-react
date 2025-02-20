@@ -13,7 +13,6 @@ import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfIcon from './assets/pf-logo-small.svg';
 import pfLogo from './assets/PF-HorizontalLogo-Color.svg';
-import { Link } from '@reach/router';
 
 ## Demos
 

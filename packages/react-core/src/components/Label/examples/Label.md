@@ -7,7 +7,6 @@ propComponents: ['Label', 'LabelGroup']
 
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
-import { Link } from '@reach/router';
 import './Label.css';
 
 ## Examples
@@ -27,12 +26,6 @@ import './Label.css';
 ### Compact labels
 
 ```ts file="LabelCompact.tsx"
-
-```
-
-### Label with router link
-
-```ts file="LabelRouterLink.tsx"
 
 ```
 
@@ -96,4 +89,20 @@ The contents of a label group can be modified by removing labels or adding new o
 
 ```ts file="LabelGroupEditableAdd.tsx"
 
+```
+
+## Using router links
+
+Router links can be used for in-app linking in React environments to prevent page reloading. To use a `Link` component from a router package, you can use the `render` property of the `Label`:
+
+```nolive
+<Label
+  render={({ className, content, componentRef }) => (
+    <Link to="/" className={className} innerRef={componentRef}>
+      {content}
+    </Link>
+  )}
+>
+  Label router link
+</Label>
 ```
