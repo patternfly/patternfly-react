@@ -30,9 +30,11 @@ import './Label.css';
 
 ```
 
-### Label with router link
+### Label with custom render
 
-```ts file="LabelRouterLink.tsx"
+Labels may be passed a custom renderer to display customized content or for use with router components. When using a custom render, `isClickable` may also be passed to remove the underline text decoration of anchors or router links.
+
+```ts file="LabelCustomRender.tsx"
 
 ```
 
