@@ -1,4 +1,4 @@
-import React, { type JSX } from 'react';
+import React, { JSX } from 'react';
 import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextInput } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
@@ -102,7 +102,7 @@ export const PasswordStrengthDemo: React.FunctionComponent = () => {
       >
         <TextInput
           isRequired
-          type="text"
+          type="password"
           id="password-field"
           name="password-field"
           aria-describedby="password-field-helper"

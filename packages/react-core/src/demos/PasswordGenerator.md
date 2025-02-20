@@ -1,6 +1,6 @@
 ---
 id: Password generator
-section: components
+section: patterns
 ---
 
 import RedoIcon from '@patternfly/react-icons/dist/esm/icons/redo-icon';
