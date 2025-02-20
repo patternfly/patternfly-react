@@ -85,6 +85,13 @@ Inline links should use `component="span"` and the `isInline` property to wrap i
 ```ts file="./ButtonInlineSpanLink.tsx"
 ```
 
+### Custom component
+
+In addition to being able to pass a string to the `component` property, you can provide more fine-tuned customization by passing a callback that returns a component.
+
+```ts file="./ButtonCustomComponent.tsx"
+```
+
 ### Aria-disabled examples
 
 [Accessible Rich Internet Applications (ARIA)](https://www.w3.org/WAI/standards-guidelines/aria/) is a set of roles and attributes specified by the World Wide Web Consortium. ARIA defines ways to make web content and web applications more accessible to people with disabilities.
@@ -119,7 +126,7 @@ Stateful buttons are ideal for displaying the state of notifications. Use `varia
 
 ## Using router links
 
-Router links can be used for in-app linking in React environments to prevent page reloading. To use a `Link` component from a router package, you can pass a callback to the `component` property of the `Button`:
+Router links can be used for in-app linking in React environments to prevent page reloading. To use a `Link` component from a router package, you can follow our [custom component example](#custom-component) and pass a callback to the `component` property of the `Button`:
 
 ```nolive
 <Button variant="link" component={(props: any) => <Link {...props} to="#" />}>
