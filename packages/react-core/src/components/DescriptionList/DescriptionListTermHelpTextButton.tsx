@@ -13,15 +13,33 @@ export const DescriptionListTermHelpTextButton: React.FunctionComponent<Descript
   children,
   className,
   ...props
-}: DescriptionListTermHelpTextButtonProps) => (
-  <span
-    className={css(className, styles.descriptionListText, styles.modifiers.helpText)}
-    role="button"
-    type="button"
-    tabIndex={0}
-    {...props}
-  >
-    {children}
-  </span>
-);
+}: DescriptionListTermHelpTextButtonProps) => {
+  const helpTextRef = React.createRef<HTMLSpanElement>();
+
+  const handleKeys = (event: React.KeyboardEvent<HTMLSpanElement>) => {
+    if (!helpTextRef.current || helpTextRef.current !== (event.target as HTMLElement)) {
+      return;
+    }
+
+    const key = event.key;
+    if (key === 'Enter' || key === ' ') {
+      event.preventDefault();
+      helpTextRef.current.click();
+    }
+  };
+
+  return (
+    <span
+      ref={helpTextRef}
+      className={css(className, styles.descriptionListText, styles.modifiers.helpText)}
+      role="button"
+      type="button"
+      tabIndex={0}
+      onKeyDown={(event) => handleKeys(event)}
+      {...props}
+    >
+      {children}
+    </span>
+  );
+};
 DescriptionListTermHelpTextButton.displayName = 'DescriptionListTermHelpTextButton';
