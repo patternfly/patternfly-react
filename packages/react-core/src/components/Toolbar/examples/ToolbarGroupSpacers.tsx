@@ -76,7 +76,7 @@ export const ToolbarGroupSpacers: React.FunctionComponent = () => {
 
   const groupRowGapItems = (
     <Fragment>
-      <ToolbarGroup className="pf-m-wrap" rowGap={{ default: 'rowGapNone' }}>
+      <ToolbarGroup rowGap={{ default: 'rowGapNone' }} rowWrap={{ default: 'wrap' }}>
         <ToolbarItem>
           <Button variant="secondary">No Row Gap</Button>
         </ToolbarItem>
@@ -103,7 +103,7 @@ export const ToolbarGroupSpacers: React.FunctionComponent = () => {
         </ToolbarItem>
         <ToolbarItem variant="separator"></ToolbarItem>
       </ToolbarGroup>
-      <ToolbarGroup className="pf-m-wrap" rowGap={{ default: 'rowGapSm' }}>
+      <ToolbarGroup rowGap={{ default: 'rowGapSm' }} rowWrap={{ default: 'wrap' }}>
         <ToolbarItem>
           <Button variant="secondary">Small Row Gap</Button>
         </ToolbarItem>
@@ -130,7 +130,7 @@ export const ToolbarGroupSpacers: React.FunctionComponent = () => {
         </ToolbarItem>
         <ToolbarItem variant="separator"></ToolbarItem>
       </ToolbarGroup>
-      <ToolbarGroup className="pf-m-wrap" rowGap={{ default: 'rowGapXl' }}>
+      <ToolbarGroup rowGap={{ default: 'rowGapXl' }} rowWrap={{ default: 'wrap' }}>
         <ToolbarItem>
           <Button variant="secondary">Extra Large Row Gap</Button>
         </ToolbarItem>

@@ -10,4 +10,12 @@ describe('ToolbarItem', () => {
     );
     expect(screen.getByTestId('toolbargroup')).toHaveClass('pf-m-overflow-container');
   });
+  it('should render with pf-m-wrap when rowWrap is set', () => {
+    render(
+      <ToolbarGroup data-testid="toolbargroup" rowWrap={{ default: 'wrap' }}>
+        Test
+      </ToolbarGroup>
+    );
+    expect(screen.getByTestId('toolbargroup')).toHaveClass('pf-m-wrap');
+  });
 });

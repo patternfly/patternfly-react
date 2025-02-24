@@ -5,7 +5,7 @@ import { Button } from '@patternfly/react-core';
 export const ToolbarItemSpacers: React.FunctionComponent = () => {
   const itemGapItems = (
     <Fragment>
-      <ToolbarGroup className="pf-m-wrap">
+      <ToolbarGroup rowWrap={{ default: 'wrap' }}>
         <ToolbarItem gap={{ default: 'gapNone' }}>
           <Button variant="secondary">No Gap</Button>
           <Button variant="secondary">No Gap</Button>
@@ -26,7 +26,7 @@ export const ToolbarItemSpacers: React.FunctionComponent = () => {
 
   const itemColumnGapItems = (
     <Fragment>
-      <ToolbarGroup className="pf-m-wrap">
+      <ToolbarGroup rowWrap={{ default: 'wrap' }}>
         <ToolbarItem columnGap={{ default: 'columnGapNone' }}>
           <Button variant="secondary">No Column Gap</Button>
           <Button variant="secondary">No Column Gap</Button>
@@ -48,17 +48,17 @@ export const ToolbarItemSpacers: React.FunctionComponent = () => {
   const itemRowGapItems = (
     <Fragment>
       <ToolbarGroup>
-        <ToolbarItem className="pf-m-wrap" rowGap={{ default: 'rowGapNone' }}>
+        <ToolbarItem rowGap={{ default: 'rowGapNone' }} rowWrap={{ default: 'wrap' }}>
           <Button variant="secondary">No Row Gap</Button>
           <Button variant="secondary">No Row Gap</Button>
         </ToolbarItem>
         <ToolbarItem variant="separator"></ToolbarItem>
-        <ToolbarItem className="pf-m-wrap" rowGap={{ default: 'rowGapSm' }}>
+        <ToolbarItem rowGap={{ default: 'rowGapSm' }} rowWrap={{ default: 'wrap' }}>
           <Button variant="secondary">Small Row Gap</Button>
           <Button variant="secondary">Small Row Gap</Button>
         </ToolbarItem>
         <ToolbarItem variant="separator"></ToolbarItem>
-        <ToolbarItem className="pf-m-wrap" rowGap={{ default: 'rowGapXl' }}>
+        <ToolbarItem rowGap={{ default: 'rowGapXl' }} rowWrap={{ default: 'wrap' }}>
           <Button variant="secondary">Extra Large Row Gap</Button>
           <Button variant="secondary">Extra Large Row Gap</Button>
         </ToolbarItem>
