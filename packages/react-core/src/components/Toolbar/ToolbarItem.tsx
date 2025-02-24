@@ -152,6 +152,15 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
       | 'rowGap_3xl'
       | 'rowGap_4xl';
   };
+  /** Value to set for row wrapping at various breakpoints */
+  rowWrap?: {
+    default?: 'wrap' | 'wrapReverse' | 'nowrap';
+    sm?: 'wrap' | 'wrapReverse' | 'nowrap';
+    md?: 'wrap' | 'wrapReverse' | 'nowrap';
+    lg?: 'wrap' | 'wrapReverse' | 'nowrap';
+    xl?: 'wrap' | 'wrapReverse' | 'nowrap';
+    '2xl'?: 'wrap' | 'wrapReverse' | 'nowrap';
+  };
   /** id for this data toolbar item */
   id?: string;
   /** Flag indicating if the expand-all variant is expanded or not */
@@ -169,6 +178,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   gap,
   columnGap,
   rowGap,
+  rowWrap,
   align,
   alignSelf,
   alignItems,
@@ -197,6 +207,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
             formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
             alignItems === 'start' && styles.modifiers.alignItemsStart,
             alignItems === 'center' && styles.modifiers.alignItemsCenter,
             alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,
