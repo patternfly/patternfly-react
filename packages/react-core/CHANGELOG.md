@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.13...@patternfly/react-core@5.4.14) (2025-02-24)
+
+### Bug Fixes
+
+- **DescriptionList:** V5 - allow help text button popover to open via keyboard ([#11547](https://github.com/patternfly/patternfly-react/issues/11547)) ([119e796](https://github.com/patternfly/patternfly-react/commit/119e796b7a38c8353d6c3b658f96fa02e3a76cb4))
+
 ## [5.4.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@5.4.12...@patternfly/react-core@5.4.13) (2025-02-18)
 
 ### Bug Fixes
