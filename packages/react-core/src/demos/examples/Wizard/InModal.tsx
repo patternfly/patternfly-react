@@ -46,7 +46,6 @@ export const WizardInModalDemo: React.FunctionComponent = () => (
             closeButtonAriaLabel="Close wizard"
           />
         }
-        height={400}
       >
         <WizardStep name="Information" id="wizard-step-1">
           <p>Step 1 content</p>
