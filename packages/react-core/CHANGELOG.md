@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.20...@patternfly/react-core@6.2.0-prerelease.21) (2025-02-24)
+
+### Bug Fixes
+
+- **DescriptionList:** allow help text button popover to open via keyboard ([#11546](https://github.com/patternfly/patternfly-react/issues/11546)) ([4250f67](https://github.com/patternfly/patternfly-react/commit/4250f67332bbf975b22d5371fd8bf66eea8c2fe0))
+
+### Features
+
+- **Label:** allow isClickable to be set manually ([#11549](https://github.com/patternfly/patternfly-react/issues/11549)) ([a0100a0](https://github.com/patternfly/patternfly-react/commit/a0100a05b2729da8fb6922367d8ae8291b219149))
+
 # [6.2.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.19...@patternfly/react-core@6.2.0-prerelease.20) (2025-02-20)
 
 ### Bug Fixes
