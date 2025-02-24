@@ -2,9 +2,11 @@ import * as React from 'react';
 import { useState, type JSX } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
+import alertGroupStyles from '@patternfly/react-styles/css/components/Alert/alert-group';
 import { AlertIcon } from './AlertIcon';
 import { capitalize, useOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';
+import { AlertGroupContext } from './AlertGroupContext';
 import maxLines from '@patternfly/react-tokens/dist/esm/c_alert__title_max_lines';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import { AlertToggleExpandButton } from './AlertToggleExpandButton';
@@ -141,7 +143,52 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const [timedOutAnimation, setTimedOutAnimation] = useState(true);
   const [isMouseOver, setIsMouseOver] = useState<boolean | undefined>();
   const [containsFocus, setContainsFocus] = useState<boolean | undefined>();
-  const dismissed = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
+  const shouldDismiss = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
+  const [isDismissed, setIsDismissed] = React.useState(false);
+  const { hasAnimations } = React.useContext(AlertGroupContext);
+  const { offstageRight } = alertGroupStyles.modifiers;
+
+  const getParentAlertGroupItem = () => divRef.current?.closest(`.${alertGroupStyles.alertGroupItem}`);
+  React.useEffect(() => {
+    const shouldSetDismissed = shouldDismiss && !isDismissed;
+    if (shouldSetDismissed && hasAnimations) {
+      const alertGroupItem = getParentAlertGroupItem();
+      alertGroupItem?.classList.add(offstageRight);
+    }
+
+    if (shouldSetDismissed && !hasAnimations) {
+      setIsDismissed(true);
+    }
+  }, [shouldDismiss, hasAnimations, isDismissed]);
+
+  React.useEffect(() => {
+    const handleOnTransitionEnd = (event: TransitionEvent) => {
+      const prefersReducedMotion = !window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
+      const parentAlertGroupItem = getParentAlertGroupItem();
+      if (
+        parentAlertGroupItem?.contains(event.target as Node) &&
+        // If a user has no motion preference, we want to target the grid template rows transition
+        // so that the onClose is called after the "slide up" animation of other alerts finishes. Otherwise
+        // we want to target the opacity transition since no other transition with be firing.
+        ((prefersReducedMotion && event.propertyName === 'opacity') ||
+          (!prefersReducedMotion && event.propertyName === 'grid-template-rows')) &&
+        (event.target as HTMLElement).className.includes(offstageRight) &&
+        !isDismissed &&
+        shouldDismiss
+      ) {
+        setIsDismissed(true);
+      }
+    };
+
+    if (hasAnimations) {
+      window.addEventListener('transitionend', handleOnTransitionEnd);
+    }
+
+    return () => {
+      window.removeEventListener('transitionend', handleOnTransitionEnd);
+    };
+  }, [hasAnimations, shouldDismiss, isDismissed]);
+
   React.useEffect(() => {
     const calculatedTimeout = timeout === true ? 8000 : Number(timeout);
     if (calculatedTimeout > 0) {
@@ -172,8 +219,12 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     }
   }, [containsFocus, isMouseOver, timeoutAnimation]);
   React.useEffect(() => {
-    dismissed && onTimeout();
-  }, [dismissed, onTimeout]);
+    isDismissed && onTimeout();
+  }, [isDismissed, onTimeout]);
+  React.useEffect(() => {
+    const alertGroupItem = getParentAlertGroupItem();
+    setTimeout(() => alertGroupItem?.classList.remove(alertGroupStyles.modifiers.offstageTop), 0);
+  }, []);
 
   const [isExpanded, setIsExpanded] = useState(false);
   const onToggleExpand = () => {
@@ -191,7 +242,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     onMouseLeave(ev);
   };
 
-  if (dismissed) {
+  if (shouldDismiss && isDismissed) {
     return null;
   }
   const Title = (
