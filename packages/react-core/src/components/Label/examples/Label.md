@@ -29,6 +29,14 @@ import './Label.css';
 
 ```
 
+### Label with custom render
+
+Labels may be passed a custom renderer to display customized content or for use with router components. When using a custom render, `isClickable` may also be passed to remove the underline text decoration of anchors or router links.
+
+```ts file="LabelCustomRender.tsx"
+
+```
+
 ### Editable labels
 
 Click or press either enter or space to begin editing a label. After editing, click outside the label or press enter again to complete the edit. To cancel an edit, press escape.
