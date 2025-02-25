@@ -153,12 +153,12 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   };
   /** Value to set for row wrapping at various breakpoints */
   rowWrap?: {
-    default?: 'wrap' | 'wrapReverse' | 'nowrap';
-    sm?: 'wrap' | 'wrapReverse' | 'nowrap';
-    md?: 'wrap' | 'wrapReverse' | 'nowrap';
-    lg?: 'wrap' | 'wrapReverse' | 'nowrap';
-    xl?: 'wrap' | 'wrapReverse' | 'nowrap';
-    '2xl'?: 'wrap' | 'wrapReverse' | 'nowrap';
+    default?: 'wrap' | 'nowrap';
+    sm?: 'wrap' | 'nowrap';
+    md?: 'wrap' | 'nowrap';
+    lg?: 'wrap' | 'nowrap';
+    xl?: 'wrap' | 'nowrap';
+    '2xl'?: 'wrap' | 'nowrap';
   };
   /** id for this data toolbar item */
   id?: string;
