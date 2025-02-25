@@ -1,4 +1,3 @@
-import React from 'react';
 import { ButtonProps } from '../';
 
 export const Button = ({ children, variant, isInline, onClick, iconPosition, icon, ...props }: ButtonProps) => (

@@ -1,4 +1,3 @@
-import React from 'react';
 import { MenuProps } from '../Menu';
 import cssMenuMinWidth from '@patternfly/react-tokens/dist/esm/c_menu_MinWidth';
 
