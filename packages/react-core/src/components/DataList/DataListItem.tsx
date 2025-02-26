@@ -86,9 +86,7 @@ class DataListItem extends React.Component<DataListItemProps> {
                 selectedDataListItemId && isSelected && styles.modifiers.selected,
                 className
               )}
-              aria-labelledby={ariaLabelledBy}
               {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown })}
-              {...(isSelectable && isSelected && { 'aria-selected': true })}
               {...props}
             >
               {onSelectableRowChange && (
