@@ -147,4 +147,28 @@ describe('Toolbar', () => {
 
     expect(screen.getByTestId('Toolbar-test-secondary-id')).toHaveClass(styles.modifiers.secondary);
   });
+
+  it('should render ToolbarContent with pf-m-wrap when rowWrap is set to wrap', () => {
+    render(
+      <Toolbar>
+        <ToolbarContent data-testid="toolbarcontent" rowWrap={{ default: 'wrap' }}>
+          Test
+        </ToolbarContent>
+      </Toolbar>
+    );
+
+    expect(screen.getByTestId('toolbarcontent').querySelector('div')).toHaveClass('pf-m-wrap');
+  });
+
+  it('should render ToolbarContent with pf-m-nowrap when rowWrap is set to nowrap', () => {
+    render(
+      <Toolbar>
+        <ToolbarContent data-testid="toolbarcontent" rowWrap={{ default: 'nowrap' }}>
+          Test
+        </ToolbarContent>
+      </Toolbar>
+    );
+
+    expect(screen.getByTestId('toolbarcontent').querySelector('div')).toHaveClass('pf-m-nowrap');
+  });
 });

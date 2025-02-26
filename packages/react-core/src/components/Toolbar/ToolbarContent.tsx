@@ -16,6 +16,15 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
+  /** Value to set for content wrapping at various breakpoints */
+  rowWrap?: {
+    default?: 'wrap' | 'nowrap';
+    sm?: 'wrap' | 'nowrap';
+    md?: 'wrap' | 'nowrap';
+    lg?: 'wrap' | 'nowrap';
+    xl?: 'wrap' | 'nowrap';
+    '2xl'?: 'wrap' | 'nowrap';
+  };
   /** Vertical alignment of children */
   alignItems?: 'start' | 'center' | 'baseline' | 'default';
   /** Content to be rendered as children of the content row */
@@ -50,6 +59,7 @@ class ToolbarContent extends Component<ToolbarContentProps> {
       isExpanded,
       toolbarId,
       visibility,
+      rowWrap,
       alignItems,
       clearAllFilters,
       showClearFiltersButton,
@@ -95,6 +105,7 @@ class ToolbarContent extends Component<ToolbarContentProps> {
                     <div
                       className={css(
                         styles.toolbarContentSection,
+                        formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
                         alignItems === 'center' && styles.modifiers.alignItemsCenter,
                         alignItems === 'start' && styles.modifiers.alignItemsStart,
                         alignItems === 'baseline' && styles.modifiers.alignItemsBaseline
