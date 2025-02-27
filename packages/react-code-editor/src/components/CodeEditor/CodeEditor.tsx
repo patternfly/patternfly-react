@@ -23,6 +23,7 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import Dropzone, { FileRejection } from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
 import { CodeEditorControl } from './CodeEditorControl';
+import { defineThemes } from './CodeEditorTheme';
 
 export type ChangeHandler = (value: string, event: editor.IModelContentChangedEvent) => void;
 export type EditorDidMount = (editor: editor.IStandaloneCodeEditor, monaco: Monaco) => void;
@@ -153,7 +154,7 @@ export interface CodeEditorProps extends Omit<HTMLProps<HTMLDivElement>, 'onChan
   height?: string | 'sizeToFit';
   /** Flag to add copy button to code editor actions. */
   isCopyEnabled?: boolean;
-  /** Flag indicating the editor is styled using monaco's dark theme. */
+  /** Flag indicating the editor is styled using a dark theme. */
   isDarkTheme?: boolean;
   /** Flag that enables component to consume the available height of its container. If `height` prop is set to 100%, this will also become enabled. */
   isFullHeight?: boolean;
@@ -356,6 +357,7 @@ export const CodeEditor = (codeEditorProps: CodeEditorProps) => {
   }, []);
 
   const editorDidMount: EditorDidMount = (editor, monaco) => {
+    defineThemes(monaco.editor);
     // eslint-disable-next-line no-bitwise
     editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Tab, () => wrapperRef.current.focus());
     Array.from(document.getElementsByClassName('monaco-editor')).forEach((editorElement) =>
@@ -439,7 +441,7 @@ export const CodeEditor = (codeEditorProps: CodeEditorProps) => {
     minimap: {
       enabled: props.isMinimapVisible
     },
-    theme: props.isDarkTheme ? 'vs-dark' : 'vs-light',
+    theme: props.isDarkTheme ? 'pf-v6-code-editor-theme--dark' : 'pf-v6-code-editor-theme--light',
     ...props.options
   };
   const isFullHeight = props.height === '100%' ? true : props.isFullHeight;
