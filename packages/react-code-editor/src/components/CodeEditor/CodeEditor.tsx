@@ -192,17 +192,17 @@ export interface CodeEditorProps extends Omit<HTMLProps<HTMLDivElement>, 'onChan
   /** Refer to Monaco interface {monaco.editor.IEditorOverrideServices}. */
   overrideServices?: editor.IEditorOverrideServices;
   /** Text to show in the button to open the shortcut popover. */
-  shortcutsPopoverButtonText: string;
+  shortcutsPopoverButtonText?: string;
   /** Properties for the shortcut popover. */
   shortcutsPopoverProps?: PopoverProps;
   /** Flag to show the editor. */
   showEditor?: boolean;
   /** The delay before tooltip fades after code copied. */
-  toolTipCopyExitDelay: number;
+  toolTipCopyExitDelay?: number;
   /** The entry and exit delay for all tooltips. */
-  toolTipDelay: number;
+  toolTipDelay?: number;
   /** The max width of the tooltips on all button. */
-  toolTipMaxWidth: string;
+  toolTipMaxWidth?: string;
   /** The position of tooltips on all buttons. */
   toolTipPosition?:
     | TooltipPosition
