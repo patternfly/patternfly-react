@@ -6,19 +6,19 @@ export const StandaloneIconSizes: React.FunctionComponent = () => (
   <React.Fragment>
     <Icon size="sm">
       <PlusCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon size="md">
       <PlusCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon size="lg">
       <PlusCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon size="xl">
       <PlusCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon size="2xl">
       <PlusCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon size="3xl">
       <PlusCircleIcon />
     </Icon>

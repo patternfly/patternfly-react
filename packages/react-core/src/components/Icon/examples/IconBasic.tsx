@@ -9,13 +9,13 @@ export const IconBasic: React.FunctionComponent = () => (
   <React.Fragment>
     <Icon>
       <LongArrowAltDownIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon>
       <AngleRightIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon>
       <AngleDownIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon>
       <CogIcon />
     </Icon>

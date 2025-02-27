@@ -6,19 +6,19 @@ export const HeadingIconSizes: React.FunctionComponent = () => (
   <React.Fragment>
     <Icon size="headingSm">
       <PlusCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon size="headingMd">
       <PlusCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon size="headingLg">
       <PlusCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon size="headingXl">
       <PlusCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon size="heading_2xl">
       <PlusCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon size="heading_3xl">
       <PlusCircleIcon />
     </Icon>
