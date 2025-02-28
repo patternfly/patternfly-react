@@ -144,49 +144,27 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const [containsFocus, setContainsFocus] = useState<boolean | undefined>();
   const shouldDismiss = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
   const [isDismissed, setIsDismissed] = React.useState(false);
-  const { hasAnimations } = React.useContext(AlertGroupContext);
+  const { hasAnimations, updateTransitionEnd } = React.useContext(AlertGroupContext);
   const { offstageRight } = alertGroupStyles.modifiers;
 
   const getParentAlertGroupItem = () => divRef.current?.closest(`.${alertGroupStyles.alertGroupItem}`);
   useEffect(() => {
     const shouldSetDismissed = shouldDismiss && !isDismissed;
-    if (shouldSetDismissed && hasAnimations) {
-      const alertGroupItem = getParentAlertGroupItem();
-      alertGroupItem?.classList.add(offstageRight);
+    if (!shouldSetDismissed) {
+      return;
     }
 
-    if (shouldSetDismissed && !hasAnimations) {
-      setIsDismissed(true);
-    }
-  }, [shouldDismiss, hasAnimations, isDismissed]);
-
-  React.useEffect(() => {
-    const handleOnTransitionEnd = (event: TransitionEvent) => {
-      const prefersReducedMotion = !window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
-      const parentAlertGroupItem = getParentAlertGroupItem();
-      if (
-        parentAlertGroupItem?.contains(event.target as Node) &&
-        // If a user has no motion preference, we want to target the grid template rows transition
-        // so that the onClose is called after the "slide up" animation of other alerts finishes. Otherwise
-        // we want to target the opacity transition since no other transition with be firing.
-        ((prefersReducedMotion && event.propertyName === 'opacity') ||
-          (!prefersReducedMotion && event.propertyName === 'grid-template-rows')) &&
-        (event.target as HTMLElement).className.includes(offstageRight) &&
-        !isDismissed &&
-        shouldDismiss
-      ) {
-        setIsDismissed(true);
-      }
-    };
+    const alertGroupItem = getParentAlertGroupItem();
+    alertGroupItem?.classList.add(offstageRight);
 
     if (hasAnimations) {
-      window.addEventListener('transitionend', handleOnTransitionEnd);
+      updateTransitionEnd(() => {
+        setIsDismissed(true);
+      });
+    } else {
+      setIsDismissed(true);
     }
-
-    return () => {
-      window.removeEventListener('transitionend', handleOnTransitionEnd);
-    };
-  }, [hasAnimations, shouldDismiss, isDismissed]);
+  }, [shouldDismiss, isDismissed]);
 
   React.useEffect(() => {
     const calculatedTimeout = timeout === true ? 8000 : Number(timeout);

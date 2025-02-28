@@ -8,7 +8,9 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   className?: string;
   /** Alerts to be rendered in the AlertGroup */
   children?: React.ReactNode;
-  /** Flag indicating whether alerts will have animations when being added or removed from the AlertGroup. */
+  /** @beta Flag to indicate whether Alerts are animated upon rendering and being dismissed. This is intended
+   * to be set to false for testing purposes only.
+   */
   hasAnimations?: boolean;
   /** Toast notifications are positioned at the top right corner of the viewport */
   isToast?: boolean;

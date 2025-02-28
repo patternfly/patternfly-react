@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, act, waitFor, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Alert } from '../../Alert';
@@ -65,13 +65,21 @@ test('Toast Alert Group contains expected modifier class', () => {
 
   expect(screen.getByLabelText('group label')).toHaveClass('pf-m-toast');
 });
-
 test('alertgroup closes when alerts are closed', async () => {
+  window.matchMedia = (query) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(), // deprecated
+    removeListener: jest.fn(), // deprecated
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn()
+  });
   const onClose = jest.fn();
   const user = userEvent.setup();
-
   render(
-    <AlertGroup hasAnimations={false} isToast appendTo={document.body}>
+    <AlertGroup className="pf-v6-m-no-motion" isToast appendTo={document.body}>
       <Alert
         isLiveRegion
         title={'Test Alert'}
@@ -81,5 +89,6 @@ test('alertgroup closes when alerts are closed', async () => {
   );
 
   await user.click(screen.getByLabelText('Close'));
+  fireEvent.transitionEnd(screen.getByText('Test Alert').closest('.pf-v6-c-alert-group__item') as HTMLElement);
   expect(onClose).toHaveBeenCalled();
 });

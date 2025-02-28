@@ -26,47 +26,19 @@ export const AlertActionCloseButton: React.FunctionComponent<AlertActionCloseBut
   variantLabel,
   ...props
 }: AlertActionCloseButtonProps) => {
-  const [shouldDismissOnTransition, setShouldDismissOnTransition] = React.useState(false);
   const closeButtonRef = React.useRef(null);
-  const { hasAnimations } = React.useContext(AlertGroupContext);
+  const { hasAnimations, updateTransitionEnd } = React.useContext(AlertGroupContext);
   const { offstageRight } = alertGroupStyles.modifiers;
 
   const getParentAlertGroupItem = () => closeButtonRef.current?.closest(`.${alertGroupStyles.alertGroupItem}`);
   const handleOnClick = () => {
     if (hasAnimations) {
       getParentAlertGroupItem()?.classList.add(offstageRight);
-      setShouldDismissOnTransition(true);
+      updateTransitionEnd(() => onClose());
     } else {
       onClose();
     }
   };
-
-  React.useEffect(() => {
-    const handleOnTransitionEnd = (event: TransitionEvent) => {
-      const prefersReducedMotion = !window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
-      const parentAlertGroupItem = getParentAlertGroupItem();
-      if (
-        shouldDismissOnTransition &&
-        parentAlertGroupItem?.contains(event.target as Node) &&
-        // If a user has no motion preference, we want to target the grid template rows transition
-        // so that the onClose is called after the "slide up" animation of other alerts finishes. Otherwise
-        // we want to target the opacity transition since no other transition with be firing.
-        ((prefersReducedMotion && event.propertyName === 'opacity') ||
-          (!prefersReducedMotion && event.propertyName === 'grid-template-rows')) &&
-        (event.target as HTMLElement).className.includes(offstageRight)
-      ) {
-        onClose();
-      }
-    };
-
-    if (hasAnimations) {
-      window.addEventListener('transitionend', handleOnTransitionEnd);
-    }
-
-    return () => {
-      window.removeEventListener('transitionend', handleOnTransitionEnd);
-    };
-  }, [hasAnimations, shouldDismissOnTransition]);
 
   return (
     <AlertContext.Consumer>
