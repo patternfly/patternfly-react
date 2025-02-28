@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { GenerateId, PickOptional } from '../../helpers';
@@ -19,7 +19,7 @@ export interface DualListSelectorProps {
   children?: React.ReactNode;
 }
 
-class DualListSelector extends React.Component<DualListSelectorProps> {
+class DualListSelector extends Component<DualListSelectorProps> {
   static displayName = 'DualListSelector';
   static defaultProps: PickOptional<DualListSelectorProps> = {
     children: '',

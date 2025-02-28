@@ -1,4 +1,3 @@
-import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 import { css } from '@patternfly/react-styles';
 

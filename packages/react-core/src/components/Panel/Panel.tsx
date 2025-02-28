@@ -1,4 +1,5 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
+
 import styles from '@patternfly/react-styles/css/components/Panel/panel';
 import { css } from '@patternfly/react-styles';
 
@@ -37,7 +38,5 @@ const PanelBase: React.FunctionComponent<PanelProps> = ({
   </div>
 );
 
-export const Panel = React.forwardRef((props: PanelProps, ref: React.Ref<any>) => (
-  <PanelBase innerRef={ref} {...props} />
-));
+export const Panel = forwardRef((props: PanelProps, ref: React.Ref<any>) => <PanelBase innerRef={ref} {...props} />);
 Panel.displayName = 'Panel';

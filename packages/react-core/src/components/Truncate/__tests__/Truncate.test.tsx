@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Truncate } from '../Truncate';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';

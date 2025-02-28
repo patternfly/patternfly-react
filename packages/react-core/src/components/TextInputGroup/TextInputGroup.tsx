@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 import { css } from '@patternfly/react-styles';
 
@@ -17,7 +17,7 @@ export interface TextInputGroupProps extends React.HTMLProps<HTMLDivElement> {
   innerRef?: React.RefObject<any>;
 }
 
-export const TextInputGroupContext = React.createContext<Partial<TextInputGroupProps>>({
+export const TextInputGroupContext = createContext<Partial<TextInputGroupProps>>({
   isDisabled: false
 });
 
@@ -30,7 +30,7 @@ export const TextInputGroup: React.FunctionComponent<TextInputGroupProps> = ({
   innerRef,
   ...props
 }: TextInputGroupProps) => {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const textInputGroupRef = innerRef || ref;
 
   return (

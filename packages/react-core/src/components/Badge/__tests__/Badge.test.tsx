@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Badge } from '../Badge';
 import styles from '@patternfly/react-styles/css/components/Badge/badge';

@@ -2,6 +2,7 @@
   "compilerOptions": {
     "assumeChangesOnlyAffectDirectDependencies": true,
     "jsx": "react-jsx",
+    "jsxImportSource": "react",
     "lib": [
       "es2015",
       "dom"

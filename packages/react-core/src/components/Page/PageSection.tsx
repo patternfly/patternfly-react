@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext, useEffect } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
@@ -102,9 +102,9 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   hasBodyWrapper = true,
   ...props
 }: PageSectionProps) => {
-  const { height, getVerticalBreakpoint } = React.useContext(PageContext);
+  const { height, getVerticalBreakpoint } = useContext(PageContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (hasOverflowScroll && !ariaLabel) {
       /* eslint-disable no-console */
       console.warn('PageSection: An accessible aria-label is required when hasOverflowScroll is set to true.');

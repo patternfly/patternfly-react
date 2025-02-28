@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ProgressStepper } from '../ProgressStepper';
 import styles from '@patternfly/react-styles/css/components/ProgressStepper/progress-stepper';

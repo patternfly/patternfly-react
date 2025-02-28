@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { FocusTrap } from '../../../helpers';
 import modalStyles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import bullsEyeStyles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';

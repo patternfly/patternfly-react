@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 import { css } from '@patternfly/react-styles';
 
@@ -14,7 +14,7 @@ export const DescriptionListTermHelpTextButton: React.FunctionComponent<Descript
   className,
   ...props
 }: DescriptionListTermHelpTextButtonProps) => {
-  const helpTextRef = React.createRef<HTMLSpanElement>();
+  const helpTextRef = createRef<HTMLSpanElement>();
 
   const handleKeys = (event: React.KeyboardEvent<HTMLSpanElement>) => {
     if (!helpTextRef.current || helpTextRef.current !== (event.target as HTMLElement)) {

@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { Fragment, useEffect, useState } from 'react';
 import {
   Avatar,
   Brand,
@@ -70,9 +69,9 @@ interface Translation {
 }
 
 export const PaginatedTableAction: React.FunctionComponent = () => {
-  const [translation, setTranslation] = React.useState<Translation>(translationsEn);
-  const [page, setPage] = React.useState<number>(1);
-  const [perPage, setPerPage] = React.useState<number>(10);
+  const [translation, setTranslation] = useState<Translation>(translationsEn);
+  const [page, setPage] = useState<number>(1);
+  const [perPage, setPerPage] = useState<number>(10);
 
   const columns = [
     translation.table.columns.servers,
@@ -120,9 +119,9 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
   };
 
   const rows = createRows();
-  const [managedRows, setManagedRows] = React.useState(rows);
-  const [paginatedRows, setPaginatedRows] = React.useState<Row[]>(rows.slice(0, 10));
-  const [isDirRTL, setIsDirRTL] = React.useState<boolean>(false);
+  const [managedRows, setManagedRows] = useState(rows);
+  const [paginatedRows, setPaginatedRows] = useState<Row[]>(rows.slice(0, 10));
+  const [isDirRTL, setIsDirRTL] = useState<boolean>(false);
 
   const capitalize = (input: string) => input[0].toUpperCase() + input.substring(1);
 
@@ -131,13 +130,13 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
     setTranslation((prevTranslation: string) => (prevTranslation === translationsEn ? translationsHe : translationsEn));
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const newRows = createRows();
     setManagedRows(newRows);
     setPaginatedRows(newRows.slice((page - 1) * perPage, page * perPage));
   }, [translation]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const html = document.querySelector('html');
     html.dir = isDirRTL ? 'rtl' : 'ltr';
   }, [isDirRTL]);
@@ -252,7 +251,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
   };
 
   const toolbarItems = (
-    <React.Fragment>
+    <Fragment>
       <Toolbar id="rtl-paginated-table">
         <ToolbarContent>
           <ToolbarItem>
@@ -272,7 +271,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
           <ToolbarItem variant="pagination">{renderPagination(PaginationVariant.top)}</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
-    </React.Fragment>
+    </Fragment>
   );
 
   const pageNav = (
@@ -303,9 +302,9 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
     </PageSidebar>
   );
 
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState<boolean>(false);
-  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState<boolean>(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState<boolean>(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = useState<boolean>(false);
 
   const kebabDropdownItems = (
     <>
@@ -459,7 +458,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
   const breadcrumbItemsLength = Object.keys(breadcrumbItems).length;
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page sidebar={sidebar} masthead={masthead} isManagedSidebar>
         <PageBreadcrumb>
           <Breadcrumb aria-label={translation.breadcrumbs.ariaLabel || undefined}>
@@ -526,6 +525,6 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
           </Card>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

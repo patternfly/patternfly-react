@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children, Component, createRef, Fragment } from 'react';
 import styles from '@patternfly/react-styles/css/components/Label/label-group';
 import labelStyles from '@patternfly/react-styles/css/components/Label/label';
 import { css } from '@patternfly/react-styles';
@@ -18,7 +18,7 @@ export interface LabelGroupProps extends React.HTMLProps<HTMLUListElement> {
   defaultIsOpen?: boolean;
   /** Customizable "Show Less" text string */
   expandedText?: string;
-  /** Customizeable template string. Use variable "${remaining}" for the overflow label count. */
+  /** Customizable template string. Use variable "${remaining}" for the overflow label count. */
   collapsedText?: string;
   /** Category name text for the label group category.  If this prop is supplied the label group with have a label and category styling applied */
   categoryName?: string;
@@ -67,7 +67,7 @@ interface LabelGroupState {
   isTooltipVisible: boolean;
 }
 
-class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState> {
+class LabelGroup extends Component<LabelGroupProps, LabelGroupState> {
   static displayName = 'LabelGroup';
   constructor(props: LabelGroupProps) {
     super(props);
@@ -76,7 +76,7 @@ class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState> {
       isTooltipVisible: false
     };
   }
-  private headingRef = React.createRef<HTMLSpanElement>();
+  private headingRef = createRef<HTMLSpanElement>();
 
   static defaultProps: LabelGroupProps = {
     expandedText: 'Show Less',
@@ -156,7 +156,7 @@ class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState> {
       ...rest
     } = this.props;
     const { isOpen } = this.state;
-    const renderedChildren = React.Children.toArray(children);
+    const renderedChildren = Children.toArray(children);
     const numChildren = renderedChildren.length;
     const collapsedTextResult = fillTemplate(collapsedText as string, {
       remaining: numChildren - numLabels
@@ -166,7 +166,7 @@ class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState> {
       const labelArray = !isOpen ? renderedChildren.slice(0, numLabels) : renderedChildren;
 
       const content = (
-        <React.Fragment>
+        <Fragment>
           {categoryName && this.renderLabel(id)}
           <ul
             className={css(styles.labelGroupList)}
@@ -198,7 +198,7 @@ class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState> {
               </li>
             )}
           </ul>
-        </React.Fragment>
+        </Fragment>
       );
 
       const close = (

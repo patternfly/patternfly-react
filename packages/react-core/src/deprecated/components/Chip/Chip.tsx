@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, Fragment } from 'react';
 import { TooltipPosition } from '../../../components/Tooltip';
 import { Label, LabelProps } from '../../../components/Label';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../../helpers';
@@ -43,7 +43,7 @@ export interface ChipProps extends LabelProps, OUIAProps {
   ouiaId?: number | string;
 }
 
-class Chip extends React.Component<ChipProps> {
+class Chip extends Component<ChipProps> {
   static displayName = 'Chip';
   constructor(props: ChipProps) {
     super(props);
@@ -95,7 +95,7 @@ class Chip extends React.Component<ChipProps> {
         {...props}
       >
         {children}
-        {badge && <React.Fragment> {badge}</React.Fragment>}
+        {badge && <Fragment> {badge}</Fragment>}
       </Label>
     );
   }

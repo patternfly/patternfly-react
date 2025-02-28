@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
 import { JumpLinksList } from './JumpLinksList';
@@ -29,7 +29,7 @@ export const JumpLinksItem: React.FunctionComponent<JumpLinksItemProps> = ({
   className,
   ...props
 }: JumpLinksItemProps) => {
-  const childrenArr = React.Children.toArray(children) as any[];
+  const childrenArr = Children.toArray(children) as any[];
   const sublists = childrenArr.filter((child) => child.type === JumpLinksList);
   children = childrenArr.filter((child) => child.type !== JumpLinksList);
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Icon/icon';
 import { css } from '@patternfly/react-styles';
 import { Spinner } from '../Spinner';

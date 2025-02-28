@@ -1,4 +1,5 @@
-import * as React from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 import { AccordionContext, AccordionItemContext } from './AccordionContext';
@@ -37,11 +38,11 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
   contentBodyProps,
   ...props
 }: AccordionContentProps) => {
-  const [hasScrollbar, setHasScrollbar] = React.useState(false);
-  const containerRef = React.useRef(null);
-  const { isExpanded } = React.useContext(AccordionItemContext);
+  const [hasScrollbar, setHasScrollbar] = useState(false);
+  const containerRef = useRef(null);
+  const { isExpanded } = useContext(AccordionItemContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (containerRef?.current && isFixed && isExpanded) {
       const { offsetHeight, scrollHeight } = containerRef.current;
 

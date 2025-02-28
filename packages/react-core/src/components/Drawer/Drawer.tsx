@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 
@@ -35,7 +35,7 @@ export interface DrawerContextProps {
   isInline: boolean;
 }
 
-export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
+export const DrawerContext = createContext<Partial<DrawerContextProps>>({
   isExpanded: false,
   isStatic: false,
   onExpand: () => {},
@@ -55,8 +55,8 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
   onExpand = () => {},
   ...props
 }: DrawerProps) => {
-  const drawerRef = React.useRef<HTMLDivElement>(undefined);
-  const drawerContentRef = React.useRef<HTMLDivElement>(undefined);
+  const drawerRef = useRef<HTMLDivElement>(undefined);
+  const drawerContentRef = useRef<HTMLDivElement>(undefined);
 
   return (
     <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand, position, drawerRef, drawerContentRef, isInline }}>

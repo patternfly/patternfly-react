@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { useState } from 'react';
+import { createRef, Fragment, useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Label/label';
 import labelGrpStyles from '@patternfly/react-styles/css/components/Label/label-group';
 import { Button } from '../Button';
@@ -130,8 +129,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 }: LabelProps) => {
   const [isEditableActive, setIsEditableActive] = useState<boolean>(false);
   const [currValue, setCurrValue] = useState(children);
-  const editableButtonRef = React.useRef<HTMLButtonElement>(undefined);
-  const editableInputRef = React.useRef<HTMLInputElement>(undefined);
+  const editableButtonRef = useRef<HTMLButtonElement>(undefined);
+  const editableInputRef = useRef<HTMLInputElement>(undefined);
 
   const isOverflowLabel = variant === 'overflow';
   const isAddLabel = variant === 'add';
@@ -145,7 +144,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     _icon = icon;
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener('mousedown', onDocMouseDown);
     document.addEventListener('keydown', onKeyDown);
     return () => {
@@ -154,7 +153,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     };
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (onLabelClick && href) {
       // eslint-disable-next-line no-console
       console.warn(
@@ -246,10 +245,10 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   );
 
   const closeButton = <span className={css(styles.labelActions)}>{closeBtn || defaultCloseButton}</span>;
-  const textRef = React.createRef<any>();
+  const textRef = createRef<any>();
   // ref to apply tooltip when rendered is used
-  const componentRef = React.useRef(undefined);
-  const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
+  const componentRef = useRef(undefined);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   useIsomorphicLayoutEffect(() => {
     const currTextRef = isEditable ? editableButtonRef : textRef;
     if (!isEditableActive) {
@@ -257,7 +256,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     }
   }, [isEditableActive]);
   const content = (
-    <React.Fragment>
+    <Fragment>
       {_icon && <span className={css(styles.labelIcon)}>{_icon}</span>}
       <span
         ref={textRef}
@@ -270,10 +269,10 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       >
         {children}
       </span>
-    </React.Fragment>
+    </Fragment>
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isEditableActive && editableInputRef) {
       editableInputRef.current && editableInputRef.current.focus();
     }
@@ -322,14 +321,14 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 
   if (render) {
     labelComponentChild = (
-      <React.Fragment>
+      <Fragment>
         {isTooltipVisible && <Tooltip triggerRef={componentRef} content={children} position={tooltipPosition} />}
         {render({
           className: styles.labelContent,
           content,
           componentRef
         })}
-      </React.Fragment>
+      </Fragment>
     );
   } else if (isTooltipVisible) {
     labelComponentChild = (

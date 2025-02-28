@@ -1,4 +1,3 @@
-import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/SkipToContent/skip-to-content';
 import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';

@@ -1,6 +1,5 @@
-import * as React from 'react';
-
-export const MenuContext = React.createContext<{
+import { createContext } from 'react';
+export const MenuContext = createContext<{
   menuId?: string;
   parentMenu?: string;
   onSelect?: (event?: any, itemId?: any) => void;
@@ -39,7 +38,7 @@ export const MenuContext = React.createContext<{
   role: 'menu'
 });
 
-export const MenuItemContext = React.createContext<{
+export const MenuItemContext = createContext<{
   itemId?: any;
   isDisabled?: boolean;
 }>({

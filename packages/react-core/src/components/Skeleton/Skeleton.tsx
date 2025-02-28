@@ -1,4 +1,3 @@
-import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Skeleton/skeleton';
 import { css } from '@patternfly/react-styles';
 import cssHeight from '@patternfly/react-tokens/dist/esm/c_skeleton_Height';

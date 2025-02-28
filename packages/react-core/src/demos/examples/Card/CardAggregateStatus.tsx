@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import * as React from 'react';
+import { Fragment } from 'react';
 import {
   Card,
   CardBody,
@@ -234,7 +234,7 @@ export const CardAggregateStatus: React.FunctionComponent = () => {
       return (
         <Flex display={{ default: 'inlineFlex' }}>
           {content.map(({ icon, count }, index: number) => (
-            <React.Fragment key={index}>
+            <Fragment key={index}>
               <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                 <FlexItem>{icon}</FlexItem>
                 <FlexItem>
@@ -249,7 +249,7 @@ export const CardAggregateStatus: React.FunctionComponent = () => {
                   }}
                 />
               )}
-            </React.Fragment>
+            </Fragment>
           ))}
         </Flex>
       );

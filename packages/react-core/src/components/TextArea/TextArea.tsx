@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createRef, Component, forwardRef } from 'react';
 import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
@@ -45,10 +45,10 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   innerRef?: React.RefObject<any>;
 }
 
-class TextAreaBase extends React.Component<TextAreaProps> {
+class TextAreaBase extends Component<TextAreaProps> {
   static displayName = 'TextArea';
   static defaultProps: TextAreaProps = {
-    innerRef: React.createRef<HTMLTextAreaElement>(),
+    innerRef: createRef<HTMLTextAreaElement>(),
     className: '',
     isRequired: false,
     isDisabled: false,
@@ -57,7 +57,7 @@ class TextAreaBase extends React.Component<TextAreaProps> {
     'aria-label': null as string
   };
 
-  inputRef = React.createRef<HTMLTextAreaElement>();
+  inputRef = createRef<HTMLTextAreaElement>();
 
   private setAutoHeight = (field: HTMLTextAreaElement) => {
     const parent = field.parentElement;
@@ -160,7 +160,7 @@ class TextAreaBase extends React.Component<TextAreaProps> {
   }
 }
 
-export const TextArea = React.forwardRef((props: TextAreaProps, ref: React.Ref<HTMLTextAreaElement>) => (
+export const TextArea = forwardRef((props: TextAreaProps, ref: React.Ref<HTMLTextAreaElement>) => (
   <TextAreaBase {...props} innerRef={ref as React.MutableRefObject<any>} />
 ));
 TextArea.displayName = 'TextArea';
