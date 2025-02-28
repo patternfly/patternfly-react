@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 import { ExpandableSection } from '../ExpandableSection';
@@ -34,10 +34,10 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
   'aria-label': ariaLabel,
   ...props
 }: MultipleFileUploadStatusProps) => {
-  const [icon, setIcon] = React.useState<React.ReactNode>();
-  const [isOpen, setIsOpen] = React.useState(true);
+  const [icon, setIcon] = useState<React.ReactNode>();
+  const [isOpen, setIsOpen] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     switch (statusToggleIcon) {
       case 'danger':
         setIcon(<TimesCircleIcon />);

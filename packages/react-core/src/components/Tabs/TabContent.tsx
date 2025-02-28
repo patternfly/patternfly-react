@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/TabContent/tab-content';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps } from '../../helpers';
@@ -86,6 +86,6 @@ const TabContentBase: React.FunctionComponent<TabContentProps> = ({
   return null;
 };
 
-export const TabContent = React.forwardRef((props: TabContentProps, ref: React.Ref<HTMLElement>) => (
+export const TabContent = forwardRef((props: TabContentProps, ref: React.Ref<HTMLElement>) => (
   <TabContentBase {...props} innerRef={ref} />
 ));

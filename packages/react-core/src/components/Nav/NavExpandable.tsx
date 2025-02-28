@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -15,7 +15,7 @@ export interface NavExpandableProps
   title: React.ReactNode;
   /** If defined, screen readers will read this text instead of the list title */
   srText?: string;
-  /** Boolean to programatically expand or collapse section */
+  /** Boolean to pragmatically expand or collapse section */
   isExpanded?: boolean;
   /** Anything that can be rendered inside of the expandable list */
   children?: React.ReactNode;
@@ -40,7 +40,7 @@ interface NavExpandableState {
   ouiaStateId: string;
 }
 
-class NavExpandable extends React.Component<NavExpandableProps, NavExpandableState> {
+class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
   static displayName = 'NavExpandable';
   static defaultProps: PickOptional<NavExpandableProps> = {
     srText: '',

@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { createContext } from 'react';
 
-export const DualListSelectorContext = React.createContext<{
+export const DualListSelectorContext = createContext<{
   isTree?: boolean;
 }>({ isTree: false });
 
-export const DualListSelectorListContext = React.createContext<{
+export const DualListSelectorListContext = createContext<{
   setFocusedOption?: (id: string) => void;
   isTree?: boolean;
   ariaLabelledBy?: string;
@@ -17,6 +17,6 @@ export const DualListSelectorListContext = React.createContext<{
   isDisabled?: boolean;
 }>({});
 
-export const DualListSelectorPaneContext = React.createContext<{
+export const DualListSelectorPaneContext = createContext<{
   isChosen: boolean;
 }>({ isChosen: false });

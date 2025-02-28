@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import * as ReactDOM from 'react-dom';
 import { canUseDOM } from '../../helpers';
 import { AlertGroupInline } from './AlertGroupInline';
@@ -26,7 +26,7 @@ interface AlertGroupState {
   container: HTMLElement;
 }
 
-class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState> {
+class AlertGroup extends Component<AlertGroupProps, AlertGroupState> {
   static displayName = 'AlertGroup';
   state = {
     container: undefined
@@ -64,7 +64,7 @@ class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState> {
       overflowMessage,
       'aria-label': ariaLabel,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      appendTo, // dont pass down to ul
+      appendTo, // do not pass down to ul
       ...props
     } = this.props;
     const alertGroup = (

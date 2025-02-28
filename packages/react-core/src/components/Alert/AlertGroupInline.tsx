@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert-group';
 import { AlertGroupProps } from './AlertGroup';
@@ -20,7 +20,7 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
     className={css(styles.alertGroup, className, isToast ? styles.modifiers.toast : '')}
     {...rest}
   >
-    {React.Children.toArray(children).map((alert, index) => (
+    {Children.toArray(children).map((alert, index) => (
       <li key={(alert as React.ReactElement<AlertProps>).props?.id || index}>{alert}</li>
     ))}
     {overflowMessage && (

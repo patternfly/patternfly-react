@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 
@@ -43,7 +43,7 @@ const MenuGroupBase: React.FunctionComponent<MenuGroupProps> = ({
   );
 };
 
-export const MenuGroup = React.forwardRef((props: MenuGroupProps, ref: React.Ref<HTMLElement>) => (
+export const MenuGroup = forwardRef((props: MenuGroupProps, ref: React.Ref<HTMLElement>) => (
   <MenuGroupBase {...props} innerRef={ref} />
 ));
 MenuGroup.displayName = 'MenuGroup';

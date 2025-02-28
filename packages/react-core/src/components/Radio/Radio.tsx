@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Radio/radio';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -47,7 +47,7 @@ export interface RadioProps
   ouiaSafe?: boolean;
 }
 
-class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
+class Radio extends Component<RadioProps, { ouiaStateId: string }> {
   static displayName = 'Radio';
   static defaultProps: PickOptional<RadioProps> = {
     className: '',

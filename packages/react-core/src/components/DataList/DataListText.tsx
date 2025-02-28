@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Tooltip } from '../Tooltip';
@@ -30,7 +30,7 @@ export const DataListText: React.FunctionComponent<DataListTextProps> = ({
 }: DataListTextProps) => {
   const Component = component as any;
 
-  const [tooltip, setTooltip] = React.useState('');
+  const [tooltip, setTooltip] = useState('');
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       setTooltip(tooltipProp || event.target.innerHTML);

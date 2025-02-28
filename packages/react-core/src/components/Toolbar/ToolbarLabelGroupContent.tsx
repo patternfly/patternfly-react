@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { canUseDOM } from '../../helpers/util';
@@ -33,7 +33,7 @@ export interface ToolbarLabelGroupContentProps extends React.HTMLProps<HTMLDivEl
   customLabelGroupContent?: React.ReactNode;
 }
 
-class ToolbarLabelGroupContent extends React.Component<ToolbarLabelGroupContentProps> {
+class ToolbarLabelGroupContent extends Component<ToolbarLabelGroupContentProps> {
   static displayName = 'ToolbarLabelGroupContent';
   static defaultProps: PickOptional<ToolbarLabelGroupContentProps> = {
     clearFiltersButtonText: 'Clear all filters',
