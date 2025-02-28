@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -54,7 +54,7 @@ interface CheckboxState {
   ouiaStateId: string;
 }
 
-class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
+class Checkbox extends Component<CheckboxProps, CheckboxState> {
   static displayName = 'Checkbox';
   static defaultProps: PickOptional<CheckboxProps> = {
     className: '',

@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { createContext } from 'react';
 
-export const OverflowMenuContext = React.createContext<{
+export const OverflowMenuContext = createContext<{
   isBelowBreakpoint?: boolean;
 }>({
   isBelowBreakpoint: false

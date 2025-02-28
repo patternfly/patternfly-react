@@ -1,4 +1,3 @@
-import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import defaults from 'lodash/defaults';
 import {
@@ -54,7 +53,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
    */
   className?: string;
   /**
-   * Labels that apply to an entire data series will recieve the entire series as `data` instead of an individual datum
+   * Labels that apply to an entire data series will receive the entire series as `data` instead of an individual datum
    * prop.
    */
   data?: any[];
@@ -111,7 +110,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
   /**
    * The labelPlacement prop is used to specify the placement of labels relative to the data point they represent.
    * This prop may be given as “vertical”, “parallel” or “perpendicular”. This props is particularly useful in polar
-   * charts, where it may be desireable to position a label either parallel or perpendicular to its corresponding angle.
+   * charts, where it may be desirable to position a label either parallel or perpendicular to its corresponding angle.
    * When this prop is not set, perpendicular label placement will be used for polar charts, and vertical label
    * placement will be used for cartesian charts.
    *

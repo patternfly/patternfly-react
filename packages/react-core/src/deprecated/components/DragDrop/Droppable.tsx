@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children, cloneElement } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DroppableContext } from './DroppableContext';
@@ -29,7 +29,7 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
     'data-pf-droppableid': droppableId,
     // if has no wrapper is set, don't overwrite children className with the className prop
     className:
-      hasNoWrapper && React.Children.count(children) === 1
+      hasNoWrapper && Children.count(children) === 1
         ? css(styles.droppable, className, (children as React.ReactElement<any>).props.className)
         : css(styles.droppable, className),
     ...props
@@ -38,7 +38,7 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
   return (
     <DroppableContext.Provider value={{ zone, droppableId }}>
       {hasNoWrapper ? (
-        React.cloneElement(children as React.ReactElement<any>, childProps)
+        cloneElement(children as React.ReactElement<any>, childProps)
       ) : (
         <div {...childProps}>{children}</div>
       )}

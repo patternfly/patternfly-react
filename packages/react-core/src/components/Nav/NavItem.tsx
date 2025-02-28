@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment, isValidElement, useContext, useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
 import dividerStyles from '@patternfly/react-styles/css/components/Divider/divider';
@@ -63,13 +63,13 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   icon,
   ...props
 }: NavItemProps) => {
-  const { flyoutRef, setFlyoutRef, navRef } = React.useContext(NavContext);
-  const { isSidebarOpen } = React.useContext(PageSidebarContext);
-  const [flyoutTarget, setFlyoutTarget] = React.useState(null);
-  const [isHovered, setIsHovered] = React.useState(false);
-  const ref = React.useRef<HTMLLIElement>(undefined);
+  const { flyoutRef, setFlyoutRef, navRef } = useContext(NavContext);
+  const { isSidebarOpen } = useContext(PageSidebarContext);
+  const [flyoutTarget, setFlyoutTarget] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const ref = useRef<HTMLLIElement>(undefined);
   const flyoutVisible = ref === flyoutRef;
-  const popperRef = React.useRef<HTMLDivElement>(undefined);
+  const popperRef = useRef<HTMLDivElement>(undefined);
   const hasFlyout = flyout !== undefined;
   const Component = hasFlyout ? 'button' : (component as any);
 
@@ -137,7 +137,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (hasFlyout) {
       window.addEventListener('click', onFlyoutClick);
     }
@@ -148,7 +148,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     };
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (flyoutTarget) {
       if (flyoutVisible) {
         const flyoutItems = Array.from(
@@ -201,7 +201,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   };
 
   const renderClonedChild = (context: any, child: React.ReactElement<any>): React.ReactNode =>
-    React.cloneElement(child, {
+    cloneElement(child, {
       onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
       'aria-current': isActive ? 'page' : null,
       ...(styleChildren && {
@@ -209,10 +209,10 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       }),
       tabIndex: child.props.tabIndex || tabIndex,
       children: hasFlyout ? (
-        <React.Fragment>
+        <Fragment>
           {child.props.children}
           {flyoutButton}
-        </React.Fragment>
+        </Fragment>
       ) : (
         child.props.children
       )
@@ -255,7 +255,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       >
         <NavContext.Consumer>
           {(context) =>
-            React.isValidElement(children)
+            isValidElement(children)
               ? renderClonedChild(context, children as React.ReactElement<any>)
               : renderDefaultLink(context)
           }

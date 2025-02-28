@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 
@@ -19,10 +19,10 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
 }: ModalBoxHeaderProps) => (
   <header className={css(styles.modalBoxHeader, help && styles.modifiers.help, className)} {...props}>
     {help && (
-      <React.Fragment>
+      <Fragment>
         <div className={css(styles.modalBoxHeaderMain)}>{children}</div>
         <div className={`${styles.modalBoxHeader}-help`}>{help}</div>
-      </React.Fragment>
+      </Fragment>
     )}
     {!help && children}
   </header>

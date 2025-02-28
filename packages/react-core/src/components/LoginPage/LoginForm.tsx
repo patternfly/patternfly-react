@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Form, FormGroup, ActionGroup, FormHelperText } from '../Form';
 import { TextInput } from '../TextInput';
 import { Button } from '../Button';
@@ -81,7 +81,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   onChangeRememberMe = () => undefined as any,
   ...props
 }: LoginFormProps) => {
-  const [passwordHidden, setPasswordHidden] = React.useState(true);
+  const [passwordHidden, setPasswordHidden] = useState(true);
 
   const passwordInput = (
     <TextInput

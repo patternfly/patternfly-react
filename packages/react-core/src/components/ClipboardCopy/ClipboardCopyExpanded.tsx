@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
 import { ClipboardCopyProps } from './ClipboardCopy';
@@ -11,7 +11,7 @@ export interface ClipboardCopyExpandedProps extends Omit<ClipboardCopyProps, 'on
   isCode?: boolean;
 }
 
-class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpandedProps> {
+class ClipboardCopyExpanded extends Component<ClipboardCopyExpandedProps> {
   static displayName = 'ClipboardCopyExpanded';
   constructor(props: any) {
     super(props);

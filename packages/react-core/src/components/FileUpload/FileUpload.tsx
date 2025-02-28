@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { DropzoneInputProps, DropzoneOptions, FileRejection, useDropzone, ErrorCode } from 'react-dropzone';
 import { FileUploadField, FileUploadFieldProps } from './FileUploadField';
 import { readFile, fileReaderType } from '../../helpers/fileUtils';

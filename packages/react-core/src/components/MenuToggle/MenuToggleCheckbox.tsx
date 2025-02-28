@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -33,7 +33,7 @@ export interface MenuToggleCheckboxProps
   ouiaSafe?: boolean;
 }
 
-class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps, { ouiaStateId: string }> {
+class MenuToggleCheckbox extends Component<MenuToggleCheckboxProps, { ouiaStateId: string }> {
   static displayName = 'MenuToggleCheckbox';
   static defaultProps: PickOptional<MenuToggleCheckboxProps> = {
     isValid: true,

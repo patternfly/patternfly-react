@@ -1,4 +1,5 @@
-import * as React from 'react';
+import { Children, isValidElement } from 'react';
+import { Component, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -139,10 +140,10 @@ interface TabsState {
   overflowingTabCount: number;
 }
 
-class Tabs extends React.Component<TabsProps, TabsState> {
+class Tabs extends Component<TabsProps, TabsState> {
   static displayName = 'Tabs';
-  tabList = React.createRef<HTMLUListElement>();
-  leftScrollButtonRef = React.createRef<HTMLButtonElement>();
+  tabList = createRef<HTMLUListElement>();
+  leftScrollButtonRef = createRef<HTMLButtonElement>();
   private direction = 'ltr';
   constructor(props: TabsProps) {
     super(props);
@@ -211,8 +212,8 @@ class Tabs extends React.Component<TabsProps, TabsState> {
 
     // process any tab content sections outside of the component
     if (tabContentRef) {
-      React.Children.toArray(this.props.children)
-        .filter((child): child is TabElement => React.isValidElement(child))
+      Children.toArray(this.props.children)
+        .filter((child): child is TabElement => isValidElement(child))
         .filter(({ props }) => props.tabContentRef && props.tabContentRef.current)
         .forEach((child) => (child.props.tabContentRef.current.hidden = true));
       // most recently selected tabContent
@@ -359,7 +360,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     if (
       prevProps.children &&
       children &&
-      React.Children.toArray(prevProps.children).length !== React.Children.toArray(children).length
+      Children.toArray(prevProps.children).length !== Children.toArray(children).length
     ) {
       this.handleScrollButtons();
     }
@@ -387,8 +388,8 @@ class Tabs extends React.Component<TabsProps, TabsState> {
       return null;
     }
 
-    const childrenHasTabWithActiveEventKey = React.Children.toArray(nextProps.children)
-      .filter((child): child is TabElement => React.isValidElement(child))
+    const childrenHasTabWithActiveEventKey = Children.toArray(nextProps.children)
+      .filter((child): child is TabElement => isValidElement(child))
       .some(({ props }) => props.eventKey === prevState.uncontrolledActiveKey);
 
     // if uncontrolledActiveKey is an existing eventKey of any Tab of nextProps.children --> don't update uncontrolledActiveKey
@@ -450,8 +451,8 @@ class Tabs extends React.Component<TabsProps, TabsState> {
       uncontrolledIsExpandedLocal,
       overflowingTabCount
     } = this.state;
-    const filteredChildren = React.Children.toArray(children)
-      .filter((child): child is TabElement => React.isValidElement(child))
+    const filteredChildren = Children.toArray(children)
+      .filter((child): child is TabElement => isValidElement(child))
       .filter(({ props }) => !props.isHidden);
 
     const filteredChildrenWithoutOverflow = filteredChildren.slice(0, filteredChildren.length - overflowingTabCount);

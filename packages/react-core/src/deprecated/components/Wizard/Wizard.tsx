@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef } from 'react';
 import { KeyTypes } from '../../../helpers/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
@@ -125,7 +125,7 @@ interface WizardState {
   isNavOpen: boolean;
 }
 
-class Wizard extends React.Component<WizardProps, WizardState> {
+class Wizard extends Component<WizardProps, WizardState> {
   static displayName = 'Wizard';
   private static currentId = 0;
   static defaultProps: PickOptional<WizardProps> = {
@@ -181,7 +181,7 @@ class Wizard extends React.Component<WizardProps, WizardState> {
       }
     }
 
-    this.drawerRef = React.createRef();
+    this.drawerRef = createRef();
   }
 
   private handleKeyClicks = (event: KeyboardEvent): void => {

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Spinner/spinner';
 import { css } from '@patternfly/react-styles';
 import cssDiameter from '@patternfly/react-tokens/dist/esm/c_spinner_diameter';

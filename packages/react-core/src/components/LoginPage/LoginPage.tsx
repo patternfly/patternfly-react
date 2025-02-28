@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 
 import { BackgroundImage } from '../BackgroundImage';
@@ -64,9 +64,9 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
   ...props
 }: LoginPageProps) => {
   const HeaderBrand = (
-    <React.Fragment>
+    <Fragment>
       <Brand src={brandImgSrc} alt={brandImgAlt} />
-    </React.Fragment>
+    </Fragment>
   );
   const Header = <LoginHeader headerBrand={HeaderBrand} />;
   const Footer = (
@@ -77,7 +77,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       {backgroundImgSrc && <BackgroundImage src={backgroundImgSrc} />}
       <Login header={Header} footer={Footer} className={css(className)} {...props}>
         <LoginMainHeader title={loginTitle} subtitle={loginSubtitle} headerUtilities={headerUtilities} />
@@ -91,7 +91,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
           />
         )}
       </Login>
-    </React.Fragment>
+    </Fragment>
   );
 };
 LoginPage.displayName = 'LoginPage';

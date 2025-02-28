@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { DualListSelectorTree, DualListSelectorTreeItemData } from './DualListSelectorTree';
@@ -93,8 +93,8 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   listMinHeight,
   ...props
 }: DualListSelectorPaneProps) => {
-  const [input, setInput] = React.useState('');
-  const { isTree } = React.useContext(DualListSelectorContext);
+  const [input, setInput] = useState('');
+  const { isTree } = useContext(DualListSelectorContext);
 
   // only called when search input is dynamically built
   const onChange = (e: React.FormEvent<HTMLInputElement>, newValue: string) => {

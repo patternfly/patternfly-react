@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { PanelMainBody } from '../PanelMainBody';
 import styles from '@patternfly/react-styles/css/components/Panel/panel';

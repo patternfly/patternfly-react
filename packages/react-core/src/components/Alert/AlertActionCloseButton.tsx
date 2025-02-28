@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { AlertContext } from './AlertContext';

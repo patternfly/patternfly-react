@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 import { css } from '@patternfly/react-styles';
 

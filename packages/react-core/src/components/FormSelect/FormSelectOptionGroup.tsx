@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 export interface FormSelectOptionGroupProps extends Omit<React.HTMLProps<HTMLOptGroupElement>, 'disabled'> {
   /** content rendered inside the Select Option Group */
   children?: React.ReactNode;

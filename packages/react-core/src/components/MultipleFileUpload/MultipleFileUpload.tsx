@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext } from 'react';
 import { DropzoneOptions, useDropzone } from 'react-dropzone';
 import { DropEvent } from '../../helpers/typeUtils';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
@@ -22,7 +22,7 @@ export interface MultipleFileUploadProps extends Omit<React.HTMLProps<HTMLDivEle
   onFileDrop?: (event: DropEvent, data: File[]) => void;
 }
 
-export const MultipleFileUploadContext = React.createContext({
+export const MultipleFileUploadContext = createContext({
   open: () => {}
 });
 

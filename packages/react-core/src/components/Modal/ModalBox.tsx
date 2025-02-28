@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import topSpacer from '@patternfly/react-tokens/dist/esm/c_modal_box_m_align_top_spacer';

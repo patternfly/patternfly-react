@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { KeyTypes } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css } from '@patternfly/react-styles';
@@ -279,14 +279,14 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   // const hideOnClick = true;
   const uniqueId = id || getUniqueId();
   const triggerManually = isVisible !== null;
-  const [visible, setVisible] = React.useState(false);
-  const [focusTrapActive, setFocusTrapActive] = React.useState(Boolean(propWithFocusTrap));
-  const popoverRef = React.useRef(null);
+  const [visible, setVisible] = useState(false);
+  const [focusTrapActive, setFocusTrapActive] = useState(Boolean(propWithFocusTrap));
+  const popoverRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     onMount();
   }, []);
-  React.useEffect(() => {
+  useEffect(() => {
     if (triggerManually) {
       if (isVisible) {
         show(undefined, true);

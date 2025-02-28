@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef, Fragment } from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
@@ -21,13 +21,13 @@ export interface NavListProps
   forwardScrollAriaLabel?: string;
 }
 
-class NavList extends React.Component<NavListProps> {
+class NavList extends Component<NavListProps> {
   static displayName = 'NavList';
   static contextType = NavContext;
   context!: React.ContextType<typeof NavContext>;
   static defaultProps: NavListProps = {
     backScrollAriaLabel: 'Scroll back',
-    forwardScrollAriaLabel: 'Scroll foward'
+    forwardScrollAriaLabel: 'Scroll forward'
   };
   private direction = 'ltr';
 
@@ -36,7 +36,7 @@ class NavList extends React.Component<NavListProps> {
     scrollViewAtEnd: false
   };
 
-  navList = React.createRef<HTMLUListElement>();
+  navList = createRef<HTMLUListElement>();
   observer: any = () => {};
 
   handleScrollButtons = () => {
@@ -128,7 +128,7 @@ class NavList extends React.Component<NavListProps> {
         {({ isHorizontal }) => (
           <PageSidebarContext.Consumer>
             {({ isSidebarOpen }) => (
-              <React.Fragment>
+              <Fragment>
                 {isHorizontal && (!scrollViewAtStart || !scrollViewAtEnd) && (
                   <div className={css(styles.navScrollButton)}>
                     <Button
@@ -162,7 +162,7 @@ class NavList extends React.Component<NavListProps> {
                     />
                   </div>
                 )}
-              </React.Fragment>
+              </Fragment>
             )}
           </PageSidebarContext.Consumer>
         )}

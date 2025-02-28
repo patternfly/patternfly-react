@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, forwardRef, isValidElement } from 'react';
 import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
 import { css } from '@patternfly/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
@@ -72,7 +72,7 @@ interface MenuToggleState {
   ouiaStateId: string;
 }
 
-class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
+class MenuToggleBase extends Component<MenuToggleProps, MenuToggleState> {
   displayName = 'MenuToggleBase';
   static defaultProps: MenuToggleProps = {
     className: '',
@@ -146,7 +146,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
       <>
         {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
         {isTypeahead ? children : children && <span className={css(styles.menuToggleText)}>{children}</span>}
-        {React.isValidElement(badge) && <span className={css(styles.menuToggleCount)}>{badge}</span>}
+        {isValidElement(badge) && <span className={css(styles.menuToggleCount)}>{badge}</span>}
         {isTypeahead ? (
           <button
             type="button"
@@ -234,7 +234,7 @@ class MenuToggleBase extends React.Component<MenuToggleProps, MenuToggleState> {
   }
 }
 
-export const MenuToggle = React.forwardRef((props: MenuToggleProps, ref: React.Ref<MenuToggleElement>) => (
+export const MenuToggle = forwardRef((props: MenuToggleProps, ref: React.Ref<MenuToggleElement>) => (
   <MenuToggleBase innerRef={ref} {...props} />
 ));
 

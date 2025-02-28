@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Timestamp/timestamp';
 import { css } from '@patternfly/react-styles';
 import { Tooltip } from '../Tooltip';
@@ -93,7 +93,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
   tooltip,
   ...props
 }: TimestampProps) => {
-  const [date, setDate] = React.useState(() => {
+  const [date, setDate] = useState(() => {
     const initDate = new Date(dateProp);
     if (isValidDate(initDate)) {
       return initDate;
@@ -102,7 +102,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
     return new Date();
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     const dateFromProp = new Date(dateProp);
     if (isValidDate(dateFromProp) && dateFromProp.toString() !== new Date(date).toString()) {
       setDate(dateFromProp);

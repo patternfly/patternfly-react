@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 import { ProgressContainer, ProgressMeasureLocation } from './ProgressContainer';
@@ -48,7 +48,7 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   helperText?: React.ReactNode;
 }
 
-class Progress extends React.Component<ProgressProps> {
+class Progress extends Component<ProgressProps> {
   static displayName = 'Progress';
   static defaultProps: ProgressProps = {
     className: '',

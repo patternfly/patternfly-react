@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, createRef, useEffect, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css } from '@patternfly/react-styles';
 import { TooltipContent } from './TooltipContent';
@@ -172,8 +172,8 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   const triggerOnFocus = trigger.includes('focus');
   const triggerOnClick = trigger.includes('click');
   const triggerManually = trigger === 'manual';
-  const [visible, setVisible] = React.useState(false);
-  const popperRef = React.createRef<HTMLDivElement>();
+  const [visible, setVisible] = useState(false);
+  const popperRef = createRef<HTMLDivElement>();
 
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (!triggerManually) {
@@ -191,7 +191,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       }
     }
   };
-  React.useEffect(() => {
+  useEffect(() => {
     if (isVisible) {
       show();
     } else {
@@ -261,9 +261,9 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
 
   const addAriaToTrigger = () => {
     if (aria === 'describedby' && children && children.props && !children.props['aria-describedby']) {
-      return React.cloneElement(children, { 'aria-describedby': id });
+      return cloneElement(children, { 'aria-describedby': id });
     } else if (aria === 'labelledby' && children.props && !children.props['aria-labelledby']) {
-      return React.cloneElement(children, { 'aria-labelledby': id });
+      return cloneElement(children, { 'aria-labelledby': id });
     }
     return children;
   };

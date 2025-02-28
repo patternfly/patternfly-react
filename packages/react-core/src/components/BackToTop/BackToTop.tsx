@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/BackToTop/back-to-top';
 import { css } from '@patternfly/react-styles';
 import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
@@ -26,12 +26,12 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
   isAlwaysVisible = false,
   ...props
 }: BackToTopProps) => {
-  const [visible, setVisible] = React.useState(isAlwaysVisible);
-  React.useEffect(() => {
+  const [visible, setVisible] = useState(isAlwaysVisible);
+  useEffect(() => {
     setVisible(isAlwaysVisible);
   }, [isAlwaysVisible]);
 
-  const [scrollElement, setScrollElement] = React.useState(null);
+  const [scrollElement, setScrollElement] = useState(null);
 
   const toggleVisible = () => {
     if (scrollElement) {
@@ -46,7 +46,7 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const hasScrollSpy = Boolean(scrollableSelector);
     if (hasScrollSpy) {
       const scrollEl = document.querySelector(scrollableSelector) as HTMLElement;
@@ -91,7 +91,7 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
   );
 };
 
-export const BackToTop = React.forwardRef((props: BackToTopProps, ref: React.Ref<any>) => (
+export const BackToTop = forwardRef((props: BackToTopProps, ref: React.Ref<any>) => (
   <BackToTopBase innerRef={ref} {...props} />
 ));
 BackToTop.displayName = 'BackToTop';

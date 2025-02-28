@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import { canUseDOM } from '../../helpers/util';
@@ -20,9 +20,9 @@ export interface TreeViewRootProps {
   hasSelectableNodes?: boolean;
 }
 
-class TreeViewRoot extends React.Component<TreeViewRootProps> {
+class TreeViewRoot extends Component<TreeViewRootProps> {
   displayName = 'TreeViewRoot';
-  private treeRef = React.createRef<HTMLDivElement>();
+  private treeRef = createRef<HTMLDivElement>();
 
   componentDidMount() {
     if (canUseDOM) {

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children, cloneElement, isValidElement } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { DataListWrapModifier } from './DataList';
@@ -22,11 +22,11 @@ export const DataListItemRow: React.FunctionComponent<DataListItemRowProps> = ({
   ...props
 }: DataListItemRowProps) => (
   <div className={css(styles.dataListItemRow, className, wrapModifier && styles.modifiers[wrapModifier])} {...props}>
-    {React.Children.map(
+    {Children.map(
       children,
       (child) =>
-        React.isValidElement(child) &&
-        React.cloneElement(child as React.ReactElement<any>, {
+        isValidElement(child) &&
+        cloneElement(child as React.ReactElement<any>, {
           rowid
         })
     )}

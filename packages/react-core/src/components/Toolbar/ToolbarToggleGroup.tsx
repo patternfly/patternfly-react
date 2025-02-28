@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef } from 'react';
 import * as ReactDOM from 'react-dom';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
@@ -151,10 +151,10 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   clearFiltersButtonText?: string;
 }
 
-class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
+class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
   static displayName = 'ToolbarToggleGroup';
-  toggleRef = React.createRef<HTMLButtonElement>();
-  expandableContentRef = React.createRef<HTMLDivElement>();
+  toggleRef = createRef<HTMLButtonElement>();
+  expandableContentRef = createRef<HTMLDivElement>();
 
   isContentPopup = () => {
     const viewportSize = canUseDOM ? window.innerWidth : 1200;

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { Button } from '../Button';
@@ -46,7 +46,7 @@ const TabActionBase: React.FunctionComponent<TabActionProps> = ({
   </span>
 );
 
-export const TabAction = React.forwardRef((props: TabActionProps, ref: React.Ref<HTMLElement>) => (
+export const TabAction = forwardRef((props: TabActionProps, ref: React.Ref<HTMLElement>) => (
   <TabActionBase {...props} innerRef={ref} />
 ));
 

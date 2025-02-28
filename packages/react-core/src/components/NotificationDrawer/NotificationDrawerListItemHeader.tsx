@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { Fragment, useEffect, useRef, useState } from 'react';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
@@ -70,9 +69,9 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
   actionHasNoOffset = false,
   ...props
 }: NotificationDrawerListItemHeaderProps) => {
-  const titleRef = React.useRef(null);
-  const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
-  React.useEffect(() => {
+  const titleRef = useRef(null);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+  useEffect(() => {
     if (!titleRef.current || !truncateTitle) {
       return;
     }
@@ -95,7 +94,7 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div {...props} className={css(styles.notificationDrawerListItemHeader, className)}>
         <span className={css(styles.notificationDrawerListItemHeaderIcon)}>{icon ? icon : <Icon />}</span>
         {isTooltipVisible ? (
@@ -111,7 +110,7 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
           {children}
         </div>
       )}
-    </React.Fragment>
+    </Fragment>
   );
 };
 NotificationDrawerListItemHeader.displayName = 'NotificationDrawerListItemHeader';

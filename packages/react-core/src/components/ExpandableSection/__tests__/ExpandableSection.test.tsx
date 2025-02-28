@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { Fragment } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -45,14 +44,14 @@ test('Renders Uncontrolled ExpandableSection', () => {
 
 test('Detached ExpandableSection renders successfully', () => {
   const { asFragment } = render(
-    <React.Fragment>
+    <Fragment>
       <ExpandableSection isExpanded isDetached {...props}>
         test
       </ExpandableSection>
       <ExpandableSectionToggle isExpanded direction="up" {...props}>
         Toggle text
       </ExpandableSectionToggle>
-    </React.Fragment>
+    </Fragment>
   );
   expect(asFragment()).toMatchSnapshot();
 });

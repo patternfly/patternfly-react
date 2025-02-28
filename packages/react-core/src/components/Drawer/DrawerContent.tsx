@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerMain } from './DrawerMain';
@@ -28,7 +28,7 @@ export const DrawerContent: React.FunctionComponent<DrawerContentProps> = ({
   colorVariant = DrawerContentColorVariant.default,
   ...props
 }: DrawerContentProps) => {
-  const { drawerContentRef } = React.useContext(DrawerContext);
+  const { drawerContentRef } = useContext(DrawerContext);
 
   return (
     <DrawerMain>

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/layouts/Flex/flex';
 import * as flexToken from '@patternfly/react-tokens/dist/esm/l_flex_item_Order';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, Fragment } from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -98,7 +98,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   ouiaSafe?: boolean;
 }
 
-class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopyState> {
+class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
   static displayName = 'ClipboardCopy';
   timer = null as number;
   constructor(props: ClipboardCopyProps) {
@@ -206,7 +206,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
         {variant === 'inline-compact' && (
           <GenerateId prefix="">
             {(id) => (
-              <React.Fragment>
+              <Fragment>
                 {!isCode && (
                   <span className={css(styles.clipboardCopyText)} id={`${textIdPrefix}${id}`}>
                     {this.state.text}
@@ -240,14 +240,14 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                   </span>
                   {additionalActions && additionalActions}
                 </span>
-              </React.Fragment>
+              </Fragment>
             )}
           </GenerateId>
         )}
         {variant !== 'inline-compact' && (
           <GenerateId prefix="">
             {(id) => (
-              <React.Fragment>
+              <Fragment>
                 <div className={css(styles.clipboardCopyGroup)}>
                   {variant === 'expansion' && (
                     <ClipboardCopyToggle
@@ -301,7 +301,7 @@ class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopySta
                     {this.state.text}
                   </ClipboardCopyExpanded>
                 )}
-              </React.Fragment>
+              </Fragment>
             )}
           </GenerateId>
         )}

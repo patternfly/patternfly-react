@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
@@ -72,7 +72,7 @@ const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
   </MenuContext.Consumer>
 );
 
-export const MenuItemAction = React.forwardRef((props: MenuItemActionProps, ref: React.Ref<HTMLButtonElement>) => (
+export const MenuItemAction = forwardRef((props: MenuItemActionProps, ref: React.Ref<HTMLButtonElement>) => (
   <MenuItemActionBase {...props} innerRef={ref} />
 ));
 MenuItemAction.displayName = 'MenuItemAction';

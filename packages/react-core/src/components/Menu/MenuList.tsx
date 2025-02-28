@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { MenuContext } from './MenuContext';
@@ -23,7 +23,7 @@ export const MenuList: React.FunctionComponent<MenuListProps> = ({
   'aria-label': ariaLabel,
   ...props
 }: MenuListProps) => {
-  const { role } = React.useContext(MenuContext);
+  const { role } = useContext(MenuContext);
 
   return (
     <ul

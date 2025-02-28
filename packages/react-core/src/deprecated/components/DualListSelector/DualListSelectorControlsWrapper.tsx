@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { handleArrows } from '../../../helpers';
@@ -23,7 +23,7 @@ export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualLi
   'aria-label': ariaLabel = 'Controls for moving options between lists',
   ...props
 }: DualListSelectorControlsWrapperProps) => {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const wrapperRef = innerRef || ref;
   // Adds keyboard navigation to the dynamically built dual list selector controls. Works when controls are dynamically built
   // as well as when they are passed in via children.
@@ -55,7 +55,7 @@ export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualLi
     );
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleKeys);
     return () => {
       window.removeEventListener('keydown', handleKeys);
@@ -77,7 +77,7 @@ export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualLi
 
 DualListSelectorControlsWrapperBase.displayName = 'DualListSelectorControlsWrapperBase';
 
-export const DualListSelectorControlsWrapper = React.forwardRef(
+export const DualListSelectorControlsWrapper = forwardRef(
   (props: DualListSelectorControlsWrapperProps, ref: React.Ref<HTMLDivElement>) => (
     <DualListSelectorControlsWrapperBase innerRef={ref as React.MutableRefObject<any>} role="group" {...props} />
   )

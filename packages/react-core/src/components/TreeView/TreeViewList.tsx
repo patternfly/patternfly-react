@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 import { Divider } from '../Divider';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
@@ -36,10 +36,10 @@ export const TreeViewList: React.FunctionComponent<TreeViewListProps> = ({
 }: TreeViewListProps) => (
   <>
     {toolbar && (
-      <React.Fragment>
+      <Fragment>
         {toolbar}
         <Divider />
-      </React.Fragment>
+      </Fragment>
     )}
     <ul
       className={css(`${styles.treeView}__list`)}

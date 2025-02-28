@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -78,7 +78,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   }
 
   return (
-    <React.Fragment>
+    <Fragment>
       <button
         onClick={() => onNavToggle(!isNavOpen)}
         className={css(styles.wizardToggle, isNavOpen && 'pf-m-expanded')}
@@ -115,7 +115,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
         </div>
         {children}
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 WizardToggle.displayName = 'WizardToggle';

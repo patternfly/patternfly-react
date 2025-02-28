@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
@@ -89,9 +89,9 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
   shouldPreventScrollOnItemFocus = true,
   focusTimeoutDelay = 0
 }: PaginationOptionsMenuProps) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
-  const menuRef = React.useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const onToggle = () => {
     setIsOpen((prevState) => !prevState);
@@ -121,7 +121,7 @@ export const PaginationOptionsMenu: React.FunctionComponent<PaginationOptionsMen
     return onPerPageSelect(_evt, newPerPage, newPage, startIdx, endIdx);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape
       if (

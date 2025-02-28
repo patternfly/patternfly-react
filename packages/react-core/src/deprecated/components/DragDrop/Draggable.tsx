@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment, useContext, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DroppableContext } from './DroppableContext';
@@ -85,12 +85,12 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   ...props
 }: DraggableProps) => {
   /* eslint-disable prefer-const */
-  let [style, setStyle] = React.useState(styleProp);
+  let [style, setStyle] = useState(styleProp);
   /* eslint-enable prefer-const */
-  const [isDragging, setIsDragging] = React.useState(false);
-  const [isValidDrag, setIsValidDrag] = React.useState(true);
-  const { zone, droppableId } = React.useContext(DroppableContext);
-  const { onDrag, onDragMove, onDrop } = React.useContext(DragDropContext);
+  const [isDragging, setIsDragging] = useState(false);
+  const [isValidDrag, setIsValidDrag] = useState(true);
+  const { zone, droppableId } = useContext(DroppableContext);
+  const { onDrag, onDragMove, onDrop } = useContext(DragDropContext);
   // Some state is better just to leave as vars passed around between various callbacks
   // You can only drag around one item at a time anyways...
   let startX = 0;
@@ -312,7 +312,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       {/* Leave behind blank spot per-design */}
       {isDragging && (
         <div draggable {...props} style={{ ...styleProp, visibility: 'hidden' }}>
@@ -320,11 +320,11 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
         </div>
       )}
       {hasNoWrapper ? (
-        React.cloneElement(children as React.ReactElement<any>, childProps)
+        cloneElement(children as React.ReactElement<any>, childProps)
       ) : (
         <div {...childProps}>{children}</div>
       )}
-    </React.Fragment>
+    </Fragment>
   );
 };
 Draggable.displayName = 'Draggable';

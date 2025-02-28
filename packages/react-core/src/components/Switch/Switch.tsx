@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, Fragment } from 'react';
 import styles from '@patternfly/react-styles/css/components/Switch/switch';
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
@@ -40,7 +40,7 @@ export interface SwitchProps
   ouiaSafe?: boolean;
 }
 
-class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: string }> {
+class Switch extends Component<SwitchProps & OUIAProps, { ouiaStateId: string }> {
   static displayName = 'Switch';
   id: string;
 
@@ -111,7 +111,7 @@ class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: str
           {...props}
         />
         {label !== undefined ? (
-          <React.Fragment>
+          <Fragment>
             <span className={css(styles.switchToggle)}>
               {hasCheckIcon && (
                 <span className={css(styles.switchToggleIcon)}>
@@ -126,7 +126,7 @@ class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: str
             >
               {label}
             </span>
-          </React.Fragment>
+          </Fragment>
         ) : (
           <span className={css(styles.switchToggle)}>
             <div className={css(styles.switchToggleIcon)}>

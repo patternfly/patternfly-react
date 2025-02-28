@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, useEffect, useRef, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
@@ -16,7 +16,7 @@ import { Popper } from '../../helpers';
 import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 
 /** Properties for adding search attributes to an advanced search input. These properties must
- * be passed in as an object within an array to the search input component's attribute properrty.
+ * be passed in as an object within an array to the search input component's attribute property.
  */
 
 export interface SearchInputSearchAttribute {
@@ -122,7 +122,7 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   submitSearchButtonLabel?: string;
   /** Value of the search input. */
   value?: string;
-  /** Name attribue for the search input */
+  /** Name attribute for the search input */
   name?: string;
   /** Additional props to spread to the search input element. */
   inputProps?: any;
@@ -164,19 +164,19 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   inputProps,
   ...props
 }: SearchInputProps) => {
-  const [isSearchMenuOpen, setIsSearchMenuOpen] = React.useState(false);
-  const [searchValue, setSearchValue] = React.useState(value);
-  const searchInputRef = React.useRef(null);
-  const ref = React.useRef(null);
+  const [isSearchMenuOpen, setIsSearchMenuOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState(value);
+  const searchInputRef = useRef(null);
+  const ref = useRef(null);
   const searchInputInputRef = innerRef || ref;
-  const searchInputExpandableToggleRef = React.useRef(null);
-  const triggerRef = React.useRef(null);
-  const popperRef = React.useRef(null);
-  const [focusAfterExpandChange, setFocusAfterExpandChange] = React.useState(false);
+  const searchInputExpandableToggleRef = useRef(null);
+  const triggerRef = useRef(null);
+  const popperRef = useRef(null);
+  const [focusAfterExpandChange, setFocusAfterExpandChange] = useState(false);
 
   const { isExpanded, onToggleExpand, toggleAriaLabel } = expandableInput || {};
 
-  React.useEffect(() => {
+  useEffect(() => {
     // this effect and the focusAfterExpandChange variable are needed to focus the input/toggle as needed when the
     // expansion toggle is fired without focusing on mount
     if (!focusAfterExpandChange) {
@@ -189,11 +189,11 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     setFocusAfterExpandChange(false);
   }, [focusAfterExpandChange, isExpanded, searchInputInputRef, searchInputExpandableToggleRef]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setSearchValue(value);
   }, [value]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (attributes.length > 0 && !advancedSearchDelimiter) {
       // eslint-disable-next-line no-console
       console.error(
@@ -202,7 +202,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     }
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsSearchMenuOpen(isAdvancedSearchOpen);
   }, [isAdvancedSearchOpen]);
 
@@ -472,7 +472,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 };
 SearchInputBase.displayName = 'SearchInputBase';
 
-export const SearchInput = React.forwardRef((props: SearchInputProps, ref: React.Ref<HTMLInputElement>) => (
+export const SearchInput = forwardRef((props: SearchInputProps, ref: React.Ref<HTMLInputElement>) => (
   <SearchInputBase {...props} innerRef={ref as React.MutableRefObject<any>} />
 ));
 SearchInput.displayName = 'SearchInput';

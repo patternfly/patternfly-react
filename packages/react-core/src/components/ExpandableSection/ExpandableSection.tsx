@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
 import { css } from '@patternfly/react-styles';
 import lineClamp from '@patternfly/react-tokens/dist/esm/c_expandable_section_m_truncate__content_LineClamp';
@@ -21,7 +21,7 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   /** Additional classes added to the expandable section. */
   className?: string;
   /** Id of the content of the expandable section. When passing in the isDetached property, this
-   * property's value should match the contenId property of the expandable section toggle sub-component.
+   * property's value should match the contentId property of the expandable section toggle sub-component.
    */
   contentId?: string;
   /** Id of the toggle of the expandable section, which provides an accessible name to the
@@ -80,7 +80,7 @@ const setLineClamp = (lines: number, element: HTMLDivElement) => {
   element.style.setProperty(lineClamp.name, lines.toString());
 };
 
-class ExpandableSection extends React.Component<ExpandableSectionProps, ExpandableSectionState> {
+class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSectionState> {
   static displayName = 'ExpandableSection';
   constructor(props: ExpandableSectionProps) {
     super(props);
@@ -92,7 +92,7 @@ class ExpandableSection extends React.Component<ExpandableSectionProps, Expandab
     };
   }
 
-  expandableContentRef = React.createRef<HTMLDivElement>();
+  expandableContentRef = createRef<HTMLDivElement>();
   observer: any = () => {};
 
   static defaultProps: PickOptional<ExpandableSectionProps> = {

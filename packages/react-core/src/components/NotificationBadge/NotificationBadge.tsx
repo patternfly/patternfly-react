@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';

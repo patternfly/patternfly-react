@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { FocusTrap } from '../../helpers';
 import bullsEyeStyles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 import { css } from '@patternfly/react-styles';

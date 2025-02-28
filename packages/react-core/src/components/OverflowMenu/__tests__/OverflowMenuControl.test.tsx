@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { render, screen } from '@testing-library/react';
 
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
