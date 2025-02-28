@@ -478,13 +478,3 @@ You may add multiple alerts to an alert group at once. Click the "add alert coll
 ```ts file="./AlertGroupMultipleDynamic.tsx"
 
 ```
-
-### Alert group with animations
-
-You can apply animations to alerts within an `<AlertGroup>` by passing the `hasAnimations` property. Doing so will animate alerts when added or removed from an `<AlertGroup>`. The following example shows both a toast and inline `<AlertGroup>` with animations applied.
-
-When using animations, each alert must have a unique `id` or `key` passed to it.
-
-```ts file="./AlertGroupAnimations.tsx"
-
-```
