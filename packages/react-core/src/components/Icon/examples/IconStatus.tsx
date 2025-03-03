@@ -10,16 +10,16 @@ export const IconStatus: React.FunctionComponent = () => (
   <React.Fragment>
     <Icon status="danger">
       <ExclamationCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon status="warning">
       <ExclamationTriangleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon status="success">
       <CheckCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon status="info">
       <InfoCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon status="custom">
       <BellIcon />
     </Icon>

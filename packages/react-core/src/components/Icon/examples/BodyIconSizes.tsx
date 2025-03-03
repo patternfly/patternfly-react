@@ -6,10 +6,10 @@ export const BodyIconSizes: React.FunctionComponent = () => (
   <React.Fragment>
     <Icon size="bodySm">
       <PlusCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon size="bodyDefault">
       <PlusCircleIcon />
-    </Icon>
+    </Icon>{' '}
     <Icon size="bodyLg">
       <PlusCircleIcon />
     </Icon>
