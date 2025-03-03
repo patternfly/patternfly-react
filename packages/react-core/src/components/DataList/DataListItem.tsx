@@ -11,7 +11,7 @@ export interface DataListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 
   children: React.ReactNode;
   /** Additional classes added to the DataList item should be either <DataListItemRow> or <DataListContent> */
   className?: string;
-  /** Adds accessible text to the DataList item */
+  /** Adds an accessible name to the selectable input if one is rendered */
   'aria-labelledby': string;
   /** Unique id for the DataList item */
   id?: string;
