@@ -2,9 +2,7 @@
 
 exports[`ListItem should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
-  <li
-    class=""
-  >
+  <li>
     <span>
       ReactNode
     </span>

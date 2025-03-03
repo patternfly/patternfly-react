@@ -183,23 +183,17 @@ exports[`List inline list 1`] = `
     <ul
       class="pf-v6-c-list"
     >
-      <li
-        class=""
-      >
+      <li>
         <span>
           First
         </span>
       </li>
-      <li
-        class=""
-      >
+      <li>
         <span>
           Second
         </span>
       </li>
-      <li
-        class=""
-      >
+      <li>
         <span>
           Third
         </span>
@@ -215,23 +209,17 @@ exports[`List ordered list 1`] = `
     class="pf-v6-c-list"
     type="1"
   >
-    <li
-      class=""
-    >
+    <li>
       <span>
         Apple
       </span>
     </li>
-    <li
-      class=""
-    >
+    <li>
       <span>
         Banana
       </span>
     </li>
-    <li
-      class=""
-    >
+    <li>
       <span>
         Orange
       </span>
@@ -248,23 +236,17 @@ exports[`List simple list 1`] = `
     <ul
       class="pf-v6-c-list"
     >
-      <li
-        class=""
-      >
+      <li>
         <span>
           First
         </span>
       </li>
-      <li
-        class=""
-      >
+      <li>
         <span>
           Second
         </span>
       </li>
-      <li
-        class=""
-      >
+      <li>
         <span>
           Third
         </span>
