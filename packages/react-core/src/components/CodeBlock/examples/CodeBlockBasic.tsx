@@ -1,9 +1,19 @@
 import React from 'react';
-import { CodeBlock, CodeBlockAction, CodeBlockCode, ClipboardCopyButton, Button } from '@patternfly/react-core';
+import {
+  CodeBlock,
+  CodeBlockAction,
+  CodeBlockCode,
+  ClipboardCopyButton,
+  Button,
+  Tooltip
+} from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 export const BasicCodeBlock: React.FunctionComponent = () => {
   const [copied, setCopied] = React.useState(false);
+  const [isRunning, setisRunning] = React.useState(false);
+  const runText: string = 'Run in web terminal';
+  const doneRunText: string = 'Running in web terminal';
 
   const clipboardCopyFunc = (event, text) => {
     navigator.clipboard.writeText(text.toString());
@@ -39,7 +49,19 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
         </ClipboardCopyButton>
       </CodeBlockAction>
       <CodeBlockAction>
-        <Button variant="plain" aria-label="Play icon" icon={<PlayIcon />} />
+        <Tooltip
+          aria="none"
+          aria-live="polite"
+          content={isRunning ? doneRunText : runText}
+          onTooltipHidden={() => setisRunning(false)}
+        >
+          <Button
+            variant="plain"
+            aria-label="Run in web terminal"
+            icon={<PlayIcon />}
+            onClick={() => setisRunning(!isRunning)}
+          />
+        </Tooltip>
       </CodeBlockAction>
     </React.Fragment>
   );
