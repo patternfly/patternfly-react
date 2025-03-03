@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Card,
   Content,
@@ -88,7 +88,7 @@ export const PrimaryDetailDataListInCard: React.FunctionComponent = () => {
   );
 
   const drawerContent = (
-    <React.Fragment>
+    <Fragment>
       <Toolbar id="data-list-data-toolbar">
         <ToolbarContent>
           <ToolbarItem>
@@ -176,7 +176,7 @@ export const PrimaryDetailDataListInCard: React.FunctionComponent = () => {
           </DataListItemRow>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

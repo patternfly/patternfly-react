@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Hint,
   HintBody,
@@ -70,7 +70,7 @@ export const HintBasicWithoutTitle: React.FunctionComponent = () => {
     </Dropdown>
   );
   return (
-    <React.Fragment>
+    <Fragment>
       <Hint>
         <HintBody>
           Welcome to the new documentation experience.
@@ -90,6 +90,6 @@ export const HintBasicWithoutTitle: React.FunctionComponent = () => {
           </Button>
         </HintFooter>
       </Hint>
-    </React.Fragment>
+    </Fragment>
   );
 };

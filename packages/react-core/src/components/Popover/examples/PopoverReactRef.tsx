@@ -1,4 +1,3 @@
-import React from 'react';
 import { Popover } from '@patternfly/react-core';
 
 export const PopoverReactRef: React.FunctionComponent = () => {

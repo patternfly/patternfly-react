@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter, Divider } from '@patternfly/react-core';
 
 export const CardWithDividers: React.FunctionComponent = () => (

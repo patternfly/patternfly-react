@@ -1,4 +1,3 @@
-import React from 'react';
 import { Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
 
 export const WizardWithHeader: React.FunctionComponent = () => (

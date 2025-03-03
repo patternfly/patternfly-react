@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Select,
   SelectOption,
@@ -45,7 +45,7 @@ export const SelectValidated: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Select
         id="single-select"
         isOpen={isOpen}
@@ -69,6 +69,6 @@ export const SelectValidated: React.FunctionComponent = () => {
           </HelperTextItem>
         </HelperText>
       )}
-    </React.Fragment>
+    </Fragment>
   );
 };

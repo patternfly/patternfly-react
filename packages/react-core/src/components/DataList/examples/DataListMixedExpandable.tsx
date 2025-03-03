@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   DataList,
   DataListItem,
@@ -55,7 +55,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DataList aria-label="Mixed expandable data list example">
         <DataListItem aria-labelledby="m-ex-item1" isExpanded={expanded.includes('m-ex-toggle1')}>
           <DataListItemRow>
@@ -261,6 +261,6 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
           </DataListContent>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </Fragment>
   );
 };

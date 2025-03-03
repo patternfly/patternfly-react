@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   Content,
@@ -77,7 +77,7 @@ export const DataListStaticBottomPagination: React.FunctionComponent = () => {
   );
 
   const toolbarItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem>
         <MenuToggle
           aria-label="Select data list items"
@@ -108,7 +108,7 @@ export const DataListStaticBottomPagination: React.FunctionComponent = () => {
       <ToolbarItem variant="pagination" align={{ default: 'alignEnd' }}>
         {renderPagination(PaginationVariant.top, true, false, false)}
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

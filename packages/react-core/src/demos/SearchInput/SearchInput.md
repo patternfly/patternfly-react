@@ -32,7 +32,6 @@ This demo handles building the advanced search form using the composable Menu, a
 It also demonstrates wiring up the appropriate keyboard interactions, focus management, and general event handling.
 
 ```js
-import React from 'react';
 import { Menu, MenuContent, MenuItem, MenuList, Popper, SearchInput } from '@patternfly/react-core';
 
 import { words } from './words.js';
@@ -207,7 +206,6 @@ keyboard interactions, focus management, and general event handling.
 Note: This demo and its handling of 'date within' and a date picker is modeled after the gmail advanced search form.
 
 ```js
-import React from 'react';
 import {
   ActionGroup,
   Button,

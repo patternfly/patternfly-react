@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Alert,
   AlertProps,
@@ -45,7 +45,7 @@ export const AlertGroupAsync: React.FunctionComponent = () => {
   useInterval(addAlert, isRunning ? 4500 : null);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <InputGroup style={{ marginBottom: '16px' }}>
         <InputGroupItem>
           <button onClick={startAsyncAlerts} type="button" className={btnClasses}>
@@ -74,6 +74,6 @@ export const AlertGroupAsync: React.FunctionComponent = () => {
           />
         ))}
       </AlertGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

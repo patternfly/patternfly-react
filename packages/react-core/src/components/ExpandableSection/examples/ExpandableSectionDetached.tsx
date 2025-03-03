@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExpandableSection, ExpandableSectionToggle, Stack, StackItem } from '@patternfly/react-core';
 
 export const ExpandableSectionDetached: React.FunctionComponent = () => {

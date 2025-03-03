@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from '@patternfly/react-core';
 
 export const ButtonCustomComponent: React.FunctionComponent = () => (

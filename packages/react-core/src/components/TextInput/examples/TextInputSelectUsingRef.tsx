@@ -1,4 +1,3 @@
-import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 export const TextInputSelectUsingRef: React.FunctionComponent = () => {

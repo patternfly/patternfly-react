@@ -1,5 +1,5 @@
-import React from 'react';
-
+import { Children, isValidElement } from 'react';
+import { Fragment } from 'react';
 import { isCustomWizardNavItem, isWizardBasicStep, isWizardParentStep } from './types';
 import { WizardProps } from './Wizard';
 import { useWizardContext } from './WizardContext';
@@ -40,9 +40,9 @@ export const WizardNavInternal = ({
         const hasVisitedNextStep = steps.some((step) => step.index > stepIndex + 1 && step.isVisited);
         const isStepDisabled = step.isDisabled || (isVisitRequired && !step.isVisited && !hasVisitedNextStep);
         const customStepNavItem = isCustomWizardNavItem(step.navItem) && (
-          <React.Fragment key={step.id}>
+          <Fragment key={step.id}>
             {typeof step.navItem === 'function' ? step.navItem(step, activeStep, steps, goToStepByIndex) : step.navItem}
-          </React.Fragment>
+          </Fragment>
         );
 
         if (isWizardParentStep(step) && !step.isHidden) {
@@ -55,11 +55,11 @@ export const WizardNavInternal = ({
             const isSubStepDisabled =
               subStep.isDisabled || (isVisitRequired && !subStep.isVisited && !hasVisitedNextStep);
             const customSubStepNavItem = isCustomWizardNavItem(subStep.navItem) && (
-              <React.Fragment key={subStep.id}>
+              <Fragment key={subStep.id}>
                 {typeof subStep.navItem === 'function'
                   ? subStep.navItem(subStep, activeStep, steps, goToStepByIndex)
                   : subStep.navItem}
-              </React.Fragment>
+              </Fragment>
             );
 
             // Don't render the sub-step navigation item if the hidden property is enabled
@@ -96,8 +96,8 @@ export const WizardNavInternal = ({
               );
             }
           });
-          const hasEnabledChildren = React.Children.toArray(subNavItems).some(
-            (child) => React.isValidElement(child) && !child.props.isDisabled
+          const hasEnabledChildren = Children.toArray(subNavItems).some(
+            (child) => isValidElement(child) && !child.props.isDisabled
           );
 
           if (!isProgressive || (isProgressive && step.index <= activeStep.index)) {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
 import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';

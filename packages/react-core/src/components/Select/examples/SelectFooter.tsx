@@ -1,4 +1,3 @@
-import React from 'react';
 import { MenuToggle, MenuFooter, Select, SelectList, SelectOption, Button } from '@patternfly/react-core';
 
 export const SelectFooter: React.FunctionComponent = () => {

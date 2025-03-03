@@ -1,4 +1,3 @@
-import React from 'react';
 import { Nav, NavItem, NavList } from '@patternfly/react-core';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';

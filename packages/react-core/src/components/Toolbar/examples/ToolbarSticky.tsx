@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, SearchInput, Checkbox } from '@patternfly/react-core';
 
 export const ToolbarSticky: React.FunctionComponent = () => {
@@ -8,7 +8,7 @@ export const ToolbarSticky: React.FunctionComponent = () => {
   const numbers = showEvenOnly ? array.filter((number) => number % 2 === 0) : array;
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div style={{ overflowY: 'scroll', height: '200px' }}>
         <Toolbar id="toolbar-sticky" inset={{ default: 'insetNone' }} isSticky={isSticky}>
           <ToolbarContent>
@@ -37,6 +37,6 @@ export const ToolbarSticky: React.FunctionComponent = () => {
         onChange={(_event, checked) => setIsSticky(checked)}
         id="isStickyCheckbox"
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

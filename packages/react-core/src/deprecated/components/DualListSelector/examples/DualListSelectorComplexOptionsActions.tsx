@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, ButtonVariant, Checkbox } from '@patternfly/react-core';
 import { DualListSelector as DLSDeprecated } from '@patternfly/react-core/deprecated';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
@@ -63,7 +63,7 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
   ];
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DLSDeprecated
         isSearchable
         availableOptions={availableOptions}
@@ -86,6 +86,6 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
         isChecked={isDisabled}
         onChange={() => setIsDisabled(!isDisabled)}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,8 +1,8 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Avatar } from '@patternfly/react-core';
 import avatarImg from '../../assets/avatarImg.svg';
 
-<React.Fragment>
+<Fragment>
   Small
   <br />
   <Avatar src={avatarImg} alt="avatar" size="sm" />
@@ -18,4 +18,4 @@ import avatarImg from '../../assets/avatarImg.svg';
   Extra Large
   <br />
   <Avatar src={avatarImg} alt="avatar" size="xl" />
-</React.Fragment>;
+</Fragment>;

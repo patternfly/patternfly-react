@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
 
 export const SimpleFileUpload: React.FunctionComponent = () => {

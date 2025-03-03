@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { TreeView, Button, TreeViewDataItem } from '@patternfly/react-core';
 
 export const TreeViewWithMemoization: React.FunctionComponent = () => {
@@ -61,12 +61,12 @@ export const TreeViewWithMemoization: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="link" onClick={onToggle}>
         {allExpanded && 'Collapse all'}
         {!allExpanded && 'Expand all'}
       </Button>
       {tree}
-    </React.Fragment>
+    </Fragment>
   );
 };

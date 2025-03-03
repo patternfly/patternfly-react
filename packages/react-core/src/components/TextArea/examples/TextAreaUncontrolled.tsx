@@ -1,4 +1,3 @@
-import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
 export const TextAreaUncontrolled: React.FunctionComponent = () => (

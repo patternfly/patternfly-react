@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { TreeView, Button, TreeViewDataItem } from '@patternfly/react-core';
 
 export const TreeViewSingleSelectable: React.FunctionComponent = () => {
@@ -76,7 +76,7 @@ export const TreeViewSingleSelectable: React.FunctionComponent = () => {
     }
   ];
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="link" onClick={onToggle}>
         {allExpanded && 'Collapse all'}
         {!allExpanded && 'Expand all'}
@@ -88,6 +88,6 @@ export const TreeViewSingleSelectable: React.FunctionComponent = () => {
         onSelect={onSelect}
         allExpanded={allExpanded}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

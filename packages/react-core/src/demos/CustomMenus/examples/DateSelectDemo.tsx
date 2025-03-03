@@ -1,4 +1,3 @@
-import React from 'react';
 import { MenuToggle, Select, SelectList, SelectOption, Timestamp } from '@patternfly/react-core';
 
 export const DateSelectDemo: React.FunctionComponent = () => {

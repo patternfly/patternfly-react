@@ -1,4 +1,3 @@
-import React from 'react';
 import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';

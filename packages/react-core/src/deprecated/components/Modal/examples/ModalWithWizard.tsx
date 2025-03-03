@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 
@@ -20,7 +20,7 @@ export const ModalWithWizard: React.FunctionComponent = () => {
   ));
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show wizard modal
       </Button>
@@ -56,6 +56,6 @@ export const ModalWithWizard: React.FunctionComponent = () => {
           </WizardStep>
         </Wizard>
       </ModalDeprecated>
-    </React.Fragment>
+    </Fragment>
   );
 };

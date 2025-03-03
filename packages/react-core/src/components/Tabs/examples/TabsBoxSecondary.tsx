@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-core';
 
 export const TabsBoxSecondary: React.FunctionComponent = () => {

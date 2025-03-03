@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileRejection } from 'react-dropzone';
 import {
   MultipleFileUpload,

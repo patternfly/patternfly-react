@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Badge,
   Bullseye,
@@ -409,7 +409,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
   ];
 
   const toolbarItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem>{buildSelectDropdown()}</ToolbarItem>
       <ToolbarItem>{buildFilterDropdown()}</ToolbarItem>
       <ToolbarItem>
@@ -441,7 +441,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
       <ToolbarItem variant="pagination" align={{ default: 'alignEnd' }}>
         {renderPagination()}
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const icons = {
@@ -463,7 +463,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
       : cardData.slice((page - 1) * perPage, perPage === 1 ? page * perPage : page * perPage - 1);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
         <PageSection>
           <Content>
@@ -557,6 +557,6 @@ export const CardViewBasic: React.FunctionComponent = () => {
           />
         </PageSection>
       </DashboardWrapper>
-    </React.Fragment>
+    </Fragment>
   );
 };

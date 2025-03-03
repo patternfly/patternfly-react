@@ -1,4 +1,3 @@
-import React from 'react';
 import { TextInput, ValidatedOptions } from '@patternfly/react-core';
 
 export const TextInputInvalid: React.FunctionComponent = () => {

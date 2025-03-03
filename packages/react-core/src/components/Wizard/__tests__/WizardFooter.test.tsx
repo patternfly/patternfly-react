@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -86,7 +84,7 @@ test('uses activeStep footer properties when specified', () => {
   expect(screen.queryByRole('button', { name: 'Back' })).toBeNull();
 });
 
-test(`activeStep footer properties take precendence over WizardFooter's`, () => {
+test(`activeStep footer properties take precedence over WizardFooter's`, () => {
   render(
     <WizardFooter
       {...defaultProps}

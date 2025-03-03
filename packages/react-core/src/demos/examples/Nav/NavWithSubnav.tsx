@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Card,
   CardBody,
@@ -114,7 +114,7 @@ export const NavWithSubnav: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page
         masthead={<DashboardHeader />}
         sidebar={Sidebar}
@@ -149,6 +149,6 @@ export const NavWithSubnav: React.FunctionComponent = () => {
           </Gallery>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

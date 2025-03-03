@@ -1,4 +1,3 @@
-import React from 'react';
 import { Nav, NavItem, NavList } from '@patternfly/react-core';
 
 export const NavDefault: React.FunctionComponent = () => {

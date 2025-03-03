@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Flex } from '@patternfly/react-core';
 
 export const ButtonLinks: React.FunctionComponent = () => (

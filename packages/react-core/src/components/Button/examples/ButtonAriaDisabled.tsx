@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Flex, Tooltip } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 

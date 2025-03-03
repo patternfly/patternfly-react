@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter, ModalVariant } from '@patternfly/react-core';
 
 export const ModalWithOverflowingContent: React.FunctionComponent = () => {
@@ -9,7 +9,7 @@ export const ModalWithOverflowingContent: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show modal
       </Button>
@@ -69,6 +69,6 @@ export const ModalWithOverflowingContent: React.FunctionComponent = () => {
           </Button>
         </ModalFooter>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

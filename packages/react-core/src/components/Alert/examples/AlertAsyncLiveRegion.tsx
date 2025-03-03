@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Alert, AlertGroup, AlertVariant, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 interface AlertInfo {
@@ -36,7 +36,7 @@ export const AsyncLiveRegionAlert: React.FunctionComponent = () => {
   }, [isActive, alerts]);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <ToggleGroup aria-label="Toggle asynchronous alerts">
         <ToggleGroupItem
           text="Async alerts on"
@@ -56,6 +56,6 @@ export const AsyncLiveRegionAlert: React.FunctionComponent = () => {
           <Alert variant={variant} title={title} key={key} />
         ))}
       </AlertGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

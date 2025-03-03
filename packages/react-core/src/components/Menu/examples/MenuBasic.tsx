@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem, Checkbox } from '@patternfly/react-core';
 
 export const MenuBasic: React.FunctionComponent = () => {
@@ -16,7 +16,7 @@ export const MenuBasic: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Menu activeItemId={activeItem} onSelect={onSelect} isPlain={isPlain}>
         <MenuContent>
           <MenuList>
@@ -56,6 +56,6 @@ export const MenuBasic: React.FunctionComponent = () => {
           name="toggle-plain"
         />
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,4 +1,3 @@
-import React from 'react';
 import { MenuToggle, Divider, Select, SelectList, SelectOption, SelectGroup } from '@patternfly/react-core';
 
 export const OptionsMenuDemo: React.FunctionComponent = () => {

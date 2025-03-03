@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -44,7 +44,7 @@ export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
@@ -55,6 +55,6 @@ export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
           <DrawerContentBody>content-body</DrawerContentBody>
         </DrawerContent>
       </Drawer>
-    </React.Fragment>
+    </Fragment>
   );
 };

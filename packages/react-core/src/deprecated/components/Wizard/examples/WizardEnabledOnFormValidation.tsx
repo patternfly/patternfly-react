@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form, FormGroup, TextInput } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated, WizardStep } from '@patternfly/react-core/deprecated';
 interface PrevStepInfo {

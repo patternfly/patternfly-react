@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement, Checkbox } from '@patternfly/react-core';
 
 export const SelectBasic: React.FunctionComponent = () => {
@@ -35,7 +35,7 @@ export const SelectBasic: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Checkbox
         id="toggle-disabled"
         label="isDisabled"
@@ -58,6 +58,6 @@ export const SelectBasic: React.FunctionComponent = () => {
           <SelectOption value="Option 3">Option 3</SelectOption>
         </SelectList>
       </Select>
-    </React.Fragment>
+    </Fragment>
   );
 };

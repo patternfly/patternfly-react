@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pagination } from '@patternfly/react-core';
 
 export const PaginationDisabled: React.FunctionComponent = () => {

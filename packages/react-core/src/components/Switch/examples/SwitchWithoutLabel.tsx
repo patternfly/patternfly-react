@@ -1,4 +1,3 @@
-import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
 export const SwitchWithoutLabel: React.FunctionComponent = () => {

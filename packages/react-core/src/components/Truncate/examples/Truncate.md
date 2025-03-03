@@ -11,7 +11,6 @@ import './TruncateExamples.css';
 
 ### Default
 ```js
-import React from 'react';
 import { Truncate } from '@patternfly/react-core';
 
 <div className="truncate-example-resize">
@@ -23,7 +22,6 @@ import { Truncate } from '@patternfly/react-core';
 
 ### Middle
 ```js
-import React from 'react';
 import { Truncate } from '@patternfly/react-core';
 
 <div className="truncate-example-resize">
@@ -37,7 +35,6 @@ import { Truncate } from '@patternfly/react-core';
 
 ### Start
 ```js
-import React from 'react';
 import { Truncate } from '@patternfly/react-core';
 
 <div className="truncate-example-resize">
@@ -50,7 +47,6 @@ import { Truncate } from '@patternfly/react-core';
 
 ### Default with tooltip at the bottom
 ```js
-import React from 'react';
 import { Truncate } from '@patternfly/react-core';
 
 <div className="truncate-example-resize">

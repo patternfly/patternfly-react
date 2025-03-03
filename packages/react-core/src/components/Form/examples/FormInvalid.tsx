@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form, FormGroup, TextInput, HelperText, HelperTextItem, FormHelperText } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 

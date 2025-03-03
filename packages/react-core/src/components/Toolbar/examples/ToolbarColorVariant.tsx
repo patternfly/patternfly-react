@@ -1,8 +1,8 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, Button, SearchInput } from '@patternfly/react-core';
 
 export const ToolbarColorVariant: React.FunctionComponent = () => (
-  <React.Fragment>
+  <Fragment>
     No background
     <Toolbar id="toolbar-color-variant-no-background" colorVariant={'no-background'}>
       <ToolbarContent>
@@ -48,5 +48,5 @@ export const ToolbarColorVariant: React.FunctionComponent = () => (
         </ToolbarItem>
       </ToolbarContent>
     </Toolbar>
-  </React.Fragment>
+  </Fragment>
 );

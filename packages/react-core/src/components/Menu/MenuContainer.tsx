@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useRef } from 'react';
 import { onToggleArrowKeydownDefault, Popper } from '../../helpers';
 
 export interface MenuPopperProps {
@@ -30,7 +30,7 @@ export interface MenuContainerProps {
   /** Flag to indicate if menu is opened.*/
   isOpen: boolean;
   /** Callback to change the open state of the menu.
-   * Triggered by clicking outside of the menu, or by pressing any keys specificed in onOpenChangeKeys. */
+   * Triggered by clicking outside of the menu, or by pressing any keys specified in onOpenChangeKeys. */
   onOpenChange?: (isOpen: boolean) => void;
   /** Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
@@ -66,8 +66,8 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
   shouldPreventScrollOnItemFocus = true,
   focusTimeoutDelay = 0
 }: MenuContainerProps) => {
-  const prevIsOpen = React.useRef<boolean>(isOpen);
-  React.useEffect(() => {
+  const prevIsOpen = useRef<boolean>(isOpen);
+  useEffect(() => {
     // menu was opened, focus on first menu item
     if (prevIsOpen.current === false && isOpen === true && shouldFocusFirstItemOnOpen) {
       setTimeout(() => {
@@ -82,7 +82,7 @@ export const MenuContainer: React.FunctionComponent<MenuContainerProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
       if (

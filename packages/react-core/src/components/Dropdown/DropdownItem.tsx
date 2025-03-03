@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { MenuItemProps, MenuItem } from '../Menu';
 import { TooltipProps } from '../Tooltip';
@@ -65,7 +65,7 @@ const DropdownItemBase: React.FunctionComponent<DropdownItemProps> = ({
   );
 };
 
-export const DropdownItem = React.forwardRef(
+export const DropdownItem = forwardRef(
   (props: DropdownItemProps, ref: React.Ref<HTMLAnchorElement | HTMLButtonElement>) => (
     <DropdownItemBase {...props} innerRef={ref} />
   )

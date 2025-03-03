@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Card,
   CardHeader,
@@ -90,7 +90,7 @@ export const CardExpandable: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div style={{ marginBottom: '12px' }}>
         <Checkbox
           id={'isToggleRightAligned-1'}
@@ -119,6 +119,6 @@ export const CardExpandable: React.FunctionComponent = () => {
           <CardFooter>Footer</CardFooter>
         </CardExpandableContent>
       </Card>
-    </React.Fragment>
+    </Fragment>
   );
 };

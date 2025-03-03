@@ -1,4 +1,3 @@
-import React from 'react';
 import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
 
 interface ItemType {

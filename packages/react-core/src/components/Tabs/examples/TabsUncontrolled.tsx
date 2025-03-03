@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tabs, Tab, TabTitleText, Tooltip } from '@patternfly/react-core';
 
 export const TabsUncontrolled: React.FunctionComponent = () => {

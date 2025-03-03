@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Icon } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
@@ -7,7 +7,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-i
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 export const IconStatus: React.FunctionComponent = () => (
-  <React.Fragment>
+  <Fragment>
     <Icon status="danger">
       <ExclamationCircleIcon />
     </Icon>{' '}
@@ -23,5 +23,5 @@ export const IconStatus: React.FunctionComponent = () => (
     <Icon status="custom">
       <BellIcon />
     </Icon>
-  </React.Fragment>
+  </Fragment>
 );

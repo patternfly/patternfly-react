@@ -21,7 +21,6 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 ### Open tabs
 
 ```js isFullscreen
-import React from 'react';
 import {
   PageSection,
   PageBreadcrumb,
@@ -211,7 +210,6 @@ TabsOpenDemo = () => {
 ### Open tabs with secondary tabs
 
 ```js isFullscreen
-import React from 'react';
 import {
   PageSection,
   PageBreadcrumb,

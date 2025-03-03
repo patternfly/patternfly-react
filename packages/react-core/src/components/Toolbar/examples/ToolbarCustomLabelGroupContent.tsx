@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Toolbar,
   ToolbarItem,
@@ -97,7 +97,7 @@ export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
   );
 
   const toggleGroupItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarGroup variant="filter-group">
         <ToolbarFilter
           labels={filters.status}
@@ -164,11 +164,11 @@ export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
           </Select>
         </ToolbarFilter>
       </ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   const toolbarItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
         {toggleGroupItems}
       </ToolbarToggleGroup>
@@ -183,11 +183,11 @@ export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
           <Button variant="plain" aria-label="sync" icon={<SyncIcon />} />
         </ToolbarItem>
       </ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   const customLabelGroupContent = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem>
         <Button variant="link" onClick={() => {}} isInline>
           Save filters
@@ -198,7 +198,7 @@ export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
           Clear all filters
         </Button>
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

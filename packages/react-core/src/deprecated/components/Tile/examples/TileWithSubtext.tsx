@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tile } from '@patternfly/react-core/deprecated';
 
 export const TileWithSubtext: React.FunctionComponent = () => (

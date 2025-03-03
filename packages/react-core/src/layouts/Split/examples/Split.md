@@ -12,7 +12,6 @@ import './split.css';
 ### Basic
 
 ```js
-import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
 <Split>
@@ -25,7 +24,6 @@ import { Split, SplitItem } from '@patternfly/react-core';
 ### With gutter
 
 ```js
-import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
 <Split hasGutter>
@@ -38,7 +36,6 @@ import { Split, SplitItem } from '@patternfly/react-core';
 ### Wrappable
 
 ```js
-import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
 <Split hasGutter isWrappable>

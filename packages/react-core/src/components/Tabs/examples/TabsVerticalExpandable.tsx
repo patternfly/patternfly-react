@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
 export const TabsVerticalExpandable: React.FunctionComponent = () => {

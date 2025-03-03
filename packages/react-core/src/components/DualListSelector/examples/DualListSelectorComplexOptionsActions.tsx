@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -233,7 +233,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DualListSelector>
         <DualListSelectorPane
           title="Available options"
@@ -331,6 +331,6 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
         isChecked={isDisabled}
         onChange={() => setIsDisabled(!isDisabled)}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

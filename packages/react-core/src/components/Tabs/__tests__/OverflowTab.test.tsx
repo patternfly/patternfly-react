@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
@@ -181,14 +181,14 @@ test('Renders tabs passed via overflowingTabs when expanded in strict mode', asy
 
   const consoleError = jest.spyOn(console, 'error');
   const { asFragment } = render(
-    <React.StrictMode>
+    <StrictMode>
       <OverflowTab
         overflowingTabs={[
           { title: 'Tab one', eventKey: 1 },
           { title: 'Tab two', eventKey: 2 }
         ]}
       />
-    </React.StrictMode>
+    </StrictMode>
   );
 
   await user.click(screen.getByRole('tab', { name: 'More' }));

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Checkbox, Slider, SliderOnChangeEvent, Content } from '@patternfly/react-core';
 
 export const SliderContinuous: React.FunctionComponent = () => {

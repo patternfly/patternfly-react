@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextArea } from '@patternfly/react-core';
 
 export const TextAreaValidated: React.FunctionComponent = () => {

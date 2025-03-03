@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from '@patternfly/react-core';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 

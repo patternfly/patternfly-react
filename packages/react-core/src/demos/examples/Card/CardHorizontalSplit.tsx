@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter, Grid, GridItem, Button } from '@patternfly/react-core';
 
 export const CardHorizontalSplitDemo: React.FunctionComponent = () => (

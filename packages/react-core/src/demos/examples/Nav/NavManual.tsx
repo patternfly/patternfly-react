@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Avatar,
   Brand,
@@ -252,7 +252,7 @@ export const NavManual: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page
         masthead={masthead}
         sidebar={Sidebar}
@@ -281,6 +281,6 @@ export const NavManual: React.FunctionComponent = () => {
           </Gallery>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

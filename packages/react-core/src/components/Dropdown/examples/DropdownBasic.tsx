@@ -1,4 +1,3 @@
-import React from 'react';
 import { Dropdown, DropdownItem, DropdownList, Divider, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
 
 export const DropdownBasic: React.FunctionComponent = () => {

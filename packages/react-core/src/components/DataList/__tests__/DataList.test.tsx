@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -40,7 +38,7 @@ test(`Renders ${styles.modifiers.compact} when isCompact = true`, () => {
 });
 
 ['nowrap', 'truncate', 'breakWord'].forEach((wrap) => {
-  test(`Renders with class ${styles.modifiers[wrap]} when wrapModifier = ${wrap} is pased`, () => {
+  test(`Renders with class ${styles.modifiers[wrap]} when wrapModifier = ${wrap} is passed`, () => {
     render(<DataList aria-label="list" wrapModifier={wrap as 'nowrap' | 'truncate' | 'breakWord'} />);
     expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers[wrap]);
   });
@@ -57,7 +55,7 @@ const gridBreakpointClasses = {
 };
 
 ['none', 'always', 'sm', 'md', 'lg', 'xl', '2xl'].forEach((oneBreakpoint) => {
-  test(`Has breakpoint - ${oneBreakpoint} when gridBreakpoint is pased`, () => {
+  test(`Has breakpoint - ${oneBreakpoint} when gridBreakpoint is passed`, () => {
     render(<DataList aria-label="list" gridBreakpoint={oneBreakpoint as any} />);
     expect(screen.getByLabelText('list')).toHaveClass(gridBreakpointClasses[oneBreakpoint]);
   });

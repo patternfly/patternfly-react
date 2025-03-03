@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader, ModalVariant, Radio } from '@patternfly/react-core';
 
 export const ModalSize: React.FunctionComponent = () => {
@@ -26,7 +26,7 @@ export const ModalSize: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       {renderSizeOptions}
       <br />
       <Button variant="primary" onClick={handleModalToggle}>
@@ -57,6 +57,6 @@ export const ModalSize: React.FunctionComponent = () => {
           </Button>
         </ModalFooter>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

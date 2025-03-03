@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef, useRef } from 'react';
 import { Button, ButtonProps } from '../Button';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import { KeyTypes } from '../../helpers/constants';
@@ -21,7 +21,7 @@ const FormGroupLabelHelpBase: React.FunctionComponent<FormGroupLabelHelpProps> =
   innerRef,
   ...props
 }) => {
-  const ref = React.useRef<HTMLSpanElement>(null);
+  const ref = useRef<HTMLSpanElement>(null);
   const buttonRef = innerRef || ref;
 
   const isMutableRef = (ref: React.Ref<HTMLSpanElement>): ref is React.MutableRefObject<HTMLSpanElement> =>
@@ -50,7 +50,7 @@ const FormGroupLabelHelpBase: React.FunctionComponent<FormGroupLabelHelpProps> =
   );
 };
 
-export const FormGroupLabelHelp = React.forwardRef((props: FormGroupLabelHelpProps, ref: React.Ref<any>) => (
+export const FormGroupLabelHelp = forwardRef((props: FormGroupLabelHelpProps, ref: React.Ref<any>) => (
   <FormGroupLabelHelpBase innerRef={ref} {...props} />
 ));
 

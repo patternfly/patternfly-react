@@ -1,4 +1,3 @@
-import React from 'react';
 import { Menu, MenuList, MenuItem, MenuContent, Spinner } from '@patternfly/react-core';
 
 export const MenuWithViewMore: React.FunctionComponent = () => {

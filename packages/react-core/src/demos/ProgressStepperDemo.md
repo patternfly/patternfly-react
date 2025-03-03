@@ -10,7 +10,6 @@ import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessib
 ### Basic
 
 ```js
-import React from 'react';
 import { ProgressStepper, ProgressStep, Button, Stack, StackItem } from '@patternfly/react-core';
 import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 

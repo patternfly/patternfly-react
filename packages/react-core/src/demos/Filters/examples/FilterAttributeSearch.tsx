@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   SearchInput,
   Toolbar,
@@ -640,7 +640,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       {toolbar}
       <Table aria-label="Selectable table">
         <Thead>
@@ -695,6 +695,6 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
           )}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

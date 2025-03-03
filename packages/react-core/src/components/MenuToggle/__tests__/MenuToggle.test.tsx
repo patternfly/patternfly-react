@@ -1,4 +1,3 @@
-import React from 'react';
 import { MenuToggle } from '../MenuToggle';
 import { MenuToggleCheckbox } from '../MenuToggleCheckbox';
 import { Badge } from '../../Badge';

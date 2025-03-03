@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   Form,
@@ -38,7 +38,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show modal with form
       </Button>
@@ -154,7 +154,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                     <div>
                       The
                       <a href="https://schema.org/address" target="_blank" rel="noopener noreferrer">
-                        adress
+                        address
                       </a>
                       of a
                       <a href="https://schema.org/Person" target="_blank" rel="noopener noreferrer">
@@ -197,6 +197,6 @@ export const ModalWithForm: React.FunctionComponent = () => {
           </Button>
         </ModalFooter>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

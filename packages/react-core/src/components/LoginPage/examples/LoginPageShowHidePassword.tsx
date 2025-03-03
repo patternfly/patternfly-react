@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import brandImg from '../../assets/PF-IconLogo.svg';
 import {
   LoginFooterItem,
@@ -45,7 +45,7 @@ export const LoginPageHideShowPassword: React.FunctionComponent = () => {
   };
 
   const socialMediaLoginContent = (
-    <React.Fragment>
+    <Fragment>
       <LoginMainFooterLinksItem>
         <Button variant="plain" aria-label="Login with Google" icon={<GoogleIcon />} />
       </LoginMainFooterLinksItem>
@@ -61,7 +61,7 @@ export const LoginPageHideShowPassword: React.FunctionComponent = () => {
       <LoginMainFooterLinksItem>
         <Button variant="plain" aria-label="Login with Gitlab" icon={<GitlabIcon />} />
       </LoginMainFooterLinksItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const signUpForAccountMessage = (
@@ -77,7 +77,7 @@ export const LoginPageHideShowPassword: React.FunctionComponent = () => {
   );
 
   const listItem = (
-    <React.Fragment>
+    <Fragment>
       <ListItem>
         <LoginFooterItem href="https://www.patternfly.org/">Terms of Use </LoginFooterItem>
       </ListItem>
@@ -87,7 +87,7 @@ export const LoginPageHideShowPassword: React.FunctionComponent = () => {
       <ListItem>
         <LoginFooterItem href="https://www.patternfly.org/">Privacy Policy</LoginFooterItem>
       </ListItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const loginForm = (

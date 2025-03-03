@@ -1,4 +1,3 @@
-import React from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
 export const DatePickerAmerican: React.FunctionComponent = () => {

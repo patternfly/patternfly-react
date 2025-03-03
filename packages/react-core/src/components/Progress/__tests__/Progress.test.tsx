@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Progress, ProgressSize } from '../Progress';
 import { ProgressVariant, ProgressMeasureLocation } from '../ProgressContainer';

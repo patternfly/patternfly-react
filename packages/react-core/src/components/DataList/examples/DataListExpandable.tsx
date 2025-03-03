@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   DataList,
   DataListItem,
@@ -53,7 +53,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
     setExpanded(newExpanded);
   };
   return (
-    <React.Fragment>
+    <Fragment>
       <DataList aria-label="Expandable data list example">
         <DataListItem aria-labelledby="ex-item1" isExpanded={expanded.includes('ex-toggle1')}>
           <DataListItemRow>
@@ -265,6 +265,6 @@ export const DataListExpandable: React.FunctionComponent = () => {
           </DataListContent>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </Fragment>
   );
 };

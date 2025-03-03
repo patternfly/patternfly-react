@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { render } from '@testing-library/react';
 import { ToolbarToggleGroup } from '../ToolbarToggleGroup';
 import { Toolbar } from '../Toolbar';
@@ -10,11 +10,11 @@ describe('ToolbarToggleGroup', () => {
     global.console = { error: myMock } as any;
 
     const items = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarToggleGroup breakpoint={undefined as 'xl'} toggleIcon={null}>
           test
         </ToolbarToggleGroup>
-      </React.Fragment>
+      </Fragment>
     );
 
     render(

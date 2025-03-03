@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -208,7 +208,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
   );
 
   const drawerContent = (
-    <React.Fragment>
+    <Fragment>
       <Toolbar id="full-page-data-toolbar">
         <ToolbarContent>{ToolbarItems}</ToolbarContent>
       </Toolbar>
@@ -412,7 +412,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
           </DataListItemRow>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

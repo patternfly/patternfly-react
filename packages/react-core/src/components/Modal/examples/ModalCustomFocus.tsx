@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from '@patternfly/react-core';
 
 export const ModalCustomFocus: React.FunctionComponent = () => {
@@ -9,7 +9,7 @@ export const ModalCustomFocus: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle} ouiaId="ShowBasicModal">
         Show modal with custom focus
       </Button>
@@ -37,6 +37,6 @@ export const ModalCustomFocus: React.FunctionComponent = () => {
           </ModalFooter>
         </ModalBody>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

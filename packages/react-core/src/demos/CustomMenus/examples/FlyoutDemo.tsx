@@ -1,4 +1,3 @@
-import React from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, MenuContainer } from '@patternfly/react-core';
 
 /* eslint-disable no-console */

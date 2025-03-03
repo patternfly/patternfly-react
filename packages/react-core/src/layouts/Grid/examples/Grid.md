@@ -12,7 +12,6 @@ import './grid.css';
 ### Basic
 
 ```js
-import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 <Grid>
@@ -38,7 +37,6 @@ import { Grid, GridItem } from '@patternfly/react-core';
 ### With gutters
 
 ```js
-import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 <Grid hasGutter>
@@ -64,7 +62,6 @@ import { Grid, GridItem } from '@patternfly/react-core';
 ### With overrides
 
 ```js
-import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 <Grid sm={6} md={4} lg={3} xl2={1}>
@@ -90,7 +87,6 @@ import { Grid, GridItem } from '@patternfly/react-core';
 ### Standard ordering
 
 ```js
-import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 <Grid hasGutter span={3}>
@@ -103,7 +99,6 @@ import { Grid, GridItem } from '@patternfly/react-core';
 ### Responsive ordering
 
 ```js
-import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 <Grid hasGutter span={3}>
@@ -116,7 +111,6 @@ import { Grid, GridItem } from '@patternfly/react-core';
 ### Grouped ordering
 
 ```js
-import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 <Grid hasGutter span={12}>
@@ -138,7 +132,6 @@ import { Grid, GridItem } from '@patternfly/react-core';
 ### Alternative components
 
 ```js
-import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 <Grid component="ul">

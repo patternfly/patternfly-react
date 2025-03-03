@@ -1,4 +1,3 @@
-import React from 'react';
 import { DualListSelector as DLSDeprecated } from '@patternfly/react-core/deprecated';
 
 export const DualListSelectorBasicSearch: React.FunctionComponent = () => {

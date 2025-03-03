@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { Fragment, useCallback, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -49,7 +48,7 @@ export const WizardToggle = ({
   const wizardToggleIndex = nonSubSteps.indexOf(parentStep || activeStep) + 1;
   const isActiveStepStatus = activeStep.status;
 
-  const handleKeyClicks = React.useCallback(
+  const handleKeyClicks = useCallback(
     (event: KeyboardEvent): void => {
       if (isNavExpanded && event.key === KeyTypes.Escape) {
         toggleNavExpanded?.(event);
@@ -59,7 +58,7 @@ export const WizardToggle = ({
   );
 
   // Open/close collapsable navigation on keydown event
-  React.useEffect(() => {
+  useEffect(() => {
     const target = typeof document !== 'undefined' ? document.body : null;
     target?.addEventListener('keydown', handleKeyClicks, false);
 
@@ -73,13 +72,13 @@ export const WizardToggle = ({
     const { children, body, ...propsWithoutChildren } = props;
 
     return (
-      <React.Fragment key={step.id}>
+      <Fragment key={step.id}>
         {activeStep?.id === step.id && <WizardBody {...body}>{children}</WizardBody>}
 
         <div key={step.id} style={{ display: 'none' }}>
           <WizardStep {...propsWithoutChildren} />
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   });
 

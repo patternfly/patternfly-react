@@ -1,5 +1,5 @@
+import { Fragment } from 'react';
 /* eslint-disable no-console */
-import React from 'react';
 import {
   Button,
   Divider,
@@ -384,7 +384,7 @@ export const TablesAndTabs = () => {
 
   return (
     <DashboardWrapper>
-      <React.Fragment>
+      <Fragment>
         <PageSection>
           <Title headingLevel="h1" size="2xl">
             Nodes
@@ -395,7 +395,7 @@ export const TablesAndTabs = () => {
           <Divider />
           {tabContent}
         </PageSection>
-      </React.Fragment>
+      </Fragment>
     </DashboardWrapper>
   );
 };

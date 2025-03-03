@@ -1,4 +1,3 @@
-import React from 'react';
 import { Wizard, WizardStep } from '@patternfly/react-core';
 
 export const WizardStepVisitRequired: React.FunctionComponent = () => (

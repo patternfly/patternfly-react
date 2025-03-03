@@ -1,4 +1,3 @@
-import React from 'react';
 import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 
 export const GuidesTreeView: React.FunctionComponent = () => {
