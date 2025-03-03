@@ -12,7 +12,6 @@ import './stack.css';
 ### Basic
 
 ```js
-import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 
 <Stack>
@@ -25,7 +24,6 @@ import { Stack, StackItem } from '@patternfly/react-core';
 ### With gutter
 
 ```js
-import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 
 <Stack hasGutter>

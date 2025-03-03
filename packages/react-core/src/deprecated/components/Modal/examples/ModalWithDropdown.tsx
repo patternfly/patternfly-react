@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, Dropdown, DropdownList, DropdownItem, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 
@@ -35,7 +35,7 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show dropdown modal
       </Button>
@@ -95,6 +95,6 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
           </Dropdown>
         </div>
       </ModalDeprecated>
-    </React.Fragment>
+    </Fragment>
   );
 };

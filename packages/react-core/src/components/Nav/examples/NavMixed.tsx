@@ -1,4 +1,3 @@
-import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList } from '@patternfly/react-core';
 
 export const NavMixed: React.FunctionComponent = () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { CodeBlock, CodeBlockAction, CodeBlockCode, ClipboardCopyButton, Button } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
@@ -23,7 +23,7 @@ connectionConfig:
 url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
 
   const actions = (
-    <React.Fragment>
+    <Fragment>
       <CodeBlockAction>
         <ClipboardCopyButton
           id="basic-copy-button"
@@ -41,7 +41,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
       <CodeBlockAction>
         <Button variant="plain" aria-label="Play icon" icon={<PlayIcon />} />
       </CodeBlockAction>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

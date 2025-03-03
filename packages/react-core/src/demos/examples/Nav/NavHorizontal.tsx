@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Avatar,
   Brand,
@@ -222,7 +222,7 @@ export const NavHorizontal: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page
         masthead={masthead}
         skipToContent={PageSkipToContent}
@@ -250,6 +250,6 @@ export const NavHorizontal: React.FunctionComponent = () => {
           </Gallery>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button } from '@patternfly/react-core';
 import { Modal as ModalDeprecated } from '@patternfly/react-core/deprecated';
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
@@ -11,7 +11,7 @@ export const ModalCustomTitleIcon: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show custom title icon modal
       </Button>
@@ -42,6 +42,6 @@ export const ModalCustomTitleIcon: React.FunctionComponent = () => {
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
         laborum.
       </ModalDeprecated>
-    </React.Fragment>
+    </Fragment>
   );
 };

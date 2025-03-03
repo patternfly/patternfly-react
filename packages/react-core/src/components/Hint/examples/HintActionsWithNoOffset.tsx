@@ -1,4 +1,3 @@
-import React from 'react';
 import { Hint, HintTitle, HintBody, Button, Checkbox } from '@patternfly/react-core';
 
 export const HintActionsWithNoOffset: React.FunctionComponent = () => {

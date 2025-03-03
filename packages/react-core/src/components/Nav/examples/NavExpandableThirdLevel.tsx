@@ -1,4 +1,3 @@
-import React from 'react';
 import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
 
 export const NavExpandableThirdLevel: React.FunctionComponent = () => {

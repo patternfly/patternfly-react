@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tile } from '@patternfly/react-core/deprecated';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 

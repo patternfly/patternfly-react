@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Tabs, Tab, TabTitleText, TabContent, TabContentBody } from '@patternfly/react-core';
 
 export const TabContentWithBodyPadding: React.FunctionComponent = () => {
@@ -16,7 +16,7 @@ export const TabContentWithBodyPadding: React.FunctionComponent = () => {
   const contentRef3 = React.createRef<HTMLElement>();
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Tabs
         activeKey={activeTabKey}
         onSelect={handleTabClick}
@@ -53,6 +53,6 @@ export const TabContentWithBodyPadding: React.FunctionComponent = () => {
           <TabContentBody hasPadding> Tab 3 section with body and padding </TabContentBody>
         </TabContent>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };

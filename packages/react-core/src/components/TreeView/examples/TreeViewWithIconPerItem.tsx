@@ -1,4 +1,3 @@
-import React from 'react';
 import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 import GitlabIcon from '@patternfly/react-icons/dist/esm/icons/gitlab-icon';
 import GithubIcon from '@patternfly/react-icons/dist/esm/icons/github-icon';

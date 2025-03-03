@@ -1,9 +1,9 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Tabs, Tab, TabContent, Button, Divider } from '@patternfly/react-core';
 
 export const TabsToggledSeparateContent: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
-  const [isTab2Hidden, setisTab2Hidden] = React.useState<boolean>(false);
+  const [isTab2Hidden, setIsTab2Hidden] = React.useState<boolean>(false);
   // Toggle currently active tab
   const handleTabClick = (
     event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
@@ -17,8 +17,8 @@ export const TabsToggledSeparateContent: React.FunctionComponent = () => {
   const contentRef3 = React.createRef<HTMLElement>();
 
   return (
-    <React.Fragment>
-      <Button onClick={() => setisTab2Hidden(!isTab2Hidden)}>{isTab2Hidden ? 'Show' : 'Hide'} tab 2</Button>
+    <Fragment>
+      <Button onClick={() => setIsTab2Hidden(!isTab2Hidden)}>{isTab2Hidden ? 'Show' : 'Hide'} tab 2</Button>
       <Divider style={{ paddingTop: '1rem', paddingBottom: '1rem' }} />
       <Tabs
         activeKey={activeTabKey}
@@ -62,6 +62,6 @@ export const TabsToggledSeparateContent: React.FunctionComponent = () => {
           Tab 3 section
         </TabContent>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };

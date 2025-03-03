@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   DataList,
   DataListItem,
@@ -44,7 +44,7 @@ export const DataListClickableRows: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DataList
         aria-label="clickable data list example"
         selectedDataListItemId={selectedDataListItemId}
@@ -150,6 +150,6 @@ export const DataListClickableRows: React.FunctionComponent = () => {
           </DataListItemRow>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </Fragment>
   );
 };

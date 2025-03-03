@@ -86,7 +86,6 @@ interface WizardContext {
 ### Progressive steps
 
 ```js
-import React from 'react';
 import { Button, Radio, Alert } from '@patternfly/react-core';
 import {
   Wizard as WizardDeprecated,

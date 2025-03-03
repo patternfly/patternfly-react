@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Pagination } from '@patternfly/react-core';
 
 export const PaginationIndeterminate: React.FunctionComponent = () => {
@@ -21,13 +21,13 @@ export const PaginationIndeterminate: React.FunctionComponent = () => {
   return (
     <Pagination
       toggleTemplate={({ firstIndex, lastIndex }) => (
-        <React.Fragment>
+        <Fragment>
           <b>
             {firstIndex} - {lastIndex}
           </b>
           of
           <b>many</b>
-        </React.Fragment>
+        </Fragment>
       )}
       widgetId="indeterminate-example"
       perPage={perPage}

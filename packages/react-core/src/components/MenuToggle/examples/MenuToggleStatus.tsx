@@ -1,8 +1,8 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { MenuToggle, HelperText, HelperTextItem } from '@patternfly/react-core';
 
 export const MenuToggleStatus: React.FunctionComponent = () => (
-  <React.Fragment>
+  <Fragment>
     <MenuToggle status="success">Success</MenuToggle>
     <br />
     <br />
@@ -16,5 +16,5 @@ export const MenuToggleStatus: React.FunctionComponent = () => (
     <HelperText>
       <HelperTextItem variant="error">Danger text that explains the issue.</HelperTextItem>
     </HelperText>
-  </React.Fragment>
+  </Fragment>
 );

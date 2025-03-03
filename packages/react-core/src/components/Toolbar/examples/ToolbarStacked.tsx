@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -128,7 +128,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
   );
 
   const toggleGroupItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem variant="label" id="stacked-example-resource-select">
         Resource
       </ToolbarItem>
@@ -196,11 +196,11 @@ export const ToolbarStacked: React.FunctionComponent = () => {
           </SelectList>
         </Select>
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const firstRowItems = (
-    <React.Fragment>
+    <Fragment>
       <Toolbar>
         <ToolbarContent>
           <ToolbarToggleGroup variant="label-group" toggleIcon={<FilterIcon />} breakpoint="lg">
@@ -241,11 +241,11 @@ export const ToolbarStacked: React.FunctionComponent = () => {
           </ToolbarItem>
         </ToolbarContent>
       </Toolbar>
-    </React.Fragment>
+    </Fragment>
   );
 
   const secondRowItems = (
-    <React.Fragment>
+    <Fragment>
       <Toolbar>
         <ToolbarContent>
           <ToolbarItem>
@@ -284,14 +284,14 @@ export const ToolbarStacked: React.FunctionComponent = () => {
           </ToolbarItem>
         </ToolbarContent>
       </Toolbar>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       {firstRowItems}
       <Divider />
       {secondRowItems}
-    </React.Fragment>
+    </Fragment>
   );
 };

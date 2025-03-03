@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { DataListItemRow } from '../DataListItemRow';
 
@@ -33,7 +32,7 @@ test(`Renders with spread props`, () => {
 });
 
 ['nowrap', 'truncate', 'breakWord'].forEach((wrap) => {
-  test(`Renders with class ${styles.modifiers[wrap]} when wrapModifier = ${wrap} is pased`, () => {
+  test(`Renders with class ${styles.modifiers[wrap]} when wrapModifier = ${wrap} is passed`, () => {
     render(
       <DataListItemRow data-testid="test" wrapModifier={wrap as 'nowrap' | 'truncate' | 'breakWord'}>
         test

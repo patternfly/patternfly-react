@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   ActionList,
   ActionListGroup,
@@ -45,7 +45,7 @@ export const ActionListSingleGroup: React.FunctionComponent = () => {
     </>
   );
   return (
-    <React.Fragment>
+    <Fragment>
       <ActionList>
         <ActionListGroup>
           <ActionListItem>
@@ -95,6 +95,6 @@ export const ActionListSingleGroup: React.FunctionComponent = () => {
           </ActionListItem>
         </ActionListGroup>
       </ActionList>
-    </React.Fragment>
+    </Fragment>
   );
 };

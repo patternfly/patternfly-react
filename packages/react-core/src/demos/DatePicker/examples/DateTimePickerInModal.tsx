@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   DatePicker,
   Button,
@@ -32,7 +32,7 @@ export const SimpleModal = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Launch modal
       </Button>
@@ -67,6 +67,6 @@ export const SimpleModal = () => {
           </Button>
         </ModalFooter>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

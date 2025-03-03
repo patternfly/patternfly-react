@@ -1,4 +1,3 @@
-import React from 'react';
 import { SimpleList, SimpleListItem } from '@patternfly/react-core';
 
 export const SimpleListLinks: React.FunctionComponent = () => {

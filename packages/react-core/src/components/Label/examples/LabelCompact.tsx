@@ -1,10 +1,10 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Label } from '@patternfly/react-core';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 export const LabelCompact: React.FunctionComponent = () => (
-  <React.Fragment>
+  <Fragment>
     <Label isCompact>Compact</Label>
     <Label isCompact icon={<CubeIcon />}>
       Compact icon
@@ -79,5 +79,5 @@ export const LabelCompact: React.FunctionComponent = () => (
     >
       Compact clickable removable (disabled)
     </Label>
-  </React.Fragment>
+  </Fragment>
 );

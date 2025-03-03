@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 export const PaginationBottom: React.FunctionComponent = () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, Form, FormGroup, FormGroupLabelHelp, Popover, TextInput } from '@patternfly/react-core';
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 
@@ -27,7 +27,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show modal with form
       </Button>
@@ -144,7 +144,7 @@ export const ModalWithForm: React.FunctionComponent = () => {
                   <div>
                     The
                     <a href="https://schema.org/address" target="_blank" rel="noopener noreferrer">
-                      adress
+                      address
                     </a>
                     of a
                     <a href="https://schema.org/Person" target="_blank" rel="noopener noreferrer">
@@ -178,6 +178,6 @@ export const ModalWithForm: React.FunctionComponent = () => {
           </FormGroup>
         </Form>
       </ModalDeprecated>
-    </React.Fragment>
+    </Fragment>
   );
 };
