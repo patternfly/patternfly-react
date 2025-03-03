@@ -18,9 +18,7 @@ exports[`Matches the snapshot with both title and toolbar 1`] = `
             Title
           </div>
         </div>
-        <div
-          class=""
-        >
+        <div>
           <div>
             Toolbar
           </div>

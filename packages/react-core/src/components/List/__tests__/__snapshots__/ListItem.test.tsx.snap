@@ -23,9 +23,7 @@ exports[`Matches snapshot with icon 1`] = `
 
 exports[`Matches snapshot without icon 1`] = `
 <DocumentFragment>
-  <li
-    class=""
-  >
+  <li>
     <span>
       List item content
     </span>
