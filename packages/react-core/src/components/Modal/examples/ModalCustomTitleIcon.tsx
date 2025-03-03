@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from '@patternfly/react-core';
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
@@ -10,7 +10,7 @@ export const ModalCustomTitleIcon: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show custom title icon modal
       </Button>
@@ -47,6 +47,6 @@ export const ModalCustomTitleIcon: React.FunctionComponent = () => {
           </Button>
         </ModalFooter>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

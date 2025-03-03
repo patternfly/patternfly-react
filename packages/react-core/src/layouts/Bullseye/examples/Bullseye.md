@@ -12,7 +12,6 @@ import './bullseye.css';
 ### Basic
 
 ```js
-import React from 'react';
 import { Bullseye } from '@patternfly/react-core';
 
 <Bullseye>

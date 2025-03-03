@@ -1,10 +1,10 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
 
 export const ToolbarGroupSpacers: React.FunctionComponent = () => {
   const groupGapItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarGroup>
         <ToolbarItem>
           <Button variant="secondary">Default Gap</Button>
@@ -40,11 +40,11 @@ export const ToolbarGroupSpacers: React.FunctionComponent = () => {
           <Button variant="secondary">Extra Large Gap</Button>
         </ToolbarItem>
       </ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   const groupColumnGapItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarGroup columnGap={{ default: 'columnGapNone' }}>
         <ToolbarItem>
           <Button variant="secondary">No Column Gap</Button>
@@ -71,11 +71,11 @@ export const ToolbarGroupSpacers: React.FunctionComponent = () => {
           <Button variant="secondary">Extra Large Column Gap</Button>
         </ToolbarItem>
       </ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   const groupRowGapItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarGroup className="pf-m-wrap" rowGap={{ default: 'rowGapNone' }}>
         <ToolbarItem>
           <Button variant="secondary">No Row Gap</Button>
@@ -156,7 +156,7 @@ export const ToolbarGroupSpacers: React.FunctionComponent = () => {
           <Button variant="secondary">Extra Large Row Gap</Button>
         </ToolbarItem>
       </ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

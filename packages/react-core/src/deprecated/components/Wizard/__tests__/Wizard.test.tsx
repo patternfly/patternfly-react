@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Wizard, WizardStepFunctionType, WizardStep } from '../Wizard';
 import { DrawerPanelContent, DrawerHead } from '../../../../../src/components/Drawer';

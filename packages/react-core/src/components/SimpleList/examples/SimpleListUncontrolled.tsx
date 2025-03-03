@@ -1,4 +1,3 @@
-import React from 'react';
 import { SimpleList, SimpleListItem, SimpleListItemProps } from '@patternfly/react-core';
 
 export const SimpleListUncontrolled: React.FunctionComponent = () => {

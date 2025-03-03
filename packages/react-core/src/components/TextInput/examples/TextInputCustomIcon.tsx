@@ -1,4 +1,3 @@
-import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 import CalendarIcon from '@patternfly/react-icons/dist/esm/icons/calendar-icon';
 import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';

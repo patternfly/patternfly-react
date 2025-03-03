@@ -1,4 +1,3 @@
-import React from 'react';
 import { Slider, SliderOnChangeEvent, Content } from '@patternfly/react-core';
 
 export const SliderDiscrete: React.FunctionComponent = () => {

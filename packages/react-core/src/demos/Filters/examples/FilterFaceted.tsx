@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Toolbar,
   ToolbarContent,
@@ -457,7 +457,7 @@ export const FilterFaceted: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       {toolbar}
       <Table aria-label="Selectable table">
         <Thead>
@@ -512,6 +512,6 @@ export const FilterFaceted: React.FunctionComponent = () => {
           )}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

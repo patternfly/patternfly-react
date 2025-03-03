@@ -1,4 +1,3 @@
-import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
 import BookOpenIcon from '@patternfly/react-icons/dist/esm/icons/book-open-icon';
 import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';

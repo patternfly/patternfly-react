@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Label } from '@patternfly/react-core';
 
 export const LabelEditable: React.FunctionComponent = () => {
@@ -22,7 +22,7 @@ export const LabelEditable: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Label
         color="blue"
         onClose={() => {}}
@@ -52,6 +52,6 @@ export const LabelEditable: React.FunctionComponent = () => {
       >
         {compactLabelText}
       </Label>
-    </React.Fragment>
+    </Fragment>
   );
 };

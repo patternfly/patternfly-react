@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { render, screen } from '@testing-library/react';
 import { WizardNavItem } from '../WizardNavItem';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';

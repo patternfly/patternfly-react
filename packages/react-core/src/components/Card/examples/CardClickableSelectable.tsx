@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, CardHeader, CardTitle, CardBody, Button, Checkbox, Gallery } from '@patternfly/react-core';
 
 export const CardClickable: React.FunctionComponent = () => {

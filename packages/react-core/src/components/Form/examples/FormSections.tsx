@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form, FormGroup, FormSection, TextInput } from '@patternfly/react-core';
 
 export const FormSections: React.FunctionComponent = () => {

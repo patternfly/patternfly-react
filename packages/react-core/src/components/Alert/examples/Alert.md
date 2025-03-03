@@ -29,7 +29,6 @@ PatternFly supports several alert variants for different scenarios. Each variant
 | Danger | Use to indicate that a critical or blocking error has occurred |
 
 ```ts
-import React from 'react';
 import { Alert } from '@patternfly/react-core';
 
 <React.Fragment>
@@ -56,7 +55,6 @@ PatternFly supports several properties and variations that can be used to add ex
   - If there is a description passed via `children` prop, then the `component` prop should be a heading element. Headings should be ordered by their level and heading levels should not be skipped. For example, a heading of an `h2` level should not be followed directly by an `h4`.
 
 ```ts
-import React from 'react';
 import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
 
 <React.Fragment>
@@ -104,7 +102,6 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
 Use the `timeout` property to automatically dismiss an alert after a period of time. If set to `true`, the `timeout` will be 8000 milliseconds. Provide a specific value to dismiss the alert after a different number of milliseconds.
 
 ```ts
-import React from 'react';
 import { Alert, AlertActionLink, AlertGroup, Button } from '@patternfly/react-core';
 
 const AlertTimeout: React.FunctionComponent = () => {
@@ -163,7 +160,6 @@ It is not recommended to use an expandable alert with a `timeout` in a [toast al
 See the [toast alert considerations](/components/alert/accessibility#toast-alerts) section of the alert accessibility documentation to understand the accessibility risks associated with using toast alerts.
 
 ```ts
-import React from 'react';
 import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
 
 <React.Fragment>
@@ -204,7 +200,6 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
 Use the `truncateTitle` property to shorten a long `title`. Set `truncateTitle` equal to a number (passed in as `{n}`) to reduce the number of lines of text in the alert's `title`. Users may hover over or tab to a truncated `title` to see the full message in a tooltip.
 
 ```ts
-import React from 'react';
 import { Alert } from '@patternfly/react-core';
 
 <React.Fragment>
@@ -237,7 +232,6 @@ import { Alert } from '@patternfly/react-core';
 Use the `customIcon` property to replace a default alert icon with a custom icon.
 
 ```ts
-import React from 'react';
 import { Alert } from '@patternfly/react-core';
 import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
 import BoxIcon from '@patternfly/react-icons/dist/esm/icons/box-icon';
@@ -259,7 +253,6 @@ import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 Use inline alerts to display an alert inline with content. All alert variants may use the `isInline` property to position alerts in content-heavy areas, such as within forms, wizards, or drawers.
 
 ```ts
-import React from 'react';
 import { Alert } from '@patternfly/react-core';
 <React.Fragment>
   <Alert variant="custom" isInline title="Custom inline alert title" />
@@ -275,7 +268,6 @@ import { Alert } from '@patternfly/react-core';
 All general alert variations can use the `isInline` property to apply inline styling.
 
 ```ts
-import React from 'react';
 import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
 <React.Fragment>
   <Alert
@@ -324,7 +316,6 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
 Use the `isPlain` property to make any inline alert plain. Plain styling removes the colored background but keeps colored text and icons.
 
 ```ts
-import React from 'react';
 import { Alert } from '@patternfly/react-core';
 <React.Fragment>
   <Alert variant="custom" isInline isPlain title="Custom inline alert title" />
@@ -340,7 +331,6 @@ import { Alert } from '@patternfly/react-core';
 It is not recommended to use a plain inline alert with `actionClose` nor `actionLinks` because these alerts are non-dismissible and should persist until the error or action related to the alert is resolved.
 
 ```ts
-import React from 'react';
 import { Alert } from '@patternfly/react-core';
 <Alert isInline isPlain variant="success" title="Success alert title">
   <p>Success alert description. This should tell the user more information about the alert.</p>
@@ -354,7 +344,6 @@ Live region alerts allow you to expose dynamic content changes in a way that can
 By default, `isLiveRegion`alerts are static.
 
 ```ts
-import React from 'react';
 import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
 
 <React.Fragment>

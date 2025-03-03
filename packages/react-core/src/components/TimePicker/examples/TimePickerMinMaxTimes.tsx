@@ -1,4 +1,3 @@
-import React from 'react';
 import { TimePicker } from '@patternfly/react-core';
 
 export const TimePickerMinMaxTimes: React.FunctionComponent = () => (

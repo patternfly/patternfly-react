@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   MenuToggle,
@@ -57,7 +57,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
   };
 
   const filterGroupItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem>
         <Select
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
@@ -148,11 +148,11 @@ export const ToolbarGroups: React.FunctionComponent = () => {
           </SelectList>
         </Select>
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const iconButtonGroupItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem>
         <Button variant="plain" aria-label="edit" icon={<EditIcon />} />
       </ToolbarItem>
@@ -162,11 +162,11 @@ export const ToolbarGroups: React.FunctionComponent = () => {
       <ToolbarItem>
         <Button variant="plain" aria-label="sync" icon={<SyncIcon />} />
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const buttonGroupItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem>
         <Button variant="primary">Action</Button>
       </ToolbarItem>
@@ -176,15 +176,15 @@ export const ToolbarGroups: React.FunctionComponent = () => {
       <ToolbarItem>
         <Button variant="tertiary">Tertiary</Button>
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const items = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarGroup variant="filter-group">{filterGroupItems}</ToolbarGroup>
       <ToolbarGroup variant="action-group-plain">{iconButtonGroupItems}</ToolbarGroup>
       <ToolbarGroup variant="action-group">{buttonGroupItems}</ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

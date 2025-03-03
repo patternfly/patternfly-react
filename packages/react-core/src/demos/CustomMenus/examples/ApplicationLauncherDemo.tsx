@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   MenuToggle,
   MenuSearch,
@@ -230,12 +230,12 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
       </MenuSearch>
       <Divider />
       {filteredFavorites.length > 0 && (
-        <React.Fragment>
+        <Fragment>
           <DropdownGroup key="favorites-group" label="Favorites">
             <DropdownList>{filteredFavorites}</DropdownList>
           </DropdownGroup>
           <Divider key="favorites-divider" />
-        </React.Fragment>
+        </Fragment>
       )}
       {filteredItems}
     </Dropdown>

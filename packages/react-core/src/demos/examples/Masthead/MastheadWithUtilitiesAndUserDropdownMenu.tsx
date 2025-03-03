@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Avatar,
   Brand,
@@ -337,12 +337,12 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       <Divider />
       <MenuContent>
         {filteredFavorites.length > 0 && (
-          <React.Fragment>
+          <Fragment>
             <MenuGroup key="favorites-group" label="Favorites">
               <MenuList>{filteredFavorites}</MenuList>
             </MenuGroup>
             <Divider key="favorites-divider" />
-          </React.Fragment>
+          </Fragment>
         )}
         {filteredItems}
       </MenuContent>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form, FormGroup, Checkbox, HelperText, HelperTextItem, FormHelperText } from '@patternfly/react-core';
 
 export const FormHorizontalFormHelperText: React.FunctionComponent = () => (

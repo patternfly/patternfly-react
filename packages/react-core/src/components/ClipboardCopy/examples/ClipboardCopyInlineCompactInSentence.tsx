@@ -1,8 +1,8 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
 export const ClipboardCopyInlineCompactInSentence: React.FunctionComponent = () => (
-  <React.Fragment>
+  <Fragment>
     <b>Basic</b>
     <br />
     Lorem ipsum{' '}
@@ -32,5 +32,5 @@ export const ClipboardCopyInlineCompactInSentence: React.FunctionComponent = () 
       </ClipboardCopy>
     }{' '}
     Mauris luctus, libero nec dapibus ultricies, urna purus pretium mauris, ullamcorper pharetra lacus nibh vitae enim.
-  </React.Fragment>
+  </Fragment>
 );
