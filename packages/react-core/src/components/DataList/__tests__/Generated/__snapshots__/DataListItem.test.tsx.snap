@@ -3,7 +3,6 @@
 exports[`DataListItem should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <li
-    aria-labelledby="string"
     class="pf-v6-c-data-list__item ''"
     id="''"
   >
