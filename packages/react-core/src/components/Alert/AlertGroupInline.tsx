@@ -16,7 +16,7 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
   ...props
 }: AlertGroupProps) => {
   const [handleTransitionEnd, setHandleTransitionEnd] = useState(() => () => {});
-  const updateTransitionEnd = (onTransitionEnd: React.Dispatch<React.SetStateAction<() => void>>) => {
+  const updateTransitionEnd = (onTransitionEnd: () => void) => {
     setHandleTransitionEnd(() => onTransitionEnd);
   };
   return (
