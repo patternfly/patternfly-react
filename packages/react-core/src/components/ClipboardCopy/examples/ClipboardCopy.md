@@ -6,7 +6,7 @@ propComponents: ['ClipboardCopy', 'ClipboardCopyButton']
 ouia: true
 ---
 
-import { Fragment, useEffect } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 ## Examples
