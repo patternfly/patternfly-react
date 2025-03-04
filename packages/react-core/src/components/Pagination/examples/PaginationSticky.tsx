@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Pagination, PaginationVariant, Gallery, GalleryItem, Card, CardBody } from '@patternfly/react-core';
 
 export const PaginationSticky: React.FunctionComponent = () => {
@@ -37,7 +37,7 @@ export const PaginationSticky: React.FunctionComponent = () => {
   };
 
   return isTopSticky ? (
-    <React.Fragment>
+    <Fragment>
       <Pagination
         itemCount={itemCount}
         perPage={perPage}
@@ -50,9 +50,9 @@ export const PaginationSticky: React.FunctionComponent = () => {
         <button onClick={onToggleSticky}>Toggle to bottom position</button>
       </Pagination>
       <Gallery hasGutter>{buildCards()}</Gallery>
-    </React.Fragment>
+    </Fragment>
   ) : (
-    <React.Fragment>
+    <Fragment>
       <Gallery hasGutter>{buildCards()}</Gallery>
       <Pagination
         itemCount={itemCount}
@@ -66,6 +66,6 @@ export const PaginationSticky: React.FunctionComponent = () => {
       >
         <button onClick={onToggleSticky}>Toggle to top position</button>
       </Pagination>
-    </React.Fragment>
+    </Fragment>
   );
 };

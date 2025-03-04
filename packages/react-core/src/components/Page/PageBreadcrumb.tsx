@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { formatBreakpointMods, Mods } from '../../helpers/util';
@@ -47,9 +47,9 @@ export const PageBreadcrumb = ({
   hasBodyWrapper = true,
   ...props
 }: PageBreadcrumbProps) => {
-  const { height, getVerticalBreakpoint } = React.useContext(PageContext);
+  const { height, getVerticalBreakpoint } = useContext(PageContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (hasOverflowScroll && !ariaLabel) {
       /* eslint-disable no-console */
       console.warn('PageBreadcrumb: An accessible aria-label is required when hasOverflowScroll is set to true.');

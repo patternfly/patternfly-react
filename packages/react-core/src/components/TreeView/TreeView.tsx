@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { TreeViewList } from './TreeViewList';
 import { TreeViewCheckProps, TreeViewListItem } from './TreeViewListItem';
 import { TreeViewRoot } from './TreeViewRoot';

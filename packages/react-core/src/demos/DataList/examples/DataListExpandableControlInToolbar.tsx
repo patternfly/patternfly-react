@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   Content,
@@ -74,7 +74,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
   };
 
   const renderToolbar = () => (
-    <React.Fragment>
+    <Fragment>
       <Toolbar>
         <ToolbarContent>
           <ToolbarGroup>
@@ -115,7 +115,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
           </ToolbarGroup>
         </ToolbarContent>
       </Toolbar>
-    </React.Fragment>
+    </Fragment>
   );
 
   const toggle = (id: string) => {
@@ -131,7 +131,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DashboardWrapper mainContainerId="main-content-datalist-view-default-nav" breadcrumb={null}>
         <PageSection>
           <Content>
@@ -373,6 +373,6 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
           </DataList>
         </PageSection>
       </DashboardWrapper>
-    </React.Fragment>
+    </Fragment>
   );
 };

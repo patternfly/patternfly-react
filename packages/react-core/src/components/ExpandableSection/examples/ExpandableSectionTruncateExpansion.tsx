@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExpandableSection, ExpandableSectionVariant } from '@patternfly/react-core';
 
 export const ExpandableSectionTruncateExpansion: React.FunctionComponent = () => {

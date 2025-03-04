@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { InternalFormFieldGroup } from './InternalFormFieldGroup';
 
 export interface FormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {

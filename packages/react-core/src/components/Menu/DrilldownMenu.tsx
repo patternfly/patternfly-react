@@ -1,4 +1,4 @@
-import React from 'react';
+import { createRef } from 'react';
 import { Menu } from './Menu';
 import { MenuContent } from './MenuContent';
 import { MenuList } from './MenuList';
@@ -30,7 +30,7 @@ export const DrilldownMenu: React.FunctionComponent<DrilldownMenuProps> = ({
         parentMenu={menuId}
         isMenuDrilledIn={isMenuDrilledIn}
         isRootMenu={false}
-        ref={React.createRef()}
+        ref={createRef()}
         {...context}
         {...props}
       >

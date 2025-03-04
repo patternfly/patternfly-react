@@ -1,4 +1,3 @@
-import React from 'react';
 import { Popover, Button } from '@patternfly/react-core';
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 

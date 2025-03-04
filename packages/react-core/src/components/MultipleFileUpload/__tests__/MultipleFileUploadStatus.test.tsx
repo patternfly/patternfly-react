@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import { MultipleFileUploadStatus } from '../MultipleFileUploadStatus';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';

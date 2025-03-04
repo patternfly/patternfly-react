@@ -1,8 +1,8 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { MenuToggleAction, MenuToggle } from '@patternfly/react-core';
 
 export const MenuToggleSplitButtonAction: React.FunctionComponent = () => (
-  <React.Fragment>
+  <Fragment>
     <MenuToggle
       splitButtonItems={[
         <MenuToggleAction id="split-button-action-example-with-toggle-button" key="split-action" aria-label="Action">
@@ -37,5 +37,5 @@ export const MenuToggleSplitButtonAction: React.FunctionComponent = () => (
       ]}
       aria-label="Menu toggle with action split button"
     />
-  </React.Fragment>
+  </Fragment>
 );

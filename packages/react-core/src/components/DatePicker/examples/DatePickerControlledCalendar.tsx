@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, DatePicker } from '@patternfly/react-core';
 
 export const DatePickerControlledCalendar: React.FunctionComponent = () => {
@@ -9,11 +9,11 @@ export const DatePickerControlledCalendar: React.FunctionComponent = () => {
     }
   };
   return (
-    <React.Fragment>
+    <Fragment>
       <DatePicker ref={dateRef} />
       <br />
       <br />
       <Button onClick={onClick}>Toggle calendar</Button>
-    </React.Fragment>
+    </Fragment>
   );
 };

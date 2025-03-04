@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   InputGroup,
@@ -23,7 +23,7 @@ export const InputGroupWithDropdown: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <InputGroup>
         <InputGroupItem>
           <Dropdown
@@ -58,6 +58,6 @@ export const InputGroupWithDropdown: React.FunctionComponent = () => {
           </Button>
         </InputGroupItem>
       </InputGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

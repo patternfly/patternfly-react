@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Modal, ModalVariant, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
 
 export const WizardWithinModal: React.FunctionComponent = () => {

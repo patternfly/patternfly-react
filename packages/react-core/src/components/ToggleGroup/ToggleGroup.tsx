@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children, cloneElement, isValidElement } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ToggleGroup/toggle-group';
 import { ToggleGroupItem, ToggleGroupItemProps } from './ToggleGroupItem';
@@ -24,10 +24,10 @@ export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
   'aria-label': ariaLabel,
   ...props
 }: ToggleGroupProps) => {
-  const toggleGroupItemList = React.Children.map(children, (child) =>
-    !(React.isValidElement(child) && child.type === ToggleGroupItem)
+  const toggleGroupItemList = Children.map(children, (child) =>
+    !(isValidElement(child) && child.type === ToggleGroupItem)
       ? child
-      : React.cloneElement<ToggleGroupItemProps>(child, areAllGroupsDisabled ? { isDisabled: true } : {})
+      : cloneElement<ToggleGroupItemProps>(child, areAllGroupsDisabled ? { isDisabled: true } : {})
   );
 
   return (

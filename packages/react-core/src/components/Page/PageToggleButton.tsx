@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Button, ButtonProps, ButtonVariant } from '../../components/Button';
 import { PageContextConsumer, PageContextProps } from './PageContext';
 

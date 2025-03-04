@@ -1,4 +1,3 @@
-import React from 'react';
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
 
 export const AccordionDefinitionList: React.FunctionComponent = () => {

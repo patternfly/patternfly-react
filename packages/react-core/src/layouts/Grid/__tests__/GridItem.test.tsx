@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { GridItem } from '../GridItem';
 import { render } from '@testing-library/react';
 import { DeviceSizes } from '../../../styles/sizes';

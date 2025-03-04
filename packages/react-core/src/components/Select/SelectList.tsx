@@ -1,4 +1,3 @@
-import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { MenuListProps, MenuList } from '../Menu';
 

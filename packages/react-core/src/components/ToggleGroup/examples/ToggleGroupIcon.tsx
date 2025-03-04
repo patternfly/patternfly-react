@@ -1,4 +1,3 @@
-import React from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';

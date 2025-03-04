@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
 
 export const TabsNavSubtab: React.FunctionComponent = () => {

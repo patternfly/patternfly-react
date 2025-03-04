@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { useEffect } from 'react';
 import { isWizardParentStep, WizardNavItemType } from './types';
 import { WizardBodyProps } from './WizardBody';
 import { useWizardContext } from './WizardContext';
@@ -26,7 +25,7 @@ export interface WizardStepProps {
   isHidden?: boolean;
   /** Replaces the step's navigation item or its properties. */
   navItem?: WizardNavItemType;
-  /** Replaces the step's footer. The step's footer takes precedance over the wizard's footer. */
+  /** Replaces the step's footer. The step's footer takes precedence over the wizard's footer. */
   footer?: React.ReactElement<any> | Partial<WizardFooterProps>;
   /** Used to determine icon next to the step's navigation item */
   status?: 'default' | 'error' | 'success';
@@ -40,7 +39,7 @@ export const WizardStep = ({ children, steps: _subSteps, ...props }: WizardStepP
   const isParentStep = isWizardParentStep(activeStep);
 
   // Update step in context when props change or when the step is active has yet to be marked as visited.
-  React.useEffect(() => {
+  useEffect(() => {
     setStep({
       id,
       name,

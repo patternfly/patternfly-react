@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createContext, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
@@ -60,9 +60,9 @@ export interface NavContextProps {
   navRef?: React.RefObject<HTMLElement | null>;
 }
 export const navContextDefaults = {};
-export const NavContext = React.createContext<NavContextProps>(navContextDefaults);
+export const NavContext = createContext<NavContextProps>(navContextDefaults);
 
-class Nav extends React.Component<
+class Nav extends Component<
   NavProps,
   { isScrollable: boolean; ouiaStateId: string; flyoutRef: React.Ref<HTMLLIElement> | null }
 > {
@@ -79,7 +79,7 @@ class Nav extends React.Component<
     flyoutRef: null as React.Ref<HTMLLIElement>
   };
 
-  navRef = React.createRef<HTMLElement>();
+  navRef = createRef<HTMLElement>();
 
   // Callback from NavItem
   onSelect(

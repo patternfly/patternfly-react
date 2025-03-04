@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Divider, DividerProps } from '../Divider';
 
 export const NavItemSeparator: React.FunctionComponent<DividerProps> = ({

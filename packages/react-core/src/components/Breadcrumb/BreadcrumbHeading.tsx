@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
@@ -51,7 +51,7 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
             {children}
           </Component>
         )}
-        {!to && component !== 'button' && <React.Fragment>{children}</React.Fragment>}
+        {!to && component !== 'button' && <Fragment>{children}</Fragment>}
       </h1>
     </li>
   );

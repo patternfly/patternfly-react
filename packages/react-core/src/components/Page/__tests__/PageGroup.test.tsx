@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { PageGroup } from '../PageGroup';
 import styles from '@patternfly/react-styles/css/components/Page/page';

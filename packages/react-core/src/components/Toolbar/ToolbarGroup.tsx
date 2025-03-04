@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
@@ -165,7 +165,7 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
   innerRef?: React.RefObject<any>;
 }
 
-class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
+class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
   render() {
     const {
       visibility,
@@ -223,6 +223,6 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
   }
 }
 
-export const ToolbarGroup = React.forwardRef((props: ToolbarGroupProps, ref: any) => (
+export const ToolbarGroup = forwardRef((props: ToolbarGroupProps, ref: any) => (
   <ToolbarGroupWithRef {...props} innerRef={ref} />
 ));

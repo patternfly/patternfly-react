@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
 import { Popper } from '../../helpers/Popper/Popper';
@@ -58,7 +58,7 @@ export interface SelectProps extends MenuProps, OUIAProps {
   /** Function callback when user selects an option. */
   onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: string | number) => void;
   /** Callback to allow the select component to change the open state of the menu.
-   * Triggered by clicking outside of the menu, or by pressing any keys specificed in onOpenChangeKeys. */
+   * Triggered by clicking outside of the menu, or by pressing any keys specified in onOpenChangeKeys. */
   onOpenChange?: (isOpen: boolean) => void;
   /** Keys that trigger onOpenChange, defaults to tab and escape. It is highly recommended to include Escape in the array, while Tab may be omitted if the menu contains non-menu items that are focusable. */
   onOpenChangeKeys?: string[];
@@ -113,8 +113,8 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   focusTimeoutDelay = 0,
   ...props
 }: SelectProps & OUIAProps) => {
-  const localMenuRef = React.useRef<HTMLDivElement>(undefined);
-  const localToggleRef = React.useRef<HTMLButtonElement>(undefined);
+  const localMenuRef = useRef<HTMLDivElement>(undefined);
+  const localToggleRef = useRef<HTMLButtonElement>(undefined);
 
   const menuRef = (innerRef as React.RefObject<HTMLDivElement | null>) || localMenuRef;
   const toggleRef =
@@ -122,8 +122,8 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       ? localToggleRef
       : (toggle?.toggleRef as React.RefObject<HTMLButtonElement | null>);
 
-  const prevIsOpen = React.useRef<boolean>(isOpen);
-  React.useEffect(() => {
+  const prevIsOpen = useRef<boolean>(isOpen);
+  useEffect(() => {
     // menu was opened, focus on first menu item
     if (prevIsOpen.current === false && isOpen === true && shouldFocusFirstItemOnOpen) {
       setTimeout(() => {
@@ -136,7 +136,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleMenuKeys = (event: KeyboardEvent) => {
       // Close the menu on tab or escape if onOpenChange is provided
       if (
@@ -225,8 +225,6 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   );
 };
 
-export const Select = React.forwardRef((props: SelectProps, ref: React.Ref<any>) => (
-  <SelectBase innerRef={ref} {...props} />
-));
+export const Select = forwardRef((props: SelectProps, ref: React.Ref<any>) => <SelectBase innerRef={ref} {...props} />);
 
 Select.displayName = 'Select';

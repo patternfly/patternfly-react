@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { css } from '@patternfly/react-styles';
@@ -74,9 +74,9 @@ interface FilterInfo {
   [key: string]: number;
 }
 
-class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
+class Toolbar extends Component<ToolbarProps, ToolbarState> {
   static displayName = 'Toolbar';
-  labelGroupContentRef = React.createRef<HTMLDivElement>();
+  labelGroupContentRef = createRef<HTMLDivElement>();
   staticFilterInfo = {};
   state = {
     isManagedToggleExpanded: false,

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { CardContext } from './Card';
@@ -20,7 +20,7 @@ export const CardTitle: React.FunctionComponent<CardTitleProps> = ({
   component = 'div',
   ...props
 }: CardTitleProps) => {
-  const { cardId } = React.useContext(CardContext);
+  const { cardId } = useContext(CardContext);
   const Component = component as any;
   const titleId = cardId ? `${cardId}-title` : '';
 

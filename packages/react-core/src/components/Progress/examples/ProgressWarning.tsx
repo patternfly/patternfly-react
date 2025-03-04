@@ -1,4 +1,3 @@
-import React from 'react';
 import { Progress, ProgressVariant } from '@patternfly/react-core';
 
 export const ProgressWarning: React.FunctionComponent = () => (

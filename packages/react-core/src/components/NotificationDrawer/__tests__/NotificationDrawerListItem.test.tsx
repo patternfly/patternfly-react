@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -32,7 +30,7 @@ describe('NotificationDrawerListItem', () => {
     expect(screen.getByRole('listitem')).toContainHTML('<span class="pf-v6-screen-reader">unread</span>');
   });
 
-  test('drawer list item screen reader textcan be customized', () => {
+  test('drawer list item screen reader text can be customized', () => {
     render(<NotificationDrawerListItem readStateScreenReaderText="was read" />);
     expect(screen.getByRole('listitem')).toContainHTML('<span class="pf-v6-screen-reader">was read</span>');
   });

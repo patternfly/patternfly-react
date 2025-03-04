@@ -1,4 +1,3 @@
-import React from 'react';
 import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 
 export const SidebarStack: React.FunctionComponent = () => (

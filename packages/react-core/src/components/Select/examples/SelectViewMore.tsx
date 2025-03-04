@@ -1,4 +1,3 @@
-import React from 'react';
 import { Select, SelectOption, SelectList, MenuToggle, Spinner } from '@patternfly/react-core';
 
 export const SelectViewMore: React.FunctionComponent = () => {

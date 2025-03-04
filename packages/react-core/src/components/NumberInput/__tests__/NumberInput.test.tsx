@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { NumberInput } from '../NumberInput';
 import userEvent from '@testing-library/user-event';
@@ -216,7 +216,7 @@ describe('numberInput', () => {
     const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
     const NumberInputWrapper = () => {
-      const [value, setValue] = React.useState(0);
+      const [value, setValue] = useState(0);
       const onChange = (event) => setValue(event.currentTarget.value);
       const inputProps = { onChange };
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children, Component, createContext } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/SimpleList/simple-list';
 import { SimpleListGroup } from './SimpleListGroup';
@@ -34,9 +34,9 @@ interface SimpleListContextProps {
   isControlled: boolean;
 }
 
-export const SimpleListContext = React.createContext<Partial<SimpleListContextProps>>({});
+export const SimpleListContext = createContext<Partial<SimpleListContextProps>>({});
 
-class SimpleList extends React.Component<SimpleListProps, SimpleListState> {
+class SimpleList extends Component<SimpleListProps, SimpleListState> {
   static displayName = 'SimpleList';
   state = {
     currentRef: null as React.RefObject<HTMLButtonElement | null> | React.RefObject<HTMLAnchorElement | null>
@@ -63,7 +63,7 @@ class SimpleList extends React.Component<SimpleListProps, SimpleListState> {
 
     let isGrouped = false;
     if (children) {
-      isGrouped = (React.Children.toArray(children)[0] as React.ReactElement<any>).type === SimpleListGroup;
+      isGrouped = (Children.toArray(children)[0] as React.ReactElement<any>).type === SimpleListGroup;
     }
 
     return (

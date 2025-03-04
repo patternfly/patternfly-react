@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Card,
   CardTitle,
@@ -50,7 +50,7 @@ export const CardTrendDemo1: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <b>Note:</b> Custom CSS is used in this demo to align the card title and select toggle text to{' '}
       <code>baseline</code> alignment.
       <br />
@@ -100,6 +100,6 @@ export const CardTrendDemo1: React.FunctionComponent = () => {
           </Card>
         </GalleryItem>
       </Gallery>
-    </React.Fragment>
+    </Fragment>
   );
 };

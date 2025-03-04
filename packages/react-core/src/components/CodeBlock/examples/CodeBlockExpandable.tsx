@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   CodeBlock,
   CodeBlockAction,
@@ -44,7 +44,7 @@ connectionConfig:
 url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
 
   const actions = (
-    <React.Fragment>
+    <Fragment>
       <CodeBlockAction>
         <ClipboardCopyButton
           id="expandable-copy-button"
@@ -62,7 +62,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
       <CodeBlockAction>
         <Button variant="plain" aria-label="Play icon" icon={<PlayIcon />} />
       </CodeBlockAction>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

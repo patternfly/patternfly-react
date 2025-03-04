@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   DataList,
@@ -28,7 +28,7 @@ export const DataListActions: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DataList aria-label="single action data list example ">
         {!isDeleted && (
           <DataListItem aria-labelledby="single-action-item1">
@@ -111,6 +111,6 @@ export const DataListActions: React.FunctionComponent = () => {
           </DataListItemRow>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Checkbox, TextInput } from '@patternfly/react-core';
 
 export const TextInputReadOnly: React.FunctionComponent = () => {

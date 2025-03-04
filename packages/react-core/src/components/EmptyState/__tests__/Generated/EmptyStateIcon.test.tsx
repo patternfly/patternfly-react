@@ -1,7 +1,6 @@
 /**
  * This test was generated
  */
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import UserIcon from '@patternfly/react-icons/dist/esm/icons/user-icon';
 import { EmptyStateIcon } from '../../EmptyStateIcon';

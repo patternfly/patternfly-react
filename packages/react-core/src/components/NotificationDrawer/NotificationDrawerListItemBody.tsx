@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 
@@ -18,11 +17,11 @@ export const NotificationDrawerListItemBody: React.FunctionComponent<Notificatio
   timestamp,
   ...props
 }: NotificationDrawerListItemBodyProps) => (
-  <React.Fragment>
+  <Fragment>
     <div {...props} className={css(styles.notificationDrawerListItemDescription, className)}>
       {children}
     </div>
     {timestamp && <div className={css(styles.notificationDrawerListItemTimestamp, className)}>{timestamp}</div>}
-  </React.Fragment>
+  </Fragment>
 );
 NotificationDrawerListItemBody.displayName = 'NotificationDrawerListItemBody';

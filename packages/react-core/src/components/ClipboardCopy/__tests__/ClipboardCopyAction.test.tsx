@@ -1,4 +1,3 @@
-import React from 'react';
 import { screen, render } from '@testing-library/react';
 import { ClipboardCopyAction } from '../ClipboardCopyAction';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';

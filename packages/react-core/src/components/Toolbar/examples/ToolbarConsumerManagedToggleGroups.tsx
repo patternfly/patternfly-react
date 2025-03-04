@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   MenuToggle,
   MenuToggleElement,
@@ -52,7 +52,7 @@ export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => 
   };
 
   const toggleGroupItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem>
         <SearchInput
           aria-label="Consumer toggle groups example search input"
@@ -125,7 +125,7 @@ export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => 
           </Select>
         </ToolbarItem>
       </ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   const items = (

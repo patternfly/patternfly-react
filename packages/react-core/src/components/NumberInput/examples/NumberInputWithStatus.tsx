@@ -1,4 +1,3 @@
-import React from 'react';
 import { NumberInput, ValidatedOptions } from '@patternfly/react-core';
 
 export const NumberInputWithStatus: React.FunctionComponent = () => {

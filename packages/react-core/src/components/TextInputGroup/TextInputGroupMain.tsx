@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, useContext, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 import { css } from '@patternfly/react-styles';
 import { TextInputGroupContext } from './TextInputGroup';
@@ -83,8 +83,8 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
   inputProps,
   ...props
 }: TextInputGroupMainProps) => {
-  const { isDisabled, validated } = React.useContext(TextInputGroupContext);
-  const ref = React.useRef(null);
+  const { isDisabled, validated } = useContext(TextInputGroupContext);
+  const ref = useRef(null);
   const textInputGroupInputInputRef = innerRef || ref;
   const StatusIcon = statusIcons[validated === ValidatedOptions.error ? 'danger' : validated];
 
@@ -132,10 +132,8 @@ const TextInputGroupMainBase: React.FunctionComponent<TextInputGroupMainProps> =
   );
 };
 
-export const TextInputGroupMain = React.forwardRef(
-  (props: TextInputGroupMainProps, ref: React.Ref<HTMLInputElement>) => (
-    <TextInputGroupMainBase innerRef={ref as React.MutableRefObject<any>} {...props} />
-  )
-);
+export const TextInputGroupMain = forwardRef((props: TextInputGroupMainProps, ref: React.Ref<HTMLInputElement>) => (
+  <TextInputGroupMainBase innerRef={ref as React.MutableRefObject<any>} {...props} />
+));
 
 TextInputGroupMain.displayName = 'TextInputGroupMain';

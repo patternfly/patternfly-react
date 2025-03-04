@@ -12,7 +12,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 ### Basic sticky banner
 
 ```js isFullscreen
-import React from 'react';
+import { Fragment } from 'react';
 import { Banner, Card, CardBody, Flex, Gallery, GalleryItem, PageSection, Content } from '@patternfly/react-core';
 
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
@@ -37,7 +37,7 @@ class BannerDemo extends React.Component {
       </Banner>
     );
     return (
-      <React.Fragment>
+      <Fragment>
         <DashboardWrapper banner={banner} breadcrumb={null}>
           <PageSection>
             <Content>
@@ -60,7 +60,7 @@ class BannerDemo extends React.Component {
             </Gallery>
           </PageSection>
         </DashboardWrapper>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
@@ -69,7 +69,7 @@ class BannerDemo extends React.Component {
 ### Top and bottom banner
 
 ```js isFullscreen
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Banner,
   Card,
@@ -88,7 +88,7 @@ import display from '@patternfly/react-styles/css/utilities/Display/display';
 class BannerDemo extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <Flex
           direction={{ default: 'column' }}
           flexWrap={{ default: 'nowrap' }}
@@ -151,7 +151,7 @@ class BannerDemo extends React.Component {
             </Banner>
           </FlexItem>
         </Flex>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

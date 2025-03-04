@@ -1,4 +1,3 @@
-import React from 'react';
 import { Content, ContentVariants } from '@patternfly/react-core';
 
 export const ContentUnorderedList: React.FunctionComponent = () => (

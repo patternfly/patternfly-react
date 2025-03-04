@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Badge } from '@patternfly/react-core';
 import { Chip } from '@patternfly/react-core/deprecated';
 
@@ -29,25 +29,25 @@ export const ChipDefault: React.FunctionComponent = () => {
 
   const { chip, longchip, badgechip, readonlychip, overflowchip } = chips;
   return (
-    <React.Fragment>
+    <Fragment>
       {chip && (
-        <React.Fragment>
+        <Fragment>
           <Chip key="chip1" onClick={() => deleteItem('chip')}>
             {chip.name}
           </Chip>
           <br /> <br />
-        </React.Fragment>
+        </Fragment>
       )}
       {longchip && (
-        <React.Fragment>
+        <Fragment>
           <Chip key="chip2" onClick={() => deleteItem('longchip')}>
             {longchip.name}
           </Chip>
           <br /> <br />
-        </React.Fragment>
+        </Fragment>
       )}
       {badgechip && (
-        <React.Fragment>
+        <Fragment>
           <Chip
             key="chip3"
             onClick={() => deleteItem('badgechip')}
@@ -56,7 +56,7 @@ export const ChipDefault: React.FunctionComponent = () => {
             {badgechip.name}
           </Chip>
           <br /> <br />
-        </React.Fragment>
+        </Fragment>
       )}
       <Chip key="chip4" onClick={() => deleteItem('readonlychip')} isReadOnly>
         {readonlychip.name}
@@ -67,6 +67,6 @@ export const ChipDefault: React.FunctionComponent = () => {
           {overflowchip.name}
         </Chip>
       )}
-    </React.Fragment>
+    </Fragment>
   );
 };
