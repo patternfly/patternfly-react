@@ -6,6 +6,7 @@ propComponents: ['Button', 'BadgeCountObject']
 ouia: true
 ---
 
+import { Fragment } from 'react';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';

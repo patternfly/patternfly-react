@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import {
   Checkbox,
   Drawer,
@@ -15,12 +15,12 @@ import {
 } from '@patternfly/react-core';
 
 export const DrawerSecondaryBackground: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
-  const [panelSecondary, setPanelSecondary] = React.useState(true);
-  const [contentSecondary, setContentSecondary] = React.useState(false);
-  const [sectionSecondary, setSectionSecondary] = React.useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [panelSecondary, setPanelSecondary] = useState(true);
+  const [contentSecondary, setContentSecondary] = useState(false);
+  const [sectionSecondary, setSectionSecondary] = useState(false);
 
-  const drawerRef = React.useRef<HTMLSpanElement>(null);
+  const drawerRef = useRef<HTMLSpanElement>(null);
 
   const onExpand = () => {
     drawerRef.current && drawerRef.current.focus();

@@ -6,6 +6,8 @@ propComponents: ['Switch']
 ouia: true
 ---
 
+import { Fragment } from 'react';
+
 ## Examples
 
 To keep inline with accessibility guidelines, the label for a switch must never dynamically change. A dynamically changing label (such as one label for an "on" state and another label for an "off" state) can be confusing as the contexts for each label changes as the switch state does. This applies to both visible text labels as well as labels provided via `aria-label`.

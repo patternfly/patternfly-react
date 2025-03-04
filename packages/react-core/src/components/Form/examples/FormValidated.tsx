@@ -1,12 +1,13 @@
+import { useEffect, useState } from 'react';
 import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextInput } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 export const FormValidated: React.FunctionComponent = () => {
   type validate = 'success' | 'warning' | 'error' | 'default';
 
-  const [age, setAge] = React.useState('Five');
-  const [validated, setValidated] = React.useState<validate>('default');
-  const [helperText, setHelperText] = React.useState('Enter your age to continue');
+  const [age, setAge] = useState('Five');
+  const [validated, setValidated] = useState<validate>('default');
+  const [helperText, setHelperText] = useState('Enter your age to continue');
 
   const handleAgeChange = (_event, age: string) => {
     setAge(age);
@@ -15,7 +16,7 @@ export const FormValidated: React.FunctionComponent = () => {
   };
 
   // useEffect is used to simulate a server call to validate the age 2000ms after the user has entered a value, preventing calling the server on every keystroke
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => {
       if (/^\d+$/.test(age)) {
         if (parseInt(age) >= 21) {

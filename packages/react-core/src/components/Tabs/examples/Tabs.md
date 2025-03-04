@@ -6,6 +6,7 @@ propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon', 'h
 ouia: true
 ---
 
+import { Fragment } from 'react';
 import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
 import BoxIcon from '@patternfly/react-icons/dist/esm/icons/box-icon';
 import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Form,
   FormGroup,
@@ -35,7 +36,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
     '0-label4': ''
   };
 
-  const [inputValues, setInputValues] = React.useState(initialValues);
+  const [inputValues, setInputValues] = useState(initialValues);
 
   const handleChange = (event, value: string) => {
     const { name } = event.currentTarget;

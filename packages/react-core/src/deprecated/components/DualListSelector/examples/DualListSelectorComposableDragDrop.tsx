@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   DragDrop,
   Draggable,
@@ -16,13 +17,13 @@ import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-d
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 export const DualListSelectorComposableDragDrop: React.FunctionComponent = () => {
-  const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = React.useState(false);
-  const [availableOptions, setAvailableOptions] = React.useState([
+  const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = useState(false);
+  const [availableOptions, setAvailableOptions] = useState([
     { text: 'Apple', selected: false, isVisible: true },
     { text: 'Banana', selected: false, isVisible: true },
     { text: 'Pineapple', selected: false, isVisible: true }
   ]);
-  const [chosenOptions, setChosenOptions] = React.useState([
+  const [chosenOptions, setChosenOptions] = useState([
     { text: 'Orange', selected: false, isVisible: true },
     { text: 'Grape', selected: false, isVisible: true },
     { text: 'Peach', selected: false, isVisible: true },

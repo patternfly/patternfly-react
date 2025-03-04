@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import {
   DatePicker,
   Button,
@@ -13,9 +13,9 @@ import {
 } from '@patternfly/react-core';
 
 export const SimpleModal = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [isTimePickerOpen, setIsTimePickerOpen] = React.useState(false);
-  const dateRef = React.useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isTimePickerOpen, setIsTimePickerOpen] = useState(false);
+  const dateRef = useRef(null);
 
   const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setIsModalOpen(!isModalOpen);

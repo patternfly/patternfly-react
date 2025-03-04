@@ -2,6 +2,7 @@
 id: Open UI Automation
 section: developer-resources
 ---
+import { Fragment } from 'react';
 
 ## About Open UI Automation
 

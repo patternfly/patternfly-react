@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -11,8 +11,8 @@ import {
 } from '@patternfly/react-core';
 
 export const DrawerResizableOnInline: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
-  const drawerRef = React.useRef<HTMLDivElement>(undefined);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(undefined);
 
   const onExpand = () => {
     drawerRef.current && drawerRef.current.focus();

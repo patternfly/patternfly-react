@@ -5,6 +5,7 @@ cssPrefix: pf-v6-c-helper-text
 propComponents: ['HelperText', 'HelperTextItem']
 ---
 
+import { Fragment } from 'react';
 import InfoIcon from '@patternfly/react-icons/dist/esm/icons/info-icon';
 import QuestionIcon from '@patternfly/react-icons/dist/esm/icons/question-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';

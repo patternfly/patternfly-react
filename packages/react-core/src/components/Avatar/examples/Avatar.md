@@ -5,6 +5,7 @@ cssPrefix: pf-v6-c-avatar
 propComponents: ['Avatar']
 ---
 
+import { Fragment } from 'react';
 import avatarImg from '../../assets/avatarImg.svg';
 
 ## Examples

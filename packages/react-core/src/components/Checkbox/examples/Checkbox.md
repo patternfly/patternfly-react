@@ -6,6 +6,8 @@ cssPrefix: pf-v6-c-check
 propComponents: ['Checkbox']
 ---
 
+import { Fragment } from 'react';
+
 ## Examples
 
 ### Controlled

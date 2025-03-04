@@ -9,6 +9,7 @@ source: react-deprecated
 deprecated: true
 ---
 
+import { Fragment } from 'react';
 import { Button, Drawer, DrawerActions, DrawerCloseButton, DrawerColorVariant,
 DrawerContent, DrawerContentBody, DrawerHead, DrawerPanelContent, DrawerSection, ModalVariant, Alert, EmptyState, EmptyStateFooter, EmptyStateBody, EmptyStateActions, Title, Progress, Form, FormGroup, TextInput } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated, WizardFooter as WizardFooterDeprecated, WizardContextConsumer as WizardContextConsumerDeprecated } from '@patternfly/react-core/deprecated';

@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 /* eslint-disable camelcase */
 import {
   Card,
@@ -27,7 +27,7 @@ import chart_color_red_orange_400 from '@patternfly/react-tokens/dist/esm/chart_
 import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
 
 export const CardUtilizationDemo3: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const selectItems = (
     <SelectList>

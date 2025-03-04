@@ -6,8 +6,8 @@ cssPrefix: pf-v6-c-menu-toggle
 propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox']
 ---
 
+import { Fragment } from 'react';
 import './MenuToggle.css'
-
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
