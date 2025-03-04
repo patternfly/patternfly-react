@@ -34,7 +34,7 @@ export const AlertActionCloseButton: React.FunctionComponent<AlertActionCloseBut
   const handleOnClick = () => {
     if (hasAnimations) {
       getParentAlertGroupItem()?.classList.add(offstageRight);
-      updateTransitionEnd(() => onClose());
+      updateTransitionEnd(onClose);
     } else {
       onClose();
     }
