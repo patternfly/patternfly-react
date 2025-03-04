@@ -1,3 +1,4 @@
+import { createContext } from 'react';
 import {
   Drawer,
   DrawerActions,
@@ -129,7 +130,7 @@ test(`Drawer has resizable callback and id`, () => {
 });
 
 test('Resizeable DrawerPanelContent can be wrapped in a context without causing an error', async () => {
-  const TestContext = React.createContext({});
+  const TestContext = createContext({});
 
   const consoleError = jest.spyOn(console, 'error').mockImplementation();
 

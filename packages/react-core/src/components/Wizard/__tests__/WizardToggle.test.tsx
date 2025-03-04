@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -94,7 +95,7 @@ test('unsets expanded properties when using the Escape key', async () => {
 });
 
 const WizardToggleExpand = (props) => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <WizardToggle
