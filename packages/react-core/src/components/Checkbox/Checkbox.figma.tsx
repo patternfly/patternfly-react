@@ -12,7 +12,7 @@ import figma from '@figma/code-connect';
 
 figma.connect(
   Checkbox,
-  'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-code-connect?node-id=157-3078&m=dev',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/H3LonYnwH26v9zNEa2SXFk/PatternFly-6%3A-Components?m=auto&node-id=157-3078',
   {
     props: {
       description: figma.boolean('Description', {

@@ -10,7 +10,7 @@ import figma from '@figma/code-connect';
  * code example you'd like to see in Figma
  */
 
-figma.connect(Icon, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-code-connect?node-id=198-1573&m=dev', {
+figma.connect(Icon, 'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/H3LonYnwH26v9zNEa2SXFk/PatternFly-6%3A-Components?m=auto&node-id=198-1573', {
   props: {
     icon: figma.instance('🖼️ Icon'),
     size: figma.enum('Icon Size', {

@@ -11,8 +11,10 @@
     }
   },
   "include": [
+    "fix-figma-urls.ts",
+    "CONSTANTS.ts",
     "./src/*",
-    "./src/**/*",
+    "./src/**/*"
   ],
   "references": [
     {

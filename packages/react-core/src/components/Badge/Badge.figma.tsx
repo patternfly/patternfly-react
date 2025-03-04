@@ -10,12 +10,19 @@ import figma from '@figma/code-connect';
  * code example you'd like to see in Figma
  */
 
-figma.connect(Badge, 'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-code-connect?node-id=1259-1132&m=dev', {
-  props: {
-    text: figma.string('Text'),
-    isDisabled: figma.enum('Type', { disabled: true }),
-    isRead: figma.enum('Type', { Read: true }),
-    screenReaderText: figma.enum('Type', { Unread: 'Unread Messages' })
-  },
-  example: ({ text, ...props }) => <Badge {...props}>{text}</Badge>
-});
+figma.connect(
+  Badge,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/H3LonYnwH26v9zNEa2SXFk/PatternFly-6%3A-Components?m=auto&node-id=1259-1132',
+  {
+    props: {
+      text: figma.string('Text'),
+      type: figma.enum('Type', {
+        new: 'New',
+        Unread: 'unread',
+        Read: 'read',
+        disabled: 'disabled'
+      })
+    },
+    example: (props) => <Badge />
+  }
+);

@@ -12,7 +12,7 @@ import figma from '@figma/code-connect';
 
 figma.connect(
   Backdrop,
-  'https://www.figma.com/design/YqvMyyV4G347jSOgfYXi29/test-code-connect?node-id=2873-2900&m=dev',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/H3LonYnwH26v9zNEa2SXFk/PatternFly-6%3A-Components?m=auto&node-id=2873-2900',
   {
     props: {},
     example: () => <Backdrop />

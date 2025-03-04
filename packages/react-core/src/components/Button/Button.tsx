@@ -1,12 +1,11 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Button/button';
-import { css } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles/';
 import { Spinner, spinnerSize } from '../Spinner';
 import { useOUIAProps, OUIAProps } from '../../helpers/OUIA/ouia';
 import { Badge } from '../Badge';
 
 export enum ButtonVariant {
-  test = 'test',
   primary = 'primary',
   secondary = 'secondary',
   tertiary = 'tertiary',

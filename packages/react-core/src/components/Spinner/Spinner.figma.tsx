@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar } from './Avatar';
+import { Spinner } from './Spinner';
 import figma from '@figma/code-connect';
 
 /**
@@ -11,18 +11,17 @@ import figma from '@figma/code-connect';
  */
 
 figma.connect(
-  Avatar,
-  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/H3LonYnwH26v9zNEa2SXFk/PatternFly-6%3A-Components?m=auto&node-id=1561-4342',
+  Spinner,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/H3LonYnwH26v9zNEa2SXFk/PatternFly-6%3A-Components?m=auto&node-id=790-332',
   {
     props: {
-      isBordered: figma.boolean('Bordered'),
       size: figma.enum('Size', {
-        small: 'sm',
-        med: 'md',
+        sm: 'sm',
+        md: 'md',
         lg: 'lg',
-        XL: 'xl'
+        xl: 'xl'
       })
     },
-    example: (props) => <Avatar alt="avatar" {...props} />
+    example: (props) => <Spinner />
   }
 );

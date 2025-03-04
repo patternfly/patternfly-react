@@ -1,0 +1,24 @@
+{
+  "codeConnect": {
+    "parser": "react",
+    "label": "PF-React",
+    "importPaths": {
+      "*": "src/components"
+    },
+    "paths": {
+      "./next": ["@next"],
+      "./deprecated": ["@deprecated"]
+    },
+    "include": [
+      "src/components/**/*",
+      "src/components/**/**/*"
+    ],
+    "exclude": [
+      "src/components/**/__tests__/*",
+      "src/components/**/_tests_/*",
+      "src/components/**/examples/*",
+      "src/components/assets/*",
+      "src/components/Icon/*"
+    ]
+  }
+}
