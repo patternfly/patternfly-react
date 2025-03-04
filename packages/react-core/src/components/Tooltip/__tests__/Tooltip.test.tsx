@@ -1,3 +1,4 @@
+import { createRef, useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import { Tooltip } from '../Tooltip';
 import userEvent from '@testing-library/user-event';
@@ -27,7 +28,7 @@ test('Renders with aria-live of off by default when triggerRef is not passed', a
 });
 
 test('Renders with aria-live of polite by default when triggerRef is passed', async () => {
-  const triggerRef = React.createRef();
+  const triggerRef = createRef();
   render(<Tooltip triggerRef={triggerRef} isVisible content="Test content" />);
 
   const tooltip = await screen.findByRole('tooltip');
@@ -94,7 +95,7 @@ test('Does not call onTooltipHidden before tooltip is hidden', async () => {
   const user = userEvent.setup();
 
   const TooltipCallback = () => {
-    const [isVisible, setIsVisible] = React.useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
     return (
       <Tooltip trigger="manual" isVisible={isVisible} onTooltipHidden={onTooltipHiddenMock} content="Test content">
@@ -114,7 +115,7 @@ test.skip('Calls onTooltipHidden when tooltip is hidden', async () => {
   const user = userEvent.setup();
 
   const TooltipCallback = () => {
-    const [isVisible, setIsVisible] = React.useState(true);
+    const [isVisible, setIsVisible] = useState(true);
 
     return (
       <Tooltip trigger="manual" isVisible={isVisible} onTooltipHidden={onTooltipHiddenMock} content="Test content">

@@ -154,7 +154,7 @@ exports[`FormGroup should render form group variant without label 1`] = `
 </DocumentFragment>
 `;
 
-exports[`FormGroup should render form group with additonal label info 1`] = `
+exports[`FormGroup should render form group with additional label info 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-form__group"

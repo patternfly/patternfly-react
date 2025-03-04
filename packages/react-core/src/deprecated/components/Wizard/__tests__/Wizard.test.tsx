@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import { Wizard, WizardStepFunctionType, WizardStep } from '../Wizard';
 import { DrawerPanelContent, DrawerHead } from '../../../../../src/components/Drawer';
@@ -283,7 +284,7 @@ test('wiz with disable sub step', () => {
 
 test('startAtStep can be used to externally control the current step of the wizard', async () => {
   const WizardTest = () => {
-    const [step, setStep] = React.useState(1);
+    const [step, setStep] = useState(1);
 
     const incrementStep = () => {
       setStep((prevStep) => prevStep + 1);
