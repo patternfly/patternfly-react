@@ -1,0 +1,20 @@
+{
+  "codeConnect": {
+    "parser": "react",
+    "label": "PF-React",
+    "importPaths": {
+      "packages/react-core/src/*": "@patternfly/react-core"
+    },
+    "paths": {
+      "./next": ["packages/react-core/src/next"],
+      "./deprecated": ["packages/react-core/src/deprecated"]
+    },
+    "include": ["packages/react-core/src/components/**/*"],
+    "exclude": [
+      "packages/react-core/src/components/**/__tests__/*",
+      "packages/react-core/src/components/**/_tests_/*",
+      "packages/react-core/src/components/**/examples/*",
+      "packages/react-core/src/components/assets/*"
+    ]
+  }
+}
