@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -36,19 +36,19 @@ interface Option {
 }
 
 export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent = () => {
-  const [availableOptions, setAvailableOptions] = React.useState<Option[]>([
+  const [availableOptions, setAvailableOptions] = useState<Option[]>([
     { text: 'Option 1', selected: false, isVisible: true },
     { text: 'Option 2', selected: false, isVisible: true },
     { text: 'Option 3', selected: false, isVisible: true },
     { text: 'Option 4', selected: false, isVisible: true }
   ]);
 
-  const [chosenOptions, setChosenOptions] = React.useState<Option[]>([]);
-  const [isAvailableKebabOpen, setIsAvailableKebabOpen] = React.useState(false);
-  const [isChosenKebabOpen, setIsChosenKebabOpen] = React.useState(false);
-  const [availableFilter, setAvailableFilter] = React.useState('');
-  const [chosenFilter, setChosenFilter] = React.useState('');
-  const [isDisabled, setIsDisabled] = React.useState(false);
+  const [chosenOptions, setChosenOptions] = useState<Option[]>([]);
+  const [isAvailableKebabOpen, setIsAvailableKebabOpen] = useState(false);
+  const [isChosenKebabOpen, setIsChosenKebabOpen] = useState(false);
+  const [availableFilter, setAvailableFilter] = useState('');
+  const [chosenFilter, setChosenFilter] = useState('');
+  const [isDisabled, setIsDisabled] = useState(false);
 
   // callback for moving selected options between lists
   const moveSelected = (fromAvailable: boolean) => {

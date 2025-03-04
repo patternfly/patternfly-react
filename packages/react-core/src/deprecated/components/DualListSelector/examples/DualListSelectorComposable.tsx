@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -30,7 +31,7 @@ interface Option {
 }
 
 export const DualListSelectorComposable: React.FunctionComponent = () => {
-  const [availableOptions, setAvailableOptions] = React.useState<Option[]>([
+  const [availableOptions, setAvailableOptions] = useState<Option[]>([
     { text: 'Apple', selected: false, isVisible: true },
     { text: 'Banana', selected: false, isVisible: true },
     { text: 'Pineapple', selected: false, isVisible: true },
@@ -39,9 +40,9 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
     { text: 'Peach', selected: false, isVisible: true },
     { text: 'Strawberry', selected: false, isVisible: true }
   ]);
-  const [chosenOptions, setChosenOptions] = React.useState<Option[]>([]);
-  const [availableFilter, setAvailableFilter] = React.useState('');
-  const [chosenFilter, setChosenFilter] = React.useState('');
+  const [chosenOptions, setChosenOptions] = useState<Option[]>([]);
+  const [availableFilter, setAvailableFilter] = useState('');
+  const [chosenFilter, setChosenFilter] = useState('');
 
   // callback for moving selected options between lists
   const moveSelected = (fromAvailable: boolean) => {

@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Card,
   CardTitle,
@@ -18,7 +18,7 @@ import {
 import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 export const CardTrendDemo1: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const selectItems = (
     <SelectList>

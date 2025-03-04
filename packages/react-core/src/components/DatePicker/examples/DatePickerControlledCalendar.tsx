@@ -1,8 +1,8 @@
-import { Fragment } from 'react';
+import { Fragment, useRef } from 'react';
 import { Button, DatePicker } from '@patternfly/react-core';
 
 export const DatePickerControlledCalendar: React.FunctionComponent = () => {
-  const dateRef = React.useRef(null);
+  const dateRef = useRef(null);
   const onClick = () => {
     if (dateRef.current) {
       dateRef.current.toggleCalendar();

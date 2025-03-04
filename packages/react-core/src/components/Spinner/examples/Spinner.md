@@ -5,6 +5,8 @@ cssPrefix: pf-v6-c-spinner
 propComponents: ['Spinner']
 ---
 
+import { Fragment } from 'react';
+
 ## Examples
 ### Basic
 ```ts file="./SpinnerBasic.tsx"

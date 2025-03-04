@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import {
   DualListSelector as DLSDeprecated,
   DualListSelectorTreeItemData as DLSTreeItemDataDeprecated
 } from '@patternfly/react-core/deprecated';
 
 export const DualListSelectorTreeExample: React.FunctionComponent = () => {
-  const [availableOptions, setAvailableOptions] = React.useState<DLSTreeItemDataDeprecated[]>([
+  const [availableOptions, setAvailableOptions] = useState<DLSTreeItemDataDeprecated[]>([
     {
       id: 'F1',
       text: 'Folder 1',
@@ -40,7 +41,7 @@ export const DualListSelectorTreeExample: React.FunctionComponent = () => {
     }
   ]);
 
-  const [chosenOptions, setChosenOptions] = React.useState<DLSTreeItemDataDeprecated[]>([
+  const [chosenOptions, setChosenOptions] = useState<DLSTreeItemDataDeprecated[]>([
     {
       id: 'CF1',
       text: 'Chosen Folder 1',

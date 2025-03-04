@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   DataList,
   DataListItem,
@@ -18,10 +18,10 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 
 export const DataListMixedExpandable: React.FunctionComponent = () => {
-  const [isOpen1, setIsOpen1] = React.useState(false);
-  const [isOpen2, setIsOpen2] = React.useState(false);
-  const [isOpen3, setIsOpen3] = React.useState(false);
-  const [expanded, setExpanded] = React.useState(['m-ex-toggle1', 'm-ex-toggle3']);
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [isOpen3, setIsOpen3] = useState(false);
+  const [expanded, setExpanded] = useState(['m-ex-toggle1', 'm-ex-toggle3']);
 
   const onToggle1 = () => {
     setIsOpen1(!isOpen1);

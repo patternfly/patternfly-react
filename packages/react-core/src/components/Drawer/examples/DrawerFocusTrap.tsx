@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -11,7 +11,7 @@ import {
 } from '@patternfly/react-core';
 
 export const DrawerFocusTrap: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const onClick = () => {
     setIsExpanded(!isExpanded);

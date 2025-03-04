@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Content,
   DataList,
@@ -18,9 +19,9 @@ import {
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const DataListWidthModifiers: React.FunctionComponent = () => {
-  const [show, setShow] = React.useState(true);
-  const [isOpen1, setIsOpen1] = React.useState(false);
-  const [isOpen2, setIsOpen2] = React.useState(false);
+  const [show, setShow] = useState(true);
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
 
   const onToggle1 = () => {
     setIsOpen1(!isOpen1);

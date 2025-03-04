@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import {
   Form,
   FormGroup,
@@ -10,8 +11,8 @@ import {
 } from '@patternfly/react-core';
 
 export const FormGroupLabelInfo: React.FunctionComponent = () => {
-  const [name, setName] = React.useState('');
-  const labelHelpRef = React.useRef(null);
+  const [name, setName] = useState('');
+  const labelHelpRef = useRef(null);
 
   const handleNameChange = (_event, name: string) => {
     setName(name);
