@@ -669,7 +669,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
               )}
               ref={this.ref}
             >
-              {isUploadEnabled || providedEmptyState ? (
+              {(isUploadEnabled || providedEmptyState) && !value ? (
                 <div
                   {...getRootProps({
                     onClick: (event) => event.stopPropagation() // Prevents clicking TextArea from opening file dialog
