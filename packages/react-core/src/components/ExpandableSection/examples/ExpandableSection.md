@@ -5,6 +5,7 @@ cssPrefix: pf-v6-c-expandable-section
 propComponents: ['ExpandableSection', 'ExpandableSectionToggle']
 ---
 
+import { useState } from 'react';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 
 ## Examples

@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import { createContext, Dispatch, SetStateAction, useContext, useState } from 'react';
 
 export interface FormContextProps {
   /** Record of values for all fieldIds */
@@ -35,7 +35,7 @@ export interface FormContextProps {
   setValidator(fieldId: string, validate: (value: string) => string | null): void;
 }
 
-const FormContext = React.createContext({} as FormContextProps);
+const FormContext = createContext({} as FormContextProps);
 
 export const FormContextConsumer = FormContext.Consumer;
 
@@ -47,10 +47,10 @@ export interface FormContextProviderProps {
 }
 
 export const FormContextProvider: React.FC<FormContextProviderProps> = ({ initialValues, children }) => {
-  const [values, setValues] = React.useState<Record<string, string>>(initialValues || {});
-  const [errors, setErrors] = React.useState<Record<string, string>>({});
-  const [validators, setValidators] = React.useState<Record<string, Function>>({});
-  const [touched, setTouched] = React.useState<Record<string, boolean>>({});
+  const [values, setValues] = useState<Record<string, string>>(initialValues || {});
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [validators, setValidators] = useState<Record<string, Function>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
   const isValid = Object.keys(errors)?.length === 0;
 
   const getValue = (fieldId: string) =>
@@ -127,4 +127,4 @@ export const FormContextProvider: React.FC<FormContextProviderProps> = ({ initia
 };
 FormContextProvider.displayName = 'FormContextProvider';
 
-export const useFormContext = () => React.useContext(FormContext);
+export const useFormContext = () => useContext(FormContext);
