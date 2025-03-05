@@ -1,7 +1,7 @@
 {
   "name": "demo-app-ts",
   "private": true,
-  "version": "6.0.0-prerelease.76",
+  "version": "6.0.0-prerelease.77",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
