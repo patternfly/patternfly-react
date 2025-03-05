@@ -314,7 +314,6 @@ Example:
 ```
 
 ```js
-import React from 'react';
 import {
   Table,
   TableHeader,

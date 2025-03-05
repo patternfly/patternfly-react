@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { Helpers, NumberOrCallback, StringOrNumberOrCallback } from 'victory-core';
 import { VictoryLegend } from 'victory-legend';
@@ -272,7 +272,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
 
   // Returns the label component
   const getLabelComponent = () =>
-    React.cloneElement(labelComponent, {
+    cloneElement(labelComponent, {
       datum,
       dx: maxLegendDimensions.width - minLegendDimensions.width,
       legendData: visibleLegendData,
@@ -283,7 +283,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
   const getTitleComponent = () => {
     const _title = title instanceof Function ? title(datum) : title;
 
-    return React.cloneElement(titleComponent, {
+    return cloneElement(titleComponent, {
       style: {
         fill: ChartLegendTooltipStyles.label.fill,
         fontWeight: ChartLegendTooltipStyles.label.fontWeight
@@ -298,7 +298,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
 
   // Returns the legend component
   const getLegendComponent = () =>
-    React.cloneElement(legendComponent, {
+    cloneElement(legendComponent, {
       data: getLegendTooltipVisibleData({
         activePoints,
         colorScale: legendProps.colorScale,
@@ -319,10 +319,10 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
     });
 
   return (
-    <React.Fragment>
+    <Fragment>
       {getTitleComponent()}
       {getLegendComponent()}
-    </React.Fragment>
+    </Fragment>
   );
 };
 ChartLegendTooltipContent.displayName = 'ChartLegendTooltipContent';

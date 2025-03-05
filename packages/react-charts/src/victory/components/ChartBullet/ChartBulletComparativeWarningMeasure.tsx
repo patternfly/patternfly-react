@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
 import { VictoryBar } from 'victory-bar';
@@ -188,7 +188,7 @@ export const ChartBulletComparativeWarningMeasure: React.FunctionComponent<
   width = theme.bar.width
 }: ChartBulletComparativeWarningMeasureProps) => {
   // Comparative measure component
-  const measure = React.cloneElement(measureComponent, {
+  const measure = cloneElement(measureComponent, {
     allowTooltip,
     ariaDesc,
     ariaTitle,
@@ -214,7 +214,7 @@ export const ChartBulletComparativeWarningMeasure: React.FunctionComponent<
       {measure}
     </ChartContainer>
   ) : (
-    <React.Fragment>{measure}</React.Fragment>
+    <Fragment>{measure}</Fragment>
   );
 };
 ChartBulletComparativeWarningMeasure.displayName = 'ChartBulletComparativeWarningMeasure';

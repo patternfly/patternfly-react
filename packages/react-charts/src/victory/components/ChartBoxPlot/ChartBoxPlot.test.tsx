@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import { Chart } from '../Chart/Chart';
 import { ChartBoxPlot } from './ChartBoxPlot';

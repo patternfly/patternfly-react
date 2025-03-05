@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children, cloneElement, Fragment, isValidElement } from 'react';
 import {
   AnimatePropTypeInterface,
   CategoryPropType,
@@ -147,7 +147,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    *
    * Note: Overridden by containerComponent
    *
-   * @example "Golden retreivers make up 30%, Labs make up 25%, and other dog breeds are
+   * @example "Golden retrievers make up 30%, Labs make up 25%, and other dog breeds are
    * not represented above 5% each."
    */
   desc?: string;
@@ -170,7 +170,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    * events. The eventKey may optionally be used to select a single element by index rather than
    * an entire set. The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
-   * of an event handler is used to modify elemnts. The return value should be given
+   * of an event handler is used to modify elements. The return value should be given
    * as an object or an array of objects with optional target and eventKey keys,
    * and a mutation key whose value is a function. The target and eventKey keys
    * will default to those corresponding to the element the event handler was attached to.
@@ -500,12 +500,12 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   // Render dynamic utilization donut cart
   const computedData = getComputedData();
   const renderChildren = () =>
-    React.Children.toArray(children).map((child, index) => {
-      if (React.isValidElement(child)) {
+    Children.toArray(children).map((child, index) => {
+      if (isValidElement(child)) {
         const { data: childData, ...childProps } = child.props;
         const datum = Data.formatData([childData], childProps, ['x', 'y']); // Format child data independently of this component's props
         const dynamicTheme = childProps.theme || getDonutThresholdDynamicTheme(childProps.themeColor || themeColor);
-        return React.cloneElement(child, {
+        return cloneElement(child, {
           ...(hasPatterns && { hasPatterns: true }), // Enable ChartDonutUtilization patterns
           constrainToVisibleArea,
           data: childData,
@@ -554,7 +554,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   );
 
   // Clone so users can override container props
-  const container = React.cloneElement(
+  const container = cloneElement(
     containerComponent,
     {
       desc: ariaDesc,
@@ -568,12 +568,12 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   );
 
   return standalone ? (
-    <React.Fragment>{container}</React.Fragment>
+    <Fragment>{container}</Fragment>
   ) : (
-    <React.Fragment>
+    <Fragment>
       {chart}
       {renderChildren()}
-    </React.Fragment>
+    </Fragment>
   );
 };
 ChartDonutThreshold.displayName = 'ChartDonutThreshold';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -61,7 +61,7 @@ export interface ChartStackProps extends VictoryStackProps {
    * these values for x and y. When categories are not given as an object
    * When this prop is set on a wrapper component, it will dictate the categories of
    * its the children. If this prop is not set, any categories on child component
-   * or catigorical data, will be merged to create a shared set of categories.
+   * or categorical data, will be merged to create a shared set of categories.
    *
    * @propType string[] | { x: string[], y: string[] }
    * @example ["dogs", "cats", "mice"]
@@ -138,7 +138,7 @@ export interface ChartStackProps extends VictoryStackProps {
    * may optionally be used to select a single element by index or eventKey rather than
    * an entire set. The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
-   * of an event handler is used to modify elemnts. The return value should be given
+   * of an event handler is used to modify elements. The return value should be given
    * as an object or an array of objects with optional target and eventKey and childName keys,
    * and a mutation key whose value is a function. The target and eventKey and childName keys
    * will default to those corresponding to the element the event handler was attached to.
@@ -417,7 +417,7 @@ export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
   ...rest
 }: ChartStackProps) => {
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     desc: ariaDesc,
     title: ariaTitle,
     theme,

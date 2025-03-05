@@ -5,6 +5,7 @@ propComponents: ['ChartTooltip']
 hideDarkMode: true
 ---
 
+import { createRef } from 'react';
 import {
   Chart,
   ChartArea,
@@ -48,7 +49,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 This demonstrates how to use a voronoi container to display tooltips.
 
 ```js
-import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '200px', width: '800px' }}>
@@ -112,7 +112,6 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
 This demonstrates how to combine cursor and voronoi containers to display tooltips along with a vertical cursor.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, createContainer } from '@patternfly/react-charts/victory';
 
 class CombinedCursorVoronoiContainer extends React.Component {
@@ -202,7 +201,6 @@ class CombinedCursorVoronoiContainer extends React.Component {
 This demonstrates how to embed a legend within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegendTooltip, ChartLine, ChartThemeColor, createContainer } from '@patternfly/react-charts/victory';
 
 class EmbeddedLegend extends React.Component {
@@ -298,7 +296,6 @@ class EmbeddedLegend extends React.Component {
 This demonstrates how to embed HTML within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
 
 ```js
-import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartCursorTooltip, ChartGroup, ChartPoint, ChartThemeColor, createContainer } from '@patternfly/react-charts/victory';
 
 class EmbeddedHtml extends React.Component {
@@ -445,7 +442,6 @@ class EmbeddedHtml extends React.Component {
 This demonstrates how to embed a legend within a tooltip, but with a custom font size. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegendTooltip, ChartLegend, ChartLine, ChartLegendTooltipContent, ChartLegendTooltipLabel, ChartThemeColor, createContainer } from '@patternfly/react-charts/victory';
 
 class EmbeddedLegendAlt extends React.Component {
@@ -545,7 +541,6 @@ class EmbeddedLegendAlt extends React.Component {
 This demonstrates an alternate way of applying tooltips using data labels.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '275px', width: '450px' }}>
@@ -613,7 +608,6 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartTooltip }
 ### Fixed tooltip
 This demonstrates how to adjust the tooltip position and label radius
 ```js
-import React from 'react';
 import { ChartDonut, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '150px', width: '150px' }}>
@@ -640,7 +634,6 @@ import { ChartDonut, ChartThemeColor, ChartTooltip } from '@patternfly/react-cha
 This demonstrates an approach for applying tooltips to a legend using a custom legend label component.
 
 ```js
-import React from 'react';
 import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
 import { Tooltip } from '@patternfly/react-core';
 
@@ -651,7 +644,7 @@ class TooltipPieChart extends React.Component {
     // Custom legend label component
     // Note: Tooltip wraps children with a div tag, so we add a reference to ChartLabel instead
     this.LegendLabel = ({datum, ...rest}) => {
-      const ref = React.createRef();
+      const ref = createRef();
       return (
         <g ref={ref}>
           <ChartLabel {...rest} />
@@ -706,7 +699,6 @@ class TooltipPieChart extends React.Component {
 This demonstrates how to customize tooltip label alignment using theme properties.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts/victory';
 
 class TooltipThemeChart extends React.Component {
@@ -807,7 +799,6 @@ class TooltipThemeChart extends React.Component {
 This demonstrates an alternate way of applying tooltips using CSS overflow instead of <code>constrainToVisibleArea</code>.
 
 ```js
-import React from 'react';
 import { ChartArea, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 // Workaround for documentation-framework issue https://github.com/patternfly/patternfly-react/issues/11455
@@ -852,7 +843,6 @@ sheet.insertRule(".ws-react-charts-tooltip-overflow svg { overflow: visible; }",
 This demonstrates an alternate way of applying tooltips by wrapping charts with the Tooltip component.
 
 ```js
-import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
 import { Button, Tooltip, TooltipPosition } from '@patternfly/react-core';
 

@@ -13,6 +13,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
+import { createRef } from 'react';
 import {
 Chart,
 ChartArea,
@@ -33,7 +34,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartScatter, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '275px', width: '450px' }}>
@@ -73,14 +73,13 @@ import { Chart, ChartAxis, ChartGroup, ChartScatter, ChartVoronoiContainer } fro
 This demonstrates how to add interactive data points to a line chart.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
 
 class ScatterLineChart extends React.Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       width: 0
@@ -211,7 +210,6 @@ class ScatterLineChart extends React.Component {
 This demonstrates how to add interactive data points to an area chart.
 
 ```js
-import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
@@ -219,7 +217,7 @@ import { getResizeObserver } from '@patternfly/react-core';
 class ScatterAreaChart extends React.Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       width: 0

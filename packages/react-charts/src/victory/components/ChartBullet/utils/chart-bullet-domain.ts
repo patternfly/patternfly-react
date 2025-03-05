@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { ChartDomain, getDomains } from '../../ChartUtils/chart-domain';
 
 interface ChartBulletDomainInterface {
