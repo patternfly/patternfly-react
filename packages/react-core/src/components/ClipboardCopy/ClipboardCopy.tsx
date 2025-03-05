@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { TooltipPosition } from '../Tooltip';
 import { TextInput } from '../TextInput';
+import { Truncate, TruncateProps } from '../Truncate';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { ClipboardCopyButton } from './ClipboardCopyButton';
 import { ClipboardCopyToggle } from './ClipboardCopyToggle';
@@ -92,6 +93,8 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   children: string | string[];
   /** Additional actions for inline clipboard copy. Should be wrapped with ClipboardCopyAction. */
   additionalActions?: React.ReactNode;
+  /** Enables and customizes truncation for an inline-compact ClipboardCopy. */
+  truncation?: boolean | Omit<TruncateProps, 'content'>;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -101,6 +104,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
 class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
   static displayName = 'ClipboardCopy';
   timer = null as number;
+  private clipboardRef: React.RefObject<any>;
   constructor(props: ClipboardCopyProps) {
     super(props);
     const text = Array.isArray(this.props.children) ? this.props.children.join(' ') : (this.props.children as string);
@@ -110,6 +114,8 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
       copied: false,
       textWhenExpanded: text
     };
+
+    this.clipboardRef = React.createRef();
   }
 
   static defaultProps: PickOptional<ClipboardCopyProps> = {
@@ -128,6 +134,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
     textAriaLabel: 'Copyable input',
     toggleAriaLabel: 'Show content',
     additionalActions: null,
+    truncation: false,
     ouiaSafe: true
   };
 
@@ -184,6 +191,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
       position,
       className,
       additionalActions,
+      truncation,
       ouiaId,
       ouiaSafe,
       ...divProps
@@ -191,30 +199,51 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
     const textIdPrefix = 'text-input-';
     const toggleIdPrefix = 'toggle-';
     const contentIdPrefix = 'content-';
+
+    const copyableText = this.state.text;
+    const shouldTruncate = variant === ClipboardCopyVariant.inlineCompact && truncation;
+
     return (
       <div
         className={css(
           styles.clipboardCopy,
-          variant === 'inline-compact' && styles.modifiers.inline,
+          variant === ClipboardCopyVariant.inlineCompact && styles.modifiers.inline,
           isBlock && styles.modifiers.block,
           this.state.expanded && styles.modifiers.expanded,
           className
         )}
+        ref={this.clipboardRef}
         {...divProps}
         {...getOUIAProps(ClipboardCopy.displayName, ouiaId, ouiaSafe)}
       >
-        {variant === 'inline-compact' && (
+        {variant === ClipboardCopyVariant.inlineCompact && (
           <GenerateId prefix="">
             {(id) => (
               <Fragment>
                 {!isCode && (
                   <span className={css(styles.clipboardCopyText)} id={`${textIdPrefix}${id}`}>
-                    {this.state.text}
+                    {shouldTruncate ? (
+                      <Truncate
+                        refToGetParent={this.clipboardRef}
+                        content={copyableText}
+                        {...(typeof truncation === 'object' && truncation)}
+                      />
+                    ) : (
+                      copyableText
+                    )}
                   </span>
                 )}
                 {isCode && (
                   <code className={css(styles.clipboardCopyText, styles.modifiers.code)} id={`${textIdPrefix}${id}`}>
-                    {this.state.text}
+                    {shouldTruncate ? (
+                      <Truncate
+                        refToGetParent={this.clipboardRef}
+                        content={copyableText}
+                        {...(typeof truncation === 'object' && truncation)}
+                      />
+                    ) : (
+                      copyableText
+                    )}
                   </code>
                 )}
                 <span className={css(styles.clipboardCopyActions)}>
@@ -229,7 +258,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
                       textId={`text-input-${id}`}
                       aria-label={hoverTip}
                       onClick={(event: any) => {
-                        onCopy(event, this.state.text);
+                        onCopy(event, copyableText);
                         this.setState({ copied: true });
                       }}
                       onTooltipHidden={() => this.setState({ copied: false })}
@@ -244,12 +273,12 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
             )}
           </GenerateId>
         )}
-        {variant !== 'inline-compact' && (
+        {variant !== ClipboardCopyVariant.inlineCompact && (
           <GenerateId prefix="">
             {(id) => (
               <Fragment>
                 <div className={css(styles.clipboardCopyGroup)}>
-                  {variant === 'expansion' && (
+                  {variant === ClipboardCopyVariant.expansion && (
                     <ClipboardCopyToggle
                       isExpanded={this.state.expanded}
                       onClick={(_event) => {
@@ -257,7 +286,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
                         if (this.state.expanded) {
                           this.setState({ text: this.state.textWhenExpanded });
                         } else {
-                          this.setState({ textWhenExpanded: this.state.text });
+                          this.setState({ textWhenExpanded: copyableText });
                         }
                       }}
                       id={`${toggleIdPrefix}${id}`}
@@ -269,7 +298,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
                   <TextInput
                     readOnlyVariant={isReadOnly || this.state.expanded ? 'default' : undefined}
                     onChange={this.updateText}
-                    value={this.state.expanded ? this.state.textWhenExpanded : this.state.text}
+                    value={this.state.expanded ? this.state.textWhenExpanded : copyableText}
                     id={`text-input-${id}`}
                     aria-label={textAriaLabel}
                     {...(isCode && { dir: 'ltr' })}
@@ -283,7 +312,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
                     textId={`text-input-${id}`}
                     aria-label={hoverTip}
                     onClick={(event: any) => {
-                      onCopy(event, this.state.expanded ? this.state.textWhenExpanded : this.state.text);
+                      onCopy(event, this.state.expanded ? this.state.textWhenExpanded : copyableText);
                       this.setState({ copied: true });
                     }}
                     onTooltipHidden={() => this.setState({ copied: false })}
@@ -298,7 +327,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
                     id={`content-${id}`}
                     onChange={this.updateTextWhenExpanded}
                   >
-                    {this.state.text}
+                    {copyableText}
                   </ClipboardCopyExpanded>
                 )}
               </Fragment>

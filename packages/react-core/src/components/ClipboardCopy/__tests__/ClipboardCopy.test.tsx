@@ -1,6 +1,7 @@
 import { screen, render } from '@testing-library/react';
-import { ClipboardCopy } from '../ClipboardCopy';
+import { ClipboardCopy, ClipboardCopyVariant } from '../ClipboardCopy';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
+import truncateStyles from '@patternfly/react-styles/css/components/Truncate/Truncate';
 import userEvent from '@testing-library/user-event';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
@@ -348,6 +349,40 @@ test('Can take array of strings as children', async () => {
   await user.click(screen.getByRole('button', { name: 'Test CCB clicker' }));
 
   expect(onCopyMock).toHaveBeenCalledWith(expect.any(Object), children);
+});
+
+describe('ClipboardCopy with truncation', () => {
+  test('Does not render with truncate wrapper by default', () => {
+    render(<ClipboardCopy data-testid={testId}>{children}</ClipboardCopy>);
+
+    expect(screen.queryByTestId(testId)?.querySelector(`.${truncateStyles.truncate}`)).not.toBeInTheDocument();
+  });
+
+  test('Does not render with truncate wrapper when variant="inline-compact" and truncation is false', () => {
+    render(<ClipboardCopy variant={ClipboardCopyVariant.inlineCompact}>{children}</ClipboardCopy>);
+
+    expect(screen.getByText(children).parentElement).not.toHaveClass(truncateStyles.truncate);
+  });
+
+  test('Renders with truncate wrapper when variant="inline-compact" and truncation is true', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByText(children).parentElement).toHaveClass(truncateStyles.truncate);
+  });
+
+  test('Renders with truncate wrapper when variant="inline-compact" and truncation is prop object', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation={{ position: 'start' }}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByText(children, { exact: false }).parentElement).toHaveClass(truncateStyles.truncate);
+  });
 });
 
 test('Matches snapshot', () => {
