@@ -1,7 +1,7 @@
 import { screen, render } from '@testing-library/react';
 import { ClipboardCopy, ClipboardCopyVariant } from '../ClipboardCopy';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
-import truncateStyles from '@patternfly/react-styles/css/components/Truncate/Truncate';
+import truncateStyles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import userEvent from '@testing-library/user-event';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
