@@ -48,9 +48,10 @@ export default [
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      '@typescript-eslint/no-empty-object-type': "off",
+      '@typescript-eslint/no-wrapper-object-types': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
       '@typescript-eslint/no-unsafe-function-type': 'off',
-      '@typescript-eslint/no-unused-expressions':['error',{ allowShortCircuit: true , allowTernary: true }],
+      '@typescript-eslint/no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }],
       '@typescript-eslint/ban-ts-comment': 'off',
       '@typescript-eslint/adjacent-overload-signatures': 'error',
       '@typescript-eslint/array-type': 'error',
