@@ -46,7 +46,9 @@ export default [
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      '@typescript-eslint/no-unused-expressions':['error',{ 'allowShortCircuit': true , 'allowTernary': true,}],
+      '@typescript-eslint/no-empty-object-type': "off",
+      '@typescript-eslint/no-unsafe-function-type': 'off',
+      '@typescript-eslint/no-unused-expressions':['error',{ allowShortCircuit: true , allowTernary: true }],
       '@typescript-eslint/ban-ts-comment': 'off',
       '@typescript-eslint/adjacent-overload-signatures': 'error',
       '@typescript-eslint/array-type': 'error',
@@ -66,11 +68,12 @@ export default [
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
-          argsIgnorePattern: '^_'
+          argsIgnorePattern: '^_',
+          caughtErrors: 'none'
         }
       ],
       '@typescript-eslint/no-use-before-define': 'off',
-      '@typescript-eslint/no-var-requires': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
       '@typescript-eslint/prefer-for-of': 'error',
       '@typescript-eslint/prefer-function-type': 'error',
       '@typescript-eslint/prefer-namespace-keyword': 'error',
