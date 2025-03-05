@@ -1,4 +1,3 @@
-import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { OriginType, VictoryContainer, VictoryContainerProps } from 'victory-core';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
@@ -38,7 +37,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * the description, the more usable it will be for people using screen readers.
    * This prop defaults to an empty string.
    *
-   * @example "Golden retreivers make up 30%, Labs make up 25%, and other dog breeds are
+   * @example "Golden retrievers make up 30%, Labs make up 25%, and other dog breeds are
    * not represented above 5% each."
    */
   desc?: string;

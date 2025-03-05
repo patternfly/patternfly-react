@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import orderBy from 'lodash/orderBy';
 import {
@@ -146,7 +146,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * Note: Overridden by containerComponent
    *
-   * @example "Golden retreivers make up 30%, Labs make up 25%, and other dog breeds are
+   * @example "Golden retrievers make up 30%, Labs make up 25%, and other dog breeds are
    * not represented above 5% each."
    */
   desc?: string;
@@ -169,7 +169,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * events. The eventKey may optionally be used to select a single element by index rather than
    * an entire set. The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
-   * of an event handler is used to modify elemnts. The return value should be given
+   * of an event handler is used to modify elements. The return value should be given
    * as an object or an array of objects with optional target and eventKey keys,
    * and a mutation key whose value is a function. The target and eventKey keys
    * will default to those corresponding to the element the event handler was attached to.
@@ -695,7 +695,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   );
 
   // Clone so users can override container props
-  const container = React.cloneElement(
+  const container = cloneElement(
     containerComponent,
     {
       desc: ariaDesc,
@@ -708,7 +708,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
     [chart]
   );
 
-  return standalone ? <React.Fragment>{container}</React.Fragment> : <React.Fragment>{chart}</React.Fragment>;
+  return standalone ? <Fragment>{container}</Fragment> : <Fragment>{chart}</Fragment>;
 };
 ChartDonutUtilization.displayName = 'ChartDonutUtilization';
 

@@ -24,6 +24,7 @@ hideDarkMode: true
 beta: true
 ---
 
+import { useState } from 'react';
 import { Chart, ChartArea, ChartAxis, ChartBar, ChartBoxPlot, ChartBullet, ChartDonut, ChartDonutThreshold, ChartDonutUtilization, ChartLegend, ChartLine, ChartGroup, ChartPie, ChartScatter, ChartStack, ChartThemeColor, ChartThreshold, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
@@ -36,12 +37,11 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Area chart
 ```js
-import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 import { Switch } from '@patternfly/react-core';
 
 export const ChartAreaSkeleton: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
@@ -117,12 +117,11 @@ export const ChartAreaSkeleton: React.FunctionComponent = () => {
 
 ### Bar chart
 ```js
-import React from 'react';
 import { Switch } from '@patternfly/react-core';
 import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 export const ChartBarSkeleton: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
@@ -174,12 +173,11 @@ export const ChartBarSkeleton: React.FunctionComponent = () => {
 
 ### Box plot chart
 ```js
-import React from 'react';
 import { Switch } from '@patternfly/react-core'
 import { Chart, ChartAxis, ChartBoxPlot, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartBoxPlotSkeleton: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
@@ -232,12 +230,11 @@ export const ChartBoxPlotSkeleton: React.FunctionComponent = () => {
 
 ### Bullet chart
 ```js
-import React from 'react';
 import { Switch } from '@patternfly/react-core';
 import { Chart, ChartAxis, ChartBullet, ChartLegend, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartBulletSkeleton: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
@@ -286,12 +283,11 @@ export const ChartBulletSkeleton: React.FunctionComponent = () => {
 
 ### Donut chart
 ```js
-import React from 'react';
 import { Switch } from '@patternfly/react-core';
 import { Chart, ChartAxis, ChartDonut, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartDonutSkeleton: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
@@ -325,12 +321,11 @@ export const ChartDonutSkeleton: React.FunctionComponent = () => {
 
 ### Donut utilization chart
 ```js
-import React from 'react';
 import { Switch } from '@patternfly/react-core';
 import { Chart, ChartAxis, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
@@ -374,12 +369,11 @@ export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
 
 ### Donut utilization threshold
 ```js
-import React from 'react';
 import { Switch } from '@patternfly/react-core';
 import { Chart, ChartAxis, ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
@@ -418,12 +412,11 @@ export const ChartDonutUtilizationSkeleton: React.FunctionComponent = () => {
 
 ### Line chart
 ```js
-import React from 'react';
 import { Switch } from '@patternfly/react-core';
 import { Chart, ChartVoronoiContainer, ChartGroup, ChartAxis, ChartLine, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartLineSkeleton: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
@@ -508,12 +501,11 @@ export const ChartLineSkeleton: React.FunctionComponent = () => {
 
 ### Pie chart
 ```js
-import React from 'react';
 import { Switch } from '@patternfly/react-core';
 import { Chart, ChartAxis, ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartPieSkeleton: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
@@ -556,12 +548,11 @@ export const ChartPieSkeleton: React.FunctionComponent = () => {
 
 ### Scatter chart
 ```js
-import React from 'react';
 import { Switch } from '@patternfly/react-core';
 import { Chart, ChartVoronoiContainer, ChartGroup, ChartAxis, ChartScatter, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartScatterSkeleton: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
@@ -613,12 +604,11 @@ export const ChartScatterSkeleton: React.FunctionComponent = () => {
 
 ### Stack chart
 ```js
-import React from 'react';
 import { Switch } from '@patternfly/react-core';
 import { Chart, ChartVoronoiContainer, ChartAxis, ChartStack, ChartBar, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 export const ChartStackSkeleton: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
@@ -669,13 +659,12 @@ export const ChartStackSkeleton: React.FunctionComponent = () => {
 
 ### Threshold chart
 ```js
-import React from 'react';
 import { Switch } from '@patternfly/react-core';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLegend, ChartThemeColor, ChartThreshold, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 
 export const ChartThresholdSkeleton: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     setIsChecked(checked);
@@ -715,7 +704,7 @@ export const ChartThresholdSkeleton: React.FunctionComponent = () => {
           }
           height={250}
           padding={{
-            bottom: 100, // Adjusted to accomodate legend
+            bottom: 100, // Adjusted to accommodate legend
             left: 50,
             right: 50,
             top: 50

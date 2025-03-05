@@ -18,7 +18,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic with right aligned legend
 ```js
-import React from 'react';
 import { ChartPie } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '230px', width: '350px' }}>
@@ -46,7 +45,6 @@ import { ChartPie } from '@patternfly/react-charts/victory';
 
 ### Multi-color (ordered) with bottom aligned legend
 ```js
-import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '275px', width: '300px' }}>
@@ -77,7 +75,6 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
 This demonstrates how to apply a custom color scale.
 
 ```js
-import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
 import chart_theme_blue_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_blue_ColorScale_100';
 import chart_theme_yellow_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_yellow_ColorScale_100';

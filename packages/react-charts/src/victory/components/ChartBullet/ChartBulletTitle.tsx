@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment } from 'react';
 import { PaddingProps, StringOrNumberOrCallback } from 'victory-core';
 import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
@@ -190,7 +190,7 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
 
     // The x and y calculations below are used to adjust the position of the title, based on padding and scale.
     // This ensures that when padding is adjusted, the title moves along with the chart's position.
-    return React.cloneElement(titleComponent, {
+    return cloneElement(titleComponent, {
       ...(showBoth && { capHeight }),
       ...(name && { id: () => `${name}-${(titleComponent as any).type.displayName}` }),
       style: [ChartBulletStyles.label.title, ChartBulletStyles.label.subTitle],
@@ -227,7 +227,7 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
       {getTitle()}
     </ChartContainer>
   ) : (
-    <React.Fragment>{getTitle()}</React.Fragment>
+    <Fragment>{getTitle()}</Fragment>
   );
 };
 ChartBulletTitle.displayName = 'ChartBulletTitle';

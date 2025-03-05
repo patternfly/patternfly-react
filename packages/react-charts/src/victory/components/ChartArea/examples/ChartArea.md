@@ -11,7 +11,7 @@ propComponents: [
 ]
 hideDarkMode: true
 ---
-
+import { createRef } from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThreshold, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
 
@@ -23,7 +23,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic with right aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
@@ -88,7 +87,6 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
 This demonstrates how to combine cursor and voronoi containers to display tooltips along with a cursor.
 
 ```js
-import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartLegendTooltip, createContainer } from '@patternfly/react-charts/victory';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
@@ -172,7 +170,6 @@ class BottomAlignedLegend extends React.Component {
 
 ### Multi-color (unordered) bottom-left aligned legend and responsive container
 ```js
-import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
@@ -180,7 +177,7 @@ import { getResizeObserver } from '@patternfly/react-core';
 class MultiColorChart extends React.Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       width: 0

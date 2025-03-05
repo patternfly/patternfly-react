@@ -20,6 +20,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
+import { cloneElement, createRef, useRef, useState } from 'react';
 import { 
   Chart,
   ChartArea,
@@ -53,7 +54,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic with right aligned legend
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '230px', width: '350px' }}>
@@ -82,7 +82,6 @@ import { ChartDonut } from '@patternfly/react-charts/victory';
 
 ### Bottom aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '275px', width: '450px' }}>
@@ -121,14 +120,13 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
 This demonstrates a responsive legend which wraps when items are wider than its container.
 
 ```js
-import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
 
 class BulletChart extends React.Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       extraHeight: 0,
@@ -202,7 +200,6 @@ class BulletChart extends React.Component {
 This demonstrates a standalone legend vs. using the `legendData` property.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '275px', width: '450px' }}>
@@ -278,7 +275,6 @@ import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, 
 This demonstrates how to add an interactive legend using events such as `onMouseOver`, `onMouseOut`, and `onClick`.
 
 ```js
-import React from 'react';
 import { 
   Chart, 
   ChartArea, 
@@ -295,10 +291,11 @@ import {
 import { getResizeObserver } from '@patternfly/react-core';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
+<<<<<<< HEAD
 const InteractiveLegendChart = () => {
-  const containerRef = React.useRef(null);
-  const [hiddenSeries, setHiddenSeries] = React.useState(new Set());
-  const [width, setWidth] = React.useState(0);
+  const containerRef = useRef(null);
+  const [hiddenSeries, setHiddenSeries] = useState(new Set());
+  const [width, setWidth] = useState(0);
 
   const series = [
     {
@@ -360,11 +357,18 @@ const InteractiveLegendChart = () => {
   // Checks if any data series is visible
   const isDataAvailable = () => hiddenSeries.size !== series.length;
 
+<<<<<<< HEAD
   // Set chart width per current window size
   React.useEffect(() => {
     const observer = getResizeObserver(containerRef.current, () => {
       if (containerRef.current?.clientWidth) {
         setWidth(containerRef.current.clientWidth);
+=======
+    const container = cloneElement(
+      this.cursorVoronoiContainer, 
+      {
+        disable: !this.isDataAvailable()
+>>>>>>> 19a2ed0a5 (charts changes)
       }
     });
     return () => observer();
@@ -440,7 +444,6 @@ const InteractiveLegendChart = () => {
 This demonstrates how to add an interactive legend to a pie chart using events such as `onMouseOver`, `onMouseOut`, and `onClick`.
 
 ```js
-import React from 'react';
 import { 
   Chart,
   ChartLegend,
@@ -558,7 +561,6 @@ class InteractivePieLegendChart extends React.Component {
 This demonstrates an approach for applying tooltips to a legend using a custom label component. These tooltips are keyboard navigable.
 
 ```js
-import React from 'react';
 import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
 import { Tooltip } from '@patternfly/react-core';
 
@@ -569,7 +571,7 @@ class TooltipPieChart extends React.Component {
     // Custom legend label component
     // Note: Tooltip wraps children with a div tag, so we use a reference to ChartLabel instead
     this.LegendLabel = ({datum, ...rest}) => {
-      const ref = React.createRef();
+      const ref = createRef();
       return (
         <g ref={ref}>
           <ChartLabel {...rest} />
@@ -624,14 +626,13 @@ class TooltipPieChart extends React.Component {
 This demonstrates an approach for applying links to a legend using a custom label component. These links are keyboard navigable.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 class LegendLinkPieChart extends React.Component {
   constructor(props) {
     super(props);
 
-    // Custom legend label compoenent
+    // Custom legend label component
     this.LegendLabel = ({datum, ...rest}) => (
       <a href="#" aria-label={`Learn more about ${rest.text}`}>
         <ChartLabel {...rest} />
@@ -727,7 +728,6 @@ class LegendLinkPieChart extends React.Component {
 This demonstrates an approach for applying a different legend layout and styles using a custom label component.
 
 ```js
-import React from 'react';
 import { ChartLabel, ChartLegend, ChartDonut, ChartThemeColor } from '@patternfly/react-charts/victory';
 import { Tooltip } from '@patternfly/react-core';
 
@@ -735,7 +735,7 @@ class LegendLayoutPieChart extends React.Component {
   constructor(props) {
     super(props);
 
-    // Custom legend label compoenent
+    // Custom legend label component
     this.LegendLabel = ({values, ...rest}) => (
       <ChartLabel
         {...rest}

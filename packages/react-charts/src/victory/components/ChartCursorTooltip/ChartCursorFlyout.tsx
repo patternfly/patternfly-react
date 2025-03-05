@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement } from 'react';
 import { Helpers, OrientationTypes, Path, VictoryCommonPrimitiveProps } from 'victory-core';
 import isPlainObject from 'lodash/isPlainObject';
 
@@ -118,7 +118,7 @@ const ChartCursorFlyout = (props: ChartCursorFlyoutProps) => {
     ...props
   });
 
-  return React.cloneElement(props.pathComponent, {
+  return cloneElement(props.pathComponent, {
     ...props.events,
     style: props.style,
     d: getFlyoutPath(props),

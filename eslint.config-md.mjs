@@ -30,7 +30,19 @@ export default [
       'react/jsx-uses-react': 'error',
       'react/jsx-uses-vars': 'error',
       'react/no-unknown-property': 'error',
-      'react/jsx-no-undef': 'error'
+      'react/jsx-no-undef': 'error',
+      'no-restricted-imports': [
+        'warn',
+        {
+          paths: [
+            {
+              name: 'react',
+              importNames: ['default'],
+              message: 'Please use named imports when importing from React.'
+            }
+          ]
+        }
+      ]
     }
   }
 ];

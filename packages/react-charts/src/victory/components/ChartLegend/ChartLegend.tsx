@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   BlockProps,
@@ -45,7 +45,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
   /**
    * The borderPadding specifies the amount of padding that should
    * be added between the legend items and the border. This prop may be given as
-   * a number, or asanobject with values specified for top, bottom, left, and right.
+   * a number, or as an object with values specified for top, bottom, left, and right.
    * Please note that the default width and height calculated for the border
    * component is based on approximated text measurements, so padding may need to be adjusted.
    *
@@ -343,21 +343,21 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   };
 
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     responsive,
     theme,
     ...containerComponent.props
   });
 
   const getLabelComponent = () =>
-    React.cloneElement(labelComponent, {
+    cloneElement(labelComponent, {
       ...(name && { id: (props: any) => `${name}-${(labelComponent as any).type.displayName}-${props.index}` }),
       ...labelComponent.props,
       ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
     });
 
   const getTitleComponent = () =>
-    React.cloneElement(titleComponent, {
+    cloneElement(titleComponent, {
       // Victory doesn't appear to call the id function here, but it's valid for label components
       ...(name && { id: () => `${name}-${(titleComponent as any).type.displayName}` }),
       ...titleComponent.props,

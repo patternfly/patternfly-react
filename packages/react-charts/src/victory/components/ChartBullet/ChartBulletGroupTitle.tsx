@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment } from 'react';
 import { PaddingProps, Line, StringOrNumberOrCallback } from 'victory-core';
 import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
@@ -154,7 +154,7 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
         ? titleSize.height + subTitleSize.height + labelPadding.top + labelPadding.bottom
         : titleSize.height + labelPadding.top + labelPadding.bottom;
 
-    return React.cloneElement(dividerComponent, {
+    return cloneElement(dividerComponent, {
       x1: defaultPadding.left,
       x2: width - defaultPadding.right,
       y1: defaultPadding.top + dy,
@@ -169,7 +169,7 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
     const componentTheme = getComponentTheme(themeColor);
     const titleProps = titleComponent ? titleComponent.props : {};
     const showBoth = title && subTitle;
-    return React.cloneElement(titleComponent, {
+    return cloneElement(titleComponent, {
       ...(showBoth && { capHeight }),
       ...(name && { id: () => `${name}-${(titleComponent as any).type.displayName}` }),
       style: [ChartBulletStyles.label.groupTitle, ChartBulletStyles.label.subTitle],
@@ -191,10 +191,10 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   };
 
   const groupTitle = Boolean(title) && (
-    <React.Fragment>
+    <Fragment>
       {getTitle()}
       {getDivider()}
-    </React.Fragment>
+    </Fragment>
   );
 
   return standalone ? (
@@ -202,7 +202,7 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
       {groupTitle}
     </ChartContainer>
   ) : (
-    <React.Fragment>{groupTitle}</React.Fragment>
+    <Fragment>{groupTitle}</Fragment>
   );
 };
 ChartBulletGroupTitle.displayName = 'ChartBulletGroupTitle';

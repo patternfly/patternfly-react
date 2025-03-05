@@ -1,3 +1,4 @@
+import { cloneElement } from 'react';
 import defaults from 'lodash/defaults';
 import { Helpers, TextSize } from 'victory-core';
 import { ElementPadding } from 'victory-core/src/victory-util/helpers';
@@ -7,8 +8,6 @@ import { ChartCommonStyles } from '../ChartTheme/ChartStyles';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getLabelTextSize } from '../ChartUtils/chart-label';
 import { getPieOrigin } from './chart-origin';
-import * as React from 'react';
-
 interface ChartLegendInterface {
   allowWrap?: boolean; // Allow legend items to wrap to the next line
   chartType?: string; // The type of chart (e.g., pie) to lookup for props
@@ -149,7 +148,7 @@ export const getComputedLegend = ({
     x: legendX > 0 ? legendX : 0,
     y: legendY > 0 ? legendY : 0
   });
-  return React.cloneElement(legendComponent, legendProps);
+  return cloneElement(legendComponent, legendProps);
 };
 
 /**

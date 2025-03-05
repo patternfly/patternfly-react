@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -159,7 +159,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * events. The eventKey may optionally be used to select a single element by index rather than
    * an entire set. The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
-   * of an event handler is used to modify elemnts. The return value should be given
+   * of an event handler is used to modify elements. The return value should be given
    * as an object or an array of objects with optional target and eventKey keys,
    * and a mutation key whose value is a function. The target and eventKey keys
    * will default to those corresponding to the element the event handler was attached to.
@@ -586,7 +586,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     legendXOffset = getLegendMaxTextWidth(legendData, theme);
   }
 
-  const legend = React.cloneElement(legendComponent, {
+  const legend = cloneElement(legendComponent, {
     colorScale,
     data: legendData,
     ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
@@ -596,14 +596,14 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     themeColor,
     ...(legendDirection === 'rtl' && {
       dataComponent: legendComponent.props.dataComponent ? (
-        React.cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
+        cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
       ) : (
         <ChartPoint transform={`translate(${legendXOffset})`} />
       )
     }),
     ...(legendDirection === 'rtl' && {
       labelComponent: legendComponent.props.labelComponent ? (
-        React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
+        cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
       ) : (
         <ChartLabel direction="rtl" dx={legendXOffset - 30} />
       )
@@ -631,7 +631,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
 
   // Clone so users can override container props
   const container = standalone
-    ? React.cloneElement(
+    ? cloneElement(
         containerComponent,
         {
           desc: ariaDesc,
@@ -664,13 +664,13 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   }, [computedLegend, legendAllowWrap, theme, width]);
 
   return standalone ? (
-    <React.Fragment>{container}</React.Fragment>
+    <Fragment>{container}</Fragment>
   ) : (
-    <React.Fragment>
+    <Fragment>
       {chart}
       {computedLegend}
       {isPatternDefs && getPatternDefs({ patternId, colorScale: defaultColorScale, patternUnshiftIndex })}
-    </React.Fragment>
+    </Fragment>
   );
 };
 ChartPie.displayName = 'ChartPie';

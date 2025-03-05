@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   NumberOrCallback,
@@ -272,7 +272,7 @@ export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
   theme = getTheme(themeColor),
   ...rest
 }: ChartTooltipProps) => {
-  const chartLabelComponent = React.cloneElement(labelComponent, {
+  const chartLabelComponent = cloneElement(labelComponent, {
     textAnchor: labelTextAnchor,
     theme,
     ...labelComponent.props
