@@ -91,10 +91,10 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
     }
 
     if (
-      refToGetParent?.current ||
-      (subParentRef && subParentRef.current.parentElement.parentElement && !parentElement)
+      (refToGetParent?.current || (subParentRef?.current && subParentRef.current.parentElement.parentElement)) &&
+      !parentElement
     ) {
-      setParentElement(refToGetParent.current.parentElement || subParentRef.current.parentElement.parentElement);
+      setParentElement(refToGetParent?.current.parentElement || subParentRef?.current.parentElement.parentElement);
     }
   }, [textRef, subParentRef, textElement, parentElement]);
 
