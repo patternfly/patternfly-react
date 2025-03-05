@@ -1,4 +1,4 @@
-import React, { type JSX } from 'react';
+import { type JSX, useState } from 'react';
 
 import { Nav, MenuContent, MenuItem, MenuList, DrilldownMenu, Menu } from '@patternfly/react-core';
 
@@ -46,10 +46,10 @@ const subMenuOne: JSX.Element = (
 );
 
 export const NavigationDrilldown: React.FunctionComponent = () => {
-  const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
-  const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
-  const [menuHeights, setMenuHeights] = React.useState<MenuHeights>({});
-  const [activeMenu, setActiveMenu] = React.useState('nav-drilldown-rootMenu');
+  const [menuDrilledIn, setMenuDrilledIn] = useState<string[]>([]);
+  const [drilldownPath, setDrilldownPath] = useState<string[]>([]);
+  const [menuHeights, setMenuHeights] = useState<MenuHeights>({});
+  const [activeMenu, setActiveMenu] = useState('nav-drilldown-rootMenu');
 
   const onDrillIn = (
     _event: React.KeyboardEvent | React.MouseEvent,

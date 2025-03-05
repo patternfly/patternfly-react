@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { memo, useState, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -254,7 +254,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   );
 };
 
-export const TreeViewListItem = React.memo(TreeViewListItemBase, (prevProps, nextProps) => {
+export const TreeViewListItem = memo(TreeViewListItemBase, (prevProps, nextProps) => {
   if (!nextProps.useMemo) {
     return false;
   }

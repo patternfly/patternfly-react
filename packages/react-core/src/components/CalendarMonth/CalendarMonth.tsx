@@ -1,4 +1,4 @@
-import React, { useEffect, type JSX } from 'react';
+import { useEffect, useMemo, useRef, useState, type JSX } from 'react';
 import { TextInput } from '../TextInput';
 import { Button } from '../Button';
 import { Select, SelectList, SelectOption } from '../Select';
@@ -148,7 +148,7 @@ export const CalendarMonth = ({
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     .map((monthNum) => new Date(1990, monthNum))
     .map(monthFormat);
-  const [isSelectOpen, setIsSelectOpen] = React.useState(false);
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
 
   const getInitialDate = () => {
     if (isValidDate(dateProp)) {
@@ -160,18 +160,18 @@ export const CalendarMonth = ({
     return today;
   };
   const initialDate = getInitialDate();
-  const [focusedDate, setFocusedDate] = React.useState(initialDate);
+  const [focusedDate, setFocusedDate] = useState(initialDate);
 
   // Must be numeric given current header design
   const yearFormat = (date: Date) => date.getFullYear();
   //
   const yearFormatted = yearFormat(focusedDate);
-  const [yearInput, setYearInput] = React.useState(yearFormatted.toString());
+  const [yearInput, setYearInput] = useState(yearFormatted.toString());
 
-  const [hoveredDate, setHoveredDate] = React.useState<Date>(undefined);
-  const focusRef = React.useRef<HTMLButtonElement>(undefined);
-  const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
-  const [shouldFocus, setShouldFocus] = React.useState(false);
+  const [hoveredDate, setHoveredDate] = useState<Date>(undefined);
+  const focusRef = useRef<HTMLButtonElement>(undefined);
+  const [hiddenMonthId] = useState(getUniqueId('hidden-month-span'));
+  const [shouldFocus, setShouldFocus] = useState(false);
 
   const isValidated = (date: Date) => validators.every((validator) => validator(date));
   const focusedDateValidated = isValidated(focusedDate);
@@ -266,7 +266,7 @@ export const CalendarMonth = ({
   const nextMonth = addMonth(1);
   const focusedYear = focusedDate.getFullYear();
   const focusedMonth = focusedDate.getMonth();
-  const calendar = React.useMemo(
+  const calendar = useMemo(
     () => buildCalendar(focusedYear, focusedMonth, weekStart, validators),
     [focusedYear, focusedMonth, weekStart, validators]
   );

@@ -1,4 +1,4 @@
-import React, { type JSX } from 'react';
+import { type JSX, useState } from 'react';
 
 import {
   Page,
@@ -65,10 +65,10 @@ const subMenuOne: JSX.Element = (
 );
 
 export const NavDrilldown: React.FunctionComponent = () => {
-  const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
-  const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
-  const [menuHeights, setMenuHeights] = React.useState<MenuHeights>({});
-  const [activeMenuId, setActiveMenuId] = React.useState('rootMenu');
+  const [menuDrilledIn, setMenuDrilledIn] = useState<string[]>([]);
+  const [drilldownPath, setDrilldownPath] = useState<string[]>([]);
+  const [menuHeights, setMenuHeights] = useState<MenuHeights>({});
+  const [activeMenuId, setActiveMenuId] = useState('rootMenu');
   const navLayer = getNavLayer(activeMenuId);
 
   const onDrillIn = (

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Button,
   EmptyState,
@@ -48,12 +48,12 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
   const maxAlerts = 100;
   const alertTimeout = 8000;
 
-  const [isDrawerExpanded, setDrawerExpanded] = React.useState(false);
-  const [openDropdownKey, setOpenDropdownKey] = React.useState<React.Key | null>(null);
-  const [overflowMessage, setOverflowMessage] = React.useState<string>('');
-  const [maxDisplayed, setMaxDisplayed] = React.useState(maxDisplayedAlerts);
-  const [alerts, setAlerts] = React.useState<React.ReactElement<AlertProps>[]>([]);
-  const [notifications, setNotifications] = React.useState<NotificationProps[]>([]);
+  const [isDrawerExpanded, setDrawerExpanded] = useState(false);
+  const [openDropdownKey, setOpenDropdownKey] = useState<React.Key | null>(null);
+  const [overflowMessage, setOverflowMessage] = useState<string>('');
+  const [maxDisplayed, setMaxDisplayed] = useState(maxDisplayedAlerts);
+  const [alerts, setAlerts] = useState<React.ReactElement<AlertProps>[]>([]);
+  const [notifications, setNotifications] = useState<NotificationProps[]>([]);
 
   useEffect(() => {
     setOverflowMessage(buildOverflowMessage());
@@ -358,7 +358,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
           onChange={onMaxDisplayedAlertsChange}
           onPlus={onMaxDisplayedAlertsPlus}
           inputName="input"
-          inputAriaLabel="max diplayed alerts number input"
+          inputAriaLabel="max displayed alerts number input"
           minusBtnAriaLabel="minus"
           plusBtnAriaLabel="plus"
           style={{ margin: '12px 0' }}

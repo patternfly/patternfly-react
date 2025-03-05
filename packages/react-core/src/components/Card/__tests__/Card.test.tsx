@@ -1,4 +1,4 @@
-import React, { type JSX } from 'react';
+import { type JSX } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
