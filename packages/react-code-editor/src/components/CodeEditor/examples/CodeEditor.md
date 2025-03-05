@@ -7,6 +7,7 @@ propComponents: ['CodeEditor', 'CodeEditorControl', 'Popover']
 
 Note: Code editor lives in its own package at [@patternfly/react-code-editor](https://www.npmjs.com/package/@patternfly/react-code-editor) and has [**required peer deps**](https://github.com/patternfly/patternfly-react/blob/main/packages/react-code-editor/package.json).
 
+import { Fragment, useState } from 'react';
 import { CodeEditor, CodeEditorControl, Language } from '@patternfly/react-code-editor';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 

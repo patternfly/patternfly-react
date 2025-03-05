@@ -1,12 +1,12 @@
-import React from 'react';
+import { useState } from 'react';
 import { CodeEditor, Language } from '@patternfly/react-code-editor';
 import { Checkbox } from '@patternfly/react-core';
 
 export const CodeEditorBasic: React.FunctionComponent = () => {
-  const [isDarkTheme, setIsDarkTheme] = React.useState(false);
-  const [isLineNumbersVisible, setIsLineNumbersVisible] = React.useState(true);
-  const [isReadOnly, setIsReadOnly] = React.useState(false);
-  const [isMinimapVisible, setIsMinimapVisible] = React.useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isLineNumbersVisible, setIsLineNumbersVisible] = useState(true);
+  const [isReadOnly, setIsReadOnly] = useState(false);
+  const [isMinimapVisible, setIsMinimapVisible] = useState(false);
 
   const toggleDarkTheme = (checked) => {
     setIsDarkTheme(checked);

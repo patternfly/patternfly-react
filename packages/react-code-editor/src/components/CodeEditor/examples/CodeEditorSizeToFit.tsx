@@ -1,4 +1,3 @@
-import React from 'react';
 import { CodeEditor, Language } from '@patternfly/react-code-editor';
 
 export const CodeEditorSizeToFit: React.FunctionComponent = () => {
