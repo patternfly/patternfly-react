@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import { TextInput } from '@patternfly/react-core/dist/esm/components/TextInput';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
@@ -36,7 +36,7 @@ export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
   inputAriaLabel,
   isDisabled = false
 }: IEditableTextCell) => (
-  <React.Fragment>
+  <Fragment>
     <div className={inlineStyles.inlineEditValue}>{value}</div>
     <div className={inlineStyles.inlineEditInput}>
       <TextInput
@@ -53,6 +53,6 @@ export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
         {props.errorText}
       </div>
     </div>
-  </React.Fragment>
+  </Fragment>
 );
 EditableTextCell.displayName = 'EditableTextCell';

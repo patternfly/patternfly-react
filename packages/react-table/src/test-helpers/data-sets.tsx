@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-import * as React from 'react';
 import { IRow, ICell, IActions, EditableTextCell } from '../components/Table';
 
 export const columns: (ICell | string)[] = [

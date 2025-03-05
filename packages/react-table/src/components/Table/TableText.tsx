@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createRef, useEffect, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
@@ -33,7 +33,7 @@ export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
   onMouseEnter?: (event: any) => void;
   /** Determines if the TableText is focused by parent component */
   focused?: boolean;
-  /** Determines if tooltip should have normal visbility behavior. If false, the tooltip will only be shown when children is not entirely visible */
+  /** Determines if tooltip should have normal visibility behavior. If false, the tooltip will only be shown when children is not entirely visible */
   tooltipHasDefaultBehavior?: boolean;
 }
 
@@ -50,9 +50,9 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   ...props
 }: TableTextProps) => {
   const Component: TableTextVariant | 'span' | 'div' = variant;
-  const textRef = React.createRef<HTMLElement>();
+  const textRef = createRef<HTMLElement>();
 
-  const [tooltip, setTooltip] = React.useState(tooltipProp);
+  const [tooltip, setTooltip] = useState(tooltipProp);
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       setTooltip(tooltipProp || event.target.innerText);
@@ -81,7 +81,7 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
     </Component>
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!tooltipHasDefaultBehavior) {
       if (focused) {
         onFocus(textRef.current);

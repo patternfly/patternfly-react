@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import {
   Badge,
   Button,
@@ -27,11 +27,11 @@ import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-ta
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
 export const TableFilterable: React.FunctionComponent = () => {
-  const [filters, setFilters] = React.useState<Record<string, string[]>>({ location: [], name: [], status: [] });
-  const [currentCategory, setCurrentCategory] = React.useState('Status');
-  const [isFilterDropdownOpen, setIsFilterDropdownOpen] = React.useState(false);
-  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = React.useState(false);
-  const [inputValue, setInputValue] = React.useState('');
+  const [filters, setFilters] = useState<Record<string, string[]>>({ location: [], name: [], status: [] });
+  const [currentCategory, setCurrentCategory] = useState('Status');
+  const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false);
+  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
+  const [inputValue, setInputValue] = useState('');
 
   const rowData = rows.slice(0, 10);
 
@@ -184,7 +184,7 @@ export const TableFilterable: React.FunctionComponent = () => {
     ];
 
     return (
-      <React.Fragment>
+      <Fragment>
         <ToolbarFilter
           labels={filters.location}
           deleteLabel={(category, label) => onDelete(category, label as string)}
@@ -265,7 +265,7 @@ export const TableFilterable: React.FunctionComponent = () => {
             {statusMenuItems}
           </Select>
         </ToolbarFilter>
-      </React.Fragment>
+      </Fragment>
     );
   };
 
@@ -337,7 +337,7 @@ export const TableFilterable: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       {renderToolbar()}
       <Table aria-label="Filterable Table Demo">
         <Thead>
@@ -382,6 +382,6 @@ export const TableFilterable: React.FunctionComponent = () => {
           )}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

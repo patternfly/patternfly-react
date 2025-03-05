@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { Bullseye } from '@patternfly/react-core/dist/esm/layouts/Bullseye';
 import { EmptyState } from '@patternfly/react-core/dist/esm/components/EmptyState';
@@ -52,7 +52,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
 }: BodyCellProps) => {
-  const [tooltip, setTooltip] = React.useState('');
+  const [tooltip, setTooltip] = useState('');
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       if (tooltipProp) {

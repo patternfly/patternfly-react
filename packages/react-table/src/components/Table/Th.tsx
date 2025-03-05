@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createRef, forwardRef, useEffect, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
@@ -103,9 +103,9 @@ const ThBase: React.FunctionComponent<ThProps> = ({
     );
   }
 
-  const [showTooltip, setShowTooltip] = React.useState(false);
-  const [truncated, setTruncated] = React.useState(false);
-  const cellRef = innerRef ? innerRef : React.createRef();
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [truncated, setTruncated] = useState(false);
+  const cellRef = innerRef ? innerRef : createRef();
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       !showTooltip && setShowTooltip(true);
@@ -196,7 +196,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
     ...mergedProps
   } = merged;
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTruncated(
       (cellRef as React.RefObject<HTMLElement | null>).current.offsetWidth <
         (cellRef as React.RefObject<HTMLElement | null>).current.scrollWidth
@@ -258,7 +258,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   );
 };
 
-export const Th = React.forwardRef((props: ThProps, ref: React.Ref<HTMLTableHeaderCellElement>) => (
+export const Th = forwardRef((props: ThProps, ref: React.Ref<HTMLTableHeaderCellElement>) => (
   <ThBase {...props} innerRef={ref} />
 ));
 Th.displayName = 'Th';

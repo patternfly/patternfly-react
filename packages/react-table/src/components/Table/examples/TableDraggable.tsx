@@ -1,15 +1,15 @@
-import React from 'react';
+import { useRef, useState } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, TbodyProps, TrProps } from '@patternfly/react-table';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 export const TableDraggable: React.FunctionComponent = () => {
-  const [draggedItemId, setDraggedItemId] = React.useState<string | null>(null);
-  const [draggingToItemIndex, setDraggingToItemIndex] = React.useState<number | null>(null);
-  const [isDragging, setIsDragging] = React.useState(false);
-  const [itemOrder, setItemOrder] = React.useState(['row1', 'row2', 'row3']);
-  const [tempItemOrder, setTempItemOrder] = React.useState<string[]>([]);
+  const [draggedItemId, setDraggedItemId] = useState<string | null>(null);
+  const [draggingToItemIndex, setDraggingToItemIndex] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [itemOrder, setItemOrder] = useState(['row1', 'row2', 'row3']);
+  const [tempItemOrder, setTempItemOrder] = useState<string[]>([]);
 
-  const bodyRef = React.useRef<HTMLTableSectionElement>(undefined);
+  const bodyRef = useRef<HTMLTableSectionElement>(undefined);
 
   const onDragStart: TrProps['onDragStart'] = (evt) => {
     evt.dataTransfer.effectAllowed = 'move';

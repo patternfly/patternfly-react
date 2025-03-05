@@ -1,4 +1,3 @@
-import * as React from 'react';
 import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 

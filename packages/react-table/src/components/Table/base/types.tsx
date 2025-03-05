@@ -4,8 +4,6 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
-
-import * as React from 'react';
 import { ButtonProps } from '@patternfly/react-core/dist/esm/components/Button';
 import { PopoverProps } from '@patternfly/react-core/dist/esm/components/Popover';
 import { SelectProps } from '@patternfly/react-core/dist/esm/components/Select';

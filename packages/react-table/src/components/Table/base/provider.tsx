@@ -4,7 +4,7 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
-import * as React from 'react';
+import { Component, createContext, createElement } from 'react';
 import { RenderersTypes, TableDefaults, ColumnsType } from './types';
 
 export interface ProviderProps extends RenderersTypes {
@@ -15,12 +15,12 @@ export interface ProviderProps extends RenderersTypes {
   borders?: boolean;
 }
 
-export const ProviderContext = React.createContext({
+export const ProviderContext = createContext({
   columns: null as ColumnsType,
   renderers: null as RenderersTypes['renderers']
 });
 
-class Provider extends React.Component<ProviderProps, {}> {
+class Provider extends Component<ProviderProps, {}> {
   static displayName = 'Provider';
   static defaultProps = {
     renderers: TableDefaults.renderers
@@ -38,7 +38,7 @@ class Provider extends React.Component<ProviderProps, {}> {
       finalRenderers = components;
     }
 
-    const provider = React.createElement(renderers.table || TableDefaults.renderers.table, props, children);
+    const provider = createElement(renderers.table || TableDefaults.renderers.table, props, children);
     return (
       <ProviderContext.Provider
         value={{

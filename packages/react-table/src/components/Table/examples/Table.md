@@ -41,6 +41,7 @@ The `Table` component takes an explicit and declarative approach, and its implem
 
 The documentation for the deprecated table implementation can be found under the [React deprecated](/components/table/react-deprecated) tab. It is configuration based and takes a less declarative and more implicit approach to laying out the table structure, such as the rows and cells within it.
 
+import { Fragment, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -189,7 +190,7 @@ If actions menus are getting clipped by other items on the page, such as sticky 
 
 ### Actions Overflow
 
-Useing an `OverflowMenu` in the actions column, allowing the actions to condense into a dropdown if necessary for space.
+Using an `OverflowMenu` in the actions column, allowing the actions to condense into a dropdown if necessary for space.
 
 ```ts file="TableActionsOverflow.tsx"
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import LongArrowAltUpIcon from '@patternfly/react-icons/dist/esm/icons/long-arrow-alt-up-icon';
 import LongArrowAltDownIcon from '@patternfly/react-icons/dist/esm/icons/long-arrow-alt-down-icon';
 import ArrowsAltVIcon from '@patternfly/react-icons/dist/esm/icons/arrows-alt-v-icon';
@@ -42,7 +42,7 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
   ...props
 }: SortColumnProps) => {
   let SortedByIcon;
-  const [focused, setFocused] = React.useState(false);
+  const [focused, setFocused] = useState(false);
   if (isSortedBy) {
     SortedByIcon = sortDirection === SortByDirection.asc ? LongArrowAltUpIcon : LongArrowAltDownIcon;
   } else {

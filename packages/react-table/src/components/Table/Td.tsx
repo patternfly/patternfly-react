@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createRef, forwardRef, useEffect, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
@@ -109,9 +109,9 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   stickyRightOffset,
   ...props
 }: TdProps) => {
-  const [showTooltip, setShowTooltip] = React.useState(false);
-  const [truncated, setTruncated] = React.useState(false);
-  const cellRef = innerRef ? innerRef : React.createRef();
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [truncated, setTruncated] = useState(false);
+  const cellRef = innerRef ? innerRef : createRef();
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       !showTooltip && setShowTooltip(true);
@@ -261,7 +261,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     (className && className.includes(treeViewStyles.tableTreeViewTitleCell)) ||
     (mergedClassName && mergedClassName.includes(treeViewStyles.tableTreeViewTitleCell));
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTruncated(
       (cellRef as React.RefObject<HTMLElement | null>).current.offsetWidth <
         (cellRef as React.RefObject<HTMLElement | null>).current.scrollWidth
@@ -319,7 +319,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   );
 };
 
-export const Td = React.forwardRef((props: TdProps, ref: React.Ref<HTMLTableDataCellElement>) => (
+export const Td = forwardRef((props: TdProps, ref: React.Ref<HTMLTableDataCellElement>) => (
   <TdBase {...props} innerRef={ref} />
 ));
 Td.displayName = 'Td';

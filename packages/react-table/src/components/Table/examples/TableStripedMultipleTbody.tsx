@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Table, Caption, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 interface Repository {
@@ -78,11 +78,11 @@ export const TableStripedMultipleTbody: React.FunctionComponent = () => {
           <Tr key={repo.name}>
             <Td dataLabel={columnNames.name}>
               {repo.description ? (
-                <React.Fragment>
+                <Fragment>
                   {repo.name}
                   <br />
                   <small>{repo.description}</small>
-                </React.Fragment>
+                </Fragment>
               ) : (
                 repo.name
               )}
@@ -99,11 +99,11 @@ export const TableStripedMultipleTbody: React.FunctionComponent = () => {
           <Tr key={repo.name}>
             <Td dataLabel={columnNames.name}>
               {repo.description ? (
-                <React.Fragment>
+                <Fragment>
                   {repo.name}
                   <br />
                   <small>{repo.description}</small>
-                </React.Fragment>
+                </Fragment>
               ) : (
                 repo.name
               )}

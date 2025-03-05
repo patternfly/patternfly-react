@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext, forwardRef, useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
 import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
@@ -77,7 +77,7 @@ interface TableContextProps {
   registerSelectableRow?: () => void;
 }
 
-export const TableContext = React.createContext<TableContextProps>({
+export const TableContext = createContext<TableContextProps>({
   registerSelectableRow: () => {}
 });
 
@@ -103,13 +103,13 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   selectableRowCaptionText,
   ...props
 }: TableProps) => {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const tableRef = innerRef || ref;
 
-  const [hasSelectableRows, setHasSelectableRows] = React.useState(false);
-  const [tableCaption, setTableCaption] = React.useState<JSX.Element | undefined>();
+  const [hasSelectableRows, setHasSelectableRows] = useState(false);
+  const [tableCaption, setTableCaption] = useState<JSX.Element | undefined>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener('keydown', handleKeys);
 
     // sets up roving tab-index to tree tables only
@@ -123,7 +123,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
     };
   }, [tableRef, tableRef.current]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (selectableRowCaptionText) {
       setTableCaption(
         <caption>
@@ -228,7 +228,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   );
 };
 
-export const Table = React.forwardRef((props: TableProps, ref: React.Ref<HTMLTableElement>) => (
+export const Table = forwardRef((props: TableProps, ref: React.Ref<HTMLTableElement>) => (
   <TableBase {...props} innerRef={ref as React.MutableRefObject<any>} />
 ));
 Table.displayName = 'Table';

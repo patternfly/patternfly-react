@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
@@ -37,7 +37,7 @@ const TheadBase: React.FunctionComponent<TheadProps> = ({
   </thead>
 );
 
-export const Thead = React.forwardRef((props: TheadProps, ref: React.Ref<HTMLTableSectionElement>) => (
+export const Thead = forwardRef((props: TheadProps, ref: React.Ref<HTMLTableSectionElement>) => (
   <TheadBase {...props} innerRef={ref} />
 ));
 Thead.displayName = 'Thead';

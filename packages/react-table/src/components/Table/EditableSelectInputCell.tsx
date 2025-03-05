@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 import { Select, SelectList } from '@patternfly/react-core/dist/esm/components/Select';
 import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
@@ -76,7 +76,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div className={inlineStyles.inlineEditValue}>{Array.isArray(value) ? value.join(', ') : value}</div>
       <div className={inlineStyles.inlineEditInput}>
         {select}
@@ -84,7 +84,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
           {props.errorText}
         </div>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 EditableSelectInputCell.displayName = 'EditableSelectInputCell';

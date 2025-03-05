@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { Fragment, useEffect, useState } from 'react';
 import {
   Button,
   Card,
@@ -45,7 +44,7 @@ import { rows, columns, SampleDataRow } from '@patternfly/react-table/dist/esm/d
 type Direction = 'asc' | 'desc' | undefined;
 
 export const TableSortableResponsive: React.FunctionComponent = () => {
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
 
   const sortRows = (rows: SampleDataRow[], sortIndex: number, sortDirection: Direction) =>
     [...rows].sort((a, b) => {
@@ -65,17 +64,17 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
       return returnValue;
     });
 
-  const [sortedData, setSortedData] = React.useState([...sortRows(rows, 0, 'asc')]);
-  const [sortedRows, setSortedRows] = React.useState([...sortedData]);
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
+  const [sortedData, setSortedData] = useState([...sortRows(rows, 0, 'asc')]);
+  const [sortedRows, setSortedRows] = useState([...sortedData]);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
 
   // index of the currently active column
-  const [activeSortIndex, setActiveSortIndex] = React.useState(0);
+  const [activeSortIndex, setActiveSortIndex] = useState(0);
   // sort direction of the currently active column
-  const [activeSortDirection, setActiveSortDirection] = React.useState<Direction>('asc');
+  const [activeSortDirection, setActiveSortDirection] = useState<Direction>('asc');
   // sort dropdown expansion
-  const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
+  const [isSortDropdownOpen, setIsSortDropdownOpen] = useState(false);
 
   const onSort = (_event: any, index: number, direction: Direction) => {
     setActiveSortIndex(index);
@@ -86,7 +85,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
 
   const kebabDropdownItems = [<OverflowMenuDropdownItem key="kebab-1">Some action</OverflowMenuDropdownItem>];
 
-  React.useEffect(() => {
+  useEffect(() => {
     setSortedRows(sortedData.slice((page - 1) * perPage, page * perPage));
   }, [sortedData, page, perPage]);
 
@@ -228,7 +227,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DashboardWrapper>
         <PageSection isWidthLimited variant={PageSectionVariants.light}>
           <Content>
@@ -327,6 +326,6 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
           </Card>
         </PageSection>
       </DashboardWrapper>
-    </React.Fragment>
+    </Fragment>
   );
 };

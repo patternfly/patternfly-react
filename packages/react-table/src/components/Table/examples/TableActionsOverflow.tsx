@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import {
   Button,
   OverflowMenu,
@@ -33,7 +33,7 @@ export const TableActions: React.FunctionComponent = () => {
     { name: '5', branches: '2', prs: 'b', workspaces: 'four', lastCommit: 'five', isMenuOpen: false }
   ];
 
-  const [repos, setRepos] = React.useState(repositories);
+  const [repos, setRepos] = useState(repositories);
 
   const columnNames = {
     name: 'Repositories',
@@ -45,7 +45,7 @@ export const TableActions: React.FunctionComponent = () => {
 
   const dropdownItems = [
     <OverflowMenuDropdownItem itemId={0} key="item1" isShared>
-      Pimary
+      Primary
     </OverflowMenuDropdownItem>,
     <OverflowMenuDropdownItem itemId={1} key="item2" isShared>
       Secondary
@@ -56,7 +56,7 @@ export const TableActions: React.FunctionComponent = () => {
   ];
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Table aria-label="Actions table">
         <Thead>
           <Tr>
@@ -122,6 +122,6 @@ export const TableActions: React.FunctionComponent = () => {
           ))}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };
