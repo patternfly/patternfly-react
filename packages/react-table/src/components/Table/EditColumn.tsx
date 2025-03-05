@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
@@ -30,7 +30,7 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
   editAriaLabel,
   ...props
 }: EditColumnProps) => (
-  <React.Fragment>
+  <Fragment>
     <div className={css(inlineStyles.inlineEditGroup, inlineStyles.modifiers.iconGroup, 'pf-m-action-group')}>
       <div className={css(inlineStyles.inlineEditAction)}>
         <Button
@@ -60,6 +60,6 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
         icon={<PencilAltIcon />}
       />
     </div>
-  </React.Fragment>
+  </Fragment>
 );
 EditColumn.displayName = 'EditColumn';

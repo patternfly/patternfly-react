@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pagination } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 

@@ -1,4 +1,4 @@
-import React, { type JSX } from 'react';
+import { Fragment, useEffect, useState, type JSX } from 'react';
 
 import {
   Button,
@@ -36,18 +36,18 @@ export const TableColumnManagement: React.FunctionComponent = () => {
   const defaultColumns = columns;
   const defaultRows = rows;
 
-  const [filters, setFilters] = React.useState<string[]>([]);
-  const [filteredColumns, setFilteredColumns] = React.useState<string[]>(defaultColumns);
-  const [filteredRows, setFilteredRows] = React.useState<SampleDataRow[]>(defaultRows);
-  const [managedColumns, setManagedColumns] = React.useState<string[]>(defaultColumns);
-  const [managedRows, setManagedRows] = React.useState<SampleDataRow[]>(defaultRows);
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
-  const [paginatedRows, setPaginatedRows] = React.useState<any[]>(rows);
+  const [filters, setFilters] = useState<string[]>([]);
+  const [filteredColumns, setFilteredColumns] = useState<string[]>(defaultColumns);
+  const [filteredRows, setFilteredRows] = useState<SampleDataRow[]>(defaultRows);
+  const [managedColumns, setManagedColumns] = useState<string[]>(defaultColumns);
+  const [managedRows, setManagedRows] = useState<SampleDataRow[]>(defaultRows);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
+  const [paginatedRows, setPaginatedRows] = useState<any[]>(rows);
 
-  const [columnData, setColumnData] = React.useState(defaultColumns.map((col) => ({ name: col, checked: true })));
-  const [initialColData, setInitialColData] = React.useState(columnData);
+  const [columnData, setColumnData] = useState(defaultColumns.map((col) => ({ name: col, checked: true })));
+  const [initialColData, setInitialColData] = useState(columnData);
 
   const matchSelectedColumnNameToAttr = (name: string): string => {
     switch (name) {
@@ -102,7 +102,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
     />
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     setPaginatedRows(managedRows.slice((page - 1) * perPage, page * perPage - 1));
   }, [managedRows, page, perPage]);
 
@@ -297,7 +297,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
   };
 
   const toolbarItems = (
-    <React.Fragment>
+    <Fragment>
       <Toolbar id="page-layout-table-column-management-action-toolbar-top">
         <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>
           Choose one
@@ -330,11 +330,11 @@ export const TableColumnManagement: React.FunctionComponent = () => {
           <ToolbarItem variant="pagination">{renderPagination('top', false)}</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection isFilled>
           {toolbarItems}
@@ -381,6 +381,6 @@ export const TableColumnManagement: React.FunctionComponent = () => {
           {renderModal()}
         </PageSection>
       </DashboardWrapper>
-    </React.Fragment>
+    </Fragment>
   );
 };

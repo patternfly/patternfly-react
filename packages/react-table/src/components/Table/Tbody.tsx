@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
@@ -42,7 +42,7 @@ const TbodyBase: React.FunctionComponent<TbodyProps> = ({
   </tbody>
 );
 
-export const Tbody = React.forwardRef((props: TbodyProps, ref: React.Ref<HTMLTableSectionElement>) => (
+export const Tbody = forwardRef((props: TbodyProps, ref: React.Ref<HTMLTableSectionElement>) => (
   <TbodyBase {...props} innerRef={ref} />
 ));
 Tbody.displayName = 'Tbody';

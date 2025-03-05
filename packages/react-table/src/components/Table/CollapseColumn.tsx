@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import { css } from '@patternfly/react-styles';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
@@ -20,7 +20,7 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
   onToggle,
   ...props
 }: CollapseColumnProps) => (
-  <React.Fragment>
+  <Fragment>
     {isOpen !== undefined && (
       <Button
         className={css(className, isOpen && styles.modifiers.expanded)}
@@ -37,6 +37,6 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
       />
     )}
     {children}
-  </React.Fragment>
+  </Fragment>
 );
 CollapseColumn.displayName = 'CollapseColumn';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 interface Repository {

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useCallback, useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
 
 interface Repository {
@@ -28,13 +28,13 @@ export const TableFavoritable: React.FunctionComponent = () => {
   // Index of the currently sorted column
   // Note: if you intend to make columns reorderable, you may instead want to use a non-numeric key
   // as the identifier of the sorted column. See the "Compound expandable" example.
-  const [activeSortIndex, setActiveSortIndex] = React.useState<number>();
+  const [activeSortIndex, setActiveSortIndex] = useState<number>();
 
   // Sort direction of the currently sorted column
-  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc'>();
+  const [activeSortDirection, setActiveSortDirection] = useState<'asc' | 'desc'>();
 
   // Favorite state is similar to selection state, see Selectable with checkbox.
-  const [favoriteRepoNames, setFavoriteRepoNames] = React.useState<string[]>([]);
+  const [favoriteRepoNames, setFavoriteRepoNames] = useState<string[]>([]);
   const setRepoFavorited = (repo: Repository, isFavoriting = true) =>
     setFavoriteRepoNames((prevFavorites) => {
       const otherFavorites = prevFavorites.filter((r) => r !== repo.name);
@@ -43,14 +43,14 @@ export const TableFavoritable: React.FunctionComponent = () => {
   const isRepoFavorited = (repo: Repository) => favoriteRepoNames.includes(repo.name);
 
   // State of the header cell to favorite / unfavorite all rows
-  const [headerFavorited, setHeaderFavorited] = React.useState(false);
+  const [headerFavorited, setHeaderFavorited] = useState(false);
 
   // Since OnSort specifies sorted columns by index, we need sortable values for our object by column index.
   // In this example we only deal with booleans here because we only sort on the favorites column.
   // For more complex sorting, see Sortable.
   // Note: We also memoize the sortable values with useCallback to prevent rows jumping around when you change
   // the favorites while sorting on that column. Only updating the sort state will reorder the rows.
-  const getSortableRowValues = React.useCallback(
+  const getSortableRowValues = useCallback(
     (repo: Repository): boolean[] => [isRepoFavorited(repo)],
     [activeSortIndex, activeSortDirection]
   );

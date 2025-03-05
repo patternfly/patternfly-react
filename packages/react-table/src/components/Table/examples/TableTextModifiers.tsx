@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, TableText } from '@patternfly/react-table';
 
 // This example has been simplified to focus on the text modifier props. In real usage,
@@ -10,7 +10,7 @@ const columnNames = {
 };
 
 export const TableTextModifiers: React.FunctionComponent = () => {
-  const [focused, setFocused] = React.useState(false);
+  const [focused, setFocused] = useState(false);
 
   return (
     <Table aria-label="Table text">

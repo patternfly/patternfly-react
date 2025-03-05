@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer } from '@patternfly/react-table';
 import { Card, PageSection } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
@@ -67,8 +67,8 @@ export const TableStickyFirstColumn = () => {
     header16: 'Header 16'
   };
 
-  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
-  const [activeSortDirection, setActiveSortDirection] = React.useState<Direction>('asc');
+  const [activeSortIndex, setActiveSortIndex] = useState(-1);
+  const [activeSortDirection, setActiveSortDirection] = useState<Direction>('asc');
   const getSortableRowValues = (fact: Fact) => {
     const {
       name,

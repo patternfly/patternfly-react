@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React from 'react';
+import { Fragment, useState } from 'react';
 import {
   Button,
   Checkbox,
@@ -50,13 +50,13 @@ export const LegacyTableActions: React.FunctionComponent = () => {
   ];
 
   // This state is just for the ToggleGroup in this example and isn't necessary for Table usage.
-  const [propToUse, setPropToUse] = React.useState<ExampleType>('actions');
+  const [propToUse, setPropToUse] = useState<ExampleType>('actions');
   const onPropToUseChange: ToggleGroupItemProps['onChange'] = (event, _isSelected) => {
     const id = event.currentTarget.id;
     setPropToUse(id as ExampleType);
   };
 
-  const [useCustomToggle, setUseCustomToggle] = React.useState(false);
+  const [useCustomToggle, setUseCustomToggle] = useState(false);
 
   const customActionsToggle = (props: CustomActionsToggleProps) => (
     <MenuToggle ref={props.toggleRef} onClick={props.onToggle} isDisabled={props.isDisabled}>
@@ -154,7 +154,7 @@ export const LegacyTableActions: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Toolbar>
         <ToolbarContent>
           <ToolbarItem>
@@ -199,6 +199,6 @@ export const LegacyTableActions: React.FunctionComponent = () => {
         <TableHeader />
         <TableBody />
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

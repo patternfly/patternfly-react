@@ -1,4 +1,4 @@
-import React from 'react';
+import { isValidElement, useRef, useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { Button, Checkbox, Radio, TextInput, KeyTypes, getUniqueId } from '@patternfly/react-core';
 import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
@@ -18,7 +18,7 @@ const EditButtonsCell: React.FunctionComponent<EditButtonsCellProps> = ({
   elementToFocusOnEditRef,
   rowAriaLabel = 'row'
 }) => {
-  const editButtonRef = React.useRef<HTMLButtonElement>(undefined);
+  const editButtonRef = useRef<HTMLButtonElement>(undefined);
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, button: 'edit' | 'stopEditing') => {
     const focusRef = button === 'edit' ? elementToFocusOnEditRef : editButtonRef;
@@ -97,7 +97,7 @@ const EditableCell: React.FunctionComponent<EditableCellProps> = ({
   role,
   ariaLabel
 }) => {
-  const hasMultipleInputs = Array.isArray(editingValue) && editingValue.every((elem) => React.isValidElement(elem));
+  const hasMultipleInputs = Array.isArray(editingValue) && editingValue.every((elem) => isValidElement(elem));
 
   return (
     <Td dataLabel={dataLabel}>
@@ -134,10 +134,10 @@ const EditableRow: React.FunctionComponent<EditableRow> = ({
   ariaLabel,
   rowIndex
 }) => {
-  const [editable, setEditable] = React.useState(false);
-  const [editedData, setEditedData] = React.useState(data);
+  const [editable, setEditable] = useState(false);
+  const [editedData, setEditedData] = useState(data);
 
-  const inputRef = React.useRef(undefined);
+  const inputRef = useRef(undefined);
 
   return (
     <Tr className={css(inlineEditStyles.inlineEdit, editable ? inlineEditStyles.modifiers.inlineEditable : '')}>
@@ -273,7 +273,7 @@ export const TableEditable: React.FunctionComponent = () => {
     }
   ];
 
-  const [rows, setRows] = React.useState(initialRows);
+  const [rows, setRows] = useState(initialRows);
 
   const columnNames: ColumnNames<CustomData> = {
     textInput: 'Text input',

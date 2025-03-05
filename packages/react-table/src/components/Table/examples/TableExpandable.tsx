@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, ExpandableRowContent } from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -96,7 +96,7 @@ export const TableExpandable: React.FunctionComponent = () => {
   // This is to prevent state from being based on row order index in case we later add sorting.
   // Note that this behavior is very similar to selection state.
   const initialExpandedRepoNames = repositories.filter((repo) => !!repo.details).map((repo) => repo.name); // Default to all expanded
-  const [expandedRepoNames, setExpandedRepoNames] = React.useState<string[]>(initialExpandedRepoNames);
+  const [expandedRepoNames, setExpandedRepoNames] = useState<string[]>(initialExpandedRepoNames);
   const setRepoExpanded = (repo: Repository, isExpanding = true) =>
     setExpandedRepoNames((prevExpanded) => {
       const otherExpandedRepoNames = prevExpanded.filter((r) => r !== repo.name);
@@ -104,10 +104,10 @@ export const TableExpandable: React.FunctionComponent = () => {
     });
   const isRepoExpanded = (repo: Repository) => expandedRepoNames.includes(repo.name);
 
-  const [isExampleCompact, setIsExampleCompact] = React.useState(true);
+  const [isExampleCompact, setIsExampleCompact] = useState(true);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Checkbox
         label="Compact"
         isChecked={isExampleCompact}
@@ -195,6 +195,6 @@ export const TableExpandable: React.FunctionComponent = () => {
           );
         })}
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

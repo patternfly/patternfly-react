@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 interface Repository {
@@ -29,7 +29,7 @@ export const TableSelectableRadio: React.FunctionComponent = () => {
 
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
-  const [selectedRepoName, setSelectedRepoName] = React.useState<string | null>(null);
+  const [selectedRepoName, setSelectedRepoName] = useState<string | null>(null);
 
   return (
     <Table aria-label="Selectable table">
