@@ -23,6 +23,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
               style="display: contents;"
             >
               <button
+                aria-disabled="false"
                 aria-label="Copy code to clipboard"
                 class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-1"
@@ -53,6 +54,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
               style="display: contents;"
             >
               <button
+                aria-disabled="false"
                 aria-label="Upload code"
                 class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-2"
@@ -83,6 +85,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
               style="display: contents;"
             >
               <button
+                aria-disabled="false"
                 aria-label="Download code"
                 class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-3"
