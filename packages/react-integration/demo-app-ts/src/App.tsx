@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component, createElement } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { Avatar } from '@patternfly/react-core/dist/esm/components/Avatar';
 import { Brand } from '@patternfly/react-core/dist/esm/components/Brand';
@@ -33,7 +33,7 @@ interface AppState {
   isDarkTheme: boolean;
 }
 
-class App extends React.Component<{}, AppState> {
+class App extends Component<{}, AppState> {
   state: AppState = {
     activeItem: '',
     isNavOpen: true,
@@ -67,9 +67,7 @@ class App extends React.Component<{}, AppState> {
         {Demos.map((demo) => (
           <Route
             path={`/${demo.id}-nav-link`}
-            element={
-              <PageSection id={`/${demo.id}-page-section`}>{React.createElement(demo.componentType)}</PageSection>
-            }
+            element={<PageSection id={`/${demo.id}-page-section`}>{createElement(demo.componentType)}</PageSection>}
             key={demo.id}
           />
         ))}
@@ -78,7 +76,7 @@ class App extends React.Component<{}, AppState> {
             path="/"
             element={
               <PageSection id={`/${defaultDemo.id}-page-section`}>
-                {React.createElement(defaultDemo.componentType)}
+                {createElement(defaultDemo.componentType)}
               </PageSection>
             }
             key={defaultDemo.id}

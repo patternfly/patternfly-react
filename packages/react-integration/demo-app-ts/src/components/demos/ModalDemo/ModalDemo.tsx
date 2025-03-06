@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import {
   Button,
   Modal,
@@ -28,7 +28,7 @@ interface ModalDemoState {
   isCustomFocusModalOpen: boolean;
 }
 
-export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
+export class ModalDemo extends Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
   static displayName = 'ModalDemo';
 
   state = {

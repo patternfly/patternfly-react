@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import {
   Alert,
   AlertGroup,
@@ -21,7 +21,7 @@ interface AlertGroupDemoState {
   timer: number;
 }
 
-export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
+export class AlertGroupDemo extends Component<{}, AlertGroupDemoState> {
   static displayName = 'AlertGroupDemo';
   stopAsyncAlerts: () => void;
   removeAlert: (key: number | string) => void;

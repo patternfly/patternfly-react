@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component, createRef } from 'react';
 import {
   Button,
   Drawer,
@@ -27,7 +27,7 @@ export class DrawerDemo extends Component<DrawerProps, DrawerDemoState> {
     isCustomFocusExpanded: false
   };
 
-  drawerRef = React.createRef<HTMLButtonElement>();
+  drawerRef = createRef<HTMLButtonElement>();
 
   onExpand = () => {
     this.drawerRef.current && this.drawerRef.current.focus();

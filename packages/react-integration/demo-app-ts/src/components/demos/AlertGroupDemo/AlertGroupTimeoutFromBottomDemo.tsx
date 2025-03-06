@@ -1,9 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import { Alert, AlertActionLink, AlertGroup, Button } from '@patternfly/react-core';
 
 export const AlertGroupTimeoutFromBottomDemo: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<React.ReactNode[]>([]);
-  const [count, setCount] = React.useState(0);
+  const [alerts, setAlerts] = useState<React.ReactNode[]>([]);
+  const [count, setCount] = useState(0);
   const onClick = () => {
     const timeout = 3000;
     setAlerts((prevAlerts) => [
