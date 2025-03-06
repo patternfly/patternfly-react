@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, useMemo, useState } from 'react';
 import { Checkbox } from '@patternfly/react-core';
 import { SimpleSelect, SimpleSelectOption } from '@patternfly/react-templates';
 
@@ -9,16 +9,16 @@ const Options: SimpleSelectOption[] = [
 ];
 
 export const SelectSimpleDemo: React.FunctionComponent = () => {
-  const [isDisabled, setIsDisabled] = React.useState<boolean>(false);
-  const [selected, setSelected] = React.useState<string | undefined>('Option1');
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
+  const [selected, setSelected] = useState<string | undefined>('Option1');
 
-  const initialOptions = React.useMemo<SimpleSelectOption[]>(
+  const initialOptions = useMemo<SimpleSelectOption[]>(
     () => Options.map((o) => ({ ...o, selected: o.value === selected })),
     [selected]
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Checkbox
         id="toggle-disabled"
         label="isDisabled"
@@ -31,6 +31,6 @@ export const SelectSimpleDemo: React.FunctionComponent = () => {
         isDisabled={isDisabled}
         onSelect={(_ev, selection) => setSelected(String(selection))}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };
