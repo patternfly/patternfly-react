@@ -37,6 +37,7 @@ exports[`simple fileupload 1`] = `
           class="pf-v6-c-input-group__item"
         >
           <button
+            aria-disabled="false"
             class="pf-v6-c-button pf-m-control"
             data-ouia-component-id="OUIA-Generated-Button-control-1"
             data-ouia-component-type="PF6/Button"
@@ -54,6 +55,7 @@ exports[`simple fileupload 1`] = `
           class="pf-v6-c-input-group__item"
         >
           <button
+            aria-disabled="true"
             class="pf-v6-c-button pf-m-control"
             data-ouia-component-id="OUIA-Generated-Button-control-2"
             data-ouia-component-type="PF6/Button"
