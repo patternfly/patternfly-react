@@ -1,10 +1,10 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import { Checkbox, Flex, FlexItem } from '@patternfly/react-core';
 import { SimpleDropdown, SimpleDropdownItem } from '@patternfly/react-templates';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const SimpleDropdownExample: React.FunctionComponent = () => {
-  const [isDisabled, setIsDisabled] = React.useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const items: SimpleDropdownItem[] = [
     // eslint-disable-next-line no-console
@@ -18,7 +18,7 @@ export const SimpleDropdownExample: React.FunctionComponent = () => {
   ];
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Checkbox
         id="simple-example-disabled-toggle"
         label="Disable simple dropdown toggles"
@@ -48,6 +48,6 @@ export const SimpleDropdownExample: React.FunctionComponent = () => {
           />
         </FlexItem>
       </Flex>
-    </React.Fragment>
+    </Fragment>
   );
 };
