@@ -2,9 +2,11 @@ import * as React from 'react';
 import { useState, type JSX } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
+import alertGroupStyles from '@patternfly/react-styles/css/components/Alert/alert-group';
 import { AlertIcon } from './AlertIcon';
 import { capitalize, useOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';
+import { AlertGroupContext } from './AlertGroupContext';
 import maxLines from '@patternfly/react-tokens/dist/esm/c_alert__title_max_lines';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import { AlertToggleExpandButton } from './AlertToggleExpandButton';
@@ -141,7 +143,30 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const [timedOutAnimation, setTimedOutAnimation] = useState(true);
   const [isMouseOver, setIsMouseOver] = useState<boolean | undefined>();
   const [containsFocus, setContainsFocus] = useState<boolean | undefined>();
-  const dismissed = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
+  const shouldDismiss = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
+  const [isDismissed, setIsDismissed] = React.useState(false);
+  const { hasAnimations, updateTransitionEnd } = React.useContext(AlertGroupContext);
+  const { offstageRight } = alertGroupStyles.modifiers;
+
+  const getParentAlertGroupItem = () => divRef.current?.closest(`.${alertGroupStyles.alertGroupItem}`);
+  React.useEffect(() => {
+    const shouldSetDismissed = shouldDismiss && !isDismissed;
+    if (!shouldSetDismissed) {
+      return;
+    }
+
+    const alertGroupItem = getParentAlertGroupItem();
+    alertGroupItem?.classList.add(offstageRight);
+
+    if (hasAnimations) {
+      updateTransitionEnd(() => {
+        setIsDismissed(true);
+      });
+    } else {
+      setIsDismissed(true);
+    }
+  }, [shouldDismiss, isDismissed]);
+
   React.useEffect(() => {
     const calculatedTimeout = timeout === true ? 8000 : Number(timeout);
     if (calculatedTimeout > 0) {
@@ -172,8 +197,12 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     }
   }, [containsFocus, isMouseOver, timeoutAnimation]);
   React.useEffect(() => {
-    dismissed && onTimeout();
-  }, [dismissed, onTimeout]);
+    isDismissed && onTimeout();
+  }, [isDismissed, onTimeout]);
+  React.useEffect(() => {
+    const alertGroupItem = getParentAlertGroupItem();
+    setTimeout(() => alertGroupItem?.classList.remove(alertGroupStyles.modifiers.offstageTop), 0);
+  }, []);
 
   const [isExpanded, setIsExpanded] = useState(false);
   const onToggleExpand = () => {
@@ -191,7 +220,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     onMouseLeave(ev);
   };
 
-  if (dismissed) {
+  if (shouldDismiss && isDismissed) {
     return null;
   }
   const Title = (
