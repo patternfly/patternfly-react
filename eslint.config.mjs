@@ -16,6 +16,7 @@ export default [
       '**/css',
       'packages/react-core/src/helpers/Popper/thirdparty',
       'packages/react-docs/patternfly-docs/generated',
+      'packages/react-docs/coverage',
       '.history/*',
       'packages/react-docs/static',
       '**/.cache'

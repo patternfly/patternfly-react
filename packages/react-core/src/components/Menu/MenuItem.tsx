@@ -147,6 +147,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   const flyoutContext = React.useContext(FlyoutContext);
   const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
   const ref = React.useRef<HTMLLIElement>(undefined);
+  const privateRef = React.useRef(undefined);
+  const innerComponentRef = innerRef || privateRef;
   const flyoutVisible = ref === flyoutRef;
 
   const hasFlyout = flyoutMenu !== undefined;
@@ -351,7 +353,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             {...(!hasCheckbox && { disabled: isDisabled, 'aria-label': ariaLabel })}
             {...(!hasCheckbox && !flyoutMenu && { role: isSelectMenu ? 'option' : 'menuitem' })}
             {...(!hasCheckbox && !flyoutMenu && isSelectMenu && { 'aria-selected': getIsSelected() })}
-            ref={innerRef}
+            ref={innerComponentRef}
             {...(!hasCheckbox && {
               onClick: (event: React.KeyboardEvent | React.MouseEvent) => {
                 if (!isAriaDisabled) {
@@ -433,31 +435,34 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   );
 
   return (
-    <li
-      className={css(
-        styles.menuListItem,
-        isDisabled && styles.modifiers.disabled,
-        isAriaDisabled && styles.modifiers.ariaDisabled,
-        _isOnPath && styles.modifiers.currentPath,
-        isLoadButton && styles.modifiers.load,
-        isLoading && styles.modifiers.loading,
-        isFocused && 'pf-m-focus',
-        isDanger && styles.modifiers.danger,
-        className
-      )}
-      onMouseOver={() => {
-        if (!isAriaDisabled) {
-          onMouseOver();
-        }
-      }}
-      {...(flyoutMenu && !isAriaDisabled && { onKeyDown: handleFlyout })}
-      ref={ref}
-      role={!hasCheckbox ? 'none' : 'menuitem'}
-      {...(hasCheckbox && { 'aria-label': ariaLabel })}
-      {...props}
-    >
-      {tooltipProps ? <Tooltip {...tooltipProps}>{renderItem}</Tooltip> : renderItem}
-    </li>
+    <>
+      <li
+        className={css(
+          styles.menuListItem,
+          isDisabled && styles.modifiers.disabled,
+          isAriaDisabled && styles.modifiers.ariaDisabled,
+          _isOnPath && styles.modifiers.currentPath,
+          isLoadButton && styles.modifiers.load,
+          isLoading && styles.modifiers.loading,
+          isFocused && 'pf-m-focus',
+          isDanger && styles.modifiers.danger,
+          className
+        )}
+        onMouseOver={() => {
+          if (!isAriaDisabled) {
+            onMouseOver();
+          }
+        }}
+        {...(flyoutMenu && !isAriaDisabled && { onKeyDown: handleFlyout })}
+        ref={ref}
+        role={!hasCheckbox ? 'none' : 'menuitem'}
+        {...(hasCheckbox && { 'aria-label': ariaLabel })}
+        {...props}
+      >
+        {renderItem}
+      </li>
+      {tooltipProps && <Tooltip {...tooltipProps} triggerRef={innerComponentRef as any} />}
+    </>
   );
 };
 
