@@ -709,7 +709,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif); font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="middle"
               x="80"
             >
@@ -740,7 +740,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif); font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="middle"
               x="128.33333333333331"
             >
@@ -771,7 +771,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif); font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="middle"
               x="176.66666666666666"
             >
@@ -802,7 +802,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif); font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="middle"
               x="224.99999999999997"
             >
@@ -847,7 +847,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif); font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="end"
               x="35"
             >
@@ -878,7 +878,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif); font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="end"
               x="35"
             >
@@ -909,7 +909,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif); font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="end"
               x="35"
             >
@@ -940,7 +940,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif); font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="end"
               x="35"
             >
@@ -971,7 +971,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: "Red Hat Text", "RedHatText", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans JP", "Noto Sans KR", "Noto Sans Malayalam", "Noto Sans SC", "Noto Sans TC", "Noto Sans Thai", Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
+              style="font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif); font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-v6-chart-global--label--stroke, transparent); fill: var(--pf-v6-chart-axis--tick-label--Fill, #383838);"
               text-anchor="end"
               x="35"
             >

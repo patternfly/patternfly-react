@@ -33,6 +33,7 @@
     "@patternfly/react-table": "workspace:^",
     "@patternfly/react-templates": "workspace:^",
     "@patternfly/react-tokens": "workspace:^",
+    "echarts": "^5.6.0",
     "victory": "^37.3.6"
   },
   "devDependencies": {

@@ -1,0 +1,268 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-chart"
+    id="line-chart"
+    style="height: 400px; width: 800px; position: relative;"
+  >
+    <div
+      style="position: relative; overflow: hidden; width: 800px; height: 400px;"
+    >
+      <svg
+        baseProfile="full"
+        height="400"
+        style="position: absolute; left: 0px; top: 0px; user-select: none;"
+        version="1.1"
+        width="800"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <rect
+          fill="none"
+          height="400"
+          width="800"
+          x="0"
+          y="0"
+        />
+        <g>
+          <path
+            d="M80 60l160 0l0 270l-160 0Z"
+            fill="#ffffff"
+          />
+          <path
+            d="M240 60l160 0l0 270l-160 0Z"
+            fill="#ffffff"
+          />
+          <path
+            d="M400 60l160 0l0 270l-160 0Z"
+            fill="#ffffff"
+          />
+          <path
+            d="M560 60l160 0l0 270l-160 0Z"
+            fill="#ffffff"
+          />
+          <path
+            d="M80.5 60L80.5 330"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M240.5 60L240.5 330"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M400.5 60L400.5 330"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M560.5 60L560.5 330"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M720.5 60L720.5 330"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M80.5 330L80.5 60"
+            fill="none"
+            stroke="#c7c7c7"
+            stroke-linecap="round"
+          />
+          <path
+            d="M80 330.5L720 330.5"
+            fill="none"
+            stroke="#c7c7c7"
+            stroke-linecap="round"
+          />
+          <path
+            d="M80.5 330L80.5 335"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M240.5 330L240.5 335"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M400.5 330L400.5 335"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M560.5 330L560.5 335"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M720.5 330L720.5 335"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <text
+            dominant-baseline="central"
+            fill="#1f1f1f"
+            style="font-size: 14px; font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif);"
+            text-anchor="middle"
+            transform="translate(160 338)"
+            y="0.5"
+          >
+            2015
+          </text>
+          <text
+            dominant-baseline="central"
+            fill="#1f1f1f"
+            style="font-size: 14px; font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif);"
+            text-anchor="middle"
+            transform="translate(320 338)"
+            y="0.5"
+          >
+            2016
+          </text>
+          <text
+            dominant-baseline="central"
+            fill="#1f1f1f"
+            style="font-size: 14px; font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif);"
+            text-anchor="middle"
+            transform="translate(480 338)"
+            y="0.5"
+          >
+            2017
+          </text>
+          <text
+            dominant-baseline="central"
+            fill="#1f1f1f"
+            style="font-size: 14px; font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif);"
+            text-anchor="middle"
+            transform="translate(640 338)"
+            y="0.5"
+          >
+            2018
+          </text>
+          <g
+            clip-path="url(#zr0-c0)"
+          >
+            <path
+              d="M160 300C160 300 244.8013 298.1995 320 270C404.8013 238.1995 397.1346 180 480 180C557.1346 180 640 240 640 240"
+              fill="none"
+              stroke="#0066cc"
+              stroke-linejoin="bevel"
+              stroke-width="2"
+            />
+          </g>
+          <g
+            clip-path="url(#zr0-c1)"
+          >
+            <path
+              d="M160 270C160 270 255.4687 300 320 300C415.4687 300 389.2073 120 480 120C549.2073 120 640 210 640 210"
+              fill="none"
+              stroke="#92c5f9"
+              stroke-dasharray="8,4"
+              stroke-linejoin="bevel"
+              stroke-width="2"
+            />
+          </g>
+          <g
+            clip-path="url(#zr0-c2)"
+          >
+            <path
+              d="M160 240C160 240 251.8353 240 320 210C411.8353 169.5824 396.3146 60 480 60C556.3146 60 640 180 640 180"
+              fill="none"
+              stroke="#003366"
+              stroke-linejoin="bevel"
+              stroke-width="2"
+            />
+          </g>
+          <g
+            clip-path="url(#zr0-c3)"
+          >
+            <path
+              d="M160 240C160 240 252.5103 240 320 240C412.5103 240 388.1647 90 480 90C548.1647 90 640 120 640 120"
+              fill="none"
+              stroke="#4394e5"
+              stroke-linejoin="bevel"
+              stroke-width="2"
+            />
+          </g>
+          <path
+            d="M-5 -5l30 0l0 11l-30 0Z"
+            fill="rgb(0,0,0)"
+            fill-opacity="0"
+            stroke="#ccc"
+            stroke-width="0"
+            transform="translate(5 5)"
+          />
+          <text
+            dominant-baseline="central"
+            fill="#1f1f1f"
+            style="font-size: 14px; font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif); font-weight: bold;"
+            text-anchor="start"
+            transform="translate(5 5)"
+            xml:space="preserve"
+            y="0.5"
+          >
+            This is a Line chart
+          </text>
+        </g>
+        <defs>
+          <clippath
+            id="zr0-c0"
+          >
+            <path
+              d="M79 59l0 0l0 272l0 0Z"
+              fill="#000"
+            />
+          </clippath>
+          <clippath
+            id="zr0-c1"
+          >
+            <path
+              d="M79 59l0 0l0 272l0 0Z"
+              fill="#000"
+            />
+          </clippath>
+          <clippath
+            id="zr0-c2"
+          >
+            <path
+              d="M79 59l0 0l0 272l0 0Z"
+              fill="#000"
+            />
+          </clippath>
+          <clippath
+            id="zr0-c3"
+          >
+            <path
+              d="M79 59l0 0l0 272l0 0Z"
+              fill="#000"
+            />
+          </clippath>
+        </defs>
+      </svg>
+    </div>
+    <div
+      class=""
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders title 1`] = `
+<text
+  dominant-baseline="central"
+  fill="#1f1f1f"
+  style="font-size: 14px; font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif); font-weight: bold;"
+  text-anchor="start"
+  transform="translate(5 5)"
+  xml:space="preserve"
+  y="0.5"
+>
+  This is a Line chart
+</text>
+`;
