@@ -32,6 +32,7 @@ export const getCustomTheme = (themeColor: string, customTheme: ChartThemeDefini
 
 /**
  * Returns base theme for given color
+ *
  * @public
  */
 export const getTheme = (themeColor: string): ChartThemeDefinition => {
@@ -41,8 +42,8 @@ export const getTheme = (themeColor: string): ChartThemeDefinition => {
 
 /**
  * Returns base component theme for given color
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getComponentTheme = (themeColor: string): ChartComponentThemeDefinition => {
   const theme = cloneDeep(ChartBaseComponentTheme);
@@ -51,6 +52,7 @@ export const getComponentTheme = (themeColor: string): ChartComponentThemeDefini
 
 /**
  * Returns theme colors
+ *
  * @public
  */
 export const getThemeColors = (themeColor: string) => {
@@ -83,8 +85,8 @@ export const getThemeColors = (themeColor: string) => {
 
 /**
  * Returns theme component colors
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getThemeComponentColors = (themeColor: string) => {
   switch (themeColor) {

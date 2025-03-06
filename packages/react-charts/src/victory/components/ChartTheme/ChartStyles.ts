@@ -8,42 +8,49 @@ import { ScatterStyles } from './styles/scatter-styles';
 
 /**
  * Common styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const ChartCommonStyles = CommonStyles;
 
 /**
  * Bullet styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const ChartBulletStyles = BulletStyles;
 
 /**
  * Legend tooltip styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const ChartBoxPlotTooltipStyles = BoxPlotTooltipStyles;
 
 /**
  * Donut styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const ChartDonutStyles = DonutStyles;
 
 /**
  * Donut utilization styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const ChartDonutUtilizationStyles = DonutUtilizationStyles;
 
 /**
  * Legend tooltip styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const ChartLegendTooltipStyles = LegendTooltipStyles;
 
 /**
  * Scatter styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const ChartScatterStyles = ScatterStyles;

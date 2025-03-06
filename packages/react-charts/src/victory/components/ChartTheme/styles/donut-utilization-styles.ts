@@ -4,7 +4,8 @@ import chart_donut_threshold_danger_Color from '@patternfly/react-tokens/dist/es
 
 /**
  * Donut utilization styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const DonutUtilizationStyles = {
   thresholds: {

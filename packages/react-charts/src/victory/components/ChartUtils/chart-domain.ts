@@ -19,7 +19,8 @@ interface SourcesInterface {
 
 /**
  * Chart domain interface
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export interface ChartDomain {
   x: [number, number];
@@ -28,7 +29,8 @@ export interface ChartDomain {
 
 /**
  * Returns the min and max domain for given data
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getDomain = ({ data, maxDomain, minDomain, x, y }: DomainInterface): ChartDomain => {
   // x-domain
@@ -100,7 +102,8 @@ export const getDomain = ({ data, maxDomain, minDomain, x, y }: DomainInterface)
 
 /**
  * Returns the domain for given min and max properties
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getDomains = ({ maxDomain, minDomain, sources }: SourcesInterface): ChartDomain => {
   const domains: ChartDomain[] = [];

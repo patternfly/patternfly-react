@@ -2,8 +2,8 @@ import { VictoryThemeDefinition } from 'victory-core';
 
 /**
  * Chart component theme definition
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export interface ChartComponentThemeDefinitionInterface {
   axis?: VictoryThemeDefinition;
@@ -43,13 +43,14 @@ export interface ChartThemeDefinitionInterface extends VictoryThemeDefinition {}
 
 /**
  * Chart theme definition
+ *
  * @public
  */
 export type ChartThemeDefinition = ChartThemeDefinitionInterface;
 
 /**
  * Chart component theme definition
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export type ChartComponentThemeDefinition = ChartComponentThemeDefinitionInterface;

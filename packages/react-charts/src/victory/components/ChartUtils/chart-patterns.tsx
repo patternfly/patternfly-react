@@ -1,5 +1,6 @@
 import { Children, cloneElement, Fragment, isValidElement, useMemo } from 'react';
 import uniqueId from 'lodash/uniqueId';
+import cloneDeep from 'lodash/cloneDeep';
 
 interface PatternPropsInterface {
   children?: any;
@@ -17,7 +18,8 @@ interface PatternPropsInterface {
 /**
  * Patterns were pulled from v3.0.3 of the script below, which uses the MIT license.
  * See https://github.com/highcharts/pattern-fill/blob/master/pattern-fill-v2.js
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const patterns: any = [
   // Set 1
@@ -216,13 +218,15 @@ const patterns: any = [
 
 /**
  * Helper function to return a pattern ID
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getPatternId = () => uniqueId('pf-pattern');
 
 /**
  * Helper function to return pattern defs ID
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getPatternDefsId = (prefix: string, index: number) => {
   const id = `${prefix}:${index}`;
@@ -231,7 +235,8 @@ const getPatternDefsId = (prefix: string, index: number) => {
 
 /**
  * Helper function to return pattern defs
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getPatternDefs = ({
   colorScale,
@@ -273,14 +278,16 @@ export const getPatternDefs = ({
 
 /**
  * Helper function to return pattern IDs to use as color scale
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getPatternScale = (colorScale: string[], patternId: string) =>
   colorScale.map((val: any, index: number) => `url(#${getPatternDefsId(patternId, index)})`);
 
 /**
  * Helper function to return default color scale
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getDefaultColorScale = (colorScale: string[], themeColorScale: string[]) => {
   const result: string[] = [];
@@ -292,7 +299,8 @@ const getDefaultColorScale = (colorScale: string[], themeColorScale: string[]) =
 
 /**
  * Helper function to return default pattern scale
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getDefaultPatternScale = ({ colorScale, patternId, patternScale }: PatternPropsInterface) => {
   if (patternScale) {
@@ -304,7 +312,8 @@ const getDefaultPatternScale = ({ colorScale, patternId, patternScale }: Pattern
 
 /**
  * Merge pattern IDs with `data.fill` property, used by interactive pie chart legend
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const mergePatternData = (data: any, patternScale: string[]) => {
   if (!patternScale) {
@@ -321,7 +330,8 @@ export const mergePatternData = (data: any, patternScale: string[]) => {
 
 /**
  * Helper function to return default pattern props
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const useDefaultPatternProps = ({
   colorScale,
@@ -330,7 +340,7 @@ export const useDefaultPatternProps = ({
   themeColorScale
 }: PatternPropsInterface) => {
   const defaultColorScale = getDefaultColorScale(colorScale, themeColorScale);
-  let defaultPatternScale = patternScale;
+  let defaultPatternScale = cloneDeep(patternScale);
   let isPatternDefs = !patternScale && hasPatterns !== undefined;
   const patternId = useMemo(() => (isPatternDefs ? getPatternId() : undefined), [isPatternDefs]);
 
@@ -358,7 +368,8 @@ export const useDefaultPatternProps = ({
 
 /**
  * Helper function to render children with patterns
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const renderChildrenWithPatterns = ({ children, patternScale, themeColor }: PatternPropsInterface) =>
   Children.toArray(children).map((child, index) => {

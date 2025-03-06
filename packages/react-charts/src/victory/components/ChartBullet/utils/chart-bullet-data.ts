@@ -22,7 +22,8 @@ interface ChartBulletDataInterface {
 
 /**
  * Returns comparative measure data
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getComparativeMeasureData = ({
   data,
@@ -54,7 +55,8 @@ export const getComparativeMeasureData = ({
 
 /**
  * Returns comparative error measure data
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getComparativeErrorMeasureData = ({
   data,
@@ -73,7 +75,8 @@ export const getComparativeErrorMeasureData = ({
 
 /**
  * Returns comparative warning data
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getComparativeWarningMeasureData = ({
   data,
@@ -92,7 +95,8 @@ export const getComparativeWarningMeasureData = ({
 
 /**
  * Returns primary dot measure data
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getPrimaryDotMeasureData = ({
   data,
@@ -115,7 +119,8 @@ export const getPrimaryDotMeasureData = ({
 
 /**
  * Returns primary segment measure data
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getPrimarySegmentedMeasureData = ({
   data,
@@ -182,7 +187,8 @@ export const getPrimarySegmentedMeasureData = ({
 
 /**
  * Returns qualitative range data
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getQualitativeRangeData = ({
   data,

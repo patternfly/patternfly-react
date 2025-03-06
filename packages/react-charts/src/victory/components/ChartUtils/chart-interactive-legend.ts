@@ -22,7 +22,8 @@ interface ChartInteractiveLegendExtInterface extends ChartInteractiveLegendInter
 
 /**
  * Returns child names for each series, except given ID index
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getChildNames = ({ chartNames, omitIndex }: ChartInteractiveLegendExtInterface) => {
   const result = [] as any;
@@ -62,7 +63,8 @@ const getInteractiveLegendItems = ({ chartNames, omitIndex }: ChartInteractiveLe
 
 /**
  * Returns styles for interactive legend items
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getInteractiveLegendItemStyles = (hidden = false) =>
   !hidden

@@ -3,13 +3,14 @@ import { BaseComponentTheme, BaseTheme } from './themes/base-theme';
 
 /**
  * Base theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const ChartBaseTheme: ChartThemeDefinition = BaseTheme;
 
 /**
  * Base component theme
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export const ChartBaseComponentTheme: ChartComponentThemeDefinition = BaseComponentTheme;

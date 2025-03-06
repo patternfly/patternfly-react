@@ -26,7 +26,7 @@ export interface ChartLegendTooltipContentProps {
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   activePoints?: any[];

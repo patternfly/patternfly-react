@@ -27,7 +27,8 @@ interface ChartBulletThemeInterface {
 
 /**
  * Returns legend color scale
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getLegendColorScale = (computedData: any, legendData: any) => {
   const colorScale: string[] = [];
@@ -43,7 +44,8 @@ const getLegendColorScale = (computedData: any, legendData: any) => {
 
 /**
  * Returns color scale
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getColorScale = ({
   comparativeErrorMeasureData,
@@ -103,7 +105,8 @@ export const getColorScale = ({
 
 /**
  * Returns bullet chart theme with legend color scale
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletThemeWithLegendColorScale = ({
   comparativeErrorMeasureData,
