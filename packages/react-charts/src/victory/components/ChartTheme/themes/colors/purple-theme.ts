@@ -18,7 +18,8 @@ const COLOR_SCALE = [
 
 /**
  * Purple ordered theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const PurpleColorTheme = ColorTheme({
   COLOR_SCALE
@@ -26,8 +27,8 @@ export const PurpleColorTheme = ColorTheme({
 
 /**
  * Purple color component theme
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export const PurpleColorComponentTheme = ColorComponentTheme({
   COLOR_SCALE

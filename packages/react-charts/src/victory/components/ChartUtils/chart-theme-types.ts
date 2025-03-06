@@ -4,7 +4,8 @@ import merge from 'lodash/merge';
 
 /**
  * Returns axis theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getAxisTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -14,7 +15,8 @@ export const getAxisTheme = (themeColor: string): ChartThemeDefinition => {
 
 /**
  * Returns bullet chart theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -24,7 +26,8 @@ export const getBulletTheme = (themeColor: string): ChartThemeDefinition => {
 
 /**
  * Returns comparative error measure theme for bullet chart
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletComparativeErrorMeasureTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -34,7 +37,8 @@ export const getBulletComparativeErrorMeasureTheme = (themeColor: string): Chart
 
 /**
  * Returns comparative measure theme for bullet chart
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletComparativeMeasureTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -44,7 +48,8 @@ export const getBulletComparativeMeasureTheme = (themeColor: string): ChartTheme
 
 /**
  * Returns comparative warning measure theme for bullet chart
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletComparativeWarningMeasureTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -54,7 +59,8 @@ export const getBulletComparativeWarningMeasureTheme = (themeColor: string): Cha
 
 /**
  * Returns group title theme for bullet chart
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletGroupTitleTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -64,7 +70,8 @@ export const getBulletGroupTitleTheme = (themeColor: string): ChartThemeDefiniti
 
 /**
  * Returns primary dot measure theme for bullet chart
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletPrimaryDotMeasureTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -74,7 +81,8 @@ export const getBulletPrimaryDotMeasureTheme = (themeColor: string): ChartThemeD
 
 /**
  * Returns primary negative measure theme for bullet chart
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletPrimaryNegativeMeasureTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -84,7 +92,8 @@ export const getBulletPrimaryNegativeMeasureTheme = (themeColor: string): ChartT
 
 /**
  * Returns primary segmented measure theme for bullet chart
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletPrimarySegmentedMeasureTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -94,7 +103,8 @@ export const getBulletPrimarySegmentedMeasureTheme = (themeColor: string): Chart
 
 /**
  * Returns qualitative range theme for bullet chart
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletQualitativeRangeTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -104,7 +114,8 @@ export const getBulletQualitativeRangeTheme = (themeColor: string): ChartThemeDe
 
 /**
  * Returns theme for Chart component
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getChartTheme = (themeColor: string, showAxis: boolean): ChartThemeDefinition => {
   const theme = getTheme(themeColor);
@@ -124,7 +135,8 @@ export const getChartTheme = (themeColor: string, showAxis: boolean): ChartTheme
 
 /**
  * Returns donut theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getDonutTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -134,7 +146,8 @@ export const getDonutTheme = (themeColor: string): ChartThemeDefinition => {
 
 /**
  * Returns dynamic donut threshold theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getDonutThresholdDynamicTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -144,7 +157,8 @@ export const getDonutThresholdDynamicTheme = (themeColor: string): ChartThemeDef
 
 /**
  * Returns static donut threshold theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getDonutThresholdStaticTheme = (themeColor: string, invert?: boolean): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -160,7 +174,8 @@ export const getDonutThresholdStaticTheme = (themeColor: string, invert?: boolea
 
 /**
  * Returns donut utilization theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getDonutUtilizationTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);
@@ -170,7 +185,8 @@ export const getDonutUtilizationTheme = (themeColor: string): ChartThemeDefiniti
 
 /**
  * Returns threshold theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getThresholdTheme = (themeColor: string): ChartThemeDefinition => {
   const baseTheme = getTheme(themeColor);

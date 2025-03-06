@@ -95,14 +95,14 @@ export interface ChartProps extends VictoryChartProps {
   /**
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   defaultAxes?: AxesType;
   /**
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   defaultPolarAxes?: AxesType;
@@ -349,7 +349,7 @@ export interface ChartProps extends VictoryChartProps {
   /**
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   prependDefaultAxes?: boolean;
@@ -392,7 +392,7 @@ export interface ChartProps extends VictoryChartProps {
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
