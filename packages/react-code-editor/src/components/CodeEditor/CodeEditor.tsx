@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment, HTMLProps, ReactNode, useEffect, useRef, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
 import fileUploadStyles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
@@ -23,6 +23,7 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import Dropzone, { FileRejection } from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
 import { CodeEditorControl } from './CodeEditorControl';
+import { defineThemes } from './CodeEditorTheme';
 
 export type ChangeHandler = (value: string, event: editor.IModelContentChangedEvent) => void;
 export type EditorDidMount = (editor: editor.IStandaloneCodeEditor, monaco: Monaco) => void;
@@ -112,7 +113,7 @@ export enum Language {
 
 /** The main code editor component. */
 
-export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export interface CodeEditorProps extends Omit<HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Additional classes added to the code editor. */
   className?: string;
   /** Code displayed in code editor. */
@@ -126,7 +127,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** A single node or array of nodes - ideally the code editor controls component - to display
    * above code editor.
    */
-  customControls?: React.ReactNode | React.ReactNode[];
+  customControls?: ReactNode | ReactNode[];
   /** Accessible label for the download button. */
   downloadButtonAriaLabel?: string;
   /** Text to display in the tooltip on the download button. */
@@ -136,15 +137,15 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** Additional props to pass to the monaco editor. */
   editorProps?: EditorProps;
   /** Content to display in space of the code editor when there is no code to display. */
-  emptyState?: React.ReactNode;
+  emptyState?: ReactNode;
   /** Override default empty state body text. */
-  emptyStateBody?: React.ReactNode;
+  emptyStateBody?: ReactNode;
   /** Override default empty state button text. */
-  emptyStateButton?: React.ReactNode;
+  emptyStateButton?: ReactNode;
   /** Override default empty state link text. */
-  emptyStateLink?: React.ReactNode;
+  emptyStateLink?: ReactNode;
   /** Override default empty state title text. */
-  emptyStateTitle?: React.ReactNode;
+  emptyStateTitle?: ReactNode;
   /** Editor header main content title. */
   headerMainContent?: string;
   /** Height of code editor. 'sizeToFit' will automatically change the height
@@ -153,7 +154,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   height?: string | 'sizeToFit';
   /** Flag to add copy button to code editor actions. */
   isCopyEnabled?: boolean;
-  /** Flag indicating the editor is styled using monaco's dark theme. */
+  /** Flag indicating the editor is styled using a dark theme. */
   isDarkTheme?: boolean;
   /** Flag that enables component to consume the available height of its container. If `height` prop is set to 100%, this will also become enabled. */
   isFullHeight?: boolean;
@@ -175,7 +176,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** Language displayed in the editor. */
   language?: Language;
   /** The loading screen before the editor will be loaded. Defaults to 'loading...'. */
-  loading?: React.ReactNode;
+  loading?: ReactNode;
   /** Function which fires each time the content of the code editor is manually changed. Does
    * not fire when a file is uploaded.
    */
@@ -191,17 +192,17 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** Refer to Monaco interface {monaco.editor.IEditorOverrideServices}. */
   overrideServices?: editor.IEditorOverrideServices;
   /** Text to show in the button to open the shortcut popover. */
-  shortcutsPopoverButtonText: string;
+  shortcutsPopoverButtonText?: string;
   /** Properties for the shortcut popover. */
   shortcutsPopoverProps?: PopoverProps;
   /** Flag to show the editor. */
   showEditor?: boolean;
   /** The delay before tooltip fades after code copied. */
-  toolTipCopyExitDelay: number;
+  toolTipCopyExitDelay?: number;
   /** The entry and exit delay for all tooltips. */
-  toolTipDelay: number;
+  toolTipDelay?: number;
   /** The max width of the tooltips on all button. */
-  toolTipMaxWidth: string;
+  toolTipMaxWidth?: string;
   /** The position of tooltips on all buttons. */
   toolTipPosition?:
     | TooltipPosition
@@ -226,476 +227,407 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   width?: string;
 }
 
-interface CodeEditorState {
-  height: string;
-  prevPropsCode: string;
-  value: string;
-  filename: string;
-  isLoading: boolean;
-  showEmptyState: boolean;
-  copied: boolean;
-}
+const defaultProps: CodeEditorProps = {
+  className: '',
+  code: '',
+  onEditorDidMount: () => {},
+  language: Language.plaintext,
+  isDarkTheme: false,
+  width: '',
+  isLineNumbersVisible: true,
+  isReadOnly: false,
+  isLanguageLabelVisible: false,
+  loading: '',
+  emptyState: '',
+  emptyStateTitle: 'Start editing',
+  emptyStateBody: 'Drag and drop a file or upload one.',
+  emptyStateButton: 'Browse',
+  emptyStateLink: 'Start from scratch',
+  downloadFileName: Date.now().toString(),
+  isUploadEnabled: false,
+  isDownloadEnabled: false,
+  isCopyEnabled: false,
+  isHeaderPlain: false,
+  copyButtonAriaLabel: 'Copy code to clipboard',
+  uploadButtonAriaLabel: 'Upload code',
+  downloadButtonAriaLabel: 'Download code',
+  copyButtonToolTipText: 'Copy to clipboard',
+  uploadButtonToolTipText: 'Upload',
+  downloadButtonToolTipText: 'Download',
+  copyButtonSuccessTooltipText: 'Content added to clipboard',
+  toolTipCopyExitDelay: 1600,
+  toolTipDelay: 300,
+  toolTipMaxWidth: '100px',
+  toolTipPosition: 'top',
+  customControls: null,
+  isMinimapVisible: false,
+  headerMainContent: '',
+  shortcutsPopoverButtonText: 'View Shortcuts',
+  shortcutsPopoverProps: {
+    bodyContent: '',
+    'aria-label': 'Keyboard Shortcuts'
+  },
+  showEditor: true,
+  options: {},
+  overrideServices: {},
+  onCodeChange: () => {}
+};
 
-class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
-  static displayName = 'CodeEditor';
-  private editor: editor.IStandaloneCodeEditor | null = null;
-  private wrapperRef = React.createRef<HTMLDivElement>();
-  private ref = React.createRef<HTMLDivElement>();
-  private timer: number | null = null;
-  private observer = () => {};
+const getExtensionFromLanguage = (language: Language) => {
+  switch (language) {
+    case Language.shell:
+      return 'sh';
+    case Language.ruby:
+      return 'rb';
+    case Language.perl:
+      return 'pl';
+    case Language.python:
+      return 'py';
+    case Language.mysql:
+      return 'sql';
+    case Language.javascript:
+      return 'js';
+    case Language.typescript:
+      return 'ts';
+    case Language.markdown:
+      return 'md';
+    case Language.plaintext:
+      return 'txt';
+    default:
+      return language.toString();
+  }
+};
 
-  static defaultProps: CodeEditorProps = {
-    className: '',
-    code: '',
-    onEditorDidMount: () => {},
-    language: Language.plaintext,
-    isDarkTheme: false,
-    width: '',
-    isLineNumbersVisible: true,
-    isReadOnly: false,
-    isLanguageLabelVisible: false,
-    loading: '',
-    emptyState: '',
-    emptyStateTitle: 'Start editing',
-    emptyStateBody: 'Drag and drop a file or upload one.',
-    emptyStateButton: 'Browse',
-    emptyStateLink: 'Start from scratch',
-    downloadFileName: Date.now().toString(),
-    isUploadEnabled: false,
-    isDownloadEnabled: false,
-    isCopyEnabled: false,
-    isHeaderPlain: false,
-    copyButtonAriaLabel: 'Copy code to clipboard',
-    uploadButtonAriaLabel: 'Upload code',
-    downloadButtonAriaLabel: 'Download code',
-    copyButtonToolTipText: 'Copy to clipboard',
-    uploadButtonToolTipText: 'Upload',
-    downloadButtonToolTipText: 'Download',
-    copyButtonSuccessTooltipText: 'Content added to clipboard',
-    toolTipCopyExitDelay: 1600,
-    toolTipDelay: 300,
-    toolTipMaxWidth: '100px',
-    toolTipPosition: 'top',
-    customControls: null,
-    isMinimapVisible: false,
-    headerMainContent: '',
-    shortcutsPopoverButtonText: 'View Shortcuts',
-    shortcutsPopoverProps: {
-      bodyContent: '',
-      'aria-label': 'Keyboard Shortcuts'
-    },
-    showEditor: true,
-    options: {},
-    overrideServices: {},
-    onCodeChange: () => {}
+export const CodeEditor = (codeEditorProps: CodeEditorProps) => {
+  const props = { ...defaultProps, ...codeEditorProps };
+
+  const [value, setValue] = useState(props.code);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showEmptyState, setShowEmptyState] = useState(true);
+  const [copied, setCopied] = useState(false);
+
+  const editorRef = useRef<editor.IStandaloneCodeEditor | null>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const observer = useRef(() => {});
+
+  const setHeightToFitContent = () => {
+    const contentHeight = editorRef.current?.getContentHeight();
+    const layoutInfo = editorRef.current?.getLayoutInfo();
+    editorRef.current?.layout({ width: layoutInfo.width, height: contentHeight });
   };
 
-  static getExtensionFromLanguage(language: Language) {
-    switch (language) {
-      case Language.shell:
-        return 'sh';
-      case Language.ruby:
-        return 'rb';
-      case Language.perl:
-        return 'pl';
-      case Language.python:
-        return 'py';
-      case Language.mysql:
-        return 'sql';
-      case Language.javascript:
-        return 'js';
-      case Language.typescript:
-        return 'ts';
-      case Language.markdown:
-        return 'md';
-      case Language.plaintext:
-        return 'txt';
-      default:
-        return language.toString();
+  const onChange: ChangeHandler = (value, event) => {
+    if (props.height === 'sizeToFit') {
+      setHeightToFitContent();
     }
-  }
-
-  constructor(props: CodeEditorProps) {
-    super(props);
-    this.state = {
-      height: this.props.height,
-      prevPropsCode: this.props.code,
-      value: this.props.code,
-      filename: '',
-      isLoading: false,
-      showEmptyState: true,
-      copied: false
-    };
-  }
-
-  setHeightToFitContent() {
-    const contentHeight = this.editor.getContentHeight();
-    const layoutInfo = this.editor.getLayoutInfo();
-    this.editor.layout({ width: layoutInfo.width, height: contentHeight });
-  }
-
-  onChange: ChangeHandler = (value, event) => {
-    if (this.props.height === 'sizeToFit') {
-      this.setHeightToFitContent();
+    if (props.onChange) {
+      props.onChange(value, event);
     }
-    if (this.props.onChange) {
-      this.props.onChange(value, event);
-    }
-    this.setState({ value });
-    this.props.onCodeChange(value);
+    setValue(value);
+    props.onCodeChange(value);
   };
 
-  // this function is only called when the props change
-  // the only conflict is between props.code and state.value
-  static getDerivedStateFromProps(nextProps: CodeEditorProps, prevState: CodeEditorState) {
-    // if the code changes due to the props.code changing
-    // set the value to props.code
-    if (nextProps.code !== prevState.prevPropsCode) {
-      return {
-        value: nextProps.code,
-        prevPropsCode: nextProps.code
-      };
-    }
-    // else, don't need to change the state.value
-    // because the onChange function will do all the work
-    return null;
-  }
-
-  handleResize = () => {
-    if (this.editor) {
-      this.editor.layout({ width: 0, height: 0 }); // ensures the editor won't take up more space than it needs
-      this.editor.layout();
+  const handleResize = () => {
+    if (editorRef.current) {
+      editorRef.current.layout({ width: 0, height: 0 }); // ensures the editor won't take up more space than it needs
+      editorRef.current.layout();
     }
   };
 
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleGlobalKeys);
-    this.observer = getResizeObserver(this.ref.current, this.handleResize, true);
-    this.handleResize();
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleGlobalKeys);
-    this.observer();
-  }
-
-  handleGlobalKeys = (event: KeyboardEvent) => {
-    if (this.wrapperRef.current === document.activeElement && (event.key === 'ArrowDown' || event.key === ' ')) {
-      this.editor?.focus();
+  const handleGlobalKeys = (event: KeyboardEvent) => {
+    if (wrapperRef.current === document.activeElement && (event.key === 'ArrowDown' || event.key === ' ')) {
+      editorRef.current?.focus();
       event.preventDefault();
     }
   };
 
-  editorDidMount: EditorDidMount = (editor, monaco) => {
+  // if the code changes due to the props.code changing
+  // set the value to props.code
+  useEffect(() => setValue(props.code), [props.code]);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleGlobalKeys);
+    observer.current = getResizeObserver(ref.current, handleResize, true);
+    handleResize();
+    return () => {
+      document.removeEventListener('keydown', handleGlobalKeys);
+      observer.current();
+    };
+  }, []);
+
+  const editorDidMount: EditorDidMount = (editor, monaco) => {
+    defineThemes(monaco.editor);
     // eslint-disable-next-line no-bitwise
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Tab, () => this.wrapperRef.current.focus());
+    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Tab, () => wrapperRef.current.focus());
     Array.from(document.getElementsByClassName('monaco-editor')).forEach((editorElement) =>
       editorElement.removeAttribute('role')
     );
-    this.props.onEditorDidMount(editor, monaco);
-    this.editor = editor;
-    if (this.props.height === 'sizeToFit') {
-      this.setHeightToFitContent();
+    props.onEditorDidMount(editor, monaco);
+    editorRef.current = editor;
+    if (props.height === 'sizeToFit') {
+      setHeightToFitContent();
     }
   };
 
-  handleFileChange = (value: string, filename: string) => {
-    this.setState({
-      value,
-      filename
-    });
-    this.props.onCodeChange(value);
+  const handleFileChange = (value: string) => {
+    setValue(value);
+    props.onCodeChange(value);
   };
 
-  handleFileReadStarted = () => this.setState({ isLoading: true });
-  handleFileReadFinished = () => this.setState({ isLoading: false });
+  const handleFileReadStarted = () => setIsLoading(true);
+  const handleFileReadFinished = () => setIsLoading(false);
 
-  readFile(fileHandle: Blob) {
-    return new Promise<string>((resolve, reject) => {
+  const readFile = (fileHandle: Blob) =>
+    new Promise<string>((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = () => resolve(reader.result as string);
       reader.onerror = () => reject(reader.error);
       reader.readAsText(fileHandle);
     });
-  }
 
-  onDropAccepted = (acceptedFiles: File[]) => {
+  const onDropAccepted = (acceptedFiles: File[]) => {
     if (acceptedFiles.length > 0) {
       const fileHandle = acceptedFiles[0];
-      this.handleFileChange('', fileHandle.name); // Show the filename while reading
-      this.handleFileReadStarted();
-      this.readFile(fileHandle)
+      handleFileChange(''); // Show the filename while reading
+      handleFileReadStarted();
+      readFile(fileHandle)
         .then((data) => {
-          this.handleFileReadFinished();
-          this.toggleEmptyState();
-          this.handleFileChange(data, fileHandle.name);
+          handleFileReadFinished();
+          setShowEmptyState(false);
+          handleFileChange(data);
         })
         .catch((error: DOMException) => {
           // eslint-disable-next-line no-console
           console.error('error', error);
-          this.handleFileReadFinished();
-          this.handleFileChange('', ''); // Clear the filename field on a failure
+          handleFileReadFinished();
+          handleFileChange('');
         });
     }
   };
 
-  onDropRejected = (rejectedFiles: FileRejection[]) => {
+  const onDropRejected = (rejectedFiles: FileRejection[]) => {
     if (rejectedFiles.length > 0) {
       // eslint-disable-next-line no-console
       console.error('There was an error accepting that dropped file'); // TODO
     }
   };
 
-  copyCode = () => {
-    navigator.clipboard.writeText(this.state.value);
-    this.setState({ copied: true });
+  const copyCode = () => {
+    navigator.clipboard.writeText(value);
+    setCopied(true);
   };
 
-  download = () => {
-    const { value } = this.state;
+  const download = () => {
     const element = document.createElement('a');
     const file = new Blob([value], { type: 'text' });
     element.href = URL.createObjectURL(file);
-    element.download = `${this.props.downloadFileName}.${CodeEditor.getExtensionFromLanguage(this.props.language)}`;
+    element.download = `${props.downloadFileName}.${getExtensionFromLanguage(props.language)}`;
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
   };
 
-  toggleEmptyState = () => {
-    this.setState({ showEmptyState: false });
+  const shortcutsPopoverProps: PopoverProps = {
+    ...defaultProps.shortcutsPopoverProps,
+    ...props.shortcutsPopoverProps
   };
 
-  render() {
-    const { height, value, isLoading, showEmptyState, copied } = this.state;
-    const {
-      isDarkTheme,
-      width,
-      className,
-      isCopyEnabled,
-      copyButtonSuccessTooltipText,
-      isReadOnly,
-      isUploadEnabled,
-      isLanguageLabelVisible,
-      copyButtonAriaLabel,
-      copyButtonToolTipText,
-      uploadButtonAriaLabel,
-      uploadButtonToolTipText,
-      downloadButtonAriaLabel,
-      downloadButtonToolTipText,
-      toolTipDelay,
-      toolTipCopyExitDelay,
-      toolTipMaxWidth,
-      toolTipPosition,
-      isLineNumbersVisible,
-      isDownloadEnabled,
-      language,
-      emptyState: providedEmptyState,
-      emptyStateTitle,
-      emptyStateBody,
-      emptyStateButton,
-      emptyStateLink,
-      customControls,
-      isMinimapVisible,
-      isHeaderPlain,
-      headerMainContent,
-      shortcutsPopoverButtonText,
-      shortcutsPopoverProps: shortcutsPopoverPropsProp,
-      showEditor,
-      options: optionsProp,
-      overrideServices,
-      loading,
-      editorProps
-    } = this.props;
-    const shortcutsPopoverProps: PopoverProps = {
-      ...CodeEditor.defaultProps.shortcutsPopoverProps,
-      ...shortcutsPopoverPropsProp
-    };
-    const options: editor.IStandaloneEditorConstructionOptions = {
-      scrollBeyondLastLine: height !== 'sizeToFit',
-      readOnly: isReadOnly,
-      cursorStyle: 'line',
-      lineNumbers: isLineNumbersVisible ? 'on' : 'off',
-      tabIndex: -1,
-      minimap: {
-        enabled: isMinimapVisible
-      },
-      ...optionsProp
-    };
-    const isFullHeight = this.props.height === '100%' ? true : this.props.isFullHeight;
+  const options: editor.IStandaloneEditorConstructionOptions = {
+    scrollBeyondLastLine: props.height !== 'sizeToFit',
+    readOnly: props.isReadOnly,
+    cursorStyle: 'line',
+    lineNumbers: props.isLineNumbersVisible ? 'on' : 'off',
+    tabIndex: -1,
+    minimap: {
+      enabled: props.isMinimapVisible
+    },
+    theme: props.isDarkTheme ? 'pf-v6-code-editor-theme--dark' : 'pf-v6-code-editor-theme--light',
+    ...props.options
+  };
+  const isFullHeight = props.height === '100%' ? true : props.isFullHeight;
 
-    return (
-      <Dropzone multiple={false} onDropAccepted={this.onDropAccepted} onDropRejected={this.onDropRejected}>
-        {({ getRootProps, getInputProps, isDragActive, open }) => {
-          const emptyState =
-            providedEmptyState ||
-            (isUploadEnabled ? (
-              <EmptyState variant={EmptyStateVariant.sm} titleText={emptyStateTitle} icon={CodeIcon} headingLevel="h4">
-                <EmptyStateBody>{emptyStateBody}</EmptyStateBody>
-                {!isReadOnly && (
-                  <EmptyStateFooter>
-                    <EmptyStateActions>
-                      <Button variant="primary" onClick={open}>
-                        {emptyStateButton}
-                      </Button>
-                    </EmptyStateActions>
-                    <EmptyStateActions>
-                      <Button variant="link" onClick={this.toggleEmptyState}>
-                        {emptyStateLink}
-                      </Button>
-                    </EmptyStateActions>
-                  </EmptyStateFooter>
-                )}
-              </EmptyState>
-            ) : (
-              <EmptyState variant={EmptyStateVariant.sm} titleText={emptyStateTitle} icon={CodeIcon} headingLevel="h4">
-                {!isReadOnly && (
-                  <EmptyStateFooter>
-                    <EmptyStateActions>
-                      <Button variant="primary" onClick={this.toggleEmptyState}>
-                        {emptyStateLink}
-                      </Button>
-                    </EmptyStateActions>
-                  </EmptyStateFooter>
-                )}
-              </EmptyState>
-            ));
-
-          const tooltipProps = {
-            position: toolTipPosition,
-            exitDelay: toolTipDelay,
-            entryDelay: toolTipDelay,
-            maxWidth: toolTipMaxWidth,
-            trigger: 'mouseenter focus'
-          };
-
-          const hasEditorHeaderContent =
-            ((isCopyEnabled || isDownloadEnabled) && (!showEmptyState || !!value)) ||
-            isUploadEnabled ||
-            customControls ||
-            headerMainContent ||
-            !!shortcutsPopoverProps.bodyContent;
-
-          const editorHeaderContent = (
-            <React.Fragment>
-              <div className={css(styles.codeEditorControls)}>
-                <CodeEditorContext.Provider value={{ code: value }}>
-                  {isCopyEnabled && (!showEmptyState || !!value) && (
-                    <CodeEditorControl
-                      icon={<CopyIcon />}
-                      aria-label={copyButtonAriaLabel}
-                      tooltipProps={{
-                        ...tooltipProps,
-                        'aria-live': 'polite',
-                        content: <div>{copied ? copyButtonSuccessTooltipText : copyButtonToolTipText}</div>,
-                        exitDelay: copied ? toolTipCopyExitDelay : toolTipDelay,
-                        onTooltipHidden: () => this.setState({ copied: false })
-                      }}
-                      onClick={this.copyCode}
-                    />
-                  )}
-                  {isUploadEnabled && (
-                    <CodeEditorControl
-                      icon={<UploadIcon />}
-                      aria-label={uploadButtonAriaLabel}
-                      tooltipProps={{ content: <div>{uploadButtonToolTipText}</div>, ...tooltipProps }}
-                      onClick={open}
-                    />
-                  )}
-                  {isDownloadEnabled && (!showEmptyState || !!value) && (
-                    <CodeEditorControl
-                      icon={<DownloadIcon />}
-                      aria-label={downloadButtonAriaLabel}
-                      tooltipProps={{ content: <div>{downloadButtonToolTipText}</div>, ...tooltipProps }}
-                      onClick={this.download}
-                    />
-                  )}
-                  {customControls && customControls}
-                </CodeEditorContext.Provider>
-              </div>
-              {headerMainContent && <div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}
-              {!!shortcutsPopoverProps.bodyContent && (
-                <div className={`${styles.codeEditor}__keyboard-shortcuts`}>
-                  <Popover {...shortcutsPopoverProps}>
-                    <Button variant={ButtonVariant.link} icon={<HelpIcon />}>
-                      {shortcutsPopoverButtonText}
-                    </Button>
-                  </Popover>
-                </div>
-              )}
-            </React.Fragment>
-          );
-
-          const editorHeader = (
-            <div className={css(styles.codeEditorHeader, isHeaderPlain && styles.modifiers.plain)}>
-              {hasEditorHeaderContent && (
-                <div className={css(styles.codeEditorHeaderContent)}>{editorHeaderContent}</div>
-              )}
-              {isLanguageLabelVisible && (
-                <div className={css(styles.codeEditorTab)}>
-                  <span className={css(styles.codeEditorTabIcon)}>
-                    <CodeIcon />
-                  </span>
-                  <span className={css(styles.codeEditorTabText)}>{language.toUpperCase()}</span>
-                </div>
-              )}
-            </div>
-          );
-
-          const editor = (
-            <div className={css(styles.codeEditorCode)} ref={this.wrapperRef} tabIndex={0} dir="ltr">
-              <Editor
-                height={height === '100%' ? undefined : height}
-                width={width}
-                language={language}
-                value={value}
-                options={options}
-                overrideServices={overrideServices}
-                onChange={this.onChange}
-                onMount={this.editorDidMount}
-                theme={isDarkTheme ? 'vs-dark' : 'vs-light'}
-                loading={loading}
-                {...editorProps}
-              />
-            </div>
-          );
-
-          return (
-            <div
-              className={css(
-                styles.codeEditor,
-                isReadOnly && styles.modifiers.readOnly,
-                isFullHeight && styles.modifiers.fullHeight,
-                className
-              )}
-              ref={this.ref}
+  return (
+    <Dropzone multiple={false} onDropAccepted={onDropAccepted} onDropRejected={onDropRejected}>
+      {({ getRootProps, getInputProps, isDragActive, open }) => {
+        const emptyState =
+          props.emptyState ||
+          (props.isUploadEnabled ? (
+            <EmptyState
+              variant={EmptyStateVariant.sm}
+              titleText={props.emptyStateTitle}
+              icon={CodeIcon}
+              headingLevel="h4"
             >
-              {isUploadEnabled || providedEmptyState ? (
-                <div
-                  {...getRootProps({
-                    onClick: (event) => event.stopPropagation() // Prevents clicking TextArea from opening file dialog
-                  })}
-                  className={css(styles.codeEditorContainer, isLoading && fileUploadStyles.modifiers.loading)}
-                >
-                  {editorHeader}
-                  <div className={css(styles.codeEditorMain, isDragActive && styles.modifiers.dragHover)}>
-                    <div className={css(styles.codeEditorUpload)}>
-                      <input {...getInputProps()} /* hidden, necessary for react-dropzone */ hidden />
-                      {(showEmptyState || providedEmptyState) && !value ? emptyState : editor}
-                    </div>
+              <EmptyStateBody>{props.emptyStateBody}</EmptyStateBody>
+              {!props.isReadOnly && (
+                <EmptyStateFooter>
+                  <EmptyStateActions>
+                    <Button variant="primary" onClick={open}>
+                      {props.emptyStateButton}
+                    </Button>
+                  </EmptyStateActions>
+                  <EmptyStateActions>
+                    <Button variant="link" onClick={() => setShowEmptyState(false)}>
+                      {props.emptyStateLink}
+                    </Button>
+                  </EmptyStateActions>
+                </EmptyStateFooter>
+              )}
+            </EmptyState>
+          ) : (
+            <EmptyState
+              variant={EmptyStateVariant.sm}
+              titleText={props.emptyStateTitle}
+              icon={CodeIcon}
+              headingLevel="h4"
+            >
+              {!props.isReadOnly && (
+                <EmptyStateFooter>
+                  <EmptyStateActions>
+                    <Button variant="primary" onClick={() => setShowEmptyState(false)}>
+                      {props.emptyStateLink}
+                    </Button>
+                  </EmptyStateActions>
+                </EmptyStateFooter>
+              )}
+            </EmptyState>
+          ));
+
+        const tooltipProps = {
+          position: props.toolTipPosition,
+          exitDelay: props.toolTipDelay,
+          entryDelay: props.toolTipDelay,
+          maxWidth: props.toolTipMaxWidth,
+          trigger: 'mouseenter focus'
+        };
+
+        const hasEditorHeaderContent =
+          ((props.isCopyEnabled || props.isDownloadEnabled) && (!showEmptyState || !!value)) ||
+          props.isUploadEnabled ||
+          props.customControls ||
+          props.headerMainContent ||
+          !!shortcutsPopoverProps.bodyContent;
+
+        const editorHeaderContent = (
+          <Fragment>
+            <div className={css(styles.codeEditorControls)}>
+              <CodeEditorContext.Provider value={{ code: value }}>
+                {props.isCopyEnabled && (!showEmptyState || !!value) && (
+                  <CodeEditorControl
+                    icon={<CopyIcon />}
+                    aria-label={props.copyButtonAriaLabel}
+                    tooltipProps={{
+                      ...tooltipProps,
+                      'aria-live': 'polite',
+                      content: <div>{copied ? props.copyButtonSuccessTooltipText : props.copyButtonToolTipText}</div>,
+                      exitDelay: copied ? props.toolTipCopyExitDelay : props.toolTipDelay,
+                      onTooltipHidden: () => setCopied(false)
+                    }}
+                    onClick={copyCode}
+                  />
+                )}
+                {props.isUploadEnabled && (
+                  <CodeEditorControl
+                    icon={<UploadIcon />}
+                    aria-label={props.uploadButtonAriaLabel}
+                    tooltipProps={{ content: <div>{props.uploadButtonToolTipText}</div>, ...tooltipProps }}
+                    onClick={open}
+                  />
+                )}
+                {props.isDownloadEnabled && (!showEmptyState || !!value) && (
+                  <CodeEditorControl
+                    icon={<DownloadIcon />}
+                    aria-label={props.downloadButtonAriaLabel}
+                    tooltipProps={{ content: <div>{props.downloadButtonToolTipText}</div>, ...tooltipProps }}
+                    onClick={download}
+                  />
+                )}
+                {props.customControls && props.customControls}
+              </CodeEditorContext.Provider>
+            </div>
+            {props.headerMainContent && (
+              <div className={css(styles.codeEditorHeaderMain)}>{props.headerMainContent}</div>
+            )}
+            {!!shortcutsPopoverProps.bodyContent && (
+              <div className={`${styles.codeEditor}__keyboard-shortcuts`}>
+                <Popover {...shortcutsPopoverProps}>
+                  <Button variant={ButtonVariant.link} icon={<HelpIcon />}>
+                    {props.shortcutsPopoverButtonText}
+                  </Button>
+                </Popover>
+              </div>
+            )}
+          </Fragment>
+        );
+
+        const editorHeader = (
+          <div className={css(styles.codeEditorHeader, props.isHeaderPlain && styles.modifiers.plain)}>
+            {hasEditorHeaderContent && <div className={css(styles.codeEditorHeaderContent)}>{editorHeaderContent}</div>}
+            {props.isLanguageLabelVisible && (
+              <div className={css(styles.codeEditorTab)}>
+                <span className={css(styles.codeEditorTabIcon)}>
+                  <CodeIcon />
+                </span>
+                <span className={css(styles.codeEditorTabText)}>{props.language.toUpperCase()}</span>
+              </div>
+            )}
+          </div>
+        );
+
+        const editor = (
+          <div className={css(styles.codeEditorCode)} ref={wrapperRef} tabIndex={0} dir="ltr">
+            <Editor
+              height={props.height === '100%' ? undefined : props.height}
+              width={props.width}
+              language={props.language}
+              value={value}
+              options={options}
+              overrideServices={props.overrideServices}
+              onChange={onChange}
+              onMount={editorDidMount}
+              loading={props.loading}
+              {...props.editorProps}
+            />
+          </div>
+        );
+
+        return (
+          <div
+            className={css(
+              styles.codeEditor,
+              props.isDarkTheme && `${styles.codeEditor}--dark`,
+              props.isReadOnly && styles.modifiers.readOnly,
+              isFullHeight && styles.modifiers.fullHeight,
+              props.className
+            )}
+            ref={ref}
+          >
+            {props.isUploadEnabled || props.emptyState ? (
+              <div
+                {...getRootProps({
+                  onClick: (event) => event.stopPropagation() // Prevents clicking TextArea from opening file dialog
+                })}
+                className={css(styles.codeEditorContainer, isLoading && fileUploadStyles.modifiers.loading)}
+              >
+                {editorHeader}
+                <div className={css(styles.codeEditorMain, isDragActive && styles.modifiers.dragHover)}>
+                  <div className={css(styles.codeEditorUpload)}>
+                    <input {...getInputProps()} /* hidden, necessary for react-dropzone */ hidden />
+                    {(showEmptyState || props.emptyState) && !value ? emptyState : editor}
                   </div>
                 </div>
-              ) : (
-                <>
-                  {editorHeader}
-                  {showEditor && <div className={css(styles.codeEditorMain)}>{editor}</div>}
-                </>
-              )}
-            </div>
-          );
-        }}
-      </Dropzone>
-    );
-  }
-}
+              </div>
+            ) : (
+              <>
+                {editorHeader}
+                {props.showEditor && <div className={css(styles.codeEditorMain)}>{editor}</div>}
+              </>
+            )}
+          </div>
+        );
+      }}
+    </Dropzone>
+  );
+};
 
-export { CodeEditor };
+CodeEditor.displayName = 'CodeEditor';
