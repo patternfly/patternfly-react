@@ -1,4 +1,4 @@
-import { createContext, forwardRef, useEffect, useRef, useState } from 'react';
+import { createContext, forwardRef, useEffect, useRef, useState, type JSX } from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
 import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
@@ -9,8 +9,6 @@ import { handleArrows, setTabIndex } from '@patternfly/react-core/dist/esm/helpe
 import { KeyTypes } from '@patternfly/react-core/dist/esm/helpers/constants';
 import { useOUIAProps, OUIAProps } from '@patternfly/react-core/dist/esm/helpers/OUIA/ouia';
 import { TableGridBreakpoint, TableVariant } from './TableTypes';
-
-import type { JSX } from 'react';
 
 export interface BaseCellProps {
   /** Content rendered inside the cell */

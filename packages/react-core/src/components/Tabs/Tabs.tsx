@@ -1,5 +1,4 @@
-import { Children, isValidElement } from 'react';
-import { Component, createRef } from 'react';
+import { Children, Component, createRef, isValidElement } from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';

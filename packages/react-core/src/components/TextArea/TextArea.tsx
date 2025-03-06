@@ -1,5 +1,4 @@
-import { createRef, Component, forwardRef } from 'react';
-import { HTMLProps } from 'react';
+import { Component, HTMLProps, createRef, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { capitalize, ValidatedOptions, canUseDOM } from '../../helpers';

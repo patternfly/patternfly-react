@@ -1,4 +1,4 @@
-import { Children, cloneElement, isValidElement } from 'react';
+import { Children, cloneElement, isValidElement, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 
 /* eslint-disable camelcase */
@@ -30,7 +30,6 @@ import { getComputedLegend, getLegendItemsExtraHeight, getLegendMaxTextWidth } f
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getPatternDefs, mergePatternData, useDefaultPatternProps } from '../ChartUtils/chart-patterns';
 import { getChartTheme } from '../ChartUtils/chart-theme-types';
-import { useEffect } from 'react';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartPoint } from '../ChartPoint/ChartPoint';
 import { ChartThemeColor } from '../ChartTheme/ChartThemeColor';

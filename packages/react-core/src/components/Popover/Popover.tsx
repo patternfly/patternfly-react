@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 import { KeyTypes } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css } from '@patternfly/react-styles';
@@ -11,7 +11,6 @@ import { PopoverCloseButton } from './PopoverCloseButton';
 import { PopoverArrow } from './PopoverArrow';
 import popoverMaxWidth from '@patternfly/react-tokens/dist/esm/c_popover_MaxWidth';
 import popoverMinWidth from '@patternfly/react-tokens/dist/esm/c_popover_MinWidth';
-import { ReactElement } from 'react';
 import { FocusTrap } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import { getUniqueId } from '../../helpers/util';

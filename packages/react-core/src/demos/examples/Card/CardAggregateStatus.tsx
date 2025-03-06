@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { Fragment } from 'react';
+import { Fragment, type JSX } from 'react';
 import {
   Card,
   CardBody,
@@ -17,8 +17,6 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
-
-import type { JSX } from 'react';
 
 interface ContentType {
   icon?: React.ReactNode;

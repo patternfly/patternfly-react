@@ -1,11 +1,9 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, type JSX } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from './PageContext';
 import { PageBody } from './PageBody';
-
-import type { JSX } from 'react';
 
 export enum PageSectionVariants {
   default = 'default',

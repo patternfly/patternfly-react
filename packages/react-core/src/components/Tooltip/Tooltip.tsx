@@ -1,11 +1,10 @@
-import { cloneElement, createRef, useEffect, useState } from 'react';
+import { cloneElement, ReactElement, createRef, useEffect, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css } from '@patternfly/react-styles';
 import { TooltipContent } from './TooltipContent';
 import { TooltipArrow } from './TooltipArrow';
 import { KeyTypes } from '../../helpers/constants';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/esm/c_tooltip_MaxWidth';
-import { ReactElement } from 'react';
 import { Popper } from '../../helpers/Popper/Popper';
 
 export enum TooltipPosition {

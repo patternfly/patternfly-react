@@ -1,9 +1,8 @@
-import { Component } from 'react';
+import { Component, RefObject } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { canUseDOM } from '../../helpers/util';
 
-import { RefObject } from 'react';
 import { ToolbarItem } from './ToolbarItem';
 import { Button } from '../Button';
 import { ToolbarGroup } from './ToolbarGroup';

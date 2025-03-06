@@ -1,5 +1,4 @@
-import { Fragment } from 'react';
-import { isValidElement } from 'react';
+import { Fragment, isValidElement } from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
 import { css } from '@patternfly/react-styles';
