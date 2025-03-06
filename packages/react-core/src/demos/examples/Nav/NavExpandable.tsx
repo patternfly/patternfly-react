@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Card,
   CardBody,
@@ -101,7 +101,7 @@ export const NavExpandableDemo: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page
         masthead={<DashboardHeader />}
         sidebar={Sidebar}
@@ -131,6 +131,6 @@ export const NavExpandableDemo: React.FunctionComponent = () => {
           </Gallery>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

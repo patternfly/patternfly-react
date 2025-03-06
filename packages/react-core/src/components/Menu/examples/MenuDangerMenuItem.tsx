@@ -1,4 +1,3 @@
-import React from 'react';
 import { Divider, Menu, MenuContent, MenuItem, MenuList } from '@patternfly/react-core';
 
 export const MenuDangerMenuItem: React.FunctionComponent = () => {

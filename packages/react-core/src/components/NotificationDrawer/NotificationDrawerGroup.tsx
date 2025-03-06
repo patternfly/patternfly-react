@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { useEffect, useRef, useState } from 'react';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
@@ -59,9 +58,9 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
   headingLevel: HeadingLevel = 'h1',
   ...props
 }: NotificationDrawerGroupProps) => {
-  const titleRef = React.useRef(null);
-  const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
-  React.useEffect(() => {
+  const titleRef = useRef(null);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+  useEffect(() => {
     // Title will always truncate on overflow regardless of truncateTitle prop
     const showTooltip = titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight;
     if (isTooltipVisible !== showTooltip) {

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import { Button, ButtonProps } from '@patternfly/react-core/dist/esm/components/Button';
 import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { CodeEditorContext } from './CodeEditorUtils';
@@ -31,7 +31,7 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
   tooltipProps = {},
   ...props
 }: CodeEditorControlProps) => {
-  const context = React.useContext(CodeEditorContext);
+  const context = useContext(CodeEditorContext);
 
   const onCustomClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     onClick(context.code, event);

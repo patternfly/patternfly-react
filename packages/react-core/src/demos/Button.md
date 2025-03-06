@@ -14,7 +14,6 @@ The following demo shows the intended flow for a button that visually indicates 
 Please note that only the button can be interacted with in this example. The username and password input fields cannot be edited as the focus is on the button behavior. 
 
 ```ts
-import React from 'react';
 import { Form, FormGroup, ActionGroup, TextInput, Button } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 

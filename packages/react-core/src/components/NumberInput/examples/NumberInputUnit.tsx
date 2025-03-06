@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputUnit: React.FunctionComponent = () => {
@@ -26,7 +26,7 @@ export const NumberInputUnit: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <NumberInput
         value={value1}
         onMinus={onMinus1}
@@ -52,6 +52,6 @@ export const NumberInputUnit: React.FunctionComponent = () => {
         unit="$"
         unitPosition="before"
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Wizard, WizardHeader, WizardStep, Modal } from '@patternfly/react-core';
 
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
@@ -9,7 +9,7 @@ interface WizardDemoState {
   isOpenWithRole: boolean;
 }
 
-class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, WizardDemoState> {
+class WizardDemo extends Component<React.HTMLProps<HTMLDivElement>, WizardDemoState> {
   static displayName = 'WizardDemo';
   state = {
     isOpen: false,

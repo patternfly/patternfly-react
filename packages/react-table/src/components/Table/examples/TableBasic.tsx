@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import { ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@patternfly/react-core';
 import { Table, Caption, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
@@ -29,14 +29,14 @@ export const TableBasic: React.FunctionComponent = () => {
   };
 
   // This state is just for the ToggleGroup in this example and isn't necessary for Table usage.
-  const [exampleChoice, setExampleChoice] = React.useState<ExampleType>('default');
+  const [exampleChoice, setExampleChoice] = useState<ExampleType>('default');
   const onExampleTypeChange: ToggleGroupItemProps['onChange'] = (event, _isSelected) => {
     const id = event.currentTarget.id;
     setExampleChoice(id as ExampleType);
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <ToggleGroup aria-label="Default with single selectable">
         <ToggleGroupItem
           text="Default"
@@ -84,6 +84,6 @@ export const TableBasic: React.FunctionComponent = () => {
           ))}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

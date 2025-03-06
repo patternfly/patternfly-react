@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { canUseDOM } from './util';
 
 export interface KeyboardHandlerProps {
@@ -203,7 +203,7 @@ export const onToggleArrowKeydownDefault = (event: KeyboardEvent, menuRef: React
   focusableElement && (focusableElement as HTMLElement).focus();
 };
 
-class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
+class KeyboardHandler extends Component<KeyboardHandlerProps> {
   static displayName = 'KeyboardHandler';
   static defaultProps: KeyboardHandlerProps = {
     containerRef: null,
@@ -255,7 +255,7 @@ class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
     // Pass the event off to be handled by any custom handler
     additionalKeyHandler && additionalKeyHandler(event);
 
-    // Initalize navigableElements from the createNavigableElements callback
+    // Initialize navigableElements from the createNavigableElements callback
     const navigableElements = createNavigableElements();
     if (!navigableElements) {
       // eslint-disable-next-line no-console

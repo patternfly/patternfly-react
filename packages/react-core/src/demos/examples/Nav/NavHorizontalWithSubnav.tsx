@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Avatar,
   Brand,
@@ -276,7 +276,7 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page masthead={masthead} skipToContent={PageSkipToContent} mainContainerId={pageId}>
         <PageSection type={PageSectionTypes.subNav} isWidthLimited>
           {SubNav}
@@ -305,6 +305,6 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
           </Gallery>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

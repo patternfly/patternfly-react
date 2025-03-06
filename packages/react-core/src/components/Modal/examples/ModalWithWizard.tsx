@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, Modal, ModalVariant, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
 
 export const ModalWithWizard: React.FunctionComponent = () => {
@@ -19,7 +19,7 @@ export const ModalWithWizard: React.FunctionComponent = () => {
   ));
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show wizard modal
       </Button>
@@ -53,6 +53,6 @@ export const ModalWithWizard: React.FunctionComponent = () => {
           </WizardStep>
         </Wizard>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Toolbar,
   ToolbarContent,
@@ -480,7 +480,7 @@ export const FilterSameSelectGroup: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       {toolbar}
       <Table aria-label="Selectable table">
         <Thead>
@@ -535,6 +535,6 @@ export const FilterSameSelectGroup: React.FunctionComponent = () => {
           )}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

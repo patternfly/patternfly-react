@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { info, textCenter, ICell } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -33,7 +33,7 @@ export const LegacyTableClickable: React.FunctionComponent = () => {
 
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
-  const [selectedRepoName, setSelectedRepoName] = React.useState('');
+  const [selectedRepoName, setSelectedRepoName] = useState('');
   const columns: TableProps['cells'] = [
     {
       title: 'Repositories',

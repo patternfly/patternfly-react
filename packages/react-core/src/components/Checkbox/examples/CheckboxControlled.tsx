@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
 export const CheckboxControlled: React.FunctionComponent = () => {
@@ -42,7 +42,7 @@ export const CheckboxControlled: React.FunctionComponent = () => {
   }, [isChecked2, isChecked3]);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Checkbox
         label="Parent CheckBox"
         isChecked={isChecked1}
@@ -75,6 +75,6 @@ export const CheckboxControlled: React.FunctionComponent = () => {
         id="controlled-check-4"
         name="check4"
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

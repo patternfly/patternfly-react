@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createRef, Fragment } from 'react';
 import { Tooltip, TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
 
 export enum RowSelectVariant {
@@ -28,15 +28,15 @@ export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
   tooltipProps,
   ...props
 }: SelectColumnProps) => {
-  const inputRef = React.createRef<HTMLInputElement>();
+  const inputRef = createRef<HTMLInputElement>();
 
   const content = (
-    <React.Fragment>
+    <Fragment>
       <label>
         <input {...props} ref={inputRef} type={selectVariant} onChange={onSelect} />
       </label>
       {children}
-    </React.Fragment>
+    </Fragment>
   );
 
   return tooltip ? (

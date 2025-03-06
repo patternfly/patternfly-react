@@ -17,6 +17,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
+import { createRef } from 'react';
 import { 
   Chart,
   ChartArea,
@@ -52,14 +53,13 @@ the parent container may be set to the same height and/or width.
 This demonstrates how to use a `ResizeObserver` to update the chart's width, while its height remains fixed. The `legendAllowWrap` prop is used to automatically wrap legend items.
 
 ```js
-import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
 
 class BulletChart extends React.Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       extraHeight: 0,
@@ -133,7 +133,6 @@ class BulletChart extends React.Component {
 This demonstrates how to use a `ResizeObserver` to update the chart's width, while its height remains fixed. In this example, `itemsPerRow` is used to wrap legend items manually.
 
 ```js
-import React from 'react';
 import {
   Chart,
   ChartArea,
@@ -151,7 +150,7 @@ import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_colo
 class MultiColorChart extends React.Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       extraHeight: 0,
@@ -294,14 +293,13 @@ class MultiColorChart extends React.Component {
 This demonstrates how to use a `ResizeObserver` to update the chart's width, while its height remains fixed. In this example, `fixLabelOverlap` is used to dynamically adjust the number of axis tick labels.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
 
 class MonthlyResponsiveStack extends React.Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       width: 0

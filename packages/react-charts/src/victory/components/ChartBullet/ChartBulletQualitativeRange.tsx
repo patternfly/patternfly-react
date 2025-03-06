@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
 import { VictoryBar } from 'victory-bar';
@@ -217,7 +217,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
   // Having the tooltip vertically centered is visually confusing with comparative measures.
   //
   // Note: SVG height and width are provided by ChartBullet as a workaround to support constrainToVisibleArea
-  const tooltip = React.cloneElement(labelComponent, {
+  const tooltip = cloneElement(labelComponent, {
     constrainToVisibleArea,
     dx: () => {
       if (horizontal) {
@@ -238,7 +238,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
   });
 
   const measure = computedData.map((dataPoint: any, index) =>
-    React.cloneElement(measureComponent, {
+    cloneElement(measureComponent, {
       barWidth,
       data: [{ ...dataPoint }],
       domain,
@@ -266,7 +266,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
       {measure}
     </ChartContainer>
   ) : (
-    <React.Fragment>{measure}</React.Fragment>
+    <Fragment>{measure}</Fragment>
   );
 };
 ChartBulletQualitativeRange.displayName = 'ChartBulletQualitativeRange';

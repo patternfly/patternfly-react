@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/SimpleList/simple-list';
 import { SimpleListContext } from './SimpleList';
@@ -26,9 +26,9 @@ export interface SimpleListItemProps {
   href?: string;
 }
 
-class SimpleListItem extends React.Component<SimpleListItemProps> {
+class SimpleListItem extends Component<SimpleListItemProps> {
   static displayName = 'SimpleListItem';
-  ref = React.createRef<any>();
+  ref = createRef<any>();
   static defaultProps: SimpleListItemProps = {
     children: null,
     className: '',

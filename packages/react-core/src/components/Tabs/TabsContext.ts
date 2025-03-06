@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext } from 'react';
 
 export interface TabsContextProps {
   variant: 'default' | 'secondary';
@@ -18,7 +18,7 @@ export interface TabsContextProps {
   ) => void;
 }
 
-export const TabsContext = React.createContext<TabsContextProps>({
+export const TabsContext = createContext<TabsContextProps>({
   variant: 'default',
   mountOnEnter: false,
   unmountOnExit: false,

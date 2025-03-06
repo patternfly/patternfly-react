@@ -1,4 +1,3 @@
-import React from 'react';
 import { CalendarMonth, Title, CalendarMonthInlineProps } from '@patternfly/react-core';
 
 export const CalendarMonthSelectableDate: React.FunctionComponent = () => {

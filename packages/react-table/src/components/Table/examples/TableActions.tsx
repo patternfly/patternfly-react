@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React from 'react';
+import { Fragment, useState } from 'react';
 import { Button, MenuToggle, ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@patternfly/react-core';
 import {
   Table,
@@ -45,7 +45,7 @@ export const TableActions: React.FunctionComponent = () => {
   };
 
   // This state is just for the ToggleGroup in this example and isn't necessary for Table usage.
-  const [exampleChoice, setExampleChoice] = React.useState<ExampleType>('defaultToggle');
+  const [exampleChoice, setExampleChoice] = useState<ExampleType>('defaultToggle');
   const onExampleTypeChange: ToggleGroupItemProps['onChange'] = (event, _isSelected) => {
     const id = event.currentTarget.id;
     setExampleChoice(id as ExampleType);
@@ -93,7 +93,7 @@ export const TableActions: React.FunctionComponent = () => {
   ];
 
   return (
-    <React.Fragment>
+    <Fragment>
       <ToggleGroup aria-label="Default uses kebab toggle">
         <ToggleGroupItem
           text="Default actions toggle"
@@ -163,6 +163,6 @@ export const TableActions: React.FunctionComponent = () => {
           })}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

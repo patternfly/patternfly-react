@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 
 /** Renders buttons styled as links beneath the alert title and description when this sub-component

@@ -9,7 +9,7 @@ import {
 } from '@patternfly/react-core';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 export class TreeViewDemo extends Component {
   componentDidMount() {

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
 import { css } from '@patternfly/react-styles';
 import { DeviceSizes } from '../../styles/sizes';

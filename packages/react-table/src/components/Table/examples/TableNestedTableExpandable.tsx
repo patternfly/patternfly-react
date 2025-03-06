@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React from 'react';
+import { useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, ExpandableRowContent, ActionsColumn, IAction } from '@patternfly/react-table';
 
 interface Repository {
@@ -102,7 +102,7 @@ export const TableExpandable: React.FunctionComponent = () => {
   // This is to prevent state from being based on row order index in case we later add sorting.
   // Note that this behavior is very similar to selection state.
   const initialExpandedRepoNames = repositories.filter((repo) => !!repo.nestedComponent).map((repo) => repo.name); // Default to all expanded
-  const [expandedRepoNames, setExpandedRepoNames] = React.useState<string[]>(initialExpandedRepoNames);
+  const [expandedRepoNames, setExpandedRepoNames] = useState<string[]>(initialExpandedRepoNames);
   const setRepoExpanded = (repo: Repository, isExpanding = true) =>
     setExpandedRepoNames((prevExpanded) => {
       const otherExpandedRepoNames = prevExpanded.filter((r) => r !== repo.name);

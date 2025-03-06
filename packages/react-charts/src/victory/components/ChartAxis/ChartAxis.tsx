@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -117,7 +117,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * single element by index rather than an entire set. The eventHandlers object
    * should be given as an object whose keys are standard event names (i.e. onClick)
    * and whose values are event callbacks. The return value of an event handler
-   * be used to modify other elemnts. The return value should be given as an object or
+   * be used to modify other elements. The return value should be given as an object or
    * an array of objects with optional target and eventKey keys, and a mutation
    * key whose value is a function. The target and eventKey keys will default to those
    * corresponding to the element the event handler was attached to. The mutation
@@ -458,13 +458,13 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   const componentTheme = getComponentTheme(themeColor);
 
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     theme,
     ...containerComponent.props
   });
 
   const getAxisLabelComponent = () =>
-    React.cloneElement(axisLabelComponent, {
+    cloneElement(axisLabelComponent, {
       ...(name && {
         id: () => `${name}-${(axisLabelComponent as any).type.displayName}`
       }),
@@ -473,7 +473,7 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
     });
 
   const getTickLabelComponent = () =>
-    React.cloneElement(tickLabelComponent, {
+    cloneElement(tickLabelComponent, {
       ...(name && {
         id: (props: any) => `${name}-${(tickLabelComponent as any).type.displayName}-${props.index}`
       }),

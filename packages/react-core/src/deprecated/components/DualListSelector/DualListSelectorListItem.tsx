@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, useContext, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { getUniqueId } from '../../../helpers';
@@ -25,7 +25,7 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   orderIndex?: number;
   /** @hide Forwarded ref */
   innerRef?: React.RefObject<HTMLLIElement | null>;
-  /** Flag indicating this item is draggable for reordring */
+  /** Flag indicating this item is draggable for reordering */
   isDraggable?: boolean;
   /** Accessible label for the draggable button on draggable list items */
   draggableButtonAriaLabel?: string;
@@ -47,9 +47,9 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
   draggableButtonAriaLabel = 'Reorder option',
   ...props
 }: DualListSelectorListItemProps) => {
-  const privateRef = React.useRef<HTMLLIElement>(null);
+  const privateRef = useRef<HTMLLIElement>(null);
   const ref = innerRef || privateRef;
-  const { setFocusedOption } = React.useContext(DualListSelectorListContext);
+  const { setFocusedOption } = useContext(DualListSelectorListContext);
 
   return (
     <li
@@ -99,7 +99,7 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
 };
 DualListSelectorListItemBase.displayName = 'DualListSelectorListItemBase';
 
-export const DualListSelectorListItem = React.forwardRef(
+export const DualListSelectorListItem = forwardRef(
   (props: DualListSelectorListItemProps, ref: React.Ref<HTMLLIElement>) => (
     <DualListSelectorListItemBase innerRef={ref as React.MutableRefObject<any>} {...props} />
   )

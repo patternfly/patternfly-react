@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { SimpleList, SimpleListGroup, SimpleListItem, SimpleListItemProps } from '@patternfly/react-core';
 
 interface SimpleListDemoState {

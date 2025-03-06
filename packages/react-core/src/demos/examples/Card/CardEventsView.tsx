@@ -1,5 +1,5 @@
+import { Fragment } from 'react';
 /* eslint-disable camelcase */
-import React from 'react';
 import {
   Card,
   CardHeader,
@@ -57,7 +57,7 @@ export const CardEventsView: React.FunctionComponent = () => {
     </Select>
   );
   return (
-    <React.Fragment>
+    <Fragment>
       <b>Note:</b> Custom CSS is used in this demo to align the card title and select toggle text to{' '}
       <code>baseline</code> alignment.
       <br />
@@ -156,6 +156,6 @@ export const CardEventsView: React.FunctionComponent = () => {
           </CardFooter>
         </Card>
       </Gallery>
-    </React.Fragment>
+    </Fragment>
   );
 };

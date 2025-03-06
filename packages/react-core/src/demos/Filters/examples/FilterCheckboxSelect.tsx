@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Menu,
   MenuContent,
@@ -370,7 +370,7 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       {toolbar}
       <Table aria-label="Selectable table">
         <Thead>
@@ -417,6 +417,6 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
           ))}
         </Tbody>
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

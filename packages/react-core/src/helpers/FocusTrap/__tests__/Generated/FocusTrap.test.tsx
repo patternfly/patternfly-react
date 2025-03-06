@@ -1,7 +1,6 @@
 /**
  * This test was generated
  */
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import { FocusTrap } from '../../FocusTrap';
 

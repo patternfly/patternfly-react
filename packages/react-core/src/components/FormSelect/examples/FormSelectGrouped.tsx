@@ -1,4 +1,3 @@
-import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
 export const FormSelectGrouped: React.FunctionComponent = () => {

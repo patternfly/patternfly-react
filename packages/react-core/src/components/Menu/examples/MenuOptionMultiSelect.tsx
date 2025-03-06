@@ -1,4 +1,3 @@
-import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
 import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { LabelGroup, Label, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
 
 export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {

@@ -25,7 +25,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic with right aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBoxPlot, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '300px', width: '750px' }}>
@@ -67,7 +66,6 @@ import { Chart, ChartAxis, ChartBoxPlot, ChartThemeColor } from '@patternfly/rea
 This demonstrates how to display labels.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBoxPlot, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '300px', width: '600px' }}>
@@ -114,7 +112,6 @@ import { Chart, ChartAxis, ChartBoxPlot, ChartThemeColor } from '@patternfly/rea
 This demonstrates how to embed a legend within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBoxPlot, ChartLegendTooltip, ChartThemeColor, ChartThreshold, createContainer } from '@patternfly/react-charts/victory';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
@@ -216,7 +213,6 @@ class EmbeddedLegend extends React.Component {
 This demonstrates how to embed HTML within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
 
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBoxPlot, ChartCursorTooltip, ChartThemeColor, createContainer } from '@patternfly/react-charts/victory';
 
 class EmbeddedHtml extends React.Component {

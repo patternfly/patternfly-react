@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children, cloneElement, isValidElement, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 
 /* eslint-disable camelcase */
@@ -30,7 +30,6 @@ import { getComputedLegend, getLegendItemsExtraHeight, getLegendMaxTextWidth } f
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getPatternDefs, mergePatternData, useDefaultPatternProps } from '../ChartUtils/chart-patterns';
 import { getChartTheme } from '../ChartUtils/chart-theme-types';
-import { useEffect } from 'react';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartPoint } from '../ChartPoint/ChartPoint';
 import { ChartThemeColor } from '../ChartTheme/ChartThemeColor';
@@ -69,7 +68,7 @@ export interface ChartProps extends VictoryChartProps {
    * The backgroundComponent prop takes a component instance which will be responsible for rendering a background if the
    * Chart's style component includes background styles. The new element created from the passed backgroundComponent
    * will be provided with the following properties calculated by Chart: height, polar, scale, style, x, y, width.
-   * All of these props on Background should take prececence over what VictoryChart is trying to set.
+   * All of these props on Background should take precedence over what VictoryChart is trying to set.
    */
   backgroundComponent?: React.ReactElement<any>;
   /**
@@ -152,7 +151,7 @@ export interface ChartProps extends VictoryChartProps {
    * events. The eventKey may optionally be used to select a single element by index rather than
    * an entire set. The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
-   * of an event handler is used to modify elemnts. The return value should be given
+   * of an event handler is used to modify elements. The return value should be given
    * as an object or an array of objects with optional target and eventKey keys,
    * and a mutation key whose value is a function. The target and eventKey keys
    * will default to those corresponding to the element the event handler was attached to.
@@ -513,7 +512,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     containerComponent.props.labelComponent &&
     containerComponent.props.labelComponent.type.displayName === 'ChartLegendTooltip'
   ) {
-    labelComponent = React.cloneElement(containerComponent.props.labelComponent, {
+    labelComponent = cloneElement(containerComponent.props.labelComponent, {
       theme,
       ...(defaultPatternScale && { patternScale: defaultPatternScale }),
       ...containerComponent.props.labelComponent.props
@@ -521,7 +520,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   }
 
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     desc: ariaDesc,
     title: ariaTitle,
     theme,
@@ -536,7 +535,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     legendXOffset = getLegendMaxTextWidth(legendData, theme);
   }
 
-  const legend = React.cloneElement(legendComponent, {
+  const legend = cloneElement(legendComponent, {
     data: legendData,
     ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
     orientation: legendOrientation,
@@ -544,14 +543,14 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     themeColor,
     ...(legendDirection === 'rtl' && {
       dataComponent: legendComponent.props.dataComponent ? (
-        React.cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
+        cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
       ) : (
         <ChartPoint transform={`translate(${legendXOffset})`} />
       )
     }),
     ...(legendDirection === 'rtl' && {
       labelComponent: legendComponent.props.labelComponent ? (
-        React.cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
+        cloneElement(legendComponent.props.labelComponent, { direction: 'rtl', dx: legendXOffset - 30 })
       ) : (
         <ChartLabel direction="rtl" dx={legendXOffset - 30} />
       )
@@ -570,7 +569,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     let legendTitleHeight = legend.props.title ? 10 : 0;
 
     // Adjust for axis label
-    React.Children.toArray(children).map((child: any) => {
+    Children.toArray(children).map((child: any) => {
       if (child.type.role === 'axis' && child.props.label && child.props.fixAxisLabelHeight) {
         xAxisLabelHeight = getLabelTextSize({ text: child.props.label, theme }).height + 10;
         legendTitleHeight = 0;
@@ -608,10 +607,10 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
 
   // Render children
   const renderChildren = () =>
-    React.Children.toArray(children).map((child, index) => {
-      if (React.isValidElement(child)) {
+    Children.toArray(children).map((child, index) => {
+      if (isValidElement(child)) {
         const { ...childProps } = child.props;
-        return React.cloneElement(child, {
+        return cloneElement(child, {
           colorScale,
           ...(defaultPatternScale && { patternScale: defaultPatternScale }),
           ...(name &&

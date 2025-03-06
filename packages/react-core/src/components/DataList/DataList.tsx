@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext, forwardRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 
@@ -48,7 +48,7 @@ interface DataListContextProps {
   onSelectableRowChange?: (event: React.FormEvent<HTMLInputElement>, id: string) => void;
 }
 
-export const DataListContext = React.createContext<Partial<DataListContextProps>>({
+export const DataListContext = createContext<Partial<DataListContextProps>>({
   isSelectable: false
 });
 
@@ -102,7 +102,7 @@ export const DataListBase: React.FunctionComponent<DataListProps> = ({
 
 DataListBase.displayName = 'DataListBase';
 
-export const DataList = React.forwardRef((props: DataListProps, ref: React.Ref<HTMLUListElement>) => (
+export const DataList = forwardRef((props: DataListProps, ref: React.Ref<HTMLUListElement>) => (
   <DataListBase innerRef={ref as React.MutableRefObject<any>} {...props} />
 ));
 

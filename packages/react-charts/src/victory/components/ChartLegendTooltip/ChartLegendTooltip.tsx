@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   Helpers,
@@ -367,7 +367,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
 
   // Returns the tooltip content component
   const getTooltipContentComponent = (props: FlyoutProps) =>
-    React.cloneElement(labelComponent, {
+    cloneElement(labelComponent, {
       center,
       flyoutHeight: flyoutHeight || getFlyoutHeight(props),
       flyoutWidth: flyoutWidth || getFlyoutWidth(props),
@@ -388,7 +388,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
     }
     const _flyoutWidth = getFlyoutWidth(legendSize);
     const tooltipComponent = isCursorTooltip ? <ChartCursorTooltip /> : <ChartTooltip />;
-    return React.cloneElement(tooltipComponent, {
+    return cloneElement(tooltipComponent, {
       activePoints,
       center,
       datum,

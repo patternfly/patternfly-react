@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, PaddingProps } from 'victory-core';
 import { VictoryChart } from 'victory-chart';
@@ -28,7 +28,6 @@ import { ChartBulletQualitativeRange } from './ChartBulletQualitativeRange';
 import { getBulletDomain } from './utils/chart-bullet-domain';
 import { getBulletThemeWithLegendColorScale } from './utils/chart-bullet-theme';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
-import { useEffect } from 'react';
 import { ChartPoint } from '../ChartPoint/ChartPoint';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 
@@ -588,7 +587,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   };
 
   // Bullet group title
-  const bulletGroupTitle = React.cloneElement(groupTitleComponent, {
+  const bulletGroupTitle = cloneElement(groupTitleComponent, {
     height,
     ...(name && { name: `${name}-${(groupTitleComponent as any).type.displayName}` }),
     standalone: false,
@@ -600,7 +599,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   });
 
   // Bullet title
-  const bulletTitle = React.cloneElement(titleComponent, {
+  const bulletTitle = cloneElement(titleComponent, {
     height,
     horizontal,
     legendPosition,
@@ -617,7 +616,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   });
 
   // Comparative error measure
-  const comparativeErrorMeasure = React.cloneElement(comparativeErrorMeasureComponent, {
+  const comparativeErrorMeasure = cloneElement(comparativeErrorMeasureComponent, {
     allowTooltip,
     barWidth: getComparativeMeasureErrorWidth({
       height: chartSize.height,
@@ -641,7 +640,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   });
 
   // Comparative warning measure
-  const comparativeWarningMeasure = React.cloneElement(comparativeWarningMeasureComponent, {
+  const comparativeWarningMeasure = cloneElement(comparativeWarningMeasureComponent, {
     allowTooltip,
     barWidth: getComparativeMeasureWarningWidth({
       height: chartSize.height,
@@ -665,7 +664,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   });
 
   // Comparative zero measure
-  const comparativeZeroMeasure = React.cloneElement(comparativeZeroMeasureComponent, {
+  const comparativeZeroMeasure = cloneElement(comparativeZeroMeasureComponent, {
     barWidth: getComparativeMeasureWidth({ height: chartSize.height, horizontal, themeColor, width: chartSize.width }),
     data: [{ y: 0 }],
     domain,
@@ -693,7 +692,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   }
 
   // Legend
-  const legend = React.cloneElement(legendComponent, {
+  const legend = cloneElement(legendComponent, {
     data: [
       ...(primaryDotMeasureLegendData ? primaryDotMeasureLegendData : []),
       ...(primarySegmentedMeasureLegendData ? primarySegmentedMeasureLegendData : []),
@@ -709,14 +708,14 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     themeColor,
     ...(legendDirection === 'rtl' && {
       dataComponent: legendComponent.props.dataComponent ? (
-        React.cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
+        cloneElement(legendComponent.props.dataComponent, { transform: `translate(${legendXOffset})` })
       ) : (
         <ChartPoint transform={`translate(${legendXOffset})`} />
       )
     }),
     ...(legendDirection === 'rtl' && {
       labelComponent: legendComponent.props.labelComponent ? (
-        React.cloneElement(legendComponent.props.labelComponent, {
+        cloneElement(legendComponent.props.labelComponent, {
           direction: 'rtl',
           dx: legendXOffset - 30
         })
@@ -728,7 +727,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   });
 
   // Primary dot measure
-  const primaryDotMeasure = React.cloneElement(primaryDotMeasureComponent, {
+  const primaryDotMeasure = cloneElement(primaryDotMeasureComponent, {
     allowTooltip,
     constrainToVisibleArea,
     data: primaryDotMeasureData,
@@ -748,7 +747,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   });
 
   // Primary segmented measure
-  const primarySegmentedMeasure = React.cloneElement(primarySegmentedMeasureComponent, {
+  const primarySegmentedMeasure = cloneElement(primarySegmentedMeasureComponent, {
     allowTooltip,
     constrainToVisibleArea,
     barWidth: getPrimarySegmentedMeasureWidth({
@@ -773,7 +772,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   });
 
   // Qualitative range
-  const qualitativeRange = React.cloneElement(qualitativeRangeComponent, {
+  const qualitativeRange = cloneElement(qualitativeRangeComponent, {
     allowTooltip,
     constrainToVisibleArea,
     barWidth: getQualitativeRangeBarWidth({ height: chartSize.height, horizontal, themeColor, width: chartSize.width }),
@@ -878,7 +877,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   };
 
   // Axis component for custom tick values
-  const axis = React.cloneElement(axisComponent, {
+  const axis = cloneElement(axisComponent, {
     dependentAxis: horizontal ? false : true,
     domain: !horizontal
       ? domain
@@ -902,7 +901,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
 
   const computedLegend = getLegend();
   const bulletChart = (
-    <React.Fragment>
+    <Fragment>
       {axis}
       {bulletGroupTitle}
       {bulletTitle}
@@ -913,7 +912,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       {comparativeWarningMeasure}
       {getComparativeZeroMeasure()}
       {computedLegend}
-    </React.Fragment>
+    </Fragment>
   );
 
   // Callback to compliment legendAllowWrap
@@ -934,7 +933,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       {bulletChart}
     </ChartContainer>
   ) : (
-    <React.Fragment>{bulletChart}</React.Fragment>
+    <Fragment>{bulletChart}</Fragment>
   );
 };
 ChartBullet.displayName = 'ChartBullet';

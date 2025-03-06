@@ -11,6 +11,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
+import { createRef } from 'react';
 import {
   Chart,
   ChartArea,
@@ -33,7 +34,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic with right aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '250px', width: '600px' }}>
@@ -69,7 +69,6 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@
 
 ### Horizontal with bottom aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '275px', width: '450px' }}>
@@ -108,7 +107,6 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiCo
 This demonstrates an alternate way of applying tooltips using data labels.
 
 ```js
-import React from 'react';
 import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '275px', width: '450px' }}>
@@ -175,14 +173,13 @@ import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip }
 
 ### Monthly data with responsive container
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
 
 class MonthlyResponsiveStack extends React.Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       width: 0
@@ -297,14 +294,13 @@ class MonthlyResponsiveStack extends React.Component {
 This demonstrates monthly data with a bottom aligned legend and responsiveness for mobile.
 
 ```js
-import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, createContainer } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
 
 class MultiColorChart extends React.Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
+    this.containerRef = createRef();
     this.observer = () => {};
     this.state = {
       width: 0

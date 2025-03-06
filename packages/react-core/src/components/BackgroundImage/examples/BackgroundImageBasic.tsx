@@ -1,4 +1,3 @@
-import React from 'react';
 import { BackgroundImage } from '@patternfly/react-core';
 
 export const BackgroundImageBasic: React.FunctionComponent = () => (

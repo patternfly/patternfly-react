@@ -1,5 +1,5 @@
 import { Tabs, Tab, TabContent, TabTitleText } from '@patternfly/react-core';
-import React, { Component, RefObject } from 'react';
+import { Component, createRef, RefObject } from 'react';
 
 export class TabsStringEventKeyDemo extends Component {
   state = {
@@ -13,9 +13,9 @@ export class TabsStringEventKeyDemo extends Component {
   constructor(props: {}) {
     super(props);
 
-    this.contentRefOne = React.createRef<HTMLDivElement>();
-    this.contentRefTwo = React.createRef<HTMLDivElement>();
-    this.contentRefThree = React.createRef<HTMLDivElement>();
+    this.contentRefOne = createRef<HTMLDivElement>();
+    this.contentRefTwo = createRef<HTMLDivElement>();
+    this.contentRefThree = createRef<HTMLDivElement>();
   }
 
   // Toggle currently active tab

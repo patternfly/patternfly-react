@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { Fragment, useState } from 'react';
 import {
   Button,
   Card,
@@ -22,10 +21,10 @@ import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/Dashboa
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
 export const TableStaticBottomPagination: React.FunctionComponent = () => {
-  const [isSelectOpen, setIsSelectOpen] = React.useState(false);
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
-  const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
+  const [paginatedRows, setPaginatedRows] = useState(rows.slice(0, 10));
   const handleSetPage = (
     _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
     newPage: number,
@@ -141,7 +140,7 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection isFilled>
           <Card>
@@ -177,6 +176,6 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
           </Card>
         </PageSection>
       </DashboardWrapper>
-    </React.Fragment>
+    </Fragment>
   );
 };

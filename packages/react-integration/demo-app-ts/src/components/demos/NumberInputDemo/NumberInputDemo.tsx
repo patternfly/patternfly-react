@@ -1,5 +1,5 @@
 import { NumberInput } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 export interface NumberInputDemoState {
   value: number;

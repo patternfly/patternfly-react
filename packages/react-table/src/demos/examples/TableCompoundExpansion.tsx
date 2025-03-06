@@ -1,4 +1,3 @@
-import React from 'react';
 import { ActionsColumn, Table, Thead, Tr, Th, Tbody, Td, ExpandableRowContent } from '@patternfly/react-table';
 import {
   Button,

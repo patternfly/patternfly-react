@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { useEffect } from 'react';
 import { useWizardContext } from '../WizardContext';
 import { WizardFooterProps } from '../WizardFooter';
 
@@ -14,7 +13,7 @@ export const useWizardFooter = (
 ) => {
   const { activeStep, setFooter } = useWizardContext();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (footer && (!stepId || activeStep?.id === stepId)) {
       setFooter(footer);
 

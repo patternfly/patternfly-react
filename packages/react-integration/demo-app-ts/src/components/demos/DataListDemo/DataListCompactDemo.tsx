@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import {
   DataList,
   DataListProps,
@@ -12,7 +12,7 @@ interface DataListState {
   selectedDataListItemId: string;
 }
 
-export class DataListCompactDemo extends React.Component<DataListProps, DataListState> {
+export class DataListCompactDemo extends Component<DataListProps, DataListState> {
   static displayName = 'DataListCompactDemo';
   constructor(props: DataListProps) {
     super(props);

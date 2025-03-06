@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Flex } from '@patternfly/react-core';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 

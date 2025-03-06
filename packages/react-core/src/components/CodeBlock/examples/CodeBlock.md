@@ -5,6 +5,7 @@ cssPrefix: pf-v6-c-code-block
 propComponents: ['CodeBlock', 'CodeBlockAction', 'CodeBlockCode']
 ---
 
+import { Fragment, useState } from 'react';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import datePickerStyles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
@@ -39,7 +39,7 @@ export interface TimePickerProps
   time?: string | Date;
   /** Error message to display when the time is provided in an invalid format. */
   invalidFormatErrorMessage?: string;
-  /** Error message to display when the time provided is not within the minTime/maxTime constriants */
+  /** Error message to display when the time provided is not within the minTime/maxTime constraints */
   invalidMinMaxErrorMessage?: string;
   /** True if the time is 24 hour time. False if the time is 12 hour time */
   is24Hour?: boolean;
@@ -95,12 +95,12 @@ interface TimePickerState {
   maxTimeState: string;
 }
 
-class TimePicker extends React.Component<TimePickerProps, TimePickerState> {
+class TimePicker extends Component<TimePickerProps, TimePickerState> {
   static displayName = 'TimePicker';
-  private baseComponentRef = React.createRef<any>();
-  private toggleRef = React.createRef<HTMLDivElement>();
-  private inputRef = React.createRef<HTMLInputElement>();
-  private menuRef = React.createRef<HTMLDivElement>();
+  private baseComponentRef = createRef<any>();
+  private toggleRef = createRef<HTMLDivElement>();
+  private inputRef = createRef<HTMLInputElement>();
+  private menuRef = createRef<HTMLDivElement>();
 
   static defaultProps = {
     className: '',
@@ -260,7 +260,7 @@ class TimePicker extends React.Component<TimePickerProps, TimePickerState> {
     });
   };
 
-  // fixes issue where menutAppendTo="inline" results in the menu item that should be scrolled to being out of view; this will select the menu item that comes before the intended one, causing that before-item to be placed out of view instead
+  // fixes issue where menuAppendTo="inline" results in the menu item that should be scrolled to being out of view; this will select the menu item that comes before the intended one, causing that before-item to be placed out of view instead
   getIndexToScroll = (index: number) => {
     if (this.props.menuAppendTo === 'inline') {
       return index > 0 ? index - 1 : 0;

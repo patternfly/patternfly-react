@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { WizardParentStep, WizardSubStep } from '../types';
 import { buildSteps } from '../utils';
 import { WizardStep } from '../WizardStep';

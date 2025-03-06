@@ -3,6 +3,7 @@ id: Filters
 section: patterns
 ---
 
+import { Fragment } from 'react';
 import {
 Popper,
 SearchInput,

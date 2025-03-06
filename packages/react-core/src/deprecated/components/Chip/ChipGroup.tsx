@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { LabelGroup, LabelGroupProps } from '../../../components/Label';
 import { TooltipPosition } from '../../../components/Tooltip';
 import { getOUIAProps, OUIAProps } from '../../../helpers';
@@ -12,7 +12,7 @@ export interface ChipGroupProps extends Omit<LabelGroupProps, 'ref'>, OUIAProps 
   defaultIsOpen?: boolean;
   /** Customizable "Show Less" text string */
   expandedText?: string;
-  /** Customizeable template string. Use variable "${remaining}" for the overflow chip count. */
+  /** Customizable template string. Use variable "${remaining}" for the overflow chip count. */
   collapsedText?: string;
   /** Category name text for the chip group category.  If this prop is supplied the chip group with have a label and category styling applied */
   categoryName?: string;
@@ -48,7 +48,7 @@ export interface ChipGroupProps extends Omit<LabelGroupProps, 'ref'>, OUIAProps 
   ouiaId?: number | string;
 }
 
-class ChipGroup extends React.Component<ChipGroupProps> {
+class ChipGroup extends Component<ChipGroupProps> {
   static displayName = 'ChipGroup';
   constructor(props: ChipGroupProps) {
     super(props);

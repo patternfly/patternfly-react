@@ -1,4 +1,3 @@
-import React from 'react';
 import { LabelGroup, Label } from '@patternfly/react-core';
 
 export const LabelGroupEditableLabels: React.FunctionComponent = () => {

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';

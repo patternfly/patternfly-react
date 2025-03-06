@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, type JSX } from 'react';
 import { OUIAProps, getDefaultOUIAId } from '@patternfly/react-core/dist/esm/helpers/OUIA/ouia';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
@@ -28,8 +28,6 @@ import {
   TreeRowWrapper,
   CustomActionsToggleProps
 } from '../../../components';
-
-import type { JSX } from 'react';
 
 export interface TableProps extends OUIAProps {
   /** Adds an accessible name for the Table */
@@ -133,7 +131,7 @@ export interface TableProps extends OUIAProps {
   ouiaSafe?: boolean;
 }
 
-class Table extends React.Component<TableProps, {}> {
+class Table extends Component<TableProps, {}> {
   static displayName = 'Table';
   static hasWarnBeta = false;
   static defaultProps: Partial<TableProps> = {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputCustomStep: React.FunctionComponent = () => {

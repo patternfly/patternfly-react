@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
@@ -24,7 +24,7 @@ export const WizardInModal: React.FunctionComponent = () => {
   const title = 'Wizard in modal example';
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show Modal
       </Button>
@@ -36,6 +36,6 @@ export const WizardInModal: React.FunctionComponent = () => {
         onClose={handleWizardToggle}
         isOpen={isOpen}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };
