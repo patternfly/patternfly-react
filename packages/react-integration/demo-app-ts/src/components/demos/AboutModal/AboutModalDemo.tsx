@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { AboutModal, Button, Content } from '@patternfly/react-core';
 const brandImg = '../../../assets/images/brandImg.svg';
 
@@ -6,7 +6,7 @@ interface AboutModalState {
   isModalOpen: boolean;
 }
 
-export class AboutModalDemo extends React.Component<{}, AboutModalState> {
+export class AboutModalDemo extends Component<{}, AboutModalState> {
   static displayName = 'AboutModalDemo';
   constructor(props: {}) {
     super(props);

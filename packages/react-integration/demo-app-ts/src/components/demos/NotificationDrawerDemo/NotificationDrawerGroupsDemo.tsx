@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import {
   Button,
   EmptyState,
@@ -33,7 +33,7 @@ interface GroupsNotificationDrawerDemoState {
   thirdGroupExpanded: boolean;
 }
 
-class GroupsNotificationDrawerDemo extends React.Component<NotificationDrawerProps, GroupsNotificationDrawerDemoState> {
+class GroupsNotificationDrawerDemo extends Component<NotificationDrawerProps, GroupsNotificationDrawerDemoState> {
   static displayName = 'GroupsNotificationDrawerDemo';
   constructor(props: NotificationDrawerProps) {
     super(props);

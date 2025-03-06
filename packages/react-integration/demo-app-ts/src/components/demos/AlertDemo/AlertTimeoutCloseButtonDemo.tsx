@@ -1,11 +1,11 @@
+import { Component } from 'react';
 import { Alert, Button, AlertActionCloseButton } from '@patternfly/react-core';
-import React from 'react';
 
 interface AlertTimeoutCloseButtonDemoState {
   isOpenAlert: boolean;
 }
 
-export class AlertTimeoutCloseButtonDemo extends React.Component<{}, AlertTimeoutCloseButtonDemoState> {
+export class AlertTimeoutCloseButtonDemo extends Component<{}, AlertTimeoutCloseButtonDemoState> {
   static displayName = 'AlertTimeoutCloseButtonDemo';
   constructor(props: {}) {
     super(props);

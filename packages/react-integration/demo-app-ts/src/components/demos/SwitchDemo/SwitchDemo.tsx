@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Switch, Button } from '@patternfly/react-core';
 import { Table, TableBody, TableHeader } from '@patternfly/react-table/deprecated';
 

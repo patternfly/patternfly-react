@@ -1,5 +1,5 @@
 import { Popover, Button } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Component, createRef } from 'react';
 
 export class PopoverDemo extends Component {
   popoverRef: React.RefObject<HTMLButtonElement | null>;
@@ -11,7 +11,7 @@ export class PopoverDemo extends Component {
 
   constructor(props: any) {
     super(props);
-    this.popoverRef = React.createRef();
+    this.popoverRef = createRef();
   }
 
   componentDidMount() {

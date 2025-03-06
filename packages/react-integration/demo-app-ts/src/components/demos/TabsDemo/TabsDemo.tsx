@@ -1,4 +1,4 @@
-import React, { Component, RefObject } from 'react';
+import { Component, createRef, RefObject } from 'react';
 import { Tabs, Tab, TabContent, TabTitleText, TabTitleIcon, Button } from '@patternfly/react-core';
 import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
 
@@ -17,9 +17,9 @@ export class TabDemo extends Component {
   constructor(props: {}) {
     super(props);
 
-    this.contentRef1 = React.createRef<HTMLDivElement>();
-    this.contentRef2 = React.createRef<HTMLDivElement>();
-    this.contentRef3 = React.createRef<HTMLDivElement>();
+    this.contentRef1 = createRef<HTMLDivElement>();
+    this.contentRef2 = createRef<HTMLDivElement>();
+    this.contentRef3 = createRef<HTMLDivElement>();
   }
 
   // Toggle currently active tab

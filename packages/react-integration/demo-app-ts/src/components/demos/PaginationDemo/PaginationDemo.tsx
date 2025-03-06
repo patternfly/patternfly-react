@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Pagination, PaginationVariant, Stack, StackItem, Title } from '@patternfly/react-core';
 
 interface OptionsMenuDemoState {
@@ -8,7 +8,7 @@ interface OptionsMenuDemoState {
   perPage: number;
 }
 
-export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivElement>, OptionsMenuDemoState> {
+export class PaginationDemo extends Component<React.HTMLProps<HTMLDivElement>, OptionsMenuDemoState> {
   static displayName = 'PaginationDemo';
   state = {
     topPage: 1,

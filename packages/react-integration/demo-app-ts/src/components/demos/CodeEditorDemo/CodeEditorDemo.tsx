@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { CodeEditor, CodeEditorControl, CodeEditorProps, Language } from '@patternfly/react-code-editor';
 import { Button, Checkbox } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
@@ -11,7 +11,7 @@ interface CodeEditorDemoState {
   code: string;
 }
 
-export class CodeEditorDemo extends React.Component<CodeEditorProps, CodeEditorDemoState> {
+export class CodeEditorDemo extends Component<CodeEditorProps, CodeEditorDemoState> {
   static displayName = 'CodeEditorDemo';
   constructor(props: CodeEditorProps) {
     super(props);

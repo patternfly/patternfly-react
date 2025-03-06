@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Dropdown, DropdownList, DropdownItem, Divider, MenuToggle } from '@patternfly/react-core';
 
 const dropDownItems = (
@@ -35,8 +35,8 @@ const dropDownItems = (
 );
 
 export const DropdownDemo: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [isNoAutofocusOpen, setIsNoAutofocusOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isNoAutofocusOpen, setIsNoAutofocusOpen] = useState(false);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);

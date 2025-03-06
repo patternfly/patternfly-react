@@ -1,5 +1,4 @@
 import { Chip } from '@patternfly/react-core/deprecated';
-import React from 'react';
 
 export const ChipDemo: React.FunctionComponent = () => (
   <>

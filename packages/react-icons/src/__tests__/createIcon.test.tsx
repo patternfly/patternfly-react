@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { createIcon } from '../createIcon';
 
@@ -29,7 +28,7 @@ test('aria-hidden is true if no title is specified', () => {
   expect(screen.getByRole('img', { hidden: true })).toHaveAttribute('aria-hidden', 'true');
 });
 
-test('title is not renderd if a title is not passed', () => {
+test('title is not rendered if a title is not passed', () => {
   render(<SVGIcon />);
   expect(screen.queryByRole('img', { hidden: true })?.querySelector('title')).toBeNull();
 });

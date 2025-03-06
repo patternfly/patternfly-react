@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { compoundExpand, IRow, ICell, IRowCell } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 

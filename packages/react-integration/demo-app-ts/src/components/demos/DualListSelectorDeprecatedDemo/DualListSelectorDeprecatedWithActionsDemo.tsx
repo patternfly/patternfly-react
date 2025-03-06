@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, ButtonVariant, Dropdown, DropdownItem, DropdownList, MenuToggle } from '@patternfly/react-core';
 import {
   DualListSelector as DLSDeprecated,
@@ -17,7 +17,7 @@ interface DualListSelectorState {
   chosenDescending: boolean;
 }
 
-class DualListSelectorDeprecatedWithActionsDemo extends React.Component<DLSPropsDeprecated, DualListSelectorState> {
+class DualListSelectorDeprecatedWithActionsDemo extends Component<DLSPropsDeprecated, DualListSelectorState> {
   static displayName = 'DualListSelectorDemo';
   onSort: (panel: string) => void;
   onListChange: (

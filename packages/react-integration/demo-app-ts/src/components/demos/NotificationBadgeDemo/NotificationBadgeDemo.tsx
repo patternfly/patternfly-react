@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { NotificationBadge, NotificationBadgeProps, NotificationBadgeVariant } from '@patternfly/react-core';
 
 interface NotificationBadgeDemoState {
@@ -7,7 +7,7 @@ interface NotificationBadgeDemoState {
   secondCount: number;
 }
 
-export class NotificationBadgeDemo extends React.Component<NotificationBadgeProps, NotificationBadgeDemoState> {
+export class NotificationBadgeDemo extends Component<NotificationBadgeProps, NotificationBadgeDemoState> {
   static displayName = 'NotificationBadgeDemo';
   onFirstClick: () => void;
   onSecondClick: () => void;

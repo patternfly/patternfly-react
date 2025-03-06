@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import {
   DualListSelector as DLSDeprecated,
   DualListSelectorProps as DLSPropsDeprecated,

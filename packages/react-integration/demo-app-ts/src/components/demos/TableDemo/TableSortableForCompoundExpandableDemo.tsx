@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { TableVariant, sortable, SortByDirection, ICell, IRow, ISortBy } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
@@ -16,7 +16,7 @@ interface DemoSortableTableState {
   sortBy: ISortBy;
 }
 
-export class DemoSortableTable extends React.Component<DemoSortableTableProps, DemoSortableTableState> {
+export class DemoSortableTable extends Component<DemoSortableTableProps, DemoSortableTableState> {
   static displayName = 'DemoSortableTable';
   constructor(props: TableProps) {
     super(props);

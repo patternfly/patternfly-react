@@ -1,5 +1,5 @@
+import { Component } from 'react';
 import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
-import React from 'react';
 import UserIcon from '@patternfly/react-icons/dist/esm/icons/user-icon';
 
 interface AlertDemoState {
@@ -7,7 +7,7 @@ interface AlertDemoState {
   alertTwoVisible: boolean;
 }
 
-export class AlertDemo extends React.Component<{}, AlertDemoState> {
+export class AlertDemo extends Component<{}, AlertDemoState> {
   static displayName = 'AlertDemo';
   constructor(props: {}) {
     super(props);

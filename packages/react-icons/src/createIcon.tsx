@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 
 export interface IconDefinition {
   name?: string;
@@ -27,7 +27,7 @@ export function createIcon({
   height,
   svgPath
 }: IconDefinition): React.ComponentClass<SVGIconProps> {
-  return class SVGIcon extends React.Component<SVGIconProps> {
+  return class SVGIcon extends Component<SVGIconProps> {
     static displayName = name;
 
     id = `icon-title-${currentId++}`;

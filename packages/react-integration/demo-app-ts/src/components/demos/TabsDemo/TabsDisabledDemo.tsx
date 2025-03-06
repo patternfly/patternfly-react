@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component, createRef } from 'react';
 import { Tabs, Tab, TabTitleText, Tooltip } from '@patternfly/react-core';
 
-export class TabsDisabledDemo extends React.Component {
+export class TabsDisabledDemo extends Component {
   static displayName = 'TabsDisabledDemo';
   state = {
     activeTabKey: 0,
@@ -20,7 +20,7 @@ export class TabsDisabledDemo extends React.Component {
 
   render() {
     const { activeTabKey } = this.state;
-    const tooltipRef = React.createRef();
+    const tooltipRef = createRef();
 
     return (
       <>
