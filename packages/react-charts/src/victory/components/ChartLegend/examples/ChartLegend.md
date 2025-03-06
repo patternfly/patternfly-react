@@ -291,20 +291,16 @@ import {
   createContainer, 
   getInteractiveLegendEvents, 
   getInteractiveLegendItemStyles,
-} from '@patternfly/react-charts/victory';
+} from '@patternfly/react-charts';
 import { getResizeObserver } from '@patternfly/react-core';
-// import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
-class InteractiveLegendChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = React.createRef();
-    this.observer = () => {};
-    this.state = {
-      hiddenSeries: new Set(),
-      width: 0
-    };
-    this.series = [{
+const InteractiveLegendChart = () => {
+  const containerRef = React.useRef(null);
+  const [hiddenSeries, setHiddenSeries] = React.useState(new Set());
+  const [width, setWidth] = React.useState(0);
+
+  const series = [
+    {
       datapoints: [
         { x: '2015', y: 3 },
         { x: '2016', y: 4 },
@@ -312,7 +308,8 @@ class InteractiveLegendChart extends React.Component {
         { x: '2018', y: 6 }
       ],
       legendItem: { name: 'Cats' }
-    }, {
+    },
+    {
       datapoints: [
         { x: '2015', y: 2 },
         { x: '2016', y: 3 },
@@ -321,7 +318,8 @@ class InteractiveLegendChart extends React.Component {
         { x: '2019', y: 6 }
       ],
       legendItem: { name: 'Dogs' }
-    }, {
+    },
+    {
       datapoints: [
         { x: '2015', y: 1 },
         { x: '2016', y: 2 },
@@ -330,158 +328,110 @@ class InteractiveLegendChart extends React.Component {
         { x: '2019', y: 4 }
       ],
       legendItem: { name: 'Birds' }
-    }];
+    }
+  ];
 
-    // Returns groups of chart names associated with each data series
-    this.getChartNames = () => {
-      const result = [];
-      this.series.map((_, index) => {
-        // Each group of chart names are hidden / shown together
-        result.push([`area-${index}`, `scatter-${index}`]);
-      });
-      return result;
-    };
+  // Returns groups of chart names associated with each data series
+  const getChartNames = () => series.map((_, index) => [`area-${index}`, `scatter-${index}`]);
 
-    // Returns onMouseOver, onMouseOut, and onClick events for the interactive legend
-    this.getEvents = () => getInteractiveLegendEvents({
-      chartNames: this.getChartNames(),
-      isHidden: this.isHidden,
-      legendName: 'chart5-ChartLegend',
-      onLegendClick: this.handleLegendClick
+  // Handles legend click to toggle visibility of data series
+  const handleLegendClick = (props) => {
+    setHiddenSeries((prev) => {
+      const newHidden = new Set(prev);
+      if (!newHidden.delete(props.index)) {
+        newHidden.add(props.index);
+      }
+      return newHidden;
     });
-
-    // Returns legend data styled per hiddenSeries
-    this.getLegendData = () => {
-      const { hiddenSeries } = this.state;
-      return this.series.map((s, index) => {
-        return {
-          childName: `area-${index}`, // Sync tooltip legend with the series associated with given chart name
-          ...s.legendItem, // name property
-          ...getInteractiveLegendItemStyles(hiddenSeries.has(index)) // hidden styles
-        };
-      });
-    };
-
-    // Hide each data series individually
-    this.handleLegendClick = (props) => {
-      if (!this.state.hiddenSeries.delete(props.index)) {
-        this.state.hiddenSeries.add(props.index);
-      }
-      this.setState({ hiddenSeries: new Set(this.state.hiddenSeries) });
-    };
-
-    // Set chart width per current window size
-    this.handleResize = () => {
-      if (this.containerRef.current && this.containerRef.current.clientWidth) {
-        this.setState({ width: this.containerRef.current.clientWidth });
-      }
-    };
-
-    // Returns true if data series is hidden
-    this.isHidden = (index) => {
-      const { hiddenSeries } = this.state; // Skip if already hidden                
-      return hiddenSeries.has(index);
-    };
-
-    this.isDataAvailable = () => {
-      const { hiddenSeries } = this.state;
-      return hiddenSeries.size !== this.series.length;
-    };
-
-    // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
-
-    this.cursorVoronoiContainer = (
-      <CursorVoronoiContainer
-        cursorDimension="x"
-        labels={({ datum }) => datum.childName.includes('area-') && datum.y !== null ? `${datum.y}` : null}
-        labelComponent={<ChartLegendTooltip legendData={this.getLegendData()} title={(datum) => datum.x}/>}
-        mouseFollowTooltips
-        voronoiDimension="x"
-        voronoiPadding={50}
-      />
-    );
   };
 
-  componentDidMount() {
-    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
-    this.handleResize();
-  }
+  // Returns legend data styled per hiddenSeries
+  const getLegendData = () =>
+    series.map((s, index) => ({
+      childName: `area-${index}`,
+      ...s.legendItem,
+      ...getInteractiveLegendItemStyles(hiddenSeries.has(index))
+    }));
 
-  componentWillUnmount() {
-    this.observer();
-  }
+  // Returns true if data series is hidden
+  const isHidden = (index) => hiddenSeries.has(index);
 
-  // Tips:
-  // 1. Omitting hidden components will reassign color scale, use null data instead or custom colors
-  // 2. Set domain or tick axis labels to account for when all data series are hidden
-  // 3. Omit tooltip for ChartScatter component by checking childName prop
-  // 4. Omit tooltip when all data series are hidden
-  // 5. Clone original container to ensure tooltip events are not lost when data series are hidden / shown
-  render() {
-    const { hiddenSeries, width } = this.state;
+  // Checks if any data series is visible
+  const isDataAvailable = () => hiddenSeries.size !== series.length;
 
-    const container = React.cloneElement(
-      this.cursorVoronoiContainer, 
-      {
-        disable: !this.isDataAvailable()
+  // Set chart width per current window size
+  React.useEffect(() => {
+    const observer = getResizeObserver(containerRef.current, () => {
+      if (containerRef.current?.clientWidth) {
+        setWidth(containerRef.current.clientWidth);
       }
-    );
+    });
+    return () => observer();
+  }, []);
 
-    return (
-      <div ref={this.containerRef}>
-        <div className="area-chart-legend-bottom-responsive">
-          <Chart
-            ariaDesc="Average number of pets"
-            ariaTitle="Area chart example"
-            containerComponent={container}
-            events={this.getEvents()}
-            height={225}
-            legendComponent={<ChartLegend name={'chart5-ChartLegend'} data={this.getLegendData()} />}
-            legendPosition="bottom-left"
-            name="chart5"
-            padding={{
-              bottom: 75, // Adjusted to accommodate legend
-              left: 50,
-              right: 50,
-              top: 50,
-            }}
-            maxDomain={{y: 9}}
-            themeColor={ChartThemeColor.multiUnordered}
-            width={width}
-          >
-            <ChartAxis tickValues={['2015', '2016', '2017', '2018']} />
-            <ChartAxis dependentAxis showGrid />
-            <ChartGroup>
-              {this.series.map((s, index) => {
-                return (
-                  <ChartScatter
-                    data={!hiddenSeries.has(index) ? s.datapoints : [{ y: null}]}
-                    key={'scatter-' + index}
-                    name={'scatter-' + index}
-                    size={({ active }) => (active ? 5 : 3)}
-                  />
-                );
-              })}
-            </ChartGroup>
-            <ChartGroup>
-              {this.series.map((s, index) => {
-                return (
-                  <ChartArea
-                    data={!hiddenSeries.has(index) ? s.datapoints : [{ y: null}]}
-                    interpolation="monotoneX"
-                    key={'area-' + index}
-                    name={'area-' + index}
-                  />
-                );
-              })}
-            </ChartGroup>
-          </Chart>
-        </div>
+  // Note: Container order is important
+  const CursorVoronoiContainer = createContainer("voronoi", "cursor");
+  const container = (
+    <CursorVoronoiContainer
+      cursorDimension="x"
+      labels={({ datum }) => datum.childName.includes('area-') && datum.y !== null ? `${datum.y}` : null}
+      labelComponent={<ChartLegendTooltip legendData={getLegendData()} title={(datum) => datum.x} />}
+      mouseFollowTooltips
+      voronoiDimension="x"
+      voronoiPadding={50}
+      disable={!isDataAvailable()}
+    />
+  );
+
+  return (
+    <div ref={containerRef}>
+      <div className="area-chart-legend-bottom-responsive">
+        <Chart
+          ariaDesc="Average number of pets"
+          ariaTitle="Area chart example"
+          containerComponent={container}
+          events={getInteractiveLegendEvents({
+            chartNames: getChartNames(),
+            isHidden,
+            legendName: 'chart5-ChartLegend',
+            onLegendClick: handleLegendClick
+          })}
+          height={225}
+          legendComponent={<ChartLegend name={'chart5-ChartLegend'} data={getLegendData()} />}
+          legendPosition="bottom-left"
+          name="chart5"
+          padding={{ bottom: 75, left: 50, right: 50, top: 50 }}
+          maxDomain={{ y: 9 }}
+          themeColor={ChartThemeColor.multiUnordered}
+          width={width}
+        >
+          <ChartAxis tickValues={['2015', '2016', '2017', '2018']} />
+          <ChartAxis dependentAxis showGrid />
+          <ChartGroup>
+            {series.map((s, index) => (
+              <ChartScatter
+                key={`scatter-${index}`}
+                name={`scatter-${index}`}
+                data={!isHidden(index) ? s.datapoints : [{ y: null }]}
+                size={({ active }) => (active ? 5 : 3)}
+              />
+            ))}
+          </ChartGroup>
+          <ChartGroup>
+            {series.map((s, index) => (
+              <ChartArea
+                key={`area-${index}`}
+                name={`area-${index}`}
+                data={!isHidden(index) ? s.datapoints : [{ y: null }]}
+                interpolation="monotoneX"
+              />
+            ))}
+          </ChartGroup>
+        </Chart>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 ```
 
 ### Interactive legend with pie chart
