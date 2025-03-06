@@ -32,6 +32,7 @@ exports[`MultiTypeaheadSelect Matches snapshot 1`] = `
         style="display: none;"
       >
         <button
+          aria-disabled="false"
           aria-label="Clear input value"
           class="pf-v6-c-button pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Button-plain-17"

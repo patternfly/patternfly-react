@@ -11,6 +11,7 @@ exports[`DataListToggle should match snapshot (auto-generated) 1`] = `
     >
       <button
         aria-controls="''"
+        aria-disabled="false"
         aria-expanded="false"
         aria-label="'Details'"
         class="pf-v6-c-button pf-m-plain"

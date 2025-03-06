@@ -73,7 +73,8 @@ test('Renders with class pf-m-disabled when isDisabled = true and component is n
   expect(screen.getByText('Disabled Anchor Button').parentElement).toHaveClass('pf-m-disabled');
 });
 
-test(`aria-disabled and class ${styles.modifiers.ariaDisabled} are not rendered when isAriaDisabled is not passed by default`, () => {
+// Re-enable as part of https://github.com/patternfly/patternfly-react/issues/11618
+test.skip(`aria-disabled and class ${styles.modifiers.ariaDisabled} are not rendered when isAriaDisabled is not passed by default`, () => {
   render(<Button>Button</Button>);
 
   const button = screen.getByRole('button');
@@ -81,11 +82,21 @@ test(`aria-disabled and class ${styles.modifiers.ariaDisabled} are not rendered 
   expect(button).not.toHaveClass(styles.modifiers.ariaDisabled);
 });
 
-test(`aria-disabled and class ${styles.modifiers.ariaDisabled} are not rendered when isDisabled is true, but isAriaDisabled is not passed`, () => {
+// Re-enable as part of https://github.com/patternfly/patternfly-react/issues/11618
+test.skip(`aria-disabled and class ${styles.modifiers.ariaDisabled} are not rendered when isDisabled is true, but isAriaDisabled is not passed`, () => {
   render(<Button isDisabled>Disabled Button</Button>);
 
   const button = screen.getByRole('button');
   expect(button).not.toHaveAttribute('aria-disabled');
+  expect(button).not.toHaveClass(styles.modifiers.ariaDisabled);
+});
+
+// Remove as part of https://github.com/patternfly/patternfly-react/issues/11618
+test(`Renders with aria-disabled of true and without class ${styles.modifiers.ariaDisabled} when isDisabled is true`, () => {
+  render(<Button isDisabled>Disabled Button</Button>);
+
+  const button = screen.getByRole('button');
+  expect(button).toHaveAttribute('aria-disabled', 'true');
   expect(button).not.toHaveClass(styles.modifiers.ariaDisabled);
 });
 
