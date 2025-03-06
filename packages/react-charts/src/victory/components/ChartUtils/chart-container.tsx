@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from 'react';
+
 /* eslint-disable camelcase */
 import chart_container_cursor_line_Fill from '@patternfly/react-tokens/dist/esm/chart_container_cursor_line_Fill';
 import { ContainerType, createContainer as victoryCreateContainer } from 'victory-create-container';
