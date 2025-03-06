@@ -15,7 +15,8 @@ import chart_global_FontSize_lg from '@patternfly/react-tokens/dist/esm/chart_gl
 
 /**
  * Bullet styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const BulletStyles = {
   axisTickCount: chart_bullet_axis_tick_count.value,

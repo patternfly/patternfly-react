@@ -4,7 +4,8 @@ import chart_voronoi_labels_Fill from '@patternfly/react-tokens/dist/esm/chart_v
 
 /**
  * Box plot tooltip styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const BoxPlotTooltipStyles = {
   flyout: {

@@ -32,14 +32,16 @@ interface ChartLabelTextSizeInterface {
 
 /**
  * Returns x coordinate for bullet labels
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletLabelX = ({ chartWidth, dx = 0, labelPosition }: ChartBulletLabelInterface) =>
   labelPosition === 'top' && chartWidth ? Math.round(chartWidth / 2) : dx;
 
 /**
  * Returns y coordinate for bullet labels
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletLabelY = ({ chartHeight, dy = 0, labelPosition }: ChartBulletLabelInterface) => {
   switch (labelPosition) {
@@ -54,7 +56,8 @@ export const getBulletLabelY = ({ chartHeight, dy = 0, labelPosition }: ChartBul
 
 /**
  * Returns x coordinate for pie labels
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getPieLabelX = ({
   dx = 0,
@@ -87,7 +90,8 @@ export const getPieLabelX = ({
 
 /**
  * Returns x coordinate for pie labels
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getPieLabelY = ({ dy = 0, height, labelPosition, padding, width }: ChartPieLabelInterface) => {
   const origin = getPieOrigin({ height, padding, width });
@@ -106,7 +110,8 @@ export const getPieLabelY = ({ dy = 0, height, labelPosition, padding, width }: 
 
 /**
  * Returns an approximate size for the give text
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getLabelTextSize = ({ text, theme }: ChartLabelTextSizeInterface): { height: number; width: number } => {
   const style: any = theme.legend.style.labels;
