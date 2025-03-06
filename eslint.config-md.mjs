@@ -32,7 +32,7 @@ export default [
       'react/no-unknown-property': 'error',
       'react/jsx-no-undef': 'error',
       'no-restricted-imports': [
-        'warn',
+        'error',
         {
           paths: [
             {
