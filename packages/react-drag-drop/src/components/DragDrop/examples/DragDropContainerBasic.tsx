@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import {
   Droppable as NewDroppable,
   DraggableObject,
@@ -9,7 +9,7 @@ import {
 } from '@patternfly/react-drag-drop';
 
 export const DragDropContainerBasic: React.FunctionComponent = () => {
-  const [allItems, setAllItems] = React.useState<Record<string, DraggableObject[]>>({
+  const [allItems, setAllItems] = useState<Record<string, DraggableObject[]>>({
     container1: [
       { id: 'button-1', content: 'one' },
       { id: 'button-2', content: 'two' },

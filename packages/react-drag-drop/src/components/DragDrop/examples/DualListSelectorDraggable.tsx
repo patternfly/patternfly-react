@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import {
   DualListSelector,
   DualListSelectorPane,
@@ -15,14 +15,14 @@ import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-d
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 export const ComposableDualListSelector: React.FunctionComponent = () => {
-  const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = React.useState(false);
-  const [availableOptions, setAvailableOptions] = React.useState<DraggableObject[]>([
+  const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = useState(false);
+  const [availableOptions, setAvailableOptions] = useState<DraggableObject[]>([
     { id: 'Apple', content: 'Apple', props: { key: 'Apple', isSelected: false } },
     { id: 'Banana', content: 'Banana', props: { key: 'Banana', isSelected: false } },
     { id: 'Pineapple', content: 'Pineapple', props: { key: 'Pineapple', isSelected: false } }
   ]);
 
-  const [chosenOptions, setChosenOptions] = React.useState<DraggableObject[]>([
+  const [chosenOptions, setChosenOptions] = useState<DraggableObject[]>([
     { id: 'Orange', content: 'Orange', props: { key: 'Orange', isSelected: false } },
     { id: 'Grape', content: 'Grape', props: { key: 'Grape', isSelected: false } },
     { id: 'Peach', content: 'Peach', props: { key: 'Peach', isSelected: false } },

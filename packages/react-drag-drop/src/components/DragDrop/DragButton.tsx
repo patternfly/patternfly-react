@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import dragButtonStyles from '@patternfly/react-styles/css/components/DataList/data-list';

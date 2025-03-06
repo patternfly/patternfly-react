@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { css } from '@patternfly/react-styles';
@@ -42,7 +42,7 @@ export const DraggableDualListSelectorListItem: React.FunctionComponent<Draggabl
     animateLayoutChanges: () => false
   });
 
-  const { setFocusedOption } = React.useContext(DualListSelectorListContext);
+  const { setFocusedOption } = useContext(DualListSelectorListContext);
 
   const style = {
     transform: CSS.Transform.toString(transform),

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, useMemo } from 'react';
 import { useDroppable } from '@dnd-kit/core';
 import { DraggableObject } from './DragDropContainer';
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
@@ -17,7 +17,7 @@ interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
   wrapper?: React.ReactElement<any>;
   /** The variant determines which component wraps the draggable object.
    * Default variant wraps the draggable object in a div.
-   * DataList vairant wraps the draggable object in a DataListItem
+   * DataList variant wraps the draggable object in a DataListItem
    * DualListSelectorList variant wraps the draggable objects in a DualListSelectorListItem and a div.pf-c-dual-list-selector__item-text element
    * TableComposable variant wraps the draggable objects in TODO
    * */
@@ -31,7 +31,7 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
   wrapper,
   ...props
 }: DroppableProps) => {
-  const itemIds = React.useMemo(() => (items ? Array.from(items, (item) => item.id as string) : []), [items]);
+  const itemIds = useMemo(() => (items ? Array.from(items, (item) => item.id as string) : []), [items]);
   const { setNodeRef } = useDroppable({ id: id ? id : 'droppable' });
 
   const content = items.map((item: DraggableObject) => {
@@ -60,7 +60,7 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
   return (
     <SortableContext items={itemIds} strategy={verticalListSortingStrategy} id={id}>
       {wrapper &&
-        React.cloneElement(wrapper, {
+        cloneElement(wrapper, {
           children: content,
           ref: setNodeRef,
           ...props
