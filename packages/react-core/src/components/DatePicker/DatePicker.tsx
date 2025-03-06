@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import calendarMonthStyles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
@@ -8,7 +8,6 @@ import { Popover, PopoverProps } from '../Popover/Popover';
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
 import { CalendarMonth, CalendarFormat } from '../CalendarMonth';
-import { useImperativeHandle } from 'react';
 import { KeyTypes } from '../../helpers';
 import { isValidDate } from '../../helpers/datetimeUtils';
 import { HelperText, HelperTextItem } from '../HelperText';

@@ -1,5 +1,4 @@
-import { Children, isValidElement } from 'react';
-import { Fragment } from 'react';
+import { Children, Fragment, isValidElement } from 'react';
 import { isCustomWizardNavItem, isWizardBasicStep, isWizardParentStep } from './types';
 import { WizardProps } from './Wizard';
 import { useWizardContext } from './WizardContext';

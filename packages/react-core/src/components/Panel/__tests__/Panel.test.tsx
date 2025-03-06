@@ -1,10 +1,9 @@
-import { createRef, useState } from 'react';
+import { createRef, useEffect, useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import { Panel } from '../Panel';
 import { PanelMain } from '../PanelMain';
 import { PanelMainBody } from '../PanelMainBody';
 import userEvent from '@testing-library/user-event';
-import { useEffect } from 'react';
 import styles from '@patternfly/react-styles/css/components/Panel/panel';
 
 test('Renders without children', () => {

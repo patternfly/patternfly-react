@@ -1,4 +1,4 @@
-import { Component, createRef } from 'react';
+import { Component, createRef, type JSX } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_xl';
@@ -10,8 +10,6 @@ import { getResizeObserver } from '../../helpers/resizeObserver';
 import { getBreakpoint, getVerticalBreakpoint } from '../../helpers/util';
 import { PageContextProvider } from './PageContext';
 import { PageBody } from './PageBody';
-
-import type { JSX } from 'react';
 
 export enum PageLayouts {
   vertical = 'vertical',

@@ -1,4 +1,4 @@
-import { cloneElement, Fragment } from 'react';
+import { cloneElement, Fragment, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, PaddingProps } from 'victory-core';
 import { VictoryChart } from 'victory-chart';
@@ -28,7 +28,6 @@ import { ChartBulletQualitativeRange } from './ChartBulletQualitativeRange';
 import { getBulletDomain } from './utils/chart-bullet-domain';
 import { getBulletThemeWithLegendColorScale } from './utils/chart-bullet-theme';
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
-import { useEffect } from 'react';
 import { ChartPoint } from '../ChartPoint/ChartPoint';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 

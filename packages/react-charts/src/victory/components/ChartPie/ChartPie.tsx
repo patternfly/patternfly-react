@@ -1,4 +1,4 @@
-import { cloneElement, Fragment } from 'react';
+import { cloneElement, Fragment, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -32,7 +32,6 @@ import { getComputedLegend, getLegendItemsExtraHeight, getLegendMaxTextWidth } f
 import { getPaddingForSide } from '../ChartUtils/chart-padding';
 import { getPatternDefs, useDefaultPatternProps } from '../ChartUtils/chart-patterns';
 import { getTheme } from '../ChartUtils/chart-theme';
-import { useEffect } from 'react';
 import { ChartPoint } from '../ChartPoint/ChartPoint';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 
