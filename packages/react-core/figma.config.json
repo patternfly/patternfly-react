@@ -2,23 +2,56 @@
   "codeConnect": {
     "parser": "react",
     "label": "PF-React",
+    "include": [
+      "codeConnect/components/**/*.tsx",
+      "codeConnect/layouts/**/*.tsx",
+      "codeConnect/icons/**/*.tsx",
+      "codeConnect/IconFigmaConnect.tsx",
+      "src/components/**/*.tsx"
+    ],
     "importPaths": {
-      "*": "src/components"
+      "src/components/**/*": "@patternfly/react-core/dist/js/components",
+      "src/layouts/**/*": "@patternfly/react-core/dist/js/layouts",
+      "src/icons/**/*": "@patternfly/react-core/dist/js/icons",
+      "codeConnect/icons/**/*": "./icons"
     },
     "paths": {
-      "./next": ["@next"],
-      "./deprecated": ["@deprecated"]
+      "@patternfly/react-core/dist/js/components": [
+        "src/components"
+      ],
+      "@patternfly/react-core/dist/js/layouts": [
+        "src/layouts"
+      ],
+      "@patternfly/react-core/dist/js/icons": [
+        "src/icons"
+      ],
+      "components": [
+        "codeConnect/components"
+      ],
+      "icons": [
+        "codeConnect/icons"
+      ],
+      "images": [
+        "codeConnect/images"
+      ],
+      "layouts": [
+        "codeConnect/layouts"
+      ]
     },
-    "include": [
-      "src/components/**/*",
-      "src/components/**/**/*"
-    ],
-    "exclude": [
-      "src/components/**/__tests__/*",
-      "src/components/**/_tests_/*",
-      "src/components/**/examples/*",
-      "src/components/assets/*",
-      "src/components/Icon/*"
-    ]
+    "aliases": {
+      "@patternfly/react-core": "."
+    },
+    "options": {
+      "instanceSwapper": {
+        "enabled": true
+      },
+      "development": {
+        "enabled": true,
+        "verbose": true
+      },
+      "production": {
+        "enabled": false
+      }
+    }
   }
 }

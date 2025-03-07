@@ -1,24 +1,50 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "./dist/esm",
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom", "esnext"],
+    "jsx": "react",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "tsBuildInfoFile": "dist/esm.tsbuildinfo",
     "baseUrl": ".",
     "paths": {
+      "./components": ["./src/components"],
       "./next": ["./src/next"],
       "./deprecated": ["./src/deprecated"]
     }
   },
   "include": [
+    "icons/**/*",
+    "IconWrapper.tsx",
     "fix-figma-urls.ts",
     "CONSTANTS.ts",
     "./src/*",
-    "./src/**/*"
+    "./src/**/*",
+    "vite.config.js",
+    "codeConnect/components/Wizard.figma.tsx"
   ],
   "references": [
     {
       "path": "../react-styles"
     }
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.tsx",
+    "**/*.figma.tsx",
+    "**/*.stories.tsx",
+    "**/*.mjs"
   ]
 }
