@@ -28,8 +28,8 @@ import { Truncate } from '@patternfly/react-core';
 
 <div className="truncate-example-resize">
   <Truncate
-    content={'redhat_logo_black_and_white_reversed_simple_with_fedora_container.zip'}
-    trailingNumChars={10}
+    content={'rh_logo_black_and_white_reversed_fedora_container.zip'}
+    trailingNumChars={0}
     position={'middle'}
   />
 </div>
