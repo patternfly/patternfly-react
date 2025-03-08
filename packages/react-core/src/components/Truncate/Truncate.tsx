@@ -22,7 +22,8 @@ interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
   className?: string;
   /** Text to truncate */
   content: string;
-  /** The number of characters displayed in the second half of the truncation */
+  /** The number of characters displayed in the second half of the truncation. When using middle truncation, set this to 0 for true middle truncation.
+   */
   trailingNumChars?: number;
   /** Where the text will be truncated */
   position?: 'start' | 'middle' | 'end';
@@ -44,7 +45,15 @@ interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
     | 'right-end';
 }
 
-const sliceContent = (str: string, slice: number) => [str.slice(0, str.length - slice), str.slice(-slice)];
+const sliceContent = (content: string, trailingChars: number) => {
+  if (trailingChars === 0) {
+    const middle = Math.floor(content.length / 2);
+    const left = content.slice(0, middle);
+    const right = content.slice(middle);
+    return [left, right];
+  }
+  return [content.slice(0, content.length - trailingChars), content.slice(-trailingChars)];
+};
 
 export const Truncate: React.FunctionComponent<TruncateProps> = ({
   className,
@@ -116,21 +125,34 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
           {position === TruncatePosition.start && <React.Fragment>&lrm;</React.Fragment>}
         </span>
       )}
-      {position === TruncatePosition.middle && content.length - trailingNumChars > minWidthCharacters && (
+
+      {position === TruncatePosition.middle && trailingNumChars === 0 && (
         <React.Fragment>
           <span ref={textRef} className={styles.truncateStart}>
-            {sliceContent(content, trailingNumChars)[0]}
+            {sliceContent(content, 0)[0]}
           </span>
-          <span className={styles.truncateEnd}>{sliceContent(content, trailingNumChars)[1]}</span>
+          <span className={styles.truncateEnd}>{sliceContent(content, 0)[1]}</span>
         </React.Fragment>
       )}
-      {position === TruncatePosition.middle && content.length - trailingNumChars <= minWidthCharacters && (
-        <React.Fragment>
-          <span ref={textRef} className={styles.truncateStart}>
-            {content}
-          </span>
-        </React.Fragment>
-      )}
+      {position === TruncatePosition.middle &&
+        trailingNumChars > 0 &&
+        content.length - trailingNumChars > minWidthCharacters && (
+          <React.Fragment>
+            <span ref={textRef} className={styles.truncateStart}>
+              {sliceContent(content, trailingNumChars)[0]}
+            </span>
+            <span className={styles.truncateEnd}>{sliceContent(content, trailingNumChars)[1]}</span>
+          </React.Fragment>
+        )}
+      {position === TruncatePosition.middle &&
+        trailingNumChars > 0 &&
+        content.length - trailingNumChars <= minWidthCharacters && (
+          <React.Fragment>
+            <span ref={textRef} className={styles.truncateStart}>
+              {content}
+            </span>
+          </React.Fragment>
+        )}
     </span>
   );
 
