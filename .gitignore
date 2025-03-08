@@ -10,6 +10,7 @@ coverage
 .tmp
 .eslintcache
 package-lock.json
+.env
 
 # package managers
 yarn-error.log
@@ -32,3 +33,8 @@ lerna-debug.log
 # For vim
 *.swp
 .yarn
+.env
+
+packages/ext-alias/
+packages/figma-property-inspector/
+packages/react-core/plugins/

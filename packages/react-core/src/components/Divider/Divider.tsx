@@ -25,12 +25,12 @@ export interface DividerProps extends React.HTMLProps<HTMLElement> {
   };
   /** Indicates how the divider will display at various breakpoints. Vertical divider must be in a flex layout. */
   orientation?: {
-    default?: 'vertical' | 'horizontal';
-    sm?: 'vertical' | 'horizontal';
-    md?: 'vertical' | 'horizontal';
-    lg?: 'vertical' | 'horizontal';
-    xl?: 'vertical' | 'horizontal';
-    '2xl'?: 'vertical' | 'horizontal';
+    default?: 'vertical' | 'test';
+    sm?: 'vertical' | 'test';
+    md?: 'vertical' | 'test';
+    lg?: 'vertical' | 'test';
+    xl?: 'vertical' | 'test';
+    '2xl'?: 'vertical' | 'test';
   };
 }
 

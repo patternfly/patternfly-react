@@ -1,0 +1,12 @@
+{
+  "name": "PatternFly Icons",
+  "description": "PatternFly icon components with Figma integration",
+  "figmaFileUrl": "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/H3LonYnwH26v9zNEa2SXFk/PatternFly-6%3A-Components",
+  "components": [
+    {
+      "name": "Icon",
+      "description": "PatternFly Icon component with instance swapper for different icons",
+      "url": "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/H3LonYnwH26v9zNEa2SXFk/PatternFly-6%3A-Components?m=auto&node-id=198-1573"
+    }
+  ]
+}

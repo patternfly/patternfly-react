@@ -74,3 +74,9 @@ Passing the `isInProgress` property will swap the icon to a progress icon. By de
 
 ```ts file="IconCustomProgress.tsx"
 ```
+
+### Custom in progress icon
+
+```
+{console.log('here')}
+```
