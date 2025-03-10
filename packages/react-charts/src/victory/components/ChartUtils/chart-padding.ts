@@ -2,7 +2,8 @@ import { PaddingProps } from 'victory-core';
 
 /**
  * Helper function to return padding style properties
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getPaddingForSide = (
   side: 'bottom' | 'left' | 'right' | 'top',

@@ -48,7 +48,8 @@ interface ChartLegendTooltipVisibleTextInterface {
  * When using a cursor container, the tooltip can be offset from the cursor point. If offsetCursorDimensionX is true,
  * the tooltip will appear to the right the vertical cursor. If offsetCursorDimensionY is true, the tooltip will appear
  * above the vertical cursor.
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getCursorTooltipCenterOffset = ({
   offsetCursorDimensionX = false,
@@ -74,7 +75,8 @@ export const getCursorTooltipCenterOffset = ({
  * When using a cursor container, the tooltip pointer orientation can be adjusted as the cursor approaches the edge of
  * the chart. If horizontal is true, the tooltip pointer will either be 'left' or 'right'. If horizontal is true, the
  * tooltip pointer will either be 'top' or 'bottom'.
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getCursorTooltipPoniterOrientation = ({
   horizontal = true,
@@ -90,7 +92,8 @@ export const getCursorTooltipPoniterOrientation = ({
 
 /**
  * Returns props associated with legend data
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getLegendTooltipDataProps = (props: ChartLegendProps) =>
   merge(
@@ -117,7 +120,8 @@ export const getLegendTooltipDataProps = (props: ChartLegendProps) =>
 
 /**
  * Returns the legend height and width
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getLegendTooltipSize = ({
   legendData,
@@ -219,7 +223,8 @@ export const getLegendTooltipSize = ({
 /**
  * Returns visible legend data, while syncing color scale. If textAsLegendData is true, the text prop is used as
  * legend data so y values can be passed individually to the label component
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getLegendTooltipVisibleData = ({
   activePoints,
@@ -268,7 +273,8 @@ export const getLegendTooltipVisibleData = ({
 
 /**
  * Returns visible text for interactive legends
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getLegendTooltipVisibleText = ({
   activePoints,

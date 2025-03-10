@@ -18,8 +18,8 @@ const COLOR_SCALE = [
 
 /**
  * Skeleton color theme
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export const SkeletonColorTheme = ColorTheme({
   COLOR_SCALE
@@ -27,8 +27,8 @@ export const SkeletonColorTheme = ColorTheme({
 
 /**
  * Skeleton color theme
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export const SkeletonColorComponentTheme = ColorComponentTheme({
   COLOR_SCALE
