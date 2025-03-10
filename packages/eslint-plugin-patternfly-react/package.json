@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-patternfly-react",
-  "version": "6.2.0-prerelease.5",
+  "version": "6.2.0-prerelease.6",
   "type": "commonjs",
   "exports": {
     ".": "./lib/index.js"
