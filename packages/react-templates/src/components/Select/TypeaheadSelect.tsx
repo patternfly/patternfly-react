@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef, useEffect, useRef, useState } from 'react';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import {
@@ -79,20 +79,18 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
   toggleProps,
   ...props
 }: TypeaheadSelectProps) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<string>(String(initialOptions.find((o) => o.selected)?.content ?? ''));
-  const [inputValue, setInputValue] = React.useState<string>(
-    String(initialOptions.find((o) => o.selected)?.content ?? '')
-  );
-  const [filterValue, setFilterValue] = React.useState<string>('');
-  const [selectOptions, setSelectOptions] = React.useState<TypeaheadSelectOption[]>(initialOptions);
-  const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
-  const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
-  const textInputRef = React.useRef<HTMLInputElement>(undefined);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<string>(String(initialOptions.find((o) => o.selected)?.content ?? ''));
+  const [inputValue, setInputValue] = useState<string>(String(initialOptions.find((o) => o.selected)?.content ?? ''));
+  const [filterValue, setFilterValue] = useState<string>('');
+  const [selectOptions, setSelectOptions] = useState<TypeaheadSelectOption[]>(initialOptions);
+  const [focusedItemIndex, setFocusedItemIndex] = useState<number | null>(null);
+  const [activeItemId, setActiveItemId] = useState<string | null>(null);
+  const textInputRef = useRef<HTMLInputElement>(undefined);
 
   const NO_RESULTS = 'no results';
 
-  React.useEffect(() => {
+  useEffect(() => {
     let newSelectOptions: TypeaheadSelectOption[] = initialOptions;
 
     // Filter menu items based on the text input value when one exists
@@ -153,7 +151,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
     noOptionsAvailableMessage
   ]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // If the selected option changed and the current input value is the previously selected item, update the displayed value.
     const selectedOption = initialOptions.find((o) => o.selected);
     if (inputValue === selected && selectedOption?.value !== selected) {
@@ -376,7 +374,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
 };
 TypeaheadSelectBase.displayName = 'TypeaheadSelectBase';
 
-export const TypeaheadSelect = React.forwardRef((props: TypeaheadSelectProps, ref: React.Ref<any>) => (
+export const TypeaheadSelect = forwardRef((props: TypeaheadSelectProps, ref: React.Ref<any>) => (
   <TypeaheadSelectBase {...props} innerRef={ref} />
 ));
 

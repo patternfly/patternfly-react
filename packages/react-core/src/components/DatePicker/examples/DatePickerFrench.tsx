@@ -1,4 +1,3 @@
-import React from 'react';
 import { DatePicker, Weekday } from '@patternfly/react-core';
 
 export const DatePickerFrench: React.FunctionComponent = () => {

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useMemo } from 'react';
 import { DndContextProps, DragEndEvent, DragStartEvent } from '@dnd-kit/core';
 import { Droppable } from './Droppable';
 import { DragDropContainer, DraggableObject } from './DragDropContainer';
@@ -38,7 +38,7 @@ export const DragDropSort: React.FunctionComponent<DragDropSortProps> = ({
   overlayProps,
   ...props
 }: DragDropSortProps) => {
-  const itemIds = React.useMemo(() => (items ? Array.from(items, (item) => item.id as string) : []), [items]);
+  const itemIds = useMemo(() => (items ? Array.from(items, (item) => item.id as string) : []), [items]);
 
   const handleDragStart = (event: DragStartEvent) => {
     onDrag(event, itemIds.indexOf(event.active.id as string));

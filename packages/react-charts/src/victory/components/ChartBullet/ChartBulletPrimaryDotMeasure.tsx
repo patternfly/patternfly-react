@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { DataGetterPropType, DomainPropType, PaddingProps } from 'victory-core';
 import { VictoryScatter } from 'victory-scatter';
@@ -208,7 +208,7 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
   // Label component
   //
   // Note: SVG height and width are provided by ChartBullet as a workaround to support constrainToVisibleArea
-  const tooltip = React.cloneElement(labelComponent, {
+  const tooltip = cloneElement(labelComponent, {
     constrainToVisibleArea,
     dx: 0,
     dy: horizontal ? -size : 0,
@@ -217,7 +217,7 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
   });
 
   const measure = computedData.map((dataPoint: any, index) =>
-    React.cloneElement(measureComponent, {
+    cloneElement(measureComponent, {
       data: [{ ...dataPoint }],
       domain,
       height,
@@ -245,7 +245,7 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
       {measure}
     </ChartContainer>
   ) : (
-    <React.Fragment>{measure}</React.Fragment>
+    <Fragment>{measure}</Fragment>
   );
 };
 ChartBulletPrimaryDotMeasure.displayName = 'ChartBulletPrimaryDotMeasure';

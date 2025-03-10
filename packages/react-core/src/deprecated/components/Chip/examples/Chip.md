@@ -7,6 +7,8 @@ ouia: true
 deprecated: true
 ---
 
+import { Fragment } from 'react';
+
 ## Examples
 
 ### Chip variants

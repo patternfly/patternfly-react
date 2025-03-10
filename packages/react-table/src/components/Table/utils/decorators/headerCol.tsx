@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
 
 export const headerCol = (id = 'simple-node') => {

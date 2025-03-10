@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -45,9 +45,9 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   const ouiaProps = useOUIAProps(WizardNavItem.displayName, ouiaId, ouiaSafe);
   const NavItemComponent = navItemComponent;
 
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsExpanded(isCurrent);
   }, [isCurrent]);
 

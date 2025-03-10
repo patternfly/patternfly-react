@@ -5,6 +5,7 @@ cssPrefix: pf-v6-c-badge
 propComponents: ['Badge']
 ---
 
+import { Fragment } from 'react';
 import './Badge.css';
 
 ## Examples

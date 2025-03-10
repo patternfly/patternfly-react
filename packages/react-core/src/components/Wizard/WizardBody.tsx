@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { useContext, useEffect, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
 import { WizardContext } from './WizardContext';
@@ -38,13 +37,13 @@ export const WizardBody = ({
   component = 'div',
   ...props
 }: WizardBodyProps) => {
-  const [hasScrollbar, setHasScrollbar] = React.useState(false);
-  const [previousWidth, setPreviousWidth] = React.useState<number | undefined>(undefined);
+  const [hasScrollbar, setHasScrollbar] = useState(false);
+  const [previousWidth, setPreviousWidth] = useState<number | undefined>(undefined);
   const WrapperComponent = component;
-  const { activeStep, shouldFocusContent, mainWrapperRef } = React.useContext(WizardContext);
+  const { activeStep, shouldFocusContent, mainWrapperRef } = useContext(WizardContext);
   const defaultAriaLabel = ariaLabel || `${activeStep?.name} content`;
 
-  React.useEffect(() => {
+  useEffect(() => {
     const resize = () => {
       if (mainWrapperRef?.current) {
         const { offsetWidth, offsetHeight, scrollHeight } = mainWrapperRef.current;

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { StrictMode } from 'react';
 import { render } from '@testing-library/react';
 import { Popover, PopoverPosition } from '../Popover';
 
@@ -94,7 +94,7 @@ test('popover can close from content (uncontrolled)', () => {
 test('popover renders in strict mode', () => {
   const consoleError = jest.spyOn(console, 'error');
   const { asFragment } = render(
-    <React.StrictMode>
+    <StrictMode>
       <Popover
         id="test"
         position="top"
@@ -109,7 +109,7 @@ test('popover renders in strict mode', () => {
       >
         <div>Toggle Popover</div>
       </Popover>
-    </React.StrictMode>
+    </StrictMode>
   );
   expect(consoleError).not.toHaveBeenCalled();
   expect(asFragment()).toMatchSnapshot();

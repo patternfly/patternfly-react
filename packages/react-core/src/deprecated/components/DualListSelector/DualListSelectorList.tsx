@@ -1,7 +1,7 @@
+import { useContext } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { DualListSelectorListItem } from './DualListSelectorListItem';
-import * as React from 'react';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 
 /** Acts as the container for DualListSelectorListItem sub-components. */
@@ -26,7 +26,7 @@ export const DualListSelectorList: React.FunctionComponent<DualListSelectorListP
     onOptionSelect,
     options,
     isDisabled
-  } = React.useContext(DualListSelectorListContext);
+  } = useContext(DualListSelectorListContext);
 
   // only called when options are passed via options prop
   const onOptionClick = (e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent, index: number, id: string) => {

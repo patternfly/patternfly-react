@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import breadcrumbStyles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
@@ -73,11 +73,11 @@ export interface MenuState {
   currentDrilldownMenuId: string;
 }
 
-class MenuBase extends React.Component<MenuProps, MenuState> {
+class MenuBase extends Component<MenuProps, MenuState> {
   static displayName = 'Menu';
   static contextType = MenuContext;
   context!: React.ContextType<typeof MenuContext>;
-  private menuRef = React.createRef<HTMLDivElement>();
+  private menuRef = createRef<HTMLDivElement>();
   private activeMenu = null as Element;
   static defaultProps: MenuProps = {
     ouiaSafe: true,
@@ -339,7 +339,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   }
 }
 
-export const Menu = React.forwardRef((props: MenuProps, ref: React.Ref<HTMLDivElement>) => (
+export const Menu = forwardRef((props: MenuProps, ref: React.Ref<HTMLDivElement>) => (
   <MenuBase {...props} innerRef={ref} />
 ));
 Menu.displayName = 'Menu';

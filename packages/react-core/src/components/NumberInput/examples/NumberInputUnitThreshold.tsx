@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputUnitThreshold: React.FunctionComponent = () => {
@@ -43,7 +43,7 @@ export const NumberInputUnitThreshold: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       With a minimum value of 0 and maximum value of 10
       <br />
       <NumberInput
@@ -60,6 +60,6 @@ export const NumberInputUnitThreshold: React.FunctionComponent = () => {
         plusBtnAriaLabel="plus"
         unit="%"
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

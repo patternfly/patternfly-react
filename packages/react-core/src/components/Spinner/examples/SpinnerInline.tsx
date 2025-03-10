@@ -1,8 +1,8 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Spinner, Content } from '@patternfly/react-core';
 
 export const SpinnerInline: React.FunctionComponent = () => (
-  <React.Fragment>
+  <Fragment>
     <Content>
       <h1>
         Heading
@@ -23,5 +23,5 @@ export const SpinnerInline: React.FunctionComponent = () => (
         <Spinner isInline aria-label="Spinner in a small element" />
       </small>
     </Content>
-  </React.Fragment>
+  </Fragment>
 );

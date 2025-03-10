@@ -1,5 +1,5 @@
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 export class TabsExpandableDemo extends Component {
   state = {

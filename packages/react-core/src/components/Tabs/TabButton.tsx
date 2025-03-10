@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export interface TabButtonProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'ref'>, OUIAProps {

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Th } from '../../../components';
 
 export interface HeaderCellProps {

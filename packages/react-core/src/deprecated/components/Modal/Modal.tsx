@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import * as ReactDOM from 'react-dom';
 import { canUseDOM, KeyTypes, PickOptional } from '../../../helpers';
 import { css } from '@patternfly/react-styles';
@@ -95,7 +95,7 @@ interface ModalState {
   ouiaStateId: string;
 }
 
-class Modal extends React.Component<ModalProps, ModalState> {
+class Modal extends Component<ModalProps, ModalState> {
   static displayName = 'Modal';
   static currentId = 0;
   boxId = '';

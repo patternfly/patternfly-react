@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { OriginType } from 'victory-core';
 import { VictoryVoronoiContainer, VictoryVoronoiContainerProps } from 'victory-voronoi-container';
@@ -63,7 +63,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * the description, the more usable it will be for people using screen readers.
    * This prop defaults to an empty string.
    *
-   * @example "Golden retreivers make up 30%, Labs make up 25%, and other dog breeds are
+   * @example "Golden retrievers make up 30%, Labs make up 25%, and other dog breeds are
    * not represented above 5% each."
    */
   desc?: string;
@@ -236,7 +236,7 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
   ...rest
 }: ChartVoronoiContainerProps) => {
   const chartClassName = getClassName({ className });
-  const chartLabelComponent = React.cloneElement(labelComponent, {
+  const chartLabelComponent = cloneElement(labelComponent, {
     constrainToVisibleArea,
     theme,
     ...labelComponent.props

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
 import { WizardDrawerWrapper } from './WizardDrawerWrapper';
@@ -43,11 +43,11 @@ export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
   activeStep
 }: WizardBodyProps) => {
   const MainComponent = mainComponent;
-  const [hasScrollbar, setHasScrollbar] = React.useState(false);
-  const [previousWidth, setPreviousWidth] = React.useState<number | undefined>(undefined);
-  const wizardBodyRef = React.useRef(null);
+  const [hasScrollbar, setHasScrollbar] = useState(false);
+  const [previousWidth, setPreviousWidth] = useState<number | undefined>(undefined);
+  const wizardBodyRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const resize = () => {
       if (wizardBodyRef?.current) {
         const { offsetWidth, offsetHeight, scrollHeight } = wizardBodyRef.current;

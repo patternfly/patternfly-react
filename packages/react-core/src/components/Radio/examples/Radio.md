@@ -7,6 +7,8 @@ propComponents: ['Radio']
 ouia: true
 ---
 
+import { Fragment } from 'react';
+
 ## Examples
 
 ### Controlled

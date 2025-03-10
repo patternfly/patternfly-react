@@ -12,7 +12,6 @@ import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon'
 ### Provide a generated password
 
 ```ts
-import React from 'react';
 import {
   InputGroup,
   InputGroupItem,

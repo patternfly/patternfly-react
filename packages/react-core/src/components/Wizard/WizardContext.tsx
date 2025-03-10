@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { isCustomWizardFooter, isWizardSubStep, WizardStepType, WizardFooterType } from './types';
 import { WizardFooter, WizardFooterProps } from './WizardFooter';
 
@@ -36,7 +35,7 @@ export interface WizardContextProps {
   mainWrapperRef: React.RefObject<HTMLElement | null>;
 }
 
-export const WizardContext = React.createContext({} as WizardContextProps);
+export const WizardContext = createContext({} as WizardContextProps);
 
 export interface WizardContextProviderProps {
   steps: WizardStepType[];
@@ -71,11 +70,11 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   shouldFocusContent,
   mainWrapperRef
 }) => {
-  const [currentSteps, setCurrentSteps] = React.useState<WizardStepType[]>(initialSteps);
-  const [currentFooter, setCurrentFooter] = React.useState<WizardFooterType>();
+  const [currentSteps, setCurrentSteps] = useState<WizardStepType[]>(initialSteps);
+  const [currentFooter, setCurrentFooter] = useState<WizardFooterType>();
 
   // Callback to update steps if the overall step number changes
-  React.useEffect(() => {
+  useEffect(() => {
     if (currentSteps.length !== initialSteps.length) {
       const newSteps = initialSteps.map((newStep) => {
         const currentStepMatch = currentSteps.find((step) => step.id === newStep.id);
@@ -90,7 +89,7 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
   }, [currentSteps, initialSteps]);
 
   // Combined initial and current state steps
-  const steps = React.useMemo(
+  const steps = useMemo(
     () =>
       currentSteps.map((currentStepProps, index) => ({
         ...currentStepProps,
@@ -99,16 +98,13 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
     [initialSteps, currentSteps]
   );
 
-  const activeStep = React.useMemo(
-    () => steps.find((step) => step.index === activeStepIndex),
-    [activeStepIndex, steps]
-  );
+  const activeStep = useMemo(() => steps.find((step) => step.index === activeStepIndex), [activeStepIndex, steps]);
 
-  const close = React.useCallback(() => onClose?.(null), [onClose]);
-  const goToNextStep = React.useCallback(() => onNext(null, steps), [onNext, steps]);
-  const goToPrevStep = React.useCallback(() => onBack(null, steps), [onBack, steps]);
+  const close = useCallback(() => onClose?.(null), [onClose]);
+  const goToNextStep = useCallback(() => onNext(null, steps), [onNext, steps]);
+  const goToPrevStep = useCallback(() => onBack(null, steps), [onBack, steps]);
 
-  const footer = React.useMemo(() => {
+  const footer = useMemo(() => {
     const wizardFooter = activeStep?.footer || currentFooter || initialFooter;
 
     if (isCustomWizardFooter(wizardFooter)) {
@@ -131,9 +127,9 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
     );
   }, [currentFooter, initialFooter, activeStep, goToNextStep, goToPrevStep, close]);
 
-  const getStep = React.useCallback((stepId: string | number) => steps.find((step) => step.id === stepId), [steps]);
+  const getStep = useCallback((stepId: string | number) => steps.find((step) => step.id === stepId), [steps]);
 
-  const setStep = React.useCallback(
+  const setStep = useCallback(
     (step: Pick<WizardStepType, 'id'> & Partial<WizardStepType>) =>
       setCurrentSteps((prevSteps) =>
         prevSteps.map((prevStep) => {
@@ -158,12 +154,9 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
         goToNextStep,
         goToPrevStep,
         setFooter: setCurrentFooter,
-        goToStepById: React.useCallback((id) => goToStepById(steps, id), [goToStepById, steps]),
-        goToStepByName: React.useCallback((name) => goToStepByName(steps, name), [goToStepByName, steps]),
-        goToStepByIndex: React.useCallback(
-          (index: number) => goToStepByIndex(null, steps, index),
-          [goToStepByIndex, steps]
-        ),
+        goToStepById: useCallback((id) => goToStepById(steps, id), [goToStepById, steps]),
+        goToStepByName: useCallback((name) => goToStepByName(steps, name), [goToStepByName, steps]),
+        goToStepByIndex: useCallback((index: number) => goToStepByIndex(null, steps, index), [goToStepByIndex, steps]),
         shouldFocusContent,
         mainWrapperRef
       }}
@@ -175,4 +168,4 @@ export const WizardContextProvider: React.FunctionComponent<WizardContextProvide
 
 WizardContextProvider.displayName = 'WizardContextProvider';
 
-export const useWizardContext = () => React.useContext(WizardContext);
+export const useWizardContext = () => useContext(WizardContext);

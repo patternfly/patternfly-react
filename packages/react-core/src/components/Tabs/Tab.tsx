@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { OUIAProps } from '../../helpers';
 import { TabButton } from './TabButton';
@@ -76,7 +76,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
     {}
   );
   const { mountOnEnter, localActiveKey, unmountOnExit, uniqueId, handleTabClick, handleTabClose } =
-    React.useContext(TabsContext);
+    useContext(TabsContext);
   let ariaControls = tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`;
   if ((mountOnEnter || unmountOnExit) && eventKey !== localActiveKey) {
     ariaControls = undefined;
@@ -142,5 +142,5 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   );
 };
 
-export const Tab = React.forwardRef((props: TabProps, ref: React.Ref<any>) => <TabBase innerRef={ref} {...props} />);
+export const Tab = forwardRef((props: TabProps, ref: React.Ref<any>) => <TabBase innerRef={ref} {...props} />);
 Tab.displayName = 'Tab';

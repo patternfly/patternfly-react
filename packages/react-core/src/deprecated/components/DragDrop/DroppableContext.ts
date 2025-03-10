@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { createContext } from 'react';
 
-export const DroppableContext = React.createContext({
+export const DroppableContext = createContext({
   zone: 'defaultDroppableZone',
   droppableId: 'defaultDroppableId'
 });

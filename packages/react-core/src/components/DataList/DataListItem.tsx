@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children, Component, cloneElement, isValidElement } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { DataListContext } from './DataList';
@@ -24,7 +24,7 @@ export interface DataListItemChildProps {
   rowid: string;
 }
 
-class DataListItem extends React.Component<DataListItemProps> {
+class DataListItem extends Component<DataListItemProps> {
   static displayName = 'DataListItem';
   static defaultProps: DataListItemProps = {
     isExpanded: false,
@@ -99,11 +99,11 @@ class DataListItem extends React.Component<DataListItemProps> {
                   {...selectableInputAriaProps}
                 />
               )}
-              {React.Children.map(
+              {Children.map(
                 children,
                 (child) =>
-                  React.isValidElement(child) &&
-                  React.cloneElement(child as React.ReactElement<any>, {
+                  isValidElement(child) &&
+                  cloneElement(child as React.ReactElement<any>, {
                     rowid: ariaLabelledBy
                   })
               )}

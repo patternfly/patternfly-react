@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import {
   DataList,
   DataListProps,
@@ -20,7 +20,7 @@ interface DataListState {
   isOpen: boolean;
 }
 
-class DataListDemo extends React.Component<DataListProps, DataListState> {
+class DataListDemo extends Component<DataListProps, DataListState> {
   static displayName = 'DataListDemo';
   constructor(props: DataListProps) {
     super(props);

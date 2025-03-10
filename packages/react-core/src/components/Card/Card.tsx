@@ -1,9 +1,7 @@
-import * as React from 'react';
+import { createContext, type JSX } from 'react';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { css } from '@patternfly/react-styles';
 import { useOUIAProps, OUIAProps } from '../../helpers';
-
-import type { JSX } from 'react';
 
 export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   /** Content rendered inside the Card */
@@ -56,7 +54,7 @@ interface CardContextProps {
   isDisabled: boolean;
 }
 
-export const CardContext = React.createContext<Partial<CardContextProps>>({
+export const CardContext = createContext<Partial<CardContextProps>>({
   cardId: '',
   isExpanded: false,
   isClickable: false,

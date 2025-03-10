@@ -1,4 +1,3 @@
-import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { Bullseye, Card, EmptyState, EmptyStateVariant, EmptyStateBody, PageSection } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';

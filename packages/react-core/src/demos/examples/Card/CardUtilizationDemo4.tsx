@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter, Title, Gallery, GalleryItem } from '@patternfly/react-core';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
 

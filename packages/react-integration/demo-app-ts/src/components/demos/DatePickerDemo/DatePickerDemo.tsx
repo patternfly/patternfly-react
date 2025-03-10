@@ -1,9 +1,9 @@
+import { useRef, useState } from 'react';
 import { DatePicker, DatePickerRef } from '@patternfly/react-core';
-import React from 'react';
 
 export const DatePickerDemo = () => {
-  const [value, setValue] = React.useState('2020-03-18');
-  const controlledDateRef = React.useRef<DatePickerRef>(null);
+  const [value, setValue] = useState('2020-03-18');
+  const controlledDateRef = useRef<DatePickerRef>(null);
 
   const rangeValidator = (date: Date) => {
     if (date < new Date('2020-03-17')) {

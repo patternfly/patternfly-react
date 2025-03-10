@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, Popover } from '@patternfly/react-core';
 import { Modal as ModalDeprecated } from '@patternfly/react-core/deprecated';
 
@@ -12,7 +12,7 @@ export const ModalWithHelp: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show with help modal
       </Button>
@@ -49,6 +49,6 @@ export const ModalWithHelp: React.FunctionComponent = () => {
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
         laborum.
       </ModalDeprecated>
-    </React.Fragment>
+    </Fragment>
   );
 };

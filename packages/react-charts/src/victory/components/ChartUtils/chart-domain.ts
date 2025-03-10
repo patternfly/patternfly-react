@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Data, DataGetterPropType } from 'victory-core';
 
 interface DomainInterface {

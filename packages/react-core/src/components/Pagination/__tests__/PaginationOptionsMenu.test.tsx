@@ -1,4 +1,3 @@
-import React from 'react';
 import { PaginationOptionsMenu } from '../PaginationOptionsMenu';
 import { render, screen } from '@testing-library/react';
 

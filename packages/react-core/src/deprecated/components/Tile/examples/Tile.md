@@ -73,7 +73,6 @@ You can also change the type of `Flex` you can use so that the line breaks in th
 ### Tiles with single selection
 
 ```ts
-import React from 'react';
 import { Tile } from '@patternfly/react-core/deprecated';
 
 const TileSingleSelect: React.FunctionComponent = () => {
@@ -104,7 +103,6 @@ const TileSingleSelect: React.FunctionComponent = () => {
 ### Tiles with multiple selection
 
 ```ts
-import React from 'react';
 import { Tile } from '@patternfly/react-core/deprecated';
 
 const TileMultiSelect: React.FunctionComponent = () => {

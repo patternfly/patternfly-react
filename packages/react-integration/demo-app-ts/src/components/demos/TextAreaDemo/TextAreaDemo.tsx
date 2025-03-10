@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Content, TextArea, ValidatedOptions } from '@patternfly/react-core';
 
 interface TextAreaState {
@@ -14,7 +14,7 @@ interface TextAreaState {
   validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success | ValidatedOptions.warning;
 }
 
-export class TextAreaDemo extends React.Component<{}, TextAreaState> {
+export class TextAreaDemo extends Component<{}, TextAreaState> {
   static displayName = 'TextAreaDemo';
   state = {
     textAreaValue: '',

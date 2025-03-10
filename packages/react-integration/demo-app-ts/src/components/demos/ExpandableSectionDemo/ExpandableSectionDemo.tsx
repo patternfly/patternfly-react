@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { ExpandableSection, ExpandableSectionToggle, Stack, StackItem } from '@patternfly/react-core';
 
 interface ExpandableSectionState {
@@ -7,7 +7,7 @@ interface ExpandableSectionState {
   isDisclosureExpanded: boolean;
 }
 
-export class ExpandableSectionDemo extends React.Component<null, ExpandableSectionState> {
+export class ExpandableSectionDemo extends Component<null, ExpandableSectionState> {
   static displayName = 'ExpandableSectionDemo';
   state = {
     isExpanded: false,

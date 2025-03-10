@@ -1,4 +1,3 @@
-import React from 'react';
 import { DataList, DataListItem, DataListItemRow, DataListItemCells, DataListCell } from '@patternfly/react-core';
 
 export const DataListBasic: React.FunctionComponent = () => (

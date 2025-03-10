@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { StrictMode } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
@@ -47,7 +46,7 @@ describe('Nav', () => {
   test('Renders nav list in strict mode', () => {
     const consoleError = jest.spyOn(console, 'error');
     const { asFragment } = renderNav(
-      <React.StrictMode>
+      <StrictMode>
         <Nav className="test-nav-class">
           <NavList className="test-nav-list-class">
             {props.items.map((item) => (
@@ -57,7 +56,7 @@ describe('Nav', () => {
             ))}
           </NavList>
         </Nav>
-      </React.StrictMode>
+      </StrictMode>
     );
     expect(consoleError).not.toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();

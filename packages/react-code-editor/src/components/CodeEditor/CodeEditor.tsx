@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef, Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
 import fileUploadStyles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
@@ -236,11 +236,11 @@ interface CodeEditorState {
   copied: boolean;
 }
 
-class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
+class CodeEditor extends Component<CodeEditorProps, CodeEditorState> {
   static displayName = 'CodeEditor';
   private editor: editor.IStandaloneCodeEditor | null = null;
-  private wrapperRef = React.createRef<HTMLDivElement>();
-  private ref = React.createRef<HTMLDivElement>();
+  private wrapperRef = createRef<HTMLDivElement>();
+  private ref = createRef<HTMLDivElement>();
   private timer: number | null = null;
   private observer = () => {};
 
@@ -576,7 +576,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
             !!shortcutsPopoverProps.bodyContent;
 
           const editorHeaderContent = (
-            <React.Fragment>
+            <Fragment>
               <div className={css(styles.codeEditorControls)}>
                 <CodeEditorContext.Provider value={{ code: value }}>
                   {isCopyEnabled && (!showEmptyState || !!value) && (
@@ -622,7 +622,7 @@ class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
                   </Popover>
                 </div>
               )}
-            </React.Fragment>
+            </Fragment>
           );
 
           const editorHeader = (

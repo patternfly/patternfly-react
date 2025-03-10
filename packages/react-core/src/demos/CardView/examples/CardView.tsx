@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import {
   Badge,
   Bullseye,
@@ -53,17 +53,17 @@ import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardVie
 export const CardViewBasic: React.FunctionComponent = () => {
   const totalItemCount = 10;
 
-  const [cardData, setCardData] = React.useState(data);
-  const [isChecked, setIsChecked] = React.useState(false);
-  const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
-  const [areAllSelected, setAreAllSelected] = React.useState<boolean>(false);
-  const [splitButtonDropdownIsOpen, setSplitButtonDropdownIsOpen] = React.useState(false);
-  const [isLowerToolbarDropdownOpen, setIsLowerToolbarDropdownOpen] = React.useState(false);
-  const [isLowerToolbarKebabDropdownOpen, setIsLowerToolbarKebabDropdownOpen] = React.useState(false);
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
-  const [filters, setFilters] = React.useState<Record<string, string[]>>({ products: [] });
-  const [state, setState] = React.useState({});
+  const [cardData, setCardData] = useState(data);
+  const [isChecked, setIsChecked] = useState(false);
+  const [selectedItems, setSelectedItems] = useState<number[]>([]);
+  const [areAllSelected, setAreAllSelected] = useState<boolean>(false);
+  const [splitButtonDropdownIsOpen, setSplitButtonDropdownIsOpen] = useState(false);
+  const [isLowerToolbarDropdownOpen, setIsLowerToolbarDropdownOpen] = useState(false);
+  const [isLowerToolbarKebabDropdownOpen, setIsLowerToolbarKebabDropdownOpen] = useState(false);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
+  const [filters, setFilters] = useState<Record<string, string[]>>({ products: [] });
+  const [state, setState] = useState({});
 
   interface ProductType {
     id: number;
@@ -409,7 +409,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
   ];
 
   const toolbarItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem>{buildSelectDropdown()}</ToolbarItem>
       <ToolbarItem>{buildFilterDropdown()}</ToolbarItem>
       <ToolbarItem>
@@ -441,7 +441,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
       <ToolbarItem variant="pagination" align={{ default: 'alignEnd' }}>
         {renderPagination()}
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const icons = {
@@ -463,7 +463,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
       : cardData.slice((page - 1) * perPage, perPage === 1 ? page * perPage : page * perPage - 1);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
         <PageSection>
           <Content>
@@ -557,6 +557,6 @@ export const CardViewBasic: React.FunctionComponent = () => {
           />
         </PageSection>
       </DashboardWrapper>
-    </React.Fragment>
+    </Fragment>
   );
 };

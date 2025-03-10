@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -45,7 +45,7 @@ interface ToolbarState {
   kebabIsOpen: boolean;
 }
 
-class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
+class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
   static displayName = 'ToolbarDemo';
   state = {
     isOpen: false,

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { FormSection } from '../FormSection';
 import { render, screen } from '@testing-library/react';
 

@@ -1,9 +1,9 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Icon } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const IconContentSizes: React.FunctionComponent = () => (
-  <React.Fragment>
+  <Fragment>
     <Icon size="3xl" iconSize="lg">
       <PlusCircleIcon />
     </Icon>{' '}
@@ -16,5 +16,5 @@ export const IconContentSizes: React.FunctionComponent = () => (
     <Icon size="3xl">
       <PlusCircleIcon />
     </Icon>
-  </React.Fragment>
+  </Fragment>
 );

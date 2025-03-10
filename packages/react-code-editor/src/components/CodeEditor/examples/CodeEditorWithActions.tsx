@@ -1,4 +1,3 @@
-import React from 'react';
 import { CodeEditor } from '@patternfly/react-code-editor';
 
 export const CodeEditorWithActions: React.FunctionComponent = () => (

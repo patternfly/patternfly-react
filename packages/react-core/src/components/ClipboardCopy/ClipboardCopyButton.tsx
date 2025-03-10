@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createRef } from 'react';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import { Button } from '../Button';
 import { Tooltip, TooltipPosition } from '../Tooltip';
@@ -63,7 +63,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   hasNoPadding = false,
   ...props
 }: ClipboardCopyButtonProps) => {
-  const triggerRef = React.createRef<HTMLButtonElement>();
+  const triggerRef = createRef<HTMLButtonElement>();
 
   return (
     <Tooltip

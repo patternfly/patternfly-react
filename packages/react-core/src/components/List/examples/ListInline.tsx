@@ -1,4 +1,3 @@
-import React from 'react';
 import { List, ListItem, ListVariant } from '@patternfly/react-core';
 
 export const ListInline: React.FunctionComponent = () => (

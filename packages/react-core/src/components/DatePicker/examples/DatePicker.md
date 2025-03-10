@@ -6,6 +6,8 @@ cssPrefix: pf-v6-c-date-picker
 propComponents: ['DatePicker', 'CalendarFormat', 'DatePickerRef', 'DatePickerRequiredObject']
 ---
 
+import { Fragment, useState, useRef } from 'react';
+
 ## Examples
 
 ### Basic

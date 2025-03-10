@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import * as ReactDOM from 'react-dom';
 import { css } from '@patternfly/react-styles';
 import {
@@ -79,17 +79,17 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
   overlayProps,
   ...props
 }: DragDropContainerProps) => {
-  const itemsCopy = React.useRef<Record<string, DraggableObject[]> | null>(null);
-  const hasRecentlyMovedContainer = React.useRef(false);
-  const [activeId, setActiveId] = React.useState<UniqueIdentifier>(null);
-  const lastOverId = React.useRef<UniqueIdentifier | null>(null);
+  const itemsCopy = useRef<Record<string, DraggableObject[]> | null>(null);
+  const hasRecentlyMovedContainer = useRef(false);
+  const [activeId, setActiveId] = useState<UniqueIdentifier>(null);
+  const lastOverId = useRef<UniqueIdentifier | null>(null);
 
-  const findItem = React.useCallback(
+  const findItem = useCallback(
     (id: UniqueIdentifier, containerId: UniqueIdentifier) => items[containerId].find((item) => item.id === id),
     [items]
   );
 
-  const findContainer = React.useCallback(
+  const findContainer = useCallback(
     (id: UniqueIdentifier) => {
       if (id in items) {
         return id;
@@ -106,7 +106,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
     })
   );
 
-  const collisionDetectionStrategy: CollisionDetection = React.useCallback(
+  const collisionDetectionStrategy: CollisionDetection = useCallback(
     (args) => {
       if (activeId && activeId in items) {
         return closestCenter({
@@ -146,7 +146,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
     [activeId, items]
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     requestAnimationFrame(() => {
       hasRecentlyMovedContainer.current = false;
     });

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children, cloneElement, Fragment, isValidElement, useMemo } from 'react';
 import uniqueId from 'lodash/uniqueId';
 
 interface PatternPropsInterface {
@@ -248,7 +248,7 @@ export const getPatternDefs = ({
 
   // This is wrapped in an empty tag so Victory does not apply child props to defs
   const defs = (
-    <React.Fragment key={`defs`}>
+    <Fragment key={`defs`}>
       <defs>
         {colorScale.map((color: string, index: number) => {
           const {
@@ -266,7 +266,7 @@ export const getPatternDefs = ({
           );
         })}
       </defs>
-    </React.Fragment>
+    </Fragment>
   );
   return defs;
 };
@@ -332,7 +332,7 @@ export const useDefaultPatternProps = ({
   const defaultColorScale = getDefaultColorScale(colorScale, themeColorScale);
   let defaultPatternScale = patternScale;
   let isPatternDefs = !patternScale && hasPatterns !== undefined;
-  const patternId = React.useMemo(() => (isPatternDefs ? getPatternId() : undefined), [isPatternDefs]);
+  const patternId = useMemo(() => (isPatternDefs ? getPatternId() : undefined), [isPatternDefs]);
 
   if (isPatternDefs) {
     defaultPatternScale = getDefaultPatternScale({
@@ -361,8 +361,8 @@ export const useDefaultPatternProps = ({
  * @private
  */
 export const renderChildrenWithPatterns = ({ children, patternScale, themeColor }: PatternPropsInterface) =>
-  React.Children.toArray(children).map((child, index) => {
-    if (React.isValidElement(child)) {
+  Children.toArray(children).map((child, index) => {
+    if (isValidElement(child)) {
       const { ...childProps } = child.props;
       const style = childProps.style ? { ...childProps.style } : {};
 
@@ -374,7 +374,7 @@ export const renderChildrenWithPatterns = ({ children, patternScale, themeColor 
           ...style.data
         };
       }
-      const _child = React.cloneElement(child, {
+      const _child = cloneElement(child, {
         ...(patternScale && { patternScale }),
         ...(themeColor && { themeColor }),
         ...childProps,

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { ThInfoType } from '../../base/types';
 import { HeaderCellInfoWrapper } from '../../HeaderCellInfoWrapper';
 import { IFormatterValueType, ITransform } from '../../TableTypes';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -169,7 +169,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * The eventKey may optionally be used to select a single element by index rather than an entire
    * set. The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
-   * of an event handler is used to modify elemnts. The return value should be given
+   * of an event handler is used to modify elements. The return value should be given
    * as an object or an array of objects with optional target and eventKey keys,
    * and a mutation key whose value is a function. The target and eventKey keys
    * will default to those corresponding to the element the event handler was attached to.
@@ -471,7 +471,7 @@ export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
   ...rest
 }: ChartBarProps) => {
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
+  const container = cloneElement(containerComponent, {
     theme,
     ...containerComponent.props
   });

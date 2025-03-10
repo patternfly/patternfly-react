@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import styles from '@patternfly/react-styles/css/components/Masthead/masthead';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
@@ -38,7 +38,7 @@ export const Masthead: React.FunctionComponent<MastheadProps> = ({
   inset,
   ...props
 }: MastheadProps) => {
-  const { width, getBreakpoint } = React.useContext(PageContext);
+  const { width, getBreakpoint } = useContext(PageContext);
   return (
     <header
       className={css(

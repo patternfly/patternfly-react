@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { treeRow, IRow, OnTreeRowCollapse, OnCheckChange, OnToggleRowDetails } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
@@ -78,9 +78,9 @@ export const LegacyTableTree: React.FunctionComponent = () => {
     }
   ];
 
-  const [expandedNodeNames, setExpandedNodeNames] = React.useState<string[]>(['Repositories one']);
-  const [expandedDetailsNodeNames, setExpandedDetailsNodeNames] = React.useState<string[]>([]);
-  const [selectedNodeNames, setSelectedNodeNames] = React.useState<string[]>([]);
+  const [expandedNodeNames, setExpandedNodeNames] = useState<string[]>(['Repositories one']);
+  const [expandedDetailsNodeNames, setExpandedDetailsNodeNames] = useState<string[]>([]);
+  const [selectedNodeNames, setSelectedNodeNames] = useState<string[]>([]);
 
   const getDescendants = (node: RepositoriesTreeNode): RepositoriesTreeNode[] =>
     [node].concat(...(node.children ? node.children.map(getDescendants) : []));

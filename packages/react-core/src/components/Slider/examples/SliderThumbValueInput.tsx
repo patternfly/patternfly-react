@@ -1,4 +1,3 @@
-import React from 'react';
 import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
 
 export const SliderThumbValueInput: React.FunctionComponent = () => {

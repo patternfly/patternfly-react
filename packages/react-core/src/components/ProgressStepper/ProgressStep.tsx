@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/ProgressStepper/progress-stepper';
 import { css } from '@patternfly/react-styles';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
@@ -70,7 +70,7 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
 }: ProgressStepProps) => {
   const _icon = icon !== undefined ? icon : variantIcons[variant];
   const Component = popoverRender !== undefined ? 'button' : 'div';
-  const stepRef = React.useRef(undefined);
+  const stepRef = useRef(undefined);
 
   if (props.id === undefined || titleId === undefined) {
     /* eslint-disable no-console */

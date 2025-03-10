@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment, useState } from 'react';
 import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipPosition } from '../Tooltip';
@@ -79,7 +79,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   helperText
 }: ProgressContainerProps) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
-  const [tooltip, setTooltip] = React.useState('');
+  const [tooltip, setTooltip] = useState('');
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       setTooltip(title || event.target.innerHTML);
@@ -102,7 +102,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       {title &&
         (tooltip ? (
           <Tooltip position={tooltipPosition} content={tooltip} isVisible>
@@ -127,7 +127,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
         {measureLocation === ProgressMeasureLocation.inside && `${value}%`}
       </ProgressBar>
       {helperText && <ProgressHelperText>{helperText}</ProgressHelperText>}
-    </React.Fragment>
+    </Fragment>
   );
 };
 ProgressContainer.displayName = 'ProgressContainer';

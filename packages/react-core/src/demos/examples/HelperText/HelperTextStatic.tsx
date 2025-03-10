@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form, FormGroup, FormHelperText, TextInput, HelperText, HelperTextItem } from '@patternfly/react-core';
 
 export const HelperTextStaticText: React.FunctionComponent = () => {

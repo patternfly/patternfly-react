@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form, FormGroup, Checkbox } from '@patternfly/react-core';
 
 export const FormHorizontalStacked: React.FunctionComponent = () => (

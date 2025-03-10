@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createRef, Component, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
@@ -96,8 +96,7 @@ interface TextInputState {
   ouiaStateId: string;
 }
 
-// eslint-disable-next-line patternfly-react/no-anonymous-functions
-export class TextInputBase extends React.Component<TextInputProps, TextInputState> {
+export class TextInputBase extends Component<TextInputProps, TextInputState> {
   static displayName = 'TextInputBase';
   static defaultProps: TextInputProps = {
     'aria-label': null,
@@ -111,7 +110,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
     onChange: (): any => undefined,
     ouiaSafe: true
   };
-  inputRef = React.createRef<HTMLInputElement>();
+  inputRef = createRef<HTMLInputElement>();
   observer: any = () => {};
 
   constructor(props: TextInputProps) {
@@ -250,7 +249,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
     typeof value === 'string' ? value.replace(/\n/g, ' ') : value;
 }
 
-export const TextInput = React.forwardRef((props: TextInputProps, ref: React.Ref<HTMLInputElement>) => (
+export const TextInput = forwardRef((props: TextInputProps, ref: React.Ref<HTMLInputElement>) => (
   <TextInputBase {...props} innerRef={ref as React.MutableRefObject<any>} />
 ));
 TextInput.displayName = 'TextInput';

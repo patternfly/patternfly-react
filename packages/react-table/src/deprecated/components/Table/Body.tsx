@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, Fragment } from 'react';
 import { Body as BaseBody } from './base';
 import { RowType, RowKeyType } from '../../../components/Table/base/types';
 import { IRow, IRowCell, IExtraRowData, isRowExpanded } from '../../../components';
@@ -49,7 +49,7 @@ interface IMappedCell {
   [name: string]: IRowCell;
 }
 
-class ContextBody extends React.Component<TableBodyProps, {}> {
+class ContextBody extends Component<TableBodyProps, {}> {
   onRow = (row: IRow, rowProps: any) => {
     const { onRowClick, onRow } = this.props;
     const extendedRowProps = {
@@ -163,7 +163,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
     }
 
     return (
-      <React.Fragment>
+      <Fragment>
         {mappedRows && (
           <BaseBody
             {...props}
@@ -174,7 +174,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
             className={className}
           />
         )}
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

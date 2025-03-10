@@ -1,4 +1,3 @@
-import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
 export const CheckboxWithDescriptionBody: React.FunctionComponent = () => (

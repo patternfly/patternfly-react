@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import {
   NotificationDrawer,
   NotificationDrawerProps,
@@ -22,10 +22,7 @@ interface BasicNotificationDrawerDemoState {
   isOpen: boolean[];
 }
 
-export class BasicNotificationDrawerDemo extends React.Component<
-  NotificationDrawerProps,
-  BasicNotificationDrawerDemoState
-> {
+export class BasicNotificationDrawerDemo extends Component<NotificationDrawerProps, BasicNotificationDrawerDemoState> {
   static displayName = 'BasicNotificationDrawerDemo';
   constructor(props: NotificationDrawerProps) {
     super(props);

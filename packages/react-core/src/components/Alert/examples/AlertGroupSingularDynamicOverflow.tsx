@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Alert,
   AlertProps,
@@ -57,7 +57,7 @@ export const AlertGroupSingularDynamicOverflow: React.FunctionComponent = () => 
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <InputGroup style={{ marginBottom: '16px' }}>
         <InputGroupItem>
           <button onClick={addSuccessAlert} type="button" className={btnClasses}>
@@ -92,6 +92,6 @@ export const AlertGroupSingularDynamicOverflow: React.FunctionComponent = () => 
           />
         ))}
       </AlertGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

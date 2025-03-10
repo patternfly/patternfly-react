@@ -6,8 +6,8 @@ cssPrefix: pf-v6-c-menu-toggle
 propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox']
 ---
 
+import { Fragment } from 'react';
 import './MenuToggle.css'
-
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
@@ -20,7 +20,6 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 A toggle is collapsed until it is selected by a user.
 
 ```ts
-import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 
 <MenuToggle>Collapsed</MenuToggle>
@@ -32,7 +31,6 @@ import { MenuToggle } from '@patternfly/react-core';
 When a user selects a toggle, it becomes expanded and is styled with a blue underline. To flag expanded toggles, and apply expanded styling, use the `isExpanded` property .
 
 ```ts
-import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 
 <MenuToggle isExpanded>Expanded</MenuToggle>;
@@ -52,7 +50,6 @@ You can pass `size="sm"` to a MenuToggle to style it as a small toggle, such as 
 To disable the selection and expansion of a toggle, use the `isDisabled` property.
 
 ```ts
-import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 
 <MenuToggle isDisabled>Disabled</MenuToggle>
@@ -64,7 +61,6 @@ import { MenuToggle } from '@patternfly/react-core';
 To display a count of selected items in a toggle, use the `badge` property. You can also pass in `variant="plainText"` for a badge only toggle.
 
 ```ts
-import React from 'react';
 import { MenuToggle, Badge } from '@patternfly/react-core';
 
 <React.Fragment>
@@ -80,7 +76,6 @@ To add a recognizable icon to a menu toggle, use the `icon` property. The follow
 For most basic icons, it is recommended to wrap it inside our [icon component](/components/icon).
 
 ```ts
-import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
@@ -114,7 +109,6 @@ You can also pass images into the `icon` property. The following example passes 
 This can be used alongside a text label that provides more context for the image.
 
 ```ts
-import React from 'react';
 import { MenuToggle, Avatar } from '@patternfly/react-core';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
@@ -130,7 +124,6 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 Variant styling can be applied to menu toggles. In the following example, the toggle uses primary styling by passing `variant="primary"` into the `<MenuToggle>` component. Additional variant options include “default”, “plain”, “plainText”, “secondary”, and “typeahead”.
 
 ```ts
-import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
@@ -153,7 +146,6 @@ To apply plain styling to a menu toggle with an icon, pass in `variant="plain"`.
 If the toggle does not have any visible text content, use the `aria-label` property to provide an accessible name.
 
 ```ts
-import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
@@ -171,7 +163,6 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 To apply plain styling to a menu toggle with a text label, pass in `variant="plainText"`. Unlike the “plain” variant, “plainText” adds a caret pointing down in the toggle.
 
 ```ts
-import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 
 <React.Fragment>
@@ -236,7 +227,6 @@ A full height toggle fills the height of its parent. To flag a full height toggl
 In the following example, the toggle fills the size of the "80px" `<div>` element that it is within.
 
 ```ts
-import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 
 <div style={{ height: "80px" }}>
@@ -253,7 +243,6 @@ A full width toggle fills the width of its parent. To flag a full width toggle, 
 In the following example, the toggle fills the width of its parent as the window size changes.
 
 ```ts
-import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 
 const fullWidth: React.FunctionComponent = () => {
