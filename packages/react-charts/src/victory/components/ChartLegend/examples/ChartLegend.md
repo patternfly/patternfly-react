@@ -293,6 +293,7 @@ import {
   getInteractiveLegendItemStyles,
 } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
+// import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
 const InteractiveLegendChart = () => {
   const containerRef = React.useRef(null);
