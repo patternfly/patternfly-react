@@ -3833,7 +3833,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.5"
     babel-jest: "npm:^29.7.0"
     concurrently: "npm:^9.1.2"
-    eslint: "npm:^9.21.0"
+    eslint: "npm:^9.22.0"
     eslint-config-prettier: "npm:^10.0.1"
     eslint-plugin-markdown: "npm:^5.1.0"
     eslint-plugin-prettier: "npm:^5.2.3"
@@ -10191,7 +10191,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.21.0":
+"eslint@npm:^9.22.0":
   version: 9.22.0
   resolution: "eslint@npm:9.22.0"
   dependencies:
