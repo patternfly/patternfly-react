@@ -113,6 +113,24 @@ test('renders different content when trailingNumChars is passed with middle trun
   expect(end).toHaveClass(styles.truncateEnd);
 });
 
+test('renders different content when trailingNumChars is passed 0 for true middle truncation', () => {
+  render(
+    <Truncate
+      content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'} // 75 chars
+      trailingNumChars={0}
+      position="middle"
+    />
+  );
+
+  const start = screen.getByText('Vestibulum interdum risus et enim fau');
+
+  expect(start).toHaveClass(styles.truncateStart);
+
+  const end = screen.getByText('cibus, sit amet molestie est accumsan.');
+
+  expect(end).toHaveClass(styles.truncateEnd);
+});
+
 test('renders full content when trailingNumChars exceeds the length of the original string using middle truncate', () => {
   render(
     <Truncate
