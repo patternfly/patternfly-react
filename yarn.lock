@@ -3846,7 +3846,7 @@ __metadata:
     mutation-observer: "npm:^1.0.3"
     plop: "npm:^4.0.1"
     prettier: "npm:^3.5.3"
-    publint: "npm:^0.3.8"
+    publint: "npm:^0.3.9"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     rimraf: "npm:^6.0.1"
@@ -18053,9 +18053,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"publint@npm:^0.3.8":
-  version: 0.3.8
-  resolution: "publint@npm:0.3.8"
+"publint@npm:^0.3.9":
+  version: 0.3.9
+  resolution: "publint@npm:0.3.9"
   dependencies:
     "@publint/pack": "npm:^0.1.2"
     package-manager-detector: "npm:^0.2.9"
@@ -18063,7 +18063,7 @@ __metadata:
     sade: "npm:^1.8.1"
   bin:
     publint: src/cli.js
-  checksum: 10c0/7e37915c40e118b98e3660648a8e232cd0c77f6d5b7781b4dc469dca34b91e91b70f062689d86e10b65eac863d6008a103659378faa63a7b75835e94666d942f
+  checksum: 10c0/cb0d3b7a5509be4ffa77a61809bc2e8b79620b3be4c420dade8a722e085bb6a9280fce3e04f44b2b5cf8adeded376c1ad2eedd0e03c35829307a220d5926826f
   languageName: node
   linkType: hard
 
