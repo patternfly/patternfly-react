@@ -148,27 +148,32 @@ describe('Toolbar', () => {
     expect(screen.getByTestId('Toolbar-test-secondary-id')).toHaveClass(styles.modifiers.secondary);
   });
 
-  it('should render ToolbarContent with pf-m-wrap when rowWrap is set to wrap', () => {
-    render(
-      <Toolbar>
-        <ToolbarContent data-testid="toolbarcontent" rowWrap={{ default: 'wrap' }}>
-          Test
-        </ToolbarContent>
-      </Toolbar>
-    );
+  describe('ToobarContent rowWrap', () => {
+    const bps = ['default', 'sm', 'md', 'lg', 'xl', '2xl'];
 
-    expect(screen.getByTestId('toolbarcontent').querySelector('div')).toHaveClass('pf-m-wrap');
-  });
+    describe.each(bps)(`rowWrap at various breakpoints`, (bp) => {
+      it(`should render with pf-m-wrap when rowWrap is set to wrap at ${bp}`, () => {
+        render(
+          <Toolbar>
+            <ToolbarContent data-testid="toolbarconent" rowWrap={{ [bp]: 'wrap' }}>
+              Test
+            </ToolbarContent>
+          </Toolbar>
+        );
+        const bpWrapClass = bp === 'default' ? 'pf-m-wrap' : `pf-m-wrap-on-${bp}`;
 
-  it('should render ToolbarContent with pf-m-nowrap when rowWrap is set to nowrap', () => {
-    render(
-      <Toolbar>
-        <ToolbarContent data-testid="toolbarcontent" rowWrap={{ default: 'nowrap' }}>
-          Test
-        </ToolbarContent>
-      </Toolbar>
-    );
+        expect(screen.getByTestId('toolbarconent').querySelector('div')).toHaveClass(bpWrapClass);
+      });
 
-    expect(screen.getByTestId('toolbarcontent').querySelector('div')).toHaveClass('pf-m-nowrap');
+      it(`should render with pf-m-nowrap when rowWrap is set to nowrap at ${bp}`, () => {
+        render(
+          <ToolbarContent data-testid="toolbarconent" rowWrap={{ [bp]: 'nowrap' }}>
+            Test
+          </ToolbarContent>
+        );
+        const bpNoWrapClass = bp === 'default' ? 'pf-m-nowrap' : `pf-m-nowrap-on-${bp}`;
+        expect(screen.getByTestId('toolbarconent').querySelector('div')).toHaveClass(bpNoWrapClass);
+      });
+    });
   });
 });

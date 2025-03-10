@@ -10,20 +10,31 @@ describe('ToolbarItem', () => {
     );
     expect(screen.getByTestId('toolbaritem')).toHaveClass('pf-m-overflow-container');
   });
-  it('should render with pf-m-wrap when rowWrap is set to wrap', () => {
-    render(
-      <ToolbarItem data-testid="toolbaritem" rowWrap={{ default: 'wrap' }}>
-        Test
-      </ToolbarItem>
-    );
-    expect(screen.getByTestId('toolbaritem')).toHaveClass('pf-m-wrap');
-  });
-  it('should render with pf-m-nowrap when rowWrap is set to nowrap', () => {
-    render(
-      <ToolbarItem data-testid="toolbaritem" rowWrap={{ default: 'nowrap' }}>
-        Test
-      </ToolbarItem>
-    );
-    expect(screen.getByTestId('toolbaritem')).toHaveClass('pf-m-nowrap');
+
+  describe('ToobarItem rowWrap', () => {
+    const bps = ['default', 'sm', 'md', 'lg', 'xl', '2xl'];
+
+    describe.each(bps)(`rowWrap at various breakpoints`, (bp) => {
+      it(`should render with pf-m-wrap when rowWrap is set to wrap at ${bp}`, () => {
+        render(
+          <ToolbarItem data-testid="toolbaritem" rowWrap={{ [bp]: 'wrap' }}>
+            Test
+          </ToolbarItem>
+        );
+        const bpWrapClass = bp === 'default' ? 'pf-m-wrap' : `pf-m-wrap-on-${bp}`;
+
+        expect(screen.getByTestId('toolbaritem')).toHaveClass(bpWrapClass);
+      });
+
+      it(`should render with pf-m-nowrap when rowWrap is set to nowrap at ${bp}`, () => {
+        render(
+          <ToolbarItem data-testid="toolbaritem" rowWrap={{ [bp]: 'nowrap' }}>
+            Test
+          </ToolbarItem>
+        );
+        const bpNoWrapClass = bp === 'default' ? 'pf-m-nowrap' : `pf-m-nowrap-on-${bp}`;
+        expect(screen.getByTestId('toolbaritem')).toHaveClass(bpNoWrapClass);
+      });
+    });
   });
 });
