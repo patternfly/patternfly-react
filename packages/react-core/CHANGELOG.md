@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.28...@patternfly/react-core@6.2.0-prerelease.29) (2025-03-10)
+
+### Bug Fixes
+
+- **MenuItem:** mouse can trigger tooltip on aria-disabled items ([#11567](https://github.com/patternfly/patternfly-react/issues/11567)) ([b4c0781](https://github.com/patternfly/patternfly-react/commit/b4c07813fc334427bc313ab0ca0d8c6f3fecc1f6))
+
 # [6.2.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.27...@patternfly/react-core@6.2.0-prerelease.28) (2025-03-06)
 
 ### Bug Fixes
