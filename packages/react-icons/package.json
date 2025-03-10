@@ -30,7 +30,7 @@
     "generate": "rimraf dist/esm/icons dist/js/icons && node scripts/writeIcons.mjs"
   },
   "devDependencies": {
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@patternfly/patternfly": "6.2.0-prerelease.15",
