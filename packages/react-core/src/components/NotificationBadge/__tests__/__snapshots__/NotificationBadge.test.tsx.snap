@@ -3,6 +3,7 @@
 exports[`NotificationBadge count 1`] = `
 <DocumentFragment>
   <button
+    aria-disabled="false"
     aria-expanded="false"
     class="pf-v6-c-button pf-m-stateful pf-m-read"
     data-ouia-component-id="OUIA-Generated-Button-stateful-3"
@@ -39,6 +40,7 @@ exports[`NotificationBadge count 1`] = `
 exports[`false NotificationBadge needs attention 1`] = `
 <DocumentFragment>
   <button
+    aria-disabled="false"
     aria-expanded="false"
     class="pf-v6-c-button pf-m-stateful pf-m-attention"
     data-ouia-component-id="OUIA-Generated-Button-stateful-2"
@@ -58,6 +60,7 @@ exports[`false NotificationBadge needs attention 1`] = `
 exports[`true NotificationBadge needs attention 1`] = `
 <DocumentFragment>
   <button
+    aria-disabled="false"
     aria-expanded="false"
     class="pf-v6-c-button pf-m-stateful pf-m-attention"
     data-ouia-component-id="OUIA-Generated-Button-stateful-1"

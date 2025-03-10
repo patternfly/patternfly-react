@@ -164,14 +164,12 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
     </span>
   );
   const _children = children && <span className={css('pf-v6-c-button__text')}>{children}</span>;
-  // We only want to render the aria-disabled attribute when true, similar to the disabled attribute natively.
-  const shouldRenderAriaDisabled = isAriaDisabled || (!isButtonElement && isDisabled);
 
   return (
     <Component
       {...props}
       {...(isAriaDisabled ? preventedEvents : null)}
-      {...(shouldRenderAriaDisabled && { 'aria-disabled': true })}
+      aria-disabled={isAriaDisabled || isDisabled}
       aria-label={ariaLabel}
       className={css(
         styles.button,

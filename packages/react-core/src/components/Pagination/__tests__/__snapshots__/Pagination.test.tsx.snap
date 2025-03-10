@@ -78,6 +78,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -110,6 +111,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -161,6 +163,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -192,6 +195,7 @@ exports[`Pagination API verify inset2xl inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -303,6 +307,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -335,6 +340,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -386,6 +392,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -417,6 +424,7 @@ exports[`Pagination API verify insetLg inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -528,6 +536,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -560,6 +569,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -611,6 +621,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -642,6 +653,7 @@ exports[`Pagination API verify insetMd inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -753,6 +765,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -785,6 +798,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -836,6 +850,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -867,6 +882,7 @@ exports[`Pagination API verify insetNone inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -978,6 +994,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -1010,6 +1027,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -1061,6 +1079,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -1092,6 +1111,7 @@ exports[`Pagination API verify insetSm inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -1203,6 +1223,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -1235,6 +1256,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -1286,6 +1308,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -1317,6 +1340,7 @@ exports[`Pagination API verify insetXl inset breakpoints 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -1414,6 +1438,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -1446,6 +1471,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -1502,6 +1528,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -1533,6 +1560,7 @@ exports[`Pagination component render custom pagination toggle 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -1643,6 +1671,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -1675,6 +1704,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -1731,6 +1761,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -1762,6 +1793,7 @@ exports[`Pagination component render custom perPageOptions 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -1872,6 +1904,7 @@ exports[`Pagination component render custom start end 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -1903,6 +1936,7 @@ exports[`Pagination component render custom start end 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -1958,6 +1992,7 @@ exports[`Pagination component render custom start end 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -1989,6 +2024,7 @@ exports[`Pagination component render custom start end 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -2051,6 +2087,7 @@ exports[`Pagination component render empty per page options 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -2083,6 +2120,7 @@ exports[`Pagination component render empty per page options 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -2139,6 +2177,7 @@ exports[`Pagination component render empty per page options 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -2170,6 +2209,7 @@ exports[`Pagination component render empty per page options 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -2280,6 +2320,7 @@ exports[`Pagination component render last page 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -2311,6 +2352,7 @@ exports[`Pagination component render last page 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -2366,6 +2408,7 @@ exports[`Pagination component render last page 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -2398,6 +2441,7 @@ exports[`Pagination component render last page 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -2509,6 +2553,7 @@ exports[`Pagination component render limited number of pages 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -2541,6 +2586,7 @@ exports[`Pagination component render limited number of pages 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -2598,6 +2644,7 @@ exports[`Pagination component render limited number of pages 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -2630,6 +2677,7 @@ exports[`Pagination component render limited number of pages 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -2729,6 +2777,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -2761,6 +2810,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -2817,6 +2867,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -2848,6 +2899,7 @@ exports[`Pagination component render should render correctly bottom 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -2946,6 +2998,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -2978,6 +3031,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -3034,6 +3088,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -3065,6 +3120,7 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -3175,6 +3231,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -3207,6 +3264,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -3263,6 +3321,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -3294,6 +3353,7 @@ exports[`Pagination component render should render correctly compact 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -3405,6 +3465,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -3437,6 +3498,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -3494,6 +3556,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -3526,6 +3589,7 @@ exports[`Pagination component render should render correctly disabled 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -3637,6 +3701,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -3669,6 +3734,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -3725,6 +3791,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -3756,6 +3823,7 @@ exports[`Pagination component render should render correctly sticky 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -3866,6 +3934,7 @@ exports[`Pagination component render should render correctly top 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -3898,6 +3967,7 @@ exports[`Pagination component render should render correctly top 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -3954,6 +4024,7 @@ exports[`Pagination component render should render correctly top 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -3985,6 +4056,7 @@ exports[`Pagination component render should render correctly top 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -4095,6 +4167,7 @@ exports[`Pagination component render titles 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -4127,6 +4200,7 @@ exports[`Pagination component render titles 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -4183,6 +4257,7 @@ exports[`Pagination component render titles 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -4214,6 +4289,7 @@ exports[`Pagination component render titles 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -4324,6 +4400,7 @@ exports[`Pagination component render up drop direction 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -4356,6 +4433,7 @@ exports[`Pagination component render up drop direction 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -4412,6 +4490,7 @@ exports[`Pagination component render up drop direction 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -4443,6 +4522,7 @@ exports[`Pagination component render up drop direction 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="false"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"
@@ -4553,6 +4633,7 @@ exports[`Pagination component render zero results 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-first"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to first page"
           class="pf-v6-c-button pf-m-plain"
           data-action="first"
@@ -4585,6 +4666,7 @@ exports[`Pagination component render zero results 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to previous page"
           class="pf-v6-c-button pf-m-plain"
           data-action="previous"
@@ -4642,6 +4724,7 @@ exports[`Pagination component render zero results 1`] = `
         class="pf-v6-c-pagination__nav-control"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to next page"
           class="pf-v6-c-button pf-m-plain"
           data-action="next"
@@ -4674,6 +4757,7 @@ exports[`Pagination component render zero results 1`] = `
         class="pf-v6-c-pagination__nav-control pf-m-last"
       >
         <button
+          aria-disabled="true"
           aria-label="Go to last page"
           class="pf-v6-c-button pf-m-plain"
           data-action="last"

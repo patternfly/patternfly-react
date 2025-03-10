@@ -6,6 +6,7 @@ exports[`Matches snapshot 1`] = `
     style="display: contents;"
   >
     <button
+      aria-disabled="false"
       class="pf-v6-c-button pf-m-plain"
       data-ouia-component-id="OUIA-Generated-Button-plain-1"
       data-ouia-component-type="PF6/Button"

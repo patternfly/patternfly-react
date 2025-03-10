@@ -34,6 +34,7 @@ exports[`With popover opened 1`] = `
           class="pf-v6-c-input-group__item"
         >
           <button
+            aria-disabled="false"
             aria-haspopup="dialog"
             aria-label="Toggle date picker"
             class="pf-v6-c-button pf-m-control"
@@ -94,6 +95,7 @@ exports[`With popover opened 1`] = `
                 class="pf-v6-c-calendar-month__header-nav-control pf-m-prev-month"
               >
                 <button
+                  aria-disabled="false"
                   aria-label="Previous month"
                   class="pf-v6-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-1"
@@ -199,6 +201,7 @@ exports[`With popover opened 1`] = `
                 class="pf-v6-c-calendar-month__header-nav-control pf-m-next-month"
               >
                 <button
+                  aria-disabled="false"
                   aria-label="Next month"
                   class="pf-v6-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-2"
@@ -826,6 +829,7 @@ exports[`disabled date picker 1`] = `
           class="pf-v6-c-input-group__item"
         >
           <button
+            aria-disabled="true"
             aria-haspopup="dialog"
             aria-label="Toggle date picker"
             class="pf-v6-c-button pf-m-control"

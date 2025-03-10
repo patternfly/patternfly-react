@@ -22,6 +22,7 @@ exports[`Modal Content Test description 1`] = `
           class="pf-v6-c-modal-box__close"
         >
           <button
+            aria-disabled="false"
             aria-label="Close"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-3"
@@ -101,6 +102,7 @@ exports[`Modal Content Test isOpen 1`] = `
           class="pf-v6-c-modal-box__close"
         >
           <button
+            aria-disabled="false"
             aria-label="Close"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-2"
@@ -175,6 +177,7 @@ exports[`Modal Content Test only body 1`] = `
           class="pf-v6-c-modal-box__close"
         >
           <button
+            aria-disabled="false"
             aria-label="Close"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-1"
@@ -249,6 +252,7 @@ exports[`Modal Content Test with footer 1`] = `
           class="pf-v6-c-modal-box__close"
         >
           <button
+            aria-disabled="false"
             aria-label="Close"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-4"
@@ -328,6 +332,7 @@ exports[`Modal Content Test with onclose 1`] = `
           class="pf-v6-c-modal-box__close"
         >
           <button
+            aria-disabled="false"
             aria-label="Close"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-6"
@@ -407,6 +412,7 @@ exports[`Modal Content test without footer 1`] = `
           class="pf-v6-c-modal-box__close"
         >
           <button
+            aria-disabled="false"
             aria-label="Close"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-5"
@@ -481,6 +487,7 @@ exports[`Modal Test with custom footer 1`] = `
           class="pf-v6-c-modal-box__close"
         >
           <button
+            aria-disabled="false"
             aria-label="Close"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-8"
@@ -564,6 +571,7 @@ exports[`Modal Test with custom header 1`] = `
           class="pf-v6-c-modal-box__close"
         >
           <button
+            aria-disabled="false"
             aria-label="Close"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-7"
