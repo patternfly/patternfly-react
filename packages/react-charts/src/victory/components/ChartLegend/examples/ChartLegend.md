@@ -291,7 +291,7 @@ import {
   createContainer, 
   getInteractiveLegendEvents, 
   getInteractiveLegendItemStyles,
-} from '@patternfly/react-charts';
+} from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
 
 const InteractiveLegendChart = () => {
