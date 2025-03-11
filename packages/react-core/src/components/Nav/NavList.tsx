@@ -27,7 +27,7 @@ class NavList extends Component<NavListProps> {
   context!: React.ContextType<typeof NavContext>;
   static defaultProps: NavListProps = {
     backScrollAriaLabel: 'Scroll back',
-    forwardScrollAriaLabel: 'Scroll forward'
+    forwardScrollAriaLabel: 'Scroll foward'
   };
   private direction = 'ltr';
 

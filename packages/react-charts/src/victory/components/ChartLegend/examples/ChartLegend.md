@@ -291,7 +291,6 @@ import {
 import { getResizeObserver } from '@patternfly/react-core';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
-<<<<<<< HEAD
 const InteractiveLegendChart = () => {
   const containerRef = useRef(null);
   const [hiddenSeries, setHiddenSeries] = useState(new Set());
@@ -357,18 +356,11 @@ const InteractiveLegendChart = () => {
   // Checks if any data series is visible
   const isDataAvailable = () => hiddenSeries.size !== series.length;
 
-<<<<<<< HEAD
   // Set chart width per current window size
-  React.useEffect(() => {
+  useEffect(() => {
     const observer = getResizeObserver(containerRef.current, () => {
       if (containerRef.current?.clientWidth) {
         setWidth(containerRef.current.clientWidth);
-=======
-    const container = cloneElement(
-      this.cursorVoronoiContainer, 
-      {
-        disable: !this.isDataAvailable()
->>>>>>> 19a2ed0a5 (charts changes)
       }
     });
     return () => observer();
