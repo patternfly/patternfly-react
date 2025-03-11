@@ -57,6 +57,8 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
   ouiaSafe?: boolean;
   /** Background color variant of the toolbar */
   colorVariant?: ToolbarColorVariant | 'default' | 'no-background' | 'primary' | 'secondary';
+  /** Flag indicating the toolbar padding is removed */
+  hasNoPadding?: boolean;
 }
 
 export interface ToolbarState {
@@ -78,6 +80,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
   static displayName = 'Toolbar';
   labelGroupContentRef = createRef<HTMLDivElement>();
   staticFilterInfo = {};
+  hasNoPadding = false;
   state = {
     isManagedToggleExpanded: false,
     filterInfo: {},
@@ -128,6 +131,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
 
   renderToolbar = (randomId: string) => {
     const {
+      hasNoPadding,
       clearAllFilters,
       clearFiltersButtonText,
       collapseListedFiltersBreakpoint,
@@ -159,6 +163,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
           <div
             className={css(
               styles.toolbar,
+              hasNoPadding && styles.modifiers.noPadding,
               isFullHeight && styles.modifiers.fullHeight,
               isStatic && styles.modifiers.static,
               isSticky && styles.modifiers.sticky,
