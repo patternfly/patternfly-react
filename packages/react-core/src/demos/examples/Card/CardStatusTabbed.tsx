@@ -69,7 +69,7 @@ export const CardStatusTabbed: React.FunctionComponent = () => {
   };
 
   const tabContent = (
-    <DescriptionList isHorizontal columnModifier={{ lg: '2Col' }}>
+    <DescriptionList isHorizontal columnModifier={{ lg: '2Col' }} aria-label="Status list">
       {descriptionListData.map(({ status, resourceName, detail, icon }, index) => (
         <DescriptionListGroup key={index}>
           <DescriptionListTerm>

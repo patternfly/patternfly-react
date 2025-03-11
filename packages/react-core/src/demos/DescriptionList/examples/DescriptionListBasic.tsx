@@ -33,7 +33,7 @@ export const DescriptionListBasic: React.FunctionComponent = () => (
         </CardHeader>
         <Divider />
         <CardBody>
-          <DescriptionList isAutoFit>
+          <DescriptionList isAutoFit aria-label="Full page demo of description list">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>mary-test</DescriptionListDescription>

@@ -71,7 +71,7 @@ export const CardLogView: React.FunctionComponent = () => {
             </CardTitle>
           </CardHeader>
           <CardBody>
-            <DescriptionList>
+            <DescriptionList aria-label="Activity logs">
               <DescriptionListGroup>
                 <DescriptionListTerm>Readiness probe failed</DescriptionListTerm>
                 <DescriptionListDescription>

@@ -30,6 +30,7 @@ export class DescriptionListBreakpointsDemo extends Component {
           <DescriptionList
             id="1-col-description-list"
             columnModifier={{ default: '1Col', md: '1Col', lg: '1Col', xl: '1Col', '2xl': '1Col' }}
+            aria-label="One-column description list"
           >
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
@@ -76,6 +77,7 @@ export class DescriptionListBreakpointsDemo extends Component {
           <DescriptionList
             id="2-col-description-list"
             columnModifier={{ default: '2Col', md: '2Col', lg: '2Col', xl: '2Col', '2xl': '2Col' }}
+            aria-label="Two-column description list"
           >
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
@@ -122,6 +124,7 @@ export class DescriptionListBreakpointsDemo extends Component {
           <DescriptionList
             id="3-col-description-list"
             columnModifier={{ default: '3Col', md: '3Col', lg: '3Col', xl: '3Col', '2xl': '3Col' }}
+            aria-label="Three-column description list"
           >
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
@@ -174,6 +177,7 @@ export class DescriptionListBreakpointsDemo extends Component {
               xl: 'vertical',
               '2xl': 'horizontal'
             }}
+            aria-label="Responsive layout based on orientation"
           >
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
