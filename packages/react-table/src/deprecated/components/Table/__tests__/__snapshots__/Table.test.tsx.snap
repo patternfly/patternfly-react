@@ -1523,6 +1523,7 @@ exports[`Table Collapsible nested table 1`] = `
           tabindex="-1"
         >
           <button
+            aria-disabled="false"
             aria-expanded="false"
             aria-label="Details"
             aria-labelledby="simple-node0 expandable-toggle0"
@@ -1614,6 +1615,7 @@ exports[`Table Collapsible nested table 1`] = `
           tabindex="-1"
         >
           <button
+            aria-disabled="false"
             aria-expanded="true"
             aria-label="Details"
             aria-labelledby="simple-node1 expandable-toggle1"
@@ -1776,6 +1778,7 @@ exports[`Table Collapsible nested table 1`] = `
           tabindex="-1"
         >
           <button
+            aria-disabled="false"
             aria-expanded="false"
             aria-label="Details"
             aria-labelledby="simple-node3 expandable-toggle3"
@@ -2284,6 +2287,7 @@ exports[`Table Collapsible table 1`] = `
           tabindex="-1"
         >
           <button
+            aria-disabled="false"
             aria-expanded="true"
             aria-label="Details"
             aria-labelledby="simple-node0 expandable-toggle0"
@@ -2501,6 +2505,7 @@ exports[`Table Collapsible table 1`] = `
           tabindex="-1"
         >
           <button
+            aria-disabled="false"
             aria-expanded="false"
             aria-label="Details"
             aria-labelledby="simple-node3 expandable-toggle3"
@@ -10528,6 +10533,7 @@ exports[`Table simple Editable table 1`] = `
                 class="pf-v6-c-inline-edit__action"
               >
                 <button
+                  aria-disabled="false"
                   aria-label="Save row edits for row 0"
                   class="pf-v6-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-1"
@@ -10558,6 +10564,7 @@ exports[`Table simple Editable table 1`] = `
                 class="pf-v6-c-inline-edit__action"
               >
                 <button
+                  aria-disabled="false"
                   aria-label="Cancel row edits for row 0"
                   class="pf-v6-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-2"
@@ -10589,6 +10596,7 @@ exports[`Table simple Editable table 1`] = `
               class="pf-v6-c-inline-edit__action pf-m-enable-editable"
             >
               <button
+                aria-disabled="false"
                 aria-label="Place row 0 in edit mode"
                 class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-3"
@@ -10768,6 +10776,7 @@ exports[`Table simple Editable table 1`] = `
                 class="pf-v6-c-inline-edit__action"
               >
                 <button
+                  aria-disabled="false"
                   aria-label="Save row edits for row 1"
                   class="pf-v6-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-4"
@@ -10798,6 +10807,7 @@ exports[`Table simple Editable table 1`] = `
                 class="pf-v6-c-inline-edit__action"
               >
                 <button
+                  aria-disabled="false"
                   aria-label="Cancel row edits for row 1"
                   class="pf-v6-c-button pf-m-plain"
                   data-ouia-component-id="OUIA-Generated-Button-plain-5"
@@ -10829,6 +10839,7 @@ exports[`Table simple Editable table 1`] = `
               class="pf-v6-c-inline-edit__action pf-m-enable-editable"
             >
               <button
+                aria-disabled="false"
                 aria-label="Place row 1 in edit mode"
                 class="pf-v6-c-button pf-m-plain"
                 data-ouia-component-id="OUIA-Generated-Button-plain-6"

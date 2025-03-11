@@ -28,6 +28,7 @@ exports[`Matches snapshot 1`] = `
       onTooltipHidden clicker
     </a>
     <button
+      aria-disabled="false"
       aria-label="Copyable input"
       aria-labelledby="button-id text-id"
       class="pf-v6-c-button pf-m-control"

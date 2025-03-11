@@ -131,6 +131,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
           class="pf-v6-c-form__actions"
         >
           <button
+            aria-disabled="false"
             class="pf-v6-c-button pf-m-primary pf-m-block"
             data-ouia-component-id="OUIA-Generated-Button-primary-5"
             data-ouia-component-type="PF6/Button"
@@ -253,6 +254,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
             class="pf-v6-c-input-group__item"
           >
             <button
+              aria-disabled="false"
               aria-label="Show password"
               class="pf-v6-c-button pf-m-control"
               data-ouia-component-id="OUIA-Generated-Button-control-1"
@@ -292,6 +294,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
           class="pf-v6-c-form__actions"
         >
           <button
+            aria-disabled="false"
             class="pf-v6-c-button pf-m-primary pf-m-block"
             data-ouia-component-id="OUIA-Generated-Button-primary-6"
             data-ouia-component-type="PF6/Button"
@@ -415,6 +418,7 @@ exports[`LoginForm should render Login form 1`] = `
           class="pf-v6-c-form__actions"
         >
           <button
+            aria-disabled="false"
             class="pf-v6-c-button pf-m-primary pf-m-block"
             data-ouia-component-id="OUIA-Generated-Button-primary-1"
             data-ouia-component-type="PF6/Button"
