@@ -59,8 +59,8 @@ test('Does not call the callback provided via onClose when it is not clicked', (
 });
 
 test('Calls the callback provided via onClose when clicked', async () => {
-  const onCloseMock = jest.fn();
   const user = userEvent.setup();
+  const onCloseMock = jest.fn();
 
   render(
     <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
@@ -74,8 +74,8 @@ test('Calls the callback provided via onClose when clicked', async () => {
 });
 
 test('Calls updateTransitionEnd with onClose when animations are enabled', async () => {
-  const onClose = jest.fn();
   const user = userEvent.setup();
+  const onClose = jest.fn();
   const updateMock = jest.fn();
   render(
     <AlertGroupContext.Provider value={{ hasAnimations: true, updateTransitionEnd: updateMock }}>
@@ -85,6 +85,7 @@ test('Calls updateTransitionEnd with onClose when animations are enabled', async
     </AlertGroupContext.Provider>
   );
 
+  expect(updateMock).not.toHaveBeenCalled();
   await user.click(screen.getByRole('button'));
   expect(updateMock).toHaveBeenCalledWith(onClose);
   expect(updateMock).toHaveBeenCalledTimes(1);
