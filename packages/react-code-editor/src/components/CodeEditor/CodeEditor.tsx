@@ -2,6 +2,7 @@ import { HTMLProps, ReactNode, useEffect, useRef, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
 import fileUploadStyles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
+import monoFont from '@patternfly/react-tokens/dist/esm/t_global_font_family_mono';
 import { Button, ButtonVariant } from '@patternfly/react-core/dist/esm/components/Button';
 import {
   EmptyState,
@@ -13,7 +14,7 @@ import {
 import { Popover, PopoverProps } from '@patternfly/react-core/dist/esm/components/Popover';
 import { TooltipPosition } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { getResizeObserver } from '@patternfly/react-core/dist/esm/helpers/resizeObserver';
-import Editor, { EditorProps, Monaco } from '@monaco-editor/react';
+import Editor, { BeforeMount, EditorProps, Monaco } from '@monaco-editor/react';
 import type { editor } from 'monaco-editor';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
@@ -23,6 +24,7 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import Dropzone, { FileRejection } from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
 import { CodeEditorControl } from './CodeEditorControl';
+import { defineThemes } from './CodeEditorTheme';
 
 export type ChangeHandler = (value: string, event: editor.IModelContentChangedEvent) => void;
 export type EditorDidMount = (editor: editor.IStandaloneCodeEditor, monaco: Monaco) => void;
@@ -366,6 +368,11 @@ export const CodeEditor = ({
     };
   }, []);
 
+  const editorBeforeMount: BeforeMount = (monaco) => {
+    defineThemes(monaco.editor);
+    editorProps?.beforeMount?.(monaco);
+  };
+
   const editorDidMount: EditorDidMount = (editor, monaco) => {
     // eslint-disable-next-line no-bitwise
     editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Tab, () => wrapperRef.current.focus());
@@ -428,6 +435,7 @@ export const CodeEditor = ({
   };
 
   const editorOptions: editor.IStandaloneEditorConstructionOptions = {
+    fontFamily: monoFont.var,
     scrollBeyondLastLine: height !== 'sizeToFit',
     readOnly: isReadOnly,
     cursorStyle: 'line',
@@ -571,8 +579,9 @@ export const CodeEditor = ({
               onChange={onModelChange}
               onMount={editorDidMount}
               loading={loading}
-              theme={isDarkTheme ? 'vs-dark' : 'vs-light'}
+              theme={isDarkTheme ? 'pf-v6-theme-dark' : 'pf-v6-theme-light'}
               {...editorProps}
+              beforeMount={editorBeforeMount}
             />
           </div>
         );
