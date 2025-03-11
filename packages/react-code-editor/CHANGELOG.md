@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.2.0-prerelease.33...@patternfly/react-code-editor@6.2.0-prerelease.34) (2025-03-11)
+
+### Bug Fixes
+
+- **CodeEditor:** only include pf-v6-c-code-editor\_\_upload when hovering is active over an empty state ([#11568](https://github.com/patternfly/patternfly-react/issues/11568)) ([a53c929](https://github.com/patternfly/patternfly-react/commit/a53c9296b8378d5fa6ddf6def3896cb7d6239c80))
+
 # [6.2.0-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.2.0-prerelease.32...@patternfly/react-code-editor@6.2.0-prerelease.33) (2025-03-11)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

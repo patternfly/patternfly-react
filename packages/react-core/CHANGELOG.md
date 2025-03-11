@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.31...@patternfly/react-core@6.2.0-prerelease.32) (2025-03-11)
+
+### Features
+
+- **DataList:** add tooltip to truncated DataListCell ([#11643](https://github.com/patternfly/patternfly-react/issues/11643)) ([542f96d](https://github.com/patternfly/patternfly-react/commit/542f96dffd57135cce70ec7aea8137acd632ca76))
+
 # [6.2.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.30...@patternfly/react-core@6.2.0-prerelease.31) (2025-03-11)
 
 ### Bug Fixes
