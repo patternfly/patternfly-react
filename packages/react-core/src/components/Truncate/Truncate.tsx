@@ -42,8 +42,9 @@ export interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
     | 'left-end'
     | 'right-start'
     | 'right-end';
-  /** The element whose parent to reference when calculating whether truncation should occur. This must be an ancestor
-   * of the ClipboardCopy, and must have a valid width value.
+  /** @hide The element whose parent to reference when calculating whether truncation should occur. This must be an ancestor
+   * of the ClipboardCopy, and must have a valid width value. For internal use only, do not use as it is not part of the public API
+   * and is subject to change.
    */
   refToGetParent?: React.RefObject<any>;
 }

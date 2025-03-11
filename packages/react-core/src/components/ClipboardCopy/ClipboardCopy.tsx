@@ -202,6 +202,15 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
 
     const copyableText = this.state.text;
     const shouldTruncate = variant === ClipboardCopyVariant.inlineCompact && truncation;
+    const inlineCompactContent = shouldTruncate ? (
+      <Truncate
+        refToGetParent={this.clipboardRef}
+        content={copyableText}
+        {...(typeof truncation === 'object' && truncation)}
+      />
+    ) : (
+      copyableText
+    );
 
     return (
       <div
@@ -222,28 +231,12 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
               <Fragment>
                 {!isCode && (
                   <span className={css(styles.clipboardCopyText)} id={`${textIdPrefix}${id}`}>
-                    {shouldTruncate ? (
-                      <Truncate
-                        refToGetParent={this.clipboardRef}
-                        content={copyableText}
-                        {...(typeof truncation === 'object' && truncation)}
-                      />
-                    ) : (
-                      copyableText
-                    )}
+                    {inlineCompactContent}
                   </span>
                 )}
                 {isCode && (
                   <code className={css(styles.clipboardCopyText, styles.modifiers.code)} id={`${textIdPrefix}${id}`}>
-                    {shouldTruncate ? (
-                      <Truncate
-                        refToGetParent={this.clipboardRef}
-                        content={copyableText}
-                        {...(typeof truncation === 'object' && truncation)}
-                      />
-                    ) : (
-                      copyableText
-                    )}
+                    {inlineCompactContent}
                   </code>
                 )}
                 <span className={css(styles.clipboardCopyActions)}>
