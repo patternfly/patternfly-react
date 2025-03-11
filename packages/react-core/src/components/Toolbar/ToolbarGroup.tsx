@@ -157,6 +157,15 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
       | 'rowGap_3xl'
       | 'rowGap_4xl';
   };
+  /** Value to set for row wrapping at various breakpoints */
+  rowWrap?: {
+    default?: 'wrap' | 'nowrap';
+    sm?: 'wrap' | 'nowrap';
+    md?: 'wrap' | 'nowrap';
+    lg?: 'wrap' | 'nowrap';
+    xl?: 'wrap' | 'nowrap';
+    '2xl'?: 'wrap' | 'nowrap';
+  };
   /** Content to be rendered inside the data toolbar group */
   children?: React.ReactNode;
   /** Flag that modifies the toolbar group to hide overflow and respond to available space. Used for horizontal navigation. */
@@ -175,6 +184,7 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
       gap,
       columnGap,
       rowGap,
+      rowWrap,
       className,
       variant,
       children,
@@ -203,6 +213,7 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
               formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
               formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
               formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
               alignItems === 'start' && styles.modifiers.alignItemsStart,
               alignItems === 'center' && styles.modifiers.alignItemsCenter,
               alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,
