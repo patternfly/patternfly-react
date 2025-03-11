@@ -10,7 +10,7 @@ import {
 } from '@patternfly/react-core';
 
 const CurrentStepDescriptionList = ({ currentStep }: { currentStep: WizardStepType | undefined }) => (
-  <DescriptionList isHorizontal isCompact>
+  <DescriptionList isHorizontal isCompact aria-label="Current step description list">
     <DescriptionListGroup>
       <DescriptionListTerm>Index</DescriptionListTerm>
       <DescriptionListDescription>{currentStep?.index}</DescriptionListDescription>

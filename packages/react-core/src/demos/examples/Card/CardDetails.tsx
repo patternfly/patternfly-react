@@ -24,7 +24,7 @@ export const CardDetailsDemo: React.FunctionComponent = () => (
         </Title>
       </CardTitle>
       <CardBody>
-        <DescriptionList>
+        <DescriptionList aria-label="Cluster details for API1">
           <DescriptionListGroup>
             <DescriptionListTerm>Cluster API Address</DescriptionListTerm>
             <DescriptionListDescription>
@@ -61,7 +61,7 @@ export const CardDetailsDemo: React.FunctionComponent = () => (
         </Title>
       </CardTitle>
       <CardBody>
-        <DescriptionList>
+        <DescriptionList aria-label="Cluster details for API2">
           <DescriptionListGroup>
             <DescriptionListTerm>Cluster API Address</DescriptionListTerm>
             <DescriptionListDescription>
