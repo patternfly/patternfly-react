@@ -389,6 +389,25 @@ test('typing in input triggers onInputChange callback', async () => {
   expect(onInputChangeMock).toHaveBeenCalledWith('1');
 });
 
+it('calls the onInputKeyDown callback only when keydown event occurs', async () => {
+  const initialOptions = [
+    { content: 'Option 1', value: 'option1' },
+    { content: 'Option 2', value: 'option2' },
+    { content: 'Option 3', value: 'option3' }
+  ];
+
+  const user = userEvent.setup();
+  const onInputKeyDownMock = jest.fn();
+
+  render(<TypeaheadSelect initialOptions={initialOptions} onInputKeyDown={onInputKeyDownMock} />);
+
+  const input = screen.getByRole('combobox');
+  await user.click(input);
+  expect(onInputKeyDownMock).not.toHaveBeenCalled();
+  await user.keyboard('{Enter}');
+  expect(onInputKeyDownMock).toHaveBeenCalledTimes(1);
+});
+
 test('Matches snapshot', async () => {
   const initialOptions = [
     { content: 'Option 1', value: 'option1' },

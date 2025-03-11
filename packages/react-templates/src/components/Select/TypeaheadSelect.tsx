@@ -36,6 +36,10 @@ export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSe
   onToggle?: (nextIsOpen: boolean) => void;
   /** Callback triggered when the text in the input field changes. */
   onInputChange?: (newValue: string) => void;
+  /** Custom callback triggered when the input field has focus and a keyboard event is triggered.
+   * This will override the default keydown behavior for the input field.
+   */
+  onInputKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   /** Callback triggered when the clear button is selected */
   onClearSelection?: () => void;
   /** Placeholder text for the select input. */
@@ -67,6 +71,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
   onSelect,
   onToggle,
   onInputChange,
+  onInputKeyDown: onInputKeyDownProp,
   onClearSelection,
   placeholder = 'Select an option',
   noOptionsAvailableMessage = 'No options are available',
@@ -271,11 +276,12 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
     setActiveAndFocusedItem(indexToFocus);
   };
 
-  const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const defaultOnInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const focusedItem = focusedItemIndex !== null ? selectOptions[focusedItemIndex] : null;
 
     switch (event.key) {
       case 'Enter':
+        event.preventDefault();
         if (isOpen && focusedItem && focusedItem.value !== NO_RESULTS && !focusedItem.isAriaDisabled) {
           selectOption(event, focusedItem);
         }
@@ -288,6 +294,14 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
         event.preventDefault();
         handleMenuArrowKeys(event.key);
         break;
+    }
+  };
+
+  const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (onInputKeyDownProp) {
+      onInputKeyDownProp(event);
+    } else {
+      defaultOnInputKeyDown(event);
     }
   };
 

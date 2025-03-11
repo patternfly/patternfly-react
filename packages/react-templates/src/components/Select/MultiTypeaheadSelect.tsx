@@ -37,6 +37,10 @@ export interface MultiTypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 
   onToggle?: (nextIsOpen: boolean) => void;
   /** Callback triggered when the text in the input field changes. */
   onInputChange?: (newValue: string) => void;
+  /** Custom callback triggered when the input field has focus and a keyboard event is triggered.
+   * This will override the default keydown behavior for the input field.
+   */
+  onInputKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   /** Placeholder text for the select input. */
   placeholder?: string;
   /** Message to display when no options match the filter. */
@@ -55,6 +59,7 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
   onSelectionChange,
   onToggle,
   onInputChange,
+  onInputKeyDown: onInputKeyDownProp,
   placeholder = 'Select an option',
   noOptionsFoundMessage = (filter) => `No results found for "${filter}"`,
   isDisabled,
@@ -216,11 +221,12 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
     setActiveAndFocusedItem(indexToFocus);
   };
 
-  const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const defaultOnInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const focusedItem = focusedItemIndex !== null ? selectOptions[focusedItemIndex] : null;
 
     switch (event.key) {
       case 'Enter':
+        event.preventDefault();
         if (isOpen && focusedItem && focusedItem.value !== NO_RESULTS && !focusedItem.isAriaDisabled) {
           selectOption(event, focusedItem?.value);
         }
@@ -236,6 +242,14 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
         event.preventDefault();
         handleMenuArrowKeys(event.key);
         break;
+    }
+  };
+
+  const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (onInputKeyDownProp) {
+      onInputKeyDownProp(event);
+    } else {
+      defaultOnInputKeyDown(event);
     }
   };
 
