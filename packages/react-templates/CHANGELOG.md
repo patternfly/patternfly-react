@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.2.0-prerelease.31...@patternfly/react-templates@6.2.0-prerelease.32) (2025-03-11)
+
+### Bug Fixes
+
+- **Select templates:** allowed custom keydown handling ([#11608](https://github.com/patternfly/patternfly-react/issues/11608)) ([b8da713](https://github.com/patternfly/patternfly-react/commit/b8da713893c648adb4b2b1671ed535629faee301))
+
 # [6.2.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.2.0-prerelease.30...@patternfly/react-templates@6.2.0-prerelease.31) (2025-03-10)
 
 **Note:** Version bump only for package @patternfly/react-templates
