@@ -19,6 +19,24 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
   const updateTransitionEnd = (onTransitionEnd: () => void) => {
     setHandleTransitionEnd(() => onTransitionEnd);
   };
+
+  const onTransitionEnd = (event: React.TransitionEvent<HTMLLIElement>) => {
+    if (!hasAnimations) {
+      return;
+    }
+
+    const prefersReducedMotion = !window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
+    if (
+      // If a user has no motion preference, we want to target the grid template rows transition
+      // so that the onClose is called after the "slide up" animation of other alerts finishes.
+      // If they have motion preference, we don't need to check for a specific transition since only opacity should fire.
+      (prefersReducedMotion || (!prefersReducedMotion && event.propertyName === 'grid-template-rows')) &&
+      (event.target as HTMLElement).className.includes(styles.modifiers.offstageRight)
+    ) {
+      handleTransitionEnd();
+    }
+  };
+
   return (
     <AlertGroupContext.Provider value={{ hasAnimations, updateTransitionEnd }}>
       <ul
@@ -30,22 +48,7 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
       >
         {Children.toArray(children).map((alert, index) => (
           <li
-            onTransitionEnd={(event: React.TransitionEvent<HTMLLIElement>) => {
-              if (!hasAnimations) {
-                return;
-              }
-
-              const prefersReducedMotion = !window.matchMedia('(prefers-reduced-motion: no-preference)')?.matches;
-              if (
-                // If a user has no motion preference, we want to target the grid template rows transition
-                // so that the onClose is called after the "slide up" animation of other alerts finishes.
-                // If they have motion preference, we don't need to check for a specific transition since only opacity should fire.
-                (prefersReducedMotion || (!prefersReducedMotion && event.propertyName === 'grid-template-rows')) &&
-                (event.target as HTMLElement).className.includes(styles.modifiers.offstageRight)
-              ) {
-                handleTransitionEnd();
-              }
-            }}
+            onTransitionEnd={onTransitionEnd}
             className={css(styles.alertGroupItem, hasAnimations && styles.modifiers.offstageTop)}
             key={
               (alert as React.ReactElement<AlertProps>).props?.id ||
