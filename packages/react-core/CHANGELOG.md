@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.32...@patternfly/react-core@6.2.0-prerelease.33) (2025-03-11)
+
+### Features
+
+- **Toolbar:** Add row wrap prop to ToolbarGroup and ToolbarItem ([#11559](https://github.com/patternfly/patternfly-react/issues/11559)) ([6b1646f](https://github.com/patternfly/patternfly-react/commit/6b1646faec6a620a9438ca5a01faf52afb1aa992))
+
 # [6.2.0-prerelease.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.31...@patternfly/react-core@6.2.0-prerelease.32) (2025-03-11)
 
 ### Features
