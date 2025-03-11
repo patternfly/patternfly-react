@@ -30,7 +30,11 @@ export const DescriptionListWithLargeDisplaySizeAndCard: React.FunctionComponent
           name="toggle-display-size-with-card"
         />
       </div>
-      <DescriptionList displaySize={displaySize} columnModifier={{ lg: '2Col' }}>
+      <DescriptionList
+        displaySize={displaySize}
+        columnModifier={{ lg: '2Col' }}
+        aria-label="Description list with large display size and card"
+      >
         <Card component="div">
           <DescriptionListTerm>Name</DescriptionListTerm>
           <DescriptionListDescription>Example</DescriptionListDescription>
