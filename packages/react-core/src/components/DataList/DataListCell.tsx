@@ -1,3 +1,4 @@
+import { FunctionComponent, useRef, useState, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { DataListWrapModifier } from './DataList';
@@ -20,7 +21,7 @@ export interface DataListCellProps extends Omit<React.HTMLProps<HTMLDivElement>,
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
 }
 
-export const DataListCell: React.FunctionComponent<DataListCellProps> = ({
+export const DataListCell: FunctionComponent<DataListCellProps> = ({
   children = null,
   className = '',
   width = 1,
@@ -30,10 +31,10 @@ export const DataListCell: React.FunctionComponent<DataListCellProps> = ({
   wrapModifier = null,
   ...props
 }: DataListCellProps) => {
-  const cellRef = React.useRef(null);
-  const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
+  const cellRef = useRef(null);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!cellRef.current || wrapModifier !== 'truncate') {
       return;
     }
