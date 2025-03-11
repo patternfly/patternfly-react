@@ -14,10 +14,9 @@ test('Matches snapshot with control buttons enabled', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test(`Renders with default classes ${styles.codeEditor}, ${styles.codeEditorMain}, ${styles.codeEditorCode}`, () => {
+test(`Renders with default classes ${styles.codeEditor}, ${styles.codeEditorCode}`, () => {
   render(<CodeEditor />);
   expect(screen.getByTestId('mock-editor').parentElement).toHaveClass(styles.codeEditorCode);
-  expect(screen.getByTestId('mock-editor').parentElement?.parentElement).toHaveClass(styles.codeEditorMain);
   expect(screen.getByTestId('mock-editor').parentElement?.parentElement?.parentElement).toHaveClass(styles.codeEditor);
 });
 
@@ -33,9 +32,9 @@ test(`Renders with ${styles.modifiers.readOnly} when isReadOnly = true`, () => {
   );
 });
 
-test(`Renders with ${styles.codeEditorUpload} when isUploadEnabled = true`, () => {
+test(`Renders with ${styles.codeEditorMain} when isUploadEnabled = true`, () => {
   render(<CodeEditor isUploadEnabled code="test" />);
-  expect(screen.getByTestId('mock-editor').parentElement?.parentElement).toHaveClass(styles.codeEditorUpload);
+  expect(screen.getByTestId('mock-editor').parentElement?.parentElement).toHaveClass(styles.codeEditorMain);
 });
 
 test(`Renders with empty state when code = undefined`, () => {

@@ -669,7 +669,7 @@ class CodeEditor extends Component<CodeEditorProps, CodeEditorState> {
               )}
               ref={this.ref}
             >
-              {isUploadEnabled || providedEmptyState ? (
+              {(isUploadEnabled || providedEmptyState) && !value ? (
                 <div
                   {...getRootProps({
                     onClick: (event) => event.stopPropagation() // Prevents clicking TextArea from opening file dialog
@@ -678,10 +678,14 @@ class CodeEditor extends Component<CodeEditorProps, CodeEditorState> {
                 >
                   {editorHeader}
                   <div className={css(styles.codeEditorMain, isDragActive && styles.modifiers.dragHover)}>
-                    <div className={css(styles.codeEditorUpload)}>
-                      <input {...getInputProps()} /* hidden, necessary for react-dropzone */ hidden />
-                      {(showEmptyState || providedEmptyState) && !value ? emptyState : editor}
-                    </div>
+                    {(showEmptyState || providedEmptyState) && !value ? (
+                      <div className={css(styles.codeEditorUpload)}>
+                        <input {...getInputProps()} /* hidden, necessary for react-dropzone */ hidden />
+                        {emptyState}
+                      </div>
+                    ) : (
+                      editor
+                    )}
                   </div>
                 </div>
               ) : (
