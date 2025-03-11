@@ -1,5 +1,5 @@
 import { Content, TextInput, TextInputProps, ValidatedOptions } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Component, createRef } from 'react';
 
 export class TextInputDemo extends Component {
   state = {
@@ -11,7 +11,7 @@ export class TextInputDemo extends Component {
     validated: ValidatedOptions.default
   };
 
-  ref = React.createRef<HTMLInputElement>();
+  ref = createRef<HTMLInputElement>();
 
   handleTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     this.setState({ value });

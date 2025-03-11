@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { CodeBlock } from '../CodeBlock';
 import styles from '@patternfly/react-styles/css/components/CodeBlock/code-block';

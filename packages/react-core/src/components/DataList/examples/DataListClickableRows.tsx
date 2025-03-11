@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import {
   DataList,
   DataListItem,
@@ -15,9 +15,9 @@ import {
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const DataListClickableRows: React.FunctionComponent = () => {
-  const [isOpen1, setIsOpen1] = React.useState(false);
-  const [isOpen2, setIsOpen2] = React.useState(false);
-  const [selectedDataListItemId, setSelectedDataListItemId] = React.useState('');
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [selectedDataListItemId, setSelectedDataListItemId] = useState('');
 
   const onToggle1 = () => {
     setIsOpen1(!isOpen1);
@@ -44,7 +44,7 @@ export const DataListClickableRows: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DataList
         aria-label="clickable data list example"
         selectedDataListItemId={selectedDataListItemId}
@@ -150,6 +150,6 @@ export const DataListClickableRows: React.FunctionComponent = () => {
           </DataListItemRow>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </Fragment>
   );
 };

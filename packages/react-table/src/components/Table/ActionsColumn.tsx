@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, forwardRef, Fragment, useState } from 'react';
 import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core/dist/esm/components/Dropdown';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
@@ -49,7 +49,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
   isOnOpenChangeDisabled = false,
   ...props
 }: ActionsColumnProps) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = () => {
     setIsOpen(!isOpen);
@@ -70,7 +70,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       {items
         .filter((item) => item.isOutsideDropdown)
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -88,7 +88,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
               {title}
             </Button>
           ) : (
-            React.cloneElement(title as React.ReactElement<any>, { onClick, isDisabled, ...props })
+            cloneElement(title as React.ReactElement<any>, { onClick, isDisabled, ...props })
           )
         )}
       <Dropdown
@@ -150,11 +150,11 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
             )}
         </DropdownList>
       </Dropdown>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
-export const ActionsColumn = React.forwardRef((props: ActionsColumnProps, ref: React.Ref<HTMLElement>) => (
+export const ActionsColumn = forwardRef((props: ActionsColumnProps, ref: React.Ref<HTMLElement>) => (
   <ActionsColumnBase {...props} innerRef={ref} />
 ));
 ActionsColumn.displayName = 'ActionsColumn';

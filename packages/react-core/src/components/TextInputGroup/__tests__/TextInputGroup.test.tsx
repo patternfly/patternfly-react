@@ -1,4 +1,4 @@
-import React from 'react';
+import { useContext } from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
@@ -74,7 +74,7 @@ describe('TextInputGroup', () => {
 
   it('passes isDisabled=false to children via a context when isDisabled prop is not passed', () => {
     const TestComponent: React.FunctionComponent = () => {
-      const context = React.useContext(TextInputGroupContext);
+      const context = useContext(TextInputGroupContext);
 
       return <button disabled={context.isDisabled} />;
     };
@@ -92,7 +92,7 @@ describe('TextInputGroup', () => {
 
   it('passes isDisabled=true to children via a context when isDisabled prop is passed', () => {
     const TestComponent: React.FunctionComponent = () => {
-      const context = React.useContext(TextInputGroupContext);
+      const context = useContext(TextInputGroupContext);
 
       return <button disabled={context.isDisabled} />;
     };

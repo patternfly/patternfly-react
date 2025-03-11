@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import calendarMonthStyles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
@@ -8,7 +8,6 @@ import { Popover, PopoverProps } from '../Popover/Popover';
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
 import { CalendarMonth, CalendarFormat } from '../CalendarMonth';
-import { useImperativeHandle } from 'react';
 import { KeyTypes } from '../../helpers';
 import { isValidDate } from '../../helpers/datetimeUtils';
 import { HelperText, HelperTextItem } from '../HelperText';
@@ -124,33 +123,33 @@ const DatePickerBase = (
   }: DatePickerProps,
   ref: React.Ref<DatePickerRef>
 ) => {
-  const [value, setValue] = React.useState(valueProp);
-  const [valueDate, setValueDate] = React.useState(dateParse(value));
-  const [errorText, setErrorText] = React.useState('');
-  const [popoverOpen, setPopoverOpen] = React.useState(false);
-  const [selectOpen, setSelectOpen] = React.useState(false);
-  const [pristine, setPristine] = React.useState(true);
-  const [textInputFocused, setTextInputFocused] = React.useState(false);
-  const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
+  const [value, setValue] = useState(valueProp);
+  const [valueDate, setValueDate] = useState(dateParse(value));
+  const [errorText, setErrorText] = useState('');
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const [selectOpen, setSelectOpen] = useState(false);
+  const [pristine, setPristine] = useState(true);
+  const [textInputFocused, setTextInputFocused] = useState(false);
+  const widthChars = useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
   const style = { [cssFormControlWidthChars.name]: widthChars, ...styleProps };
-  const buttonRef = React.useRef<HTMLButtonElement>(undefined);
-  const datePickerWrapperRef = React.useRef<HTMLDivElement>(undefined);
-  const triggerRef = React.useRef<HTMLDivElement>(undefined);
+  const buttonRef = useRef<HTMLButtonElement>(undefined);
+  const datePickerWrapperRef = useRef<HTMLDivElement>(undefined);
+  const triggerRef = useRef<HTMLDivElement>(undefined);
   const dateIsRequired = requiredDateOptions?.isRequired || false;
   const emptyDateText = requiredDateOptions?.emptyDateText || 'Date cannot be blank';
 
-  React.useEffect(() => {
+  useEffect(() => {
     setValue(valueProp);
     setValueDate(dateParse(valueProp));
   }, [valueProp]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isValidDate(valueDate)) {
       applyValidators(valueDate);
     }
   }, [validators]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setPristine(!value);
     const newValueDate = dateParse(value);
     if (errorText && isValidDate(newValueDate)) {
@@ -353,5 +352,5 @@ const DatePickerBase = (
   );
 };
 
-export const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(DatePickerBase);
+export const DatePicker = forwardRef<DatePickerRef, DatePickerProps>(DatePickerBase);
 DatePicker.displayName = 'DatePicker';

@@ -101,7 +101,7 @@ export default [
       'no-new-wrappers': 'error',
       'no-prototype-builtins': 'off',
       'no-restricted-imports': [
-        'warn',
+        'error',
         {
           paths: [
             {

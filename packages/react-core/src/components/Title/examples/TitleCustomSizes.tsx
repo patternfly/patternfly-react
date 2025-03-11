@@ -1,8 +1,8 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Title, TitleSizes } from '@patternfly/react-core';
 
 export const TitleCustomSizes: React.FunctionComponent = () => (
-  <React.Fragment>
+  <Fragment>
     <Title headingLevel="h1" size={TitleSizes['4xl']}>
       4xl title
     </Title>
@@ -21,5 +21,5 @@ export const TitleCustomSizes: React.FunctionComponent = () => (
     <Title headingLevel="h6" size="md">
       md title
     </Title>
-  </React.Fragment>
+  </Fragment>
 );

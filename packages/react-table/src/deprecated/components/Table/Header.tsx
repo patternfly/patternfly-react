@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Header } from './base';
 import { IHeaderRow } from '../../../components';
 import { TableContext } from './TableContext';

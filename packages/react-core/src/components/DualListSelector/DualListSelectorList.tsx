@@ -1,7 +1,7 @@
+import { forwardRef, useContext } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { DualListSelectorListItem } from './DualListSelectorListItem';
-import * as React from 'react';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 
 /** Acts as the container for DualListSelectorListItem sub-components. */
@@ -19,7 +19,7 @@ export const DualListSelectorListBase: React.FunctionComponent<DualListSelectorL
   ...props
 }: DualListSelectorListProps) => {
   const { isTree, ariaLabelledBy, focusedOption, displayOption, selectedOptions, id, options, isDisabled } =
-    React.useContext(DualListSelectorListContext);
+    useContext(DualListSelectorListContext);
 
   const hasOptions = () =>
     options.length !== 0 || (children !== undefined && (children as React.ReactNode[]).length !== 0);
@@ -60,10 +60,8 @@ export const DualListSelectorListBase: React.FunctionComponent<DualListSelectorL
 };
 DualListSelectorListBase.displayName = 'DualListSelectorListBase';
 
-export const DualListSelectorList = React.forwardRef(
-  (props: DualListSelectorListProps, ref: React.Ref<HTMLUListElement>) => (
-    <DualListSelectorListBase innerRef={ref as React.MutableRefObject<any>} {...props} />
-  )
-);
+export const DualListSelectorList = forwardRef((props: DualListSelectorListProps, ref: React.Ref<HTMLUListElement>) => (
+  <DualListSelectorListBase innerRef={ref as React.MutableRefObject<any>} {...props} />
+));
 
 DualListSelectorList.displayName = 'DualListSelectorList';

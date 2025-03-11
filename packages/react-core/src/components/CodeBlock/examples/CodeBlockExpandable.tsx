@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import {
   CodeBlock,
   CodeBlockAction,
@@ -12,9 +12,9 @@ import {
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 export const ExpandableCodeBlock: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
-  const [copied, setCopied] = React.useState(false);
-  const [isRunning, setisRunning] = React.useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [isRunning, setisRunning] = useState(false);
   const runText: string = 'Run in web terminal';
   const doneRunText: string = 'Running in web terminal';
 
@@ -48,7 +48,7 @@ connectionConfig:
 url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
 
   const actions = (
-    <React.Fragment>
+    <Fragment>
       <CodeBlockAction>
         <ClipboardCopyButton
           id="expandable-copy-button"
@@ -78,7 +78,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
           />
         </Tooltip>
       </CodeBlockAction>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

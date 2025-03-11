@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import * as ReactDOM from 'react-dom';
 import { usePopper } from './thirdparty/react-popper/usePopper';
 import { Placement, Modifier } from './thirdparty/popper-core';
@@ -215,17 +215,17 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   onShown = () => {},
   preventOverflow = false
 }) => {
-  const [triggerElement, setTriggerElement] = React.useState(null);
-  const [refElement, setRefElement] = React.useState<HTMLElement>(null);
-  const [popperElement, setPopperElement] = React.useState<HTMLElement>(null);
-  const [popperContent, setPopperContent] = React.useState(null);
-  const [ready, setReady] = React.useState(false);
-  const [opacity, setOpacity] = React.useState(0);
-  const [internalIsVisible, setInternalIsVisible] = React.useState(isVisible);
-  const transitionTimerRef = React.useRef(null);
-  const showTimerRef = React.useRef(null);
-  const hideTimerRef = React.useRef(null);
-  const prevExitDelayRef = React.useRef<number>(undefined);
+  const [triggerElement, setTriggerElement] = useState(null);
+  const [refElement, setRefElement] = useState<HTMLElement>(null);
+  const [popperElement, setPopperElement] = useState<HTMLElement>(null);
+  const [popperContent, setPopperContent] = useState(null);
+  const [ready, setReady] = useState(false);
+  const [opacity, setOpacity] = useState(0);
+  const [internalIsVisible, setInternalIsVisible] = useState(isVisible);
+  const transitionTimerRef = useRef(null);
+  const showTimerRef = useRef(null);
+  const hideTimerRef = useRef(null);
+  const prevExitDelayRef = useRef<number>(undefined);
 
   const refOrTrigger = refElement || triggerElement;
   const showPopper = isVisible || internalIsVisible;
@@ -233,7 +233,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   const triggerParent = ((triggerRef as React.RefObject<any>)?.current || triggerElement)?.parentElement;
   const languageDirection = getLanguageDirection(triggerParent);
 
-  const internalPosition = React.useMemo<'left' | 'right' | 'center'>(() => {
+  const internalPosition = useMemo<'left' | 'right' | 'center'>(() => {
     const fixedPositions = { left: 'left', right: 'right', center: 'center' };
 
     const positionMap = {
@@ -252,25 +252,25 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     return positionMap[languageDirection][position] as 'left' | 'right' | 'center';
   }, [position, languageDirection]);
 
-  const onDocumentClickCallback = React.useCallback(
+  const onDocumentClickCallback = useCallback(
     (event: MouseEvent) => onDocumentClick(event, refOrTrigger, popperElement),
     [showPopper, triggerElement, refElement, popperElement, onDocumentClick]
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     setReady(true);
     onMount();
   }, []);
 
   // Cancel all timers on unmount
-  React.useEffect(
+  useEffect(
     () => () => {
       clearTimeouts([transitionTimerRef, hideTimerRef, showTimerRef]);
     },
     []
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (triggerRef) {
       if ((triggerRef as React.RefObject<any>).current) {
         setRefElement((triggerRef as React.RefObject<any>).current);
@@ -279,7 +279,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       }
     }
   }, [triggerRef, trigger]);
-  React.useEffect(() => {
+  useEffect(() => {
     // When the popperRef is defined or the popper visibility changes, ensure the popper element is up to date
     if (popperRef) {
       if ((popperRef as React.RefObject<any>).current) {
@@ -289,7 +289,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       }
     }
   }, [showPopper, popperRef]);
-  React.useEffect(() => {
+  useEffect(() => {
     // Trigger a Popper update when content changes.
     const observer = new MutationObserver(() => {
       update && update();
@@ -312,7 +312,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     addEventListener(onMouseEnter, refOrTrigger, 'mouseenter');
     addEventListener(onMouseLeave, refOrTrigger, 'mouseleave');
     addEventListener(onFocus, refOrTrigger, 'focus');
@@ -364,13 +364,13 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }
     return convertedPlacement as Placement;
   };
-  const getPlacementMemo = React.useMemo(getPlacement, [direction, internalPosition, placement]);
-  const getOppositePlacementMemo = React.useMemo(
+  const getPlacementMemo = useMemo(getPlacement, [direction, internalPosition, placement]);
+  const getOppositePlacementMemo = useMemo(
     () => getOppositePlacement(getPlacement()),
     [direction, internalPosition, placement]
   );
 
-  const widthMods: Modifier<'widthMods', {}> = React.useMemo(
+  const widthMods: Modifier<'widthMods', {}> = useMemo(
     () => ({
       name: 'widthMods',
       enabled: width !== undefined || minWidth !== undefined || maxWidth !== undefined,
@@ -446,7 +446,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   /** We want to forceUpdate only when a tooltip's content is dynamically updated.
    * TODO: Investigate into 3rd party libraries for a less limited/specific solution
    */
-  React.useEffect(() => {
+  useEffect(() => {
     // currentPopperContent = {tooltip children} || {dropdown children}
     const currentPopperContent =
       popper?.props?.children?.[1]?.props?.children || popper?.props?.children?.props?.children;
@@ -457,7 +457,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }
   }, [popper]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (prevExitDelayRef.current < exitDelay) {
       clearTimeouts([transitionTimerRef, hideTimerRef]);
       hideTimerRef.current = setTimeout(() => {
@@ -491,7 +491,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }, exitDelay);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isVisible) {
       show();
     } else {
@@ -522,7 +522,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   };
 
   const getMenuWithPopper = () => {
-    const localPopper = React.cloneElement(popper, options);
+    const localPopper = cloneElement(popper, options);
 
     return popperRef ? (
       localPopper
@@ -549,7 +549,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
 
   return (
     <>
-      {!triggerRef && trigger && React.isValidElement(trigger) && (
+      {!triggerRef && trigger && isValidElement(trigger) && (
         <div
           style={{ display: 'contents' }}
           ref={(node) => {
@@ -559,7 +559,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
           {trigger}
         </div>
       )}
-      {triggerRef && trigger && React.isValidElement(trigger) && trigger}
+      {triggerRef && trigger && isValidElement(trigger) && trigger}
       {ready && showPopper && getPopper()}
     </>
   );

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 // This example has been simplified to focus on the text modifier props. In real usage,

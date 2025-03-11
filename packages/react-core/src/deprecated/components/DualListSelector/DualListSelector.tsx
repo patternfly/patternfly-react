@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
@@ -134,12 +134,12 @@ interface DualListSelectorState {
   chosenTreeFilteredOptions: string[];
 }
 
-class DualListSelector extends React.Component<DualListSelectorProps, DualListSelectorState> {
+class DualListSelector extends Component<DualListSelectorProps, DualListSelectorState> {
   static displayName = 'DualListSelector';
-  private addAllButtonRef = React.createRef<HTMLButtonElement>();
-  private addSelectedButtonRef = React.createRef<HTMLButtonElement>();
-  private removeSelectedButtonRef = React.createRef<HTMLButtonElement>();
-  private removeAllButtonRef = React.createRef<HTMLButtonElement>();
+  private addAllButtonRef = createRef<HTMLButtonElement>();
+  private addSelectedButtonRef = createRef<HTMLButtonElement>();
+  private removeSelectedButtonRef = createRef<HTMLButtonElement>();
+  private removeAllButtonRef = createRef<HTMLButtonElement>();
   static defaultProps: PickOptional<DualListSelectorProps> = {
     children: '',
     availableOptions: [],

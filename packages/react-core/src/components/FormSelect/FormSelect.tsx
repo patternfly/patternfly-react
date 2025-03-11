@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children, Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -39,7 +39,7 @@ export interface FormSelectProps
   ouiaSafe?: boolean;
 }
 
-class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: string }> {
+class FormSelect extends Component<FormSelectProps, { ouiaStateId: string }> {
   static displayName = 'FormSelect';
   constructor(props: FormSelectProps) {
     super(props);
@@ -71,7 +71,7 @@ class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: string 
   render() {
     const { children, className, value, validated, isDisabled, isRequired, ouiaId, ouiaSafe, ...props } = this.props;
     /* find selected option and get placeholder flag */
-    const selectedOption = React.Children.toArray(children).find((option: any) => option.props.value === value) as any;
+    const selectedOption = Children.toArray(children).find((option: any) => option.props.value === value) as any;
     const isSelectedPlaceholder = selectedOption && selectedOption.props.isPlaceholder;
     const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
 

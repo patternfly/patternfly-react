@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, useContext, useEffect, useState } from 'react';
 import { useOUIAProps, OUIAProps } from '@patternfly/react-core/dist/esm/helpers';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
@@ -63,7 +63,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   ...props
 }: TrProps) => {
   const ouiaProps = useOUIAProps('TableRow', ouiaId, ouiaSafe);
-  const [computedAriaLabel, setComputedAriaLabel] = React.useState<string | undefined>('');
+  const [computedAriaLabel, setComputedAriaLabel] = useState<string | undefined>('');
 
   let onKeyDown = null;
   if (onRowClick) {
@@ -77,9 +77,9 @@ const TrBase: React.FunctionComponent<TrProps> = ({
 
   const rowIsHidden = isHidden || (isExpanded !== undefined && !isExpanded);
 
-  const { registerSelectableRow } = React.useContext(TableContext);
+  const { registerSelectableRow } = useContext(TableContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isSelectable && !rowIsHidden) {
       setComputedAriaLabel(`${isRowSelected ? 'Row selected' : ''}`);
       registerSelectableRow();
@@ -120,7 +120,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   );
 };
 
-export const Tr = React.forwardRef((props: TrProps, ref: React.Ref<HTMLTableRowElement>) => (
+export const Tr = forwardRef((props: TrProps, ref: React.Ref<HTMLTableRowElement>) => (
   <TrBase {...props} innerRef={ref} />
 ));
 Tr.displayName = 'Tr';

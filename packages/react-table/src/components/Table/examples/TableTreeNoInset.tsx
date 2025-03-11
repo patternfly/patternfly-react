@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, TreeRowWrapper, TdProps } from '@patternfly/react-table';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 
@@ -42,7 +42,7 @@ export const TableTreeNoInset: React.FunctionComponent = () => {
     workspaces: 'Workspaces'
   };
 
-  const [selectedNodeNames, setSelectedNodeNames] = React.useState<string[]>([]);
+  const [selectedNodeNames, setSelectedNodeNames] = useState<string[]>([]);
   const isNodeChecked = (node: RepositoriesTreeNode) => selectedNodeNames.includes(node.name);
 
   /**

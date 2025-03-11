@@ -1,9 +1,7 @@
-import * as React from 'react';
+import { useContext, type JSX } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { CardContext } from './Card';
-
-import type { JSX } from 'react';
 
 export interface CardTitleProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the CardTitle */
@@ -20,7 +18,7 @@ export const CardTitle: React.FunctionComponent<CardTitleProps> = ({
   component = 'div',
   ...props
 }: CardTitleProps) => {
-  const { cardId } = React.useContext(CardContext);
+  const { cardId } = useContext(CardContext);
   const Component = component as any;
   const titleId = cardId ? `${cardId}-title` : '';
 

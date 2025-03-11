@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -54,7 +52,7 @@ describe('FormGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('should render form group with additonal label info', () => {
+  test('should render form group with additional label info', () => {
     const { asFragment } = render(
       <FormGroup fieldId="id" label={<h1>Header</h1>} labelInfo="more info">
         <input aria-label="input" />

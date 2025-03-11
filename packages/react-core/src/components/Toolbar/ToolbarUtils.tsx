@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { RefObject } from 'react';
+import { createContext, RefObject } from 'react';
 import globalBreakpointMd from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_md';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_xl';
@@ -18,7 +17,7 @@ export interface ToolbarContextProps {
   customLabelGroupContent?: React.ReactNode;
 }
 
-export const ToolbarContext = React.createContext<ToolbarContextProps>({
+export const ToolbarContext = createContext<ToolbarContextProps>({
   isExpanded: false,
   toggleIsExpanded: () => {},
   labelGroupContentRef: null,
@@ -37,7 +36,7 @@ interface ToolbarContentContextProps {
   showClearFiltersButton?: boolean;
 }
 
-export const ToolbarContentContext = React.createContext<ToolbarContentContextProps>({
+export const ToolbarContentContext = createContext<ToolbarContentContextProps>({
   expandableContentRef: null,
   expandableContentId: '',
   labelContainerRef: null,

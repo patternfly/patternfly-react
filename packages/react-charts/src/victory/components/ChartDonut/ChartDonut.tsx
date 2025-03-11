@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
@@ -172,7 +172,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * events. The eventKey may optionally be used to select a single element by index rather than
    * an entire set. The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
-   * of an event handler is used to modify elemnts. The return value should be given
+   * of an event handler is used to modify elements. The return value should be given
    * as an object or an array of objects with optional target and eventKey keys,
    * and a mutation key whose value is a function. The target and eventKey keys
    * will default to those corresponding to the element the event handler was attached to.
@@ -624,10 +624,10 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       });
     }
     return (
-      <React.Fragment key="pf-chart-donut-titles">
+      <Fragment key="pf-chart-donut-titles">
         {getTitle({ titles: title, dy: centerSubTitle ? -8 : 0 })}
         {getSubTitle({ textComponent: subTitleComponent, dy: centerSubTitle ? 15 : 0 })}
-      </React.Fragment>
+      </Fragment>
     );
   };
 
@@ -641,7 +641,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     }
     const subTitleProps = textComponent.props ? textComponent.props : {};
 
-    return React.cloneElement(textComponent, {
+    return cloneElement(textComponent, {
       ...(name && { id: `${name}-${(textComponent as any).type.displayName}-subTitle` }),
       key: 'pf-chart-donut-subtitle',
       style: ChartDonutStyles.label.subTitle,
@@ -674,7 +674,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     }
     const titleProps = titleComponent ? titleComponent.props : {};
 
-    return React.cloneElement(titleComponent, {
+    return cloneElement(titleComponent, {
       ...(Array.isArray(titles) && { capHeight }), // Use capHeight with multiple labels
       ...(name && { id: `${name}-${(titleComponent as any).type.displayName}-title` }),
       key: 'pf-chart-donut-title',
@@ -722,7 +722,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   );
 
   // Clone so users can override container props
-  const container = React.cloneElement(
+  const container = cloneElement(
     containerComponent,
     {
       desc: ariaDesc,
@@ -736,12 +736,12 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   );
 
   return standalone ? (
-    <React.Fragment>{container}</React.Fragment>
+    <Fragment>{container}</Fragment>
   ) : (
-    <React.Fragment>
+    <Fragment>
       {chart}
       {getAllTitles()}
-    </React.Fragment>
+    </Fragment>
   );
 };
 ChartDonut.displayName = 'ChartDonut';

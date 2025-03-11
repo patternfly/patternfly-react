@@ -1,4 +1,3 @@
-import React from 'react';
 import { Progress, ProgressProps, HelperText, HelperTextItem, Radio } from '@patternfly/react-core';
 
 export const ProgressHelperText: React.FunctionComponent = () => {

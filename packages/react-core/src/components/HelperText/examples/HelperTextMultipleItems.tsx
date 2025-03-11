@@ -1,4 +1,3 @@
-import React from 'react';
 import { HelperText, HelperTextItem } from '@patternfly/react-core';
 
 export const HelperTextMultipleItems: React.FunctionComponent = () => (

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Slider/slider';
 import { css } from '@patternfly/react-styles';
 import sliderStepInsetInlineStart from '@patternfly/react-tokens/dist/esm/c_slider__step_InsetInlineStart';

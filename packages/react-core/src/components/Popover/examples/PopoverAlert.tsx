@@ -1,4 +1,3 @@
-import React from 'react';
 import { Popover, Button } from '@patternfly/react-core';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';

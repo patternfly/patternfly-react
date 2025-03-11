@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
+import { cloneElement } from 'react';
 import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
-
-import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { LineSegment, OriginType, ValueOrAccessor, VictoryLabelProps } from 'victory-core';
 import {
@@ -89,7 +88,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * the description, the more usable it will be for people using screen readers.
    * This prop defaults to an empty string.
    *
-   * @example "Golden retreivers make up 30%, Labs make up 25%, and other dog breeds are
+   * @example "Golden retrievers make up 30%, Labs make up 25%, and other dog breeds are
    * not represented above 5% each."
    */
   desc?: string;
@@ -212,14 +211,14 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
 }: ChartCursorContainerProps) => {
   const componentTheme = getComponentTheme(themeColor);
   const chartClassName = getClassName({ className });
-  const chartCursorLabelComponent = React.cloneElement(cursorLabelComponent, {
+  const chartCursorLabelComponent = cloneElement(cursorLabelComponent, {
     theme,
     ...cursorLabelComponent.props,
     ...(componentTheme?.label && componentTheme.label) // override backgroundStyle
   });
 
   // Clone so users can override cursor container props
-  const cursor = React.cloneElement(cursorComponent, {
+  const cursor = cloneElement(cursorComponent, {
     style: {
       strokeColor: chart_global_label_Fill.var
     },

@@ -1,11 +1,8 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { textCenter, ICell, IRow } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
-export class TableSimpleDemo extends React.Component<
-  TableProps,
-  { columns: (ICell | string)[]; rows: (IRow | string[])[] }
-> {
+export class TableSimpleDemo extends Component<TableProps, { columns: (ICell | string)[]; rows: (IRow | string[])[] }> {
   static displayName = 'TableSimpleDemo';
   constructor(props: TableProps) {
     super(props);

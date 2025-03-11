@@ -1,4 +1,4 @@
-import React from 'react';
+import { useContext, useRef, useState } from 'react';
 import {
   Button,
   Content,
@@ -21,7 +21,7 @@ import {
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 const JumpLinksWrapper = ({ headings }) => {
-  const { drawerContentRef } = React.useContext(DrawerContext);
+  const { drawerContentRef } = useContext(DrawerContext);
 
   return (
     <JumpLinks
@@ -43,8 +43,8 @@ const JumpLinksWrapper = ({ headings }) => {
 export const JumpLinksWithDrawer = () => {
   const headings = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];
 
-  const [isExpanded, setIsExpanded] = React.useState(false);
-  const drawerRef = React.useRef(undefined);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const drawerRef = useRef(undefined);
 
   const onCloseClick = () => {
     setIsExpanded(false);

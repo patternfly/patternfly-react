@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { MenuItemProps, MenuItem } from '../Menu';
 
@@ -45,7 +45,7 @@ const SelectOptionBase: React.FunctionComponent<MenuItemProps> = ({
   </MenuItem>
 );
 
-export const SelectOption = React.forwardRef((props: SelectOptionProps, ref: React.Ref<any>) => (
+export const SelectOption = forwardRef((props: SelectOptionProps, ref: React.Ref<any>) => (
   <SelectOptionBase {...props} innerRef={ref} />
 ));
 

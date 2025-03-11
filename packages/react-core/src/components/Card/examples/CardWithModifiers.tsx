@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Card, CardTitle, CardBody, CardFooter, Checkbox } from '@patternfly/react-core';
 
 export const CardWithModifiers: React.FunctionComponent = () => {
@@ -6,7 +6,7 @@ export const CardWithModifiers: React.FunctionComponent = () => {
   const [modifiers, setModifiers] = React.useState({});
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div style={{ marginBottom: '12px' }}>
         {mods.map((mod) => (
           <Checkbox
@@ -28,6 +28,6 @@ export const CardWithModifiers: React.FunctionComponent = () => {
           <CardFooter>Footer</CardFooter>
         </Card>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };

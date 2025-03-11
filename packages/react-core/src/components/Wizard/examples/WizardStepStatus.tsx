@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Radio, Wizard, WizardStep } from '@patternfly/react-core';
 
 interface SomeContextProps {

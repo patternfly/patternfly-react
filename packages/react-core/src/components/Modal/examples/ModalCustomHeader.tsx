@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   Modal,
@@ -22,7 +22,7 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show custom header/footer modal
       </Button>
@@ -61,6 +61,6 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
           </Title>
         </ModalFooter>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   Helpers,
@@ -291,7 +291,7 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
     if (showPointer && _pointerLength === 0) {
       _pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength, undefined) : 10;
     }
-    return React.cloneElement(flyoutComponent, {
+    return cloneElement(flyoutComponent, {
       pointerLength: _pointerLength,
       pointerWidth,
       ...flyoutComponent.props

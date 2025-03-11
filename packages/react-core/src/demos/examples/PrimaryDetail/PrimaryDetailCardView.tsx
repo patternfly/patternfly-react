@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Badge,
   Button,
@@ -446,7 +446,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
     </>
   );
   const toolbarItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem>{buildSelectDropdown()}</ToolbarItem>
       <ToolbarItem>{buildFilterDropdown()}</ToolbarItem>
       <ToolbarItem>
@@ -477,7 +477,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
       <ToolbarItem variant="pagination" align={{ default: 'alignEnd' }}>
         {renderPagination()}
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const filtered =

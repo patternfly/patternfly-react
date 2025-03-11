@@ -1,4 +1,3 @@
-import React from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 export const ToggleGroupCompact: React.FunctionComponent = () => {

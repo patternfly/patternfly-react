@@ -1,8 +1,8 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Switch } from '@patternfly/react-core';
 
 export const SwitchUncontrolled: React.FunctionComponent = () => (
-  <React.Fragment>
+  <Fragment>
     <Switch
       id="uncontrolled-switch-no-label"
       aria-label="Togglable option for uncontrolled and no visible label example"
@@ -14,5 +14,5 @@ export const SwitchUncontrolled: React.FunctionComponent = () => (
       label="Togglable option for uncontrolled example"
       defaultChecked={false}
     />
-  </React.Fragment>
+  </Fragment>
 );

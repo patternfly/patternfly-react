@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Badge,
   Button,
@@ -247,10 +247,10 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
       return 'Select';
     }
     return (
-      <React.Fragment>
+      <Fragment>
         <Badge>{firstOptions[containerSelected].type}</Badge>
         {showText && ` ${containerSelected}`}
-      </React.Fragment>
+      </Fragment>
     );
   };
 
@@ -271,7 +271,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
   );
 
   const leftAlignedItemsDesktop = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
         <Select
           role="menu"
@@ -319,11 +319,11 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
           {isPaused ? ` Resume Log` : ` Pause Log`}
         </Button>
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const leftAlignedItemsMobile = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
         <Tooltip position="top" content={<div>Select container</div>}>
           <Select
@@ -375,18 +375,18 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
           />
         </Tooltip>
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const leftAlignedItems = (
-    <React.Fragment>
+    <Fragment>
       {leftAlignedItemsDesktop}
       {leftAlignedItemsMobile}
-    </React.Fragment>
+    </Fragment>
   );
 
   const rightAlignedItemsDesktop = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
         <Dropdown
           isOpen={externalExpanded}
@@ -415,11 +415,11 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
           <DropdownList>{downloadDropdownItems}</DropdownList>
         </Dropdown>
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const rightAlignedItemsMobile = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
         <Tooltip position="top" content={<div>External logs</div>}>
           <Dropdown
@@ -461,11 +461,11 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
           </Dropdown>
         </Tooltip>
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const rightAlignedItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem>{LogsSearchInput}</ToolbarItem>
       {rightAlignedItemsDesktop}
       {rightAlignedItemsMobile}
@@ -474,14 +474,14 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
           <Button variant="plain" aria-label="expand" icon={<ExpandIcon />} />
         </Tooltip>
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const items = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarGroup align={{ default: 'alignStart' }}>{leftAlignedItems}</ToolbarGroup>
       <ToolbarGroup align={{ default: 'alignEnd' }}>{rightAlignedItems}</ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

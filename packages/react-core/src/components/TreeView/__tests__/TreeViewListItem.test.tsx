@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { TreeViewListItem } from '../TreeViewListItem';
 import { TreeView } from '../TreeView';

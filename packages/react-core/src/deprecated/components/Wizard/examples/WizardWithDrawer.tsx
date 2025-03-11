@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   DrawerActions,
@@ -117,7 +117,7 @@ export const WizardWithDrawer: React.FunctionComponent = () => {
   const title = 'Wizard with drawer example';
 
   return (
-    <React.Fragment>
+    <Fragment>
       <WizardDeprecated
         height={400}
         isDrawerExpanded={isDrawerExpanded}
@@ -126,6 +126,6 @@ export const WizardWithDrawer: React.FunctionComponent = () => {
         navAriaLabel={`${title} steps`}
         steps={steps}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

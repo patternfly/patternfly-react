@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import wizardHeightToken from '@patternfly/react-tokens/dist/esm/c_wizard_Height';
@@ -80,20 +79,20 @@ export const Wizard = ({
   shouldFocusContent = true,
   ...wrapperProps
 }: WizardProps) => {
-  const [activeStepIndex, setActiveStepIndex] = React.useState(startIndex);
+  const [activeStepIndex, setActiveStepIndex] = useState(startIndex);
   const initialSteps = buildSteps(children);
-  const firstStepRef = React.useRef(initialSteps[startIndex - 1]);
-  const wrapperRef = React.useRef(null);
+  const firstStepRef = useRef(initialSteps[startIndex - 1]);
+  const wrapperRef = useRef(null);
 
   // When the startIndex maps to a parent step, focus on the first sub-step
-  React.useEffect(() => {
+  useEffect(() => {
     if (isWizardParentStep(firstStepRef.current)) {
       setActiveStepIndex(startIndex + 1);
     }
   }, [startIndex]);
 
   // When the number of steps changes and pushes activeStepIndex out of bounds, reset back to startIndex
-  React.useEffect(() => {
+  useEffect(() => {
     if (activeStepIndex > initialSteps.length) {
       setActiveStepIndex(startIndex);
     }
@@ -208,9 +207,9 @@ const WizardInternal = ({
   isProgressive
 }: Pick<WizardProps, 'nav' | 'navAriaLabel' | 'isVisitRequired' | 'isProgressive'>) => {
   const { activeStep, steps, footer, goToStepByIndex } = useWizardContext();
-  const [isNavExpanded, setIsNavExpanded] = React.useState(false);
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
 
-  const wizardNav = React.useMemo(() => {
+  const wizardNav = useMemo(() => {
     if (isCustomWizardNav(nav)) {
       return typeof nav === 'function' ? nav(isNavExpanded, steps, activeStep, goToStepByIndex) : nav;
     }

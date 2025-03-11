@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import { IRow, IRowData, IExtraData, IHeaderRow } from '../../../components';
 import { mapOpenedRows } from '../../../components';
 import { Tbody } from '../../../components';
@@ -30,13 +30,13 @@ export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
 }: BodyWrapperProps) => {
   if (mappedRows && mappedRows.some((row) => row.hasOwnProperty('parent'))) {
     return (
-      <React.Fragment>
+      <Fragment>
         {mapOpenedRows(mappedRows, props.children).map((oneRow, key) => (
           <Tbody {...props} isExpanded={oneRow.isOpen} key={`tbody-${key}`} ref={tbodyRef as React.Ref<any>}>
             {oneRow.rows}
           </Tbody>
         ))}
-      </React.Fragment>
+      </Fragment>
     );
   }
   return <Tbody {...props} ref={tbodyRef as React.Ref<any>} />;

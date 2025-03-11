@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from '../Button';
 import { ActionGroup, Form, FormGroup } from '../Form';
 import { TextInput } from '../TextInput';
@@ -67,10 +67,10 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   isSearchMenuOpen,
   onToggleAdvancedMenu
 }: AdvancedSearchMenuProps) => {
-  const firstAttrRef = React.useRef(null);
-  const [putFocusBackOnInput, setPutFocusBackOnInput] = React.useState(false);
+  const firstAttrRef = useRef(null);
+  const [putFocusBackOnInput, setPutFocusBackOnInput] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (attributes.length > 0 && !advancedSearchDelimiter) {
       // eslint-disable-next-line no-console
       console.error(
@@ -79,7 +79,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
     }
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isSearchMenuOpen && firstAttrRef && firstAttrRef.current) {
       firstAttrRef.current.focus();
       setPutFocusBackOnInput(true);
@@ -88,7 +88,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
     }
   }, [isSearchMenuOpen]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener('mousedown', onDocClick);
     document.addEventListener('touchstart', onDocClick);
     document.addEventListener('keydown', onEscPress);

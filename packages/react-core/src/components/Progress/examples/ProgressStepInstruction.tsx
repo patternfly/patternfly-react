@@ -1,4 +1,3 @@
-import React from 'react';
 import { Progress } from '@patternfly/react-core';
 
 export const ProgressStepInstruction: React.FunctionComponent = () => (

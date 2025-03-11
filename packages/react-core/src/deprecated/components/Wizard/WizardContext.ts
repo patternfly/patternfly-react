@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext } from 'react';
 import { WizardStep } from './Wizard';
 
 export interface WizardContextType {
@@ -10,7 +10,7 @@ export interface WizardContextType {
   activeStep: WizardStep;
 }
 
-export const WizardContext = React.createContext<WizardContextType>({
+export const WizardContext = createContext<WizardContextType>({
   goToStepById: () => null,
   goToStepByName: () => null,
   onNext: () => null,

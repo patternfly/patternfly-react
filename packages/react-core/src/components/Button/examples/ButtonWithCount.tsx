@@ -1,4 +1,3 @@
-import React from 'react';
 import { BadgeCountObject, Button, Flex } from '@patternfly/react-core';
 
 export const ButtonWithCount: React.FunctionComponent = () => {

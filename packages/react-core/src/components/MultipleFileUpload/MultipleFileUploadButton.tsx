@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 import { MultipleFileUploadContext } from './MultipleFileUpload';
@@ -25,7 +25,7 @@ export const MultipleFileUploadButton: React.FunctionComponent<MultipleFileUploa
       "For accessibility reasons an aria-label should be specified on MultipleFileUploadButton if a browseButtonText isn't"
     );
   }
-  const { open } = React.useContext(MultipleFileUploadContext);
+  const { open } = useContext(MultipleFileUploadContext);
 
   return (
     <div className={css(styles.multipleFileUploadUpload, className)} {...props}>

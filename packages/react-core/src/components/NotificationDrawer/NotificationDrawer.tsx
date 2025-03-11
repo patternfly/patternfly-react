@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 import { css } from '@patternfly/react-styles';
 
@@ -22,7 +21,7 @@ const NotificationDrawerBase: React.FunctionComponent<NotificationDrawerProps> =
     {children}
   </div>
 );
-export const NotificationDrawer = React.forwardRef((props: NotificationDrawerProps, ref: React.Ref<any>) => (
+export const NotificationDrawer = forwardRef((props: NotificationDrawerProps, ref: React.Ref<any>) => (
   <NotificationDrawerBase innerRef={ref} {...props} />
 ));
 NotificationDrawer.displayName = 'NotificationDrawer';

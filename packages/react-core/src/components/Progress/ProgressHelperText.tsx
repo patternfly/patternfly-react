@@ -1,4 +1,3 @@
-import * as React from 'react';
 import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
 
 export interface ProgressHelperTextProps extends React.HTMLProps<HTMLDivElement> {

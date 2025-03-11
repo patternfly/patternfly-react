@@ -1,7 +1,5 @@
 import { render } from '@testing-library/react';
 import { DualListSelector } from '../DualListSelector';
-import React from 'react';
-
 describe('DualListSelector', () => {
   test('basic', () => {
     const { asFragment } = render(<DualListSelector availableOptions={['Option 1', 'Option 2']} id="firstTest" />);

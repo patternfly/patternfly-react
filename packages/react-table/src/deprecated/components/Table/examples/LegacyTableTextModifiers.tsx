@@ -1,4 +1,3 @@
-import React from 'react';
 import { cellWidth, TableText } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 

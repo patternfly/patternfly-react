@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import backgroundImage from '@patternfly/react-tokens/dist/esm/c_about_modal_box_BackgroundImage';
 import { AboutModalBoxContent } from './AboutModalBoxContent';

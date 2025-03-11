@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, useContext, useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { getUniqueId, handleArrows } from '../../helpers';
@@ -38,10 +38,10 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
   isDisabled = false,
   ...props
 }: DualListSelectorListWrapperProps) => {
-  const [focusedOption, setFocusedOption] = React.useState('');
-  const ref = React.useRef(null);
+  const [focusedOption, setFocusedOption] = useState('');
+  const ref = useRef(null);
   const menuRef = innerRef || ref;
-  const { isTree } = React.useContext(DualListSelectorContext);
+  const { isTree } = useContext(DualListSelectorContext);
 
   // Sets up keyboard focus handling for the dual list selector menu child of the pane.
   const handleKeys = (event: KeyboardEvent) => {
@@ -85,7 +85,7 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
     );
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleKeys);
     return () => {
       window.removeEventListener('keydown', handleKeys);
@@ -115,7 +115,7 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
 };
 DualListSelectorListWrapperBase.displayName = 'DualListSelectorListWrapperBase';
 
-export const DualListSelectorListWrapper = React.forwardRef(
+export const DualListSelectorListWrapper = forwardRef(
   (props: DualListSelectorListWrapperProps, ref: React.Ref<HTMLDivElement>) => (
     <DualListSelectorListWrapperBase innerRef={ref as React.MutableRefObject<any>} {...props} />
   )

@@ -21,7 +21,6 @@ JumpLinks has a scrollspy built-in to make your implementation easier. When impl
 This demo expands on the previous to show the JumpLinks in a vertical layout with subsections. It scrolls the [Page](/components/page)'s `mainContainerId` with an `offset` calculated based on the height of the masthead and the nav list when it appears above the content. The headings are given a tab index to allow the jump links to focus on them.
 
 ```js isFullscreen
-import React from 'react';
 import {
   PageSection,
   JumpLinks,

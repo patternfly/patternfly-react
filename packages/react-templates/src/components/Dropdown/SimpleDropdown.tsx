@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef, useState } from 'react';
 import {
   Dropdown,
   DropdownItem,
@@ -69,7 +69,7 @@ const SimpleDropdownBase: React.FunctionComponent<SimpleDropdownProps> = ({
   shouldFocusToggleOnSelect,
   ...props
 }: SimpleDropdownProps) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const onSelect = (event: React.MouseEvent<Element, MouseEvent>, value: string | number) => {
     onSelectProp && onSelectProp(event, value);
@@ -132,7 +132,7 @@ const SimpleDropdownBase: React.FunctionComponent<SimpleDropdownProps> = ({
   );
 };
 
-export const SimpleDropdown = React.forwardRef((props: SimpleDropdownProps, ref: React.Ref<any>) => (
+export const SimpleDropdown = forwardRef((props: SimpleDropdownProps, ref: React.Ref<any>) => (
   <SimpleDropdownBase {...props} innerRef={ref} />
 ));
 

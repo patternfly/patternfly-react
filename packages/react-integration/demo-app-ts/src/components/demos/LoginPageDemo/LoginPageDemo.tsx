@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 /* eslint-disable camelcase */
 import brandImg from '../../../assets/images/brandImgColor.svg';
 import pfbg_icon from '../../../assets/images/pfbg-icon.svg';

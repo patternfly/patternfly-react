@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen, act } from '@testing-library/react';
 import { CodeEditor, Language } from '../CodeEditor';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';

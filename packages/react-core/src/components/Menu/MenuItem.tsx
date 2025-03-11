@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext, forwardRef, useContext, useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import topOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_top_offset';
@@ -85,7 +85,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   id?: string;
 }
 
-const FlyoutContext = React.createContext({
+const FlyoutContext = createContext({
   direction: 'right' as 'left' | 'right'
 });
 
@@ -138,16 +138,16 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     setFlyoutRef,
     disableHover,
     role: menuRole
-  } = React.useContext(MenuContext);
+  } = useContext(MenuContext);
   let Component = (to ? 'a' : component) as any;
   if (hasCheckbox && !to) {
     Component = 'label' as any;
   }
-  const [flyoutTarget, setFlyoutTarget] = React.useState(null);
-  const flyoutContext = React.useContext(FlyoutContext);
-  const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
-  const ref = React.useRef<HTMLLIElement>(undefined);
-  const privateRef = React.useRef(undefined);
+  const [flyoutTarget, setFlyoutTarget] = useState(null);
+  const flyoutContext = useContext(FlyoutContext);
+  const [flyoutXDirection, setFlyoutXDirection] = useState(flyoutContext.direction);
+  const ref = useRef<HTMLLIElement>(undefined);
+  const privateRef = useRef(undefined);
   const innerComponentRef = innerRef || privateRef;
   const flyoutVisible = ref === flyoutRef;
 
@@ -202,11 +202,11 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     }
   }, [flyoutVisible, flyoutMenu]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setFlyoutXDirection(flyoutContext.direction);
   }, [flyoutContext]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (flyoutTarget) {
       if (flyoutVisible) {
         const flyoutMenu = (flyoutTarget as HTMLElement).nextElementSibling;
@@ -323,7 +323,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isFocused && ref.current) {
       const itemEl = ref.current;
       const parentListEl = itemEl.parentElement;
@@ -466,7 +466,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   );
 };
 
-export const MenuItem = React.forwardRef((props: MenuItemProps, ref: React.Ref<any>) => (
+export const MenuItem = forwardRef((props: MenuItemProps, ref: React.Ref<any>) => (
   <MenuItemBase {...props} innerRef={ref} />
 ));
 

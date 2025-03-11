@@ -1,4 +1,3 @@
-import React from 'react';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 interface Repository {
   name: string;

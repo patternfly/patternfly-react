@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import {
   Button,
   DualListSelector,
@@ -27,16 +27,16 @@ interface Option {
 }
 
 export const DualListSelectorSearch: React.FunctionComponent = () => {
-  const [availableOptions, setAvailableOptions] = React.useState<Option[]>([
+  const [availableOptions, setAvailableOptions] = useState<Option[]>([
     { text: 'Option 1', selected: false, isVisible: true },
     { text: 'Option 2', selected: false, isVisible: true },
     { text: 'Option 3', selected: false, isVisible: true },
     { text: 'Option 4', selected: false, isVisible: true }
   ]);
 
-  const [chosenOptions, setChosenOptions] = React.useState<Option[]>([]);
-  const [availableFilter, setAvailableFilter] = React.useState('');
-  const [chosenFilter, setChosenFilter] = React.useState('');
+  const [chosenOptions, setChosenOptions] = useState<Option[]>([]);
+  const [availableFilter, setAvailableFilter] = useState('');
+  const [chosenFilter, setChosenFilter] = useState('');
 
   // callback for moving selected options between lists
   const moveSelected = (fromAvailable: boolean) => {

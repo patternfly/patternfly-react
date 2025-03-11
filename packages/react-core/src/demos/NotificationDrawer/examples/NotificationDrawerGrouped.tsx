@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Avatar,
   Brand,
@@ -759,7 +759,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page
         masthead={masthead}
         sidebar={Sidebar}
@@ -784,6 +784,6 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
         </PageSection>
         <PageSection>Panel section content</PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

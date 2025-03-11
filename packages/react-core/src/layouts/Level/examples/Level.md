@@ -12,7 +12,6 @@ import './level.css';
 ### Basic
 
 ```js
-import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 
 <Level>
@@ -25,7 +24,6 @@ import { Level, LevelItem } from '@patternfly/react-core';
 ### With gutters
 
 ```js
-import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 
 <Level hasGutter>

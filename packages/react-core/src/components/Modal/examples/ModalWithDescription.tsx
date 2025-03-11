@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter, ModalVariant } from '@patternfly/react-core';
 
 export const ModalWithDescription: React.FunctionComponent = () => {
@@ -9,7 +9,7 @@ export const ModalWithDescription: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show modal with description
       </Button>
@@ -74,6 +74,6 @@ export const ModalWithDescription: React.FunctionComponent = () => {
           </Button>
         </ModalFooter>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

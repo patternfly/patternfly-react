@@ -1,8 +1,7 @@
-import * as React from 'react';
+import { Component, RefObject } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 
-import { RefObject } from 'react';
 import { ToolbarGroup } from './ToolbarGroup';
 import { ToolbarItem } from './ToolbarItem';
 import { Button } from '../Button';
@@ -26,7 +25,7 @@ export interface ToolbarExpandableContentProps extends React.HTMLProps<HTMLDivEl
   showClearFiltersButton: boolean;
 }
 
-class ToolbarExpandableContent extends React.Component<ToolbarExpandableContentProps> {
+class ToolbarExpandableContent extends Component<ToolbarExpandableContentProps> {
   static displayName = 'ToolbarExpandableContent';
   static contextType = ToolbarContext;
   context!: React.ContextType<typeof ToolbarContext>;

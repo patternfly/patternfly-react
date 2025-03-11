@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateActions, EmptyStateFooter } from '@patternfly/react-core';
 import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 

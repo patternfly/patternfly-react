@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { PageContextConsumer } from './PageContext';
@@ -25,7 +25,7 @@ export interface PageSidebarContextProps {
 export const pageSidebarContextDefaults: PageSidebarContextProps = {
   isSidebarOpen: true
 };
-export const PageSidebarContext = React.createContext<Partial<PageSidebarContextProps>>(pageSidebarContextDefaults);
+export const PageSidebarContext = createContext<Partial<PageSidebarContextProps>>(pageSidebarContextDefaults);
 
 export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
   className = '',

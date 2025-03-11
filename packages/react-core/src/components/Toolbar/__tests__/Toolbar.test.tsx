@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { Fragment } from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { ToolbarToggleGroup } from '../ToolbarToggleGroup';
@@ -18,12 +17,12 @@ jest.mock('../../../helpers/GenerateId/GenerateId');
 describe('Toolbar', () => {
   it('should render inset', () => {
     const items = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarItem>Test</ToolbarItem>
         <ToolbarItem>Test 2</ToolbarItem>
         <ToolbarItem variant="separator" />
         <ToolbarItem>Test 3 </ToolbarItem>
-      </React.Fragment>
+      </Fragment>
     );
 
     const { asFragment } = render(
@@ -45,8 +44,8 @@ describe('Toolbar', () => {
 
   it('should render with custom label content', () => {
     const items = (
-      <React.Fragment>
-        <ToolbarToggleGroup toggleIcon={<React.Fragment />} breakpoint="xl">
+      <Fragment>
+        <ToolbarToggleGroup toggleIcon={<Fragment />} breakpoint="xl">
           <ToolbarGroup variant="filter-group">
             <ToolbarFilter
               labels={['New', 'Pending']}
@@ -58,11 +57,11 @@ describe('Toolbar', () => {
             </ToolbarFilter>
           </ToolbarGroup>
         </ToolbarToggleGroup>
-      </React.Fragment>
+      </Fragment>
     );
 
     const customLabelGroupContent = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarItem>
           <Button variant="link" onClick={() => {}} isInline>
             Save filters
@@ -73,7 +72,7 @@ describe('Toolbar', () => {
             Clear all filters
           </Button>
         </ToolbarItem>
-      </React.Fragment>
+      </Fragment>
     );
 
     const { asFragment } = render(
@@ -94,12 +93,12 @@ describe('Toolbar', () => {
 
   it('Renders with class ${styles.modifiers.noBackground} when colorVariant="no-background"', () => {
     const items = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarItem>Test</ToolbarItem>
         <ToolbarItem>Test 2</ToolbarItem>
         <ToolbarItem variant="separator" />
         <ToolbarItem>Test 3 </ToolbarItem>
-      </React.Fragment>
+      </Fragment>
     );
 
     render(
@@ -113,12 +112,12 @@ describe('Toolbar', () => {
 
   it('Renders with class ${styles.modifiers.primary} when colorVariant="primary"', () => {
     const items = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarItem>Test</ToolbarItem>
         <ToolbarItem>Test 2</ToolbarItem>
         <ToolbarItem variant="separator" />
         <ToolbarItem>Test 3 </ToolbarItem>
-      </React.Fragment>
+      </Fragment>
     );
 
     render(
@@ -132,12 +131,12 @@ describe('Toolbar', () => {
 
   it('Renders with class ${styles.modifiers.secondary} when colorVariant="secondary"', () => {
     const items = (
-      <React.Fragment>
+      <Fragment>
         <ToolbarItem>Test</ToolbarItem>
         <ToolbarItem>Test 2</ToolbarItem>
         <ToolbarItem variant="separator" />
         <ToolbarItem>Test 3 </ToolbarItem>
-      </React.Fragment>
+      </Fragment>
     );
 
     render(

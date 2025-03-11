@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Content, SkipToContent } from '@patternfly/react-core';
 
 export const SkipToContentBasic: React.FunctionComponent = () => {
@@ -13,7 +13,7 @@ export const SkipToContentBasic: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <SkipToContent onClick={handleClick} href={`#${mainContentId}`}>
         Skip to content
       </SkipToContent>
@@ -141,6 +141,6 @@ export const SkipToContentBasic: React.FunctionComponent = () => {
           </p>
         </Content>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };

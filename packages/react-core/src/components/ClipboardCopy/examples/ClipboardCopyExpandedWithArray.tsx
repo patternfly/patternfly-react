@@ -1,4 +1,3 @@
-import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
 const text = [

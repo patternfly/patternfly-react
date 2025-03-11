@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Radio } from '@patternfly/react-core';
 
 export const RadioControlled: React.FunctionComponent = () => {
@@ -8,7 +8,7 @@ export const RadioControlled: React.FunctionComponent = () => {
     setCheck1(true);
   };
   return (
-    <React.Fragment>
+    <Fragment>
       <Radio
         isChecked={check1}
         name="radio-1"
@@ -16,6 +16,6 @@ export const RadioControlled: React.FunctionComponent = () => {
         label="Controlled Radio"
         id="radio-controlled"
       ></Radio>
-    </React.Fragment>
+    </Fragment>
   );
 };

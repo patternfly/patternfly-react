@@ -1,4 +1,3 @@
-import React from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
 export const DividerOrientationVariousBreakpoints: React.FunctionComponent = () => (

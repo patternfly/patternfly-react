@@ -1,17 +1,17 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import { Button, ButtonVariant, Checkbox } from '@patternfly/react-core';
 import { DualListSelector as DLSDeprecated } from '@patternfly/react-core/deprecated';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 
 export const DualListSelectorComplexOptionsActions: React.FunctionComponent = () => {
-  const [availableOptions, setAvailableOptions] = React.useState<React.ReactNode[]>([
+  const [availableOptions, setAvailableOptions] = useState<React.ReactNode[]>([
     <span key="option1">Option 1</span>,
     <span key="option3">Option 3</span>,
     <span key="option4">Option 4</span>,
     <span key="option2">Option 2</span>
   ]);
-  const [chosenOptions, setChosenOptions] = React.useState<React.ReactNode[]>([]);
-  const [isDisabled, setIsDisabled] = React.useState(false);
+  const [chosenOptions, setChosenOptions] = useState<React.ReactNode[]>([]);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const onListChange = (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => {
     setAvailableOptions(newAvailableOptions);
@@ -63,7 +63,7 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
   ];
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DLSDeprecated
         isSearchable
         availableOptions={availableOptions}
@@ -86,6 +86,6 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
         isChecked={isDisabled}
         onChange={() => setIsDisabled(!isDisabled)}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

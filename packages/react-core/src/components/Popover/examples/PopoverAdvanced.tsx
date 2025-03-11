@@ -1,4 +1,3 @@
-import React from 'react';
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
 export const PopoverAdvanced: React.FunctionComponent = () => {

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 

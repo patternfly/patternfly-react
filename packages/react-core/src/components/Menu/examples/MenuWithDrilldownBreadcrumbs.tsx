@@ -1,4 +1,4 @@
-import React, { type JSX } from 'react';
+import { type JSX, useState } from 'react';
 import {
   Badge,
   Breadcrumb,
@@ -26,12 +26,12 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
-  const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
-  const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
-  const [menuHeights, setMenuHeights] = React.useState<any>({});
-  const [activeMenu, setActiveMenu] = React.useState<string>('breadcrumbs-rootMenu');
-  const [breadcrumb, setBreadcrumb] = React.useState<JSX.Element | null>();
-  const [withMaxMenuHeight, setWithMaxMenuHeight] = React.useState(false);
+  const [menuDrilledIn, setMenuDrilledIn] = useState<string[]>([]);
+  const [drilldownPath, setDrilldownPath] = useState<string[]>([]);
+  const [menuHeights, setMenuHeights] = useState<any>({});
+  const [activeMenu, setActiveMenu] = useState<string>('breadcrumbs-rootMenu');
+  const [breadcrumb, setBreadcrumb] = useState<JSX.Element | null>();
+  const [withMaxMenuHeight, setWithMaxMenuHeight] = useState(false);
 
   const onToggle = (isOpen: boolean, key: string) => {
     switch (key) {

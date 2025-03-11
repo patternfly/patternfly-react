@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { useState, type JSX } from 'react';
+import { Fragment, useEffect, useRef, useState, type JSX } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import { AlertIcon } from './AlertIcon';
@@ -115,18 +114,18 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
 }: AlertProps) => {
   const ouiaProps = useOUIAProps(Alert.displayName, ouiaId, ouiaSafe, variant);
   const getHeadingContent = (
-    <React.Fragment>
+    <Fragment>
       <span className="pf-v6-screen-reader">{variantLabel}</span>
       {title}
-    </React.Fragment>
+    </Fragment>
   );
 
-  const titleRef = React.useRef(null);
+  const titleRef = useRef(null);
   const TitleComponent = component as any;
 
-  const divRef = React.useRef<HTMLDivElement>(undefined);
+  const divRef = useRef<HTMLDivElement>(undefined);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
-  React.useEffect(() => {
+  useEffect(() => {
     if (!titleRef.current || !truncateTitle) {
       return;
     }
@@ -142,14 +141,14 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const [isMouseOver, setIsMouseOver] = useState<boolean | undefined>();
   const [containsFocus, setContainsFocus] = useState<boolean | undefined>();
   const dismissed = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
-  React.useEffect(() => {
+  useEffect(() => {
     const calculatedTimeout = timeout === true ? 8000 : Number(timeout);
     if (calculatedTimeout > 0) {
       const timer = setTimeout(() => setTimedOut(true), calculatedTimeout);
       return () => clearTimeout(timer);
     }
   }, [timeout]);
-  React.useEffect(() => {
+  useEffect(() => {
     const onDocumentFocus = () => {
       if (divRef.current) {
         if (divRef.current.contains(document.activeElement)) {
@@ -165,13 +164,13 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
 
     return () => document.removeEventListener('focus', onDocumentFocus, true);
   }, [containsFocus]);
-  React.useEffect(() => {
+  useEffect(() => {
     if (containsFocus === false || isMouseOver === false) {
       const timer = setTimeout(() => setTimedOutAnimation(true), timeoutAnimation);
       return () => clearTimeout(timer);
     }
   }, [containsFocus, isMouseOver, timeoutAnimation]);
-  React.useEffect(() => {
+  useEffect(() => {
     dismissed && onTimeout();
   }, [dismissed, onTimeout]);
 

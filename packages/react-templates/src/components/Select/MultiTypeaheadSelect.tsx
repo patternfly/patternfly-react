@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef, useEffect, useRef, useState } from 'react';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { Label, LabelGroup } from '@patternfly/react-core/dist/esm/components/Label';
 import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
@@ -62,15 +62,15 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
   toggleProps,
   ...props
 }: MultiTypeaheadSelectProps) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<(string | number)[]>(
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<(string | number)[]>(
     (initialOptions?.filter((o) => o.selected) ?? []).map((o) => o.value)
   );
-  const [inputValue, setInputValue] = React.useState<string>();
-  const [selectOptions, setSelectOptions] = React.useState<MultiTypeaheadSelectOption[]>(initialOptions);
-  const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
-  const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
-  const textInputRef = React.useRef<HTMLInputElement>(undefined);
+  const [inputValue, setInputValue] = useState<string>();
+  const [selectOptions, setSelectOptions] = useState<MultiTypeaheadSelectOption[]>(initialOptions);
+  const [focusedItemIndex, setFocusedItemIndex] = useState<number | null>(null);
+  const [activeItemId, setActiveItemId] = useState<string | null>(null);
+  const textInputRef = useRef<HTMLInputElement>(undefined);
 
   const NO_RESULTS = 'no results';
 
@@ -79,7 +79,7 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
     setIsOpen(true);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     let newSelectOptions: MultiTypeaheadSelectOption[] = initialOptions;
 
     // Filter menu items based on the text input value when one exists
@@ -108,10 +108,7 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputValue, initialOptions]);
 
-  React.useEffect(
-    () => setSelected((initialOptions?.filter((o) => o.selected) ?? []).map((o) => o.value)),
-    [initialOptions]
-  );
+  useEffect(() => setSelected((initialOptions?.filter((o) => o.selected) ?? []).map((o) => o.value)), [initialOptions]);
 
   const setActiveAndFocusedItem = (itemIndex: number) => {
     setFocusedItemIndex(itemIndex);
@@ -340,7 +337,7 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
 
 MultiTypeaheadSelectBase.displayName = 'MultiTypeaheadSelectBase';
 
-export const MultiTypeaheadSelect = React.forwardRef((props: MultiTypeaheadSelectProps, ref: React.Ref<any>) => (
+export const MultiTypeaheadSelect = forwardRef((props: MultiTypeaheadSelectProps, ref: React.Ref<any>) => (
   <MultiTypeaheadSelectBase {...props} innerRef={ref} />
 ));
 

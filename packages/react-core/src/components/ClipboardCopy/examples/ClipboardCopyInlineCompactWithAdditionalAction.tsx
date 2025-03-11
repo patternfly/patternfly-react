@@ -1,9 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import { ClipboardCopy, ClipboardCopyAction, Button, Tooltip } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 export const ClipboardCopyInlineCompactWithAdditionalAction: React.FunctionComponent = () => {
-  const [isRunning, setisRunning] = React.useState(false);
+  const [isRunning, setisRunning] = useState(false);
   const runText: string = 'Run in web terminal';
   const doneRunText: string = 'Running in web terminal';
   return (

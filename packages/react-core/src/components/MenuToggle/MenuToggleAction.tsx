@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
 import { css } from '@patternfly/react-styles';
 
@@ -15,7 +15,7 @@ export interface MenuToggleActionProps {
   id?: string;
 }
 
-class MenuToggleAction extends React.Component<MenuToggleActionProps> {
+class MenuToggleAction extends Component<MenuToggleActionProps> {
   static displayName = 'MenuToggleAction';
   static defaultProps: MenuToggleActionProps = {
     className: '',

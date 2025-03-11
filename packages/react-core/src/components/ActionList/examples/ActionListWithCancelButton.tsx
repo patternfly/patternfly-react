@@ -1,8 +1,8 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { ActionList, ActionListGroup, ActionListItem, Button } from '@patternfly/react-core';
 
 export const ActionListWithCancelButton: React.FunctionComponent = () => (
-  <React.Fragment>
+  <Fragment>
     In modals, forms, data lists
     <ActionList>
       <ActionListGroup>
@@ -41,5 +41,5 @@ export const ActionListWithCancelButton: React.FunctionComponent = () => (
         </ActionListItem>
       </ActionListGroup>
     </ActionList>
-  </React.Fragment>
+  </Fragment>
 );

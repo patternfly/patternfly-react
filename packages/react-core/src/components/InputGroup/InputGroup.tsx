@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/InputGroup/input-group';
 import { css } from '@patternfly/react-styles';
 
@@ -17,7 +17,7 @@ export const InputGroupBase: React.FunctionComponent<InputGroupProps> = ({
   innerRef,
   ...props
 }: InputGroupProps) => {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const inputGroupRef = innerRef || ref;
 
   return (
@@ -28,7 +28,7 @@ export const InputGroupBase: React.FunctionComponent<InputGroupProps> = ({
 };
 InputGroupBase.displayName = 'InputGroupBase';
 
-export const InputGroup = React.forwardRef((props: InputGroupProps, ref: React.Ref<HTMLDivElement>) => (
+export const InputGroup = forwardRef((props: InputGroupProps, ref: React.Ref<HTMLDivElement>) => (
   <InputGroupBase innerRef={ref} {...props} />
 ));
 InputGroup.displayName = 'InputGroup';

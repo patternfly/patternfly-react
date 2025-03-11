@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import { Button, ButtonProps, ButtonVariant } from '../Button';
 import { AlertContext } from './AlertContext';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -23,7 +23,7 @@ export const AlertToggleExpandButton: React.FunctionComponent<AlertToggleExpandB
   isExpanded = false,
   ...props
 }: AlertToggleExpandButtonProps) => {
-  const { title, variantLabel: alertVariantLabel } = React.useContext(AlertContext);
+  const { title, variantLabel: alertVariantLabel } = useContext(AlertContext);
   return (
     <Button
       variant={ButtonVariant.plain}

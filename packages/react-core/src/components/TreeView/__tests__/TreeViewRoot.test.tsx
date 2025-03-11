@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { TreeViewRoot } from '../TreeViewRoot';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';

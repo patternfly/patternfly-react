@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, TreeRowWrapper, TdProps } from '@patternfly/react-table';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
@@ -84,9 +84,9 @@ export const TableTree: React.FunctionComponent = () => {
     workspaces: 'Workspaces'
   };
 
-  const [expandedNodeNames, setExpandedNodeNames] = React.useState<string[]>(['Repositories one']);
-  const [expandedDetailsNodeNames, setExpandedDetailsNodeNames] = React.useState<string[]>([]);
-  const [selectedNodeNames, setSelectedNodeNames] = React.useState<string[]>([]);
+  const [expandedNodeNames, setExpandedNodeNames] = useState<string[]>(['Repositories one']);
+  const [expandedDetailsNodeNames, setExpandedDetailsNodeNames] = useState<string[]>([]);
+  const [selectedNodeNames, setSelectedNodeNames] = useState<string[]>([]);
 
   const getDescendants = (node: RepositoriesTreeNode): RepositoriesTreeNode[] => {
     if (!node.children || !node.children.length) {

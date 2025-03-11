@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import {
   PageSection,
@@ -71,7 +71,7 @@ export const ModalTabs: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <DashboardWrapper mainContainerId="main-content-card-view-default-nav">
         <PageSection>
           <Content>
@@ -148,6 +148,6 @@ export const ModalTabs: React.FunctionComponent = () => {
           </ModalBody>
         </Modal>
       )}
-    </React.Fragment>
+    </Fragment>
   );
 };

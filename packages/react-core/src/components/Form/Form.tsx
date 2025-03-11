@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import cssMaxWidth from '@patternfly/react-tokens/dist/esm/c_form_m_limit_width_MaxWidth';
@@ -48,6 +48,6 @@ const FormBase: React.FunctionComponent<FormProps> = ({
   </form>
 );
 
-export const Form = React.forwardRef((props: FormProps, ref: React.Ref<any>) => <FormBase innerRef={ref} {...props} />);
+export const Form = forwardRef((props: FormProps, ref: React.Ref<any>) => <FormBase innerRef={ref} {...props} />);
 
 Form.displayName = 'Form';

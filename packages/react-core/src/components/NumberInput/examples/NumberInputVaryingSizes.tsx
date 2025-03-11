@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputVaryingSizes: React.FunctionComponent = () => {
@@ -24,7 +24,7 @@ export const NumberInputVaryingSizes: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <NumberInput
         value={input1Value}
         onMinus={() => onMinus(input1Value, setInput1Value)}
@@ -75,6 +75,6 @@ export const NumberInputVaryingSizes: React.FunctionComponent = () => {
         plusBtnAriaLabel="input 4 plus"
         widthChars={5}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

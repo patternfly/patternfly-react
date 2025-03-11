@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Brand,
   Breadcrumb,
@@ -164,7 +164,7 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page
         masthead={masthead}
         sidebar={Sidebar}
@@ -210,6 +210,6 @@ export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
           </Wizard>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

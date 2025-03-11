@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useRef, useState } from 'react';
 import modalStyles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import { css } from '@patternfly/react-styles';
 import { capitalize } from '../../../helpers';
@@ -35,8 +35,8 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
   titleLabel = '',
   ...props
 }: ModalBoxTitleProps) => {
-  const [hasTooltip, setHasTooltip] = React.useState(false);
-  const h1 = React.useRef<HTMLHeadingElement>(null);
+  const [hasTooltip, setHasTooltip] = useState(false);
+  const h1 = useRef<HTMLHeadingElement>(null);
   const label = titleLabel || (isVariantIcon(titleIconVariant) ? `${capitalize(titleIconVariant)} alert:` : titleLabel);
   const variantIcons = {
     success: <CheckCircleIcon />,

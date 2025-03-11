@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Checkbox, CheckboxProps } from '../Checkbox';
@@ -67,10 +67,10 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
     </div>
   );
   return (
-    <React.Fragment>
+    <Fragment>
       {!otherControls && <div className={css(styles.dataListItemControl, className)}>{check}</div>}
       {otherControls && check}
-    </React.Fragment>
+    </Fragment>
   );
 };
 DataListCheck.displayName = 'DataListCheck';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { List, ListItem, ListComponent, OrderType } from '@patternfly/react-core';
 
 export const ListOrdered: React.FunctionComponent = () => (

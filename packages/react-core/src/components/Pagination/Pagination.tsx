@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useRef } from 'react';
 import { ToggleTemplate, PaginationToggleTemplateProps } from './ToggleTemplate';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
@@ -163,7 +163,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   toggleTemplate?: ((props: PaginationToggleTemplateProps) => React.ReactElement<any>) | string;
   /** Position where pagination is rendered. */
   variant?: 'top' | 'bottom' | PaginationVariant;
-  /** Id to ideintify widget on page. */
+  /** Id to identify widget on page. */
   widgetId?: string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
@@ -234,14 +234,14 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   menuAppendTo,
   ...props
 }: PaginationProps) => {
-  const paginationRef = React.useRef<HTMLDivElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
+  const paginationRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const getLastPage = () =>
     // when itemCount is not known let's set lastPage as page+1 as we don't know the total count
     itemCount || itemCount === 0 ? Math.ceil(itemCount / perPage) || 0 : page + 1;
 
-  React.useEffect(() => {
+  useEffect(() => {
     const node = paginationRef.current;
     handleInputWidth(getLastPage(), node);
   }, [perPage, itemCount]);

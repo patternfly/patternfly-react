@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ExpandableRowContent } from '@patternfly/react-table';
 import { Button } from '@patternfly/react-core';
 
@@ -51,7 +51,7 @@ export const TableNestedExpandable: React.FunctionComponent = () => {
   // In this example, expanded rows are tracked by the team names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
   // Note that this behavior is very similar to selection state.
-  const [expandedTeamNames, setExpandedTeamNames] = React.useState<string[]>([]);
+  const [expandedTeamNames, setExpandedTeamNames] = useState<string[]>([]);
   const setTeamExpanded = (team: Team, isExpanding = true) =>
     setExpandedTeamNames((prevExpanded) => {
       const otherExpandedTeamNames = prevExpanded.filter((t) => t !== team.name);

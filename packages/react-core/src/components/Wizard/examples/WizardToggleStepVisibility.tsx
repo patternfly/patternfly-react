@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Checkbox, Wizard, WizardStep } from '@patternfly/react-core';
 
 interface SomeContextProps {

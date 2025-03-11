@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   Dropdown,
@@ -46,7 +46,7 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show dropdown modal
       </Button>
@@ -110,6 +110,6 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
           </Button>
         </ModalFooter>
       </Modal>
-    </React.Fragment>
+    </Fragment>
   );
 };

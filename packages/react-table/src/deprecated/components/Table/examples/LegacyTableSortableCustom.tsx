@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import { sortable, info } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { Toolbar, ToolbarContent, ToolbarItem, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
@@ -35,15 +35,15 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
     lastCommit: 'Last commit'
   };
 
-  const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
+  const [isSortDropdownOpen, setIsSortDropdownOpen] = useState(false);
 
   // Index of the currently sorted column
   // Note: if you intend to make columns reorderable, you may instead want to use a non-numeric key
   // as the identifier of the sorted column. See the "Compound expandable" example.
-  const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
+  const [activeSortIndex, setActiveSortIndex] = useState<number | null>(null);
 
   // Sort direction of the currently sorted column
-  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
+  const [activeSortDirection, setActiveSortDirection] = useState<'asc' | 'desc' | null>(null);
 
   // Sort dropdown expansion
   // const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
@@ -114,7 +114,7 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
   ]);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Toolbar id="toolbar">
         <ToolbarContent>
           <ToolbarItem>
@@ -180,6 +180,6 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
         <TableHeader />
         <TableBody />
       </Table>
-    </React.Fragment>
+    </Fragment>
   );
 };

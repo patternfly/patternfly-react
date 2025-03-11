@@ -1,9 +1,9 @@
-import React from 'react';
+import { Fragment } from 'react';
 import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
 import { Button, TextArea, InputGroup, InputGroupText, InputGroupItem, TextInput } from '@patternfly/react-core';
 
 export const InputGroupWithSiblings: React.FunctionComponent = () => (
-  <React.Fragment>
+  <Fragment>
     <InputGroup>
       <InputGroupItem>
         <Button id="textAreaButton1" variant="control">
@@ -49,5 +49,5 @@ export const InputGroupWithSiblings: React.FunctionComponent = () => (
       </InputGroupItem>
       <InputGroupText>.00</InputGroupText>
     </InputGroup>
-  </React.Fragment>
+  </Fragment>
 );

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { OUIAProps } from '@patternfly/react-core/dist/esm/helpers/OUIA/ouia';
 import { debounce, canUseDOM } from '@patternfly/react-core/dist/esm/helpers/util';
 import { Tr } from './Tr';
@@ -26,7 +26,7 @@ export interface RowWrapperProps extends OUIAProps {
   ouiaId?: number | string;
 }
 
-class RowWrapper extends React.Component<RowWrapperProps> {
+class RowWrapper extends Component<RowWrapperProps> {
   static displayName = 'RowWrapper';
   static defaultProps = {
     className: '' as string,

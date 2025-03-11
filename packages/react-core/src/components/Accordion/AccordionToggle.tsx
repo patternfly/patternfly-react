@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -29,7 +29,7 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
     </span>
   );
 
-  const { isExpanded } = React.useContext(AccordionItemContext);
+  const { isExpanded } = useContext(AccordionItemContext);
 
   return (
     <AccordionContext.Consumer>

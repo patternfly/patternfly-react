@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component, createRef } from 'react';
 import {
   Button,
   Drawer,
@@ -17,7 +17,7 @@ export interface DrawerResizeDemoState {
   panelWidth: number;
 }
 
-export class DrawerResizeDemo extends React.Component<DrawerProps, DrawerResizeDemoState> {
+export class DrawerResizeDemo extends Component<DrawerProps, DrawerResizeDemoState> {
   static displayName = 'DrawerDemo';
   constructor(props: DrawerProps) {
     super(props);
@@ -26,7 +26,7 @@ export class DrawerResizeDemo extends React.Component<DrawerProps, DrawerResizeD
       panelWidth: 200
     };
   }
-  drawerRef = React.createRef<HTMLButtonElement>();
+  drawerRef = createRef<HTMLButtonElement>();
 
   onExpand = () => {
     this.drawerRef.current && this.drawerRef.current.focus();

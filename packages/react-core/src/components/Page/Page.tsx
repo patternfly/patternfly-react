@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef, type JSX } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_xl';
@@ -10,8 +10,6 @@ import { getResizeObserver } from '../../helpers/resizeObserver';
 import { getBreakpoint, getVerticalBreakpoint } from '../../helpers/util';
 import { PageContextProvider } from './PageContext';
 import { PageBody } from './PageBody';
-
-import type { JSX } from 'react';
 
 export enum PageLayouts {
   vertical = 'vertical',
@@ -111,7 +109,7 @@ export interface PageState {
   height: number;
 }
 
-class Page extends React.Component<PageProps, PageState> {
+class Page extends Component<PageProps, PageState> {
   static displayName = 'Page';
   static defaultProps: PageProps = {
     isManagedSidebar: false,
@@ -124,8 +122,8 @@ class Page extends React.Component<PageProps, PageState> {
     getBreakpoint,
     getVerticalBreakpoint
   };
-  mainRef = React.createRef<HTMLDivElement>();
-  pageRef = React.createRef<HTMLDivElement>();
+  mainRef = createRef<HTMLDivElement>();
+  pageRef = createRef<HTMLDivElement>();
   observer: any = () => {};
 
   constructor(props: PageProps) {

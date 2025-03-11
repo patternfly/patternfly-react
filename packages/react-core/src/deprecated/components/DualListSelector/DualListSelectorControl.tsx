@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, useRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../../../components/Button';
 import { Tooltip } from '../../../components/Tooltip';
@@ -38,7 +38,7 @@ export const DualListSelectorControlBase: React.FunctionComponent<DualListSelect
   tooltipProps = {} as any,
   ...props
 }: DualListSelectorControlProps) => {
-  const privateRef = React.useRef(null);
+  const privateRef = useRef(null);
   const ref = innerRef || privateRef;
   return (
     <div className={css(styles.dualListSelectorControlsItem, className)} {...props}>
@@ -59,7 +59,7 @@ export const DualListSelectorControlBase: React.FunctionComponent<DualListSelect
 };
 DualListSelectorControlBase.displayName = 'DualListSelectorControlBase';
 
-export const DualListSelectorControl = React.forwardRef((props: DualListSelectorControlProps, ref: React.Ref<any>) => (
+export const DualListSelectorControl = forwardRef((props: DualListSelectorControlProps, ref: React.Ref<any>) => (
   <DualListSelectorControlBase innerRef={ref} {...props} />
 ));
 

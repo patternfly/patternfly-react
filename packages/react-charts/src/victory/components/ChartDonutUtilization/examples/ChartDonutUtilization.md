@@ -18,7 +18,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Donut utilization examples
 ### Basic
 ```js
-import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '230px', width: '230px' }}>
@@ -37,7 +36,6 @@ import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 ### Right aligned legend
 ```js
-import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 class DonutUtilizationChart extends React.Component {
@@ -96,7 +94,6 @@ class DonutUtilizationChart extends React.Component {
 
 ### Inverted with right aligned legend
 ```js
-import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 class InvertedDonutUtilizationChart extends React.Component {
@@ -156,7 +153,6 @@ class InvertedDonutUtilizationChart extends React.Component {
 
 ### Right aligned vertical legend
 ```js
-import React from 'react';
 import { ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 class VerticalLegendUtilizationChart extends React.Component {
@@ -218,7 +214,6 @@ class VerticalLegendUtilizationChart extends React.Component {
 
 ### Bottom aligned legend
 ```js
-import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '275px', width: '300px' }}>
@@ -248,7 +243,6 @@ import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 ### Small
 ```js
-import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '175px', width: '175px' }}>
@@ -269,7 +263,6 @@ import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 ### Small with right aligned legend
 ```js
-import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 class UtilizationChart extends React.Component {
@@ -332,7 +325,6 @@ class UtilizationChart extends React.Component {
 This is a small donut utilization chart with bottom aligned legend and right aligned subtitle.
 
 ```js
-import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '185px', width: '350px' }}>
@@ -363,7 +355,6 @@ import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 ### Small with right aligned subtitle
 ```js
-import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '200px', width: '350px' }}>
@@ -395,7 +386,6 @@ import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
 ## Donut utilization threshold examples
 ### Static thresholds
 ```js
-import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '230px', width: '230px' }}>
@@ -419,7 +409,6 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 
 ### Static thresholds with right aligned legend
 ```js
-import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 class ThresholdChart extends React.Component {
@@ -478,7 +467,6 @@ class ThresholdChart extends React.Component {
 
 ### Inverted static thresholds with right aligned legend
 ```js
-import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 class InvertedThresholdChart extends React.Component {
@@ -543,7 +531,6 @@ class InvertedThresholdChart extends React.Component {
 
 ### Static thresholds with custom legend
 ```js
-import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 class CustomLegendThresholdChart extends React.Component {
@@ -605,7 +592,6 @@ class CustomLegendThresholdChart extends React.Component {
 
 ### Static thresholds with bottom aligned legend
 ```js
-import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '275px', width: '675px' }}>
@@ -639,7 +625,6 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 
 ### Small with static thresholds
 ```js
-import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '185px', width: '185px' }}>
@@ -665,7 +650,6 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 
 ### Small with static thresholds and right aligned legend
 ```js
-import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 class ThresholdChart extends React.Component {
@@ -728,7 +712,6 @@ class ThresholdChart extends React.Component {
 This is a small donut utilization chart with static thresholds with right aligned legend and bottom aligned subtitle.
 
 ```js
-import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '200px', width: '425px' }}>
@@ -764,7 +747,6 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 
 ### Small with thresholds and right aligned subtitle
 ```js
-import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
 
 <div style={{ height: '225px', width: '675px' }}>

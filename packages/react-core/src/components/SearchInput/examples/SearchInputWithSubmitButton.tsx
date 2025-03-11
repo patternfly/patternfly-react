@@ -1,4 +1,3 @@
-import React from 'react';
 import { SearchInput } from '@patternfly/react-core';
 
 export const SearchInputWithSubmitButton: React.FunctionComponent = () => {

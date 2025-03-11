@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Tabs, Tab, TabTitleText, TabContent } from '@patternfly/react-core';
 
 export const TabsSeparateContent: React.FunctionComponent = () => {
@@ -16,11 +16,11 @@ export const TabsSeparateContent: React.FunctionComponent = () => {
   const contentRef3 = React.createRef<HTMLElement>();
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Tabs
         activeKey={activeTabKey}
         onSelect={handleTabClick}
-        aria-label="Tabs in the seperate content example"
+        aria-label="Tabs in the separate content example"
         role="region"
       >
         <Tab
@@ -70,6 +70,6 @@ export const TabsSeparateContent: React.FunctionComponent = () => {
           Tab 3 section
         </TabContent>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };

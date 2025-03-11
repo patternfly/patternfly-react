@@ -1,4 +1,4 @@
-import React from 'react';
+import { useMemo, useState } from 'react';
 import {
   DualListSelector,
   DualListSelectorPane,
@@ -32,10 +32,10 @@ interface ExampleProps {
 }
 
 export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProps> = ({ data }: ExampleProps) => {
-  const [checkedLeafIds, setCheckedLeafIds] = React.useState<string[]>([]);
-  const [chosenLeafIds, setChosenLeafIds] = React.useState<string[]>(['beans', 'beef', 'chicken', 'tofu']);
-  const [chosenFilter, setChosenFilter] = React.useState<string>('');
-  const [availableFilter, setAvailableFilter] = React.useState<string>('');
+  const [checkedLeafIds, setCheckedLeafIds] = useState<string[]>([]);
+  const [chosenLeafIds, setChosenLeafIds] = useState<string[]>(['beans', 'beef', 'chicken', 'tofu']);
+  const [chosenFilter, setChosenFilter] = useState<string>('');
+  const [availableFilter, setAvailableFilter] = useState<string>('');
 
   // helper function to build memoized lists
   const buildTextById = (node: FoodNode): { [key: string]: string } => {
@@ -80,7 +80,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
   };
 
   // Builds a map of child leaf nodes by node id - memoized so that it only rebuilds the list if the data changes.
-  const { memoizedLeavesById, memoizedAllLeaves, memoizedNodeTexts } = React.useMemo(() => {
+  const { memoizedLeavesById, memoizedAllLeaves, memoizedNodeTexts } = useMemo(() => {
     let leavesById = {};
     let allLeaves: string[] = [];
     let nodeTexts = {};

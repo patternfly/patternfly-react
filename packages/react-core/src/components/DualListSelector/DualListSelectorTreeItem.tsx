@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { memo, useContext, useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
@@ -57,11 +57,11 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
   useMemo,
   ...props
 }: DualListSelectorTreeItemProps) => {
-  const ref = React.useRef(null);
-  const [isExpanded, setIsExpanded] = React.useState(defaultExpanded || false);
-  const { setFocusedOption } = React.useContext(DualListSelectorListContext);
+  const ref = useRef(null);
+  const [isExpanded, setIsExpanded] = useState(defaultExpanded || false);
+  const { setFocusedOption } = useContext(DualListSelectorListContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsExpanded(defaultExpanded);
   }, [defaultExpanded]);
 
@@ -161,7 +161,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
   );
 };
 
-export const DualListSelectorTreeItem = React.memo(DualListSelectorTreeItemBase, (prevProps, nextProps) => {
+export const DualListSelectorTreeItem = memo(DualListSelectorTreeItemBase, (prevProps, nextProps) => {
   if (!nextProps.useMemo) {
     return false;
   }

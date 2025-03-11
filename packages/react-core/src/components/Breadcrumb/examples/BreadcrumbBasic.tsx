@@ -1,4 +1,3 @@
-import React from 'react';
 import { Breadcrumb, BreadcrumbItem } from '@patternfly/react-core';
 
 export const BreadcrumbBasic: React.FunctionComponent = () => (

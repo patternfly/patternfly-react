@@ -1,4 +1,3 @@
-import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
 import { css } from '@patternfly/react-styles';
 import { InputGroup, InputGroupItem } from '../InputGroup';

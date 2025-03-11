@@ -1,4 +1,4 @@
-import React from 'react';
+import { isValidElement } from 'react';
 import { WizardNavProps, WizardNavItemProps, WizardFooterProps } from '.';
 import { ButtonProps } from '../Button';
 
@@ -20,7 +20,7 @@ export interface WizardBasicStep {
   component?: React.ReactElement<any>;
   /** Replaces the step's navigation item or its properties. */
   navItem?: WizardNavItemType;
-  /** Replaces the step's footer. The step's footer takes precedance over the wizard's footer. */
+  /** Replaces the step's footer. The step's footer takes precedence over the wizard's footer. */
   footer?: React.ReactElement<any> | Partial<WizardFooterProps>;
   /** Used to determine icon next to the step's navItem */
   status?: 'default' | 'error' | 'success';
@@ -87,19 +87,19 @@ export type CustomWizardFooterFunction = (
 ) => React.ReactElement<WizardFooterProps>;
 
 export function isCustomWizardNav(nav: WizardNavType): nav is CustomWizardNavFunction | React.ReactElement<any> {
-  return typeof nav === 'function' || React.isValidElement(nav);
+  return typeof nav === 'function' || isValidElement(nav);
 }
 
 export function isCustomWizardNavItem(
   navItem: WizardNavItemType
 ): navItem is CustomWizardNavItemFunction | React.ReactElement<any> {
-  return typeof navItem === 'function' || React.isValidElement(navItem);
+  return typeof navItem === 'function' || isValidElement(navItem);
 }
 
 export function isCustomWizardFooter(
   footer: WizardFooterType
 ): footer is CustomWizardFooterFunction | React.ReactElement<any> {
-  return typeof footer === 'function' || React.isValidElement(footer);
+  return typeof footer === 'function' || isValidElement(footer);
 }
 
 export function isWizardBasicStep(step: WizardStepType): step is WizardBasicStep {

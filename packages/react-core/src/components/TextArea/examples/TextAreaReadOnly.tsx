@@ -1,11 +1,11 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Checkbox, TextArea } from '@patternfly/react-core';
 
 export const TextAreaReadOnly: React.FunctionComponent = () => {
   const [isPlainChecked, setIsPlainChecked] = React.useState(false);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div style={{ marginBottom: '12px' }}>
         <Checkbox
           id="isPlain"
@@ -20,6 +20,6 @@ export const TextAreaReadOnly: React.FunctionComponent = () => {
         value="read only text area example"
         readOnlyVariant={isPlainChecked ? 'plain' : 'default'}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };

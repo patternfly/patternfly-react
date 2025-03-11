@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import { render } from '@testing-library/react';
 
 import { LoginPage } from '../LoginPage';
 import { ListVariant } from '../../List';
 
-const needAccountMesseage = (
-  <React.Fragment>
+const needAccountMessage = (
+  <Fragment>
     Login to your account <a href="https://www.patternfly.org">Need an account?</a>
-  </React.Fragment>
+  </Fragment>
 );
 
 test('check loginpage example against snapshot', () => {
@@ -20,7 +20,7 @@ test('check loginpage example against snapshot', () => {
       footerListItems="English"
       textContent="This is placeholder text only."
       loginTitle="Log into your account"
-      signUpForAccountMessage={needAccountMesseage}
+      signUpForAccountMessage={needAccountMessage}
       socialMediaLoginContent="Footer"
     />
   );

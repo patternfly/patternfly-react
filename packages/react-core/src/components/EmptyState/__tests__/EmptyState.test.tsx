@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { render, screen } from '@testing-library/react';
 
 import AddressBookIcon from '@patternfly/react-icons/dist/esm/icons/address-book-icon';

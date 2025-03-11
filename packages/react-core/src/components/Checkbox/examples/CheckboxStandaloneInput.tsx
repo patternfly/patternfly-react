@@ -1,6 +1,5 @@
-import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
 export const CheckboxStandaloneInput: React.FunctionComponent = () => (
-  <Checkbox id="standalone-check" name="standlone-check" aria-label="Standalone input" />
+  <Checkbox id="standalone-check" name="standalone-check" aria-label="Standalone input" />
 );

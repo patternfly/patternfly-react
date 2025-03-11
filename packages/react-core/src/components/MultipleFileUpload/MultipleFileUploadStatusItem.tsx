@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 import { Progress } from '../Progress';
@@ -80,8 +80,8 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   progressHelperText,
   ...props
 }: MultipleFileUploadStatusItemProps) => {
-  const [loadPercentage, setLoadPercentage] = React.useState(0);
-  const [loadResult, setLoadResult] = React.useState<undefined | 'danger' | 'success'>();
+  const [loadPercentage, setLoadPercentage] = useState(0);
+  const [loadResult, setLoadResult] = useState<undefined | 'danger' | 'success'>();
 
   function readFile(file: File) {
     return new Promise((resolve, reject) => {
@@ -97,7 +97,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     });
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (customFileHandler) {
       customFileHandler(file);
     } else {

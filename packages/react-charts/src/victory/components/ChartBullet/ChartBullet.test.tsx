@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import { ChartAxis } from '../ChartAxis/ChartAxis';
 import { ChartLabel } from '../ChartLabel/ChartLabel';

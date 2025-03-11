@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { Children, isValidElement } from 'react';
 import { isWizardParentStep, isWizardSubStep, WizardStepType } from './types';
 import { WizardStep, WizardStepProps } from './WizardStep';
 
@@ -9,7 +8,7 @@ import { WizardStep, WizardStepProps } from './WizardStep';
  * @returns WizardStepType[]
  */
 export const buildSteps = (children: React.ReactNode) =>
-  React.Children.toArray(children).reduce((acc: WizardStepType[], child: React.ReactNode, index: number) => {
+  Children.toArray(children).reduce((acc: WizardStepType[], child: React.ReactNode, index: number) => {
     if (isWizardStep(child)) {
       const { props: childProps } = child;
       const { steps: childStepComponents, id } = childProps;
@@ -48,7 +47,7 @@ export const buildSteps = (children: React.ReactNode) =>
 export function isWizardStep(
   child: any | React.ReactElement<WizardStepProps>
 ): child is React.ReactElement<WizardStepProps> {
-  return React.isValidElement(child) && (child as React.ReactElement<WizardStepProps>).type === WizardStep;
+  return isValidElement(child) && (child as React.ReactElement<WizardStepProps>).type === WizardStep;
 }
 
 // Omit "children" and "steps" when building steps for the Wizard's context

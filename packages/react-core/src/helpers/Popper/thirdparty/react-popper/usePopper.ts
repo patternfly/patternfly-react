@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/consistent-type-definitions */
-
-import * as React from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { createPopper as defaultCreatePopper, Options as PopperOptions, VirtualElement } from '../popper-core/popper';
 import { useIsomorphicLayoutEffect } from '../../../../helpers/useIsomorphicLayout';
 
@@ -41,7 +40,7 @@ export const usePopper = (
   popperElement: HTMLElement | null | undefined,
   options: Options = {}
 ) => {
-  const prevOptions = React.useRef<PopperOptions | null | undefined>(null);
+  const prevOptions = useRef<PopperOptions | null | undefined>(null);
 
   const optionsWithDefaults = {
     onFirstUpdate: options.onFirstUpdate,
@@ -50,7 +49,7 @@ export const usePopper = (
     modifiers: options.modifiers || EMPTY_MODIFIERS
   };
 
-  const [state, setState] = React.useState<State>({
+  const [state, setState] = useState<State>({
     styles: {
       popper: {
         position: optionsWithDefaults.strategy,
@@ -61,7 +60,7 @@ export const usePopper = (
     attributes: {}
   });
 
-  const updateStateModifier = React.useMemo(
+  const updateStateModifier = useMemo(
     () => ({
       name: 'updateState',
       enabled: true,
@@ -80,7 +79,7 @@ export const usePopper = (
     []
   );
 
-  const popperOptions = React.useMemo(() => {
+  const popperOptions = useMemo(() => {
     const newOptions = {
       onFirstUpdate: optionsWithDefaults.onFirstUpdate,
       placement: optionsWithDefaults.placement,
@@ -102,7 +101,7 @@ export const usePopper = (
     updateStateModifier
   ]);
 
-  const popperInstanceRef = React.useRef<any>(undefined);
+  const popperInstanceRef = useRef<any>(undefined);
 
   useIsomorphicLayoutEffect(() => {
     if (popperInstanceRef && popperInstanceRef.current) {

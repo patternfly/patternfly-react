@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import { Spinner, spinnerSize } from '../Spinner';
@@ -230,8 +230,6 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   );
 };
 
-export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<any>) => (
-  <ButtonBase innerRef={ref} {...props} />
-));
+export const Button = forwardRef((props: ButtonProps, ref: React.Ref<any>) => <ButtonBase innerRef={ref} {...props} />);
 
 Button.displayName = 'Button';

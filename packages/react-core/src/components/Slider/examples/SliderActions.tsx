@@ -1,4 +1,3 @@
-import React from 'react';
 import { Slider, SliderOnChangeEvent, Button, Content } from '@patternfly/react-core';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';

@@ -13,6 +13,7 @@ Note: Table lives in its own package at [@patternfly/react-table](https://www.np
 
 This deprecated `Table` component is configuration-based and takes a less declarative and more implicit approach to laying out the table structure, such as the rows and cells within it.
 
+import { Fragment, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -314,7 +315,6 @@ Example:
 ```
 
 ```js
-import React from 'react';
 import {
   Table,
   TableHeader,

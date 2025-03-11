@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import {
   Select,
   SelectList,
@@ -48,10 +48,10 @@ const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
   placeholder = 'Select a value',
   ...props
 }: SimpleSelectProps) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<SimpleSelectOption | undefined>();
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<SimpleSelectOption | undefined>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const selectedOption = initialOptions?.find((option) => option.selected);
     setSelected(selectedOption);
   }, [initialOptions]);
@@ -114,7 +114,7 @@ const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
   );
 };
 
-export const SimpleSelect = React.forwardRef((props: SimpleSelectProps, ref: React.Ref<any>) => (
+export const SimpleSelect = forwardRef((props: SimpleSelectProps, ref: React.Ref<any>) => (
   <SimpleSelectBase {...props} innerRef={ref} />
 ));
 

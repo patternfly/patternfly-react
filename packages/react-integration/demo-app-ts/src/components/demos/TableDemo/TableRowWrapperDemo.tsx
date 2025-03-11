@@ -1,4 +1,4 @@
-import React, { Component, type JSX } from 'react';
+import { Component, type JSX } from 'react';
 import { RowWrapperProps, ICell, IRow } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 

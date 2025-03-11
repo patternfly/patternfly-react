@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Gallery } from '../Gallery';
 import { GalleryItem } from '../GalleryItem';
 import { render } from '@testing-library/react';

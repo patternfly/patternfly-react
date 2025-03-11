@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Slider/slider';
 import { css } from '@patternfly/react-styles';
 import { SliderStep } from './SliderStep';
@@ -117,23 +116,23 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   'aria-labelledby': ariaLabelledby,
   ...props
 }: SliderProps) => {
-  const sliderRailRef = React.useRef<HTMLDivElement>(undefined);
-  const thumbRef = React.useRef<HTMLDivElement>(undefined);
+  const sliderRailRef = useRef<HTMLDivElement>(undefined);
+  const thumbRef = useRef<HTMLDivElement>(undefined);
 
   const [localValue, setValue] = useState(value);
   const [localInputValue, setLocalInputValue] = useState(inputValue);
 
   let isRTL: boolean;
 
-  React.useEffect(() => {
+  useEffect(() => {
     isRTL = getLanguageDirection(sliderRailRef.current) === 'rtl';
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     setValue(value);
   }, [value]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setLocalInputValue(inputValue);
   }, [inputValue]);
 
@@ -143,7 +142,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   // calculate style value percentage
   const stylePercent = ((localValue - min) * 100) / (max - min);
   const style = { [cssSliderValue.name]: `${stylePercent}%` } as React.CSSProperties;
-  const widthChars = React.useMemo(() => localInputValue.toString().length, [localInputValue]);
+  const widthChars = useMemo(() => localInputValue.toString().length, [localInputValue]);
   const inputStyle = { [cssFormControlWidthChars.name]: widthChars } as React.CSSProperties;
 
   const onChangeHandler = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
@@ -303,8 +302,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     }
   };
 
-  const callbackThumbMove = React.useCallback(handleThumbMove, [min, max, customSteps, onChange]);
-  const callbackThumbUp = React.useCallback(handleThumbDragEnd, [min, max, customSteps, onChange]);
+  const callbackThumbMove = useCallback(handleThumbMove, [min, max, customSteps, onChange]);
+  const callbackThumbUp = useCallback(handleThumbDragEnd, [min, max, customSteps, onChange]);
 
   const handleThumbKeys = (e: React.KeyboardEvent) => {
     const key = e.key;

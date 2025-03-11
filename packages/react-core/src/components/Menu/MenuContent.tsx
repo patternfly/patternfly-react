@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createRef, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { MenuContext } from './MenuContext';
@@ -18,9 +18,9 @@ export interface MenuContentProps extends React.HTMLProps<HTMLElement> {
   getHeight?: (height: string) => void;
 }
 
-export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React.Ref<HTMLDivElement>) => {
+export const MenuContent = forwardRef((props: MenuContentProps, ref: React.Ref<HTMLDivElement>) => {
   const { getHeight, children, menuHeight, maxMenuHeight, ...rest } = props;
-  const menuContentRef = React.createRef<HTMLDivElement>();
+  const menuContentRef = createRef<HTMLDivElement>();
   const refCallback = (el: HTMLElement, menuId: string, onGetMenuHeight: (menuId: string, height: number) => void) => {
     if (el) {
       let clientHeight = el.clientHeight;

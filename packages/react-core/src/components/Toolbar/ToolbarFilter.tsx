@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, Fragment } from 'react';
 import * as ReactDOM from 'react-dom';
 import { ToolbarItem, ToolbarItemProps } from './ToolbarItem';
 import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
@@ -30,7 +30,7 @@ export interface ToolbarFilterProps extends ToolbarItemProps {
   deleteLabel?: (category: string | ToolbarLabelGroup, label: ToolbarLabel | string) => void;
   /** Customizable "Show Less" text string for the label group */
   labelGroupExpandedText?: string;
-  /** Customizeable template string for the label group. Use variable "${remaining}" for the overflow label count. */
+  /** Customizable template string for the label group. Use variable "${remaining}" for the overflow label count. */
   labelGroupCollapsedText?: string;
   /** Content to be rendered inside the data toolbar item associated with the label group */
   children: React.ReactNode;
@@ -46,7 +46,7 @@ interface ToolbarFilterState {
   isMounted: boolean;
 }
 
-class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterState> {
+class ToolbarFilter extends Component<ToolbarFilterProps, ToolbarFilterState> {
   static displayName = 'ToolbarFilter';
   static contextType = ToolbarContext;
   context!: React.ContextType<typeof ToolbarContext>;
@@ -131,24 +131,24 @@ class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterSta
 
     if (!_isExpanded && this.state.isMounted) {
       return (
-        <React.Fragment>
+        <Fragment>
           {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
           {labelGroupContentRef?.current?.firstElementChild !== null &&
             ReactDOM.createPortal(labelGroup, labelGroupContentRef.current.firstElementChild)}
-        </React.Fragment>
+        </Fragment>
       );
     }
 
     return (
       <ToolbarContentContext.Consumer>
         {({ labelContainerRef }) => (
-          <React.Fragment>
+          <Fragment>
             {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
             {labelContainerRef.current && ReactDOM.createPortal(labelGroup, labelContainerRef.current)}
             {expandableLabelContainerRef &&
               expandableLabelContainerRef.current &&
               ReactDOM.createPortal(labelGroup, expandableLabelContainerRef.current)}
-          </React.Fragment>
+          </Fragment>
         )}
       </ToolbarContentContext.Consumer>
     );

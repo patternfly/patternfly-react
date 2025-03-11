@@ -1,16 +1,16 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import { AboutModal, Button, Content } from '@patternfly/react-core';
 import brandImg from '../../assets/PF-IconLogo.svg';
 
 export const AboutModalBasic: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = (_event: React.MouseEvent<Element, MouseEvent> | KeyboardEvent | MouseEvent) => {
     setIsModalOpen(!isModalOpen);
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={toggleModal}>
         Show about modal
       </Button>
@@ -42,6 +42,6 @@ export const AboutModalBasic: React.FunctionComponent = () => {
           </dl>
         </Content>
       </AboutModal>
-    </React.Fragment>
+    </Fragment>
   );
 };

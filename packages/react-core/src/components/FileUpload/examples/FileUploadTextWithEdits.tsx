@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileUpload, DropEvent } from '@patternfly/react-core';
 
 export const TextFileWithEditsAllowed: React.FunctionComponent = () => {

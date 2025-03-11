@@ -1,4 +1,3 @@
-import React from 'react';
 import { Progress, ProgressSize } from '@patternfly/react-core';
 
 export const ProgressLarge: React.FunctionComponent = () => (

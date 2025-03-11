@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { TreeViewSearch } from '../TreeViewSearch';
 import userEvent from '@testing-library/user-event';

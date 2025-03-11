@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Menu, MenuContent, MenuItem, MenuItemAction, MenuGroup, MenuList, Divider } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
@@ -55,7 +55,7 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
     <Menu onSelect={onSelect} onActionClick={onFavorite} activeItemId={activeItem}>
       <MenuContent>
         {favorites.length > 0 && (
-          <React.Fragment>
+          <Fragment>
             <MenuGroup label="Favorites" labelHeadingLevel="h3">
               <MenuList>
                 {items
@@ -77,7 +77,7 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
               </MenuList>
             </MenuGroup>
             <Divider />
-          </React.Fragment>
+          </Fragment>
         )}
         <MenuGroup label="All actions" labelHeadingLevel="h3">
           <MenuList>

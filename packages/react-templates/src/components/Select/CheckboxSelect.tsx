@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import { Badge } from '@patternfly/react-core/dist/esm/components/Badge';
 import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import {
@@ -46,10 +46,10 @@ const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
   toggleProps,
   ...props
 }: CheckboxSelectProps) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<string[]>([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<string[]>([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const selectedOptions = initialOptions?.filter((option) => option.selected);
     setSelected(selectedOptions?.map((selectedOption) => String(selectedOption.value)) ?? []);
   }, [initialOptions]);
@@ -122,6 +122,6 @@ const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
   );
 };
 
-export const CheckboxSelect = React.forwardRef((props: CheckboxSelectProps, ref: React.Ref<any>) => (
+export const CheckboxSelect = forwardRef((props: CheckboxSelectProps, ref: React.Ref<any>) => (
   <CheckboxSelectBase {...props} innerRef={ref} />
 ));

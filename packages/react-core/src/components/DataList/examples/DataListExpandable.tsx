@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import {
   DataList,
   DataListItem,
@@ -18,10 +18,10 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 
 export const DataListExpandable: React.FunctionComponent = () => {
-  const [isOpen1, setIsOpen1] = React.useState(false);
-  const [isOpen2, setIsOpen2] = React.useState(false);
-  const [isOpen3, setIsOpen3] = React.useState(false);
-  const [expanded, setExpanded] = React.useState(['ex-toggle1', 'ex-toggle3']);
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [isOpen3, setIsOpen3] = useState(false);
+  const [expanded, setExpanded] = useState(['ex-toggle1', 'ex-toggle3']);
 
   const onToggle1 = () => {
     setIsOpen1(!isOpen1);
@@ -53,7 +53,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
     setExpanded(newExpanded);
   };
   return (
-    <React.Fragment>
+    <Fragment>
       <DataList aria-label="Expandable data list example">
         <DataListItem aria-labelledby="ex-item1" isExpanded={expanded.includes('ex-toggle1')}>
           <DataListItemRow>
@@ -265,6 +265,6 @@ export const DataListExpandable: React.FunctionComponent = () => {
           </DataListContent>
         </DataListItem>
       </DataList>
-    </React.Fragment>
+    </Fragment>
   );
 };

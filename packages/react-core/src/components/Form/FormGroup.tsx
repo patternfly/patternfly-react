@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment, isValidElement } from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
 import { css } from '@patternfly/react-styles';
@@ -62,7 +62,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
         )}
       </LabelComponent>
       <>&nbsp;&nbsp;</>
-      {React.isValidElement(labelHelp) && <span className={styles.formGroupLabelHelp}>{labelHelp}</span>}
+      {isValidElement(labelHelp) && <span className={styles.formGroupLabelHelp}>{labelHelp}</span>}
     </>
   );
 
@@ -85,10 +85,10 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
               {...(isGroupOrRadioGroup && { id: `${fieldId || randomId}-legend` })}
             >
               {labelInfo && (
-                <React.Fragment>
+                <Fragment>
                   <div className={css(styles.formGroupLabelMain)}>{labelContent}</div>
                   <div className={css(styles.formGroupLabelInfo)}>{labelInfo}</div>
-                </React.Fragment>
+                </Fragment>
               )}
               {!labelInfo && labelContent}
             </div>

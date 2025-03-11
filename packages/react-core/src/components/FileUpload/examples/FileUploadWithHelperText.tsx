@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileUpload, FileUploadHelperText, HelperText, HelperTextItem, DropEvent } from '@patternfly/react-core';
 
 export const FileUploadWithHelperText: React.FunctionComponent = () => {

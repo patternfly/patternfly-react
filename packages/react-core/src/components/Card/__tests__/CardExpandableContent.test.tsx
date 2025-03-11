@@ -1,4 +1,3 @@
-import React from 'react';
 import { CardContext } from '../Card';
 import { CardExpandableContent } from '../CardExpandableContent';
 import { render } from '@testing-library/react';

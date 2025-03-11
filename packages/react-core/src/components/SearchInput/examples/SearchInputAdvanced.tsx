@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Checkbox, FormGroup, SearchInput } from '@patternfly/react-core';
 import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
 

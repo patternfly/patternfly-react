@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { css } from '@patternfly/react-styles';
 import { OverflowMenuContext } from './OverflowMenuContext';
@@ -22,7 +22,7 @@ export interface OverflowMenuState extends React.HTMLProps<HTMLDivElement> {
   breakpointRef: HTMLElement;
 }
 
-class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMenuState> {
+class OverflowMenu extends Component<OverflowMenuProps, OverflowMenuState> {
   static displayName = 'OverflowMenu';
   constructor(props: OverflowMenuProps) {
     super(props);

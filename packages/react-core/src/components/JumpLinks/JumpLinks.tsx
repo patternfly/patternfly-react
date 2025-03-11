@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Children, cloneElement, Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
 import sidebarStyles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
@@ -51,7 +51,7 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
 
 // Recursively find JumpLinkItems and return an array of all their scrollNodes
 const getScrollItems = (children: React.ReactNode, res: HTMLElement[]) => {
-  React.Children.forEach(children, (child: any) => {
+  Children.forEach(children, (child: any) => {
     if (canUseDOM && document.getElementById && document.querySelector && child.type === JumpLinksItem) {
       const scrollNode = child.props.node || child.props.href;
       if (typeof scrollNode === 'string') {
@@ -66,7 +66,7 @@ const getScrollItems = (children: React.ReactNode, res: HTMLElement[]) => {
         res.push(scrollNode);
       }
     }
-    if ([React.Fragment, JumpLinksList, JumpLinksItem].includes(child.type)) {
+    if ([Fragment, JumpLinksList, JumpLinksItem].includes(child.type)) {
       getScrollItems(child.props.children, res);
     }
   });
@@ -97,12 +97,12 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   ...props
 }: JumpLinksProps) => {
   const hasScrollSpy = Boolean(scrollableRef || scrollableSelector);
-  const [scrollItems, setScrollItems] = React.useState(hasScrollSpy ? getScrollItems(children, []) : []);
-  const [activeIndex, setActiveIndex] = React.useState(activeIndexProp);
-  const [isExpanded, setIsExpanded] = React.useState(isExpandedProp);
+  const [scrollItems, setScrollItems] = useState(hasScrollSpy ? getScrollItems(children, []) : []);
+  const [activeIndex, setActiveIndex] = useState(activeIndexProp);
+  const [isExpanded, setIsExpanded] = useState(isExpandedProp);
   // Boolean to disable scroll listener from overriding active state of clicked jumplink
-  const isLinkClicked = React.useRef(false);
-  const navRef = React.useRef<HTMLElement>(undefined);
+  const isLinkClicked = useRef(false);
+  const navRef = useRef<HTMLElement>(undefined);
 
   let scrollableElement: HTMLElement;
 
@@ -119,7 +119,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
     }
   };
 
-  const scrollSpy = React.useCallback(() => {
+  const scrollSpy = useCallback(() => {
     if (!canUseDOM || !hasScrollSpy || !(scrollableElement instanceof HTMLElement)) {
       return;
     }
@@ -154,7 +154,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
     });
   }, [scrollItems, hasScrollSpy, scrollableElement, offset]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     scrollableElement = getScrollableElement();
     if (!(scrollableElement instanceof HTMLElement)) {
       return;
@@ -164,7 +164,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
     return () => scrollableElement.removeEventListener('scroll', scrollSpy);
   }, [scrollableElement, scrollSpy, getScrollableElement]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     scrollSpy();
   }, []);
 
@@ -172,12 +172,12 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   const cloneChildren = (children: React.ReactNode): React.ReactNode =>
     !hasScrollSpy
       ? children
-      : React.Children.map(children, (child: any) => {
+      : Children.map(children, (child: any) => {
           if (child.type === JumpLinksItem) {
             const { onClick: onClickProp, isActive: isActiveProp } = child.props;
             const itemIndex = jumpLinkIndex++;
             const scrollItem = scrollItems[itemIndex];
-            return React.cloneElement(child as React.ReactElement<JumpLinksItemProps>, {
+            return cloneElement(child as React.ReactElement<JumpLinksItemProps>, {
               onClick(ev: React.MouseEvent) {
                 isLinkClicked.current = true;
                 // Items might have rendered after this component. Do a quick refresh.
@@ -224,10 +224,10 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
               isActive: isActiveProp || activeIndex === itemIndex,
               children: cloneChildren(child.props.children)
             });
-          } else if (child.type === React.Fragment) {
+          } else if (child.type === Fragment) {
             return cloneChildren(child.props.children);
           } else if (child.type === JumpLinksList) {
-            return React.cloneElement(child, { children: cloneChildren(child.props.children) });
+            return cloneElement(child, { children: cloneChildren(child.props.children) });
           }
           return child;
         });

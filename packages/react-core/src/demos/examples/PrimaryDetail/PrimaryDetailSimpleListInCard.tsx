@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Card,
   Content,
@@ -67,7 +67,7 @@ export const PrimaryDetailSimpleListInCard: React.FunctionComponent = () => {
   );
 
   const drawerContent = (
-    <React.Fragment>
+    <Fragment>
       <SimpleList onSelect={onSelectListItem}>
         <SimpleListGroup title="Section 1" id="simple-list-section-1">
           <SimpleListItem key="item1" isActive>
@@ -85,7 +85,7 @@ export const PrimaryDetailSimpleListInCard: React.FunctionComponent = () => {
           <SimpleListItem key="item9">List item 9</SimpleListItem>
         </SimpleListGroup>
       </SimpleList>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (

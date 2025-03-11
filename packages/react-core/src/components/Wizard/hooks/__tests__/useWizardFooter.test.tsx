@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { renderHook } from '@testing-library/react';
 
 import { useWizardFooter } from '../useWizardFooter';

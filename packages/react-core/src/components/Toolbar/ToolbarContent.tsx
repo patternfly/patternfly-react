@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
@@ -32,10 +32,10 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   toolbarId?: string;
 }
 
-class ToolbarContent extends React.Component<ToolbarContentProps> {
+class ToolbarContent extends Component<ToolbarContentProps> {
   static displayName = 'ToolbarContent';
-  private expandableContentRef = React.createRef<HTMLDivElement>();
-  private labelContainerRef = React.createRef<HTMLDivElement>();
+  private expandableContentRef = createRef<HTMLDivElement>();
+  private labelContainerRef = createRef<HTMLDivElement>();
   private static currentId = 0;
 
   static defaultProps: ToolbarContentProps = {

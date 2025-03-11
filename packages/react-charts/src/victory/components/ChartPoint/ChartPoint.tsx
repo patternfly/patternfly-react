@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement } from 'react';
 import { Helpers, Path } from 'victory-core';
 import { PathHelpers, PathHelpersInterface } from './path-helpers';
 
@@ -166,7 +166,7 @@ export const ChartPoint: React.FunctionComponent<ChartPointProps> = ({
     ...rest
   };
 
-  return React.cloneElement(pathComponent, {
+  return cloneElement(pathComponent, {
     className,
     clipPath,
     d: getPath(props),

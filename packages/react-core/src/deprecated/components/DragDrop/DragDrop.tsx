@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import { createContext } from 'react';
 export interface DraggableItemPosition {
   /** Parent droppableId */
   droppableId: string;
@@ -7,7 +6,7 @@ export interface DraggableItemPosition {
   index: number;
 }
 
-export const DragDropContext = React.createContext({
+export const DragDropContext = createContext({
   onDrag: (_source: DraggableItemPosition) => true as boolean,
   onDragMove: (_source: DraggableItemPosition, _dest?: DraggableItemPosition) => {},
   onDrop: (_source: DraggableItemPosition, _dest?: DraggableItemPosition) => false as boolean

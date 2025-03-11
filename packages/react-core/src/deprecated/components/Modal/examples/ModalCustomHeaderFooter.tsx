@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, Title, TitleSizes } from '@patternfly/react-core';
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
@@ -12,12 +12,12 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
   };
 
   const header = (
-    <React.Fragment>
+    <Fragment>
       <Title id="modal-custom-header-label" headingLevel="h1" size={TitleSizes['2xl']}>
         Custom header/footer modal
       </Title>
       <p className={spacing.ptSm}>Allows for custom content in the header and/or footer by passing components.</p>
-    </React.Fragment>
+    </Fragment>
   );
 
   const footer = (
@@ -28,7 +28,7 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
         Show custom header/footer modal
       </Button>
@@ -53,6 +53,6 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
         laborum.
       </ModalDeprecated>
-    </React.Fragment>
+    </Fragment>
   );
 };

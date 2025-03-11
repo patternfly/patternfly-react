@@ -5,6 +5,8 @@ propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarGroup', 'ToolbarItem', 'To
 section: components
 ---
 
+import { Fragment } from 'react';
+
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';

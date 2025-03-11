@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
 
 export const ChipGroupRemovableCategories: React.FunctionComponent = () => {
@@ -25,7 +25,7 @@ export const ChipGroupRemovableCategories: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <ChipGroup categoryName="Category one" isClosable onClick={() => deleteCategory(chipGroup1)}>
         {chipGroup1.map((currentChip) => (
           <Chip key={currentChip} onClick={() => deleteItem(currentChip, chipGroup1)}>
@@ -41,6 +41,6 @@ export const ChipGroupRemovableCategories: React.FunctionComponent = () => {
           </Chip>
         ))}
       </ChipGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

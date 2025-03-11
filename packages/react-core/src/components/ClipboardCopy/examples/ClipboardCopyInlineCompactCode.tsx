@@ -1,4 +1,3 @@
-import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
 export const ClipboardCopyInlineCompactCode: React.FunctionComponent = () => (

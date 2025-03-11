@@ -1,4 +1,3 @@
-import React from 'react';
 import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
 
 export const JumpLinksVerticalWithLabel: React.FunctionComponent = () => (

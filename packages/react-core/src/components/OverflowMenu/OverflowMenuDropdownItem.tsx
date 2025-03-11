@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { DropdownItem, DropdownItemProps } from '../Dropdown';
 import { OverflowMenuContext } from './OverflowMenuContext';
 

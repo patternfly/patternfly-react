@@ -1,7 +1,6 @@
-import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { act } from 'react';
+import { act, useContext } from 'react';
 
 import { Alert, AlertVariant } from '../Alert';
 import { AlertContext } from '../AlertContext';
@@ -109,7 +108,7 @@ test('Renders with Custom hidden text of "Custom alert:"', () => {
 
   test(`Provides a variantLabel of '${capitalize(variant)} alert:' in a context when variant = ${variant}`, () => {
     const TestComponent: React.FunctionComponent = () => {
-      const context = React.useContext(AlertContext);
+      const context = useContext(AlertContext);
 
       return (
         <p data-testid="Test-component" aria-label={context.variantLabel}>
@@ -213,7 +212,7 @@ test(`Renders the actionClose element inside ${styles.alertAction}`, () => {
 
 test('Provides the actionClose element access to the title via a context', () => {
   const TestComponent: React.FunctionComponent = () => {
-    const context = React.useContext(AlertContext);
+    const context = useContext(AlertContext);
 
     return (
       <p data-testid="Test-component" aria-label={context.variantLabel}>
@@ -275,7 +274,7 @@ test('Renders with the aria label passed via prop', () => {
 
 test('Renders with the variantLabel passed via prop', () => {
   const TestComponent: React.FunctionComponent = () => {
-    const context = React.useContext(AlertContext);
+    const context = useContext(AlertContext);
 
     return (
       <p data-testid="Test-component" aria-label={context.variantLabel}>

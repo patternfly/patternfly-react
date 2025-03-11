@@ -1,4 +1,3 @@
-import React from 'react';
 import { DatePicker, HelperText, HelperTextItem } from '@patternfly/react-core';
 
 export const DatePickerHelperText: React.FunctionComponent = () => (

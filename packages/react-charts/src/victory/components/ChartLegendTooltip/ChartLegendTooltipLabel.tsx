@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { cloneElement, Fragment } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import defaults from 'lodash/defaults';
 import {
@@ -56,7 +56,7 @@ export interface ChartLegendTooltipLabelProps extends VictoryLabelProps {
    */
   className?: string;
   /**
-   * Labels that apply to an entire data series will recieve the entire series as `data` instead of an individual datum
+   * Labels that apply to an entire data series will receive the entire series as `data` instead of an individual datum
    * prop.
    */
   data?: any[];
@@ -109,7 +109,7 @@ export interface ChartLegendTooltipLabelProps extends VictoryLabelProps {
   /**
    * The labelPlacement prop is used to specify the placement of labels relative to the data point they represent.
    * This prop may be given as “vertical”, “parallel” or “perpendicular”. This props is particularly useful in polar
-   * charts, where it may be desireable to position a label either parallel or perpendicular to its corresponding angle.
+   * charts, where it may be desirable to position a label either parallel or perpendicular to its corresponding angle.
    * When this prop is not set, perpendicular label placement will be used for polar charts, and vertical label
    * placement will be used for cartesian charts.
    *
@@ -263,7 +263,7 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendTooltip
   const getLegendLabelComponent = () => {
     const label = legendData && legendData.length ? legendData[index as any].name : undefined;
 
-    return React.cloneElement(legendLabelComponent, {
+    return cloneElement(legendLabelComponent, {
       style: getStyle({}),
       text: label,
       textAnchor: 'start',
@@ -275,7 +275,7 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendTooltip
   const getValueLabelComponent = () => {
     const _x = x + (Helpers.evaluateProp(dx, undefined) as number);
 
-    return React.cloneElement(valueLabelComponent, {
+    return cloneElement(valueLabelComponent, {
       style: getStyle(style),
       text,
       textAnchor,
@@ -288,10 +288,10 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendTooltip
   const legendLabel = getLegendLabelComponent();
   const valueLabel = getValueLabelComponent();
   return (
-    <React.Fragment>
+    <Fragment>
       {legendLabel}
       {valueLabel}
-    </React.Fragment>
+    </Fragment>
   );
 };
 ChartLegendTooltipLabel.displayName = 'ChartLegendTooltipLabel';

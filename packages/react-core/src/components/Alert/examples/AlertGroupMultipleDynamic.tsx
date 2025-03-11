@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Alert,
   AlertProps,
@@ -34,7 +34,7 @@ export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <InputGroup style={{ marginBottom: '16px' }}>
         <InputGroupItem>
           <button onClick={addAlertCollection} type="button" className={btnClasses}>
@@ -58,6 +58,6 @@ export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
           />
         ))}
       </AlertGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };

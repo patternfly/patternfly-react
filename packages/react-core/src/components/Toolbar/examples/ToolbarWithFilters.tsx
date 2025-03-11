@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import {
   Button,
   Dropdown,
@@ -124,7 +124,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
   );
 
   const toggleGroupItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarItem>
         <SearchInput
           aria-label="With filters example search input"
@@ -200,11 +200,11 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
           </Select>
         </ToolbarFilter>
       </ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   const toolbarItems = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
         {toggleGroupItems}
       </ToolbarToggleGroup>
@@ -251,7 +251,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
           </DropdownList>
         </Dropdown>
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (
