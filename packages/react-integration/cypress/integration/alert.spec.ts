@@ -1,5 +1,5 @@
 describe('Alert Demo Test', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('http://localhost:3000/alert-demo-nav-link');
   });
 
