@@ -39,4 +39,4 @@ t_global_background_color_primary_default.value === '#fff'; // true
 t_global_background_color_primary_default.var === 'var(--pf-t--global--background--color--primary--default)'; // true
 ```
 
-[token-page]: https://react-staging.patternfly.org/developer-resources/global-css-variables
+[token-page]: https://www.patternfly.org/tokens/develop-with-tokens/#react-tokens
