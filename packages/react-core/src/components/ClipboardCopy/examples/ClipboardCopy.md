@@ -65,3 +65,10 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 ```ts file="./ClipboardCopyInlineCompactInSentence.tsx"
 ```
+
+### Inline compact with truncation
+
+You can control the truncation for an `inline-compact` variant by passing the `truncation` property. The following example shows the different ways to use the property: passing a boolean will apply default truncation, while passing an object of `TruncateProps` offers more fine-tuned control over the truncation behavior.
+
+```ts file="./ClipboardCopyInlineCompactTruncation.tsx"
+```

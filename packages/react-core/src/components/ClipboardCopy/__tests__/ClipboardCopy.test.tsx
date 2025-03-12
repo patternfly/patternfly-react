@@ -1,6 +1,7 @@
 import { screen, render } from '@testing-library/react';
-import { ClipboardCopy } from '../ClipboardCopy';
+import { ClipboardCopy, ClipboardCopyVariant } from '../ClipboardCopy';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
+import truncateStyles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import userEvent from '@testing-library/user-event';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
@@ -23,6 +24,19 @@ jest.mock('../ClipboardCopyToggle', () => ({
   ClipboardCopyToggle: ({ 'aria-label': ariaLabel }) => (
     <div data-testid="clipboardCopyToggle-mock">
       <p>{`toggle-ariaLabel: ${ariaLabel}`}</p>
+    </div>
+  )
+}));
+
+jest.mock('../../Truncate', () => ({
+  Truncate: ({ className, trailingNumChars, content, position, tooltipPosition, ...props }) => (
+    <div data-testid="Truncate-mock" {...props}>
+      <p>{`Truncate content: ${content}`}</p>
+      <p>{`Truncate className: ${className}`}</p>
+      <p>{`Truncate position: ${position}`}</p>
+      <p>{`Truncate trailingNumChars: ${trailingNumChars}`}</p>
+      <p>{`Truncate tooltipPosition: ${tooltipPosition}`}</p>
+      {children}
     </div>
   )
 }));
@@ -348,6 +362,178 @@ test('Can take array of strings as children', async () => {
   await user.click(screen.getByRole('button', { name: 'Test CCB clicker' }));
 
   expect(onCopyMock).toHaveBeenCalledWith(expect.any(Object), children);
+});
+
+describe('ClipboardCopy with truncation', () => {
+  test(`Does not render ClipboardCopy component with class ${styles.modifiers.truncate} by default`, () => {
+    render(<ClipboardCopy data-testid={testId}>{children}</ClipboardCopy>);
+
+    expect(screen.getByTestId(testId)).not.toHaveClass(styles.modifiers.truncate);
+  });
+
+  test(`Does not render ClipboardCopy component with class ${styles.modifiers.truncate} for expansion variant`, () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.expansion} data-testid={testId}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByTestId(testId)).not.toHaveClass(styles.modifiers.truncate);
+  });
+
+  test(`Does not render ClipboardCopy component with class ${styles.modifiers.truncate} for inlinecompact variant and truncation is false`, () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} data-testid={testId}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByTestId(testId)).not.toHaveClass(styles.modifiers.truncate);
+  });
+
+  test(`Renders ClipboardCopy component with class ${styles.modifiers.truncate} when truncation is true and variant is inline-compact`, () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation data-testid={testId}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByTestId(testId)).toHaveClass(styles.modifiers.truncate);
+  });
+
+  test(`Renders ClipboardCopy component with class ${styles.modifiers.truncate} when truncation is an object and variant is inlinecompact`, () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation={{}} data-testid={testId}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByTestId(testId)).toHaveClass(styles.modifiers.truncate);
+  });
+
+  test('Does not render with Truncate component by default', () => {
+    render(<ClipboardCopy>{children}</ClipboardCopy>);
+
+    expect(screen.queryByTestId('Truncate-mock')).not.toBeInTheDocument();
+  });
+
+  test('Does not render with Truncate component when truncation is true and variant is not inline-compact', () => {
+    render(<ClipboardCopy truncation>{children}</ClipboardCopy>);
+
+    expect(screen.queryByTestId('Truncate-mock')).not.toBeInTheDocument();
+  });
+
+  test('Does not render with Truncate component when truncation is true and variant is expansion', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.expansion} truncation>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.queryByTestId('Truncate-mock')).not.toBeInTheDocument();
+  });
+
+  test('Does not render with Truncate component when truncation is an object and variant is not inline-compact', () => {
+    render(<ClipboardCopy truncation={{}}>{children}</ClipboardCopy>);
+
+    expect(screen.queryByTestId('Truncate-mock')).not.toBeInTheDocument();
+  });
+
+  test('Does not render with Truncate component when truncation is an object and variant is expansion', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.expansion} truncation={{}}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.queryByTestId('Truncate-mock')).not.toBeInTheDocument();
+  });
+
+  test('Does not render with Truncate component when variant="inline-compact" and truncation is false', () => {
+    render(<ClipboardCopy variant={ClipboardCopyVariant.inlineCompact}>{children}</ClipboardCopy>);
+
+    expect(screen.queryByTestId('Truncate-mock')).not.toBeInTheDocument();
+  });
+
+  test('Renders with Truncate component when variant="inline-compact" and truncation is true', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByTestId('Truncate-mock')).toBeInTheDocument();
+  });
+
+  test('Passes children to Truncate content prop when variant="inline-compact" and truncation is true', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByText(`Truncate content: ${children}`)).toBeInTheDocument();
+  });
+
+  test('Renders with Truncate component when variant="inline-compact" and truncation is an object', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation={{}}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByTestId('Truncate-mock')).toBeInTheDocument();
+  });
+
+  test('Passes children to Truncate content prop when variant="inline-compact" and truncation is an object', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation={{}}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByText(`Truncate content: ${children}`)).toBeInTheDocument();
+  });
+
+  test('Passes className prop to Truncate when variant="inline-compact" and truncation is passed', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation={{ className: 'clipboard-truncate' }}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByText(`Truncate className: clipboard-truncate`)).toBeInTheDocument();
+  });
+
+  test('Passes trailingNumChars prop to Truncate when variant="inline-compact" and truncation is passed', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation={{ trailingNumChars: 5 }}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByText(`Truncate trailingNumChars: 5`)).toBeInTheDocument();
+  });
+
+  test('Passes position prop to Truncate when variant="inline-compact" and truncation is passed', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation={{ position: 'start' }}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByText(`Truncate position: start`)).toBeInTheDocument();
+  });
+
+  test('Passes tooltipPosition prop to Truncate when variant="inline-compact" and truncation is passed', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation={{ tooltipPosition: 'bottom' }}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.getByText(`Truncate tooltipPosition: bottom`)).toBeInTheDocument();
+  });
 });
 
 test('Matches snapshot', () => {

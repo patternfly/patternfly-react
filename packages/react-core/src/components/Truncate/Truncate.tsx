@@ -17,7 +17,7 @@ const truncateStyles = {
 
 const minWidthCharacters: number = 12;
 
-interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
+export interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
   /** Class to add to outer span */
   className?: string;
   /** Text to truncate */
@@ -42,6 +42,11 @@ interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
     | 'left-end'
     | 'right-start'
     | 'right-end';
+  /** @hide The element whose parent to reference when calculating whether truncation should occur. This must be an ancestor
+   * of the ClipboardCopy, and must have a valid width value. For internal use only, do not use as it is not part of the public API
+   * and is subject to change.
+   */
+  refToGetParent?: React.RefObject<any>;
 }
 
 const sliceContent = (str: string, slice: number) => [str.slice(0, str.length - slice), str.slice(-slice)];
@@ -52,6 +57,7 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
   tooltipPosition = 'top',
   trailingNumChars = 7,
   content,
+  refToGetParent,
   ...props
 }: TruncateProps) => {
   const [isTruncated, setIsTruncated] = useState(true);
@@ -85,8 +91,11 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
       setTextElement(textRef.current);
     }
 
-    if (subParentRef && subParentRef.current.parentElement.parentElement && !parentElement) {
-      setParentElement(subParentRef.current.parentElement.parentElement);
+    if (
+      (refToGetParent?.current || (subParentRef?.current && subParentRef.current.parentElement.parentElement)) &&
+      !parentElement
+    ) {
+      setParentElement(refToGetParent?.current.parentElement || subParentRef?.current.parentElement.parentElement);
     }
   }, [textRef, subParentRef, textElement, parentElement]);
 
