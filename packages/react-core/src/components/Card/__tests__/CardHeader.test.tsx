@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
+import styles from '@patternfly/react-styles/css/components/Card/card';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 import { CardHeader } from '../CardHeader';
 import { CardContext } from '../Card';
 
@@ -12,6 +14,16 @@ describe('CardHeader', () => {
   test('actions are rendered', () => {
     const { asFragment } = render(<CardHeader actions="test" />);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test(`Should render CardHeader without ${styles.modifiers.wrap} by default`, () => {
+    const { asFragment } = render(<CardHeader data-testid="card-header" />);
+    expect(screen.getByTestId('card-header')).not.toHaveClass('pf-m-wrap');
+  });
+
+  test(`Should render CardHeader with ${styles.modifiers.wrap} class when hasHeaderWrap is true`, () => {
+    const { asFragment } = render(<CardHeader data-testid="card-header-will-wrap" hasHeaderWrap />);
+    expect(screen.getByTestId('card-header-will-wrap')).toHaveClass(styles.modifiers.wrap);
   });
 });
 
