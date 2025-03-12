@@ -15,7 +15,7 @@ npm install --save @patternfly/react-tokens
 ## Usage
 
 All Tokens and their corresponding values can be viewed on the
-[PatternFly React Tokens][token-page] page.
+[All PatternFly tokens][token-page] page.
 
 #### Import tokens
 
@@ -39,4 +39,4 @@ t_global_background_color_primary_default.value === '#fff'; // true
 t_global_background_color_primary_default.var === 'var(--pf-t--global--background--color--primary--default)'; // true
 ```
 
-[token-page]: https://www.patternfly.org/tokens/develop-with-tokens/#react-tokens
+[token-page]: https://www.patternfly.org/tokens/all-patternfly-tokens
