@@ -3834,7 +3834,7 @@ __metadata:
     babel-jest: "npm:^29.7.0"
     concurrently: "npm:^9.1.2"
     eslint: "npm:^9.22.0"
-    eslint-config-prettier: "npm:^10.0.1"
+    eslint-config-prettier: "npm:^10.1.1"
     eslint-plugin-markdown: "npm:^5.1.0"
     eslint-plugin-prettier: "npm:^5.2.3"
     eslint-plugin-react: "npm:^7.37.4"
@@ -10036,7 +10036,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^10.0.1":
+"eslint-config-prettier@npm:^10.1.1":
   version: 10.1.1
   resolution: "eslint-config-prettier@npm:10.1.1"
   peerDependencies:
