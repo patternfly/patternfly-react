@@ -64,8 +64,8 @@ export interface NavigationState {
   userInputPage?: number | string;
 }
 
-class Navigation extends Component<NavigationProps, NavigationState> {
-  static displayName = 'Navigation';
+class PaginationNavigation extends Component<NavigationProps, NavigationState> {
+  static displayName = 'PaginationNavigation';
   constructor(props: NavigationProps) {
     super(props);
     this.state = { userInputPage: this.props.page };
@@ -104,7 +104,7 @@ class Navigation extends Component<NavigationProps, NavigationState> {
   }
 
   private onChange(event: React.FormEvent<HTMLInputElement>, lastPage: number): void {
-    const inputPage = Navigation.parseInteger(event.currentTarget.value, lastPage);
+    const inputPage = PaginationNavigation.parseInteger(event.currentTarget.value, lastPage);
     this.setState({ userInputPage: Number.isNaN(inputPage) ? event.currentTarget.value : inputPage });
   }
 
@@ -126,7 +126,7 @@ class Navigation extends Component<NavigationProps, NavigationState> {
       'ArrowDown'
     ];
     if (event.key === KeyTypes.Enter) {
-      const inputPage = Navigation.parseInteger(this.state.userInputPage, lastPage);
+      const inputPage = PaginationNavigation.parseInteger(this.state.userInputPage, lastPage);
       onPageInput(event, Number.isNaN(inputPage) ? page : inputPage);
       this.handleNewPage(event, Number.isNaN(inputPage) ? page : inputPage);
     } else if (!/^\d*$/.test(event.key) && !allowedKeys.includes(event.key)) {
@@ -271,4 +271,4 @@ class Navigation extends Component<NavigationProps, NavigationState> {
   }
 }
 
-export { Navigation };
+export { PaginationNavigation };
