@@ -1,6 +1,5 @@
-import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
-export const ClipboardCopyTruncation: React.FunctionComponent = () => (
+export const ClipboardCopyInlineCompactTruncation: React.FunctionComponent = () => (
   <>
     <ClipboardCopy truncation hoverTip="Copy" clickTip="Copied" variant="inline-compact">
       This lengthy, copyable content will be truncated with default settings when the truncation prop is simply set to

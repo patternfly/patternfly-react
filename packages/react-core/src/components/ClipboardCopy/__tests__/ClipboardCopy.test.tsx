@@ -105,6 +105,52 @@ test(`Renders with class ${styles.modifiers.block} when isBlock is passed`, () =
   expect(screen.getByTestId(testId)).toHaveClass(styles.modifiers.block);
 });
 
+test(`Does not render with class ${styles.modifiers.truncate} by default`, () => {
+  render(<ClipboardCopy data-testid={testId}>{children}</ClipboardCopy>);
+
+  expect(screen.getByTestId(testId)).not.toHaveClass(styles.modifiers.truncate);
+});
+
+test(`Does not render with class ${styles.modifiers.truncate} for expansion variant`, () => {
+  render(
+    <ClipboardCopy variant={ClipboardCopyVariant.expansion} data-testid={testId}>
+      {children}
+    </ClipboardCopy>
+  );
+
+  expect(screen.getByTestId(testId)).not.toHaveClass(styles.modifiers.truncate);
+});
+
+test(`Does not render with class ${styles.modifiers.truncate} for inlinecompact variant and truncation is false`, () => {
+  render(
+    <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} data-testid={testId}>
+      {children}
+    </ClipboardCopy>
+  );
+
+  expect(screen.getByTestId(testId)).not.toHaveClass(styles.modifiers.truncate);
+});
+
+test(`Renders with class ${styles.modifiers.truncate} when truncation is true and variant is inline-compact`, () => {
+  render(
+    <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation data-testid={testId}>
+      {children}
+    </ClipboardCopy>
+  );
+
+  expect(screen.getByTestId(testId)).toHaveClass(styles.modifiers.truncate);
+});
+
+test(`Renders with class ${styles.modifiers.truncate} when truncation is an object and variant is inlinecompact`, () => {
+  render(
+    <ClipboardCopy variant={ClipboardCopyVariant.inlineCompact} truncation={{}} data-testid={testId}>
+      {children}
+    </ClipboardCopy>
+  );
+
+  expect(screen.getByTestId(testId)).toHaveClass(styles.modifiers.truncate);
+});
+
 test('Spreads additional props to container div', () => {
   render(
     <ClipboardCopy data-testid={testId} role="group">

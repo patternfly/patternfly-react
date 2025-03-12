@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react';
+import { Component, Fragment, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -115,7 +115,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
       textWhenExpanded: text
     };
 
-    this.clipboardRef = React.createRef();
+    this.clipboardRef = createRef();
   }
 
   static defaultProps: PickOptional<ClipboardCopyProps> = {
@@ -219,6 +219,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
           variant === ClipboardCopyVariant.inlineCompact && styles.modifiers.inline,
           isBlock && styles.modifiers.block,
           this.state.expanded && styles.modifiers.expanded,
+          shouldTruncate && styles.modifiers.truncate,
           className
         )}
         ref={this.clipboardRef}
