@@ -7,7 +7,7 @@ export default defineConfig({
     screenshotOnRunFailure: false,
     viewportWidth: 1200,
     viewportHeight: 792,
-    supportFile: false,
+    supportFile: 'cypress/support/index.js',
     testIsolation: false
   },
   reporter: 'junit',
