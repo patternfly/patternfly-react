@@ -1,5 +1,5 @@
 describe('Alert Group Demo Test', () => {
-  beforeEach(() => {
+  it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/alert-group-demo-nav-link');
   });
 
