@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import { ToolbarToggleGroup } from '../ToolbarToggleGroup';
 import { Toolbar } from '../Toolbar';
@@ -40,6 +41,34 @@ describe('Toolbar', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it(`should render toolbar without ${styles.modifiers.noPadding} by default`, () => {
+    render(
+      <Toolbar data-testid="toolbar">
+        <ToolbarContent>
+          <ToolbarItem>Test</ToolbarItem>
+          <ToolbarItem>Test 2</ToolbarItem>
+          <ToolbarItem variant="separator" />
+          <ToolbarItem>Test 3 </ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+    expect(screen.getByTestId('toolbar')).not.toHaveClass('pf-m-no-padding');
+  });
+
+  it(`should render toolbar with ${styles.modifiers.noPadding} class when hasNoPadding is true`, () => {
+    render(
+      <Toolbar data-testid="toolbar-no-padding" hasNoPadding>
+        <ToolbarContent>
+          <ToolbarItem>Test</ToolbarItem>
+          <ToolbarItem>Test 2</ToolbarItem>
+          <ToolbarItem variant="separator" />
+          <ToolbarItem>Test 3 </ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+    expect(screen.getByTestId('toolbar-no-padding')).toHaveClass(styles.modifiers.noPadding);
   });
 
   it('should render with custom label content', () => {
