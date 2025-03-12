@@ -1,5 +1,5 @@
 describe('Accordion Demo Test', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('http://localhost:3000/accordion-demo-nav-link');
   });
 
