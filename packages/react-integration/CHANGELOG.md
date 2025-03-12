@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.29...@patternfly/react-integration@6.0.0-prerelease.30) (2025-03-12)
+
+### Bug Fixes
+
+- **deps:** update react-router monorepo to ^7.3.0 ([#11627](https://github.com/patternfly/patternfly-react/issues/11627)) ([4cd79ef](https://github.com/patternfly/patternfly-react/commit/4cd79efece78bceeae4712f2bcd9c61ed74b9d78))
+
 # [6.0.0-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.28...@patternfly/react-integration@6.0.0-prerelease.29) (2025-03-11)
 
 **Note:** Version bump only for package @patternfly/react-integration
