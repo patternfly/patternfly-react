@@ -404,6 +404,46 @@ describe('ClipboardCopy with truncation', () => {
     expect(screen.queryByTestId(testId)?.querySelector(`.${truncateStyles.truncate}`)).not.toBeInTheDocument();
   });
 
+  test('Does not render with truncate wrapper when truncation is true and variant is not inline-compact', () => {
+    render(
+      <ClipboardCopy truncation data-testid={testId}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.queryByTestId(testId)?.querySelector(`.${truncateStyles.truncate}`)).not.toBeInTheDocument();
+  });
+
+  test('Does not render with truncate wrapper when truncation is true and variant is expansion', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.expansion} truncation data-testid={testId}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.queryByTestId(testId)?.querySelector(`.${truncateStyles.truncate}`)).not.toBeInTheDocument();
+  });
+
+  test('Does not render with truncate wrapper when truncation is an object and variant is not inline-compact', () => {
+    render(
+      <ClipboardCopy truncation={{}} data-testid={testId}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.queryByTestId(testId)?.querySelector(`.${truncateStyles.truncate}`)).not.toBeInTheDocument();
+  });
+
+  test('Does not render with truncate wrapper when truncation is an object and variant is expansion', () => {
+    render(
+      <ClipboardCopy variant={ClipboardCopyVariant.expansion} truncation={{}} data-testid={testId}>
+        {children}
+      </ClipboardCopy>
+    );
+
+    expect(screen.queryByTestId(testId)?.querySelector(`.${truncateStyles.truncate}`)).not.toBeInTheDocument();
+  });
+
   test('Does not render with truncate wrapper when variant="inline-compact" and truncation is false', () => {
     render(<ClipboardCopy variant={ClipboardCopyVariant.inlineCompact}>{children}</ClipboardCopy>);
 
