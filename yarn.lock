@@ -3509,7 +3509,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/ast-helpers@npm:^1.4.0-alpha.157":
+"@patternfly/ast-helpers@npm:^1.4.0-alpha.159":
   version: 1.26.2
   resolution: "@patternfly/ast-helpers@npm:1.26.2"
   dependencies:
@@ -3522,15 +3522,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/documentation-framework@npm:^6.5.16":
-  version: 6.5.16
-  resolution: "@patternfly/documentation-framework@npm:6.5.16"
+"@patternfly/documentation-framework@npm:^6.5.18":
+  version: 6.5.18
+  resolution: "@patternfly/documentation-framework@npm:6.5.18"
   dependencies:
     "@babel/core": "npm:^7.24.3"
     "@babel/preset-env": "npm:^7.24.3"
     "@babel/preset-react": "npm:^7.24.1"
     "@mdx-js/util": "npm:1.6.16"
-    "@patternfly/ast-helpers": "npm:^1.4.0-alpha.157"
+    "@patternfly/ast-helpers": "npm:^1.4.0-alpha.159"
     "@reach/router": "npm:@gatsbyjs/reach-router@1.3.9"
     autoprefixer: "npm:9.8.6"
     babel-loader: "npm:^9.1.3"
@@ -3597,7 +3597,7 @@ __metadata:
     react-dom: ^17.0.0 || ^18.0.0
   bin:
     pf-docs-framework: scripts/cli/cli.js
-  checksum: 10c0/c51acf735df57b96005f89437be4c69e1c9f2c8569911ffbfa104b4add04218b4bc6028db5dafe7dc50add42c31e85feb9467f52bb907c70f88990258a96603c
+  checksum: 10c0/962e13d0b45496f7b62fdbada3a26c829cc70c16cc7c6fdd7d4cd54fba44d03b182ff18c0a7d9fc1bf1d15d3b964059f037d829dd62a2a23e7dab8ebde20aded
   languageName: node
   linkType: hard
 
@@ -3749,7 +3749,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
-    "@patternfly/documentation-framework": "npm:^6.5.16"
+    "@patternfly/documentation-framework": "npm:^6.5.18"
     "@patternfly/patternfly": "npm:6.2.0-prerelease.19"
     "@patternfly/patternfly-a11y": "npm:5.1.0"
     "@patternfly/react-charts": "workspace:^"
