@@ -1,3 +1,4 @@
+import { useRef, useContext } from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { AlertContext } from './AlertContext';
@@ -26,8 +27,8 @@ export const AlertActionCloseButton: React.FunctionComponent<AlertActionCloseBut
   variantLabel,
   ...props
 }: AlertActionCloseButtonProps) => {
-  const closeButtonRef = React.useRef(null);
-  const { hasAnimations, updateTransitionEnd } = React.useContext(AlertGroupContext);
+  const closeButtonRef = useRef(null);
+  const { hasAnimations, updateTransitionEnd } = useContext(AlertGroupContext);
   const { offstageRight } = alertGroupStyles.modifiers;
 
   const getParentAlertGroupItem = () => closeButtonRef.current?.closest(`.${alertGroupStyles.alertGroupItem}`);

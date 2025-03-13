@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState, useContext } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import alertGroupStyles from '@patternfly/react-styles/css/components/Alert/alert-group';
@@ -143,8 +143,8 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const [isMouseOver, setIsMouseOver] = useState<boolean | undefined>();
   const [containsFocus, setContainsFocus] = useState<boolean | undefined>();
   const shouldDismiss = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
-  const [isDismissed, setIsDismissed] = React.useState(false);
-  const { hasAnimations, updateTransitionEnd } = React.useContext(AlertGroupContext);
+  const [isDismissed, setIsDismissed] = useState(false);
+  const { hasAnimations, updateTransitionEnd } = useContext(AlertGroupContext);
   const { offstageRight } = alertGroupStyles.modifiers;
 
   const getParentAlertGroupItem = () => divRef.current?.closest(`.${alertGroupStyles.alertGroupItem}`);
@@ -166,7 +166,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     }
   }, [shouldDismiss, isDismissed]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const calculatedTimeout = timeout === true ? 8000 : Number(timeout);
     if (calculatedTimeout > 0) {
       const timer = setTimeout(() => setTimedOut(true), calculatedTimeout);
@@ -198,7 +198,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   useEffect(() => {
     isDismissed && onTimeout();
   }, [isDismissed, onTimeout]);
-  React.useEffect(() => {
+  useEffect(() => {
     const alertGroupItem = getParentAlertGroupItem();
     setTimeout(() => alertGroupItem?.classList.remove(alertGroupStyles.modifiers.offstageTop), 0);
   }, []);
