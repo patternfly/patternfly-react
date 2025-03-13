@@ -76,7 +76,7 @@ export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Whether to right-align expandable toggle button */
   isToggleRightAligned?: boolean;
   /** Flag indicating that header wrapping is enabled */
-  hasHeaderWrap?: boolean;
+  hasWrap?: boolean;
 }
 
 export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
@@ -88,7 +88,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   onExpand,
   toggleButtonProps,
   isToggleRightAligned,
-  hasHeaderWrap,
+  hasWrap,
   ...props
 }: CardHeaderProps) => (
   <GenerateId>
@@ -183,8 +183,8 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
               className={css(
                 styles.cardHeader,
                 isToggleRightAligned && styles.modifiers.toggleRight,
-                className,
-                hasHeaderWrap && styles.modifiers.wrap
+                hasWrap && styles.modifiers.wrap,
+                className
               )}
               id={id}
               {...props}
