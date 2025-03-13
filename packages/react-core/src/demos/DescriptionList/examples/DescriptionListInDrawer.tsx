@@ -50,7 +50,7 @@ export const DescriptionListInDrawer: React.FunctionComponent = () => {
         </DrawerActions>
       </DrawerHead>
       <DrawerPanelBody>
-        <DescriptionList isFillColumns columnModifier={{ default: '2Col', lg: '2Col' }}>
+        <DescriptionList isFillColumns columnModifier={{ default: '2Col', lg: '2Col' }} aria-label="Demo details list">
           <DescriptionListGroup>
             <DescriptionListTerm>Name</DescriptionListTerm>
             <DescriptionListDescription>test</DescriptionListDescription>

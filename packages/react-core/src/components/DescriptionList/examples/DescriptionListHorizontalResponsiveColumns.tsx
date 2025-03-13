@@ -8,7 +8,11 @@ import {
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListHorizontalResponsiveColumns: React.FunctionComponent = () => (
-  <DescriptionList isHorizontal columnModifier={{ lg: '2Col', xl: '3Col' }}>
+  <DescriptionList
+    isHorizontal
+    columnModifier={{ lg: '2Col', xl: '3Col' }}
+    aria-label="Horizontal responsive columns based on screen size"
+  >
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>

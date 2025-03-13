@@ -8,7 +8,11 @@ import {
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListColumnFill: React.FunctionComponent = () => (
-  <DescriptionList isFillColumns columnModifier={{ default: '2Col', lg: '3Col' }}>
+  <DescriptionList
+    isFillColumns
+    columnModifier={{ default: '2Col', lg: '3Col' }}
+    aria-label="Description list with column fill enabled"
+  >
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>

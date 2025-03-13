@@ -8,7 +8,7 @@ import {
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListDefaultInlineGrid: React.FunctionComponent = () => (
-  <DescriptionList columnModifier={{ default: '3Col' }} isInlineGrid>
+  <DescriptionList columnModifier={{ default: '3Col' }} isInlineGrid aria-label="Default inline grid">
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>

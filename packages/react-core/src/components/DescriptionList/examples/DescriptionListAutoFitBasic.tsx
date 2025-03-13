@@ -8,7 +8,7 @@ import {
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListAutoFitBasic: React.FunctionComponent = () => (
-  <DescriptionList isAutoFit>
+  <DescriptionList isAutoFit aria-label="Basic auto-fit">
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>example</DescriptionListDescription>
