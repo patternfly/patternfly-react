@@ -1,6 +1,9 @@
+import { useState, useEffect } from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import styles from '@patternfly/react-styles/css/components/Button/button';
+import { css } from '@patternfly/react-styles';
 
 export enum NotificationBadgeVariant {
   read = 'read',
@@ -27,6 +30,8 @@ export interface NotificationBadgeProps extends Omit<ButtonProps, 'variant'> {
   isExpanded?: boolean;
   /** Determines the variant of the notification badge. */
   variant?: NotificationBadgeVariant | 'read' | 'unread' | 'attention';
+  /** Determines if the notification badge should animate on new notifications. */
+  hasAnimation?: boolean;
 }
 
 export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> = ({
@@ -37,28 +42,44 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
   icon = <BellIcon />,
   className,
   isExpanded = false,
+  hasAnimation = false,
   ...props
 }: NotificationBadgeProps) => {
+  const [isAnimating, setIsAnimating] = useState(hasAnimation);
   const hasCount = count > 0;
   const hasChildren = children !== undefined;
   const isAttention = variant === NotificationBadgeVariant.attention;
-
   const notificationIcon = isAttention ? attentionIcon : icon;
-  const notificationContent = hasChildren ? children : notificationIcon;
+  let notificationContent: React.ReactNode = null;
 
-  const [iconProp, notificationChild] = hasCount ? [notificationContent, count] : [undefined, notificationContent];
+  if (hasCount) {
+    notificationContent = count;
+  } else if (hasChildren) {
+    notificationContent = children;
+  }
+
+  const buttonClassName = isAnimating ? css(className, styles.modifiers.notify) : className;
+
+  useEffect(() => {
+    setIsAnimating(hasAnimation && (hasCount || hasChildren) ? true : false);
+  }, [hasAnimation, hasCount, hasChildren]);
+
+  const handleClick = () => {
+    setIsAnimating(false);
+  };
 
   return (
     <Button
       variant={ButtonVariant.stateful}
-      className={className}
+      className={buttonClassName}
       aria-expanded={isExpanded}
       state={variant}
       isClicked={isExpanded}
-      icon={iconProp}
+      icon={notificationIcon}
+      onClick={handleClick}
       {...props}
     >
-      {notificationChild}
+      {notificationContent}
     </Button>
   );
 };
