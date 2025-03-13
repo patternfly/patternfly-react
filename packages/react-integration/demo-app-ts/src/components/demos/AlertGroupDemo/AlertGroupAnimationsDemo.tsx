@@ -1,8 +1,8 @@
-import React from 'react';
+import { useState, Fragment } from 'react';
 import { Alert, AlertProps, AlertGroup, AlertActionCloseButton, Button, Flex, FlexItem } from '@patternfly/react-core';
 
 export const AlertGroupAnimationsDemo: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
+  const [alerts, setAlerts] = useState<Partial<AlertProps>[]>([]);
 
   const getUniqueId = () => new Date().getTime();
   const addAlert = () => {
@@ -13,7 +13,7 @@ export const AlertGroupAnimationsDemo: React.FunctionComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Flex>
         <FlexItem>
           <Button id="add-alert-button" onClick={addAlert} variant="secondary">
@@ -21,7 +21,7 @@ export const AlertGroupAnimationsDemo: React.FunctionComponent = () => {
           </Button>
         </FlexItem>
       </Flex>
-      <AlertGroup hasAnimations isToast isLiveRegion>
+      <AlertGroup isToast isLiveRegion>
         {alerts.map(({ key, title }) => (
           <Alert
             id="animated-alert"
@@ -38,6 +38,6 @@ export const AlertGroupAnimationsDemo: React.FunctionComponent = () => {
           />
         ))}
       </AlertGroup>
-    </React.Fragment>
+    </Fragment>
   );
 };
