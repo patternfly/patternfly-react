@@ -19,6 +19,7 @@ propComponents:
   ]
 ---
 
+import { useRef, useState } from 'react';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 As the context selector component is now deprecated, a context selector may now be built using the new suite of menu components. This is showcased in the following demo, which uses the new [dropdown](/components/menus/dropdown) component that is built off of menu.

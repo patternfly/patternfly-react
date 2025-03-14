@@ -5,7 +5,7 @@ cssPrefix: pf-v6-c-number-input
 propComponents: ['NumberInput']
 ---
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 
 ## Examples
 

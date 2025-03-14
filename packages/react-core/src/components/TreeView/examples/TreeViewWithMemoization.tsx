@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { TreeView, Button, TreeViewDataItem } from '@patternfly/react-core';
 
 export const TreeViewWithMemoization: React.FunctionComponent = () => {
-  const [activeItems, setActiveItems] = React.useState<TreeViewDataItem[]>();
-  const [allExpanded, setAllExpanded] = React.useState(false);
+  const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();
+  const [allExpanded, setAllExpanded] = useState(false);
 
   const onSelect = (_event: React.MouseEvent, treeViewItem: TreeViewDataItem) => {
     const filtered: TreeViewDataItem[] = [];

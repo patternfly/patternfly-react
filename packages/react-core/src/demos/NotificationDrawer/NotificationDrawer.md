@@ -3,6 +3,8 @@ id: Notification drawer
 section: components
 ---
 
+import { Fragment, useRef, useState } from 'react';
+
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';

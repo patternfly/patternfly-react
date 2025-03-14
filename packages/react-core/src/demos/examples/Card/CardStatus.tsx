@@ -1,3 +1,4 @@
+import { useState } from 'react';
 /* eslint-disable camelcase */
 import {
   Alert,
@@ -29,12 +30,12 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/excla
 import t_global_text_color_subtle from '@patternfly/react-tokens/dist/esm/t_global_text_color_subtle';
 
 export const CardStatus: React.FunctionComponent = () => {
-  const [drawerExpanded, setDrawerExpanded] = React.useState(false);
+  const [drawerExpanded, setDrawerExpanded] = useState(false);
   const handleDrawerToggleClick = () => {
     setDrawerExpanded(!drawerExpanded);
   };
 
-  const [rowsExpanded, setRowsExpanded] = React.useState([false, false, false]);
+  const [rowsExpanded, setRowsExpanded] = useState([false, false, false]);
   const handleToggleExpand = (_: any, rowIndex: number) => {
     const newRowsExpanded = [...rowsExpanded];
     newRowsExpanded[rowIndex] = !rowsExpanded[rowIndex];

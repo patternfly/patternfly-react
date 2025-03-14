@@ -14,11 +14,12 @@ import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from
 This is intended to be used as a filter. After selecting a start date, the next date is automatically selected.
 
 ```js
+import { useState } from 'react';
 import { Split, SplitItem, DatePicker, isValidDate, yyyyMMddFormat } from '@patternfly/react-core';
 
 DateRangePicker = () => {
-  const [from, setFrom] = React.useState();
-  const [to, setTo] = React.useState();
+  const [from, setFrom] = useState();
+  const [to, setTo] = useState();
 
   const toValidator = (date) =>
     isValidDate(from) && date >= from ? '' : 'The "to" date must be after the "from" date';

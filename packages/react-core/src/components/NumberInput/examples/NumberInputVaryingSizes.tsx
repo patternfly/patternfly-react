@@ -1,11 +1,11 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputVaryingSizes: React.FunctionComponent = () => {
-  const [input1Value, setInput1Value] = React.useState<number | ''>(1);
-  const [input2Value, setInput2Value] = React.useState<number | ''>(1234567890);
-  const [input3Value, setInput3Value] = React.useState<number | ''>(5);
-  const [input4Value, setInput4Value] = React.useState<number | ''>(12345);
+  const [input1Value, setInput1Value] = useState<number | ''>(1);
+  const [input2Value, setInput2Value] = useState<number | ''>(1234567890);
+  const [input3Value, setInput3Value] = useState<number | ''>(5);
+  const [input4Value, setInput4Value] = useState<number | ''>(12345);
 
   const onChange = (
     event: React.FormEvent<HTMLInputElement>,

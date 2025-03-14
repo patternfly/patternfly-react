@@ -4,6 +4,7 @@ section: components
 subsection: date-and-time
 ---
 
+import { useState } from 'react';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
 import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 
@@ -20,11 +21,12 @@ In this demo, learn how to use a [CalendarMonth](/components/date-and-time/calen
 ### Date and time range picker
 
 ```js
+import { useState } from 'react';
 import { Flex, FlexItem, InputGroup, InputGroupItem, DatePicker, isValidDate, TimePicker, yyyyMMddFormat, updateDateTime } from '@patternfly/react-core';
 
 DateTimeRangePicker = () => {
-  const [from, setFrom] = React.useState();
-  const [to, setTo] = React.useState();
+  const [from, setFrom] = useState();
+  const [to, setTo] = useState();
 
   const toValidator = (date) => {
     return isValidDate(from) && yyyyMMddFormat(date) >= yyyyMMddFormat(from)

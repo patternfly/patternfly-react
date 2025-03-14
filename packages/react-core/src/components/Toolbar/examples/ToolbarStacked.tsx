@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -32,14 +32,14 @@ export const ToolbarStacked: React.FunctionComponent = () => {
   const resourceOptions = ['All resources', 'Deployment', 'Pod'];
   const statusOptions = ['New', 'Pending', 'Running', 'Cancelled'];
 
-  const [kebabIsOpen, setKebabIsOpen] = React.useState(false);
-  const [resourceIsExpanded, setResourceIsExpanded] = React.useState(false);
-  const [resourceSelected, setResourceSelected] = React.useState('');
-  const [statusIsExpanded, setStatusIsExpanded] = React.useState(false);
-  const [statusSelected, setStatusSelected] = React.useState('');
-  const [isSplitButtonDropdownOpen, setIsSplitButtonDropdownOpen] = React.useState(false);
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(20);
+  const [kebabIsOpen, setKebabIsOpen] = useState(false);
+  const [resourceIsExpanded, setResourceIsExpanded] = useState(false);
+  const [resourceSelected, setResourceSelected] = useState('');
+  const [statusIsExpanded, setStatusIsExpanded] = useState(false);
+  const [statusSelected, setStatusSelected] = useState('');
+  const [isSplitButtonDropdownOpen, setIsSplitButtonDropdownOpen] = useState(false);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(20);
 
   const onKebabToggle = () => {
     setKebabIsOpen(!kebabIsOpen);

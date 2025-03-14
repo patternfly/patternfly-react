@@ -1,10 +1,10 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Pagination, PaginationVariant, Gallery, GalleryItem, Card, CardBody } from '@patternfly/react-core';
 
 export const PaginationSticky: React.FunctionComponent = () => {
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(100);
-  const [isTopSticky, setIsTopSticky] = React.useState(true);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(100);
+  const [isTopSticky, setIsTopSticky] = useState(true);
   const itemCount = 523;
 
   const onToggleSticky = () => {

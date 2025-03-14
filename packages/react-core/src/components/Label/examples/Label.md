@@ -5,7 +5,7 @@ cssPrefix: ['pf-v6-c-label', 'pf-v6-c-label-group']
 propComponents: ['Label', 'LabelGroup']
 ---
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import './Label.css';

@@ -5,7 +5,7 @@ cssPrefix: pf-v6-c-progress-stepper
 propComponents: ['ProgressStepper', 'ProgressStep']
 ---
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
 import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
 

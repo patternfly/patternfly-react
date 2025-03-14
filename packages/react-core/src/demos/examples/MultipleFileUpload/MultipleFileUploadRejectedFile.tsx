@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { FileRejection } from 'react-dropzone';
 import {
   MultipleFileUpload,
@@ -20,12 +21,12 @@ interface readFile {
 }
 
 export const MultipleFileUploadBasic: React.FunctionComponent = () => {
-  const [isHorizontal, setIsHorizontal] = React.useState(false);
-  const [currentFiles, setCurrentFiles] = React.useState<File[]>([]);
-  const [readFileData, setReadFileData] = React.useState<readFile[]>([]);
-  const [showStatus, setShowStatus] = React.useState(false);
-  const [statusIcon, setStatusIcon] = React.useState('inProgress');
-  const [modalText, setModalText] = React.useState('');
+  const [isHorizontal, setIsHorizontal] = useState(false);
+  const [currentFiles, setCurrentFiles] = useState<File[]>([]);
+  const [readFileData, setReadFileData] = useState<readFile[]>([]);
+  const [showStatus, setShowStatus] = useState(false);
+  const [statusIcon, setStatusIcon] = useState('inProgress');
+  const [modalText, setModalText] = useState('');
 
   // only show the status component once a file has been uploaded, but keep the status list component itself even if all files are removed
   if (!showStatus && currentFiles.length > 0) {
@@ -33,7 +34,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   }
 
   // determine the icon that should be shown for the overall status list
-  React.useEffect(() => {
+  useEffect(() => {
     if (readFileData.length < currentFiles.length) {
       setStatusIcon('inProgress');
     } else if (readFileData.every((file) => file.loadResult === 'success')) {

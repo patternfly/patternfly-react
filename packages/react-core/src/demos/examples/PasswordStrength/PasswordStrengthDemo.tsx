@@ -1,4 +1,4 @@
-import { type JSX, useState } from 'react';
+import { useState } from 'react';
 import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextInput } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
@@ -8,7 +8,7 @@ export const PasswordStrengthDemo: React.FunctionComponent = () => {
   type HelperTextItemVariant = 'default' | 'indeterminate' | 'warning' | 'success' | 'error';
   interface PassStrength {
     variant: HelperTextItemVariant;
-    icon: JSX.Element;
+    icon: React.JSX.Element;
     text: string;
   }
 

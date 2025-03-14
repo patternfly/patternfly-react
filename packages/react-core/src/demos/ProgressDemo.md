@@ -2,7 +2,7 @@
 id: Progress
 section: components
 ---
-
+import { useState } from 'react';
 import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 ## Demos
@@ -10,11 +10,12 @@ import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessib
 ### Basic
 
 ```js
+import { useState } from 'react';
 import { Progress, Button, Stack, StackItem } from '@patternfly/react-core';
 import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 ProgressStepperDemo = () => {
-  const [currentValue, setCurrentValue] = React.useState(0);
+  const [currentValue, setCurrentValue] = useState(0);
 
   const onProgressUpdate = (nextValue) => {
     setCurrentValue(nextValue);
@@ -48,10 +49,11 @@ ProgressStepperDemo = () => {
 Sometimes a progress bar should only show increases to progress state. In this case, before the next value is set it should be checked against the current progress. The `Decrease progress` button attempts to set a lower progress value, simulating an update to a progress state that isn't desired, but won't change the progress state due to this check.
 
 ```js
+import { useState } from 'react';
 import { Progress, Button, Stack, StackItem } from '@patternfly/react-core';
 
 ProgressStepperDemo = () => {
-  const [currentValue, setCurrentValue] = React.useState(0);
+  const [currentValue, setCurrentValue] = useState(0);
 
   const onProgressUpdate = (nextValue) => {
     if (nextValue > currentValue) {

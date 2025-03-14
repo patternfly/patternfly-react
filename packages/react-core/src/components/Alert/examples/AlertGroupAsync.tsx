@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Alert,
   AlertProps,
@@ -12,8 +12,8 @@ import {
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 export const AlertGroupAsync: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
-  const [isRunning, setIsRunning] = React.useState(false);
+  const [alerts, setAlerts] = useState<Partial<AlertProps>[]>([]);
+  const [isRunning, setIsRunning] = useState(false);
 
   const btnClasses = [buttonStyles.button, buttonStyles.modifiers.secondary].join(' ');
 

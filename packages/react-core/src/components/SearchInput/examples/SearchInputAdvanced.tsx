@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import { Button, Checkbox, FormGroup, SearchInput } from '@patternfly/react-core';
 import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
 
 export const SearchInputAdvanced: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('username:player firstname:john');
-  const [useEqualsAsDelimiter, setUseEqualsAsDelimiter] = React.useState(false);
-  const [useCustomFooter, setUseCustomFooter] = React.useState(false);
+  const [value, setValue] = useState('username:player firstname:john');
+  const [useEqualsAsDelimiter, setUseEqualsAsDelimiter] = useState(false);
+  const [useCustomFooter, setUseCustomFooter] = useState(false);
 
   const toggleDelimiter = (checked: boolean) => {
     setValue(value.replace(/:|=/g, checked ? '=' : ':'));
