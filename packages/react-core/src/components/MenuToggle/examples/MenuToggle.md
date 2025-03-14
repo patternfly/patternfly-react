@@ -61,12 +61,13 @@ import { MenuToggle } from '@patternfly/react-core';
 To display a count of selected items in a toggle, use the `badge` property. You can also pass in `variant="plainText"` for a badge only toggle.
 
 ```ts
+import { Fragment } from 'react';
 import { MenuToggle, Badge } from '@patternfly/react-core';
 
-<React.Fragment>
+<Fragment>
   <MenuToggle badge={<Badge>4 selected</Badge>}>Count</MenuToggle>
   <MenuToggle variant="plainText" badge={<Badge screenReaderText="additional items">4</Badge>} />
-</React.Fragment>
+</Fragment>
 ```
 
 ### With icons
@@ -76,10 +77,11 @@ To add a recognizable icon to a menu toggle, use the `icon` property. The follow
 For most basic icons, it is recommended to wrap it inside our [icon component](/components/icon).
 
 ```ts
+import { Fragment } from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
-<React.Fragment>
+<Fragment>
   <MenuToggle
     icon={<CogIcon />}
     variant="primary"
@@ -99,7 +101,7 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
   >
     Icon
   </MenuToggle>
-</React.Fragment>;
+</Fragment>;
 ```
 
 ### With avatar and text
@@ -109,14 +111,15 @@ You can also pass images into the `icon` property. The following example passes 
 This can be used alongside a text label that provides more context for the image.
 
 ```ts
+import { Fragment } from 'react';
 import { MenuToggle, Avatar } from '@patternfly/react-core';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
-<React.Fragment>
+<Fragment>
   <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />}>Ned Username</MenuToggle>{' '}
   <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isExpanded>Ned Username</MenuToggle>{' '}
   <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isDisabled>Ned Username</MenuToggle>
-</React.Fragment>
+</Fragment>
 ```
 
 ### Variant styles
@@ -124,10 +127,11 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 Variant styling can be applied to menu toggles. In the following example, the toggle uses primary styling by passing `variant="primary"` into the `<MenuToggle>` component. Additional variant options include “default”, “plain”, “plainText”, “secondary”, and “typeahead”.
 
 ```ts
+import { Fragment } from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
-<React.Fragment>
+<Fragment>
   <MenuToggle variant="primary">Collapsed</MenuToggle>{' '}
   <MenuToggle variant="primary" isExpanded>
     Expanded
@@ -135,7 +139,7 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
   <MenuToggle variant="primary" isDisabled>
     Disabled
   </MenuToggle>
-</React.Fragment>
+</Fragment>
 
 ```
 
@@ -146,16 +150,17 @@ To apply plain styling to a menu toggle with an icon, pass in `variant="plain"`.
 If the toggle does not have any visible text content, use the `aria-label` property to provide an accessible name.
 
 ```ts
+import { Fragment } from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-<React.Fragment>
+<Fragment>
   <MenuToggle icon={<EllipsisVIcon />} variant="plain" aria-label="plain kebab"/>
   {' '}
   <MenuToggle icon={<EllipsisVIcon />} variant="plain" isExpanded aria-label="plain expanded kebab"/>
   {' '}
   <MenuToggle icon={<EllipsisVIcon />} variant="plain" isDisabled aria-label="disabled plain kebab"/>
-</React.Fragment>
+</Fragment>
 ```
 
 ### Plain toggle with text label
@@ -163,9 +168,10 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 To apply plain styling to a menu toggle with a text label, pass in `variant="plainText"`. Unlike the “plain” variant, “plainText” adds a caret pointing down in the toggle.
 
 ```ts
+import { Fragment } from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 
-<React.Fragment>
+<Fragment>
   <MenuToggle variant="plainText" isDisabled aria-label="Disabled plain menu toggle">
     Disabled
   </MenuToggle>{' '}
@@ -175,7 +181,7 @@ import { MenuToggle } from '@patternfly/react-core';
   <MenuToggle variant="plainText" isExpanded aria-label="Expanded plain menu toggle">
     Custom text (expanded)
   </MenuToggle>
-</React.Fragment>
+</Fragment>
 ```
 
 ### Split toggle with checkbox

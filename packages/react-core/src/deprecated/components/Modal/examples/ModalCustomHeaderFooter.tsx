@@ -1,11 +1,11 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Button, Title, TitleSizes } from '@patternfly/react-core';
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setIsModalOpen(!isModalOpen);

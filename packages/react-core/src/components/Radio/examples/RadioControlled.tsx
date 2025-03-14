@@ -1,8 +1,8 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Radio } from '@patternfly/react-core';
 
 export const RadioControlled: React.FunctionComponent = () => {
-  const [check1, setCheck1] = React.useState(false);
+  const [check1, setCheck1] = useState(false);
 
   const handleChange = () => {
     setCheck1(true);

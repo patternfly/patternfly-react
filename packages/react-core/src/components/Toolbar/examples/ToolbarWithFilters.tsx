@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Button,
   Dropdown,
@@ -25,14 +25,14 @@ import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const ToolbarWithFilters: React.FunctionComponent = () => {
-  const [inputValue, setInputValue] = React.useState('');
-  const [isStatusExpanded, setIsStatusExpanded] = React.useState(false);
-  const [isRiskExpanded, setIsRiskExpanded] = React.useState(false);
-  const [filters, setFilters] = React.useState({
+  const [inputValue, setInputValue] = useState('');
+  const [isStatusExpanded, setIsStatusExpanded] = useState(false);
+  const [isRiskExpanded, setIsRiskExpanded] = useState(false);
+  const [filters, setFilters] = useState({
     risk: ['Low'],
     status: ['New', 'Pending']
   });
-  const [isKebabOpen, setIsKebabOpen] = React.useState(false);
+  const [isKebabOpen, setIsKebabOpen] = useState(false);
 
   const onInputChange = (newValue: string) => {
     setInputValue(newValue);

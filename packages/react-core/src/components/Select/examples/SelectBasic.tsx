@@ -1,10 +1,10 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement, Checkbox } from '@patternfly/react-core';
 
 export const SelectBasic: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<string>('Select a value');
-  const [isDisabled, setIsDisabled] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<string>('Select a value');
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);

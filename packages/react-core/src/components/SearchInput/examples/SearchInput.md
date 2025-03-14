@@ -5,6 +5,7 @@ cssPrefix: 'pf-v6-c-search-input'
 propComponents: ['SearchInput', 'SearchInputSearchAttribute', 'SearchInputExpandable']
 ---
 
+import { useRef, useState } from 'react';
 import { ExternalLinkSquareAltIcon } from '@patternfly/react-icons';
 
 ## Examples

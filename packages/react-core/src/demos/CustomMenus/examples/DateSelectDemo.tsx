@@ -1,9 +1,10 @@
+import { useRef, useState } from 'react';
 import { MenuToggle, Select, SelectList, SelectOption, Timestamp } from '@patternfly/react-core';
 
 export const DateSelectDemo: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<number>(0);
-  const menuRef = React.useRef<HTMLDivElement>(undefined);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<number>(0);
+  const menuRef = useRef<HTMLDivElement>(undefined);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);

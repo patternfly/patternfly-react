@@ -3,6 +3,7 @@ id: Right-to-left
 section: patterns
 ---
 
+import { Fragment, useEffect, useState } from 'react';
 import translationsEn from "./examples/translations.en.json";
 import translationsHe from "./examples/translations.he.json";
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';

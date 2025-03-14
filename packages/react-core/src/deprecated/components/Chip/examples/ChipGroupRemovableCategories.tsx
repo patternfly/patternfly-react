@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
 
 export const ChipGroupRemovableCategories: React.FunctionComponent = () => {
-  const [chipGroup1, setChipGroup1] = React.useState(['Chip one', 'Chip two', 'Chip three']);
-  const [chipGroup2, setChipGroup2] = React.useState(['Chip one', 'Chip two', 'Chip three', 'Chip four']);
+  const [chipGroup1, setChipGroup1] = useState(['Chip one', 'Chip two', 'Chip three']);
+  const [chipGroup2, setChipGroup2] = useState(['Chip one', 'Chip two', 'Chip three', 'Chip four']);
 
   const deleteItem = (id: string, group: string[]) => {
     const copyOfChips = [...group];

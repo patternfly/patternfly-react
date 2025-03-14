@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, SearchInput, Checkbox } from '@patternfly/react-core';
 
 export const ToolbarSticky: React.FunctionComponent = () => {
-  const [isSticky, setIsSticky] = React.useState(true);
-  const [showEvenOnly, setShowEvenOnly] = React.useState(true);
+  const [isSticky, setIsSticky] = useState(true);
+  const [showEvenOnly, setShowEvenOnly] = useState(true);
   const array = Array.from(Array(30), (_, x) => x); // create array of numbers from 1-30 for demo purposes
   const numbers = showEvenOnly ? array.filter((number) => number % 2 === 0) : array;
 

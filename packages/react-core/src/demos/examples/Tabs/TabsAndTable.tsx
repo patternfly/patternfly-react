@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useRef, useState } from 'react';
 /* eslint-disable no-console */
 import {
   Button,
@@ -67,13 +67,13 @@ interface Repository {
 
 export const TablesAndTabs = () => {
   // secondary tab properties
-  const [secondaryActiveTabKey, setSecondaryActiveTabKey] = React.useState<number>(10);
+  const [secondaryActiveTabKey, setSecondaryActiveTabKey] = useState<number>(10);
   const handleSecondaryTabClick = (tabIndex: number) => {
     setSecondaryActiveTabKey(tabIndex);
   };
 
   // drawer properties
-  const [isExpanded, setIsExpanded] = React.useState<boolean>(true);
+  const [isExpanded, setIsExpanded] = useState<boolean>(true);
 
   // table properties
   // In real usage, this data would come from some external source like an API via props.
@@ -93,7 +93,7 @@ export const TablesAndTabs = () => {
     lastCommit: 'Last commit'
   };
 
-  const [selectedRepoName, setSelectedRepoName] = React.useState<string>(repositories[0].name);
+  const [selectedRepoName, setSelectedRepoName] = useState<string>(repositories[0].name);
   const isRepoSelected = (repo: Repository) => repo.name === selectedRepoName;
   const setRepoSelected = (_event: React.FormEvent<HTMLInputElement>, repo: Repository) => {
     setSelectedRepoName(repo.name);
@@ -127,7 +127,7 @@ export const TablesAndTabs = () => {
     }
   ];
 
-  const firstActionRef = React.useRef<HTMLButtonElement>(null);
+  const firstActionRef = useRef<HTMLButtonElement>(null);
 
   /** Handles when the user clicks on the custom action toggle, stops propagation to prevent the drawer from opening */
   const handleActionsToggleClick = (event: React.MouseEvent, ActionsToggleProps: CustomActionsToggleProps) => {

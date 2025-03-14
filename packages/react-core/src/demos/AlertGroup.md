@@ -3,7 +3,7 @@ id: Alert
 section: components
 ---
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';

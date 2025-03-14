@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Button,
   MenuToggle,
@@ -20,12 +20,12 @@ export const ToolbarGroups: React.FunctionComponent = () => {
   const secondOptions = ['1', '2', '3'];
   const thirdOptions = ['I', 'II', 'III'];
 
-  const [firstIsExpanded, setFirstIsExpanded] = React.useState(false);
-  const [firstSelected, setFirstSelected] = React.useState('');
-  const [secondIsExpanded, setSecondIsExpanded] = React.useState(false);
-  const [secondSelected, setSecondSelected] = React.useState('');
-  const [thirdIsExpanded, setThirdIsExpanded] = React.useState(false);
-  const [thirdSelected, setThirdSelected] = React.useState('');
+  const [firstIsExpanded, setFirstIsExpanded] = useState(false);
+  const [firstSelected, setFirstSelected] = useState('');
+  const [secondIsExpanded, setSecondIsExpanded] = useState(false);
+  const [secondSelected, setSecondSelected] = useState('');
+  const [thirdIsExpanded, setThirdIsExpanded] = useState(false);
+  const [thirdSelected, setThirdSelected] = useState('');
 
   const onToggle = (filterName: string) => {
     switch (filterName) {

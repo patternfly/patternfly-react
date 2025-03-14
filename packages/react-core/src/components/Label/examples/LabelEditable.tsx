@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Label } from '@patternfly/react-core';
 
 export const LabelEditable: React.FunctionComponent = () => {
-  const [labelText, setLabelText] = React.useState('Editable label');
-  const [compactLabelText, setCompactLabelText] = React.useState('Compact editable label');
+  const [labelText, setLabelText] = useState('Editable label');
+  const [compactLabelText, setCompactLabelText] = useState('Compact editable label');
 
   const onEditCancel = (_event: KeyboardEvent, prevText: string) => {
     setLabelText(prevText);

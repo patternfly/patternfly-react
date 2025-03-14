@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useCallback, useState } from 'react';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import {
   PageSection,
@@ -47,11 +47,11 @@ const products: Product[] = [
 ];
 
 export const ModalTabs: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(true);
-  const [selectedProduct, setSelectedProduct] = React.useState<Product | undefined>(products[0]);
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
+  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [selectedProduct, setSelectedProduct] = useState<Product | undefined>(products[0]);
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
 
-  const onCardClick = React.useCallback(
+  const onCardClick = useCallback(
     (product: Product) => () => {
       setSelectedProduct(product);
       setIsModalOpen(true);
@@ -59,13 +59,13 @@ export const ModalTabs: React.FunctionComponent = () => {
     []
   );
 
-  const closeModal = React.useCallback(() => {
+  const closeModal = useCallback(() => {
     setSelectedProduct(undefined);
     setIsModalOpen(false);
     setActiveTabKey(0);
   }, []);
 
-  const onTabSelect = React.useCallback(
+  const onTabSelect = useCallback(
     (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => setActiveTabKey(tabIndex),
     []
   );

@@ -3,6 +3,7 @@ id: Password generator
 section: patterns
 ---
 
+import { useEffect, useRef, useState } from 'react';
 import RedoIcon from '@patternfly/react-icons/dist/esm/icons/redo-icon';
 import EyeIcon from '@patternfly/react-icons/dist/esm/icons/eye-icon';
 import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon';
@@ -12,6 +13,7 @@ import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon'
 ### Provide a generated password
 
 ```ts
+import { useEffect, useRef, useState } from 'react';
 import {
   InputGroup,
   InputGroupItem,
@@ -38,14 +40,14 @@ const PasswordGenerator: React.FunctionComponent = () => {
     }
     return retVal;
   };
-  const [password, setPassword] = React.useState<string>('');
-  const [generatedPassword, setGeneratedPassword] = React.useState<string>(generatePassword());
-  const [isAutocompleteOpen, setIsAutocompleteOpen] = React.useState<boolean>(false);
-  const [passwordHidden, setPasswordHidden] = React.useState<boolean>(true);
-  const searchInputRef = React.useRef(null);
-  const autocompleteRef = React.useRef(null);
+  const [password, setPassword] = useState<string>('');
+  const [generatedPassword, setGeneratedPassword] = useState<string>(generatePassword());
+  const [isAutocompleteOpen, setIsAutocompleteOpen] = useState<boolean>(false);
+  const [passwordHidden, setPasswordHidden] = useState<boolean>(true);
+  const searchInputRef = useRef(null);
+  const autocompleteRef = .useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleMenuKeys);
     window.addEventListener('click', handleClickOutside);
     return () => {

@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { SearchInput } from '@patternfly/react-core';
 
 export const SearchInputBasic: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = useState('');
 
   const onChange = (value: string) => {
     setValue(value);

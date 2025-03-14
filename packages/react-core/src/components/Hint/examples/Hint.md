@@ -5,7 +5,7 @@ cssPrefix: pf-v6-c-hint
 propComponents: ['Hint', 'HintTitle', 'HintBody', 'HintFooter']
 ---
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Examples

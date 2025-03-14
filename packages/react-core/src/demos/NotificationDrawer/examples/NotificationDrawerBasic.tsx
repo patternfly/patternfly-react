@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import {
   Avatar,
   Brand,
@@ -56,31 +56,31 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.PF-HorizontalLogo-Color.svg';
 
 export const NotificationDrawerBasic: React.FunctionComponent = () => {
-  const drawerRef = React.useRef<HTMLElement | null>(null);
+  const drawerRef = useRef<HTMLElement | null>(null);
 
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
 
   interface UnreadMap {
     [notificationId: string]: boolean;
   }
 
-  const [activeItem, setActiveItem] = React.useState<number | string>(0);
-  const [isUnreadMap, setIsUnreadMap] = React.useState<UnreadMap | null>({
+  const [activeItem, setActiveItem] = useState<number | string>(0);
+  const [isUnreadMap, setIsUnreadMap] = useState<UnreadMap | null>({
     'notification-1': true,
     'notification-2': true,
     'notification-3': false,
     'notification-4': false
   });
 
-  const [shouldShowNotifications, setShouldShowNotifications] = React.useState(true);
+  const [shouldShowNotifications, setShouldShowNotifications] = useState(true);
 
   interface ActionsMenu {
     [toggleId: string]: boolean;
   }
 
-  const [isActionsMenuOpen, setIsActionsMenuOpen] = React.useState<ActionsMenu | {}>({});
+  const [isActionsMenuOpen, setIsActionsMenuOpen] = useState<ActionsMenu | {}>({});
 
   const onNavSelect = (
     _event: React.FormEvent<HTMLInputElement>,

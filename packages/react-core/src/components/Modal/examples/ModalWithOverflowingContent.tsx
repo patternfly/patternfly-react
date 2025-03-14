@@ -1,8 +1,8 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter, ModalVariant } from '@patternfly/react-core';
 
 export const ModalWithOverflowingContent: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setIsModalOpen((prevIsModalOpen) => !prevIsModalOpen);

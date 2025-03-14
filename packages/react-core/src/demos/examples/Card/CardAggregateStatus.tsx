@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { Fragment, type JSX } from 'react';
+import { Fragment } from 'react';
 import {
   Card,
   CardBody,
@@ -28,7 +28,7 @@ interface CardData {
   [attribute: string]: {
     title: string;
     content: {
-      icon: JSX.Element;
+      icon: React.JSX.Element;
       count?: number;
       status?: string;
       subtitle?: string;

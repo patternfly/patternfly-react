@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -24,8 +25,8 @@ import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const CardHorizontalGrid: React.FunctionComponent = () => {
-  const [isCardExpanded, setIsCardExpanded] = React.useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+  const [isCardExpanded, setIsCardExpanded] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const onCardExpand = () => {
     setIsCardExpanded(!isCardExpanded);

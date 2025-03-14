@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -17,10 +17,10 @@ import {
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const CardExpandable: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
-  const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
-  const [isToggleRightAligned, setIsToggleRightAligned] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [isToggleRightAligned, setIsToggleRightAligned] = useState<boolean>(false);
 
   const onSelect = () => {
     setIsOpen(!isOpen);

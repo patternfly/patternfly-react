@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { cloneElement, Fragment, useEffect, useRef, useState } from 'react';
 import {
   Avatar,
   Brand,
@@ -66,17 +66,17 @@ interface NavOnSelectProps {
 }
 
 export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
-  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState(1);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState(1);
 
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [refFullOptions, setRefFullOptions] = React.useState<Element[]>();
-  const [favorites, setFavorites] = React.useState<string[]>([]);
-  const [filteredIds, setFilteredIds] = React.useState<string[]>(['*']);
-  const menuRef = React.useRef<HTMLDivElement>(null);
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [refFullOptions, setRefFullOptions] = useState<Element[]>();
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [filteredIds, setFilteredIds] = useState<string[]>(['*']);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
@@ -138,7 +138,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
     setIsOpen(!isOpen);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleMenuKeys);
     window.addEventListener('click', handleClickOutside);
 
@@ -249,8 +249,8 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
     const filteredCopy = items
       .map((group) => {
         if (group.type === MenuGroup) {
-          const filteredGroup = React.cloneElement(group, {
-            children: React.cloneElement(group.props.children, {
+          const filteredGroup = cloneElement(group, {
+            children: cloneElement(group.props.children, {
               children: group.props.children.props.children.filter((child) => {
                 if (filteredIds.includes(child.props.itemId)) {
                   return child;
@@ -266,7 +266,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
             keepDivider = false;
           }
         } else if (group.type === MenuList) {
-          const filteredGroup = React.cloneElement(group, {
+          const filteredGroup = cloneElement(group, {
             children: group.props.children.filter((child) => {
               if (filteredIds.includes(child.props.itemId)) {
                 return child;

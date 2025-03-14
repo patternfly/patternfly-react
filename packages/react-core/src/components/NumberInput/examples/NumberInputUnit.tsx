@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputUnit: React.FunctionComponent = () => {
-  const [value1, setValue1] = React.useState<number | ''>(90);
-  const [value2, setValue2] = React.useState<number | ''>(Number((1.0).toFixed(2)));
+  const [value1, setValue1] = useState<number | ''>(90);
+  const [value2, setValue2] = useState<number | ''>(Number((1.0).toFixed(2)));
 
   const onMinus1 = () => setValue1((value1 || 0) - 1);
   const onChange1 = (event: React.FormEvent<HTMLInputElement>) => {

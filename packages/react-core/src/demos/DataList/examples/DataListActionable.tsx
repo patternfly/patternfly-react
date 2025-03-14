@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Button,
   Content,
@@ -19,8 +20,8 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 export const DataListActionable: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [isDeleted, setIsDeleted] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   const onToggle = () => {
     setIsOpen(!isOpen);
