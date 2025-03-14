@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Hint,
   HintTitle,
@@ -14,7 +15,7 @@ import {
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const HintBasicWithTitle: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const onToggle = () => {
     setIsOpen(!isOpen);

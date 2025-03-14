@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardBody, Gallery } from '@patternfly/react-core';
 
 export const SingleSelectableCard: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState('');
+  const [isChecked, setIsChecked] = useState('');
   const id1 = 'single-selectable-card-input-1';
   const id2 = 'single-selectable-card-input-2';
   const id3 = 'single-selectable-card-input-3';

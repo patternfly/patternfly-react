@@ -20,7 +20,7 @@ propComponents:
 ouia: true
 ---
 
-import { Fragment, useState } from 'react';
+import { Fragment, createRef, useEffect, useRef, useState } from 'react';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';

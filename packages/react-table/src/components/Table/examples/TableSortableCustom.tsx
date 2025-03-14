@@ -48,7 +48,7 @@ export const TableSortableCustom: React.FunctionComponent = () => {
   const [activeSortDirection, setActiveSortDirection] = useState<'asc' | 'desc' | null>(null);
 
   // Sort dropdown expansion
-  // const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
+  // const [isSortDropdownOpen, setIsSortDropdownOpen] = useState(false);
 
   // Since OnSort specifies sorted columns by index, we need sortable values for our object by column index.
   // This example is trivial since our data objects just contain strings, but if the data was more complex

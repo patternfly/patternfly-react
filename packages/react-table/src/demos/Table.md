@@ -3,6 +3,8 @@ id: Table
 section: components
 ---
 
+import { Fragment, ReactNode, useEffect, useState } from 'react';
+
 import {
 Checkbox,
 Content,

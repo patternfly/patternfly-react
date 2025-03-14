@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
 
 export const ChipGroupWithCategories: React.FunctionComponent = () => {
-  const [chips, setChips] = React.useState([
+  const [chips, setChips] = useState([
     'Chip one',
     'Really long chip that goes on and on',
     'Chip three',

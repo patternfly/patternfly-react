@@ -6,6 +6,7 @@ propComponents: ['ToggleGroup', 'ToggleGroupItem']
 ---
 import './toggleGroup.css';
 
+import { useRef, useState } from 'react';
 import { ToggleGroup, ToggleGroupItem, Button, Stack, StackItem } from '@patternfly/react-core';
 import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';

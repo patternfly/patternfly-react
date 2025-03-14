@@ -5,6 +5,7 @@ cssPrefix: pf-v6-c-popover
 propComponents: ['Popover']
 ---
 
+import { useRef, useState } from 'react';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';

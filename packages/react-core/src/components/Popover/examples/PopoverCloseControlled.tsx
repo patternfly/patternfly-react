@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Popover, Button } from '@patternfly/react-core';
 
 export const PopoverCloseControlled: React.FunctionComponent = () => {
-  const [isVisible, setIsVisible] = React.useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <div style={{ margin: '50px' }}>

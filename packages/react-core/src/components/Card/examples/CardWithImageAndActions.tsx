@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Brand,
   Card,
@@ -17,9 +18,9 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import pfLogo from '../../assets/PF-HorizontalLogo-Color.svg';
 
 export const CardWithImageAndActions: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
-  const [hasNoOffset, setHasNoOffset] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [hasNoOffset, setHasNoOffset] = useState<boolean>(false);
 
   const onSelect = () => {
     setIsOpen(!isOpen);

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   MenuToggle,
   TextInputGroup,
@@ -8,7 +9,7 @@ import {
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export const MenuToggleTypeahead: React.FunctionComponent = () => {
-  const [inputValue, setInputValue] = React.useState<string>('');
+  const [inputValue, setInputValue] = useState<string>('');
 
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);

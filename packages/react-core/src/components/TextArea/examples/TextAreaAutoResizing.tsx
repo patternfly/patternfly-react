@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { TextArea } from '@patternfly/react-core';
 
 export const TextAreaAutoResizing: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = useState('');
   return (
     <TextArea
       value={value}

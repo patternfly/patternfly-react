@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { Label, LabelGroup, LabelProps } from '@patternfly/react-core';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 export const LabelGroupCategoryRemovable: React.FunctionComponent = () => {
-  const [labels, setLabels] = React.useState([
+  const [labels, setLabels] = useState([
     ['Label 1', 'grey'],
     ['Label 2', 'blue'],
     ['Label 3', 'green'],

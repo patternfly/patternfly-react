@@ -5,6 +5,7 @@ cssPrefix: pf-v6-c-notification-badge
 propComponents: ['NotificationBadge']
 ---
 
+import { useState } from 'react';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ## Examples

@@ -1,9 +1,10 @@
+import { useEffect, useState } from 'react';
 import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 
 export const TreeViewWithCheckboxes: React.FunctionComponent = () => {
-  const [checkedItems, setCheckedItems] = React.useState<TreeViewDataItem[]>([]);
+  const [checkedItems, setCheckedItems] = useState<TreeViewDataItem[]>([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // eslint-disable-next-line no-console
     console.log('Checked items: ', checkedItems);
   }, [checkedItems]);

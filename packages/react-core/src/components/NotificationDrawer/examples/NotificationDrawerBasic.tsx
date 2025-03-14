@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   NotificationDrawer,
   NotificationDrawerBody,
@@ -15,7 +16,7 @@ import {
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const NotificationDrawerBasic: React.FunctionComponent = () => {
-  const [isOpenMap, setIsOpenMap] = React.useState(new Array(7).fill(false));
+  const [isOpenMap, setIsOpenMap] = useState(new Array(7).fill(false));
 
   const onToggle = (index: number) => () => {
     const newState = [...isOpenMap.slice(0, index), !isOpenMap[index], ...isOpenMap.slice(index + 1)];

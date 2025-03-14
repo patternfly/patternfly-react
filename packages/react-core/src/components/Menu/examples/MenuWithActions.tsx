@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Menu, MenuContent, MenuGroup, MenuList, MenuItem, MenuItemAction } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
@@ -5,7 +6,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 export const MenuWithActions: React.FunctionComponent = () => {
-  const [selectedItems, setSelectedItems] = React.useState<number[]>([0, 2, 3]);
+  const [selectedItems, setSelectedItems] = useState<number[]>([0, 2, 3]);
 
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
     const item = itemId as number;

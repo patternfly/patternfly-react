@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Accordion,
   AccordionItem,
@@ -10,8 +11,8 @@ import {
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 
 export const AccordionBordered: React.FunctionComponent = () => {
-  const [expanded, setExpanded] = React.useState('bordered-toggle4');
-  const [isDisplayLarge, setIsDisplayLarge] = React.useState(false);
+  const [expanded, setExpanded] = useState('bordered-toggle4');
+  const [isDisplayLarge, setIsDisplayLarge] = useState(false);
 
   const displaySize = isDisplayLarge ? 'lg' : 'default';
   const onToggle = (id: string) => {

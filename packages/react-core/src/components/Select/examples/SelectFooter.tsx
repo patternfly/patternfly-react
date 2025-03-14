@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { MenuToggle, MenuFooter, Select, SelectList, SelectOption, Button } from '@patternfly/react-core';
 
 export const SelectFooter: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [selected, setSelected] = React.useState<string>('Select a value');
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selected, setSelected] = useState<string>('Select a value');
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);

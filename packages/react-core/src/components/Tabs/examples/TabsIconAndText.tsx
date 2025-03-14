@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Tabs, Tab, TabTitleText, TabTitleIcon } from '@patternfly/react-core';
 import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
 import BoxIcon from '@patternfly/react-icons/dist/esm/icons/box-icon';
@@ -7,7 +8,7 @@ import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 import ProjectDiagramIcon from '@patternfly/react-icons/dist/esm/icons/project-diagram-icon';
 
 export const TabsIconAndText: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
   // Toggle currently active tab
   const handleTabClick = (
     event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,

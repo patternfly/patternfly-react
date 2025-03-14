@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { Card, CardHeader, CardBody, Gallery, Flex } from '@patternfly/react-core';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 export const CardTile: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState('');
+  const [isChecked, setIsChecked] = useState('');
   const id1 = 'tile-1';
   const id2 = 'tile-2';
   const id3 = 'tile-3';

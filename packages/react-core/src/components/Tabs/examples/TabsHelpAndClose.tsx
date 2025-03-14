@@ -1,12 +1,13 @@
+import { createRef, useEffect, useRef, useState } from 'react';
 import { Tabs, Tab, TabTitleText, Popover, TabAction } from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export const TabsHelpAndClose: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<number>(0);
-  const [tabs, setTabs] = React.useState<string[]>(['Terminal 1', 'Terminal 2', 'Terminal 3']);
-  const tabComponentRef = React.useRef<any>(undefined);
-  const firstMount = React.useRef(true);
+  const [activeTabKey, setActiveTabKey] = useState<number>(0);
+  const [tabs, setTabs] = useState<string[]>(['Terminal 1', 'Terminal 2', 'Terminal 3']);
+  const tabComponentRef = useRef<any>(undefined);
+  const firstMount = useRef(true);
 
   const onClose = (event: any, tabIndex: string | number) => {
     const tabIndexNum = tabIndex as number;
@@ -35,7 +36,7 @@ export const TabsHelpAndClose: React.FunctionComponent = () => {
     />
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (firstMount.current) {
       firstMount.current = false;
       return;
@@ -54,7 +55,7 @@ export const TabsHelpAndClose: React.FunctionComponent = () => {
       ref={tabComponentRef}
     >
       {tabs.map((tab, index) => {
-        const ref = React.createRef<HTMLElement>();
+        const ref = createRef<HTMLElement>();
 
         return (
           <Tab

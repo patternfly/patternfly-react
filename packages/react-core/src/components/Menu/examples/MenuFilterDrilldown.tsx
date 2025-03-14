@@ -1,3 +1,4 @@
+import { createRef, useState } from 'react';
 import {
   Menu,
   MenuContent,
@@ -11,10 +12,10 @@ import {
 } from '@patternfly/react-core';
 
 export const MenuWithDrilldown: React.FunctionComponent = () => {
-  const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
-  const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
-  const [menuHeights, setMenuHeights] = React.useState<any>({});
-  const [activeMenu, setActiveMenu] = React.useState<string>('filter_drilldown-rootMenu');
+  const [menuDrilledIn, setMenuDrilledIn] = useState<string[]>([]);
+  const [drilldownPath, setDrilldownPath] = useState<string[]>([]);
+  const [menuHeights, setMenuHeights] = useState<any>({});
+  const [activeMenu, setActiveMenu] = useState<string>('filter_drilldown-rootMenu');
 
   const drillIn = (
     _event: React.KeyboardEvent | React.MouseEvent,
@@ -44,8 +45,8 @@ export const MenuWithDrilldown: React.FunctionComponent = () => {
     }
   };
 
-  const searchRef = React.createRef<HTMLInputElement>();
-  const [startInput, setStartInput] = React.useState('');
+  const searchRef = createRef<HTMLInputElement>();
+  const [startInput, setStartInput] = useState('');
 
   const handleStartTextInputChange = (value: string) => {
     setStartInput(value);

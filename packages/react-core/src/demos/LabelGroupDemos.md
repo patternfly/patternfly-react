@@ -3,6 +3,7 @@ id: Label
 section: components
 ---
 
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 

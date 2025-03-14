@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { CalendarMonth, Title, CalendarMonthInlineProps } from '@patternfly/react-core';
 
 export const CalendarMonthSelectableDate: React.FunctionComponent = () => {
-  const [date, setDate] = React.useState(new Date(2020, 10, 24));
+  const [date, setDate] = useState(new Date(2020, 10, 24));
 
   const onMonthChange = (
     _event: React.MouseEvent | React.ChangeEvent | React.FormEvent<HTMLInputElement> | undefined,

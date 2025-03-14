@@ -6,7 +6,7 @@ cssPrefix: pf-v6-c-form-control
 propComponents: ['TextArea']
 ---
 
-import { Fragment, useState } from 'react';
+import { Fragment, useRef, useState } from 'react';
 
 ## Examples
 

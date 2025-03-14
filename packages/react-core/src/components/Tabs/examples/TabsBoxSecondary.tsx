@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-core';
 
 export const TabsBoxSecondary: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
-  const [isTabsBoxSecondary, setIsTabsBoxSecondary] = React.useState<boolean>(true);
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
+  const [isTabsBoxSecondary, setIsTabsBoxSecondary] = useState<boolean>(true);
   // Toggle currently active tab
   const handleTabClick = (
     event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,

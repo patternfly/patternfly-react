@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Checkbox,
   Card,
@@ -13,8 +14,8 @@ import {
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const CardOnlyActionsInCardHead: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
 
   const onSelect = () => {
     setIsOpen(!isOpen);

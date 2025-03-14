@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -16,9 +17,9 @@ import pfLogoSmall from '../../PF-IconLogo.svg';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const CardExpandableWithIcon: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
-  const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const onSelect = () => {
     setIsOpen(!isOpen);

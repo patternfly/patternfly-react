@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardBody, Checkbox, Gallery } from '@patternfly/react-core';
 
 export const CardClickable: React.FunctionComponent = () => {
-  const [isSecondary, setIsSecondary] = React.useState<boolean>(false);
+  const [isSecondary, setIsSecondary] = useState<boolean>(false);
 
   const toggleVariant = (checked: boolean) => {
     setIsSecondary(checked);

@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 
 export const TreeViewSelectableNodes: React.FunctionComponent = () => {
-  const [activeItems, setActiveItems] = React.useState<TreeViewDataItem[]>();
+  const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();
 
   const onSelect = (_event: React.MouseEvent, treeViewItem: TreeViewDataItem) => {
     setActiveItems([treeViewItem]);
