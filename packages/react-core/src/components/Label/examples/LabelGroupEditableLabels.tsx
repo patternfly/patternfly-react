@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import { LabelGroup, Label } from '@patternfly/react-core';
 
 export const LabelGroupEditableLabels: React.FunctionComponent = () => {
-  const [label1, setLabel1] = React.useState('Editable label');
-  const [label2, setLabel2] = React.useState('Editable label 2');
-  const [label3, setLabel3] = React.useState('Editable label 3');
+  const [label1, setLabel1] = useState('Editable label');
+  const [label2, setLabel2] = useState('Editable label 2');
+  const [label3, setLabel3] = useState('Editable label 3');
 
   return (
     <LabelGroup numLabels={5} isEditable>

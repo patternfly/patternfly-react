@@ -5,6 +5,7 @@ cssPrefix: pf-v6-c-tooltip
 propComponents: ['Tooltip']
 ---
 
+import { useEffect, useRef, useState } from 'react';
 import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import './TooltipExamples.css';

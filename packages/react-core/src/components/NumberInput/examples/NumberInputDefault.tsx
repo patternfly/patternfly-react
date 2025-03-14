@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputDefault: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState<number | ''>(90);
+  const [value, setValue] = useState<number | ''>(90);
 
   const onMinus = () => {
     const newValue = (value || 0) - 1;

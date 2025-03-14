@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { LabelGroup, Label } from '@patternfly/react-core';
 
 export const LabelGroupEditableAdd: React.FunctionComponent = () => {
-  const [idIndex, setIdIndex] = React.useState<number>(3);
-  const [labels, setLabels] = React.useState<any>([
+  const [idIndex, setIdIndex] = useState<number>(3);
+  const [labels, setLabels] = useState<any>([
     { name: 'Label 1', id: 0 },
     { name: 'Label 2', id: 1 },
     {

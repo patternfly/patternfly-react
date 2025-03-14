@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { FileUpload } from '@patternfly/react-core';
 
 export const SimpleFileUpload: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
-  const [filename, setFilename] = React.useState('');
+  const [value, setValue] = useState('');
+  const [filename, setFilename] = useState('');
 
   const handleFileInputChange = (_, file: File) => {
     setFilename(file.name);

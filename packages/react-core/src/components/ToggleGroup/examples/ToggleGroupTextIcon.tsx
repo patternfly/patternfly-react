@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
 
 export const ToggleGroupIcon: React.FunctionComponent = () => {
-  const [isSelected, setIsSelected] = React.useState({
+  const [isSelected, setIsSelected] = useState({
     'text-icons-1': false,
     'text-icons-2': false,
     'text-icons-3': true

@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 export const ToggleGroupDefaultSingle: React.FunctionComponent = () => {
-  const [isSelected, setIsSelected] = React.useState('');
+  const [isSelected, setIsSelected] = useState('');
   const handleItemClick = (event, _isSelected: boolean) => {
     const id = event.currentTarget.id;
     setIsSelected(id);

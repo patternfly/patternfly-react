@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import {
   Button,
   Tooltip,
@@ -12,18 +13,18 @@ import {
 } from '@patternfly/react-core';
 
 export const TooltipOptions: React.FunctionComponent = () => {
-  const [trigger, setTrigger] = React.useState(['mouseenter', 'focus']);
-  const [isVisible, setIsVisible] = React.useState(true);
-  const [contentLeftAligned, setContentLeftAligned] = React.useState(false);
-  const [enableFlip, setEnableFlip] = React.useState(true);
-  const [position, setPosition] = React.useState<TooltipPosition>(TooltipPosition.top);
-  const [positionSelectOpen, setPositionSelectOpen] = React.useState(false);
-  const [flipSelectOpen, setFlipSelectOpen] = React.useState(false);
-  const [flipBehavior, setFlipBehavior] = React.useState('flip');
-  const [entryDelayInput, setEntryDelayInput] = React.useState(0);
-  const [exitDelayInput, setExitDelayInput] = React.useState(0);
-  const [animationDuration, setAnimationDuration] = React.useState(300);
-  const tipBoxRef = React.useRef(null);
+  const [trigger, setTrigger] = useState(['mouseenter', 'focus']);
+  const [isVisible, setIsVisible] = useState(true);
+  const [contentLeftAligned, setContentLeftAligned] = useState(false);
+  const [enableFlip, setEnableFlip] = useState(true);
+  const [position, setPosition] = useState<TooltipPosition>(TooltipPosition.top);
+  const [positionSelectOpen, setPositionSelectOpen] = useState(false);
+  const [flipSelectOpen, setFlipSelectOpen] = useState(false);
+  const [flipBehavior, setFlipBehavior] = useState('flip');
+  const [entryDelayInput, setEntryDelayInput] = useState(0);
+  const [exitDelayInput, setExitDelayInput] = useState(0);
+  const [animationDuration, setAnimationDuration] = useState(300);
+  const tipBoxRef = useRef(null);
 
   const scrollToRef = (ref: React.RefObject<any>) => {
     if (ref && ref.current) {
@@ -32,7 +33,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     scrollToRef(tipBoxRef);
   }, []);
 

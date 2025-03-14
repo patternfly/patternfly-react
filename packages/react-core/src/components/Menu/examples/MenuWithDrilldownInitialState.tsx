@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem, Divider, DrilldownMenu } from '@patternfly/react-core';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
@@ -5,13 +6,13 @@ import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-i
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 export const MenuDrilldownInitialState: React.FunctionComponent = () => {
-  const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([
+  const [menuDrilledIn, setMenuDrilledIn] = useState<string[]>([
     'initial-state-rootMenu',
     'initial-state-drilldownMenuStart'
   ]);
-  const [drilldownPath, setDrilldownPath] = React.useState<string[]>(['group:start_rollout', 'group:app_grouping']);
-  const [menuHeights, setMenuHeights] = React.useState<any>({ 'initial-state-rootMenu': 216 }); // The root menu height must be defined when starting from a drilled in state
-  const [activeMenu, setActiveMenu] = React.useState<string>('initial-state-drilldownMenuStartGrouping');
+  const [drilldownPath, setDrilldownPath] = useState<string[]>(['group:start_rollout', 'group:app_grouping']);
+  const [menuHeights, setMenuHeights] = useState<any>({ 'initial-state-rootMenu': 216 }); // The root menu height must be defined when starting from a drilled in state
+  const [activeMenu, setActiveMenu] = useState<string>('initial-state-drilldownMenuStartGrouping');
 
   const drillIn = (
     _event: React.KeyboardEvent | React.MouseEvent,

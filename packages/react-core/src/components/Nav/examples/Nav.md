@@ -6,6 +6,7 @@ propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'N
 ouia: true
 ---
 
+import { useState } from 'react';
 import './nav.css';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import UserIcon from '@patternfly/react-icons/dist/esm/icons/user-icon';

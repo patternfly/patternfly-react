@@ -4,6 +4,8 @@ section: components
 cssPrefix: pf-v6-c-empty-state
 propComponents: ['EmptyState', 'EmptyStateBody', 'EmptyStateFooter', 'EmptyStateActions']
 ---
+
+import { useState } from 'react';
 import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';

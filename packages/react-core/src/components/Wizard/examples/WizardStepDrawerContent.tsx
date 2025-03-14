@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import {
   Drawer,
   DrawerContent,
@@ -15,9 +16,9 @@ import {
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 const StepContentWithDrawer: React.FunctionComponent = () => {
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
   const { activeStep } = useWizardContext();
-  const drawerRef = React.useRef<HTMLSpanElement>(null);
+  const drawerRef = useRef<HTMLSpanElement>(null);
 
   const onWizardExpand = () => drawerRef.current && drawerRef.current.focus();
 

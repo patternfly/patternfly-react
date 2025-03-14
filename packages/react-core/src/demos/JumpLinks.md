@@ -3,7 +3,7 @@ id: Jump links
 section: components
 ---
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
 import breadcrumbStyles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';

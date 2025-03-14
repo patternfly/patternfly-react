@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState, type JSX } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 import {
   Button,
@@ -386,7 +386,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
     </Modal>
   );
 
-  const renderLabel = (labelText: string): JSX.Element => {
+  const renderLabel = (labelText: string): React.JSX.Element => {
     switch (labelText) {
       case 'Running':
         return <Label color="green">{labelText}</Label>;

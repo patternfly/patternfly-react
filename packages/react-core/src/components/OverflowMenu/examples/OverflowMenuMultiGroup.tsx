@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   OverflowMenu,
   OverflowMenuControl,
@@ -17,7 +18,7 @@ import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
 
 export const OverflowMenuMultiGroup: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = () => {
     setIsOpen(!isOpen);

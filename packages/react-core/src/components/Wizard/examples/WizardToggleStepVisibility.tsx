@@ -1,3 +1,4 @@
+import { createContext, useContext, useState } from 'react';
 import { Checkbox, Wizard, WizardStep } from '@patternfly/react-core';
 
 interface SomeContextProps {
@@ -9,10 +10,10 @@ interface SomeContextProviderProps {
   children: (context: SomeContextRenderProps) => React.ReactElement<any>;
 }
 
-const SomeContext: React.Context<SomeContextProps> = React.createContext({} as SomeContextProps);
+const SomeContext: React.Context<SomeContextProps> = createContext({} as SomeContextProps);
 
 const SomeContextProvider: React.FunctionComponent<SomeContextProviderProps> = ({ children }) => {
-  const [isToggleStepChecked, setIsToggleStepChecked] = React.useState(false);
+  const [isToggleStepChecked, setIsToggleStepChecked] = useState(false);
 
   return (
     <SomeContext.Provider value={{ isToggleStepChecked, setIsToggleStepChecked }}>
@@ -22,7 +23,7 @@ const SomeContextProvider: React.FunctionComponent<SomeContextProviderProps> = (
 };
 
 const StepContentWithAction: React.FunctionComponent = () => {
-  const { isToggleStepChecked, setIsToggleStepChecked } = React.useContext(SomeContext);
+  const { isToggleStepChecked, setIsToggleStepChecked } = useContext(SomeContext);
 
   return (
     <Checkbox

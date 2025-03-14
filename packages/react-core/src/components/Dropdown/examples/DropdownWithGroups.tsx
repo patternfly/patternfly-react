@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Dropdown,
   DropdownGroup,
@@ -9,7 +10,7 @@ import {
 } from '@patternfly/react-core';
 
 export const DropdownWithGroups: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import {
   Select,
   SelectOption,
@@ -24,17 +25,17 @@ const initialSelectOptions: SelectOptionProps[] = [
 ];
 
 export const SelectMultiTypeahead: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [inputValue, setInputValue] = React.useState<string>('');
-  const [selected, setSelected] = React.useState<string[]>([]);
-  const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
-  const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
-  const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
-  const textInputRef = React.useRef<HTMLInputElement>(undefined);
+  const [isOpen, setIsOpen] = useState(false);
+  const [inputValue, setInputValue] = useState<string>('');
+  const [selected, setSelected] = useState<string[]>([]);
+  const [selectOptions, setSelectOptions] = useState<SelectOptionProps[]>(initialSelectOptions);
+  const [focusedItemIndex, setFocusedItemIndex] = useState<number | null>(null);
+  const [activeItemId, setActiveItemId] = useState<string | null>(null);
+  const textInputRef = useRef<HTMLInputElement>(undefined);
 
   const NO_RESULTS = 'no results';
 
-  React.useEffect(() => {
+  useEffect(() => {
     let newSelectOptions: SelectOptionProps[] = initialSelectOptions;
 
     // Filter menu items based on the text input value when one exists

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Toolbar,
   ToolbarContent,
@@ -71,9 +72,9 @@ export const TreeViewWithSearch: React.FunctionComponent = () => {
     }
   ];
 
-  const [activeItems, setActiveItems] = React.useState<TreeViewDataItem[]>();
-  const [filteredItems, setFilteredItems] = React.useState(options);
-  const [isFiltered, setIsFiltered] = React.useState(false);
+  const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();
+  const [filteredItems, setFilteredItems] = useState(options);
+  const [isFiltered, setIsFiltered] = useState(false);
 
   const onSelect = (_event: React.MouseEvent, treeViewItem: TreeViewDataItem) => {
     // Ignore folders for selection

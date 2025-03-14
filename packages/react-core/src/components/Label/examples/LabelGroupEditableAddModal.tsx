@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import {
   LabelGroup,
   Label,
@@ -17,27 +18,27 @@ import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
-  const [isModalOpen, setModalOpen] = React.useState<boolean>(false);
-  const [idIndex, setIdIndex] = React.useState<number>(7);
-  const [labelText, setLabelText] = React.useState<string>('');
-  const [color, setColor] = React.useState<string>();
-  const [icon, setIcon] = React.useState<any>();
-  const [labelType, setLabelType] = React.useState<string>('filled');
-  const [isClosable, setIsCloseable] = React.useState<boolean>(false);
-  const [isEditable, setIsEditable] = React.useState<boolean>(false);
-  const labelInputRef = React.useRef(null);
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
+  const [idIndex, setIdIndex] = useState<number>(7);
+  const [labelText, setLabelText] = useState<string>('');
+  const [color, setColor] = useState<string>();
+  const [icon, setIcon] = useState<any>();
+  const [labelType, setLabelType] = useState<string>('filled');
+  const [isClosable, setIsCloseable] = useState<boolean>(false);
+  const [isEditable, setIsEditable] = useState<boolean>(false);
+  const labelInputRef = useRef(null);
 
-  const [isColorOpen, setIsColorOpen] = React.useState<boolean>(false);
-  const colorMenuRef = React.useRef<HTMLDivElement>(null);
-  const colorContainerRef = React.useRef<HTMLDivElement>(null);
-  const colorToggleRef = React.useRef<HTMLButtonElement>(null);
+  const [isColorOpen, setIsColorOpen] = useState<boolean>(false);
+  const colorMenuRef = useRef<HTMLDivElement>(null);
+  const colorContainerRef = useRef<HTMLDivElement>(null);
+  const colorToggleRef = useRef<HTMLButtonElement>(null);
 
-  const [isIconOpen, setIsIconOpen] = React.useState<boolean>(false);
-  const iconMenuRef = React.useRef<HTMLDivElement>(null);
-  const iconContainerRef = React.useRef<HTMLDivElement>(null);
-  const iconToggleRef = React.useRef<HTMLButtonElement>(null);
+  const [isIconOpen, setIsIconOpen] = useState<boolean>(false);
+  const iconMenuRef = useRef<HTMLDivElement>(null);
+  const iconContainerRef = useRef<HTMLDivElement>(null);
+  const iconToggleRef = useRef<HTMLButtonElement>(null);
 
-  const [labels, setLabels] = React.useState<any>([
+  const [labels, setLabels] = useState<any>([
     { name: 'Label 1', id: 4 },
     { name: 'Label 2', id: 5 },
     {
@@ -106,7 +107,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
     setModalOpen(!isModalOpen);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isModalOpen && labelInputRef && labelInputRef.current) {
       (labelInputRef.current as HTMLInputElement).focus();
     }
@@ -136,7 +137,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleMenuKeys);
     window.addEventListener('click', handleClickOutside);
     return () => {

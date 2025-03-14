@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Flex } from '@patternfly/react-core';
 import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
 
@@ -40,7 +41,7 @@ const move = (source: ItemType[], destination: ItemType[], sourceIndex: number, 
 };
 
 export const DragDropMultipleLists: React.FunctionComponent = () => {
-  const [items, setItems] = React.useState<MultipleListState>({
+  const [items, setItems] = useState<MultipleListState>({
     items1: getItems(10, 0),
     items2: getItems(5, 10)
   });

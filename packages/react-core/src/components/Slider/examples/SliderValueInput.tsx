@@ -1,12 +1,13 @@
+import { useState } from 'react';
 import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
 
 export const SliderValueInput: React.FunctionComponent = () => {
-  const [valueDiscrete, setValueDiscrete] = React.useState(62.5);
-  const [inputValueDiscrete, setInputValueDiscrete] = React.useState(5);
-  const [valuePercent, setValuePercent] = React.useState(50);
-  const [inputValuePercent, setInputValuePercent] = React.useState(50);
-  const [valueContinuous, setValueContinuous] = React.useState(50);
-  const [inputValueContinuous, setInputValueContinuous] = React.useState(50);
+  const [valueDiscrete, setValueDiscrete] = useState(62.5);
+  const [inputValueDiscrete, setInputValueDiscrete] = useState(5);
+  const [valuePercent, setValuePercent] = useState(50);
+  const [inputValuePercent, setInputValuePercent] = useState(50);
+  const [valueContinuous, setValueContinuous] = useState(50);
+  const [inputValueContinuous, setInputValueContinuous] = useState(50);
 
   const stepsDiscrete = [
     { value: 0, label: '0' },

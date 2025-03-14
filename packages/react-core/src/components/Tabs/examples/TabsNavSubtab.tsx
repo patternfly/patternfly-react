@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
 
 export const TabsNavSubtab: React.FunctionComponent = () => {
-  const [activeTabKey1, setActiveTabKey1] = React.useState<string | number>(0);
-  const [activeTabKey2, setActiveTabKey2] = React.useState<string | number>(0);
+  const [activeTabKey1, setActiveTabKey1] = useState<string | number>(0);
+  const [activeTabKey2, setActiveTabKey2] = useState<string | number>(0);
 
   // Toggle currently active primary tab
   const handleTabClickFirst = (

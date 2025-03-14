@@ -5,6 +5,7 @@ cssPrefix: pf-v6-c-text-input-group
 propComponents: ['TextInputGroup', 'TextInputGroupMain', 'TextInputGroupUtilities']
 ---
 
+import { useState } from 'react';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
