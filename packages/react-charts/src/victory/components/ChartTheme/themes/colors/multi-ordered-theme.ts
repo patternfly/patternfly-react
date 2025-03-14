@@ -58,7 +58,8 @@ const COLOR_SCALE = [
 
 /**
  * Multi-color ordered theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const MultiColorOrderedTheme = ColorTheme({
   COLOR_SCALE
@@ -66,8 +67,8 @@ export const MultiColorOrderedTheme = ColorTheme({
 
 /**
  * Multi-color ordered component theme
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export const MultiColorOrderedComponentTheme = ColorComponentTheme({
   COLOR_SCALE

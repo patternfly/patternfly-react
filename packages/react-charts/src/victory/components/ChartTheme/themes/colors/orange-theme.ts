@@ -18,7 +18,8 @@ const COLOR_SCALE = [
 
 /**
  * Orange color theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const OrangeColorTheme = ColorTheme({
   COLOR_SCALE
@@ -26,8 +27,8 @@ export const OrangeColorTheme = ColorTheme({
 
 /**
  * Orange color component theme
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export const OrangeColorComponentTheme = ColorComponentTheme({
   COLOR_SCALE

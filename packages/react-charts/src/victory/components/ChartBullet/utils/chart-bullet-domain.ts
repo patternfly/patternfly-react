@@ -17,7 +17,8 @@ interface ChartBulletDomainInterface {
 
 /**
  * Returns the bullet chart's min and max domain for comparative / primary measures and qualitative range data
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getBulletDomain = ({
   comparativeErrorMeasureComponent,

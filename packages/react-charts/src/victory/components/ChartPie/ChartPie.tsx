@@ -383,7 +383,7 @@ export interface ChartPieProps extends VictoryPieProps {
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   patternUnshiftIndex?: number;
@@ -399,7 +399,7 @@ export interface ChartPieProps extends VictoryPieProps {
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };

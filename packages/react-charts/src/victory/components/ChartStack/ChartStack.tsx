@@ -298,7 +298,7 @@ export interface ChartStackProps extends VictoryStackProps {
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   polar?: boolean;
@@ -337,7 +337,7 @@ export interface ChartStackProps extends VictoryStackProps {
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };

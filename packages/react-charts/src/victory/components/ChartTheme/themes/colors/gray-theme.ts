@@ -18,7 +18,8 @@ const COLOR_SCALE = [
 
 /**
  * Gray color theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const GrayColorTheme = ColorTheme({
   COLOR_SCALE
@@ -26,8 +27,8 @@ export const GrayColorTheme = ColorTheme({
 
 /**
  * Gray component theme
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export const GrayColorComponentTheme = ColorComponentTheme({
   COLOR_SCALE

@@ -53,9 +53,9 @@ interface ChartLegendTextMaxSizeInterface {
 
 /**
  * Returns the max text length in a legend data set to calculate the x offset for right aligned legends.
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
-
 export const getLegendMaxTextWidth = (legendData: any[], theme: ChartThemeDefinition) => {
   let legendXOffset = 0;
   legendData.map((data: any) => {
@@ -69,7 +69,8 @@ export const getLegendMaxTextWidth = (legendData: any[], theme: ChartThemeDefini
 
 /**
  * Returns a legend which has been positioned per the given chart properties
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getComputedLegend = ({
   allowWrap = true,
@@ -153,7 +154,8 @@ export const getComputedLegend = ({
 
 /**
  * Returns legend dimensions
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getLegendDimensions = ({
   legendData,
@@ -174,7 +176,8 @@ export const getLegendDimensions = ({
 
 /**
  * Returns true if the legend is smaller than its container
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const doesLegendFit = ({
   dx = 0,
@@ -216,7 +219,8 @@ const doesLegendFit = ({
 
 /**
  * Returns the number of legend items per row
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getLegendItemsPerRow = ({
   dx,
@@ -255,7 +259,8 @@ const getLegendItemsPerRow = ({
 
 /**
  * Returns the extra height required to accommodate wrapped legend items
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getLegendItemsExtraHeight = ({
   legendData,
@@ -287,14 +292,16 @@ export const getLegendItemsExtraHeight = ({
 
 /**
  * Returns x coordinate for legend
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getLegendX = ({ chartType, ...rest }: ChartLegendPositionInterface) =>
   chartType === 'pie' ? getPieLegendX(rest) : getChartLegendX(rest);
 
 /**
  * Returns y coordinate for legend
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getLegendY = ({ chartType, ...rest }: ChartLegendPositionInterface) => {
   switch (chartType) {
@@ -309,7 +316,8 @@ const getLegendY = ({ chartType, ...rest }: ChartLegendPositionInterface) => {
 
 /**
  * Returns y coordinate for bullet legends
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getBulletLegendY = ({
   dy = 0,
@@ -350,7 +358,8 @@ const getBulletLegendY = ({
 
 /**
  * Returns x coordinate for chart legends
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getChartLegendX = ({
   dx = 0,
@@ -389,7 +398,8 @@ const getChartLegendX = ({
 
 /**
  * Returns y coordinate for chart legends
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getChartLegendY = ({
   dy = 0,
@@ -431,7 +441,8 @@ const getChartLegendY = ({
 
 /**
  * Returns x coordinate for pie legends
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getPieLegendX = ({
   dx = 0,
@@ -465,7 +476,8 @@ const getPieLegendX = ({
 
 /**
  * Returns y coordinate for pie legends
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const getPieLegendY = ({
   dy = 0,
@@ -502,7 +514,8 @@ const getPieLegendY = ({
 
 /**
  * Returns an approximation of longest text width based on legend styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const getMaxLegendTextSize = ({ legendData, theme }: ChartLegendTextMaxSizeInterface) => {
