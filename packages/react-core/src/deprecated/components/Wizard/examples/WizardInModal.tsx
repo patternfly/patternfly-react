@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Button } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
 
 export const WizardInModal: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setIsOpen(!isOpen);

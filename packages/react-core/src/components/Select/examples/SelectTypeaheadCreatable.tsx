@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import {
   Select,
   SelectOption,
@@ -22,18 +23,18 @@ let initialSelectOptions: SelectOptionProps[] = [
 ];
 
 export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<string>('');
-  const [inputValue, setInputValue] = React.useState<string>('');
-  const [filterValue, setFilterValue] = React.useState<string>('');
-  const [selectOptions, setSelectOptions] = React.useState<SelectOptionProps[]>(initialSelectOptions);
-  const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
-  const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
-  const textInputRef = React.useRef<HTMLInputElement>(undefined);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string>('');
+  const [filterValue, setFilterValue] = useState<string>('');
+  const [selectOptions, setSelectOptions] = useState<SelectOptionProps[]>(initialSelectOptions);
+  const [focusedItemIndex, setFocusedItemIndex] = useState<number | null>(null);
+  const [activeItemId, setActiveItemId] = useState<string | null>(null);
+  const textInputRef = useRef<HTMLInputElement>(undefined);
 
   const CREATE_NEW = 'create';
 
-  React.useEffect(() => {
+  useEffect(() => {
     let newSelectOptions: SelectOptionProps[] = initialSelectOptions;
 
     // Filter menu items based on the text input value when one exists

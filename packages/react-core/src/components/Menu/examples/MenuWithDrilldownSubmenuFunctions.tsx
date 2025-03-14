@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem, Divider, DrilldownMenu } from '@patternfly/react-core';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
@@ -5,10 +6,10 @@ import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-i
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 export const MenuWithDrilldownSubmenuFunctions: React.FunctionComponent = () => {
-  const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
-  const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
-  const [menuHeights, setMenuHeights] = React.useState<any>({});
-  const [activeMenu, setActiveMenu] = React.useState<string>('functions-rootMenu');
+  const [menuDrilledIn, setMenuDrilledIn] = useState<string[]>([]);
+  const [drilldownPath, setDrilldownPath] = useState<string[]>([]);
+  const [menuHeights, setMenuHeights] = useState<any>({});
+  const [activeMenu, setActiveMenu] = useState<string>('functions-rootMenu');
 
   const drillIn = (
     _event: React.KeyboardEvent | React.MouseEvent,

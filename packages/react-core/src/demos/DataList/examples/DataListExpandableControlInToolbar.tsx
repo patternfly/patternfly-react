@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Button,
   Content,
@@ -33,11 +33,11 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const DataListExpandableControlInToolbar: React.FunctionComponent = () => {
-  const [expanded, setExpanded] = React.useState(['ex-toggle1', 'ex-toggle3']);
-  const [isOpen1, setIsOpen1] = React.useState(false);
-  const [isOpen2, setIsOpen2] = React.useState(false);
-  const [isOpen3, setIsOpen3] = React.useState(false);
-  const [allExpanded, setAllExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(['ex-toggle1', 'ex-toggle3']);
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [isOpen3, setIsOpen3] = useState(false);
+  const [allExpanded, setAllExpanded] = useState(false);
 
   const onToggleAll = () => {
     setAllExpanded((prevAllExpanded) => !prevAllExpanded);

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Avatar,
   Brand,
@@ -44,13 +45,13 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 
 export const NavFlyout: React.FunctionComponent = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
-  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
-  const [isMobileView, setIsMobileView] = React.useState(false);
-  const [isSidebarOpenDesktop, setIsSidebarOpenDesktop] = React.useState(true);
-  const [isSidebarOpenMobile, setIsSidebarOpenMobile] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState<number | string>(0);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
+  const [isSidebarOpenDesktop, setIsSidebarOpenDesktop] = useState(true);
+  const [isSidebarOpenMobile, setIsSidebarOpenMobile] = useState(false);
+  const [activeItem, setActiveItem] = useState<number | string>(0);
 
   const onNavSelect = (
     _event: React.FormEvent<HTMLInputElement>,

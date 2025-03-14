@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Avatar,
   Brand,
@@ -53,12 +54,12 @@ interface NavOnSelectProps {
 }
 
 export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
-  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
-  const [isContextSelectorOpen, setIsContextSelectorOpen] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState(1);
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = useState(false);
+  const [isContextSelectorOpen, setIsContextSelectorOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState(1);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const onSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);

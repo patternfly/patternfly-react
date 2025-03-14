@@ -5,7 +5,7 @@ cssPrefix: pf-v6-c-input-group
 propComponents: ['InputGroup', 'InputGroupItem', 'InputGroupText']
 ---
 
-import { Fragment } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
 import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
 import CalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/calendar-alt-icon';

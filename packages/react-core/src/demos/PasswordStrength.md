@@ -3,6 +3,7 @@ id: Password strength
 section: patterns
 ---
 
+import { useState } from 'react';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';

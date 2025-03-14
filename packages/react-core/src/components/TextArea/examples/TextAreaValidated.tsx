@@ -1,10 +1,11 @@
+import { useRef, useState } from 'react';
 import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextArea } from '@patternfly/react-core';
 
 export const TextAreaValidated: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
-  const [validated, setValidated] = React.useState<'default' | 'error' | 'warning' | 'success' | undefined>('default');
-  const [helperText, setHelperText] = React.useState('Share your thoughts.');
-  const timerRef = React.useRef<number | null>(null);
+  const [value, setValue] = useState('');
+  const [validated, setValidated] = useState<'default' | 'error' | 'warning' | 'success' | undefined>('default');
+  const [helperText, setHelperText] = useState('Share your thoughts.');
+  const timerRef = useRef<number | null>(null);
   const simulateNetworkCall = (callback: Function) => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);

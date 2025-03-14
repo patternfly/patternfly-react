@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { SimpleList, SimpleListItem, SimpleListItemProps } from '@patternfly/react-core';
 
 export const SimpleListUncontrolled: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState(0);
+  const [activeItem, setActiveItem] = useState(0);
 
   const onSelect = (
     selectedItem: React.RefObject<HTMLButtonElement | null> | React.RefObject<HTMLAnchorElement | null>,

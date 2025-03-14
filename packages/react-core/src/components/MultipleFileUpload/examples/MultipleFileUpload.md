@@ -7,6 +7,7 @@ propComponents:
   ['MultipleFileUpload', 'MultipleFileUploadMain', 'MultipleFileUploadStatus', 'MultipleFileUploadStatusItem']
 ---
 
+import { useEffect, useState } from 'react';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
 Multiple file upload is able to:

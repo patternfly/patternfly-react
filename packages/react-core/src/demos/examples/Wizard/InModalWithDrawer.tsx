@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import {
   Button,
   Drawer,
@@ -15,8 +16,8 @@ import {
 } from '@patternfly/react-core';
 
 export const WizardModalWithDrawerDemo: React.FunctionComponent = () => {
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
-  const drawerRef = React.useRef<HTMLSpanElement | null>(null);
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
+  const drawerRef = useRef<HTMLSpanElement | null>(null);
 
   const onExpand = () => {
     if (drawerRef.current) {

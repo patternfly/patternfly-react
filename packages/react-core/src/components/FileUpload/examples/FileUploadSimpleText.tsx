@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import { FileUpload, DropEvent } from '@patternfly/react-core';
 
 export const SimpleTextFileUpload: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
-  const [filename, setFilename] = React.useState('');
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [value, setValue] = useState('');
+  const [filename, setFilename] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFileInputChange = (_, file: File) => {
     setFilename(file.name);

@@ -5,7 +5,7 @@ cssPrefix: pf-v6-c-icon
 propComponents: ['Icon']
 ---
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import LongArrowAltDownIcon from '@patternfly/react-icons/dist/esm/icons/long-arrow-alt-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';

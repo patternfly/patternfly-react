@@ -1,8 +1,9 @@
+import { createRef, useState } from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-core';
 
 export const TabsTooltipReactRef: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
-  const [isBox, setIsBox] = React.useState<boolean>(false);
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
+  const [isBox, setIsBox] = useState<boolean>(false);
   // Toggle currently active tab
   const handleTabClick = (
     event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
@@ -15,7 +16,7 @@ export const TabsTooltipReactRef: React.FunctionComponent = () => {
     setIsBox(checked);
   };
 
-  const tooltipRef = React.createRef<HTMLElement>();
+  const tooltipRef = createRef<HTMLElement>();
 
   return (
     <div>

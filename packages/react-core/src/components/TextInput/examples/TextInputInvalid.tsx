@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { TextInput, ValidatedOptions } from '@patternfly/react-core';
 
 export const TextInputInvalid: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = useState('');
   return (
     <TextInput
       value={value}

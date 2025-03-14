@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardBody, Checkbox, Gallery } from '@patternfly/react-core';
 
 export const SelectableCard: React.FunctionComponent = () => {
-  const [isChecked1, setIsChecked1] = React.useState(false);
-  const [isChecked2, setIsChecked2] = React.useState(false);
-  const [isChecked3, setIsChecked3] = React.useState(false);
-  const [isSecondary, setIsSecondary] = React.useState<boolean>(false);
+  const [isChecked1, setIsChecked1] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(false);
+  const [isChecked3, setIsChecked3] = useState(false);
+  const [isSecondary, setIsSecondary] = useState<boolean>(false);
 
   const id1 = 'selectable-card-input-1';
   const id2 = 'selectable-card-input-2';

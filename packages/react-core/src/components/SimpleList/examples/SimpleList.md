@@ -4,6 +4,7 @@ section: components
 cssPrefix: pf-v6-c-simple-list
 propComponents: ['SimpleList', 'SimpleListGroup', 'SimpleListItem']
 ---
+import { useState } from 'react';
 
 ## Examples
 

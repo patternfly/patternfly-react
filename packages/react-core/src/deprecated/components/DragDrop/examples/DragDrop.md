@@ -5,6 +5,7 @@ propComponents: [DragDrop, Draggable, Droppable, DraggableItemPosition]
 title: Drag and drop
 deprecated: true
 ---
+import { useState } from 'react';
 
 You can use the `<DragDrop>` component to move items in or between lists. The `<DragDrop>` component should contain `<Droppable>` components which contain `<Draggable>` components.
 

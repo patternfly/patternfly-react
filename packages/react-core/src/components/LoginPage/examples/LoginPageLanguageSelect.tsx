@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import brandImg from '../../assets/PF-IconLogo.svg';
 import {
   LoginFooterItem,
@@ -23,14 +23,14 @@ import FacebookSquareIcon from '@patternfly/react-icons/dist/esm/icons/facebook-
 import GitlabIcon from '@patternfly/react-icons/dist/esm/icons/gitlab-icon';
 
 export const LoginPageLanguageSelect: React.FunctionComponent = () => {
-  const [showHelperText, setShowHelperText] = React.useState(false);
-  const [username, setUsername] = React.useState('');
-  const [isValidUsername, setIsValidUsername] = React.useState(true);
-  const [password, setPassword] = React.useState('');
-  const [isValidPassword, setIsValidPassword] = React.useState(true);
-  const [isRememberMeChecked, setIsRememberMeChecked] = React.useState(false);
-  const [isHeaderUtilsOpen, setIsHeaderUtilsOpen] = React.useState(false);
-  const [selectedHeaderUtils, setSelectedHeaderUtils] = React.useState('English');
+  const [showHelperText, setShowHelperText] = useState(false);
+  const [username, setUsername] = useState('');
+  const [isValidUsername, setIsValidUsername] = useState(true);
+  const [password, setPassword] = useState('');
+  const [isValidPassword, setIsValidPassword] = useState(true);
+  const [isRememberMeChecked, setIsRememberMeChecked] = useState(false);
+  const [isHeaderUtilsOpen, setIsHeaderUtilsOpen] = useState(false);
+  const [selectedHeaderUtils, setSelectedHeaderUtils] = useState('English');
 
   /** i18n object is used to simulate i18n integration of native language translation */
   const i18n = {

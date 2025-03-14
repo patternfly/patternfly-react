@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
 
 export const MenuWithCheckbox: React.FunctionComponent = () => {
-  const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
+  const [selectedItems, setSelectedItems] = useState<number[]>([]);
 
   /* eslint no-unused-vars: ["error", {"args": "after-used"}] */
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {

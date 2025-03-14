@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Slider, SliderOnChangeEvent, Content } from '@patternfly/react-core';
 
 export const SliderDisabled: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState(50);
+  const [value, setValue] = useState(50);
   const steps = [
     { value: 0, label: '0' },
     { value: 12.5, label: '1', isLabelHidden: true },

@@ -6,7 +6,7 @@ propComponents: ['Modal', 'ModalBody', 'ModalHeader', 'ModalFooter']
 ouia: true
 ---
 
-import { Fragment } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';

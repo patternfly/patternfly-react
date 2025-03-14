@@ -1,4 +1,4 @@
-import { type JSX, useState } from 'react';
+import { useState } from 'react';
 
 import {
   Page,
@@ -30,7 +30,7 @@ function getNavLayer(menuId: string): number {
   return 1;
 }
 
-const subMenuTwo: JSX.Element = (
+const subMenuTwo: React.JSX.Element = (
   <DrilldownMenu id="subMenu-2">
     <MenuItem itemId="subMenu-2-breadcrumb" direction="up">
       SubMenu 1 - Item 1
@@ -47,7 +47,7 @@ const subMenuTwo: JSX.Element = (
   </DrilldownMenu>
 );
 
-const subMenuOne: JSX.Element = (
+const subMenuOne: React.JSX.Element = (
   <DrilldownMenu id="subMenu-1">
     <MenuItem itemId="subMenu-1-breadcrumb" direction="up">
       Item 1

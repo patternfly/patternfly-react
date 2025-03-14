@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Button,
   DescriptionList,
@@ -9,8 +10,8 @@ import {
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListWithCard: React.FunctionComponent = () => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
-  const [isSelectable, setSelectable] = React.useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [isSelectable, setSelectable] = useState<boolean>(false);
 
   const toggleSelectable = (checked: boolean) => {
     setSelectable(checked ? true : false);

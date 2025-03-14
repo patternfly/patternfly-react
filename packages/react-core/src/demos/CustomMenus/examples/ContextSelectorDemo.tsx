@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import {
   MenuToggle,
   MenuFooter,
@@ -52,12 +53,12 @@ export const ContextSelectorDemo: React.FunctionComponent = () => {
     'AWS 2',
     'Azure 2'
   ];
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [selected, setSelected] = React.useState(typeof items[0] === 'string' ? items[0] : items[0].text);
-  const [filteredItems, setFilteredItems] = React.useState<ItemArrayType>(items);
-  const [searchInputValue, setSearchInputValue] = React.useState<string>('');
-  const menuRef = React.useRef<HTMLDivElement>(null);
-  const menuFooterBtnRef = React.useRef<HTMLButtonElement>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selected, setSelected] = useState(typeof items[0] === 'string' ? items[0] : items[0].text);
+  const [filteredItems, setFilteredItems] = useState<ItemArrayType>(items);
+  const [searchInputValue, setSearchInputValue] = useState<string>('');
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuFooterBtnRef = useRef<HTMLButtonElement>(null);
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);

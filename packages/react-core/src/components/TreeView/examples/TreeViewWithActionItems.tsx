@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   TreeView,
   Button,
@@ -12,8 +13,8 @@ import HamburgerIcon from '@patternfly/react-icons/dist/esm/icons/hamburger-icon
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const TreeViewWithActionItems: React.FunctionComponent = () => {
-  const [activeItems, setActiveItems] = React.useState<TreeViewDataItem[]>();
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const onSelect = (_event: React.MouseEvent, treeViewItem: TreeViewDataItem) => {
     // Ignore folders for selection

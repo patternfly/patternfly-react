@@ -1,11 +1,11 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Button, Popover } from '@patternfly/react-core';
 import { Modal as ModalDeprecated } from '@patternfly/react-core/deprecated';
 
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 export const ModalWithHelp: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setIsModalOpen(!isModalOpen);

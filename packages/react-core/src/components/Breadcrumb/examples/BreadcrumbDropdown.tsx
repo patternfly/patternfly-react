@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -46,8 +47,8 @@ const dropdownItems = [
 ];
 
 export const BreadcrumbDropdown: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const badgeToggleRef = React.useRef<HTMLButtonElement>(undefined);
+  const [isOpen, setIsOpen] = useState(false);
+  const badgeToggleRef = useRef<HTMLButtonElement>(undefined);
 
   const onToggle = () => setIsOpen(!isOpen);
 

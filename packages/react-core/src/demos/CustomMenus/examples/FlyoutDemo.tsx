@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, MenuContainer } from '@patternfly/react-core';
 
 /* eslint-disable no-console */
@@ -30,9 +31,9 @@ const FlyoutMenu: React.FunctionComponent<FlyoutMenuProps> = ({ depth, children 
 );
 
 export const FlyoutDemo: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const menuRef = React.useRef<HTMLDivElement>(null);
-  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   let curFlyout = <FlyoutMenu depth={1} />;
   for (let i = 2; i < 14; i++) {

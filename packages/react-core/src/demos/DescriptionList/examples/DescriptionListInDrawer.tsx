@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import {
   Gallery,
   Content,
@@ -20,9 +21,9 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListInDrawer: React.FunctionComponent = () => {
-  const drawerRef = React.useRef<HTMLDivElement>(null);
-  const btnRef = React.useRef<HTMLDivElement>(null);
-  const [isExpanded, setIsExpanded] = React.useState(true);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const btnRef = useRef<HTMLDivElement>(null);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   const onExpand = () => {
     drawerRef.current && drawerRef.current.focus();

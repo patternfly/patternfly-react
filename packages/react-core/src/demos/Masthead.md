@@ -3,6 +3,7 @@ id: Masthead
 section: components
 ---
 
+import { cloneElement, Fragment, useEffect, useRef, useState } from 'react';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';

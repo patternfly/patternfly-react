@@ -7,7 +7,7 @@ ouia: true
 deprecated: true
 ---
 
-import { Fragment } from 'react';
+import { Fragment, useRef, useState } from 'react';
 
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';

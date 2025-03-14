@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import { TextInput } from '@patternfly/react-core';
 import CalendarIcon from '@patternfly/react-icons/dist/esm/icons/calendar-icon';
 import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
 
 export const TextInputCustomIcon: React.FunctionComponent = () => {
-  const [calendar, setCalendar] = React.useState('');
-  const [clock, setClock] = React.useState('');
+  const [calendar, setCalendar] = useState('');
+  const [clock, setClock] = useState('');
 
   return (
     <>

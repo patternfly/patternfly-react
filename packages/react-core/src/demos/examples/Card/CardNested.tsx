@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -17,10 +18,10 @@ import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
 import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 export const CardNested: React.FunctionComponent = () => {
-  const [isCardExpanded1, onCardExpand1] = React.useState(true);
-  const [isCardExpanded2, onCardExpand2] = React.useState(false);
-  const [isCardExpanded3, onCardExpand3] = React.useState(false);
-  const [isToggleOnRight, onCheckClick] = React.useState(false);
+  const [isCardExpanded1, onCardExpand1] = useState(true);
+  const [isCardExpanded2, onCardExpand2] = useState(false);
+  const [isCardExpanded3, onCardExpand3] = useState(false);
+  const [isToggleOnRight, onCheckClick] = useState(false);
 
   return (
     <>

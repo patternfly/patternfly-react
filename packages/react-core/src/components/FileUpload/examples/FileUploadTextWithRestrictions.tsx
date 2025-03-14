@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   FileUpload,
   DropzoneErrorCode,
@@ -10,11 +11,11 @@ import {
 } from '@patternfly/react-core';
 
 export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
-  const [filename, setFilename] = React.useState('');
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [isRejected, setIsRejected] = React.useState(false);
-  const [message, setMessage] = React.useState('Must be a CSV file no larger than 1 KB');
+  const [value, setValue] = useState('');
+  const [filename, setFilename] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isRejected, setIsRejected] = useState(false);
+  const [message, setMessage] = useState('Must be a CSV file no larger than 1 KB');
 
   const handleFileInputChange = (_, file: File) => {
     setFilename(file.name);

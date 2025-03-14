@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 import GitlabIcon from '@patternfly/react-icons/dist/esm/icons/gitlab-icon';
 import GithubIcon from '@patternfly/react-icons/dist/esm/icons/github-icon';
 import GoogleIcon from '@patternfly/react-icons/dist/esm/icons/google-icon';
 
 export const TreeViewWithIconPerItem: React.FunctionComponent = () => {
-  const [activeItems, setActiveItems] = React.useState<TreeViewDataItem[]>();
+  const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();
 
   const onSelect = (_event: React.MouseEvent, treeViewItem: TreeViewDataItem) => {
     // Ignore folders for selection

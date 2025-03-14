@@ -5,7 +5,7 @@ cssPrefix: pf-v6-c-tree-view
 propComponents: ['TreeView', 'TreeViewDataItem', 'TreeViewSearch']
 ---
 
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { FolderIcon, FolderOpenIcon, EllipsisVIcon, ClipboardIcon, HamburgerIcon, GitlabIcon, GithubIcon, GoogleIcon } from '@patternfly/react-icons';
 
 ## Examples

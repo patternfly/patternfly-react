@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Badge,
   Button,
@@ -35,22 +35,22 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
     'container-sample-3': { type: 'E' }
   };
 
-  const [containerExpanded, setContainerExpanded] = React.useState(false);
-  const [containerExpandedMobile, setContainerExpandedMobile] = React.useState(false);
-  const [containerSelected, setContainerSelected] = React.useState(Object.keys(firstOptions)[0]);
-  const [optionExpanded, setOptionExpanded] = React.useState(false);
-  const [optionExpandedMobile, setOptionExpandedMobile] = React.useState(false);
-  const [isPaused, setIsPaused] = React.useState(false);
-  const [firstSwitchChecked, setFirstSwitchChecked] = React.useState(true);
-  const [secondSwitchChecked, setSecondSwitchChecked] = React.useState(false);
-  const [searchValue, setSearchValue] = React.useState('');
-  const [searchResultsCount, setSearchResultsCount] = React.useState(3);
-  const [currentSearchResult, setCurrentSearchResult] = React.useState(1);
-  const [externalExpanded, setExternalExpanded] = React.useState(false);
-  const [externalExpandedMobile, setExternalExpandedMobile] = React.useState(false);
-  const [downloadExpanded, setDownloadExpanded] = React.useState(false);
-  const [downloadExpandedMobile, setDownloadExpandedMobile] = React.useState(false);
-  const [mobileView, setMobileView] = React.useState(window.innerWidth >= 1450 ? false : true);
+  const [containerExpanded, setContainerExpanded] = useState(false);
+  const [containerExpandedMobile, setContainerExpandedMobile] = useState(false);
+  const [containerSelected, setContainerSelected] = useState(Object.keys(firstOptions)[0]);
+  const [optionExpanded, setOptionExpanded] = useState(false);
+  const [optionExpandedMobile, setOptionExpandedMobile] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [firstSwitchChecked, setFirstSwitchChecked] = useState(true);
+  const [secondSwitchChecked, setSecondSwitchChecked] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+  const [searchResultsCount, setSearchResultsCount] = useState(3);
+  const [currentSearchResult, setCurrentSearchResult] = useState(1);
+  const [externalExpanded, setExternalExpanded] = useState(false);
+  const [externalExpandedMobile, setExternalExpandedMobile] = useState(false);
+  const [downloadExpanded, setDownloadExpanded] = useState(false);
+  const [downloadExpandedMobile, setDownloadExpandedMobile] = useState(false);
+  const [mobileView, setMobileView] = useState(window.innerWidth >= 1450 ? false : true);
 
   const onContainerToggle = () => {
     setContainerExpanded((prevState) => !prevState);

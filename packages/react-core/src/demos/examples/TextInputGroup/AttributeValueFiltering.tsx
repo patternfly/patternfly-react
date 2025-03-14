@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import {
   TextInputGroup,
   TextInputGroupMain,
@@ -16,10 +17,10 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export const AttributeValueFiltering: React.FunctionComponent = () => {
-  const [inputValue, setInputValue] = React.useState('');
-  const [selectedKey, setSelectedKey] = React.useState('');
-  const [menuIsOpen, setMenuIsOpen] = React.useState(false);
-  const [currentChips, setCurrentChips] = React.useState<string[]>([]);
+  const [inputValue, setInputValue] = useState('');
+  const [selectedKey, setSelectedKey] = useState('');
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [currentChips, setCurrentChips] = useState<string[]>([]);
 
   interface attributeValueData {
     [attribute: string]: string[];
@@ -35,12 +36,12 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
     Status: ['running', 'idle', 'stopped']
   };
   const keyNames = ['Cluster', 'Kind', 'Label', 'Name', 'Namespace', 'Status'];
-  const [menuItemsText, setMenuItemsText] = React.useState(keyNames);
-  const [menuItems, setMenuItems] = React.useState<React.ReactElement<any>[]>([]);
+  const [menuItemsText, setMenuItemsText] = useState(keyNames);
+  const [menuItems, setMenuItems] = useState<React.ReactElement<any>[]>([]);
 
   /** refs used to detect when clicks occur inside vs outside of the textInputGroup and menu popper */
-  const menuRef = React.useRef<HTMLDivElement>(undefined);
-  const textInputGroupRef = React.useRef<HTMLDivElement>(undefined);
+  const menuRef = useRef<HTMLDivElement>(undefined);
+  const textInputGroupRef = useRef<HTMLDivElement>(undefined);
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
   const handleInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
@@ -66,7 +67,7 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
     clearSelectedKey();
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     /** in the menu only show items that include the text in the input */
     const filteredMenuItems = menuItemsText
       .filter(

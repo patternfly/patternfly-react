@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputCustomStepAndThreshold: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState<number | ''>(90);
+  const [value, setValue] = useState<number | ''>(90);
   const minValue = 90;
   const maxValue = 100;
   const step = 3;

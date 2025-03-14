@@ -1,3 +1,4 @@
+import { createContext, useContext, useState } from 'react';
 import { Radio, Wizard, WizardStep } from '@patternfly/react-core';
 
 interface SomeContextProps {
@@ -11,11 +12,11 @@ interface SomeContextProviderProps {
   children: (context: SomeContextRenderProps) => React.ReactElement<any>;
 }
 
-const SomeContext: React.Context<SomeContextProps> = React.createContext({} as SomeContextProps);
+const SomeContext: React.Context<SomeContextProps> = createContext({} as SomeContextProps);
 
 const SomeContextProvider = ({ children }: SomeContextProviderProps) => {
-  const [errorMessage, setErrorMessage] = React.useState<string>();
-  const [successMessage, setSuccessMessage] = React.useState<string>();
+  const [errorMessage, setErrorMessage] = useState<string>();
+  const [successMessage, setSuccessMessage] = useState<string>();
 
   return (
     <SomeContext.Provider value={{ errorMessage, setErrorMessage, successMessage, setSuccessMessage }}>
@@ -25,7 +26,7 @@ const SomeContextProvider = ({ children }: SomeContextProviderProps) => {
 };
 
 const StepContentWithAction = () => {
-  const { errorMessage, setErrorMessage, successMessage, setSuccessMessage } = React.useContext(SomeContext);
+  const { errorMessage, setErrorMessage, successMessage, setSuccessMessage } = useContext(SomeContext);
 
   return (
     <>

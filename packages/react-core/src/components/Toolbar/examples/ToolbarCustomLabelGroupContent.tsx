@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Toolbar,
   ToolbarItem,
@@ -20,9 +20,9 @@ import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 
 export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
-  const [statusIsExpanded, setStatusIsExpanded] = React.useState<boolean>(false);
-  const [riskIsExpanded, setRiskIsExpanded] = React.useState<boolean>(false);
-  const [filters, setFilters] = React.useState({
+  const [statusIsExpanded, setStatusIsExpanded] = useState<boolean>(false);
+  const [riskIsExpanded, setRiskIsExpanded] = useState<boolean>(false);
+  const [filters, setFilters] = useState({
     risk: ['Low'],
     status: ['New', 'Pending']
   });

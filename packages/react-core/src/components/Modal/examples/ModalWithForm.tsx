@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import {
   Button,
   Form,
@@ -14,13 +14,13 @@ import {
 } from '@patternfly/react-core';
 
 export const ModalWithForm: React.FunctionComponent = () => {
-  const [isModalOpen, setModalOpen] = React.useState(false);
-  const [nameValue, setNameValue] = React.useState('');
-  const [emailValue, setEmailValue] = React.useState('');
-  const [addressValue, setAddressValue] = React.useState('');
-  const nameLabelHelpRef = React.useRef(null);
-  const emailLabelHelpRef = React.useRef(null);
-  const addressLabelHelpRef = React.useRef(null);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [nameValue, setNameValue] = useState('');
+  const [emailValue, setEmailValue] = useState('');
+  const [addressValue, setAddressValue] = useState('');
+  const nameLabelHelpRef = useRef(null);
+  const emailLabelHelpRef = useRef(null);
+  const addressLabelHelpRef = useRef(null);
 
   const handleModalToggle = (_event: KeyboardEvent | React.MouseEvent) => {
     setModalOpen(!isModalOpen);

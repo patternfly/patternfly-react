@@ -1,12 +1,12 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Menu, MenuContent, MenuItem, MenuItemAction, MenuGroup, MenuList, Divider } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 export const MenuWithFavorites: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState(0);
-  const [favorites, setFavorites] = React.useState<string[]>([]);
+  const [activeItem, setActiveItem] = useState(0);
+  const [favorites, setFavorites] = useState<string[]>([]);
 
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
     const item = itemId as number; // eslint-disable-next-line no-console

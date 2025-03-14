@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Badge } from '@patternfly/react-core';
 import { Chip } from '@patternfly/react-core/deprecated';
 
 export const ChipDefault: React.FunctionComponent = () => {
-  const [chips, setChips] = React.useState({
+  const [chips, setChips] = useState({
     chip: {
       name: 'Chip 1'
     },

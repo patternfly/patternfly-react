@@ -1,11 +1,12 @@
+import { useReducer, useState } from 'react';
 import { NumberInput, ValidatedOptions } from '@patternfly/react-core';
 
 export const NumberInputWithStatus: React.FunctionComponent = () => {
   const max = 10;
   const min = 0;
 
-  const [validated, setValidated] = React.useState<ValidatedOptions>(ValidatedOptions.success);
-  const [value, setValue] = React.useReducer((state, newVal) => Math.max(min, Math.min(max, Number(newVal))), 5);
+  const [validated, setValidated] = useState<ValidatedOptions>(ValidatedOptions.success);
+  const [value, setValue] = useReducer((state, newVal) => Math.max(min, Math.min(max, Number(newVal))), 5);
 
   const onPlus = () => {
     const newVal = (value || 0) + 1;

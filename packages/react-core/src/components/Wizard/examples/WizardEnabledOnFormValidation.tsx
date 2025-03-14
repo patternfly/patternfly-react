@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Form,
   FormGroup,
@@ -49,8 +50,8 @@ const SampleForm: React.FunctionComponent<SampleFormProps> = ({ value, isValid, 
 };
 
 export const WizardEnabledOnFormValidation: React.FunctionComponent = () => {
-  const [ageValue, setAgeValue] = React.useState('Thirty');
-  const [isSubAFormValid, setIsSubAFormValid] = React.useState(false);
+  const [ageValue, setAgeValue] = useState('Thirty');
+  const [isSubAFormValid, setIsSubAFormValid] = useState(false);
 
   const onSave = () => alert(`Wow, you look a lot younger than ${ageValue}.`);
 

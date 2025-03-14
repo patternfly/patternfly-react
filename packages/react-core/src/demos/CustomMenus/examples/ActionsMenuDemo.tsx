@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import { MenuToggle, MenuItemAction, Select, SelectGroup, SelectList, SelectOption } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
@@ -5,9 +6,9 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 export const ActionsMenuDemo: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
-  const menuRef = React.useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selectedItems, setSelectedItems] = useState<number[]>([]);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const onSelect = (event: React.MouseEvent | undefined, value: string | number | undefined) => {
     if (typeof value === 'string' || typeof value === 'undefined') {

@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Button,
   Content,
@@ -31,9 +31,9 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { rows } from '@patternfly/react-core/dist/esm/demos/sampleData';
 
 export const DataListStaticBottomPagination: React.FunctionComponent = () => {
-  const [page, setPage] = React.useState<number | undefined>(1);
-  const [perPage, setPerPage] = React.useState<number>(10);
-  const [paginatedRows, setPaginatedRows] = React.useState(rows.slice(0, 10));
+  const [page, setPage] = useState<number | undefined>(1);
+  const [perPage, setPerPage] = useState<number>(10);
+  const [paginatedRows, setPaginatedRows] = useState(rows.slice(0, 10));
 
   const handleSetPage = (
     _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,

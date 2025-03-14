@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   MenuToggle,
   MenuToggleElement,
@@ -15,12 +15,12 @@ import {
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
-  const [inputValue, setInputValue] = React.useState('');
-  const [statusIsExpanded, setStatusIsExpanded] = React.useState(false);
-  const [statusSelected, setStatusSelected] = React.useState('');
-  const [riskIsExpanded, setRiskIsExpanded] = React.useState(false);
-  const [riskSelected, setRiskSelected] = React.useState('');
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const [statusIsExpanded, setStatusIsExpanded] = useState(false);
+  const [statusSelected, setStatusSelected] = useState('');
+  const [riskIsExpanded, setRiskIsExpanded] = useState(false);
+  const [riskSelected, setRiskSelected] = useState('');
 
   const toggleIsExpanded = () => {
     setIsExpanded(!isExpanded);

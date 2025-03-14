@@ -3,6 +3,7 @@ id: Primary-detail
 section: patterns
 ---
 
+import { Fragment, useState } from 'react';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';

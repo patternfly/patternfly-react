@@ -6,7 +6,7 @@ propComponents: ['Switch']
 ouia: true
 ---
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 
 ## Examples
 

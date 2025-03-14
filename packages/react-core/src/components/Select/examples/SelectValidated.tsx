@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Select,
   SelectOption,
@@ -11,9 +11,9 @@ import {
 } from '@patternfly/react-core';
 
 export const SelectValidated: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<string>('Select a value');
-  const [status, setStatus] = React.useState<MenuToggleStatus>();
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<string>('Select a value');
+  const [status, setStatus] = useState<MenuToggleStatus>();
 
   const onToggleClick = () => {
     setIsOpen(!isOpen);

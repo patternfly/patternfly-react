@@ -3,7 +3,7 @@ id: Multiple file upload
 section: components
 subsection: file-upload
 ---
-
+import { useEffect, useState } from 'react';
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 

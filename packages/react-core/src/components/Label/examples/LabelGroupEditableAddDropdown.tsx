@@ -1,13 +1,14 @@
+import { useEffect, useRef, useState } from 'react';
 import { LabelGroup, Label, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
 
 export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
-  const toggleRef = React.useRef<HTMLDivElement>(undefined);
-  const menuRef = React.useRef<HTMLDivElement>(undefined);
-  const containerRef = React.useRef<HTMLDivElement>(undefined);
+  const toggleRef = useRef<HTMLDivElement>(undefined);
+  const menuRef = useRef<HTMLDivElement>(undefined);
+  const containerRef = useRef<HTMLDivElement>(undefined);
 
-  const [idIndex, setIdIndex] = React.useState<number>(3);
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [labels, setLabels] = React.useState<any>([
+  const [idIndex, setIdIndex] = useState<number>(3);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [labels, setLabels] = useState<any>([
     { name: 'Label 1', id: 0 },
     { name: 'Label 2', id: 1 },
     {
@@ -67,7 +68,7 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('keydown', handleMenuKeys);
     window.addEventListener('click', handleClickOutside);
     return () => {

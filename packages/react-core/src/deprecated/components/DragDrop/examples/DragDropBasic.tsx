@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
 
 interface ItemType {
@@ -26,7 +27,7 @@ const reorder = (list: ItemType[], startIndex: number, endIndex: number) => {
 };
 
 export const DragDropBasic: React.FunctionComponent = () => {
-  const [items, setItems] = React.useState<ItemType[]>(getItems(10));
+  const [items, setItems] = useState<ItemType[]>(getItems(10));
 
   function onDrop(source: SourceType, dest: DestinationType) {
     if (dest) {

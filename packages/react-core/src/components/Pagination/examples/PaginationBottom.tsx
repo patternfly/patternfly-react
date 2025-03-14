@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 export const PaginationBottom: React.FunctionComponent = () => {
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
 
   const onSetPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPage: number) => {
     setPage(newPage);

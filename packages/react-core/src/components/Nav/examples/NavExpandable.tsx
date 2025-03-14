@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
 
 export const NavExpandableExample: React.FunctionComponent = () => {
-  const [activeGroup, setActiveGroup] = React.useState('nav-expandable-group-1');
-  const [activeItem, setActiveItem] = React.useState('nav-expandable-group-1_item-1');
+  const [activeGroup, setActiveGroup] = useState('nav-expandable-group-1');
+  const [activeItem, setActiveItem] = useState('nav-expandable-group-1_item-1');
 
   const onSelect = (
     _event: React.FormEvent<HTMLInputElement>,

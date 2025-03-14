@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Badge,
   Button,
@@ -53,20 +53,20 @@ import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrap
 import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
 
 export const PrimaryDetailCardView: React.FunctionComponent = () => {
-  const [totalItemCount, setTotalItemCount] = React.useState(10);
-  const [cardData, setCardData] = React.useState(data);
-  const [isChecked, setIsChecked] = React.useState(false);
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
-  const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
-  const [areAllSelected, setAreAllSelected] = React.useState<boolean>(false);
-  const [splitButtonDropdownIsOpen, setSplitButtonDropdownIsOpen] = React.useState(false);
-  const [isLowerToolbarDropdownOpen, setIsLowerToolbarDropdownOpen] = React.useState(false);
-  const [isLowerToolbarKebabDropdownOpen, setIsLowerToolbarKebabDropdownOpen] = React.useState(false);
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
-  const [filters, setFilters] = React.useState<Record<string, string[]>>({ products: [] });
-  const [state, setState] = React.useState({});
-  const [activeCard, setActiveCard] = React.useState(-1);
+  const [totalItemCount, setTotalItemCount] = useState(10);
+  const [cardData, setCardData] = useState(data);
+  const [isChecked, setIsChecked] = useState(false);
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
+  const [selectedItems, setSelectedItems] = useState<number[]>([]);
+  const [areAllSelected, setAreAllSelected] = useState<boolean>(false);
+  const [splitButtonDropdownIsOpen, setSplitButtonDropdownIsOpen] = useState(false);
+  const [isLowerToolbarDropdownOpen, setIsLowerToolbarDropdownOpen] = useState(false);
+  const [isLowerToolbarKebabDropdownOpen, setIsLowerToolbarKebabDropdownOpen] = useState(false);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
+  const [filters, setFilters] = useState<Record<string, string[]>>({ products: [] });
+  const [state, setState] = useState({});
+  const [activeCard, setActiveCard] = useState(-1);
 
   interface ProductType {
     id: number;

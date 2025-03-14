@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Alert, AlertGroup, AlertVariant, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 interface AlertInfo {
@@ -8,15 +8,15 @@ interface AlertInfo {
 }
 
 export const AsyncLiveRegionAlert: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<AlertInfo[]>([]);
-  const [isActive, setIsActive] = React.useState(false);
+  const [alerts, setAlerts] = useState<AlertInfo[]>([]);
+  const [isActive, setIsActive] = useState(false);
   const getUniqueId: () => number = () => new Date().getTime();
 
   const addAlert = (alertInfo: AlertInfo) => {
     setAlerts((prevAlertInfo) => [...prevAlertInfo, alertInfo]);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     let timer = null;
     if (isActive) {
       timer = setInterval(() => {

@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -66,14 +66,14 @@ const riskOptions: SelectOptionType[] = [
 ];
 
 export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
-  const [drawerPanelBodyContent, setDrawerPanelBodyContent] = React.useState('');
-  const [inputValue, setInputValue] = React.useState('');
-  const [statusIsOpen, setStatusIsOpen] = React.useState(false);
-  const [statusSelected, setStatusSelected] = React.useState<string | number | undefined>('Status');
-  const [riskIsOpen, setRiskIsOpen] = React.useState(false);
-  const [riskSelected, setRiskSelected] = React.useState<string | number | undefined>('Risk');
-  const [selectedDataListItemId, setSelectedDataListItemId] = React.useState('');
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
+  const [drawerPanelBodyContent, setDrawerPanelBodyContent] = useState('');
+  const [inputValue, setInputValue] = useState('');
+  const [statusIsOpen, setStatusIsOpen] = useState(false);
+  const [statusSelected, setStatusSelected] = useState<string | number | undefined>('Status');
+  const [riskIsOpen, setRiskIsOpen] = useState(false);
+  const [riskSelected, setRiskSelected] = useState<string | number | undefined>('Risk');
+  const [selectedDataListItemId, setSelectedDataListItemId] = useState('');
 
   const onStatusSelect = (_event: React.MouseEvent<Element> | undefined, value: string | number | undefined) => {
     setStatusSelected(value);

@@ -1,8 +1,8 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputUnitThreshold: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState<number | ''>(0);
+  const [value, setValue] = useState<number | ''>(0);
   const minValue = 0;
   const maxValue = 10;
 

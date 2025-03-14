@@ -1,8 +1,8 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Checkbox, TextArea } from '@patternfly/react-core';
 
 export const TextAreaReadOnly: React.FunctionComponent = () => {
-  const [isPlainChecked, setIsPlainChecked] = React.useState(false);
+  const [isPlainChecked, setIsPlainChecked] = useState(false);
 
   return (
     <Fragment>

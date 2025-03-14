@@ -16,6 +16,7 @@ propComponents:
   ]
 ---
 
+import { useState } from 'react';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 

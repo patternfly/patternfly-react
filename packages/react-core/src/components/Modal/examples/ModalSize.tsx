@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader, ModalVariant, Radio } from '@patternfly/react-core';
 
 export const ModalSize: React.FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [selectedVariant, setSelectedVariant] = React.useState(ModalVariant.small);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedVariant, setSelectedVariant] = useState(ModalVariant.small);
 
   const capitalize = (input: string) => input[0].toUpperCase() + input.substring(1);
   const formatSizeVariantName = (variant: string) => capitalize(variant);

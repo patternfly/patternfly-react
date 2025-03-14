@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Button,
   InputGroup,
@@ -12,7 +12,7 @@ import {
 } from '@patternfly/react-core';
 
 export const InputGroupWithDropdown: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const onToggle = () => {
     setIsOpen(!isOpen);

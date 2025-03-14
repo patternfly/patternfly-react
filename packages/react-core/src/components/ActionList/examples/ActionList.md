@@ -5,7 +5,7 @@ cssPrefix: pf-v6-c-action-list
 propComponents: ['ActionList', 'ActionListGroup', 'ActionListItem']
 ---
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';

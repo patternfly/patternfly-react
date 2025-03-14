@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   ActionList,
   ActionListGroup,
@@ -29,7 +30,7 @@ const CustomWizardFooter = () => {
 
 const CustomStepTwoFooter = () => {
   const { goToNextStep, goToPrevStep, close } = useWizardContext();
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   async function onNext() {
     setIsLoading(true);
@@ -88,7 +89,7 @@ const ReviewStepContent: React.FunctionComponent<ReviewStepContentProps> = ({ is
 };
 
 export const WizardWithCustomFooter: React.FunctionComponent = () => {
-  const [isSubmitting, setIsSubmitting] = React.useState<boolean>();
+  const [isSubmitting, setIsSubmitting] = useState<boolean>();
 
   async function onSubmit(): Promise<void> {
     setIsSubmitting(true);

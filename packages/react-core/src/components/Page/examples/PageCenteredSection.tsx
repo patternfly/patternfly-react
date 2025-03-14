@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Page,
   Masthead,
@@ -21,7 +22,7 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import c_page_section_m_limit_width_MaxWidth from '@patternfly/react-tokens/dist/esm/c_page_section_m_limit_width_MaxWidth';
 
 export const PageCenteredSection: React.FunctionComponent = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const onSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
