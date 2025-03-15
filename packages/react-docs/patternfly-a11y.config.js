@@ -38,6 +38,12 @@ const urls = Object.keys(fullscreenRoutes)
           if (path.includes('/tile/') || path.includes('/chip/')) {
             return path.replace(/\/react-deprecated$/, '');
           }
+        } else if (path.match(/\/charts\/.*\/ECharts$/g)) {
+          if (path.includes('/sankey-chart/')) {
+            return path.replace(/\/ECharts$/, '');
+          }
+        } else if (path.match(/\/charts\/.*\/-Victory$/g)) {
+          return path.replace(/\/-Victory/, '');
         }
         // all other pages in the components section have a trailing 'react' string in their default tab
         return path.replace(/\/react$/, '');
