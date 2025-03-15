@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
 import { AlertActionCloseButton } from '../AlertActionCloseButton';
+import { AlertGroupContext } from '../AlertGroupContext';
 import { AlertContext } from '../AlertContext';
 
 jest.mock('../../Button');
@@ -59,8 +59,8 @@ test('Does not call the callback provided via onClose when it is not clicked', (
 });
 
 test('Calls the callback provided via onClose when clicked', async () => {
-  const onCloseMock = jest.fn();
   const user = userEvent.setup();
+  const onCloseMock = jest.fn();
 
   render(
     <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
@@ -71,6 +71,24 @@ test('Calls the callback provided via onClose when clicked', async () => {
   await user.click(screen.getByRole('button'));
 
   expect(onCloseMock).toHaveBeenCalledTimes(1);
+});
+
+test('Calls updateTransitionEnd with onClose when animations are enabled', async () => {
+  const user = userEvent.setup();
+  const onClose = jest.fn();
+  const updateMock = jest.fn();
+  render(
+    <AlertGroupContext.Provider value={{ hasAnimations: true, updateTransitionEnd: updateMock }}>
+      <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
+        <AlertActionCloseButton onClose={onClose} />
+      </AlertContext.Provider>
+    </AlertGroupContext.Provider>
+  );
+
+  expect(updateMock).not.toHaveBeenCalled();
+  await user.click(screen.getByRole('button'));
+  expect(updateMock).toHaveBeenCalledWith(onClose);
+  expect(updateMock).toHaveBeenCalledTimes(1);
 });
 
 test('Renders with an aria label composed with the title and variantLabel provided via a context by default', () => {
