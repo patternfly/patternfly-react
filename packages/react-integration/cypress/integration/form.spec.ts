@@ -89,7 +89,7 @@ describe('Form Demo Test', () => {
 
   it('Verify pressing spacebar selects the checkbox component', () => {
     const $checkbox = cy.get('#subscribe');
-    $checkbox.should('not.be.checked');
+    $checkbox.should('not.be.checked').focus();
     $checkbox.type(' ');
     $checkbox.should('be.checked');
     $checkbox.type(' '); // should be unchecked but isn't
