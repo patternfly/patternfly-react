@@ -29,3 +29,10 @@ You can display a number within the notification badge by passing in the `count`
 
 ```ts file='./NotificationBadgeWithCount.tsx'
 ```
+
+### With animation
+
+You can animate the icon within the notification badge by passing in the `hasAnimation` property. In this example, the notification badge icon will only animate if the notification count is greater than 0.
+
+```ts file='./NotificationBadgeWithAnimation.tsx'
+```

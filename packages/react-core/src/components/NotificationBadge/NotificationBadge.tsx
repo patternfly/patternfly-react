@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
@@ -60,11 +60,7 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
 
   const buttonClassName = isAnimating ? css(className, styles.modifiers.notify) : className;
 
-  useEffect(() => {
-    setIsAnimating(hasAnimation && (hasCount || hasChildren) ? true : false);
-  }, [hasAnimation, hasCount, hasChildren]);
-
-  const handleClick = () => {
+  const handleAnimationEnd = () => {
     setIsAnimating(false);
   };
 
@@ -76,7 +72,7 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
       state={variant}
       isClicked={isExpanded}
       icon={notificationIcon}
-      onClick={handleClick}
+      onAnimationEnd={handleAnimationEnd}
       {...props}
     >
       {notificationContent}

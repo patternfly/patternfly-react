@@ -1,5 +1,5 @@
 import { NotificationBadge } from '../NotificationBadge';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 Object.values([true, false]).forEach((attentionVariant) => {
   test(`${attentionVariant} NotificationBadge needs attention`, () => {
@@ -39,4 +39,18 @@ test('Renders with .pf-m-clicked when isExpanded is passed in.', () => {
   render(<NotificationBadge isExpanded />);
 
   expect(screen.getByRole('button')).toHaveClass('pf-m-clicked');
+});
+
+test('Renders with .pf-m-notify when hasAnimation is passed in.', () => {
+  render(<NotificationBadge hasAnimation />);
+
+  expect(screen.getByRole('button')).toHaveClass('pf-m-notify');
+});
+
+test('Removes the .pf-m-notify class when animation has ended.', async () => {
+  render(<NotificationBadge hasAnimation />);
+  fireEvent.animationEnd(screen.getByRole('button'));
+  await screen.findByRole('button');
+
+  expect(screen.getByRole('button')).not.toHaveClass('pf-m-notify');
 });
