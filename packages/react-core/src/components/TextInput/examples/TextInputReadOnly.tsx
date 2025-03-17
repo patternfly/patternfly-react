@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Checkbox, TextInput } from '@patternfly/react-core';
 
 export const TextInputReadOnly: React.FunctionComponent = () => {
-  const [isPlainChecked, setIsPlainChecked] = React.useState(false);
+  const [isPlainChecked, setIsPlainChecked] = useState(false);
   return (
     <>
       <div style={{ marginBottom: '12px' }}>

@@ -5,6 +5,7 @@ cssPrefix: pf-v6-c-accordion
 propComponents: ['Accordion', 'AccordionItem', 'AccordionContent', 'AccordionToggle', AccordionExpandableContentBody]
 ---
 
+import { useState } from 'react';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 
 ## Examples

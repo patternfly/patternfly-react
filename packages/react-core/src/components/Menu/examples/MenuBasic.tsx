@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem, Checkbox } from '@patternfly/react-core';
 
 export const MenuBasic: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState(0);
-  const [isPlain, setIsPlain] = React.useState(false);
+  const [activeItem, setActiveItem] = useState(0);
+  const [isPlain, setIsPlain] = useState(false);
 
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
     const item = itemId as number; // eslint-disable-next-line no-console

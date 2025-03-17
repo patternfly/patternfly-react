@@ -5,6 +5,7 @@ cssPrefix: pf-v6-c-slider
 propComponents: ['Slider', 'SliderStepObject']
 ---
 
+import { useState } from 'react';
 import { Slider, Button, Content, ContentVariants } from '@patternfly/react-core';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';

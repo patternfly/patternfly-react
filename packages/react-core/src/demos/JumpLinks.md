@@ -3,6 +3,7 @@ id: Jump links
 section: components
 ---
 
+import { useContext, useEffect, useRef, useState } from 'react';
 import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
 import breadcrumbStyles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
@@ -21,6 +22,7 @@ JumpLinks has a scrollspy built-in to make your implementation easier. When impl
 This demo expands on the previous to show the JumpLinks in a vertical layout with subsections. It scrolls the [Page](/components/page)'s `mainContainerId` with an `offset` calculated based on the height of the masthead and the nav list when it appears above the content. The headings are given a tab index to allow the jump links to focus on them.
 
 ```js isFullscreen
+import { useEffect, useState } from 'react';
 import {
   PageSection,
   JumpLinks,
@@ -41,13 +43,13 @@ import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/mas
 ScrollspyH2 = () => {
   const headings = [1, 2, 3, 4, 5];
 
-  const [isVertical, setIsVertical] = React.useState(true);
-  const [offsetHeight, setOffsetHeight] = React.useState(10);
+  const [isVertical, setIsVertical] = useState(true);
+  const [offsetHeight, setOffsetHeight] = useState(10);
   const offsetForPadding = 10;
   let masthead;
 
   // Update offset based on the masthead and jump links nav heights.
-  React.useEffect(() => {
+  useEffect(() => {
     masthead = document.getElementsByClassName(mastheadStyles.masthead)[0];
 
     if (isVertical) {

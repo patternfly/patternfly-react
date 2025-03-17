@@ -6,7 +6,7 @@ propComponents: ['Pagination', PaginationTitles, PerPageOptions, PaginationToggl
 ouia: true
 ---
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 
 ## Examples
 

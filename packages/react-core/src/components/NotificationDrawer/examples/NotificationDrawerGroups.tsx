@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Button,
   EmptyState,
@@ -24,10 +25,10 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 export const NotificationDrawerGroups: React.FunctionComponent = () => {
-  const [firstGroupExpanded, setFirstGroupExpanded] = React.useState(false);
-  const [secondGroupExpanded, setSecondGroupExpanded] = React.useState(true);
-  const [thirdGroupExpanded, setThirdGroupExpanded] = React.useState(false);
-  const [isOpenMap, setIsOpenMap] = React.useState({});
+  const [firstGroupExpanded, setFirstGroupExpanded] = useState(false);
+  const [secondGroupExpanded, setSecondGroupExpanded] = useState(true);
+  const [thirdGroupExpanded, setThirdGroupExpanded] = useState(false);
+  const [isOpenMap, setIsOpenMap] = useState({});
 
   const onToggle = (id: string) => {
     setIsOpenMap((prevState) => ({ ...prevState, [id]: !prevState[id] }));

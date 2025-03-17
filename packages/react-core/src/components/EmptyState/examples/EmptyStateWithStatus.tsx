@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   EmptyState,
   EmptyStateBody,
@@ -8,7 +9,7 @@ import {
 } from '@patternfly/react-core';
 
 export const EmptyStateWithStatus: React.FunctionComponent = () => {
-  const [status, setStatus] = React.useState<EmptyStateStatus>(EmptyStateStatus.success);
+  const [status, setStatus] = useState<EmptyStateStatus>(EmptyStateStatus.success);
 
   const toggleStatus = () => {
     interface StatusToggleMap {

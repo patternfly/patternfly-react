@@ -5,6 +5,7 @@ subsection: date-and-time
 cssPrefix: pf-v6-c-calendar-month
 propComponents: ['CalendarMonth', 'CalendarFormat', 'CalendarMonthInlineProps']
 ---
+import { useState } from 'react';
 
 ## Examples
 

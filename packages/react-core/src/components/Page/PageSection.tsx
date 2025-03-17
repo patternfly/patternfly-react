@@ -1,4 +1,4 @@
-import { useContext, useEffect, type JSX } from 'react';
+import { useContext, useEffect } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
@@ -66,7 +66,7 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
    */
   'aria-label'?: string;
   /** Sets the base component to render. Defaults to section */
-  component?: keyof JSX.IntrinsicElements;
+  component?: keyof React.JSX.IntrinsicElements;
 }
 
 const variantType = {

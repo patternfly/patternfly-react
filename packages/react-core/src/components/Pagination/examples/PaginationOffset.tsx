@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { Pagination } from '@patternfly/react-core';
 
 export const PaginationOffset: React.FunctionComponent = () => {
-  const [offset, setOffset] = React.useState(7);
-  const [perPage, setPerPage] = React.useState(20);
+  const [offset, setOffset] = useState(7);
+  const [perPage, setPerPage] = useState(20);
 
   const onSetPage = (
     _event: React.MouseEvent | React.KeyboardEvent | MouseEvent,

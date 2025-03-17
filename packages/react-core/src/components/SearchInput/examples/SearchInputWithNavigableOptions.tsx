@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import { SearchInput } from '@patternfly/react-core';
 
 export const SearchInputWithNavigableOptions: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
-  const [resultsCount, setResultsCount] = React.useState(0);
-  const [currentResult, setCurrentResult] = React.useState(1);
+  const [value, setValue] = useState('');
+  const [resultsCount, setResultsCount] = useState(0);
+  const [currentResult, setCurrentResult] = useState(1);
 
   const onChange = (value: string) => {
     setValue(value);

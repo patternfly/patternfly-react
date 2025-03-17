@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import { FileUpload } from '@patternfly/react-core';
 import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-icon';
 
 export const CustomPreviewFileUpload: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState<File>();
-  const [filename, setFilename] = React.useState('');
+  const [value, setValue] = useState<File>();
+  const [filename, setFilename] = useState('');
 
   const handleFileInputChange = (_, file: File) => {
     setValue(file);

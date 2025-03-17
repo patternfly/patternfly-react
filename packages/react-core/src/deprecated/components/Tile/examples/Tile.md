@@ -6,6 +6,7 @@ propComponents: ['Tile']
 deprecated: true
 ---
 
+import { useState } from 'react';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import './Tile.css';
@@ -73,10 +74,11 @@ You can also change the type of `Flex` you can use so that the line breaks in th
 ### Tiles with single selection
 
 ```ts
+import { useState } from 'react';
 import { Tile } from '@patternfly/react-core/deprecated';
 
 const TileSingleSelect: React.FunctionComponent = () => {
-  const [selectedId, setSelectedId] = React.useState<string>('');
+  const [selectedId, setSelectedId] = useState<string>('');
 
   const onSelect = (event: React.MouseEvent) => {
     setSelectedId(event.currentTarget.id);
@@ -103,10 +105,11 @@ const TileSingleSelect: React.FunctionComponent = () => {
 ### Tiles with multiple selection
 
 ```ts
+import { useState } from 'react';
 import { Tile } from '@patternfly/react-core/deprecated';
 
 const TileMultiSelect: React.FunctionComponent = () => {
-  const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
   const onSelect = (event: React.MouseEvent | React.KeyboardEvent) => {
     const targetId = event.currentTarget.id;

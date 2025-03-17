@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { ExpandableSection, ExpandableSectionVariant, Truncate } from '@patternfly/react-core';
 
 export const ExpandableTextDemo: React.FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const onToggle = (_event: React.MouseEvent, isExpanded: boolean) => {
     setIsExpanded(isExpanded);

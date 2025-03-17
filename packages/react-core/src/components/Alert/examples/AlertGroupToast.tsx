@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Alert,
   AlertProps,
@@ -11,7 +11,7 @@ import {
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 export const AlertGroupToast: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
+  const [alerts, setAlerts] = useState<Partial<AlertProps>[]>([]);
 
   const addAlert = (title: string, variant: AlertProps['variant'], key: React.Key) => {
     setAlerts((prevAlerts) => [...prevAlerts, { title, variant, key }]);

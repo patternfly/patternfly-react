@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Content,
   Nav,
@@ -12,7 +13,7 @@ import {
 import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
 
 export const NavGrouped: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState<number | string>('grp-1_itm-1');
+  const [activeItem, setActiveItem] = useState<number | string>('grp-1_itm-1');
 
   const onNavSelect = (
     _event: React.FormEvent<HTMLInputElement>,

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Page,
   Masthead,
@@ -17,7 +18,7 @@ import {
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
 export const PageMultipleSidebarBody: React.FunctionComponent = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const onSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import {
   TextInputGroup,
   TextInputGroupMain,
@@ -16,18 +17,18 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export const AutoCompleteSearch: React.FunctionComponent = () => {
-  const [inputValue, setInputValue] = React.useState('');
-  const [menuIsOpen, setMenuIsOpen] = React.useState(false);
-  const [currentChips, setCurrentChips] = React.useState<string[]>([]);
-  const [hint, setHint] = React.useState('');
+  const [inputValue, setInputValue] = useState('');
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [currentChips, setCurrentChips] = useState<string[]>([]);
+  const [hint, setHint] = useState('');
 
   /** auto-completing suggestion text items to be shown in the menu */
   const suggestionItems = ['Cluster', 'Kind', 'Label', 'Name', 'Namespace', 'Status'];
-  const [menuItems, setMenuItems] = React.useState<React.ReactElement<any>[]>([]);
+  const [menuItems, setMenuItems] = useState<React.ReactElement<any>[]>([]);
 
   /** refs used to detect when clicks occur inside vs outside of the textInputGroup and menu popper */
-  const menuRef = React.useRef<HTMLDivElement>(undefined);
-  const textInputGroupRef = React.useRef<HTMLDivElement>(undefined);
+  const menuRef = useRef<HTMLDivElement>(undefined);
+  const textInputGroupRef = useRef<HTMLDivElement>(undefined);
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
   const handleInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
@@ -46,7 +47,7 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
     setInputValue('');
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     /** in the menu only show items that include the text in the input */
     const filteredMenuItems = suggestionItems
       .filter((item) => !inputValue || item.toLowerCase().includes(inputValue.toString().toLowerCase()))

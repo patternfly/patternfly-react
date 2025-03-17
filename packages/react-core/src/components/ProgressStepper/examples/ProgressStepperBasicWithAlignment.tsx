@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { ProgressStepper, ProgressStep, Checkbox } from '@patternfly/react-core';
 
 export const ProgressStepperBasicWithAlignment: React.FunctionComponent = () => {
-  const [isVertical, setIsVertical] = React.useState(false);
-  const [isCenterAligned, setIsCenterAligned] = React.useState(false);
+  const [isVertical, setIsVertical] = useState(false);
+  const [isCenterAligned, setIsCenterAligned] = useState(false);
 
   return (
     <Fragment>

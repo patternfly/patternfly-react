@@ -1,8 +1,9 @@
+import { createRef, useState } from 'react';
 import { Tabs, Tab, TabTitleText, TabAction, Popover } from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 export const TabsHelp: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<number>(0);
+  const [activeTabKey, setActiveTabKey] = useState<number>(0);
 
   const tabs = ['Users', 'Containers', 'Database', 'Disabled', 'ARIA disabled', 'Help disabled'];
 
@@ -27,7 +28,7 @@ export const TabsHelp: React.FunctionComponent = () => {
       role="region"
     >
       {tabs.map((tab, index) => {
-        const ref = React.createRef<HTMLElement>();
+        const ref = createRef<HTMLElement>();
 
         return (
           <Tab

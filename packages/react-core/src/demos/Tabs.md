@@ -3,6 +3,7 @@ id: Tabs
 section: components
 ---
 
+import { Fragment, useCallback, useRef, useState } from 'react';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -21,6 +22,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 ### Open tabs
 
 ```js isFullscreen
+import { useState } from 'react';
 import {
   PageSection,
   PageBreadcrumb,
@@ -47,7 +49,7 @@ import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 TabsOpenDemo = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState(0);
+  const [activeTabKey, setActiveTabKey] = useState(0);
 
   // Toggle currently active tab
   const handleTabClick = (event, tabIndex) => {
@@ -210,6 +212,7 @@ TabsOpenDemo = () => {
 ### Open tabs with secondary tabs
 
 ```js isFullscreen
+import { useState } from 'react';
 import {
   PageSection,
   PageBreadcrumb,
@@ -236,8 +239,8 @@ import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 TabsOpenWithSecondaryTabsDemo = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState(0);
-  const [activeTabKeySecondary, setActiveTabKeySecondary] = React.useState(10);
+  const [activeTabKey, setActiveTabKey] = useState(0);
+  const [activeTabKeySecondary, setActiveTabKeySecondary] = useState(10);
 
   // Toggle currently active tab
   const handleTabClick = (event, tabIndex) => {

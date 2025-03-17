@@ -1,4 +1,4 @@
-import { type JSX, Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { MenuToggle, Divider, Dropdown, DropdownGroup, DropdownList, DropdownItem } from '@patternfly/react-core';
 
 export const FavoritesDemo: React.FunctionComponent = () => {
@@ -47,7 +47,7 @@ export const FavoritesDemo: React.FunctionComponent = () => {
   ];
 
   const createFavorites = (favIds: string[]) => {
-    const favorites: JSX.Element[] = [];
+    const favorites: React.JSX.Element[] = [];
 
     menuItems.forEach((item) => {
       if (item.type === DropdownList) {

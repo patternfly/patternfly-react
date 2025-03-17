@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import {
   OverflowMenu,
   OverflowMenuControl,
@@ -14,9 +15,9 @@ import {
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const OverflowMenuBreakpointOnContainer: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [containerWidth, setContainerWidth] = React.useState(100);
-  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [containerWidth, setContainerWidth] = useState(100);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const onToggle = () => {
     setIsOpen(!isOpen);

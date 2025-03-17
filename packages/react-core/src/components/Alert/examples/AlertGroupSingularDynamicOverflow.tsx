@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Alert,
   AlertProps,
@@ -11,8 +11,8 @@ import {
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 export const AlertGroupSingularDynamicOverflow: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<Partial<AlertProps>[]>([]);
-  const [overflowMessage, setOverflowMessage] = React.useState<string>('');
+  const [alerts, setAlerts] = useState<Partial<AlertProps>[]>([]);
+  const [overflowMessage, setOverflowMessage] = useState<string>('');
 
   const maxDisplayed = 4;
 

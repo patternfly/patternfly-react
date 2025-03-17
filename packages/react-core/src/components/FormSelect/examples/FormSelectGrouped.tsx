@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
 export const FormSelectGrouped: React.FunctionComponent = () => {
-  const [formSelectValue, setFormSelectValue] = React.useState('2');
+  const [formSelectValue, setFormSelectValue] = useState('2');
 
   const onChange = (_event: React.FormEvent<HTMLSelectElement>, value: string) => {
     setFormSelectValue(value);

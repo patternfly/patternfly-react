@@ -1,14 +1,15 @@
+import { useEffect, useState } from 'react';
 import { Form, FormGroup, FormHelperText, TextInput, HelperText, HelperTextItem } from '@patternfly/react-core';
 
 export const HelperTextStaticTextDynamicVariant: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState('');
-  const [inputValidation, setInputValidation] = React.useState({
+  const [value, setValue] = useState('');
+  const [inputValidation, setInputValidation] = useState({
     ruleLength: 'indeterminate',
     ruleCharacterTypes: 'indeterminate'
   });
   const { ruleLength, ruleCharacterTypes } = inputValidation;
 
-  React.useEffect(() => {
+  useEffect(() => {
     let lengthVariant = ruleLength;
     let typeVariant = ruleCharacterTypes;
 

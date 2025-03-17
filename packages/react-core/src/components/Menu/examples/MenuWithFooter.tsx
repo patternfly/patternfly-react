@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Menu, MenuList, MenuItem, MenuContent, MenuFooter, Button } from '@patternfly/react-core';
 
 export const MenuWithFooter: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState(0);
+  const [activeItem, setActiveItem] = useState(0);
 
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
     const item = itemId as number;

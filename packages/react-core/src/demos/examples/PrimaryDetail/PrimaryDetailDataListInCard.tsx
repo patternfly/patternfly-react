@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Card,
   Content,
@@ -32,10 +32,10 @@ import {
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
 export const PrimaryDetailDataListInCard: React.FunctionComponent = () => {
-  const [drawerPanelBodyContent, setDrawerPanelBodyContent] = React.useState(1);
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [selectedDataListItemId, setSelectedDataListItemId] = React.useState('dataListItem1');
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [drawerPanelBodyContent, setDrawerPanelBodyContent] = useState(1);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedDataListItemId, setSelectedDataListItemId] = useState('dataListItem1');
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const onDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);

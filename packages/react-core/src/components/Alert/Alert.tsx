@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState, type JSX } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import { AlertIcon } from './AlertIcon';
@@ -22,7 +22,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   /** Close button; use the alert action close button component.  */
   actionClose?: React.ReactNode;
   /** Action links; use a single alert action link component or multiple wrapped in an array
-   * or React.Fragment.
+   * or React fragment.
    */
   actionLinks?: React.ReactNode;
   /** Content rendered inside the alert. */
@@ -54,7 +54,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   /** Title of the alert.  */
   title: React.ReactNode;
   /** Sets the element to use as the alert title. Default is h4. */
-  component?: keyof JSX.IntrinsicElements;
+  component?: keyof React.JSX.IntrinsicElements;
   /** Adds accessible text to the alert toggle. */
   toggleAriaLabel?: string;
   /** Position of the tooltip which is displayed if text is truncated. */

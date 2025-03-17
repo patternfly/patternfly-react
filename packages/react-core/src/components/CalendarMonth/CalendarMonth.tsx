@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type JSX } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { TextInput } from '../TextInput';
 import { Button } from '../Button';
 import { Select, SelectList, SelectOption } from '../Select';
@@ -23,7 +23,7 @@ export enum Weekday {
 
 export interface CalendarMonthInlineProps {
   /** Component wrapping the calendar month when used inline. Recommended to be 'article'. */
-  component?: keyof JSX.IntrinsicElements;
+  component?: keyof React.JSX.IntrinsicElements;
   /** Title of the calendar rendered above the inline calendar month. Recommended to be a 'title' component. */
   title?: React.ReactNode;
   /** Id of the accessible label of the calendar month. Recommended to map to the title. */

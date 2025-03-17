@@ -5,6 +5,8 @@ cssPrefix: pf-v6-c-progress
 propComponents: ['Progress']
 ---
 
+import { useState } from 'react';
+
 ## Examples
 ### Basic
 ```ts file="./ProgressBasic.tsx"

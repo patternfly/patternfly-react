@@ -1,10 +1,10 @@
-import { Fragment } from 'react';
+import { Fragment, useRef } from 'react';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import { Button, InputGroup, InputGroupItem, TextInput, Popover, PopoverPosition } from '@patternfly/react-core';
 
 export const InputGroupWithPopover: React.FunctionComponent = () => {
-  const inputGroupRef1 = React.useRef(null);
-  const inputGroupRef2 = React.useRef(null);
+  const inputGroupRef1 = useRef(null);
+  const inputGroupRef2 = useRef(null);
   return (
     <Fragment>
       <InputGroup ref={inputGroupRef1}>

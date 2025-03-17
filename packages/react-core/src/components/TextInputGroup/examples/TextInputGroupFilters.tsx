@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   TextInputGroup,
   TextInputGroupMain,
@@ -10,8 +11,8 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export const TextInputGroupFilters: React.FunctionComponent = () => {
-  const [inputValue, setInputValue] = React.useState('');
-  const [currentChips, setCurrentChips] = React.useState([
+  const [inputValue, setInputValue] = useState('');
+  const [currentChips, setCurrentChips] = useState([
     'chip one',
     'chip two',
     'chip three',

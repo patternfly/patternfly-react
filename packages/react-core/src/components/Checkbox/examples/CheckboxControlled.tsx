@@ -1,11 +1,11 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
 export const CheckboxControlled: React.FunctionComponent = () => {
-  const [isChecked1, setIsChecked1] = React.useState<boolean>(false);
-  const [isChecked2, setIsChecked2] = React.useState<boolean>(false);
-  const [isChecked3, setIsChecked3] = React.useState<boolean>(false);
-  const [isChecked4, setIsChecked4] = React.useState<boolean>(false);
+  const [isChecked1, setIsChecked1] = useState<boolean>(false);
+  const [isChecked2, setIsChecked2] = useState<boolean>(false);
+  const [isChecked3, setIsChecked3] = useState<boolean>(false);
+  const [isChecked4, setIsChecked4] = useState<boolean>(false);
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
     const target = event.currentTarget;
@@ -30,14 +30,14 @@ export const CheckboxControlled: React.FunctionComponent = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isChecked1 !== null) {
       setIsChecked2(isChecked1);
       setIsChecked3(isChecked1);
     }
   }, [isChecked1]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsChecked1((isChecked2 && isChecked3) || (isChecked2 || isChecked3 ? null : false));
   }, [isChecked2, isChecked3]);
 

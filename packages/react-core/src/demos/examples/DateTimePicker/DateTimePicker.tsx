@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   CalendarMonth,
   InputGroup,
@@ -15,10 +16,10 @@ import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outl
 import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 
 export const DateTimePicker: React.FunctionComponent = () => {
-  const [isCalendarOpen, setIsCalendarOpen] = React.useState(false);
-  const [isTimeOpen, setIsTimeOpen] = React.useState(false);
-  const [valueDate, setValueDate] = React.useState('MM-DD-YYYY');
-  const [valueTime, setValueTime] = React.useState('HH:MM');
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const [isTimeOpen, setIsTimeOpen] = useState(false);
+  const [valueDate, setValueDate] = useState('MM-DD-YYYY');
+  const [valueTime, setValueTime] = useState('HH:MM');
   const times = Array.from(new Array(10), (_, i) => i + 8);
   const defaultTime = '0:00';
   const dateFormat = (date: Date) =>

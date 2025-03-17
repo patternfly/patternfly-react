@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import {
   Brand,
   Breadcrumb,
@@ -34,10 +34,10 @@ import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Co
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState(0);
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
+  const [activeItem, setActiveItem] = useState(0);
 
-  const drawerRef = React.useRef<HTMLSpanElement>(null);
+  const drawerRef = useRef<HTMLSpanElement>(null);
 
   const onExpand = () => {
     if (drawerRef.current) {

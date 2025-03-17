@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
 export const TabsUnmountingInvisibleChildren: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
   // Toggle currently active tab
   const handleTabClick = (
     event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,

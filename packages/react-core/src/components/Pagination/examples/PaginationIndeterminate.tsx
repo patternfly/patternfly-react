@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Pagination } from '@patternfly/react-core';
 
 export const PaginationIndeterminate: React.FunctionComponent = () => {
-  const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(20);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(20);
 
   const onSetPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPage: number) => {
     setPage(newPage);

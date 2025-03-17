@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 /* eslint-disable camelcase */
 import {
   Card,
@@ -24,7 +24,7 @@ import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
 import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 export const CardLogView: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const selectItems = (
     <SelectList>

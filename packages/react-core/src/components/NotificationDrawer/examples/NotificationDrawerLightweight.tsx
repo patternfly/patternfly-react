@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Button,
   EmptyState,
@@ -18,9 +19,9 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 export const NotificationDrawerLightweight: React.FunctionComponent = () => {
-  const [firstGroupExpanded, setFirstGroupExpanded] = React.useState(false);
-  const [secondGroupExpanded, setSecondGroupExpanded] = React.useState(true);
-  const [thirdGroupExpanded, setThirdGroupExpanded] = React.useState(false);
+  const [firstGroupExpanded, setFirstGroupExpanded] = useState(false);
+  const [secondGroupExpanded, setSecondGroupExpanded] = useState(true);
+  const [thirdGroupExpanded, setThirdGroupExpanded] = useState(false);
 
   const toggleFirstDrawer = (_event: any, value: boolean) => {
     setFirstGroupExpanded(value);

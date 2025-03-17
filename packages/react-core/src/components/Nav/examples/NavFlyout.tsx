@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Nav, NavItem, NavList, Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
 
 export const NavFlyout: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState('nav-flyout-default-link-1');
+  const [activeItem, setActiveItem] = useState('nav-flyout-default-link-1');
 
   const onSelect = (event: React.FormEvent<HTMLInputElement>, result: { itemId: number | string }) => {
     setActiveItem(result.itemId as string);

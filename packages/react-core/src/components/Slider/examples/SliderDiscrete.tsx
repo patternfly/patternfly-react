@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Slider, SliderOnChangeEvent, Content } from '@patternfly/react-core';
 
 export const SliderDiscrete: React.FunctionComponent = () => {
@@ -11,7 +12,7 @@ export const SliderDiscrete: React.FunctionComponent = () => {
     value7: 25
   };
 
-  const [numValue, setNumValue] = React.useState(initialValues);
+  const [numValue, setNumValue] = useState(initialValues);
 
   const handleChange = (value: number, name: string) => {
     setNumValue({ ...numValue, [name]: value });

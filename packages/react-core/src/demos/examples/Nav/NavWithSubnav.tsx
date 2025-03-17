@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Card,
   CardBody,
@@ -19,8 +19,8 @@ import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/Dashbo
 import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
 
 export const NavWithSubnav: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState<string | number>(0);
-  const [activeSubNavItem, setActiveSubNavItem] = React.useState<string | number>(7);
+  const [activeItem, setActiveItem] = useState<string | number>(0);
+  const [activeSubNavItem, setActiveSubNavItem] = useState<string | number>(7);
 
   const onNavSelect = (
     _event: React.FormEvent<HTMLInputElement>,

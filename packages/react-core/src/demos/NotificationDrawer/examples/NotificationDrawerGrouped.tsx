@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import {
   Avatar,
   Brand,
@@ -58,14 +58,14 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.PF-HorizontalLogo-Color.svg';
 
 export const NotificationDrawerGrouped: React.FunctionComponent = () => {
-  const drawerRef = React.useRef<HTMLElement | null>(null);
+  const drawerRef = useRef<HTMLElement | null>(null);
 
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
-  const [isDrawerExpanded, setIsDrawerExpanded] = React.useState(false);
-  const [firstDrawerGroupExpanded, setFirstDrawerGroupExpanded] = React.useState(false);
-  const [secondDrawerGroupExpanded, setSecondDrawerGroupExpanded] = React.useState(true);
-  const [thirdDrawerGroupExpanded, setThirdDrawerGroupExpanded] = React.useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
+  const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
+  const [firstDrawerGroupExpanded, setFirstDrawerGroupExpanded] = useState(false);
+  const [secondDrawerGroupExpanded, setSecondDrawerGroupExpanded] = useState(true);
+  const [thirdDrawerGroupExpanded, setThirdDrawerGroupExpanded] = useState(false);
 
   interface UnreadMap {
     [groupName: string]: {
@@ -73,8 +73,8 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
     } | null;
   }
 
-  const [activeItem, setActiveItem] = React.useState<number | string>(0);
-  const [isUnreadMap, setIsUnreadMap] = React.useState<UnreadMap | null>({
+  const [activeItem, setActiveItem] = useState<number | string>(0);
+  const [isUnreadMap, setIsUnreadMap] = useState<UnreadMap | null>({
     'group-1': {
       'notification-5': true,
       'notification-6': true
@@ -86,13 +86,13 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
     'group-3': null
   });
 
-  const [shouldShowNotifications, setShouldShowNotifications] = React.useState(true);
+  const [shouldShowNotifications, setShouldShowNotifications] = useState(true);
 
   interface ActionsMenu {
     [toggleId: string]: boolean;
   }
 
-  const [isActionsMenuOpen, setIsActionsMenuOpen] = React.useState<ActionsMenu | {}>({});
+  const [isActionsMenuOpen, setIsActionsMenuOpen] = useState<ActionsMenu | {}>({});
 
   const onNavSelect = (
     _event: React.FormEvent<HTMLInputElement>,

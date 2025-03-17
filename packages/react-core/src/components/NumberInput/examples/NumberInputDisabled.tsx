@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { NumberInput } from '@patternfly/react-core';
 
 export const NumberInputDisabled: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState<number | ''>(100);
+  const [value, setValue] = useState<number | ''>(100);
   const minValue = 0;
   const maxValue = 100;
 

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Card,
   CardTitle,
@@ -19,7 +20,7 @@ import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
 import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
 export const CardWithAccordion: React.FunctionComponent = () => {
-  const [openCPU, setOpenCPU] = React.useState('cpu1');
+  const [openCPU, setOpenCPU] = useState('cpu1');
 
   return (
     <Card>

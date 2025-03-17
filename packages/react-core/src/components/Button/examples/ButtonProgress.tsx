@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button, Flex } from '@patternfly/react-core';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
@@ -9,10 +10,10 @@ interface LoadingPropsType {
 }
 
 export const ButtonProgress: React.FunctionComponent = () => {
-  const [isPrimaryLoading, setIsPrimaryLoading] = React.useState<boolean>(true);
-  const [isSecondaryLoading, setIsSecondaryLoading] = React.useState<boolean>(true);
-  const [isInlineLoading, setIsInlineLoading] = React.useState<boolean>(true);
-  const [isUploading, setIsUploading] = React.useState<boolean>(false);
+  const [isPrimaryLoading, setIsPrimaryLoading] = useState<boolean>(true);
+  const [isSecondaryLoading, setIsSecondaryLoading] = useState<boolean>(true);
+  const [isInlineLoading, setIsInlineLoading] = useState<boolean>(true);
+  const [isUploading, setIsUploading] = useState<boolean>(false);
 
   const primaryLoadingProps = {} as LoadingPropsType;
   primaryLoadingProps.spinnerAriaValueText = 'Loading';

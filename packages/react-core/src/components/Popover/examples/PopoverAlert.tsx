@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Popover, Button } from '@patternfly/react-core';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
@@ -6,7 +7,7 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 export const AlertPopover: React.FunctionComponent = () => {
-  const [alertSeverityVariant, setAlertSeverityVariant] = React.useState('default');
+  const [alertSeverityVariant, setAlertSeverityVariant] = useState('default');
 
   const alertIcons = {
     custom: <BellIcon />,

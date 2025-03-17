@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
 import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 
 export const MenuOptionMultiSelect: React.FunctionComponent = () => {
-  const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
+  const [selectedItems, setSelectedItems] = useState<number[]>([]);
 
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
     const item = itemId as number;
