@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import {
   Avatar,
   Brand,
@@ -227,7 +227,7 @@ export const PaginatedTableAction = () => {
   };
 
   const toolbarItems = (
-    <React.Fragment>
+    <Fragment>
       <Toolbar id="rtl-paginated-table">
         <ToolbarContent>
           <ToolbarItem>
@@ -247,7 +247,7 @@ export const PaginatedTableAction = () => {
           <ToolbarItem variant="pagination">{renderPagination(PaginationVariant.top)}</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
-    </React.Fragment>
+    </Fragment>
   );
 
   const pageNav = (
@@ -432,7 +432,7 @@ export const PaginatedTableAction = () => {
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Page sidebar={sidebar} masthead={masthead} isManagedSidebar>
         <PageBreadcrumb>
           <Breadcrumb aria-label={translation.breadcrumbs.ariaLabel || undefined}>
@@ -499,6 +499,6 @@ export const PaginatedTableAction = () => {
           </Card>
         </PageSection>
       </Page>
-    </React.Fragment>
+    </Fragment>
   );
 };

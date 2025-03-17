@@ -1,4 +1,4 @@
-import { type JSX, useState } from 'react';
+import { useState } from 'react';
 import {
   Badge,
   Breadcrumb,
@@ -30,7 +30,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
   const [drilldownPath, setDrilldownPath] = useState<string[]>([]);
   const [menuHeights, setMenuHeights] = useState<any>({});
   const [activeMenu, setActiveMenu] = useState<string>('breadcrumbs-rootMenu');
-  const [breadcrumb, setBreadcrumb] = useState<JSX.Element | null>();
+  const [breadcrumb, setBreadcrumb] = useState<React.JSX.Element | null>();
   const [withMaxMenuHeight, setWithMaxMenuHeight] = useState(false);
 
   const onToggle = (isOpen: boolean, key: string) => {
@@ -60,7 +60,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
     _event: React.KeyboardEvent<Element> | MouseEvent | React.MouseEvent<any, MouseEvent>,
     toMenuId: string,
     fromPathId: string,
-    breadcrumb: JSX.Element | null
+    breadcrumb: React.JSX.Element | null
   ) => {
     setMenuDrilledIn((prevMenuDrilledIn) => {
       const indexOfMenuId = prevMenuDrilledIn.indexOf(toMenuId);

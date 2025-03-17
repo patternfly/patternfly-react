@@ -1,4 +1,4 @@
-import { Component, type JSX } from 'react';
+import { Component } from 'react';
 import { OUIAProps, getDefaultOUIAId } from '@patternfly/react-core/dist/esm/helpers/OUIA/ouia';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
@@ -105,7 +105,7 @@ export interface TableProps extends OUIAProps {
   /** Wrapper for the body  */
   bodyWrapper?: Function;
   /** Wrapper for the row */
-  rowWrapper?: (props: RowWrapperProps) => JSX.Element;
+  rowWrapper?: (props: RowWrapperProps) => React.JSX.Element;
   /** A valid WAI-ARIA role to be applied to the table element */
   role?: string;
   /** If set to true, the table header sticks to the top of its container */

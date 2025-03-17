@@ -1,4 +1,4 @@
-import { Component, createRef, type JSX } from 'react';
+import { Component, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_xl';
@@ -299,7 +299,7 @@ class Page extends Component<PageProps, PageState> {
       </PageGroup>
     ) : null;
 
-    const Component: keyof JSX.IntrinsicElements = mainComponent;
+    const Component: keyof React.JSX.IntrinsicElements = mainComponent;
 
     const main = (
       <div className={css(styles.pageMainContainer, isContentFilled && styles.modifiers.fill)}>

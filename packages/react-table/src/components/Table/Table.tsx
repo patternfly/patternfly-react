@@ -1,4 +1,4 @@
-import { createContext, forwardRef, useEffect, useRef, useState, type JSX } from 'react';
+import { createContext, forwardRef, useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
 import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
@@ -105,7 +105,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   const tableRef = innerRef || ref;
 
   const [hasSelectableRows, setHasSelectableRows] = useState(false);
-  const [tableCaption, setTableCaption] = useState<JSX.Element | undefined>();
+  const [tableCaption, setTableCaption] = useState<React.JSX.Element | undefined>();
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeys);

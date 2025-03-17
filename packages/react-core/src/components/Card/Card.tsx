@@ -1,4 +1,4 @@
-import { createContext, type JSX } from 'react';
+import { createContext } from 'react';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { css } from '@patternfly/react-styles';
 import { useOUIAProps, OUIAProps } from '../../helpers';
@@ -11,7 +11,7 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   /** Additional classes added to the Card */
   className?: string;
   /** Sets the base component to render. defaults to div */
-  component?: keyof JSX.IntrinsicElements;
+  component?: keyof React.JSX.IntrinsicElements;
   /** Modifies the card to include compact styling. Should not be used with isLarge. */
   isCompact?: boolean;
   /** Flag indicating that the card is selectable. */

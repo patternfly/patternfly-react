@@ -1,4 +1,4 @@
-import { useContext, type JSX } from 'react';
+import { useContext } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { CardContext } from './Card';
@@ -9,7 +9,7 @@ export interface CardTitleProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the CardTitle */
   className?: string;
   /** Sets the base component to render. defaults to div */
-  component?: keyof JSX.IntrinsicElements;
+  component?: keyof React.JSX.IntrinsicElements;
 }
 
 export const CardTitle: React.FunctionComponent<CardTitleProps> = ({

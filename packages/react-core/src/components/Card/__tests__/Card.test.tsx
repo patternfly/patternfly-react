@@ -1,5 +1,3 @@
-import { type JSX } from 'react';
-
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -33,7 +31,7 @@ describe('Card', () => {
   test('allows passing in a React Component as the component', () => {
     const Component = () => <div>im a div</div>;
 
-    render(<Card component={Component as unknown as keyof JSX.IntrinsicElements} />);
+    render(<Card component={Component as unknown as keyof React.JSX.IntrinsicElements} />);
     expect(screen.getByText('im a div')).toBeInTheDocument();
   });
 

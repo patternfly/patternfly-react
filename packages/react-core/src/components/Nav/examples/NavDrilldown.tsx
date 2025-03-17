@@ -1,12 +1,10 @@
-import { type JSX, useState } from 'react';
-
 import { Nav, MenuContent, MenuItem, MenuList, DrilldownMenu, Menu } from '@patternfly/react-core';
 
 interface MenuHeights {
   [menuId: string]: number;
 }
 
-const subMenuTwo: JSX.Element = (
+const subMenuTwo: React.JSX.Element = (
   <DrilldownMenu id="nav-drilldown-subMenu-2">
     <MenuItem itemId="nav-drilldown-subMenu-2-breadcrumb" direction="up">
       SubMenu 1 - Item 1
@@ -23,7 +21,7 @@ const subMenuTwo: JSX.Element = (
   </DrilldownMenu>
 );
 
-const subMenuOne: JSX.Element = (
+const subMenuOne: React.JSX.Element = (
   <DrilldownMenu id="nav-drilldown-subMenu-1">
     <MenuItem itemId="nav-drilldown-subMenu-1-breadcrumb" direction="up">
       Item 1

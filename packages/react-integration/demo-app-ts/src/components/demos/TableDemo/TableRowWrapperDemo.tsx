@@ -1,4 +1,4 @@
-import { Component, type JSX } from 'react';
+import { Component } from 'react';
 import { RowWrapperProps, ICell, IRow } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
@@ -14,7 +14,7 @@ interface ITableRowWrapperDemoState {
 
 export class TableRowWrapperDemo extends Component<TableProps, ITableRowWrapperDemoState> {
   static displayName = 'TableRowWrapperDemo';
-  customRowWrapper: (props: RowWrapperProps) => JSX.Element;
+  customRowWrapper: (props: RowWrapperProps) => React.JSX.Element;
   constructor(props: TableProps) {
     super(props);
     this.state = {
