@@ -158,7 +158,8 @@ const STROKE_LINE_JOIN = chart_global_stroke_line_join.value;
 
 /**
  * Base theme containing Victory properties only
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const BaseTheme: ChartThemeDefinition = {
   area: {
@@ -398,8 +399,8 @@ export const BaseTheme: ChartThemeDefinition = {
 
 /**
  * Base component theme
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export const BaseComponentTheme: ChartComponentThemeDefinition = {
   axis: {

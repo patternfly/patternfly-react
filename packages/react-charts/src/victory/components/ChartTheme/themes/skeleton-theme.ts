@@ -16,7 +16,8 @@ const LABEL_CENTERED_PROPS = {
 
 /**
  * Victory color theme
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const ColorTheme = (props: ColorThemeInterface): ChartThemeDefinition => {
   const { COLOR_SCALE } = props;
@@ -192,8 +193,8 @@ export const ColorTheme = (props: ColorThemeInterface): ChartThemeDefinition => 
 
 /**
  * Component color theme
- * @private
- * @beta
+ *
+ * @private Not intended as public API and subject to change
  */
 export const ColorComponentTheme = (props: ColorThemeInterface): ChartComponentThemeDefinition => {
   const { COLOR_SCALE } = props;

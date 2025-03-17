@@ -7,7 +7,8 @@ import chart_donut_label_subtitle_position from '@patternfly/react-tokens/dist/e
 
 /**
  * Donut styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const DonutStyles = {
   label: {

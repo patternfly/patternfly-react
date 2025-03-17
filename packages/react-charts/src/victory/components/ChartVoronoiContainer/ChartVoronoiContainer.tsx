@@ -38,7 +38,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   children?: React.ReactElement<any> | React.ReactElement<any>[];
@@ -139,7 +139,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   polar?: boolean;

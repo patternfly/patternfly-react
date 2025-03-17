@@ -14,7 +14,8 @@ const TYPOGRAPHY_FONT_SIZE = chart_global_FontSize_sm.value;
 
 /**
  * Common styles
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const CommonStyles = {
   label: {

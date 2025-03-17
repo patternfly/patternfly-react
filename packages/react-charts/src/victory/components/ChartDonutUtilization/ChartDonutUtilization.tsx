@@ -260,7 +260,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   isStatic?: boolean;
@@ -403,7 +403,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   patternUnshiftIndex?: number;
@@ -419,7 +419,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };

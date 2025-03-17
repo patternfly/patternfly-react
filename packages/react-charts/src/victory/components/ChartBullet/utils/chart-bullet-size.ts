@@ -20,7 +20,8 @@ interface ChartBulletScaleInterface {
 
 /**
  * Scale dimensions
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const scaleDimensions = ({
   defaultSize,
@@ -42,13 +43,15 @@ const scaleDimensions = ({
 
 /**
  * Scale bar width per the given size properties
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const scaleBarWidth = (props: ChartBulletScaleInterface) => Math.max(scaleDimensions(props), 0);
 
 /**
  * Scale size per the given size properties
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 const scaleSize = ({ value, ...rest }: ChartBulletScaleInterface) =>
   Math.round(
@@ -69,7 +72,8 @@ interface ChartBulletSizeInterface {
 
 /**
  * Scale size per the given size properties
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getComparativeMeasureErrorWidth = ({
   height,
@@ -90,7 +94,8 @@ export const getComparativeMeasureErrorWidth = ({
 
 /**
  * Returns comparative measure width
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getComparativeMeasureWidth = ({
   height,
@@ -111,7 +116,8 @@ export const getComparativeMeasureWidth = ({
 
 /**
  * Returns comparative measure warning width
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getComparativeMeasureWarningWidth = ({
   height,
@@ -132,7 +138,8 @@ export const getComparativeMeasureWarningWidth = ({
 
 /**
  * Returns primary dot measure size
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getPrimaryDotMeasureSize = ({
   height,
@@ -153,7 +160,8 @@ export const getPrimaryDotMeasureSize = ({
 
 /**
  * Returns primary segmented measure width
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getPrimarySegmentedMeasureWidth = ({
   height,
@@ -175,7 +183,8 @@ export const getPrimarySegmentedMeasureWidth = ({
 
 /**
  * Returns qualitative range bar width
- * @private
+ *
+ * @private Not intended as public API and subject to change
  */
 export const getQualitativeRangeBarWidth = ({
   height,

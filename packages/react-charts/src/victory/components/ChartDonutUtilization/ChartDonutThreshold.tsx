@@ -76,7 +76,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   children?: React.ReactElement<any>;
@@ -320,7 +320,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    *
    * Note: This prop should not be set manually.
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
@@ -383,7 +383,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    *
    * @example themeColor={ChartThemeColor.blue}
    *
-   * @private
+   * @private Not intended as public API and subject to change
    * @hide
    */
   themeColor?: string;
