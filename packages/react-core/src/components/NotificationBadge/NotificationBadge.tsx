@@ -34,6 +34,9 @@ export interface NotificationBadgeProps extends Omit<ButtonProps, 'variant'> {
    * time this prop is true, the animation will be triggered a single time.
    */
   shouldNotify?: boolean;
+  /** Callback for when the animation of the notification badge icon ends.
+   */
+  onAnimationEnd?: (event: React.AnimationEvent<HTMLButtonElement>) => void;
 }
 
 export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> = ({
@@ -45,6 +48,7 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
   className,
   isExpanded = false,
   shouldNotify = false,
+  onAnimationEnd,
   ...props
 }: NotificationBadgeProps) => {
   const [isAnimating, setIsAnimating] = useState(shouldNotify);
@@ -66,7 +70,8 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
     setIsAnimating(shouldNotify);
   }, [shouldNotify]);
 
-  const handleAnimationEnd = () => {
+  const handleAnimationEnd = (event: React.AnimationEvent<HTMLButtonElement>) => {
+    onAnimationEnd?.(event);
     setIsAnimating(false);
   };
 
