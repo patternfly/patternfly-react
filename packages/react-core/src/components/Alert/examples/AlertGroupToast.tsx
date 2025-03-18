@@ -14,7 +14,7 @@ export const AlertGroupToast: React.FunctionComponent = () => {
   const [alerts, setAlerts] = useState<Partial<AlertProps>[]>([]);
 
   const addAlert = (title: string, variant: AlertProps['variant'], key: React.Key) => {
-    setAlerts((prevAlerts) => [...prevAlerts, { title, variant, key }]);
+    setAlerts((prevAlerts) => [{ title, variant, key }, ...prevAlerts]);
   };
 
   const removeAlert = (key: React.Key) => {

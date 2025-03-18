@@ -3,6 +3,7 @@ export * from './Accordion/AccordionDemo';
 export * from './AlertDemo/AlertDemo';
 export * from './AlertDemo/AlertTimeoutCloseButtonDemo';
 export * from './AlertGroupDemo/AlertGroupDemo';
+export * from './AlertGroupDemo/AlertGroupAnimationsDemo';
 export * from './AlertGroupDemo/AlertGroupTimeoutFromBottomDemo';
 export * from './BackToTopDemo/BackToTopDemo';
 export * from './BreadcrumbDemo/BreadcrumbDemo';

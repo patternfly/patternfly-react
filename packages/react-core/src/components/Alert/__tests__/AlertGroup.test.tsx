@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Alert } from '../../Alert';
@@ -66,8 +66,48 @@ test('Toast Alert Group contains expected modifier class', () => {
   expect(screen.getByLabelText('group label')).toHaveClass('pf-m-toast');
 });
 
-test('alertgroup closes when alerts are closed', async () => {
-  const onClose = jest.fn();
+test('Calls the callback set by updateTransitionEnd when transition ends and animations are enabled', async () => {
+  window.matchMedia = (query) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {}, // deprecated
+    removeListener: () => {}, // deprecated
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => true
+  });
+  const mockCallback = jest.fn();
+  const user = userEvent.setup();
+
+  render(
+    <AlertGroup hasAnimations isToast appendTo={document.body}>
+      <Alert
+        isLiveRegion
+        title={'Test Alert'}
+        actionClose={<AlertActionCloseButton aria-label="Close" onClose={mockCallback} />}
+      />
+    </AlertGroup>
+  );
+
+  await user.click(screen.getByLabelText('Close'));
+  expect(mockCallback).not.toHaveBeenCalled();
+  fireEvent.transitionEnd(screen.getByText('Test Alert').closest('.pf-v6-c-alert-group__item') as HTMLElement);
+  expect(mockCallback).toHaveBeenCalled();
+});
+
+test('Does not call the callback set by updateTransitionEnd when transition ends and animations are disabled', async () => {
+  window.matchMedia = (query) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {}, // deprecated
+    removeListener: () => {}, // deprecated
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => true
+  });
+  const mockCallback = jest.fn();
   const user = userEvent.setup();
 
   render(
@@ -75,11 +115,14 @@ test('alertgroup closes when alerts are closed', async () => {
       <Alert
         isLiveRegion
         title={'Test Alert'}
-        actionClose={<AlertActionCloseButton aria-label="Close" onClose={onClose} />}
+        actionClose={<AlertActionCloseButton aria-label="Close" onClose={mockCallback} />}
       />
     </AlertGroup>
   );
 
   await user.click(screen.getByLabelText('Close'));
-  expect(onClose).toHaveBeenCalled();
+  expect(mockCallback).toHaveBeenCalledTimes(1);
+  // The transitionend event firing should not cause the callback to be called again
+  fireEvent.transitionEnd(screen.getByText('Test Alert').closest('.pf-v6-c-alert-group__item') as HTMLElement);
+  expect(mockCallback).toHaveBeenCalledTimes(1);
 });

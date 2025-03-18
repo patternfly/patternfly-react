@@ -14,7 +14,7 @@ export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
   const [alerts, setAlerts] = useState<Partial<AlertProps>[]>([]);
 
   const addAlerts = (incomingAlerts: Partial<AlertProps>[]) => {
-    setAlerts((prevAlerts) => [...prevAlerts, ...incomingAlerts]);
+    setAlerts((prevAlerts) => [...incomingAlerts, ...prevAlerts]);
   };
 
   const removeAlert = (key: React.Key) => {

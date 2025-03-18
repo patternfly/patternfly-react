@@ -21,12 +21,12 @@ export const AlertGroupAsync: React.FunctionComponent = () => {
 
   const addAlert = () => {
     setAlerts((prevAlerts) => [
-      ...prevAlerts,
       {
         title: `Async notification ${prevAlerts.length + 1} was added to the queue.`,
         variant: 'danger',
         key: getUniqueId()
-      }
+      },
+      ...prevAlerts
     ]);
   };
 

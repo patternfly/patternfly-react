@@ -117,7 +117,6 @@ const AlertTimeout: React.FunctionComponent = () => {
     setNewAlertKey((key) => key + 1);
     setAlerts((prevAlerts) => {
       return [
-        ...prevAlerts,
         <Alert
           title="Default timeout Alert"
           timeout={timeout}
@@ -136,7 +135,7 @@ const AlertTimeout: React.FunctionComponent = () => {
           key={newAlertKey}
         >
           This alert will dismiss after {`${timeout / 1000} seconds`}
-        </Alert>
+        </Alert>, ...prevAlerts
       ];
     });
   };
