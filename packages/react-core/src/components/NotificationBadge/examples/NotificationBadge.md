@@ -18,7 +18,7 @@ The `isExpanded` property is also passed in to:
 
 - set the `aria-expanded` attribute on the notification badge,
 - apply visual styling on the notification badge, and
-- to indiciate that a notification drawer is expanded, for use-cases as seen in our [notification drawer react demos](/components/notification-drawer/react-demos).
+- to indicate that a notification drawer is expanded, for use-cases as seen in our [notification drawer react demos](/components/notification-drawer/react-demos).
 
 ```ts file='./NotificationBadgeBasic.tsx'
 ```
@@ -32,7 +32,7 @@ You can display a number within the notification badge by passing in the `count`
 
 ### With animation
 
-You can animate the icon within the notification badge by passing in the `hasNotify` property. In this example, the notification badge icon will only animate if the notification count is greater than 0.
+To animate the icon within the notification badge, use the `shouldNotify` property. In this example, the notification badge icon will only animate if the notification count is greater than 0.
 
 ```ts file='./NotificationBadgeWithAnimation.tsx'
 ```
