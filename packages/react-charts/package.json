@@ -7,6 +7,9 @@
   "types": "dist/esm/index.d.ts",
   "typesVersions": {
     "*": {
+      "echarts": [
+        "dist/esm/echarts/index.d.ts"
+      ],
       "victory": [
         "dist/esm/victory/index.d.ts"
       ]
@@ -42,7 +45,13 @@
     "lodash": "^4.17.21",
     "tslib": "^2.8.1"
   },
+  "devDependencies": {
+    "@types/lodash": "^4.17.16",
+    "fs-extra": "^11.3.0",
+    "jest-canvas-mock": "^2.5.2"
+  },
   "peerDependencies": {
+    "echarts": "^5.6.0",
     "react": "^17 || ^18",
     "react-dom": "^17 || ^18",
     "victory-area": "^37.3.6",
@@ -64,6 +73,9 @@
     "victory-zoom-container": "^37.3.6"
   },
   "peerDependenciesMeta": {
+    "echarts": {
+      "optional": true
+    },
     "victory-area": {
       "optional": true
     },
@@ -120,9 +132,5 @@
     "clean": "rimraf dist echarts victory",
     "build:single:packages": "node ../../scripts/build-single-packages.mjs --config single-packages.config.json",
     "subpaths": "node ../../scripts/exportSubpaths.mjs --config subpaths.config.json"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.17.16",
-    "fs-extra": "^11.3.0"
   }
 }

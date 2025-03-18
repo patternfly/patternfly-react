@@ -5,6 +5,10 @@
     "outDir": "./dist/esm",
     "tsBuildInfoFile": "dist/esm.tsbuildinfo",
     "noImplicitAny": false,
+    "baseUrl": ".",
+    "paths": {
+      "./next": ["./src/echarts/next"]
+    }
   },
   "include": [
     "./src/*",
