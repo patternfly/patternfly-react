@@ -1,0 +1,15 @@
+import React from 'react';
+import { IconProps } from '../IconProps';
+
+export const ICON_NAME = ({
+  className = '',
+  title,
+  ...props
+}: IconProps) => {
+  return (
+    <svg className={className} viewBox="0 0 24 24" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
+      {title && <title>{title}</title>}
+      SVG_PATH
+    </svg>
+  );
+};
