@@ -1,5 +1,6 @@
 import { NotificationBadge } from '../NotificationBadge';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import styles from '@patternfly/react-styles/css/components/Button/button';
 
 Object.values([true, false]).forEach((attentionVariant) => {
   test(`${attentionVariant} NotificationBadge needs attention`, () => {
@@ -32,11 +33,25 @@ test('Renders with aria-expanded="true" when isExpanded is passed in.', () => {
 test('Does not render with .pf-m-clicked when isExpanded is not passed in.', () => {
   render(<NotificationBadge />);
 
-  expect(screen.getByRole('button')).not.toHaveClass('pf-m-clicked');
+  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.clicked);
 });
 
 test('Renders with .pf-m-clicked when isExpanded is passed in.', () => {
   render(<NotificationBadge isExpanded />);
 
-  expect(screen.getByRole('button')).toHaveClass('pf-m-clicked');
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.clicked);
+});
+
+test('Renders with .pf-m-notify when hasAnimation is passed in.', () => {
+  render(<NotificationBadge shouldNotify />);
+
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.notify);
+});
+
+test('Removes the .pf-m-notify class when animation has ended.', async () => {
+  render(<NotificationBadge shouldNotify />);
+  fireEvent.animationEnd(screen.getByRole('button'));
+  await screen.findByRole('button');
+
+  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.notify);
 });
