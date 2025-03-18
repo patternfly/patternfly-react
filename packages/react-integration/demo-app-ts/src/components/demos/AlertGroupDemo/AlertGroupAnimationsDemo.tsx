@@ -21,7 +21,7 @@ export const AlertGroupAnimationsDemo: React.FunctionComponent = () => {
           </Button>
         </FlexItem>
       </Flex>
-      <AlertGroup isToast isLiveRegion>
+      <AlertGroup hasAnimations isToast isLiveRegion>
         {alerts.map(({ key, title }) => (
           <Alert
             id="animated-alert"

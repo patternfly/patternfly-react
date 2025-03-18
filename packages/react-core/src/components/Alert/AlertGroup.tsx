@@ -9,7 +9,7 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   /** Alerts to be rendered in the AlertGroup */
   children?: React.ReactNode;
   /** @beta Flag to indicate whether Alerts are animated upon rendering and being dismissed. This is intended
-   * to be set to false for testing purposes only.
+   * to remain false for testing purposes only.
    */
   hasAnimations?: boolean;
   /** Toast notifications are positioned at the top right corner of the viewport */
@@ -62,7 +62,7 @@ class AlertGroup extends Component<AlertGroupProps, AlertGroupState> {
     const {
       className,
       children,
-      hasAnimations = true,
+      hasAnimations = false,
       isToast,
       isLiveRegion,
       onOverflowClick,

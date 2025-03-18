@@ -81,7 +81,7 @@ test('Calls the callback set by updateTransitionEnd when transition ends and ani
   const user = userEvent.setup();
 
   render(
-    <AlertGroup isToast appendTo={document.body}>
+    <AlertGroup hasAnimations isToast appendTo={document.body}>
       <Alert
         isLiveRegion
         title={'Test Alert'}
@@ -111,7 +111,7 @@ test('Does not call the callback set by updateTransitionEnd when transition ends
   const user = userEvent.setup();
 
   render(
-    <AlertGroup hasAnimations={false} isToast appendTo={document.body}>
+    <AlertGroup isToast appendTo={document.body}>
       <Alert
         isLiveRegion
         title={'Test Alert'}
