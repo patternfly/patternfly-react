@@ -3,3 +3,5 @@
 /components
 /layouts
 /helpers
+
+.env

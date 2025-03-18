@@ -330,4 +330,3 @@ The process for revoking someone's maintainer status is a discussion limited to 
 [1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct/
 [2]: mailto:patternfly@redhat.com
 [3]: https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type
- 
