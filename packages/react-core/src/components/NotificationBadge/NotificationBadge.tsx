@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
@@ -30,8 +30,10 @@ export interface NotificationBadgeProps extends Omit<ButtonProps, 'variant'> {
   isExpanded?: boolean;
   /** Determines the variant of the notification badge. */
   variant?: NotificationBadgeVariant | 'read' | 'unread' | 'attention';
-  /** Determines if the notification badge should animate on new notifications. */
-  hasAnimation?: boolean;
+  /** Flag indicating whether the notification badge animation should be triggered. Each
+   * time this prop is true, the animation will be triggered a single time.
+   */
+  shouldNotify?: boolean;
 }
 
 export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> = ({
@@ -42,10 +44,10 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
   icon = <BellIcon />,
   className,
   isExpanded = false,
-  hasAnimation = false,
+  shouldNotify = false,
   ...props
 }: NotificationBadgeProps) => {
-  const [isAnimating, setIsAnimating] = useState(hasAnimation);
+  const [isAnimating, setIsAnimating] = useState(shouldNotify);
   const hasCount = count > 0;
   const hasChildren = children !== undefined;
   const isAttention = variant === NotificationBadgeVariant.attention;
@@ -59,6 +61,10 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
   }
 
   const buttonClassName = isAnimating ? css(className, styles.modifiers.notify) : className;
+
+  useEffect(() => {
+    setIsAnimating(shouldNotify);
+  }, [shouldNotify]);
 
   const handleAnimationEnd = () => {
     setIsAnimating(false);

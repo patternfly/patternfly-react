@@ -45,7 +45,6 @@ import {
   ToolbarGroup,
   ToolbarContent
 } from '@patternfly/react-core';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -184,9 +183,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                 onClick={(event: any) => onCloseNotificationDrawer(event)}
                 aria-label="Notifications"
                 isExpanded={isDrawerExpanded}
-              >
-                <BellIcon />
-              </NotificationBadge>
+              />
             </ToolbarItem>
             <ToolbarGroup
               variant="action-group-plain"
