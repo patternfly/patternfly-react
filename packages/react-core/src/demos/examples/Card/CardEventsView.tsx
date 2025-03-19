@@ -72,7 +72,7 @@ export const CardEventsView: React.FunctionComponent = () => {
             </CardTitle>
           </CardHeader>
           <CardBody>
-            <DescriptionList aria-label="List of event details">
+            <DescriptionList aria-label="Events view">
               <DescriptionListGroup>
                 <DescriptionListTerm>
                   <Flex flexWrap={{ default: 'nowrap' }}>
