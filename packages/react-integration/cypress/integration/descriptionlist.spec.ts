@@ -3,7 +3,7 @@ describe('Description List Demo Test', () => {
     cy.visit('http://localhost:3000/description-list-demo-nav-link');
   });
 
-  it('Verify list with help text', () => {
+  it('Verify list with help text triggered with mouse', () => {
     cy.get('#description-list-help-text').should('exist').children('.pf-v6-c-description-list__group');
     cy.get('.pf-v6-c-popover__content').should('not.exist');
     cy.get(
@@ -14,12 +14,21 @@ describe('Description List Demo Test', () => {
     cy.get('.pf-v6-c-popover__content').should('not.exist');
   });
 
-  it('Verify list with help text using keyboard', () => {
+  it('Verify list with help text triggered with enter key', () => {
     cy.get('#description-list-help-text').should('exist').children('.pf-v6-c-description-list__group');
     cy.get('.pf-v6-c-popover__content').should('not.exist');
     cy.tab().type('{enter}');
     cy.get('.pf-v6-c-popover__content').should('exist');
     cy.get('.pf-v6-c-popover__close').type('{enter}');
+    cy.get('.pf-v6-c-popover__content').should('not.exist');
+  });
+
+  it('Verify list with help text triggered with spacebar', () => {
+    cy.get('#description-list-help-text').should('exist').children('.pf-v6-c-description-list__group');
+    cy.get('.pf-v6-c-popover__content').should('not.exist');
+    cy.tab().tab().type(' ');
+    cy.get('.pf-v6-c-popover__content').should('exist');
+    cy.get('.pf-v6-c-popover__close').type(' ');
     cy.get('.pf-v6-c-popover__content').should('not.exist');
   });
 });
