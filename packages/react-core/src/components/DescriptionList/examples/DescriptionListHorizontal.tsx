@@ -8,7 +8,7 @@ import {
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListHorizontal: React.FunctionComponent = () => (
-  <DescriptionList isHorizontal aria-label="Horizontal description list">
+  <DescriptionList isHorizontal aria-label="Horizontal">
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>

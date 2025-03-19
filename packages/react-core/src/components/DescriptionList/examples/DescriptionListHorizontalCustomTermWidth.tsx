@@ -18,7 +18,7 @@ export const DescriptionListHorizontalCustomTermWidth: React.FunctionComponent =
       xl: '30ch',
       '2xl': '35ch'
     }}
-    aria-label="Horizontal description list with custom term width modifier"
+    aria-label="Horizontal with custom term width modifier"
   >
     <DescriptionListGroup>
       <DescriptionListTerm>Name longer than the default term width</DescriptionListTerm>
