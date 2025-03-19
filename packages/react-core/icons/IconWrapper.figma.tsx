@@ -1,5 +1,4 @@
-import React from 'react';
-import IconWrapper from 'src/components/Icon/IconWrapper.tsx';
+import { IconWrapper } from 'src/components/Icon/IconWrapper.tsx';
 import figma from '@figma/code-connect';
 
 figma.connect(

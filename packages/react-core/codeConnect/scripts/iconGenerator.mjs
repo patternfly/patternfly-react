@@ -10,7 +10,9 @@ import { existsSync } from 'fs';
  * @returns {string|null} - Node ID or null if not found
  */
 function extractNodeId(url) {
-  if (!url) return null;
+  if (!url) {
+    return null;
+  }
   const nodeIdMatch = url.match(/node-id=([^&]+)/);
   return nodeIdMatch ? nodeIdMatch[1] : null;
 }
@@ -67,20 +69,22 @@ async function generateIcons() {
     }
 
     // Check and log node ID coverage
-    const iconsWithNodeIds = iconData.filter(icon => icon.url && extractNodeId(icon.url));
+    const iconsWithNodeIds = iconData.filter((icon) => icon.url && extractNodeId(icon.url));
     logger.info(`Found node IDs for ${iconsWithNodeIds.length} of ${iconData.length} icons`);
 
     // Generate individual icon files
     const iconGenerationPromises = iconData.map(async (icon) => {
       // Use safe defaults for all properties to avoid undefined errors
-      const iconFileName = (icon && icon.fileName) ? icon.fileName : 'default-icon';
+      const iconFileName = icon && icon.fileName ? icon.fileName : 'default-icon';
 
       // Use the template and replace placeholders with safe defaults
       const iconContent = iconTemplate
-        .replace('ICON_NAME', (icon && icon.reactName) ? icon.reactName : 'DefaultIcon')
+        .replace('ICON_NAME', icon && icon.reactName ? icon.reactName : 'DefaultIcon')
         .replace(
           'SVG_PATH',
-          (icon && icon.svgPath) ? icon.svgPath : '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />'
+          icon && icon.svgPath
+            ? icon.svgPath
+            : '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />'
         );
 
       const iconPath = path.join(config.iconsGeneratedDir, `${iconFileName}.tsx`);
@@ -109,7 +113,7 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
 
     // Generate Figma connection file
     const componentNames = generatedIcons
-      .filter(icon => icon && icon.reactName) // Filter out any undefined values
+      .filter((icon) => icon && icon.reactName) // Filter out any undefined values
       .map((icon) => icon.reactName)
       .sort();
 
@@ -124,12 +128,10 @@ import { ${componentNames.join(', ')} } from "./generated";
  */
 
 ${generatedIcons
-  .filter(icon => icon && icon.reactName) // Filter out any icons without a reactName
+  .filter((icon) => icon && icon.reactName) // Filter out any icons without a reactName
   .map((icon) => {
     // Extract node ID from URL or use default
-    const nodeId = icon.url
-      ? extractNodeId(icon.url) || config.defaultNodeId
-      : config.defaultNodeId;
+    const nodeId = icon.url ? extractNodeId(icon.url) || config.defaultNodeId : config.defaultNodeId;
 
     const url = `${config.figmaBaseUrl}?node-id=${nodeId}&m=dev`;
 
@@ -152,7 +154,7 @@ ${generatedIcons
 
     // Generate index file for generated icons
     const indexContent = generatedIcons
-      .filter(icon => icon && icon.reactName && icon.fileName) // Filter out any undefined values
+      .filter((icon) => icon && icon.reactName && icon.fileName) // Filter out any undefined values
       .map((icon) => `export { ${icon.reactName} } from './${icon.fileName}';`)
       .join('\n');
 

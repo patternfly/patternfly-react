@@ -3,6 +3,7 @@
     "parser": "react",
     "label": "PF-React",
     "include": [
+      "src/components/**/*.tsx",
       "icons/generated/*.tsx",
       "icons/**/*.tsx",
       "icons/*.tsx",
