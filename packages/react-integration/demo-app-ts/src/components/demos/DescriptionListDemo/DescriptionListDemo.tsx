@@ -29,7 +29,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="simple-description-list" aria-label="Basic description list">
+          <DescriptionList id="simple-description-list" aria-label="Basic example">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -71,7 +71,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="description-list-help-text" aria-label="Description list with term help text">
+          <DescriptionList id="description-list-help-text" aria-label="Term help text">
             <DescriptionListGroup>
               <DescriptionListTermHelpText>
                 <Popover headerContent={<div>Name</div>} bodyContent={<div>Additional name info</div>}>
@@ -134,11 +134,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList
-            id="2-col-description-list"
-            columnModifier={{ default: '2Col' }}
-            aria-label="Two-column description list"
-          >
+          <DescriptionList id="2-col-description-list" columnModifier={{ default: '2Col' }} aria-label="Two-column">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -184,7 +180,7 @@ export class DescriptionListDemo extends Component {
           <DescriptionList
             id="responsive-description-list"
             columnModifier={{ lg: '2Col', xl: '3Col' }}
-            aria-label="Responsive columns based on screen size"
+            aria-label="Responsive columns"
           >
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
@@ -228,7 +224,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="horizontal-description-list" isHorizontal aria-label="Horizontal description list">
+          <DescriptionList id="horizontal-description-list" isHorizontal aria-label="Horizontal">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -315,11 +311,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList
-            id="inline-grid-description-list"
-            isInlineGrid
-            aria-label="Default inline grid description list"
-          >
+          <DescriptionList id="inline-grid-description-list" isInlineGrid aria-label="Default inline grid">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -407,7 +399,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="compact-description-list" isCompact aria-label="Compact description list">
+          <DescriptionList id="compact-description-list" isCompact aria-label="Compact example">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -448,12 +440,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList
-            id="fluid-description-list"
-            isFluid
-            isHorizontal
-            aria-label="Fluid horizontal description list"
-          >
+          <DescriptionList id="fluid-description-list" isFluid isHorizontal aria-label="Fluid horizontal">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
