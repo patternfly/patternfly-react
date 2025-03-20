@@ -25,6 +25,8 @@ packagesExtensions=(
   @patternfly/react-log-viewer
   @patternfly/react-catalog-view-extension
   @patternfly/react-component-groups
+  @patternfly/react-data-view
+  @patternfly/chatbot
 )
 
 prereleaseTag=prerelease
