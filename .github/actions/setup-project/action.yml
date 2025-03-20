@@ -44,23 +44,8 @@ runs:
       shell: bash
       run: yarn install --immutable
 
-    - uses: actions/cache@v4
-      if: inputs.skip-build != 'true' && inputs.skip-build-cache != 'true'
-      id: cache-build
-      name: Cache build
-      with:
-        path: |
-          packages/*/dist
-          packages/*/next
-          packages/*/deprecated
-          packages/*/components
-          packages/react-styles/css
-          packages/react-core/layouts
-          packages/react-core/helpers
-        key: ${{ runner.os }}-build-${{ hashFiles('yarn.lock', '**/package.json', 'packages/**', '!**/node_modules', '!**/dist') }}
-
     - name: Run build
-      if: inputs.skip-build != 'true' && steps.cache-build.outputs.cache-hit != 'true'
+      if: inputs.skip-build != 'true'
       shell: bash
       run: yarn build && yarn build:umd
       env:
