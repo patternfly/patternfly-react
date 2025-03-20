@@ -30,7 +30,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@monaco-editor/react": "^4.6.0",
+    "@monaco-editor/react": "^4.7.0",
     "@patternfly/react-core": "workspace:^",
     "@patternfly/react-icons": "workspace:^",
     "@patternfly/react-styles": "workspace:^",
