@@ -11,7 +11,7 @@ import { OnSetPage } from './Pagination';
 import { pluralize, PickOptional } from '../../helpers';
 import { KeyTypes } from '../../helpers/constants';
 
-export interface NavigationProps extends React.HTMLProps<HTMLElement> {
+export interface PaginationNavigationProps extends React.HTMLProps<HTMLElement> {
   /** Additional classes for the pagination navigation container. */
   className?: string;
   /** Accessible label for the input displaying the current page. */
@@ -60,18 +60,18 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   onSetPage: OnSetPage;
 }
 
-export interface NavigationState {
+export interface PaginationNavigationState {
   userInputPage?: number | string;
 }
 
-class Navigation extends Component<NavigationProps, NavigationState> {
-  static displayName = 'Navigation';
-  constructor(props: NavigationProps) {
+class PaginationNavigation extends Component<PaginationNavigationProps, PaginationNavigationState> {
+  static displayName = 'PaginationNavigation';
+  constructor(props: PaginationNavigationProps) {
     super(props);
     this.state = { userInputPage: this.props.page };
   }
 
-  static defaultProps: PickOptional<NavigationProps> = {
+  static defaultProps: PickOptional<PaginationNavigationProps> = {
     className: '',
     isDisabled: false,
     isCompact: false,
@@ -104,7 +104,7 @@ class Navigation extends Component<NavigationProps, NavigationState> {
   }
 
   private onChange(event: React.FormEvent<HTMLInputElement>, lastPage: number): void {
-    const inputPage = Navigation.parseInteger(event.currentTarget.value, lastPage);
+    const inputPage = PaginationNavigation.parseInteger(event.currentTarget.value, lastPage);
     this.setState({ userInputPage: Number.isNaN(inputPage) ? event.currentTarget.value : inputPage });
   }
 
@@ -126,7 +126,7 @@ class Navigation extends Component<NavigationProps, NavigationState> {
       'ArrowDown'
     ];
     if (event.key === KeyTypes.Enter) {
-      const inputPage = Navigation.parseInteger(this.state.userInputPage, lastPage);
+      const inputPage = PaginationNavigation.parseInteger(this.state.userInputPage, lastPage);
       onPageInput(event, Number.isNaN(inputPage) ? page : inputPage);
       this.handleNewPage(event, Number.isNaN(inputPage) ? page : inputPage);
     } else if (!/^\d*$/.test(event.key) && !allowedKeys.includes(event.key)) {
@@ -141,7 +141,7 @@ class Navigation extends Component<NavigationProps, NavigationState> {
     return onSetPage(_evt, newPage, perPage, startIdx, endIdx);
   };
 
-  componentDidUpdate(lastState: NavigationProps) {
+  componentDidUpdate(lastState: PaginationNavigationProps) {
     if (
       this.props.page !== lastState.page &&
       this.props.page <= this.props.lastPage &&
@@ -271,4 +271,4 @@ class Navigation extends Component<NavigationProps, NavigationState> {
   }
 }
 
-export { Navigation };
+export { PaginationNavigation };
