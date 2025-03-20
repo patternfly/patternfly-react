@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.33...@patternfly/react-core@6.2.0-prerelease.34) (2025-03-20)
+
+### Bug Fixes
+
+- **deps:** Apply JSX tranform changes to missed demos and examples ([#11679](https://github.com/patternfly/patternfly-react/issues/11679)) ([546aaa1](https://github.com/patternfly/patternfly-react/commit/546aaa163f9a4cdb3649190783e5d9d5f32b9b6a))
+- **deps:** update dependency @patternfly/patternfly to v6.2.0-prerelease.20 ([#11653](https://github.com/patternfly/patternfly-react/issues/11653)) ([f4df244](https://github.com/patternfly/patternfly-react/commit/f4df244b1fe68c1ac34bff7379f2bb6558676fb2))
+- **deps:** update dependency @patternfly/patternfly to v6.2.0-prerelease.23 ([#11660](https://github.com/patternfly/patternfly-react/issues/11660)) ([01006e6](https://github.com/patternfly/patternfly-react/commit/01006e6ec3085a3e25fb47904206e5476013e0eb))
+
+### Features
+
+- **Alert:** added animations ([#11495](https://github.com/patternfly/patternfly-react/issues/11495)) ([74dd258](https://github.com/patternfly/patternfly-react/commit/74dd258abb9f329dc2fc3fcaaa6fc4de460fc088))
+- **card:** add hasHeaderWrap prop and test to support card header wrapping ([#11663](https://github.com/patternfly/patternfly-react/issues/11663)) ([d341d0b](https://github.com/patternfly/patternfly-react/commit/d341d0bf83bb0ebc0bb7b769bbfaf3eda7a2d906))
+- **ClipboardCopy:** added truncation for inlinecompact variant ([#11610](https://github.com/patternfly/patternfly-react/issues/11610)) ([48b5749](https://github.com/patternfly/patternfly-react/commit/48b5749dfda3841aaaeea995659f2094272dc999))
+- **NotificationBadge:** Add animation for notify ([#11675](https://github.com/patternfly/patternfly-react/issues/11675)) ([37ad42b](https://github.com/patternfly/patternfly-react/commit/37ad42bb7ee7ca27882e54470cfa11cf50789070))
+- **toolbar:** add hasNoPadding prop and test ([#11648](https://github.com/patternfly/patternfly-react/issues/11648)) ([177b684](https://github.com/patternfly/patternfly-react/commit/177b684a67313f3655a3df75d43864309d771902))
+
 # [6.2.0-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0-prerelease.32...@patternfly/react-core@6.2.0-prerelease.33) (2025-03-11)
 
 ### Features

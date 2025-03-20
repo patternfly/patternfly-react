@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.2.0-prerelease.34...@patternfly/react-table@6.2.0-prerelease.35) (2025-03-20)
+
+### Bug Fixes
+
+- **deps:** Apply JSX tranform changes to missed demos and examples ([#11679](https://github.com/patternfly/patternfly-react/issues/11679)) ([546aaa1](https://github.com/patternfly/patternfly-react/commit/546aaa163f9a4cdb3649190783e5d9d5f32b9b6a))
+
 # [6.2.0-prerelease.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.2.0-prerelease.33...@patternfly/react-table@6.2.0-prerelease.34) (2025-03-11)
 
 **Note:** Version bump only for package @patternfly/react-table

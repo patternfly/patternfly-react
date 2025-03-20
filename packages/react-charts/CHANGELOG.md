@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.2.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.2.0-prerelease.25...@patternfly/react-charts@8.2.0-prerelease.26) (2025-03-20)
+
+### Features
+
+- **charts:** Sankey and Line charts, based on Apache ECharts ([#11616](https://github.com/patternfly/patternfly-react/issues/11616)) ([f2479b1](https://github.com/patternfly/patternfly-react/commit/f2479b10dc6a96e97bfa1b0bb4bc3da789b9e93b))
+
 # [8.2.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.2.0-prerelease.24...@patternfly/react-charts@8.2.0-prerelease.25) (2025-03-11)
 
 **Note:** Version bump only for package @patternfly/react-charts

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.2.0-prerelease.11...@patternfly/react-icons@6.2.0-prerelease.12) (2025-03-20)
+
+### Bug Fixes
+
+- **deps:** update dependency @patternfly/patternfly to v6.2.0-prerelease.20 ([#11653](https://github.com/patternfly/patternfly-react/issues/11653)) ([f4df244](https://github.com/patternfly/patternfly-react/commit/f4df244b1fe68c1ac34bff7379f2bb6558676fb2))
+- **deps:** update dependency @patternfly/patternfly to v6.2.0-prerelease.23 ([#11660](https://github.com/patternfly/patternfly-react/issues/11660)) ([01006e6](https://github.com/patternfly/patternfly-react/commit/01006e6ec3085a3e25fb47904206e5476013e0eb))
+
+### Features
+
+- **Alert:** added animations ([#11495](https://github.com/patternfly/patternfly-react/issues/11495)) ([74dd258](https://github.com/patternfly/patternfly-react/commit/74dd258abb9f329dc2fc3fcaaa6fc4de460fc088))
+- **ClipboardCopy:** added truncation for inlinecompact variant ([#11610](https://github.com/patternfly/patternfly-react/issues/11610)) ([48b5749](https://github.com/patternfly/patternfly-react/commit/48b5749dfda3841aaaeea995659f2094272dc999))
+
 # [6.2.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.2.0-prerelease.10...@patternfly/react-icons@6.2.0-prerelease.11) (2025-03-11)
 
 ### Bug Fixes

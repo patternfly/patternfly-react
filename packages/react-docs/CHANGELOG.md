@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.2.0-prerelease.54](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.2.0-prerelease.53...@patternfly/react-docs@7.2.0-prerelease.54) (2025-03-20)
+
+### Bug Fixes
+
+- **deps:** update dependency @patternfly/patternfly to v6.2.0-prerelease.20 ([#11653](https://github.com/patternfly/patternfly-react/issues/11653)) ([f4df244](https://github.com/patternfly/patternfly-react/commit/f4df244b1fe68c1ac34bff7379f2bb6558676fb2))
+- **deps:** update dependency @patternfly/patternfly to v6.2.0-prerelease.23 ([#11660](https://github.com/patternfly/patternfly-react/issues/11660)) ([01006e6](https://github.com/patternfly/patternfly-react/commit/01006e6ec3085a3e25fb47904206e5476013e0eb))
+
+### Features
+
+- **Alert:** added animations ([#11495](https://github.com/patternfly/patternfly-react/issues/11495)) ([74dd258](https://github.com/patternfly/patternfly-react/commit/74dd258abb9f329dc2fc3fcaaa6fc4de460fc088))
+- **charts:** Sankey and Line charts, based on Apache ECharts ([#11616](https://github.com/patternfly/patternfly-react/issues/11616)) ([f2479b1](https://github.com/patternfly/patternfly-react/commit/f2479b10dc6a96e97bfa1b0bb4bc3da789b9e93b))
+- **ClipboardCopy:** added truncation for inlinecompact variant ([#11610](https://github.com/patternfly/patternfly-react/issues/11610)) ([48b5749](https://github.com/patternfly/patternfly-react/commit/48b5749dfda3841aaaeea995659f2094272dc999))
+
 # [7.2.0-prerelease.53](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.2.0-prerelease.52...@patternfly/react-docs@7.2.0-prerelease.53) (2025-03-12)
 
 **Note:** Version bump only for package @patternfly/react-docs

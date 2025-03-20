@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.87](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.85...demo-app-ts@6.0.0-prerelease.87) (2025-03-20)
+
+### Bug Fixes
+
+- **deps:** Apply JSX tranform changes to missed demos and examples ([#11679](https://github.com/patternfly/patternfly-react/issues/11679)) ([546aaa1](https://github.com/patternfly/patternfly-react/commit/546aaa163f9a4cdb3649190783e5d9d5f32b9b6a))
+- Updated demo app version. ([0501bfb](https://github.com/patternfly/patternfly-react/commit/0501bfb8273e50b16c131adbc7b969cd75c2b646))
+
+### Features
+
+- **Alert:** added animations ([#11495](https://github.com/patternfly/patternfly-react/issues/11495)) ([74dd258](https://github.com/patternfly/patternfly-react/commit/74dd258abb9f329dc2fc3fcaaa6fc4de460fc088))
+
 # [6.0.0-prerelease.85](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.84...demo-app-ts@6.0.0-prerelease.85) (2025-03-12)
 
 ### Bug Fixes
