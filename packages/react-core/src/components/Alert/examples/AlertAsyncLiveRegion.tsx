@@ -51,7 +51,7 @@ export const AsyncLiveRegionAlert: React.FunctionComponent = () => {
           onChange={() => setIsActive(false)}
         />
       </ToggleGroup>
-      <AlertGroup isLiveRegion>
+      <AlertGroup hasAnimations isLiveRegion>
         {alerts.map(({ title, variant, key }) => (
           <Alert variant={variant} title={title} key={key} />
         ))}

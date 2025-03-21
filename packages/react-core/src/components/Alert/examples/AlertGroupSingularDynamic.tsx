@@ -56,7 +56,7 @@ export const AlertGroupSingularDynamic: React.FunctionComponent = () => {
           </button>
         </InputGroupItem>
       </InputGroup>
-      <AlertGroup isLiveRegion>
+      <AlertGroup hasAnimations isLiveRegion>
         {alerts.map(({ title, variant, key }) => (
           <Alert
             isInline

@@ -56,7 +56,7 @@ export const AlertGroupToast: React.FunctionComponent = () => {
           </button>
         </InputGroupItem>
       </InputGroup>
-      <AlertGroup isToast isLiveRegion>
+      <AlertGroup hasAnimations isToast isLiveRegion>
         {alerts.map(({ key, variant, title }) => (
           <Alert
             variant={AlertVariant[variant]}

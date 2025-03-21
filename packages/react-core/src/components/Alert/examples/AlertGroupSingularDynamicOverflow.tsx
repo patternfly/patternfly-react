@@ -75,7 +75,7 @@ export const AlertGroupSingularDynamicOverflow: React.FunctionComponent = () => 
           </button>
         </InputGroupItem>
       </InputGroup>
-      <AlertGroup isLiveRegion onOverflowClick={onOverflowClick} overflowMessage={overflowMessage}>
+      <AlertGroup hasAnimations isLiveRegion onOverflowClick={onOverflowClick} overflowMessage={overflowMessage}>
         {alerts.slice(0, maxDisplayed).map(({ key, variant, title }) => (
           <Alert
             isInline

@@ -58,7 +58,7 @@ export const AlertGroupAsync: React.FunctionComponent = () => {
           </button>
         </InputGroupItem>
       </InputGroup>
-      <AlertGroup isToast isLiveRegion aria-live="assertive">
+      <AlertGroup hasAnimations isToast isLiveRegion aria-live="assertive">
         {alerts.map(({ title, variant, key }) => (
           <Alert
             variant={AlertVariant[variant]}

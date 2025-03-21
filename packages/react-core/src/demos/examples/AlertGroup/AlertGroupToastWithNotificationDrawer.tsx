@@ -365,7 +365,13 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
         />
       </PageSection>
       <PageSection>
-        <AlertGroup isToast isLiveRegion onOverflowClick={onAlertGroupOverflowClick} overflowMessage={overflowMessage}>
+        <AlertGroup
+          hasAnimations
+          isToast
+          isLiveRegion
+          onOverflowClick={onAlertGroupOverflowClick}
+          overflowMessage={overflowMessage}
+        >
           {alerts.slice(0, maxDisplayed)}
         </AlertGroup>
       </PageSection>

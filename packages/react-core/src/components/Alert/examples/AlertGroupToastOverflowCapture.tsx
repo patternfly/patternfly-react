@@ -75,7 +75,13 @@ export const AlertGroupToastOverflowCapture: React.FunctionComponent = () => {
           </button>
         </InputGroupItem>
       </InputGroup>
-      <AlertGroup isToast isLiveRegion onOverflowClick={onOverflowClick} overflowMessage={overflowMessage}>
+      <AlertGroup
+        hasAnimations
+        isToast
+        isLiveRegion
+        onOverflowClick={onOverflowClick}
+        overflowMessage={overflowMessage}
+      >
         {alerts.slice(0, maxDisplayed).map(({ key, variant, title }) => (
           <Alert
             variant={AlertVariant[variant]}

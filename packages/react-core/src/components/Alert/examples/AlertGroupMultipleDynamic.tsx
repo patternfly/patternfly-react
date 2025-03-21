@@ -42,7 +42,7 @@ export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
           </button>
         </InputGroupItem>
       </InputGroup>
-      <AlertGroup isToast isLiveRegion>
+      <AlertGroup hasAnimations isToast isLiveRegion>
         {alerts.map(({ title, variant, key }) => (
           <Alert
             variant={AlertVariant[variant]}
