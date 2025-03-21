@@ -52,7 +52,7 @@ export const DynamicLiveRegionAlert: React.FunctionComponent = () => {
           Add single danger alert
         </button>
       </InputGroup>
-      <AlertGroup isLiveRegion aria-live="polite" aria-relevant="additions text" aria-atomic="false">
+      <AlertGroup hasAnimations isLiveRegion aria-live="polite" aria-relevant="additions text" aria-atomic="false">
         {alerts.map(({ title, variant, key }) => (
           <Alert variant={variant} title={title} key={key} />
         ))}

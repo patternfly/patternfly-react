@@ -15,19 +15,21 @@ import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
 import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
+Micro-animations have been added for `Alert` components within an `AlertGroup`, which can be seen on all examples and demos where alerts are dynamically added. By default this is opt-in, as enabling animations may require updates to tests. You can pass the `hasAnimations` property to enable or disable the animations as needed. Additionally, with these animations enabled, we recommend you ensure that dynamically added alerts are prepended to a list of alerts, rather than appended to the end of it.
+
 ## Alert examples
 
 ### Alert variants
 
 PatternFly supports several alert variants for different scenarios. Each variant has an associated status icon, background, and alert title coded to communicate the severity of an alert. Use the `variant` property to apply the following styling options. If no `variant` is specified, then the variant will be set to "custom".
 
-| Variant | Description |
-|---|---|
-| Custom | Use for generic messages that should have a custom color set by the associated CSS variable. Should be used when the message has no associated severity. |
-| Info | Use for general informational messages |
-| Success | Use to indicate that a task or process has been completed successfully |
-| Warning | Use to indicate that a non-critical error has occurred|
-| Danger | Use to indicate that a critical or blocking error has occurred |
+| Variant | Description                                                                                                                                              |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Custom  | Use for generic messages that should have a custom color set by the associated CSS variable. Should be used when the message has no associated severity. |
+| Info    | Use for general informational messages                                                                                                                   |
+| Success | Use to indicate that a task or process has been completed successfully                                                                                   |
+| Warning | Use to indicate that a non-critical error has occurred                                                                                                   |
+| Danger  | Use to indicate that a critical or blocking error has occurred                                                                                           |
 
 ```ts
 import { Fragment } from 'react';
@@ -148,7 +150,7 @@ const AlertTimeout: React.FunctionComponent = () => {
       <Button variant="secondary" onClick={() => setAlerts([])}>
         Remove all alerts
       </Button>
-      <AlertGroup isLiveRegion>{alerts}</AlertGroup>
+      <AlertGroup hasAnimations isLiveRegion>{alerts}</AlertGroup>
     </Fragment>
   );
 };
@@ -405,11 +407,11 @@ An alert group stacks and positions 2 or more alerts in a live region, either in
 
 Alert groups can be one of the following variants:
 
-| Variant | Description |
-| --- | --- |
+| Variant       | Description                                                                                                                                                                                                 |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Static inline | Static inline alert groups contain alerts that appear when the page loads, and are seen within the normal page content flow. These groups should not contain alerts that will dynamically appear or update. |
-| Toast | Toast alert groups contain alerts that typically appear in response to an asynchronous event or user action. These groups are positioned on top of other content at the top right of the page.|
-| Dynamic | Dynamic alert groups contain alerts that typically appear in response to a user action, and are seen within the normal page content flow.|  
+| Toast         | Toast alert groups contain alerts that typically appear in response to an asynchronous event or user action. These groups are positioned on top of other content at the top right of the page.              |
+| Dynamic       | Dynamic alert groups contain alerts that typically appear in response to a user action, and are seen within the normal page content flow.                                                                   |
 
 Dynamic alerts that are generated after the page initially loads must be appended to either a toast or dynamic `AlertGroup`, both of which must use the `isLiveRegion` property. New alerts appended to a toast or dynamic group will be announced by assistive technologies the moment the change happens. For information about customizing this announcement, read the [aria-atomic and aria-relevant](/components/alert/accessibility#aria-atomic-and-aria-relevant) section of the alert accessibility documentation.
 
