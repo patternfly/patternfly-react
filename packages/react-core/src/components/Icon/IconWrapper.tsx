@@ -21,26 +21,30 @@ export const IconWrapper: React.FC<IconWrapperProps> = ({
   // Apply size class based on the iconSize prop
   const getSizeClass = () => {
     switch (iconSize) {
-      case 'standalone---small': return 'pf-icon--size-sm';
-      case 'standalone---medium': return 'pf-icon--size-md';
-      case 'standalone---large': return 'pf-icon--size-lg';
-      case 'standalone---xl': return 'pf-icon--size-xl';
-      case 'standalone--2xl': return 'pf-icon--size-2xl';
-      case 'standalone---3xl': return 'pf-icon--size-3xl';
+      case 'standalone---small':
+        return 'pf-icon--size-sm';
+      case 'standalone---medium':
+        return 'pf-icon--size-md';
+      case 'standalone---large':
+        return 'pf-icon--size-lg';
+      case 'standalone---xl':
+        return 'pf-icon--size-xl';
+      case 'standalone--2xl':
+        return 'pf-icon--size-2xl';
+      case 'standalone---3xl':
+        return 'pf-icon--size-3xl';
       // Add other size cases as needed
-      default: return 'pf-icon--size-md';
+      default:
+        return 'pf-icon--size-md';
     }
   };
 
   return (
-    <span
-      className={`pf-icon-wrapper ${getSizeClass()} ${className}`}
-      data-testid="icon-wrapper"
-      {...props}
-    >
+    <span className={`pf-icon-wrapper ${getSizeClass()} ${className}`} data-testid="icon-wrapper" {...props}>
       {icon || children}
     </span>
   );
 };
+IconWrapper.displayName = 'IconWrapper';
 
 export default IconWrapper;
