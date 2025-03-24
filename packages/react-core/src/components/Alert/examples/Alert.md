@@ -15,7 +15,9 @@ import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
 import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
-Micro-animations have been added for `Alert` components within an `AlertGroup`, which can be seen on all examples and demos where alerts are dynamically added. By default this is opt-in, as enabling animations may require updates to tests. You can pass the `hasAnimations` property to enable or disable the animations as needed. Additionally, with these animations enabled, we recommend you ensure that dynamically added alerts are prepended to a list of alerts, rather than appended to the end of it.
+Micro animations have been added for `<Alert>` components within an `<AlertGroup>`. By default, you must opt into animations, since they can require updates to tests. To enable or disable animations as needed, use the `hasAnimations` property. With animations enabled, we recommend you ensure that dynamically-added alerts are prepended to a list of alerts, rather than appended to the end of it.
+
+Micro animations are turned on for all examples and demos where alerts are dynamically added.
 
 ## Alert examples
 
