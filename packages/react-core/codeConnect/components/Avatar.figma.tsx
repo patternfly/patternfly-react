@@ -1,5 +1,4 @@
-import React from 'react';
-import { Avatar } from 'src/components/Avatar';
+import { Avatar } from '@patternfly/react-core/dist/js/components/Avatar';
 import figma from '@figma/code-connect/react';
 
 figma.connect(
@@ -22,6 +21,6 @@ figma.connect(
         figma.boolean('Bordered', { true: 'pf-m-bordered', false: '' })
       ])
     },
-    example: (props) => <Avatar className={props.className} />
+    example: (props) => <Avatar alt="Avatar image" className={props.className} />
   }
 );

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Brand, BrandProps } from 'src/components/Brand';
+import { Brand } from 'src/components/Brand';
 import figma from '@figma/code-connect';
 
 /**
@@ -14,8 +13,7 @@ figma.connect(
   Brand,
   'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/H3LonYnwH26v9zNEa2SXFk/PatternFly-6%3A-Components?node-id=2104-3689&t=7hKW0DzmfHGhNQnn-11',
   {
-    props: {},
-    example: (props) => <Brand />
+    example: () => <Brand />
   }
 );
 
@@ -37,6 +35,6 @@ figma.connect(
         'Logo + Text': 'logo---text'
       })
     },
-    example: (props) => <Brand />
+    example: () => <Brand />
   }
 );

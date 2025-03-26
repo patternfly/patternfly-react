@@ -85,7 +85,7 @@ figma.connect(
         Custom: 'custom'
       })
     },
-    example: (props) => <Banner />
+    example: (props) => <Banner>{props.figmaText}</Banner>
   }
 );
 
@@ -119,6 +119,6 @@ figma.connect(
         Gray: 'gray'
       })
     },
-    example: (props) => <Banner />
+    example: (props) => <Banner>{props.figmaText}</Banner>
   }
 );
