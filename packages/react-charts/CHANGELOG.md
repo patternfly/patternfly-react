@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.2.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.2.0-prerelease.26...@patternfly/react-charts@8.2.0-prerelease.27) (2025-03-26)
+
+### Bug Fixes
+
+- **charts:** tooltip must call value formatter ([#11711](https://github.com/patternfly/patternfly-react/issues/11711)) ([ec4d8fc](https://github.com/patternfly/patternfly-react/commit/ec4d8fc5647b808420b3b975804e1348f14b1223))
+
 # [8.2.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.2.0-prerelease.25...@patternfly/react-charts@8.2.0-prerelease.26) (2025-03-20)
 
 ### Features
