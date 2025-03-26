@@ -71,13 +71,10 @@ export const getSankeyTooltip = (series: any[], option: ChartsOptionProps) => {
   const defaults = {
     confine: true,
     formatter: (params: any) => {
-      const result = `
-          <div style="display: inline-block; background-color: ${params.color}; height: ${symbolSize}; width: ${symbolSize};"></div>
-          ${params.name} ${params.value}
-        `;
+      let result;
       if (params?.data?.source && params?.data?.target) {
         const { sourceColor, targetColor } = getItemColor(series, params);
-        return `
+        result = `
             <p>${sourceLabel}</p>
             <div style="display: inline-block; background-color: ${sourceColor}; height: ${symbolSize}; width: ${symbolSize};"></div>
             ${params.data.source}
@@ -90,6 +87,11 @@ export const getSankeyTooltip = (series: any[], option: ChartsOptionProps) => {
               </strong>
             </p>
           `;
+      } else {
+        result = `
+          <div style="display: inline-block; background-color: ${params.color}; height: ${symbolSize}; width: ${symbolSize};"></div>
+          ${params.name} ${valueFormatter(params.value, params.dataIndex)}
+        `;
       }
       return result.replace(/\s\s+/g, ' ');
     },
