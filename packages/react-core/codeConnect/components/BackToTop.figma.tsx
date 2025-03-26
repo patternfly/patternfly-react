@@ -1,4 +1,3 @@
-import React from 'react';
 import { BackToTop } from 'src/components/BackToTop';
 import figma from '@figma/code-connect';
 
