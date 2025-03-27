@@ -659,6 +659,8 @@ class CodeEditor extends Component<CodeEditorProps, CodeEditorState> {
             </div>
           );
 
+          const hiddenFileInput = <input {...getInputProps()} /* hidden, necessary for react-dropzone */ hidden />;
+
           return (
             <div
               className={css(
@@ -680,11 +682,14 @@ class CodeEditor extends Component<CodeEditorProps, CodeEditorState> {
                   <div className={css(styles.codeEditorMain, isDragActive && styles.modifiers.dragHover)}>
                     {(showEmptyState || providedEmptyState) && !value ? (
                       <div className={css(styles.codeEditorUpload)}>
-                        <input {...getInputProps()} /* hidden, necessary for react-dropzone */ hidden />
+                        {hiddenFileInput}
                         {emptyState}
                       </div>
                     ) : (
-                      editor
+                      <>
+                        {hiddenFileInput}
+                        {editor}
+                      </>
                     )}
                   </div>
                 </div>
