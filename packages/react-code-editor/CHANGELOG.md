@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.2.0-prerelease.37...@patternfly/react-code-editor@6.2.0-prerelease.38) (2025-03-27)
+
+### Bug Fixes
+
+- **CodeEditor:** added hidden input back when editor is visible ([#11723](https://github.com/patternfly/patternfly-react/issues/11723)) ([0b8936d](https://github.com/patternfly/patternfly-react/commit/0b8936dcff4beee2a7791304350a296c52a3edbe))
+
 # [6.2.0-prerelease.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.2.0-prerelease.36...@patternfly/react-code-editor@6.2.0-prerelease.37) (2025-03-26)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
