@@ -31,6 +31,8 @@ export const ChartAreaRightAlignedLegend: React.FunctionComponent = () => {
     { name: 'Birds', x: '2019', y: 4 }
   ];
 
+  const legendData = [{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }];
+
   return (
     <div style={{ height: '200px', width: '800px' }}>
       <Chart
@@ -39,7 +41,7 @@ export const ChartAreaRightAlignedLegend: React.FunctionComponent = () => {
         containerComponent={
           <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
         }
-        legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+        legendData={legendData}
         legendOrientation="vertical"
         legendPosition="right"
         height={200}
