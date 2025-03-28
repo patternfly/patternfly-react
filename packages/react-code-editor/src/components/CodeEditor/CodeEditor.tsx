@@ -696,7 +696,12 @@ class CodeEditor extends Component<CodeEditorProps, CodeEditorState> {
               ) : (
                 <>
                   {editorHeader}
-                  {showEditor && <div className={css(styles.codeEditorMain)}>{editor}</div>}
+                  {showEditor && (
+                    <div className={css(styles.codeEditorMain)}>
+                      {hiddenFileInput}
+                      {editor}
+                    </div>
+                  )}
                 </>
               )}
             </div>
