@@ -12,6 +12,7 @@ export const DescriptionListDefaultTwoCol: React.FunctionComponent = () => (
     columnModifier={{
       default: '2Col'
     }}
+    aria-label="Two-column"
   >
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>

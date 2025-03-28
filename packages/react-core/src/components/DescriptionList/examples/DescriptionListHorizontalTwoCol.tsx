@@ -8,7 +8,7 @@ import {
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListHorizontalTwoCol: React.FunctionComponent = () => (
-  <DescriptionList isHorizontal columnModifier={{ default: '2Col' }}>
+  <DescriptionList isHorizontal columnModifier={{ default: '2Col' }} aria-label="Two-column horizontal">
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>

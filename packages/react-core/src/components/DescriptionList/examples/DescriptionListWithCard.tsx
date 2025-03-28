@@ -29,7 +29,7 @@ export const DescriptionListWithCard: React.FunctionComponent = () => {
           name="toggle-isSelectable"
         />
       </div>
-      <DescriptionList columnModifier={{ lg: '2Col' }}>
+      <DescriptionList columnModifier={{ lg: '2Col' }} aria-label="With card example">
         <Card component="div" isSelectable={isSelectable}>
           <DescriptionListTerm>Name</DescriptionListTerm>
           <DescriptionListDescription>Example</DescriptionListDescription>
