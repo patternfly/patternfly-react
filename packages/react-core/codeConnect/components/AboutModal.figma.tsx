@@ -20,7 +20,6 @@ figma.connect(
         brandImageSrc="/assets/brand_image_src.jpg"
         productName={props.productName}
         trademark={'Sample footer trademark text'}
-        aria-label="About modal"
       >
         {props.children}
       </AboutModal>

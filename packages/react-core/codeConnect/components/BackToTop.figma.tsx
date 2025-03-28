@@ -1,4 +1,4 @@
-import { BackToTop } from 'src/components/BackToTop';
+import { BackToTop } from '@patternfly/react-core/dist/js/components/BackToTop';
 import figma from '@figma/code-connect';
 
 figma.connect(
