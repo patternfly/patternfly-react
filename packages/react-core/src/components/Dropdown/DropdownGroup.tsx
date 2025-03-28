@@ -10,7 +10,7 @@ export interface DropdownGroupProps extends Omit<MenuGroupProps, 'ref'> {
   /** Classes applied to root element of dropdown group */
   className?: string;
   /** Label of the dropdown group */
-  label?: string;
+  label?: React.ReactNode;
 }
 
 export const DropdownGroup: React.FunctionComponent<DropdownGroupProps> = ({
