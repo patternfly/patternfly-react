@@ -56,6 +56,7 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
   const Component = component as any;
   const isNotDefaultVariant = variant !== 'default';
   const defaultIcon = isNotDefaultVariant && defaultVariantIcons[variant];
+  const shouldRenderSRText = isNotDefaultVariant && screenReaderText && screenReaderText !== '';
   return (
     <Component
       className={css(styles.helperTextItem, isNotDefaultVariant && styles.modifiers[variant], className)}
@@ -66,7 +67,7 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
 
       <span className={css(styles.helperTextItemText)}>
         {children}
-        {isNotDefaultVariant && <span className="pf-v6-screen-reader">: {screenReaderText};</span>}
+        {shouldRenderSRText && <span className="pf-v6-screen-reader">: {screenReaderText};</span>}
       </span>
     </Component>
   );
