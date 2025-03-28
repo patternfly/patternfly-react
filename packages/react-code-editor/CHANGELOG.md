@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0-prerelease.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.2.0-prerelease.38...@patternfly/react-code-editor@6.2.0-prerelease.39) (2025-03-28)
+
+### Bug Fixes
+
+- **CodeeEditor:** rendered file input when editor has content ([#11725](https://github.com/patternfly/patternfly-react/issues/11725)) ([61922a9](https://github.com/patternfly/patternfly-react/commit/61922a9b228ec872632c5c3fb5045034092043ab))
+
 # [6.2.0-prerelease.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.2.0-prerelease.37...@patternfly/react-code-editor@6.2.0-prerelease.38) (2025-03-27)
 
 ### Bug Fixes
