@@ -1,4 +1,4 @@
-import { Brand } from 'src/components/Brand';
+import { Brand } from '@patternfly/react-core/dist/js/components/Brand';
 import figma from '@figma/code-connect';
 
 /**

@@ -1,4 +1,4 @@
-import { BackgroundImage } from 'src/components/BackgroundImage';
+import { BackgroundImage } from '@patternfly/react-core/dist/js/components/BackgroundImage';
 import figma from '@figma/code-connect';
 
 /**
