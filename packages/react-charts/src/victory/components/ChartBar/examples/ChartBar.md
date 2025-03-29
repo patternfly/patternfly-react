@@ -36,106 +36,13 @@ This demonstrates an alternate way of applying tooltips using data labels.
 
 This demonstrates zoom for both the x and y axis.
 
-```js
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts/victory';
-import { VictoryZoomContainer } from 'victory-zoom-container';
+```ts file = "ChartBarMultiColor.tsx"
 
-<div style={{ height: '400px', width: '450px' }}>
-  <Chart
-    ariaDesc="Average number of pets"
-    ariaTitle="Bar chart example"
-    containerComponent={<VictoryZoomContainer />}
-    domainPadding={{ x: [30, 25] }}
-    legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
-    legendPosition="bottom-left"
-    height={400}
-    name="chart3"
-    padding={{
-      bottom: 75, // Adjusted to accommodate legend
-      left: 50,
-      right: 100, // Adjusted to accommodate tooltip
-      top: 50
-    }}
-    themeColor={ChartThemeColor.multiOrdered}
-    width={450}
-  >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
-    <ChartGroup offset={11} horizontal>
-      <ChartBar
-        data={[
-          { name: 'Cats', x: '2015', y: 1 },
-          { name: 'Cats', x: '2016', y: 2 },
-          { name: 'Cats', x: '2017', y: 5 },
-          { name: 'Cats', x: '2018', y: 3 }
-        ]}
-      />
-      <ChartBar
-        data={[
-          { name: 'Dogs', x: '2015', y: 2 },
-          { name: 'Dogs', x: '2016', y: 1 },
-          { name: 'Dogs', x: '2017', y: 7 },
-          { name: 'Dogs', x: '2018', y: 4 }
-        ]}
-      />
-      <ChartBar
-        data={[
-          { name: 'Birds', x: '2015', y: 4 },
-          { name: 'Birds', x: '2016', y: 4 },
-          { name: 'Birds', x: '2017', y: 9 },
-          { name: 'Birds', x: '2018', y: 7 }
-        ]}
-      />
-      <ChartBar
-        data={[
-          { name: 'Mice', x: '2015', y: 3 },
-          { name: 'Mice', x: '2016', y: 3 },
-          { name: 'Mice', x: '2017', y: 8 },
-          { name: 'Mice', x: '2018', y: 5 }
-        ]}
-      />
-    </ChartGroup>
-  </Chart>
-</div>;
 ```
 
 ### Single with right aligned legend
 
-```js
-import { Chart, ChartBar, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
-
-<div style={{ height: '250px', width: '600px' }}>
-  <Chart
-    ariaDesc="Average number of pets"
-    ariaTitle="Bar chart example"
-    containerComponent={
-      <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
-    }
-    domain={{ y: [0, 9] }}
-    domainPadding={{ x: [30, 25] }}
-    legendData={[{ name: 'Cats' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    height={250}
-    name="chart4"
-    padding={{
-      bottom: 50,
-      left: 50,
-      right: 200, // Adjusted to accommodate legend
-      top: 50
-    }}
-    width={600}
-  >
-    <ChartBar
-      data={[
-        { name: 'Cats', x: '2015', y: 1 },
-        { name: 'Cats', x: '2016', y: 2 },
-        { name: 'Cats', x: '2017', y: 5 },
-        { name: 'Cats', x: '2018', y: 3 }
-      ]}
-    />
-  </Chart>
-</div>;
+```ts file = "ChartBarSingle.tsx"
 ```
 
 ### Alerts timeline
