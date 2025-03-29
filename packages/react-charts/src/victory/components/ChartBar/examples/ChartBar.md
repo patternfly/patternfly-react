@@ -29,77 +29,7 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 This demonstrates an alternate way of applying tooltips using data labels.
 
-```js
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts/victory';
-
-class EmbeddedLegend extends React.Component {
-  render() {
-    const label = ({ datum }) => `${datum.name}: ${datum.y}`;
-
-    return (
-      <div style={{ height: '275px', width: '450px' }}>
-        <Chart
-          ariaDesc="Average number of pets"
-          ariaTitle="Bar chart example"
-          domainPadding={{ x: [30, 25] }}
-          legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
-          legendPosition="bottom"
-          height={275}
-          name="chart2"
-          padding={{
-            bottom: 75, // Adjusted to accommodate legend
-            left: 50,
-            right: 50,
-            top: 50
-          }}
-          themeColor={ChartThemeColor.purple}
-          width={450}
-        >
-          <ChartAxis />
-          <ChartAxis dependentAxis showGrid />
-          <ChartGroup offset={11}>
-            <ChartBar
-              data={[
-                { name: 'Cats', x: '2015', y: 1, label },
-                { name: 'Cats', x: '2016', y: 2, label },
-                { name: 'Cats', x: '2017', y: 5, label },
-                { name: 'Cats', x: '2018', y: 3, label }
-              ]}
-              labelComponent={<ChartTooltip constrainToVisibleArea />}
-            />
-            <ChartBar
-              data={[
-                { name: 'Dogs', x: '2015', y: 2, label },
-                { name: 'Dogs', x: '2016', y: 1, label },
-                { name: 'Dogs', x: '2017', y: 7, label },
-                { name: 'Dogs', x: '2018', y: 4, label }
-              ]}
-              labelComponent={<ChartTooltip constrainToVisibleArea />}
-            />
-            <ChartBar
-              data={[
-                { name: 'Birds', x: '2015', y: 4, label },
-                { name: 'Birds', x: '2016', y: 4, label },
-                { name: 'Birds', x: '2017', y: 9, label },
-                { name: 'Birds', x: '2018', y: 7, label }
-              ]}
-              labelComponent={<ChartTooltip constrainToVisibleArea />}
-            />
-            <ChartBar
-              data={[
-                { name: 'Mice', x: '2015', y: 3, label },
-                { name: 'Mice', x: '2016', y: 3, label },
-                { name: 'Mice', x: '2017', y: 8, label },
-                { name: 'Mice', x: '2018', y: 5, label }
-              ]}
-              labelComponent={<ChartTooltip constrainToVisibleArea />}
-            />
-          </ChartGroup>
-        </Chart>
-      </div>
-    );
-  }
-}
+```ts file = "ChartBarPurple.tsx"
 ```
 
 ### Multi-color (ordered) with bottom-left aligned legend
