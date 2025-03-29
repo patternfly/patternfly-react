@@ -1,0 +1,33 @@
+{
+  "codeConnect": {
+    "parser": "react",
+    "label": "PF-React",
+    "include": [
+      "components/*.tsx",
+      "icons/generated/*.tsx",
+      "icons/**/*.tsx",
+      "icons/*.tsx",
+      "icons/IconWrapper.figma.tsx",
+      "icons/icons.figma.tsx"
+    ],
+    "paths": {
+      "../generated": ["icons/generated"],
+      "../src/components/Icon": ["src/components/Icon"]
+    },
+    "aliases": {
+      "@patternfly/react-core": "."
+    },
+    "options": {
+      "instanceSwapper": {
+        "enabled": true
+      },
+      "development": {
+        "enabled": true,
+        "verbose": true
+      },
+      "production": {
+        "enabled": false
+      }
+    }
+  }
+}
