@@ -7,7 +7,8 @@ import {
   ChartThreshold,
   createContainer
 } from '@patternfly/react-charts/victory';
-import chartColorOrange300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
+// eslint-disable-next-line camelcase
+import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
 interface Data {
   name: string;
@@ -35,7 +36,8 @@ export const ChartBoxPlotLegend: React.FunctionComponent = () => {
     {
       childName: 'limit',
       name: 'Limit',
-      symbol: { fill: chartColorOrange300.var, type: 'threshold' }
+      // eslint-disable-next-line camelcase
+      symbol: { fill: chart_color_orange_300.var, type: 'threshold' }
     },
     { childName: 'cats', name: 'Cats' },
     // Force extra space below for line wrapping
@@ -95,7 +97,8 @@ export const ChartBoxPlotLegend: React.FunctionComponent = () => {
           name="limit"
           style={{
             data: {
-              stroke: chartColorOrange300.var
+              // eslint-disable-next-line camelcase
+              stroke: chart_color_orange_300.var
             }
           }}
         />
