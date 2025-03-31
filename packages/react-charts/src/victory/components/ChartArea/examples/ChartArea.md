@@ -23,7 +23,7 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 ## Examples
 ### Basic with right aligned legend
 
-```ts file = "ChartAreaRightAlignedLegend.tsx"
+```ts file = "ChartAreaBasic.tsx"
 
 ```
 
@@ -31,7 +31,7 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 This demonstrates how to combine cursor and voronoi containers to display tooltips along with a cursor.
 
-```ts file = "ChartAreaTealBottomAlignedLegend.tsx"
+```ts file = "ChartAreaTeal.tsx"
 
 ```
 
