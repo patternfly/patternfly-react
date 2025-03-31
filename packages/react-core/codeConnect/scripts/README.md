@@ -4,7 +4,6 @@
 
 ### Components
 - `iconConnector.mjs`: Manages Figma connections
-- `iconGenerator.mjs`: Generates icon components
 - `config.mjs`: Centralized configuration management
 - `logger.mjs`: Logging utility
 
