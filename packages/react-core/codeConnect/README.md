@@ -37,9 +37,6 @@ Provides a consistent template for generating individual icon components.
 #### `iconConnector.mjs`
 Generates Figma connection files for icons.
 
-#### `iconGenerator.mjs`
-Creates individual icon component files and manages icon-related artifacts.
-
 ## Workflow
 
 ### 1. Prepare Icon Data
@@ -53,13 +50,7 @@ Customize `config.json` with project-specific settings.
 #### Generate Icons
 ```bash
 # Generate icon components and Figma connections
-npm run figma:icons:generate
-```
-
-#### Publish to Figma
-```bash
-# Publish generated icon connections
-npm run figma:icons:publish
+npm run figma:icons
 ```
 
 ## Best Practices
