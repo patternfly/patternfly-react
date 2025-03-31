@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useRef, useEffect } from 'react';
 import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipPosition } from '../Tooltip';
@@ -80,13 +80,21 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
 }: ProgressContainerProps) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   const [tooltip, setTooltip] = useState('');
-  const onMouseEnter = (event: any) => {
+  const titleRef = useRef(null);
+  const onFocus = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       setTooltip(title || event.target.innerHTML);
     } else {
       setTooltip('');
     }
   };
+
+  useEffect(() => {
+    if (tooltip !== '') {
+      titleRef.current.focus();
+    }
+  }, [tooltip]);
+
   const Title = (
     <div
       className={css(
@@ -95,7 +103,10 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
       )}
       id={`${parentId}-description`}
       aria-hidden="true"
-      onMouseEnter={isTitleTruncated && typeof title === 'string' ? onMouseEnter : null}
+      onMouseEnter={isTitleTruncated && typeof title === 'string' ? onFocus : null}
+      onFocus={isTitleTruncated && typeof title === 'string' ? onFocus : null}
+      {...(isTitleTruncated && typeof title === 'string' && { tabIndex: 0 })}
+      ref={titleRef}
     >
       {title}
     </div>
@@ -103,14 +114,12 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
 
   return (
     <Fragment>
-      {title &&
-        (tooltip ? (
-          <Tooltip position={tooltipPosition} content={tooltip} isVisible>
-            {Title}
-          </Tooltip>
-        ) : (
-          Title
-        ))}
+      {title && (
+        <>
+          {tooltip && <Tooltip position={tooltipPosition} content={tooltip} isVisible triggerRef={titleRef} />}
+          {Title}
+        </>
+      )}
       {(measureLocation !== ProgressMeasureLocation.none || StatusIcon) && (
         <div className={css(progressStyle.progressStatus)} aria-hidden="true">
           {(measureLocation === ProgressMeasureLocation.top || measureLocation === ProgressMeasureLocation.outside) && (
