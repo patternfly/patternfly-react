@@ -31,6 +31,8 @@ export interface DividerProps extends React.HTMLProps<HTMLElement> {
     xl?: 'vertical' | 'horizontal';
     '2xl'?: 'vertical' | 'horizontal';
   };
+  /** The ARIA role of the divider when the component property has a value other than "hr". */
+  role?: 'separator' | 'presentation';
 }
 
 export const Divider: React.FunctionComponent<DividerProps> = ({
@@ -38,6 +40,7 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
   component = DividerVariant.hr,
   inset,
   orientation,
+  role = 'separator',
   ...props
 }: DividerProps) => {
   const Component: any = component;
@@ -50,7 +53,7 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
         formatBreakpointMods(orientation, styles),
         className
       )}
-      {...(component !== 'hr' && { role: 'separator' })}
+      {...(component !== 'hr' && { role })}
       {...props}
     />
   );

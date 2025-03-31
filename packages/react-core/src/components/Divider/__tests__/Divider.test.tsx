@@ -91,6 +91,16 @@ test(`Test all insets`, () => {
   });
 });
 
+test('Does not render with value passed to role by default', () => {
+  render(<Divider role="presentation" />);
+  expect(screen.queryByRole('presentation')).not.toBeInTheDocument();
+});
+
+test('Renders with value passed to role when component is not "hr"', () => {
+  render(<Divider component="li" role="presentation" />);
+  expect(screen.getByRole('presentation')).toBeInTheDocument();
+});
+
 test('Matches the snapshot', () => {
   const { asFragment } = render(<Divider />);
   expect(asFragment()).toMatchSnapshot();
