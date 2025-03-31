@@ -20,6 +20,7 @@ function extractIconNames(importStatement) {
 
   // Extract icons between { }
   const matchIcons = cleanImport.match(/{\s*(.+?)\s*}/);
+
   if (!matchIcons) {
     return [];
   }
@@ -56,10 +57,11 @@ async function generateIconConnections() {
 
     // Resolve the output file path using existing configuration
     const connectionFilePath = path.resolve(config.iconsFigmaDir, config.figmaOutputFile);
+    console.log(connectionFilePath);
 
     // Read the current icon connection file
     const existingContent = await fs.readFile(connectionFilePath, 'utf8').catch(
-      () => `import React from "react";
+      () => `
 import {
   AddCircleOIcon, AngleDoubleLeftIcon, AngleDoubleRightIcon, AngleDownIcon
 } from "./generated";
@@ -78,10 +80,10 @@ import figma from "@figma/code-connect";
     // Generate import statement
     const importStatement = `import {
   ${uniqueIconNames.join(', ')}
-} from "./generated";`;
+} from "./@patternfly/react-icons";`;
 
     // Generate connection content
-    const connectionContent = `import React from "react";
+    const connectionContent = `
 ${importStatement}
 import figma from "@figma/code-connect";
 
