@@ -57,7 +57,6 @@ async function generateIconConnections() {
 
     // Resolve the output file path using existing configuration
     const connectionFilePath = path.resolve(config.iconsFigmaDir, config.figmaOutputFile);
-    console.log(connectionFilePath);
 
     // Read the current icon connection file
     const existingContent = await fs.readFile(connectionFilePath, 'utf8').catch(
