@@ -4,3 +4,6 @@
 /layouts
 /helpers
 yarn.lock
+
+# Environment variables
+.env

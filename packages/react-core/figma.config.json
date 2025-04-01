@@ -3,15 +3,12 @@
     "parser": "react",
     "label": "PF-React",
     "include": [
-      "src/components/**/*.tsx",
-      "icons/generated/*.tsx",
-      "icons/**/*.tsx",
-      "icons/*.tsx",
-      "icons/IconWrapper.figma.tsx",
-      "icons/icons.figma.tsx"
+      "codeConnect/**/*.tsx",
+      "codeConnect/*.tsx",
+      "codeConnect/icons/IconWrapper.figma.tsx",
+      "codeConnect/icons/*.tsx"
     ],
     "paths": {
-      "../generated": ["icons/generated"],
       "../src/components/Icon": ["src/components/Icon"]
     },
     "aliases": {

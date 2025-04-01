@@ -1,39 +1,48 @@
+/* eslint-disable no-console */
+/**
+ * iconConnector.mjs
+ *
+ * This script generates Figma connections for icons in the PatternFly React library.
+ * It focuses only on creating the Figma connection file, not individual icon files.
+ */
 import fs from 'fs/promises';
 import path from 'path';
-import getIconConfig from '../utils/config.mjs';
+import { existsSync } from 'fs';
 
-// Get the configuration
-const config = getIconConfig();
-const { logger } = config;
+// Simple logger implementation
+const logger = {
+  success: (msg) => console.log(`✅ ${msg}`),
+  info: (msg) => console.log(`ℹ️ ${msg}`),
+  warn: (msg) => console.warn(`⚠️ ${msg}`),
+  error: (msg, err) => console.error(`❌ ${msg}`, err || '')
+};
 
 /**
- * Extract icon names from import statement
- * @param {string} importStatement - The full import statement
- * @returns {string[]} Array of unique icon names
+ * Extract node ID from a Figma URL
+ *
+ * @param {string} url - Figma URL potentially containing a node ID
+ * @returns {string|null} - Extracted node ID or null if not found
  */
-function extractIconNames(importStatement) {
-  // Remove comments and extra whitespace
-  const cleanImport = importStatement
-    .replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-
-  // Extract icons between { }
-  const matchIcons = cleanImport.match(/{\s*(.+?)\s*}/);
-
-  if (!matchIcons) {
-    return [];
+function extractNodeId(url) {
+  if (!url) {
+    return null;
   }
 
-  // Split icons and clean up
-  return [
-    ...new Set(
-      matchIcons[1]
-        .split(',')
-        .map((icon) => icon.trim())
-        .filter((icon) => icon && !icon.includes('=') && !icon.startsWith('Icon Size') && !icon.includes('('))
-    )
-  ];
+  // Use regex to extract the node-id parameter from the URL
+  const match = url.match(/node-id=([^&]+)/);
+  return match ? match[1] : null;
+}
+
+/**
+ * Standardize icon name format
+ * Converts patterns like (far) to Far in icon names
+ *
+ * @param {string} name - Icon name to standardize
+ * @returns {string} - Standardized icon name
+ */
+function standardizeIconName(name) {
+  // Replace (far) with Far in icon names
+  return name.replace(/\(far\)/i, 'Far');
 }
 
 /**
@@ -42,12 +51,36 @@ function extractIconNames(importStatement) {
 async function generateIconConnections() {
   try {
     // Read the existing icons data
+    let config;
+    try {
+      const configPath = path.resolve(process.cwd(), 'codeConnect/config.json');
+      if (existsSync(configPath)) {
+        const configContent = await fs.readFile(configPath, 'utf8');
+        config = JSON.parse(configContent);
+        logger.success('Loaded configuration from config.json');
+      } else {
+        throw new Error('Configuration file not found');
+      }
+    } catch (error) {
+      logger.warn('Could not load config.json, using default configuration');
+      config = {
+        figmaBaseUrl: 'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6%3A-Components-Test?node-id=35205-247&m=dev',
+        defaultNodeId: '1-196',
+        iconsDataPath: 'codeConnect/data/iconsData.json',
+        iconsFigmaDir: 'codeConnect/icons',
+        figmaOutputFile: 'icons.figma.tsx',
+        generatedIndexFile: 'index.ts'
+      };
+    }
+
     const iconsDataPath = config.iconsDataPath;
+    const outputDir = config.iconsFigmaDir;
     let iconsData = [];
 
     try {
       const iconsDataContent = await fs.readFile(iconsDataPath, 'utf8');
       iconsData = JSON.parse(iconsDataContent);
+      logger.success(`Loaded ${iconsData.length} icons from ${iconsDataPath}`);
     } catch (error) {
       logger.warn('Could not read icons data, using minimal configuration', {
         source: 'IconConnectionGenerator',
@@ -55,72 +88,97 @@ async function generateIconConnections() {
       });
     }
 
-    // Resolve the output file path using existing configuration
-    const connectionFilePath = path.resolve(config.iconsFigmaDir, config.figmaOutputFile);
+    // Ensure output directory exists
+    await fs.mkdir(outputDir, { recursive: true });
 
-    // Read the current icon connection file
-    const existingContent = await fs.readFile(connectionFilePath, 'utf8').catch(
-      () => `
+    // Filter out problematic Icon Size entries
+    const filteredIcons = iconsData.filter((icon) => icon && icon.reactName && !icon.reactName.startsWith('Icon Size'));
+
+    logger.info(`Filtered out ${iconsData.length - filteredIcons.length} problematic icons`);
+
+    // Create a Map to track unique icon exports and detect duplicates
+    const iconMap = new Map();
+    const duplicates = [];
+
+    // Process icons to detect duplicates and standardize names
+    for (const icon of filteredIcons) {
+      // Standardize the icon name if it exists
+      if (icon.reactName) {
+        icon.reactName = standardizeIconName(icon.reactName);
+      }
+
+      if (iconMap.has(icon.reactName)) {
+        duplicates.push(icon.reactName);
+      } else {
+        iconMap.set(icon.reactName, icon);
+      }
+    }
+
+    if (duplicates.length > 0) {
+      logger.warn(`Found ${duplicates.length} duplicate icons: ${duplicates.join(', ')}`);
+    }
+
+    // Get unique icons
+    const uniqueIcons = Array.from(iconMap.values());
+    const componentNames = uniqueIcons.map((icon) => icon.reactName).sort();
+
+    // Generate figma.tsx file
+    const importStatement = `import React from "react";
 import {
-  AddCircleOIcon, AngleDoubleLeftIcon, AngleDoubleRightIcon, AngleDownIcon
-} from "./generated";
-import figma from "@figma/code-connect";
+  ${componentNames.join(',\n  ')}
+} from "@patternfly/react-icons/dist/esm/icons";
+import figma from "@figma/code-connect";`;
 
-/**
- * -- This file was auto-generated by the figmaConnector script --
- * This file connects icon components to their corresponding Figma components.
- */
-`
-    );
-
-    // Extract unique icon names
-    const uniqueIconNames = extractIconNames(existingContent);
-
-    // Generate import statement
-    const importStatement = `import {
-  ${uniqueIconNames.join(', ')}
-} from "./@patternfly/react-icons";`;
-
-    // Generate connection content
     const connectionContent = `
-${importStatement}
-import figma from "@figma/code-connect";
-
 /**
  * -- This file was auto-generated by the figmaConnector script --
  * This file connects icon components to their corresponding Figma components.
  */
 
-${uniqueIconNames
-  .map((iconName) => {
-    // Try to find a matching icon in iconsData
-    const iconConfig = iconsData.find(
-      (icon) =>
-        icon.reactName === iconName || icon.fileName.replace('-icon', '') === iconName.replace('Icon', '').toLowerCase()
-    );
+${uniqueIcons
+  .map((icon) => {
+    // Extract node ID from URL or use default
+    const nodeId = icon.url ? extractNodeId(icon.url) || config.defaultNodeId : config.defaultNodeId;
 
-    // Use the URL directly from iconsData if available
-    const url = iconConfig?.url || `${config.figmaBaseUrl}?node-id=${config.defaultNodeId}&m=dev`;
+    // Construct the full Figma URL with node ID
+    const url = `${config.figmaBaseUrl}?node-id=${nodeId}&m=dev`;
 
-    // Use a more compact format for figma.connect()
-    return `figma.connect(${iconName}, "${url}", {
+    return `figma.connect(${icon.reactName}, "${url}", {
   props: {},
-  example: (props) => <${iconName} {...props} />
+  example: (props) => <${icon.reactName} {...props} />
 });`;
   })
   .join('\n\n')}
 `;
 
-    // Write the updated connection file
-    await fs.writeFile(connectionFilePath, connectionContent, 'utf8');
+    const fullContent = `${importStatement}\n${connectionContent}`;
+
+    // Write output files
+    const connectionFilePath = path.join(outputDir, config.figmaOutputFile);
+    await fs.writeFile(connectionFilePath, fullContent, 'utf8');
 
     logger.success('Generated icon connections', {
       source: 'IconConnectionGenerator',
       context: {
-        uniqueIconCount: uniqueIconNames.length,
+        uniqueIconCount: uniqueIcons.length,
         outputPath: connectionFilePath
       }
     });
+
+    // Generate index file
+    const indexContent = uniqueIcons
+      .filter((icon) => icon.fileName)
+      .map((icon) => {
+        // Standardize the fileName to match the reactName if needed
+        const fileName = icon.fileName.replace(/\(far\)/i, 'Far');
+        return `export { ${icon.reactName} } from './${fileName}';`;
+      })
+      .join('\n');
+
+    const indexPath = path.join(outputDir, config.generatedIndexFile);
+    await fs.writeFile(indexPath, indexContent);
+
+    logger.success(`Generated index file at ${indexPath}`);
 
     return true;
   } catch (error) {
@@ -133,5 +191,15 @@ ${uniqueIconNames
 
 // Run the script
 generateIconConnections()
-  .then((success) => process.exit(success ? 0 : 1))
-  .catch(() => process.exit(1));
+  .then((success) => {
+    if (success) {
+      logger.success('Figma icon connections generated successfully! 🎉');
+      logger.info('To publish to Figma, run:');
+      logger.info('  FIGMA_TOKEN=your_token npx figma connect publish');
+    }
+    process.exit(success ? 0 : 1);
+  })
+  .catch((error) => {
+    logger.error('Unhandled error:', error);
+    process.exit(1);
+  });

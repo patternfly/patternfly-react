@@ -1,4 +1,8 @@
 {
-  "figmaBaseUrl": "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/H3LonYnwH26v9zNEa2SXFk/PatternFly-6%3A-Components",
-  "defaultNodeId": "1-196"
+  "figmaBaseUrl": "https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6%3A-Components-Test",
+  "defaultNodeId": "1-196",
+  "iconsDataPath": "codeConnect/data/iconsData.json",
+  "iconsFigmaDir": "codeConnect/icons",
+  "figmaOutputFile": "icons.figma.tsx",
+  "generatedIndexFile": "index.ts"
 }
