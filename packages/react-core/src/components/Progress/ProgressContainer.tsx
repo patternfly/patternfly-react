@@ -95,17 +95,15 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
     }
   }, [tooltip]);
 
+  const _isTruncatedAndString = isTitleTruncated && typeof title === 'string';
   const Title = (
     <div
-      className={css(
-        progressStyle.progressDescription,
-        isTitleTruncated && typeof title === 'string' && progressStyle.modifiers.truncate
-      )}
+      className={css(progressStyle.progressDescription, _isTruncatedAndString && progressStyle.modifiers.truncate)}
       id={`${parentId}-description`}
-      aria-hidden="true"
-      onMouseEnter={isTitleTruncated && typeof title === 'string' ? onFocus : null}
-      onFocus={isTitleTruncated && typeof title === 'string' ? onFocus : null}
-      {...(isTitleTruncated && typeof title === 'string' && { tabIndex: 0 })}
+      aria-hidden={_isTruncatedAndString ? null : 'true'}
+      onMouseEnter={_isTruncatedAndString ? onFocus : null}
+      onFocus={_isTruncatedAndString ? onFocus : null}
+      {...(_isTruncatedAndString && { tabIndex: 0 })}
       ref={titleRef}
     >
       {title}
