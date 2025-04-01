@@ -19,7 +19,7 @@ figma.connect(
       ])
     },
     example: (props) => {
-      <Banner className="{props.className}" />;
+      <Banner className={props.className} />;
     }
   }
 );
@@ -46,7 +46,7 @@ figma.connect(
       ])
     },
     example: (props) => {
-      <Banner className="{props.className}" />;
+      <Banner className={props.className} />;
     }
   }
 );

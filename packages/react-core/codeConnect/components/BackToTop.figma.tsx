@@ -7,6 +7,6 @@ figma.connect(
     props: {
       title: figma.string('Text')
     },
-    example: ({ title }) => <BackToTop title={title} />
+    example: (props) => <BackToTop title={props.title} />
   }
 );
