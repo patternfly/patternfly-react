@@ -185,12 +185,19 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   children,
   isAllExpanded,
   isOverflowContainer,
+  role,
   ...props
 }: ToolbarItemProps) => {
   if (variant === ToolbarItemVariant.separator) {
-    // TODO: consider removing spread props here so we can update Divider role prop to union of
-    // separator or presentation rather than generic string
-    return <Divider className={css(className)} orientation={{ default: 'vertical' }} {...props} />;
+    const isDividerRoleValid = role === 'separator' || role === 'presentation';
+    return (
+      <Divider
+        className={css(className)}
+        orientation={{ default: 'vertical' }}
+        {...props}
+        {...(isDividerRoleValid && { role: role as 'separator' | 'presentation' })}
+      />
+    );
   }
 
   return (
@@ -219,6 +226,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
           )}
           {...(variant === 'label' && { 'aria-hidden': true })}
           id={id}
+          role={role}
           {...props}
         >
           {children}

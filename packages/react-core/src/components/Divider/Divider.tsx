@@ -32,7 +32,7 @@ export interface DividerProps extends React.HTMLProps<HTMLElement> {
     '2xl'?: 'vertical' | 'horizontal';
   };
   /** The ARIA role of the divider when the component property has a value other than "hr". */
-  role?: string;
+  role?: 'separator' | 'presentation';
 }
 
 export const Divider: React.FunctionComponent<DividerProps> = ({
