@@ -21,7 +21,7 @@ export const ExpandableSectionIndented: React.FunctionComponent = () => {
       />
       <br />
       <ExpandableSection
-        toggleText={isExpanded ? 'Show less' : 'Show more'}
+        toggleText={isExpanded ? 'Show less' : 'Show more indented example content'}
         onToggle={onToggle}
         isExpanded={isExpanded}
         isIndented
