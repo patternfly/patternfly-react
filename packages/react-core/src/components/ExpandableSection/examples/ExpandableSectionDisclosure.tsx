@@ -10,7 +10,7 @@ export const ExpandableSectionDisclosure: React.FunctionComponent = () => {
 
   return (
     <ExpandableSection
-      toggleText={isExpanded ? 'Show less' : 'Show more'}
+      toggleText={isExpanded ? 'Show less' : 'Show more disclosure variation example content'}
       onToggle={onToggle}
       isExpanded={isExpanded}
       displaySize="lg"
