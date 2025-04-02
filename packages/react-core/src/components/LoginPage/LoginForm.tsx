@@ -28,6 +28,8 @@ export interface LoginFormProps extends Omit<React.HTMLProps<HTMLFormElement>, '
   onChangeUsername?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** Flag indicating if the username is valid */
   isValidUsername?: boolean;
+  /** Flag indicating if password is required */
+  isPasswordRequired?: boolean;
   /** Label for the password input field */
   passwordLabel?: string;
   /** Value for the password */
@@ -66,6 +68,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   usernameValue = '',
   onChangeUsername = () => undefined as any,
   isValidUsername = true,
+  isPasswordRequired = true,
   passwordLabel = 'Password',
   passwordValue = '',
   onChangePassword = () => undefined as any,
@@ -85,7 +88,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
 
   const passwordInput = (
     <TextInput
-      isRequired
+      isRequired={isPasswordRequired}
       type={passwordHidden ? 'password' : 'text'}
       id="pf-login-password-id"
       name="pf-login-password-id"
@@ -118,7 +121,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
           onChange={onChangeUsername}
         />
       </FormGroup>
-      <FormGroup label={passwordLabel} isRequired fieldId="pf-login-password-id">
+      <FormGroup label={passwordLabel} isRequired={isPasswordRequired} fieldId="pf-login-password-id">
         {isShowPasswordEnabled && (
           <InputGroup>
             <InputGroupItem isFill>{passwordInput}</InputGroupItem>
