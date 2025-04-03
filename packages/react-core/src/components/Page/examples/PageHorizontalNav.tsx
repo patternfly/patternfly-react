@@ -36,9 +36,11 @@ export const PageHorizontalNav: React.FunctionComponent = () => {
 
   return (
     <Page masthead={masthead}>
-      <PageSection>Section 1</PageSection>
-      <PageSection variant="secondary">Section 2 with secondary variant styling</PageSection>
-      <PageSection>Section 3</PageSection>
+      <PageSection aria-label="Section 1">Section 1</PageSection>
+      <PageSection variant="secondary" aria-label="Section 2 with secondary variant styling">
+        Section 2 with secondary variant styling
+      </PageSection>
+      <PageSection aria-label="Section 3">Section 3</PageSection>
     </Page>
   );
 };

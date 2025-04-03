@@ -64,11 +64,11 @@ export const PageWithOrWithoutFill: React.FunctionComponent = () => {
 
   return (
     <Page isContentFilled masthead={masthead} sidebar={sidebar}>
-      <PageSection>A default page section</PageSection>
-      <PageSection isFilled={true} variant="secondary">
+      <PageSection aria-label="Default page section">A default page section</PageSection>
+      <PageSection isFilled={true} variant="secondary" aria-label="Section fills the available space">
         This section fills the available space.
       </PageSection>
-      <PageSection>A default page section</PageSection>
+      <PageSection aria-label="Default page section">A default page section</PageSection>
     </Page>
   );
 };

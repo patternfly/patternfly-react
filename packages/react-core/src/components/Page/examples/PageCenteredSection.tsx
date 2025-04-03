@@ -68,7 +68,7 @@ export const PageCenteredSection: React.FunctionComponent = () => {
 
   return (
     <Page masthead={masthead} sidebar={sidebar}>
-      <PageSection isWidthLimited isCenterAligned>
+      <PageSection isWidthLimited isCenterAligned aria-label="width limited page section">
         <Card>
           <CardBody>
             When a width limited page section is wider than the value of
