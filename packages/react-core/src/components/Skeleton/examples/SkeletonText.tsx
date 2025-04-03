@@ -12,24 +12,24 @@ import t_global_font_size_sm from '@patternfly/react-tokens/dist/esm/t_global_fo
 export const SkeletonText: React.FunctionComponent = () => (
   <Fragment>
     {t_global_font_size_4xl.name}
-    <Skeleton fontSize="4xl" screenreaderText="Loading font size 4xl" />
+    <Skeleton fontSize="4xl" screenreaderText="Loading text content" />
     <br />
     {t_global_font_size_3xl.name}
-    <Skeleton fontSize="3xl" screenreaderText="Loading font size 3xl" />
+    <Skeleton fontSize="3xl" />
     <br />
     {t_global_font_size_2xl.name}
-    <Skeleton fontSize="2xl" screenreaderText="Loading font size 2xl" />
+    <Skeleton fontSize="2xl" />
     <br />
     {t_global_font_size_xl.name}
-    <Skeleton fontSize="xl" screenreaderText="Loading font size xl" />
+    <Skeleton fontSize="xl" />
     <br />
     {t_global_font_size_lg.name}
-    <Skeleton fontSize="lg" screenreaderText="Loading font size lg" />
+    <Skeleton fontSize="lg" />
     <br />
     {t_global_font_size_md.name}
-    <Skeleton fontSize="md" screenreaderText="Loading font size md" />
+    <Skeleton fontSize="md" />
     <br />
     {t_global_font_size_sm.name}
-    <Skeleton fontSize="sm" screenreaderText="Loading font size sm" />
+    <Skeleton fontSize="sm" />
   </Fragment>
 );
