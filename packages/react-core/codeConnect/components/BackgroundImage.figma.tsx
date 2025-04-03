@@ -1,4 +1,4 @@
-import { BackgroundImage } from '@patternfly/react-core/dist/js/components/BackgroundImage';
+import { BackgroundImage } from 'src/components/BackgroundImage';
 import figma from '@figma/code-connect';
 
 /**
@@ -11,8 +11,9 @@ import figma from '@figma/code-connect';
 
 figma.connect(
   BackgroundImage,
-  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/H3LonYnwH26v9zNEa2SXFk/PatternFly-6%3A-Components?node-id=2722-13543&t=7hKW0DzmfHGhNQnn-11',
+  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6%3A-Components-Test?node-id=2722-13543&m=dev',
   {
-    example: () => <BackgroundImage {...props} />
+    props: {},
+    example: () => <BackgroundImage src="/assets/images/pf-background.svg" />
   }
 );
