@@ -64,7 +64,7 @@ describe('Shared tests between ol and ul lists', () => {
       expect(screen.getByRole('list')).toHaveAccessibleName('Testing stuff');
     });
 
-    test(`Renders with spread props for ${component} list`, () => {
+    test(`Spreads additional props when passed for ${component} list`, () => {
       render(<List component={component} id="Test ID"></List>);
 
       expect(screen.getByRole('list')).toHaveAttribute('id', 'Test ID');
@@ -91,10 +91,16 @@ describe('Shared tests between ol and ul lists', () => {
 });
 
 describe('Ol component list', () => {
-  test(`Renders with type attribute when type is passed`, () => {
-    render(<List component={ListComponent.ol} type={OrderType.lowercaseRomanNumber}></List>);
+  test(`Renders with type of "1" by default`, () => {
+    render(<List component={ListComponent.ol}></List>);
 
-    expect(screen.getByRole('list')).toHaveAttribute('type', 'i');
+    expect(screen.getByRole('list')).toHaveAttribute('type', '1');
+  });
+
+  test(`Renders with type attribute when type is passed`, () => {
+    render(<List component={ListComponent.ol} type={OrderType.uppercaseLetter}></List>);
+
+    expect(screen.getByRole('list')).toHaveAttribute('type', 'A');
   });
 });
 
