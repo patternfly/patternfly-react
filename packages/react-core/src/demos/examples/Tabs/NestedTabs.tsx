@@ -133,7 +133,7 @@ export const NestedTabs: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper hasPageTemplateTitle>
-      <PageSection type="tabs" isWidthLimited>
+      <PageSection type="tabs" isWidthLimited aria-label="Cluster navigation tabs">
         <Tabs
           activeKey={activeTabKey}
           onSelect={(_event, tabIndex) => handleTabClick(Number(tabIndex))}
@@ -144,7 +144,7 @@ export const NestedTabs: React.FunctionComponent = () => {
           <Tab eventKey={1} title={<TabTitleText>Cluster 2</TabTitleText>} tabContentId={`tabContent${1}`} />
         </Tabs>
       </PageSection>
-      <PageSection isWidthLimited>
+      <PageSection isWidthLimited aria-label="Cluster tab panel content">
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <TabContentBody>{tabContent}</TabContentBody>
         </TabContent>

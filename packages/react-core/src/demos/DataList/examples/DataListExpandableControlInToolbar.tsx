@@ -133,9 +133,9 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
   return (
     <Fragment>
       <DashboardWrapper mainContainerId="main-content-datalist-view-default-nav" breadcrumb={null}>
-        <PageSection>
+        <PageSection aria-labelledby="projects-heading">
           <Content>
-            <h1>Projects</h1>
+            <h1 id="projects-heading">Projects</h1>
             <p>This is a demo that showcases PatternFly data list</p>
           </Content>
         </PageSection>
