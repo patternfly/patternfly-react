@@ -278,14 +278,14 @@ export const PageStickySectionGroupAlternate: React.FunctionComponent = () => {
             </BreadcrumbItem>
           </Breadcrumb>
         </PageBreadcrumb>
-        <PageSection isWidthLimited>
+        <PageSection isWidthLimited aria-labelledby="main-title">
           <Content>
-            <h1>Main title</h1>
+            <h1 id="main-title">Main title</h1>
             <p>This is a full page demo.</p>
           </Content>
         </PageSection>{' '}
       </PageGroup>
-      <PageSection>
+      <PageSection aria-label="Card gallery">
         <Gallery hasGutter>
           {Array.from({ length: 50 }).map((_value, index) => (
             <GalleryItem key={index}>
