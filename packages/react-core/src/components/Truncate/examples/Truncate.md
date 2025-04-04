@@ -15,58 +15,32 @@ The default behavior of the `Truncate` component is to truncate based on whether
 
 By default content will be truncated at its end when it cannot fit entirely inside its parent container.
 
-```js
-import { Truncate } from '@patternfly/react-core';
+```ts file="./TruncateDefault.tsx"
 
-<div className="truncate-example-resize">
-  <Truncate content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'} />
-</div>;
 ```
 
 ### Middle
 
 When passing a `position` property with a value of "middle", the position of the truncation will change based on the parent container's width and the amount of `trailingNumChars` passed in. The `trailingNumChars` will always be displayed, while the rest of the content will be truncated based on the parent container width.
 
-```js
-import { Truncate } from '@patternfly/react-core';
+```ts file="./TruncateMiddle.tsx"
 
-<div className="truncate-example-resize">
-  <Truncate
-    content={'redhat_logo_black_and_white_reversed_simple_with_fedora_container.zip'}
-    trailingNumChars={10}
-    position={'middle'}
-  />
-</div>;
 ```
 
 ### Start
 
 You can truncate content at its start by passing the `position` property with a value of "start". This can be useful if you have several strings to truncate that have similar text at the start, but unique text at the end that you want to have visible.
 
-```js
-import { Truncate } from '@patternfly/react-core';
+```ts file="./TruncateStart.tsx"
 
-<div className="truncate-example-resize">
-  <Truncate
-    content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
-    position={'start'}
-  />
-</div>;
 ```
 
 ### With custom tooltip position
 
 You can customize the position of the `<Tooltip>` that is rendered by passing in the `tooltipPosition` property. The following example overrides the default "top" position with a "bottom" position.
 
-```js
-import { Truncate } from '@patternfly/react-core';
+```ts file="./TruncateCustomTooltipPosition.tsx"
 
-<div className="truncate-example-resize">
-  <Truncate
-    content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
-    tooltipPosition={'bottom'}
-  />
-</div>;
 ```
 
 ### Based on max characters
