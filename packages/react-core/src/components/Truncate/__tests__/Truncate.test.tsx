@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { Truncate } from '../Truncate';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import '@testing-library/jest-dom';
@@ -147,4 +147,76 @@ test('renders with inherited element props spread to the component', () => {
   render(<Truncate content={'Test'} data-testid="test-id" aria-label="labelling-id" />);
 
   expect(screen.getByTestId('test-id')).toHaveAccessibleName('labelling-id');
+});
+
+describe('Truncation with maxCharsDisplayed', () => {
+  test(`Does not render with class class-tbd when maxCharsDisplayed is not passed`, () => {
+    render(<Truncate data-testid="truncate-component" content="Test content" />);
+
+    expect(screen.getByText('Test content')).not.toHaveClass('class-tbd');
+  });
+
+  test(`Does not render with class class-tbd when maxCharsDisplayed is 0`, () => {
+    render(<Truncate maxCharsDisplayed={0} data-testid="truncate-component" content="Test content" />);
+
+    expect(screen.getByText('Test content')).not.toHaveClass('class-tbd');
+  });
+
+  test(`Renders with class class-tbd when maxCharsDisplayed is greater than 0`, () => {
+    render(<Truncate maxCharsDisplayed={1} data-testid="truncate-component" content="Test content" />);
+
+    expect(screen.getByText('T')).toHaveClass('class-tbd');
+  });
+
+  test('Renders with hidden truncated content at end by default when maxCharsDisplayed is passed', () => {
+    render(<Truncate content="Default end position content truncated" maxCharsDisplayed={6} />);
+
+    expect(screen.getByText('Defaul')).not.toHaveClass('pf-v6-screen-reader');
+    expect(screen.getByText('t end position content truncated')).toHaveClass('pf-v6-screen-reader');
+  });
+
+  test('Renders with hidden truncated content at middle position when maxCharsDisplayed is passed and position="middle"', () => {
+    render(
+      <Truncate
+        data-testid="truncate-component"
+        position="middle"
+        content="Middle position contents being truncated"
+        maxCharsDisplayed={10}
+      />
+    );
+
+    expect(screen.getByTestId('truncate-component')).not.toHaveClass('pf-v6-screen-reader');
+    expect(screen.getByText('e position contents being trun')).toHaveClass('pf-v6-screen-reader');
+  });
+
+  test('Renders with hidden truncated content at start when maxCharsDisplayed is passed and position="start"', () => {
+    render(<Truncate content="Start position content truncated" maxCharsDisplayed={4} />);
+
+    expect(screen.getByText('Star')).not.toHaveClass('pf-v6-screen-reader');
+    expect(screen.getByText('t position content truncated')).toHaveClass('pf-v6-screen-reader');
+  });
+
+  test('Renders full content when maxCharsDisplayed exceeds the length of the content', () => {
+    render(<Truncate content="This full content is rendered" maxCharsDisplayed={90} />);
+
+    expect(screen.getByText('This full content is rendered')).not.toHaveClass('pf-v6-screen-reader');
+  });
+
+  test('Renders ellipsis as omission content by default', () => {
+    render(<Truncate content="Test truncation content" maxCharsDisplayed={5} />);
+
+    expect(screen.getByText('\u2026')).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  test('Renders custom omission content when omissionContent is passed', () => {
+    render(<Truncate omissionContent="---" content="Test truncation content" maxCharsDisplayed={5} />);
+
+    expect(screen.getByText('---')).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  test('Matches snapshot with default position', () => {
+    const { asFragment } = render(<Truncate content="Test truncation content" maxCharsDisplayed={3} />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
