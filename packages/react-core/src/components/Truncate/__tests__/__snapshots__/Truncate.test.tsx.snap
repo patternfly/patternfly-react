@@ -1,5 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Truncation with maxCharsDisplayed Matches snapshot with default position 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="Tooltip-mock"
+  >
+    <div
+      data-testid="Tooltip-mock-content-container"
+    >
+      Test Test truncation content
+    </div>
+    <p>
+      position: top
+    </p>
+    <span
+      class="pf-v6-c-truncate class-tbd"
+    >
+      Tes
+      <span
+        aria-hidden="true"
+      >
+        …
+      </span>
+      <span
+        class="pf-v6-screen-reader"
+      >
+        t truncation content
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`renders default truncation 1`] = `
 <DocumentFragment>
   <div
