@@ -308,7 +308,7 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
       isBreadcrumbWidthLimited
       isBreadcrumbGrouped
       additionalGroupedContent={
-        <PageSection>
+        <PageSection aria-label="Main Title">
           <Content>
             <Content component="h1">Main title</Content>
             <Content component="p">This is a full page demo.</Content>
@@ -316,7 +316,7 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
         </PageSection>
       }
     >
-      <PageSection>
+      <PageSection aria-label="Card gallery">
         <Gallery hasGutter>
           {Array.from({ length: 10 }).map((_value, index) => (
             <GalleryItem key={index}>
