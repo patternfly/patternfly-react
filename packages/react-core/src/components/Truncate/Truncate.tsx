@@ -186,14 +186,14 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
         <>
           {renderVisuallyHiddenContent(content.slice(0, maxCharsDisplayed * -1))}
           {omissionElement}
-          {content.slice(maxCharsDisplayed * -1)}
+          <span>{content.slice(maxCharsDisplayed * -1)}</span>
         </>
       );
     }
     if (position === TruncatePosition.end) {
       return (
         <>
-          {content.slice(0, maxCharsDisplayed)}
+          <span>{content.slice(0, maxCharsDisplayed)}</span>
           {omissionElement}
           {renderVisuallyHiddenContent(content.slice(maxCharsDisplayed))}
         </>
@@ -204,10 +204,10 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
     const trueMiddleEnd = Math.ceil(maxCharsDisplayed / 2) * -1;
     return (
       <>
-        {content.slice(0, trueMiddleStart)}
+        <span>{content.slice(0, trueMiddleStart)}</span>
         {omissionElement}
         {renderVisuallyHiddenContent(content.slice(trueMiddleStart, trueMiddleEnd))}
-        {content.slice(trueMiddleEnd)}
+        <span>{content.slice(trueMiddleEnd)}</span>
       </>
     );
   };
