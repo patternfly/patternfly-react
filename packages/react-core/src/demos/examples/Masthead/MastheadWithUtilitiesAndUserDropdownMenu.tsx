@@ -544,15 +544,15 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       isBreadcrumbWidthLimited
       isBreadcrumbGrouped
       additionalGroupedContent={
-        <PageSection>
+        <PageSection aria-labelledby="main-title">
           <Content>
-            <h1>Main title</h1>
+            <h1 id="main-title">Main title</h1>
             <p>This is a full page demo.</p>
           </Content>
         </PageSection>
       }
     >
-      <PageSection>
+      <PageSection aria-label="Card gallery">
         <Gallery hasGutter>
           {Array.from({ length: 10 }).map((_value, index) => (
             <GalleryItem key={index}>

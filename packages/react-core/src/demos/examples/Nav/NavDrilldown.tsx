@@ -129,7 +129,7 @@ export const NavDrilldown: React.FunctionComponent = () => {
 
   return (
     <Page masthead={<DashboardHeader />} sidebar={sidebar}>
-      <PageSection>
+      <PageSection aria-label="Navigation layer">
         <strong>Nav Layer: </strong>
         {navLayer}
       </PageSection>
