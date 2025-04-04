@@ -5,7 +5,7 @@ export const TruncateMaxChars: React.FunctionComponent = () => (
     <div>Truncated at end position:</div>
     <Truncate
       maxCharsDisplayed={15}
-      content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
+      content={'redhat_logo_black_and_white_reversed_simple_with_fedora_container.zip'}
     />
     <br />
     <br />
@@ -13,7 +13,7 @@ export const TruncateMaxChars: React.FunctionComponent = () => (
     <Truncate
       maxCharsDisplayed={15}
       position={TruncatePosition.middle}
-      content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
+      content={'redhat_logo_black_and_white_reversed_simple_with_fedora_container.zip'}
     />
     <br />
     <br />
@@ -21,7 +21,7 @@ export const TruncateMaxChars: React.FunctionComponent = () => (
     <Truncate
       maxCharsDisplayed={15}
       position={TruncatePosition.start}
-      content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
+      content={'redhat_logo_black_and_white_reversed_simple_with_fedora_container.zip'}
     />
   </>
 );
