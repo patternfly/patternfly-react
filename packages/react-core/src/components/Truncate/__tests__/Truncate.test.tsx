@@ -24,7 +24,7 @@ test(`renders with class ${styles.truncate}`, () => {
 
   const test = screen.getByLabelText('test-id');
 
-  expect(test).toHaveClass(styles.truncate);
+  expect(test).toHaveClass(styles.truncate, { exact: true });
 });
 
 test('renders with custom class name passed via prop', () => {
@@ -150,22 +150,16 @@ test('renders with inherited element props spread to the component', () => {
 });
 
 describe('Truncation with maxCharsDisplayed', () => {
-  test(`Does not render with class class-tbd when maxCharsDisplayed is not passed`, () => {
-    render(<Truncate data-testid="truncate-component" content="Test content" />);
-
-    expect(screen.getByText('Test content')).not.toHaveClass('class-tbd');
-  });
-
   test(`Does not render with class class-tbd when maxCharsDisplayed is 0`, () => {
     render(<Truncate maxCharsDisplayed={0} data-testid="truncate-component" content="Test content" />);
 
-    expect(screen.getByText('Test content')).not.toHaveClass('class-tbd');
+    expect(screen.getByTestId('truncate-component')).not.toHaveClass('class-tbd');
   });
 
   test(`Renders with class class-tbd when maxCharsDisplayed is greater than 0`, () => {
     render(<Truncate maxCharsDisplayed={1} data-testid="truncate-component" content="Test content" />);
 
-    expect(screen.getByText('T')).toHaveClass('class-tbd');
+    expect(screen.getByTestId('truncate-component')).toHaveClass('class-tbd');
   });
 
   test('Renders with hidden truncated content at end by default when maxCharsDisplayed is passed', () => {
@@ -176,17 +170,11 @@ describe('Truncation with maxCharsDisplayed', () => {
   });
 
   test('Renders with hidden truncated content at middle position when maxCharsDisplayed is passed and position="middle"', () => {
-    render(
-      <Truncate
-        data-testid="truncate-component"
-        position="middle"
-        content="Middle position contents being truncated"
-        maxCharsDisplayed={10}
-      />
-    );
+    render(<Truncate position="middle" content="Middle position contents being truncated" maxCharsDisplayed={10} />);
 
-    expect(screen.getByTestId('truncate-component')).not.toHaveClass('pf-v6-screen-reader');
+    expect(screen.getByText('Middl')).not.toHaveClass('pf-v6-screen-reader');
     expect(screen.getByText('e position contents being trun')).toHaveClass('pf-v6-screen-reader');
+    expect(screen.getByText('cated')).not.toHaveClass('pf-v6-screen-reader');
   });
 
   test('Renders with hidden truncated content at start when maxCharsDisplayed is passed and position="start"', () => {
