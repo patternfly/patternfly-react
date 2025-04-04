@@ -385,12 +385,12 @@ export const TablesAndTabs = () => {
   return (
     <DashboardWrapper>
       <Fragment>
-        <PageSection>
+        <PageSection aria-label="Nodes">
           <Title headingLevel="h1" size="2xl">
             Nodes
           </Title>
         </PageSection>
-        <PageSection padding={{ default: 'noPadding' }}>
+        <PageSection padding={{ default: 'noPadding' }} aria-label="Nodes toolbar and content">
           {toolbar}
           <Divider />
           {tabContent}
