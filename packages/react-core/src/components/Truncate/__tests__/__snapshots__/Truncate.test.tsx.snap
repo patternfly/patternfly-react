@@ -16,7 +16,9 @@ exports[`Truncation with maxCharsDisplayed Matches snapshot with default positio
     <span
       class="pf-v6-c-truncate class-tbd"
     >
-      Tes
+      <span>
+        Tes
+      </span>
       <span
         aria-hidden="true"
       >
