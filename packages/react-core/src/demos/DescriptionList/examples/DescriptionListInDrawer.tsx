@@ -150,13 +150,13 @@ export const DescriptionListInDrawer: React.FunctionComponent = () => {
       isNotificationDrawerExpanded={isExpanded}
       onNotificationDrawerExpand={onExpand}
     >
-      <PageSection>
+      <PageSection aria-label="Main Title">
         <Content>
           <Content component="h1">Main title</Content>
           <Content component="p">This is a full page demo.</Content>
         </Content>
       </PageSection>
-      <PageSection>{drawerContent}</PageSection>
+      <PageSection aria-label="Drawer Content">{drawerContent}</PageSection>
     </DashboardWrapper>
   );
 };

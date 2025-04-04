@@ -465,16 +465,16 @@ export const CardViewBasic: React.FunctionComponent = () => {
   return (
     <Fragment>
       <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
-        <PageSection>
+        <PageSection aria-labelledby="projects-heading">
           <Content>
-            <h1>Projects</h1>
+            <h1 id="projects-heading">Projects</h1>
             <p>This is a demo that showcases PatternFly cards.</p>
           </Content>
           <Toolbar id="toolbar-group-types" clearAllFilters={onDelete}>
             <ToolbarContent>{toolbarItems}</ToolbarContent>
           </Toolbar>
         </PageSection>
-        <PageSection isFilled>
+        <PageSection isFilled aria-label="Selectable card container">
           <Gallery hasGutter aria-label="Selectable card container">
             <Card isCompact>
               <Bullseye>
@@ -546,7 +546,12 @@ export const CardViewBasic: React.FunctionComponent = () => {
             ))}
           </Gallery>
         </PageSection>
-        <PageSection isFilled={false} stickyOnBreakpoint={{ default: 'bottom' }} padding={{ default: 'noPadding' }}>
+        <PageSection
+          isFilled={false}
+          stickyOnBreakpoint={{ default: 'bottom' }}
+          padding={{ default: 'noPadding' }}
+          aria-label="Pagination controls"
+        >
           <Pagination
             itemCount={totalItemCount}
             page={page}
