@@ -417,9 +417,9 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper mainContainerId="main-content-page-layout-default-nav">
-      <PageSection>
+      <PageSection aria-labelledby="main-title">
         <Content>
-          <h1>Main title</h1>
+          <h1 id="main-title">Main title</h1>
           <p>
             Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
             of it's relative line height of 1.5.
@@ -427,7 +427,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
         </Content>
       </PageSection>
       <Divider component="div" />
-      <PageSection padding={{ default: 'noPadding' }}>
+      <PageSection padding={{ default: 'noPadding' }} aria-label="Card with drawer content">
         <Drawer isExpanded={isDrawerExpanded}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
