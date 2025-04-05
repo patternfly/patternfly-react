@@ -10,6 +10,7 @@ export const SearchInputBasic: React.FunctionComponent = () => {
 
   return (
     <SearchInput
+      aria-label="Basic"
       placeholder="Find by name"
       value={value}
       onChange={(_event, value) => onChange(value)}

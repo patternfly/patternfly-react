@@ -102,6 +102,7 @@ export const DualListSelectorSearch: React.FunctionComponent = () => {
       value={isAvailable ? availableFilter : chosenFilter}
       onChange={(_event, value) => onFilterChange(value, isAvailable)}
       onClear={() => onFilterChange('', isAvailable)}
+      aria-label={isAvailable ? 'Search available options' : 'Search chosen options'}
     />
   );
 

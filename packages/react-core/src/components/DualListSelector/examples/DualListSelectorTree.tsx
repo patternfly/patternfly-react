@@ -182,6 +182,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
         value={isChosen ? chosenFilter : availableFilter}
         onChange={(_event, value) => onChange(value)}
         onClear={() => onChange('')}
+        aria-label={isChosen ? 'Search chosen items' : 'Search available items'}
       />
     );
   };

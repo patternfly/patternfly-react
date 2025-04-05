@@ -172,6 +172,7 @@ SearchAutocomplete = () => {
       ref={searchInputRef}
       hint={hint}
       id="autocomplete-search"
+      aria-label='Search with autocomplete'
     />
   );
 
@@ -401,6 +402,7 @@ AdvancedComposableSearchInput = () => {
       onSearch={onSubmit}
       ref={searchInputRef}
       id="custom-advanced-search"
+      aria-label='Composable advanced search'
     />
   );
 
