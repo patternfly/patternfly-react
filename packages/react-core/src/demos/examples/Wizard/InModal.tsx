@@ -15,7 +15,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 export const WizardInModalDemo: React.FunctionComponent = () => (
   <>
     <DashboardWrapper hasPageTemplateTitle>
-      <PageSection isWidthLimited>
+      <PageSection isWidthLimited aria-label="Card gallery section">
         <Gallery hasGutter>
           {Array.from({ length: 10 }).map((_value, index) => (
             <GalleryItem key={index}>
