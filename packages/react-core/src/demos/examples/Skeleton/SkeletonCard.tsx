@@ -27,11 +27,11 @@ export const SkeletonCard: React.FunctionComponent = () => {
   );
   return (
     <DashboardWrapper isBreadcrumbWidthLimited>
-      <PageSection isWidthLimited>
+      <PageSection isWidthLimited aria-label="Main title">
         <Content component="h1">Main title</Content>
         <Content component="p">This is a full page demo.</Content>
       </PageSection>
-      <PageSection>
+      <PageSection aria-label="Card gallery">
         <Gallery hasGutter>{Array.from({ length: 7 }).map((_value, index) => card(index))}</Gallery>
       </PageSection>
     </DashboardWrapper>

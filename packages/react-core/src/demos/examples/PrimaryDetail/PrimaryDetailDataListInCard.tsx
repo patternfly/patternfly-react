@@ -181,9 +181,9 @@ export const PrimaryDetailDataListInCard: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper>
-      <PageSection>
+      <PageSection aria-labelledby="main-title">
         <Content>
-          <h1>Main title</h1>
+          <h1 id="main-title">Main title</h1>
           <p>
             Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
             of it’s relative line height of 1.5.
@@ -191,7 +191,7 @@ export const PrimaryDetailDataListInCard: React.FunctionComponent = () => {
         </Content>
       </PageSection>
       <Divider component="div" />
-      <PageSection>
+      <PageSection aria-label="Card with drawer content">
         <Card>
           <Drawer isStatic isExpanded={isExpanded}>
             <DrawerContent panelContent={panelContent}>
