@@ -7,9 +7,9 @@ export const SkeletonCard: React.FunctionComponent = () => {
       <CardBody>
         <Flex direction={{ default: 'column' }} spacer={{ default: 'spacerMd' }}>
           <Skeleton screenreaderText="Loading content" />
-          <Skeleton width="66%" screenreaderText="Loaded 66% of content" />
-          <Skeleton width="25%" screenreaderText="Loaded 25% of content" />
-          <Skeleton width="50%" screenreaderText="Loaded 50% of content" />
+          <Skeleton width="66%" />
+          <Skeleton width="25%" />
+          <Skeleton width="50%" />
         </Flex>
       </CardBody>
       <CardBody>
@@ -18,9 +18,9 @@ export const SkeletonCard: React.FunctionComponent = () => {
       <CardBody>
         <Flex direction={{ default: 'column' }} spacer={{ default: 'spacerMd' }}>
           <Skeleton screenreaderText="Loading content" />
-          <Skeleton width="25%" screenreaderText="Loaded 25% of content" />
-          <Skeleton width="75%" screenreaderText="Loaded 75% of content" />
-          <Skeleton width="50%" screenreaderText="Loaded 50% of content" />
+          <Skeleton width="25%" />
+          <Skeleton width="75%" />
+          <Skeleton width="50%" />
         </Flex>
       </CardBody>
     </Card>
