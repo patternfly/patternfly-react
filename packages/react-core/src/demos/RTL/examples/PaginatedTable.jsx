@@ -444,9 +444,9 @@ export const PaginatedTableAction = () => {
             ))}
           </Breadcrumb>
         </PageBreadcrumb>
-        <PageSection variant="light">
+        <PageSection variant="light" aria-labelledby='main-title' >
           <Content>
-            <h1>{translation.title}</h1>
+            <h1 id='main-title'>{translation.title}</h1>
             <p>{translation.body}</p>
           </Content>
         </PageSection>

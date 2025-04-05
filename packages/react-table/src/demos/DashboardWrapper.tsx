@@ -107,9 +107,9 @@ export const DashboardBreadcrumb = (
 );
 
 const PageTemplateTitle = (
-  <PageSection>
+  <PageSection aria-labelledby="main-title">
     <Content>
-      <h1>Main title</h1>
+      <h1 id="main-title">Main title</h1>
       <p>This is a full page demo.</p>
     </Content>
   </PageSection>
