@@ -135,7 +135,11 @@ export const TableStickyFirstColumn = () => {
   });
   return (
     <DashboardWrapper hasPageTemplateTitle>
-      <PageSection isWidthLimited padding={{ default: 'noPadding', xl: 'padding' }}>
+      <PageSection
+        isWidthLimited
+        padding={{ default: 'noPadding', xl: 'padding' }}
+        aria-label="Sticky column table data"
+      >
         <Card component="div">
           <InnerScrollContainer>
             <Table aria-label="Sticky column table" gridBreakPoint="">
