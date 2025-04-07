@@ -75,12 +75,23 @@ test(`Does not call onSearch when input is not typed into`, async () => {
 
   render(
     <>
-      <TreeViewSearch />
+      <TreeViewSearch onSearch={onSearchMock} />
       <input aria-label="native input" />
     </>
   );
 
   await user.type(screen.getByRole('textbox'), 'a');
+
+  expect(onSearchMock).not.toHaveBeenCalled();
+});
+
+test(`Does not call onSearch when not passed in`, async () => {
+  const user = userEvent.setup();
+  const onSearchMock = jest.fn();
+
+  render(<TreeViewSearch />);
+
+  await user.type(screen.getByRole('searchbox'), 'a');
 
   expect(onSearchMock).not.toHaveBeenCalled();
 });

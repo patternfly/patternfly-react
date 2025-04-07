@@ -50,11 +50,11 @@ export interface TreeViewListItemProps {
   /** Internal content of a tree view item. */
   name: React.ReactNode;
   /** Callback for item checkbox selection. */
-  onCheck?: (event: React.ChangeEvent<HTMLInputElement>, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
+  onCheck?: (event: React.ChangeEvent<HTMLInputElement>, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Callback for item selection. Note: calling event.preventDefault() will prevent the node
    * from toggling.
    */
-  onSelect?: (event: React.MouseEvent, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
+  onSelect?: (event: React.MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Callback for expanding a node with children. */
   onExpand?: (event: React.MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Callback for collapsing a node with children. */
