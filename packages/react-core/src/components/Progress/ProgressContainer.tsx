@@ -81,7 +81,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   const [tooltip, setTooltip] = useState('');
   const titleRef = useRef(null);
-  const onFocus = (event: any) => {
+  const updateTooltip = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       setTooltip(title || event.target.innerHTML);
     } else {
@@ -101,8 +101,8 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
       className={css(progressStyle.progressDescription, _isTruncatedAndString && progressStyle.modifiers.truncate)}
       id={`${parentId}-description`}
       aria-hidden={_isTruncatedAndString ? null : 'true'}
-      onMouseEnter={_isTruncatedAndString ? onFocus : null}
-      onFocus={_isTruncatedAndString ? onFocus : null}
+      onMouseEnter={_isTruncatedAndString ? updateTooltip : null}
+      onFocus={_isTruncatedAndString ? updateTooltip : null}
       {...(_isTruncatedAndString && { tabIndex: 0 })}
       ref={titleRef}
     >
