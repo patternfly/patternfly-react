@@ -11,9 +11,9 @@ export const Name = () => {
 
   return (
     <DashboardWrapper breadcrumb={null}>
-      <PageSection>
+      <PageSection aria-labelledby="main-title">
         <Content>
-          <h1>Main title</h1>
+          <h1 id="main-title">Main title</h1>
           <p>
             Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
             of it’s relative line height of 1.5.

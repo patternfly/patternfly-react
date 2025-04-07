@@ -122,22 +122,22 @@ export const NavWithSubnav: React.FunctionComponent = () => {
         skipToContent={PageSkipToContent}
         mainContainerId={pageId}
       >
-        <PageSection type={PageSectionTypes.subNav} isWidthLimited>
+        <PageSection type={PageSectionTypes.subNav} isWidthLimited aria-label="Subnav">
           {SubNav}
         </PageSection>
-        <PageSection type={PageSectionTypes.breadcrumb} isWidthLimited>
+        <PageSection type={PageSectionTypes.breadcrumb} isWidthLimited aria-label="Breadcrumb">
           {DashboardBreadcrumb}
         </PageSection>
-        <PageSection>
+        <PageSection aria-labelledby="main-title">
           <Content>
-            <h1>Main title</h1>
+            <h1 id="main-title">Main title</h1>
             <p>
               Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
               of it’s relative line height of 1.5.
             </p>
           </Content>
         </PageSection>
-        <PageSection>
+        <PageSection aria-label="Card gallery">
           <Gallery hasGutter>
             {Array.from({ length: 10 }).map((_value, index) => (
               <GalleryItem key={index}>
