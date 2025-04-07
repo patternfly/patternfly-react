@@ -22,9 +22,9 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 # yarn run lerna publish --conventional-commits --conventional-graduate --no-private --dist-tag=latest --yes
 
 # immediately after promote - set up repo for next prerelease
-yarn run lerna version preminor --force-publish --conventional-commits --no-private --yes --preid prerelease
+# yarn run lerna version preminor --force-publish --conventional-commits --no-private --yes --preid prerelease
 
 # dry run
-# yarn run lerna version --conventional-commits --conventional-graduate --no-private --yes --no-git-tag-version --no-push
+yarn run lerna version --conventional-commits --conventional-graduate --no-private --yes --no-git-tag-version --no-push
 
 
