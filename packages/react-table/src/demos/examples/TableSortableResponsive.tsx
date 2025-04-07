@@ -243,6 +243,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
             default: 'noPadding',
             xl: 'padding'
           }}
+          aria-label="Sortable table data"
         >
           <Card component="div">
             {tableToolbar}

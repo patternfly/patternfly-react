@@ -199,7 +199,7 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper hasPageTemplateTitle>
-      <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+      <PageSection padding={{ default: 'noPadding', xl: 'padding' }} aria-label="Compound expandable table data ">
         <Card>
           {tableToolbar}
           <Table aria-label="Compound expandable table">

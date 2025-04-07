@@ -19,7 +19,7 @@ export const TableStickyHeader: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper hasPageTemplateTitle>
-      <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+      <PageSection padding={{ default: 'noPadding', xl: 'padding' }} aria-label="Sticky header table data">
         <Card component="div">
           <Table aria-label="Sticky Header Table Demo" isStickyHeader>
             <Thead>

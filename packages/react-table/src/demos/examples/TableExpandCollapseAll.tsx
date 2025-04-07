@@ -153,6 +153,7 @@ export const TableExpandCollapseAll: React.FunctionComponent = () => {
             default: 'noPadding',
             xl: 'padding'
           }}
+          aria-label="Collapsible table data"
         >
           <Card component="div">
             <Table aria-label="Collapsible table">

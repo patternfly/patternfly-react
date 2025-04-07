@@ -437,7 +437,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
   return (
     <Fragment>
       <DashboardWrapper hasPageTemplateTitle>
-        <PageSection isFilled>
+        <PageSection isFilled aria-label="Column management table data">
           {toolbarItems}
           <Table variant="compact" aria-label="Column Management Table">
             <Thead>
