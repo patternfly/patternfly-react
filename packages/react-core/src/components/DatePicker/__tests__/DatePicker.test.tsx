@@ -16,7 +16,7 @@ test('Does not render aria-invalid input when multiple validators return empty s
 
   const rangeValidator = (_date: Date) => '';
   const rangeValidatorB = (_date: Date) => '';
-  const { asFragment } = render(<DatePicker value="2020-03-17" validators={[rangeValidator, rangeValidatorB]} />);
+  render(<DatePicker value="2020-03-17" validators={[rangeValidator, rangeValidatorB]} />);
 
   await user.click(screen.getByRole('textbox'));
   await user.click(document.body);
@@ -28,11 +28,40 @@ test('Does not render helper text when multiple validators return empty strings'
 
   const rangeValidator = (_date: Date) => '';
   const rangeValidatorB = (_date: Date) => '';
-  const { asFragment } = render(<DatePicker value="2020-03-17" validators={[rangeValidator, rangeValidatorB]} />);
+  render(<DatePicker value="2020-03-17" validators={[rangeValidator, rangeValidatorB]} />);
 
   await user.click(screen.getByRole('textbox'));
   await user.click(document.body);
-  expect(asFragment()).toMatchSnapshot();
+
+  expect(screen.queryByText(': error status;')).not.toBeInTheDocument();
+});
+
+test('Renders helper text when at least 1 validator returns a string', async () => {
+  const user = userEvent.setup();
+
+  const rangeValidator = (_date: Date) => 'Some error.';
+  const rangeValidatorB = (_date: Date) => '';
+  render(<DatePicker value="2020-03-17" validators={[rangeValidator, rangeValidatorB]} />);
+
+  await user.click(screen.getByRole('textbox'));
+  await user.click(document.body);
+
+  expect(screen.getByText('Some error.')).toBeVisible();
+  expect(screen.getByText(': error status;')).toBeInTheDocument();
+});
+
+test('Renders helper text when more than 1 validator returns a string', async () => {
+  const user = userEvent.setup();
+
+  const rangeValidator = (_date: Date) => 'Some error.';
+  const rangeValidatorB = (_date: Date) => 'Another error.';
+  render(<DatePicker value="2020-03-17" validators={[rangeValidator, rangeValidatorB]} />);
+
+  await user.click(screen.getByRole('textbox'));
+  await user.click(document.body);
+
+  expect(screen.getByText('Some error. Another error.')).toBeVisible();
+  expect(screen.getByText(': error status;')).toBeInTheDocument();
 });
 
 test('Error state can be cleared from outside', async () => {
