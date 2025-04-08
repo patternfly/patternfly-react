@@ -11,19 +11,57 @@ test('disabled date picker', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('Date picker with multiple validators does not show invalid icon on valid input', async () => {
+test('Does not render aria-invalid input when multiple validators return empty strings', async () => {
   const user = userEvent.setup();
 
   const rangeValidator = (_date: Date) => '';
-
   const rangeValidatorB = (_date: Date) => '';
-
   render(<DatePicker value="2020-03-17" validators={[rangeValidator, rangeValidatorB]} />);
 
   await user.click(screen.getByRole('textbox'));
-
   await user.click(document.body);
   expect(screen.getByRole('textbox')).not.toBeInvalid();
+});
+
+test('Does not render helper text when multiple validators return empty strings', async () => {
+  const user = userEvent.setup();
+
+  const rangeValidator = (_date: Date) => '';
+  const rangeValidatorB = (_date: Date) => '';
+  render(<DatePicker value="2020-03-17" validators={[rangeValidator, rangeValidatorB]} />);
+
+  await user.click(screen.getByRole('textbox'));
+  await user.click(document.body);
+
+  expect(screen.queryByText(': error status;')).not.toBeInTheDocument();
+});
+
+test('Renders helper text when at least 1 validator returns a string', async () => {
+  const user = userEvent.setup();
+
+  const rangeValidator = (_date: Date) => 'Some error.';
+  const rangeValidatorB = (_date: Date) => '';
+  render(<DatePicker value="2020-03-17" validators={[rangeValidator, rangeValidatorB]} />);
+
+  await user.click(screen.getByRole('textbox'));
+  await user.click(document.body);
+
+  expect(screen.getByText('Some error.')).toBeVisible();
+  expect(screen.getByText(': error status;')).toBeInTheDocument();
+});
+
+test('Renders helper text when more than 1 validator returns a string', async () => {
+  const user = userEvent.setup();
+
+  const rangeValidator = (_date: Date) => 'Some error.';
+  const rangeValidatorB = (_date: Date) => 'Another error.';
+  render(<DatePicker value="2020-03-17" validators={[rangeValidator, rangeValidatorB]} />);
+
+  await user.click(screen.getByRole('textbox'));
+  await user.click(document.body);
+
+  expect(screen.getByText('Some error. Another error.')).toBeVisible();
+  expect(screen.getByText(': error status;')).toBeInTheDocument();
 });
 
 test('Error state can be cleared from outside', async () => {
