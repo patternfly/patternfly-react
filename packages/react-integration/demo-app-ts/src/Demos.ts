@@ -463,6 +463,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TreeViewDemo
   },
   {
+    id: 'truncate-demo',
+    name: 'Truncate Demo',
+    componentType: Examples.TruncateDemo
+  },
+  {
     id: 'wizard-demo',
     name: 'Wizard Demo',
     componentType: Examples.WizardDemo
