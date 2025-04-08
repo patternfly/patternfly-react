@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.0...@patternfly/react-core@6.2.1-prerelease.1) (2025-04-08)
+
+### Bug Fixes
+
+- **DatePicker:** prevented textless helper text from rendering ([#11713](https://github.com/patternfly/patternfly-react/issues/11713)) ([7be0f9c](https://github.com/patternfly/patternfly-react/commit/7be0f9ce666b5ba51fcf1c714c210d5f2ea4a490))
+
 ## [6.2.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0...@patternfly/react-core@6.2.1-prerelease.0) (2025-04-08)
 
 ### Bug Fixes
