@@ -53,6 +53,18 @@ Object.values(['indeterminate', 'warning', 'success', 'error']).forEach((variant
     );
     expect(screen.getByText(`: ${variant} status;`)).toBeInTheDocument();
   });
+
+  test('Renders without screenreader text when screenReaderText is empty string', () => {
+    render(
+      <HelperTextItem
+        screenReaderText=""
+        variant={variant as 'default' | 'indeterminate' | 'warning' | 'success' | 'error'}
+      >
+        text
+      </HelperTextItem>
+    );
+    expect(screen.queryByText(`: ${variant} status;`)).not.toBeInTheDocument();
+  });
 });
 
 test('Renders custom screen reader text', () => {
