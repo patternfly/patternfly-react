@@ -38,7 +38,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
         <ClipboardCopyButton
           id="basic-copy-button"
           textId="code-content"
-          aria-label="Copy to clipboard"
+          aria-label="Copy to clipboard basic example code block"
           onClick={(e) => onClick(e, code)}
           exitDelay={copied ? 1500 : 600}
           maxWidth="110px"
