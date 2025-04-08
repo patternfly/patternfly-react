@@ -161,7 +161,9 @@ const DatePickerBase = (
   }, [value]);
 
   const applyValidators = (date: Date) => {
-    setErrorText(validators.map((validator) => validator(date)).join('\n') || '');
+    const validatorResults = validators.map((validator) => validator(date));
+    const validatorsToApply = validatorResults.filter((validator) => validator !== '');
+    setErrorText(validatorsToApply.join('\n') || '');
   };
 
   const onTextInput = (event: React.FormEvent<HTMLInputElement>, value: string) => {
