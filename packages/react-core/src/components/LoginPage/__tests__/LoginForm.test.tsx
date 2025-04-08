@@ -52,12 +52,12 @@ describe('LoginForm', () => {
   test('Renders LoginForm with password field required by default', () => {
     render(<LoginForm />);
     const passwordField = screen.getByLabelText(/password/i);
-    expect(passwordField).toHaveAttribute('required');
+    expect(passwordField).toBeRequired();
   });
 
   test('Renders LoginForm with password field not required when isPasswordRequired set to false', () => {
     render(<LoginForm isPasswordRequired={false} />);
     const passwordField = screen.getByLabelText(/password/i);
-    expect(passwordField).not.toHaveAttribute('required');
+    expect(passwordField).not.toBeRequired();
   });
 });
