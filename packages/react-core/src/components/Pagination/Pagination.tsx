@@ -3,7 +3,7 @@ import { ToggleTemplate, PaginationToggleTemplateProps } from './ToggleTemplate'
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
 import { fillTemplate } from '../../helpers';
-import { Navigation } from './Navigation';
+import { PaginationNavigation } from './PaginationNavigation';
 import { PaginationOptionsMenu } from './PaginationOptionsMenu';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 import { formatBreakpointMods } from '../../helpers/util';
@@ -342,7 +342,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
           appendTo={menuAppendTo}
         />
       )}
-      <Navigation
+      <PaginationNavigation
         pagesTitle={titles.page}
         pagesTitlePlural={titles.pages}
         toLastPageAriaLabel={titles.toLastPageAriaLabel}
