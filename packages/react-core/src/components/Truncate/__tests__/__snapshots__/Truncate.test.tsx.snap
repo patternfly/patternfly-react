@@ -41,7 +41,6 @@ exports[`renders default truncation 1`] = `
 <DocumentFragment>
   <div
     data-testid="Tooltip-mock"
-    triggerref="[object Object]"
   >
     <div
       data-testid="Tooltip-mock-content-container"
@@ -69,7 +68,6 @@ exports[`renders start truncation with &lrm; at end 1`] = `
 <DocumentFragment>
   <div
     data-testid="Tooltip-mock"
-    triggerref="[object Object]"
   >
     <div
       data-testid="Tooltip-mock-content-container"
