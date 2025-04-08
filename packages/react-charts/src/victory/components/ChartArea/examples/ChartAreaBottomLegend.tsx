@@ -7,14 +7,13 @@ import {
   ChartLegendTooltip,
   createContainer
 } from '@patternfly/react-charts/victory';
-// import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 interface PetData {
   x: string;
   y: number;
 }
 
-export const BottomAlignedLegend: React.FunctionComponent = () => {
+export const ChartAreaBottomLegend: React.FunctionComponent = () => {
   // Note: Container order is important
   const CursorVoronoiContainer = createContainer('voronoi', 'cursor');
   const legendData = [

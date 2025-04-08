@@ -1,23 +1,12 @@
-import {
-  Chart,
-  ChartArea,
-  ChartAxis,
-  ChartGroup,
-  ChartThemeColor,
-  ChartVoronoiContainer
-} from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
-// import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 interface PetData {
   name: string;
   x: string;
   y: number;
 }
-export const MultiColorChart: React.FunctionComponent = () => {
-  const [width, setWidth] = React.useState(0);
-  const containerRef = React.useRef<HTMLDivElement>(null);
 
+export const ChartAreaRightAlignedLegend: React.FunctionComponent = () => {
   const catsData: PetData[] = [
     { name: 'Cats', x: '2015', y: 3 },
     { name: 'Cats', x: '2016', y: 4 },
@@ -43,22 +32,8 @@ export const MultiColorChart: React.FunctionComponent = () => {
 
   const legendData = [{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }];
 
-  const handleResize = () => {
-    if (containerRef.current && containerRef.current.clientWidth) {
-      setWidth(containerRef.current.clientWidth);
-    }
-  };
-  React.useEffect(() => {
-    const observer = getResizeObserver(containerRef.current, handleResize);
-    handleResize();
-
-    return () => {
-      observer();
-    };
-  }, []);
-
   return (
-    <div ref={containerRef} style={{ height: '225px' }}>
+    <div style={{ height: '200px', width: '800px' }}>
       <Chart
         ariaDesc="Average number of pets"
         ariaTitle="Area chart example"
@@ -66,18 +41,18 @@ export const MultiColorChart: React.FunctionComponent = () => {
           <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
         }
         legendData={legendData}
-        legendPosition="bottom-left"
-        height={225}
-        name="chart3"
+        legendOrientation="vertical"
+        legendPosition="right"
+        height={200}
+        maxDomain={{ y: 9 }}
+        name="chart1"
         padding={{
-          bottom: 75, // Adjusted to accommodate legend
+          bottom: 50,
           left: 50,
-          right: 50,
+          right: 200, // Adjusted to accommodate legend
           top: 50
         }}
-        maxDomain={{ y: 9 }}
-        themeColor={ChartThemeColor.multiUnordered}
-        width={width}
+        width={800}
       >
         <ChartAxis />
         <ChartAxis dependentAxis showGrid />
