@@ -21,7 +21,7 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 ### Basic with right aligned legend
 
-```ts file = "ChartBarBasic.tsx"
+```ts file = "ChartBarRightAlignedLegend.tsx"
 
 ```
 
@@ -29,27 +29,27 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 This demonstrates an alternate way of applying tooltips using data labels.
 
-```ts file = "ChartBarPurple.tsx"
+```ts file = "ChartBarBottomLegend.tsx"
 ```
 
 ### Multi-color (ordered) with bottom-left aligned legend
 
 This demonstrates zoom for both the x and y axis.
 
-```ts file = "ChartBarMultiColor.tsx"
+```ts file = "ChartBarMultiColorOrdered.tsx"
 
 ```
 
 ### Single with right aligned legend
 
-```ts file = "ChartBarSingle.tsx"
+```ts file = "ChartBarSingleLegend.tsx"
 ```
 
 ### Alerts timeline
 
 A gnatt-like chart using `y` and `y0` data properties for alert start/end dates
 
-```ts file = "ChartBarAlerts.tsx"
+```ts file = "ChartBarAlertsTimeline.tsx"
 
 ```
 

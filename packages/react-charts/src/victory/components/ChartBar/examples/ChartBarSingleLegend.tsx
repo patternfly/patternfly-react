@@ -6,7 +6,7 @@ interface PetData {
   y: number;
 }
 
-export const ChartBarSingle: React.FunctionComponent = () => {
+export const ChartBarSingleLegend: React.FunctionComponent = () => {
   const catsData: PetData[] = [
     { name: 'Cats', x: '2015', y: 1 },
     { name: 'Cats', x: '2016', y: 2 },
