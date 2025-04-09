@@ -1,5 +1,4 @@
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts/victory';
-import { VictoryZoomContainer } from 'victory-zoom-container';
+import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
 
 interface PetData {
   name: string;
@@ -7,14 +6,13 @@ interface PetData {
   y: number;
 }
 
-export const ChartBarMultiColor: React.FunctionComponent = () => {
+export const ChartBarRightAlignedLegend: React.FunctionComponent = () => {
   const catsData: PetData[] = [
     { name: 'Cats', x: '2015', y: 1 },
     { name: 'Cats', x: '2016', y: 2 },
     { name: 'Cats', x: '2017', y: 5 },
     { name: 'Cats', x: '2018', y: 3 }
   ];
-
   const dogsData: PetData[] = [
     { name: 'Dogs', x: '2015', y: 2 },
     { name: 'Dogs', x: '2016', y: 1 },
@@ -37,29 +35,33 @@ export const ChartBarMultiColor: React.FunctionComponent = () => {
   ];
 
   const legendData = [{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }];
+
   return (
-    <div style={{ height: '400px', width: '450px' }}>
+    <div style={{ height: '250px', width: '600px' }}>
       <Chart
         ariaDesc="Average number of pets"
         ariaTitle="Bar chart example"
-        containerComponent={<VictoryZoomContainer />}
+        containerComponent={
+          <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
+        }
+        domain={{ y: [0, 9] }}
         domainPadding={{ x: [30, 25] }}
         legendData={legendData}
-        legendPosition="bottom-left"
-        height={400}
-        name="chart3"
+        legendOrientation="vertical"
+        legendPosition="right"
+        height={250}
+        name="chart1"
         padding={{
-          bottom: 75, // Adjusted to accommodate legend
+          bottom: 50,
           left: 50,
-          right: 100, // Adjusted to accommodate tooltip
+          right: 200, // Adjusted to accommodate legend
           top: 50
         }}
-        themeColor={ChartThemeColor.multiOrdered}
-        width={450}
+        width={600}
       >
         <ChartAxis />
         <ChartAxis dependentAxis showGrid />
-        <ChartGroup offset={11} horizontal>
+        <ChartGroup offset={11}>
           <ChartBar data={catsData} />
           <ChartBar data={dogsData} />
           <ChartBar data={birdsData} />

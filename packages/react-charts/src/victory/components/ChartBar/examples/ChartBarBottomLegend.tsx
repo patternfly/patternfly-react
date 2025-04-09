@@ -14,7 +14,7 @@ interface PetData {
   label: string;
 }
 
-export const EmbeddedLegend: React.FunctionComponent = () => {
+export const ChartBarBottomLegend: React.FunctionComponent = () => {
   const label =
     () =>
     ({ datum }) =>

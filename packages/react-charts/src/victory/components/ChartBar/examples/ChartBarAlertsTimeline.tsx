@@ -22,7 +22,7 @@ interface AlertData {
   fill?: string;
 }
 
-export const ChartBarAlerts: React.FunctionComponent = () => {
+export const ChartBarAlertsTimeline: React.FunctionComponent = () => {
   // Start = y0, end = y
   const alerts = [
     [
