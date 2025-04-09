@@ -223,6 +223,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
           aria-labelledby="grp-1"
           class="pf-v6-c-nav__subnav"
           hidden=""
+          inert=""
         >
           <ul
             class="pf-v6-c-nav__list"
@@ -355,6 +356,7 @@ exports[`Nav Expandable Nav List 1`] = `
           aria-labelledby="grp-1"
           class="pf-v6-c-nav__subnav"
           hidden=""
+          inert=""
         >
           <ul
             class="pf-v6-c-nav__list"
@@ -486,6 +488,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
           aria-labelledby="grp-1"
           class="pf-v6-c-nav__subnav"
           hidden=""
+          inert=""
         >
           <h2
             class="pf-v6-screen-reader"
