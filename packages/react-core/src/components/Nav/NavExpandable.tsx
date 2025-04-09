@@ -145,7 +145,7 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
               className={css(styles.navSubnav)}
               aria-labelledby={this.id}
               hidden={expandedState ? null : true}
-              {...(!expandedState && { inert: true })}
+              {...(!expandedState && { inert: '' })}
             >
               {srText && (
                 <h2 className="pf-v6-screen-reader" id={this.id}>
