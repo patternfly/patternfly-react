@@ -13,7 +13,7 @@ interface PetData {
   y: number[] | number;
 }
 
-export const ChartBoxPlotHtml: React.FunctionComponent = () => {
+export const ChartBoxPlotEmbeddedHtml: React.FunctionComponent = () => {
   const baseStyles = {
     color: '#f0f0f0',
     fontFamily:
