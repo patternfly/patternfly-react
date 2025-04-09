@@ -16,7 +16,7 @@ interface Data {
   y: number[] | number;
 }
 
-export const ChartBoxPlotLegend: React.FunctionComponent = () => {
+export const ChartBoxPlotEmbeddedLegend: React.FunctionComponent = () => {
   const catsData: Data[] = [
     { name: 'Cats', x: '2015', y: [null] },
     { name: 'Cats', x: '2016', y: [3, 2, 8, 10] },

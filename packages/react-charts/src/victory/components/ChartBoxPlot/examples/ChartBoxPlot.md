@@ -24,7 +24,7 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 ## Examples
 ### Basic with right aligned legend
-```ts file = "ChartBoxPlotBasic.tsx"
+```ts file = "ChartBoxPlotRightAlignedLegend.tsx"
 
 ```
 
@@ -32,7 +32,7 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 This demonstrates how to display labels.
 
-```ts file= "ChartBoxPlotLabels.tsx"
+```ts file= "ChartBoxPlotLabelsLegend.tsx"
 
 ```
 
@@ -40,7 +40,7 @@ This demonstrates how to display labels.
 
 This demonstrates how to embed a legend within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
 
-```ts file = "ChartBoxPlotLegend.tsx"
+```ts file = "ChartBoxPlotEmbeddedLegend.tsx"
 
 ```
 
@@ -48,7 +48,7 @@ This demonstrates how to embed a legend within a tooltip. Combining cursor and v
 
 This demonstrates how to embed HTML within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
 
-```ts file = "ChartBoxPlotHtml.tsx"
+```ts file = "ChartBoxPlotEmbeddedHtml.tsx"
 
 ```
 
