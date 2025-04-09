@@ -146,7 +146,7 @@ export const TableBulkSelect: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper hasPageTemplateTitle>
-      <PageSection isWidthLimited>
+      <PageSection isWidthLimited aria-label="Bulk select table data">
         {toolbar}
         <Table aria-label="Selectable table">
           <Thead>
