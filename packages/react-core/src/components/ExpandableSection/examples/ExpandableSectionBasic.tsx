@@ -10,7 +10,7 @@ export const ExpandableSectionBasic: React.FunctionComponent = () => {
 
   return (
     <ExpandableSection
-      toggleText={isExpanded ? 'Show less' : 'Show more basic example content'}
+      toggleText={isExpanded ? 'Show less basic example content' : 'Show more basic example content'}
       onToggle={onToggle}
       isExpanded={isExpanded}
     >
