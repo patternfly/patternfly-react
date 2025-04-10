@@ -7,7 +7,7 @@ import { Button } from '../Button';
  * property passed in. Allows for more custom control over the expandable section's toggle.
  */
 
-export interface ExpandableSectionToggleProps extends React.HTMLProps<HTMLDivElement> {
+export interface ExpandableSectionToggleProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onToggle'> {
   /** Content rendered inside the expandable toggle. */
   children?: React.ReactNode;
   /** Additional classes added to the expandable toggle. */

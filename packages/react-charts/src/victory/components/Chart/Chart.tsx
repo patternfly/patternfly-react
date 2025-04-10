@@ -609,7 +609,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   const renderChildren = () =>
     Children.toArray(children).map((child, index) => {
       if (isValidElement(child)) {
-        const { ...childProps } = child.props;
+        const { ...childProps } = child.props as any;
         return cloneElement(child, {
           colorScale,
           ...(defaultPatternScale && { patternScale: defaultPatternScale }),

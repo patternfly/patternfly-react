@@ -16,7 +16,7 @@ export interface CheckboxSelectOption extends Omit<SelectOptionProps, 'content'>
   value: string | number;
 }
 
-export interface CheckboxSelectProps extends Omit<SelectProps, 'toggle'> {
+export interface CheckboxSelectProps extends Omit<SelectProps, 'toggle' | 'onToggle'> {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */

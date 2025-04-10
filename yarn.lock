@@ -3509,7 +3509,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/ast-helpers@npm:^1.4.0-alpha.161":
+"@patternfly/ast-helpers@npm:^1.4.0-alpha.173":
   version: 1.26.2
   resolution: "@patternfly/ast-helpers@npm:1.26.2"
   dependencies:
@@ -3523,14 +3523,14 @@ __metadata:
   linkType: hard
 
 "@patternfly/documentation-framework@npm:^6.5.20":
-  version: 6.5.20
-  resolution: "@patternfly/documentation-framework@npm:6.5.20"
+  version: 6.9.0
+  resolution: "@patternfly/documentation-framework@npm:6.9.0"
   dependencies:
     "@babel/core": "npm:^7.24.3"
     "@babel/preset-env": "npm:^7.24.3"
     "@babel/preset-react": "npm:^7.24.1"
     "@mdx-js/util": "npm:1.6.16"
-    "@patternfly/ast-helpers": "npm:^1.4.0-alpha.161"
+    "@patternfly/ast-helpers": "npm:^1.4.0-alpha.173"
     "@reach/router": "npm:@gatsbyjs/reach-router@1.3.9"
     autoprefixer: "npm:9.8.6"
     babel-loader: "npm:^9.1.3"
@@ -3565,7 +3565,7 @@ __metadata:
     puppeteer: "npm:^23.6.1"
     puppeteer-cluster: "npm:^0.24.0"
     react-docgen: "npm:5.3.1"
-    react-ssr-prepass: "npm:1.5.0"
+    react-ssr-prepass: "npm:1.6.0"
     remark-footnotes: "npm:1.0.0"
     remark-frontmatter: "npm:2.0.0"
     remark-mdx: "npm:2.0.0-next.8"
@@ -3589,15 +3589,15 @@ __metadata:
     webpack-dev-server: "npm:5.2.0"
     webpack-merge: "npm:5.8.0"
   peerDependencies:
-    "@patternfly/patternfly": ^6.1.0
-    "@patternfly/react-code-editor": ^6.1.0
-    "@patternfly/react-core": ^6.1.0
-    "@patternfly/react-table": ^6.1.0
-    react: ^17.0.0 || ^18.0.0
-    react-dom: ^17.0.0 || ^18.0.0
+    "@patternfly/patternfly": ^6.2.0
+    "@patternfly/react-code-editor": ^6.2.0
+    "@patternfly/react-core": ^6.2.0
+    "@patternfly/react-table": ^6.2.0
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
+    react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
   bin:
     pf-docs-framework: scripts/cli/cli.js
-  checksum: 10c0/8d66268849f46f484e10db94341679a686bd9f577533f2ed9c91f5003a91850dfb411103147df807f40775ed28c7a77b92c751c6f4991a27d2af349515aa5c77
+  checksum: 10c0/dfa7710843d50366b7b5599f0703b13fb1a68d6b6a6ece527f3905ad4b65bbacb78201a3cfaa6da1ebffb3e8f90e8909940c548037fd1aa778600eae3a58b685
   languageName: node
   linkType: hard
 
@@ -3653,8 +3653,8 @@ __metadata:
     tslib: "npm:^2.8.1"
   peerDependencies:
     echarts: ^5.6.0
-    react: ^17 || ^18
-    react-dom: ^17 || ^18
+    react: ^17 || ^18 || ^19
+    react-dom: ^17 || ^18 || ^19
     victory-area: ^37.3.6
     victory-axis: ^37.3.6
     victory-bar: ^37.3.6
@@ -3724,8 +3724,8 @@ __metadata:
     react-dropzone: "npm:14.3.5"
     tslib: "npm:^2.8.1"
   peerDependencies:
-    react: ^17 || ^18
-    react-dom: ^17 || ^18
+    react: ^17 || ^18 || ^19
+    react-dom: ^17 || ^18 || ^19
   languageName: unknown
   linkType: soft
 
@@ -3744,8 +3744,8 @@ __metadata:
     react-dropzone: "npm:^14.3.5"
     tslib: "npm:^2.8.1"
   peerDependencies:
-    react: ^17 || ^18
-    react-dom: ^17 || ^18
+    react: ^17 || ^18 || ^19
+    react-dom: ^17 || ^18 || ^19
   languageName: unknown
   linkType: soft
 
@@ -3782,8 +3782,8 @@ __metadata:
     "@patternfly/react-styles": "workspace:^"
     resize-observer-polyfill: "npm:^1.5.1"
   peerDependencies:
-    react: ^17 || ^18
-    react-dom: ^17 || ^18
+    react: ^17 || ^18 || ^19
+    react-dom: ^17 || ^18 || ^19
   languageName: unknown
   linkType: soft
 
@@ -3798,8 +3798,8 @@ __metadata:
     fs-extra: "npm:^11.3.0"
     tslib: "npm:^2.8.1"
   peerDependencies:
-    react: ^17 || ^18
-    react-dom: ^17 || ^18
+    react: ^17 || ^18 || ^19
+    react-dom: ^17 || ^18 || ^19
   languageName: unknown
   linkType: soft
 
@@ -3834,8 +3834,8 @@ __metadata:
     "@testing-library/user-event": "npm:^14.6.1"
     "@types/jest": "npm:29.5.14"
     "@types/node": "npm:^22.13.10"
-    "@types/react": "npm:^18.3.18"
-    "@types/react-dom": "npm:^18.3.5"
+    "@types/react": "npm:^19.1.0"
+    "@types/react-dom": "npm:^19.1.2"
     babel-jest: "npm:^29.7.0"
     concurrently: "npm:^9.1.2"
     eslint: "npm:^9.22.0"
@@ -3895,8 +3895,8 @@ __metadata:
     lodash: "npm:^4.17.21"
     tslib: "npm:^2.8.1"
   peerDependencies:
-    react: ^17 || ^18
-    react-dom: ^17 || ^18
+    react: ^17 || ^18 || ^19
+    react-dom: ^17 || ^18 || ^19
   languageName: unknown
   linkType: soft
 
@@ -5137,13 +5137,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prop-types@npm:*":
-  version: 15.7.12
-  resolution: "@types/prop-types@npm:15.7.12"
-  checksum: 10c0/1babcc7db6a1177779f8fde0ccc78d64d459906e6ef69a4ed4dd6339c920c2e05b074ee5a92120fe4e9d9f1a01c952f843ebd550bee2332fc2ef81d1706878f8
-  languageName: node
-  linkType: hard
-
 "@types/qs@npm:*":
   version: 6.9.15
   resolution: "@types/qs@npm:6.9.15"
@@ -5158,22 +5151,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.3.5":
-  version: 18.3.5
-  resolution: "@types/react-dom@npm:18.3.5"
+"@types/react-dom@npm:^19.1.2":
+  version: 19.1.2
+  resolution: "@types/react-dom@npm:19.1.2"
   peerDependencies:
-    "@types/react": ^18.0.0
-  checksum: 10c0/b163d35a6b32a79f5782574a7aeb12a31a647e248792bf437e6d596e2676961c394c5e3c6e91d1ce44ae90441dbaf93158efb4f051c0d61e2612f1cb04ce4faa
+    "@types/react": ^19.0.0
+  checksum: 10c0/100c341cacba9ec8ae1d47ee051072a3450e9573bf8eeb7262490e341cb246ea0f95a07a1f2077e61cf92648f812a0324c602fcd811bd87b7ce41db2811510cd
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.3.18":
-  version: 18.3.18
-  resolution: "@types/react@npm:18.3.18"
+"@types/react@npm:^19.1.0":
+  version: 19.1.0
+  resolution: "@types/react@npm:19.1.0"
   dependencies:
-    "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10c0/8fb2b00672072135d0858dc9db07873ea107cc238b6228aaa2a9afd1ef7a64a7074078250db38afbeb19064be8ea6af5eac32d404efdd5f45e093cc4829d87f8
+  checksum: 10c0/632fd20ee176e55801a61c5f854141b043571a3e363ef106b047b766a813a12735cbb37abb3d61d126346979f530f2ed269a60c8ef3cdee54e5e9fe4174e5dad
   languageName: node
   linkType: hard
 
@@ -18442,12 +18434,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-ssr-prepass@npm:1.5.0":
-  version: 1.5.0
-  resolution: "react-ssr-prepass@npm:1.5.0"
+"react-ssr-prepass@npm:1.6.0":
+  version: 1.6.0
+  resolution: "react-ssr-prepass@npm:1.6.0"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 10c0/5158b13cdc230b6342c986f73eb21bafc27a666701aa7a309f5f39832c445d69e0b9f94df71cbe708feb49823417bd6c16eed81afe612efa6a55d89e03d9f5d3
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+  checksum: 10c0/3ce6cfbc4c181b793661917eb80419d2119825e48c4c9dce82822f76c81cddf33a0d4dd1c277cbc00f64bc0e0d674aa7e33aedc3383dadac9f8c1e3cf9532a2a
   languageName: node
   linkType: hard
 
@@ -21323,11 +21315,11 @@ __metadata:
   linkType: hard
 
 "ts-api-utils@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "ts-api-utils@npm:1.3.0"
+  version: 1.4.3
+  resolution: "ts-api-utils@npm:1.4.3"
   peerDependencies:
     typescript: ">=4.2.0"
-  checksum: 10c0/f54a0ba9ed56ce66baea90a3fa087a484002e807f28a8ccb2d070c75e76bde64bd0f6dce98b3802834156306050871b67eec325cb4e918015a360a3f0868c77c
+  checksum: 10c0/e65dc6e7e8141140c23e1dc94984bf995d4f6801919c71d6dc27cf0cd51b100a91ffcfe5217626193e5bea9d46831e8586febdc7e172df3f1091a7384299e23a
   languageName: node
   linkType: hard
 
