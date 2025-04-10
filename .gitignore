@@ -32,3 +32,4 @@ lerna-debug.log
 # For vim
 *.swp
 .yarn
+.env
