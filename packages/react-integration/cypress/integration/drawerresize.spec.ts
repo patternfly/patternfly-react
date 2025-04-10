@@ -4,7 +4,7 @@ describe('Drawer Resize Demo Test', () => {
   });
 
   it('Verify resizable drawer', () => {
-    cy.get('.pf-v6-c-drawer__panel').should('have.css', 'flex-basis', 'max(0% + 24px, min(0% + 200px, 100% + 0px))');
+    cy.get('.pf-v6-c-drawer__panel').should('have.css', 'flex-basis', 'max(24px, min(200px, 100%))');
     cy.get('.pf-v6-c-drawer__panel').should('have.class', 'pf-m-resizable');
     cy.get('.pf-v6-c-drawer').should('not.have.class', 'pf-m-expanded');
     cy.get('#toggleButton').click();
