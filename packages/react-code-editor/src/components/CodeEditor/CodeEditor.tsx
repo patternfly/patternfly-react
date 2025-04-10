@@ -182,6 +182,9 @@ export interface CodeEditorProps extends Omit<HTMLProps<HTMLDivElement>, 'onChan
   onChange?: ChangeHandler;
   /** Function which fires each time the code changes in the code editor. */
   onCodeChange?: (value: string) => void;
+  /** Function which fires when the code is downloaded. Defaults to a function that
+   * downloads the current editor content. */
+  onDownload?: (value: string, fileName: string) => void;
   /** Callback which fires after the code editor is mounted containing a reference to the
    * monaco editor and the monaco instance.
    */
@@ -251,6 +254,16 @@ const getExtensionFromLanguage = (language: Language) => {
   }
 };
 
+/**
+ * Downloads a file to a users device given its string content and a full file name.
+ */
+const defaultOnDownload = (value: string, fileName: string) => {
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(new Blob([value], { type: 'text' }));
+  link.download = fileName;
+  link.click();
+};
+
 export const CodeEditor = ({
   className = '',
   code = '',
@@ -283,6 +296,7 @@ export const CodeEditor = ({
   loading = '',
   onChange = () => {},
   onCodeChange = () => {},
+  onDownload = defaultOnDownload,
   onEditorDidMount = () => {},
   options = {},
   overrideServices = {},
@@ -413,15 +427,6 @@ export const CodeEditor = ({
     setCopied(true);
   };
 
-  const download = () => {
-    const element = document.createElement('a');
-    const file = new Blob([value], { type: 'text' });
-    element.href = URL.createObjectURL(file);
-    element.download = `${downloadFileName}.${getExtensionFromLanguage(language)}`;
-    document.body.appendChild(element); // Required for this to work in FireFox
-    element.click();
-  };
-
   const editorOptions: editor.IStandaloneEditorConstructionOptions = {
     scrollBeyondLastLine: height !== 'sizeToFit',
     readOnly: isReadOnly,
@@ -519,7 +524,9 @@ export const CodeEditor = ({
                     icon={<DownloadIcon />}
                     aria-label={downloadButtonAriaLabel}
                     tooltipProps={{ content: <div>{downloadButtonToolTipText}</div>, ...tooltipProps }}
-                    onClick={download}
+                    onClick={() => {
+                      onDownload(value, `${downloadFileName}.${getExtensionFromLanguage(language)}`);
+                    }}
                   />
                 )}
                 {customControls && customControls}
