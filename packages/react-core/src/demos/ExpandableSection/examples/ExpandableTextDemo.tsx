@@ -13,7 +13,7 @@ export const ExpandableTextDemo: React.FunctionComponent = () => {
   return (
     <ExpandableSection
       variant={ExpandableSectionVariant.truncate}
-      toggleText={isExpanded ? 'Show less' : 'Show more'}
+      toggleText={isExpanded ? 'Show less truncated content' : 'Show more truncated content'}
       onToggle={onToggle}
       isExpanded={isExpanded}
       truncateMaxLines={-1}
