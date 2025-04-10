@@ -141,7 +141,12 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
                 </button>
               )}
             </PageSidebarContext.Consumer>
-            <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={expandedState ? null : true}>
+            <section
+              className={css(styles.navSubnav)}
+              aria-labelledby={this.id}
+              hidden={expandedState ? null : true}
+              {...(!expandedState && { inert: '' })}
+            >
               {srText && (
                 <h2 className="pf-v6-screen-reader" id={this.id}>
                   {srText}
