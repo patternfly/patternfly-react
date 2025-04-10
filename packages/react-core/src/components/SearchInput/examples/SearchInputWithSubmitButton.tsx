@@ -6,7 +6,7 @@ export const SearchInputWithSubmitButton: React.FunctionComponent = () => {
 
   return (
     <SearchInput
-      aria-label="With submit button"
+      aria-label="Search with submit button example"
       placeholder="Find by name"
       value={value}
       onChange={(_event, value) => setValue(value)}
