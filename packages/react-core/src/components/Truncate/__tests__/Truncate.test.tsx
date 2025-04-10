@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import '@testing-library/jest-dom';
 
 jest.mock('../../Tooltip', () => ({
-  Tooltip: ({ content, position, children, ...props }) => (
+  Tooltip: ({ content, position, children, triggerRef, ...props }) => (
     <div data-testid="Tooltip-mock" {...props}>
       <div data-testid="Tooltip-mock-content-container">Test {content}</div>
       <p>{`position: ${position}`}</p>
