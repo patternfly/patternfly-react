@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - 6.2.x
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
