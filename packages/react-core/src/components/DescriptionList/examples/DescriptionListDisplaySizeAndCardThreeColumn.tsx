@@ -2,7 +2,11 @@ import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescriptio
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListDisplayLgAndCardThreeColumn: React.FunctionComponent = () => (
-  <DescriptionList displaySize="lg" columnModifier={{ lg: '3Col' }}>
+  <DescriptionList
+    displaySize="lg"
+    columnModifier={{ lg: '3Col' }}
+    aria-label="Display size with card and three column on large breakpoint"
+  >
     <Card component="div">
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>

@@ -8,7 +8,7 @@ import {
 } from '@patternfly/react-core';
 
 export const ProgressTitleOutsideOfProgressBar: React.FunctionComponent = () => (
-  <DescriptionList>
+  <DescriptionList aria-label="Progress Title outside of progress bar">
     <DescriptionListGroup>
       <DescriptionListTerm id="title-outside-progress-example-label">Title outside of progress bar</DescriptionListTerm>
       <DescriptionListDescription>

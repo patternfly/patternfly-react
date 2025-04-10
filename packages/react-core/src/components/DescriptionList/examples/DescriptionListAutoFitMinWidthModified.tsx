@@ -8,7 +8,11 @@ import {
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListAutoFitMinWidthModified: React.FunctionComponent = () => (
-  <DescriptionList isAutoFit autoFitMinModifier={{ default: '200px' }}>
+  <DescriptionList
+    isAutoFit
+    autoFitMinModifier={{ default: '200px' }}
+    aria-label="Auto-fit grid with minimum width modification"
+  >
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>example</DescriptionListDescription>
