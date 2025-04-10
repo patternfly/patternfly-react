@@ -25,7 +25,7 @@ export const ExpandableSectionDetached: React.FunctionComponent = () => {
           contentId={contentId}
           direction="up"
         >
-          {isExpanded ? 'Show less' : 'Show more'}
+          {isExpanded ? 'Show less detached example content' : 'Show more detached example content'}
         </ExpandableSectionToggle>
       </StackItem>
     </Stack>

@@ -9,7 +9,11 @@ export const ExpandableSectionBasic: React.FunctionComponent = () => {
   };
 
   return (
-    <ExpandableSection toggleText={isExpanded ? 'Show less' : 'Show more'} onToggle={onToggle} isExpanded={isExpanded}>
+    <ExpandableSection
+      toggleText={isExpanded ? 'Show less basic example content' : 'Show more basic example content'}
+      onToggle={onToggle}
+      isExpanded={isExpanded}
+    >
       This content is visible only when the component is expanded.
     </ExpandableSection>
   );
