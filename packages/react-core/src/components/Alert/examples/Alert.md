@@ -149,9 +149,6 @@ const AlertTimeout: React.FunctionComponent = () => {
       <Button variant="secondary" onClick={onClick}>
         Add alert
       </Button>
-      <Button variant="secondary" onClick={() => setAlerts([])}>
-        Remove all alerts
-      </Button>
       <AlertGroup hasAnimations isLiveRegion>{alerts}</AlertGroup>
     </Fragment>
   );
