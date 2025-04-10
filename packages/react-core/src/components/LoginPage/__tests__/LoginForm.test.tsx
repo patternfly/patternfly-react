@@ -48,4 +48,16 @@ describe('LoginForm', () => {
     const { asFragment } = render(<LoginForm isShowPasswordEnabled />);
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('Renders LoginForm with password field required by default', () => {
+    render(<LoginForm />);
+    const passwordField = screen.getByLabelText(/password/i);
+    expect(passwordField).toBeRequired();
+  });
+
+  test('Renders LoginForm with password field not required when isPasswordRequired set to false', () => {
+    render(<LoginForm isPasswordRequired={false} />);
+    const passwordField = screen.getByLabelText(/password/i);
+    expect(passwordField).not.toBeRequired();
+  });
 });
