@@ -29,6 +29,7 @@ export const SearchInputWithNavigableOptions: React.FunctionComponent = () => {
 
   return (
     <SearchInput
+      aria-label="Search match with navigable options example"
       placeholder="Find by name"
       value={value}
       onChange={(_event, value) => onChange(value)}
