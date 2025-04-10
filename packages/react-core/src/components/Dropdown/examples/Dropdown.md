@@ -63,3 +63,11 @@ To provide users with more context about a `<DropdownItem>`, pass a short messag
 ```ts file="./DropdownWithDescriptions.tsx"
 
 ```
+
+### Split button
+
+Description of split button
+
+```ts file="./DropdownWithSplit.tsx"
+
+```
