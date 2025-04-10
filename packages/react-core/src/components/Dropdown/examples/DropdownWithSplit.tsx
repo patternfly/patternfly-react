@@ -30,8 +30,14 @@ export const DropdownSplitButtonText: React.FunctionComponent = () => {
       onSelect={onSelect}
       toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
         <MenuToggle
-          splitButtonItems={[<MenuToggleCheckbox id="split-button-checkbox" key="checkbox"></MenuToggleCheckbox>]}
-          aria-label="Split button dropdown"
+          splitButtonItems={[
+            <MenuToggleCheckbox
+              id="split-button-checkbox-example"
+              key="split-checkbox"
+              aria-label="Select all"
+            ></MenuToggleCheckbox>
+          ]}
+          aria-label="Dropdown with checkbox split button"
           ref={toggleRef}
           onClick={onToggleClick}
           isExpanded={isOpen}
