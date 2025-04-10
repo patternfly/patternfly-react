@@ -15,7 +15,7 @@ export const SearchInputWithExpandable: React.FunctionComponent = () => {
 
   return (
     <SearchInput
-      aria-label="With expandable button"
+      aria-label="Search with expandable button example"
       placeholder="Find by name"
       value={value}
       onChange={(_event, value) => onChange(value)}

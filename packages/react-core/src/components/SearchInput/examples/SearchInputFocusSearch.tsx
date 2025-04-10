@@ -12,7 +12,7 @@ export const SearchInputFocusSearch: React.FunctionComponent = () => {
         value={value}
         onChange={(_event, value) => setValue(value)}
         onClear={() => setValue('')}
-        aria-label="Focus search input using ref"
+        aria-label="Search focus using ref example"
       />
       <Button onClick={() => ref.current && ref.current.focus()}>Focus on the search input</Button>
     </>
