@@ -61,112 +61,24 @@ This is a yellow bullet chart with primary measure greater than max range.
 
 This bullet chart with negative primary measure is for measures considered to be bad when they are low.
 
-```js
-import { ChartBullet } from '@patternfly/react-charts/victory';
+```ts file = "ChartBulletNegativePrimary.tsx"
 
-<div style={{ height: '200px', width: '600px' }}>
-  <ChartBullet
-    ariaDesc="Storage capacity"
-    ariaTitle="Bullet chart example"
-    comparativeWarningMeasureData={[{name: 'Warning', y: 60}]}
-    comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-    constrainToVisibleArea
-    height={200}
-    labels={({ datum }) => `${datum.name}: ${datum.y}`}
-    maxDomain={{y: 75}}
-    minDomain={{y: -25}}
-    name="chart7"
-    padding={{
-      bottom: 50,
-      left: 150, // Adjusted to accommodate labels
-      right: 50,
-      top: 65
-    }}
-    primarySegmentedMeasureData={[{ name: 'Measure', y: -15 }]}
-    primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }]}
-    qualitativeRangeData={[{ name: 'Range', y: 25, y0: -25 }, { name: 'Range', y: 50 }]}
-    qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-    subTitle="Measure details"
-    title="Text label"
-    width={600}
-  />
-</div>
 ```
 
 ### Reversed with right aligned legend
 
 This reversed bullet chart with right aligned legend is for measures considered to be good when they are low.
 
-```js
-import { ChartBullet } from '@patternfly/react-charts/victory';
+```ts file = "ChartBulletReversedLegend.tsx"
 
-<div style={{ height: '200px', width: '700px' }}>
-  <ChartBullet
-    ariaDesc="Storage capacity"
-    ariaTitle="Bullet chart example"
-    comparativeWarningMeasureData={[{name: 'Warning', y: -88}]}
-    comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-    constrainToVisibleArea
-    invert
-    height={200}
-    labels={({ datum }) => `${datum.name}: ${datum.y}`}
-    legendPosition="right"
-    legendOrientation="vertical"
-    maxDomain={{y: 0}}
-    minDomain={{y: -100}}
-    name="chart8"
-    padding={{
-      bottom: 50,
-      left: 150, // Adjusted to accommodate labels
-      right: 150, // Adjusted to accommodate legend
-      top: 80
-    }}
-    primarySegmentedMeasureData={[{ name: 'Measure', y: -60 }, { name: 'Measure', y: -25 }]}
-    primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
-    qualitativeRangeData={[{ name: 'Range', y: -50 }, { name: 'Range', y: -75 }]}
-    qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-    subTitle="Measure details"
-    title="Text label"
-    width={700}
-  />
-</div>
 ```
 
 ### Negative and positive primary measures
 
 This bullet chart with negative and positive primary measures has 4 legend items per row.
 
-```js
-import { ChartBullet } from '@patternfly/react-charts/victory';
+```ts file = "ChartBulletNegativePositivePrimary.tsx"
 
-<div style={{ height: '200px', width: '600px' }}>
-  <ChartBullet
-    ariaDesc="Storage capacity"
-    ariaTitle="Bullet chart example"
-    comparativeWarningMeasureData={[{name: 'Warning', y: 60}]}
-    comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-    constrainToVisibleArea
-    height={200}
-    labels={({ datum }) => `${datum.name}: ${datum.y}`}
-    legendItemsPerRow={4}
-    maxDomain={{y: 75}}
-    minDomain={{y: -25}}
-    name="chart9"
-    padding={{
-      bottom: 50,
-      left: 150, // Adjusted to accommodate labels
-      right: 50,
-      top: 65
-    }}
-    primarySegmentedMeasureData={[{ name: 'Measure', y: -10 }, { name: 'Measure', y: -20 }, { name: 'Measure', y: 10 }, { name: 'Measure', y: 40 }]}
-    primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }, { name: 'Measure 3' }, { name: 'Measure 4' }]}
-    qualitativeRangeData={[{ name: 'Range', y: 25, y0: -25 }, { name: 'Range', y: 50 }]}
-    qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-    subTitle="Measure details"
-    title="Text label"
-    width={600}
-  />
-</div>
 ```
 
 ### Vertical with segmented primary measure

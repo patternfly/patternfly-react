@@ -12,6 +12,7 @@ export const ChartBulletBasic: React.FunctionComponent = () => {
     { name: 'Range', y: 50 },
     { name: 'Range', y: 75 }
   ];
+
   return (
     <div style={{ height: '150px', width: '600px' }}>
       <ChartBullet

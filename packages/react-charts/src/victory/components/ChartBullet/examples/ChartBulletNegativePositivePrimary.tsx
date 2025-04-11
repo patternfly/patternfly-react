@@ -1,24 +1,29 @@
-import { ChartAxis, ChartBullet, ChartThemeColor } from '@patternfly/react-charts/victory';
+import { ChartBullet } from '@patternfly/react-charts/victory';
 
 interface ChartData {
   name: string;
   y?: number;
+  y0?: number;
 }
 
-export const ChartBulletErrorCustomTicks: React.FunctionComponent = () => {
-  const comparativeErrorMeasureData: ChartData[] = [{ name: 'Error', y: 120 }];
-  const comparativeErrorMeasureLegendData: ChartData[] = [{ name: 'Error' }];
-  const comparativeWarningMeasureData: ChartData[] = [{ name: 'Warning', y: 80 }];
+export const ChartBulletNegativePositivePrimary: React.FunctionComponent = () => {
+  const comparativeWarningMeasureData: ChartData[] = [{ name: 'Warning', y: 60 }];
   const comparativeWarningMeasureLegendData: ChartData[] = [{ name: 'Warning' }];
   const primarySegmentedMeasureData: ChartData[] = [
-    { name: 'Measure', y: 25 },
-    { name: 'Measure', y: 75 }
+    { name: 'Measure', y: -10 },
+    { name: 'Measure', y: -20 },
+    { name: 'Measure', y: 10 },
+    { name: 'Measure', y: 40 }
   ];
-  const primarySegmentedMeasureLegendData: ChartData[] = [{ name: 'Measure 1' }, { name: 'Measure 2' }];
+  const primarySegmentedMeasureLegendData: ChartData[] = [
+    { name: 'Measure 1' },
+    { name: 'Measure 2' },
+    { name: 'Measure 3' },
+    { name: 'Measure 4' }
+  ];
   const qualitativeRangeData: ChartData[] = [
-    { name: 'Range', y: 65 },
-    { name: 'Range', y: 100 },
-    { name: 'Range', y: 150 }
+    { name: 'Range', y: 25, y0: -25 },
+    { name: 'Range', y: 50 }
   ];
   const qualitativeRangeLegendData: ChartData[] = [{ name: 'Range 1' }, { name: 'Range 2' }];
 
@@ -27,27 +32,25 @@ export const ChartBulletErrorCustomTicks: React.FunctionComponent = () => {
       <ChartBullet
         ariaDesc="Storage capacity"
         ariaTitle="Bullet chart example"
-        axisComponent={<ChartAxis tickValues={[0, 75, 150]} />}
-        comparativeErrorMeasureData={comparativeErrorMeasureData}
-        comparativeErrorMeasureLegendData={comparativeErrorMeasureLegendData}
         comparativeWarningMeasureData={comparativeWarningMeasureData}
         comparativeWarningMeasureLegendData={comparativeWarningMeasureLegendData}
         constrainToVisibleArea
         height={200}
         labels={({ datum }) => `${datum.name}: ${datum.y}`}
-        legendItemsPerRow={3}
-        name="chart5"
+        legendItemsPerRow={4}
+        maxDomain={{ y: 75 }}
+        minDomain={{ y: -25 }}
+        name="chart9"
         padding={{
           bottom: 50,
           left: 150, // Adjusted to accommodate labels
           right: 50,
-          top: 50
+          top: 65
         }}
         primarySegmentedMeasureData={primarySegmentedMeasureData}
         primarySegmentedMeasureLegendData={primarySegmentedMeasureLegendData}
         qualitativeRangeData={qualitativeRangeData}
         qualitativeRangeLegendData={qualitativeRangeLegendData}
-        themeColor={ChartThemeColor.green}
         subTitle="Measure details"
         title="Text label"
         width={600}

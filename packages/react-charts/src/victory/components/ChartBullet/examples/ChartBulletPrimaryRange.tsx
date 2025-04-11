@@ -1,4 +1,5 @@
 import { ChartBullet, ChartThemeColor } from '@patternfly/react-charts/victory';
+
 interface ChartData {
   name: string;
   y?: number;
@@ -17,6 +18,7 @@ export const ChartBulletPrimaryRange: React.FunctionComponent = () => {
     { name: 'Range', y: 125 }
   ];
   const qualitativeRangeLegendData: ChartData[] = [{ name: 'Range 1' }, { name: 'Range 2' }];
+
   return (
     <div style={{ height: '200px', width: '600px' }}>
       <ChartBullet

@@ -1,9 +1,11 @@
 import { ChartBullet } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
+
 interface ChartData {
   name: string;
   y?: number;
 }
+
 export const BulletChartResponsiveLegend: React.FunctionComponent = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [extraHeight, setExtraHeight] = React.useState<number>(0);
@@ -20,16 +22,19 @@ export const BulletChartResponsiveLegend: React.FunctionComponent = () => {
     { name: 'Range', y: 75 }
   ];
   const qualitativeRangeLegendData: ChartData[] = [{ name: 'Range 1' }, { name: 'Range 2' }];
+
   const handleResize = (): void => {
     if (containerRef.current && containerRef.current.clientWidth) {
       setWidth(containerRef.current.clientWidth);
     }
   };
+
   const handleLegendAllowWrap = (newExtraHeight: number): void => {
     if (newExtraHeight !== extraHeight) {
       setExtraHeight(newExtraHeight);
     }
   };
+
   const getHeight = (baseHeight: number): number => baseHeight + extraHeight;
 
   React.useEffect(() => {
@@ -47,6 +52,7 @@ export const BulletChartResponsiveLegend: React.FunctionComponent = () => {
   }, []);
 
   const height: number = getHeight(200);
+
   return (
     <div ref={containerRef} style={{ height: height + 'px' }}>
       <ChartBullet

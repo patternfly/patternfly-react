@@ -1,8 +1,10 @@
 import { ChartBullet } from '@patternfly/react-charts/victory';
+
 interface ChartData {
   name: string;
   y?: number;
 }
+
 export const ChartBulletPrimaryDot: React.FunctionComponent = () => {
   const comparativeWarningMeasureData: ChartData[] = [{ name: 'Warning', y: 88 }];
   const comparativeWarningMeasureLegendData: ChartData[] = [{ name: 'Warning' }];

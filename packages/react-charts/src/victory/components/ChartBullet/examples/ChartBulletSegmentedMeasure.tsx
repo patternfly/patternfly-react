@@ -18,6 +18,7 @@ export const ChartBulletSegmentedMeasure: React.FunctionComponent = () => {
     { name: 'Range', y: 75 }
   ];
   const qualitativeRangeLegendData: ChartData[] = [{ name: 'Range 1' }, { name: 'Range 2' }];
+
   return (
     <div style={{ height: '200px', width: '600px' }}>
       <ChartBullet
