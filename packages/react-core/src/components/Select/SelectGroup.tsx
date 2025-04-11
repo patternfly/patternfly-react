@@ -10,7 +10,7 @@ export interface SelectGroupProps extends Omit<MenuGroupProps, 'ref'> {
   /** Classes applied to root element of select group */
   className?: string;
   /** Label of the select group */
-  label?: string;
+  label?: React.ReactNode;
 }
 
 export const SelectGroup: React.FunctionComponent<SelectGroupProps> = ({
