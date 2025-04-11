@@ -20,136 +20,20 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 ## Examples
 ### Basic
-```js
-import { ChartBullet } from '@patternfly/react-charts/victory';
-
-<div style={{ height: '150px', width: '600px' }}>
-  <ChartBullet
-    ariaDesc="Storage capacity"
-    ariaTitle="Bullet chart example"
-    comparativeWarningMeasureData={[{ name: 'Warning', y: 88 }]}
-    constrainToVisibleArea
-    height={150}
-    labels={({ datum }) => `${datum.name}: ${datum.y}`}
-    maxDomain={{y: 100}}
-    name="chart1"
-    primarySegmentedMeasureData={[{ name: 'Measure', y: 60 }]}
-    qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
-    width={600}
-  />
-</div>
+```ts file = "ChartBulletBasic.tsx"
 ```
 
 ### Segmented primary measure
-```js
-import { ChartBullet } from '@patternfly/react-charts/victory';
+```ts file = "ChartBulletSegmentedMeasure.tsx"
 
-<div style={{ height: '200px', width: '600px' }}>
-  <ChartBullet
-    ariaDesc="Storage capacity"
-    ariaTitle="Bullet chart example"
-    comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
-    comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-    constrainToVisibleArea
-    height={200}
-    labels={({ datum }) => `${datum.name}: ${datum.y}`}
-    maxDomain={{y: 100}}
-    name="chart2"
-    padding={{
-      bottom: 50,
-      left: 150, // Adjusted to accommodate labels
-      right: 50,
-      top: 50
-    }}
-    primarySegmentedMeasureData={[{ name: 'Measure', y: 25 }, { name: 'Measure', y: 60 }]}
-    primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
-    qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
-    qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-    subTitle="Measure details"
-    title="Text label"
-    width={600}
-  />
-</div>
 ```
 
 ### Responsive container with bottom aligned legend
 
 This demonstrates a responsive legend which wraps when items are wider than its container.
 
-```js
-import { ChartBullet } from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
+```ts file = "ChartBulletResponsiveLegend.tsx"
 
-class BulletChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = createRef();
-    this.observer = () => {};
-    this.state = {
-      extraHeight: 0,
-      width: 0
-    };
-    this.handleResize = () => {
-      if (this.containerRef.current && this.containerRef.current.clientWidth) {
-        this.setState({ width: this.containerRef.current.clientWidth });
-      }
-    };
-    this.handleLegendAllowWrap = (extraHeight) => {
-      if (extraHeight !== this.state.extraHeight) {
-        this.setState({ extraHeight });
-      }
-    }
-    this.getHeight = (baseHeight) => {
-      const { extraHeight } = this.state;
-      return baseHeight + extraHeight;
-    };
-  }
-
-  componentDidMount() {
-    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
-    this.handleResize();
-  }
-
-  componentWillUnmount() {
-    this.observer();
-  }
-
-  render() {
-    const { width } = this.state;
-    const height = this.getHeight(200);
-    return (
-      <div ref={this.containerRef} style={{ height: height + "px" }}>
-        <ChartBullet
-          ariaDesc="Storage capacity"
-          ariaTitle="Bullet chart example"
-          comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
-          comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-          constrainToVisibleArea
-          height={height}
-          labels={({ datum }) => `${datum.name}: ${datum.y}`}
-          legendAllowWrap={this.handleLegendAllowWrap}
-          legendPosition="bottom-left"
-          maxDomain={{y: 100}}
-          name="chart3"
-          padding={{
-            bottom: 50,
-            left: 50,
-            right: 50,
-            top: 100 // Adjusted to accommodate labels
-          }}
-          primarySegmentedMeasureData={[{ name: 'Measure', y: 25 }, { name: 'Measure', y: 60 }]}
-          primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
-          qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
-          qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-          subTitle="Measure details"
-          title="Text label"
-          titlePosition="top-left"
-          width={width}
-        />
-      </div>
-    );
-  }
-}
 ```
 
 ### Primary measure dot
