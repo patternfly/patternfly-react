@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.2...@patternfly/react-core@6.2.1-prerelease.3) (2025-04-11)
+
+### Features
+
+- **LoginPage:** added isPasswordRequired prop ([#11673](https://github.com/patternfly/patternfly-react/issues/11673)) ([0658fb3](https://github.com/patternfly/patternfly-react/commit/0658fb347e2db799dcb6626fc30c5837592a1e3c))
+
 ## [6.2.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.1...@patternfly/react-core@6.2.1-prerelease.2) (2025-04-10)
 
 **Note:** Version bump only for package @patternfly/react-core
