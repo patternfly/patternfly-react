@@ -37,111 +37,24 @@ This demonstrates a responsive legend which wraps when items are wider than its 
 ```
 
 ### Primary measure dot
-```js
-import { ChartBullet } from '@patternfly/react-charts/victory';
+```ts file = "ChartBulletPrimaryDot.tsx"
 
-<div style={{ height: '200px', width: '600px' }}>
-  <ChartBullet
-    ariaDesc="Storage capacity"
-    ariaTitle="Bullet chart example"
-    comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
-    comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-    constrainToVisibleArea
-    height={200}
-    labels={({ datum }) => `${datum.name}: ${datum.y}`}
-    maxDomain={{y: 100}}
-    name="chart4"
-    padding={{
-      bottom: 50,
-      left: 150, // Adjusted to accommodate labels
-      right: 50,
-      top: 50
-    }}
-    primaryDotMeasureData={[{ name: 'Measure', y: 25 }, { name: 'Measure', y: 60 }]}
-    primaryDotMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
-    qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
-    qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-    subTitle="Measure details"
-    title="Text label"
-    width={600}
-  />
-</div>
 ```
 
 ### Error measure and custom axis ticks
 
 This is a green bullet chart with error measure and custom axis ticks with 3 legend items per row.
 
-```js
-import { ChartAxis, ChartBullet, ChartThemeColor } from '@patternfly/react-charts/victory';
+```ts file = "ChartBulletErrorCustomTicks.tsx"
 
-<div style={{ height: '200px', width: '600px' }}>
-  <ChartBullet
-    ariaDesc="Storage capacity"
-    ariaTitle="Bullet chart example"
-    axisComponent={<ChartAxis tickValues={[0, 75, 150]} />}
-    comparativeErrorMeasureData={[{name: 'Error', y: 120}]}
-    comparativeErrorMeasureLegendData={[{ name: 'Error' }]}
-    comparativeWarningMeasureData={[{name: 'Warning', y: 80}]}
-    comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-    constrainToVisibleArea
-    height={200}
-    labels={({ datum }) => `${datum.name}: ${datum.y}`}
-    legendItemsPerRow={3}
-    name="chart5"
-    padding={{
-      bottom: 50,
-      left: 150, // Adjusted to accommodate labels
-      right: 50,
-      top: 50
-    }}
-    primarySegmentedMeasureData={[{ name: 'Measure', y: 25 }, { name: 'Measure', y: 75 }]}
-    primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
-    qualitativeRangeData={[{ name: 'Range', y: 65 }, { name: 'Range', y: 100 }, { name: 'Range', y: 150 }]}
-    qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-    themeColor={ChartThemeColor.green}
-    subTitle="Measure details"
-    title="Text label"
-    width={600}
-  />
-</div>
 ```
 
 ### Primary measure outside range
 
 This is a yellow bullet chart with primary measure greater than max range.
 
-```js
-import { ChartBullet, ChartThemeColor } from '@patternfly/react-charts/victory';
+```ts file = "ChartBulletPrimaryRange.tsx"
 
-<div style={{ height: '200px', width: '600px' }}>
-  <ChartBullet
-    ariaDesc="Storage capacity"
-    ariaTitle="Bullet chart example"
-    comparativeWarningMeasureData={[{name: 'Warning', y: 80}]}
-    comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-    constrainToVisibleArea
-    labels={({ datum }) => `${datum.name}: ${datum.y}`}
-    height={200}
-    maxDomain={{y: 125}}
-    minDomain={{y: 50}}
-    name="chart6"
-    padding={{
-      bottom: 50,
-      left: 150, // Adjusted to accommodate labels
-      right: 75,
-      top: 50
-    }}
-    primarySegmentedMeasureData={[{ name: 'Measure', y: 75 }, { name: 'Measure', y: 135 }]}
-    primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
-    qualitativeRangeData={[{ name: 'Range', y: 85 }, { name: 'Range', y: 125 }]}
-    qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-    themeColor={ChartThemeColor.yellow}
-    subTitle="Measure details"
-    title="Text label"
-    width={600}
-  />
-</div>
 ```
 
 ### Negative primary measure
