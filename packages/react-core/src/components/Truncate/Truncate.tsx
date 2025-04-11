@@ -22,8 +22,18 @@ export interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
   className?: string;
   /** Text to truncate */
   content: string;
-  /** The number of characters displayed in the second half of the truncation */
+  /** The number of characters displayed in the second half of a middle truncation. This will be overridden by
+   * the maxCharsDisplayed prop.
+   */
   trailingNumChars?: number;
+  /** The maximum number of characters to display before truncating. This will always truncate content
+   * when its length exceeds the value passed to this prop, and container width/resizing will not affect truncation.
+   */
+  maxCharsDisplayed?: number;
+  /** The content to use to signify omission of characters when using the maxCharsDisplayed prop.
+   * By default this will render an ellipsis.
+   */
+  omissionContent?: string;
   /** Where the text will be truncated */
   position?: 'start' | 'middle' | 'end';
   /** Tooltip position */
@@ -49,13 +59,15 @@ export interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
   refToGetParent?: React.RefObject<any>;
 }
 
-const sliceContent = (str: string, slice: number) => [str.slice(0, str.length - slice), str.slice(-slice)];
+const sliceTrailingContent = (str: string, slice: number) => [str.slice(0, str.length - slice), str.slice(-slice)];
 
 export const Truncate: React.FunctionComponent<TruncateProps> = ({
   className,
   position = 'end',
   tooltipPosition = 'top',
   trailingNumChars = 7,
+  maxCharsDisplayed,
+  omissionContent = '\u2026',
   content,
   refToGetParent,
   ...props
@@ -63,10 +75,16 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
   const [isTruncated, setIsTruncated] = useState(true);
   const [parentElement, setParentElement] = useState<HTMLElement>(null);
   const [textElement, setTextElement] = useState<HTMLElement>(null);
+  const [shouldRenderByMaxChars, setShouldRenderByMaxChars] = useState(maxCharsDisplayed > 0);
 
   const textRef = useRef<HTMLElement>(null);
   const subParentRef = useRef<HTMLDivElement>(null);
   const observer = useRef(null);
+
+  if (maxCharsDisplayed <= 0) {
+    // eslint-disable-next-line no-console
+    console.warn('Truncate: the maxCharsDisplayed must be greater than 0, otherwise no content will be visible.');
+  }
 
   const getActualWidth = (element: Element) => {
     const computedStyle = getComputedStyle(element);
@@ -100,7 +118,7 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
   }, [textRef, subParentRef, textElement, parentElement]);
 
   useEffect(() => {
-    if (textElement && parentElement && !observer.current) {
+    if (textElement && parentElement && !observer.current && !shouldRenderByMaxChars) {
       const totalTextWidth = calculateTotalTextWidth(textElement, trailingNumChars, content);
       const textWidth = position === 'middle' ? totalTextWidth : textElement.scrollWidth;
 
@@ -115,31 +133,100 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
         observer();
       };
     }
-  }, [textElement, parentElement, trailingNumChars, content, position]);
+  }, [textElement, parentElement, trailingNumChars, content, position, shouldRenderByMaxChars]);
+
+  useEffect(() => {
+    if (shouldRenderByMaxChars) {
+      setIsTruncated(content.length > maxCharsDisplayed);
+    }
+  }, [shouldRenderByMaxChars]);
+
+  useEffect(() => {
+    setShouldRenderByMaxChars(maxCharsDisplayed > 0);
+  }, [maxCharsDisplayed]);
+
+  const renderResizeObserverContent = () => {
+    if (position === TruncatePosition.end || position === TruncatePosition.start) {
+      return (
+        <>
+          <span ref={textRef} className={truncateStyles[position]}>
+            {content}
+            {position === TruncatePosition.start && <Fragment>&lrm;</Fragment>}
+          </span>
+        </>
+      );
+    }
+
+    const shouldSliceContent = content.length - trailingNumChars > minWidthCharacters;
+    return (
+      <>
+        <Fragment>
+          <span ref={textRef} className={styles.truncateStart}>
+            {shouldSliceContent ? sliceTrailingContent(content, trailingNumChars)[0] : content}
+          </span>
+          {shouldSliceContent && (
+            <span className={styles.truncateEnd}>{sliceTrailingContent(content, trailingNumChars)[1]}</span>
+          )}
+        </Fragment>
+      </>
+    );
+  };
+
+  const renderMaxDisplayContent = () => {
+    const renderVisibleContent = (contentToRender: string) => (
+      <span className={`${styles.truncate}__text`}>{contentToRender}</span>
+    );
+    if (!isTruncated) {
+      return renderVisibleContent(content);
+    }
+
+    const omissionElement = (
+      <span className={`${styles.truncate}__omission`} aria-hidden="true">
+        {omissionContent}
+      </span>
+    );
+    const renderVisuallyHiddenContent = (contentToHide: string) => (
+      <span className="pf-v6-screen-reader">{contentToHide}</span>
+    );
+
+    if (position === TruncatePosition.start) {
+      return (
+        <>
+          {renderVisuallyHiddenContent(content.slice(0, maxCharsDisplayed * -1))}
+          {omissionElement}
+          {renderVisibleContent(content.slice(maxCharsDisplayed * -1))}
+        </>
+      );
+    }
+    if (position === TruncatePosition.end) {
+      return (
+        <>
+          {renderVisibleContent(content.slice(0, maxCharsDisplayed))}
+          {omissionElement}
+          {renderVisuallyHiddenContent(content.slice(maxCharsDisplayed))}
+        </>
+      );
+    }
+
+    const trueMiddleStart = Math.floor(maxCharsDisplayed / 2);
+    const trueMiddleEnd = Math.ceil(maxCharsDisplayed / 2) * -1;
+    return (
+      <>
+        {renderVisibleContent(content.slice(0, trueMiddleStart))}
+        {omissionElement}
+        {renderVisuallyHiddenContent(content.slice(trueMiddleStart, trueMiddleEnd))}
+        {renderVisibleContent(content.slice(trueMiddleEnd))}
+      </>
+    );
+  };
 
   const truncateBody = (
-    <span ref={subParentRef} className={css(styles.truncate, className)} {...props}>
-      {(position === TruncatePosition.end || position === TruncatePosition.start) && (
-        <span ref={textRef} className={truncateStyles[position]}>
-          {content}
-          {position === TruncatePosition.start && <Fragment>&lrm;</Fragment>}
-        </span>
-      )}
-      {position === TruncatePosition.middle && content.length - trailingNumChars > minWidthCharacters && (
-        <Fragment>
-          <span ref={textRef} className={styles.truncateStart}>
-            {sliceContent(content, trailingNumChars)[0]}
-          </span>
-          <span className={styles.truncateEnd}>{sliceContent(content, trailingNumChars)[1]}</span>
-        </Fragment>
-      )}
-      {position === TruncatePosition.middle && content.length - trailingNumChars <= minWidthCharacters && (
-        <Fragment>
-          <span ref={textRef} className={styles.truncateStart}>
-            {content}
-          </span>
-        </Fragment>
-      )}
+    <span
+      ref={subParentRef}
+      className={css(styles.truncate, shouldRenderByMaxChars && styles.modifiers.fixed, className)}
+      {...props}
+    >
+      {!shouldRenderByMaxChars ? renderResizeObserverContent() : renderMaxDisplayContent()}
     </span>
   );
 
