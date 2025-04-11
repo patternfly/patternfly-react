@@ -14,13 +14,16 @@ exports[`Truncation with maxCharsDisplayed Matches snapshot with default positio
       position: top
     </p>
     <span
-      class="pf-v6-c-truncate class-tbd"
+      class="pf-v6-c-truncate pf-m-fixed"
     >
-      <span>
+      <span
+        class="pf-v6-c-truncate__text"
+      >
         Tes
       </span>
       <span
         aria-hidden="true"
+        class="pf-v6-c-truncate__omission"
       >
         …
       </span>

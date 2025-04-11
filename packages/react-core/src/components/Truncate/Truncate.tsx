@@ -173,10 +173,18 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
   };
 
   const renderMaxDisplayContent = () => {
+    const renderVisibleContent = (contentToRender: string) => (
+      <span className={`${styles.truncate}__text`}>{contentToRender}</span>
+    );
     if (!isTruncated) {
-      return content;
+      return renderVisibleContent(content);
     }
-    const omissionElement = <span aria-hidden="true">{omissionContent}</span>;
+
+    const omissionElement = (
+      <span className={`${styles.truncate}__omission`} aria-hidden="true">
+        {omissionContent}
+      </span>
+    );
     const renderVisuallyHiddenContent = (contentToHide: string) => (
       <span className="pf-v6-screen-reader">{contentToHide}</span>
     );
@@ -186,14 +194,14 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
         <>
           {renderVisuallyHiddenContent(content.slice(0, maxCharsDisplayed * -1))}
           {omissionElement}
-          <span>{content.slice(maxCharsDisplayed * -1)}</span>
+          {renderVisibleContent(content.slice(maxCharsDisplayed * -1))}
         </>
       );
     }
     if (position === TruncatePosition.end) {
       return (
         <>
-          <span>{content.slice(0, maxCharsDisplayed)}</span>
+          {renderVisibleContent(content.slice(0, maxCharsDisplayed))}
           {omissionElement}
           {renderVisuallyHiddenContent(content.slice(maxCharsDisplayed))}
         </>
@@ -204,10 +212,10 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
     const trueMiddleEnd = Math.ceil(maxCharsDisplayed / 2) * -1;
     return (
       <>
-        <span>{content.slice(0, trueMiddleStart)}</span>
+        {renderVisibleContent(content.slice(0, trueMiddleStart))}
         {omissionElement}
         {renderVisuallyHiddenContent(content.slice(trueMiddleStart, trueMiddleEnd))}
-        <span>{content.slice(trueMiddleEnd)}</span>
+        {renderVisibleContent(content.slice(trueMiddleEnd))}
       </>
     );
   };
@@ -215,7 +223,7 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
   const truncateBody = (
     <span
       ref={subParentRef}
-      className={css(styles.truncate, shouldRenderByMaxChars && 'class-tbd', className)}
+      className={css(styles.truncate, shouldRenderByMaxChars && styles.modifiers.fixed, className)}
       {...props}
     >
       {!shouldRenderByMaxChars ? renderResizeObserverContent() : renderMaxDisplayContent()}
