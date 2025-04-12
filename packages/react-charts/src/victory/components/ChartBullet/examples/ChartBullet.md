@@ -373,111 +373,18 @@ import { ChartBullet } from '@patternfly/react-charts/victory';
 ```
 
 ### Vertical with segmented primary measure
-```js
-import { ChartBullet } from '@patternfly/react-charts/victory';
+```ts file = "ChartBulletVerticalSegmented.tsx"
 
-<div style={{ height: '500px', width: '500px' }}>
-  <ChartBullet
-    ariaDesc="Storage capacity"
-    ariaTitle="Bullet chart example"
-    comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
-    comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-    constrainToVisibleArea
-    height={500}
-    horizontal={false}
-    labels={({ datum }) => `${datum.name}: ${datum.y}`}
-    maxDomain={{y: 100}}
-    name="chart10"
-    padding={{
-      bottom: 125, // Adjusted to accommodate legend
-      left: 400,
-      right: 50,
-      top: 50
-    }}
-    primarySegmentedMeasureData={[{ name: 'Measure', y: 25 }, { name: 'Measure', y: 60 }]}
-    primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
-    qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
-    qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-    subTitle="Measure details"
-    title="Text label"
-    width={500}
-  />
-</div>
 ```
 
 ### Vertical primary measure outside max range
-```js
-import { ChartBullet, ChartThemeColor } from '@patternfly/react-charts/victory';
+```ts file = "ChartBulletVerticalMaxRange.tsx"
 
-<div style={{ height: '500px', width: '500px' }}>
-  <ChartBullet
-    ariaDesc="Storage capacity"
-    ariaTitle="Bullet chart example"
-    comparativeWarningMeasureData={[{name: 'Warning', y: 100}]}
-    comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-    constrainToVisibleArea
-    height={500}
-    horizontal={false}
-    labels={({ datum }) => `${datum.name}: ${datum.y}`}
-    maxDomain={{y: 125}}
-    minDomain={{y: 50}}
-    name="chart11"
-    padding={{
-      bottom: 125, // Adjusted to accommodate legend
-      left: 400,
-      right: 50,
-      top: 50 // Adjusted to accommodate primary segmented measure tooltip
-    }}
-    primarySegmentedMeasureData={[{ name: 'Measure', y: 75 }, { name: 'Measure', y: 135 }]}
-    primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
-    qualitativeRangeData={[{ name: 'Range', y: 85 }, { name: 'Range', y: 125 }]}
-    qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-    subTitle="Measure details"
-    title="Text label"
-    themeColor={ChartThemeColor.yellow}
-    width={500}
-  />
-</div>
 ```
 
 ### Custom labels
-```js
-import { ChartAxis, ChartBullet } from '@patternfly/react-charts/victory';
+```ts file = "ChartBulletCustomLabels.tsx"
 
-<div style={{ height: '150px', width: '600px' }}>
-  <ChartBullet
-    ariaDesc="Storage capacity"
-    ariaTitle="Bullet chart example"
-    axisComponent={
-      <ChartAxis 
-        tickValues={[0, 25, 50, 75, 100]}
-        tickFormat={val => {
-          switch (val) {
-            case 0:
-              return 'New';
-            case 25:
-              return 'Beginner';
-            case 50:
-              return 'Intermediate';
-            case 75:
-              return 'Advanced';
-            case 100:
-              return 'Expert';
-          }
-        }}
-      />
-    }
-    comparativeWarningMeasureData={[{ name: 'Warning', y: 88 }]}
-    constrainToVisibleArea
-    height={150}
-    labels={({ datum }) => `${datum.name}: ${datum.y}`}
-    maxDomain={{y: 100}}
-    name="chart12"
-    primarySegmentedMeasureData={[{ name: 'Measure', y: 60 }]}
-    qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
-    width={600}
-  />
-</div>
 ```
 
 ### Custom size
