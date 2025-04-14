@@ -22,7 +22,9 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Masthead component (e.g. <Masthead />) */
   masthead?: React.ReactNode;
-  /** Sidebar component for a side nav (e.g. <PageSidebar />) */
+  /** Sidebar component for a side nav, recommended to be a PageSidebar. If set to null, the page grid layout
+   * will render without a sidebar.
+   */
   sidebar?: React.ReactNode;
   /** Notification drawer component for an optional notification drawer (e.g. <NotificationDrawer />) */
   notificationDrawer?: React.ReactNode;
@@ -336,6 +338,7 @@ class Page extends Component<PageProps, PageState> {
             width !== null && height !== null && 'pf-m-resize-observer',
             width !== null && `pf-m-breakpoint-${getBreakpoint(width)}`,
             height !== null && `pf-m-height-breakpoint-${getVerticalBreakpoint(height)}`,
+            sidebar === null && styles.modifiers.noSidebar,
             className
           )}
         >
