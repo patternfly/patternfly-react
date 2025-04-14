@@ -3,38 +3,43 @@ import { ChartBullet } from '@patternfly/react-charts/victory';
 interface ChartData {
   name: string;
   y?: number;
-  y0?: number;
 }
 
-export const ChartBulletNegativePrimary: React.FunctionComponent = () => {
-  const comparativeWarningMeasureData: ChartData[] = [{ name: 'Warning', y: 60 }];
+export const ChartBulletReversed: React.FunctionComponent = () => {
+  const comparativeWarningMeasureData: ChartData[] = [{ name: 'Warning', y: -88 }];
   const comparativeWarningMeasureLegendData: ChartData[] = [{ name: 'Warning' }];
-  const primarySegmentedMeasureData: ChartData[] = [{ name: 'Measure', y: -15 }];
-  const primarySegmentedMeasureLegendData: ChartData[] = [{ name: 'Measure 1' }];
+  const primarySegmentedMeasureData: ChartData[] = [
+    { name: 'Measure', y: -60 },
+    { name: 'Measure', y: -25 }
+  ];
+  const primarySegmentedMeasureLegendData: ChartData[] = [{ name: 'Measure 1' }, { name: 'Measure 2' }];
   const qualitativeRangeData: ChartData[] = [
-    { name: 'Range', y: 25, y0: -25 },
-    { name: 'Range', y: 50 }
+    { name: 'Range', y: -50 },
+    { name: 'Range', y: -75 }
   ];
   const qualitativeRangeLegendData: ChartData[] = [{ name: 'Range 1' }, { name: 'Range 2' }];
 
   return (
-    <div style={{ height: '200px', width: '600px' }}>
+    <div style={{ height: '200px', width: '700px' }}>
       <ChartBullet
         ariaDesc="Storage capacity"
         ariaTitle="Bullet chart example"
         comparativeWarningMeasureData={comparativeWarningMeasureData}
         comparativeWarningMeasureLegendData={comparativeWarningMeasureLegendData}
         constrainToVisibleArea
+        invert
         height={200}
         labels={({ datum }) => `${datum.name}: ${datum.y}`}
-        maxDomain={{ y: 75 }}
-        minDomain={{ y: -25 }}
-        name="chart7"
+        legendPosition="right"
+        legendOrientation="vertical"
+        maxDomain={{ y: 0 }}
+        minDomain={{ y: -100 }}
+        name="chart8"
         padding={{
           bottom: 50,
           left: 150, // Adjusted to accommodate labels
-          right: 50,
-          top: 65
+          right: 150, // Adjusted to accommodate legend
+          top: 80
         }}
         primarySegmentedMeasureData={primarySegmentedMeasureData}
         primarySegmentedMeasureLegendData={primarySegmentedMeasureLegendData}
@@ -42,7 +47,7 @@ export const ChartBulletNegativePrimary: React.FunctionComponent = () => {
         qualitativeRangeLegendData={qualitativeRangeLegendData}
         subTitle="Measure details"
         title="Text label"
-        width={600}
+        width={700}
       />
     </div>
   );

@@ -53,7 +53,7 @@ This is a green bullet chart with error measure and custom axis ticks with 3 leg
 
 This is a yellow bullet chart with primary measure greater than max range.
 
-```ts file = "ChartBulletPrimaryRange.tsx"
+```ts file = "ChartBulletOutsideRange.tsx"
 
 ```
 
@@ -61,7 +61,7 @@ This is a yellow bullet chart with primary measure greater than max range.
 
 This bullet chart with negative primary measure is for measures considered to be bad when they are low.
 
-```ts file = "ChartBulletNegativePrimary.tsx"
+```ts file = "ChartBulletNegativeMeasure.tsx"
 
 ```
 
@@ -69,7 +69,7 @@ This bullet chart with negative primary measure is for measures considered to be
 
 This reversed bullet chart with right aligned legend is for measures considered to be good when they are low.
 
-```ts file = "ChartBulletReversedLegend.tsx"
+```ts file = "ChartBulletReversed.tsx"
 
 ```
 
@@ -77,7 +77,7 @@ This reversed bullet chart with right aligned legend is for measures considered 
 
 This bullet chart with negative and positive primary measures has 4 legend items per row.
 
-```ts file = "ChartBulletNegativePositivePrimary.tsx"
+```ts file = "ChartBulletNegativePositiveMeasure.tsx"
 
 ```
 

@@ -1,29 +1,21 @@
-import { ChartBullet } from '@patternfly/react-charts/victory';
+import { ChartBullet, ChartThemeColor } from '@patternfly/react-charts/victory';
 
 interface ChartData {
   name: string;
   y?: number;
-  y0?: number;
 }
 
-export const ChartBulletNegativePositivePrimary: React.FunctionComponent = () => {
-  const comparativeWarningMeasureData: ChartData[] = [{ name: 'Warning', y: 60 }];
+export const ChartBulletOutsideRange: React.FunctionComponent = () => {
+  const comparativeWarningMeasureData: ChartData[] = [{ name: 'Warning', y: 80 }];
   const comparativeWarningMeasureLegendData: ChartData[] = [{ name: 'Warning' }];
   const primarySegmentedMeasureData: ChartData[] = [
-    { name: 'Measure', y: -10 },
-    { name: 'Measure', y: -20 },
-    { name: 'Measure', y: 10 },
-    { name: 'Measure', y: 40 }
+    { name: 'Measure', y: 75 },
+    { name: 'Measure', y: 135 }
   ];
-  const primarySegmentedMeasureLegendData: ChartData[] = [
-    { name: 'Measure 1' },
-    { name: 'Measure 2' },
-    { name: 'Measure 3' },
-    { name: 'Measure 4' }
-  ];
+  const primarySegmentedMeasureLegendData: ChartData[] = [{ name: 'Measure 1' }, { name: 'Measure 2' }];
   const qualitativeRangeData: ChartData[] = [
-    { name: 'Range', y: 25, y0: -25 },
-    { name: 'Range', y: 50 }
+    { name: 'Range', y: 85 },
+    { name: 'Range', y: 125 }
   ];
   const qualitativeRangeLegendData: ChartData[] = [{ name: 'Range 1' }, { name: 'Range 2' }];
 
@@ -35,22 +27,22 @@ export const ChartBulletNegativePositivePrimary: React.FunctionComponent = () =>
         comparativeWarningMeasureData={comparativeWarningMeasureData}
         comparativeWarningMeasureLegendData={comparativeWarningMeasureLegendData}
         constrainToVisibleArea
-        height={200}
         labels={({ datum }) => `${datum.name}: ${datum.y}`}
-        legendItemsPerRow={4}
-        maxDomain={{ y: 75 }}
-        minDomain={{ y: -25 }}
-        name="chart9"
+        height={200}
+        maxDomain={{ y: 125 }}
+        minDomain={{ y: 50 }}
+        name="chart6"
         padding={{
           bottom: 50,
           left: 150, // Adjusted to accommodate labels
-          right: 50,
-          top: 65
+          right: 75,
+          top: 50
         }}
         primarySegmentedMeasureData={primarySegmentedMeasureData}
         primarySegmentedMeasureLegendData={primarySegmentedMeasureLegendData}
         qualitativeRangeData={qualitativeRangeData}
         qualitativeRangeLegendData={qualitativeRangeLegendData}
+        themeColor={ChartThemeColor.yellow}
         subTitle="Measure details"
         title="Text label"
         width={600}
