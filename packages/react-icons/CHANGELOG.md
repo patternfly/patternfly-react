@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.2.0...@patternfly/react-icons@6.2.1-prerelease.0) (2025-04-14)
+
+### Features
+
+- **Page:** Added support for sidebar-less layout ([#11760](https://github.com/patternfly/patternfly-react/issues/11760)) ([217aad3](https://github.com/patternfly/patternfly-react/commit/217aad3241e79b02ab8f1f74fd1d8022860a138b))
+
 # 6.2.0 (2025-04-07)
 
 **Note:** Version bump only for package @patternfly/react-icons

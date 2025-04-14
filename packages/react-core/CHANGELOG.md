@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.3...@patternfly/react-core@6.2.1-prerelease.4) (2025-04-14)
+
+### Features
+
+- **Page:** Added support for sidebar-less layout ([#11760](https://github.com/patternfly/patternfly-react/issues/11760)) ([217aad3](https://github.com/patternfly/patternfly-react/commit/217aad3241e79b02ab8f1f74fd1d8022860a138b))
+
 ## [6.2.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.2...@patternfly/react-core@6.2.1-prerelease.3) (2025-04-11)
 
 ### Features
