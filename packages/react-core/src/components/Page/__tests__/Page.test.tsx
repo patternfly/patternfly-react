@@ -353,6 +353,24 @@ describe('Page', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test(`Does not render with class ${styles.modifiers.noSidebar} by default`, () => {
+    render(<Page data-testid="page"></Page>);
+
+    expect(screen.getByTestId('page')).not.toHaveClass(styles.modifiers.noSidebar);
+  });
+
+  test(`Does not render with class ${styles.modifiers.noSidebar} when sidebar prop is passed with valid content`, () => {
+    render(<Page data-testid="page" sidebar={<div>sidebar content</div>}></Page>);
+
+    expect(screen.getByTestId('page')).not.toHaveClass(styles.modifiers.noSidebar);
+  });
+
+  test(`Renders with class ${styles.modifiers.noSidebar} when sidebar is set to null`, () => {
+    render(<Page data-testid="page" sidebar={null}></Page>);
+
+    expect(screen.getByTestId('page')).toHaveClass(styles.modifiers.noSidebar);
+  });
+
   test(`Does not render with ${styles.modifiers.fill} or ${styles.modifiers.noFill} if isContentFilled is not passed`, () => {
     render(<Page {...props} role="main"></Page>);
 
