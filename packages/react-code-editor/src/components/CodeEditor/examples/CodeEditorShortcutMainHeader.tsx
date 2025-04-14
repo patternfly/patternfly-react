@@ -90,6 +90,7 @@ export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
         value="Mac"
       />
       <CodeEditor
+        headerMainContent="Header main content"
         shortcutsPopoverProps={shortcutsPopoverProps}
         isLanguageLabelVisible
         code="Some example content"
