@@ -89,18 +89,20 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
         {...(isExpandable && { 'aria-expanded': isExpanded })}
         {...ouiaProps}
       >
-        {isExpandable ? (
-          <>
-            <span className={css(styles.wizardNavLinkText)}>{content}</span>
-            <span className={css(styles.wizardNavLinkToggle)}>
-              <span className={css(styles.wizardNavLinkToggleIcon)}>
-                <AngleRightIcon />
+        <span className={css(styles.wizardNavLinkMain)}>
+          {isExpandable ? (
+            <>
+              <span className={css(styles.wizardNavLinkText)}>{content}</span>
+              <span className={css(styles.wizardNavLinkToggle)}>
+                <span className={css(styles.wizardNavLinkToggleIcon)}>
+                  <AngleRightIcon />
+                </span>
               </span>
-            </span>
-          </>
-        ) : (
-          content
-        )}
+            </>
+          ) : (
+            content
+          )}
+        </span>
       </NavItemComponent>
       {children}
     </li>
