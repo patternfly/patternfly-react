@@ -120,7 +120,11 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                 data-ouia-safe="true"
                 type="button"
               >
-                A
+                <span
+                  class="pf-v6-c-wizard__nav-link-main"
+                >
+                  A
+                </span>
               </button>
             </li>
             <li
@@ -136,29 +140,33 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                 type="button"
               >
                 <span
-                  class="pf-v6-c-wizard__nav-link-text"
-                >
-                  B
-                </span>
-                <span
-                  class="pf-v6-c-wizard__nav-link-toggle"
+                  class="pf-v6-c-wizard__nav-link-main"
                 >
                   <span
-                    class="pf-v6-c-wizard__nav-link-toggle-icon"
+                    class="pf-v6-c-wizard__nav-link-text"
                   >
-                    <svg
-                      aria-hidden="true"
-                      class="pf-v6-svg"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    B
+                  </span>
+                  <span
+                    class="pf-v6-c-wizard__nav-link-toggle"
+                  >
+                    <span
+                      class="pf-v6-c-wizard__nav-link-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </span>
                   </span>
                 </span>
               </button>
@@ -177,7 +185,11 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                     data-ouia-safe="true"
                     type="button"
                   >
-                    B-1
+                    <span
+                      class="pf-v6-c-wizard__nav-link-main"
+                    >
+                      B-1
+                    </span>
                   </button>
                 </li>
                 <li
@@ -191,7 +203,11 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                     data-ouia-safe="true"
                     type="button"
                   >
-                    B-2
+                    <span
+                      class="pf-v6-c-wizard__nav-link-main"
+                    >
+                      B-2
+                    </span>
                   </button>
                 </li>
               </ol>
@@ -207,7 +223,11 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                 data-ouia-safe="true"
                 type="button"
               >
-                C
+                <span
+                  class="pf-v6-c-wizard__nav-link-main"
+                >
+                  C
+                </span>
               </button>
             </li>
             <li
@@ -221,7 +241,11 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                 data-ouia-safe="true"
                 type="button"
               >
-                D
+                <span
+                  class="pf-v6-c-wizard__nav-link-main"
+                >
+                  D
+                </span>
               </button>
             </li>
           </ol>
@@ -432,7 +456,11 @@ exports[`Wizard Wizard should match snapshot 1`] = `
                 id="step-A"
                 type="button"
               >
-                A
+                <span
+                  class="pf-v6-c-wizard__nav-link-main"
+                >
+                  A
+                </span>
               </button>
             </li>
             <li
@@ -447,7 +475,11 @@ exports[`Wizard Wizard should match snapshot 1`] = `
                 id="step-B"
                 type="button"
               >
-                B
+                <span
+                  class="pf-v6-c-wizard__nav-link-main"
+                >
+                  B
+                </span>
               </button>
               <ol
                 class="pf-v6-c-wizard__nav-list"
@@ -465,7 +497,11 @@ exports[`Wizard Wizard should match snapshot 1`] = `
                     id="step-B-1"
                     type="button"
                   >
-                    B-1
+                    <span
+                      class="pf-v6-c-wizard__nav-link-main"
+                    >
+                      B-1
+                    </span>
                   </button>
                 </li>
                 <li
@@ -480,7 +516,11 @@ exports[`Wizard Wizard should match snapshot 1`] = `
                     id="step-B-2"
                     type="button"
                   >
-                    B-2
+                    <span
+                      class="pf-v6-c-wizard__nav-link-main"
+                    >
+                      B-2
+                    </span>
                   </button>
                 </li>
               </ol>
@@ -497,7 +537,11 @@ exports[`Wizard Wizard should match snapshot 1`] = `
                 id="step-C"
                 type="button"
               >
-                C
+                <span
+                  class="pf-v6-c-wizard__nav-link-main"
+                >
+                  C
+                </span>
               </button>
             </li>
             <li
@@ -512,7 +556,11 @@ exports[`Wizard Wizard should match snapshot 1`] = `
                 id="step-D"
                 type="button"
               >
-                D
+                <span
+                  class="pf-v6-c-wizard__nav-link-main"
+                >
+                  D
+                </span>
               </button>
             </li>
           </ol>
@@ -672,7 +720,11 @@ exports[`Wizard bare wiz 1`] = `
                 data-ouia-safe="true"
                 type="button"
               >
-                A
+                <span
+                  class="pf-v6-c-wizard__nav-link-main"
+                >
+                  A
+                </span>
               </button>
             </li>
           </ol>

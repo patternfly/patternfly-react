@@ -12,7 +12,11 @@ exports[`WizardNavItem should match snapshot (auto-generated) 1`] = `
       data-ouia-component-type="PF6/WizardNavItem"
       data-ouia-safe="true"
       type="button"
-    />
+    >
+      <span
+        class="pf-v6-c-wizard__nav-link-main"
+      />
+    </button>
     ReactNode
   </li>
 </DocumentFragment>
