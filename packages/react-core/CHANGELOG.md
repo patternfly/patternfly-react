@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.4...@patternfly/react-core@6.2.1-prerelease.5) (2025-04-15)
+
+### Bug Fixes
+
+- **Wizard deprecated:** added wrapper for step name ([#11761](https://github.com/patternfly/patternfly-react/issues/11761)) ([d0b7b70](https://github.com/patternfly/patternfly-react/commit/d0b7b70a7f108f49b5d3729d803ff6126bdd8192))
+
 ## [6.2.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.3...@patternfly/react-core@6.2.1-prerelease.4) (2025-04-14)
 
 ### Features
