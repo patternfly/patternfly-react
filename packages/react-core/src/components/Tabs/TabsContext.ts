@@ -6,6 +6,7 @@ export interface TabsContextProps {
   unmountOnExit: boolean;
   localActiveKey: string | number;
   uniqueId: string;
+  setAccentStyles: (shouldInitializeStyles?: boolean) => void;
   handleTabClick: (
     event: React.MouseEvent<HTMLElement, MouseEvent>,
     eventKey: number | string,
@@ -24,6 +25,7 @@ export const TabsContext = createContext<TabsContextProps>({
   unmountOnExit: false,
   localActiveKey: '',
   uniqueId: '',
+  setAccentStyles: () => null,
   handleTabClick: () => null,
   handleTabClose: undefined
 });

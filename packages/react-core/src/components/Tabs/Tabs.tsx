@@ -5,7 +5,13 @@ import { PickOptional } from '../../helpers/typeUtils';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
-import { getUniqueId, isElementInView, formatBreakpointMods, getLanguageDirection } from '../../helpers/util';
+import {
+  getUniqueId,
+  isElementInView,
+  formatBreakpointMods,
+  getLanguageDirection,
+  getInlineStartProperty
+} from '../../helpers/util';
 import { TabContent } from './TabContent';
 import { TabProps } from './Tab';
 import { TabsContextProvider } from './TabsContext';
@@ -13,6 +19,8 @@ import { OverflowTab } from './OverflowTab';
 import { Button } from '../Button';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId, canUseDOM } from '../../helpers';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import linkAccentLength from '@patternfly/react-tokens/dist/esm/c_tabs_link_accent_length';
+import linkAccentStart from '@patternfly/react-tokens/dist/esm/c_tabs_link_accent_start';
 
 export enum TabsComponent {
   div = 'div',
@@ -139,6 +147,9 @@ interface TabsState {
   uncontrolledIsExpandedLocal: boolean;
   ouiaStateId: string;
   overflowingTabCount: number;
+  isInitializingAccent: boolean;
+  currentLinkAccentLength: string;
+  currentLinkAccentStart: string;
 }
 
 class Tabs extends Component<TabsProps, TabsState> {
@@ -158,7 +169,10 @@ class Tabs extends Component<TabsProps, TabsState> {
       uncontrolledActiveKey: this.props.defaultActiveKey,
       uncontrolledIsExpandedLocal: this.props.defaultIsExpanded,
       ouiaStateId: getDefaultOUIAId(Tabs.displayName),
-      overflowingTabCount: 0
+      overflowingTabCount: 0,
+      isInitializingAccent: true,
+      currentLinkAccentLength: linkAccentLength.value,
+      currentLinkAccentStart: linkAccentStart.value
     };
 
     if (this.props.isVertical && this.props.expandable !== undefined) {
@@ -328,21 +342,49 @@ class Tabs extends Component<TabsProps, TabsState> {
     }
   };
 
+  setAccentStyles = (shouldInitializeStyle?: boolean) => {
+    const currentItem = this.tabList.current.querySelector('li.pf-m-current') as HTMLElement;
+    if (!currentItem) {
+      return;
+    }
+
+    const { isVertical } = this.props;
+    const { offsetWidth, offsetHeight, offsetTop } = currentItem;
+    const lengthValue = isVertical ? offsetHeight : offsetWidth;
+    const startValue = isVertical ? offsetTop : getInlineStartProperty(currentItem, this.tabList.current);
+    this.setState({
+      currentLinkAccentLength: `${lengthValue}px`,
+      currentLinkAccentStart: `${startValue}px`,
+      ...(shouldInitializeStyle && { isInitializingAccent: true })
+    });
+
+    setTimeout(() => {
+      this.setState({ isInitializingAccent: false });
+    }, 0);
+  };
+
+  handleResize = () => {
+    this.handleScrollButtons();
+    this.setAccentStyles();
+  };
+
   componentDidMount() {
     if (!this.props.isVertical) {
       if (canUseDOM) {
-        window.addEventListener('resize', this.handleScrollButtons, false);
+        window.addEventListener('resize', this.handleResize, false);
       }
       this.direction = getLanguageDirection(this.tabList.current);
       // call the handle resize function to check if scroll buttons should be shown
       this.handleScrollButtons();
     }
+
+    this.setAccentStyles(true);
   }
 
   componentWillUnmount() {
     if (!this.props.isVertical) {
       if (canUseDOM) {
-        window.removeEventListener('resize', this.handleScrollButtons, false);
+        window.removeEventListener('resize', this.handleResize, false);
       }
     }
     clearTimeout(this.scrollTimeout);
@@ -350,8 +392,18 @@ class Tabs extends Component<TabsProps, TabsState> {
   }
 
   componentDidUpdate(prevProps: TabsProps, prevState: TabsState) {
-    const { activeKey, mountOnEnter, isOverflowHorizontal, children } = this.props;
-    const { shownKeys, overflowingTabCount, enableScrollButtons } = this.state;
+    this.direction = getLanguageDirection(this.tabList.current);
+    const { activeKey, mountOnEnter, isOverflowHorizontal, children, defaultActiveKey } = this.props;
+    const { shownKeys, overflowingTabCount, enableScrollButtons, uncontrolledActiveKey } = this.state;
+    const isOnCloseUpdate = !!prevProps.onClose !== !!this.props.onClose;
+    if (
+      (defaultActiveKey !== undefined && prevState.uncontrolledActiveKey !== uncontrolledActiveKey) ||
+      (defaultActiveKey === undefined && prevProps.activeKey !== activeKey) ||
+      isOnCloseUpdate
+    ) {
+      this.setAccentStyles(isOnCloseUpdate);
+    }
+
     if (prevProps.activeKey !== activeKey && mountOnEnter && shownKeys.indexOf(activeKey) < 0) {
       this.setState({
         shownKeys: shownKeys.concat(activeKey)
@@ -364,6 +416,7 @@ class Tabs extends Component<TabsProps, TabsState> {
       Children.toArray(prevProps.children).length !== Children.toArray(children).length
     ) {
       this.handleScrollButtons();
+      this.setAccentStyles(true);
     }
 
     const currentOverflowingTabCount = this.countOverflowingElements(this.tabList.current);
@@ -380,8 +433,6 @@ class Tabs extends Component<TabsProps, TabsState> {
     } else if (prevState.enableScrollButtons && !enableScrollButtons) {
       this.setState({ showScrollButtons: false });
     }
-
-    this.direction = getLanguageDirection(this.tabList.current);
   }
 
   static getDerivedStateFromProps(nextProps: TabsProps, prevState: TabsState) {
@@ -450,7 +501,10 @@ class Tabs extends Component<TabsProps, TabsState> {
       shownKeys,
       uncontrolledActiveKey,
       uncontrolledIsExpandedLocal,
-      overflowingTabCount
+      overflowingTabCount,
+      isInitializingAccent,
+      currentLinkAccentLength,
+      currentLinkAccentStart
     } = this.state;
     const filteredChildren = Children.toArray(children)
       .filter((child): child is TabElement => isValidElement(child))
@@ -485,6 +539,7 @@ class Tabs extends Component<TabsProps, TabsState> {
           unmountOnExit,
           localActiveKey,
           uniqueId,
+          setAccentStyles: this.setAccentStyles,
           handleTabClick: (...args) => this.handleTabClick(...args),
           handleTabClose: onClose
         }}
@@ -505,10 +560,12 @@ class Tabs extends Component<TabsProps, TabsState> {
             formatBreakpointMods(inset, styles),
             variantStyle[variant],
             hasOverflowTab && styles.modifiers.overflow,
+            isInitializingAccent && styles.modifiers.initializingAccent,
             className
           )}
           {...getOUIAProps(Tabs.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           id={id && id}
+          style={{ [linkAccentLength.name]: currentLinkAccentLength, [linkAccentStart.name]: currentLinkAccentStart }}
           {...props}
         >
           {expandable && isVertical && (
