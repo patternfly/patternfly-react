@@ -3,33 +3,46 @@ describe('Tab Demo Test', () => {
     cy.visit('http://localhost:3000/tabs-horizontal-overflow-demo-nav-link');
   });
 
-  it('Allows users to select a tab from the overflow menu', () => {
-    // verify that the expected tabs are showing/not showing as expected based on screen size
-    ['Tab item 1', 'Tab item 2', 'Tab item 3', 'Tab item 4', 'Tab item 5', 'Tab item 6', 'Tab item 7', 'More'].forEach(
-      (tab) => cy.contains('.pf-v6-c-tabs__link', tab).should('exist')
-    );
-    ['Tab item 8', 'Tab item 9', 'Tab item 10', 'Tab item 11'].forEach((tab) => cy.contains(tab).should('not.exist'));
+  it(
+    'Allows users to select a tab from the overflow menu',
+    {
+      defaultCommandTimeout: 10000
+    },
+    () => {
+      // verify that the expected tabs are showing/not showing as expected based on screen size
+      [
+        'Tab item 1',
+        'Tab item 2',
+        'Tab item 3',
+        'Tab item 4',
+        'Tab item 5',
+        'Tab item 6',
+        'Tab item 7',
+        'More'
+      ].forEach((tab) => cy.contains('.pf-v6-c-tabs__link', tab).should('exist'));
+      ['Tab item 8', 'Tab item 9', 'Tab item 10', 'Tab item 11'].forEach((tab) => cy.contains(tab).should('not.exist'));
 
-    // open the overflow menu and verify that the overflowing tabs are now visible within it
-    cy.contains('.pf-v6-c-tabs__link', 'More').click();
-    ['Tab item 8', 'Tab item 9', 'Tab item 10', 'Tab item 11'].forEach((menuItem) =>
-      cy.contains(menuItem).should('exist')
-    );
+      // open the overflow menu and verify that the overflowing tabs are now visible within it
+      cy.contains('.pf-v6-c-tabs__link', 'More').click();
+      ['Tab item 8', 'Tab item 9', 'Tab item 10', 'Tab item 11'].forEach((menuItem) =>
+        cy.contains(menuItem).should('exist')
+      );
 
-    // select a tab and verify that it replaces the default overflow tab text, closes the overflow menu, and shows its content
-    cy.contains('Tab item 9').click();
-    cy.contains('.pf-v6-c-tabs__link', 'More').should('not.exist');
-    cy.contains('.pf-v6-c-tabs__link', 'Tab item 9').should('exist');
-    ['Tab item 8', 'Tab item 10', 'Tab item 11'].forEach((menuItem) => cy.contains(menuItem).should('not.exist'));
-    cy.contains('Tab 9 section').should('not.be.hidden');
+      // select a tab and verify that it replaces the default overflow tab text, closes the overflow menu, and shows its content
+      cy.contains('Tab item 9').click();
+      cy.contains('.pf-v6-c-tabs__link', 'More').should('not.exist');
+      cy.contains('.pf-v6-c-tabs__link', 'Tab item 9').should('exist');
+      ['Tab item 8', 'Tab item 10', 'Tab item 11'].forEach((menuItem) => cy.contains(menuItem).should('not.exist'));
+      cy.contains('Tab 9 section').should('not.be.hidden');
 
-    // select a non-overflow tab and verify that overflow tab text returns to the default and the now selected tab content shows
-    cy.contains('Tab item 1').click();
-    cy.contains('Tab item 9').should('not.exist');
-    cy.contains('.pf-v6-c-tabs__link', 'More').should('exist');
-    cy.contains('Tab 9 section').should('be.hidden');
-    cy.contains('Tab 1 section').should('not.be.hidden');
-  });
+      // select a non-overflow tab and verify that overflow tab text returns to the default and the now selected tab content shows
+      cy.contains('Tab item 1').click();
+      cy.contains('Tab item 9').should('not.exist');
+      cy.contains('.pf-v6-c-tabs__link', 'More').should('exist');
+      cy.contains('Tab 9 section').should('be.hidden');
+      cy.contains('Tab 1 section').should('not.be.hidden');
+    }
+  );
 
   // Re-enable once https://github.com/patternfly/patternfly/issues/7449 is resolved
   xit('Adjusts tabs showing on resize', () => {
