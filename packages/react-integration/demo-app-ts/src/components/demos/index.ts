@@ -88,5 +88,6 @@ export * from './ToolbarDemo/ToolbarDemo';
 export * from './ToolbarDemo/ToolbarVisibilityDemo';
 export * from './TooltipDemo/TooltipDemo';
 export * from './TreeViewDemo/TreeViewDemo';
+export * from './TruncateDemo/TruncateDemo';
 export * from './WizardDemo/WizardDemo';
 export * from './WizardDeprecatedDemo/WizardDeprecatedDemo';
