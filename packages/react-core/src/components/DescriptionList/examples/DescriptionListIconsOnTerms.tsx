@@ -13,7 +13,7 @@ import GlobeIcon from '@patternfly/react-icons/dist/esm/icons/globe-icon';
 import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
 
 export const DescriptionListIconsOnTerms: React.FunctionComponent = () => (
-  <DescriptionList>
+  <DescriptionList aria-label="With icons examples">
     <DescriptionListGroup>
       <DescriptionListTerm icon={<CubeIcon />}>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>

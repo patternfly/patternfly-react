@@ -30,7 +30,7 @@ export const DescriptionListWithLargeDisplaySize: React.FunctionComponent = () =
           name="toggle-display-size"
         />
       </div>
-      <DescriptionList displaySize={displaySize} columnModifier={{ lg: '2Col' }}>
+      <DescriptionList displaySize={displaySize} columnModifier={{ lg: '2Col' }} aria-label="Large display size">
         <DescriptionListGroup>
           <DescriptionListTerm>Name</DescriptionListTerm>
           <DescriptionListDescription>Example</DescriptionListDescription>
