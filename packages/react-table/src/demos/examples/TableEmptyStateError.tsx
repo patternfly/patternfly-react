@@ -5,7 +5,7 @@ import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/Dashboa
 
 export const TableEmptyStateError: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
-    <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+    <PageSection padding={{ default: 'noPadding', xl: 'padding' }} aria-label="Empty state table with error">
       <Card component="div">
         <Table aria-label="Loading table demo">
           <Thead>

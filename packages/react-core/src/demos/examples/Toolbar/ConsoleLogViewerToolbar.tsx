@@ -486,7 +486,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
 
   return (
     <DashboardWrapper sidebarNavOpen={!mobileView} onPageResize={onPageResize}>
-      <PageSection>
+      <PageSection aria-label="Log viewer controls">
         <Toolbar id="log-viewer-toolbar" inset={{ default: 'insetNone' }}>
           <ToolbarContent>{items}</ToolbarContent>
         </Toolbar>
