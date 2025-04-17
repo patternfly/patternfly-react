@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.0...@patternfly/react-core@6.2.1) (2025-04-17)
+
+### Bug Fixes
+
+- **DatePicker:** prevented textless helper text from rendering ([#11713](https://github.com/patternfly/patternfly-react/issues/11713)) ([21de07e](https://github.com/patternfly/patternfly-react/commit/21de07ef974417cdc865a6247ea020bee7a42aae))
+- **HelperTextItem:** allowed removal of SR text element ([#11704](https://github.com/patternfly/patternfly-react/issues/11704)) ([2ff2967](https://github.com/patternfly/patternfly-react/commit/2ff2967e0a72994227bef8b844522c01872c7fee))
+- publish patch release. ([ec18e50](https://github.com/patternfly/patternfly-react/commit/ec18e50782c4a7ee2f6a8b072be6b5808b196661))
+- **Wizard deprecated:** added wrapper for step name ([#11761](https://github.com/patternfly/patternfly-react/issues/11761)) ([a4fafec](https://github.com/patternfly/patternfly-react/commit/a4fafec679e799846c1e2ef121ea06dd88614dd6))
+
+### Features
+
+- **LoginPage:** added isPasswordRequired prop ([#11673](https://github.com/patternfly/patternfly-react/issues/11673)) ([1e923c0](https://github.com/patternfly/patternfly-react/commit/1e923c03164ef65a3819c846650f095b243b1fc8))
+- **Page:** Added support for sidebar-less layout ([#11760](https://github.com/patternfly/patternfly-react/issues/11760)) ([4b0c6e4](https://github.com/patternfly/patternfly-react/commit/4b0c6e4a79aba86508891985f19f4853e3b7f87f))
+
 ## [6.2.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.4...@patternfly/react-core@6.2.1-prerelease.5) (2025-04-15)
 
 ### Bug Fixes

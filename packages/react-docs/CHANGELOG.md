@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.2.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.2.0...@patternfly/react-docs@7.2.1) (2025-04-17)
+
+### Bug Fixes
+
+- publish patch release. ([ec18e50](https://github.com/patternfly/patternfly-react/commit/ec18e50782c4a7ee2f6a8b072be6b5808b196661))
+
+### Features
+
+- **Page:** Added support for sidebar-less layout ([#11760](https://github.com/patternfly/patternfly-react/issues/11760)) ([4b0c6e4](https://github.com/patternfly/patternfly-react/commit/4b0c6e4a79aba86508891985f19f4853e3b7f87f))
+
 ## [7.2.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.2.1-prerelease.6...@patternfly/react-docs@7.2.1-prerelease.7) (2025-04-15)
 
 **Note:** Version bump only for package @patternfly/react-docs
