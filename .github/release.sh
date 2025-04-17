@@ -17,7 +17,8 @@ echo "Doing a release..."
 LOG=$(git log --format="%s" -1 | grep -Poe "#\d+")
 PR_NUM=${LOG:1}
 
-yarn run lerna publish patch --dist-tag=prerelease-patch --no-private --yes 2>&1 | tee lerna-output.txtyarn run lerna publish patch --dist-tag=prerelease-patch --no-private --yes 2>&1 | tee lerna-output.txtyarn run lerna publish patch --dist-tag=prerelease-patch --no-private --yes 2>&1 | tee lerna-output.txt
+# yarn run lerna publish patch --dist-tag=prerelease-patch --no-private --yes 2>&1 | tee lerna-output.txt
+yarn run lerna publish patch --dist-tag=prerelease-patch --no-private --yes 2>&1 | tee lerna-output.txt
 
 # use lerna command below for dry run
 # yarn run lerna version patch --yes --no-git-tag-version --no-push --no-private | tee lerna-output.txt
