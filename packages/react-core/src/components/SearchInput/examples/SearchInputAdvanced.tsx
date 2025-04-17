@@ -32,6 +32,7 @@ export const SearchInputAdvanced: React.FunctionComponent = () => {
       />
       <br />
       <SearchInput
+        aria-label="Advanced search"
         attributes={[
           { attr: 'username', display: 'Username' },
           { attr: 'firstname', display: 'First name' }
