@@ -15,7 +15,7 @@ import {
 import { TabContent } from './TabContent';
 import { TabProps } from './Tab';
 import { TabsContextProvider } from './TabsContext';
-import { OverflowTab } from './OverflowTab';
+import { OverflowTab, HorizontalOverflowPopperProps } from './OverflowTab';
 import { Button } from '../Button';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId, canUseDOM } from '../../helpers';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
@@ -26,7 +26,6 @@ export enum TabsComponent {
   div = 'div',
   nav = 'nav'
 }
-
 export interface HorizontalOverflowObject {
   /** Flag which shows the count of overflowing tabs when enabled */
   showTabCount?: boolean;
@@ -34,6 +33,8 @@ export interface HorizontalOverflowObject {
   defaultTitleText?: string;
   /** The aria label applied to the button which toggles the tab overflow menu */
   toggleAriaLabel?: string;
+  /** Additional props to spread to the popper menu. */
+  popperProps?: HorizontalOverflowPopperProps;
 }
 
 type TabElement = React.ReactElement<TabProps, React.JSXElementConstructor<TabProps>>;

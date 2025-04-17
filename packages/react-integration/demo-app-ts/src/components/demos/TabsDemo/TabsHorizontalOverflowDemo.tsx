@@ -18,7 +18,12 @@ export const TabsHorizontalOverflowDemo: React.FunctionComponent = () => {
         onSelect={handleTabClick}
         aria-label="Tabs in the horizontal overflow example"
         role="region"
-        isOverflowHorizontal={{ showTabCount, defaultTitleText, toggleAriaLabel }}
+        isOverflowHorizontal={{
+          showTabCount,
+          defaultTitleText,
+          toggleAriaLabel,
+          popperProps: { minWidth: 'max-content' }
+        }}
       >
         <Tab
           eventKey={0}
@@ -62,16 +67,19 @@ export const TabsHorizontalOverflowDemo: React.FunctionComponent = () => {
         isChecked={showTabCount}
         onChange={() => setShowTabCount(!showTabCount)}
         id="toggle-show-count-overflow"
+        label="Show tab count"
       />
       <Checkbox
         isChecked={!!defaultTitleText}
         onChange={() => setDefaultTitleText(defaultTitleText ? undefined : 'Overflow')}
         id="toggle-change-toggle-text"
+        label="Set default title text"
       />
       <Checkbox
         isChecked={!!toggleAriaLabel}
         onChange={() => setToggleAriaLabel(toggleAriaLabel ? undefined : 'Overflow aria label')}
         id="toggle-add-aria-label"
+        label="Toggle aria label"
       />
     </div>
   );

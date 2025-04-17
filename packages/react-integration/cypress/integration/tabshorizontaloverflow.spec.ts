@@ -31,7 +31,8 @@ describe('Tab Demo Test', () => {
     cy.contains('Tab 1 section').should('not.be.hidden');
   });
 
-  it('Adjusts tabs showing on resize', () => {
+  // Re-enable once https://github.com/patternfly/patternfly/issues/7449 is resolved
+  xit('Adjusts tabs showing on resize', () => {
     // shrink viewport and verify that tabs which would now overflow are moved to the overflow tab
     cy.viewport(700, 792);
     ['Tab item 1', 'Tab item 2', 'Tab item 3', 'Tab item 4', 'Tab item 5', 'More'].forEach((tab) =>
