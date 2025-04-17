@@ -19,6 +19,7 @@ export default [
       'packages/react-docs/coverage',
       '.history/*',
       'packages/react-docs/static',
+      'packages/react-docs/public',
       '**/.cache'
     ]
   },

@@ -15,7 +15,7 @@ export interface SimpleSelectOption extends Omit<SelectOptionProps, 'content'> {
   value: string | number;
 }
 
-export interface SimpleSelectProps extends Omit<SelectProps, 'toggle'> {
+export interface SimpleSelectProps extends Omit<SelectProps, 'toggle' | 'onToggle'> {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */

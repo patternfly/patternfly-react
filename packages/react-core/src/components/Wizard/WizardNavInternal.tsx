@@ -96,7 +96,7 @@ export const WizardNavInternal = ({
             }
           });
           const hasEnabledChildren = Children.toArray(subNavItems).some(
-            (child) => isValidElement(child) && !child.props.isDisabled
+            (child) => isValidElement(child) && !(child.props as any).isDisabled
           );
 
           if (!isProgressive || (isProgressive && step.index <= activeStep.index)) {

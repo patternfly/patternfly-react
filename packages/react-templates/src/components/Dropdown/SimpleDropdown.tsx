@@ -25,7 +25,7 @@ export interface SimpleDropdownItem extends Omit<DropdownItemProps, 'content'> {
   isDivider?: boolean;
 }
 
-export interface SimpleDropdownProps extends Omit<DropdownProps, 'toggle'>, OUIAProps {
+export interface SimpleDropdownProps extends Omit<DropdownProps, 'toggle' | 'onToggle'>, OUIAProps {
   /** Initial items of the dropdown. */
   initialItems?: SimpleDropdownItem[];
   /** @hide Forwarded ref */

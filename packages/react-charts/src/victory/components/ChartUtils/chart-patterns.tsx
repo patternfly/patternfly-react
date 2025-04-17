@@ -374,7 +374,7 @@ export const useDefaultPatternProps = ({
 export const renderChildrenWithPatterns = ({ children, patternScale, themeColor }: PatternPropsInterface) =>
   Children.toArray(children).map((child, index) => {
     if (isValidElement(child)) {
-      const { ...childProps } = child.props;
+      const { ...childProps } = child.props as any;
       const style = childProps.style ? { ...childProps.style } : {};
 
       // Merge pattern IDs with `style.data.fill` property

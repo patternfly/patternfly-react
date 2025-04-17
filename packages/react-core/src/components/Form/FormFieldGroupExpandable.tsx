@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { InternalFormFieldGroup } from './InternalFormFieldGroup';
 
-export interface FormFieldGroupExpandableProps extends React.HTMLProps<HTMLDivElement> {
+export interface FormFieldGroupExpandableProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onToggle'> {
   /** Anything that can be rendered as form field group content. */
   children?: React.ReactNode;
   /** Additional classes added to the form field group. */
