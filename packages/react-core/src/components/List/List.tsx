@@ -49,12 +49,14 @@ export const List: React.FunctionComponent<ListProps> = ({
   type = OrderType.number,
   ref = null,
   component = ListComponent.ul,
+  'aria-label': ariaLabel,
   ...props
 }: ListProps) =>
   component === ListComponent.ol ? (
     <ol
       ref={ref as React.Ref<HTMLOListElement>}
       type={type}
+      aria-label={ariaLabel}
       {...(isPlain && { role: 'list' })}
       {...props}
       className={css(
@@ -71,6 +73,7 @@ export const List: React.FunctionComponent<ListProps> = ({
   ) : (
     <ul
       ref={ref as React.Ref<HTMLUListElement>}
+      aria-label={ariaLabel}
       {...(isPlain && { role: 'list' })}
       {...props}
       className={css(
