@@ -24,6 +24,7 @@ describe('Tab Demo Test', () => {
 
       // open the overflow menu and verify that the overflowing tabs are now visible within it
       cy.contains('.pf-v6-c-tabs__link', 'More').click();
+      cy.wait(8000);
       ['Tab item 8', 'Tab item 9', 'Tab item 10', 'Tab item 11'].forEach((menuItem) =>
         cy.contains(menuItem).should('exist')
       );
