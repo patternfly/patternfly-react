@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.5...@patternfly/react-core@6.2.1-prerelease.6) (2025-04-17)
+
+### Bug Fixes
+
+- **Nav:** added role presentation to NavItemSeparator ([#11730](https://github.com/patternfly/patternfly-react/issues/11730)) ([076070c](https://github.com/patternfly/patternfly-react/commit/076070c8823557608717b258b22c5d9949d986c5))
+
 ## [6.2.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.4...@patternfly/react-core@6.2.1-prerelease.5) (2025-04-15)
 
 ### Bug Fixes
