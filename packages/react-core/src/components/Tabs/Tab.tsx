@@ -1,4 +1,4 @@
-import { useContext, forwardRef } from 'react';
+import { useContext, forwardRef, useEffect } from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { OUIAProps } from '../../helpers';
 import { TabButton } from './TabButton';
@@ -75,7 +75,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
     }),
     {}
   );
-  const { mountOnEnter, localActiveKey, unmountOnExit, uniqueId, handleTabClick, handleTabClose } =
+  const { mountOnEnter, localActiveKey, unmountOnExit, uniqueId, setAccentStyles, handleTabClick, handleTabClose } =
     useContext(TabsContext);
   let ariaControls = tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`;
   if ((mountOnEnter || unmountOnExit) && eventKey !== localActiveKey) {
@@ -115,6 +115,10 @@ const TabBase: React.FunctionComponent<TabProps> = ({
       {title}
     </TabButton>
   );
+
+  useEffect(() => {
+    setAccentStyles(true);
+  }, [title, actions]);
 
   return (
     <li
