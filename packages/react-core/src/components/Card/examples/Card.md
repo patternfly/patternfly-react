@@ -89,6 +89,10 @@ Images can also be placed in the card header without a `<CardTitle>`.
 
 ```
 
+### Card with header that wraps
+```ts file='./CardHeaderWraps.tsx'
+```
+
 ### With HTML heading element
 
 You may use the `component` property to place the card's title within an HTML heading element.
