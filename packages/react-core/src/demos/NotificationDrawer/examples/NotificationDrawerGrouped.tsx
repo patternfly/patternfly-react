@@ -779,7 +779,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
             </p>
           </Content>
         </PageSection>
-        <PageSection aria-label="Panel section content">Panel section content</PageSection>
+        <PageSection aria-label="Panel section">Panel section content</PageSection>
       </Page>
     </Fragment>
   );

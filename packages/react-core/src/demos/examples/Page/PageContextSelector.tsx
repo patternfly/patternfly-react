@@ -325,9 +325,11 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
       mainContainerId={mainContainerId}
       isBreadcrumbWidthLimited
     >
-      <PageSection isWidthLimited aria-label="Main title">
+      <PageSection isWidthLimited aria-labelledby="main-title">
         <Content>
-          <Content component="h1">Main title</Content>
+          <Content component="h1" id="main-title">
+            Main title
+          </Content>
           <Content component="p">This is a full page demo.</Content>
         </Content>
       </PageSection>

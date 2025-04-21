@@ -612,9 +612,9 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
-      <PageSection aria-labelledby="projects-heading">
+      <PageSection aria-labelledby="projects">
         <Content>
-          <h1 id="projects-heading">Projects</h1>
+          <h1 id="projects">Projects</h1>
           <p>This is a demo that showcases Patternfly cards.</p>
         </Content>
       </PageSection>
