@@ -97,7 +97,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
         direction="up"
         toggleId={toggleId}
       >
-        {isExpanded ? 'Show Less expandable example content' : 'Show More expandable example content'}
+        {isExpanded ? 'Show less expandable example content' : 'Show more expandable example content'}
       </ExpandableSectionToggle>
     </CodeBlock>
   );
