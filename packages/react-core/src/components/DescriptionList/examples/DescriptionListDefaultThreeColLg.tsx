@@ -8,7 +8,7 @@ import {
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListDefaultThreeColLg: React.FunctionComponent = () => (
-  <DescriptionList columnModifier={{ lg: '3Col' }}>
+  <DescriptionList columnModifier={{ lg: '3Col' }} aria-label="Three-column on large screens">
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>

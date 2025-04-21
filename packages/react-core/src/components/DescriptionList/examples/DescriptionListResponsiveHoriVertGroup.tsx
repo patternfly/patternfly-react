@@ -16,6 +16,7 @@ export const DescriptionListResponsiveHoriVertGroup: React.FunctionComponent = (
       xl: 'vertical',
       '2xl': 'horizontal'
     }}
+    aria-label="Responsive orientation"
   >
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>

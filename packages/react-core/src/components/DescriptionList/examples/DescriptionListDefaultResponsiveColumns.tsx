@@ -8,7 +8,7 @@ import {
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListDefaultResponsiveColumns: React.FunctionComponent = () => (
-  <DescriptionList columnModifier={{ lg: '2Col', xl: '3Col' }}>
+  <DescriptionList columnModifier={{ lg: '2Col', xl: '3Col' }} aria-label="Default responsive columns">
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>

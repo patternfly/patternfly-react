@@ -29,7 +29,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="simple-description-list">
+          <DescriptionList id="simple-description-list" aria-label="Basic example">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -71,7 +71,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="description-list-help-text">
+          <DescriptionList id="description-list-help-text" aria-label="Term help text">
             <DescriptionListGroup>
               <DescriptionListTermHelpText>
                 <Popover headerContent={<div>Name</div>} bodyContent={<div>Additional name info</div>}>
@@ -134,7 +134,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="2-col-description-list" columnModifier={{ default: '2Col' }}>
+          <DescriptionList id="2-col-description-list" columnModifier={{ default: '2Col' }} aria-label="Two-column">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -177,7 +177,11 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="responsive-description-list" columnModifier={{ lg: '2Col', xl: '3Col' }}>
+          <DescriptionList
+            id="responsive-description-list"
+            columnModifier={{ lg: '2Col', xl: '3Col' }}
+            aria-label="Responsive columns"
+          >
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -220,7 +224,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="horizontal-description-list" isHorizontal>
+          <DescriptionList id="horizontal-description-list" isHorizontal aria-label="Horizontal">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -264,7 +268,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="auto-col-widths-description-list" isAutoColumnWidths>
+          <DescriptionList id="auto-col-widths-description-list" isAutoColumnWidths aria-label="Auto column width">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -307,7 +311,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="inline-grid-description-list" isInlineGrid>
+          <DescriptionList id="inline-grid-description-list" isInlineGrid aria-label="Default inline grid">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -353,6 +357,7 @@ export class DescriptionListDemo extends Component {
             autoFitMinModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}
             id="auto-fit-description-list"
             isAutoFit
+            aria-label="Responsive auto-fit grid with minimum width"
           >
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
@@ -394,7 +399,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="compact-description-list" isCompact>
+          <DescriptionList id="compact-description-list" isCompact aria-label="Compact example">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -435,7 +440,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="fluid-description-list" isFluid isHorizontal>
+          <DescriptionList id="fluid-description-list" isFluid isHorizontal aria-label="Fluid horizontal">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>

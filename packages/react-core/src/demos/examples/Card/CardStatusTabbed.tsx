@@ -68,8 +68,8 @@ export const CardStatusTabbed: React.FunctionComponent = () => {
     setActiveTabKey(Number(tabIndex));
   };
 
-  const tabContent = (
-    <DescriptionList isHorizontal columnModifier={{ lg: '2Col' }}>
+  const tabContent = (tabIndex: number) => (
+    <DescriptionList isHorizontal columnModifier={{ lg: '2Col' }} aria-label={`Object ${tabIndex + 1} status`}>
       {descriptionListData.map(({ status, resourceName, detail, icon }, index) => (
         <DescriptionListGroup key={index}>
           <DescriptionListTerm>
@@ -120,7 +120,7 @@ export const CardStatusTabbed: React.FunctionComponent = () => {
               activeKey={activeTabKey}
               hidden={tabIndex !== activeTabKey}
             >
-              {tabContent}
+              {tabContent(tabIndex)}
             </TabContent>
           ))}
         </CardBody>

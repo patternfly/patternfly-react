@@ -10,7 +10,7 @@ import {
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListWithTermHelpText: React.FunctionComponent = () => (
-  <DescriptionList>
+  <DescriptionList aria-label="Term help text">
     <DescriptionListGroup>
       <DescriptionListTermHelpText>
         <Popover headerContent={<div>Name</div>} bodyContent={<div>Additional name info</div>}>

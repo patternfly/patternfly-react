@@ -2,7 +2,13 @@ import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescriptio
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListDisplaySizeAndCardHorizontalTermWidth: React.FunctionComponent = () => (
-  <DescriptionList displaySize="lg" isHorizontal columnModifier={{ lg: '2Col' }} termWidth="10ch">
+  <DescriptionList
+    displaySize="lg"
+    isHorizontal
+    columnModifier={{ lg: '2Col' }}
+    termWidth="10ch"
+    aria-label="Display size with card, horizontal and modified term width"
+  >
     <Card component="div">
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>
