@@ -101,10 +101,18 @@ export const NavGrouped: React.FunctionComponent = () => {
             </p>
           </Content>
         </PageSection>
-        <PageSection aria-label="Section 1">Section 1</PageSection>
-        <PageSection aria-label="Section 2">Section 2</PageSection>
-        <PageSection aria-label="Section 3">Section 3</PageSection>
-        <PageSection aria-label="Content">Content</PageSection>
+        <PageSection aria-labelledby="section-1">
+          <h2 id="section-1">Section 1</h2>
+        </PageSection>
+        <PageSection aria-labelledby="section-2">
+          <h2 id="section-2">Section 2</h2>
+        </PageSection>
+        <PageSection aria-labelledby="section-3">
+          <h2 id="section-3">Section 3</h2>
+        </PageSection>
+        <PageSection aria-labelledby="content">
+          <h2 id="content">Content</h2>
+        </PageSection>
       </Page>
     </>
   );

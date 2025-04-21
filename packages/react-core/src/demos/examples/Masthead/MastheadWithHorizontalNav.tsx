@@ -308,9 +308,11 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
       isBreadcrumbWidthLimited
       isBreadcrumbGrouped
       additionalGroupedContent={
-        <PageSection aria-label="Main Title">
+        <PageSection aria-labelledby="main-title">
           <Content>
-            <Content component="h1">Main title</Content>
+            <Content component="h1" id="main-title">
+              Main title
+            </Content>
             <Content component="p">This is a full page demo.</Content>
           </Content>
         </PageSection>

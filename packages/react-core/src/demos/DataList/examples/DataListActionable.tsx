@@ -33,9 +33,11 @@ export const DataListActionable: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper mainContainerId="main-content-datalist-view-actions" breadcrumb={null}>
-      <PageSection aria-label="Projects">
+      <PageSection aria-labelledby="projects">
         <Content>
-          <Title headingLevel="h1">Projects</Title>
+          <Title headingLevel="h1" id="projects">
+            Projects
+          </Title>
           <Content component="p">This is a demo that showcases PatternFly Data List</Content>
         </Content>
       </PageSection>

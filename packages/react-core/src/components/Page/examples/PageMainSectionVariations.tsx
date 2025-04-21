@@ -64,22 +64,22 @@ export const PageMainSectionPadding: React.FunctionComponent = () => {
 
   return (
     <Page header={header} sidebar={sidebar}>
-      <PageSection type="subnav" aria-label="Horizontal subnavigation">
+      <PageSection type="subnav" aria-label="With subnav type">
         Section with <code>type="subnav"</code> for horizontal subnav navigation
       </PageSection>
-      <PageSection type="nav" aria-label="Tertiary navigation">
+      <PageSection type="nav" aria-label="With nav type">
         Section with <code>type="nav"</code> for tertiary navigation
       </PageSection>
-      <PageSection type="tabs" aria-label="Tab navigation">
+      <PageSection type="tabs" aria-label="With tabs type">
         Section with <code>type="tabs"</code> for tabs
       </PageSection>
-      <PageSection type="breadcrumb" aria-label="Breadcrumb navigation">
+      <PageSection type="breadcrumb" aria-label="With breadcrumb type">
         Section with <code>type="breadcrumb"</code> for breadcrumbs
       </PageSection>
-      <PageSection aria-label="Default navigation">
+      <PageSection aria-label="With default type">
         Section without <code>type</code> prop or <code>type="default"</code> for main sections
       </PageSection>
-      <PageSection type="wizard" aria-label="Wizard navigation">
+      <PageSection type="wizard" aria-label="With wizard type">
         Section with <code>type="wizard"</code> for wizards
       </PageSection>
     </Page>

@@ -18,16 +18,16 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 export const DescriptionListBasic: React.FunctionComponent = () => (
   <DashboardWrapper>
-    <PageSection aria-label="Projects">
+    <PageSection aria-labelledby="projects">
       <Content>
-        <Content component="h1">Projects</Content>
+        <h1 id="projects">Projects</h1>
         <Content component="p">This is a full page demo</Content>
       </Content>
     </PageSection>
-    <PageSection aria-label="Details">
+    <PageSection aria-labelledby="details">
       <Card>
         <CardHeader>
-          <Title headingLevel="h2" size="lg">
+          <Title headingLevel="h2" size="lg" id="details">
             Details
           </Title>
         </CardHeader>

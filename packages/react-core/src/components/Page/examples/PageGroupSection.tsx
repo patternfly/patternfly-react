@@ -101,10 +101,16 @@ export const PageGroupSection: React.FunctionComponent = () => {
             </BreadcrumbItem>
           </Breadcrumb>
         </PageBreadcrumb>
-        <PageSection aria-label="Grouped Section">Grouped section</PageSection>
+        <PageSection aria-labelledby="grouped-section">
+          <h2 id="grouped-section">Grouped section</h2>
+        </PageSection>
       </PageGroup>
-      <PageSection aria-label="Section 1">Section 1</PageSection>
-      <PageSection aria-label="Section 2">Section 2</PageSection>
+      <PageSection aria-labelledby="section-1">
+        <h2 id="section-1">Grouped example section 1</h2>
+      </PageSection>
+      <PageSection aria-labelledby="section-2">
+        <h2 id="section-2">Grouped example section 2</h2>
+      </PageSection>
     </Page>
   );
 };

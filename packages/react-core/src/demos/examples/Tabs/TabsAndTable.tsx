@@ -385,8 +385,8 @@ export const TablesAndTabs = () => {
   return (
     <DashboardWrapper>
       <Fragment>
-        <PageSection aria-label="Nodes">
-          <Title headingLevel="h1" size="2xl">
+        <PageSection aria-labelledby="nodes">
+          <Title headingLevel="h1" size="2xl" id="nodes">
             Nodes
           </Title>
         </PageSection>

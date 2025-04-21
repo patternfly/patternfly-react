@@ -64,15 +64,17 @@ export const PageMainSectionPadding: React.FunctionComponent = () => {
 
   return (
     <Page masthead={masthead} sidebar={sidebar}>
-      <PageSection aria-label="Section with default padding">Section with default padding</PageSection>
-      <PageSection padding={{ default: 'noPadding' }} aria-label="Section with no padding">
-        Section with no padding
+      <PageSection aria-labelledby="section-1">
+        <h2 id="section-1">Section with default padding</h2>
       </PageSection>
-      <PageSection padding={{ default: 'noPadding', md: 'padding' }} aria-label="Section with padding on medium">
-        Section with padding on medium
+      <PageSection padding={{ default: 'noPadding' }} aria-labelledby="section-2">
+        <h2 id="section-2">Section with no padding</h2>
       </PageSection>
-      <PageSection padding={{ md: 'noPadding' }} aria-label="Section with no padding on medium">
-        Section with no padding on medium
+      <PageSection padding={{ default: 'noPadding', md: 'padding' }} aria-labelledby="section-3">
+        <h2 id="section-3">Section with padding on medium</h2>
+      </PageSection>
+      <PageSection padding={{ md: 'noPadding' }} aria-labelledby="section-4">
+        <h2 id="section-4">Section with no padding on medium</h2>
       </PageSection>
     </Page>
   );

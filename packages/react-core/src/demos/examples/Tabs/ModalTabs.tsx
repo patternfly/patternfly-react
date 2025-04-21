@@ -79,7 +79,7 @@ export const ModalTabs: React.FunctionComponent = () => {
             <p>Click any project card to view tabs within modals.</p>
           </Content>
         </PageSection>
-        <PageSection isFilled aria-label="Selectable card container">
+        <PageSection isFilled aria-label="Selectable card gallery">
           <Gallery hasGutter aria-label="Selectable card container">
             {products.map((product) => (
               <Card

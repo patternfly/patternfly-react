@@ -51,9 +51,15 @@ export const PageUncontrolledNav: React.FunctionComponent = () => {
 
   return (
     <Page isManagedSidebar masthead={masthead} sidebar={sidebar}>
-      <PageSection aria-label="Section 1">Section 1</PageSection>
-      <PageSection aria-label="Section 2">Section 2</PageSection>
-      <PageSection aria-label="Section 3">Section 3</PageSection>
+      <PageSection aria-labelledby="section-1">
+        <h2 id="section-1">Uncontrolled nav example section 1</h2>
+      </PageSection>
+      <PageSection aria-labelledby="section-2">
+        <h2 id="section-2">Uncontrolled nav example section 2</h2>
+      </PageSection>
+      <PageSection aria-labelledby="section-3">
+        <h2 id="section-3">Uncontrolled nav example section 3</h2>
+      </PageSection>
     </Page>
   );
 };

@@ -113,9 +113,11 @@ export const DataListStaticBottomPagination: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper mainContainerId="main-content-datalist-view-pagination" breadcrumb={null}>
-      <PageSection aria-label="Projects">
+      <PageSection aria-labelledby="projects">
         <Content>
-          <Content component="h1">Projects</Content>
+          <Content component="h1" id="projects">
+            Projects
+          </Content>
           <Content component="p">This is a demo that showcases PatternFly Data List</Content>
         </Content>
       </PageSection>

@@ -79,8 +79,8 @@ ScrollspyH2 = () => {
 
   return (
     <DashboardWrapper breadcrumb={null} mainContainerId="scrollable-element">
-      <PageSection aria-label = 'Main title'>
-        <Title headingLevel="h1" size="2xl">
+      <PageSection aria-labelledby = 'main-title'>
+        <Title headingLevel="h1" size="2xl" id='main-title'>
           Main title
         </Title>
         <Switch

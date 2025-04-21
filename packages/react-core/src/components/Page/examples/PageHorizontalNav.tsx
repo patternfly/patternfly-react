@@ -36,11 +36,15 @@ export const PageHorizontalNav: React.FunctionComponent = () => {
 
   return (
     <Page masthead={masthead}>
-      <PageSection aria-label="Section 1">Section 1</PageSection>
-      <PageSection variant="secondary" aria-label="Section 2 with secondary variant styling">
-        Section 2 with secondary variant styling
+      <PageSection aria-labelledby="section-1">
+        <h2 id="section-1">Horizontal nav example section 1</h2>
       </PageSection>
-      <PageSection aria-label="Section 3">Section 3</PageSection>
+      <PageSection variant="secondary" aria-labelledby="section-2">
+        <h2 id="section-2">Horizontal nav example section 2 with secondary variant styling</h2>
+      </PageSection>
+      <PageSection aria-labelledby="section-3">
+        <h2 id="section-3">Horizontal nav example section 3</h2>
+      </PageSection>
     </Page>
   );
 };
