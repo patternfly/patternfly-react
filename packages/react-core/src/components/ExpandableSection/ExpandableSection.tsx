@@ -15,7 +15,7 @@ export enum ExpandableSectionVariant {
 
 /** The main expandable section component. */
 
-export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> {
+export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onToggle'> {
   /** Content rendered inside the expandable section. */
   children?: React.ReactNode;
   /** Additional classes added to the expandable section. */

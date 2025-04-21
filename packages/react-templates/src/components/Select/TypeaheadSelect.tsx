@@ -22,7 +22,7 @@ export interface TypeaheadSelectOption extends Omit<SelectOptionProps, 'content'
   value: string | number;
 }
 
-export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSelect'> {
+export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSelect' | 'onToggle'> {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */

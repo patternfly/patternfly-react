@@ -143,8 +143,8 @@ export const Charts: FunctionComponent<ChartsProps> = ({
   width,
   ...rest
 }: ChartsProps) => {
-  const containerRef = useRef<HTMLDivElement>();
-  const echart = useRef<echarts.ECharts>();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const echart = useRef<echarts.ECharts>(null);
   const [update, forceUpdate] = useReducer((x) => x + 1, 0);
 
   const getSize = () => ({

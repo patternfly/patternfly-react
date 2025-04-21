@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import { FormFieldGroupToggle } from './FormFieldGroupToggle';
 import { GenerateId } from '../../helpers';
 
-export interface InternalFormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
+export interface InternalFormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label' | 'onToggle'> {
   /** Anything that can be rendered as form field group content. */
   children?: React.ReactNode;
   /** Additional classes added to the form field group. */

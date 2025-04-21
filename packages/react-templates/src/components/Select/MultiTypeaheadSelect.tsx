@@ -23,7 +23,7 @@ export interface MultiTypeaheadSelectOption extends Omit<SelectOptionProps, 'con
   value: string | number;
 }
 
-export interface MultiTypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSelect'> {
+export interface MultiTypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSelect' | 'onToggle'> {
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Initial options of the select. */

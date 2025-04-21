@@ -12,7 +12,7 @@ export enum ToolbarGroupVariant {
   'label-group' = 'label-group'
 }
 
-export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'ref'> {
+export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'ref' | 'onToggle'> {
   /** Classes applied to root element of the data toolbar group */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of group */
