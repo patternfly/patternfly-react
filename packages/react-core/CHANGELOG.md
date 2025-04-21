@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.6...@patternfly/react-core@6.2.1-prerelease.7) (2025-04-21)
+
+### Features
+
+- **Truncate:** added logic to truncate based on max characters ([#11742](https://github.com/patternfly/patternfly-react/issues/11742)) ([b7456f9](https://github.com/patternfly/patternfly-react/commit/b7456f99ce61449ced092153bebb1a40b1c96ade))
+
 ## [6.2.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.5...@patternfly/react-core@6.2.1-prerelease.6) (2025-04-17)
 
 ### Bug Fixes
