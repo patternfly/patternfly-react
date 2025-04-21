@@ -465,16 +465,16 @@ export const CardViewBasic: React.FunctionComponent = () => {
   return (
     <Fragment>
       <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
-        <PageSection aria-labelledby="projects-heading">
+        <PageSection aria-labelledby="projects">
           <Content>
-            <h1 id="projects-heading">Projects</h1>
+            <h1 id="projects">Projects</h1>
             <p>This is a demo that showcases PatternFly cards.</p>
           </Content>
           <Toolbar id="toolbar-group-types" clearAllFilters={onDelete}>
             <ToolbarContent>{toolbarItems}</ToolbarContent>
           </Toolbar>
         </PageSection>
-        <PageSection isFilled aria-label="Selectable card container">
+        <PageSection isFilled aria-label="Selectable card gallery">
           <Gallery hasGutter aria-label="Selectable card container">
             <Card isCompact>
               <Bullseye>

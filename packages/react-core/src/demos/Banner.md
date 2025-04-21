@@ -48,7 +48,7 @@ class BannerDemo extends React.Component {
               </p>
             </Content>
           </PageSection>
-          <PageSection aria-label = 'Cards section'>
+          <PageSection aria-label = 'Cards gallery'>
             <Gallery hasGutter>
               {Array.from({ length: 30 }).map((_value, index) => (
                 <GalleryItem key={index}>
@@ -122,7 +122,7 @@ class BannerDemo extends React.Component {
                   </p>
                 </Content>
               </PageSection>
-              <PageSection aria-label = 'Cards section'>
+              <PageSection aria-label = 'Cards gallery'>
                 <Gallery hasGutter>
                   {Array.from({ length: 30 }).map((_value, index) => (
                     <GalleryItem key={index}>
