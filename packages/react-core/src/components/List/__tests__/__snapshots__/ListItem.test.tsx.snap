@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot with icon 1`] = `
+<DocumentFragment>
+  <li
+    class="pf-v6-c-list__item"
+  >
+    <span
+      class="pf-v6-c-list__item-icon"
+    >
+      <div>
+        Icon content
+      </div>
+    </span>
+    <span
+      class="pf-v6-c-list__item-text"
+    >
+      List item content
+    </span>
+  </li>
+</DocumentFragment>
+`;
+
+exports[`Matches snapshot without icon 1`] = `
+<DocumentFragment>
+  <li
+    class=""
+  >
+    <span>
+      List item content
+    </span>
+  </li>
+</DocumentFragment>
+`;
