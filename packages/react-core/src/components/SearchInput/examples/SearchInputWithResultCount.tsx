@@ -17,6 +17,7 @@ export const SearchInputWithResultCount: React.FunctionComponent = () => {
 
   return (
     <SearchInput
+      aria-label="Match with result count"
       placeholder="Find by name"
       value={value}
       onChange={(_event, value) => onChange(value)}

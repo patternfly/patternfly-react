@@ -115,6 +115,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
       onChange={(_event, value) => onFilterChange(value, isAvailable)}
       onClear={() => onFilterChange('', isAvailable)}
       isDisabled={isDisabled}
+      aria-label={isAvailable ? 'Search available options' : 'Search chosen options'}
     />
   );
 
