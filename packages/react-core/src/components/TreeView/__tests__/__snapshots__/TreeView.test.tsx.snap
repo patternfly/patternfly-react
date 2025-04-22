@@ -32,6 +32,15 @@ exports[`Matches snapshot 1`] = `
         <p>
           TreeViewList toolbar: undefined
         </p>
+        <p>
+          TreeViewList aria-label: undefined
+        </p>
+        <p>
+          TreeViewList aria-labelledBy: undefined
+        </p>
+        <p>
+          TreeViewList isMultiSelectable: false
+        </p>
         <div
           data-testid="TreeViewList-children"
         >

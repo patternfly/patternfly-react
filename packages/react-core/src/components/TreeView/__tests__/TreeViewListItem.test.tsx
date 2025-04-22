@@ -49,7 +49,7 @@ test(`Renders children when toggle is clicked`, async () => {
   const user = userEvent.setup();
   render(<TreeViewListItem {...requiredProps}>Content</TreeViewListItem>);
 
-  await user.click(screen.getByRole('button'));
+  await user.click(screen.getByRole('button', { name: requiredProps.name }));
 
   expect(screen.getByText('Content')).toBeVisible();
 });
@@ -107,7 +107,7 @@ test(`Renders expandable toggle as button with aria-labelledby when hasCheckbox 
       Content
     </TreeViewListItem>
   );
-  const toggle = screen.getByRole('button');
+  const toggle = screen.getByRole('button', { name: requiredProps.name });
 
   expect(toggle).toHaveClass(styles.treeViewNodeToggle);
   expect(toggle).toHaveAccessibleName(requiredProps.name);
@@ -119,10 +119,9 @@ test(`Renders expandable toggle as button with aria-labelledby when isSelectable
       Content
     </TreeViewListItem>
   );
-  const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+  const buttons = screen.getAllByRole('button', { name: requiredProps.name });
 
-  expect(toggle?.tagName).toBe('BUTTON');
-  expect(toggle).toHaveAccessibleName(requiredProps.name);
+  expect(buttons[0]).toHaveClass(styles.treeViewNodeToggle);
 });
 
 test(`Renders name prop with class ${styles.treeViewNodeText}`, () => {
@@ -140,7 +139,7 @@ test(`Renders name prop in span by default`, () => {
 test(`Renders name prop in button when isSelectable is passed`, () => {
   render(<TreeViewListItem isSelectable {...requiredProps} />);
 
-  expect(screen.getByText(requiredProps.name).tagName).toBe('BUTTON');
+  expect(screen.getByRole('button', { name: requiredProps.name })).toBeInTheDocument();
 });
 
 test('Does not render title prop by default', () => {
@@ -313,7 +312,7 @@ test('Passes badgeProps when hasBadge and customBadgeContent are passed', () => 
 test(`Renders ${styles.treeViewNode} element as button by default`, () => {
   render(<TreeViewListItem {...requiredProps} />);
 
-  expect(screen.getByRole('button')).toHaveClass(styles.treeViewNode);
+  expect(screen.getByRole('button', { name: requiredProps.name })).toHaveClass(styles.treeViewNode);
 });
 
 test(`Renders ${styles.treeViewNode} element as label when hasCheckbox is passed`, () => {
@@ -346,8 +345,8 @@ test(`Renders ${styles.treeViewNode} element with for and id attributes when has
 
   const treeViewNode = screen.getByRole('treeitem').querySelector(`.${styles.treeViewNode}`);
 
-  expect(treeViewNode).toHaveAttribute('for');
-  expect(treeViewNode).toHaveAttribute('id');
+  expect(treeViewNode).toHaveAttribute('for', expect.stringMatching(/checkbox-id\d+/));
+  expect(treeViewNode).toHaveAttribute('id', expect.stringMatching(/label-checkbox-id\d+/));
 });
 
 test(`Renders ${styles.treeViewNode} element with id attribute when isSelectable and children are passed`, () => {
@@ -359,7 +358,7 @@ test(`Renders ${styles.treeViewNode} element with id attribute when isSelectable
 
   const treeViewNode = screen.getByRole('treeitem').querySelector(`.${styles.treeViewNode}`);
 
-  expect(treeViewNode).toHaveAttribute('id');
+  expect(treeViewNode).toHaveAttribute('id', expect.stringMatching(/selectable-id\d+/));
 });
 
 test(`Does not render ${styles.treeViewNode} element with additional classes by default`, () => {
@@ -402,18 +401,40 @@ test(`Does not render ${styles.treeViewNode} element with ${styles.modifiers.cur
   expect(treeViewNode).not.toHaveClass(styles.modifiers.current);
 });
 
-describe('compareItems callback', () => {
+describe('Callback props', () => {
+  const user = userEvent.setup();
   const compareItemsMock = jest.fn();
+  const onCheckMock = jest.fn();
+  const onSelectMock = jest.fn();
+  const onExpandMock = jest.fn();
+  const onCollapseMock = jest.fn();
+
   const activeItems = [{ name: 'Active item' }];
+  const parentItem = { name: 'Parent item' };
   const itemData = { name: 'Item data' };
 
-  test('Not called by default', () => {
+  test('Does not call compareItems when not passed in', () => {
     render(<TreeViewListItem {...requiredProps}>Content</TreeViewListItem>);
 
     expect(compareItemsMock).not.toHaveBeenCalled();
   });
 
-  test('Called when isSelectable and activeItems are passed', () => {
+  test('Does not call compareItems when isSelectable is passed but activeItems is not passed', () => {
+    render(
+      <TreeViewListItem
+        compareItems={compareItemsMock}
+        isSelectable
+        itemData={{ name: 'Item data' }}
+        {...requiredProps}
+      >
+        Content
+      </TreeViewListItem>
+    );
+
+    expect(compareItemsMock).not.toHaveBeenCalled();
+  });
+
+  test('Calls compareItems when isSelectable and activeItems are passed', () => {
     render(
       <TreeViewListItem
         compareItems={compareItemsMock}
@@ -433,22 +454,7 @@ describe('compareItems callback', () => {
     );
   });
 
-  test('Not called when isSelectable is passed but activeItems is not passed', () => {
-    render(
-      <TreeViewListItem
-        compareItems={compareItemsMock}
-        isSelectable
-        itemData={{ name: 'Item data' }}
-        {...requiredProps}
-      >
-        Content
-      </TreeViewListItem>
-    );
-
-    expect(compareItemsMock).not.toHaveBeenCalled();
-  });
-
-  test('Called when children and activeItems are passed', () => {
+  test('Calls compareItems when children and activeItems are passed', () => {
     render(
       <TreeViewListItem
         compareItems={compareItemsMock}
@@ -464,190 +470,306 @@ describe('compareItems callback', () => {
       expect.objectContaining(itemData)
     );
   });
-});
 
-test('Does not call onCheck by default', async () => {
-  const user = userEvent.setup();
-  const onCheckMock = jest.fn();
+  test('Does not call onCheck when not passed in', async () => {
+    render(<TreeViewListItem hasCheckbox {...requiredProps} />);
 
-  render(<TreeViewListItem hasCheckbox {...requiredProps} />);
+    await user.click(screen.getByRole('checkbox'));
 
-  await user.click(screen.getByRole('checkbox'));
+    expect(onCheckMock).not.toHaveBeenCalled();
+  });
 
-  expect(onCheckMock).not.toHaveBeenCalled();
-});
+  test('Does not call onCheck callback when checkbox is not clicked', async () => {
+    render(<TreeViewListItem onCheck={onCheckMock} hasCheckbox {...requiredProps} />);
 
-test('Calls onCheck callback when checkbox is clicked', async () => {
-  const user = userEvent.setup();
-  const onCheckMock = jest.fn();
+    await user.click(document.body);
 
-  render(<TreeViewListItem onCheck={onCheckMock} hasCheckbox {...requiredProps} />);
+    expect(onCheckMock).not.toHaveBeenCalled();
+  });
 
-  await user.click(screen.getByRole('checkbox'));
+  test('Calls onCheck callback when checkbox is clicked', async () => {
+    render(<TreeViewListItem onCheck={onCheckMock} hasCheckbox {...requiredProps} />);
 
-  expect(onCheckMock).toHaveBeenCalledTimes(1);
-  expect(onCheckMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
-});
+    await user.click(screen.getByRole('checkbox'));
 
-test('Does not call onSelect by default', async () => {
-  const user = userEvent.setup();
-  const onSelectMock = jest.fn();
+    expect(onCheckMock).toHaveBeenCalledTimes(1);
+    expect(onCheckMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
+  });
 
-  render(<TreeViewListItem {...requiredProps} />);
+  test('Calls onCheck with parentItem when passed in', async () => {
+    render(<TreeViewListItem parentItem={parentItem} onCheck={onCheckMock} hasCheckbox {...requiredProps} />);
 
-  await user.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('checkbox'));
 
-  expect(onSelectMock).not.toHaveBeenCalled();
-});
+    expect(onCheckMock).toHaveBeenCalledTimes(1);
+    expect(onCheckMock).toHaveBeenCalledWith(expect.any(Object), undefined, parentItem);
+  });
 
-test(`Calls onSelect when ${styles.treeViewNode} is clicked`, async () => {
-  const user = userEvent.setup();
-  const onSelectMock = jest.fn();
+  test('Calls onCheck with itemData when passed in', async () => {
+    render(<TreeViewListItem itemData={itemData} onCheck={onCheckMock} hasCheckbox {...requiredProps} />);
 
-  render(<TreeViewListItem onSelect={onSelectMock} {...requiredProps} />);
+    await user.click(screen.getByRole('checkbox'));
 
-  await user.click(screen.getByRole('button'));
+    expect(onCheckMock).toHaveBeenCalledTimes(1);
+    expect(onCheckMock).toHaveBeenCalledWith(expect.any(Object), itemData, undefined);
+  });
 
-  expect(onSelectMock).toHaveBeenCalledTimes(1);
-  expect(onSelectMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
-});
+  test('Does not call onSelect when not passed in', async () => {
+    render(<TreeViewListItem {...requiredProps} />);
 
-test('Does not call onSelect when hasCheckbox is passed', async () => {
-  const user = userEvent.setup();
-  const onSelectMock = jest.fn();
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
 
-  render(<TreeViewListItem onSelect={onSelectMock} hasCheckbox {...requiredProps} />);
+    expect(onSelectMock).not.toHaveBeenCalled();
+  });
 
-  const treeViewNode = screen.getByRole('treeitem').querySelector(`.${styles.treeViewNode}`);
-  await user.click(treeViewNode as Element);
+  test(`Does not call onSelect when ${styles.treeViewNode} is not clicked`, async () => {
+    render(<TreeViewListItem onSelect={onSelectMock} {...requiredProps} />);
 
-  expect(onSelectMock).not.toHaveBeenCalled();
-});
+    await user.click(document.body);
 
-test('Does not call onExpand by default', async () => {
-  const user = userEvent.setup();
-  const onExpandMock = jest.fn();
+    expect(onSelectMock).not.toHaveBeenCalled();
+  });
 
-  render(<TreeViewListItem {...requiredProps}>Content</TreeViewListItem>);
+  test('Does not call onSelect when hasCheckbox is passed', async () => {
+    render(<TreeViewListItem onSelect={onSelectMock} hasCheckbox {...requiredProps} />);
 
-  await user.click(screen.getByRole('button'));
+    const treeViewNode = screen.getByRole('treeitem').querySelector(`.${styles.treeViewNode}`);
+    await user.click(treeViewNode as Element);
 
-  expect(onExpandMock).not.toHaveBeenCalled();
-});
+    expect(onSelectMock).not.toHaveBeenCalled();
+  });
 
-test(`Calls onExpand when ${styles.treeViewNode} is collapsed and clicked`, async () => {
-  const user = userEvent.setup();
-  const onExpandMock = jest.fn();
+  test(`Calls onSelect when ${styles.treeViewNode} is clicked`, async () => {
+    render(<TreeViewListItem onSelect={onSelectMock} {...requiredProps} />);
 
-  render(
-    <TreeViewListItem onExpand={onExpandMock} {...requiredProps}>
-      Content
-    </TreeViewListItem>
-  );
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
 
-  await user.click(screen.getByRole('button'));
+    expect(onSelectMock).toHaveBeenCalledTimes(1);
+    expect(onSelectMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
+  });
 
-  expect(onExpandMock).toHaveBeenCalledTimes(1);
-  expect(onExpandMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
-});
+  test(`Calls onSelect with parentItem when passed in`, async () => {
+    render(<TreeViewListItem parentItem={parentItem} onSelect={onSelectMock} {...requiredProps} />);
 
-test(`Calls onExpand when ${styles.treeViewNodeToggle} is clicked and isSelectable is passed`, async () => {
-  const user = userEvent.setup();
-  const onExpandMock = jest.fn();
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
 
-  render(
-    <TreeViewListItem isSelectable onExpand={onExpandMock} {...requiredProps}>
-      Content
-    </TreeViewListItem>
-  );
+    expect(onSelectMock).toHaveBeenCalledTimes(1);
+    expect(onSelectMock).toHaveBeenCalledWith(expect.any(Object), undefined, parentItem);
+  });
 
-  const toggle = screen.getByText(requiredProps.name).previousElementSibling;
-  await user.click(toggle as Element);
+  test(`Calls onSelect with itemData when passed in`, async () => {
+    render(<TreeViewListItem itemData={itemData} onSelect={onSelectMock} {...requiredProps} />);
 
-  expect(onExpandMock).toHaveBeenCalledTimes(1);
-  expect(onExpandMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
-});
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
 
-test(`Calls onExpand when ${styles.treeViewNodeToggle} is clicked and hasCheckbox is passed`, async () => {
-  const user = userEvent.setup();
-  const onExpandMock = jest.fn();
+    expect(onSelectMock).toHaveBeenCalledTimes(1);
+    expect(onSelectMock).toHaveBeenCalledWith(expect.any(Object), itemData, undefined);
+  });
 
-  render(
-    <TreeViewListItem hasCheckbox onExpand={onExpandMock} {...requiredProps}>
-      Content
-    </TreeViewListItem>
-  );
+  test('Does not call onExpand when not passed in', async () => {
+    render(<TreeViewListItem {...requiredProps}>Content</TreeViewListItem>);
 
-  const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
-  await user.click(toggle as Element);
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
 
-  expect(onExpandMock).toHaveBeenCalledTimes(1);
-  expect(onExpandMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
-});
+    expect(onExpandMock).not.toHaveBeenCalled();
+  });
 
-test('Does not call onCollapse by default', async () => {
-  const user = userEvent.setup();
-  const onCollapseMock = jest.fn();
+  test(`Does not call onExpand when ${styles.treeViewNode} is collapsed and not clicked`, async () => {
+    render(
+      <TreeViewListItem onExpand={onExpandMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
 
-  render(
-    <TreeViewListItem isExpanded {...requiredProps}>
-      Content
-    </TreeViewListItem>
-  );
+    await user.click(document.body);
 
-  await user.click(screen.getByRole('button'));
+    expect(onExpandMock).not.toHaveBeenCalled();
+  });
 
-  expect(onCollapseMock).not.toHaveBeenCalled();
-});
+  test(`Does not call onExpand when ${styles.treeViewNode} is expanded and clicked`, async () => {
+    render(
+      <TreeViewListItem isExpanded onExpand={onExpandMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
 
-test(`Calls onCollapse when ${styles.treeViewNode} is expanded and clicked`, async () => {
-  const user = userEvent.setup();
-  const onCollapseMock = jest.fn();
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
 
-  render(
-    <TreeViewListItem isExpanded onCollapse={onCollapseMock} {...requiredProps}>
-      Content
-    </TreeViewListItem>
-  );
+    expect(onExpandMock).not.toHaveBeenCalled();
+  });
 
-  await user.click(screen.getByRole('button'));
+  test(`Calls onExpand when ${styles.treeViewNode} is collapsed and clicked`, async () => {
+    render(
+      <TreeViewListItem onExpand={onExpandMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
 
-  expect(onCollapseMock).toHaveBeenCalledTimes(1);
-  expect(onCollapseMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
-});
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
 
-test(`Calls onCollapse when ${styles.treeViewNodeToggle} is clicked and isSelectable is passed`, async () => {
-  const user = userEvent.setup();
-  const onCollapseMock = jest.fn();
+    expect(onExpandMock).toHaveBeenCalledTimes(1);
+    expect(onExpandMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
+  });
 
-  render(
-    <TreeViewListItem isExpanded isSelectable onCollapse={onCollapseMock} {...requiredProps}>
-      Content
-    </TreeViewListItem>
-  );
+  test(`Calls onExpand when ${styles.treeViewNodeToggle} is clicked and isSelectable is passed`, async () => {
+    render(
+      <TreeViewListItem isSelectable onExpand={onExpandMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
 
-  const toggle = screen.getByText(requiredProps.name).previousElementSibling;
-  await user.click(toggle as Element);
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+    await user.click(toggle as Element);
 
-  expect(onCollapseMock).toHaveBeenCalledTimes(1);
-  expect(onCollapseMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
-});
+    expect(onExpandMock).toHaveBeenCalledTimes(1);
+    expect(onExpandMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
+  });
 
-test(`Calls onCollapse when ${styles.treeViewNodeToggle} is clicked and hasCheckbox is passed`, async () => {
-  const user = userEvent.setup();
-  const onCollapseMock = jest.fn();
+  test(`Calls onExpand when ${styles.treeViewNodeToggle} is clicked and hasCheckbox is passed`, async () => {
+    render(
+      <TreeViewListItem hasCheckbox onExpand={onExpandMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
 
-  render(
-    <TreeViewListItem isExpanded hasCheckbox onCollapse={onCollapseMock} {...requiredProps}>
-      Content
-    </TreeViewListItem>
-  );
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
+    await user.click(toggle as Element);
 
-  const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
-  await user.click(toggle as Element);
+    expect(onExpandMock).toHaveBeenCalledTimes(1);
+    expect(onExpandMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
+  });
 
-  expect(onCollapseMock).toHaveBeenCalledTimes(1);
-  expect(onCollapseMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
+  test(`Calls onExpand with parentItem when passed in`, async () => {
+    render(
+      <TreeViewListItem parentItem={parentItem} onExpand={onExpandMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
+
+    expect(onExpandMock).toHaveBeenCalledTimes(1);
+    expect(onExpandMock).toHaveBeenCalledWith(expect.any(Object), undefined, parentItem);
+  });
+
+  test(`Calls onExpand with itemData when passed in`, async () => {
+    render(
+      <TreeViewListItem itemData={itemData} onExpand={onExpandMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
+
+    expect(onExpandMock).toHaveBeenCalledTimes(1);
+    expect(onExpandMock).toHaveBeenCalledWith(expect.any(Object), itemData, undefined);
+  });
+
+  test('Does not call onCollapse when not passed in', async () => {
+    render(
+      <TreeViewListItem isExpanded {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
+
+    expect(onCollapseMock).not.toHaveBeenCalled();
+  });
+
+  test(`Does not call onCollapse when ${styles.treeViewNode} is expanded and not clicked`, async () => {
+    render(
+      <TreeViewListItem isExpanded onCollapse={onCollapseMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    await user.click(document.body);
+
+    expect(onCollapseMock).not.toHaveBeenCalled();
+  });
+
+  test(`Does not call onCollapse when ${styles.treeViewNode} is collapsed and clicked`, async () => {
+    render(
+      <TreeViewListItem onCollapse={onCollapseMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
+
+    expect(onCollapseMock).not.toHaveBeenCalled();
+  });
+
+  test(`Calls onCollapse when ${styles.treeViewNode} is expanded and clicked`, async () => {
+    render(
+      <TreeViewListItem isExpanded onCollapse={onCollapseMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
+
+    expect(onCollapseMock).toHaveBeenCalledTimes(1);
+    expect(onCollapseMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
+  });
+
+  test(`Calls onCollapse when ${styles.treeViewNodeToggle} is clicked and isSelectable is passed`, async () => {
+    render(
+      <TreeViewListItem isExpanded isSelectable onCollapse={onCollapseMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+    await user.click(toggle as Element);
+
+    expect(onCollapseMock).toHaveBeenCalledTimes(1);
+    expect(onCollapseMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
+  });
+
+  test(`Calls onCollapse when ${styles.treeViewNodeToggle} is clicked and hasCheckbox is passed`, async () => {
+    render(
+      <TreeViewListItem isExpanded hasCheckbox onCollapse={onCollapseMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
+    await user.click(toggle as Element);
+
+    expect(onCollapseMock).toHaveBeenCalledTimes(1);
+    expect(onCollapseMock).toHaveBeenCalledWith(expect.any(Object), undefined, undefined);
+  });
+
+  test(`Calls onCollapse with parentItem when passed in`, async () => {
+    render(
+      <TreeViewListItem parentItem={parentItem} isExpanded onCollapse={onCollapseMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
+
+    expect(onCollapseMock).toHaveBeenCalledTimes(1);
+    expect(onCollapseMock).toHaveBeenCalledWith(expect.any(Object), undefined, parentItem);
+  });
+
+  test(`Calls onCollapse with itemData when passed in`, async () => {
+    const user = userEvent.setup();
+    const onCollapseMock = jest.fn();
+
+    render(
+      <TreeViewListItem itemData={itemData} isExpanded onCollapse={onCollapseMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
+
+    expect(onCollapseMock).toHaveBeenCalledTimes(1);
+    expect(onCollapseMock).toHaveBeenCalledWith(expect.any(Object), itemData, undefined);
+  });
 });
 
 test(`Does not render ${styles.treeViewAction} element by default`, () => {

@@ -3,10 +3,20 @@ import userEvent from '@testing-library/user-event';
 import { TreeView } from '../TreeView';
 
 jest.mock('../TreeViewList', () => ({
-  TreeViewList: ({ children, isNested, toolbar }) => (
+  TreeViewList: ({
+    children,
+    isNested,
+    toolbar,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
+    isMultiSelectable
+  }) => (
     <div data-testid="TreeViewList-mock">
       <p>{`TreeViewList isNested: ${isNested}`}</p>
       <p>{`TreeViewList toolbar: ${toolbar}`}</p>
+      <p>{`TreeViewList aria-label: ${ariaLabel}`}</p>
+      <p>{`TreeViewList aria-labelledBy: ${ariaLabelledBy}`}</p>
+      <p>{`TreeViewList isMultiSelectable: ${isMultiSelectable}`}</p>
       <div data-testid="TreeViewList-children">{children}</div>
     </div>
   )
@@ -130,6 +140,21 @@ test('Passes toolbar to TreeViewList', () => {
   render(<TreeView toolbar="Toolbar content" data={[basicData]} />);
 
   expect(screen.getByText('TreeViewList toolbar: Toolbar content')).toBeVisible();
+});
+test('Passes aria-label to TreeViewList', () => {
+  render(<TreeView aria-label="Test aria-label" data={[basicData]} />);
+
+  expect(screen.getByText('TreeViewList aria-label: Test aria-label')).toBeVisible();
+});
+test('Passes aria-labelledby to TreeViewList', () => {
+  render(<TreeView aria-labelledby="test-aria-labelledby" data={[basicData]} />);
+
+  expect(screen.getByText('TreeViewList aria-labelledBy: test-aria-labelledby')).toBeVisible();
+});
+test('Passes isMultiSelectable to TreeViewList', () => {
+  render(<TreeView isMultiSelectable={true} data={[basicData]} />);
+
+  expect(screen.getByText('TreeViewList isMultiSelectable: true')).toBeVisible();
 });
 test('Passes data as children TreeViewList', () => {
   render(<TreeView data={[basicData]} />);
