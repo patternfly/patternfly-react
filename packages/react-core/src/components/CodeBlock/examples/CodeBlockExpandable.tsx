@@ -17,6 +17,7 @@ export const ExpandableCodeBlock: React.FunctionComponent = () => {
   const [isRunning, setisRunning] = useState(false);
   const runText: string = 'Run in web terminal';
   const doneRunText: string = 'Running in web terminal';
+  const toggleId: string = 'expandable-code-toggle';
 
   const onToggle = (isExpanded) => {
     setIsExpanded(isExpanded);
@@ -85,12 +86,18 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
     <CodeBlock actions={actions}>
       <CodeBlockCode>
         {code}
-        <ExpandableSection isExpanded={isExpanded} isDetached contentId="code-block-expand">
+        <ExpandableSection isExpanded={isExpanded} isDetached contentId="code-block-expand" toggleId={toggleId}>
           {expandedCode}
         </ExpandableSection>
       </CodeBlockCode>
-      <ExpandableSectionToggle isExpanded={isExpanded} onToggle={onToggle} contentId="code-block-expand" direction="up">
-        {isExpanded ? 'Show Less' : 'Show More'}
+      <ExpandableSectionToggle
+        isExpanded={isExpanded}
+        onToggle={onToggle}
+        contentId="code-block-expand"
+        direction="up"
+        toggleId={toggleId}
+      >
+        {isExpanded ? 'Show less expandable example content' : 'Show more expandable example content'}
       </ExpandableSectionToggle>
     </CodeBlock>
   );
