@@ -13,27 +13,28 @@ exports[`Truncation with maxCharsDisplayed Matches snapshot with default positio
     <p>
       position: top
     </p>
-    <span
-      class="pf-v6-c-truncate pf-m-fixed"
-    >
-      <span
-        class="pf-v6-c-truncate__text"
-      >
-        Tes
-      </span>
-      <span
-        aria-hidden="true"
-        class="pf-v6-c-truncate__omission"
-      >
-        …
-      </span>
-      <span
-        class="pf-v6-screen-reader"
-      >
-        t truncation content
-      </span>
-    </span>
   </div>
+  <span
+    class="pf-v6-c-truncate pf-m-fixed"
+    tabindex="0"
+  >
+    <span
+      class="pf-v6-c-truncate__text"
+    >
+      Tes
+    </span>
+    <span
+      aria-hidden="true"
+      class="pf-v6-c-truncate__omission"
+    >
+      …
+    </span>
+    <span
+      class="pf-v6-screen-reader"
+    >
+      t truncation content
+    </span>
+  </span>
 </DocumentFragment>
 `;
 
@@ -50,16 +51,17 @@ exports[`renders default truncation 1`] = `
     <p>
       position: top
     </p>
-    <span
-      class="pf-v6-c-truncate"
-    >
-      <span
-        class="pf-v6-c-truncate__start"
-      >
-        Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
-      </span>
-    </span>
   </div>
+  <span
+    class="pf-v6-c-truncate"
+    tabindex="0"
+  >
+    <span
+      class="pf-v6-c-truncate__start"
+    >
+      Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+    </span>
+  </span>
 </DocumentFragment>
 `;
 
@@ -76,15 +78,16 @@ exports[`renders start truncation with &lrm; at end 1`] = `
     <p>
       position: top
     </p>
-    <span
-      class="pf-v6-c-truncate"
-    >
-      <span
-        class="pf-v6-c-truncate__end"
-      >
-        Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.‎
-      </span>
-    </span>
   </div>
+  <span
+    class="pf-v6-c-truncate"
+    tabindex="0"
+  >
+    <span
+      class="pf-v6-c-truncate__end"
+    >
+      Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.‎
+    </span>
+  </span>
 </DocumentFragment>
 `;

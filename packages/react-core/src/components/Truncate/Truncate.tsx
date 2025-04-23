@@ -109,11 +109,8 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
       setTextElement(textRef.current);
     }
 
-    if (
-      (refToGetParent?.current || (subParentRef?.current && subParentRef.current.parentElement.parentElement)) &&
-      !parentElement
-    ) {
-      setParentElement(refToGetParent?.current.parentElement || subParentRef?.current.parentElement.parentElement);
+    if ((refToGetParent?.current || (subParentRef?.current && subParentRef.current.parentElement)) && !parentElement) {
+      setParentElement(refToGetParent?.current.parentElement || subParentRef?.current.parentElement);
     }
   }, [textRef, subParentRef, textElement, parentElement]);
 
@@ -224,18 +221,20 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
     <span
       ref={subParentRef}
       className={css(styles.truncate, shouldRenderByMaxChars && styles.modifiers.fixed, className)}
+      {...(isTruncated && { tabIndex: 0 })}
       {...props}
     >
       {!shouldRenderByMaxChars ? renderResizeObserverContent() : renderMaxDisplayContent()}
     </span>
   );
 
-  return isTruncated ? (
-    <Tooltip hidden={!isTruncated} position={tooltipPosition} content={content}>
+  return (
+    <>
+      {isTruncated && (
+        <Tooltip hidden={!isTruncated} position={tooltipPosition} content={content} triggerRef={subParentRef} />
+      )}
       {truncateBody}
-    </Tooltip>
-  ) : (
-    truncateBody
+    </>
   );
 };
 
