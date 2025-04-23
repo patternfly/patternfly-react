@@ -82,8 +82,8 @@ export default [
         'error',
         {
           ignoreDestructuring: true,
-          allow: ['^t_[global|chart]', '^chart_'] 
-      // TODO: Remove 'chart_' from the allowed patterns after updating all chart examples to use the 't_chart_' format
+          allow: ['^t_[global|chart]', '^chart_']
+          // TODO: Remove 'chart_' from the allowed patterns after updating all chart examples to use the 't_chart_' format
         }
       ],
       'constructor-super': 'error',
