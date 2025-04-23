@@ -7,11 +7,8 @@ import {
   ChartTooltip,
   ChartVoronoiContainer
 } from '@patternfly/react-charts/victory';
-/* eslint-disable-next-line */
 import t_global_color_status_danger_100 from '@patternfly/react-tokens/dist/esm/t_global_color_status_danger_100';
-/* eslint-disable-next-line */
 import t_global_color_status_info_100 from '@patternfly/react-tokens/dist/esm/t_global_color_status_info_100';
-/* eslint-disable-next-line */
 import t_global_color_status_warning_100 from '@patternfly/react-tokens/dist/esm/t_global_color_status_warning_100';
 
 interface AlertData {
@@ -77,23 +74,19 @@ export const ChartBarAlertsTimeline: React.FunctionComponent = () => {
   ];
 
   const legendData = [
-    /* eslint-disable-next-line */
     { name: 'Danger', symbol: { fill: t_global_color_status_danger_100.var } },
-    /* eslint-disable-next-line */
+
     { name: 'Info', symbol: { fill: t_global_color_status_info_100.var } },
-    /* eslint-disable-next-line */
+
     { name: 'Warning', symbol: { fill: t_global_color_status_warning_100.var } }
   ];
 
   const getSeverityColor = (severity) => {
     if (severity === 'danger') {
-      /* eslint-disable-next-line */
       return t_global_color_status_danger_100.var;
     } else if (severity === 'warn') {
-      /* eslint-disable-next-line */
       return t_global_color_status_warning_100.var;
     } else {
-      /* eslint-disable-next-line */
       return t_global_color_status_info_100.var;
     }
   };
