@@ -28,6 +28,7 @@ export const DropdownSplitButtonText: React.FunctionComponent = () => {
   return (
     <Dropdown
       onSelect={onSelect}
+      onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
       toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
         <MenuToggle
           splitButtonItems={[
