@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.1-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.11...@patternfly/react-core@6.2.1-prerelease.12) (2025-04-23)
+
+### Bug Fixes
+
+- **Truncate, Progress:** enable truncated tooltip via keyboard ([#11731](https://github.com/patternfly/patternfly-react/issues/11731)) ([dffaa90](https://github.com/patternfly/patternfly-react/commit/dffaa90933fe7552dfece930ff71d190664c409a))
+
 ## [6.2.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.2.1-prerelease.10...@patternfly/react-core@6.2.1-prerelease.11) (2025-04-22)
 
 **Note:** Version bump only for package @patternfly/react-core

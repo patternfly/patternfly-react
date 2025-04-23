@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.102](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.101...demo-app-ts@6.0.0-prerelease.102) (2025-04-23)
+
+### Bug Fixes
+
+- **Truncate, Progress:** enable truncated tooltip via keyboard ([#11731](https://github.com/patternfly/patternfly-react/issues/11731)) ([dffaa90](https://github.com/patternfly/patternfly-react/commit/dffaa90933fe7552dfece930ff71d190664c409a))
+
 # [6.0.0-prerelease.101](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.100...demo-app-ts@6.0.0-prerelease.101) (2025-04-22)
 
 **Note:** Version bump only for package demo-app-ts
