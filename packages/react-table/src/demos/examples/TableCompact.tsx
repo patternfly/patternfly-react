@@ -129,7 +129,7 @@ export const TableCompact: React.FunctionComponent = () => {
   return (
     <Fragment>
       <DashboardWrapper hasPageTemplateTitle>
-        <PageSection isFilled>
+        <PageSection isFilled aria-label="Compact table data">
           <Card>
             {tableToolbar}
             <Table variant="compact" aria-label="Compact Table">

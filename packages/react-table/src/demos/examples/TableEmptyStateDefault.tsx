@@ -15,7 +15,7 @@ import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/Dashboa
 
 export const TableEmptyStateDefault: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>
-    <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+    <PageSection padding={{ default: 'noPadding', xl: 'padding' }} aria-label="Empty state table data">
       <Card component="div">
         <Table aria-label="Empty state table">
           <Thead>

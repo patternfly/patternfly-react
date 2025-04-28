@@ -177,13 +177,13 @@ export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () 
         breadcrumb={PageBreadcrumb}
         mainContainerId={pageId}
       >
-        <PageSection>
+        <PageSection aria-labelledby="main-title">
           <Content>
-            <h1>Main title</h1>
+            <h1 id="main-title">Main title</h1>
             <p>A demo of a wizard in a page.</p>
           </Content>
         </PageSection>
-        <PageSection hasBodyWrapper={false} type={PageSectionTypes.wizard} ß>
+        <PageSection hasBodyWrapper={false} type={PageSectionTypes.wizard} ß aria-label="Wizard container">
           <Wizard>
             <WizardStep body={{ hasNoPadding: true }} name="Information" id="wizard-step-1">
               {createStepContentWithDrawer('Information step')}

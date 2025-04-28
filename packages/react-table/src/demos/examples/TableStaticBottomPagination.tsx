@@ -142,7 +142,7 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
   return (
     <Fragment>
       <DashboardWrapper hasPageTemplateTitle>
-        <PageSection isFilled>
+        <PageSection isFilled aria-label="Paginated table data">
           <Card>
             {tableToolbar}
             <Table variant="compact" aria-label="Paginated Table">

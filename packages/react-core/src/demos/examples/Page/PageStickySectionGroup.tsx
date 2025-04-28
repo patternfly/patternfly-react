@@ -278,9 +278,9 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
       isBreadcrumbWidthLimited
       isBreadcrumbGrouped
       additionalGroupedContent={
-        <PageSection isWidthLimited>
+        <PageSection isWidthLimited aria-labelledby="main-title">
           <Content>
-            <h1>Main title</h1>
+            <h1 id="main-title">Main title</h1>
             <p>This is a full page demo.</p>
           </Content>
         </PageSection>
@@ -289,7 +289,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
         stickyOnBreakpoint: { default: 'top' }
       }}
     >
-      <PageSection>
+      <PageSection aria-label="Card gallery">
         <Gallery hasGutter>
           {Array.from({ length: 50 }).map((_value, index) => (
             <GalleryItem key={index}>

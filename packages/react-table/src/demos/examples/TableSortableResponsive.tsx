@@ -229,9 +229,9 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
   return (
     <Fragment>
       <DashboardWrapper>
-        <PageSection isWidthLimited variant={PageSectionVariants.light}>
+        <PageSection isWidthLimited variant={PageSectionVariants.light} aria-labelledby="table-title">
           <Content>
-            <h1>Table demos</h1>
+            <h1 id="table-title">Table demos</h1>
             <p>
               Below is an example of a responsive sortable table. When the screen size shrinks the table into a compact
               form, the toolbar will display a dropdown menu containing sorting options.
@@ -243,6 +243,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
             default: 'noPadding',
             xl: 'padding'
           }}
+          aria-label="Sortable table data"
         >
           <Card component="div">
             {tableToolbar}

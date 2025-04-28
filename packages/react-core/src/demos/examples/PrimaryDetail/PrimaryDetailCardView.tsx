@@ -612,19 +612,19 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
-      <PageSection>
+      <PageSection aria-labelledby="projects">
         <Content>
-          <h1>Projects</h1>
+          <h1 id="projects">Projects</h1>
           <p>This is a demo that showcases Patternfly cards.</p>
         </Content>
       </PageSection>
-      <PageSection isFilled padding={{ default: 'noPadding' }}>
+      <PageSection isFilled padding={{ default: 'noPadding' }} aria-label="Card filtering toolbar">
         <Toolbar id="card-view-data-toolbar-group-types" clearAllFilters={onDelete}>
           <ToolbarContent>{toolbarItems}</ToolbarContent>
         </Toolbar>
         <Divider component="div" />
       </PageSection>
-      <PageSection isFilled padding={{ default: 'noPadding' }}>
+      <PageSection isFilled padding={{ default: 'noPadding' }} aria-label="Card content area">
         <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
@@ -636,6 +636,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
         stickyOnBreakpoint={{ default: 'bottom' }}
         padding={{ default: 'noPadding' }}
         variant="light"
+        aria-label="Pagination controls"
       >
         <Pagination
           itemCount={filtered.length}
