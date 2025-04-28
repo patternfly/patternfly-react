@@ -41,7 +41,7 @@ class BannerDemo extends React.Component {
         <DashboardWrapper banner={banner} breadcrumb={null}>
           <PageSection aria-labelledby="main-title">
             <Content>
-              <h1 id ="main-title">Main title</h1>
+              <h1 id="main-title">Main title</h1>
               <p>
                 Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
                 of it’s relative line height of 1.5.
@@ -114,7 +114,7 @@ class BannerDemo extends React.Component {
             <DashboardWrapper breadcrumb={null}>
               <PageSection aria-labelledby="main-title">
                 <Content>
-                  <h1 id = 'main-title'>Main title</h1>
+                  <h1 id='main-title'>Main title</h1>
                   <p>
                     Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because{' '}
                     <br />
@@ -122,7 +122,7 @@ class BannerDemo extends React.Component {
                   </p>
                 </Content>
               </PageSection>
-              <PageSection aria-label = 'Cards gallery'>
+              <PageSection aria-label='Cards gallery'>
                 <Gallery hasGutter>
                   {Array.from({ length: 30 }).map((_value, index) => (
                     <GalleryItem key={index}>
