@@ -364,7 +364,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
           style={{ margin: '12px 0' }}
         />
       </PageSection>
-      <PageSection aria-label="Alert Group">
+      <PageSection component="div">
         <AlertGroup
           hasAnimations
           isToast
