@@ -1,7 +1,6 @@
 import { Component } from 'react';
-/* eslint-disable camelcase */
 import brandImg from '../../../assets/images/brandImgColor.svg';
-import pfbg_icon from '../../../assets/images/pfbg-icon.svg';
+import pfbgIcon from '../../../assets/images/pfbg-icon.svg';
 
 import {
   LoginFooterItem,
@@ -148,7 +147,7 @@ export class LoginPageDemo extends Component<React.HTMLProps<HTMLDivElement>, Lo
           footerListVariants={ListVariant.inline}
           brandImgSrc={brandImg}
           brandImgAlt="PatternFly logo"
-          backgroundImgSrc={pfbg_icon}
+          backgroundImgSrc={pfbgIcon}
           footerListItems={listItems}
           textContent="This is placeholder text only. Use this area to place any information or introductory message about your
           application that may be relevant to users."
