@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import chart_bullet_axis_tick_count from '@patternfly/react-tokens/dist/esm/chart_bullet_axis_tick_count';
 import chart_bullet_comparative_measure_Width from '@patternfly/react-tokens/dist/esm/chart_bullet_comparative_measure_Width';
 import chart_bullet_comparative_measure_error_Width from '@patternfly/react-tokens/dist/esm/chart_bullet_comparative_measure_error_Width';

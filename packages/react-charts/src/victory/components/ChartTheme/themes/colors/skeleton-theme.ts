@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { ColorTheme, ColorComponentTheme } from '../skeleton-theme';
 import chart_bullet_qualitative_range_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_bullet_qualitative_range_ColorScale_100';
 import chart_bullet_qualitative_range_ColorScale_200 from '@patternfly/react-tokens/dist/esm/chart_bullet_qualitative_range_ColorScale_200';
