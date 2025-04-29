@@ -1,0 +1,12 @@
+{
+  "name": "codeConnect",
+  "packageManager": "yarn@4.7.0",
+  "devDependencies": {
+    "fs-extra": "^11.3.0",
+    "fse": "^4.0.1"
+  },
+  "scripts": {
+    "figma:icons:fetch": "node scripts/fetchIcons.mjs --token",
+    "figma:icons:sync": "node scripts/iconConnector.mjs"
+  }
+}
