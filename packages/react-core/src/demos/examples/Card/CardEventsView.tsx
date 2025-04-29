@@ -25,7 +25,7 @@ import {
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
-import galleryGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 export const CardEventsView: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +61,7 @@ export const CardEventsView: React.FunctionComponent = () => {
       <code>baseline</code> alignment.
       <br />
       <br />
-      <Gallery hasGutter style={{ [galleryGridTemplateColumnsMin.name]: '360px' } as React.CSSProperties}>
+      <Gallery hasGutter style={{ [cssGridTemplateColumnsMin.name]: '360px' } as React.CSSProperties}>
         <Card id="card-events-view-example">
           <CardHeader className={flex.alignItemsFlexStart} actions={{ actions: headerActions, hasNoOffset: true }}>
             <CardTitle>

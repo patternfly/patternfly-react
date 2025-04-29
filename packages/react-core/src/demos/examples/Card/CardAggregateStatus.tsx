@@ -15,7 +15,7 @@ import {
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import galleryGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 interface ContentType {
   icon?: React.ReactNode;
@@ -282,7 +282,7 @@ export const CardAggregateStatus: React.FunctionComponent = () => {
         }
         return (
           <GridItem key={groupIndex}>
-            <Gallery hasGutter style={{ [galleryGridTemplateColumnsMin.name]: galleryWidth } as React.CSSProperties}>
+            <Gallery hasGutter style={{ [cssGridTemplateColumnsMin.name]: galleryWidth } as React.CSSProperties}>
               {cardData[cardGroup].map(({ title, content, layout }, cardIndex: number) => (
                 <Card
                   style={{ textAlign: cardAlign } as React.CSSProperties}
