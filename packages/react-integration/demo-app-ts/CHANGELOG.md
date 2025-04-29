@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.105](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.104...demo-app-ts@6.0.0-prerelease.105) (2025-04-29)
+
+**Note:** Version bump only for package demo-app-ts
+
 # [6.0.0-prerelease.104](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.103...demo-app-ts@6.0.0-prerelease.104) (2025-04-28)
 
 **Note:** Version bump only for package demo-app-ts
