@@ -51,6 +51,8 @@ export interface MultiTypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 
   toggleWidth?: string;
   /** Additional props passed to the toggle. */
   toggleProps?: MenuToggleProps;
+  /** Initial value of the typeahead text input. */
+  initialInputValue?: string;
 }
 
 export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSelectProps> = ({
@@ -65,13 +67,14 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
   isDisabled,
   toggleWidth,
   toggleProps,
+  initialInputValue,
   ...props
 }: MultiTypeaheadSelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<(string | number)[]>(
     (initialOptions?.filter((o) => o.selected) ?? []).map((o) => o.value)
   );
-  const [inputValue, setInputValue] = useState<string>();
+  const [inputValue, setInputValue] = useState<string>(initialInputValue);
   const [selectOptions, setSelectOptions] = useState<MultiTypeaheadSelectOption[]>(initialOptions);
   const [focusedItemIndex, setFocusedItemIndex] = useState<number | null>(null);
   const [activeItemId, setActiveItemId] = useState<string | null>(null);
@@ -104,9 +107,6 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
           }
         ];
       }
-
-      // Open the menu when the input value changes and the new value is not empty
-      openMenu();
     }
 
     setSelectOptions(newSelectOptions);
@@ -169,6 +169,10 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
   const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
     onInputChange && onInputChange(value);
+
+    if (value && !isOpen) {
+      openMenu();
+    }
 
     resetActiveAndFocusedItem();
   };
