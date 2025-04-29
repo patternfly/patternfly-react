@@ -355,7 +355,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
   return (
     <DashboardWrapper hasNoBreadcrumb>
       {tabsBreadcrumb}
-      <PageSection isWidthLimited aria-label = 'Pod header'>
+      <PageSection isWidthLimited aria-label='Pod header'>
         <Flex
           spaceItems={{ default: 'spaceItemsMd' }}
           alignItems={{ default: 'alignItemsFlexStart' }}
