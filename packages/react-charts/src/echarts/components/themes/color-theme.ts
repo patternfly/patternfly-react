@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import chart_echarts_BackgroundColor from '@patternfly/react-tokens/dist/esm/chart_echarts_BackgroundColor';
 import chart_echarts_bar_item_style_BarBorderColor from '@patternfly/react-tokens/dist/esm/chart_echarts_bar_item_style_BarBorderColor';
 import chart_echarts_boxplot_item_style_BorderColor from '@patternfly/react-tokens/dist/esm/chart_echarts_boxplot_item_style_BorderColor';
