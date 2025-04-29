@@ -7,7 +7,6 @@ import {
   ChartThreshold,
   createContainer
 } from '@patternfly/react-charts/victory';
-/* eslint-disable-next-line */
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
 interface Data {
@@ -36,7 +35,6 @@ export const ChartBoxPlotEmbeddedLegend: React.FunctionComponent = () => {
     {
       childName: 'limit',
       name: 'Limit',
-      /* eslint-disable-next-line */
       symbol: { fill: chart_color_orange_300.var, type: 'threshold' }
     },
     { childName: 'cats', name: 'Cats' },
@@ -97,7 +95,6 @@ export const ChartBoxPlotEmbeddedLegend: React.FunctionComponent = () => {
           name="limit"
           style={{
             data: {
-              /* eslint-disable-next-line */
               stroke: chart_color_orange_300.var
             }
           }}
