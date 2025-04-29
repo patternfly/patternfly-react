@@ -29,7 +29,6 @@ import {
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-
 import t_global_color_brand_default from '@patternfly/react-tokens/dist/esm/t_global_color_brand_default';
 
 export const TableComposableDemo = () => {

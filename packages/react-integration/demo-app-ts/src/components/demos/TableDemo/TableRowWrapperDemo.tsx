@@ -1,10 +1,8 @@
 import { Component } from 'react';
 import { RowWrapperProps, ICell, IRow } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-
 import t_global_color_brand_default from '@patternfly/react-tokens/dist/esm/t_global_color_brand_default';
 
 interface ITableRowWrapperDemoState {

@@ -1,5 +1,4 @@
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-
 import t_global_background_color_secondary_default from '@patternfly/react-tokens/dist/esm/t_global_background_color_secondary_default';
 
 interface Repository {
