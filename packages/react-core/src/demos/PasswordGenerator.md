@@ -45,7 +45,7 @@ const PasswordGenerator: React.FunctionComponent = () => {
   const [isAutocompleteOpen, setIsAutocompleteOpen] = useState<boolean>(false);
   const [passwordHidden, setPasswordHidden] = useState<boolean>(true);
   const searchInputRef = useRef(null);
-  const autocompleteRef = .useRef(null);
+  const autocompleteRef = useRef(null);
 
   useEffect(() => {
     window.addEventListener('keydown', handleMenuKeys);
