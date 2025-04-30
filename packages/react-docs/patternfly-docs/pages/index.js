@@ -21,12 +21,12 @@ const IndexPage = () => {
     <PageSection style={centerStyle}>
       <div style={{ flex: 'none', textAlign: 'center' }}>
         <Title size="4xl" headingLevel="h1">
-          PatternFly 4 React Docs
+          PatternFly React Docs
         </Title>
         <Title size="2xl" headingLevel="h2">
-          {prInfo.num ? <a href={prInfo.url}>PR #{prInfo.num}</a> : 'Hi people!'}
+          {prInfo.num ? <a href={prInfo.url}>PR #{prInfo.num}</a> : 'Hi, friend!'}
         </Title>
-        <p>Welcome to Patternfly 4 React docs.</p>
+        <p>Welcome to Patternfly React docs.</p>
         <p>Now go build something great.</p>
       </div>
     </PageSection>
