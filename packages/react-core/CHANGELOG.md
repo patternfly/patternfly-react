@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.2...@patternfly/react-core@6.3.0-prerelease.3) (2025-04-30)
+
+### Bug Fixes
+
+- **password generator:** fixed syntax error in demo ([#11782](https://github.com/patternfly/patternfly-react/issues/11782)) ([008965c](https://github.com/patternfly/patternfly-react/commit/008965c54caec4ca07bc5403677e4bab1aa6b44b))
+
 # [6.3.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.1...@patternfly/react-core@6.3.0-prerelease.2) (2025-04-28)
 
 **Note:** Version bump only for package @patternfly/react-core
