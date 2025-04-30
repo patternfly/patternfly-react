@@ -59,8 +59,6 @@ ScrollspyH2 = () => {
       const jumpLinksHeaderHeight = document.getElementsByClassName('pf-m-sticky')[0].offsetHeight;
       jumpLinksHeaderHeight && setOffsetHeight(masthead.offsetHeight + jumpLinksHeaderHeight + offsetForPadding);
     }
-
-    
   }, [isVertical]);
 
   getResizeObserver(
@@ -98,12 +96,12 @@ ScrollspyH2 = () => {
                 isVertical={isVertical}
                 isCentered={!isVertical}
                 label="Jump to section"
-                scrollableSelector=".pf-v6-c-page__main-container"
+                scrollableSelector="#scrollable-element"
                 offset={offsetHeight}
                 expandable={{ default: isVertical ? 'expandable' : 'nonExpandable', md: 'nonExpandable' }}
                 isExpanded
               >
-                {headings.map(i => (
+                {headings.map((i) => (
                   <JumpLinksItem key={i} href={`#heading-${i}`}>
                     {`Heading ${i}`}
                     <JumpLinksList></JumpLinksList>
@@ -115,7 +113,7 @@ ScrollspyH2 = () => {
           <SidebarContent hasNoBackground>
             <PageSection>
               <Content>
-                {headings.map(i => (
+                {headings.map((i) => (
                   <div key={i} style={{ maxWidth: '800px', marginBottom: '32px' }}>
                     <h2 id={`heading-${i}`} tabIndex={-1}>
                       {`Heading ${i}`}
@@ -158,4 +156,5 @@ This demo shows how jump links can be used in combination with a drawer.
 This demo uses a `scrollableRef` prop on the JumpLinks component, which is a React ref to the `DrawerContent` component.
 
 ```js isFullscreen file="./examples/JumpLinks/JumpLinksWithDrawer.js"
+
 ```
