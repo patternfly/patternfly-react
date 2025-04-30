@@ -204,7 +204,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
     const shouldTruncate = variant === ClipboardCopyVariant.inlineCompact && truncation;
     const inlineCompactContent = shouldTruncate ? (
       <Truncate
-        refToGetParent={this.clipboardRef}
+        tooltipProps={{ triggerRef: this.clipboardRef }}
         content={copyableText}
         {...(typeof truncation === 'object' && truncation)}
       />
@@ -223,6 +223,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
           className
         )}
         ref={this.clipboardRef}
+        {...(shouldTruncate && { tabIndex: 0 })}
         {...divProps}
         {...getOUIAProps(ClipboardCopy.displayName, ouiaId, ouiaSafe)}
       >

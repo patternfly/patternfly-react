@@ -545,3 +545,20 @@ export const getLanguageDirection = (targetElement: HTMLElement, defaultDirectio
 
   return defaultDirection;
 };
+
+/**
+ * Gets a reference element based on a ref property, which can typically be 1 of several types.
+ *
+ * @param {HTMLElement | (() => HTMLElement) | React.RefObject<any>} refProp The ref property to get a reference element from.
+ * @returns The reference element if one is found.
+ */
+export const getReferenceElement = (refProp: HTMLElement | (() => HTMLElement) | React.RefObject<any>) => {
+  if (refProp instanceof HTMLElement) {
+    return refProp;
+  }
+  if (typeof refProp === 'function') {
+    return refProp();
+  }
+
+  return refProp?.current;
+};
