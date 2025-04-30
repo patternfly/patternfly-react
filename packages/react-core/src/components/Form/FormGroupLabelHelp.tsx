@@ -1,7 +1,7 @@
 import { forwardRef, useRef } from 'react';
 import { Button, ButtonProps } from '../Button';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import { KeyTypes } from '../../helpers/constants';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 /** A help button to be passed to the FormGroup's labelHelp property. This should be wrapped or linked
  * to our Popover component.
@@ -45,7 +45,7 @@ const FormGroupLabelHelpBase: React.FunctionComponent<FormGroupLabelHelpProps> =
       variant="plain"
       hasNoPadding
       {...props}
-      icon={<QuestionCircleIcon />}
+      icon={<HelpIcon />}
     />
   );
 };
