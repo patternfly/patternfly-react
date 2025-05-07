@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import chart_echarts_BackgroundColor from '@patternfly/react-tokens/dist/esm/chart_echarts_BackgroundColor';
 import chart_echarts_global_axis_axis_line_item_style_Color from '@patternfly/react-tokens/dist/esm/chart_echarts_global_axis_axis_line_item_style_Color';
 import chart_echarts_global_axis_axis_tick_item_style_Color from '@patternfly/react-tokens/dist/esm/chart_echarts_global_axis_axis_tick_item_style_Color';

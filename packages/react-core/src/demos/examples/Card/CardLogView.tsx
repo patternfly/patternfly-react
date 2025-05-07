@@ -1,5 +1,4 @@
 import { Fragment, useState } from 'react';
-/* eslint-disable camelcase */
 import {
   Card,
   CardHeader,
@@ -21,7 +20,7 @@ import {
   Title
 } from '@patternfly/react-core';
 import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
-import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 export const CardLogView: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +60,7 @@ export const CardLogView: React.FunctionComponent = () => {
       <code>baseline</code> alignment.
       <br />
       <br />
-      <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: '360px' } as React.CSSProperties}>
+      <Gallery hasGutter style={{ [cssGridTemplateColumnsMin.name]: '360px' } as React.CSSProperties}>
         <Card id="card-log-view-example">
           <CardHeader className={flex.alignItemsFlexStart} actions={{ actions: headerActions, hasNoOffset: true }}>
             <CardTitle>

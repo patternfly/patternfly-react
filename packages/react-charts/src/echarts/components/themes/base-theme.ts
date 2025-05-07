@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import chart_echarts_bar_item_style_BarBorderWidth from '@patternfly/react-tokens/dist/esm/chart_echarts_bar_item_style_BarBorderColor';
 import chart_echarts_boxplot_item_style_BorderWidth from '@patternfly/react-tokens/dist/esm/chart_echarts_boxplot_item_style_BorderWidth';
 import chart_echarts_candlestick_item_style_BorderWidth from '@patternfly/react-tokens/dist/esm/chart_echarts_candlestick_item_style_BorderWidth';

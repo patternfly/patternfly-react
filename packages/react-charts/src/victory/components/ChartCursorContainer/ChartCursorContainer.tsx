@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { cloneElement } from 'react';
 import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
 import hoistNonReactStatics from 'hoist-non-react-statics';

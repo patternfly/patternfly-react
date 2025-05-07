@@ -1,7 +1,6 @@
 import { Children, cloneElement, isValidElement, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 
-/* eslint-disable camelcase */
 import chart_legend_Margin from '@patternfly/react-tokens/dist/esm/chart_legend_Margin';
 
 import {

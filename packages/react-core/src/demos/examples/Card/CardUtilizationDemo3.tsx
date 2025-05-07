@@ -1,5 +1,4 @@
 import { Fragment, useState } from 'react';
-/* eslint-disable camelcase */
 import {
   Card,
   CardTitle,

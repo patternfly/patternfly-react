@@ -18,8 +18,7 @@ import {
   CardBody
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-/* eslint-disable camelcase */
-import c_page_section_m_limit_width_MaxWidth from '@patternfly/react-tokens/dist/esm/c_page_section_m_limit_width_MaxWidth';
+import pageSectionWidthLimitMaxWidth from '@patternfly/react-tokens/dist/esm/c_page_section_m_limit_width_MaxWidth';
 
 export const PageCenteredSection: React.FunctionComponent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -72,7 +71,7 @@ export const PageCenteredSection: React.FunctionComponent = () => {
         <Card>
           <CardBody>
             When a width limited page section is wider than the value of
-            <code>{c_page_section_m_limit_width_MaxWidth.name}</code>, the section will be centered in the main section.
+            <code>{pageSectionWidthLimitMaxWidth.name}</code>, the section will be centered in the main section.
             <br />
             <br />
             The content in this example is placed in a card to better illustrate how the section behaves when it is

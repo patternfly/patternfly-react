@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import t_global_font_weight_heading_bold from '@patternfly/react-tokens/dist/esm/t_global_font_weight_heading_bold';
 import chart_voronoi_labels_Fill from '@patternfly/react-tokens/dist/esm/chart_voronoi_labels_Fill';
 

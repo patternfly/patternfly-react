@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import chart_global_FontFamily from '@patternfly/react-tokens/dist/esm/chart_global_FontFamily';
 import chart_global_letter_spacing from '@patternfly/react-tokens/dist/esm/chart_global_letter_spacing';
 import chart_global_FontSize_sm from '@patternfly/react-tokens/dist/esm/chart_global_FontSize_sm';
