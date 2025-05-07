@@ -5,6 +5,7 @@ cssPrefix: pf-v6-c-truncate
 propComponents: [Truncate]
 ---
 
+import { useRef } from 'react';
 import './TruncateExamples.css';
 
 ## Examples
@@ -50,5 +51,11 @@ Rather than observing container width, you can have truncation be based on a max
 Truncating based on a maximum amount of characters will truncate the content at the end by default. When the `position` property is set to "middle", the truncation will split the content as evenly as possible, providing a more "true middle" truncation.
 
 ```ts file="./TruncateMaxChars.tsx"
+
+```
+
+### With links
+
+```ts file="./TruncateLinks.tsx"
 
 ```

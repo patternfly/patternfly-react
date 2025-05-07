@@ -1,7 +1,8 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import { css } from '@patternfly/react-styles';
-import { Tooltip, TooltipPosition } from '../Tooltip';
+import { Tooltip, TooltipPosition, TooltipProps } from '../Tooltip';
+import { getReferenceElement } from '../../helpers';
 import { getResizeObserver } from '../../helpers/resizeObserver';
 
 export enum TruncatePosition {
@@ -17,11 +18,15 @@ const truncateStyles = {
 
 const minWidthCharacters: number = 12;
 
-export interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
+export interface TruncateProps extends Omit<React.HTMLProps<HTMLSpanElement | HTMLAnchorElement>, 'ref'> {
   /** Class to add to outer span */
   className?: string;
   /** Text to truncate */
   content: string;
+  /** An HREF to turn the truncate wrapper into an anchor element. For more custom control, use the
+   * tooltipProps with a triggerRef property passed in.
+   */
+  href?: string;
   /** The number of characters displayed in the second half of a middle truncation. This will be overridden by
    * the maxCharsDisplayed prop.
    */
@@ -52,24 +57,22 @@ export interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
     | 'left-end'
     | 'right-start'
     | 'right-end';
-  /** @hide The element whose parent to reference when calculating whether truncation should occur. This must be an ancestor
-   * of the ClipboardCopy, and must have a valid width value. For internal use only, do not use as it is not part of the public API
-   * and is subject to change.
-   */
-  refToGetParent?: React.RefObject<any>;
+  /** Additional props to pass to the tooltip. */
+  tooltipProps?: Omit<TooltipProps, 'content'>;
 }
 
 const sliceTrailingContent = (str: string, slice: number) => [str.slice(0, str.length - slice), str.slice(-slice)];
 
 export const Truncate: React.FunctionComponent<TruncateProps> = ({
   className,
+  href,
   position = 'end',
   tooltipPosition = 'top',
+  tooltipProps,
   trailingNumChars = 7,
   maxCharsDisplayed,
   omissionContent = '\u2026',
   content,
-  refToGetParent,
   ...props
 }: TruncateProps) => {
   const [isTruncated, setIsTruncated] = useState(true);
@@ -78,7 +81,8 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
   const [shouldRenderByMaxChars, setShouldRenderByMaxChars] = useState(maxCharsDisplayed > 0);
 
   const textRef = useRef<HTMLElement>(null);
-  const subParentRef = useRef<HTMLDivElement>(null);
+  const defaultSubParentRef = useRef<any>(null);
+  const subParentRef = tooltipProps?.triggerRef || defaultSubParentRef;
   const observer = useRef(null);
 
   if (maxCharsDisplayed <= 0) {
@@ -108,11 +112,14 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
     if (textRef && textRef.current && !textElement) {
       setTextElement(textRef.current);
     }
+  }, [textRef, textElement]);
 
-    if ((refToGetParent?.current || (subParentRef?.current && subParentRef.current.parentElement)) && !parentElement) {
-      setParentElement(refToGetParent?.current.parentElement || subParentRef?.current.parentElement);
+  useEffect(() => {
+    const refElement = getReferenceElement(subParentRef);
+    if (refElement?.parentElement && !parentElement) {
+      setParentElement(refElement.parentElement);
     }
-  }, [textRef, subParentRef, textElement, parentElement]);
+  }, [subParentRef, parentElement]);
 
   useEffect(() => {
     if (textElement && parentElement && !observer.current && !shouldRenderByMaxChars) {
@@ -217,21 +224,29 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
     );
   };
 
+  const TruncateWrapper = href ? 'a' : 'span';
   const truncateBody = (
-    <span
-      ref={subParentRef}
+    <TruncateWrapper
+      ref={!tooltipProps?.triggerRef ? (subParentRef as React.MutableRefObject<any>) : null}
+      href={href}
       className={css(styles.truncate, shouldRenderByMaxChars && styles.modifiers.fixed, className)}
-      {...(isTruncated && { tabIndex: 0 })}
+      {...(isTruncated && !href && !tooltipProps?.triggerRef && { tabIndex: 0 })}
       {...props}
     >
       {!shouldRenderByMaxChars ? renderResizeObserverContent() : renderMaxDisplayContent()}
-    </span>
+    </TruncateWrapper>
   );
 
   return (
     <>
       {isTruncated && (
-        <Tooltip hidden={!isTruncated} position={tooltipPosition} content={content} triggerRef={subParentRef} />
+        <Tooltip
+          hidden={!isTruncated}
+          position={tooltipPosition}
+          content={content}
+          triggerRef={subParentRef}
+          {...tooltipProps}
+        />
       )}
       {truncateBody}
     </>
