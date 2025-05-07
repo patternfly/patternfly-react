@@ -39,6 +39,7 @@ exports[`NavExpandable should match snapshot (auto-generated) 1`] = `
       aria-labelledby="''"
       class="pf-v6-c-nav__subnav"
       hidden=""
+      inert=""
     >
       <h2
         class="pf-v6-screen-reader"
