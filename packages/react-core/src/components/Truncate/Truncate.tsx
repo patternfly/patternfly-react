@@ -142,13 +142,18 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
     setShouldRenderByMaxChars(maxCharsDisplayed > 0);
   }, [maxCharsDisplayed]);
 
+  const lrmEntity = <Fragment>&lrm;</Fragment>;
+  const isStartPosition = position === TruncatePosition.start;
+  const isEndPosition = position === TruncatePosition.end;
+
   const renderResizeObserverContent = () => {
-    if (position === TruncatePosition.end || position === TruncatePosition.start) {
+    if (isEndPosition || isStartPosition) {
       return (
         <>
           <span ref={textRef} className={truncateStyles[position]}>
+            {isStartPosition && lrmEntity}
             {content}
-            {position === TruncatePosition.start && <Fragment>&lrm;</Fragment>}
+            {isStartPosition && lrmEntity}
           </span>
         </>
       );
@@ -195,7 +200,7 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
         </>
       );
     }
-    if (position === TruncatePosition.end) {
+    if (isEndPosition) {
       return (
         <>
           {renderVisibleContent(content.slice(0, maxCharsDisplayed))}

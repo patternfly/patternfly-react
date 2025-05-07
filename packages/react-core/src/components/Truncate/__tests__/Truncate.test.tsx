@@ -1,5 +1,5 @@
 import { render, screen, within } from '@testing-library/react';
-import { Truncate } from '../Truncate';
+import { Truncate, TruncatePosition } from '../Truncate';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import '@testing-library/jest-dom';
 
@@ -67,7 +67,7 @@ test('renders default truncation', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('renders start truncation with &lrm; at end', () => {
+test('renders start truncation with &lrm; at start and end', () => {
   const { asFragment } = render(
     <Truncate
       content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
