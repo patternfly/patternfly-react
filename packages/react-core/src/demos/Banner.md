@@ -39,16 +39,16 @@ class BannerDemo extends React.Component {
     return (
       <Fragment>
         <DashboardWrapper banner={banner} breadcrumb={null}>
-          <PageSection>
+          <PageSection aria-labelledby="main-title">
             <Content>
-              <h1>Main title</h1>
+              <h1 id="main-title">Main title</h1>
               <p>
                 Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
                 of it’s relative line height of 1.5.
               </p>
             </Content>
           </PageSection>
-          <PageSection>
+          <PageSection aria-label='Cards gallery'>
             <Gallery hasGutter>
               {Array.from({ length: 30 }).map((_value, index) => (
                 <GalleryItem key={index}>
@@ -112,9 +112,9 @@ class BannerDemo extends React.Component {
           </FlexItem>
           <FlexItem grow={{ default: 'grow' }} style={{ minHeight: 0 }}>
             <DashboardWrapper breadcrumb={null}>
-              <PageSection>
+              <PageSection aria-labelledby="main-title">
                 <Content>
-                  <h1>Main title</h1>
+                  <h1 id='main-title'>Main title</h1>
                   <p>
                     Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because{' '}
                     <br />
@@ -122,7 +122,7 @@ class BannerDemo extends React.Component {
                   </p>
                 </Content>
               </PageSection>
-              <PageSection>
+              <PageSection aria-label='Cards gallery'>
                 <Gallery hasGutter>
                   {Array.from({ length: 30 }).map((_value, index) => (
                     <GalleryItem key={index}>

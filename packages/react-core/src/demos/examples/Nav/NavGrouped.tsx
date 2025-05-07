@@ -92,19 +92,27 @@ export const NavGrouped: React.FunctionComponent = () => {
         skipToContent={PageSkipToContent}
         mainContainerId={pageId}
       >
-        <PageSection>
+        <PageSection aria-labelledby="main-title">
           <Content>
-            <h1>Main title</h1>
+            <h1 id="main-title">Main title</h1>
             <p>
               Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
               of its relative line height of 1.5.
             </p>
           </Content>
         </PageSection>
-        <PageSection>Section 1</PageSection>
-        <PageSection>Section 2</PageSection>
-        <PageSection>Section 3</PageSection>
-        <PageSection>Content</PageSection>
+        <PageSection aria-labelledby="section-1">
+          <h2 id="section-1">Section 1</h2>
+        </PageSection>
+        <PageSection aria-labelledby="section-2">
+          <h2 id="section-2">Section 2</h2>
+        </PageSection>
+        <PageSection aria-labelledby="section-3">
+          <h2 id="section-3">Section 3</h2>
+        </PageSection>
+        <PageSection aria-labelledby="content">
+          <h2 id="content">Content</h2>
+        </PageSection>
       </Page>
     </>
   );

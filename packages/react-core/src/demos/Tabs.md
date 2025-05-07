@@ -159,7 +159,7 @@ TabsOpenDemo = () => {
   return (
     <DashboardWrapper hasNoBreadcrumb>
       {tabsBreadcrumb}
-      <PageSection isWidthLimited>
+      <PageSection isWidthLimited aria-label='Pod header'>
         <Flex
           spaceItems={{ default: 'spaceItemsMd' }}
           alignItems={{ default: 'alignItemsFlexStart' }}
@@ -178,7 +178,7 @@ TabsOpenDemo = () => {
           </FlexItem>
         </Flex>
       </PageSection>
-      <PageSection type="tabs" isWidthLimited>
+      <PageSection type="tabs" isWidthLimited aria-label='Pod navigation tabs'>
         <Tabs activeKey={activeTabKey} onSelect={handleTabClick} usePageInsets id="open-tabs-example-tabs-list">
           <Tab eventKey={0} title={<TabTitleText>Details</TabTitleText>} tabContentId={`tabContent${0}`} />
           <Tab eventKey={1} title={<TabTitleText>YAML</TabTitleText>} tabContentId={`tabContent${1}`} />
@@ -187,7 +187,7 @@ TabsOpenDemo = () => {
           <Tab eventKey={4} title={<TabTitleText>Terminal</TabTitleText>} tabContentId={`tabContent${4}`} />
         </Tabs>
       </PageSection>
-      <PageSection isWidthLimited>
+      <PageSection isWidthLimited aria-label='Pod content'>
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <TabContentBody>{tabContent}</TabContentBody>
         </TabContent>
@@ -355,7 +355,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
   return (
     <DashboardWrapper hasNoBreadcrumb>
       {tabsBreadcrumb}
-      <PageSection isWidthLimited>
+      <PageSection isWidthLimited aria-label='Pod header'>
         <Flex
           spaceItems={{ default: 'spaceItemsMd' }}
           alignItems={{ default: 'alignItemsFlexStart' }}
@@ -374,7 +374,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
           </FlexItem>
         </Flex>
       </PageSection>
-      <PageSection type="tabs" isWidthLimited>
+      <PageSection type="tabs" isWidthLimited aria-label='Pod navigation tabs'>
         <Tabs activeKey={activeTabKey} onSelect={handleTabClick} usePageInsets id="open-tabs-example-tabs-list">
           <Tab eventKey={0} title={<TabTitleText>Details</TabTitleText>} tabContentId={`tabContent${0}`} />
           <Tab eventKey={1} title={<TabTitleText>YAML</TabTitleText>} tabContentId={`tabContent${1}`} />
@@ -383,7 +383,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
           <Tab eventKey={4} title={<TabTitleText>Terminal</TabTitleText>} tabContentId={`tabContent${4}`} />
         </Tabs>
       </PageSection>
-      <PageSection isWidthLimited padding={{ default: 'noPadding' }}>
+      <PageSection isWidthLimited padding={{ default: 'noPadding' }} aria-label='Pod content'>
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <TabContentBody>
             <Tabs

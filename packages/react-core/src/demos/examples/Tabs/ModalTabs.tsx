@@ -73,13 +73,13 @@ export const ModalTabs: React.FunctionComponent = () => {
   return (
     <Fragment>
       <DashboardWrapper mainContainerId="main-content-card-view-default-nav">
-        <PageSection>
+        <PageSection aria-labelledby="projects-heading">
           <Content>
-            <h1>Projects</h1>
+            <h1 id="projects-heading">Projects</h1>
             <p>Click any project card to view tabs within modals.</p>
           </Content>
         </PageSection>
-        <PageSection isFilled>
+        <PageSection isFilled aria-label="Selectable card gallery">
           <Gallery hasGutter aria-label="Selectable card container">
             {products.map((product) => (
               <Card

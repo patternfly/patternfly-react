@@ -79,8 +79,8 @@ ScrollspyH2 = () => {
 
   return (
     <DashboardWrapper breadcrumb={null} mainContainerId="scrollable-element">
-      <PageSection>
-        <Title headingLevel="h1" size="2xl">
+      <PageSection aria-labelledby='main-title'>
+        <Title headingLevel="h1" size="2xl" id='main-title'>
           Main title
         </Title>
         <Switch
@@ -90,10 +90,10 @@ ScrollspyH2 = () => {
           onChange={(_event, check) => setIsVertical(check)}
         />
       </PageSection>
-      <PageSection padding={{ default: 'noPadding' }}>
+      <PageSection padding={{ default: 'noPadding' }} >
         <Sidebar hasGutter orientation={!isVertical && 'stack'}>
           <SidebarPanel variant="sticky">
-            <PageSection>
+            <PageSection aria-label='Jump links navigation'>
               <JumpLinks
                 isVertical={isVertical}
                 isCentered={!isVertical}
@@ -113,7 +113,7 @@ ScrollspyH2 = () => {
             </PageSection>
           </SidebarPanel>
           <SidebarContent hasNoBackground>
-            <PageSection>
+            <PageSection aria-label='Main content'>
               <Content>
                 {headings.map(i => (
                   <div key={i} style={{ maxWidth: '800px', marginBottom: '32px' }}>

@@ -64,9 +64,15 @@ export const PageVerticalNav: React.FunctionComponent = () => {
 
   return (
     <Page masthead={masthead} sidebar={sidebar}>
-      <PageSection>Section 1</PageSection>
-      <PageSection variant="secondary">Section 2 with secondary variant styling</PageSection>
-      <PageSection>Section 3</PageSection>
+      <PageSection aria-labelledby="section-1">
+        <h2 id="section-1">Vertical nav example section 1</h2>
+      </PageSection>
+      <PageSection variant="secondary" aria-labelledby="section-2">
+        <h2 id="section-2">Vertical nav example section 2 with secondary variant styling</h2>
+      </PageSection>
+      <PageSection aria-labelledby="section-3">
+        <h2 id="section-3">Vertical nav example section 3</h2>
+      </PageSection>
     </Page>
   );
 };

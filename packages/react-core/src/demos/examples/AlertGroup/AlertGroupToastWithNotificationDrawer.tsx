@@ -312,9 +312,9 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
       notificationDrawer={notificationDrawer}
       isNotificationDrawerExpanded={isDrawerExpanded}
     >
-      <PageSection>
+      <PageSection aria-labelledby="alert-group-title">
         <Content>
-          <h1>Alert group with notification drawer demo</h1>
+          <h1 id="alert-group-title">Alert group with notification drawer demo</h1>
           <p>
             New alerts can be added with the following buttons. Each alert has a timeout of 7 seconds, however, even
             after the timeout expires, all alerts are still visible in the notification drawer. By default, only 3
@@ -324,7 +324,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
         </Content>
       </PageSection>
 
-      <PageSection>
+      <PageSection aria-label="Alert Buttons">
         <Button variant="secondary" onClick={() => addNewNotification('success')} style={alertButtonStyle}>
           Add toast success alert
         </Button>
@@ -344,10 +344,10 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
         </Button>
       </PageSection>
 
-      <PageSection>
+      <PageSection aria-labelledby="max-displayed-alerts-title">
         <Content>
           <br />
-          <h2>Max displayed alerts</h2>
+          <h2 id="max-displayed-alerts-title">Max displayed alerts</h2>
           <p>Adjust the maximum number of displayed alerts.</p>
         </Content>
         <NumberInput
@@ -364,7 +364,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
           style={{ margin: '12px 0' }}
         />
       </PageSection>
-      <PageSection>
+      <PageSection component="div">
         <AlertGroup
           hasAnimations
           isToast
