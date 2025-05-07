@@ -189,7 +189,7 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
       footerListVariants={ListVariant.inline}
       brandImgSrc={brandImg}
       brandImgAlt="PatternFly logo"
-      backgroundImgSrc="/assets/images/pfbg-icon.svg"
+      backgroundImgSrc="/assets/images/pf-background.svg"
       footerListItems={listItem}
       textContent="This is placeholder text only. Use this area to place any information or introductory message about your application that may be relevant to users."
       loginTitle="Log in to your account"
