@@ -1,4 +1,4 @@
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { render, screen, waitForElementToBeRemoved, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MultiTypeaheadSelect } from '../MultiTypeaheadSelect';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
@@ -411,6 +411,36 @@ describe('MultiTypeaheadSelect', () => {
     expect(onInputKeyDownMock).not.toHaveBeenCalled();
     await user.keyboard('{Enter}');
     expect(onInputKeyDownMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('text input is empty by default', async () => {
+    render(<MultiTypeaheadSelect initialOptions={[]} />);
+
+    const input = screen.getByRole('combobox');
+    expect(input).toHaveValue('');
+  });
+
+  it('initialInputValue prop sets the default text input value', async () => {
+    const initialOptions = [
+      { content: 'Option 1', value: 'option1' },
+      { content: 'Option 2', value: 'option2' },
+      { content: 'Option 3', value: 'option3' }
+    ];
+
+    const user = userEvent.setup();
+
+    render(<MultiTypeaheadSelect initialInputValue={'Option 1'} initialOptions={initialOptions} />);
+
+    const input = screen.getByRole('combobox');
+    expect(input).toHaveValue('Option 1');
+
+    await user.click(input);
+
+    const menu = screen.getByRole('listbox');
+    const options = within(menu).getAllByRole('option');
+
+    expect(options).toHaveLength(1);
+    expect(options[0]).toHaveTextContent('Option 1');
   });
 
   it('Matches snapshot', async () => {
