@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.3.0-prerelease.5...@patternfly/react-templates@6.3.0-prerelease.6) (2025-05-07)
+
+### Features
+
+- **MultiTypeaheadSelect:** make labels removable and customizable ([#11774](https://github.com/patternfly/patternfly-react/issues/11774)) ([354f4f9](https://github.com/patternfly/patternfly-react/commit/354f4f9553cecd476bf0cf9169796b2523917398))
+
 # [6.3.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.3.0-prerelease.4...@patternfly/react-templates@6.3.0-prerelease.5) (2025-05-07)
 
 **Note:** Version bump only for package @patternfly/react-templates
