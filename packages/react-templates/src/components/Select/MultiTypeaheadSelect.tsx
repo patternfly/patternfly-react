@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useRef, useState } from 'react';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
-import { Label, LabelGroup } from '@patternfly/react-core/dist/esm/components/Label';
+import { Label, LabelGroup, LabelProps } from '@patternfly/react-core/dist/esm/components/Label';
 import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import {
   Select,
@@ -51,6 +51,8 @@ export interface MultiTypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 
   toggleWidth?: string;
   /** Additional props passed to the toggle. */
   toggleProps?: MenuToggleProps;
+  /** Additional props passed to each label of the selected option. */
+  labelProps?: LabelProps;
 }
 
 export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSelectProps> = ({
@@ -65,6 +67,7 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
   isDisabled,
   toggleWidth,
   toggleProps,
+  labelProps,
   ...props
 }: MultiTypeaheadSelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -302,10 +305,11 @@ export const MultiTypeaheadSelectBase: React.FunctionComponent<MultiTypeaheadSel
               <Label
                 key={index}
                 datatest-id={`${selection}-chip`}
-                onClick={(ev) => {
+                onClose={(ev) => {
                   ev.stopPropagation();
                   clearOption(ev, selection);
                 }}
+                {...labelProps}
               >
                 {initialOptions.find((o) => o.value === selection)?.content}
               </Label>
