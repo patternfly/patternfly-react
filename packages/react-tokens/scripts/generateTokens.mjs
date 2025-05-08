@@ -1,7 +1,7 @@
 import { glob } from 'glob';
 import { createRequire } from 'node:module';
 import { dirname, basename, sep } from 'node:path';
-import { parse, stringify } from 'css';
+import { parse, stringify } from '@adobe/css-tools';
 import { readFileSync } from 'node:fs';
 
 const require = createRequire(import.meta.url);
