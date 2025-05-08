@@ -12,6 +12,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@adobe/css-tools@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "@adobe/css-tools@npm:4.4.2"
+  checksum: 10c0/19433666ad18536b0ed05d4b53fbb3dd6ede266996796462023ec77a90b484890ad28a3e528cdf3ab8a65cb2fcdff5d8feb04db6bc6eed6ca307c40974239c94
+  languageName: node
+  linkType: hard
+
 "@ampproject/remapping@npm:^2.2.0":
   version: 2.3.0
   resolution: "@ampproject/remapping@npm:2.3.0"
@@ -3632,10 +3639,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/patternfly@npm:6.3.0-prerelease.6":
-  version: 6.3.0-prerelease.6
-  resolution: "@patternfly/patternfly@npm:6.3.0-prerelease.6"
-  checksum: 10c0/ceace4e78eaa5b5ea6da6cecf121a5d9c281d423be4a806332af8f90489f1ef80723762a3b3071e78653545ab89e7f9e773cffe215b6251c4eec34dee06dbcab
+"@patternfly/patternfly@npm:6.3.0-prerelease.15":
+  version: 6.3.0-prerelease.15
+  resolution: "@patternfly/patternfly@npm:6.3.0-prerelease.15"
+  checksum: 10c0/833780ce555cd5b8bbf1043fcedd578c4786904bda2766980875cf3cbbe80ed389fc6f76183fd20fc383620f4572c496c4d5eec7dc791a40dc4e03e82e6fe243
   languageName: node
   linkType: hard
 
@@ -3733,7 +3740,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-core@workspace:packages/react-core"
   dependencies:
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.6"
+    "@patternfly/patternfly": "npm:6.3.0-prerelease.15"
     "@patternfly/react-icons": "workspace:^"
     "@patternfly/react-styles": "workspace:^"
     "@patternfly/react-tokens": "workspace:^"
@@ -3754,7 +3761,7 @@ __metadata:
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
     "@patternfly/documentation-framework": "npm:^6.5.20"
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.6"
+    "@patternfly/patternfly": "npm:6.3.0-prerelease.15"
     "@patternfly/patternfly-a11y": "npm:5.1.0"
     "@patternfly/react-charts": "workspace:^"
     "@patternfly/react-code-editor": "workspace:^"
@@ -3794,7 +3801,7 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-regular-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-solid-svg-icons": "npm:^5.15.4"
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.6"
+    "@patternfly/patternfly": "npm:6.3.0-prerelease.15"
     fs-extra: "npm:^11.3.0"
     tslib: "npm:^2.8.1"
   peerDependencies:
@@ -3878,7 +3885,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-styles@workspace:packages/react-styles"
   dependencies:
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.6"
+    "@patternfly/patternfly": "npm:6.3.0-prerelease.15"
     change-case: "npm:^5.4.4"
     fs-extra: "npm:^11.3.0"
   languageName: unknown
@@ -3919,8 +3926,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-tokens@workspace:packages/react-tokens"
   dependencies:
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.6"
-    css: "npm:^3.0.0"
+    "@adobe/css-tools": "npm:^4.4.2"
+    "@patternfly/patternfly": "npm:6.3.0-prerelease.15"
     fs-extra: "npm:^11.3.0"
   languageName: unknown
   linkType: soft

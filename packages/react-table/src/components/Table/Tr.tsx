@@ -14,10 +14,12 @@ export interface TrProps extends Omit<React.HTMLProps<HTMLTableRowElement>, 'onR
   innerRef?: React.Ref<any>;
   /** Flag indicating the Tr is hidden */
   isHidden?: boolean;
-  /** Only applicable to Tr within the Tbody: Makes the row expandable and determines if it's expanded or not.
+  /** Only applicable to Tr within the Tbody and determines if the expandable row content is expanded or not.
    * To prevent column widths from responding automatically when expandable rows are toggled, the width prop must also be passed into either the th or td component
    */
   isExpanded?: boolean;
+  /** Flag to indicate that a row is expandable. Only applicable to a tr that is intended to collapse or expand. */
+  isExpandable?: boolean;
   /** Only applicable to Tr within the Tbody: Whether the row is editable */
   isEditable?: boolean;
   /** Flag which adds hover styles for the clickable table row */
@@ -46,6 +48,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   children,
   className,
   isExpanded,
+  isExpandable,
   isEditable,
   isHidden = false,
   isClickable = false,
@@ -75,7 +78,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
     };
   }
 
-  const rowIsHidden = isHidden || (isExpanded !== undefined && !isExpanded);
+  const rowIsHidden = isHidden || (isExpanded !== undefined && !isExpanded && isExpandable);
 
   const { registerSelectableRow } = useContext(TableContext);
 
@@ -96,7 +99,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
         className={css(
           styles.tableTr,
           className,
-          isExpanded !== undefined && styles.tableExpandableRow,
+          isExpandable !== undefined && styles.tableExpandableRow,
           isExpanded && styles.modifiers.expanded,
           isEditable && inlineStyles.modifiers.inlineEditable,
           isClickable && styles.modifiers.clickable,

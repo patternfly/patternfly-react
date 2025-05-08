@@ -128,7 +128,7 @@ export const TableExpandable: React.FunctionComponent = () => {
   ];
 
   return (
-    <Table aria-label="Simple table">
+    <Table isExpandable aria-label="Simple table">
       <Thead>
         <Tr>
           <Th screenReaderText="Row expansion" />
@@ -141,7 +141,7 @@ export const TableExpandable: React.FunctionComponent = () => {
       </Thead>
       {repositories.map((repo, rowIndex) => (
         <Tbody key={repo.name} isExpanded={isRepoExpanded(repo)}>
-          <Tr>
+          <Tr isExpanded={isRepoExpanded(repo)}>
             <Td
               expand={
                 repo.nestedComponent
@@ -163,7 +163,7 @@ export const TableExpandable: React.FunctionComponent = () => {
             </Td>
           </Tr>
           {repo.nestedComponent ? (
-            <Tr isExpanded={isRepoExpanded(repo)}>
+            <Tr isExpandable isExpanded={isRepoExpanded(repo)}>
               <Td
                 noPadding={repo.noPadding}
                 dataLabel={`${columnNames.name} expended`}
