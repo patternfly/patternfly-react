@@ -16,108 +16,23 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 ## Examples
 ### Basic
-```js
-import { ChartDonut } from '@patternfly/react-charts/victory';
+```ts file = "ChartDonutBasic.tsx"
 
-<div style={{ height: '230px', width: '230px' }}>
-  <ChartDonut
-    ariaDesc="Average number of pets"
-    ariaTitle="Donut chart example"
-    constrainToVisibleArea
-    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    labels={({ datum }) => `${datum.x}: ${datum.y}%`}
-    name="chart1"
-    subTitle="Pets"
-    title="100"
-  />
-</div>
 ```
 
 ### Right aligned legend
-```js
-import { ChartDonut } from '@patternfly/react-charts/victory';
+```ts file = "ChartDonutRightAlignedLegend.tsx"
 
-<div style={{ height: '230px', width: '350px' }}>
-  <ChartDonut
-    ariaDesc="Average number of pets"
-    ariaTitle="Donut chart example"
-    constrainToVisibleArea
-    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    labels={({ datum }) => `${datum.x}: ${datum.y}%`}
-    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    name="chart2"
-    padding={{
-      bottom: 20,
-      left: 20,
-      right: 140, // Adjusted to accommodate legend
-      top: 20
-    }}
-    subTitle="Pets"
-    title="100"
-    width={350}
-  />
-</div>
 ```
 
 ### Multi-color (ordered) with right aligned legend
-```js
-import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts/victory';
+```ts file = "ChartDonutMultiColor.tsx"
 
-<div style={{ height: '230px', width: '350px' }}>
-  <ChartDonut
-    ariaDesc="Average number of pets"
-    ariaTitle="Donut chart example"
-    constrainToVisibleArea
-    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    labels={({ datum }) => `${datum.x}: ${datum.y}%`}
-    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    name="chart3"
-    padding={{
-      bottom: 20,
-      left: 20,
-      right: 140, // Adjusted to accommodate legend
-      top: 20
-    }}
-    subTitle="Pets"
-    title="100"
-    themeColor={ChartThemeColor.multiOrdered}
-    width={350}
-  />
-</div>
 ```
 
 ### Bottom aligned legend
-```js
-import { ChartDonut } from '@patternfly/react-charts/victory';
+```ts file = "ChartDonutBottomAlignedLegend.tsx"
 
-<div style={{ height: '275px', width: '300px' }}>
-  <ChartDonut
-    ariaDesc="Average number of pets"
-    ariaTitle="Donut chart example"
-    constrainToVisibleArea
-    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    donutOrientation="top"
-    height={275}
-    labels={({ datum }) => `${datum.x}: ${datum.y}%`}
-    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-    legendPosition="bottom"
-    legendWidth={225}
-    name="chart4"
-    padding={{
-      bottom: 65, // Adjusted to accommodate legend
-      left: 20,
-      right: 20,
-      top: 20
-    }}
-    subTitle="Pets"
-    title="100"
-    width={300}
-  />
-</div>
 ```
 
 ### Small
