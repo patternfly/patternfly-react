@@ -17,370 +17,51 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 ## Donut utilization examples
 ### Basic
-```js
-import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
+```ts file = "ChartUtilBasic.tsx"
 
-<div style={{ height: '230px', width: '230px' }}>
-  <ChartDonutUtilization
-    ariaDesc="Storage capacity"
-    ariaTitle="Donut utilization chart example"
-    constrainToVisibleArea
-    data={{ x: 'GBps capacity', y: 75 }}
-    labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-    name="chart1"
-    subTitle="of 100 GBps"
-    title="75%"
-  />
-</div>
 ```
 
 ### Right aligned legend
-```js
-import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
+```ts file = "ChartUtilRightAlignedLegend.tsx"
 
-class DonutUtilizationChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      spacer: '',
-      used: 0
-    };
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      const { used } = this.state;
-      const val = (used + 10) % 100;
-      this.setState({
-        spacer: val < 10 ? ' ' : '',
-        used: val
-      });
-    }, 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    const { spacer, used } = this.state;
-    return (
-      <div style={{  height: '230px', width: '435px' }}>
-        <ChartDonutUtilization
-          ariaDesc="Storage capacity"
-          ariaTitle="Donut utilization chart example"
-          constrainToVisibleArea
-          data={{ x: 'GBps capacity', y: used }}
-          labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-          legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
-          legendOrientation="vertical"
-          name="chart2"
-          padding={{
-            bottom: 20,
-            left: 20,
-            right: 225, // Adjusted to accommodate legend
-            top: 20
-          }}
-          subTitle="of 100 GBps"
-          title={`${used}%`}
-          thresholds={[{ value: 60 }, { value: 90 }]}
-          width={435}
-        />
-      </div>
-    );
-  }
-}
 ```
 
 ### Inverted with right aligned legend
-```js
-import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
+```ts file = "ChartUtilInvertedRightLegend.tsx"
 
-class InvertedDonutUtilizationChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      spacer: '',
-      used: 100
-    };
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      const { used } = this.state;
-      const val = (((used - 10) % 100) + 100) % 100;
-      this.setState({
-        spacer: val < 10 ? ' ' : '',
-        used: val
-      });
-    }, 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    const { spacer, used } = this.state;
-    return (
-      <div style={{ height: '230px', width: '435px' }}>
-        <ChartDonutUtilization
-          ariaDesc="Storage capacity"
-          ariaTitle="Donut utilization chart example"
-          constrainToVisibleArea
-          data={{ x: 'GBps capacity', y: used }}
-          invert
-          labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-          legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
-          legendOrientation="vertical"
-          name="chart3"
-          padding={{
-            bottom: 20,
-            left: 20,
-            right: 225, // Adjusted to accommodate legend
-            top: 20
-          }}
-          subTitle="of 100 GBps"
-          title={`${used}%`}
-          thresholds={[{ value: 60 }, { value: 20 }]}
-          width={435}
-        />
-      </div>
-    );
-  }
-}
 ```
 
 ### Right aligned vertical legend
-```js
-import { ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts/victory';
+```ts file = "ChartUtilRightVerticalLegend.tsx"
 
-class VerticalLegendUtilizationChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      spacer: '',
-      used: 0
-    };
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      const { used } = this.state;
-      const val = (used + 10) % 100;
-      this.setState({
-        spacer: val < 10 ? ' ' : '',
-        used: val
-      });
-    }, 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    const { spacer, used } = this.state;
-    return (
-      <div style={{ height: '300px', width: '230px' }}>
-        <ChartDonutUtilization
-          ariaDesc="Storage capacity"
-          ariaTitle="Donut utilization chart example"
-          constrainToVisibleArea
-          data={{ x: 'Storage capacity', y: used }}
-          height={300}
-          labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-          legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
-          legendOrientation="vertical"
-          legendPosition="bottom"
-          name="chart4"
-          padding={{
-            bottom: 75, // Adjusted to accommodate legend
-            left: 20,
-            right: 20,
-            top: 20
-          }}
-          subTitle="of 100 GBps"
-          title={`${used}%`}
-          themeColor={ChartThemeColor.green}
-          thresholds={[{ value: 60 }, { value: 90 }]}
-          width={230}
-        />
-      </div>
-    );
-  }
-}
 ```
 
 ### Bottom aligned legend
-```js
-import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
+```ts file = "ChartUtilBottomAlignedLegend.tsx"
 
-<div style={{ height: '275px', width: '300px' }}>
-  <ChartDonutUtilization
-    ariaDesc="Storage capacity"
-    ariaTitle="Donut utilization chart example"
-    constrainToVisibleArea
-    data={{ x: 'Storage capacity', y: 45 }}
-    height={275}
-    labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-    legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
-    legendPosition="bottom"
-    name="chart5"
-    padding={{
-      bottom: 65, // Adjusted to accommodate legend
-      left: 20,
-      right: 20,
-      top: 20
-    }}
-    subTitle="of 100 GBps"
-    title="45%"
-    thresholds={[{ value: 60 }, { value: 90 }]}
-    width={300}
-  />
-</div>
 ```
 
 ### Small
-```js
-import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
+```ts file = "ChartUtilSmall.tsx"
 
-<div style={{ height: '175px', width: '175px' }}>
-  <ChartDonutUtilization
-    ariaDesc="Storage capacity"
-    ariaTitle="Donut utilization chart example"
-    constrainToVisibleArea
-    data={{ x: 'Storage capacity', y: 75 }}
-    height={175}
-    labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-    name="chart6"
-    subTitle="of 100 GBps"
-    title="75%"
-    width={175}
-  />
-</div>
 ```
 
 ### Small with right aligned legend
-```js
-import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
+```ts file = "ChartUtilSmallRightLegend.tsx"
 
-class UtilizationChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      spacer: '',
-      used: 0
-    };
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      const { used } = this.state;
-      const val = (used + 10) % 100;
-      this.setState({
-        spacer: val < 10 ? ' ' : '',
-        used: val
-      });
-    }, 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    const { spacer, used } = this.state;
-    return (
-      <div style={{ width: '350px', height: '175px' }}>
-        <ChartDonutUtilization
-          ariaDesc="Storage capacity"
-          ariaTitle="Donut utilization chart example"
-          constrainToVisibleArea
-          data={{ x: 'Storage capacity', y: used }}
-          height={175}
-          labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-          legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
-          legendOrientation="vertical"
-          name="chart7"
-          padding={{
-            bottom: 20,
-            left: 20,
-            right: 195, // Adjusted to accommodate legend
-            top: 20
-          }}
-          subTitle="of 100 GBps"
-          title={`${used}%`}
-          thresholds={[{ value: 60 }, { value: 90 }]}
-          width={350}
-        />
-      </div>
-    );
-  }
-}
 ```
 
 ### Small with bottom aligned subtitle
 
 This is a small donut utilization chart with bottom aligned legend and right aligned subtitle.
 
-```js
-import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
+```ts file = "ChartUtilSmallBottomSubtitle.tsx"
 
-<div style={{ height: '185px', width: '350px' }}>
-  <ChartDonutUtilization
-    ariaDesc="Storage capacity"
-    ariaTitle="Donut utilization chart example"
-    constrainToVisibleArea
-    data={{ x: 'Storage capacity', y: 45 }}
-    height={185}
-    labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-    legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
-    legendOrientation="vertical"
-    name="chart8"
-    padding={{
-      bottom: 25, // Adjusted to accommodate subTitle
-      left: 20,
-      right: 195, // Adjusted to accommodate legend
-      top: 20
-    }}
-    subTitle="of 100 GBps"
-    subTitlePosition="bottom"
-    title="45%"
-    thresholds={[{ value: 60 }, { value: 90 }]}
-    width={350}
-  />
-</div>
 ```
 
 ### Small with right aligned subtitle
-```js
-import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
+```ts file = "ChartUtilSmallRightSubtitle.tsx"
 
-<div style={{ height: '200px', width: '350px' }}>
-  <ChartDonutUtilization
-    ariaDesc="Storage capacity"
-    ariaTitle="Donut utilization chart example"
-    constrainToVisibleArea
-    data={{ x: 'Storage capacity', y: 45 }}
-    height={200}
-    labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-    legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
-    legendPosition="bottom"
-    name="chart9"
-    padding={{
-      bottom: 45, // Adjusted to accommodate legend
-      left: 20,
-      right: 20,
-      top: 20
-    }}
-    subTitle="of 100 GBps"
-    subTitlePosition="right"
-    title="45%"
-    thresholds={[{ value: 60 }, { value: 90 }]}
-    width={350}
-  />
-</div>
 ```
 
 ## Donut utilization threshold examples
