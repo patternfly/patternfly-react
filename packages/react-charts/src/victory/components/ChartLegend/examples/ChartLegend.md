@@ -53,221 +53,29 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 ## Examples
 ### Basic with right aligned legend
-```js
-import { ChartDonut } from '@patternfly/react-charts/victory';
+```ts file = "ChartLegendBasicRightLegend.tsx"
 
-<div style={{ height: '230px', width: '350px' }}>
-  <ChartDonut
-    ariaDesc="Average number of pets"
-    ariaTitle="Donut chart example"
-    constrainToVisibleArea
-    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    labels={({ datum }) => `${datum.x}: ${datum.y}%`}
-    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    name="chart1"
-    padding={{
-      bottom: 20,
-      left: 20,
-      right: 140, // Adjusted to accommodate legend
-      top: 20
-    }}
-    subTitle="Pets"
-    title="100"
-    width={350}
-  />
-</div>
 ```
 
 ### Bottom aligned legend
-```js
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+```ts file = "ChartLegendBottomAlignedLegend.tsx"
 
-<div style={{ height: '275px', width: '450px' }}>
-  <Chart
-    ariaDesc="Average number of pets"
-    ariaTitle="Bar chart example"
-    containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-    domainPadding={{ x: [30, 25] }}
-    legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
-    legendPosition="bottom"
-    height={275}
-    name="chart2"
-    padding={{
-      bottom: 75, // Adjusted to accommodate legend
-      left: 50,
-      right: 50,
-      top: 50
-    }}
-    themeColor={ChartThemeColor.purple}
-    width={450}
-  >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
-    <ChartGroup offset={11}>
-      <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
-      <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
-      <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
-      <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
-    </ChartGroup>
-  </Chart>
-</div>
 ```
 
 ### Responsive bottom-left aligned legend
 
 This demonstrates a responsive legend which wraps when items are wider than its container.
 
-```js
-import { ChartBullet } from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
+```ts file = "ChartLegendResponsiveBottomLeft.tsx"
 
-class BulletChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = createRef();
-    this.observer = () => {};
-    this.state = {
-      extraHeight: 0,
-      width: 0
-    };
-    this.handleResize = () => {
-      if (this.containerRef.current && this.containerRef.current.clientWidth) {
-        this.setState({ width: this.containerRef.current.clientWidth });
-      }
-    };
-    this.handleLegendAllowWrap = (extraHeight) => {
-      if (extraHeight !== this.state.extraHeight) {
-        this.setState({ extraHeight });
-      }
-    }
-    this.getHeight = (baseHeight) => {
-      const { extraHeight } = this.state;
-      return baseHeight + extraHeight;
-    };
-  }
-
-  componentDidMount() {
-    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
-    this.handleResize();
-  }
-
-  componentWillUnmount() {
-    this.observer();
-  }
-
-  render() {
-    const { width } = this.state;
-    const height = this.getHeight(200);
-    return (
-      <div ref={this.containerRef} style={{ height: height + "px" }}>
-        <ChartBullet
-          ariaDesc="Storage capacity"
-          ariaTitle="Bullet chart example"
-          comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
-          comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-          constrainToVisibleArea
-          height={height}
-          labels={({ datum }) => `${datum.name}: ${datum.y}`}
-          legendAllowWrap={this.handleLegendAllowWrap}
-          legendPosition="bottom-left"
-          maxDomain={{y: 100}}
-          name="chart3"
-          padding={{
-            bottom: 50,
-            left: 50,
-            right: 50,
-            top: 100 // Adjusted to accommodate labels
-          }}
-          primarySegmentedMeasureData={[{ name: 'Measure', y: 25 }, { name: 'Measure', y: 60 }]}
-          primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
-          qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
-          qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-          subTitle="Measure details"
-          title="Text label"
-          titlePosition="top-left"
-          width={width}
-        />
-      </div>
-    );
-  }
-}
 ```
 
 ### Standalone legend
 
 This demonstrates a standalone legend vs. using the `legendData` property.
 
-```js
-import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+```ts file = "ChartLegendStandalone.tsx"
 
-<div style={{ height: '275px', width: '450px' }}>
-  <Chart
-    ariaDesc="Average number of pets"
-    ariaTitle="Line chart example"
-    containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-    height={275}
-    maxDomain={{y: 10}}
-    minDomain={{y: 0}}
-    name="chart4"
-    padding={{
-      bottom: 75, // Adjusted to accommodate legend
-      left: 50,
-      right: 50,
-      top: 50
-    }}
-    themeColor={ChartThemeColor.green}
-    width={450}
-  >
-    <ChartAxis tickValues={[2, 3, 4]} />
-    <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
-    <ChartGroup>
-      <ChartLine
-        data={[
-          { name: 'Cats', x: '2015', y: 1 },
-          { name: 'Cats', x: '2016', y: 2 },
-          { name: 'Cats', x: '2017', y: 5 },
-          { name: 'Cats', x: '2018', y: 3 }
-        ]}
-      />
-      <ChartLine
-        data={[
-          { name: 'Dogs', x: '2015', y: 2 },
-          { name: 'Dogs', x: '2016', y: 1 },
-          { name: 'Dogs', x: '2017', y: 7 },
-          { name: 'Dogs', x: '2018', y: 4 }
-        ]}
-        style={{
-          data: {
-            strokeDasharray: '3,3'
-          }
-        }}
-      />
-      <ChartLine
-        data={[
-          { name: 'Birds', x: '2015', y: 3 },
-          { name: 'Birds', x: '2016', y: 4 },
-          { name: 'Birds', x: '2017', y: 9 },
-          { name: 'Birds', x: '2018', y: 5 }
-        ]}
-      />
-      <ChartLine
-        data={[
-          { name: 'Mice', x: '2015', y: 3 },
-          { name: 'Mice', x: '2016', y: 3 },
-          { name: 'Mice', x: '2017', y: 8 },
-          { name: 'Mice', x: '2018', y: 7 }
-        ]}
-      />
-    </ChartGroup>
-    <ChartLegend 
-      data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
-      x={80}
-      y={235}
-    />
-  </Chart>
-</div>
 ```
 
 ### Interactive legend
