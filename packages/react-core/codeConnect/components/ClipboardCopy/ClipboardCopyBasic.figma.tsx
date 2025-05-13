@@ -19,6 +19,6 @@ figma.connect(
 
       children: figma.children('*')
     },
-    example: (props) => <ClipboardCopy children={props.children} /
+    example: (props) => <ClipboardCopy children={props.children} />
   }
 );
