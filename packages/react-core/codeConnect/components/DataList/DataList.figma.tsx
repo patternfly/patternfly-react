@@ -1,5 +1,5 @@
-import { DataList } from "@patternfly/react-core"
-import figma from "@figma/code-connect"
+import { DataList } from '@patternfly/react-core'
+import figma from '@figma/code-connect'
 
 figma.connect(
   DataList,

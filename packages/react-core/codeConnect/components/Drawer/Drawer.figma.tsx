@@ -3,7 +3,6 @@ import { Drawer } from '@patternfly/react-core';
 
 /**
  * PatternFly Drawer component integration for Figma Code Connect
- * @see https://www.patternfly.org/components/drawer
  */
 
 figma.connect(

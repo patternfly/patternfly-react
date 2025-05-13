@@ -25,8 +25,14 @@ figma.connect(
         Text: 'text',
         'Component swap': 'component-swap',
         'Icon + Text': 'icon---text'
-      })
+      }),
+
+      children: figma.children('*')
     },
-    example: (props) => <DescriptionListGroup />
+    example: (props) => (
+      <DescriptionListGroup swapLabel={props.swapLabel} content={props.content} type={props.type} contentType={props.contentType}>
+        {props.children}
+      </DescriptionListGroup>
+    )
   }
 );
