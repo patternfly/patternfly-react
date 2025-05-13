@@ -22,7 +22,12 @@ figma.connect(
       })
     },
     example: (props) => (
-      <Avatar alt="Avatar" src="/assets/images/avatar.svg" isBordered={props.isBordered} size={props.size} />
+      <Avatar
+        alt="Avatar"
+        src="/assets/images/avatar.svg"
+        isBordered={props.isBordered}
+        size={props.size}
+      />
     )
   }
 );
