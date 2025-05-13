@@ -67,6 +67,8 @@ test('renders default truncation', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
+// If this snapshot fails and the output text doesn't seem like it's changed, it most likely
+// is due to the &lrm; HTML entity isn't rendering correctly.
 test('renders start truncation with &lrm; at start and end', () => {
   const { asFragment } = render(
     <Truncate
