@@ -24,6 +24,11 @@ figma.connect(
         false: undefined
       })
     },
-    example: (props) => <Banner color={props.color}>{props.icon}{props.text}</Banner>
+    example: (props) => (
+      <Banner color={props.color}>
+        {props.icon}
+        {props.text}
+      </Banner>
+    )
   }
 );

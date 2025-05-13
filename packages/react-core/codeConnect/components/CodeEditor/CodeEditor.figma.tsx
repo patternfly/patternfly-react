@@ -17,7 +17,7 @@ figma.connect(
       hasRuler: figma.boolean('Ruler'),
       hasRulerErrors: figma.boolean('Rule'),
       hasShortcuts: figma.boolean('With Shortcuts', { true: 'View Shortcuts' }),
-      showsLineNumbers: figma.boolean('Show Line Numbers'),
+      showsLineNumbers: figma.boolean('Show Line Numbers')
     },
     example: (props) => (
       <CodeEditor
