@@ -1,5 +1,5 @@
 import { render, screen, within } from '@testing-library/react';
-import { Truncate } from '../Truncate';
+import { Truncate, TruncatePosition } from '../Truncate';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import '@testing-library/jest-dom';
 
@@ -67,7 +67,9 @@ test('renders default truncation', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('renders start truncation with &lrm; at end', () => {
+// If this snapshot fails and the output text doesn't seem like it's changed, it most likely
+// is due to the &lrm; HTML entity isn't rendering correctly.
+test('renders start truncation with &lrm; at start and end', () => {
   const { asFragment } = render(
     <Truncate
       content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
