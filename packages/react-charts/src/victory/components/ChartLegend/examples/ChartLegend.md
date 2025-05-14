@@ -20,7 +20,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { cloneElement, createRef, useEffect, useRef, useState } from 'react';
+import { cloneElement, useEffect, useRef, useState } from 'react';
 import { 
   Chart,
   ChartArea,

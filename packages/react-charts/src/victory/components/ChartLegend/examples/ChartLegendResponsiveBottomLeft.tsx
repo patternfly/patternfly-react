@@ -1,5 +1,6 @@
 import { ChartBullet } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
+import { useRef, useState, useEffect } from 'react';
 
 interface Data {
   name?: string;
@@ -7,9 +8,9 @@ interface Data {
 }
 
 export const ChartLegendResponsiveBottomLeft: React.FunctionComponent = () => {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const [extraHeight, setExtraHeight] = React.useState(0);
-  const [width, setWidth] = React.useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [extraHeight, setExtraHeight] = useState(0);
+  const [width, setWidth] = useState(0);
 
   const handleResize = () => {
     if (containerRef.current && containerRef.current.clientWidth) {
@@ -25,7 +26,7 @@ export const ChartLegendResponsiveBottomLeft: React.FunctionComponent = () => {
 
   const getHeight = (baseHeight: number) => baseHeight + extraHeight;
 
-  React.useEffect(() => {
+  useEffect(() => {
     const observer = getResizeObserver(containerRef.current, handleResize);
     handleResize();
 

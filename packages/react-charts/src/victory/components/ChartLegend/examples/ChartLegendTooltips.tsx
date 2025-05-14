@@ -1,5 +1,6 @@
 import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
 import { Tooltip } from '@patternfly/react-core';
+import { useRef } from 'react';
 
 interface PetData {
   x: string;
@@ -12,15 +13,18 @@ export const ChartLegendTooltips: React.FunctionComponent = () => {
     { x: 'Dogs', y: 55 },
     { x: 'Birds', y: 10 }
   ];
-  const ref = React.useRef(null);
+
   // Custom legend label component
   // Note: Tooltip wraps children with a div tag, so we use a reference to ChartLabel instead
-  const LegendLabel = ({ datum, ...rest }) => (
-    <g ref={ref}>
-      <ChartLabel {...rest} />
-      <Tooltip content={datum.name} enableFlip triggerRef={ref} />
-    </g>
-  );
+  const LegendLabel = ({ datum, ...rest }) => {
+    const ref = useRef(null);
+    return (
+      <g ref={ref}>
+        <ChartLabel {...rest} />
+        <Tooltip content={datum.name} enableFlip triggerRef={ref} />
+      </g>
+    );
+  };
 
   // Custom legend component
   const getLegend = (legendData) => <ChartLegend data={legendData} labelComponent={<LegendLabel />} />;

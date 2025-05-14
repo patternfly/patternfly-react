@@ -6,9 +6,10 @@ import {
   getInteractiveLegendEvents,
   getInteractiveLegendItemStyles
 } from '@patternfly/react-charts/victory';
+import { useState } from 'react';
 
 export const ChartLegendInteractivePieChart: React.FunctionComponent = () => {
-  const [hiddenSeries, setHiddenSeries] = React.useState<Set<number>>(new Set());
+  const [hiddenSeries, setHiddenSeries] = useState<Set<number>>(new Set());
 
   const series = [
     {

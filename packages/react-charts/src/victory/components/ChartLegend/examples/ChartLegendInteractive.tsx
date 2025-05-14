@@ -12,11 +12,12 @@ import {
   getInteractiveLegendItemStyles
 } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
+import { useRef, useState, useEffect } from 'react';
 
 export const ChartLegendInteractive: React.FunctionComponent = () => {
-  const containerRef = React.useRef(null);
-  const [hiddenSeries, setHiddenSeries] = React.useState(new Set());
-  const [width, setWidth] = React.useState(0);
+  const containerRef = useRef(null);
+  const [hiddenSeries, setHiddenSeries] = useState(new Set());
+  const [width, setWidth] = useState(0);
 
   const series = [
     {
