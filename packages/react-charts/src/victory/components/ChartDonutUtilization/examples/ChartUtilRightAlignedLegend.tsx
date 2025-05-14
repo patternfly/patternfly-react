@@ -1,4 +1,5 @@
 import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
+import { useEffect, useState } from 'react';
 
 interface UsageData {
   x?: string;
@@ -7,10 +8,10 @@ interface UsageData {
 }
 
 export const ChartUtilRightAlignedLegend: React.FunctionComponent = () => {
-  const [spacer, setSpacer] = React.useState('');
-  const [used, setUsed] = React.useState(0);
+  const [spacer, setSpacer] = useState('');
+  const [used, setUsed] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setUsed((prevUsed) => {
         const val = (prevUsed + 10) % 100;
