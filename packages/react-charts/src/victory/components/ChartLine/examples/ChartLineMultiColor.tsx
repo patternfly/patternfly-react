@@ -1,5 +1,6 @@
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
+import { useRef, useState } from 'react';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
 interface PetData {
@@ -10,8 +11,8 @@ interface PetData {
 }
 
 export const ChartLineMultiColor: React.FunctionComponent = () => {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const [width, setWidth] = React.useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
 
   const handleResize = () => {
     if (containerRef.current && containerRef.current.clientWidth) {
