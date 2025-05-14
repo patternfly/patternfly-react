@@ -5,7 +5,6 @@ cssPrefix: pf-v6-c-truncate
 propComponents: [Truncate]
 ---
 
-import { useRef } from 'react';
 import './TruncateExamples.css';
 
 ## Examples
@@ -55,6 +54,8 @@ Truncating based on a maximum amount of characters will truncate the content at 
 ```
 
 ### With links
+
+To truncate link text, you can pass the `href` property in.
 
 ```ts file="./TruncateLinks.tsx"
 

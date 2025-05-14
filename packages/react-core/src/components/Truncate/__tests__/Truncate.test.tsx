@@ -19,6 +19,24 @@ global.ResizeObserver = jest.fn().mockImplementation(() => ({
   disconnect: jest.fn()
 }));
 
+test('Renders with span wrapper by default', () => {
+  render(<Truncate content={''} data-testid="test-id" />);
+
+  expect(screen.getByTestId('test-id').tagName).toBe('SPAN');
+});
+
+test('Renders with anchor wrapper when href prop is passed', () => {
+  render(<Truncate content={'Link content'} href="#" />);
+
+  expect(screen.getByRole('link')).toHaveTextContent('Link content');
+});
+
+test('Passes href to anchor when href prop is passed', () => {
+  render(<Truncate content={'Link content'} href="#home" />);
+
+  expect(screen.getByRole('link')).toHaveAttribute('href', '#home');
+});
+
 test(`renders with class ${styles.truncate}`, () => {
   render(<Truncate content={''} aria-label="test-id" />);
 
@@ -143,6 +161,12 @@ test('renders tooltip content', () => {
   const input = screen.getByText('Test Another Tooltip');
 
   expect(input).toBeVisible();
+});
+
+test('Renders with additional tooltip props spread', () => {
+  render(<Truncate content={''} tooltipProps={{ distance: 32 }} />);
+
+  expect(screen.getByTestId('Tooltip-mock')).toHaveAttribute('distance', '32');
 });
 
 test('renders with inherited element props spread to the component', () => {
