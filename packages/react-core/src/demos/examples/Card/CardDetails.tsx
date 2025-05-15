@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import {
   Card,
   CardTitle,
@@ -12,10 +11,10 @@ import {
   DescriptionListDescription,
   Divider
 } from '@patternfly/react-core';
-import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 export const CardDetailsDemo: React.FunctionComponent = () => (
-  <Gallery hasGutter style={{ [l_gallery_GridTemplateColumns_min.name]: '260px' } as React.CSSProperties}>
+  <Gallery hasGutter style={{ [cssGridTemplateColumnsMin.name]: '260px' } as React.CSSProperties}>
     <Card>
       <CardTitle>
         <Title headingLevel="h4" size="xl">

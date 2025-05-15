@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import chart_theme_orange_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_orange_ColorScale_100';
 import chart_theme_orange_ColorScale_200 from '@patternfly/react-tokens/dist/esm/chart_theme_orange_ColorScale_200';
 import chart_theme_orange_ColorScale_300 from '@patternfly/react-tokens/dist/esm/chart_theme_orange_ColorScale_300';

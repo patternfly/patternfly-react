@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import chart_donut_threshold_second_Color from '@patternfly/react-tokens/dist/esm/chart_donut_threshold_second_Color';
 import chart_donut_threshold_third_Color from '@patternfly/react-tokens/dist/esm/chart_donut_threshold_third_Color';
 import chart_donut_threshold_first_Color from '@patternfly/react-tokens/dist/esm/chart_donut_threshold_first_Color';

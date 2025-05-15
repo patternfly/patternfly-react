@@ -1,6 +1,5 @@
 import { getComputedStyleValue } from './styles';
 
-// eslint-disable-next-line camelcase
 import chart_echarts_BackgroundColor from '@patternfly/react-tokens/dist/esm/chart_echarts_BackgroundColor';
 
 const enum SymbolType {

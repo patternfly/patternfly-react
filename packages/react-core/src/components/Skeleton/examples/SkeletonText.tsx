@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import { Skeleton } from '@patternfly/react-core';
-/* eslint-disable camelcase */
 import t_global_font_size_4xl from '@patternfly/react-tokens/dist/esm/t_global_font_size_4xl';
 import t_global_font_size_3xl from '@patternfly/react-tokens/dist/esm/t_global_font_size_3xl';
 import t_global_font_size_2xl from '@patternfly/react-tokens/dist/esm/t_global_font_size_2xl';

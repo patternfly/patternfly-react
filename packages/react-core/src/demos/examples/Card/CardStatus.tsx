@@ -1,5 +1,4 @@
 import { useState } from 'react';
-/* eslint-disable camelcase */
 import {
   Alert,
   Card,

@@ -8,7 +8,7 @@ propComponents:
 
 import { useState } from 'react';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import c_page_section_m_limit_width_MaxWidth from '@patternfly/react-tokens/dist/esm/c_page_section_m_limit_width_MaxWidth';
+import pageSectionWidthLimitMaxWidth from '@patternfly/react-tokens/dist/esm/c_page_section_m_limit_width_MaxWidth';
 
 ## Examples
 

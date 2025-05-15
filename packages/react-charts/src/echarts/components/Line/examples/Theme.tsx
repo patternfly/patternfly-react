@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { FunctionComponent } from 'react';
 import { getComputedStyleValue, getCustomTheme, Charts, ThemeColor } from '@patternfly/react-charts/echarts';
 
