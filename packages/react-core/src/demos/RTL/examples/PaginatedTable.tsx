@@ -82,6 +82,15 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
     translation.table.columns.url
   ];
 
+  const generateRowsFromTranslation = (translation: Translation): Row[] =>
+    rows.map((row, index) => ({
+      name: `${translation.table.rows.node}${index + 1}`,
+      status: translation.table.rows.status[row.status],
+      location: translation.table.rows.locations[row.location],
+      lastModified: translation.table.rows.lastModified[row.lastModified],
+      url: row.url
+    }));
+
   const [paginatedRows, setPaginatedRows] = useState<Row[]>(rows.slice(0, 10));
   const [isDirRTL, setIsDirRTL] = useState<boolean>(false);
 
@@ -93,7 +102,8 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
   };
 
   useEffect(() => {
-    setPaginatedRows(rows.slice((page - 1) * perPage, page * perPage));
+    const fullRows = generateRowsFromTranslation(translation);
+    setPaginatedRows(fullRows.slice((page - 1) * perPage, page * perPage));
   }, [translation]);
 
   useEffect(() => {
@@ -110,7 +120,8 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
     startIdx: number | undefined,
     endIdx: number | undefined
   ) => {
-    setPaginatedRows(rows.slice(startIdx, endIdx));
+    const fullRows = generateRowsFromTranslation(translation);
+    setPaginatedRows(fullRows.slice(startIdx, endIdx));
     setPage(newPage);
   };
 
@@ -121,7 +132,8 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
     startIdx: number | undefined,
     endIdx: number | undefined
   ) => {
-    setPaginatedRows(rows.slice(startIdx, endIdx));
+    const fullRows = generateRowsFromTranslation(translation);
+    setPaginatedRows(fullRows.slice(startIdx, endIdx));
     setPerPage(newPerPage);
   };
 
