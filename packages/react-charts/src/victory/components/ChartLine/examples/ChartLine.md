@@ -11,7 +11,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { createRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
 import { VictoryZoomContainer } from 'victory-zoom-container';
@@ -23,274 +23,24 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 ## Examples
 ### Basic with right aligned legend
-```js
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+```ts file = "ChartLineBasicRightLegend.tsx"
 
-<div style={{ height: '250px', width: '600px' }}>
-  <Chart
-    ariaDesc="Average number of pets"
-    ariaTitle="Line chart example"
-    containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-    legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    height={250}
-    maxDomain={{y: 10}}
-    minDomain={{y: 0}}
-    name="chart1"
-    padding={{
-      bottom: 50,
-      left: 50,
-      right: 200, // Adjusted to accommodate legend
-      top: 50
-    }}
-    width={600}
-  >
-    <ChartAxis tickValues={[2, 3, 4]} />
-    <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
-    <ChartGroup>
-      <ChartLine
-        data={[
-          { name: 'Cats', x: '2015', y: 1 },
-          { name: 'Cats', x: '2016', y: 2 },
-          { name: 'Cats', x: '2017', y: 5 },
-          { name: 'Cats', x: '2018', y: 3 }
-        ]}
-      />
-      <ChartLine
-        data={[
-          { name: 'Dogs', x: '2015', y: 2 },
-          { name: 'Dogs', x: '2016', y: 1 },
-          { name: 'Dogs', x: '2017', y: 7 },
-          { name: 'Dogs', x: '2018', y: 4 }
-        ]}
-        style={{
-          data: {
-            strokeDasharray: '3,3'
-          }
-        }}
-      />
-      <ChartLine
-        data={[
-          { name: 'Birds', x: '2015', y: 3 },
-          { name: 'Birds', x: '2016', y: 4 },
-          { name: 'Birds', x: '2017', y: 9 },
-          { name: 'Birds', x: '2018', y: 5 }
-        ]}
-      />
-      <ChartLine
-        data={[
-          { name: 'Mice', x: '2015', y: 3 },
-          { name: 'Mice', x: '2016', y: 3 },
-          { name: 'Mice', x: '2017', y: 8 },
-          { name: 'Mice', x: '2018', y: 7 }
-        ]}
-      />
-    </ChartGroup>
-  </Chart>
-</div>
 ```
 
 ### Green with bottom aligned legend
 
 This demonstrates how to combine cursor and voronoi containers to display tooltips along with a cursor.
 
-```js
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, createContainer } from '@patternfly/react-charts/victory';
+```ts file = "ChartLineGreenBottomLegend.tsx"
 
-class BottomAlignedLegend extends React.Component {
-  render() {
-    // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
-    const legendData = [{ childName: 'cats', name: 'Cats' }, { childName: 'dogs', name: 'Dogs', symbol: { type: 'dash' }}, { childName: 'birds', name: 'Birds' }, { childName: 'mice', name: 'Mice' }];
-
-    return (
-      <div style={{ height: '275px', width: '450px' }}>
-        <Chart
-          ariaDesc="Average number of pets"
-          ariaTitle="Line chart example"
-          containerComponent={
-            <CursorVoronoiContainer
-              cursorDimension="x"
-              labels={({ datum }) => `${datum.y}`}
-              labelComponent={<ChartLegendTooltip legendData={legendData} title={(datum) => datum.x}/>}
-              mouseFollowTooltips
-              voronoiDimension="x"
-              voronoiPadding={50}
-            />
-          }
-          legendData={legendData}
-          legendPosition="bottom"
-          height={275}
-          maxDomain={{y: 10}}
-          minDomain={{y: 0}}
-          name="chart2"
-          padding={{
-            bottom: 75, // Adjusted to accommodate legend
-            left: 50,
-            right: 50,
-            top: 50
-          }}
-          themeColor={ChartThemeColor.green}
-          width={450}
-        >
-          <ChartAxis tickValues={[2, 3, 4]} />
-          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
-          <ChartGroup>
-            <ChartLine
-              data={[
-                { x: '2015', y: 1 },
-                { x: '2016', y: 2 },
-                { x: '2017', y: 5 },
-                { x: '2018', y: 3 }
-              ]}
-              name="cats"
-            />
-            <ChartLine
-              data={[
-                { x: '2015', y: 2 },
-                { x: '2016', y: 1 },
-                { x: '2017', y: 7 },
-                { x: '2018', y: 4 }
-              ]}
-              name="dogs"
-              style={{
-                data: {
-                  strokeDasharray: '3,3'
-                }
-              }}
-            />
-            <ChartLine
-              data={[
-                { x: '2015', y: 3 },
-                { x: '2016', y: 4 },
-                { x: '2017', y: 9 },
-                { x: '2018', y: 5 }
-              ]}
-              name="birds"
-            />
-            <ChartLine
-              data={[
-                { x: '2015', y: 3 },
-                { x: '2016', y: 3 },
-                { x: '2017', y: 8 },
-                { x: '2018', y: 7 }
-              ]}
-              name="mice"
-            />
-          </ChartGroup>
-        </Chart>
-      </div>
-    );
-  }
-}
 ```
 
 ### Multi-color (unordered) with responsive container
 
 This demonstrates zoom for the x axis only.
 
-```js
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
-import { VictoryZoomContainer } from 'victory-zoom-container';
+```ts file = "ChartLineMultiColor.tsx"
 
-class MultiColorChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = createRef();
-    this.observer = () => {};
-    this.state = {
-      width: 0
-    };
-    this.handleResize = () => {
-      if (this.containerRef.current && this.containerRef.current.clientWidth) {
-        this.setState({ width: this.containerRef.current.clientWidth });
-      }
-    };
-  }
-
-  componentDidMount() {
-    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
-    this.handleResize();
-  }
-
-  componentWillUnmount() {
-    this.observer();
-  }
-
-  render() {
-    const { width } = this.state;
-    
-    return (
-      <div ref={this.containerRef}>
-        <div style={{ height: '275px' }}>
-          <Chart
-            ariaDesc="Average number of pets"
-            ariaTitle="Line chart example"
-            containerComponent={<VictoryZoomContainer zoomDimension="x" />}
-            legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
-            legendPosition="bottom-left"
-            height={275}
-            maxDomain={{y: 10}}
-            minDomain={{y: 0}}
-            name="chart3"
-            padding={{
-              bottom: 75, // Adjusted to accommodate legend
-              left: 50,
-              right: 50,
-              top: 50
-            }}
-            themeColor={ChartThemeColor.multiUnordered}
-            width={width}
-           >
-            <ChartAxis tickValues={[2, 3, 4]} />
-            <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
-            <ChartGroup>
-              <ChartLine
-                data={[
-                  { name: 'Cats', x: '2015', y: 1 },
-                  { name: 'Cats', x: '2016', y: 2 },
-                  { name: 'Cats', x: '2017', y: 5 },
-                  { name: 'Cats', x: '2018', y: 3 }
-                ]}
-              />
-              <ChartLine
-                data={[
-                  { name: 'Dogs', x: '2015', y: 2 },
-                  { name: 'Dogs', x: '2016', y: 1 },
-                  { name: 'Dogs', x: '2017', y: 7 },
-                  { name: 'Dogs', x: '2018', y: 4 }
-                ]}
-                style={{
-                  data: {
-                    strokeDasharray: '3,3'
-                  }
-                }}
-              />
-              <ChartLine
-                data={[
-                  { name: 'Birds', x: '2015', y: 3 },
-                  { name: 'Birds', x: '2016', y: 4 },
-                  { name: 'Birds', x: '2017', y: 9 },
-                  { name: 'Birds', x: '2018', y: 5 }
-                ]}
-              />
-              <ChartLine
-                data={[
-                  { name: 'Mice', x: '2015', y: 3 },
-                  { name: 'Mice', x: '2016', y: 3 },
-                  { name: 'Mice', x: '2017', y: 8 },
-                  { name: 'Mice', x: '2018', y: 7 }
-                ]}
-              />
-            </ChartGroup>
-          </Chart>
-        </div>
-      </div>
-    );
-  }
-}
 ```
 
 ## Documentation
