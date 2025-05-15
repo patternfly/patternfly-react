@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.3.0-prerelease.9...@patternfly/react-templates@6.3.0-prerelease.10) (2025-05-15)
+
+### Features
+
+- **MultiTypeaheadSelect:** add initialInputValue prop ([#11791](https://github.com/patternfly/patternfly-react/issues/11791)) ([74cbea5](https://github.com/patternfly/patternfly-react/commit/74cbea5188bcae663aadcc0cae0e76cc6e242a5a))
+
 # [6.3.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.3.0-prerelease.8...@patternfly/react-templates@6.3.0-prerelease.9) (2025-05-15)
 
 **Note:** Version bump only for package @patternfly/react-templates
