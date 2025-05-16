@@ -100,8 +100,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   const [scrollItems, setScrollItems] = useState(hasScrollSpy ? getScrollItems(children, []) : []);
   const [activeIndex, setActiveIndex] = useState(activeIndexProp);
   const [isExpanded, setIsExpanded] = useState(isExpandedProp);
-  // Boolean to disable scroll listener from overriding active state of clicked jumplink
-  const isLinkClicked = useRef(false);
+  const ignoreScrollSpyUntil = useRef<number | null>(null);
   const navRef = useRef<HTMLElement>(undefined);
 
   let scrollableElement: HTMLElement;
@@ -123,11 +122,13 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
     if (!canUseDOM || !hasScrollSpy || !(scrollableElement instanceof HTMLElement)) {
       return;
     }
-    if (isLinkClicked.current) {
-      isLinkClicked.current = false;
+
+    const now = performance.now();
+    // Ignore scrolls while smooth scrolling is in progress
+    if (ignoreScrollSpyUntil.current && now < ignoreScrollSpyUntil.current) {
       return;
     }
-    const scrollPosition = Math.ceil(scrollableElement.scrollTop + offset);
+
     window.requestAnimationFrame(() => {
       let newScrollItems = scrollItems;
       // Items might have rendered after this component or offsetTop values may need
@@ -138,21 +139,8 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
         newScrollItems = getScrollItems(children, []);
         setScrollItems(newScrollItems);
       }
-
-      const scrollElements = newScrollItems
-        .map((e, index) => ({
-          y: e ? e.offsetTop : null,
-          index
-        }))
-        .filter(({ y }) => y !== null)
-        .sort((e1, e2) => e2.y - e1.y);
-      for (const { y, index } of scrollElements) {
-        if (scrollPosition >= y) {
-          return setActiveIndex(index);
-        }
-      }
     });
-  }, [scrollItems, hasScrollSpy, scrollableElement, offset]);
+  }, [scrollItems, hasScrollSpy, scrollableElement, children]);
 
   useEffect(() => {
     scrollableElement = getScrollableElement();
@@ -179,7 +167,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
             const scrollItem = scrollItems[itemIndex];
             return cloneElement(child as React.ReactElement<JumpLinksItemProps>, {
               onClick(ev: React.MouseEvent) {
-                isLinkClicked.current = true;
+                ignoreScrollSpyUntil.current = performance.now() + 1000;
                 // Items might have rendered after this component. Do a quick refresh.
                 let newScrollItems;
                 if (!scrollItem) {
@@ -191,31 +179,52 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                 if (newScrollItem) {
                   // we have to support scrolling to an offset due to sticky sidebar
                   const scrollableElement = getScrollableElement() as HTMLElement;
-                  if (scrollableElement instanceof HTMLElement) {
-                    if (isResponsive(navRef.current)) {
-                      // Remove class immediately so we can get collapsed height
-                      if (navRef.current) {
-                        navRef.current.classList.remove(styles.modifiers.expanded);
-                      }
-                      let stickyParent = navRef.current && navRef.current.parentElement;
-                      while (stickyParent && !stickyParent.classList.contains(sidebarStyles.modifiers.sticky)) {
-                        stickyParent = stickyParent.parentElement;
-                      }
-                      setIsExpanded(false);
-                      if (stickyParent) {
-                        offset += stickyParent.scrollHeight;
-                      }
+                  if (!(scrollableElement instanceof HTMLElement)) {
+                    return;
+                  }
+
+                  let effectiveOffset = offset;
+
+                  // Remove class immediately so we can get collapsed height
+                  if (isResponsive(navRef.current)) {
+                    navRef.current?.classList.remove(styles.modifiers.expanded);
+
+                    let stickyParent = navRef.current?.parentElement;
+                    while (stickyParent && !stickyParent.classList.contains(sidebarStyles.modifiers.sticky)) {
+                      stickyParent = stickyParent.parentElement;
                     }
-                    scrollableElement.scrollTo(0, newScrollItem.offsetTop - offset);
+                    setIsExpanded(false);
+                    if (stickyParent) {
+                      effectiveOffset += stickyParent.scrollHeight;
+                    }
                   }
-                  newScrollItem.focus();
-                  if (shouldReplaceNavHistory) {
-                    window.history.replaceState('', '', (ev.currentTarget as HTMLAnchorElement).href);
-                  } else {
-                    window.history.pushState('', '', (ev.currentTarget as HTMLAnchorElement).href);
+
+                  const href = (ev.currentTarget as HTMLAnchorElement)?.href;
+                  if (href) {
+                    if (shouldReplaceNavHistory) {
+                      window.history.replaceState('', '', href);
+                    } else {
+                      window.history.pushState('', '', href);
+                    }
                   }
+
                   ev.preventDefault();
                   setActiveIndex(itemIndex);
+                  newScrollItem.focus();
+
+                  const targetTop = Math.min(
+                    newScrollItem.offsetTop - effectiveOffset,
+                    scrollableElement.scrollHeight - scrollableElement.clientHeight
+                  );
+
+                  // delays smooth scroll so it actually happens
+                  requestAnimationFrame(() => {
+                    scrollableElement.scrollTo({
+                      top: targetTop,
+                      left: 0,
+                      behavior: 'smooth'
+                    });
+                  });
                 }
                 if (onClickProp) {
                   onClickProp(ev);
