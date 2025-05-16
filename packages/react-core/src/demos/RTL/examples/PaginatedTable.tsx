@@ -55,7 +55,7 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import HandPaperIcon from '@patternfly/react-icons/dist/esm/icons/hand-paper-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import { rows } from '@patternfly/react-core/dist/esm/demos/sampleData2';
+import { rows } from '../../../../dist/esm/demos/sampleDataRTL';
 
 interface Row {
   name: string;
@@ -88,7 +88,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
       status: translation.table.rows.status[row.status],
       location: translation.table.rows.locations[row.location],
       lastModified: translation.table.rows.lastModified[row.lastModified],
-      url: row.url
+      url: `http://www.redhat.com/en/office-locations/node${index + 1}`
     }));
 
   const [paginatedRows, setPaginatedRows] = useState<Row[]>(rows.slice(0, 10));
