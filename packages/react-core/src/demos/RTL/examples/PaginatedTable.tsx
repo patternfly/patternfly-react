@@ -55,6 +55,7 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import HandPaperIcon from '@patternfly/react-icons/dist/esm/icons/hand-paper-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+import { rows } from '@patternfly/react-core/dist/esm/demos/sampleDataRTL';
 
 interface Row {
   name: string;
@@ -81,45 +82,15 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
     translation.table.columns.url
   ];
 
-  const numRows: number = 25;
-  const getRandomInteger = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
-  const createRows = () => {
-    const rows: Row[] = [];
-    for (let i = 0; i < numRows; i++) {
-      const num = i + 1;
-      const rowObj: Row = {
-        name: translation.table.rows.node + num,
-        status: [
-          translation.table.rows.status.stopped,
-          translation.table.rows.status.running,
-          translation.table.rows.status.down,
-          translation.table.rows.status.needsMaintenance
-        ][getRandomInteger(0, 3)],
-        location: [
-          translation.table.rows.locations.raleigh,
-          translation.table.rows.locations.boston,
-          translation.table.rows.locations.atlanta,
-          translation.table.rows.locations.sanFrancisco
-        ][getRandomInteger(0, 3)],
-        lastModified: [
-          translation.table.rows.lastModified.oneHr,
-          translation.table.rows.lastModified.threeHrs,
-          translation.table.rows.lastModified.fiveHrs,
-          translation.table.rows.lastModified.sevenMins,
-          translation.table.rows.lastModified.fortyTwoMins,
-          translation.table.rows.lastModified.twoDays,
-          translation.table.rows.lastModified.oneMonth
-        ][getRandomInteger(0, 6)],
-        url: 'http://www.redhat.com/en/office-locations/node' + num
-      };
-      rows.push(rowObj);
-    }
+  const generateRowsFromTranslation = (translation: Translation): Row[] =>
+    rows.map((row, index) => ({
+      name: `${translation.table.rows.node}${index + 1}`,
+      status: translation.table.rows.status[row.status],
+      location: translation.table.rows.locations[row.location],
+      lastModified: translation.table.rows.lastModified[row.lastModified],
+      url: `http://www.redhat.com/en/office-locations/node${index + 1}`
+    }));
 
-    return rows;
-  };
-
-  const rows = createRows();
-  const [managedRows, setManagedRows] = useState(rows);
   const [paginatedRows, setPaginatedRows] = useState<Row[]>(rows.slice(0, 10));
   const [isDirRTL, setIsDirRTL] = useState<boolean>(false);
 
@@ -131,9 +102,8 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
   };
 
   useEffect(() => {
-    const newRows = createRows();
-    setManagedRows(newRows);
-    setPaginatedRows(newRows.slice((page - 1) * perPage, page * perPage));
+    const fullRows = generateRowsFromTranslation(translation);
+    setPaginatedRows(fullRows.slice((page - 1) * perPage, page * perPage));
   }, [translation]);
 
   useEffect(() => {
@@ -150,7 +120,8 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
     startIdx: number | undefined,
     endIdx: number | undefined
   ) => {
-    setPaginatedRows(managedRows.slice(startIdx, endIdx));
+    const fullRows = generateRowsFromTranslation(translation);
+    setPaginatedRows(fullRows.slice(startIdx, endIdx));
     setPage(newPage);
   };
 
@@ -161,7 +132,8 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
     startIdx: number | undefined,
     endIdx: number | undefined
   ) => {
-    setPaginatedRows(managedRows.slice(startIdx, endIdx));
+    const fullRows = generateRowsFromTranslation(translation);
+    setPaginatedRows(fullRows.slice(startIdx, endIdx));
     setPerPage(newPerPage);
   };
 
@@ -170,7 +142,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
 
     return (
       <Pagination
-        itemCount={managedRows.length}
+        itemCount={rows.length}
         page={page}
         perPage={perPage}
         onSetPage={handleSetPage}
