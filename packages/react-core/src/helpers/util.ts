@@ -545,3 +545,31 @@ export const getLanguageDirection = (targetElement: HTMLElement, defaultDirectio
 
   return defaultDirection;
 };
+
+/**
+ * Gets the [client|offset|scroll]Left property of an element, and determines whether it needs to be
+ * adjusted for an RTL direction.
+ *
+ * @param {HTMLElement} targetElement  - Element to get the inline-start property of.
+ * @param {HTMLElement} ancestorElement - Ancestor element to base the inline-start calculation off of when the direction is RTL.
+ * @param {'client' | 'offset' | 'scroll'} inlineType - The inline-start property type to base calculations on.
+ * @returns {number} - The value of the inline-start property.
+ */
+export const getInlineStartProperty = (
+  targetElement: HTMLElement,
+  ancestorElement: HTMLElement,
+  inlineType: 'client' | 'offset' | 'scroll' = 'offset'
+) => {
+  if (!targetElement) {
+    return;
+  }
+
+  const inlineProperty: 'offsetLeft' | 'clientLeft' | 'scrollLeft' = `${inlineType}Left`;
+  const isRTL = getLanguageDirection(targetElement) === 'rtl';
+  if (!isRTL) {
+    return targetElement[inlineProperty];
+  }
+
+  const widthProperty: 'offsetWidth' | 'clientWidth' | 'scrollWidth' = `${inlineType}Width`;
+  return ancestorElement[widthProperty] - (targetElement[inlineProperty] + targetElement[widthProperty]);
+};
