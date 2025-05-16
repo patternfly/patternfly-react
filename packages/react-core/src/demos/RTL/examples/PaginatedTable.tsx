@@ -55,7 +55,7 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import HandPaperIcon from '@patternfly/react-icons/dist/esm/icons/hand-paper-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import { rows } from '../../../../dist/esm/demos/sampleDataRTL';
+import { rows } from '@patternfly/react-core/dist/esm/demos/sampleDataRTL';
 
 interface Row {
   name: string;
