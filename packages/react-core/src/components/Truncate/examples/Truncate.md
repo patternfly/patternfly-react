@@ -52,3 +52,11 @@ Truncating based on a maximum amount of characters will truncate the content at 
 ```ts file="./TruncateMaxChars.tsx"
 
 ```
+
+### With links
+
+To truncate link text, you can pass the `href` property in.
+
+```ts file="./TruncateLinks.tsx"
+
+```
