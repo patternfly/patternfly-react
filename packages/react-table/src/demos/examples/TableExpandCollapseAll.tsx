@@ -156,7 +156,7 @@ export const TableExpandCollapseAll: React.FunctionComponent = () => {
           aria-label="Collapsible table data"
         >
           <Card component="div">
-            <Table aria-label="Collapsible table">
+            <Table isExpandable aria-label="Collapsible table">
               <Thead>
                 <Tr>
                   <Th
@@ -175,7 +175,7 @@ export const TableExpandCollapseAll: React.FunctionComponent = () => {
 
               {serverData.map((server, serverIndex) => (
                 <Tbody key={server.name} isExpanded={isServerExpanded(server)}>
-                  <Tr>
+                  <Tr isExpanded={isServerExpanded(server)}>
                     <Td
                       expand={
                         server.details
@@ -195,7 +195,7 @@ export const TableExpandCollapseAll: React.FunctionComponent = () => {
                     <Td>{server?.workspaces}</Td>
                     <Td>{server?.status?.title}</Td>
                   </Tr>
-                  <Tr isExpanded={isServerExpanded(server)}>
+                  <Tr isExpandable isExpanded={isServerExpanded(server)}>
                     <Td></Td>
                     <Td colSpan={expandableColumns.length}>
                       <ExpandableRowContent>{server?.details}</ExpandableRowContent>
