@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipPosition, TooltipProps } from '../Tooltip';
@@ -59,11 +59,13 @@ export interface TruncateProps extends Omit<React.HTMLProps<HTMLSpanElement | HT
     | 'right-end';
   /** Additional props to pass to the tooltip. */
   tooltipProps?: Omit<TooltipProps, 'content'>;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<any>;
 }
 
 const sliceTrailingContent = (str: string, slice: number) => [str.slice(0, str.length - slice), str.slice(-slice)];
 
-export const Truncate: React.FunctionComponent<TruncateProps> = ({
+const TruncateBase: React.FunctionComponent<TruncateProps> = ({
   className,
   href,
   position = 'end',
@@ -257,5 +259,9 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
     </>
   );
 };
+
+export const Truncate = forwardRef((props: TruncateProps, ref: React.Ref<HTMLAnchorElement | HTMLSpanElement>) => (
+  <TruncateBase innerRef={ref} {...props} />
+));
 
 Truncate.displayName = 'Truncate';
