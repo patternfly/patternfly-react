@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.3.0-prerelease.1...@patternfly/react-tokens@6.3.0-prerelease.2) (2025-05-20)
+
+### Bug Fixes
+
+- **Table:** removed divider for expanded rows ([#11815](https://github.com/patternfly/patternfly-react/issues/11815)) ([292dd5e](https://github.com/patternfly/patternfly-react/commit/292dd5ebf809d9bffa6698d7c6fea6da82f73c64))
+
 # [6.3.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.2.1-prerelease.0...@patternfly/react-tokens@6.3.0-prerelease.1) (2025-04-24)
 
 **Note:** Version bump only for package @patternfly/react-tokens

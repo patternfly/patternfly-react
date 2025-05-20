@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.3.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.16...@patternfly/react-docs@7.3.0-prerelease.17) (2025-05-20)
+
+### Bug Fixes
+
+- **Table:** removed divider for expanded rows ([#11815](https://github.com/patternfly/patternfly-react/issues/11815)) ([292dd5e](https://github.com/patternfly/patternfly-react/commit/292dd5ebf809d9bffa6698d7c6fea6da82f73c64))
+
 # [7.3.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.15...@patternfly/react-docs@7.3.0-prerelease.16) (2025-05-19)
 
 **Note:** Version bump only for package @patternfly/react-docs
