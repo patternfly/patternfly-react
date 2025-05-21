@@ -44,7 +44,11 @@ class DualListSelector extends Component<DualListSelectorProps> {
         <GenerateId>
           {(randomId) => (
             <div
-              className={css(styles.dualListSelector, hasAnimations && 'pf-m-animate-expand', className)}
+              className={css(
+                styles.dualListSelector,
+                hasAnimations && isTree && styles.modifiers.animateExpand,
+                className
+              )}
               id={id || randomId}
               {...props}
             >
