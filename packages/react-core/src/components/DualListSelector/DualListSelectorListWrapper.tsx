@@ -56,14 +56,17 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
     }
     event.stopImmediatePropagation();
     const validOptions = isTree
-      ? (Array.from(
-          menuRef.current.querySelectorAll(
-            `.${styles.dualListSelectorItemToggle}, .${styles.dualListSelectorItemCheck} > input`
-          )
-        ) as Element[])
+      ? (
+          Array.from(
+            menuRef.current.querySelectorAll(
+              `.${styles.dualListSelectorItemToggle}, .${styles.dualListSelectorItemCheck} > input`
+            )
+          ) as Element[]
+        ).filter((item) => !item.closest(`.${styles.dualListSelectorList}[inert]`))
       : (Array.from(menuRef.current.getElementsByTagName('LI')) as Element[]).filter(
           (el) => !el.classList.contains('pf-m-disabled')
         );
+
     const activeElement = document.activeElement;
     handleArrows(
       event,

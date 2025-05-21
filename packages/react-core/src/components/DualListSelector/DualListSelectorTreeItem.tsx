@@ -1,4 +1,4 @@
-import { memo, useContext, useEffect, useRef, useState } from 'react';
+import { memo, useContext, useEffect, useRef, useState, cloneElement, Children, isValidElement } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
@@ -38,6 +38,11 @@ export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIEle
   isDisabled?: boolean;
   /** Flag indicating the DualListSelector tree should utilize memoization to help render large data sets. */
   useMemo?: boolean;
+  /** Flag indicating whether a tree dual list selector has animations. This will always render
+   * nested dual list selector items rather than dynamically rendering them. This prop will be removed in
+   * the next breaking change release in favor of defaulting to always-rendered items.
+   */
+  hasAnimations?: boolean;
 }
 
 const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTreeItemProps> = ({
@@ -53,6 +58,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
   badgeProps,
   itemData,
   isDisabled = false,
+  hasAnimations,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   useMemo,
   ...props
@@ -64,6 +70,15 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
   useEffect(() => {
     setIsExpanded(defaultExpanded);
   }, [defaultExpanded]);
+
+  const clonedChildren = Children.map(
+    children,
+    (child) =>
+      isValidElement(child) &&
+      cloneElement(child as React.ReactElement<any>, {
+        inert: isExpanded ? undefined : ''
+      })
+  );
 
   return (
     <li
@@ -156,7 +171,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
           </span>
         </div>
       </div>
-      {isExpanded && children}
+      {(isExpanded || hasAnimations) && clonedChildren}
     </li>
   );
 };

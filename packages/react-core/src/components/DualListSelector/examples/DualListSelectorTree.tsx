@@ -283,7 +283,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
   };
 
   return (
-    <DualListSelector isTree>
+    <DualListSelector hasAnimations isTree>
       {buildPane(false)}
       <DualListSelectorControlsWrapper>
         <DualListSelectorControl
