@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.12...@patternfly/react-core@6.3.0-prerelease.13) (2025-05-21)
+
+### Features
+
+- **Truncate:** added tooltip props and anchor usage ([#11801](https://github.com/patternfly/patternfly-react/issues/11801)) ([e8c5538](https://github.com/patternfly/patternfly-react/commit/e8c55388ac92023343b85778c071076d22405363))
+
 # [6.3.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.11...@patternfly/react-core@6.3.0-prerelease.12) (2025-05-20)
 
 ### Bug Fixes
