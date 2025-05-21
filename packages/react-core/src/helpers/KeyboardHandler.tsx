@@ -116,12 +116,12 @@ export const handleArrows = (
                   : nextSiblingMainElement.nextElementSibling;
 
               if (nextSibling) {
-                if (validSiblingTags.includes(nextSibling.tagName)) {
+                if (validSiblingTags.includes(nextSibling?.tagName)) {
                   moveTarget = nextSibling;
                   break;
                 }
                 // For cases where the validSiblingTag is inside a div wrapper
-                if (validSiblingTags.includes(nextSibling.children[0].tagName)) {
+                if (validSiblingTags.includes(nextSibling.children[0]?.tagName)) {
                   moveTarget = nextSibling.children[0];
                   break;
                 }
