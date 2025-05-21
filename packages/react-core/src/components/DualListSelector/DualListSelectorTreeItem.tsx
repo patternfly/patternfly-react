@@ -38,6 +38,11 @@ export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIEle
   isDisabled?: boolean;
   /** Flag indicating the DualListSelector tree should utilize memoization to help render large data sets. */
   useMemo?: boolean;
+  /** Flag indicating whether a tree dual list selector has animations. This will always render
+   * nested dual list selector items rather than dynamically rendering them. This prop will be removed in
+   * the next breaking change release in favor of defaulting to always-rendered items.
+   */
+  hasAnimations?: boolean;
 }
 
 const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTreeItemProps> = ({
@@ -53,6 +58,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
   badgeProps,
   itemData,
   isDisabled = false,
+  hasAnimations,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   useMemo,
   ...props
@@ -156,7 +162,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
           </span>
         </div>
       </div>
-      {isExpanded && children}
+      {(isExpanded || hasAnimations) && children}
     </li>
   );
 };

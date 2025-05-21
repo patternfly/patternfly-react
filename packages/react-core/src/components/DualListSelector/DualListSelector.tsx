@@ -17,13 +17,19 @@ export interface DualListSelectorProps {
   isTree?: boolean;
   /** Content to be rendered in the dual list selector. */
   children?: React.ReactNode;
+  /** Flag indicating whether a tree dual list selector has animations. This will always render
+   * nested dual list selector items rather than dynamically rendering them. This prop will be removed in
+   * the next breaking change release in favor of defaulting to always-rendered items.
+   */
+  hasAnimations?: boolean;
 }
 
 class DualListSelector extends Component<DualListSelectorProps> {
   static displayName = 'DualListSelector';
   static defaultProps: PickOptional<DualListSelectorProps> = {
     children: '',
-    isTree: false
+    isTree: false,
+    hasAnimations: false
   };
 
   constructor(props: DualListSelectorProps) {
@@ -31,13 +37,17 @@ class DualListSelector extends Component<DualListSelectorProps> {
   }
 
   render() {
-    const { className, children, id, isTree, ...props } = this.props;
+    const { className, children, id, isTree, hasAnimations, ...props } = this.props;
 
     return (
-      <DualListSelectorContext.Provider value={{ isTree }}>
+      <DualListSelectorContext.Provider value={{ isTree, hasAnimations }}>
         <GenerateId>
           {(randomId) => (
-            <div className={css(styles.dualListSelector, className)} id={id || randomId} {...props}>
+            <div
+              className={css(styles.dualListSelector, hasAnimations && 'pf-m-animate-expand', className)}
+              id={id || randomId}
+              {...props}
+            >
               {children}
             </div>
           )}
