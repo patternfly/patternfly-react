@@ -1,5 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import { Tabs } from '../Tabs';
+import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { Tab } from '../Tab';
 import { TabTitleText } from '../TabTitleText';
 import { TabTitleIcon } from '../TabTitleIcon';
@@ -7,6 +8,47 @@ import { TabContent } from '../TabContent';
 import { TabContentBody } from '../TabContentBody';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
+
+test(`Renders with classes ${styles.tabs} and ${styles.modifiers.animateCurrent} by default`, () => {
+  render(
+    <Tabs role="region">
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.getByRole('region')).toHaveClass(`${styles.tabs} ${styles.modifiers.animateCurrent}`);
+});
+
+test(`Renders with class ${styles.modifiers.initializingAccent} when component initially mounts`, () => {
+  render(
+    <Tabs role="region">
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.getByRole('region')).toHaveClass(styles.modifiers.initializingAccent);
+});
+
+test(`Does not render with class ${styles.modifiers.initializingAccent} when component is finished mounting`, () => {
+  jest.useFakeTimers();
+  render(
+    <Tabs role="region">
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  act(() => {
+    jest.advanceTimersByTime(500);
+  });
+  expect(screen.getByRole('region')).not.toHaveClass(styles.modifiers.initializingAccent);
+  jest.useRealTimers();
+});
 
 test('should render simple tabs', () => {
   const { asFragment } = render(

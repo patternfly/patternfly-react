@@ -8,6 +8,31 @@ import { TabsContext } from './TabsContext';
 import { TabProps } from './Tab';
 import { TabTitleText } from './TabTitleText';
 
+export interface HorizontalOverflowPopperProps {
+  /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
+  direction?: 'up' | 'down';
+  /** Horizontal position of the popper */
+  position?: 'right' | 'left' | 'center' | 'start' | 'end';
+  /** Custom width of the popper. If the value is "trigger", it will set the width to the select toggle's width */
+  width?: string | 'trigger';
+  /** Minimum width of the popper. If the value is "trigger", it will set the min width to the select toggle's width */
+  minWidth?: string | 'trigger';
+  /** Maximum width of the popper. If the value is "trigger", it will set the max width to the select toggle's width */
+  maxWidth?: string | 'trigger';
+  /** Enable to flip the popper when it reaches the boundary */
+  enableFlip?: boolean;
+  /** The container to append the select to. Defaults to document.body.
+   * If your select is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * appendTo="inline"
+   * appendTo={() => document.body}
+   * appendTo={document.getElementById('target')}
+   */
+  appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
+  /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
+  preventOverflow?: boolean;
+}
+
 export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   /** Additional classes added to the overflow tab */
   className?: string;
@@ -25,6 +50,8 @@ export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   shouldPreventScrollOnItemFocus?: boolean;
   /** Time in ms to wait before firing the toggles' focus event. Defaults to 0 */
   focusTimeoutDelay?: number;
+  /** Additional props to spread to the popper menu. */
+  popperProps?: HorizontalOverflowPopperProps;
 }
 
 export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
@@ -36,6 +63,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   zIndex = 9999,
   shouldPreventScrollOnItemFocus = true,
   focusTimeoutDelay = 0,
+  popperProps,
   ...props
 }: OverflowTabProps) => {
   const menuRef = useRef<HTMLDivElement>(undefined);
@@ -148,6 +176,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
         minWidth="revert"
         appendTo={overflowLIRef.current}
         zIndex={zIndex}
+        {...popperProps}
       />
     </Fragment>
   );
