@@ -7,7 +7,7 @@ import { DualListSelectorTreeItem } from '../DualListSelectorTreeItem';
 test('Does not render children by default', () => {
   render(
     <DualListSelectorTreeItem id="item-id" text="Test text">
-      Children content
+      <div>Children content</div>
     </DualListSelectorTreeItem>
   );
 
@@ -17,7 +17,7 @@ test('Does not render children by default', () => {
 test('Renders children when defaultExpanded is true', () => {
   render(
     <DualListSelectorTreeItem defaultExpanded id="item-id" text="Test text">
-      Children content
+      <div>Children content</div>
     </DualListSelectorTreeItem>
   );
 
@@ -27,9 +27,29 @@ test('Renders children when defaultExpanded is true', () => {
 test('Renders children when hasAnimations is true', () => {
   render(
     <DualListSelectorTreeItem hasAnimations id="item-id" text="Test text">
-      Children content
+      <div>Children content</div>
     </DualListSelectorTreeItem>
   );
 
   expect(screen.getByText('Children content')).toBeVisible();
+});
+
+test('Renders children with inert attribute by default when hasAnimations is true', () => {
+  render(
+    <DualListSelectorTreeItem hasAnimations id="item-id" text="Test text">
+      <div>Children content</div>
+    </DualListSelectorTreeItem>
+  );
+
+  expect(screen.getByText('Children content')).toHaveAttribute('inert', '');
+});
+
+test('Does not render children with inert attribute when hasAnimations and defaultExpanded are true', () => {
+  render(
+    <DualListSelectorTreeItem hasAnimations defaultExpanded id="item-id" text="Test text">
+      <div>Children content</div>
+    </DualListSelectorTreeItem>
+  );
+
+  expect(screen.getByText('Children content')).not.toHaveAttribute('inert');
 });

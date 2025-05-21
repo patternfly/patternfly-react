@@ -1,4 +1,4 @@
-import { memo, useContext, useEffect, useRef, useState } from 'react';
+import { memo, useContext, useEffect, useRef, useState, cloneElement, Children, isValidElement } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
@@ -70,6 +70,15 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
   useEffect(() => {
     setIsExpanded(defaultExpanded);
   }, [defaultExpanded]);
+
+  const clonedChildren = Children.map(
+    children,
+    (child) =>
+      isValidElement(child) &&
+      cloneElement(child as React.ReactElement<any>, {
+        inert: isExpanded ? undefined : ''
+      })
+  );
 
   return (
     <li
@@ -162,7 +171,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
           </span>
         </div>
       </div>
-      {(isExpanded || hasAnimations) && children}
+      {(isExpanded || hasAnimations) && clonedChildren}
     </li>
   );
 };
