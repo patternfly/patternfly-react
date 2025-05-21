@@ -549,6 +549,7 @@ class Tabs extends Component<TabsProps, TabsState> {
           aria-label={ariaLabel}
           className={css(
             styles.tabs,
+            styles.modifiers.animateCurrent,
             isFilled && styles.modifiers.fill,
             isSubtab && styles.modifiers.subtab,
             isVertical && styles.modifiers.vertical,
