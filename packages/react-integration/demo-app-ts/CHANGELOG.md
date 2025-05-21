@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.117](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.116...demo-app-ts@6.0.0-prerelease.117) (2025-05-21)
+
+### Features
+
+- **Tabs:** added animations ([#11767](https://github.com/patternfly/patternfly-react/issues/11767)) ([bae4fc3](https://github.com/patternfly/patternfly-react/commit/bae4fc36aa39007d9474236cbada62ac55a27989))
+
 # [6.0.0-prerelease.116](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.115...demo-app-ts@6.0.0-prerelease.116) (2025-05-21)
 
 **Note:** Version bump only for package demo-app-ts

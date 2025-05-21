@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.36...@patternfly/react-integration@6.0.0-prerelease.37) (2025-05-21)
+
+### Features
+
+- **Tabs:** added animations ([#11767](https://github.com/patternfly/patternfly-react/issues/11767)) ([bae4fc3](https://github.com/patternfly/patternfly-react/commit/bae4fc36aa39007d9474236cbada62ac55a27989))
+
 # [6.0.0-prerelease.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.35...@patternfly/react-integration@6.0.0-prerelease.36) (2025-05-15)
 
 **Note:** Version bump only for package @patternfly/react-integration
