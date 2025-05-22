@@ -77,6 +77,7 @@ export const TreeViewBadges: React.FunctionComponent = () => {
 
   return (
     <TreeView
+      hasAnimations
       aria-label="Tree View with badges example"
       data={options}
       activeItems={activeItems}

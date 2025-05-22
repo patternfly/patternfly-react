@@ -51,6 +51,7 @@ export const TreeViewWithMemoization: React.FunctionComponent = () => {
   }
   const tree = (
     <TreeView
+      hasAnimations
       aria-label="Tree View with memoization example"
       data={options}
       activeItems={activeItems}

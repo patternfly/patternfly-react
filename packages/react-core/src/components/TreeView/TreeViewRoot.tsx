@@ -72,7 +72,7 @@ class TreeViewRoot extends Component<TreeViewRootProps> {
     const activeElement = document.activeElement;
     const key = event.key;
     const treeItems = Array.from(this.treeRef.current?.getElementsByClassName(styles.treeViewNode)).filter(
-      (el) => !el.classList.contains('pf-m-disabled')
+      (el) => !el.classList.contains('pf-m-disabled') && !el.closest(`.${styles.treeViewList}[inert]`)
     );
 
     if (key === KeyTypes.Space) {
@@ -138,7 +138,9 @@ class TreeViewRoot extends Component<TreeViewRootProps> {
       event.preventDefault();
     }
 
-    const treeNodes = Array.from(this.treeRef.current?.getElementsByClassName(styles.treeViewNode));
+    const treeNodes = Array.from(this.treeRef.current?.getElementsByClassName(styles.treeViewNode)).filter(
+      (el) => !el.closest(`.${styles.treeViewList}[inert]`)
+    );
 
     handleArrows(
       event,

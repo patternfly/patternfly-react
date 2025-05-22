@@ -76,6 +76,7 @@ export const TreeViewMultiselectable: React.FunctionComponent = () => {
   ];
   return (
     <TreeView
+      hasAnimations
       aria-label="Tree View multiselectable example"
       isMultiSelectable
       data={options}
