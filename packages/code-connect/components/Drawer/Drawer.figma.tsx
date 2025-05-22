@@ -5,10 +5,6 @@ import { Drawer } from '@patternfly/react-core';
  * PatternFly Drawer component integration for Figma Code Connect
  */
 
-const main = {
-  title: 'teste'
-};
-
 figma.connect(
   Drawer,
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=8034-7676&t=IzSunfrnw18ti37Y-11',
