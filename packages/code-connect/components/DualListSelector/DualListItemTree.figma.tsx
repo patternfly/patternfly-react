@@ -1,0 +1,17 @@
+import figma from '@figma/code-connect';
+import { DualListSelector } from '@patternfly/react-core';
+
+/**
+ * PatternFly DualListSelector component integration for Figma Code Connect
+ */
+
+figma.connect(
+  DualListSelector,
+  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=21279-116342&m=dev',
+  {
+    props: {
+      children: figma.children('*')
+    },
+    example: (props) => <DualListSelector isTree>{props.children}</DualListSelector>
+  }
+);
