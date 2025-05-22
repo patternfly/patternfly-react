@@ -16,6 +16,10 @@ figma.connect(
 
       children: figma.children('*')
     },
-    example: (props) => <DataList isExpanded={props.isExpanded} isCompact={props.isCompact}>{props.children}</DataList>
+    example: (props) => (
+      <DataList isExpanded={props.isExpanded} isCompact={props.isCompact}>
+        {props.children}
+      </DataList>
+    )
   }
 );
