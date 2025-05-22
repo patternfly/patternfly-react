@@ -10,7 +10,7 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=1110-2698&m=dev',
   {
     props: {
-      // boolean
+      // booleans
       description: figma.boolean('Description', {
         true: figma.string('✏️ Description'),
         false: undefined
@@ -19,10 +19,10 @@ figma.connect(
       isDismissable: figma.boolean('Dismissable'),
       isExpandable: figma.boolean('Expandable'),
 
-      // string
+      // strings
       title: figma.string('✏️ Title'),
 
-      // enum
+      // enums
       variant: figma.enum('Type', {
         Info: 'info',
         Success: 'success',
