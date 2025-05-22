@@ -11,15 +11,16 @@ figma.connect(
   {
     props: {
       // strings
-      title: figma.string('Text', '00'),
+      title: figma.string('Text'),
 
       // enums
-      type: figma.enum('Type', {
-        Unread: undefined,
-        Read: false,
-        disable: false
+      isRead: figma.enum('Type', {
+        Read: true
+      }),
+      isDisabled: figma.enum('Type', {
+        disabled: true
       })
     },
-    example: (props) => <Badge title={props.title} type={props.type} />
+    example: (props) => <Badge title={props.title} isRead={props.isRead} isDisabled={props.isDisabled} />
   }
 );
