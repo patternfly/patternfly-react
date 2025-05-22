@@ -103,6 +103,11 @@ export interface TreeViewProps {
   useMemo?: boolean;
   /** Variant presentation styles for the tree view. */
   variant?: 'default' | 'compact' | 'compactNoBackground';
+  /** Flag indicating whether a tree view has animations. This will always render
+   * nested tree view items rather than dynamically rendering them. This prop will be removed in
+   * the next breaking change release in favor of defaulting to always-rendered items.
+   */
+  hasAnimations?: boolean;
 }
 
 export const TreeView: React.FunctionComponent<TreeViewProps> = ({
@@ -130,6 +135,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   useMemo,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledby,
+  hasAnimations,
   ...props
 }: TreeViewProps) => {
   const treeViewList = (
@@ -139,11 +145,13 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
       isMultiSelectable={isMultiSelectable}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledby}
+      {...props}
     >
       {data.map((item) => (
         <TreeViewListItem
           key={item.id?.toString() || item.name?.toString()}
           name={item.name}
+          hasAnimations={hasAnimations}
           title={item.title}
           id={item.id}
           isExpanded={allExpanded}
@@ -172,6 +180,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
               <TreeView
                 data={item.children}
                 isNested
+                hasAnimations={hasAnimations}
                 parentItem={item}
                 hasCheckboxes={hasCheckboxes}
                 hasBadges={hasBadges}

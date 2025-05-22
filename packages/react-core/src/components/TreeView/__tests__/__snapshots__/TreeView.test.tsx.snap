@@ -104,6 +104,9 @@ exports[`Matches snapshot 1`] = `
             <p>
               TreeViewListItem useMemo: undefined
             </p>
+            <p>
+              TreeViewListItem hasAnimations: undefined
+            </p>
             <button>
               compareItems clicker
             </button>
