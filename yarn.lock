@@ -3831,6 +3831,7 @@ __metadata:
     "@eslint/compat": "npm:^1.2.8"
     "@eslint/js": "npm:^9.22.0"
     "@octokit/rest": "npm:^21.1.1"
+    "@patternfly/react-core": "workspace:^"
     "@rollup/plugin-commonjs": "npm:^26.0.3"
     "@rollup/plugin-node-resolve": "npm:^15.3.1"
     "@rollup/plugin-replace": "npm:^5.0.7"
