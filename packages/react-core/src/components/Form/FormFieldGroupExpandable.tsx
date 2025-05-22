@@ -12,6 +12,11 @@ export interface FormFieldGroupExpandableProps extends Omit<React.HTMLProps<HTML
   isExpanded?: boolean;
   /** Aria-label to use on the form field group toggle button */
   toggleAriaLabel?: string;
+  /** Flag indicating whether an expandable form field group has animations. This will always render
+   * nested field group content rather than dynamically rendering them. This prop will be removed in
+   * the next breaking change release in favor of defaulting to always-rendered items.
+   */
+  hasAnimations?: boolean;
 }
 
 export const FormFieldGroupExpandable: React.FunctionComponent<FormFieldGroupExpandableProps> = ({
@@ -20,6 +25,7 @@ export const FormFieldGroupExpandable: React.FunctionComponent<FormFieldGroupExp
   header,
   isExpanded = false,
   toggleAriaLabel,
+  hasAnimations,
   ...props
 }: FormFieldGroupExpandableProps) => {
   const [localIsExpanded, setIsExpanded] = useState(isExpanded);
@@ -32,6 +38,7 @@ export const FormFieldGroupExpandable: React.FunctionComponent<FormFieldGroupExp
       isExpanded={localIsExpanded}
       toggleAriaLabel={toggleAriaLabel}
       onToggle={() => setIsExpanded(!localIsExpanded)}
+      hasAnimations={hasAnimations}
       {...props}
     >
       {children}
