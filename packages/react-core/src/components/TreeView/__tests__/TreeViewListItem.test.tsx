@@ -28,7 +28,7 @@ test(`Does not render children by default`, () => {
 test(`Renders children if defaultExpanded is true`, () => {
   render(
     <TreeViewListItem defaultExpanded={true} {...requiredProps}>
-      Content
+      <div>Content</div>
     </TreeViewListItem>
   );
 
@@ -38,7 +38,7 @@ test(`Renders children if defaultExpanded is true`, () => {
 test(`Renders children if isExpanded is true`, () => {
   render(
     <TreeViewListItem isExpanded={true} {...requiredProps}>
-      Content
+      <div>Content</div>
     </TreeViewListItem>
   );
 
@@ -47,7 +47,11 @@ test(`Renders children if isExpanded is true`, () => {
 
 test(`Renders children when toggle is clicked`, async () => {
   const user = userEvent.setup();
-  render(<TreeViewListItem {...requiredProps}>Content</TreeViewListItem>);
+  render(
+    <TreeViewListItem {...requiredProps}>
+      <div>Content</div>
+    </TreeViewListItem>
+  );
 
   await user.click(screen.getByRole('button', { name: requiredProps.name }));
 
