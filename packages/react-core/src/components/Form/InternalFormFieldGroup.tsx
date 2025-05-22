@@ -18,6 +18,11 @@ export interface InternalFormFieldGroupProps extends Omit<React.HTMLProps<HTMLDi
   onToggle?: () => void;
   /** Aria-label to use on the form field group toggle button */
   toggleAriaLabel?: string;
+  /** Flag indicating whether an expandable form field group has animations. This will always render
+   * nested field group content rather than dynamically rendering them. This prop will be removed in
+   * the next breaking change release in favor of defaulting to always-rendered items.
+   */
+  hasAnimations?: boolean;
 }
 
 export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGroupProps> = ({
@@ -28,6 +33,7 @@ export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGr
   isExpanded,
   onToggle,
   toggleAriaLabel,
+  hasAnimations,
   ...props
 }: InternalFormFieldGroupProps) => {
   const headerTitleText = header ? header.props.titleText : null;
@@ -40,7 +46,12 @@ export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGr
   }
   return (
     <div
-      className={css(styles.formFieldGroup, isExpanded && isExpandable && styles.modifiers.expanded, className)}
+      className={css(
+        styles.formFieldGroup,
+        isExpanded && isExpandable && styles.modifiers.expanded,
+        hasAnimations && isExpandable && styles.modifiers.expandable,
+        className
+      )}
       role="group"
       {...(headerTitleText && { 'aria-labelledby': `${header.props.titleText.id}` })}
       {...props}
@@ -59,8 +70,13 @@ export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGr
         </GenerateId>
       )}
       {header && header}
-      {(!isExpandable || (isExpandable && isExpanded)) && (
-        <div className={css(styles.formFieldGroupBody)}>{children}</div>
+      {(!isExpandable || (isExpandable && isExpanded) || (hasAnimations && isExpandable)) && (
+        <div
+          className={css(styles.formFieldGroupBody)}
+          {...(hasAnimations && isExpandable && !isExpanded && { inert: '' })}
+        >
+          {children}
+        </div>
       )}
     </div>
   );
