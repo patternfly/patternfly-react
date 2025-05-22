@@ -73,6 +73,7 @@ export const TreeViewSelectableNodes: React.FunctionComponent = () => {
   ];
   return (
     <TreeView
+      hasAnimations
       aria-label="Tree View separate selection and expansion example"
       hasSelectableNodes
       data={options}

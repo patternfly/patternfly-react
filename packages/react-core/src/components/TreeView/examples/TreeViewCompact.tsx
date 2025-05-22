@@ -54,5 +54,5 @@ export const TreeViewCompact: React.FunctionComponent = () => {
       ]
     }
   ];
-  return <TreeView aria-label="Tree View compact example" data={options} variant="compact" />;
+  return <TreeView hasAnimations aria-label="Tree View compact example" data={options} variant="compact" />;
 };
