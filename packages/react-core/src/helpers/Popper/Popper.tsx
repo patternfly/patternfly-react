@@ -486,6 +486,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       setOpacity(0);
       transitionTimerRef.current = setTimeout(() => {
         setInternalIsVisible(false);
+        setPopperElement(null);
         onHidden();
       }, animationDuration);
     }, exitDelay);
