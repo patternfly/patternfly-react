@@ -264,6 +264,16 @@ test('Renders badge with customBadgeContent when hasBadge and children are passe
   expect(screen.getByText(requiredProps.name).nextElementSibling).toHaveTextContent('Custom badge');
 });
 
+test('Renders badge with customBadgeContent being number 0 when hasBadge and children are passed', () => {
+  render(
+    <TreeViewListItem hasBadge customBadgeContent={0} {...requiredProps}>
+      <TreeView data={[{ name: 'Parent name 1' }, { name: 'Parent name 2' }]} />
+    </TreeViewListItem>
+  );
+
+  expect(screen.getByText(requiredProps.name).nextElementSibling).toHaveTextContent('0');
+});
+
 test('Renders badge with customBadgeContent when hasBadge is passed and children are not passed', () => {
   render(<TreeViewListItem hasBadge customBadgeContent="Custom badge" {...requiredProps} />);
 
