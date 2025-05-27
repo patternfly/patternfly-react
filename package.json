@@ -120,8 +120,5 @@
       "packages/*",
       "packages/react-integration/demo-app-ts"
     ]
-  },
-  "dependencies": {
-    "@patternfly/react-core": "workspace:^"
   }
 }

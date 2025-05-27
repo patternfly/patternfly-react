@@ -36,11 +36,11 @@ describe('Search Input Demo Test', () => {
     cy.get('#enabled-search .pf-v6-c-text-input-group__utilities  > button').should('be.visible');
     cy.get('#enabled-search .pf-v6-c-text-input-group__group').should('be.visible');
 
-    cy.get('#enabled-search .pf-v6-c-badge').should('have.text', '1 / 3results');
+    cy.get('#enabled-search .pf-v6-c-badge').should('have.text', '1 / 3 results');
     cy.get('#enabled-search .pf-v6-c-text-input-group__group button').last().click();
-    cy.get('#enabled-search .pf-v6-c-badge').should('have.text', '2 / 3results');
+    cy.get('#enabled-search .pf-v6-c-badge').should('have.text', '2 / 3 results');
     cy.get('#enabled-search .pf-v6-c-text-input-group__group button').first().click();
-    cy.get('#enabled-search .pf-v6-c-badge').should('have.text', '1 / 3results');
+    cy.get('#enabled-search .pf-v6-c-badge').should('have.text', '1 / 3 results');
 
     cy.get('#enabled-search .pf-v6-c-text-input-group__utilities  > button').click();
     cy.get('#enabled-search .pf-v6-c-text-input-group__text-input').should('not.have.value', 'Hello world');
