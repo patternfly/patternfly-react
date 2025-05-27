@@ -146,7 +146,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   onToggleAdvancedSearch,
   isAdvancedSearchOpen = false,
   resultsCount,
-  resultsCountContext = 'results',
+  resultsCountContext = ' results',
   onNextClick,
   onPreviousClick,
   innerRef,
@@ -314,7 +314,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         <TextInputGroupUtilities>
           {resultsCount && (
             <Badge isRead screenReaderText={resultsCountContext}>
-              {resultsCount} results
+              {resultsCount}
             </Badge>
           )}
           {!!onNextClick && !!onPreviousClick && (
