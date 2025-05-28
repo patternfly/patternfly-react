@@ -1,9 +1,8 @@
-import { Fragment } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ExpandableSection, ExpandableSectionVariant } from '../ExpandableSection';
-import { ExpandableSectionToggle } from '../ExpandableSectionToggle';
+import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
 
 const props = { contentId: 'content-id', toggleId: 'toggle-id' };
 
@@ -22,7 +21,7 @@ test('Renders ExpandableSection expanded', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('ExpandableSection onToggle called', async () => {
+test('Calls onToggle when clicked', async () => {
   const mockfn = jest.fn();
   const user = userEvent.setup();
 
@@ -32,26 +31,27 @@ test('ExpandableSection onToggle called', async () => {
   expect(mockfn.mock.calls).toHaveLength(1);
 });
 
+test('Does not call onToggle when not clicked', async () => {
+  const mockfn = jest.fn();
+  const user = userEvent.setup();
+
+  render(
+    <>
+      <ExpandableSection onToggle={mockfn}> test </ExpandableSection>
+      <button onClick={() => {}}>Test clicker</button>
+    </>
+  );
+
+  await user.click(screen.getByRole('button', { name: 'Test clicker' }));
+  expect(mockfn).not.toHaveBeenCalled();
+});
+
 test('Renders Uncontrolled ExpandableSection', () => {
   const { asFragment } = render(
     <ExpandableSection {...props} toggleText="Show More">
       {' '}
       test{' '}
     </ExpandableSection>
-  );
-  expect(asFragment()).toMatchSnapshot();
-});
-
-test('Detached ExpandableSection renders successfully', () => {
-  const { asFragment } = render(
-    <Fragment>
-      <ExpandableSection isExpanded isDetached {...props}>
-        test
-      </ExpandableSection>
-      <ExpandableSectionToggle isExpanded direction="up" {...props}>
-        Toggle text
-      </ExpandableSectionToggle>
-    </Fragment>
   );
   expect(asFragment()).toMatchSnapshot();
 });
@@ -75,22 +75,22 @@ test('Renders ExpandableSection indented', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('Does not render with pf-m-truncate class when variant is not passed', () => {
+test(`Does not render with ${styles.modifiers.truncate} class when variant is not passed`, () => {
   render(<ExpandableSection>test</ExpandableSection>);
 
-  expect(screen.getByText('test').parentElement).not.toHaveClass('pf-m-truncate');
+  expect(screen.getByText('test').parentElement).not.toHaveClass(styles.modifiers.truncate);
 });
 
-test('Does not render with pf-m-truncate class when variant is not truncate', () => {
+test(`Does not render with ${styles.modifiers.truncate} class when variant is not truncate`, () => {
   render(<ExpandableSection variant={ExpandableSectionVariant.default}>test</ExpandableSection>);
 
-  expect(screen.getByText('test').parentElement).not.toHaveClass('pf-m-truncate');
+  expect(screen.getByText('test').parentElement).not.toHaveClass(styles.modifiers.truncate);
 });
 
-test('Renders with pf-m-truncate class when variant is truncate', () => {
+test(`Renders with ${styles.modifiers.truncate} class when variant is truncate`, () => {
   render(<ExpandableSection variant={ExpandableSectionVariant.truncate}>test</ExpandableSection>);
 
-  expect(screen.getByText('test').parentElement).toHaveClass('pf-m-truncate');
+  expect(screen.getByText('test').parentElement).toHaveClass(styles.modifiers.truncate);
 });
 
 test('Renders with value passed to contentId', () => {
@@ -128,4 +128,62 @@ test('Renders with ARIA attributes when contentId and toggleId are passed', () =
 
   expect(wrapper).toContainHTML('aria-labelledby="toggle-id"');
   expect(wrapper).toContainHTML('aria-controls="content-id"');
+});
+
+test(`Does not render with class pf-m-detached by default`, () => {
+  render(<ExpandableSection>Test content</ExpandableSection>);
+
+  expect(screen.getByText('Test content').parentElement).not.toHaveClass('pf-m-detached');
+});
+
+test(`Renders with class pf-m-detached when isDetached is true`, () => {
+  render(<ExpandableSection isDetached>Test content</ExpandableSection>);
+
+  expect(screen.getByText('Test content').parentElement).toHaveClass('pf-m-detached');
+});
+
+test(`Does not render with classes pf-m-expand-top nor pf-m-expand-bottom by default`, () => {
+  render(<ExpandableSection>Test content</ExpandableSection>);
+
+  expect(screen.getByText('Test content').parentElement).not.toHaveClass('pf-m-expand-top');
+  expect(screen.getByText('Test content').parentElement).not.toHaveClass('pf-m-expand-bottom');
+});
+
+test(`Does not render with classes pf-m-expand-top nor pf-m-expand-bottom when only isDetached is true`, () => {
+  render(<ExpandableSection isDetached>Test content</ExpandableSection>);
+
+  expect(screen.getByText('Test content').parentElement).not.toHaveClass('pf-m-expand-top');
+  expect(screen.getByText('Test content').parentElement).not.toHaveClass('pf-m-expand-bottom');
+});
+
+test(`Does not render with class pf-m-expand-top when only direction="up"`, () => {
+  render(<ExpandableSection direction="up">Test content</ExpandableSection>);
+
+  expect(screen.getByText('Test content').parentElement).not.toHaveClass('pf-m-expand-top');
+});
+
+test(`Does not render with class pf-m-expand-bottom when only direction="down"`, () => {
+  render(<ExpandableSection direction="down">Test content</ExpandableSection>);
+
+  expect(screen.getByText('Test content').parentElement).not.toHaveClass('pf-m-expand-bottom');
+});
+
+test(`Renders with class pf-m-expand-top when isDetached is true and direction="up"`, () => {
+  render(
+    <ExpandableSection isDetached direction="up">
+      Test content
+    </ExpandableSection>
+  );
+
+  expect(screen.getByText('Test content').parentElement).toHaveClass('pf-m-expand-top');
+});
+
+test(`Renders with class pf-m-expand-bottom when isDetached is true and direction="down"`, () => {
+  render(
+    <ExpandableSection isDetached direction="down">
+      Test content
+    </ExpandableSection>
+  );
+
+  expect(screen.getByText('Test content').parentElement).toHaveClass('pf-m-expand-bottom');
 });
