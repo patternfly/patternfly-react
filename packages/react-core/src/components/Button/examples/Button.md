@@ -134,3 +134,10 @@ Router links can be used for in-app linking in React environments to prevent pag
   Router link
 </Button>
 ```
+
+### Favorite
+
+A favorite button should use a plain button with the star icon. Applying `.pf-m-favorited` to the button initiates a microanimation and indicates that the item is favorited.
+
+```ts file = "./ButtonFavorite.tsx"
+```
