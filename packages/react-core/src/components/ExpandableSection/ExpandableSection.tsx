@@ -32,7 +32,7 @@ export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElem
   toggleId?: string;
   /** Display size variant. Set to "lg" for disclosure styling. */
   displaySize?: 'default' | 'lg';
-  /** Indicates the expandable section has a detached toggle. */
+  /** Flag indicating that the expandable section and expandable toggle are detached from one another. */
   isDetached?: boolean;
   /** Flag to indicate if the content is expanded. */
   isExpanded?: boolean;
@@ -64,6 +64,10 @@ export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElem
    * variant, the expandable content will be truncated after 3 lines by default.
    */
   variant?: 'default' | 'truncate';
+  /** Sets the direction of the expandable animation when isDetached is true. If this prop is not passed,
+   * animation will not occur.
+   */
+  direction?: 'up' | 'down';
 }
 
 interface ExpandableSectionState {
@@ -198,6 +202,7 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       variant,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       truncateMaxLines,
+      direction,
       ...props
     } = this.props;
 
@@ -258,6 +263,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
           displaySize === 'lg' && styles.modifiers.displayLg,
           isWidthLimited && styles.modifiers.limitWidth,
           isIndented && styles.modifiers.indented,
+          isDetached && 'pf-m-detached',
+          isDetached && direction && (direction === 'up' ? styles.modifiers.expandTop : 'pf-m-expand-bottom'),
           variant === ExpandableSectionVariant.truncate && styles.modifiers.truncate,
           className
         )}

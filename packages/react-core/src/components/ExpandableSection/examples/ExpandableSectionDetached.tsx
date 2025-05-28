@@ -13,7 +13,7 @@ export const ExpandableSectionDetached: React.FunctionComponent = () => {
   return (
     <Stack hasGutter>
       <StackItem>
-        <ExpandableSection isExpanded={isExpanded} isDetached toggleId={toggleId} contentId={contentId}>
+        <ExpandableSection isExpanded={isExpanded} isDetached direction="up" toggleId={toggleId} contentId={contentId}>
           This content is visible only when the component is expanded.
         </ExpandableSection>
       </StackItem>
