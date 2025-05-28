@@ -71,6 +71,10 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   inoperableEvents?: string[];
   /** Adds inline styling to a link button */
   isInline?: boolean;
+  /** Adds favorite styling to a button */
+  isFavorite?: boolean;
+  /** Controls the favorited state when isFavorite is true */
+  isFavorited?: boolean;
   /** Adds styling which affects the size of the button */
   size?: 'default' | 'sm' | 'lg';
   /** Sets button type */
@@ -117,6 +121,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   size = ButtonSize.default,
   inoperableEvents = ['onClick', 'onKeyPress'],
   isInline = false,
+  isFavorite = false,
+  isFavorited = false,
   type = ButtonType.button,
   variant = ButtonVariant.primary,
   state = ButtonState.unread,
@@ -181,6 +187,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         isAriaDisabled && styles.modifiers.ariaDisabled,
         isClicked && styles.modifiers.clicked,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
+        isFavorite && variant === ButtonVariant.plain && styles.modifiers.favorite,
+        isFavorite && isFavorited && variant === ButtonVariant.plain && styles.modifiers.favorited,
         isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
         isLoading !== null && variant !== ButtonVariant.plain && styles.modifiers.progress,
         isLoading && styles.modifiers.inProgress,
