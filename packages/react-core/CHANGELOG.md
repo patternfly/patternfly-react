@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.14...@patternfly/react-core@6.3.0-prerelease.15) (2025-05-29)
+
+### Features
+
+- **DualListSelector:** enabled opt-in animations ([#11837](https://github.com/patternfly/patternfly-react/issues/11837)) ([a545f05](https://github.com/patternfly/patternfly-react/commit/a545f05d90343c6fc80ddd337c61118694f876e2))
+
 # [6.3.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.13...@patternfly/react-core@6.3.0-prerelease.14) (2025-05-21)
 
 ### Features
