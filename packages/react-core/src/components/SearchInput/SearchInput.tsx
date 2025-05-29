@@ -118,7 +118,7 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   /** The number of search results returned. Either a total number of results,
    * or a string representing the current result over the total number of results. i.e. "1 / 5". */
   resultsCount?: number | string;
-  /** A String that will appear after resultsCount to give context for what that value represents */
+  /** Screenreader text that will appear after resultsCount to give context for what that value represents to assistive technologies. */
   resultsCountContext?: string;
   /** Label for the button which calls the onSearch event handler. */
   submitSearchButtonLabel?: string;
