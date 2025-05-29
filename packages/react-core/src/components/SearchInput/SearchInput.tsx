@@ -118,6 +118,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   /** The number of search results returned. Either a total number of results,
    * or a string representing the current result over the total number of results. i.e. "1 / 5". */
   resultsCount?: number | string;
+  /** Screenreader text that will appear after resultsCount to give context for what that value represents to assistive technologies. */
+  resultsCountContext?: string;
   /** Label for the button which calls the onSearch event handler. */
   submitSearchButtonLabel?: string;
   /** Value of the search input. */
@@ -144,6 +146,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   onToggleAdvancedSearch,
   isAdvancedSearchOpen = false,
   resultsCount,
+  resultsCountContext = ' results',
   onNextClick,
   onPreviousClick,
   innerRef,
@@ -309,7 +312,11 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       />
       {(renderUtilities || areUtilitiesDisplayed) && (
         <TextInputGroupUtilities>
-          {resultsCount && <Badge isRead>{resultsCount}</Badge>}
+          {resultsCount && (
+            <Badge isRead screenReaderText={resultsCountContext}>
+              {resultsCount}
+            </Badge>
+          )}
           {!!onNextClick && !!onPreviousClick && (
             <div className={textInputGroupStyles.textInputGroupGroup}>
               <Button
