@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.37...@patternfly/react-integration@6.0.0-prerelease.38) (2025-05-29)
+
+### Bug Fixes
+
+- added resultsCountContext prop to pass into the screenReaderText… ([#11844](https://github.com/patternfly/patternfly-react/issues/11844)) ([d96668a](https://github.com/patternfly/patternfly-react/commit/d96668aa1ddaba5bea8b1c921e8f2145d44587ad))
+
 # [6.0.0-prerelease.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.36...@patternfly/react-integration@6.0.0-prerelease.37) (2025-05-21)
 
 ### Features

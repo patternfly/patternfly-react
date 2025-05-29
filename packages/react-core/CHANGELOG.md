@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.15...@patternfly/react-core@6.3.0-prerelease.16) (2025-05-29)
+
+### Bug Fixes
+
+- added resultsCountContext prop to pass into the screenReaderText… ([#11844](https://github.com/patternfly/patternfly-react/issues/11844)) ([d96668a](https://github.com/patternfly/patternfly-react/commit/d96668aa1ddaba5bea8b1c921e8f2145d44587ad))
+- **Popper:** resolved alignment issue for multiple renders ([#11846](https://github.com/patternfly/patternfly-react/issues/11846)) ([df45676](https://github.com/patternfly/patternfly-react/commit/df45676f2eddf21226117a97d2af2490982b14c1))
+
 # [6.3.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.14...@patternfly/react-core@6.3.0-prerelease.15) (2025-05-29)
 
 ### Features
