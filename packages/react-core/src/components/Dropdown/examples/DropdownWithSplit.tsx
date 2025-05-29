@@ -7,17 +7,19 @@ import {
   Divider,
   MenuToggleElement
 } from '@patternfly/react-core';
+import { useState } from 'react';
 
 export const DropdownSplitButtonText: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-
-  const onToggleClick = () => {
-    setIsOpen(!isOpen);
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleRef = React.useRef<MenuToggleElement>(null);
 
   const onFocus = () => {
-    const element = document.getElementById('toggle-split-button-text');
-    element?.focus();
+    if (toggleRef.current) {
+      const toggleButton = toggleRef.current.querySelector('button[aria-expanded]');
+      if (toggleButton) {
+        (toggleButton as HTMLElement).focus();
+      }
+    }
   };
 
   const onSelect = () => {
@@ -25,21 +27,29 @@ export const DropdownSplitButtonText: React.FunctionComponent = () => {
     onFocus();
   };
 
+  const onToggleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <Dropdown
       onSelect={onSelect}
       onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
-      toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+      toggle={(toggleRefCallback: React.Ref<MenuToggleElement>) => (
         <MenuToggle
+          ref={(node) => {
+            // Handle both callback ref and useRef
+            if (typeof toggleRefCallback === 'function') {
+              toggleRefCallback(node);
+            } else if (toggleRefCallback) {
+              (toggleRefCallback as React.MutableRefObject<MenuToggleElement | null>).current = node;
+            }
+            (toggleRef as React.MutableRefObject<MenuToggleElement | null>).current = node;
+          }}
           splitButtonItems={[
-            <MenuToggleCheckbox
-              id="split-button-checkbox-example"
-              key="split-checkbox"
-              aria-label="Select all"
-            ></MenuToggleCheckbox>
+            <MenuToggleCheckbox id="split-button-checkbox-example" key="split-checkbox" aria-label="Select all" />
           ]}
           aria-label="Dropdown with checkbox split button"
-          ref={toggleRef}
           onClick={onToggleClick}
           isExpanded={isOpen}
         />
