@@ -1,7 +1,8 @@
 import { createContext } from 'react';
 export const DualListSelectorContext = createContext<{
   isTree?: boolean;
-}>({ isTree: false });
+  hasAnimations?: boolean;
+}>({ isTree: false, hasAnimations: false });
 
 export const DualListSelectorListContext = createContext<{
   setFocusedOption?: (id: string) => void;

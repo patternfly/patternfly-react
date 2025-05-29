@@ -1,5 +1,7 @@
+import { useContext } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
+import { DualListSelectorContext } from './DualListSelectorContext';
 import { DualListSelectorTreeItem } from './DualListSelectorTreeItem';
 
 export interface DualListSelectorTreeItemData {
@@ -68,11 +70,13 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
   isDisabled = false,
   ...props
 }: DualListSelectorTreeProps) => {
+  const { hasAnimations } = useContext(DualListSelectorContext);
   const dataToRender = typeof data === 'function' ? data() : data;
   const tree = dataToRender.map((item) => (
     <DualListSelectorTreeItem
       key={item.id}
       text={item.text}
+      hasAnimations={hasAnimations}
       id={item.id}
       defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
       onOptionCheck={onOptionCheck}
