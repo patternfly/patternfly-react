@@ -186,9 +186,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     <>
       {hasBadge && children && (
         <span className={css(styles.treeViewNodeCount)}>
-          <Badge {...badgeProps}>
-            {customBadgeContent ? customBadgeContent : (children as React.ReactElement<any>).props.data.length}
-          </Badge>
+          <Badge {...badgeProps}>{customBadgeContent ?? (children as React.ReactElement<any>).props.data.length}</Badge>
         </span>
       )}
       {hasBadge && !children && customBadgeContent !== undefined && (
