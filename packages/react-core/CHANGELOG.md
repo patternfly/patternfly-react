@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.16...@patternfly/react-core@6.3.0-prerelease.17) (2025-06-02)
+
+### Bug Fixes
+
+- **TreeViewListItem:** customBadgeContent of number 0 will display ([#11848](https://github.com/patternfly/patternfly-react/issues/11848)) ([134960a](https://github.com/patternfly/patternfly-react/commit/134960a845d5e94f3979f1719f978a11987b2f70))
+
 # [6.3.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.15...@patternfly/react-core@6.3.0-prerelease.16) (2025-05-29)
 
 ### Bug Fixes
