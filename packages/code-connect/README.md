@@ -9,7 +9,7 @@ The PatternFly React icon generation system automates the process of creating an
 ### 1. Icon Data Source (`iconsData.json`)
 Defines the metadata for each icon in the library.
 
-```npm run figma:icons:fetch FIGMA_ACCESS_TOKEN```
+```npm run figma:icons:fetch --token=FIGMA_ACCESS_TOKEN```
 
 #### JSON Structure
 ```json

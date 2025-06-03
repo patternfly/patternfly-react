@@ -51,28 +51,16 @@ function standardizeIconName(name) {
 async function generateIconConnections() {
   try {
     // Read the existing icons data
-    let config;
-    try {
-      const configPath = path.resolve(process.cwd(), 'codeConnect/config.json');
-      if (existsSync(configPath)) {
-        const configContent = await fs.readFile(configPath, 'utf8');
-        config = JSON.parse(configContent);
-        logger.success('Loaded configuration from config.json');
-      } else {
-        throw new Error('Configuration file not found');
-      }
-    } catch (error) {
-      logger.warn('Could not load config.json, using default configuration');
-      config = {
-        figmaBaseUrl:
-          'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6%3A-Components-Test?node-id=35205-247&m=dev',
-        defaultNodeId: '1-196',
-        iconsDataPath: '../data/iconsData.json',
-        iconsFigmaDir: '../icons',
-        figmaOutputFile: 'icons.figma.tsx',
-        generatedIndexFile: 'index.ts'
-      };
-    }
+    logger.warn('Could not load config.json, using default configuration');
+    const config = {
+      figmaBaseUrl:
+        'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6%3A-Components-Test?node-id=35205-247&m=dev',
+      defaultNodeId: '1-196',
+      iconsDataPath: '../data/iconsData.json',
+      iconsFigmaDir: '../icons',
+      figmaOutputFile: 'icons.figma.tsx',
+      generatedIndexFile: 'index.ts'
+    };
 
     const iconsDataPath = config.iconsDataPath;
     const outputDir = config.iconsFigmaDir;
