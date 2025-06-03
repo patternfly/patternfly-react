@@ -14,11 +14,20 @@ figma.connect(
       isActive: figma.enum('State', { Active: true }),
       isReadOnly: figma.enum('State', { 'Read only': true }),
       isExpanded: figma.enum('State', { Expanded: true }),
+      expansion: figma.enum('State', {
+        Expanded: 'expansion',
+        false: undefined
+      }),
 
       children: figma.children('*')
     },
     example: (props) => (
-      <ClipboardCopy isReadOnly={props.isReadOnly} isExpanded={props.isExpanded} isActive={props.isActive}>
+      <ClipboardCopy
+        isReadOnly={props.isReadOnly}
+        variant={props.expansion}
+        isExpanded={props.isExpanded}
+        isActive={props.isActive}
+      >
         {props.children}
       </ClipboardCopy>
     )
