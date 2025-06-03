@@ -125,6 +125,13 @@ Stateful buttons are ideal for displaying the state of notifications. Use `varia
 ```ts file="./ButtonStateful.tsx"
 ```
 
+### Favorite
+
+You can pass both the `isFavorite` and `variant="plain"` properties into the `<Button>` to create a favorite button. Passing the `isFavorited` property will determine the current favorited state and update styling accordingly.
+
+```ts file = "./ButtonFavorite.tsx"
+```
+
 ## Using router links
 
 Router links can be used for in-app linking in React environments to prevent page reloading. To use a `Link` component from a router package, you can follow our [custom component example](#custom-component) and pass a callback to the `component` property of the `Button`:
@@ -133,11 +140,4 @@ Router links can be used for in-app linking in React environments to prevent pag
 <Button variant="link" component={(props: any) => <Link {...props} to="#" />}>
   Router link
 </Button>
-```
-
-### Favorite
-
-A favorite button should use a plain button with the star icon. Applying `.pf-m-favorited` to the button initiates a microanimation and indicates that the item is favorited.
-
-```ts file = "./ButtonFavorite.tsx"
 ```
