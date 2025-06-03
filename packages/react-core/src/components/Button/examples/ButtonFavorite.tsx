@@ -10,7 +10,7 @@ export const ButtonFavorite: React.FunctionComponent = () => {
   return (
     <Button
       variant="plain"
-      aria-label="favorite action"
+      aria-label={isFavorited ? 'Favorite example favorited' : 'Favorite example not favorited'}
       isFavorite
       isFavorited={isFavorited}
       onClick={toggleFavorite}

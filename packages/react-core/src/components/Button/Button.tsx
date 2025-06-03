@@ -73,7 +73,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   isInline?: boolean;
   /** Adds favorite styling to a button */
   isFavorite?: boolean;
-  /** Controls the favorited state when isFavorite is true */
+  /** Flag indicating whether the button is favorited or not, only when isFavorite is true. */
   isFavorited?: boolean;
   /** Adds styling which affects the size of the button */
   size?: 'default' | 'sm' | 'lg';
