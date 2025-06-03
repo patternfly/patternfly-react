@@ -7,7 +7,6 @@
  */
 import fs from 'fs/promises';
 import path from 'path';
-import { existsSync } from 'fs';
 
 // Simple logger implementation
 const logger = {
