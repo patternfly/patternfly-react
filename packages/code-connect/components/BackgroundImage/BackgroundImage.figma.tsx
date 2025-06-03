@@ -2,7 +2,8 @@ import figma from '@figma/code-connect';
 import { BackgroundImage } from '@patternfly/react-core';
 
 /**
- * PatternFly BackgroundImage component integration for Figma Code Connect
+ * PatternFly AccordionToggle integration for Figma Code Connect
+ * @patternfly https://www.patternfly.org/components/background-image
  */
 
 figma.connect(

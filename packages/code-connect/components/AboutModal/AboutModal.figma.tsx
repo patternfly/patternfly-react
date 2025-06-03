@@ -13,15 +13,21 @@ figma.connect(
       // string
       productName: figma.string('Product name'),
 
+      trademark: 'Copyright © 2024',
+      brandImageSrc: 'Brand Image Source',
+      brandImageAlt: 'Brand Image Alt Text',
+      backgroundImageSrc: '/assets/images/background.png',
+
+      // children
       children: figma.children('*')
     },
     example: (props) => (
       <AboutModal
         productName={props.productName}
-        trademark="Copyright © 2024"
-        brandImageSrc="Brand Image Source"
-        brandImageAlt="Brand Image Alt Text"
-        backgroundImageSrc="/assets/images/background.png"
+        trademark={props.trademark}
+        brandImageSrc={props.brandImageSrc}
+        brandImageAlt={props.brandImageAlt}
+        backgroundImageSrc={props.backgroundImageSrc}
       >
         {props.children}
       </AboutModal>
