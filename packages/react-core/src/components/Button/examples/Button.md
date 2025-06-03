@@ -15,6 +15,7 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-i
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 
 ## Examples
 
