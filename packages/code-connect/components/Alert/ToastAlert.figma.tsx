@@ -24,6 +24,9 @@ figma.connect(
         Warning: 'warning'
       })
     },
-    example: (props) => <Alert title={props.title} variant={props.variant} isExpandable={props.isExpandable} />
+    example: (props) => (
+      // Documentation for Alert can be found at https://www.patternfly.org/components/alert
+      <Alert title={props.title} variant={props.variant} isExpandable={props.isExpandable} />
+    )
   }
 );

@@ -16,6 +16,9 @@ figma.connect(
 
       children: figma.children('*')
     },
-    example: (props) => <AlertGroup overflowMessage={props.overflowMessage}>{props.children}</AlertGroup>
+    example: (props) => (
+      // Documentation for Alert can be found at https://www.patternfly.org/components/alert
+      <AlertGroup overflowMessage={props.overflowMessage}>{props.children}</AlertGroup>
+    )
   }
 );

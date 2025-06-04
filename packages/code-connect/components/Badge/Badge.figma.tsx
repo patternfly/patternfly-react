@@ -1,11 +1,6 @@
 import figma from '@figma/code-connect';
 import { Badge } from '@patternfly/react-core';
 
-/**
- * PatternFly Badge integration for Figma Code Connect
- * @patternfly https://www.patternfly.org/components/badge
- */
-
 figma.connect(
   Badge,
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=1259-1132&m=dev',
@@ -21,6 +16,7 @@ figma.connect(
       })
     },
     example: (props) => (
+      // Documentation for Badge can be found at https://www.patternfly.org/components/badge
       <Badge isRead={props.isRead} isDisabled={props.isDisabled} screenReaderText="Badge">
         {props.text}
       </Badge>
