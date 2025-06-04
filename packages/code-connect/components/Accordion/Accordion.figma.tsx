@@ -1,11 +1,6 @@
 import figma from '@figma/code-connect';
 import { Accordion } from '@patternfly/react-core';
 
-/**
- * PatternFly AccordionToggle integration for Figma Code Connect
- * @patternfly https://www.patternfly.org/components/accordion
- */
-
 figma.connect(
   Accordion,
   'https://www.figma.com/file/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6%3A-Components-Test?node-id=2621-623',
@@ -26,6 +21,7 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
+      // Documentation for Accordion can be found at https://www.patternfly.org/components/accordion
       <Accordion togglePosition={props.togglePosition} isBordered={props.isBordered} displaySize={props.displaySize}>
         {props.children}
       </Accordion>
