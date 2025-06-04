@@ -2,7 +2,8 @@ import figma from '@figma/code-connect';
 import { Avatar } from '@patternfly/react-core';
 
 /**
- * PatternFly Avatar component integration for Figma Code Connect
+ * PatternFly Avatar integration for Figma Code Connect
+ * @patternfly https://www.patternfly.org/components/avatar
  */
 
 figma.connect(
