@@ -2,7 +2,8 @@ import figma from '@figma/code-connect';
 import { AlertGroup } from '@patternfly/react-core';
 
 /**
- * PatternFly Alert component integration for Figma Code Connect
+ * PatternFly Alert integration for Figma Code Connect
+ * @patternfly https://www.patternfly.org/components/alert
  */
 
 figma.connect(
@@ -13,6 +14,10 @@ figma.connect(
       // children
       children: figma.children('*')
     },
-    example: (props) => <AlertGroup>{props.children}</AlertGroup>
+    example: (props) => (
+      <AlertGroup isLiveRegion hasAnimations>
+        {props.children}
+      </AlertGroup>
+    )
   }
 );
