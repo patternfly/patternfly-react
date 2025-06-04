@@ -2,7 +2,8 @@ import figma from '@figma/code-connect';
 import { Alert } from '@patternfly/react-core';
 
 /**
- * PatternFly Alert component integration for Figma Code Connect
+ * PatternFly Alert integration for Figma Code Connect
+ * @patternfly https://www.patternfly.org/components/alert
  */
 
 figma.connect(
@@ -10,19 +11,11 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=1110-2698&m=dev',
   {
     props: {
-      // booleans
-      description: figma.boolean('Description', {
-        true: figma.string('✏️ Description'),
-        false: undefined
-      }),
-      hasActions: figma.boolean('Actions'),
-      isDismissable: figma.boolean('Dismissable'),
-      isExpandable: figma.boolean('Expandable'),
-
-      // strings
       title: figma.string('✏️ Title'),
-
-      // enums
+      isExpandable: figma.boolean('Expandable', {
+        true: true,
+        false: false
+      }),
       variant: figma.enum('Type', {
         Info: 'info',
         Success: 'success',
@@ -31,17 +24,6 @@ figma.connect(
         Custom: 'custom'
       })
     },
-    example: (props) => (
-      <Alert
-        actionClose={props.isDismissable}
-        actionLinks={props.hasActions}
-        isExpandable={props.isExpandable}
-        isInline
-        title={props.title}
-        variant={props.variant}
-      >
-        {props.description}
-      </Alert>
-    )
+    example: (props) => <Alert isExpandable={props.isExpandable} isInline title={props.title} variant={props.variant} />
   }
 );

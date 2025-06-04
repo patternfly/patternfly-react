@@ -2,7 +2,9 @@ import figma from '@figma/code-connect';
 import { Backdrop } from '@patternfly/react-core';
 
 /**
- * PatternFly Backdrop component integration for Figma Code Connect
+/**
+ * PatternFly Backdrop integration for Figma Code Connect
+ * @patternfly https://www.patternfly.org/components/backdrop
  */
 
 figma.connect(
