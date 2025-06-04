@@ -2,7 +2,8 @@ import figma from '@figma/code-connect';
 import { AboutModal } from '@patternfly/react-core';
 
 /**
- * PatternFly About Modal component integration for Figma Code Connect
+ * PatternFly AccordionToggle integration for Figma Code Connect
+ * @patternfly https://www.patternfly.org/components/about-modal
  */
 
 figma.connect(
