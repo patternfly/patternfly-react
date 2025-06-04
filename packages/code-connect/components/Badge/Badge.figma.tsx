@@ -2,7 +2,8 @@ import figma from '@figma/code-connect';
 import { Badge } from '@patternfly/react-core';
 
 /**
- * PatternFly Badge component integration for Figma Code Connect
+ * PatternFly Badge integration for Figma Code Connect
+ * @patternfly https://www.patternfly.org/components/badge
  */
 
 figma.connect(
@@ -11,16 +12,18 @@ figma.connect(
   {
     props: {
       // strings
-      title: figma.string('Text'),
+      text: figma.string('Text'),
 
       // enums
-      isRead: figma.enum('Type', {
-        Read: true
-      }),
+      isRead: figma.enum('Type', { Read: true }),
       isDisabled: figma.enum('Type', {
         disabled: true
       })
     },
-    example: (props) => <Badge title={props.title} isRead={props.isRead} isDisabled={props.isDisabled} />
+    example: (props) => (
+      <Badge isRead={props.isRead} isDisabled={props.isDisabled} screenReaderText="Badge">
+        {props.text}
+      </Badge>
+    )
   }
 );
