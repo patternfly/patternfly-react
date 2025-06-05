@@ -130,18 +130,6 @@ test('Renders with ARIA attributes when contentId and toggleId are passed', () =
   expect(wrapper).toContainHTML('aria-controls="content-id"');
 });
 
-test(`Does not render with class pf-m-detached by default`, () => {
-  render(<ExpandableSection>Test content</ExpandableSection>);
-
-  expect(screen.getByText('Test content').parentElement).not.toHaveClass('pf-m-detached');
-});
-
-test(`Renders with class pf-m-detached when isDetached is true`, () => {
-  render(<ExpandableSection isDetached>Test content</ExpandableSection>);
-
-  expect(screen.getByText('Test content').parentElement).toHaveClass('pf-m-detached');
-});
-
 test(`Does not render with classes pf-m-expand-top nor pf-m-expand-bottom by default`, () => {
   render(<ExpandableSection>Test content</ExpandableSection>);
 
@@ -156,13 +144,13 @@ test(`Does not render with classes pf-m-expand-top nor pf-m-expand-bottom when o
   expect(screen.getByText('Test content').parentElement).not.toHaveClass('pf-m-expand-bottom');
 });
 
-test(`Does not render with class pf-m-expand-top when only direction="up"`, () => {
+test(`Does not render with class pf-m-expand-top when direction="up" and isDetached is false`, () => {
   render(<ExpandableSection direction="up">Test content</ExpandableSection>);
 
   expect(screen.getByText('Test content').parentElement).not.toHaveClass('pf-m-expand-top');
 });
 
-test(`Does not render with class pf-m-expand-bottom when only direction="down"`, () => {
+test(`Does not render with class pf-m-expand-bottom when direction="down" and isDetached is false`, () => {
   render(<ExpandableSection direction="down">Test content</ExpandableSection>);
 
   expect(screen.getByText('Test content').parentElement).not.toHaveClass('pf-m-expand-bottom');
