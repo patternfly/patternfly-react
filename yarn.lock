@@ -3919,8 +3919,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-tokens@workspace:packages/react-tokens"
   dependencies:
+    "@adobe/css-tools": "npm:^4.4.2"
     "@patternfly/patternfly": "npm:6.3.0-prerelease.26"
-    css: "npm:^3.0.0"
     fs-extra: "npm:^11.3.0"
   languageName: unknown
   linkType: soft

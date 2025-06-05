@@ -6,7 +6,7 @@ import { useOUIAProps, OUIAProps } from '../../helpers/OUIA/ouia';
 import { Badge } from '../Badge';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 import OutlinedStarIcon from '@patternfly/react-icons/dist/esm/icons/outlined-star-icon';
-import CogIcon from '@patternfly/react-icons/icons/cog-icon/dist/esm/icons/cog-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 // TODO: replace following hamburger import when https://github.com/patternfly/patternfly-react/issues/11858 is resolved
 import { hamburgerIcon } from '../../helpers/hamburgerIcon';
 

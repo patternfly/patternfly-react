@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-togg
 import { css } from '@patternfly/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { BadgeProps } from '../Badge';
-import CogIcon from '@patternfly/react-icons/icons/cog-icon/dist/esm/icons/cog-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
