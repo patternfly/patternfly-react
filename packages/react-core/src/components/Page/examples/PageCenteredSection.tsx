@@ -17,7 +17,6 @@ import {
   Card,
   CardBody
 } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import pageSectionWidthLimitMaxWidth from '@patternfly/react-tokens/dist/esm/c_page_section_m_limit_width_MaxWidth';
 
 export const PageCenteredSection: React.FunctionComponent = () => {
@@ -40,14 +39,12 @@ export const PageCenteredSection: React.FunctionComponent = () => {
       <MastheadMain>
         <MastheadToggle>
           <PageToggleButton
-            variant="plain"
             aria-label="Global navigation"
             isSidebarOpen={isSidebarOpen}
             onSidebarToggle={onSidebarToggle}
             id="centered-nav-toggle"
-          >
-            <BarsIcon />
-          </PageToggleButton>
+            isHamburgerButton
+          />
         </MastheadToggle>
         <MastheadBrand>
           <MastheadLogo href="https://patternfly.org" target="_blank">

@@ -16,7 +16,6 @@ import {
   ToolbarContent,
   ToolbarItem
 } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 export class PageDemo extends Component {
   static displayName = 'PageDemo';
   state = {
@@ -76,13 +75,11 @@ export class PageDemo extends Component {
         <MastheadMain>
           <MastheadToggle>
             <PageToggleButton
-              variant="plain"
+              isHamburgerButton
               aria-label="Global navigation"
               isSidebarOpen={isNavOpen}
               onSidebarToggle={this.onNavToggle}
-            >
-              <BarsIcon />
-            </PageToggleButton>
+            />
           </MastheadToggle>
           <MastheadBrand>
             <MastheadLogo component="div">Logo that's a div</MastheadLogo>
