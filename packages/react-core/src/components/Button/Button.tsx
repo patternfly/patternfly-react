@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { Spinner, spinnerSize } from '../Spinner';
 import { useOUIAProps, OUIAProps } from '../../helpers/OUIA/ouia';
 import { Badge } from '../Badge';
-import CogIcon from '@patternfly/react-icons/icons/cog-icon/dist/esm/icons/cog-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 // TODO: replace following hamburger import when https://github.com/patternfly/patternfly-react/issues/11858 is resolved
 import { hamburgerIcon } from '../../helpers/hamburgerIcon';
 
