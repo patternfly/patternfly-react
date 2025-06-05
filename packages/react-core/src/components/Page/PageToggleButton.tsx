@@ -10,6 +10,10 @@ export interface PageToggleButtonProps extends ButtonProps {
   onSidebarToggle?: () => void;
   /** Button id */
   id?: string;
+  /** Adds an accessible name to the toggle button. */
+  'aria-label'?: string;
+  /** Flag indicating whether the hamburger button variation with animations should be used. */
+  isHamburgerButton?: boolean;
 }
 
 export const PageToggleButton: React.FunctionComponent<PageToggleButtonProps> = ({
@@ -17,6 +21,8 @@ export const PageToggleButton: React.FunctionComponent<PageToggleButtonProps> = 
   isSidebarOpen = true,
   onSidebarToggle = () => undefined as any,
   id = 'nav-toggle',
+  'aria-label': ariaLabel = 'Side navigation toggle',
+  isHamburgerButton,
   ...props
 }: PageToggleButtonProps) => (
   <PageContextConsumer>
@@ -32,12 +38,13 @@ export const PageToggleButton: React.FunctionComponent<PageToggleButtonProps> = 
         <Button
           id={id}
           onClick={sidebarToggle}
-          aria-label="Side navigation toggle"
+          aria-label={ariaLabel}
           aria-expanded={sidebarOpen ? 'true' : 'false'}
           variant={ButtonVariant.plain}
+          isHamburger={isHamburgerButton}
           {...props}
         >
-          {children}
+          {!isHamburgerButton && children}
         </Button>
       );
     }}

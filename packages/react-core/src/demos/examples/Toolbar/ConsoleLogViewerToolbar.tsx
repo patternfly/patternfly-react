@@ -25,7 +25,6 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 export const ConsoleLogViewerToolbar: React.FC = () => {
@@ -301,7 +300,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
           onOpenChangeKeys={['Escape']}
           onSelect={onOptionSelect}
           toggle={(toggleRef) => (
-            <MenuToggle ref={toggleRef} isExpanded={optionExpanded} onClick={onOptionToggle} icon={<CogIcon />}>
+            <MenuToggle ref={toggleRef} isExpanded={optionExpanded} onClick={onOptionToggle} isSettings>
               Options
             </MenuToggle>
           )}
@@ -355,7 +354,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
                 ref={toggleRef}
                 isExpanded={optionExpandedMobile}
                 onClick={onOptionToggleMobile}
-                icon={<CogIcon />}
+                isSettings
                 aria-label="Options"
               />
             )}

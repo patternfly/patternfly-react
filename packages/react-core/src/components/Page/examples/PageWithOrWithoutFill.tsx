@@ -15,7 +15,6 @@ import {
   ToolbarContent,
   ToolbarItem
 } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
 export const PageWithOrWithoutFill: React.FunctionComponent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -37,14 +36,12 @@ export const PageWithOrWithoutFill: React.FunctionComponent = () => {
       <MastheadMain>
         <MastheadToggle>
           <PageToggleButton
-            variant="plain"
+            isHamburgerButton
             aria-label="Global navigation"
             isSidebarOpen={isSidebarOpen}
             onSidebarToggle={onSidebarToggle}
             id="fill-nav-toggle"
-          >
-            <BarsIcon />
-          </PageToggleButton>
+          />
         </MastheadToggle>
         <MastheadBrand>
           <MastheadLogo href="https://patternfly.org" target="_blank">

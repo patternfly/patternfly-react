@@ -31,7 +31,6 @@ import {
   WizardStep
 } from '@patternfly/react-core';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
@@ -83,9 +82,7 @@ export const WizardFullPageWithDrawerInfoStepDemo: React.FunctionComponent = () 
     <Masthead id="basic">
       <MastheadMain>
         <MastheadToggle>
-          <PageToggleButton variant="plain" aria-label="Global navigation">
-            <BarsIcon />
-          </PageToggleButton>
+          <PageToggleButton isHamburgerButton aria-label="Global navigation" />
         </MastheadToggle>
         <MastheadBrand>
           <MastheadLogo>

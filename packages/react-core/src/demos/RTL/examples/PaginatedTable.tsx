@@ -48,7 +48,6 @@ import ToolsIcon from '@patternfly/react-icons/dist/esm/icons/tools-icon';
 import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
 import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
@@ -321,9 +320,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
     <Masthead>
       <MastheadMain>
         <MastheadToggle>
-          <PageToggleButton variant="plain" aria-label={translation.mastheadToggleAriaLabel}>
-            <BarsIcon />
-          </PageToggleButton>
+          <PageToggleButton isHamburgerButton aria-label={translation.mastheadToggleAriaLabel} />
         </MastheadToggle>
         <MastheadBrand>
           <MastheadLogo dir="ltr">
@@ -342,11 +339,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
             >
               <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
                 <ToolbarItem>
-                  <Button
-                    aria-label={translation.kebabDropdown.settings}
-                    variant={ButtonVariant.plain}
-                    icon={<CogIcon />}
-                  />
+                  <Button aria-label={translation.kebabDropdown.settings} isSettings />
                 </ToolbarItem>
                 <ToolbarItem>
                   <Button
