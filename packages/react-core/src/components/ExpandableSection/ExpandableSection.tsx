@@ -68,7 +68,6 @@ export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElem
    * animation will not occur.
    */
   direction?: 'up' | 'down';
-  hasDetachedAnimations?: boolean;
 }
 
 interface ExpandableSectionState {
@@ -204,7 +203,6 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       truncateMaxLines,
       direction,
-      hasDetachedAnimations,
       ...props
     } = this.props;
 
@@ -257,8 +255,6 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       </div>
     );
 
-    const shouldApplyDetachedAnimations = hasDetachedAnimations && isDetached;
-
     return (
       <div
         className={css(
@@ -267,10 +263,7 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
           displaySize === 'lg' && styles.modifiers.displayLg,
           isWidthLimited && styles.modifiers.limitWidth,
           isIndented && styles.modifiers.indented,
-          shouldApplyDetachedAnimations && 'pf-m-detached',
-          shouldApplyDetachedAnimations &&
-            direction &&
-            (direction === 'up' ? styles.modifiers.expandTop : 'pf-m-expand-bottom'),
+          isDetached && direction && (direction === 'up' ? styles.modifiers.expandTop : 'pf-m-expand-bottom'),
           variant === ExpandableSectionVariant.truncate && styles.modifiers.truncate,
           className
         )}
