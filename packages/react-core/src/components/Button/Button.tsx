@@ -6,6 +6,9 @@ import { useOUIAProps, OUIAProps } from '../../helpers/OUIA/ouia';
 import { Badge } from '../Badge';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 import OutlinedStarIcon from '@patternfly/react-icons/dist/esm/icons/outlined-star-icon';
+import CogIcon from '@patternfly/react-icons/icons/cog-icon/dist/esm/icons/cog-icon';
+// TODO: replace following hamburger import when https://github.com/patternfly/patternfly-react/issues/11858 is resolved
+import { hamburgerIcon } from '../../helpers/hamburgerIcon';
 
 export enum ButtonVariant {
   primary = 'primary',
@@ -97,6 +100,14 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   tabIndex?: number;
   /** Adds danger styling to secondary or link button variants */
   isDanger?: boolean;
+  /** Flag indicating whether content the button controls is expanded or not. Required when isHamburger is true. */
+  isExpanded?: boolean;
+  /** Flag indicating the button is a settings button. This will override the variant and icon properties. */
+  isSettings?: boolean;
+  /** Flag indicating the button is a hamburger button. This will override the children, variant, and icon properties. */
+  isHamburger?: boolean;
+  /** Adjusts and animates the hamburger icon to indicate what will happen upon clicking the button. */
+  hamburgerVariant?: 'expand' | 'collapse';
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Adds count number to button */
@@ -117,6 +128,10 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   isAriaDisabled = false,
   isLoading = null,
   isDanger = false,
+  isExpanded,
+  isSettings,
+  isHamburger,
+  hamburgerVariant,
   spinnerAriaValueText,
   spinnerAriaLabelledBy,
   spinnerAriaLabel,
@@ -146,13 +161,27 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       'Button: Each favorite button must have a unique accessible name provided via aria-label or aria-labelledby'
     );
   }
+  if (isHamburger && ![true, false].includes(isExpanded)) {
+    // eslint-disable-next-line no-console
+    console.error(
+      'Button: when the isHamburger property is passed in, you must also pass in a boolean value to the isExpanded property. It is expected that a hamburger button controls the expansion of other content.'
+    );
+  }
+  // TODO: Remove isSettings in breaking change to throw this warning for any non-hamburger button that does not have children or aria-label
+  if ((isHamburger && !ariaLabel) || (isSettings && (!ariaLabel || !children || !props['aria-labelledby']))) {
+    // eslint-disable-next-line no-console
+    console.error(
+      'Button: you must provide either visible text content or an accessible name via the aria-label or aria-labelledby properties.'
+    );
+  }
 
   const ouiaProps = useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant);
   const Component = component as any;
   const isButtonElement = Component === 'button';
   const isInlineSpan = isInline && Component === 'span';
   const isIconAlignedAtEnd = iconPosition === 'end' || iconPosition === 'right';
-  const shouldOverrideIcon = isFavorite;
+  const shouldForcePlainVariant = isSettings || isHamburger;
+  const shouldOverrideIcon = isSettings || isHamburger || isFavorite;
 
   const preventedEvents = inoperableEvents.reduce(
     (handlers, eventToPrevent) => ({
@@ -190,6 +219,12 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       );
     }
 
+    if (isSettings) {
+      iconContent = <CogIcon />;
+    }
+    if (isHamburger) {
+      iconContent = hamburgerIcon;
+    }
     if (icon && !shouldOverrideIcon) {
       iconContent = icon;
     }
@@ -202,9 +237,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       )
     );
   };
-
   const _icon = renderIcon();
-  const _children = children && <span className={css('pf-v6-c-button__text')}>{children}</span>;
+  const _children = children && !isHamburger && <span className={css('pf-v6-c-button__text')}>{children}</span>;
   // We only want to render the aria-disabled attribute when true, similar to the disabled attribute natively.
   const shouldRenderAriaDisabled = isAriaDisabled || (!isButtonElement && isDisabled);
 
@@ -214,9 +248,13 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       {...(isAriaDisabled ? preventedEvents : null)}
       {...(shouldRenderAriaDisabled && { 'aria-disabled': true })}
       aria-label={ariaLabel}
+      aria-expanded={isExpanded}
       className={css(
         styles.button,
-        styles.modifiers[variant],
+        shouldForcePlainVariant ? styles.modifiers.plain : styles.modifiers[variant],
+        isSettings && styles.modifiers.settings,
+        isHamburger && styles.modifiers.hamburger,
+        isHamburger && hamburgerVariant && styles.modifiers[hamburgerVariant],
         isBlock && styles.modifiers.block,
         isDisabled && !isButtonElement && styles.modifiers.disabled,
         isAriaDisabled && styles.modifiers.ariaDisabled,

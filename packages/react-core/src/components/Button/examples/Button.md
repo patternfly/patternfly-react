@@ -132,6 +132,16 @@ You can pass both the `isFavorite` and `variant="plain"` properties into the `<B
 ```ts file = "./ButtonFavorite.tsx"
 ```
 
+### Settings 
+
+```ts file="./ButtonSettings.tsx"
+```
+
+### Hamburger
+
+```ts file="./ButtonHamburger.tsx"
+```
+
 ## Using router links
 
 Router links can be used for in-app linking in React environments to prevent page reloading. To use a `Link` component from a router package, you can follow our [custom component example](#custom-component) and pass a callback to the `component` property of the `Button`:
