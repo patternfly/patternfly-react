@@ -138,6 +138,13 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   countOptions,
   ...props
 }: ButtonProps) => {
+  if (isFavorite && !ariaLabel && !props['aria-labelledby']) {
+    // eslint-disable-next-line no-console
+    console.error(
+      'Button: Each favorite button must have a unique accessible name provided via aria-label or aria-labelledby'
+    );
+  }
+
   const ouiaProps = useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant);
   const Component = component as any;
   const isButtonElement = Component === 'button';
