@@ -103,3 +103,18 @@ test(`Renders with class ${styles.modifiers.placeholder} when isPlaceholder is p
   render(<MenuToggle isPlaceholder>Toggle</MenuToggle>);
   expect(screen.getByRole('button')).toHaveClass(styles.modifiers.placeholder);
 });
+
+test(`Renders with class ${styles.modifiers.settings} when isSettings is passed`, () => {
+  render(<MenuToggle isSettings>Settings</MenuToggle>);
+
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.settings);
+});
+
+test('Does not render custom icon when icon prop and isSettings are passed', () => {
+  render(
+    <MenuToggle isSettings icon={<div>Custom icon</div>}>
+      Settings
+    </MenuToggle>
+  );
+  expect(screen.queryByText('Custom icon')).not.toBeInTheDocument();
+});
