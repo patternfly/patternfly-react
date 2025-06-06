@@ -244,11 +244,11 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
 
   return (
     <Component
+      aria-expanded={isExpanded} // Move this after the spread props in next breaking change
       {...props}
       {...(isAriaDisabled ? preventedEvents : null)}
       {...(shouldRenderAriaDisabled && { 'aria-disabled': true })}
       aria-label={ariaLabel}
-      aria-expanded={isExpanded}
       className={css(
         styles.button,
         shouldForcePlainVariant ? styles.modifiers.plain : styles.modifiers[variant],

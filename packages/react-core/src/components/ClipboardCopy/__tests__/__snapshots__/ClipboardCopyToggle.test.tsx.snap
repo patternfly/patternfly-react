@@ -3,7 +3,6 @@
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <button
-    aria-controls="content-id"
     aria-expanded="false"
     aria-labelledby="main-id text-id"
     class="pf-v6-c-button pf-m-control"
