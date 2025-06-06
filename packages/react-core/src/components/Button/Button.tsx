@@ -168,7 +168,10 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
     );
   }
   // TODO: Remove isSettings in breaking change to throw this warning for any non-hamburger button that does not have children or aria-label
-  if ((isHamburger && !ariaLabel) || (isSettings && (!ariaLabel || !children || !props['aria-labelledby']))) {
+  if (
+    (isHamburger && !ariaLabel && !props['aria-labelledby']) ||
+    (isSettings && !ariaLabel && !children && !props['aria-labelledby'])
+  ) {
     // eslint-disable-next-line no-console
     console.error(
       'Button: you must provide either visible text content or an accessible name via the aria-label or aria-labelledby properties.'
