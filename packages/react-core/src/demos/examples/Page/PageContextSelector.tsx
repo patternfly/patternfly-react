@@ -40,7 +40,6 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -151,7 +150,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
           </ToolbarItem>
           <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
             <ToolbarItem>
-              <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
+              <Button aria-label="Settings" isSettings />
             </ToolbarItem>
             <ToolbarItem>
               <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
@@ -231,13 +230,11 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
       <MastheadMain>
         <MastheadToggle>
           <PageToggleButton
-            variant="plain"
+            isHamburgerButton
             aria-label="Global navigation"
             isSidebarOpen={isSidebarOpen}
             onSidebarToggle={onSidebarToggle}
-          >
-            <BarsIcon />
-          </PageToggleButton>
+          />
         </MastheadToggle>
         <MastheadBrand>
           <MastheadLogo>

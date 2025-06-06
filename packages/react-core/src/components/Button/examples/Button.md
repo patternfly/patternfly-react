@@ -125,6 +125,16 @@ Stateful buttons are ideal for displaying the state of notifications. Use `varia
 ```ts file="./ButtonStateful.tsx"
 ```
 
+### Settings 
+
+```ts file="./ButtonSettings.tsx"
+```
+
+### Hamburger
+
+```ts file="./ButtonHamburger.tsx"
+```
+
 ## Using router links
 
 Router links can be used for in-app linking in React environments to prevent page reloading. To use a `Link` component from a router package, you can follow our [custom component example](#custom-component) and pass a callback to the `component` property of the `Button`:

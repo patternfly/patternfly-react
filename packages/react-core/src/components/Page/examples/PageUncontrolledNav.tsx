@@ -14,7 +14,6 @@ import {
   ToolbarContent,
   ToolbarItem
 } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
 export const PageUncontrolledNav: React.FunctionComponent = () => {
   const headerToolbar = (
@@ -29,9 +28,7 @@ export const PageUncontrolledNav: React.FunctionComponent = () => {
     <Masthead>
       <MastheadMain>
         <MastheadToggle>
-          <PageToggleButton variant="plain" aria-label="Global navigation" id="uncontrolled-nav-toggle">
-            <BarsIcon />
-          </PageToggleButton>
+          <PageToggleButton isHamburgerButton aria-label="Global navigation" id="uncontrolled-nav-toggle" />
         </MastheadToggle>
         <MastheadBrand>
           <MastheadLogo href="https://patternfly.org" target="_blank">

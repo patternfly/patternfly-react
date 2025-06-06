@@ -23,7 +23,6 @@ import { SkipToContent } from '@patternfly/react-core/dist/esm/components/SkipTo
 import { Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core/dist/esm/components/Toolbar';
 import imgBrand from './assets/images/imgBrand.svg';
 import imgAvatar from './assets/images/imgAvatar.svg';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import Demos from './Demos';
 import './App.css';
 
@@ -128,9 +127,7 @@ class App extends Component<{}, AppState> {
       <Masthead>
         <MastheadMain>
           <MastheadToggle>
-            <PageToggleButton onSidebarToggle={this.onNavToggle} variant="plain" aria-label="Global navigation">
-              <BarsIcon />
-            </PageToggleButton>
+            <PageToggleButton onSidebarToggle={this.onNavToggle} isHamburgerButton aria-label="Global navigation" />
           </MastheadToggle>
           <MastheadBrand>
             <MastheadLogo>

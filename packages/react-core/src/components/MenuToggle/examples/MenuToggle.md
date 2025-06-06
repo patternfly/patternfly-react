@@ -70,6 +70,11 @@ import { MenuToggle, Badge } from '@patternfly/react-core';
 </Fragment>
 ```
 
+### Settings toggle
+
+```ts file="./MenuToggleSettings.tsx"
+```
+
 ### With icons
 
 To add a recognizable icon to a menu toggle, use the `icon` property. The following example adds a `CogIcon` to the toggle.

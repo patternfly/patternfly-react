@@ -36,7 +36,6 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
@@ -139,7 +138,7 @@ export const NavFlyout: React.FunctionComponent = () => {
           </ToolbarItem>
           <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
             <ToolbarItem>
-              <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
+              <Button aria-label="Settings" isSettings />
             </ToolbarItem>
             <ToolbarItem>
               <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
@@ -220,11 +219,9 @@ export const NavFlyout: React.FunctionComponent = () => {
         <MastheadToggle>
           <PageToggleButton
             onSidebarToggle={isMobileView ? onSidebarToggleMobile : onSidebarToggleDesktop}
-            variant="plain"
+            isHamburgerButton
             aria-label="Global navigation"
-          >
-            <BarsIcon />
-          </PageToggleButton>
+          />
         </MastheadToggle>
         <MastheadBrand>
           <MastheadLogo>
