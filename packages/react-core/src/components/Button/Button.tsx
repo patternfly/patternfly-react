@@ -5,6 +5,7 @@ import { Spinner, spinnerSize } from '../Spinner';
 import { useOUIAProps, OUIAProps } from '../../helpers/OUIA/ouia';
 import { Badge } from '../Badge';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
+import OutlinedStarIcon from '@patternfly/react-icons/dist/esm/icons/outlined-star-icon';
 
 export enum ButtonVariant {
   primary = 'primary',
@@ -180,7 +181,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       iconContent = (
         <>
           <span className={css('pf-v6-c-button__icon-favorite')}>
-            <StarIcon />
+            <OutlinedStarIcon />
           </span>
           <span className={css('pf-v6-c-button__icon-favorited')}>
             <StarIcon />
