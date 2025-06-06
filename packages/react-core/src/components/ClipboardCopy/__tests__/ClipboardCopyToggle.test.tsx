@@ -44,8 +44,14 @@ test('Renders with aria-labelledby concatenated from id and textId props', () =>
   expect(screen.getByRole('button')).toHaveAccessibleName('Toggle content Test content');
 });
 
-test('Renders with aria-controls with passed in contentId prop', () => {
+test('Does not render with aria-controls when isExpanded is false', () => {
   render(<ClipboardCopyToggle {...requiredProps} />);
+
+  expect(screen.getByRole('button')).not.toHaveAttribute('aria-controls');
+});
+
+test('Renders with aria-controls with passed in contentId prop when isExpanded is true', () => {
+  render(<ClipboardCopyToggle isExpanded {...requiredProps} />);
 
   expect(screen.getByRole('button')).toHaveAttribute('aria-controls', requiredProps.contentId);
 });
