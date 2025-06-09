@@ -19,9 +19,10 @@ exports.${jsName}Config = {
   name: '${jsName}',
   height: ${icon.height},
   width: ${icon.width},
-  svgPath: '${icon.svgPathData}',
+  svgPath: ${JSON.stringify(icon.svgPathData)},
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
+  svgClassName: ${JSON.stringify(icon.svgClassName)},
 };
 exports.${jsName} = require('../createIcon').createIcon(exports.${jsName}Config);
 exports["default"] = exports.${jsName};
@@ -38,9 +39,10 @@ export const ${jsName}Config = {
   name: '${jsName}',
   height: ${icon.height},
   width: ${icon.width},
-  svgPath: '${icon.svgPathData}',
+  svgPath: ${JSON.stringify(icon.svgPathData)},
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
+  svgClassName: ${JSON.stringify(icon.svgClassName)},
 };
 
 export const ${jsName} = createIcon(${jsName}Config);
@@ -57,9 +59,10 @@ export declare const ${jsName}Config: {
   name: '${jsName}',
   height: ${icon.height},
   width: ${icon.width},
-  svgPath: '${icon.svgPathData}',
+  svgPath: ${JSON.stringify(icon.svgPathData)},
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
+  svgClassName: ${JSON.stringify(icon.svgClassName)},
 };
 export declare const ${jsName}: ComponentClass<SVGIconProps>;
 export default ${jsName};

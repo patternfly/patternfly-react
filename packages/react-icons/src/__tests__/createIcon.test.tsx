@@ -8,7 +8,19 @@ const iconDef = {
   svgPath: 'svgPath'
 };
 
+const iconDefWithArrayPath = {
+  name: 'IconName',
+  width: 10,
+  height: 20,
+  svgPath: [
+    { path: 'svgPath1', className: 'class1' },
+    { path: 'svgPath2', className: 'class2' }
+  ],
+  svgClassName: 'test'
+};
+
 const SVGIcon = createIcon(iconDef);
+const SVGArrayIcon = createIcon(iconDefWithArrayPath);
 
 test('sets correct viewBox', () => {
   render(<SVGIcon />);
@@ -18,9 +30,25 @@ test('sets correct viewBox', () => {
   );
 });
 
-test('sets correct svgPath', () => {
+test('sets correct svgPath if string', () => {
   render(<SVGIcon />);
   expect(screen.getByRole('img', { hidden: true }).querySelector('path')).toHaveAttribute('d', iconDef.svgPath);
+});
+
+test('sets correct svgPath if array', () => {
+  render(<SVGArrayIcon />);
+  const paths = screen.getByRole('img', { hidden: true }).querySelectorAll('path');
+  expect(paths).toHaveLength(2);
+  expect(paths[0]).toHaveAttribute('d', iconDefWithArrayPath.svgPath[0].path);
+  expect(paths[1]).toHaveAttribute('d', iconDefWithArrayPath.svgPath[1].path);
+  expect(paths[0]).toHaveClass(iconDefWithArrayPath.svgPath[0].className);
+  expect(paths[1]).toHaveClass(iconDefWithArrayPath.svgPath[1].className);
+});
+
+test('sets correct svgClassName', () => {
+  render(<SVGArrayIcon />);
+  const paths = screen.getByRole('img', { hidden: true });
+  expect(paths).toHaveClass(iconDefWithArrayPath.svgClassName);
 });
 
 test('aria-hidden is true if no title is specified', () => {

@@ -29,8 +29,8 @@
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@adobe/css-tools": "^4.4.2",
-    "@patternfly/patternfly": "6.3.0-prerelease.24",
+    "@patternfly/patternfly": "6.3.0-prerelease.26",
+    "css": "^3.0.0",
     "fs-extra": "^11.3.0"
   }
 }
