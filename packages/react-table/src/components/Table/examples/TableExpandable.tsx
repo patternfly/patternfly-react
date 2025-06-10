@@ -116,7 +116,12 @@ export const TableExpandable: React.FunctionComponent = () => {
         id="toggle-compact"
         name="toggle-compact"
       />
-      <Table isExpandable aria-label="Expandable table" variant={isExampleCompact ? 'compact' : undefined}>
+      <Table
+        isExpandable
+        hasAnimations
+        aria-label="Expandable table"
+        variant={isExampleCompact ? 'compact' : undefined}
+      >
         <Thead>
           <Tr>
             <Th screenReaderText="Row expansion" />
