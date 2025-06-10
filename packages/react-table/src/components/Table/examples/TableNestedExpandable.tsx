@@ -61,7 +61,7 @@ export const TableNestedExpandable: React.FunctionComponent = () => {
 
   return (
     <InnerScrollContainer>
-      <Table aria-label="Nested column headers with expandable rows table" gridBreakPoint="">
+      <Table isExpandable hasAnimations aria-label="Nested column headers with expandable rows table" gridBreakPoint="">
         <Thead hasNestedHeader>
           <Tr>
             <Th screenReaderText="Row expansion" rowSpan={2} />
@@ -85,7 +85,7 @@ export const TableNestedExpandable: React.FunctionComponent = () => {
         </Thead>
         {teams.map((team, rowIndex) => (
           <Tbody key={team.name} isExpanded={isTeamExpanded(team)}>
-            <Tr>
+            <Tr isExpanded={isTeamExpanded(team)}>
               <Td
                 expand={{
                   rowIndex,
@@ -104,7 +104,7 @@ export const TableNestedExpandable: React.FunctionComponent = () => {
                 </Button>
               </Td>
             </Tr>
-            <Tr isExpanded={isTeamExpanded(team)}>
+            <Tr isExpanded={isTeamExpanded(team)} isExpandable>
               <Td dataLabel={`Team ${team.name} description`} colSpan={6}>
                 <ExpandableRowContent>{team.description}</ExpandableRowContent>
               </Td>
