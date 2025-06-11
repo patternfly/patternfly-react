@@ -2,17 +2,19 @@
   "codeConnect": {
     "parser": "react",
     "include": [
-      "components/DataList/*.tsx",
-      "components/DescriptionList/*.tsx",
-      "components/Divider/*.tsx",
-      "components/Drawer/*.tsx",
-      "components/DualListSelector/*.tsx"
+      "components/JumpLinks/*.figma.tsx",
+      "components/Label/*.figma.tsx",
+      "components/LoginPage/*.figma.tsx",
+      "components/Masthead/*.figma.tsx",
+      "components/Modal/*.figma.tsx"
     ],
     "paths": {
-      "src/components": "src/components"
+      "@patternfly/react-core": "/Users/mnolting/Web/patternfly-react/packages/react-core/src",
+      "@patternfly/react-table": "/Users/mnolting/Web/patternfly-react/packages/react-table/src"
     },
     "aliases": {
-      "@patternfly/react-core": "."
+      "@patternfly/react-core": "/Users/mnolting/Web/patternfly-react/packages/react-core/src",
+      "@patternfly/react-table": "/Users/mnolting/Web/patternfly-react/packages/react-table/src"
     },
     "importPaths": {
       "src/components": "src/components"
@@ -28,6 +30,10 @@
       "production": {
         "enabled": false
       }
-    }
+    },
+    "exclude": [
+      "node_modules/**",
+      "scripts/**"
+    ]
   }
 }
