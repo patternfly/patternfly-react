@@ -220,7 +220,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
           isExpandable && styles.modifiers.expandable,
           hasNoInset && stylesTreeView.modifiers.noInset,
           isNested && 'pf-m-nested',
-          hasAnimations && 'pf-m-animate-expand'
+          hasAnimations && styles.modifiers.animateExpand
         )}
         ref={tableRef}
         {...(isTreeTable && { role: 'treegrid' })}
