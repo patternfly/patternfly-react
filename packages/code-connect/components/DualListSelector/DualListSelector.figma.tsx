@@ -6,10 +6,10 @@ import {
   DualListSelectorControlsWrapper
 } from '@patternfly/react-core';
 import figma from '@figma/code-connect';
-import AngleRightIcon from '@patternfly/react-icons/icons/angle-right-icon/dist/esm/icons/angle-right-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/icons/angle-double-right-icon/dist/esm/icons/angle-double-right-icon';
-import AngleDoubleLeftIcon from '@patternfly/react-icons/icons/angle-double-left-icon/dist/esm/icons/angle-double-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/icons/angle-left-icon/dist/esm/icons/angle-left-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
+import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 
 figma.connect(
   DualListSelector,
