@@ -25,8 +25,7 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
         id="toggle-hide-radio-button"
         name="toggle-hide"
       />
-      <div style={{ marginTop: '15px' }}></div>
-      <Gallery hasGutter>
+      <Gallery hasGutter style={{ marginTop: '15px' }}>
         <Card id="single-selectable-card-example-1" isSelectable isSelected={isChecked === id1}>
           <CardHeader
             selectableActions={{
