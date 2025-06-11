@@ -6,10 +6,6 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=19922-43760',
   {
     props: {
-      // enum
-      // TODO: add isActive
-      // isActive: figma.enum('State', { 'No link': true }),
-
       children: figma.children('*')
     },
     example: (props) => (
