@@ -178,7 +178,7 @@ class Page extends Component<PageProps, PageState> {
 
   isMobile = () =>
     // eslint-disable-next-line radix
-    this.getWindowWidth() < Number.parseInt(globalBreakpointXl.value, 10) * 16;
+    this.getWindowWidth() <= Number.parseInt(globalBreakpointXl.value, 10) * 16;
 
   resize = (_event?: MouseEvent | TouchEvent | React.KeyboardEvent<Element>) => {
     const { onPageResize } = this.props;
