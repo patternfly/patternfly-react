@@ -12,7 +12,7 @@ export const MastheadBasic: React.FunctionComponent = () => (
   <Masthead id="basic-example">
     <MastheadMain>
       <MastheadToggle>
-        <Button isHamburger onClick={() => {}} aria-label="Global navigation" />
+        <Button variant="plain" isHamburger onClick={() => {}} aria-label="Global navigation" />
       </MastheadToggle>
       <MastheadBrand>
         <MastheadLogo component="a">Logo</MastheadLogo>

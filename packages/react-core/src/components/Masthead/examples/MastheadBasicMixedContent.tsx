@@ -14,7 +14,7 @@ export const MastheadBasicMixedContent: React.FunctionComponent = () => (
   <Masthead id="basic-mixed">
     <MastheadMain>
       <MastheadToggle>
-        <Button isHamburger onClick={() => {}} aria-label="Global navigation" />
+        <Button variant="plain" isHamburger onClick={() => {}} aria-label="Global navigation" />
       </MastheadToggle>
       <MastheadBrand>
         <MastheadLogo component="a">Logo</MastheadLogo>

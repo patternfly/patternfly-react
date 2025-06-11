@@ -14,7 +14,7 @@ export const MastheadLogoCustomComponent: React.FunctionComponent = () => (
   <Masthead id="icon-router-link">
     <MastheadMain>
       <MastheadToggle>
-        <Button isHamburger onClick={() => {}} aria-label="Global navigation" />
+        <Button variant="plain" isHamburger onClick={() => {}} aria-label="Global navigation" />
       </MastheadToggle>
       <MastheadBrand>
         <MastheadLogo component={(props) => <a {...props} href="#" />}>

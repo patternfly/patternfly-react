@@ -116,7 +116,7 @@ export class MastheadDemo extends Component<MastheadProps> {
       <Masthead id="basic">
         <MastheadMain>
           <MastheadToggle>
-            <Button isHamburger onClick={() => {}} aria-label="Global navigation" />
+            <Button variant="plain" isHamburger onClick={() => {}} aria-label="Global navigation" />
           </MastheadToggle>
           <MastheadBrand>
             <MastheadLogo>

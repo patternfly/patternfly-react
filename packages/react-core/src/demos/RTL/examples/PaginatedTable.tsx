@@ -339,7 +339,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
             >
               <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
                 <ToolbarItem>
-                  <Button aria-label={translation.kebabDropdown.settings} isSettings />
+                  <Button aria-label={translation.kebabDropdown.settings} isSettings variant="plain" />
                 </ToolbarItem>
                 <ToolbarItem>
                   <Button

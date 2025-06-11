@@ -12,7 +12,7 @@ export const MastheadDisplayInline: React.FunctionComponent = () => (
   <Masthead id="inline-masthead" display={{ default: 'inline' }}>
     <MastheadMain>
       <MastheadToggle>
-        <Button isHamburger onClick={() => {}} aria-label="Global navigation" />
+        <Button variant="plain" isHamburger onClick={() => {}} aria-label="Global navigation" />
       </MastheadToggle>
       <MastheadBrand>
         <MastheadLogo component="a">Logo</MastheadLogo>

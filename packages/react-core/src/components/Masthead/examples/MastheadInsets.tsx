@@ -12,7 +12,7 @@ export const MastheadInsets: React.FunctionComponent = () => (
   <Masthead id="inset-masthead" inset={{ default: 'insetSm' }}>
     <MastheadMain>
       <MastheadToggle>
-        <Button isHamburger onClick={() => {}} aria-label="Global navigation" />
+        <Button variant="plain" isHamburger onClick={() => {}} aria-label="Global navigation" />
       </MastheadToggle>
       <MastheadBrand>
         <MastheadLogo component="a">Logo</MastheadLogo>

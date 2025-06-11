@@ -45,7 +45,7 @@ export interface MenuToggleProps
   isFullWidth?: boolean;
   /** Flag indicating the toggle contains placeholder text */
   isPlaceholder?: boolean;
-  /** Flag indicating whether the toggle is a settings toggle. */
+  /** Flag indicating whether the toggle is a settings toggle. This will override the icon property */
   isSettings?: boolean;
   /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
   splitButtonItems?: React.ReactNode[];

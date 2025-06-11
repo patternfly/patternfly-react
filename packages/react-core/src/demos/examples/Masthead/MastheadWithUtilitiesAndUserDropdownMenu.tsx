@@ -393,7 +393,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
               <Popper trigger={toggle} triggerRef={toggleRef} popper={menu} popperRef={menuRef} isVisible={isOpen} />
             </ToolbarItem>
             <ToolbarItem>
-              <Button aria-label="Settings" isSettings />
+              <Button aria-label="Settings" isSettings variant="plain" />
             </ToolbarItem>
             <ToolbarItem>
               <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />

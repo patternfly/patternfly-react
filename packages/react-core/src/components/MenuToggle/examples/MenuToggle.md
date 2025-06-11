@@ -8,7 +8,7 @@ propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox']
 
 import { Fragment, useState } from 'react';
 import './MenuToggle.css'
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
@@ -73,40 +73,17 @@ import { MenuToggle, Badge } from '@patternfly/react-core';
 ### Settings toggle
 
 ```ts file="./MenuToggleSettings.tsx"
+
 ```
 
-### With icons
+### Custom icons
 
-To add a recognizable icon to a menu toggle, use the `icon` property. The following example adds a `CogIcon` to the toggle.
+To add a recognizable icon to a menu toggle, use the `icon` property. The following example adds a `PlusIcon` to the toggle.
 
 For most basic icons, it is recommended to wrap it inside our [icon component](/components/icon).
 
-```ts
-import { Fragment } from 'react';
-import { MenuToggle } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+```ts file="./MenuToggleCustomIcon.tsx"
 
-<Fragment>
-  <MenuToggle
-    icon={<CogIcon />}
-    variant="primary"
-  >
-    Icon
-  </MenuToggle>{' '}
-  <MenuToggle
-    icon={<CogIcon />}
-    variant="secondary"
-  >
-    Icon
-  </MenuToggle>{' '}
-  <MenuToggle
-    icon={<CogIcon />}
-    variant="secondary"
-    isDisabled
-  >
-    Icon
-  </MenuToggle>
-</Fragment>;
 ```
 
 ### With avatar and text
@@ -207,13 +184,13 @@ Variant styling can be applied to split button toggles to adjust their appearanc
 
 You can allow users to select a toggle checkbox by clicking either the checkbox or the text label.
 
-To link a split toggle label to the toggle's checkbox, pass both the label and the `<MenuToggleCheckbox>` component to `splitButtonItems`. 
+To link a split toggle label to the toggle's checkbox, pass both the label and the `<MenuToggleCheckbox>` component to `splitButtonItems`.
 
 ```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
 
 ```
 
-### Split toggle with checkbox and toggle text 
+### Split toggle with checkbox and toggle text
 
 To link a split toggle label to the toggle button itself, pass the label to the `<MenuToggle>` component, instead of `splitButtonItems`.
 

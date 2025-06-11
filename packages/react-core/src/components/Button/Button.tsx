@@ -102,9 +102,9 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   isDanger?: boolean;
   /** Flag indicating whether content the button controls is expanded or not. Required when isHamburger is true. */
   isExpanded?: boolean;
-  /** Flag indicating the button is a settings button. This will override the variant and icon properties. */
+  /** Flag indicating the button is a settings button. This will override the icon property. */
   isSettings?: boolean;
-  /** Flag indicating the button is a hamburger button. This will override the children, variant, and icon properties. */
+  /** Flag indicating the button is a hamburger button. This will override the icon property. */
   isHamburger?: boolean;
   /** Adjusts and animates the hamburger icon to indicate what will happen upon clicking the button. */
   hamburgerVariant?: 'expand' | 'collapse';

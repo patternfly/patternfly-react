@@ -150,7 +150,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
           </ToolbarItem>
           <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
             <ToolbarItem>
-              <Button aria-label="Settings" isSettings />
+              <Button aria-label="Settings" isSettings variant="plain" />
             </ToolbarItem>
             <ToolbarItem>
               <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />

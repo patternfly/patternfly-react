@@ -192,7 +192,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
             >
               <ToolbarItem>
-                <Button aria-label="Settings actions" isSettings />
+                <Button aria-label="Settings actions" isSettings variant="plain" />
               </ToolbarItem>
               <ToolbarItem>
                 <Button aria-label="Help actions" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
