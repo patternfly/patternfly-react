@@ -12,13 +12,18 @@ figma.connect(
       itemInformation: figma.string('Item information'),
 
       // boolean
-      isSearchable: figma.boolean('Has search bar'),
+      isSearchable: figma.boolean('Has search bar', {
+        true: `buildSearchInput(true)`,
+        false: undefined
+      }),
       onSearch: figma.boolean('Has search bar', {
         true: () => {},
         false: undefined
       }),
 
-      hasSort: figma.boolean('Has search bar', {
+      // TODO: FIGMA: Add sort button
+
+      actions: figma.boolean('Has search bar', {
         true: [
           <Button
             variant={ButtonVariant.plain}
@@ -44,11 +49,14 @@ figma.connect(
     example: (props) => (
       // Documentation for DualListHeader can be found at https://www.patternfly.org/components/dual-list-selector
       <DualListSelectorPane
-        searchInput={props.isSearchable}
+        actions={props.actions}
+        listMinHeight="300px"
         onSearch={props.onSearch}
-        actions={props.hasSort}
+        searchInput={props.isSearchable}
         title={props.title}
-      ></DualListSelectorPane>
+      >
+        {props.children}
+      </DualListSelectorPane>
     )
   }
 );
