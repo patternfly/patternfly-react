@@ -22,7 +22,7 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
         label="Hide radio button"
         isChecked={displayRadioButton}
         onChange={(_event, checked) => toggleHide(checked)}
-        id="toggle-hide-radio-button"
+        id="single-select-toggle-hide-radio-button"
         name="toggle-hide"
       />
       <Gallery hasGutter style={{ marginTop: '15px' }}>
