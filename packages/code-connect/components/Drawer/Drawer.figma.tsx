@@ -1,9 +1,5 @@
 import figma from '@figma/code-connect';
-import { Drawer } from '@patternfly/react-core';
-
-/**
- * PatternFly Drawer component integration for Figma Code Connect
- */
+import { Drawer, DrawerContent, DrawerContentBody } from '@patternfly/react-core';
 
 figma.connect(
   Drawer,
@@ -12,18 +8,38 @@ figma.connect(
     props: {
       // boolean
       isExpanded: figma.boolean('Show Footer actions'),
-      isInline: figma.enum('Type', { Inline: true }),
       isResizable: figma.boolean('Is resizable'),
-      isStatic: figma.boolean('Has action icon'),
 
       // enum
-      isLeft: figma.enum('Position', { Left: 'start' }),
+      isInline: figma.enum('Type', {
+        Overlay: undefined,
+        Inline: true
+      }),
+      position: figma.enum('Position', {
+        'Left In Main Content Area': 'start',
+        'Right - Full Page': undefined,
+        'Left - Full Page': 'start',
+        'Right Full Page': undefined,
+        'Bottom Full Page': 'end',
+        'Bottom In Main Content Area': 'end',
+        'Right In Main Content Area': undefined
+      }),
 
-      children: figma.children('*')
+      panelContent: figma.children('*')
     },
     example: (props) => (
-      <Drawer isExpanded={props.isExpanded} isInline={props.isInline} isStatic={props.isStatic} position={props.isLeft}>
-        {props.children}
+      // Documentation for Drawer can be found at https://www.patternfly.org/components/drawer
+      <Drawer
+        id="<drawer-id>"
+        isExpanded={props.isExpanded}
+        isInline={props.isInline}
+        position={props.position}
+        onResize={() => {}}
+        onExpand={() => {}}
+      >
+        <DrawerContent panelContent={props.panelContent}>
+          <DrawerContentBody>Drawer content</DrawerContentBody>
+        </DrawerContent>
       </Drawer>
     )
   }
