@@ -248,3 +248,13 @@ test(`Renders basic button`, () => {
   const { asFragment } = render(<Button aria-label="basic button">Basic Button</Button>);
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('Renders favorite icon with class pf-m-favorite when isFavorited = false', () => {
+  render(<Button isFavorite />);
+  expect(screen.getByRole('button')).toHaveClass('pf-m-favorite');
+});
+
+test('Renders favorite icon with class pf-m-favorite when isFavorited = true', () => {
+  render(<Button isFavorite isFavorited />);
+  expect(screen.getByRole('button')).toHaveClass('pf-m-favorited');
+});
