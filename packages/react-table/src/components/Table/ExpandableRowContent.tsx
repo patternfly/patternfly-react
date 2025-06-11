@@ -15,7 +15,7 @@ export const ExpandableRowContent: React.FunctionComponent<ExpandableRowContentP
   hasNoBackground,
   ...props
 }: ExpandableRowContentProps) => (
-  <div {...props} className={css(styles.tableExpandableRowContent, hasNoBackground && 'pf-m-no-background')}>
+  <div {...props} className={css(styles.tableExpandableRowContent, hasNoBackground && styles.modifiers.noBackground)}>
     {children}
   </div>
 );

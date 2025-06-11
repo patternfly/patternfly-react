@@ -106,19 +106,24 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
                 <a href="#">Open in GitHub</a>
               </Td>
             </Tr>
-            <Tr isExpanded={isRowExpanded} isExpandable>
+            <Tr isExpanded={columnNames[expandedCellKey] === columnNames.branches} isExpandable>
               <Td dataLabel={columnNames[expandedCellKey]} colSpan={6}>
                 <ExpandableRowContent>
-                  <div>
-                    Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem
-                    ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum
-                    sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit
-                    dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor.
-                    Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem
-                    ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum
-                    sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit
-                    dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor.
-                  </div>
+                  <div>Expanded content for {repo.name}: branches goes here!</div>
+                </ExpandableRowContent>
+              </Td>
+            </Tr>
+            <Tr isExpanded={columnNames[expandedCellKey] === columnNames.prs} isExpandable>
+              <Td dataLabel={columnNames[expandedCellKey]} colSpan={6}>
+                <ExpandableRowContent>
+                  <div>Expanded content for {repo.name}: prs goes here!</div>
+                </ExpandableRowContent>
+              </Td>
+            </Tr>
+            <Tr isExpanded={columnNames[expandedCellKey] === columnNames.workspaces} isExpandable>
+              <Td dataLabel={columnNames[expandedCellKey]} colSpan={6}>
+                <ExpandableRowContent>
+                  <div>Expanded content for {repo.name}: workspaces goes here!</div>
                 </ExpandableRowContent>
               </Td>
             </Tr>
