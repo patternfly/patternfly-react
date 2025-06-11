@@ -1,6 +1,6 @@
 import figma from '@figma/code-connect';
 import { Button, ButtonVariant, DualListSelectorPane } from '@patternfly/react-core';
-import PficonSortCommonAscIcon from '@patternfly/react-icons/icons/pficon-sort-common-asc-icon/dist/esm/icons/pficon-sort-common-asc-icon';
+import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 
 figma.connect(
   DualListSelectorPane,
