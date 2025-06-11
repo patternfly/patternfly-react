@@ -63,7 +63,7 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
             <span
               className={css(
                 styles.expandableSectionToggleIcon,
-                isExpanded && direction === 'up' && styles.modifiers.expandTop // TODO: next breaking change move this class to the outter styles.expandableSection wrapper
+                isExpanded && direction === 'up' && styles.modifiers.expandTop // TODO: next breaking change move this class to the outer styles.expandableSection wrapper
               )}
             >
               <AngleRightIcon />
