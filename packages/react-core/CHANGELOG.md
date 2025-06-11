@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.17...@patternfly/react-core@6.3.0-prerelease.18) (2025-06-11)
+
+### Features
+
+- **Form:** enabled opt-in animations for expandable fieldgroup ([#11843](https://github.com/patternfly/patternfly-react/issues/11843)) ([8c6618b](https://github.com/patternfly/patternfly-react/commit/8c6618b87876924b7ef9b3651b86abb65e7e2dd4))
+
 # [6.3.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.16...@patternfly/react-core@6.3.0-prerelease.17) (2025-06-02)
 
 ### Bug Fixes

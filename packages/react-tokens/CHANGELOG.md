@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.3.0-prerelease.3...@patternfly/react-tokens@6.3.0-prerelease.4) (2025-06-11)
+
+### Features
+
+- **Form:** enabled opt-in animations for expandable fieldgroup ([#11843](https://github.com/patternfly/patternfly-react/issues/11843)) ([8c6618b](https://github.com/patternfly/patternfly-react/commit/8c6618b87876924b7ef9b3651b86abb65e7e2dd4))
+
 # [6.3.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.3.0-prerelease.2...@patternfly/react-tokens@6.3.0-prerelease.3) (2025-05-21)
 
 ### Features
