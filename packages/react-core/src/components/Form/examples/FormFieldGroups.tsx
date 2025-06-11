@@ -52,6 +52,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
         <TextInput isRequired id="0-label2" name="0-label2" value={inputValues['0-label2']} onChange={handleChange} />
       </FormGroup>
       <FormFieldGroupExpandable
+        hasAnimations
         isExpanded
         toggleAriaLabel="Details"
         header={
@@ -67,6 +68,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
         }
       >
         <FormFieldGroupExpandable
+          hasAnimations
           isExpanded
           toggleAriaLabel="Details"
           header={
@@ -97,6 +99,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
           </FormGroup>
         </FormFieldGroupExpandable>
         <FormFieldGroupExpandable
+          hasAnimations
           toggleAriaLabel="Details"
           header={
             <FormFieldGroupHeader
@@ -125,6 +128,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
           </FormGroup>
         </FormFieldGroupExpandable>
         <FormFieldGroupExpandable
+          hasAnimations
           toggleAriaLabel="Details"
           header={
             <FormFieldGroupHeader
@@ -173,6 +177,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
         </FormGroup>
       </FormFieldGroupExpandable>
       <FormFieldGroupExpandable
+        hasAnimations
         toggleAriaLabel="Details"
         header={
           <FormFieldGroupHeader
@@ -194,6 +199,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
         </FormGroup>
       </FormFieldGroupExpandable>
       <FormFieldGroupExpandable
+        hasAnimations
         isExpanded
         toggleAriaLabel="Details"
         header={
@@ -273,7 +279,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
         header={
           <FormFieldGroupHeader
             titleText={{ text: 'Field group 4 (non-expandable)', id: 'field-group4-non-expandable-titleText-id' }}
-            titleDescription="Field group 4 description text."
+            titleDescription="Field group 4 description text fdgsdg."
             actions={
               <>
                 <Button variant="link">Delete all</Button> <Button variant="secondary">Add parameter</Button>
