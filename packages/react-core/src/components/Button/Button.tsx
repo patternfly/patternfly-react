@@ -167,11 +167,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       'Button: when the isHamburger property is passed in, you must also pass in a boolean value to the isExpanded property. It is expected that a hamburger button controls the expansion of other content.'
     );
   }
-  // TODO: Remove isSettings in breaking change to throw this warning for any non-hamburger button that does not have children or aria-label
-  if (
-    (isHamburger && !ariaLabel && !props['aria-labelledby']) ||
-    (isSettings && !ariaLabel && !children && !props['aria-labelledby'])
-  ) {
+  // TODO: Remove isSettings || isHamburger conditional in breaking change to throw this warning for any button that does not have children or aria name
+  if ((isSettings || isHamburger) && !ariaLabel && !children && !props['aria-labelledby']) {
     // eslint-disable-next-line no-console
     console.error(
       'Button: you must provide either visible text content or an accessible name via the aria-label or aria-labelledby properties.'
@@ -241,7 +238,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
     );
   };
   const _icon = renderIcon();
-  const _children = children && !isHamburger && <span className={css('pf-v6-c-button__text')}>{children}</span>;
+  const _children = children && <span className={css('pf-v6-c-button__text')}>{children}</span>;
   // We only want to render the aria-disabled attribute when true, similar to the disabled attribute natively.
   const shouldRenderAriaDisabled = isAriaDisabled || (!isButtonElement && isDisabled);
 
@@ -254,7 +251,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       aria-label={ariaLabel}
       className={css(
         styles.button,
-        shouldForcePlainVariant ? styles.modifiers.plain : styles.modifiers[variant],
+        styles.modifiers[variant],
         isSettings && styles.modifiers.settings,
         isHamburger && styles.modifiers.hamburger,
         isHamburger && hamburgerVariant && styles.modifiers[hamburgerVariant],

@@ -306,7 +306,8 @@ describe('Hamburger button', () => {
     );
   });
 
-  test('Throws console error when isHamburger is true and neither aria-label nor aria-lablledby are passed', () => {
+  // TODO: Remove isHamburger in breaking change to throw error for any button that does not have children or aria name
+  test('Throws console error when isHamburger is true and neither children, aria-label nor aria-lablledby are passed', () => {
     const consoleError = jest.spyOn(console, 'error').mockImplementation();
 
     render(<Button isHamburger isExpanded />);
@@ -315,7 +316,22 @@ describe('Hamburger button', () => {
       'Button: you must provide either visible text content or an accessible name via the aria-label or aria-labelledby properties.'
     );
   });
+  // TODO: Remove isHamburger in breaking change to throw error for any button that does not have children or aria name
+  test('Does not throw console error when isHamburger is true and children is passed', () => {
+    const consoleError = jest.spyOn(console, 'error').mockImplementation();
 
+    render(
+      <Button isHamburger isExpanded>
+        Test
+      </Button>
+    );
+
+    expect(consoleError).not.toHaveBeenCalledWith(
+      'Button: you must provide either visible text content or an accessible name via the aria-label or aria-labelledby properties.'
+    );
+  });
+
+  // TODO: Remove isHamburger in breaking change to throw error for any button that does not have children or aria name
   test('Does not throw console error when isHamburger is true and aria-label is passed', () => {
     const consoleError = jest.spyOn(console, 'error').mockImplementation();
 
@@ -326,6 +342,7 @@ describe('Hamburger button', () => {
     );
   });
 
+  // TODO: Remove isHamburger in breaking change to throw error for any button that does not have children or aria name
   test('Does not throw console error when isHamburger is true and aria-labelledby is passed', () => {
     const consoleError = jest.spyOn(console, 'error').mockImplementation();
 
@@ -341,14 +358,27 @@ describe('Hamburger button', () => {
     );
   });
 
+  test(`Does not render with class ${styles.modifiers.hamburger} by default`, () => {
+    render(<Button aria-label="test" />);
+
+    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.hamburger);
+  });
+
   test(`Renders with class ${styles.modifiers.hamburger} when isHamburger is true`, () => {
     render(<Button isHamburger isExpanded aria-label="test" />);
 
     expect(screen.getByRole('button')).toHaveClass(styles.modifiers.hamburger);
   });
 
-  test('Does not render with hamburgerVariant class when isHamburger is false', () => {
+  test('Does not render with hamburgerVariant class when isHamburger is true and hamburgerVariant is not passed', () => {
     render(<Button isHamburger isExpanded aria-label="test" />);
+
+    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.expand);
+    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.collapse);
+  });
+
+  test('Does not render with hamburgerVariant class when isHamburger is false and hamburgerVariant is passed', () => {
+    render(<Button hamburgerVariant="expand" isExpanded aria-label="test" />);
 
     expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.expand);
     expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.collapse);
@@ -368,32 +398,15 @@ describe('Hamburger button', () => {
     expect(screen.getByRole('button')).toHaveClass(styles.modifiers.collapse);
   });
 
-  test('Forces plain variant when isHamburger is passed', () => {
-    render(<Button variant="secondary" isHamburger isExpanded aria-label="test" />);
-
-    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.secondary);
-    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.plain);
-  });
-
   test('Does not render custom icon when icon prop and isHamburger are passed', () => {
     render(<Button isHamburger isExpanded aria-label="test" icon={<div>Custom icon</div>} />);
 
     expect(screen.queryByText('Custom icon')).not.toBeInTheDocument();
   });
-
-  test('Does not render text content when isHamburger is passed', () => {
-    render(
-      <Button isHamburger isExpanded aria-label="test">
-        Hamburger text content
-      </Button>
-    );
-
-    expect(screen.queryByText('Hamburger text content')).not.toBeInTheDocument();
-  });
 });
 
 describe('Settings button', () => {
-  // TODO: Remove isSettings in breaking change to throw error for any non-hamburger button that does not have children or aria-label
+  // TODO: Remove isSettings in breaking change to throw error for any button that does not have children or aria name
   test('Throws console error when isSettings is true and neither children, aria-label nor aria-lablledby are passed', () => {
     const consoleError = jest.spyOn(console, 'error').mockImplementation();
 
@@ -404,7 +417,7 @@ describe('Settings button', () => {
     );
   });
 
-  // TODO: Remove isSettings in breaking change to throw error for any non-hamburger button that does not have children or aria-label
+  // TODO: Remove isSettings in breaking change to throw error for any button that does not have children or aria name
   test('Does not throw console error when isSettings is true and children is passed', () => {
     const consoleError = jest.spyOn(console, 'error').mockImplementation();
 
@@ -415,7 +428,7 @@ describe('Settings button', () => {
     );
   });
 
-  // TODO: Remove isSettings in breaking change to throw error for any non-hamburger button that does not have children or aria-label
+  // TODO: Remove isSettings in breaking change to throw error for any button that does not have children or aria name
   test('Does not throw console error when isSettings is true and aria-label is passed', () => {
     const consoleError = jest.spyOn(console, 'error').mockImplementation();
 
@@ -426,7 +439,7 @@ describe('Settings button', () => {
     );
   });
 
-  // TODO: Remove isSettings in breaking change to throw error for any non-hamburger button that does not have children or aria-label
+  // TODO: Remove isSettings in breaking change to throw error for any button that does not have children or aria name
   test('Does not throw console error when isSettings is true and aria-labelledby is passed', () => {
     const consoleError = jest.spyOn(console, 'error').mockImplementation();
 
@@ -442,17 +455,16 @@ describe('Settings button', () => {
     );
   });
 
+  test(`Does not render with class ${styles.modifiers.settings} by default`, () => {
+    render(<Button aria-label="test" />);
+
+    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.settings);
+  });
+
   test(`Renders with class ${styles.modifiers.settings} when isSettings is true`, () => {
     render(<Button isSettings aria-label="test" />);
 
     expect(screen.getByRole('button')).toHaveClass(styles.modifiers.settings);
-  });
-
-  test('Forces plain variant when isSettings is passed', () => {
-    render(<Button variant="secondary" isSettings aria-label="test" />);
-
-    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.secondary);
-    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.plain);
   });
 
   test('Does not render custom icon when icon prop and isSettings are passed', () => {
