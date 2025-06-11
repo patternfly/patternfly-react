@@ -7,23 +7,26 @@ figma.connect(
   {
     props: {
       // TODO: FIGMA: configure options for actions
-      actions: `action1, action2, action3, action4, action5`,
+      actions: 'action1, action2, action3, action4, action5',
 
       // boolean
       showsLineNumbers: figma.boolean('Show Line Numbers'),
 
       // enum
-      isEmptyState: figma.enum('Type', { 'Empty state': true }),
-      isMinimapVisible: figma.enum('Type', { 'Mini Map': true })
+      isMinimapVisible: figma.enum('Type', { 'Mini Map': true }),
+
+      children: figma.children('*')
     },
     example: (props) => (
       // Documentation for CodeEditor can be found at https://www.patternfly.org/components/code-editor
       <CodeEditor
         actions={props.actions}
-        emptyState={props.isEmptyState}
         isLineNumbersVisible={props.showsLineNumbers}
         isMinimapVisible={props.isMinimapVisible}
-      />
+        code="code editor contents"
+      >
+        {props.children}
+      </CodeEditor>
     )
   }
 );
