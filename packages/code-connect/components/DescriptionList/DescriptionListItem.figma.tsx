@@ -9,6 +9,16 @@ figma.connect(
       // string
       content: figma.string('✏️ Content'),
 
+      // enum
+      type: figma.enum('Type', {
+        Vertical: 'vertical',
+        'Horizontal fluid': 'horizontal-fluid',
+        'Horizontal fixed': 'horizontal-fixed'
+      }),
+
+      // instance
+      swapLabel: figma.instance('Swap label'),
+
       children: figma.children('*')
     },
 

@@ -7,17 +7,8 @@ figma.connect(
   {
     props: {
       icon: figma.boolean('Icon ⎆'),
-      termHelpUnderline: figma.boolean('Term help underline'),
-      label: figma.string('✏️ Label'),
-      inlineEditToggle: figma.boolean('Inline edit toggle')
+      label: figma.string('✏️ Label')
     },
-    example: (props) => (
-      <DescriptionListTerm
-        icon={props.icon}
-        underline={props.termHelpUnderline}
-        label={props.label}
-        inlineEditToggle={props.inlineEditToggle}
-      />
-    )
+    example: (props) => <DescriptionListTerm icon={props.icon} label={props.label} />
   }
 );
