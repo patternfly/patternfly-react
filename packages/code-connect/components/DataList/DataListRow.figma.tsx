@@ -11,9 +11,6 @@ figma.connect(
   {
     props: {
       // boolean
-      showLeftControls: figma.boolean('Show Left controls'),
-      showRightActions: figma.boolean('Show right actions'),
-      isSelected: figma.boolean('Selected'),
       isExpanded: figma.boolean('Expanded'),
 
       // enum
@@ -22,7 +19,7 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
-      <DataListItem selected={props.isSelected} isExpanded={props.isExpanded} aria-labelledby="<data-list-row-id>">
+      <DataListItem isExpanded={props.isExpanded} aria-labelledby="<data-list-row-id>">
         {props.children}
       </DataListItem>
     )
