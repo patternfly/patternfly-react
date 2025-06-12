@@ -6,7 +6,7 @@ export const SingleSelectableCard: React.FunctionComponent = () => {
   const id1 = 'single-selectable-card-input-1';
   const id2 = 'single-selectable-card-input-2';
   const id3 = 'single-selectable-card-input-3';
-  const [displayRadioButton, setDisplayRadioButton] = useState<boolean>(false);
+  const [displayRadioButton, setDisplayRadioButton] = useState(false);
 
   const onChange = (event: React.FormEvent<HTMLInputElement>) => {
     setIsChecked(event.currentTarget.id);

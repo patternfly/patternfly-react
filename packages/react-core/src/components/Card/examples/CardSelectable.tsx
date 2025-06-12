@@ -5,8 +5,8 @@ export const SelectableCard: React.FunctionComponent = () => {
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isChecked3, setIsChecked3] = useState(false);
-  const [isSecondary, setIsSecondary] = useState<boolean>(false);
-  const [displayRadioButton, setDisplayRadioButton] = useState<boolean>(false);
+  const [isSecondary, setIsSecondary] = useState(false);
+  const [displayCheckbox, setDisplayCheckbox] = useState(false);
 
   const id1 = 'selectable-card-input-1';
   const id2 = 'selectable-card-input-2';
@@ -33,7 +33,7 @@ export const SelectableCard: React.FunctionComponent = () => {
   };
 
   const toggleHide = (checked: boolean) => {
-    setDisplayRadioButton(checked);
+    setDisplayCheckbox(checked);
   };
 
   return (
@@ -46,10 +46,10 @@ export const SelectableCard: React.FunctionComponent = () => {
         name="toggle-variant"
       />
       <Checkbox
-        label="Hide radio button"
-        isChecked={displayRadioButton}
+        label="Hide checkbox"
+        isChecked={displayCheckbox}
         onChange={(_event, checked) => toggleHide(checked)}
-        id="selectable-toggle-hide-radio-button"
+        id="selectable-toggle-hide-checkbox"
         name="toggle-hide"
       />
       <Gallery hasGutter style={{ marginTop: '15px' }}>
@@ -66,7 +66,7 @@ export const SelectableCard: React.FunctionComponent = () => {
               name: id1,
               onChange,
               hasNoOffset: true,
-              isHidden: displayRadioButton
+              isHidden: displayCheckbox
             }}
           >
             <CardTitle>First card</CardTitle>
@@ -86,7 +86,7 @@ export const SelectableCard: React.FunctionComponent = () => {
               name: id2,
               onChange,
               hasNoOffset: true,
-              isHidden: displayRadioButton
+              isHidden: displayCheckbox
             }}
           >
             <CardTitle>Second card</CardTitle>
@@ -107,7 +107,7 @@ export const SelectableCard: React.FunctionComponent = () => {
               name: id3,
               onChange,
               hasNoOffset: true,
-              isHidden: displayRadioButton
+              isHidden: displayCheckbox
             }}
           >
             <CardTitle>Third card</CardTitle>
