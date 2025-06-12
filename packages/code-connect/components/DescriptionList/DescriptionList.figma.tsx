@@ -7,10 +7,14 @@ figma.connect(
   {
     props: {
       // enum
-      isCompact: figma.enum('Spacing', { Compact: true }),
-      isFluid: figma.enum('Orientation', { 'Horizontal - Fluid': true }),
+      isCompact: figma.enum('Spacing', {
+        Compact: true
+      }),
       isHorizontal: figma.enum('Orientation', {
         'Horizontal - Fixed': true,
+        'Horizontal - Fluid': true
+      }),
+      isFluid: figma.enum('Orientation', {
         'Horizontal - Fluid': true
       }),
 

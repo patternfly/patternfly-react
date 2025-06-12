@@ -3,7 +3,7 @@ import figma from '@figma/code-connect';
 
 figma.connect(
   DualListSelectorListItem,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=21279-116294',
+  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=29667-231683',
   {
     props: {
       // string

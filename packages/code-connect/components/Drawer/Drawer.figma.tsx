@@ -8,7 +8,6 @@ figma.connect(
     props: {
       // boolean
       isExpanded: figma.boolean('Show Footer actions'),
-      isResizable: figma.boolean('Is resizable'),
 
       // enum
       isInline: figma.enum('Type', {
