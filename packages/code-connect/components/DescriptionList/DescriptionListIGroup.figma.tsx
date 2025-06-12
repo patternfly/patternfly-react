@@ -6,18 +6,17 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=1121-3571',
   {
     props: {
-      termLabel: figma.children('Term label'),
+      // string
       description: figma.string('✏️ Content'),
-      children: figma.children('*')
+
+      // children
+      term: figma.children('Term label')
     },
     example: (props) => (
       // Documentation for DescriptionList can be found at https://www.patternfly.org/components/description-list
       <DescriptionListGroup>
-        {props.termLabel}
-        <DescriptionListDescription>
-          {props.description}
-          {props.children}
-        </DescriptionListDescription>
+        {props.term}
+        <DescriptionListDescription>{props.description}</DescriptionListDescription>
       </DescriptionListGroup>
     )
   }
