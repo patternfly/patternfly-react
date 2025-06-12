@@ -120,5 +120,10 @@
       "packages/*",
       "packages/react-integration/demo-app-ts"
     ]
+  },
+  "dependencies": {
+    "@patternfly/react-component-groups": "^6.2.1",
+    "clsx": "^2.1.1",
+    "react-jss": "^10.10.0"
   }
 }

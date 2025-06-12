@@ -9,6 +9,7 @@ module.exports = {
   hasDesignGuidelines: false,
   sideNavItems: [
     { section: 'get-started' },
+    { section: 'design-foundations' },
     { section: 'developer-resources' },
     { section: 'charts' },
     { section: 'components' },
