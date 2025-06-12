@@ -22,7 +22,7 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
-      <DataListItem selected={props.isSelected} isExpanded={props.isExpanded} isCompact={props.isCompact}>
+      <DataListItem selected={props.isSelected} isExpanded={props.isExpanded} aria-labelledby="<data-list-row-id>">
         {props.children}
       </DataListItem>
     )
