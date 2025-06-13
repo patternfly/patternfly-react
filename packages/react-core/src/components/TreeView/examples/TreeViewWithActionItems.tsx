@@ -129,6 +129,7 @@ export const TreeViewWithActionItems: React.FunctionComponent = () => {
   ];
   return (
     <TreeView
+      hasAnimations
       aria-label="Tree View with actions example"
       data={options}
       activeItems={activeItems}
