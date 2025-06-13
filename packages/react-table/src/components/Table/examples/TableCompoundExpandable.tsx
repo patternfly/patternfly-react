@@ -4,7 +4,6 @@ import { Table, Thead, Tr, Th, Tbody, Td, TdProps, ExpandableRowContent } from '
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 interface Repository {
   name: string;
@@ -59,7 +58,7 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
   });
 
   return (
-    <Table aria-label="Compound expandable table">
+    <Table aria-label="Compound expandable table" isExpandable hasAnimations>
       <Thead>
         <Tr>
           <Th>{columnNames.name}</Th>
@@ -75,7 +74,7 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
         const isRowExpanded = !!expandedCellKey;
         return (
           <Tbody key={repo.name} isExpanded={isRowExpanded}>
-            <Tr isControlRow>
+            <Tr isExpanded={isRowExpanded} isControlRow>
               <Td width={25} dataLabel={columnNames.name} component="th">
                 <a href="#">{repo.name}</a>
               </Td>
@@ -107,24 +106,27 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
                 <a href="#">Open in GitHub</a>
               </Td>
             </Tr>
-            {isRowExpanded ? (
-              <Tr isExpanded={isRowExpanded}>
-                <Td dataLabel={columnNames[expandedCellKey]} colSpan={6}>
-                  <ExpandableRowContent>
-                    <div className={spacing.mMd}>
-                      Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem
-                      ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum
-                      sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit
-                      dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor.
-                      Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem
-                      ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum
-                      sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit
-                      dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor.
-                    </div>
-                  </ExpandableRowContent>
-                </Td>
-              </Tr>
-            ) : null}
+            <Tr isExpanded={columnNames[expandedCellKey] === columnNames.branches} isExpandable>
+              <Td dataLabel={columnNames[expandedCellKey]} colSpan={6}>
+                <ExpandableRowContent>
+                  <div>Expanded content for {repo.name}: branches goes here!</div>
+                </ExpandableRowContent>
+              </Td>
+            </Tr>
+            <Tr isExpanded={columnNames[expandedCellKey] === columnNames.prs} isExpandable>
+              <Td dataLabel={columnNames[expandedCellKey]} colSpan={6}>
+                <ExpandableRowContent>
+                  <div>Expanded content for {repo.name}: prs goes here!</div>
+                </ExpandableRowContent>
+              </Td>
+            </Tr>
+            <Tr isExpanded={columnNames[expandedCellKey] === columnNames.workspaces} isExpandable>
+              <Td dataLabel={columnNames[expandedCellKey]} colSpan={6}>
+                <ExpandableRowContent>
+                  <div>Expanded content for {repo.name}: workspaces goes here!</div>
+                </ExpandableRowContent>
+              </Td>
+            </Tr>
           </Tbody>
         );
       })}
