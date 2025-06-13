@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.18...@patternfly/react-core@6.3.0-prerelease.19) (2025-06-13)
+
+### Features
+
+- **button:** add favorite variant ([#11853](https://github.com/patternfly/patternfly-react/issues/11853)) ([84c5af6](https://github.com/patternfly/patternfly-react/commit/84c5af6da67db4638248a8025392cb84443dd85d))
+
 # [6.3.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.17...@patternfly/react-core@6.3.0-prerelease.18) (2025-06-11)
 
 ### Features
