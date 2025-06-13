@@ -1,12 +1,17 @@
 import { Component } from 'react';
 
+export interface SVGPathObject {
+  path: string;
+  className?: string;
+}
 export interface IconDefinition {
   name?: string;
   width: number;
   height: number;
-  svgPath: string;
+  svgPath: string | SVGPathObject[];
   xOffset?: number;
   yOffset?: number;
+  svgClassName?: string;
 }
 
 export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'ref'> {
@@ -25,7 +30,8 @@ export function createIcon({
   yOffset = 0,
   width,
   height,
-  svgPath
+  svgPath,
+  svgClassName
 }: IconDefinition): React.ComponentClass<SVGIconProps> {
   return class SVGIcon extends Component<SVGIconProps> {
     static displayName = name;
@@ -33,15 +39,22 @@ export function createIcon({
     id = `icon-title-${currentId++}`;
 
     render() {
-      const { title, className, ...props } = this.props;
-      const classes = className ? `pf-v6-svg ${className}` : 'pf-v6-svg';
+      const { title, className: propsClassName, ...props } = this.props;
 
       const hasTitle = Boolean(title);
       const viewBox = [xOffset, yOffset, width, height].join(' ');
 
+      const classNames = ['pf-v6-svg'];
+      if (svgClassName) {
+        classNames.push(svgClassName);
+      }
+      if (propsClassName) {
+        classNames.push(propsClassName);
+      }
+
       return (
         <svg
-          className={classes}
+          className={classNames.join(' ')}
           viewBox={viewBox}
           fill="currentColor"
           aria-labelledby={hasTitle ? this.id : null}
@@ -52,7 +65,13 @@ export function createIcon({
           {...(props as Omit<React.SVGProps<SVGElement>, 'ref'>)} // Lie.
         >
           {hasTitle && <title id={this.id}>{title}</title>}
-          <path d={svgPath} />
+          {Array.isArray(svgPath) ? (
+            svgPath.map((pathObject, index) => (
+              <path className={pathObject.className} key={`${pathObject.path}-${index}`} d={pathObject.path} />
+            ))
+          ) : (
+            <path d={svgPath} />
+          )}
         </svg>
       );
     }
