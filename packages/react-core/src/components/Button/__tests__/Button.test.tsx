@@ -248,3 +248,28 @@ test(`Renders basic button`, () => {
   const { asFragment } = render(<Button aria-label="basic button">Basic Button</Button>);
   expect(asFragment()).toMatchSnapshot();
 });
+
+test(`Renders with class ${styles.modifiers.favorite} when isFavorite is true`, () => {
+  render(<Button isFavorite />);
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.favorite);
+});
+
+test(`Renders with class ${styles.modifiers.favorited} when isFavorite is true and isFavorited is true`, () => {
+  render(<Button isFavorite isFavorited />);
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.favorited);
+});
+
+test(`Does not render with class ${styles.modifiers.favorite} when isFavorite is false`, () => {
+  render(<Button />);
+  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.favorite);
+});
+
+test(`Does not render with class ${styles.modifiers.favorited} when isFavorite is true and isFavorited is false`, () => {
+  render(<Button isFavorite />);
+  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.favorited);
+});
+
+test('Overrides icon prop when isFavorite is true', () => {
+  render(<Button isFavorite icon={<div>Icon content</div>} />);
+  expect(screen.queryByText('Icon content')).not.toBeInTheDocument();
+});

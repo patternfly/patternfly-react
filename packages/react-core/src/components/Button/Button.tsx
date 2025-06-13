@@ -4,6 +4,8 @@ import { css } from '@patternfly/react-styles';
 import { Spinner, spinnerSize } from '../Spinner';
 import { useOUIAProps, OUIAProps } from '../../helpers/OUIA/ouia';
 import { Badge } from '../Badge';
+import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
+import OutlinedStarIcon from '@patternfly/react-icons/dist/esm/icons/outlined-star-icon';
 
 export enum ButtonVariant {
   primary = 'primary',
@@ -71,6 +73,10 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   inoperableEvents?: string[];
   /** Adds inline styling to a link button */
   isInline?: boolean;
+  /** Adds favorite styling to a button */
+  isFavorite?: boolean;
+  /** Flag indicating whether the button is favorited or not, only when isFavorite is true. */
+  isFavorited?: boolean;
   /** Adds styling which affects the size of the button */
   size?: 'default' | 'sm' | 'lg';
   /** Sets button type */
@@ -117,6 +123,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   size = ButtonSize.default,
   inoperableEvents = ['onClick', 'onKeyPress'],
   isInline = false,
+  isFavorite = false,
+  isFavorited = false,
   type = ButtonType.button,
   variant = ButtonVariant.primary,
   state = ButtonState.unread,
@@ -132,11 +140,19 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   countOptions,
   ...props
 }: ButtonProps) => {
+  if (isFavorite && !ariaLabel && !props['aria-labelledby']) {
+    // eslint-disable-next-line no-console
+    console.error(
+      'Button: Each favorite button must have a unique accessible name provided via aria-label or aria-labelledby'
+    );
+  }
+
   const ouiaProps = useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant);
   const Component = component as any;
   const isButtonElement = Component === 'button';
   const isInlineSpan = isInline && Component === 'span';
   const isIconAlignedAtEnd = iconPosition === 'end' || iconPosition === 'right';
+  const shouldOverrideIcon = isFavorite;
 
   const preventedEvents = inoperableEvents.reduce(
     (handlers, eventToPrevent) => ({
@@ -158,11 +174,36 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
     }
   };
 
-  const _icon = icon && (
-    <span className={css(styles.buttonIcon, children && styles.modifiers[isIconAlignedAtEnd ? 'end' : 'start'])}>
-      {icon}
-    </span>
-  );
+  const renderIcon = () => {
+    let iconContent;
+
+    if (isFavorite) {
+      iconContent = (
+        <>
+          <span className={css('pf-v6-c-button__icon-favorite')}>
+            <OutlinedStarIcon />
+          </span>
+          <span className={css('pf-v6-c-button__icon-favorited')}>
+            <StarIcon />
+          </span>
+        </>
+      );
+    }
+
+    if (icon && !shouldOverrideIcon) {
+      iconContent = icon;
+    }
+
+    return (
+      iconContent && (
+        <span className={css(styles.buttonIcon, children && styles.modifiers[isIconAlignedAtEnd ? 'end' : 'start'])}>
+          {iconContent}
+        </span>
+      )
+    );
+  };
+
+  const _icon = renderIcon();
   const _children = children && <span className={css('pf-v6-c-button__text')}>{children}</span>;
   // We only want to render the aria-disabled attribute when true, similar to the disabled attribute natively.
   const shouldRenderAriaDisabled = isAriaDisabled || (!isButtonElement && isDisabled);
@@ -181,6 +222,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         isAriaDisabled && styles.modifiers.ariaDisabled,
         isClicked && styles.modifiers.clicked,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
+        isFavorite && styles.modifiers.favorite,
+        isFavorite && isFavorited && styles.modifiers.favorited,
         isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
         isLoading !== null && variant !== ButtonVariant.plain && styles.modifiers.progress,
         isLoading && styles.modifiers.inProgress,
