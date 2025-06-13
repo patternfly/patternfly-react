@@ -48,7 +48,6 @@ import {
   ToolbarContent
 } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -243,7 +242,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
               }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
             >
               <ToolbarItem>
-                <Button aria-label="Settings actions" variant={ButtonVariant.plain} icon={<CogIcon />} />
+                <Button aria-label="Settings actions" isSettings variant="plain" />
               </ToolbarItem>
               <ToolbarItem>
                 <Button aria-label="Help actions" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
@@ -307,9 +306,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
     <Masthead>
       <MastheadMain>
         <MastheadToggle>
-          <PageToggleButton variant="plain" aria-label="Global navigation">
-            <BarsIcon />
-          </PageToggleButton>
+          <PageToggleButton isHamburgerButton aria-label="Global navigation" />
         </MastheadToggle>
         <MastheadBrand>
           <MastheadLogo>

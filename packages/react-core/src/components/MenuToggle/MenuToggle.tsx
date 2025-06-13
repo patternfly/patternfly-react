@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-togg
 import { css } from '@patternfly/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { BadgeProps } from '../Badge';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
@@ -44,6 +45,8 @@ export interface MenuToggleProps
   isFullWidth?: boolean;
   /** Flag indicating the toggle contains placeholder text */
   isPlaceholder?: boolean;
+  /** Flag indicating whether the toggle is a settings toggle. This will override the icon property */
+  isSettings?: boolean;
   /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
   splitButtonItems?: React.ReactNode[];
   /** Variant styles of the menu toggle */
@@ -100,6 +103,7 @@ class MenuToggleBase extends Component<MenuToggleProps, MenuToggleState> {
       isFullHeight,
       isFullWidth,
       isPlaceholder,
+      isSettings,
       splitButtonItems,
       variant,
       status,
@@ -144,7 +148,7 @@ class MenuToggleBase extends Component<MenuToggleProps, MenuToggleState> {
 
     const content = (
       <>
-        {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
+        {(icon || isSettings) && <span className={css(styles.menuToggleIcon)}>{isSettings ? <CogIcon /> : icon}</span>}
         {isTypeahead ? children : children && <span className={css(styles.menuToggleText)}>{children}</span>}
         {isValidElement(badge) && <span className={css(styles.menuToggleCount)}>{badge}</span>}
         {isTypeahead ? (
@@ -177,6 +181,7 @@ class MenuToggleBase extends Component<MenuToggleProps, MenuToggleState> {
       isFullWidth && styles.modifiers.fullWidth,
       isDisabled && styles.modifiers.disabled,
       isPlaceholder && styles.modifiers.placeholder,
+      isSettings && styles.modifiers.settings,
       size === MenuToggleSize.sm && styles.modifiers.small,
       className
     );

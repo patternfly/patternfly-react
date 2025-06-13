@@ -41,7 +41,6 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 
@@ -133,7 +132,7 @@ export const NavManual: React.FunctionComponent = () => {
           </ToolbarItem>
           <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
             <ToolbarItem>
-              <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
+              <Button aria-label="Settings" isSettings variant="plain" />
             </ToolbarItem>
             <ToolbarItem>
               <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
@@ -213,11 +212,9 @@ export const NavManual: React.FunctionComponent = () => {
         <MastheadToggle>
           <PageToggleButton
             onSidebarToggle={isMobileView ? onSidebarToggleMobile : onSidebarToggleDesktop}
-            variant="plain"
+            isHamburgerButton
             aria-label="Global navigation"
-          >
-            <BarsIcon />
-          </PageToggleButton>
+          />
         </MastheadToggle>
         <MastheadBrand>
           <MastheadLogo>
