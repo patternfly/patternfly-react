@@ -24,6 +24,7 @@ figma.connect(
         isLineNumbersVisible={props.showsLineNumbers}
         isMinimapVisible={props.isMinimapVisible}
         code="code editor contents"
+        height="500px"
       >
         {props.children}
       </CodeEditor>

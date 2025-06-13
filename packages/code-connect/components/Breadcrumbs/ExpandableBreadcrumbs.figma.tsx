@@ -10,7 +10,7 @@ figma.connect(
     },
     example: (props) => (
       // Documentation for BreadcrumbItem can be found at https://www.patternfly.org/components/breadcrumb
-      <BreadcrumbItem isDropdown>{props.children}</BreadcrumbItem>
+      <BreadcrumbItem>{props.children}</BreadcrumbItem>
     )
   }
 );

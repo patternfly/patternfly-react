@@ -16,7 +16,9 @@ figma.connect(
         Orange: 'orange',
         Green: 'green',
         Blue: 'blue',
-        Purple: 'purple'
+        Purple: 'purple',
+        Yellow: 'yellow',
+        Teal: 'teal'
       })
     },
     example: (props) => (
