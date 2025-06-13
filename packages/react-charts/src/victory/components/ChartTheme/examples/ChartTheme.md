@@ -1,5 +1,5 @@
 ---
-id: Themes
+id: Colors for charts
 section: charts
 hideDarkMode: true
 ---
