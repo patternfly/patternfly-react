@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.3.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.26...@patternfly/react-docs@7.3.0-prerelease.27) (2025-06-13)
+
+### Features
+
+- **Button/MenuToggle:** added support for hamburger/settings animations ([#11861](https://github.com/patternfly/patternfly-react/issues/11861)) ([cf3d84e](https://github.com/patternfly/patternfly-react/commit/cf3d84ebf8f3046f038af6f6557946faadfe35b0))
+
 # [7.3.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.25...@patternfly/react-docs@7.3.0-prerelease.26) (2025-06-13)
 
 ### Features

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.38...@patternfly/react-integration@6.0.0-prerelease.39) (2025-06-13)
+
+### Features
+
+- **Button/MenuToggle:** added support for hamburger/settings animations ([#11861](https://github.com/patternfly/patternfly-react/issues/11861)) ([cf3d84e](https://github.com/patternfly/patternfly-react/commit/cf3d84ebf8f3046f038af6f6557946faadfe35b0))
+
 # [6.0.0-prerelease.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.37...@patternfly/react-integration@6.0.0-prerelease.38) (2025-05-29)
 
 ### Bug Fixes
