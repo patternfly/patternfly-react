@@ -10,10 +10,7 @@ figma.connect(
       isExpanded: figma.boolean('Show Footer actions'),
 
       // enum
-      isInline: figma.enum('Type', {
-        Overlay: undefined,
-        Inline: true
-      }),
+      isInline: figma.enum('Type', { Inline: true }),
       position: figma.enum('Position', {
         'Left In Main Content Area': 'start',
         'Right - Full Page': undefined,
@@ -24,7 +21,7 @@ figma.connect(
         'Right In Main Content Area': undefined
       }),
 
-      panelContent: figma.children('*')
+      panelContent: figma.textContent('Panel header')
     },
     example: (props) => (
       // Documentation for Drawer can be found at https://www.patternfly.org/components/drawer
