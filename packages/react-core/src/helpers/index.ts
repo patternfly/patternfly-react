@@ -11,4 +11,3 @@ export * from './KeyboardHandler';
 export * from './resizeObserver';
 export * from './useInterval';
 export * from './datetimeUtils';
-export * from './hamburgerIcon';
