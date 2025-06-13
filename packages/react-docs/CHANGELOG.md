@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.3.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.25...@patternfly/react-docs@7.3.0-prerelease.26) (2025-06-13)
+
+### Features
+
+- **Icons:** Allow more complex paths and svgs ([#11864](https://github.com/patternfly/patternfly-react/issues/11864)) ([fa16a3b](https://github.com/patternfly/patternfly-react/commit/fa16a3bd3ac35be6f0d23f642194d23dba0b313e))
+
 # [7.3.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.24...@patternfly/react-docs@7.3.0-prerelease.25) (2025-06-13)
 
 **Note:** Version bump only for package @patternfly/react-docs
