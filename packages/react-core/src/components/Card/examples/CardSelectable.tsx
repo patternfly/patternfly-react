@@ -5,7 +5,8 @@ export const SelectableCard: React.FunctionComponent = () => {
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isChecked3, setIsChecked3] = useState(false);
-  const [isSecondary, setIsSecondary] = useState<boolean>(false);
+  const [isSecondary, setIsSecondary] = useState(false);
+  const [displayCheckbox, setDisplayCheckbox] = useState(false);
 
   const id1 = 'selectable-card-input-1';
   const id2 = 'selectable-card-input-2';
@@ -31,6 +32,10 @@ export const SelectableCard: React.FunctionComponent = () => {
     setIsSecondary(checked);
   };
 
+  const toggleHide = (checked: boolean) => {
+    setDisplayCheckbox(checked);
+  };
+
   return (
     <>
       <Checkbox
@@ -40,68 +45,76 @@ export const SelectableCard: React.FunctionComponent = () => {
         id="toggle-variant-selectable"
         name="toggle-variant"
       />
-      <div style={{ marginTop: '15px' }}>
-        <Gallery hasGutter>
-          <Card
-            id="selectable-card-example-1"
-            isSelectable
-            isSelected={isChecked1}
-            variant={isSecondary ? 'secondary' : 'default'}
+      <Checkbox
+        label="Hide checkbox"
+        isChecked={displayCheckbox}
+        onChange={(_event, checked) => toggleHide(checked)}
+        id="selectable-toggle-hide-checkbox"
+        name="toggle-hide"
+      />
+      <Gallery hasGutter style={{ marginTop: '15px' }}>
+        <Card
+          id="selectable-card-example-1"
+          isSelectable
+          isSelected={isChecked1}
+          variant={isSecondary ? 'secondary' : 'default'}
+        >
+          <CardHeader
+            selectableActions={{
+              selectableActionId: id1,
+              selectableActionAriaLabelledby: 'selectable-card-example-1',
+              name: id1,
+              onChange,
+              hasNoOffset: true,
+              isHidden: displayCheckbox
+            }}
           >
-            <CardHeader
-              selectableActions={{
-                selectableActionId: id1,
-                selectableActionAriaLabelledby: 'selectable-card-example-1',
-                name: id1,
-                onChange,
-                hasNoOffset: true
-              }}
-            >
-              <CardTitle>First card</CardTitle>
-            </CardHeader>
-            <CardBody>This card is selectable.</CardBody>
-          </Card>
-          <Card
-            id="selectable-card-example-2"
-            isSelectable
-            isSelected={isChecked2}
-            variant={isSecondary ? 'secondary' : 'default'}
+            <CardTitle>First card</CardTitle>
+          </CardHeader>
+          <CardBody>This card is selectable.</CardBody>
+        </Card>
+        <Card
+          id="selectable-card-example-2"
+          isSelectable
+          isSelected={isChecked2}
+          variant={isSecondary ? 'secondary' : 'default'}
+        >
+          <CardHeader
+            selectableActions={{
+              selectableActionId: id2,
+              selectableActionAriaLabelledby: 'selectable-card-example-2',
+              name: id2,
+              onChange,
+              hasNoOffset: true,
+              isHidden: displayCheckbox
+            }}
           >
-            <CardHeader
-              selectableActions={{
-                selectableActionId: id2,
-                selectableActionAriaLabelledby: 'selectable-card-example-2',
-                name: id2,
-                onChange,
-                hasNoOffset: true
-              }}
-            >
-              <CardTitle>Second card</CardTitle>
-            </CardHeader>
-            <CardBody>This card is selectable.</CardBody>
-          </Card>
-          <Card
-            id="selectable-card-example-3"
-            isSelectable
-            isDisabled
-            isSelected={isChecked3}
-            variant={isSecondary ? 'secondary' : 'default'}
+            <CardTitle>Second card</CardTitle>
+          </CardHeader>
+          <CardBody>This card is selectable.</CardBody>
+        </Card>
+        <Card
+          id="selectable-card-example-3"
+          isSelectable
+          isDisabled
+          isSelected={isChecked3}
+          variant={isSecondary ? 'secondary' : 'default'}
+        >
+          <CardHeader
+            selectableActions={{
+              selectableActionId: id3,
+              selectableActionAriaLabelledby: 'selectable-card-example-3',
+              name: id3,
+              onChange,
+              hasNoOffset: true,
+              isHidden: displayCheckbox
+            }}
           >
-            <CardHeader
-              selectableActions={{
-                selectableActionId: id3,
-                selectableActionAriaLabelledby: 'selectable-card-example-3',
-                name: id3,
-                onChange,
-                hasNoOffset: true
-              }}
-            >
-              <CardTitle>Third card</CardTitle>
-            </CardHeader>
-            <CardBody>This card is selectable but disabled.</CardBody>
-          </Card>
-        </Gallery>
-      </div>
+            <CardTitle>Third card</CardTitle>
+          </CardHeader>
+          <CardBody>This card is selectable but disabled.</CardBody>
+        </Card>
+      </Gallery>
     </>
   );
 };

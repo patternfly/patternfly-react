@@ -131,7 +131,7 @@ You must avoid rendering any other interactive content within the `<Card>` when 
 
 ### Single selectable
 
-When a group of single selectable cards are related, you must pass the same `name` property to each card's `selectableActions` property.
+When a group of single selectable cards are related, you must pass the same `name` property to each card's `selectableActions` property. For more guidance on selectable cards with hidden input, see our [cards as tiles examples](#cards-as-tiles).
 
 ```ts file='./CardSingleSelectable.tsx'
 
