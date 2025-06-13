@@ -154,20 +154,14 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   countOptions,
   ...props
 }: ButtonProps) => {
-  if (isFavorite && !ariaLabel && !props['aria-labelledby']) {
-    // eslint-disable-next-line no-console
-    console.error(
-      'Button: Each favorite button must have a unique accessible name provided via aria-label or aria-labelledby'
-    );
-  }
   if (isHamburger && ![true, false].includes(isExpanded)) {
     // eslint-disable-next-line no-console
     console.error(
       'Button: when the isHamburger property is passed in, you must also pass in a boolean value to the isExpanded property. It is expected that a hamburger button controls the expansion of other content.'
     );
   }
-  // TODO: Remove isSettings || isHamburger conditional in breaking change to throw this warning for any button that does not have children or aria name
-  if ((isSettings || isHamburger) && !ariaLabel && !children && !props['aria-labelledby']) {
+  // TODO: Remove isSettings || isHamburger || isFavorite conditional in breaking change to throw this warning for any button that does not have children or aria name
+  if ((isSettings || isHamburger || isFavorite) && !ariaLabel && !children && !props['aria-labelledby']) {
     // eslint-disable-next-line no-console
     console.error(
       'Button: you must provide either visible text content or an accessible name via the aria-label or aria-labelledby properties.'
@@ -179,7 +173,6 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   const isButtonElement = Component === 'button';
   const isInlineSpan = isInline && Component === 'span';
   const isIconAlignedAtEnd = iconPosition === 'end' || iconPosition === 'right';
-  const shouldForcePlainVariant = isSettings || isHamburger;
   const shouldOverrideIcon = isSettings || isHamburger || isFavorite;
 
   const preventedEvents = inoperableEvents.reduce(

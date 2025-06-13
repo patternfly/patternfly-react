@@ -1,8 +1,8 @@
-import { MenuToggle, Flex } from '@patternfly/react-core';
+import { Fragment } from 'react/jsx-runtime';
+import { MenuToggle } from '@patternfly/react-core';
 
 export const MenuToggleSettings: React.FunctionComponent = () => (
-  <Flex>
-    <MenuToggle isSettings>Settings</MenuToggle>
-    <MenuToggle isSettings variant="plain" aria-label="Settings" />
-  </Flex>
+  <Fragment>
+    <MenuToggle isSettings>Settings</MenuToggle> <MenuToggle isSettings variant="plain" aria-label="Settings" />
+  </Fragment>
 );

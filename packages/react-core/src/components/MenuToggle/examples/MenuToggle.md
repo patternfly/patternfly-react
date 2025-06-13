@@ -72,6 +72,8 @@ import { MenuToggle, Badge } from '@patternfly/react-core';
 
 ### Settings toggle
 
+To create a "settings" menu toggle that will animate on hover and focus, you can pass the `isSettings` property in. Doing so will override the `icon` property, as a specific icon is used internally for the animations.
+
 ```ts file="./MenuToggleSettings.tsx"
 
 ```
