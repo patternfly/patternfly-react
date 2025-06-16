@@ -47,7 +47,8 @@ jest.mock('../TreeViewListItem', () => ({
     onCollapse,
     parentItem,
     title,
-    useMemo
+    useMemo,
+    hasAnimations
   }) => (
     <div data-testid="TreeViewListItem-mock">
       <p>{`TreeViewListItem action: ${action}`}</p>
@@ -69,6 +70,7 @@ jest.mock('../TreeViewListItem', () => ({
       <p>{`TreeViewListItem parentItem: ${parentItem?.name}`}</p>
       <p>{`TreeViewListItem title: ${title}`}</p>
       <p>{`TreeViewListItem useMemo: ${useMemo}`}</p>
+      <p>{`TreeViewListItem hasAnimations: ${hasAnimations}`}</p>
       <button onClick={compareItems}>compareItems clicker</button>
       <button onClick={onCheck}>onCheck clicker</button>
       <button onClick={onSelect}>onSelect clicker</button>
@@ -285,6 +287,11 @@ test('Passes useMemo to TreeViewListItem', () => {
   render(<TreeView data={[basicData]} useMemo={true} />);
 
   expect(screen.getByText('TreeViewListItem useMemo: true')).toBeVisible();
+});
+test('Passes hasAnimations to TreeViewListItem', () => {
+  render(<TreeView data={[basicData]} hasAnimations={true} />);
+
+  expect(screen.getByText('TreeViewListItem hasAnimations: true')).toBeVisible();
 });
 test('Passes data.children to TreeViewListItem', () => {
   render(<TreeView data={[{ ...basicData, children: [{ name: 'Child 1' }] }]} />);

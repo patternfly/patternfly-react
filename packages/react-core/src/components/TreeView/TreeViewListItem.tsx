@@ -1,4 +1,4 @@
-import { memo, useState, useEffect } from 'react';
+import { memo, useState, useEffect, Children, isValidElement, cloneElement } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -68,6 +68,11 @@ export interface TreeViewListItemProps {
    * every node in the selected item's path.
    */
   useMemo?: boolean;
+  /** Flag indicating whether a tree view has animations. This will always render
+   * nested tree view items rather than dynamically rendering them. This prop will be removed in
+   * the next breaking change release in favor of defaulting to always-rendered items.
+   */
+  hasAnimations?: boolean;
 }
 
 const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
@@ -97,6 +102,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   expandedIcon,
   action,
   compareItems,
+  hasAnimations,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   useMemo
 }: TreeViewListItemProps) => {
@@ -203,6 +209,15 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     activeItems.length > 0 &&
     activeItems.some((item) => compareItems && item && compareItems(item, itemData));
 
+  const clonedChildren = Children.map(
+    children,
+    (child) =>
+      isValidElement(child) &&
+      cloneElement(child as React.ReactElement<any>, {
+        inert: internalIsExpanded ? undefined : ''
+      })
+  );
+
   return (
     <li
       id={id}
@@ -247,7 +262,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
         </GenerateId>
         {action && <div className={css(styles.treeViewAction)}>{action}</div>}
       </div>
-      {internalIsExpanded && children}
+      {(internalIsExpanded || hasAnimations) && clonedChildren}
     </li>
   );
 };

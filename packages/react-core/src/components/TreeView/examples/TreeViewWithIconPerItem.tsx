@@ -55,6 +55,7 @@ export const TreeViewWithIconPerItem: React.FunctionComponent = () => {
   ];
   return (
     <TreeView
+      hasAnimations
       aria-label="Tree View with unique icon per item example"
       data={options}
       activeItems={activeItems}

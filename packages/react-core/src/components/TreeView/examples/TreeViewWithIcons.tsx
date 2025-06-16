@@ -73,6 +73,7 @@ export const TreeViewWithIcons: React.FunctionComponent = () => {
   ];
   return (
     <TreeView
+      hasAnimations
       aria-label="Tree View with icons example"
       data={options}
       activeItems={activeItems}

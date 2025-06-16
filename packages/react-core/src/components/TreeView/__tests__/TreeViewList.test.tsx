@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { TreeViewList } from '../TreeViewList';
+import { TreeViewListItem } from '../TreeViewListItem';
+import { TreeView } from '../TreeView';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 
 test(`Renders with class ${styles.treeView}__list by default`, () => {
@@ -82,6 +84,43 @@ test(`Does not render toolbar content when toolbar prop is not passed`, () => {
 
   expect(screen.queryByRole('tree')?.previousElementSibling).not.toBeInTheDocument();
   expect(screen.queryByRole('separator')).not.toBeInTheDocument();
+});
+
+test('Renders with inert attribute by default when TreeView is passed hasAnimations', () => {
+  const options = [
+    {
+      name: 'Parent 1',
+      id: 'parent-1',
+      children: [
+        {
+          name: 'Child 1',
+          id: 'child-1'
+        }
+      ]
+    }
+  ];
+  render(<TreeView hasAnimations data={options} />);
+
+  expect(screen.getByRole('group')).toHaveAttribute('inert', '');
+});
+
+test('Does not render with inert attribute when expanded and TreeView is passed hasAnimations', () => {
+  const options = [
+    {
+      name: 'Parent 1',
+      id: 'parent-1',
+      defaultExpanded: true,
+      children: [
+        {
+          name: 'Child 1',
+          id: 'child-1'
+        }
+      ]
+    }
+  ];
+  render(<TreeView hasAnimations data={options} />);
+
+  expect(screen.getByRole('group')).not.toHaveAttribute('inert');
 });
 
 test('Matches snapshot by default', () => {

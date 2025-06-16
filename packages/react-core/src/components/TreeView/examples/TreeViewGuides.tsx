@@ -60,5 +60,5 @@ export const GuidesTreeView: React.FunctionComponent = () => {
       children: [{ name: 'Application 5', id: 'example8-App5' }]
     }
   ];
-  return <TreeView aria-label="Tree View guides example" data={options} hasGuides={true} />;
+  return <TreeView hasAnimations aria-label="Tree View guides example" data={options} hasGuides={true} />;
 };
