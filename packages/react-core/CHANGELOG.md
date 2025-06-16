@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.21...@patternfly/react-core@6.3.0-prerelease.22) (2025-06-16)
+
+### Features
+
+- **TreeView:** enabled opt-in animations ([#11842](https://github.com/patternfly/patternfly-react/issues/11842)) ([bfc382c](https://github.com/patternfly/patternfly-react/commit/bfc382c9b3c0de4b22babb8f72085654e7e89c7a))
+
 # [6.3.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.20...@patternfly/react-core@6.3.0-prerelease.21) (2025-06-13)
 
 ### Features
