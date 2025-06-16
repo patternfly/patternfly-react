@@ -76,6 +76,11 @@ interface ExpandableSectionState {
   previousWidth: number;
 }
 
+const directionClassMap = {
+  up: styles.modifiers.expandTop,
+  down: styles.modifiers.expandBottom
+};
+
 const setLineClamp = (lines: number, element: HTMLDivElement) => {
   if (!element || lines < 1) {
     return;
@@ -263,7 +268,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
           displaySize === 'lg' && styles.modifiers.displayLg,
           isWidthLimited && styles.modifiers.limitWidth,
           isIndented && styles.modifiers.indented,
-          isDetached && direction && (direction === 'up' ? styles.modifiers.expandTop : 'pf-m-expand-bottom'),
+          isDetached && direction && directionClassMap[direction],
+          isDetached && direction && 'pf-m-detached',
           variant === ExpandableSectionVariant.truncate && styles.modifiers.truncate,
           className
         )}

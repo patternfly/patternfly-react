@@ -14,3 +14,19 @@ test('Renders with children', () => {
 
   expect(screen.getByRole('button')).toHaveTextContent('Toggle test');
 });
+
+test('Does not render with class pf-m-detached by default', () => {
+  render(<ExpandableSectionToggle data-testid="test-id">Toggle test</ExpandableSectionToggle>);
+
+  expect(screen.getByTestId('test-id')).not.toHaveClass('pf-m-detached');
+});
+
+test('Renders with class pf-m-detached when isDetached is true', () => {
+  render(
+    <ExpandableSectionToggle data-testid="test-id" isDetached>
+      Toggle test
+    </ExpandableSectionToggle>
+  );
+
+  expect(screen.getByTestId('test-id')).toHaveClass('pf-m-detached');
+});
