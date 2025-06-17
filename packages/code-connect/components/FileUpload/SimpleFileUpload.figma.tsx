@@ -23,19 +23,22 @@ figma.connect(
               <HelperTextItem id="helper-text-example-helpText">Upload a CSV file</HelperTextItem>
             </HelperText>
           </FileUploadHelperText>
-        )
+        ),
+        false: undefined
       }),
 
       // enum
-      allowEditingUploadedText: figma.enum('State', {
-        'Uploaded + Not Editable': false,
-        'Uploaded + Editable': true
-      }),
+      allowEditingUploadedText: figma.enum('State', { 'Uploaded + Editable': true }),
       isDragActive: figma.enum('State', {
         'Drag state': true,
         false: undefined
       }),
-      isLoading: figma.enum('State', { 'In progress upload': true })
+      isLoading: figma.enum('State', { 'In progress upload': true }),
+      isValidated: figma.enum('State', {
+        'Invalid upload': 'error',
+        'Uploaded + Editable': 'success',
+        'Uploaded + Not Editable': 'success'
+      })
     },
     example: (props) => (
       // Documentation for FileUpload can be found at https://www.patternfly.org/components/file-upload
@@ -45,6 +48,7 @@ figma.connect(
         aria-label="File upload example"
         browseButtonText="Upload"
         isLoading={props.isLoading}
+        validated={props.isValidated}
         isDragActive={props.isDragActive}
         hideDefaultPreview={props.hideDefaultPreview}
         allowEditingUploadedText={props.allowEditingUploadedText}
