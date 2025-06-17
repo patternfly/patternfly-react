@@ -59,11 +59,11 @@ export interface TabsProps
   onClose?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
   /** Callback for the add button. Passing this property inserts the add button */
   onAdd?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-  /** Flag indicating that the add button is disabled when onAdd is passed in */
+  /** Aria-label for the add button */
   addButtonAriaLabel?: string;
   /** Uniquely identifies the tabs */
   id?: string;
-  /** Disables the add button */
+  /** Flag indicating that the add button is disabled when onAdd is passed in */
   isAddButtonDisabled?: boolean;
   /** Enables the filled tab list layout */
   isFilled?: boolean;
