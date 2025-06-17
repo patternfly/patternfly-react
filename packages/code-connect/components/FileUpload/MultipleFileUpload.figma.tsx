@@ -6,6 +6,7 @@ import {
   MultipleFileUploadStatus,
   MultipleFileUploadStatusItem
 } from '@patternfly/react-core';
+import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
 // TODO: FIGMA: Add status toggle text
 // TODO: FIGMA: Add status toggle icon
@@ -20,42 +21,43 @@ figma.connect(
   {
     props: {
       isHorizontal: figma.enum('Layout', { Horizontal: true }),
-
-      state: figma.enum('State', {
-        Default: 'default',
-        'Drag over': 'drag-over',
-        'Uploading + Collapsed': 'uploading---collapsed',
-        'Uploaded + Collapsed': 'uploaded---collapsed',
-        'Failed upload + Collapsed': 'failed-upload---collapsed',
-        'Uploading + Expanded': 'uploading---expanded',
-        'Uploaded + Expanded': 'uploaded---expanded',
-        'Failed Upload + Expanded': 'failed-upload---expanded'
-      }),
-
-      statusIcons: ['inProgress', 'success', 'danger']
+      titleText: 'Drag and drop files here',
+      titleTextSeparator: 'or',
+      infoText: 'Accepted file types: JPEG, Doc, PDF, PNG',
+      children: figma.children('*')
     },
     example: (props) => (
       // Documentation for FileUpload can be found at https://www.patternfly.org/components/file-upload
-      <MultipleFileUpload onFileDrop={() => {}} isHorizontal={props.isHorizontal}>
+      <MultipleFileUpload
+        isHorizontal={props.isHorizontal}
+        onFileDrop={() => {}}
+        dropzoneProps={{
+          accept: {
+            'image/jpeg': ['.jpg', '.jpeg'],
+            'application/msword': ['.doc'],
+            'application/pdf': ['.pdf'],
+            'image/png': ['.png']
+          }
+        }}
+      >
         <MultipleFileUploadMain
-          titleIcon={'<UploadIcon />'}
-          titleText="Drag and drop files here"
-          titleTextSeparator="or"
-          infoText="Accepted file types: JPEG, Doc, PDF, PNG"
+          titleIcon={<UploadIcon />}
+          titleText={props.titleText}
+          titleTextSeparator={props.titleTextSeparator}
+          infoText={props.infoText}
         />
 
         <MultipleFileUploadStatus
-          statusToggleText={'${successfullyReadFileCount} of ${currentFiles.length} files uploaded'}
-          statusToggleIcon={'statusIcon'}
+          statusToggleText="Status toggle text"
+          statusToggleIcon="StatusToggleIcon"
           aria-label="Current uploads"
         >
           <MultipleFileUploadStatusItem
-            file={file}
-            key={file.name}
+            file="file-upload-file"
+            key="file-upload-key"
             onClearClick={() => {}}
             onReadSuccess={() => {}}
             onReadFail={() => {}}
-            progressHelperText={'${file.name} is being read'}
           />
         </MultipleFileUploadStatus>
       </MultipleFileUpload>
