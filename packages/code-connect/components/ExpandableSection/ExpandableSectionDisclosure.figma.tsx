@@ -8,8 +8,8 @@ figma.connect(
     props: {
       // string
       expandedContentSectionText: figma.string('Expanded Text'),
-      toggleTextExpanded: figma.string('Toggle Text Less'),
       toggleTextCollapsed: figma.string('Toggle Text More'),
+      toggleTextExpanded: figma.string('Toggle Text Less'),
 
       // boolean
       isIndented: figma.enum('State', {
@@ -29,10 +29,10 @@ figma.connect(
       <ExpandableSection
         isExpanded={props.isExpanded}
         isIndented={props.isIndented}
+        toggleContent={props.children}
         toggleTextCollapsed={props.toggleTextCollapsed}
         toggleTextExpanded={props.toggleTextExpanded}
         variant="truncate"
-        toggleContent={props.children}
       >
         {props.expandedContentSectionText}
       </ExpandableSection>
