@@ -534,7 +534,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             ),
             onTransitionEnd
           }
-        : null;
+        : {};
+
       const AdvancedSearchWithPopper = (
         <div className={css(className)} ref={searchInputRef} {...props}>
           <Popper
