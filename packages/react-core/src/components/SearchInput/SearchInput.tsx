@@ -42,7 +42,7 @@ export interface SearchInputExpandable {
   onToggleExpand: (event: React.SyntheticEvent<HTMLButtonElement>, isExpanded: boolean) => void;
   /** An accessible label for the expandable search input toggle. */
   toggleAriaLabel: string;
-  /** Flag indicating animations should be enabled when the search input expands and collapses. */
+  /** Flag indicating animations should be enabled when the search input expands and collapses. Note: this will change the component's DOM structure. In a future breaking change release, this will become the default behavior and will no longer be needed. */
   hasAnimations?: boolean;
 }
 
@@ -190,7 +190,13 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     } else if (isExpanded) {
       searchInputInputRef?.current?.focus();
     } else {
-      searchInputExpandableToggleRef?.current?.focus();
+      if (hasAnimations) {
+        setTimeout(() => {
+          searchInputExpandableToggleRef?.current?.focus();
+        }, 150);
+      } else {
+        searchInputExpandableToggleRef?.current?.focus();
+      }
     }
     setFocusAfterExpandChange(false);
   }, [focusAfterExpandChange, isExpanded, searchInputInputRef, searchInputExpandableToggleRef]);
@@ -371,7 +377,6 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       aria-expanded={isExpanded}
       icon={<TimesIcon />}
       onClick={onExpandHandler}
-      ref={searchInputExpandableToggleRef}
       {...(!isExpanded && { inert: '' })}
     />
   );
