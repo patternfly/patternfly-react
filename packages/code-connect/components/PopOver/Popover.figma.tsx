@@ -6,7 +6,7 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 // TODO: FIGMA: Add buttons boolean to footerContent
-// TODO: REACT: Add iconWrapper support
+// TODO: REACT: Add icon support
 
 figma.connect(
   Popover,
@@ -62,7 +62,7 @@ figma.connect(
         footerContent={props.footerContent}
         position={props.position}
         headerIcon={props.status.icon}
-        alertSeverityVariant={props.status.state}
+        alertSeverityVariant={props.status.state as any}
       />
     )
   }
