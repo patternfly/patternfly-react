@@ -1,14 +1,18 @@
 import figma from '@figma/code-connect';
-import { EmptyState, EmptyStateBody, Spinner } from '@patternfly/react-core';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import LockIcon from '@patternfly/react-icons/dist/esm/icons/lock-icon';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import { EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateActions } from '@patternfly/react-core';
 
 // TODO: FIGMA: Add Empty state footer
 // TODO: FIGMA: Consolodate empty state examples
+// TODO: FIGMA: Add empty state footer
+// TODO: FIGMA: Add empty state actions
+// TODO: FIGMA: Add empty state icon
+// TODO: FIGMA: Add empty state title
+// TODO: FIGMA: Add empty state body
+// TODO: FIGMA: Add empty state variant
+// TODO: FIGMA: Add empty state status
+// TODO: FIGMA: Add empty state isLoading
+// Based on Code Connect's limitations, this component needs to be overhauled. Using the base component approach present in
+// other components would significantly reduce complexity.
 
 figma.connect(
   EmptyState,
@@ -16,10 +20,21 @@ figma.connect(
   {
     props: {
       // string
-      title: figma.string('Header text'),
       body: figma.string('Body text'),
+      title: figma.string('Header text'),
 
       // enum
+      icon: figma.enum('Type', {
+        Default: 'CubesIcon', // placeholder icon
+        Loading: 'Spinner'
+      }),
+      status: figma.enum('Type', {
+        Custom: 'custom',
+        Warning: 'warning',
+        Success: 'success',
+        Danger: 'danger',
+        Info: 'info'
+      }),
       variant: figma.enum('Size', {
         Basic: undefined,
         'Extra small': 'xs',
@@ -27,50 +42,23 @@ figma.connect(
         Large: 'lg',
         'Extra large': 'xl'
       }),
-      // "custom" | "warning" | "success" | "danger" | "info"
-      status: figma.enum('Type', {
-        Basic: {
-          icon: CubesIcon,
-          type: undefined
-        },
-        Create: {
-          icon: PlusCircleIcon,
-          type: 'custom'
-        },
-        'No results': {
-          icon: SearchIcon,
-          type: 'custom'
-        },
-        Success: {
-          icon: CheckCircleIcon,
-          type: 'success'
-        },
-        Error: {
-          icon: ExclamationCircleIcon,
-          type: 'danger'
-        },
-        Permissions: {
-          icon: LockIcon,
-          type: undefined
-        },
-        Danger: {
-          icon: Spinner,
-          type: undefined
-        }
-      }),
-      isLoading: figma.enum('Type', { Loading: 'Spinner' })
+
+      // children
+      actions: figma.children(['Button', 'Link Button'])
     },
     example: (props) => (
       // Documentation for EmptyState can be found at https://www.patternfly.org/components/empty-state
       <EmptyState
-        status={props.status.type}
-        titleText={props.title}
-        variant={props.variant}
         headingLevel="h4"
-        icon={props.status.icon}
+        icon={props.icon as any}
+        variant={props.variant}
+        status={props.status}
+        titleText={props.title}
       >
         <EmptyStateBody>{props.body}</EmptyStateBody>
-        {/* <EmptyStateFooter>{props.children}</EmptyStateFooter> */}
+        <EmptyStateFooter>
+          <EmptyStateActions>{props.actions}</EmptyStateActions>
+        </EmptyStateFooter>
       </EmptyState>
     )
   }

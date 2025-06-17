@@ -7,10 +7,8 @@ import {
   DropdownList,
   Dropdown,
   DropdownItem,
-  Divider,
-  MenuToggle
+  Divider
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 // TODO: FIGMA: Use dropdown from figma for actions
 // TODO: FIGMA: Create hint title
@@ -22,19 +20,10 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 
 const actions = (
   <Dropdown
-    isOpen={isOpen}
-    onSelect={onSelect}
-    onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
-    toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-      <MenuToggle
-        ref={toggleRef}
-        aria-label="Without title example kebab toggle"
-        variant="plain"
-        onClick={onToggle}
-        isExpanded={isOpen}
-        icon={<EllipsisVIcon />}
-      />
-    )}
+    isOpen={false} // should use an 'isOpen' state variable
+    onSelect={() => {}} // need to define an onSelect handler
+    onOpenChange={() => {}}
+    toggle={() => {}}
   >
     <DropdownList>
       <DropdownItem value={0} key="action">
