@@ -10,15 +10,12 @@ figma.connect(
       tabText: figma.string('Tab Text'),
 
       // enum
-      isActive: figma.enum('State', { Selected: true }),
-
-      children: figma.children('*')
+      isActive: figma.enum('State', { Selected: true })
     },
     example: (props) => (
       // Documentation for JumpLinks can be found at https://www.patternfly.org/components/jump-links
       <JumpLinksItem href="#" isActive={props.isActive}>
         {props.tabText}
-        {props.children}
       </JumpLinksItem>
     )
   }
