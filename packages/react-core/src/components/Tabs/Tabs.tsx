@@ -59,10 +59,12 @@ export interface TabsProps
   onClose?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
   /** Callback for the add button. Passing this property inserts the add button */
   onAdd?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-  /** Aria-label for the add button */
+  /** Flag indicating that the add button is disabled when onAdd is passed in */
   addButtonAriaLabel?: string;
   /** Uniquely identifies the tabs */
   id?: string;
+  /** Disables the add button */
+  isAddButtonDisabled?: boolean;
   /** Enables the filled tab list layout */
   isFilled?: boolean;
   /** Enables subtab tab styling */
@@ -464,6 +466,7 @@ class Tabs extends Component<TabsProps, TabsState> {
       activeKey,
       defaultActiveKey,
       id,
+      isAddButtonDisabled,
       isFilled,
       isSubtab,
       isVertical,
@@ -631,6 +634,7 @@ class Tabs extends Component<TabsProps, TabsState> {
                 aria-label={addButtonAriaLabel || 'Add tab'}
                 onClick={onAdd}
                 icon={<PlusIcon />}
+                isDisabled={isAddButtonDisabled}
               />
             </span>
           )}
