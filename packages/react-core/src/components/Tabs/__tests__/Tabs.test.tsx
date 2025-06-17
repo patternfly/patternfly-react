@@ -492,3 +492,25 @@ test('should not render scroll buttons when isVertical is true', () => {
   expect(screen.queryByLabelText('Scroll left')).not.toBeInTheDocument();
   expect(screen.queryByLabelText('Scroll right')).not.toBeInTheDocument();
 });
+
+test('should render a disabled add button', () => {
+  render(
+    <Tabs onAdd={jest.fn()} addButtonAriaLabel="add-label" isAddButtonDisabled={true}>
+      <div>Tab content</div>
+    </Tabs>
+  );
+
+  const addButton = screen.getByLabelText('add-label');
+  expect(addButton).toBeDisabled();
+});
+
+test('should render an enabled add button', () => {
+  render(
+    <Tabs onAdd={jest.fn()} addButtonAriaLabel="add-label" isAddButtonDisabled={false}>
+      <div>Tab content</div>
+    </Tabs>
+  );
+
+  const addButton = screen.getByLabelText('add-label');
+  expect(addButton).not.toBeDisabled();
+});

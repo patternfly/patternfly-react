@@ -63,6 +63,8 @@ export interface TabsProps
   addButtonAriaLabel?: string;
   /** Uniquely identifies the tabs */
   id?: string;
+  /** Flag indicating that the add button is disabled when onAdd is passed in */
+  isAddButtonDisabled?: boolean;
   /** Enables the filled tab list layout */
   isFilled?: boolean;
   /** Enables subtab tab styling */
@@ -464,6 +466,7 @@ class Tabs extends Component<TabsProps, TabsState> {
       activeKey,
       defaultActiveKey,
       id,
+      isAddButtonDisabled,
       isFilled,
       isSubtab,
       isVertical,
@@ -631,6 +634,7 @@ class Tabs extends Component<TabsProps, TabsState> {
                 aria-label={addButtonAriaLabel || 'Add tab'}
                 onClick={onAdd}
                 icon={<PlusIcon />}
+                isDisabled={isAddButtonDisabled}
               />
             </span>
           )}
