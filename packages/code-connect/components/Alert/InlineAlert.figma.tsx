@@ -7,8 +7,8 @@ figma.connect(
   {
     props: {
       // string
-      title: figma.string('✏️ Title'),
       description: figma.string('✏️ Title'),
+      title: figma.string('✏️ Title'),
 
       // boolean
       isExpandable: figma.boolean('Expandable'),
