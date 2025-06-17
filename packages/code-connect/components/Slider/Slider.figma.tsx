@@ -14,11 +14,12 @@ figma.connect(
 
       // enum
       state: figma.enum('State', {
-        Default: 'default',
+        Default: undefined,
         Active: 'active',
         Disabled: 'disabled',
         Hover: 'hover'
       }),
+      isDisabled: figma.enum('State', { Disabled: true }),
       type: figma.enum('Type', {
         Continuous: 'continuous',
         Discrete: 'discrete'
@@ -27,10 +28,10 @@ figma.connect(
     example: (props) => (
       // Documentation for Slider can be found at https://www.patternfly.org/components/slider
       <Slider
-        areCustomStepsContinuous={props.type === 'continuous'}
-        isDisabled={props.state === 'disabled'}
+        areCustomStepsContinuous={props.type}
+        isDisabled={props.isDisabled}
         showBoundaries={props.minmaxValues}
-        showTicks={props.type === 'discrete'}
+        showTicks={props.type}
       />
     )
   }
