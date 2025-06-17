@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.3.0-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.28...@patternfly/react-docs@7.3.0-prerelease.29) (2025-06-17)
+
+### Bug Fixes
+
+- **ExpandableSection:** made animation opt-in for detached variant ([#11851](https://github.com/patternfly/patternfly-react/issues/11851)) ([64befbe](https://github.com/patternfly/patternfly-react/commit/64befbe8547ebf4c388ed9f039253a7a689440f8))
+
 # [7.3.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.27...@patternfly/react-docs@7.3.0-prerelease.28) (2025-06-16)
 
 **Note:** Version bump only for package @patternfly/react-docs

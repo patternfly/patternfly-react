@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.22...@patternfly/react-core@6.3.0-prerelease.23) (2025-06-17)
+
+### Bug Fixes
+
+- **ExpandableSection:** made animation opt-in for detached variant ([#11851](https://github.com/patternfly/patternfly-react/issues/11851)) ([64befbe](https://github.com/patternfly/patternfly-react/commit/64befbe8547ebf4c388ed9f039253a7a689440f8))
+
 # [6.3.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.21...@patternfly/react-core@6.3.0-prerelease.22) (2025-06-16)
 
 ### Features
