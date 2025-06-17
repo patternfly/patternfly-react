@@ -10,10 +10,8 @@ figma.connect(
       text: figma.string('Text'),
 
       // enum
-      isRead: figma.enum('Type', { Read: true }),
-      isDisabled: figma.enum('Type', {
-        disabled: true
-      })
+      isDisabled: figma.enum('Type', { disabled: true }),
+      isRead: figma.enum('Type', { Read: true })
     },
     example: (props) => (
       // Documentation for Badge can be found at https://www.patternfly.org/components/badge
