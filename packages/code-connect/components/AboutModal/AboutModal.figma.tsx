@@ -6,13 +6,14 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2879-13973&t=15CEJpGgVui7qP5Q-11',
   {
     props: {
+      // static
+      brandImageAlt: 'Brand Image Alt Text',
+      brandImageSrc: 'Brand Image Source',
+      backgroundImageSrc: '/assets/images/background.png',
+      trademark: 'Copyright © 2024',
+
       // string
       productName: figma.string('Product name'),
-
-      trademark: 'Copyright © 2024',
-      brandImageSrc: 'Brand Image Source',
-      brandImageAlt: 'Brand Image Alt Text',
-      backgroundImageSrc: '/assets/images/background.png',
 
       // children
       children: figma.children('*')
