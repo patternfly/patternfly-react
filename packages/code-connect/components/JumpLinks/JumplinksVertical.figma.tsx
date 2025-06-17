@@ -7,7 +7,10 @@ figma.connect(
   {
     props: {
       // boolean
-      label: figma.boolean('Show Label', { true: figma.children('Label') }),
+      label: figma.boolean('Show Label', {
+        true: figma.children('Label'),
+        false: undefined
+      }),
 
       children: figma.children('*')
     },
