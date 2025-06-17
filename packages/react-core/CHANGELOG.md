@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.23...@patternfly/react-core@6.3.0-prerelease.24) (2025-06-17)
+
+### Features
+
+- **Tabs:** add the option to disable the Add button ([#11872](https://github.com/patternfly/patternfly-react/issues/11872)) ([1337e36](https://github.com/patternfly/patternfly-react/commit/1337e36f4434b1b92afe9fe67d4c4f17b05ab95f))
+
 # [6.3.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.22...@patternfly/react-core@6.3.0-prerelease.23) (2025-06-17)
 
 ### Bug Fixes
