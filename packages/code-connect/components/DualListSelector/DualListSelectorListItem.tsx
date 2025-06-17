@@ -3,21 +3,22 @@ import figma from '@figma/code-connect';
 
 figma.connect(
   DualListSelectorListItem,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=21279-116294',
+  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=29667-231683',
   {
     props: {
       // string
       itemText: figma.string('Item text'),
 
       // boolean
-      isDraggable: figma.boolean('Is Draggable'),
       draggableButtonAriaLabel: figma.boolean('Is Draggable', {
         true: 'Draggable list item',
         false: undefined
       }),
+      isDraggable: figma.boolean('Is Draggable'),
 
       // enum
       isSelected: figma.enum('State', { Selected: true }),
+
       children: figma.children('*')
     },
     example: (props) => (

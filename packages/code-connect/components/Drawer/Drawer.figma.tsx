@@ -30,7 +30,6 @@ figma.connect(
         isExpanded={props.isExpanded}
         isInline={props.isInline}
         position={props.position}
-        onResize={() => {}}
         onExpand={() => {}}
       >
         <DrawerContent panelContent={props.panelContent}>
