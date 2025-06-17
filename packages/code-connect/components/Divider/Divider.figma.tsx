@@ -21,6 +21,7 @@ figma.connect(
     },
     example: (props) => (
       // Documentation for Divider can be found at https://www.patternfly.org/components/divider
+      // Note: Vertical dividers must be wrapped in a flex container to be visible
       <Divider orientation={props.orientation} inset={props.inset} />
     )
   }

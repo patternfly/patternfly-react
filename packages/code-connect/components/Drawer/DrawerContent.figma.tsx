@@ -8,9 +8,6 @@ figma.connect(
     props: {
       panelContent: figma.children('*')
     },
-    example: (props) => (
-      // Documentation for DrawerContent can be found at https://www.patternfly.org/components/drawer
-      <DrawerContent panelContent={props.panelContent} />
-    )
+    example: (props) => <DrawerContent panelContent={props.panelContent} />
   }
 );

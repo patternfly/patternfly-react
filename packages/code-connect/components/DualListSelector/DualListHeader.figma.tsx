@@ -1,12 +1,35 @@
 import figma from '@figma/code-connect';
 import { Button, ButtonVariant, DualListSelectorPane } from '@patternfly/react-core';
-import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+
+// TODO: FIGMA: Add sort button
+// TODO: FIGMA: Add search bar
+// TODO: FIGMA: Add <DualListSelectorPane>
+// TODO: FIGMA: Add <DragDropSort>
+{
+  /* <DragDropSort>
+  items={chosenOptions.map((option, index) => ({
+    ...option,
+    props: {
+      key: option.props.key,
+      isSelected: option.props.isSelected,
+      onOptionSelect: (e) => onOptionSelect(e, index, true)
+    }
+  }))}
+  onDrop={(_, newItems) => {
+    setChosenOptions(newItems);
+  }}
+  variant="DualListSelectorList"
+> */
+}
 
 figma.connect(
   DualListSelectorPane,
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=21279-116172&t=IzSunfrnw18ti37Y-11',
   {
     props: {
+      icon: <TimesIcon />, // placeholder icon
+
       // string
       title: figma.string('Header text'),
       itemInformation: figma.string('Item information'),
@@ -20,9 +43,6 @@ figma.connect(
         true: () => {},
         false: undefined
       }),
-
-      // TODO: FIGMA: Add sort button
-
       actions: figma.boolean('Has search bar', {
         true: [
           <Button
@@ -31,7 +51,7 @@ figma.connect(
             aria-label="Sort Chosen"
             key="chosenSortButton"
             isDisabled={isDisabled}
-            icon={<PficonSortCommonAscIcon />}
+            icon={<TimesIcon />}
           />,
           <Button
             variant={ButtonVariant.plain}
@@ -39,7 +59,7 @@ figma.connect(
             aria-label="Sort Available"
             key="availableSortButton"
             isDisabled={isDisabled}
-            icon={<PficonSortCommonAscIcon />}
+            icon={<TimesIcon />}
           />
         ]
       }),
