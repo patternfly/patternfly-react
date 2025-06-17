@@ -190,15 +190,13 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     } else if (isExpanded) {
       searchInputInputRef?.current?.focus();
     } else {
-      if (hasAnimations) {
-        setTimeout(() => {
-          searchInputExpandableToggleRef?.current?.focus();
-        }, 150);
-      } else {
+      if (!hasAnimations) {
         searchInputExpandableToggleRef?.current?.focus();
       }
     }
-    setFocusAfterExpandChange(false);
+    if (!hasAnimations) {
+      setFocusAfterExpandChange(false);
+    }
   }, [focusAfterExpandChange, isExpanded, searchInputInputRef, searchInputExpandableToggleRef]);
 
   useEffect(() => {
@@ -487,6 +485,15 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     innerRef: searchInputRef
   };
 
+  const onTransitionEnd = () => {
+    !isExpanded && focusAfterExpandChange && searchInputExpandableToggleRef?.current?.focus();
+    setFocusAfterExpandChange(false);
+  };
+
+  if (hasAnimations) {
+    searchInputProps.onTransitionEnd = onTransitionEnd;
+  }
+
   if (!!expandableInput && !isExpanded && !hasAnimations) {
     return (
       <InputGroup {...searchInputProps}>
@@ -519,15 +526,19 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         </div>
       );
 
+      const advancedSearchInputProps = hasAnimations
+        ? {
+            className: css(
+              expandableInput && inputGroupStyles.modifiers.searchExpandable,
+              expandableInput && isExpanded && inputGroupStyles.modifiers.expanded
+            ),
+            onTransitionEnd
+          }
+        : null;
       const AdvancedSearchWithPopper = (
         <div className={css(className)} ref={searchInputRef} {...props}>
           <Popper
-            trigger={buildSearchTextInputGroupWithExtraButtons({
-              className: css(
-                expandableInput && hasAnimations && inputGroupStyles.modifiers.searchExpandable,
-                expandableInput && hasAnimations && isExpanded && inputGroupStyles.modifiers.expanded
-              )
-            })}
+            trigger={buildSearchTextInputGroupWithExtraButtons(advancedSearchInputProps)}
             triggerRef={triggerRef}
             popper={AdvancedSearch}
             popperRef={popperRef}
@@ -541,12 +552,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 
       const AdvancedSearchInline = (
         <div className={css(className)} ref={searchInputRef} {...props}>
-          {buildSearchTextInputGroupWithExtraButtons({
-            className: css(
-              expandableInput && hasAnimations && inputGroupStyles.modifiers.searchExpandable,
-              expandableInput && hasAnimations && isExpanded && inputGroupStyles.modifiers.expanded
-            )
-          })}
+          {buildSearchTextInputGroupWithExtraButtons(advancedSearchInputProps)}
           {AdvancedSearch}
         </div>
       );
