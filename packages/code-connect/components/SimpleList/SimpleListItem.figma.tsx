@@ -8,7 +8,7 @@ figma.connect(
     props: {
       text: figma.string('Text'),
       state: figma.enum('State', {
-        Default: 'default',
+        Default: undefined,
         'Hover - Light': 'hover---light',
         'Hover - Dark': 'hover---dark',
         'Selected - Light': 'selected---light',
@@ -16,7 +16,7 @@ figma.connect(
         Disabled: 'disabled'
       }),
       type: figma.enum('Type', {
-        Default: 'default',
+        Default: undefined,
         Link: 'link'
       })
     },
