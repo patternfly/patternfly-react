@@ -16,9 +16,6 @@ figma.connect(
         'No link': undefined
       })
     },
-    example: (props) => (
-      // Documentation for BreadcrumbItem can be found at https://www.patternfly.org/components/breadcrumb
-      <BreadcrumbItem to={props.to}>{props.text}</BreadcrumbItem>
-    )
+    example: (props) => <BreadcrumbItem to={props.to}>{props.text}</BreadcrumbItem>
   }
 );
