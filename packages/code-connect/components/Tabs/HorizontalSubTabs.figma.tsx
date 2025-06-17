@@ -8,7 +8,7 @@ figma.connect(
     props: {
       children: figma.children('*'),
       isBox: figma.enum('Type', {
-        Boxed: false,
+        Boxed: true,
         'Boxed Light': true
       })
     },
