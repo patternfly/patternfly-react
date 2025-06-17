@@ -390,12 +390,17 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     />
   );
 
+  const onTransitionEnd = () => {
+    !isExpanded && focusAfterExpandChange && searchInputExpandableToggleRef?.current?.focus();
+    setFocusAfterExpandChange(false);
+  };
+
   const expandableToggle = (
     <>
       {!hasAnimations && <InputGroupItem isPlain>{singleButtonToggle}</InputGroupItem>}
       {hasAnimations && (
         <>
-          <InputGroupItem className={inputGroupStyles.modifiers.searchExpand} isPlain>
+          <InputGroupItem className={inputGroupStyles.modifiers.searchExpand} isPlain onTransitionEnd={onTransitionEnd}>
             {expandToggleButton}
           </InputGroupItem>
           <InputGroupItem className={inputGroupStyles.modifiers.searchAction} isPlain>
@@ -485,15 +490,6 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     innerRef: searchInputRef
   };
 
-  const onTransitionEnd = () => {
-    !isExpanded && focusAfterExpandChange && searchInputExpandableToggleRef?.current?.focus();
-    setFocusAfterExpandChange(false);
-  };
-
-  if (hasAnimations) {
-    searchInputProps.onTransitionEnd = onTransitionEnd;
-  }
-
   if (!!expandableInput && !isExpanded && !hasAnimations) {
     return (
       <InputGroup {...searchInputProps}>
@@ -531,8 +527,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             className: css(
               expandableInput && inputGroupStyles.modifiers.searchExpandable,
               expandableInput && isExpanded && inputGroupStyles.modifiers.expanded
-            ),
-            onTransitionEnd
+            )
           }
         : {};
 
