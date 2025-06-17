@@ -28,6 +28,8 @@ export interface ExpandableSectionToggleProps extends Omit<React.HTMLProps<HTMLD
   isExpanded?: boolean;
   /** Callback function to toggle the expandable content. */
   onToggle?: (isExpanded: boolean) => void;
+  /** Flag indicating that the expandable section and expandable toggle are detached from one another. */
+  isDetached?: boolean;
 }
 
 export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionToggleProps> = ({
@@ -39,6 +41,7 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
   toggleId,
   direction = 'down',
   hasTruncatedContent = false,
+  isDetached,
   ...props
 }: ExpandableSectionToggleProps) => (
   <div
@@ -46,6 +49,7 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
       styles.expandableSection,
       isExpanded && styles.modifiers.expanded,
       hasTruncatedContent && styles.modifiers.truncate,
+      isDetached && 'pf-m-detached',
       className
     )}
     {...props}
@@ -63,7 +67,7 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
             <span
               className={css(
                 styles.expandableSectionToggleIcon,
-                isExpanded && direction === 'up' && styles.modifiers.expandTop
+                isExpanded && direction === 'up' && styles.modifiers.expandTop // TODO: next breaking change move this class to the outer styles.expandableSection wrapper
               )}
             >
               <AngleRightIcon />

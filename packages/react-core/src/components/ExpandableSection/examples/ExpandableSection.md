@@ -32,6 +32,8 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle
 
 When passing the `isDetached` property into `<ExpandableSection>`, you must also manually pass in the same `toggleId` and `contentId` properties to both `<ExpandableSection>` and `<ExpandableSectionToggle>`. This will link the content to the toggle via ARIA attributes.
 
+By default animations will not be enabled for a detached `<ExpandableSection>`. You must manually pass the `direction` property with an appropriate value based on where the expandable content is rendered. If the expandable content is above the expandable toggle, `direction="up"` must be passed like in this example.
+
 ```ts file="ExpandableSectionDetached.tsx"
 
 ```
