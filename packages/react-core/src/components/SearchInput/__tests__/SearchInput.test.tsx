@@ -252,12 +252,12 @@ test('animate classes & inert are not rendered when hasAnimations is false', () 
   expect(screen.getByTestId('test-id')).not.toHaveClass(`${inputGroupStyles.modifiers.expanded}`);
 
   expect(screen.getByTestId('test-id').children[0]).not.toHaveClass(`${inputGroupStyles.modifiers.searchInput}`);
-  expect(screen.getByTestId('test-id').children[0]).not.toHaveAttribute('inert', '');
+  expect(screen.getByTestId('test-id').children[0].parentElement).not.toHaveAttribute('inert', '');
 
   expect(screen.getAllByRole('button')).toHaveLength(1);
   expect(screen.getAllByRole('button')[0].parentElement).not.toHaveClass(`${inputGroupStyles.modifiers.searchExpand}`);
   expect(screen.getAllByRole('button')[0].parentElement).not.toHaveClass(`${inputGroupStyles.modifiers.searchAction}`);
-  expect(screen.getAllByRole('button')[0]).not.toHaveAttribute('inert', '');
+  expect(screen.getAllByRole('button')[0].parentElement).not.toHaveAttribute('inert', '');
 });
 
 test('animate classes & inert are properly rendered when hasAnimations is true and isExpanded is false', () => {
@@ -283,10 +283,10 @@ test('animate classes & inert are properly rendered when hasAnimations is true a
   );
   expect(screen.getAllByRole('button')).toHaveLength(2);
   expect(screen.getAllByRole('button')[0].parentElement).toHaveClass(`${inputGroupStyles.modifiers.searchExpand}`);
-  expect(screen.getAllByRole('button')[0]).not.toHaveAttribute('inert', '');
+  expect(screen.getAllByRole('button')[0].parentElement).not.toHaveAttribute('inert', '');
 
   expect(screen.getAllByRole('button')[1].parentElement).toHaveClass(`${inputGroupStyles.modifiers.searchAction}`);
-  expect(screen.getAllByRole('button')[1]).toHaveAttribute('inert', '');
+  expect(screen.getAllByRole('button')[1].parentElement).toHaveAttribute('inert', '');
 });
 
 test('animate classes and inert are properly rendered when hasAnimations and isExpanded are true', () => {
@@ -312,10 +312,10 @@ test('animate classes and inert are properly rendered when hasAnimations and isE
   );
   expect(screen.getAllByRole('button')).toHaveLength(2);
   expect(screen.getAllByRole('button')[0].parentElement).toHaveClass(`${inputGroupStyles.modifiers.searchExpand}`);
-  expect(screen.getAllByRole('button')[0]).toHaveAttribute('inert', '');
+  expect(screen.getAllByRole('button')[0].parentElement).toHaveAttribute('inert', '');
 
   expect(screen.getAllByRole('button')[1].parentElement).toHaveClass(`${inputGroupStyles.modifiers.searchAction}`);
-  expect(screen.getAllByRole('button')[1]).not.toHaveAttribute('inert', '');
+  expect(screen.getAllByRole('button')[1].parentElement).not.toHaveAttribute('inert', '');
 });
 
 test('onToggleExpand is not called if the expandable toggle is not clicked', () => {

@@ -364,7 +364,6 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       icon={<SearchIcon />}
       onClick={onExpandHandler}
       ref={searchInputExpandableToggleRef}
-      {...(isExpanded && { inert: '' })}
     />
   );
 
@@ -375,7 +374,6 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       aria-expanded={isExpanded}
       icon={<TimesIcon />}
       onClick={onExpandHandler}
-      {...(!isExpanded && { inert: '' })}
     />
   );
 
@@ -400,10 +398,19 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       {!hasAnimations && <InputGroupItem isPlain>{singleButtonToggle}</InputGroupItem>}
       {hasAnimations && (
         <>
-          <InputGroupItem className={inputGroupStyles.modifiers.searchExpand} isPlain onTransitionEnd={onTransitionEnd}>
+          <InputGroupItem
+            className={inputGroupStyles.modifiers.searchExpand}
+            isPlain
+            onTransitionEnd={onTransitionEnd}
+            {...(isExpanded && { inert: '' })}
+          >
             {expandToggleButton}
           </InputGroupItem>
-          <InputGroupItem className={inputGroupStyles.modifiers.searchAction} isPlain>
+          <InputGroupItem
+            className={inputGroupStyles.modifiers.searchAction}
+            isPlain
+            {...(!isExpanded && { inert: '' })}
+          >
             {collapseToggleButton}
           </InputGroupItem>
         </>
