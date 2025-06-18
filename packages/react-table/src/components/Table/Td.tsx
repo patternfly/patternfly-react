@@ -197,6 +197,25 @@ const TdBase: React.FunctionComponent<TdProps> = ({
       : null;
 
   const { hasAnimations } = useContext(TableContext);
+  const updateAnimationClass = () => {
+    const ancestorControlRow = (cellRef as React.RefObject<HTMLElement | null>)?.current?.closest(
+      `.${styles.tableTr}.${styles.tableControlRow}`
+    );
+    const isControlRowExpanded = ancestorControlRow.classList.contains(styles.modifiers.expanded);
+    if (!isControlRowExpanded) {
+      return;
+    }
+
+    const isCurrentCellExpanded = (cellRef as React.RefObject<HTMLElement | null>)?.current?.classList.contains(
+      styles.modifiers.expanded
+    );
+    if (isCurrentCellExpanded) {
+      ancestorControlRow.classList.remove(styles.modifiers.noAnimateExpand);
+    } else {
+      ancestorControlRow.classList.add(styles.modifiers.noAnimateExpand);
+    }
+  };
+
   const internalCompoundOnToggle = (
     event: React.MouseEvent,
     rowIndex: number,
@@ -205,24 +224,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     rowData: IRowData,
     extraData: IExtraData
   ) => {
-    if (hasAnimations) {
-      const ancestorControlRow = (cellRef as React.RefObject<HTMLElement | null>)?.current?.closest(
-        `.${styles.tableTr}.${styles.tableControlRow}`
-      );
-      const isControlRowExpanded = ancestorControlRow.classList.contains(styles.modifiers.expanded);
-      const isCurrentCellExpanded = (cellRef as React.RefObject<HTMLElement | null>)?.current?.classList.contains(
-        styles.modifiers.expanded
-      );
-
-      if (isControlRowExpanded) {
-        if (isCurrentCellExpanded) {
-          ancestorControlRow.classList.remove('pf-m-no-animate');
-        } else {
-          ancestorControlRow.classList.add('pf-m-no-animate');
-        }
-      }
-    }
-
+    hasAnimations && updateAnimationClass();
     compoundExpandProp?.onToggle(event, rowIndex, colIndex, isOpen, rowData, extraData);
   };
 
