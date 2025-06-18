@@ -1,4 +1,4 @@
-import { createRef, forwardRef, useEffect, useState } from 'react';
+import { createRef, forwardRef, useEffect, useState, useContext } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
@@ -14,6 +14,7 @@ import {
   classNames,
   favoritable
 } from './utils';
+import { IRowData, IExtraData } from './TableTypes';
 import { draggable } from './utils/decorators/draggable';
 import { treeRow } from './utils';
 import { mergeProps } from './base/merge-props';
@@ -29,6 +30,7 @@ import {
   TdSelectType,
   TdTreeRowType
 } from './base/types';
+import { TableContext } from './Table';
 import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
 import cssStickyCellInlineStart from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineStart';
 import cssStickyCellInlineEnd from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineEnd';
@@ -193,6 +195,37 @@ const TdBase: React.FunctionComponent<TdProps> = ({
           }
         })
       : null;
+
+  const { hasAnimations } = useContext(TableContext);
+  const internalCompoundOnToggle = (
+    event: React.MouseEvent,
+    rowIndex: number,
+    colIndex: number,
+    isOpen: boolean,
+    rowData: IRowData,
+    extraData: IExtraData
+  ) => {
+    if (hasAnimations) {
+      const ancestorControlRow = (cellRef as React.RefObject<HTMLElement | null>)?.current?.closest(
+        `.${styles.tableTr}.${styles.tableControlRow}`
+      );
+      const isControlRowExpanded = ancestorControlRow.classList.contains(styles.modifiers.expanded);
+      const isCurrentCellExpanded = (cellRef as React.RefObject<HTMLElement | null>)?.current?.classList.contains(
+        styles.modifiers.expanded
+      );
+
+      if (isControlRowExpanded) {
+        if (isCurrentCellExpanded) {
+          ancestorControlRow.classList.remove('pf-m-no-animate');
+        } else {
+          ancestorControlRow.classList.add('pf-m-no-animate');
+        }
+      }
+    }
+
+    compoundExpandProp?.onToggle(event, rowIndex, colIndex, isOpen, rowData, extraData);
+  };
+
   const compoundParams =
     compoundExpandProp !== null
       ? compoundExpand(
@@ -207,7 +240,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
             columnIndex: compoundExpandProp?.columnIndex,
             column: {
               extraParams: {
-                onExpand: compoundExpandProp?.onToggle,
+                onExpand: internalCompoundOnToggle,
                 expandId: compoundExpandProp?.expandId
               }
             }
