@@ -421,7 +421,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const buildExpandableSearchInput = ({ ...searchInputProps }: any = {}) => (
     <InputGroup {...searchInputProps}>
       <InputGroupItem
-        isFill
+        {...(!hasAnimations && { isFill: true })}
         {...(hasAnimations && { className: inputGroupStyles.modifiers.searchInput })}
         {...(!isExpanded && {
           inert: ''
@@ -444,7 +444,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const buildSearchTextInputGroupWithExtraButtons = ({ ...searchInputProps } = {}) => (
     <InputGroup ref={triggerRef} {...searchInputProps}>
       <InputGroupItem
-        isFill
+        {...(!hasAnimations && { isFill: true })}
         {...(expandableInput && hasAnimations && { className: inputGroupStyles.modifiers.searchInput })}
         {...(expandableInput &&
           hasAnimations &&
