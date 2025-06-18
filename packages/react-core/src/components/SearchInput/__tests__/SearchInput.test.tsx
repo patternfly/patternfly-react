@@ -8,6 +8,7 @@ import { Button } from '../../Button';
 import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
 import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
 import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
+import inputGroupStyles from '@patternfly/react-styles/css/components/InputGroup/input-group';
 
 jest.mock('../../../helpers/OUIA/ouia');
 jest.mock('../../../helpers/GenerateId/GenerateId');
@@ -232,6 +233,89 @@ test('text input is rendered when isExpanded is true', () => {
   );
 
   expect(screen.getByRole('textbox')).toBeVisible();
+});
+
+test('animate classes & inert are not rendered when hasAnimations is false', () => {
+  render(
+    <SearchInput
+      data-testid="test-id"
+      expandableInput={{
+        hasAnimations: false,
+        isExpanded: true,
+        onToggleExpand: () => {},
+        toggleAriaLabel: 'Test label'
+      }}
+    />
+  );
+
+  expect(screen.getByTestId('test-id')).not.toHaveClass(`${inputGroupStyles.modifiers.searchExpandable}`);
+  expect(screen.getByTestId('test-id')).not.toHaveClass(`${inputGroupStyles.modifiers.expanded}`);
+
+  expect(screen.getByTestId('test-id').children[0]).not.toHaveClass(`${inputGroupStyles.modifiers.searchInput}`);
+  expect(screen.getByTestId('test-id').children[0].parentElement).not.toHaveAttribute('inert', '');
+
+  expect(screen.getAllByRole('button')).toHaveLength(1);
+  expect(screen.getAllByRole('button')[0].parentElement).not.toHaveClass(`${inputGroupStyles.modifiers.searchExpand}`);
+  expect(screen.getAllByRole('button')[0].parentElement).not.toHaveClass(`${inputGroupStyles.modifiers.searchAction}`);
+  expect(screen.getAllByRole('button')[0].parentElement).not.toHaveAttribute('inert', '');
+});
+
+test('animate classes & inert are properly rendered when hasAnimations is true and isExpanded is false', () => {
+  render(
+    <SearchInput
+      data-testid="test-id"
+      expandableInput={{
+        hasAnimations: true,
+        isExpanded: false,
+        onToggleExpand: () => {},
+        toggleAriaLabel: 'Test label'
+      }}
+    />
+  );
+
+  expect(screen.getByTestId('test-id')).toHaveClass(`${inputGroupStyles.modifiers.searchExpandable}`);
+  expect(screen.getByTestId('test-id')).not.toHaveClass(`${inputGroupStyles.modifiers.expanded}`);
+
+  expect(screen.getByTestId('test-id').querySelector(`.${inputGroupStyles.modifiers.searchInput}`)).toBeInTheDocument();
+  expect(screen.getByTestId('test-id').querySelector(`.${inputGroupStyles.modifiers.searchInput}`)).toHaveAttribute(
+    'inert',
+    ''
+  );
+  expect(screen.getAllByRole('button')).toHaveLength(2);
+  expect(screen.getAllByRole('button')[0].parentElement).toHaveClass(`${inputGroupStyles.modifiers.searchExpand}`);
+  expect(screen.getAllByRole('button')[0].parentElement).not.toHaveAttribute('inert', '');
+
+  expect(screen.getAllByRole('button')[1].parentElement).toHaveClass(`${inputGroupStyles.modifiers.searchAction}`);
+  expect(screen.getAllByRole('button')[1].parentElement).toHaveAttribute('inert', '');
+});
+
+test('animate classes and inert are properly rendered when hasAnimations and isExpanded are true', () => {
+  render(
+    <SearchInput
+      data-testid="test-id"
+      expandableInput={{
+        hasAnimations: true,
+        isExpanded: true,
+        onToggleExpand: () => {},
+        toggleAriaLabel: 'Test label'
+      }}
+    />
+  );
+
+  expect(screen.getByTestId('test-id')).toHaveClass(`${inputGroupStyles.modifiers.searchExpandable}`);
+  expect(screen.getByTestId('test-id')).toHaveClass(`${inputGroupStyles.modifiers.expanded}`);
+
+  expect(screen.getByTestId('test-id').querySelector(`.${inputGroupStyles.modifiers.searchInput}`)).toBeInTheDocument();
+  expect(screen.getByTestId('test-id').querySelector(`.${inputGroupStyles.modifiers.searchInput}`)).not.toHaveAttribute(
+    'inert',
+    ''
+  );
+  expect(screen.getAllByRole('button')).toHaveLength(2);
+  expect(screen.getAllByRole('button')[0].parentElement).toHaveClass(`${inputGroupStyles.modifiers.searchExpand}`);
+  expect(screen.getAllByRole('button')[0].parentElement).toHaveAttribute('inert', '');
+
+  expect(screen.getAllByRole('button')[1].parentElement).toHaveClass(`${inputGroupStyles.modifiers.searchAction}`);
+  expect(screen.getAllByRole('button')[1].parentElement).not.toHaveAttribute('inert', '');
 });
 
 test('onToggleExpand is not called if the expandable toggle is not clicked', () => {
