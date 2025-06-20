@@ -243,6 +243,8 @@ export type OnExpand = (
 ) => void;
 ```
 
+For a more complex compound expandable implementation with nested tables, see our [table compound expansion demo](/components/table/react-demos/compound-expansion).
+
 ```ts file="TableCompoundExpandable.tsx"
 
 ```
