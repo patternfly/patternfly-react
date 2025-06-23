@@ -1555,14 +1555,14 @@ export const Animations: FunctionComponent = () => {
           <Content component={ContentVariants.h1}>Resources</Content>
           <Content className="pf-v6-u-mb-md">Everything you need to know about your application</Content>
           <Tabs activeKey={selectedTab} onSelect={(_e, key) => setSelectedTab(Number(key))} aria-label="Primary tabs">
-            <Tab eventKey={0} title={<TabTitleText>Overview</TabTitleText>} />
-            <Tab eventKey={1} title={<TabTitleText>Resources</TabTitleText>} />
-            <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>} />
+            <Tab eventKey={0} title={<TabTitleText>Overview</TabTitleText>} tabContentId="overview" />
+            <Tab eventKey={1} title={<TabTitleText>Resources</TabTitleText>} tabContentId="resources" />
+            <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>} tabContentId="database" />
           </Tabs>
         </PageSection>
         {selectedTab === 0 && (
           <Fragment>
-            <PageSection>
+            <PageSection id="overview">
               <MultiContentCard isExpandable={true} cards={cards} toggleText="Improve recommended pathways" />
             </PageSection>
             <PageSection aria-label="Detail status events">{detailStatusEvents}</PageSection>
@@ -1570,7 +1570,7 @@ export const Animations: FunctionComponent = () => {
         )}
 
         {selectedTab === 1 && (
-          <PageSection>
+          <PageSection id="resources">
             <TableExpandCollapseAll />
           </PageSection>
         )}
