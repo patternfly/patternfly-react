@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { css } from '@patternfly/react-styles';
 import { useOUIAProps, OUIAProps } from '../../helpers';
@@ -42,6 +42,8 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<any>;
 }
 
 interface CardContextProps {
@@ -64,7 +66,7 @@ export const CardContext = createContext<Partial<CardContextProps>>({
   isDisabled: false
 });
 
-export const Card: React.FunctionComponent<CardProps> = ({
+const CardBase: React.FunctionComponent<CardProps> = ({
   children,
   id = '',
   className,
@@ -82,7 +84,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   variant = 'default',
   ouiaId,
   ouiaSafe = true,
-
+  innerRef,
   ...props
 }: CardProps) => {
   const Component = component as any;
@@ -127,6 +129,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
       }}
     >
       <Component
+        ref={innerRef}
         id={id}
         className={css(
           styles.card,
@@ -148,4 +151,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
     </CardContext.Provider>
   );
 };
+
+export const Card = forwardRef((props: CardProps, ref: React.Ref<any>) => <CardBase {...props} innerRef={ref} />);
+
 Card.displayName = 'Card';
