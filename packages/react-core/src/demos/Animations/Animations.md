@@ -29,7 +29,20 @@ import t_global_text_color_subtle from '@patternfly/react-tokens/dist/esm/t_glob
 
 ## Demos
 
-This demonstration highlights PatternFly's latest animations. Explore how components like alerts, navigation, and forms use motion to provide clear feedback and improve usability across the platform.
+The following demo highlights the current state of [our ongoing effort to animate PatternFly components](https://github.com/orgs/patternfly/projects/7/views/66).
+
+To see how components like alerts, navigation, and forms can now use motion to provide clear feedback and improve usability, you can explore this demo and interact with various UI elements. We will continue to update this demo as additional animation support is added.
+
+Currently, this demo includes animations for:
+
+* Alerts.
+* The notification badge and notification drawer.
+* The hamburger/navigation menu icon.
+* The masthead settings icon.
+* Expandable navigation items.
+* Skeleton loader in a table.
+* Button clicks.
+* Validation failure in forms.
 
 ### Animations
 
