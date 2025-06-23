@@ -124,7 +124,6 @@
   "dependencies": {
     "@patternfly/react-component-groups": "^6.2.1",
     "clsx": "^2.1.1",
-    "react-jss": "^10.10.0",
-    "serve": "^14.2.4"
+    "react-jss": "^10.10.0"
   }
 }
