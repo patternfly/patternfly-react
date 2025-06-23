@@ -44,8 +44,6 @@ import {
   FormHelperText,
   FormAlert,
   FormGroupLabelHelp,
-  Gallery,
-  GalleryItem,
   HelperText,
   HelperTextItem,
   Icon,
@@ -1149,54 +1147,58 @@ export const Animations: FunctionComponent = () => {
     );
   };
 
+  const DetailsCard: FunctionComponent = () => (
+    <Card>
+      <CardTitle>
+        <Title headingLevel="h4" size="xl">
+          Details
+        </Title>
+      </CardTitle>
+      <CardBody>
+        <DescriptionList>
+          <DescriptionListGroup>
+            <DescriptionListTerm>Cluster API Address</DescriptionListTerm>
+            <DescriptionListDescription>
+              <a href="#">https://api1.devcluster.openshift.com</a>
+            </DescriptionListDescription>
+          </DescriptionListGroup>
+          <DescriptionListGroup>
+            <DescriptionListTerm>Cluster ID</DescriptionListTerm>
+            <DescriptionListDescription>63b97ac1-b850-41d9-8820-239becde9e86</DescriptionListDescription>
+          </DescriptionListGroup>
+          <DescriptionListGroup>
+            <DescriptionListTerm>Provide</DescriptionListTerm>
+            <DescriptionListDescription>AWS</DescriptionListDescription>
+          </DescriptionListGroup>
+          <DescriptionListGroup>
+            <DescriptionListTerm>OpenShift Version</DescriptionListTerm>
+            <DescriptionListDescription>4.5.0.ci-2020-06-16-015028</DescriptionListDescription>
+          </DescriptionListGroup>
+          <DescriptionListGroup>
+            <DescriptionListTerm>Update Channel</DescriptionListTerm>
+            <DescriptionListDescription>stable-4.5</DescriptionListDescription>
+          </DescriptionListGroup>
+        </DescriptionList>
+      </CardBody>
+      <Divider />
+      <CardFooter>
+        <a href="#">View Settings</a>
+      </CardFooter>
+    </Card>
+  );
+
   const detailStatusEvents = (
-    <Gallery hasGutter style={{ width: '100%', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
-      <GalleryItem>
-        <Card>
-          <CardTitle>
-            <Title headingLevel="h4" size="xl">
-              Details
-            </Title>
-          </CardTitle>
-          <CardBody>
-            <DescriptionList>
-              <DescriptionListGroup>
-                <DescriptionListTerm>Cluster API Address</DescriptionListTerm>
-                <DescriptionListDescription>
-                  <a href="#">https://api1.devcluster.openshift.com</a>
-                </DescriptionListDescription>
-              </DescriptionListGroup>
-              <DescriptionListGroup>
-                <DescriptionListTerm>Cluster ID</DescriptionListTerm>
-                <DescriptionListDescription>63b97ac1-b850-41d9-8820-239becde9e86</DescriptionListDescription>
-              </DescriptionListGroup>
-              <DescriptionListGroup>
-                <DescriptionListTerm>Provide</DescriptionListTerm>
-                <DescriptionListDescription>AWS</DescriptionListDescription>
-              </DescriptionListGroup>
-              <DescriptionListGroup>
-                <DescriptionListTerm>OpenShift Version</DescriptionListTerm>
-                <DescriptionListDescription>4.5.0.ci-2020-06-16-015028</DescriptionListDescription>
-              </DescriptionListGroup>
-              <DescriptionListGroup>
-                <DescriptionListTerm>Update Channel</DescriptionListTerm>
-                <DescriptionListDescription>stable-4.5</DescriptionListDescription>
-              </DescriptionListGroup>
-            </DescriptionList>
-          </CardBody>
-          <Divider />
-          <CardFooter>
-            <a href="#">View Settings</a>
-          </CardFooter>
-        </Card>
-      </GalleryItem>
-      <GalleryItem>
+    <Grid hasGutter>
+      <GridItem span={4}>
+        <DetailsCard />
+      </GridItem>
+      <GridItem span={4}>
         <CardStatus />
-      </GalleryItem>
-      <GalleryItem>
+      </GridItem>
+      <GridItem span={4}>
         <EventsCard />
-      </GalleryItem>
-    </Gallery>
+      </GridItem>
+    </Grid>
   );
 
   const expandableColumns = ['Applications', 'Server', 'Branch', 'Status'];
@@ -1244,7 +1246,7 @@ export const Animations: FunctionComponent = () => {
         {loading ? (
           <SkeletonTable columns={['', ...expandableColumns]} rows={8} />
         ) : (
-          <Table aria-label="Collapsible table">
+          <Table aria-label="Collapsible table" isExpandable hasAnimations>
             <Thead>
               <Tr>
                 <Th
