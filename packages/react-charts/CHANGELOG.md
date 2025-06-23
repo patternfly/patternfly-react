@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.3.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.3.0-prerelease.16...@patternfly/react-charts@8.3.0-prerelease.17) (2025-06-23)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
 # [8.3.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.3.0-prerelease.15...@patternfly/react-charts@8.3.0-prerelease.16) (2025-06-20)
 
 **Note:** Version bump only for package @patternfly/react-charts
