@@ -45,6 +45,8 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
   select?: TdSelectType;
   /** Turns the cell into an actions cell. Recommended to use an ActionsColumn component as a child of the Td rather than this prop. */
   actions?: TdActionsType;
+  /** Indicates the cell contains an interactive element and prevents that element's padding from increasing row height. Recommended when other cells in the same row contains text. */
+  hasAction?: boolean;
   /** Turns the cell into an expansion toggle and determines if the corresponding expansion row is open */
   expand?: TdExpandType;
   /** Turns the cell into a compound expansion toggle */
@@ -86,6 +88,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   children,
   className,
   isActionCell = false,
+  hasAction = false,
   component = 'td',
   dataLabel,
   textCenter = false,
@@ -314,6 +317,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         styles.tableTd,
         className,
         isActionCell && styles.tableAction,
+        hasAction && styles.modifiers.action,
         textCenter && styles.modifiers.center,
         noPadding && styles.modifiers.noPadding,
         isStickyColumn && scrollStyles.tableStickyCell,
