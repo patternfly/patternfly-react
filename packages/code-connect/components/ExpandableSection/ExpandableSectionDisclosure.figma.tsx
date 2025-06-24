@@ -12,15 +12,13 @@ figma.connect(
       toggleTextExpanded: figma.string('Toggle Text Less'),
 
       // boolean
-      isIndented: figma.enum('State', {
-        'Expanded Indent': true
-      }),
       isExpanded: figma.enum('State', {
         Expanded: true,
         'Expand Uncontrolled': true,
         'Expanded Indent': true,
         'Expanded Custom Content': true
       }),
+      isIndented: figma.enum('State', { 'Expanded Indent': true }),
 
       children: figma.children('*')
     },
