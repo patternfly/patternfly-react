@@ -3,7 +3,7 @@ import { CodeBlock, CodeBlockCode, ExpandableSectionToggle } from '@patternfly/r
 
 figma.connect(
   CodeBlock,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=9802-5857&m=dev',
+  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=9802-5857',
   {
     props: {
       // TODO: FIGMA: Configure Editor Text as a base component for CodeBlock
