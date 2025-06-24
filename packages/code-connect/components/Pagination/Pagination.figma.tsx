@@ -2,6 +2,7 @@ import figma from '@figma/code-connect';
 import { Pagination } from '@patternfly/react-core';
 
 // TODO: Split perPage and Page into separate properties
+// Documentation for Pagination can be found at https://www.patternfly.org/components/pagination
 
 figma.connect(
   Pagination,
@@ -19,7 +20,6 @@ figma.connect(
       })
     },
     example: (props) => (
-      // Documentation for Pagination can be found at https://www.patternfly.org/components/pagination
       <Pagination
         isCompact={props.isCompact}
         isDisabled={props.pageQuantity.state}
