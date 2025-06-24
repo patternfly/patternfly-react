@@ -1,9 +1,12 @@
-import { DualListSelectorListItem } from '@patternfly/react-core';
 import figma from '@figma/code-connect';
+import { DualListSelectorListItem } from '@patternfly/react-core';
+
+// TODO: FIGMA: Dual list item types and tree setting should come from this component
+// Documentation for DualListSelector can be found at https://www.patternfly.org/components/dual-list-selector
 
 figma.connect(
   DualListSelectorListItem,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=29667-231683',
+  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=21279-116294',
   {
     props: {
       // string
@@ -22,8 +25,6 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
-      // TODO: FIGMA: Dual list item types and tree setting should come from this component
-      // Documentation for DualListSelector can be found at https://www.patternfly.org/components/dual-list-selector
       <DualListSelectorListItem
         id="dual-list-selector-list-item-id"
         isSelected={props.isSelected}

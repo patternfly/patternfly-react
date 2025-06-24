@@ -16,31 +16,22 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=29667-231683',
   {
     props: {
-      children: figma.children('Dual list item*')
+      // children: figma.children('*')
+      children: figma.children('*')
     },
     example: (props) => (
-      // Documentation for DualListSelector can be found at https://www.patternfly.org/components/dual-list-selector
-      // TODO: FIGMA: isTree: figma.boolean('Expandable'),
-      // properties are static now, but will be dynamic once pane is introduced
       <DualListSelector>
-        {/*
-          TODO: FIGMA: Configure Dual list selector pane
-          > properties are static now, but will be dynamic once pane is introduced
-        */}
         <DualListSelectorPane
           title="Available options"
-          searchInput={buildSearchInput(false)}
-          actions={[buildSort(false)]}
+          // searchInput={() => {}}
+          // actions={() => {}}
           listMinHeight="300px"
           isChosen
-          status={() => {}}
+          // status={() => {}}
         >
           <DualListSelectorList>{props.children}</DualListSelectorList>
         </DualListSelectorPane>
-        {/*
-          TODO: FIGMA: Configure Dual list selector controls
-          properties are static now, but will be dynamic once controls are introduced
-        */}
+
         <DualListSelectorControlsWrapper>
           <DualListSelectorControl
             isDisabled={false}
@@ -67,11 +58,7 @@ figma.connect(
             icon={<AngleLeftIcon />}
           />
         </DualListSelectorControlsWrapper>
-        {/*
-          TODO: FIGMA: Configure Dual list selector pane
-          > properties are static now, but will be dynamic once pane is introduced
-        */}
-        <DualListSelectorPane title="Choose options" status={() => {}}>
+        <DualListSelectorPane title="Choose options">
           <DualListSelectorList>{props.children}</DualListSelectorList>
         </DualListSelectorPane>
       </DualListSelector>
