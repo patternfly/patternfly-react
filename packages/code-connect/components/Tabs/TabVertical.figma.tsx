@@ -8,26 +8,25 @@ import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
 
 figma.connect(
   Tab,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=14327-6161',
+  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=14327-6407',
   {
     props: {
       // string
-      tabText: figma.string('Tab Text'),
-      // eventKey: figma.string('Event key'), // TODO: FIGMA: Add event key
+      tabText: figma.string('Text'),
 
       // boolean
-      actions: figma.boolean('Help button', {
+      actions: figma.boolean('Help icon', {
         true: (ref: React.RefObject<HTMLDivElement>) => (
           <>
             <TabAction aria-label="Help action for tab" ref={ref}>
               <HelpIcon />
             </TabAction>
-            {helpPopover('Help popover for tab')}
+            {helpPopover(`Help popover for tab`)}
           </>
         ),
         false: undefined
       }),
-      onClose: figma.boolean('Close button', {
+      onClose: figma.boolean('Close Icon', {
         true: () => {},
         false: undefined
       }),
@@ -42,11 +41,10 @@ figma.connect(
 
       // enum
       isDisabled: figma.enum('State', { Disabled: true })
+      // eventKey: figma.string('Event key'), // TODO: FIGMA: Add event key
     },
     example: (props) => (
       <Tab
-        actions={props.actions}
-        aria-label="Tab context"
         eventKey={0}
         isDisabled={props.isDisabled}
         onClose={props.onClose}
