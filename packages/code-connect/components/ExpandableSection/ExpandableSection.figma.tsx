@@ -3,10 +3,12 @@ import { ExpandableSection } from '@patternfly/react-core';
 
 // TODO: FIGMA: This component needs to be overhauled. Using the base component approach present in
 // other components would significantly reduce complexity.
-
-// TODO: FIGMA:
-
 // TODO: FIGMA: Create toggle component
+// onToggle={() => {}} // only required if the user wants to be able to have other side effects when opening/closing
+// isExpanded={() => {}} // only required if the user wants to be able to have other side effects when opening/closing
+
+// Documentation for ExpandableSection can be found at https://www.patternfly.org/components/expandable-section
+
 const toggleContent = `
     <div>
     <span>You can also use icons </span>
@@ -23,7 +25,7 @@ figma.connect(
   {
     props: {
       // enum
-      isIndented: figma.enum('State', { 'Expanded Indent': true }),
+      expandedContentSectionText: figma.string('Expanded Text'),
       isDetached: figma.enum('State', { 'Expand Detached': true }),
       isExpanded: figma.enum('State', {
         'Expanded Basic': true,
@@ -32,10 +34,16 @@ figma.connect(
         'Expanded Custom Content': true,
         'Expanded Custom with Component swap': true
       }),
+      isIndented: figma.enum('State', { 'Expanded Indent': true }),
       toggleContent: figma.enum('State', {
         'Default Custom Content': toggleContent,
         'Expanded Custom Content': toggleContent,
         'Expanded Custom with Component swap': toggleContent
+      }),
+      toggleTextCollapsed: figma.enum('State', {
+        Default: figma.string('Toggle Text More'),
+        Hover: figma.string('Toggle Text More'),
+        'Default Custom Content': figma.string('Toggle Text More')
       }),
       toggleTextExpanded: figma.enum('State', {
         'Expanded Basic': figma.string('Toggle Text Less'),
@@ -43,30 +51,16 @@ figma.connect(
         'Expanded Indent': figma.string('Toggle Text Less'),
         'Expanded Custom Content': figma.string('Toggle Text Less'),
         'Expanded Custom with Component swap': figma.string('Toggle Text Less')
-      }),
-      expandedContentSectionText: figma.enum('State', {
-        'Expanded Basic': figma.string('Expanded Text'),
-        'Expand Detached': figma.string('Expanded Text'),
-        'Expanded Indent': figma.string('Expanded Text'),
-        'Expanded Custom Content': figma.string('Expanded Text'),
-        'Expanded Custom with Component swap': figma.string('Expanded Text')
-      }),
-      toggleTextCollapsed: figma.enum('State', {
-        Default: figma.string('Toggle Text More'),
-        Hover: figma.string('Toggle Text More'),
-        'Default Custom Content': figma.string('Toggle Text More')
       })
     },
     example: (props) => (
-      // Documentation for ExpandableSection can be found at https://www.patternfly.org/components/expandable-section
       <ExpandableSection
-        // onToggle={() => {}} // only required if the user wants to be able to have other side effects when opening/closing
-        // isExpanded={() => {}} // only required if the user wants to be able to have other side effects when opening/closing
+        isDetached={props.isDetached}
+        isExpanded={props.isExpanded}
         isIndented={props.isIndented}
         toggleContent={props.toggleContent}
-        toggleTextCollapsed={props.toggleTextCollapsed}
+        toggleText={props.toggleTextCollapsed}
         toggleTextExpanded={props.toggleTextExpanded}
-        variant="truncate"
       >
         {props.expandedContentSectionText}
       </ExpandableSection>
