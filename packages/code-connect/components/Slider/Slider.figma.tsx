@@ -1,5 +1,10 @@
 import figma from '@figma/code-connect';
-import { Slider } from '@patternfly/react-core';
+import { Button, Slider } from '@patternfly/react-core';
+import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+
+// TODO: FIGMA: Define left/right actions
+// Documentation for Slider can be found at https://www.patternfly.org/components/slider
 
 figma.connect(
   Slider,
@@ -7,31 +12,36 @@ figma.connect(
   {
     props: {
       // boolean
-      leftAction: figma.boolean('Left action'),
+      isInputVisible: figma.boolean('Value input'),
       minmaxValues: figma.boolean('Min/max values'),
-      rightAction: figma.boolean('Right action'),
       valueInput: figma.boolean('Value input'),
-
-      // enum
-      state: figma.enum('State', {
-        Default: undefined,
-        Active: 'active',
-        Disabled: 'disabled',
-        Hover: 'hover'
+      startActions: figma.boolean('Left action', {
+        true: <Button variant="plain" aria-label="Minus" onClick={onMinusClick} icon={<MinusIcon />} />,
+        false: undefined
       }),
+      endActions: figma.boolean('Right action', {
+        true: <Button variant="plain" aria-label="Plus" onClick={onPlusClick} icon={<PlusIcon />} />,
+        false: undefined
+      }),
+      // enum
+      isActive: figma.enum('State', { Active: true }),
+      isContinuous: figma.enum('Type', { Continuous: true }),
       isDisabled: figma.enum('State', { Disabled: true }),
-      type: figma.enum('Type', {
-        Continuous: 'continuous',
-        Discrete: 'discrete'
-      })
+      showTicks: figma.enum('Type', { Discrete: true })
     },
     example: (props) => (
-      // Documentation for Slider can be found at https://www.patternfly.org/components/slider
       <Slider
-        areCustomStepsContinuous={props.type}
+        areCustomStepsContinuous={props.isContinuous}
+        isActive={props.isActive}
+        isInputVisible={props.isInputVisible}
         isDisabled={props.isDisabled}
+        max={200}
+        step={50}
+        value={100}
         showBoundaries={props.minmaxValues}
-        showTicks={props.type}
+        showTicks={props.showTicks}
+        startActions={props.startActions}
+        endActions={props.endActions}
       />
     )
   }
