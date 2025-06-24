@@ -1,6 +1,8 @@
 import figma from '@figma/code-connect';
 import { Banner } from '@patternfly/react-core';
 
+// Documentation for Banner can be found at https://www.patternfly.org/components/banner
+
 figma.connect(
   Banner,
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6%3A-Components-Test?node-id=221-1443',
@@ -21,9 +23,6 @@ figma.connect(
         Teal: 'teal'
       })
     },
-    example: (props) => (
-      // Documentation for Banner can be found at https://www.patternfly.org/components/banner
-      <Banner color={props.color}>{props.text}</Banner>
-    )
+    example: (props) => <Banner color={props.color}>{props.text}</Banner>
   }
 );
