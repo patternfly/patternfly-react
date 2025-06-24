@@ -1,6 +1,8 @@
 import { DescriptionList } from '@patternfly/react-core';
 import figma from '@figma/code-connect';
 
+// Documentation for DescriptionList can be found at https://www.patternfly.org/components/description-list
+
 figma.connect(
   DescriptionList,
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=1121-3946',
@@ -17,7 +19,6 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
-      // Documentation for DescriptionList can be found at https://www.patternfly.org/components/description-list
       <DescriptionList isFluid={props.isFluid} isCompact={props.isCompact} isHorizontal={props.isHorizontal}>
         {props.children}
       </DescriptionList>
