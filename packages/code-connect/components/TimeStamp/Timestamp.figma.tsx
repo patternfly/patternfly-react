@@ -1,5 +1,8 @@
 import figma from '@figma/code-connect';
-import { Timestamp } from '@patternfly/react-core';
+import { Timestamp, TimestampTooltipVariant } from '@patternfly/react-core';
+
+// TODO: FIGMA: Refine intent, enum/dropdown options confuse date and time formats. They shoudd be separated
+// Documentation for Timestamp can be found at https://www.patternfly.org/components/timestamp
 
 figma.connect(
   Timestamp,
@@ -7,28 +10,39 @@ figma.connect(
   {
     props: {
       // string
-      abbreviatedContent: figma.string('✏️ Abbreviated content'),
       defaultTimestampContent: figma.string('✏️ Default timestamp content'),
-      numericContent: figma.string('✏️ Numeric content'),
-      withoutDay: figma.string('✏️ Without day'),
-      withoutTime: figma.string('✏️ Without time'),
 
       // boolean
-      tooltipUnderline: figma.boolean('With tooltip underline'),
+      hasTooltip: figma.boolean('With tooltip underline', {
+        true: {
+          tooltip: { variant: TimestampTooltipVariant.default, suffix: 'Coordinated Universal Time (UTC)' }
+        },
+        false: undefined
+      }),
 
       // enum
-      content: figma.enum('Format', {
-        Default: figma.string('✏️ Default timestamp content'),
-        'Without time': figma.string('✏️ Without time'),
-        'Without day': figma.string('✏️ Without day'),
-        Abbreviated: figma.string('✏️ Abbreviated content'),
-        Numeric: figma.string('✏️ Numeric content')
+      dateFormat: figma.enum('Format', {
+        Default: 'full',
+        'Without time': 'medium',
+        'Without day': undefined,
+        Abbreviated: 'short',
+        Numeric: 'numeric'
+      }),
+      timeFormat: figma.enum('Format', {
+        'Without time': undefined,
+        Abbreviated: 'short',
+        Numeric: 'numeric'
       }),
       children: figma.children('*')
     },
     example: (props) => (
-      // Documentation for Timestamp can be found at https://www.patternfly.org/components/timestamp
-      <Timestamp date={props.content} tooltip={props.tooltipUnderline} />
+      <Timestamp
+        date={props.defaultTimestampContent}
+        timeFormat={props.timeFormat}
+        dateFormat={props.dateFormat}
+        dateContent={props.dateFormat}
+        tooltip={props.hasTooltip}
+      />
     )
   }
 );

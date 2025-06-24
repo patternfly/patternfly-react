@@ -1,5 +1,7 @@
 import figma from '@figma/code-connect';
-import { Tooltip } from '@patternfly/react-core';
+import { Button, Tooltip } from '@patternfly/react-core';
+
+// Documentation for Tooltip can be found at https://www.patternfly.org/components/tooltip
 
 figma.connect(
   Tooltip,
@@ -28,9 +30,8 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
-      // Documentation for Tooltip can be found at https://www.patternfly.org/components/tooltip
       <Tooltip content={props.content} position={props.position}>
-        {props.children}
+        <Button>I have a tooltip!</Button>
       </Tooltip>
     )
   }
