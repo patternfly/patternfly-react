@@ -1,5 +1,6 @@
 import figma from '@figma/code-connect';
 import { EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateActions } from '@patternfly/react-core';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 // TODO: FIGMA: Add Empty state footer
 // TODO: FIGMA: Consolodate empty state examples
@@ -24,10 +25,6 @@ figma.connect(
       title: figma.string('Header text'),
 
       // enum
-      icon: figma.enum('Type', {
-        Default: 'CubesIcon', // placeholder icon
-        Loading: 'Spinner'
-      }),
       status: figma.enum('Type', {
         Custom: 'custom',
         Warning: 'warning',
@@ -43,14 +40,12 @@ figma.connect(
         'Extra large': 'xl'
       }),
 
-      // children
-      actions: figma.children(['Button', 'Link Button'])
+      actions: figma.children('Empty state footer')
     },
     example: (props) => (
-      // Documentation for EmptyState can be found at https://www.patternfly.org/components/empty-state
       <EmptyState
         headingLevel="h4"
-        icon={props.icon as any}
+        icon={<PlusCircleIcon />}
         variant={props.variant}
         status={props.status}
         titleText={props.title}

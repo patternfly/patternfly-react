@@ -7,7 +7,7 @@ import { FileUpload, FileUploadHelperText, HelperText, HelperTextItem } from '@p
 
 figma.connect(
   FileUpload,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=8949-96043&m=dev',
+  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=8949-96043',
   {
     props: {
       // boolean
