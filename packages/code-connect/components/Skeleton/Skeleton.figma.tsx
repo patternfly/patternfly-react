@@ -1,6 +1,8 @@
 import figma from '@figma/code-connect';
 import { Skeleton } from '@patternfly/react-core';
 
+// Documentation for Skeleton can be found at https://www.patternfly.org/components/skeleton
+
 figma.connect(
   Skeleton,
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=790-288',
@@ -20,9 +22,6 @@ figma.connect(
         Circle: 'circle'
       })
     },
-    example: (props) => (
-      // Documentation for Skeleton can be found at https://www.patternfly.org/components/skeleton
-      <Skeleton fontSize={props.size} shape={props.type} screenreaderText="Loading default content" />
-    )
+    example: (props) => <Skeleton fontSize={props.size} shape={props.type} screenreaderText="Loading default content" />
   }
 );

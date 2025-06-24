@@ -4,9 +4,11 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
 // TODO: FIGMA: Add buttons boolean to footerContent
 // TODO: REACT: Add icon support
+// Documentation for Popover can be found at https://www.patternfly.org/components/popover
 
 figma.connect(
   Popover,
@@ -17,7 +19,11 @@ figma.connect(
       bodyContent: figma.string('Popover description'),
       headerContent: figma.string('Popover Heading'),
       footerContent: figma.boolean('Has footer', {
-        true: figma.string('Popover footer'),
+        true: 'Popover footer',
+        false: undefined
+      }),
+      headerIcon: figma.boolean('Show header icon', {
+        true: <BullhornIcon />,
         false: undefined
       }),
       status: figma.enum('Status', {
@@ -54,15 +60,14 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
-      // Documentation for Popover can be found at https://www.patternfly.org/components/popover
       <Popover
+        alertSeverityVariant={props.status.state}
         aria-label="Clickable popover"
-        headerContent={props.headerContent}
         bodyContent={props.bodyContent}
         footerContent={props.footerContent}
+        headerContent={props.headerContent}
+        headerIcon={props.headerIcon}
         position={props.position}
-        headerIcon={props.status.icon}
-        alertSeverityVariant={props.status.state as any}
       />
     )
   }

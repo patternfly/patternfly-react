@@ -1,38 +1,87 @@
 import figma from '@figma/code-connect';
 import {
+  Dropdown,
+  DropdownItem,
+  DropdownList,
+  MenuToggle,
   NotificationDrawerListItem,
   NotificationDrawerListItemBody,
-  NotificationDrawerListItemHeader
+  NotificationDrawerListItemHeader,
+  Timestamp
 } from '@patternfly/react-core';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+
+// Documentation for NotificationDrawerListItem can be found at https://www.patternfly.org/components/notification-drawer
 
 figma.connect(
   NotificationDrawerListItem,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=3164-16861&m=dev',
+  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=3164-16861',
   {
     props: {
-      isRead: figma.enum('Type', {
-        Unread: false,
-        Read: true
-      }),
-      isHoverable: figma.enum('State', {
-        Default: false,
-        Hover: true
-      }),
-      status: figma.enum('Status', {
+      timestamp: <Timestamp date={new Date()} />,
+
+      // enum
+      isRead: figma.enum('Type', { Read: true }),
+      isHoverable: figma.enum('State', { Hover: true }),
+      variant: figma.enum('Status', {
         Info: 'info',
         Success: 'success',
         Warning: 'warning',
         Danger: 'danger'
       }),
-      alertTitle: figma.children('Alert title'),
-      alertDescription: figma.children('Description')
+
+      // boolean
+      listItemDropdown: {
+        dropdown: (
+          <Dropdown
+            onSelect={() => {}}
+            isOpen={false}
+            onOpenChange={() => {}}
+            popperProps={{ position: 'right' }}
+            toggle={() => (
+              <MenuToggle
+                ref={() => {}}
+                isExpanded={false}
+                onClick={() => {}}
+                variant="plain"
+                aria-label={`Basic example header kebab toggle`}
+                icon={<EllipsisVIcon />}
+              />
+            )}
+          >
+            <DropdownList>
+              <DropdownItem>Item 1</DropdownItem>
+              <DropdownItem>Item 2</DropdownItem>
+              <DropdownItem>Item 3</DropdownItem>
+            </DropdownList>
+          </Dropdown>
+        ),
+        onClose: () => {}
+      },
+
+      // TODO: FIGMA: Make alert description retrievable via unique layer name or adding a prop to Noficiation Drawer Item
+      alertDescription: 'Description',
+
+      // TODO: FIGMA: Make alert title retrievable via unique layer name or adding a prop to Noficiation Drawer Item
+      alertTitle: 'Notification title'
     },
     example: (props) => (
-      <NotificationDrawerListItem isHoverable={props.isHoverable} isRead={props.isRead} variant={props.status}>
-        <NotificationDrawerListItemHeader title="Notification" srTitle="Notification drawer item">
-          {props.alertTitle}
+      <NotificationDrawerListItem
+        isHoverable={props.isHoverable}
+        isRead={props.isRead}
+        onClose={() => {}}
+        variant={props.variant}
+      >
+        <NotificationDrawerListItemHeader
+          srTitle="Notification drawer item"
+          title={props.alertTitle}
+          variant={props.variant}
+        >
+          {props.listItemDropdown.dropdown}
         </NotificationDrawerListItemHeader>
-        <NotificationDrawerListItemBody>{props.alertDescription}</NotificationDrawerListItemBody>
+        <NotificationDrawerListItemBody timestamp={props.timestamp}>
+          {props.alertDescription}
+        </NotificationDrawerListItemBody>
       </NotificationDrawerListItem>
     )
   }
