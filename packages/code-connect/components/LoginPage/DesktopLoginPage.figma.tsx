@@ -2,6 +2,7 @@ import figma from '@figma/code-connect';
 import { LoginPage } from '@patternfly/react-core';
 
 // TODO: Map Figma component to these properties
+// Documentation for LoginPage can be found at https://www.patternfly.org/components/login-page
 
 figma.connect(
   LoginPage,
@@ -11,7 +12,6 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
-      // Documentation for LoginPage can be found at https://www.patternfly.org/components/login-page
       <LoginPage
         brandImgSrc={brandImg}
         brandImgAlt="PatternFly logo"

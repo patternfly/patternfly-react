@@ -1,6 +1,8 @@
 import figma from '@figma/code-connect';
 import { JumpLinksItem } from '@patternfly/react-core';
 
+// Documentation for JumpLinks can be found at https://www.patternfly.org/components/jump-links
+
 figma.connect(
   JumpLinksItem,
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=5426-8306',
@@ -13,7 +15,6 @@ figma.connect(
       isActive: figma.enum('State', { Selected: true })
     },
     example: (props) => (
-      // Documentation for JumpLinks can be found at https://www.patternfly.org/components/jump-links
       <JumpLinksItem href="#" isActive={props.isActive}>
         {props.tabText}
       </JumpLinksItem>
