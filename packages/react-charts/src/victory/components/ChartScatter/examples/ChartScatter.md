@@ -13,7 +13,6 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { createRef } from 'react';
 import {
 Chart,
 ChartArea,
