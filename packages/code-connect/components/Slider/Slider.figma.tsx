@@ -16,7 +16,7 @@ figma.connect(
       minmaxValues: figma.boolean('Min/max values'),
       valueInput: figma.boolean('Value input'),
       startActions: figma.boolean('Left action', {
-        true: <Button variant="plain" aria-label="Minus" onClick={onMinusClick} icon={<MinusIcon />} />,
+        true: <Button variant="plain" aria-label="Minus" onClick={() => {}} icon={<MinusIcon />} />,
         false: undefined
       }),
       endActions: figma.boolean('Right action', {
