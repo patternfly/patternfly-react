@@ -20,7 +20,7 @@ figma.connect(
         false: undefined
       }),
       endActions: figma.boolean('Right action', {
-        true: <Button variant="plain" aria-label="Plus" onClick={onPlusClick} icon={<PlusIcon />} />,
+        true: <Button variant="plain" aria-label="Plus" onClick={() => {}} icon={<PlusIcon />} />,
         false: undefined
       }),
       // enum
