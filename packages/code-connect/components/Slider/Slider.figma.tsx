@@ -24,7 +24,6 @@ figma.connect(
         false: undefined
       }),
       // enum
-      isActive: figma.enum('State', { Active: true }),
       isContinuous: figma.enum('Type', { Continuous: true }),
       isDisabled: figma.enum('State', { Disabled: true }),
       showTicks: figma.enum('Type', { Discrete: true })
