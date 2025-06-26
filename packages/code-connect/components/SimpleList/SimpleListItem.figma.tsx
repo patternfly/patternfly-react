@@ -1,6 +1,7 @@
 import figma from '@figma/code-connect';
 import { SimpleListItem } from '@patternfly/react-core';
 
+// TODO: FIGMA: Add support for SimpleListGroup
 // Documentation for SimpleListItem can be found at https://www.patternfly.org/components/simple-list
 
 figma.connect(
@@ -9,19 +10,32 @@ figma.connect(
   {
     props: {
       text: figma.string('Text'),
-      state: figma.enum('State', {
-        Default: undefined,
-        'Hover - Light': 'hover---light',
-        'Hover - Dark': 'hover---dark',
-        'Selected - Light': 'selected---light',
-        'Selected - Dark': 'selected---dark',
-        Disabled: 'disabled'
+
+      // enum
+      isActive: figma.enum('State', {
+        'Selected - Light': true,
+        'Selected - Dark': true
       }),
-      type: figma.enum('Type', {
-        Default: undefined,
-        Link: 'link'
+      isLink: figma.enum('Type', {
+        Default: {
+          component: undefined,
+          href: undefined
+        },
+        Link: {
+          component: 'a',
+          href: '#'
+        }
       })
     },
-    example: (props) => <SimpleListItem>{props.text}</SimpleListItem>
+    example: (props) => (
+      <SimpleListItem
+        component={props.isLink.component}
+        href={props.isLink.href}
+        isActive={props.isActive}
+        key="simple-list-key"
+      >
+        {props.text}
+      </SimpleListItem>
+    )
   }
 );
