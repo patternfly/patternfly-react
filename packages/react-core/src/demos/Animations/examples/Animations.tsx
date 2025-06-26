@@ -1188,14 +1188,14 @@ export const Animations: FunctionComponent = () => {
   );
 
   const detailStatusEvents = (
-    <Grid hasGutter>
-      <GridItem span={4}>
+    <Grid hasGutter xl2={4}>
+      <GridItem>
         <DetailsCard />
       </GridItem>
-      <GridItem span={4}>
+      <GridItem>
         <CardStatus />
       </GridItem>
-      <GridItem span={4}>
+      <GridItem>
         <EventsCard />
       </GridItem>
     </Grid>
@@ -1346,7 +1346,7 @@ export const Animations: FunctionComponent = () => {
     const handlePasswordChange = (_event, password: string) => {
       setPassword(password);
       setIsPasswordValid(
-        password.length > 12 && /[0-9]/.test(password) && /[A-Z]/.test(password) ? 'success' : 'error'
+        password.length >= 12 && /[0-9]/.test(password) && /[A-Z]/.test(password) ? 'success' : 'error'
       );
     };
 
