@@ -2,11 +2,7 @@
   "codeConnect": {
     "parser": "react",
     "include": [
-      "components/Alert/*.tsx",
-      "components/Avatar/*.tsx",
-      "components/Backdrop/*.tsx",
-      "components/BackToTop/*.tsx",
-      "components/Badge/*.tsx"
+      "components/Alert/*.tsx"
     ],
     "paths": {
       "src/components": "src/components"
