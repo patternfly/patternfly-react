@@ -14,7 +14,7 @@ figma.connect(
       // boolean
       isInputVisible: figma.boolean('Value input'),
       minmaxValues: figma.boolean('Min/max values'),
-      valueInput: figma.boolean('Value input'),
+      isInputVisible: figma.boolean('Value input'),
       startActions: figma.boolean('Left action', {
         true: <Button variant="plain" aria-label="Minus" onClick={() => {}} icon={<MinusIcon />} />,
         false: undefined
