@@ -11,7 +11,6 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { createRef } from 'react';
 import {
   Chart,
   ChartArea,
@@ -25,6 +24,7 @@ import {
   createContainer
 } from '@patternfly/react-charts/victory';
 import { getResizeObserver } from '@patternfly/react-core';
+import { useEffect, useRef, useState } from 'react';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -51,241 +51,16 @@ This demonstrates an alternate way of applying tooltips using data labels.
 ```
 
 ### Monthly data with responsive container
-```js
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip } from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
+```ts file = "ChartStackMonthlyResponsive.tsx"
 
-class MonthlyResponsiveStack extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = createRef();
-    this.observer = () => {};
-    this.state = {
-      width: 0
-    };
-
-    this.handleResize = () => {
-      if(this.containerRef.current && this.containerRef.current.clientWidth){
-        this.setState({ width: this.containerRef.current.clientWidth });
-      }
-    };
-
-    this.bars = [];
-    for(let i = 1; i < 32; i++){
-      this.bars.push({ x: `Aug. ${i}`, y: Math.floor(Math.random() * 6) + 1 });
-    };
-
-    this.renderSocketBars = () => {
-      let socketBars = this.bars.map((tick, index) => {
-        return {
-          x: tick.x,
-          y: tick.y,
-          name: 'Sockets',
-          label: `${tick.x} Sockets: ${tick.y}`
-        };
-      });
-      return <ChartBar data={socketBars} labelComponent={<ChartTooltip constrainToVisibleArea />} />;
-    }
-
-    this.renderCoresBars = () => {
-      let coresBars = this.bars.map((tick, index) => {
-        return {
-          x: tick.x,
-          y: tick.y,
-          name: 'Cores',
-          label: `${tick.x} Cores: ${tick.y}`
-        };
-      });
-      return <ChartBar data={coresBars} labelComponent={<ChartTooltip constrainToVisibleArea />} />;
-    }
-
-    this.renderNodesBars = () => {
-      let nodesBars = this.bars.map((tick, index) => {
-        return {
-          key: index,
-          x: tick.x,
-          y: tick.y,
-          name: 'Nodes',
-          label: `${tick.x} Nodes: ${tick.y}`
-        };
-      });
-      return <ChartBar data={nodesBars} labelComponent={<ChartTooltip constrainToVisibleArea />} />;
-    }
-
-    this.getTickValues = (offset = 2) => {
-      let tickValues = [];
-      for(let i = 1; i < 32; i++){
-        if (i % offset == 0){
-          tickValues.push(`Aug. ${i}`);
-        }
-      }
-      return tickValues;
-    }
-  }
-
-  componentDidMount() {
-    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
-    this.handleResize();
-  }
-
-  componentWillUnmount() {
-    this.observer();
-  }
-
-  render(){
-    const { width } = this.state;
-    return (
-      <div ref={this.containerRef}>
-        <div style={{ height: '225px' }}>
-          <Chart
-            ariaDesc="Stack Chart with monthly metric data"
-            ariaTitle="Monthly Stack Chart"
-            domainPadding={{ x: [30, 25] }}
-            legendData={[{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }]}
-            legendPosition="bottom"
-            height={225}
-            name="chart4"
-            padding={{
-              bottom: 75, // Adjusted to accommodate legend
-              left: 50,
-              right: 50, 
-              top: 50
-            }}
-            width={width}
-          >
-            <ChartAxis tickValues = {this.getTickValues()} fixLabelOverlap />
-            <ChartAxis dependentAxis showGrid />
-            <ChartStack domainPadding={{x: [10, 2]}}>
-              { this.renderSocketBars() }
-              { this.renderCoresBars() }
-              { this.renderNodesBars() }
-            </ChartStack>
-          </Chart>
-        </div>
-      </div>
-    )
-  }
-}
 ```
 
 ### Multi-color (unordered) responsive container
 
 This demonstrates monthly data with a bottom aligned legend and responsiveness for mobile.
 
-```js
-import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, createContainer } from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
+```ts file = "ChartStackMultiColorUnordered.tsx"
 
-class MultiColorChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = createRef();
-    this.observer = () => {};
-    this.state = {
-      width: 0
-    };
-    this.handleResize = () => {
-      if(this.containerRef.current && this.containerRef.current.clientWidth){
-        this.setState({ width: this.containerRef.current.clientWidth });
-      }
-    };
-  }
-
-  componentDidMount() {
-    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
-    this.handleResize();
-  }
-
-  componentWillUnmount() {
-    this.observer();
-  }
-
-  render() {
-    const { width } = this.state;
-    
-    // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
-    const legendData = [{ childName: 'cats', name: 'Cats' }, { childName: 'dogs', name: 'Dogs' }, { childName: 'birds', name: 'Birds' }];
-    
-    return (
-      <div ref={this.containerRef}>
-        <div style={{ height: '225px' }}>
-          <Chart
-            ariaDesc="Average number of pets"
-            ariaTitle="Area chart example"
-            containerComponent={
-              <CursorVoronoiContainer
-                cursorDimension="x"
-                labels={({ datum }) => `${datum.y !== null ? datum.y : 'no data'}`}
-                labelComponent={<ChartLegendTooltip legendData={legendData} title={(datum) => datum.x}/>}
-                mouseFollowTooltips
-                voronoiDimension="x"
-                voronoiPadding={50}
-              />
-            }
-            legendData={legendData}
-            legendPosition="bottom-left"
-            height={225}
-            name="chart5"
-            padding={{
-              bottom: 75, // Adjusted to accomodate legend
-              left: 50,
-              right: 50,
-              top: 50,
-            }}
-            maxDomain={{y: 30}}
-            themeColor={ChartThemeColor.multiUnordered}
-            width={width}
-          >
-            <ChartAxis />
-            <ChartAxis dependentAxis showGrid />
-            <ChartStack>
-              <ChartArea
-                data={[
-                  { x: 'Sunday', y: 6 },
-                  { x: 'Monday', y: 2 },
-                  { x: 'Tuesday', y: 8 },
-                  { x: 'Wednesday', y: 15 },
-                  { x: 'Thursday', y: 6 },
-                  { x: 'Friday', y: 2 },
-                  { x: 'Saturday', y: 0 }
-                ]}
-                interpolation="monotoneX"
-                name="cats"
-              />
-             <ChartArea
-               data={[
-                  { x: 'Sunday', y: 4 },
-                  { x: 'Monday', y: 5 },
-                  { x: 'Tuesday', y: 7 },
-                  { x: 'Wednesday', y: 6 },
-                  { x: 'Thursday', y: 10 },
-                  { x: 'Friday', y: 3 },
-                  { x: 'Saturday', y: 5 }
-                ]}
-                interpolation="monotoneX"
-                name="dogs"
-              />
-              <ChartArea
-                data={[
-                  { x: 'Sunday', y: 8 },
-                  { x: 'Monday', y: 18 },
-                  { x: 'Tuesday', y: 14 },
-                  { x: 'Wednesday', y: 8 },
-                  { x: 'Thursday', y: 6 },
-                  { x: 'Friday', y: 8 },
-                  { x: 'Saturday', y: 12 }
-                ]}
-                interpolation="monotoneX"
-                name="birds"
-              />
-            </ChartStack>
-          </Chart>
-        </div>
-      </div>
-    );
-  }
-}
 ```
 
 ## Documentation
