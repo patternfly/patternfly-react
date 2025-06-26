@@ -10,6 +10,10 @@ figma.connect(
     props: {
       children: figma.children('*')
     },
-    example: (props) => <AlertGroup>{props.children}</AlertGroup>
+    example: (props) => (
+      <AlertGroup isLiveRegion hasAnimations>
+        {props.children}
+      </AlertGroup>
+    )
   }
 );
