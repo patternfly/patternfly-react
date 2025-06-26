@@ -18,8 +18,19 @@ figma.connect(
         Danger: 'danger',
         Info: 'info',
         Custom: 'custom'
+      }),
+      screenReaderText: figma.enum('Status', {
+        Success: 'Success banner screen reader text',
+        Warning: 'Warning banner screen reader text',
+        Danger: 'Danger banner screen reader text',
+        Info: 'Info banner screen reader text',
+        Custom: 'Custom banner screen reader text'
       })
     },
-    example: (props) => <Banner status={props.status}>{props.text}</Banner>
+    example: (props) => (
+      <Banner screenReaderText={props.screenReaderText} status={props.status}>
+        {props.text}
+      </Banner>
+    )
   }
 );
