@@ -36,72 +36,8 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 This demonstrates how to apply basic theme colors.
 
-```js
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+```ts file = "ChartThemeGreen.tsx"
 
-<div style={{ height: '275px', width: '450px' }}>
-  <Chart
-    ariaDesc="Average number of pets"
-    ariaTitle="Line chart example"
-    containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-    legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
-    legendPosition="bottom"
-    height={275}
-    maxDomain={{y: 10}}
-    minDomain={{y: 0}}
-    name="chart1"
-    padding={{
-      bottom: 75, // Adjusted to accommodate legend
-      left: 50,
-      right: 50,
-      top: 50
-    }}
-    themeColor={ChartThemeColor.green}
-    width={450}
-  >
-    <ChartAxis tickValues={[2, 3, 4]} />
-    <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
-    <ChartGroup>
-      <ChartLine
-        data={[
-          { name: 'Cats', x: '2015', y: 1 },
-          { name: 'Cats', x: '2016', y: 2 },
-          { name: 'Cats', x: '2017', y: 5 },
-          { name: 'Cats', x: '2018', y: 3 }
-        ]}
-      />
-      <ChartLine
-        data={[
-          { name: 'Dogs', x: '2015', y: 2 },
-          { name: 'Dogs', x: '2016', y: 1 },
-          { name: 'Dogs', x: '2017', y: 7 },
-          { name: 'Dogs', x: '2018', y: 4 }
-        ]}
-        style={{
-          data: {
-            strokeDasharray: '3,3'
-          }
-        }}
-      />
-      <ChartLine
-        data={[
-          { name: 'Birds', x: '2015', y: 3 },
-          { name: 'Birds', x: '2016', y: 4 },
-          { name: 'Birds', x: '2017', y: 9 },
-          { name: 'Birds', x: '2018', y: 5 }
-        ]}
-      />
-      <ChartLine
-        data={[
-          { name: 'Mice', x: '2015', y: 3 },
-          { name: 'Mice', x: '2016', y: 3 },
-          { name: 'Mice', x: '2017', y: 8 },
-          { name: 'Mice', x: '2018', y: 7 }
-        ]}
-      />
-    </ChartGroup>
-  </Chart>
-</div>
 ```
 
 ### Multi-color (ordered)
