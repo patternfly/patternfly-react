@@ -54,7 +54,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
         returnValue = Object.values(a)[sortIndex] - Object.values(b)[sortIndex];
       } else {
         // string sort using natural sort
-        returnValue = Object.values(a)[sortIndex].localeCompare(Object.values(b)[sortIndex], undefined, {numeric: true});
+        returnValue = Object.values(a)[sortIndex].localeCompare(Object.values(b)[sortIndex], undefined, { numeric: true });
       }
       if (sortDirection === 'desc') {
         return returnValue * -1;
