@@ -112,7 +112,13 @@ export const TableStripedExpandable: React.FunctionComponent = () => {
         id="toggle-compact-striped"
         name="toggle-compact-striped"
       />
-      <Table aria-label="Expandable table" variant={isExampleCompact ? 'compact' : undefined} isStriped isExpandable>
+      <Table
+        aria-label="Expandable table"
+        variant={isExampleCompact ? 'compact' : undefined}
+        isStriped
+        isExpandable
+        hasAnimations
+      >
         <Thead>
           <Tr>
             <Th screenReaderText="Row expansion" />
@@ -148,7 +154,7 @@ export const TableStripedExpandable: React.FunctionComponent = () => {
           }
           return (
             <Tbody key={repo.name} isExpanded={isRepoExpanded(repo)}>
-              <Tr>
+              <Tr isExpanded={isRepoExpanded(repo)}>
                 <Td
                   expand={
                     repo.details
@@ -167,7 +173,7 @@ export const TableStripedExpandable: React.FunctionComponent = () => {
                 <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
               </Tr>
               {repo.details ? (
-                <Tr isExpanded={isRepoExpanded(repo)}>
+                <Tr isExpanded={isRepoExpanded(repo)} isExpandable>
                   {!childIsFullWidth ? <Td /> : null}
                   {repo.details.detail1 ? (
                     <Td dataLabel="Repo detail 1" noPadding={childHasNoPadding} colSpan={detail1Colspan}>

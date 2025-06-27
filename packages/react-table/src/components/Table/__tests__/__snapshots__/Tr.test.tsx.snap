@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot with children 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="pf-v6-c-table__tr"
+        data-ouia-component-id="OUIA-Generated-TableRow-6"
+        data-ouia-component-type="PF6/TableRow"
+        data-ouia-safe="true"
+      >
+        <td>
+          Row content
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`Matches snapshot without children 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="pf-v6-c-table__tr"
+        data-ouia-component-id="OUIA-Generated-TableRow-5"
+        data-ouia-component-type="PF6/TableRow"
+        data-ouia-safe="true"
+      />
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

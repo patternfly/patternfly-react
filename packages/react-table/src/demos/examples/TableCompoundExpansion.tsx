@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { ActionsColumn, Table, Thead, Tr, Th, Tbody, Td, ExpandableRowContent } from '@patternfly/react-table';
 import {
   Button,
-  Card,
   Flex,
   FlexItem,
   MenuToggle,
@@ -22,7 +21,6 @@ import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 export const TableCompoundExpansion: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
@@ -200,88 +198,93 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
   return (
     <DashboardWrapper hasPageTemplateTitle>
       <PageSection padding={{ default: 'noPadding', xl: 'padding' }} aria-label="Compound expandable table data ">
-        <Card>
-          {tableToolbar}
-          <Table aria-label="Compound expandable table">
-            <Thead>
-              <Tr>
-                <Th>{columnNames.name}</Th>
-                <Th>{columnNames.branches}</Th>
-                <Th>{columnNames.prs}</Th>
-                <Th>{columnNames.workspaces}</Th>
-                <Th>{columnNames.lastCommit}</Th>
-                <Th screenReaderText="URL" />
-                <Th screenReaderText="Actions" />
-              </Tr>
-            </Thead>
-            {repositories.map((repo, rowIndex) => {
-              const expandedCellKey = expandedCells[repo.name];
-              const isRowExpanded = !!expandedCellKey;
-              return (
-                <Tbody key={repo.name} isExpanded={isRowExpanded}>
-                  <Tr>
-                    <Td dataLabel={columnNames.name} component="th">
-                      <a href="#">{repo.name}</a>
-                    </Td>
-                    <Td
-                      dataLabel={columnNames.branches}
-                      compoundExpand={compoundExpandParams(repo, 'branches', rowIndex, 1)}
-                    >
-                      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                        <FlexItem>
-                          <CodeBranchIcon key="icon" />
-                        </FlexItem>
-                        <FlexItem>{repo.branches}</FlexItem>
-                      </Flex>
-                    </Td>
-                    <Td dataLabel={columnNames.prs} compoundExpand={compoundExpandParams(repo, 'prs', rowIndex, 2)}>
-                      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                        <FlexItem>
-                          <CodeIcon key="icon" />
-                        </FlexItem>
-                        <FlexItem>{repo.prs}</FlexItem>
-                      </Flex>{' '}
-                    </Td>
-                    <Td
-                      dataLabel={columnNames.workspaces}
-                      compoundExpand={compoundExpandParams(repo, 'workspaces', rowIndex, 3)}
-                    >
-                      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                        <FlexItem>
-                          <CubeIcon key="icon" />
-                        </FlexItem>
-                        <FlexItem>{repo.workspaces}</FlexItem>
-                      </Flex>
-                    </Td>
-                    <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
-                    <Td>
-                      <a href="#">Open in GitHub</a>
-                    </Td>
-                    <Td isActionCell>
-                      <ActionsColumn items={defaultActions()} />
-                    </Td>
-                  </Tr>
-                  {isRowExpanded ? (
-                    <Tr isExpanded={isRowExpanded}>
-                      <Td dataLabel={columnNames[expandedCellKey]} noPadding colSpan={7}>
-                        {expandedCellKey === 'branches' && repo.name === 'siemur/test-space' ? (
-                          <NestedItemsTable />
-                        ) : (
-                          <ExpandableRowContent>
-                            <div className={spacing.mMd}>
-                              Expanded content for {repo.name}: {expandedCellKey} goes here!
-                            </div>
-                          </ExpandableRowContent>
-                        )}
-                      </Td>
-                    </Tr>
-                  ) : null}
-                </Tbody>
-              );
-            })}
-          </Table>
-          {renderPagination('bottom', false)}
-        </Card>
+        {tableToolbar}
+        <Table isExpandable hasAnimations aria-label="Compound expandable table">
+          <Thead>
+            <Tr>
+              <Th>{columnNames.name}</Th>
+              <Th>{columnNames.branches}</Th>
+              <Th>{columnNames.prs}</Th>
+              <Th>{columnNames.workspaces}</Th>
+              <Th>{columnNames.lastCommit}</Th>
+              <Th screenReaderText="URL" />
+              <Th screenReaderText="Actions" />
+            </Tr>
+          </Thead>
+          {repositories.map((repo, rowIndex) => {
+            const expandedCellKey = expandedCells[repo.name];
+            const isRowExpanded = !!expandedCellKey;
+            return (
+              <Tbody key={repo.name} isExpanded={isRowExpanded}>
+                <Tr isExpanded={isRowExpanded} isControlRow>
+                  <Td dataLabel={columnNames.name} component="th">
+                    <a href="#">{repo.name}</a>
+                  </Td>
+                  <Td
+                    dataLabel={columnNames.branches}
+                    compoundExpand={compoundExpandParams(repo, 'branches', rowIndex, 1)}
+                  >
+                    <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                      <FlexItem>
+                        <CodeBranchIcon key="icon" />
+                      </FlexItem>
+                      <FlexItem>{repo.branches}</FlexItem>
+                    </Flex>
+                  </Td>
+                  <Td dataLabel={columnNames.prs} compoundExpand={compoundExpandParams(repo, 'prs', rowIndex, 2)}>
+                    <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                      <FlexItem>
+                        <CodeIcon key="icon" />
+                      </FlexItem>
+                      <FlexItem>{repo.prs}</FlexItem>
+                    </Flex>{' '}
+                  </Td>
+                  <Td
+                    dataLabel={columnNames.workspaces}
+                    compoundExpand={compoundExpandParams(repo, 'workspaces', rowIndex, 3)}
+                  >
+                    <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                      <FlexItem>
+                        <CubeIcon key="icon" />
+                      </FlexItem>
+                      <FlexItem>{repo.workspaces}</FlexItem>
+                    </Flex>
+                  </Td>
+                  <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
+                  <Td>
+                    <a href="#">Open in GitHub</a>
+                  </Td>
+                  <Td isActionCell>
+                    <ActionsColumn items={defaultActions()} />
+                  </Td>
+                </Tr>
+
+                <Tr isExpanded={isRowExpanded && columnNames[expandedCellKey] === columnNames.branches} isExpandable>
+                  <Td dataLabel={columnNames[expandedCellKey]} noPadding colSpan={7}>
+                    <ExpandableRowContent hasNoBackground>
+                      <NestedItemsTable />
+                    </ExpandableRowContent>
+                  </Td>
+                </Tr>
+                <Tr isExpanded={isRowExpanded && columnNames[expandedCellKey] === columnNames.prs} isExpandable>
+                  <Td dataLabel={columnNames[expandedCellKey]} colSpan={7}>
+                    <ExpandableRowContent>
+                      <div>Expanded content for {repo.name}: prs goes here!</div>
+                    </ExpandableRowContent>
+                  </Td>
+                </Tr>
+                <Tr isExpanded={isRowExpanded && columnNames[expandedCellKey] === columnNames.workspaces} isExpandable>
+                  <Td dataLabel={columnNames[expandedCellKey]} colSpan={7}>
+                    <ExpandableRowContent>
+                      <div>Expanded content for {repo.name}: workspaces goes here!</div>
+                    </ExpandableRowContent>
+                  </Td>
+                </Tr>
+              </Tbody>
+            );
+          })}
+        </Table>
+        {renderPagination('bottom', false)}
       </PageSection>
     </DashboardWrapper>
   );

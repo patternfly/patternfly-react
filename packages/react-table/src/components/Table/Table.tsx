@@ -57,8 +57,12 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   isNested?: boolean;
   /** Flag indicating this table should be striped. This property works best for a single <tbody> table. Striping may also be done manually by applying this property to Tbody and Tr components. */
   isStriped?: boolean;
-  /** Flag indicating this table contains expandable rows to maintain proper striping */
+  /** Flag indicating this table contains expandable rows. */
   isExpandable?: boolean;
+  /** Flag indicating whether expandable rows within the table have animations. Expandable rows cannot be dynamically rendered. This prop
+   * will be removed in the next breaking change, with the default behavior becoming animations always being enabled.
+   */
+  hasAnimations?: boolean;
   /** Flag indicating this table's rows will not have the inset typically reserved for expanding/collapsing rows in a tree table. Intended for use on tree tables with no visible rows with children. */
   hasNoInset?: boolean;
   /** Collection of column spans for nested headers. Deprecated: see https://github.com/patternfly/patternfly/issues/4584 */
@@ -73,10 +77,12 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
 
 interface TableContextProps {
   registerSelectableRow?: () => void;
+  hasAnimations?: boolean;
 }
 
 export const TableContext = createContext<TableContextProps>({
-  registerSelectableRow: () => {}
+  registerSelectableRow: () => {},
+  hasAnimations: false
 });
 
 const TableBase: React.FunctionComponent<TableProps> = ({
@@ -95,6 +101,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   isNested = false,
   isStriped = false,
   isExpandable = false,
+  hasAnimations = false,
   hasNoInset = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   nestedHeaderColumnSpans,
@@ -197,7 +204,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   };
 
   return (
-    <TableContext.Provider value={{ registerSelectableRow }}>
+    <TableContext.Provider value={{ registerSelectableRow, hasAnimations }}>
       <table
         aria-label={ariaLabel}
         role={role}
@@ -212,7 +219,8 @@ const TableBase: React.FunctionComponent<TableProps> = ({
           isStriped && styles.modifiers.striped,
           isExpandable && styles.modifiers.expandable,
           hasNoInset && stylesTreeView.modifiers.noInset,
-          isNested && 'pf-m-nested'
+          isNested && 'pf-m-nested',
+          hasAnimations && styles.modifiers.animateExpand
         )}
         ref={tableRef}
         {...(isTreeTable && { role: 'treegrid' })}

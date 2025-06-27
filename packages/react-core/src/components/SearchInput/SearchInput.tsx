@@ -14,6 +14,7 @@ import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import { Popper } from '../../helpers';
 import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
+import inputGroupStyles from '@patternfly/react-styles/css/components/InputGroup/input-group';
 
 /** Properties for adding search attributes to an advanced search input. These properties must
  * be passed in as an object within an array to the search input component's attribute property.
@@ -41,6 +42,8 @@ export interface SearchInputExpandable {
   onToggleExpand: (event: React.SyntheticEvent<HTMLButtonElement>, isExpanded: boolean) => void;
   /** An accessible label for the expandable search input toggle. */
   toggleAriaLabel: string;
+  /** Flag indicating animations should be enabled when the search input expands and collapses. Note: this will change the component's DOM structure. In a future breaking change release, this will become the default behavior and will no longer be needed. */
+  hasAnimations?: boolean;
 }
 
 /** The main search input component. */
@@ -177,7 +180,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const popperRef = useRef(null);
   const [focusAfterExpandChange, setFocusAfterExpandChange] = useState(false);
 
-  const { isExpanded, onToggleExpand, toggleAriaLabel } = expandableInput || {};
+  const { isExpanded, onToggleExpand, toggleAriaLabel, hasAnimations } = expandableInput || {};
 
   useEffect(() => {
     // this effect and the focusAfterExpandChange variable are needed to focus the input/toggle as needed when the
@@ -187,9 +190,13 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     } else if (isExpanded) {
       searchInputInputRef?.current?.focus();
     } else {
-      searchInputExpandableToggleRef?.current?.focus();
+      if (!hasAnimations) {
+        searchInputExpandableToggleRef?.current?.focus();
+      }
     }
-    setFocusAfterExpandChange(false);
+    if (!hasAnimations) {
+      setFocusAfterExpandChange(false);
+    }
   }, [focusAfterExpandChange, isExpanded, searchInputInputRef, searchInputExpandableToggleRef]);
 
   useEffect(() => {
@@ -349,7 +356,28 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     </TextInputGroup>
   );
 
-  const expandableToggle = (
+  const expandToggleButton = (
+    <Button
+      variant={ButtonVariant.plain}
+      aria-label={toggleAriaLabel}
+      aria-expanded={isExpanded}
+      icon={<SearchIcon />}
+      onClick={onExpandHandler}
+      ref={searchInputExpandableToggleRef}
+    />
+  );
+
+  const collapseToggleButton = (
+    <Button
+      variant={ButtonVariant.plain}
+      aria-label={toggleAriaLabel}
+      aria-expanded={isExpanded}
+      icon={<TimesIcon />}
+      onClick={onExpandHandler}
+    />
+  );
+
+  const singleButtonToggle = (
     <Button
       variant={ButtonVariant.plain}
       aria-label={toggleAriaLabel}
@@ -360,10 +388,48 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     />
   );
 
-  const buildExpandableSearchInput = ({ ...searchInputProps } = {}) => (
+  const onTransitionEnd = () => {
+    !isExpanded && focusAfterExpandChange && searchInputExpandableToggleRef?.current?.focus();
+    setFocusAfterExpandChange(false);
+  };
+
+  const expandableToggle = (
+    <>
+      {!hasAnimations && <InputGroupItem isPlain>{singleButtonToggle}</InputGroupItem>}
+      {hasAnimations && (
+        <>
+          <InputGroupItem
+            className={inputGroupStyles.modifiers.searchExpand}
+            isPlain
+            onTransitionEnd={onTransitionEnd}
+            {...(isExpanded && { inert: '' })}
+          >
+            {expandToggleButton}
+          </InputGroupItem>
+          <InputGroupItem
+            className={inputGroupStyles.modifiers.searchAction}
+            isPlain
+            {...(!isExpanded && { inert: '' })}
+          >
+            {collapseToggleButton}
+          </InputGroupItem>
+        </>
+      )}
+    </>
+  );
+
+  const buildExpandableSearchInput = ({ ...searchInputProps }: any = {}) => (
     <InputGroup {...searchInputProps}>
-      <InputGroupItem isFill>{buildTextInputGroup()} </InputGroupItem>
-      <InputGroupItem isPlain>{expandableToggle}</InputGroupItem>
+      <InputGroupItem
+        {...(!hasAnimations && { isFill: true })}
+        {...(hasAnimations && { className: inputGroupStyles.modifiers.searchInput })}
+        {...(!isExpanded && {
+          inert: ''
+        })}
+      >
+        {buildTextInputGroup()}
+      </InputGroupItem>
+      {expandableToggle}
     </InputGroup>
   );
 
@@ -377,9 +443,19 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 
   const buildSearchTextInputGroupWithExtraButtons = ({ ...searchInputProps } = {}) => (
     <InputGroup ref={triggerRef} {...searchInputProps}>
-      <InputGroupItem isFill>{buildTextInputGroup()}</InputGroupItem>
+      <InputGroupItem
+        {...(!hasAnimations && { isFill: true })}
+        {...(expandableInput && hasAnimations && { className: inputGroupStyles.modifiers.searchInput })}
+        {...(expandableInput &&
+          hasAnimations &&
+          !isExpanded && {
+            inert: ''
+          })}
+      >
+        {buildTextInputGroup()}
+      </InputGroupItem>
       {(attributes.length > 0 || onToggleAdvancedSearch) && (
-        <InputGroupItem isPlain>
+        <InputGroupItem isPlain {...(hasAnimations && { className: inputGroupStyles.modifiers.searchAction })}>
           <Button
             className={isSearchMenuOpen && 'pf-m-expanded'}
             variant={ButtonVariant.control}
@@ -392,7 +468,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         </InputGroupItem>
       )}
       {!!onSearch && (
-        <InputGroupItem>
+        <InputGroupItem {...(hasAnimations && { className: inputGroupStyles.modifiers.searchAction })}>
           <Button
             type="submit"
             variant={ButtonVariant.control}
@@ -413,11 +489,15 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 
   const searchInputProps = {
     ...props,
-    className: className && css(className),
+    className: css(
+      expandableInput && hasAnimations && inputGroupStyles.modifiers.searchExpandable,
+      expandableInput && hasAnimations && isExpanded && inputGroupStyles.modifiers.expanded,
+      className && css(className)
+    ),
     innerRef: searchInputRef
   };
 
-  if (!!expandableInput && !isExpanded) {
+  if (!!expandableInput && !isExpanded && !hasAnimations) {
     return (
       <InputGroup {...searchInputProps}>
         <InputGroupItem>{expandableToggle}</InputGroupItem>
@@ -449,10 +529,19 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         </div>
       );
 
+      const advancedSearchInputProps = hasAnimations
+        ? {
+            className: css(
+              expandableInput && inputGroupStyles.modifiers.searchExpandable,
+              expandableInput && isExpanded && inputGroupStyles.modifiers.expanded
+            )
+          }
+        : {};
+
       const AdvancedSearchWithPopper = (
         <div className={css(className)} ref={searchInputRef} {...props}>
           <Popper
-            trigger={buildSearchTextInputGroupWithExtraButtons()}
+            trigger={buildSearchTextInputGroupWithExtraButtons(advancedSearchInputProps)}
             triggerRef={triggerRef}
             popper={AdvancedSearch}
             popperRef={popperRef}
@@ -466,7 +555,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 
       const AdvancedSearchInline = (
         <div className={css(className)} ref={searchInputRef} {...props}>
-          {buildSearchTextInputGroupWithExtraButtons()}
+          {buildSearchTextInputGroupWithExtraButtons(advancedSearchInputProps)}
           {AdvancedSearch}
         </div>
       );

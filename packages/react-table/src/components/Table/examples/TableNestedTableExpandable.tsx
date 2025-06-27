@@ -128,7 +128,7 @@ export const TableExpandable: React.FunctionComponent = () => {
   ];
 
   return (
-    <Table isExpandable aria-label="Simple table">
+    <Table isExpandable hasAnimations aria-label="Simple table">
       <Thead>
         <Tr>
           <Th screenReaderText="Row expansion" />

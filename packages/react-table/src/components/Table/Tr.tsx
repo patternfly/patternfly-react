@@ -80,7 +80,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
 
   const rowIsHidden = isHidden || (isExpanded !== undefined && !isExpanded && isExpandable);
 
-  const { registerSelectableRow } = useContext(TableContext);
+  const { registerSelectableRow, hasAnimations } = useContext(TableContext);
 
   useEffect(() => {
     if (isSelectable && !rowIsHidden) {
@@ -113,6 +113,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
         {...(isClickable && { tabIndex: 0 })}
         aria-label={ariaLabel}
         ref={innerRef}
+        {...(hasAnimations && rowIsHidden && { inert: '' })}
         {...(onRowClick && { onClick: onRowClick, onKeyDown })}
         {...ouiaProps}
         {...props}

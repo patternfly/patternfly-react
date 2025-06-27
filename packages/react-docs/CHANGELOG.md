@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.3.0-prerelease.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.33...@patternfly/react-docs@7.3.0-prerelease.34) (2025-06-23)
+
+### Bug Fixes
+
+- Bumped to latest core version. ([#11880](https://github.com/patternfly/patternfly-react/issues/11880)) ([0380aa5](https://github.com/patternfly/patternfly-react/commit/0380aa504b4d0d83459126bfd98b2e4e29cac4e8))
+
+# [7.3.0-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.32...@patternfly/react-docs@7.3.0-prerelease.33) (2025-06-20)
+
+### Features
+
+- **Table:** added optin animations for expansion ([#11865](https://github.com/patternfly/patternfly-react/issues/11865)) ([9adc88b](https://github.com/patternfly/patternfly-react/commit/9adc88b652f77ed5737c9f6dd02885daace1cd2b))
+
+# [7.3.0-prerelease.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.31...@patternfly/react-docs@7.3.0-prerelease.32) (2025-06-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.3.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.30...@patternfly/react-docs@7.3.0-prerelease.31) (2025-06-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 # [7.3.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.29...@patternfly/react-docs@7.3.0-prerelease.30) (2025-06-17)
 
 **Note:** Version bump only for package @patternfly/react-docs
