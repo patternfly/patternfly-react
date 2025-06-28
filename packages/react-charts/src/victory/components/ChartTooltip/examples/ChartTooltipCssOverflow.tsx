@@ -13,16 +13,17 @@ interface PetData {
 }
 
 export const ChartTooltipCssOverflow: React.FunctionComponent = () => {
-  const sheet = () => {
+  const sheet = (() => {
     const style = document.createElement('style');
     document.head.appendChild(style);
     return style.sheet;
-  };
+  })();
 
   sheet.insertRule(
     '.ws-react-charts-tooltip-overflow { margin-left: 50px; margin-top: 50px; height: 135px; }',
     sheet.cssRules.length
   );
+
   sheet.insertRule('.ws-react-charts-tooltip-overflow svg { overflow: visible; }', sheet.cssRules.length);
 
   const data: PetData[] = [
