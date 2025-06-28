@@ -4,22 +4,24 @@ import {
   ChartGroup,
   ChartLine,
   ChartThemeColor,
+  ChartThreshold,
   ChartVoronoiContainer
 } from '@patternfly/react-charts/victory';
+import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 
 interface PetData {
   name?: string;
-  symbol?: { type: string };
+  symbol?: { fill: string; type: string };
   x?: string;
   y?: number;
 }
 
-export const ChartThemeGreen: React.FunctionComponent = () => {
+export const ChartThemeCustomStrokeColor: React.FunctionComponent = () => {
   const legendData: PetData[] = [
     { name: 'Cats' },
-    { name: 'Dogs', symbol: { type: 'dash' } },
     { name: 'Birds' },
-    { name: 'Mice' }
+    { name: 'Mice' },
+    { name: 'Cats Threshold', symbol: { fill: chart_color_blue_300.var, type: 'threshold' } }
   ];
 
   const data1: PetData[] = [
@@ -30,24 +32,25 @@ export const ChartThemeGreen: React.FunctionComponent = () => {
   ];
 
   const data2: PetData[] = [
-    { name: 'Dogs', x: '2015', y: 2 },
-    { name: 'Dogs', x: '2016', y: 1 },
-    { name: 'Dogs', x: '2017', y: 7 },
-    { name: 'Dogs', x: '2018', y: 4 }
-  ];
-
-  const data3: PetData[] = [
     { name: 'Birds', x: '2015', y: 3 },
     { name: 'Birds', x: '2016', y: 4 },
     { name: 'Birds', x: '2017', y: 9 },
     { name: 'Birds', x: '2018', y: 5 }
   ];
 
-  const data4: PetData[] = [
+  const data3: PetData[] = [
     { name: 'Mice', x: '2015', y: 3 },
     { name: 'Mice', x: '2016', y: 3 },
     { name: 'Mice', x: '2017', y: 8 },
     { name: 'Mice', x: '2018', y: 7 }
+  ];
+
+  const data4: PetData[] = [
+    { name: 'Cats Threshold', x: '2015', y: 5 },
+    { name: 'Cats Threshold', x: '2016', y: 5 },
+    { name: 'Cats Threshold', x: '2016', y: 6 },
+    { name: 'Cats Threshold', x: '2017', y: 6 },
+    { name: 'Cats Threshold', x: '2018', y: 6 }
   ];
 
   return (
@@ -63,30 +66,30 @@ export const ChartThemeGreen: React.FunctionComponent = () => {
         height={275}
         maxDomain={{ y: 10 }}
         minDomain={{ y: 0 }}
-        name="chart1"
+        name="chart5"
         padding={{
           bottom: 75, // Adjusted to accommodate legend
           left: 50,
           right: 50,
           top: 50
         }}
-        themeColor={ChartThemeColor.green}
+        themeColor={ChartThemeColor.multiUnordered}
         width={450}
       >
         <ChartAxis tickValues={[2, 3, 4]} />
         <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
         <ChartGroup>
           <ChartLine data={data1} />
-          <ChartLine
-            data={data2}
+          <ChartLine data={data2} />
+          <ChartLine data={data3} />
+          <ChartThreshold
+            data={data4}
             style={{
               data: {
-                strokeDasharray: '3,3'
+                stroke: chart_color_blue_300.var
               }
             }}
           />
-          <ChartLine data={data3} />
-          <ChartLine data={data4} />
         </ChartGroup>
       </Chart>
     </div>
