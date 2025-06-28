@@ -5,6 +5,7 @@ import {
   ChartThemeColor,
   ChartVoronoiContainer
 } from '@patternfly/react-charts/victory';
+import { useEffect } from 'react';
 
 interface PetData {
   name: string;
@@ -13,18 +14,20 @@ interface PetData {
 }
 
 export const ChartTooltipCssOverflow: React.FunctionComponent = () => {
-  const sheet = (() => {
-    const style = document.createElement('style');
-    document.head.appendChild(style);
-    return style.sheet;
-  })();
+  // Workaround for documentation-framework issue https://github.com/patternfly/patternfly-react/issues/11455
+  useEffect(() => {
+    const sheet = (() => {
+      const style = document.createElement('style');
+      document.head.appendChild(style);
+      return style.sheet;
+    })();
 
-  sheet.insertRule(
-    '.ws-react-charts-tooltip-overflow { margin-left: 50px; margin-top: 50px; height: 135px; }',
-    sheet.cssRules.length
-  );
-
-  sheet.insertRule('.ws-react-charts-tooltip-overflow svg { overflow: visible; }', sheet.cssRules.length);
+    sheet.insertRule(
+      '.ws-react-charts-tooltip-overflow { margin-left: 50px; margin-top: 50px; height: 135px; }',
+      sheet.cssRules.length
+    );
+    sheet.insertRule('.ws-react-charts-tooltip-overflow svg { overflow: visible; }', sheet.cssRules.length);
+  }, []);
 
   const data: PetData[] = [
     { name: 'Cats', x: '2015', y: 3 },
