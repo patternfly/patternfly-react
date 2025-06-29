@@ -36,6 +36,7 @@ export const SparklineGreen: React.FunctionComponent = () => {
     );
     sheet.insertRule('.ws-react-charts-sparkline-overflow svg { overflow: visible; }', sheet.cssRules.length);
   }, []);
+
   return (
     <div className="ws-react-charts-sparkline-overflow">
       <div style={{ height: '100px', width: '400px' }}>
