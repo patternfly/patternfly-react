@@ -56,104 +56,18 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 ## Examples
 ### Basic pie chart
-```js
-import { ChartPie } from '@patternfly/react-charts/victory';
+```ts file = "PatternsBasicPieChart.tsx"
 
-<div style={{ height: '230px', width: '350px' }}>
-  <ChartPie
-    ariaDesc="Average number of pets"
-    ariaTitle="Pie chart example"
-    constrainToVisibleArea
-    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    hasPatterns
-    height={230}
-    labels={({ datum }) => `${datum.x}: ${datum.y}`}
-    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    name="chart1"
-    padding={{
-      bottom: 20,
-      left: 20,
-      right: 140, // Adjusted to accommodate legend
-      top: 20
-    }}
-    width={350}
-  />
-</div>
 ```
 
 ### Bar chart
-```js
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+```ts file = "PatternsBarChart.tsx"
 
-<div style={{ height: '275px', width: '450px' }}>
-  <Chart
-    ariaDesc="Average number of pets"
-    ariaTitle="Bar chart example"
-    containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-    domainPadding={{ x: [30, 25] }}
-    legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
-    legendPosition="bottom"
-    hasPatterns
-    height={275}
-    name="chart2"
-    padding={{
-      bottom: 75, // Adjusted to accommodate legend
-      left: 50,
-      right: 50,
-      top: 50
-    }}
-    themeColor={ChartThemeColor.purple}
-    width={450}
-  >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
-    <ChartGroup offset={11}>
-      <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
-      <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
-      <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
-      <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
-    </ChartGroup>
-  </Chart>
-</div>
 ```
 
 ### Stack chart
-```js
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+```ts file = "PatternsStackChart.tsx"
 
-<div style={{ height: '250px', width: '600px' }}>
-  <Chart
-    ariaDesc="Average number of pets"
-    ariaTitle="Stack chart example"
-    containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-    domainPadding={{ x: [30, 25] }}
-    legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    hasPatterns
-    height={250}
-    name="chart3"
-    padding={{
-      bottom: 50,
-      left: 50,
-      right: 200, // Adjusted to accommodate legend
-      top: 50
-    }}
-    themeColor={ChartThemeColor.green}
-    width={600}
-  >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
-    <ChartStack>
-      <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
-      <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
-      <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
-      <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
-    </ChartStack>
-  </Chart>
-</div>
 ```
 
 ### Donut chart
