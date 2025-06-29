@@ -71,105 +71,24 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 ```
 
 ### Donut chart
-```js
-import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts/victory';
+```ts file = "PatternsDonutChart.tsx"
 
-<div style={{ height: '230px', width: '350px' }}>
-  <ChartDonut
-    ariaDesc="Average number of pets"
-    ariaTitle="Donut chart example"
-    constrainToVisibleArea
-    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    hasPatterns
-    labels={({ datum }) => `${datum.x}: ${datum.y}%`}
-    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    name="chart4"
-    padding={{
-      bottom: 20,
-      left: 20,
-      right: 140, // Adjusted to accommodate legend
-      top: 20
-    }}
-    subTitle="Pets"
-    title="100"
-    themeColor={ChartThemeColor.yellow}
-    width={350}
-  />
-</div>
 ```
 
 ### Donut utilization chart
 
 This demonstrates how to hide a pattern for the static, unused portion of the donut utilization chart.
 
-```js
-import { ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts/victory';
+```ts file = "PatternsDonutUtilizationChart.tsx"
 
-<div style={{ height: '275px', width: '300px' }}>
-  <ChartDonutUtilization 
-    ariaDesc="Storage capacity"
-    ariaTitle="Donut utilization chart example"
-    constrainToVisibleArea
-    data={{ x: 'Storage capacity', y: 45 }}
-    hasPatterns
-    height={275}
-    labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-    legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
-    legendPosition="bottom"
-    name="chart5"
-    padding={{
-      bottom: 65, // Adjusted to accommodate legend
-      left: 20,
-      right: 20,
-      top: 20
-    }}
-    subTitle="of 100 GBps"
-    title="45%"
-    themeColor={ChartThemeColor.green}
-    thresholds={[{ value: 60 }, { value: 90 }]}
-    width={300}
-  />
-</div>
 ```
 
 ### Donut utilization chart with thresholds
 
 This demonstrates how to apply patterns to thresholds.
 
-```js
-import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts/victory';
+```ts file = "PatternsDonutUtilizationThreshold.tsx"
 
-<div style={{ height: '275px', width: '675px' }}>
-  <ChartDonutThreshold
-    ariaDesc="Storage capacity"
-    ariaTitle="Donut utilization chart with static threshold example"
-    constrainToVisibleArea
-    data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
-    hasPatterns
-    height={275}
-    labels={({ datum }) => datum.x ? datum.x : null}
-    name="chart6"
-    padding={{
-      bottom: 65, // Adjusted to accommodate legend
-      left: 20,
-      right: 20,
-      top: 20
-    }}
-    width={675}
-  >
-    <ChartDonutUtilization
-      data={{ x: 'Storage capacity', y: 45 }}
-      labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-      legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
-      legendPosition="bottom"
-      subTitle="of 100 GBps"
-      title="45%"
-      themeColor={ChartThemeColor.orange}
-    />
-  </ChartDonutThreshold>
-</div>
 ```
 
 ### Interactive legend with pie chart
