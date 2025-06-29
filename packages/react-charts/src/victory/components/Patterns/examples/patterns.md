@@ -287,182 +287,21 @@ This demonstrates how to omit patterns from pie chart segments.
 
 This demonstrates how to apply a custom color scale to patterns.
 
-```js
-import { ChartPie } from '@patternfly/react-charts/victory';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
-import chart_color_yellow_300 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_300';
-import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
+```ts file = "PatternsCustomColorScale.tsx"
 
-<div style={{ height: '230px', width: '350px' }}>
-  <ChartPie
-    ariaDesc="Average number of pets"
-    ariaTitle="Pie chart example"
-    colorScale={[chart_color_blue_300.var, chart_color_yellow_300.var, chart_color_green_300.var]}
-    constrainToVisibleArea
-    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    hasPatterns={[ true, true, false ]}
-    height={230}
-    labels={({ datum }) => `${datum.x}: ${datum.y}`}
-    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    name="chart10"
-    padding={{
-      bottom: 20,
-      left: 20,
-      right: 140, // Adjusted to accommodate legend
-      top: 20
-    }}
-    width={350}
-  />
-</div>
 ```
 
 ### Custom pattern defs
 
 This demonstrates how to create custom patterns.
 
-```js
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
-import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
+```ts file = "PatternsCustomDefs.tsx"
 
-<div style={{ height: '230px', width: '350px' }}>
-  <svg aria-hidden height="0" width="0" style={{display: 'block'}}>
-    <defs>
-      <pattern id="pattern1" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" width="10" height="10" x="0" y="0">
-        <path d="M 0 0 L 5 10 L 10 0" stroke={chart_color_blue_300.value} strokeWidth="2" fill="none"></path>
-      </pattern>
-      <pattern id="pattern2" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" width="10" height="10" x="0" y="0">
-        <path d="M 0 3 L 5 3 L 5 0 M 5 10 L 5 7 L 10 7" stroke={chart_color_green_300.value} strokeWidth="2" fill="none"></path>
-      </pattern>
-    </defs>
-  </svg>
-  <ChartPie
-    ariaDesc="Average number of pets"
-    ariaTitle="Pie chart example"
-    constrainToVisibleArea
-    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    height={230}
-    labels={({ datum }) => `${datum.x}: ${datum.y}`}
-    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    name="chart11"
-    padding={{
-      bottom: 20,
-      left: 20,
-      right: 140, // Adjusted to accommodate legend
-      top: 20
-    }}
-    patternScale={[ 'url("#pattern1")', 'url("#pattern2")', null ]}
-    themeColor={ChartThemeColor.multiUnordered}
-    width={350}
-  />
-</div>
 ```
 
 ### All patterns
-```js
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
+```ts file = "PatternsAll.tsx"
 
-class PatternsPie extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = createRef();
-    this.observer = () => {};
-    this.state = {
-      extraHeight: 0,
-      width: 0
-    };
-    this.handleResize = () => {
-      if (this.containerRef.current && this.containerRef.current.clientWidth) {
-        this.setState({ width: this.containerRef.current.clientWidth });
-      }
-    };
-    this.handleLegendAllowWrap = (extraHeight) => {
-      if (extraHeight !== this.state.extraHeight) {
-        this.setState({ extraHeight });
-      }
-    }
-    this.getHeight = (baseHeight) => {
-      const { extraHeight } = this.state;
-      return baseHeight + extraHeight;
-    };
-  }
-
-  componentDidMount() {
-    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
-    this.handleResize();
-  }
-
-  componentWillUnmount() {
-    this.observer();
-  }
-
-  render() {
-    const { width } = this.state;
-    const height = this.getHeight(260);
-    return (
-      <div ref={this.containerRef} style={{ height: height + "px" }}>
-        <ChartPie
-          ariaDesc="Average number of pets"
-          ariaTitle="Pie chart example"
-          constrainToVisibleArea
-          data={[
-            { x: 'Cats', y: 6 },
-            { x: 'Dogs', y: 6 },
-            { x: 'Birds', y: 6 },
-            { x: 'Fish', y: 6 },
-            { x: 'Rabbits', y: 6 },
-            { x: 'Squirels', y: 6 },
-            { x: 'Chipmunks', y: 6 },
-            { x: 'Bats', y: 6 },
-            { x: 'Ducks', y: 6 },
-            { x: 'Geese', y: 6 },
-            { x: 'Bobcats', y: 6 },
-            { x: 'Foxes', y: 6 },
-            { x: 'Coyotes', y: 6 },
-            { x: 'Deer', y: 6 },
-            { x: 'Bears', y: 10 }
-          ]}
-          hasPatterns
-          height={height}
-          labels={({ datum }) => `${datum.x}: ${datum.y}`}
-          legendData={[
-            { name: 'Cats: 6' },
-            { name: 'Dogs: 6' },
-            { name: 'Birds: 6' },
-            { name: 'Fish: 6' },
-            { name: 'Rabbits: 6' },
-            { name: 'Squirels: 6' },
-            { name: 'Chipmunks: 6' },
-            { name: 'Bats: 6' },
-            { name: 'Ducks: 6' },
-            { name: 'Geese: 6' },
-            { name: 'Bobcat: 6' },
-            { name: 'Foxes: 6' },
-            { name: 'Coyotes: 6' },
-            { name: 'Deer: 6' },
-            { name: 'Bears: 6' },
-          ]}
-          legendAllowWrap={this.handleLegendAllowWrap}
-          legendPosition="bottom"
-          name="chart12"
-          padding={{
-            bottom: this.getHeight(50), // This must be adjusted to maintain the aspec ratio
-            left: 20,
-            right: 20,
-            top: 20
-          }}
-          themeColor={ChartThemeColor.multiOrdered}
-          width={width}
-        />
-      </div>
-    );
-  }
-}
 ```
 
 ## Documentation
