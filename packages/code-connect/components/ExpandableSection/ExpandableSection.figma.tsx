@@ -1,9 +1,9 @@
 import figma from '@figma/code-connect';
 import { ExpandableSection } from '@patternfly/react-core';
 
-// TODO: FIGMA: This component needs to be overhauled. Using the base component approach present in
+// TODO: DESIGN: This component needs to be overhauled. Using the base component approach present in
 // other components would significantly reduce complexity.
-// TODO: FIGMA: Create toggle component
+// TODO: DESIGN: Create toggle component
 // onToggle={() => {}} // only required if the user wants to be able to have other side effects when opening/closing
 // isExpanded={() => {}} // only required if the user wants to be able to have other side effects when opening/closing
 
