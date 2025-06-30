@@ -10,7 +10,7 @@ figma.connect(
     props: {
       // boolean
       label: figma.boolean('Show label', {
-        true: 'Horizontal jump links',
+        true: 'Jump to section',
         false: undefined
       }),
 

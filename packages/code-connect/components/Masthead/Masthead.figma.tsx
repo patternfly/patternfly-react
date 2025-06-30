@@ -2,9 +2,9 @@ import figma from '@figma/code-connect';
 import { Button, Masthead, MastheadContent, MastheadMain, MastheadToggle } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
-// TODO: FIGMA: Create masthead main section MastheadMain MastheadContent
-// TODO: FIGMA: Move Context Switcher, Horizontal Nav, etc to MastheadContent
-// TODO: FIGMA: Create necessary wrappers for MastheadToggle, MastheadBrand, MastheadContent
+// TODO: DESIGN: Create masthead main section MastheadMain MastheadContent
+// TODO: DESIGN: Move Context Switcher, Horizontal Nav, etc to MastheadContent
+// TODO: DESIGN: Create necessary wrappers for MastheadToggle, MastheadBrand, MastheadContent
 // Documentation for Masthead can be found at https://www.patternfly.org/components/masthead
 
 figma.connect(
