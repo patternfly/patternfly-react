@@ -8,7 +8,7 @@ interface PetData {
   y?: number;
 }
 
-export const ChartDonutSkeleton: React.FunctionComponent = () => {
+export const SkeletonsDonutChart: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {

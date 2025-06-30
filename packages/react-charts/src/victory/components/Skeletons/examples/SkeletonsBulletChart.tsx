@@ -7,7 +7,7 @@ interface Data {
   y?: number;
 }
 
-export const ChartBulletSkeleton: React.FunctionComponent = () => {
+export const SkeletonsBulletChart: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const handleChange = (_event: React.FormEvent<HTMLInputElement>, checked: boolean) => {
