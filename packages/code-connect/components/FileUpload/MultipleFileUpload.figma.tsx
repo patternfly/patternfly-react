@@ -8,12 +8,12 @@ import {
 } from '@patternfly/react-core';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
-// TODO: FIGMA: Add status toggle text
-// TODO: FIGMA: Add status toggle icon
-// TODO: FIGMA: Add text separator
-// TODO: FIGMA: Add info text
-// TODO: FIGMA: Add status toggle text
-// TODO: FIGMA: Add status toggle icon
+// TODO: DESIGN: Add status toggle text
+// TODO: DESIGN: Add status toggle icon
+// TODO: DESIGN: Add text separator
+// TODO: DESIGN: Add info text
+// TODO: DESIGN: Add status toggle text
+// TODO: DESIGN: Add status toggle icon
 
 figma.connect(
   FileUpload,

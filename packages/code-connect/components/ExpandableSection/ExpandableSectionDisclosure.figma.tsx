@@ -18,16 +18,14 @@ figma.connect(
         'Expanded Indent': true,
         'Expanded Custom Content': true
       }),
-      isIndented: figma.enum('State', { 'Expanded Indent': true }),
-
-      children: figma.children('*')
+      isIndented: figma.enum('State', { 'Expanded Indent': true })
     },
     example: (props) => (
       // Documentation for ExpandableSection can be found at https://www.patternfly.org/components/expandable-section
       <ExpandableSection
         isExpanded={props.isExpanded}
         isIndented={props.isIndented}
-        toggleContent={props.children}
+        onToggle={() => {}}
         toggleTextCollapsed={props.toggleTextCollapsed}
         toggleTextExpanded={props.toggleTextExpanded}
         variant="truncate"

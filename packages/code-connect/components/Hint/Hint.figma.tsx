@@ -12,10 +12,10 @@ import {
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import MenuToggle from '@patternfly/react-core/dist/js/components/MenuToggle/MenuToggle';
 
-// TODO: FIGMA: Use dropdown from figma for actions
-// TODO: FIGMA: Create hint title
-// TODO: FIGMA: Create hint body
-// TODO: FIGMA: Create hint footer
+// TODO: DESIGN: Use dropdown from figma for actions
+// TODO: DESIGN: Create hint title
+// TODO: DESIGN: Create hint body
+// TODO: DESIGN: Create hint footer
 
 // Note: Figma will not render conditional props within React components.
 // This means that the <HintTitle>, <HintBody>, and <HintFooter> tags will not be properly render figma.string()

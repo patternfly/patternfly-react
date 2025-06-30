@@ -2,16 +2,15 @@ import figma from '@figma/code-connect';
 import { EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateActions } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-// TODO: FIGMA: Add Empty state footer
-// TODO: FIGMA: Consolodate empty state examples
-// TODO: FIGMA: Add empty state footer
-// TODO: FIGMA: Add empty state actions
-// TODO: FIGMA: Add empty state icon
-// TODO: FIGMA: Add empty state title
-// TODO: FIGMA: Add empty state body
-// TODO: FIGMA: Add empty state variant
-// TODO: FIGMA: Add empty state status
-// TODO: FIGMA: Add empty state isLoading
+// TODO: DESIGN: Add Empty state footer
+// TODO: DESIGN: Consolodate empty state examples
+// TODO: DESIGN: Add empty state footer
+// TODO: DESIGN: Add empty state actions
+// TODO: DESIGN: Add empty state icon
+// TODO: DESIGN: Add empty state title
+// TODO: DESIGN: Add empty state body
+// TODO: DESIGN: Add empty state variant
+// TODO: DESIGN: Add empty state status
 // Based on Code Connect's limitations, this component needs to be overhauled. Using the base component approach present in
 // other components would significantly reduce complexity.
 
@@ -44,6 +43,7 @@ figma.connect(
     },
     example: (props) => (
       <EmptyState
+        // this may need to be updated for accessibility
         headingLevel="h4"
         icon={<PlusCircleIcon />}
         variant={props.variant}
