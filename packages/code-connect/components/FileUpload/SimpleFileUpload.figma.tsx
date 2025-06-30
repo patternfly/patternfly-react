@@ -1,9 +1,9 @@
 import figma from '@figma/code-connect';
 import { FileUpload, FileUploadHelperText, HelperText, HelperTextItem } from '@patternfly/react-core';
 
-// TODO: FIGMA: Add filename placeholder
-// TODO: FIGMA: Add browse button text
-// TODO: FIGMA: Add FileUploadHelperText
+// TODO: DESIGN: Add filename placeholder
+// TODO: DESIGN: Add browse button text
+// TODO: DESIGN: Add FileUploadHelperText
 
 figma.connect(
   FileUpload,
