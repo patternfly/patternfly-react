@@ -2,12 +2,12 @@ import figma from '@figma/code-connect';
 import { Button } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-// TODO: FIGMA: Define Icon left/right intent
+// TODO: DESIGN: Define Icon left/right intent
 // Ex: Are the icons different or just on different sides?
 // The current configuration renders two icons separately
 
-// TODO: FIGMA: Add count options to the button
-// TODO: FIGMA: Add isRead options to the button
+// TODO: DESIGN: Add count options to the button
+// TODO: DESIGN: Add isRead options to the button
 // Documentation for Button can be found at https://www.patternfly.org/components/button
 
 figma.connect(
