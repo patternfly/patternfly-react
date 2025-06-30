@@ -1,7 +1,7 @@
 import figma from '@figma/code-connect';
 import { NotificationDrawerGroup, NotificationDrawerList } from '@patternfly/react-core';
 
-// TODO: FIGMA: Split unread count into a separate prop
+// TODO: DESIGN: Split unread count into a separate prop
 
 figma.connect(
   NotificationDrawerGroup,

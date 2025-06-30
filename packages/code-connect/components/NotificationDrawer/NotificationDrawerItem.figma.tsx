@@ -59,10 +59,10 @@ figma.connect(
         onClose: () => {}
       },
 
-      // TODO: FIGMA: Make alert description retrievable via unique layer name or adding a prop to Noficiation Drawer Item
+      // TODO: DESIGN: Make alert description retrievable via unique layer name or adding a prop to Noficiation Drawer Item
       alertDescription: 'Description',
 
-      // TODO: FIGMA: Make alert title retrievable via unique layer name or adding a prop to Noficiation Drawer Item
+      // TODO: DESIGN: Make alert title retrievable via unique layer name or adding a prop to Noficiation Drawer Item
       alertTitle: 'Notification title'
     },
     example: (props) => (
