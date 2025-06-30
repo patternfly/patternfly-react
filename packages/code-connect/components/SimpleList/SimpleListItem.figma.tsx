@@ -1,7 +1,7 @@
 import figma from '@figma/code-connect';
 import { SimpleListItem } from '@patternfly/react-core';
 
-// TODO: FIGMA: Add support for SimpleListGroup
+// TODO: DESIGN: Add support for SimpleListGroup
 // Documentation for SimpleListItem can be found at https://www.patternfly.org/components/simple-list
 
 figma.connect(

@@ -6,7 +6,7 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
-// TODO: FIGMA: Add buttons boolean to footerContent
+// TODO: DESIGN: Add buttons boolean to footerContent
 // TODO: REACT: Add icon support
 // Documentation for Popover can be found at https://www.patternfly.org/components/popover
 
