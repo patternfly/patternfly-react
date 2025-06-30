@@ -1318,44 +1318,96 @@ export const Animations: FunctionComponent = () => {
 
   const CreateDatabaseForm: FunctionComponent = () => {
     const [name, setName] = useState('');
-    const [isNameValid, setIsNameValid] = useState('default');
     const [email, setEmail] = useState('');
     const [version, setVersion] = useState('');
     const [isTimeZoneOpen, setIsTimeZoneOpen] = useState(false);
     const [selectedTimeZone, setSelectedTimeZone] = useState('');
     const [password, setPassword] = useState('');
-    const [isPasswordValid, setIsPasswordValid] = useState('default');
     const [isSuccess, setIsSuccess] = useState(false);
     const [actionCompleted, setActionCompleted] = useState(false);
 
     const labelHelpRef = useRef(null);
 
-    const handleNameChange = (_event, name: string) => {
+    // Re-introducing the type alias for validation status
+    type validationStatus = 'success' | 'warning' | 'error' | 'default';
+
+    // Reverting useState to infer the type as a generic string
+    const [isNameValid, setIsNameValid] = useState('default');
+    const [isPasswordValid, setIsPasswordValid] = useState('default');
+    const [isNameValidating, setIsNameValidating] = useState(false);
+    const [isPasswordValidating, setIsPasswordValidating] = useState(false);
+
+    // useEffect for delayed name validation
+    useEffect(() => {
+      if (name === '') {
+        setIsNameValid('default');
+        setIsNameValidating(false);
+        return;
+      }
+
+      setIsNameValidating(true);
+      const timerId = setTimeout(() => {
+        const isValid = name.length > 0 && /^[a-z0-9-]+$/.test(name);
+        setIsNameValid(isValid ? 'success' : 'error');
+        setIsNameValidating(false);
+      }, 2000);
+
+      return () => {
+        clearTimeout(timerId);
+        setIsNameValidating(false);
+      };
+    }, [name]);
+
+    // useEffect for delayed password validation
+    useEffect(() => {
+      if (password === '') {
+        setIsPasswordValid('default');
+        setIsPasswordValidating(false);
+        return;
+      }
+
+      setIsPasswordValidating(true);
+      const timerId = setTimeout(() => {
+        const isValid = password.length >= 12 && /[0-9]/.test(password) && /[A-Z]/.test(password);
+        setIsPasswordValid(isValid ? 'success' : 'error');
+        setIsPasswordValidating(false);
+      }, 2000);
+
+      return () => {
+        clearTimeout(timerId);
+        setIsPasswordValidating(false);
+      };
+    }, [password]);
+
+    const handleNameChange = (_event: React.FormEvent<HTMLInputElement>, name: string) => {
       setName(name);
-      setIsNameValid(name.length > 0 && /^[a-z0-9-]+$/.test(name) ? 'success' : 'error');
+      setIsNameValid('default');
+      setIsNameValidating(false);
     };
 
-    const handleEmailChange = (_event, email: string) => {
+    const handleEmailChange = (_event: React.FormEvent<HTMLInputElement>, email: string) => {
       setEmail(email);
     };
 
-    const handleVersionChange = (_event, version: string) => {
+    const handleVersionChange = (_event: React.FormEvent<HTMLInputElement>, version: string) => {
       setVersion(version);
     };
 
-    const handlePasswordChange = (_event, password: string) => {
+    const handlePasswordChange = (_event: React.FormEvent<HTMLInputElement>, password: string) => {
       setPassword(password);
-      setIsPasswordValid(
-        password.length >= 12 && /[0-9]/.test(password) && /[A-Z]/.test(password) ? 'success' : 'error'
-      );
+      setIsPasswordValid('default');
+      setIsPasswordValidating(false);
     };
 
-    const onTimeZoneSelect = (_event, selection) => {
-      setSelectedTimeZone(selection);
+    const onTimeZoneSelect = (
+      _event: React.MouseEvent | React.ChangeEvent | undefined,
+      selection: string | number | undefined
+    ) => {
+      setSelectedTimeZone(selection as string);
       setIsTimeZoneOpen(false);
     };
 
-    const timeZoneToggle = (toggleRef) => (
+    const timeZoneToggle = (toggleRef: React.Ref<MenuToggleElement>) => (
       <MenuToggle ref={toggleRef} onClick={() => setIsTimeZoneOpen(!isTimeZoneOpen)} isExpanded={isTimeZoneOpen}>
         {selectedTimeZone || 'Select time zone'}
       </MenuToggle>
@@ -1441,15 +1493,23 @@ export const Animations: FunctionComponent = () => {
             aria-describedby="simple-form-name-01-helper"
             value={name}
             onChange={handleNameChange}
-            validated={isNameValid as 'success' | 'warning' | 'error' | 'default'}
+            validated={isNameValid as validationStatus}
           />
           <FormHelperText>
             <HelperText>
               <HelperTextItem
-                icon={isNameValid === 'success' ? <CheckCircleIcon /> : <ExclamationCircleIcon />}
-                variant={isNameValid as 'success' | 'warning' | 'error' | 'default'}
+                icon={isNameValid === 'error' ? <ExclamationCircleIcon /> : undefined}
+                variant={isNameValid as validationStatus}
               >
-                Must be unique. Can only contain letters, numbers, and hyphens.
+                {(() => {
+                  if (isNameValidating) {
+                    return 'Validating...';
+                  }
+                  if (isNameValid === 'error') {
+                    return 'Must contain only lowercase letters, numbers, and hyphens.';
+                  }
+                  return 'Must be a unique name.';
+                })()}
               </HelperTextItem>
             </HelperText>
           </FormHelperText>
@@ -1506,15 +1566,17 @@ export const Animations: FunctionComponent = () => {
             placeholder="********"
             value={password}
             onChange={handlePasswordChange}
-            validated={isPasswordValid as 'success' | 'warning' | 'error' | 'default'}
+            validated={isPasswordValid as validationStatus}
           />
           <FormHelperText>
             <HelperText>
               <HelperTextItem
-                icon={isPasswordValid === 'success' ? <CheckCircleIcon /> : <ExclamationCircleIcon />}
-                variant={isPasswordValid as 'success' | 'warning' | 'error' | 'default'}
+                icon={isPasswordValid === 'error' ? <ExclamationCircleIcon /> : undefined}
+                variant={isPasswordValid as validationStatus}
               >
-                Password must be at least 12 characters and include one uppercase letter and one number.
+                {isPasswordValidating
+                  ? 'Validating...'
+                  : 'Password must be at least 12 characters and include one uppercase letter and one number.'}
               </HelperTextItem>
             </HelperText>
           </FormHelperText>
