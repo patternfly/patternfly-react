@@ -1,8 +1,8 @@
 import figma from '@figma/code-connect';
 import { Label } from '@patternfly/react-core';
 
-// TODO: FIGMA: Reconfigure how numlabels is set. Currently, the text string "more" is not customizable
-// TODO: FIGMA: Label group should contain label components
+// TODO: DESIGN: Reconfigure how numlabels is set. Currently, the text string "more" is not customizable
+// TODO: DESIGN: Label group should contain label components
 
 // NOTE: "Label overflow" doesn't appear to be necessary
 // Documentation for Label can be found at https://www.patternfly.org/components/label-group
