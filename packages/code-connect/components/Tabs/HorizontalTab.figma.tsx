@@ -13,7 +13,7 @@ figma.connect(
     props: {
       // string
       tabText: figma.string('Tab Text'),
-      // eventKey: figma.string('Event key'), // TODO: FIGMA: Add event key
+      // eventKey: figma.string('Event key'), // TODO: DESIGN: Add event key
 
       // boolean
       actions: figma.boolean('Help button', {
