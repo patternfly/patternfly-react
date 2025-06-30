@@ -12,12 +12,18 @@ figma.connect(
       text: figma.string('Text'),
 
       // enum
+      isActive: figma.enum('State', {
+        'No link': true
+      }),
       to: figma.enum('State', {
         Link: '#',
-        Hover: '#',
-        'No link': undefined
+        Hover: '#'
       })
     },
-    example: (props) => <BreadcrumbItem to={props.to}>{props.text}</BreadcrumbItem>
+    example: (props) => (
+      <BreadcrumbItem to={props.to} isActive={props.isActive}>
+        {props.text}
+      </BreadcrumbItem>
+    )
   }
 );

@@ -10,6 +10,7 @@ figma.connect(
     props: {
       children: figma.children('*')
     },
-    example: (props) => <BreadcrumbItem>{props.children}</BreadcrumbItem>
+    // TODO: MATT: Add dropdown for isDropdown
+    example: (props) => <BreadcrumbItem isDropdown>{props.children}</BreadcrumbItem>
   }
 );

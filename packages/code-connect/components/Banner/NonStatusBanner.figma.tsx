@@ -16,11 +16,11 @@ figma.connect(
         Red: 'red',
         Orangered: 'orangered',
         Orange: 'orange',
-        Green: 'green',
-        Blue: 'blue',
-        Purple: 'purple',
         Yellow: 'yellow',
-        Teal: 'teal'
+        Green: 'green',
+        Teal: 'teal',
+        Blue: 'blue',
+        Purple: 'purple'
       })
     },
     example: (props) => <Banner color={props.color}>{props.text}</Banner>
