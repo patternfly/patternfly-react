@@ -1,9 +1,9 @@
 import figma from '@figma/code-connect';
 import { FormFieldGroupExpandable, FormFieldGroupHeader } from '@patternfly/react-core';
 
-// TODO: FIGMA: Separate textTitleText and titleDescription into separate props
-// TODO: FIGMA: Separate form field group expandable and non-expandable
-// TODO: FIGMA: Separate action buttons
+// TODO: DESIGN: Separate textTitleText and titleDescription into separate props
+// TODO: DESIGN: Separate form field group expandable and non-expandable
+// TODO: DESIGN: Separate action buttons
 // Documentation for FormGroup can be found at https://www.patternfly.org/components/forms
 
 figma.connect(

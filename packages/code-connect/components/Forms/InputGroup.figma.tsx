@@ -1,9 +1,9 @@
 import figma from '@figma/code-connect';
 import { InputGroup } from '@patternfly/react-core';
 
-// TODO: FIGMA: InputGroupItems is not using TextInput, it's using text layers
+// TODO: DESIGN: InputGroupItems is not using TextInput, it's using text layers
 // For this component to work properly, components should be nested within the InputGroupItem component
-// TODO: FIGMA: Remove or populate `Text` and `Button` variants with actual components
+// TODO: DESIGN: Remove or populate `Text` and `Button` variants with actual components
 // Documentation for InputGroup can be found at https://www.patternfly.org/components/input-group
 
 figma.connect(
