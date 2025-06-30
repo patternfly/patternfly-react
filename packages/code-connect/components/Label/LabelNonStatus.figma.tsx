@@ -12,25 +12,21 @@ figma.connect(
       labelText: figma.string('Text'),
 
       // boolean
-      isEditable: figma.boolean('Is Editable'),
-      onEditCancel: figma.boolean('Is Editable', {
-        true: `{() => {}}`,
-        false: undefined
-      }),
-      onEditComplete: figma.boolean('Is Editable', {
-        true: `{() => {}}`,
-        false: undefined
-      }),
-      editableProps: figma.boolean('Is Editable', {
+      isEditable: figma.boolean('Is Editable', {
         true: {
-          'aria-label': 'Editable label props',
-          id: 'editable-label'
+          isEditable: true,
+          onEditCancel: () => {}, // Callback when an editable label cancels an edit.
+          onEditComplete: () => {}, // Callback when an editable label completes an edit.
+          editableProps: {
+            'aria-label': `Editable label with text`,
+            id: 'editable-label'
+          }
         },
         false: undefined
       }),
 
       // enum
-      isCompact: figma.enum('Type', { Compact: true }),
+      isCompact: figma.enum('Size', { Compact: true }),
       color: figma.enum('Color', {
         Red: 'red',
         Orange: 'orange',
@@ -38,25 +34,16 @@ figma.connect(
         Green: 'green',
         Blue: 'blue',
         Purple: 'purple',
-        Grey: 'grey'
+        Grey: 'grey',
+        Teal: 'teal',
+        Yellow: 'yellow'
       }),
-      variant: figma.enum('Type', {
-        Filled: 'filled',
-        Outlined: 'outline'
-      }),
+      variant: figma.enum('Type', { Outlined: 'outline' }),
 
       children: figma.children('*')
     },
     example: (props) => (
-      <Label
-        isCompact={props.isCompact}
-        isEditable={props.isEditable}
-        onEditCancel={props.onEditCancel}
-        onEditComplete={props.onEditComplete}
-        editableProps={props.editableProps}
-        color={props.color}
-        variant={props.variant}
-      >
+      <Label isCompact={props.isCompact} isEditable={props.isEditable} color={props.color} variant={props.variant}>
         {props.children}
         {props.labelText}
       </Label>

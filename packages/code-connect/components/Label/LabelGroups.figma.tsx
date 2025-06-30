@@ -12,7 +12,7 @@ figma.connect(
       labelGroupName: figma.string('Label group name'),
 
       // boolean
-      hasCollapsedLabels: figma.boolean('Has collapsed labels', {
+      numLabels: figma.boolean('Has collapsed labels', {
         true: 4,
         false: undefined
       }),
@@ -42,7 +42,7 @@ figma.connect(
         categoryName="Group label"
         isClosable
         isEditable
-        numLabels={props.hasCollapsedLabels}
+        numLabels={props.numLabels}
         onClick={() => {}}
       >
         {props.children}
