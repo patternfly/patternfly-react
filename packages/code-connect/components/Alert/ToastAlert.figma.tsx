@@ -25,7 +25,14 @@ figma.connect(
       })
     },
     example: (props) => (
-      <Alert isExpandable={props.isExpandable} isLiveRegion isToast title={props.title} variant={props.variant}>
+      <Alert
+        isExpandable={props.isExpandable}
+        title={props.title}
+        variant={props.variant}
+        hasAnimations
+        isToast
+        isLiveRegion
+      >
         {props.description}
       </Alert>
     )

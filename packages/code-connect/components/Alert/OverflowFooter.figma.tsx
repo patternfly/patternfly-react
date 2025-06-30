@@ -8,7 +8,6 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=1110-2784',
   {
     props: {
-      // strings
       overflowMessage: figma.string('✏️ Title')
     },
     example: (props) => (

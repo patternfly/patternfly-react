@@ -8,11 +8,11 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=1110-2754',
   {
     props: {
-      // strings
+      // string
       description: figma.string('✏️ Title'),
       title: figma.string('✏️ Title'),
 
-      // variants
+      // enum
       variant: figma.enum('Type', {
         Info: 'info',
         Success: 'success',
@@ -21,7 +21,6 @@ figma.connect(
         Custom: 'custom'
       }),
 
-      // children
       children: figma.children('*')
     },
     example: (props) => (
