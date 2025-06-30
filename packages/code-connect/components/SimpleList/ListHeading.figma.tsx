@@ -1,7 +1,7 @@
 import figma from '@figma/code-connect';
 import { SimpleListGroup } from '@patternfly/react-core';
 
-// TODO: FIGMA: Create list group title component
+// TODO: DESIGN: Create list group title component
 // Documentation for ListHeading can be found at https://www.patternfly.org/components/simple-list
 
 figma.connect(
