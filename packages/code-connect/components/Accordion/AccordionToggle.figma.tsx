@@ -12,17 +12,15 @@ figma.connect(
       expandText: figma.string('Expand Text'),
 
       // enum
-      isExpanded: figma.enum('State', { Expanded: true }),
+      open: figma.enum('State', { Expanded: true }),
       toggleTextExpanded: figma.enum('State', {
         Default: figma.string('Toggle Text'),
         Hover: figma.string('Toggle Text'),
         Expanded: figma.string('Toggle Text Expanded')
-      }),
-
-      children: figma.children('*')
+      })
     },
     example: (props) => (
-      <AccordionItem isExpanded={props.isExpanded}>
+      <AccordionItem isExpanded={props.open}>
         <AccordionToggle onClick={() => {}} id="<your-id>">
           {props.toggleTextExpanded}
         </AccordionToggle>

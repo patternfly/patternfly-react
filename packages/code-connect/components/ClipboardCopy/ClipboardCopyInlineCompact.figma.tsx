@@ -10,6 +10,10 @@ figma.connect(
     props: {
       children: figma.children('*')
     },
-    example: (props) => <ClipboardCopy variant="inline-compact">{props.children}</ClipboardCopy>
+    example: (props) => (
+      <ClipboardCopy onCopy={() => {}} variant="inline-compact">
+        {props.children}
+      </ClipboardCopy>
+    )
   }
 );

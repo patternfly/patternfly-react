@@ -1,7 +1,7 @@
 import figma from '@figma/code-connect';
 import { ClipboardCopy } from '@patternfly/react-core';
 
-// TODO: FIGMA: ClipboardCopy is using InputGroup improperly. There's no InputGroup wrapper for InputGroupItems
+// TODO: DESIGN: ClipboardCopy is using InputGroup improperly. There's no InputGroup wrapper for InputGroupItems
 
 figma.connect(
   ClipboardCopy,
@@ -9,7 +9,6 @@ figma.connect(
   {
     props: {
       // enum
-      isActive: figma.enum('State', { Active: true }),
       isExpanded: figma.enum('State', { Expanded: true }),
       isReadOnly: figma.enum('State', { 'Read only': true }),
       expansion: figma.enum('State', {
@@ -24,9 +23,9 @@ figma.connect(
     example: (props) => (
       // Documentation for ClipboardCopy can be found at https://www.patternfly.org/components/clipboard-copy
       <ClipboardCopy
+        onCopy={() => {}}
         clickTip="Copied"
         hoverTip="Copy"
-        isActive={props.isActive}
         isExpanded={props.isExpanded}
         isReadOnly={props.isReadOnly}
         variant={props.expansion}
