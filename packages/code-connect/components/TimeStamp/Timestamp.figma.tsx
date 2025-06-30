@@ -1,7 +1,7 @@
 import figma from '@figma/code-connect';
 import { Timestamp, TimestampTooltipVariant } from '@patternfly/react-core';
 
-// TODO: FIGMA: Refine intent, enum/dropdown options confuse date and time formats. They shoudd be separated
+// TODO: DESIGN: Refine intent, enum/dropdown options confuse date and time formats. They shoudd be separated
 // Documentation for Timestamp can be found at https://www.patternfly.org/components/timestamp
 
 figma.connect(

@@ -41,7 +41,7 @@ figma.connect(
 
       // enum
       isDisabled: figma.enum('State', { Disabled: true })
-      // eventKey: figma.string('Event key'), // TODO: FIGMA: Add event key
+      // eventKey: figma.string('Event key'), // TODO: DESIGN: Add event key
     },
     example: (props) => (
       <Tab
