@@ -1,15 +1,4 @@
-import {
-  Fragment,
-  useRef,
-  useState,
-  useEffect,
-  ReactNode,
-  FunctionComponent,
-  FormEvent,
-  RefObject,
-  MouseEvent,
-  TransitionEvent
-} from 'react';
+import { Fragment, useRef, useState, useEffect, ReactNode, FunctionComponent, FormEvent, RefObject } from 'react';
 import {
   AlertGroup,
   Alert,
@@ -44,6 +33,8 @@ import {
   FormHelperText,
   FormAlert,
   FormGroupLabelHelp,
+  FormSelect,
+  FormSelectOption,
   HelperText,
   HelperTextItem,
   Icon,
@@ -1320,7 +1311,6 @@ export const Animations: FunctionComponent = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [version, setVersion] = useState('');
-    const [isTimeZoneOpen, setIsTimeZoneOpen] = useState(false);
     const [selectedTimeZone, setSelectedTimeZone] = useState('');
     const [password, setPassword] = useState('');
     const [isSuccess, setIsSuccess] = useState(false);
@@ -1336,6 +1326,9 @@ export const Animations: FunctionComponent = () => {
     const [isPasswordValid, setIsPasswordValid] = useState('default');
     const [isNameValidating, setIsNameValidating] = useState(false);
     const [isPasswordValidating, setIsPasswordValidating] = useState(false);
+
+    const [timeZoneValidated, setTimeZoneValidated] = useState('default');
+    const [timeZoneHelperText, setTimeZoneHelperText] = useState('A time zone is required for scheduling tasks.');
 
     // useEffect for delayed name validation
     useEffect(() => {
@@ -1379,10 +1372,24 @@ export const Animations: FunctionComponent = () => {
       };
     }, [password]);
 
+    useEffect(() => {
+      if (selectedTimeZone === '') {
+        setTimeZoneValidated('default');
+        setTimeZoneHelperText('A time zone is required for scheduling tasks.');
+        return;
+      }
+
+      const timerId = setTimeout(() => {
+        setTimeZoneValidated('success');
+        setTimeZoneHelperText('Time zone successfully selected.');
+      }, 2000);
+
+      return () => clearTimeout(timerId);
+    }, [selectedTimeZone]);
+
     const handleNameChange = (_event: React.FormEvent<HTMLInputElement>, name: string) => {
       setName(name);
       setIsNameValid('default');
-      setIsNameValidating(false);
     };
 
     const handleEmailChange = (_event: React.FormEvent<HTMLInputElement>, email: string) => {
@@ -1396,31 +1403,21 @@ export const Animations: FunctionComponent = () => {
     const handlePasswordChange = (_event: React.FormEvent<HTMLInputElement>, password: string) => {
       setPassword(password);
       setIsPasswordValid('default');
-      setIsPasswordValidating(false);
     };
 
-    const onTimeZoneSelect = (
-      _event: React.MouseEvent | React.ChangeEvent | undefined,
-      selection: string | number | undefined
-    ) => {
-      setSelectedTimeZone(selection as string);
-      setIsTimeZoneOpen(false);
+    const handleTimeZoneChange = (event: React.FormEvent<HTMLSelectElement>, value: string) => {
+      setSelectedTimeZone(value);
+      setTimeZoneValidated('default');
+      setTimeZoneHelperText('Validating...');
     };
-
-    const timeZoneToggle = (toggleRef: React.Ref<MenuToggleElement>) => (
-      <MenuToggle ref={toggleRef} onClick={() => setIsTimeZoneOpen(!isTimeZoneOpen)} isExpanded={isTimeZoneOpen}>
-        {selectedTimeZone || 'Select time zone'}
-      </MenuToggle>
-    );
 
     const handleSubmit = () => {
       setActionCompleted(true);
       if (
         isPasswordValid === 'success' &&
         isNameValid === 'success' &&
-        selectedTimeZone.length > 0 &&
-        email.includes('@') &&
-        version.length > 0
+        timeZoneValidated === 'success' &&
+        email.includes('@')
       ) {
         setIsSuccess(true);
         setTimeout(() => {
@@ -1441,7 +1438,7 @@ export const Animations: FunctionComponent = () => {
         {actionCompleted &&
           (isSuccess ? (
             <FormAlert>
-              <AlertGroup hasAnimations>
+              <AlertGroup>
                 <Alert
                   variant="success"
                   title="Successfully created database"
@@ -1453,7 +1450,7 @@ export const Animations: FunctionComponent = () => {
             </FormAlert>
           ) : (
             <FormAlert>
-              <AlertGroup hasAnimations>
+              <AlertGroup>
                 <Alert
                   variant="danger"
                   title="Failed to create database. Please ensure all fields are filled out correctly."
@@ -1497,18 +1494,16 @@ export const Animations: FunctionComponent = () => {
           />
           <FormHelperText>
             <HelperText>
-              <HelperTextItem
-                icon={isNameValid === 'error' ? <ExclamationCircleIcon /> : undefined}
-                variant={isNameValid as validationStatus}
-              >
+              <HelperTextItem variant={isNameValid as validationStatus}>
                 {(() => {
                   if (isNameValidating) {
                     return 'Validating...';
                   }
                   if (isNameValid === 'error') {
                     return 'Must contain only lowercase letters, numbers, and hyphens.';
+                  } else {
+                    return 'Must be a unique name.';
                   }
-                  return 'Must be a unique name.';
                 })()}
               </HelperTextItem>
             </HelperText>
@@ -1523,39 +1518,38 @@ export const Animations: FunctionComponent = () => {
             value={email}
             onChange={handleEmailChange}
           />
+          <HelperText>
+            <HelperTextItem>Must be a valid email address containing an @ symbol.</HelperTextItem>
+          </HelperText>
         </FormGroup>
         <FormGroup label="Database version" fieldId="simple-form-version-01">
           <TextInput
             type="text"
             id="simple-form-version-01"
             name="simple-form-version-01"
-            placeholder="12c"
+            placeholder="e.g. 12c"
             value={version}
             onChange={handleVersionChange}
           />
         </FormGroup>
         <FormGroup isRequired label="Time zone" fieldId="timezone-select">
-          <Select
+          <FormSelect
             id="timezone-select"
+            value={selectedTimeZone}
+            onChange={handleTimeZoneChange}
             aria-label="Select time zone"
-            isOpen={isTimeZoneOpen}
-            selected={selectedTimeZone}
-            onSelect={onTimeZoneSelect}
-            onOpenChange={setIsTimeZoneOpen}
-            toggle={timeZoneToggle}
+            validated={timeZoneValidated as validationStatus}
           >
-            <SelectList>
-              <SelectOption value="Eastern" key="eastern">
-                Eastern
-              </SelectOption>
-              <SelectOption value="Central" key="central">
-                Central
-              </SelectOption>
-              <SelectOption value="Pacific" key="pacific">
-                Pacific
-              </SelectOption>
-            </SelectList>
-          </Select>
+            <FormSelectOption isPlaceholder value="" label="Select a time zone" />
+            <FormSelectOption value="Eastern" label="Eastern" />
+            <FormSelectOption value="Central" label="Central" />
+            <FormSelectOption value="Pacific" label="Pacific" />
+          </FormSelect>
+          <FormHelperText>
+            <HelperText>
+              <HelperTextItem variant={timeZoneValidated as validationStatus}>{timeZoneHelperText}</HelperTextItem>
+            </HelperText>
+          </FormHelperText>
         </FormGroup>
         <FormGroup label="Admin password" isRequired fieldId="simple-form-password-01">
           <TextInput
@@ -1570,10 +1564,7 @@ export const Animations: FunctionComponent = () => {
           />
           <FormHelperText>
             <HelperText>
-              <HelperTextItem
-                icon={isPasswordValid === 'error' ? <ExclamationCircleIcon /> : undefined}
-                variant={isPasswordValid as validationStatus}
-              >
+              <HelperTextItem variant={isPasswordValid as validationStatus}>
                 {isPasswordValidating
                   ? 'Validating...'
                   : 'Password must be at least 12 characters and include one uppercase letter and one number.'}
@@ -1600,9 +1591,7 @@ export const Animations: FunctionComponent = () => {
         sidebar={Sidebar}
         isManagedSidebar
         notificationDrawer={notificationDrawer}
-        onNotificationDrawerExpand={(
-          event: MouseEvent<Element, MouseEvent> | KeyboardEvent | TransitionEvent<Element>
-        ) => focusDrawer(event)}
+        onNotificationDrawerExpand={(event) => focusDrawer(event)}
         isNotificationDrawerExpanded={isDrawerExpanded}
         skipToContent={PageSkipToContent}
         // breadcrumb={PageBreadcrumb}

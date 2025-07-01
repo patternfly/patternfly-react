@@ -36,6 +36,7 @@ To see how components like alerts, navigation, and forms can now use motion to p
 Currently, this demo includes animations for:
 
 * Alerts.
+* Tabs.
 * The notification badge and notification drawer.
 * The hamburger/navigation menu icon.
 * The masthead settings icon.
