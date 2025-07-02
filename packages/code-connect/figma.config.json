@@ -1,0 +1,33 @@
+{
+  "codeConnect": {
+    "parser": "react",
+    "include": [
+      "components/DataList/*.tsx",
+      "components/DescriptionList/*.tsx",
+      "components/Divider/*.tsx",
+      "components/Drawer/*.tsx",
+      "components/DualListSelector/*.tsx"
+    ],
+    "paths": {
+      "src/components": "src/components"
+    },
+    "aliases": {
+      "@patternfly/react-core": "."
+    },
+    "importPaths": {
+      "src/components": "src/components"
+    },
+    "options": {
+      "instanceSwapper": {
+        "enabled": true
+      },
+      "development": {
+        "enabled": true,
+        "verbose": true
+      },
+      "production": {
+        "enabled": false
+      }
+    }
+  }
+}
