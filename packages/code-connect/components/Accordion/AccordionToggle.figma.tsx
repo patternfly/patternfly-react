@@ -2,6 +2,7 @@ import figma from '@figma/code-connect';
 import { AccordionItem, AccordionToggle, AccordionContent } from '@patternfly/react-core';
 
 // Documentation for AccordionToggle can be found at https://www.patternfly.org/components/accordion
+// Note: Adding on onClick event is recommended to initialize AccordionToggle
 
 figma.connect(
   AccordionToggle,
