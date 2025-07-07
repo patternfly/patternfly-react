@@ -39,6 +39,8 @@ import {
   HelperTextItem,
   Icon,
   Label,
+  List,
+  ListItem,
   MenuToggle,
   Masthead,
   MastheadMain,
@@ -58,7 +60,6 @@ import {
   NotificationDrawerListItem,
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
-  NotificationDrawerGroup,
   Page,
   PageSection,
   PageSidebar,
@@ -90,14 +91,12 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import PowerOffIcon from '@patternfly/react-icons/dist/esm/icons/power-off-icon';
 import PortIcon from '@patternfly/react-icons/dist/esm/icons/port-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import AutomationIcon from '@patternfly/react-icons/dist/esm/icons/automation-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.PF-HorizontalLogo-Color.svg';
@@ -112,7 +111,12 @@ export const Animations: FunctionComponent = () => {
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
   const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);
   const [isAlertVisible, setIsAlertVisible] = useState(false);
+  const [isAlert2Visible, setIsAlert2Visible] = useState(false);
+  const [isAlert3Visible, setIsAlert3Visible] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [alert1Id, setAlert1Id] = useState('');
+  const [alert2Id, setAlert2Id] = useState('');
+  const [alert3Id, setAlert3Id] = useState('');
 
   interface UnreadMap {
     [notificationId: string]: boolean;
@@ -174,6 +178,7 @@ export const Animations: FunctionComponent = () => {
       setIsAlertVisible(true);
       setIsUnreadMap((prevUnreadMap) => {
         const newNotificationId = `notification-${Object.keys(prevUnreadMap || {}).length + 1}`;
+        setAlert1Id(newNotificationId);
 
         return {
           ...prevUnreadMap,
@@ -181,6 +186,44 @@ export const Animations: FunctionComponent = () => {
         };
       });
     }, 3000);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, []);
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setIsAlert2Visible(true);
+      setIsUnreadMap((prevUnreadMap) => {
+        const newNotificationId = `notification-${Object.keys(prevUnreadMap || {}).length + 1}`;
+        setAlert2Id(newNotificationId);
+
+        return {
+          ...prevUnreadMap,
+          [newNotificationId]: true
+        };
+      });
+    }, 14000);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, []);
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setIsAlert3Visible(true);
+      setIsUnreadMap((prevUnreadMap) => {
+        const newNotificationId = `notification-${Object.keys(prevUnreadMap || {}).length + 1}`;
+        setAlert3Id(newNotificationId);
+
+        return {
+          ...prevUnreadMap,
+          [newNotificationId]: true
+        };
+      });
+    }, 25000);
 
     return () => {
       clearTimeout(timerId);
@@ -577,11 +620,12 @@ export const Animations: FunctionComponent = () => {
       <NotificationDrawerBody>
         {shouldShowNotifications && (
           <NotificationDrawerList>
+            {/** Alert 1*/}
             {isAlertVisible && (
               <NotificationDrawerListItem
                 variant="danger"
-                onClick={() => onListItemClick(`notification-${Object.keys(isUnreadMap || {}).length}`)}
-                isRead={isUnreadMap === null || !isUnreadMap[`notification-${Object.keys(isUnreadMap || {}).length}`]}
+                onClick={() => onListItemClick(alert1Id)}
+                isRead={isUnreadMap === null || !isUnreadMap[alert1Id]}
               >
                 <NotificationDrawerListItemHeader
                   variant="danger"
@@ -590,18 +634,94 @@ export const Animations: FunctionComponent = () => {
                 >
                   <Dropdown
                     onSelect={closeActionsMenu}
-                    isOpen={isActionsMenuOpen[`toggle-id-${Object.keys(isUnreadMap || {}).length}`] || false}
-                    id={`notification-${Object.keys(isUnreadMap || {}).length}`}
+                    isOpen={isActionsMenuOpen[`toggle-${alert1Id}`] || false}
+                    id={alert1Id}
                     onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
                     popperProps={{ position: 'right' }}
                     toggle={(toggleRef: RefObject<any>) => (
                       <MenuToggle
                         ref={toggleRef}
-                        id={`toggle-id-${Object.keys(isUnreadMap || {}).length}`}
+                        id={`toggle-${alert1Id}`}
                         aria-label="Notification drawer actions"
                         variant="plain"
-                        onClick={() => onToggle(`toggle-id-${Object.keys(isUnreadMap || {}).length}`)}
-                        isExpanded={isActionsMenuOpen[`toggle-id-${Object.keys(isUnreadMap || {}).length}`] || false}
+                        onClick={() => onToggle(`toggle-${alert1Id}`)}
+                        isExpanded={isActionsMenuOpen[`toggle-${alert1Id}`] || false}
+                        icon={<EllipsisVIcon />}
+                      />
+                    )}
+                  >
+                    <DropdownList>{notificationDrawerDropdownItems}</DropdownList>
+                  </Dropdown>
+                </NotificationDrawerListItemHeader>
+                <NotificationDrawerListItemBody timestamp="Just now">
+                  A system alert has been triggered. Please review the alert details.
+                </NotificationDrawerListItemBody>
+              </NotificationDrawerListItem>
+            )}
+            {/** Alert 2*/}
+            {isAlert2Visible && (
+              <NotificationDrawerListItem
+                variant="danger"
+                onClick={() => onListItemClick(alert2Id)}
+                isRead={isUnreadMap === null || !isUnreadMap[alert2Id]}
+              >
+                <NotificationDrawerListItemHeader
+                  variant="danger"
+                  title="Animated alert"
+                  srTitle="Danger notification:"
+                >
+                  <Dropdown
+                    onSelect={closeActionsMenu}
+                    isOpen={isActionsMenuOpen[`toggle-${alert2Id}`] || false}
+                    id={alert2Id}
+                    onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
+                    popperProps={{ position: 'right' }}
+                    toggle={(toggleRef: RefObject<any>) => (
+                      <MenuToggle
+                        ref={toggleRef}
+                        id={`toggle-${alert2Id}`}
+                        aria-label="Notification drawer actions"
+                        variant="plain"
+                        onClick={() => onToggle(`toggle-${alert2Id}`)}
+                        isExpanded={isActionsMenuOpen[`toggle-${alert2Id}`] || false}
+                        icon={<EllipsisVIcon />}
+                      />
+                    )}
+                  >
+                    <DropdownList>{notificationDrawerDropdownItems}</DropdownList>
+                  </Dropdown>
+                </NotificationDrawerListItemHeader>
+                <NotificationDrawerListItemBody timestamp="Just now">
+                  A system alert has been triggered. Please review the alert details.
+                </NotificationDrawerListItemBody>
+              </NotificationDrawerListItem>
+            )}
+            {/** Alert 3*/}
+            {isAlert3Visible && (
+              <NotificationDrawerListItem
+                variant="danger"
+                onClick={() => onListItemClick(alert3Id)}
+                isRead={isUnreadMap === null || !isUnreadMap[alert3Id]}
+              >
+                <NotificationDrawerListItemHeader
+                  variant="danger"
+                  title="Animated alert"
+                  srTitle="Danger notification:"
+                >
+                  <Dropdown
+                    onSelect={closeActionsMenu}
+                    isOpen={isActionsMenuOpen[`toggle-${alert3Id}`] || false}
+                    id={alert3Id}
+                    onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
+                    popperProps={{ position: 'right' }}
+                    toggle={(toggleRef: RefObject<any>) => (
+                      <MenuToggle
+                        ref={toggleRef}
+                        id={`toggle-${alert3Id}`}
+                        aria-label="Notification drawer actions"
+                        variant="plain"
+                        onClick={() => onToggle(`toggle-${alert3Id}`)}
+                        isExpanded={isActionsMenuOpen[`toggle-${alert3Id}`] || false}
                         icon={<EllipsisVIcon />}
                       />
                     )}
@@ -900,11 +1020,6 @@ export const Animations: FunctionComponent = () => {
   };
 
   const CardStatus: FunctionComponent = () => {
-    const [drawerExpanded, setDrawerExpanded] = useState(false);
-    const handleDrawerToggleClick = () => {
-      setDrawerExpanded(!drawerExpanded);
-    };
-
     const [rowsExpanded, setRowsExpanded] = useState([false, false, false]);
     const handleToggleExpand = (_: any, rowIndex: number) => {
       const newRowsExpanded = [...rowsExpanded];
@@ -1005,7 +1120,7 @@ export const Animations: FunctionComponent = () => {
 
     const body = (
       <CardBody>
-        <Grid hasGutter sm={6} lg={3}>
+        <Grid hasGutter md={6}>
           <GridItem>
             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
               <FlexItem>
@@ -1072,68 +1187,10 @@ export const Animations: FunctionComponent = () => {
       </CardBody>
     );
 
-    const drawerTitle = (
-      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-        <FlexItem spacer={{ default: 'spacerMd' }}>
-          <span>Notifications</span>
-        </FlexItem>
-        <Label color="red" icon={<ExclamationCircleIcon />}>
-          1
-        </Label>
-        <Label color="orange" icon={<ExclamationTriangleIcon />}>
-          3
-        </Label>
-        <Label color="green" icon={<CheckCircleIcon />}>
-          3
-        </Label>
-        <Label color="blue" icon={<ExclamationCircleIcon />}>
-          3
-        </Label>
-        <Label color="green" icon={<BellIcon />}>
-          3
-        </Label>
-      </Flex>
-    );
-
-    const drawer = (
-      <NotificationDrawer>
-        <NotificationDrawerBody>
-          <NotificationDrawerGroup
-            count={2}
-            onExpand={handleDrawerToggleClick}
-            isExpanded={drawerExpanded}
-            title={drawerTitle}
-            headingLevel="h4"
-          >
-            <NotificationDrawerList isHidden={!drawerExpanded}>
-              <NotificationDrawerListItem variant="danger">
-                <NotificationDrawerListItemHeader
-                  variant="danger"
-                  headingLevel="h5"
-                  title="Critical alert regarding control plane"
-                />
-                <NotificationDrawerListItemBody>
-                  This is a long description to show how the title will wrap if it is long and wraps to multiple lines.
-                </NotificationDrawerListItemBody>
-              </NotificationDrawerListItem>
-              <NotificationDrawerListItem variant="warning">
-                <NotificationDrawerListItemHeader variant="warning" headingLevel="h5" title="Warning alert" />
-                <NotificationDrawerListItemBody>
-                  This is a warning notification description.
-                </NotificationDrawerListItemBody>
-              </NotificationDrawerListItem>
-            </NotificationDrawerList>
-          </NotificationDrawerGroup>
-        </NotificationDrawerBody>
-      </NotificationDrawer>
-    );
-
     return (
       <Card>
         {header}
         {body}
-        <Divider />
-        {drawer}
       </Card>
     );
   };
@@ -1233,7 +1290,7 @@ export const Animations: FunctionComponent = () => {
     };
 
     return (
-      <Fragment>
+      <Card component="div">
         {loading ? (
           <SkeletonTable columns={['', ...expandableColumns]} rows={8} />
         ) : (
@@ -1256,7 +1313,7 @@ export const Animations: FunctionComponent = () => {
 
             {applicationsData.map((app, idx) => (
               <Tbody key={app.name} isExpanded={isAppExpanded(app)}>
-                <Tr>
+                <Tr isExpanded={isAppExpanded(app)}>
                   <Td
                     expand={
                       app.details
@@ -1278,19 +1335,17 @@ export const Animations: FunctionComponent = () => {
                     {app.status !== 'Running' && app.status !== 'Degraded' && app.status !== 'Stopped' && app.status}
                   </Td>
                 </Tr>
-                {app.details && isAppExpanded(app) && (
-                  <Tr isExpanded>
-                    <Td />
-                    <Td colSpan={expandableColumns.length}>
-                      <ExpandableRowContent>{app.details}</ExpandableRowContent>
-                    </Td>
-                  </Tr>
-                )}
+                <Tr isExpandable isExpanded={isAppExpanded(app)}>
+                  <Td />
+                  <Td colSpan={expandableColumns.length}>
+                    <ExpandableRowContent>{app.details}</ExpandableRowContent>
+                  </Td>
+                </Tr>
               </Tbody>
             ))}
           </Table>
         )}
-      </Fragment>
+      </Card>
     );
   };
 
@@ -1308,11 +1363,13 @@ export const Animations: FunctionComponent = () => {
   );
 
   const CreateDatabaseForm: FunctionComponent = () => {
+    // State variables
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [version, setVersion] = useState('');
     const [selectedTimeZone, setSelectedTimeZone] = useState('');
     const [password, setPassword] = useState('');
+    // Submit state variables
     const [isSuccess, setIsSuccess] = useState(false);
     const [actionCompleted, setActionCompleted] = useState(false);
 
@@ -1324,72 +1381,12 @@ export const Animations: FunctionComponent = () => {
     // Reverting useState to infer the type as a generic string
     const [isNameValid, setIsNameValid] = useState('default');
     const [isPasswordValid, setIsPasswordValid] = useState('default');
-    const [isNameValidating, setIsNameValidating] = useState(false);
-    const [isPasswordValidating, setIsPasswordValidating] = useState(false);
-
-    const [timeZoneValidated, setTimeZoneValidated] = useState('default');
-    const [timeZoneHelperText, setTimeZoneHelperText] = useState('A time zone is required for scheduling tasks.');
-
-    // useEffect for delayed name validation
-    useEffect(() => {
-      if (name === '') {
-        setIsNameValid('default');
-        setIsNameValidating(false);
-        return;
-      }
-
-      setIsNameValidating(true);
-      const timerId = setTimeout(() => {
-        const isValid = name.length > 0 && /^[a-z0-9-]+$/.test(name);
-        setIsNameValid(isValid ? 'success' : 'error');
-        setIsNameValidating(false);
-      }, 2000);
-
-      return () => {
-        clearTimeout(timerId);
-        setIsNameValidating(false);
-      };
-    }, [name]);
-
-    // useEffect for delayed password validation
-    useEffect(() => {
-      if (password === '') {
-        setIsPasswordValid('default');
-        setIsPasswordValidating(false);
-        return;
-      }
-
-      setIsPasswordValidating(true);
-      const timerId = setTimeout(() => {
-        const isValid = password.length >= 12 && /[0-9]/.test(password) && /[A-Z]/.test(password);
-        setIsPasswordValid(isValid ? 'success' : 'error');
-        setIsPasswordValidating(false);
-      }, 2000);
-
-      return () => {
-        clearTimeout(timerId);
-        setIsPasswordValidating(false);
-      };
-    }, [password]);
-
-    useEffect(() => {
-      if (selectedTimeZone === '') {
-        setTimeZoneValidated('default');
-        setTimeZoneHelperText('A time zone is required for scheduling tasks.');
-        return;
-      }
-
-      const timerId = setTimeout(() => {
-        setTimeZoneValidated('success');
-        setTimeZoneHelperText('Time zone successfully selected.');
-      }, 2000);
-
-      return () => clearTimeout(timerId);
-    }, [selectedTimeZone]);
+    const [isEmailValid, setIsEmailValid] = useState('default');
+    const [isTimeZoneValid, setIsTimeZoneValid] = useState('default');
+    const [errorMessages, setErrorMessages] = useState([]);
 
     const handleNameChange = (_event: React.FormEvent<HTMLInputElement>, name: string) => {
       setName(name);
-      setIsNameValid('default');
     };
 
     const handleEmailChange = (_event: React.FormEvent<HTMLInputElement>, email: string) => {
@@ -1402,34 +1399,74 @@ export const Animations: FunctionComponent = () => {
 
     const handlePasswordChange = (_event: React.FormEvent<HTMLInputElement>, password: string) => {
       setPassword(password);
-      setIsPasswordValid('default');
     };
 
     const handleTimeZoneChange = (event: React.FormEvent<HTMLSelectElement>, value: string) => {
       setSelectedTimeZone(value);
-      setTimeZoneValidated('default');
-      setTimeZoneHelperText('Validating...');
+    };
+
+    const validateName = (value: string) => /^[a-z0-9-]+$/.test(value) && value.length > 0;
+    const validatePassword = (value: string) => value.length >= 12 && /[0-9]/.test(value) && /[A-Z]/.test(value);
+    const validateEmail = (value: string) => value.includes('@');
+    const validateTimeZone = (value: string) => value !== '';
+
+    const handleNameBlur = () => {
+      setIsNameValid(validateName(name) ? 'success' : 'error');
+    };
+
+    const handlePasswordBlur = () => {
+      setIsPasswordValid(validatePassword(password) ? 'success' : 'error');
+    };
+
+    const handleEmailBlur = () => {
+      setIsEmailValid(validateEmail(email) ? 'success' : 'error');
+    };
+
+    const handleTimeZoneBlur = () => {
+      setIsTimeZoneValid(validateTimeZone(selectedTimeZone) ? 'success' : 'error');
     };
 
     const handleSubmit = () => {
+      const isNameCurrentValid = validateName(name);
+      const isPasswordCurrentValid = validatePassword(password);
+      const isEmailCurrentValid = validateEmail(email);
+      const isTimeZoneCurrentValid = validateTimeZone(selectedTimeZone);
+
+      setIsNameValid(isNameCurrentValid ? 'success' : 'error');
+      setIsPasswordValid(isPasswordCurrentValid ? 'success' : 'error');
+      setIsEmailValid(isEmailCurrentValid ? 'success' : 'error');
+      setIsTimeZoneValid(isTimeZoneCurrentValid ? 'success' : 'error');
+
+      const allFieldsValid =
+        isNameCurrentValid && isPasswordCurrentValid && isEmailCurrentValid && isTimeZoneCurrentValid;
+
       setActionCompleted(true);
-      if (
-        isPasswordValid === 'success' &&
-        isNameValid === 'success' &&
-        timeZoneValidated === 'success' &&
-        email.includes('@')
-      ) {
-        setIsSuccess(true);
+      setIsSuccess(allFieldsValid);
+      if (allFieldsValid) {
+        setErrorMessages([]);
         setTimeout(() => {
           setActionCompleted(false);
           setIsSuccess(false);
-        }, 4000);
+        }, 5000);
       } else {
-        setIsSuccess(false);
+        const errors: string[] = [];
+        if (!isNameCurrentValid) {
+          errors.push('Database instance name');
+        }
+        if (!isPasswordCurrentValid) {
+          errors.push('Admin password');
+        }
+        if (!isEmailCurrentValid) {
+          errors.push('Admin email');
+        }
+        if (!isTimeZoneCurrentValid) {
+          errors.push('Time zone');
+        }
+        setErrorMessages(errors);
         setTimeout(() => {
           setActionCompleted(false);
           setIsSuccess(false);
-        }, 4000);
+        }, 5000);
       }
     };
 
@@ -1438,31 +1475,37 @@ export const Animations: FunctionComponent = () => {
         {actionCompleted &&
           (isSuccess ? (
             <FormAlert>
-              <AlertGroup>
+              <AlertGroup hasAnimations isLiveRegion>
                 <Alert
                   variant="success"
                   title="Successfully created database"
                   isInline
-                  timeout={3000}
-                  timeoutAnimation={3000}
+                  timeout={4000}
+                  timeoutAnimation={4000}
                 />
               </AlertGroup>
             </FormAlert>
           ) : (
             <FormAlert>
-              <AlertGroup>
+              <AlertGroup hasAnimations isLiveRegion>
                 <Alert
                   variant="danger"
                   title="Failed to create database. Please ensure all fields are filled out correctly."
                   isInline
                   timeout={3000}
                   timeoutAnimation={3000}
-                />
+                >
+                  <List isPlain>
+                    {errorMessages.map((error) => (
+                      <ListItem key={error}>{error}</ListItem>
+                    ))}
+                  </List>
+                </Alert>
               </AlertGroup>
             </FormAlert>
           ))}
         <FormGroup
-          label="Database Instance name"
+          label="Database instance name"
           labelHelp={
             <Popover
               triggerRef={labelHelpRef}
@@ -1490,24 +1533,18 @@ export const Animations: FunctionComponent = () => {
             aria-describedby="simple-form-name-01-helper"
             value={name}
             onChange={handleNameChange}
+            onBlur={handleNameBlur}
             validated={isNameValid as validationStatus}
           />
-          <FormHelperText>
-            <HelperText>
-              <HelperTextItem variant={isNameValid as validationStatus}>
-                {(() => {
-                  if (isNameValidating) {
-                    return 'Validating...';
-                  }
-                  if (isNameValid === 'error') {
-                    return 'Must contain only lowercase letters, numbers, and hyphens.';
-                  } else {
-                    return 'Must be a unique name.';
-                  }
-                })()}
-              </HelperTextItem>
-            </HelperText>
-          </FormHelperText>
+          {isNameValid === 'error' && (
+            <FormHelperText>
+              <HelperText>
+                <HelperTextItem variant={isNameValid as validationStatus}>
+                  Must contain only lowercase letters, numbers, and hyphens.
+                </HelperTextItem>
+              </HelperText>
+            </FormHelperText>
+          )}
         </FormGroup>
         <FormGroup label="Admin email" isRequired fieldId="simple-form-email-01">
           <TextInput
@@ -1517,10 +1554,18 @@ export const Animations: FunctionComponent = () => {
             name="simple-form-email-01"
             value={email}
             onChange={handleEmailChange}
+            onBlur={handleEmailBlur}
+            validated={isEmailValid as validationStatus}
           />
-          <HelperText>
-            <HelperTextItem>Must be a valid email address containing an @ symbol.</HelperTextItem>
-          </HelperText>
+          {isEmailValid === 'error' && (
+            <FormHelperText>
+              <HelperText>
+                <HelperTextItem variant={isEmailValid as validationStatus}>
+                  Must be a valid email address containing an @ symbol.
+                </HelperTextItem>
+              </HelperText>
+            </FormHelperText>
+          )}
         </FormGroup>
         <FormGroup label="Database version" fieldId="simple-form-version-01">
           <TextInput
@@ -1538,18 +1583,21 @@ export const Animations: FunctionComponent = () => {
             value={selectedTimeZone}
             onChange={handleTimeZoneChange}
             aria-label="Select time zone"
-            validated={timeZoneValidated as validationStatus}
+            onBlur={handleTimeZoneBlur}
+            validated={isTimeZoneValid as validationStatus}
           >
             <FormSelectOption isPlaceholder value="" label="Select a time zone" />
             <FormSelectOption value="Eastern" label="Eastern" />
             <FormSelectOption value="Central" label="Central" />
             <FormSelectOption value="Pacific" label="Pacific" />
           </FormSelect>
-          <FormHelperText>
-            <HelperText>
-              <HelperTextItem variant={timeZoneValidated as validationStatus}>{timeZoneHelperText}</HelperTextItem>
-            </HelperText>
-          </FormHelperText>
+          {isTimeZoneValid === 'error' && (
+            <FormHelperText>
+              <HelperText>
+                <HelperTextItem variant={isTimeZoneValid as validationStatus}>Please select a time zone</HelperTextItem>
+              </HelperText>
+            </FormHelperText>
+          )}
         </FormGroup>
         <FormGroup label="Admin password" isRequired fieldId="simple-form-password-01">
           <TextInput
@@ -1557,20 +1605,20 @@ export const Animations: FunctionComponent = () => {
             type="password"
             id="simple-form-password-01"
             name="simple-form-password-01"
-            placeholder="********"
             value={password}
             onChange={handlePasswordChange}
+            onBlur={handlePasswordBlur}
             validated={isPasswordValid as validationStatus}
           />
-          <FormHelperText>
-            <HelperText>
-              <HelperTextItem variant={isPasswordValid as validationStatus}>
-                {isPasswordValidating
-                  ? 'Validating...'
-                  : 'Password must be at least 12 characters and include one uppercase letter and one number.'}
-              </HelperTextItem>
-            </HelperText>
-          </FormHelperText>
+          {isPasswordValid === 'error' && (
+            <FormHelperText>
+              <HelperText>
+                <HelperTextItem variant={isPasswordValid as validationStatus}>
+                  Password must be at least 12 characters and include one uppercase letter and one number.
+                </HelperTextItem>
+              </HelperText>
+            </FormHelperText>
+          )}
         </FormGroup>
         <ActionGroup>
           <Button variant="primary" onClick={handleSubmit}>
@@ -1600,7 +1648,21 @@ export const Animations: FunctionComponent = () => {
         <PageSection aria-labelledby="main-title">
           {isAlertVisible && (
             <AlertGroup hasAnimations isToast isLiveRegion>
-              <Alert variant="danger" title="Animated alert" timeout timeoutAnimation={3000}>
+              <Alert variant="danger" title="Animated alert" timeout={3000} timeoutAnimation={3000}>
+                Something wicked this way comes
+              </Alert>
+            </AlertGroup>
+          )}
+          {isAlert2Visible && (
+            <AlertGroup hasAnimations isToast isLiveRegion>
+              <Alert variant="danger" title="Animated alert" timeout={3000} timeoutAnimation={3000}>
+                Something wicked this way comes
+              </Alert>
+            </AlertGroup>
+          )}
+          {isAlert3Visible && (
+            <AlertGroup hasAnimations isToast isLiveRegion>
+              <Alert variant="danger" title="Animated alert" timeout={3000} timeoutAnimation={3000}>
                 Something wicked this way comes
               </Alert>
             </AlertGroup>
