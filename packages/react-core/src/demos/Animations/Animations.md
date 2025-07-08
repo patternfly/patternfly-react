@@ -17,7 +17,7 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 import MultiContentCard from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
-import { ArrowRightIcon, LockIcon, PortIcon, CubeIcon, AutomationIcon, ExclamationCircleIcon, CheckCircleIcon, ExclamationTriangleIcon, HamburgerIcon} from '@patternfly/react-icons';
+import { ArrowRightIcon, LockIcon, PortIcon, CubeIcon, AutomationIcon, ExclamationCircleIcon, CheckCircleIcon, ExclamationTriangleIcon, HamburgerIcon, TimesIcon} from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 import UnpluggedIcon from '@patternfly/react-icons/dist/esm/icons/unplugged-icon';
