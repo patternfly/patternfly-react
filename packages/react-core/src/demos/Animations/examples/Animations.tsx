@@ -83,7 +83,12 @@ import {
   Popover,
   ActionGroup,
   Grid,
-  GridItem
+  GridItem,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalVariant
 } from '@patternfly/react-core';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
@@ -97,12 +102,40 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import AutomationIcon from '@patternfly/react-icons/dist/esm/icons/automation-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import TimesIcon from '@patternfly/react-icons/icons/times-icon/dist/esm/icons/times-icon';
+// @ts-ignore
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+// @ts-ignore
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.PF-HorizontalLogo-Color.svg';
 import MultiContentCard from '@patternfly/react-component-groups/dist/dynamic/MultiContentCard';
 import { applicationsData } from './ResourceTableData';
 import SkeletonTable from '@patternfly/react-component-groups/dist/dynamic/SkeletonTable';
+
+const GuidedTourSteps = [
+  {
+    stepId: 'settingsButton',
+    header: <div>Cog Button</div>,
+    content: (
+      <>
+        <Content component="p">Hover over the cog. Notice the settings cog with it's little rotation.</Content>
+        <Content component="p">Click on the button and you can also see the new ripple effect on buttons</Content>
+      </>
+    )
+  },
+  {
+    stepId: 'navToggle',
+    header: <div>Masthead hamburger menu</div>,
+    content: (
+      <>
+        <Content component="p">
+          One more icon animation is the new hamburger menu with a slick little directional arrow.
+        </Content>
+        <Content component="p">Collapse and then expand hamburger to see this animation in action.</Content>
+      </>
+    )
+  }
+];
 
 export const Animations: FunctionComponent = () => {
   const drawerRef = useRef<HTMLElement | null>(null);
@@ -117,6 +150,47 @@ export const Animations: FunctionComponent = () => {
   const [alert1Id, setAlert1Id] = useState('');
   const [alert2Id, setAlert2Id] = useState('');
   const [alert3Id, setAlert3Id] = useState('');
+  const [showTourModal, setShowTourModal] = useState(true);
+
+  const [currentStep, setCurrentStep] = useState<number | undefined>();
+
+  const startNotifications = () => {
+    setIsUnreadMap((prevUnreadMap) => {
+      const newNotificationId = `notification-${Object.keys(prevUnreadMap || {}).length + 1}`;
+      setAlert1Id(newNotificationId);
+
+      return {
+        ...prevUnreadMap,
+        [newNotificationId]: true
+      };
+    });
+    setIsAlertVisible(true);
+  };
+
+  const onStart = () => setCurrentStep(0);
+
+  const onFinish = () => {
+    setCurrentStep(undefined);
+    startNotifications();
+  };
+
+  const onNextStep = () =>
+    setCurrentStep((prev) => {
+      if (prev === undefined || prev === GuidedTourSteps.length) {
+        return prev;
+      }
+      return prev + 1;
+    });
+
+  const onPrevStep = () =>
+    setCurrentStep((prev) => {
+      if (prev === undefined || prev === 0) {
+        return prev;
+      }
+      return prev - 1;
+    });
+
+  const tourStep = currentStep !== undefined ? GuidedTourSteps[currentStep] : undefined;
 
   interface UnreadMap {
     [notificationId: string]: boolean;
@@ -174,61 +248,51 @@ export const Animations: FunctionComponent = () => {
   const onCloseNotificationDrawer = (_event: any) => setIsDrawerExpanded((prevState) => !prevState);
 
   useEffect(() => {
-    const timerId = setTimeout(() => {
-      setIsAlertVisible(true);
-      setIsUnreadMap((prevUnreadMap) => {
-        const newNotificationId = `notification-${Object.keys(prevUnreadMap || {}).length + 1}`;
-        setAlert1Id(newNotificationId);
+    let timerId;
+    if (isAlertVisible) {
+      timerId = setTimeout(() => {
+        setIsAlert2Visible(true);
+        setIsUnreadMap((prevUnreadMap) => {
+          const newNotificationId = `notification-${Object.keys(prevUnreadMap || {}).length + 1}`;
+          setAlert2Id(newNotificationId);
 
-        return {
-          ...prevUnreadMap,
-          [newNotificationId]: true
-        };
-      });
-    }, 3000);
+          return {
+            ...prevUnreadMap,
+            [newNotificationId]: true
+          };
+        });
+      }, 10000);
+    }
 
     return () => {
-      clearTimeout(timerId);
+      if (timerId) {
+        clearTimeout(timerId);
+      }
     };
-  }, []);
+  }, [isAlertVisible]);
 
   useEffect(() => {
-    const timerId = setTimeout(() => {
-      setIsAlert2Visible(true);
-      setIsUnreadMap((prevUnreadMap) => {
-        const newNotificationId = `notification-${Object.keys(prevUnreadMap || {}).length + 1}`;
-        setAlert2Id(newNotificationId);
+    let timerId;
+    if (isAlert2Visible) {
+      timerId = setTimeout(() => {
+        setIsAlert3Visible(true);
+        setIsUnreadMap((prevUnreadMap) => {
+          const newNotificationId = `notification-${Object.keys(prevUnreadMap || {}).length + 1}`;
+          setAlert3Id(newNotificationId);
 
-        return {
-          ...prevUnreadMap,
-          [newNotificationId]: true
-        };
-      });
-    }, 14000);
-
+          return {
+            ...prevUnreadMap,
+            [newNotificationId]: true
+          };
+        });
+      }, 10000);
+    }
     return () => {
-      clearTimeout(timerId);
+      if (timerId) {
+        clearTimeout(timerId);
+      }
     };
-  }, []);
-
-  useEffect(() => {
-    const timerId = setTimeout(() => {
-      setIsAlert3Visible(true);
-      setIsUnreadMap((prevUnreadMap) => {
-        const newNotificationId = `notification-${Object.keys(prevUnreadMap || {}).length + 1}`;
-        setAlert3Id(newNotificationId);
-
-        return {
-          ...prevUnreadMap,
-          [newNotificationId]: true
-        };
-      });
-    }, 25000);
-
-    return () => {
-      clearTimeout(timerId);
-    };
-  }, []);
+  }, [isAlert2Visible]);
 
   useEffect(() => {
     const currentUnread = getNumberUnread();
@@ -243,6 +307,59 @@ export const Animations: FunctionComponent = () => {
     prevUnreadCountRef.current = getNumberUnread();
   }, [getNumberUnread]);
 
+  const renderTourStepElement = (forStepId: string, child: React.ReactElement) => {
+    if (!tourStep || forStepId !== tourStep.stepId) {
+      return child;
+    }
+    return (
+      <Popover
+        isVisible
+        showClose
+        hideOnOutsideClick={false}
+        headerContent={
+          <>
+            {tourStep.header}
+            <div className="pf-v6-c-popover__close">
+              <Button
+                onClick={onFinish}
+                variant="plain"
+                aria-label="close guided tour"
+                style={{ pointerEvents: 'auto' }}
+                icon={<TimesIcon />}
+              />
+            </div>
+          </>
+        }
+        bodyContent={<>{tourStep.content}</>}
+        footerContent={
+          <Flex spaceItems={{ default: 'spaceItemsMd' }} justifyContent={{ default: 'justifyContentSpaceBetween' }}>
+            <FlexItem>
+              Step {currentStep + 1}/{GuidedTourSteps.length}
+            </FlexItem>
+            <FlexItem>
+              <Flex spaceItems={{ default: 'spaceItemsMd' }}>
+                <FlexItem>
+                  <Button variant={ButtonVariant.secondary} onClick={onPrevStep} isDisabled={currentStep === 0}>
+                    Back
+                  </Button>
+                </FlexItem>
+                <FlexItem>
+                  <Button
+                    variant={ButtonVariant.primary}
+                    onClick={() => (currentStep < GuidedTourSteps.length ? onNextStep() : onFinish())}
+                  >
+                    {currentStep < GuidedTourSteps.length - 1 ? 'Next' : 'Finish'}
+                  </Button>
+                </FlexItem>
+              </Flex>
+            </FlexItem>
+          </Flex>
+        }
+      >
+        {child}
+      </Popover>
+    );
+  };
   const onToggle = (id: string) => {
     setIsActionsMenuOpen({ [id]: !isActionsMenuOpen[id] });
   };
@@ -258,9 +375,9 @@ export const Animations: FunctionComponent = () => {
 
   const markAllRead = () => setIsUnreadMap(null);
 
-  const showNotifications = (showNotifications: boolean) => {
+  const showNotifications = (show: boolean) => {
     setIsUnreadMap(null);
-    setShouldShowNotifications(showNotifications);
+    setShouldShowNotifications(show);
   };
 
   const focusDrawer = (_event: any) => {
@@ -460,15 +577,41 @@ export const Animations: FunctionComponent = () => {
               }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
             >
               <ToolbarItem>
-                <Button
-                  aria-label="Settings actions"
-                  className="pf-m-settings"
-                  variant={ButtonVariant.plain}
-                  icon={<CogIcon />}
-                />
+                {renderTourStepElement(
+                  'settingsButton',
+                  <Button
+                    aria-label="Settings actions"
+                    className="pf-m-settings"
+                    variant={ButtonVariant.plain}
+                    icon={<CogIcon />}
+                  />
+                )}
               </ToolbarItem>
               <ToolbarItem>
-                <Button aria-label="Help actions" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
+                <Dropdown
+                  onSelect={closeActionsMenu}
+                  isOpen={isActionsMenuOpen['help-menu-toggle'] || false}
+                  id="help-dropdown"
+                  onOpenChange={(isOpen: boolean) => !isOpen && closeActionsMenu()}
+                  popperProps={{ position: 'right' }}
+                  toggle={(toggleRef: RefObject<any>) => (
+                    <MenuToggle
+                      ref={toggleRef}
+                      id="help-menu-toggle"
+                      aria-label="help actions"
+                      variant="plain"
+                      onClick={() => onToggle('help-menu-toggle')}
+                      isExpanded={isActionsMenuOpen['help-menu-toggle'] || false}
+                      icon={<QuestionCircleIcon />}
+                    />
+                  )}
+                >
+                  <DropdownList>
+                    <DropdownItem onClick={() => setShowTourModal(true)} isDisabled={!!tourStep}>
+                      Guided tour
+                    </DropdownItem>
+                  </DropdownList>
+                </Dropdown>
               </ToolbarItem>
             </ToolbarGroup>
           </ToolbarGroup>
@@ -529,7 +672,10 @@ export const Animations: FunctionComponent = () => {
     <Masthead>
       <MastheadMain>
         <MastheadToggle>
-          <PageToggleButton variant="plain" aria-label="Global navigation" isHamburgerButton />
+          {renderTourStepElement(
+            'navToggle',
+            <PageToggleButton variant="plain" aria-label="Global navigation" isHamburgerButton isExpanded />
+          )}
         </MastheadToggle>
         <MastheadBrand>
           <MastheadLogo>
@@ -547,7 +693,7 @@ export const Animations: FunctionComponent = () => {
   );
   const pageId = 'main-content-page-layout-default-nav';
 
-  const handleClick = (event) => {
+  const handleClick = (event: React.MouseEvent) => {
     event.preventDefault();
 
     const mainContentElement = document.getElementById(pageId);
@@ -1632,6 +1778,11 @@ export const Animations: FunctionComponent = () => {
     );
   };
 
+  const closeTourModal = (startTour = false) => {
+    setShowTourModal(false);
+    startTour ? onStart() : startNotifications();
+  };
+
   return (
     <Fragment>
       <Page
@@ -1694,6 +1845,45 @@ export const Animations: FunctionComponent = () => {
           <PageSection>{showForm ? <CreateDatabaseForm /> : <EmptyStateNoMatchFound />}</PageSection>
         )}
       </Page>
+      {showTourModal ? (
+        <Modal
+          variant={ModalVariant.small}
+          isOpen
+          onClose={() => closeTourModal()}
+          aria-labelledby="guided-tour-title"
+          aria-describedby="guided-tour-description"
+        >
+          <ModalHeader title="Welcome to the PatternFly Animations demo" labelId="guided-tour-title" />
+          <ModalBody id="guided-tour-description">
+            <Content component="p">
+              To see how components like alerts, navigation, and forms can now use motion to provide clear feedback and
+              improve usability, you can explore this demo and interact with various UI elements. We will continue to
+              update this demo as additional animation support is added.
+            </Content>
+            <Content component="p">
+              Get started with a tour to highlight the current state of{' '}
+              <Button
+                variant="link"
+                isInline
+                href="https://github.com/orgs/patternfly/projects/7/views/66"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                our ongoing effort to animate PatternFly components
+              </Button>
+              .
+            </Content>
+          </ModalBody>
+          <ModalFooter>
+            <Button key="skip" variant="secondary" onClick={() => closeTourModal()}>
+              Skip tour
+            </Button>
+            <Button key="start" variant="primary" onClick={() => closeTourModal(true)}>
+              Get started
+            </Button>
+          </ModalFooter>
+        </Modal>
+      ) : null}
     </Fragment>
   );
 };
