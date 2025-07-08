@@ -4,7 +4,7 @@ section: design-foundations
 source: demo
 ---
 
-import { Fragment, useRef, useState, useEffect } from 'react';
+import { Fragment, useRef, useState, useEffect, useCallback } from 'react';
 
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
@@ -17,7 +17,7 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 import MultiContentCard from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
-import { ArrowRightIcon, LockIcon, PortIcon, CubeIcon, AutomationIcon, ExclamationCircleIcon, CheckCircleIcon, ExclamationTriangleIcon, HamburgerIcon} from '@patternfly/react-icons';
+import { ArrowRightIcon, LockIcon, PortIcon, CubeIcon, AutomationIcon, ExclamationCircleIcon, CheckCircleIcon, ExclamationTriangleIcon, HamburgerIcon, TimesIcon} from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 import UnpluggedIcon from '@patternfly/react-icons/dist/esm/icons/unplugged-icon';
@@ -25,7 +25,13 @@ import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm
 import {applicationsData} from './examples/ResourceTableData.jsx';
 import SkeletonTable from "@patternfly/react-component-groups/dist/dynamic/SkeletonTable";
 import t_global_text_color_subtle from '@patternfly/react-tokens/dist/esm/t_global_text_color_subtle';
-
+import { AnimationsOverview } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsOverview';
+import { AnimationsNotificationsDrawer } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsNotificationsDrawer';
+import { AnimationsHeaderToolbar } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsHeaderToolbar';
+import { AnimationsStartTourModal } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsStartTourModal';
+import { AnimationsEndTourModal } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsEndTourModal';
+import { AnimationsCreateDatabaseForm } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsCreateDatabaseForm';
+import { GuidedTourProvider, useGuidedTour } from '@patternfly/react-core/dist/esm/demos/Animations/GuidedTourContext';
 
 ## Demos
 
