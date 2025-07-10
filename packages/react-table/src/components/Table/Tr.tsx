@@ -99,7 +99,9 @@ const TrBase: React.FunctionComponent<TrProps> = ({
         className={css(
           styles.tableTr,
           className,
-          isExpandable !== undefined && styles.tableExpandableRow,
+          // TODO: Revert this back to just isExpandable !== undefined and refine docs around expandable table structure --
+          // We should note where isExpanded and isExpandable props must be passed in
+          (isExpandable !== undefined || isExpanded !== undefined) && styles.tableExpandableRow,
           isExpanded && styles.modifiers.expanded,
           isEditable && inlineStyles.modifiers.inlineEditable,
           isClickable && styles.modifiers.clickable,
