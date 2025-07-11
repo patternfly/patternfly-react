@@ -1602,7 +1602,7 @@ exports[`Table Collapsible nested table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-182"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -1697,7 +1697,7 @@ exports[`Table Collapsible nested table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-183"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -1853,7 +1853,7 @@ exports[`Table Collapsible nested table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-185"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -2360,7 +2360,7 @@ exports[`Table Collapsible table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr pf-m-expanded"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row pf-m-expanded"
         data-ouia-component-id="OUIA-Generated-TableRow-167"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -2577,7 +2577,7 @@ exports[`Table Collapsible table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-170"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -2975,7 +2975,7 @@ exports[`Table Compound Expandable table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr pf-m-expanded"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row pf-m-expanded"
         data-ouia-component-id="OUIA-Generated-TableRow-177"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -3041,7 +3041,7 @@ exports[`Table Compound Expandable table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-179"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -3183,7 +3183,7 @@ exports[`Table Control text table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-212"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -3234,7 +3234,7 @@ exports[`Table Control text table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-213"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -3341,7 +3341,7 @@ exports[`Table Control text table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-215"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -3742,7 +3742,7 @@ exports[`Table Header width table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-222"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -3793,7 +3793,7 @@ exports[`Table Header width table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-223"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -3900,7 +3900,7 @@ exports[`Table Header width table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-225"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -4359,7 +4359,7 @@ exports[`Table Selectable table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-192"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -4415,7 +4415,7 @@ exports[`Table Selectable table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-193"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -4540,7 +4540,7 @@ exports[`Table Selectable table 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-195"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -5048,7 +5048,7 @@ exports[`Table Selectable table with Radio 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-202"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -5104,7 +5104,7 @@ exports[`Table Selectable table with Radio 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-203"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
@@ -5229,7 +5229,7 @@ exports[`Table Selectable table with Radio 1`] = `
         </td>
       </tr>
       <tr
-        class="pf-v6-c-table__tr"
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
         data-ouia-component-id="OUIA-Generated-TableRow-205"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
