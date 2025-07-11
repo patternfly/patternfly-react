@@ -49,14 +49,14 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
   const sortRows = (rows: SampleDataRow[], sortIndex: number, sortDirection: Direction) =>
     [...rows].sort((a, b) => {
       let returnValue = 0;
-      if (sortIndex === 0 || sortIndex === 7) {
-        returnValue = 1;
-      } else if (typeof Object.values(a)[sortIndex] === 'number') {
+      if (typeof Object.values(a)[sortIndex] === 'number') {
         // numeric sort
         returnValue = Object.values(a)[sortIndex] - Object.values(b)[sortIndex];
       } else {
-        // string sort
-        returnValue = Object.values(a)[sortIndex].localeCompare(Object.values(b)[sortIndex]);
+        // string sort using natural sort
+        returnValue = Object.values(a)[sortIndex].localeCompare(Object.values(b)[sortIndex], undefined, {
+          numeric: true
+        });
       }
       if (sortDirection === 'desc') {
         return returnValue * -1;
