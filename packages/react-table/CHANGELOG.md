@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.3.0-prerelease.29...@patternfly/react-table@6.3.0-prerelease.30) (2025-07-11)
+
+### Bug Fixes
+
+- **Table:** updated logic for expandable class ([#11918](https://github.com/patternfly/patternfly-react/issues/11918)) ([2b6c99b](https://github.com/patternfly/patternfly-react/commit/2b6c99b4617f09009d799af4587a0b0d291cdf84))
+
 # [6.3.0-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.3.0-prerelease.28...@patternfly/react-table@6.3.0-prerelease.29) (2025-07-02)
 
 **Note:** Version bump only for package @patternfly/react-table

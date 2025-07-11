@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.3.0-prerelease.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.36...@patternfly/react-docs@7.3.0-prerelease.37) (2025-07-11)
+
+### Bug Fixes
+
+- **Table:** updated logic for expandable class ([#11918](https://github.com/patternfly/patternfly-react/issues/11918)) ([2b6c99b](https://github.com/patternfly/patternfly-react/commit/2b6c99b4617f09009d799af4587a0b0d291cdf84))
+
 # [7.3.0-prerelease.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.35...@patternfly/react-docs@7.3.0-prerelease.36) (2025-07-02)
 
 **Note:** Version bump only for package @patternfly/react-docs
