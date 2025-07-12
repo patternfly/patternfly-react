@@ -38,7 +38,7 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 ```
 
 ### Horizontal with bottom aligned legend
-```ts file = "ChartStackHorizontalBottomLegend.tsx"
+```ts file = "ChartStackBottomLegend.tsx"
 
 ```
 
