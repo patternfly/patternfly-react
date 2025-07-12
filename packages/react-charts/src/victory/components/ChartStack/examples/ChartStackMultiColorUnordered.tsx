@@ -15,7 +15,7 @@ interface Data {
   y: number;
 }
 
-export const ChartStackColorUnordered: React.FunctionComponent = () => {
+export const ChartStackMultiColorUnordered: React.FunctionComponent = () => {
   const containerRef = useRef(null);
   const observer = useRef(() => {});
   const [width, setWidth] = useState(0);

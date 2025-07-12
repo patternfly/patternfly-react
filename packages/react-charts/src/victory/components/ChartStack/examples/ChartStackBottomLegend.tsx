@@ -13,7 +13,7 @@ interface PetData {
   y: number;
 }
 
-export const ChartStackHorizontalBottomLegend: React.FunctionComponent = () => {
+export const ChartStackBottomLegend: React.FunctionComponent = () => {
   const data1: PetData[] = [
     { name: 'Cats', x: '2015', y: 1 },
     { name: 'Cats', x: '2016', y: 2 },
