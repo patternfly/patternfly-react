@@ -18,7 +18,7 @@ interface PetData {
   y?: number;
 }
 
-export const CustomThemeCustomTheme: React.FunctionComponent = () => {
+export const ChartThemeCustomTheme: React.FunctionComponent = () => {
   const colorScale = [
     chart_color_blue_300.var,
     chart_color_green_300.var,
