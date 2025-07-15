@@ -4,7 +4,7 @@ section: design-foundations
 source: demo
 ---
 
-import { Fragment, useRef, useState, useEffect } from 'react';
+import { Fragment, useRef, useState, useEffect, useCallback } from 'react';
 
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
@@ -25,7 +25,12 @@ import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm
 import {applicationsData} from './examples/ResourceTableData.jsx';
 import SkeletonTable from "@patternfly/react-component-groups/dist/dynamic/SkeletonTable";
 import t_global_text_color_subtle from '@patternfly/react-tokens/dist/esm/t_global_text_color_subtle';
-
+import { AnimationsOverview } from '@patternfly/react-core/dist/js/demos/Animations/AnimationsOverview';
+import { AnimationsNotificationsDrawer } from '@patternfly/react-core/dist/js/demos/Animations/AnimationsNotificationsDrawer';
+import { AnimationsHeaderToolbar } from '@patternfly/react-core/dist/js/demos/Animations/AnimationsHeaderToolbar';
+import { AnimationsTourModal } from '@patternfly/react-core/dist/js/demos/Animations/AnimationsTourModal';
+import { AnimationsCreateDatabaseForm } from '@patternfly/react-core/dist/js/demos/Animations/AnimationsCreateDatabaseForm';
+import { GuidedTourProvider, useGuidedTour } from '@patternfly/react-core/dist/js/demos/Animations/GuidedTourContext';
 
 ## Demos
 

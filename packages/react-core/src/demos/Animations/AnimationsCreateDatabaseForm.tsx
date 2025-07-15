@@ -1,0 +1,294 @@
+import { useRef, useState, FunctionComponent } from 'react';
+import {
+  AlertGroup,
+  Alert,
+  Button,
+  Form,
+  FormGroup,
+  FormHelperText,
+  FormAlert,
+  FormGroupLabelHelp,
+  FormSelect,
+  FormSelectOption,
+  HelperText,
+  HelperTextItem,
+  List,
+  ListItem,
+  TextInput,
+  Popover,
+  ActionGroup
+} from '../..';
+
+interface Props {
+  onClose: () => void;
+}
+
+export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose }) => {
+  // State variables
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [version, setVersion] = useState('');
+  const [selectedTimeZone, setSelectedTimeZone] = useState('');
+  const [password, setPassword] = useState('');
+  // Submit state variables
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [actionCompleted, setActionCompleted] = useState(false);
+
+  const labelHelpRef = useRef(null);
+
+  // Re-introducing the type alias for validation status
+  type validationStatus = 'success' | 'warning' | 'error' | 'default';
+
+  // Reverting useState to infer the type as a generic string
+  const [isNameValid, setIsNameValid] = useState('default');
+  const [isPasswordValid, setIsPasswordValid] = useState('default');
+  const [isEmailValid, setIsEmailValid] = useState('default');
+  const [isTimeZoneValid, setIsTimeZoneValid] = useState('default');
+  const [errorMessages, setErrorMessages] = useState([]);
+
+  const handleNameChange = (_event: React.FormEvent<HTMLInputElement>, name: string) => {
+    setName(name);
+  };
+
+  const handleEmailChange = (_event: React.FormEvent<HTMLInputElement>, email: string) => {
+    setEmail(email);
+  };
+
+  const handleVersionChange = (_event: React.FormEvent<HTMLInputElement>, version: string) => {
+    setVersion(version);
+  };
+
+  const handlePasswordChange = (_event: React.FormEvent<HTMLInputElement>, password: string) => {
+    setPassword(password);
+  };
+
+  const handleTimeZoneChange = (event: React.FormEvent<HTMLSelectElement>, value: string) => {
+    setSelectedTimeZone(value);
+  };
+
+  const validateName = (value: string) => /^[a-z0-9-]+$/.test(value) && value.length > 0;
+  const validatePassword = (value: string) => value.length >= 12 && /[0-9]/.test(value) && /[A-Z]/.test(value);
+  const validateEmail = (value: string) => value.includes('@');
+  const validateTimeZone = (value: string) => value !== '';
+
+  const handleNameBlur = () => {
+    setIsNameValid(validateName(name) ? 'success' : 'error');
+  };
+
+  const handlePasswordBlur = () => {
+    setIsPasswordValid(validatePassword(password) ? 'success' : 'error');
+  };
+
+  const handleEmailBlur = () => {
+    setIsEmailValid(validateEmail(email) ? 'success' : 'error');
+  };
+
+  const handleTimeZoneBlur = () => {
+    setIsTimeZoneValid(validateTimeZone(selectedTimeZone) ? 'success' : 'error');
+  };
+
+  const handleSubmit = () => {
+    const isNameCurrentValid = validateName(name);
+    const isPasswordCurrentValid = validatePassword(password);
+    const isEmailCurrentValid = validateEmail(email);
+    const isTimeZoneCurrentValid = validateTimeZone(selectedTimeZone);
+
+    setIsNameValid(isNameCurrentValid ? 'success' : 'error');
+    setIsPasswordValid(isPasswordCurrentValid ? 'success' : 'error');
+    setIsEmailValid(isEmailCurrentValid ? 'success' : 'error');
+    setIsTimeZoneValid(isTimeZoneCurrentValid ? 'success' : 'error');
+
+    const allFieldsValid =
+      isNameCurrentValid && isPasswordCurrentValid && isEmailCurrentValid && isTimeZoneCurrentValid;
+
+    setActionCompleted(true);
+    setIsSuccess(allFieldsValid);
+    if (allFieldsValid) {
+      setErrorMessages([]);
+      setTimeout(() => {
+        setActionCompleted(false);
+        setIsSuccess(false);
+      }, 5000);
+    } else {
+      const errors: string[] = [];
+      if (!isNameCurrentValid) {
+        errors.push('Database instance name');
+      }
+      if (!isPasswordCurrentValid) {
+        errors.push('Admin password');
+      }
+      if (!isEmailCurrentValid) {
+        errors.push('Admin email');
+      }
+      if (!isTimeZoneCurrentValid) {
+        errors.push('Time zone');
+      }
+      setErrorMessages(errors);
+      setTimeout(() => {
+        setActionCompleted(false);
+        setIsSuccess(false);
+      }, 5000);
+    }
+  };
+
+  return (
+    <Form isWidthLimited>
+      {actionCompleted &&
+        (isSuccess ? (
+          <FormAlert>
+            <AlertGroup hasAnimations isLiveRegion>
+              <Alert
+                variant="success"
+                title="Successfully created database"
+                isInline
+                timeout={4000}
+                timeoutAnimation={4000}
+              />
+            </AlertGroup>
+          </FormAlert>
+        ) : (
+          <FormAlert>
+            <AlertGroup hasAnimations isLiveRegion>
+              <Alert
+                variant="danger"
+                title="Failed to create database. Please ensure all fields are filled out correctly."
+                isInline
+                timeout={3000}
+                timeoutAnimation={3000}
+              >
+                <List isPlain>
+                  {errorMessages.map((error) => (
+                    <ListItem key={error}>{error}</ListItem>
+                  ))}
+                </List>
+              </Alert>
+            </AlertGroup>
+          </FormAlert>
+        ))}
+      <FormGroup
+        label="Database instance name"
+        labelHelp={
+          <Popover
+            triggerRef={labelHelpRef}
+            headerContent={<div>The name of your database</div>}
+            bodyContent={
+              <div>
+                <p>
+                  The name of your database is used to identify it in the system. It must be unique and cannot be
+                  changed later.
+                </p>
+              </div>
+            }
+          >
+            <FormGroupLabelHelp ref={labelHelpRef} aria-label="More info for name field" />
+          </Popover>
+        }
+        isRequired
+        fieldId="simple-form-name-01"
+      >
+        <TextInput
+          isRequired
+          type="text"
+          id="simple-form-name-01"
+          name="simple-form-name-01"
+          aria-describedby="simple-form-name-01-helper"
+          value={name}
+          onChange={handleNameChange}
+          onBlur={handleNameBlur}
+          validated={isNameValid as validationStatus}
+        />
+        {isNameValid === 'error' && (
+          <FormHelperText>
+            <HelperText>
+              <HelperTextItem variant={isNameValid as validationStatus}>
+                Must contain only lowercase letters, numbers, and hyphens.
+              </HelperTextItem>
+            </HelperText>
+          </FormHelperText>
+        )}
+      </FormGroup>
+      <FormGroup label="Admin email" isRequired fieldId="simple-form-email-01">
+        <TextInput
+          isRequired
+          type="email"
+          id="simple-form-email-01"
+          name="simple-form-email-01"
+          value={email}
+          onChange={handleEmailChange}
+          onBlur={handleEmailBlur}
+          validated={isEmailValid as validationStatus}
+        />
+        {isEmailValid === 'error' && (
+          <FormHelperText>
+            <HelperText>
+              <HelperTextItem variant={isEmailValid as validationStatus}>
+                Must be a valid email address containing an @ symbol.
+              </HelperTextItem>
+            </HelperText>
+          </FormHelperText>
+        )}
+      </FormGroup>
+      <FormGroup label="Database version" fieldId="simple-form-version-01">
+        <TextInput
+          type="text"
+          id="simple-form-version-01"
+          name="simple-form-version-01"
+          placeholder="e.g. 12c"
+          value={version}
+          onChange={handleVersionChange}
+        />
+      </FormGroup>
+      <FormGroup isRequired label="Time zone" fieldId="timezone-select">
+        <FormSelect
+          id="timezone-select"
+          value={selectedTimeZone}
+          onChange={handleTimeZoneChange}
+          aria-label="Select time zone"
+          onBlur={handleTimeZoneBlur}
+          validated={isTimeZoneValid as validationStatus}
+        >
+          <FormSelectOption isPlaceholder value="" label="Select a time zone" />
+          <FormSelectOption value="Eastern" label="Eastern" />
+          <FormSelectOption value="Central" label="Central" />
+          <FormSelectOption value="Pacific" label="Pacific" />
+        </FormSelect>
+        {isTimeZoneValid === 'error' && (
+          <FormHelperText>
+            <HelperText>
+              <HelperTextItem variant={isTimeZoneValid as validationStatus}>Please select a time zone</HelperTextItem>
+            </HelperText>
+          </FormHelperText>
+        )}
+      </FormGroup>
+      <FormGroup label="Admin password" isRequired fieldId="simple-form-password-01">
+        <TextInput
+          isRequired
+          type="password"
+          id="simple-form-password-01"
+          name="simple-form-password-01"
+          value={password}
+          onChange={handlePasswordChange}
+          onBlur={handlePasswordBlur}
+          validated={isPasswordValid as validationStatus}
+        />
+        {isPasswordValid === 'error' && (
+          <FormHelperText>
+            <HelperText>
+              <HelperTextItem variant={isPasswordValid as validationStatus}>
+                Password must be at least 12 characters and include one uppercase letter and one number.
+              </HelperTextItem>
+            </HelperText>
+          </FormHelperText>
+        )}
+      </FormGroup>
+      <ActionGroup>
+        <Button variant="primary" onClick={handleSubmit}>
+          Submit
+        </Button>
+        <Button variant="link" onClick={onClose}>
+          Cancel
+        </Button>
+      </ActionGroup>
+    </Form>
+  );
+};
