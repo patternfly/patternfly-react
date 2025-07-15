@@ -8,7 +8,6 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6%3A-Components-Test?node-id=2764-6708',
   {
     props: {
-      variant: { Direction: 'Vertical' },
       // TODO: Figma allows optional insets, but default to insetMd
       inset: figma.boolean('With insets', {
         true: { default: 'insetMd' },
