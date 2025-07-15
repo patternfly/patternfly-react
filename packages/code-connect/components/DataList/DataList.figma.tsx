@@ -1,6 +1,7 @@
 import figma from '@figma/code-connect';
 import { DataList } from '@patternfly/react-core';
 
+// TODO: DESIGN: Separate examples, rename files to match their react counterparts.
 // Documentation for DataList can be found at https://www.patternfly.org/components/data-list
 
 figma.connect(
@@ -13,6 +14,10 @@ figma.connect(
 
       children: figma.children('*')
     },
-    example: (props) => <DataList isCompact={props.isCompact}>{props.children}</DataList>
+    example: (props) => (
+      <DataList aria-label="DataList example" isCompact={props.isCompact}>
+        {props.children}
+      </DataList>
+    )
   }
 );
