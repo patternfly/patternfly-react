@@ -1,7 +1,7 @@
 import figma from '@figma/code-connect';
 import { DualListSelectorListItem } from '@patternfly/react-core';
 
-// TODO: FIGMA: Dual list item types and tree setting should come from this component
+// TODO: DESIGN: Dual list item types and tree setting should come from this component
 // Documentation for DualListSelector can be found at https://www.patternfly.org/components/dual-list-selector
 
 figma.connect(

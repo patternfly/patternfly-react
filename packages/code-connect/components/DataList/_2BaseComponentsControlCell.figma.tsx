@@ -3,7 +3,6 @@ import {
   // DataListAction,
   DataListCheck,
   DataListControl,
-  DataListDragButton,
   DataListToggle
 } from '@patternfly/react-core';
 
@@ -31,10 +30,6 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=6596-34013',
   {
     props: {
-      isDraggable: figma.boolean('Is Draggable', {
-        true: <DataListDragButton>Show drag button</DataListDragButton>,
-        false: undefined
-      }),
       isExpandable: figma.boolean('Row expansion', {
         true: <DataListToggle onClick={() => {}} isExpanded={false} id="m-ex-toggle1" aria-controls="m-ex-expand1" />,
         false: undefined
@@ -48,7 +43,6 @@ figma.connect(
       <>
         {props.isSelectable}
         {props.isExpandable}
-        {props.isDraggable}
       </>
     )
   }

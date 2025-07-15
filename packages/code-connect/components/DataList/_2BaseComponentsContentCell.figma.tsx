@@ -1,7 +1,7 @@
 import figma from '@figma/code-connect';
-import { DataListCell, DataListItemCells } from '@patternfly/react-core';
+import { DataListCell, DataListItem, DataListItemCells, DataListItemRow } from '@patternfly/react-core';
 
-// TODO: FIGMA: Either name layers uniquely or create a dataListCell component to house
+// TODO: DESIGN: Either name layers uniquely or create a dataListCell component to house
 // Documentation for DataList can be found at https://www.patternfly.org/components/data-list
 
 figma.connect(
@@ -22,20 +22,25 @@ figma.connect(
 
       children: figma.children('*'),
       iconContent: figma.children('IconWrapper'),
-      primaryContent: figma.children('My application'),
-      secondaryContent: figma.textContent('Description text')
+      primaryContent: figma.children('Main content'),
+      secondaryContent: figma.children('Second content block')
     },
     example: (props) => (
-      <DataListItemCells
-        rowid="<row-id>"
-        dataListCells={[
-          <DataListCell isIcon={true} key="icon-content">
-            {props.iconContent}
-          </DataListCell>,
-          <DataListCell key="primary-content">{props.primaryContent}</DataListCell>,
-          <DataListCell key="secondary-content">{props.secondaryContent}</DataListCell>
-        ]}
-      />
+      <DataListItem aria-labelledby="item1">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell isIcon={true} key="icon-content">
+                {props.iconContent}
+              </DataListCell>,
+              <DataListCell key="primary-content">
+                <span id="item1">{props.primaryContent}</span>
+              </DataListCell>,
+              <DataListCell key="secondary-content">{props.secondaryContent}</DataListCell>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
     )
   }
 );
