@@ -1,5 +1,5 @@
 import figma from '@figma/code-connect';
-import { AboutModal, Button } from '@patternfly/react-core';
+import { AboutModal, Button, Content } from '@patternfly/react-core';
 
 /**
  * PatternFly AboutModal integration for Figma Code Connect
@@ -11,10 +11,9 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2879-13973&t=15CEJpGgVui7qP5Q-11',
   {
     props: {
-      productName: figma.string('Product name', 'Product name'),
-      children: figma.children('*')
+      productName: figma.string('Product name')
     },
-    example: ({ productName, children }) => {
+    example: ({ productName }) => {
       /* eslint-disable */
       const [isOpen, setIsOpen] = React.useState(false);
       /* eslint-enable */
@@ -38,7 +37,24 @@ figma.connect(
             brandImageAlt="Brand Image Alt Text"
             backgroundImageSrc="/assets/images/background.png"
           >
-            {children}
+            <Content>
+              <dl>
+                <dt>CFME version</dt>
+                <dd>5.5.3.4.20102789036450</dd>
+                <dt>Cloudforms Version</dt>
+                <dd>4.1</dd>
+                <dt>Server name</dt>
+                <dd>40DemoMaster</dd>
+                <dt>User name</dt>
+                <dd>Administrator</dd>
+                <dt>User role</dt>
+                <dd>EvmRole-super_administrator</dd>
+                <dt>Browser version</dt>
+                <dd>601.2</dd>
+                <dt>Browser OS</dt>
+                <dd>Mac</dd>
+              </dl>
+            </Content>
           </AboutModal>
         </>
       );
