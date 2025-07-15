@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { Button, Content, Modal, ModalBody, ModalFooter, ModalHeader, ModalVariant } from '../..';
+import { Button, Content, Modal, ModalBody, ModalFooter, ModalHeader, ModalVariant } from '../../index';
 
 interface Props {
   onClose: (startTour?: boolean) => void;
@@ -13,33 +13,19 @@ export const AnimationsTourModal: FunctionComponent<Props> = ({ onClose }) => (
     aria-labelledby="guided-tour-title"
     aria-describedby="guided-tour-description"
   >
-    <ModalHeader title="Welcome to the PatternFly Animations demo" labelId="guided-tour-title" />
+    <ModalHeader title="Explore PatternFly’s new animations" labelId="guided-tour-title" />
     <ModalBody id="guided-tour-description">
       <Content component="p">
-        To see how components like alerts, navigation, and forms can now use motion to provide clear feedback and
-        improve usability, you can explore this demo and interact with various UI elements. We will continue to update
-        this demo as additional animation support is added.
-      </Content>
-      <Content component="p">
-        Get started with a tour to highlight the current state of{' '}
-        <Button
-          variant="link"
-          isInline
-          href="https://github.com/orgs/patternfly/projects/7/views/66"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          our ongoing effort to animate PatternFly components
-        </Button>
-        .
+        Welcome! Many of our components now use motion to engage users, provide clear feedback, and improve usability.
+        Let's explore some of these new animations and see how they work in a real UI
       </Content>
     </ModalBody>
     <ModalFooter>
-      <Button key="skip" variant="secondary" onClick={() => onClose()}>
-        Skip tour
-      </Button>
       <Button key="start" variant="primary" onClick={() => onClose(true)}>
-        Get started
+        Start tour
+      </Button>
+      <Button key="skip" variant="link" onClick={() => onClose()}>
+        Not now
       </Button>
     </ModalFooter>
   </Modal>

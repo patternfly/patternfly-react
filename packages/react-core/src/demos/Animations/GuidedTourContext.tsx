@@ -76,7 +76,9 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
         <Popover
           isVisible
           showClose
+          maxWidth="28rem"
           hideOnOutsideClick={false}
+          position={tourStep.position}
           headerContent={
             <>
               {tourStep.header}

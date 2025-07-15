@@ -12,12 +12,11 @@ import {
   FormSelectOption,
   HelperText,
   HelperTextItem,
-  List,
-  ListItem,
   TextInput,
   Popover,
   ActionGroup
 } from '../..';
+import { useGuidedTour } from './GuidedTourContext';
 
 interface Props {
   onClose: () => void;
@@ -33,6 +32,7 @@ export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose
   // Submit state variables
   const [isSuccess, setIsSuccess] = useState(false);
   const [actionCompleted, setActionCompleted] = useState(false);
+  const { renderTourStepElement } = useGuidedTour();
 
   const labelHelpRef = useRef(null);
 
@@ -44,7 +44,6 @@ export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose
   const [isPasswordValid, setIsPasswordValid] = useState('default');
   const [isEmailValid, setIsEmailValid] = useState('default');
   const [isTimeZoneValid, setIsTimeZoneValid] = useState('default');
-  const [errorMessages, setErrorMessages] = useState([]);
 
   const handleNameChange = (_event: React.FormEvent<HTMLInputElement>, name: string) => {
     setName(name);
@@ -103,68 +102,31 @@ export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose
 
     setActionCompleted(true);
     setIsSuccess(allFieldsValid);
-    if (allFieldsValid) {
-      setErrorMessages([]);
-      setTimeout(() => {
-        setActionCompleted(false);
-        setIsSuccess(false);
-      }, 5000);
-    } else {
-      const errors: string[] = [];
-      if (!isNameCurrentValid) {
-        errors.push('Database instance name');
-      }
-      if (!isPasswordCurrentValid) {
-        errors.push('Admin password');
-      }
-      if (!isEmailCurrentValid) {
-        errors.push('Admin email');
-      }
-      if (!isTimeZoneCurrentValid) {
-        errors.push('Time zone');
-      }
-      setErrorMessages(errors);
-      setTimeout(() => {
-        setActionCompleted(false);
-        setIsSuccess(false);
-      }, 5000);
-    }
   };
 
-  return (
+  const onReset = () => {
+    setIsNameValid('default');
+    setIsPasswordValid('default');
+    setIsEmailValid('default');
+    setIsTimeZoneValid('default');
+  };
+
+  return renderTourStepElement(
+    'validationErrors',
     <Form isWidthLimited>
-      {actionCompleted &&
-        (isSuccess ? (
-          <FormAlert>
-            <AlertGroup hasAnimations isLiveRegion>
-              <Alert
-                variant="success"
-                title="Successfully created database"
-                isInline
-                timeout={4000}
-                timeoutAnimation={4000}
-              />
-            </AlertGroup>
-          </FormAlert>
-        ) : (
-          <FormAlert>
-            <AlertGroup hasAnimations isLiveRegion>
-              <Alert
-                variant="danger"
-                title="Failed to create database. Please ensure all fields are filled out correctly."
-                isInline
-                timeout={3000}
-                timeoutAnimation={3000}
-              >
-                <List isPlain>
-                  {errorMessages.map((error) => (
-                    <ListItem key={error}>{error}</ListItem>
-                  ))}
-                </List>
-              </Alert>
-            </AlertGroup>
-          </FormAlert>
-        ))}
+      {actionCompleted && isSuccess ? (
+        <FormAlert>
+          <AlertGroup hasAnimations isLiveRegion>
+            <Alert
+              variant="success"
+              title="Successfully created database"
+              isInline
+              timeout={4000}
+              timeoutAnimation={4000}
+            />
+          </AlertGroup>
+        </FormAlert>
+      ) : null}
       <FormGroup
         label="Database instance name"
         labelHelp={
@@ -287,6 +249,9 @@ export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose
         </Button>
         <Button variant="link" onClick={onClose}>
           Cancel
+        </Button>
+        <Button className="pf-u-ml-2xl" variant="link" onClick={onReset}>
+          Reset
         </Button>
       </ActionGroup>
     </Form>

@@ -24,4 +24,5 @@ export interface GuidedTourStep {
   stepId: string;
   header: React.ReactNode;
   content: React.ReactNode;
+  position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }

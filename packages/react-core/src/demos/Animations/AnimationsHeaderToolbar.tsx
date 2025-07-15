@@ -26,13 +26,15 @@ interface Props {
   isDrawerExpanded: boolean;
   setIsDrawerExpanded: (newVal: boolean) => void;
   onStartGuidedTour: () => void;
+  onEndGuidedTour: () => void;
 }
 
 export const AnimationsHeaderToolbar: FunctionComponent<Props> = ({
   notifications,
   isDrawerExpanded,
   setIsDrawerExpanded,
-  onStartGuidedTour
+  onStartGuidedTour,
+  onEndGuidedTour
 }) => {
   const [isActionsMenuOpen, setIsActionsMenuOpen] = useState<boolean>(false);
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
@@ -116,8 +118,8 @@ export const AnimationsHeaderToolbar: FunctionComponent<Props> = ({
                   )}
                 >
                   <DropdownList>
-                    <DropdownItem onClick={() => onStartGuidedTour()} isDisabled={!!tourStep}>
-                      Guided tour
+                    <DropdownItem onClick={() => (tourStep ? onEndGuidedTour() : onStartGuidedTour())}>
+                      {tourStep ? 'End guided tour' : 'Guided tour'}
                     </DropdownItem>
                   </DropdownList>
                 </Dropdown>
