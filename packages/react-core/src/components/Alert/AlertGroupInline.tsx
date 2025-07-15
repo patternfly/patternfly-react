@@ -1,4 +1,4 @@
-import { Children, useState } from 'react';
+import { Children, useState, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert-group';
 import { AlertGroupProps } from './AlertGroup';
@@ -15,10 +15,19 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
   overflowMessage,
   ...props
 }: AlertGroupProps) => {
-  const [handleTransitionEnd, setHandleTransitionEnd] = useState(() => () => {});
+  const [handleTransitionEnd, setHandleTransitionEnd] = useState<() => void>(() => () => {});
+
   const updateTransitionEnd = (onTransitionEnd: () => void) => {
     setHandleTransitionEnd(() => onTransitionEnd);
   };
+
+  // Clear transition callback on unmount to prevent memory leaks
+  useEffect(
+    () => () => {
+      setHandleTransitionEnd(() => () => {});
+    },
+    []
+  );
 
   const onTransitionEnd = (event: React.TransitionEvent<HTMLLIElement>) => {
     if (!hasAnimations) {
@@ -34,6 +43,8 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
       (event.target as HTMLElement).className.includes(styles.modifiers.offstageRight)
     ) {
       handleTransitionEnd();
+      // Clear the callback after execution to prevent memory retention
+      setHandleTransitionEnd(() => () => {});
     }
   };
 

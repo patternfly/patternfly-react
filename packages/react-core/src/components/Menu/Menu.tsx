@@ -119,15 +119,15 @@ class MenuBase extends Component<MenuProps, MenuState> {
     if (this.context) {
       this.setState({ disableHover: this.context.disableHover });
     }
-    if (canUseDOM && this.props.containsDrilldown) {
-      window.addEventListener('transitionend', this.props.isRootMenu ? this.handleDrilldownTransition : null);
+    if (canUseDOM && this.props.containsDrilldown && this.props.isRootMenu) {
+      window.addEventListener('transitionend', this.handleDrilldownTransition);
     }
 
     this.allowTabFirstItem();
   }
 
   componentWillUnmount() {
-    if (canUseDOM && this.props.containsDrilldown) {
+    if (canUseDOM && this.props.containsDrilldown && this.props.isRootMenu) {
       window.removeEventListener('transitionend', this.handleDrilldownTransition);
     }
   }

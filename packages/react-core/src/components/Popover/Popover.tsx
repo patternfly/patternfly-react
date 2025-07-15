@@ -422,10 +422,22 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
           new Promise((resolve) => {
             const interval = setInterval(() => {
               if (containers.every((container) => getComputedStyle(container).visibility !== 'hidden')) {
-                resolve();
                 clearInterval(interval);
+                resolve();
               }
             }, 10);
+
+            // Clear interval if promise is never resolved (component unmount)
+            const timeout = setTimeout(() => {
+              clearInterval(interval);
+              resolve(); // Resolve to prevent hanging promise
+            }, 5000); // 5 second timeout as safety net
+
+            // Store cleanup function for potential external cleanup
+            (resolve as any)._cleanup = () => {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            };
           }),
         tabbableOptions: { displayCheck: 'none' },
 

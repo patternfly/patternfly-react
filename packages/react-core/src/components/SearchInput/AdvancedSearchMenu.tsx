@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from '../Button';
 import { ActionGroup, Form, FormGroup } from '../Form';
 import { TextInput } from '../TextInput';
-import { GenerateId, KeyTypes } from '../../helpers';
+import { GenerateId } from '../../helpers';
 import { SearchInputSearchAttribute } from './SearchInput';
 import { Panel, PanelMain, PanelMainBody } from '../Panel';
 import { css } from '@patternfly/react-styles';
@@ -89,6 +89,19 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   }, [isSearchMenuOpen]);
 
   useEffect(() => {
+    const onDocClick = (event: Event) => {
+      const clickedWithinSearchInput = parentRef && parentRef.current.contains(event.target as Node);
+      if (isSearchMenuOpen && !clickedWithinSearchInput) {
+        onToggleAdvancedMenu(event as any);
+      }
+    };
+
+    const onEscPress = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isSearchMenuOpen) {
+        onToggleAdvancedMenu(event as any);
+      }
+    };
+
     document.addEventListener('mousedown', onDocClick);
     document.addEventListener('touchstart', onDocClick);
     document.addEventListener('keydown', onEscPress);
@@ -98,28 +111,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
       document.removeEventListener('touchstart', onDocClick);
       document.removeEventListener('keydown', onEscPress);
     };
-  });
-
-  const onDocClick = (event: Event) => {
-    const clickedWithinSearchInput = parentRef && parentRef.current.contains(event.target as Node);
-    if (isSearchMenuOpen && !clickedWithinSearchInput) {
-      onToggleAdvancedMenu(event as any);
-    }
-  };
-
-  const onEscPress = (event: KeyboardEvent) => {
-    if (
-      isSearchMenuOpen &&
-      event.key === KeyTypes.Escape &&
-      parentRef &&
-      parentRef.current.contains(event.target as Node)
-    ) {
-      onToggleAdvancedMenu(event as any);
-      if (parentInputRef) {
-        parentInputRef.current.focus();
-      }
-    }
-  };
+  }, [isSearchMenuOpen, parentRef, onToggleAdvancedMenu]);
 
   const onSearchHandler = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     event.preventDefault();
