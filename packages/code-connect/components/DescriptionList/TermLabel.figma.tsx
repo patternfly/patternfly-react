@@ -30,7 +30,6 @@ figma.connect(
               htmlFor="single-inline-edit-with-label-example-input"
             >
               {props.label}
-              {props.children}
             </label>
             <div className="pf-v6-c-inline-edit__action pf-m-enable-editable">
               <button
@@ -85,7 +84,6 @@ figma.connect(
     props: {
       // string
       label: figma.string('✏️ Label'),
-      children: figma.children('*'),
 
       // enum
       icon: figma.enum('Icon ⎆', {
@@ -93,11 +91,6 @@ figma.connect(
         false: undefined
       })
     },
-    example: (props) => (
-      <DescriptionListTerm icon={props.icon}>
-        {props.label}
-        {props.children}
-      </DescriptionListTerm>
-    )
+    example: (props) => <DescriptionListTerm icon={props.icon}>{props.label}</DescriptionListTerm>
   }
 );
