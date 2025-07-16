@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { Card } from '../Card';
+import { createRef } from 'react';
 
 describe('Card', () => {
   test('renders with PatternFly Core styles', () => {
@@ -90,5 +91,15 @@ describe('Card', () => {
 
     const card = screen.getByText('secondary card');
     expect(card).toHaveClass('pf-m-secondary');
+  });
+
+  test('ref is added to the root element', () => {
+    const ref = createRef<HTMLTextAreaElement>();
+    render(
+      <Card ref={ref} tabIndex={-1}>
+        card
+      </Card>
+    );
+    expect(ref.current).toBe(screen.getByText('card'));
   });
 });
