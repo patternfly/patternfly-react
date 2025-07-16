@@ -1,5 +1,5 @@
-import { createContext, useContext, useCallback, useEffect, useState } from 'react';
-import { Button, ButtonVariant, Flex, FlexItem, Popover } from '../..';
+import { createContext, useContext, useCallback, useEffect, useState, useRef } from 'react';
+import { Button, ButtonVariant, debounce, Flex, FlexItem, getResizeObserver, Popover } from '../..';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { GuidedTourStep } from './types';
 
@@ -9,6 +9,7 @@ interface GuidedTourContextType {
   onPrevStep: () => void;
   onFinish: () => void;
   tourStep: GuidedTourStep | undefined;
+  isFinished: boolean;
   setCustomStepContent: (customContent: React.ReactNode) => void;
   renderTourStepElement: (forStepId: string, child: React.ReactElement) => React.ReactElement;
 }
@@ -20,7 +21,8 @@ const GuidedTourContext = createContext<GuidedTourContextType>({
   onFinish: () => {},
   setCustomStepContent: () => {},
   renderTourStepElement: () => null,
-  tourStep: undefined
+  tourStep: undefined,
+  isFinished: false
 });
 
 export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: React.ReactNode }> = ({
@@ -29,6 +31,10 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
 }) => {
   const [currentStep, setCurrentStep] = useState<number | undefined>();
   const [customStepContent, setCustomStepContent] = useState<React.ReactNode | undefined>();
+  const [windowWidth, setWindowWidth] = useState<number>();
+  const unObserver = useRef(null);
+
+  const isMobile = windowWidth < 500;
 
   useEffect(() => {
     setCurrentStep(undefined);
@@ -48,12 +54,12 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
   const onNextStep = useCallback(() => {
     setCustomStepContent(undefined);
     setCurrentStep((prev) => {
-      if (prev === undefined || prev === steps.length) {
+      if (prev === undefined) {
         return prev;
       }
       return prev + 1;
     });
-  }, [steps]);
+  }, []);
 
   const onPrevStep = useCallback(() => {
     setCustomStepContent(undefined);
@@ -66,6 +72,7 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
   }, []);
 
   const tourStep = currentStep !== undefined ? steps[currentStep] : undefined;
+  const isFinished = currentStep !== undefined ? currentStep >= steps.length : false;
 
   const renderTourStepElement = useCallback(
     (forStepId: string, child: React.ReactElement) => {
@@ -76,7 +83,7 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
         <Popover
           isVisible
           showClose
-          maxWidth="28rem"
+          maxWidth={isMobile ? undefined : '28rem'}
           hideOnOutsideClick={false}
           position={tourStep.position}
           headerContent={
@@ -113,11 +120,8 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
                     </Button>
                   </FlexItem>
                   <FlexItem>
-                    <Button
-                      variant={ButtonVariant.primary}
-                      onClick={() => (currentStep < steps.length ? onNextStep() : onFinish())}
-                    >
-                      {currentStep < steps.length - 1 ? 'Next' : 'Finish'}
+                    <Button variant={ButtonVariant.primary} onClick={onNextStep}>
+                      Next
                     </Button>
                   </FlexItem>
                 </Flex>
@@ -129,13 +133,53 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
         </Popover>
       );
     },
-    [tourStep, currentStep, steps, onNextStep, onPrevStep, onFinish, customStepContent]
+    [tourStep, currentStep, steps, onNextStep, onPrevStep, onFinish, customStepContent, isMobile]
+  );
+
+  const measureRef = (ref: HTMLDivElement) => {
+    // Remove any previous observer
+    if (unObserver.current) {
+      unObserver.current();
+    }
+
+    if (!ref) {
+      return;
+    }
+
+    const handleResize = () => setWindowWidth(ref.clientWidth);
+
+    // Set size on initialization
+    handleResize();
+
+    const debounceResize = debounce(handleResize, 100);
+
+    // Update graph size on resize events
+    unObserver.current = getResizeObserver(ref, debounceResize);
+  };
+
+  useEffect(
+    () => () => {
+      if (unObserver.current) {
+        unObserver.current();
+      }
+    },
+    []
   );
 
   return (
     <GuidedTourContext.Provider
-      value={{ onStart, onNextStep, onPrevStep, onFinish, setCustomStepContent, renderTourStepElement, tourStep }}
+      value={{
+        onStart,
+        onNextStep,
+        onPrevStep,
+        onFinish,
+        setCustomStepContent,
+        renderTourStepElement,
+        tourStep,
+        isFinished
+      }}
     >
+      <div ref={measureRef} style={{ width: '100%' }} />
       {children}
     </GuidedTourContext.Provider>
   );

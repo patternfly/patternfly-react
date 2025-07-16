@@ -8,10 +8,12 @@ import {
   Content,
   Card,
   ContentVariants,
+  debounce,
   EmptyState,
   EmptyStateActions,
   EmptyStateBody,
   EmptyStateFooter,
+  getResizeObserver,
   Label,
   Masthead,
   MastheadMain,
@@ -39,12 +41,13 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 // @ts-ignore
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.PF-HorizontalLogo-Color.svg';
 import { Application, GuidedTourStep, NotificationType } from '../types';
-import { AnimationsOverview } from '../AnimationsOverview';
-import { AnimationsNotificationsDrawer } from '../AnimationsNotificationsDrawer';
-import { AnimationsCreateDatabaseForm } from '../AnimationsCreateDatabaseForm';
-import { GuidedTourProvider, useGuidedTour } from '../GuidedTourContext';
-import { AnimationsHeaderToolbar } from '../AnimationsHeaderToolbar';
-import { AnimationsTourModal } from '../AnimationsTourModal';
+import { AnimationsOverview } from '../../../../dist/esm/demos/Animations/AnimationsOverview';
+import { AnimationsNotificationsDrawer } from '../../../../dist/esm/demos/Animations/AnimationsNotificationsDrawer';
+import { AnimationsCreateDatabaseForm } from '../../../../dist/esm/demos/Animations/AnimationsCreateDatabaseForm';
+import { GuidedTourProvider, useGuidedTour } from '../../../../dist/esm/demos/Animations/GuidedTourContext';
+import { AnimationsHeaderToolbar } from '../../../../dist/esm/demos/Animations/AnimationsHeaderToolbar';
+import { AnimationsStartTourModal } from '../../../../dist/esm/demos/Animations/AnimationsStartTourModal';
+import { AnimationsEndTourModal } from '../../../../dist/esm/demos/Animations/AnimationsEndTourModal';
 import { applicationsData } from './ResourceTableData';
 
 const mainContainerPageId = 'main-content-page-layout-default-nav';
@@ -203,10 +206,15 @@ const AnimationsPage: FunctionComponent = () => {
   ]);
   const [selectedTab, setSelectedTab] = useState(0);
   const [showForm, setShowForm] = useState(false);
-  const [showTourModal, setShowTourModal] = useState(true);
+  const [showStartTourModal, setShowStartTourModal] = useState(true);
+  const [showEndTourModal, setShowEndTourModal] = useState(false);
   const [activeItem, setActiveItem] = useState<number | string>(0);
   const [activeGroup, setActiveGroup] = useState<string | null>(null);
-  const { onStart, onFinish, renderTourStepElement, setCustomStepContent, tourStep } = useGuidedTour();
+  const { onStart, onFinish, renderTourStepElement, setCustomStepContent, tourStep, isFinished } = useGuidedTour();
+  const [windowWidth, setWindowWidth] = useState<number>();
+  const unObserver = useRef(null);
+
+  const isMobile = windowWidth < 500;
 
   const addNotification = useCallback((showToast = true) => {
     setNotifications((prev) => [
@@ -225,23 +233,6 @@ const AnimationsPage: FunctionComponent = () => {
   }, []);
 
   useEffect(() => {
-    if (tourStep?.stepId === 'notificationBadge') {
-      setCustomStepContent(
-        <>
-          <Content component="p">
-            Click <strong>Add notification</strong>. Watch for a new notification to arrive.
-          </Content>
-          <Content component="p">
-            The bell icon "rings" with a subtle rotation to quickly catch your as a message comes in.
-          </Content>
-          <Content component="p">
-            <Button variant="link" isInline onClick={() => addNotification(false)}>
-              Add notification
-            </Button>
-          </Content>
-        </>
-      );
-    }
     if (tourStep?.stepId === 'toastNotifications') {
       setCustomStepContent(
         <>
@@ -260,6 +251,39 @@ const AnimationsPage: FunctionComponent = () => {
         </>
       );
     }
+    if (tourStep?.stepId === 'settingsButton') {
+      setCustomStepContent(
+        <>
+          {!isMobile ? (
+            <Content component="p">
+              Hover over the settings button. The cog icon rotates to show that it’s interactive.
+            </Content>
+          ) : null}
+          <Content component="p">
+            {`Click ${isMobile ? 'the settings button' : 'it'} to see the new ripple effect we've added to all buttons`}
+            .
+          </Content>
+        </>
+      );
+    }
+
+    if (tourStep?.stepId === 'notificationBadge') {
+      setCustomStepContent(
+        <>
+          <Content component="p">
+            Click <strong>Add notification</strong>. Watch for a new notification to arrive.
+          </Content>
+          <Content component="p">
+            The bell icon "rings" with a subtle rotation to quickly catch your as a message comes in.
+          </Content>
+          <Content component="p">
+            <Button variant="link" isInline onClick={() => addNotification(false)}>
+              Add notification
+            </Button>
+          </Content>
+        </>
+      );
+    }
     if (tourStep?.stepId === 'expandableComponents' || tourStep?.stepId === 'skeletonLoader') {
       setSelectedTab(1);
     }
@@ -267,7 +291,41 @@ const AnimationsPage: FunctionComponent = () => {
       setSelectedTab(2);
       setShowForm(true);
     }
-  }, [tourStep?.stepId, setCustomStepContent, addNotification]);
+  }, [tourStep?.stepId, setCustomStepContent, addNotification, isMobile]);
+
+  useEffect(() => {
+    setShowEndTourModal(isFinished);
+  }, [isFinished]);
+
+  const measureRef = (ref: HTMLDivElement) => {
+    // Remove any previous observer
+    if (unObserver.current) {
+      unObserver.current();
+    }
+
+    if (!ref) {
+      return;
+    }
+
+    const handleResize = () => setWindowWidth(ref.clientWidth);
+
+    // Set size on initialization
+    handleResize();
+
+    const debounceResize = debounce(handleResize, 100);
+
+    // Update graph size on resize events
+    unObserver.current = getResizeObserver(ref, debounceResize);
+  };
+
+  useEffect(
+    () => () => {
+      if (unObserver.current) {
+        unObserver.current();
+      }
+    },
+    []
+  );
 
   const startNotifications = () => {
     setTimeout(() => {
@@ -304,8 +362,8 @@ const AnimationsPage: FunctionComponent = () => {
     firstTabbableItem?.focus();
   };
 
-  const closeTourModal = (startTour = false) => {
-    setShowTourModal(false);
+  const closeStartTourModal = (startTour = false) => {
+    setShowStartTourModal(false);
     startTour ? onStart() : startNotifications();
   };
 
@@ -331,7 +389,7 @@ const AnimationsPage: FunctionComponent = () => {
               notifications={notifications}
               isDrawerExpanded={isDrawerExpanded}
               setIsDrawerExpanded={setIsDrawerExpanded}
-              onStartGuidedTour={() => setShowTourModal(true)}
+              onStartGuidedTour={() => setShowStartTourModal(true)}
               onEndGuidedTour={() => onFinish()}
             />
           </MastheadContent>
@@ -405,10 +463,19 @@ const AnimationsPage: FunctionComponent = () => {
       }
       mainContainerId={mainContainerPageId}
     >
+      <div ref={measureRef} style={{ width: '100%' }} />
       <PageSection aria-labelledby="main-title">
         {renderTourStepElement(
           'toastNotifications',
-          <div content=" " style={{ width: 10, height: 10, position: 'absolute', right: 300, top: 110 }} />
+          <div
+            style={{
+              width: 10,
+              height: 10,
+              position: 'absolute',
+              right: isMobile ? windowWidth / 2 : 300,
+              top: isMobile ? 130 : 110
+            }}
+          />
         )}
         {notifications
           .filter((n) => n.isNew)
@@ -473,7 +540,8 @@ const AnimationsPage: FunctionComponent = () => {
           )}
         </PageSection>
       )}
-      {showTourModal ? <AnimationsTourModal onClose={closeTourModal} /> : null}
+      {showStartTourModal ? <AnimationsStartTourModal onClose={closeStartTourModal} /> : null}
+      {showEndTourModal ? <AnimationsEndTourModal /> : null}
     </Page>
   );
 };

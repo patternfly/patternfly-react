@@ -25,12 +25,13 @@ import l_gallery_GridTemplateColumns_min from '@patternfly/react-tokens/dist/esm
 import {applicationsData} from './examples/ResourceTableData.jsx';
 import SkeletonTable from "@patternfly/react-component-groups/dist/dynamic/SkeletonTable";
 import t_global_text_color_subtle from '@patternfly/react-tokens/dist/esm/t_global_text_color_subtle';
-import { AnimationsOverview } from '@patternfly/react-core/dist/js/demos/Animations/AnimationsOverview';
-import { AnimationsNotificationsDrawer } from '@patternfly/react-core/dist/js/demos/Animations/AnimationsNotificationsDrawer';
-import { AnimationsHeaderToolbar } from '@patternfly/react-core/dist/js/demos/Animations/AnimationsHeaderToolbar';
-import { AnimationsTourModal } from '@patternfly/react-core/dist/js/demos/Animations/AnimationsTourModal';
-import { AnimationsCreateDatabaseForm } from '@patternfly/react-core/dist/js/demos/Animations/AnimationsCreateDatabaseForm';
-import { GuidedTourProvider, useGuidedTour } from '@patternfly/react-core/dist/js/demos/Animations/GuidedTourContext';
+import { AnimationsOverview } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsOverview';
+import { AnimationsNotificationsDrawer } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsNotificationsDrawer';
+import { AnimationsHeaderToolbar } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsHeaderToolbar';
+import { AnimationsStartTourModal } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsStartTourModal';
+import { AnimationsEndTourModal } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsEndTourModal';
+import { AnimationsCreateDatabaseForm } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsCreateDatabaseForm';
+import { GuidedTourProvider, useGuidedTour } from '@patternfly/react-core/dist/esm/demos/Animations/GuidedTourContext';
 
 ## Demos
 

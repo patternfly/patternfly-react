@@ -5,7 +5,7 @@ interface Props {
   onClose: (startTour?: boolean) => void;
 }
 
-export const AnimationsTourModal: FunctionComponent<Props> = ({ onClose }) => (
+export const AnimationsStartTourModal: FunctionComponent<Props> = ({ onClose }) => (
   <Modal
     variant={ModalVariant.small}
     isOpen

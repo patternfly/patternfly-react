@@ -80,13 +80,7 @@ export const AnimationsHeaderToolbar: FunctionComponent<Props> = ({
                 />
               )}
             </ToolbarItem>
-            <ToolbarGroup
-              variant="action-group-plain"
-              visibility={{
-                default: 'hidden',
-                lg: 'visible'
-              }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
-            >
+            <ToolbarGroup variant="action-group-plain">
               <ToolbarItem>
                 {renderTourStepElement(
                   'settingsButton',
