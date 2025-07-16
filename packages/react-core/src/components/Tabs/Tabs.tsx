@@ -430,6 +430,8 @@ class Tabs extends Component<TabsProps, TabsState> {
     if (!prevState.enableScrollButtons && enableScrollButtons) {
       this.setState({ renderScrollButtons: true });
       setTimeout(() => {
+        // Remove any existing listener before adding a new one to prevent accumulation
+        this.leftScrollButtonRef.current?.removeEventListener('transitionend', this.hideScrollButtons);
         this.leftScrollButtonRef.current?.addEventListener('transitionend', this.hideScrollButtons);
         this.setState({ showScrollButtons: true });
       }, 100);

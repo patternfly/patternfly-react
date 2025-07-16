@@ -145,13 +145,75 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   }
 
   useEffect(() => {
+    const onDocMouseDown = (event: MouseEvent) => {
+      if (
+        isEditableActive &&
+        editableInputRef &&
+        editableInputRef.current &&
+        !editableInputRef.current.contains(event.target as Node)
+      ) {
+        if (editableInputRef.current.value) {
+          onEditComplete && onEditComplete(event, editableInputRef.current.value);
+        }
+        setIsEditableActive(false);
+      }
+    };
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      const key = event.key;
+      if (
+        (!isEditableActive &&
+          (!editableButtonRef ||
+            !editableButtonRef.current ||
+            !editableButtonRef.current.contains(event.target as Node))) ||
+        (isEditableActive &&
+          (!editableInputRef || !editableInputRef.current || !editableInputRef.current.contains(event.target as Node)))
+      ) {
+        return;
+      }
+      if (isEditableActive && (key === 'Enter' || key === 'Tab')) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        if (editableInputRef.current.value) {
+          onEditComplete && onEditComplete(event, editableInputRef.current.value);
+        }
+        setIsEditableActive(false);
+        editableButtonRef?.current?.focus();
+      }
+      if (isEditableActive && key === 'Escape') {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        // Reset div text to initial children prop - pre-edit
+        if (editableInputRef.current.value) {
+          editableInputRef.current.value = children as string;
+          onEditCancel && onEditCancel(event, children as string);
+        }
+        setIsEditableActive(false);
+        editableButtonRef?.current?.focus();
+      }
+      if (!isEditableActive && key === 'Enter') {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        setIsEditableActive(true);
+
+        // Set cursor position to end of text
+        const el = event.target as HTMLElement;
+        const range = document.createRange();
+        const sel = window.getSelection();
+        range.selectNodeContents(el);
+        range.collapse(false);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    };
+
     document.addEventListener('mousedown', onDocMouseDown);
     document.addEventListener('keydown', onKeyDown);
     return () => {
       document.removeEventListener('mousedown', onDocMouseDown);
       document.removeEventListener('keydown', onKeyDown);
     };
-  });
+  }, [isEditableActive, editableInputRef, editableButtonRef, onEditComplete, onEditCancel, children]);
 
   useEffect(() => {
     if (onLabelClick && href) {
@@ -166,68 +228,6 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       );
     }
   }, [onLabelClick, href, isEditable]);
-
-  const onDocMouseDown = (event: MouseEvent) => {
-    if (
-      isEditableActive &&
-      editableInputRef &&
-      editableInputRef.current &&
-      !editableInputRef.current.contains(event.target as Node)
-    ) {
-      if (editableInputRef.current.value) {
-        onEditComplete && onEditComplete(event, editableInputRef.current.value);
-      }
-      setIsEditableActive(false);
-    }
-  };
-
-  const onKeyDown = (event: KeyboardEvent) => {
-    const key = event.key;
-    if (
-      (!isEditableActive &&
-        (!editableButtonRef ||
-          !editableButtonRef.current ||
-          !editableButtonRef.current.contains(event.target as Node))) ||
-      (isEditableActive &&
-        (!editableInputRef || !editableInputRef.current || !editableInputRef.current.contains(event.target as Node)))
-    ) {
-      return;
-    }
-    if (isEditableActive && (key === 'Enter' || key === 'Tab')) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      if (editableInputRef.current.value) {
-        onEditComplete && onEditComplete(event, editableInputRef.current.value);
-      }
-      setIsEditableActive(false);
-      editableButtonRef?.current?.focus();
-    }
-    if (isEditableActive && key === 'Escape') {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      // Reset div text to initial children prop - pre-edit
-      if (editableInputRef.current.value) {
-        editableInputRef.current.value = children as string;
-        onEditCancel && onEditCancel(event, children as string);
-      }
-      setIsEditableActive(false);
-      editableButtonRef?.current?.focus();
-    }
-    if (!isEditableActive && key === 'Enter') {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      setIsEditableActive(true);
-
-      // Set cursor position to end of text
-      const el = event.target as HTMLElement;
-      const range = document.createRange();
-      const sel = window.getSelection();
-      range.selectNodeContents(el);
-      range.collapse(false);
-      sel.removeAllRanges();
-      sel.addRange(range);
-    }
-  };
 
   const isClickableDisabled = (href || onLabelClick) && isDisabled;
 
