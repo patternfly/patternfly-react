@@ -154,7 +154,7 @@ export const TableStripedExpandable: React.FunctionComponent = () => {
           }
           return (
             <Tbody key={repo.name} isExpanded={isRepoExpanded(repo)}>
-              <Tr isExpanded={isRepoExpanded(repo)}>
+              <Tr isContentExpanded={isRepoExpanded(repo)}>
                 <Td
                   expand={
                     repo.details
@@ -173,7 +173,7 @@ export const TableStripedExpandable: React.FunctionComponent = () => {
                 <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
               </Tr>
               {repo.details ? (
-                <Tr isExpanded={isRepoExpanded(repo)} isExpandable>
+                <Tr isExpanded={isRepoExpanded(repo)}>
                   {!childIsFullWidth ? <Td /> : null}
                   {repo.details.detail1 ? (
                     <Td dataLabel="Repo detail 1" noPadding={childHasNoPadding} colSpan={detail1Colspan}>

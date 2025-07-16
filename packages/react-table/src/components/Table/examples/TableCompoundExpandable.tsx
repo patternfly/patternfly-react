@@ -74,7 +74,7 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
         const isRowExpanded = !!expandedCellKey;
         return (
           <Tbody key={repo.name} isExpanded={isRowExpanded}>
-            <Tr isExpanded={isRowExpanded} isControlRow>
+            <Tr isContentExpanded={isRowExpanded} isControlRow>
               <Td width={25} dataLabel={columnNames.name} component="th">
                 <a href="#">{repo.name}</a>
               </Td>
@@ -106,21 +106,21 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
                 <a href="#">Open in GitHub</a>
               </Td>
             </Tr>
-            <Tr isExpanded={columnNames[expandedCellKey] === columnNames.branches} isExpandable>
+            <Tr isExpanded={columnNames[expandedCellKey] === columnNames.branches}>
               <Td dataLabel={columnNames[expandedCellKey]} colSpan={6}>
                 <ExpandableRowContent>
                   <div>Expanded content for {repo.name}: branches goes here!</div>
                 </ExpandableRowContent>
               </Td>
             </Tr>
-            <Tr isExpanded={columnNames[expandedCellKey] === columnNames.prs} isExpandable>
+            <Tr isExpanded={columnNames[expandedCellKey] === columnNames.prs}>
               <Td dataLabel={columnNames[expandedCellKey]} colSpan={6}>
                 <ExpandableRowContent>
                   <div>Expanded content for {repo.name}: prs goes here!</div>
                 </ExpandableRowContent>
               </Td>
             </Tr>
-            <Tr isExpanded={columnNames[expandedCellKey] === columnNames.workspaces} isExpandable>
+            <Tr isExpanded={columnNames[expandedCellKey] === columnNames.workspaces}>
               <Td dataLabel={columnNames[expandedCellKey]} colSpan={6}>
                 <ExpandableRowContent>
                   <div>Expanded content for {repo.name}: workspaces goes here!</div>
