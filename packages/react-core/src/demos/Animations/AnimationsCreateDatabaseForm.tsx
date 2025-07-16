@@ -113,7 +113,7 @@ export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose
 
   return renderTourStepElement(
     'validationErrors',
-    <Form isWidthLimited>
+    <Form isWidthLimited id="create-database-form">
       {actionCompleted && isSuccess ? (
         <FormAlert>
           <AlertGroup hasAnimations isLiveRegion>
@@ -244,7 +244,7 @@ export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose
         )}
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary" onClick={handleSubmit}>
+        <Button id="create-database-submit" variant="primary" onClick={handleSubmit}>
           Submit
         </Button>
         <Button variant="link" onClick={onClose}>

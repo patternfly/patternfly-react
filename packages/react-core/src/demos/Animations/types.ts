@@ -25,4 +25,6 @@ export interface GuidedTourStep {
   header: React.ReactNode;
   content: React.ReactNode;
   position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  spotlightSelector?: string;
+  spotlightResizeSelector?: string;
 }

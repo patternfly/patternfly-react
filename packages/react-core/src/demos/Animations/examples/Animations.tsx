@@ -63,14 +63,8 @@ export const GuidedTourSteps: GuidedTourStep[] = [
   {
     stepId: 'settingsButton',
     header: <div>Buttons: Settings</div>,
-    content: (
-      <>
-        <Content component="p">
-          Hover over the settings button. The cog icon rotates to show that it’s interactive.
-        </Content>
-        <Content component="p">Click it to see the new ripple effect we've added to all buttons.</Content>
-      </>
-    )
+    content: '===== This content is customized ======',
+    spotlightSelector: '#settings-button'
   },
   {
     stepId: 'navToggle',
@@ -83,12 +77,14 @@ export const GuidedTourSteps: GuidedTourStep[] = [
           will happen next.
         </Content>
       </>
-    )
+    ),
+    spotlightSelector: '#nav-toggle'
   },
   {
     stepId: 'notificationBadge',
     header: <div>Buttons: Notification badge</div>,
-    content: '===== This content is customized ======'
+    content: '===== This content is customized ======',
+    spotlightSelector: '#notification-badge'
   },
   {
     stepId: 'tabs',
@@ -99,7 +95,8 @@ export const GuidedTourSteps: GuidedTourStep[] = [
         Click between the different tabs and watch how the active tab indicator smoothly slides to your selection,
         providing clear feedback on your location.
       </Content>
-    )
+    ),
+    spotlightSelector: '#tabs'
   },
   {
     stepId: 'skeletonLoader',
@@ -112,7 +109,8 @@ export const GuidedTourSteps: GuidedTourStep[] = [
           scenes.
         </Content>
       </>
-    )
+    ),
+    spotlightSelector: '#skeleton-table'
   },
   {
     stepId: 'expandableComponents',
@@ -125,8 +123,10 @@ export const GuidedTourSteps: GuidedTourStep[] = [
           Notice how the hidden information smoothly fades and slides into place. Click again to collapse it and see the
           reverse animation.
         </Content>
+        <Content>Reduced-motion users will only see the fade, not the sliding motion.</Content>
       </>
-    )
+    ),
+    spotlightSelector: '#expand-toggle-1'
   },
   {
     stepId: 'validationErrors',
@@ -134,12 +134,14 @@ export const GuidedTourSteps: GuidedTourStep[] = [
     content: (
       <>
         <Content component="p">
-          Click the <strong>Submit</strong> button while fields are empty to trigger an error. Watch the input fields
-          jiggle from side to side, drawing your attention to issues that need fixing.
+          Click <strong>Submit</strong> while fields are empty to trigger an error. Watch the input fields jiggle from
+          side to side, drawing your attention to issues that need fixing.
         </Content>
         <Content component="p">Reduced-motion users will only see the fade, not the jiggle.</Content>
       </>
-    )
+    ),
+    spotlightSelector: '#create-database-submit',
+    spotlightResizeSelector: '#create-database-form'
     // },
     // {
     //   stepId: 'progressStepper',
@@ -260,8 +262,7 @@ const AnimationsPage: FunctionComponent = () => {
             </Content>
           ) : null}
           <Content component="p">
-            {`Click ${isMobile ? 'the settings button' : 'it'} to see the new ripple effect we've added to all buttons`}
-            .
+            {`Click ${isMobile ? 'the settings button' : 'it'} to see the new ripple effect we've added to all buttons.`}
           </Content>
         </>
       );
@@ -274,7 +275,7 @@ const AnimationsPage: FunctionComponent = () => {
             Click <strong>Add notification</strong>. Watch for a new notification to arrive.
           </Content>
           <Content component="p">
-            The bell icon "rings" with a subtle rotation to quickly catch your as a message comes in.
+            The bell icon "rings" with a subtle rotation to quickly catch your attention as a message comes in.
           </Content>
           <Content component="p">
             <Button variant="link" isInline onClick={() => addNotification(false)}>
@@ -505,7 +506,12 @@ const AnimationsPage: FunctionComponent = () => {
           ))}
         <Content component={ContentVariants.h1}>Resources</Content>
         <Content className="pf-v6-u-mb-md">Everything you need to know about your application</Content>
-        <Tabs activeKey={selectedTab} onSelect={(_e, key) => setSelectedTab(Number(key))} aria-label="Primary tabs">
+        <Tabs
+          id="tabs"
+          activeKey={selectedTab}
+          onSelect={(_e, key) => setSelectedTab(Number(key))}
+          aria-label="Primary tabs"
+        >
           <Tab eventKey={0} title={<TabTitleText>Overview</TabTitleText>} tabContentId="overview" />
           {renderTourStepElement(
             'tabs',
@@ -555,12 +561,8 @@ const AnimationsResourcesTable: FunctionComponent = () => {
   const { tourStep, renderTourStepElement } = useGuidedTour();
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
-    if (loading && tourStep?.stepId !== 'skeletonLoader') {
-      timer = setTimeout(() => setLoading(false), 2000);
-    } else if (!loading && tourStep?.stepId === 'skeletonLoader') {
-      setLoading(true);
-    }
+    const timer = setTimeout(() => setLoading(false), 2000);
+
     return () => {
       if (timer) {
         clearTimeout(timer);
@@ -587,13 +589,12 @@ const AnimationsResourcesTable: FunctionComponent = () => {
 
   return (
     <Card component="div">
-      {loading ? (
+      {loading || tourStep?.stepId === 'skeletonLoader' ? (
         <>
           {renderTourStepElement(
             'skeletonLoader',
-            <div content=" " style={{ width: 10, height: 10, position: 'absolute', left: 40, top: 75 }} />
+            <SkeletonTable id="skeleton-table" columns={['', ...expandableColumns]} rows={8} />
           )}
-          <SkeletonTable columns={['', ...expandableColumns]} rows={8} />
         </>
       ) : (
         <Table aria-label="Collapsible table" isExpandable hasAnimations>

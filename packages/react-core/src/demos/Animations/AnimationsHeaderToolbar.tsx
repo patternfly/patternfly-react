@@ -14,9 +14,7 @@ import {
   ToolbarContent
 } from '../..';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import { NotificationType } from './types';
 import { useGuidedTour } from './GuidedTourContext';
@@ -37,13 +35,10 @@ export const AnimationsHeaderToolbar: FunctionComponent<Props> = ({
   onEndGuidedTour
 }) => {
   const [isActionsMenuOpen, setIsActionsMenuOpen] = useState<boolean>(false);
-  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [shouldNotifyNewNotification, setShouldNotifyNewNotification] = useState(false);
   const { renderTourStepElement, tourStep } = useGuidedTour();
   const previousUnreadCountRef = useRef<number>(notifications.filter((n) => !n.isRead).length);
-
-  const onKebabDropdownSelect = () => setIsKebabDropdownOpen(false);
 
   const unreadNotificationCount = notifications.filter((n) => !n.isRead).length;
 
@@ -71,6 +66,7 @@ export const AnimationsHeaderToolbar: FunctionComponent<Props> = ({
               {renderTourStepElement(
                 'notificationBadge',
                 <NotificationBadge
+                  id="notification-badge"
                   variant={unreadNotificationCount === 0 ? 'read' : 'unread'}
                   onClick={() => setIsDrawerExpanded(!isDrawerExpanded)}
                   aria-label="Notifications"
@@ -85,6 +81,7 @@ export const AnimationsHeaderToolbar: FunctionComponent<Props> = ({
                 {renderTourStepElement(
                   'settingsButton',
                   <Button
+                    id="settings-button"
                     aria-label="Settings actions"
                     className="pf-m-settings"
                     variant={ButtonVariant.plain}
@@ -121,38 +118,6 @@ export const AnimationsHeaderToolbar: FunctionComponent<Props> = ({
             </ToolbarGroup>
           </ToolbarGroup>
           <ToolbarGroup>
-            <ToolbarItem
-              visibility={{
-                default: 'visible',
-                lg: 'hidden'
-              }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
-            >
-              <Dropdown
-                isOpen={isKebabDropdownOpen}
-                onSelect={onKebabDropdownSelect}
-                onOpenChange={setIsKebabDropdownOpen}
-                popperProps={{ position: 'right' }}
-                toggle={(toggleRef: RefObject<any>) => (
-                  <MenuToggle
-                    ref={toggleRef}
-                    isExpanded={isKebabDropdownOpen}
-                    onClick={() => setIsKebabDropdownOpen((prev) => !prev)}
-                    variant="plain"
-                    aria-label="Settings and help"
-                    icon={<EllipsisVIcon />}
-                  />
-                )}
-              >
-                <DropdownList>
-                  <DropdownItem>
-                    <CogIcon /> Settings
-                  </DropdownItem>
-                  <DropdownItem>
-                    <HelpIcon /> Help
-                  </DropdownItem>
-                </DropdownList>
-              </Dropdown>
-            </ToolbarItem>
             <ToolbarItem
               visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
             >

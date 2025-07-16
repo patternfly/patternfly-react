@@ -2,6 +2,7 @@ import { createContext, useContext, useCallback, useEffect, useState, useRef } f
 import { Button, ButtonVariant, debounce, Flex, FlexItem, getResizeObserver, Popover } from '../..';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { GuidedTourStep } from './types';
+import Spotlight from './Spotlight';
 
 interface GuidedTourContextType {
   onStart: () => void;
@@ -80,57 +81,62 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
         return child;
       }
       return (
-        <Popover
-          isVisible
-          showClose
-          maxWidth={isMobile ? undefined : '28rem'}
-          hideOnOutsideClick={false}
-          position={tourStep.position}
-          headerContent={
-            <>
-              {tourStep.header}
-              {
-                // Had to add a close button here rather than using the showClose property to include the close button
-                // Using the provided close button requires the 'shouldClose' property to handle the close click, but it also
-                // gets called on a triggerRef click which we don't want since we ask the user to click the button in order
-                // to see the animation. I don't see how to distinguish between the close button click and the triggerRef click.
-              }
-              <div className="pf-v6-c-popover__close">
-                <Button
-                  onClick={onFinish}
-                  variant="plain"
-                  aria-label="close guided tour"
-                  style={{ pointerEvents: 'auto' }}
-                  icon={<TimesIcon />}
-                />
-              </div>
-            </>
-          }
-          bodyContent={customStepContent || tourStep.content}
-          footerContent={
-            <Flex spaceItems={{ default: 'spaceItemsMd' }} justifyContent={{ default: 'justifyContentSpaceBetween' }}>
-              <FlexItem>
-                Step {currentStep + 1}/{steps.length}
-              </FlexItem>
-              <FlexItem>
-                <Flex spaceItems={{ default: 'spaceItemsMd' }}>
-                  <FlexItem>
-                    <Button variant={ButtonVariant.secondary} onClick={onPrevStep} isDisabled={currentStep === 0}>
-                      Back
-                    </Button>
-                  </FlexItem>
-                  <FlexItem>
-                    <Button variant={ButtonVariant.primary} onClick={onNextStep}>
-                      Next
-                    </Button>
-                  </FlexItem>
-                </Flex>
-              </FlexItem>
-            </Flex>
-          }
-        >
-          {child}
-        </Popover>
+        <>
+          {tourStep.spotlightSelector ? (
+            <Spotlight selector={tourStep.spotlightSelector} resizeSelector={tourStep.spotlightResizeSelector} />
+          ) : null}
+          <Popover
+            isVisible
+            showClose
+            maxWidth={isMobile ? undefined : '28rem'}
+            hideOnOutsideClick={false}
+            position={tourStep.position}
+            headerContent={
+              <>
+                {tourStep.header}
+                {
+                  // Had to add a close button here rather than using the showClose property to include the close button
+                  // Using the provided close button requires the 'shouldClose' property to handle the close click, but it also
+                  // gets called on a triggerRef click which we don't want since we ask the user to click the button in order
+                  // to see the animation. I don't see how to distinguish between the close button click and the triggerRef click.
+                }
+                <div className="pf-v6-c-popover__close">
+                  <Button
+                    onClick={onFinish}
+                    variant="plain"
+                    aria-label="close guided tour"
+                    style={{ pointerEvents: 'auto' }}
+                    icon={<TimesIcon />}
+                  />
+                </div>
+              </>
+            }
+            bodyContent={customStepContent || tourStep.content}
+            footerContent={
+              <Flex spaceItems={{ default: 'spaceItemsMd' }} justifyContent={{ default: 'justifyContentSpaceBetween' }}>
+                <FlexItem>
+                  Step {currentStep + 1}/{steps.length}
+                </FlexItem>
+                <FlexItem>
+                  <Flex spaceItems={{ default: 'spaceItemsMd' }}>
+                    <FlexItem>
+                      <Button variant={ButtonVariant.secondary} onClick={onPrevStep} isDisabled={currentStep === 0}>
+                        Back
+                      </Button>
+                    </FlexItem>
+                    <FlexItem>
+                      <Button variant={ButtonVariant.primary} onClick={onNextStep}>
+                        Next
+                      </Button>
+                    </FlexItem>
+                  </Flex>
+                </FlexItem>
+              </Flex>
+            }
+          >
+            {child}
+          </Popover>
+        </>
       );
     },
     [tourStep, currentStep, steps, onNextStep, onPrevStep, onFinish, customStepContent, isMobile]

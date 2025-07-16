@@ -15,14 +15,17 @@ export const AnimationsEndTourModal: FunctionComponent = () => {
     >
       <ModalHeader title="This concludes the tour" labelId="guided-tour-title" />
       <ModalBody id="guided-tour-description">
-        <Content component="p">Come back again to see the progress we've been making!</Content>
+        <Content component="p">You’ve reached the end of this tour. Thanks for exploring our new animations!</Content>
+        <Content component="p">
+          To take the tour again, click <strong>Restart</strong> or refresh this page.
+        </Content>
       </ModalBody>
       <ModalFooter>
         <Button key="end" variant="primary" onClick={onFinish}>
           End tour
         </Button>
         <Button key="restart" variant="link" onClick={onStart}>
-          Restart tour
+          Restart
         </Button>
       </ModalFooter>
     </Modal>

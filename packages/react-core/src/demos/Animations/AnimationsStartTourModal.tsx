@@ -17,7 +17,7 @@ export const AnimationsStartTourModal: FunctionComponent<Props> = ({ onClose }) 
     <ModalBody id="guided-tour-description">
       <Content component="p">
         Welcome! Many of our components now use motion to engage users, provide clear feedback, and improve usability.
-        Let's explore some of these new animations and see how they work in a real UI
+        Let's explore some of these new animations and see how they work in a real UI.
       </Content>
     </ModalBody>
     <ModalFooter>
