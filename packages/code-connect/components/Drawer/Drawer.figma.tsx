@@ -22,7 +22,7 @@ figma.connect(
     props: {
       // boolean
       isExpanded: true,
-      isSecondary: figma.enum('Background', {
+      colorVariant: figma.enum('Background', {
         Secondary: 'secondary',
         Primary: undefined
       }),
@@ -49,14 +49,13 @@ figma.connect(
         isInline={props.isInline}
         isStatic={false}
         position={props.position}
-        colorVariant={props.isSecondary}
         onExpand={() => {}}
       >
         <DrawerContent
           panelContent={
-            <DrawerPanelContent>
+            <DrawerPanelContent colorVariant={props.colorVariant}>
               <DrawerHead>
-                <span tabIndex={() => {}}>Drawer panel header</span>
+                <span tabIndex={1}>Drawer panel header</span>
                 <DrawerActions>
                   <DrawerCloseButton onClick={() => {}} />
                 </DrawerActions>
