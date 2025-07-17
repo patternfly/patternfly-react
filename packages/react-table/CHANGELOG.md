@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.3.0-prerelease.31...@patternfly/react-table@6.3.0-prerelease.32) (2025-07-17)
+
+### Bug Fixes
+
+- **Tables:** updated animations to beta ([#11927](https://github.com/patternfly/patternfly-react/issues/11927)) ([cca6678](https://github.com/patternfly/patternfly-react/commit/cca667858c24bb9d7cb39e0c781ff3c8466f7ef6))
+
 # [6.3.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.3.0-prerelease.30...@patternfly/react-table@6.3.0-prerelease.31) (2025-07-16)
 
 **Note:** Version bump only for package @patternfly/react-table
