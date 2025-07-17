@@ -85,7 +85,7 @@ export const TableNestedExpandable: React.FunctionComponent = () => {
         </Thead>
         {teams.map((team, rowIndex) => (
           <Tbody key={team.name} isExpanded={isTeamExpanded(team)}>
-            <Tr isExpanded={isTeamExpanded(team)}>
+            <Tr isContentExpanded={isTeamExpanded(team)}>
               <Td
                 expand={{
                   rowIndex,
@@ -104,7 +104,7 @@ export const TableNestedExpandable: React.FunctionComponent = () => {
                 </Button>
               </Td>
             </Tr>
-            <Tr isExpanded={isTeamExpanded(team)} isExpandable>
+            <Tr isExpanded={isTeamExpanded(team)}>
               <Td dataLabel={`Team ${team.name} description`} colSpan={6}>
                 <ExpandableRowContent>{team.description}</ExpandableRowContent>
               </Td>

@@ -59,7 +59,7 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   isStriped?: boolean;
   /** Flag indicating this table contains expandable rows. */
   isExpandable?: boolean;
-  /** Flag indicating whether expandable rows within the table have animations. Expandable rows cannot be dynamically rendered. This prop
+  /** @beta Flag indicating whether expandable rows within the table have animations. Expandable rows cannot be dynamically rendered. This prop
    * will be removed in the next breaking change, with the default behavior becoming animations always being enabled.
    */
   hasAnimations?: boolean;

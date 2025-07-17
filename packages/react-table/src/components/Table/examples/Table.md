@@ -200,9 +200,10 @@ Using an `OverflowMenu` in the actions column, allowing the actions to condense 
 
 To make a parent/child row pair expandable:
 
-1. Make the first cell in every row an expandable cell by passing `TdExpandType` object to the `expand` prop on the `Td`
-2. Wrap the content of each child row cell in `ExpandableRowContent`.
-3. Enclose each parent/child row pair in a `Tbody` component with an `isExpanded` prop.
+1. Pass `isExpandable` to `Table`.
+1. Make the first cell in every row an expandable cell by passing `TdExpandType` object to the `expand` prop on the `Td`.
+1. Wrap the content of each child row cell in `ExpandableRowContent`.
+1. Pass `isExpanded` to `Tbody` and the `Tr` containing expandable content, and pass `isContentExpanded` to the `Tr` that acts as the "control row".
 
 The `TdExpandType` expects an `OnCollapse` event handler that has the following signature:
 
@@ -226,9 +227,10 @@ Note: Table column widths will respond automatically when toggling expanded rows
 
 To make a parent/child row pair compound expandable:
 
-1. Pass a `TdCompoundExpandType` object to the `compoundExpand` prop on any `Td` that has an expandable child row
-2. Wrap the content of each child row cell in `ExpandableRowContent`.
-3. Each child `Tr` has an `isExpanded` prop.
+1. Pass `isExpandable` to `Table`.
+1. Pass a `TdCompoundExpandType` object to the `compoundExpand` prop on any `Td` that has an expandable child row.
+1. Wrap the content of each child row cell in `ExpandableRowContent`.
+1. Pass `isExpanded` to `Tbody` and the `Tr` containing expandable content, and pass `isContentExpanded` to the `Tr` that acts as the "control row".
 
 The `TdCompoundExpandType` expects an `OnExpand` event handler with the following signature
 

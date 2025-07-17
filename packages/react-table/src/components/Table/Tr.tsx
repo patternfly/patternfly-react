@@ -14,12 +14,14 @@ export interface TrProps extends Omit<React.HTMLProps<HTMLTableRowElement>, 'onR
   innerRef?: React.Ref<any>;
   /** Flag indicating the Tr is hidden */
   isHidden?: boolean;
-  /** Only applicable to Tr within the Tbody and determines if the expandable row content is expanded or not.
+  /** Flag indicating whether an "expandable" Tr is expanded or not. Only applicable to a Tr within a Tbody.
    * To prevent column widths from responding automatically when expandable rows are toggled, the width prop must also be passed into either the th or td component
    */
   isExpanded?: boolean;
-  /** Flag to indicate that a row is expandable. Only applicable to a tr that is intended to collapse or expand. */
-  isExpandable?: boolean;
+  /** Flag indicating that the "control row" Tr has an expandable sibling Tr that is expanded or not. Only applicable to
+   * a Tr within a Tbody, and should have the same value as an expandable Tr's isExpanded prop.
+   */
+  isContentExpanded?: boolean;
   /** Only applicable to Tr within the Tbody: Whether the row is editable */
   isEditable?: boolean;
   /** Flag which adds hover styles for the clickable table row */
@@ -48,7 +50,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   children,
   className,
   isExpanded,
-  isExpandable,
+  isContentExpanded,
   isEditable,
   isHidden = false,
   isClickable = false,
@@ -78,7 +80,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
     };
   }
 
-  const rowIsHidden = isHidden || (isExpanded !== undefined && !isExpanded && isExpandable);
+  const rowIsHidden = isHidden || (isExpanded !== undefined && !isExpanded);
 
   const { registerSelectableRow, hasAnimations } = useContext(TableContext);
 
@@ -99,10 +101,8 @@ const TrBase: React.FunctionComponent<TrProps> = ({
         className={css(
           styles.tableTr,
           className,
-          // TODO: Revert this back to just isExpandable !== undefined and refine docs around expandable table structure --
-          // We should note where isExpanded and isExpandable props must be passed in
-          (isExpandable !== undefined || isExpanded !== undefined) && styles.tableExpandableRow,
-          isExpanded && styles.modifiers.expanded,
+          isExpanded !== undefined && styles.tableExpandableRow,
+          (isExpanded || isContentExpanded) && styles.modifiers.expanded,
           isEditable && inlineStyles.modifiers.inlineEditable,
           isClickable && styles.modifiers.clickable,
           isRowSelected && styles.modifiers.selected,
