@@ -1,4 +1,4 @@
-import { createContext, useContext, useCallback, useEffect, useState, useRef } from 'react';
+import { createContext, useContext, useCallback, useEffect, useState, useRef, useMemo } from 'react';
 import { Button, ButtonVariant, debounce, Flex, FlexItem, getResizeObserver, Popover } from '../..';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { GuidedTourStep } from './types';
@@ -37,6 +37,11 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
 
   const isMobile = windowWidth < 500;
 
+  const tourSteps = useMemo(
+    () => steps.filter((step) => (isMobile ? !step.deskTopOnly : !step.mobileOnly)),
+    [steps, isMobile]
+  );
+
   useEffect(() => {
     setCurrentStep(undefined);
     setCustomStepContent(undefined);
@@ -72,8 +77,8 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
     });
   }, []);
 
-  const tourStep = currentStep !== undefined ? steps[currentStep] : undefined;
-  const isFinished = currentStep !== undefined ? currentStep >= steps.length : false;
+  const tourStep = currentStep !== undefined ? tourSteps[currentStep] : undefined;
+  const isFinished = currentStep !== undefined ? currentStep >= tourSteps.length : false;
 
   const renderTourStepElement = useCallback(
     (forStepId: string, child: React.ReactElement) => {
@@ -88,9 +93,12 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
           <Popover
             isVisible
             showClose
-            maxWidth={isMobile ? undefined : '28rem'}
+            maxWidth={
+              isMobile ? (tourStep.mobilePopoverWidth ?? tourStep.popoverWidth ?? '275px') : tourStep.popoverWidth
+            }
             hideOnOutsideClick={false}
             position={tourStep.position}
+            enableFlip={!tourStep.position}
             headerContent={
               <>
                 {tourStep.header}
@@ -115,7 +123,7 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
             footerContent={
               <Flex spaceItems={{ default: 'spaceItemsMd' }} justifyContent={{ default: 'justifyContentSpaceBetween' }}>
                 <FlexItem>
-                  Step {currentStep + 1}/{steps.length}
+                  Step {currentStep + 1}/{tourSteps.length}
                 </FlexItem>
                 <FlexItem>
                   <Flex spaceItems={{ default: 'spaceItemsMd' }}>
@@ -139,7 +147,7 @@ export const GuidedTourProvider: React.FC<{ steps: GuidedTourStep[]; children: R
         </>
       );
     },
-    [tourStep, currentStep, steps, onNextStep, onPrevStep, onFinish, customStepContent, isMobile]
+    [tourStep, currentStep, tourSteps, onNextStep, onPrevStep, onFinish, customStepContent, isMobile]
   );
 
   const measureRef = (ref: HTMLDivElement) => {

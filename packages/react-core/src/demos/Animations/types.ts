@@ -24,7 +24,24 @@ export interface GuidedTourStep {
   stepId: string;
   header: React.ReactNode;
   content: React.ReactNode;
-  position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  position?:
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
   spotlightSelector?: string;
   spotlightResizeSelector?: string;
+  deskTopOnly?: boolean;
+  mobileOnly?: boolean;
+  popoverWidth?: string;
+  mobilePopoverWidth?: string;
 }

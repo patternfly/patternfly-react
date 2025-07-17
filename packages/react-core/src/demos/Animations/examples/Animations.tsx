@@ -62,9 +62,19 @@ export const GuidedTourSteps: GuidedTourStep[] = [
   },
   {
     stepId: 'settingsButton',
+    position: 'bottom-end',
     header: <div>Buttons: Settings</div>,
     content: '===== This content is customized ======',
-    spotlightSelector: '#settings-button'
+    spotlightSelector: '#settings-button',
+    deskTopOnly: true
+  },
+  {
+    stepId: 'settingsButton',
+    position: 'bottom-end',
+    header: <div>Buttons: Settings</div>,
+    content: '===== This content is customized ======',
+    spotlightSelector: '#settings-button',
+    mobileOnly: true
   },
   {
     stepId: 'navToggle',
@@ -89,14 +99,16 @@ export const GuidedTourSteps: GuidedTourStep[] = [
   {
     stepId: 'tabs',
     header: <div>Tabs</div>,
-    position: 'top',
+    position: 'top-start',
     content: (
       <Content component="p">
         Click between the different tabs and watch how the active tab indicator smoothly slides to your selection,
         providing clear feedback on your location.
       </Content>
     ),
-    spotlightSelector: '#tabs'
+    spotlightSelector: '#tabs',
+    popoverWidth: '501px',
+    mobilePopoverWidth: '275px'
   },
   {
     stepId: 'skeletonLoader',
@@ -113,9 +125,10 @@ export const GuidedTourSteps: GuidedTourStep[] = [
     spotlightSelector: '#skeleton-table'
   },
   {
+    deskTopOnly: true,
     stepId: 'expandableComponents',
     header: <div>Expandable components</div>,
-    position: 'top',
+    position: 'top-start',
     content: (
       <>
         <Content component="p">Click to expand this hidden content section.</Content>
@@ -126,7 +139,26 @@ export const GuidedTourSteps: GuidedTourStep[] = [
         <Content>Reduced-motion users will only see the fade, not the sliding motion.</Content>
       </>
     ),
-    spotlightSelector: '#expand-toggle-1'
+    spotlightSelector: '#expand-toggle-1',
+    popoverWidth: '501px'
+  },
+  {
+    mobileOnly: true,
+    stepId: 'expandableComponentsMobile',
+    header: <div>Expandable components</div>,
+    position: 'top-end',
+    content: (
+      <>
+        <Content component="p">Click to expand this hidden content section.</Content>
+        <Content component="p">
+          Notice how the hidden information smoothly fades and slides into place. Click again to collapse it and see the
+          reverse animation.
+        </Content>
+        <Content>Reduced-motion users will only see the fade, not the sliding motion.</Content>
+      </>
+    ),
+    spotlightSelector: '#expand-toggle0',
+    spotlightResizeSelector: '#resources-table'
   },
   {
     stepId: 'validationErrors',
@@ -506,19 +538,19 @@ const AnimationsPage: FunctionComponent = () => {
           ))}
         <Content component={ContentVariants.h1}>Resources</Content>
         <Content className="pf-v6-u-mb-md">Everything you need to know about your application</Content>
-        <Tabs
-          id="tabs"
-          activeKey={selectedTab}
-          onSelect={(_e, key) => setSelectedTab(Number(key))}
-          aria-label="Primary tabs"
-        >
-          <Tab eventKey={0} title={<TabTitleText>Overview</TabTitleText>} tabContentId="overview" />
-          {renderTourStepElement(
-            'tabs',
+        {renderTourStepElement(
+          'tabs',
+          <Tabs
+            id="tabs"
+            activeKey={selectedTab}
+            onSelect={(_e, key) => setSelectedTab(Number(key))}
+            aria-label="Primary tabs"
+          >
+            <Tab eventKey={0} title={<TabTitleText>Overview</TabTitleText>} tabContentId="overview" />
             <Tab eventKey={1} title={<TabTitleText>Resources</TabTitleText>} tabContentId="resources" />
-          )}
-          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>} tabContentId="database" />
-        </Tabs>
+            <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>} tabContentId="database" />
+          </Tabs>
+        )}
       </PageSection>
       {selectedTab === 0 && <AnimationsOverview />}
 
@@ -593,64 +625,90 @@ const AnimationsResourcesTable: FunctionComponent = () => {
         <>
           {renderTourStepElement(
             'skeletonLoader',
-            <SkeletonTable id="skeleton-table" columns={['', ...expandableColumns]} rows={8} />
+            <SkeletonTable
+              id="skeleton-table"
+              columns={[
+                { cell: '', props: { name: 'expand', 'aria-label': 'expand' } },
+                ...expandableColumns.map((col) => ({ cell: col, props: { name: col, 'aria-label': col } }))
+              ]}
+              rows={8}
+            />
           )}
         </>
       ) : (
-        <Table aria-label="Collapsible table" isExpandable hasAnimations>
-          <Thead>
-            {renderTourStepElement(
-              'expandableComponents',
-              <div content=" " style={{ width: 10, height: 10, position: 'absolute', left: 40, top: 20 }} />
-            )}
-            <Tr>
-              <Th
-                expand={{
-                  areAllExpanded: !areAllExpanded,
-                  collapseAllAriaLabel,
-                  onToggle: onCollapseAll
-                }}
-                aria-label="Row expansion"
-              />
-              {expandableColumns.map((column) => (
-                <Th key={column}>{column}</Th>
-              ))}
-            </Tr>
-          </Thead>
-
-          {applicationsData.map((app, idx) => (
-            <Tbody key={app.name} isExpanded={isAppExpanded(app)}>
-              <Tr isExpanded={isAppExpanded(app)}>
-                <Td
-                  expand={
-                    app.details
-                      ? {
-                          rowIndex: idx,
-                          isExpanded: isAppExpanded(app),
-                          onToggle: () => setAppExpanded(app, !isAppExpanded(app))
-                        }
-                      : undefined
-                  }
+        renderTourStepElement(
+          'expandableComponents',
+          <Table id="resources-table" aria-label="Collapsible table" isExpandable hasAnimations>
+            <Thead>
+              <Tr>
+                <Th
+                  expand={{
+                    areAllExpanded: !areAllExpanded,
+                    collapseAllAriaLabel,
+                    onToggle: onCollapseAll
+                  }}
+                  aria-label="Row expansion"
+                  name="expand"
                 />
-                <Td>{app.name}</Td>
-                <Td>{app.header}</Td>
-                <Td>{app.branch}</Td>
-                <Td>
-                  {app.status === 'Running' && <Label status="success">Running</Label>}
-                  {app.status === 'Degraded' && <Label status="warning">Degraded</Label>}
-                  {app.status === 'Stopped' && <Label status="danger">Stopped</Label>}
-                  {app.status !== 'Running' && app.status !== 'Degraded' && app.status !== 'Stopped' && app.status}
-                </Td>
+                {expandableColumns.map((column) => (
+                  <Th key={column} name={column}>
+                    {column}
+                  </Th>
+                ))}
               </Tr>
-              <Tr isExpandable isExpanded={isAppExpanded(app)}>
-                <Td />
-                <Td colSpan={expandableColumns.length}>
-                  <ExpandableRowContent>{app.details}</ExpandableRowContent>
-                </Td>
-              </Tr>
-            </Tbody>
-          ))}
-        </Table>
+            </Thead>
+
+            {applicationsData.map((app, idx) => (
+              <Tbody key={app.name} isExpanded={isAppExpanded(app)}>
+                <Tr isExpanded={isAppExpanded(app)}>
+                  {idx === 0 ? (
+                    renderTourStepElement(
+                      'expandableComponentsMobile',
+                      <Td
+                        expand={
+                          app.details
+                            ? {
+                                rowIndex: idx,
+                                isExpanded: isAppExpanded(app),
+                                onToggle: () => setAppExpanded(app, !isAppExpanded(app))
+                              }
+                            : undefined
+                        }
+                      />
+                    )
+                  ) : (
+                    <Td
+                      expand={
+                        app.details
+                          ? {
+                              rowIndex: idx,
+                              isExpanded: isAppExpanded(app),
+                              onToggle: () => setAppExpanded(app, !isAppExpanded(app))
+                            }
+                          : undefined
+                      }
+                    />
+                  )}
+                  <Td>{app.name}</Td>
+                  <Td>{app.header}</Td>
+                  <Td>{app.branch}</Td>
+                  <Td>
+                    {app.status === 'Running' && <Label status="success">Running</Label>}
+                    {app.status === 'Degraded' && <Label status="warning">Degraded</Label>}
+                    {app.status === 'Stopped' && <Label status="danger">Stopped</Label>}
+                    {app.status !== 'Running' && app.status !== 'Degraded' && app.status !== 'Stopped' && app.status}
+                  </Td>
+                </Tr>
+                <Tr isExpandable isExpanded={isAppExpanded(app)}>
+                  <Td />
+                  <Td colSpan={expandableColumns.length}>
+                    <ExpandableRowContent>{app.details}</ExpandableRowContent>
+                  </Td>
+                </Tr>
+              </Tbody>
+            ))}
+          </Table>
+        )
       )}
     </Card>
   );
