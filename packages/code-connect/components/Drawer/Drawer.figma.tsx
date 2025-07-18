@@ -52,8 +52,9 @@ figma.connect(
         onExpand={() => {}}
       >
         <DrawerContent
+          colorVariant={props.colorVariant}
           panelContent={
-            <DrawerPanelContent colorVariant={props.colorVariant}>
+            <DrawerPanelContent>
               <DrawerHead>
                 <span tabIndex={1}>Drawer panel header</span>
                 <DrawerActions>
