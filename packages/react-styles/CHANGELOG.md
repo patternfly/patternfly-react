@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.3.0-prerelease.12...@patternfly/react-styles@6.3.0-prerelease.13) (2025-07-18)
+
+### Bug Fixes
+
+- **Button:** Bump core version to fix button animation ([#11928](https://github.com/patternfly/patternfly-react/issues/11928)) ([dc6e358](https://github.com/patternfly/patternfly-react/commit/dc6e358e8b9cd81f9be0a1a21d4fc0cae4ca21d8))
+
 # [6.3.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.3.0-prerelease.11...@patternfly/react-styles@6.3.0-prerelease.12) (2025-07-17)
 
 ### Bug Fixes

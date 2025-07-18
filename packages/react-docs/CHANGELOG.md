@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.3.0-prerelease.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.39...@patternfly/react-docs@7.3.0-prerelease.40) (2025-07-18)
+
+### Bug Fixes
+
+- **Button:** Bump core version to fix button animation ([#11928](https://github.com/patternfly/patternfly-react/issues/11928)) ([dc6e358](https://github.com/patternfly/patternfly-react/commit/dc6e358e8b9cd81f9be0a1a21d4fc0cae4ca21d8))
+
 # [7.3.0-prerelease.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.38...@patternfly/react-docs@7.3.0-prerelease.39) (2025-07-17)
 
 ### Bug Fixes
