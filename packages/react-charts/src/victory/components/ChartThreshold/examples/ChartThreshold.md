@@ -25,6 +25,7 @@ import {
 import { getResizeObserver } from '@patternfly/react-core';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
+import { useEffect, useRef, useState } from 'react';
 
 
 ## Introduction
@@ -35,146 +36,8 @@ The examples below are based on the [Victory](https://formidable.com/open-source
 
 ## Examples
 ### Multi-color (unordered) with responsive container
-```js
-import {
-  Chart,
-  ChartArea,
-  ChartAxis,
-  ChartLegend,
-  ChartGroup,
-  ChartThreshold,
-  ChartThemeColor,
-  ChartVoronoiContainer
-} from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
-import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
+```ts file = "ChartThresholdMultiColorOrdered.tsx"
 
-class MultiColorChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = createRef();
-    this.observer = () => {};
-    this.state = {
-      width: 0
-    };
-    this.handleResize = () => {
-      if (this.containerRef.current && this.containerRef.current.clientWidth) {
-        this.setState({ width: this.containerRef.current.clientWidth });
-      }
-    };
-  }
-
-  componentDidMount() {
-    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
-    this.handleResize();
-  }
-
-  componentWillUnmount() {
-    this.observer();
-  }
-
-  render() {
-    const { width } = this.state;
-    const itemsPerRow = width > 650 ? 4 : 2;
-
-    return (
-      <div ref={this.containerRef}>
-        <div style={{ height: '250px' }}>
-          <Chart
-            ariaDesc="Average number of pets"
-            ariaTitle="Area chart example"
-            containerComponent={
-              <ChartVoronoiContainer
-                labels={({ datum }) => `${datum.name}: ${datum.y}`}
-                constrainToVisibleArea
-              />
-            }
-            legendPosition="bottom-left"
-            legendComponent={
-              <ChartLegend
-                data={[
-                  { name: 'Cats' },
-                  { name: 'Birds' },
-                  {
-                    name: 'Cats Threshold',
-                    symbol: { fill: chart_color_blue_300.var, type: 'threshold' }
-                  },
-                  {
-                    name: 'Birds Threshold',
-                    symbol: { fill: chart_color_orange_300.var, type: 'threshold' }
-                  }
-                ]}
-                itemsPerRow={itemsPerRow}
-              />
-            }
-            height={250}
-            padding={{
-              bottom: 100, // Adjusted to accomodate legend
-              left: 50,
-              right: 50,
-              top: 50
-            }}
-            maxDomain={{ y: 9 }}
-            name="chart1"
-            themeColor={ChartThemeColor.multiUnordered}
-            width={width}
-          >
-            <ChartAxis />
-            <ChartAxis dependentAxis showGrid />
-            <ChartGroup>
-              <ChartArea
-                data={[
-                  { name: 'Cats', x: 1, y: 3 },
-                  { name: 'Cats', x: 2, y: 4 },
-                  { name: 'Cats', x: 3, y: 8 },
-                  { name: 'Cats', x: 4, y: 6 }
-                ]}
-                interpolation="monotoneX"
-              />
-              <ChartArea
-                data={[
-                  { name: 'Birds', x: 1, y: 2 },
-                  { name: 'Birds', x: 2, y: 3 },
-                  { name: 'Birds', x: 3, y: 4 },
-                  { name: 'Birds', x: 4, y: 5 },
-                  { name: 'Birds', x: 5, y: 6 }
-                ]}
-                interpolation="monotoneX"
-              />
-            </ChartGroup>
-            <ChartThreshold
-              data={[
-                { name: 'Cats Threshold', x: 0, y: 4 },
-                { name: 'Cats Threshold', x: 3, y: 4 },
-                { name: 'Cats Threshold', x: 3, y: 6 },
-                { name: 'Cats Threshold', x: 5, y: 6 }
-              ]}
-              style={{
-                data: {
-                  stroke: chart_color_blue_300.var
-                }
-              }}
-            />
-            <ChartThreshold
-              data={[
-                { name: 'Birds Threshold', x: 0, y: 2 },
-                { name: 'Birds Threshold', x: 2, y: 2 },
-                { name: 'Birds Threshold', x: 2, y: 3 },
-                { name: 'Birds Threshold', x: 5, y: 3 }
-              ]}
-              style={{
-                data: {
-                  stroke: chart_color_orange_300.var
-                }
-              }}
-            />
-          </Chart>
-        </div>
-      </div>
-    );
-  }
-}
 ```
 
 ## Documentation
