@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot with children 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="pf-v6-c-table__td"
+          tabindex="-1"
+        >
+          Cell content
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`Matches snapshot without children 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="pf-v6-c-table__td"
+          tabindex="-1"
+        />
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
