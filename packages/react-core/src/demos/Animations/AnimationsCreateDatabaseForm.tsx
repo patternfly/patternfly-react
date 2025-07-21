@@ -8,8 +8,6 @@ import {
   FormHelperText,
   FormAlert,
   FormGroupLabelHelp,
-  FormSelect,
-  FormSelectOption,
   HelperText,
   HelperTextItem,
   TextInput,
@@ -26,8 +24,6 @@ export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose
   // State variables
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [version, setVersion] = useState('');
-  const [selectedTimeZone, setSelectedTimeZone] = useState('');
   const [password, setPassword] = useState('');
   // Submit state variables
   const [isSuccess, setIsSuccess] = useState(false);
@@ -43,7 +39,6 @@ export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose
   const [isNameValid, setIsNameValid] = useState('default');
   const [isPasswordValid, setIsPasswordValid] = useState('default');
   const [isEmailValid, setIsEmailValid] = useState('default');
-  const [isTimeZoneValid, setIsTimeZoneValid] = useState('default');
 
   const handleNameChange = (_event: React.FormEvent<HTMLInputElement>, name: string) => {
     setName(name);
@@ -53,22 +48,13 @@ export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose
     setEmail(email);
   };
 
-  const handleVersionChange = (_event: React.FormEvent<HTMLInputElement>, version: string) => {
-    setVersion(version);
-  };
-
   const handlePasswordChange = (_event: React.FormEvent<HTMLInputElement>, password: string) => {
     setPassword(password);
-  };
-
-  const handleTimeZoneChange = (event: React.FormEvent<HTMLSelectElement>, value: string) => {
-    setSelectedTimeZone(value);
   };
 
   const validateName = (value: string) => /^[a-z0-9-]+$/.test(value) && value.length > 0;
   const validatePassword = (value: string) => value.length >= 12 && /[0-9]/.test(value) && /[A-Z]/.test(value);
   const validateEmail = (value: string) => value.includes('@');
-  const validateTimeZone = (value: string) => value !== '';
 
   const handleNameBlur = () => {
     setIsNameValid(validateName(name) ? 'success' : 'error');
@@ -82,23 +68,16 @@ export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose
     setIsEmailValid(validateEmail(email) ? 'success' : 'error');
   };
 
-  const handleTimeZoneBlur = () => {
-    setIsTimeZoneValid(validateTimeZone(selectedTimeZone) ? 'success' : 'error');
-  };
-
   const handleSubmit = () => {
     const isNameCurrentValid = validateName(name);
     const isPasswordCurrentValid = validatePassword(password);
     const isEmailCurrentValid = validateEmail(email);
-    const isTimeZoneCurrentValid = validateTimeZone(selectedTimeZone);
 
     setIsNameValid(isNameCurrentValid ? 'success' : 'error');
     setIsPasswordValid(isPasswordCurrentValid ? 'success' : 'error');
     setIsEmailValid(isEmailCurrentValid ? 'success' : 'error');
-    setIsTimeZoneValid(isTimeZoneCurrentValid ? 'success' : 'error');
 
-    const allFieldsValid =
-      isNameCurrentValid && isPasswordCurrentValid && isEmailCurrentValid && isTimeZoneCurrentValid;
+    const allFieldsValid = isNameCurrentValid && isPasswordCurrentValid && isEmailCurrentValid;
 
     setActionCompleted(true);
     setIsSuccess(allFieldsValid);
@@ -108,7 +87,6 @@ export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose
     setIsNameValid('default');
     setIsPasswordValid('default');
     setIsEmailValid('default');
-    setIsTimeZoneValid('default');
   };
 
   return renderTourStepElement(
@@ -186,38 +164,6 @@ export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose
               <HelperTextItem variant={isEmailValid as validationStatus}>
                 Must be a valid email address containing an @ symbol.
               </HelperTextItem>
-            </HelperText>
-          </FormHelperText>
-        )}
-      </FormGroup>
-      <FormGroup label="Database version" fieldId="simple-form-version-01">
-        <TextInput
-          type="text"
-          id="simple-form-version-01"
-          name="simple-form-version-01"
-          placeholder="e.g. 12c"
-          value={version}
-          onChange={handleVersionChange}
-        />
-      </FormGroup>
-      <FormGroup isRequired label="Time zone" fieldId="timezone-select">
-        <FormSelect
-          id="timezone-select"
-          value={selectedTimeZone}
-          onChange={handleTimeZoneChange}
-          aria-label="Select time zone"
-          onBlur={handleTimeZoneBlur}
-          validated={isTimeZoneValid as validationStatus}
-        >
-          <FormSelectOption isPlaceholder value="" label="Select a time zone" />
-          <FormSelectOption value="Eastern" label="Eastern" />
-          <FormSelectOption value="Central" label="Central" />
-          <FormSelectOption value="Pacific" label="Pacific" />
-        </FormSelect>
-        {isTimeZoneValid === 'error' && (
-          <FormHelperText>
-            <HelperText>
-              <HelperTextItem variant={isTimeZoneValid as validationStatus}>Please select a time zone</HelperTextItem>
             </HelperText>
           </FormHelperText>
         )}

@@ -32,6 +32,16 @@ import { AnimationsStartTourModal } from '@patternfly/react-core/dist/esm/demos/
 import { AnimationsEndTourModal } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsEndTourModal';
 import { AnimationsCreateDatabaseForm } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsCreateDatabaseForm';
 import { GuidedTourProvider, useGuidedTour } from '@patternfly/react-core/dist/esm/demos/Animations/GuidedTourContext';
+import BoltIcon from '@patternfly/react-icons/dist/esm/icons/bolt-icon';
+import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
+import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import InfoIcon from '@patternfly/react-icons/dist/esm/icons/info-icon';
+import ResourcesFullIcon from '@patternfly/react-icons/dist/esm/icons/resources-full-icon';
+import openshiftLogo from '../assets/Summit-collage-depoying-openshift-product-icon-RH.png'
+
+
+
 
 ## Demos
 

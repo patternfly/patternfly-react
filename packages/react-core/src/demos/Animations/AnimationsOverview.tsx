@@ -1,4 +1,4 @@
-import { Fragment, FunctionComponent } from 'react';
+import { Fragment, FunctionComponent, useState } from 'react';
 import {
   Button,
   Content,
@@ -15,148 +15,107 @@ import {
   Divider,
   Grid,
   GridItem,
-  Icon,
-  Label,
   PageSection,
   Title
 } from '../..';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
-import PowerOffIcon from '@patternfly/react-icons/dist/esm/icons/power-off-icon';
-import PortIcon from '@patternfly/react-icons/dist/esm/icons/port-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import AutomationIcon from '@patternfly/react-icons/dist/esm/icons/automation-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import MultiContentCard from '@patternfly/react-component-groups/dist/dynamic/MultiContentCard';
-import AnimationsOverviewCardStatus from './AnimationsOverviewCardStatus';
-import AnimationsOverviewEventsCard from './AnimationsOverviewEventsCard';
+import AnimationsOverviewClusterInventory from './AnimationsOverviewClusterInventory';
+import AnimationsOverviewNetworkActivity from './AnimationsOverviewNetworkActivity';
+import AnimationsOverviewStorage from './AnimationsOverviewStorage';
+import AnimationsOverviewMemoryUtilization from './AnimationsOverviewMemoryUtilization';
+import openshiftLogo from './assets/Summit-collage-depoying-openshift-product-icon-RH.png';
 
-export const AnimationsOverview: FunctionComponent = () => {
+interface AnimationsOverviewProps {
+  recentActivityCard?: React.ReactNode;
+}
+
+export const AnimationsOverview: FunctionComponent<AnimationsOverviewProps> = ({ recentActivityCard }) => {
+  const [displayMultiContentCard, setDisplayMultiContentCard] = useState(true);
+
+  const handleCloseMultiContentCard = () => {
+    setDisplayMultiContentCard(false);
+  };
+
   const cards = [
     // Card 1: Performance
     <Card isFullHeight isPlain key="card-1">
       <CardHeader>
-        <Content>
-          <Label variant="outline" color="blue" icon={<PortIcon />}>
-            Performance
-          </Label>
-        </Content>
+        <Content component={ContentVariants.h3}>Animations</Content>
       </CardHeader>
       <CardBody>
         <Content component={ContentVariants.p} className="pf-v6-u-mb-sm">
-          Upgrade your kernel version to remediate ntpd time sync issues, kernel panics, network instabilities and
-          issues with system performance
-        </Content>
-        <Content className="pf-v6-u-mb-md">
-          <a href="#">378 systems</a>
-        </Content>
-        <Content className="pf-v6-u-mb-md">
-          <Label status="danger" variant="outline">
-            Incident
-          </Label>
-        </Content>
-        <Content className="pf-v6-u-mb-md">
-          <Icon size="md" isInline>
-            <PowerOffIcon />
-          </Icon>
-          <span>
-            {' '}
-            System reboot <b>is not</b> required
-          </span>
+          Animations are a new way to interact with your data. They are a way to visualize your data in a way that is
+          easy to understand and use.
         </Content>
       </CardBody>
       <CardFooter>
         <Button variant="link" icon={<ArrowRightIcon />} iconPosition="end" isInline>
-          View pathway
+          They're everywhere
         </Button>
       </CardFooter>
     </Card>,
     // Card 2: Stability
     <Card isFullHeight isPlain key="card-2">
       <CardHeader>
-        <Content>
-          <Label variant="outline" color="blue" icon={<CubeIcon />}>
-            Stability
-          </Label>
-        </Content>
+        <Content component={ContentVariants.h3}>Network security</Content>
       </CardHeader>
       <CardBody>
         <Content component={ContentVariants.p} className="pf-v6-u-mb-sm">
-          Adjust your networking configuration to get ahead of network performance degradations and packet losses.
-        </Content>
-        <Content className="pf-v6-u-mb-md">
-          <a href="#">211 systems</a>
-        </Content>
-        <Content className="pf-v6-u-mb-md">
-          <Label status="danger" variant="outline">
-            Incident
-          </Label>
-        </Content>
-        <Content className="pf-v6-u-mb-md">
-          <Icon size="md" isInline>
-            <PowerOffIcon />
-          </Icon>
-          <span>
-            {' '}
-            System reboot <b>is</b> required
-          </span>
+          Network security is a critical part of any organization's security posture.
         </Content>
       </CardBody>
       <CardFooter>
         <Button variant="link" icon={<ArrowRightIcon />} iconPosition="end" isInline>
-          View pathway
+          Security updates
         </Button>
       </CardFooter>
     </Card>,
     // Card 3: Availability
     <Card isFullHeight isPlain key="card-3">
       <CardHeader>
-        <Content>
-          <Label variant="outline" color="blue" icon={<AutomationIcon />}>
-            Availability
-          </Label>
-        </Content>
+        <Content component={ContentVariants.h3}>Cluster alerting</Content>
       </CardHeader>
       <CardBody>
         <Content component={ContentVariants.p} className="pf-v6-u-mb-sm">
-          Fine tune your Oracle DB configuration to improve database performance and avoid process failure
-        </Content>
-        <Content className="pf-v6-u-mb-md">
-          <a href="#">166 systems</a>
-        </Content>
-        <Content className="pf-v6-u-mb-md">
-          <Label status="danger" variant="outline">
-            Incident
-          </Label>
-        </Content>
-        <Content className="pf-v6-u-mb-md">
-          <Icon size="md" isInline>
-            <PowerOffIcon />
-          </Icon>
-          <span>
-            {' '}
-            System reboot <b>is not</b> required
-          </span>
+          Cluster alerting is a critical part of any organization's security posture.
         </Content>
       </CardBody>
       <CardFooter>
         <Button variant="link" icon={<ArrowRightIcon />} iconPosition="end" isInline>
-          View pathway
+          View logs
         </Button>
       </CardFooter>
+    </Card>,
+    // Card 4: Image
+    <Card isFullHeight isPlain key="card-4">
+      <CardBody>
+        <img src={openshiftLogo} alt="OpenShift Logo" />
+      </CardBody>
     </Card>
   ];
 
   return (
     <Fragment>
-      <PageSection id="overview">
-        <MultiContentCard isExpandable={true} cards={cards} toggleText="Improve recommended pathways" />
-      </PageSection>
+      {displayMultiContentCard && (
+        <PageSection id="overview">
+          <MultiContentCard
+            isExpandable={true}
+            withDividers
+            cards={cards}
+            toggleText="What's new in OpenShift?"
+            actions={<Button icon={<TimesIcon />} variant="plain" onClick={handleCloseMultiContentCard} />}
+          />
+        </PageSection>
+      )}
       <PageSection aria-label="Detail status events">
-        <Grid hasGutter xl2={4}>
-          <GridItem>
-            <Card>
+        <Grid hasGutter>
+          <GridItem span={3} rowSpan={4}>
+            <Card isFullHeight>
               <CardTitle>
                 <Title headingLevel="h4" size="xl">
-                  Details
+                  Cluster Details
                 </Title>
               </CardTitle>
               <CardBody>
@@ -191,12 +150,23 @@ export const AnimationsOverview: FunctionComponent = () => {
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem>
-            <AnimationsOverviewCardStatus />
+          <GridItem span={3} rowSpan={2}>
+            <AnimationsOverviewClusterInventory />
           </GridItem>
-          <GridItem>
-            <AnimationsOverviewEventsCard />
+          <GridItem span={2} rowSpan={2}>
+            <AnimationsOverviewStorage />
           </GridItem>
+          <GridItem span={4} rowSpan={2}>
+            <AnimationsOverviewMemoryUtilization />
+          </GridItem>
+          <GridItem span={4} rowSpan={2}>
+            <AnimationsOverviewNetworkActivity />
+          </GridItem>
+          {recentActivityCard && (
+            <GridItem span={5} rowSpan={2}>
+              {recentActivityCard}
+            </GridItem>
+          )}
         </Grid>
       </PageSection>
     </Fragment>
