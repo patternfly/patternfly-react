@@ -3,10 +3,14 @@ import {
   AlertGroup,
   Alert,
   AlertVariant,
+  AlertActionCloseButton,
   Brand,
   Button,
   Content,
   Card,
+  CardBody,
+  CardHeader,
+  CardTitle,
   ContentVariants,
   debounce,
   EmptyState,
@@ -33,11 +37,24 @@ import {
   SkipToContent,
   Tabs,
   Tab,
-  TabTitleText
+  TabTitleText,
+  Dropdown,
+  DropdownList,
+  DropdownItem,
+  MenuToggle,
+  Flex,
+  ProgressStepper,
+  ProgressStep,
+  Spinner
 } from '@patternfly/react-core';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import SkeletonTable from '@patternfly/react-component-groups/dist/dynamic/SkeletonTable';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import BoltIcon from '@patternfly/react-icons/dist/esm/icons/bolt-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import ResourcesFullIcon from '@patternfly/react-icons/dist/esm/icons/resources-full-icon';
 // @ts-ignore
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.PF-HorizontalLogo-Color.svg';
 import { Application, GuidedTourStep, NotificationType } from '../types';
@@ -49,6 +66,13 @@ import { AnimationsHeaderToolbar } from '../../../../dist/esm/demos/Animations/A
 import { AnimationsStartTourModal } from '../../../../dist/esm/demos/Animations/AnimationsStartTourModal';
 import { AnimationsEndTourModal } from '../../../../dist/esm/demos/Animations/AnimationsEndTourModal';
 import { applicationsData } from './ResourceTableData';
+import openshiftLogo from '../../assets/Summit-collage-depoying-openshift-product-icon-RH.png';
+import emptyStateLogo from '../../assets/Summit-collage-hybrid-cloud-dark-RH.png';
+
+// Simple component to wrap the empty state logo
+const EmptyStateLogoIcon: React.FunctionComponent = () => (
+  <img src={emptyStateLogo} alt="Empty state" style={{ width: '200px', height: '200px' }} />
+);
 
 const mainContainerPageId = 'main-content-page-layout-default-nav';
 const expandableColumns = ['Applications', 'Server', 'Branch', 'Status'];
@@ -125,7 +149,6 @@ export const GuidedTourSteps: GuidedTourStep[] = [
     spotlightSelector: '#skeleton-table'
   },
   {
-    deskTopOnly: true,
     stepId: 'expandableComponents',
     header: <div>Expandable components</div>,
     position: 'top-start',
@@ -141,24 +164,6 @@ export const GuidedTourSteps: GuidedTourStep[] = [
     ),
     spotlightSelector: '#expand-toggle-1',
     popoverWidth: '501px'
-  },
-  {
-    mobileOnly: true,
-    stepId: 'expandableComponentsMobile',
-    header: <div>Expandable components</div>,
-    position: 'top-end',
-    content: (
-      <>
-        <Content component="p">Click to expand this hidden content section.</Content>
-        <Content component="p">
-          Notice how the hidden information smoothly fades and slides into place. Click again to collapse it and see the
-          reverse animation.
-        </Content>
-        <Content>Reduced-motion users will only see the fade, not the sliding motion.</Content>
-      </>
-    ),
-    spotlightSelector: '#expand-toggle0',
-    spotlightResizeSelector: '#resources-table'
   },
   {
     stepId: 'validationErrors',
@@ -245,10 +250,136 @@ const AnimationsPage: FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState<number | string>(0);
   const [activeGroup, setActiveGroup] = useState<string | null>(null);
   const { onStart, onFinish, renderTourStepElement, setCustomStepContent, tourStep, isFinished } = useGuidedTour();
-  const [windowWidth, setWindowWidth] = useState<number>();
+  const [windowWidth, setWindowWidth] = useState<number>(1200);
   const unObserver = useRef(null);
 
   const isMobile = windowWidth < 500;
+
+  // HERE
+  const [openKebabIndex, setOpenKebabIndex] = useState<number>(-1);
+
+  interface Activity {
+    id: number;
+    name: string;
+    project: string;
+    // Each step is represented by its variant
+    progress: ('success' | 'info' | 'pending' | 'warning' | 'danger' | 'default')[];
+  }
+
+  // Data for the table rows
+  const activityData: Activity[] = [
+    { id: 1, name: 'my-pod-name', project: 'project-test', progress: ['success', 'success', 'success'] },
+    { id: 2, name: 'my-pod-name', project: 'project-test', progress: ['success', 'pending', 'default'] },
+    { id: 3, name: 'my-pod-name', project: 'project-test', progress: ['success', 'success', 'danger'] },
+    { id: 4, name: 'my-pod-name', project: 'project-test', progress: ['success', 'warning', 'pending'] }
+  ];
+
+  const dropdownItems = [
+    <DropdownItem key="action1">View details</DropdownItem>,
+    <DropdownItem key="action2">Monitor activity</DropdownItem>,
+    <DropdownItem key="action3">Delete</DropdownItem>
+  ];
+
+  // A function to create a kebab toggle for a specific row index
+  const kebabToggle = (index) => (toggleRef: React.Ref<any>) => (
+    <MenuToggle
+      ref={toggleRef}
+      variant="plain"
+      onClick={() => setOpenKebabIndex(openKebabIndex === index ? -1 : index)}
+      isExpanded={openKebabIndex === index}
+      aria-label={`Kebab menu for row ${index}`}
+    >
+      <EllipsisVIcon />
+    </MenuToggle>
+  );
+
+  const iconMap = {
+    success: <CheckCircleIcon />,
+    info: <ResourcesFullIcon />,
+    pending: <Spinner isInline />,
+    danger: <ExclamationCircleIcon />,
+    warning: <ExclamationTriangleIcon />
+  };
+
+  const recentActivityCard = (
+    <Card component="div">
+      <CardHeader
+        actions={{
+          actions: (
+            <Dropdown
+              isOpen={openKebabIndex === -2} // Use a unique index for the header kebab
+              onSelect={() => setOpenKebabIndex(-1)}
+              onOpenChange={(isOpen: boolean) => !isOpen && setOpenKebabIndex(-1)}
+              toggle={kebabToggle(-2)}
+              popperProps={{ position: 'right' }}
+            >
+              <DropdownList>{dropdownItems}</DropdownList>
+            </Dropdown>
+          ),
+          hasNoOffset: false,
+          className: ''
+        }}
+      >
+        <CardTitle>
+          <Flex alignItems={{ default: 'alignItemsCenter' }}>
+            <BoltIcon />
+            <span>Recent activity</span>
+          </Flex>
+        </CardTitle>
+      </CardHeader>
+      <CardBody>
+        <Table aria-label="Recent activity table" variant="compact">
+          <Thead>
+            <Tr>
+              <Th width={30}>Name</Th>
+              <Th width={30}>Project</Th>
+              <Th width={30}>Progress</Th>
+              <Th width={10} />
+            </Tr>
+          </Thead>
+          <Tbody>
+            {activityData.map((activity, rowIndex) => (
+              <Tr key={activity.id}>
+                <Td>
+                  <Button variant="link" isInline component="a" href="#">
+                    {activity.name}
+                  </Button>
+                </Td>
+                <Td>
+                  <Button variant="link" isInline component="a" href="#">
+                    {activity.project}
+                  </Button>
+                </Td>
+                <Td>
+                  <ProgressStepper isCompact>
+                    {activity.progress.map((stepVariant, stepIndex) => (
+                      <ProgressStep
+                        key={stepIndex}
+                        variant={stepVariant}
+                        icon={iconMap[stepVariant]}
+                        aria-label={`Step ${stepIndex + 1} is ${stepVariant}`}
+                      />
+                    ))}
+                  </ProgressStepper>
+                </Td>
+                <Td isActionCell>
+                  <Dropdown
+                    isOpen={openKebabIndex === rowIndex}
+                    onSelect={() => setOpenKebabIndex(-1)}
+                    onOpenChange={(isOpen: boolean) => !isOpen && setOpenKebabIndex(-1)}
+                    toggle={kebabToggle(rowIndex)}
+                    popperProps={{ position: 'right' }}
+                  >
+                    <DropdownList>{dropdownItems}</DropdownList>
+                  </Dropdown>
+                </Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
+      </CardBody>
+    </Card>
+  );
 
   const addNotification = useCallback((showToast = true) => {
     setNotifications((prev) => [
@@ -521,7 +652,7 @@ const AnimationsPage: FunctionComponent = () => {
                 timeoutAnimation={alert.timeoutAnimation}
                 onTimeout={() => {
                   setNotifications((prev) =>
-                    prev.reduce((acc, next) => {
+                    prev.reduce((acc: NotificationType[], next) => {
                       if (next.id === alert.id) {
                         acc.push({ ...next, isNew: false });
                       } else {
@@ -531,6 +662,7 @@ const AnimationsPage: FunctionComponent = () => {
                     }, [])
                   );
                 }}
+                actionClose={<AlertActionCloseButton title={alert.title} onClose={() => {}} />}
               >
                 {alert.message}
               </Alert>
@@ -552,7 +684,9 @@ const AnimationsPage: FunctionComponent = () => {
           </Tabs>
         )}
       </PageSection>
-      {selectedTab === 0 && <AnimationsOverview />}
+      {selectedTab === 0 && (
+        <AnimationsOverview recentActivityCard={recentActivityCard} openshiftLogo={openshiftLogo} />
+      )}
 
       {selectedTab === 1 && (
         <PageSection id="resources">
@@ -565,7 +699,7 @@ const AnimationsPage: FunctionComponent = () => {
           {showForm ? (
             <AnimationsCreateDatabaseForm onClose={() => setShowForm(false)} />
           ) : (
-            <EmptyState titleText="No databases found" headingLevel="h4" icon={SearchIcon}>
+            <EmptyState titleText="No databases found" headingLevel="h4" icon={EmptyStateLogoIcon}>
               <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
               <EmptyStateFooter>
                 <EmptyStateActions>
@@ -586,27 +720,56 @@ const AnimationsPage: FunctionComponent = () => {
 
 // Can't break this into a separate file, seems we need to stay in the examples dir when using '@patternfly/react-table'
 const AnimationsResourcesTable: FunctionComponent = () => {
-  const [areAllExpanded, setAreAllExpanded] = useState(false);
-  const [collapseAllAriaLabel, setCollapseAllAriaLabel] = useState('Expand all');
   const [expandedAppNames, setExpandedAppNames] = useState(initialExpandedServerNames);
   const [loading, setLoading] = useState(true);
   const { tourStep, renderTourStepElement } = useGuidedTour();
 
+  // --- 1. ADD STATE FOR FAVORITES ---
+  const [favoriteAppNames, setFavoriteAppNames] = useState([]);
+  const [headerFavorited, setHeaderFavorited] = useState(false);
+
+  // --- 2. ADD HELPER FUNCTIONS FOR FAVORITES ---
+  const setAppFavorited = (app: Application, isFavoriting = true) =>
+    setFavoriteAppNames((prevFavorites) => {
+      const otherFavorites = prevFavorites.filter((r) => r !== app.name);
+      return isFavoriting ? [...otherFavorites, app.name] : otherFavorites;
+    });
+
+  const isAppFavorited = (app: Application) => favoriteAppNames.includes(app.name);
+
+  const getSortParams = (columnIndex) => ({
+    isFavorites: columnIndex === 0,
+    sortBy: {
+      index: undefined,
+      direction: undefined
+    },
+    onSort: (_event) => {
+      // No sorting logic needed, just favorites
+    },
+    'aria-label': 'Sort favorites',
+    columnIndex,
+    favoriteButtonProps: {
+      favorited: headerFavorited,
+      onClick: (_event) => {
+        applicationsData.forEach((app) => setAppFavorited(app, !headerFavorited));
+        setHeaderFavorited(!headerFavorited);
+      },
+      'aria-label': headerFavorited ? 'Unfavorite all' : 'Favorite all',
+      isFavorite: true,
+      isFavorited: headerFavorited,
+      variant: 'plain'
+    }
+  });
+
+  // --- Existing hooks and functions ---
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
-
     return () => {
       if (timer) {
         clearTimeout(timer);
       }
     };
   }, [loading, tourStep?.stepId]);
-
-  useEffect(() => {
-    const allExpanded = expandedAppNames.length === applicationsData.length;
-    setAreAllExpanded(allExpanded);
-    setCollapseAllAriaLabel(allExpanded ? 'Collapse all' : 'Expand all');
-  }, [expandedAppNames]);
 
   const setAppExpanded = (app: Application, isExpanding: boolean) => {
     const others = expandedAppNames.filter((n) => n !== app.name);
@@ -615,12 +778,8 @@ const AnimationsResourcesTable: FunctionComponent = () => {
 
   const isAppExpanded = (app: Application) => expandedAppNames.includes(app.name);
 
-  const onCollapseAll = (_event: any, _rowIndex: number, isOpen: boolean) => {
-    setExpandedAppNames(isOpen ? applicationsData.map((app) => app.name) : []);
-  };
-
   return (
-    <Card component="div">
+    <>
       {loading || tourStep?.stepId === 'skeletonLoader' ? (
         <>
           {renderTourStepElement(
@@ -636,47 +795,49 @@ const AnimationsResourcesTable: FunctionComponent = () => {
           )}
         </>
       ) : (
-        renderTourStepElement(
-          'expandableComponents',
-          <Table id="resources-table" aria-label="Collapsible table" isExpandable hasAnimations>
-            <Thead>
-              <Tr>
-                <Th
-                  expand={{
-                    areAllExpanded: !areAllExpanded,
-                    collapseAllAriaLabel,
-                    onToggle: onCollapseAll
-                  }}
-                  aria-label="Row expansion"
-                  name="expand"
-                />
-                {expandableColumns.map((column) => (
-                  <Th key={column} name={column}>
-                    {column}
-                  </Th>
-                ))}
-              </Tr>
-            </Thead>
+        <Table aria-label="Collapsible and favoritable table" isExpandable hasAnimations>
+          <Thead>
+            <Tr>
+              {/* Move favorite column to first position */}
+              <Th sort={getSortParams(0)} width={10} />
+              {/* Move expand column to second position */}
+              <Th width={10} />
+              {expandableColumns.map((column) => (
+                <Th key={column}>{column}</Th>
+              ))}
+            </Tr>
+          </Thead>
 
-            {applicationsData.map((app, idx) => (
-              <Tbody key={app.name} isExpanded={isAppExpanded(app)}>
-                <Tr isExpanded={isAppExpanded(app)}>
-                  {idx === 0 ? (
-                    renderTourStepElement(
-                      'expandableComponentsMobile',
-                      <Td
-                        expand={
-                          app.details
-                            ? {
-                                rowIndex: idx,
-                                isExpanded: isAppExpanded(app),
-                                onToggle: () => setAppExpanded(app, !isAppExpanded(app))
-                              }
-                            : undefined
-                        }
-                      />
-                    )
-                  ) : (
+          {/* Use separate Tbody for each expandable group like the working example */}
+          {applicationsData.map((app, idx) => (
+            <Tbody key={app.name} isExpanded={isAppExpanded(app)}>
+              <Tr>
+                {/* Move favorite to first position */}
+                <Td>
+                  <Button
+                    variant="plain"
+                    aria-label={isAppFavorited(app) ? `Unfavorite ${app.name}` : `Favorite ${app.name}`}
+                    isFavorite
+                    isFavorited={isAppFavorited(app)}
+                    onClick={() => {
+                      const isFavoriting = !isAppFavorited(app);
+                      setAppFavorited(app, isFavoriting);
+                      // Logic to check if all rows are now favorited/unfavorited
+                      if (
+                        isFavoriting &&
+                        applicationsData.filter((r) => r !== app).every((r) => favoriteAppNames.includes(r.name))
+                      ) {
+                        setHeaderFavorited(true);
+                      }
+                      if (!isFavoriting && favoriteAppNames.length === 1 && favoriteAppNames.includes(app.name)) {
+                        setHeaderFavorited(false);
+                      }
+                    }}
+                  />
+                </Td>
+                {idx === 0 ? (
+                  renderTourStepElement(
+                    'expandableComponents',
                     <Td
                       expand={
                         app.details
@@ -688,29 +849,42 @@ const AnimationsResourcesTable: FunctionComponent = () => {
                           : undefined
                       }
                     />
-                  )}
-                  <Td>{app.name}</Td>
-                  <Td>{app.header}</Td>
-                  <Td>{app.branch}</Td>
-                  <Td>
-                    {app.status === 'Running' && <Label status="success">Running</Label>}
-                    {app.status === 'Degraded' && <Label status="warning">Degraded</Label>}
-                    {app.status === 'Stopped' && <Label status="danger">Stopped</Label>}
-                    {app.status !== 'Running' && app.status !== 'Degraded' && app.status !== 'Stopped' && app.status}
-                  </Td>
-                </Tr>
-                <Tr isExpandable isExpanded={isAppExpanded(app)}>
-                  <Td />
-                  <Td colSpan={expandableColumns.length}>
-                    <ExpandableRowContent>{app.details}</ExpandableRowContent>
-                  </Td>
-                </Tr>
-              </Tbody>
-            ))}
-          </Table>
-        )
+                  )
+                ) : (
+                  <Td
+                    expand={
+                      app.details
+                        ? {
+                            rowIndex: idx,
+                            isExpanded: isAppExpanded(app),
+                            onToggle: () => setAppExpanded(app, !isAppExpanded(app))
+                          }
+                        : undefined
+                    }
+                  />
+                )}
+                <Td>{app.name}</Td>
+                <Td>{app.header}</Td>
+                <Td>{app.branch}</Td>
+                <Td>
+                  {app.status === 'Running' && <Label color="green">Running</Label>}
+                  {app.status === 'Degraded' && <Label color="orange">Degraded</Label>}
+                  {app.status === 'Stopped' && <Label color="red">Stopped</Label>}
+                  {app.status !== 'Running' && app.status !== 'Degraded' && app.status !== 'Stopped' && app.status}
+                </Td>
+              </Tr>
+              <Tr isExpanded={isAppExpanded(app)}>
+                <Td />
+                <Td />
+                <Td colSpan={expandableColumns.length}>
+                  <ExpandableRowContent>{app.details}</ExpandableRowContent>
+                </Td>
+              </Tr>
+            </Tbody>
+          ))}
+        </Table>
       )}
-    </Card>
+    </>
   );
 };
 

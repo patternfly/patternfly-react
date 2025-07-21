@@ -1,7 +1,7 @@
 ---
 id: Motion
 section: design-foundations
-source: demo
+source: react-demos
 ---
 
 import { Fragment, useRef, useState, useEffect, useCallback } from 'react';
@@ -32,26 +32,25 @@ import { AnimationsStartTourModal } from '@patternfly/react-core/dist/esm/demos/
 import { AnimationsEndTourModal } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsEndTourModal';
 import { AnimationsCreateDatabaseForm } from '@patternfly/react-core/dist/esm/demos/Animations/AnimationsCreateDatabaseForm';
 import { GuidedTourProvider, useGuidedTour } from '@patternfly/react-core/dist/esm/demos/Animations/GuidedTourContext';
+import BoltIcon from '@patternfly/react-icons/dist/esm/icons/bolt-icon';
+import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
+import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import InfoIcon from '@patternfly/react-icons/dist/esm/icons/info-icon';
+import ResourcesFullIcon from '@patternfly/react-icons/dist/esm/icons/resources-full-icon';
+import openshiftLogo from '../assets/Summit-collage-depoying-openshift-product-icon-RH.png'
+import emptyStateLogo from '../assets/Summit-collage-hybrid-cloud-dark-RH.png'
+
+
+
 
 ## Demos
 
-The following demo highlights the current state of [our ongoing effort to animate PatternFly components](https://github.com/orgs/patternfly/projects/7/views/66).
+Explore the current state of [PatternFly component animations](https://github.com/orgs/patternfly/projects/7/views/66).
 
-To see how components like alerts, navigation, and forms can now use motion to provide clear feedback and improve usability, you can explore this demo and interact with various UI elements. We will continue to update this demo as additional animation support is added.
+To see how our components can now use motion to provide clear feedback and improve usability, this demo guides you through a UI that contains a variety of motion updates, including animated alerts, icons, expansion, and more.
 
-Currently, this demo includes animations for:
-
-* Alerts.
-* Tabs.
-* The notification badge and notification drawer.
-* The hamburger/navigation menu icon.
-* The masthead settings icon.
-* Expandable navigation items.
-* Skeleton loader in a table.
-* Button clicks.
-* Validation failure in forms.
-
-### Animations
+### Animated UI
 
 ```js file="./examples/Animations.tsx" isFullscreen
 ```
