@@ -39,6 +39,7 @@ import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import InfoIcon from '@patternfly/react-icons/dist/esm/icons/info-icon';
 import ResourcesFullIcon from '@patternfly/react-icons/dist/esm/icons/resources-full-icon';
 import openshiftLogo from '../assets/Summit-collage-depoying-openshift-product-icon-RH.png'
+import emptyStateLogo from '../assets/Summit-collage-hybrid-cloud-dark-RH.png'
 
 
 

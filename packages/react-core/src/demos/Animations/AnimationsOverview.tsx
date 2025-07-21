@@ -25,13 +25,16 @@ import AnimationsOverviewClusterInventory from './AnimationsOverviewClusterInven
 import AnimationsOverviewNetworkActivity from './AnimationsOverviewNetworkActivity';
 import AnimationsOverviewStorage from './AnimationsOverviewStorage';
 import AnimationsOverviewMemoryUtilization from './AnimationsOverviewMemoryUtilization';
-import openshiftLogo from './assets/Summit-collage-depoying-openshift-product-icon-RH.png';
 
 interface AnimationsOverviewProps {
   recentActivityCard?: React.ReactNode;
+  openshiftLogo?: any;
 }
 
-export const AnimationsOverview: FunctionComponent<AnimationsOverviewProps> = ({ recentActivityCard }) => {
+export const AnimationsOverview: FunctionComponent<AnimationsOverviewProps> = ({
+  recentActivityCard,
+  openshiftLogo
+}) => {
   const [displayMultiContentCard, setDisplayMultiContentCard] = useState(true);
 
   const handleCloseMultiContentCard = () => {

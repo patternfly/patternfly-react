@@ -18,6 +18,7 @@ import { useGuidedTour } from './GuidedTourContext';
 
 interface Props {
   onClose: () => void;
+  emptyStateLogo?: any;
 }
 
 export const AnimationsCreateDatabaseForm: FunctionComponent<Props> = ({ onClose }) => {

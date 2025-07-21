@@ -49,7 +49,6 @@ import {
 } from '@patternfly/react-core';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import SkeletonTable from '@patternfly/react-component-groups/dist/dynamic/SkeletonTable';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import BoltIcon from '@patternfly/react-icons/dist/esm/icons/bolt-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
@@ -67,6 +66,13 @@ import { AnimationsHeaderToolbar } from '../../../../dist/esm/demos/Animations/A
 import { AnimationsStartTourModal } from '../../../../dist/esm/demos/Animations/AnimationsStartTourModal';
 import { AnimationsEndTourModal } from '../../../../dist/esm/demos/Animations/AnimationsEndTourModal';
 import { applicationsData } from './ResourceTableData';
+import openshiftLogo from '../../assets/Summit-collage-depoying-openshift-product-icon-RH.png';
+import emptyStateLogo from '../../assets/Summit-collage-hybrid-cloud-dark-RH.png';
+
+// Simple component to wrap the empty state logo
+const EmptyStateLogoIcon: React.FunctionComponent = () => (
+  <img src={emptyStateLogo} alt="Empty state" style={{ width: '200px', height: '200px' }} />
+);
 
 const mainContainerPageId = 'main-content-page-layout-default-nav';
 const expandableColumns = ['Applications', 'Server', 'Branch', 'Status'];
@@ -665,7 +671,13 @@ const AnimationsPage: FunctionComponent = () => {
           </Tabs>
         )}
       </PageSection>
-      {selectedTab === 0 && <AnimationsOverview recentActivityCard={recentActivityCard} />}
+      {selectedTab === 0 && (
+        <AnimationsOverview
+          recentActivityCard={recentActivityCard}
+          openshiftLogo={openshiftLogo}
+          emptyStateLogo={emptyStateLogo}
+        />
+      )}
 
       {selectedTab === 1 && (
         <PageSection id="resources">
@@ -678,7 +690,7 @@ const AnimationsPage: FunctionComponent = () => {
           {showForm ? (
             <AnimationsCreateDatabaseForm onClose={() => setShowForm(false)} />
           ) : (
-            <EmptyState titleText="No databases found" headingLevel="h4" icon={SearchIcon}>
+            <EmptyState titleText="No databases found" headingLevel="h4" icon={EmptyStateLogoIcon}>
               <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
               <EmptyStateFooter>
                 <EmptyStateActions>
