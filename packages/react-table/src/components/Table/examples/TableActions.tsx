@@ -146,7 +146,7 @@ export const TableActions: React.FunctionComponent = () => {
                 <Td dataLabel={columnNames.prs}>{repo.prs}</Td>
                 <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
                 <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
-                <Td dataLabel={columnNames.singleAction} modifier="fitContent">
+                <Td dataLabel={columnNames.singleAction} modifier="fitContent" hasAction>
                   {singleActionButton}
                 </Td>
                 <Td isActionCell>

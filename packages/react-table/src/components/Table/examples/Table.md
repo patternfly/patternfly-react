@@ -184,6 +184,8 @@ To make a cell an action cell, render an `ActionsColumn` component inside a row'
 
 If actions menus are getting clipped by other items on the page, such as sticky columns or rows, the `ActionsColumn` can be passed a `menuAppendTo` prop to adjust where the actions menu is appended.
 
+When a table row contains mixed content of text and interactive elements, the `hasAction` property may be passed to a `Td` which contains interactive content like the below example's start `Button`. This will align buttons and other elements with other cells' text. Note that `hasAction` should not be used with `Td`s in an `ActionsColumn` because that comes with it's own spacing.
+
 ```ts file="TableActions.tsx"
 
 ```
