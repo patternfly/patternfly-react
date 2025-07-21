@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.3.0-prerelease.33...@patternfly/react-table@6.3.0-prerelease.34) (2025-07-21)
+
+### Features
+
+- **Table:** add hasAction flag ([#11877](https://github.com/patternfly/patternfly-react/issues/11877)) ([539c1f5](https://github.com/patternfly/patternfly-react/commit/539c1f5819f3ed0ede67a1ef072210bd98663e71))
+
 # [6.3.0-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.3.0-prerelease.32...@patternfly/react-table@6.3.0-prerelease.33) (2025-07-18)
 
 **Note:** Version bump only for package @patternfly/react-table
