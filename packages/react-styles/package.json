@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-styles",
-  "version": "6.3.0-prerelease.14",
+  "version": "6.3.0",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
