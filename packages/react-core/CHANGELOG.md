@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.3.0-prerelease.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0-prerelease.0...@patternfly/react-core@6.3.0-prerelease.34) (2025-07-22)
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" ([40999d7](https://github.com/patternfly/patternfly-react/commit/40999d70a7a3aeadbe8f40fe96bb01ab3a6219d4))
+
 # [6.3.0-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0-prerelease.32...@patternfly/react-core@6.3.0-prerelease.33) (2025-07-18)
 
 ### Bug Fixes

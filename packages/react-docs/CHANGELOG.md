@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.3.0-prerelease.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.4.0-prerelease.0...@patternfly/react-docs@7.3.0-prerelease.42) (2025-07-22)
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" ([40999d7](https://github.com/patternfly/patternfly-react/commit/40999d70a7a3aeadbe8f40fe96bb01ab3a6219d4))
+
 # [7.3.0-prerelease.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.0-prerelease.40...@patternfly/react-docs@7.3.0-prerelease.41) (2025-07-21)
 
 **Note:** Version bump only for package @patternfly/react-docs
