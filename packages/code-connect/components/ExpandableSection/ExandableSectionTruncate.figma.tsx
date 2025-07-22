@@ -1,11 +1,11 @@
 import figma from '@figma/code-connect';
 import { ExpandableSection } from '@patternfly/react-core';
 
-// // TODO: DESIGN: Create toggle component
-// // onToggle={() => {}} // only required if the user wants to be able to have other side effects when opening/closing
-// // isExpanded={() => {}} // only required if the user wants to be able to have other side effects when opening/closing
+// TODO: DESIGN: Create toggle component
+// onToggle={() => {}} // only required if the user wants to be able to have other side effects when opening/closing
+// isExpanded={() => {}} // only required if the user wants to be able to have other side effects when opening/closing
 
-// // Documentation for ExpandableSection can be found at https://www.patternfly.org/components/expandable-section
+// Documentation for ExpandableSection can be found at https://www.patternfly.org/components/expandable-section
 
 figma.connect(
   ExpandableSection,
