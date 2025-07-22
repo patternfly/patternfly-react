@@ -94,7 +94,7 @@ export const AnimationsOverview: FunctionComponent<AnimationsOverviewProps> = ({
     // Card 4: Image
     <Card isFullHeight isPlain key="card-4">
       <CardBody>
-        <img src={openshiftLogo} alt="OpenShift Logo" />
+        <img src={openshiftLogo} alt="OpenShift Logo" style={{ width: '200px', height: '200px' }} />
       </CardBody>
     </Card>
   ];
@@ -114,7 +114,7 @@ export const AnimationsOverview: FunctionComponent<AnimationsOverviewProps> = ({
       )}
       <PageSection aria-label="Detail status events">
         <Grid hasGutter>
-          <GridItem span={3} rowSpan={4}>
+          <GridItem span={12} sm={12} md={6} lg={4} xl={3} rowSpan={4}>
             <Card isFullHeight>
               <CardTitle>
                 <Title headingLevel="h4" size="xl">
@@ -153,20 +153,20 @@ export const AnimationsOverview: FunctionComponent<AnimationsOverviewProps> = ({
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem span={3} rowSpan={2}>
+          <GridItem span={12} sm={12} md={6} lg={4} xl={3} rowSpan={2}>
             <AnimationsOverviewClusterInventory />
           </GridItem>
-          <GridItem span={2} rowSpan={2}>
+          <GridItem span={12} sm={12} md={6} lg={4} xl={2} rowSpan={2}>
             <AnimationsOverviewStorage />
           </GridItem>
-          <GridItem span={4} rowSpan={2}>
+          <GridItem span={12} sm={12} md={12} lg={12} xl={4} rowSpan={2}>
             <AnimationsOverviewMemoryUtilization />
           </GridItem>
-          <GridItem span={4} rowSpan={2}>
+          <GridItem span={12} sm={12} md={12} lg={12} xl={4} rowSpan={2}>
             <AnimationsOverviewNetworkActivity />
           </GridItem>
           {recentActivityCard && (
-            <GridItem span={5} rowSpan={2}>
+            <GridItem span={12} sm={12} md={12} lg={8} xl={5} rowSpan={2}>
               {recentActivityCard}
             </GridItem>
           )}

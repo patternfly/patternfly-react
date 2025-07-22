@@ -77,7 +77,7 @@ export const MemoryUtilizationCard: React.FunctionComponent = () => {
                 { x: 'Warning at 60%', y: 60 },
                 { x: 'Danger at 90%', y: 90 }
               ]}
-              height={150}
+              height={200}
               labels={({ datum }) => (datum.x ? datum.x : null)}
               padding={{
                 bottom: 0,
@@ -85,7 +85,7 @@ export const MemoryUtilizationCard: React.FunctionComponent = () => {
                 right: 0,
                 top: 10
               }}
-              width={150}
+              width={200}
             >
               <ChartDonutUtilization
                 data={{ x: 'Memory capacity', y: 95 }}
@@ -105,7 +105,7 @@ export const MemoryUtilizationCard: React.FunctionComponent = () => {
                 { x: 'Warning at 60%', y: 60 },
                 { x: 'Danger at 90%', y: 90 }
               ]}
-              height={150}
+              height={200}
               labels={({ datum }) => (datum.x ? datum.x : null)}
               padding={{
                 bottom: 0,
@@ -113,7 +113,7 @@ export const MemoryUtilizationCard: React.FunctionComponent = () => {
                 right: 0,
                 top: 10
               }}
-              width={150}
+              width={200}
             >
               <ChartDonutUtilization
                 data={{ x: 'GPU capacity', y: 55 }}
