@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FC, ReactNode } from 'react';
 import {
   Avatar,
   Button,
@@ -17,24 +17,24 @@ import {
   MenuToggle,
   NotificationBadge,
   NotificationBadgeVariant,
+  PageToggleButton,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
-  ToolbarItem,
-  PageToggleButton
+  ToolbarItem
 } from '../components';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+// import imgAvatar from '../components/assets/avatarImg.svg';
 
 interface DashboardHeaderProps {
   /** Render custom notification badge */
-  notificationBadge?: React.ReactNode;
+  notificationBadge?: ReactNode;
 }
 
-export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBadge }) => {
+export const DashboardHeader: FC<DashboardHeaderProps> = ({ notificationBadge }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
   const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = useState(false);
@@ -218,7 +218,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                     ref={toggleRef}
                     isExpanded={isDropdownOpen}
                     onClick={onDropdownToggle}
-                    icon={<Avatar src={imgAvatar} alt="" size="sm" />}
+                    icon={<Avatar alt="" size="sm" />}
                   >
                     Ned Username
                   </MenuToggle>

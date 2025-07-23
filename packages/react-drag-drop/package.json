@@ -2,9 +2,23 @@
   "name": "@patternfly/react-drag-drop",
   "version": "6.3.0-prerelease.33",
   "description": "PatternFly drag and drop solution",
+  "type": "module",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/js/index.js"
+    },
+    "./package.json": "./package.json",
+    "./*": {
+      "import": "./dist/esm/*",
+      "require": "./dist/js/*"
+    },
+    "./dist/*": "./dist/*",
+    "./src/*": "./src/*"
+  },
   "sideEffects": false,
   "publishConfig": {
     "access": "public"

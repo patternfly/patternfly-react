@@ -29,7 +29,7 @@ import {
   Progress,
   Title
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 export const PrimaryDetailDataListInCard: React.FunctionComponent = () => {
   const [drawerPanelBodyContent, setDrawerPanelBodyContent] = useState(1);

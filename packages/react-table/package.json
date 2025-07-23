@@ -2,8 +2,22 @@
   "name": "@patternfly/react-table",
   "version": "6.3.0-prerelease.33",
   "description": "This library provides a set of React table components for use with the PatternFly 4",
+  "type": "module",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/js/index.js"
+    },
+    "./package.json": "./package.json",
+    "./*": {
+      "import": "./dist/esm/*",
+      "require": "./dist/js/*"
+    },
+    "./dist/*": "./dist/*",
+    "./src/*": "./src/*"
+  },
   "types": "dist/esm/index.d.ts",
   "typesVersions": {
     "*": {

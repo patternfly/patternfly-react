@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FC } from 'react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -44,7 +44,7 @@ const PageTemplateTitle = (
   </PageSection>
 );
 
-export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
+export const DashboardWrapper: FC<DashboardWrapperProps> = ({
   children,
   mainContainerId,
   banner,

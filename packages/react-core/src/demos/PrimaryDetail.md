@@ -25,13 +25,14 @@ import azureIcon from './assets/FuseConnector_Icons_AzureServices.png';
 import restIcon from './assets/FuseConnector_Icons_REST.png';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 ## Demos
 
 ### Primary-detail full page
 
 ```js file="./examples/PrimaryDetail/PrimaryDetailFullPage.tsx" isFullscreen
+
 ```
 
 ### Primary-detail content padding
@@ -43,16 +44,19 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 ### Primary-detail card view
 
 ```js file="./examples/PrimaryDetail/PrimaryDetailCardView.tsx" isFullscreen
+
 ```
 
 ### Primary-detail simple list in card
 
 ```js file="./examples/PrimaryDetail/PrimaryDetailSimpleListInCard.tsx" isFullscreen
+
 ```
 
 ### Primary-detail data list in card
 
 ```js file="./examples/PrimaryDetail/PrimaryDetailDataListInCard.tsx" isFullscreen
+
 ```
 
 ### Primary-detail inline modifier

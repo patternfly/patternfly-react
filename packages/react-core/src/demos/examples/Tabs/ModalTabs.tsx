@@ -1,5 +1,5 @@
 import { Fragment, useCallback, useState } from 'react';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 import {
   PageSection,
   Content,

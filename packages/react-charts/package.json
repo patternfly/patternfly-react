@@ -2,9 +2,27 @@
   "name": "@patternfly/react-charts",
   "version": "8.3.0-prerelease.21",
   "description": "This library provides a set of React chart components for use with the PatternFly reference implementation.",
+  "type": "module",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "exports": {
+    "./echarts": {
+      "import": "./dist/esm/echarts/index.js",
+      "require": "./dist/js/echarts/index.js"
+    },
+    "./victory": {
+      "import": "./dist/esm/victory/index.js",
+      "require": "./dist/js/victory/index.js"
+    },
+    "./package.json": "./package.json",
+    "./*": {
+      "import": "./dist/esm/*",
+      "require": "./dist/js/*"
+    },
+    "./dist/*": "./dist/*",
+    "./src/*": "./src/*"
+  },
   "typesVersions": {
     "*": {
       "echarts": [

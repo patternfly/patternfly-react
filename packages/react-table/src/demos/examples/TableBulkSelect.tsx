@@ -16,7 +16,7 @@ import {
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { rows, columns, SampleDataRow } from '@patternfly/react-table/dist/esm/demos/sampleData';
-import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 export const TableBulkSelect: React.FunctionComponent = () => {
   const [isBulkSelectDropdownOpen, setIsBulkSelectDropdownOpen] = useState(false);

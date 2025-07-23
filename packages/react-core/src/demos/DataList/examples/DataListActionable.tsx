@@ -17,7 +17,7 @@ import {
   Title
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 export const DataListActionable: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

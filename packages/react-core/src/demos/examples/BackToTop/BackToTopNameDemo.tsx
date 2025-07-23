@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BackToTop, Card, CardBody, Content, Gallery, GalleryItem, PageSection, Switch } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 export const Name = () => {
   const [isAlwaysVisible, setIsAlwaysVisible] = useState(false);

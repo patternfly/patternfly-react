@@ -2,9 +2,23 @@
   "name": "@patternfly/react-templates",
   "version": "6.3.0-prerelease.33",
   "description": "This package provides wrapped component demos for ease of use\n",
+  "type": "module",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/js/index.js"
+    },
+    "./package.json": "./package.json",
+    "./*": {
+      "import": "./dist/esm/*",
+      "require": "./dist/js/*"
+    },
+    "./dist/*": "./dist/*",
+    "./src/*": "./src/*"
+  },
   "patternfly:src": "src/",
   "sideEffects": false,
   "publishConfig": {

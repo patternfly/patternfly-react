@@ -15,7 +15,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import display from '@patternfly/react-styles/css/utilities/Display/display';
 import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 ## Demos
 
@@ -46,7 +46,7 @@ import {
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 TabsOpenDemo = () => {
   const [activeTabKey, setActiveTabKey] = useState(0);
@@ -159,7 +159,7 @@ TabsOpenDemo = () => {
   return (
     <DashboardWrapper hasNoBreadcrumb>
       {tabsBreadcrumb}
-      <PageSection isWidthLimited aria-label='Pod header'>
+      <PageSection isWidthLimited aria-label="Pod header">
         <Flex
           spaceItems={{ default: 'spaceItemsMd' }}
           alignItems={{ default: 'alignItemsFlexStart' }}
@@ -178,7 +178,7 @@ TabsOpenDemo = () => {
           </FlexItem>
         </Flex>
       </PageSection>
-      <PageSection type="tabs" isWidthLimited aria-label='Pod navigation tabs'>
+      <PageSection type="tabs" isWidthLimited aria-label="Pod navigation tabs">
         <Tabs activeKey={activeTabKey} onSelect={handleTabClick} usePageInsets id="open-tabs-example-tabs-list">
           <Tab eventKey={0} title={<TabTitleText>Details</TabTitleText>} tabContentId={`tabContent${0}`} />
           <Tab eventKey={1} title={<TabTitleText>YAML</TabTitleText>} tabContentId={`tabContent${1}`} />
@@ -187,7 +187,7 @@ TabsOpenDemo = () => {
           <Tab eventKey={4} title={<TabTitleText>Terminal</TabTitleText>} tabContentId={`tabContent${4}`} />
         </Tabs>
       </PageSection>
-      <PageSection isWidthLimited aria-label='Pod content'>
+      <PageSection isWidthLimited aria-label="Pod content">
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <TabContentBody>{tabContent}</TabContentBody>
         </TabContent>
@@ -236,7 +236,7 @@ import {
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 TabsOpenWithSecondaryTabsDemo = () => {
   const [activeTabKey, setActiveTabKey] = useState(0);
@@ -355,7 +355,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
   return (
     <DashboardWrapper hasNoBreadcrumb>
       {tabsBreadcrumb}
-      <PageSection isWidthLimited aria-label='Pod header'>
+      <PageSection isWidthLimited aria-label="Pod header">
         <Flex
           spaceItems={{ default: 'spaceItemsMd' }}
           alignItems={{ default: 'alignItemsFlexStart' }}
@@ -374,7 +374,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
           </FlexItem>
         </Flex>
       </PageSection>
-      <PageSection type="tabs" isWidthLimited aria-label='Pod navigation tabs'>
+      <PageSection type="tabs" isWidthLimited aria-label="Pod navigation tabs">
         <Tabs activeKey={activeTabKey} onSelect={handleTabClick} usePageInsets id="open-tabs-example-tabs-list">
           <Tab eventKey={0} title={<TabTitleText>Details</TabTitleText>} tabContentId={`tabContent${0}`} />
           <Tab eventKey={1} title={<TabTitleText>YAML</TabTitleText>} tabContentId={`tabContent${1}`} />
@@ -383,7 +383,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
           <Tab eventKey={4} title={<TabTitleText>Terminal</TabTitleText>} tabContentId={`tabContent${4}`} />
         </Tabs>
       </PageSection>
-      <PageSection isWidthLimited padding={{ default: 'noPadding' }} aria-label='Pod content'>
+      <PageSection isWidthLimited padding={{ default: 'noPadding' }} aria-label="Pod content">
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <TabContentBody>
             <Tabs
