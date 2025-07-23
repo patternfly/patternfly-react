@@ -165,7 +165,8 @@ export const GuidedTourSteps: GuidedTourStep[] = [
         <Content>Reduced-motion users will only see the fade, not the sliding motion.</Content>
       </>
     ),
-    spotlightSelector: '#expand-toggle-1'
+    spotlightSelector: '#expand-toggle-1',
+    popoverWidth: '460px'
   },
   {
     mobileOnly: true,
@@ -196,22 +197,24 @@ export const GuidedTourSteps: GuidedTourStep[] = [
         <Content component="p">Reduced-motion users will only see the fade, not the jiggle.</Content>
       </>
     ),
+    popoverWidth: '550px',
+    mobilePopoverWidth: '275px',
     spotlightSelector: '#create-database-submit',
     spotlightResizeSelector: '#create-database-form'
-    // },
-    // {
-    //   stepId: 'progressStepper',
-    //   header: <div>In process indicator</div>,
-    //   content: (
-    //     <>
-    //       <Content component="p">
-    //         Watch as a process starts for step 2.
-    //       </Content>
-    //       <Content component="p">
-    //         When a task is running, the in-process icon now spins in place, providing clear and continuous feedback that the system is working.
-    //       </Content>
-    //     </>
-    //   )
+  },
+  {
+    stepId: 'progressStepper',
+    header: <div>In process indicator</div>,
+    content: (
+      <>
+        <Content component="p">Watch as a process starts for step 2.</Content>
+        <Content component="p">
+          When a task is running, the in-process icon now spins in place, providing clear and continuous feedback that
+          the system is working.
+        </Content>
+      </>
+    ),
+    spotlightSelector: '#progress-stepper-1'
   }
 ];
 
@@ -370,16 +373,34 @@ const AnimationsPage: FunctionComponent = () => {
                   </Button>
                 </Td>
                 <Td>
-                  <ProgressStepper isCompact>
-                    {activity.progress.map((stepVariant, stepIndex) => (
-                      <ProgressStep
-                        key={stepIndex}
-                        variant={stepVariant}
-                        icon={iconMap[stepVariant]}
-                        aria-label={`Step ${stepIndex + 1} is ${stepVariant}`}
-                      />
-                    ))}
-                  </ProgressStepper>
+                  {rowIndex === 1 ? (
+                    renderTourStepElement(
+                      'progressStepper',
+                      <ProgressStepper isCompact id={`progress-stepper-${rowIndex}`}>
+                        {activity.progress.map((stepVariant, stepIndex) => (
+                          <ProgressStep
+                            id={`${rowIndex}-${stepVariant}-${stepIndex}`}
+                            key={stepIndex}
+                            variant={stepVariant}
+                            icon={iconMap[stepVariant]}
+                            aria-label={`Step ${stepIndex + 1} is ${stepVariant}`}
+                          />
+                        ))}
+                      </ProgressStepper>
+                    )
+                  ) : (
+                    <ProgressStepper isCompact>
+                      {activity.progress.map((stepVariant, stepIndex) => (
+                        <ProgressStep
+                          id={`progress-step-${rowIndex}-${stepVariant}-${stepIndex}`}
+                          key={stepIndex}
+                          variant={stepVariant}
+                          icon={iconMap[stepVariant]}
+                          aria-label={`Step ${stepIndex + 1} is ${stepVariant}`}
+                        />
+                      ))}
+                    </ProgressStepper>
+                  )}
                 </Td>
                 <Td isActionCell>
                   <Dropdown
@@ -424,13 +445,13 @@ const AnimationsPage: FunctionComponent = () => {
             Click <strong>Add alert</strong>. In a moment, a new toast alert will appear.
           </Content>
           <Content component="p">
-            Notice how it slides smoothly into view to draw your eye to critical information, and then slides out just
-            as smoothly once it expires.
-          </Content>
-          <Content component="p">
             <Button variant="link" isInline onClick={() => addNotification(true)}>
               Add alert
             </Button>
+          </Content>
+          <Content component="p">
+            Notice how it slides smoothly into view to draw your eye to critical information, and then slides out just
+            as smoothly once it expires.
           </Content>
         </>
       );
@@ -457,12 +478,12 @@ const AnimationsPage: FunctionComponent = () => {
             Click <strong>Add notification</strong>. Watch for a new notification to arrive.
           </Content>
           <Content component="p">
-            The bell icon "rings" with a subtle rotation to quickly catch your attention as a message comes in.
-          </Content>
-          <Content component="p">
             <Button variant="link" isInline onClick={() => addNotification(false)}>
               Add notification
             </Button>
+          </Content>
+          <Content component="p">
+            The bell icon "rings" with a subtle rotation to quickly catch your attention as a message comes in.
           </Content>
         </>
       );
@@ -473,6 +494,19 @@ const AnimationsPage: FunctionComponent = () => {
     if (tourStep?.stepId === 'validationErrors') {
       setSelectedTab(2);
       setShowForm(true);
+    }
+    if (tourStep?.stepId === 'progressStepper') {
+      setSelectedTab(0);
+      setTimeout(() => {
+        const element = document.getElementById('progress-stepper-1');
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth', // Smooth scrolling animation
+            block: 'center', // Align element to the center of the viewport
+            inline: 'nearest' // Horizontal alignment (optional)
+          });
+        }
+      }, 100);
     }
   }, [tourStep?.stepId, setCustomStepContent, addNotification, isMobile]);
 

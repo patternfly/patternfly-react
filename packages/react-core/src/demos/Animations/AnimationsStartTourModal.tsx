@@ -13,7 +13,10 @@ export const AnimationsStartTourModal: FunctionComponent<Props> = ({ onClose }) 
     aria-labelledby="guided-tour-title"
     aria-describedby="guided-tour-description"
   >
-    <ModalHeader title="Explore PatternFly’s new animations" labelId="guided-tour-title" />
+    <ModalHeader
+      title={<div style={{ whiteSpace: 'initial' }}>Explore PatternFly’s new animations</div>}
+      labelId="guided-tour-title"
+    />
     <ModalBody id="guided-tour-description">
       <Content component="p">
         Welcome! Many of our components now use motion to engage users, provide clear feedback, and improve usability.

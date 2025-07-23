@@ -91,12 +91,13 @@ const Spotlight: React.FC<SpotlightProps> = ({ selector, resizeSelector }) => {
         borderWidth: 3,
         borderStyle: 'solid',
         borderColor: 'var(--pf-t--global--background--color--highlight--default)',
+        borderRadius: 'var(--pf-t--global--border--radius--small)',
         background: 'transparent',
         pointerEvents: 'none'
       }
     : {};
 
-  return clientRect ? <div className="ocs-spotlight ocs-spotlight__element-highlight-noanimate" style={style} /> : null;
+  return clientRect ? <div style={style} /> : null;
 };
 
 export default Spotlight;
