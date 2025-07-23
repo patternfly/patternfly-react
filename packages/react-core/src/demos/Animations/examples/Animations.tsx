@@ -57,6 +57,10 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import ResourcesFullIcon from '@patternfly/react-icons/dist/esm/icons/resources-full-icon';
 // @ts-ignore
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.PF-HorizontalLogo-Color.svg';
+// @ts-ignore
+import openshiftLogo from '../../assets/Summit-collage-depoying-openshift-product-icon-RH.png';
+// @ts-ignore
+import emptyStateLogo from '../../assets/Summit-collage-hybrid-cloud-dark-RH.png';
 import { Application, GuidedTourStep, NotificationType } from '../types';
 import { AnimationsOverview } from '../../../../dist/esm/demos/Animations/AnimationsOverview';
 import { AnimationsNotificationsDrawer } from '../../../../dist/esm/demos/Animations/AnimationsNotificationsDrawer';
@@ -66,8 +70,6 @@ import { AnimationsHeaderToolbar } from '../../../../dist/esm/demos/Animations/A
 import { AnimationsStartTourModal } from '../../../../dist/esm/demos/Animations/AnimationsStartTourModal';
 import { AnimationsEndTourModal } from '../../../../dist/esm/demos/Animations/AnimationsEndTourModal';
 import { applicationsData } from './ResourceTableData';
-import openshiftLogo from '../../assets/Summit-collage-depoying-openshift-product-icon-RH.png';
-import emptyStateLogo from '../../assets/Summit-collage-hybrid-cloud-dark-RH.png';
 
 // Simple component to wrap the empty state logo
 const EmptyStateLogoIcon: React.FunctionComponent = () => (
@@ -149,6 +151,7 @@ export const GuidedTourSteps: GuidedTourStep[] = [
     spotlightSelector: '#skeleton-table'
   },
   {
+    deskTopOnly: true,
     stepId: 'expandableComponents',
     header: <div>Expandable components</div>,
     position: 'top-start',
@@ -162,8 +165,24 @@ export const GuidedTourSteps: GuidedTourStep[] = [
         <Content>Reduced-motion users will only see the fade, not the sliding motion.</Content>
       </>
     ),
-    spotlightSelector: '#expand-toggle-1',
-    popoverWidth: '501px'
+    spotlightSelector: '#expand-toggle-1'
+  },
+  {
+    mobileOnly: true,
+    stepId: 'expandableComponentsMobile',
+    header: <div>Expandable components</div>,
+    position: 'top-end',
+    content: (
+      <>
+        <Content component="p">Click to expand this hidden content section.</Content>
+        <Content component="p">
+          Notice how the hidden information smoothly fades and slides into place. Click again to collapse it and see the
+          reverse animation.
+        </Content>
+        <Content>Reduced-motion users will only see the fade, not the sliding motion.</Content>
+      </>
+    ),
+    spotlightSelector: '#expand-toggle0'
   },
   {
     stepId: 'validationErrors',
@@ -720,56 +739,27 @@ const AnimationsPage: FunctionComponent = () => {
 
 // Can't break this into a separate file, seems we need to stay in the examples dir when using '@patternfly/react-table'
 const AnimationsResourcesTable: FunctionComponent = () => {
+  const [areAllExpanded, setAreAllExpanded] = useState(false);
+  const [collapseAllAriaLabel, setCollapseAllAriaLabel] = useState('Expand all');
   const [expandedAppNames, setExpandedAppNames] = useState(initialExpandedServerNames);
   const [loading, setLoading] = useState(true);
   const { tourStep, renderTourStepElement } = useGuidedTour();
 
-  // --- 1. ADD STATE FOR FAVORITES ---
-  const [favoriteAppNames, setFavoriteAppNames] = useState([]);
-  const [headerFavorited, setHeaderFavorited] = useState(false);
-
-  // --- 2. ADD HELPER FUNCTIONS FOR FAVORITES ---
-  const setAppFavorited = (app: Application, isFavoriting = true) =>
-    setFavoriteAppNames((prevFavorites) => {
-      const otherFavorites = prevFavorites.filter((r) => r !== app.name);
-      return isFavoriting ? [...otherFavorites, app.name] : otherFavorites;
-    });
-
-  const isAppFavorited = (app: Application) => favoriteAppNames.includes(app.name);
-
-  const getSortParams = (columnIndex) => ({
-    isFavorites: columnIndex === 0,
-    sortBy: {
-      index: undefined,
-      direction: undefined
-    },
-    onSort: (_event) => {
-      // No sorting logic needed, just favorites
-    },
-    'aria-label': 'Sort favorites',
-    columnIndex,
-    favoriteButtonProps: {
-      favorited: headerFavorited,
-      onClick: (_event) => {
-        applicationsData.forEach((app) => setAppFavorited(app, !headerFavorited));
-        setHeaderFavorited(!headerFavorited);
-      },
-      'aria-label': headerFavorited ? 'Unfavorite all' : 'Favorite all',
-      isFavorite: true,
-      isFavorited: headerFavorited,
-      variant: 'plain'
-    }
-  });
-
-  // --- Existing hooks and functions ---
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
+
     return () => {
       if (timer) {
         clearTimeout(timer);
       }
     };
   }, [loading, tourStep?.stepId]);
+
+  useEffect(() => {
+    const allExpanded = expandedAppNames.length === applicationsData.length;
+    setAreAllExpanded(allExpanded);
+    setCollapseAllAriaLabel(allExpanded ? 'Collapse all' : 'Expand all');
+  }, [expandedAppNames]);
 
   const setAppExpanded = (app: Application, isExpanding: boolean) => {
     const others = expandedAppNames.filter((n) => n !== app.name);
@@ -778,8 +768,12 @@ const AnimationsResourcesTable: FunctionComponent = () => {
 
   const isAppExpanded = (app: Application) => expandedAppNames.includes(app.name);
 
+  const onCollapseAll = (_event: any, _rowIndex: number, isOpen: boolean) => {
+    setExpandedAppNames(isOpen ? applicationsData.map((app) => app.name) : []);
+  };
+
   return (
-    <>
+    <Card component="div">
       {loading || tourStep?.stepId === 'skeletonLoader' ? (
         <>
           {renderTourStepElement(
@@ -795,49 +789,47 @@ const AnimationsResourcesTable: FunctionComponent = () => {
           )}
         </>
       ) : (
-        <Table aria-label="Collapsible and favoritable table" isExpandable hasAnimations>
-          <Thead>
-            <Tr>
-              {/* Move favorite column to first position */}
-              <Th sort={getSortParams(0)} width={10} />
-              {/* Move expand column to second position */}
-              <Th width={10} />
-              {expandableColumns.map((column) => (
-                <Th key={column}>{column}</Th>
-              ))}
-            </Tr>
-          </Thead>
-
-          {/* Use separate Tbody for each expandable group like the working example */}
-          {applicationsData.map((app, idx) => (
-            <Tbody key={app.name} isExpanded={isAppExpanded(app)}>
+        renderTourStepElement(
+          'expandableComponents',
+          <Table id="resources-table" aria-label="Collapsible table" isExpandable hasAnimations>
+            <Thead>
               <Tr>
-                {/* Move favorite to first position */}
-                <Td>
-                  <Button
-                    variant="plain"
-                    aria-label={isAppFavorited(app) ? `Unfavorite ${app.name}` : `Favorite ${app.name}`}
-                    isFavorite
-                    isFavorited={isAppFavorited(app)}
-                    onClick={() => {
-                      const isFavoriting = !isAppFavorited(app);
-                      setAppFavorited(app, isFavoriting);
-                      // Logic to check if all rows are now favorited/unfavorited
-                      if (
-                        isFavoriting &&
-                        applicationsData.filter((r) => r !== app).every((r) => favoriteAppNames.includes(r.name))
-                      ) {
-                        setHeaderFavorited(true);
-                      }
-                      if (!isFavoriting && favoriteAppNames.length === 1 && favoriteAppNames.includes(app.name)) {
-                        setHeaderFavorited(false);
-                      }
-                    }}
-                  />
-                </Td>
-                {idx === 0 ? (
-                  renderTourStepElement(
-                    'expandableComponents',
+                <Th
+                  expand={{
+                    areAllExpanded: !areAllExpanded,
+                    collapseAllAriaLabel,
+                    onToggle: onCollapseAll
+                  }}
+                  aria-label="Row expansion"
+                  name="expand"
+                />
+                {expandableColumns.map((column) => (
+                  <Th key={column} name={column}>
+                    {column}
+                  </Th>
+                ))}
+              </Tr>
+            </Thead>
+
+            {applicationsData.map((app, idx) => (
+              <Tbody key={app.name} isExpanded={isAppExpanded(app)}>
+                <Tr>
+                  {idx === 0 ? (
+                    renderTourStepElement(
+                      'expandableComponentsMobile',
+                      <Td
+                        expand={
+                          app.details
+                            ? {
+                                rowIndex: idx,
+                                isExpanded: isAppExpanded(app),
+                                onToggle: () => setAppExpanded(app, !isAppExpanded(app))
+                              }
+                            : undefined
+                        }
+                      />
+                    )
+                  ) : (
                     <Td
                       expand={
                         app.details
@@ -849,42 +841,29 @@ const AnimationsResourcesTable: FunctionComponent = () => {
                           : undefined
                       }
                     />
-                  )
-                ) : (
-                  <Td
-                    expand={
-                      app.details
-                        ? {
-                            rowIndex: idx,
-                            isExpanded: isAppExpanded(app),
-                            onToggle: () => setAppExpanded(app, !isAppExpanded(app))
-                          }
-                        : undefined
-                    }
-                  />
-                )}
-                <Td>{app.name}</Td>
-                <Td>{app.header}</Td>
-                <Td>{app.branch}</Td>
-                <Td>
-                  {app.status === 'Running' && <Label color="green">Running</Label>}
-                  {app.status === 'Degraded' && <Label color="orange">Degraded</Label>}
-                  {app.status === 'Stopped' && <Label color="red">Stopped</Label>}
-                  {app.status !== 'Running' && app.status !== 'Degraded' && app.status !== 'Stopped' && app.status}
-                </Td>
-              </Tr>
-              <Tr isExpanded={isAppExpanded(app)}>
-                <Td />
-                <Td />
-                <Td colSpan={expandableColumns.length}>
-                  <ExpandableRowContent>{app.details}</ExpandableRowContent>
-                </Td>
-              </Tr>
-            </Tbody>
-          ))}
-        </Table>
+                  )}
+                  <Td>{app.name}</Td>
+                  <Td>{app.header}</Td>
+                  <Td>{app.branch}</Td>
+                  <Td>
+                    {app.status === 'Running' && <Label status="success">Running</Label>}
+                    {app.status === 'Degraded' && <Label status="warning">Degraded</Label>}
+                    {app.status === 'Stopped' && <Label status="danger">Stopped</Label>}
+                    {app.status !== 'Running' && app.status !== 'Degraded' && app.status !== 'Stopped' && app.status}
+                  </Td>
+                </Tr>
+                <Tr isExpanded={isAppExpanded(app)}>
+                  <Td />
+                  <Td colSpan={expandableColumns.length}>
+                    <ExpandableRowContent>{app.details}</ExpandableRowContent>
+                  </Td>
+                </Tr>
+              </Tbody>
+            ))}
+          </Table>
+        )
       )}
-    </>
+    </Card>
   );
 };
 
