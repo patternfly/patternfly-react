@@ -2,6 +2,7 @@ import { forwardRef, useEffect, useRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
 import { Popper, PopperOptions } from '../../helpers/Popper/Popper';
+import type { DropdownItemProps } from './DropdownItem';
 import { useOUIAProps, OUIAProps, onToggleArrowKeydownDefault } from '../../helpers';
 
 /** @deprecated Use PopperOptions instead */
@@ -29,7 +30,7 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   /** Flag indicating the toggle should be focused after a selection. If this use case is too restrictive, the optional toggleRef property with a node toggle may be used to control focus. */
   shouldFocusToggleOnSelect?: boolean;
   /** Function callback called when user selects item. */
-  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: string | number) => void;
+  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: DropdownItemProps['value']) => void;
   /** Callback to allow the dropdown component to change the open state of the menu.
    * Triggered by clicking outside of the menu, or by pressing any keys specified in onOpenChangeKeys. */
   onOpenChange?: (isOpen: boolean) => void;

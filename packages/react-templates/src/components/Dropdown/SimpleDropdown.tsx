@@ -35,7 +35,7 @@ export interface SimpleDropdownProps extends Omit<DropdownProps, 'toggle' | 'onT
   /** Flag indicated whether the dropdown toggle should take up the full width of its parent. */
   isToggleFullWidth?: boolean;
   /** Callback triggered when any dropdown item is clicked. */
-  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: string | number) => void;
+  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: SimpleDropdownItem['value']) => void;
   /** Callback triggered when the dropdown toggle opens or closes. */
   onToggle?: (nextIsOpen: boolean) => void;
   /** Flag indicating the dropdown toggle should be focused after a dropdown item is clicked. */
