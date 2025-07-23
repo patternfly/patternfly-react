@@ -2,7 +2,7 @@
 id: Tabs
 section: components
 cssPrefix: pf-v6-c-tabs
-propComponents: ['Tabs', 'Tab', 'TabContent', 'TabContentBody', 'TabTitleText', 'TabTitleIcon', 'HorizontalOverflowObject', 'HorizontalOverflowPopperProps', 'TabAction']
+propComponents: ['Tabs', 'Tab', 'TabContent', 'TabContentBody', 'TabTitleText', 'TabTitleIcon', 'HorizontalOverflowObject', 'TabAction', 'PopperOptions']
 ouia: true
 ---
 
@@ -22,16 +22,16 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 A `<Tabs>` component contains multiple `<Tab>` components that may be used to navigate between sets of content within a page.
 
-You can adjust a tab in the following ways: 
+You can adjust a tab in the following ways:
 
 - To label a tab with text, pass a `<TabTitleText>` component into the `title` property of a `<Tab>`.
-- To disable a tab, use the `isDisabled` property. Tabs using `isDisabled` are not perceivable or operable by users navigating via assistive technologies. 
+- To disable a tab, use the `isDisabled` property. Tabs using `isDisabled` are not perceivable or operable by users navigating via assistive technologies.
 - To disable a tab, but keep it perceivable to assistive technology users, use the `isAriaDisabled` property. If a disabled tab has a tooltip, use this property instead of `isDisabled`.
-- To add a tooltip to an aria-disabled tab, use the `tooltip` property. 
+- To add a tooltip to an aria-disabled tab, use the `tooltip` property.
 
-Tabs can be styled as 'default' or 'boxed': 
+Tabs can be styled as 'default' or 'boxed':
 
-- Default tabs do not have any borders and use a bottom line to distinguish between a selected tab, a hovered tab, and an inactive tab. 
+- Default tabs do not have any borders and use a bottom line to distinguish between a selected tab, a hovered tab, and an inactive tab.
 - Boxed tabs are outlined to emphasize the area that a tab spans. To preview boxed tabs in the following examples, select the 'isBox' checkbox, which sets the `isBox` property to true.
 
 ```ts file="./TabsDefault.tsx"
@@ -39,7 +39,7 @@ Tabs can be styled as 'default' or 'boxed':
 
 ### Boxed secondary tabs
 
-To change the background color of boxed tabs or the tab content, use the `variant` property. 
+To change the background color of boxed tabs or the tab content, use the `variant` property.
 
 Toggle the tab color by selecting the 'Tabs secondary variant' checkbox in the following example.
 
@@ -50,14 +50,14 @@ Toggle the tab color by selecting the 'Tabs secondary variant' checkbox in the f
 
 Vertical tabs are placed on the left-hand side of a page or container and may appear in both 'default' and 'boxed' tab variations.
 
-To style tabs vertically, use the `isVertical` property. 
+To style tabs vertically, use the `isVertical` property.
 
 ```ts file="./TabsVertical.tsx"
 ```
 
 ### Vertical expandable tabs
 
-Vertical tabs can be made expandable to save space. Users can select the caret to expand a menu and switch between tabs. 
+Vertical tabs can be made expandable to save space. Users can select the caret to expand a menu and switch between tabs.
 
 Expandable tabs can be enabled at different breakpoints. The following example passes `expandable={{ default: 'expandable', md: 'nonExpandable', lg: 'expandable' }}` into the `<Tabs>` component.
 
@@ -75,14 +75,14 @@ To flag the default expanded state for uncontrolled tabs, use the `defaultIsExpa
 
 ### Default overflow tabs
 
-By default, overflow is applied when there are too many tabs for the width of the container they are in. This overflow can be navigated by side-scrolling within the tabs section, or by selecting the left and right arrows. 
+By default, overflow is applied when there are too many tabs for the width of the container they are in. This overflow can be navigated by side-scrolling within the tabs section, or by selecting the left and right arrows.
 
 ```ts file="./TabsDefaultOverflow.tsx"
 ```
 
 ### Horizontal overflow tabs
 
-Horizontal overflow can be used instead of the default application. To navigate horizontal overflow tabs users can select the last tab, labeled “more”, to see the overflowed content. 
+Horizontal overflow can be used instead of the default application. To navigate horizontal overflow tabs users can select the last tab, labeled “more”, to see the overflowed content.
 
 To enable horizontal overflow, use the `isOverflowHorizontal` property.
 
@@ -102,7 +102,7 @@ The tooltip should also have the `id` property passed in. The value of `id` shou
 
 ### Uncontrolled tabs
 
-To allow the `<Tabs>` component to manage setting the active tab and displaying correct content itself, use uncontrolled tabs, as shown in the following example. 
+To allow the `<Tabs>` component to manage setting the active tab and displaying correct content itself, use uncontrolled tabs, as shown in the following example.
 
 
 ```ts file="./TabsUncontrolled.tsx"
@@ -124,7 +124,7 @@ To adjust the left padding of tabs, use the `usePageInsets` property. This prope
 
 ### With icons and text
 
-You can render different content in the `title` property of a tab to add icons and text. 
+You can render different content in the `title` property of a tab to add icons and text.
 
 To add an icon to a tab, pass a `<TabTitleIcon>` component that contains the icon of your choice into the `title`. To use an icon alongside styled text, keep the text in the `<TabTitleText>` component.
 
@@ -133,53 +133,53 @@ To add an icon to a tab, pass a `<TabTitleIcon>` component that contains the ico
 
 ### Subtabs
 
-Use subtabs within other components, like modals. Subtabs have less visually prominent styling. 
+Use subtabs within other components, like modals. Subtabs have less visually prominent styling.
 
-To apply subtab styling to tabs, use the `isSubtab` property. 
+To apply subtab styling to tabs, use the `isSubtab` property.
 
 ```ts file="./TabsSubtabs.tsx"
 ```
 
 ### Filled tabs with icons
 
-To allow tabs to fill the available width of the page section, use the `isFilled` property. 
+To allow tabs to fill the available width of the page section, use the `isFilled` property.
 
 ```ts file="./TabsFilledWithIcons.tsx"
 ```
 
 ### Tabs linked to nav elements
 
-To let tabs link to nav elements, pass `{TabsComponent.nav}` into the `component` property. 
+To let tabs link to nav elements, pass `{TabsComponent.nav}` into the `component` property.
 
-Nav tabs should use the `href` property to link the tab to the URL of another page or page section. A tab with an `href` will render as an `<a>` instead of a `<button>`. 
+Nav tabs should use the `href` property to link the tab to the URL of another page or page section. A tab with an `href` will render as an `<a>` instead of a `<button>`.
 
 ```ts file="./TabsNav.tsx"
 ```
 
 ### Subtabs linked to nav elements
 
-Subtabs can also link to nav elements. 
+Subtabs can also link to nav elements.
 
 ```ts file="./TabsNavSubtab.tsx"
 ```
 
 ### With separate content
 
-If a `<TabContent>` component is defined outside of a `<Tabs>` component, use the `tabContentRef` and `tabContentId` properties 
+If a `<TabContent>` component is defined outside of a `<Tabs>` component, use the `tabContentRef` and `tabContentId` properties
 
 ```ts file="./TabsSeparateContent.tsx"
 ```
 
 ### With tab content with body and padding
 
-To add a content body to a `<TabContent>` component, pass a `<TabContentBody>`. To add padding to the body section, use the `hasPadding` property. 
+To add a content body to a `<TabContent>` component, pass a `<TabContentBody>`. To add padding to the body section, use the `hasPadding` property.
 
 ```ts file="./TabsContentWithBodyPadding.tsx"
 ```
 
 ### Children mounting on click
 
-To mount tab children (add to the DOM) when a tab is clicked, use the `mountOnEnter` property. 
+To mount tab children (add to the DOM) when a tab is clicked, use the `mountOnEnter` property.
 
 Note that this property does not create the tab children until the tab is clicked, so they are not preloaded into the DOM.
 
@@ -197,30 +197,30 @@ To unmount tab children (remove from the DOM) when they are no longer visible, u
 
 You may control tabs from outside of the tabs component. For example, select the "Hide tab 2" button below to make "Tab item  2" invisible.
 
-The tab its content should only be mounted when the tab is visible. 
+The tab its content should only be mounted when the tab is visible.
 
 ```ts file="./TabsToggledSeparateContent.tsx"
 ```
 
 ### Dynamic tabs
 
-To enable closeable tabs, pass the `onClose` property to the `<Tabs>` component. To enable a button that adds new tabs, pass the `onAdd` property to `<Tabs>`. 
+To enable closeable tabs, pass the `onClose` property to the `<Tabs>` component. To enable a button that adds new tabs, pass the `onAdd` property to `<Tabs>`.
 
 ```ts file="./TabsDynamic.tsx"
 ```
 
 ### With help action popover
 
-You may add a help action to a tab to provide users with additional context in a popover. 
+You may add a help action to a tab to provide users with additional context in a popover.
 
-To render an action beside the tab content, use the `actions` property of a `<Tab>`. Pass a popover and a `<TabsAction>` component into the `actions` property. 
+To render an action beside the tab content, use the `actions` property of a `<Tab>`. Pass a popover and a `<TabsAction>` component into the `actions` property.
 
 ```ts file="./TabsHelp.tsx"
 ```
 
 ### With help and close actions
 
-To add multiple actions to a tab, create a `<TabAction>` component for each action. 
+To add multiple actions to a tab, create a `<TabAction>` component for each action.
 
 The following example passes in both help popover and close actions.
 
