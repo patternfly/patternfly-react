@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardBody, Dropdown, DropdownList, DropdownItem, MenuToggle, Flex } from '../..';
 
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import ServerAltIcon from '@patternfly/react-icons/dist/esm/icons/server-alt-icon';
+import NetworkIcon from '@patternfly/react-icons/dist/esm/icons/network-icon';
 
 import {
   Chart,
@@ -74,7 +74,7 @@ export const NetworkActivityCard: React.FunctionComponent = () => {
         >
           <CardTitle>
             <Flex alignItems={{ default: 'alignItemsCenter' }}>
-              <ServerAltIcon />
+              <NetworkIcon />
               <span>Network activity</span>
             </Flex>
           </CardTitle>

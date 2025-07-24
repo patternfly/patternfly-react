@@ -49,13 +49,13 @@ export const AnimationsOverview: FunctionComponent<AnimationsOverviewProps> = ({
       </CardHeader>
       <CardBody>
         <Content component={ContentVariants.p} className="pf-v6-u-mb-sm">
-          Animations are a new way to interact with your data. They are a way to visualize your data in a way that is
-          easy to understand and use.
+          Our new animations bring more clarity and expression to your screen. They let you interact with your data in a
+          new way, with engaging data visualizations that are even easier to understand and use.
         </Content>
       </CardBody>
       <CardFooter>
         <Button variant="link" icon={<ArrowRightIcon />} iconPosition="end" isInline>
-          They're everywhere
+          <a href="https://www.patternfly.org/design-foundations/motion">They're everywhere</a>
         </Button>
       </CardFooter>
     </Card>,
