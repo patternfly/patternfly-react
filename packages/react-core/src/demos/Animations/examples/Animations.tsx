@@ -28,7 +28,6 @@ import {
   Nav,
   NavItem,
   NavList,
-  NavExpandable,
   Page,
   PageSection,
   PageSidebar,
@@ -49,12 +48,12 @@ import {
 } from '@patternfly/react-core';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import SkeletonTable from '@patternfly/react-component-groups/dist/dynamic/SkeletonTable';
-import BoltIcon from '@patternfly/react-icons/dist/esm/icons/bolt-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import ResourcesFullIcon from '@patternfly/react-icons/dist/esm/icons/resources-full-icon';
+import PortIcon from '@patternfly/react-icons/dist/esm/icons/port-icon';
 // @ts-ignore
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.PF-HorizontalLogo-Color.svg';
 // @ts-ignore
@@ -270,7 +269,6 @@ const AnimationsPage: FunctionComponent = () => {
   const [showStartTourModal, setShowStartTourModal] = useState(true);
   const [showEndTourModal, setShowEndTourModal] = useState(false);
   const [activeItem, setActiveItem] = useState<number | string>(0);
-  const [activeGroup, setActiveGroup] = useState<string | null>(null);
   const { onStart, onFinish, renderTourStepElement, setCustomStepContent, tourStep, isFinished } = useGuidedTour();
   const [windowWidth, setWindowWidth] = useState<number>(1200);
   const unObserver = useRef(null);
@@ -344,7 +342,7 @@ const AnimationsPage: FunctionComponent = () => {
       >
         <CardTitle>
           <Flex alignItems={{ default: 'alignItemsCenter' }}>
-            <BoltIcon />
+            <PortIcon />
             <span>Recent activity</span>
           </Flex>
         </CardTitle>
@@ -626,28 +624,6 @@ const AnimationsPage: FunctionComponent = () => {
                 >
                   Dashboard
                 </NavItem>
-                <NavExpandable title="Resources" groupId="resources-group" isActive={activeGroup === 'resources-group'}>
-                  <NavItem
-                    preventDefault
-                    id="overview"
-                    to="#overview"
-                    groupId="resources-group"
-                    itemId="overview"
-                    isActive={activeItem === 'overview'}
-                  >
-                    Overview
-                  </NavItem>
-                  <NavItem
-                    preventDefault
-                    id="health"
-                    to="#health"
-                    groupId="resources-group"
-                    itemId="health"
-                    isActive={activeItem === 'health'}
-                  >
-                    Health
-                  </NavItem>
-                </NavExpandable>
               </NavList>
             </Nav>
           </PageSidebarBody>
@@ -721,7 +697,7 @@ const AnimationsPage: FunctionComponent = () => {
               </Alert>
             </AlertGroup>
           ))}
-        <Content component={ContentVariants.h1}>Resources</Content>
+        <Content component={ContentVariants.h1}>Dashboard</Content>
         <Content className="pf-v6-u-mb-md">Everything you need to know about your application</Content>
         {renderTourStepElement(
           'tabs',

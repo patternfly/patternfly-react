@@ -14,7 +14,7 @@ import {
   FlexItem
 } from '../..';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/dist/esm/victory/components';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
+import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
@@ -61,7 +61,7 @@ export const StorageCard: React.FunctionComponent = () => {
       >
         <CardTitle>
           <Flex alignItems={{ default: 'alignItemsCenter' }}>
-            <CubesIcon />
+            <StorageDomainIcon />
             <span>Storage</span>
           </Flex>
         </CardTitle>

@@ -14,9 +14,9 @@ import {
   FlexItem
 } from '../..';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/dist/esm/victory/components';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import TachometerAltIcon from '@patternfly/react-icons/dist/esm/icons/tachometer-alt-icon';
 
 export const MemoryUtilizationCard: React.FunctionComponent = () => {
   const [isKebabOpen, setIsKebabOpen] = useState(false);
@@ -61,7 +61,7 @@ export const MemoryUtilizationCard: React.FunctionComponent = () => {
       >
         <CardTitle>
           <Flex alignItems={{ default: 'alignItemsCenter' }}>
-            <CubesIcon />
+            <TachometerAltIcon />
             <span>Memory utilization</span>
           </Flex>
         </CardTitle>
