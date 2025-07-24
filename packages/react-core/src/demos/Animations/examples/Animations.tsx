@@ -301,7 +301,7 @@ const AnimationsPage: FunctionComponent = () => {
   ];
 
   // A function to create a kebab toggle for a specific row index
-  const kebabToggle = (index) => (toggleRef: React.Ref<any>) => (
+  const kebabToggle = (index: number) => (toggleRef: React.Ref<any>) => (
     <MenuToggle
       ref={toggleRef}
       variant="plain"
@@ -542,18 +542,6 @@ const AnimationsPage: FunctionComponent = () => {
     []
   );
 
-  const startNotifications = () => {
-    setTimeout(() => {
-      addNotification();
-    }, 1000);
-    setTimeout(() => {
-      addNotification();
-    }, 5000);
-    setTimeout(() => {
-      addNotification();
-    }, 9000);
-  };
-
   const onNavSelect = (
     _event: FormEvent<HTMLInputElement>,
     selectedItem: {
@@ -563,7 +551,6 @@ const AnimationsPage: FunctionComponent = () => {
     }
   ) => {
     setActiveItem(selectedItem.itemId);
-    setActiveGroup(selectedItem.groupId as string | null);
   };
 
   const focusDrawer = (_event: any) => {
@@ -579,7 +566,23 @@ const AnimationsPage: FunctionComponent = () => {
 
   const closeStartTourModal = (startTour = false) => {
     setShowStartTourModal(false);
-    startTour ? onStart() : startNotifications();
+    if (startTour) {
+      onStart();
+    } else {
+      setNotifications((prev) => [
+        {
+          id: `new-notification-${prev.length + 1}`,
+          title: 'Explore animations',
+          message: 'When you’re ready to take a tour of PatternFly’s exciting, new animations, refresh this page.',
+          variant: AlertVariant.info,
+          timeout: 8000,
+          timeoutAnimation: 8000,
+          isNew: true,
+          isRead: false
+        },
+        ...prev
+      ]);
+    }
   };
 
   return (
