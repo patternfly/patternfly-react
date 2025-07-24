@@ -1,28 +1,20 @@
 import { useState, FC, ReactNode } from 'react';
+import { Avatar } from '../components/Avatar';
+import { Button, ButtonVariant } from '../components/Button';
+import { Divider } from '../components/Divider';
+import { Dropdown, DropdownGroup, DropdownItem, DropdownList } from '../components/Dropdown';
 import {
-  Avatar,
-  Button,
-  ButtonVariant,
-  Divider,
-  Dropdown,
-  DropdownGroup,
-  DropdownItem,
-  DropdownList,
   Masthead,
   MastheadMain,
   MastheadToggle,
   MastheadBrand,
   MastheadLogo,
-  MastheadContent,
-  MenuToggle,
-  NotificationBadge,
-  NotificationBadgeVariant,
-  PageToggleButton,
-  Toolbar,
-  ToolbarContent,
-  ToolbarGroup,
-  ToolbarItem
-} from '../components';
+  MastheadContent
+} from '../components/Masthead';
+import { MenuToggle } from '../components/MenuToggle';
+import { NotificationBadge, NotificationBadgeVariant } from '../components/NotificationBadge';
+import { PageToggleButton } from '../components/Page';
+import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '../components/Toolbar';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
