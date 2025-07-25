@@ -5,7 +5,6 @@ propComponents: ['ChartTooltip']
 hideDarkMode: true
 ---
 
-import { createRef } from 'react';
 import { useRef, useState, useEffect } from 'react';
 import {
   Chart,
