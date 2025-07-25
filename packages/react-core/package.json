@@ -2,9 +2,27 @@
   "name": "@patternfly/react-core",
   "version": "6.3.0",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
+  "type": "module",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/js/index.js"
+    },
+    "./deprecated": {
+      "import": "./dist/esm/deprecated/index.js",
+      "require": "./dist/js/deprecated/index.js"
+    },
+    "./package.json": "./package.json",
+    "./*": {
+      "import": "./dist/esm/*",
+      "require": "./dist/js/*"
+    },
+    "./dist/*": "./dist/*",
+    "./src/*": "./src/*"
+  },
   "typesVersions": {
     "*": {
       "next": [

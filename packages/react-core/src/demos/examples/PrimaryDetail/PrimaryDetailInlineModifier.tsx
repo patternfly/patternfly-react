@@ -38,7 +38,7 @@ import {
   SelectOptionProps,
   MenuToggle
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
