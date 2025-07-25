@@ -62,13 +62,15 @@ class TextAreaBase extends Component<TextAreaProps> {
     const parent = field.parentElement;
     parent.style.setProperty('height', 'inherit');
     const computed = window.getComputedStyle(field);
+    const parentComputed = window.getComputedStyle(parent);
     // Calculate the height
     const height =
       parseInt(computed.getPropertyValue('border-top-width')) +
-      parseInt(computed.getPropertyValue('padding-top')) +
       field.scrollHeight +
-      parseInt(computed.getPropertyValue('padding-bottom')) +
-      parseInt(computed.getPropertyValue('border-bottom-width'));
+      parseInt(computed.getPropertyValue('border-bottom-width')) +
+      parseInt(parentComputed.getPropertyValue('padding-top')) +
+      parseInt(parentComputed.getPropertyValue('padding-bottom'));
+
     parent.style.setProperty('height', `${height}px`);
   };
 
