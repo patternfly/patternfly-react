@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react/blob/main/packages/eslint-plugin-patternfly-react/README.md",
   "peerDependencies": {
-    "eslint": ">=9.22.0"
+    "eslint": ">=9.32.0"
   }
 }
