@@ -10,6 +10,10 @@
       "import": "./dist/esm/index.js",
       "require": "./dist/js/index.js"
     },
+    "./deprecated": {
+      "import": "./dist/esm/deprecated/index.js",
+      "require": "./dist/js/deprecated/index.js"
+    },
     "./package.json": "./package.json",
     "./*": {
       "import": "./dist/esm/*",

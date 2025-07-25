@@ -2,23 +2,9 @@
   "name": "@patternfly/react-tokens",
   "version": "6.3.0-prerelease.13",
   "description": "This library provides access to the design tokens of PatternFly 4 from JavaScript",
-  "type": "module",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/js/index.js"
-    },
-    "./package.json": "./package.json",
-    "./*": {
-      "import": "./dist/esm/*",
-      "require": "./dist/js/*"
-    },
-    "./dist/*": "./dist/*",
-    "./src/*": "./src/*"
-  },
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
