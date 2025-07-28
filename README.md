@@ -68,7 +68,7 @@ If you want to start with your existing project, skip to [Install and configure 
 * Using npm, run the following command to install:
   ```
   npm install @patternfly/react-core --save
-  ```
+  ``` 
   
   **OR**
 
