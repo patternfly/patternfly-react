@@ -26,7 +26,7 @@ switch (uploadFolderName) {
     break;
   case 'public':
     if (!prnum && prbranch === 'main') {
-      uploadURL = 'react-staging.patternfly.org';
+      uploadURL = 'pf-react-staging.patternfly.org';
     } else {
       uploadURL += '.surge.sh';
     }
