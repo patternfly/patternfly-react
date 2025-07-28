@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import dragStyles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DragButton } from './DragButton';
-import { DualListSelectorListContext } from '@patternfly/react-core/dist/esm/components/DualListSelector/DualListSelectorContext';
+import { DualListSelectorListContext } from '@patternfly/react-core/dist/esm/components/DualListSelector';
 
 export interface DraggableDualListSelectorListItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside DragDrop */
