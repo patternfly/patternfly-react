@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import { Label } from './Label';
 import { Tooltip, TooltipPosition } from '../Tooltip';
-import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { fillTemplate } from '../../helpers';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
@@ -210,7 +210,7 @@ class LabelGroup extends Component<LabelGroupProps, LabelGroupState> {
             onClick={onClick}
             id={`remove_group_${id}`}
             aria-labelledby={`remove_group_${id} ${id}`}
-            icon={<TimesCircleIcon />}
+            icon={<TimesIcon />}
           />
         </div>
       );
