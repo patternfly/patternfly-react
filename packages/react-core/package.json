@@ -28,14 +28,16 @@
       "import": "./dist/esm/helpers/*.js",
       "require": "./dist/js/helpers/*.js"  
     },
+    "./dist/esm/components/*": "./dist/esm/components/*/index.js",
+    "./dist/js/components/*": "./dist/js/components/*/index.js",
+    "./dist/esm/layouts/*": "./dist/esm/layouts/*/index.js",
+    "./dist/js/layouts/*": "./dist/js/layouts/*/index.js",
     "./dist/esm/helpers": "./dist/esm/helpers/index.js",
+    "./dist/js/helpers": "./dist/js/helpers/index.js",
     "./dist/esm/*": "./dist/esm/*.js",
-    "./dist/js/helpers": "./dist/js/helpers/index.js", 
     "./dist/js/*": "./dist/js/*.js",
     "./src/*": "./src/*",
-    "./dist/*.css": "./dist/*.css",
-    "./dist/*.map": "./dist/*.map",
-    "./dist/styles/*": "./dist/styles/*",
+    "./dist/*": "./dist/*",
     "./*": {
       "import": "./dist/esm/*",
       "require": "./dist/js/*"
