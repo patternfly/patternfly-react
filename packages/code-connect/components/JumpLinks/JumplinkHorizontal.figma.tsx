@@ -1,6 +1,7 @@
 import figma from '@figma/code-connect';
 import { JumpLinksItem } from '@patternfly/react-core';
 
+// TODO: DESIGN: FIGMA: Remove icons, help popup, and close button
 // Documentation for JumpLinks can be found at https://www.patternfly.org/components/jump-links
 
 figma.connect(
@@ -12,14 +13,11 @@ figma.connect(
       tabText: figma.string('Tab Text'),
 
       // enum
-      isActive: figma.enum('State', { Selected: true }),
-
-      children: figma.children('*')
+      isActive: figma.enum('State', { Selected: true })
     },
     example: (props) => (
       <JumpLinksItem href="#" isActive={props.isActive}>
         {props.tabText}
-        {props.children}
       </JumpLinksItem>
     )
   }
