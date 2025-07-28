@@ -16,12 +16,30 @@
       "require": "./dist/js/deprecated/index.js"
     },
     "./package.json": "./package.json",
+    "./components/*": {
+      "import": "./dist/esm/components/*/index.js", 
+      "require": "./dist/js/components/*/index.js"
+    },
+    "./helpers": {
+      "import": "./dist/esm/helpers/index.js",
+      "require": "./dist/js/helpers/index.js"  
+    },
+    "./helpers/*": {
+      "import": "./dist/esm/helpers/*.js",
+      "require": "./dist/js/helpers/*.js"  
+    },
+    "./dist/esm/helpers": "./dist/esm/helpers/index.js",
+    "./dist/esm/*": "./dist/esm/*.js",
+    "./dist/js/helpers": "./dist/js/helpers/index.js", 
+    "./dist/js/*": "./dist/js/*.js",
+    "./src/*": "./src/*",
+    "./dist/*.css": "./dist/*.css",
+    "./dist/*.map": "./dist/*.map",
+    "./dist/styles/*": "./dist/styles/*",
     "./*": {
       "import": "./dist/esm/*",
       "require": "./dist/js/*"
-    },
-    "./dist/*": "./dist/*",
-    "./src/*": "./src/*"
+    }
   },
   "typesVersions": {
     "*": {

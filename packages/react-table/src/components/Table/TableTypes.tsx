@@ -149,7 +149,7 @@ export interface ISortBy {
   defaultDirection?: 'asc' | 'desc';
 }
 
-export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'>, Pick<ButtonProps, 'variant'> {
+export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'> {
   /** Flag indicating an item on actions menu is a separator, rather than an action */
   isSeparator?: boolean;
   /** Key of actions menu item */
@@ -166,10 +166,12 @@ export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'>, P
   isOutsideDropdown?: boolean;
   /** Flag indicating whether the actions dropdown should close after an item is clicked. */
   shouldCloseOnClick?: boolean;
+  /** Button variant for the action item */
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'warning' | 'link' | 'plain' | 'control' | 'stateful';
 }
 
-export interface ISeparator extends IAction {
-  isSeparator: boolean;
+export interface ISeparator extends Omit<IAction, 'isSeparator' | 'variant'> {
+  isSeparator: true;
 }
 
 export type IActions = (IAction | ISeparator)[];
