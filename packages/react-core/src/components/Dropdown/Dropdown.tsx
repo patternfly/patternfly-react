@@ -1,10 +1,10 @@
 import { forwardRef, useEffect, useRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
-import { Popper, PopperProps } from '../../helpers/Popper/Popper';
+import { Popper, PopperOptions } from '../../helpers/Popper/Popper';
 import { useOUIAProps, OUIAProps, onToggleArrowKeydownDefault } from '../../helpers';
 
-export type DropdownPopperProps = Omit<PopperProps, 'trigger' | 'triggerRef' | 'popper' | 'popperRef' | 'isVisible'>;
+export type DropdownPopperProps = PopperOptions;
 
 export interface DropdownToggleProps {
   /**  Dropdown toggle node. */

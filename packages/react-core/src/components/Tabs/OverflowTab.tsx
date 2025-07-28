@@ -2,16 +2,13 @@ import { Fragment, useContext, useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import { Popper, PopperProps } from '../../helpers';
+import { Popper, PopperOptions } from '../../helpers';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { TabsContext } from './TabsContext';
 import { TabProps } from './Tab';
 import { TabTitleText } from './TabTitleText';
 
-export type HorizontalOverflowPopperProps = Omit<
-  PopperProps,
-  'trigger' | 'triggerRef' | 'popper' | 'popperRef' | 'isVisible'
->;
+export type HorizontalOverflowPopperProps = PopperOptions;
 
 export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   /** Additional classes added to the overflow tab */

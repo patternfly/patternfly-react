@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { onToggleArrowKeydownDefault, Popper } from '../../helpers';
-import type { PopperProps } from '../../helpers/Popper/Popper';
+import type { PopperOptions } from '../../helpers/Popper/Popper';
 
-export type MenuPopperProps = Omit<PopperProps, 'trigger' | 'triggerRef' | 'popper' | 'popperRef' | 'isVisible'>;
+export type MenuPopperProps = PopperOptions;
 
 export interface MenuContainerProps {
   /** Menu to be rendered */
