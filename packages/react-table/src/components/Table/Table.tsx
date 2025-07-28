@@ -78,11 +78,13 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
 interface TableContextProps {
   registerSelectableRow?: () => void;
   hasAnimations?: boolean;
+  variant?: TableVariant | 'compact';
 }
 
 export const TableContext = createContext<TableContextProps>({
   registerSelectableRow: () => {},
-  hasAnimations: false
+  hasAnimations: false,
+  variant: undefined
 });
 
 const TableBase: React.FunctionComponent<TableProps> = ({
@@ -204,7 +206,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   };
 
   return (
-    <TableContext.Provider value={{ registerSelectableRow, hasAnimations }}>
+    <TableContext.Provider value={{ registerSelectableRow, hasAnimations, variant }}>
       <table
         aria-label={ariaLabel}
         role={role}

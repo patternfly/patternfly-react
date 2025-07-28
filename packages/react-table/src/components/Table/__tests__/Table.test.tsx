@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Table } from '../Table';
+import { Td } from '../Td';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 test('Renders without children', () => {
@@ -59,4 +60,26 @@ test('Matches snapshot without children', () => {
   const { asFragment } = render(<Table />);
 
   expect(asFragment()).toMatchSnapshot();
+});
+
+test('Renders expandable toggle button with pf-m-small class when variant is compact', () => {
+  render(
+    <Table variant="compact" isExpandable aria-label="Test table">
+      <tbody>
+        <tr>
+          <Td
+            expand={{
+              rowIndex: 0,
+              isExpanded: false,
+              onToggle: () => {}
+            }}
+          />
+          <Td>Test content</Td>
+        </tr>
+      </tbody>
+    </Table>
+  );
+
+  const toggleButton = screen.getByRole('button', { name: 'Details' });
+  expect(toggleButton).toHaveClass('pf-m-small');
 });
