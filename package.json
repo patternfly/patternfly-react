@@ -8,7 +8,7 @@
     "url": "https://github.com/patternfly/patternfly-react.git"
   },
   "engines": {
-    "node": ">=22.14.0"
+    "node": ">=22.17.1"
   },
   "packageManager": "yarn@4.7.0",
   "keywords": [
@@ -40,7 +40,7 @@
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "29.5.14",
-    "@types/node": "^22.13.10",
+    "@types/node": "^22.16.5",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "babel-jest": "^29.7.0",
