@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0...@patternfly/react-core@6.3.1-prerelease.0) (2025-07-28)
+
+### Bug Fixes
+
+- **Card:** Add ref forwarding ([#11879](https://github.com/patternfly/patternfly-react/issues/11879)) ([deec405](https://github.com/patternfly/patternfly-react/commit/deec405b30c9324ded1cbff307a781c1c4d75e1e))
+- **textarea:** fix height logic for autoresize textarea ([#11922](https://github.com/patternfly/patternfly-react/issues/11922)) ([be2b744](https://github.com/patternfly/patternfly-react/commit/be2b744368d90c3a003c4eb73d054c7e11889a2d))
+
 # 6.3.0 (2025-07-22)
 
 **Note:** Version bump only for package @patternfly/react-core
