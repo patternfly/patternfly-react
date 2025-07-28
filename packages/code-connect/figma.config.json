@@ -2,11 +2,7 @@
   "codeConnect": {
     "parser": "react",
     "include": [
-      "components/AboutModal/*.tsx",
-      "components/Accordion/*.tsx",
-      "components/ActionList/*.tsx",
-      "components/BackgroundImage/*.tsx",
-      "components/ClipboardCopy/*.tsx"
+      "components/Alert/*.tsx"
     ],
     "paths": {
       "src/components": "src/components"
