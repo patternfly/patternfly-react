@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Table } from '../Table';
 import { Td } from '../Td';
+import { Th } from '../Th';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 test('Renders without children', () => {
@@ -82,4 +83,42 @@ test('Renders expandable toggle button with pf-m-small class when variant is com
 
   const toggleButton = screen.getByRole('button', { name: 'Details' });
   expect(toggleButton).toHaveClass('pf-m-small');
+});
+
+test('Renders expandable toggle button in Th with pf-m-small class when variant is compact', () => {
+  render(
+    <Table variant="compact" isExpandable aria-label="Test table">
+      <thead>
+        <tr>
+          <Th
+            expand={{
+              areAllExpanded: false,
+              collapseAllAriaLabel: 'Expand all',
+              onToggle: () => {}
+            }}
+            aria-label="Row expansion"
+          />
+          <Th>Name</Th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <Td
+            expand={{
+              rowIndex: 0,
+              isExpanded: false,
+              onToggle: () => {}
+            }}
+          />
+          <td>Test content</td>
+        </tr>
+      </tbody>
+    </Table>
+  );
+
+  const toggleButtons = screen.getAllByRole('button');
+  expect(toggleButtons).toHaveLength(2); // One in Th, one in Td
+  toggleButtons.forEach((button) => {
+    expect(button).toHaveClass('pf-m-small');
+  });
 });

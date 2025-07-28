@@ -156,7 +156,7 @@ export const TableExpandCollapseAll: React.FunctionComponent = () => {
           aria-label="Collapsible table data"
         >
           <Card component="div">
-            <Table isExpandable hasAnimations aria-label="Collapsible table" variant="compact">
+            <Table isExpandable hasAnimations aria-label="Collapsible table">
               <Thead>
                 <Tr>
                   <Th
