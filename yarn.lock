@@ -3775,7 +3775,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/react-core@npm:^6.0.0, @patternfly/react-core@workspace:^, @patternfly/react-core@workspace:packages/react-core":
+"@patternfly/react-core@npm:^6.0.0, @patternfly/react-core@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "@patternfly/react-core@npm:6.3.0"
+  dependencies:
+    "@patternfly/react-icons": "npm:^6.3.0"
+    "@patternfly/react-styles": "npm:^6.3.0"
+    "@patternfly/react-tokens": "npm:^6.3.0"
+    focus-trap: "npm:7.6.4"
+    react-dropzone: "npm:^14.3.5"
+    tslib: "npm:^2.8.1"
+  peerDependencies:
+    react: ^17 || ^18 || ^19
+    react-dom: ^17 || ^18 || ^19
+  checksum: 10c0/d3182b64ad495d85dfed9592540a22c18821b8241c5d4defe44fdd98aba97353d0a79b7b3c8bccd26a0bc1c691a7e33dcbdc82a012b4c2af877cc8a306494825
+  languageName: node
+  linkType: hard
+
+"@patternfly/react-core@workspace:^, @patternfly/react-core@workspace:packages/react-core":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-core@workspace:packages/react-core"
   dependencies:
@@ -3833,7 +3850,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-icons@npm:^6.0.0, @patternfly/react-icons@workspace:^, @patternfly/react-icons@workspace:packages/react-icons":
+"@patternfly/react-icons@npm:^6.0.0, @patternfly/react-icons@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "@patternfly/react-icons@npm:6.3.0"
+  peerDependencies:
+    react: ^17 || ^18 || ^19
+    react-dom: ^17 || ^18 || ^19
+  checksum: 10c0/fd926139c27a47fe9aebcda44a8366e3a3d8ca37c545c6e6104be7255af26299b5cfe3cdf1e3b0c5cf017982cbb3be425e3dd80ebee3d34d42f3519e020f0dfc
+  languageName: node
+  linkType: hard
+
+"@patternfly/react-icons@workspace:^, @patternfly/react-icons@workspace:packages/react-icons":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-icons@workspace:packages/react-icons"
   dependencies:
@@ -3923,7 +3950,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-styles@npm:^6.0.0, @patternfly/react-styles@workspace:^, @patternfly/react-styles@workspace:packages/react-styles":
+"@patternfly/react-styles@npm:^6.0.0, @patternfly/react-styles@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "@patternfly/react-styles@npm:6.3.0"
+  checksum: 10c0/3721e96fe499073c26b36d45dd91ddf91ee22ac4ba3e08783c2001a1a2d454ea408795bd9c96d91fe06b516528ce2896e1c428036d8aec88034a7dc89e03b098
+  languageName: node
+  linkType: hard
+
+"@patternfly/react-styles@workspace:^, @patternfly/react-styles@workspace:packages/react-styles":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-styles@workspace:packages/react-styles"
   dependencies:
@@ -3933,7 +3967,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-table@npm:^6.0.0, @patternfly/react-table@workspace:^, @patternfly/react-table@workspace:packages/react-table":
+"@patternfly/react-table@npm:^6.0.0":
+  version: 6.3.0
+  resolution: "@patternfly/react-table@npm:6.3.0"
+  dependencies:
+    "@patternfly/react-core": "npm:^6.3.0"
+    "@patternfly/react-icons": "npm:^6.3.0"
+    "@patternfly/react-styles": "npm:^6.3.0"
+    "@patternfly/react-tokens": "npm:^6.3.0"
+    lodash: "npm:^4.17.21"
+    tslib: "npm:^2.8.1"
+  peerDependencies:
+    react: ^17 || ^18 || ^19
+    react-dom: ^17 || ^18 || ^19
+  checksum: 10c0/68b2dbf6fa43ffe2afc7f67bf2bfd883d98083ddd2a9c2b7ad416dc42a61f19ffd49f615fe79b04001a6c1fa3ffc3fb7651d499956c136de01eac480d297cde8
+  languageName: node
+  linkType: hard
+
+"@patternfly/react-table@workspace:^, @patternfly/react-table@workspace:packages/react-table":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-table@workspace:packages/react-table"
   dependencies:
@@ -3963,6 +4014,13 @@ __metadata:
     react-dom: ^17 || ^18
   languageName: unknown
   linkType: soft
+
+"@patternfly/react-tokens@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "@patternfly/react-tokens@npm:6.3.0"
+  checksum: 10c0/761ebedac08543fc54bafd7c389968294834c33036f90c2f65bba30ccadfd602f6f5023b9585201f7997bf28d10374536846c98034a92fcbe19afdcf15c7917d
+  languageName: node
+  linkType: hard
 
 "@patternfly/react-tokens@workspace:^, @patternfly/react-tokens@workspace:packages/react-tokens":
   version: 0.0.0-use.local

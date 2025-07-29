@@ -67,7 +67,12 @@ export const StorageCard: React.FunctionComponent = () => {
         </CardTitle>
       </CardHeader>
       <CardBody>
-        <Flex direction={{ default: 'row' }} spaceItems={{ default: 'spaceItemsSm' }}>
+        <Flex
+          direction={{ default: 'row' }}
+          justifyContent={{ default: 'justifyContentCenter' }}
+          alignItems={{ default: 'alignItemsCenter' }}
+          spaceItems={{ default: 'spaceItemsSm' }}
+        >
           <FlexItem>
             <ChartDonutThreshold
               ariaDesc="Mock storage capacity"

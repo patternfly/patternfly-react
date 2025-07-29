@@ -156,17 +156,17 @@ export const AnimationsOverview: FunctionComponent<AnimationsOverviewProps> = ({
           <GridItem span={12} sm={12} md={6} lg={4} xl={3} rowSpan={2}>
             <AnimationsOverviewClusterInventory />
           </GridItem>
-          <GridItem span={12} sm={12} md={6} lg={4} xl={2} rowSpan={2}>
+          <GridItem span={12} sm={12} md={6} lg={4} xl={3} rowSpan={2}>
             <AnimationsOverviewStorage />
           </GridItem>
-          <GridItem span={12} sm={12} md={12} lg={12} xl={4} rowSpan={2}>
+          <GridItem span={12} sm={12} md={12} lg={8} xl={3} rowSpan={2}>
             <AnimationsOverviewMemoryUtilization />
           </GridItem>
-          <GridItem span={12} sm={12} md={12} lg={12} xl={4} rowSpan={2}>
+          <GridItem span={12} sm={12} md={12} lg={12} xl={3} rowSpan={2}>
             <AnimationsOverviewNetworkActivity />
           </GridItem>
           {recentActivityCard && (
-            <GridItem span={12} sm={12} md={12} lg={8} xl={5} rowSpan={2}>
+            <GridItem span={12} sm={12} md={12} lg={8} xl={6} rowSpan={2}>
               {recentActivityCard}
             </GridItem>
           )}
