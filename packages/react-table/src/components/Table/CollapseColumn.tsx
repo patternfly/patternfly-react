@@ -25,7 +25,8 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
   <Fragment>
     {isOpen !== undefined && (
       <Button
-        className={css(className, isOpen && styles.modifiers.expanded, variant === 'compact' && 'pf-m-small')}
+        className={css(className, isOpen && styles.modifiers.expanded)}
+        size={variant === 'compact' ? 'sm' : undefined}
         {...props}
         variant="plain"
         aria-label={props['aria-label'] || 'Details'}
