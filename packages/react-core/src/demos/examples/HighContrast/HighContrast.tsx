@@ -55,14 +55,25 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import { Ref, RefObject, useState, MouseEvent as ReactMouseEvent, FormEvent } from 'react';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+
+type Validate = 'success' | 'warning' | 'error' | 'default';
+const emailRegex = /^[^@]+@[^@]+\.[a-zA-Z]+$/i;
+const nameRegex = /^[a-zA-ZÀ-ÿ\u0100-\u017F\u0180-\u024F\s\-'.]{2,50}$/i;
 
 export const TabsOpenDemo = () => {
   const [activeTabKey, setActiveTabKey] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(true);
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
   const [isOpenMap, setIsOpenMap] = useState(new Array(7).fill(false));
+  const [name, setName] = useState('');
+  const [validatedName, setValidatedName] = useState<Validate>('default');
+  const [nameHelperText, setNameHelperText] = useState('Enter your name to continue');
+  const [email, setEmail] = useState('');
+  const [validatedEmail, setValidatedEmail] = useState<Validate>('default');
+  const [emailHelperText, setEmailHelperText] = useState('Enter your email to continue');
 
   const onToggle = (index: number) => () => {
     const newState = [...isOpenMap.slice(0, index), !isOpenMap[index], ...isOpenMap.slice(index + 1)];
@@ -103,6 +114,68 @@ export const TabsOpenDemo = () => {
 
   const [isChecked, setIsChecked] = useState(true);
 
+  const validateEmail = () => {
+    if (!emailRegex.test(email)) {
+      setEmailHelperText('Invalid email address');
+      setValidatedEmail('error');
+      return;
+    }
+    setEmailHelperText('Valid email address');
+    setValidatedEmail('success');
+  };
+
+  const validateName = () => {
+    if (!nameRegex.test(name)) {
+      setNameHelperText('Invalid name');
+      setValidatedName('error');
+      return;
+    }
+    setNameHelperText('Valid name');
+    setValidatedName('success');
+  };
+
+  const handleEmailChange = (_event, newEmail: string) => {
+    setEmail(newEmail);
+  };
+
+  const handleNameChange = (_event, newName: string) => {
+    setName(newName);
+  };
+
+  const resetForm = () => {
+    setName('');
+    setEmail('');
+    setValidatedName('default');
+    setValidatedEmail('default');
+    setNameHelperText('Enter your name to continue');
+    setEmailHelperText('Enter your email to continue');
+  };
+
+  const handleSubmit = (_event) => {
+    if (emailRegex.test(email) && nameRegex.test(name)) {
+      resetForm();
+    } else {
+      validateEmail();
+      validateName();
+    }
+  };
+
+  const handleCancel = () => {
+    resetForm();
+  };
+
+  const generateAlertContent = () => {
+    if (validatedEmail === 'error' && validatedName === 'error') {
+      return 'Please provide a valid name and email address';
+    }
+    if (validatedEmail === 'error') {
+      return 'Please provide a valid email address';
+    }
+    if (validatedName === 'error') {
+      return 'Please provide a valid name';
+    }
+  };
+
   const pageForm = (
     <Form>
       <FormGroup label="Name" isRequired fieldId="horizontal-form-name">
@@ -112,11 +185,18 @@ export const TabsOpenDemo = () => {
           id="horizontal-form-name"
           aria-describedby="horizontal-form-name-helper"
           name="horizontal-form-name"
-          value="John Doe"
+          value={name}
+          onChange={handleNameChange}
+          validated={validatedName}
         />
         <FormHelperText>
           <HelperText>
-            <HelperTextItem variant="success">Valid name</HelperTextItem>
+            <HelperTextItem
+              variant={validatedName}
+              {...(validatedName === 'error' && { icon: <ExclamationCircleIcon /> })}
+            >
+              {nameHelperText}
+            </HelperTextItem>
           </HelperText>
         </FormHelperText>
       </FormGroup>
@@ -126,11 +206,18 @@ export const TabsOpenDemo = () => {
           type="text"
           id="horizontal-form-email"
           name="horizontal-form-email"
-          value="John_doe@gmail"
+          value={email}
+          onChange={handleEmailChange}
+          validated={validatedEmail}
         />
         <FormHelperText>
           <HelperText>
-            <HelperTextItem variant="error">Invalid email</HelperTextItem>
+            <HelperTextItem
+              variant={validatedEmail}
+              {...(validatedEmail === 'error' && { icon: <ExclamationCircleIcon /> })}
+            >
+              {emailHelperText}
+            </HelperTextItem>
           </HelperText>
         </FormHelperText>
       </FormGroup>
@@ -161,8 +248,12 @@ export const TabsOpenDemo = () => {
         <TextArea autoResize />
       </FormGroup>
       <ActionGroup>
-        <Button variant="primary">Submit</Button>
-        <Button variant="link">Cancel</Button>
+        <Button variant="primary" onClick={handleSubmit}>
+          Submit
+        </Button>
+        <Button variant="link" onClick={handleCancel}>
+          Cancel
+        </Button>
       </ActionGroup>
     </Form>
   );
@@ -589,7 +680,9 @@ export const TabsOpenDemo = () => {
       <PageSection isWidthLimited padding={{ default: 'noPadding' }}>
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <PageSection>
-            <Alert isInline variant="danger" title="Danger alert title" ouiaId="DangerAlert" />
+            {(validatedEmail === 'error' || validatedName === 'error') && (
+              <Alert isInline variant="danger" title={generateAlertContent()} ouiaId="DangerAlert" />
+            )}
           </PageSection>
           <PageSection>{pageForm}</PageSection>
         </TabContent>
