@@ -22,8 +22,10 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import { useState } from 'react';
 
 ### High contrast
+
 ```js file='./examples/HighContrast/HighContrast.tsx' isFullscreen
 
 ```
