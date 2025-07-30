@@ -11,6 +11,7 @@ export interface CollapseColumnProps {
   onToggle?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   isOpen?: boolean;
   'aria-label'?: string;
+  variant?: 'compact';
 }
 
 export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
@@ -18,12 +19,14 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
   children = null as React.ReactNode,
   isOpen,
   onToggle,
+  variant,
   ...props
 }: CollapseColumnProps) => (
   <Fragment>
     {isOpen !== undefined && (
       <Button
         className={css(className, isOpen && styles.modifiers.expanded)}
+        size={variant === 'compact' ? 'sm' : undefined}
         {...props}
         variant="plain"
         aria-label={props['aria-label'] || 'Details'}

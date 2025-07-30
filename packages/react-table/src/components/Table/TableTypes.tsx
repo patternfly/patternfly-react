@@ -109,6 +109,7 @@ export interface IColumn {
     isHeaderSelectDisabled?: boolean;
     onFavorite?: OnFavorite;
     favoriteButtonProps?: ButtonProps;
+    variant?: 'compact';
   };
 }
 
