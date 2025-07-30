@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.3.1-prerelease.0...@patternfly/react-table@6.3.1-prerelease.1) (2025-07-30)
+
+### Bug Fixes
+
+- **table:** add pf-m-small to expandable toggle on small tables ([#11947](https://github.com/patternfly/patternfly-react/issues/11947)) ([a72b43a](https://github.com/patternfly/patternfly-react/commit/a72b43a04469c47dd48da5ef553e69712e79ec65))
+
 ## [6.3.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.3.0...@patternfly/react-table@6.3.1-prerelease.0) (2025-07-28)
 
 **Note:** Version bump only for package @patternfly/react-table
