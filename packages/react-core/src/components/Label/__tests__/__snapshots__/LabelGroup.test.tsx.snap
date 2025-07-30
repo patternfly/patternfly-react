@@ -255,7 +255,7 @@ exports[`LabelGroup label group with closable category 1`] = `
       <button
         aria-label="Close label group"
         aria-labelledby="remove_group_generated-id generated-id"
-        class="pf-v6-c-button pf-m-plain pf-m-no-padding"
+        class="pf-v6-c-button pf-m-plain pf-m-small"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"

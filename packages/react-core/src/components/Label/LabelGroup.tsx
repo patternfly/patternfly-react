@@ -205,7 +205,7 @@ class LabelGroup extends Component<LabelGroupProps, LabelGroupState> {
         <div className={css(styles.labelGroupClose)}>
           <Button
             variant="plain"
-            hasNoPadding
+            size="sm"
             aria-label={closeBtnAriaLabel}
             onClick={onClick}
             id={`remove_group_${id}`}
