@@ -54,9 +54,9 @@ export interface TabsProps
   /** The index of the default active tab. Set this for uncontrolled Tabs */
   defaultActiveKey?: number | string;
   /** Callback to handle tab selection */
-  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
+  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: TabProps['eventKey']) => void;
   /** Callback to handle tab closing and adds a basic close button to all tabs. This is overridden by the tab actions property. */
-  onClose?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
+  onClose?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: TabProps['eventKey']) => void;
   /** Callback for the add button. Passing this property inserts the add button */
   onAdd?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /** Aria-label for the add button */
