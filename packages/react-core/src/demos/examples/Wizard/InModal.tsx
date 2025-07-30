@@ -10,7 +10,7 @@ import {
   WizardHeader,
   WizardStep
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 export const WizardInModalDemo: React.FunctionComponent = () => (
   <>

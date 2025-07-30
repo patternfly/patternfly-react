@@ -25,7 +25,7 @@ import { Draggable } from './Draggable';
 import { DraggableDataListItem } from './DraggableDataListItem';
 import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
 import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
-import { DataList } from '@patternfly/react-core/dist/esm/components/DataList/DataList';
+import { DataList } from '@patternfly/react-core/dist/esm/components/DataList';
 import { canUseDOM } from '@patternfly/react-core/dist/esm/helpers/util';
 
 export type DragDropContainerDragStartEvent = DragStartEvent;
