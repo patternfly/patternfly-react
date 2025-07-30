@@ -14,7 +14,8 @@ export const collapsible: IFormatter = (
       rowLabeledBy = 'simple-node',
       expandId = 'expand-toggle',
       allRowsExpanded,
-      collapseAllAriaLabel
+      collapseAllAriaLabel,
+      variant
     }
   } = column;
   const extraData = {
@@ -55,6 +56,7 @@ export const collapsible: IFormatter = (
         aria-labelledby={`${rowLabeledBy}${rowId} ${expandId}${rowId}`}
         onToggle={onToggle}
         id={expandId + rowId}
+        variant={variant}
         {...customProps}
       >
         {value as React.ReactNode}

@@ -182,6 +182,9 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         }
       })
     : null;
+
+  const { hasAnimations, variant } = useContext(TableContext);
+
   const expandableParams =
     expand !== null
       ? collapsible(null, {
@@ -193,13 +196,12 @@ const TdBase: React.FunctionComponent<TdProps> = ({
           column: {
             extraParams: {
               onCollapse: expand?.onToggle,
-              expandId: expand?.expandId
+              expandId: expand?.expandId,
+              variant
             }
           }
         })
       : null;
-
-  const { hasAnimations } = useContext(TableContext);
   const updateAnimationClass = () => {
     const ancestorControlRow = (cellRef as React.RefObject<HTMLElement | null>)?.current?.closest(
       `.${styles.tableTr}.${styles.tableControlRow}`

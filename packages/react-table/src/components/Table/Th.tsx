@@ -1,4 +1,4 @@
-import { createRef, forwardRef, useEffect, useState } from 'react';
+import { createRef, forwardRef, useEffect, useState, useContext } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
@@ -8,7 +8,7 @@ import { ThInfoType, ThSelectType, ThExpandType, ThSortType, formatterValueType 
 import { mergeProps } from './base/merge-props';
 import { IVisibility } from './utils/decorators/classNames';
 import { Tooltip, TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
-import { BaseCellProps } from './Table';
+import { BaseCellProps, TableContext } from './Table';
 import { IFormatterValueType, IColumn } from './TableTypes';
 import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
 import cssStickyCellInlineStart from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineStart';
@@ -96,6 +96,8 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   'aria-label': ariaLabel,
   ...props
 }: ThProps) => {
+  const { variant } = useContext(TableContext);
+
   if (!children && !screenReaderText && !ariaLabel) {
     // eslint-disable-next-line no-console
     console.warn(
@@ -167,7 +169,8 @@ const ThBase: React.FunctionComponent<ThProps> = ({
           extraParams: {
             onCollapse: collapse?.onToggle,
             allRowsExpanded: !collapse.areAllExpanded,
-            collapseAllAriaLabel: ''
+            collapseAllAriaLabel: '',
+            variant
           }
         }
       })
