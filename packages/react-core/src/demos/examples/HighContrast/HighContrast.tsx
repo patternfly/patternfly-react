@@ -61,19 +61,18 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 type Validate = 'success' | 'warning' | 'error' | 'default';
 const emailRegex = /^[^@]+@[^@]+\.[a-zA-Z]+$/i;
-const nameRegex = /^[a-zA-ZÀ-ÿ\u0100-\u017F\u0180-\u024F\s\-'.]{2,50}$/i;
 
 export const TabsOpenDemo = () => {
   const [activeTabKey, setActiveTabKey] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(true);
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
   const [isOpenMap, setIsOpenMap] = useState(new Array(7).fill(false));
-  const [name, setName] = useState('');
-  const [validatedName, setValidatedName] = useState<Validate>('default');
-  const [nameHelperText, setNameHelperText] = useState('Enter your name to continue');
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
   const [validatedEmail, setValidatedEmail] = useState<Validate>('default');
   const [emailHelperText, setEmailHelperText] = useState('Enter your email to continue');
+  const [isChecked, setIsChecked] = useState(true);
 
   const onToggle = (index: number) => () => {
     const newState = [...isOpenMap.slice(0, index), !isOpenMap[index], ...isOpenMap.slice(index + 1)];
@@ -112,28 +111,6 @@ export const TabsOpenDemo = () => {
     setActiveTabKey(tabIndex);
   };
 
-  const [isChecked, setIsChecked] = useState(true);
-
-  const validateEmail = () => {
-    if (!emailRegex.test(email)) {
-      setEmailHelperText('Invalid email address');
-      setValidatedEmail('error');
-      return;
-    }
-    setEmailHelperText('Valid email address');
-    setValidatedEmail('success');
-  };
-
-  const validateName = () => {
-    if (!nameRegex.test(name)) {
-      setNameHelperText('Invalid name');
-      setValidatedName('error');
-      return;
-    }
-    setNameHelperText('Valid name');
-    setValidatedName('success');
-  };
-
   const handleEmailChange = (_event, newEmail: string) => {
     setEmail(newEmail);
   };
@@ -142,21 +119,29 @@ export const TabsOpenDemo = () => {
     setName(newName);
   };
 
+  const handleDescriptionChange = (_event, newDesc: string) => {
+    setDescription(newDesc);
+  };
+
+  const invalidateEmail = () => {
+    setEmailHelperText('Invalid email address');
+    setValidatedEmail('error');
+  };
+
   const resetForm = () => {
-    setName('');
     setEmail('');
-    setValidatedName('default');
+    setName('');
+    setDescription('');
+    setIsChecked(false);
     setValidatedEmail('default');
-    setNameHelperText('Enter your name to continue');
     setEmailHelperText('Enter your email to continue');
   };
 
   const handleSubmit = (_event) => {
-    if (emailRegex.test(email) && nameRegex.test(name)) {
+    if (emailRegex.test(email)) {
       resetForm();
     } else {
-      validateEmail();
-      validateName();
+      invalidateEmail();
     }
   };
 
@@ -165,14 +150,8 @@ export const TabsOpenDemo = () => {
   };
 
   const generateAlertContent = () => {
-    if (validatedEmail === 'error' && validatedName === 'error') {
-      return 'Please provide a valid name and email address';
-    }
     if (validatedEmail === 'error') {
       return 'Please provide a valid email address';
-    }
-    if (validatedName === 'error') {
-      return 'Please provide a valid name';
     }
   };
 
@@ -187,18 +166,7 @@ export const TabsOpenDemo = () => {
           name="horizontal-form-name"
           value={name}
           onChange={handleNameChange}
-          validated={validatedName}
         />
-        <FormHelperText>
-          <HelperText>
-            <HelperTextItem
-              variant={validatedName}
-              {...(validatedName === 'error' && { icon: <ExclamationCircleIcon /> })}
-            >
-              {nameHelperText}
-            </HelperTextItem>
-          </HelperText>
-        </FormHelperText>
       </FormGroup>
       <FormGroup label="Email" isRequired fieldId="horizontal-form-email">
         <TextInput
@@ -245,7 +213,7 @@ export const TabsOpenDemo = () => {
         isRequired
         labelHelp={<FormGroupLabelHelp aria-label="" />}
       >
-        <TextArea autoResize />
+        <TextArea autoResize value={description} onChange={handleDescriptionChange} />
       </FormGroup>
       <ActionGroup>
         <Button variant="primary" onClick={handleSubmit}>
@@ -680,7 +648,7 @@ export const TabsOpenDemo = () => {
       <PageSection isWidthLimited padding={{ default: 'noPadding' }}>
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <PageSection>
-            {(validatedEmail === 'error' || validatedName === 'error') && (
+            {validatedEmail === 'error' && (
               <Alert isInline variant="danger" title={generateAlertContent()} ouiaId="DangerAlert" />
             )}
           </PageSection>
