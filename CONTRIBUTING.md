@@ -21,7 +21,6 @@
   - [React Component Requirements](#react-component-requirements)
   - [Code Consistency](#code-consistency)
   - [Code Contribution Guidelines](#code-contribution-guidelines)
-  - [AI-Assisted Development Guidelines](#ai-assisted-development-guidelines)
 - [Troubleshooting](#troubleshooting)
 - [Becoming a Maintainer](#becoming-a-maintainer)
   - [How do I become a maintainer?](#how-do-i-become-a-maintainer)
