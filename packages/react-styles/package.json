@@ -8,6 +8,78 @@
     "*.css",
     "*.scss"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/js/index.js",
+      "types": "./dist/esm/index.d.ts"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./css/*.css": "./css/*.css",
+    "./css/*.mjs": "./css/*.mjs",
+    "./css/*.js": "./css/*.js",
+    "./css/*.d.ts": "./css/*.d.ts",
+    "./css/*": {
+      "import": "./css/*.mjs",
+      "require": "./css/*.js",
+      "types": "./css/*.d.ts"
+    },
+    "./css/components/*.css": "./css/components/*.css",
+    "./css/components/*.mjs": "./css/components/*.mjs",
+    "./css/components/*.js": "./css/components/*.js",
+    "./css/components/*.d.ts": "./css/components/*.d.ts",
+    "./css/components/*": {
+      "import": "./css/components/*.mjs",
+      "require": "./css/components/*.js",
+      "types": "./css/components/*.d.ts"
+    },
+    "./css/layouts/*.css": "./css/layouts/*.css",
+    "./css/layouts/*.mjs": "./css/layouts/*.mjs",
+    "./css/layouts/*.js": "./css/layouts/*.js",
+    "./css/layouts/*.d.ts": "./css/layouts/*.d.ts",
+    "./css/layouts/*": {
+      "import": "./css/layouts/*.mjs",
+      "require": "./css/layouts/*.js",
+      "types": "./css/layouts/*.d.ts"
+    },
+    "./css/utilities/*.css": "./css/utilities/*.css",
+    "./css/utilities/*.mjs": "./css/utilities/*.mjs",
+    "./css/utilities/*.js": "./css/utilities/*.js",
+    "./css/utilities/*.d.ts": "./css/utilities/*.d.ts",
+    "./css/utilities/*": {
+      "import": "./css/utilities/*.mjs",
+      "require": "./css/utilities/*.js",
+      "types": "./css/utilities/*.d.ts"
+    },
+    "./css/assets/*.css": "./css/assets/*.css",
+    "./css/assets/*.mjs": "./css/assets/*.mjs",
+    "./css/assets/*.js": "./css/assets/*.js",
+    "./css/assets/*.d.ts": "./css/assets/*.d.ts",
+    "./css/assets/*": {
+      "import": "./css/assets/*.mjs",
+      "require": "./css/assets/*.js",
+      "types": "./css/assets/*.d.ts"
+    },
+    "./css/docs/*.css": "./css/docs/*.css",
+    "./css/docs/*.mjs": "./css/docs/*.mjs",
+    "./css/docs/*.js": "./css/docs/*.js",
+    "./css/docs/*.d.ts": "./css/docs/*.d.ts",
+    "./css/docs/*": {
+      "import": "./css/docs/*.mjs",
+      "require": "./css/docs/*.js",
+      "types": "./css/docs/*.d.ts"
+    },
+    "./dist/esm/*": {
+      "import": "./dist/esm/*.js",
+      "types": "./dist/esm/*.d.ts"
+    },
+    "./dist/js/*": {
+      "require": "./dist/js/*.js",
+      "types": "./dist/js/*.d.ts"
+    },
+    "./dist/*": "./dist/*"
+  },
   "description": "CSS-in-JS class maps and utilities for PatternFly.",
   "author": "Red Hat",
   "publishConfig": {

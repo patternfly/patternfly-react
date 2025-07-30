@@ -6,6 +6,49 @@
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/js/index.js",
+      "types": "./dist/esm/index.d.ts"
+    },
+    "./createIcon": {
+      "import": "./dist/esm/createIcon.js",
+      "require": "./dist/js/createIcon.js",
+      "types": "./dist/esm/createIcon.d.ts"
+    },
+    "./icons": {
+      "import": "./dist/esm/icons/index.js",
+      "require": "./dist/js/icons/index.js",
+      "types": "./dist/esm/icons/index.d.ts"
+    },
+    "./icons/*": {
+      "import": "./dist/esm/icons/*.js",
+      "require": "./dist/js/icons/*.js",
+      "types": "./dist/esm/icons/*.d.ts"
+    },
+    "./dist/esm/createIcon": {
+      "import": "./dist/esm/createIcon.js",
+      "types": "./dist/esm/createIcon.d.ts"
+    },
+    "./dist/js/createIcon": {
+      "require": "./dist/js/createIcon.js",
+      "types": "./dist/js/createIcon.d.ts"
+    },
+    "./dist/esm/icons": {
+      "import": "./dist/esm/icons/index.js",
+      "types": "./dist/esm/icons/index.d.ts"
+    },
+    "./dist/js/icons": {
+      "require": "./dist/js/icons/index.js",
+      "types": "./dist/js/icons/index.d.ts"
+    },
+    "./dist/esm/icons/*": "./dist/esm/icons/*.js",
+    "./dist/js/icons/*": "./dist/js/icons/*.js",
+    "./dist/esm/*": "./dist/esm/*.js",
+    "./dist/js/*": "./dist/js/*.js",
+    "./dist/*": "./dist/*"
+  },
   "publishConfig": {
     "access": "public",
     "tag": "prerelease"
