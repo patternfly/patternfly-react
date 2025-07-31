@@ -17,17 +17,11 @@ figma.connect(
         Default: 'lg',
         Large: '2xl'
       }),
-
-      isCompact: figma.enum('Card size', { Small: true }),
-      isLarge: figma.enum('Card size', { Large: true }),
-
-      isHorizontal: figma.enum('Orientation', { Horizontal: true }),
-
-      children: figma.children('*')
+      isHorizontal: figma.enum('Orientation', { Horizontal: true })
     },
     example: (props) => (
       <DescriptionList isHorizontal={props.isHorizontal} displaySize={props.displaySize}>
-        <Card component="div" isCompact={props.isCompact} isLarge={props.isLarge}>
+        <Card component="div">
           <DescriptionListTerm>Input label</DescriptionListTerm>
           <DescriptionListDescription>Description list item</DescriptionListDescription>
         </Card>
