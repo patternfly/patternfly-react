@@ -17,8 +17,7 @@ figma.connect(
   {
     variant: { 'Inline edit toggle': true, 'Has help text': false },
     props: {
-      label: figma.string('✏️ Label'),
-      children: figma.children('*')
+      label: figma.string('✏️ Label')
     },
     example: (props) => (
       <DescriptionListTerm>
@@ -57,19 +56,21 @@ figma.connect(
   {
     variant: { 'Has help text': true, 'Inline edit toggle': false },
     props: {
+      // string
+      label: figma.string('✏️ Label'),
+
+      // enum
       icon: figma.enum('Icon ⎆', {
         true: <CodeBranchIcon />,
         false: undefined
-      }),
-      label: figma.string('✏️ Label'),
-      children: figma.children('*')
+      })
     },
     example: (props) => (
       <DescriptionListTermHelpText>
         <Popover headerContent={<div>{props.label}</div>} bodyContent={<div>This is the help text</div>}>
           <DescriptionListTermHelpTextButton>
+            {props.icon}
             {props.label}
-            {props.children}
           </DescriptionListTermHelpTextButton>
         </Popover>
       </DescriptionListTermHelpText>

@@ -10,6 +10,6 @@ figma.connect(
     props: {
       children: figma.children('*')
     },
-    example: (props) => <div>{props.children}</div>
+    example: (props) => <DualListSelectorListItem>{props.children}</DualListSelectorListItem>
   }
 );
