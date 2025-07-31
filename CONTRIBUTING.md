@@ -66,6 +66,10 @@ Thank you to all our community contributors for helping make PatternFly React be
 This project is governed by the [Contributor Covenant version 2.1][1]. All contributors and participants
 agree to abide by its terms. To report violations, send an email to [patternfly@redhat.com][2].
 
+## AI-assisted development guidelines
+
+Please reference [PatternFly's AI-assisted development guidelines](https://github.com/patternfly/.github/blob/main/CONTRIBUTING.md) if you'd like to contribute code generated using AI.
+
 ## Issues and project board
 
 We use issues to track work items, such as bug reports and feature requests. Issues can be found in the [issue tracker](https://github.com/patternfly/patternfly-react/issues) or [project board](https://github.com/orgs/patternfly/projects/7). We use the project board to help visualize and manage status of an issue, and we use labels to help prioritize and identify issues.
