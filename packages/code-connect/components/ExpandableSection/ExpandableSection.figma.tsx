@@ -124,7 +124,7 @@ figma.connect(
   {
     variant: { State: 'Default Custom Content' },
     example: () => (
-      <ExpandableSection toggleContent={customToggleContent} isExpanded={isExpanded} onToggle={() => {}}>
+      <ExpandableSection toggleContent={customToggleContent} isExpanded={false} onToggle={() => {}}>
         This content is visible only when the component is expanded.
       </ExpandableSection>
     )
@@ -137,7 +137,7 @@ figma.connect(
   {
     variant: { State: 'Expanded Custom Content' },
     example: () => (
-      <ExpandableSection toggleContent={customToggleContent} isExpanded={isExpanded} onToggle={() => {}}>
+      <ExpandableSection toggleContent={customToggleContent} isExpanded={true} onToggle={() => {}}>
         This content is visible only when the component is expanded.
       </ExpandableSection>
     )
@@ -150,7 +150,7 @@ figma.connect(
   {
     variant: { State: 'Expanded Custom with Component swap' },
     example: () => (
-      <ExpandableSection toggleContent={customToggleContent} isExpanded={isExpanded} onToggle={() => {}}>
+      <ExpandableSection toggleContent={customToggleContent} isExpanded={true} onToggle={() => {}}>
         This content is visible only when the component is expanded.
       </ExpandableSection>
     )
