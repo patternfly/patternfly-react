@@ -8,6 +8,7 @@ import { TabsContext } from './TabsContext';
 import { TabProps } from './Tab';
 import { TabTitleText } from './TabTitleText';
 
+/** @deprecated Use PopperOptions instead */
 export type HorizontalOverflowPopperProps = PopperOptions;
 
 export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
@@ -28,7 +29,7 @@ export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   /** Time in ms to wait before firing the toggles' focus event. Defaults to 0 */
   focusTimeoutDelay?: number;
   /** Additional props to spread to the popper menu. */
-  popperProps?: HorizontalOverflowPopperProps;
+  popperProps?: PopperOptions;
 }
 
 export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({

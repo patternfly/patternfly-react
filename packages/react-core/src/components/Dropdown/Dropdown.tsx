@@ -4,6 +4,7 @@ import { Menu, MenuContent, MenuProps } from '../Menu';
 import { Popper, PopperOptions } from '../../helpers/Popper/Popper';
 import { useOUIAProps, OUIAProps, onToggleArrowKeydownDefault } from '../../helpers';
 
+/** @deprecated Use PopperOptions instead */
 export type DropdownPopperProps = PopperOptions;
 
 export interface DropdownToggleProps {
@@ -49,7 +50,7 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   /** z-index of the dropdown menu */
   zIndex?: number;
   /** Additional properties to pass to the Popper */
-  popperProps?: DropdownPopperProps;
+  popperProps?: PopperOptions;
   /** Height of the dropdown menu */
   menuHeight?: string;
   /** Maximum height of dropdown menu */

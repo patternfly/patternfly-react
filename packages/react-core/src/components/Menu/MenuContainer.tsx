@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { onToggleArrowKeydownDefault, Popper } from '../../helpers';
 import type { PopperOptions } from '../../helpers/Popper/Popper';
 
+/** @deprecated Use PopperOptions instead */
 export type MenuPopperProps = PopperOptions;
 
 export interface MenuContainerProps {
@@ -25,7 +26,7 @@ export interface MenuContainerProps {
   /** z-index of the dropdown menu */
   zIndex?: number;
   /** Additional properties to pass to the Popper */
-  popperProps?: MenuPopperProps;
+  popperProps?: PopperOptions;
   /** @beta Flag indicating the first menu item should be focused after opening the dropdown. */
   shouldFocusFirstItemOnOpen?: boolean;
   /** Flag indicating if scroll on focus of the first menu item should occur. */
