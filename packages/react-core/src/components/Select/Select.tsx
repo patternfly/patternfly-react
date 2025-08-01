@@ -4,6 +4,7 @@ import { Menu, MenuContent, MenuProps } from '../Menu';
 import { Popper, PopperOptions } from '../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId, onToggleArrowKeydownDefault } from '../../helpers';
 
+/** @deprecated Use PopperOptions instead */
 export type SelectPopperProps = PopperOptions;
 
 export interface SelectToggleProps {
@@ -52,7 +53,7 @@ export interface SelectProps extends MenuProps, OUIAProps {
   /** Determines the accessible role of the select. For a checkbox select pass in "menu". */
   role?: string;
   /** Additional properties to pass to the popper */
-  popperProps?: SelectPopperProps;
+  popperProps?: PopperOptions;
   /** Height of the select menu */
   menuHeight?: string;
   /** Maximum height of select menu */
