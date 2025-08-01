@@ -14,6 +14,8 @@ export interface PageToggleButtonProps extends ButtonProps {
   'aria-label'?: string;
   /** Flag indicating whether the hamburger button variation with animations should be used. */
   isHamburgerButton?: boolean;
+  /** IsHamburgerButton must be true for hamburgerVariant to be have an effect. Adjusts and animates the hamburger icon to indicate what will happen upon clicking the button. */
+  hamburgerVariant?: 'expand' | 'collapse';
 }
 
 export const PageToggleButton: React.FunctionComponent<PageToggleButtonProps> = ({
@@ -23,6 +25,7 @@ export const PageToggleButton: React.FunctionComponent<PageToggleButtonProps> = 
   id = 'nav-toggle',
   'aria-label': ariaLabel = 'Side navigation toggle',
   isHamburgerButton,
+  hamburgerVariant,
   ...props
 }: PageToggleButtonProps) => (
   <PageContextConsumer>
@@ -42,6 +45,10 @@ export const PageToggleButton: React.FunctionComponent<PageToggleButtonProps> = 
           aria-expanded={sidebarOpen ? 'true' : 'false'}
           variant={ButtonVariant.plain}
           isHamburger={isHamburgerButton}
+          hamburgerVariant={hamburgerVariant}
+          {...(isHamburgerButton && {
+            isExpanded: sidebarOpen
+          })}
           {...props}
         >
           {!isHamburgerButton && children}
