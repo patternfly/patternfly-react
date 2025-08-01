@@ -3,7 +3,7 @@
 exports[`expandable vertical with subsection 1`] = `
 <DocumentFragment>
   <nav
-    aria-label="Jump to section"
+    aria-labelledby="unique_id_mock"
     class="pf-v6-c-jump-links pf-m-vertical pf-m-expandable"
   >
     <div
@@ -17,11 +17,11 @@ exports[`expandable vertical with subsection 1`] = `
         >
           <button
             aria-expanded="false"
-            aria-label="Toggle jump links"
             class="pf-v6-c-button pf-m-plain"
             data-ouia-component-id="OUIA-Generated-Button-plain-1"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
+            id="unique_id_mock"
             type="button"
           >
             <span
@@ -54,11 +54,13 @@ exports[`expandable vertical with subsection 1`] = `
         </div>
         <div
           class="pf-v6-c-jump-links__label"
+          id="unique_id_mock"
         >
           Jump to section
         </div>
       </div>
       <ul
+        aria-labelledby="unique_id_mock"
         class="pf-v6-c-jump-links__list"
         role="list"
       >
@@ -349,7 +351,7 @@ exports[`jumplinks centered 1`] = `
 exports[`jumplinks with label 1`] = `
 <DocumentFragment>
   <nav
-    aria-label="Jump to section"
+    aria-labelledby="unique_id_mock"
     class="pf-v6-c-jump-links pf-m-center"
   >
     <div
@@ -360,11 +362,13 @@ exports[`jumplinks with label 1`] = `
       >
         <div
           class="pf-v6-c-jump-links__label"
+          id="unique_id_mock"
         >
           Jump to section
         </div>
       </div>
       <ul
+        aria-labelledby="unique_id_mock"
         class="pf-v6-c-jump-links__list"
         role="list"
       >
@@ -550,7 +554,7 @@ exports[`simple jumplinks 1`] = `
 exports[`vertical with label 1`] = `
 <DocumentFragment>
   <nav
-    aria-label="Jump to section"
+    aria-labelledby="unique_id_mock"
     class="pf-v6-c-jump-links pf-m-vertical"
   >
     <div
@@ -561,11 +565,13 @@ exports[`vertical with label 1`] = `
       >
         <div
           class="pf-v6-c-jump-links__label"
+          id="unique_id_mock"
         >
           Jump to section
         </div>
       </div>
       <ul
+        aria-labelledby="unique_id_mock"
         class="pf-v6-c-jump-links__list"
         role="list"
       >
