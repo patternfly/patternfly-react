@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.0...@patternfly/react-core@6.3.1-prerelease.1) (2025-08-04)
+
+### Bug Fixes
+
+- **Page:** pass sidebar state to button for isHamburger ([#11951](https://github.com/patternfly/patternfly-react/issues/11951)) ([60806c2](https://github.com/patternfly/patternfly-react/commit/60806c2dbf360fdbeea314119a6d0d238106de2d))
+
 ## [6.3.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.0...@patternfly/react-core@6.3.1-prerelease.0) (2025-07-28)
 
 ### Bug Fixes
