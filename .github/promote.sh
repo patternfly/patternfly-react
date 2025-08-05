@@ -18,8 +18,14 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 #  npm pkg set devDependencies.@patternfly/patternfly=${PATTERNFLY_VERSION} --workspace @patternfly/react-core --workspace @patternfly/react-styles --workspace @patternfly/react-tokens --workspace @patternfly/react-icons 
 #fi
 
+#yarn run lerna publish patch --dist-tag=prerelease-patch --no-private --yes 2>&1 | tee lerna-output.txt
+
+# use lerna command below for dry run
+ yarn run lerna version patch --yes --no-git-tag-version --no-push --no-private | tee lerna-output.txt
+
+
 # publish to npm
-yarn run lerna publish --conventional-commits --conventional-graduate --no-private --dist-tag=latest --yes
+#yarn run lerna publish --conventional-commits --conventional-graduate --no-private --dist-tag=latest --yes
 
 # immediately after promote - set up repo for next prerelease
 # yarn run lerna version preminor --force-publish --conventional-commits --no-private --yes --preid prerelease
