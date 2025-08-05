@@ -1,6 +1,6 @@
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { Bullseye, Card, EmptyState, PageSection, Spinner } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 export const TableEmptyStateLoading: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>

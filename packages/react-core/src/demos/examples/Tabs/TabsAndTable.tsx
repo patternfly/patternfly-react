@@ -55,7 +55,7 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import { KeyTypes } from '../../../helpers';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 interface Repository {
   name: string;

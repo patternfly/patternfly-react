@@ -11,6 +11,38 @@ const isProduction = process.env.IS_PRODUCTION;
 let exitCode = 0;
 
 /** @returns {import('rollup').Plugin} */
+function patternflyResolver() {
+  return {
+    name: 'patternfly-resolver',
+    async resolveId(id, importer) {
+      // Only handle PatternFly imports
+      if (!id.startsWith('@patternfly/')) {
+        return null;
+      }
+
+      // Handle directory imports (helpers, components, etc.) by appending /index.js
+      if (!id.endsWith('.js') && !id.includes('index') && !id.endsWith('/')) {
+        // First try adding /index.js for directory imports
+        const resolved = id + '/index.js';
+        try {
+          return await this.resolve(resolved, importer, { skipSelf: true });
+        } catch (e) {
+          // If that fails, try adding .js for files
+          const resolvedFile = id + '.js';
+          try {
+            return await this.resolve(resolvedFile, importer, { skipSelf: true });
+          } catch (e2) {
+            return null;
+          }
+        }
+      }
+
+      return null;
+    }
+  };
+}
+
+/** @returns {import('rollup').Plugin} */
 function circularFailPlugin() {
   return {
     name: 'circluarFailPlugin',
@@ -28,7 +60,16 @@ export default function baseConfig({ packageName, name }) {
     replace({
       'process.env.NODE_ENV': JSON.stringify(isProduction ? 'production' : 'development')
     }),
-    nodeResolve(),
+    patternflyResolver(),
+    nodeResolve({
+      extensions: ['.js', '.ts', '.jsx', '.tsx', '.mjs'],
+      preferBuiltins: false,
+      exportConditions: ['import', 'module', 'default'],
+      mainFields: ['module', 'main'],
+      browser: false,
+      modulesOnly: false,
+      dedupe: ['react', 'react-dom']
+    }),
     commonjs(),
     scss(),
     // SVG plugin does not ship with types.

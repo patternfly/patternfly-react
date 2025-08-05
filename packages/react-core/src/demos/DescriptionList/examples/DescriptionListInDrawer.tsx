@@ -17,7 +17,7 @@ import {
   Button,
   Title
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 export const DescriptionListInDrawer: React.FunctionComponent = () => {

@@ -12,7 +12,7 @@ import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 ## Demos
 
@@ -21,4 +21,5 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 This is an example of toolbar usage in log viewer.
 
 ```js file="./examples/Toolbar/ConsoleLogViewerToolbar.tsx" isFullscreen
+
 ```

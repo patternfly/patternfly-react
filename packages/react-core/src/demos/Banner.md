@@ -2,10 +2,11 @@
 id: Banner
 section: components
 ---
+
 import { Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 import display from '@patternfly/react-styles/css/utilities/Display/display';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 
 ## Demos
 
@@ -15,7 +16,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 import { Fragment } from 'react';
 import { Banner, Card, CardBody, Flex, Gallery, GalleryItem, PageSection, Content } from '@patternfly/react-core';
 
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import display from '@patternfly/react-styles/css/utilities/Display/display';
 
@@ -48,7 +49,7 @@ class BannerDemo extends React.Component {
               </p>
             </Content>
           </PageSection>
-          <PageSection aria-label='Cards gallery'>
+          <PageSection aria-label="Cards gallery">
             <Gallery hasGutter>
               {Array.from({ length: 30 }).map((_value, index) => (
                 <GalleryItem key={index}>
@@ -81,7 +82,7 @@ import {
   PageSection,
   Content
 } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import display from '@patternfly/react-styles/css/utilities/Display/display';
 
@@ -114,7 +115,7 @@ class BannerDemo extends React.Component {
             <DashboardWrapper breadcrumb={null}>
               <PageSection aria-labelledby="main-title">
                 <Content>
-                  <h1 id='main-title'>Main title</h1>
+                  <h1 id="main-title">Main title</h1>
                   <p>
                     Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because{' '}
                     <br />
@@ -122,7 +123,7 @@ class BannerDemo extends React.Component {
                   </p>
                 </Content>
               </PageSection>
-              <PageSection aria-label='Cards gallery'>
+              <PageSection aria-label="Cards gallery">
                 <Gallery hasGutter>
                   {Array.from({ length: 30 }).map((_value, index) => (
                     <GalleryItem key={index}>
