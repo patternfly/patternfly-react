@@ -2,6 +2,9 @@ import { render } from '@testing-library/react';
 import { JumpLinks } from '../JumpLinks';
 import { JumpLinksItem } from '../JumpLinksItem';
 import { JumpLinksList } from '../JumpLinksList';
+import * as utils from '../../../helpers/util';
+
+jest.spyOn(utils, 'getUniqueId').mockReturnValue('unique_id_mock');
 
 test('simple jumplinks', () => {
   const { asFragment } = render(

@@ -7,7 +7,7 @@ import cssToggleDisplayVar from '@patternfly/react-tokens/dist/esm/c_jump_links_
 import { Button } from '../Button';
 import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
 import { JumpLinksList } from './JumpLinksList';
-import { canUseDOM, formatBreakpointMods } from '../../helpers/util';
+import { canUseDOM, formatBreakpointMods, getUniqueId } from '../../helpers/util';
 
 export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
@@ -105,6 +105,17 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   const navRef = useRef<HTMLElement>(undefined);
 
   let scrollableElement: HTMLElement;
+
+  if (!label && !ariaLabel) {
+    // eslint-disable-next-line no-console
+    console.warn('For accessibility reasons, an aria-label should be specified on jump links if no label is provided');
+  }
+  if (!label && !toggleAriaLabel) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'For accessibility reasons, a toggleAriaLabel should be specified on jump links if no label is provided'
+    );
+  }
 
   const getScrollableElement = () => {
     if (scrollableRef) {
@@ -232,6 +243,8 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
           return child;
         });
 
+  const id = getUniqueId();
+
   return (
     <nav
       className={css(
@@ -242,8 +255,9 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
         isExpanded && styles.modifiers.expanded,
         className
       )}
-      aria-label={ariaLabel}
+      aria-label={expandable || (label && alwaysShowLabel) ? null : ariaLabel}
       ref={navRef}
+      aria-labelledby={expandable || (label && alwaysShowLabel) ? id : null}
       {...props}
     >
       <div className={styles.jumpLinksMain}>
@@ -253,21 +267,31 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
               <Button
                 variant="plain"
                 onClick={() => setIsExpanded(!isExpanded)}
-                aria-label={toggleAriaLabel}
+                aria-label={label ? null : toggleAriaLabel}
                 aria-expanded={isExpanded}
                 icon={
                   <span className={styles.jumpLinksToggleIcon}>
                     <AngleRightIcon />
                   </span>
                 }
+                id={id}
               >
                 {label && label}
               </Button>
             </div>
           )}
-          {label && alwaysShowLabel && <div className={css(styles.jumpLinksLabel)}>{label}</div>}
+          {label && alwaysShowLabel && (
+            <div className={css(styles.jumpLinksLabel)} id={id}>
+              {label}
+            </div>
+          )}
         </div>
-        <ul className={styles.jumpLinksList} role="list">
+        <ul
+          aria-label={expandable || (label && alwaysShowLabel) ? null : ariaLabel}
+          aria-labelledby={expandable || (label && alwaysShowLabel) ? id : null}
+          className={styles.jumpLinksList}
+          role="list"
+        >
           {cloneChildren(children)}
         </ul>
       </div>
