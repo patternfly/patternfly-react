@@ -195,7 +195,7 @@ export const TabsOpenDemo = () => {
         isRequired
         fieldId="horizontal-form-checkbox-group"
         role="group"
-        labelHelp={<FormGroupLabelHelp aria-label="" />}
+        labelHelp={<FormGroupLabelHelp aria-label="Help" />}
       >
         <Checkbox label="Option 1" id="alt-form-checkbox-1" name="alt-form-checkbox-1" />
         <Checkbox
@@ -211,9 +211,9 @@ export const TabsOpenDemo = () => {
         label="Description"
         fieldId="horizontal-form-select"
         isRequired
-        labelHelp={<FormGroupLabelHelp aria-label="" />}
+        labelHelp={<FormGroupLabelHelp aria-label="Help" />}
       >
-        <TextArea autoResize value={description} onChange={handleDescriptionChange} />
+        <TextArea id="horizontal-form-select" autoResize value={description} onChange={handleDescriptionChange} />
       </FormGroup>
       <ActionGroup>
         <Button variant="primary" onClick={handleSubmit}>
