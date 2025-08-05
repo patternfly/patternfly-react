@@ -19,7 +19,7 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 #fi
 
 # use lerna command to perform a patch releaes:
-yarn run lerna publish patch --dist-tag=prerelease-patch --no-private --yes 2>&1 | tee lerna-output.txt
+yarn run lerna publish patch --dist-tag=latest --no-private --yes 2>&1 | tee lerna-output.txt
 
 # use lerna command below for dry run of patch release
 # yarn run lerna version patch --yes --no-git-tag-version --no-push --no-private | tee lerna-output.txt
