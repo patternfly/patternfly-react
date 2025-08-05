@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.1...@patternfly/react-core@6.3.1-prerelease.2) (2025-08-05)
+
+### Bug Fixes
+
+- **LabelGroup:** updated close icon ([#11942](https://github.com/patternfly/patternfly-react/issues/11942)) ([270d544](https://github.com/patternfly/patternfly-react/commit/270d5446d0ed54197c8c70fef034be53edaf6a2b))
+
 ## [6.3.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.0...@patternfly/react-core@6.3.1-prerelease.1) (2025-08-04)
 
 ### Bug Fixes
