@@ -618,7 +618,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
           <p>This is a demo that showcases Patternfly cards.</p>
         </Content>
       </PageSection>
-      <PageSection isFilled padding={{ default: 'noPadding' }} aria-label="Card filtering toolbar">
+      <PageSection isFilled padding={{ md: 'padding' }} aria-label="Card filtering toolbar">
         <Toolbar id="card-view-data-toolbar-group-types" clearAllFilters={onDelete}>
           <ToolbarContent>{toolbarItems}</ToolbarContent>
         </Toolbar>
