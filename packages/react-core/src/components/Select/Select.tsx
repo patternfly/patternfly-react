@@ -1,33 +1,11 @@
 import { forwardRef, useEffect, useRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
-import { Popper } from '../../helpers/Popper/Popper';
+import { Popper, PopperOptions } from '../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId, onToggleArrowKeydownDefault } from '../../helpers';
 
-export interface SelectPopperProps {
-  /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
-  direction?: 'up' | 'down';
-  /** Horizontal position of the popper */
-  position?: 'right' | 'left' | 'center' | 'start' | 'end';
-  /** Custom width of the popper. If the value is "trigger", it will set the width to the select toggle's width */
-  width?: string | 'trigger';
-  /** Minimum width of the popper. If the value is "trigger", it will set the min width to the select toggle's width */
-  minWidth?: string | 'trigger';
-  /** Maximum width of the popper. If the value is "trigger", it will set the max width to the select toggle's width */
-  maxWidth?: string | 'trigger';
-  /** Enable to flip the popper when it reaches the boundary */
-  enableFlip?: boolean;
-  /** The container to append the select to. Defaults to document.body.
-   * If your select is being cut off you can append it to an element higher up the DOM tree.
-   * Some examples:
-   * appendTo="inline"
-   * appendTo={() => document.body}
-   * appendTo={document.getElementById('target')}
-   */
-  appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
-  /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
-  preventOverflow?: boolean;
-}
+/** @deprecated Use PopperOptions instead */
+export type SelectPopperProps = PopperOptions;
 
 export interface SelectToggleProps {
   /**  Select toggle node. */
@@ -75,7 +53,7 @@ export interface SelectProps extends MenuProps, OUIAProps {
   /** Determines the accessible role of the select. For a checkbox select pass in "menu". */
   role?: string;
   /** Additional properties to pass to the popper */
-  popperProps?: SelectPopperProps;
+  popperProps?: PopperOptions;
   /** Height of the select menu */
   menuHeight?: string;
   /** Maximum height of select menu */
