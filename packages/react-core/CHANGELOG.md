@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.2...@patternfly/react-core@6.3.1-prerelease.3) (2025-08-05)
+
+### Bug Fixes
+
+- **PrimaryDetail:** added padding to correct toolbar alignment in card demo ([#11939](https://github.com/patternfly/patternfly-react/issues/11939)) ([325f71b](https://github.com/patternfly/patternfly-react/commit/325f71b2c8da9305aee7bae3aad2a346761e7206))
+
 ## [6.3.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.1...@patternfly/react-core@6.3.1-prerelease.2) (2025-08-05)
 
 ### Bug Fixes
