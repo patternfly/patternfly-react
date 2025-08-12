@@ -204,3 +204,129 @@ test('Matches snapshot', async () => {
   const tooltip = await screen.findByRole('tooltip');
   expect(tooltip).toMatchSnapshot();
 });
+
+test('Applies aria-describedby to triggerRef element when no children are provided', async () => {
+  const triggerRef = createRef<HTMLButtonElement>();
+
+  render(
+    <>
+      <button ref={triggerRef}>Trigger</button>
+      <Tooltip id="trigger-ref-test" triggerRef={triggerRef} isVisible content="Test description" />
+    </>
+  );
+
+  await screen.findByRole('tooltip');
+  expect(triggerRef.current).toHaveAccessibleDescription('Test description');
+});
+
+test('Applies aria-labelledby to triggerRef element when no children are provided', async () => {
+  const triggerRef = createRef<HTMLButtonElement>();
+
+  render(
+    <>
+      <button ref={triggerRef}>Trigger</button>
+      <Tooltip id="trigger-ref-test" aria="labelledby" triggerRef={triggerRef} isVisible content="Test label" />
+    </>
+  );
+
+  await screen.findByRole('tooltip');
+  expect(triggerRef.current).toHaveAccessibleName('Test label');
+});
+
+test('Removes aria-describedby from triggerRef element when tooltip is hidden', async () => {
+  const triggerRef = createRef<HTMLButtonElement>();
+
+  const TooltipTest = () => {
+    const [isVisible, setIsVisible] = useState(true);
+
+    return (
+      <>
+        <button ref={triggerRef} onClick={() => setIsVisible(!isVisible)}>
+          Trigger
+        </button>
+        <Tooltip id="trigger-ref-test" triggerRef={triggerRef} isVisible={isVisible} content="Test description" />
+      </>
+    );
+  };
+
+  render(<TooltipTest />);
+
+  // Tooltip should be visible initially
+  await screen.findByRole('tooltip');
+  expect(triggerRef.current).toHaveAccessibleDescription('Test description');
+
+  // Hide tooltip
+  const user = userEvent.setup();
+  await user.click(triggerRef.current);
+
+  // aria-describedby should be removed
+  expect(triggerRef.current).not.toHaveAccessibleDescription();
+});
+
+test('Removes aria-labelledby from triggerRef element when tooltip is hidden', async () => {
+  const triggerRef = createRef<HTMLButtonElement>();
+
+  const TooltipTest = () => {
+    const [isVisible, setIsVisible] = useState(true);
+
+    return (
+      <>
+        <button ref={triggerRef} onClick={() => setIsVisible(!isVisible)} />
+        <Tooltip
+          aria="labelledby"
+          id="trigger-ref-test"
+          triggerRef={triggerRef}
+          isVisible={isVisible}
+          content="Test label"
+        />
+      </>
+    );
+  };
+
+  render(<TooltipTest />);
+
+  // Tooltip should be visible initially
+  await screen.findByRole('tooltip');
+  expect(triggerRef.current).toHaveAccessibleName('Test label');
+
+  // Hide tooltip
+  const user = userEvent.setup();
+  await user.click(triggerRef.current);
+
+  // aria-describedby should be removed
+  expect(triggerRef.current).not.toHaveAccessibleName();
+});
+
+test('Preserves existing aria-describedby on triggerRef element', async () => {
+  const triggerRef = createRef<HTMLButtonElement>();
+
+  render(
+    <>
+      <div id="existing-aria">Existing description</div>
+      <button ref={triggerRef} aria-describedby="existing-aria">
+        Trigger
+      </button>
+      <Tooltip id="trigger-ref-test" triggerRef={triggerRef} isVisible content="Test description" />
+    </>
+  );
+
+  await screen.findByRole('tooltip');
+  expect(triggerRef.current).toHaveAccessibleDescription('Existing description Test description');
+});
+
+test('Preserves existing aria-labelledby on triggerRef element', async () => {
+  const triggerRef = createRef<HTMLButtonElement>();
+
+  render(
+    <>
+      <div id="existing-aria">Existing label</div>
+      <button ref={triggerRef} aria-labelledby="existing-aria">
+        Trigger
+      </button>
+      <Tooltip aria="labelledby" id="trigger-ref-test" triggerRef={triggerRef} isVisible content="Test label" />
+    </>
+  );
+
+  await screen.findByRole('tooltip');
+  expect(triggerRef.current).toHaveAccessibleName('Existing label Test label');
+});

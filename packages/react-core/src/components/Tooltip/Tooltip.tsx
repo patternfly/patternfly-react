@@ -174,6 +174,75 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   const [visible, setVisible] = useState(false);
   const popperRef = createRef<HTMLDivElement>();
 
+  const getTriggerRefElement = (): HTMLElement | null => {
+    if (typeof triggerRef === 'function') {
+      return triggerRef();
+    } else if (triggerRef && typeof triggerRef === 'object' && 'current' in triggerRef) {
+      return triggerRef.current;
+    } else if (triggerRef instanceof HTMLElement) {
+      return triggerRef;
+    }
+    return null;
+  };
+
+  const getAriaAttributeName = () => (aria !== 'none' ? `aria-${aria}` : null);
+
+  const addAriaToRefElement = (element: HTMLElement): void => {
+    const attributeName = getAriaAttributeName();
+    if (!element || !attributeName) {
+      return;
+    }
+
+    const existingAria = element.getAttribute(attributeName);
+    if (!existingAria || !existingAria.includes(id)) {
+      const newAria = existingAria ? `${existingAria} ${id}` : id;
+      element.setAttribute(attributeName, newAria);
+    }
+  };
+
+  const removeAriaFromRefElement = (element: HTMLElement): void => {
+    const attributeName = getAriaAttributeName();
+    if (!element || !attributeName) {
+      return;
+    }
+
+    const existingAria = element.getAttribute(attributeName);
+    if (!existingAria) {
+      return;
+    }
+    const newAria = existingAria.replace(new RegExp(`\\b${id}\\b`, 'g'), '').trim();
+    if (newAria) {
+      element.setAttribute(attributeName, newAria);
+    } else {
+      element.removeAttribute(attributeName);
+    }
+  };
+
+  const updateTriggerElementAria = (shouldAddAria: boolean): void => {
+    if (aria === 'none' || !triggerRef || children) {
+      return;
+    }
+
+    const triggerElement = getTriggerRefElement();
+    if (!triggerElement) {
+      return;
+    }
+
+    if (shouldAddAria) {
+      addAriaToRefElement(triggerElement);
+    } else {
+      removeAriaFromRefElement(triggerElement);
+    }
+  };
+
+  useEffect(() => {
+    updateTriggerElementAria(visible);
+
+    return () => {
+      updateTriggerElementAria(false);
+    };
+  }, [visible, aria, triggerRef, children, id]);
+
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (!triggerManually) {
       if (event.key === KeyTypes.Escape && visible) {
@@ -258,8 +327,12 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     }
   };
 
-  const addAriaToTrigger = () => {
-    if (aria === 'describedby' && children && children.props && !children.props['aria-describedby']) {
+  const addAriaToChildren = () => {
+    if (!children) {
+      return;
+    }
+
+    if (aria === 'describedby' && children.props && !children.props['aria-describedby']) {
       return cloneElement(children, { 'aria-describedby': id });
     } else if (aria === 'labelledby' && children.props && !children.props['aria-labelledby']) {
       return cloneElement(children, { 'aria-labelledby': id });
@@ -269,7 +342,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
 
   return (
     <Popper
-      trigger={aria !== 'none' && visible ? addAriaToTrigger() : children}
+      trigger={aria !== 'none' && visible ? addAriaToChildren() : children}
       triggerRef={triggerRef}
       popper={content}
       popperRef={popperRef}
