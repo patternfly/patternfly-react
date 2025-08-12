@@ -1,40 +1,32 @@
-import { useState } from 'react';
+import { useState, FC, ReactNode } from 'react';
+import { Avatar } from '../components/Avatar';
+import { Button, ButtonVariant } from '../components/Button';
+import { Divider } from '../components/Divider';
+import { Dropdown, DropdownGroup, DropdownItem, DropdownList } from '../components/Dropdown';
 import {
-  Avatar,
-  Button,
-  ButtonVariant,
-  Divider,
-  Dropdown,
-  DropdownGroup,
-  DropdownItem,
-  DropdownList,
   Masthead,
   MastheadMain,
   MastheadToggle,
   MastheadBrand,
   MastheadLogo,
-  MastheadContent,
-  MenuToggle,
-  NotificationBadge,
-  NotificationBadgeVariant,
-  Toolbar,
-  ToolbarContent,
-  ToolbarGroup,
-  ToolbarItem,
-  PageToggleButton
-} from '../components';
+  MastheadContent
+} from '../components/Masthead';
+import { MenuToggle } from '../components/MenuToggle';
+import { NotificationBadge, NotificationBadgeVariant } from '../components/NotificationBadge';
+import { PageToggleButton } from '../components/Page';
+import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '../components/Toolbar';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+// import imgAvatar from '../components/assets/avatarImg.svg';
 
 interface DashboardHeaderProps {
   /** Render custom notification badge */
-  notificationBadge?: React.ReactNode;
+  notificationBadge?: ReactNode;
 }
 
-export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBadge }) => {
+export const DashboardHeader: FC<DashboardHeaderProps> = ({ notificationBadge }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = useState(false);
   const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = useState(false);
@@ -218,7 +210,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                     ref={toggleRef}
                     isExpanded={isDropdownOpen}
                     onClick={onDropdownToggle}
-                    icon={<Avatar src={imgAvatar} alt="" size="sm" />}
+                    icon={<Avatar alt="" size="sm" />}
                   >
                     Ned Username
                   </MenuToggle>

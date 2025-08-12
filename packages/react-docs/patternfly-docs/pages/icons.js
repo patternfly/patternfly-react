@@ -2,7 +2,7 @@
 import React from 'react';
 import { Content } from '@patternfly/react-core/dist/esm/components/Content';
 import { Grid, GridItem } from '@patternfly/react-core/dist/esm/layouts/Grid';
-import { PageSection } from '@patternfly/react-core/dist/esm/components/Page/PageSection';
+import { PageSection } from '@patternfly/react-core/dist/esm/components/Page';
 import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import spacerMd from '@patternfly/react-tokens/dist/esm/t_global_spacer_md';
 import labelFontSize from '@patternfly/react-tokens/dist/esm/t_global_font_size_sm';

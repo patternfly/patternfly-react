@@ -2,9 +2,47 @@
   "name": "@patternfly/react-core",
   "version": "6.3.1-prerelease.4",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
+  "type": "module",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/js/index.js"
+    },
+    "./deprecated": {
+      "import": "./dist/esm/deprecated/index.js",
+      "require": "./dist/js/deprecated/index.js"
+    },
+    "./package.json": "./package.json",
+    "./components/*": {
+      "import": "./dist/esm/components/*/index.js", 
+      "require": "./dist/js/components/*/index.js"
+    },
+    "./helpers": {
+      "import": "./dist/esm/helpers/index.js",
+      "require": "./dist/js/helpers/index.js"  
+    },
+    "./helpers/*": {
+      "import": "./dist/esm/helpers/*.js",
+      "require": "./dist/js/helpers/*.js"  
+    },
+    "./dist/esm/components/*": "./dist/esm/components/*/index.js",
+    "./dist/js/components/*": "./dist/js/components/*/index.js",
+    "./dist/esm/layouts/*": "./dist/esm/layouts/*/index.js",
+    "./dist/js/layouts/*": "./dist/js/layouts/*/index.js",
+    "./dist/esm/helpers": "./dist/esm/helpers/index.js",
+    "./dist/js/helpers": "./dist/js/helpers/index.js",
+    "./dist/esm/*": "./dist/esm/*.js",
+    "./dist/js/*": "./dist/js/*.js",
+    "./src/*": "./src/*",
+    "./dist/*": "./dist/*",
+    "./*": {
+      "import": "./dist/esm/*",
+      "require": "./dist/js/*"
+    }
+  },
   "typesVersions": {
     "*": {
       "next": [

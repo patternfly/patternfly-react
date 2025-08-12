@@ -4,8 +4,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import dragStyles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DragButton } from './DragButton';
-import { DataListItemRow } from '@patternfly/react-core/dist/esm/components/DataList/DataListItemRow';
-import { DataListControl } from '@patternfly/react-core/dist/esm/components/DataList/DataListControl';
+import { DataListItemRow, DataListControl } from '@patternfly/react-core/dist/esm/components/DataList';
 
 export interface DraggableDataListItemObject {
   id?: string;
