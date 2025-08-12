@@ -122,7 +122,7 @@ exports[`FormGroup should render form group variant with required label 1`] = `
           aria-hidden="true"
           class="pf-v6-c-form__label-required"
         >
-           *
+           *
         </span>
       </label>
         
