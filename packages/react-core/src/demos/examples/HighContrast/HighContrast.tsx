@@ -254,7 +254,7 @@ export const TabsOpenDemo = () => {
             <NotificationDrawerListItem variant="info">
               <NotificationDrawerListItemHeader
                 variant="info"
-                title="Unread info notification title"
+                title="Info notification title"
                 srTitle="Info notification:"
               >
                 <Dropdown
@@ -283,7 +283,7 @@ export const TabsOpenDemo = () => {
             <NotificationDrawerListItem variant="danger">
               <NotificationDrawerListItemHeader
                 variant="danger"
-                title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
+                title="Danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
                 srTitle="Danger notification:"
               >
                 <Dropdown
@@ -314,7 +314,7 @@ export const TabsOpenDemo = () => {
               <NotificationDrawerListItemHeader
                 truncateTitle={1}
                 variant="danger"
-                title="Unread danger notification title. This is a long title to show how the title will be truncated if it is long and will be shown in a single line."
+                title="Danger notification title. This is a long title to show how the title will be truncated if it is long and will be shown in a single line."
                 srTitle="Danger notification:"
               >
                 <Dropdown
@@ -344,7 +344,7 @@ export const TabsOpenDemo = () => {
             <NotificationDrawerListItem variant="warning" isRead>
               <NotificationDrawerListItemHeader
                 variant="warning"
-                title="Read warning notification title"
+                title="Warning notification title"
                 srTitle="Warning notification:"
               >
                 <Dropdown
@@ -373,7 +373,7 @@ export const TabsOpenDemo = () => {
             <NotificationDrawerListItem variant="success" isRead>
               <NotificationDrawerListItemHeader
                 variant="success"
-                title="Read success notification title"
+                title="Success notification title"
                 srTitle="Success notification:"
               >
                 <Dropdown
@@ -400,7 +400,7 @@ export const TabsOpenDemo = () => {
               </NotificationDrawerListItemBody>
             </NotificationDrawerListItem>
             <NotificationDrawerListItem isRead>
-              <NotificationDrawerListItemHeader title="Read (default) notification title" srTitle="notification:">
+              <NotificationDrawerListItemHeader title="(Default) notification title" srTitle="notification:">
                 <Dropdown
                   onSelect={onSelect}
                   isOpen={isOpen6}
