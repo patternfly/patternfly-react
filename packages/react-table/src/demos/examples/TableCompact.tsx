@@ -1,7 +1,6 @@
 import { Fragment, useState } from 'react';
 import {
   Button,
-  Card,
   MenuToggle,
   MenuToggleElement,
   Pagination,
@@ -130,45 +129,43 @@ export const TableCompact: React.FunctionComponent = () => {
     <Fragment>
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection isFilled aria-label="Compact table data">
-          <Card>
-            {tableToolbar}
-            <Table variant="compact" aria-label="Compact Table">
-              <Thead>
-                <Tr>
-                  <Th key={0}>{columns[0]}</Th>
-                  <Th key={1}>{columns[1]}</Th>
-                  <Th key={2}>{columns[2]}</Th>
-                  <Th key={3}>{columns[3]}</Th>
-                  <Th key={4}>{columns[4]}</Th>
-                  <Th key={5}>{columns[5]}</Th>
-                  <Th key={6}>{columns[6]}</Th>
-                  <Th key={7} width={10}>
-                    {columns[7]}
-                  </Th>
+          {tableToolbar}
+          <Table variant="compact" aria-label="Compact Table">
+            <Thead>
+              <Tr>
+                <Th key={0}>{columns[0]}</Th>
+                <Th key={1}>{columns[1]}</Th>
+                <Th key={2}>{columns[2]}</Th>
+                <Th key={3}>{columns[3]}</Th>
+                <Th key={4}>{columns[4]}</Th>
+                <Th key={5}>{columns[5]}</Th>
+                <Th key={6}>{columns[6]}</Th>
+                <Th key={7} width={10}>
+                  {columns[7]}
+                </Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {paginatedRows.map((row, rowIndex) => (
+                <Tr key={rowIndex}>
+                  <>
+                    <Td dataLabel={columns[0]}>{row.name}</Td>
+                    <Td dataLabel={columns[1]}>{row.threads}</Td>
+                    <Td dataLabel={columns[2]}>{row.applications}</Td>
+                    <Td dataLabel={columns[3]}>{row.workspaces}</Td>
+                    <Td dataLabel={columns[4]}>{renderLabel(row.status)}</Td>
+                    <Td dataLabel={columns[5]}>{row.location}</Td>
+                    <Td dataLabel={columns[6]}>{row.lastModified}</Td>
+                    <Td dataLabel={columns[7]} modifier="truncate">
+                      <TableText>
+                        <a href="#">{row.url}</a>
+                      </TableText>
+                    </Td>
+                  </>
                 </Tr>
-              </Thead>
-              <Tbody>
-                {paginatedRows.map((row, rowIndex) => (
-                  <Tr key={rowIndex}>
-                    <>
-                      <Td dataLabel={columns[0]}>{row.name}</Td>
-                      <Td dataLabel={columns[1]}>{row.threads}</Td>
-                      <Td dataLabel={columns[2]}>{row.applications}</Td>
-                      <Td dataLabel={columns[3]}>{row.workspaces}</Td>
-                      <Td dataLabel={columns[4]}>{renderLabel(row.status)}</Td>
-                      <Td dataLabel={columns[5]}>{row.location}</Td>
-                      <Td dataLabel={columns[6]}>{row.lastModified}</Td>
-                      <Td dataLabel={columns[7]} modifier="truncate">
-                        <TableText>
-                          <a href="#">{row.url}</a>
-                        </TableText>
-                      </Td>
-                    </>
-                  </Tr>
-                ))}
-              </Tbody>
-            </Table>
-          </Card>
+              ))}
+            </Tbody>
+          </Table>
         </PageSection>
       </DashboardWrapper>
     </Fragment>
