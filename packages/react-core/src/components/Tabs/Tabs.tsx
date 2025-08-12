@@ -361,9 +361,9 @@ class Tabs extends Component<TabsProps, TabsState> {
       ...(shouldInitializeStyle && { isInitializingAccent: true })
     });
 
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       this.setState({ isInitializingAccent: false });
-    }, 0);
+    });
   };
 
   handleResize = () => {
@@ -437,6 +437,10 @@ class Tabs extends Component<TabsProps, TabsState> {
       }, 100);
     } else if (prevState.enableScrollButtons && !enableScrollButtons) {
       this.setState({ showScrollButtons: false });
+    }
+
+    if (prevState.uncontrolledIsExpandedLocal !== this.state.uncontrolledIsExpandedLocal) {
+      this.setAccentStyles(true);
     }
   }
 
