@@ -244,6 +244,9 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
         });
 
   const id = getUniqueId();
+  const hasAriaLabelledBy = expandable || (label && alwaysShowLabel);
+  const computedAriaLabel = hasAriaLabelledBy ? null : ariaLabel;
+  const computedAriaLabelledBy = hasAriaLabelledBy ? id : null;
 
   return (
     <nav
@@ -255,9 +258,9 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
         isExpanded && styles.modifiers.expanded,
         className
       )}
-      aria-label={expandable || (label && alwaysShowLabel) ? null : ariaLabel}
+      aria-label={computedAriaLabel}
       ref={navRef}
-      aria-labelledby={expandable || (label && alwaysShowLabel) ? id : null}
+      aria-labelledby={computedAriaLabelledBy}
       {...props}
     >
       <div className={styles.jumpLinksMain}>
@@ -287,8 +290,8 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
           )}
         </div>
         <ul
-          aria-label={expandable || (label && alwaysShowLabel) ? null : ariaLabel}
-          aria-labelledby={expandable || (label && alwaysShowLabel) ? id : null}
+          aria-label={computedAriaLabel}
+          aria-labelledby={computedAriaLabelledBy}
           className={styles.jumpLinksList}
           role="list"
         >
