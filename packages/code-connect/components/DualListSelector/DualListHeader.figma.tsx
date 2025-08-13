@@ -1,5 +1,5 @@
 import figma from '@figma/code-connect';
-import { Button, ButtonVariant, DualListSelectorPane } from '@patternfly/react-core';
+import { Button, ButtonVariant, DualListSelectorPane, SearchInput } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 // Documentation for DualListHeader can be found at https://www.patternfly.org/components/dual-list-selector
@@ -21,7 +21,9 @@ figma.connect(
         false: undefined
       }),
       isSearchable: figma.boolean('Has search bar', {
-        true: `buildSearchInput(true)`,
+        true: (
+          <SearchInput value={currentPaneFilters} onChange={() => {}} onClear={() => {}} aria-label={paneSearchLabel} />
+        ),
         false: undefined
       }),
       actions: figma.boolean('Has search bar', {
@@ -50,7 +52,7 @@ figma.connect(
     example: (props) => (
       // Documentation for DualListHeader can be found at https://www.patternfly.org/components/dual-list-selector
       <DualListSelectorPane
-        // actions={props.actions}
+        actions={props.actions}
         listMinHeight="300px"
         onSearch={props.onSearch}
         searchInput={props.isSearchable}

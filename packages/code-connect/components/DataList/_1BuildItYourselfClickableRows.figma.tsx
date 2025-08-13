@@ -11,7 +11,7 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
-      <DataListItem>
+      <DataListItem aria-labelledby="child text id">
         <DataListItemRow rowid="<row-id>">{props.children}</DataListItemRow>
       </DataListItem>
     )

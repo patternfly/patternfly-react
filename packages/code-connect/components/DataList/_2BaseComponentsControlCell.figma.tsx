@@ -31,11 +31,11 @@ figma.connect(
   {
     props: {
       isExpandable: figma.boolean('Row expansion', {
-        true: <DataListToggle onClick={() => {}} isExpanded={false} id="m-ex-toggle1" aria-controls="m-ex-expand1" />,
+        true: <DataListToggle onClick={() => {}} isExpanded={false} id="toggle1" aria-controls="expand1" />,
         false: undefined
       }),
       isSelectable: figma.boolean('Row select', {
-        true: <DataListCheck id="ex1-item1" aria-labelledby="ex1-item1" name="ex1-item1" />,
+        true: <DataListCheck id="check-item1" aria-labelledby="item1" name="item1" />,
         false: undefined
       })
     },
