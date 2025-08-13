@@ -5,7 +5,7 @@ export const JumpLinksExpandableVerticalWithSubsection: React.FunctionComponent 
     <JumpLinksItem href="#">Inactive section</JumpLinksItem>
     <JumpLinksItem href="#">
       Section with active subsection
-      <JumpLinksList>
+      <JumpLinksList aria-label="Expandable vertical section subsection">
         <JumpLinksItem href="#" isActive>
           Active subsection
         </JumpLinksItem>

@@ -52,12 +52,6 @@ exports[`expandable vertical with subsection 1`] = `
             </span>
           </button>
         </div>
-        <div
-          class="pf-v6-c-jump-links__label"
-          id="unique_id_mock"
-        >
-          Jump to section
-        </div>
       </div>
       <ul
         aria-labelledby="unique_id_mock"

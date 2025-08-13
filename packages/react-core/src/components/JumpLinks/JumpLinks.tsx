@@ -47,6 +47,8 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   className?: string;
   /** Whether the current entry in the navigation history should be replaced when a JumpLinksItem is clicked. By default a new entry will be pushed to the navigation history. */
   shouldReplaceNavHistory?: boolean;
+  /** Custom ID applied to label if alwaysShowLabel is applied, or expandable toggle. This is used for internal logic related to aria-label and aria-labelledby */
+  labelId?: string;
 }
 
 // Recursively find JumpLinkItems and return an array of all their scrollNodes
@@ -94,6 +96,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   toggleAriaLabel = 'Toggle jump links',
   className,
   shouldReplaceNavHistory = false,
+  labelId,
   ...props
 }: JumpLinksProps) => {
   const hasScrollSpy = Boolean(scrollableRef || scrollableSelector);
@@ -108,13 +111,11 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
 
   if (!label && !ariaLabel) {
     // eslint-disable-next-line no-console
-    console.warn('For accessibility reasons, an aria-label should be specified on jump links if no label is provided');
+    console.warn('JumpLinks: for accessibility reasons, an aria-label should be specified if no label is provided');
   }
-  if (!label && !toggleAriaLabel) {
+  if (!label && !toggleAriaLabel && expandable) {
     // eslint-disable-next-line no-console
-    console.warn(
-      'For accessibility reasons, a toggleAriaLabel should be specified on jump links if no label is provided'
-    );
+    console.warn('JumpLinks: for accessibility reasons, a toggleAriaLabel should be specified if no label is provided');
   }
 
   const getScrollableElement = () => {
@@ -243,7 +244,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
           return child;
         });
 
-  const id = getUniqueId();
+  const id = labelId ?? getUniqueId();
   const hasAriaLabelledBy = expandable || (label && alwaysShowLabel);
   const computedAriaLabel = hasAriaLabelledBy ? null : ariaLabel;
   const computedAriaLabelledBy = hasAriaLabelledBy ? id : null;
@@ -283,7 +284,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
               </Button>
             </div>
           )}
-          {label && alwaysShowLabel && (
+          {label && alwaysShowLabel && !expandable && (
             <div className={css(styles.jumpLinksLabel)} id={id}>
               {label}
             </div>
