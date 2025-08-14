@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useState } from 'react';
 import {
   Button,
-  Card,
   Content,
   Dropdown,
   DropdownList,
@@ -245,86 +244,84 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
           }}
           aria-label="Sortable table data"
         >
-          <Card component="div">
-            {tableToolbar}
-            <Table aria-label="Sortable Table">
-              <Thead>
-                <Tr>
-                  {columns.map((column, columnIndex) => {
-                    const sortParams = {
-                      sort: {
-                        sortBy: {
-                          index: activeSortIndex,
-                          direction: activeSortDirection
-                        },
-                        onSort,
-                        columnIndex
-                      }
-                    };
-                    return (
-                      <Th modifier={columnIndex !== 6 ? 'wrap' : undefined} key={columnIndex} {...sortParams}>
-                        {column}
-                      </Th>
-                    );
-                  })}
+          {tableToolbar}
+          <Table aria-label="Sortable Table">
+            <Thead>
+              <Tr>
+                {columns.map((column, columnIndex) => {
+                  const sortParams = {
+                    sort: {
+                      sortBy: {
+                        index: activeSortIndex,
+                        direction: activeSortDirection
+                      },
+                      onSort,
+                      columnIndex
+                    }
+                  };
+                  return (
+                    <Th modifier={columnIndex !== 6 ? 'wrap' : undefined} key={columnIndex} {...sortParams}>
+                      {column}
+                    </Th>
+                  );
+                })}
+              </Tr>
+            </Thead>
+            <Tbody>
+              {sortedRows.map((row, rowIndex) => (
+                <Tr key={rowIndex}>
+                  <>
+                    <Td dataLabel={columns[0]} width={15}>
+                      <div>{row.name}</div>
+                    </Td>
+                    <Td dataLabel={columns[1]} width={10}>
+                      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                        <FlexItem>
+                          <CodeBranchIcon key="icon" />
+                        </FlexItem>
+                        <FlexItem>{row.threads}</FlexItem>
+                      </Flex>
+                    </Td>
+                    <Td dataLabel={columns[2]} width={10}>
+                      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                        <FlexItem>
+                          <CodeIcon key="icon" />
+                        </FlexItem>
+                        <FlexItem>{row.applications}</FlexItem>
+                      </Flex>
+                    </Td>
+                    <Td dataLabel={columns[3]} width={10}>
+                      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                        <FlexItem>
+                          <CubeIcon key="icon" />
+                        </FlexItem>
+                        <FlexItem>{row.workspaces}</FlexItem>
+                      </Flex>
+                    </Td>
+                    <Td dataLabel={columns[4]} width={15}>
+                      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                        <FlexItem>{renderLabel(row.status)}</FlexItem>
+                      </Flex>
+                    </Td>
+                    <Td dataLabel={columns[5]} width={10}>
+                      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                        <FlexItem>{row.location}</FlexItem>
+                      </Flex>
+                    </Td>
+                    <Td dataLabel={columns[6]} width={10}>
+                      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                        <FlexItem>{row.lastModified[0]} days ago</FlexItem>
+                      </Flex>
+                    </Td>
+                    <Td dataLabel={columns[7]} modifier="truncate">
+                      <a href="#">{row.url}</a>
+                    </Td>
+                  </>
                 </Tr>
-              </Thead>
-              <Tbody>
-                {sortedRows.map((row, rowIndex) => (
-                  <Tr key={rowIndex}>
-                    <>
-                      <Td dataLabel={columns[0]} width={15}>
-                        <div>{row.name}</div>
-                      </Td>
-                      <Td dataLabel={columns[1]} width={10}>
-                        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                          <FlexItem>
-                            <CodeBranchIcon key="icon" />
-                          </FlexItem>
-                          <FlexItem>{row.threads}</FlexItem>
-                        </Flex>
-                      </Td>
-                      <Td dataLabel={columns[2]} width={10}>
-                        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                          <FlexItem>
-                            <CodeIcon key="icon" />
-                          </FlexItem>
-                          <FlexItem>{row.applications}</FlexItem>
-                        </Flex>
-                      </Td>
-                      <Td dataLabel={columns[3]} width={10}>
-                        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                          <FlexItem>
-                            <CubeIcon key="icon" />
-                          </FlexItem>
-                          <FlexItem>{row.workspaces}</FlexItem>
-                        </Flex>
-                      </Td>
-                      <Td dataLabel={columns[4]} width={15}>
-                        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                          <FlexItem>{renderLabel(row.status)}</FlexItem>
-                        </Flex>
-                      </Td>
-                      <Td dataLabel={columns[5]} width={10}>
-                        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                          <FlexItem>{row.location}</FlexItem>
-                        </Flex>
-                      </Td>
-                      <Td dataLabel={columns[6]} width={10}>
-                        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                          <FlexItem>{row.lastModified[0]} days ago</FlexItem>
-                        </Flex>
-                      </Td>
-                      <Td dataLabel={columns[7]} modifier="truncate">
-                        <a href="#">{row.url}</a>
-                      </Td>
-                    </>
-                  </Tr>
-                ))}
-              </Tbody>
-            </Table>
-            {renderPagination('bottom', false)}
-          </Card>
+              ))}
+            </Tbody>
+          </Table>
+          {renderPagination('bottom', false)}
         </PageSection>
       </DashboardWrapper>
     </Fragment>
