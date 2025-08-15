@@ -7,7 +7,7 @@ import cssToggleDisplayVar from '@patternfly/react-tokens/dist/esm/c_jump_links_
 import { Button } from '../Button';
 import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
 import { JumpLinksList } from './JumpLinksList';
-import { canUseDOM, formatBreakpointMods } from '../../helpers/util';
+import { canUseDOM, formatBreakpointMods, getUniqueId } from '../../helpers/util';
 
 export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
@@ -47,6 +47,8 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   className?: string;
   /** Whether the current entry in the navigation history should be replaced when a JumpLinksItem is clicked. By default a new entry will be pushed to the navigation history. */
   shouldReplaceNavHistory?: boolean;
+  /** Custom ID applied to label if alwaysShowLabel is applied, or expandable toggle. This is used for internal logic related to aria-label and aria-labelledby */
+  labelId?: string;
 }
 
 // Recursively find JumpLinkItems and return an array of all their scrollNodes
@@ -94,6 +96,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   toggleAriaLabel = 'Toggle jump links',
   className,
   shouldReplaceNavHistory = false,
+  labelId,
   ...props
 }: JumpLinksProps) => {
   const hasScrollSpy = Boolean(scrollableRef || scrollableSelector);
@@ -105,6 +108,15 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   const navRef = useRef<HTMLElement>(undefined);
 
   let scrollableElement: HTMLElement;
+
+  if (!label && !ariaLabel) {
+    // eslint-disable-next-line no-console
+    console.warn('JumpLinks: for accessibility reasons, an aria-label should be specified if no label is provided');
+  }
+  if (!label && !toggleAriaLabel && expandable) {
+    // eslint-disable-next-line no-console
+    console.warn('JumpLinks: for accessibility reasons, a toggleAriaLabel should be specified if no label is provided');
+  }
 
   const getScrollableElement = () => {
     if (scrollableRef) {
@@ -232,6 +244,11 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
           return child;
         });
 
+  const id = labelId ?? getUniqueId();
+  const hasAriaLabelledBy = expandable || (label && alwaysShowLabel);
+  const computedAriaLabel = hasAriaLabelledBy ? null : ariaLabel;
+  const computedAriaLabelledBy = hasAriaLabelledBy ? id : null;
+
   return (
     <nav
       className={css(
@@ -242,8 +259,9 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
         isExpanded && styles.modifiers.expanded,
         className
       )}
-      aria-label={ariaLabel}
+      aria-label={computedAriaLabel}
       ref={navRef}
+      aria-labelledby={computedAriaLabelledBy}
       {...props}
     >
       <div className={styles.jumpLinksMain}>
@@ -253,21 +271,31 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
               <Button
                 variant="plain"
                 onClick={() => setIsExpanded(!isExpanded)}
-                aria-label={toggleAriaLabel}
+                aria-label={label ? null : toggleAriaLabel}
                 aria-expanded={isExpanded}
                 icon={
                   <span className={styles.jumpLinksToggleIcon}>
                     <AngleRightIcon />
                   </span>
                 }
+                id={id}
               >
                 {label && label}
               </Button>
             </div>
           )}
-          {label && alwaysShowLabel && <div className={css(styles.jumpLinksLabel)}>{label}</div>}
+          {label && alwaysShowLabel && !expandable && (
+            <div className={css(styles.jumpLinksLabel)} id={id}>
+              {label}
+            </div>
+          )}
         </div>
-        <ul className={styles.jumpLinksList} role="list">
+        <ul
+          aria-label={computedAriaLabel}
+          aria-labelledby={computedAriaLabelledBy}
+          className={styles.jumpLinksList}
+          role="list"
+        >
           {cloneChildren(children)}
         </ul>
       </div>

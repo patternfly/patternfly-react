@@ -1,11 +1,11 @@
 import { JumpLinks, JumpLinksItem, JumpLinksList } from '@patternfly/react-core';
 
 export const JumpLinksExpandableVerticalWithSubsection: React.FunctionComponent = () => (
-  <JumpLinks isVertical label="Jump to section" expandable={{ default: 'expandable' }}>
+  <JumpLinks isVertical label="Jump to expandable vertical section" expandable={{ default: 'expandable' }}>
     <JumpLinksItem href="#">Inactive section</JumpLinksItem>
     <JumpLinksItem href="#">
       Section with active subsection
-      <JumpLinksList>
+      <JumpLinksList aria-label="Expandable vertical section subsection">
         <JumpLinksItem href="#" isActive>
           Active subsection
         </JumpLinksItem>
