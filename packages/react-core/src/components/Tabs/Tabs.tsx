@@ -360,6 +360,10 @@ class Tabs extends Component<TabsProps, TabsState> {
       currentLinkAccentStart: `${startValue}px`,
       ...(shouldInitializeStyle && { isInitializingAccent: true })
     });
+
+    setTimeout(() => {
+      this.setState({ isInitializingAccent: false });
+    }, 0);
   };
 
   handleResize = () => {
@@ -437,13 +441,6 @@ class Tabs extends Component<TabsProps, TabsState> {
 
     if (prevState.uncontrolledIsExpandedLocal !== this.state.uncontrolledIsExpandedLocal) {
       this.setAccentStyles(true);
-    }
-
-    if (
-      (parseInt(prevState.currentLinkAccentLength) === 0 && parseInt(this.state.currentLinkAccentLength) !== 0) ||
-      prevState.currentLinkAccentStart !== this.state.currentLinkAccentStart
-    ) {
-      this.setState({ isInitializingAccent: false });
     }
   }
 

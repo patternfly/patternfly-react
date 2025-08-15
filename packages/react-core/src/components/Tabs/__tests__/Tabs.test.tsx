@@ -21,7 +21,7 @@ test(`Renders with classes ${styles.tabs} and ${styles.modifiers.animateCurrent}
   expect(screen.getByRole('region')).toHaveClass(`${styles.tabs} ${styles.modifiers.animateCurrent}`);
 });
 
-xtest(`Renders with class ${styles.modifiers.initializingAccent} when component initially mounts`, () => {
+test(`Renders with class ${styles.modifiers.initializingAccent} when component initially mounts`, () => {
   render(
     <Tabs role="region">
       <Tab title="Test title" eventKey={0}>
