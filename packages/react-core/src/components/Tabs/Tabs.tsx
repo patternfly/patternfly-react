@@ -438,6 +438,10 @@ class Tabs extends Component<TabsProps, TabsState> {
     } else if (prevState.enableScrollButtons && !enableScrollButtons) {
       this.setState({ showScrollButtons: false });
     }
+
+    if (prevState.uncontrolledIsExpandedLocal !== this.state.uncontrolledIsExpandedLocal) {
+      this.setAccentStyles(true);
+    }
   }
 
   static getDerivedStateFromProps(nextProps: TabsProps, prevState: TabsState) {
