@@ -1,4 +1,5 @@
 import { render, screen, act } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Tabs } from '../Tabs';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { Tab } from '../Tab';
@@ -48,6 +49,53 @@ test(`Does not render with class ${styles.modifiers.initializingAccent} when com
   });
   expect(screen.getByRole('region')).not.toHaveClass(styles.modifiers.initializingAccent);
   jest.useRealTimers();
+});
+
+test(`Renders with class ${styles.modifiers.initializingAccent} when uncontrolled expandable component initially mounts`, async () => {
+  const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+
+  render(
+    <Tabs
+      isVertical
+      expandable={{ default: 'expandable' }}
+      toggleText="Jump to section"
+      defaultIsExpanded={false}
+      role="region"
+    >
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  jest.useFakeTimers();
+  await user.click(screen.getByRole('button', { name: 'Jump to section' }));
+  act(() => {
+    jest.advanceTimersByTime(100);
+  });
+  expect(screen.getByRole('region')).toHaveClass(styles.modifiers.initializingAccent);
+  jest.useRealTimers();
+});
+
+test(`Does not render with class ${styles.modifiers.initializingAccent} when uncontrolled expandable component is finished mounting`, async () => {
+  const user = userEvent.setup();
+
+  render(
+    <Tabs
+      isVertical
+      expandable={{ default: 'expandable' }}
+      toggleText="Jump to section"
+      defaultIsExpanded={false}
+      role="region"
+    >
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  await user.click(screen.getByRole('button', { name: 'Jump to section' }));
+  expect(screen.getByRole('region')).not.toHaveClass(styles.modifiers.initializingAccent);
 });
 
 test('should render simple tabs', () => {
