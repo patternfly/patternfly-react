@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.5...@patternfly/react-core@6.3.1-prerelease.6) (2025-08-18)
+
+### Bug Fixes
+
+- **Tabs:** updated logic for uncontrolled tabs animation ([#11958](https://github.com/patternfly/patternfly-react/issues/11958)) ([c5a7e63](https://github.com/patternfly/patternfly-react/commit/c5a7e6395b118929a6a87db1c9a06a6dcc662d64))
+
 ## [6.3.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.4...@patternfly/react-core@6.3.1-prerelease.5) (2025-08-18)
 
 ### Bug Fixes
