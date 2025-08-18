@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.4...@patternfly/react-core@6.3.1-prerelease.5) (2025-08-18)
+
+### Bug Fixes
+
+- **JumpLinks:** Fix aria issues ([#11950](https://github.com/patternfly/patternfly-react/issues/11950)) ([8bdb879](https://github.com/patternfly/patternfly-react/commit/8bdb879bada1a9322cdb31cd27beea73e2209405))
+
 ## [6.3.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.3...@patternfly/react-core@6.3.1-prerelease.4) (2025-08-12)
 
 ### Bug Fixes
