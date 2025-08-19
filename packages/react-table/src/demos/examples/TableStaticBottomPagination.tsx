@@ -1,7 +1,6 @@
 import { Fragment, useState } from 'react';
 import {
   Button,
-  Card,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -143,37 +142,35 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
     <Fragment>
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection isFilled aria-label="Paginated table data">
-          <Card>
-            {tableToolbar}
-            <Table variant="compact" aria-label="Paginated Table">
-              <Thead>
-                <Tr>
-                  {columns.map((column, columnIndex) => (
-                    <Th key={columnIndex}>{column}</Th>
-                  ))}
-                </Tr>
-              </Thead>
-              <Tbody>
-                {paginatedRows.map((row, rowIndex) => (
-                  <Tr key={rowIndex}>
-                    <Td dataLabel={columns[0]}>{row.name}</Td>
-                    <Td dataLabel={columns[1]}>{row.threads}</Td>
-                    <Td dataLabel={columns[2]}>{row.applications}</Td>
-                    <Td dataLabel={columns[3]}>{row.workspaces}</Td>
-                    <Td dataLabel={columns[4]}>{renderLabel(row.status)}</Td>
-                    <Td dataLabel={columns[5]}>{row.location}</Td>
-                    <Td dataLabel={columns[6]}>{row.lastModified}</Td>
-                    <Td dataLabel={columns[7]} modifier="truncate">
-                      <TableText>
-                        <a href="#">{row.url}</a>
-                      </TableText>
-                    </Td>
-                  </Tr>
+          {tableToolbar}
+          <Table variant="compact" aria-label="Paginated Table">
+            <Thead>
+              <Tr>
+                {columns.map((column, columnIndex) => (
+                  <Th key={columnIndex}>{column}</Th>
                 ))}
-              </Tbody>
-            </Table>
-            {renderPagination('bottom', false)}
-          </Card>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {paginatedRows.map((row, rowIndex) => (
+                <Tr key={rowIndex}>
+                  <Td dataLabel={columns[0]}>{row.name}</Td>
+                  <Td dataLabel={columns[1]}>{row.threads}</Td>
+                  <Td dataLabel={columns[2]}>{row.applications}</Td>
+                  <Td dataLabel={columns[3]}>{row.workspaces}</Td>
+                  <Td dataLabel={columns[4]}>{renderLabel(row.status)}</Td>
+                  <Td dataLabel={columns[5]}>{row.location}</Td>
+                  <Td dataLabel={columns[6]}>{row.lastModified}</Td>
+                  <Td dataLabel={columns[7]} modifier="truncate">
+                    <TableText>
+                      <a href="#">{row.url}</a>
+                    </TableText>
+                  </Td>
+                </Tr>
+              ))}
+            </Tbody>
+          </Table>
+          {renderPagination('bottom', false)}
         </PageSection>
       </DashboardWrapper>
     </Fragment>
