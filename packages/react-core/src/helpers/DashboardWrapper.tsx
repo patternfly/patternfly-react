@@ -1,18 +1,9 @@
-import { useState } from 'react';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  Content,
-  Nav,
-  NavItem,
-  NavList,
-  Page,
-  PageProps,
-  PageSection,
-  PageSidebar,
-  PageSidebarBody,
-  SkipToContent
-} from '../components';
+import { useState, FC } from 'react';
+import { Breadcrumb, BreadcrumbItem } from '../components/Breadcrumb';
+import { Content } from '../components/Content';
+import { Nav, NavItem, NavList } from '../components/Nav';
+import { Page, PageProps, PageSection, PageSidebar, PageSidebarBody } from '../components/Page';
+import { SkipToContent } from '../components/SkipToContent';
 import { DashboardHeader } from './DashboardHeader';
 
 interface DashboardWrapperProps extends Omit<PageProps, 'ref'> {
@@ -44,7 +35,7 @@ const PageTemplateTitle = (
   </PageSection>
 );
 
-export const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
+export const DashboardWrapper: FC<DashboardWrapperProps> = ({
   children,
   mainContainerId,
   banner,
