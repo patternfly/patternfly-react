@@ -8,7 +8,7 @@ import '@patternfly/documentation-framework/global.css';
 
 // Patternfly
 // import '@patternfly/patternfly/patternfly.css';
-import './patternfly-dist-hc/patternfly.css';
+import './patternfly-hc.css';
 
 // Utilities
 import '@patternfly/patternfly/patternfly-addons.css';
