@@ -1,0 +1,1308 @@
+@use '../../sass-utilities' as *;
+
+// TODO: clean up unused variables
+// TODO: update grouping comments to // * Table {element}
+
+@include pf-root($table) {
+  --#{$table}--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$table}--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$table}--border-width--base: var(--pf-t--global--border--width--divider--default);
+
+  // * Table caption
+  --#{$table}__caption--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$table}__caption--Color: var(--pf-t--global--text--color--subtle);
+  --#{$table}__caption--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$table}__caption--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --#{$table}__caption--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$table}__caption--PaddingInlineStart: var(--pf-t--global--spacer--inset--page-chrome);
+
+  // * Table thead cell
+  --#{$table}__thead--cell--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$table}__thead--cell--FontWeight: var(--pf-t--global--font--weight--body--bold);
+
+  // * Table thead toggle
+  --#{$table}__thead__toggle--PaddingBlockStart: var(--#{$table}--cell--Padding--base); // TODO - remove thead toggle custom padding in breaking change
+  --#{$table}__thead__toggle--PaddingBlockEnd: var(--#{$table}--cell--Padding--base); // TODO - remove thead toggle custom padding in breaking change
+
+  // * Table body cell
+  --#{$table}__tbody--cell--PaddingBlockStart: var(--#{$table}--cell--Padding--base);
+  --#{$table}__tbody--cell--PaddingBlockEnd: var(--#{$table}--cell--Padding--base);
+  --#{$table}__tbody--cell--FontSize: var(--pf-t--global--font--size--body--default); // set this explicitly for input heights to calc properly
+
+  // * Table tr
+  --#{$table}__tr--BorderBlockEndWidth: var(--pf-t--global--border--width--divider--default);
+  --#{$table}__tr--BorderBlockEndColor: var(--pf-t--global--border--color--default);
+
+  // TODO: update these in order of appearance in scss declarations
+
+  // * Table cell
+  --#{$table}--cell--Padding--base: var(--pf-t--global--spacer--md);
+  --#{$table}--cell--PaddingBlockStart: var(--#{$table}--cell--Padding--base);
+  --#{$table}--cell--PaddingInlineEnd: var(--#{$table}--cell--Padding--base);
+  --#{$table}--cell--PaddingBlockEnd: var(--#{$table}--cell--Padding--base);
+  --#{$table}--cell--PaddingInlineStart: var(--#{$table}--cell--Padding--base);
+  --#{$table}--cell--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$table}--cell--FontWeight: var(--pf-t--global--font--weight--body--default);
+  --#{$table}--cell--LineHeight: var(--pf-t--global--font--line-height--body);
+  --#{$table}--cell--Color: var(--pf-t--global--text--color--regular);
+  --#{$table}--cell--first-last-child--PaddingInline: var(--pf-t--global--spacer--inset--page-chrome);
+  --#{$table}__tr--m-first-cell-offset-reset--cell--PaddingInlineStart: var(--#{$table}--cell--Padding--base);
+
+  // * Table cell - default variables
+  --#{$table}--cell--MinWidth: calc(var(--#{$table}--cell--PaddingInlineEnd) + var(--#{$table}--cell--PaddingInlineEnd));
+  --#{$table}--cell--MaxWidth: none;
+  --#{$table}--cell--Width: auto;
+  --#{$table}--cell--Overflow: visible;
+  --#{$table}--cell--TextOverflow: clip;
+  --#{$table}--cell--WhiteSpace: normal;
+  --#{$table}--cell--WordBreak: normal;
+
+  // * Table cell border right
+  --#{$table}--cell--m-border-right--before--BorderInlineEndWidth: var(--pf-t--global--border--width--divider--default);
+  --#{$table}--cell--m-border-right--before--BorderInlineEndColor: var(--pf-t--global--border--color--default);
+  --#{$table}--cell--m-border-left--before--BorderInlineStartWidth: var(--pf-t--global--border--width--divider--default);
+  --#{$table}--cell--m-border-left--before--BorderInlineStartColor: var(--pf-t--global--border--color--default);
+
+  // * Table help
+  --#{$table}--cell--m-help--MinWidth: 11ch;
+
+  // * Table truncate
+  --#{$table}--m-truncate--cell--MaxWidth: 1px;
+  --#{$table}--m-truncate--cell--MinWidth: calc(5ch + var(--#{$table}--cell--PaddingInlineEnd) + var(--#{$table}--cell--PaddingInlineStart));
+
+  // * Table truncate
+  --#{$table}__text--MinWidth: 100%;
+  --#{$table}__text--m-truncate--MinWidth: 5ch;
+  --#{$table}--m-truncate__text--MinWidth: 5ch;
+
+  // * Table cell hidden visible
+  --#{$table}--cell--hidden-visible--Display: table-cell;
+
+  // * Table toggle
+  --#{$table}__toggle--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$table}__toggle--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$table}__toggle--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$table}__toggle--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$table}__toggle--c-button__toggle-icon--Rotate: 270deg;
+  --#{$table}__toggle--c-button__toggle-icon--TransitionDuration: var(--pf-t--global--motion--duration--icon--default);
+  --#{$table}__toggle--c-button__toggle-icon--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$table}__toggle--c-button--m-expanded__toggle-icon--Rotate: 360deg;
+
+  // * Table button
+  --#{$table}__button--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$table}__button--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$table}__button--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$table}__button--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$table}__button--Color: var(--pf-t--global--text--color--regular);
+  --#{$table}__button--BackgroundColor: var(--pf-t--global--background--color--action--plain--default);
+  --#{$table}__button--OutlineOffset: calc(var(--pf-t--global--border--width--strong) * -1);
+  --#{$table}__button--BorderRadius: var(--pf-t--global--border--radius--small);
+  --#{$table}__button--hover--Color: var(--pf-t--global--text--color--regular);
+  --#{$table}__button--hover--BackgroundColor: var(--pf-t--global--background--color--action--plain--hover);
+
+  // * Table check
+  --#{$table}__check--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$table}__check--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+
+  // * Table favorite
+  --#{$table}__favorite--c-button--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$table}--cell--m-favorite--Color: var(--pf-t--global--text--color--subtle);
+  --#{$table}__favorite--m-favorited--c-button--Color: var(--pf-t--global--color--favorite--clicked);
+
+  // * Table ghost row
+  --#{$table}__tr--m-ghost-row--Opacity: .4;
+  --#{$table}__tr--m-ghost-row--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+
+  // * Table action
+  --#{$table}__action--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$table}__action--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$table}__action--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$table}__action--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+
+  // * Table expandable row
+  --#{$table}__expandable-row--TransitionDuration--expand--slide: 0s;
+  --#{$table}__expandable-row--TransitionDuration--expand--fade: var(--pf-t--global--motion--duration--fade--default);
+  --#{$table}__expandable-row--TransitionDuration--collapse--slide: 0s;
+  --#{$table}__expandable-row--TransitionDuration--collapse--fade: var(--pf-t--global--motion--duration--fade--short);
+  --#{$table}__expandable-row--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$table}__expandable-row--Opacity: 0;
+  --#{$table}__tbody--m-expanded__expandable-row--Opacity: 1;
+  --#{$table}__expandable-row--TranslateY: 0;
+  --#{$table}__tbody--m-expanded__expandable-row--TranslateY: 0;
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    --#{$table}__expandable-row--TransitionDuration--expand--slide: var(--pf-t--global--motion--duration--fade--default);
+    --#{$table}__expandable-row--TransitionDuration--collapse--slide: var(--pf-t--global--motion--duration--fade--short);
+    --#{$table}__expandable-row--TranslateY: -.5rem;
+  }
+
+  // * Table expandable row content
+  --#{$table}__expandable-row-content--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$table}__expandable-row-content--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$table}__expandable-row-content--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$table}__expandable-row-content--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$table}__expandable-row-content--BorderRadius: var(--pf-t--global--border--radius--small);
+  --#{$table}__expandable-row-content--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+
+  // * Table control row
+  --#{$table}__control-row--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$table}__control-row--BorderBlockEndWidth: var(--pf-t--global--border--width--divider--default);
+  --#{$table}__control-row__tbody--BorderBlockEndColor: var(--pf-t--global--border--color--default);
+
+  // * Table icon inline
+  --#{$table}__icon-inline--MarginInlineEnd: var(--pf-t--global--spacer--sm);
+
+  // * Table sort cell
+  --#{$table}__sort--MinWidth: calc(6ch + var(--#{$table}--cell--PaddingInlineEnd) + var(--#{$table}--cell--PaddingInlineStart) + var(--#{$table}__sort-indicator--MarginInlineStart));
+  --#{$table}__sort--m-selected__button--Color: var(--pf-t--global--color--brand--clicked);
+  --#{$table}__sort--m-help--MinWidth: 15ch;
+
+  // * Table sort button
+  --#{$table}__sort__button__text--Color: currentcolor;
+  --#{$table}__sort__button--hover__text--Color: currentcolor;
+
+  // * Table sort indicator
+  --#{$table}__sort-indicator--Color: var(--pf-t--global--icon--color--subtle);
+  --#{$table}__sort-indicator--MarginInlineStart: var(--pf-t--global--spacer--md);
+  --#{$table}__sort--m-selected__sort-indicator--Color: var(--pf-t--global--color--brand--clicked);
+  --#{$table}__sort__button--hover__sort-indicator--Color: var(--pf-t--global--text--color--regular);
+
+  // * Table help
+  --#{$table}__th--m-help--MinWidth: 11ch;
+
+  // * Table header popover
+  --#{$table}__column-help--MarginInlineStart: var(--pf-t--global--spacer--sm);
+
+  // * Table compound expansion toggle button
+  --#{$table}__compound-expansion-toggle__button--Color: var(--pf-t--global--icon--color--brand--default);
+  --#{$table}__compound-expansion-toggle__button--BackgroundColor: var(--pf-t--global--background--color--action--plain--default);
+  --#{$table}__compound-expansion-toggle__button--hover--Color: var(--pf-t--global--icon--color--brand--hover);
+  --#{$table}__compound-expansion-toggle__button--hover--BackgroundColor: var(--pf-t--global--background--color--action--plain--hover);
+  --#{$table}__compound-expansion-toggle__button--expanded--BackgroundColor: var(--pf-t--global--background--color--action--plain--clicked);
+
+  // * Table compound expansion toggle button after
+  --#{$table}__compound-expansion-toggle__button--after--BorderColor: var(--pf-t--global--border--color--clicked);
+  --#{$table}__compound-expansion-toggle__button--after--BorderBlockStartWidth: 0;
+  --#{$table}__compound-expansion-toggle__button--hover--after--BorderBlockStartWidth: var(--pf-t--global--border--width--strong);
+  --#{$table}__compound-expansion-toggle--m-expanded__button--after--BorderBlockStartWidth: var(--pf-t--global--border--width--strong);
+
+  // * Compound expandable
+  --#{$table}--compound-expansion--m-expanded--BackgroundColor: var(--pf-t--global--background--color--primary--clicked);
+
+  // * Table compact th
+  --#{$table}--m-compact__th--PaddingBlockStart: calc(var(--pf-t--global--spacer--sm) + var(--pf-t--global--spacer--xs));
+  --#{$table}--m-compact__th--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+
+  // * Table compact cell
+  --#{$table}--m-compact--cell--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$table}--m-compact--cell--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+
+  // * Table cell with button
+  --#{$table}__td--m-action--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$table}__td--m-action--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+
+  // * Table compact cell with button
+  --#{$table}--m-compact__td--m-action--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$table}--m-compact__td--m-action--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+
+  // * Table compact action
+  --#{$table}--m-compact__action--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$table}--m-compact__action--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+
+  // * Table expandable row expanded
+  --#{$table}__expandable-row--m-expanded--BorderBlockEndColor: var(--pf-t--global--border--color--default);
+
+  // * Table tr clickable
+  --#{$table}__tr--m-clickable--BackgroundColor: transparent;
+  --#{$table}__tr--m-clickable--OutlineOffset: calc(-1 * var(--pf-t--global--spacer--xs));
+  --#{$table}__tr--m-clickable--hover--BackgroundColor: var(--pf-t--global--background--color--primary--hover);
+
+  // * Table tr selected
+  --#{$table}__tr--m-selected--BackgroundColor: var(--pf-t--global--background--color--primary--clicked);
+  --#{$table}__tr--m-selected--OutlineOffset: calc(-1 * var(--pf-t--global--spacer--xs));
+
+  // * Table tbody clickable
+  --#{$table}__tbody--m-clickable--BackgroundColor: transparent;
+  --#{$table}__tbody--m-clickable--OutlineOffset: calc(-1 * var(--pf-t--global--spacer--xs));
+  --#{$table}__tbody--m-clickable--hover--BackgroundColor: var(--pf-t--global--background--color--primary--hover);
+  --#{$table}__tbody--m-clickable--m-expanded--BackgroundColor: var(--pf-t--global--background--color--primary--clicked);
+
+  // * Table tbody selected
+  --#{$table}__tbody--m-selected--BackgroundColor: var(--pf-t--global--background--color--primary--clicked);
+  --#{$table}__tbody--m-selected--OutlineOffset: calc(-1 * var(--pf-t--global--spacer--xs));
+
+  // * Table nested column header
+  --#{$table}__thead--m-nested-column-header--button--OutlineOffset: #{pf-size-prem(-3px)};
+  --#{$table}__thead--m-nested-column-header__tr--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$table}__thead--m-nested-column-header__tr--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+
+  // * Table subhead
+  --#{$table}__subhead--Color: var(--pf-t--global--text--color--subtle);
+
+  // * Table subhead button
+  --#{$table}__nested-column-header__button--PaddingInlineStart: calc(var(--#{$table}__button--PaddingInlineStart) - var(--pf-t--global--spacer--control--horizontal--plain));
+  --#{$table}__nested-column-header__button--PaddingInlineEnd: calc(var(--#{$table}__button--PaddingInlineEnd) - (var(--pf-t--global--spacer--control--horizontal--plain) / 2));
+
+  // * Table striped
+  --#{$table}--m-striped__tr--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+
+  // * Table sticky header
+  --#{$table}--m-sticky-header--cell--ZIndex: var(--pf-t--global--z-index--xs);
+  --#{$table}--m-sticky-header--ZIndex: calc(var(--pf-t--global--z-index--xs) + 1);
+  --#{$table}--m-sticky-header--border--ZIndex: calc(var(--pf-t--global--z-index--xs) + 2);
+}
+
+// TODO: update grouping comments to // Table {element}
+// TODO: flatten the modifiers out ex: .#{$table}.pf-m-sticky-header {}
+// - Table
+.#{$table} {
+  width: 100%;
+  background-color: var(--#{$table}--BackgroundColor);
+
+  &.pf-m-fixed {
+    table-layout: fixed;
+  }
+
+  // - Table sticky header
+  &.pf-m-sticky-header > .#{$table}__thead,
+  .#{$table}__thead.pf-m-nested-column-header {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: var(--#{$table}--m-sticky-header--ZIndex);
+    background: var(--#{$table}--BackgroundColor);
+
+    &::before {
+      position: absolute;
+      inset-block-start: 0;
+      inset-block-end: 0;
+      inset-inline-start: 0;
+      inset-inline-end: 0;
+      z-index: var(--#{$table}--m-sticky-header--border--ZIndex);
+      pointer-events: none;
+      content: '';
+      border-block-end: var(--#{$table}--border-width--base) solid var(--#{$table}--BorderColor);
+    }
+  }
+
+  &.pf-m-sticky-header {
+    position: relative;
+
+    thead:where(.#{$table}__thead) tr:where(.#{$table}__tr) {
+      > :where(th, td) {
+        z-index: var(--#{$table}--m-sticky-header--cell--ZIndex); // set z-index here to allow sticky column to override
+      }
+    }
+
+    // - Table nested column header
+    > .pf-m-nested-column-header {
+      position: sticky;
+      inset-block-start: 0;
+      background: var(--#{$table}--BackgroundColor);
+    }
+  }
+
+  // - Table not sticky header nested column header
+  &:not(.pf-m-sticky-header) > .pf-m-nested-column-header {
+    tr:where(.#{$table}__tr):not(:last-child) {
+      border-block-end: 0; // hard reset tr borders in nested headers
+
+      // stylelint-disable max-nesting-depth
+      th:where(.#{$table}__th),
+      td:where(.#{$table}__td) {
+        &:not([rowspan]) {
+          --#{$table}--cell--PaddingBlockEnd: var(--#{$table}__thead--m-nested-column-header__tr--PaddingBlockEnd);
+        }
+      }
+      // stylelint-enable
+    }
+  }
+
+  // - Table striped
+  // stylelint-disable
+  &.pf-m-striped:not(.pf-m-expandable) > tbody:where(.#{$table}__tbody) > tr:where(.#{$table}__tr):nth-child(odd), // regular table
+  &.pf-m-striped.pf-m-expandable > tbody:where(.#{$table}__tbody):nth-of-type(odd) > tr:where(.#{$table}__tr), // expandable table
+  > .pf-m-striped > tr:nth-child(odd), // tbody odd
+  > .pf-m-striped-even > tr:nth-child(even), // tbody even
+  tr:where(.#{$table}__tr).pf-m-striped { // tr
+    --#{$table}__sticky-column--BackgroundColor: var(--#{$table}--m-striped__tr--BackgroundColor);
+
+    background: var(--#{$table}--m-striped__tr--BackgroundColor);
+  }
+  // stylelint-enable
+
+  // Standard table row (non-expandable)
+  // exclude expandable rows
+  tr:where(.#{$table}__tr):not(.#{$table}__expandable-row) {
+    // stylelint-disable-next-line
+    &.pf-m-ghost-row {
+      background-color: var(--#{$table}__tr--m-ghost-row--BackgroundColor);
+      opacity: var(--#{$table}__tr--m-ghost-row--Opacity);
+    }
+  }
+
+  // - Table th - Table td
+  tr:where(.#{$table}__tr) > :where(th, td) {
+    @include pf-v6-hidden-visible(var(--#{$table}--cell--hidden-visible--Display));
+
+    position: relative;
+    width: var(--#{$table}--cell--Width);
+    min-width: var(--#{$table}--cell--MinWidth);
+    max-width: var(--#{$table}--cell--MaxWidth);
+    padding-block-start: var(--#{$table}--cell--PaddingBlockStart);
+    padding-block-end: var(--#{$table}--cell--PaddingBlockEnd);
+    padding-inline-start: var(--#{$table}--cell--PaddingInlineStart);
+    padding-inline-end: var(--#{$table}--cell--PaddingInlineEnd);
+
+    // default settings
+    overflow: var(--#{$table}--cell--Overflow);
+    font-size: var(--#{$table}--cell--FontSize);
+    font-weight: var(--#{$table}--cell--FontWeight);
+    line-height: var(--#{$table}--cell--LineHeight);
+    color: var(--#{$table}--cell--Color);
+    text-overflow: var(--#{$table}--cell--TextOverflow);
+    word-break: var(--#{$table}--cell--WordBreak);
+    white-space: var(--#{$table}--cell--WhiteSpace);
+
+    // First child padding left
+    &:first-child {
+      padding-inline-start: var(--#{$table}--cell--first-last-child--PaddingInline);
+    }
+
+    // Last child padding right
+    &:last-child {
+      padding-inline-end: var(--#{$table}--cell--first-last-child--PaddingInline);
+    }
+
+    &.pf-m-center {
+      text-align: center;
+    }
+
+    &:is(:empty, .#{$table}__cell-empty) {
+      width: auto;
+      min-width: 0;
+      padding: 0;
+    }
+
+    &.pf-m-help {
+      --#{$table}--cell--MinWidth: var(--#{$table}--cell--m-help--MinWidth);
+    }
+
+    &.pf-m-favorite {
+      --#{$table}__button--Color: var(--#{$table}--cell--m-favorite--Color);
+      --#{$table}__sort--MinWidth: fit-content;
+      --#{$table}--cell--MaxWidth: fit-content;
+      --#{$table}--cell--Overflow: visible;
+    }
+
+    &.pf-m-border-right::before,
+    &.pf-m-border-left::before {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+    }
+
+    &.pf-m-border-right::before {
+      border-inline-end: var(--#{$table}--cell--m-border-right--before--BorderInlineEndWidth) solid var(--#{$table}--cell--m-border-right--before--BorderInlineEndColor);
+    }
+
+    &.pf-m-border-left::before {
+      border-inline-start: var(--#{$table}--cell--m-border-left--before--BorderInlineStartWidth) solid var(--#{$table}--cell--m-border-left--before--BorderInlineStartColor);
+    }
+  }
+
+  // - Table caption
+  caption:where(.#{$table}__caption) {
+    padding-block-start: var(--#{$table}__caption--PaddingBlockStart);
+    padding-block-end: var(--#{$table}__caption--PaddingBlockEnd);
+    padding-inline-start: var(--#{$table}__caption--PaddingInlineStart);
+    font-size: var(--#{$table}__caption--FontSize);
+    color: var(--#{$table}__caption--Color);
+    text-align: start;
+    background-color: var(--#{$table}--BackgroundColor);
+  }
+
+  // - Table thead
+  thead:where(.#{$table}__thead) {
+    --#{$table}--cell--FontSize: var(--#{$table}__thead--cell--FontSize);
+    --#{$table}--cell--FontWeight: var(--#{$table}__thead--cell--FontWeight);
+    --#{$table}--cell--MinWidth: var(--#{$table}--m-truncate--cell--MinWidth);
+    --#{$table}--cell--MaxWidth: var(--#{$table}--m-truncate--cell--MaxWidth);
+    --#{$table}--cell--Overflow: hidden;
+    --#{$table}--cell--TextOverflow: ellipsis;
+    --#{$table}--cell--WhiteSpace: nowrap;
+
+    .#{$table}__sort .#{$table}__button {
+      margin-block-end: calc(var(--#{$table}__button--PaddingBlockEnd) * -1);
+    }
+
+    // stylelint-disable
+    &.pf-m-nested-column-header {
+      button:where(.#{$button}) {
+        outline-offset: var(--#{$table}__thead--m-nested-column-header--button--OutlineOffset);
+      }
+
+      tr:where(.#{$table}__tr):not(:first-child) {
+        th:where(.#{$table}__th),
+        td:where(.#{$table}__td) {
+          &:not([rowspan]) {
+            --#{$table}--cell--PaddingBlockStart: var(--#{$table}__thead--m-nested-column-header__tr--PaddingBlockStart);
+          }
+        }
+      }
+    }
+    // stylelint-enable
+
+    // - Table subhead
+    .#{$table}__subhead {
+      --#{$table}__sort__button__text--Color: var(--#{$table}__subhead--Color);
+
+      color: var(--#{$table}__subhead--Color);
+    }
+  }
+
+  // - Table tbody
+  // stylelint-disable
+  tbody:where(.#{$table}__tbody) {
+    --#{$table}--cell--PaddingBlockStart: var(--#{$table}__tbody--cell--PaddingBlockStart);
+    --#{$table}--cell--PaddingBlockEnd: var(--#{$table}__tbody--cell--PaddingBlockEnd);
+    --#{$table}--cell--FontSize: var(--#{$table}__tbody--cell--FontSize);
+
+    > tr:where(.#{$table}__tr) > :where(th, td) {
+      overflow-wrap: break-word;
+    }
+  }
+  // stylelint-enable
+
+  // REMOVE PADDING FOR SPECIAL CELLS THAT CONTAIN BUTTONS
+  // ==================================================================
+  // unset padding, button adds appropriate padding
+  // unset padding for these cells as the button within provides padding
+  // .#{$table}__compound-expansion-toggle {
+  //   &,
+  //   &:first-child,
+  //   &:last-child {
+  //     // explicitly reset padding rather than css variable, as the button within uses the variable
+  //     padding: 0;
+  //   }
+  // }
+
+  .#{$table}__td.pf-m-action {
+    --pf-v6-c-table--cell--PaddingBlockStart: var(--#{$table}__td--m-action--PaddingBlockStart);
+    --pf-v6-c-table--cell--PaddingBlockEnd: var(--#{$table}__td--m-action--PaddingBlockEnd);
+  }
+
+  // - Table sort
+  // set property here to increase specificity
+  .#{$table}__sort {
+    min-width: var(--#{$table}__sort--MinWidth);
+  }
+
+  :where(.#{$table}__th, .#{$table}__td) {
+    &.pf-m-help {
+      min-width: var(--#{$table}__th--m-help--MinWidth);
+    }
+  }
+
+  // stylelint-disable selector-no-qualifying-type, selector-max-compound-selectors
+  &.pf-m-no-border-rows > tbody:where(.#{$table}__tbody) {
+    --#{$table}__tr--BorderBlockEndWidth: 0;
+    --#{$table}__tbody--BorderBlockEndWidth: 0;
+    --#{$table}--m-expandable__tbody--BorderBlockEndWidth: 0;
+    --#{$table}__control-row--BorderBlockEndWidth: 0;
+
+    > tr:where(.#{$table}__tr) {
+      border-block-end: 0;
+    }
+
+    &:not(.pf-m-expanded) .#{$table}__compound-expansion-toggle .#{$table}__button::before {
+      display: none;
+    }
+  }
+
+  tr.pf-m-clickable:last-child {
+    border-block-end-color: transparent;
+  }
+
+  // - Table tr clickable
+  tr:where(.#{$table}__tr) {
+    &.pf-m-clickable {
+      cursor: pointer;
+      background-color: var(--#{$table}__tr--m-clickable--BackgroundColor);
+      outline-offset: var(--#{$table}__tr--m-clickable--OutlineOffset);
+
+      &:is(:hover, :focus) {
+        --#{$table}__tr--m-clickable--BackgroundColor: var(--#{$table}__tr--m-clickable--hover--BackgroundColor);
+      }
+    }
+
+    // tr selected
+    &.pf-m-selected {
+      position: relative;
+      background-color: var(--#{$table}__tr--m-selected--BackgroundColor);
+      outline-offset: var(--#{$table}__tr--m-selected--OutlineOffset);
+    }
+
+    &.pf-m-first-cell-offset-reset > :first-child {
+      padding-inline-start: var(--#{$table}__tr--m-first-cell-offset-reset--cell--PaddingInlineStart);
+    }
+  }
+
+  // - Table tbody clickable
+  // stylelint-disable no-duplicate-selectors
+  tbody:where(.#{$table}__tbody) {
+    &.pf-m-clickable {
+      cursor: pointer;
+      background-color: var(--#{$table}__tbody--m-clickable--BackgroundColor);
+      outline-offset: var(--#{$table}__tbody--m-clickable--OutlineOffset);
+
+      &:is(:hover, :focus) {
+        --#{$table}__tbody--m-clickable--BackgroundColor: var(--#{$table}__tbody--m-clickable--hover--BackgroundColor);
+      }
+
+      &.pf-m-expanded {
+        --#{$table}__tbody--m-clickable--BackgroundColor: var(--#{$table}__tbody--m-clickable--m-expanded--BackgroundColor);
+      }
+    }
+
+    // - Table tbody expanded
+    &.pf-m-selected {
+      background-color: var(--#{$table}__tbody--m-selected--BackgroundColor);
+      outline-offset: var(--#{$table}__tbody--m-selected--OutlineOffset);
+
+      .#{$table}__tr.pf-m-expanded:not(.#{$table}__expandable-row) {
+        border: none;
+      }
+    }
+  }
+
+  &.pf-m-drag-over {
+    overflow-anchor: none;
+  }
+
+  // - Table table
+  .#{$table}{
+    background-color: transparent;
+
+    &,
+    :is(.#{$table}__tbody, .#{$table}__tr:last-child) {
+      border-block-end: 0;
+    }
+  }
+
+  .#{$button} .#{$table}__sort-indicator {
+    --#{$table}__sort-indicator--MarginInlineStart: 0;
+  }
+
+  // stylelint-disable max-nesting-depth, selector-max-class
+  &.pf-m-animate-expand {
+    > .#{$table}__tbody {
+      &.pf-m-expanded {
+        > .#{$table}__control-row {
+          border-block-end: 0;
+        }
+      }
+
+      > .#{$table}__expandable-row {
+        display: var(--#{$table}__expandable-row--Display, revert);
+        visibility: hidden;
+        opacity: var(--#{$table}__expandable-row--Opacity);
+        transition-delay: 0s, 0s, var(--#{$table}__expandable-row--TransitionDuration--collapse--fade), var(--#{$table}__expandable-row--TransitionDuration--collapse--fade);
+        transition-timing-function: var(--#{$table}__expandable-row--TransitionTimingFunction);
+        transition-duration: var(--#{$table}__expandable-row--TransitionDuration--collapse--fade), var(--#{$table}__expandable-row--TransitionDuration--collapse--slide), 0s, 0s;
+        transition-property: opacity, translate, visibility, background-color;
+        translate: 0 var(--#{$table}__expandable-row--TranslateY);
+
+        &[hidden] {
+          display: var(--#{$table}__expandable-row--Display, revert);
+        }
+
+        &.pf-m-expanded {
+          visibility: visible;
+          opacity: var(--#{$table}__tbody--m-expanded__expandable-row--Opacity);
+          transition-delay: 0s;
+          transition-duration: var(--#{$table}__expandable-row--TransitionDuration--expand--fade), var(--#{$table}__expandable-row--TransitionDuration--expand--slide), 0s, 0s;
+          translate: 0 var(--#{$table}__tbody--m-expanded__expandable-row--TranslateY);
+
+          > :is(.#{$table}__td, .#{$table}__th) {
+            > .#{$table}__expandable-row-content {
+              max-height: 99999px;
+            }
+          }
+        }
+
+        &:not(.pf-m-expanded) {
+          > :is(.#{$table}__td, .#{$table}__th) {
+            &,
+            > .#{$table}__expandable-row-content {
+              padding: 0;
+              overflow: hidden;
+              transition-delay: var(--#{$table}__expandable-row--TransitionDuration--collapse--fade);
+              transition-property: padding, max-height, overflow;
+            }
+
+            > .#{$table}__expandable-row-content {
+              max-height: 0;
+            }
+          }
+        }
+      }
+
+      > .#{$table}__tr:has(~ .#{$table}__expandable-row) {
+        border-block-end: 0;
+      }
+
+      > .#{$table}__control-row.pf-m-no-animate-expand ~ .#{$table}__expandable-row {
+        --#{$table}__expandable-row--TransitionDuration--collapse--fade: 0s;
+        --#{$table}__expandable-row--TransitionDuration--collapse--slide: 0s;
+        --#{$table}__expandable-row--TransitionDuration--expand--fade: 0s;
+        --#{$table}__expandable-row--TransitionDuration--expand--slide: 0s;
+      }
+    }
+  }
+  // stylelint-enable
+}
+
+// - Table truncate - Table wrap - Table nowrap - Table fit content - Table wrap - Table break word
+[class*='#{$table}'] {
+  &.pf-m-truncate {
+    --#{$table}--cell--MinWidth: var(--#{$table}--m-truncate--cell--MinWidth);
+    --#{$table}--cell--MaxWidth: var(--#{$table}--m-truncate--cell--MaxWidth);
+    --#{$table}--cell--Overflow: hidden;
+    --#{$table}--cell--TextOverflow: ellipsis;
+    --#{$table}--cell--WhiteSpace: nowrap;
+  }
+
+  &.pf-m-wrap {
+    --#{$table}--cell--MinWidth: 0;
+    --#{$table}--cell--MaxWidth: none;
+    --#{$table}--cell--Overflow: visible;
+    --#{$table}--cell--TextOverflow: clip;
+    --#{$table}--cell--WhiteSpace: normal;
+  }
+
+  &.pf-m-nowrap {
+    --#{$table}--cell--MinWidth: 0;
+    --#{$table}--cell--MaxWidth: none;
+    --#{$table}--cell--Overflow: visible;
+    --#{$table}--cell--TextOverflow: clip;
+    --#{$table}--cell--WhiteSpace: nowrap;
+  }
+
+  .#{$table}__icon,
+  &.pf-m-fit-content {
+    --#{$table}--cell--MinWidth: fit-content;
+    --#{$table}--cell--MaxWidth: none;
+    --#{$table}--cell--Width: 1%;
+    --#{$table}--cell--Overflow: visible;
+    --#{$table}--cell--TextOverflow: clip;
+    --#{$table}--cell--WhiteSpace: nowrap;
+  }
+
+  &.pf-m-break-word {
+    --#{$table}--cell--WordBreak: break-word;
+    --#{$table}--cell--WhiteSpace: normal;
+  }
+}
+
+// - Table text
+.#{$table}__text {
+  position: relative;
+  display: block;
+  width: var(--#{$table}--cell--Width);
+  min-width: var(--#{$table}__text--MinWidth);
+  max-width: var(--#{$table}--cell--MaxWidth);
+  overflow: var(--#{$table}--cell--Overflow);
+  line-height: var(--#{$table}--cell--LineHeight);
+  text-overflow: var(--#{$table}--cell--TextOverflow);
+  word-break: var(--#{$table}--cell--WordBreak);
+  white-space: var(--#{$table}--cell--WhiteSpace);
+
+  // Only apply these settings if specifically modified
+  &.pf-m-truncate {
+    --#{$table}--cell--MinWidth: 100%;
+
+    min-width: max(var(--#{$table}__text--m-truncate--MinWidth), var(--#{$table}__text--MinWidth));
+
+    > :where(th, td) {
+      overflow: var(--#{$table}--cell--Overflow);
+      text-overflow: var(--#{$table}--cell--TextOverflow);
+      white-space: var(--#{$table}--cell--WhiteSpace);
+    }
+  }
+}
+
+// - Table button
+.#{$table}__button {
+  width: auto;
+  padding-block-start: var(--#{$table}__button--PaddingBlockStart);
+  padding-block-end: var(--#{$table}__button--PaddingBlockEnd);
+  padding-inline-start: var(--#{$table}__button--PaddingInlineStart);
+  padding-inline-end: var(--#{$table}__button--PaddingInlineEnd);
+  margin-block-end: calc(var(--#{$table}__button--PaddingBlockEnd) * -1);
+  margin-inline-start: calc(var(--#{$table}__button--PaddingInlineStart) * -1);
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--#{$table}__button--Color);
+  text-align: start;
+  white-space: inherit;
+  user-select: text;
+  background-color: var(--#{$table}__button--BackgroundColor);
+  border: 0;
+  border-radius: var(--#{$table}__button--BorderRadius);
+  outline-offset: var(--#{$table}__button--OutlineOffset);
+
+  // Table table table button
+  .#{$table} .#{$table} & {
+    margin-block-end: 0; // remove offset in nested tables
+  }
+
+  &:is(:hover, :focus) {
+    color: var(--#{$table}__button--hover--Color);
+  }
+}
+
+// - Table sort - Table compound expansion toggle
+.#{$table}__sort,
+.#{$table}__compound-expansion-toggle {
+  // Pass properties to text
+  .#{$table}__text {
+    display: block;
+    width: auto;
+    overflow: var(--#{$table}--cell--Overflow);
+    text-overflow: var(--#{$table}--cell--TextOverflow);
+    white-space: var(--#{$table}--cell--WhiteSpace);
+  }
+}
+
+// - Table button content - Table column help
+// display grid for buttons is not supported
+.#{$table}__button-content,
+.#{$table}__column-help {
+  display: inline-grid;
+  grid-template-columns: auto max-content;
+  align-items: last baseline;
+  justify-content: start;
+
+  .#{$table}__text {
+    min-width: auto;
+    max-width: 100%;
+  }
+
+  .#{$table} thead:where(.#{$table}__thead).pf-m-nowrap &,
+  .#{$table} tr:where(.#{$table}__tr).pf-m-nowrap &,
+  .#{$table} th:where(.#{$table}__th).pf-m-nowrap & {
+    grid-template-columns: min-content max-content;
+  }
+
+  .#{$table} thead:where(.#{$table}__thead).pf-m-fit-content &,
+  .#{$table} tr:where(.#{$table}__tr).pf-m-fit-content &,
+  .#{$table} th:where(.#{$table}__th).pf-m-fit-content & {
+    grid-template-columns: fit-content max-content;
+  }
+
+  .#{$table} thead:where(.#{$table}__thead).pf-m-wrap &,
+  .#{$table} tr:where(.#{$table}__tr).pf-m-wrap &,
+  .#{$table} th:where(.#{$table}__th).pf-m-wrap &,
+  .#{$table} thead:where(.#{$table}__thead).pf-m-truncate &,
+  .#{$table} tr:where(.#{$table}__tr).pf-m-truncate &,
+  .#{$table} th:where(.#{$table}__th).pf-m-truncate & {
+    grid-template-columns: auto max-content;
+  }
+}
+
+// stylelint-disable
+// - Table check - Table toggle - Table action - Table favorite - Table inline-edit-action - Table draggable
+.#{$table} .#{$table}__check,
+.#{$table} .#{$table}__toggle,
+.#{$table} .#{$table}__action,
+.#{$table} .#{$table}__inline-edit-action,
+.#{$table} .#{$table}__draggable {
+  --#{$table}--cell--MinWidth: 0;
+  --#{$table}--cell--Width: 1%;
+
+  max-width: none;
+}
+// stylelint-enable
+
+.#{$table} .#{$table}__favorite {
+  --#{$table}--cell--MaxWidth: auto;
+}
+
+// - Table toggle
+.#{$table}__toggle {
+  --#{$table}--cell--PaddingBlockStart: var(--#{$table}__toggle--PaddingBlockStart);
+  --#{$table}--cell--PaddingBlockEnd: var(--#{$table}__toggle--PaddingBlockEnd);
+  --#{$table}--cell--PaddingInlineStart: var(--#{$table}__toggle--PaddingInlineStart);
+  --#{$table}--cell--PaddingInlineEnd: var(--#{$table}__toggle--PaddingInlineEnd);
+
+  @at-root .#{$table}__thead & {
+    .#{$button} {
+      margin-block-start: calc(var(--#{$button}--PaddingBlockStart) * -1);
+      margin-block-end: calc(var(--#{$button}--PaddingBlockEnd) * -1);
+      line-height: 1lh; // set line-height instead of --LineHeight to avoid breaking the min-width calc for plain buttons
+    }
+  }
+
+  .#{$button} {
+    &.pf-m-expanded .#{$table}__toggle-icon {
+      transform: rotate(var(--#{$table}__toggle--c-button--m-expanded__toggle-icon--Rotate));
+    }
+  }
+
+  .#{$table}__toggle-icon {
+    @include pf-v6-mirror-inline-on-rtl;
+
+    transition-timing-function: var(--#{$table}__toggle--c-button__toggle-icon--TransitionTimingFunction);
+    transition-duration: var(--#{$table}__toggle--c-button__toggle-icon--TransitionDuration);
+    transition-property: transform;
+    transform: rotate(var(--#{$table}__toggle--c-button__toggle-icon--Rotate));
+  }
+
+  svg {
+    pointer-events: none;
+  }
+}
+
+// - Table check
+.#{$table}__check {
+  --#{$table}--cell--PaddingInlineStart: var(--#{$table}__check--PaddingInlineStart);
+  --#{$table}--cell--PaddingInlineEnd: var(--#{$table}__check--PaddingInlineEnd);
+
+  vertical-align: top;
+
+  .#{$check} {
+    --#{$check}__label--FontSize: var(--#{$table}--cell--FontSize);
+    --#{$check}__label--LineHeight: var(--#{$table}--cell--LineHeight);
+  }
+
+  .#{$radio} {
+    --#{$radio}__label--FontSize: var(--#{$table}--cell--FontSize);
+    --#{$radio}__label--LineHeight: var(--#{$table}--cell--LineHeight);
+  }
+
+  thead & {
+    vertical-align: bottom;
+  }
+
+  .#{$check}.pf-m-standalone,
+  .#{$radio}.pf-m-standalone {
+    thead & {
+      display: table-cell;
+      height: auto;
+      line-height: 1;
+      vertical-align: baseline;
+    }
+  }
+}
+
+// - Table favorite
+// TODO in breaking change - remove button styling here that is taken care of by favorite button now
+.#{$table}__favorite {
+  .#{$button}:not(.pf-m-favorite) {
+    --#{$button}--FontSize: var(--#{$table}__favorite--c-button--FontSize);
+  }
+
+  &.pf-m-favorited .#{$button}:not(.pf-m-favorited) {
+    --#{$button}--m-plain__icon--Color: var(--#{$table}__favorite--m-favorited--c-button--Color);
+
+    &:is(:hover, :focus) {
+      --#{$button}--hover__icon--Color: var(--#{$table}__favorite--m-favorited--c-button--Color);
+    }
+  }
+}
+
+// - Table draggable
+.#{$table}__draggable {
+  .#{$button} {
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+
+// - Table action - Table favorite - Table inline edit action - Table draggable
+.#{$table}__action,
+.#{$table}__favorite,
+.#{$table}__inline-edit-action,
+.#{$table}__draggable {
+  --#{$table}--cell--PaddingBlockStart: var(--#{$table}__action--PaddingBlockStart);
+  --#{$table}--cell--PaddingBlockEnd: var(--#{$table}__action--PaddingBlockEnd);
+  --#{$table}--cell--PaddingInlineStart: var(--#{$table}__action--PaddingInlineStart);
+  --#{$table}--cell--PaddingInlineEnd: var(--#{$table}__action--PaddingInlineEnd);
+}
+
+// - Table action - Table inline edit action
+.#{$table}__action,
+.#{$table}__inline-edit-action {
+  &:last-child {
+    text-align: end;
+  }
+}
+
+// - Table compound expansion toggle
+.#{$table}__compound-expansion-toggle {
+  --#{$table}__button--Color: var(--#{$table}__compound-expansion-toggle__button--Color);
+  --#{$table}__button--hover--Color: var(--#{$table}__compound-expansion-toggle__button--hover--Color);
+
+  position: relative;
+  padding: 0;
+  background-color: var(--#{$table}__compound-expansion-toggle__button--BackgroundColor);
+
+  // show left border, use __text to truncate content
+  &.pf-m-truncate {
+    overflow: visible;
+  }
+
+  .#{$table}__button {
+    position: static;
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+    // Remove outline and apply to parent td
+    &:is(:hover, :focus) {
+      outline: 0;
+    }
+  }
+
+  // Apply borders to button to avoid conflicts with expanded states
+  .#{$table}__button::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    border: 0;
+    border-block-start: var(--#{$table}__compound-expansion-toggle__button--after--BorderBlockStartWidth) solid var(--#{$table}__compound-expansion-toggle__button--after--BorderColor);
+  }
+
+  &:hover,
+  &:focus-within {
+    --#{$table}__compound-expansion-toggle__button--BackgroundColor: var(--#{$table}__compound-expansion-toggle__button--hover--BackgroundColor);
+    --#{$table}__compound-expansion-toggle__button--after--BorderBlockStartWidth: var(--#{$table}__compound-expansion-toggle__button--hover--after--BorderBlockStartWidth);
+  }
+
+  &.pf-m-expanded {
+    --#{$table}__compound-expansion-toggle__button--BackgroundColor: var(--#{$table}__compound-expansion-toggle__button--expanded--BackgroundColor);
+    --#{$table}__compound-expansion-toggle__button--after--BorderBlockStartWidth: var(--#{$table}__compound-expansion-toggle--m-expanded__button--after--BorderBlockStartWidth);
+  }
+
+  &:focus-within {
+    outline-offset: var(--#{$table}__button--OutlineOffset);
+
+    // stylelint-disable media-feature-name-no-vendor-prefix
+    @media (-webkit-min-device-pixel-ratio: 0) {
+      outline-style: auto;
+      outline-color: -webkit-focus-ring-color;
+    }
+    // stylelint-enable
+  }
+}
+
+// - Table column help action
+.#{$table}__column-help-action {
+  align-self: last baseline;
+  margin-inline-start: var(--#{$table}__column-help--MarginInlineStart);
+
+  .#{$button} {
+    line-height: 1lh; // set line-height instead of --LineHeight to avoid breaking the min-width calc for plain buttons
+  }
+}
+
+// - Table sort
+.#{$table}__sort {
+  vertical-align: bottom;
+
+  // - Table button
+  .#{$table}__button {
+    &:is(:hover, :focus) {
+      --#{$table}__sort-indicator--Color: var(--#{$table}__sort__button--hover__sort-indicator--Color);
+      --#{$table}__sort__button__text--Color: var(--#{$table}__sort__button--hover__text--Color);
+      --#{$table}__button--BackgroundColor: var(--#{$table}__button--hover--BackgroundColor);
+    }
+
+    // - Table text
+    .#{$table}__text {
+      color: var(--#{$table}__sort__button__text--Color);
+    }
+  }
+
+  &.pf-m-selected .#{$table}__button,
+  &.pf-m-selected .#{$button} {
+    --#{$table}__sort-indicator--Color: var(--#{$table}__sort--m-selected__sort-indicator--Color);
+
+    // override state colors on text
+    .#{$table}__text {
+      color: var(--#{$table}__sort--m-selected__button--Color);
+    }
+  }
+
+  &.pf-m-help {
+    --#{$table}__th--m-help--MinWidth: var(--#{$table}__sort--m-help--MinWidth);
+  }
+
+  &.pf-m-favorite {
+    .#{$table}__text {
+      font-size: var(--#{$table}__favorite--c-button--FontSize);
+    }
+  }
+}
+
+// - Table sort indicator
+.#{$table}__sort-indicator {
+  grid-column: 2;
+  align-self: end;
+  margin-inline-start: var(--#{$table}__sort-indicator--MarginInlineStart); // TODO: update this to gap
+  color: var(--#{$table}__sort-indicator--Color);
+  pointer-events: none;
+}
+
+// - Table expandable row
+.#{$table}__expandable-row {
+  position: relative;
+  border-block-end: 0 solid transparent;
+
+  // remove top padding from expandable row cells by default
+  :not(.#{$table}__control-row) ~ & {
+    > .#{$table}__th,
+    > .#{$table}__td {
+      padding-block-start: 0;
+    }
+  }
+
+  // add back padding for compound expandable
+  .#{$table}__control-row ~ &.pf-m-expanded {
+  > :is(.#{$table}__th, .#{$table}__td):not(.pf-m-no-padding) {
+    padding-block-start: var(--#{$table}--cell--PaddingBlockStart);
+  }
+}
+
+  td:where(.#{$table}__td),
+  th:where(.#{$table}__th) {
+    &.pf-m-no-padding {
+      padding-block-start: 0;
+      padding-block-end: 0;
+      padding-inline-start: 0;
+      padding-inline-end: 0;
+
+      .#{$table}__expandable-row-content {
+        padding: 0;
+        border-radius: 0;
+      }
+    }
+  }
+
+  // - Table expandable row content
+  .#{$table}__expandable-row-content {
+    padding-block-start: var(--#{$table}__expandable-row-content--PaddingBlockStart);
+    padding-block-end: var(--#{$table}__expandable-row-content--PaddingBlockEnd);
+    padding-inline-start: var(--#{$table}__expandable-row-content--PaddingInlineStart);
+    padding-inline-end: var(--#{$table}__expandable-row-content--PaddingInlineEnd);
+    background-color: var(--#{$table}__expandable-row-content--BackgroundColor);
+    border-radius: var(--#{$table}__expandable-row-content--BorderRadius);
+
+    &.pf-m-no-background {
+      background-color: transparent;
+    }
+  }
+
+  // - Table expandable row content expanded
+  &.pf-m-expanded {
+    border-block-end-color: var(--#{$table}__expandable-row--m-expanded--BorderBlockEndColor);
+    border-block-end-width: var(--#{$table}--border-width--base);
+  }
+
+  &:not(.pf-m-expanded) {
+    display: none;
+  }
+
+  // - Table expandable row tr last-child
+  tr:last-child {
+    border-block-end: 0;
+  }
+}
+
+// - Table compact
+.#{$table}.pf-m-compact {
+  --#{$table}--cell--PaddingBlockStart: var(--#{$table}--m-compact--cell--PaddingBlockStart);
+  --#{$table}--cell--PaddingBlockEnd: var(--#{$table}--m-compact--cell--PaddingBlockEnd);
+
+  // - Table compact table tr
+  tr:where(.#{$table}__tr) {
+    &:not(.#{$table}__expandable-row) {
+      --#{$table}--cell--PaddingBlockStart: var(--#{$table}--m-compact--cell--PaddingBlockStart);
+      --#{$table}--cell--PaddingBlockEnd: var(--#{$table}--m-compact--cell--PaddingBlockEnd);
+    }
+  }
+
+  // - Table compact thead
+  thead:where(.#{$table}__thead) {
+    th:where(.#{$table}__th),
+    .#{$table}__toggle {
+      --#{$table}--cell--PaddingBlockStart: var(--#{$table}--m-compact__th--PaddingBlockStart);
+      --#{$table}--cell--PaddingBlockEnd: var(--#{$table}--m-compact__th--PaddingBlockEnd);
+    }
+  }
+
+  .#{$table}__action,
+  .#{$table}__favorite,
+  .#{$table}__toggle,
+  .#{$table}__draggable {
+    --#{$table}--cell--PaddingBlockStart: var(--#{$table}--m-compact__action--PaddingBlockStart);
+    --#{$table}--cell--PaddingBlockEnd: var(--#{$table}--m-compact__action--PaddingBlockEnd);
+  }
+
+  .#{$table}__td.pf-m-action {
+    --pf-v6-c-table--cell--PaddingBlockStart: var(--#{$table}--m-compact__td--m-action--PaddingBlockStart);
+    --pf-v6-c-table--cell--PaddingBlockEnd: var(--#{$table}--m-compact__td--m-action--PaddingBlockEnd);
+  }
+
+  .#{$table}__icon {
+    width: auto;
+    min-width: 0;
+    text-align: center;
+  }
+}
+
+// - Table thead
+.#{$table}__thead {
+  --#{$table}__tr--BorderBlockEndWidth: 0;
+  --#{$table}__toggle--PaddingBlockStart: var(--#{$table}__thead__toggle--PaddingBlockStart);
+  --#{$table}__toggle--PaddingBlockEnd: var(--#{$table}__thead__toggle--PaddingBlockEnd);
+
+  vertical-align: bottom;
+
+  // - Table nested column header button
+  &.pf-m-nested-column-header {
+    .#{$table}__button {
+      --#{$table}__button--PaddingInlineStart: var(--#{$table}__nested-column-header__button--PaddingInlineStart);
+      --#{$table}__button--PaddingInlineEnd: var(--#{$table}__nested-column-header__button--PaddingInlineEnd);
+
+      // margin to align with thead padding
+      margin-inline-end: calc(var(--#{$table}__button--PaddingInlineStart) * -1);
+    }
+  }
+}
+
+// - Table tbody
+.#{$table}__tbody {
+  vertical-align: top;
+
+  // TODO: make this a class `compound expansion content`
+  .#{$table}__control-row ~ .#{$table}__expandable-row.pf-m-expanded {
+    background-color: var(--#{$table}--compound-expansion--m-expanded--BackgroundColor);
+  }
+}
+
+// Table table tbody expandable
+.#{$table}.pf-m-expandable {
+  .#{$table}__tr.pf-m-expanded {
+    border-block-end: 0;
+  }
+
+  // - Table tbody
+  .#{$table}__tbody {
+    border-block-end: var(--#{$table}__tr--BorderBlockEndWidth) solid var(--#{$table}__tr--BorderBlockEndColor);
+  }
+
+  // - Table tbody - Table tr
+  .#{$table}__tbody.pf-m-expanded {
+    border-block-end: var(--#{$table}__tr--BorderBlockEndWidth) solid var(--#{$table}__tr--BorderBlockEndColor);
+
+    // - Table tbody table control row
+    .#{$table}__control-row {
+      background-color: var(--#{$table}__control-row--BackgroundColor);
+      border-block-end: var(--#{$table}__control-row--BorderBlockEndWidth) solid var(--#{$table}__control-row__tbody--BorderBlockEndColor);
+
+      // stylelint-disable max-nesting-depth, selector-max-class
+      &.pf-m-expanded {
+        border-block-end: 0; // TODO this is a dupe of the block above, consolidate in a breaking change
+      }
+      // stylelint-enable
+    }
+  }
+}
+
+// - Table tr
+.#{$table}__tr {
+  border-block-end: var(--#{$table}__tr--BorderBlockEndWidth) solid var(--#{$table}__tr--BorderBlockEndColor);
+
+  .#{$table}__thead & {
+    border-block-end: 0;
+  }
+
+  &.pf-m-border-row {
+    border-block-end: var(--#{$table}--border-width--base) solid var(--#{$table}--BorderColor);
+  }
+}
+
+// - Table icon inline
+.#{$table}__icon-inline {
+  display: flex;
+  align-items: center;
+
+  > :not(:last-child) {
+    margin-inline-end: var(--#{$table}__icon-inline--MarginInlineEnd);
+  }
+}
+
+// - Table width
+// stylelint-disable
+.#{$table} .pf-m-width-10 {
+  --#{$table}--cell--Width: 10%;
+}
+
+.#{$table} .pf-m-width-15 {
+  --#{$table}--cell--Width: 15%;
+}
+
+.#{$table} .pf-m-width-20 {
+  --#{$table}--cell--Width: 20%;
+}
+
+.#{$table} .pf-m-width-25 {
+  --#{$table}--cell--Width: 25%;
+}
+
+.#{$table} .pf-m-width-30 {
+  --#{$table}--cell--Width: 30%;
+}
+
+.#{$table} .pf-m-width-35 {
+  --#{$table}--cell--Width: 35%;
+}
+
+.#{$table} .pf-m-width-40 {
+  --#{$table}--cell--Width: 40%;
+}
+
+.#{$table} .pf-m-width-45 {
+  --#{$table}--cell--Width: 45%;
+}
+
+.#{$table} .pf-m-width-50 {
+  --#{$table}--cell--Width: 50%;
+}
+
+.#{$table} .pf-m-width-60 {
+  --#{$table}--cell--Width: 60%;
+}
+
+.#{$table} .pf-m-width-70 {
+  --#{$table}--cell--Width: 70%;
+}
+
+.#{$table} .pf-m-width-80 {
+  --#{$table}--cell--Width: 80%;
+}
+
+.#{$table} .pf-m-width-90 {
+  --#{$table}--cell--Width: 90%;
+}
+
+.#{$table} .pf-m-width-100 {
+  --#{$table}--cell--Width: 100%;
+}
+// stylelint-enable

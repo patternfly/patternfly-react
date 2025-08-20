@@ -1,0 +1,165 @@
+// LOCAL TOKENS
+
+@mixin pf-v6-tokens {
+  // TODO Maintaining these in addition to the h1-h6 sizes
+  --pf-t--global--font--size--heading--xs: var(--pf-t--global--font--size--md);
+  --pf-t--global--font--size--heading--sm: var(--pf-t--global--font--size--lg);
+  --pf-t--global--font--size--heading--md: var(--pf-t--global--font--size--xl);
+  --pf-t--global--font--size--heading--lg: var(--pf-t--global--font--size--2xl);
+  --pf-t--global--font--size--heading--xl: var(--pf-t--global--font--size--3xl);
+  --pf-t--global--font--size--heading--2xl: var(--pf-t--global--font--size--4xl);
+
+  // Legacy/non-variable font opt-in
+  --pf-t--global--font--family--body--legacy: redhattext, helvetica, arial, sans-serif;
+  --pf-t--global--font--family--heading--legacy: redhatdisplay, helvetica, arial, sans-serif;
+  --pf-t--global--font--family--mono--legacy: redhatmono, liberationmono, consolas, sfmono-regular, menlo, monaco, courier new, monospace;
+  --pf-t--global--font--weight--body--legacy: 400;
+  --pf-t--global--font--weight--body--bold--legacy: 700;
+  --pf-t--global--font--weight--heading--legacy: 400;
+  --pf-t--global--font--weight--heading--bold--legacy: 700;
+
+  // Other missing ones
+  // sm box-shadow
+  --pf-t--global--box-shadow--sm: 
+    var(--pf-t--global--box-shadow--X--sm--default) 
+    var(--pf-t--global--box-shadow--Y--sm--default) 
+    var(--pf-t--global--box-shadow--blur--sm) 
+    var(--pf-t--global--box-shadow--spread--sm--default)
+    var(--pf-t--global--box-shadow--color--sm--default);
+  --pf-t--global--box-shadow--sm--top: 
+    var(--pf-t--global--box-shadow--X--sm--top) 
+    var(--pf-t--global--box-shadow--Y--sm--top) 
+    var(--pf-t--global--box-shadow--blur--sm) 
+    var(--pf-t--global--box-shadow--spread--sm--directional)
+    var(--pf-t--global--box-shadow--color--sm--directional);
+  --pf-t--global--box-shadow--sm--bottom: 
+    var(--pf-t--global--box-shadow--X--sm--bottom) 
+    var(--pf-t--global--box-shadow--Y--sm--bottom) 
+    var(--pf-t--global--box-shadow--blur--sm) 
+    var(--pf-t--global--box-shadow--spread--sm--directional)
+    var(--pf-t--global--box-shadow--color--sm--directional);
+  --pf-t--global--box-shadow--sm--left: 
+    var(--pf-t--global--box-shadow--X--sm--left) 
+    var(--pf-t--global--box-shadow--Y--sm--left) 
+    var(--pf-t--global--box-shadow--blur--sm) 
+    var(--pf-t--global--box-shadow--spread--sm--directional)
+    var(--pf-t--global--box-shadow--color--sm--directional);
+  --pf-t--global--box-shadow--sm--right: 
+    var(--pf-t--global--box-shadow--X--sm--right) 
+    var(--pf-t--global--box-shadow--Y--sm--right) 
+    var(--pf-t--global--box-shadow--blur--sm) 
+    var(--pf-t--global--box-shadow--spread--sm--directional)
+    var(--pf-t--global--box-shadow--color--sm--directional);
+
+  // md box-shadow
+  --pf-t--global--box-shadow--md: 
+    var(--pf-t--global--box-shadow--X--md--default) 
+    var(--pf-t--global--box-shadow--Y--md--default) 
+    var(--pf-t--global--box-shadow--blur--md) 
+    var(--pf-t--global--box-shadow--spread--md--default)
+    var(--pf-t--global--box-shadow--color--md--default);
+  --pf-t--global--box-shadow--md--top: 
+    var(--pf-t--global--box-shadow--X--md--top) 
+    var(--pf-t--global--box-shadow--Y--md--top) 
+    var(--pf-t--global--box-shadow--blur--md) 
+    var(--pf-t--global--box-shadow--spread--md--directional)
+    var(--pf-t--global--box-shadow--color--md--directional);
+  --pf-t--global--box-shadow--md--bottom: 
+    var(--pf-t--global--box-shadow--X--md--bottom) 
+    var(--pf-t--global--box-shadow--Y--md--bottom) 
+    var(--pf-t--global--box-shadow--blur--md) 
+    var(--pf-t--global--box-shadow--spread--md--directional)
+    var(--pf-t--global--box-shadow--color--md--directional);
+  --pf-t--global--box-shadow--md--left: 
+    var(--pf-t--global--box-shadow--X--md--left) 
+    var(--pf-t--global--box-shadow--Y--md--left) 
+    var(--pf-t--global--box-shadow--blur--md) 
+    var(--pf-t--global--box-shadow--spread--md--directional)
+    var(--pf-t--global--box-shadow--color--md--directional);
+  --pf-t--global--box-shadow--md--right: 
+    var(--pf-t--global--box-shadow--X--md--right) 
+    var(--pf-t--global--box-shadow--Y--md--right) 
+    var(--pf-t--global--box-shadow--blur--md) 
+    var(--pf-t--global--box-shadow--spread--md--directional)
+    var(--pf-t--global--box-shadow--color--md--directional);
+
+  // lg box-shadow
+  --pf-t--global--box-shadow--lg: 
+    var(--pf-t--global--box-shadow--X--lg--default) 
+    var(--pf-t--global--box-shadow--Y--lg--default) 
+    var(--pf-t--global--box-shadow--blur--lg) 
+    var(--pf-t--global--box-shadow--spread--lg--default)
+    var(--pf-t--global--box-shadow--color--lg--default);
+  --pf-t--global--box-shadow--lg--top: 
+    var(--pf-t--global--box-shadow--X--lg--top) 
+    var(--pf-t--global--box-shadow--Y--lg--top) 
+    var(--pf-t--global--box-shadow--blur--lg) 
+    var(--pf-t--global--box-shadow--spread--lg--directional)
+    var(--pf-t--global--box-shadow--color--lg--directional);
+  --pf-t--global--box-shadow--lg--bottom: 
+    var(--pf-t--global--box-shadow--X--lg--bottom) 
+    var(--pf-t--global--box-shadow--Y--lg--bottom) 
+    var(--pf-t--global--box-shadow--blur--lg) 
+    var(--pf-t--global--box-shadow--spread--lg--directional)
+    var(--pf-t--global--box-shadow--color--lg--directional);
+  --pf-t--global--box-shadow--lg--left: 
+    var(--pf-t--global--box-shadow--X--lg--left) 
+    var(--pf-t--global--box-shadow--Y--lg--left) 
+    var(--pf-t--global--box-shadow--blur--lg) 
+    var(--pf-t--global--box-shadow--spread--lg--directional)
+    var(--pf-t--global--box-shadow--color--lg--directional);
+  --pf-t--global--box-shadow--lg--right: 
+    var(--pf-t--global--box-shadow--X--lg--right) 
+    var(--pf-t--global--box-shadow--Y--lg--right) 
+    var(--pf-t--global--box-shadow--blur--lg) 
+    var(--pf-t--global--box-shadow--spread--lg--directional)
+    var(--pf-t--global--box-shadow--color--lg--directional);
+
+  // List bullet/marker
+  --pf-t--global--list-style: disc outside;
+
+  // Token to be used temporarily as a placeholder for a color to be determined
+  // Used by code mods to provide a valid value without guessing at the correct color
+
+  // stylelint-disable custom-property-pattern
+  --pf-t--temp--dev--tbd: #BC11E0;
+
+  // High contrast custom tokens - placeholders until they're in figma
+  --pf-t--global--high-contrast--border--width--action--clicked: 0;
+  --pf-t--global--high-contrast--border--width--action--default: 0;
+  --pf-t--global--high-contrast--border--width--action--hover: 0;
+  --pf-t--global--high-contrast--border--width--box--clicked: 0;
+  --pf-t--global--high-contrast--border--width--box--default: 0;
+  --pf-t--global--high-contrast--border--width--box--hover: 0;
+  --pf-t--global--high-contrast--border--width--box--status--default: 0;
+  --pf-t--global--high-contrast--border--width--box--status--read: 0;
+  --pf-t--global--high-contrast--border--width--control--clicked: 0;
+  --pf-t--global--high-contrast--border--width--control--default: 0;
+  --pf-t--global--high-contrast--border--width--control--hover: 0;
+  --pf-t--global--high-contrast--border--width--divider--clicked: 0;
+  --pf-t--global--high-contrast--border--width--divider--default: 0;
+  --pf-t--global--high-contrast--border--width--divider--hover: 0;
+  --pf-t--global--high-contrast--border--width--extra-strong: 0;
+  --pf-t--global--high-contrast--border--width--regular: 0;
+  --pf-t--global--high-contrast--border--width--strong: 0;
+
+  @media (prefers-contrast: more) {
+    --pf-t--global--high-contrast--border--width--action--clicked: var(--pf-t--global--border--width--action--clicked);
+    --pf-t--global--high-contrast--border--width--action--default: var(--pf-t--global--border--width--action--default);
+    --pf-t--global--high-contrast--border--width--action--hover: var(--pf-t--global--border--width--action--hover);
+    --pf-t--global--high-contrast--border--width--box--clicked: var(--pf-t--global--border--width--box--clicked);
+    --pf-t--global--high-contrast--border--width--box--default: var(--pf-t--global--border--width--box--default);
+    --pf-t--global--high-contrast--border--width--box--hover: var(--pf-t--global--border--width--box--hover);
+    --pf-t--global--high-contrast--border--width--box--status--default: var(--pf-t--global--border--width--box--status--default);
+    --pf-t--global--high-contrast--border--width--box--status--read: var(--pf-t--global--border--width--box--status--read);
+    --pf-t--global--high-contrast--border--width--control--clicked: var(--pf-t--global--border--width--control--clicked);
+    --pf-t--global--high-contrast--border--width--control--default: var(--pf-t--global--border--width--control--default);
+    --pf-t--global--high-contrast--border--width--control--hover: var(--pf-t--global--border--width--control--hover);
+    --pf-t--global--high-contrast--border--width--divider--clicked: var(--pf-t--global--border--width--divider--clicked);
+    --pf-t--global--high-contrast--border--width--divider--default: var(--pf-t--global--border--width--divider--default);
+    --pf-t--global--high-contrast--border--width--divider--hover: var(--pf-t--global--border--width--divider--hover);
+    --pf-t--global--high-contrast--border--width--extra-strong: var(--pf-t--global--border--width--extra-strong);
+    --pf-t--global--high-contrast--border--width--regular: var(--pf-t--global--border--width--regular);
+    --pf-t--global--high-contrast--border--width--strong: var(--pf-t--global--border--width--strong);
+  }
+}

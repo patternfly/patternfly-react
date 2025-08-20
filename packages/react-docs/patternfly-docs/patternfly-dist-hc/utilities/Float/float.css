@@ -1,0 +1,48 @@
+.pf-v6-u-float-inline-start {
+  float: inline-start !important;
+}
+
+.pf-v6-u-float-inline-end {
+  float: inline-end !important;
+}
+
+@media screen and (min-width: 36rem) {
+  .pf-v6-u-float-inline-start-on-sm {
+    float: inline-start !important;
+  }
+  .pf-v6-u-float-inline-end-on-sm {
+    float: inline-end !important;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .pf-v6-u-float-inline-start-on-md {
+    float: inline-start !important;
+  }
+  .pf-v6-u-float-inline-end-on-md {
+    float: inline-end !important;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .pf-v6-u-float-inline-start-on-lg {
+    float: inline-start !important;
+  }
+  .pf-v6-u-float-inline-end-on-lg {
+    float: inline-end !important;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .pf-v6-u-float-inline-start-on-xl {
+    float: inline-start !important;
+  }
+  .pf-v6-u-float-inline-end-on-xl {
+    float: inline-end !important;
+  }
+}
+@media screen and (min-width: 90.625rem) {
+  .pf-v6-u-float-inline-start-on-2xl {
+    float: inline-start !important;
+  }
+  .pf-v6-u-float-inline-end-on-2xl {
+    float: inline-end !important;
+  }
+}

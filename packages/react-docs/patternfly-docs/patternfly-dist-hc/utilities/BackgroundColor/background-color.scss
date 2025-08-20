@@ -1,0 +1,16 @@
+@use '../../sass-utilities' as *;
+
+// Background color options
+$pf-v6-u-background-color-options: (
+  background-color-disabled: (
+    background-color var(--pf-t--global--background--color--disabled--default)
+  ),
+  background-color-inverse: (
+    background-color var(--pf-t--global--background--color--inverse--default)
+  ),
+  background-color-highlight: (
+    background-color var(--pf-t--global--background--color--highlight--default)
+  )
+);
+
+@include pf-v6-utility-builder($pf-v6-u-background-color-options, $pf-v6-global--breakpoint-list);

@@ -1,0 +1,187 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($input-group) {
+  --#{$input-group}--Gap: var(--pf-t--global--spacer--gap--control-to-control--default);
+
+  // Input group item
+  --#{$input-group}__item--offset: var(--pf-t--global--border--width--control--default);
+  --#{$input-group}__item--BorderWidth--base: var(--pf-t--global--border--width--control--default);
+  --#{$input-group}__item--BorderColor--base: var(--pf-t--global--border--color--default);
+  --#{$input-group}__item--BackgroundColor: transparent;
+  --#{$input-group}__item--AlignItems: start;
+
+  // Input group item, box variant
+  --#{$input-group}__item--m-box--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$input-group}__item--m-box--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$input-group}__item--m-box--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --#{$input-group}__item--m-box--BorderWidth: var(--#{$input-group}__item--BorderWidth--base);
+  --#{$input-group}__item--m-box--BorderRadius: var(--pf-t--global--border--radius--small);
+  --#{$input-group}__item--m-box--BorderBlockStartColor: var(--#{$input-group}__item--BorderColor--base);
+  --#{$input-group}__item--m-box--BorderInlineEndColor: var(--#{$input-group}__item--BorderColor--base);
+  --#{$input-group}__item--m-box--BorderBlockEndColor: var(--#{$input-group}__item--BorderColor--base);
+  --#{$input-group}__item--m-box--BorderInlineStartColor: var(--#{$input-group}__item--BorderColor--base);
+
+  // Input group item, plain variant
+  --#{$input-group}__item--m-plain--BackgroundColor: transparent;
+
+  // Input group text
+  --#{$input-group}__text--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$input-group}__text--Color: var(--pf-t--global--text--color--regular);
+
+  // Input group text, disabled variant
+  --#{$input-group}__item--m-disabled__text--Color: var(--pf-t--global--text--color--on-disabled);
+  --#{$input-group}__item--m-disabled--BackgroundColor: var(--pf-t--global--background--color--disabled--default);
+
+  // Input group search expanded
+  --#{$input-group}__item--m-search-text-input--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$input-group}__item--m-search-text-input--TransitionDuration--expand--fade: var(--pf-t--global--motion--duration--fade--default);
+  --#{$input-group}__item--m-search-text-input--TransitionDuration--collapse--fade: var(--pf-t--global--motion--duration--fade--short);
+  --#{$input-group}__item--m-search-text-input--TransitionDuration--expand--slide: var(--pf-t--global--motion--duration--fade--default);
+  --#{$input-group}__item--m-search-text-input--TransitionDuration--collapse--slide: var(--pf-t--global--motion--duration--fade--short);
+  --#{$input-group}__item--m-search-text-input--TransitionDuration--fade: var(--#{$input-group}__item--m-search-text-input--TransitionDuration--collapse--fade);
+  --#{$input-group}__item--m-search-text-input--TransitionDuration--slide: var(--#{$input-group}__item--m-search-text-input--TransitionDuration--collapse--slide);
+  --#{$input-group}__item--m-search-text-input--ScaleX: 1;
+  --#{$input-group}__item--m-search-text-input--TransformOriginX--expand-start: 100%;
+  --#{$input-group}__item--m-search-text-input--TransformOriginX--expand-end: 0;
+  --#{$input-group}__item--m-search-text-input--TransformOriginX: var(--#{$input-group}__item--m-search-text-input--TransformOriginX--expand-end);
+  --#{$input-group}__item--m-search-expand--TransitionTimingFunction:var(--pf-t--global--motion--timing-function--default);
+  --#{$input-group}__item--m-search-expand--TransitionDuration--expand--fade: 0s;
+  --#{$input-group}__item--m-search-expand--TransitionDuration--collapse--fade: 0s;
+  --#{$input-group}__item--m-search-expand--TransitionDuration--fade: var(--#{$input-group}__item--m-search-expand--TransitionDuration--expand--fade);
+  --#{$input-group}__item--m-search-action--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$input-group}__item--m-search-action--TransitionDuration--expand--fade: var(--pf-t--global--motion--duration--fade--default);
+  --#{$input-group}__item--m-search-action--TransitionDuration--collapse--fade: var(--pf-t--global--motion--duration--fade--short);
+  --#{$input-group}__item--m-search-action--TransitionDuration--fade: var(--#{$input-group}__item--m-search-action--TransitionDuration--collapse--fade);
+  
+  @media (prefers-reduced-motion: no-preference) {
+    --#{$input-group}__item--m-search-text-input--ScaleX: .7;
+  }
+}
+
+.#{$input-group} {
+  display: flex;
+  gap: var(--#{$input-group}--Gap);
+  width: 100%;
+
+  &.pf-m-search-expandable {
+    &:not(.pf-m-expanded) {
+      --#{$input-group}--Gap: 0;
+
+      transition: gap 0s var(--#{$input-group}__item--m-search-text-input--TransitionDuration--fade);
+    }
+
+    .#{$input-group}__item {
+      &.pf-m-search-input {
+        flex-grow: 1;
+        max-width: var(--#{$input-group}__item--m-search-text-input--MaxWidth, 0);
+        visibility: var(--#{$input-group}__item--m-search-text-input--Visibility, hidden);
+        opacity: var(--#{$input-group}__item--m-search-text-input--Opacity, 0);
+        transition-delay: 0s, 0s, var(--#{$input-group}__item--m-search-text-input--TransitionDuration--fade), var(--#{$input-group}__item--m-search-text-input--TransitionDuration--fade);
+        transition-timing-function: var(--#{$input-group}__item--m-search-text-input--TransitionTimingFunction);
+        transition-duration: var(--#{$input-group}__item--m-search-text-input--TransitionDuration--fade), var(--#{$input-group}__item--m-search-text-input--TransitionDuration--slide), 0s, 0s;
+        transition-property: opacity, scale, visibility, max-width;
+        transform-origin: var(--#{$input-group}__item--m-search-text-input--TransformOriginX) center;
+        scale: var(--#{$input-group}__item--m-search-text-input--ScaleX) 1;
+      }
+
+      // the expand button (magnifying glass)
+      &.pf-m-search-expand {
+        max-width: var(--#{$input-group}__item--m-search-expand--MaxWidth, 100%);
+        visibility: var(--#{$input-group}__item--m-search-expand--Visibility, visible);
+        opacity: var(--#{$input-group}__item--m-search-expand--Opacity, 1);
+        transition-delay: var(--#{$input-group}__item--m-search-action--TransitionDuration--fade);
+        transition-timing-function: var(--#{$input-group}__item--m-search-expand--TransitionTimingFunction);
+        transition-duration: var(--#{$input-group}__item--m-search-expand--TransitionDuration--fade), 0s, 0s;
+        transition-property: opacity, visibility, max-width;
+      }
+
+      // other input group items adjacent to the search input that are shown when expanded
+      &.pf-m-search-action {
+        max-width: var(--#{$input-group}__item--m-search-action--MaxWidth, 0);
+        visibility: var(--#{$input-group}__item--m-search-action--Visibility, hidden);
+        opacity: var(--#{$input-group}__item--m-search-action--Opacity, 0);
+        transition-delay: 0s, var(--#{$input-group}__item--m-search-action--TransitionDuration--fade), var(--#{$input-group}__item--m-search-action--TransitionDuration--fade);
+        transition-timing-function: var(--#{$input-group}__item--m-search-action--TransitionTimingFunction);
+        transition-duration: var(--#{$input-group}__item--m-search-action--TransitionDuration--fade), 0s, 0s;
+        transition-property: opacity, visibility, max-width;
+      }
+    }
+  
+    &.pf-m-expand-start {
+      --#{$input-group}__item--m-search-text-input--TransformOriginX: var(--#{$input-group}__item--m-search-text-input--TransformOriginX--expand-start);
+    }
+    
+    &.pf-m-expanded {
+      --#{$input-group}__item--m-search-text-input--MaxWidth: 100%;
+      --#{$input-group}__item--m-search-text-input--Visibility: visible;
+      --#{$input-group}__item--m-search-text-input--Opacity: 1;
+      --#{$input-group}__item--m-search-text-input--TransitionDuration--fade: var(--#{$input-group}__item--m-search-text-input--TransitionDuration--expand--fade);
+      --#{$input-group}__item--m-search-text-input--TransitionDuration--slide: var(--#{$input-group}__item--m-search-text-input--TransitionDuration--expand--slide);
+      --#{$input-group}__item--m-search-text-input--ScaleX: 1;
+      --#{$input-group}__item--m-search-action--MaxWidth: 100%;
+      --#{$input-group}__item--m-search-action--Visibility: visible;
+      --#{$input-group}__item--m-search-action--Opacity: 1;
+      --#{$input-group}__item--m-search-action--TransitionDuration--fade: var(--#{$input-group}__item--m-search-action--TransitionDuration--expand--fade);
+      --#{$input-group}__item--m-search-expand--MaxWidth: 0;
+      --#{$input-group}__item--m-search-expand--Visibility: hidden;
+      --#{$input-group}__item--m-search-expand--Opacity: 0;
+      --#{$input-group}__item--m-search-expand--TransitionDuration--fade: var(--#{$input-group}__item--m-search-expand--TransitionDuration--collapse--fade);
+
+      .#{$input-group}__item:is(.pf-m-search-input, .pf-m-search-expand, .pf-m-search-action) {
+        transition-delay: 0s;
+      }
+    }
+  }
+}
+
+.#{$input-group}__item {
+  position: relative; // stack items without explicit z-index
+  display: flex;
+  align-items: var(--#{$input-group}__item--AlignItems);
+  min-width: var(--#{$input-group}__item--MinWidth, revert);
+  max-width: var(--#{$input-group}__item--MaxWidth, revert);
+  background-color: var(--#{$input-group}__item--BackgroundColor);
+  border-block-start-color: var(--#{$input-group}__item--m-box--BorderBlockStartColor);
+  border-block-end-color: var(--#{$input-group}__item--m-box--BorderBlockEndColor);
+  border-inline-start-color: var(--#{$input-group}__item--m-box--BorderInlineStartColor);
+  border-inline-end-color: var(--#{$input-group}__item--m-box--BorderInlineEndColor);
+
+  &.pf-m-box {
+    --#{$input-group}__item--BackgroundColor: var(--#{$input-group}__item--m-box--BackgroundColor);
+
+    padding-inline-start: var(--#{$input-group}__item--m-box--PaddingInlineStart);
+    padding-inline-end: var(--#{$input-group}__item--m-box--PaddingInlineEnd);
+    border: var(--#{$input-group}__item--m-box--BorderWidth) solid;
+    border-block-start-color: var(--#{$input-group}__item--m-box--BorderBlockStartColor);
+    border-block-end-color: var(--#{$input-group}__item--m-box--BorderBlockEndColor);
+    border-inline-start-color: var(--#{$input-group}__item--m-box--BorderInlineStartColor);
+    border-inline-end-color: var(--#{$input-group}__item--m-box--BorderInlineEndColor);
+    border-radius: var(--#{$input-group}__item--m-box--BorderRadius);
+  }
+
+  &.pf-m-plain {
+    --#{$input-group}__item--BackgroundColor: var(--#{$input-group}__item--m-plain--BackgroundColor);
+
+    border: none;
+  }
+
+  &.pf-m-disabled {
+    --#{$input-group}__item--BackgroundColor: var(--#{$input-group}__item--m-disabled--BackgroundColor);
+    --#{$input-group}__text--Color: var(--#{$input-group}__item--m-disabled__text--Color);
+  }
+
+  &.pf-m-fill {
+    flex-grow: 1;
+  }
+}
+
+.#{$input-group}__text {
+  align-self: center;
+  font-size: var(--#{$input-group}__text--FontSize);
+  color: var(--#{$input-group}__text--Color);
+
+  @at-root label#{&} {
+    cursor: pointer;
+  }
+}
+

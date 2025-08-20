@@ -1,0 +1,33 @@
+@use '../sass-utilities/scss-variables.scss' as *;
+
+// Reset - based on minireset.css v0.0.3 | MIT License github.com/jgthms/minireset.css
+@if $pf-v6-global--enable-reset {
+  :where(
+    html,
+    body,
+    p,
+    ol,
+    ul,
+    li,
+    dl,
+    dt,
+    dd,
+    blockquote,
+    figure,
+    fieldset,
+    legend,
+    textarea,
+    pre,
+    iframe,
+    hr,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+    ) {
+    padding: 0;
+    margin: 0;
+  }
+}

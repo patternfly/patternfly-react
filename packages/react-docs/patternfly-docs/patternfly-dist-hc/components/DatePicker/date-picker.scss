@@ -1,0 +1,66 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($date-picker) {
+  --#{$date-picker}--m-top__calendar--InsetBlockStart: 0;
+  --#{$date-picker}--m-top__calendar--TranslateY: calc(-100% - var(--pf-t--global--spacer--xs));
+  --#{$date-picker}__helper-text--MarginBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$date-picker}__input--c-form-control--Width: calc(var(--#{$date-picker}__input--c-form-control--width-chars) * 1ch + var(--#{$date-picker}__input--c-form-control--width-base));
+  --#{$date-picker}__input--c-form-control--width-base: calc(var(--pf-t--global--spacer--xl) + var(--pf-t--global--spacer--sm)); // form control left/right padding + status icon width and spacer
+  --#{$date-picker}__input--c-form-control--width-chars: 11;
+  --#{$date-picker}__calendar--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --#{$date-picker}__calendar--BoxShadow: var(--pf-t--global--box-shadow--md);
+  --#{$date-picker}__calendar--ZIndex: var(--pf-t--global--z-index--sm);
+  --#{$date-picker}__calendar--InsetBlockStart: calc(100% + var(--pf-t--global--spacer--xs));
+  --#{$date-picker}__calendar--InsetInlineEnd: auto;
+  --#{$date-picker}__calendar--InsetInlineStart: 0;
+  --#{$date-picker}__calendar--m-align-right--InsetInlineEnd: 0;
+  --#{$date-picker}__calendar--m-align-right--InsetInlineStart: auto;
+}
+
+.#{$date-picker} {
+  position: relative;
+  display: inline-block;
+}
+
+.#{$date-picker}__helper-text {
+  margin-block-start: var(--#{$date-picker}__helper-text--MarginBlockStart);
+}
+
+.#{$date-picker}__input {
+  .#{$form-control} {
+    width: var(--#{$date-picker}__input--c-form-control--Width);
+  }
+}
+
+.#{$date-picker}__calendar {
+  position: absolute;
+  inset-block-start: var(--#{$date-picker}__calendar--InsetBlockStart);
+  inset-inline-start: var(--#{$date-picker}__calendar--InsetInlineStart);
+  inset-inline-end: var(--#{$date-picker}__calendar--InsetInlineEnd);
+  z-index: var(--#{$date-picker}__calendar--ZIndex);
+  background-color: var(--#{$date-picker}__calendar--BackgroundColor);
+  box-shadow: var(--#{$date-picker}__calendar--BoxShadow);
+
+  &.pf-m-align-right {
+    --#{$date-picker}__calendar--InsetInlineEnd: var(--#{$date-picker}__calendar--m-align-right--InsetInlineEnd);
+    --#{$date-picker}__calendar--InsetInlineStart: var(--#{$date-picker}__calendar--m-align-right--InsetInlineStart);
+  }
+
+  .#{$date-picker}.pf-m-top & {
+    --#{$date-picker}__calendar--InsetBlockStart: var(--#{$date-picker}--m-top__calendar--InsetBlockStart);
+
+    transform: translateY(var(--#{$date-picker}--m-top__calendar--TranslateY));
+  }
+
+  &.pf-m-static {
+    --#{$date-picker}--m-top__calendar--TranslateY: 0;
+
+    position: static;
+    inset-block-start: auto;
+    inset-block-end: auto;
+    inset-inline-start: auto;
+    inset-inline-end: auto;
+    z-index: auto;
+    min-width: min-content;
+  }
+}

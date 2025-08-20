@@ -1,0 +1,16 @@
+.pf-v6-l-stack {
+  --pf-v6-l-stack--m-gutter--Gap: var(--pf-t--global--spacer--gutter--default);
+}
+
+.pf-v6-l-stack {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.pf-v6-l-stack__item.pf-m-fill, .pf-v6-l-stack > .pf-m-fill {
+  flex-grow: 1;
+}
+
+.pf-v6-l-stack.pf-m-gutter {
+  gap: var(--pf-v6-l-stack--m-gutter--Gap);
+}

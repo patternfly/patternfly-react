@@ -1,0 +1,24 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($split) {
+  --#{$stack}--m-gutter--Gap: var(--pf-t--global--spacer--gutter--default);
+}
+
+.#{$split} {
+  display: flex;
+  padding: 0;
+  margin: 0;
+
+  &.pf-m-wrap {
+    flex-wrap: wrap; // make default in a breaking change release
+  }
+
+  @at-root .#{$split}__item.pf-m-fill,
+  & > .pf-m-fill {
+    flex-grow: 1;
+  }
+}
+
+.#{$split}.pf-m-gutter {
+  gap: var(--#{$stack}--m-gutter--Gap);
+}

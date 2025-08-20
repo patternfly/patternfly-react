@@ -1,0 +1,279 @@
+:root {
+  --pf-v6-c-content--MarginBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-content--LineHeight: var(--pf-t--global--font--line-height--body);
+  --pf-v6-c-content--FontSize: var(--pf-t--global--font--size--body--default);
+  --pf-v6-c-content--m-editorial--FontSize: var(--pf-t--global--font--size--body--lg);
+  --pf-v6-c-content--FontWeight: var(--pf-t--global--font--weight--body--default);
+  --pf-v6-c-content--Color: var(--pf-t--global--text--color--regular);
+  --pf-v6-c-content--heading--FontFamily: var(--pf-t--global--font--family--heading);
+  --pf-v6-c-content--h1--MarginBlockStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-content--h1--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-content--h1--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-content--h1--FontSize: var(--pf-t--global--font--size--heading--h1);
+  --pf-v6-c-content--h1--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-content--h2--MarginBlockStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-content--h2--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-content--h2--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-content--h2--FontSize: var(--pf-t--global--font--size--heading--h2);
+  --pf-v6-c-content--h2--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-content--h3--MarginBlockStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-content--h3--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-content--h3--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-content--h3--FontSize: var(--pf-t--global--font--size--heading--h3);
+  --pf-v6-c-content--h3--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-content--h4--MarginBlockStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-content--h4--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-content--h4--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-content--h4--FontSize: var(--pf-t--global--font--size--heading--h4);
+  --pf-v6-c-content--h4--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-content--h5--MarginBlockStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-content--h5--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-content--h5--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-content--h5--FontSize: var(--pf-t--global--font--size--heading--h5);
+  --pf-v6-c-content--h5--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-content--h6--MarginBlockStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-content--h6--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-content--h6--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-content--h6--FontSize: var(--pf-t--global--font--size--heading--h6);
+  --pf-v6-c-content--h6--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-content--heading--m-page-title--FontWeight: var(--pf-t--global--font--weight--heading--bold);
+  --pf-v6-c-content--small--MarginBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-content--small--LineHeight: var(--pf-t--global--font--line-height--body);
+  --pf-v6-c-content--small--FontSize: var(--pf-t--global--font--size--body--sm);
+  --pf-v6-c-content--m-editorial--small--FontSize: var(--pf-t--global--font--size--body--default);
+  --pf-v6-c-content--small--Color: var(--pf-t--global--text--color--subtle);
+  --pf-v6-c-content--a--Color: var(--pf-t--global--text--color--link--default);
+  --pf-v6-c-content--a--TextDecorationLine: var(--pf-t--global--text-decoration--link--line--default);
+  --pf-v6-c-content--a--TextDecorationStyle: var(--pf-t--global--text-decoration--link--style--default);
+  --pf-v6-c-content--a--hover--Color: var(--pf-t--global--text--color--link--hover);
+  --pf-v6-c-content--a--hover--TextDecorationLine: var(--pf-t--global--text-decoration--link--line--hover);
+  --pf-v6-c-content--a--hover--TextDecorationStyle: var(--pf-t--global--text-decoration--link--style--hover);
+  --pf-v6-c-content--a--visited--Color: var(--pf-t--global--text--color--link--visited);
+  --pf-v6-c-content--blockquote--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-content--blockquote--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-content--blockquote--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-content--blockquote--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-content--blockquote--Color: var(--pf-t--global--text--color--subtle);
+  --pf-v6-c-content--blockquote--BorderInlineStartColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-content--blockquote--BorderInlineStartWidth: var(--pf-t--global--border--width--300);
+  --pf-v6-c-content--list--Gap: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-content--list--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-content--list--nested--MarginBlockStart: var(--pf-v6-c-content--list--Gap);
+  --pf-v6-c-content--ul--ListStyle: var(--pf-t--global--list-style);
+  --pf-v6-c-content--dl--GridTemplateColumns--dt: 12ch;
+  --pf-v6-c-content--dl--GridTemplateColumns--dd: 1fr;
+  --pf-v6-c-content--dl--ColumnGap: var(--pf-t--global--spacer--gap--group--horizontal);
+  --pf-v6-c-content--dl--RowGap: var(--pf-t--global--spacer--gap--group-to-group--vertical--default);
+  --pf-v6-c-content--dt--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --pf-v6-c-content--dt--MarginBlockStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-content--dt--sm--MarginBlockStart: 0;
+  --pf-v6-c-content--hr--Height: var(--pf-t--global--border--width--divider--default);
+  --pf-v6-c-content--hr--BackgroundColor: var(--pf-t--global--border--color--default);
+}
+
+[class*=pf-v6-c-content] {
+  font-size: var(--pf-v6-c-content--FontSize);
+  line-height: var(--pf-v6-c-content--LineHeight);
+  color: var(--pf-v6-c-content--Color);
+}
+[class*=pf-v6-c-content].pf-m-editorial {
+  --pf-v6-c-content--FontSize: var(--pf-v6-c-content--m-editorial--FontSize);
+  --pf-v6-c-content--small--FontSize: var(--pf-v6-c-content--m-editorial--small--FontSize);
+}
+
+:is(.pf-v6-c-content--a, .pf-v6-c-content a) {
+  color: var(--pf-v6-c-content--a--Color);
+  text-decoration-line: var(--pf-v6-c-content--a--TextDecorationLine);
+  text-decoration-style: var(--pf-v6-c-content--a--TextDecorationStyle);
+}
+:is(.pf-v6-c-content--a, .pf-v6-c-content a):is(:hover, :focus) {
+  --pf-v6-c-content--a--Color: var(--pf-v6-c-content--a--hover--Color);
+  --pf-v6-c-content--a--TextDecorationLine: var(--pf-v6-c-content--a--hover--TextDecorationLine);
+  --pf-v6-c-content--a--TextDecorationStyle: var(--pf-v6-c-content--a--hover--TextDecorationStyle);
+}
+
+:is(.pf-v6-c-content--a.pf-m-visited, .pf-v6-c-content.pf-m-visited a, .pf-v6-c-content a.pf-m-visited):visited {
+  color: var(--pf-v6-c-content--a--visited--Color);
+}
+
+:is(.pf-v6-c-content--li + .pf-v6-c-content--li, .pf-v6-c-content li + li) {
+  margin-block-start: var(--pf-v6-c-content--li--MarginBlockStart);
+}
+
+:is(.pf-v6-c-content--p,
+.pf-v6-c-content--dl,
+.pf-v6-c-content--ol,
+.pf-v6-c-content--ul,
+.pf-v6-c-content--blockquote,
+.pf-v6-c-content--small,
+.pf-v6-c-content--pre,
+.pf-v6-c-content--table,
+.pf-v6-c-content--hr, .pf-v6-c-content p, .pf-v6-c-content dl, .pf-v6-c-content ol, .pf-v6-c-content ul, .pf-v6-c-content blockquote, .pf-v6-c-content small, .pf-v6-c-content pre, .pf-v6-c-content table, .pf-v6-c-content hr):not(:last-child) {
+  margin-block-end: var(--pf-v6-c-content--MarginBlockEnd);
+}
+
+:is(.pf-v6-c-content--h1,
+.pf-v6-c-content--h2,
+.pf-v6-c-content--h3,
+.pf-v6-c-content--h4,
+.pf-v6-c-content--h5,
+.pf-v6-c-content--h6, .pf-v6-c-content h1, .pf-v6-c-content h2, .pf-v6-c-content h3, .pf-v6-c-content h4, .pf-v6-c-content h5, .pf-v6-c-content h6) {
+  margin: 0;
+  font-family: var(--pf-v6-c-content--heading--FontFamily);
+}
+:is(.pf-v6-c-content--h1,
+.pf-v6-c-content--h2,
+.pf-v6-c-content--h3,
+.pf-v6-c-content--h4,
+.pf-v6-c-content--h5,
+.pf-v6-c-content--h6, .pf-v6-c-content h1, .pf-v6-c-content h2, .pf-v6-c-content h3, .pf-v6-c-content h4, .pf-v6-c-content h5, .pf-v6-c-content h6):first-child {
+  margin-block-start: 0;
+}
+:is(.pf-v6-c-content--h1,
+.pf-v6-c-content--h2,
+.pf-v6-c-content--h3,
+.pf-v6-c-content--h4,
+.pf-v6-c-content--h5,
+.pf-v6-c-content--h6, .pf-v6-c-content h1, .pf-v6-c-content h2, .pf-v6-c-content h3, .pf-v6-c-content h4, .pf-v6-c-content h5, .pf-v6-c-content h6):last-child {
+  margin-block-end: 0;
+}
+:is(.pf-v6-c-content--h1,
+.pf-v6-c-content--h2,
+.pf-v6-c-content--h3,
+.pf-v6-c-content--h4,
+.pf-v6-c-content--h5,
+.pf-v6-c-content--h6, .pf-v6-c-content h1, .pf-v6-c-content h2, .pf-v6-c-content h3, .pf-v6-c-content h4, .pf-v6-c-content h5, .pf-v6-c-content h6).pf-m-page-title {
+  font-weight: var(--pf-v6-c-content--heading--m-page-title--FontWeight);
+}
+
+:is(.pf-v6-c-content--h1, .pf-v6-c-content h1) {
+  margin-block-start: var(--pf-v6-c-content--h1--MarginBlockStart);
+  margin-block-end: var(--pf-v6-c-content--h1--MarginBlockEnd);
+  font-size: var(--pf-v6-c-content--h1--FontSize);
+  font-weight: var(--pf-v6-c-content--h1--FontWeight);
+  line-height: var(--pf-v6-c-content--h1--LineHeight);
+}
+
+:is(.pf-v6-c-content--h2, .pf-v6-c-content h2) {
+  margin-block-start: var(--pf-v6-c-content--h2--MarginBlockStart);
+  margin-block-end: var(--pf-v6-c-content--h2--MarginBlockEnd);
+  font-size: var(--pf-v6-c-content--h2--FontSize);
+  font-weight: var(--pf-v6-c-content--h2--FontWeight);
+  line-height: var(--pf-v6-c-content--h2--LineHeight);
+}
+
+:is(.pf-v6-c-content--h3, .pf-v6-c-content h3) {
+  margin-block-start: var(--pf-v6-c-content--h3--MarginBlockStart);
+  margin-block-end: var(--pf-v6-c-content--h3--MarginBlockEnd);
+  font-size: var(--pf-v6-c-content--h3--FontSize);
+  font-weight: var(--pf-v6-c-content--h3--FontWeight);
+  line-height: var(--pf-v6-c-content--h3--LineHeight);
+}
+
+:is(.pf-v6-c-content--h4, .pf-v6-c-content h4) {
+  margin-block-start: var(--pf-v6-c-content--h4--MarginBlockStart);
+  margin-block-end: var(--pf-v6-c-content--h4--MarginBlockEnd);
+  font-size: var(--pf-v6-c-content--h4--FontSize);
+  font-weight: var(--pf-v6-c-content--h4--FontWeight);
+  line-height: var(--pf-v6-c-content--h4--LineHeight);
+}
+
+:is(.pf-v6-c-content--h5, .pf-v6-c-content h5) {
+  margin-block-start: var(--pf-v6-c-content--h5--MarginBlockStart);
+  margin-block-end: var(--pf-v6-c-content--h5--MarginBlockEnd);
+  font-size: var(--pf-v6-c-content--h5--FontSize);
+  font-weight: var(--pf-v6-c-content--h5--FontWeight);
+  line-height: var(--pf-v6-c-content--h5--LineHeight);
+}
+
+:is(.pf-v6-c-content--h6, .pf-v6-c-content h6) {
+  margin-block-start: var(--pf-v6-c-content--h6--MarginBlockStart);
+  margin-block-end: var(--pf-v6-c-content--h6--MarginBlockEnd);
+  font-size: var(--pf-v6-c-content--h6--FontSize);
+  font-weight: var(--pf-v6-c-content--h6--FontWeight);
+  line-height: var(--pf-v6-c-content--h6--LineHeight);
+}
+
+:is(.pf-v6-c-content--small, .pf-v6-c-content small) {
+  display: block;
+  font-size: var(--pf-v6-c-content--small--FontSize);
+  line-height: var(--pf-v6-c-content--small--LineHeight);
+  color: var(--pf-v6-c-content--small--Color);
+}
+:is(.pf-v6-c-content--small, .pf-v6-c-content small):not(:last-child) {
+  margin-block-end: var(--pf-v6-c-content--small--MarginBlockEnd);
+}
+
+:is(.pf-v6-c-content--blockquote, .pf-v6-c-content blockquote) {
+  padding-block-start: var(--pf-v6-c-content--blockquote--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-content--blockquote--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-content--blockquote--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-content--blockquote--PaddingInlineEnd);
+  color: var(--pf-v6-c-content--blockquote--Color);
+  border-inline-start: var(--pf-v6-c-content--blockquote--BorderInlineStartWidth) solid var(--pf-v6-c-content--blockquote--BorderInlineStartColor);
+}
+
+:is(.pf-v6-c-content--hr, .pf-v6-c-content hr) {
+  height: var(--pf-v6-c-content--hr--Height);
+  background-color: var(--pf-v6-c-content--hr--BackgroundColor);
+  border: none;
+}
+
+:is(.pf-v6-c-content--ol,
+.pf-v6-c-content--ul, .pf-v6-c-content ol, .pf-v6-c-content ul) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pf-v6-c-content--list--Gap);
+  padding-inline-start: var(--pf-v6-c-content--list--PaddingInlineStart);
+}
+:is(.pf-v6-c-content--ol,
+.pf-v6-c-content--ul, .pf-v6-c-content ol, .pf-v6-c-content ul).pf-m-plain {
+  padding-inline-start: 0;
+  list-style: none;
+}
+:is(.pf-v6-c-content--ol,
+.pf-v6-c-content--ul, .pf-v6-c-content ol, .pf-v6-c-content ul) :is(.pf-v6-c-content--ol,
+.pf-v6-c-content--ul,
+ol,
+ul) {
+  margin-block-start: var(--pf-v6-c-content--list--nested--MarginBlockStart);
+}
+
+:is(.pf-v6-c-content--ul, .pf-v6-c-content ul) {
+  list-style: var(--pf-v6-c-content--ul--ListStyle);
+}
+
+:is(.pf-v6-c-content--dl, .pf-v6-c-content dl) {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media screen and (min-width: 36rem) {
+  :is(.pf-v6-c-content--dl, .pf-v6-c-content dl) {
+    grid-template: auto/var(--pf-v6-c-content--dl--GridTemplateColumns--dt) var(--pf-v6-c-content--dl--GridTemplateColumns--dd);
+    grid-row-gap: var(--pf-v6-c-content--dl--RowGap);
+    grid-column-gap: var(--pf-v6-c-content--dl--ColumnGap);
+  }
+}
+
+:is(.pf-v6-c-content--dt, .pf-v6-c-content dt) {
+  font-weight: var(--pf-v6-c-content--dt--FontWeight);
+}
+:is(.pf-v6-c-content--dt, .pf-v6-c-content dt):not(:first-child) {
+  margin-block-start: var(--pf-v6-c-content--dt--MarginBlockStart);
+}
+@media screen and (min-width: 36rem) {
+  :is(.pf-v6-c-content--dt, .pf-v6-c-content dt):not(:first-child) {
+    --pf-v6-c-content--dt--MarginBlockStart: var(--pf-v6-c-content--dt--sm--MarginBlockStart);
+  }
+}
+@media screen and (min-width: 36rem) {
+  :is(.pf-v6-c-content--dt, .pf-v6-c-content dt) {
+    grid-column: 1;
+  }
+}
+
+@media screen and (min-width: 36rem) {
+  :is(.pf-v6-c-content--dd, .pf-v6-c-content dd) {
+    grid-column: 2;
+  }
+}

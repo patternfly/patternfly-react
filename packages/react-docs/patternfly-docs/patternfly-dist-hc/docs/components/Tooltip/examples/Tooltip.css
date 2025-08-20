@@ -1,0 +1,4 @@
+/* adds padding to full page examples so arrows are visible */
+.ws-core-c-tooltip:not(.ws-preview) {
+  padding: var(--pf-t--global--spacer--md);
+}

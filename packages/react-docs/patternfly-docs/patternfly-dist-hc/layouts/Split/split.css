@@ -1,0 +1,19 @@
+.pf-v6-l-split {
+  --pf-v6-l-stack--m-gutter--Gap: var(--pf-t--global--spacer--gutter--default);
+}
+
+.pf-v6-l-split {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.pf-v6-l-split.pf-m-wrap {
+  flex-wrap: wrap;
+}
+.pf-v6-l-split__item.pf-m-fill, .pf-v6-l-split > .pf-m-fill {
+  flex-grow: 1;
+}
+
+.pf-v6-l-split.pf-m-gutter {
+  gap: var(--pf-v6-l-stack--m-gutter--Gap);
+}

@@ -1,0 +1,382 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root(':root', false) {
+  // Body
+  --#{$content}--MarginBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$content}--LineHeight: var(--pf-t--global--font--line-height--body);
+  --#{$content}--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$content}--m-editorial--FontSize: var(--pf-t--global--font--size--body--lg);
+  --#{$content}--FontWeight: var(--pf-t--global--font--weight--body--default);
+
+  // this ensures color is not overridden
+  --#{$content}--Color: var(--pf-t--global--text--color--regular);
+
+  // Headings
+  --#{$content}--heading--FontFamily: var(--pf-t--global--font--family--heading);
+
+  // h1
+  --#{$content}--h1--MarginBlockStart: var(--pf-t--global--spacer--lg);
+  --#{$content}--h1--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$content}--h1--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --#{$content}--h1--FontSize: var(--pf-t--global--font--size--heading--h1);
+  --#{$content}--h1--FontWeight: var(--pf-t--global--font--weight--heading--default);
+
+  // h2
+  --#{$content}--h2--MarginBlockStart: var(--pf-t--global--spacer--lg);
+  --#{$content}--h2--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$content}--h2--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --#{$content}--h2--FontSize: var(--pf-t--global--font--size--heading--h2);
+  --#{$content}--h2--FontWeight: var(--pf-t--global--font--weight--heading--default);
+
+  // h3
+  --#{$content}--h3--MarginBlockStart: var(--pf-t--global--spacer--lg);
+  --#{$content}--h3--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$content}--h3--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --#{$content}--h3--FontSize: var(--pf-t--global--font--size--heading--h3);
+  --#{$content}--h3--FontWeight: var(--pf-t--global--font--weight--heading--default);
+
+  // h4
+  --#{$content}--h4--MarginBlockStart: var(--pf-t--global--spacer--lg);
+  --#{$content}--h4--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$content}--h4--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --#{$content}--h4--FontSize: var(--pf-t--global--font--size--heading--h4);
+  --#{$content}--h4--FontWeight: var(--pf-t--global--font--weight--heading--default);
+
+  // h5
+  --#{$content}--h5--MarginBlockStart: var(--pf-t--global--spacer--lg);
+  --#{$content}--h5--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$content}--h5--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --#{$content}--h5--FontSize: var(--pf-t--global--font--size--heading--h5);
+  --#{$content}--h5--FontWeight: var(--pf-t--global--font--weight--heading--default);
+
+  // h6
+  --#{$content}--h6--MarginBlockStart: var(--pf-t--global--spacer--lg);
+  --#{$content}--h6--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$content}--h6--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --#{$content}--h6--FontSize: var(--pf-t--global--font--size--heading--h6);
+  --#{$content}--h6--FontWeight: var(--pf-t--global--font--weight--heading--default);
+
+  // Page title
+  --#{$content}--heading--m-page-title--FontWeight: var(--pf-t--global--font--weight--heading--bold);
+
+  // Small text
+  --#{$content}--small--MarginBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$content}--small--LineHeight: var(--pf-t--global--font--line-height--body);
+  --#{$content}--small--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$content}--m-editorial--small--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$content}--small--Color: var(--pf-t--global--text--color--subtle);
+
+  // Links
+  --#{$content}--a--Color: var(--pf-t--global--text--color--link--default);
+  --#{$content}--a--TextDecorationLine: var(--pf-t--global--text-decoration--link--line--default);
+  --#{$content}--a--TextDecorationStyle: var(--pf-t--global--text-decoration--link--style--default);
+  --#{$content}--a--hover--Color: var(--pf-t--global--text--color--link--hover);
+  --#{$content}--a--hover--TextDecorationLine: var(--pf-t--global--text-decoration--link--line--hover);
+  --#{$content}--a--hover--TextDecorationStyle: var(--pf-t--global--text-decoration--link--style--hover);
+  --#{$content}--a--visited--Color: var(--pf-t--global--text--color--link--visited);
+
+  // Blockquote
+  --#{$content}--blockquote--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$content}--blockquote--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$content}--blockquote--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$content}--blockquote--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$content}--blockquote--Color: var(--pf-t--global--text--color--subtle);
+  --#{$content}--blockquote--BorderInlineStartColor: var(--pf-t--global--border--color--default);
+  --#{$content}--blockquote--BorderInlineStartWidth: var(--pf-t--global--border--width--300); // TODO semantic value?
+
+  // Lists
+  --#{$content}--list--Gap: var(--pf-t--global--spacer--sm);
+  --#{$content}--list--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --#{$content}--list--nested--MarginBlockStart: var(--#{$content}--list--Gap);
+  --#{$content}--ul--ListStyle: var(--pf-t--global--list-style);
+  --#{$content}--dl--GridTemplateColumns--dt: 12ch;
+  --#{$content}--dl--GridTemplateColumns--dd: 1fr;
+  --#{$content}--dl--ColumnGap: var(--pf-t--global--spacer--gap--group--horizontal);
+  --#{$content}--dl--RowGap: var(--pf-t--global--spacer--gap--group-to-group--vertical--default);
+  --#{$content}--dt--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --#{$content}--dt--MarginBlockStart: var(--pf-t--global--spacer--md);
+  --#{$content}--dt--sm--MarginBlockStart: 0;
+
+  // hr
+  --#{$content}--hr--Height: var(--pf-t--global--border--width--divider--default);
+  --#{$content}--hr--BackgroundColor: var(--pf-t--global--border--color--default);
+}
+
+[class*="#{$content}"] {
+  font-size: var(--#{$content}--FontSize);
+  line-height: var(--#{$content}--LineHeight);
+  color: var(--#{$content}--Color);
+
+  &.pf-m-editorial {
+    --#{$content}--FontSize: var(--#{$content}--m-editorial--FontSize);
+    --#{$content}--small--FontSize: var(--#{$content}--m-editorial--small--FontSize);
+  }
+}
+
+.#{$content} {
+  @at-root :is(
+    .#{$content}--a,
+    & a
+  ) {
+    color: var(--#{$content}--a--Color);
+    text-decoration-line: var(--#{$content}--a--TextDecorationLine);
+    text-decoration-style: var(--#{$content}--a--TextDecorationStyle);
+
+    &:is(:hover, :focus) {
+      --#{$content}--a--Color: var(--#{$content}--a--hover--Color);
+      --#{$content}--a--TextDecorationLine: var(--#{$content}--a--hover--TextDecorationLine);
+      --#{$content}--a--TextDecorationStyle: var(--#{$content}--a--hover--TextDecorationStyle);
+    }
+  }
+
+  // stylelint-disable selector-no-qualifying-type
+  @at-root :is(
+    .#{$content}--a.pf-m-visited,
+    &.pf-m-visited a,
+    & a.pf-m-visited
+  ) {
+    &:visited {
+      color: var(--#{$content}--a--visited--Color);
+    }
+  }
+  // stylelint-enable
+
+  @at-root :is(
+    .#{$content}--li + .#{$content}--li,
+    & li + li
+  ) {
+    margin-block-start: var(--#{$content}--li--MarginBlockStart);
+  }
+
+  @at-root :is(
+    .#{$content}--p,
+    .#{$content}--dl,
+    .#{$content}--ol,
+    .#{$content}--ul,
+    .#{$content}--blockquote,
+    .#{$content}--small,
+    .#{$content}--pre,
+    .#{$content}--table,
+    .#{$content}--hr,
+    & p,
+    & dl,
+    & ol,
+    & ul,
+    & blockquote,
+    & small,
+    & pre,
+    & table,
+    & hr
+  ) {
+    &:not(:last-child) {
+      // This variable name doesn't reflect the selector, it's an excpection to the variable system.
+      margin-block-end: var(--#{$content}--MarginBlockEnd);
+    }
+  }
+
+  @at-root :is(
+    .#{$content}--h1,
+    .#{$content}--h2,
+    .#{$content}--h3,
+    .#{$content}--h4,
+    .#{$content}--h5,
+    .#{$content}--h6,
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5,
+    & h6
+  ) {
+    margin: 0;
+    font-family: var(--#{$content}--heading--FontFamily);
+
+    &:first-child {
+      margin-block-start: 0;
+    }
+
+    &:last-child {
+      margin-block-end: 0;
+    }
+
+    &.pf-m-page-title {
+      font-weight: var(--#{$content}--heading--m-page-title--FontWeight);
+    }
+  }
+
+  @at-root :is(
+    .#{$content}--h1,
+    & h1
+  ) {
+    margin-block-start: var(--#{$content}--h1--MarginBlockStart);
+    margin-block-end: var(--#{$content}--h1--MarginBlockEnd);
+    font-size: var(--#{$content}--h1--FontSize);
+    font-weight: var(--#{$content}--h1--FontWeight);
+    line-height: var(--#{$content}--h1--LineHeight);
+  }
+
+  @at-root :is(
+    .#{$content}--h2,
+    & h2
+  ) {
+    margin-block-start: var(--#{$content}--h2--MarginBlockStart);
+    margin-block-end: var(--#{$content}--h2--MarginBlockEnd);
+    font-size: var(--#{$content}--h2--FontSize);
+    font-weight: var(--#{$content}--h2--FontWeight);
+    line-height: var(--#{$content}--h2--LineHeight);
+  }
+
+  @at-root :is(
+    .#{$content}--h3,
+    & h3
+  ) {
+    margin-block-start: var(--#{$content}--h3--MarginBlockStart);
+    margin-block-end: var(--#{$content}--h3--MarginBlockEnd);
+    font-size: var(--#{$content}--h3--FontSize);
+    font-weight: var(--#{$content}--h3--FontWeight);
+    line-height: var(--#{$content}--h3--LineHeight);
+  }
+
+  @at-root :is(
+    .#{$content}--h4,
+    & h4
+  ) {
+    margin-block-start: var(--#{$content}--h4--MarginBlockStart);
+    margin-block-end: var(--#{$content}--h4--MarginBlockEnd);
+    font-size: var(--#{$content}--h4--FontSize);
+    font-weight: var(--#{$content}--h4--FontWeight);
+    line-height: var(--#{$content}--h4--LineHeight);
+  }
+
+  @at-root :is(
+    .#{$content}--h5,
+    & h5
+  ) {
+    margin-block-start: var(--#{$content}--h5--MarginBlockStart);
+    margin-block-end: var(--#{$content}--h5--MarginBlockEnd);
+    font-size: var(--#{$content}--h5--FontSize);
+    font-weight: var(--#{$content}--h5--FontWeight);
+    line-height: var(--#{$content}--h5--LineHeight);
+  }
+
+  @at-root :is(
+    .#{$content}--h6,
+    & h6
+  ) {
+    margin-block-start: var(--#{$content}--h6--MarginBlockStart);
+    margin-block-end: var(--#{$content}--h6--MarginBlockEnd);
+    font-size: var(--#{$content}--h6--FontSize);
+    font-weight: var(--#{$content}--h6--FontWeight);
+    line-height: var(--#{$content}--h6--LineHeight);
+  }
+
+  @at-root :is(
+    .#{$content}--small,
+    & small
+  ) {
+    display: block;
+    font-size: var(--#{$content}--small--FontSize);
+    line-height: var(--#{$content}--small--LineHeight);
+    color: var(--#{$content}--small--Color);
+
+    &:not(:last-child) {
+      margin-block-end: var(--#{$content}--small--MarginBlockEnd);
+    }
+  }
+
+  @at-root :is(
+    .#{$content}--blockquote,
+    & blockquote
+  ) {
+    padding-block-start: var(--#{$content}--blockquote--PaddingBlockStart);
+    padding-block-end: var(--#{$content}--blockquote--PaddingBlockEnd);
+    padding-inline-start: var(--#{$content}--blockquote--PaddingInlineStart);
+    padding-inline-end: var(--#{$content}--blockquote--PaddingInlineEnd);
+    color: var(--#{$content}--blockquote--Color);
+    border-inline-start: var(--#{$content}--blockquote--BorderInlineStartWidth) solid var(--#{$content}--blockquote--BorderInlineStartColor);
+  }
+
+  @at-root :is(
+    .#{$content}--hr,
+    & hr
+  ) {
+    height: var(--#{$content}--hr--Height);
+    background-color: var(--#{$content}--hr--BackgroundColor);
+    border: none;
+  }
+
+  @at-root :is(
+    .#{$content}--ol,
+    .#{$content}--ul,
+    & ol,
+    & ul
+  ) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--#{$content}--list--Gap);
+    padding-inline-start: var(--#{$content}--list--PaddingInlineStart);
+
+    &.pf-m-plain {
+      padding-inline-start: 0;
+      list-style: none;
+    }
+
+    :is(
+      .#{$content}--ol,
+      .#{$content}--ul,
+      ol,
+      ul
+    ) {
+      margin-block-start: var(--#{$content}--list--nested--MarginBlockStart);
+    }
+  }
+
+  @at-root :is(
+    .#{$content}--ul,
+    & ul
+  ) {
+    list-style: var(--#{$content}--ul--ListStyle);
+  }
+
+  @at-root :is(
+    .#{$content}--dl,
+    & dl
+  ) {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: $pf-v6-global--breakpoint--sm) {
+      grid-template: auto / var(--#{$content}--dl--GridTemplateColumns--dt) var(--#{$content}--dl--GridTemplateColumns--dd);
+      grid-row-gap: var(--#{$content}--dl--RowGap);
+      grid-column-gap: var(--#{$content}--dl--ColumnGap);
+    }
+  }
+
+  @at-root :is(
+    .#{$content}--dt,
+    & dt
+  ) {
+    font-weight: var(--#{$content}--dt--FontWeight);
+
+    &:not(:first-child) {
+      margin-block-start: var(--#{$content}--dt--MarginBlockStart);
+
+      @media screen and (min-width: $pf-v6-global--breakpoint--sm) {
+        --#{$content}--dt--MarginBlockStart: var(--#{$content}--dt--sm--MarginBlockStart);
+      }
+    }
+
+    @media screen and (min-width: $pf-v6-global--breakpoint--sm) {
+      grid-column: 1;
+    }
+  }
+
+  @at-root :is(
+    .#{$content}--dd,
+    & dd
+  ) {
+    @media screen and (min-width: $pf-v6-global--breakpoint--sm) {
+      grid-column: 2;
+    }
+  }
+}

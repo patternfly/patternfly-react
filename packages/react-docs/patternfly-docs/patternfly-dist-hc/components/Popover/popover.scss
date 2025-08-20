@@ -1,0 +1,268 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($popover) {
+  // Component
+  --#{$popover}--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$popover}--MinWidth: calc(var(--#{$popover}__content--PaddingInlineStart) + var(--#{$popover}__content--PaddingInlineEnd) + #{pf-size-prem(300px)});
+  --#{$popover}--MaxWidth: calc(var(--#{$popover}__content--PaddingInlineStart) + var(--#{$popover}__content--PaddingInlineEnd) + #{pf-size-prem(300px)});
+  --#{$popover}--BoxShadow: var(--pf-t--global--box-shadow--md);
+  --#{$popover}--BorderWidth: var(--pf-t--global--high-contrast--border--width--regular);
+  --#{$popover}--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --#{$popover}--BorderRadius: var(--pf-t--global--border--radius--medium);
+
+
+  // Title icon colors for states
+  --#{$popover}--m-danger__title-icon--Color: var(--pf-t--global--icon--color--status--danger--default);
+  --#{$popover}--m-warning__title-icon--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --#{$popover}--m-success__title-icon--Color: var(--pf-t--global--icon--color--status--success--default);
+  --#{$popover}--m-info__title-icon--Color: var(--pf-t--global--icon--color--status--info--default);
+  --#{$popover}--m-custom__title-icon--Color: var(--pf-t--global--icon--color--status--custom--default);
+
+  // Content
+  --#{$popover}__content--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --#{$popover}__content--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$popover}__content--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$popover}__content--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$popover}__content--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$popover}__content--BorderRadius: var(--pf-t--global--border--radius--medium);
+
+  // Arrow
+  --#{$popover}__arrow--Width: #{pf-size-prem(15px)};
+  --#{$popover}__arrow--Height: #{pf-size-prem(15px)};
+  --#{$popover}__arrow--BoxShadow: var(--pf-t--global--box-shadow--md);
+  --#{$popover}__arrow--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --#{$popover}__arrow--m-top--TranslateX: -50%;
+  --#{$popover}__arrow--m-top--TranslateY: 50%;
+  --#{$popover}__arrow--m-top--Rotate: 45deg;
+  --#{$popover}__arrow--m-right--TranslateX: -50%;
+  --#{$popover}__arrow--m-right--TranslateY: -50%;
+  --#{$popover}__arrow--m-right--Rotate: 45deg;
+  --#{$popover}__arrow--m-bottom--TranslateX: -50%;
+  --#{$popover}__arrow--m-bottom--TranslateY: -50%;
+  --#{$popover}__arrow--m-bottom--Rotate: 45deg;
+  --#{$popover}__arrow--m-left--TranslateX: 50%;
+  --#{$popover}__arrow--m-left--TranslateY: -50%;
+  --#{$popover}__arrow--m-left--Rotate: 45deg;
+  --#{$popover}__arrow--m-inline-top--InsetBlockStart: var(--pf-t--global--border--radius--medium);
+  --#{$popover}__arrow--m-inline-bottom--InsetBlockEnd: var(--pf-t--global--border--radius--medium);
+  --#{$popover}__arrow--m-block-left--InsetInlineStart: var(--pf-t--global--border--radius--medium);
+  --#{$popover}__arrow--m-block-right--InsetInlineEnd: var(--pf-t--global--border--radius--medium);
+
+  // Close
+  --#{$popover}__close--InsetBlockStart: calc(var(--#{$popover}__content--PaddingBlockStart) - var(--pf-t--global--spacer--control--vertical--default)); // align top of button with top of text 
+  --#{$popover}__close--InsetInlineEnd: var(--#{$popover}__content--PaddingInlineEnd); // align right of content
+  --#{$popover}__close--sibling--PaddingInlineEnd: var(--pf-t--global--spacer--2xl);
+
+  // Header
+  --#{$popover}__header--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+
+  // Title text
+  --#{$popover}__title-text--Color: var(--pf-t--global--text--color--regular);
+  --#{$popover}__title-text--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --#{$popover}__title-text--FontSize: var(--pf-t--global--font--size--body--default);
+
+  // Title icon
+  --#{$popover}__title-icon--MarginInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$popover}__title-icon--Color: var(--pf-t--global--icon--color--regular);
+  --#{$popover}__title-icon--FontSize: var(--pf-t--global--icon--size--font--body--default);
+
+  // Footer
+  --#{$popover}__footer--MarginBlockStart: var(--pf-t--global--spacer--md);
+}
+
+.#{$popover} {
+  position: relative;
+  min-width: var(--#{$popover}--MinWidth);
+  max-width: var(--#{$popover}--MaxWidth);
+  font-size: var(--#{$popover}--FontSize);
+  border: var(--#{$popover}--BorderWidth) solid var(--#{$popover}--BorderColor);
+  border-radius: var(--#{$popover}--BorderRadius);
+  box-shadow: var(--#{$popover}--BoxShadow);
+
+  &.pf-m-no-padding {
+    // Use px values below so the min/max-width calc() doesn't break
+    // stylelint-disable length-zero-no-unit
+    --#{$popover}__content--PaddingBlockStart: 0px;
+    --#{$popover}__content--PaddingInlineEnd: 0px;
+    --#{$popover}__content--PaddingBlockEnd: 0px;
+    --#{$popover}__content--PaddingInlineStart: 0px;
+    // stylelint-enable
+  }
+
+  &.pf-m-width-auto {
+    --#{$popover}--MinWidth: auto;
+    --#{$popover}--MaxWidth: none;
+  }
+
+  &:is(
+    .pf-m-top,
+    .pf-m-top-left,
+    .pf-m-top-right
+  ) {
+    --#{$popover}__arrow--InsetBlockEnd: var(--#{$popover}--m-top--InsetBlockEnd, 0);
+    --#{$popover}__arrow--InsetInlineStart: var(--#{$popover}--m-top--InsetInlineStart, 50%);
+    --#{$popover}__arrow--TranslateX: var(--#{$popover}__arrow--m-top--TranslateX);
+    --#{$popover}__arrow--TranslateY: var(--#{$popover}__arrow--m-top--TranslateY);
+    --#{$popover}__arrow--Rotate: var(--#{$popover}__arrow--m-top--Rotate);
+  }
+
+  &:is(
+    .pf-m-bottom,
+    .pf-m-bottom-left,
+    .pf-m-bottom-right
+  ) {
+    --#{$popover}__arrow--InsetBlockStart: var(--#{$popover}--m-bottom--InsetBlockStart, 0);
+    --#{$popover}__arrow--InsetInlineStart: var(--#{$popover}--m-bottom--InsetInlineStart, 50%);
+    --#{$popover}__arrow--TranslateX: var(--#{$popover}__arrow--m-bottom--TranslateX);
+    --#{$popover}__arrow--TranslateY: var(--#{$popover}__arrow--m-bottom--TranslateY);
+    --#{$popover}__arrow--Rotate: var(--#{$popover}__arrow--m-bottom--Rotate);
+  }
+
+  &:is(
+    .pf-m-left,
+    .pf-m-left-top,
+    .pf-m-left-bottom
+  ) {
+    --#{$popover}__arrow--InsetBlockStart: var(--#{$popover}--m-left--InsetBlockStart, 50%);
+    --#{$popover}__arrow--InsetInlineEnd: var(--#{$popover}--m-left--InsetInlineEnd, 0);
+    --#{$popover}__arrow--TranslateX: var(--#{$popover}__arrow--m-left--TranslateX);
+    --#{$popover}__arrow--TranslateY: var(--#{$popover}__arrow--m-left--TranslateY);
+    --#{$popover}__arrow--Rotate: var(--#{$popover}__arrow--m-left--Rotate);
+  }
+
+  &:is(
+    .pf-m-right,
+    .pf-m-right-top,
+    .pf-m-right-bottom
+  ) {
+    --#{$popover}__arrow--InsetBlockStart: var(--#{$popover}--m-right--InsetBlockStart, 50%);
+    --#{$popover}__arrow--InsetInlineStart: var(--#{$popover}--m-right--InsetInlineStart, 0);
+    --#{$popover}__arrow--TranslateX: var(--#{$popover}__arrow--m-right--TranslateX);
+    --#{$popover}__arrow--TranslateY: var(--#{$popover}__arrow--m-right--TranslateY);
+    --#{$popover}__arrow--Rotate: var(--#{$popover}__arrow--m-right--Rotate);
+  }
+
+  &:is(
+    .pf-m-left-top,
+    .pf-m-right-top
+  ) {
+    --#{$popover}__arrow--InsetBlockStart: var(--#{$popover}__arrow--m-inline-top--InsetBlockStart);
+    --#{$popover}__arrow--TranslateY: var(--#{$popover}__arrow--m-top--TranslateY);
+  }
+
+  &:is(
+    .pf-m-left-bottom,
+    .pf-m-right-bottom
+  ) {
+    --#{$popover}__arrow--InsetBlockStart: auto;
+    --#{$popover}__arrow--InsetBlockEnd: var(--#{$popover}__arrow--m-inline-bottom--InsetBlockEnd);
+  }
+
+  &:is(
+    .pf-m-top-left,
+    .pf-m-bottom-left
+  ) {
+    --#{$popover}__arrow--InsetInlineStart: var(--#{$popover}__arrow--m-block-left--InsetInlineStart);
+    --#{$popover}__arrow--TranslateX: var(--#{$popover}__arrow--m-left--TranslateX);
+  }
+
+  &:is(
+    .pf-m-top-right,
+    .pf-m-bottom-right
+  ) {
+    --#{$popover}__arrow--InsetInlineEnd: var(--#{$popover}__arrow--m-block-right--InsetInlineEnd);
+    --#{$popover}__arrow--InsetInlineStart: auto;
+  }
+
+  &.pf-m-danger {
+    --#{$popover}__title-icon--Color: var(--#{$popover}--m-danger__title-icon--Color);
+  }
+
+  &.pf-m-warning {
+    --#{$popover}__title-icon--Color: var(--#{$popover}--m-warning__title-icon--Color);
+  }
+
+  &.pf-m-success {
+    --#{$popover}__title-icon--Color: var(--#{$popover}--m-success__title-icon--Color);
+  }
+
+  &.pf-m-custom {
+    --#{$popover}__title-icon--Color: var(--#{$popover}--m-custom__title-icon--Color);
+  }
+
+  &.pf-m-info {
+    --#{$popover}__title-icon--Color: var(--#{$popover}--m-info__title-icon--Color);
+  }
+}
+
+.#{$popover}__content {
+  position: relative;
+  padding-block-start: var(--#{$popover}__content--PaddingBlockStart);
+  padding-block-end: var(--#{$popover}__content--PaddingBlockEnd);
+  padding-inline-start: var(--#{$popover}__content--PaddingInlineStart);
+  padding-inline-end: var(--#{$popover}__content--PaddingInlineEnd);
+  background-color: var(--#{$popover}__content--BackgroundColor);
+  border-radius: var(--#{$popover}__content--BorderRadius);
+}
+
+// Close button
+.#{$popover}__close {
+  position: absolute;
+  inset-block-start: var(--#{$popover}__close--InsetBlockStart);
+  inset-inline-end: var(--#{$popover}__close--InsetInlineEnd);
+
+  // Create room for the close button
+  + * {
+    padding-inline-end: var(--#{$popover}__close--sibling--PaddingInlineEnd);
+  }
+}
+
+.#{$popover}__arrow {
+  position: absolute;
+  // stylelint-disable liberty/use-logical-spec
+  top: var(--#{$popover}__arrow--InsetBlockStart, auto);
+  right: var(--#{$popover}__arrow--InsetInlineEnd, auto);
+  bottom: var(--#{$popover}__arrow--InsetBlockEnd, auto);
+  left: var(--#{$popover}__arrow--InsetInlineStart, auto);
+  // stylelint-enable
+  width: var(--#{$popover}__arrow--Width);
+  height: var(--#{$popover}__arrow--Height);
+  pointer-events: none;
+  background-color: var(--#{$popover}__arrow--BackgroundColor);
+  border: var(--#{$popover}--BorderWidth) solid var(--#{$popover}--BorderColor);
+  box-shadow: var(--#{$popover}__arrow--BoxShadow);
+  transform: translateX(var(--#{$popover}__arrow--TranslateX, 0)) translateY(var(--#{$popover}__arrow--TranslateY, 0)) rotate(var(--#{$popover}__arrow--Rotate, 0));
+}
+
+.#{$popover}__header {
+  margin-block-end: var(--#{$popover}__header--MarginBlockEnd);
+}
+
+.#{$popover}__title {
+  display: flex;
+  flex: 0 0 auto;
+
+}
+
+.#{$popover}__title-icon {
+  margin-inline-end: var(--#{$popover}__title-icon--MarginInlineEnd);
+  font-size: var(--#{$popover}__title-icon--FontSize);
+  color: var(--#{$popover}__title-icon--Color);
+}
+
+.#{$popover}__title-text {
+  min-width: 0;
+  font-size: var(--#{$popover}__title-text--FontSize);
+  font-weight: var(--#{$popover}__title-text--FontWeight);
+  color: var(--#{$popover}__title-text--Color);
+  overflow-wrap: break-word;
+}
+
+// Body
+.#{$popover}__body {
+  word-wrap: break-word;
+}
+
+.#{$popover}__footer {
+  margin-block-start: var(--#{$popover}__footer--MarginBlockStart);
+}

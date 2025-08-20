@@ -1,0 +1,276 @@
+.pf-v6-c-notification-drawer {
+  --pf-v6-c-notification-drawer--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --pf-v6-c-notification-drawer__header--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__header--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-notification-drawer__header--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__header--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-notification-drawer__header--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --pf-v6-c-notification-drawer__header--ZIndex: var(--pf-t--global--z-index--sm);
+  --pf-v6-c-notification-drawer__header-title--FontSize: var(--pf-t--global--font--size--heading--md);
+  --pf-v6-c-notification-drawer__header-title--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-notification-drawer__header-title--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-notification-drawer__header-title--FontFamily: var(--pf-t--global--font--family--heading);
+  --pf-v6-c-notification-drawer__header-status--MarginInlineStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__header-status--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --pf-v6-c-notification-drawer__header-status--FontSize: var(--pf-t--global--font--size--body--default);
+  --pf-v6-c-notification-drawer__header-status--Color: var(--pf-t--global--text--color--subtle);
+  --pf-v6-c-notification-drawer__body--ZIndex: var(--pf-t--global--z-index--xs);
+  --pf-v6-c-notification-drawer__body--PaddingBlockStart: 0;
+  --pf-v6-c-notification-drawer__body--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__list--Gap: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-notification-drawer__list--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-notification-drawer__list--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-notification-drawer__list-item--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__list-item--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__list-item--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__list-item--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__list-item--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --pf-v6-c-notification-drawer__list-item--BorderWidth: var(--pf-t--global--border--width--box--status--default);
+  --pf-v6-c-notification-drawer__list-item--BorderRadius: var(--pf-t--global--border--radius--medium);
+  --pf-v6-c-notification-drawer__list-item--m-info__list-item-header-icon--Color: var(--pf-t--global--icon--color--status--info--default);
+  --pf-v6-c-notification-drawer__list-item--m-info__list-item--BorderColor: var(--pf-t--global--border--color--status--info--default);
+  --pf-v6-c-notification-drawer__list-item--m-warning__list-item-header-icon--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --pf-v6-c-notification-drawer__list-item--m-warning__list-item--BorderColor: var(--pf-t--global--border--color--status--warning--default);
+  --pf-v6-c-notification-drawer__list-item--m-danger__list-item-header-icon--Color: var(--pf-t--global--icon--color--status--danger--default);
+  --pf-v6-c-notification-drawer__list-item--m-danger__list-item--BorderColor: var(--pf-t--global--border--color--status--danger--default);
+  --pf-v6-c-notification-drawer__list-item--m-success__list-item-header-icon--Color: var(--pf-t--global--icon--color--status--success--default);
+  --pf-v6-c-notification-drawer__list-item--m-success__list-item--BorderColor: var(--pf-t--global--border--color--status--success--default);
+  --pf-v6-c-notification-drawer__list-item--m-custom__list-item-header-icon--Color: var(--pf-t--global--icon--color--status--custom--default);
+  --pf-v6-c-notification-drawer__list-item--m-custom__list-item--BorderColor: var(--pf-t--global--border--color--status--custom--default);
+  --pf-v6-c-notification-drawer__list-item--m-read--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --pf-v6-c-notification-drawer__list-item--m-read--BorderWidth: var(--pf-t--global--border--width--box--status--read);
+  --pf-v6-c-notification-drawer__list-item--m-read--BorderColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-notification-drawer__list-item--m-hoverable--hover--BackgroundColor: var(--pf-t--global--background--color--primary--hover);
+  --pf-v6-c-notification-drawer__list-item-header--MarginBlockEnd: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-notification-drawer__list-item-header-icon--Color: inherit;
+  --pf-v6-c-notification-drawer__list-item-header-icon--MarginInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-notification-drawer__list-item-header-title--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --pf-v6-c-notification-drawer__list-item-header-title--max-lines: 1;
+  --pf-v6-c-notification-drawer__list-item-action--MarginBlockStart: calc(var(--pf-t--global--spacer--control--vertical--plain) * -1);
+  --pf-v6-c-notification-drawer__list-item-description--MarginBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-notification-drawer__list-item-timestamp--Color: var(--pf-t--global--text--color--subtle);
+  --pf-v6-c-notification-drawer__list-item-timestamp--FontSize: var(--pf-t--global--font--size--body--default);
+  --pf-v6-c-notification-drawer__group--BorderBlockEndWidth: var(--pf-t--global--border--width--divider--default);
+  --pf-v6-c-notification-drawer__group--m-expanded--group--BorderBlockEndColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-notification-drawer__group--m-expanded--MinHeight: 0;
+  --pf-v6-c-notification-drawer__group--m-expanded--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__group-toggle--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__group-toggle--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-notification-drawer__group-toggle--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__group-toggle--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-notification-drawer__group-toggle--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --pf-v6-c-notification-drawer__group-toggle--OutlineOffset: -0.25rem;
+  --pf-v6-c-notification-drawer__group-toggle-title--MarginInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__group-toggle-title--FontSize: var(--pf-t--global--font--size--body--lg);
+  --pf-v6-c-notification-drawer__group-toggle-title--max-lines: 1;
+  --pf-v6-c-notification-drawer__group-toggle-count--MarginInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__group-toggle-icon--MarginInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-notification-drawer__group-toggle-icon--Color: var(--pf-t--global--icon--color--regular);
+  --pf-v6-c-notification-drawer__group-toggle-icon--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --pf-v6-c-notification-drawer__group-toggle-icon--TransitionDuration: var(--pf-t--global--motion--duration--icon--default);
+  --pf-v6-c-notification-drawer__group-toggle-icon--Transition: transform var(--pf-v6-c-notification-drawer__group-toggle-icon--TransitionDuration) var(--pf-v6-c-notification-drawer__group-toggle-icon--TransitionTimingFunction);
+  --pf-v6-c-notification-drawer__group--m-expanded__group-toggle-icon--Rotate: 90deg;
+}
+
+.pf-v6-c-notification-drawer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--pf-v6-c-notification-drawer--BackgroundColor);
+}
+
+.pf-v6-c-notification-drawer__header {
+  position: relative;
+  z-index: var(--pf-v6-c-notification-drawer__header--ZIndex);
+  display: flex;
+  flex-shrink: 0;
+  align-items: baseline;
+  padding-block-start: var(--pf-v6-c-notification-drawer__header--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-notification-drawer__header--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-notification-drawer__header--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-notification-drawer__header--PaddingInlineEnd);
+  background-color: var(--pf-v6-c-notification-drawer__header--BackgroundColor);
+}
+
+.pf-v6-c-notification-drawer__header-title {
+  font-family: var(--pf-v6-c-notification-drawer__header-title--FontFamily);
+  font-size: var(--pf-v6-c-notification-drawer__header-title--FontSize);
+  font-weight: var(--pf-v6-c-notification-drawer__header-title--FontWeight);
+  line-height: var(--pf-v6-c-notification-drawer__header-title--LineHeight);
+}
+
+.pf-v6-c-notification-drawer__header-status {
+  margin-inline-start: var(--pf-v6-c-notification-drawer__header-status--MarginInlineStart);
+  font-size: var(--pf-v6-c-notification-drawer__header-status--FontSize);
+  font-weight: var(--pf-v6-c-notification-drawer__header-status--FontWeight);
+  color: var(--pf-v6-c-notification-drawer__header-status--Color);
+}
+
+.pf-v6-c-notification-drawer__header-action {
+  display: flex;
+  align-items: center;
+  margin-inline-start: auto;
+}
+
+.pf-v6-c-notification-drawer__body {
+  flex: 1;
+  padding-block-start: var(--pf-v6-c-notification-drawer__body--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-notification-drawer__body--PaddingBlockEnd);
+  overflow-y: auto;
+}
+
+.pf-v6-c-notification-drawer__list:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pf-v6-c-notification-drawer__list--Gap);
+  padding-inline-start: var(--pf-v6-c-notification-drawer__list--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-notification-drawer__list--PaddingInlineEnd);
+}
+
+.pf-v6-c-notification-drawer__list-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding-block-start: var(--pf-v6-c-notification-drawer__list-item--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-notification-drawer__list-item--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-notification-drawer__list-item--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-notification-drawer__list-item--PaddingInlineEnd);
+  background-color: var(--pf-v6-c-notification-drawer__list-item--BackgroundColor);
+  border: var(--pf-v6-c-notification-drawer__list-item--BorderWidth) solid var(--pf-v6-c-notification-drawer__list-item--BorderColor);
+  border-radius: var(--pf-v6-c-notification-drawer__list-item--BorderRadius);
+}
+.pf-v6-c-notification-drawer__list-item.pf-m-info {
+  --pf-v6-c-notification-drawer__list-item--BorderColor: var(--pf-v6-c-notification-drawer__list-item--m-info__list-item--BorderColor);
+  --pf-v6-c-notification-drawer__list-item-header-icon--Color: var(--pf-v6-c-notification-drawer__list-item--m-info__list-item-header-icon--Color);
+}
+.pf-v6-c-notification-drawer__list-item.pf-m-warning {
+  --pf-v6-c-notification-drawer__list-item--BorderColor: var(--pf-v6-c-notification-drawer__list-item--m-warning__list-item--BorderColor);
+  --pf-v6-c-notification-drawer__list-item-header-icon--Color: var(--pf-v6-c-notification-drawer__list-item--m-warning__list-item-header-icon--Color);
+}
+.pf-v6-c-notification-drawer__list-item.pf-m-danger {
+  --pf-v6-c-notification-drawer__list-item--BorderColor: var(--pf-v6-c-notification-drawer__list-item--m-danger__list-item--BorderColor);
+  --pf-v6-c-notification-drawer__list-item-header-icon--Color: var(--pf-v6-c-notification-drawer__list-item--m-danger__list-item-header-icon--Color);
+}
+.pf-v6-c-notification-drawer__list-item.pf-m-success {
+  --pf-v6-c-notification-drawer__list-item--BorderColor: var(--pf-v6-c-notification-drawer__list-item--m-success__list-item--BorderColor);
+  --pf-v6-c-notification-drawer__list-item-header-icon--Color: var(--pf-v6-c-notification-drawer__list-item--m-success__list-item-header-icon--Color);
+}
+.pf-v6-c-notification-drawer__list-item.pf-m-custom {
+  --pf-v6-c-notification-drawer__list-item--BorderColor: var(--pf-v6-c-notification-drawer__list-item--m-custom__list-item--BorderColor);
+  --pf-v6-c-notification-drawer__list-item-header-icon--Color: var(--pf-v6-c-notification-drawer__list-item--m-custom__list-item-header-icon--Color);
+}
+.pf-v6-c-notification-drawer__list-item.pf-m-read {
+  --pf-v6-c-notification-drawer__list-item--BorderWidth: var(--pf-v6-c-notification-drawer__list-item--m-read--BorderWidth);
+  --pf-v6-c-notification-drawer__list-item--BackgroundColor: var(--pf-v6-c-notification-drawer__list-item--m-read--BackgroundColor);
+  --pf-v6-c-notification-drawer__list-item--BorderColor: var(--pf-v6-c-notification-drawer__list-item--m-read--BorderColor);
+  position: relative;
+}
+.pf-v6-c-notification-drawer__list-item.pf-m-hoverable {
+  cursor: pointer;
+}
+.pf-v6-c-notification-drawer__list-item.pf-m-hoverable:hover, .pf-v6-c-notification-drawer__list-item.pf-m-hoverable:focus {
+  background-color: var(--pf-v6-c-notification-drawer__list-item--m-hoverable--hover--BackgroundColor);
+}
+
+.pf-v6-c-notification-drawer__list-item-header {
+  display: flex;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  align-items: baseline;
+  margin-block-end: var(--pf-v6-c-notification-drawer__list-item-header--MarginBlockEnd);
+}
+
+.pf-v6-c-notification-drawer__list-item-header-icon {
+  margin-inline-end: var(--pf-v6-c-notification-drawer__list-item-header-icon--MarginInlineEnd);
+  color: var(--pf-v6-c-notification-drawer__list-item-header-icon--Color);
+}
+
+.pf-v6-c-notification-drawer__list-item-header-title {
+  font-weight: var(--pf-v6-c-notification-drawer__list-item-header-title--FontWeight);
+  word-break: break-word;
+}
+.pf-v6-c-notification-drawer__list-item-header-title.pf-m-truncate {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--pf-v6-c-notification-drawer__list-item-header-title--max-lines);
+  overflow: hidden;
+}
+
+.pf-v6-c-notification-drawer__list-item-action {
+  grid-row: 1/3;
+  grid-column: 2/3;
+  margin-block-start: var(--pf-v6-c-notification-drawer__list-item-action--MarginBlockStart);
+}
+.pf-v6-c-notification-drawer__list-item-action.pf-m-no-offset {
+  --pf-v6-c-notification-drawer__list-item-action--MarginBlockStart: 0;
+}
+
+.pf-v6-c-notification-drawer__list-item-description {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  margin-block-end: var(--pf-v6-c-notification-drawer__list-item-description--MarginBlockEnd);
+  word-break: break-word;
+}
+
+.pf-v6-c-notification-drawer__list-item-timestamp {
+  grid-row: 3/4;
+  grid-column: 1/2;
+  font-size: var(--pf-v6-c-notification-drawer__list-item-timestamp--FontSize);
+  color: var(--pf-v6-c-notification-drawer__list-item-timestamp--Color);
+}
+
+.pf-v6-c-notification-drawer__group-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.pf-v6-c-notification-drawer__group {
+  border-block-end: var(--pf-v6-c-notification-drawer__group--BorderBlockEndWidth) solid var(--pf-v6-c-notification-drawer__group--m-expanded--group--BorderBlockEndColor);
+}
+.pf-v6-c-notification-drawer__group.pf-m-expanded {
+  min-height: var(--pf-v6-c-notification-drawer__group--m-expanded--MinHeight);
+  padding-block-end: var(--pf-v6-c-notification-drawer__group--m-expanded--PaddingBlockEnd);
+}
+
+.pf-v6-c-notification-drawer__group-toggle {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  padding-block-start: var(--pf-v6-c-notification-drawer__group-toggle--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-notification-drawer__group-toggle--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-notification-drawer__group-toggle--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-notification-drawer__group-toggle--PaddingInlineEnd);
+  background-color: var(--pf-v6-c-notification-drawer__group-toggle--BackgroundColor);
+  border: none;
+  outline-offset: var(--pf-v6-c-notification-drawer__group-toggle--OutlineOffset);
+}
+
+.pf-v6-c-notification-drawer__group-toggle-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--pf-v6-c-notification-drawer__group-toggle-title--max-lines);
+  overflow: hidden;
+  flex: 1;
+  margin-inline-end: var(--pf-v6-c-notification-drawer__group-toggle-title--MarginInlineEnd);
+  font-size: var(--pf-v6-c-notification-drawer__group-toggle-title--FontSize);
+  text-align: start;
+  word-break: break-word;
+}
+
+.pf-v6-c-notification-drawer__group-toggle-count {
+  margin-inline-start: auto;
+  margin-inline-end: var(--pf-v6-c-notification-drawer__group-toggle-count--MarginInlineEnd);
+}
+
+.pf-v6-c-notification-drawer__group-toggle-icon {
+  margin-inline-end: var(--pf-v6-c-notification-drawer__group-toggle-icon--MarginInlineEnd);
+  color: var(--pf-v6-c-notification-drawer__group-toggle-icon--Color);
+  transition: var(--pf-v6-c-notification-drawer__group-toggle-icon--Transition);
+}
+:where(.pf-v6-m-dir-rtl, [dir=rtl]) .pf-v6-c-notification-drawer__group-toggle-icon {
+  scale: -1 1;
+}
+
+.pf-v6-c-notification-drawer__group.pf-m-expanded .pf-v6-c-notification-drawer__group-toggle-icon {
+  transform: rotate(var(--pf-v6-c-notification-drawer__group--m-expanded__group-toggle-icon--Rotate));
+}
